@@ -17,8 +17,13 @@ class MyDocument extends Document {
             sizes="76x76"
             href={require('assets/img/brand/apple-icon.png')}
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <body className="text-gray-500 antialiased">
+        <body className="text-gray-500 antialiased font-body">
           <div id="page-transition"></div>
           <Main />
           <NextScript />
