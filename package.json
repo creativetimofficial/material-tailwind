@@ -6,7 +6,6 @@
   "repository": "https://github.com/creativetimofficial/md-tailwind",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.2",
     "@popperjs/core": "^2.6.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
@@ -17,6 +16,7 @@
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "install": "^0.13.0",
+    "material-design-icons": "^3.0.1",
     "next": "^10.0.6",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",

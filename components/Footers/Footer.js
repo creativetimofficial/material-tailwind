@@ -36,6 +36,7 @@ export default function Footer() {
                   type="button"
                 >
                   <i className="fab fa-twitter"></i>
+                  <span className="material-icons">face</span>
                 </button>
                 <button
                   className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
