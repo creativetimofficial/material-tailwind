@@ -14,8 +14,19 @@ const routes = [
     path: '/documentation/react/alerts',
     routes: [
       {
-        path: '/documentation/react/alerts',
         name: 'Alerts',
+        state: 'reactAlertsState',
+
+        subRoutes: [
+          {
+            path: '/documentation/react/alerts/alerts',
+            name: 'Alerts',
+          },
+          {
+            path: '/documentation/react/alerts/closingAlerts',
+            name: 'Closing Alerts',
+          },
+        ],
       },
       {
         name: 'Dropdowns',

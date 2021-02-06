@@ -1,14 +1,14 @@
-import React from "react";
-import Head from "next/head";
-import Sidebar from "components/Documentation/Sidebar.js";
-import routes from "routes.js";
-import Navbar from "components/Documentation/Navbar.js";
-import Footer from "components/Documentation/Footer.js";
+import React from 'react';
+import Head from 'next/head';
+import Sidebar from 'components/Documentation/Sidebar.js';
+import routes from 'routes.js';
+import Navbar from 'components/Documentation/Navbar.js';
+import Footer from 'components/Documentation/Footer.js';
 
-import AlertsCode from "components/Documentation/JavaScript/React/AlertsCode.js";
+import ClosingAlertsCode from 'components/Documentation/JavaScript/React/Alerts/ClosingAlertsCode.js';
 
-import Heading from "components/Documentation/Heading.js";
-import SmallHeading from "components/Documentation/SmallHeading.js";
+import Heading from 'components/Documentation/Heading.js';
+import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function Alerts() {
   const [copy, setCopy] = React.useState(null);
@@ -47,7 +47,7 @@ export default function Alerts() {
                   <>
                     Alerts can have how many words you want, as well as an
                     optional close button. For styling, use one of the color
-                    classes presented below. (e.g.,{" "}
+                    classes presented below. (e.g.,{' '}
                     <code className="text-pink-600 text-sm bg-gray-200">
                       .bg-red-500
                     </code>
@@ -55,9 +55,9 @@ export default function Alerts() {
                   </>
                 }
               />
-              <AlertsCode
-                copyText={copy === "Alerts" ? "Copied" : "Copy"}
-                onCopy={text => setCopy(text ? "Alerts" : "")}
+              <ClosingAlertsCode
+                copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Alerts' : '')}
               />
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 
-export default class AlertsCode extends React.Component {
+export default class ClosingAlertsCode extends React.Component {
   state = {
     color: 'pink',
     showAlert: true,
