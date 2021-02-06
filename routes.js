@@ -33,11 +33,11 @@ const routes = [
         state: 'reactDropdownsState',
         subRoutes: [
           {
-            path: '/documentation/react/dropdown',
+            path: '/documentation/react/dropdowns/dropdown',
             name: 'Dropdown',
           },
           {
-            path: '/documentation/react/dropup',
+            path: '/documentation/react/dropdowns/dropup',
             name: 'Dropup',
           },
         ],
