@@ -1,10 +1,7 @@
-import React from 'react';
-import Footer from 'components/Footers/Footer.js';
+import React, { Component } from 'react';
 
-export default function Index() {
-  return (
-    <>
-      <Footer></Footer>
-    </>
-  );
+export default class Index extends Component {
+  render() {
+    return <h1>Welcome</h1>;
+  }
 }
