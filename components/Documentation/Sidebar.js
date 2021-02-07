@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { withRouter } from "next/router";
+import React from 'react';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
   }
   // this creates the intial state of this component based on the collapse routes
   // that it gets through this.props.routes
-  getCollapseStates = routes => {
+  getCollapseStates = (routes) => {
     let initialState = {};
     routes &&
       routes.map((prop, key) => {
@@ -17,12 +17,12 @@ class Sidebar extends React.Component {
           initialState = {
             [prop.state]: this.getCollapseInitialState(prop.subRoutes),
             ...this.getCollapseStates(prop.subRoutes),
-            ...initialState
+            ...initialState,
           };
         } else if (prop.routes) {
           initialState = {
             ...this.getCollapseStates(prop.routes),
-            ...initialState
+            ...initialState,
           };
         }
         return null;
@@ -45,14 +45,14 @@ class Sidebar extends React.Component {
     }
     return false;
   }
-  getRoutes = routes => {
+  getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.disabled) {
         return (
           <li key={key}>
             <a
               href="#pablo"
-              onClick={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
               className="text-gray-400 text-sm block mb-2 mx-4 no-underline cursor-not-allowed"
             >
               {prop.name}
@@ -66,9 +66,9 @@ class Sidebar extends React.Component {
             <Link
               href={prop.path}
               as={
-                (process.env.NODE_ENV === "production"
-                  ? "/learning-lab/tailwind-starter-kit"
-                  : "") + prop.path
+                (process.env.NODE_ENV === 'production'
+                  ? '/learning-lab/tailwind-starter-kit'
+                  : '') + prop.path
               }
             >
               <a className="text-gray-800 hover:text-gray-900 text-xs uppercase font-bold block py-1 px-4 no-underline">
@@ -89,27 +89,30 @@ class Sidebar extends React.Component {
               href="#pablo"
               className={
                 (this.state[prop.state]
-                  ? "text-pink-600 font-semibold"
-                  : "text-gray-600 hover:text-gray-900 ") +
-                " text-sm block mb-2 mx-4 no-underline"
+                  ? 'text-pink-600 font-semibold'
+                  : 'text-gray-600 hover:text-gray-900 ') +
+                ' text-sm block mb-2 mx-4 no-underline'
               }
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 this.setState({ [prop.state]: !this.state[prop.state] });
               }}
             >
-              {prop.name}{" "}
-              <i
-                className={
-                  "text-xs fas fa-angle-" +
-                  (this.state[prop.state] ? "up" : "down")
-                }
-              ></i>
+              {prop.name}{' '}
+              <span
+                className="material-icons text-xs align-middle"
+                style={{
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                }}
+              >
+                keyboard_arrow_{this.state[prop.state] ? 'up' : 'down'}
+              </span>
             </a>
             <ul
               className={
-                (this.state[prop.state] ? "block " : "hidden ") +
-                "flex-wrap list-none pl-2 mb-0 mt-0"
+                (this.state[prop.state] ? 'block ' : 'hidden ') +
+                'flex-wrap list-none pl-2 mb-0 mt-0'
               }
             >
               {this.getRoutes(prop.subRoutes)}
@@ -122,17 +125,17 @@ class Sidebar extends React.Component {
             <Link
               href={prop.path}
               as={
-                (process.env.NODE_ENV === "production"
-                  ? "/learning-lab/tailwind-starter-kit"
-                  : "") + prop.path
+                (process.env.NODE_ENV === 'production'
+                  ? '/learning-lab/tailwind-starter-kit'
+                  : '') + prop.path
               }
             >
               <a
                 className={
                   (this.props.router.pathname.indexOf(prop.path) !== -1
-                    ? "text-pink-600 border-l-2 border-solid border-pink-600 pl-1 "
-                    : "text-gray-600 hover:text-gray-900 ") +
-                  "text-sm block mb-2 mx-4 no-underline"
+                    ? 'text-pink-600 border-l-2 border-solid border-pink-600 pl-1 '
+                    : 'text-gray-600 hover:text-gray-900 ') +
+                  'text-sm block mb-2 mx-4 no-underline'
                 }
               >
                 {prop.name}
