@@ -1,14 +1,14 @@
-import React from "react";
-import Head from "next/head";
-import Sidebar from "components/Documentation/Sidebar.js";
-import routes from "routes.js";
-import Navbar from "components/Documentation/Navbar.js";
-import Footer from "components/Documentation/Footer.js";
+import React from 'react';
+import Head from 'next/head';
+import Sidebar from 'components/Documentation/Sidebar.js';
+import routes from 'routes.js';
+import Navbar from 'components/Documentation/Navbar.js';
+import Footer from 'components/Documentation/Footer.js';
 
-import DropdownsCode from "components/Documentation/JavaScript/React/DropdownsCode.js";
+import DropdownsCode from 'components/Documentation/JavaScript/React/DropdownsCode.js';
 
-import Heading from "components/Documentation/Heading.js";
-import SmallHeading from "components/Documentation/SmallHeading.js";
+import Heading from 'components/Documentation/Heading.js';
+import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function Dropdown() {
   const [copy, setCopy] = React.useState(null);
@@ -49,15 +49,13 @@ export default function Dropdown() {
                     install <code>popper.js</code> into your project. Please run
                     the following:
                     <br />
-                    <code className="text-red-500">
-                      npm i -E popper.js@1.15.0
-                    </code>
+                    <code className="text-red-500">npm i @popperjs/core</code>
                   </>
                 }
               />
               <DropdownsCode
-                copyText={copy === "Dropdown" ? "Copied" : "Copy"}
-                onCopy={text => setCopy(text ? "Dropdown" : "")}
+                copyText={copy === 'Dropdown' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Dropdown' : '')}
                 placement="bottom-start"
               />
             </div>

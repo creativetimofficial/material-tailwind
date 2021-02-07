@@ -49,9 +49,7 @@ export default function Dropup() {
                     install <code>popper.js</code> into your project. Please run
                     the following:
                     <br />
-                    <code className="text-red-500">
-                      npm i -E popper.js@1.15.0
-                    </code>
+                    <code className="text-red-500">npm i @popperjs/core</code>
                   </>
                 }
               />
