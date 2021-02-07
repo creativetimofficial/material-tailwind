@@ -43,7 +43,7 @@ const routes = [
         ],
       },
       {
-        path: '/documentation/react/menus',
+        path: '/documentation/react/menus/menus',
         name: 'Menus',
       },
       {
