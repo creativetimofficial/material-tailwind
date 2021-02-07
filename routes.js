@@ -65,7 +65,7 @@ const routes = [
         ],
       },
       {
-        path: '/documentation/react/navbars',
+        path: '/documentation/react/navbars/navbars',
         name: 'Navbars',
       },
       {
