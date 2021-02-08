@@ -51,6 +51,10 @@ const routes = [
           },
         ],
       },
+      {
+        path: '/documentation/css/images',
+        name: 'Images',
+      },
     ],
   },
   {
