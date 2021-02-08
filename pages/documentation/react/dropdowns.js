@@ -10,7 +10,7 @@ import DropdownsCode from 'components/Documentation/JavaScript/React/DropdownsCo
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function Dropup() {
+export default function Dropdown() {
   const [copy, setCopy] = React.useState(null);
   return (
     <>
@@ -18,15 +18,15 @@ export default function Dropup() {
         {/* Canonical SEO */}
         <link
           rel="canonical"
-          href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/dropup"
+          href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/dropdown"
         />
         {/* Open Graph data */}
         <meta
           property="og:url"
-          content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/dropup"
+          content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/dropdown"
         />
         <title>
-          React Dropup Variation | Tailwind Starter Kit by Creative Tim
+          React Dropdown Variation | Tailwind Starter Kit by Creative Tim
         </title>
       </Head>
       <Navbar fixed />
@@ -38,11 +38,11 @@ export default function Dropup() {
           <div className="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-10 lg:pr-4">
             <div className="my-8">
               <Heading
-                title="React Dropup"
-                description="An interactive menu that opens to the top of a button using React."
+                title="React Dropdowns"
+                description="An interactive menu that opens to the bottom of a button using React."
               />
               <SmallHeading
-                title="Dropup Examples"
+                title="Dropdown"
                 description={
                   <>
                     For this component to properly work, you will need to
@@ -54,8 +54,28 @@ export default function Dropup() {
                 }
               />
               <DropdownsCode
-                copyText={copy === 'Dropup' ? 'Copied' : 'Copy'}
-                onCopy={(text) => setCopy(text ? 'Dropup' : '')}
+                copyText={copy === 'Dropdown' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Dropdown' : '')}
+                placement="bottom-start"
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading
+                title="Dropup"
+                description={
+                  <>
+                    For this component to properly work, you will need to
+                    install <code>popper.js</code> into your project. Please run
+                    the following:
+                    <br />
+                    <code className="text-red-500">npm i @popperjs/core</code>
+                  </>
+                }
+              />
+              <DropdownsCode
+                copyText={copy === 'Dropdown' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Dropdown' : '')}
                 placement="top-end"
               />
             </div>

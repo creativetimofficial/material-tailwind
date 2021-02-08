@@ -128,10 +128,10 @@ export default function Navbars() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading
-                title="Navbar with links"
+                title="Navbar with input"
                 description={
                   <>
-                    This one used text links no icon is used. You can change the
+                    This one used icons with links and input. You can change the
                     links with anything from the{' '}
                     <Link
                       href="/documentation/css/navbars"

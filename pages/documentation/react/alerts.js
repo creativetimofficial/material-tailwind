@@ -5,6 +5,7 @@ import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
 
+import AlertsCode from 'components/Documentation/JavaScript/React/Alerts/AlertsCode.js';
 import ClosingAlertsCode from 'components/Documentation/JavaScript/React/Alerts/ClosingAlertsCode.js';
 
 import Heading from 'components/Documentation/Heading.js';
@@ -42,7 +43,28 @@ export default function Alerts() {
                 description="Leave your user the choice to close the feedback message using React."
               />
               <SmallHeading
-                title="Alert Examples"
+                title="Simple Alert"
+                description={
+                  <>
+                    Alerts can have how many words you want, as well as an
+                    optional close button. For styling, use one of the color
+                    classes presented below. (e.g.,{' '}
+                    <code className="text-pink-600 text-sm bg-gray-200">
+                      .bg-red-500
+                    </code>
+                    ).
+                  </>
+                }
+              />
+              <AlertsCode
+                copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Alerts' : '')}
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading
+                title="Closing Alert"
                 description={
                   <>
                     Alerts can have how many words you want, as well as an

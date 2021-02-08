@@ -1,13 +1,14 @@
-import React from "react";
-import Head from "next/head";
-import Sidebar from "components/Documentation/Sidebar.js";
-import routes from "routes.js";
-import Navbar from "components/Documentation/Navbar.js";
-import Footer from "components/Documentation/Footer.js";
+import React from 'react';
+import Head from 'next/head';
+import Sidebar from 'components/Documentation/Sidebar.js';
+import routes from 'routes.js';
+import Navbar from 'components/Documentation/Navbar.js';
+import Footer from 'components/Documentation/Footer.js';
 
-import ModalsCode from "components/Documentation/JavaScript/React/ModalsCode.js";
+import ModalsCode from 'components/Documentation/JavaScript/React/ModalsCode.js';
 
-import Heading from "components/Documentation/Heading.js";
+import Heading from 'components/Documentation/Heading.js';
+import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function SmallModal() {
   const [copy, setCopy] = React.useState(null);
@@ -35,13 +36,33 @@ export default function SmallModal() {
           <div className="w-full sm:w-9/12 lg:w-8/12 px-4 sm:pr-10 lg:pr-4">
             <div className="my-8">
               <Heading
-                title="React Small Modal"
+                title="React Modals"
                 description="React plugin that opens on top of the page content for extra details, notifications to the user or any other new content."
               />
+
+              <SmallHeading title="React Small Modal" />
               <ModalsCode
-                copyText={copy === "Modal" ? "Copied" : "Copy"}
-                onCopy={text => setCopy(text ? "Modal" : "")}
+                copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 type="small"
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="React Regular Modal" />
+              <ModalsCode
+                copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Modal' : '')}
+                type="regular"
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="React Large Modal" />
+              <ModalsCode
+                copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Modal' : '')}
+                type="large"
               />
             </div>
           </div>

@@ -14,58 +14,23 @@ const routes = [
     path: '/documentation/react/alerts',
     routes: [
       {
+        path: '/documentation/react/alerts',
         name: 'Alerts',
-        state: 'reactAlertsState',
-
-        subRoutes: [
-          {
-            path: '/documentation/react/alerts/alerts',
-            name: 'Alerts',
-          },
-          {
-            path: '/documentation/react/alerts/closingAlerts',
-            name: 'Closing Alerts',
-          },
-        ],
       },
       {
+        path: '/documentation/react/dropdowns',
         name: 'Dropdowns',
-        state: 'reactDropdownsState',
-        subRoutes: [
-          {
-            path: '/documentation/react/dropdowns/dropdown',
-            name: 'Dropdown',
-          },
-          {
-            path: '/documentation/react/dropdowns/dropup',
-            name: 'Dropup',
-          },
-        ],
       },
       {
-        path: '/documentation/react/menus/menus',
+        path: '/documentation/react/menus',
         name: 'Menus',
       },
       {
+        path: '/documentation/react/modals',
         name: 'Modals',
-        state: 'reactModalsState',
-        subRoutes: [
-          {
-            path: '/documentation/react/modals/small',
-            name: 'Small',
-          },
-          {
-            path: '/documentation/react/modals/regular',
-            name: 'Regular',
-          },
-          {
-            path: '/documentation/react/modals/large',
-            name: 'Large',
-          },
-        ],
       },
       {
-        path: '/documentation/react/navbars/navbars',
+        path: '/documentation/react/navbars',
         name: 'Navbars',
       },
       {
