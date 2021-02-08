@@ -77,6 +77,10 @@ const routes = [
         path: '/documentation/css/labels',
         name: 'Labels',
       },
+      {
+        path: '/documentation/css/menus',
+        name: 'Menus',
+      },
     ],
   },
   {
