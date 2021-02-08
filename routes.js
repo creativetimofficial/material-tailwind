@@ -85,6 +85,24 @@ const routes = [
         path: '/documentation/css/navbars',
         name: 'Navbars',
       },
+      {
+        name: 'Pagination',
+        state: 'paginationState',
+        subRoutes: [
+          {
+            path: '/documentation/css/pagination/with-numbers',
+            name: 'Only Numbers',
+          },
+          {
+            path: '/documentation/css/pagination/with-previous',
+            name: 'Prev and Next',
+          },
+          {
+            path: '/documentation/css/pagination/with-first',
+            name: 'First and Last',
+          },
+        ],
+      },
     ],
   },
   {
