@@ -81,6 +81,10 @@ const routes = [
         path: '/documentation/css/menus',
         name: 'Menus',
       },
+      {
+        path: '/documentation/css/navbars',
+        name: 'Navbars',
+      },
     ],
   },
   {
