@@ -107,6 +107,20 @@ const routes = [
         path: '/documentation/css/progressbars',
         name: 'Progressbars',
       },
+      {
+        name: 'Typography',
+        state: 'typographyState',
+        subRoutes: [
+          {
+            path: '/documentation/css/typography/headings',
+            name: 'Headings',
+          },
+          {
+            path: '/documentation/css/typography/paragraphs',
+            name: 'Paragraphs',
+          },
+        ],
+      },
     ],
   },
   {
