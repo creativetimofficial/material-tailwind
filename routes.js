@@ -14,6 +14,10 @@ const routes = [
     path: '/documentation/css/alerts',
     routes: [
       {
+        path: '/documentation/css/alerts',
+        name: 'Alerts',
+      },
+      {
         name: 'Buttons',
         state: 'buttonsState',
         subRoutes: [
