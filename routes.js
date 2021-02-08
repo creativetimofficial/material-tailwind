@@ -55,6 +55,24 @@ const routes = [
         path: '/documentation/css/images',
         name: 'Images',
       },
+      {
+        name: 'Inputs',
+        state: 'inputsState',
+        subRoutes: [
+          {
+            path: '/documentation/css/inputs/small',
+            name: 'Small Inputs',
+          },
+          {
+            path: '/documentation/css/inputs/regular',
+            name: 'Regular Inputs',
+          },
+          {
+            path: '/documentation/css/inputs/large',
+            name: 'Large Inputs',
+          },
+        ],
+      },
     ],
   },
   {
