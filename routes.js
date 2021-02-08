@@ -10,6 +10,46 @@ const routes = [
     ],
   },
   {
+    name: 'CSS Components',
+    path: '/documentation/css/alerts',
+    routes: [
+      {
+        name: 'Buttons',
+        state: 'buttonsState',
+        subRoutes: [
+          {
+            path: '/documentation/css/buttons/small/filled',
+            name: 'Small Filled',
+          },
+          {
+            path: '/documentation/css/buttons/regular/filled',
+            name: 'Regular Filled',
+          },
+          {
+            path: '/documentation/css/buttons/large/filled',
+            name: 'Large Filled',
+          },
+          {
+            path: '/documentation/css/buttons/small/outline',
+            name: 'Small Outline',
+          },
+          {
+            path: '/documentation/css/buttons/regular/outline',
+            name: 'Regular Outline',
+          },
+          {
+            path: '/documentation/css/buttons/large/outline',
+            name: 'Large Outline',
+          },
+          {
+            path: '/documentation/css/buttons/links',
+            name: 'Links',
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: 'React.js Components',
     path: '/documentation/react/alerts',
     routes: [
