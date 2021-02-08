@@ -103,6 +103,10 @@ const routes = [
           },
         ],
       },
+      {
+        path: '/documentation/css/progressbars',
+        name: 'Progressbars',
+      },
     ],
   },
   {
