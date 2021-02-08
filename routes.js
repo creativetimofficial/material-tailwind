@@ -73,6 +73,10 @@ const routes = [
           },
         ],
       },
+      {
+        path: '/documentation/css/labels',
+        name: 'Labels',
+      },
     ],
   },
   {
