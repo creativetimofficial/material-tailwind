@@ -1,3 +1,4 @@
+import { main } from '@popperjs/core';
 import React from 'react';
 
 const colors = [
@@ -26,40 +27,93 @@ export const Buttons = ({
   color,
   type,
   size = 'regular',
-  round,
+  rounded,
   icon,
   text,
 }) => {
-  let buttonType, buttonSize, buttonRadius;
+  let classes = [];
 
-  if (type === 'outline') {
-    buttonType = `${color} bg-transparent border border-solid border-${color} hover:bg-${color} hover:text-white active:bg-${color}`;
-  } else if (type === 'link') {
-    buttonType = color;
-    size = 'sm';
-  } else {
-    buttonType = `white bg-${color}`;
-  }
+  rounded = rounded ? 'rounded-full' : 'rounded';
+
+  const sharedClasses = [
+    'flex',
+    'items-baseline',
+    'font-medium',
+    'outline-none',
+    'focus:outline-none',
+    'mr-1',
+    'mb-1',
+    rounded,
+  ];
+
+  const buttonFilled = ['text-white', `bg-${color}`];
+
+  const buttonOutline = [
+    `text-${color}`,
+    'bg-transparent',
+    'border',
+    'border-solid',
+    `border-${color}`,
+    `hover:bg-${color}`,
+    'hover:text-white',
+    `active:bg-${color}`,
+    'shadow-none',
+  ];
+
+  const buttonLink = [
+    `text-${color}`,
+    `background-transparent`,
+    'shadow-none',
+    'hover:shadow-none',
+  ];
+
+  const buttonSM = [
+    ...sharedClasses,
+    'px-3 py-1.5',
+    'text-sm',
+    'shadow-sm',
+    'hover:shadow-md',
+  ];
+
+  const buttonRegular = [
+    ...sharedClasses,
+    'px-5 py-2.5',
+    'shadow',
+    'hover:shadow-xl',
+  ];
+
+  const buttonLG = [
+    ...sharedClasses,
+    'px-8 py-4',
+    'text-lg',
+    'shadow-md',
+    'hover:shadow-3xl',
+  ];
 
   if (size === 'sm') {
-    buttonSize = 'px-3 py-1';
+    classes.push(...buttonSM);
   } else if (size === 'lg') {
-    buttonSize = 'px-8 py-3';
+    classes.push(...buttonLG);
   } else {
-    buttonSize = 'px-6 py-2.5';
+    classes.push(...buttonRegular);
   }
 
-  buttonRadius = round ? 'rounded-full' : 'rounded';
+  if (type === 'outline') {
+    classes.push(...buttonOutline);
+  } else if (type === 'link') {
+    classes.push(...buttonLink);
+  } else {
+    classes.push(...buttonFilled);
+  }
+
+  classes = classes.join(' ');
 
   return (
     <>
       <div className="flex flex-wrap">
         <div className="w-full px-4">
-          <button
-            className={`text-${buttonType} font-normal ${buttonSize} ${buttonRadius} outline-none focus:outline-none mr-1 mb-1 flex items-baseline gap-1`}
-            type="button"
-          >
-            {icon ? <span className="material-icons">{icon}</span> : null}{' '}
+          <button className={classes} type="button">
+            {icon ? <span className="material-icons mr-1">{icon}</span> : null}{' '}
             {text}
           </button>
         </div>
