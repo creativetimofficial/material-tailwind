@@ -22,36 +22,37 @@ const colors = [
   'red',
 ];
 
-const Alert = ({ color, text }) => {
+const Alerts = ({ color, text }) => {
   return (
     <>
       <div
-        className={`text-white px-6 py-4 border-0 rounded relative mb-4 bg-${color}-500`}
+        className={`flex justify-between items-center text-white px-8 py-6 border-0 rounded-md relative mb-4 bg-${color}`}
       >
-        <span className="material-icons mr-4 align-middle">face</span>
-        <span className="inline-block align-middle mr-8">
+        <span className="inline-block mr-8">
           <b className="capitalize">{color}!</b> {text}
         </span>
-        <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
-          <span>×</span>
+        <button className="bg-transparent uppercase font-semibold outline-none focus:outline-none">
+          Dismiss
         </button>
       </div>
     </>
   );
 };
 
-export default function Alerts() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return (
-          <Alert
-            key={key}
-            color={prop}
-            text={`This is a ${prop} alert - check it out!`}
-          />
-        );
-      })}
-    </>
-  );
-}
+export default Alerts;
+
+// export default function Alerts() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return (
+//           <Alert
+//             key={key}
+//             color={prop}
+//             text={`This is a ${prop} alert - check it out!`}
+//           />
+//         );
+//       })}
+//     </>
+//   );
+// }
