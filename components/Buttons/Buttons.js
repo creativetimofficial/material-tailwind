@@ -1,4 +1,3 @@
-import { main } from '@popperjs/core';
 import React from 'react';
 
 const colors = [
@@ -23,26 +22,17 @@ const colors = [
   'bg-red-500',
 ];
 
-export const Buttons = ({
-  color,
-  type,
-  size = 'regular',
-  rounded,
-  icon,
-  text,
-}) => {
+export const Buttons = ({ color, type, size = 'regular', rounded }) => {
   let classes = [];
 
   rounded = rounded ? 'rounded-full' : 'rounded';
 
   const sharedClasses = [
-    'flex',
-    'items-baseline',
     'font-medium',
     'outline-none',
     'focus:outline-none',
-    'mr-1',
-    'mb-1',
+    'focus:bg-teal-400',
+    'focus:text-white',
     rounded,
   ];
 
@@ -69,25 +59,28 @@ export const Buttons = ({
 
   const buttonSM = [
     ...sharedClasses,
-    'px-3 py-1.5',
+    'px-3 pt-2.5 pb-2',
     'text-sm',
+    'leading-none',
     'shadow-sm',
-    'hover:shadow-md',
+    'hover:shadow-lg',
   ];
 
   const buttonRegular = [
     ...sharedClasses,
-    'px-5 py-2.5',
+    'px-5 pt-3.5 pb-3',
+    'leading-none',
     'shadow',
-    'hover:shadow-xl',
+    'hover:shadow-2xl',
   ];
 
   const buttonLG = [
     ...sharedClasses,
-    'px-8 py-4',
+    'px-8 py-5',
     'text-lg',
+    'leading-none',
     'shadow-md',
-    'hover:shadow-3xl',
+    'hover:shadow-4xl',
   ];
 
   if (size === 'sm') {
@@ -110,13 +103,10 @@ export const Buttons = ({
 
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="w-full px-4">
-          <button className={classes} type="button">
-            {icon ? <span className="material-icons mr-1">{icon}</span> : null}{' '}
-            {text}
-          </button>
-        </div>
+      <div>
+        <button className={classes} type="button">
+          Button
+        </button>
       </div>
     </>
   );
@@ -127,15 +117,7 @@ export default function FilledLargeButtons(props) {
     <>
       {colors.map((prop, key) => {
         return (
-          <Buttons
-            key={key}
-            color={prop}
-            type="outline"
-            size="lg"
-            icon="favorite"
-            text="Large Button"
-            round
-          />
+          <Buttons key={key} color={prop} type="outline" size="lg" round />
         );
       })}
     </>
