@@ -26,13 +26,16 @@ const Alerts = ({ color, text }) => {
   return (
     <>
       <div
-        className={`flex justify-between items-center text-white px-8 py-6 border-0 rounded-md relative mb-4 bg-${color}`}
+        className={`text-white px-6 py-4 border-0 rounded-sm relative mb-4 bg-${color}`}
       >
-        <span className="inline-block mr-8">
+        <span className="material-icons mr-4 align-middle text-2xl">
+          notifications
+        </span>
+        <span className="inline-block align-middle mr-8">
           <b className="capitalize">{color}!</b> {text}
         </span>
-        <button className="bg-transparent uppercase font-semibold outline-none focus:outline-none">
-          Dismiss
+        <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
+          <span>×</span>
         </button>
       </div>
     </>
