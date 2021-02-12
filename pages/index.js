@@ -5,6 +5,8 @@ import Image from 'components/Images/Image';
 import Raised from 'components/Images/Raised';
 import CircleImage from 'components/Images/CircleImage';
 import CircleRaised from 'components/Images/CircleRaised';
+import Inputs from 'components/Inputs/Inputs';
+import InputsIcon from 'components/Inputs/InputsIcon';
 
 export default class Index extends Component {
   render() {
@@ -83,7 +85,7 @@ export default class Index extends Component {
           </div>
         </div>
 
-        <div className="p-10 bg-gray-100 border border-gray-300">
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Images</h2>
 
@@ -103,6 +105,42 @@ export default class Index extends Component {
               <div className="w-48">
                 <CircleRaised />
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Input Types</h2>
+
+            <div className="flex gap-10">
+              <Inputs color="gray" />
+              <Inputs color="gray" type="outline" />
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Input Sizes</h2>
+
+            <div className="flex gap-10 mb-5">
+              <Inputs color="gray" size="sm" />
+              <Inputs color="gray" />
+              <Inputs color="gray" size="lg" />
+            </div>
+
+            <div className="flex gap-10">
+              <Inputs color="gray" size="sm" type="outline" />
+              <Inputs color="gray" type="outline" />
+              <Inputs color="gray" size="lg" type="outline" />
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Input With Icon</h2>
+
+            <div className="flex gap-10">
+              <InputsIcon color="gray" iconPosition="left" />
+              <InputsIcon color="gray" type="outline" iconPosition="right" />
             </div>
           </div>
         </div>
