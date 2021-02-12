@@ -32,6 +32,8 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
     'gap-1',
     'font-medium',
     'outline-none',
+    'shadow',
+    'hover:shadow-2xl',
     'focus:outline-none',
     'focus:bg-teal-400',
     'focus:text-white',
@@ -64,26 +66,11 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
     'px-5 pt-2.5 pb-2',
     'text-sm',
     'leading-none',
-    'shadow-sm',
-    'hover:shadow-md',
   ];
 
-  const buttonRegular = [
-    ...sharedClasses,
-    'px-6 pt-4 pb-3.5',
-    'leading-none',
-    'shadow',
-    'hover:shadow-xl',
-  ];
+  const buttonRegular = [...sharedClasses, 'px-6 pt-4 pb-3.5', 'leading-none'];
 
-  const buttonLG = [
-    ...sharedClasses,
-    'px-8 py-5',
-    'text-lg',
-    'leading-none',
-    'shadow-md',
-    'hover:shadow-3xl',
-  ];
+  const buttonLG = [...sharedClasses, 'px-8 py-5', 'text-lg', 'leading-none'];
 
   if (size === 'sm') {
     classes.push(...buttonSM);
