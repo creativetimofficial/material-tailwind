@@ -63,14 +63,14 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
 
   const buttonSM = [
     ...sharedClasses,
-    'px-5 pt-2.5 pb-2',
+    'px-6 pt-2.5 pb-2',
     'text-sm',
     'leading-none',
   ];
 
-  const buttonRegular = [...sharedClasses, 'px-6 pt-4 pb-3.5', 'leading-none'];
+  const buttonRegular = [...sharedClasses, 'px-8 pt-4 pb-3.5', 'leading-none'];
 
-  const buttonLG = [...sharedClasses, 'px-8 py-5', 'text-lg', 'leading-none'];
+  const buttonLG = [...sharedClasses, 'px-9 py-5', 'text-lg', 'leading-none'];
 
   if (size === 'sm') {
     classes.push(...buttonSM);
