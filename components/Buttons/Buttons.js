@@ -22,12 +22,14 @@ const colors = [
   'bg-red-500',
 ];
 
-export const Buttons = ({ color, type, size = 'regular', rounded }) => {
+export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
   let classes = [];
 
   rounded = rounded ? 'rounded-full' : 'rounded';
 
   const sharedClasses = [
+    'flex',
+    'gap-1',
     'font-medium',
     'outline-none',
     'focus:outline-none',
@@ -59,19 +61,19 @@ export const Buttons = ({ color, type, size = 'regular', rounded }) => {
 
   const buttonSM = [
     ...sharedClasses,
-    'px-3 pt-2.5 pb-2',
+    'px-5 pt-2.5 pb-2',
     'text-sm',
     'leading-none',
     'shadow-sm',
-    'hover:shadow-lg',
+    'hover:shadow-md',
   ];
 
   const buttonRegular = [
     ...sharedClasses,
-    'px-5 pt-3.5 pb-3',
+    'px-6 pt-4 pb-3.5',
     'leading-none',
     'shadow',
-    'hover:shadow-2xl',
+    'hover:shadow-xl',
   ];
 
   const buttonLG = [
@@ -80,7 +82,7 @@ export const Buttons = ({ color, type, size = 'regular', rounded }) => {
     'text-lg',
     'leading-none',
     'shadow-md',
-    'hover:shadow-4xl',
+    'hover:shadow-3xl',
   ];
 
   if (size === 'sm') {
@@ -117,7 +119,15 @@ export default function FilledLargeButtons(props) {
     <>
       {colors.map((prop, key) => {
         return (
-          <Buttons key={key} color={prop} type="outline" size="lg" round />
+          <Buttons
+            key={key}
+            color={prop}
+            type="outline"
+            size="lg"
+            icon="favorite"
+            text="Large Button"
+            round
+          />
         );
       })}
     </>
