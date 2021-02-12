@@ -6,7 +6,7 @@ export default function CircleRaised() {
       <img
         src={require('assets/img/team-4-470x470.png')}
         alt="..."
-        className="shadow-3xl rounded-full max-w-full h-auto align-middle border-none"
+        className="shadow-xl rounded-full max-w-full h-auto align-middle border-none"
       />
     </>
   );

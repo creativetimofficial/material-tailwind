@@ -6,7 +6,7 @@ export default function Raised() {
       <img
         src={require('assets/img/team-3-800x800.jpg')}
         alt="..."
-        className="shadow-3xl rounded max-w-full h-auto align-middle border-none"
+        className="shadow-xl rounded max-w-full h-auto align-middle border-none"
       />
     </>
   );
