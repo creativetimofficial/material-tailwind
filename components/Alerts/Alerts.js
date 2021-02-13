@@ -26,7 +26,7 @@ const Alerts = ({ color, text }) => {
   return (
     <>
       <div
-        className={`text-white px-6 py-4 border-0 rounded-sm relative mb-4 bg-${color}`}
+        className={`text-white px-6 py-4 border-0 rounded relative mb-4 bg-${color}`}
       >
         <span className="material-icons mr-4 align-middle text-2xl">
           notifications
