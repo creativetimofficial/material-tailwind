@@ -28,49 +28,52 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
   rounded = rounded ? 'rounded-full' : 'rounded';
 
   const sharedClasses = [
-    'flex',
-    'gap-1',
     'font-medium',
     'outline-none',
-    'shadow',
-    'hover:shadow-2xl',
-    'focus:outline-none',
-    'focus:bg-teal-400',
-    'focus:text-white',
+    'uppercase',
+    'tracking-wide',
+    'leading',
     rounded,
   ];
 
-  const buttonFilled = ['text-white', `bg-${color}`];
+  const buttonFilled = [
+    color === 'amber' ||
+    color === 'yellow' ||
+    color === 'lime' ||
+    color === 'lightGreen'
+      ? 'text-black'
+      : 'text-white',
+    `bg-${color}-500`,
+    'shadow',
+    'hover:shadow-lg',
+    `hover:bg-${color}-700`,
+    'focus:outline-none',
+    'focus:bg-teal-400',
+    'focus:text-white',
+  ];
 
   const buttonOutline = [
-    `text-${color}`,
+    `text-${color}-500`,
     'bg-transparent',
     'border',
     'border-solid',
-    `border-${color}`,
-    `hover:bg-${color}`,
-    'hover:text-white',
-    `active:bg-${color}`,
+    `border-${color}-400`,
+    `hover:bg-${color}-50`,
+    `hover:border-${color}-600`,
+    `hover:text-${color}-700`,
+    `active:bg-${color}-50`,
     'shadow-none',
   ];
 
   const buttonLink = [
-    `text-${color}`,
+    `text-${color}-500`,
     `background-transparent`,
-    'shadow-none',
-    'hover:shadow-none',
+    `hover:bg-${color}-50`,
   ];
 
-  const buttonSM = [
-    ...sharedClasses,
-    'px-6 pt-2.5 pb-2',
-    'text-sm',
-    'leading-none',
-  ];
-
-  const buttonRegular = [...sharedClasses, 'px-8 pt-4 pb-3.5', 'leading-none'];
-
-  const buttonLG = [...sharedClasses, 'px-9 py-5', 'text-lg', 'leading-none'];
+  const buttonSM = [...sharedClasses, 'py-1.5 px-2.5', 'text-xs'];
+  const buttonRegular = [...sharedClasses, 'py-2 px-4', 'text-sm'];
+  const buttonLG = [...sharedClasses, 'py-3 px-6', 'text-base'];
 
   if (size === 'sm') {
     classes.push(...buttonSM);
@@ -94,7 +97,7 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
     <>
       <div>
         <button className={classes} type="button">
-          Button
+          Default
         </button>
       </div>
     </>

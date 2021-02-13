@@ -35,6 +35,9 @@ module.exports = {
       body: ['Roboto', 'sans-serif'],
     },
     extend: {
+      lineHeight: {
+        leading: '1.75',
+      },
       colors: {
         blueGray: {
           50: '#eceff1',

@@ -17,25 +17,25 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Colors</h2>
 
             <div className="flex gap-5 flex-wrap">
-              <Buttons color="blueGray-500" />
-              <Buttons color="gray-500" />
-              <Buttons color="brown-500" />
-              <Buttons color="deepOrange-500" />
-              <Buttons color="orange-500" />
-              <Buttons color="amber-500" />
-              <Buttons color="yellow-500" />
-              <Buttons color="lime-500" />
-              <Buttons color="lightGreen-500" />
-              <Buttons color="green-500" />
-              <Buttons color="teal-500" />
-              <Buttons color="cyan-500" />
-              <Buttons color="lightBlue-500" />
-              <Buttons color="blue-500" />
-              <Buttons color="indigo-500" />
-              <Buttons color="deepPurple-500" />
-              <Buttons color="purple-500" />
-              <Buttons color="pink-500" />
-              <Buttons color="red-500" />
+              <Buttons color="blueGray" />
+              <Buttons color="gray" />
+              <Buttons color="brown" />
+              <Buttons color="deepOrange" />
+              <Buttons color="orange" />
+              <Buttons color="amber" />
+              <Buttons color="yellow" />
+              <Buttons color="lime" />
+              <Buttons color="lightGreen" />
+              <Buttons color="green" />
+              <Buttons color="teal" />
+              <Buttons color="cyan" />
+              <Buttons color="lightBlue" />
+              <Buttons color="blue" />
+              <Buttons color="indigo" />
+              <Buttons color="deepPurple" />
+              <Buttons color="purple" />
+              <Buttons color="pink" />
+              <Buttons color="red" />
             </div>
           </div>
 
@@ -43,10 +43,10 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Styles</h2>
 
             <div className="flex gap-5">
-              <Buttons color="teal-500" />
-              <Buttons color="teal-500" type="outline" />
-              <Buttons color="teal-500" rounded />
-              <Buttons color="teal-500" type="link" />
+              <Buttons color="blue" />
+              <Buttons color="blue" type="outline" />
+              <Buttons color="blue" rounded />
+              <Buttons color="blue" type="link" />
             </div>
           </div>
 
@@ -54,9 +54,29 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Sizes</h2>
 
             <div className="flex gap-5">
-              <Buttons color="teal-500" size="sm" />
-              <Buttons color="teal-500" />
-              <Buttons color="teal-500" size="lg" />
+              <Buttons color="blue" size="sm" />
+              <Buttons color="blue" />
+              <Buttons color="blue" size="lg" />
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Button With Icons</h2>
+
+            <div className="flex gap-5">
+              <button className="font-medium outline-none uppercase tracking-wide leading shadow py-2 px-4 text-sm bg-blue-500 text-white rounded hover:shadow-lg">
+                <span className="material-icons text-base align-middle mr-2">
+                  favorite
+                </span>
+                Default
+              </button>
+
+              <button className="font-medium outline-none uppercase tracking-wide leading shadow py-2 px-4 text-sm bg-blue-500 text-white rounded hover:shadow-lg">
+                Default
+                <span className="material-icons text-base align-middle ml-2">
+                  favorite
+                </span>
+              </button>
             </div>
           </div>
         </div>
