@@ -35,7 +35,9 @@ const Alerts = ({ color, text }) => {
           <b className="capitalize">{color}!</b> {text}
         </span>
         <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
-          <span>×</span>
+          <span className="px-2 rounded-full hover:bg-white hover:bg-opacity-20">
+            ×
+          </span>
         </button>
       </div>
     </>
