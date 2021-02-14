@@ -9,6 +9,7 @@ import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
 import Label from 'components/Labels/LabelsSquare';
 import LabelRound from 'components/Labels/LabelsRound';
+import Tabs from 'components/Tabs/TabsText';
 
 export default class Index extends Component {
   render() {
@@ -415,6 +416,13 @@ export default class Index extends Component {
                 </div>
               </div>
             </nav>
+          </div>
+        </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Tabs</h2>
+            <Tabs color="pink" />
           </div>
         </div>
       </div>

@@ -29,16 +29,14 @@ const Tabs = ({ color }) => {
       <div className="flex flex-wrap">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className="bg-pink-500 rounded-t flex justify-start flex-wrap mb-0 list-none py-3 px-4"
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 1
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
+                  (openTab === 1 && `bg-white bg-opacity-10`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -51,13 +49,11 @@ const Tabs = ({ color }) => {
                 Profile
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 2
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
+                  (openTab === 2 && `bg-white bg-opacity-10`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -70,13 +66,11 @@ const Tabs = ({ color }) => {
                 Settings
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 3
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
+                  (openTab === 3 && `bg-white bg-opacity-10`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -90,7 +84,7 @@ const Tabs = ({ color }) => {
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-b shadow">
             <div className="px-4 py-5 flex-auto">
               {/* Tab panes */}
               <div className="tab-content tab-space">
@@ -134,12 +128,14 @@ const Tabs = ({ color }) => {
   );
 };
 
-export default function TabsText() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <Tabs key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default Tabs;
+
+// export default function TabsText() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <Tabs key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }
