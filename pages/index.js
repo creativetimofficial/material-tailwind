@@ -7,6 +7,8 @@ import CircleImage from 'components/Images/CircleImage';
 import CircleRaised from 'components/Images/CircleRaised';
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
+import Label from 'components/Labels/LabelsSquare';
+import LabelRound from 'components/Labels/LabelsRound';
 
 export default class Index extends Component {
   render() {
@@ -161,6 +163,60 @@ export default class Index extends Component {
             <div className="flex gap-10">
               <InputsIcon color="gray" iconPosition="left" />
               <InputsIcon color="gray" type="outline" iconPosition="right" />
+            </div>
+          </div>
+        </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Labels Squared</h2>
+
+            <div className="flex gap-3 flex-wrap">
+              <Label color="blueGray" />
+              <Label color="gray" />
+              <Label color="brown" />
+              <Label color="deepOrange" />
+              <Label color="orange" />
+              <Label color="amber" />
+              <Label color="yellow" />
+              <Label color="lime" />
+              <Label color="lightGreen" />
+              <Label color="green" />
+              <Label color="teal" />
+              <Label color="cyan" />
+              <Label color="lightBlue" />
+              <Label color="blue" />
+              <Label color="indigo" />
+              <Label color="deepPurple" />
+              <Label color="purple" />
+              <Label color="pink" />
+              <Label color="red" />
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Labels Squared</h2>
+
+            <div className="flex gap-3 flex-wrap">
+              <LabelRound color="blueGray" />
+              <LabelRound color="gray" />
+              <LabelRound color="brown" />
+              <LabelRound color="deepOrange" />
+              <LabelRound color="orange" />
+              <LabelRound color="amber" />
+              <LabelRound color="yellow" />
+              <LabelRound color="lime" />
+              <LabelRound color="lightGreen" />
+              <LabelRound color="green" />
+              <LabelRound color="teal" />
+              <LabelRound color="cyan" />
+              <LabelRound color="lightBlue" />
+              <LabelRound color="blue" />
+              <LabelRound color="indigo" />
+              <LabelRound color="deepPurple" />
+              <LabelRound color="purple" />
+              <LabelRound color="pink" />
+              <LabelRound color="red" />
             </div>
           </div>
         </div>

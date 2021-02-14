@@ -21,16 +21,16 @@ const colors = [
   'pink',
   'red',
 ];
-const Label = ({ color }) => {
+const LabelRound = ({ color }) => {
   return (
     <>
       <span
         className={
           'text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-' +
           color +
-          '-600 bg-' +
+          '-700 bg-' +
           color +
-          '-200 uppercase last:mr-0 mr-1'
+          '-100 uppercase last:mr-0 mr-1'
         }
       >
         {color}
@@ -39,12 +39,14 @@ const Label = ({ color }) => {
   );
 };
 
-export default function LabelsRound() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <Label key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default LabelRound;
+
+// export default function LabelsRound() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <Label key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }

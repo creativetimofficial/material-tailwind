@@ -29,9 +29,9 @@ const Label = ({ color }) => {
         className={
           'text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-' +
           color +
-          '-600 bg-' +
+          '-700 bg-' +
           color +
-          '-200 uppercase last:mr-0 mr-1'
+          '-100 uppercase last:mr-0 mr-1'
         }
       >
         {color}
@@ -40,12 +40,14 @@ const Label = ({ color }) => {
   );
 };
 
-export default function LabelsSquare() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <Label key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default Label;
+
+// export default function LabelsSquare() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <Label key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }
