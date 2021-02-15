@@ -30,9 +30,9 @@ const InputsIcon = ({ color, type, size, iconPosition }) => {
         placeholder="Regular"
         className={`text-base ${
           type === 'outline'
-            ? 'border-2 rounded bg-transparent'
-            : `border-t-0 border-b-2 border-l-0 border-r-0 rounded-t bg-gray-200`
-        } border-gray-400 focus:ring-0 ${size} focus:border-${color}-600`}
+            ? 'border-1 rounded bg-transparent'
+            : `border-t-0 border-b-1 border-l-0 border-r-0 rounded-t bg-gray-200`
+        } border-gray-400 focus:ring-0 ${size} focus:border-b-2 focus:border-${color}-600`}
       />
     </div>
   );

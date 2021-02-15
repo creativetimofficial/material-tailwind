@@ -269,6 +269,9 @@ module.exports = {
         },
       },
     },
+    variants: {
+      borderWidth: ['responsive', 'focus', 'hover'],
+    },
   },
 
   plugins: [require('@tailwindcss/forms')],
