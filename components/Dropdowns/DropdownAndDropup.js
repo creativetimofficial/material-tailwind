@@ -62,7 +62,7 @@ const DropdownAndDropup = ({ color }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 capitalize w-full ' +
+                'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 capitalize w-full shadow hover:shadow-xl ' +
                 bgColor
               }
               type="button"
@@ -73,43 +73,33 @@ const DropdownAndDropup = ({ color }) => {
                   : openDropdownPopover();
               }}
             >
-              {color === 'default' ? 'White Dropdown' : color + ' Dropdown'}
+              Dropdown
             </button>
             <div
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? 'block ' : 'hidden ') +
-                (color === 'default' ? 'bg-white ' : bgColor + ' ') +
-                'text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1'
+                'bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1'
               }
               style={{ minWidth: '12rem' }}
             >
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Action
               </a>
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Another action
               </a>
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Something else here
@@ -117,10 +107,7 @@ const DropdownAndDropup = ({ color }) => {
               <div className="h-0 my-2 border border-solid border-gray-200" />
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Seprated link
@@ -128,56 +115,43 @@ const DropdownAndDropup = ({ color }) => {
             </div>
           </div>
         </div>
-        <div className="w-full sm:w-6/12 md:w-2/12">
+        <div className="w-full sm:w-6/12 md:w-2/12 ml-10">
           <div className="relative inline-flex align-middle w-full">
             <button
-              className={
-                'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 capitalize w-full ' +
-                bgColor
-              }
+              className={`text-${color}-500 font-normal px-6 py-2 bg-transparent border border-solid border-${color}-500 rounded-full outline-none focus:outline-none mr-1 mb-1 capitalize w-full hover:bg-${color}-50`}
               type="button"
               ref={btnDropupRef}
               onClick={() => {
                 dropupPopoverShow ? closeDropupPopover() : openDropupPopover();
               }}
             >
-              {color === 'default' ? 'White Dropup' : color + ' Dropup'}
+              Dropup
             </button>
             <div
               ref={popoverDropupRef}
               className={
                 (dropupPopoverShow ? 'block ' : 'hidden ') +
-                (color === 'default' ? 'bg-white ' : bgColor + ' ') +
-                'text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1'
+                'bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1'
               }
               style={{ minWidth: '12rem' }}
             >
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Action
               </a>
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Another action
               </a>
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Something else here
@@ -185,10 +159,7 @@ const DropdownAndDropup = ({ color }) => {
               <div className="h-0 my-2 border border-solid border-gray-200" />
               <a
                 href="#pablo"
-                className={
-                  'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                  (color === 'default' ? ' text-gray-800' : 'text-white')
-                }
+                className="text-sm py-2 px-4 mx-2 font-normal block whitespace-no-wrap rounded-sm text-gray-800 hover:bg-purple-500 hover:text-white hover:shadow-lg"
                 onClick={(e) => e.preventDefault()}
               >
                 Seprated link
@@ -201,12 +172,14 @@ const DropdownAndDropup = ({ color }) => {
   );
 };
 
-export default function DropdownsAndDropups() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <DropdownAndDropup key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default DropdownAndDropup;
+
+// export default function DropdownsAndDropups() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <DropdownAndDropup key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }
