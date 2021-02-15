@@ -31,6 +31,14 @@ const Popover = ({ color }) => {
   const openLeftPopover = () => {
     new createPopper(btnLeftRef.current, popoverLeftRef.current, {
       placement: 'left',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+        },
+      ],
     });
     setLeftPopoverShow(true);
   };
@@ -44,6 +52,14 @@ const Popover = ({ color }) => {
   const openTopPopover = () => {
     new createPopper(btnTopRef.current, popoverTopRef.current, {
       placement: 'top',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+        },
+      ],
     });
     setTopPopoverShow(true);
   };
@@ -57,6 +73,14 @@ const Popover = ({ color }) => {
   const openRightPopover = () => {
     new createPopper(btnRightRef.current, popoverRightRef.current, {
       placement: 'right',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+        },
+      ],
     });
     setRightPopoverShow(true);
   };
@@ -70,6 +94,14 @@ const Popover = ({ color }) => {
   const openBottomPopover = () => {
     new createPopper(btnBottomRef.current, popoverBottomRef.current, {
       placement: 'bottom',
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+        },
+      ],
     });
     setBottomPopoverShow(true);
   };
@@ -83,9 +115,9 @@ const Popover = ({ color }) => {
           {/* Left */}
           <button
             className={
-              'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
+              'text-white font-normal py-3 px-6 text-sm rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
               color +
-              '-500 capitalize'
+              '-500 capitalize shadow hover:shadow-xl'
             }
             type="button"
             onClick={() => {
@@ -98,23 +130,15 @@ const Popover = ({ color }) => {
           <div
             className={
               (leftPopoverShow ? '' : 'hidden ') +
-              'bg-' +
-              color +
-              '-600 border-0 mr-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg'
+              'bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-lg'
             }
             ref={popoverLeftRef}
           >
             <div>
-              <div
-                className={
-                  'bg-' +
-                  color +
-                  '-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-gray-200 uppercase rounded-t-lg'
-                }
-              >
+              <div className="bg-white text-black p-4 mb-0 uppercase rounded">
                 {color} popover title
               </div>
-              <div className="text-white p-3">
+              <div className="text-gray-800 pb-4 px-4">
                 And here's some amazing content. It's very engaging. Right?
               </div>
             </div>
@@ -122,9 +146,9 @@ const Popover = ({ color }) => {
           {/* Top */}
           <button
             className={
-              'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
+              'text-white font-normal py-3 px-6 text-sm rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
               color +
-              '-500 capitalize'
+              '-500 capitalize shadow hover:shadow-xl'
             }
             type="button"
             onClick={() => {
@@ -137,23 +161,15 @@ const Popover = ({ color }) => {
           <div
             className={
               (topPopoverShow ? '' : 'hidden ') +
-              'bg-' +
-              color +
-              '-600 border-0 mb-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg'
+              'bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-lg'
             }
             ref={popoverTopRef}
           >
             <div>
-              <div
-                className={
-                  'bg-' +
-                  color +
-                  '-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-gray-200 uppercase rounded-t-lg'
-                }
-              >
+              <div className="bg-white text-black p-4 mb-0 uppercase rounded">
                 {color} popover title
               </div>
-              <div className="text-white p-3">
+              <div className="text-gray-800 pb-4 px-4">
                 And here's some amazing content. It's very engaging. Right?
               </div>
             </div>
@@ -161,9 +177,9 @@ const Popover = ({ color }) => {
           {/* Right */}
           <button
             className={
-              'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
+              'text-white font-normal py-3 px-6 text-sm rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
               color +
-              '-500 capitalize'
+              '-500 capitalize shadow hover:shadow-xl'
             }
             type="button"
             onClick={() => {
@@ -176,23 +192,15 @@ const Popover = ({ color }) => {
           <div
             className={
               (rightPopoverShow ? '' : 'hidden ') +
-              'bg-' +
-              color +
-              '-600 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg'
+              'bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-lg'
             }
             ref={popoverRightRef}
           >
             <div>
-              <div
-                className={
-                  'bg-' +
-                  color +
-                  '-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-gray-200 uppercase rounded-t-lg'
-                }
-              >
+              <div className="bg-white text-black p-4 mb-0 uppercase rounded">
                 {color} popover title
               </div>
-              <div className="text-white p-3">
+              <div className="text-gray-800 pb-4 px-4">
                 And here's some amazing content. It's very engaging. Right?
               </div>
             </div>
@@ -200,9 +208,9 @@ const Popover = ({ color }) => {
           {/* Bottom */}
           <button
             className={
-              'text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
+              'text-white font-normal py-3 px-6 text-sm rounded outline-none focus:outline-none mr-1 mb-1 bg-' +
               color +
-              '-500 capitalize'
+              '-500 capitalize shadow hover:shadow-xl'
             }
             type="button"
             onClick={() => {
@@ -215,23 +223,15 @@ const Popover = ({ color }) => {
           <div
             className={
               (bottomPopoverShow ? '' : 'hidden ') +
-              'bg-' +
-              color +
-              '-600 border-0 mt-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg'
+              'bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-lg'
             }
             ref={popoverBottomRef}
           >
             <div>
-              <div
-                className={
-                  'bg-' +
-                  color +
-                  '-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-gray-200 uppercase rounded-t-lg'
-                }
-              >
+              <div className="bg-white text-black p-4 mb-0 uppercase rounded">
                 {color} popover title
               </div>
-              <div className="text-white p-3">
+              <div className="text-gray-800 pb-4 px-4">
                 And here's some amazing content. It's very engaging. Right?
               </div>
             </div>
@@ -242,12 +242,14 @@ const Popover = ({ color }) => {
   );
 };
 
-export default function Popovers() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <Popover key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default Popover;
+
+// export default function Popovers() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <Popover key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }
