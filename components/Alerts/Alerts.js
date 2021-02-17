@@ -22,7 +22,7 @@ const colors = [
   'red',
 ];
 
-const Alerts = ({ children, color, text }) => {
+const Alerts = ({ children, color }) => {
   return (
     <>
       <div
