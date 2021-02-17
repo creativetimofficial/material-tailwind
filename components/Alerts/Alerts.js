@@ -22,22 +22,15 @@ const colors = [
   'red',
 ];
 
-const Alerts = ({ color, text }) => {
+const Alerts = ({ children, color, text }) => {
   return (
     <>
       <div
-        className={`text-white px-6 py-4 border-0 rounded relative mb-4 bg-${color}`}
+        className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 bg-${color}`}
       >
-        <span className="material-icons mr-4 align-middle text-2xl">
-          notifications
-        </span>
-        <span className="inline-block align-middle mr-8">
-          <b className="capitalize">{color}!</b> {text}
-        </span>
-        <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
-          <span className="px-2 rounded-full hover:bg-white hover:bg-opacity-20">
-            ×
-          </span>
+        {children}
+        <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-transparent text-2xl outline-none focus:outline-none">
+          <span className="material-icons leading-none">close</span>
         </button>
       </div>
     </>
