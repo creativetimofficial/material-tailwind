@@ -147,8 +147,13 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Types</h2>
 
             <div className="flex gap-10">
-              <Inputs color="purple" />
-              <Inputs color="purple" type="outline" />
+              <Inputs type="text" placeholder="Input Filled" color="pink" />
+              <Inputs
+                type="text"
+                placeholder="Input Outline"
+                color="pink"
+                outline
+              />
             </div>
           </div>
 
@@ -156,24 +161,72 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Sizes</h2>
 
             <div className="flex gap-10 mb-5">
-              <Inputs color="purple" size="sm" />
-              <Inputs color="purple" />
-              <Inputs color="purple" size="lg" />
+              <Inputs placeholder="Input Small" color="pink" size="sm" />
+              <Inputs placeholder="Input Regular" color="pink" />
+              <Inputs placeholder="Input Large" color="pink" size="lg" />
             </div>
 
             <div className="flex gap-10">
-              <Inputs color="purple" size="sm" type="outline" />
-              <Inputs color="purple" type="outline" />
-              <Inputs color="purple" size="lg" type="outline" />
+              <Inputs
+                placeholder="Input Small"
+                color="pink"
+                size="sm"
+                outline
+              />
+              <Inputs placeholder="Input Regular" color="pink" outline />
+              <Inputs
+                placeholder="Input Large"
+                color="pink"
+                size="lg"
+                outline
+              />
             </div>
           </div>
 
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Input With Icon</h2>
 
+            <div className="flex gap-10 mb-5">
+              <InputsIcon
+                color="purple"
+                size="sm"
+                placeholder="Input with icon"
+                iconPosition="left"
+              />
+              <InputsIcon
+                color="purple"
+                placeholder="Input with icon"
+                iconPosition="left"
+              />
+              <InputsIcon
+                color="purple"
+                size="lg"
+                placeholder="Input with icon"
+                iconPosition="left"
+              />
+            </div>
+
             <div className="flex gap-10">
-              <InputsIcon color="purple" iconPosition="left" />
-              <InputsIcon color="purple" type="outline" iconPosition="right" />
+              <InputsIcon
+                color="purple"
+                size="sm"
+                placeholder="Input with icon"
+                outline
+                iconPosition="right"
+              />
+              <InputsIcon
+                color="purple"
+                placeholder="Input with icon"
+                outline
+                iconPosition="right"
+              />
+              <InputsIcon
+                color="purple"
+                size="lg"
+                placeholder="Input with icon"
+                outline
+                iconPosition="right"
+              />
             </div>
           </div>
 
@@ -181,8 +234,17 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Errors</h2>
 
             <div className="flex gap-10">
-              <Inputs color="purple" error />
-              <Inputs color="purple" type="outline" error />
+              <Inputs
+                placeholder="Input Message"
+                color="pink"
+                error="This is an error"
+              />
+              <Inputs
+                placeholder="Input Message"
+                color="pink"
+                outline
+                error="This is an error"
+              />
             </div>
           </div>
         </div>

@@ -1,38 +1,112 @@
 import React from 'react';
 
-const InputsIcon = ({ color, type, size, iconPosition }) => {
+const InputsIcon = ({
+  type,
+  name,
+  id,
+  placeholder,
+  value,
+  color,
+  size = 'regular',
+  outline,
+  error,
+  iconPosition,
+}) => {
+  let inputStyleType,
+    errorMessageStyles,
+    iconSizeSyles,
+    classes = [];
+
+  const sharedClasses = [
+    'w-full',
+    'leading-normal',
+    'focus:outline-none',
+    'focus:ring-0',
+  ];
+
+  const inputSM = [
+    ...sharedClasses,
+    `${iconPosition === 'right' ? 'pl-2.5 pr-8' : 'pr-2.5 pl-8'}`,
+    'pt-1.5',
+    'pb-1',
+    'text-sm',
+  ];
+  const inputRegular = [
+    ...sharedClasses,
+    `${iconPosition === 'right' ? 'pl-3.5 pr-10' : 'pr-3.5 pl-10'}`,
+    'pt-2.5',
+    'pb-2',
+  ];
+  const inputLG = [
+    ...sharedClasses,
+    `${iconPosition === 'right' ? 'pl-4 pr-11' : 'pr-4 pl-11'}`,
+    'pt-3.5',
+    'pb-3',
+  ];
+
+  const inputFilled = [
+    'border',
+    'border-t-0',
+    'border-b-1',
+    'border-l-0',
+    'border-r-0',
+    'border-gray-500',
+    'rounded-t',
+    'bg-gray-200',
+    'focus:border-b-2',
+    `focus:border-${color}-500`,
+  ];
+
+  const inputOutline = [
+    'border',
+    'border-1',
+    'border-gray-500',
+    'rounded',
+    'bg-transparent',
+    `focus:border-${color}-500`,
+  ];
+
+  const inputError = [
+    `border-${error ? 'red-500' : 'gray-400'}`,
+    `focus:border-${error ? 'red-500' : `${color}-600`}`,
+  ];
+
   if (size === 'sm') {
-    size = `w-64 h-10 ${
-      iconPosition === 'right' ? 'pl-3 pr-10' : 'pl-10 pr-2'
-    } pt-3 pb-2.5`;
+    classes.push(...inputSM);
+    iconSizeSyles = 'text-lg';
   } else if (size === 'lg') {
-    size = `w-96 h-16 ${
-      iconPosition === 'right' ? 'pl-6 pr-12' : 'pl-12 pr-5'
-    } pt-6 pb-5`;
+    classes.push(...inputLG);
+    iconSizeSyles = 'text-3xl';
   } else {
-    size = `w-72 h-12 ${
-      iconPosition === 'right' ? 'pl-4 pr-11' : 'pl-11 pr-3'
-    } pt-4 pb-3.5`;
+    classes.push(...inputRegular);
+    iconSizeSyles = 'text-2xl';
   }
+
+  inputStyleType = outline
+    ? classes.push(...inputOutline)
+    : classes.push(...inputFilled);
+
+  error && classes.push(...inputError);
+
+  classes = classes.join(' ');
 
   return (
     <div className="relative flex items-center">
       <span
-        className={`material-icons text-2xl text-gray-600 absolute ${
-          iconPosition === 'right' ? 'right-3' : 'left-3'
-        }`}
+        className={`material-icons text-gray-600 absolute ${
+          iconPosition === 'right' ? 'right-2' : 'left-2'
+        } ${iconSizeSyles}`}
       >
         person
       </span>
 
       <input
-        type="text"
-        placeholder="Regular"
-        className={`text-base ${
-          type === 'outline'
-            ? 'border-1 rounded bg-transparent'
-            : `border-t-0 border-b-1 border-l-0 border-r-0 rounded-t bg-gray-200`
-        } border-gray-400 focus:ring-0 ${size} focus:border-b-2 focus:border-${color}-600`}
+        type={type ? type : 'text'}
+        id={id}
+        name={name}
+        placeholder={placeholder ? placeholder : 'Input'}
+        value={value}
+        className={classes}
       />
     </div>
   );

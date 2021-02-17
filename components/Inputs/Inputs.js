@@ -1,31 +1,86 @@
 import React from 'react';
 
-const Inputs = ({ color, type, size, error }) => {
+const Inputs = ({
+  type,
+  name,
+  id,
+  placeholder,
+  value,
+  color,
+  size = 'regular',
+  outline,
+  error,
+}) => {
+  let inputStyleType,
+    errorMessageStyles,
+    classes = [];
+
+  const sharedClasses = [
+    'w-full',
+    'leading-normal',
+    'focus:outline-none',
+    'focus:ring-0',
+  ];
+
+  const inputSM = [...sharedClasses, 'px-2', 'pt-1.5', 'pb-1', 'text-sm'];
+  const inputRegular = [...sharedClasses, 'px-3', 'pt-2.5', 'pb-2'];
+  const inputLG = [...sharedClasses, 'px-4', 'pt-3.5', 'pb-3'];
+
+  const inputFilled = [
+    'border',
+    'border-t-0',
+    'border-b-1',
+    'border-l-0',
+    'border-r-0',
+    'border-gray-500',
+    'rounded-t',
+    'bg-gray-200',
+    'focus:border-b-2',
+    `focus:border-${color}-500`,
+  ];
+
+  const inputOutline = [
+    'border',
+    'border-1',
+    'border-gray-500',
+    'rounded',
+    'bg-transparent',
+    `focus:border-${color}-500`,
+  ];
+
+  const inputError = [
+    `border-${error ? 'red-500' : 'gray-400'}`,
+    `focus:border-${error ? 'red-500' : `${color}-600`}`,
+  ];
+
   if (size === 'sm') {
-    size = 'w-64 h-10 px-2.5 pt-3 pb-2.5';
+    classes.push(...inputSM);
   } else if (size === 'lg') {
-    size = 'w-96 h-16 px-4 pt-6 pb-5';
+    classes.push(...inputLG);
   } else {
-    size = 'w-72 h-12 px-3 pt-4 pb-3.5';
+    classes.push(...inputRegular);
   }
+
+  inputStyleType = outline
+    ? classes.push(...inputOutline)
+    : classes.push(...inputFilled);
+
+  error && classes.push(...inputError);
+
+  classes = classes.join(' ');
 
   return (
     <div>
       <input
-        type="text"
-        placeholder="Regular"
-        className={`flex flex-column text-base ${
-          type === 'outline'
-            ? 'border border-1 rounded bg-transparent'
-            : `border border-t-0 border-b-1 border-l-0 border-r-0 rounded-t bg-gray-200`
-        } border-${
-          error ? 'red-500' : 'gray-400'
-        } focus:ring-0 ${size} focus:border-b-2 focus:border-${
-          error ? 'red-500' : `${color}-600`
-        }`}
+        type={type ? type : 'text'}
+        id={id}
+        name={name}
+        placeholder={placeholder ? placeholder : 'Input'}
+        value={value}
+        className={classes}
       />
       {error && (
-        <span className="block mt-1 text-xs text-red-500">Error Massage</span>
+        <span className="block mt-1 text-xs text-red-500">{error}</span>
       )}
     </div>
   );
