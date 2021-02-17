@@ -22,58 +22,74 @@ const colors = [
   'bg-red-500',
 ];
 
-export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
+const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
   let classes = [];
 
   rounded = rounded ? 'rounded-full' : 'rounded';
 
   const sharedClasses = [
+    'flex',
+    'items-center',
+    'gap-1',
     'font-medium',
     'outline-none',
     'uppercase',
-    'tracking-wide',
-    'leading',
+    'tracking-wider',
+    'focus:outline-none',
     rounded,
   ];
 
   const buttonFilled = [
-    color === 'amber' ||
-    color === 'yellow' ||
-    color === 'lime' ||
-    color === 'lightGreen'
-      ? 'text-black'
-      : 'text-white',
-    `bg-${color}-500`,
-    'shadow',
-    'hover:shadow-lg',
-    `hover:bg-${color}-700`,
-    'focus:outline-none',
-    'focus:bg-teal-400',
+    'text-white',
+    'shadow-md',
+    'hover:shadow-xl',
     'focus:text-white',
+    `bg-${color}-500`,
+    `hover:bg-${color}-700`,
+    `focus:bg-${color}-400`,
   ];
 
   const buttonOutline = [
-    `text-${color}-500`,
     'bg-transparent',
     'border',
     'border-solid',
+    'shadow-none',
+    `text-${color}-500`,
     `border-${color}-400`,
     `hover:bg-${color}-50`,
     `hover:border-${color}-600`,
     `hover:text-${color}-700`,
-    `active:bg-${color}-50`,
-    'shadow-none',
+    `focus:bg-${color}-50`,
   ];
 
   const buttonLink = [
-    `text-${color}-500`,
     `background-transparent`,
+    `text-${color}-500`,
     `hover:bg-${color}-50`,
+    `focus:bg-${color}-50`,
   ];
 
-  const buttonSM = [...sharedClasses, 'py-1.5 px-2.5', 'text-xs'];
-  const buttonRegular = [...sharedClasses, 'py-2 px-4', 'text-sm'];
-  const buttonLG = [...sharedClasses, 'py-3 px-6', 'text-base'];
+  const buttonSM = [
+    ...sharedClasses,
+    'py-1.5 px-4',
+    'text-xs',
+    'leading-normal',
+    'rounded',
+  ];
+  const buttonRegular = [
+    ...sharedClasses,
+    'p-2.5 px-6',
+    'text-xs',
+    'leading-normal',
+    'rounded',
+  ];
+  const buttonLG = [
+    ...sharedClasses,
+    'py-3 px-7',
+    'text-sm',
+    'leading-relaxed',
+    'rounded-md',
+  ];
 
   if (size === 'sm') {
     classes.push(...buttonSM);
@@ -97,29 +113,31 @@ export const Buttons = ({ color, type, size = 'regular', rounded, text }) => {
     <>
       <div>
         <button className={classes} type="button">
-          Default
+          {children}
         </button>
       </div>
     </>
   );
 };
 
-export default function FilledLargeButtons(props) {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return (
-          <Buttons
-            key={key}
-            color={prop}
-            type="outline"
-            size="lg"
-            icon="favorite"
-            text="Large Button"
-            round
-          />
-        );
-      })}
-    </>
-  );
-}
+export default Buttons;
+
+// export default function FilledLargeButtons(props) {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return (
+//           <Buttons
+//             key={key}
+//             color={prop}
+//             type="outline"
+//             size="lg"
+//             icon="favorite"
+//             text="Large Button"
+//             round
+//           />
+//         );
+//       })}
+//     </>
+//   );
+// }
