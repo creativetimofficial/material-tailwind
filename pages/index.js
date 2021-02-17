@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import Buttons from 'components/Buttons/Buttons';
 import Alerts from 'components/Alerts/Alerts';
 
-import Image from 'components/Images/Image';
-import Raised from 'components/Images/Raised';
-import CircleImage from 'components/Images/CircleImage';
-import CircleRaised from 'components/Images/CircleRaised';
+import Images from 'components/Images/Images';
+
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
 import Label from 'components/Labels/LabelsSquare';
@@ -126,19 +124,19 @@ export default class Index extends Component {
 
             <div className="flex justify-between gap-5">
               <div className="w-48">
-                <Image />
+                <Images />
               </div>
 
               <div className="w-48">
-                <CircleImage />
+                <Images rounded />
               </div>
 
               <div className="w-48">
-                <Raised />
+                <Images raised />
               </div>
 
               <div className="w-48">
-                <CircleRaised />
+                <Images rounded raised />
               </div>
             </div>
           </div>
