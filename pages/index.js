@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import Buttons from 'components/Buttons/Buttons';
 import Alerts from 'components/Alerts/Alerts';
-
 import Images from 'components/Images/Images';
-
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
-import Label from 'components/Labels/LabelsSquare';
-import LabelRound from 'components/Labels/LabelsRound';
+import Labels from 'components/Labels/Labels';
 import Tabs from 'components/Tabs/TabsText';
 import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
 import RegularModal from 'components/Modals/RegularModal';
@@ -254,51 +251,25 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Labels Squared</h2>
 
             <div className="flex gap-3 flex-wrap">
-              <Label color="blueGray" />
-              <Label color="gray" />
-              <Label color="brown" />
-              <Label color="deepOrange" />
-              <Label color="orange" />
-              <Label color="amber" />
-              <Label color="yellow" />
-              <Label color="lime" />
-              <Label color="lightGreen" />
-              <Label color="green" />
-              <Label color="teal" />
-              <Label color="cyan" />
-              <Label color="lightBlue" />
-              <Label color="blue" />
-              <Label color="indigo" />
-              <Label color="deepPurple" />
-              <Label color="purple" />
-              <Label color="pink" />
-              <Label color="red" />
-            </div>
-          </div>
-
-          <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Labels Squared</h2>
-
-            <div className="flex gap-3 flex-wrap">
-              <LabelRound color="blueGray" />
-              <LabelRound color="gray" />
-              <LabelRound color="brown" />
-              <LabelRound color="deepOrange" />
-              <LabelRound color="orange" />
-              <LabelRound color="amber" />
-              <LabelRound color="yellow" />
-              <LabelRound color="lime" />
-              <LabelRound color="lightGreen" />
-              <LabelRound color="green" />
-              <LabelRound color="teal" />
-              <LabelRound color="cyan" />
-              <LabelRound color="lightBlue" />
-              <LabelRound color="blue" />
-              <LabelRound color="indigo" />
-              <LabelRound color="deepPurple" />
-              <LabelRound color="purple" />
-              <LabelRound color="pink" />
-              <LabelRound color="red" />
+              <Labels color="blue-gray">Label</Labels>
+              <Labels color="gray">Label</Labels>
+              <Labels color="brown">Label</Labels>
+              <Labels color="deep-orange">Label</Labels>
+              <Labels color="orange">Label</Labels>
+              <Labels color="amber">Label</Labels>
+              <Labels color="yellow">Label</Labels>
+              <Labels color="lime">Label</Labels>
+              <Labels color="light-green">Label</Labels>
+              <Labels color="green">Label</Labels>
+              <Labels color="teal">Label</Labels>
+              <Labels color="cyan">Label</Labels>
+              <Labels color="light-blue">Label</Labels>
+              <Labels color="blue">Label</Labels>
+              <Labels color="indigo">Label</Labels>
+              <Labels color="deep-purple">Label</Labels>
+              <Labels color="purple">Label</Labels>
+              <Labels color="pink">Label</Labels>
+              <Labels color="red">Label</Labels>
             </div>
           </div>
         </div>

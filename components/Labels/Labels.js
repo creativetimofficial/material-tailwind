@@ -21,20 +21,23 @@ const colors = [
   'pink',
   'red',
 ];
-const LabelRound = ({ color }) => {
+const LabelRound = ({ children, color }) => {
   return (
     <>
-      <span
-        className={
-          'text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-' +
-          color +
-          '-700 bg-' +
-          color +
-          '-100 uppercase last:mr-0 mr-1'
-        }
+      <div
+        className={`flex items-center justify-between py-1.5 pl-3 pr-1.5 rounded-full bg-${color}-100 last:mr-0 mr-1`}
       >
-        {color}
-      </span>
+        <span
+          className={`text-xs font-semibold uppercase text-${color}-700 uppercase mr-2`}
+        >
+          {children}
+        </span>
+        <span
+          className={`material-icons bg-${color}-900 text-white text-sm rounded-full p-0.5 cursor-pointer`}
+        >
+          close
+        </span>
+      </div>
     </>
   );
 };
