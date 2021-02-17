@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Icon = ({ family = 'material-icons', name, color, size }) => {
+const Icons = ({ family = 'material-icons', name, color, size }) => {
   let iconUI;
 
   if (family === 'material-icons') {
@@ -20,4 +20,4 @@ const Icon = ({ family = 'material-icons', name, color, size }) => {
   return iconUI;
 };
 
-export default Icon;
+export default Icons;
