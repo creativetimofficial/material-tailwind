@@ -8,13 +8,13 @@ const Icons = ({ family = 'material-icons', name, color, size }) => {
       <span
         className={`${family} text-${color} ${
           size ? `text-${size}` : 'text-base'
-        } mx-1`}
+        }`}
       >
         {name}
       </span>
     );
   } else if (family === 'font-awesome') {
-    iconUI = <i className={`fas ${name} ${color} ${size} mx-1`} />;
+    iconUI = <i className={`fas ${name} ${color} ${size}`} />;
   }
 
   return iconUI;
