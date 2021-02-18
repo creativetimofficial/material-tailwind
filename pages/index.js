@@ -13,8 +13,10 @@ import NavbarIconsLinks from 'components/Navbars/NavbarIconsLinks';
 import NavbarLinks from 'components/Navbars/NavbarLinks';
 import Tabs from 'components/Tabs/TabsText';
 import TabsIcons from 'components/Tabs/TabsIcons';
+import Dropdowns from 'components/Dropdowns/Dropdowns';
+import DropdownItems from 'components/Dropdowns/DropdownItems';
 
-import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
+// import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
 import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
@@ -310,8 +312,75 @@ export default class Index extends Component {
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Dropdowns</h2>
-            <DropdownAndDropup color="purple" />
+            <h2 className="mb-5 text-2xl font-bold">Dropdown Position</h2>
+
+            <div className="flex justify-start gap-4">
+              <Dropdowns color="pink">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink" position="top">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Dropdown Styles</h2>
+
+            <div className="flex justify-start gap-4">
+              <Dropdowns color="pink">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink" type="outline">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink" rounded>
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink" type="link">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+            </div>
+          </div>
+
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Dropdown Size</h2>
+
+            <div className="flex justify-start gap-4">
+              <Dropdowns color="pink" size="sm">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+
+              <Dropdowns color="pink" size="lg">
+                <DropdownItems>Action</DropdownItems>
+                <DropdownItems>Another Action</DropdownItems>
+                <DropdownItems>Something Else</DropdownItems>
+              </Dropdowns>
+            </div>
           </div>
         </div>
 
