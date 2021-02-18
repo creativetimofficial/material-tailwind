@@ -386,9 +386,12 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Modals</h2>
-            <SmallModal />
-            <RegularModal />
-            <LargeModal />
+
+            <div className="flex gap-4">
+              <SmallModal />
+              <RegularModal />
+              <LargeModal />
+            </div>
           </div>
         </div>
 

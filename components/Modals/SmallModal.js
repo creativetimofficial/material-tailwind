@@ -5,7 +5,7 @@ const SmallModal = () => {
   return (
     <>
       <button
-        className="text-white font-medium text-xs py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 tracking-wider shadow-md hover:shadow-xl"
+        className="text-white font-medium text-sm py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 tracking-wider shadow-md hover:shadow-xl"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -47,14 +47,14 @@ const SmallModal = () => {
                 {/*footer*/}
                 <div className="flex items-center justify-end">
                   <button
-                    className="bg-transparent text-red-500 font-medium text-xs py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50"
+                    className="bg-transparent text-red-500 font-medium text-sm tracking-wider py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
                     Close
                   </button>
                   <button
-                    className="text-white font-medium py-2.5 px-6 text-xs rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700"
+                    className="text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
