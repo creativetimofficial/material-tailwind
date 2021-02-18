@@ -22,11 +22,11 @@ const colors = [
   'red',
 ];
 
-const NavbarIcons = ({ color }) => {
+const Navbar = ({ color }) => {
   return (
     <>
       <nav
-        className={`flex flex-wrap items-center justify-between relative py-2.5 px-3 navbar-expand-lg bg-${color}-500 mb-3`}
+        className={`relative flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-${color}-500 mb-3`}
       >
         <div className="container mx-auto">
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -47,7 +47,7 @@ const NavbarIcons = ({ color }) => {
               </button>
             </div>
             <div
-              className="block lg:flex items-center"
+              className="block lg:flex flex-grow items-center"
               id="example-navbar-danger"
             >
               <ul className="flex flex-col lg:flex-row list-none mr-auto">
@@ -59,6 +59,7 @@ const NavbarIcons = ({ color }) => {
                     <span className="material-icons text-xl leading-lg text-white w-6">
                       languages
                     </span>
+                    Discover
                   </a>
                 </li>
 
@@ -70,6 +71,7 @@ const NavbarIcons = ({ color }) => {
                     <span className="material-icons text-xl leading-lg text-white w-6">
                       account_circle
                     </span>
+                    Profile
                   </a>
                 </li>
 
@@ -81,9 +83,20 @@ const NavbarIcons = ({ color }) => {
                     <span className="material-icons text-xl leading-lg text-white w-6">
                       settings
                     </span>
+                    Settings
                   </a>
                 </li>
               </ul>
+              <div className="relative w-60 flex items-center md:ml-auto bg-white bg-opacity-20 py-1 px-3 rounded">
+                <span className="material-icons text-white text-xl">
+                  search
+                </span>
+                <input
+                  type="text"
+                  className="bg-transparent border-none text-sm leading-snug text-white w-full font-normal placeholder-white placeholder-opacity-50 focus:ring-0"
+                  placeholder="Search"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -92,9 +105,9 @@ const NavbarIcons = ({ color }) => {
   );
 };
 
-export default NavbarIcons;
+export default Navbar;
 
-// export default function NavbarIcons() {
+// export default function NavbarSearch() {
 //   return (
 //     <>
 //       {colors.map((prop, key) => {
