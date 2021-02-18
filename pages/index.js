@@ -18,8 +18,8 @@ import DropdownItems from 'components/Dropdowns/DropdownItems';
 import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
-
 import Popovers from 'components/Popovers/Popovers';
+
 import Icons from 'components/Icons/Icons';
 
 export default class Index extends Component {
@@ -395,7 +395,13 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Popovers</h2>
-            <Popovers color="purple" />
+
+            <div className="flex gap-4">
+              <Popovers color="pink" position="left" />
+              <Popovers color="pink" position="top" />
+              <Popovers color="pink" position="right" />
+              <Popovers color="pink" position="bottom" />
+            </div>
           </div>
         </div>
       </div>
