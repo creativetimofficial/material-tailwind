@@ -22,23 +22,22 @@ const colors = [
   'red',
 ];
 
-const Tabs = ({ color }) => {
+const TabsIcons = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
       <div className="flex flex-wrap">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
-            role="tablist"
+            className={`bg-${color}-500 rounded-t flex justify-start mb-0 list-none"
+            role="tablist`}
           >
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 1
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 1 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -48,19 +47,18 @@ const Tabs = ({ color }) => {
                 href="#link1"
                 role="tablist"
               >
-                <span className="material-icons flex items-center justify-center align-middle">
-                  person
-                </span>{' '}
-                Profile
+                <span className="material-icons text-xl align-middle mr-2">
+                  language
+                </span>
+                Discover
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 2
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 2 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -70,19 +68,18 @@ const Tabs = ({ color }) => {
                 href="#link2"
                 role="tablist"
               >
-                <span className="material-icons flex items-center justify-center align-middle">
-                  settings
-                </span>{' '}
-                Settings
+                <span className="material-icons text-xl align-middle mr-2">
+                  account_circle
+                </span>
+                Profile
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 shadow-lg rounded block leading-normal ' +
-                  (openTab === 3
-                    ? 'text-white bg-' + color + '-600'
-                    : 'text-' + color + '-600 bg-white')
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 3 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -92,14 +89,14 @@ const Tabs = ({ color }) => {
                 href="#link3"
                 role="tablist"
               >
-                <span className="material-icons flex items-center justify-center align-middle">
-                  format_list_numbered
-                </span>{' '}
-                Options
+                <span className="material-icons text-xl align-middle mr-2">
+                  settings
+                </span>
+                Settings
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative flex flex-col min-w-0 break-words bg-white rounded-b shadow w-full mb-6">
             <div className="px-4 py-5 flex-auto">
               {/* Tab panes */}
               <div className="tab-content tab-space">
@@ -143,12 +140,14 @@ const Tabs = ({ color }) => {
   );
 };
 
-export default function TabsIcons() {
-  return (
-    <>
-      {colors.map((prop, key) => {
-        return <Tabs key={key} color={prop} />;
-      })}
-    </>
-  );
-}
+export default TabsIcons;
+
+// export default function TabsIcons() {
+//   return (
+//     <>
+//       {colors.map((prop, key) => {
+//         return <Tabs key={key} color={prop} />;
+//       })}
+//     </>
+//   );
+// }

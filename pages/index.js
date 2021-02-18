@@ -11,8 +11,9 @@ import Navbar from 'components/Navbars/Navbar';
 import NavbarIcons from 'components/Navbars/NavbarIcons';
 import NavbarIconsLinks from 'components/Navbars/NavbarIconsLinks';
 import NavbarLinks from 'components/Navbars/NavbarLinks';
-
 import Tabs from 'components/Tabs/TabsText';
+import TabsIcons from 'components/Tabs/TabsIcons';
+
 import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
 import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
@@ -303,6 +304,7 @@ export default class Index extends Component {
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Tabs</h2>
             <Tabs color="pink" />
+            <TabsIcons color="pink" />
           </div>
         </div>
 

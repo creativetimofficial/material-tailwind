@@ -29,14 +29,15 @@ const Tabs = ({ color }) => {
       <div className="flex flex-wrap">
         <div className="w-full">
           <ul
-            className="bg-pink-500 rounded-t flex justify-start flex-wrap mb-0 list-none py-3 px-4"
-            role="tablist"
+            className={`bg-${color}-500 rounded-t flex justify-start mb-0 list-none"
+            role="tablist`}
           >
-            <li className="text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
-                  (openTab === 1 && `bg-white bg-opacity-10`)
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 1 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -49,11 +50,12 @@ const Tabs = ({ color }) => {
                 Profile
               </a>
             </li>
-            <li className="text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
-                  (openTab === 2 && `bg-white bg-opacity-10`)
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 2 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -66,11 +68,12 @@ const Tabs = ({ color }) => {
                 Settings
               </a>
             </li>
-            <li className="text-center">
+            <li className="text-center w-full">
               <a
                 className={
-                  'text-sm font-medium px-5 py-3 rounded block leading-normal text-white ' +
-                  (openTab === 3 && `bg-white bg-opacity-10`)
+                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
+                  (openTab === 3 &&
+                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -84,7 +87,7 @@ const Tabs = ({ color }) => {
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-b shadow">
+          <div className="relative flex flex-col min-w-0 break-words bg-white rounded-b shadow w-full mb-6">
             <div className="px-4 py-5 flex-auto">
               {/* Tab panes */}
               <div className="tab-content tab-space">
