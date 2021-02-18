@@ -19,6 +19,7 @@ import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
 import Popovers from 'components/Popovers/Popovers';
+import Tooltips from 'components/Tooltips/Tooltips';
 
 import Icons from 'components/Icons/Icons';
 
@@ -404,6 +405,19 @@ export default class Index extends Component {
               <Popovers color="pink" position="top" />
               <Popovers color="pink" position="right" />
               <Popovers color="pink" position="bottom" />
+            </div>
+          </div>
+        </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Tooltips</h2>
+
+            <div className="flex gap-4">
+              <Tooltips color="pink" position="left" />
+              <Tooltips color="pink" position="top" />
+              <Tooltips color="pink" position="right" />
+              <Tooltips color="pink" position="bottom" />
             </div>
           </div>
         </div>
