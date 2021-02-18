@@ -5,6 +5,8 @@ import Images from 'components/Images/Images';
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
 import Labels from 'components/Labels/Labels';
+import Menu from 'components/Menus/MenuText.js';
+import MenuIcons from 'components/Menus/MenuIcons.js';
 
 import Tabs from 'components/Tabs/TabsText';
 import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
@@ -278,116 +280,8 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Menus</h2>
-
-            <nav className="relative flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-pink-500 rounded shadow-xl mb-10">
-              <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                  <a
-                    className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
-                    href="#pablo"
-                  >
-                    Menu
-                  </a>
-                  <button
-                    className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                    type="button"
-                  >
-                    <span className="block relative w-6 h-px rounded-sm bg-white"></span>
-                    <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                    <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                  </button>
-                </div>
-                <div
-                  className="flex lg:flex-grow items-center"
-                  id="example-navbar-info"
-                >
-                  <ul className="flex flex-col lg:flex-row list-none ml-auto">
-                    <li className="nav-item">
-                      <a
-                        className="p-4 flex items-center text-xs uppercase font-medium leading bg-white bg-opacity-10 text-white rounded"
-                        href="#pablo"
-                      >
-                        Discover
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="p-4 flex items-center text-xs uppercase font-bold leading text-white"
-                        href="#pablo"
-                      >
-                        Profile
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="p-4 flex items-center text-xs uppercase font-bold leading text-white"
-                        href="#pablo"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-
-            <nav className="relative flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand bg-purple-500 rounded shadow-xl">
-              <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                  <a
-                    className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
-                    href="#pablo"
-                  >
-                    Menu With Icons
-                  </a>
-                  <button
-                    className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                    type="button"
-                  >
-                    <span className="block relative w-6 h-px rounded-sm bg-white"></span>
-                    <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                    <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-                  </button>
-                </div>
-                <div
-                  className="flex lg:flex-grow items-center"
-                  id="example-navbar-success"
-                >
-                  <ul className="flex flex-col lg:flex-row list-none ml-auto">
-                    <li className="nav-item">
-                      <a
-                        className="py-3.5 px-4 flex items-center text-xs uppercase bg-white bg-opacity-10 text-white rounded"
-                        href="#pablo"
-                      >
-                        <span className="material-icons text-xl leading-lg text-white">
-                          language
-                        </span>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="py-3.5 px-4 flex items-center text-xs uppercase text-white"
-                        href="#pablo"
-                      >
-                        <span className="material-icons text-xl leading-lg text-white">
-                          person
-                        </span>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="py-3.5 px-4 flex items-center text-xs uppercase text-white"
-                        href="#pablo"
-                      >
-                        <span className="material-icons text-xl leading-lg text-white">
-                          settings
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
+            <Menu color="pink" />
+            <MenuIcons color="pink" />
           </div>
         </div>
 
