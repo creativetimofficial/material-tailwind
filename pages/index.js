@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Buttons from 'components/Buttons/Buttons';
-import Alerts from 'components/Alerts/Alerts';
+import Alerts from 'components/Alerts/ClosingAlerts';
 import Images from 'components/Images/Images';
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
 import Labels from 'components/Labels/Labels';
+
 import Tabs from 'components/Tabs/TabsText';
 import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
 import RegularModal from 'components/Modals/RegularModal';
