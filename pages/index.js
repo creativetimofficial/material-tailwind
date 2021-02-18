@@ -257,7 +257,7 @@ export default class Index extends Component {
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Labels Squared</h2>
+            <h2 className="mb-5 text-2xl font-bold">Labels</h2>
 
             <div className="flex gap-3 flex-wrap">
               <Labels color="blue-gray">Label</Labels>
@@ -293,7 +293,7 @@ export default class Index extends Component {
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Navbar</h2>
+            <h2 className="mb-5 text-2xl font-bold">Navbars</h2>
             <Navbar color="pink" />
             <NavbarIcons color="pink" />
             <NavbarIconsLinks color="pink" />
@@ -311,7 +311,7 @@ export default class Index extends Component {
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Dropdown Position</h2>
+            <h2 className="mb-5 text-2xl font-bold">Dropdown Positions</h2>
 
             <div className="flex justify-start gap-4">
               <Dropdowns color="pink">
@@ -359,7 +359,7 @@ export default class Index extends Component {
           </div>
 
           <div className="mb-10 mx-96">
-            <h2 className="mb-5 text-2xl font-bold">Dropdown Size</h2>
+            <h2 className="mb-5 text-2xl font-bold">Dropdown Sizes</h2>
 
             <div className="flex justify-start gap-4">
               <Dropdowns color="pink" size="sm">
