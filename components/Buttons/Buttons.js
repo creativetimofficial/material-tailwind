@@ -78,7 +78,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
   ];
   const buttonRegular = [
     ...sharedClasses,
-    'p-2.5 px-6',
+    'py-2.5 px-6',
     'text-xs',
     'leading-normal',
     'rounded',

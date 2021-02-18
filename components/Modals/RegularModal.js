@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function RegularModal() {
+const RegularModal = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
       <button
-        className="text-white font-normal px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-500 shadow hover:shadow-xl"
+        className="text-white font-medium text-xs py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 shadow-md tracking-wider hover:shadow-xl"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -19,18 +19,18 @@ export default function RegularModal() {
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               {/*content*/}
-              <div className="border-0 py-8 px-10 rounded shadow-xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
+              <div className="border-0 py-7 px-8 rounded shadow-xl relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-center justify-between mb-8">
                   <h5 className="text-2xl font-normal mt-0 mb-0 ">
                     Modal Title
                   </h5>
                   <button
-                    className="p-1 bg-transparent absolute top-2 right-5 text-black text-3xl leading-none outline-none focus:outline-none"
+                    className="p-1 bg-transparent absolute top-2 right-2 text-black text-3xl leading-none outline-none focus:outline-none"
                     onClick={() => setShowModal(false)}
                   >
-                    <span className="text-black text-2xl block outline-none focus:outline-none">
-                      ×
+                    <span className="material-icons text-black text-2xl block">
+                      close
                     </span>
                   </button>
                 </div>
@@ -47,14 +47,14 @@ export default function RegularModal() {
                 {/*footer*/}
                 <div className="flex items-center justify-end">
                   <button
-                    className="bg-transparent text-red-500 font-medium py-2 px-4 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50"
+                    className="bg-transparent text-red-500 font-medium text-xs py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
                     Close
                   </button>
                   <button
-                    className="text-white font-normal py-2 px-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-green-600"
+                    className="text-white font-medium py-2.5 px-6 text-xs rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
@@ -69,4 +69,6 @@ export default function RegularModal() {
       ) : null}
     </>
   );
-}
+};
+
+export default RegularModal;

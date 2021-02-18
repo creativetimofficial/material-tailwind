@@ -15,11 +15,10 @@ import Tabs from 'components/Tabs/TabsText';
 import TabsIcons from 'components/Tabs/TabsIcons';
 import Dropdowns from 'components/Dropdowns/Dropdowns';
 import DropdownItems from 'components/Dropdowns/DropdownItems';
-
-// import DropdownAndDropup from 'components/Dropdowns/DropdownAndDropup';
 import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
+
 import Popovers from 'components/Popovers/Popovers';
 import Icons from 'components/Icons/Icons';
 
