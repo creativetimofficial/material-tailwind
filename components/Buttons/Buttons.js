@@ -47,6 +47,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     `bg-${color}-500`,
     `hover:bg-${color}-700`,
     `focus:bg-${color}-400`,
+    `active:bg-${color}-900`,
   ];
 
   const buttonOutline = [
@@ -60,6 +61,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     `hover:border-${color}-600`,
     `hover:text-${color}-700`,
     `focus:bg-${color}-50`,
+    `active:bg-${color}-100`,
   ];
 
   const buttonLink = [
@@ -67,6 +69,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     `text-${color}-500`,
     `hover:bg-${color}-50`,
     `focus:bg-${color}-50`,
+    `active:bg-${color}-100`,
   ];
 
   const buttonSM = [

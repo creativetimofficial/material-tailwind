@@ -279,5 +279,11 @@ module.exports = {
     },
   },
 
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
+
   plugins: [require('@tailwindcss/forms')],
 };
