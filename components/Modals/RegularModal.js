@@ -5,7 +5,7 @@ const RegularModal = () => {
   return (
     <>
       <button
-        className="text-white font-medium text-sm py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 shadow-md tracking-wider hover:shadow-xl"
+        className="text-white font-medium text-sm py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 shadow-md tracking-wider hover:shadow-xl focus:bg-pink-400 active:bg-pink-800"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -47,14 +47,14 @@ const RegularModal = () => {
                 {/*footer*/}
                 <div className="flex items-center justify-end">
                   <button
-                    className="bg-transparent text-red-500 font-medium text-sm tracking-wider py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50"
+                    className="bg-transparent text-red-500 font-medium text-sm tracking-wider py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50 focus:bg-red-50 active:bg-red-100"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
                     Close
                   </button>
                   <button
-                    className="text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700"
+                    className="text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700 focus:bg-green-400 active:bg-green-800"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
