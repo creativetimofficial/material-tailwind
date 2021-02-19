@@ -36,6 +36,8 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     'uppercase',
     'tracking-wider',
     'focus:outline-none',
+    'transition-all',
+    'duration-300',
     rounded,
   ];
 
