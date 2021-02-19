@@ -47,7 +47,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     `bg-${color}-500`,
     `hover:bg-${color}-700`,
     `focus:bg-${color}-400`,
-    `active:bg-${color}-900`,
+    `active:bg-${color}-800`,
   ];
 
   const buttonOutline = [
