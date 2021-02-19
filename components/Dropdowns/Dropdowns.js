@@ -56,6 +56,7 @@ const Dropdowns = ({
     `bg-${color}-500`,
     `hover:bg-${color}-700`,
     `focus:bg-${color}-400`,
+    `active:bg-${color}-800`,
   ];
 
   const buttonOutline = [
@@ -69,6 +70,7 @@ const Dropdowns = ({
     `hover:border-${color}-600`,
     `hover:text-${color}-700`,
     `focus:bg-${color}-50`,
+    `active:bg-${color}-100`,
   ];
 
   const buttonLink = [
@@ -76,6 +78,7 @@ const Dropdowns = ({
     `text-${color}-500`,
     `hover:bg-${color}-50`,
     `focus:bg-${color}-50`,
+    `active:bg-${color}-100`,
   ];
 
   const buttonSM = [
