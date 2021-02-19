@@ -32,7 +32,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm tracking-wider flex w-14 h-8 mx-1 p-0 rounded items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm tracking-wider flex w-14 h-8 mx-1 p-0 rounded items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 First
               </a>
@@ -41,7 +41,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 <span className="material-icons">keyboard_arrow_left</span>
               </a>
@@ -59,7 +59,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 2
               </a>
@@ -68,7 +68,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 3
               </a>
@@ -77,7 +77,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 4
               </a>
@@ -86,7 +86,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 5
               </a>
@@ -95,7 +95,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 <span className="material-icons">keyboard_arrow_right</span>
               </a>
@@ -105,7 +105,7 @@ const PaginationFirstLast = ({ color }) => {
               <a
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
-                className={`text-sm tracking-wider flex w-14 h-8 mx-1 p-0 rounded items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20`}
+                className={`text-sm tracking-wider flex w-14 h-8 mx-1 p-0 rounded items-center justify-center leading-tight relative bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40`}
               >
                 Last
               </a>

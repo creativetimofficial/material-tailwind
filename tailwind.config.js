@@ -282,6 +282,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ['active'],
+      backgroundOpacity: ['active'],
     },
   },
 
