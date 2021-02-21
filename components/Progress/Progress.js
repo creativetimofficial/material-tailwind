@@ -32,7 +32,7 @@ const Progress = ({ color, value, percentage }) => {
       >
         <div
           style={{ width: `${value}%` }}
-          class={`flex justify-center items-center rounded-sm text-xs font-medium bg-${color}-500 text-white`}
+          className={`flex justify-center items-center rounded-sm text-xs font-medium bg-${color}-500 text-white`}
         >
           {percentage ? `${value}% Completed` : ''}
         </div>
