@@ -45,7 +45,7 @@ const LabelRound = ({ children, color }) => {
     <>
       {showLabel ? (
         <div
-          className={`flex items-center justify-between py-1.5 pl-3 pr-1.5 rounded-full bg-${color}-100 last:mr-0 mr-1 transition-all duration-300`}
+          className={`flex items-center justify-between py-1 pl-3 pr-1.5 rounded-full bg-${color}-100 last:mr-0 mr-1 transition-all duration-300`}
         >
           <span
             className={`text-xs font-semibold uppercase text-${color}-700 uppercase mr-2`}
@@ -53,7 +53,7 @@ const LabelRound = ({ children, color }) => {
             {children}
           </span>
           <span
-            className={`material-icons bg-${color}-900 text-white text-sm rounded-full p-0.5 cursor-pointer`}
+            className={`material-icons bg-${color}-900 text-white text-sm rounded-full w-5 cursor-pointer grid place-items-center`}
             onClick={closeLabel}
           >
             close
