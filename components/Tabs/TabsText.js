@@ -34,11 +34,9 @@ const Tabs = ({ color }) => {
           >
             <li className="text-center w-full">
               <a
-                className={
-                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
-                  (openTab === 1 &&
-                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
-                }
+                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                  openTab === 1 && 'bg-white bg-opacity-10'
+                }`}
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(1);
@@ -52,11 +50,9 @@ const Tabs = ({ color }) => {
             </li>
             <li className="text-center w-full">
               <a
-                className={
-                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
-                  (openTab === 2 &&
-                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
-                }
+                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                  openTab === 2 && 'bg-white bg-opacity-10'
+                }`}
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(2);
@@ -70,11 +66,9 @@ const Tabs = ({ color }) => {
             </li>
             <li className="text-center w-full">
               <a
-                className={
-                  'text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 ' +
-                  (openTab === 3 &&
-                    `bg-white bg-opacity-10 border border-t-0 border-l-0 border-r-0 border-b-2 border-white`)
-                }
+                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                  openTab === 3 && 'bg-white bg-opacity-10'
+                }`}
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(3);
