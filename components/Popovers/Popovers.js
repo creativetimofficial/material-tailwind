@@ -59,8 +59,10 @@ const Popover = ({ color, position }) => {
           Popover {position}
         </button>
         <div
-          className={`${
-            popoverShow ? '' : 'hidden'
+          className={`absolute transition-all duration-300 ${
+            popoverShow
+              ? 'opacity-1 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
           } bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-lg`}
           ref={popoverRef}
         >
