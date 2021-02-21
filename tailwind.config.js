@@ -4,7 +4,7 @@ const ambient = 0.12;
 const black = '0,0,0';
 
 module.exports = {
-  important: true,
+  // important: true,
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
