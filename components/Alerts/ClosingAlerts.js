@@ -32,11 +32,14 @@ const Alerts = ({ children, color }) => {
 
     parentClassName.classList.add('opacity-0');
 
-    Array.from(parentClassName.classList).map((el) => {
-      if (el.includes('duration')) delay = el.split('-')[1];
-    });
+    Array.from(parentClassName.classList).map((el) =>
+      el.includes('duration') ? (delay = el.split('-')[1]) : null,
+    );
 
-    setTimeout(() => setShowAlert(false), parseInt(delay, 10) + 100);
+    setTimeout(
+      () => setShowAlert(false),
+      delay ? parseInt(delay, 10) + 100 : 250,
+    );
   }
 
   return (
