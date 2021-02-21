@@ -283,6 +283,7 @@ module.exports = {
     extend: {
       backgroundColor: ['active'],
       backgroundOpacity: ['active'],
+      borderWidth: ['hover', 'focus'],
     },
   },
 

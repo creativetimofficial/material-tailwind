@@ -197,18 +197,18 @@ export default class Index extends Component {
 
             <div className="flex gap-10 mb-5">
               <InputsIcon
-                color="purple"
+                color="pink"
                 size="sm"
                 placeholder="Input with icon"
                 iconPosition="left"
               />
               <InputsIcon
-                color="purple"
+                color="pink"
                 placeholder="Input with icon"
                 iconPosition="left"
               />
               <InputsIcon
-                color="purple"
+                color="pink"
                 size="lg"
                 placeholder="Input with icon"
                 iconPosition="left"
@@ -217,20 +217,20 @@ export default class Index extends Component {
 
             <div className="flex gap-10">
               <InputsIcon
-                color="purple"
+                color="pink"
                 size="sm"
                 placeholder="Input with icon"
                 outline
                 iconPosition="right"
               />
               <InputsIcon
-                color="purple"
+                color="pink"
                 placeholder="Input with icon"
                 outline
                 iconPosition="right"
               />
               <InputsIcon
-                color="purple"
+                color="pink"
                 size="lg"
                 placeholder="Input with icon"
                 outline

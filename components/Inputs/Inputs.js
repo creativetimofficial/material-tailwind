@@ -45,6 +45,7 @@ const Inputs = ({
     'border-gray-500',
     'rounded',
     'bg-transparent',
+    'focus:border-2',
     `focus:border-${color}-500`,
   ];
 
