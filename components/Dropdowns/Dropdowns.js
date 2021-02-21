@@ -33,6 +33,7 @@ const Dropdowns = ({
 }) => {
   // Styles
   let classes = [];
+  let plcaementClasses;
 
   rounded = rounded ? 'rounded-full' : 'rounded';
 
@@ -45,6 +46,8 @@ const Dropdowns = ({
     'uppercase',
     'tracking-wider',
     'focus:outline-none',
+    'transition-all',
+    'duration-300',
     rounded,
   ];
 
@@ -119,6 +122,11 @@ const Dropdowns = ({
     classes.push(...buttonFilled);
   }
 
+  plcaementClasses =
+    position === 'top'
+      ? 'bottom-full origin-bottom-left'
+      : 'top-full origin-top-left -translate-y-1';
+
   classes = classes.join(' ');
 
   // Dropdown
@@ -156,10 +164,11 @@ const Dropdowns = ({
           </span>
         </button>
         <div
+          id="appp"
           ref={popoverDropdownRef}
-          className={`${
-            dropdownPopoverShow ? 'block' : 'hidden'
-          } bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1`}
+          className={`absolute transform ${plcaementClasses} ${
+            dropdownPopoverShow ? 'scale-100' : 'scale-0'
+          } bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1 transition-all duration-500`}
           style={{ minWidth: '10rem' }}
         >
           {children}
