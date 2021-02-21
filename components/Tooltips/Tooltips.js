@@ -57,8 +57,10 @@ const Tooltips = ({ color, position }) => {
           Tooltips {position}
         </button>
         <div
-          className={`${
-            tooltipsShow ? '' : 'hidden'
+          className={`absolute transition-all duration-300 ${
+            tooltipsShow
+              ? 'opacity-1 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
           } bg-gray-800 text-white border-0 block z-50 font-normal leading-normal text-sm py-1.5 px-5 rounded shadow-md`}
           ref={tooltipsRef}
         >
