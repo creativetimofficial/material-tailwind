@@ -6,7 +6,7 @@ const SmallModal = () => {
   return (
     <>
       <button
-        className="text-white font-medium text-sm py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 tracking-wider shadow-md hover:shadow-xl hover:bg-pink-700 focus:bg-pink-400 active:bg-pink-800"
+        className="text-white font-medium text-sm py-2.5 px-6 rounded leading-normal outline-none focus:outline-none mr-1 mb-1 bg-pink-500 tracking-wider shadow-md hover:shadow-xl hover:bg-pink-700 focus:bg-pink-400 active:bg-pink-800 transition-all duration-300"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -23,7 +23,9 @@ const SmallModal = () => {
       >
         <div
           className={`transform ${
-            showModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            showModal
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 -translate-y-10'
           } relative w-auto my-6 mx-auto max-w-sm transition-all duration-500`}
         >
           {/*content*/}
@@ -53,14 +55,14 @@ const SmallModal = () => {
             {/*footer*/}
             <div className="flex items-center justify-end">
               <button
-                className="bg-transparent text-red-500 font-medium text-sm tracking-wider py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50 focus:bg-red-50 active:bg-red-100"
+                className="bg-transparent text-red-500 font-medium text-sm tracking-wider py-2.5 px-6 rounded outline-none focus:outline-none mr-2 mb-1 hover:bg-red-50 focus:bg-red-50 active:bg-red-100 transition-all duration-300"
                 type="button"
                 onClick={() => setShowModal(false)}
               >
                 Close
               </button>
               <button
-                className="text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700 focus:bg-green-400 active:bg-green-800"
+                className="text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none mr-1 mb-1 bg-green-500 hover:bg-green-700 focus:bg-green-400 active:bg-green-800 transition-all duration-300"
                 type="button"
                 onClick={() => setShowModal(false)}
               >
