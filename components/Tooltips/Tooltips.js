@@ -48,7 +48,7 @@ const Tooltips = ({ color, position }) => {
     <>
       <div>
         <button
-          className={`text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none bg-${color}-500 capitalize shadow-md hover:shadow-xl hover:bg-${color}-700 focus:bg-${color}-400 active:bg-${color}-800`}
+          className={`text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none bg-${color}-500 capitalize shadow-md hover:shadow-xl hover:bg-${color}-700 focus:bg-${color}-400 active:bg-${color}-800 transition-all duration-300`}
           type="button"
           onMouseEnter={openTooltips}
           onMouseLeave={closeTooltips}
