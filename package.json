@@ -9,6 +9,7 @@
     "@popperjs/core": "^2.6.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@tippyjs/react": "^4.2.0",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
     "autoprefixer": "^9.8.6",
