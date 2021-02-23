@@ -1,4 +1,5 @@
 import React from 'react';
+import 'ripple/ripple';
 
 const colors = [
   'bg-blueGray-500',
@@ -38,6 +39,8 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
     'focus:outline-none',
     'transition-all',
     'duration-300',
+    'relative',
+    'overflow-hidden',
     rounded,
   ];
 
@@ -67,7 +70,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
   ];
 
   const buttonLink = [
-    `background-transparent`,
+    `bg-transparent`,
     `text-${color}-500`,
     `hover:bg-${color}-50`,
     `focus:bg-${color}-50`,
@@ -117,7 +120,7 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
   return (
     <>
       <div>
-        <button className={classes} type="button">
+        <button id="ripple" className={classes} type="button">
           {children}
         </button>
       </div>
