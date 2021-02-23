@@ -443,6 +443,35 @@ export default class Index extends Component {
             <Progress color="pink" value="50" percentage />
           </div>
         </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10 mx-96">
+            <h2 className="mb-5 text-2xl font-bold">Cards</h2>
+
+            <div class="max-w-sm rounded-lg overflow-hidden shadow-xl">
+              <img
+                class="w-full"
+                src="https://miro.medium.com/max/9792/0*xKTwlgXlZPC7Xv3r"
+                alt="Patterns"
+              />
+              <div class="px-7 py-5">
+                <div class="font-bold text-xl mb-2 text-gray-900">
+                  Card Title
+                </div>
+                <p class="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil.
+                </p>
+              </div>
+              <div class="px-7 mt-2 pb-6">
+                <Buttons color="pink" size="lg">
+                  Read More
+                </Buttons>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
