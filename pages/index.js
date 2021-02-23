@@ -302,7 +302,7 @@ export default class Index extends Component {
         </div>
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
-          <div className="mb-10 mx-96">
+          <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Navbars</h2>
             <Navbar color="pink" />
             <NavbarIcons color="pink" />

@@ -3,21 +3,20 @@ if (process.browser) {
     const button = event.currentTarget;
 
     const circle = document.createElement('span');
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
 
     circle.classList.add('ripple-effect');
 
-    circle.style.width = '100px';
-    circle.style.height = '100px';
+    circle.style.width = '2px';
+    circle.style.height = '2px';
     circle.style.position = 'absolute';
-    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${event.pageY - button.offsetTop}px`;
+    circle.style.left = `${event.pageX - button.offsetLeft}px`;
     circle.style.transform = 'scale(0)';
     circle.style.borderRadius = '50%';
+    circle.style.pointerEvents = 'none';
     circle.style.backgroundColor = button.classList.contains('bg-transparent')
       ? 'rgba(0, 0, 0, 0.2)'
-      : 'rgba(255, 255, 255, 0.5)';
+      : 'rgba(255, 255, 255, 0.3)';
 
     circle.animate(
       [
@@ -26,7 +25,7 @@ if (process.browser) {
           opacity: 1,
         },
         {
-          transform: 'scale(3)',
+          transform: `scale(${button.offsetWidth})`,
           opacity: 0,
         },
       ],
@@ -36,18 +35,16 @@ if (process.browser) {
       },
     );
 
-    const ripple = button.getElementsByClassName('ripple-effect')[0];
-
-    if (ripple) {
-      ripple.remove();
-    }
-
     button.appendChild(circle);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 500);
   }
 
   const buttons = document.querySelectorAll('#ripple');
 
   for (const button of buttons) {
-    button.addEventListener('click', createRipple);
+    button.addEventListener('mousedown', createRipple);
   }
 }
