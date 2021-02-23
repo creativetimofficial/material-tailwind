@@ -4,7 +4,7 @@ import Alerts from 'components/Alerts/ClosingAlerts';
 import Images from 'components/Images/Images';
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
-import Labels from 'components/Labels/Labels';
+import Labels from 'components/Labels/ClosingLabels';
 import Menu from 'components/Menus/MenuText.js';
 import MenuIcons from 'components/Menus/MenuIcons.js';
 import Navbar from 'components/Navbars/Navbar';

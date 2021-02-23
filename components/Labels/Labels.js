@@ -21,57 +21,20 @@ const colors = [
   'pink',
   'red',
 ];
-const LabelRound = ({ children, color }) => {
-  const [showLabel, setShowLabel] = React.useState(true);
-
-  function closeLabel(e) {
-    let delay;
-
-    const parentClassName = e.target.parentNode;
-
-    parentClassName.classList.add('opacity-0');
-
-    Array.from(parentClassName.classList).map((el) =>
-      el.includes('duration') ? (delay = el.split('-')[1]) : null,
-    );
-
-    setTimeout(
-      () => setShowLabel(false),
-      delay ? parseInt(delay, 10) + 100 : 250,
-    );
-  }
-
+const Label = ({ children, color }) => {
   return (
     <>
-      {showLabel ? (
-        <div
-          className={`flex items-center justify-between py-1 pl-3 pr-1.5 rounded-full bg-${color}-100 last:mr-0 mr-1 transition-all duration-300`}
+      <div
+        className={`flex items-center justify-between py-1 px-3 rounded-full bg-${color}-100 last:mr-0 mr-1 transition-all duration-300`}
+      >
+        <span
+          className={`text-xs font-semibold uppercase text-${color}-700 uppercase`}
         >
-          <span
-            className={`text-xs font-semibold uppercase text-${color}-700 uppercase mr-2`}
-          >
-            {children}
-          </span>
-          <span
-            className={`material-icons bg-${color}-900 text-white text-sm rounded-full w-5 cursor-pointer grid place-items-center`}
-            onClick={closeLabel}
-          >
-            close
-          </span>
-        </div>
-      ) : null}
+          {children}
+        </span>
+      </div>
     </>
   );
 };
 
-export default LabelRound;
-
-// export default function LabelsRound() {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return <Label key={key} color={prop} />;
-//       })}
-//     </>
-//   );
-// }
+export default Label;
