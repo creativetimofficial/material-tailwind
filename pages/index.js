@@ -133,19 +133,26 @@ export default class Index extends Component {
 
             <div className="flex justify-between gap-5">
               <div className="w-48">
-                <Images />
+                <Images src={require('assets/img/team-1-800x800.jpg')} />
               </div>
 
               <div className="w-48">
-                <Images rounded />
+                <Images
+                  src={require('assets/img/team-2-800x800.jpg')}
+                  rounded
+                />
               </div>
 
               <div className="w-48">
-                <Images raised />
+                <Images src={require('assets/img/team-3-800x800.jpg')} raised />
               </div>
 
               <div className="w-48">
-                <Images rounded raised />
+                <Images
+                  src={require('assets/img/team-4-470x470.png')}
+                  rounded
+                  raised
+                />
               </div>
             </div>
           </div>

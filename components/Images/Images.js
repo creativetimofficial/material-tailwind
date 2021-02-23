@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Images = ({ raised, rounded }) => {
+const Images = ({ src, raised, rounded }) => {
   return (
     <>
       <img
-        src={require('assets/img/team-1-800x800.jpg')}
+        src={src}
         alt="..."
         className={`rounded-${rounded ? 'full' : 'md'} ${
           raised ? 'shadow-xl' : ''
