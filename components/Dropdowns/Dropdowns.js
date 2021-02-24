@@ -1,5 +1,6 @@
 import React from 'react';
-import { createPopper } from '@popperjs/core';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/animations/shift-toward.css';
 
 const colors = [
   'blueGray',
@@ -25,15 +26,17 @@ const colors = [
 
 const Dropdowns = ({
   children,
+  buttonText,
   color,
   type,
   size = 'regular',
   position = 'bottom-start',
   rounded,
 }) => {
+  const [dropdownShow, setDropdownShow] = React.useState(false);
+
   // Styles
   let classes = [];
-  let plcaementClasses;
 
   rounded = rounded ? 'rounded-full' : 'rounded';
 
@@ -122,58 +125,40 @@ const Dropdowns = ({
     classes.push(...buttonFilled);
   }
 
-  plcaementClasses =
-    position === 'top'
-      ? 'bottom-full origin-bottom-left'
-      : 'top-full origin-top-left -translate-y-1';
-
   classes = classes.join(' ');
-
-  // Dropdown
-  const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
-  const btnDropdownRef = React.createRef();
-  const popoverDropdownRef = React.createRef();
-
-  const openDropdownPopover = () => {
-    new createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: position === 'top' ? 'top-end' : 'bottom-start',
-    });
-    setDropdownPopoverShow(true);
-  };
-
-  const closeDropdownPopover = () => {
-    setDropdownPopoverShow(false);
-  };
 
   return (
     <>
-      <div className="relative inline-flex items-center">
+      <Tippy
+        content={
+          <div
+            id="appp"
+            className={`bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1 transition-all duration-500`}
+            style={{ minWidth: '10rem' }}
+          >
+            {children}
+          </div>
+        }
+        animation="shift-toward"
+        trigger="click"
+        hideOnClick="toggle"
+        offset={[0, 0]}
+        placement={position}
+        interactive
+      >
         <button
           className={classes}
           type="button"
-          ref={btnDropdownRef}
-          onClick={() => {
-            dropdownPopoverShow
-              ? closeDropdownPopover()
-              : openDropdownPopover();
-          }}
+          onClick={() =>
+            dropdownShow ? setDropdownShow(false) : setDropdownShow(true)
+          }
         >
-          Dropdown
+          {buttonText}
           <span className="material-icons text-lg align-middle">
-            {dropdownPopoverShow ? 'arrow_drop_up' : 'arrow_drop_down'}
+            {dropdownShow ? 'arrow_drop_up' : 'arrow_drop_down'}
           </span>
         </button>
-        <div
-          id="appp"
-          ref={popoverDropdownRef}
-          className={`absolute transform ${plcaementClasses} ${
-            dropdownPopoverShow ? 'scale-100' : 'scale-0'
-          } bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1 transition-all duration-500`}
-          style={{ minWidth: '10rem' }}
-        >
-          {children}
-        </div>
-      </div>
+      </Tippy>
     </>
   );
 };

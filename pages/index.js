@@ -324,13 +324,13 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Positions</h2>
 
             <div className="flex justify-start gap-4">
-              <Dropdowns color="pink">
+              <Dropdowns color="pink" buttonText="Dropdown">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" position="top">
+              <Dropdowns color="pink" position="top" buttonText="Droup">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -342,25 +342,29 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Styles</h2>
 
             <div className="flex justify-start gap-4">
-              <Dropdowns color="pink">
+              <Dropdowns color="pink" buttonText="Dropdown Filled">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" type="outline">
+              <Dropdowns
+                color="pink"
+                type="outline"
+                buttonText="Dropdown Outline"
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" rounded>
+              <Dropdowns color="pink" rounded buttonText="Dropdown Rounded">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" type="link">
+              <Dropdowns color="pink" type="link" buttonText="Dropdown Link">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -372,19 +376,19 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Sizes</h2>
 
             <div className="flex justify-start gap-4">
-              <Dropdowns color="pink" size="sm">
+              <Dropdowns color="pink" size="sm" buttonText="Dropdown Small">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink">
+              <Dropdowns color="pink" buttonText="Dropdown Regular">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" size="lg">
+              <Dropdowns color="pink" size="lg" buttonText="Dropdown Large">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
