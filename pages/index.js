@@ -410,10 +410,69 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Popovers</h2>
 
             <div className="flex gap-4">
-              <Popovers color="pink" position="left" />
-              <Popovers color="pink" position="top" />
-              <Popovers color="pink" position="right" />
-              <Popovers color="pink" position="bottom" />
+              <Popovers color="pink" position="left" buttonText="Popover Left">
+                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
+                  <div>
+                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
+                      popover title
+                    </div>
+                    <div className="text-gray-800 px-4 pb-4">
+                      And here's some amazing content. It's very engaging.
+                      Right?
+                    </div>
+                  </div>
+                </div>
+              </Popovers>
+
+              <Popovers color="pink" position="top" buttonText="Popover Top">
+                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
+                  <div>
+                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
+                      popover title
+                    </div>
+                    <div className="text-gray-800 px-4 pb-4">
+                      And here's some amazing content. It's very engaging.
+                      Right?
+                    </div>
+                  </div>
+                </div>
+              </Popovers>
+
+              <Popovers
+                color="pink"
+                position="right"
+                buttonText="Popover Right"
+              >
+                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
+                  <div>
+                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
+                      popover title
+                    </div>
+                    <div className="text-gray-800 px-4 pb-4">
+                      And here's some amazing content. It's very engaging.
+                      Right?
+                    </div>
+                  </div>
+                </div>
+              </Popovers>
+
+              <Popovers
+                color="pink"
+                position="bottom"
+                buttonText="Popover Bottom"
+              >
+                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
+                  <div>
+                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
+                      popover title
+                    </div>
+                    <div className="text-gray-800 px-4 pb-4">
+                      And here's some amazing content. It's very engaging.
+                      Right?
+                    </div>
+                  </div>
+                </div>
+              </Popovers>
             </div>
           </div>
         </div>
@@ -423,10 +482,34 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Tooltips</h2>
 
             <div className="flex gap-4">
-              <Tooltips color="pink" position="left" />
-              <Tooltips color="pink" position="top" />
-              <Tooltips color="pink" position="right" />
-              <Tooltips color="pink" position="bottom" />
+              <Tooltips color="pink" position="left" buttonText="Tooltip Left">
+                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
+                  Tooltip Left
+                </div>
+              </Tooltips>
+              <Tooltips color="pink" position="top" buttonText="Tooltip Top">
+                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
+                  Tooltip Top
+                </div>
+              </Tooltips>
+              <Tooltips
+                color="pink"
+                position="right"
+                buttonText="Tooltip Right"
+              >
+                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
+                  Tooltip Right
+                </div>
+              </Tooltips>
+              <Tooltips
+                color="pink"
+                position="bottom"
+                buttonText="Tooltip Bottom"
+              >
+                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
+                  Tooltip Bottom
+                </div>
+              </Tooltips>
             </div>
           </div>
         </div>
@@ -455,23 +538,23 @@ export default class Index extends Component {
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Cards</h2>
 
-            <div class="max-w-sm rounded-lg overflow-hidden shadow-xl">
+            <div className="max-w-sm rounded-lg overflow-hidden shadow-xl">
               <img
-                class="w-full"
+                className="w-full"
                 src="https://miro.medium.com/max/9792/0*xKTwlgXlZPC7Xv3r"
                 alt="Patterns"
               />
-              <div class="px-7 py-5">
-                <div class="font-bold text-xl mb-2 text-gray-900">
+              <div className="px-7 py-5">
+                <div className="font-bold text-xl mb-2 text-gray-900">
                   Card Title
                 </div>
-                <p class="text-gray-700 text-base">
+                <p className="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Voluptatibus quia, nulla! Maiores et perferendis eaque,
                   exercitationem praesentium nihil.
                 </p>
               </div>
-              <div class="px-7 mt-2 pb-6">
+              <div className="px-7 mt-2 pb-6">
                 <Buttons color="pink" size="lg">
                   Read More
                 </Buttons>

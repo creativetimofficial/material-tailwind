@@ -1,6 +1,6 @@
 import React from 'react';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/shift-away.css';
 import 'ripple/ripple';
 
 const colors = [
@@ -25,16 +25,21 @@ const colors = [
   'red',
 ];
 
-const Tooltips = ({ color, position }) => {
+const Tooltips = ({ children, buttonText, color, position }) => {
   return (
     <>
-      <Tippy content={`Tooltips ${position}`} placement={position}>
+      <Tippy
+        content={children}
+        placement={position}
+        animation="shift-away"
+        interactive
+      >
         <button
           id="ripple"
           className={`relative overflow-hidden text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none bg-${color}-500 capitalize shadow-md hover:shadow-xl hover:bg-${color}-700 focus:bg-${color}-400 active:bg-${color}-800 transition-all duration-300`}
           type="button"
         >
-          Tooltips {position}
+          {buttonText}
         </button>
       </Tippy>
     </>
