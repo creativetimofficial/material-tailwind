@@ -375,7 +375,7 @@ export default class Index extends Component {
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Dropdown Sizes</h2>
 
-            <div className="flex justify-start gap-4">
+            <div className="flex justify-start items-end gap-4">
               <Dropdowns color="pink" size="sm" buttonText="Dropdown Small">
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/shift-toward.css';
+import 'ripple/ripple';
 
 const colors = [
   'blueGray',
@@ -51,6 +52,8 @@ const Dropdowns = ({
     'focus:outline-none',
     'transition-all',
     'duration-300',
+    'relative',
+    'overflow-hidden',
     rounded,
   ];
 
@@ -147,6 +150,7 @@ const Dropdowns = ({
         interactive
       >
         <button
+          id="ripple"
           className={classes}
           type="button"
           onClick={() =>
