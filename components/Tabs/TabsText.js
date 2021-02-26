@@ -1,4 +1,5 @@
 import React from 'react';
+import 'ripple/ripple';
 
 const colors = [
   'blueGray',
@@ -34,7 +35,7 @@ const Tabs = ({ color }) => {
           >
             <li className="text-center w-full">
               <a
-                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                className={`relative overflow-hidden text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
                   openTab === 1 && 'bg-white bg-opacity-10'
                 }`}
                 onClick={(e) => {
@@ -42,6 +43,7 @@ const Tabs = ({ color }) => {
                   setOpenTab(1);
                 }}
                 data-toggle="tab"
+                data-md-ripple={true}
                 href="#link1"
                 role="tablist"
               >
@@ -50,7 +52,7 @@ const Tabs = ({ color }) => {
             </li>
             <li className="text-center w-full">
               <a
-                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                className={`relative overflow-hidden text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
                   openTab === 2 && 'bg-white bg-opacity-10'
                 }`}
                 onClick={(e) => {
@@ -58,6 +60,7 @@ const Tabs = ({ color }) => {
                   setOpenTab(2);
                 }}
                 data-toggle="tab"
+                data-md-ripple={true}
                 href="#link2"
                 role="tablist"
               >
@@ -66,7 +69,7 @@ const Tabs = ({ color }) => {
             </li>
             <li className="text-center w-full">
               <a
-                className={`text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
+                className={`relative overflow-hidden text-sm font-medium py-4 px-6 block leading-normal text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ${
                   openTab === 3 && 'bg-white bg-opacity-10'
                 }`}
                 onClick={(e) => {
@@ -74,6 +77,7 @@ const Tabs = ({ color }) => {
                   setOpenTab(3);
                 }}
                 data-toggle="tab"
+                data-md-ripple={true}
                 href="#link3"
                 role="tablist"
               >
