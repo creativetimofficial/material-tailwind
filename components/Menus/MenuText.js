@@ -1,4 +1,5 @@
 import React from 'react';
+import 'ripple/ripple';
 
 const colors = [
   'blueGray',
@@ -26,10 +27,10 @@ const Menu = ({ color }) => {
   return (
     <>
       <nav
-        className={`relative flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-${color}-500 rounded shadow-xl mb-10`}
+        className={`flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-${color}-500 rounded shadow-xl mb-10`}
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <div className="w-full flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
               href="#pablo"
@@ -52,24 +53,27 @@ const Menu = ({ color }) => {
             <ul className="flex flex-col lg:flex-row list-none ml-auto">
               <li className="nav-item">
                 <a
-                  className="p-4 flex items-center text-xs uppercase font-medium leading bg-white bg-opacity-10 text-white rounded"
+                  className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-medium leading bg-white bg-opacity-10 text-white rounded"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   Discover
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className="p-4 flex items-center text-xs uppercase font-bold leading text-white"
+                  className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-bold leading text-white"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   Profile
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  className="p-4 flex items-center text-xs uppercase font-bold leading text-white"
+                  className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-bold leading text-white"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   Settings
                 </a>

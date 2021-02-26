@@ -1,4 +1,5 @@
 import React from 'react';
+import 'ripple/ripple';
 
 const colors = [
   'blueGray',
@@ -26,10 +27,10 @@ const MenuIcons = ({ color }) => {
   return (
     <>
       <nav
-        className={`relative flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand bg-${color}-500 rounded shadow-xl`}
+        className={`flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand bg-${color}-500 rounded shadow-xl`}
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <div className="w-full flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
               href="#pablo"
@@ -52,8 +53,9 @@ const MenuIcons = ({ color }) => {
             <ul className="flex flex-col lg:flex-row list-none ml-auto">
               <li className="nav-item">
                 <a
-                  className="py-3.5 px-4 flex items-center text-xs uppercase bg-white bg-opacity-10 text-white rounded"
+                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase bg-white bg-opacity-10 text-white rounded"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   <span className="material-icons text-xl leading-lg text-white">
                     language
@@ -62,8 +64,9 @@ const MenuIcons = ({ color }) => {
               </li>
               <li className="nav-item">
                 <a
-                  className="py-3.5 px-4 flex items-center text-xs uppercase text-white"
+                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   <span className="material-icons text-xl leading-lg text-white">
                     person
@@ -72,8 +75,9 @@ const MenuIcons = ({ color }) => {
               </li>
               <li className="nav-item">
                 <a
-                  className="py-3.5 px-4 flex items-center text-xs uppercase text-white"
+                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white"
                   href="#pablo"
+                  data-md-ripple={true}
                 >
                   <span className="material-icons text-xl leading-lg text-white">
                     settings
