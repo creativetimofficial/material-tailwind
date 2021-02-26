@@ -76,7 +76,7 @@ export default class Index extends Component {
           <div className="mb-10 mx-96">
             <h2 className="mb-5 text-2xl font-bold">Button Sizes</h2>
 
-            <div className="flex gap-5">
+            <div className="flex items-end gap-5">
               <Buttons color="pink" size="sm">
                 Button
               </Buttons>
