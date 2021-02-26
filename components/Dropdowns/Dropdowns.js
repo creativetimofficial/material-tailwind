@@ -83,7 +83,7 @@ const Dropdowns = ({
   ];
 
   const buttonLink = [
-    `background-transparent`,
+    `bg-transparent`,
     `text-${color}-500`,
     `hover:bg-${color}-50`,
     `focus:bg-${color}-50`,
@@ -150,12 +150,12 @@ const Dropdowns = ({
         interactive
       >
         <button
-          id="ripple"
           className={classes}
           type="button"
           onClick={() =>
             dropdownShow ? setDropdownShow(false) : setDropdownShow(true)
           }
+          data-md-ripple={true}
         >
           {buttonText}
           <span className="material-icons text-lg align-middle">
