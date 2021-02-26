@@ -10,59 +10,65 @@ const InputsIcon = ({
   size = 'regular',
   outline,
   error,
-  iconPosition,
 }) => {
-  let inputStyleType,
-    errorMessageStyles,
-    iconSizeSyles,
-    classes = [];
+  let iconSizeSyles,
+    inputClasses = [];
+
+  let container = ['w-full', 'relative'];
+
+  let label = [
+    'absolute',
+    'left-0',
+    `${outline ? '-top-1.5' : '-top-0.5'}`,
+    'w-full',
+    'h-full',
+    `${error ? 'border-red-500' : 'border-gray-500'}`,
+    'pointer-events-none',
+    `${!outline && 'border border-t-0 border-l-0 border-r-0 border-b-1'}`,
+    `${outline && 'flex'}`,
+    `${outline && size === 'sm' && 'text-sm'}`,
+    `${outline && 'leading-10'}`,
+    `${outline && 'transition-all'}`,
+    `${outline && 'duration-300'}`,
+  ];
 
   const sharedClasses = [
+    `md-input-${color}-500`,
     'w-full',
+    'h-full',
     'leading-normal',
+    'shadow-none',
+    'outline-none',
     'focus:outline-none',
     'focus:ring-0',
   ];
 
   const inputSM = [
     ...sharedClasses,
-    `${iconPosition === 'right' ? 'pl-2.5 pr-8' : 'pr-2.5 pl-8'}`,
-    'pt-1.5',
-    'pb-1',
+    `${outline ? 'pl-3 pr-7' : 'pl-0 pr-6'}`,
+    `${outline && 'pt-1.5 pb-0.5'}`,
     'text-sm',
   ];
   const inputRegular = [
     ...sharedClasses,
-    `${iconPosition === 'right' ? 'pl-3.5 pr-10' : 'pr-3.5 pl-10'}`,
-    'pt-2.5',
-    'pb-2',
+    `${outline ? 'pl-3 pr-8' : 'pl-0 pr-7'}`,
+    `${outline && 'pt-2.5 pb-1.5'}`,
   ];
   const inputLG = [
     ...sharedClasses,
-    `${iconPosition === 'right' ? 'pl-4 pr-11' : 'pr-4 pl-11'}`,
-    'pt-3.5',
-    'pb-3',
+    `${outline ? 'pl-3 pr-10' : 'pl-0 pr-9'}`,
+    `${outline && 'pt-3.5 pb-2.5'}`,
   ];
 
-  const inputFilled = [
-    'border',
-    'border-t-0',
-    'border-b-1',
-    'border-l-0',
-    'border-r-0',
-    'border-gray-500',
-    'rounded-t',
-    'bg-gray-200',
-    'focus:border-b-2',
-    `focus:border-${color}-500`,
-  ];
+  const inputFilled = ['md-input', 'bg-transparent', 'border', 'border-none'];
 
   const inputOutline = [
+    'md-input-outline',
+    'bg-transparent',
     'border',
     'border-1',
     'border-gray-500',
     'rounded',
-    'bg-transparent',
     'focus:border-2',
     `focus:border-${color}-500`,
   ];
@@ -73,30 +79,35 @@ const InputsIcon = ({
   ];
 
   if (size === 'sm') {
-    classes.push(...inputSM);
+    container.push('h-9');
+    inputClasses.push(...inputSM);
     iconSizeSyles = 'text-lg';
   } else if (size === 'lg') {
-    classes.push(...inputLG);
+    container.push('h-12');
+    inputClasses.push(...inputLG);
     iconSizeSyles = 'text-3xl';
   } else {
-    classes.push(...inputRegular);
+    container.push('h-11');
+    inputClasses.push(...inputRegular);
     iconSizeSyles = 'text-2xl';
   }
 
-  inputStyleType = outline
-    ? classes.push(...inputOutline)
-    : classes.push(...inputFilled);
+  outline
+    ? inputClasses.push(...inputOutline)
+    : inputClasses.push(...inputFilled);
 
-  error && classes.push(...inputError);
+  error && inputClasses.push(...inputError);
 
-  classes = classes.join(' ');
+  container = container.join(' ');
+  label = label.join(' ');
+  inputClasses = inputClasses.join(' ');
 
   return (
-    <div className="relative flex items-center">
+    <div className={container}>
       <span
-        className={`material-icons text-gray-600 absolute ${
-          iconPosition === 'right' ? 'right-2' : 'left-2'
-        } ${iconSizeSyles}`}
+        className={`material-icons text-gray-600 absolute top-1/2 ${
+          outline ? 'right-2' : 'right-0'
+        } transform -translate-y-1/2 ${iconSizeSyles}`}
       >
         person
       </span>
@@ -105,10 +116,26 @@ const InputsIcon = ({
         type={type ? type : 'text'}
         id={id}
         name={name}
-        placeholder={placeholder ? placeholder : 'Input'}
+        placeholder=" "
         value={value}
-        className={classes}
+        className={inputClasses}
       />
+      <label htmlFor={id} className={label}>
+        {outline ? (
+          placeholder
+        ) : (
+          <span
+            className={`${
+              size === 'sm' && 'text-sm'
+            } text-gray-500 absolute top-1/4 transition-all duration-300`}
+          >
+            {placeholder}
+          </span>
+        )}
+      </label>
+      {error && (
+        <span className="block mt-1 text-xs text-red-500">{error}</span>
+      )}
     </div>
   );
 };

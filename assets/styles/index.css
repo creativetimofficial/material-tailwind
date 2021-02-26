@@ -1,5 +1,1016 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
+
+@layer components {
+  /* Material Input */
+  .md-input + label:after {
+    content: '';
+    @apply absolute top-0.5 left-0 w-full h-full pointer-events-none transform scale-x-0 border border-t-0 border-l-0 border-r-0 border-b-2 transition-all duration-300;
+  }
+  .md-input:focus + label:after {
+    @apply scale-x-100;
+  }
+  .md-input:focus + label span,
+  .md-input:not(:placeholder-shown) + label span {
+    @apply -top-1/4 transform origin-top-left scale-75;
+  }
+
+  /* Material Input Outline */
+  .md-input-outline:focus,
+  .md-input-outline:not(:placeholder-shown) {
+    border-top: transparent !important;
+  }
+  .md-input-outline + label {
+    line-height: 3.625 !important;
+  }
+  .md-input-outline:focus + label,
+  .md-input-outline:not(:placeholder-shown) + label {
+    @apply text-xs leading-tight !important;
+  }
+  .md-input-outline + label:before,
+  .md-input-outline + label:after {
+    content: '';
+    @apply block box-border mt-1.5 border border-t-2 border-b-0
+      border-l-0 border-r-0 border-transparent w-2.5 h-2 pointer-events-none;
+  }
+
+  .md-input-outline:not(:placeholder-shown) + label:before,
+  .md-input-outline:not(:placeholder-shown) + label:after {
+    @apply border-t border-gray-500;
+  }
+
+  .md-input-outline:focus + label::before,
+  .md-input-outline:focus + label::after {
+    @apply border-t-2;
+  }
+
+  .md-input-outline + label:before {
+    @apply mr-1 rounded-tl;
+  }
+  .md-input-outline + label:after {
+    @apply flex-grow ml-1 rounded-tr;
+  }
+
+  /* Material Input Colors */
+  .md-input-white:focus + label,
+  .md-input-white:focus + label:before,
+  .md-input-white:focus + label:after {
+    @apply border-white text-white;
+  }
+  .md-input-black:focus + label,
+  .md-input-black:focus + label:before,
+  .md-input-black:focus + label:after {
+    @apply border-black text-black;
+  }
+  .md-input-blue-gray-50:focus + label,
+  .md-input-blue-gray-50:focus + label:before,
+  .md-input-blue-gray-50:focus + label:after {
+    @apply border-blue-gray-50 text-blue-gray-50;
+  }
+  .md-input-blue-gray-100:focus + label,
+  .md-input-blue-gray-100:focus + label:before,
+  .md-input-blue-gray-100:focus + label:after {
+    @apply border-blue-gray-100 text-blue-gray-100;
+  }
+  .md-input-blue-gray-200:focus + label,
+  .md-input-blue-gray-200:focus + label:before,
+  .md-input-blue-gray-200:focus + label:after {
+    @apply border-blue-gray-200 text-blue-gray-200;
+  }
+  .md-input-blue-gray-300:focus + label,
+  .md-input-blue-gray-300:focus + label:before,
+  .md-input-blue-gray-300:focus + label:after {
+    @apply border-blue-gray-300 text-blue-gray-300;
+  }
+  .md-input-blue-gray-400:focus + label,
+  .md-input-blue-gray-400:focus + label:before,
+  .md-input-blue-gray-400:focus + label:after {
+    @apply border-blue-gray-400 text-blue-gray-400;
+  }
+  .md-input-blue-gray-500:focus + label,
+  .md-input-blue-gray-500:focus + label:before,
+  .md-input-blue-gray-500:focus + label:after {
+    @apply border-blue-gray-500 text-blue-gray-500;
+  }
+  .md-input-blue-gray-600:focus + label,
+  .md-input-blue-gray-600:focus + label:before,
+  .md-input-blue-gray-600:focus + label:after {
+    @apply border-blue-gray-600 text-blue-gray-600;
+  }
+  .md-input-blue-gray-700:focus + label,
+  .md-input-blue-gray-700:focus + label:before,
+  .md-input-blue-gray-700:focus + label:after {
+    @apply border-blue-gray-700 text-blue-gray-700;
+  }
+  .md-input-blue-gray-800:focus + label,
+  .md-input-blue-gray-800:focus + label:before,
+  .md-input-blue-gray-800:focus + label:after {
+    @apply border-blue-gray-800 text-blue-gray-800;
+  }
+  .md-input-blue-gray-900:focus + label,
+  .md-input-blue-gray-900:focus + label:before,
+  .md-input-blue-gray-900:focus + label:after {
+    @apply border-blue-gray-900 text-blue-gray-900;
+  }
+  .md-input-gray-50:focus + label,
+  .md-input-gray-50:focus + label:before,
+  .md-input-gray-50:focus + label:after {
+    @apply border-gray-50 text-gray-50;
+  }
+  .md-input-gray-100:focus + label,
+  .md-input-gray-100:focus + label:before,
+  .md-input-gray-100:focus + label:after {
+    @apply border-gray-100 text-gray-100;
+  }
+  .md-input-gray-200:focus + label,
+  .md-input-gray-200:focus + label:before,
+  .md-input-gray-200:focus + label:after {
+    @apply border-gray-200 text-gray-200;
+  }
+  .md-input-gray-300:focus + label,
+  .md-input-gray-300:focus + label:before,
+  .md-input-gray-300:focus + label:after {
+    @apply border-gray-300 text-gray-300;
+  }
+  .md-input-gray-400:focus + label,
+  .md-input-gray-400:focus + label:before,
+  .md-input-gray-400:focus + label:after {
+    @apply border-gray-400 text-gray-400;
+  }
+  .md-input-gray-500:focus + label,
+  .md-input-gray-500:focus + label:before,
+  .md-input-gray-500:focus + label:after {
+    @apply border-gray-500 text-gray-500;
+  }
+  .md-input-gray-600:focus + label,
+  .md-input-gray-600:focus + label:before,
+  .md-input-gray-600:focus + label:after {
+    @apply border-gray-600 text-gray-600;
+  }
+  .md-input-gray-700:focus + label,
+  .md-input-gray-700:focus + label:before,
+  .md-input-gray-700:focus + label:after {
+    @apply border-gray-700 text-gray-700;
+  }
+  .md-input-gray-800:focus + label,
+  .md-input-gray-800:focus + label:before,
+  .md-input-gray-800:focus + label:after {
+    @apply border-gray-800 text-gray-800;
+  }
+  .md-input-gray-900:focus + label,
+  .md-input-gray-900:focus + label:before,
+  .md-input-gray-900:focus + label:after {
+    @apply border-gray-900 text-gray-900;
+  }
+  .md-input-orange-50:focus + label,
+  .md-input-orange-50:focus + label:before,
+  .md-input-orange-50:focus + label:after {
+    @apply border-orange-50 text-orange-50;
+  }
+  .md-input-orange-100:focus + label,
+  .md-input-orange-100:focus + label:before,
+  .md-input-orange-100:focus + label:after {
+    @apply border-orange-100 text-orange-100;
+  }
+  .md-input-orange-200:focus + label,
+  .md-input-orange-200:focus + label:before,
+  .md-input-orange-200:focus + label:after {
+    @apply border-orange-200 text-orange-200;
+  }
+  .md-input-orange-300:focus + label,
+  .md-input-orange-300:focus + label:before,
+  .md-input-orange-300:focus + label:after {
+    @apply border-orange-300 text-orange-300;
+  }
+  .md-input-orange-400:focus + label,
+  .md-input-orange-400:focus + label:before,
+  .md-input-orange-400:focus + label:after {
+    @apply border-orange-400 text-orange-400;
+  }
+  .md-input-orange-500:focus + label,
+  .md-input-orange-500:focus + label:before,
+  .md-input-orange-500:focus + label:after {
+    @apply border-orange-500 text-orange-500;
+  }
+  .md-input-orange-600:focus + label,
+  .md-input-orange-600:focus + label:before,
+  .md-input-orange-600:focus + label:after {
+    @apply border-orange-600 text-orange-600;
+  }
+  .md-input-orange-700:focus + label,
+  .md-input-orange-700:focus + label:before,
+  .md-input-orange-700:focus + label:after {
+    @apply border-orange-700 text-orange-700;
+  }
+  .md-input-orange-800:focus + label,
+  .md-input-orange-800:focus + label:before,
+  .md-input-orange-800:focus + label:after {
+    @apply border-orange-800 text-orange-800;
+  }
+  .md-input-orange-900:focus + label,
+  .md-input-orange-900:focus + label:before,
+  .md-input-orange-900:focus + label:after {
+    @apply border-orange-900 text-orange-900;
+  }
+  .md-input-deep-orange-50:focus + label,
+  .md-input-deep-orange-50:focus + label:before,
+  .md-input-deep-orange-50:focus + label:after {
+    @apply border-deep-orange-50 text-deep-orange-50;
+  }
+  .md-input-deep-orange-100:focus + label,
+  .md-input-deep-orange-100:focus + label:before,
+  .md-input-deep-orange-100:focus + label:after {
+    @apply border-deep-orange-100 text-deep-orange-100;
+  }
+  .md-input-deep-orange-200:focus + label,
+  .md-input-deep-orange-200:focus + label:before,
+  .md-input-deep-orange-200:focus + label:after {
+    @apply border-deep-orange-200 text-deep-orange-200;
+  }
+  .md-input-deep-orange-300:focus + label,
+  .md-input-deep-orange-300:focus + label:before,
+  .md-input-deep-orange-300:focus + label:after {
+    @apply border-deep-orange-300 text-deep-orange-300;
+  }
+  .md-input-deep-orange-400:focus + label,
+  .md-input-deep-orange-400:focus + label:before,
+  .md-input-deep-orange-400:focus + label:after {
+    @apply border-deep-orange-400 text-deep-orange-400;
+  }
+  .md-input-deep-orange-500:focus + label,
+  .md-input-deep-orange-500:focus + label:before,
+  .md-input-deep-orange-500:focus + label:after {
+    @apply border-deep-orange-500 text-deep-orange-500;
+  }
+  .md-input-deep-orange-600:focus + label,
+  .md-input-deep-orange-600:focus + label:before,
+  .md-input-deep-orange-600:focus + label:after {
+    @apply border-deep-orange-600 text-deep-orange-600;
+  }
+  .md-input-deep-orange-700:focus + label,
+  .md-input-deep-orange-700:focus + label:before,
+  .md-input-deep-orange-700:focus + label:after {
+    @apply border-deep-orange-700 text-deep-orange-700;
+  }
+  .md-input-deep-orange-800:focus + label,
+  .md-input-deep-orange-800:focus + label:before,
+  .md-input-deep-orange-800:focus + label:after {
+    @apply border-deep-orange-800 text-deep-orange-800;
+  }
+  .md-input-deep-orange-900:focus + label,
+  .md-input-deep-orange-900:focus + label:before,
+  .md-input-deep-orange-900:focus + label:after {
+    @apply border-deep-orange-900 text-deep-orange-900;
+  }
+  .md-input-brown-50:focus + label,
+  .md-input-brown-50:focus + label:before,
+  .md-input-brown-50:focus + label:after {
+    @apply border-brown-50 text-brown-50;
+  }
+  .md-input-brown-100:focus + label,
+  .md-input-brown-100:focus + label:before,
+  .md-input-brown-100:focus + label:after {
+    @apply border-brown-100 text-brown-100;
+  }
+  .md-input-brown-200:focus + label,
+  .md-input-brown-200:focus + label:before,
+  .md-input-brown-200:focus + label:after {
+    @apply border-brown-200 text-brown-200;
+  }
+  .md-input-brown-300:focus + label,
+  .md-input-brown-300:focus + label:before,
+  .md-input-brown-300:focus + label:after {
+    @apply border-brown-300 text-brown-300;
+  }
+  .md-input-brown-400:focus + label,
+  .md-input-brown-400:focus + label:before,
+  .md-input-brown-400:focus + label:after {
+    @apply border-brown-400 text-brown-400;
+  }
+  .md-input-brown-500:focus + label,
+  .md-input-brown-500:focus + label:before,
+  .md-input-brown-500:focus + label:after {
+    @apply border-brown-500 text-brown-500;
+  }
+  .md-input-brown-600:focus + label,
+  .md-input-brown-600:focus + label:before,
+  .md-input-brown-600:focus + label:after {
+    @apply border-brown-600 text-brown-600;
+  }
+  .md-input-brown-700:focus + label,
+  .md-input-brown-700:focus + label:before,
+  .md-input-brown-700:focus + label:after {
+    @apply border-brown-700 text-brown-700;
+  }
+  .md-input-brown-800:focus + label,
+  .md-input-brown-800:focus + label:before,
+  .md-input-brown-800:focus + label:after {
+    @apply border-brown-800 text-brown-800;
+  }
+  .md-input-brown-900:focus + label,
+  .md-input-brown-900:focus + label:before,
+  .md-input-brown-900:focus + label:after {
+    @apply border-brown-900 text-brown-900;
+  }
+  .md-input-amber-50:focus + label,
+  .md-input-amber-50:focus + label:before,
+  .md-input-amber-50:focus + label:after {
+    @apply border-amber-50 text-amber-50;
+  }
+  .md-input-amber-100:focus + label,
+  .md-input-amber-100:focus + label:before,
+  .md-input-amber-100:focus + label:after {
+    @apply border-amber-100 text-amber-100;
+  }
+  .md-input-amber-200:focus + label,
+  .md-input-amber-200:focus + label:before,
+  .md-input-amber-200:focus + label:after {
+    @apply border-amber-200 text-amber-200;
+  }
+  .md-input-amber-300:focus + label,
+  .md-input-amber-300:focus + label:before,
+  .md-input-amber-300:focus + label:after {
+    @apply border-amber-300 text-amber-300;
+  }
+  .md-input-amber-400:focus + label,
+  .md-input-amber-400:focus + label:before,
+  .md-input-amber-400:focus + label:after {
+    @apply border-amber-400 text-amber-400;
+  }
+  .md-input-amber-500:focus + label,
+  .md-input-amber-500:focus + label:before,
+  .md-input-amber-500:focus + label:after {
+    @apply border-amber-500 text-amber-500;
+  }
+  .md-input-amber-600:focus + label,
+  .md-input-amber-600:focus + label:before,
+  .md-input-amber-600:focus + label:after {
+    @apply border-amber-600 text-amber-600;
+  }
+  .md-input-amber-700:focus + label,
+  .md-input-amber-700:focus + label:before,
+  .md-input-amber-700:focus + label:after {
+    @apply border-amber-700 text-amber-700;
+  }
+  .md-input-amber-800:focus + label,
+  .md-input-amber-800:focus + label:before,
+  .md-input-amber-800:focus + label:after {
+    @apply border-amber-800 text-amber-800;
+  }
+  .md-input-amber-900:focus + label,
+  .md-input-amber-900:focus + label:before,
+  .md-input-amber-900:focus + label:after {
+    @apply border-amber-900 text-amber-900;
+  }
+  .md-input-yellow-50:focus + label,
+  .md-input-yellow-50:focus + label:before,
+  .md-input-yellow-50:focus + label:after {
+    @apply border-yellow-50 text-yellow-50;
+  }
+  .md-input-yellow-100:focus + label,
+  .md-input-yellow-100:focus + label:before,
+  .md-input-yellow-100:focus + label:after {
+    @apply border-yellow-100 text-yellow-100;
+  }
+  .md-input-yellow-200:focus + label,
+  .md-input-yellow-200:focus + label:before,
+  .md-input-yellow-200:focus + label:after {
+    @apply border-yellow-200 text-yellow-200;
+  }
+  .md-input-yellow-300:focus + label,
+  .md-input-yellow-300:focus + label:before,
+  .md-input-yellow-300:focus + label:after {
+    @apply border-yellow-300 text-yellow-300;
+  }
+  .md-input-yellow-400:focus + label,
+  .md-input-yellow-400:focus + label:before,
+  .md-input-yellow-400:focus + label:after {
+    @apply border-yellow-400 text-yellow-400;
+  }
+  .md-input-yellow-500:focus + label,
+  .md-input-yellow-500:focus + label:before,
+  .md-input-yellow-500:focus + label:after {
+    @apply border-yellow-500 text-yellow-500;
+  }
+  .md-input-yellow-600:focus + label,
+  .md-input-yellow-600:focus + label:before,
+  .md-input-yellow-600:focus + label:after {
+    @apply border-yellow-600 text-yellow-600;
+  }
+  .md-input-yellow-700:focus + label,
+  .md-input-yellow-700:focus + label:before,
+  .md-input-yellow-700:focus + label:after {
+    @apply border-yellow-700 text-yellow-700;
+  }
+  .md-input-yellow-800:focus + label,
+  .md-input-yellow-800:focus + label:before,
+  .md-input-yellow-800:focus + label:after {
+    @apply border-yellow-800 text-yellow-800;
+  }
+  .md-input-yellow-900:focus + label,
+  .md-input-yellow-900:focus + label:before,
+  .md-input-yellow-900:focus + label:after {
+    @apply border-yellow-900 text-yellow-900;
+  }
+  .md-input-lime-50:focus + label,
+  .md-input-lime-50:focus + label:before,
+  .md-input-lime-50:focus + label:after {
+    @apply border-lime-50 text-lime-50;
+  }
+  .md-input-lime-100:focus + label,
+  .md-input-lime-100:focus + label:before,
+  .md-input-lime-100:focus + label:after {
+    @apply border-lime-100 text-lime-100;
+  }
+  .md-input-lime-200:focus + label,
+  .md-input-lime-200:focus + label:before,
+  .md-input-lime-200:focus + label:after {
+    @apply border-lime-200 text-lime-200;
+  }
+  .md-input-lime-300:focus + label,
+  .md-input-lime-300:focus + label:before,
+  .md-input-lime-300:focus + label:after {
+    @apply border-lime-300 text-lime-300;
+  }
+  .md-input-lime-400:focus + label,
+  .md-input-lime-400:focus + label:before,
+  .md-input-lime-400:focus + label:after {
+    @apply border-lime-400 text-lime-400;
+  }
+  .md-input-lime-500:focus + label,
+  .md-input-lime-500:focus + label:before,
+  .md-input-lime-500:focus + label:after {
+    @apply border-lime-500 text-lime-500;
+  }
+  .md-input-lime-600:focus + label,
+  .md-input-lime-600:focus + label:before,
+  .md-input-lime-600:focus + label:after {
+    @apply border-lime-600 text-lime-600;
+  }
+  .md-input-lime-700:focus + label,
+  .md-input-lime-700:focus + label:before,
+  .md-input-lime-700:focus + label:after {
+    @apply border-lime-700 text-lime-700;
+  }
+  .md-input-lime-800:focus + label,
+  .md-input-lime-800:focus + label:before,
+  .md-input-lime-800:focus + label:after {
+    @apply border-lime-800 text-lime-800;
+  }
+  .md-input-lime-900:focus + label,
+  .md-input-lime-900:focus + label:before,
+  .md-input-lime-900:focus + label:after {
+    @apply border-lime-900 text-lime-900;
+  }
+  .md-input-light-green-50:focus + label,
+  .md-input-light-green-50:focus + label:before,
+  .md-input-light-green-50:focus + label:after {
+    @apply border-light-green-50 text-light-green-50;
+  }
+  .md-input-light-green-100:focus + label,
+  .md-input-light-green-100:focus + label:before,
+  .md-input-light-green-100:focus + label:after {
+    @apply border-light-green-100 text-light-green-100;
+  }
+  .md-input-light-green-200:focus + label,
+  .md-input-light-green-200:focus + label:before,
+  .md-input-light-green-200:focus + label:after {
+    @apply border-light-green-200 text-light-green-200;
+  }
+  .md-input-light-green-300:focus + label,
+  .md-input-light-green-300:focus + label:before,
+  .md-input-light-green-300:focus + label:after {
+    @apply border-light-green-300 text-light-green-300;
+  }
+  .md-input-light-green-400:focus + label,
+  .md-input-light-green-400:focus + label:before,
+  .md-input-light-green-400:focus + label:after {
+    @apply border-light-green-400 text-light-green-400;
+  }
+  .md-input-light-green-500:focus + label,
+  .md-input-light-green-500:focus + label:before,
+  .md-input-light-green-500:focus + label:after {
+    @apply border-light-green-500 text-light-green-500;
+  }
+  .md-input-light-green-600:focus + label,
+  .md-input-light-green-600:focus + label:before,
+  .md-input-light-green-600:focus + label:after {
+    @apply border-light-green-600 text-light-green-600;
+  }
+  .md-input-light-green-700:focus + label,
+  .md-input-light-green-700:focus + label:before,
+  .md-input-light-green-700:focus + label:after {
+    @apply border-light-green-700 text-light-green-700;
+  }
+  .md-input-light-green-800:focus + label,
+  .md-input-light-green-800:focus + label:before,
+  .md-input-light-green-800:focus + label:after {
+    @apply border-light-green-800 text-light-green-800;
+  }
+  .md-input-light-green-900:focus + label,
+  .md-input-light-green-900:focus + label:before,
+  .md-input-light-green-900:focus + label:after {
+    @apply border-light-green-900 text-light-green-900;
+  }
+  .md-input-green-50:focus + label,
+  .md-input-green-50:focus + label:before,
+  .md-input-green-50:focus + label:after {
+    @apply border-green-50 text-green-50;
+  }
+  .md-input-green-100:focus + label,
+  .md-input-green-100:focus + label:before,
+  .md-input-green-100:focus + label:after {
+    @apply border-green-100 text-green-100;
+  }
+  .md-input-green-200:focus + label,
+  .md-input-green-200:focus + label:before,
+  .md-input-green-200:focus + label:after {
+    @apply border-green-200 text-green-200;
+  }
+  .md-input-green-300:focus + label,
+  .md-input-green-300:focus + label:before,
+  .md-input-green-300:focus + label:after {
+    @apply border-green-300 text-green-300;
+  }
+  .md-input-green-400:focus + label,
+  .md-input-green-400:focus + label:before,
+  .md-input-green-400:focus + label:after {
+    @apply border-green-400 text-green-400;
+  }
+  .md-input-green-500:focus + label,
+  .md-input-green-500:focus + label:before,
+  .md-input-green-500:focus + label:after {
+    @apply border-green-500 text-green-500;
+  }
+  .md-input-green-600:focus + label,
+  .md-input-green-600:focus + label:before,
+  .md-input-green-600:focus + label:after {
+    @apply border-green-600 text-green-600;
+  }
+  .md-input-green-700:focus + label,
+  .md-input-green-700:focus + label:before,
+  .md-input-green-700:focus + label:after {
+    @apply border-green-700 text-green-700;
+  }
+  .md-input-green-800:focus + label,
+  .md-input-green-800:focus + label:before,
+  .md-input-green-800:focus + label:after {
+    @apply border-green-800 text-green-800;
+  }
+  .md-input-green-900:focus + label,
+  .md-input-green-900:focus + label:before,
+  .md-input-green-900:focus + label:after {
+    @apply border-green-900 text-green-900;
+  }
+  .md-input-teal-50:focus + label,
+  .md-input-teal-50:focus + label:before,
+  .md-input-teal-50:focus + label:after {
+    @apply border-teal-50 text-teal-50;
+  }
+  .md-input-teal-100:focus + label,
+  .md-input-teal-100:focus + label:before,
+  .md-input-teal-100:focus + label:after {
+    @apply border-teal-100 text-teal-100;
+  }
+  .md-input-teal-200:focus + label,
+  .md-input-teal-200:focus + label:before,
+  .md-input-teal-200:focus + label:after {
+    @apply border-teal-200 text-teal-200;
+  }
+  .md-input-teal-300:focus + label,
+  .md-input-teal-300:focus + label:before,
+  .md-input-teal-300:focus + label:after {
+    @apply border-teal-300 text-teal-300;
+  }
+  .md-input-teal-400:focus + label,
+  .md-input-teal-400:focus + label:before,
+  .md-input-teal-400:focus + label:after {
+    @apply border-teal-400 text-teal-400;
+  }
+  .md-input-teal-500:focus + label,
+  .md-input-teal-500:focus + label:before,
+  .md-input-teal-500:focus + label:after {
+    @apply border-teal-500 text-teal-500;
+  }
+  .md-input-teal-600:focus + label,
+  .md-input-teal-600:focus + label:before,
+  .md-input-teal-600:focus + label:after {
+    @apply border-teal-600 text-teal-600;
+  }
+  .md-input-teal-700:focus + label,
+  .md-input-teal-700:focus + label:before,
+  .md-input-teal-700:focus + label:after {
+    @apply border-teal-700 text-teal-700;
+  }
+  .md-input-teal-800:focus + label,
+  .md-input-teal-800:focus + label:before,
+  .md-input-teal-800:focus + label:after {
+    @apply border-teal-800 text-teal-800;
+  }
+  .md-input-teal-900:focus + label,
+  .md-input-teal-900:focus + label:before,
+  .md-input-teal-900:focus + label:after {
+    @apply border-teal-900 text-teal-900;
+  }
+  .md-input-cyan-50:focus + label,
+  .md-input-cyan-50:focus + label:before,
+  .md-input-cyan-50:focus + label:after {
+    @apply border-cyan-50 text-cyan-50;
+  }
+  .md-input-cyan-100:focus + label,
+  .md-input-cyan-100:focus + label:before,
+  .md-input-cyan-100:focus + label:after {
+    @apply border-cyan-100 text-cyan-100;
+  }
+  .md-input-cyan-200:focus + label,
+  .md-input-cyan-200:focus + label:before,
+  .md-input-cyan-200:focus + label:after {
+    @apply border-cyan-200 text-cyan-200;
+  }
+  .md-input-cyan-300:focus + label,
+  .md-input-cyan-300:focus + label:before,
+  .md-input-cyan-300:focus + label:after {
+    @apply border-cyan-300 text-cyan-300;
+  }
+  .md-input-cyan-400:focus + label,
+  .md-input-cyan-400:focus + label:before,
+  .md-input-cyan-400:focus + label:after {
+    @apply border-cyan-400 text-cyan-400;
+  }
+  .md-input-cyan-500:focus + label,
+  .md-input-cyan-500:focus + label:before,
+  .md-input-cyan-500:focus + label:after {
+    @apply border-cyan-500 text-cyan-500;
+  }
+  .md-input-cyan-600:focus + label,
+  .md-input-cyan-600:focus + label:before,
+  .md-input-cyan-600:focus + label:after {
+    @apply border-cyan-600 text-cyan-600;
+  }
+  .md-input-cyan-700:focus + label,
+  .md-input-cyan-700:focus + label:before,
+  .md-input-cyan-700:focus + label:after {
+    @apply border-cyan-700 text-cyan-700;
+  }
+  .md-input-cyan-800:focus + label,
+  .md-input-cyan-800:focus + label:before,
+  .md-input-cyan-800:focus + label:after {
+    @apply border-cyan-800 text-cyan-800;
+  }
+  .md-input-cyan-900:focus + label,
+  .md-input-cyan-900:focus + label:before,
+  .md-input-cyan-900:focus + label:after {
+    @apply border-cyan-900 text-cyan-900;
+  }
+  .md-input-light-blue-50:focus + label,
+  .md-input-light-blue-50:focus + label:before,
+  .md-input-light-blue-50:focus + label:after {
+    @apply border-light-blue-50 text-light-blue-50;
+  }
+  .md-input-light-blue-100:focus + label,
+  .md-input-light-blue-100:focus + label:before,
+  .md-input-light-blue-100:focus + label:after {
+    @apply border-light-blue-100 text-light-blue-100;
+  }
+  .md-input-light-blue-200:focus + label,
+  .md-input-light-blue-200:focus + label:before,
+  .md-input-light-blue-200:focus + label:after {
+    @apply border-light-blue-200 text-light-blue-200;
+  }
+  .md-input-light-blue-300:focus + label,
+  .md-input-light-blue-300:focus + label:before,
+  .md-input-light-blue-300:focus + label:after {
+    @apply border-light-blue-300 text-light-blue-300;
+  }
+  .md-input-light-blue-400:focus + label,
+  .md-input-light-blue-400:focus + label:before,
+  .md-input-light-blue-400:focus + label:after {
+    @apply border-light-blue-400 text-light-blue-400;
+  }
+  .md-input-light-blue-500:focus + label,
+  .md-input-light-blue-500:focus + label:before,
+  .md-input-light-blue-500:focus + label:after {
+    @apply border-light-blue-500 text-light-blue-500;
+  }
+  .md-input-light-blue-600:focus + label,
+  .md-input-light-blue-600:focus + label:before,
+  .md-input-light-blue-600:focus + label:after {
+    @apply border-light-blue-600 text-light-blue-600;
+  }
+  .md-input-light-blue-700:focus + label,
+  .md-input-light-blue-700:focus + label:before,
+  .md-input-light-blue-700:focus + label:after {
+    @apply border-light-blue-700 text-light-blue-700;
+  }
+  .md-input-light-blue-800:focus + label,
+  .md-input-light-blue-800:focus + label:before,
+  .md-input-light-blue-800:focus + label:after {
+    @apply border-light-blue-800 text-light-blue-800;
+  }
+  .md-input-light-blue-900:focus + label,
+  .md-input-light-blue-900:focus + label:before,
+  .md-input-light-blue-900:focus + label:after {
+    @apply border-light-blue-900 text-light-blue-900;
+  }
+  .md-input-blue-50:focus + label,
+  .md-input-blue-50:focus + label:before,
+  .md-input-blue-50:focus + label:after {
+    @apply border-blue-50 text-blue-50;
+  }
+  .md-input-blue-100:focus + label,
+  .md-input-blue-100:focus + label:before,
+  .md-input-blue-100:focus + label:after {
+    @apply border-blue-100 text-blue-100;
+  }
+  .md-input-blue-200:focus + label,
+  .md-input-blue-200:focus + label:before,
+  .md-input-blue-200:focus + label:after {
+    @apply border-blue-200 text-blue-200;
+  }
+  .md-input-blue-300:focus + label,
+  .md-input-blue-300:focus + label:before,
+  .md-input-blue-300:focus + label:after {
+    @apply border-blue-300 text-blue-300;
+  }
+  .md-input-blue-400:focus + label,
+  .md-input-blue-400:focus + label:before,
+  .md-input-blue-400:focus + label:after {
+    @apply border-blue-400 text-blue-400;
+  }
+  .md-input-blue-500:focus + label,
+  .md-input-blue-500:focus + label:before,
+  .md-input-blue-500:focus + label:after {
+    @apply border-blue-500 text-blue-500;
+  }
+  .md-input-blue-600:focus + label,
+  .md-input-blue-600:focus + label:before,
+  .md-input-blue-600:focus + label:after {
+    @apply border-blue-600 text-blue-600;
+  }
+  .md-input-blue-700:focus + label,
+  .md-input-blue-700:focus + label:before,
+  .md-input-blue-700:focus + label:after {
+    @apply border-blue-700 text-blue-700;
+  }
+  .md-input-blue-800:focus + label,
+  .md-input-blue-800:focus + label:before,
+  .md-input-blue-800:focus + label:after {
+    @apply border-blue-800 text-blue-800;
+  }
+  .md-input-blue-900:focus + label,
+  .md-input-blue-900:focus + label:before,
+  .md-input-blue-900:focus + label:after {
+    @apply border-blue-900 text-blue-900;
+  }
+  .md-input-indigo-50:focus + label,
+  .md-input-indigo-50:focus + label:before,
+  .md-input-indigo-50:focus + label:after {
+    @apply border-indigo-50 text-indigo-50;
+  }
+  .md-input-indigo-100:focus + label,
+  .md-input-indigo-100:focus + label:before,
+  .md-input-indigo-100:focus + label:after {
+    @apply border-indigo-100 text-indigo-100;
+  }
+  .md-input-indigo-200:focus + label,
+  .md-input-indigo-200:focus + label:before,
+  .md-input-indigo-200:focus + label:after {
+    @apply border-indigo-200 text-indigo-200;
+  }
+  .md-input-indigo-300:focus + label,
+  .md-input-indigo-300:focus + label:before,
+  .md-input-indigo-300:focus + label:after {
+    @apply border-indigo-300 text-indigo-300;
+  }
+  .md-input-indigo-400:focus + label,
+  .md-input-indigo-400:focus + label:before,
+  .md-input-indigo-400:focus + label:after {
+    @apply border-indigo-400 text-indigo-400;
+  }
+  .md-input-indigo-500:focus + label,
+  .md-input-indigo-500:focus + label:before,
+  .md-input-indigo-500:focus + label:after {
+    @apply border-indigo-500 text-indigo-500;
+  }
+  .md-input-indigo-600:focus + label,
+  .md-input-indigo-600:focus + label:before,
+  .md-input-indigo-600:focus + label:after {
+    @apply border-indigo-600 text-indigo-600;
+  }
+  .md-input-indigo-700:focus + label,
+  .md-input-indigo-700:focus + label:before,
+  .md-input-indigo-700:focus + label:after {
+    @apply border-indigo-700 text-indigo-700;
+  }
+  .md-input-indigo-800:focus + label,
+  .md-input-indigo-800:focus + label:before,
+  .md-input-indigo-800:focus + label:after {
+    @apply border-indigo-800 text-indigo-800;
+  }
+  .md-input-indigo-900:focus + label,
+  .md-input-indigo-900:focus + label:before,
+  .md-input-indigo-900:focus + label:after {
+    @apply border-indigo-900 text-indigo-900;
+  }
+  .md-input-purple-50:focus + label,
+  .md-input-purple-50:focus + label:before,
+  .md-input-purple-50:focus + label:after {
+    @apply border-purple-50 text-purple-50;
+  }
+  .md-input-purple-100:focus + label,
+  .md-input-purple-100:focus + label:before,
+  .md-input-purple-100:focus + label:after {
+    @apply border-purple-100 text-purple-100;
+  }
+  .md-input-purple-200:focus + label,
+  .md-input-purple-200:focus + label:before,
+  .md-input-purple-200:focus + label:after {
+    @apply border-purple-200 text-purple-200;
+  }
+  .md-input-purple-300:focus + label,
+  .md-input-purple-300:focus + label:before,
+  .md-input-purple-300:focus + label:after {
+    @apply border-purple-300 text-purple-300;
+  }
+  .md-input-purple-400:focus + label,
+  .md-input-purple-400:focus + label:before,
+  .md-input-purple-400:focus + label:after {
+    @apply border-purple-400 text-purple-400;
+  }
+  .md-input-purple-500:focus + label,
+  .md-input-purple-500:focus + label:before,
+  .md-input-purple-500:focus + label:after {
+    @apply border-purple-500 text-purple-500;
+  }
+  .md-input-purple-600:focus + label,
+  .md-input-purple-600:focus + label:before,
+  .md-input-purple-600:focus + label:after {
+    @apply border-purple-600 text-purple-600;
+  }
+  .md-input-purple-700:focus + label,
+  .md-input-purple-700:focus + label:before,
+  .md-input-purple-700:focus + label:after {
+    @apply border-purple-700 text-purple-700;
+  }
+  .md-input-purple-800:focus + label,
+  .md-input-purple-800:focus + label:before,
+  .md-input-purple-800:focus + label:after {
+    @apply border-purple-800 text-purple-800;
+  }
+  .md-input-purple-900:focus + label,
+  .md-input-purple-900:focus + label:before,
+  .md-input-purple-900:focus + label:after {
+    @apply border-purple-900 text-purple-900;
+  }
+  .md-input-deep-purple-50:focus + label,
+  .md-input-deep-purple-50:focus + label:before,
+  .md-input-deep-purple-50:focus + label:after {
+    @apply border-deep-purple-50 text-deep-purple-50;
+  }
+  .md-input-deep-purple-100:focus + label,
+  .md-input-deep-purple-100:focus + label:before,
+  .md-input-deep-purple-100:focus + label:after {
+    @apply border-deep-purple-100 text-deep-purple-100;
+  }
+  .md-input-deep-purple-200:focus + label,
+  .md-input-deep-purple-200:focus + label:before,
+  .md-input-deep-purple-200:focus + label:after {
+    @apply border-deep-purple-200 text-deep-purple-200;
+  }
+  .md-input-deep-purple-300:focus + label,
+  .md-input-deep-purple-300:focus + label:before,
+  .md-input-deep-purple-300:focus + label:after {
+    @apply border-deep-purple-300 text-deep-purple-300;
+  }
+  .md-input-deep-purple-400:focus + label,
+  .md-input-deep-purple-400:focus + label:before,
+  .md-input-deep-purple-400:focus + label:after {
+    @apply border-deep-purple-400 text-deep-purple-400;
+  }
+  .md-input-deep-purple-500:focus + label,
+  .md-input-deep-purple-500:focus + label:before,
+  .md-input-deep-purple-500:focus + label:after {
+    @apply border-deep-purple-500 text-deep-purple-500;
+  }
+  .md-input-deep-purple-600:focus + label,
+  .md-input-deep-purple-600:focus + label:before,
+  .md-input-deep-purple-600:focus + label:after {
+    @apply border-deep-purple-600 text-deep-purple-600;
+  }
+  .md-input-deep-purple-700:focus + label,
+  .md-input-deep-purple-700:focus + label:before,
+  .md-input-deep-purple-700:focus + label:after {
+    @apply border-deep-purple-700 text-deep-purple-700;
+  }
+  .md-input-deep-purple-800:focus + label,
+  .md-input-deep-purple-800:focus + label:before,
+  .md-input-deep-purple-800:focus + label:after {
+    @apply border-deep-purple-800 text-deep-purple-800;
+  }
+  .md-input-deep-purple-900:focus + label,
+  .md-input-deep-purple-900:focus + label:before,
+  .md-input-deep-purple-900:focus + label:after {
+    @apply border-deep-purple-900 text-deep-purple-900;
+  }
+  .md-input-pink-50:focus + label,
+  .md-input-pink-50:focus + label:before,
+  .md-input-pink-50:focus + label:after {
+    @apply border-pink-50 text-pink-50;
+  }
+  .md-input-pink-100:focus + label,
+  .md-input-pink-100:focus + label:before,
+  .md-input-pink-100:focus + label:after {
+    @apply border-pink-100 text-pink-100;
+  }
+  .md-input-pink-200:focus + label,
+  .md-input-pink-200:focus + label:before,
+  .md-input-pink-200:focus + label:after {
+    @apply border-pink-200 text-pink-200;
+  }
+  .md-input-pink-300:focus + label,
+  .md-input-pink-300:focus + label:before,
+  .md-input-pink-300:focus + label:after {
+    @apply border-pink-300 text-pink-300;
+  }
+  .md-input-pink-400:focus + label,
+  .md-input-pink-400:focus + label:before,
+  .md-input-pink-400:focus + label:after {
+    @apply border-pink-400 text-pink-400;
+  }
+  .md-input-pink-500:focus + label,
+  .md-input-pink-500:focus + label:before,
+  .md-input-pink-500:focus + label:after {
+    @apply border-pink-500 text-pink-500;
+  }
+  .md-input-pink-600:focus + label,
+  .md-input-pink-600:focus + label:before,
+  .md-input-pink-600:focus + label:after {
+    @apply border-pink-600 text-pink-600;
+  }
+  .md-input-pink-700:focus + label,
+  .md-input-pink-700:focus + label:before,
+  .md-input-pink-700:focus + label:after {
+    @apply border-pink-700 text-pink-700;
+  }
+  .md-input-pink-800:focus + label,
+  .md-input-pink-800:focus + label:before,
+  .md-input-pink-800:focus + label:after {
+    @apply border-pink-800 text-pink-800;
+  }
+  .md-input-pink-900:focus + label,
+  .md-input-pink-900:focus + label:before,
+  .md-input-pink-900:focus + label:after {
+    @apply border-pink-900 text-pink-900;
+  }
+  .md-input-red-50:focus + label,
+  .md-input-red-50:focus + label:before,
+  .md-input-red-50:focus + label:after {
+    @apply border-red-50 text-red-50;
+  }
+  .md-input-red-100:focus + label,
+  .md-input-red-100:focus + label:before,
+  .md-input-red-100:focus + label:after {
+    @apply border-red-100 text-red-100;
+  }
+  .md-input-red-200:focus + label,
+  .md-input-red-200:focus + label:before,
+  .md-input-red-200:focus + label:after {
+    @apply border-red-200 text-red-200;
+  }
+  .md-input-red-300:focus + label,
+  .md-input-red-300:focus + label:before,
+  .md-input-red-300:focus + label:after {
+    @apply border-red-300 text-red-300;
+  }
+  .md-input-red-400:focus + label,
+  .md-input-red-400:focus + label:before,
+  .md-input-red-400:focus + label:after {
+    @apply border-red-400 text-red-400;
+  }
+  .md-input-red-500:focus + label,
+  .md-input-red-500:focus + label:before,
+  .md-input-red-500:focus + label:after {
+    @apply border-red-500 text-red-500;
+  }
+  .md-input-red-600:focus + label,
+  .md-input-red-600:focus + label:before,
+  .md-input-red-600:focus + label:after {
+    @apply border-red-600 text-red-600;
+  }
+  .md-input-red-700:focus + label,
+  .md-input-red-700:focus + label:before,
+  .md-input-red-700:focus + label:after {
+    @apply border-red-700 text-red-700;
+  }
+  .md-input-red-800:focus + label,
+  .md-input-red-800:focus + label:before,
+  .md-input-red-800:focus + label:after {
+    @apply border-red-800 text-red-800;
+  }
+  .md-input-red-900:focus + label,
+  .md-input-red-900:focus + label:before,
+  .md-input-red-900:focus + label:after {
+    @apply border-red-900 text-red-900;
+  }
+}
