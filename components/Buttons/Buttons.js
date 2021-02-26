@@ -119,11 +119,9 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
 
   return (
     <>
-      <div>
-        <button id="ripple" className={classes} type="button">
-          {children}
-        </button>
-      </div>
+      <button className={classes} type="button" data-md-ripple={true}>
+        {children}
+      </button>
     </>
   );
 };
