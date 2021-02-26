@@ -1,6 +1,6 @@
 if (process.browser) {
   function createRipple(event) {
-    const button = event.currentTarget;
+    const element = event.currentTarget;
 
     const circle = document.createElement('span');
 
@@ -9,12 +9,12 @@ if (process.browser) {
     circle.style.width = '2px';
     circle.style.height = '2px';
     circle.style.position = 'absolute';
-    circle.style.top = `${event.pageY - button.offsetTop}px`;
-    circle.style.left = `${event.pageX - button.offsetLeft}px`;
+    circle.style.top = `${event.pageY - element.offsetTop}px`;
+    circle.style.left = `${event.pageX - element.offsetLeft}px`;
     circle.style.transform = 'scale(0)';
     circle.style.borderRadius = '50%';
     circle.style.pointerEvents = 'none';
-    circle.style.backgroundColor = button.classList.contains('bg-transparent')
+    circle.style.backgroundColor = element.classList.contains('bg-transparent')
       ? 'rgba(0, 0, 0, 0.2)'
       : 'rgba(255, 255, 255, 0.3)';
 
@@ -25,7 +25,7 @@ if (process.browser) {
           opacity: 1,
         },
         {
-          transform: `scale(${button.offsetWidth})`,
+          transform: `scale(${element.offsetWidth})`,
           opacity: 0,
         },
       ],
@@ -35,16 +35,16 @@ if (process.browser) {
       },
     );
 
-    button.appendChild(circle);
+    element.appendChild(circle);
 
     setTimeout(() => {
       circle.remove();
     }, 500);
   }
 
-  const buttons = document.querySelectorAll('#ripple');
+  const elements = document.querySelectorAll('[data-md-ripple="true"]');
 
-  for (const button of buttons) {
-    button.addEventListener('mousedown', createRipple);
+  for (const element of elements) {
+    element.addEventListener('mousedown', createRipple);
   }
 }
