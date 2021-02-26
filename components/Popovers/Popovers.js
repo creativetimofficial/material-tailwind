@@ -34,11 +34,12 @@ const Popover = ({ children, buttonText, color, position }) => {
         trigger="click"
         animation="shift-away"
         theme="light"
+        interactive
       >
         <button
-          id="ripple"
           className={`relative overflow-hidden text-white font-medium py-2.5 px-6 text-sm tracking-wider rounded outline-none focus:outline-none bg-${color}-500 capitalize shadow-md hover:shadow-xl hover:bg-${color}-700 focus:bg-${color}-400 active:bg-${color}-800 transition-all duration-300`}
           type="button"
+          data-md-ripple={true}
         >
           {buttonText}
         </button>
