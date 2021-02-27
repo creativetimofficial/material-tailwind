@@ -538,11 +538,12 @@ export default class Index extends Component {
           </div>
         </div>
 
-        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
-          <div className="mb-10 mx-96">
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10 flex gap-10 justify-evenly">
+          {/* Card */}
+          <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Cards</h2>
 
-            <div className="max-w-sm rounded-lg overflow-hidden shadow-xl">
+            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow">
               <img
                 className="w-full"
                 src="https://miro.medium.com/max/9792/0*xKTwlgXlZPC7Xv3r"
@@ -561,6 +562,120 @@ export default class Index extends Component {
               <div className="px-7 mt-2 pb-6">
                 <Buttons color="pink" size="lg">
                   Read More
+                </Buttons>
+              </div>
+            </div>
+          </div>
+
+          {/* Login Card */}
+          <div className="mb-10 w-96">
+            <h2 className="mb-5 text-2xl font-bold">Login Card</h2>
+            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow py-6 px-10">
+              <div className="px-4 pt-6">
+                <div className="text-center mb-3">
+                  <h6 className="text-gray-600 text-sm font-bold">
+                    Sign In With
+                  </h6>
+                </div>
+                <div className="flex justify-center gap-2 text-center">
+                  <Buttons color="light-blue" size="sm">
+                    Twitter
+                  </Buttons>
+                  <Buttons color="red" size="sm">
+                    Google
+                  </Buttons>
+                </div>
+              </div>
+
+              <hr className="my-6 border-b-1 border-gray-200" />
+
+              <div className="w-full pb-6">
+                <div className="text-gray-700 text-center font-bold mb-8">
+                  <h4 className="text-lg">Or Sign In</h4>
+                </div>
+                <form>
+                  <div className="w-full mb-6">
+                    <Inputs
+                      type="email"
+                      placeholder="Email Address"
+                      color="pink"
+                    />
+                  </div>
+                  <div className="w-full mb-6">
+                    <Inputs
+                      type="password"
+                      placeholder="Password"
+                      color="pink"
+                    />
+                  </div>
+                  <div>
+                    <label className="flex gap-2 items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="appearance-none rounded text-pink-500 outline-none hover:bg-transparent checked:bg-pink-500 focus:bg-transparent focus-within-bg-pink-500 focus:outline-none focus:ring-0 transition-all duration-300"
+                      />
+                      <span className="text-xs font-semibold text-gray-700 align-middle">
+                        Remember me
+                      </span>
+                    </label>
+                  </div>
+                  <div className="flex justify-center text-center mt-10">
+                    <Buttons color="pink" size="lg">
+                      Sign in
+                    </Buttons>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          {/* Pricing Card */}
+          <div className="mb-10 w-96">
+            <h2 className="mb-5 text-2xl font-bold">Pricing Card</h2>
+
+            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow py-4 px-10">
+              <div className="text-center p-4 mb-3">
+                <h6 className="text-gray-600 text-sm uppercase font-bold">
+                  premium
+                </h6>
+              </div>
+
+              <div className="flex justify-center text-center p-4">
+                <div className="relative font-serif max-w-max">
+                  <span className="absolute top-2 text-2xl text-gray-500">
+                    $
+                  </span>
+                  <h1 className="inline-block ml-4 text-pink-500 font-bold text-7xl">
+                    99
+                  </h1>
+                  <span className="text-lg text-gray-500">/mo</span>
+                </div>
+              </div>
+
+              <div className="text-center p-4">
+                <ul className="list-none divide-y divide-gray-300">
+                  <li className="py-4  capitalize text-gray-600">
+                    <span className="font-bold text-gray-900">500 </span>
+                    projects
+                  </li>
+                  <li className="py-4  capitalize text-gray-600">
+                    <span className="font-bold text-gray-900">50 </span>
+                    team members
+                  </li>
+                  <li className="py-4  capitalize text-gray-600">
+                    <span className="font-bold text-gray-900">125 </span>
+                    personal contacts
+                  </li>
+                  <li className="py-4  capitalize text-gray-600">
+                    <span className="font-bold text-gray-900">15.000 </span>
+                    messages
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex justify-center p-4">
+                <Buttons color="pink" size="lg" rounded>
+                  Get Started
                 </Buttons>
               </div>
             </div>
