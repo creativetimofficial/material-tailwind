@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const colors = {
   blueGray: 'bg-blue-gray-500',
@@ -33,6 +34,11 @@ const Alerts = ({ children, color, ...rest }) => {
       </div>
     </>
   );
+};
+
+Alerts.propTypes = {
+  color: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Alerts;
