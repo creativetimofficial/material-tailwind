@@ -29,7 +29,7 @@ const Menu = ({ color }) => {
   return (
     <>
       <nav
-        className={`flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-${color}-500 rounded shadow-xl mb-10`}
+        className={`flex flex-wrap items-center justify-between py-2.5 px-3 bg-${color}-500 rounded shadow-xl mb-10`}
       >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -53,7 +53,6 @@ const Menu = ({ color }) => {
             className={`lg:flex flex-grow items-center ${
               openMenu ? 'block' : 'hidden'
             }`}
-            id="example-navbar-info"
           >
             <ul className="flex flex-col lg:flex-row list-none ml-auto">
               <li className="nav-item">
