@@ -24,6 +24,8 @@ const colors = [
 ];
 
 const MenuIcons = ({ color }) => {
+  const [openMenu, setOpenMenu] = React.useState(false);
+
   return (
     <>
       <nav
@@ -40,6 +42,7 @@ const MenuIcons = ({ color }) => {
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
+              onClick={() => setOpenMenu(!openMenu)}
             >
               <span className="block relative w-6 h-px rounded-sm bg-white"></span>
               <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
@@ -47,7 +50,9 @@ const MenuIcons = ({ color }) => {
             </button>
           </div>
           <div
-            className="flex lg:flex-grow items-center"
+            className={`lg:flex flex-grow items-center ${
+              openMenu ? 'block' : 'hidden'
+            }`}
             id="example-navbar-success"
           >
             <ul className="flex flex-col lg:flex-row list-none ml-auto">
