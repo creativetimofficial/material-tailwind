@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const InputIcon = ({
   placeholder,
@@ -147,6 +148,16 @@ const InputIcon = ({
       )}
     </div>
   );
+};
+
+InputIcon.propTypes = {
+  placeholder: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string,
+  outline: PropTypes.bool,
+  error: PropTypes.string,
+  iconFamily: PropTypes.string,
+  iconName: PropTypes.string,
 };
 
 export default InputIcon;

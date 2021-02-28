@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({
   placeholder,
@@ -116,6 +117,14 @@ const Input = ({
       )}
     </div>
   );
+};
+
+Input.propTypes = {
+  placeholder: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string,
+  outline: PropTypes.bool,
+  error: PropTypes.string,
 };
 
 export default Input;
