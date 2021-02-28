@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
   let iconUI;
@@ -19,6 +20,13 @@ const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
   }
 
   return iconUI;
+};
+
+Icon.propTypes = {
+  family: PropTypes.string,
+  name: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string,
 };
 
 export default Icon;
