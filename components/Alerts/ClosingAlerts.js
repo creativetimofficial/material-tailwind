@@ -22,7 +22,7 @@ const colors = [
   'red',
 ];
 
-const Alerts = ({ children, color }) => {
+const Alerts = ({ children, color, ...rest }) => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   function closeAlert(e) {
@@ -46,6 +46,7 @@ const Alerts = ({ children, color }) => {
     <>
       {showAlert ? (
         <div
+          {...rest}
           className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 bg-${color} transition-all duration-300`}
         >
           {children}
@@ -62,19 +63,3 @@ const Alerts = ({ children, color }) => {
 };
 
 export default Alerts;
-
-// export default function ClosingAlerts() {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return (
-//           <Alert
-//             key={key}
-//             color={prop}
-//             text={`This is a ${prop} alert - check it out!`}
-//           />
-//         );
-//       })}
-//     </>
-//   );
-// }

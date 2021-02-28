@@ -22,10 +22,11 @@ const colors = [
   'red',
 ];
 
-const Alerts = ({ children, color }) => {
+const Alerts = ({ children, color, ...rest }) => {
   return (
     <>
       <div
+        {...rest}
         className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 bg-${color}`}
       >
         {children}
@@ -35,19 +36,3 @@ const Alerts = ({ children, color }) => {
 };
 
 export default Alerts;
-
-// export default function Alerts() {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return (
-//           <Alert
-//             key={key}
-//             color={prop}
-//             text={`This is a ${prop} alert - check it out!`}
-//           />
-//         );
-//       })}
-//     </>
-//   );
-// }
