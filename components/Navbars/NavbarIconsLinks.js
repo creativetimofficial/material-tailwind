@@ -24,6 +24,8 @@ const colors = [
 ];
 
 const NavbarIconsLinks = ({ color }) => {
+  const [openNavbar, setOpenNavbar] = React.useState(false);
+
   return (
     <>
       <nav
@@ -36,11 +38,12 @@ const NavbarIconsLinks = ({ color }) => {
                 className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
                 href="#pablo"
               >
-                Navbar
+                Navbar With Link & Icons
               </a>
               <button
-                className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                className="cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
+                onClick={() => setOpenNavbar(!openNavbar)}
               >
                 <span className="block relative w-6 h-px rounded-sm bg-white"></span>
                 <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
@@ -48,8 +51,10 @@ const NavbarIconsLinks = ({ color }) => {
               </button>
             </div>
             <div
-              className="block lg:flex flex-grow items-center"
-              id="example-navbar-danger"
+              className={`lg:flex flex-grow items-center ${
+                openNavbar ? 'block' : 'hidden'
+              }`}
+              id="example-navbar-success"
             >
               <ul className="flex flex-col lg:flex-row list-none mr-auto">
                 <li className="nav-item">
