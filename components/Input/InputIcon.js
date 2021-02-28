@@ -6,9 +6,12 @@ const InputIcon = ({
   size = 'regular',
   outline,
   error,
+  iconFamily = 'material-icons',
+  iconName,
   ...rest
 }) => {
   let iconSizeSyles,
+    iconUI,
     inputClasses = [];
 
   let container = ['w-full', 'relative'];
@@ -99,17 +102,33 @@ const InputIcon = ({
   label = label.join(' ');
   inputClasses = inputClasses.join(' ');
 
-  return (
-    <div className={container}>
+  if (iconFamily === 'material-icons') {
+    iconUI = (
       <span
-        className={`material-icons text-gray-600 absolute top-1/2 ${
+        {...rest}
+        className={`${iconFamily} text-gray-600 absolute top-1/2 ${
           outline ? 'right-2' : 'right-0'
         } transform -translate-y-1/2 ${iconSizeSyles}`}
       >
-        person
+        {iconName}
       </span>
+    );
+  } else if (iconFamily === 'font-awesome') {
+    iconUI = (
+      <i
+        {...rest}
+        className={`fas ${iconName} text-gray-600 absolute top-1/2 ${
+          outline ? 'right-2' : 'right-0'
+        } transform -translate-y-1/2 ${iconSizeSyles}`}
+      />
+    );
+  }
 
-      <input placeholder=" " className={inputClasses} />
+  return (
+    <div className={container}>
+      {iconUI}
+
+      <input {...rest} placeholder=" " className={inputClasses} />
       <label className={label}>
         {outline ? (
           placeholder

@@ -207,17 +207,20 @@ export default class Index extends Component {
                 size="sm"
                 placeholder="Input with icon"
                 iconPosition="right"
+                iconName="person"
               />
               <InputIcon
                 color="pink"
                 placeholder="Input with icon"
                 iconPosition="right"
+                iconName="person"
               />
               <InputIcon
                 color="pink"
                 size="lg"
                 placeholder="Input with icon"
                 iconPosition="right"
+                iconName="person"
               />
             </div>
 
@@ -228,12 +231,14 @@ export default class Index extends Component {
                 placeholder="Input with icon"
                 outline
                 iconPosition="left"
+                iconName="person"
               />
               <InputIcon
                 color="pink"
                 placeholder="Input with icon"
                 outline
                 iconPosition="left"
+                iconName="person"
               />
               <InputIcon
                 color="pink"
@@ -241,6 +246,7 @@ export default class Index extends Component {
                 placeholder="Input with icon"
                 outline
                 iconPosition="left"
+                iconName="person"
               />
             </div>
           </div>
