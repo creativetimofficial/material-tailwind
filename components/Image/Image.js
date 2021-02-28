@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Images = ({ src, raised, rounded }) => {
+const Image = ({ src, raised, rounded, ...rest }) => {
   return (
     <>
       <img
+        {...rest}
         src={src}
-        alt="..."
         className={`rounded-${rounded ? 'full' : 'md'} ${
           raised ? 'shadow-xl' : ''
         } max-w-full h-auto align-middle border-none`}
@@ -14,4 +14,4 @@ const Images = ({ src, raised, rounded }) => {
   );
 };
 
-export default Images;
+export default Image;

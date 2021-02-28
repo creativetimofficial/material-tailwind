@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Buttons from 'components/Buttons/Buttons';
 import Alerts from 'components/Alerts/ClosingAlerts';
-import Images from 'components/Images/Images';
+import Image from 'components/Image/Image';
 import Inputs from 'components/Inputs/Inputs';
 import InputsIcon from 'components/Inputs/InputsIcon';
 import Labels from 'components/Labels/ClosingLabels';
@@ -133,23 +133,32 @@ export default class Index extends Component {
 
             <div className="flex justify-between gap-5">
               <div className="w-48">
-                <Images src={require('assets/img/team-1-800x800.jpg')} />
+                <Image
+                  src={require('assets/img/team-1-800x800.jpg')}
+                  alt="Image"
+                />
               </div>
 
               <div className="w-48">
-                <Images
+                <Image
                   src={require('assets/img/team-2-800x800.jpg')}
+                  alt="Image Rounded"
                   rounded
                 />
               </div>
 
               <div className="w-48">
-                <Images src={require('assets/img/team-3-800x800.jpg')} raised />
+                <Image
+                  src={require('assets/img/team-3-800x800.jpg')}
+                  alt="Image Raised"
+                  raised
+                />
               </div>
 
               <div className="w-48">
-                <Images
+                <Image
                   src={require('assets/img/team-4-470x470.png')}
+                  alt="Image Raised Rounded"
                   rounded
                   raised
                 />
