@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const DropdownItems = ({ children, ...rest }) => {
   return (
@@ -9,6 +10,10 @@ const DropdownItems = ({ children, ...rest }) => {
       {children}
     </a>
   );
+};
+
+DropdownItems.propTypes = {
+  children: PropTypes.node,
 };
 
 export default DropdownItems;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/shift-toward.css';
 import 'ripple/ripple';
@@ -162,6 +163,16 @@ const Dropdowns = ({
       </Tippy>
     </>
   );
+};
+
+Dropdowns.propTypes = {
+  children: PropTypes.node,
+  buttonText: PropTypes.string,
+  color: PropTypes.string,
+  type: PropTypes.string,
+  size: PropTypes.string,
+  position: PropTypes.string,
+  rounded: PropTypes.bool,
 };
 
 export default Dropdowns;
