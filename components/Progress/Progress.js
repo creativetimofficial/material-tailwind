@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const colors = [
   'blueGray',
@@ -41,14 +42,10 @@ const Progress = ({ color, value, percentage }) => {
   );
 };
 
-export default Progress;
+Progress.propTypes = {
+  color: PropTypes.string,
+  value: PropTypes.string,
+  percentage: PropTypes.bool,
+};
 
-// export default function ProgressSimple() {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return <Progress key={key} color={prop} />;
-//       })}
-//     </>
-//   );
-// }
+export default Progress;
