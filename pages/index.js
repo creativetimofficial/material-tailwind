@@ -106,24 +106,24 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Alerts</h2>
-            <Alerts color="blue-gray-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="gray-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="brown-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="deep-orange-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="orange-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="amber-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="yellow-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="lime-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="light-green-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="green-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="cyan-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="light-blue-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="blue-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="indigo-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="deep-purple-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="purple-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="pink-500">MD Tailwind Alerts</Alerts>
-            <Alerts color="red-500">MD Tailwind Alerts</Alerts>
+            <Alerts color="blueGray">MD Tailwind Alerts</Alerts>
+            <Alerts color="gray">MD Tailwind Alerts</Alerts>
+            <Alerts color="brown">MD Tailwind Alerts</Alerts>
+            <Alerts color="deepOrange">MD Tailwind Alerts</Alerts>
+            <Alerts color="orange">MD Tailwind Alerts</Alerts>
+            <Alerts color="amber">MD Tailwind Alerts</Alerts>
+            <Alerts color="yellow">MD Tailwind Alerts</Alerts>
+            <Alerts color="lime">MD Tailwind Alerts</Alerts>
+            <Alerts color="lightGreen">MD Tailwind Alerts</Alerts>
+            <Alerts color="green">MD Tailwind Alerts</Alerts>
+            <Alerts color="cyan">MD Tailwind Alerts</Alerts>
+            <Alerts color="lightBlue">MD Tailwind Alerts</Alerts>
+            <Alerts color="blue">MD Tailwind Alerts</Alerts>
+            <Alerts color="indigo">MD Tailwind Alerts</Alerts>
+            <Alerts color="deepPurple">MD Tailwind Alerts</Alerts>
+            <Alerts color="purple">MD Tailwind Alerts</Alerts>
+            <Alerts color="pink">MD Tailwind Alerts</Alerts>
+            <Alerts color="red">MD Tailwind Alerts</Alerts>
           </div>
         </div>
 
@@ -206,20 +206,17 @@ export default class Index extends Component {
                 color="pink"
                 size="sm"
                 placeholder="Input with icon"
-                iconPosition="right"
                 iconName="person"
               />
               <InputIcon
                 color="pink"
                 placeholder="Input with icon"
-                iconPosition="right"
                 iconName="person"
               />
               <InputIcon
                 color="pink"
                 size="lg"
                 placeholder="Input with icon"
-                iconPosition="right"
                 iconName="person"
               />
             </div>
@@ -230,14 +227,12 @@ export default class Index extends Component {
                 size="sm"
                 placeholder="Input with icon"
                 outline
-                iconPosition="left"
                 iconName="person"
               />
               <InputIcon
                 color="pink"
                 placeholder="Input with icon"
                 outline
-                iconPosition="left"
                 iconName="person"
               />
               <InputIcon
@@ -245,7 +240,6 @@ export default class Index extends Component {
                 size="lg"
                 placeholder="Input with icon"
                 outline
-                iconPosition="left"
                 iconName="person"
               />
             </div>
