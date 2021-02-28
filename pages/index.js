@@ -23,7 +23,7 @@ import Tooltips from 'components/Tooltips/Tooltips';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationFirstLast from 'components/Pagination/PaginationFirstLast';
 import Progress from 'components/Progress/Progress';
-import Icons from 'components/Icons/Icons';
+import Icon from 'components/Icon/Icon';
 
 export default class Index extends Component {
   render() {
@@ -92,12 +92,12 @@ export default class Index extends Component {
 
             <div className="flex gap-5">
               <Buttons color="pink">
-                <Icons name="favorite" color="white" />
+                <Icon name="favorite" color="white" />
                 Button
               </Buttons>
               <Buttons color="pink">
                 Button
-                <Icons name="favorite" color="white" />
+                <Icon name="favorite" color="white" />
               </Buttons>
             </div>
           </div>

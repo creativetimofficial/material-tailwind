@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Icons = ({ family = 'material-icons', name, color, size }) => {
+const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
   let iconUI;
 
   if (family === 'material-icons') {
     iconUI = (
       <span
+        {...rest}
         className={`${family} text-${color} ${
           size ? `text-${size}` : 'text-base'
         }`}
@@ -14,10 +15,10 @@ const Icons = ({ family = 'material-icons', name, color, size }) => {
       </span>
     );
   } else if (family === 'font-awesome') {
-    iconUI = <i className={`fas ${name} ${color} ${size}`} />;
+    iconUI = <i {...rest} className={`fas ${name} ${color} ${size}`} />;
   }
 
   return iconUI;
 };
 
-export default Icons;
+export default Icon;
