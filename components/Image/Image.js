@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Image = ({ src, raised, rounded, ...rest }) => {
   return (
@@ -12,6 +13,12 @@ const Image = ({ src, raised, rounded, ...rest }) => {
       />
     </>
   );
+};
+
+Image.propTypes = {
+  src: PropTypes.string,
+  raised: PropTypes.bool,
+  rounded: PropTypes.bool,
 };
 
 export default Image;
