@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Buttons from 'components/Buttons/Buttons';
 import Alerts from 'components/Alerts/ClosingAlerts';
 import Image from 'components/Image/Image';
-import Inputs from 'components/Inputs/Inputs';
-import InputsIcon from 'components/Inputs/InputsIcon';
+import Input from 'components/Input/Input';
+import InputIcon from 'components/Input/InputIcon';
 import Labels from 'components/Labels/ClosingLabels';
 import Menu from 'components/Menus/MenuText.js';
 import MenuIcons from 'components/Menus/MenuIcons.js';
@@ -172,8 +172,8 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Types</h2>
 
             <div className="flex gap-10">
-              <Inputs type="text" placeholder="Input Filled" color="pink" />
-              <Inputs
+              <Input type="text" placeholder="Input Filled" color="pink" />
+              <Input
                 type="text"
                 placeholder="Input Outline"
                 color="pink"
@@ -186,25 +186,15 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Sizes</h2>
 
             <div className="flex gap-10 mb-5">
-              <Inputs placeholder="Input Small" color="pink" size="sm" />
-              <Inputs placeholder="Input Regular" color="pink" />
-              <Inputs placeholder="Input Large" color="pink" size="lg" />
+              <Input placeholder="Input Small" color="pink" size="sm" />
+              <Input placeholder="Input Regular" color="pink" />
+              <Input placeholder="Input Large" color="pink" size="lg" />
             </div>
 
             <div className="flex gap-10">
-              <Inputs
-                placeholder="Input Small"
-                color="pink"
-                size="sm"
-                outline
-              />
-              <Inputs placeholder="Input Regular" color="pink" outline />
-              <Inputs
-                placeholder="Input Large"
-                color="pink"
-                size="lg"
-                outline
-              />
+              <Input placeholder="Input Small" color="pink" size="sm" outline />
+              <Input placeholder="Input Regular" color="pink" outline />
+              <Input placeholder="Input Large" color="pink" size="lg" outline />
             </div>
           </div>
 
@@ -212,18 +202,18 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input With Icon</h2>
 
             <div className="flex gap-10 mb-5">
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 size="sm"
                 placeholder="Input with icon"
                 iconPosition="right"
               />
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 placeholder="Input with icon"
                 iconPosition="right"
               />
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 size="lg"
                 placeholder="Input with icon"
@@ -232,20 +222,20 @@ export default class Index extends Component {
             </div>
 
             <div className="flex gap-10">
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 size="sm"
                 placeholder="Input with icon"
                 outline
                 iconPosition="left"
               />
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 placeholder="Input with icon"
                 outline
                 iconPosition="left"
               />
-              <InputsIcon
+              <InputIcon
                 color="pink"
                 size="lg"
                 placeholder="Input with icon"
@@ -259,12 +249,12 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Input Errors</h2>
 
             <div className="flex gap-10">
-              <Inputs
+              <Input
                 placeholder="Input Message"
                 color="pink"
                 error="This is an error"
               />
-              <Inputs
+              <Input
                 placeholder="Input Message"
                 color="pink"
                 outline
@@ -604,14 +594,14 @@ export default class Index extends Component {
                 </div>
                 <form>
                   <div className="w-full mb-6">
-                    <Inputs
+                    <Input
                       type="email"
                       placeholder="Email Address"
                       color="pink"
                     />
                   </div>
                   <div className="w-full mb-6">
-                    <Inputs
+                    <Input
                       type="password"
                       placeholder="Password"
                       color="pink"

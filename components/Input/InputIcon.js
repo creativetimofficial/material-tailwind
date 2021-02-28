@@ -1,17 +1,15 @@
 import React from 'react';
 
-const Inputs = ({
-  type,
-  name,
-  id,
+const InputIcon = ({
   placeholder,
-  value,
   color,
   size = 'regular',
   outline,
   error,
+  ...rest
 }) => {
-  let inputClasses = [];
+  let iconSizeSyles,
+    inputClasses = [];
 
   let container = ['w-full', 'relative'];
 
@@ -44,18 +42,18 @@ const Inputs = ({
 
   const inputSM = [
     ...sharedClasses,
-    `${outline ? 'px-3' : 'px-0'}`,
+    `${outline ? 'pl-3 pr-7' : 'pl-0 pr-6'}`,
     `${outline && 'pt-1.5 pb-0.5'}`,
     'text-sm',
   ];
   const inputRegular = [
     ...sharedClasses,
-    `${outline ? 'px-3' : 'px-0'}`,
+    `${outline ? 'pl-3 pr-8' : 'pl-0 pr-7'}`,
     `${outline && 'pt-2.5 pb-1.5'}`,
   ];
   const inputLG = [
     ...sharedClasses,
-    `${outline ? 'px-3' : 'px-0'}`,
+    `${outline ? 'pl-3 pr-10' : 'pl-0 pr-9'}`,
     `${outline && 'pt-3.5 pb-2.5'}`,
   ];
 
@@ -80,12 +78,15 @@ const Inputs = ({
   if (size === 'sm') {
     container.push('h-9');
     inputClasses.push(...inputSM);
+    iconSizeSyles = 'text-lg';
   } else if (size === 'lg') {
     container.push('h-12');
     inputClasses.push(...inputLG);
+    iconSizeSyles = 'text-3xl';
   } else {
     container.push('h-11');
     inputClasses.push(...inputRegular);
+    iconSizeSyles = 'text-2xl';
   }
 
   outline
@@ -100,15 +101,16 @@ const Inputs = ({
 
   return (
     <div className={container}>
-      <input
-        type={type ? type : 'text'}
-        id={id}
-        name={name}
-        placeholder=" "
-        value={value}
-        className={inputClasses}
-      />
-      <label htmlFor={id} className={label}>
+      <span
+        className={`material-icons text-gray-600 absolute top-1/2 ${
+          outline ? 'right-2' : 'right-0'
+        } transform -translate-y-1/2 ${iconSizeSyles}`}
+      >
+        person
+      </span>
+
+      <input placeholder=" " className={inputClasses} />
+      <label className={label}>
         {outline ? (
           placeholder
         ) : (
@@ -128,4 +130,4 @@ const Inputs = ({
   );
 };
 
-export default Inputs;
+export default InputIcon;

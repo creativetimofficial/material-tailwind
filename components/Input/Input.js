@@ -1,18 +1,14 @@
 import React from 'react';
 
-const InputsIcon = ({
-  type,
-  name,
-  id,
+const Input = ({
   placeholder,
-  value,
   color,
   size = 'regular',
   outline,
   error,
+  ...rest
 }) => {
-  let iconSizeSyles,
-    inputClasses = [];
+  let inputClasses = [];
 
   let container = ['w-full', 'relative'];
 
@@ -45,18 +41,18 @@ const InputsIcon = ({
 
   const inputSM = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-7' : 'pl-0 pr-6'}`,
+    `${outline ? 'px-3' : 'px-0'}`,
     `${outline && 'pt-1.5 pb-0.5'}`,
     'text-sm',
   ];
   const inputRegular = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-8' : 'pl-0 pr-7'}`,
+    `${outline ? 'px-3' : 'px-0'}`,
     `${outline && 'pt-2.5 pb-1.5'}`,
   ];
   const inputLG = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-10' : 'pl-0 pr-9'}`,
+    `${outline ? 'px-3' : 'px-0'}`,
     `${outline && 'pt-3.5 pb-2.5'}`,
   ];
 
@@ -81,15 +77,12 @@ const InputsIcon = ({
   if (size === 'sm') {
     container.push('h-9');
     inputClasses.push(...inputSM);
-    iconSizeSyles = 'text-lg';
   } else if (size === 'lg') {
     container.push('h-12');
     inputClasses.push(...inputLG);
-    iconSizeSyles = 'text-3xl';
   } else {
     container.push('h-11');
     inputClasses.push(...inputRegular);
-    iconSizeSyles = 'text-2xl';
   }
 
   outline
@@ -104,23 +97,8 @@ const InputsIcon = ({
 
   return (
     <div className={container}>
-      <span
-        className={`material-icons text-gray-600 absolute top-1/2 ${
-          outline ? 'right-2' : 'right-0'
-        } transform -translate-y-1/2 ${iconSizeSyles}`}
-      >
-        person
-      </span>
-
-      <input
-        type={type ? type : 'text'}
-        id={id}
-        name={name}
-        placeholder=" "
-        value={value}
-        className={inputClasses}
-      />
-      <label htmlFor={id} className={label}>
+      <input {...rest} placeholder=" " className={inputClasses} />
+      <label className={label}>
         {outline ? (
           placeholder
         ) : (
@@ -140,4 +118,4 @@ const InputsIcon = ({
   );
 };
 
-export default InputsIcon;
+export default Input;
