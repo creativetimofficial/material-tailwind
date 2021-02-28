@@ -34,22 +34,22 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Colors</h2>
 
             <div className="flex gap-5 flex-wrap">
-              <Buttons color="blue-gray">Button</Buttons>
+              <Buttons color="blueGray">Button</Buttons>
               <Buttons color="gray">Button</Buttons>
               <Buttons color="brown">Button</Buttons>
-              <Buttons color="deep-orange">Button</Buttons>
+              <Buttons color="deepOrange">Button</Buttons>
               <Buttons color="orange">Button</Buttons>
               <Buttons color="amber">Button</Buttons>
               <Buttons color="yellow">Button</Buttons>
               <Buttons color="lime">Button</Buttons>
-              <Buttons color="light-green">Button</Buttons>
+              <Buttons color="lightGreen">Button</Buttons>
               <Buttons color="green">Button</Buttons>
               <Buttons color="teal">Button</Buttons>
               <Buttons color="cyan">Button</Buttons>
-              <Buttons color="light-blue">Button</Buttons>
+              <Buttons color="lightBlue">Button</Buttons>
               <Buttons color="blue">Button</Buttons>
               <Buttons color="indigo">Button</Buttons>
-              <Buttons color="deep-purple">Button</Buttons>
+              <Buttons color="deepPurple">Button</Buttons>
               <Buttons color="purple">Button</Buttons>
               <Buttons color="pink">Button</Buttons>
               <Buttons color="red">Button</Buttons>
