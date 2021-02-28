@@ -40,7 +40,7 @@ const MenuIcons = ({ color }) => {
               Menu With Icons
             </a>
             <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setOpenMenu(!openMenu)}
             >
@@ -69,7 +69,7 @@ const MenuIcons = ({ color }) => {
               </li>
               <li className="nav-item">
                 <a
-                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white"
+                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white rounded"
                   href="#pablo"
                   data-md-ripple={true}
                 >
@@ -80,7 +80,7 @@ const MenuIcons = ({ color }) => {
               </li>
               <li className="nav-item">
                 <a
-                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white"
+                  className="relative overflow-hidden py-3.5 px-4 flex items-center text-xs uppercase text-white rounded"
                   href="#pablo"
                   data-md-ripple={true}
                 >
