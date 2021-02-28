@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const colors = [
   'blueGray',
@@ -64,14 +65,9 @@ const Label = ({ children, color }) => {
   );
 };
 
-export default Label;
+Label.propTypes = {
+  children: PropTypes.node,
+  color: PropTypes.string,
+};
 
-// export default function LabelsRound() {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return <Label key={key} color={prop} />;
-//       })}
-//     </>
-//   );
-// }
+export default Label;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const colors = [
   'blueGray',
@@ -35,6 +36,11 @@ const Label = ({ children, color }) => {
       </div>
     </>
   );
+};
+
+Label.propTypes = {
+  children: PropTypes.node,
+  color: PropTypes.string,
 };
 
 export default Label;
