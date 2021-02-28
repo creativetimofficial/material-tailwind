@@ -29,7 +29,7 @@ const NavbarIconsLinks = ({ color }) => {
   return (
     <>
       <nav
-        className={`flex flex-wrap items-center justify-between py-2.5 px-3 navbar-expand-lg bg-${color}-500 mb-3`}
+        className={`flex flex-wrap items-center justify-between py-2.5 px-3 bg-${color}-500 mb-3`}
       >
         <div className="container mx-auto">
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -54,7 +54,6 @@ const NavbarIconsLinks = ({ color }) => {
               className={`lg:flex flex-grow items-center ${
                 openNavbar ? 'block' : 'hidden'
               }`}
-              id="example-navbar-success"
             >
               <ul className="flex flex-col lg:flex-row list-none mr-auto">
                 <li className="nav-item">
@@ -72,7 +71,7 @@ const NavbarIconsLinks = ({ color }) => {
 
                 <li className="nav-item">
                   <a
-                    className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-medium leading text-white"
+                    className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-medium leading text-white rounded"
                     href="#pablo"
                     data-md-ripple={true}
                   >
@@ -85,7 +84,7 @@ const NavbarIconsLinks = ({ color }) => {
 
                 <li className="nav-item">
                   <a
-                    className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-medium leading text-white"
+                    className="relative overflow-hidden p-4 flex items-center text-xs uppercase font-medium leading text-white rounded"
                     href="#pablo"
                     data-md-ripple={true}
                   >
