@@ -23,7 +23,14 @@ const colors = [
   'bg-red-500',
 ];
 
-const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
+const Buttons = ({
+  children,
+  color,
+  type,
+  size = 'regular',
+  rounded,
+  ...rest
+}) => {
   let classes = [];
 
   rounded = rounded ? 'rounded-full' : 'rounded';
@@ -118,32 +125,10 @@ const Buttons = ({ children, color, type, size = 'regular', rounded }) => {
   classes = classes.join(' ');
 
   return (
-    <>
-      <button className={classes} type="button" data-md-ripple={true}>
-        {children}
-      </button>
-    </>
+    <button {...rest} className={classes} data-md-ripple={true}>
+      {children}
+    </button>
   );
 };
 
 export default Buttons;
-
-// export default function FilledLargeButtons(props) {
-//   return (
-//     <>
-//       {colors.map((prop, key) => {
-//         return (
-//           <Buttons
-//             key={key}
-//             color={prop}
-//             type="outline"
-//             size="lg"
-//             icon="favorite"
-//             text="Large Button"
-//             round
-//           />
-//         );
-//       })}
-//     </>
-//   );
-// }
