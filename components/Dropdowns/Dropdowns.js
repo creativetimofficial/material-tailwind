@@ -135,7 +135,6 @@ const Dropdowns = ({
       <Tippy
         content={
           <div
-            id="appp"
             className={`bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1 transition-all duration-500`}
             style={{ minWidth: '10rem' }}
           >
@@ -152,9 +151,7 @@ const Dropdowns = ({
         <button
           className={classes}
           type="button"
-          onClick={() =>
-            dropdownShow ? setDropdownShow(false) : setDropdownShow(true)
-          }
+          onClick={() => setDropdownShow(!dropdownShow)}
           data-md-ripple={true}
         >
           {buttonText}
