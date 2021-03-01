@@ -1,6 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const colors = {
+  blueGray: 'md-input-blue-gray-500',
+  gray: 'md-input-gray-500',
+  brown: 'md-input-brown-500',
+  deepOrange: 'md-input-deep-orange-500',
+  orange: 'md-input-orange-500',
+  amber: 'md-input-amber-500',
+  yellow: 'md-input-yellow-500',
+  lime: 'md-input-lime-500',
+  lightGreen: 'md-input-light-green-500',
+  green: 'md-input-green-500',
+  teal: 'md-input-teal-500',
+  cyan: 'md-input-cyan-500',
+  lightBlue: 'md-input-light-blue-500',
+  blue: 'md-input-blue-500',
+  indigo: 'md-input-indigo-500',
+  deepPurple: 'md-input-deep-purple-500',
+  purple: 'md-input-purple-500',
+  pink: 'md-input-pink-500',
+  red: 'md-input-red-500',
+};
+
 const InputIcon = ({
   placeholder,
   color,
@@ -34,7 +56,7 @@ const InputIcon = ({
   ];
 
   const sharedClasses = [
-    `md-input-${color}-500`,
+    colors[color],
     'w-full',
     'h-full',
     'leading-normal',
