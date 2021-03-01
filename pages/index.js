@@ -269,22 +269,22 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Labels</h2>
 
             <div className="flex gap-3 flex-wrap">
-              <Labels color="blue-gray">Label</Labels>
+              <Labels color="blueGray">Label</Labels>
               <Labels color="gray">Label</Labels>
               <Labels color="brown">Label</Labels>
-              <Labels color="deep-orange">Label</Labels>
+              <Labels color="deepOrange">Label</Labels>
               <Labels color="orange">Label</Labels>
               <Labels color="amber">Label</Labels>
               <Labels color="yellow">Label</Labels>
               <Labels color="lime">Label</Labels>
-              <Labels color="light-green">Label</Labels>
+              <Labels color="lightGreen">Label</Labels>
               <Labels color="green">Label</Labels>
               <Labels color="teal">Label</Labels>
               <Labels color="cyan">Label</Labels>
-              <Labels color="light-blue">Label</Labels>
+              <Labels color="lightBlue">Label</Labels>
               <Labels color="blue">Label</Labels>
               <Labels color="indigo">Label</Labels>
-              <Labels color="deep-purple">Label</Labels>
+              <Labels color="deepPurple">Label</Labels>
               <Labels color="purple">Label</Labels>
               <Labels color="pink">Label</Labels>
               <Labels color="red">Label</Labels>
