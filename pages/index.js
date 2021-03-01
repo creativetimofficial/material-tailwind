@@ -577,7 +577,7 @@ export default class Index extends Component {
                   </h6>
                 </div>
                 <div className="flex justify-center gap-2 text-center">
-                  <Buttons color="light-blue" size="sm">
+                  <Buttons color="lightBlue" size="sm">
                     Twitter
                   </Buttons>
                   <Buttons color="red" size="sm">
