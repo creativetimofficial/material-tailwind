@@ -7,10 +7,9 @@ import InputIcon from 'components/Input/InputIcon';
 import Labels from 'components/Labels/ClosingLabels';
 import Menu from 'components/Menus/MenuText.js';
 import MenuIcons from 'components/Menus/MenuIcons.js';
-import Navbar from 'components/Navbars/Navbar';
-import NavbarIcons from 'components/Navbars/NavbarIcons';
-import NavbarIconsLinks from 'components/Navbars/NavbarIconsLinks';
-import NavbarLinks from 'components/Navbars/NavbarLinks';
+
+import Example from 'components/Navbar/Example';
+
 import Tabs from 'components/Tabs/TabsText';
 import TabsIcons from 'components/Tabs/TabsIcons';
 import Dropdowns from 'components/Dropdowns/Dropdowns';
@@ -303,10 +302,7 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Navbars</h2>
-            <Navbar color="pink" />
-            <NavbarIcons color="pink" />
-            <NavbarIconsLinks color="pink" />
-            <NavbarLinks color="pink" />
+            <Example />
           </div>
         </div>
 
@@ -619,7 +615,11 @@ export default class Index extends Component {
                     </label>
                   </div>
                   <div className="flex justify-center text-center mt-10">
-                    <Buttons color="pink" size="lg">
+                    <Buttons
+                      color="pink"
+                      size="lg"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Sign in
                     </Buttons>
                   </div>
