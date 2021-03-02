@@ -1,24 +1,44 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Small() {
+const colors = {
+  white: 'text-white',
+  black: 'text-black',
+  blueGray: 'text-blue-gray-500',
+  gray: 'text-gray-500',
+  brown: 'text-brown-500',
+  deepOrange: 'text-deep-orange-500',
+  orange: 'text-orange-500',
+  amber: 'text-amber-500',
+  yellow: 'text-yellow-500',
+  lime: 'text-lime-500',
+  lightGreen: 'text-light-green-500',
+  green: 'text-green-500',
+  teal: 'text-teal-500',
+  cyan: 'text-cyan-500',
+  lightBlue: 'text-light-blue-500',
+  blue: 'text-blue-500',
+  indigo: 'text-indigo-500',
+  deepPurple: 'text-deep-purple-500',
+  purple: 'text-purple-500',
+  pink: 'text-pink-500',
+  red: 'text-red-500',
+};
+
+const Small = ({ children, color, ...rest }) => {
   return (
-    <>
-      <div className="flex flex-wrap items-center mt-4">
-        <div className="w-full sm:w-3/12">
-          <small className="text-gray-600 text-sm font-semibold uppercase">
-            Small
-          </small>
-        </div>
-        <div className="w-full sm:w-9/12">
-          <small className="font-normal leading-normal mt-0 mb-4">
-            I will be the leader of a company that ends up being worth billions
-            of dollars, because I got the answers. I understand culture. I am
-            the nucleus. I think that’s a responsibility that I have, to push
-            possibilities, to show people, this is the level that things could
-            be at.
-          </small>
-        </div>
-      </div>
-    </>
+    <small
+      {...rest}
+      className={`${colors[color]} font-normal leading-normal mt-0 mb-4`}
+    >
+      {children}
+    </small>
   );
-}
+};
+
+Small.propTypes = {
+  children: PropTypes.node,
+  color: PropTypes.string,
+};
+
+export default Small;
