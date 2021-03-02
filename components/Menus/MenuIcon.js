@@ -7,16 +7,17 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import Collapse from 'components/Navbar/Collapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import Icon from 'components/Icon/Icon';
 import 'ripple/ripple';
 
-const MenuText = () => {
+const MenuIcon = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <Navbar color="pink">
       <NavbarContainer>
         <NavbarWrapper>
-          <NavbarBrand color="white">Menu with Text</NavbarBrand>
+          <NavbarBrand color="white">Menu with Icons</NavbarBrand>
           <NavbarToggler color="white" onClick={() => setOpenMenu(!openMenu)} />
         </NavbarWrapper>
 
@@ -28,13 +29,13 @@ const MenuText = () => {
               href="#navbar"
               data-md-ripple-light={true}
             >
-              Discover
+              <Icon name="language" size="xl" />
             </NavItem>
             <NavItem color="white" href="#navbar" data-md-ripple-light={true}>
-              Profile
+              <Icon name="account_circle" size="xl" />
             </NavItem>
             <NavItem color="white" href="#navbar" data-md-ripple-light={true}>
-              Settings
+              <Icon name="settings" size="xl" />
             </NavItem>
           </Nav>
         </Collapse>
@@ -43,4 +44,4 @@ const MenuText = () => {
   );
 };
 
-export default MenuText;
+export default MenuIcon;
