@@ -9,7 +9,6 @@ import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 const NavbarExample = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
