@@ -5,9 +5,9 @@ import Image from 'components/Image/Image';
 import Input from 'components/Input/Input';
 import InputIcon from 'components/Input/InputIcon';
 import Labels from 'components/Labels/ClosingLabels';
-import Menu from 'components/Menus/Menu.js';
-import MenuIcon from 'components/Menus/MenuIcon.js';
-import MenuText from 'components/Menus/MenuText.js';
+import Menu from 'components/Menus/Menu';
+import MenuIcon from 'components/Menus/MenuIcon';
+import MenuText from 'components/Menus/MenuText';
 import NavbarExample from 'components/Navbar/NavbarExample';
 import NavbarIconWithTextExample from 'components/Navbar/NavbarIconWithTextExample';
 import NavbarIconExample from 'components/Navbar/NavbarIconExample';
@@ -25,6 +25,16 @@ import PaginationExample from 'components/Pagination/PaginationExample';
 import PaginationFirstLastExample from 'components/Pagination/PaginationFirstLastExample';
 import Progress from 'components/Progress/Progress';
 import Icon from 'components/Icon/Icon';
+import H1 from 'components/Typography/Heading1';
+import H2 from 'components/Typography/Heading2';
+import H3 from 'components/Typography/Heading3';
+import H4 from 'components/Typography/Heading4';
+import H5 from 'components/Typography/Heading5';
+import H6 from 'components/Typography/Heading6';
+import Paragraph from 'components/Typography/Paragraph';
+import LeadText from 'components/Typography/LeadText';
+import Quote from 'components/Typography/Quote';
+import Small from 'components/Typography/Small';
 import 'ripple/ripple';
 
 export default class Index extends Component {
@@ -532,6 +542,128 @@ export default class Index extends Component {
 
             <Progress color="pink" value="30" />
             <Progress color="pink" value="50" percentage />
+          </div>
+        </div>
+
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
+          <div className="mb-10">
+            <h2 className="mb-5 text-2xl font-bold">Typography</h2>
+
+            <div className="flex items-center gap-16 mb-5">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 1
+              </small>
+
+              <H1 color="black">Tailwinded Design System</H1>
+            </div>
+
+            <div className="flex items-center gap-16 mb-5">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 2
+              </small>
+
+              <H2 color="black">Tailwinded Design System</H2>
+            </div>
+
+            <div className="flex items-center gap-16 mb-5">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 3
+              </small>
+
+              <H3 color="black">Tailwinded Design System</H3>
+            </div>
+
+            <div className="flex items-center gap-16 mb-5">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 4
+              </small>
+
+              <H4 color="black">Tailwinded Design System</H4>
+            </div>
+
+            <div className="flex items-center gap-16 mb-5">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 5
+              </small>
+
+              <H5 color="black">Tailwinded Design System</H5>
+            </div>
+
+            <div className="flex items-center gap-16 mb-20">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Heading 6
+              </small>
+
+              <H6 color="black">Tailwinded Design System</H6>
+            </div>
+
+            <div className="flex items-center gap-16 mb-20">
+              <small className="text-gray-600 text-sm font-semibold uppercase">
+                Paragraph
+              </small>
+
+              <Paragraph color="gray">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </Paragraph>
+            </div>
+
+            <div className="flex items-center gap-16 mb-20">
+              <small className="block w-56 text-gray-600 text-sm font-semibold uppercase">
+                Lead Text
+              </small>
+
+              <LeadText color="gray">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </LeadText>
+            </div>
+
+            <div className="flex items-center gap-16 mb-20">
+              <small className="block w-56 text-gray-600 text-sm font-semibold uppercase">
+                Quote
+              </small>
+
+              <Quote color="gray" footer="Someone famouse" cite="Source title">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </Quote>
+            </div>
+
+            <div className="flex items-center gap-16 mb-20">
+              <small className="block w-56 text-gray-600 text-sm font-semibold uppercase">
+                Small
+              </small>
+
+              <Small color="gray">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </Small>
+            </div>
           </div>
         </div>
 
