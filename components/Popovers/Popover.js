@@ -19,7 +19,7 @@ const Popover = forwardRef(({ children, placement, trigger }, ref) => {
 Popover.propTypes = {
   children: PropTypes.node,
   placement: PropTypes.string,
-  // reference: PropTypes.object,
+  reference: PropTypes.object,
   trigger: PropTypes.string,
 };
 
