@@ -2,7 +2,6 @@ import React from 'react';
 import Pagination from './Pagination';
 import PaginationItem from './PaginationItem';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 const PaginationExample = () => {
   return (
