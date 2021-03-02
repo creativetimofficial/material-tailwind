@@ -8,7 +8,6 @@ import Collapse from 'components/Navbar/Collapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 export const NavbarIconWithTextExample = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
