@@ -19,7 +19,7 @@ import DropdownItems from 'components/Dropdowns/DropdownItems';
 import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
-import Popovers from 'components/Popovers/Popovers';
+import PopoverExample from 'components/Popovers/PopoverExample';
 import Tooltips from 'components/Tooltips/Tooltips';
 import PaginationExample from 'components/Pagination/PaginationExample';
 import PaginationFirstLastExample from 'components/Pagination/PaginationFirstLastExample';
@@ -494,69 +494,10 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Popovers</h2>
 
             <div className="flex gap-4">
-              <Popovers color="pink" position="left" buttonText="Popover Left">
-                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
-                  <div>
-                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
-                      popover title
-                    </div>
-                    <div className="text-gray-800 px-4 pb-4">
-                      And here's some amazing content. It's very engaging.
-                      Right?
-                    </div>
-                  </div>
-                </div>
-              </Popovers>
-
-              <Popovers color="pink" position="top" buttonText="Popover Top">
-                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
-                  <div>
-                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
-                      popover title
-                    </div>
-                    <div className="text-gray-800 px-4 pb-4">
-                      And here's some amazing content. It's very engaging.
-                      Right?
-                    </div>
-                  </div>
-                </div>
-              </Popovers>
-
-              <Popovers
-                color="pink"
-                position="right"
-                buttonText="Popover Right"
-              >
-                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
-                  <div>
-                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
-                      popover title
-                    </div>
-                    <div className="text-gray-800 px-4 pb-4">
-                      And here's some amazing content. It's very engaging.
-                      Right?
-                    </div>
-                  </div>
-                </div>
-              </Popovers>
-
-              <Popovers
-                color="pink"
-                position="bottom"
-                buttonText="Popover Bottom"
-              >
-                <div className="bg-white border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded shadow-md">
-                  <div>
-                    <div className="bg-white text-black p-4 mb-0 uppercase rounded">
-                      popover title
-                    </div>
-                    <div className="text-gray-800 px-4 pb-4">
-                      And here's some amazing content. It's very engaging.
-                      Right?
-                    </div>
-                  </div>
-                </div>
-              </Popovers>
+              <PopoverExample placement="left" />
+              <PopoverExample placement="top" />
+              <PopoverExample placement="bottom" />
+              <PopoverExample placement="right" />
             </div>
           </div>
         </div>
