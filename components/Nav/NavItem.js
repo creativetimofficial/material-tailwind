@@ -44,7 +44,7 @@ const NavbarItem = ({ children, color, active, ...rest }) => {
 
 NavbarItem.propTypes = {
   children: PropTypes.node,
-  active: PropTypes.bool,
+  active: PropTypes.string,
 };
 
 export default NavbarItem;
