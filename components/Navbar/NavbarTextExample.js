@@ -7,7 +7,6 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import Collapse from 'components/Navbar/Collapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
-import 'ripple/ripple';
 
 export const NavbarTextExample = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
