@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 const filledBgColors = {
@@ -221,114 +221,109 @@ const outlineBgActiveColors = {
   red: 'bg-red-100',
 };
 
-const Buttons = ({
-  children,
-  color,
-  type,
-  size = 'regular',
-  rounded,
-  ...rest
-}) => {
-  let classes = [];
+const Buttons = forwardRef(
+  ({ children, color, type, size = 'regular', rounded, ...rest }, ref) => {
+    let classes = [];
 
-  rounded = rounded ? 'rounded-full' : 'rounded';
+    rounded = rounded ? 'rounded-full' : 'rounded';
 
-  const sharedClasses = [
-    'flex',
-    'items-center',
-    'gap-1',
-    'font-medium',
-    'outline-none',
-    'uppercase',
-    'tracking-wider',
-    'focus:outline-none',
-    'transition-all',
-    'duration-300',
-    'relative',
-    'overflow-hidden',
-    rounded,
-  ];
+    const sharedClasses = [
+      'flex',
+      'items-center',
+      'gap-1',
+      'font-medium',
+      'outline-none',
+      'uppercase',
+      'tracking-wider',
+      'focus:outline-none',
+      'transition-all',
+      'duration-300',
+      'relative',
+      'overflow-hidden',
+      rounded,
+    ];
 
-  const buttonFilled = [
-    'text-white',
-    'shadow-md',
-    'hover:shadow-xl',
-    'focus:text-white',
-    filledBgColors[color],
-    `hover:${filledBgHoverColors[color]}`,
-    `focus:${filledBgFocusColors[color]}`,
-    `active:${filledBgActiveColors[color]}`,
-  ];
+    const buttonFilled = [
+      'text-white',
+      'shadow-md',
+      'hover:shadow-xl',
+      'focus:text-white',
+      filledBgColors[color],
+      `hover:${filledBgHoverColors[color]}`,
+      `focus:${filledBgFocusColors[color]}`,
+      `active:${filledBgActiveColors[color]}`,
+    ];
 
-  const buttonOutline = [
-    'bg-transparent',
-    'border',
-    'border-solid',
-    'shadow-none',
-    outlineTextColors[color],
-    outlineBorderColors[color],
-    `hover:${outlineBgHoverColors[color]}`,
-    `hover:${outlineBorderHoverColors[color]}`,
-    `hover:${outlineTextHoverColors[color]}`,
-    `focus:${outlineBgHoverColors[color]}`,
-    `active:${outlineBgActiveColors[color]}`,
-  ];
+    const buttonOutline = [
+      'bg-transparent',
+      'border',
+      'border-solid',
+      'shadow-none',
+      outlineTextColors[color],
+      outlineBorderColors[color],
+      `hover:${outlineBgHoverColors[color]}`,
+      `hover:${outlineBorderHoverColors[color]}`,
+      `hover:${outlineTextHoverColors[color]}`,
+      `focus:${outlineBgHoverColors[color]}`,
+      `active:${outlineBgActiveColors[color]}`,
+    ];
 
-  const buttonLink = [
-    `bg-transparent`,
-    outlineTextColors[color],
-    `hover:${outlineBgHoverColors[color]}`,
-    `hover:${outlineTextHoverColors[color]}`,
-    `focus:${outlineBgHoverColors[color]}`,
-    `active:${outlineBgActiveColors[color]}`,
-  ];
+    const buttonLink = [
+      `bg-transparent`,
+      outlineTextColors[color],
+      `hover:${outlineBgHoverColors[color]}`,
+      `hover:${outlineTextHoverColors[color]}`,
+      `focus:${outlineBgHoverColors[color]}`,
+      `active:${outlineBgActiveColors[color]}`,
+    ];
 
-  const buttonSM = [
-    ...sharedClasses,
-    'py-1.5 px-4',
-    'text-xs',
-    'leading-normal',
-    'rounded',
-  ];
-  const buttonRegular = [
-    ...sharedClasses,
-    'py-2.5 px-6',
-    'text-xs',
-    'leading-normal',
-    'rounded',
-  ];
-  const buttonLG = [
-    ...sharedClasses,
-    'py-3 px-7',
-    'text-sm',
-    'leading-relaxed',
-    'rounded-md',
-  ];
+    const buttonSM = [
+      ...sharedClasses,
+      'py-1.5 px-4',
+      'text-xs',
+      'leading-normal',
+      'rounded',
+    ];
+    const buttonRegular = [
+      ...sharedClasses,
+      'py-2.5 px-6',
+      'text-xs',
+      'leading-normal',
+      'rounded',
+    ];
+    const buttonLG = [
+      ...sharedClasses,
+      'py-3 px-7',
+      'text-sm',
+      'leading-relaxed',
+      'rounded-md',
+    ];
 
-  if (size === 'sm') {
-    classes.push(...buttonSM);
-  } else if (size === 'lg') {
-    classes.push(...buttonLG);
-  } else {
-    classes.push(...buttonRegular);
-  }
+    if (size === 'sm') {
+      classes.push(...buttonSM);
+    } else if (size === 'lg') {
+      classes.push(...buttonLG);
+    } else {
+      classes.push(...buttonRegular);
+    }
 
-  if (type === 'outline') {
-    classes.push(...buttonOutline);
-  } else if (type === 'link') {
-    classes.push(...buttonLink);
-  } else {
-    classes.push(...buttonFilled);
-  }
+    if (type === 'outline') {
+      classes.push(...buttonOutline);
+    } else if (type === 'link') {
+      classes.push(...buttonLink);
+    } else {
+      classes.push(...buttonFilled);
+    }
 
-  classes = classes.join(' ');
+    classes = classes.join(' ');
 
-  return (
-    <button {...rest} className={classes}>
-      {children}
-    </button>
-  );
-};
+    return (
+      <button {...rest} className={classes} ref={ref}>
+        {children}
+      </button>
+    );
+  },
+);
 
 Buttons.propTypes = {
   children: PropTypes.node,
