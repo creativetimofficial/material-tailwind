@@ -5,11 +5,13 @@ import Image from 'components/Image/Image';
 import Input from 'components/Input/Input';
 import InputIcon from 'components/Input/InputIcon';
 import Labels from 'components/Labels/ClosingLabels';
-import Menu from 'components/Menus/MenuText.js';
-import MenuIcons from 'components/Menus/MenuIcons.js';
-
-import Example from 'components/Navbar/Example';
-
+import Menu from 'components/Menus/Menu.js';
+import MenuIcon from 'components/Menus/MenuIcon.js';
+import MenuText from 'components/Menus/MenuText.js';
+import NavbarExample from 'components/Navbar/NavbarExample';
+import NavbarIconWithTextExample from 'components/Navbar/NavbarIconWithTextExample';
+import NavbarIconExample from 'components/Navbar/NavbarIconExample';
+import NavbarTextExample from 'components/Navbar/NavbarTextExample';
 import Tabs from 'components/Tabs/TabsText';
 import TabsIcons from 'components/Tabs/TabsIcons';
 import Dropdowns from 'components/Dropdowns/Dropdowns';
@@ -336,14 +338,18 @@ export default class Index extends Component {
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Menus</h2>
             <Menu color="pink" />
-            <MenuIcons color="pink" />
+            <MenuIcon color="pink" />
+            <MenuText color="pink" />
           </div>
         </div>
 
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Navbars</h2>
-            <Example />
+            <NavbarExample />
+            <NavbarIconWithTextExample />
+            <NavbarIconExample />
+            <NavbarTextExample />
           </div>
         </div>
 
