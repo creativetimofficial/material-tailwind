@@ -21,8 +21,8 @@ import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
 import Popovers from 'components/Popovers/Popovers';
 import Tooltips from 'components/Tooltips/Tooltips';
-import Pagination from 'components/Pagination/Pagination';
-import PaginationFirstLast from 'components/Pagination/PaginationFirstLast';
+import PaginationExample from 'components/Pagination/PaginationExample';
+import PaginationFirstLastExample from 'components/Pagination/PaginationFirstLastExample';
 import Progress from 'components/Progress/Progress';
 import Icon from 'components/Icon/Icon';
 import 'ripple/ripple';
@@ -603,8 +603,8 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Paginations</h2>
 
             <div className="flex flex-col gap-4">
-              <Pagination color="pink" />
-              <PaginationFirstLast color="pink" />
+              <PaginationExample />
+              <PaginationFirstLastExample />
             </div>
           </div>
         </div>
