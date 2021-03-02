@@ -20,7 +20,7 @@ import RegularModal from 'components/Modals/RegularModal';
 import SmallModal from 'components/Modals/SmallModal';
 import LargeModal from 'components/Modals/LargeModal';
 import PopoverExample from 'components/Popovers/PopoverExample';
-import Tooltips from 'components/Tooltips/Tooltips';
+import TooltipExample from 'components/Tooltips/TooltipExample';
 import PaginationExample from 'components/Pagination/PaginationExample';
 import PaginationFirstLastExample from 'components/Pagination/PaginationFirstLastExample';
 import Progress from 'components/Progress/Progress';
@@ -507,34 +507,10 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Tooltips</h2>
 
             <div className="flex gap-4">
-              <Tooltips color="pink" position="left" buttonText="Tooltip Left">
-                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
-                  Tooltip Left
-                </div>
-              </Tooltips>
-              <Tooltips color="pink" position="top" buttonText="Tooltip Top">
-                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
-                  Tooltip Top
-                </div>
-              </Tooltips>
-              <Tooltips
-                color="pink"
-                position="right"
-                buttonText="Tooltip Right"
-              >
-                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
-                  Tooltip Right
-                </div>
-              </Tooltips>
-              <Tooltips
-                color="pink"
-                position="bottom"
-                buttonText="Tooltip Bottom"
-              >
-                <div className="px-2.5 py-1.5 bg-black bg-opacity-75 text-white text-sm rounded">
-                  Tooltip Bottom
-                </div>
-              </Tooltips>
+              <TooltipExample placement="left" />
+              <TooltipExample placement="top" />
+              <TooltipExample placement="bottom" />
+              <TooltipExample placement="right" />
             </div>
           </div>
         </div>
