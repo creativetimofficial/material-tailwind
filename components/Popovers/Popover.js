@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/shift-away.css';
 
-const Popover = forwardRef(({ children, placement, trigger }, ref) => {
+const Popover = forwardRef(({ children, placement, trigger }, reference) => {
   return (
     <Tippy
       content={children}
       placement={placement}
-      reference={ref}
+      reference={reference}
       trigger={trigger}
       animation="shift-away"
       interactive
