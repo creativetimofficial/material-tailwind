@@ -7,6 +7,8 @@ import NavbarList from 'components/Navbar/NavbarList';
 import NavbarItem from 'components/Navbar/NavbarItem';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
+import DropdownItems from 'components/Dropdowns/DropdownItems';
+import Dropdowns from 'components/Dropdowns/Dropdowns';
 import 'ripple/ripple';
 
 const Example = () => {
@@ -20,18 +22,29 @@ const Example = () => {
         </NavbarBrand>
         <NavbarNav toggler={openNavbar}>
           <NavbarList>
-            <NavbarItem active href="#navbar" data-md-ripple={true}>
+            <NavbarItem active href="#navbar" data-md-ripple-light={true}>
               <Icon name="language" size="xl" />
               Discover
             </NavbarItem>
-            <NavbarItem href="#navbar" data-md-ripple={true}>
+            <NavbarItem href="#navbar" data-md-ripple-light={true}>
               <Icon name="account_circle" size="xl" />
               Profile
             </NavbarItem>
-            <NavbarItem href="#navbar" data-md-ripple={true}>
+            <NavbarItem href="#navbar" data-md-ripple-light={true}>
               <Icon name="settings" size="xl" />
               Settings
             </NavbarItem>
+
+            <Dropdowns
+              color="white"
+              type="link"
+              buttonText="Dropdown Text"
+              data-md-ripple-light={true}
+            >
+              <DropdownItems href="#">Hello 1</DropdownItems>
+              <DropdownItems>Hello 2</DropdownItems>
+              <DropdownItems>Hello 3</DropdownItems>
+            </Dropdowns>
           </NavbarList>
 
           <NavbarInput type="text" placeholder="Search here" />

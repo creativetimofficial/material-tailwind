@@ -1,5 +1,5 @@
 if (process.browser) {
-  function createRipple(event) {
+  const createRipple = (event, color) => {
     const element = event.currentTarget;
 
     const circle = document.createElement('span');
@@ -14,9 +14,8 @@ if (process.browser) {
     circle.style.transform = 'scale(0)';
     circle.style.borderRadius = '50%';
     circle.style.pointerEvents = 'none';
-    circle.style.backgroundColor = element.classList.contains('bg-transparent')
-      ? 'rgba(0, 0, 0, 0.2)'
-      : 'rgba(255, 255, 255, 0.3)';
+    circle.style.backgroundColor =
+      color === 'dark' ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.3)';
 
     circle.animate(
       [
@@ -40,11 +39,24 @@ if (process.browser) {
     setTimeout(() => {
       circle.remove();
     }, 500);
+  };
+
+  const lightElements = document.querySelectorAll(
+    '[data-md-ripple-light="true"]',
+  );
+  const darkElements = document.querySelectorAll(
+    '[data-md-ripple-dark="true"]',
+  );
+
+  for (const element of lightElements) {
+    element.addEventListener('mousedown', (event) =>
+      createRipple(event, 'light'),
+    );
   }
 
-  const elements = document.querySelectorAll('[data-md-ripple="true"]');
-
-  for (const element of elements) {
-    element.addEventListener('mousedown', createRipple);
+  for (const element of darkElements) {
+    element.addEventListener('mousedown', (event) =>
+      createRipple(event, 'dark'),
+    );
   }
 }

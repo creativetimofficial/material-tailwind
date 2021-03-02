@@ -23,6 +23,7 @@ import Pagination from 'components/Pagination/Pagination';
 import PaginationFirstLast from 'components/Pagination/PaginationFirstLast';
 import Progress from 'components/Progress/Progress';
 import Icon from 'components/Icon/Icon';
+import 'ripple/ripple';
 
 export default class Index extends Component {
   render() {
@@ -33,25 +34,63 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Colors</h2>
 
             <div className="flex gap-5 flex-wrap">
-              <Buttons color="blueGray">Button</Buttons>
-              <Buttons color="gray">Button</Buttons>
-              <Buttons color="brown">Button</Buttons>
-              <Buttons color="deepOrange">Button</Buttons>
-              <Buttons color="orange">Button</Buttons>
-              <Buttons color="amber">Button</Buttons>
-              <Buttons color="yellow">Button</Buttons>
-              <Buttons color="lime">Button</Buttons>
-              <Buttons color="lightGreen">Button</Buttons>
-              <Buttons color="green">Button</Buttons>
-              <Buttons color="teal">Button</Buttons>
-              <Buttons color="cyan">Button</Buttons>
-              <Buttons color="lightBlue">Button</Buttons>
-              <Buttons color="blue">Button</Buttons>
-              <Buttons color="indigo">Button</Buttons>
-              <Buttons color="deepPurple">Button</Buttons>
-              <Buttons color="purple">Button</Buttons>
-              <Buttons color="pink">Button</Buttons>
-              <Buttons color="red">Button</Buttons>
+              <Buttons color="blueGray" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="gray" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="brown" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="deepOrange" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="orange" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="amber" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="yellow" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="lime" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="lightGreen" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="green" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="teal" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="cyan" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="lightBlue" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="blue" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="indigo" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="deepPurple" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="purple" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="pink" data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="red" data-md-ripple-light={true}>
+                Button
+              </Buttons>
             </div>
           </div>
 
@@ -59,14 +98,16 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Styles</h2>
 
             <div className="flex gap-5">
-              <Buttons color="pink">Button</Buttons>
-              <Buttons color="pink" type="outline">
+              <Buttons color="pink" data-md-ripple-light={true}>
                 Button
               </Buttons>
-              <Buttons color="pink" rounded>
+              <Buttons color="pink" type="outline" data-md-ripple-dark={true}>
                 Button
               </Buttons>
-              <Buttons color="pink" type="link">
+              <Buttons color="pink" rounded data-md-ripple-light={true}>
+                Button
+              </Buttons>
+              <Buttons color="pink" type="link" data-md-ripple-dark={true}>
                 Button
               </Buttons>
             </div>
@@ -76,11 +117,11 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button Sizes</h2>
 
             <div className="flex items-end gap-5">
-              <Buttons color="pink" size="sm">
+              <Buttons color="pink" size="sm" data-md-ripple-light={true}>
                 Button
               </Buttons>
               <Buttons color="pink">Button</Buttons>
-              <Buttons color="pink" size="lg">
+              <Buttons color="pink" size="lg" data-md-ripple-light={true}>
                 Button
               </Buttons>
             </div>
@@ -90,11 +131,11 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Button With Icons</h2>
 
             <div className="flex gap-5">
-              <Buttons color="pink">
+              <Buttons color="pink" data-md-ripple-light={true}>
                 <Icon name="favorite" color="white" />
                 Button
               </Buttons>
-              <Buttons color="pink">
+              <Buttons color="pink" data-md-ripple-light={true}>
                 Button
                 <Icon name="favorite" color="white" />
               </Buttons>
@@ -319,13 +360,22 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Positions</h2>
 
             <div className="flex justify-start gap-4">
-              <Dropdowns color="pink" buttonText="Dropdown">
+              <Dropdowns
+                color="pink"
+                buttonText="Dropdown"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" position="top" buttonText="Droup">
+              <Dropdowns
+                color="pink"
+                position="top"
+                buttonText="Droup"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -337,7 +387,11 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Styles</h2>
 
             <div className="flex justify-start gap-4">
-              <Dropdowns color="pink" buttonText="Dropdown Filled">
+              <Dropdowns
+                color="pink"
+                buttonText="Dropdown Filled"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -347,19 +401,30 @@ export default class Index extends Component {
                 color="pink"
                 type="outline"
                 buttonText="Dropdown Outline"
+                data-md-ripple-dark={true}
               >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" rounded buttonText="Dropdown Rounded">
+              <Dropdowns
+                color="pink"
+                rounded
+                buttonText="Dropdown Rounded"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" type="link" buttonText="Dropdown Link">
+              <Dropdowns
+                color="pink"
+                type="link"
+                buttonText="Dropdown Link"
+                data-md-ripple-dark={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -371,19 +436,33 @@ export default class Index extends Component {
             <h2 className="mb-5 text-2xl font-bold">Dropdown Sizes</h2>
 
             <div className="flex justify-start items-end gap-4">
-              <Dropdowns color="pink" size="sm" buttonText="Dropdown Small">
+              <Dropdowns
+                color="pink"
+                size="sm"
+                buttonText="Dropdown Small"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" buttonText="Dropdown Regular">
+              <Dropdowns
+                color="pink"
+                buttonText="Dropdown Regular"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
               </Dropdowns>
 
-              <Dropdowns color="pink" size="lg" buttonText="Dropdown Large">
+              <Dropdowns
+                color="pink"
+                size="lg"
+                buttonText="Dropdown Large"
+                data-md-ripple-light={true}
+              >
                 <DropdownItems>Action</DropdownItems>
                 <DropdownItems>Another Action</DropdownItems>
                 <DropdownItems>Something Else</DropdownItems>
@@ -555,7 +634,7 @@ export default class Index extends Component {
                 </p>
               </div>
               <div className="px-7 mt-2 pb-6">
-                <Buttons color="pink" size="lg">
+                <Buttons color="pink" size="lg" data-md-ripple-light={true}>
                   Read More
                 </Buttons>
               </div>
@@ -619,6 +698,7 @@ export default class Index extends Component {
                       color="pink"
                       size="lg"
                       onClick={(e) => e.preventDefault()}
+                      data-md-ripple-light={true}
                     >
                       Sign in
                     </Buttons>
@@ -673,7 +753,12 @@ export default class Index extends Component {
               </div>
 
               <div className="flex justify-center p-4">
-                <Buttons color="pink" size="lg" rounded>
+                <Buttons
+                  color="pink"
+                  size="lg"
+                  rounded
+                  data-md-ripple-light={true}
+                >
                   Get Started
                 </Buttons>
               </div>

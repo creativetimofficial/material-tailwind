@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'ripple/ripple';
 
 const filledBgColors = {
   blueGray: 'bg-blue-gray-500',
@@ -325,7 +324,7 @@ const Buttons = ({
   classes = classes.join(' ');
 
   return (
-    <button {...rest} className={classes} data-md-ripple={true}>
+    <button {...rest} className={classes}>
       {children}
     </button>
   );
