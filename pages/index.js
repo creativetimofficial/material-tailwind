@@ -12,8 +12,8 @@ import NavbarExample from 'components/Navbar/NavbarExample';
 import NavbarIconWithTextExample from 'components/Navbar/NavbarIconWithTextExample';
 import NavbarIconExample from 'components/Navbar/NavbarIconExample';
 import NavbarTextExample from 'components/Navbar/NavbarTextExample';
-import Tabs from 'components/Tabs/TabsText';
-import TabsIcons from 'components/Tabs/TabsIcons';
+import TabTextExample from 'components/Tabs/TabTextExample';
+import TabExample from 'components/Tabs/TabExample';
 import Dropdowns from 'components/Dropdowns/Dropdowns';
 import DropdownItems from 'components/Dropdowns/DropdownItems';
 import RegularModal from 'components/Modals/RegularModal';
@@ -356,8 +356,8 @@ export default class Index extends Component {
         <div className="p-10 bg-gray-100 border border-gray-300 mb-10">
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Tabs</h2>
-            <Tabs color="pink" />
-            <TabsIcons color="pink" />
+            <TabTextExample />
+            <TabExample />
           </div>
         </div>
 
