@@ -35,6 +35,13 @@ import Paragraph from 'components/Typography/Paragraph';
 import LeadText from 'components/Typography/LeadText';
 import Quote from 'components/Typography/Quote';
 import Small from 'components/Typography/Small';
+
+import Card from 'components/Card/Card';
+import CardImage from 'components/Card/CardImage';
+import CardHeader from 'components/Card/CardHeader';
+import CardBody from 'components/Card/CardBody';
+import CardFooter from 'components/Card/CardFooter';
+
 import 'ripple/ripple';
 
 export default class Index extends Component {
@@ -667,40 +674,40 @@ export default class Index extends Component {
           </div>
         </div>
 
-        <div className="p-10 bg-gray-100 border border-gray-300 mb-10 flex gap-10 justify-evenly">
+        <div className="p-10 bg-gray-100 border border-gray-300 mb-10 flex gap-10 justify-evenly flew-wrap">
           {/* Card */}
           <div className="mb-10">
             <h2 className="mb-5 text-2xl font-bold">Cards</h2>
 
-            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow">
-              <img
-                className="w-full"
+            <Card>
+              <CardImage
                 src="https://miro.medium.com/max/9792/0*xKTwlgXlZPC7Xv3r"
                 alt="Patterns"
               />
-              <div className="px-7 py-5">
-                <div className="font-bold text-xl mb-2 text-gray-900">
-                  Card Title
-                </div>
+              <CardHeader>
+                <h1 className="font-bold text-xl text-gray-900">Card Title</h1>
+              </CardHeader>
+              <CardBody>
                 <p className="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Voluptatibus quia, nulla! Maiores et perferendis eaque,
                   exercitationem praesentium nihil.
                 </p>
-              </div>
-              <div className="px-7 mt-2 pb-6">
+              </CardBody>
+              <CardFooter>
                 <Buttons color="pink" size="lg" data-md-ripple-light={true}>
                   Read More
                 </Buttons>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           </div>
 
           {/* Login Card */}
           <div className="mb-10 w-96">
             <h2 className="mb-5 text-2xl font-bold">Login Card</h2>
-            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow py-6 px-10">
-              <div className="px-4 pt-6">
+
+            <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow">
+              <div className="px-6 pt-8 pb-5">
                 <div className="text-center mb-3">
                   <h6 className="text-gray-600 text-sm font-bold">
                     Sign In With
@@ -718,7 +725,7 @@ export default class Index extends Component {
 
               <hr className="my-6 border-b-1 border-gray-200" />
 
-              <div className="w-full pb-6">
+              <div className="w-full px-6 pb-6">
                 <div className="text-gray-700 text-center font-bold mb-8">
                   <h4 className="text-lg">Or Sign In</h4>
                 </div>
