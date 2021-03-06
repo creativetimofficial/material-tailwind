@@ -63,15 +63,24 @@ if (process.browser) {
     setTimeout(() => circle.remove(), 500);
   }
 
-  const lightRipple = document.querySelector('[data-md-ripple-light="true"]');
-  const darkRipple = document.querySelector('[data-md-ripple-dark="true"]');
+  const lightRipple = document.querySelectorAll(
+    '[data-md-ripple-light="true"]',
+  );
+  const darkRipple = document.querySelectorAll('[data-md-ripple-dark="true"]');
 
-  lightRipple &&
-    lightRipple.addEventListener('mousedown', (event) =>
-      createRipple(event, 'light'),
-    );
-  darkRipple &&
-    darkRipple.addEventListener('mousedown', (event) =>
-      createRipple(event, 'dark'),
-    );
+  if (lightRipple) {
+    for (let element of lightRipple) {
+      element.addEventListener('mousedown', (event) =>
+        createRipple(event, 'light'),
+      );
+    }
+  }
+
+  if (darkRipple) {
+    for (let element of darkRipple) {
+      element.darkRipple.addEventListener('mousedown', (event) =>
+        createRipple(event, 'dark'),
+      );
+    }
+  }
 }
