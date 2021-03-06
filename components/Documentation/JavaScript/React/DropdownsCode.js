@@ -1,30 +1,15 @@
 import React from 'react';
-import { createPopper } from '@popperjs/core';
-
+import Dropdowns from 'components/Dropdowns/Dropdowns';
+import DropdownItems from 'components/Dropdowns/DropdownItems';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
+import 'ripple/ripple';
 
 export default class DropdownsCode extends React.Component {
   state = {
-    color: 'white',
-    dropdownPopoverShow: false,
+    color: 'pink',
     type: 'react',
   };
-  // dropdown props
-  btnDropdownRef = React.createRef();
-  popoverDropdownRef = React.createRef();
-  openDropdownPopover = () => {
-    new createPopper(
-      this.btnDropdownRef.current,
-      this.popoverDropdownRef.current,
-      {
-        placement: this.props.placement,
-      },
-    );
-    this.setState({ dropdownPopoverShow: true });
-  };
-  closeDropdownPopover = () => {
-    this.setState({ dropdownPopoverShow: false });
-  };
+
   onFrameworkClick = (type) => {
     switch (type) {
       case 'react':
@@ -62,123 +47,26 @@ export default class DropdownsCode extends React.Component {
     }
   };
   render() {
-    // bg colors
-    let bgColor;
-    this.state.color === 'white'
-      ? (bgColor = 'bg-gray-800')
-      : (bgColor = 'bg-' + this.state.color + '-500');
-    let codeToShow =
-      `import React from "react";
-import Popper from "popper.js";
+    let codeToShow = `import React from "react";
+import Dropdowns from "@md-tailwind/react/Dropdowns"
+import DropdownItems from "@md-tailwind/react/DropdownItems"
+import "@md-ripple-effect";
 
-const Dropdown = ({ color }) => {
-  // dropdown props
-  const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
-  const btnDropdownRef = React.createRef();
-  const popoverDropdownRef = React.createRef();
-  const openDropdownPopover = () => {
-    new Popper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "` +
-      this.props.placement +
-      `"
-    });
-    setDropdownPopoverShow(true);
-  };
-  const closeDropdownPopover = () => {
-    setDropdownPopoverShow(false);
-  };
-  // bg colors
-  let bgColor;
-  color === "white"
-    ? (bgColor = "bg-gray-800")
-    : (bgColor = "bg-" + color + "-500");
+export default function Dropdowns() {
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="w-full sm:w-6/12 md:w-4/12 px-4">
-          <div className="relative inline-flex align-middle w-full">
-            <button
-              className={
-                "text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 " +
-                bgColor
-              }
-              style={{ transition: "all .15s ease" }}
-              type="button"
-              ref={btnDropdownRef}
-              onClick={() => {
-                dropdownPopoverShow
-                  ? closeDropdownPopover()
-                  : openDropdownPopover();
-              }}
-            >
-              {color === "white" ? "White Dropdown" : color + " Dropdown"}
-            </button>
-            <div
-              ref={popoverDropdownRef}
-              className={
-                (dropdownPopoverShow ? "block " : "hidden ") +
-                (color === "white" ? "bg-white " : bgColor + " ") +
-                "text-base z-50 float-left py-2 list-none text-left rounded shadow-lg ` +
-      (this.props.placement === 'top-end' ? 'mb-1' : 'mt-1') +
-      `"
-              }
-              style={{ minWidth: "12rem" }}
-            >
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent " +
-                  (color === "white" ? " text-gray-800" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Action
-              </a>
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent " +
-                  (color === "white" ? " text-gray-800" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Another action
-              </a>
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent " +
-                  (color === "white" ? " text-gray-800" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Something else here
-              </a>
-              <div className="h-0 my-2 border border-solid border-t-0 border-gray-900 opacity-25" />
-              <a
-                href="#pablo"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent " +
-                  (color === "white" ? " text-gray-800" : "text-white")
-                }
-                onClick={e => e.preventDefault()}
-              >
-                Seprated link
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default function DropdownRender() {
-  return (
-    <>
-      <Dropdown color="` +
-      this.state.color +
-      `" />
+      <Dropdowns
+        color="${this.state.color}"
+        placement="${this.props.placement}"
+        buttonText="${
+          this.props.placement === 'top-end' ? 'Drop Up' : 'Dropdown'
+        }"
+        data-md-ripple-light={true}
+      >
+        <DropdownItems>Action</DropdownItems>
+        <DropdownItems>Another Action</DropdownItems>
+        <DropdownItems>Something Else</DropdownItems>
+      </Dropdowns>
     </>
   );
 }
@@ -230,92 +118,18 @@ export default function DropdownRender() {
           onColorClick={(color) => this.setState({ color: color })}
           onFrameworkClick={this.onFrameworkClick}
         >
-          <div className="flex flex-wrap">
-            <div className="w-full sm:w-6/12 md:w-4/12 px-4">
-              <div className="relative inline-flex align-middle w-full">
-                <button
-                  className={
-                    'text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ' +
-                    bgColor
-                  }
-                  style={{ transition: 'all .15s ease' }}
-                  type="button"
-                  ref={this.btnDropdownRef}
-                  onClick={() => {
-                    this.state.dropdownPopoverShow
-                      ? this.closeDropdownPopover()
-                      : this.openDropdownPopover();
-                  }}
-                >
-                  {this.state.color === 'white'
-                    ? 'White Dropdown'
-                    : this.state.color + ' Dropdown'}
-                </button>
-                <div
-                  ref={this.popoverDropdownRef}
-                  className={
-                    (this.state.dropdownPopoverShow ? 'block ' : 'hidden ') +
-                    (this.state.color === 'white'
-                      ? 'bg-white '
-                      : bgColor + ' ') +
-                    'text-base z-50 float-left py-2 list-none text-left rounded shadow-lg ' +
-                    (this.props.placement === 'top-end' ? 'mb-1' : 'mt-1')
-                  }
-                  style={{ minWidth: '12rem' }}
-                >
-                  <a
-                    href="#pablo"
-                    className={
-                      'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                      (this.state.color === 'white'
-                        ? ' text-gray-800'
-                        : 'text-white')
-                    }
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Action
-                  </a>
-                  <a
-                    href="#pablo"
-                    className={
-                      'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                      (this.state.color === 'white'
-                        ? ' text-gray-800'
-                        : 'text-white')
-                    }
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Another action
-                  </a>
-                  <a
-                    href="#pablo"
-                    className={
-                      'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                      (this.state.color === 'white'
-                        ? ' text-gray-800'
-                        : 'text-white')
-                    }
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Something else here
-                  </a>
-                  <div className="h-0 my-2 border border-solid border-t-0 border-gray-900 opacity-25" />
-                  <a
-                    href="#pablo"
-                    className={
-                      'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent ' +
-                      (this.state.color === 'white'
-                        ? ' text-gray-800'
-                        : 'text-white')
-                    }
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Seprated link
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Dropdowns
+            color={this.state.color}
+            placement={this.props.placement}
+            buttonText={
+              this.props.placement === 'top-end' ? 'Drop Up' : 'Dropdown'
+            }
+            data-md-ripple-light={true}
+          >
+            <DropdownItems>Action</DropdownItems>
+            <DropdownItems>Another Action</DropdownItems>
+            <DropdownItems>Something Else</DropdownItems>
+          </Dropdowns>
         </DocsSnippet>
       </>
     );
