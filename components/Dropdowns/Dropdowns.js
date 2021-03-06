@@ -245,7 +245,7 @@ const Dropdowns = ({
   color,
   type,
   size = 'regular',
-  position = 'bottom-start',
+  placement = 'bottom-start',
   rounded,
   ...rest
 }) => {
@@ -361,7 +361,7 @@ const Dropdowns = ({
         trigger="click"
         hideOnClick="toggle"
         offset={[0, 0]}
-        placement={position}
+        placement={placement}
         interactive
       >
         <button
@@ -386,7 +386,7 @@ Dropdowns.propTypes = {
   color: PropTypes.string,
   type: PropTypes.string,
   size: PropTypes.string,
-  position: PropTypes.string,
+  placement: PropTypes.string,
   rounded: PropTypes.bool,
 };
 
