@@ -28,7 +28,7 @@ const Alerts = ({ children, color, ...rest }) => {
     <>
       <div
         {...rest}
-        className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 ${colors[color]}`}
+        className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 ${colors[color]} transition-all duration-300`}
       >
         {children}
       </div>
