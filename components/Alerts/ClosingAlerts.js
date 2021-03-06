@@ -23,7 +23,7 @@ const colors = {
   red: 'bg-red-500',
 };
 
-const Alerts = ({ children, color, ...rest }) => {
+const ClosingAlerts = ({ children, color, ...rest }) => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   function closeAlert(e) {
@@ -52,10 +52,10 @@ const Alerts = ({ children, color, ...rest }) => {
         >
           {children}
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-transparent text-2xl outline-none focus:outline-none"
+            className="absolute right-4 top-1/3 transform -translate-y-1/3 w-6 h-6 bg-transparent text-2xl outline-none focus:outline-none"
             onClick={closeAlert}
           >
-            <span className="material-icons leading-none">close</span>
+            <span className="leading-none text-4xl">&times;</span>
           </button>
         </div>
       ) : null}
@@ -63,9 +63,9 @@ const Alerts = ({ children, color, ...rest }) => {
   );
 };
 
-Alerts.propTypes = {
+ClosingAlerts.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node,
 };
 
-export default Alerts;
+export default ClosingAlerts;
