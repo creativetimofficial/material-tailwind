@@ -1,21 +1,45 @@
 if (process.browser) {
-  const createRipple = (event, color) => {
+  function findFurthestPoint(
+    clickPointX,
+    elementWidth,
+    offsetX,
+    clickPointY,
+    elementHeight,
+    offsetY,
+  ) {
+    let x = clickPointX - offsetX > elementWidth / 2 ? 0 : elementWidth;
+    let y = clickPointY - offsetY > elementHeight / 2 ? 0 : elementHeight;
+    let z = Math.hypot(
+      x - (clickPointX - offsetX),
+      y - (clickPointY - offsetY),
+    );
+    return z;
+  }
+
+  function createRipple(event, color) {
     const element = event.currentTarget;
+
+    const rect = element.getBoundingClientRect();
+    const radius = findFurthestPoint(
+      event.clientX,
+      element.offsetWidth,
+      rect.left,
+      event.clientY,
+      element.offsetHeight,
+      rect.top,
+    );
 
     const circle = document.createElement('span');
 
-    circle.classList.add('ripple-effect');
-
-    circle.style.width = '2px';
-    circle.style.height = '2px';
-    circle.style.position = 'absolute';
-    circle.style.top = `${event.pageY - element.offsetTop}px`;
-    circle.style.left = `${event.pageX - element.offsetLeft}px`;
-    circle.style.transform = 'scale(0)';
+    circle.classList.add('ripple');
+    circle.style.backgroundColor =
+      color === 'dark' ? 'rgba(0,0,0, 0.2)' : 'rgba(255,255,255, 0.3)';
     circle.style.borderRadius = '50%';
     circle.style.pointerEvents = 'none';
-    circle.style.backgroundColor =
-      color === 'dark' ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.3)';
+    circle.style.position = 'absolute';
+    circle.style.left = event.clientX - rect.left - radius + 'px';
+    circle.style.top = event.clientY - rect.top - radius + 'px';
+    circle.style.width = circle.style.height = radius * 2 + 'px';
 
     circle.animate(
       [
@@ -24,7 +48,7 @@ if (process.browser) {
           opacity: 1,
         },
         {
-          transform: `scale(${element.offsetWidth})`,
+          transform: 'scale(1.5)',
           opacity: 0,
         },
       ],
@@ -36,27 +60,18 @@ if (process.browser) {
 
     element.appendChild(circle);
 
-    setTimeout(() => {
-      circle.remove();
-    }, 500);
-  };
+    setTimeout(() => circle.remove(), 500);
+  }
 
-  const lightElements = document.querySelectorAll(
-    '[data-md-ripple-light="true"]',
-  );
-  const darkElements = document.querySelectorAll(
-    '[data-md-ripple-dark="true"]',
-  );
+  const lightRipple = document.querySelector('[data-md-ripple-light="true"]');
+  const darkRipple = document.querySelector('[data-md-ripple-dark="true"]');
 
-  for (const element of lightElements) {
-    element.addEventListener('mousedown', (event) =>
+  lightRipple &&
+    lightRipple.addEventListener('mousedown', (event) =>
       createRipple(event, 'light'),
     );
-  }
-
-  for (const element of darkElements) {
-    element.addEventListener('mousedown', (event) =>
+  darkRipple &&
+    darkRipple.addEventListener('mousedown', (event) =>
       createRipple(event, 'dark'),
     );
-  }
 }
