@@ -48,8 +48,6 @@ export default function Dropdown() {
                     For this component to properly work, you will need to
                     install <code>popper.js</code> into your project. Please run
                     the following:
-                    <br />
-                    <code className="text-red-500">npm i @popperjs/core</code>
                   </>
                 }
               />
@@ -68,8 +66,6 @@ export default function Dropdown() {
                     For this component to properly work, you will need to
                     install <code>popper.js</code> into your project. Please run
                     the following:
-                    <br />
-                    <code className="text-red-500">npm i @popperjs/core</code>
                   </>
                 }
               />
