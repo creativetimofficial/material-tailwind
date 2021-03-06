@@ -1,6 +1,6 @@
 import React from 'react';
-
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
+import Alerts from 'components/Alerts/Alerts';
 
 export default class AlertsCode extends React.Component {
   state = {
@@ -31,44 +31,15 @@ export default class AlertsCode extends React.Component {
   };
   render() {
     let codeToShow = `import React from "react";
+import Alerts from "@md-tailwind/react/Alerts";
 
-    const Alert = ({ color, text }) => {
-      return (
-        <>
-          <div
-            className={
-              'text-white px-6 py-4 border-0 rounded relative mb-4 bg-' +
-              color +
-              '-500'
-            }
-          >
-            <span className="material-icons mr-4 align-middle">face</span>
-            <span className="inline-block align-middle mr-8">
-              <b className="capitalize">{color}!</b> {text}
-            </span>
-            <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
-              <span>×</span>
-            </button>
-          </div>
-        </>
-      );
-    };
-
-    export default function Alerts() {
-      return (
-        <>
-          {colors.map((prop, key) => {
-            return (
-              <Alert
-                key={key}
-                color="${this.state.color}"
-                text="This is a ${this.state.color} alert - check it out!"}
-              />
-            );
-          })}
-        </>
-      );
-    }`;
+export default function Alerts() {
+  return (
+    <>
+      <Alerts key={key} color="${this.state.color}">MD Tailwind Alerts</Alerts>
+    </>
+  );
+}`;
 
     return (
       <>
@@ -117,24 +88,12 @@ export default class AlertsCode extends React.Component {
           onColorClick={(color) => this.setState({ color: color })}
           onFrameworkClick={this.onFrameworkClick}
         >
-          <div
-            className={
-              'text-white px-6 py-4 border-0 rounded relative mb-4 bg-' +
-              this.state.color +
-              '-500'
-            }
-          >
-            <span className="material-icons mr-4 align-middle">
-              notifications
-            </span>
-            <span className="inline-block align-middle mr-8">
-              <b className="capitalize">{this.state.color}!</b> This is a{' '}
-              {this.state.color} alert - check it out!
-            </span>
-            <button className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none">
-              <span>×</span>
-            </button>
-          </div>
+          {/* blue-gray -> blueGray */}
+
+          <Alerts color={this.state.color}>
+            <span className="font-medium uppercase">{this.state.color}!</span>{' '}
+            This is a {this.state.color.toLowerCase()} alert - check it out!
+          </Alerts>
         </DocsSnippet>
       </>
     );
