@@ -1,6 +1,28 @@
 import React from 'react';
-
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
+import Buttons from 'components/Buttons/Buttons';
+
+const colors = {
+  blueGray: 'bg-blue-gray-500',
+  gray: 'bg-gray-500',
+  brown: 'bg-brown-500',
+  deepOrange: 'bg-deep-orange-500',
+  orange: 'bg-orange-500',
+  amber: 'bg-amber-500',
+  yellow: 'bg-yellow-500',
+  lime: 'bg-lime-500',
+  lightGreen: 'bg-light-green-500',
+  green: 'bg-green-500',
+  teal: 'bg-teal-500',
+  cyan: 'bg-cyan-500',
+  lightBlue: 'bg-light-blue-500',
+  blue: 'bg-blue-500',
+  indigo: 'bg-indigo-500',
+  deepPurple: 'bg-deep-purple-500',
+  purple: 'bg-purple-500',
+  pink: 'bg-pink-500',
+  red: 'bg-red-500',
+};
 
 export default class ClosingAlertsCode extends React.Component {
   state = {
@@ -8,6 +30,23 @@ export default class ClosingAlertsCode extends React.Component {
     showAlert: true,
     type: 'react',
   };
+
+  closeAlert(e) {
+    let delay;
+
+    const parentClassName = e.target.parentNode.parentNode;
+
+    parentClassName.classList.add('opacity-0');
+
+    Array.from(parentClassName.classList).map((el) =>
+      el.includes('duration') ? (delay = el.split('-')[1]) : null,
+    );
+
+    setTimeout(
+      () => this.setState({ showAlert: false }),
+      delay ? parseInt(delay, 10) + 100 : 250,
+    );
+  }
 
   onFrameworkClick = (type) => {
     switch (type) {
@@ -32,42 +71,15 @@ export default class ClosingAlertsCode extends React.Component {
   };
   render() {
     let codeToShow = `import React from "react";
+import ClosingAlerts from "@md-tailwind/react/ClosingAlerts";
 
-    const Alert = ({ color }) => {
-      const [showAlert, setShowAlert] = React.useState(true);
-      return (
-        <>
-          {showAlert ? (
-            <div
-              className={
-                "text-white px-6 py-4 border-0 rounded relative mb-4 bg-" +
-                color +
-                "-500"
-              }
-            >
-              <span className="material-icons mr-4 align-middle">notifications</span>
-              <span className="inline-block align-middle mr-8">
-                <b className="capitalize">{color}!</b> {text}
-              </span>
-              <button
-                className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-                onClick={() => setShowAlert(false)}
-              >
-                <span>×</span>
-              </button>
-            </div>
-          ) : null}
-        </>
-      );
-    };
-
-    export default function ClosingAlert() {
-      return (
-        <>
-          return <Alert color="${this.state.color}" text="This is a ${this.state.color} alert - check it out!" />;
-        </>
-      );
-    }`;
+export default function ClosingAlerts() {
+  return (
+    <>
+      <ClosingAlerts key={key} color="${this.state.color}">MD Tailwind Closing Alerts</ClosingAlerts>
+    </>
+  );
+}`;
 
     return (
       <>
@@ -118,40 +130,27 @@ export default class ClosingAlertsCode extends React.Component {
         >
           {this.state.showAlert ? (
             <div
-              className={
-                'text-white px-6 py-4 border-0 rounded relative mb-4 bg-' +
-                this.state.color +
-                '-500'
-              }
+              className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 ${
+                colors[this.state.color]
+              } transition-all duration-300`}
             >
-              <span className="material-icons mr-4 align-middle">
-                notifications
-              </span>
-              <span className="inline-block align-middle mr-8">
-                <b className="capitalize">{this.state.color}!</b> This is a{' '}
-                {this.state.color} alert - check it out!
-              </span>
+              <span className="font-medium uppercase">{this.state.color}!</span>{' '}
+              This is a {this.state.color.toLowerCase()} closing alert - check
+              it out!
               <button
-                className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-                onClick={() => this.setState({ showAlert: false })}
+                className="absolute right-4 top-1/3 transform -translate-y-1/3 w-6 h-6 bg-transparent text-2xl outline-none focus:outline-none"
+                onClick={(e) => this.closeAlert(e)}
               >
-                <span>×</span>
+                <span className="leading-none text-4xl">&times;</span>
               </button>
             </div>
           ) : (
-            <button
-              className={
-                'bg-' +
-                this.state.color +
-                '-500 text-white active:bg-' +
-                this.state.color +
-                '-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1'
-              }
-              type="button"
+            <Buttons
+              color={this.state.color}
               onClick={() => this.setState({ showAlert: true })}
             >
-              Revert changes
-            </button>
+              Revert Changes
+            </Buttons>
           )}
         </DocsSnippet>
       </>
