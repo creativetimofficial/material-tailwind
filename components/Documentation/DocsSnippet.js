@@ -5,6 +5,28 @@ import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const colors = [
+  'blue-gray',
+  'gray',
+  'brown',
+  'deep-orange',
+  'orange',
+  'amber',
+  'yellow',
+  'lime',
+  'light-green',
+  'green',
+  'teal',
+  'cyan',
+  'light-blue',
+  'blue',
+  'indigo',
+  'deep-purple',
+  'purple',
+  'pink',
+  'red',
+];
+
+const elementColors = [
   'blueGray',
   'gray',
   'brown',
@@ -32,12 +54,7 @@ export default class DocsSnippet extends React.Component {
   render() {
     return (
       <>
-        <div
-          className={
-            'border border-solid border-gray-400 rounded my-4 p-4 pt-6 relative' +
-            (this.props.bgColor ? ' ' + this.props.bgColor : '')
-          }
-        >
+        <div className="border border-solid border-gray-400 rounded my-4 p-4 pt-6 relative">
           {this.props.activeColor ? (
             <div
               id="colors"
@@ -49,15 +66,13 @@ export default class DocsSnippet extends React.Component {
                   return (
                     <span
                       key={key}
-                      className={
-                        'cursor-pointer w-6 h-6 rounded last:mr-0 mr-2 bg-' +
-                        prop +
-                        (this.props.activeColor === prop
+                      className={`cursor-pointer w-6 h-6 rounded last:mr-0 mr-2 bg-${prop}${
+                        this.props.activeColor === elementColors[key]
                           ? '-500 shadow-md'
-                          : '-200')
-                      }
+                          : '-200'
+                      }`}
                       onClick={() => {
-                        this.props.onColorClick(prop);
+                        this.props.onColorClick(elementColors[key]);
                         this.props.onCopy(false);
                       }}
                     />
@@ -142,22 +157,22 @@ DocsSnippet.propTypes = {
   copyText: PropTypes.string.isRequired,
   onCopy: PropTypes.func.isRequired,
   activeColor: PropTypes.oneOf([
-    'blueGray',
+    'blue-gray',
     'gray',
     'brown',
-    'deepOrange',
+    'deep-orange',
     'orange',
     'amber',
     'yellow',
     'lime',
-    'lightGreen',
+    'light-green',
     'green',
     'teal',
     'cyan',
-    'lightBlue',
+    'light-blue',
     'blue',
     'indigo',
-    'deepPurple',
+    'deep-purple',
     'purple',
     'pink',
     'red',
