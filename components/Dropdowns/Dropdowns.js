@@ -243,7 +243,7 @@ const Dropdowns = ({
   children,
   buttonText,
   color,
-  type,
+  buttonType,
   size = 'regular',
   placement = 'bottom-start',
   rounded,
@@ -336,9 +336,9 @@ const Dropdowns = ({
     classes.push(...buttonRegular);
   }
 
-  if (type === 'outline') {
+  if (buttonType === 'outline') {
     classes.push(...buttonOutline);
-  } else if (type === 'link') {
+  } else if (buttonType === 'link') {
     classes.push(...buttonLink);
   } else {
     classes.push(...buttonFilled);
@@ -384,7 +384,7 @@ Dropdowns.propTypes = {
   children: PropTypes.node,
   buttonText: PropTypes.string,
   color: PropTypes.string,
-  type: PropTypes.string,
+  buttonType: PropTypes.string,
   size: PropTypes.string,
   placement: PropTypes.string,
   rounded: PropTypes.bool,
