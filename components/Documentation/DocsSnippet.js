@@ -50,107 +50,110 @@ const elementColors = [
 
 const buttons = ['html', 'react', 'vue', 'angular'];
 
-export default class DocsSnippet extends React.Component {
-  render() {
-    return (
-      <>
-        <div className="border border-solid border-gray-400 rounded my-4 p-4 pt-6 relative">
-          {this.props.activeColor ? (
-            <div
-              id="colors"
-              className="flex flew-wrap justify-center items-center absolute w-full left-0 sm:left-auto"
-              style={{ width: '100%', bottom: '-14px' }}
-            >
-              <div className="flex flew-wrap justify-center items-center bg-white px-2">
-                {colors.map((prop, key) => {
-                  return (
-                    <span
-                      key={key}
-                      className={`cursor-pointer w-6 h-6 rounded last:mr-0 mr-2 bg-${prop}${
-                        this.props.activeColor === elementColors[key]
-                          ? '-500 shadow-md'
-                          : '-200'
-                      }`}
-                      onClick={() => {
-                        this.props.onColorClick(elementColors[key]);
-                        this.props.onCopy(false);
-                      }}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          ) : null}
-          {this.props.children}
-
-          <div className="relative mt-4">
-            <div
-              id="languages"
-              className="absolute w-full right-0 border-b border-gray-700 py-1"
-              style={{ width: '100%' }}
-            >
-              {buttons.map((prop, key) => {
+export default function DocsSnippet({
+  children,
+  activeColor,
+  activeFramework,
+  onColorClick,
+  onFrameworkClick,
+  onCopy,
+  codeToShow,
+  copyText,
+}) {
+  return (
+    <>
+      <div className="border border-solid border-gray-400 rounded my-4 p-4 pt-6 relative">
+        {activeColor ? (
+          <div
+            id="colors"
+            className="flex flew-wrap justify-center items-center absolute w-full left-0 sm:left-auto"
+            style={{ width: '100%', bottom: '-14px' }}
+          >
+            <div className="flex flew-wrap justify-center items-center bg-white px-2">
+              {colors.map((prop, key) => {
                 return (
-                  <button
+                  <span
                     key={key}
-                    className={
-                      'flex-auto text-sm px-3 outline-none focus:outline-none mb-1 text-gray-' +
-                      (this.props.activeFramework === prop ? '400' : '600')
-                    }
+                    className={`cursor-pointer w-6 h-6 rounded last:mr-0 mr-2 bg-${prop}${
+                      activeColor === elementColors[key]
+                        ? '-500 shadow-md'
+                        : '-200'
+                    }`}
                     onClick={() => {
-                      this.props.onFrameworkClick(prop);
-                      this.props.onCopy(false);
+                      onColorClick(elementColors[key]);
+                      onCopy(false);
                     }}
-                    type="button"
-                  >
-                    {(() => {
-                      switch (prop) {
-                        default:
-                          return 'HTML';
-                        case 'react':
-                          return 'React';
-                        case 'angular':
-                          return 'Angular';
-                        case 'vue':
-                          return 'Vue';
-                      }
-                    })()}
-                  </button>
+                  />
                 );
               })}
             </div>
-
-            <CopyToClipboard
-              text={this.props.codeToShow}
-              onCopy={() => this.props.onCopy(true)}
-            >
-              <div className="docs-code-preview">
+          </div>
+        ) : null}
+        {children}
+        <div className="relative mt-4">
+          <div
+            id="languages"
+            className="absolute w-full right-0 border-b border-gray-700 py-1"
+            style={{ width: '100%' }}
+          >
+            {buttons.map((prop, key) => {
+              return (
                 <button
+                  key={key}
                   className={
-                    'text-gray-400 font-normal px-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-transparent absolute right-0 mt-1'
+                    'flex-auto text-sm px-3 outline-none focus:outline-none mb-1 text-gray-' +
+                    (activeFramework === prop ? '400' : '600')
                   }
+                  onClick={() => {
+                    onFrameworkClick(prop);
+                    onCopy(false);
+                  }}
                   type="button"
                 >
-                  {this.props.copyText}
+                  {(() => {
+                    switch (prop) {
+                      default:
+                        return 'HTML';
+                      case 'react':
+                        return 'React';
+                      case 'angular':
+                        return 'Angular';
+                      case 'vue':
+                        return 'Vue';
+                    }
+                  })()}
                 </button>
-                <SyntaxHighlighter
-                  language="jsx"
-                  style={shadesOfPurple}
-                  customStyle={{
-                    fontSize: '0.825em',
-                    padding: '14px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  {this.props.codeToShow}
-                </SyntaxHighlighter>
-              </div>
-            </CopyToClipboard>
+              );
+            })}
           </div>
+
+          <CopyToClipboard text={codeToShow} onCopy={() => onCopy(true)}>
+            <div className="docs-code-preview">
+              <button
+                className={
+                  'text-gray-400 font-normal px-2 rounded outline-none focus:outline-none mr-1 mb-1 bg-transparent absolute right-0 mt-1'
+                }
+                type="button"
+              >
+                {copyText}
+              </button>
+              <SyntaxHighlighter
+                language="jsx"
+                style={shadesOfPurple}
+                customStyle={{
+                  fontSize: '0.825em',
+                  padding: '14px',
+                  borderRadius: '4px',
+                }}
+              >
+                {codeToShow}
+              </SyntaxHighlighter>
+            </div>
+          </CopyToClipboard>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
 
 DocsSnippet.propTypes = {
