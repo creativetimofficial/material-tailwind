@@ -45,14 +45,14 @@ const textColors = {
   red: 'text-red-700',
 };
 
-const Label = ({ children, color }) => {
+const Labels = ({ children, color }) => {
   return (
     <>
       <div
         className={`flex items-center justify-between py-1 px-3 rounded-full ${bgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
       >
         <span
-          className={`text-xs font-semibold uppercase ${textColors[color]} uppercase`}
+          className={`text-xs font-semibold uppercase ${textColors[color]}`}
         >
           {children}
         </span>
@@ -61,9 +61,9 @@ const Label = ({ children, color }) => {
   );
 };
 
-Label.propTypes = {
+Labels.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
 };
 
-export default Label;
+export default Labels;
