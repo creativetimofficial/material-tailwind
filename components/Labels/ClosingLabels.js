@@ -67,7 +67,7 @@ const textColors = {
   red: 'text-red-700',
 };
 
-const Label = ({ children, color }) => {
+const ClosingLabels = ({ children, color }) => {
   const [showLabel, setShowLabel] = React.useState(true);
 
   function closeLabel(e) {
@@ -99,10 +99,10 @@ const Label = ({ children, color }) => {
             {children}
           </span>
           <span
-            className={`material-icons ${spanBgColors[color]} text-white text-sm rounded-full p-0.5 cursor-pointer grid place-items-center`}
+            className={`${spanBgColors[color]} text-white text-base leading-snug rounded-full w-5 h-5 cursor-pointer grid place-items-center`}
             onClick={closeLabel}
           >
-            close
+            &times;
           </span>
         </div>
       ) : null}
@@ -110,9 +110,9 @@ const Label = ({ children, color }) => {
   );
 };
 
-Label.propTypes = {
+ClosingLabels.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
 };
 
-export default Label;
+export default ClosingLabels;
