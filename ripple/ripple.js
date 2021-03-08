@@ -78,7 +78,7 @@ if (process.browser) {
 
   if (darkRipple) {
     for (let element of darkRipple) {
-      element.darkRipple.addEventListener('mousedown', (event) =>
+      element.addEventListener('mousedown', (event) =>
         createRipple(event, 'dark'),
       );
     }
