@@ -186,6 +186,10 @@ const routes = [
         ],
       },
       {
+        path: '/documentation/react/images',
+        name: 'Images',
+      },
+      {
         path: '/documentation/react/menus',
         name: 'Menus',
       },
