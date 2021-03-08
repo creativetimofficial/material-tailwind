@@ -26,19 +26,17 @@ ${
     : 'import "@md-ripple-effect";'
 }
 
-export default function Dropdowns() {
+export default function Buttons() {
   return (
-    <>
-      <Buttons
-        color="${color}"
-        buttonType="${buttonType}"
-        size="${size}"
-        rounded={${rounded}}
-        ${ripple}
-      >
-        ${buttonChildren}
-      </Buttons>
-    </>
+    <Buttons
+      color="${color}"
+      buttonType="${buttonType}"
+      size="${size}"
+      rounded={${rounded}}
+      ${ripple}
+    >
+      ${buttonChildren}
+    </Buttons>
   )
 }`;
 
