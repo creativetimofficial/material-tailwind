@@ -150,8 +150,40 @@ const routes = [
         ],
       },
       {
-        path: '/documentation/react/dropdowns',
         name: 'Dropdowns',
+        state: 'reactDropdownsState',
+        subRoutes: [
+          {
+            path: '/documentation/react/dropdowns/filled',
+            name: 'Filled',
+          },
+          {
+            path: '/documentation/react/dropdowns/outline',
+            name: 'Outline',
+          },
+          {
+            path: '/documentation/react/dropdowns/link',
+            name: 'Link',
+          },
+        ],
+      },
+      {
+        name: 'Dropups',
+        state: 'reactDropupsState',
+        subRoutes: [
+          {
+            path: '/documentation/react/dropups/filled',
+            name: 'Filled',
+          },
+          {
+            path: '/documentation/react/dropups/outline',
+            name: 'Outline',
+          },
+          {
+            path: '/documentation/react/dropups/link',
+            name: 'Link',
+          },
+        ],
       },
       {
         path: '/documentation/react/menus',
