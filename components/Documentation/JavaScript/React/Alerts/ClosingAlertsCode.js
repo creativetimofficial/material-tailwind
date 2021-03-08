@@ -56,9 +56,7 @@ import ClosingAlerts from "@md-tailwind/react/ClosingAlerts";
 
 export default function ClosingAlerts() {
   return (
-    <>
-      <ClosingAlerts key={key} color="${color}">MD Tailwind Closing Alerts</ClosingAlerts>
-    </>
+    <ClosingAlerts key={key} color="${color}">MD Tailwind Closing Alerts</ClosingAlerts>
   );
 }`;
 
