@@ -23,6 +23,28 @@ const colors = {
   red: 'md-input-red-500',
 };
 
+const borderColors = {
+  blueGray: 'border-blue-gray-500',
+  gray: 'border-gray-500',
+  brown: 'border-brown-500',
+  deepOrange: 'border-deep-orange-500',
+  orange: 'border-orange-500',
+  amber: 'border-amber-500',
+  yellow: 'border-yellow-500',
+  lime: 'border-lime-500',
+  lightGreen: 'border-light-green-500',
+  green: 'border-green-500',
+  teal: 'border-teal-500',
+  cyan: 'border-cyan-500',
+  lightBlue: 'border-light-blue-500',
+  blue: 'border-blue-500',
+  indigo: 'border-indigo-500',
+  deepPurple: 'border-deep-purple-500',
+  purple: 'border-purple-500',
+  pink: 'border-pink-500',
+  red: 'border-red-500',
+};
+
 const Input = ({
   placeholder,
   color,
@@ -36,6 +58,7 @@ const Input = ({
   let container = ['w-full', 'relative'];
 
   let label = [
+    'text-gray-500',
     'absolute',
     'left-0',
     `${outline ? '-top-1.5' : '-top-0.5'}`,
@@ -89,12 +112,12 @@ const Input = ({
     'border-gray-500',
     'rounded',
     'focus:border-2',
-    `focus:border-${color}-500`,
+    `focus:${borderColors[color]}`,
   ];
 
   const inputError = [
     `border-${error ? 'red-500' : 'gray-400'}`,
-    `focus:border-${error ? 'red-500' : `${color}-600`}`,
+    `focus:${borderColors[color]}`,
   ];
 
   if (size === 'sm') {
@@ -128,7 +151,7 @@ const Input = ({
           <span
             className={`${
               size === 'sm' && 'text-sm'
-            } text-gray-500 absolute top-1/4 transition-all duration-300`}
+            } absolute top-1/4 transition-all duration-300`}
           >
             {placeholder}
           </span>
