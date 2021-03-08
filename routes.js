@@ -194,6 +194,10 @@ const routes = [
         name: 'Inputs',
       },
       {
+        path: '/documentation/react/labels',
+        name: 'Labels',
+      },
+      {
         path: '/documentation/react/menus',
         name: 'Menus',
       },
