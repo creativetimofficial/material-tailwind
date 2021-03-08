@@ -132,6 +132,24 @@ const routes = [
         name: 'Alerts',
       },
       {
+        name: 'Buttons',
+        state: 'reactButtonsState',
+        subRoutes: [
+          {
+            path: '/documentation/react/buttons/small',
+            name: 'Small',
+          },
+          {
+            path: '/documentation/react/buttons/regular',
+            name: 'Regular',
+          },
+          {
+            path: '/documentation/react/buttons/larger',
+            name: 'Large',
+          },
+        ],
+      },
+      {
         path: '/documentation/react/dropdowns',
         name: 'Dropdowns',
       },
