@@ -38,7 +38,9 @@ const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
       </span>
     );
   } else if (family === 'font-awesome') {
-    iconUI = <i {...rest} className={`fas ${name} ${colors[color]} ${size}`} />;
+    iconUI = (
+      <i {...rest} className={`fas ${name} ${colors[color]} text-${size}`} />
+    );
   }
 
   return iconUI;
