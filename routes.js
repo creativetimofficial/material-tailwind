@@ -136,16 +136,16 @@ const routes = [
         state: 'reactButtonsState',
         subRoutes: [
           {
-            path: '/documentation/react/buttons/small',
-            name: 'Small',
+            path: '/documentation/react/buttons/filled',
+            name: 'Filled',
           },
           {
-            path: '/documentation/react/buttons/regular',
-            name: 'Regular',
+            path: '/documentation/react/buttons/outline',
+            name: 'Outline',
           },
           {
-            path: '/documentation/react/buttons/larger',
-            name: 'Large',
+            path: '/documentation/react/buttons/link',
+            name: 'Link',
           },
         ],
       },
