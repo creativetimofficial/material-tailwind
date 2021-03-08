@@ -190,6 +190,10 @@ const routes = [
         name: 'Images',
       },
       {
+        path: '/documentation/react/inputs',
+        name: 'Inputs',
+      },
+      {
         path: '/documentation/react/menus',
         name: 'Menus',
       },
