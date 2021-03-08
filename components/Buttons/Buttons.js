@@ -222,7 +222,10 @@ const outlineBgActiveColors = {
 };
 
 const Buttons = forwardRef(
-  ({ children, color, type, size = 'regular', rounded, ...rest }, ref) => {
+  (
+    { children, color, buttonType, size = 'regular', rounded, ...rest },
+    ref,
+  ) => {
     let classes = [];
 
     rounded = rounded ? 'rounded-full' : 'rounded';
@@ -307,9 +310,9 @@ const Buttons = forwardRef(
       classes.push(...buttonRegular);
     }
 
-    if (type === 'outline') {
+    if (buttonType === 'outline') {
       classes.push(...buttonOutline);
-    } else if (type === 'link') {
+    } else if (buttonType === 'link') {
       classes.push(...buttonLink);
     } else {
       classes.push(...buttonFilled);
@@ -328,7 +331,7 @@ const Buttons = forwardRef(
 Buttons.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
-  type: PropTypes.string,
+  buttonType: PropTypes.string,
   size: PropTypes.string,
   rounded: PropTypes.bool,
 };
