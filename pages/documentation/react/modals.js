@@ -4,9 +4,7 @@ import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-
 import ModalsCode from 'components/Documentation/JavaScript/React/ModalsCode.js';
-
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
@@ -44,7 +42,8 @@ export default function SmallModal() {
               <ModalsCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
-                type="small"
+                size="sm"
+                modalSize="small"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -53,7 +52,8 @@ export default function SmallModal() {
               <ModalsCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
-                type="regular"
+                size="regular"
+                modalSize="regular"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -62,7 +62,8 @@ export default function SmallModal() {
               <ModalsCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
-                type="large"
+                size="lg"
+                modalSize="large"
               />
             </div>
           </div>
