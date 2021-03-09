@@ -29,7 +29,7 @@ export default function Pagination() {
       <PaginationItem href="#last" data-md-ripple-dark={true}>
         <Icon name="keyboard_arrow_left" size="md" />
       </PaginationItem>
-      <PaginationItem color="pink" href="#1" data-md-ripple-light={true}>
+      <PaginationItem color="${color}" href="#1" data-md-ripple-light={true}>
         1
       </PaginationItem>
       <PaginationItem href="#2" data-md-ripple-dark={true}>
@@ -109,7 +109,7 @@ export default function Pagination() {
             <PaginationItem href="#last" data-md-ripple-dark={true}>
               <Icon name="keyboard_arrow_left" size="md" />
             </PaginationItem>
-            <PaginationItem color="pink" href="#1" data-md-ripple-light={true}>
+            <PaginationItem color={color} href="#1" data-md-ripple-light={true}>
               1
             </PaginationItem>
             <PaginationItem href="#2" data-md-ripple-dark={true}>
