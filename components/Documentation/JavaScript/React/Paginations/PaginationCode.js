@@ -6,7 +6,7 @@ import PaginationItem from 'components/Pagination/PaginationItem';
 import Icon from 'components/Icon/Icon';
 import 'ripple/ripple';
 
-export default function AlertsCode({ copyText, onCopy, placement }) {
+export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('pink');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
