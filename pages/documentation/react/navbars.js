@@ -6,10 +6,10 @@ import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
 import Link from 'next/link';
 
+import NavbarCode from 'components/Documentation/JavaScript/React/Navbars/NavbarCode.js';
 import NavbarIconsLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsLinksCode.js';
-import NavbarIconsCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsCode.js';
 import NavbarLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarLinksCode.js';
-import NavbarSearchCode from 'components/Documentation/JavaScript/React/Navbars/NavbarSearchCode.js';
+import NavbarIconsCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsCode.js';
 
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
@@ -43,24 +43,30 @@ export default function Navbars() {
                 title="React Navbars"
                 description="Responsive React navigation for your website. You can add in it links, icons, links with icons, search bars and a brand text."
               />
+
+              <SmallHeading
+                title="Navbar"
+                description={
+                  <>
+                    This one is a complete navbar with icon text links and
+                    search input.
+                  </>
+                }
+              />
+
+              <NavbarCode
+                copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'IconsText' : '')}
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
               <SmallHeading
                 title="Navbar with icons and links"
                 description={
                   <>
                     This is the most used navbar in real-life website, an
-                    naviagtion menu with text and icon links. You can change the
-                    links with anything from the{' '}
-                    <Link
-                      href="/documentation/css/navbars"
-                      as={
-                        (process.env.NODE_ENV === 'production'
-                          ? '/learning-lab/tailwind-starter-kit'
-                          : '') + '/documentation/css/navbars'
-                      }
-                    >
-                      CSS Navbars
-                    </Link>{' '}
-                    and everything will work properly.
+                    naviagtion menu with text and icon links.
                   </>
                 }
               />
@@ -72,52 +78,8 @@ export default function Navbars() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading
-                title="Navbar with icons"
-                description={
-                  <>
-                    This one used only icon links no text is used. You can
-                    change the links with anything from the{' '}
-                    <Link
-                      href="/documentation/css/navbars"
-                      as={
-                        (process.env.NODE_ENV === 'production'
-                          ? '/learning-lab/tailwind-starter-kit'
-                          : '') + '/documentation/css/navbars'
-                      }
-                    >
-                      CSS Navbars
-                    </Link>{' '}
-                    and everything will work properly.
-                  </>
-                }
-              />
-
-              <NavbarIconsCode
-                copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
-                onCopy={(text) => setCopy(text ? 'IconsText' : '')}
-              />
-
-              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
-
-              <SmallHeading
                 title="Navbar with links"
-                description={
-                  <>
-                    This one used text links no icon is used. You can change the
-                    links with anything from the{' '}
-                    <Link
-                      href="/documentation/css/navbars"
-                      as={
-                        (process.env.NODE_ENV === 'production'
-                          ? '/learning-lab/tailwind-starter-kit'
-                          : '') + '/documentation/css/navbars'
-                      }
-                    >
-                      CSS Navbars
-                    </Link>{' '}
-                    and everything will work properly.
-                  </>
-                }
+                description={<>This one used text links no icon is used.</>}
               />
 
               <NavbarLinksCode
@@ -128,27 +90,13 @@ export default function Navbars() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading
-                title="Navbar with input"
+                title="Navbar with icons"
                 description={
-                  <>
-                    This one used icons with links and input. You can change the
-                    links with anything from the{' '}
-                    <Link
-                      href="/documentation/css/navbars"
-                      as={
-                        (process.env.NODE_ENV === 'production'
-                          ? '/learning-lab/tailwind-starter-kit'
-                          : '') + '/documentation/css/navbars'
-                      }
-                    >
-                      CSS Navbars
-                    </Link>{' '}
-                    and everything will work properly.
-                  </>
+                  <>This one used only icon links no text is used.</>
                 }
               />
 
-              <NavbarSearchCode
+              <NavbarIconsCode
                 copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'IconsText' : '')}
               />
