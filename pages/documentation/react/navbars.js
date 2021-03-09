@@ -4,13 +4,10 @@ import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-import Link from 'next/link';
-
 import NavbarCode from 'components/Documentation/JavaScript/React/Navbars/NavbarCode.js';
 import NavbarIconsLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsLinksCode.js';
 import NavbarLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarLinksCode.js';
 import NavbarIconsCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsCode.js';
-
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
