@@ -8,7 +8,7 @@ import TabContent from 'components/Tabs/TabContent';
 import TabPane from 'components/Tabs/TabPane';
 import 'ripple/ripple';
 
-export default function AlertsCode({ copyText, onCopy, placement }) {
+export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('pink');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
