@@ -210,26 +210,8 @@ const routes = [
         name: 'Navbars',
       },
       {
+        path: '/documentation/react/popovers',
         name: 'Popovers',
-        state: 'reactPopoversState',
-        subRoutes: [
-          {
-            path: '/documentation/react/popovers/left',
-            name: 'Left',
-          },
-          {
-            path: '/documentation/react/popovers/top',
-            name: 'Top',
-          },
-          {
-            path: '/documentation/react/popovers/right',
-            name: 'Right',
-          },
-          {
-            path: '/documentation/react/popovers/bottom',
-            name: 'Bottom',
-          },
-        ],
       },
       {
         name: 'Tabs',
