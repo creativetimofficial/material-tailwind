@@ -210,6 +210,10 @@ const routes = [
         name: 'Navbars',
       },
       {
+        path: '/documentation/react/paginations',
+        name: 'Paginations',
+      },
+      {
         path: '/documentation/react/popovers',
         name: 'Popovers',
       },
