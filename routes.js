@@ -228,26 +228,8 @@ const routes = [
         ],
       },
       {
+        path: '/documentation/react/tooltips',
         name: 'Tooltips',
-        state: 'reactTooltipsState',
-        subRoutes: [
-          {
-            path: '/documentation/react/tooltips/left',
-            name: 'Left',
-          },
-          {
-            path: '/documentation/react/tooltips/top',
-            name: 'Top',
-          },
-          {
-            path: '/documentation/react/tooltips/right',
-            name: 'Right',
-          },
-          {
-            path: '/documentation/react/tooltips/bottom',
-            name: 'Bottom',
-          },
-        ],
       },
     ],
   },
