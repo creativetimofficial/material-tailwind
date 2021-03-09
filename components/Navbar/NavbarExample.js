@@ -14,7 +14,7 @@ const NavbarExample = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
 
   return (
-    <Navbar color="pink">
+    <Navbar color="pink" navbar>
       <NavbarContainer>
         <NavbarWrapper>
           <NavbarBrand color="white">Navbar</NavbarBrand>
