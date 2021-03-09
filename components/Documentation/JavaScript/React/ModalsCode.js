@@ -17,11 +17,11 @@ export default function AlertsCode({ copyText, onCopy, size, modalSize }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React, { useState } from "react";
-import Modal from 'components/Modals/Modal';
-import ModalHeader from 'components/Modals/ModalHeader';
-import ModalBody from 'components/Modals/ModalBody';
-import ModalFooter from 'components/Modals/ModalFooter';
-import Buttons from 'components/Buttons/Buttons';
+import Modal from "components/Modals/Modal";
+import ModalHeader from "components/Modals/ModalHeader";
+import ModalBody from "components/Modals/ModalBody";
+import ModalFooter from "components/Modals/ModalFooter";
+import Buttons from "components/Buttons/Buttons";
 
 export default function Modals() {
   return (
