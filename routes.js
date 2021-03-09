@@ -218,6 +218,10 @@ const routes = [
         name: 'Popovers',
       },
       {
+        path: '/documentation/react/progressbars',
+        name: 'Progressbars',
+      },
+      {
         name: 'Tabs',
         state: 'reactTabsState',
         subRoutes: [
