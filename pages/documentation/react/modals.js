@@ -23,7 +23,7 @@ export default function SmallModal() {
           property="og:url"
           content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/modals/small"
         />
-        <title>React Small Modal | Tailwind Starter Kit by Creative Tim</title>
+        <title>React Modals | Tailwind Starter Kit by Creative Tim</title>
       </Head>
       <Navbar fixed />
       <div className="container mx-auto mt-4 pt-12">
