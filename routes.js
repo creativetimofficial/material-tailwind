@@ -239,6 +239,32 @@ const routes = [
         path: '/documentation/react/tooltips',
         name: 'Tooltips',
       },
+      {
+        name: 'Typography',
+        state: 'reactTypographyState',
+        subRoutes: [
+          {
+            path: '/documentation/react/typography/headings',
+            name: 'Headings',
+          },
+          {
+            path: '/documentation/react/typography/paragraph',
+            name: 'Paragraph',
+          },
+          {
+            path: '/documentation/react/typography/leadText',
+            name: 'Lead Text',
+          },
+          {
+            path: '/documentation/react/typography/quote',
+            name: 'Quote',
+          },
+          {
+            path: '/documentation/react/typography/small',
+            name: 'Small',
+          },
+        ],
+      },
     ],
   },
 ];
