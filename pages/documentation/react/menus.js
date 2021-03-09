@@ -1,14 +1,14 @@
-import React from "react";
-import Head from "next/head";
-import Sidebar from "components/Documentation/Sidebar.js";
-import routes from "routes.js";
-import Navbar from "components/Documentation/Navbar.js";
-import Footer from "components/Documentation/Footer.js";
-
-import MenusCode from "components/Documentation/JavaScript/React/MenusCode.js";
-
-import Heading from "components/Documentation/Heading.js";
-import SmallHeading from "components/Documentation/SmallHeading.js";
+import React from 'react';
+import Head from 'next/head';
+import Sidebar from 'components/Documentation/Sidebar.js';
+import routes from 'routes.js';
+import Navbar from 'components/Documentation/Navbar.js';
+import Footer from 'components/Documentation/Footer.js';
+import MenuCode from 'components/Documentation/JavaScript/React/Menus/MenuCode.js';
+import MenuLinksCode from 'components/Documentation/JavaScript/React/Menus/MenuLinksCode.js';
+import MenuIconsCode from 'components/Documentation/JavaScript/React/Menus/MenuIconsCode.js';
+import Heading from 'components/Documentation/Heading.js';
+import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function Menus() {
   const [copy, setCopy] = React.useState(null);
@@ -40,21 +40,34 @@ export default function Menus() {
                 description="Responsive React vertical navigations, that can go anywhere on your page."
               />
               <SmallHeading
-                title="Links"
-                description="This is a simple menu only with text links."
+                title="Menu"
+                description="This is a complete menu with text and icon links."
               />
-              <MenusCode
-                copyText={copy === "Text" ? "Copied" : "Copy"}
-                onCopy={text => setCopy(text ? "Text" : "")}
+              <MenuCode
+                copyText={copy === 'Text' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Text' : '')}
               />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
               <SmallHeading
-                title="Icon links"
-                description="If you want, you can leave the text, and only give your user an ituitive icon."
+                title="Links"
+                description="This is a simple menu with text links."
               />
-              <MenusCode
-                copyText={copy === "Icons" ? "Copied" : "Copy"}
-                onCopy={text => setCopy(text ? "Icons" : "")}
-                icons
+              <MenuLinksCode
+                copyText={copy === 'Icons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Icons' : '')}
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading
+                title="Icons"
+                description="This is a simple menu with icon links."
+              />
+              <MenuIconsCode
+                copyText={copy === 'Icons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Icons' : '')}
               />
             </div>
           </div>
