@@ -23,11 +23,13 @@ const colors = {
   red: 'bg-red-500',
 };
 
-const Navbar = ({ children, color }) => {
+const Navbar = ({ children, color, navbar }) => {
   return (
     <>
       <nav
-        className={`flex flex-wrap items-center justify-between py-2.5 px-3 mb-3 ${colors[color]}`}
+        className={`flex flex-wrap items-center justify-between py-2.5 px-3 mb-3 ${
+          colors[color]
+        } ${!navbar && 'rounded'}`}
       >
         {children}
       </nav>
