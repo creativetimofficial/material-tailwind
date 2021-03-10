@@ -149,6 +149,25 @@ export default function Buttons() {
                 With Icon After
                 <Icon name="favorite" />
               </ButtonsCode>
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="With Icon Only" />
+
+              <ButtonsCode
+                copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Buttons' : '')}
+                buttonType="link"
+                size="regular"
+                rounded={true}
+                ripple={'data-md-ripple-dark={true}'}
+                hasIcon={true}
+                buttonChildren={`<Icon name="favorite" size="sm" />`}
+                iconOnly
+                data-md-ripple-dark={true}
+              >
+                <Icon name="favorite" size="sm" />
+              </ButtonsCode>
             </div>
           </div>
           <div className="w-full lg:w-2/12 px-4 hidden lg:block"></div>
