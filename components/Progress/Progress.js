@@ -51,11 +51,11 @@ const Progress = ({ color, value, percentage }) => {
       <div
         className={`overflow-hidden ${
           percentage ? 'h-6' : 'h-2'
-        } mb-4 flex rounded-sm ${wrapperBgColors[color]}`}
+        } mb-4 flex rounded ${wrapperBgColors[color]}`}
       >
         <div
           style={{ width: `${value}%` }}
-          className={`flex justify-center items-center rounded-sm text-xs font-medium ${bgColors[color]} text-white`}
+          className={`flex justify-center items-center rounded text-xs font-medium ${bgColors[color]} text-white`}
         >
           {percentage ? `${value}% Completed` : ''}
         </div>
