@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavbarList = ({ children, navbar }) => {
+const NavbarList = ({ children, leftSide }) => {
   return (
     <ul
       className={`flex flex-col lg:flex-row list-none ${
-        navbar ? 'mr-auto' : 'ml-auto'
+        leftSide ? 'mr-auto' : 'ml-auto'
       }`}
     >
       {children}
