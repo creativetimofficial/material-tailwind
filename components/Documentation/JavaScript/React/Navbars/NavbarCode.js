@@ -50,7 +50,7 @@ export default function Navbar() {
         </NavbarWrapper>
 
         <Collapse open={openNavbar}>
-          <Nav navbar>
+          <Nav leftSide>
             <NavItem
               active="light"
               color="white"
@@ -134,7 +134,7 @@ export default function Navbar() {
             </NavbarWrapper>
 
             <Collapse open={openNavbar}>
-              <Nav navbar>
+              <Nav leftSide>
                 <NavItem
                   active="light"
                   color="white"
