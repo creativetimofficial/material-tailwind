@@ -124,10 +124,10 @@ export default function Buttons() {
                 rounded={false}
                 ripple={'data-md-ripple-light={true}'}
                 hasIcon={true}
-                buttonChildren={`<Icon name="favorite" /> With Icon Before`}
+                buttonChildren={`<Icon name="favorite" size="sm" /> With Icon Before`}
                 data-md-ripple-light={true}
               >
-                <Icon name="favorite" />
+                <Icon name="favorite" size="sm" />
                 With Icon Before
               </ButtonsCode>
 
@@ -143,11 +143,30 @@ export default function Buttons() {
                 rounded={false}
                 ripple={'data-md-ripple-light={true}'}
                 hasIcon={true}
-                buttonChildren={`With Icon After <Icon name="favorite" />`}
+                buttonChildren={`With Icon After <Icon name="favorite" size="sm" />`}
                 data-md-ripple-light={true}
               >
                 With Icon After
-                <Icon name="favorite" />
+                <Icon name="favorite" size="sm" />
+              </ButtonsCode>
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="With Icon Only" />
+
+              <ButtonsCode
+                copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Buttons' : '')}
+                buttonType="filled"
+                size="regular"
+                rounded={true}
+                ripple={'data-md-ripple-light={true}'}
+                hasIcon={true}
+                buttonChildren={`<Icon name="favorite" size="sm" />`}
+                iconOnly
+                data-md-ripple-light={true}
+              >
+                <Icon name="favorite" size="sm" />
               </ButtonsCode>
             </div>
           </div>
