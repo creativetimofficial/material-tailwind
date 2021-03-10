@@ -30,11 +30,11 @@ const NavbarItem = ({ children, color, active, ...rest }) => {
     <li>
       <a
         {...rest}
-        className={`${active === 'dark' && 'bg-black bg-opacity-10'} ${
-          active === 'light' && 'bg-white bg-opacity-10'
-        } relative overflow-hidden p-4 flex gap-1 items-center text-xs uppercase font-medium leading ${
+        className={`${active === 'dark' && 'bg-black bg-opacity-20'} ${
+          active === 'light' && 'bg-white bg-opacity-20'
+        } relative overflow-hidden px-5 py-4 flex gap-1 items-center text-xs uppercase font-medium leading ${
           colors[color]
-        } rounded`}
+        } rounded-lg`}
       >
         {children}
       </a>
