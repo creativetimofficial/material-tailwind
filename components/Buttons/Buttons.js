@@ -8,7 +8,7 @@ const filledBgColors = {
   deepOrange: 'bg-deep-orange-500',
   orange: 'bg-orange-500',
   amber: 'bg-amber-500',
-  yellow: 'bg-yellow-500',
+  yellow: 'bg-yellow-600',
   lime: 'bg-lime-500',
   lightGreen: 'bg-light-green-500',
   green: 'bg-green-500',
@@ -52,7 +52,7 @@ const filledBgFocusColors = {
   deepOrange: 'bg-deep-orange-400',
   orange: 'bg-orange-400',
   amber: 'bg-amber-400',
-  yellow: 'bg-yellow-400',
+  yellow: 'bg-yellow-500',
   lime: 'bg-lime-400',
   lightGreen: 'bg-light-green-400',
   green: 'bg-green-400',
@@ -96,7 +96,7 @@ const outlineTextColors = {
   deepOrange: 'text-deep-orange-500',
   orange: 'text-orange-500',
   amber: 'text-amber-500',
-  yellow: 'text-yellow-500',
+  yellow: 'text-yellow-600',
   lime: 'text-lime-500',
   lightGreen: 'text-light-green-500',
   green: 'text-green-500',
@@ -118,7 +118,7 @@ const outlineBorderColors = {
   deepOrange: 'border-deep-orange-500',
   orange: 'border-orange-500',
   amber: 'border-amber-500',
-  yellow: 'border-yellow-500',
+  yellow: 'border-yellow-600',
   lime: 'border-lime-500',
   lightGreen: 'border-light-green-500',
   green: 'border-green-500',
@@ -223,7 +223,15 @@ const outlineBgActiveColors = {
 
 const Buttons = forwardRef(
   (
-    { children, color, buttonType, size = 'regular', rounded, ...rest },
+    {
+      children,
+      color,
+      buttonType,
+      size = 'regular',
+      rounded,
+      iconOnly,
+      ...rest
+    },
     ref,
   ) => {
     let classes = [];
@@ -234,11 +242,14 @@ const Buttons = forwardRef(
       'flex',
       'items-center',
       'gap-1',
-      'font-medium',
+      'rounded-lg',
+      'font-bold',
+      'text-sm',
       'outline-none',
       'uppercase',
       'tracking-wider',
       'focus:outline-none',
+      'focus:shadow-none',
       'transition-all',
       'duration-300',
       'relative',
@@ -282,24 +293,18 @@ const Buttons = forwardRef(
 
     const buttonSM = [
       ...sharedClasses,
-      'py-1.5 px-4',
-      'text-xs',
+      iconOnly ? 'w-8 h-8 p-0 grid place-items-center' : 'py-1.5 px-4',
       'leading-normal',
-      'rounded',
     ];
     const buttonRegular = [
       ...sharedClasses,
-      'py-2.5 px-6',
-      'text-xs',
+      iconOnly ? 'w-10 h-10 p-0 grid place-items-center' : 'py-2.5 px-6',
       'leading-normal',
-      'rounded',
     ];
     const buttonLG = [
       ...sharedClasses,
-      'py-3 px-7',
-      'text-sm',
+      iconOnly ? 'w-12 h-12 p-0 grid place-items-center' : 'py-3 px-7',
       'leading-relaxed',
-      'rounded-md',
     ];
 
     if (size === 'sm') {
