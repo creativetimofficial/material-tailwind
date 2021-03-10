@@ -29,7 +29,7 @@ const Navbar = ({ children, color, navbar }) => {
       <nav
         className={`flex flex-wrap items-center justify-between py-2.5 px-3 mb-3 ${
           colors[color]
-        } ${!navbar && 'rounded'}`}
+        } ${!navbar && 'rounded-lg'}`}
       >
         {children}
       </nav>
