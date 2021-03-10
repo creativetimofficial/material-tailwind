@@ -32,7 +32,7 @@ export default class CustomDocument extends Document {
           ></script>
           {/* End Google Tag Manager */}
         </Head>
-        <body className="text-gray-800 antialiased">
+        <body className="text-gray-700 antialiased">
           {/* Google Tag Manager (noscript) */}
           <noscript>
             <iframe
