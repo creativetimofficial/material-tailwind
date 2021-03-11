@@ -13,6 +13,7 @@ const Tooltip = forwardRef(({ children, placement }, ref) => {
       reference={ref}
       animation="shift-away"
       arrow={roundArrow}
+      className="arrow-dark"
       interactive
     />
   );
