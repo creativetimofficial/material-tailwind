@@ -33,7 +33,7 @@ const PaginationItem = ({ children, color, button, ...rest }) => {
         } h-8 mx-1 p-0 items-center justify-center leading-tight relative overflow-hidden ${
           color
             ? `${colors[color]} text-white`
-            : 'bg-transparent text-gray-800 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40'
+            : 'bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40'
         } transition-all duration-300`}
       >
         {children}
