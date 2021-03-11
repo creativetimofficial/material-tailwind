@@ -46,6 +46,7 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonName="Button"
+                buttonChildren="Button"
                 ripple={'data-md-ripple-dark={true}'}
                 data-md-ripple-dark={true}
               >
@@ -61,6 +62,7 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={true}
+                buttonChildren="Rounded Button"
                 ripple={'data-md-ripple-dark={true}'}
                 data-md-ripple-dark={true}
               >
@@ -76,6 +78,7 @@ export default function Buttons() {
                 buttonType="outline"
                 size="sm"
                 rounded={false}
+                buttonChildren="Small Button"
                 ripple={'data-md-ripple-dark={true}'}
                 data-md-ripple-dark={true}
               >
@@ -91,6 +94,7 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={false}
+                buttonChildren="Regular Button"
                 ripple={'data-md-ripple-dark={true}'}
                 data-md-ripple-dark={true}
               >
@@ -106,6 +110,7 @@ export default function Buttons() {
                 buttonType="outline"
                 size="lg"
                 rounded={false}
+                buttonChildren="Large Button"
                 ripple={'data-md-ripple-dark={true}'}
                 data-md-ripple-dark={true}
               >
