@@ -150,6 +150,10 @@ const routes = [
         ],
       },
       {
+        path: '/documentation/react/cards',
+        name: 'Cards',
+      },
+      {
         name: 'Dropdowns',
         state: 'reactDropdownsState',
         subRoutes: [
