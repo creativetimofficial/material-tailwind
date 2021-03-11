@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer components {
+  /* Tippy Arrow */
+  .arrow-light .tippy-svg-arrow {
+    fill: #fff;
+  }
+
+  .arrow-dark .tippy-svg-arrow {
+    fill: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Material Inputs */
   .md-input + label:after {
     content: '';
     @apply absolute top-0.5 left-0 w-full h-full pointer-events-none transform scale-x-0 border border-t-0 border-l-0 border-r-0 border-b-2 transition-all duration-300;
