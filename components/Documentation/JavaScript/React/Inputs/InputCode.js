@@ -9,6 +9,7 @@ export default function InputCode({
   size,
   outline,
   errorMessage,
+  successMessage,
   ...rest
 }) {
   const [color, setColor] = useState('pink');
@@ -26,7 +27,7 @@ export default function Input() {
       outline={${outline}}
       placeholder="${placeholder}"${
     errorMessage ? `\n      error="${errorMessage}"` : ''
-  }
+  }${successMessage ? `\n      success="${successMessage}"` : ''}
     />
   )
 }`;
@@ -42,7 +43,9 @@ export default function Input() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={(type) => setType(type)}
       >
-        <div className={`w-72 ${errorMessage ? 'mb-10' : ''}`}>
+        <div
+          className={`w-72 ${errorMessage || successMessage ? 'mb-10' : ''}`}
+        >
           <Input
             type="text"
             color={color}
