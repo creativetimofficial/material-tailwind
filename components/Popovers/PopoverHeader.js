@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 const PopoverHeader = ({ children }) => {
   return (
-    <div className="text-black p-4 mb-0 uppercase font-medium rounded">
-      {children}
-    </div>
+    <div className="text-gray-800 p-4 pb-2 uppercase font-bold">{children}</div>
   );
 };
 
