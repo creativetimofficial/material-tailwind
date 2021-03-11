@@ -10,7 +10,7 @@ const textColors = {
   deepOrange: 'text-deep-orange-500',
   orange: 'text-orange-500',
   amber: 'text-amber-500',
-  yellow: 'text-yellow-500',
+  yellow: 'text-yellow-600',
   lime: 'text-lime-500',
   lightGreen: 'text-light-green-500',
   green: 'text-green-500',
