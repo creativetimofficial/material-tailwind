@@ -4,8 +4,6 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/animations/scale.css';
 
 const filledBgColors = {
-  black: 'bg-black',
-  white: 'bg-white',
   blueGray: 'bg-blue-gray-500',
   gray: 'bg-gray-500',
   brown: 'bg-brown-500',
@@ -28,8 +26,6 @@ const filledBgColors = {
 };
 
 const filledBgHoverColors = {
-  black: 'bg-black',
-  white: 'bg-white',
   blueGray: 'bg-blue-gray-700',
   gray: 'bg-gray-700',
   brown: 'bg-brown-700',
@@ -52,8 +48,6 @@ const filledBgHoverColors = {
 };
 
 const filledBgFocusColors = {
-  black: 'bg-black',
-  white: 'bg-white',
   blueGray: 'bg-blue-gray-400',
   gray: 'bg-gray-400',
   brown: 'bg-brown-400',
@@ -76,8 +70,6 @@ const filledBgFocusColors = {
 };
 
 const filledBgActiveColors = {
-  black: 'bg-black',
-  white: 'bg-white',
   blueGray: 'bg-blue-gray-800',
   gray: 'bg-gray-800',
   brown: 'bg-brown-800',
@@ -100,8 +92,6 @@ const filledBgActiveColors = {
 };
 
 const outlineTextColors = {
-  black: 'text-black',
-  white: 'text-white',
   blueGray: 'text-blue-gray-500',
   gray: 'text-gray-500',
   brown: 'text-brown-500',
@@ -124,8 +114,6 @@ const outlineTextColors = {
 };
 
 const outlineBorderColors = {
-  black: 'border-black',
-  white: 'border-white',
   blueGray: 'border-blue-gray-500',
   gray: 'border-gray-500',
   brown: 'border-brown-500',
@@ -170,8 +158,6 @@ const outlineBgHoverColors = {
 };
 
 const outlineBorderHoverColors = {
-  black: 'border-black',
-  white: 'border-white',
   blueGray: 'border-blue-gray-700',
   gray: 'border-gray-700',
   brown: 'border-brown-700',
@@ -194,8 +180,6 @@ const outlineBorderHoverColors = {
 };
 
 const outlineTextHoverColors = {
-  black: 'text-black',
-  white: 'text-white',
   blueGray: 'text-blue-gray-700',
   gray: 'text-gray-700',
   brown: 'text-brown-700',
@@ -274,10 +258,9 @@ const Dropdowns = ({
   ];
 
   const buttonFilled = [
-    `${color === 'white' ? 'text-black' : 'text-white'}`,
+    'text-white',
     'shadow-md',
     'hover:shadow-xl',
-    `${color === 'white' ? 'text-black' : 'text-white'}`,
     filledBgColors[color],
     `hover:${filledBgHoverColors[color]}`,
     `focus:${filledBgFocusColors[color]}`,
