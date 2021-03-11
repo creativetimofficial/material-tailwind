@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const textColors = {
-  white: 'text-white',
-  black: 'text-black',
   blueGray: 'text-blue-gray-500',
   gray: 'text-gray-500',
   brown: 'text-brown-500',
