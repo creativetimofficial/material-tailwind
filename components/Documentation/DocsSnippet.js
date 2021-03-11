@@ -76,7 +76,7 @@ export default function DocsSnippet({
                     key={key}
                     className={`cursor-pointer w-6 h-6 rounded last:mr-0 mr-2 bg-${prop}${
                       activeColor === elementColors[key]
-                        ? '-500 shadow-md'
+                        ? `${prop === 'yellow' ? '-600' : '-500'} shadow-md`
                         : '-200'
                     }`}
                     onClick={() => {
