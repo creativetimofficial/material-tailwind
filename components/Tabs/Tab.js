@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Tab = ({ children }) => {
   return (
-    <div className="flex flex-wrap">
-      <div className="w-full">{children}</div>
+    <div className="w-full relative flex flex-col items-center justify-center">
+      {children}
     </div>
   );
 };
