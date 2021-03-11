@@ -74,32 +74,35 @@ export default function Tabs() {
       <TabContent>
         <TabPane active={openTab === 1 ? true : false}>
           <p>
-            Collaboratively administrate empowered markets via plug-and-play
-            networks. Dynamically procrastinate B2C users after installed base
-            benefits.
-            <br />
-            <br /> Dramatically visualize customer directed convergence without
-            revolutionary ROI.
+            I think that’s a responsibility that I have, to push
+            possibilities, to show people, this is the level that things
+            could be at. So when you get something that has the name Kanye
+            West on it, it’s supposed to be pushing the furthest
+            possibilities. I will be the leader of a company that ends up
+            being worth billions of dollars, because I got the answers. I
+            understand culture. I am the nucleus.
           </p>
         </TabPane>
         <TabPane active={openTab === 2 ? true : false}>
           <p>
-            Completely synergize resource taxing relationships via premier niche
-            markets. Professionally cultivate one-to-one customer service with
-            robust ideas.
-            <br />
-            <br />
-            Dynamically innovate resource-leveling customer service for state of
-            the art customer service.
+            I will be the leader of a company that ends up being worth
+            billions of dollars, because I got the answers. I understand
+            culture. I am the nucleus. I think that’s a responsibility that
+            I have, to push possibilities, to show people, this is the level
+            that things could be at. I think that’s a responsibility that I
+            have, to push possibilities, to show people, this is the level
+            that things could be at.
           </p>
         </TabPane>
         <TabPane active={openTab === 3 ? true : false}>
           <p>
-            Efficiently unleash cross-media information without cross-media
-            value. Quickly maximize timely deliverables for real-time schemas.
-            <br />
-            <br /> Dramatically maintain clicks-and-mortar solutions without
-            functional solutions.
+            I think that’s a responsibility that I have, to push
+            possibilities, to show people, this is the level that things
+            could be at. So when you get something that has the name Kanye
+            West on it, it’s supposed to be pushing the furthest
+            possibilities. I will be the leader of a company that ends up
+            being worth billions of dollars, because I got the answers. I
+            understand culture. I am the nucleus.
           </p>
         </TabPane>
       </TabContent>
@@ -197,33 +200,35 @@ export default function Tabs() {
           <TabContent>
             <TabPane active={openTab === 1 ? true : false}>
               <p>
-                Collaboratively administrate empowered markets via plug-and-play
-                networks. Dynamically procrastinate B2C users after installed
-                base benefits.
-                <br />
-                <br /> Dramatically visualize customer directed convergence
-                without revolutionary ROI.
+                I think that’s a responsibility that I have, to push
+                possibilities, to show people, this is the level that things
+                could be at. So when you get something that has the name Kanye
+                West on it, it’s supposed to be pushing the furthest
+                possibilities. I will be the leader of a company that ends up
+                being worth billions of dollars, because I got the answers. I
+                understand culture. I am the nucleus.
               </p>
             </TabPane>
             <TabPane active={openTab === 2 ? true : false}>
               <p>
-                Completely synergize resource taxing relationships via premier
-                niche markets. Professionally cultivate one-to-one customer
-                service with robust ideas.
-                <br />
-                <br />
-                Dynamically innovate resource-leveling customer service for
-                state of the art customer service.
+                I will be the leader of a company that ends up being worth
+                billions of dollars, because I got the answers. I understand
+                culture. I am the nucleus. I think that’s a responsibility that
+                I have, to push possibilities, to show people, this is the level
+                that things could be at. I think that’s a responsibility that I
+                have, to push possibilities, to show people, this is the level
+                that things could be at.
               </p>
             </TabPane>
             <TabPane active={openTab === 3 ? true : false}>
               <p>
-                Efficiently unleash cross-media information without cross-media
-                value. Quickly maximize timely deliverables for real-time
-                schemas.
-                <br />
-                <br /> Dramatically maintain clicks-and-mortar solutions without
-                functional solutions.
+                I think that’s a responsibility that I have, to push
+                possibilities, to show people, this is the level that things
+                could be at. So when you get something that has the name Kanye
+                West on it, it’s supposed to be pushing the furthest
+                possibilities. I will be the leader of a company that ends up
+                being worth billions of dollars, because I got the answers. I
+                understand culture. I am the nucleus.
               </p>
             </TabPane>
           </TabContent>
