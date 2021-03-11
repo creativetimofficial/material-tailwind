@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/animations/shift-toward.css';
+import 'tippy.js/animations/scale.css';
 
 const filledBgColors = {
   black: 'bg-black',
@@ -260,7 +260,8 @@ const Dropdowns = ({
     'flex',
     'items-center',
     'gap-1',
-    'font-medium',
+    'rounded-lg',
+    'font-bold',
     'outline-none',
     'uppercase',
     'tracking-wider',
@@ -311,21 +312,18 @@ const Dropdowns = ({
     'py-1.5 px-5',
     'text-xs',
     'leading-normal',
-    'rounded',
   ];
   const buttonRegular = [
     ...sharedClasses,
     'p-2.5 px-7',
     'text-xs',
     'leading-normal',
-    'rounded',
   ];
   const buttonLG = [
     ...sharedClasses,
     'py-3 px-8',
     'text-sm',
     'leading-relaxed',
-    'rounded-md',
   ];
 
   if (size === 'sm') {
@@ -351,13 +349,13 @@ const Dropdowns = ({
       <Tippy
         content={
           <div
-            className={`bg-white text-base z-50 float-left list-none text-left rounded shadow-lg mt-1 transition-all duration-500`}
+            className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 transition-all duration-500`}
             style={{ minWidth: '10rem' }}
           >
             {children}
           </div>
         }
-        animation="shift-toward"
+        animation="scale"
         trigger="click"
         hideOnClick="toggle"
         offset={[0, 0]}
