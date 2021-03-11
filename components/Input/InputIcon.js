@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const colors = {
+const mdInputColors = {
   blueGray: 'md-input-blue-gray-500',
   gray: 'md-input-gray-500',
   brown: 'md-input-brown-500',
   deepOrange: 'md-input-deep-orange-500',
   orange: 'md-input-orange-500',
   amber: 'md-input-amber-500',
-  yellow: 'md-input-yellow-500',
+  yellow: 'md-input-yellow-600',
   lime: 'md-input-lime-500',
   lightGreen: 'md-input-light-green-500',
   green: 'md-input-green-500',
@@ -23,6 +23,28 @@ const colors = {
   red: 'md-input-red-500',
 };
 
+const mdInputOutlineColors = {
+  blueGray: 'md-input-outline-blue-gray-500',
+  gray: 'md-input-outline-gray-500',
+  brown: 'md-input-outline-brown-500',
+  deepOrange: 'md-input-outline-deep-orange-500',
+  orange: 'md-input-outline-orange-500',
+  amber: 'md-input-outline-amber-500',
+  yellow: 'md-input-outline-yellow-600',
+  lime: 'md-input-outline-lime-500',
+  lightGreen: 'md-input-outline-light-green-500',
+  green: 'md-input-outline-green-500',
+  teal: 'md-input-outline-teal-500',
+  cyan: 'md-input-outline-cyan-500',
+  lightBlue: 'md-input-outline-light-blue-500',
+  blue: 'md-input-outline-blue-500',
+  indigo: 'md-input-outline-indigo-500',
+  deepPurple: 'md-input-outline-deep-purple-500',
+  purple: 'md-input-outline-purple-500',
+  pink: 'md-input-outline-pink-500',
+  red: 'md-input-outline-red-500',
+};
+
 const borderColors = {
   blueGray: 'border-blue-gray-500',
   gray: 'border-gray-500',
@@ -30,7 +52,7 @@ const borderColors = {
   deepOrange: 'border-deep-orange-500',
   orange: 'border-orange-500',
   amber: 'border-amber-500',
-  yellow: 'border-yellow-500',
+  yellow: 'border-yellow-600',
   lime: 'border-lime-500',
   lightGreen: 'border-light-green-500',
   green: 'border-green-500',
@@ -51,15 +73,37 @@ const InputIcon = ({
   size = 'regular',
   outline,
   error,
+  success,
   iconFamily = 'material-icons',
   iconName,
   ...rest
 }) => {
-  let iconSizeSyles,
-    iconUI,
+  let iconUI,
+    iconSize,
+    labelBorderColor,
+    mdInputBorderColor,
+    mdInputOutlineColor,
+    mdInputOutlineFocusColor,
     inputClasses = [];
 
   let container = ['w-full', 'relative'];
+
+  if (error) {
+    labelBorderColor = borderColors['red'];
+    mdInputBorderColor = mdInputColors['red'];
+    mdInputOutlineColor = mdInputOutlineColors['red'];
+    mdInputOutlineFocusColor = borderColors['red'];
+  } else if (success) {
+    labelBorderColor = borderColors['green'];
+    mdInputBorderColor = mdInputColors['green'];
+    mdInputOutlineColor = mdInputOutlineColors['green'];
+    mdInputOutlineFocusColor = borderColors['green'];
+  } else {
+    labelBorderColor = 'border-gray-300';
+    mdInputBorderColor = mdInputColors[color];
+    mdInputOutlineColor = mdInputOutlineColors[color];
+    mdInputOutlineFocusColor = borderColors[color];
+  }
 
   let label = [
     'text-gray-500',
@@ -68,7 +112,7 @@ const InputIcon = ({
     `${outline ? '-top-1.5' : '-top-0.5'}`,
     'w-full',
     'h-full',
-    `${error ? 'border-red-500' : 'border-gray-500'}`,
+    labelBorderColor,
     'pointer-events-none',
     `${!outline && 'border border-t-0 border-l-0 border-r-0 border-b-1'}`,
     `${outline && 'flex'}`,
@@ -79,7 +123,6 @@ const InputIcon = ({
   ];
 
   const sharedClasses = [
-    colors[color],
     'w-full',
     'h-full',
     'leading-normal',
@@ -91,58 +134,59 @@ const InputIcon = ({
 
   const inputSM = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-7' : 'pl-0 pr-6'}`,
+    `${outline ? 'pl-2 pr-7' : 'pl-0 pr-6'}`,
     `${outline && 'pt-1.5 pb-0.5'}`,
     'text-sm',
   ];
   const inputRegular = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-8' : 'pl-0 pr-7'}`,
+    `${outline ? 'pl-3 pr-9' : 'pl-0 pr-7'}`,
     `${outline && 'pt-2.5 pb-1.5'}`,
   ];
   const inputLG = [
     ...sharedClasses,
-    `${outline ? 'pl-3 pr-10' : 'pl-0 pr-9'}`,
+    `${outline ? 'pl-3 pr-9' : 'pl-0 pr-7'}`,
     `${outline && 'pt-3.5 pb-2.5'}`,
   ];
 
-  const inputFilled = ['md-input', 'bg-transparent', 'border', 'border-none'];
+  const inputFilled = [
+    mdInputBorderColor,
+    'md-input',
+    'bg-transparent',
+    'border',
+    'border-none',
+  ];
 
   const inputOutline = [
+    mdInputOutlineColor,
+    labelBorderColor,
     'md-input-outline',
     'bg-transparent',
     'border',
     'border-1',
-    'border-gray-500',
-    'rounded',
+    'border-gray-300',
+    'rounded-lg',
     'focus:border-2',
-    `focus:${borderColors[color]}`,
-  ];
-
-  const inputError = [
-    `border-${error ? 'red-500' : 'gray-400'}`,
-    `focus:border-${error ? 'red-500' : `${color}-600`}`,
+    `focus:${mdInputOutlineFocusColor}`,
   ];
 
   if (size === 'sm') {
     container.push('h-9');
     inputClasses.push(...inputSM);
-    iconSizeSyles = 'text-lg';
+    iconSize = 'text-lg';
   } else if (size === 'lg') {
     container.push('h-12');
     inputClasses.push(...inputLG);
-    iconSizeSyles = 'text-3xl';
+    iconSize = 'text-xl';
   } else {
     container.push('h-11');
     inputClasses.push(...inputRegular);
-    iconSizeSyles = 'text-2xl';
+    iconSize = 'text-2xl';
   }
 
   outline
     ? inputClasses.push(...inputOutline)
     : inputClasses.push(...inputFilled);
-
-  error && inputClasses.push(...inputError);
 
   container = container.join(' ');
   label = label.join(' ');
@@ -152,9 +196,9 @@ const InputIcon = ({
     iconUI = (
       <span
         {...rest}
-        className={`${iconFamily} text-gray-600 border-none absolute top-1/2 ${
-          outline ? 'right-2' : 'right-0'
-        } transform -translate-y-1/2 ${iconSizeSyles}`}
+        className={`${iconFamily} p-0 text-gray-600 border-none absolute top-1/2 ${
+          outline ? (size === 'sm' ? 'right-2' : 'right-3') : 'right-0'
+        } transform -translate-y-1/2 ${iconSize}`}
       >
         {iconName}
       </span>
@@ -164,8 +208,8 @@ const InputIcon = ({
       <i
         {...rest}
         className={`fas ${iconName} text-gray-600 border-none absolute top-1/2 ${
-          outline ? 'right-2' : 'right-0'
-        } transform -translate-y-1/2 ${iconSizeSyles}`}
+          outline ? (size === 'sm' ? 'right-2' : 'right-3') : 'right-0'
+        } transform -translate-y-1/2 ${iconSize}`}
       />
     );
   }
