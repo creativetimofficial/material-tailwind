@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const ModalHeader = ({ children, toggler }) => {
   return (
-    <div className="flex items-center justify-between mb-8">
-      <h5 className="text-2xl font-normal mt-0 mb-0 ">{children}</h5>
+    <div className="flex items-center justify-between mb-6">
+      <h5 className="text-2xl font-bold mt-0 mb-0">{children}</h5>
       <button
         className="p-1 bg-transparent absolute top-2 right-4 text-black text-3xl leading-none outline-none focus:outline-none"
         onClick={toggler}
