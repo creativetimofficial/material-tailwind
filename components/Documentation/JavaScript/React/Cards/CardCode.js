@@ -36,7 +36,7 @@ export default function Card() {
       />
 
       <CardBody>
-        <H6 color="red">Card Title</H6>
+        <H6 color="gray">Card Title</H6>
         <Paragraph color="gray">
           Don't be scared of the truth because we need to restart the human
           foundation in truth And I love you like Kanye loves Kanye I love
@@ -105,7 +105,7 @@ export default function Card() {
           />
 
           <CardBody>
-            <H6 color="red">Card Title</H6>
+            <H6 color="gray">Card Title</H6>
             <Paragraph color="gray">
               Don't be scared of the truth because we need to restart the human
               foundation in truth And I love you like Kanye loves Kanye I love
