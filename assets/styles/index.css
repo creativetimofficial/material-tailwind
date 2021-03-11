@@ -27,7 +27,8 @@
   }
   .md-input:focus + label span,
   .md-input:not(:placeholder-shown) + label span {
-    @apply -top-1/4 transform origin-top-left scale-75;
+    top: -14%;
+    @apply text-xs leading-tight;
   }
 
   /* Material Input Outline */
@@ -51,7 +52,7 @@
 
   .md-input-outline:not(:placeholder-shown) + label:before,
   .md-input-outline:not(:placeholder-shown) + label:after {
-    @apply border-t border-gray-500;
+    @apply border-t border-gray-300;
   }
 
   .md-input-outline:focus + label::before,
