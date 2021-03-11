@@ -26,7 +26,8 @@ const colors = {
 const TabList = ({ children, color }) => {
   return (
     <ul
-      className={`${colors[color]} rounded-t flex justify-start mb-0 list-none"`}
+      className={`${colors[color]} rounded-lg p-4 mx-5 flex justify-start mb-0 list-none shadow-2xl z-10`}
+      style={{ width: '95%' }}
       role="tablist"
     >
       {children}
