@@ -109,7 +109,7 @@ export default function Buttons() {
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 placeholder="Input with Icon"
-                size="Regular"
+                size="regular"
                 outline={false}
               />
 
@@ -120,7 +120,7 @@ export default function Buttons() {
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 placeholder="Outline Input with Icon"
-                size="Regular"
+                size="regular"
                 outline={true}
               />
 
@@ -148,6 +148,32 @@ export default function Buttons() {
                 outline={true}
                 errorMessage="Its an error"
                 error="Its an error"
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="Input with Success" />
+              <InputCode
+                copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Buttons' : '')}
+                placeholder="Input with Success"
+                size="Regular"
+                outline={false}
+                successMessage="Its a success"
+                success="Its a success"
+              />
+
+              <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+
+              <SmallHeading title="Outline Input with Success" />
+              <InputCode
+                copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Buttons' : '')}
+                placeholder="Outline Input with Success"
+                size="Regular"
+                outline={true}
+                successMessage="Its a success"
+                success="Its a success"
               />
             </div>
           </div>
