@@ -309,19 +309,19 @@ const Dropdowns = ({
 
   const buttonSM = [
     ...sharedClasses,
-    'py-1.5 px-5',
+    'py-1.5 pl-5 pr-3',
     'text-xs',
     'leading-normal',
   ];
   const buttonRegular = [
     ...sharedClasses,
-    'p-2.5 px-7',
+    'p-2.5 pl-7 pr-5',
     'text-xs',
     'leading-normal',
   ];
   const buttonLG = [
     ...sharedClasses,
-    'py-3 px-8',
+    'py-3 pl-8 pr-6',
     'text-sm',
     'leading-relaxed',
   ];
