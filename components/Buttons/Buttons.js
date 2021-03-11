@@ -244,7 +244,6 @@ const Buttons = forwardRef(
       'gap-1',
       'rounded-lg',
       'font-bold',
-      'text-sm',
       'outline-none',
       'uppercase',
       'tracking-wider',
@@ -294,16 +293,19 @@ const Buttons = forwardRef(
     const buttonSM = [
       ...sharedClasses,
       iconOnly ? 'w-8 h-8 p-0 grid place-items-center' : 'py-1.5 px-4',
+      'text-xs',
       'leading-normal',
     ];
     const buttonRegular = [
       ...sharedClasses,
       iconOnly ? 'w-10 h-10 p-0 grid place-items-center' : 'py-2.5 px-6',
+      'text-xs',
       'leading-normal',
     ];
     const buttonLG = [
       ...sharedClasses,
       iconOnly ? 'w-12 h-12 p-0 grid place-items-center' : 'py-3 px-7',
+      'text-sm',
       'leading-relaxed',
     ];
 
