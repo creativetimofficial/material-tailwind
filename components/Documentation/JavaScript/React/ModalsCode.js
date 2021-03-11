@@ -40,7 +40,7 @@ export default function Modals() {
           Regular Modal
         </ModalHeader>
         <ModalBody>
-          <p className="text-base leading-relaxed text-gray-600 font-normal mt-0 mb-12">
+          <p className="text-base leading-relaxed text-gray-600 font-normal">
             I always felt like I could do anything. That’s the main thing people
             are controlled by! Thoughts- their perception of themselves! They're
             slowed down by their perception of themselves. If you're taught you
@@ -128,7 +128,7 @@ export default function Modals() {
               Regular Modal
             </ModalHeader>
             <ModalBody>
-              <p className="text-base leading-relaxed text-gray-600 font-normal mt-0 mb-12">
+              <p className="text-base leading-relaxed text-gray-600 font-normal">
                 I always felt like I could do anything. That’s the main thing
                 people are controlled by! Thoughts- their perception of
                 themselves! They're slowed down by their perception of
