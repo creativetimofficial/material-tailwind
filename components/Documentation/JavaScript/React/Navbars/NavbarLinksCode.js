@@ -38,9 +38,8 @@ export default function Navbar() {
     <Navbar color="${color}" navbar>
       <NavbarContainer>
         <NavbarWrapper>
-          <NavbarBrand color="white">Navbar</NavbarBrand>
+          <NavbarBrand>Navbar</NavbarBrand>
           <NavbarToggler
-            color="white"
             onClick={() => setOpenNavbar(!openNavbar)}
           />
         </NavbarWrapper>
@@ -49,16 +48,15 @@ export default function Navbar() {
           <Nav>
             <NavItem
               active="light"
-              color="white"
               href="#navbar"
               data-md-ripple-light={true}
             >
               Discover
             </NavItem>
-            <NavItem color="white" href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-md-ripple-light={true}>
               Profile
             </NavItem>
-            <NavItem color="white" href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-md-ripple-light={true}>
               Settings
             </NavItem>
           </Nav>
@@ -118,35 +116,23 @@ export default function Navbar() {
         <Navbar color={color} navbar>
           <NavbarContainer>
             <NavbarWrapper>
-              <NavbarBrand color="white">Navbar</NavbarBrand>
-              <NavbarToggler
-                color="white"
-                onClick={() => setOpenNavbar(!openNavbar)}
-              />
+              <NavbarBrand>Navbar</NavbarBrand>
+              <NavbarToggler onClick={() => setOpenNavbar(!openNavbar)} />
             </NavbarWrapper>
 
             <Collapse open={openNavbar}>
               <Nav>
                 <NavItem
                   active="light"
-                  color="white"
                   href="#navbar"
                   data-md-ripple-light={true}
                 >
                   Discover
                 </NavItem>
-                <NavItem
-                  color="white"
-                  href="#navbar"
-                  data-md-ripple-light={true}
-                >
+                <NavItem href="#navbar" data-md-ripple-light={true}>
                   Profile
                 </NavItem>
-                <NavItem
-                  color="white"
-                  href="#navbar"
-                  data-md-ripple-light={true}
-                >
+                <NavItem href="#navbar" data-md-ripple-light={true}>
                   Settings
                 </NavItem>
               </Nav>
