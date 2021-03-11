@@ -12,6 +12,11 @@
     fill: rgba(0, 0, 0, 0.8);
   }
 
+  /* Tippy Animation */
+  .tippy-box[data-animation='scale'] {
+    transform-origin: top left !important;
+  }
+
   /* Material Inputs */
   .md-input + label:after {
     content: '';
