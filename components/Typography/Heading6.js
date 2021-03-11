@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const colors = {
   blueGray: 'text-blue-gray-500',
-  gray: 'text-gray-500',
+  gray: 'text-gray-900',
   brown: 'text-brown-500',
   deepOrange: 'text-deep-orange-500',
   orange: 'text-orange-500',
@@ -27,7 +27,7 @@ const H6 = ({ children, color, ...rest }) => {
   return (
     <h1
       {...rest}
-      className={`${colors[color]} text-xl font-serif font-normal leading-normal mt-0 mb-2`}
+      className={`${colors[color]} text-xl font-serif font-bold leading-normal mt-0 mb-2`}
     >
       {children}
     </h1>
