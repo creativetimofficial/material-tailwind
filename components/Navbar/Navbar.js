@@ -8,7 +8,7 @@ const colors = {
   deepOrange: 'bg-deep-orange-500',
   orange: 'bg-orange-500',
   amber: 'bg-amber-500',
-  yellow: 'bg-yellow-500',
+  yellow: 'bg-yellow-600',
   lime: 'bg-lime-500',
   lightGreen: 'bg-light-green-500',
   green: 'bg-green-500',
