@@ -3,16 +3,16 @@ export default function Framwroks(type, setShowModal, setModalText) {
     case 'react':
       break;
     case 'angular':
-      window.location =
-        '/learning-lab/tailwind-starter-kit#/documentation/angular/alerts';
+      // window.location = '/documentation/angular/alerts';
       break;
     case 'html':
-      window.location =
-        '/learning-lab/tailwind-starter-kit#/documentation/javascript/alerts';
+      // window.location = '/documentation/css/alerts';
       break;
     case 'vue':
-      window.location =
-        '/learning-lab/tailwind-starter-kit#/documentation/vue/alerts';
+      // this.location = '/documentation/vue/alerts';
+      break;
+    case 'javascript':
+      // this.location = '/documentation/javascript/alerts';
       break;
     default:
       setShowModal(true);
