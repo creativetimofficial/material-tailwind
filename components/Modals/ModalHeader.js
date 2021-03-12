@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModalHeader = ({ children, toggler }) => {
+export default function ModalHeader({ children, toggler }) {
   return (
     <div className="flex items-center justify-between mb-6">
       <h5 className="text-gray-900 text-2xl font-bold mt-0 mb-0">{children}</h5>
@@ -13,11 +13,9 @@ const ModalHeader = ({ children, toggler }) => {
       </button>
     </div>
   );
-};
+}
 
 ModalHeader.propTypes = {
-  children: PropTypes.node,
-  toggler: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  toggler: PropTypes.func.isRequired,
 };
-
-export default ModalHeader;
