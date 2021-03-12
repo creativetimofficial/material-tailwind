@@ -98,27 +98,29 @@ export default function Card() {
         codeToShow={codeToShow}
         onFrameworkClick={onFrameworkClick}
       >
-        <Card>
-          <CardImage
-            src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80"
-            alt="Card Image"
-          />
+        <div className="flex justify-center">
+          <Card>
+            <CardImage
+              src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80"
+              alt="Card Image"
+            />
 
-          <CardBody>
-            <H6 color="gray">Card Title</H6>
-            <Paragraph color="gray">
-              Don't be scared of the truth because we need to restart the human
-              foundation in truth And I love you like Kanye loves Kanye I love
-              Rick Owens’ bed design but the back is...
-            </Paragraph>
-          </CardBody>
+            <CardBody>
+              <H6 color="gray">Card Title</H6>
+              <Paragraph color="gray">
+                Don't be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </Paragraph>
+            </CardBody>
 
-          <CardFooter>
-            <Buttons color="pink" size="lg" data-md-ripple-light={true}>
-              Read More
-            </Buttons>
-          </CardFooter>
-        </Card>
+            <CardFooter>
+              <Buttons color="pink" size="lg" data-md-ripple-light={true}>
+                Read More
+              </Buttons>
+            </CardFooter>
+          </Card>
+        </div>
       </DocsSnippet>
     </>
   );
