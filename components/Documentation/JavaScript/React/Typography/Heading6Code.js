@@ -17,7 +17,6 @@ import H6 from "@md-tailwind/react/Heading6";
 export default function H6() {
   return (
     <H6 color="${color}">Tailwinded Design System</H6>
-  }} />
   );
 }`;
 
