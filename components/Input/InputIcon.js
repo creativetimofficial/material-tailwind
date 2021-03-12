@@ -67,7 +67,7 @@ const borderColors = {
   red: 'border-red-500',
 };
 
-const InputIcon = ({
+export default function InputIcon({
   placeholder,
   color,
   size = 'regular',
@@ -77,7 +77,7 @@ const InputIcon = ({
   iconFamily = 'material-icons',
   iconName,
   ...rest
-}) => {
+}) {
   let iconUI,
     iconSize,
     labelBorderColor,
@@ -237,16 +237,14 @@ const InputIcon = ({
       )}
     </div>
   );
-};
+}
 
 InputIcon.propTypes = {
-  placeholder: PropTypes.string,
-  color: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   size: PropTypes.string,
   outline: PropTypes.bool,
   error: PropTypes.string,
   iconFamily: PropTypes.string,
-  iconName: PropTypes.string,
+  iconName: PropTypes.string.isRequired,
 };
-
-export default InputIcon;
