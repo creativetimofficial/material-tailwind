@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavbarBrand = ({ children, color }) => {
+export default function NavbarBrand({ children }) {
   return (
     <a
       className={`text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white`}
@@ -10,11 +10,8 @@ const NavbarBrand = ({ children, color }) => {
       {children}
     </a>
   );
-};
+}
 
 NavbarBrand.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
-
-export default NavbarBrand;
