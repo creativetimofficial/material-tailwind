@@ -53,19 +53,21 @@ export default function Dropdowns() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={(type) => setType(type)}
       >
-        <Dropdowns
-          {...rest}
-          color={color}
-          placement={placement}
-          buttonText={buttonText}
-          buttonType={buttonType}
-          size={size}
-          rounded={rounded}
-        >
-          <DropdownItems>Action</DropdownItems>
-          <DropdownItems>Another Action</DropdownItems>
-          <DropdownItems>Something Else</DropdownItems>
-        </Dropdowns>
+        <div className="flex justify-center">
+          <Dropdowns
+            {...rest}
+            color={color}
+            placement={placement}
+            buttonText={buttonText}
+            buttonType={buttonType}
+            size={size}
+            rounded={rounded}
+          >
+            <DropdownItems>Action</DropdownItems>
+            <DropdownItems>Another Action</DropdownItems>
+            <DropdownItems>Something Else</DropdownItems>
+          </Dropdowns>
+        </div>
       </DocsSnippet>
     </>
   );
