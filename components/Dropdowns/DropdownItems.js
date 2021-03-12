@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownItems = ({ children, ...rest }) => {
+export default function DropdownItems({ children, ...rest }) {
   return (
     <a
       {...rest}
@@ -10,10 +10,8 @@ const DropdownItems = ({ children, ...rest }) => {
       {children}
     </a>
   );
-};
+}
 
 DropdownItems.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
-
-export default DropdownItems;
