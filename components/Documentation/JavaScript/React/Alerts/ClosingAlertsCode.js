@@ -121,9 +121,11 @@ export default function ClosingAlerts() {
             </button>
           </div>
         ) : (
-          <Buttons color={color} onClick={() => setShowAlert(true)}>
-            Revert Changes
-          </Buttons>
+          <div className="flex justify-center">
+            <Buttons color={color} onClick={() => setShowAlert(true)}>
+              Revert Changes
+            </Buttons>
+          </div>
         )}
       </DocsSnippet>
     </>
