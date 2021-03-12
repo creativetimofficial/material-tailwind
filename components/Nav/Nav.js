@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavbarList = ({ children, leftSide }) => {
+export default function NavbarList({ children, leftSide }) {
   return (
     <ul
       className={`flex flex-col lg:flex-row list-none ${
@@ -11,11 +11,9 @@ const NavbarList = ({ children, leftSide }) => {
       {children}
     </ul>
   );
-};
+}
 
 NavbarList.propTypes = {
-  children: PropTypes.node,
-  navbar: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  leftSide: PropTypes.bool,
 };
-
-export default NavbarList;
