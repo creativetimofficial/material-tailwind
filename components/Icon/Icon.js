@@ -23,7 +23,13 @@ const colors = {
   red: 'text-red-500',
 };
 
-const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
+export default function Icon({
+  family = 'material-icons',
+  name,
+  color,
+  size,
+  ...rest
+}) {
   let iconUI;
 
   if (family === 'material-icons') {
@@ -44,13 +50,11 @@ const Icon = ({ family = 'material-icons', name, color, size, ...rest }) => {
   }
 
   return iconUI;
-};
+}
 
 Icon.propTypes = {
   family: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   color: PropTypes.string,
   size: PropTypes.string,
 };
-
-export default Icon;
