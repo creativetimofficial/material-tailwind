@@ -67,7 +67,7 @@ const borderColors = {
   red: 'border-red-500',
 };
 
-const Input = ({
+export default function Input({
   placeholder,
   color,
   size = 'regular',
@@ -75,7 +75,7 @@ const Input = ({
   error,
   success,
   ...rest
-}) => {
+}) {
   let labelBorderColor,
     mdInputBorderColor,
     mdInputOutlineColor,
@@ -208,14 +208,12 @@ const Input = ({
       )}
     </div>
   );
-};
+}
 
 Input.propTypes = {
-  placeholder: PropTypes.string,
-  color: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   size: PropTypes.string,
   outline: PropTypes.bool,
   error: PropTypes.string,
 };
-
-export default Input;
