@@ -223,7 +223,7 @@ const outlineBgActiveColors = {
   red: 'bg-red-100',
 };
 
-const Dropdowns = ({
+export default function Dropdowns({
   children,
   buttonText,
   color,
@@ -232,7 +232,7 @@ const Dropdowns = ({
   placement = 'bottom-start',
   rounded,
   ...rest
-}) => {
+}) {
   const [dropdownShow, setDropdownShow] = React.useState(false);
 
   // Styles
@@ -252,8 +252,6 @@ const Dropdowns = ({
     'focus:outline-none',
     'transition-all',
     'duration-300',
-    'relative',
-    'overflow-hidden',
     rounded,
   ];
 
@@ -359,16 +357,14 @@ const Dropdowns = ({
       </Tippy>
     </>
   );
-};
+}
 
 Dropdowns.propTypes = {
-  children: PropTypes.node,
-  buttonText: PropTypes.string,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
   buttonType: PropTypes.string,
   size: PropTypes.string,
   placement: PropTypes.string,
   rounded: PropTypes.bool,
 };
-
-export default Dropdowns;
