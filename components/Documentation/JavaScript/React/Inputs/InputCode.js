@@ -44,7 +44,9 @@ export default function Input() {
         onFrameworkClick={(type) => setType(type)}
       >
         <div
-          className={`w-72 ${errorMessage || successMessage ? 'mb-10' : ''}`}
+          className={`w-72 mx-auto ${
+            errorMessage || successMessage ? 'mb-10' : ''
+          }`}
         >
           <Input
             type="text"
