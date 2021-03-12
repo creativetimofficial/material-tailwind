@@ -23,10 +23,10 @@ const colors = {
   red: 'bg-red-500',
 };
 
-const ClosingAlerts = ({ children, color, ...rest }) => {
+export default function ClosingAlerts({ children, color, ...rest }) {
   const [showAlert, setShowAlert] = React.useState(true);
 
-  function closeAlert(e) {
+  const closeAlert = (e) => {
     let delay;
 
     const parentClassName = e.target.parentNode.parentNode;
@@ -41,7 +41,7 @@ const ClosingAlerts = ({ children, color, ...rest }) => {
       () => setShowAlert(false),
       delay ? parseInt(delay, 10) + 100 : 250,
     );
-  }
+  };
 
   return (
     <>
@@ -61,11 +61,9 @@ const ClosingAlerts = ({ children, color, ...rest }) => {
       ) : null}
     </>
   );
-};
+}
 
 ClosingAlerts.propTypes = {
-  color: PropTypes.string,
-  children: PropTypes.node,
+  color: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
-
-export default ClosingAlerts;
