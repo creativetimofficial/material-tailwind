@@ -109,7 +109,7 @@ export default function Modals() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <div>
+        <div className="flex justify-center">
           <Buttons
             color={color}
             type="button"
