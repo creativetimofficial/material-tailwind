@@ -18,11 +18,11 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React, { useRef } from "react";
-import Buttons from "components/Buttons/Buttons";
-import Popover from "components/Popovers/Popover";
-import PopoverContainer from "components/Popovers/PopoverContainer";
-import PopoverHeader from "components/Popovers/PopoverHeader";
-import PopoverBody from "components/Popovers/PopoverBody";
+import Buttons from "@md-tailwind/react/Buttons";
+import Popover from "@md-tailwind/react/Popover";
+import PopoverContainer from "@md-tailwind/react/PopoverContainer";
+import PopoverHeader from "@md-tailwind/react/PopoverHeader";
+import PopoverBody from "@md-tailwind/react/PopoverBody";
 import "@md-ripple-effect";
 
 export default function Popover() {
