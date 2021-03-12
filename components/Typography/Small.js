@@ -23,7 +23,7 @@ const colors = {
   red: 'text-red-700',
 };
 
-const Small = ({ children, color, ...rest }) => {
+export default function Small({ children, color, ...rest }) {
   return (
     <small
       {...rest}
@@ -32,11 +32,9 @@ const Small = ({ children, color, ...rest }) => {
       {children}
     </small>
   );
-};
+}
 
 Small.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
-
-export default Small;
