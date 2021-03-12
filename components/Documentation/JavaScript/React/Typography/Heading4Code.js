@@ -17,7 +17,6 @@ import H4 from "@md-tailwind/react/Heading4";
 export default function H4() {
   return (
     <H4 color="${color}">Tailwinded Design System</H4>
-  }} />
   );
 }`;
 
