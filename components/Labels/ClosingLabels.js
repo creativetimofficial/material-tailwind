@@ -91,7 +91,7 @@ export default function ClosingLabels({ children, color }) {
     <>
       {showLabel ? (
         <div
-          className={`flex items-center justify-between py-1 pl-3 pr-1 rounded-full ${divBgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
+          className={`max-w-max flex items-center justify-between py-1 pl-3 pr-1 rounded-full ${divBgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
         >
           <span
             className={`text-xs font-semibold uppercase ${textColors[color]} uppercase mr-2`}
