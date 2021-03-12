@@ -19,6 +19,9 @@ if (process.browser) {
   function createRipple(event, color) {
     const element = event.currentTarget;
 
+    element.style.position = 'relative';
+    element.style.overflow = 'hidden';
+
     const rect = element.getBoundingClientRect();
     const radius = findFurthestPoint(
       event.clientX,
