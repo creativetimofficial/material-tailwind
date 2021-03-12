@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModalFooter = ({ children }) => {
+export default function ModalFooter({ children }) {
   return <div className="flex items-center justify-end gap-4">{children}</div>;
-};
+}
 
 ModalFooter.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
-
-export default ModalFooter;
