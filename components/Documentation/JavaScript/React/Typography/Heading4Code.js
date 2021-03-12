@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import H4 from "components/Typography/Heading4";
+import H4 from "@md-tailwind/react/Heading4";
 
 export default function H4() {
   return (
