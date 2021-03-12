@@ -48,7 +48,7 @@ const elementColors = [
   'red',
 ];
 
-const buttons = ['html', 'react', 'vue', 'angular'];
+const buttons = ['html', 'javascript', 'react', 'vue', 'angular'];
 
 export default function DocsSnippet({
   children,
@@ -114,6 +114,8 @@ export default function DocsSnippet({
                     switch (prop) {
                       default:
                         return 'HTML';
+                      case 'javascript':
+                        return 'JavaScript';
                       case 'react':
                         return 'React';
                       case 'angular':
