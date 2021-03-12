@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavbarInput = ({ fontAwesome, ...rest }) => {
+export default function NavbarInput({ fontAwesome, ...rest }) {
   return (
     <div className="relative lg:w-60 sm:w-full flex items-center bg-white bg-opacity-20 py-1 px-3 rounded">
       {fontAwesome ? (
@@ -15,10 +15,8 @@ const NavbarInput = ({ fontAwesome, ...rest }) => {
       />
     </div>
   );
-};
+}
 
 NavbarInput.propTypes = {
   fontAwesome: PropTypes.bool,
 };
-
-export default NavbarInput;
