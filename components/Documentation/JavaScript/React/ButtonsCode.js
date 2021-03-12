@@ -51,15 +51,17 @@ export default function Buttons() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={(type) => setType(type)}
       >
-        <Buttons
-          {...rest}
-          color={color}
-          buttonType={buttonType}
-          size={size}
-          rounded={rounded}
-        >
-          {children}
-        </Buttons>
+        <div className="flex justify-center">
+          <Buttons
+            {...rest}
+            color={color}
+            buttonType={buttonType}
+            size={size}
+            rounded={rounded}
+          >
+            {children}
+          </Buttons>
+        </div>
       </DocsSnippet>
     </>
   );
