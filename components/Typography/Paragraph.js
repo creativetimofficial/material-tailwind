@@ -23,7 +23,7 @@ const colors = {
   red: 'text-red-700',
 };
 
-const Paragraph = ({ children, color, ...rest }) => {
+export default function Paragraph({ children, color, ...rest }) {
   return (
     <p
       {...rest}
@@ -32,11 +32,9 @@ const Paragraph = ({ children, color, ...rest }) => {
       {children}
     </p>
   );
-};
+}
 
 Paragraph.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
-
-export default Paragraph;
