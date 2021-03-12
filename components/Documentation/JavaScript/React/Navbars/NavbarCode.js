@@ -23,16 +23,16 @@ export default function NavbarCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React, { useState } from "react";
-import Navbar from 'components/Navbar/Navbar';
-import NavbarContainer from 'components/Navbar/NavbarContainer';
-import NavbarWrapper from 'components/Navbar/NavbarWrapper';
-import NavbarBrand from 'components/Navbar/NavbarBrand';
-import NavbarToggler from 'components/Navbar/NavbarToggler';
-import Collapse from 'components/Navbar/Collapse';
-import Nav from 'components/Nav/Nav';
-import NavItem from 'components/Nav/NavItem';
-import NavbarInput from 'components/Navbar/NavbarInput';
-import Icon from 'components/Icon/Icon';
+import Navbar from "@md-tailwind/react/Navbar";
+import NavbarContainer from "@md-tailwind/react/NavbarContainer";
+import NavbarWrapper from "@md-tailwind/react/NavbarWrapper";
+import NavbarBrand from "@md-tailwind/react/NavbarBrand";
+import NavbarToggler from "@md-tailwind/react/NavbarToggler";
+import Collapse from "@md-tailwind/react/Collapse";
+import Nav from "@md-tailwind/react/Nav";
+import NavItem from "@md-tailwind/react/NavItem";
+import NavbarInput from "@md-tailwind/react/NavbarInput";
+import Icon from "@md-tailwind/react/Icon";
 import "@md-ripple-effect"
 
 export default function Navbar() {
