@@ -55,7 +55,7 @@ export default function Index() {
         <div className="w-full h-96 flex justify-center items-center">
           <div className="container text-center mx-auto">
             <H1>MD Tailwind</H1>
-            <p class="text-lg font-light leading-relaxed mb-4">
+            <p className="text-lg font-light leading-relaxed mb-4">
               Easy to use React Tailwind CSS components
             </p>
 
@@ -64,7 +64,7 @@ export default function Index() {
                 github
               </Buttons>
 
-              <Link href="documentation/react/alerts">
+              <Link href="/documentation/react/alerts">
                 <a>
                   <Buttons color="lightBlue" data-md-ripple-light={true}>
                     components
