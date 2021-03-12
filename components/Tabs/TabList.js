@@ -23,7 +23,7 @@ const colors = {
   red: 'bg-red-500',
 };
 
-const TabList = ({ children, color }) => {
+export default function TabList({ children, color }) {
   return (
     <ul
       className={`${colors[color]} w-full rounded-lg p-4 mx-5 flex justify-start -mt-12 mb-6 list-none shadow-xl z-10`}
@@ -32,11 +32,9 @@ const TabList = ({ children, color }) => {
       {children}
     </ul>
   );
-};
+}
 
 TabList.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
-
-export default TabList;
