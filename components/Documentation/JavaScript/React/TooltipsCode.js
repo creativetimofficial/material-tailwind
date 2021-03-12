@@ -16,9 +16,9 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React, { useRef } from "react";
-import Buttons from "components/Buttons/Buttons";
-import Tooltip from "components/Tooltips/Tooltip";
-import TooltipContent from "components/Tooltips/TooltipContent";
+import Buttons from "@md-tailwind/react/Buttons";
+import Tooltip from "@md-tailwind/react/Tooltip";
+import TooltipContent from "@md-tailwind/react/TooltipContent";
 import "@md-ripple-effect";
 
 export default function Tooltips() {
