@@ -18,11 +18,11 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Tab from "components/Tabs/Tab";
-import TabList from "components/Tabs/TabList";
-import TabItem from "components/Tabs/TabItem";
-import TabContent from "components/Tabs/TabContent";
-import TabPane from "components/Tabs/TabPane";
+import Tab from "@md-tailwind/react/Tab";
+import TabList from "@md-tailwind/react/TabList";
+import TabItem from "@md-tailwind/react/TabItem";
+import TabContent from "@md-tailwind/react/TabContent";
+import TabPane from "@md-tailwind/react/TabPane";
 import "ripple/ripple";
 
 export default function Tabs() {
