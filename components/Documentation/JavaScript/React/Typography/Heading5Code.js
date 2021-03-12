@@ -17,7 +17,6 @@ import H5 from "@md-tailwind/react/Heading5";
 export default function H5() {
   return (
     <H5 color="${color}">Tailwinded Design System</H5>
-  }} />
   );
 }`;
 
