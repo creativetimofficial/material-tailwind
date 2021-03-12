@@ -15,9 +15,9 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Pagination from "components/Pagination/Pagination";
-import PaginationItem from "components/Pagination/PaginationItem";
-import Icon from "components/Icon/Icon";
+import Pagination from "@md-tailwind/react/Pagination";
+import PaginationItem from "@md-tailwind/react/PaginationItem";
+import Icon from "@md-tailwind/react/Icon";
 import "@md-ripple-effect";
 
 export default function Pagination() {
