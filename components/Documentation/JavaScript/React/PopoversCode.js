@@ -34,7 +34,7 @@ export default function Popover() {
         Popover ${placement}
       </Buttons>
 
-      <Popover placement="${placement}" ref={buttonRef} trigger="click">
+      <Popover placement="${placement}" ref={buttonRef}>
         <PopoverContainer>
           <PopoverHeader>Popover ${placement}</PopoverHeader>
           <PopoverBody>
@@ -98,7 +98,7 @@ export default function Popover() {
             Popover {placement}
           </Buttons>
 
-          <Popover placement={placement} ref={buttonRef} trigger="click">
+          <Popover placement={placement} ref={buttonRef}>
             <PopoverContainer>
               <PopoverHeader>Popover {placement}</PopoverHeader>
               <PopoverBody>
