@@ -6,7 +6,7 @@ import NavbarContainer from 'components/Navbar/NavbarContainer';
 import NavbarWrapper from 'components/Navbar/NavbarWrapper';
 import NavbarBrand from 'components/Navbar/NavbarBrand';
 import NavbarToggler from 'components/Navbar/NavbarToggler';
-import Collapse from 'components/Navbar/Collapse';
+import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import NavbarInput from 'components/Navbar/NavbarInput';
@@ -28,7 +28,7 @@ import NavbarContainer from "@md-tailwind/react/NavbarContainer";
 import NavbarWrapper from "@md-tailwind/react/NavbarWrapper";
 import NavbarBrand from "@md-tailwind/react/NavbarBrand";
 import NavbarToggler from "@md-tailwind/react/NavbarToggler";
-import Collapse from "@md-tailwind/react/Collapse";
+import NavbarCollapse from "@md-tailwind/react/NavbarCollapse";
 import Nav from "@md-tailwind/react/Nav";
 import NavItem from "@md-tailwind/react/NavItem";
 import NavbarInput from "@md-tailwind/react/NavbarInput";
@@ -48,7 +48,7 @@ export default function Navbar() {
           />
         </NavbarWrapper>
 
-        <Collapse open={openNavbar}>
+        <NavbarCollapse open={openNavbar}>
           <Nav leftSide>
             <NavItem
               active="light"
@@ -68,7 +68,7 @@ export default function Navbar() {
             </NavItem>
           </Nav>
           <NavbarInput type="text" placeholder="Search here" />
-        </Collapse>
+        </NavbarCollapse>
       </NavbarContainer>
     </Navbar>
   );
@@ -128,7 +128,7 @@ export default function Navbar() {
               <NavbarToggler onClick={() => setOpenNavbar(!openNavbar)} />
             </NavbarWrapper>
 
-            <Collapse open={openNavbar}>
+            <NavbarCollapse open={openNavbar}>
               <Nav leftSide>
                 <NavItem
                   active="light"
@@ -148,7 +148,7 @@ export default function Navbar() {
                 </NavItem>
               </Nav>
               <NavbarInput type="text" placeholder="Search here" />
-            </Collapse>
+            </NavbarCollapse>
           </NavbarContainer>
         </Navbar>
       </DocsSnippet>
