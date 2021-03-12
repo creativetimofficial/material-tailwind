@@ -5,13 +5,13 @@ import { roundArrow } from 'tippy.js';
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/animations/shift-away.css';
 
-const Popover = forwardRef(({ children, placement, trigger }, ref) => {
+const Popover = forwardRef(({ children, placement }, ref) => {
   return (
     <Tippy
       content={children}
       placement={placement}
       reference={ref}
-      trigger={trigger}
+      trigger="click"
       animation="shift-away"
       arrow={roundArrow}
       className="arrow-light"
@@ -21,9 +21,8 @@ const Popover = forwardRef(({ children, placement, trigger }, ref) => {
 });
 
 Popover.propTypes = {
-  children: PropTypes.node,
-  placement: PropTypes.string,
-  trigger: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  placement: PropTypes.string.isRequired,
 };
 
 export default Popover;
