@@ -8,11 +8,6 @@
 
 @md-tailwind is an easy to use React components for Tailwind CSS and Material Design.
 
-**Components**
-
-It comes with 8 dynamic components, that any website needs.
-We plan on implementing more, in the weeks to come.
-
 ## Table of Contents
 
 - [Components](#components)
@@ -20,23 +15,23 @@ We plan on implementing more, in the weeks to come.
 
 ## Components
 
-- [Alerts]
-- [Buttons]
-- [Cards]
-- [Dropdowns]
-- [Dropups]
-- [Images]
-- [Inputs]
-- [Labels]
-- [Menus]
-- [Modals]
-- [Navbars]
-- [Paginations]
-- [Popovers]
-- [Progressbars]
-- [Tabs]
-- [Tooltips]
-- [Typography]
+- [Alerts](#alerts)
+- [Buttons](#buttons)
+- [Cards](#cards)
+- [Dropdowns](#dropdowns)
+- [Dropups](#dropups)
+- [Images](#images)
+- [Inputs](#inputs)
+- [Labels](#labels)
+- [Menus](#menus)
+- [Modals](#modals)
+- [Navbars](#navbars)
+- [Paginations](#paginations)
+- [Popovers](#popovers)
+- [Progressbars](#progressbars)
+- [Tabs](#tabs)
+- [Tooltips](#tooltips)
+- [Typography](#typography)
 
 ## Quick start
 
@@ -48,9 +43,7 @@ npm i @md-tailwind
 
 After you have installed `@md-tailwind` into your project, you can import and use our components like so:
 
-### Example
-
-Usage:
+### Usage
 
 ```
 import React from "react";
@@ -104,7 +97,6 @@ We use GitHub Issues as the official bug tracker for the @md-tailwind. Here are 
 - <a href="https://www.creative-tim.com/templates?ref=nnjs-readme" target="_blank">More products</a> from Creative Tim
 - Check our Bundles <a href="https://www.creative-tim.com/bundles?ref=nnjs-readme" target="_blank">here</a>
 - Check our awesome builder <a href="https://www.creative-tim.com/builder/argon?ref=nnjs-readme" target="_blank">here</a>
-- Check Tailwind Starter Kit, the project behind this product <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation?ref=nnjs-readme" target="_blank">here</a>
 
 ### Social Media
 
