@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const NavbarToggler = ({ color, ...rest }) => {
+export default function NavbarToggler({ ...rest }) {
   return (
     <button
       {...rest}
@@ -17,10 +16,4 @@ const NavbarToggler = ({ color, ...rest }) => {
       ></span>
     </button>
   );
-};
-
-NavbarToggler.propTypes = {
-  color: PropTypes.string,
-};
-
-export default NavbarToggler;
+}
