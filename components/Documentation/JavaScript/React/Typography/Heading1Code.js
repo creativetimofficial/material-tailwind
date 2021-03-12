@@ -17,7 +17,6 @@ import H1 from "@md-tailwind/react/Heading1";
 export default function H1() {
   return (
     <H1 color="${color}">Tailwinded Design System</H1>
-  }} />
   );
 }`;
 
