@@ -23,7 +23,7 @@ const colors = {
   red: 'bg-red-500',
 };
 
-const Navbar = ({ children, color, navbar }) => {
+export default function Navbar({ children, color, navbar }) {
   return (
     <>
       <nav
@@ -35,11 +35,9 @@ const Navbar = ({ children, color, navbar }) => {
       </nav>
     </>
   );
-};
+}
 
 Navbar.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
-
-export default Navbar;
