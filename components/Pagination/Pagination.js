@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pagination = ({ children }) => {
+export default function Pagination({ children }) {
   return (
     <div className="py-2">
       <div className="block">
@@ -9,10 +9,8 @@ const Pagination = ({ children }) => {
       </div>
     </div>
   );
-};
+}
 
 Pagination.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
-
-export default Pagination;
