@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({ src, raised, rounded, ...rest }) => {
+export default function Image({ src, raised, rounded, ...rest }) {
   return (
     <>
       <img
@@ -13,12 +13,10 @@ const Image = ({ src, raised, rounded, ...rest }) => {
       />
     </>
   );
-};
+}
 
 Image.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
   raised: PropTypes.bool,
   rounded: PropTypes.bool,
 };
-
-export default Image;
