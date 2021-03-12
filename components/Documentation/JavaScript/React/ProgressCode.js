@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Progress from "components/Progress/Progress";
+import Progress from "@md-tailwind/react/Progress";
 
 export default function Progress() {
   return (
