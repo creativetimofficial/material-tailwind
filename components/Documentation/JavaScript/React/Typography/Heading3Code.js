@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import H3 from "components/Typography/Heading3";
+import H3 from "@md-tailwind/react/Heading3";
 
 export default function H3() {
   return (
