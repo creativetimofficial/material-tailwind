@@ -49,7 +49,7 @@ export default function Labels({ children, color }) {
   return (
     <>
       <div
-        className={`flex items-center justify-between py-1 px-3 rounded-full ${bgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
+        className={`max-w-max flex items-center justify-between py-1 px-3 rounded-full ${bgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
       >
         <span
           className={`text-xs font-semibold uppercase ${textColors[color]}`}
