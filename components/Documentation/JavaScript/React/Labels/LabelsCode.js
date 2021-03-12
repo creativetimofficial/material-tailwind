@@ -67,7 +67,7 @@ export default function Labels() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <div className="flex">
+        <div className="flex justify-center">
           <Labels color={color}>Label</Labels>
         </div>
       </DocsSnippet>
