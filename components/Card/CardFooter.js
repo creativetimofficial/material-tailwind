@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CardFooter = ({ children }) => {
+export default function CardFooter({ children }) {
   return <div className="px-4 pb-4">{children}</div>;
-};
+}
 
 CardFooter.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
-
-export default CardFooter;
