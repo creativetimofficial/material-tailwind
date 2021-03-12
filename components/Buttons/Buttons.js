@@ -251,8 +251,6 @@ const Buttons = forwardRef(
       'focus:shadow-none',
       'transition-all',
       'duration-300',
-      'relative',
-      'overflow-hidden',
       rounded,
     ];
 
@@ -336,8 +334,8 @@ const Buttons = forwardRef(
 );
 
 Buttons.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
   buttonType: PropTypes.string,
   size: PropTypes.string,
   rounded: PropTypes.bool,
