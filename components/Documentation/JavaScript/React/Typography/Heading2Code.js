@@ -17,7 +17,6 @@ import H2 from "@md-tailwind/react/Heading2";
 export default function H2() {
   return (
     <H2 color="${color}">Tailwinded Design System</H2>
-  }} />
   );
 }`;
 
