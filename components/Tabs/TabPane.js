@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TabPane = ({ children, active }) => {
+export default function TabPane({ children, active }) {
   return <div className={active ? 'block' : 'hidden'}>{children}</div>;
-};
+}
 
 TabPane.propTypes = {
-  children: PropTypes.node,
-  active: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  active: PropTypes.bool.isRequired,
 };
-
-export default TabPane;
