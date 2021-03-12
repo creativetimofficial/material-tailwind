@@ -23,7 +23,7 @@ const colors = {
   red: 'text-red-500',
 };
 
-const H1 = ({ children, color, ...rest }) => {
+export default function H1({ children, color, ...rest }) {
   return (
     <h1
       {...rest}
@@ -32,11 +32,9 @@ const H1 = ({ children, color, ...rest }) => {
       {children}
     </h1>
   );
-};
+}
 
 H1.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
 };
-
-export default H1;
