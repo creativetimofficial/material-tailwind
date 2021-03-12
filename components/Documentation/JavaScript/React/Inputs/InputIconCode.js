@@ -40,7 +40,7 @@ export default function Input() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={(type) => setType(type)}
       >
-        <div className="w-72">
+        <div className="w-72 mx-auto">
           <InputIcon
             type="text"
             color={color}
