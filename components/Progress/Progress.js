@@ -45,7 +45,7 @@ const bgColors = {
   red: 'bg-red-500',
 };
 
-const Progress = ({ color, value, percentage }) => {
+export default function Progress({ color, value, percentage }) {
   return (
     <>
       <div
@@ -62,12 +62,10 @@ const Progress = ({ color, value, percentage }) => {
       </div>
     </>
   );
-};
+}
 
 Progress.propTypes = {
-  color: PropTypes.string,
-  value: PropTypes.string,
+  color: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   percentage: PropTypes.bool,
 };
-
-export default Progress;
