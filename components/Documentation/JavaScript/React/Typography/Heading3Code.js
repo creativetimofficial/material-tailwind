@@ -17,7 +17,6 @@ import H3 from "@md-tailwind/react/Heading3";
 export default function H3() {
   return (
     <H3 color="${color}">Tailwinded Design System</H3>
-  }} />
   );
 }`;
 
