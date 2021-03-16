@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function NavbarInput({ fontAwesome, ...rest }) {
   return (
-    <div className="relative lg:w-60 sm:w-full flex items-center bg-white bg-opacity-20 py-1 px-3 rounded">
+    <div className="relative lg:w-60 sm:w-full flex items-center bg-white bg-opacity-20 py-1 px-3 rounded-lg">
       {fontAwesome ? (
         <i class="fas fa-search text-white text-xl"></i>
       ) : (
