@@ -19,10 +19,10 @@ export default function Presentation() {
               alt="Material Tailwind Logo"
               className="w-56 mx-auto mb-16"
             />
-            <h2 className="font-semibold text-6xl text-gray-700">
+            <h2 className="font-semibold text-6xl text-blue-gray-900">
               Material Design Tailwind
             </h2>
-            <p className="mt-4 text-xl leading-relaxed text-gray-600">
+            <p className="mt-4 text-xl leading-relaxed text-blue-gray-700">
               Easy to use React components for Tailwind CSS and Material Design.
             </p>
             <div className="mt-12 flex justify-center gap-4">
