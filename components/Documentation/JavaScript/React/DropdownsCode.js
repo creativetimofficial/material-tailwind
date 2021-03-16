@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Dropdowns from 'components/Dropdowns/Dropdowns';
 import DropdownItems from 'components/Dropdowns/DropdownItems';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
-import 'ripple/ripple';
 
 export default function DropdownsCode({
   children,
