@@ -36,15 +36,23 @@ export default function IndexNavbar(props) {
                 className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
                 data-ripple-dark={true}
               >
-                <a
-                  className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-nextjs%2F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-cubes text-lg leading-lg " />
-                  <span className="inline-block ml-2">Components</span>
-                </a>
+                <Link href="/documentation/quick-start">
+                  <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                    <i className="far fa-file-alt text-lg leading-lg " />
+                    <span className="inline-block ml-2">Docs</span>
+                  </a>
+                </Link>
+              </li>
+              <li
+                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                data-ripple-dark={true}
+              >
+                <Link href="/components">
+                  <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                    <i className="fas fa-cubes text-lg leading-lg " />
+                    <span className="inline-block ml-2">Components</span>
+                  </a>
+                </Link>
               </li>
 
               <li
@@ -53,7 +61,7 @@ export default function IndexNavbar(props) {
               >
                 <a
                   className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                  href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-nextjs%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20NextJS%20UI%20Kit%20and%20Admin.%20Let%20Notus%20NextJS%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
+                  href="https://github.com/creativetimofficial/md-tailwind"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -68,7 +76,7 @@ export default function IndexNavbar(props) {
               >
                 <a
                   className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                  href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index-navbar"
+                  href="https://github.com/creativetimofficial/md-tailwind/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
