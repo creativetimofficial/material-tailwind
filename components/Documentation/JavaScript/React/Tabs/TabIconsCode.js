@@ -7,7 +7,6 @@ import TabItem from 'components/Tabs/TabItem';
 import TabContent from 'components/Tabs/TabContent';
 import TabPane from 'components/Tabs/TabPane';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('pink');
