@@ -9,7 +9,6 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
-import 'ripple/ripple';
 
 export default function NavbarLinksCode({ copyText, onCopy }) {
   const [color, setColor] = useState('pink');
@@ -29,7 +28,7 @@ import NavbarToggler from "@md-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@md-tailwind/react/NavbarCollapse";
 import Nav from "@md-tailwind/react/Nav";
 import NavItem from "@md-tailwind/react/NavItem";
-import "@md-ripple-effect"
+import "material-ripple-effects";
 
 export default function Navbar() {
   const [openNavbar, setOpenNavbar] = useState(false);
@@ -49,14 +48,14 @@ export default function Navbar() {
             <NavItem
               active="light"
               href="#navbar"
-              data-md-ripple-light={true}
+              data-ripple-light={true}
             >
               Discover
             </NavItem>
-            <NavItem href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-ripple-light={true}>
               Profile
             </NavItem>
-            <NavItem href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-ripple-light={true}>
               Settings
             </NavItem>
           </Nav>
@@ -122,17 +121,13 @@ export default function Navbar() {
 
             <NavbarCollapse open={openNavbar}>
               <Nav>
-                <NavItem
-                  active="light"
-                  href="#navbar"
-                  data-md-ripple-light={true}
-                >
+                <NavItem active="light" href="#navbar" data-ripple-light={true}>
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" data-md-ripple-light={true}>
+                <NavItem href="#navbar" data-ripple-light={true}>
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" data-md-ripple-light={true}>
+                <NavItem href="#navbar" data-ripple-light={true}>
                   Settings
                 </NavItem>
               </Nav>
