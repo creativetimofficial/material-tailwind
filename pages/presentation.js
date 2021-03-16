@@ -1,0 +1,683 @@
+import React, { useState } from 'react';
+import Link from 'next/link';
+import IndexNavbar from 'pagesComponents/IndexNavbar';
+import IndexFooter from 'pagesComponents/IndexFooter';
+import Labels from 'components/Labels/Labels';
+import Buttons from 'components/Buttons/Buttons';
+import Paragraph from 'components/Typography/Paragraph';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+
+export default function Presentation() {
+  return (
+    <>
+      <IndexNavbar />
+      <section className="header relative items-center flex h-screen">
+        <div className="container max-w-7xl mx-auto">
+          <div className="w-full px-4 text-center">
+            <img
+              src={require('assets/img/md-tailwind-logo-initial.png')}
+              alt="Material Tailwind Logo"
+              className="w-56 mx-auto mb-16"
+            />
+            <h2 className="font-semibold text-6xl text-gray-700">
+              Material Design Tailwind
+            </h2>
+            <p className="mt-4 text-xl leading-relaxed text-gray-600">
+              Easy to use React components for Tailwind CSS and Material Design.
+            </p>
+            <div className="mt-12 flex justify-center gap-4">
+              <a href="#how-to-use">
+                <Buttons color="teal" size="lg" data-ripple-light={true}>
+                  How to use
+                </Buttons>
+              </a>
+              <Link href="/documentation/quick-start">
+                <a>
+                  <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
+                    Get started
+                  </Buttons>
+                </a>
+              </Link>
+              <a
+                href="https://github.com/creativetimofficial/md-tailwind"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Buttons color="blueGray" size="lg" data-ripple-light={true}>
+                  Github Star
+                </Buttons>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-36 bg-white">
+        <div className="container max-w-7xl mx-auto">
+          <h2 className="text-2xl text-gray-900">Installation</h2>
+          <hr className="border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-200 my-4" />
+
+          <div className="mt-16">
+            <div className="mb-16">
+              <h1 className="font-light text-2xl text-gray-700 mb-2">NPM</h1>
+              <Paragraph color="gray">Install MD Tailwind via NPM</Paragraph>
+
+              <SyntaxHighlighter
+                language="jsx"
+                style={shadesOfPurple}
+                customStyle={{
+                  fontSize: '0.875rem',
+                  padding: '16px 20px',
+                  borderRadius: '0.5rem',
+                }}
+              >
+                npm i --save @md-tailwind
+              </SyntaxHighlighter>
+            </div>
+
+            <duv>
+              <Paragraph color="gray">Import the components you need</Paragraph>
+
+              <div className="border border-solid border-gray-300 rounded-lg my-4 p-4 pt-6 relative">
+                <h4 className="text-gray-700 mb-2">Example</h4>
+                <Buttons color="lightBlue" data-ripple-light={true}>
+                  Button
+                </Buttons>
+
+                <div className="docs-code-preview mt-8">
+                  <SyntaxHighlighter
+                    language="jsx"
+                    style={shadesOfPurple}
+                    customStyle={{
+                      fontSize: '0.875rem',
+                      padding: '16px 20px !important',
+                      borderRadius: '0.5rem',
+                    }}
+                  >
+                    {`import React from "react";
+import Buttons from "@md-tailwind/react/Buttons";
+import "material-ripple-effects";
+export default function Buttons() {
+  return (
+    <Buttons
+      color="lightBlue"
+      data-ripple-light={true}
+    >
+      Button
+    </Buttons>
+  )
+}`}
+                    ;
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            </duv>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-48 md:mt-40 pb-40 relative bg-blue-gray-50">
+        <div className="container max-w-7xl mx-auto">
+          <div className="-mt-20 absolute top-0 bottom-auto left-0 right-0 w-full h-20">
+            <svg
+              className="absolute bottom-0 overflow-hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon
+                className="text-blue-gray-50 fill-current"
+                points="2560 0 2560 100 0 100"
+              ></polygon>
+            </svg>
+          </div>
+          <div className="container mx-auto">
+            <div className="flex flex-wrap items-center">
+              <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+                <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-xl bg-light-blue-500">
+                  <img
+                    alt="..."
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+                    className="w-full align-middle rounded-t-xl"
+                  />
+                  <blockquote className="relative p-8 mb-4">
+                    <svg
+                      preserveAspectRatio="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 583 95"
+                      className="absolute left-0 w-full block h-95-px -top-16"
+                    >
+                      <polygon
+                        points="-30,95 583,95 583,65"
+                        className="text-light-blue-500 fill-current"
+                      ></polygon>
+                    </svg>
+                    <h4 className="text-xl font-bold text-white">
+                      Great for your awesome project
+                    </h4>
+                    <p className="text-md font-light mt-2 text-white">
+                      Putting together a page has never been easier than
+                      matching together pre-made components. From landing pages
+                      presentation to login areas, you can easily customise and
+                      built your pages.
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+
+              <div className="w-full md:w-6/12 px-4">
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-6/12 px-4">
+                    <div className="relative flex flex-col mt-4">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
+                          <i className="fas fa-sitemap"></i>
+                        </div>
+                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                          CSS Components
+                        </h6>
+                        <p className="mb-4 text-gray-600">
+                          Notus NextJS comes with a huge number of Fully Coded
+                          CSS components.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="relative flex flex-col min-w-0">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
+                          <i className="fas fa-drafting-compass"></i>
+                        </div>
+                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                          JavaScript Components
+                        </h6>
+                        <p className="mb-4 text-gray-600">
+                          We also feature many dynamic components for React,
+                          NextJS, Vue and Angular.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-6/12 px-4">
+                    <div className="relative flex flex-col min-w-0 mt-4">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
+                          <i className="fas fa-newspaper"></i>
+                        </div>
+                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                          Pages
+                        </h6>
+                        <p className="mb-4 text-gray-600">
+                          This extension also comes with 3 sample pages. They
+                          are fully coded so you can start working instantly.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="relative flex flex-col min-w-0">
+                      <div className="px-4 py-5 flex-auto">
+                        <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
+                          <i className="fas fa-file-alt"></i>
+                        </div>
+                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                          Documentation
+                        </h6>
+                        <p className="mb-4 text-gray-600">
+                          Built by developers for developers. You will love how
+                          easy is to to work with Notus NextJS.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto overflow-hidden pb-20">
+            <div className="flex flex-wrap items-center">
+              <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+                <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                  <i className="fas fa-sitemap text-xl"></i>
+                </div>
+                <h3 className="text-gray-800 text-3xl mb-2 font-semibold leading-normal">
+                  CSS Components
+                </h3>
+                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                  Every element that you need in a product comes built in as a
+                  component. All components fit perfectly with each other and
+                  can have different colours.
+                </p>
+                <div className="block pb-6">
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Buttons
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Inputs
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Labels
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Menus
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Navbars
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Pagination
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Progressbars
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Typography
+                  </span>
+                </div>
+                <a
+                  href="#css"
+                  className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all"
+                >
+                  View All{' '}
+                  <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
+                </a>
+              </div>
+
+              <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
+                <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-btn.png')}
+                    className="w-full align-middle rounded absolute shadow-lg z-20"
+                    style={{
+                      maxWidth: '100px',
+                      left: '145px',
+                      top: '-60px',
+                    }}
+                  />
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-profile-card.png')}
+                    className="w-full align-middle rounded-lg absolute shadow-lg"
+                    style={{
+                      maxWidth: '210px',
+                      left: '260px',
+                      top: '-160px',
+                    }}
+                  />
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-info-card.png')}
+                    className="w-full align-middle rounded-lg absolute shadow-lg z-10"
+                    style={{
+                      maxWidth: '180px',
+                      left: '40px',
+                      top: '-255px',
+                    }}
+                  />
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-info-2.png')}
+                    className="w-full align-middle rounded-lg absolute shadow-2xl"
+                    style={{
+                      maxWidth: '200px',
+                      left: '-50px',
+                      top: '0',
+                    }}
+                  />
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-menu.png')}
+                    className="w-full align-middle rounded absolute shadow-lg"
+                    style={{
+                      maxWidth: '580px',
+                      left: '-20px',
+                      top: '210px',
+                    }}
+                  />
+                  <img
+                    alt="..."
+                    src={require('assets/img/component-btn-pink.png')}
+                    className="w-full align-middle rounded absolute shadow-xl"
+                    style={{
+                      maxWidth: '120px',
+                      left: '195px',
+                      top: '95px',
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center pt-32">
+              <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
+                <div className="justify-center flex flex-wrap relative">
+                  <div className="my-4 w-full lg:w-6/12 px-4">
+                    <a href="#svelte">
+                      <div className="bg-orange-900 shadow-xl rounded-lg text-center p-8">
+                        <img
+                          alt="..."
+                          className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/svelte.jpg"
+                        />
+                        <p className="text-lg text-white mt-4 font-semibold">
+                          Svelte
+                        </p>
+                      </div>
+                    </a>
+                    <Link href="/documentation/react/alerts">
+                      <a>
+                        <div className="bg-light-blue-500 shadow-xl rounded-lg text-center p-8 mt-8">
+                          <img
+                            alt="..."
+                            className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
+                          />
+                          <p className="text-lg text-white mt-4 font-semibold">
+                            ReactJS
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                    <a href="#nextjs">
+                      <div className="bg-gray-900 shadow-lg rounded-xl text-center p-8 mt-8">
+                        <img
+                          alt="..."
+                          className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nextjs.jpg"
+                        />
+                        <p className="text-lg text-white mt-4 font-semibold">
+                          NextJS
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                  <div className="my-4 w-full lg:w-6/12 px-4 lg:mt-16">
+                    <a href="#javascript">
+                      <div className="bg-yellow-600 shadow-xl rounded-lg text-center p-8">
+                        <img
+                          alt="..."
+                          className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/js.png"
+                        />
+                        <p className="text-lg text-white mt-4 font-semibold">
+                          JavaScript
+                        </p>
+                      </div>
+                    </a>
+                    <a href="#angular">
+                      <div className="bg-red-700 shadow-xl rounded-lg text-center p-8 mt-8">
+                        <img
+                          alt="..."
+                          className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
+                        />
+                        <p className="text-lg text-white mt-4 font-semibold">
+                          Angular
+                        </p>
+                      </div>
+                    </a>
+                    <a href="#vue">
+                      <div className="bg-green-500 shadow-xl rounded-lg text-center p-8 mt-8">
+                        <img
+                          alt="..."
+                          className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                          src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
+                        />
+                        <p className="text-lg text-white mt-4 font-semibold">
+                          Vue.js
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+                <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                  <i className="fas fa-drafting-compass text-xl"></i>
+                </div>
+                <h3 className="text-gray-800 text-3xl mb-2 font-semibold leading-normal">
+                  Javascript Components
+                </h3>
+                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                  In order to create a great User Experience some components
+                  require JavaScript. In this way you can manipulate the
+                  elements on the page and give more options to your users.
+                </p>
+                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
+                  We created a set of Components that are dynamic and come to
+                  help you.
+                </p>
+                <div className="block pb-6">
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Alerts
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Dropdowns
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Menus
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Modals
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Navbars
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Popovers
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Tabs
+                  </span>
+                  <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
+                    Tooltips
+                  </span>
+                </div>
+                <Link href="/documentation/react/alerts">
+                  <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
+                    View all{' '}
+                    <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 pb-32 pt-48">
+            <div className="items-center flex flex-wrap">
+              <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
+                <div className="md:pr-12">
+                  <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                    <i className="fas fa-file-alt text-xl"></i>
+                  </div>
+                  <h3 className="text-gray-800 text-3xl font-semibold">
+                    Complex Documentation
+                  </h3>
+                  <p className="mt-4 text-lg leading-relaxed text-gray-700">
+                    This extension comes a lot of fully coded examples that help
+                    you get started faster. You can adjust the colors and also
+                    the programming language. You can change the text and images
+                    and you're good to go.
+                  </p>
+                  <ul className="list-none mt-6">
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-gray-700 bg-gray-100 mr-3">
+                            <i className="fas fa-fingerprint"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-gray-700">
+                            Built by Developers for Developers
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-gray-700 bg-gray-100 mr-3">
+                            <i className="fab fa-html5"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-gray-700">
+                            Carefully crafted code for Components
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="flex items-center">
+                        <div>
+                          <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-gray-700 bg-gray-100 mr-3">
+                            <i className="far fa-paper-plane"></i>
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-gray-700">
+                            Dynamic Javascript Components
+                          </h4>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full md:w-6/12 mr-auto px-4 pt-24 md:pt-0">
+                <img
+                  alt="..."
+                  className="max-w-full rounded-lg shadow-lg"
+                  style={{
+                    transform:
+                      'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)',
+                  }}
+                  src={require('assets/img/documentation.png')}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-blue-gray-700 overflow-hidden">
+        <div className="container mx-auto pb-64">
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
+              <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                <i className="fas fa-code-branch text-xl"></i>
+              </div>
+              <h3 className="text-3xl mb-2 font-semibold leading-normal text-white">
+                Open Source
+              </h3>
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-400">
+                Since{' '}
+                <a
+                  href="https://tailwindcss.com/?ref=creative"
+                  className="text-gray-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tailwind CSS
+                </a>{' '}
+                is an open source project we wanted to continue this movement
+                too. You can give this version a try to feel the design and also
+                test the quality of the code!
+              </p>
+              <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-400">
+                Get it free on Github and please help us spread the news with a
+                Star!
+              </p>
+              <a
+                href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block"
+              >
+                <Buttons color="blueGray" size="lg">
+                  Github Star
+                </Buttons>
+              </a>
+            </div>
+
+            <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
+              <i
+                className="fab fa-github text-blue-gray-900 absolute -top-150-px -right-100 opacity-50"
+                style={{ fontSize: '50rem', top: '-150px', right: '-320px' }}
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-16 bg-blue-gray-50 relative pt-32">
+        <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20">
+          <svg
+            className="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              className="text-blue-gray-50 fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-xl -mt-64 py-16 px-12 relative z-10">
+            <div className="w-full text-center lg:w-8/12">
+              <p className="text-4xl text-center">
+                <span role="img" aria-label="love">
+                  😍
+                </span>
+              </p>
+              <h3 className="text-gray-800 font-semibold text-3xl mt-4">
+                Do you love this Starter Kit?
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed mt-4 mb-4">
+                Cause if you do, it can be yours now. Hit the buttons below to
+                navigate to get the Free version for your next project. Build a
+                new web app or give an old project a new look!
+              </p>
+              <div className="flex justify-center gap-4 mt-10">
+                <Link href="/documentation/quick-start">
+                  <a>
+                    <Buttons
+                      color="lightBlue"
+                      size="lg"
+                      data-ripple-light={true}
+                    >
+                      Get started
+                    </Buttons>
+                  </a>
+                </Link>
+                <a
+                  href="https://github.com/creativetimofficial/md-tailwind"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Buttons color="blueGray" size="lg" data-ripple-light={true}>
+                    Help With a Star
+                  </Buttons>
+                </a>
+              </div>
+              <div className="text-center mt-16"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <IndexFooter />
+    </>
+  );
+}
