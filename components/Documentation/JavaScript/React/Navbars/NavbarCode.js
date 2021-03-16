@@ -11,7 +11,6 @@ import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 export default function NavbarCode({ copyText, onCopy }) {
   const [color, setColor] = useState('pink');
@@ -33,7 +32,7 @@ import Nav from "@md-tailwind/react/Nav";
 import NavItem from "@md-tailwind/react/NavItem";
 import NavbarInput from "@md-tailwind/react/NavbarInput";
 import Icon from "@md-tailwind/react/Icon";
-import "@md-ripple-effect"
+import "material-ripple-effects";
 
 export default function Navbar() {
   const [openNavbar, setOpenNavbar] = useState(false);
@@ -53,16 +52,16 @@ export default function Navbar() {
             <NavItem
               active="light"
               href="#navbar"
-              data-md-ripple-light={true}
+              data-ripple-light={true}
             >
               <Icon name="language" size="xl" />
               Discover
             </NavItem>
-            <NavItem href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-ripple-light={true}>
               <Icon name="account_circle" size="xl" />
               Profile
             </NavItem>
-            <NavItem href="#navbar" data-md-ripple-light={true}>
+            <NavItem href="#navbar" data-ripple-light={true}>
               <Icon name="settings" size="xl" />
               Settings
             </NavItem>
@@ -130,19 +129,15 @@ export default function Navbar() {
 
             <NavbarCollapse open={openNavbar}>
               <Nav leftSide>
-                <NavItem
-                  active="light"
-                  href="#navbar"
-                  data-md-ripple-light={true}
-                >
+                <NavItem active="light" href="#navbar" data-ripple-light={true}>
                   <Icon name="language" size="xl" />
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" data-md-ripple-light={true}>
+                <NavItem href="#navbar" data-ripple-light={true}>
                   <Icon name="account_circle" size="xl" />
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" data-md-ripple-light={true}>
+                <NavItem href="#navbar" data-ripple-light={true}>
                   <Icon name="settings" size="xl" />
                   Settings
                 </NavItem>
