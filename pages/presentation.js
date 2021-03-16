@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import IndexNavbar from 'pagesComponents/IndexNavbar';
 import IndexFooter from 'pagesComponents/IndexFooter';
-import Labels from 'components/Labels/Labels';
 import Buttons from 'components/Buttons/Buttons';
 import Paragraph from 'components/Typography/Paragraph';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
