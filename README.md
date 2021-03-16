@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
 
-<div align="center"><img src="./assets/logos/reactjs-tailwind-logo.png" alt="@afc-org/react-tailwind" width="300"/></div>
+<div align="center"><img src="./assets/img/md-tailwind-logo-initial.png" alt="@md-tailwind" width="300"/></div>
 
 ### Material Design Tailwind
 
