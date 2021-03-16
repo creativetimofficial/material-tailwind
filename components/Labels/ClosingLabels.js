@@ -99,7 +99,7 @@ export default function ClosingLabels({ children, color }) {
             {children}
           </span>
           <span
-            className={`${spanBgColors[color]} text-white text-lg leading-none rounded-full w-5 h-5 cursor-pointer grid place-items-center`}
+            className={`${spanBgColors[color]} text-white text-sm leading-none rounded-full w-4 h-4 cursor-pointer p-1 pt-0.5`}
             onClick={closeLabel}
           >
             &times;
