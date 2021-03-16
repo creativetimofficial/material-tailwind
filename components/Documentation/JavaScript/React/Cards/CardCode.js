@@ -8,7 +8,6 @@ import CardFooter from 'components/Card/CardFooter';
 import H6 from 'components/Typography/Heading6';
 import Paragraph from 'components/Typography/Paragraph';
 import Buttons from 'components/Buttons/Buttons';
-import 'ripple/ripple';
 
 export default function CardCode({ copyText, onCopy }) {
   const [type] = useState('react');
@@ -25,7 +24,7 @@ import CardFooter from "@md-tailwind/react/CardFooter";
 import H6 from "@md-tailwind/react/Heading6";
 import Paragraph from "@md-tailwind/react/Paragraph";
 import Buttons from "@md-tailwind/react/Buttons";
-import "@md-ripple-effect";
+import "material-ripple-effects";
 
 export default function Card() {
   return (
@@ -45,7 +44,7 @@ export default function Card() {
       </CardBody>
 
       <CardFooter>
-        <Buttons color="pink" size="lg" data-md-ripple-light={true}>
+        <Buttons color="pink" size="lg" data-ripple-light={true}>
           Read More
         </Buttons>
       </CardFooter>
@@ -115,7 +114,7 @@ export default function Card() {
             </CardBody>
 
             <CardFooter>
-              <Buttons color="pink" size="lg" data-md-ripple-light={true}>
+              <Buttons color="pink" size="lg" data-ripple-light={true}>
                 Read More
               </Buttons>
             </CardFooter>
