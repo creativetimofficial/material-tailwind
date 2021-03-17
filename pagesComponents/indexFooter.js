@@ -29,7 +29,7 @@ export default function IndexFooter() {
               <h5 className="text-base font-light mb-2 text-gray-700 mt-2">
                 Easy to use React components for Tailwind CSS and Material Design.
               </h5>
-              <div className="flex gap-2 mt-6">
+              <div className="flex gap-2 mt-6 md:justify-start md:mb-0 mb-8 justify-center">
                 <a
                   href="#twitter"
                   className="grid place-items-center bg-white text-blue-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
@@ -62,7 +62,7 @@ export default function IndexFooter() {
             </div>
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top">
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
+                <div className="w-full lg:w-4/12 px-4 ml-auto md:mb-0 mb-8">
                   <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
                     Useful Links
                   </span>
