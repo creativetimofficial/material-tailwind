@@ -26,7 +26,7 @@ const colors = {
 };
 
 export default function ClosingAlertsCode({ copyText, onCopy }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showAlert, setShowAlert] = useState(true);
   const [showModal, setShowModal] = useState(false);

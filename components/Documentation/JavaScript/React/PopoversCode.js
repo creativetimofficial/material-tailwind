@@ -6,10 +6,9 @@ import Popover from 'components/Popovers/Popover';
 import PopoverContainer from 'components/Popovers/PopoverContainer';
 import PopoverHeader from 'components/Popovers/PopoverHeader';
 import PopoverBody from 'components/Popovers/PopoverBody';
-import 'ripple/ripple';
 
 export default function AlertsCode({ copyText, onCopy, placement }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

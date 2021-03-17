@@ -15,7 +15,7 @@ export default function DropdownsCode({
   ripple,
   ...rest
 }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
@@ -34,9 +34,9 @@ export default function Dropdowns() {
       rounded={${rounded}}
       ${ripple}
     >
-      <DropdownItems>Action</DropdownItems>
-      <DropdownItems>Another Action</DropdownItems>
-      <DropdownItems>Something Else</DropdownItems>
+      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Action</DropdownItems>
+      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Another Action</DropdownItems>
+      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Something Else</DropdownItems>
     </Dropdowns>
   )
 }`;
@@ -62,9 +62,9 @@ export default function Dropdowns() {
             size={size}
             rounded={rounded}
           >
-            <DropdownItems>Action</DropdownItems>
-            <DropdownItems>Another Action</DropdownItems>
-            <DropdownItems>Something Else</DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Action</DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Another Action</DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Something Else</DropdownItems>
           </Dropdowns>
         </div>
       </DocsSnippet>

@@ -22,7 +22,7 @@ export default function Presentation() {
             <h2 className="font-semibold text-6xl text-blue-gray-900">
               Material Design Tailwind
             </h2>
-            <p className="mt-4 text-xl leading-relaxed text-blue-gray-700">
+            <p className="mt-4 text-xl leading-relaxed text-gray-700">
               Easy to use React components for Tailwind CSS and Material Design.
             </p>
             <div className="mt-12 flex justify-center gap-4">
@@ -53,7 +53,7 @@ export default function Presentation() {
       </section>
 
       <section className="pb-36 bg-white">
-        <div className="container max-w-7xl mx-auto">
+        <div className="container max-w-7xl mx-auto px-4">
           <h2 className="text-2xl text-gray-900">Installation</h2>
           <hr className="border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-200 my-4" />
 
@@ -176,10 +176,10 @@ export default function Buttons() {
                         <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
                           <i className="fas fa-sitemap"></i>
                         </div>
-                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                        <h6 className="text-xl mb-1 font-medium text-gray-900">
                           CSS Components
                         </h6>
-                        <p className="mb-4 text-gray-600">
+                        <p className="mb-4 text-gray-700 font-light">
                           Notus NextJS comes with a huge number of Fully Coded
                           CSS components.
                         </p>
@@ -190,10 +190,10 @@ export default function Buttons() {
                         <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
                           <i className="fas fa-drafting-compass"></i>
                         </div>
-                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                        <h6 className="text-xl mb-1 font-medium text-gray-900">
                           JavaScript Components
                         </h6>
-                        <p className="mb-4 text-gray-600">
+                        <p className="mb-4 text-gray-700 font-light">
                           We also feature many dynamic components for React,
                           NextJS, Vue and Angular.
                         </p>
@@ -206,10 +206,10 @@ export default function Buttons() {
                         <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
                           <i className="fas fa-newspaper"></i>
                         </div>
-                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                        <h6 className="text-xl mb-1 font-medium text-gray-900">
                           Pages
                         </h6>
-                        <p className="mb-4 text-gray-600">
+                        <p className="mb-4 text-gray-700 font-light">
                           This extension also comes with 3 sample pages. They
                           are fully coded so you can start working instantly.
                         </p>
@@ -220,10 +220,10 @@ export default function Buttons() {
                         <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-md rounded-full bg-white">
                           <i className="fas fa-file-alt"></i>
                         </div>
-                        <h6 className="text-xl mb-1 font-medium text-blue-gray-700">
+                        <h6 className="text-xl mb-1 font-medium text-gray-900">
                           Documentation
                         </h6>
-                        <p className="mb-4 text-gray-600">
+                        <p className="mb-4 text-gray-700 font-light">
                           Built by developers for developers. You will love how
                           easy is to to work with Notus NextJS.
                         </p>
@@ -241,7 +241,7 @@ export default function Buttons() {
                 <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
                   <i className="fas fa-sitemap text-xl"></i>
                 </div>
-                <h3 className="text-gray-800 text-3xl mb-2 font-semibold leading-normal">
+                <h3 className="text-gray-900 text-3xl mb-2 font-medium leading-normal">
                   CSS Components
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
@@ -438,7 +438,7 @@ export default function Buttons() {
                 <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
                   <i className="fas fa-drafting-compass text-xl"></i>
                 </div>
-                <h3 className="text-gray-800 text-3xl mb-2 font-semibold leading-normal">
+                <h3 className="text-gray-900 text-3xl mb-2 font-medium leading-normal">
                   Javascript Components
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
@@ -493,10 +493,10 @@ export default function Buttons() {
                   <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
                     <i className="fas fa-file-alt text-xl"></i>
                   </div>
-                  <h3 className="text-gray-800 text-3xl font-semibold">
+                  <h3 className="text-gray-900 text-3xl font-medium">
                     Complex Documentation
                   </h3>
-                  <p className="mt-4 text-lg leading-relaxed text-gray-700">
+                  <p className="mt-4 text-lg leading-relaxed text-gray-700 font-light">
                     This extension comes a lot of fully coded examples that help
                     you get started faster. You can adjust the colors and also
                     the programming language. You can change the text and images
@@ -511,7 +511,7 @@ export default function Buttons() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="text-gray-700">
+                          <h4 className="text-gray-700 font-light">
                             Built by Developers for Developers
                           </h4>
                         </div>
@@ -525,7 +525,7 @@ export default function Buttons() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="text-gray-700">
+                          <h4 className="text-gray-700 font-light">
                             Carefully crafted code for Components
                           </h4>
                         </div>
@@ -539,7 +539,7 @@ export default function Buttons() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="text-gray-700">
+                          <h4 className="text-gray-700 font-light">
                             Dynamic Javascript Components
                           </h4>
                         </div>
@@ -565,31 +565,31 @@ export default function Buttons() {
         </div>
       </section>
 
-      <section className="py-20 bg-blue-gray-700 overflow-hidden">
-        <div className="container mx-auto pb-64">
+      <section className="py-20 bg-blue-gray-800 overflow-hidden">
+        <div className="container max-w-7xl mx-auto pb-64">
           <div className="flex flex-wrap justify-center">
-            <div className="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
+            <div className="w-full md:w-8/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
               <div className="text-blue-gray-700 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
                 <i className="fas fa-code-branch text-xl"></i>
               </div>
-              <h3 className="text-3xl mb-2 font-semibold leading-normal text-white">
+              <h3 className="text-3xl mb-2 font-medium leading-normal text-white">
                 Open Source
               </h3>
-              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-400">
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blue-gray-200">
                 Since{' '}
                 <a
                   href="https://tailwindcss.com/?ref=creative"
-                  className="text-gray-300"
+                  className="text-blue-gray-50"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Tailwind CSS
                 </a>{' '}
-                is an open source project we wanted to continue this movement
-                too. You can give this version a try to feel the design and also
+                is an open source project we wanted to <br />continue this movement
+                too. You can give this version a try to feel <br />the design and also
                 test the quality of the code!
               </p>
-              <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-400">
+              <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blue-gray-200">
                 Get it free on Github and please help us spread the news with a
                 Star!
               </p>
@@ -615,7 +615,7 @@ export default function Buttons() {
         </div>
       </section>
 
-      <section className="pb-16 bg-blue-gray-50 relative pt-32">
+      <section className="pb-16 bg-gray-50 relative pt-32">
         <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20">
           <svg
             className="absolute bottom-0 overflow-hidden"
@@ -627,24 +627,24 @@ export default function Buttons() {
             y="0"
           >
             <polygon
-              className="text-blue-gray-50 fill-current"
+              className="text-gray-50 fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
 
-        <div className="container mx-auto">
-          <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-xl -mt-64 py-16 px-12 relative z-10">
+        <div className="container max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-xl -mt-64 py-24 px-12 relative z-10">
             <div className="w-full text-center lg:w-8/12">
               <p className="text-4xl text-center">
                 <span role="img" aria-label="love">
                   😍
                 </span>
               </p>
-              <h3 className="text-gray-800 font-semibold text-3xl mt-4">
+              <h3 className="text-gray-900 font-medium text-3xl mt-4">
                 Do you love this Starter Kit?
               </h3>
-              <p className="text-gray-700 text-lg leading-relaxed mt-4 mb-4">
+              <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
                 Cause if you do, it can be yours now. Hit the buttons below to
                 navigate to get the Free version for your next project. Build a
                 new web app or give an old project a new look!
@@ -671,7 +671,6 @@ export default function Buttons() {
                   </Buttons>
                 </a>
               </div>
-              <div className="text-center mt-16"></div>
             </div>
           </div>
         </div>

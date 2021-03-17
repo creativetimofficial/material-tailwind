@@ -4,10 +4,9 @@ import Frameworks from 'components/Documentation/Frameworks.js';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationItem from 'components/Pagination/PaginationItem';
 import Icon from 'components/Icon/Icon';
-import 'ripple/ripple';
 
 export default function AlertsCode({ copyText, onCopy }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

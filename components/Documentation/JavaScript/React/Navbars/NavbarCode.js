@@ -13,7 +13,7 @@ import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
 
 export default function NavbarCode({ copyText, onCopy }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

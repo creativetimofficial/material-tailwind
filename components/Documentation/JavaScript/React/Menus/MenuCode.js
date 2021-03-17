@@ -12,7 +12,7 @@ import NavItem from 'components/Nav/NavItem';
 import Icon from 'components/Icon/Icon';
 
 export default function MenuCode({ copyText, onCopy }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

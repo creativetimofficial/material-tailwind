@@ -10,8 +10,7 @@ export default function IndexNavbar(props) {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
               <a
-                className="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
-                href="#pablo"
+                className="text-gray-900 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
               >
                 Material Tailwind
               </a>
@@ -33,7 +32,7 @@ export default function IndexNavbar(props) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li
-                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
                 data-ripple-dark={true}
               >
                 <Link href="/documentation/quick-start">
@@ -44,7 +43,7 @@ export default function IndexNavbar(props) {
                 </Link>
               </li>
               <li
-                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
                 data-ripple-dark={true}
               >
                 <Link href="/components">
@@ -56,7 +55,7 @@ export default function IndexNavbar(props) {
               </li>
 
               <li
-                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
                 data-ripple-dark={true}
               >
                 <a
@@ -71,7 +70,7 @@ export default function IndexNavbar(props) {
               </li>
 
               <li
-                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
                 data-ripple-dark={true}
               >
                 <a

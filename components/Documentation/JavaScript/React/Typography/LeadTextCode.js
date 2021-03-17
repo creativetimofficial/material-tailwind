@@ -4,7 +4,7 @@ import Frameworks from 'components/Documentation/Frameworks.js';
 import LeadText from 'components/Typography/LeadText';
 
 export default function AlertsCode({ copyText, onCopy, value, percentage }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Buttons from 'components/Buttons/Buttons';
-import 'ripple/ripple';
 
 export default function ButtonsCode({
   children,
@@ -15,7 +14,7 @@ export default function ButtonsCode({
   buttonChildren,
   ...rest
 }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";

@@ -4,10 +4,9 @@ import Frameworks from 'components/Documentation/Frameworks.js';
 import Buttons from 'components/Buttons/Buttons';
 import Tooltip from 'components/Tooltips/Tooltip';
 import TooltipContent from 'components/Tooltips/TooltipContent';
-import 'ripple/ripple';
 
 export default function AlertsCode({ copyText, onCopy, placement }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

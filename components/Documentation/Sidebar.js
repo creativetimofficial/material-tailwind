@@ -89,8 +89,8 @@ class Sidebar extends React.Component {
               href="#pablo"
               className={
                 (this.state[prop.state]
-                  ? 'text-pink-600 font-semibold'
-                  : 'text-gray-600 hover:text-gray-900 ') +
+                  ? 'text-light-blue-500 font-semibold'
+                  : 'text-gray-600 hover:text-gray-800 ') +
                 ' text-sm block mb-2 mx-4 no-underline'
               }
               onClick={(e) => {
@@ -133,8 +133,8 @@ class Sidebar extends React.Component {
               <a
                 className={
                   (this.props.router.pathname.indexOf(prop.path) !== -1
-                    ? 'text-pink-600 border-l-2 border-solid border-pink-600 pl-1 '
-                    : 'text-gray-600 hover:text-gray-900 ') +
+                    ? 'text-light-blue-500 border-l-2 border-solid border-light-blue-500 pl-1 '
+                    : 'text-gray-600 hover:text-gray-800 ') +
                   'text-sm block mb-2 mx-4 no-underline'
                 }
               >

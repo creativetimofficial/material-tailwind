@@ -1,70 +1,86 @@
-/*eslint-disable*/
 import React from 'react';
 import Link from 'next/link';
 
-export default function Navbar({ fixed }) {
+export default function IndexNavbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav
-        className={
-          (fixed ? 'fixed z-50 w-full bg-white top-0 ' : 'relative ') +
-          'flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow-lg'
-        }
-      >
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <nav className="sticky top-0 z-50 lg:z-50 w-full bg-white flex items-center justify-between px-2 py-4 shadow-md">
+        <div className="container max-w-7xl px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
-              <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-gray-800">
-                MD Tailwind
+              <a
+                className="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
+                href="#pablo"
+              >
+                Material Tailwind
               </a>
             </Link>
             <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <i className="material-icons">menu</i>
+              <i className="fas fa-bars text-gray-900"></i>
             </button>
           </div>
           <div
             className={
-              'lg:flex flex-grow items-center' +
-              (navbarOpen ? ' flex' : ' hidden')
+              'lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none' +
+              (navbarOpen ? ' block' : ' hidden')
             }
-            id="example-navbar-danger"
+            id="example-navbar-warning"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <Link
-                  href="/documentation/quick-start"
-                  as={
-                    (process.env.NODE_ENV === 'production'
-                      ? '/learning-lab/tailwind-starter-kit'
-                      : '') + '/documentation/quick-start'
-                  }
-                >
-                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold text-gray-800 hover:text-gray-600">
-                    <span className="ml-2">Docs</span>
+              <li
+                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                data-ripple-dark={true}
+              >
+                <Link href="/documentation/quick-start">
+                  <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                    <i className="far fa-file-alt text-lg leading-lg " />
+                    <span className="inline-block ml-2">Docs</span>
                   </a>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li
+                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                data-ripple-dark={true}
+              >
+                <Link href="/components">
+                  <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                    <i className="fas fa-cubes text-lg leading-lg " />
+                    <span className="inline-block ml-2">Components</span>
+                  </a>
+                </Link>
+              </li>
+
+              <li
+                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                data-ripple-dark={true}
+              >
                 <a
+                  className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://github.com/creativetimofficial/md-tailwind"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold text-gray-800 hover:text-gray-600"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span className="ml-2">Github</span>
+                  <i className="fab fa-github text-lg leading-lg " />
+                  <span className="inline-block ml-2">Github</span>
                 </a>
               </li>
-              <li className="nav-item">
+
+              <li
+                className="flex items-center text-gray-800 hover:text-gray-600 rounded-lg transition-all duration-300"
+                data-ripple-dark={true}
+              >
                 <a
+                  className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="https://github.com/creativetimofficial/md-tailwind/issues"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold text-gray-800 hover:text-gray-600"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span className="ml-2">Issues</span>
+                  <span className="inline-block">Issues</span>
                 </a>
               </li>
             </ul>

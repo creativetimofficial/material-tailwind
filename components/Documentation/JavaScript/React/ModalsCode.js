@@ -8,7 +8,7 @@ import ModalFooter from 'components/Modals/ModalFooter';
 import Buttons from 'components/Buttons/Buttons';
 
 export default function AlertsCode({ copyText, onCopy, size, modalSize }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();

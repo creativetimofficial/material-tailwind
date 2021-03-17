@@ -1,14 +1,10 @@
-/*eslint-disable*/
 import React from 'react';
 
-export default function Footer() {
+export default function IndexFooter() {
   return (
     <>
-      <footer className="block py-4 pt-12 mt-16 bg-gray-100 relative">
-        <div
-          className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-          style={{ height: '80px', transform: 'translateZ(0)' }}
-        >
+      <footer className="relative bg-gray-50 pt-8 pb-6 mt-16">
+        <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
           <svg
             className="absolute bottom-0 overflow-hidden"
             xmlns="http://www.w3.org/2000/svg"
@@ -19,97 +15,86 @@ export default function Footer() {
             y="0"
           >
             <polygon
-              className="text-gray-100 fill-current"
+              className="text-gray-50 fill-current"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap">
+        <div className="container max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap text-center lg:text-left pt-6">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-2xl font-semibold">MD Tailwind</h4>
-              <h5 className="text-base mt-0 mb-2 text-gray-700">
-                Easy to use React components for Tailwind CSS and Material
-                Design
+              <h4 className="text-gray-800 text-2xl font-medium">
+                Material Tailwind
+              </h4>
+              <h5 className="text-base font-light mb-2 text-gray-600 mt-2">
+                Easy to use React components for Tailwind CSS and Material Design.
               </h5>
-              <div className="mt-6">
-                <a href="https://www.twitter.com/creativetim" target="_blank">
-                  <i className="fab fa-twitter  bg-white text-blue-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
-                </a>
-                <a href="https://www.facebook.com/creativetim" target="_blank">
-                  <i className="fab fa-facebook-square bg-white text-blue-600 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
-                </a>
-                <a href="https://www.dribbble.com/creativetim" target="_blank">
-                  <i className="fab fa-dribbble bg-white text-pink-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
-                </a>
+              <div className="flex gap-2 mt-6">
                 <a
-                  href="https://www.github.com/creativetimofficial"
+                  href="#twitter"
+                  className="grid place-items-center bg-white text-blue-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
                   target="_blank"
                 >
-                  <i className="fab fa-github bg-white text-gray-900 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#facebook"
+                  className="grid place-items-center bg-white text-blue-600 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-square"></i>
+                </a>
+                <a
+                  href="#dribbble"
+                  className="grid place-items-center bg-white text-pink-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
+                  target="_blank"
+                >
+                  <i className="fab fa-dribbble"></i>
+                </a>
+                <a
+                  href="#github"
+                  className="grid place-items-center bg-white text-gray-900 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  target="_blank"
+                >
+                  <i className="fab fa-github"></i>
                 </a>
               </div>
-              <p className="text-sm mt-6 text-gray-600 font-semibold">
-                Currently v1.0.0. Code
-                <a
-                  href="https://github.com/creativetimofficial/tailwind-starter-kit"
-                  className="text-gray-700"
-                  target="_blank"
-                >
-                  {' '}
-                  licensed MIT
-                </a>
-                , docs
-                <a
-                  href="https://creativecommons.org/licenses/by/4.0/"
-                  targe="_blank"
-                  className="text-gray-700"
-                >
-                  {' '}
-                  CC BY 4.0
-                </a>
-                .
-              </p>
             </div>
             <div className="w-full lg:w-6/12 px-4">
-              <div className="flex flex-wrap items-top mb-6">
+              <div className="flex flex-wrap items-top">
                 <div className="w-full lg:w-4/12 px-4 ml-auto">
-                  <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
+                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
                     Useful Links
                   </span>
                   <ul className="list-unstyled">
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://www.creative-tim.com/presentation?ref=nnjs-footer"
                       >
                         About Us
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/blog"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://blog.creative-tim.com?ref=nnjs-footer"
                       >
                         Blog
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://www.github.com/creativetimofficial?ref=nnjs-footer"
                       >
                         Github
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=nnjs-footer"
                       >
                         Free Products
                       </a>
@@ -117,42 +102,38 @@ export default function Footer() {
                   </ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
+                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
                     Other Resources
                   </span>
                   <ul className="list-unstyled">
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/master/LICENSE.md"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=nnjs-footer"
                       >
                         MIT License
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://creative-tim.com/terms?ref=nnjs-footer"
                       >
                         Terms & Conditions
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://creative-tim.com/privacy?ref=nnjs-footer"
                       >
                         Privacy Policy
                       </a>
                     </li>
                     <li>
                       <a
-                        className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us"
-                        target="_blank"
+                        className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        href="https://creative-tim.com/contact-us?ref=nnjs-footer"
                       >
                         Contact Us
                       </a>
@@ -162,15 +143,14 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <hr className="my-4 border-gray-400" />
+          <hr className="my-6 border-gray-300" />
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-              <div className="text-sm text-gray-600 font-semibold py-1">
-                Copyright © {new Date().getFullYear()} MD Tailwind by{' '}
+              <div className="text-sm text-gray-600 font-medium py-1">
+                Copyright © {new Date().getFullYear()} Notus NextJS by{' '}
                 <a
-                  href="https://www.creative-tim.com"
-                  className="text-gray-600 hover:text-gray-900"
-                  target="_blank"
+                  href="https://www.creative-tim.com?ref=nnjs-footer"
+                  className="text-gray-600 hover:text-gray-900 transition-all"
                 >
                   Creative Tim
                 </a>

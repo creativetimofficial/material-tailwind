@@ -26,7 +26,7 @@ export default function SmallModal() {
         <title>React Tooltips | Tailwind Starter Kit by Creative Tim</title>
       </Head>
       <Navbar fixed />
-      <div className="container mx-auto mt-4 pt-12">
+      <div className="container max-w-7xl mx-auto mt-4 pt-12">
         <div className="flex flex-wrap">
           <div className="w-full sm:w-3/12 lg:w-2/12 pr-4 tex-left">
             <Sidebar routes={routes} />

@@ -12,7 +12,7 @@ export default function InputCode({
   successMessage,
   ...rest
 }) {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('lightBlue');
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";

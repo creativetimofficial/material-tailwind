@@ -114,7 +114,7 @@ export default function Card() {
             </CardBody>
 
             <CardFooter>
-              <Buttons color="pink" size="lg" data-ripple-light={true}>
+              <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
                 Read More
               </Buttons>
             </CardFooter>
