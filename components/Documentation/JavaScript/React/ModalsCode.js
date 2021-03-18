@@ -24,20 +24,22 @@ import ModalFooter from "@md-tailwind/react/ModalFooter";
 import Buttons from "@md-tailwind/react/Buttons";
 
 export default function Modals() {
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
     <>
       <Buttons
         color="${color}"
         type="button"
-        onClick={() => setShowModalCode(true)}
+        onClick={() => setShowModal(true)}
         data-md-ripple-light={true}
       >
         Open ${modalSize} Modal
       </Buttons>
 
-      <Modal size="${size}" active={showModalCode} toggler={() => setShowModalCode(false)}>
-        <ModalHeader toggler={() => setShowModalCode(false)}>
-          Regular Modal
+      <Modal size="${size}" active={showModal} toggler={() => setShowModal(false)}>
+        <ModalHeader toggler={() => setShowModal(false)}>
+          Modal Title
         </ModalHeader>
         <ModalBody>
           <p className="text-base leading-relaxed text-gray-600 font-normal">
@@ -49,11 +51,11 @@ export default function Modals() {
           </p>
         </ModalBody>
         <ModalFooter>
-          <Buttons color="red" buttonType="link" onClick={() => setShowModalCode(false)}>
+          <Buttons color="red" buttonType="link" onClick={() => setShowModal(false)}>
             Close
           </Buttons>
 
-          <Buttons color="green" onClick={() => setShowModalCode(false)}>
+          <Buttons color="green" onClick={() => setShowModal(false)}>
             Save Changes
           </Buttons>
         </ModalFooter>
