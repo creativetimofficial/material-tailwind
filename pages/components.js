@@ -36,6 +36,8 @@ import {
 import { TabIcons, TabLinks } from 'pagesComponents/tabs';
 import Popovers from 'pagesComponents/popovers';
 import Tooltips from 'pagesComponents/tooltips';
+import Modals from 'pagesComponents/modals';
+import RegularCard from 'pagesComponents/cards';
 
 export default function Components() {
   return (
@@ -632,6 +634,16 @@ export default function Components() {
         </div>
 
         <div className="container max-w-7xl mx-auto mt-36 px-4">
+          <H4 color="gray">Modals</H4>
+
+          <div className="flex flex-wrap gap-x-2 gap-y-8 mt-16">
+            <Modals size="sm" color="lightBlue" modalSize="Small" />
+            <Modals color="lightBlue" modalSize="Regular" />
+            <Modals size="lg" color="lightBlue" modalSize="Large" />
+          </div>
+        </div>
+
+        <div className="container max-w-7xl mx-auto mt-36 px-4">
           <H4 color="gray">Progressbars</H4>
 
           <div className="mt-16">
@@ -740,6 +752,14 @@ export default function Components() {
                 </PaginationItem>
               </Pagination>
             </div>
+          </div>
+        </div>
+
+        <div className="container max-w-7xl mx-auto mt-36 px-4">
+          <H4 color="gray">Cards</H4>
+
+          <div className="mt-16">
+            <RegularCard />
           </div>
         </div>
 
