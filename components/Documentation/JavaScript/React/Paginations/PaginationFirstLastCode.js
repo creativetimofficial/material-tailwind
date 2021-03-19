@@ -4,14 +4,17 @@ import Frameworks from 'components/Documentation/Frameworks.js';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationItem from 'components/Pagination/PaginationItem';
 import Icon from 'components/Icon/Icon';
+import Ripple from 'material-ripple-effects';
 
 export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
+  const rippleDark = (e) => ripple.create(e, 'dark');
 
   const codeToShow = `import React from "react";
 import Pagination from "@md-tailwind/react/Pagination";
@@ -20,33 +23,35 @@ import Icon from "@md-tailwind/react/Icon";
 import "@md-ripple-effect";
 
 export default function Pagination() {
+  const ripple = new Ripple();
+  
   return (
     <Pagination>
-      <PaginationItem button href="#last" data-md-ripple-dark={true}>
+      <PaginationItem button href="#last" onMouseUp={(e) => ripple.create(e, 'dark')}>
         First
       </PaginationItem>
-      <PaginationItem href="#last" data-md-ripple-dark={true}>
+      <PaginationItem href="#last" onMouseUp={(e) => ripple.create(e, 'dark')}>
         <Icon name="keyboard_arrow_left" size="md" />
       </PaginationItem>
-      <PaginationItem color="${color}" href="#1" data-md-ripple-light={true}>
+      <PaginationItem color="${color}" href="#1" onMouseUp={(e) => ripple.create(e, 'light')}>
         1
       </PaginationItem>
-      <PaginationItem href="#2" data-md-ripple-dark={true}>
+      <PaginationItem href="#2" onMouseUp={(e) => ripple.create(e, 'dark')}>
         2
       </PaginationItem>
-      <PaginationItem href="#3" data-md-ripple-dark={true}>
+      <PaginationItem href="#3" onMouseUp={(e) => ripple.create(e, 'dark')}>
         3
       </PaginationItem>
-      <PaginationItem href="#4" data-md-ripple-dark={true}>
+      <PaginationItem href="#4" onMouseUp={(e) => ripple.create(e, 'dark')}>
         4
       </PaginationItem>
-      <PaginationItem href="#5" data-md-ripple-dark={true}>
+      <PaginationItem href="#5" onMouseUp={(e) => ripple.create(e, 'dark')}>
         5
       </PaginationItem>
-      <PaginationItem href="#last" data-md-ripple-dark={true}>
+      <PaginationItem href="#last" onMouseUp={(e) => ripple.create(e, 'dark')}>
         <Icon name="keyboard_arrow_right" size="md" />
       </PaginationItem>
-      <PaginationItem button href="#last" data-md-ripple-dark={true}>
+      <PaginationItem button href="#last" onMouseUp={(e) => ripple.create(e, 'dark')}>
         Last
       </PaginationItem>
     </Pagination>
@@ -102,31 +107,31 @@ export default function Pagination() {
       >
         <div className="flex justify-center">
           <Pagination>
-            <PaginationItem button href="#last" data-md-ripple-dark={true}>
+            <PaginationItem button href="#last" onMouseUp={rippleDark}>
               First
             </PaginationItem>
-            <PaginationItem href="#last" data-md-ripple-dark={true}>
+            <PaginationItem href="#last" onMouseUp={rippleDark}>
               <Icon name="keyboard_arrow_left" size="md" />
             </PaginationItem>
-            <PaginationItem color={color} href="#1" data-md-ripple-light={true}>
+            <PaginationItem color={color} href="#1" onMouseUp={rippleLight}>
               1
             </PaginationItem>
-            <PaginationItem href="#2" data-md-ripple-dark={true}>
+            <PaginationItem href="#2" onMouseUp={rippleDark}>
               2
             </PaginationItem>
-            <PaginationItem href="#3" data-md-ripple-dark={true}>
+            <PaginationItem href="#3" onMouseUp={rippleDark}>
               3
             </PaginationItem>
-            <PaginationItem href="#4" data-md-ripple-dark={true}>
+            <PaginationItem href="#4" onMouseUp={rippleDark}>
               4
             </PaginationItem>
-            <PaginationItem href="#5" data-md-ripple-dark={true}>
+            <PaginationItem href="#5" onMouseUp={rippleDark}>
               5
             </PaginationItem>
-            <PaginationItem href="#last" data-md-ripple-dark={true}>
+            <PaginationItem href="#last" onMouseUp={rippleDark}>
               <Icon name="keyboard_arrow_right" size="md" />
             </PaginationItem>
-            <PaginationItem button href="#last" data-md-ripple-dark={true}>
+            <PaginationItem button href="#last" onMouseUp={rippleDark}>
               Last
             </PaginationItem>
           </Pagination>

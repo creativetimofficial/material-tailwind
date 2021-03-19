@@ -8,13 +8,14 @@ import CardFooter from 'components/Card/CardFooter';
 import H6 from 'components/Typography/Heading6';
 import Paragraph from 'components/Typography/Paragraph';
 import Buttons from 'components/Buttons/Buttons';
+import Ripple from 'material-ripple-effects';
 
 export default function CardCode({ copyText, onCopy }) {
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
 
   const codeToShow = `import React from "react";
 import Card from "@md-tailwind/Card";
@@ -24,9 +25,11 @@ import CardFooter from "@md-tailwind/react/CardFooter";
 import H6 from "@md-tailwind/react/Heading6";
 import Paragraph from "@md-tailwind/react/Paragraph";
 import Buttons from "@md-tailwind/react/Buttons";
-import "material-ripple-effects";
+import Ripple from 'material-ripple-effects';
 
 export default function Card() {
+  const ripple = new Ripple();
+
   return (
     <Card>
       <CardImage
@@ -44,7 +47,7 @@ export default function Card() {
       </CardBody>
 
       <CardFooter>
-        <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
+        <Buttons color="lightBlue" size="lg" onMouseUp={(e) => ripple.create(e, 'light')}>
           Read More
         </Buttons>
       </CardFooter>
@@ -114,7 +117,11 @@ export default function Card() {
             </CardBody>
 
             <CardFooter>
-              <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
+              <Buttons
+                color="lightBlue"
+                size="lg"
+                onMouseUp={(e) => ripple.create(e, 'light')}
+              >
                 Read More
               </Buttons>
             </CardFooter>

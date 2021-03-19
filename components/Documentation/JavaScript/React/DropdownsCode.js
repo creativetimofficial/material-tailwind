@@ -21,9 +21,11 @@ export default function DropdownsCode({
   const codeToShow = `import React from "react";
 import Dropdowns from "@md-tailwind/react/Dropdowns"
 import DropdownItems from "@md-tailwind/react/DropdownItems"
-import "@md-ripple-effect";
+import Ripple from "material-ripple-effects";
 
 export default function Dropdowns() {
+  const ripple = new Ripple();
+
   return (
     <Dropdowns
       color="${color}"
@@ -62,9 +64,15 @@ export default function Dropdowns() {
             size={size}
             rounded={rounded}
           >
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Action</DropdownItems>
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Another Action</DropdownItems>
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Something Else</DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+              Action
+            </DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+              Another Action
+            </DropdownItems>
+            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+              Something Else
+            </DropdownItems>
           </Dropdowns>
         </div>
       </DocsSnippet>

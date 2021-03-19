@@ -6,8 +6,12 @@ import Buttons from 'components/Buttons/Buttons';
 import Paragraph from 'components/Typography/Paragraph';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import Ripple from 'material-ripple-effects';
 
 export default function Presentation() {
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
+
   return (
     <>
       <IndexNavbar />
@@ -27,13 +31,13 @@ export default function Presentation() {
             </p>
             <div className="mt-12 flex justify-center gap-4">
               <a href="#how-to-use">
-                <Buttons color="teal" size="lg" data-ripple-light={true}>
+                <Buttons color="teal" size="lg" onMouseUp={rippleLight}>
                   How to use
                 </Buttons>
               </a>
               <Link href="/documentation/quick-start">
                 <a>
-                  <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
+                  <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
                     Get started
                   </Buttons>
                 </a>
@@ -43,7 +47,7 @@ export default function Presentation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Buttons color="blueGray" size="lg" data-ripple-light={true}>
+                <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
                   Github Star
                 </Buttons>
               </a>
@@ -52,7 +56,7 @@ export default function Presentation() {
         </div>
       </section>
 
-      <section className="pb-36 bg-white">
+      <section className="pb-36 bg-white" id="how-to-use">
         <div className="container max-w-7xl mx-auto px-4">
           <h2 className="text-2xl text-gray-900">Installation</h2>
           <hr className="border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-200 my-4" />
@@ -80,7 +84,7 @@ export default function Presentation() {
 
               <div className="border border-solid border-gray-300 rounded-lg my-4 p-4 pt-6 relative">
                 <h4 className="text-gray-700 mb-2">Example</h4>
-                <Buttons color="lightBlue" data-ripple-light={true}>
+                <Buttons color="lightBlue" onMouseUp={rippleLight}>
                   Button
                 </Buttons>
 
@@ -96,12 +100,15 @@ export default function Presentation() {
                   >
                     {`import React from "react";
 import Buttons from "@md-tailwind/react/Buttons";
-import "material-ripple-effects";
+import Ripple from "material-ripple-effects";
+
 export default function Buttons() {
+  const ripple = new Ripple();
+
   return (
     <Buttons
       color="lightBlue"
-      data-ripple-light={true}
+      onMouseUp={(e) => ripple.create(e, 'light')}
     >
       Button
     </Buttons>
@@ -585,9 +592,10 @@ export default function Buttons() {
                 >
                   Tailwind CSS
                 </a>{' '}
-                is an open source project we wanted to <br />continue this movement
-                too. You can give this version a try to feel <br />the design and also
-                test the quality of the code!
+                is an open source project we wanted to <br />
+                continue this movement too. You can give this version a try to
+                feel <br />
+                the design and also test the quality of the code!
               </p>
               <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blue-gray-200">
                 Get it free on Github and please help us spread the news with a
@@ -599,7 +607,7 @@ export default function Buttons() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block"
               >
-                <Buttons color="blueGray" size="lg">
+                <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
                   Github Star
                 </Buttons>
               </a>
@@ -655,7 +663,7 @@ export default function Buttons() {
                     <Buttons
                       color="lightBlue"
                       size="lg"
-                      data-ripple-light={true}
+                      onMouseUp={rippleLight}
                     >
                       Get started
                     </Buttons>
@@ -666,7 +674,7 @@ export default function Buttons() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Buttons color="blueGray" size="lg" data-ripple-light={true}>
+                  <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
                     Help With a Star
                   </Buttons>
                 </a>

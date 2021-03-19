@@ -21,11 +21,13 @@ export default function ButtonsCode({
 import Buttons from "@md-tailwind/react/Buttons";
 ${
   hasIcon
-    ? 'import Icon from "@md-tailwind/react/Icon"; \nimport "@md-ripple-effect";'
-    : 'import "@md-ripple-effect";'
+    ? 'import Icon from "@md-tailwind/react/Icon"; \nimport Ripple from "material-ripple-effects";'
+    : 'import Ripple from "material-ripple-effects";'
 }
 
 export default function Buttons() {
+  const ripple = new Ripple();
+
   return (
     <Buttons
       color="${color}"

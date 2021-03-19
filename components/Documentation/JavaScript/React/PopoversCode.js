@@ -6,6 +6,7 @@ import Popover from 'components/Popovers/Popover';
 import PopoverContainer from 'components/Popovers/PopoverContainer';
 import PopoverHeader from 'components/Popovers/PopoverHeader';
 import PopoverBody from 'components/Popovers/PopoverBody';
+import Ripple from 'material-ripple-effects';
 
 export default function AlertsCode({ copyText, onCopy, placement }) {
   const [color, setColor] = useState('lightBlue');
@@ -13,8 +14,8 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const buttonRef = useRef();
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
 
   const codeToShow = `import React, { useRef } from "react";
 import Buttons from "@md-tailwind/react/Buttons";
@@ -22,14 +23,15 @@ import Popover from "@md-tailwind/react/Popover";
 import PopoverContainer from "@md-tailwind/react/PopoverContainer";
 import PopoverHeader from "@md-tailwind/react/PopoverHeader";
 import PopoverBody from "@md-tailwind/react/PopoverBody";
-import "@md-ripple-effect";
+import Ripple from 'material-ripple-effects';
 
 export default function Popover() {
   const buttonRef = useRef();
+  const ripple = new Ripple();
 
   return (
     <>
-      <Buttons color="${color}" ref={buttonRef} data-md-ripple-light={true}>
+      <Buttons color="${color}" ref={buttonRef} onMouseUp={(e) => ripple.create(e, 'light')}>
         Popover ${placement}
       </Buttons>
 
@@ -93,7 +95,11 @@ export default function Popover() {
         onFrameworkClick={onFrameworkClick}
       >
         <div className="flex justify-center">
-          <Buttons color={color} ref={buttonRef} data-md-ripple-light={true}>
+          <Buttons
+            color={color}
+            ref={buttonRef}
+            onMouseUp={(e) => ripple.create(e, 'light')}
+          >
             Popover {placement}
           </Buttons>
 

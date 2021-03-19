@@ -9,6 +9,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import Ripple from 'material-ripple-effects';
 
 export default function NavbarLinksCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
@@ -16,8 +17,9 @@ export default function NavbarLinksCode({ copyText, onCopy }) {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const [openNavbar, setOpenNavbar] = useState(false);
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
 import Navbar from "@md-tailwind/react/Navbar";
@@ -28,10 +30,11 @@ import NavbarToggler from "@md-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@md-tailwind/react/NavbarCollapse";
 import Nav from "@md-tailwind/react/Nav";
 import NavItem from "@md-tailwind/react/NavItem";
-import "material-ripple-effects";
+import Ripple from 'material-ripple-effects';
 
 export default function Navbar() {
   const [openNavbar, setOpenNavbar] = useState(false);
+  const ripple = new Ripple();
 
   return (
     <Navbar color="${color}" navbar>
@@ -48,14 +51,14 @@ export default function Navbar() {
             <NavItem
               active="light"
               href="#navbar"
-              data-ripple-light={true}
+              onMouseUp={(e) => ripple.create(e, 'light')}
             >
               Discover
             </NavItem>
-            <NavItem href="#navbar" data-ripple-light={true}>
+            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
               Profile
             </NavItem>
-            <NavItem href="#navbar" data-ripple-light={true}>
+            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
               Settings
             </NavItem>
           </Nav>
@@ -121,13 +124,13 @@ export default function Navbar() {
 
             <NavbarCollapse open={openNavbar}>
               <Nav>
-                <NavItem active="light" href="#navbar" data-ripple-light={true}>
+                <NavItem active="light" href="#navbar" onMouseUp={rippleLight}>
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" data-ripple-light={true}>
+                <NavItem href="#navbar" onMouseUp={rippleLight}>
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" data-ripple-light={true}>
+                <NavItem href="#navbar" onMouseUp={rippleLight}>
                   Settings
                 </NavItem>
               </Nav>

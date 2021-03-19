@@ -5,9 +5,12 @@ import TabItem from 'components/Tabs/TabItem';
 import TabContent from 'components/Tabs/TabContent';
 import TabPane from 'components/Tabs/TabPane';
 import Icon from 'components/Icon/Icon';
+import Ripple from 'material-ripple-effects';
 
 export function TabIcons({ color }) {
   const [openTab, setOpenTab] = useState(1);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <Tab>
@@ -17,9 +20,9 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(1);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 1 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="language" size="lg" />
           Discover
@@ -29,9 +32,9 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(2);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 2 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="account_circle" size="lg" />
           Profile
@@ -41,9 +44,9 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(3);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 3 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="settings" size="lg" />
           Settings
@@ -89,6 +92,8 @@ export function TabIcons({ color }) {
 
 export function TabLinks({ color }) {
   const [openTab, setOpenTab] = useState(1);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <Tab>
@@ -98,9 +103,9 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(1);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 1 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           Discover
         </TabItem>
@@ -109,9 +114,9 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(2);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 2 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           Profile
         </TabItem>
@@ -120,9 +125,9 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(3);
           }}
+          onMouseUp={rippleLight}
           active={openTab === 3 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           Settings
         </TabItem>

@@ -38,8 +38,13 @@ import Popovers from 'pagesComponents/popovers';
 import Tooltips from 'pagesComponents/tooltips';
 import Modals from 'pagesComponents/modals';
 import RegularCard from 'pagesComponents/cards';
+import Ripple from 'material-ripple-effects';
 
 export default function Components() {
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
+  const rippleDark = (e) => ripple.create(e, 'dark');
+
   return (
     <>
       <IndexNavbar />
@@ -54,7 +59,9 @@ export default function Components() {
             <h2 className="font-semibold text-6xl text-blue-gray-900 mb-10">
               Material Design Tailwind
             </h2>
-            <h4 className="text-gray-700 text-3xl font-serif font-bold leading-normal mt-0 mb-2">All Components</h4>
+            <h4 className="text-gray-700 text-3xl font-serif font-bold leading-normal mt-0 mb-2">
+              All Components
+            </h4>
           </div>
         </div>
       </section>
@@ -68,17 +75,32 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Buttons color="lightBlue">default</Buttons>
-              <Buttons color="lightBlue" buttonType="outline">
+              <Buttons color="lightBlue" onMouseUp={rippleLight}>
+                default
+              </Buttons>
+              <Buttons
+                color="lightBlue"
+                buttonType="outline"
+                onMouseUp={rippleDark}
+              >
                 outline
               </Buttons>
-              <Buttons color="lightBlue" rounded>
+              <Buttons color="lightBlue" rounded onMouseUp={rippleLight}>
                 rounded
               </Buttons>
-              <Buttons color="lightBlue" buttonType="link">
+              <Buttons
+                color="lightBlue"
+                buttonType="link"
+                onMouseUp={rippleDark}
+              >
                 link
               </Buttons>
-              <Buttons color="lightBlue" rounded iconOnly>
+              <Buttons
+                color="lightBlue"
+                rounded
+                iconOnly
+                onMouseUp={rippleLight}
+              >
                 <Icon name="favorite" />
               </Buttons>
             </div>
@@ -89,23 +111,42 @@ export default function Components() {
 
             <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
               <div className="flex flex-wrap items-end gap-x-2 gap-y-8">
-                <Buttons color="lightBlue" size="sm">
+                <Buttons color="lightBlue" size="sm" onMouseUp={rippleLight}>
                   small
                 </Buttons>
-                <Buttons color="lightBlue">regular</Buttons>
-                <Buttons color="lightBlue" size="lg">
+                <Buttons color="lightBlue" onMouseUp={rippleLight}>
+                  regular
+                </Buttons>
+                <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
                   large
                 </Buttons>
               </div>
 
               <div className="flex flex-wrap items-end gap-x-2 gap-y-8">
-                <Buttons color="lightBlue" size="sm" rounded iconOnly>
+                <Buttons
+                  color="lightBlue"
+                  size="sm"
+                  rounded
+                  iconOnly
+                  onMouseUp={rippleLight}
+                >
                   <Icon name="favorite" />
                 </Buttons>
-                <Buttons color="lightBlue" rounded iconOnly>
+                <Buttons
+                  color="lightBlue"
+                  rounded
+                  iconOnly
+                  onMouseUp={rippleLight}
+                >
                   <Icon name="favorite" />
                 </Buttons>
-                <Buttons color="lightBlue" size="lg" rounded iconOnly>
+                <Buttons
+                  color="lightBlue"
+                  size="lg"
+                  rounded
+                  iconOnly
+                  onMouseUp={rippleLight}
+                >
                   <Icon name="favorite" />
                 </Buttons>
               </div>
@@ -116,25 +157,63 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Colors</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Buttons color="blueGray">Button</Buttons>
-              <Buttons color="gray">Button</Buttons>
-              <Buttons color="brown">Button</Buttons>
-              <Buttons color="deepOrange">Button</Buttons>
-              <Buttons color="orange">Button</Buttons>
-              <Buttons color="amber">Button</Buttons>
-              <Buttons color="yellow">Button</Buttons>
-              <Buttons color="lime">Button</Buttons>
-              <Buttons color="lightGreen">Button</Buttons>
-              <Buttons color="green">Button</Buttons>
-              <Buttons color="teal">Button</Buttons>
-              <Buttons color="cyan">Button</Buttons>
-              <Buttons color="lightBlue">Button</Buttons>
-              <Buttons color="blue">Button</Buttons>
-              <Buttons color="indigo">Button</Buttons>
-              <Buttons color="purple">Button</Buttons>
-              <Buttons color="deepPurple">Button</Buttons>
-              <Buttons color="pink">Button</Buttons>
-              <Buttons color="red">Button</Buttons>
+              <Buttons color="blueGray" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="gray" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="brown" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="deepOrange" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="orange" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="amber" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="yellow" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="lime" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="lightGreen" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="green" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="teal" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="cyan" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="lightBlue" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="blue" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="indigo" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="purple" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="deepPurple" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="pink" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
+              <Buttons color="red" onMouseUp={rippleLight}>
+                Button
+              </Buttons>
             </div>
           </div>
         </div>
@@ -321,7 +400,6 @@ export default function Components() {
                 <Input
                   color="lightBlue"
                   placeholder="Outline Input With Error"
-                  iconName="person"
                   error="This is an error"
                   outline
                 />
@@ -330,9 +408,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">
-              With Success Message
-            </h4>
+            <h4 className="text-xl text-gray-700">With Success Message</h4>
 
             <div className="flex flex-wrap gap-8 mt-5">
               <div className="w-72">
@@ -346,7 +422,6 @@ export default function Components() {
                 <Input
                   color="lightBlue"
                   placeholder="Outline Input With Success"
-                  iconName="person"
                   success="This is a success"
                   outline
                 />
@@ -485,7 +560,11 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Types</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Dropdowns color="lightBlue" buttonText="Dropdown">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Dropdown"
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -501,6 +580,7 @@ export default function Components() {
                 color="lightBlue"
                 buttonText="Dropup"
                 placement="top-end"
+                onMouseUp={rippleLight}
               >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
@@ -519,7 +599,11 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Dropdowns color="lightBlue" buttonText="Default">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Default"
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -534,6 +618,7 @@ export default function Components() {
                 color="lightBlue"
                 buttonText="Outline"
                 buttonType="outline"
+                onMouseUp={rippleDark}
               >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
@@ -545,7 +630,12 @@ export default function Components() {
                   Something else here
                 </DropdownItems>
               </Dropdowns>
-              <Dropdowns color="lightBlue" buttonText="Rounded" rounded>
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Rounded"
+                rounded
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -556,7 +646,12 @@ export default function Components() {
                   Something else here
                 </DropdownItems>
               </Dropdowns>
-              <Dropdowns color="lightBlue" buttonText="Link" buttonType="link">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Link"
+                buttonType="link"
+                onMouseUp={rippleDark}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -574,7 +669,12 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Sizes</h4>
 
             <div className="flex flex-wrap items-end gap-x-2 gap-y-8 mt-5">
-              <Dropdowns color="lightBlue" buttonText="Small" size="sm">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Small"
+                size="sm"
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -585,7 +685,11 @@ export default function Components() {
                   Something else here
                 </DropdownItems>
               </Dropdowns>
-              <Dropdowns color="lightBlue" buttonText="Regular">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Regular"
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -596,7 +700,12 @@ export default function Components() {
                   Something else here
                 </DropdownItems>
               </Dropdowns>
-              <Dropdowns color="lightBlue" buttonText="Large" size="lg">
+              <Dropdowns
+                color="lightBlue"
+                buttonText="Large"
+                size="lg"
+                onMouseUp={rippleLight}
+              >
                 <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
                   Action
                 </DropdownItems>
@@ -674,6 +783,7 @@ export default function Components() {
                 <PaginationItem
                   href="#prev"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
                 >
                   <Icon name="keyboard_arrow_left" />
                 </PaginationItem>
@@ -681,24 +791,42 @@ export default function Components() {
                   color="lightBlue"
                   href="#1"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleLight}
                 >
                   1
                 </PaginationItem>
-                <PaginationItem href="#2" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#2"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   2
                 </PaginationItem>
-                <PaginationItem href="#3" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#3"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   3
                 </PaginationItem>
-                <PaginationItem href="#4" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#4"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   4
                 </PaginationItem>
-                <PaginationItem href="#5" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#5"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   5
                 </PaginationItem>
                 <PaginationItem
                   href="#next"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
                 >
                   <Icon name="keyboard_arrow_right" />
                 </PaginationItem>
@@ -707,18 +835,17 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">
-              With First & Last Buttons
-            </h4>
+            <h4 className="text-xl text-gray-700">With First & Last Buttons</h4>
 
             <div className="w-full mt-5">
               <Pagination>
-                <PaginationItem button href="#first">
+                <PaginationItem button href="#first" onMouseUp={rippleDark}>
                   First
                 </PaginationItem>
                 <PaginationItem
                   href="#prev"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
                 >
                   <Icon name="keyboard_arrow_left" />
                 </PaginationItem>
@@ -726,28 +853,46 @@ export default function Components() {
                   color="lightBlue"
                   href="#1"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleLight}
                 >
                   1
                 </PaginationItem>
-                <PaginationItem href="#2" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#2"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   2
                 </PaginationItem>
-                <PaginationItem href="#3" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#3"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   3
                 </PaginationItem>
-                <PaginationItem href="#4" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#4"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   4
                 </PaginationItem>
-                <PaginationItem href="#5" onClick={(e) => e.preventDefault()}>
+                <PaginationItem
+                  href="#5"
+                  onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
+                >
                   5
                 </PaginationItem>
                 <PaginationItem
                   href="#next"
                   onClick={(e) => e.preventDefault()}
+                  onMouseUp={rippleDark}
                 >
                   <Icon name="keyboard_arrow_right" />
                 </PaginationItem>
-                <PaginationItem button href="#last">
+                <PaginationItem button href="#last" onMouseUp={rippleDark}>
                   Last
                 </PaginationItem>
               </Pagination>

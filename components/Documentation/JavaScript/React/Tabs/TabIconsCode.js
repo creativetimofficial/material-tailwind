@@ -7,6 +7,7 @@ import TabItem from 'components/Tabs/TabItem';
 import TabContent from 'components/Tabs/TabContent';
 import TabPane from 'components/Tabs/TabPane';
 import Icon from 'components/Icon/Icon';
+import Ripple from 'material-ripple-effects';
 
 export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
@@ -14,8 +15,9 @@ export default function AlertsCode({ copyText, onCopy }) {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const [openTab, setOpenTab] = useState(1);
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React from "react";
 import Tab from "@md-tailwind/react/Tab";
@@ -24,10 +26,11 @@ import TabItem from "@md-tailwind/react/TabItem";
 import TabContent from "@md-tailwind/react/TabContent";
 import TabPane from "@md-tailwind/react/TabPane";
 import Icon from "@md-tailwind/react/Icon";
-import "ripple/ripple";
+import Ripple from 'material-ripple-effects';
 
 export default function Tabs() {
   const [openTab, setOpenTab] = useState(1);
+  const ripple = new Ripple();
 
   return (
     <Tab>
@@ -36,10 +39,10 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(1);
+            ripple.create(e, 'light);
           }}
           active={openTab === 1 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="language" size="lg" />
           Discover
@@ -48,10 +51,10 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(2);
+            ripple.create(e, 'light);
           }}
           active={openTab === 2 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="account_circle" size="lg" />
           Profile
@@ -60,10 +63,10 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(3);
+            ripple.create(e, 'light);
           }}
           active={openTab === 3 ? true : false}
           href="tabItem"
-          data-md-ripple-light={true}
         >
           <Icon name="settings" size="lg" />
           Settings
@@ -162,10 +165,10 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(1);
+                rippleLight(e);
               }}
               active={openTab === 1 ? true : false}
               href="tabItem"
-              data-md-ripple-light={true}
             >
               <Icon name="language" size="lg" />
               Discover
@@ -174,10 +177,10 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(2);
+                rippleLight(e);
               }}
               active={openTab === 2 ? true : false}
               href="tabItem"
-              data-md-ripple-light={true}
             >
               <Icon name="account_circle" size="lg" />
               Profile
@@ -186,10 +189,10 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(3);
+                rippleLight(e);
               }}
               active={openTab === 3 ? true : false}
               href="tabItem"
-              data-md-ripple-light={true}
             >
               <Icon name="settings" size="lg" />
               Settings

@@ -4,13 +4,16 @@ import Popover from 'components/Popovers/Popover';
 import PopoverContainer from 'components/Popovers/PopoverContainer';
 import PopoverHeader from 'components/Popovers/PopoverHeader';
 import PopoverBody from 'components/Popovers/PopoverBody';
+import Ripple from 'material-ripple-effects';
 
 export default function Popovers({ color, placement }) {
   const buttonRef = useRef();
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <>
-      <Buttons color={color} ref={buttonRef} data-md-ripple-light={true}>
+      <Buttons color={color} ref={buttonRef} onMouseUp={rippleLight}>
         Popover {placement}
       </Buttons>
 

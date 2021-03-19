@@ -6,8 +6,12 @@ import CardFooter from 'components/Card/CardFooter';
 import H6 from 'components/Typography/Heading6';
 import Paragraph from 'components/Typography/Paragraph';
 import Buttons from 'components/Buttons/Buttons';
+import Ripple from 'material-ripple-effects';
 
 export default function RegularCard() {
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
+
   return (
     <Card>
       <CardImage
@@ -19,13 +23,13 @@ export default function RegularCard() {
         <H6 color="gray">Card Title</H6>
         <Paragraph color="gray">
           Don't be scared of the truth because we need to restart the human
-          foundation in truth And I love you like Kanye loves Kanye I love
-          Rick Owens’ bed design but the back is...
+          foundation in truth And I love you like Kanye loves Kanye I love Rick
+          Owens’ bed design but the back is...
         </Paragraph>
       </CardBody>
 
       <CardFooter>
-        <Buttons color="lightBlue" size="lg" data-ripple-light={true}>
+        <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
           Read More
         </Buttons>
       </CardFooter>

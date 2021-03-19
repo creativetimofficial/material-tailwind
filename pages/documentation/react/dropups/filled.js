@@ -7,9 +7,12 @@ import Footer from 'components/Documentation/Footer.js';
 import DropdownsCode from 'components/Documentation/JavaScript/React/DropdownsCode';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
+import Ripple from 'material-ripple-effects';
 
 export default function Buttons() {
   const [copy, setCopy] = React.useState(null);
+  const ripple = new Ripple();
+
   return (
     <>
       <Head>
@@ -46,8 +49,8 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonText="Dropup"
-                ripple={'data-md-ripple-light={true}'}
-                data-md-ripple-light={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
+                onMouseUp={(e) => ripple.create(e, 'light')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -61,8 +64,8 @@ export default function Buttons() {
                 size="regular"
                 rounded={true}
                 buttonText="Rounded Dropup"
-                ripple={'data-md-ripple-light={true}'}
-                data-md-ripple-light={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
+                onMouseUp={(e) => ripple.create(e, 'light')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -76,8 +79,8 @@ export default function Buttons() {
                 size="sm"
                 rounded={false}
                 buttonText="Small Dropups"
-                ripple={'data-md-ripple-light={true}'}
-                data-md-ripple-light={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
+                onMouseUp={(e) => ripple.create(e, 'light')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -91,8 +94,8 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonText="Regular Dropups"
-                ripple={'data-md-ripple-light={true}'}
-                data-md-ripple-light={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
+                onMouseUp={(e) => ripple.create(e, 'light')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
@@ -106,8 +109,8 @@ export default function Buttons() {
                 size="lg"
                 rounded={false}
                 buttonText="Large Dropups"
-                ripple={'data-md-ripple-light={true}'}
-                data-md-ripple-light={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
+                onMouseUp={(e) => ripple.create(e, 'light')}
               />
             </div>
           </div>

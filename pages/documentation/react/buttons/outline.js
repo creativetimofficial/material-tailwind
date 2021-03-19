@@ -8,9 +8,12 @@ import ButtonsCode from 'components/Documentation/JavaScript/React/ButtonsCode';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 import Icon from 'components/Icon/Icon';
+import Ripple from 'material-ripple-effects';
 
 export default function Buttons() {
   const [copy, setCopy] = React.useState(null);
+  const ripple = new Ripple();
+
   return (
     <>
       <Head>
@@ -47,8 +50,8 @@ export default function Buttons() {
                 rounded={false}
                 buttonName="Button"
                 buttonChildren="Button"
-                ripple={'data-md-ripple-dark={true}'}
-                data-md-ripple-dark={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 Button
               </ButtonsCode>
@@ -63,8 +66,8 @@ export default function Buttons() {
                 size="regular"
                 rounded={true}
                 buttonChildren="Rounded Button"
-                ripple={'data-md-ripple-dark={true}'}
-                data-md-ripple-dark={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 Rounded Button
               </ButtonsCode>
@@ -79,8 +82,8 @@ export default function Buttons() {
                 size="sm"
                 rounded={false}
                 buttonChildren="Small Button"
-                ripple={'data-md-ripple-dark={true}'}
-                data-md-ripple-dark={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 Small Button
               </ButtonsCode>
@@ -95,8 +98,8 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonChildren="Regular Button"
-                ripple={'data-md-ripple-dark={true}'}
-                data-md-ripple-dark={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 Regular Button
               </ButtonsCode>
@@ -111,8 +114,8 @@ export default function Buttons() {
                 size="lg"
                 rounded={false}
                 buttonChildren="Large Button"
-                ripple={'data-md-ripple-dark={true}'}
-                data-md-ripple-dark={true}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 Large Button
               </ButtonsCode>
@@ -127,10 +130,10 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={false}
-                ripple={'data-md-ripple-dark={true}'}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
                 hasIcon={true}
                 buttonChildren={`<Icon name="favorite" /> With Icon Before`}
-                data-md-ripple-dark={true}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 <Icon name="favorite" />
                 With Icon Before
@@ -146,10 +149,10 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={false}
-                ripple={'data-md-ripple-dark={true}'}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
                 hasIcon={true}
                 buttonChildren={`With Icon After <Icon name="favorite" />`}
-                data-md-ripple-dark={true}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 With Icon After
                 <Icon name="favorite" />
@@ -165,11 +168,11 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={true}
-                ripple={'data-md-ripple-dark={true}'}
+                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
                 hasIcon={true}
                 buttonChildren={`<Icon name="favorite" size="sm" />`}
                 iconOnly
-                data-md-ripple-dark={true}
+                onMouseUp={(e) => ripple.create(e, 'dark')}
               >
                 <Icon name="favorite" size="sm" />
               </ButtonsCode>

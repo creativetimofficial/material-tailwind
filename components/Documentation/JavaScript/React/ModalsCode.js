@@ -6,6 +6,7 @@ import ModalHeader from 'components/Modals/ModalHeader';
 import ModalBody from 'components/Modals/ModalBody';
 import ModalFooter from 'components/Modals/ModalFooter';
 import Buttons from 'components/Buttons/Buttons';
+import Ripple from 'material-ripple-effects';
 
 export default function AlertsCode({ copyText, onCopy, size, modalSize }) {
   const [color, setColor] = useState('lightBlue');
@@ -13,8 +14,8 @@ export default function AlertsCode({ copyText, onCopy, size, modalSize }) {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const [showModalCode, setShowModalCode] = React.useState(false);
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
 
   const codeToShow = `import React, { useState } from "react";
 import Modal from "@md-tailwind/react/Modal";
@@ -22,17 +23,21 @@ import ModalHeader from "@md-tailwind/react/ModalHeader";
 import ModalBody from "@md-tailwind/react/ModalBody";
 import ModalFooter from "@md-tailwind/react/ModalFooter";
 import Buttons from "@md-tailwind/react/Buttons";
+import Ripple from 'material-ripple-effects';
 
 export default function Modals() {
   const [showModal, setShowModal] = React.useState(false);
+  const ripple = new Ripple();
 
   return (
     <>
       <Buttons
         color="${color}"
         type="button"
-        onClick={() => setShowModal(true)}
-        data-md-ripple-light={true}
+        onClick={(e) => {
+          setShowModalCode(true);
+          ripple.create(e, 'light');
+        }}
       >
         Open ${modalSize} Modal
       </Buttons>
@@ -51,11 +56,24 @@ export default function Modals() {
           </p>
         </ModalBody>
         <ModalFooter>
-          <Buttons color="red" buttonType="link" onClick={() => setShowModal(false)}>
+          <Buttons 
+            color="red"
+            buttonType="link"
+            onClick={(e) => {
+              setShowModalCode(false);
+              ripple.create(e, 'dark');
+            }}
+          >
             Close
           </Buttons>
 
-          <Buttons color="green" onClick={() => setShowModal(false)}>
+          <Buttons
+            color="green"
+            onClick={(e) => {
+              setShowModalCode(false);
+              ripple.create(e, 'light');
+            }}
+            >
             Save Changes
           </Buttons>
         </ModalFooter>
@@ -115,8 +133,10 @@ export default function Modals() {
           <Buttons
             color={color}
             type="button"
-            onClick={() => setShowModalCode(true)}
-            data-md-ripple-light={true}
+            onClick={(e) => {
+              setShowModalCode(true);
+              ripple.create(e, 'light');
+            }}
           >
             Open {modalSize} Modal
           </Buttons>
@@ -142,12 +162,21 @@ export default function Modals() {
               <Buttons
                 color="red"
                 buttonType="link"
-                onClick={() => setShowModalCode(false)}
+                onClick={(e) => {
+                  setShowModalCode(false);
+                  ripple.create(e, 'dark');
+                }}
               >
                 Close
               </Buttons>
 
-              <Buttons color="green" onClick={() => setShowModalCode(false)}>
+              <Buttons
+                color="green"
+                onClick={(e) => {
+                  setShowModalCode(false);
+                  ripple.create(e, 'light');
+                }}
+              >
                 Save Changes
               </Buttons>
             </ModalFooter>

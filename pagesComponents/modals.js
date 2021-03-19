@@ -4,9 +4,13 @@ import ModalHeader from 'components/Modals/ModalHeader';
 import ModalBody from 'components/Modals/ModalBody';
 import ModalFooter from 'components/Modals/ModalFooter';
 import Buttons from 'components/Buttons/Buttons';
+import Ripple from 'material-ripple-effects';
 
-export default function Modals({size, color, modalSize}) {
+export default function Modals({ size, color, modalSize }) {
   const [showModal, setShowModal] = React.useState(false);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
+  const rippleDark = (e) => ripple.create(e, 'dark');
 
   return (
     <>
@@ -14,7 +18,7 @@ export default function Modals({size, color, modalSize}) {
         color={color}
         type="button"
         onClick={() => setShowModal(true)}
-        data-md-ripple-light={true}
+        onMouseUp={rippleLight}
       >
         Open {modalSize} Modal
       </Buttons>
@@ -33,11 +37,20 @@ export default function Modals({size, color, modalSize}) {
           </p>
         </ModalBody>
         <ModalFooter>
-          <Buttons color="red" buttonType="link" onClick={() => setShowModal(false)}>
+          <Buttons
+            color="red"
+            buttonType="link"
+            onClick={() => setShowModal(false)}
+            onMouseUp={rippleDark}
+          >
             Close
           </Buttons>
 
-          <Buttons color="green" onClick={() => setShowModal(false)}>
+          <Buttons
+            color="green"
+            onClick={() => setShowModal(false)}
+            onMouseUp={rippleLight}
+          >
             Save Changes
           </Buttons>
         </ModalFooter>

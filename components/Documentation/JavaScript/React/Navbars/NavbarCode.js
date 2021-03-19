@@ -11,6 +11,7 @@ import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
+import Ripple from 'material-ripple-effects';
 
 export default function NavbarCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
@@ -18,8 +19,9 @@ export default function NavbarCode({ copyText, onCopy }) {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const [openNavbar, setOpenNavbar] = useState(false);
-
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
+  const ripple = new Ripple();
+  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
 import Navbar from "@md-tailwind/react/Navbar";
@@ -32,10 +34,11 @@ import Nav from "@md-tailwind/react/Nav";
 import NavItem from "@md-tailwind/react/NavItem";
 import NavbarInput from "@md-tailwind/react/NavbarInput";
 import Icon from "@md-tailwind/react/Icon";
-import "material-ripple-effects";
+import Ripple from 'material-ripple-effects';
 
 export default function Navbar() {
   const [openNavbar, setOpenNavbar] = useState(false);
+  const ripple = new Ripple();
 
   return (
     <Navbar color="${color}" navbar>
@@ -52,16 +55,16 @@ export default function Navbar() {
             <NavItem
               active="light"
               href="#navbar"
-              data-ripple-light={true}
+              onMouseUp={(e) => ripple.create(e, 'light')}
             >
               <Icon name="language" size="xl" />
               Discover
             </NavItem>
-            <NavItem href="#navbar" data-ripple-light={true}>
+            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
               <Icon name="account_circle" size="xl" />
               Profile
             </NavItem>
-            <NavItem href="#navbar" data-ripple-light={true}>
+            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
               <Icon name="settings" size="xl" />
               Settings
             </NavItem>
@@ -129,15 +132,15 @@ export default function Navbar() {
 
             <NavbarCollapse open={openNavbar}>
               <Nav leftSide>
-                <NavItem active="light" href="#navbar" data-ripple-light={true}>
+                <NavItem active="light" href="#navbar" onMouseUp={rippleLight}>
                   <Icon name="language" size="xl" />
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" data-ripple-light={true}>
+                <NavItem href="#navbar" onMouseUp={rippleLight}>
                   <Icon name="account_circle" size="xl" />
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" data-ripple-light={true}>
+                <NavItem href="#navbar" onMouseUp={rippleLight}>
                   <Icon name="settings" size="xl" />
                   Settings
                 </NavItem>
