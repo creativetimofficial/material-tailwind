@@ -4,7 +4,7 @@
 
 <div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
-### Material Design Tailwind
+### Material Tailwind
 
 @material-tailwind is an easy to use React components for Tailwind CSS and Material Design.
 
