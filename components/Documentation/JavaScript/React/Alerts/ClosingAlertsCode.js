@@ -52,11 +52,11 @@ export default function ClosingAlertsCode({ copyText, onCopy }) {
   };
 
   let codeToShow = `import React from "react";
-import ClosingAlerts from "@md-tailwind/react/ClosingAlerts";
+import ClosingAlerts from "@material-tailwind/react/ClosingAlerts";
 
 export default function ClosingAlerts() {
   return (
-    <ClosingAlerts key={key} color="${color}">MD Tailwind Closing Alerts</ClosingAlerts>
+    <ClosingAlerts key={key} color="${color}">Material Tailwind Tailwind Closing Alerts</ClosingAlerts>
   );
 }`;
 

@@ -2,11 +2,11 @@
 
 ![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
 
-<div align="center"><img src="./assets/img/md-tailwind-logo-initial.png" alt="@md-tailwind" width="150"/></div>
+<div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
 ### Material Design Tailwind
 
-@md-tailwind is an easy to use React components for Tailwind CSS and Material Design.
+@material-tailwind is an easy to use React components for Tailwind CSS and Material Design.
 
 ## Table of Contents
 
@@ -36,25 +36,27 @@
 ## Quick start
 
 ```
-npm i @md-tailwind
+npm i @material-tailwind
 ```
 
 ## Documentation - React
 
-After you have installed `@md-tailwind` into your project, you can import and use our components like so:
+After you have installed `@material-tailwind` into your project, you can import and use our components like so:
 
 ### Usage
 
 ```
 import React from "react";
-import Buttons from "@md-tailwind/react/Buttons";
-import "@md-ripple-effect";
+import Buttons from "@material-tailwind/react/Buttons";
+import Ripple from "material-ripple-effects";
 
 export default function Buttons() {
+  const ripple = new Ripple();
+
   return (
     <Buttons
       color="lightBlue"
-      data-md-ripple-light={true}
+      onMouseUp={(e) => ripple.create(e, 'light')}
     >
       Button
     </Buttons>
@@ -72,9 +74,9 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the @md-tailwind. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the @material-tailwind. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the @md-tailwind.
+1. Make sure that you are using the latest version of the @material-tailwind.
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 

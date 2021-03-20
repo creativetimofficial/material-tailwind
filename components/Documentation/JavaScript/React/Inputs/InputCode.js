@@ -16,7 +16,7 @@ export default function InputCode({
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import Input from "@md-tailwind/react/Input";
+import Input from "@material-tailwind/react/Input";
 
 export default function Input() {
   return (

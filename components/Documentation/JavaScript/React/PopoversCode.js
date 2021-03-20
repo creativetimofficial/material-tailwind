@@ -18,11 +18,11 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const ripple = new Ripple();
 
   const codeToShow = `import React, { useRef } from "react";
-import Buttons from "@md-tailwind/react/Buttons";
-import Popover from "@md-tailwind/react/Popover";
-import PopoverContainer from "@md-tailwind/react/PopoverContainer";
-import PopoverHeader from "@md-tailwind/react/PopoverHeader";
-import PopoverBody from "@md-tailwind/react/PopoverBody";
+import Buttons from "@material-tailwind/react/Buttons";
+import Popover from "@material-tailwind/react/Popover";
+import PopoverContainer from "@material-tailwind/react/PopoverContainer";
+import PopoverHeader from "@material-tailwind/react/PopoverHeader";
+import PopoverBody from "@material-tailwind/react/PopoverBody";
 import Ripple from 'material-ripple-effects';
 
 export default function Popover() {

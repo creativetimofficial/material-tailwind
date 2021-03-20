@@ -19,11 +19,11 @@ export default function AlertsCode({ copyText, onCopy }) {
   const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React from "react";
-import Tab from "@md-tailwind/react/Tab";
-import TabList from "@md-tailwind/react/TabList";
-import TabItem from "@md-tailwind/react/TabItem";
-import TabContent from "@md-tailwind/react/TabContent";
-import TabPane from "@md-tailwind/react/TabPane";
+import Tab from "@material-tailwind/react/Tab";
+import TabList from "@material-tailwind/react/TabList";
+import TabItem from "@material-tailwind/react/TabItem";
+import TabContent from "@material-tailwind/react/TabContent";
+import TabPane from "@material-tailwind/react/TabPane";
 import Ripple from 'material-ripple-effects';
 
 export default function Tabs() {

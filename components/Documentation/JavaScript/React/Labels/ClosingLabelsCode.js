@@ -96,7 +96,7 @@ export default function ClosingAlertsCode({ copyText, onCopy }) {
   };
 
   let codeToShow = `import React from "react";
-import ClosingLabels from "@md-tailwind/react/ClosingLabels";
+import ClosingLabels from "@material-tailwind/react/ClosingLabels";
 
 export default function ClosingLabels() {
   return (

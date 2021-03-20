@@ -17,9 +17,9 @@ export default function AlertsCode({ copyText, onCopy }) {
   const rippleDark = (e) => ripple.create(e, 'dark');
 
   const codeToShow = `import React from "react";
-import Pagination from "@md-tailwind/react/Pagination";
-import PaginationItem from "@md-tailwind/react/PaginationItem";
-import Icon from "@md-tailwind/react/Icon";
+import Pagination from "@material-tailwind/react/Pagination";
+import PaginationItem from "@material-tailwind/react/PaginationItem";
+import Icon from "@material-tailwind/react/Icon";
 import "@md-ripple-effect";
 
 export default function Pagination() {

@@ -19,12 +19,12 @@ export default function Presentation() {
         <div className="container max-w-7xl mx-auto">
           <div className="w-full px-4 text-center">
             <img
-              src={require('assets/img/md-tailwind-logo-initial.png')}
+              src={require('assets/img/material-tailwind-logo.png')}
               alt="Material Tailwind Logo"
               className="w-56 mx-auto mb-16"
             />
             <h2 className="font-semibold text-6xl text-blue-gray-900">
-              Material Design Tailwind
+              Material Tailwind
             </h2>
             <p className="mt-4 text-xl leading-relaxed text-gray-700">
               Easy to use React components for Tailwind CSS and Material Design.
@@ -64,7 +64,9 @@ export default function Presentation() {
           <div className="mt-16">
             <div className="mb-16">
               <h1 className="font-light text-2xl text-gray-700 mb-2">NPM</h1>
-              <Paragraph color="gray">Install MD Tailwind via NPM</Paragraph>
+              <Paragraph color="gray">
+                Install Material Tailwind via NPM
+              </Paragraph>
 
               <SyntaxHighlighter
                 language="jsx"
@@ -75,7 +77,7 @@ export default function Presentation() {
                   borderRadius: '0.5rem',
                 }}
               >
-                npm i --save @md-tailwind
+                npm i --save @material-tailwind
               </SyntaxHighlighter>
             </div>
 
@@ -99,7 +101,7 @@ export default function Presentation() {
                     }}
                   >
                     {`import React from "react";
-import Buttons from "@md-tailwind/react/Buttons";
+import Buttons from "@material-tailwind/react/Buttons";
 import Ripple from "material-ripple-effects";
 
 export default function Buttons() {

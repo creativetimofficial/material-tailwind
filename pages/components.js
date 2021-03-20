@@ -52,12 +52,12 @@ export default function Components() {
         <div className="container max-w-7xl mx-auto">
           <div className="w-full px-4 text-center">
             <img
-              src={require('assets/img/md-tailwind-logo-initial.png')}
+              src={require('assets/img/material-tailwind-logo.png')}
               alt="Material Tailwind Logo"
               className="w-56 mx-auto mb-16"
             />
             <h2 className="font-semibold text-6xl text-blue-gray-900 mb-10">
-              Material Design Tailwind
+              Material Tailwind
             </h2>
             <h4 className="text-gray-700 text-3xl font-serif font-bold leading-normal mt-0 mb-2">
               All Components
@@ -909,7 +909,7 @@ export default function Components() {
         </div>
 
         <div className="container max-w-7xl mx-auto mt-36 px-4">
-          <H4 color="gray">typography</H4>
+          <H4 color="gray">Typography</H4>
 
           <div className="mt-16">
             <h4 className="text-xl text-gray-700">Headings</h4>

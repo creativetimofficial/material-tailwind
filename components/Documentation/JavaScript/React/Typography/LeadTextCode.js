@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import LeadText from "@md-tailwind/react/LeadText";
+import LeadText from "@material-tailwind/react/LeadText";
 
 export default function LeadText() {
   return (

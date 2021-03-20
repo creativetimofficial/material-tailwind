@@ -11,7 +11,7 @@ export default function ButtonsCode({
   alt,
 }) {
   const codeToShow = `import React from "react";
-import Image from "@md-tailwind/react/Image";
+import Image from "@material-tailwind/react/Image";
 
 export default function Image() {
   return (

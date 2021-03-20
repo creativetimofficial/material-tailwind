@@ -18,11 +18,11 @@ export default function AlertsCode({ copyText, onCopy, size, modalSize }) {
   const ripple = new Ripple();
 
   const codeToShow = `import React, { useState } from "react";
-import Modal from "@md-tailwind/react/Modal";
-import ModalHeader from "@md-tailwind/react/ModalHeader";
-import ModalBody from "@md-tailwind/react/ModalBody";
-import ModalFooter from "@md-tailwind/react/ModalFooter";
-import Buttons from "@md-tailwind/react/Buttons";
+import Modal from "@material-tailwind/react/Modal";
+import ModalHeader from "@material-tailwind/react/ModalHeader";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
+import Buttons from "@material-tailwind/react/Buttons";
 import Ripple from 'material-ripple-effects';
 
 export default function Modals() {

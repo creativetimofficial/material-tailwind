@@ -16,9 +16,9 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const ripple = new Ripple();
 
   const codeToShow = `import React, { useRef } from "react";
-import Buttons from "@md-tailwind/react/Buttons";
-import Tooltip from "@md-tailwind/react/Tooltip";
-import TooltipContent from "@md-tailwind/react/TooltipContent";
+import Buttons from "@material-tailwind/react/Buttons";
+import Tooltip from "@material-tailwind/react/Tooltip";
+import TooltipContent from "@material-tailwind/react/TooltipContent";
 import Ripple from 'material-ripple-effects';
 
 export default function Tooltips() {

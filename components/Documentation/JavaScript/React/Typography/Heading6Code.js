@@ -12,11 +12,11 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import H6 from "@md-tailwind/react/Heading6";
+import H6 from "@material-tailwind/react/Heading6";
 
 export default function H6() {
   return (
-    <H6 color="${color}">Tailwinded Design System</H6>
+    <H6 color="${color}">Material Tailwind</H6>
   );
 }`;
 
@@ -67,7 +67,7 @@ export default function H6() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <H6 color={color}>Tailwinded Design System</H6>
+        <H6 color={color}>Material Tailwind</H6>
       </DocsSnippet>
     </>
   );

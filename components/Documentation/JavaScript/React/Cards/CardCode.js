@@ -18,13 +18,13 @@ export default function CardCode({ copyText, onCopy }) {
   const ripple = new Ripple();
 
   const codeToShow = `import React from "react";
-import Card from "@md-tailwind/Card";
-import CardImage from "@md-tailwind/react/CardImage";
-import CardBody from "@md-tailwind/react/CardBody";
-import CardFooter from "@md-tailwind/react/CardFooter";
-import H6 from "@md-tailwind/react/Heading6";
-import Paragraph from "@md-tailwind/react/Paragraph";
-import Buttons from "@md-tailwind/react/Buttons";
+import Card from "@material-tailwind/react/Card";
+import CardImage from "@material-tailwind/react/CardImage";
+import CardBody from "@material-tailwind/react/CardBody";
+import CardFooter from "@material-tailwind/react/CardFooter";
+import H6 from "@material-tailwind/react/Heading6";
+import Paragraph from "@material-tailwind/react/Paragraph";
+import Buttons from "@material-tailwind/react/Buttons";
 import Ripple from 'material-ripple-effects';
 
 export default function Card() {

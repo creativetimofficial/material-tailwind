@@ -12,11 +12,11 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Alerts from "@md-tailwind/react/Alerts";
+import Alerts from "@material-tailwind/react/Alerts";
 
 export default function Alerts() {
   return (
-    <Alerts key={key} color="${color}">MD Tailwind Alerts</Alerts>
+    <Alerts key={key} color="${color}">Material Tailwind Alerts</Alerts>
   );
 }`;
 

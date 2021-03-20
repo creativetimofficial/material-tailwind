@@ -24,16 +24,16 @@ export default function NavbarCode({ copyText, onCopy }) {
   const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
-import Navbar from "@md-tailwind/react/Navbar";
-import NavbarContainer from "@md-tailwind/react/NavbarContainer";
-import NavbarWrapper from "@md-tailwind/react/NavbarWrapper";
-import NavbarBrand from "@md-tailwind/react/NavbarBrand";
-import NavbarToggler from "@md-tailwind/react/NavbarToggler";
-import NavbarCollapse from "@md-tailwind/react/NavbarCollapse";
-import Nav from "@md-tailwind/react/Nav";
-import NavItem from "@md-tailwind/react/NavItem";
-import NavbarInput from "@md-tailwind/react/NavbarInput";
-import Icon from "@md-tailwind/react/Icon";
+import Navbar from "@material-tailwind/react/Navbar";
+import NavbarContainer from "@material-tailwind/react/NavbarContainer";
+import NavbarWrapper from "@material-tailwind/react/NavbarWrapper";
+import NavbarBrand from "@material-tailwind/react/NavbarBrand";
+import NavbarToggler from "@material-tailwind/react/NavbarToggler";
+import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
+import Nav from "@material-tailwind/react/Nav";
+import NavItem from "@material-tailwind/react/NavItem";
+import NavbarInput from "@material-tailwind/react/NavbarInput";
+import Icon from "@material-tailwind/react/Icon";
 import Ripple from 'material-ripple-effects';
 
 export default function Navbar() {

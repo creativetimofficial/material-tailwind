@@ -18,10 +18,10 @@ export default function ButtonsCode({
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import Buttons from "@md-tailwind/react/Buttons";
+import Buttons from "@material-tailwind/react/Buttons";
 ${
   hasIcon
-    ? 'import Icon from "@md-tailwind/react/Icon"; \nimport Ripple from "material-ripple-effects";'
+    ? 'import Icon from "@material-tailwind/react/Icon"; \nimport Ripple from "material-ripple-effects";'
     : 'import Ripple from "material-ripple-effects";'
 }
 

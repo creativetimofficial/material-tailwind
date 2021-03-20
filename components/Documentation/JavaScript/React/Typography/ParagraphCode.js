@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy, value, percentage }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Paragraph from "@md-tailwind/react/Paragraph";
+import Paragraph from "@material-tailwind/react/Paragraph";
 
 export default function Paragraph() {
   return (

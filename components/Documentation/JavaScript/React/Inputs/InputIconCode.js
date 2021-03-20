@@ -13,7 +13,7 @@ export default function InputIconCode({
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import InputIcon from "@md-tailwind/react/InputIcon";
+import InputIcon from "@material-tailwind/react/InputIcon";
 
 export default function Input() {
   return (

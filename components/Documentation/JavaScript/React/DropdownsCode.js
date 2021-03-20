@@ -19,8 +19,8 @@ export default function DropdownsCode({
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import Dropdowns from "@md-tailwind/react/Dropdowns"
-import DropdownItems from "@md-tailwind/react/DropdownItems"
+import Dropdowns from "@material-tailwind/react/Dropdowns"
+import DropdownItems from "@material-tailwind/react/DropdownItems"
 import Ripple from "material-ripple-effects";
 
 export default function Dropdowns() {

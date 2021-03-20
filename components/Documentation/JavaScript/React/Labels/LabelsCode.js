@@ -12,7 +12,7 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Labels from "@md-tailwind/react/Labels";
+import Labels from "@material-tailwind/react/Labels";
 
 export default function Labels() {
   return (
