@@ -35,8 +35,14 @@
 
 ## Quick start
 
+### Using NPM
 ```
 npm i @material-tailwind
+```
+
+### Using Yarn
+```
+yarn add @material-tailwind
 ```
 
 ## Documentation - React
