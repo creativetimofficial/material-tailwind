@@ -81,6 +81,25 @@ export default function Presentation() {
               </SyntaxHighlighter>
             </div>
 
+            <div className="mb-16">
+              <h1 className="font-light text-2xl text-gray-700 mb-2">Yarn</h1>
+              <Paragraph color="gray">
+                Install Material Tailwind via Yarn
+              </Paragraph>
+
+              <SyntaxHighlighter
+                language="jsx"
+                style={shadesOfPurple}
+                customStyle={{
+                  fontSize: '0.875rem',
+                  padding: '16px 20px',
+                  borderRadius: '0.5rem',
+                }}
+              >
+                yarn add @material-tailwind
+              </SyntaxHighlighter>
+            </div>
+
             <duv>
               <Paragraph color="gray">Import the components you need</Paragraph>
 
