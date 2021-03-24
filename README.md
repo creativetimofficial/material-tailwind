@@ -1,12 +1,14 @@
 # @material-tailwind
 
-![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/md-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
+![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-tailwind.svg)</a>
 
 <div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
 ### Material Tailwind
 
-@material-tailwind is an easy to use React components for Tailwind CSS and Material Design.
+@material-tailwind is an easy to use components library for Tailwind CSS and Material Design.
+It features multiple React components, all written with Tailwind CSS classes and Material Design guidelines.
+Coming soon components for VueJS, Angular and many more. Add this repository to your watch list to get the latest news, or join our newsletter community: https://material-tailwind.com/.
 
 ## Table of Contents
 
@@ -35,14 +37,18 @@
 
 ## Quick start
 
+### React
+
 ### Using NPM
+
 ```
-npm i @material-tailwind
+npm i -E @material-tailwind/react
 ```
 
 ### Using Yarn
+
 ```
-yarn add @material-tailwind
+yarn add @materia-tailwind/react -E
 ```
 
 ## Documentation - React
