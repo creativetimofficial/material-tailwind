@@ -5,13 +5,9 @@ import CardBody from 'components/Card/CardBody';
 import CardFooter from 'components/Card/CardFooter';
 import H6 from 'components/Typography/Heading6';
 import Paragraph from 'components/Typography/Paragraph';
-import Buttons from 'components/Buttons/Buttons';
-import Ripple from 'material-ripple-effects';
+import Button from 'components/Button/Button';
 
 export default function RegularCard() {
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
-
   return (
     <Card>
       <CardImage
@@ -29,9 +25,9 @@ export default function RegularCard() {
       </CardBody>
 
       <CardFooter>
-        <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
+        <Button color="lightBlue" size="lg" ripple="light">
           Read More
-        </Buttons>
+        </Button>
       </CardFooter>
     </Card>
   );

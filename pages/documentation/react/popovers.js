@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-import PopoversCode from 'components/Documentation/JavaScript/React/PopoversCode.js';
+import PopoverCode from 'components/Documentation/JavaScript/React/PopoverCode.js';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function SmallModal() {
-  const [copy, setCopy] = React.useState(null);
+export default function Popovers() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -39,7 +39,7 @@ export default function SmallModal() {
               />
 
               <SmallHeading title="Popover Left" />
-              <PopoversCode
+              <PopoverCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 placement="left"
@@ -48,7 +48,7 @@ export default function SmallModal() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Popover Right" />
-              <PopoversCode
+              <PopoverCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 placement="right"
@@ -57,7 +57,7 @@ export default function SmallModal() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Popover Top" />
-              <PopoversCode
+              <PopoverCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 placement="top"
@@ -66,7 +66,7 @@ export default function SmallModal() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Popover Bottom" />
-              <PopoversCode
+              <PopoverCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 placement="bottom"

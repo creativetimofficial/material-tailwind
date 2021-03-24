@@ -6,9 +6,10 @@ import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
 import CardCode from 'components/Documentation/JavaScript/React/Cards/CardCode';
 import Heading from 'components/Documentation/Heading.js';
+import SmallHeading from 'components/Documentation/SmallHeading';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Cards() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -34,8 +35,9 @@ export default function Buttons() {
             <div className="my-8">
               <Heading
                 title="React Cards"
-                description="Different Cards using React."
+                description="Different cards using react."
               />
+              <SmallHeading title="Blog Card" />
               <CardCode
                 copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Alerts' : '')}

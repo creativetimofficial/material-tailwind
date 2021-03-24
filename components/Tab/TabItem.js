@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Ripple from 'material-ripple-effects';
 
-export default function TabItem({ children, active, ...rest }) {
+export default function TabItem({ children, active, ripple, ...rest }) {
+  const rippleEffect = new Ripple();
+
   return (
     <li className="text-center">
       <a
@@ -10,6 +13,10 @@ export default function TabItem({ children, active, ...rest }) {
           active && 'bg-white bg-opacity-20'
         }`}
         role="tablist"
+        onMouseUp={(e) => {
+          ripple === 'dark' && rippleEffect.create(e, 'dark');
+          ripple === 'light' && rippleEffect.create(e, 'light');
+        }}
       >
         {children}
       </a>
@@ -20,4 +27,5 @@ export default function TabItem({ children, active, ...rest }) {
 TabItem.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.bool,
+  ripple: PropTypes.string,
 };

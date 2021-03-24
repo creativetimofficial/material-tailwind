@@ -1,28 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar';
 import routes from 'routes';
 import Navbar from 'components/Documentation/Navbar';
 import Footer from 'components/Documentation/Footer';
-import LabelsCode from 'components/Documentation/JavaScript/React/Labels/LabelsCode';
-import ClosingLabelsCode from 'components/Documentation/JavaScript/React/Labels/ClosingLabelsCode';
+import LabelCode from 'components/Documentation/JavaScript/React/Labels/LabelCode';
+import ClosingLabelCode from 'components/Documentation/JavaScript/React/Labels/ClosingLabelCode';
 import Heading from 'components/Documentation/Heading';
 import SmallHeading from 'components/Documentation/SmallHeading';
 
-export default function Alerts() {
-  const [copy, setCopy] = React.useState(null);
+export default function Labels() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
         {/* Canonical SEO */}
         <link
           rel="canonical"
-          href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/alerts"
+          href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/labels"
         />
         {/* Open Graph data */}
         <meta
           property="og:url"
-          content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/alerts"
+          content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/labels"
         />
         <title>React Labels | Tailwind Starter Kit by Creative Tim</title>
       </Head>
@@ -36,46 +36,20 @@ export default function Alerts() {
             <div className="my-8">
               <Heading
                 title="React Labels"
-                description="Leave your user the choice to close the feedback message using React."
+                description="Leave your user the choice to close the label using react."
               />
-              <SmallHeading
-                title="Simple Label"
-                description={
-                  <>
-                    Label can have how many words you want, as well as an
-                    optional close button. For styling, use one of the color
-                    classes presented below. (e.g.,{' '}
-                    <code className="text-pink-600 text-sm bg-gray-200">
-                      .bg-red-500
-                    </code>
-                    ).
-                  </>
-                }
-              />
-              <LabelsCode
-                copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
-                onCopy={(text) => setCopy(text ? 'Alerts' : '')}
+              <SmallHeading title="Simple Label" />
+              <LabelCode
+                copyText={copy === 'Labels' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Labels' : '')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
-              <SmallHeading
-                title="Closing Label"
-                description={
-                  <>
-                    Label can have how many words you want, as well as an
-                    optional close button. For styling, use one of the color
-                    classes presented below. (e.g.,{' '}
-                    <code className="text-pink-600 text-sm bg-gray-200">
-                      .bg-red-500
-                    </code>
-                    ).
-                  </>
-                }
-              />
-              <ClosingLabelsCode
-                copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
-                onCopy={(text) => setCopy(text ? 'Alerts' : '')}
+              <SmallHeading title="Closing Label" />
+              <ClosingLabelCode
+                copyText={copy === 'Labels' ? 'Copied' : 'Copy'}
+                onCopy={(text) => setCopy(text ? 'Labels' : '')}
               />
             </div>
           </div>

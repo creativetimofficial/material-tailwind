@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Alerts from 'components/Alerts/Alerts';
+import Alert from 'components/Alerts/Alert';
 
-export default function AlertsCode({ copyText, onCopy }) {
+export default function AlertCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
@@ -12,11 +12,11 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Alerts from "@material-tailwind/react/Alerts";
+import Alert from "@material-tailwind/react/Alert";
 
-export default function Alerts() {
+export default function Alert() {
   return (
-    <Alerts key={key} color="${color}">Material Tailwind Alerts</Alerts>
+    <Alert key={key} color="${color}">Material Tailwind Alerts</Alert>
   );
 }`;
 
@@ -67,10 +67,10 @@ export default function Alerts() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <Alerts color={color}>
+        <Alert color={color}>
           <span className="font-medium uppercase">{color}!</span> This is a{' '}
           {color.toLowerCase()} alert - check it out!
-        </Alerts>
+        </Alert>
       </DocsSnippet>
     </>
   );

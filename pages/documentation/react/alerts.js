@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar';
 import routes from 'routes';
 import Navbar from 'components/Documentation/Navbar';
 import Footer from 'components/Documentation/Footer';
-import AlertsCode from 'components/Documentation/JavaScript/React/Alerts/AlertsCode';
-import ClosingAlertsCode from 'components/Documentation/JavaScript/React/Alerts/ClosingAlertsCode';
+import AlertCode from 'components/Documentation/JavaScript/React/Alerts/AlertCode';
+import ClosingAlertCode from 'components/Documentation/JavaScript/React/Alerts/ClosingAlertCode';
 import Heading from 'components/Documentation/Heading';
 import SmallHeading from 'components/Documentation/SmallHeading';
 
 export default function Alerts() {
-  const [copy, setCopy] = React.useState(null);
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -40,42 +40,16 @@ export default function Alerts() {
                 title="React Alerts"
                 description="Leave your user the choice to close the feedback message using React."
               />
-              <SmallHeading
-                title="Simple Alert"
-                description={
-                  <>
-                    Alerts can have how many words you want, as well as an
-                    optional close button. For styling, use one of the color
-                    classes presented below. (e.g.,{' '}
-                    <code className="text-pink-600 text-sm bg-gray-200">
-                      .bg-red-500
-                    </code>
-                    ).
-                  </>
-                }
-              />
-              <AlertsCode
+              <SmallHeading title="Simple Alert" />
+              <AlertCode
                 copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Alerts' : '')}
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
-              <SmallHeading
-                title="Closing Alert"
-                description={
-                  <>
-                    Alerts can have how many words you want, as well as an
-                    optional close button. For styling, use one of the color
-                    classes presented below. (e.g.,{' '}
-                    <code className="text-pink-600 text-sm bg-gray-200">
-                      .bg-red-500
-                    </code>
-                    ).
-                  </>
-                }
-              />
-              <ClosingAlertsCode
+              <SmallHeading title="Closing Alert" />
+              <ClosingAlertCode
                 copyText={copy === 'Alerts' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Alerts' : '')}
               />

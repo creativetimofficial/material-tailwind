@@ -1,7 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
 import IndexNavbar from 'pagesComponents/IndexNavbar';
-import IndexFooter from 'pagesComponents/IndexFooter';
 import H1 from 'components/typography/Heading1.js';
 import H2 from 'components/typography/Heading2.js';
 import H3 from 'components/typography/Heading3.js';
@@ -12,17 +10,17 @@ import Paragraph from 'components/typography/Paragraph.js';
 import LeadText from 'components/typography/LeadText.js';
 import Quote from 'components/typography/Quote.js';
 import Small from 'components/typography/Small.js';
-import Alerts from 'components/Alerts/Alerts';
-import ClosingAlerts from 'components/Alerts/ClosingAlerts';
-import Buttons from 'components/Buttons/Buttons';
-import Dropdowns from 'components/Dropdowns/Dropdowns';
-import DropdownItems from 'components/Dropdowns/DropdownItems';
+import Alert from 'components/Alerts/Alert';
+import ClosingAlert from 'components/Alerts/ClosingAlert';
+import Button from 'components/Button/Button';
+import Dropdown from 'components/Dropdown/Dropdown';
+import DropdownItem from 'components/Dropdown/DropdownItem';
 import Icon from 'components/Icon/Icon';
 import Image from 'components/Image/Image';
 import Input from 'components/Input/Input';
 import InputIcon from 'components/Input/InputIcon';
-import Labels from 'components/Labels/Labels';
-import ClosingLabels from 'components/Labels/ClosingLabels';
+import Label from 'components/Labels/Label';
+import ClosingLabel from 'components/Labels/ClosingLabel';
 import Pagination from 'components/Pagination/Pagination';
 import PaginationItem from 'components/Pagination/PaginationItem';
 import Progress from 'components/Progress/Progress';
@@ -41,10 +39,6 @@ import RegularCard from 'pagesComponents/cards';
 import Ripple from 'material-ripple-effects';
 
 export default function Components() {
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
-  const rippleDark = (e) => ripple.create(e, 'dark');
-
   return (
     <>
       <IndexNavbar />
@@ -70,39 +64,26 @@ export default function Components() {
 
       <section className="pb-36 bg-white">
         <div className="container max-w-7xl mx-auto mt-36 px-4">
-          <H4 color="gray">BUTTONS</H4>
+          <H4 color="gray">BUTTONs</H4>
           <div className="mt-10">
             <h4 className="text-xl text-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Buttons color="lightBlue" onMouseUp={rippleLight}>
+              <Button color="lightBlue" ripple="light">
                 default
-              </Buttons>
-              <Buttons
-                color="lightBlue"
-                buttonType="outline"
-                onMouseUp={rippleDark}
-              >
+              </Button>
+              <Button color="lightBlue" buttonType="outline" ripple="dark">
                 outline
-              </Buttons>
-              <Buttons color="lightBlue" rounded onMouseUp={rippleLight}>
+              </Button>
+              <Button color="lightBlue" rounded ripple="light">
                 rounded
-              </Buttons>
-              <Buttons
-                color="lightBlue"
-                buttonType="link"
-                onMouseUp={rippleDark}
-              >
+              </Button>
+              <Button color="lightBlue" buttonType="link" ripple="dark">
                 link
-              </Buttons>
-              <Buttons
-                color="lightBlue"
-                rounded
-                iconOnly
-                onMouseUp={rippleLight}
-              >
+              </Button>
+              <Button color="lightBlue" rounded iconOnly ripple="light">
                 <Icon name="favorite" />
-              </Buttons>
+              </Button>
             </div>
           </div>
 
@@ -111,44 +92,39 @@ export default function Components() {
 
             <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
               <div className="flex flex-wrap items-end gap-x-2 gap-y-8">
-                <Buttons color="lightBlue" size="sm" onMouseUp={rippleLight}>
+                <Button color="lightBlue" size="sm" ripple="light">
                   small
-                </Buttons>
-                <Buttons color="lightBlue" onMouseUp={rippleLight}>
+                </Button>
+                <Button color="lightBlue" ripple="light">
                   regular
-                </Buttons>
-                <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
+                </Button>
+                <Button color="lightBlue" size="lg" ripple="light">
                   large
-                </Buttons>
+                </Button>
               </div>
 
               <div className="flex flex-wrap items-end gap-x-2 gap-y-8">
-                <Buttons
+                <Button
                   color="lightBlue"
                   size="sm"
                   rounded
                   iconOnly
-                  onMouseUp={rippleLight}
+                  ripple="light"
                 >
                   <Icon name="favorite" />
-                </Buttons>
-                <Buttons
-                  color="lightBlue"
-                  rounded
-                  iconOnly
-                  onMouseUp={rippleLight}
-                >
+                </Button>
+                <Button color="lightBlue" rounded iconOnly ripple="light">
                   <Icon name="favorite" />
-                </Buttons>
-                <Buttons
+                </Button>
+                <Button
                   color="lightBlue"
                   size="lg"
                   rounded
                   iconOnly
-                  onMouseUp={rippleLight}
+                  ripple="light"
                 >
                   <Icon name="favorite" />
-                </Buttons>
+                </Button>
               </div>
             </div>
           </div>
@@ -157,63 +133,63 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Colors</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Buttons color="blueGray" onMouseUp={rippleLight}>
+              <Button color="blueGray" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="gray" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="gray" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="brown" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="brown" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="deepOrange" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="deepOrange" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="orange" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="orange" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="amber" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="amber" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="yellow" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="yellow" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="lime" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="lime" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="lightGreen" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="lightGreen" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="green" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="green" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="teal" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="teal" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="cyan" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="cyan" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="lightBlue" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="lightBlue" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="blue" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="blue" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="indigo" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="indigo" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="purple" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="purple" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="deepPurple" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="deepPurple" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="pink" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="pink" ripple="light">
                 Button
-              </Buttons>
-              <Buttons color="red" onMouseUp={rippleLight}>
+              </Button>
+              <Button color="red" ripple="light">
                 Button
-              </Buttons>
+              </Button>
             </div>
           </div>
         </div>
@@ -222,25 +198,25 @@ export default function Components() {
           <H4 color="gray">Alerts</H4>
 
           <div className="flex flex-col mt-10">
-            <Alerts color="blueGray">Material Tailwind Alert.</Alerts>
-            <Alerts color="gray">Material Tailwind Alert.</Alerts>
-            <Alerts color="brown">Material Tailwind Alert.</Alerts>
-            <Alerts color="deepOrange">Material Tailwind Alert.</Alerts>
-            <Alerts color="orange">Material Tailwind Alert.</Alerts>
-            <Alerts color="amber">Material Tailwind Alert.</Alerts>
-            <Alerts color="yellow">Material Tailwind Alert.</Alerts>
-            <Alerts color="lime">Material Tailwind Alert.</Alerts>
-            <Alerts color="lightGreen">Material Tailwind Alert.</Alerts>
-            <Alerts color="green">Material Tailwind Alert.</Alerts>
-            <Alerts color="teal">Material Tailwind Alert.</Alerts>
-            <Alerts color="cyan">Material Tailwind Alert.</Alerts>
-            <Alerts color="lightBlue">Material Tailwind Alert.</Alerts>
-            <Alerts color="blue">Material Tailwind Alert.</Alerts>
-            <Alerts color="indigo">Material Tailwind Alert.</Alerts>
-            <Alerts color="purple">Material Tailwind Alert.</Alerts>
-            <Alerts color="deepPurple">Material Tailwind Alert.</Alerts>
-            <Alerts color="pink">Material Tailwind Alert.</Alerts>
-            <Alerts color="red">Material Tailwind Alert.</Alerts>
+            <Alert color="blueGray">Material Tailwind Alert.</Alert>
+            <Alert color="gray">Material Tailwind Alert.</Alert>
+            <Alert color="brown">Material Tailwind Alert.</Alert>
+            <Alert color="deepOrange">Material Tailwind Alert.</Alert>
+            <Alert color="orange">Material Tailwind Alert.</Alert>
+            <Alert color="amber">Material Tailwind Alert.</Alert>
+            <Alert color="yellow">Material Tailwind Alert.</Alert>
+            <Alert color="lime">Material Tailwind Alert.</Alert>
+            <Alert color="lightGreen">Material Tailwind Alert.</Alert>
+            <Alert color="green">Material Tailwind Alert.</Alert>
+            <Alert color="teal">Material Tailwind Alert.</Alert>
+            <Alert color="cyan">Material Tailwind Alert.</Alert>
+            <Alert color="lightBlue">Material Tailwind Alert.</Alert>
+            <Alert color="blue">Material Tailwind Alert.</Alert>
+            <Alert color="indigo">Material Tailwind Alert.</Alert>
+            <Alert color="purple">Material Tailwind Alert.</Alert>
+            <Alert color="deepPurple">Material Tailwind Alert.</Alert>
+            <Alert color="pink">Material Tailwind Alert.</Alert>
+            <Alert color="red">Material Tailwind Alert.</Alert>
           </div>
         </div>
 
@@ -248,63 +224,63 @@ export default function Components() {
           <H4 color="gray">Closing Alerts</H4>
 
           <div className="flex flex-col mt-10">
-            <ClosingAlerts color="blueGray">
+            <ClosingAlert color="blueGray">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="gray">
+            </ClosingAlert>
+            <ClosingAlert color="gray">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="brown">
+            </ClosingAlert>
+            <ClosingAlert color="brown">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="deepOrange">
+            </ClosingAlert>
+            <ClosingAlert color="deepOrange">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="orange">
+            </ClosingAlert>
+            <ClosingAlert color="orange">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="amber">
+            </ClosingAlert>
+            <ClosingAlert color="amber">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="yellow">
+            </ClosingAlert>
+            <ClosingAlert color="yellow">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="lime">
+            </ClosingAlert>
+            <ClosingAlert color="lime">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="lightGreen">
+            </ClosingAlert>
+            <ClosingAlert color="lightGreen">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="green">
+            </ClosingAlert>
+            <ClosingAlert color="green">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="teal">
+            </ClosingAlert>
+            <ClosingAlert color="teal">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="cyan">
+            </ClosingAlert>
+            <ClosingAlert color="cyan">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="lightBlue">
+            </ClosingAlert>
+            <ClosingAlert color="lightBlue">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="blue">
+            </ClosingAlert>
+            <ClosingAlert color="blue">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="indigo">
+            </ClosingAlert>
+            <ClosingAlert color="indigo">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="purple">
+            </ClosingAlert>
+            <ClosingAlert color="purple">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="deepPurple">
+            </ClosingAlert>
+            <ClosingAlert color="deepPurple">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="pink">
+            </ClosingAlert>
+            <ClosingAlert color="pink">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
-            <ClosingAlerts color="red">
+            </ClosingAlert>
+            <ClosingAlert color="red">
               Material Tailwind Closing Alert.
-            </ClosingAlerts>
+            </ClosingAlert>
           </div>
         </div>
 
@@ -434,25 +410,25 @@ export default function Components() {
           <H4 color="gray">Labels</H4>
 
           <div className="flex flex-wrap gap-x-2 gap-y-4 mt-10">
-            <Labels color="blueGray">Label</Labels>
-            <Labels color="gray">Label</Labels>
-            <Labels color="brown">Label</Labels>
-            <Labels color="deepOrange">Label</Labels>
-            <Labels color="orange">Label</Labels>
-            <Labels color="amber">Label</Labels>
-            <Labels color="yellow">Label</Labels>
-            <Labels color="lime">Label</Labels>
-            <Labels color="lightGreen">Label</Labels>
-            <Labels color="green">Label</Labels>
-            <Labels color="teal">Label</Labels>
-            <Labels color="cyan">Label</Labels>
-            <Labels color="lightBlue">Label</Labels>
-            <Labels color="blue">Label</Labels>
-            <Labels color="indigo">Label</Labels>
-            <Labels color="purple">Label</Labels>
-            <Labels color="deepPurple">Label</Labels>
-            <Labels color="pink">Label</Labels>
-            <Labels color="red">Label</Labels>
+            <Label color="blueGray">Label</Label>
+            <Label color="gray">Label</Label>
+            <Label color="brown">Label</Label>
+            <Label color="deepOrange">Label</Label>
+            <Label color="orange">Label</Label>
+            <Label color="amber">Label</Label>
+            <Label color="yellow">Label</Label>
+            <Label color="lime">Label</Label>
+            <Label color="lightGreen">Label</Label>
+            <Label color="green">Label</Label>
+            <Label color="teal">Label</Label>
+            <Label color="cyan">Label</Label>
+            <Label color="lightBlue">Label</Label>
+            <Label color="blue">Label</Label>
+            <Label color="indigo">Label</Label>
+            <Label color="purple">Label</Label>
+            <Label color="deepPurple">Label</Label>
+            <Label color="pink">Label</Label>
+            <Label color="red">Label</Label>
           </div>
         </div>
 
@@ -460,25 +436,25 @@ export default function Components() {
           <H4 color="gray">Closing Labels</H4>
 
           <div className="flex flex-wrap gap-x-2 gap-y-4 mt-10">
-            <ClosingLabels color="blueGray">Label</ClosingLabels>
-            <ClosingLabels color="gray">Label</ClosingLabels>
-            <ClosingLabels color="brown">Label</ClosingLabels>
-            <ClosingLabels color="deepOrange">Label</ClosingLabels>
-            <ClosingLabels color="orange">Label</ClosingLabels>
-            <ClosingLabels color="amber">Label</ClosingLabels>
-            <ClosingLabels color="yellow">Label</ClosingLabels>
-            <ClosingLabels color="lime">Label</ClosingLabels>
-            <ClosingLabels color="lightGreen">Label</ClosingLabels>
-            <ClosingLabels color="green">Label</ClosingLabels>
-            <ClosingLabels color="teal">Label</ClosingLabels>
-            <ClosingLabels color="cyan">Label</ClosingLabels>
-            <ClosingLabels color="lightBlue">Label</ClosingLabels>
-            <ClosingLabels color="blue">Label</ClosingLabels>
-            <ClosingLabels color="indigo">Label</ClosingLabels>
-            <ClosingLabels color="purple">Label</ClosingLabels>
-            <ClosingLabels color="deepPurple">Label</ClosingLabels>
-            <ClosingLabels color="pink">Label</ClosingLabels>
-            <ClosingLabels color="red">Label</ClosingLabels>
+            <ClosingLabel color="blueGray">Label</ClosingLabel>
+            <ClosingLabel color="gray">Label</ClosingLabel>
+            <ClosingLabel color="brown">Label</ClosingLabel>
+            <ClosingLabel color="deepOrange">Label</ClosingLabel>
+            <ClosingLabel color="orange">Label</ClosingLabel>
+            <ClosingLabel color="amber">Label</ClosingLabel>
+            <ClosingLabel color="yellow">Label</ClosingLabel>
+            <ClosingLabel color="lime">Label</ClosingLabel>
+            <ClosingLabel color="lightGreen">Label</ClosingLabel>
+            <ClosingLabel color="green">Label</ClosingLabel>
+            <ClosingLabel color="teal">Label</ClosingLabel>
+            <ClosingLabel color="cyan">Label</ClosingLabel>
+            <ClosingLabel color="lightBlue">Label</ClosingLabel>
+            <ClosingLabel color="blue">Label</ClosingLabel>
+            <ClosingLabel color="indigo">Label</ClosingLabel>
+            <ClosingLabel color="purple">Label</ClosingLabel>
+            <ClosingLabel color="deepPurple">Label</ClosingLabel>
+            <ClosingLabel color="pink">Label</ClosingLabel>
+            <ClosingLabel color="red">Label</ClosingLabel>
           </div>
         </div>
 
@@ -555,43 +531,39 @@ export default function Components() {
         </div>
 
         <div className="container max-w-7xl mx-auto mt-36 px-4">
-          <H4 color="gray">DROPDOWNS</H4>
+          <H4 color="gray">DROPDOWN</H4>
           <div className="mt-10">
             <h4 className="text-xl text-gray-700">Types</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Dropdowns
-                color="lightBlue"
-                buttonText="Dropdown"
-                onMouseUp={rippleLight}
-              >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+              <Dropdown color="lightBlue" buttonText="Dropdown" ripple="light">
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
+                </DropdownItem>
+              </Dropdown>
 
-              <Dropdowns
+              <Dropdown
                 color="lightBlue"
                 buttonText="Dropup"
                 placement="top-end"
-                onMouseUp={rippleLight}
+                ripple="light"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
+                </DropdownItem>
+              </Dropdown>
             </div>
           </div>
 
@@ -599,69 +571,65 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
-              <Dropdowns
-                color="lightBlue"
-                buttonText="Default"
-                onMouseUp={rippleLight}
-              >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+              <Dropdown color="lightBlue" buttonText="Default" ripple="light">
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
-              <Dropdowns
+                </DropdownItem>
+              </Dropdown>
+              <Dropdown
                 color="lightBlue"
                 buttonText="Outline"
                 buttonType="outline"
-                onMouseUp={rippleDark}
+                ripple="dark"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
-              <Dropdowns
+                </DropdownItem>
+              </Dropdown>
+              <Dropdown
                 color="lightBlue"
                 buttonText="Rounded"
                 rounded
-                onMouseUp={rippleLight}
+                ripple="light"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
-              <Dropdowns
+                </DropdownItem>
+              </Dropdown>
+              <Dropdown
                 color="lightBlue"
                 buttonText="Link"
                 buttonType="link"
-                onMouseUp={rippleDark}
+                ripple="dark"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
+                </DropdownItem>
+              </Dropdown>
             </div>
           </div>
 
@@ -669,53 +637,49 @@ export default function Components() {
             <h4 className="text-xl text-gray-700">Sizes</h4>
 
             <div className="flex flex-wrap items-end gap-x-2 gap-y-8 mt-5">
-              <Dropdowns
+              <Dropdown
                 color="lightBlue"
                 buttonText="Small"
                 size="sm"
-                onMouseUp={rippleLight}
+                ripple="light"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
-              <Dropdowns
-                color="lightBlue"
-                buttonText="Regular"
-                onMouseUp={rippleLight}
-              >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+              </Dropdown>
+              <Dropdown color="lightBlue" buttonText="Regular" ripple="light">
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
-              <Dropdowns
+                </DropdownItem>
+              </Dropdown>
+              <Dropdown
                 color="lightBlue"
                 buttonText="Large"
                 size="lg"
-                onMouseUp={rippleLight}
+                ripple="light"
               >
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Another Action
-                </DropdownItems>
-                <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+                </DropdownItem>
+                <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
                   Something else here
-                </DropdownItems>
-              </Dropdowns>
+                </DropdownItem>
+              </Dropdown>
             </div>
           </div>
         </div>
@@ -783,7 +747,7 @@ export default function Components() {
                 <PaginationItem
                   href="#prev"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   <Icon name="keyboard_arrow_left" />
                 </PaginationItem>
@@ -791,42 +755,42 @@ export default function Components() {
                   color="lightBlue"
                   href="#1"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleLight}
+                  ripple="light"
                 >
                   1
                 </PaginationItem>
                 <PaginationItem
                   href="#2"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   2
                 </PaginationItem>
                 <PaginationItem
                   href="#3"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   3
                 </PaginationItem>
                 <PaginationItem
                   href="#4"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   4
                 </PaginationItem>
                 <PaginationItem
                   href="#5"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   5
                 </PaginationItem>
                 <PaginationItem
                   href="#next"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   <Icon name="keyboard_arrow_right" />
                 </PaginationItem>
@@ -835,17 +799,17 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With First & Last Buttons</h4>
+            <h4 className="text-xl text-gray-700">With First & Last Button</h4>
 
             <div className="w-full mt-5">
               <Pagination>
-                <PaginationItem button href="#first" onMouseUp={rippleDark}>
+                <PaginationItem button href="#first" ripple="dark">
                   First
                 </PaginationItem>
                 <PaginationItem
                   href="#prev"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   <Icon name="keyboard_arrow_left" />
                 </PaginationItem>
@@ -853,46 +817,46 @@ export default function Components() {
                   color="lightBlue"
                   href="#1"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleLight}
+                  ripple="light"
                 >
                   1
                 </PaginationItem>
                 <PaginationItem
                   href="#2"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   2
                 </PaginationItem>
                 <PaginationItem
                   href="#3"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   3
                 </PaginationItem>
                 <PaginationItem
                   href="#4"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   4
                 </PaginationItem>
                 <PaginationItem
                   href="#5"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   5
                 </PaginationItem>
                 <PaginationItem
                   href="#next"
                   onClick={(e) => e.preventDefault()}
-                  onMouseUp={rippleDark}
+                  ripple="dark"
                 >
                   <Icon name="keyboard_arrow_right" />
                 </PaginationItem>
-                <PaginationItem button href="#last" onMouseUp={rippleDark}>
+                <PaginationItem button href="#last" ripple="dark">
                   Last
                 </PaginationItem>
               </Pagination>

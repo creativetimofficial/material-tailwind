@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -7,8 +7,8 @@ import Footer from 'components/Documentation/Footer.js';
 import QuoteCode from 'components/Documentation/JavaScript/React/Typography/QuoteCode';
 import Heading from 'components/Documentation/Heading.js';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Quote() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>

@@ -1,19 +1,16 @@
 import React, { useRef } from 'react';
-import Buttons from 'components/Buttons/Buttons';
-import Tooltip from 'components/Tooltips/Tooltip';
-import TooltipContent from 'components/Tooltips/TooltipContent';
-import Ripple from 'material-ripple-effects';
+import Button from 'components/Button/Button';
+import Tooltip from 'components/Tooltips/Tooltips';
+import TooltipContent from 'components/Tooltips/TooltipsContent';
 
 export default function Tooltips({ color, placement }) {
   const buttonRef = useRef();
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <>
-      <Buttons color={color} ref={buttonRef} onMouseUp={rippleLight}>
+      <Button color={color} ref={buttonRef} ripple="light">
         Tooltip {placement}
-      </Buttons>
+      </Button>
 
       <Tooltip placement={placement} ref={buttonRef}>
         <TooltipContent>Tooltip {placement}</TooltipContent>

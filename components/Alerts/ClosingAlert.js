@@ -23,7 +23,7 @@ const colors = {
   red: 'bg-red-500',
 };
 
-export default function ClosingAlerts({ children, color, ...rest }) {
+export default function ClosingAlert({ children, color, ...rest }) {
   const [showAlert, setShowAlert] = React.useState(true);
 
   const closeAlert = (e) => {
@@ -63,7 +63,7 @@ export default function ClosingAlerts({ children, color, ...rest }) {
   );
 }
 
-ClosingAlerts.propTypes = {
+ClosingAlert.propTypes = {
   color: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

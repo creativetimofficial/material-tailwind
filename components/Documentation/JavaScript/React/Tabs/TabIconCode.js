@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Tab from 'components/Tabs/Tab';
-import TabList from 'components/Tabs/TabList';
-import TabItem from 'components/Tabs/TabItem';
-import TabContent from 'components/Tabs/TabContent';
-import TabPane from 'components/Tabs/TabPane';
+import Tab from 'components/Tab/Tab';
+import TabList from 'components/Tab/TabList';
+import TabItem from 'components/Tab/TabItem';
+import TabContent from 'components/Tab/TabContent';
+import TabPane from 'components/Tab/TabPane';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
-export default function AlertsCode({ copyText, onCopy }) {
+export default function TabIconCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const [openTab, setOpenTab] = useState(1);
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React from "react";
 import Tab from "@material-tailwind/react/Tab";
@@ -26,11 +23,9 @@ import TabItem from "@material-tailwind/react/TabItem";
 import TabContent from "@material-tailwind/react/TabContent";
 import TabPane from "@material-tailwind/react/TabPane";
 import Icon from "@material-tailwind/react/Icon";
-import Ripple from 'material-ripple-effects';
 
-export default function Tabs() {
+export default function Tab() {
   const [openTab, setOpenTab] = useState(1);
-  const ripple = new Ripple();
 
   return (
     <Tab>
@@ -39,8 +34,8 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(1);
-            ripple.create(e, 'light);
           }}
+          ripple="light"
           active={openTab === 1 ? true : false}
           href="tabItem"
         >
@@ -51,8 +46,8 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(2);
-            ripple.create(e, 'light);
           }}
+          ripple="light"
           active={openTab === 2 ? true : false}
           href="tabItem"
         >
@@ -63,8 +58,8 @@ export default function Tabs() {
           onClick={(e) => {
             e.preventDefault();
             setOpenTab(3);
-            ripple.create(e, 'light);
           }}
+          ripple="light"
           active={openTab === 3 ? true : false}
           href="tabItem"
         >
@@ -165,8 +160,8 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(1);
-                rippleLight(e);
               }}
+              ripple="light"
               active={openTab === 1 ? true : false}
               href="tabItem"
             >
@@ -177,8 +172,8 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(2);
-                rippleLight(e);
               }}
+              ripple="light"
               active={openTab === 2 ? true : false}
               href="tabItem"
             >
@@ -189,8 +184,8 @@ export default function Tabs() {
               onClick={(e) => {
                 e.preventDefault();
                 setOpenTab(3);
-                rippleLight(e);
               }}
+              ripple="light"
               active={openTab === 3 ? true : false}
               href="tabItem"
             >

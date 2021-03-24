@@ -23,7 +23,7 @@ const colors = {
   red: 'bg-red-500',
 };
 
-export default function Alerts({ children, color, ...rest }) {
+export default function Alert({ children, color, ...rest }) {
   return (
     <>
       <div
@@ -36,7 +36,7 @@ export default function Alerts({ children, color, ...rest }) {
   );
 }
 
-Alerts.propTypes = {
+Alert.propTypes = {
   color: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

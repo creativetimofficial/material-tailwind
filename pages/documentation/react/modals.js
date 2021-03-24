@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-import ModalsCode from 'components/Documentation/JavaScript/React/ModalsCode.js';
+import ModalCode from 'components/Documentation/JavaScript/React/ModalCode.js';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function SmallModal() {
-  const [copy, setCopy] = React.useState(null);
+export default function Modals() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -39,7 +39,7 @@ export default function SmallModal() {
               />
 
               <SmallHeading title="React Small Modal" />
-              <ModalsCode
+              <ModalCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 size="sm"
@@ -49,7 +49,7 @@ export default function SmallModal() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="React Regular Modal" />
-              <ModalsCode
+              <ModalCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 size="regular"
@@ -59,7 +59,7 @@ export default function SmallModal() {
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="React Large Modal" />
-              <ModalsCode
+              <ModalCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
                 size="lg"

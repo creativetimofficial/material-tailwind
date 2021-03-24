@@ -10,17 +10,14 @@ import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
-export default function MenuIconsCode({ copyText, onCopy }) {
+export default function NavbarIconLinkCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openNavbar, setOpenNavbar] = useState(false);
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
 import Navbar from "@material-tailwind/react/Navbar";
@@ -32,34 +29,37 @@ import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
 import Icon from "@material-tailwind/react/Icon";
-import Ripple from 'material-ripple-effects';
 
-export default function Menus() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const ripple = new Ripple();
+export default function Navbar() {
+  const [openNavbar, setOpenNavbar] = useState(false);
 
   return (
-    <Navbar color="${color}">
+    <Navbar color="${color}" navbar>
       <NavbarContainer>
         <NavbarWrapper>
-          <NavbarBrand>Menu</NavbarBrand>
-          <NavbarToggler onClick={() => setOpenMenu(!openMenu)} />
+          <NavbarBrand>Navbar</NavbarBrand>
+          <NavbarToggler
+            onClick={() => setOpenNavbar(!openNavbar)}
+          />
         </NavbarWrapper>
 
-        <NavbarCollapse open={openMenu}>
+        <NavbarCollapse open={openNavbar}>
           <Nav>
             <NavItem
               active="light"
               href="#navbar"
-              onMouseUp={(e) => ripple.create(e, 'light')}
+              ripple="light"
             >
               <Icon name="language" size="xl" />
+              Discover
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               <Icon name="account_circle" size="xl" />
+              Profile
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               <Icon name="settings" size="xl" />
+              Settings
             </NavItem>
           </Nav>
         </NavbarCollapse>
@@ -115,23 +115,26 @@ export default function Menus() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <Navbar color={color}>
+        <Navbar color={color} navbar>
           <NavbarContainer>
             <NavbarWrapper>
-              <NavbarBrand>Menu</NavbarBrand>
-              <NavbarToggler onClick={() => setOpenMenu(!openMenu)} />
+              <NavbarBrand>Navbar</NavbarBrand>
+              <NavbarToggler onClick={() => setOpenNavbar(!openNavbar)} />
             </NavbarWrapper>
 
-            <NavbarCollapse open={openMenu}>
+            <NavbarCollapse open={openNavbar}>
               <Nav>
-                <NavItem active="light" href="#navbar" onMouseUp={rippleLight}>
+                <NavItem active="light" href="#navbar" ripple="light">
                   <Icon name="language" size="xl" />
+                  Discover
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   <Icon name="account_circle" size="xl" />
+                  Profile
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   <Icon name="settings" size="xl" />
+                  Settings
                 </NavItem>
               </Nav>
             </NavbarCollapse>

@@ -67,7 +67,7 @@ const textColors = {
   red: 'text-red-700',
 };
 
-export default function ClosingLabels({ children, color }) {
+export default function ClosingLabel({ children, color }) {
   const [showLabel, setShowLabel] = React.useState(true);
 
   function closeLabel(e) {
@@ -110,7 +110,7 @@ export default function ClosingLabels({ children, color }) {
   );
 }
 
-ClosingLabels.propTypes = {
+ClosingLabel.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Buttons from 'components/Buttons/Buttons';
+import Button from 'components/Button/Button';
 
 const divBgColors = {
   blueGray: 'bg-blue-gray-100',
@@ -96,11 +96,11 @@ export default function ClosingAlertsCode({ copyText, onCopy }) {
   };
 
   let codeToShow = `import React from "react";
-import ClosingLabels from "@material-tailwind/react/ClosingLabels";
+import ClosingLabel from "@material-tailwind/react/ClosingLabel";
 
-export default function ClosingLabels() {
+export default function ClosingLabel() {
   return (
-    <ClosingLabels key={key} color="${color}">Label</ClosingLabels>
+    <ClosingLabel key={key} color="${color}">Label</ClosingLabel>
   );
 }`;
 
@@ -169,9 +169,9 @@ export default function ClosingLabels() {
               </span>
             </div>
           ) : (
-            <Buttons color={color} onClick={() => setShowLabel(true)}>
+            <Button color={color} onClick={() => setShowLabel(true)}>
               Revert Changes
-            </Buttons>
+            </Button>
           )}
         </div>
       </DocsSnippet>

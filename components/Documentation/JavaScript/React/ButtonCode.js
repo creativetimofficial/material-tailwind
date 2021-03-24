@@ -1,43 +1,40 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
-import Buttons from 'components/Buttons/Buttons';
+import Button from 'components/Button/Button';
 
-export default function ButtonsCode({
+export default function ButtonCode({
   children,
   copyText,
   onCopy,
   buttonType,
   size,
   rounded,
-  ripple,
   hasIcon,
   buttonChildren,
+  rippleEffect,
   ...rest
 }) {
   const [color, setColor] = useState('lightBlue');
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import Buttons from "@material-tailwind/react/Buttons";
 ${
   hasIcon
-    ? 'import Icon from "@material-tailwind/react/Icon"; \nimport Ripple from "material-ripple-effects";'
-    : 'import Ripple from "material-ripple-effects";'
+    ? 'import Button from "@material-tailwind/react/Button";\nimport Icon from "@material-tailwind/react/Icon";'
+    : 'import Button from "@material-tailwind/react/Button";'
 }
 
-export default function Buttons() {
-  const ripple = new Ripple();
-
+export default function Button() {
   return (
-    <Buttons
+    <Button
       color="${color}"
       buttonType="${buttonType}"
       size="${size}"
       rounded={${rounded}}
-      ${ripple}
+      ${rippleEffect}
     >
       ${buttonChildren}
-    </Buttons>
+    </Button>
   )
 }`;
 
@@ -53,7 +50,7 @@ export default function Buttons() {
         onFrameworkClick={(type) => setType(type)}
       >
         <div className="flex justify-center">
-          <Buttons
+          <Button
             {...rest}
             color={color}
             buttonType={buttonType}
@@ -61,7 +58,7 @@ export default function Buttons() {
             rounded={rounded}
           >
             {children}
-          </Buttons>
+          </Button>
         </div>
       </DocsSnippet>
     </>

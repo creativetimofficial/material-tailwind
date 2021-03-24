@@ -120,8 +120,8 @@ const routes = [
             name: 'Text',
           },
           {
-            path: '/documentation/react/tabs/icons',
-            name: 'Icons',
+            path: '/documentation/react/tabs/icon',
+            name: 'Icon',
           },
         ],
       },

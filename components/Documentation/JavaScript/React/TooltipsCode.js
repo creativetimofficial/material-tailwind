@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Buttons from 'components/Buttons/Buttons';
-import Tooltip from 'components/Tooltips/Tooltip';
-import TooltipContent from 'components/Tooltips/TooltipContent';
-import Ripple from 'material-ripple-effects';
+import Button from 'components/Button/Button';
+import Tooltips from 'components/Tooltips/Tooltips';
+import TooltipsContent from 'components/Tooltips/TooltipsContent';
 
 export default function AlertsCode({ copyText, onCopy, placement }) {
   const [color, setColor] = useState('lightBlue');
@@ -13,27 +12,24 @@ export default function AlertsCode({ copyText, onCopy, placement }) {
   const [modalText, setModalText] = useState();
   const buttonRef = useRef();
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
 
   const codeToShow = `import React, { useRef } from "react";
-import Buttons from "@material-tailwind/react/Buttons";
-import Tooltip from "@material-tailwind/react/Tooltip";
-import TooltipContent from "@material-tailwind/react/TooltipContent";
-import Ripple from 'material-ripple-effects';
+import Button from "@material-tailwind/react/Button";
+import Tooltips from "@material-tailwind/react/Tooltips";
+import TooltipsContent from "@material-tailwind/react/TooltipsContent";
 
 export default function Tooltips() {
   const buttonRef = useRef();
-  const ripple = new Ripple();
 
   return (
     <>
-      <Buttons color="${color}" ref={buttonRef} onMouseUp={(e) => ripple.create(e, 'light')}>
+      <Button color="${color}" ref={buttonRef} ripple="light">
         Tooltip ${placement}
-      </Buttons>
+      </Button>
 
-      <Tooltip placement="${placement}" ref={buttonRef}>
-        <TooltipContent>Tooltip ${placement}</TooltipContent>
-      </Tooltip>
+      <Tooltips placement="${placement}" ref={buttonRef}>
+        <TooltipContents>Tooltip ${placement}</TooltipContents>
+      </Tooltips>
     </>
   );
 }`;
@@ -86,17 +82,13 @@ export default function Tooltips() {
         onFrameworkClick={onFrameworkClick}
       >
         <div className="flex justify-center">
-          <Buttons
-            color={color}
-            ref={buttonRef}
-            onMouseUp={(e) => ripple.create(e, 'light')}
-          >
+          <Button color={color} ref={buttonRef} ripple="light">
             Tooltip {placement}
-          </Buttons>
+          </Button>
 
-          <Tooltip placement={placement} ref={buttonRef}>
-            <TooltipContent>Tooltip {placement}</TooltipContent>
-          </Tooltip>
+          <Tooltips placement={placement} ref={buttonRef}>
+            <TooltipsContent>Tooltip {placement}</TooltipsContent>
+          </Tooltips>
         </div>
       </DocsSnippet>
     </>

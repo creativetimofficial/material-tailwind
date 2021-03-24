@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-import ButtonsCode from 'components/Documentation/JavaScript/React/ButtonsCode';
+import ButtonCode from 'components/Documentation/JavaScript/React/ButtonCode';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
 export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
-  const ripple = new Ripple();
+  const [copy, setCopy] = useState(null);
 
   return (
     <>
@@ -39,10 +37,10 @@ export default function Buttons() {
             <div className="my-8">
               <Heading
                 title="React Buttons"
-                description="Beautiful buttons using React."
+                description="Beautiful buttons using react."
               />
               <SmallHeading title="Button" />
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
@@ -50,132 +48,132 @@ export default function Buttons() {
                 rounded={false}
                 buttonName="Button"
                 buttonChildren="Button"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 Button
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Rounded Button" />
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="regular"
                 rounded={true}
                 buttonChildren="Rounded Button"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 Rounded Button
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Small Button" />
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="sm"
                 rounded={false}
                 buttonChildren="Small Button"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 Small Button
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Regular Button" />
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="regular"
                 rounded={false}
                 buttonChildren="Regular Button"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 Regular Button
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Large Button" />
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="lg"
                 rounded={false}
                 buttonChildren="Large Button"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 Large Button
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="With Icon Before" />
 
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="regular"
                 rounded={false}
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
                 hasIcon={true}
                 buttonChildren={`<Icon name="favorite" size="sm" /> With Icon Before`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 <Icon name="favorite" size="sm" />
                 With Icon Before
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="With Icon After" />
 
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="regular"
                 rounded={false}
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
                 hasIcon={true}
                 buttonChildren={`With Icon After <Icon name="favorite" size="sm" />`}
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 With Icon After
                 <Icon name="favorite" size="sm" />
-              </ButtonsCode>
+              </ButtonCode>
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="With Icon Only" />
 
-              <ButtonsCode
+              <ButtonCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="filled"
                 size="regular"
                 rounded={true}
-                ripple={`onMouseUp={(e) => ripple.create(e, 'light')}`}
                 hasIcon={true}
                 buttonChildren={`<Icon name="favorite" size="sm" />`}
                 iconOnly
-                onMouseUp={(e) => ripple.create(e, 'light')}
+                rippleEffect='ripple="light"'
+                ripple="light"
               >
                 <Icon name="favorite" size="sm" />
-              </ButtonsCode>
+              </ButtonCode>
             </div>
           </div>
           <div className="w-full lg:w-2/12 px-4 hidden lg:block"></div>

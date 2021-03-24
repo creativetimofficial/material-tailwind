@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -9,8 +9,8 @@ import PaginationFirstLastCode from 'components/Documentation/JavaScript/React/P
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Paginations() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>

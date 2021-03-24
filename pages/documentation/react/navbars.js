@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
 import NavbarCode from 'components/Documentation/JavaScript/React/Navbars/NavbarCode.js';
-import NavbarIconsLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsLinksCode.js';
-import NavbarLinksCode from 'components/Documentation/JavaScript/React/Navbars/NavbarLinksCode.js';
-import NavbarIconsCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconsCode.js';
+import NavbarIconLinkCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconLinkCode.js';
+import NavbarLinkCode from 'components/Documentation/JavaScript/React/Navbars/NavbarLinkCode.js';
+import NavbarIconCode from 'components/Documentation/JavaScript/React/Navbars/NavbarIconCode.js';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function Navbars() {
-  const [copy, setCopy] = React.useState(null);
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -67,7 +67,7 @@ export default function Navbars() {
                   </>
                 }
               />
-              <NavbarIconsLinksCode
+              <NavbarIconLinkCode
                 copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'IconsText' : '')}
               />
@@ -79,7 +79,7 @@ export default function Navbars() {
                 description={<>This one used text links no icon is used.</>}
               />
 
-              <NavbarLinksCode
+              <NavbarLinkCode
                 copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'IconsText' : '')}
               />
@@ -93,7 +93,7 @@ export default function Navbars() {
                 }
               />
 
-              <NavbarIconsCode
+              <NavbarIconCode
                 copyText={copy === 'IconsText' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'IconsText' : '')}
               />

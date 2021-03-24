@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -9,8 +9,8 @@ import InputIconCode from 'components/Documentation/JavaScript/React/Inputs/Inpu
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Inputs() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -36,7 +36,7 @@ export default function Buttons() {
             <div className="my-8">
               <Heading
                 title="React Input"
-                description="Beautiful Input using React."
+                description="Beautiful inputs using react."
               />
               <SmallHeading title="Input" />
               <InputCode

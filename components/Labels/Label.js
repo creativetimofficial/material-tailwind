@@ -45,7 +45,7 @@ const textColors = {
   red: 'text-red-700',
 };
 
-export default function Labels({ children, color }) {
+export default function Label({ children, color }) {
   return (
     <>
       <div
@@ -61,7 +61,7 @@ export default function Labels({ children, color }) {
   );
 }
 
-Labels.propTypes = {
+Label.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
 };

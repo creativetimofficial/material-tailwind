@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Dropdowns from 'components/Dropdowns/Dropdowns';
-import DropdownItems from 'components/Dropdowns/DropdownItems';
+import Dropdown from 'components/Dropdown/Dropdown';
+import DropdownItem from 'components/Dropdown/DropdownItem';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 
-export default function DropdownsCode({
+export default function DropdownCode({
   children,
   copyText,
   onCopy,
@@ -12,34 +12,31 @@ export default function DropdownsCode({
   rounded,
   placement,
   buttonText,
-  ripple,
+  rippleEffect,
   ...rest
 }) {
   const [color, setColor] = useState('lightBlue');
   const [type, setType] = useState('react');
 
   const codeToShow = `import React from "react";
-import Dropdowns from "@material-tailwind/react/Dropdowns"
-import DropdownItems from "@material-tailwind/react/DropdownItems"
-import Ripple from "material-ripple-effects";
+import Dropdown from "@material-tailwind/react/Dropdown"
+import DropdownItem from "@material-tailwind/react/DropdownItem"
 
-export default function Dropdowns() {
-  const ripple = new Ripple();
-
+export default function Dropdown() {
   return (
-    <Dropdowns
+    <Dropdown
       color="${color}"
       placement="${placement}"
       buttonText="${buttonText}"
       buttonType="${buttonType}"
       size="${size}"
       rounded={${rounded}}
-      ${ripple}
+      ${rippleEffect}
     >
-      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Action</DropdownItems>
-      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Another Action</DropdownItems>
-      <DropdownItems href="#" onClick={(e) => e.preventDefault()}>Something Else</DropdownItems>
-    </Dropdowns>
+      <DropdownItem href="#" onClick={(e) => e.preventDefault()}>Action</DropdownItem>
+      <DropdownItem href="#" onClick={(e) => e.preventDefault()}>Another Action</DropdownItem>
+      <DropdownItem href="#" onClick={(e) => e.preventDefault()}>Something Else</DropdownItem>
+    </Dropdown>
   )
 }`;
 
@@ -55,7 +52,7 @@ export default function Dropdowns() {
         onFrameworkClick={(type) => setType(type)}
       >
         <div className="flex justify-center">
-          <Dropdowns
+          <Dropdown
             {...rest}
             color={color}
             placement={placement}
@@ -64,16 +61,16 @@ export default function Dropdowns() {
             size={size}
             rounded={rounded}
           >
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+            <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
               Action
-            </DropdownItems>
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+            </DropdownItem>
+            <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
               Another Action
-            </DropdownItems>
-            <DropdownItems href="#" onClick={(e) => e.preventDefault()}>
+            </DropdownItem>
+            <DropdownItem href="#" onClick={(e) => e.preventDefault()}>
               Something Else
-            </DropdownItems>
-          </Dropdowns>
+            </DropdownItem>
+          </Dropdown>
         </div>
       </DocsSnippet>
     </>

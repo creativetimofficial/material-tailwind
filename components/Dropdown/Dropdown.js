@@ -1,5 +1,8 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Ripple from 'material-ripple-effects';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/animations/scale.css';
 
 const filledBgColors = {
   blueGray: 'bg-blue-gray-500',
@@ -221,124 +224,155 @@ const outlineBgActiveColors = {
   red: 'bg-red-100',
 };
 
-const Buttons = forwardRef(
-  (
-    {
-      children,
-      color,
-      buttonType,
-      size = 'regular',
-      rounded,
-      iconOnly,
-      ...rest
-    },
-    ref,
-  ) => {
-    let classes = [];
+export default function Dropdown({
+  children,
+  buttonText,
+  color,
+  buttonType,
+  size = 'regular',
+  placement = 'bottom-start',
+  rounded,
+  ripple,
+  ...rest
+}) {
+  const [dropdownShow, setDropdownShow] = React.useState(false);
+  const rippleEffect = new Ripple();
 
-    rounded = rounded ? 'rounded-full' : 'rounded';
+  // Styles
+  let classes = [];
 
-    const sharedClasses = [
-      'flex',
-      'items-center',
-      'gap-1',
-      'rounded-lg',
-      'font-bold',
-      'outline-none',
-      'uppercase',
-      'tracking-wider',
-      'focus:outline-none',
-      'focus:shadow-none',
-      'transition-all',
-      'duration-300',
-      rounded,
-    ];
+  rounded = rounded ? 'rounded-full' : 'rounded';
 
-    const buttonFilled = [
-      'text-white',
-      'shadow-md',
-      'hover:shadow-xl',
-      'focus:text-white',
-      filledBgColors[color],
-      `hover:${filledBgHoverColors[color]}`,
-      `focus:${filledBgFocusColors[color]}`,
-      `active:${filledBgActiveColors[color]}`,
-    ];
+  const sharedClasses = [
+    'flex',
+    'items-center',
+    'gap-1',
+    'rounded-lg',
+    'font-bold',
+    'outline-none',
+    'uppercase',
+    'tracking-wider',
+    'focus:outline-none',
+    'transition-all',
+    'duration-300',
+    rounded,
+  ];
 
-    const buttonOutline = [
-      'bg-transparent',
-      'border',
-      'border-solid',
-      'shadow-none',
-      outlineTextColors[color],
-      outlineBorderColors[color],
-      `hover:${outlineBgHoverColors[color]}`,
-      `hover:${outlineBorderHoverColors[color]}`,
-      `hover:${outlineTextHoverColors[color]}`,
-      `focus:${outlineBgHoverColors[color]}`,
-      `active:${outlineBgActiveColors[color]}`,
-    ];
+  const buttonFilled = [
+    'text-white',
+    'shadow-md',
+    'hover:shadow-xl',
+    filledBgColors[color],
+    `hover:${filledBgHoverColors[color]}`,
+    `focus:${filledBgFocusColors[color]}`,
+    `active:${filledBgActiveColors[color]}`,
+  ];
 
-    const buttonLink = [
-      `bg-transparent`,
-      outlineTextColors[color],
-      `hover:${outlineBgHoverColors[color]}`,
-      `hover:${outlineTextHoverColors[color]}`,
-      `focus:${outlineBgHoverColors[color]}`,
-      `active:${outlineBgActiveColors[color]}`,
-    ];
+  const buttonOutline = [
+    'bg-transparent',
+    'border',
+    'border-solid',
+    'shadow-none',
+    outlineTextColors[color],
+    outlineBorderColors[color],
+    `hover:${outlineBgHoverColors[color]}`,
+    `hover:${outlineBorderHoverColors[color]}`,
+    `hover:${outlineTextHoverColors[color]}`,
+    `focus:${outlineBgHoverColors[color]}`,
+    `active:${outlineBgActiveColors[color]}`,
+  ];
 
-    const buttonSM = [
-      ...sharedClasses,
-      iconOnly ? 'w-8 h-8 p-0 grid place-items-center' : 'py-1.5 px-4',
-      'text-xs',
-      'leading-normal',
-    ];
-    const buttonRegular = [
-      ...sharedClasses,
-      iconOnly ? 'w-10 h-10 p-0 grid place-items-center' : 'py-2.5 px-6',
-      'text-xs',
-      'leading-normal',
-    ];
-    const buttonLG = [
-      ...sharedClasses,
-      iconOnly ? 'w-12 h-12 p-0 grid place-items-center' : 'py-3 px-7',
-      'text-sm',
-      'leading-relaxed',
-    ];
+  const buttonLink = [
+    `bg-transparent`,
+    outlineTextColors[color],
+    `hover:${outlineBgHoverColors[color]}`,
+    `hover:${outlineTextHoverColors[color]}`,
+    `focus:${outlineBgHoverColors[color]}`,
+    `active:${outlineBgActiveColors[color]}`,
+  ];
 
-    if (size === 'sm') {
-      classes.push(...buttonSM);
-    } else if (size === 'lg') {
-      classes.push(...buttonLG);
-    } else {
-      classes.push(...buttonRegular);
-    }
+  const buttonSM = [
+    ...sharedClasses,
+    'py-1.5 pl-5 pr-3',
+    'text-xs',
+    'leading-normal',
+  ];
+  const buttonRegular = [
+    ...sharedClasses,
+    'p-2.5 pl-7 pr-5',
+    'text-xs',
+    'leading-normal',
+  ];
+  const buttonLG = [
+    ...sharedClasses,
+    'py-3 pl-8 pr-6',
+    'text-sm',
+    'leading-relaxed',
+  ];
 
-    if (buttonType === 'outline') {
-      classes.push(...buttonOutline);
-    } else if (buttonType === 'link') {
-      classes.push(...buttonLink);
-    } else {
-      classes.push(...buttonFilled);
-    }
+  if (size === 'sm') {
+    classes.push(...buttonSM);
+  } else if (size === 'lg') {
+    classes.push(...buttonLG);
+  } else {
+    classes.push(...buttonRegular);
+  }
 
-    classes = classes.join(' ');
+  if (buttonType === 'outline') {
+    classes.push(...buttonOutline);
+  } else if (buttonType === 'link') {
+    classes.push(...buttonLink);
+  } else {
+    classes.push(...buttonFilled);
+  }
 
-    return (
-      <button {...rest} className={classes} ref={ref}>
-        {children}
-      </button>
-    );
-  },
-);
+  classes = classes.join(' ');
 
-Buttons.propTypes = {
+  return (
+    <>
+      <Tippy
+        content={
+          <div
+            className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 transition-all duration-500`}
+            style={{ minWidth: '10rem' }}
+          >
+            {children}
+          </div>
+        }
+        animation="scale"
+        trigger="click"
+        hideOnClick="toggle"
+        offset={[0, 0]}
+        placement={placement}
+        interactive
+      >
+        <button
+          {...rest}
+          className={classes}
+          type="button"
+          onClick={() => setDropdownShow(!dropdownShow)}
+          onMouseUp={(e) => {
+            ripple === 'dark' && rippleEffect.create(e, 'dark');
+            ripple === 'light' && rippleEffect.create(e, 'light');
+          }}
+        >
+          {buttonText}
+          <span className="material-icons text-lg align-middle">
+            {dropdownShow ? 'arrow_drop_up' : 'arrow_drop_down'}
+          </span>
+        </button>
+      </Tippy>
+    </>
+  );
+}
+
+Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
+  buttonText: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   buttonType: PropTypes.string,
   size: PropTypes.string,
+  placement: PropTypes.string,
   rounded: PropTypes.bool,
+  ripple: PropTypes.string,
 };
-
-export default Buttons;

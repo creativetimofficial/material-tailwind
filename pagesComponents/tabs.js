@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import Tab from 'components/Tabs/Tab';
-import TabList from 'components/Tabs/TabList';
-import TabItem from 'components/Tabs/TabItem';
-import TabContent from 'components/Tabs/TabContent';
-import TabPane from 'components/Tabs/TabPane';
+import Tab from 'components/Tab/Tab';
+import TabList from 'components/Tab/TabList';
+import TabItem from 'components/Tab/TabItem';
+import TabContent from 'components/Tab/TabContent';
+import TabPane from 'components/Tab/TabPane';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
 export function TabIcons({ color }) {
   const [openTab, setOpenTab] = useState(1);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <Tab>
@@ -20,7 +17,7 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(1);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 1 ? true : false}
           href="tabItem"
         >
@@ -32,7 +29,7 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(2);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 2 ? true : false}
           href="tabItem"
         >
@@ -44,7 +41,7 @@ export function TabIcons({ color }) {
             e.preventDefault();
             setOpenTab(3);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 3 ? true : false}
           href="tabItem"
         >
@@ -92,8 +89,6 @@ export function TabIcons({ color }) {
 
 export function TabLinks({ color }) {
   const [openTab, setOpenTab] = useState(1);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <Tab>
@@ -103,7 +98,7 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(1);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 1 ? true : false}
           href="tabItem"
         >
@@ -114,7 +109,7 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(2);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 2 ? true : false}
           href="tabItem"
         >
@@ -125,7 +120,7 @@ export function TabLinks({ color }) {
             e.preventDefault();
             setOpenTab(3);
           }}
-          onMouseUp={rippleLight}
+          ripple="light"
           active={openTab === 3 ? true : false}
           href="tabItem"
         >

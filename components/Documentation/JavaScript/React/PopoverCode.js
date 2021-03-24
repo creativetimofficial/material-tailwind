@@ -1,62 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Buttons from 'components/Buttons/Buttons';
+import Button from 'components/Button/Button';
+import Popover from 'components/Popover/Popover';
+import PopoverContainer from 'components/Popover/PopoverContainer';
+import PopoverHeader from 'components/Popover/PopoverHeader';
+import PopoverBody from 'components/Popover/PopoverBody';
 
-const colors = {
-  blueGray: 'bg-blue-gray-500',
-  gray: 'bg-gray-500',
-  brown: 'bg-brown-500',
-  deepOrange: 'bg-deep-orange-500',
-  orange: 'bg-orange-500',
-  amber: 'bg-amber-500',
-  yellow: 'bg-yellow-600',
-  lime: 'bg-lime-500',
-  lightGreen: 'bg-light-green-500',
-  green: 'bg-green-500',
-  teal: 'bg-teal-500',
-  cyan: 'bg-cyan-500',
-  lightBlue: 'bg-light-blue-500',
-  blue: 'bg-blue-500',
-  indigo: 'bg-indigo-500',
-  deepPurple: 'bg-deep-purple-500',
-  purple: 'bg-purple-500',
-  pink: 'bg-pink-500',
-  red: 'bg-red-500',
-};
-
-export default function ClosingAlertsCode({ copyText, onCopy }) {
+export default function AlertsCode({ copyText, onCopy, placement }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
-  const [showAlert, setShowAlert] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
-
+  const buttonRef = useRef();
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
-  const closeAlert = (event) => {
-    let delay;
+  const codeToShow = `import React, { useRef } from "react";
+import Button from "@material-tailwind/react/Button";
+import Popover from "@material-tailwind/react/Popover";
+import PopoverContainer from "@material-tailwind/react/PopoverContainer";
+import PopoverHeader from "@material-tailwind/react/PopoverHeader";
+import PopoverBody from "@material-tailwind/react/PopoverBody";
 
-    const parentClassName = event.target.parentNode.parentNode;
+export default function Popover() {
+  const buttonRef = useRef();
 
-    parentClassName.classList.add('opacity-0');
-
-    Array.from(parentClassName.classList).map((el) =>
-      el.includes('duration') ? (delay = el.split('-')[1]) : null,
-    );
-
-    setTimeout(
-      () => setShowAlert(false),
-      delay ? parseInt(delay, 10) + 100 : 250,
-    );
-  };
-
-  let codeToShow = `import React from "react";
-import ClosingAlerts from "@material-tailwind/react/ClosingAlerts";
-
-export default function ClosingAlerts() {
   return (
-    <ClosingAlerts key={key} color="${color}">Material Tailwind Tailwind Closing Alerts</ClosingAlerts>
+    <>
+      <Button color="${color}" ref={buttonRef} ripple="light">
+        Popover ${placement}
+      </Button>
+
+      <Popover placement="${placement}" ref={buttonRef}>
+        <PopoverContainer>
+          <PopoverHeader>Popover ${placement}</PopoverHeader>
+          <PopoverBody>
+            And here's some amazing content. It's very engaging. Right?
+          </PopoverBody>
+        </PopoverContainer>
+      </Popover>
+    </>
   );
 }`;
 
@@ -107,26 +90,20 @@ export default function ClosingAlerts() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        {showAlert ? (
-          <div
-            className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 ${colors[color]} transition-all duration-300`}
-          >
-            <span className="font-medium uppercase">{color}!</span> This is a{' '}
-            {color.toLowerCase()} closing alert - check it out!
-            <button
-              className="absolute right-4 top-1/3 transform -translate-y-1/3 w-6 h-6 bg-transparent text-2xl outline-none focus:outline-none"
-              onClick={(e) => closeAlert(e)}
-            >
-              <span className="leading-none text-4xl">&times;</span>
-            </button>
-          </div>
-        ) : (
-          <div className="flex justify-center">
-            <Buttons color={color} onClick={() => setShowAlert(true)}>
-              Revert Changes
-            </Buttons>
-          </div>
-        )}
+        <div className="flex justify-center">
+          <Button color={color} ref={buttonRef} ripple="light">
+            Popover {placement}
+          </Button>
+
+          <Popover placement={placement} ref={buttonRef}>
+            <PopoverContainer>
+              <PopoverHeader>Popover {placement}</PopoverHeader>
+              <PopoverBody>
+                And here's some amazing content. It's very engaging. Right?
+              </PopoverBody>
+            </PopoverContainer>
+          </Popover>
+        </div>
       </DocsSnippet>
     </>
   );

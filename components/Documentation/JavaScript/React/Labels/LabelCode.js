@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 import Frameworks from 'components/Documentation/Frameworks.js';
-import Labels from 'components/Labels/Labels';
+import Label from 'components/Labels/Label';
 
 export default function AlertsCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
@@ -12,11 +12,11 @@ export default function AlertsCode({ copyText, onCopy }) {
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
 
   const codeToShow = `import React from "react";
-import Labels from "@material-tailwind/react/Labels";
+import Label from "@material-tailwind/react/Label";
 
-export default function Labels() {
+export default function Label() {
   return (
-    <Labels key={key} color="${color}">Label</Labels>
+    <Label key={key} color="${color}">Label</Label>
   );
 }`;
 
@@ -68,7 +68,7 @@ export default function Labels() {
         onFrameworkClick={onFrameworkClick}
       >
         <div className="flex justify-center">
-          <Labels color={color}>Label</Labels>
+          <Label color={color}>Label</Label>
         </div>
       </DocsSnippet>
     </>

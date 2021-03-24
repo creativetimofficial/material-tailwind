@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -8,8 +8,8 @@ import ProgressCode from 'components/Documentation/JavaScript/React/ProgressCode
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function SmallModal() {
-  const [copy, setCopy] = React.useState(null);
+export default function Progressbars() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -38,7 +38,7 @@ export default function SmallModal() {
                 description="Different progressbars using react."
               />
 
-              <SmallHeading title="Progressbar" />
+              <SmallHeading title="Simple Progressbar" />
               <ProgressCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}
@@ -47,7 +47,7 @@ export default function SmallModal() {
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
-              <SmallHeading title="Progressbar" />
+              <SmallHeading title="Progressbar with percentage text" />
               <ProgressCode
                 copyText={copy === 'Modal' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Modal' : '')}

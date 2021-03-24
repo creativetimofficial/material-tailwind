@@ -10,7 +10,6 @@ import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
 export default function MenuCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
@@ -19,8 +18,6 @@ export default function MenuCode({ copyText, onCopy }) {
   const [modalText, setModalText] = useState();
   const [openMenu, setOpenMenu] = useState(false);
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
 import Navbar from "@material-tailwind/react/Navbar";
@@ -32,11 +29,9 @@ import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
 import Icon from "@material-tailwind/react/Icon";
-import Ripple from 'material-ripple-effects';
 
-export default function Menus() {
+export default function Menu() {
   const [openMenu, setOpenMenu] = useState(false);
-  const ripple = new Ripple();
 
   return (
     <Navbar color="${color}">
@@ -51,16 +46,16 @@ export default function Menus() {
             <NavItem
               active="light"
               href="#navbar"
-              onMouseUp={(e) => ripple.create(e, 'light')}
+              ripple="light"
             >
               <Icon name="language" size="xl" />
               Discover
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               <Icon name="account_circle" size="xl" />
               Profile
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               <Icon name="settings" size="xl" />
               Settings
             </NavItem>
@@ -127,15 +122,15 @@ export default function Menus() {
 
             <NavbarCollapse open={openMenu}>
               <Nav>
-                <NavItem active="light" href="#navbar" onMouseUp={rippleLight}>
+                <NavItem active="light" href="#navbar" ripple="light">
                   <Icon name="language" size="xl" />
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   <Icon name="account_circle" size="xl" />
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   <Icon name="settings" size="xl" />
                   Settings
                 </NavItem>

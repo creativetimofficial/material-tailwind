@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
-import Modal from 'components/Modals/Modal';
-import ModalHeader from 'components/Modals/ModalHeader';
-import ModalBody from 'components/Modals/ModalBody';
-import ModalFooter from 'components/Modals/ModalFooter';
-import Buttons from 'components/Buttons/Buttons';
-import Ripple from 'material-ripple-effects';
+import Modal from 'components/Modal/Modal';
+import ModalHeader from 'components/Modal/ModalHeader';
+import ModalBody from 'components/Modal/ModalBody';
+import ModalFooter from 'components/Modal/ModalFooter';
+import Button from 'components/Button/Button';
 
 export default function Modals({ size, color, modalSize }) {
-  const [showModal, setShowModal] = React.useState(false);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
-  const rippleDark = (e) => ripple.create(e, 'dark');
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <Buttons
+      <Button
         color={color}
         type="button"
         onClick={() => setShowModal(true)}
-        onMouseUp={rippleLight}
+        ripple="light"
       >
         Open {modalSize} Modal
-      </Buttons>
+      </Button>
 
       <Modal size={size} active={showModal} toggler={() => setShowModal(false)}>
         <ModalHeader toggler={() => setShowModal(false)}>
@@ -37,22 +33,22 @@ export default function Modals({ size, color, modalSize }) {
           </p>
         </ModalBody>
         <ModalFooter>
-          <Buttons
+          <Button
             color="red"
             buttonType="link"
             onClick={() => setShowModal(false)}
-            onMouseUp={rippleDark}
+            ripple="dark"
           >
             Close
-          </Buttons>
+          </Button>
 
-          <Buttons
+          <Button
             color="green"
             onClick={() => setShowModal(false)}
-            onMouseUp={rippleLight}
+            ripple="light"
           >
             Save Changes
-          </Buttons>
+          </Button>
         </ModalFooter>
       </Modal>
     </>

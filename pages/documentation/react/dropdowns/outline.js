@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
-import DropdownsCode from 'components/Documentation/JavaScript/React/DropdownsCode';
+import DropdownCode from 'components/Documentation/JavaScript/React/DropdownCode';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
-import Ripple from 'material-ripple-effects';
-
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
-  const ripple = new Ripple();
+export default function Dropdowns() {
+  const [copy, setCopy] = useState(null);
 
   return (
     <>
@@ -41,7 +38,7 @@ export default function Buttons() {
                 description="Beautiful dropdowns using React."
               />
               <SmallHeading title="Dropdown" />
-              <DropdownsCode
+              <DropdownCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="outline"
@@ -49,14 +46,14 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonText="Dropdown"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
-                onMouseUp={(e) => ripple.create(e, 'dark')}
+                rippleEffect='ripple="dark"'
+                ripple="dark"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Rounded Dropdown" />
-              <DropdownsCode
+              <DropdownCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 buttonType="outline"
@@ -64,14 +61,14 @@ export default function Buttons() {
                 size="regular"
                 rounded={true}
                 buttonText="Rounded Dropdown"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
-                onMouseUp={(e) => ripple.create(e, 'dark')}
+                rippleEffect='ripple="dark"'
+                ripple="dark"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Small Dropdown" />
-              <DropdownsCode
+              <DropdownCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 placement="bottom-start"
@@ -79,14 +76,14 @@ export default function Buttons() {
                 size="sm"
                 rounded={false}
                 buttonText="Small Dropdown"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
-                onMouseUp={(e) => ripple.create(e, 'dark')}
+                rippleEffect='ripple="dark"'
+                ripple="dark"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Regular Dropdown" />
-              <DropdownsCode
+              <DropdownCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 placement="bottom-start"
@@ -94,14 +91,14 @@ export default function Buttons() {
                 size="regular"
                 rounded={false}
                 buttonText="Regular Dropdown"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
-                onMouseUp={(e) => ripple.create(e, 'dark')}
+                rippleEffect='ripple="dark"'
+                ripple="dark"
               />
 
               <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
 
               <SmallHeading title="Large Dropdown" />
-              <DropdownsCode
+              <DropdownCode
                 copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Buttons' : '')}
                 placement="bottom-start"
@@ -109,8 +106,8 @@ export default function Buttons() {
                 size="lg"
                 rounded={false}
                 buttonText="Large Dropdown"
-                ripple={`onMouseUp={(e) => ripple.create(e, 'dark')}`}
-                onMouseUp={(e) => ripple.create(e, 'dark')}
+                rippleEffect='ripple="dark"'
+                ripple="dark"
               />
             </div>
           </div>

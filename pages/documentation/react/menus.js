@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
 import Navbar from 'components/Documentation/Navbar.js';
 import Footer from 'components/Documentation/Footer.js';
 import MenuCode from 'components/Documentation/JavaScript/React/Menus/MenuCode.js';
-import MenuLinksCode from 'components/Documentation/JavaScript/React/Menus/MenuLinksCode.js';
-import MenuIconsCode from 'components/Documentation/JavaScript/React/Menus/MenuIconsCode.js';
+import MenuLinkCode from 'components/Documentation/JavaScript/React/Menus/MenuLinkCode.js';
+import MenuIconCode from 'components/Documentation/JavaScript/React/Menus/MenuIconCode.js';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
 export default function Menus() {
-  const [copy, setCopy] = React.useState(null);
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -54,7 +54,7 @@ export default function Menus() {
                 title="Links"
                 description="This is a simple menu with text links."
               />
-              <MenuLinksCode
+              <MenuLinkCode
                 copyText={copy === 'Icons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Icons' : '')}
               />
@@ -65,7 +65,7 @@ export default function Menus() {
                 title="Icons"
                 description="This is a simple menu with icon links."
               />
-              <MenuIconsCode
+              <MenuIconCode
                 copyText={copy === 'Icons' ? 'Copied' : 'Copy'}
                 onCopy={(text) => setCopy(text ? 'Icons' : '')}
               />

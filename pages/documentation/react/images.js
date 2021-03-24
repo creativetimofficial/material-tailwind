@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -8,8 +8,8 @@ import ImageCode from 'components/Documentation/JavaScript/React/ImageCode';
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Images() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -35,7 +35,7 @@ export default function Buttons() {
             <div className="my-8">
               <Heading
                 title="React Images"
-                description="Different Images using React."
+                description="Different images using react."
               />
               <SmallHeading title="Image" />
               <ImageCode

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar.js';
 import routes from 'routes.js';
@@ -13,8 +13,8 @@ import Heading6Code from 'components/Documentation/JavaScript/React/Typography/H
 import Heading from 'components/Documentation/Heading.js';
 import SmallHeading from 'components/Documentation/SmallHeading.js';
 
-export default function Buttons() {
-  const [copy, setCopy] = React.useState(null);
+export default function Headings() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>
@@ -40,7 +40,7 @@ export default function Buttons() {
             <div className="my-8">
               <Heading
                 title="React Headings"
-                description="Different Headings using React."
+                description="Different headings using React."
               />
               <SmallHeading title="Heading 1" />
               <Heading1Code

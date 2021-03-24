@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Sidebar from 'components/Documentation/Sidebar';
 import routes from 'routes';
@@ -7,8 +7,8 @@ import Footer from 'components/Documentation/Footer';
 import TabTextCode from 'components/Documentation/JavaScript/React/Tabs/TabTextCode';
 import Heading from 'components/Documentation/Heading';
 
-export default function SmallModal() {
-  const [copy, setCopy] = React.useState(null);
+export default function Tab() {
+  const [copy, setCopy] = useState(null);
   return (
     <>
       <Head>

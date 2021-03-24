@@ -9,17 +9,14 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
-import Ripple from 'material-ripple-effects';
 
-export default function MenuLinksCode({ copyText, onCopy }) {
+export default function NavbarLinkCode({ copyText, onCopy }) {
   const [color, setColor] = useState('lightBlue');
   const [type] = useState('react');
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openNavbar, setOpenNavbar] = useState(false);
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   const codeToShow = `import React, { useState } from "react";
 import Navbar from "@material-tailwind/react/Navbar";
@@ -30,33 +27,33 @@ import NavbarToggler from "@material-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
-import Ripple from 'material-ripple-effects';
 
-export default function Menus() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const ripple = new Ripple();
+export default function Navbar() {
+  const [openNavbar, setOpenNavbar] = useState(false);
 
   return (
-    <Navbar color="${color}">
+    <Navbar color="${color}" navbar>
       <NavbarContainer>
         <NavbarWrapper>
-          <NavbarBrand>Menu</NavbarBrand>
-          <NavbarToggler onClick={() => setOpenMenu(!openMenu)} />
+          <NavbarBrand>Navbar</NavbarBrand>
+          <NavbarToggler
+            onClick={() => setOpenNavbar(!openNavbar)}
+          />
         </NavbarWrapper>
 
-        <NavbarCollapse open={openMenu}>
+        <NavbarCollapse open={openNavbar}>
           <Nav>
             <NavItem
               active="light"
               href="#navbar"
-              onMouseUp={(e) => ripple.create(e, 'light')}
+              ripple="light"
             >
               Discover
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               Profile
             </NavItem>
-            <NavItem href="#navbar" onMouseUp={(e) => ripple.create(e, 'light')}>
+            <NavItem href="#navbar" ripple="light">
               Settings
             </NavItem>
           </Nav>
@@ -113,22 +110,22 @@ export default function Menus() {
         onColorClick={(color) => setColor(color)}
         onFrameworkClick={onFrameworkClick}
       >
-        <Navbar color={color}>
+        <Navbar color={color} navbar>
           <NavbarContainer>
             <NavbarWrapper>
-              <NavbarBrand>Menu</NavbarBrand>
-              <NavbarToggler onClick={() => setOpenMenu(!openMenu)} />
+              <NavbarBrand>Navbar</NavbarBrand>
+              <NavbarToggler onClick={() => setOpenNavbar(!openNavbar)} />
             </NavbarWrapper>
 
-            <NavbarCollapse open={openMenu}>
+            <NavbarCollapse open={openNavbar}>
               <Nav>
-                <NavItem active="light" href="#navbar" onMouseUp={rippleLight}>
+                <NavItem active="light" href="#navbar" ripple="light">
                   Discover
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   Profile
                 </NavItem>
-                <NavItem href="#navbar" onMouseUp={rippleLight}>
+                <NavItem href="#navbar" ripple="light">
                   Settings
                 </NavItem>
               </Nav>

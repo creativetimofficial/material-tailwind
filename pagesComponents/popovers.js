@@ -1,21 +1,18 @@
 import React, { useRef } from 'react';
-import Buttons from 'components/Buttons/Buttons';
-import Popover from 'components/Popovers/Popover';
-import PopoverContainer from 'components/Popovers/PopoverContainer';
-import PopoverHeader from 'components/Popovers/PopoverHeader';
-import PopoverBody from 'components/Popovers/PopoverBody';
-import Ripple from 'material-ripple-effects';
+import Button from 'components/Button/Button';
+import Popover from 'components/Popover/Popover';
+import PopoverContainer from 'components/Popover/PopoverContainer';
+import PopoverHeader from 'components/Popover/PopoverHeader';
+import PopoverBody from 'components/Popover/PopoverBody';
 
 export default function Popovers({ color, placement }) {
   const buttonRef = useRef();
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
 
   return (
     <>
-      <Buttons color={color} ref={buttonRef} onMouseUp={rippleLight}>
+      <Button color={color} ref={buttonRef} ripple="light">
         Popover {placement}
-      </Buttons>
+      </Button>
 
       <Popover placement={placement} ref={buttonRef}>
         <PopoverContainer>

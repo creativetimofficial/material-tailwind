@@ -2,17 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import IndexNavbar from 'pagesComponents/IndexNavbar';
 import IndexFooter from 'pagesComponents/IndexFooter';
-import Buttons from 'components/Buttons/Buttons';
+import Button from 'components/Button/Button';
 import Paragraph from 'components/Typography/Paragraph';
 import InputIcon from 'components/Input/InputIcon';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import Ripple from 'material-ripple-effects';
 
 export default function Presentation() {
-  const ripple = new Ripple();
-  const rippleLight = (e) => ripple.create(e, 'light');
-
   return (
     <>
       <IndexNavbar />
@@ -55,39 +51,45 @@ export default function Presentation() {
                     outline
                     iconName="email"
                   />
-                  <Buttons
-                    color="lightBlue"
-                    size="lg"
-                    onClick={(e) => e.preventDefault()}
-                    style={{ justifyContent: 'center' }}
-                  >
-                    Subscribe
-                  </Buttons>
+                  <div className="w-full md:w-48">
+                    <Button
+                      color="lightBlue"
+                      size="lg"
+                      onClick={(e) => e.preventDefault()}
+                      ripple="light"
+                      style={{
+                        justifyContent: 'center',
+                        width: '100%',
+                      }}
+                    >
+                      Subscribe
+                    </Button>
+                  </div>
                 </div>
               </form>
             </div>
 
             <div className="mt-12 flex flex-col justify-center gap-4 mb-24 md:flex-row">
               <a href="#how-to-use">
-                <Buttons
+                <Button
                   color="teal"
                   size="lg"
-                  onMouseUp={rippleLight}
+                  ripple="light"
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   How to use
-                </Buttons>
+                </Button>
               </a>
               <Link href="/documentation/quick-start">
                 <a>
-                  <Buttons
+                  <Button
                     color="lightBlue"
                     size="lg"
-                    onMouseUp={rippleLight}
+                    ripple="light"
                     style={{ width: '100%', justifyContent: 'center' }}
                   >
                     Get started
-                  </Buttons>
+                  </Button>
                 </a>
               </Link>
               <a
@@ -95,14 +97,14 @@ export default function Presentation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Buttons
+                <Button
                   color="blueGray"
                   size="lg"
-                  onMouseUp={rippleLight}
+                  ripple="light"
                   style={{ width: '100%', justifyContent: 'center' }}
                 >
                   Github Star
-                </Buttons>
+                </Button>
               </a>
             </div>
           </div>
@@ -158,9 +160,9 @@ export default function Presentation() {
 
               <div className="border border-solid border-gray-300 rounded-lg my-4 p-4 pt-6 relative">
                 <h4 className="text-gray-700 mb-2">Example</h4>
-                <Buttons color="lightBlue" onMouseUp={rippleLight}>
+                <Button color="lightBlue" ripple="light">
                   Button
-                </Buttons>
+                </Button>
 
                 <div className="docs-code-preview mt-8">
                   <SyntaxHighlighter
@@ -173,19 +175,16 @@ export default function Presentation() {
                     }}
                   >
                     {`import React from "react";
-import Buttons from "@material-tailwind/react/Buttons";
-import Ripple from "material-ripple-effects";
+import Button from "@material-tailwind/react/Button";
 
-export default function Buttons() {
-  const ripple = new Ripple();
-
+export default function Button() {
   return (
-    <Buttons
+    <Button
       color="lightBlue"
-      onMouseUp={(e) => ripple.create(e, 'light')}
+      ripple="light"
     >
       Button
-    </Buttons>
+    </Button>
   )
 }`}
                     ;
@@ -333,7 +332,7 @@ export default function Buttons() {
                 </p>
                 <div className="block pb-6">
                   <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
-                    Buttons
+                    Button
                   </span>
                   <span className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-blue-gray-700 bg-white last:mr-0 mr-2 mt-2">
                     Inputs
@@ -410,7 +409,7 @@ export default function Buttons() {
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/component-menu.png')}
+                    src={require('assets/img/components-menu.png')}
                     className="w-full align-middle rounded absolute shadow-lg"
                     style={{
                       maxWidth: '580px',
@@ -639,7 +638,7 @@ export default function Buttons() {
                     transform:
                       'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)',
                   }}
-                  src={require('assets/img/documentation.png')}
+                  src={require('assets/img/documentation-page.png')}
                 />
               </div>
             </div>
@@ -682,9 +681,9 @@ export default function Buttons() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-block"
               >
-                <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
+                <Button color="blueGray" size="lg" ripple="light">
                   Github Star
-                </Buttons>
+                </Button>
               </a>
             </div>
 
@@ -728,20 +727,16 @@ export default function Buttons() {
                 Do you love this Starter Kit?
               </h3>
               <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
-                Cause if you do, it can be yours now. Hit the buttons below to
+                Cause if you do, it can be yours now. Hit the button below to
                 navigate to get the Free version for your next project. Build a
                 new web app or give an old project a new look!
               </p>
               <div className="flex justify-center gap-4 mt-10">
                 <Link href="/documentation/quick-start">
                   <a>
-                    <Buttons
-                      color="lightBlue"
-                      size="lg"
-                      onMouseUp={rippleLight}
-                    >
+                    <Button color="lightBlue" size="lg" ripple="light">
                       Get started
-                    </Buttons>
+                    </Button>
                   </a>
                 </Link>
                 <a
@@ -749,9 +744,9 @@ export default function Buttons() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
+                  <Button color="blueGray" size="lg" ripple="light">
                     Help With a Star
-                  </Buttons>
+                  </Button>
                 </a>
               </div>
             </div>
