@@ -27,34 +27,47 @@ export default function IndexFooter() {
                 Material Tailwind
               </h4>
               <h5 className="text-base font-light mb-2 text-gray-700 mt-2">
-                Easy to use React components for Tailwind CSS and Material Design.
+                Easy to use React components for Tailwind CSS and Material
+                Design.
               </h5>
               <div className="flex gap-2 mt-6 md:justify-start md:mb-0 mb-8 justify-center">
                 <a
-                  href="#twitter"
-                  className="grid place-items-center bg-white text-blue-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
-                  target="_blank"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#facebook"
+                  href="https://www.facebook.com/CreativeTim"
                   className="grid place-items-center bg-white text-blue-600 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-facebook-square"></i>
                 </a>
                 <a
-                  href="#dribbble"
+                  href="https://www.twitter.com/creativetim"
+                  className="grid place-items-center bg-white text-blue-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://www.dribbble.com/creativetim"
                   className="grid place-items-center bg-white text-pink-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-dribbble"></i>
                 </a>
                 <a
-                  href="#github"
-                  className="grid place-items-center bg-white text-gray-900 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"
+                  className="grid place-items-center bg-white text-red-600 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
                   target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+                <a
+                  href="https://github.com/creativetimofficial"
+                  className="grid place-items-center bg-white text-gray-900 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-github"></i>
                 </a>
@@ -70,7 +83,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation?ref=nnjs-footer"
+                        href="https://www.creative-tim.com/presentation?ref=material-tailwind"
                       >
                         About Us
                       </a>
@@ -78,7 +91,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=nnjs-footer"
+                        href="https://blog.creative-tim.com?ref=material-tailwind"
                       >
                         Blog
                       </a>
@@ -86,7 +99,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial?ref=nnjs-footer"
+                        href="https://www.github.com/creativetimofficial?ref=material-tailwind"
                       >
                         Github
                       </a>
@@ -94,7 +107,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=nnjs-footer"
+                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=material-tailwind"
                       >
                         Free Products
                       </a>
@@ -109,7 +122,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=nnjs-footer"
+                        href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=material-tailwind"
                       >
                         MIT License
                       </a>
@@ -117,7 +130,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=nnjs-footer"
+                        href="https://creative-tim.com/terms?ref=material-tailwind"
                       >
                         Terms & Conditions
                       </a>
@@ -125,7 +138,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=nnjs-footer"
+                        href="https://creative-tim.com/privacy?ref=material-tailwind"
                       >
                         Privacy Policy
                       </a>
@@ -133,7 +146,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us?ref=nnjs-footer"
+                        href="https://creative-tim.com/contact-us?ref=material-tailwind"
                       >
                         Contact Us
                       </a>
@@ -147,9 +160,9 @@ export default function IndexFooter() {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-gray-700 font-medium py-1">
-                Copyright © {new Date().getFullYear()} Notus NextJS by{' '}
+                Copyright © {new Date().getFullYear()} Material Tailwind by{' '}
                 <a
-                  href="https://www.creative-tim.com?ref=nnjs-footer"
+                  href="https://www.creative-tim.com?ref=material-tailwind"
                   className="text-gray-700 hover:text-gray-900 transition-all"
                 >
                   Creative Tim
