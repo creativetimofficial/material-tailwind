@@ -261,8 +261,8 @@ export default function Buttons() {
                           CSS Components
                         </h6>
                         <p className="mb-4 text-gray-700 font-light">
-                          Notus NextJS comes with a huge number of Fully Coded
-                          CSS components.
+                          Material Tailwind comes with a huge number of Fully
+                          Coded CSS components.
                         </p>
                       </div>
                     </div>
@@ -275,8 +275,9 @@ export default function Buttons() {
                           JavaScript Components
                         </h6>
                         <p className="mb-4 text-gray-700 font-light">
-                          We also feature many dynamic components for React,
-                          NextJS, Vue and Angular.
+                          At the moment Material Tailwind only features React
+                          components, and in the near future it will future
+                          VueJS and more
                         </p>
                       </div>
                     </div>
@@ -306,7 +307,7 @@ export default function Buttons() {
                         </h6>
                         <p className="mb-4 text-gray-700 font-light">
                           Built by developers for developers. You will love how
-                          easy is to to work with Notus NextJS.
+                          easy is to to work with Material Tailwind.
                         </p>
                       </div>
                     </div>
@@ -659,7 +660,7 @@ export default function Buttons() {
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blue-gray-200">
                 Since{' '}
                 <a
-                  href="https://tailwindcss.com/?ref=creative"
+                  href="https://tailwindcss.com/?ref=material-tailwind"
                   className="text-blue-gray-50"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -676,7 +677,7 @@ export default function Buttons() {
                 Star!
               </p>
               <a
-                href="https://github.com/creativetimofficial/notus-nextjs?ref=nnjs-index"
+                href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block"
