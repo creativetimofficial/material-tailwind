@@ -1,9 +1,9 @@
 {
-  "name": "md-tailwind",
-  "homepage": "https://demos.creative-tim.com/md-tailwind",
-  "version": "1.0.0",
-  "description": "MD Tailwind, NextJS and React Ui Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/md-tailwind",
+  "name": "material-tailwind",
+  "homepage": "https://material-tailwind.com/",
+  "version": "0.1.0",
+  "description": "Material Tailwind, NextJS and React Ui Kit and Admin by Creative Tim.",
+  "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "7.13.0",
