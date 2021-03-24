@@ -36,7 +36,6 @@ import Popovers from 'pagesComponents/popovers';
 import Tooltips from 'pagesComponents/tooltips';
 import Modals from 'pagesComponents/modals';
 import RegularCard from 'pagesComponents/cards';
-import Ripple from 'material-ripple-effects';
 
 export default function Components() {
   return (
