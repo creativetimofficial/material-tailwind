@@ -1,6 +1,6 @@
 # @material-tailwind
 
-![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-tailwind.svg)</a>
+![version](https://img.shields.io/badge/version-0.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
 
 <div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
@@ -39,13 +39,13 @@ Coming soon components for VueJS, Angular and many more. Add this repository to 
 
 ### React
 
-### Using NPM
+##### Using NPM
 
 ```
 npm i -E @material-tailwind/react
 ```
 
-### Using Yarn
+##### Using Yarn
 
 ```
 yarn add @materia-tailwind/react -E
