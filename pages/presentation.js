@@ -4,6 +4,7 @@ import IndexNavbar from 'pagesComponents/IndexNavbar';
 import IndexFooter from 'pagesComponents/IndexFooter';
 import Buttons from 'components/Buttons/Buttons';
 import Paragraph from 'components/Typography/Paragraph';
+import InputIcon from 'components/Input/InputIcon';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Ripple from 'material-ripple-effects';
@@ -15,29 +16,76 @@ export default function Presentation() {
   return (
     <>
       <IndexNavbar />
-      <section className="header relative items-center flex h-screen">
+      <section className="header relative items-center flex">
         <div className="container max-w-7xl mx-auto">
           <div className="w-full px-4 text-center">
             <img
               src={require('assets/img/material-tailwind-logo.png')}
               alt="Material Tailwind Logo"
-              className="w-56 mx-auto mb-16"
+              className="w-48 mx-auto my-16"
             />
             <h2 className="font-semibold text-6xl text-blue-gray-900">
               Material Tailwind
             </h2>
-            <p className="mt-4 text-xl leading-relaxed text-gray-700">
-              Easy to use React components for Tailwind CSS and Material Design.
+            <p className="mt-4 text-xl leading-relaxed text-gray-700 md:w-9/12 mx-auto">
+              @material-tailwind is an easy to use components library for
+              Tailwind CSS and Material Design. It features multiple React
+              components, all written with Tailwind CSS classes and Material
+              Design guidelines. Coming soon components for VueJS, Angular and
+              many more.
             </p>
-            <div className="mt-12 flex justify-center gap-4">
+
+            <div className="bg-white py-8 mt-8 w-full mx-auto border border-t border-b border-r-0 border-l-0 md:px-8 lg:px-36 md:w-9/12">
+              <h1 className="text-2xl font-medium text-gray-900 mb-4">
+                Subscribe to our Newsletter
+              </h1>
+
+              <p className="text-gray-700 mb-8">
+                Join our newsletter and get news in your inbox every week! We
+                hate spam too, so no worries about this.
+              </p>
+
+              <form>
+                <div className="flex flex-col gap-4 md:flex-row md:gap-6">
+                  <InputIcon
+                    type="email"
+                    placeholder="Enter Your Email Address"
+                    color="lightBlue"
+                    size="lg"
+                    outline
+                    iconName="email"
+                  />
+                  <Buttons
+                    color="lightBlue"
+                    size="lg"
+                    onClick={(e) => e.preventDefault()}
+                    style={{ justifyContent: 'center' }}
+                  >
+                    Subscribe
+                  </Buttons>
+                </div>
+              </form>
+            </div>
+
+            <div className="mt-12 flex flex-col justify-center gap-4 mb-24 md:flex-row">
               <a href="#how-to-use">
-                <Buttons color="teal" size="lg" onMouseUp={rippleLight}>
+                <Buttons
+                  color="teal"
+                  size="lg"
+                  onMouseUp={rippleLight}
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
                   How to use
                 </Buttons>
               </a>
               <Link href="/documentation/quick-start">
                 <a>
-                  <Buttons color="lightBlue" size="lg" onMouseUp={rippleLight}>
+                  <Buttons
+                    color="lightBlue"
+                    size="lg"
+                    onMouseUp={rippleLight}
+                    style={{ width: '100%', justifyContent: 'center' }}
+                  >
                     Get started
                   </Buttons>
                 </a>
@@ -47,7 +95,12 @@ export default function Presentation() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Buttons color="blueGray" size="lg" onMouseUp={rippleLight}>
+                <Buttons
+                  color="blueGray"
+                  size="lg"
+                  onMouseUp={rippleLight}
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
                   Github Star
                 </Buttons>
               </a>
@@ -77,7 +130,7 @@ export default function Presentation() {
                   borderRadius: '0.5rem',
                 }}
               >
-                npm i --save @material-tailwind
+                npm i -E @material-tailwind/react
               </SyntaxHighlighter>
             </div>
 
@@ -96,7 +149,7 @@ export default function Presentation() {
                   borderRadius: '0.5rem',
                 }}
               >
-                yarn add @material-tailwind
+                yarn add @materia-tailwind/react -E
               </SyntaxHighlighter>
             </div>
 
