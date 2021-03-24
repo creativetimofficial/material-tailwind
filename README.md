@@ -59,19 +59,16 @@ After you have installed `@material-tailwind` into your project, you can import 
 
 ```
 import React from "react";
-import Buttons from "@material-tailwind/react/Buttons";
-import Ripple from "material-ripple-effects";
+import Button from "@material-tailwind/react/Button";
 
-export default function Buttons() {
-  const ripple = new Ripple();
-
+export default function Button() {
   return (
-    <Buttons
+    <Button
       color="lightBlue"
-      onMouseUp={(e) => ripple.create(e, 'light')}
+      ripple="light"
     >
       Button
-    </Buttons>
+    </Button>
   )
 }
 ```
