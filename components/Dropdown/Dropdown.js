@@ -357,7 +357,7 @@ export default function Dropdown({
           }}
         >
           {buttonText}
-          <span className="material-icons text-lg align-middle">
+          <span className="material-icons text-lg leading-none align-middle">
             {dropdownShow ? 'arrow_drop_up' : 'arrow_drop_down'}
           </span>
         </button>
