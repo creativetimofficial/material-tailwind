@@ -4,7 +4,13 @@ const ambient = 0.12;
 const black = '0,0,0';
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: {
+    // enabled: true,
+    // content: ['./pagesComponents/*.js', './pages/*.js', './components/**/*.js'],
+    // options: {
+    //   keyframes: true,
+    // },
+  },
   darkMode: false,
   theme: {
     boxShadow: {
@@ -287,5 +293,5 @@ module.exports = {
     },
   },
 
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [],
 };
