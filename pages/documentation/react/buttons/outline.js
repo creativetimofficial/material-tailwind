@@ -46,7 +46,6 @@ export default function Buttons() {
                 buttonType="outline"
                 size="regular"
                 rounded={false}
-                buttonName="Button"
                 buttonChildren="Button"
                 rippleEffect='ripple="dark"'
                 ripple="dark"
