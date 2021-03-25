@@ -122,7 +122,7 @@ export default function Components() {
                   iconOnly
                   ripple="light"
                 >
-                  <Icon name="favorite" />
+                  <Icon name="favorite" size="2xl" />
                 </Button>
               </div>
             </div>
