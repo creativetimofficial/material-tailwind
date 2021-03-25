@@ -1,10 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
-import 'assets/styles/index.css';
-import 'assets/styles/docs.scss';
 import 'material-design-icons/iconfont/material-icons.css';
-import 'material-ripple-effects';
+import 'assets/styles/docs.scss';
+import 'assets/styles/index.css';
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
