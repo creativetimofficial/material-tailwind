@@ -46,7 +46,6 @@ export default function Buttons() {
                 buttonType="filled"
                 size="regular"
                 rounded={false}
-                buttonName="Button"
                 buttonChildren="Button"
                 rippleEffect='ripple="light"'
                 ripple="light"
