@@ -2,21 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  /* Tippy Arrow */
-  .arrow-light .tippy-svg-arrow {
-    fill: #fff;
-  }
-
-  .arrow-dark .tippy-svg-arrow {
-    fill: rgba(0, 0, 0, 0.8);
-  }
-
-  /* Tippy Animation */
-  .tippy-box[data-animation='scale'] {
-    transform-origin: top left !important;
-  }
-
+@layer utilities {
   /* Material Inputs */
   .md-input + label:after {
     content: '';
@@ -68,12 +54,6 @@
   }
 
   /* Material Input Colors */
-  .md-input-white:focus + label:after {
-    @apply border-white;
-  }
-  .md-input-black:focus + label:after {
-    @apply border-black;
-  }
   .md-input-blue-gray-50:focus + label:after {
     @apply border-blue-gray-50;
   }
@@ -646,16 +626,6 @@
   }
 
   /* Material Input Outline Colors */
-  .md-input-outline-white:focus + label,
-  .md-input-outline-white:focus + label:before,
-  .md-input-outline-white:focus + label:after {
-    @apply border-white text-white;
-  }
-  .md-input-outline-black:focus + label,
-  .md-input-outline-black:focus + label:before,
-  .md-input-outline-black:focus + label:after {
-    @apply border-black text-black;
-  }
   .md-input-outline-blue-gray-50:focus + label,
   .md-input-outline-blue-gray-50:focus + label:before,
   .md-input-outline-blue-gray-50:focus + label:after {
@@ -1606,4 +1576,18 @@
   .md-input-outline-red-900:focus + label:after {
     @apply border-red-900 text-red-900;
   }
+}
+
+/* Tippy Animation */
+.tippy-box[data-animation='scale'] {
+  transform-origin: top left !important;
+}
+
+/* Tippy Arrow */
+.arrow-light .tippy-svg-arrow {
+  fill: #fff;
+}
+
+.arrow-dark .tippy-svg-arrow {
+  fill: rgba(0, 0, 0, 0.8);
 }
