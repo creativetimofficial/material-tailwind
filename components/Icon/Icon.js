@@ -38,7 +38,7 @@ export default function Icon({
         {...rest}
         className={`${family} ${colors[color]} ${
           size ? `text-${size}` : 'text-base'
-        }`}
+        } leading-none`}
       >
         {name}
       </span>
