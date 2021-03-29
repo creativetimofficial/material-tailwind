@@ -57,7 +57,7 @@ export default function IndexFooter() {
                 </a>
                 <a
                   href="https://www.dribbble.com/creativetim"
-                  className="grid place-items-center bg-white text-pink-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
+                  className="relative grid place-items-center bg-white text-pink-400 shadow-md font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
