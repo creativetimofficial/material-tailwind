@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import DocsSnippet from 'components/Documentation/DocsSnippet';
-import Frameworks from 'components/Documentation/Frameworks';
-import Card from 'components/Card/Card';
-import CardImage from 'components/Card/CardImage';
-import CardBody from 'components/Card/CardBody';
-import CardFooter from 'components/Card/CardFooter';
-import H6 from 'components/Typography/Heading6';
-import Paragraph from 'components/Typography/Paragraph';
-import Button from 'components/Button/Button';
-import Ripple from 'material-ripple-effects';
+import React, { useState } from "react";
+import DocsSnippet from "components/Documentation/DocsSnippet";
+import Frameworks from "components/Documentation/Frameworks";
+import Card from "components/Card/Card";
+import CardImage from "components/Card/CardImage";
+import CardBody from "components/Card/CardBody";
+import CardFooter from "components/Card/CardFooter";
+import H6 from "components/Typography/Heading6";
+import Paragraph from "components/Typography/Paragraph";
+import Button from "components/Button/Button";
 
 export default function CardCode({ copyText, onCopy }) {
-  const [type] = useState('react');
+  const [type] = useState("react");
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
-  const ripple = new Ripple();
 
   const codeToShow = `import React from "react";
 import Card from "@material-tailwind/react/Card";
