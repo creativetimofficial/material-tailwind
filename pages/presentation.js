@@ -6,7 +6,7 @@ import Button from "components/Button/Button";
 import Paragraph from "components/Typography/Paragraph";
 import InputIcon from "components/Input/InputIcon";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { shadesOfPurple } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export default function Presentation() {
   return (
@@ -123,15 +123,7 @@ export default function Presentation() {
                 Install Material Tailwind via NPM
               </Paragraph>
 
-              <SyntaxHighlighter
-                language="jsx"
-                style={shadesOfPurple}
-                customStyle={{
-                  fontSize: "0.875rem",
-                  padding: "16px 20px",
-                  borderRadius: "0.5rem",
-                }}
-              >
+              <SyntaxHighlighter language="html" style={a11yDark}>
                 npm i -E @material-tailwind/react
               </SyntaxHighlighter>
             </div>
@@ -142,15 +134,7 @@ export default function Presentation() {
                 Install Material Tailwind via Yarn
               </Paragraph>
 
-              <SyntaxHighlighter
-                language="jsx"
-                style={shadesOfPurple}
-                customStyle={{
-                  fontSize: "0.875rem",
-                  padding: "16px 20px",
-                  borderRadius: "0.5rem",
-                }}
-              >
+              <SyntaxHighlighter language="html" style={a11yDark}>
                 yarn add @materia-tailwind/react -E
               </SyntaxHighlighter>
             </div>
@@ -165,15 +149,7 @@ export default function Presentation() {
                 </Button>
 
                 <div className="docs-code-preview mt-8">
-                  <SyntaxHighlighter
-                    language="jsx"
-                    style={shadesOfPurple}
-                    customStyle={{
-                      fontSize: "0.875rem",
-                      padding: "16px 20px !important",
-                      borderRadius: "0.5rem",
-                    }}
-                  >
+                  <SyntaxHighlighter language="jsx" style={a11yDark}>
                     {`import React from "react";
 import Button from "@material-tailwind/react/Button";
 
