@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { withRouter } from 'next/router';
+import React from "react";
+import Link from "next/link";
+import { withRouter } from "next/router";
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -62,20 +62,16 @@ class Sidebar extends React.Component {
       }
       if (prop.routes) {
         return (
-          <div className="mb-6" key={key}>
-            <Link
-              href={prop.path}
-              as={
-                (process.env.NODE_ENV === 'production'
-                  ? '/learning-lab/tailwind-starter-kit'
-                  : '') + prop.path
-              }
-            >
-              <a className="text-gray-800 hover:text-gray-900 text-xs uppercase font-bold block py-1 px-4 no-underline">
+          <div className="mb-8">
+            <div className="flex items-center gap-2" key={key}>
+              <i
+                className={`${prop.icon} bg-gradient-to-tr from-light-blue-700 to-light-blue-500 p-2 leading-none rounded-lg text-xs text-white`}
+              />
+              <h4 className="text-gray-900 text-base font-medium">
                 {prop.name}
-              </a>
-            </Link>
-            <ul className="block flex-wrap list-none pl-0 mb-0 mt-0">
+              </h4>
+            </div>
+            <ul className="block flex-wrap list-none pl-0 mb-0 mt-3">
               {this.getRoutes(prop.routes)}
             </ul>
           </div>
@@ -89,30 +85,30 @@ class Sidebar extends React.Component {
               href="#pablo"
               className={
                 (this.state[prop.state]
-                  ? 'text-light-blue-500 font-semibold'
-                  : 'text-gray-600 hover:text-gray-800 ') +
-                ' text-sm block mb-2 mx-4 no-underline'
+                  ? "text-light-blue-500"
+                  : "text-gray-700 hover:text-gray-900 ") +
+                " capitalize text-sm px-2.5 py-1.5 ml-7 rounded-lg block transition-all duration-300"
               }
               onClick={(e) => {
                 e.preventDefault();
                 this.setState({ [prop.state]: !this.state[prop.state] });
               }}
             >
-              {prop.name}{' '}
+              {prop.name}{" "}
               <span
                 className="material-icons text-xs align-middle"
                 style={{
-                  fontSize: '16px',
-                  fontWeight: 'bold',
+                  fontSize: "16px",
+                  fontWeight: "bold",
                 }}
               >
-                keyboard_arrow_{this.state[prop.state] ? 'up' : 'down'}
+                keyboard_arrow_{this.state[prop.state] ? "up" : "down"}
               </span>
             </a>
             <ul
               className={
-                (this.state[prop.state] ? 'block ' : 'hidden ') +
-                'flex-wrap list-none pl-2 mb-0 mt-0'
+                (this.state[prop.state] ? "block " : "hidden ") +
+                "flex-wrap list-none ml-2"
               }
             >
               {this.getRoutes(prop.subRoutes)}
@@ -122,20 +118,13 @@ class Sidebar extends React.Component {
       } else {
         return (
           <li key={key}>
-            <Link
-              href={prop.path}
-              as={
-                (process.env.NODE_ENV === 'production'
-                  ? '/learning-lab/tailwind-starter-kit'
-                  : '') + prop.path
-              }
-            >
+            <Link href={prop.path}>
               <a
                 className={
                   (this.props.router.pathname.indexOf(prop.path) !== -1
-                    ? 'text-light-blue-500 border-l-2 border-solid border-light-blue-500 pl-1 '
-                    : 'text-gray-600 hover:text-gray-800 ') +
-                  'text-sm block mb-2 mx-4 no-underline'
+                    ? "bg-gray-200 text-gray-900 "
+                    : "text-gray-700 hover:text-gray-900 ") +
+                  "capitalize text-sm text-gray-700 px-2.5 py-1.5 ml-7 rounded-lg block transition-all duration-300"
                 }
               >
                 {prop.name}
@@ -148,11 +137,9 @@ class Sidebar extends React.Component {
   };
   render() {
     return (
-      <>
-        <div className="block overflow-y-auto pt-8 pb-4">
-          {this.getRoutes(this.props.routes)}
-        </div>
-      </>
+      <div className="w-72 h-screen px-6 pt-10 pb-16 sticky top-16 z-30 overflow-y-scroll border border-t-0 border-b-0 border-l-0 border-r flex-none lg:block hidden">
+        {this.getRoutes(this.props.routes)}
+      </div>
     );
   }
 }
