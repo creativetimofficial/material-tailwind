@@ -1,14 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function LargeHeader(props) {
   return (
-    <div className="mt-8">
-      <h1 className="font-semibold text-gray-900 mt-8 mb-2 text-3xl">
-        {props.title}
-      </h1>
-      <p className="lead text-lg text-gray-600">{props.description}</p>
-      <hr className="mt-6 mb-8 border-b-1 border-gray-300" />
+    <div>
+      <h1 className="text-3xl font-medium text-gray-900 mb-4">{props.title}</h1>
+      <p className="w-10/12 text-gray-700 font-light">{props.description}</p>
+      <hr className="border border-t border-b-0 border-l-0 border-r-0 border-gray-200 mt-10 mb-12" />
     </div>
   );
 }
