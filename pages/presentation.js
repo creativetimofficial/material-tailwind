@@ -1,12 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
-import IndexNavbar from 'pagesComponents/IndexNavbar';
-import IndexFooter from 'pagesComponents/IndexFooter';
-import Button from 'components/Button/Button';
-import Paragraph from 'components/Typography/Paragraph';
-import InputIcon from 'components/Input/InputIcon';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { shadesOfPurple } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import React from "react";
+import Link from "next/link";
+import IndexNavbar from "pagesComponents/IndexNavbar";
+import IndexFooter from "pagesComponents/IndexFooter";
+import Button from "components/Button/Button";
+import Paragraph from "components/Typography/Paragraph";
+import InputIcon from "components/Input/InputIcon";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { shadesOfPurple } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 export default function Presentation() {
   return (
@@ -16,7 +16,7 @@ export default function Presentation() {
         <div className="container max-w-7xl mx-auto">
           <div className="w-full px-4 text-center">
             <img
-              src={require('assets/img/material-tailwind-logo.png')}
+              src={require("assets/img/material-tailwind-logo.png")}
               alt="Material Tailwind Logo"
               className="w-48 mx-auto my-16"
             />
@@ -58,8 +58,8 @@ export default function Presentation() {
                       onClick={(e) => e.preventDefault()}
                       ripple="light"
                       style={{
-                        justifyContent: 'center',
-                        width: '100%',
+                        justifyContent: "center",
+                        width: "100%",
                       }}
                     >
                       Subscribe
@@ -75,7 +75,7 @@ export default function Presentation() {
                   color="teal"
                   size="lg"
                   ripple="light"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: "100%", justifyContent: "center" }}
                 >
                   How to use
                 </Button>
@@ -86,7 +86,7 @@ export default function Presentation() {
                     color="lightBlue"
                     size="lg"
                     ripple="light"
-                    style={{ width: '100%', justifyContent: 'center' }}
+                    style={{ width: "100%", justifyContent: "center" }}
                   >
                     Get started
                   </Button>
@@ -101,7 +101,7 @@ export default function Presentation() {
                   color="blueGray"
                   size="lg"
                   ripple="light"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: "100%", justifyContent: "center" }}
                 >
                   Github Star
                 </Button>
@@ -127,9 +127,9 @@ export default function Presentation() {
                 language="jsx"
                 style={shadesOfPurple}
                 customStyle={{
-                  fontSize: '0.875rem',
-                  padding: '16px 20px',
-                  borderRadius: '0.5rem',
+                  fontSize: "0.875rem",
+                  padding: "16px 20px",
+                  borderRadius: "0.5rem",
                 }}
               >
                 npm i -E @material-tailwind/react
@@ -146,9 +146,9 @@ export default function Presentation() {
                 language="jsx"
                 style={shadesOfPurple}
                 customStyle={{
-                  fontSize: '0.875rem',
-                  padding: '16px 20px',
-                  borderRadius: '0.5rem',
+                  fontSize: "0.875rem",
+                  padding: "16px 20px",
+                  borderRadius: "0.5rem",
                 }}
               >
                 yarn add @materia-tailwind/react -E
@@ -169,9 +169,9 @@ export default function Presentation() {
                     language="jsx"
                     style={shadesOfPurple}
                     customStyle={{
-                      fontSize: '0.875rem',
-                      padding: '16px 20px !important',
-                      borderRadius: '0.5rem',
+                      fontSize: "0.875rem",
+                      padding: "16px 20px !important",
+                      borderRadius: "0.5rem",
                     }}
                   >
                     {`import React from "react";
@@ -360,7 +360,7 @@ export default function Button() {
                   href="#css"
                   className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all"
                 >
-                  View All{' '}
+                  View All{" "}
                   <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
                 </a>
               </div>
@@ -369,62 +369,62 @@ export default function Button() {
                 <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
                   <img
                     alt="..."
-                    src={require('assets/img/component-btn.png')}
+                    src={require("assets/img/component-btn.png")}
                     className="w-full align-middle rounded absolute shadow-lg z-20"
                     style={{
-                      maxWidth: '100px',
-                      left: '145px',
-                      top: '-60px',
+                      maxWidth: "100px",
+                      left: "145px",
+                      top: "-60px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/component-profile-card.png')}
+                    src={require("assets/img/component-profile-card.png")}
                     className="w-full align-middle rounded-lg absolute shadow-lg"
                     style={{
-                      maxWidth: '210px',
-                      left: '260px',
-                      top: '-160px',
+                      maxWidth: "210px",
+                      left: "260px",
+                      top: "-160px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/component-info-card.png')}
+                    src={require("assets/img/component-info-card.png")}
                     className="w-full align-middle rounded-lg absolute shadow-lg z-10"
                     style={{
-                      maxWidth: '180px',
-                      left: '40px',
-                      top: '-255px',
+                      maxWidth: "180px",
+                      left: "40px",
+                      top: "-255px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/component-info-2.png')}
+                    src={require("assets/img/component-info-2.png")}
                     className="w-full align-middle rounded-lg absolute shadow-2xl"
                     style={{
-                      maxWidth: '200px',
-                      left: '-50px',
-                      top: '0',
+                      maxWidth: "200px",
+                      left: "-50px",
+                      top: "0",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/components-menu.png')}
+                    src={require("assets/img/components-menu.png")}
                     className="w-full align-middle rounded absolute shadow-lg"
                     style={{
-                      maxWidth: '580px',
-                      left: '-20px',
-                      top: '210px',
+                      maxWidth: "580px",
+                      left: "-20px",
+                      top: "210px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require('assets/img/component-btn-pink.png')}
+                    src={require("assets/img/component-btn-pink.png")}
                     className="w-full align-middle rounded absolute shadow-xl"
                     style={{
-                      maxWidth: '120px',
-                      left: '195px',
-                      top: '95px',
+                      maxWidth: "120px",
+                      left: "195px",
+                      top: "95px",
                     }}
                   />
                 </div>
@@ -559,7 +559,7 @@ export default function Button() {
                 </div>
                 <Link href="/documentation/react/alerts">
                   <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
-                    View all{' '}
+                    View all{" "}
                     <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
                   </a>
                 </Link>
@@ -636,9 +636,9 @@ export default function Button() {
                   className="max-w-full rounded-lg shadow-lg"
                   style={{
                     transform:
-                      'scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)',
+                      "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
                   }}
-                  src={require('assets/img/documentation-page.png')}
+                  src={require("assets/img/documentation-page.png")}
                 />
               </div>
             </div>
@@ -657,7 +657,7 @@ export default function Button() {
                 Open Source
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blue-gray-200">
-                Since{' '}
+                Since{" "}
                 <a
                   href="https://tailwindcss.com/?ref=material-tailwind"
                   className="text-blue-gray-50"
@@ -665,7 +665,7 @@ export default function Button() {
                   rel="noopener noreferrer"
                 >
                   Tailwind CSS
-                </a>{' '}
+                </a>{" "}
                 is an open source project we wanted to <br />
                 continue this movement too. You can give this version a try to
                 feel <br />
@@ -690,7 +690,7 @@ export default function Button() {
             <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
               <i
                 className="fab fa-github text-blue-gray-900 absolute -top-150-px -right-100 opacity-50"
-                style={{ fontSize: '50rem', top: '-150px', right: '-320px' }}
+                style={{ fontSize: "50rem", top: "-150px", right: "-320px" }}
               ></i>
             </div>
           </div>
@@ -724,12 +724,12 @@ export default function Button() {
                 </span>
               </p>
               <h3 className="text-gray-900 font-medium text-3xl mt-4">
-                Do you love this Starter Kit?
+                Do you love Material Tailwind?
               </h3>
               <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-4">
                 Cause if you do, it can be yours now. Hit the button below to
-                navigate to get the Free version for your next project. Build a
-                new web app or give an old project a new look!
+                navigate you to the documentation. Build a new web app or give
+                an old project a new look!
               </p>
               <div className="flex justify-center gap-4 mt-10">
                 <Link href="/documentation/quick-start">
