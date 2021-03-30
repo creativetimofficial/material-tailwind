@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import DocsSnippet from 'components/Documentation/DocsSnippet.js';
-import Frameworks from 'components/Documentation/Frameworks.js';
-import Pagination from 'components/Pagination/Pagination';
-import PaginationItem from 'components/Pagination/PaginationItem';
-import Icon from 'components/Icon/Icon';
+import React, { useState } from "react";
+import DocsSnippet from "components/Documentation/DocsSnippet.js";
+import Frameworks from "components/Documentation/Frameworks.js";
+import Pagination from "components/Pagination/Pagination";
+import PaginationItem from "components/Pagination/PaginationItem";
+import Icon from "components/Icon/Icon";
 
 export default function AlertsCode({ copyText, onCopy }) {
-  const [color, setColor] = useState('lightBlue');
-  const [type] = useState('react');
+  const [color, setColor] = useState("lightBlue");
+  const [type] = useState("react");
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState();
   const onFrameworkClick = Frameworks(type, setShowModal, setModalText);
@@ -21,7 +21,7 @@ export default function Pagination() {
   return (
     <Pagination>
       <PaginationItem href="#last" ripple="dark">
-        <Icon name="keyboard_arrow_left" size="md" />
+        <Icon name="keyboard_arrow_left" />
       </PaginationItem>
       <PaginationItem color="${color}" href="#1" ripple="light">
         1
@@ -39,7 +39,7 @@ export default function Pagination() {
         5
       </PaginationItem>
       <PaginationItem href="#last" ripple="dark">
-        <Icon name="keyboard_arrow_right" size="md" />
+        <Icon name="keyboard_arrow_right" />
       </PaginationItem>
     </Pagination>
   );
@@ -95,7 +95,7 @@ export default function Pagination() {
         <div className="flex justify-center">
           <Pagination>
             <PaginationItem href="#last" ripple="dark">
-              <Icon name="keyboard_arrow_left" size="md" />
+              <Icon name="keyboard_arrow_left" />
             </PaginationItem>
             <PaginationItem color={color} href="#1" ripple="light">
               1
@@ -113,7 +113,7 @@ export default function Pagination() {
               5
             </PaginationItem>
             <PaginationItem href="#last" ripple="dark">
-              <Icon name="keyboard_arrow_right" size="md" />
+              <Icon name="keyboard_arrow_right" />
             </PaginationItem>
           </Pagination>
         </div>
