@@ -1,41 +1,41 @@
-import React from 'react';
-import IndexNavbar from 'pagesComponents/IndexNavbar';
-import H1 from 'components/typography/Heading1.js';
-import H2 from 'components/typography/Heading2.js';
-import H3 from 'components/typography/Heading3.js';
-import H4 from 'components/typography/Heading4.js';
-import H5 from 'components/typography/Heading5.js';
-import H6 from 'components/typography/Heading6.js';
-import Paragraph from 'components/typography/Paragraph.js';
-import LeadText from 'components/typography/LeadText.js';
-import Quote from 'components/typography/Quote.js';
-import Small from 'components/typography/Small.js';
-import Alert from 'components/Alerts/Alert';
-import ClosingAlert from 'components/Alerts/ClosingAlert';
-import Button from 'components/Button/Button';
-import Dropdown from 'components/Dropdown/Dropdown';
-import DropdownItem from 'components/Dropdown/DropdownItem';
-import Icon from 'components/Icon/Icon';
-import Image from 'components/Image/Image';
-import Input from 'components/Input/Input';
-import InputIcon from 'components/Input/InputIcon';
-import Label from 'components/Labels/Label';
-import ClosingLabel from 'components/Labels/ClosingLabel';
-import Pagination from 'components/Pagination/Pagination';
-import PaginationItem from 'components/Pagination/PaginationItem';
-import Progress from 'components/Progress/Progress';
-import { Menu, MenuIcons, MenuLinks } from 'pagesComponents/menus';
+import React from "react";
+import IndexNavbar from "pagesComponents/IndexNavbar";
+import H1 from "components/typography/Heading1.js";
+import H2 from "components/typography/Heading2.js";
+import H3 from "components/typography/Heading3.js";
+import H4 from "components/typography/Heading4.js";
+import H5 from "components/typography/Heading5.js";
+import H6 from "components/typography/Heading6.js";
+import Paragraph from "components/typography/Paragraph.js";
+import LeadText from "components/typography/LeadText.js";
+import Quote from "components/typography/Quote.js";
+import Small from "components/typography/Small.js";
+import Alert from "components/Alerts/Alert";
+import ClosingAlert from "components/Alerts/ClosingAlert";
+import Button from "components/Button/Button";
+import Dropdown from "components/Dropdown/Dropdown";
+import DropdownItem from "components/Dropdown/DropdownItem";
+import Icon from "components/Icon/Icon";
+import Image from "components/Image/Image";
+import Input from "components/Input/Input";
+import InputIcon from "components/Input/InputIcon";
+import Label from "components/Labels/Label";
+import ClosingLabel from "components/Labels/ClosingLabel";
+import Pagination from "components/Pagination/Pagination";
+import PaginationItem from "components/Pagination/PaginationItem";
+import Progress from "components/Progress/Progress";
+import { Menu, MenuIcons, MenuLinks } from "pagesComponents/menus";
 import {
   Navbars,
   NavbarIconsLinks,
   NavbarIcons,
   NavbarLinks,
-} from 'pagesComponents/navbars';
-import { TabIcons, TabLinks } from 'pagesComponents/tabs';
-import Popovers from 'pagesComponents/popovers';
-import Tooltips from 'pagesComponents/tooltips';
-import Modals from 'pagesComponents/modals';
-import RegularCard from 'pagesComponents/cards';
+} from "pagesComponents/navbars";
+import { TabIcons, TabLinks } from "pagesComponents/tabs";
+import Popovers from "pagesComponents/popovers";
+import Tooltips from "pagesComponents/tooltips";
+import Modals from "pagesComponents/modals";
+import RegularCard from "pagesComponents/cards";
 
 export default function Components() {
   return (
@@ -45,7 +45,7 @@ export default function Components() {
         <div className="container max-w-7xl mx-auto">
           <div className="w-full px-4 text-center">
             <img
-              src={require('assets/img/material-tailwind-logo.png')}
+              src={require("assets/img/material-tailwind-logo.png")}
               alt="Material Tailwind Logo"
               className="w-56 mx-auto mb-16"
             />
@@ -462,23 +462,23 @@ export default function Components() {
 
           <div className="flex flex-wrap justify-between gap-8 mt-10">
             <div className="w-64 text-center">
-              <Image src={require('assets/img/team-1-800x800.jpg')} />
+              <Image src={require("assets/img/team-1-800x800.jpg")} />
               <h4 className="text-xl text-blue-gray-700 mt-4">Default</h4>
             </div>
 
             <div className="w-64 text-center">
-              <Image src={require('assets/img/team-2-800x800.jpg')} rounded />
+              <Image src={require("assets/img/team-2-800x800.jpg")} rounded />
               <h4 className="text-xl text-blue-gray-700 mt-4">Rounded</h4>
             </div>
 
             <div className="w-64 text-center">
-              <Image src={require('assets/img/team-3-800x800.jpg')} raised />
+              <Image src={require("assets/img/team-3-800x800.jpg")} raised />
               <h4 className="text-xl text-blue-gray-700 mt-4">Raised</h4>
             </div>
 
             <div className="w-64 text-center">
               <Image
-                src={require('assets/img/team-4-470x470.png')}
+                src={require("assets/img/team-4-470x470.png")}
                 rounded
                 raised
               />
@@ -988,7 +988,7 @@ export default function Components() {
             </ul>
 
             <div className="text-sm text-gray-700 font-medium py-1">
-              Copyright © {new Date().getFullYear()} Notus NextJS by{' '}
+              Copyright © {new Date().getFullYear()} Material Tailwind by{" "}
               <a
                 href="https://www.creative-tim.com?ref=nnjs-footer"
                 className="text-gray-700 hover:text-gray-900"
