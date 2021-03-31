@@ -7,6 +7,7 @@ import Paragraph from "components/Typography/Paragraph";
 import InputIcon from "components/Input/InputIcon";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import PresentationCard from "pagesComponents/presentationCard";
 
 export default function Presentation() {
   return (
@@ -150,18 +151,41 @@ export default function Presentation() {
               </SyntaxHighlighter>
             </div>
 
-            <duv>
+            <div className="mb-16">
+              <h1 className="font-light text-2xl text-gray-700 mb-2">
+                Import Style Sheets
+              </h1>
+              <Paragraph color="gray">
+                Import the{" "}
+                <code className="text-light-blue-500">tailwind.css</code> and{" "}
+                <code className="text-light-blue-500">material-icons.css</code>{" "}
+                into your <code className="text-light-blue-500">app.js</code>{" "}
+                file. Make sure to import the{" "}
+                <code className="text-light-blue-500">tailwind.css</code> style
+                sheet after all other style sheets.
+              </Paragraph>
+
+              <SyntaxHighlighter language="jsx" style={a11yDark}>
+                {`import "material-design-icons/iconfont/material-icons.css";
+import "material-tailwind/react/tailwind.css";`}
+              </SyntaxHighlighter>
+            </div>
+
+            <div>
+              <h1 className="font-light text-2xl text-gray-700 mb-2">
+                Example
+              </h1>
               <Paragraph color="gray">Import the components you need</Paragraph>
 
               <div className="border border-solid border-gray-300 rounded-lg my-4 p-4 pt-6 relative">
-                <h4 className="text-gray-700 mb-2">Example</h4>
-                <Button color="lightBlue" ripple="light">
-                  Button
-                </Button>
+                <div className="pb-4">
+                  <Button color="lightBlue" ripple="light">
+                    Button
+                  </Button>
+                </div>
 
-                <div className="docs-code-preview mt-8">
-                  <SyntaxHighlighter language="jsx" style={a11yDark}>
-                    {`import React from "react";
+                <SyntaxHighlighter language="jsx" style={a11yDark}>
+                  {`import React from "react";
 import Button from "@material-tailwind/react/Button";
 
 export default function Button() {
@@ -174,11 +198,10 @@ export default function Button() {
     </Button>
   )
 }`}
-                    ;
-                  </SyntaxHighlighter>
-                </div>
+                  ;
+                </SyntaxHighlighter>
               </div>
-            </duv>
+            </div>
           </div>
         </div>
       </section>
@@ -203,36 +226,8 @@ export default function Button() {
           </div>
           <div className="container mx-auto">
             <div className="flex flex-wrap items-center">
-              <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
-                <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-xl bg-light-blue-500">
-                  <img
-                    alt="..."
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
-                    className="w-full align-middle rounded-t-xl"
-                  />
-                  <blockquote className="relative p-8 mb-4">
-                    <svg
-                      preserveAspectRatio="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 583 95"
-                      className="absolute left-0 w-full block h-95-px -top-16"
-                    >
-                      <polygon
-                        points="-30,95 583,95 583,65"
-                        className="text-light-blue-500 fill-current"
-                      ></polygon>
-                    </svg>
-                    <h4 className="text-xl font-bold text-white">
-                      Great for your awesome project
-                    </h4>
-                    <p className="text-md font-light mt-2 text-white">
-                      Putting together a page has never been easier than
-                      matching together pre-made components. From landing pages
-                      presentation to login areas, you can easily customise and
-                      built your pages.
-                    </p>
-                  </blockquote>
-                </div>
+              <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32 relative z-30">
+                <PresentationCard />
               </div>
 
               <div className="w-full md:w-6/12 px-4">
@@ -275,11 +270,10 @@ export default function Button() {
                           <i className="fas fa-newspaper"></i>
                         </div>
                         <h6 className="text-xl mb-1 font-medium text-gray-900">
-                          Pages
+                          Templates
                         </h6>
                         <p className="mb-4 text-gray-700 font-light">
-                          This extension also comes with 3 sample pages. They
-                          are fully coded so you can start working instantly.
+                          Coming soon.
                         </p>
                       </div>
                     </div>
