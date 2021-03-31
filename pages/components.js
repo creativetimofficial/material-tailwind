@@ -956,7 +956,8 @@ export default function Components() {
               <li>
                 <a
                   className="text-gray-700 hover:text-gray-900 font-medium block pb-2 text-sm"
-                  href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=nnjs-footer"
+                  target="_blank"
+                  href="https://github.com/creativetimofficial/material-tailwind/blob/master/LICENSE.md?ref=material-tailwind"
                 >
                   MIT License
                 </a>
@@ -964,23 +965,26 @@ export default function Components() {
               <li>
                 <a
                   className="text-gray-700 hover:text-gray-900 font-medium block pb-2 text-sm"
-                  href="https://creative-tim.com/terms?ref=nnjs-footer"
+                  target="_blank"
+                  href="https://github.com/creativetimofficial/material-tailwind/blob/master/CONTRIBUTING.md?ref=material-tailwind"
                 >
-                  Terms & Conditions
+                  Contribute
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-700 hover:text-gray-900 font-medium block pb-2 text-sm"
-                  href="https://creative-tim.com/privacy?ref=nnjs-footer"
+                  target="_blank"
+                  href="https://github.com/creativetimofficial/material-tailwind/blob/master/CODE_OF_CONDUCT.md?ref=material-tailwind"
                 >
-                  Privacy Policy
+                  Code of Conduct
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-700 hover:text-gray-900 font-medium block pb-2 text-sm"
-                  href="https://creative-tim.com/contact-us?ref=nnjs-footer"
+                  target="_blank"
+                  href="https://creative-tim.com/contact-us?ref=material-tailwind"
                 >
                   Contact Us
                 </a>
@@ -990,7 +994,7 @@ export default function Components() {
             <div className="text-sm text-gray-700 font-medium py-1">
               Copyright © {new Date().getFullYear()} Material Tailwind by{" "}
               <a
-                href="https://www.creative-tim.com?ref=nnjs-footer"
+                href="https://www.creative-tim.com?ref=material-tailwind"
                 className="text-gray-700 hover:text-gray-900"
               >
                 Creative Tim
