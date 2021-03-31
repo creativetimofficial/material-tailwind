@@ -41,7 +41,13 @@ export default function Presentation() {
                 hate spam too, so no worries about this.
               </p>
 
-              <form>
+              <form
+                action="https://material-tailwind.us1.list-manage.com/subscribe/post?u=e97df4875fc1b2fb28f609b88&amp;id=628d9b1722"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+              >
                 <div className="flex flex-col gap-4 md:flex-row md:gap-6">
                   <InputIcon
                     type="email"
@@ -50,17 +56,22 @@ export default function Presentation() {
                     size="lg"
                     outline
                     iconName="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    required
                   />
                   <div className="w-full md:w-48">
                     <Button
                       color="lightBlue"
                       size="lg"
-                      onClick={(e) => e.preventDefault()}
                       ripple="light"
                       style={{
                         justifyContent: "center",
                         width: "100%",
                       }}
+                      type="submit"
+                      name="subscribe"
+                      id="mc-embedded-subscribe"
                     >
                       Subscribe
                     </Button>
