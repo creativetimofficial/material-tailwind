@@ -94,7 +94,14 @@ export default function Presentation() {
                   How to use
                 </Button>
               </a>
-              <Link href="/documentation/quick-start">
+              <Link
+                href="/documentation/quick-start"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/documentation/quick-start"
+                }
+              >
                 <a>
                   <Button
                     color="lightBlue"
@@ -339,7 +346,14 @@ export default function Example() {
                     Typography
                   </span>
                 </div>
-                <Link href="/documentation/react/buttons/filled">
+                <Link
+                  href="/documentation/react/buttons/filled"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/documentation/react/buttons/filled"
+                  }
+                >
                   <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
                     View All{" "}
                     <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
@@ -429,7 +443,15 @@ export default function Example() {
                         </p>
                       </div>
                     </a>
-                    <Link href="/documentation/react/alerts">
+                    <Link
+                      href="/documentation/react/alerts"
+
+                      as={
+                        (process.env.NODE_ENV === "production"
+                          ? "/material-tailwind"
+                          : "") + "/documentation/react/alerts"
+                      }
+                    >
                       <a>
                         <div className="bg-light-blue-500 shadow-xl rounded-lg text-center p-8 mt-8">
                           <img
@@ -539,7 +561,14 @@ export default function Example() {
                     Tooltips
                   </span>
                 </div>
-                <Link href="/documentation/react/alerts">
+                <Link
+                  href="/documentation/react/alerts"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/documentation/react/alerts"
+                  }
+                >
                   <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
                     View all{" "}
                     <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
@@ -710,7 +739,14 @@ export default function Example() {
                 an old project a new look!
               </p>
               <div className="flex justify-center gap-4 mt-10">
-                <Link href="/documentation/quick-start">
+                <Link
+                  href="/documentation/quick-start"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/documentation/quick-start"
+                  }
+                >
                   <a>
                     <Button color="lightBlue" size="lg" ripple="light">
                       Get started
