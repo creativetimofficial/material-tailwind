@@ -14,7 +14,7 @@ export default function Tab() {
       <Container>
         <Heading
           title="React Tabs"
-          description="React tab component with menu items and content."
+          description="Material Tailwind tab components with menu items and content."
         />
 
         <TabTextCode
