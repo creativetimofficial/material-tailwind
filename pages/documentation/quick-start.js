@@ -16,7 +16,7 @@ export default function QuickStart() {
       <Container>
         <Heading
           title="Quick Start"
-          description="To get started without any installation, just copy one of the bellow links to our compiled version of Tailwindcss and add it into your project."
+          description="Learn how to use Material Tailwind components from this documentation to quickly and easily create elegant and flexible pages."
         />
         <Heading title="Installation" />
         <SmallHeading
@@ -56,7 +56,7 @@ export default function QuickStart() {
         <div className="mb-12">
           <SyntaxHighlighter language="jsx" style={a11yDark}>
             {`import "material-design-icons/iconfont/material-icons.css";
-import "material-tailwind/react/tailwind.css";`}
+import "@material-tailwind/react/tailwind.css";`}
           </SyntaxHighlighter>
         </div>
 
