@@ -23,6 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .next/
-out/
 
 .eslintcache
