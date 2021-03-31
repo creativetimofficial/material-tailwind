@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com/",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "assets:package": "cp package.json lib/package.json && cp README.md lib/README.md && cp LICENSE.md lib/LICENSE.md && cp ISSUE_TEMPLATE.md lib/ISSUE_TEMPLATE.md",
     "make:package": "rm -rf lib/ && babel components/**/* -d lib --ignore components/Documentation && create-index ./lib",
     "copy:module": "cp -r node_modules/material-ripple-effects lib/ && npm run build:tailwind",
-    "prep:package": "cp -r lib-babel.config.json babel.config.json && npm run make:package && npm run assets:package && rm -rf babel.config.json",
+    "prep:package": "cp -r lib-babel.config.json babel.config.json && npm run make:package && npm run assets:package && rm -rf babel.config.json && npm run copy:module",
     "publish:package": "npm run prep:package && cd lib && npm publish --access=public && cd ../",
     "deploy": "npm run build && npm run export && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
   },
