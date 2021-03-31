@@ -51,6 +51,16 @@ npm i -E @material-tailwind/react
 yarn add @materia-tailwind/react -E
 ```
 
+##### Import Style Sheets
+
+Import the `tailwind.css` and `material-icons.css` into your `app.js` file. Make sure to import the `tailwind.css` style
+sheet after all other style sheets.
+
+```
+import "material-design-icons/iconfont/material-icons.css";
+import "@material-tailwind/react/tailwind.css";
+```
+
 ## Documentation - React
 
 After you have installed `@material-tailwind` into your project, you can import and use our components like so:
@@ -61,7 +71,7 @@ After you have installed `@material-tailwind` into your project, you can import 
 import React from "react";
 import Button from "@material-tailwind/react/Button";
 
-export default function Button() {
+export default function Example() {
   return (
     <Button
       color="lightBlue"
