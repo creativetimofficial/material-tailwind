@@ -118,7 +118,14 @@ class Sidebar extends React.Component {
       } else {
         return (
           <li key={key}>
-            <Link href={prop.path}>
+            <Link
+              href={prop.path}
+              as={
+                (process.env.NODE_ENV === "production"
+                  ? "/material-tailwind"
+                  : "") + prop.path
+              }
+            >
               <a
                 className={
                   (this.props.router.pathname.indexOf(prop.path) !== -1
