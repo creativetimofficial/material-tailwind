@@ -25,6 +25,10 @@ export default function MyApp({ Component, pageProps }) {
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
           crossOrigin="anonymous"
         />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
         <link rel="shortcut icon" href={require("assets/img/favicon.ico")} />
         <link
           rel="apple-touch-icon"
