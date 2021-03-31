@@ -42,7 +42,7 @@
     "copy:module": "cp -r node_modules/material-ripple-effects lib/",
     "prep:package": "cp -r lib-babel.config.js babel.config.js && npm run make:package && npm run assets:package && rm -rf babel.config.js",
     "publish:package": "npm run prep:package",
-    "deploy": "npm run build && npm run export && gh-pages -d out"
+    "deploy": "npm run build && npm run export && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
