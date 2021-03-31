@@ -105,7 +105,7 @@ export default function Presentation() {
                 </a>
               </Link>
               <a
-                href="https://github.com/creativetimofficial/md-tailwind"
+                href="https://github.com/creativetimofficial/material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -167,7 +167,7 @@ export default function Presentation() {
 
               <SyntaxHighlighter language="jsx" style={a11yDark}>
                 {`import "material-design-icons/iconfont/material-icons.css";
-import "material-tailwind/react/tailwind.css";`}
+import "@material-tailwind/react/tailwind.css";`}
               </SyntaxHighlighter>
             </div>
 
