@@ -1,20 +1,22 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Header({ title }) {
+  const router = useRouter();
   return (
     <Head>
       {/* Canonical SEO */}
       <link
         rel="canonical"
-        href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/quick-start"
+        href={"https://material-tailwind.com" + router.pathname}
       />
       {/* Open Graph data */}
       <meta
         property="og:url"
-        content="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/quick-start"
+        content={"https://material-tailwind.com" + router.pathname}
       />
-      <title>{title} | Tailwind Starter Kit by Creative Tim</title>
+      <title>{title} | Material Tailwind by Creative Tim</title>
     </Head>
   );
 }
