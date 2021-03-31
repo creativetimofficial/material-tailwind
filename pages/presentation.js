@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Header from "components/Documentation/Header";
 import IndexNavbar from "pagesComponents/IndexNavbar";
 import IndexFooter from "pagesComponents/IndexFooter";
 import Button from "components/Button/Button";
@@ -12,6 +13,7 @@ import PresentationCard from "pagesComponents/presentationCard";
 export default function Presentation() {
   return (
     <>
+      <Header title="Presentation" />
       <IndexNavbar />
       <section className="header relative items-center flex">
         <div className="container max-w-7xl mx-auto">
