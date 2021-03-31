@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import Ripple from 'material-ripple-effects';
+import React from "react";
+import Link from "next/link";
+import Ripple from "material-ripple-effects";
 
 export default function IndexNavbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const ripple = new Ripple();
-  const rippleDark = (e) => ripple.create(e, 'dark');
+  const rippleDark = (e) => ripple.create(e, "dark");
 
   return (
     <nav className="sticky top-0 z-40 lg:z-40 w-full bg-white flex items-center justify-between px-2 py-4">
@@ -26,8 +26,8 @@ export default function IndexNavbar(props) {
         </div>
         <div
           className={
-            'lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none' +
-            (navbarOpen ? ' block' : ' hidden')
+            "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none" +
+            (navbarOpen ? " block" : " hidden")
           }
           id="example-navbar-warning"
         >
@@ -61,7 +61,7 @@ export default function IndexNavbar(props) {
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                href="https://github.com/creativetimofficial/md-tailwind"
+                href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -76,7 +76,7 @@ export default function IndexNavbar(props) {
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                href="https://github.com/creativetimofficial/md-tailwind/issues"
+                href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
               >
