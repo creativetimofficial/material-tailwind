@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function IndexFooter() {
   return (
@@ -99,7 +99,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://blog.creative-tim.com?ref=material-tailwind"
+                        href=" https://www.creative-tim.com/blog?ref=material-tailwind"
                       >
                         Blog
                       </a>
@@ -115,7 +115,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free?ref=material-tailwind"
+                        href=" https://www.creative-tim.com/templates/free?ref=material-tailwind"
                       >
                         Free Products
                       </a>
@@ -130,7 +130,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://github.com/creativetimofficial/notus-nextjs/blob/master/LICENSE.md?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/LICENSE.md?ref=material-tailwind"
                       >
                         MIT License
                       </a>
@@ -138,17 +138,17 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://creative-tim.com/terms?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/CONTRIBUTING.md?ref=material-tailwind"
                       >
-                        Terms & Conditions
+                        Contribute
                       </a>
                     </li>
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/CODE_OF_CONDUCT.md?ref=material-tailwind"
                       >
-                        Privacy Policy
+                        Code of Conduct
                       </a>
                     </li>
                     <li>
@@ -168,7 +168,7 @@ export default function IndexFooter() {
           <div className="flex flex-wrap items-center md:justify-between justify-center">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-gray-700 font-medium py-1">
-                Copyright © {new Date().getFullYear()} Material Tailwind by{' '}
+                Copyright © {new Date().getFullYear()} Material Tailwind by{" "}
                 <a
                   href="https://www.creative-tim.com?ref=material-tailwind"
                   className="text-gray-700 hover:text-gray-900 transition-all"
