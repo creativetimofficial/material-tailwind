@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "components/Documentation/Header";
 import IndexNavbar from "pagesComponents/IndexNavbar";
 import H1 from "components/typography/Heading1.js";
 import H2 from "components/typography/Heading2.js";
@@ -40,6 +41,7 @@ import RegularCard from "pagesComponents/cards";
 export default function Components() {
   return (
     <>
+      <Header title="Components" />
       <IndexNavbar />
       <section className="header relative items-center flex h-screen">
         <div className="container max-w-7xl mx-auto">
