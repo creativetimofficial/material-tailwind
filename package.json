@@ -34,13 +34,15 @@
     "start": "next start",
     "build": "next build",
     "dev": "next dev",
+    "export": "next export",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "build:tailwind": "tailwind build assets/styles/index.css --minify -o lib/tailwind.css",
     "assets:package": "cp package.json lib/package.json && cp README.md lib/README.md && cp LICENSE.md lib/LICENSE.md && cp ISSUE_TEMPLATE.md lib/ISSUE_TEMPLATE.md",
     "make:package": "rm -rf lib/ && babel components/**/* -d lib --ignore components/Documentation && create-index ./lib",
     "copy:module": "cp -r node_modules/material-ripple-effects lib/",
-    "prep:package": "npm run make:package && npm run assets:package",
-    "publish:package": "npm run prep:package"
+    "prep:package": "cp -r lib-babel.config.js babel.config.js && npm run make:package && npm run assets:package && rm -rf babel.config.js",
+    "publish:package": "npm run prep:package",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
   },
   "eslintConfig": {
     "extends": "react-app"
