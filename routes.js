@@ -5,10 +5,6 @@ const routes = [
     path: "/documentation/quick-start",
     routes: [
       {
-        path: "/documentation/overview",
-        name: "Overview",
-      },
-      {
         path: "/documentation/license",
         name: "License",
       },
