@@ -91,6 +91,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://www.creative-tim.com/presentation?ref=material-tailwind"
                       >
                         About Us
@@ -99,6 +100,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href=" https://www.creative-tim.com/blog?ref=material-tailwind"
                       >
                         Blog
@@ -107,6 +109,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://www.github.com/creativetimofficial?ref=material-tailwind"
                       >
                         Github
@@ -115,6 +118,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href=" https://www.creative-tim.com/templates/free?ref=material-tailwind"
                       >
                         Free Products
@@ -130,6 +134,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://github.com/creativetimofficial/material-tailwind/blob/master/LICENSE.md?ref=material-tailwind"
                       >
                         MIT License
@@ -138,6 +143,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://github.com/creativetimofficial/material-tailwind/blob/master/CONTRIBUTING.md?ref=material-tailwind"
                       >
                         Contribute
@@ -146,6 +152,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://github.com/creativetimofficial/material-tailwind/blob/master/CODE_OF_CONDUCT.md?ref=material-tailwind"
                       >
                         Code of Conduct
@@ -154,6 +161,7 @@ export default function IndexFooter() {
                     <li>
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
+                        target="_blank"
                         href="https://creative-tim.com/contact-us?ref=material-tailwind"
                       >
                         Contact Us
