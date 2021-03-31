@@ -1,8 +1,8 @@
 {
-  "name": "material-tailwind",
+  "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com/",
   "version": "0.1.0",
-  "description": "Material Tailwind, NextJS and React Ui Kit and Admin by Creative Tim.",
+  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +18,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.3.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.7.2",
     "npm": "^7.5.2",
     "path": "0.12.7",
     "postcss": "^7.0.35",
@@ -34,13 +34,15 @@
     "start": "next start",
     "build": "next build",
     "dev": "next dev",
+    "export": "next export",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "build:tailwind": "tailwind build assets/styles/index.css --minify -o lib/tailwind.css",
     "assets:package": "cp package.json lib/package.json && cp README.md lib/README.md && cp LICENSE.md lib/LICENSE.md && cp ISSUE_TEMPLATE.md lib/ISSUE_TEMPLATE.md",
     "make:package": "rm -rf lib/ && babel components/**/* -d lib --ignore components/Documentation && create-index ./lib",
-    "copy:module": "cp -r node_modules/material-ripple-effects lib/",
-    "prep:package": "npm run make:package && npm run assets:package",
-    "publish:package": "npm run prep:package"
+    "copy:module": "cp -r node_modules/material-ripple-effects lib/ && npm run build:tailwind",
+    "prep:package": "cp -r lib-babel.config.json babel.config.json && npm run make:package && npm run assets:package && rm -rf babel.config.json",
+    "publish:package": "npm run prep:package && cd lib && npm publish --access=public && cd ../",
+    "deploy": "npm run build && npm run export && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
