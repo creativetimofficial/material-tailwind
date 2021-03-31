@@ -11,7 +11,14 @@ export default function IndexNavbar(props) {
     <nav className="sticky top-0 z-40 lg:z-40 w-full bg-white flex items-center justify-between px-2 py-4">
       <div className="container max-w-7xl px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <Link href="/">
+          <Link
+            href="/"
+            as={
+              (process.env.NODE_ENV === "production"
+                ? "/material-tailwind"
+                : "") + "/"
+            }
+          >
             <a className="text-gray-900 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
               Material Tailwind
             </a>
@@ -36,7 +43,14 @@ export default function IndexNavbar(props) {
               className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
-              <Link href="/documentation/quick-start">
+              <Link
+                href="/documentation/quick-start"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "documentation/quick-start"
+                }
+              >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="far fa-file-alt text-lg leading-lg " />
                   <span className="inline-block ml-2">Docs</span>
@@ -47,7 +61,14 @@ export default function IndexNavbar(props) {
               className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
-              <Link href="/components">
+              <Link
+                href="/components"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/components"
+                }
+              >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="fas fa-cubes text-lg leading-lg " />
                   <span className="inline-block ml-2">Components</span>
