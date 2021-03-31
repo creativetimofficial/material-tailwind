@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.1.1] 2021-03-31
+
+### Bug fixing
+
+- Solve ripple effect and css publish on npm
+
 ## [0.1.0] 2021-03-31
 
 ### Original Release
