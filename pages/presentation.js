@@ -332,13 +332,12 @@ export default function Button() {
                     Typography
                   </span>
                 </div>
-                <a
-                  href="#css"
-                  className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all"
-                >
-                  View All{" "}
-                  <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-                </a>
+                <Link href="/documentation/react/buttons/filled">
+                  <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
+                    View All{" "}
+                    <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
+                  </a>
+                </Link>
               </div>
 
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
@@ -610,10 +609,6 @@ export default function Button() {
                 <img
                   alt="..."
                   className="max-w-full rounded-lg shadow-lg"
-                  style={{
-                    transform:
-                      "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
-                  }}
                   src={require("assets/img/documentation-page.png")}
                 />
               </div>
@@ -716,7 +711,7 @@ export default function Button() {
                   </a>
                 </Link>
                 <a
-                  href="https://github.com/creativetimofficial/md-tailwind"
+                  href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
