@@ -144,7 +144,7 @@ export default function IndexFooter() {
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
                         target="_blank"
-                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/CONTRIBUTING.md?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind"
                       >
                         Contribute
                       </a>
@@ -153,7 +153,7 @@ export default function IndexFooter() {
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
                         target="_blank"
-                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/CODE_OF_CONDUCT.md?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/main/CODE_OF_CONDUCT.md?ref=material-tailwind"
                       >
                         Code of Conduct
                       </a>
