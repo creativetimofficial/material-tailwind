@@ -1,9 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
-import 'material-design-icons/iconfont/material-icons.css';
-import 'assets/styles/docs.scss';
-import 'assets/styles/index.css';
+import "material-design-icons/iconfont/material-icons.css";
+import "assets/styles/docs.scss";
+import "assets/styles/index.css";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -25,11 +25,11 @@ export default function MyApp({ Component, pageProps }) {
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
           crossOrigin="anonymous"
         />
-        <link rel="shortcut icon" href={require('assets/img/favicon.ico')} />
+        <link rel="shortcut icon" href={require("assets/img/favicon.ico")} />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
-          href={require('assets/img/apple-icon.png')}
+          href={require("assets/img/apple-icon.png")}
         />
         {/* Canonical SEO */}
         {/*  Social tags      */}
