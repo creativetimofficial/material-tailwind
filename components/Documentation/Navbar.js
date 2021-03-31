@@ -60,7 +60,7 @@ export default function IndexNavbar(props) {
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium"
-                href="https://github.com/creativetimofficial/md-tailwind"
+                href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +75,7 @@ export default function IndexNavbar(props) {
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium"
-                href="https://github.com/creativetimofficial/md-tailwind/issues"
+                href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
                 target="_blank"
                 rel="noopener noreferrer"
               >
