@@ -48,7 +48,7 @@ export default function IndexNavbar(props) {
                 as={
                   (process.env.NODE_ENV === "production"
                     ? "/material-tailwind"
-                    : "") + "documentation/quick-start"
+                    : "") + "/documentation/quick-start"
                 }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
