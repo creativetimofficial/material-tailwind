@@ -35,44 +35,44 @@ export default function MyApp({ Component, pageProps }) {
         {/*  Social tags      */}
         <meta
           name="keywords"
-          content="free template, freebie, free, kit, starter kit, tailwind, tailwindcss, react, angular, html, javascript, js, vuejs, vue, vuejs kit, vue kit, react kit, html kit, javascript kit, angular kit"
+          content="open source, tailwind, tailwindcss, tailwind css, components, library, components library, material design, material design components, tailwind components, tailwindcss components, tailwind css components, react, reactjs, react js, react components, reactjs components, react js components"
         />
         <meta
           name="description"
-          content="A beautiful extension for TailwindCSS. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue, and Angular."
+          content="Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React components, all written with Tailwind CSS classes and Material Design guidelines. Coming soon components for VueJS, Angular and many more."
         />
         {/* Schema.org markup for Google+ */}
         <meta
           itemProp="name"
-          content="Tailwind Starter Kit by Creative Tim | Free & Open Source Design System"
+          content="Material Tailwind by Creative Tim | Material components for Tailwind CSS"
         />
         <meta
           itemProp="description"
-          content="A beautiful extension for TailwindCSS. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue, and Angular."
+          content="Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React components, all written with Tailwind CSS classes and Material Design guidelines. Coming soon components for VueJS, Angular and many more."
         />
         <meta
           itemProp="image"
-          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg"
+          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-tailwind/material-tailwind-share-image.png"
         />
         {/* Twitter Card data */}
         <meta name="twitter:card" content="product" />
         <meta name="twitter:site" content="@creativetim" />
         <meta
           name="twitter:title"
-          content="Tailwind Starter Kit by Creative Tim | Free & Open Source Design System"
+          content="Material Tailwind by Creative Tim | Material components for Tailwind CSS"
         />
         <meta
           name="twitter:description"
-          content="A beautiful extension for TailwindCSS. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue, and Angular."
+          content="Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React components, all written with Tailwind CSS classes and Material Design guidelines. Coming soon components for VueJS, Angular and many more."
         />
         <meta name="twitter:creator" content="@creativetim" />
         <meta
           name="twitter:image"
-          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg"
+          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-tailwind/material-tailwind-share-image.png"
         />
         <meta
           name="twitter:data1"
-          content="Tailwind Starter Kit by Creative Tim | Free & Open Source Design System"
+          content="Material Tailwind by Creative Tim | Material components for Tailwind CSS"
         />
         <meta name="twitter:label1" content="Product Type" />
         <meta name="twitter:data2" content="Free" />
@@ -81,19 +81,19 @@ export default function MyApp({ Component, pageProps }) {
         <meta property="fb:app_id" content="655968634437471" />
         <meta
           property="og:title"
-          content="Tailwind Starter Kit by Creative Tim | Free & Open Source Design System"
+          content="Material Tailwind by Creative Tim | Material components for Tailwind CSS"
         />
         <meta property="og:type" content="article" />
         <meta
           property="og:image"
-          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg"
+          content="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-tailwind/material-tailwind-share-image.png"
         />
         <meta
           property="og:description"
-          content="A beautiful extension for TailwindCSS. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue, and Angular."
+          content="Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React components, all written with Tailwind CSS classes and Material Design guidelines. Coming soon components for VueJS, Angular and many more."
         />
         <meta property="og:site_name" content="Creative Tim" />
-        <title>Tailwind Starter Kit by Creative Tim</title>
+        <title>Material Tailwind by Creative Tim</title>
       </Head>
       <Component {...pageProps} />
     </React.Fragment>
