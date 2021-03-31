@@ -135,7 +135,7 @@ export default function IndexFooter() {
                       <a
                         className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
                         target="_blank"
-                        href="https://github.com/creativetimofficial/material-tailwind/blob/master/LICENSE.md?ref=material-tailwind"
+                        href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=material-tailwind"
                       >
                         MIT License
                       </a>
