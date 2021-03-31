@@ -13,17 +13,15 @@ export default function Cards() {
       <Header title="React Cards" />
       <Navbar />
       <Container>
-        <div className="w-10/12">
-          <Heading
-            title="React Cards"
-            description="Material Tailwind cards provide a flexible and extensible content container with multiple variants and options, more cards coming soon."
-          />
-          <SmallHeading title="Blog Card" />
-          <CardCode
-            copyText={copy === "Alerts" ? "Copied" : "Copy"}
-            onCopy={(text) => setCopy(text ? "Alerts" : "")}
-          />
-        </div>
+        <Heading
+          title="React Cards"
+          description="Material Tailwind cards provide a flexible and extensible content container with multiple variants and options, more cards coming soon."
+        />
+        <SmallHeading title="Blog Card" />
+        <CardCode
+          copyText={copy === "Alerts" ? "Copied" : "Copy"}
+          onCopy={(text) => setCopy(text ? "Alerts" : "")}
+        />
       </Container>
     </>
   );
