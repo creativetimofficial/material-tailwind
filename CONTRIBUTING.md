@@ -89,5 +89,5 @@ Closes #12
 
 As you can see we have multiple branches:
 
-- **master**: This branch stores the latest stable version of @material-tailwind.
-- **dev-master**: This is the **development** branch of @material-tailwind, and this is where everything is happening before releasing on master
+- **main**: This branch stores the latest stable version of @material-tailwind.
+- **dev-main**: This is the **development** branch of @material-tailwind, and this is where everything is happening before releasing on main
