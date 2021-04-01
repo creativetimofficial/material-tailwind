@@ -120,11 +120,6 @@ class Sidebar extends React.Component {
           <li key={key}>
             <Link
               href={prop.path}
-              as={
-                (process.env.NODE_ENV === "production"
-                  ? "/material-tailwind"
-                  : "") + prop.path
-              }
             >
               <a
                 className={
