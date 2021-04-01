@@ -31,7 +31,7 @@ export default function Dropdowns() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Rounded Dropdown" />
         <DropdownCode
@@ -46,7 +46,7 @@ export default function Dropdowns() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Small Dropdown" />
         <DropdownCode
@@ -61,7 +61,7 @@ export default function Dropdowns() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Regular Dropdown" />
         <DropdownCode
@@ -76,7 +76,7 @@ export default function Dropdowns() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Dropdown" />
         <DropdownCode
