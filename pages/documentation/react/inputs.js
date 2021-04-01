@@ -27,7 +27,7 @@ export default function Inputs() {
           outline={false}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Outline Input" />
         <InputCode
@@ -38,7 +38,7 @@ export default function Inputs() {
           outline={true}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Small Input" />
         <InputCode
@@ -49,7 +49,7 @@ export default function Inputs() {
           outline={false}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Input" />
         <InputCode
@@ -60,7 +60,7 @@ export default function Inputs() {
           outline={false}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Small Outline Input" />
         <InputCode
@@ -71,7 +71,7 @@ export default function Inputs() {
           outline={true}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Outline Input" />
         <InputCode
@@ -82,7 +82,7 @@ export default function Inputs() {
           outline={true}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Input with Icon" />
         <InputIconCode
@@ -93,7 +93,7 @@ export default function Inputs() {
           outline={false}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Outline Input with Icon" />
         <InputIconCode
@@ -104,7 +104,7 @@ export default function Inputs() {
           outline={true}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Input with Error" />
         <InputCode
@@ -117,7 +117,7 @@ export default function Inputs() {
           error="Its an error"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Outline Input with Error" />
         <InputCode
@@ -130,7 +130,7 @@ export default function Inputs() {
           error="Its an error"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Input with Success" />
         <InputCode
@@ -143,7 +143,7 @@ export default function Inputs() {
           success="Its a success"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Outline Input with Success" />
         <InputCode
