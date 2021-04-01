@@ -13,11 +13,6 @@ export default function IndexNavbar(props) {
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link
             href="/"
-            as={
-              (process.env.NODE_ENV === "production"
-                ? "/material-tailwind"
-                : "") + "/"
-            }
           >
             <a className="text-gray-900 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
               Material Tailwind
@@ -45,11 +40,6 @@ export default function IndexNavbar(props) {
             >
               <Link
                 href="/documentation/quick-start"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/documentation/quick-start"
-                }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="far fa-file-alt text-lg leading-lg " />
@@ -63,11 +53,6 @@ export default function IndexNavbar(props) {
             >
               <Link
                 href="/components"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/components"
-                }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="fas fa-cubes text-lg leading-lg " />
