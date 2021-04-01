@@ -25,7 +25,7 @@ export default function Progressbars() {
           value="50"
         />
 
-        <hr className="mt-20 mb-20 border-b-1 border-gray-300" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Progressbar with Percentage" />
         <ProgressCode
