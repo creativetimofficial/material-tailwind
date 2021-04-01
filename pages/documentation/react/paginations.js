@@ -24,7 +24,7 @@ export default function Paginations() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Pagination with first & last buttons" />
         <PaginationFirstLastCode
