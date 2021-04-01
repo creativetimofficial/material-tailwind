@@ -33,7 +33,7 @@ export default function Navbars() {
           onCopy={(text) => setCopy(text ? "IconsText" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading
           title="Icons & Links"
@@ -49,7 +49,7 @@ export default function Navbars() {
           onCopy={(text) => setCopy(text ? "IconsText" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading
           title="Links"
@@ -61,7 +61,7 @@ export default function Navbars() {
           onCopy={(text) => setCopy(text ? "IconsText" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading
           title="Icons"
