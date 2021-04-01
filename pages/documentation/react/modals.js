@@ -26,7 +26,7 @@ export default function Modals() {
           modalSize="small"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Regular Modal" />
         <ModalCode
@@ -36,7 +36,7 @@ export default function Modals() {
           modalSize="regular"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Modal" />
         <ModalCode
