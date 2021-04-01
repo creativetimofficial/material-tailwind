@@ -25,7 +25,7 @@ export default function Alerts() {
           onCopy={(text) => setCopy(text ? "Alerts" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Closing Alert" />
         <ClosingAlertCode
