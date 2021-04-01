@@ -28,7 +28,7 @@ export default function Headings() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Heading 2" />
         <Heading2Code
@@ -36,7 +36,7 @@ export default function Headings() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Heading 3" />
         <Heading3Code
@@ -44,7 +44,7 @@ export default function Headings() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Heading 4" />
         <Heading4Code
@@ -52,7 +52,7 @@ export default function Headings() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Heading 5" />
         <Heading5Code
@@ -60,7 +60,7 @@ export default function Headings() {
           onCopy={(text) => setCopy(text ? "Buttons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Heading 6" />
         <Heading6Code
