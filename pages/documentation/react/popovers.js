@@ -25,7 +25,7 @@ export default function Popovers() {
           placement="left"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Popover Right" />
         <PopoverCode
@@ -34,7 +34,7 @@ export default function Popovers() {
           placement="right"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Popover Top" />
         <PopoverCode
@@ -43,7 +43,7 @@ export default function Popovers() {
           placement="top"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Popover Bottom" />
         <PopoverCode
