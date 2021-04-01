@@ -25,7 +25,7 @@ export default function Tooltips() {
           placement="left"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Tooltip Right" />
         <TooltipsCode
@@ -34,7 +34,7 @@ export default function Tooltips() {
           placement="right"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Tooltip Top" />
         <TooltipsCode
@@ -43,7 +43,7 @@ export default function Tooltips() {
           placement="top"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Tooltip Bottom" />
         <TooltipsCode
