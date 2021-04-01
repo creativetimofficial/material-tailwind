@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="214px" height="226px" viewBox="0 0 214 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dropdown 2</title>
+    <defs>
+        <filter x="-7.5%" y="-26.1%" width="115.0%" height="152.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-12.8%" y="-15.2%" width="125.6%" height="130.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dropdown" transform="translate(17.000000, 9.000000)">
+            <g id="Rectangle" filter="url(#filter-1)">
+                <g id="path-1-link" fill="#000000" fill-rule="nonzero">
+                    <rect id="path-1" x="0" y="0" width="160" height="46" rx="8"></rect>
+                </g>
+                <g id="path-1-link" fill="#00A8F4">
+                    <rect id="path-1" x="0" y="0" width="160" height="46" rx="8"></rect>
+                </g>
+            </g>
+            <g id="Group-2" transform="translate(25.000000, 14.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <g id="Group" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold">
+                    <text id="DROPDOWN">
+                        <tspan x="0" y="15">DROPDOWN</tspan>
+                    </text>
+                </g>
+                <polygon id="Triangle" points="105.5 6 110 12 101 12"></polygon>
+            </g>
+            <g id="Rectangle" filter="url(#filter-2)" transform="translate(0.000000, 49.000000)">
+                <g id="path-3-link" fill="#000000" fill-rule="nonzero">
+                    <rect id="path-3" x="0" y="0" width="180" height="151" rx="8"></rect>
+                </g>
+                <g id="path-3-link" fill="#FFFFFF">
+                    <rect id="path-3" x="0" y="0" width="180" height="151" rx="8"></rect>
+                </g>
+            </g>
+            <rect id="Rectangle" fill-opacity="0.35" fill="#D8D8D8" fill-rule="nonzero" x="0" y="49" width="180" height="50" rx="8"></rect>
+            <text id="Action" fill="#111111" fill-rule="nonzero" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal">
+                <tspan x="14" y="80">Action</tspan>
+            </text>
+            <text id="Another-Action" fill="#111111" fill-rule="nonzero" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal">
+                <tspan x="14" y="130">Another Action</tspan>
+            </text>
+            <text id="Something-Else" fill="#111111" fill-rule="nonzero" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal">
+                <tspan x="14" y="180">Something Else</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
