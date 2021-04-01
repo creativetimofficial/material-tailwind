@@ -365,62 +365,42 @@ export default function Example() {
                 <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
                   <img
                     alt="..."
-                    src={require("assets/img/component-btn.png")}
+                    src={require("assets/img/button.svg")}
                     className="w-full align-middle rounded absolute shadow-lg z-20"
                     style={{
                       maxWidth: "100px",
-                      left: "145px",
-                      top: "-60px",
+                      left: "100px",
+                      top: "125px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require("assets/img/component-profile-card.png")}
-                    className="w-full align-middle rounded-lg absolute shadow-lg"
+                    src={require("assets/img/card.svg")}
+                    className="w-full align-middle rounded-lg absolute"
                     style={{
-                      maxWidth: "210px",
-                      left: "260px",
-                      top: "-160px",
+                      maxWidth: "280px",
+                      left: "210px",
+                      top: "-210px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require("assets/img/component-info-card.png")}
-                    className="w-full align-middle rounded-lg absolute shadow-lg z-10"
+                    src={require("assets/img/dropdown.svg")}
+                    className="w-full align-middle rounded-lg absolute z-10"
                     style={{
                       maxWidth: "180px",
-                      left: "40px",
-                      top: "-255px",
+                      left: "0",
+                      top: "-100px",
                     }}
                   />
                   <img
                     alt="..."
-                    src={require("assets/img/component-info-2.png")}
-                    className="w-full align-middle rounded-lg absolute shadow-2xl"
-                    style={{
-                      maxWidth: "200px",
-                      left: "-50px",
-                      top: "0",
-                    }}
-                  />
-                  <img
-                    alt="..."
-                    src={require("assets/img/components-menu.png")}
-                    className="w-full align-middle rounded absolute shadow-lg"
+                    src={require("assets/img/menu.svg")}
+                    className="w-full align-middle rounded-lg absolute shadow-lg"
                     style={{
                       maxWidth: "580px",
-                      left: "-20px",
+                      left: "0",
                       top: "210px",
-                    }}
-                  />
-                  <img
-                    alt="..."
-                    src={require("assets/img/component-btn-pink.png")}
-                    className="w-full align-middle rounded absolute shadow-xl"
-                    style={{
-                      maxWidth: "120px",
-                      left: "195px",
-                      top: "95px",
                     }}
                   />
                 </div>
@@ -445,7 +425,6 @@ export default function Example() {
                     </a>
                     <Link
                       href="/documentation/react/alerts"
-
                       as={
                         (process.env.NODE_ENV === "production"
                           ? "/material-tailwind"
@@ -645,7 +624,7 @@ export default function Example() {
                 <img
                   alt="..."
                   className="max-w-full rounded-lg shadow-lg"
-                  src={require("assets/img/documentation-page.png")}
+                  src={require("assets/img/documentation.png")}
                 />
               </div>
             </div>
