@@ -10,6 +10,7 @@ module.exports = {
       "./pagesComponents/*.js",
       "./pages/*.js",
       "./pages/templates/*.js",
+      "./pages/templates/**/*.js",
       "./components/**/*.js",
     ],
   },
