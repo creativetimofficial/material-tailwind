@@ -4,22 +4,6 @@ export default function ProfileFooter() {
   return (
     <>
       <footer className="relative bg-gray-50 pt-8 pb-6">
-        <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
-          <svg
-            className="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="text-gray-50 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left pt-6">
             <div className="w-full lg:w-6/12 px-4">
