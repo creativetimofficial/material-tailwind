@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Dropdown from "components/Dropdown/Dropdown";
+import DropdownItem from "components/Dropdown/DropdownItem";
 import Ripple from "material-ripple-effects";
 
 export default function IndexNavbar(props) {
@@ -40,7 +42,7 @@ export default function IndexNavbar(props) {
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li
-              className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
+              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
               <Link
@@ -58,7 +60,7 @@ export default function IndexNavbar(props) {
               </Link>
             </li>
             <li
-              className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
+              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
               <Link
@@ -76,8 +78,64 @@ export default function IndexNavbar(props) {
               </Link>
             </li>
 
+            <Dropdown
+              ripple="dark"
+              buttonText={
+                <>
+                  <div className="text-gray-900 flex items-center">
+                    <i className="material-icons mr-2">view_carousel</i>
+                    Templates
+                  </div>
+                </>
+              }
+              style={{
+                backgroundColor: "transparent",
+                boxShadow: "none",
+                color: "#333",
+                paddingLeft: "10px",
+                paddingRight: "10px",
+              }}
+            >
+              <DropdownItem>
+                <Link
+                  href="/templates/landing-page"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/landing-page"
+                  }
+                >
+                  <a>Landing Page</a>
+                </Link>
+              </DropdownItem>
+              <DropdownItem>
+                <Link
+                  href="/templates/login"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/login"
+                  }
+                >
+                  <a>Login</a>
+                </Link>
+              </DropdownItem>
+              <DropdownItem>
+                <Link
+                  href="/templates/profile"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/profile"
+                  }
+                >
+                  <a>Profile</a>
+                </Link>
+              </DropdownItem>
+            </Dropdown>
+
             <li
-              className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
+              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
               <a
@@ -92,7 +150,7 @@ export default function IndexNavbar(props) {
             </li>
 
             <li
-              className="flex items-center text-gray-900 hover:text-gray-600 rounded-lg transition-all duration-300"
+              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
               onMouseUp={rippleDark}
             >
               <a
