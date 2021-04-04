@@ -27,7 +27,7 @@ export default function Images() {
           alt="Image"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Rounded Image" />
         <ImageCode
@@ -39,7 +39,7 @@ export default function Images() {
           alt="Rounded Image"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Raised Image" />
         <ImageCode
@@ -51,7 +51,7 @@ export default function Images() {
           alt="Raised Image"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Rounded Raised Image" />
         <ImageCode

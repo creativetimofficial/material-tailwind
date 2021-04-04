@@ -28,7 +28,7 @@ export default function Menus() {
           onCopy={(text) => setCopy(text ? "Text" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading
           title="Links"
@@ -39,7 +39,7 @@ export default function Menus() {
           onCopy={(text) => setCopy(text ? "Icons" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading
           title="Icons"

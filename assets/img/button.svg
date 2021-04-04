@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140px" height="46px" viewBox="0 0 140 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Button</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="140" height="46" rx="8"></rect>
+        <filter x="-5.0%" y="-10.9%" width="110.0%" height="130.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.247978584 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#00A8F4" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="Group" transform="translate(26.000000, 14.000000)" fill="#FFFFFF">
+            <text id="BUTTON" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold">
+                <tspan x="26" y="15">BUTTON</tspan>
+            </text>
+            <path d="M8,16.68 L6.84,15.624 C2.72,11.888 0,9.424 0,6.4 C0,3.936 1.936,2 4.4,2 C5.792,2 7.128,2.648 8,3.672 C8.872,2.648 10.208,2 11.6,2 C14.064,2 16,3.936 16,6.4 C16,9.424 13.28,11.888 9.16,15.632 L8,16.68 Z" id="Path" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

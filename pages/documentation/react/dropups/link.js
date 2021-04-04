@@ -31,7 +31,7 @@ export default function Dropups() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Rounded Dropup" />
         <DropdownCode
@@ -46,7 +46,7 @@ export default function Dropups() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Small Dropup" />
         <DropdownCode
@@ -61,7 +61,7 @@ export default function Dropups() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Regular Dropup" />
         <DropdownCode
@@ -76,7 +76,7 @@ export default function Dropups() {
           ripple="dark"
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Dropup" />
         <DropdownCode

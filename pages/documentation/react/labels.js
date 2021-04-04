@@ -24,7 +24,7 @@ export default function Labels() {
           onCopy={(text) => setCopy(text ? "Labels" : "")}
         />
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Closing Label" />
         <ClosingLabelCode

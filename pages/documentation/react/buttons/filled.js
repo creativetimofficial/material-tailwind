@@ -33,7 +33,7 @@ export default function Buttons() {
           Button
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Rounded Button" />
         <ButtonCode
@@ -49,7 +49,7 @@ export default function Buttons() {
           Rounded Button
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Small Button" />
         <ButtonCode
@@ -65,7 +65,7 @@ export default function Buttons() {
           Small Button
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Regular Button" />
         <ButtonCode
@@ -81,7 +81,7 @@ export default function Buttons() {
           Regular Button
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="Large Button" />
         <ButtonCode
@@ -97,7 +97,7 @@ export default function Buttons() {
           Large Button
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="With Icon Before" />
 
@@ -116,7 +116,7 @@ export default function Buttons() {
           With Icon Before
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="With Icon After" />
 
@@ -135,7 +135,7 @@ export default function Buttons() {
           <Icon name="favorite" size="sm" />
         </ButtonCode>
 
-        <div className="my-36" />
+        <div className="h-20">&nbsp;</div>
 
         <SmallHeading title="With Icon Only" />
 
