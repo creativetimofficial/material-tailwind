@@ -96,11 +96,6 @@ export default function Presentation() {
               </a>
               <Link
                 href="/documentation/quick-start"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/documentation/quick-start"
-                }
               >
                 <a>
                   <Button
@@ -348,11 +343,6 @@ export default function Example() {
                 </div>
                 <Link
                   href="/documentation/react/buttons/filled"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/documentation/react/buttons/filled"
-                  }
                 >
                   <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
                     View All{" "}
@@ -542,11 +532,6 @@ export default function Example() {
                 </div>
                 <Link
                   href="/documentation/react/alerts"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/documentation/react/alerts"
-                  }
                 >
                   <a className="font-bold text-blue-gray-900 hover:text-blue-gray-700 transition-all">
                     View all{" "}
@@ -720,11 +705,6 @@ export default function Example() {
               <div className="flex justify-center gap-4 mt-10">
                 <Link
                   href="/documentation/quick-start"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/documentation/quick-start"
-                  }
                 >
                   <a>
                     <Button color="lightBlue" size="lg" ripple="light">
