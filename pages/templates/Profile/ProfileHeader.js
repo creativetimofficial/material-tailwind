@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ProfileHeader() {
-  const backgroundImage = require("../../../assets/img/background-1920x1080.jpg");
+  const backgroundImage = require("assets/img/background-1920x1080.jpg");
   return (
     <section className="relative block" style={{ height: "500px" }}>
       <div
