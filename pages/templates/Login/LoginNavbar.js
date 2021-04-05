@@ -4,19 +4,24 @@ import Dropdown from "components/Dropdown/Dropdown";
 import DropdownItem from "components/Dropdown/DropdownItem";
 import Ripple from "material-ripple-effects";
 
-export default function IndexNavbar(props) {
+export default function LoginNavbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const ripple = new Ripple();
-  const rippleDark = (e) => ripple.create(e, "dark");
+  const rippleLight = (e) => ripple.create(e, "light");
 
   return (
-    <nav className="sticky top-0 z-40 lg:z-40 w-full bg-white flex items-center justify-between px-2 py-4">
+    <nav className="w-full bg-transparent flex items-center justify-between px-2 py-4">
       <div className="container max-w-7xl px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link
             href="/"
+            as={
+              (process.env.NODE_ENV === "production"
+                ? "/material-tailwind"
+                : "") + "/"
+            }
           >
-            <a className="text-gray-900 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
+            <a className="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
               Material Tailwind
             </a>
           </Link>
@@ -25,23 +30,28 @@ export default function IndexNavbar(props) {
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
-            <i className="fas fa-bars text-gray-900"></i>
+            <i className="fas fa-bars text-white"></i>
           </button>
         </div>
         <div
           className={
-            "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none" +
+            "lg:flex flex-grow items-center bg-white rounded-lg lg:bg-transparent lg:shadow-none" +
             (navbarOpen ? " block" : " hidden")
           }
           id="example-navbar-warning"
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li
-              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
-              onMouseUp={rippleDark}
+              className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
+              onMouseUp={rippleLight}
             >
               <Link
                 href="/documentation/quick-start"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/documentation/quick-start"
+                }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="far fa-file-alt text-lg leading-lg " />
@@ -50,11 +60,16 @@ export default function IndexNavbar(props) {
               </Link>
             </li>
             <li
-              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
-              onMouseUp={rippleDark}
+              className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
+              onMouseUp={rippleLight}
             >
               <Link
                 href="/components"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/components"
+                }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <i className="fas fa-cubes text-lg leading-lg " />
@@ -64,10 +79,10 @@ export default function IndexNavbar(props) {
             </li>
 
             <Dropdown
-              ripple="dark"
+              ripple="light"
               buttonText={
                 <>
-                  <div className="text-gray-900 flex items-center">
+                  <div className="text-gray-900 lg:text-white flex items-center">
                     <i className="material-icons mr-2">view_carousel</i>
                     Templates
                   </div>
@@ -76,18 +91,18 @@ export default function IndexNavbar(props) {
               style={{
                 backgroundColor: "transparent",
                 boxShadow: "none",
-                color: "#333",
+                color: "#fff",
                 paddingLeft: "10px",
                 paddingRight: "10px",
               }}
             >
               <DropdownItem>
                 <Link
-                  href="/templates/landing-page"
+                  href="/templates/landing"
                   as={
                     (process.env.NODE_ENV === "production"
                       ? "/material-tailwind"
-                      : "") + "/templates/landing-page"
+                      : "") + "/templates/landing"
                   }
                 >
                   <a>Landing Page</a>
@@ -120,8 +135,8 @@ export default function IndexNavbar(props) {
             </Dropdown>
 
             <li
-              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
-              onMouseUp={rippleDark}
+              className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
+              onMouseUp={rippleLight}
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
@@ -135,8 +150,8 @@ export default function IndexNavbar(props) {
             </li>
 
             <li
-              className="flex items-center text-gray-900 rounded-lg transition-all duration-300"
-              onMouseUp={rippleDark}
+              className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
+              onMouseUp={rippleLight}
             >
               <a
                 className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"

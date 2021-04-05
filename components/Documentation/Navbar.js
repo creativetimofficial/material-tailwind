@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Dropdown from "components/Dropdown/Dropdown";
+import DropdownItem from "components/Dropdown/DropdownItem";
 import Ripple from "material-ripple-effects";
 
 export default function IndexNavbar(props) {
@@ -59,6 +61,61 @@ export default function IndexNavbar(props) {
                 </a>
               </Link>
             </li>
+
+            <Dropdown
+              ripple="light"
+              buttonText={
+                <>
+                  <div className="text-white flex items-center">
+                    <i className="material-icons mr-2">view_carousel</i>
+                    Templates
+                  </div>
+                </>
+              }
+              style={{
+                backgroundColor: "transparent",
+                boxShadow: "none",
+                paddingLeft: "10px",
+                paddingRight: "10px",
+              }}
+            >
+              <DropdownItem>
+                <Link
+                  href="/templates/landing-page"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/landing-page"
+                  }
+                >
+                  <a>Landing Page</a>
+                </Link>
+              </DropdownItem>
+              <DropdownItem>
+                <Link
+                  href="/templates/login"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/login"
+                  }
+                >
+                  <a>Login</a>
+                </Link>
+              </DropdownItem>
+              <DropdownItem>
+                <Link
+                  href="/templates/profile"
+                  as={
+                    (process.env.NODE_ENV === "production"
+                      ? "/material-tailwind"
+                      : "") + "/templates/profile"
+                  }
+                >
+                  <a>Profile</a>
+                </Link>
+              </DropdownItem>
+            </Dropdown>
 
             <li
               className="flex items-center text-white rounded-lg px-2 transition-all duration-300"

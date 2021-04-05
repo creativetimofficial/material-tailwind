@@ -6,10 +6,13 @@ const black = "0,0,0";
 module.exports = {
   purge: {
     enabled: true,
-    content: ["./pagesComponents/*.js", "./pages/*.js", "./components/**/*.js"],
-    options: {
-      keyframes: true,
-    },
+    content: [
+      "./pagesComponents/*.js",
+      "./pages/*.js",
+      "./pages/templates/*.js",
+      "./pages/templates/**/*.js",
+      "./components/**/*.js",
+    ],
   },
   darkMode: false,
   theme: {
