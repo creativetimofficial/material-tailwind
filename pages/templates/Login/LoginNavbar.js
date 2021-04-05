@@ -4,7 +4,7 @@ import Dropdown from "components/Dropdown/Dropdown";
 import DropdownItem from "components/Dropdown/DropdownItem";
 import Ripple from "material-ripple-effects";
 
-export default function LoginFooter() {
+export default function LoginNavbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const ripple = new Ripple();
   const rippleLight = (e) => ripple.create(e, "light");
@@ -98,11 +98,11 @@ export default function LoginFooter() {
             >
               <DropdownItem>
                 <Link
-                  href="/templates/landing-page"
+                  href="/templates/landing"
                   as={
                     (process.env.NODE_ENV === "production"
                       ? "/material-tailwind"
-                      : "") + "/templates/landing-page"
+                      : "") + "/templates/landing"
                   }
                 >
                   <a>Landing Page</a>
