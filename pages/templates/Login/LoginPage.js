@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function LoginPage({ children }) {
-  const backgroundImage = require("../../../assets/img/background-1920x1280.jpg");
+  const backgroundImage = require("assets/img/background-1920x1280.jpg");
   return (
     <div
       className="w-screen h-screen relative bg-position flex flex-col justify-between"
