@@ -2,7 +2,7 @@ import React from "react";
 import Button from "components/Button/Button";
 
 export default function ProfileContentHeader() {
-  const profilePicture = require("../../../assets/img/team-2-800x800.jpg");
+  const profilePicture = require("assets/img/team-2-800x800.jpg");
   return (
     <div className="flex flex-wrap justify-center">
       <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
