@@ -1,4 +1,6 @@
 import React from "react";
+import H5 from "components/Typography/Heading5";
+import LeadText from "components/Typography/LeadText";
 
 export default function ProfileFooter() {
   return (
@@ -7,13 +9,11 @@ export default function ProfileFooter() {
         <div className="container max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left pt-6">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-gray-900 text-2xl font-medium">
-                Material Tailwind
-              </h4>
-              <h5 className="text-base font-light mb-2 text-gray-700 mt-2">
+              <H5 color="gray">Material Tailwind</H5>
+              <LeadText color="blueGray" style={{ marginTop: "0" }}>
                 Easy to use React components for Tailwind CSS and Material
                 Design.
-              </h5>
+              </LeadText>
               <div className="flex gap-2 mt-6 md:justify-start md:mb-0 mb-8 justify-center">
                 <a
                   href="https://www.facebook.com/CreativeTim"
@@ -68,7 +68,7 @@ export default function ProfileFooter() {
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top">
                 <div className="w-full lg:w-4/12 px-4 ml-auto md:mb-0 mb-8">
-                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
+                  <span className="block uppercase text-gray-900 text-sm font-serif font-medium mb-2">
                     Useful Links
                   </span>
                   <ul className="list-unstyled">
@@ -111,7 +111,7 @@ export default function ProfileFooter() {
                   </ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
+                  <span className="block uppercase text-gray-900 text-sm font-serif font-medium mb-2">
                     Other Resources
                   </span>
                   <ul className="list-unstyled">
