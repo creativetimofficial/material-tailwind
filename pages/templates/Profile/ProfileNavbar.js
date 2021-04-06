@@ -96,42 +96,36 @@ export default function ProfileNavbar() {
                 paddingRight: "10px",
               }}
             >
-              <DropdownItem>
-                <Link
-                  href="/templates/landing"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/landing"
-                  }
-                >
-                  <a>Landing Page</a>
-                </Link>
-              </DropdownItem>
-              <DropdownItem>
-                <Link
-                  href="/templates/login"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/login"
-                  }
-                >
-                  <a>Login</a>
-                </Link>
-              </DropdownItem>
-              <DropdownItem>
-                <Link
-                  href="/templates/profile"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/profile"
-                  }
-                >
-                  <a>Profile</a>
-                </Link>
-              </DropdownItem>
+              <Link
+                href="/templates/landing"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/landing"
+                }
+              >
+                <DropdownItem>Landing Page</DropdownItem>
+              </Link>
+              <Link
+                href="/templates/login"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/login"
+                }
+              >
+                <DropdownItem>Login</DropdownItem>
+              </Link>
+              <Link
+                href="/templates/profile"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/profile"
+                }
+              >
+                <DropdownItem>Profile</DropdownItem>
+              </Link>
             </Dropdown>
 
             <li

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Dropdown from "components/Dropdown/Dropdown";
 import DropdownItem from "components/Dropdown/DropdownItem";
+import Icon from "components/Icon/Icon";
 import Ripple from "material-ripple-effects";
 
 export default function LandingNavbar() {
@@ -30,7 +31,7 @@ export default function LandingNavbar() {
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
-            <i className="fas fa-bars text-white"></i>
+            <Icon family="font-awesome" name="fas fa-bars" color="white" />
           </button>
         </div>
         <div
@@ -54,7 +55,11 @@ export default function LandingNavbar() {
                 }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
-                  <i className="far fa-file-alt text-lg leading-lg " />
+                  <Icon
+                    family="font-awesome"
+                    name="far fa-file-alt"
+                    size="lg"
+                  />
                   <span className="inline-block ml-2">Docs</span>
                 </a>
               </Link>
@@ -72,7 +77,7 @@ export default function LandingNavbar() {
                 }
               >
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
-                  <i className="fas fa-cubes text-lg leading-lg " />
+                  <Icon family="font-awesome" name="fas fa-cubes" size="lg" />
                   <span className="inline-block ml-2">Components</span>
                 </a>
               </Link>
@@ -83,8 +88,8 @@ export default function LandingNavbar() {
               buttonText={
                 <>
                   <div className="text-gray-900 lg:text-white flex items-center">
-                    <i className="material-icons mr-2">view_carousel</i>
-                    Templates
+                    <Icon name="view_carousel" size="2xl" />
+                    &nbsp; Templates
                   </div>
                 </>
               }
@@ -96,42 +101,36 @@ export default function LandingNavbar() {
                 paddingRight: "10px",
               }}
             >
-              <DropdownItem>
-                <Link
-                  href="/templates/landing"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/landing"
-                  }
-                >
-                  <a>Landing Page</a>
-                </Link>
-              </DropdownItem>
-              <DropdownItem>
-                <Link
-                  href="/templates/login"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/login"
-                  }
-                >
-                  <a>Login</a>
-                </Link>
-              </DropdownItem>
-              <DropdownItem>
-                <Link
-                  href="/templates/profile"
-                  as={
-                    (process.env.NODE_ENV === "production"
-                      ? "/material-tailwind"
-                      : "") + "/templates/profile"
-                  }
-                >
-                  <a>Profile</a>
-                </Link>
-              </DropdownItem>
+              <Link
+                href="/templates/landing"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/landing"
+                }
+              >
+                <DropdownItem>Landing Page</DropdownItem>
+              </Link>
+              <Link
+                href="/templates/login"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/login"
+                }
+              >
+                <DropdownItem>Login</DropdownItem>
+              </Link>
+              <Link
+                href="/templates/profile"
+                as={
+                  (process.env.NODE_ENV === "production"
+                    ? "/material-tailwind"
+                    : "") + "/templates/profile"
+                }
+              >
+                <DropdownItem>Profile</DropdownItem>
+              </Link>
             </Dropdown>
 
             <li
@@ -144,7 +143,7 @@ export default function LandingNavbar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-github text-lg leading-lg " />
+                <Icon family="font-awesome" name="fab fa-github" size="lg" />
                 <span className="inline-block ml-2">Github</span>
               </a>
             </li>
