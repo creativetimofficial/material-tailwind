@@ -1,8 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import "material-design-icons/iconfont/material-icons.css";
-import "assets/styles/docs.scss";
+import "material-icons/css/material-icons.min.css";
 import "assets/styles/index.css";
 
 // This default export is required in a new `pages/_app.js` file.

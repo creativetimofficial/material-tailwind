@@ -67,7 +67,7 @@ class Sidebar extends React.Component {
               <i
                 className={`${prop.icon} bg-gradient-to-tr from-light-blue-700 to-light-blue-500 p-2 leading-none rounded-lg text-xs text-white`}
               />
-              <h4 className="text-gray-900 text-base font-medium">
+              <h4 className="font-serif text-gray-900 text-base font-medium">
                 {prop.name}
               </h4>
             </div>
@@ -118,9 +118,7 @@ class Sidebar extends React.Component {
       } else {
         return (
           <li key={key}>
-            <Link
-              href={prop.path}
-            >
+            <Link href={prop.path}>
               <a
                 className={
                   (this.props.router.pathname.indexOf(prop.path) !== -1

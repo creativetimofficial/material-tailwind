@@ -45,7 +45,9 @@ export default function QuickStart() {
             <>
               Import the{" "}
               <code className="text-light-blue-500">tailwind.css</code> and{" "}
-              <code className="text-light-blue-500">material-icons.css</code>{" "}
+              <code className="text-light-blue-500">
+                material-icons.min.css
+              </code>{" "}
               into your <code className="text-light-blue-500">app.js</code>{" "}
               file. Make sure to import the{" "}
               <code className="text-light-blue-500">tailwind.css</code> style
@@ -55,7 +57,7 @@ export default function QuickStart() {
         />
         <div className="mb-12">
           <SyntaxHighlighter language="jsx" style={a11yDark}>
-            {`import "material-design-icons/iconfont/material-icons.css";
+            {`import "material-icons/css/material-icons.min.css";
 import "@material-tailwind/react/tailwind.css";`}
           </SyntaxHighlighter>
         </div>

@@ -2,10 +2,8 @@ import React from "react";
 import Card from "components/Card/Card";
 import CardImage from "components/Card/CardImage";
 import CardBody from "components/Card/CardBody";
-import CardFooter from "components/Card/CardFooter";
 import H6 from "components/Typography/Heading6";
 import Paragraph from "components/Typography/Paragraph";
-import Button from "components/Button/Button";
 
 export default function PresentationCard() {
   return (
