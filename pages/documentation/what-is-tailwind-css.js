@@ -22,7 +22,7 @@ export default function WhatIsTailwindCSS() {
           description="Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override."
         />
 
-        <div className="my-20">&nbsp;</div>
+        <div className="h-10">&nbsp;</div>
 
         <SmallHeading
           title="Responsive to the core"
@@ -40,7 +40,7 @@ export default function WhatIsTailwindCSS() {
           }
         />
 
-        <div className="my-20">&nbsp;</div>
+        <div className="h-10">&nbsp;</div>
 
         <SmallHeading
           title="Component-friendly"
@@ -58,7 +58,7 @@ export default function WhatIsTailwindCSS() {
           }
         />
 
-        <div className="my-20">&nbsp;</div>
+        <div className="h-10">&nbsp;</div>
 
         <SmallHeading
           title="Designed to be customized"
@@ -80,7 +80,7 @@ export default function WhatIsTailwindCSS() {
           }
         />
 
-        <div className="my-20">&nbsp;</div>
+        <div className="h-10">&nbsp;</div>
 
         <SmallHeading
           title="A simple Tailwind CSS Component"
@@ -106,7 +106,7 @@ export default function WhatIsTailwindCSS() {
 </figure>`}
         </SyntaxHighlighter>
 
-        <div className="my-20">&nbsp;</div>
+        <div className="h-10">&nbsp;</div>
 
         <SmallHeading
           title="Tutorials"
