@@ -51,12 +51,8 @@ export default function Components() {
               alt="Material Tailwind Logo"
               className="w-56 mx-auto mb-16"
             />
-            <h2 className="font-semibold text-6xl text-blue-gray-900 mb-10">
-              Material Tailwind
-            </h2>
-            <h4 className="text-gray-700 text-3xl font-serif font-bold leading-normal mt-0 mb-2">
-              All Components
-            </h4>
+            <H1 color="gray">Material Tailwind</H1>
+            <H4 color="blueGray">All Components</H4>
           </div>
         </div>
       </section>
@@ -65,9 +61,9 @@ export default function Components() {
 
       <section className="pb-36 bg-white">
         <div className="container max-w-7xl mx-auto mt-36 px-4">
-          <H4 color="gray">BUTTONs</H4>
+          <H4 color="gray">Buttons</H4>
           <div className="mt-10">
-            <h4 className="text-xl text-gray-700">Styles</h4>
+            <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
               <Button color="lightBlue" ripple="light">
@@ -89,7 +85,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Sizes</h4>
+            <h4 className="text-xl text-blue-gray-700">Sizes</h4>
 
             <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
               <div className="flex flex-wrap items-end gap-x-2 gap-y-8">
@@ -131,7 +127,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Colors</h4>
+            <h4 className="text-xl text-blue-gray-700">Colors</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
               <Button color="blueGray" ripple="light">
@@ -288,7 +284,7 @@ export default function Components() {
         <div className="container max-w-7xl mx-auto mt-36 px-4">
           <H4 color="gray">Inputs</H4>
           <div className="mt-10">
-            <h4 className="text-xl text-gray-700">Styles</h4>
+            <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-8 mt-5">
               <div className="w-72">
@@ -301,7 +297,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Sizes</h4>
+            <h4 className="text-xl text-blue-gray-700">Sizes</h4>
 
             <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
               <div className="flex flex-wrap items-end gap-8">
@@ -341,7 +337,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With Icon</h4>
+            <h4 className="text-xl text-blue-gray-700">With Icon</h4>
 
             <div className="flex flex-wrap gap-8 mt-5">
               <div className="w-72">
@@ -363,7 +359,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With Error Message</h4>
+            <h4 className="text-xl text-blue-gray-700">With Error Message</h4>
 
             <div className="flex flex-wrap gap-8 mt-5">
               <div className="w-72">
@@ -385,7 +381,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With Success Message</h4>
+            <h4 className="text-xl text-blue-gray-700">With Success Message</h4>
 
             <div className="flex flex-wrap gap-8 mt-5">
               <div className="w-72">
@@ -534,7 +530,7 @@ export default function Components() {
         <div className="container max-w-7xl mx-auto mt-36 px-4">
           <H4 color="gray">DROPDOWN</H4>
           <div className="mt-10">
-            <h4 className="text-xl text-gray-700">Types</h4>
+            <h4 className="text-xl text-blue-gray-700">Types</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
               <Dropdown color="lightBlue" buttonText="Dropdown" ripple="light">
@@ -569,7 +565,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Styles</h4>
+            <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
             <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
               <Dropdown color="lightBlue" buttonText="Default" ripple="light">
@@ -635,7 +631,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Sizes</h4>
+            <h4 className="text-xl text-blue-gray-700">Sizes</h4>
 
             <div className="flex flex-wrap items-end gap-x-2 gap-y-8 mt-5">
               <Dropdown
@@ -721,7 +717,7 @@ export default function Components() {
           <H4 color="gray">Progressbars</H4>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Simple</h4>
+            <h4 className="text-xl text-blue-gray-700">Simple</h4>
 
             <div className="w-full mt-5">
               <Progress color="lightBlue" value="50" />
@@ -729,7 +725,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With Percentage</h4>
+            <h4 className="text-xl text-blue-gray-700">With Percentage</h4>
 
             <div className="w-full mt-5">
               <Progress color="lightBlue" value="75" percentage />
@@ -741,7 +737,7 @@ export default function Components() {
           <H4 color="gray">Paginations</H4>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Simple</h4>
+            <h4 className="text-xl text-blue-gray-700">Simple</h4>
 
             <div className="w-full mt-5">
               <Pagination>
@@ -800,7 +796,9 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">With First & Last Button</h4>
+            <h4 className="text-xl text-blue-gray-700">
+              With First & Last Button
+            </h4>
 
             <div className="w-full mt-5">
               <Pagination>
@@ -877,7 +875,7 @@ export default function Components() {
           <H4 color="gray">Typography</H4>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Headings</h4>
+            <h4 className="text-xl text-blue-gray-700">Headings</h4>
 
             <div className="w-full flex flex-col gap-y-8 mt-5">
               <H1 color="gray">Material Tailwind</H1>
@@ -890,7 +888,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Lead Text</h4>
+            <h4 className="text-xl text-blue-gray-700">Lead Text</h4>
 
             <div className="w-full mt-5">
               <LeadText color="gray">
@@ -906,7 +904,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Quote</h4>
+            <h4 className="text-xl text-blue-gray-700">Quote</h4>
 
             <div className="w-full mt-5">
               <Quote color="gray" footer="Someone famouse" cite="Source title">
@@ -920,7 +918,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Paragraph</h4>
+            <h4 className="text-xl text-blue-gray-700">Paragraph</h4>
 
             <div className="w-full mt-5">
               <Paragraph color="gray">
@@ -934,7 +932,7 @@ export default function Components() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-xl text-gray-700">Small</h4>
+            <h4 className="text-xl text-blue-gray-700">Small</h4>
 
             <div className="w-full mt-5">
               <Small color="gray">
