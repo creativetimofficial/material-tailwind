@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function Image({ src, raised, rounded, ...rest }) {
   return (
@@ -7,8 +7,8 @@ export default function Image({ src, raised, rounded, ...rest }) {
       <img
         {...rest}
         src={src}
-        className={`rounded-${rounded ? 'full' : 'md'} ${
-          raised ? 'shadow-xl' : ''
+        className={`${rounded ? "rounded-full" : "rounded-xl"} ${
+          raised ? "shadow-xl" : ""
         } max-w-full h-auto align-middle border-none`}
       />
     </>
