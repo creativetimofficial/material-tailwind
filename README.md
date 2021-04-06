@@ -53,11 +53,11 @@ yarn add @materia-tailwind/react -E
 
 ##### Import Style Sheets
 
-Import the `tailwind.css` and `material-icons.css` into your `app.js` file. Make sure to import the `tailwind.css` style
+Import the `tailwind.css` and `material-icons.min.css` into your `app.js` file. Make sure to import the `tailwind.css` style
 sheet after all other style sheets.
 
 ```
-import "material-design-icons/iconfont/material-icons.css";
+import "material-icons/css/material-icons.min.css";
 import "@material-tailwind/react/tailwind.css";
 ```
 
