@@ -44,7 +44,7 @@ export default function LandingWorkingSectionBody() {
           />
           <CardBody>
             <H6 color="gray">Top Notch Services</H6>
-            <Paragraph>
+            <Paragraph color="blueGray">
               The Arctic Ocean freezes every winter and much of the sea-ice then
               thaws every summer, and that process will continue whatever
               happens.
