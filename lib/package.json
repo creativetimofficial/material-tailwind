@@ -1,75 +1,47 @@
 {
-  "name": "@material-tailwind/react",
-  "homepage": "https://material-tailwind.com/",
-  "version": "0.1.1",
-  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-  "repository": "https://github.com/creativetimofficial/material-tailwind",
-  "license": "MIT",
-  "dependencies": {
-    "@babel/plugin-proposal-class-properties": "7.13.0",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@tippyjs/react": "^4.2.0",
-    "@zeit/next-css": "1.0.1",
-    "@zeit/next-sass": "1.0.1",
-    "autoprefixer": "^9.8.6",
-    "material-design-icons": "^3.0.1",
-    "material-ripple-effects": "^2.0.1",
-    "next": "^10.0.6",
-    "next-compose-plugins": "^2.2.1",
-    "next-fonts": "^1.5.1",
-    "next-images": "^1.3.1",
-    "node-sass": "^4.7.2",
-    "npm": "^7.5.2",
-    "path": "0.12.7",
-    "postcss": "^7.0.35",
-    "react": "^17.0.1",
-    "react-copy-to-clipboard": "^5.0.3",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^3.4.3",
-    "react-syntax-highlighter": "^15.4.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "webpack": "^4.44.2"
-  },
+  "name": "material-tailwind",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "next start",
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "export": "next export",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
-    "build:tailwind": "tailwind build assets/styles/index.css --minify -o lib/tailwind.css",
+    "build:tailwind": "NODE_ENV=production postcss ./assets/styles/index.css -o ./lib/tailwind.css",
     "assets:package": "cp package.json lib/package.json && cp README.md lib/README.md && cp LICENSE.md lib/LICENSE.md && cp ISSUE_TEMPLATE.md lib/ISSUE_TEMPLATE.md",
     "make:package": "rm -rf lib/ && babel components/**/* -d lib --ignore components/Documentation && create-index ./lib",
     "copy:module": "cp -r node_modules/material-ripple-effects lib/ && npm run build:tailwind",
     "prep:package": "cp -r lib-babel.config.json babel.config.json && npm run make:package && npm run assets:package && rm -rf babel.config.json && npm run copy:module",
     "publish:package": "npm run prep:package && cd lib && npm publish --access=public && cd ../",
-    "deploy": "npm run build && npm run export && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
+    "deploy": "npm run build && npm run export && cp CNAME out/CNAME && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@tippyjs/react": "^4.2.5",
+    "material-icons": "^0.6.0",
+    "material-ripple-effects": "^2.0.1",
+    "next": "10.1.3",
+    "next-images": "^1.7.0",
+    "npm": "^7.8.0",
+    "path": "^0.12.7",
+    "react": "17.0.2",
+    "react-copy-to-clipboard": "^5.0.3",
+    "react-dom": "17.0.2",
+    "react-syntax-highlighter": "^15.4.3"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "optionalDependencies": {
-    "@types/googlemaps": "3.39.13",
-    "@types/markerclustererplus": "2.1.33",
-    "@types/react": "16.9.49",
-    "typescript": "4.0.3"
-  },
   "devDependencies": {
-    "@babel/cli": "7.13.10",
-    "@babel/core": "7.13.10",
-    "@babel/parser": "7.13.11",
-    "@babel/preset-react": "7.12.13",
-    "create-index": "2.6.0"
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/parser": "^7.13.13",
+    "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "^10.2.5",
+    "create-index": "^2.6.0",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.1"
   }
 }
