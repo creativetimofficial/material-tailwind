@@ -1,35 +1,20 @@
 import React from "react";
+import H5 from "components/Typography/Heading5";
+import LeadText from "components/Typography/LeadText";
+import Icon from "components/Icon/Icon";
 
 export default function IndexFooter() {
   return (
     <>
       <footer className="relative bg-gray-50 pt-8 pb-6">
-        <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
-          <svg
-            className="absolute bottom-0 overflow-hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            y="0"
-          >
-            <polygon
-              className="text-gray-50 fill-current"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
-          </svg>
-        </div>
         <div className="container max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left pt-6">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-gray-900 text-2xl font-medium">
-                Material Tailwind
-              </h4>
-              <h5 className="text-base font-light mb-2 text-gray-700 mt-2">
+              <H5 color="gray">Material Tailwind</H5>
+              <LeadText color="blueGray" style={{ marginTop: "0" }}>
                 Easy to use React components for Tailwind CSS and Material
                 Design.
-              </h5>
+              </LeadText>
               <div className="flex gap-2 mt-6 md:justify-start md:mb-0 mb-8 justify-center">
                 <a
                   href="https://www.facebook.com/CreativeTim"
@@ -37,7 +22,7 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-facebook-square"></i>
+                  <Icon family="font-awesome" name="fab fa-facebook-square" />
                 </a>
                 <a
                   href="https://www.twitter.com/creativetim"
@@ -45,7 +30,7 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-twitter"></i>
+                  <Icon family="font-awesome" name="fab fa-twitter" />
                 </a>
                 <a
                   href="https://www.instagram.com/creativetimofficial/"
@@ -53,7 +38,7 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <Icon family="font-awesome" name="fab fa-instagram" />
                 </a>
                 <a
                   href="https://www.dribbble.com/creativetim"
@@ -61,7 +46,7 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-dribbble"></i>
+                  <Icon family="font-awesome" name="fab fa-dribbble" />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"
@@ -69,7 +54,7 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-youtube"></i>
+                  <Icon family="font-awesome" name="fab fa-youtube" />
                 </a>
                 <a
                   href="https://github.com/creativetimofficial"
@@ -77,14 +62,14 @@ export default function IndexFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-github"></i>
+                  <Icon family="font-awesome" name="fab fa-github" />
                 </a>
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top">
                 <div className="w-full lg:w-4/12 px-4 ml-auto md:mb-0 mb-8">
-                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
+                  <span className="block uppercase text-gray-900 text-sm font-serif font-medium mb-2">
                     Useful Links
                   </span>
                   <ul className="list-unstyled">
@@ -127,7 +112,7 @@ export default function IndexFooter() {
                   </ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-gray-600 text-sm font-medium mb-2">
+                  <span className="block uppercase text-gray-900 text-sm font-serif font-medium mb-2">
                     Other Resources
                   </span>
                   <ul className="list-unstyled">
