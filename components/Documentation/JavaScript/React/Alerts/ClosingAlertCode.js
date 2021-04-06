@@ -109,7 +109,7 @@ export default function ClosingAlert() {
       >
         {showAlert ? (
           <div
-            className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded relative mb-4 ${colors[color]} transition-all duration-300`}
+            className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded-lg relative mb-4 ${colors[color]} transition-all duration-300`}
           >
             <span className="font-medium uppercase">{color}!</span> This is a{" "}
             {color.toLowerCase()} closing alert - check it out!
