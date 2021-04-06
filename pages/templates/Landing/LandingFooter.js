@@ -1,6 +1,7 @@
 import React from "react";
 import H5 from "components/Typography/Heading5";
 import LeadText from "components/Typography/LeadText";
+import Icon from "components/Icon/Icon";
 
 export default function LandingFooter() {
   return (
@@ -21,7 +22,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-facebook-square"></i>
+                  <Icon family="font-awesome" name="fab fa-facebook-square" />
                 </a>
                 <a
                   href="https://www.twitter.com/creativetim"
@@ -29,7 +30,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-twitter"></i>
+                  <Icon family="font-awesome" name="fab fa-twitter" />
                 </a>
                 <a
                   href="https://www.instagram.com/creativetimofficial/"
@@ -37,7 +38,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <Icon family="font-awesome" name="fab fa-instagram" />
                 </a>
                 <a
                   href="https://www.dribbble.com/creativetim"
@@ -45,7 +46,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-dribbble"></i>
+                  <Icon family="font-awesome" name="fab fa-dribbble" />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"
@@ -53,7 +54,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-youtube"></i>
+                  <Icon family="font-awesome" name="fab fa-youtube" />
                 </a>
                 <a
                   href="https://github.com/creativetimofficial"
@@ -61,7 +62,7 @@ export default function LandingFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fab fa-github"></i>
+                  <Icon family="font-awesome" name="fab fa-github" />
                 </a>
               </div>
             </div>
