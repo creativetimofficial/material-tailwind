@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function NavbarInput({ fontAwesome, ...rest }) {
   return (
@@ -7,11 +7,11 @@ export default function NavbarInput({ fontAwesome, ...rest }) {
       {fontAwesome ? (
         <i class="fas fa-search text-white text-xl"></i>
       ) : (
-        <span className="material-icons text-white text-xl">search</span>
+        <span className="material-icons text-white text-xl mr-2">search</span>
       )}
       <input
         {...rest}
-        className="bg-transparent border-none text-sm leading-snug text-white w-full font-normal placeholder-white placeholder-opacity-50 focus:ring-0"
+        className="bg-transparent border-none text-sm leading-snug text-white w-full font-normal placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-0"
       />
     </div>
   );
