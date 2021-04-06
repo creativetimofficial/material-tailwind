@@ -18,7 +18,7 @@ export default function LandingTeamCard({ img, name, position }) {
               color="lightBlue"
               buttonType="link"
               ripple="dark"
-              rounded="full"
+              rounded
               iconOnly
             >
               <Icon family="font-awesome" name="fab fa-twitter" size="lg" />
@@ -27,7 +27,7 @@ export default function LandingTeamCard({ img, name, position }) {
               color="blue"
               buttonType="link"
               ripple="dark"
-              rounded="full"
+              rounded
               iconOnly
             >
               <Icon family="font-awesome" name="fab fa-facebook-f" size="lg" />
@@ -36,7 +36,7 @@ export default function LandingTeamCard({ img, name, position }) {
               color="pink"
               buttonType="link"
               ripple="dark"
-              rounded="full"
+              rounded
               iconOnly
             >
               <Icon family="font-awesome" name="fab fa-dribbble" size="lg" />

@@ -358,8 +358,8 @@ return (
                           className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/svelte.jpg"
                         />
-                        <div className="text-white mt-4">
-                          <H6>Svelte</H6>
+                        <div className="mt-4">
+                          <H6 color="white">Svelte</H6>
                         </div>
                       </div>
                     </a>
@@ -378,8 +378,8 @@ return (
                             className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                             src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
                           />
-                          <div className="text-white mt-4">
-                            <H6>ReactJS</H6>
+                          <div className="mt-4">
+                            <H6 color="white">ReactJS</H6>
                           </div>
                         </div>
                       </a>
@@ -391,8 +391,8 @@ return (
                           className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nextjs.jpg"
                         />
-                        <div className="text-white mt-4">
-                          <H6>NextJS</H6>
+                        <div className="mt-4">
+                          <H6 color="white">NextJS</H6>
                         </div>
                       </div>
                     </a>
@@ -405,8 +405,8 @@ return (
                           className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/js.png"
                         />
-                        <div className="text-white mt-4">
-                          <H6>JavaScript</H6>
+                        <div className="mt-4">
+                          <H6 color="white">JavaScript</H6>
                         </div>
                       </div>
                     </a>
@@ -417,8 +417,8 @@ return (
                           className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
                         />
-                        <div className="text-white mt-4">
-                          <H6>Angular</H6>
+                        <div className="mt-4">
+                          <H6 color="white">Angular</H6>
                         </div>
                       </div>
                     </a>
@@ -429,8 +429,8 @@ return (
                           className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
                           src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
                         />
-                        <div className="text-white mt-4">
-                          <H6>VueJS</H6>
+                        <div className="mt-4">
+                          <H6 color="white">VueJS</H6>
                         </div>
                       </div>
                     </a>
@@ -571,11 +571,9 @@ return (
                   size="xl"
                 />
               </div>
-              <div className="text-white">
-                <H4>Open Source</H4>
-              </div>
+              <H4 color="white">Open Source</H4>
               <div className="text-blue-gray-200">
-                <LeadText>
+                <LeadText color="blue-gray">
                   Since{" "}
                   <a
                     href="https://tailwindcss.com/?ref=material-tailwind"
@@ -590,7 +588,7 @@ return (
                   feel <br />
                   the design and also test the quality of the code!
                 </LeadText>
-                <LeadText>
+                <LeadText color="blue-gray">
                   Get it free on Github and please help us spread the news with
                   a Star!
                 </LeadText>
