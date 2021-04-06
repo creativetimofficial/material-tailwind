@@ -4,17 +4,14 @@ const ambient = 0.12;
 const black = "0,0,0";
 
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      "./pagesComponents/*.js",
-      "./pages/*.js",
-      "./pages/templates/*.js",
-      "./pages/templates/**/*.js",
-      "./components/**/*.js",
-    ],
-  },
-  darkMode: false,
+  mode: "jit",
+  purge: [
+    "./pages/**/**/*.js",
+    "./pagesComponents/*.js",
+    "./components/**/*.js",
+    "./components/*.js",
+  ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     boxShadow: {
       /* Shadow 1dp */
@@ -43,7 +40,6 @@ module.exports = {
       serif: ['"Roboto Slab"', "serif"],
       body: ["Roboto", "sans-serif"],
     },
-
     colors: {
       transparent: "transparent",
       current: "current",
@@ -230,11 +226,7 @@ module.exports = {
         900: "#b71c1c",
       },
     },
-
     extend: {
-      lineHeight: {
-        leading: "1.75",
-      },
       colors: {
         brown: {
           50: "#efebe9",
@@ -287,14 +279,8 @@ module.exports = {
       },
     },
   },
-
   variants: {
-    extend: {
-      backgroundColor: ["active", "checked"],
-      backgroundOpacity: ["active"],
-      borderWidth: ["hover", "focus"],
-    },
+    extend: {},
   },
-
   plugins: [],
 };
