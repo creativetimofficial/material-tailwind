@@ -1,6 +1,6 @@
 # @material-tailwind
 
-![version](https://img.shields.io/badge/version-0.1.1-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
+![version](https://img.shields.io/badge/version-0.2.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
 
 <div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
@@ -53,11 +53,11 @@ yarn add @materia-tailwind/react -E
 
 ##### Import Style Sheets
 
-Import the `tailwind.css` and `material-icons.css` into your `app.js` file. Make sure to import the `tailwind.css` style
+Import the `tailwind.css` and `material-icons.min.css` into your `app.js` file. Make sure to import the `tailwind.css` style
 sheet after all other style sheets.
 
 ```
-import "material-design-icons/iconfont/material-icons.css";
+import "material-icons/css/material-icons.min.css";
 import "@material-tailwind/react/tailwind.css";
 ```
 

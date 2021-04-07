@@ -1,7 +1,10 @@
 {
-  "name": "material-tailwind",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@material-tailwind/react",
+  "homepage": "https://material-tailwind.com/",
+  "version": "0.2.0",
+  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
+  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,14 +17,15 @@
     "copy:module": "cp -r node_modules/material-ripple-effects lib/ && npm run build:tailwind",
     "prep:package": "cp -r lib-babel.config.json babel.config.json && npm run make:package && npm run assets:package && rm -rf babel.config.json && npm run copy:module",
     "publish:package": "npm run prep:package && cd lib && npm publish --access=public && cd ../",
-    "deploy": "npm run build && npm run export && cp CNAME out/CNAME && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git subtree push --prefix out origin gh-pages"
+    "deploy": "npm run build && npm run export && cp CNAME out/CNAME && touch out/.nojekyll && git add out/ && git commit -m \"ready to deploy\" && git push && git push origin --delete gh-pages && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/runtime": "^7.13.10",
     "@tippyjs/react": "^4.2.5",
     "material-icons": "^0.6.0",
     "material-ripple-effects": "^2.0.1",
-    "next": "10.1.3",
+    "next": "^10.1.3",
     "next-images": "^1.7.0",
     "npm": "^7.8.0",
     "path": "^0.12.7",
@@ -37,6 +41,7 @@
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",
     "@babel/parser": "^7.13.13",
+    "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
     "autoprefixer": "^10.2.5",
     "create-index": "^2.6.0",
