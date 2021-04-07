@@ -14,14 +14,7 @@ export default function LandingNavbar() {
     <nav className="w-full bg-transparent flex items-center justify-between px-2 py-4 absolute z-50">
       <div className="container max-w-7xl px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <Link
-            href="/"
-            as={
-              (process.env.NODE_ENV === "production"
-                ? "/material-tailwind"
-                : "") + "/"
-            }
-          >
+          <Link href="/">
             <a className="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
               Material Tailwind
             </a>
@@ -46,14 +39,7 @@ export default function LandingNavbar() {
               className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
               onMouseUp={rippleLight}
             >
-              <Link
-                href="/documentation/quick-start"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/documentation/quick-start"
-                }
-              >
+              <Link href="/documentation/quick-start">
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <Icon
                     family="font-awesome"
@@ -68,14 +54,7 @@ export default function LandingNavbar() {
               className="flex items-center text-gray-900 lg:text-white rounded-lg transition-all duration-300"
               onMouseUp={rippleLight}
             >
-              <Link
-                href="/components"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/components"
-                }
-              >
+              <Link href="/components">
                 <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                   <Icon family="font-awesome" name="fas fa-cubes" size="lg" />
                   <span className="inline-block ml-2">Components</span>
@@ -101,34 +80,13 @@ export default function LandingNavbar() {
                 paddingRight: "10px",
               }}
             >
-              <Link
-                href="/templates/landing"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/landing"
-                }
-              >
+              <Link href="/templates/landing">
                 <DropdownItem>Landing Page</DropdownItem>
               </Link>
-              <Link
-                href="/templates/login"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/login"
-                }
-              >
+              <Link href="/templates/login">
                 <DropdownItem>Login</DropdownItem>
               </Link>
-              <Link
-                href="/templates/profile"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/profile"
-                }
-              >
+              <Link href="/templates/profile">
                 <DropdownItem>Profile</DropdownItem>
               </Link>
             </Dropdown>

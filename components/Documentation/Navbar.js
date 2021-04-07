@@ -78,34 +78,13 @@ export default function IndexNavbar(props) {
                 paddingRight: "10px",
               }}
             >
-              <Link
-                href="/templates/landing"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/landing"
-                }
-              >
+              <Link href="/templates/landing">
                 <DropdownItem>Landing Page</DropdownItem>
               </Link>
-              <Link
-                href="/templates/login"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/login"
-                }
-              >
+              <Link href="/templates/login">
                 <DropdownItem>Login</DropdownItem>
               </Link>
-              <Link
-                href="/templates/profile"
-                as={
-                  (process.env.NODE_ENV === "production"
-                    ? "/material-tailwind"
-                    : "") + "/templates/profile"
-                }
-              >
+              <Link href="/templates/profile">
                 <DropdownItem>Profile</DropdownItem>
               </Link>
             </Dropdown>

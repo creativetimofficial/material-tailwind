@@ -363,14 +363,7 @@ return (
                         </div>
                       </div>
                     </a>
-                    <Link
-                      href="/documentation/react/alerts"
-                      as={
-                        (process.env.NODE_ENV === "production"
-                          ? "/material-tailwind"
-                          : "") + "/documentation/react/alerts"
-                      }
-                    >
+                    <Link href="/documentation/react/alerts">
                       <a>
                         <div className="bg-light-blue-500 shadow-xl rounded-xl text-center p-8 mt-8">
                           <img
