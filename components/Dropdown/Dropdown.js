@@ -336,7 +336,7 @@ export default function Dropdown({
             <Tippy
                 content={
                     <div
-                        className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 transition-all duration-500`}
+                        className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 overflow-hidden transition-all duration-500`}
                         style={{ minWidth: '10rem' }}
                     >
                         {children}

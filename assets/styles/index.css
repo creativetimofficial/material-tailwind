@@ -408,6 +408,11 @@
     }
 }
 
+/* Tippy Boxx */
+.tippy-box:focus {
+    outline: none;
+}
+
 /* Tippy Animation */
 .tippy-box[data-animation='scale'] {
     transform-origin: top left !important;
