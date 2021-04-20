@@ -172,6 +172,7 @@ export default function Textarea({
     const textareaFilled = [
         mtTextareaBorderColor,
         'mt-input',
+        'texterea',
         'bg-transparent',
         'border-none',
     ];
