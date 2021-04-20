@@ -17,6 +17,11 @@
         @apply text-xs leading-tight;
     }
 
+    .texterea:focus + label span,
+    .texterea:not(:placeholder-shown) + label span {
+        top: -22px !important;
+    }
+
     /* Material Tailwind Input Outline */
     .mt-input-outline:focus,
     .mt-input-outline:not(:placeholder-shown) {
