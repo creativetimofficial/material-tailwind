@@ -45,6 +45,28 @@ const toColors = {
     red: 'to-red-700',
 };
 
+const shadowColors = {
+    blueGray: 'shadow-lg-blue-gray',
+    gray: 'shadow-lg-gray',
+    brown: 'shadow-lg-brown',
+    deepOrange: 'shadow-lg-deep-orange',
+    orange: 'shadow-lg-orange',
+    amber: 'shadow-lg-amber',
+    yellow: 'shadow-lg-yellow',
+    lime: 'shadow-lg-lime',
+    lightGreen: 'shadow-lg-light-green',
+    green: 'shadow-lg-green',
+    teal: 'shadow-lg-teal',
+    cyan: 'shadow-lg-cyan',
+    lightBlue: 'shadow-lg-light-blue',
+    blue: 'shadow-lg-blue',
+    indigo: 'shadow-lg-indigo',
+    deepPurple: 'shadow-lg-deep-purple',
+    purple: 'shadow-lg-purple',
+    pink: 'shadow-lg-pink',
+    red: 'shadow-lg-red',
+};
+
 export default function CardHeader({
     children,
     color,
@@ -52,7 +74,7 @@ export default function CardHeader({
 }) {
     return (
         <div
-            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-xl text-white text-${contentPositin} p-6 shadow-xl`}
+            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-xl text-white text-${contentPositin} p-6 ${shadowColors[color]}`}
         >
             {children}
         </div>
