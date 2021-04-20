@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function NavbarList({ children, leftSide }) {
-  return (
-    <ul
-      className={`flex flex-col lg:flex-row list-none ${
-        leftSide ? 'mr-auto' : 'ml-auto'
-      }`}
-    >
-      {children}
-    </ul>
-  );
+    return (
+        <ul
+            className={`flex items-center flex-col lg:flex-row list-none ${
+                leftSide ? 'mr-auto' : 'ml-auto'
+            }`}
+        >
+            {children}
+        </ul>
+    );
 }
 
 NavbarList.propTypes = {
-  children: PropTypes.node.isRequired,
-  leftSide: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+    leftSide: PropTypes.bool,
 };

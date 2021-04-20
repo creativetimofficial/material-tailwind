@@ -3,239 +3,437 @@
 @tailwind utilities;
 
 @layer utilities {
-  /* Material Inputs */
-  .md-input + label:after {
-    content: "";
-    @apply absolute top-0.5 left-0 w-full h-full pointer-events-none transform scale-x-0 border border-t-0 border-l-0 border-r-0 border-b-2 transition-all duration-300;
-  }
-  .md-input:focus + label:after {
-    @apply scale-x-100;
-  }
-  .md-input:focus + label span,
-  .md-input:not(:placeholder-shown) + label span {
-    top: -14%;
-    @apply text-xs leading-tight;
-  }
+    /* Material Tailwind Input */
+    .mt-input + label:after {
+        content: '';
+        @apply absolute top-0.5 left-0 w-full h-full pointer-events-none transform scale-x-0 border border-t-0 border-l-0 border-r-0 border-b-2 transition-all duration-300;
+    }
+    .mt-input:focus + label:after {
+        @apply scale-x-100;
+    }
+    .mt-input:focus + label span,
+    .mt-input:not(:placeholder-shown) + label span {
+        top: -14%;
+        @apply text-xs leading-tight;
+    }
 
-  /* Material Input Outline */
-  .md-input-outline:focus,
-  .md-input-outline:not(:placeholder-shown) {
-    border-top: transparent !important;
-  }
-  .md-input-outline + label {
-    line-height: 3.625 !important;
-  }
-  .md-input-outline:focus + label,
-  .md-input-outline:not(:placeholder-shown) + label {
-    @apply text-xs leading-tight !important;
-  }
-  .md-input-outline + label:before,
-  .md-input-outline + label:after {
-    content: "";
-    @apply block box-border mt-1.5 border border-t-2 border-b-0
+    /* Material Tailwind Input Outline */
+    .mt-input-outline:focus,
+    .mt-input-outline:not(:placeholder-shown) {
+        border-top: transparent !important;
+    }
+    .mt-input-outline + label {
+        line-height: 3.625 !important;
+    }
+    .mt-input-outline:focus + label,
+    .mt-input-outline:not(:placeholder-shown) + label {
+        @apply text-xs leading-tight !important;
+    }
+    .mt-input-outline + label:before,
+    .mt-input-outline + label:after {
+        content: '';
+        @apply block box-border mt-1.5 border border-t-2 border-b-0
       border-l-0 border-r-0 border-transparent w-2.5 h-2 pointer-events-none;
-  }
+    }
 
-  .md-input-outline:not(:placeholder-shown) + label:before,
-  .md-input-outline:not(:placeholder-shown) + label:after {
-    @apply border-t border-gray-300;
-  }
+    .mt-input-outline:not(:placeholder-shown) + label:before,
+    .mt-input-outline:not(:placeholder-shown) + label:after {
+        @apply border-t border-gray-300;
+    }
 
-  .md-input-outline:focus + label::before,
-  .md-input-outline:focus + label::after {
-    @apply border-t-2;
-  }
+    .mt-input-outline:focus + label::before,
+    .mt-input-outline:focus + label::after {
+        @apply border-t-2;
+    }
 
-  .md-input-outline + label:before {
-    @apply mr-1 rounded-tl-lg;
-  }
-  .md-input-outline + label:after {
-    @apply flex-grow ml-1 rounded-tr-lg;
-  }
+    .mt-input-outline + label:before {
+        @apply mr-1 rounded-tl-lg;
+    }
+    .mt-input-outline + label:after {
+        @apply flex-grow ml-1 rounded-tr-lg;
+    }
 
-  /* Material Input Colors */
-  .md-input-blue-gray-500:focus + label:after {
-    @apply border-blue-gray-500;
-  }
-  .md-input-gray-500:focus + label:after {
-    @apply border-gray-500;
-  }
-  .md-input-orange-500:focus + label:after {
-    @apply border-orange-500;
-  }
-  .md-input-deep-orange-500:focus + label:after {
-    @apply border-deep-orange-500;
-  }
-  .md-input-amber-500:focus + label:after {
-    @apply border-amber-500;
-  }
-  .md-input-yellow-600:focus + label:after {
-    @apply border-yellow-600;
-  }
-  .md-input-lime-500:focus + label:after {
-    @apply border-lime-500;
-  }
-  .md-input-light-green-500:focus + label:after {
-    @apply border-light-green-500;
-  }
-  .md-input-green-500:focus + label:after {
-    @apply border-green-500;
-  }
-  .md-input-teal-500:focus + label:after {
-    @apply border-teal-500;
-  }
-  .md-input-cyan-500:focus + label:after {
-    @apply border-cyan-500;
-  }
-  .md-input-light-blue-500:focus + label:after {
-    @apply border-light-blue-500;
-  }
-  .md-input-blue-500:focus + label:after {
-    @apply border-blue-500;
-  }
-  .md-input-indigo-500:focus + label:after {
-    @apply border-indigo-500;
-  }
-  .md-input-purple-500:focus + label:after {
-    @apply border-purple-500;
-  }
-  .md-input-deep-purple-500:focus + label:after {
-    @apply border-deep-purple-500;
-  }
-  .md-input-pink-500:focus + label:after {
-    @apply border-pink-500;
-  }
-  .md-input-red-500:focus + label:after {
-    @apply border-red-500;
-  }
+    /* Material Tailwind Radio Button */
+    .mt-radio:checked + label span {
+        box-shadow: 0px 0px 0px 2px white inset;
+        @apply bg-opacity-100 !important;
+    }
 
-  /* Material Input Outline Colors */
-  .md-input-outline-blue-gray-500:focus,
-  .md-input-outline-blue-gray-500:focus + label,
-  .md-input-outline-blue-gray-500:focus + label:before,
-  .md-input-outline-blue-gray-500:focus + label:after {
-    @apply border-blue-gray-500 text-blue-gray-500;
-  }
-  .md-input-outline-gray-500:focus,
-  .md-input-outline-gray-500:focus + label,
-  .md-input-outline-gray-500:focus + label:before,
-  .md-input-outline-gray-500:focus + label:after {
-    @apply border-gray-500 text-gray-500;
-  }
-  .md-input-outline-orange-500:focus,
-  .md-input-outline-orange-500:focus + label,
-  .md-input-outline-orange-500:focus + label:before,
-  .md-input-outline-orange-500:focus + label:after {
-    @apply border-orange-500 text-orange-500;
-  }
-  .md-input-outline-deep-orange-500:focus,
-  .md-input-outline-deep-orange-500:focus + label,
-  .md-input-outline-deep-orange-500:focus + label:before,
-  .md-input-outline-deep-orange-500:focus + label:after {
-    @apply border-deep-orange-500 text-deep-orange-500;
-  }
-  .md-input-outline-brown-500:focus,
-  .md-input-outline-brown-500:focus + label,
-  .md-input-outline-brown-500:focus + label:before,
-  .md-input-outline-brown-500:focus + label:after {
-    @apply border-brown-500 text-brown-500;
-  }
-  .md-input-outline-amber-500:focus,
-  .md-input-outline-amber-500:focus + label,
-  .md-input-outline-amber-500:focus + label:before,
-  .md-input-outline-amber-500:focus + label:after {
-    @apply border-amber-500 text-amber-500;
-  }
-  .md-input-outline-yellow-600:focus,
-  .md-input-outline-yellow-600:focus + label,
-  .md-input-outline-yellow-600:focus + label:before,
-  .md-input-outline-yellow-600:focus + label:after {
-    @apply border-yellow-600 text-yellow-600;
-  }
-  .md-input-outline-lime-500:focus,
-  .md-input-outline-lime-500:focus + label,
-  .md-input-outline-lime-500:focus + label:before,
-  .md-input-outline-lime-500:focus + label:after {
-    @apply border-lime-500 text-lime-500;
-  }
-  .md-input-outline-light-green-500:focus,
-  .md-input-outline-light-green-500:focus + label,
-  .md-input-outline-light-green-500:focus + label:before,
-  .md-input-outline-light-green-500:focus + label:after {
-    @apply border-light-green-500 text-light-green-500;
-  }
-  .md-input-outline-green-500:focus,
-  .md-input-outline-green-500:focus + label,
-  .md-input-outline-green-500:focus + label:before,
-  .md-input-outline-green-500:focus + label:after {
-    @apply border-green-500 text-green-500;
-  }
-  .md-input-outline-teal-500:focus,
-  .md-input-outline-teal-500:focus + label,
-  .md-input-outline-teal-500:focus + label:before,
-  .md-input-outline-teal-500:focus + label:after {
-    @apply border-teal-500 text-teal-500;
-  }
-  .md-input-outline-cyan-500:focus,
-  .md-input-outline-cyan-500:focus + label,
-  .md-input-outline-cyan-500:focus + label:before,
-  .md-input-outline-cyan-500:focus + label:after {
-    @apply border-cyan-500 text-cyan-500;
-  }
-  .md-input-outline-light-blue-500:focus,
-  .md-input-outline-light-blue-500:focus + label,
-  .md-input-outline-light-blue-500:focus + label:before,
-  .md-input-outline-light-blue-500:focus + label:after {
-    @apply border-light-blue-500 text-light-blue-500;
-  }
-  .md-input-outline-blue-500:focus,
-  .md-input-outline-blue-500:focus + label,
-  .md-input-outline-blue-500:focus + label:before,
-  .md-input-outline-blue-500:focus + label:after {
-    @apply border-blue-500 text-blue-500;
-  }
-  .md-input-outline-indigo-500:focus,
-  .md-input-outline-indigo-500:focus + label,
-  .md-input-outline-indigo-500:focus + label:before,
-  .md-input-outline-indigo-500:focus + label:after {
-    @apply border-indigo-500 text-indigo-500;
-  }
-  .md-input-outline-purple-500:focus,
-  .md-input-outline-purple-500:focus + label,
-  .md-input-outline-purple-500:focus + label:before,
-  .md-input-outline-purple-500:focus + label:after {
-    @apply border-purple-500 text-purple-500;
-  }
-  .md-input-outline-deep-purple-500:focus,
-  .md-input-outline-deep-purple-500:focus + label,
-  .md-input-outline-deep-purple-500:focus + label:before,
-  .md-input-outline-deep-purple-500:focus + label:after {
-    @apply border-deep-purple-500 text-deep-purple-500;
-  }
-  .md-input-outline-pink-500:focus,
-  .md-input-outline-pink-500:focus + label,
-  .md-input-outline-pink-500:focus + label:before,
-  .md-input-outline-pink-500:focus + label:after {
-    @apply border-pink-500 text-pink-500;
-  }
-  .md-input-outline-red-500:focus,
-  .md-input-outline-red-500:focus + label,
-  .md-input-outline-red-500:focus + label:before,
-  .md-input-outline-red-500:focus + label:after {
-    @apply border-red-500 text-red-500;
-  }
+    .mt-radio:checked + label {
+        @apply text-gray-700;
+    }
+
+    .mt-radio + label span::before {
+        content: '';
+        top: -1.5px;
+        left: -1.5px;
+        transform: scale3d(1, 1, 1);
+        @apply block absolute w-4 h-4 rounded-full z-10 opacity-0 m-0;
+    }
+
+    .mt-radio:checked + label span::before {
+        animation: radio-ripple 0.3s linear;
+    }
+
+    /* Material Tailwind Checkbox */
+    .mt-checkbox:checked + label span {
+        @apply bg-opacity-100 !important;
+    }
+
+    .mt-checkbox:checked + label {
+        @apply text-gray-700;
+    }
+
+    .mt-checkbox + label span::before {
+        content: '';
+        top: -1px;
+        left: -1.5px;
+        transform: scale3d(2, 2, 1);
+        @apply block absolute w-5 h-5 rounded-full opacity-0 z-10 m-0;
+    }
+
+    .mt-checkbox + label span::after {
+        content: '';
+        top: 1px;
+        left: 6px;
+        @apply absolute w-1.5 h-3.5 border-b-2 border-r-2 border-transparent transform rotate-45 transition-all duration-200;
+    }
+
+    .mt-checkbox:checked + label span::before {
+        animation: radio-ripple 0.3s linear;
+    }
+
+    .mt-checkbox:checked + label span::after {
+        @apply border-white;
+    }
+
+    /* Material Tailwind Input Colors */
+    .mt-input-blue-gray-500:focus + label:after {
+        @apply border-blue-gray-500;
+    }
+    .mt-input-gray-500:focus + label:after {
+        @apply border-gray-500;
+    }
+    .mt-input-orange-500:focus + label:after {
+        @apply border-orange-500;
+    }
+    .mt-input-deep-orange-500:focus + label:after {
+        @apply border-deep-orange-500;
+    }
+    .mt-input-amber-500:focus + label:after {
+        @apply border-amber-500;
+    }
+    .mt-input-yellow-600:focus + label:after {
+        @apply border-yellow-600;
+    }
+    .mt-input-lime-500:focus + label:after {
+        @apply border-lime-500;
+    }
+    .mt-input-light-green-500:focus + label:after {
+        @apply border-light-green-500;
+    }
+    .mt-input-green-500:focus + label:after {
+        @apply border-green-500;
+    }
+    .mt-input-teal-500:focus + label:after {
+        @apply border-teal-500;
+    }
+    .mt-input-cyan-500:focus + label:after {
+        @apply border-cyan-500;
+    }
+    .mt-input-light-blue-500:focus + label:after {
+        @apply border-light-blue-500;
+    }
+    .mt-input-blue-500:focus + label:after {
+        @apply border-blue-500;
+    }
+    .mt-input-indigo-500:focus + label:after {
+        @apply border-indigo-500;
+    }
+    .mt-input-purple-500:focus + label:after {
+        @apply border-purple-500;
+    }
+    .mt-input-deep-purple-500:focus + label:after {
+        @apply border-deep-purple-500;
+    }
+    .mt-input-pink-500:focus + label:after {
+        @apply border-pink-500;
+    }
+    .mt-input-red-500:focus + label:after {
+        @apply border-red-500;
+    }
+
+    /* Material Tailwind Input Outline Colors */
+    .mt-input-outline-blue-gray-500:focus,
+    .mt-input-outline-blue-gray-500:focus + label,
+    .mt-input-outline-blue-gray-500:focus + label:before,
+    .mt-input-outline-blue-gray-500:focus + label:after {
+        @apply border-blue-gray-500 text-blue-gray-500;
+    }
+    .mt-input-outline-gray-500:focus,
+    .mt-input-outline-gray-500:focus + label,
+    .mt-input-outline-gray-500:focus + label:before,
+    .mt-input-outline-gray-500:focus + label:after {
+        @apply border-gray-500 text-gray-500;
+    }
+    .mt-input-outline-orange-500:focus,
+    .mt-input-outline-orange-500:focus + label,
+    .mt-input-outline-orange-500:focus + label:before,
+    .mt-input-outline-orange-500:focus + label:after {
+        @apply border-orange-500 text-orange-500;
+    }
+    .mt-input-outline-deep-orange-500:focus,
+    .mt-input-outline-deep-orange-500:focus + label,
+    .mt-input-outline-deep-orange-500:focus + label:before,
+    .mt-input-outline-deep-orange-500:focus + label:after {
+        @apply border-deep-orange-500 text-deep-orange-500;
+    }
+    .mt-input-outline-brown-500:focus,
+    .mt-input-outline-brown-500:focus + label,
+    .mt-input-outline-brown-500:focus + label:before,
+    .mt-input-outline-brown-500:focus + label:after {
+        @apply border-brown-500 text-brown-500;
+    }
+    .mt-input-outline-amber-500:focus,
+    .mt-input-outline-amber-500:focus + label,
+    .mt-input-outline-amber-500:focus + label:before,
+    .mt-input-outline-amber-500:focus + label:after {
+        @apply border-amber-500 text-amber-500;
+    }
+    .mt-input-outline-yellow-600:focus,
+    .mt-input-outline-yellow-600:focus + label,
+    .mt-input-outline-yellow-600:focus + label:before,
+    .mt-input-outline-yellow-600:focus + label:after {
+        @apply border-yellow-600 text-yellow-600;
+    }
+    .mt-input-outline-lime-500:focus,
+    .mt-input-outline-lime-500:focus + label,
+    .mt-input-outline-lime-500:focus + label:before,
+    .mt-input-outline-lime-500:focus + label:after {
+        @apply border-lime-500 text-lime-500;
+    }
+    .mt-input-outline-light-green-500:focus,
+    .mt-input-outline-light-green-500:focus + label,
+    .mt-input-outline-light-green-500:focus + label:before,
+    .mt-input-outline-light-green-500:focus + label:after {
+        @apply border-light-green-500 text-light-green-500;
+    }
+    .mt-input-outline-green-500:focus,
+    .mt-input-outline-green-500:focus + label,
+    .mt-input-outline-green-500:focus + label:before,
+    .mt-input-outline-green-500:focus + label:after {
+        @apply border-green-500 text-green-500;
+    }
+    .mt-input-outline-teal-500:focus,
+    .mt-input-outline-teal-500:focus + label,
+    .mt-input-outline-teal-500:focus + label:before,
+    .mt-input-outline-teal-500:focus + label:after {
+        @apply border-teal-500 text-teal-500;
+    }
+    .mt-input-outline-cyan-500:focus,
+    .mt-input-outline-cyan-500:focus + label,
+    .mt-input-outline-cyan-500:focus + label:before,
+    .mt-input-outline-cyan-500:focus + label:after {
+        @apply border-cyan-500 text-cyan-500;
+    }
+    .mt-input-outline-light-blue-500:focus,
+    .mt-input-outline-light-blue-500:focus + label,
+    .mt-input-outline-light-blue-500:focus + label:before,
+    .mt-input-outline-light-blue-500:focus + label:after {
+        @apply border-light-blue-500 text-light-blue-500;
+    }
+    .mt-input-outline-blue-500:focus,
+    .mt-input-outline-blue-500:focus + label,
+    .mt-input-outline-blue-500:focus + label:before,
+    .mt-input-outline-blue-500:focus + label:after {
+        @apply border-blue-500 text-blue-500;
+    }
+    .mt-input-outline-indigo-500:focus,
+    .mt-input-outline-indigo-500:focus + label,
+    .mt-input-outline-indigo-500:focus + label:before,
+    .mt-input-outline-indigo-500:focus + label:after {
+        @apply border-indigo-500 text-indigo-500;
+    }
+    .mt-input-outline-purple-500:focus,
+    .mt-input-outline-purple-500:focus + label,
+    .mt-input-outline-purple-500:focus + label:before,
+    .mt-input-outline-purple-500:focus + label:after {
+        @apply border-purple-500 text-purple-500;
+    }
+    .mt-input-outline-deep-purple-500:focus,
+    .mt-input-outline-deep-purple-500:focus + label,
+    .mt-input-outline-deep-purple-500:focus + label:before,
+    .mt-input-outline-deep-purple-500:focus + label:after {
+        @apply border-deep-purple-500 text-deep-purple-500;
+    }
+    .mt-input-outline-pink-500:focus,
+    .mt-input-outline-pink-500:focus + label,
+    .mt-input-outline-pink-500:focus + label:before,
+    .mt-input-outline-pink-500:focus + label:after {
+        @apply border-pink-500 text-pink-500;
+    }
+    .mt-input-outline-red-500:focus,
+    .mt-input-outline-red-500:focus + label,
+    .mt-input-outline-red-500:focus + label:before,
+    .mt-input-outline-red-500:focus + label:after {
+        @apply border-red-500 text-red-500;
+    }
+
+    .mt-input-outline-error:not(:placeholder-shown) + label,
+    .mt-input-outline-error:not(:placeholder-shown) + label:before,
+    .mt-input-outline-error:not(:placeholder-shown) + label:after {
+        @apply border-red-500 text-red-500;
+    }
+
+    .mt-input-outline-success:not(:placeholder-shown) + label,
+    .mt-input-outline-success:not(:placeholder-shown) + label:before,
+    .mt-input-outline-success:not(:placeholder-shown) + label:after {
+        @apply border-green-500 text-green-500;
+    }
+
+    /* Material Tailwind Radio Button and Checkbox Colors */
+    .mt-radio-blue-gray-500:checked + label span,
+    .mt-radio-blue-gray-500 + label span::before,
+    .mt-checkbox-blue-gray-500:checked + label span,
+    .mt-checkbox-blue-gray-500 + label span::before {
+        @apply bg-blue-gray-500 border-blue-gray-500 bg-opacity-20;
+    }
+    .mt-radio-gray-500:checked + label span,
+    .mt-radio-gray-500 + label span::before,
+    .mt-checkbox-gray-500:checked + label span,
+    .mt-checkbox-gray-500 + label span::before {
+        @apply bg-gray-500 border-gray-500 bg-opacity-20;
+    }
+    .mt-radio-orange-500:checked + label span,
+    .mt-radio-orange-500 + label span::before,
+    .mt-checkbox-orange-500:checked + label span,
+    .mt-checkbox-orange-500 + label span::before {
+        @apply bg-orange-500 border-orange-500 bg-opacity-20;
+    }
+    .mt-radio-deep-orange-500:checked + label span,
+    .mt-radio-deep-orange-500 + label span::before,
+    .mt-checkbox-deep-orange-500:checked + label span,
+    .mt-checkbox-deep-orange-500 + label span::before {
+        @apply bg-deep-orange-500 border-deep-orange-500 bg-opacity-20;
+    }
+    .mt-radio-brown-500:checked + label span,
+    .mt-radio-brown-500 + label span::before,
+    .mt-checkbox-brown-500:checked + label span,
+    .mt-checkbox-brown-500 + label span::before {
+        @apply bg-brown-500 border-brown-500 bg-opacity-20;
+    }
+    .mt-radio-amber-500:checked + label span,
+    .mt-radio-amber-500 + label span::before,
+    .mt-checkbox-amber-500:checked + label span,
+    .mt-checkbox-amber-500 + label span::before {
+        @apply bg-amber-500 border-amber-500 bg-opacity-20;
+    }
+    .mt-radio-yellow-600:checked + label span,
+    .mt-radio-yellow-600 + label span::before,
+    .mt-checkbox-yellow-600:checked + label span,
+    .mt-checkbox-yellow-600 + label span::before {
+        @apply bg-yellow-600 border-yellow-600 bg-opacity-20;
+    }
+    .mt-radio-lime-500:checked + label span,
+    .mt-radio-lime-500 + label span::before,
+    .mt-checkbox-lime-500:checked + label span,
+    .mt-checkbox-lime-500 + label span::before {
+        @apply bg-lime-500 border-lime-500 bg-opacity-20;
+    }
+    .mt-radio-light-green-500:checked + label span,
+    .mt-radio-light-green-500 + label span::before,
+    .mt-checkbox-light-green-500:checked + label span,
+    .mt-checkbox-light-green-500 + label span::before {
+        @apply bg-light-green-500 border-light-green-500 bg-opacity-20;
+    }
+    .mt-radio-green-500:checked + label span,
+    .mt-radio-green-500 + label span::before,
+    .mt-checkbox-green-500:checked + label span,
+    .mt-checkbox-green-500 + label span::before {
+        @apply bg-green-500 border-green-500 bg-opacity-20;
+    }
+    .mt-radio-teal-500:checked + label span,
+    .mt-radio-teal-500 + label span::before,
+    .mt-checkbox-teal-500:checked + label span,
+    .mt-checkbox-teal-500 + label span::before {
+        @apply bg-teal-500 border-teal-500 bg-opacity-20;
+    }
+    .mt-radio-cyan-500:checked + label span,
+    .mt-radio-cyan-500 + label span::before,
+    .mt-checkbox-cyan-500:checked + label span,
+    .mt-checkbox-cyan-500 + label span::before {
+        @apply bg-cyan-500 border-cyan-500 bg-opacity-20;
+    }
+    .mt-radio-light-blue-500:checked + label span,
+    .mt-radio-light-blue-500 + label span::before,
+    .mt-checkbox-light-blue-500:checked + label span,
+    .mt-checkbox-light-blue-500 + label span::before {
+        @apply bg-light-blue-500 border-light-blue-500 bg-opacity-20;
+    }
+    .mt-radio-blue-500:checked + label span,
+    .mt-radio-blue-500 + label span::before,
+    .mt-checkbox-blue-500:checked + label span,
+    .mt-checkbox-blue-500 + label span::before {
+        @apply bg-blue-500 border-blue-500 bg-opacity-20;
+    }
+    .mt-radio-indigo-500:checked + label span,
+    .mt-radio-indigo-500 + label span::before,
+    .mt-checkbox-indigo-500:checked + label span,
+    .mt-checkbox-indigo-500 + label span::before {
+        @apply bg-indigo-500 border-indigo-500 bg-opacity-20;
+    }
+    .mt-radio-purple-500:checked + label span,
+    .mt-radio-purple-500 + label span::before,
+    .mt-checkbox-purple-500:checked + label span,
+    .mt-checkbox-purple-500 + label span::before {
+        @apply bg-purple-500 border-purple-500 bg-opacity-20;
+    }
+    .mt-radio-deep-purple-500:checked + label span,
+    .mt-radio-deep-purple-500 + label span::before,
+    .mt-checkbox-deep-purple-500:checked + label span,
+    .mt-checkbox-deep-purple-500 + label span::before {
+        @apply bg-deep-purple-500 border-deep-purple-500 bg-opacity-20;
+    }
+    .mt-radio-pink-500:checked + label span,
+    .mt-radio-pink-500 + label span::before,
+    .mt-checkbox-pink-500:checked + label span,
+    .mt-checkbox-pink-500 + label span::before {
+        @apply bg-pink-500 border-pink-500 bg-opacity-20;
+    }
+    .mt-radio-red-500:checked + label span,
+    .mt-radio-red-500 + label span::before,
+    .mt-checkbox-red-500:checked + label span,
+    .mt-checkbox-red-500 + label span::before {
+        @apply bg-red-500 border-red-500 bg-opacity-20;
+    }
 }
 
 /* Tippy Animation */
-.tippy-box[data-animation="scale"] {
-  transform-origin: top left !important;
+.tippy-box[data-animation='scale'] {
+    transform-origin: top left !important;
 }
 
 /* Tippy Arrow */
 .arrow-light .tippy-svg-arrow {
-  fill: #fff;
+    fill: #fff;
 }
 
 .arrow-dark .tippy-svg-arrow {
-  fill: rgba(0, 0, 0, 0.8);
+    fill: rgba(0, 0, 0, 0.8);
+}
+
+/* Material Tailwind Radio Button Ripple Effect Animation */
+@keyframes radio-ripple {
+    from {
+        opacity: 0;
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale3d(2, 2, 1);
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(3, 3, 1);
+    }
 }

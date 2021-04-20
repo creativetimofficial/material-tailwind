@@ -1,61 +1,66 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const fromColors = {
-  blueGray: "from-blue-gray-500",
-  gray: "from-gray-500",
-  brown: "from-brown-500",
-  deepOrange: "from-deep-orange-500",
-  orange: "from-orange-500",
-  amber: "from-amber-500",
-  yellow: "from-yellow-600",
-  lime: "from-lime-500",
-  lightGreen: "from-light-green-500",
-  green: "from-green-500",
-  teal: "from-teal-500",
-  cyan: "from-cyan-500",
-  lightBlue: "from-light-blue-500",
-  blue: "from-blue-500",
-  indigo: "from-indigo-500",
-  deepPurple: "from-deep-purple-500",
-  purple: "from-purple-500",
-  pink: "from-pink-500",
-  red: "from-red-500",
+    blueGray: 'from-blue-gray-500',
+    gray: 'from-gray-500',
+    brown: 'from-brown-500',
+    deepOrange: 'from-deep-orange-500',
+    orange: 'from-orange-500',
+    amber: 'from-amber-500',
+    yellow: 'from-yellow-600',
+    lime: 'from-lime-500',
+    lightGreen: 'from-light-green-500',
+    green: 'from-green-500',
+    teal: 'from-teal-500',
+    cyan: 'from-cyan-500',
+    lightBlue: 'from-light-blue-500',
+    blue: 'from-blue-500',
+    indigo: 'from-indigo-500',
+    deepPurple: 'from-deep-purple-500',
+    purple: 'from-purple-500',
+    pink: 'from-pink-500',
+    red: 'from-red-500',
 };
 
 const toColors = {
-  blueGray: "to-blue-gray-700",
-  gray: "to-gray-700",
-  brown: "to-brown-700",
-  deepOrange: "to-deep-orange-700",
-  orange: "to-orange-700",
-  amber: "to-amber-700",
-  yellow: "to-yellow-800",
-  lime: "to-lime-700",
-  lightGreen: "to-light-green-700",
-  green: "to-green-700",
-  teal: "to-teal-700",
-  cyan: "to-cyan-700",
-  lightBlue: "to-light-blue-700",
-  blue: "to-blue-700",
-  indigo: "to-indigo-700",
-  deepPurple: "to-deep-purple-700",
-  purple: "to-purple-700",
-  pink: "to-pink-700",
-  red: "to-red-700",
+    blueGray: 'to-blue-gray-700',
+    gray: 'to-gray-700',
+    brown: 'to-brown-700',
+    deepOrange: 'to-deep-orange-700',
+    orange: 'to-orange-700',
+    amber: 'to-amber-700',
+    yellow: 'to-yellow-800',
+    lime: 'to-lime-700',
+    lightGreen: 'to-light-green-700',
+    green: 'to-green-700',
+    teal: 'to-teal-700',
+    cyan: 'to-cyan-700',
+    lightBlue: 'to-light-blue-700',
+    blue: 'to-blue-700',
+    indigo: 'to-indigo-700',
+    deepPurple: 'to-deep-purple-700',
+    purple: 'to-purple-700',
+    pink: 'to-pink-700',
+    red: 'to-red-700',
 };
 
-export default function CardHeader({ children, color }) {
-  return (
-    <div
-      className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-lg text-white px-12 py-8 mb-8 text-center shadow-xl`}
-    >
-      {children}
-    </div>
-  );
+export default function CardHeader({
+    children,
+    color,
+    contentPositin = 'center',
+}) {
+    return (
+        <div
+            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-xl text-white text-${contentPositin} p-6 shadow-xl`}
+        >
+            {children}
+        </div>
+    );
 }
 
 CardHeader.propTypes = {
-  children: PropTypes.node.isRequired,
-  color: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    color: PropTypes.string.isRequired,
+    contentPositin: PropTypes.string,
 };
