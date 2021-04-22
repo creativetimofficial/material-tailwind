@@ -470,14 +470,14 @@ export default function Components() {
                     <div className="mt-10">
                         <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-center gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Textarea"
@@ -492,49 +492,34 @@ export default function Components() {
 
                         <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
                             <div className="flex flex-wrap items-end gap-8">
-                                <div className="w-96 h-28 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
-                                        placeholder="Small"
+                                        placeholder="With small font size"
                                         size="sm"
                                     />
                                 </div>
-                                <div className="w-96 h-36 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
                                         placeholder="Regular"
-                                    />
-                                </div>
-                                <div className="w-96 h-44 mt-5">
-                                    <Textarea
-                                        color="lightBlue"
-                                        placeholder="Large"
-                                        size="lg"
                                     />
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap items-end gap-8">
-                                <div className="w-96 h-28 mt-5">
+                            <div className="flex flex-wrap items-end gap-8 mt-10">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
-                                        placeholder="Small"
+                                        placeholder="With small font size"
                                         size="sm"
                                         outline
                                     />
                                 </div>
-                                <div className="w-96 h-36 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
                                         placeholder="Regular"
-                                        outline
-                                    />
-                                </div>
-                                <div className="w-96 h-44 mt-5">
-                                    <Textarea
-                                        color="lightBlue"
-                                        placeholder="Large"
-                                        size="lg"
                                         outline
                                     />
                                 </div>
@@ -547,15 +532,15 @@ export default function Components() {
                             With Error Message
                         </h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-end gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea With Error"
                                     error="This is an error"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Texarea With Error"
@@ -571,15 +556,15 @@ export default function Components() {
                             With Success Message
                         </h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-end gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea With Success"
                                     success="This is a success"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Textarea With Success"
