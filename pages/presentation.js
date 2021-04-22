@@ -195,7 +195,7 @@ export default function Presentation() {
                             </Paragraph>
 
                             <SyntaxHighlighter language="jsx" style={a11yDark}>
-                                {`import "material-icons/css/material-icons.min.css";
+                                {`import "material-design-icons/iconfont/material-icons.css";
 import "@material-tailwind/react/tailwind.css";`}
                             </SyntaxHighlighter>
                         </div>
@@ -234,6 +234,7 @@ export default function Example() {
             </section>
 
             <section className="mt-48 md:mt-40 py-28 relative bg-blue-gray-50">
+            <section className="mt-48 md:mt-40 py-28 relative bg-gray-100">
                 <div className="container max-w-7xl mx-auto">
                     <div className="container mx-auto">
                         <div className="flex flex-wrap items-center">
@@ -685,6 +686,7 @@ export default function Example() {
                 </div>
             </section>
             <section className="pb-16 bg-gray-50 relative pt-32">
+            <section className="pb-16 bg-gray-100 relative pt-32">
                 <div className="container max-w-7xl mx-auto">
                     <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-xl -mt-64 py-24 px-12 relative z-10">
                         <div className="w-full text-center lg:w-8/12">

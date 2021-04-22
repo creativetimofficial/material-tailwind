@@ -92,6 +92,50 @@ const filledBgActiveColors = {
     red: 'active:bg-red-800',
 };
 
+const filledShadowColors = {
+    blueGray: 'shadow-md-blue-gray',
+    gray: 'shadow-md-gray',
+    brown: 'shadow-md-brown',
+    deepOrange: 'shadow-md-deep-orange',
+    orange: 'shadow-md-orange',
+    amber: 'shadow-md-amber',
+    yellow: 'shadow-md-yellow',
+    lime: 'shadow-md-lime',
+    lightGreen: 'shadow-md-light-green',
+    green: 'shadow-md-green',
+    teal: 'shadow-md-teal',
+    cyan: 'shadow-md-cyan',
+    lightBlue: 'shadow-md-light-blue',
+    blue: 'shadow-md-blue',
+    indigo: 'shadow-md-indigo',
+    deepPurple: 'shadow-md-deep-purple',
+    purple: 'shadow-md-purple',
+    pink: 'shadow-md-pink',
+    red: 'shadow-md-red',
+};
+
+const filledShadowHoverColors = {
+    blueGray: 'hover:shadow-lg-blue-gray',
+    gray: 'hover:shadow-lg-gray',
+    brown: 'hover:shadow-lg-brown',
+    deepOrange: 'hover:shadow-lg-deep-orange',
+    orange: 'hover:shadow-lg-orange',
+    amber: 'hover:shadow-lg-amber',
+    yellow: 'hover:shadow-lg-yellow',
+    lime: 'hover:shadow-lg-lime',
+    lightGreen: 'hover:shadow-lg-light-green',
+    green: 'hover:shadow-lg-green',
+    teal: 'hover:shadow-lg-teal',
+    cyan: 'hover:shadow-lg-cyan',
+    lightBlue: 'hover:shadow-lg-light-blue',
+    blue: 'hover:shadow-lg-blue',
+    indigo: 'hover:shadow-lg-indigo',
+    deepPurple: 'hover:shadow-lg-deep-purple',
+    purple: 'hover:shadow-lg-purple',
+    pink: 'hover:shadow-lg-pink',
+    red: 'hover:shadow-lg-red',
+};
+
 const outlineTextColors = {
     blueGray: 'text-blue-gray-500',
     gray: 'text-gray-500',
@@ -263,12 +307,12 @@ export default function Dropdown({
 
     const buttonFilled = [
         'text-white',
-        'shadow-md',
-        'hover:shadow-xl',
         filledBgColors[color],
         filledBgHoverColors[color],
         filledBgFocusColors[color],
         filledBgActiveColors[color],
+        filledShadowColors[color],
+        filledShadowHoverColors[color],
     ];
 
     const buttonOutline = [
@@ -336,7 +380,7 @@ export default function Dropdown({
             <Tippy
                 content={
                     <div
-                        className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 transition-all duration-500`}
+                        className={`bg-white text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 overflow-hidden transition-all duration-500`}
                         style={{ minWidth: '10rem' }}
                     >
                         {children}
