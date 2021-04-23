@@ -38,6 +38,7 @@ export default function Dropdown() {
       <DropdownItem
         href="#"
         color="${color}"
+        ripple="light"
         onClick={(e) => e.preventDefault()}
       >
         Action
@@ -45,6 +46,7 @@ export default function Dropdown() {
       <DropdownItem
         href="#"
         color="${color}"
+        ripple="light"
         onClick={(e) => e.preventDefault()}
       >
         Another Action
@@ -52,6 +54,7 @@ export default function Dropdown() {
       <DropdownItem
         href="#"
         color="${color}"
+        ripple="light"
         onClick={(e) => e.preventDefault()}
       >
         Something else
@@ -85,6 +88,7 @@ export default function Dropdown() {
                             color={color}
                             href="#"
                             onClick={(e) => e.preventDefault()}
+                            ripple="light"
                         >
                             Action
                         </DropdownItem>
@@ -92,6 +96,7 @@ export default function Dropdown() {
                             color={color}
                             href="#"
                             onClick={(e) => e.preventDefault()}
+                            ripple="light"
                         >
                             Another Action
                         </DropdownItem>
@@ -99,6 +104,7 @@ export default function Dropdown() {
                             color={color}
                             href="#"
                             onClick={(e) => e.preventDefault()}
+                            ripple="light"
                         >
                             Something Else
                         </DropdownItem>
