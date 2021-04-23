@@ -13,6 +13,7 @@ export default function DropdownCode({
     placement,
     buttonText,
     rippleEffect,
+    blockLevel,
     ...rest
 }) {
     const [color, setColor] = useState('lightBlue');
@@ -31,6 +32,7 @@ export default function Dropdown() {
       buttonType="${buttonType}"
       size="${size}"
       rounded={${rounded}}
+      ${blockLevel}
       ${rippleEffect}
     >
       <DropdownItem
