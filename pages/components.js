@@ -745,11 +745,13 @@ export default function Components() {
                     <div className="container max-w-7xl mx-auto px-4">
                         <H4 color="gray">Tabs</H4>
 
-                        <div className="mt-24">
-                            <TabIcons color="lightBlue" />
-                        </div>
-                        <div className="mt-24">
-                            <TabLinks color="lightBlue" />
+                        <div className="flex flex-col lg:flex-row mt-20">
+                            <div className="lg:mr-5">
+                                <TabIcons color="lightBlue" />
+                            </div>
+                            <div className="lg:ml-5">
+                                <TabLinks color="lightBlue" />
+                            </div>
                         </div>
                     </div>
                 </div>
