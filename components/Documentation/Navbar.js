@@ -67,17 +67,17 @@ export default function IndexNavbar() {
                             }}
                         >
                             <Link href="/templates/landing">
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem color="lightBlue" ripple="light">
                                     Landing
                                 </DropdownItem>
                             </Link>
                             <Link href="/templates/profile">
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem color="lightBlue" ripple="light">
                                     Profile
                                 </DropdownItem>
                             </Link>
                             <Link href="/templates/login">
-                                <DropdownItem color="lightBlue">
+                                <DropdownItem color="lightBlue" ripple="light">
                                     Login
                                 </DropdownItem>
                             </Link>
