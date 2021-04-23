@@ -46,21 +46,19 @@ export default function Components() {
         <>
             <Header title="Components" />
             <IndexNavbar />
-            <section className="header relative items-center flex h-screen">
+            <section className="header relative items-center flex pt-28">
                 <div className="container max-w-7xl mx-auto">
                     <div className="w-full px-4 text-center">
                         <img
                             src={require('assets/img/material-tailwind-logo.png')}
                             alt="Material Tailwind Logo"
-                            className="w-56 mx-auto mb-16"
+                            className="w-40 mx-auto mb-16"
                         />
-                        <H1 color="gray">Material Tailwind</H1>
+                        <H2 color="gray">Material Tailwind</H2>
                         <H4 color="blueGray">All Components</H4>
                     </div>
                 </div>
             </section>
-
-            <div className="container max-w-7xl mx-auto border border-t-0 border-r-0 border-l-0 border-b-1 border-blue-gray-50" />
 
             <section className="pb-36 bg-white">
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
@@ -743,17 +741,18 @@ export default function Components() {
                     />
                 </div>
 
-                <div className="container max-w-7xl mx-auto mt-36 px-4">
-                    <H4 color="gray">Tabs</H4>
+                <div className="py-16 mt-36 bg-gray-100">
+                    <div className="container max-w-7xl mx-auto px-4">
+                        <H4 color="gray">Tabs</H4>
 
-                    <div className="mt-24">
-                        <TabIcons color="lightBlue" />
-                    </div>
-                    <div className="mt-24">
-                        <TabLinks color="lightBlue" />
+                        <div className="mt-24">
+                            <TabIcons color="lightBlue" />
+                        </div>
+                        <div className="mt-24">
+                            <TabLinks color="lightBlue" />
+                        </div>
                     </div>
                 </div>
-
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
                     <H4 color="gray">DROPDOWN</H4>
                     <div className="mt-10">
@@ -1027,7 +1026,6 @@ export default function Components() {
                         </div>
                     </div>
                 </div>
-
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
                     <H4 color="gray">Popovers</H4>
 
@@ -1224,16 +1222,16 @@ export default function Components() {
                     <div className="container max-w-7xl mx-auto px-4">
                         <H4 color="gray">Cards</H4>
 
-                        <div className="mt-16 flex justify-between gap-5">
-                            <div className="w-96">
+                        <div className="mt-16 flex flex-wrap justify-between gap-10">
+                            <div className="w-96 mb-10">
                                 <RegularCard />
                             </div>
 
-                            <div className="w-96">
+                            <div className="w-96 mb-10">
                                 <LoginCard />
                             </div>
 
-                            <div className="w-96">
+                            <div className="w-96 mb-10">
                                 <StatusCard />
                             </div>
                         </div>
