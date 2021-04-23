@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Ripple from 'material-ripple-effects';
 
 const Colors = {
     blueGray: 'hover:bg-blue-gray-500',
@@ -45,11 +46,17 @@ const ShadowColors = {
     red: 'hover:shadow-md-red',
 };
 
-export default function DropdownItem({ children, color, ...rest }) {
+export default function DropdownItem({ children, color, ripple, ...rest }) {
+    const rippleEffect = new Ripple();
+
     return (
         <a
             {...rest}
             className={`text-sm py-3 px-4 font-normal block cursor-pointer whitespace-no-wrap rounded-md text-gray-900 hover:text-white ${Colors[color]} ${ShadowColors[color]} transition-all duration-300`}
+            onMouseUp={(e) => {
+                ripple === 'dark' && rippleEffect.create(e, 'dark');
+                ripple === 'light' && rippleEffect.create(e, 'light');
+            }}
         >
             {children}
         </a>
@@ -59,4 +66,5 @@ export default function DropdownItem({ children, color, ...rest }) {
 DropdownItem.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
+    ripple: PropTypes.string,
 };
