@@ -168,7 +168,7 @@ export default function Presentation() {
                             </Paragraph>
 
                             <SyntaxHighlighter language="html" style={a11yDark}>
-                                yarn add @materia-tailwind/react -E
+                                yarn add @material-tailwind/react -E
                             </SyntaxHighlighter>
                         </div>
 
