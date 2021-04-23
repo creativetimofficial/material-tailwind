@@ -159,7 +159,12 @@ export default function Components() {
                         </h4>
 
                         <div className="mt-5">
-                            <Button color="lightBlue" ripple="light" block>
+                            <Button
+                                color="lightBlue"
+                                size="lg"
+                                ripple="light"
+                                block
+                            >
                                 Block level
                             </Button>
                         </div>
@@ -1048,6 +1053,7 @@ export default function Components() {
                         <div className="mt-5">
                             <Dropdown
                                 color="lightBlue"
+                                size="lg"
                                 buttonText="Block Level"
                                 ripple="light"
                                 block
