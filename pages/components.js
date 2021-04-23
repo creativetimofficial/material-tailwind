@@ -154,6 +154,18 @@ export default function Components() {
                     </div>
 
                     <div className="mt-16">
+                        <h4 className="text-xl text-blue-gray-700">
+                            Block Level Buttons
+                        </h4>
+
+                        <div className="mt-5">
+                            <Button color="lightBlue" ripple="light" block>
+                                Block level
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="mt-16">
                         <h4 className="text-xl text-blue-gray-700">Colors</h4>
 
                         <div className="flex flex-wrap gap-x-2 gap-y-8 mt-5">
@@ -1002,6 +1014,43 @@ export default function Components() {
                                 buttonText="Large"
                                 size="lg"
                                 ripple="light"
+                            >
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                >
+                                    Action
+                                </DropdownItem>
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                >
+                                    Another Action
+                                </DropdownItem>
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                >
+                                    Something else here
+                                </DropdownItem>
+                            </Dropdown>
+                        </div>
+                    </div>
+
+                    <div className="mt-16">
+                        <h4 className="text-xl text-blue-gray-700">
+                            Block Level Dropdown
+                        </h4>
+
+                        <div className="mt-5">
+                            <Dropdown
+                                color="lightBlue"
+                                buttonText="Block Level"
+                                ripple="light"
+                                block
                             >
                                 <DropdownItem
                                     color="lightBlue"
