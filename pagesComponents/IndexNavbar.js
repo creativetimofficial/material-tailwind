@@ -27,7 +27,7 @@ export default function IndexNavbar(props) {
                         <Icon
                             family="font-awesome"
                             name="fas fa-bars"
-                            color="white"
+                            color="gray"
                         />
                     </button>
                 </div>
