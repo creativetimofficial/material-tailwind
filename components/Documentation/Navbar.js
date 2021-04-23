@@ -1,103 +1,74 @@
 import React from 'react';
 import Link from 'next/link';
+import Navbar from 'components/Navbar/Navbar';
+import NavbarContainer from 'components/Navbar/NavbarContainer';
+import NavbarWrapper from 'components/Navbar/NavbarWrapper';
+import NavbarBrand from 'components/Navbar/NavbarBrand';
+import NavbarToggler from 'components/Navbar/NavbarToggler';
+import NavbarCollapse from 'components/Navbar/NavbarCollapse';
+import Nav from 'components/Nav/Nav';
+import NavItem from 'components/Nav/NavItem';
 import Dropdown from 'components/Dropdown/Dropdown';
 import DropdownItem from 'components/Dropdown/DropdownItem';
 import Icon from 'components/Icon/Icon';
-import Ripple from 'material-ripple-effects';
 
-export default function IndexNavbar(props) {
-    const [navbarOpen, setNavbarOpen] = React.useState(false);
-    const ripple = new Ripple();
-    const rippleLight = (e) => ripple.create(e, 'light');
+export default function IndexNavbar() {
+    const [openNavbar, setOpenNavbar] = React.useState(false);
 
     return (
-        <nav className="sticky top-0 z-40 lg:z-40 w-full bg-gradient-to-r from-light-blue-500 to-light-blue-700 flex items-center justify-between p-2">
-            <div className="container max-w-full px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div className="w-full relative flex justify-between items-center lg:w-auto lg:static lg:block lg:justify-start">
-                    <Link href="/">
-                        <a className="text-white text-sm font-medium leading-relaxed inline-block mr-4 whitespace-no-wrap uppercase">
-                            Material Tailwind
-                        </a>
-                    </Link>
-                    <button
-                        className="cursor-pointer text-xl leading-none py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                        type="button"
-                        onClick={() => setNavbarOpen(!navbarOpen)}
-                    >
-                        <Icon
-                            family="font-awesome"
-                            name="fas fa-bars"
-                            color="white"
-                        />
-                    </button>
-                </div>
-                <div
-                    className={`lg:flex flex-grow items-center bg-transparent
-            ${navbarOpen ? ' block' : ' hidden'}
-          `}
-                    id="example-navbar-warning"
-                >
-                    <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                        <li
-                            className="flex items-center text-white rounded-lg px-2 transition-all duration-300"
-                            onMouseUp={rippleLight}
-                        >
-                            <Link href="/documentation/quick-start">
-                                <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium">
-                                    <Icon
-                                        family="font-awesome"
-                                        name="far fa-file-alt"
-                                        size="lg"
-                                    />
-                                    <span className="inline-block ml-2">
-                                        Docs
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li
-                            className="flex items-center text-white rounded-lg px-2 transition-all duration-300"
-                            onMouseUp={rippleLight}
-                        >
-                            <Link href="/components">
-                                <a className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium">
-                                    <Icon
-                                        family="font-awesome"
-                                        name="fas fa-cubes"
-                                        size="lg"
-                                    />
-                                    <span className="inline-block ml-2">
-                                        Components
-                                    </span>
-                                </a>
-                            </Link>
-                        </li>
+        <Navbar color="lightBlue" navbar>
+            <div className="container max-w-full flex-row items-center px-4">
+                <NavbarWrapper>
+                    <NavbarBrand>
+                        <Link href="/">
+                            <a>Material Tailwind</a>
+                        </Link>
+                    </NavbarBrand>
+                    <NavbarToggler
+                        onClick={() => setOpenNavbar(!openNavbar)}
+                        ripple="light"
+                    />
+                </NavbarWrapper>
 
+                <NavbarCollapse open={openNavbar}>
+                    <Nav>
+                        <Link href="/documentation/quick-start">
+                            <a>
+                                <NavItem ripple="light">
+                                    <Icon name="description" size="2xl" />
+                                    &nbsp;Docs
+                                </NavItem>
+                            </a>
+                        </Link>
+
+                        <Link href="/components">
+                            <a>
+                                <NavItem ripple="light">
+                                    <Icon name="apps" size="2xl" />
+                                    &nbsp;Components
+                                </NavItem>
+                            </a>
+                        </Link>
                         <Dropdown
-                            ripple="light"
+                            color="transparent"
+                            buttonType="link"
                             buttonText={
                                 <>
-                                    <div className="text-white flex items-center">
-                                        <Icon name="view_carousel" size="2xl" />
-                                        &nbsp; Templates
-                                    </div>
+                                    <Icon name="view_carousel" size="2xl" />
+                                    &nbsp;Templates
                                 </>
                             }
+                            ripple="light"
                             style={{
-                                backgroundColor: 'transparent',
-                                boxShadow: 'none',
-                                paddingLeft: '10px',
-                                paddingRight: '10px',
+                                justifyContent: 'start',
+                                padding: '1.05rem 1.2rem',
+                                fontWeight: 500,
+                                color: '#fff',
                             }}
                         >
                             <Link href="/templates/landing">
                                 <DropdownItem color="lightBlue">
-                                    Landing Page
-                                </DropdownItem>
-                            </Link>
-                            <Link href="/templates/login">
-                                <DropdownItem color="lightBlue">
-                                    Login
+                                    Landing
                                 </DropdownItem>
                             </Link>
                             <Link href="/templates/profile">
@@ -105,45 +76,36 @@ export default function IndexNavbar(props) {
                                     Profile
                                 </DropdownItem>
                             </Link>
+                            <Link href="/templates/login">
+                                <DropdownItem color="lightBlue">
+                                    Login
+                                </DropdownItem>
+                            </Link>
                         </Dropdown>
-
-                        <li
-                            className="flex items-center text-white rounded-lg px-2 transition-all duration-300"
-                            onMouseUp={rippleLight}
+                        <NavItem
+                            href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
+                            target="_blank"
+                            rel="noreferrer"
+                            ripple="light"
                         >
-                            <a
-                                className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium"
-                                href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Icon
-                                    family="font-awesome"
-                                    name="fab fa-github"
-                                    size="lg"
-                                />
-                                <span className="inline-block ml-2">
-                                    Github
-                                </span>
-                            </a>
-                        </li>
-
-                        <li
-                            className="flex items-center text-white rounded-lg px-2 transition-all duration-300"
-                            onMouseUp={rippleLight}
+                            <Icon
+                                family="font-awesome"
+                                name="fab fa-github"
+                                size="xl"
+                            />
+                            &nbsp;Github
+                        </NavItem>
+                        <NavItem
+                            href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
+                            target="_blank"
+                            rel="noreferrer"
+                            ripple="light"
                         >
-                            <a
-                                className="px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-medium"
-                                href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <span className="inline-block">Issues</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            Issues
+                        </NavItem>
+                    </Nav>
+                </NavbarCollapse>
             </div>
-        </nav>
+        </Navbar>
     );
 }
