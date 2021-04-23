@@ -17,7 +17,7 @@ export default function IndexNavbar() {
 
     return (
         <Navbar color="lightBlue" navbar>
-            <div className="container max-w-full flex-row items-center px-4">
+            <div className="container max-w-full flex flex-col lg:flex-row lg:items-center px-4">
                 <NavbarWrapper>
                     <NavbarBrand>
                         <Link href="/">
