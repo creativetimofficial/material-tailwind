@@ -787,6 +787,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -794,6 +795,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -801,6 +803,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -816,6 +819,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -823,6 +827,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -830,6 +835,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -850,6 +856,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -857,6 +864,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -864,6 +872,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -878,6 +887,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -885,6 +895,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -892,6 +903,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -906,6 +918,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -913,6 +926,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -920,6 +934,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -934,6 +949,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -941,6 +957,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -948,6 +965,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -969,6 +987,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -976,6 +995,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -983,6 +1003,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -996,6 +1017,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -1003,6 +1025,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -1010,6 +1033,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -1024,6 +1048,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -1031,6 +1056,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -1038,6 +1064,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -1062,6 +1089,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
@@ -1069,6 +1097,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
@@ -1076,6 +1105,7 @@ export default function Components() {
                                     color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
