@@ -36,7 +36,7 @@ import { TabIcons, TabLinks } from 'pagesComponents/tabs';
 import Popovers from 'pagesComponents/popovers';
 import Tooltips from 'pagesComponents/tooltips';
 import Modals from 'pagesComponents/modals';
-import RegularCard from 'pagesComponents/cards';
+import { RegularCard, LoginCard, StatusCard } from 'pagesComponents/cards';
 import Checkbox from 'components/Checkbox/Checkbox';
 import Radio from 'components/Radio/Radio';
 import Textarea from 'components/Textarea/Textarea';
@@ -1220,12 +1220,22 @@ export default function Components() {
                     </div>
                 </div>
 
-                <div className="container max-w-7xl mx-auto mt-36 px-4">
-                    <H4 color="gray">Cards</H4>
+                <div className="bg-gray-100 py-16 mt-36">
+                    <div className="container max-w-7xl mx-auto px-4">
+                        <H4 color="gray">Cards</H4>
 
-                    <div className="mt-16">
-                        <div className="w-96">
-                            <RegularCard />
+                        <div className="mt-16 flex justify-between gap-5">
+                            <div className="w-96">
+                                <RegularCard />
+                            </div>
+
+                            <div className="w-96">
+                                <LoginCard />
+                            </div>
+
+                            <div className="w-96">
+                                <StatusCard />
+                            </div>
                         </div>
                     </div>
                 </div>
