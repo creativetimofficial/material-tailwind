@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com/",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "next-images": "^1.7.0",
     "npm": "^7.8.0",
     "path": "^0.12.7",
+    "postcss-import": "^14.0.1",
     "react": "17.0.2",
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "17.0.2",

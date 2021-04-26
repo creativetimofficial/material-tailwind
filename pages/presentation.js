@@ -173,15 +173,13 @@ export default function Presentation() {
                         </div>
 
                         <div className="mb-16">
-                            <H6 color="gray">Import Style Sheets</H6>
+                            <H6 color="gray">
+                                Import Material Tailwind Style Sheet
+                            </H6>
                             <Paragraph color="gray">
                                 Import the{' '}
                                 <code className="text-light-blue-500">
                                     tailwind.css
-                                </code>{' '}
-                                and{' '}
-                                <code className="text-light-blue-500">
-                                    material-icons.css
                                 </code>{' '}
                                 into your{' '}
                                 <code className="text-light-blue-500">
@@ -195,11 +193,39 @@ export default function Presentation() {
                             </Paragraph>
 
                             <SyntaxHighlighter language="jsx" style={a11yDark}>
-                                {`import "material-design-icons/iconfont/material-icons.css";
-import "@material-tailwind/react/tailwind.css";`}
+                                {`import "@material-tailwind/react/tailwind.css";`}
                             </SyntaxHighlighter>
                         </div>
 
+                        <div className="mb-16">
+                            <H6 color="gray">
+                                Link Material Icons Fonts to your project
+                            </H6>
+                            <Paragraph color="gray">
+                                Add a link for the material icons fonts inside
+                                the head of your project, so to use the material
+                                icons with material tailwind components. You can
+                                also use font awesome font family for the
+                                project just add a link for it inside the head
+                                of your project.
+                            </Paragraph>
+
+                            <SyntaxHighlighter language="jsx" style={a11yDark}>
+                                {`// Material Icons Link
+<link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+/>
+
+// Font Awesome Link
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossOrigin="anonymous"
+/>`}
+                            </SyntaxHighlighter>
+                        </div>
                         <div>
                             <H6 color="gray">Example</H6>
                             <Paragraph color="gray">

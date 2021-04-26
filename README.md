@@ -1,6 +1,6 @@
 # @material-tailwind
 
-![version](https://img.shields.io/badge/version-0.2.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
+![version](https://img.shields.io/badge/version-0.3.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/md-tailwind.svg)</a> <a href="https://github.com/creativetimofficial/material-tailwind/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/md-tailwind.svg)</a>
 
 <div align="center"><img src="./assets/img/material-tailwind-logo.png" alt="@material-tailwind" width="150"/></div>
 
@@ -12,28 +12,31 @@ Coming soon components for VueJS, Angular and many more. Add this repository to 
 
 ## Table of Contents
 
--   [Components](#components)
--   [Quick Start](#quick-start)
+-   [Components](https://material-tailwind.com/components)
+-   [Quick Start](https://material-tailwind.com/documentation/quick-start)
 
 ## Components
 
--   [Alerts](#alerts)
--   [Buttons](#buttons)
--   [Cards](#cards)
--   [Dropdowns](#dropdowns)
--   [Dropups](#dropups)
--   [Images](#images)
--   [Inputs](#inputs)
--   [Labels](#labels)
--   [Menus](#menus)
--   [Modals](#modals)
--   [Navbars](#navbars)
--   [Paginations](#paginations)
--   [Popovers](#popovers)
--   [Progressbars](#progressbars)
--   [Tabs](#tabs)
--   [Tooltips](#tooltips)
--   [Typography](#typography)
+-   [Alerts](https://material-tailwind.com/documentation/react/alerts)
+-   [Buttons](https://material-tailwind.com/documentation/react/buttons/filled)
+-   [Cards](https://material-tailwind.com/documentation/react/cards)
+-   [Checkbox](https://material-tailwind.com/documentation/react/checkbox)
+-   [Dropdowns](https://material-tailwind.com/documentation/react/dropdowns/filled)
+-   [Dropups](https://material-tailwind.com/documentation/react/dropups/filled)
+-   [Images](https://material-tailwind.com/documentation/react/images)
+-   [Inputs](https://material-tailwind.com/documentation/react/inputs)
+-   [Labels](https://material-tailwind.com/documentation/react/labels)
+-   [Menus](https://material-tailwind.com/documentation/react/menus)
+-   [Modals](https://material-tailwind.com/documentation/react/modals)
+-   [Navbars](https://material-tailwind.com/documentation/react/navbars)
+-   [Paginations](https://material-tailwind.com/documentation/react/paginations)
+-   [Popovers](https://material-tailwind.com/documentation/react/popovers)
+-   [Progressbars](https://material-tailwind.com/documentation/react/progressbars)
+-   [Radio Button](https://material-tailwind.com/documentation/react/radioButton)
+-   [Tabs](https://material-tailwind.com/documentation/react/tabs/icon)
+-   [Textarea](https://material-tailwind.com/documentation/react/textareas)
+-   [Tooltips](https://material-tailwind.com/documentation/react/tooltips)
+-   [Typography](https://material-tailwind.com/documentation/react/typography/headings)
 
 ## Quick start
 
@@ -51,14 +54,32 @@ npm i -E @material-tailwind/react
 yarn add @material-tailwind/react -E
 ```
 
-##### Import Style Sheets
+##### Import Material Tailwind Style Sheet
 
-Import the `tailwind.css` and `material-icons.min.css` into your `app.js` file. Make sure to import the `tailwind.css` style
-sheet after all other style sheets.
+Import the `tailwind.css` into your `app.js` file. Make sure to import the `tailwind.css` style sheet after all other style sheets.
 
 ```
-import "material-icons/css/material-icons.min.css";
 import "@material-tailwind/react/tailwind.css";
+```
+
+##### Link Material Icons Fonts to your project
+
+Add a link for the material icons fonts inside the head of your project, so to use the material icons with material tailwind components. You can also use font awesome font family for the project just add a link for it inside the head of your project.
+
+```
+// Material Icons Link
+<link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+/>
+
+// Font Awesome Link
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossOrigin="anonymous"
+/>
 ```
 
 ## Documentation - React
