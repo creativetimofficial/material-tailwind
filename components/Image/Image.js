@@ -8,7 +8,7 @@ export default function Image({ src, raised, rounded, ...rest }) {
                 {...rest}
                 src={src}
                 className={`${rounded ? 'rounded-full' : 'rounded-xl'} ${
-                    raised ? 'shadow-md' : ''
+                    raised ? 'shadow-lg' : ''
                 } max-w-full h-auto align-middle border-none`}
             />
         </>

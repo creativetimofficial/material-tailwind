@@ -12,28 +12,28 @@ Coming soon components for VueJS, Angular and many more. Add this repository to 
 
 ## Table of Contents
 
-- [Components](#components)
-- [Quick Start](#quick-start)
+-   [Components](#components)
+-   [Quick Start](#quick-start)
 
 ## Components
 
-- [Alerts](#alerts)
-- [Buttons](#buttons)
-- [Cards](#cards)
-- [Dropdowns](#dropdowns)
-- [Dropups](#dropups)
-- [Images](#images)
-- [Inputs](#inputs)
-- [Labels](#labels)
-- [Menus](#menus)
-- [Modals](#modals)
-- [Navbars](#navbars)
-- [Paginations](#paginations)
-- [Popovers](#popovers)
-- [Progressbars](#progressbars)
-- [Tabs](#tabs)
-- [Tooltips](#tooltips)
-- [Typography](#typography)
+-   [Alerts](#alerts)
+-   [Buttons](#buttons)
+-   [Cards](#cards)
+-   [Dropdowns](#dropdowns)
+-   [Dropups](#dropups)
+-   [Images](#images)
+-   [Inputs](#inputs)
+-   [Labels](#labels)
+-   [Menus](#menus)
+-   [Modals](#modals)
+-   [Navbars](#navbars)
+-   [Paginations](#paginations)
+-   [Popovers](#popovers)
+-   [Progressbars](#progressbars)
+-   [Tabs](#tabs)
+-   [Tooltips](#tooltips)
+-   [Typography](#typography)
 
 ## Quick start
 
@@ -48,7 +48,7 @@ npm i -E @material-tailwind/react
 ##### Using Yarn
 
 ```
-yarn add @materia-tailwind/react -E
+yarn add @material-tailwind/react -E
 ```
 
 ##### Import Style Sheets
@@ -101,23 +101,23 @@ We use GitHub Issues as the official bug tracker for the @material-tailwind. Her
 
 ## Licensing
 
-- Copyright 2021 <a href="https://www.creative-tim.com/?ref=nnjs-readme" target="_blank">Creative Tim</a>
+-   Copyright 2021 <a href="https://www.creative-tim.com/?ref=nnjs-readme" target="_blank">Creative Tim</a>
 
-- Licensed under <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md" target="_blank">MIT</a>
+-   Licensed under <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md" target="_blank">MIT</a>
 
 ## Useful Links
 
-- <a href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">Tutorials</a>
-- <a href="https://www.creative-tim.com/affiliates/new?ref=nnjs-readme" target="_blank">Affiliate Program</a> (earn money)
-- <a href="http://blog.creative-tim.com/?ref=nnjs-readme" target="_blank">Blog Creative Tim</a>
-- <a href="https://www.creative-tim.com/templates/free?ref=nnjs-readme" target="_blank">Free Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/premium?ref=nnjs-readme" target="_blank">Premium Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/react?ref=nnjs-readme" target="_blank">React Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/angular?ref=nnjs-readme" target="_blank">Angular Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/vuejs?ref=nnjs-readme" target="_blank">VueJS Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates?ref=nnjs-readme" target="_blank">More products</a> from Creative Tim
-- Check our Bundles <a href="https://www.creative-tim.com/bundles?ref=nnjs-readme" target="_blank">here</a>
-- Check our awesome builder <a href="https://www.creative-tim.com/builder/argon?ref=nnjs-readme" target="_blank">here</a>
+-   <a href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">Tutorials</a>
+-   <a href="https://www.creative-tim.com/affiliates/new?ref=nnjs-readme" target="_blank">Affiliate Program</a> (earn money)
+-   <a href="http://blog.creative-tim.com/?ref=nnjs-readme" target="_blank">Blog Creative Tim</a>
+-   <a href="https://www.creative-tim.com/templates/free?ref=nnjs-readme" target="_blank">Free Products</a> from Creative Tim
+-   <a href="https://www.creative-tim.com/templates/premium?ref=nnjs-readme" target="_blank">Premium Products</a> from Creative Tim
+-   <a href="https://www.creative-tim.com/templates/react?ref=nnjs-readme" target="_blank">React Products</a> from Creative Tim
+-   <a href="https://www.creative-tim.com/templates/angular?ref=nnjs-readme" target="_blank">Angular Products</a> from Creative Tim
+-   <a href="https://www.creative-tim.com/templates/vuejs?ref=nnjs-readme" target="_blank">VueJS Products</a> from Creative Tim
+-   <a href="https://www.creative-tim.com/templates?ref=nnjs-readme" target="_blank">More products</a> from Creative Tim
+-   Check our Bundles <a href="https://www.creative-tim.com/bundles?ref=nnjs-readme" target="_blank">here</a>
+-   Check our awesome builder <a href="https://www.creative-tim.com/builder/argon?ref=nnjs-readme" target="_blank">here</a>
 
 ### Social Media
 

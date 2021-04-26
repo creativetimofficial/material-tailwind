@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Modal({ children, size = 'Regular', active }) {
+export default function Modal({ children, size = 'Regular', active, toggler }) {
     let modalSize;
 
     if (size === 'sm') {
@@ -20,6 +20,7 @@ export default function Modal({ children, size = 'Regular', active }) {
                         ? 'opacity-100 pointer-events-auto'
                         : 'opacity-0 pointer-events-none'
                 } grid place-items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none transition-all duration-500`}
+                onClick={toggler}
             >
                 <div
                     className={`transform ${
@@ -34,6 +35,7 @@ export default function Modal({ children, size = 'Regular', active }) {
                                 ? 'rounded-xl shadow-xl'
                                 : 'rounded-lg shadow-lg'
                         } flex flex-col w-full bg-white outline-none focus:outline-none`}
+                        onClick={(e) => e.stopPropagation()}
                     >
                         {children}
                     </div>
@@ -54,4 +56,5 @@ Modal.propTypes = {
     children: PropTypes.node.isRequired,
     size: PropTypes.string,
     active: PropTypes.bool.isRequired,
+    toggler: PropTypes.func.isRequired,
 };

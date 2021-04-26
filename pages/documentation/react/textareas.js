@@ -39,45 +39,23 @@ export default function Textarea() {
 
                 <div className="h-20">&nbsp;</div>
 
-                <SmallHeading title="Small Textarea" />
+                <SmallHeading title="Textarea with small font size" />
                 <TextareaCode
                     copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                     onCopy={(text) => setCopy(text ? 'Buttons' : '')}
-                    placeholder="Small Textarea"
+                    placeholder="Textarea with small font size"
                     size="sm"
                     outline={false}
                 />
 
                 <div className="h-20">&nbsp;</div>
 
-                <SmallHeading title="Large Textarea" />
+                <SmallHeading title="Outline Textarea with small font size" />
                 <TextareaCode
                     copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
                     onCopy={(text) => setCopy(text ? 'Buttons' : '')}
-                    placeholder="Large Textarea"
-                    size="lg"
-                    outline={false}
-                />
-
-                <div className="h-20">&nbsp;</div>
-
-                <SmallHeading title="Small Outline Textarea" />
-                <TextareaCode
-                    copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
-                    onCopy={(text) => setCopy(text ? 'Buttons' : '')}
-                    placeholder="Small Outline Textarea"
+                    placeholder="Outline Textarea with small font size"
                     size="sm"
-                    outline={true}
-                />
-
-                <div className="h-20">&nbsp;</div>
-
-                <SmallHeading title="Large Outline Textarea" />
-                <TextareaCode
-                    copyText={copy === 'Buttons' ? 'Copied' : 'Copy'}
-                    onCopy={(text) => setCopy(text ? 'Buttons' : '')}
-                    placeholder="Large Outline Textarea"
-                    size="lg"
                     outline={true}
                 />
 

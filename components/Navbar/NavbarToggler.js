@@ -48,13 +48,13 @@ const bgHoverColors = {
     red: 'hover:bg-red-50',
 };
 
-export default function NavbarToggler({ color, ripple, ...rest }) {
+export default function NavbarToggler({ color = 'white', ripple, ...rest }) {
     const rippleEffect = new Ripple();
 
     return (
         <button
             {...rest}
-            className={`cursor-pointer text-xl leading-none py-1 px-1.5 rounded-full border border-solid border-transparent bg-transparent block lg:hidden outline-none focus:outline-none ${bgHoverColors[color]}`}
+            className={`cursor-pointer text-xl leading-none py-1 px-1.5 rounded-full border border-solid border-transparent bg-transparent block lg:hidden outline-none focus:outline-none ${bgHoverColors[color]} transition-all duration-300`}
             type="button"
             onMouseUp={(e) => {
                 ripple === 'dark' && rippleEffect.create(e, 'dark');

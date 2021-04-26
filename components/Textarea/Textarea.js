@@ -104,7 +104,7 @@ export default function Textarea({
         mtTextareaOutlineFocusColor,
         textareaClasses = [];
 
-    let container = ['w-full', 'h-full', 'relative'];
+    let container = ['w-full', 'h-auto', 'relative'];
 
     if (error) {
         labelBorderColor = borderColors['red'];
@@ -151,7 +151,6 @@ export default function Textarea({
         'focus:ring-0',
         'focus:text-gray-800',
     ];
-
     const textareaSM = [
         ...sharedClasses,
         `${outline ? 'px-3' : 'px-0'}`,
@@ -162,11 +161,6 @@ export default function Textarea({
         ...sharedClasses,
         `${outline ? 'px-3' : 'px-0'}`,
         `${outline && 'pt-2.5 pb-1.5'}`,
-    ];
-    const textareaLG = [
-        ...sharedClasses,
-        `${outline ? 'px-3' : 'px-0'}`,
-        `${outline && 'pt-3.5 pb-2.5'}`,
     ];
 
     const textareaFilled = [
@@ -191,8 +185,6 @@ export default function Textarea({
 
     if (size === 'sm') {
         textareaClasses.push(...textareaSM);
-    } else if (size === 'lg') {
-        textareaClasses.push(...textareaLG);
     } else {
         textareaClasses.push(...textareaRegular);
     }
@@ -213,8 +205,8 @@ export default function Textarea({
                 className={`
                     ${textareaClasses}
                     ${error && outline && 'mt-input-outline-error'}
-                    ${success && outline && 'mt-input-outline-success'}
-                `}
+                    ${success && outline && 'mt-input-outline-success'}`}
+                rows="7"
                 style={{ resize: 'none' }}
             />
             <label className={label}>
@@ -231,10 +223,20 @@ export default function Textarea({
                 )}
             </label>
             {error && (
-                <span className="block mt-1 text-xs text-red-500">{error}</span>
+                <span
+                    className={`block absolute ${
+                        outline ? '-bottom-4' : '-bottom-5'
+                    } text-xs text-red-500`}
+                >
+                    {error}
+                </span>
             )}
             {success && (
-                <span className="block mt-1 text-xs text-green-500">
+                <span
+                    className={`block absolute ${
+                        outline ? '-bottom-4' : '-bottom-5'
+                    } text-xs text-green-500`}
+                >
                     {success}
                 </span>
             )}

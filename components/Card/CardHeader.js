@@ -67,14 +67,58 @@ const shadowColors = {
     red: 'shadow-lg-red',
 };
 
+const positions = {
+    left: 'justify-start',
+    right: 'justify-end',
+    center: 'justify-center',
+};
+
 export default function CardHeader({
     children,
     color,
-    contentPositin = 'center',
+    size = 'regular',
+    contentPosition = 'center',
+    iconOnly,
 }) {
+    let headerSize = [];
+
+    const smallHeader = [
+        iconOnly ? 'w-20' : 'w-full',
+        'h-20',
+        'py-4',
+        iconOnly ? 'px-4' : 'px-8',
+        positions[contentPosition],
+    ];
+
+    const regularHeader = [
+        iconOnly ? 'w-24' : 'w-full',
+        'h-24',
+        'py-4',
+        iconOnly ? 'px-4' : 'px-8',
+        positions[contentPosition],
+    ];
+
+    const largeHeader = [
+        iconOnly ? 'w-28' : 'w-full',
+        'h-28',
+        'py-4',
+        iconOnly ? 'px-4' : 'px-8',
+        positions[contentPosition],
+    ];
+
+    if (size === 'sm') {
+        headerSize.push(...smallHeader);
+    } else if (size === 'lg') {
+        headerSize.push(...largeHeader);
+    } else {
+        headerSize.push(...regularHeader);
+    }
+
+    headerSize = headerSize.join(' ');
+
     return (
         <div
-            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-xl text-white text-${contentPositin} p-6 ${shadowColors[color]}`}
+            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-10 mb-6 rounded-xl text-white grid items-center ${headerSize} ${shadowColors[color]}`}
         >
             {children}
         </div>

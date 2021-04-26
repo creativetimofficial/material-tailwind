@@ -36,7 +36,7 @@ import { TabIcons, TabLinks } from 'pagesComponents/tabs';
 import Popovers from 'pagesComponents/popovers';
 import Tooltips from 'pagesComponents/tooltips';
 import Modals from 'pagesComponents/modals';
-import RegularCard from 'pagesComponents/cards';
+import { RegularCard, LoginCard, StatusCard } from 'pagesComponents/cards';
 import Checkbox from 'components/Checkbox/Checkbox';
 import Radio from 'components/Radio/Radio';
 import Textarea from 'components/Textarea/Textarea';
@@ -46,21 +46,19 @@ export default function Components() {
         <>
             <Header title="Components" />
             <IndexNavbar />
-            <section className="header relative items-center flex h-screen">
+            <section className="header relative items-center flex pt-28">
                 <div className="container max-w-7xl mx-auto">
                     <div className="w-full px-4 text-center">
                         <img
                             src={require('assets/img/material-tailwind-logo.png')}
                             alt="Material Tailwind Logo"
-                            className="w-56 mx-auto mb-16"
+                            className="w-40 mx-auto mb-16"
                         />
-                        <H1 color="gray">Material Tailwind</H1>
+                        <H2 color="gray">Material Tailwind</H2>
                         <H4 color="blueGray">All Components</H4>
                     </div>
                 </div>
             </section>
-
-            <div className="container max-w-7xl mx-auto border border-t-0 border-r-0 border-l-0 border-b-1 border-blue-gray-50" />
 
             <section className="pb-36 bg-white">
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
@@ -152,6 +150,23 @@ export default function Components() {
                                     <Icon name="favorite" size="2xl" />
                                 </Button>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-16">
+                        <h4 className="text-xl text-blue-gray-700">
+                            Block Level Buttons
+                        </h4>
+
+                        <div className="mt-5">
+                            <Button
+                                color="lightBlue"
+                                size="lg"
+                                ripple="light"
+                                block
+                            >
+                                Block level
+                            </Button>
                         </div>
                     </div>
 
@@ -470,14 +485,14 @@ export default function Components() {
                     <div className="mt-10">
                         <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-center gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Textarea"
@@ -492,49 +507,34 @@ export default function Components() {
 
                         <div className="flex flex-wrap gap-x-24 gap-y-8 mt-5">
                             <div className="flex flex-wrap items-end gap-8">
-                                <div className="w-96 h-28 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
-                                        placeholder="Small"
+                                        placeholder="With small font size"
                                         size="sm"
                                     />
                                 </div>
-                                <div className="w-96 h-36 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
                                         placeholder="Regular"
-                                    />
-                                </div>
-                                <div className="w-96 h-44 mt-5">
-                                    <Textarea
-                                        color="lightBlue"
-                                        placeholder="Large"
-                                        size="lg"
                                     />
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap items-end gap-8">
-                                <div className="w-96 h-28 mt-5">
+                            <div className="flex flex-wrap items-end gap-8 mt-10">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
-                                        placeholder="Small"
+                                        placeholder="With small font size"
                                         size="sm"
                                         outline
                                     />
                                 </div>
-                                <div className="w-96 h-36 mt-5">
+                                <div className="w-[28rem]">
                                     <Textarea
                                         color="lightBlue"
                                         placeholder="Regular"
-                                        outline
-                                    />
-                                </div>
-                                <div className="w-96 h-44 mt-5">
-                                    <Textarea
-                                        color="lightBlue"
-                                        placeholder="Large"
-                                        size="lg"
                                         outline
                                     />
                                 </div>
@@ -547,15 +547,15 @@ export default function Components() {
                             With Error Message
                         </h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-end gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea With Error"
                                     error="This is an error"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Texarea With Error"
@@ -571,15 +571,15 @@ export default function Components() {
                             With Success Message
                         </h4>
 
-                        <div className="flex flex-wrap gap-8 mt-5">
-                            <div className="w-96 h-36 mt-5">
+                        <div className="flex flex-wrap items-end gap-8 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Textarea With Success"
                                     success="This is a success"
                                 />
                             </div>
-                            <div className="w-96 h-36 mt-5">
+                            <div className="w-[28rem]">
                                 <Textarea
                                     color="lightBlue"
                                     placeholder="Outline Textarea With Success"
@@ -758,17 +758,20 @@ export default function Components() {
                     />
                 </div>
 
-                <div className="container max-w-7xl mx-auto mt-36 px-4">
-                    <H4 color="gray">Tabs</H4>
+                <div className="py-16 mt-36 bg-gray-100">
+                    <div className="container max-w-7xl mx-auto px-4">
+                        <H4 color="gray">Tabs</H4>
 
-                    <div className="mt-24">
-                        <TabIcons color="lightBlue" />
-                    </div>
-                    <div className="mt-24">
-                        <TabLinks color="lightBlue" />
+                        <div className="flex flex-col lg:flex-row mt-20">
+                            <div className="lg:mr-5">
+                                <TabIcons color="lightBlue" />
+                            </div>
+                            <div className="lg:ml-5">
+                                <TabLinks color="lightBlue" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
                     <H4 color="gray">DROPDOWN</H4>
                     <div className="mt-10">
@@ -781,20 +784,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -807,20 +816,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -838,20 +853,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -863,20 +884,26 @@ export default function Components() {
                                 ripple="dark"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -888,20 +915,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -913,20 +946,26 @@ export default function Components() {
                                 ripple="dark"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -945,20 +984,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -969,20 +1014,26 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -994,20 +1045,67 @@ export default function Components() {
                                 ripple="light"
                             >
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Another Action
                                 </DropdownItem>
                                 <DropdownItem
+                                    color="lightBlue"
                                     href="#"
                                     onClick={(e) => e.preventDefault()}
+                                    ripple="light"
+                                >
+                                    Something else here
+                                </DropdownItem>
+                            </Dropdown>
+                        </div>
+                    </div>
+
+                    <div className="mt-16">
+                        <h4 className="text-xl text-blue-gray-700">
+                            Block Level Dropdown
+                        </h4>
+
+                        <div className="mt-5">
+                            <Dropdown
+                                color="lightBlue"
+                                size="lg"
+                                buttonText="Block Level"
+                                ripple="light"
+                                block
+                            >
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                    ripple="light"
+                                >
+                                    Action
+                                </DropdownItem>
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                    ripple="light"
+                                >
+                                    Another Action
+                                </DropdownItem>
+                                <DropdownItem
+                                    color="lightBlue"
+                                    href="#"
+                                    onClick={(e) => e.preventDefault()}
+                                    ripple="light"
                                 >
                                     Something else here
                                 </DropdownItem>
@@ -1015,7 +1113,6 @@ export default function Components() {
                         </div>
                     </div>
                 </div>
-
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
                     <H4 color="gray">Popovers</H4>
 
@@ -1208,12 +1305,22 @@ export default function Components() {
                     </div>
                 </div>
 
-                <div className="container max-w-7xl mx-auto mt-36 px-4">
-                    <H4 color="gray">Cards</H4>
+                <div className="bg-gray-100 py-16 mt-36">
+                    <div className="container max-w-7xl mx-auto px-4">
+                        <H4 color="gray">Cards</H4>
 
-                    <div className="mt-16">
-                        <div className="w-96">
-                            <RegularCard />
+                        <div className="mt-16 flex flex-wrap justify-between gap-10">
+                            <div className="w-96 mb-10">
+                                <RegularCard />
+                            </div>
+
+                            <div className="w-96 mb-10">
+                                <LoginCard />
+                            </div>
+
+                            <div className="w-96 mb-10">
+                                <StatusCard />
+                            </div>
                         </div>
                     </div>
                 </div>

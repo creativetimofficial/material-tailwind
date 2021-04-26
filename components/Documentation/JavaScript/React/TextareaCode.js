@@ -20,16 +20,14 @@ import Textarea from "@material-tailwind/react/Textarea";
 
 export default function Textarea() {
   return (
-    <div className="h-40">
-        <Textarea
-            color="${color}"
-            size="${size}"
-            outline={${outline}}
-            placeholder="${placeholder}"${
-        errorMessage ? `\n            error="${errorMessage}"` : ''
-    }${successMessage ? `\n            success="${successMessage}"` : ''}
-        />
-    </div>    
+    <Textarea
+        color="${color}"
+        size="${size}"
+        outline={${outline}}
+        placeholder="${placeholder}"${
+        errorMessage ? `\n        error="${errorMessage}"` : ''
+    }${successMessage ? `\n        success="${successMessage}"` : ''}
+    />
     )
 }`;
 
@@ -49,15 +47,13 @@ export default function Textarea() {
                         errorMessage || successMessage ? 'mb-10' : ''
                     }`}
                 >
-                    <div className="h-40">
-                        <Textarea
-                            color={color}
-                            size={size}
-                            outline={outline}
-                            placeholder={placeholder}
-                            {...rest}
-                        />
-                    </div>
+                    <Textarea
+                        color={color}
+                        size={size}
+                        outline={outline}
+                        placeholder={placeholder}
+                        {...rest}
+                    />
                 </div>
             </DocsSnippet>
         </>

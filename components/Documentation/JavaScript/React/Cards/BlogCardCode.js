@@ -9,7 +9,7 @@ import H6 from 'components/Typography/Heading6';
 import Paragraph from 'components/Typography/Paragraph';
 import Button from 'components/Button/Button';
 
-export default function CardCode({ copyText, onCopy }) {
+export default function BlogCardCode({ copyText, onCopy }) {
     const [type] = useState('react');
     const [showModal, setShowModal] = useState(false);
     const [modalText, setModalText] = useState();
@@ -96,8 +96,8 @@ export default function Card() {
                 codeToShow={codeToShow}
                 onFrameworkClick={onFrameworkClick}
             >
-                <div className="flex justify-center">
-                    <div className="w-96 py-10">
+                <div className="flex justify-center bg-gray-100 rounded">
+                    <div className="w-96 pb-10 pt-16">
                         <Card>
                             <CardImage
                                 src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80"
