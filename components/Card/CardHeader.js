@@ -45,10 +45,10 @@ const toColors = {
   red: "to-red-700",
 };
 
-export default function CardHeader({ children, color }) {
+export default function CardHeader({className, children, color }) {
   return (
     <div
-      className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-lg text-white px-12 py-8 mb-8 text-center shadow-xl`}
+      className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-12 rounded-lg text-white px-12 py-8 mb-8 text-center shadow-xl ${className} `}
     >
       {children}
     </div>
@@ -58,4 +58,5 @@ export default function CardHeader({ children, color }) {
 CardHeader.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
