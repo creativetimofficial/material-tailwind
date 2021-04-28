@@ -1,3 +1,7 @@
+@import 'tippy.js/dist/svg-arrow.css';
+@import 'tippy.js/animations/scale.css';
+@import 'tippy.js/animations/shift-away.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
