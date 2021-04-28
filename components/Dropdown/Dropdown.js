@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Ripple from 'material-ripple-effects';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/animations/scale.css';
 
 const filledBgColors = {
     blueGray: 'bg-blue-gray-500',
