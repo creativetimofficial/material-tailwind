@@ -9,7 +9,7 @@ import Button from 'components/Button/Button';
 
 export default function RegularCard() {
   return (
-    <Card>
+    <Card color="red">
       <CardImage
         src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2250&amp;q=80"
         alt="Card Image"
