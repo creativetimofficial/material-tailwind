@@ -51,5 +51,5 @@ export default function Card({color="white", children }) {
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  color: PropTypes.string.isRequired
 };
