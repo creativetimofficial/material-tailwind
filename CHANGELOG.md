@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.2] 2021-05-07
+
+### New features
+
+-   Add className prop for the components
+
 ## [0.3.1] 2021-04-28
 
 ### Bug fixing
