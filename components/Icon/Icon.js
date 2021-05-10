@@ -67,13 +67,12 @@ export default function Icon({ family, name, color, size, ...rest }) {
 
 Icon.defaultProps = {
     family: 'material-icons',
-    color: 'white',
     size: 'base',
 };
 
 Icon.propTypes = {
     family: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
+    color: PropTypes.string,
     size: PropTypes.string.isRequired,
 };
