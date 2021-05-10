@@ -400,6 +400,7 @@ export default function Dropdown({
                         ripple === 'dark' && rippleEffect.create(e, 'dark');
                         ripple === 'light' && rippleEffect.create(e, 'light');
                     }}
+                    aria-expanded={dropdownShow ? 'true' : 'false'}
                 >
                     {buttonText}
                     <span className="material-icons text-lg leading-none align-middle">
