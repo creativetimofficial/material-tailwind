@@ -44,13 +44,13 @@ export default function NavbarItem({
 }
 
 NavbarItem.defaultProps = {
-    active: false,
+    active: 'light',
     hasLink: false,
 };
 
 NavbarItem.propTypes = {
     children: PropTypes.node.isRequired,
-    active: PropTypes.bool.isRequired,
+    active: PropTypes.string.isRequired,
     hasLink: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };

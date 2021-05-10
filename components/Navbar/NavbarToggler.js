@@ -48,7 +48,7 @@ const bgHoverColors = {
     red: 'hover:bg-red-50',
 };
 
-export default function NavbarToggler({ color = 'white', ripple, ...rest }) {
+export default function NavbarToggler({ color, ripple, ...rest }) {
     const rippleEffect = new Ripple();
 
     return (
@@ -73,6 +73,10 @@ export default function NavbarToggler({ color = 'white', ripple, ...rest }) {
         </button>
     );
 }
+
+NavbarToggler.defaultProps = {
+    color: 'white',
+};
 
 NavbarToggler.propTypes = {
     color: PropTypes.string.isRequired,
