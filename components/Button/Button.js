@@ -272,7 +272,7 @@ const Button = forwardRef(
             children,
             color,
             buttonType,
-            size = 'regular',
+            size,
             rounded,
             iconOnly,
             block,
@@ -389,12 +389,19 @@ const Button = forwardRef(
     }
 );
 
+Button.defaultProps = {
+    color: 'lightBlue',
+    buttonType: 'filled',
+    size: 'regular',
+    rounded: false,
+};
+
 Button.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
-    buttonType: PropTypes.string,
-    size: PropTypes.string,
-    rounded: PropTypes.bool,
+    buttonType: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
+    rounded: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };
 
