@@ -411,13 +411,23 @@ export default function Dropdown({
     );
 }
 
+Dropdown.defaultProps = {
+    color: 'lightBlue',
+    buttonType: 'filled',
+    size: 'regular',
+    placement: 'bottom-start',
+    rounded: false,
+    block: false,
+};
+
 Dropdown.propTypes = {
     children: PropTypes.node.isRequired,
     buttonText: PropTypes.node.isRequired,
-    color: PropTypes.string,
-    buttonType: PropTypes.string,
-    size: PropTypes.string,
-    placement: PropTypes.string,
-    rounded: PropTypes.bool,
+    color: PropTypes.string.isRequired,
+    buttonType: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
+    placement: PropTypes.string.isRequired,
+    rounded: PropTypes.bool.isRequired,
+    block: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };
