@@ -92,7 +92,7 @@ const focusBorderColors = {
 export default function Textarea({
     placeholder,
     color,
-    size = 'regular',
+    size,
     outline,
     error,
     success,
@@ -244,10 +244,17 @@ export default function Textarea({
     );
 }
 
+Textarea.defaultProps = {
+    color: 'lightBlue',
+    size: 'regular',
+    outline: false,
+};
+
 Textarea.propTypes = {
     placeholder: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    size: PropTypes.string,
-    outline: PropTypes.bool,
+    size: PropTypes.string.isRequired,
+    outline: PropTypes.bool.isRequired,
     error: PropTypes.string,
+    success: PropTypes.string,
 };
