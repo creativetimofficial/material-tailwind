@@ -24,7 +24,7 @@ const colors = {
     red: 'text-red-700',
 };
 
-export default function Small({ children, color = 'blueGray', ...rest }) {
+export default function Small({ children, color, ...rest }) {
     return (
         <small
             {...rest}
@@ -34,6 +34,10 @@ export default function Small({ children, color = 'blueGray', ...rest }) {
         </small>
     );
 }
+
+Small.defaultProps = {
+    color: 'blueGray',
+};
 
 Small.propTypes = {
     children: PropTypes.node.isRequired,

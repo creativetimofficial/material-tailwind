@@ -24,7 +24,7 @@ const colors = {
     red: 'text-red-700',
 };
 
-export default function LeadText({ children, color = 'blueGray', ...rest }) {
+export default function LeadText({ children, color, ...rest }) {
     return (
         <p
             {...rest}
@@ -34,6 +34,10 @@ export default function LeadText({ children, color = 'blueGray', ...rest }) {
         </p>
     );
 }
+
+LeadText.defaultProps = {
+    color: 'blueGray',
+};
 
 LeadText.propTypes = {
     children: PropTypes.node.isRequired,
