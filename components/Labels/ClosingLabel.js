@@ -111,7 +111,7 @@ export default function ClosingLabel({ children, color }) {
 }
 
 ClosingLabel.defaultProps = {
-    color: lightBlue,
+    color: 'lightBlue',
 };
 
 ClosingLabel.propTypes = {

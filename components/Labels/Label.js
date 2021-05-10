@@ -62,7 +62,7 @@ export default function Label({ children, color }) {
 }
 
 Label.defaultProps = {
-    color: lightBlue,
+    color: 'lightBlue',
 };
 
 Label.propTypes = {
