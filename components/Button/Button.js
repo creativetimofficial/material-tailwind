@@ -394,6 +394,7 @@ Button.defaultProps = {
     buttonType: 'filled',
     size: 'regular',
     rounded: false,
+    block: false,
 };
 
 Button.propTypes = {
@@ -402,6 +403,7 @@ Button.propTypes = {
     buttonType: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     rounded: PropTypes.bool.isRequired,
+    block: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };
 
