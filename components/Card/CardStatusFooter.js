@@ -33,6 +33,10 @@ export default function CardStatusFooter({ children, color, amount, date }) {
     );
 }
 
+CardStatusFooter.defaultProps = {
+    color: 'lightBlue',
+};
+
 CardStatusFooter.propTypes = {
     children: PropTypes.node,
     color: PropTypes.string.isRequired,

@@ -125,8 +125,16 @@ export default function CardHeader({
     );
 }
 
+CardHeader.defaultProps = {
+    color: 'lightBlue',
+    size: 'regular',
+    contentPosition: 'center',
+    iconOnly: false,
+};
+
 CardHeader.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
-    contentPositin: PropTypes.string,
+    contentPositin: PropTypes.string.isRequired,
+    iconOnly: PropTypes.bool.isRequired,
 };
