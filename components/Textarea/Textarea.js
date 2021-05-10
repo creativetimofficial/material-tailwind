@@ -147,6 +147,7 @@ export default function Textarea({
         'leading-normal',
         'shadow-none',
         'outline-none',
+        'resize-none',
         'focus:outline-none',
         'focus:ring-0',
         'focus:text-gray-800',
@@ -207,7 +208,6 @@ export default function Textarea({
                     ${error && outline && 'mt-input-outline-error'}
                     ${success && outline && 'mt-input-outline-success'}`}
                 rows="7"
-                style={{ resize: 'none' }}
             />
             <label className={label}>
                 {outline ? (
