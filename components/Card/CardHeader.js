@@ -135,6 +135,6 @@ CardHeader.defaultProps = {
 CardHeader.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
-    contentPositin: PropTypes.string.isRequired,
+    contentPosition: PropTypes.string.isRequired,
     iconOnly: PropTypes.bool.isRequired,
 };
