@@ -375,7 +375,7 @@ export default function Dropdown({
     classes = classes.join(' ');
 
     return (
-        <>
+        <div>
             <Tippy
                 content={
                     <div
@@ -400,7 +400,6 @@ export default function Dropdown({
                         ripple === 'dark' && rippleEffect.create(e, 'dark');
                         ripple === 'light' && rippleEffect.create(e, 'light');
                     }}
-                    aria-expanded={dropdownShow ? 'true' : 'false'}
                 >
                     {buttonText}
                     <span className="material-icons text-lg leading-none align-middle">
@@ -408,7 +407,7 @@ export default function Dropdown({
                     </span>
                 </button>
             </Tippy>
-        </>
+        </div>
     );
 }
 
