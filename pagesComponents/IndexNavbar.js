@@ -20,11 +20,11 @@ export default function IndexNavbar() {
             <NavbarContainer>
                 <NavbarWrapper>
                     <Link href="/">
-                        <NavbarBrand href="#">
-                            <span className="text-gray-900">
+                        <a>
+                            <NavbarBrand color="gray">
                                 Material Tailwind
-                            </span>
-                        </NavbarBrand>
+                            </NavbarBrand>
+                        </a>
                     </Link>
                     <NavbarToggler
                         onClick={() => setOpenNavbar(!openNavbar)}
@@ -38,10 +38,10 @@ export default function IndexNavbar() {
                         <Link href="/documentation/quick-start">
                             <a>
                                 <NavItem ripple="dark">
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="description" size="2xl" />
                                         &nbsp;Docs
-                                    </div>
+                                    </p>
                                 </NavItem>
                             </a>
                         </Link>
@@ -49,10 +49,10 @@ export default function IndexNavbar() {
                         <Link href="/components">
                             <a>
                                 <NavItem ripple="dark">
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="apps" size="2xl" />
                                         &nbsp;Components
-                                    </div>
+                                    </p>
                                 </NavItem>
                             </a>
                         </Link>
@@ -61,10 +61,10 @@ export default function IndexNavbar() {
                             buttonType="link"
                             buttonText={
                                 <>
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="view_carousel" size="2xl" />
                                         &nbsp;Templates
-                                    </div>
+                                    </p>
                                 </>
                             }
                             ripple="dark"
