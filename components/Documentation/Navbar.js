@@ -19,11 +19,9 @@ export default function IndexNavbar() {
         <Navbar color="lightBlue" navbar>
             <div className="container max-w-full flex flex-col lg:flex-row lg:items-center px-4">
                 <NavbarWrapper>
-                    <NavbarBrand>
-                        <Link href="/">
-                            <a>Material Tailwind</a>
-                        </Link>
-                    </NavbarBrand>
+                    <Link href="/">
+                        <NavbarBrand href="#">Material Tailwind</NavbarBrand>
+                    </Link>
                     <NavbarToggler
                         onClick={() => setOpenNavbar(!openNavbar)}
                         ripple="light"
