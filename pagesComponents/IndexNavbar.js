@@ -19,11 +19,13 @@ export default function IndexNavbar() {
         <Navbar color="white" navbar>
             <NavbarContainer>
                 <NavbarWrapper>
-                    <NavbarBrand>
-                        <Link href="/">
-                            <a className="text-gray-900">Material Tailwind</a>
-                        </Link>
-                    </NavbarBrand>
+                    <Link href="/">
+                        <NavbarBrand href="#">
+                            <span className="text-gray-900">
+                                Material Tailwind
+                            </span>
+                        </NavbarBrand>
+                    </Link>
                     <NavbarToggler
                         onClick={() => setOpenNavbar(!openNavbar)}
                         ripple="dark"
