@@ -75,19 +75,34 @@ export default function IndexNavbar() {
                             }}
                         >
                             <Link href="/templates/landing">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Landing
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Landing
+                                    </DropdownItem>
+                                </a>
                             </Link>
                             <Link href="/templates/profile">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Profile
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Profile
+                                    </DropdownItem>
+                                </a>
                             </Link>
                             <Link href="/templates/login">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Login
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Login
+                                    </DropdownItem>
+                                </a>
                             </Link>
                         </Dropdown>
                         <NavItem
