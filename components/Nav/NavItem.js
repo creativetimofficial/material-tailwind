@@ -28,7 +28,7 @@ export default function NavbarItem({
         </li>
     ) : (
         <li>
-            <div
+            <p
                 className={`${active === 'dark' && 'bg-black bg-opacity-20'} ${
                     active === 'light' && 'bg-white bg-opacity-20'
                 } px-5 py-4 flex gap-1 items-center text-xs uppercase font-medium leading text-white rounded-lg`}
@@ -38,7 +38,7 @@ export default function NavbarItem({
                 }}
             >
                 {children}
-            </div>
+            </p>
         </li>
     );
 }
