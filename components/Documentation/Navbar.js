@@ -20,7 +20,11 @@ export default function IndexNavbar() {
             <div className="container max-w-full flex flex-col lg:flex-row lg:items-center px-4">
                 <NavbarWrapper>
                     <Link href="/">
-                        <NavbarBrand href="#">Material Tailwind</NavbarBrand>
+                        <a>
+                            <NavbarBrand color="gray">
+                                Material Tailwind
+                            </NavbarBrand>
+                        </a>
                     </Link>
                     <NavbarToggler
                         onClick={() => setOpenNavbar(!openNavbar)}
