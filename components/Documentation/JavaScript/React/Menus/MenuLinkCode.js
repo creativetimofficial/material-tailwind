@@ -31,36 +31,30 @@ import NavItem from "@material-tailwind/react/NavItem";
 import NavLink from "@material-tailwind/react/NavLink";
 
 export default function Menu() {
-  const [openMenu, setOpenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
 
-  return (
-    <Navbar color="${color}">
-      <NavbarContainer>
-        <NavbarWrapper>
-          <NavbarBrand>Menu</NavbarBrand>
-          <NavbarToggler
-            color="white"
-            onClick={() => setOpenMenu(!openMenu)}
-            ripple="light"
-          />
-        </NavbarWrapper>
+    return (
+        <Navbar color="${color}">
+            <NavbarContainer>
+                <NavbarWrapper>
+                    <NavbarBrand>Menu</NavbarBrand>
+                    <NavbarToggler
+                        color="white"
+                        onClick={() => setOpenMenu(!openMenu)}
+                        ripple="light"
+                    />
+                </NavbarWrapper>
 
-        <NavbarCollapse open={openMenu}>
-          <Nav>
-            <NavItem active="light" ripple="light">
-              Discover
-            </NavItem>
-            <NavLink href="#navbar" ripple="light">
-              Profile
-            </NavLink>
-            <NavItem ripple="light">
-              Settings
-            </NavItem>
-          </Nav>
-        </NavbarCollapse>
-      </NavbarContainer>
-    </Navbar>
-  );
+                <NavbarCollapse open={openMenu}>
+                    <Nav>
+                        <NavItem active="light" ripple="light">Discover</NavItem>
+                        <NavLink href="#navbar" ripple="light">Profile</NavLink>
+                        <NavItem ripple="light">Settings</NavItem>
+                    </Nav>
+                </NavbarCollapse>
+            </NavbarContainer>
+        </Navbar>
+    );
 }`;
 
     return (

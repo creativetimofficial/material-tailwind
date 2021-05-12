@@ -26,33 +26,33 @@ import DropdownItem from "@material-tailwind/react/DropdownItem"
 import DropdownLink from "@material-tailwind/react/DropdownLink"
 
 export default function Dropdown() {
-  return (
-    <Dropdown
-      color="${color}"
-      placement="${placement}"
-      buttonText="${buttonText}"
-      buttonType="${buttonType}"
-      size="${size}"
-      rounded={${rounded}}
-      ${blockLevel}
-      ${rippleEffect}
-    >
-      <DropdownItem color="${color}" ripple="light">
-        Action
-      </DropdownItem>
-      <DropdownLink
-          href="#"
-          color={color}
-          ripple="light"
-          onClick={(e) => e.preventDefault()}
-      >
-          Another Action
-      </DropdownLink>
-      <DropdownItem color="${color}" ripple="light">
-        Something else
-      </DropdownItem>
-    </Dropdown>
-  )
+    return (
+        <Dropdown
+            color="${color}"
+            placement="${placement}"
+            buttonText="${buttonText}"
+            buttonType="${buttonType}"
+            size="${size}"
+            rounded={${rounded}}
+            ${blockLevel}
+            ${rippleEffect}
+        >
+            <DropdownItem color="${color}" ripple="light">
+                Action
+            </DropdownItem>
+            <DropdownLink
+                href="#"
+                color={color}
+                ripple="light"
+                onClick={(e) => e.preventDefault()}
+            >
+                Another Action
+            </DropdownLink>
+            <DropdownItem color="${color}" ripple="light">
+                Something else
+            </DropdownItem>
+        </Dropdown>
+    )
 }`;
 
     return (

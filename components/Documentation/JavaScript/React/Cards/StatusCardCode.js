@@ -23,21 +23,21 @@ import CardStatusFooter from "@material-tailwind/react/CardStatusFooter";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function Card() {
-  return (
-    <Card>
-        <CardRow>
-            <CardHeader color="lightBlue" size="lg" iconOnly>
-                <Icon name="groups" size="5xl" color="white" />
-            </CardHeader>
+    return (
+        <Card>
+            <CardRow>
+                <CardHeader color="lightBlue" size="lg" iconOnly>
+                    <Icon name="groups" size="5xl" color="white" />
+                </CardHeader>
 
-            <CardStatus title="Users" amount="350,000" />
-        </CardRow>
+                <CardStatus title="Users" amount="350,000" />
+            </CardRow>
 
-        <CardStatusFooter color="green" amount="97%" date="Since one week">
-            <Icon color="green" name="arrow_upward" />
-        </CardStatusFooter>
-    </Card>
-  );
+            <CardStatusFooter color="green" amount="97%" date="Since one week">
+                <Icon color="green" name="arrow_upward" />
+            </CardStatusFooter>
+        </Card>
+    );
 }`;
 
     return (

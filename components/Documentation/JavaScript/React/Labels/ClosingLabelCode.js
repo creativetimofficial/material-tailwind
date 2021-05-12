@@ -99,9 +99,9 @@ export default function ClosingAlertsCode({ copyText, onCopy }) {
 import ClosingLabel from "@material-tailwind/react/ClosingLabel";
 
 export default function ClosingLabel() {
-  return (
-    <ClosingLabel color="${color}">Label</ClosingLabel>
-  );
+    return (
+        <ClosingLabel color="${color}">Label</ClosingLabel>
+    );
 }`;
 
     return (

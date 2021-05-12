@@ -33,39 +33,39 @@ import NavLink from "@material-tailwind/react/NavLink";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function Menu() {
-  const [openMenu, setOpenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
 
-  return (
-    <Navbar color="${color}">
-      <NavbarContainer>
-        <NavbarWrapper>
-          <NavbarBrand>Menu</NavbarBrand>
-          <NavbarToggler
-            color="white"
-            onClick={() => setOpenMenu(!openMenu)}
-            ripple="light"
-          />
-        </NavbarWrapper>
+    return (
+        <Navbar color="${color}">
+            <NavbarContainer>
+                <NavbarWrapper>
+                    <NavbarBrand>Menu</NavbarBrand>
+                    <NavbarToggler
+                        color="white"
+                        onClick={() => setOpenMenu(!openMenu)}
+                        ripple="light"
+                    />
+                </NavbarWrapper>
 
-        <NavbarCollapse open={openMenu}>
-          <Nav>
-            <NavItem active="light" ripple="light">
-              <Icon name="language" size="xl" />
-              Discover
-            </NavItem>
-            <NavLink href="#navbar" ripple="light">
-              <Icon name="account_circle" size="xl" />
-              Profile
-            </NavLink>
-            <NavItem ripple="light">
-              <Icon name="settings" size="xl" />
-              Settings
-            </NavItem>
-          </Nav>
-        </NavbarCollapse>
-      </NavbarContainer>
-    </Navbar>
-  );
+                <NavbarCollapse open={openMenu}>
+                    <Nav>
+                        <NavItem active="light" ripple="light">
+                            <Icon name="language" size="xl" />
+                            Discover
+                        </NavItem>
+                        <NavLink href="#navbar" ripple="light">
+                            <Icon name="account_circle" size="xl" />
+                            Profile
+                        </NavLink>
+                        <NavItem ripple="light">
+                            <Icon name="settings" size="xl" />
+                            Settings
+                        </NavItem>
+                    </Nav>
+                </NavbarCollapse>
+            </NavbarContainer>
+        </Navbar>
+    );
 }`;
 
     return (

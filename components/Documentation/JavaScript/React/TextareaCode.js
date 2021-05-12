@@ -19,15 +19,15 @@ export default function TextareaCode({
 import Textarea from "@material-tailwind/react/Textarea";
 
 export default function Textarea() {
-  return (
-    <Textarea
-        color="${color}"
-        size="${size}"
-        outline={${outline}}
-        placeholder="${placeholder}"${
-        errorMessage ? `\n        error="${errorMessage}"` : ''
-    }${successMessage ? `\n        success="${successMessage}"` : ''}
-    />
+    return (
+        <Textarea
+            color="${color}"
+            size="${size}"
+            outline={${outline}}
+            placeholder="${placeholder}"${
+        errorMessage ? `\n            error="${errorMessage}"` : ''
+    }${successMessage ? `\n            success="${successMessage}"` : ''}
+        />
     )
 }`;
 

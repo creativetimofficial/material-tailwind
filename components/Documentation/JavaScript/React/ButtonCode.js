@@ -27,19 +27,19 @@ ${
 }
 
 export default function Button() {
-  return (
-    <Button
-      color="${color}"
-      buttonType="${buttonType}"
-      size="${size}"
-      rounded={${rounded}}
-      ${blockLevel}
-      ${withIconOnly}
-      ${rippleEffect}
-    >
-      ${buttonChildren}
-    </Button>
-  )
+    return (
+        <Button
+            color="${color}"
+            buttonType="${buttonType}"
+            size="${size}"
+            rounded={${rounded}}
+            ${blockLevel}
+            ${withIconOnly}
+            ${rippleEffect}
+        >
+            ${buttonChildren}
+        </Button>
+    )
 }`;
 
     return (

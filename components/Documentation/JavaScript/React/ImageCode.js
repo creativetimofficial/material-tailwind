@@ -14,14 +14,14 @@ export default function ButtonsCode({
 import Image from "@material-tailwind/react/Image";
 
 export default function Image() {
-  return (
-    <Image
-      src="image-link-here"
-      rounded={${rounded}}
-      raised={${raised}}
-      alt="${alt}"
-    />
-  )
+    return (
+        <Image
+            src="image-link-here"
+            rounded={${rounded}}
+            raised={${raised}}
+            alt="${alt}"
+        />
+    )
 }`;
 
     return (

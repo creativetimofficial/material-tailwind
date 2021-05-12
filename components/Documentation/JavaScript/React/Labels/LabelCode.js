@@ -15,9 +15,9 @@ export default function AlertsCode({ copyText, onCopy }) {
 import Label from "@material-tailwind/react/Label";
 
 export default function Label() {
-  return (
-    <Label color="${color}">Label</Label>
-  );
+    return (
+        <Label color="${color}">Label</Label>
+    );
 }`;
 
     return (
