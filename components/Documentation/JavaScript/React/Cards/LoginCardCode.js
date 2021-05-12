@@ -28,7 +28,7 @@ export default function Card() {
   return (
     <Card>
         <CardHeader color="lightBlue" size="lg">
-            <H5>Login</H5>
+            <H5 color="white">Login</H5>
         </CardHeader>
 
         <CardBody>
@@ -123,7 +123,7 @@ export default function Card() {
                     <div className="w-96 pb-10 pt-16">
                         <Card>
                             <CardHeader color="lightBlue" size="lg">
-                                <H5>Login</H5>
+                                <H5 color="white">Login</H5>
                             </CardHeader>
 
                             <CardBody>
