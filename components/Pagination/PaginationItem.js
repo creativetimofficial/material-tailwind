@@ -58,13 +58,12 @@ export default function PaginationItem({
 }
 
 PaginationItem.defaultProps = {
-    color: 'lightBlue',
     button: false,
 };
 
 PaginationItem.propTypes = {
     children: PropTypes.node.isRequired,
-    color: PropTypes.string.isRequired,
+    color: PropTypes.string,
     button: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };
