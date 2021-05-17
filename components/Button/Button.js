@@ -277,6 +277,7 @@ const Button = forwardRef(
             iconOnly,
             block,
             ripple,
+            className,
             ...rest
         },
         ref
@@ -376,7 +377,7 @@ const Button = forwardRef(
         return (
             <button
                 {...rest}
-                className={classes}
+                className={`${classes} ${className}`}
                 ref={ref}
                 onMouseUp={(e) => {
                     ripple === 'dark' && rippleEffect.create(e, 'dark');

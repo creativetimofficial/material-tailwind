@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NavbarItem from '../Nav/NavItem';
 
 export default function NavbarInput({ fontAwesome, ...rest }) {
     return (
@@ -20,10 +19,6 @@ export default function NavbarInput({ fontAwesome, ...rest }) {
     );
 }
 
-NavbarInput.defaultProps = {
-    fontAwesome: false,
-};
-
 NavbarInput.propTypes = {
-    fontAwesome: PropTypes.bool.isRequired,
+    fontAwesome: PropTypes.bool,
 };

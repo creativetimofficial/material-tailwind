@@ -29,6 +29,7 @@ export default function PaginationItem({
     color,
     button,
     ripple,
+    className,
     ...rest
 }) {
     const rippleEffect = new Ripple();
@@ -45,7 +46,7 @@ export default function PaginationItem({
                     color
                         ? `${colors[color]} text-white`
                         : 'bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40'
-                } transition-all duration-300`}
+                } transition-all duration-300 ${className}`}
                 onMouseUp={(e) => {
                     ripple === 'dark' && rippleEffect.create(e, 'dark');
                     ripple === 'light' && rippleEffect.create(e, 'light');
@@ -57,13 +58,9 @@ export default function PaginationItem({
     );
 }
 
-PaginationItem.defaultProps = {
-    button: false,
-};
-
 PaginationItem.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string,
-    button: PropTypes.bool.isRequired,
+    button: PropTypes.bool,
     ripple: PropTypes.string,
 };

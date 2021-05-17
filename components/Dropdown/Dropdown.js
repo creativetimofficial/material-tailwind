@@ -277,6 +277,7 @@ export default function Dropdown({
     rounded,
     block,
     ripple,
+    className,
     ...rest
 }) {
     const [dropdownShow, setDropdownShow] = React.useState(false);
@@ -393,7 +394,7 @@ export default function Dropdown({
             >
                 <button
                     {...rest}
-                    className={classes}
+                    className={`${classes} ${className}`}
                     type="button"
                     onClick={() => setDropdownShow(!dropdownShow)}
                     onMouseUp={(e) => {

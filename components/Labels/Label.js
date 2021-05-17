@@ -45,11 +45,11 @@ const textColors = {
     red: 'text-red-700',
 };
 
-export default function Label({ children, color }) {
+export default function Label({ children, color, className }) {
     return (
         <>
             <div
-                className={`max-w-max flex items-center justify-between py-1 px-3 rounded-full ${bgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
+                className={`max-w-max flex items-center justify-between py-1 px-3 rounded-full ${bgColors[color]} last:mr-0 mr-1 transition-all duration-300 ${className}`}
             >
                 <span
                     className={`text-xs font-semibold uppercase ${textColors[color]}`}
@@ -60,10 +60,6 @@ export default function Label({ children, color }) {
         </>
     );
 }
-
-Label.defaultProps = {
-    color: 'lightBlue',
-};
 
 Label.propTypes = {
     children: PropTypes.node.isRequired,

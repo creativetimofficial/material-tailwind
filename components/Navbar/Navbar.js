@@ -23,13 +23,13 @@ const colors = {
     red: 'bg-red-500',
 };
 
-export default function Navbar({ children, color, navbar }) {
+export default function Navbar({ children, color, navbar, className }) {
     return (
         <>
             <nav
                 className={`flex flex-wrap items-center justify-between py-2.5 px-3 mb-3 ${
                     colors[color]
-                } ${!navbar && 'rounded-lg'}`}
+                } ${!navbar && 'rounded-lg'} ${className}`}
             >
                 {children}
             </nav>
@@ -37,13 +37,7 @@ export default function Navbar({ children, color, navbar }) {
     );
 }
 
-Navbar.defaultProps = {
-    color: 'lightBlue',
-    navbar: false,
-};
-
 Navbar.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
-    navbar: PropTypes.bool,
 };

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function CardStatus({ title, amount }) {
+export default function CardStatus({ title, amount, className }) {
     return (
-        <div className="w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right">
+        <div
+            className={`w-full pl-4 max-w-full flex-grow flex-1 mb-2 text-right ${className}`}
+        >
             <h5 className="text-gray-500 font-light tracking-wide text-base mb-1">
                 {title}
             </h5>

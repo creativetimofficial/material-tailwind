@@ -67,7 +67,7 @@ const textColors = {
     red: 'text-red-700',
 };
 
-export default function ClosingLabel({ children, color }) {
+export default function ClosingLabel({ children, color, className }) {
     const [showLabel, setShowLabel] = React.useState(true);
 
     function closeLabel(e) {
@@ -91,7 +91,7 @@ export default function ClosingLabel({ children, color }) {
         <>
             {showLabel ? (
                 <div
-                    className={`max-w-max flex items-center justify-between py-1 pl-3 pr-1 rounded-full ${divBgColors[color]} last:mr-0 mr-1 transition-all duration-300`}
+                    className={`max-w-max flex items-center justify-between py-1 pl-3 pr-1 rounded-full ${divBgColors[color]} last:mr-0 mr-1 transition-all duration-300 ${className}`}
                 >
                     <span
                         className={`text-xs font-semibold uppercase ${textColors[color]} uppercase mr-2`}
@@ -109,10 +109,6 @@ export default function ClosingLabel({ children, color }) {
         </>
     );
 }
-
-ClosingLabel.defaultProps = {
-    color: 'lightBlue',
-};
 
 ClosingLabel.propTypes = {
     children: PropTypes.node.isRequired,
