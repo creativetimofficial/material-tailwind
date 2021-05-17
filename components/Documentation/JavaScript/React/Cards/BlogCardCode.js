@@ -25,29 +25,29 @@ import Paragraph from "@material-tailwind/react/Paragraph";
 import Button from "@material-tailwind/react/Button";
 
 export default function Card() {
-  return (
-    <Card>
-      <CardImage
-        src="shorturl.at/psBK0"
-        alt="Card Image"
-      />
+    return (
+        <Card>
+            <CardImage
+                src="shorturl.at/psBK0"
+                alt="Card Image"
+            />
 
-      <CardBody>
-        <H6 color="gray">Card Title</H6>
-        <Paragraph color="gray">
-          Don't be scared of the truth because we need to restart the human
-          foundation in truth And I love you like Kanye loves Kanye I love
-          Rick Owens’ bed design but the back is...
-        </Paragraph>
-      </CardBody>
+            <CardBody>
+                <H6 color="gray">Card Title</H6>
+                <Paragraph color="gray">
+                    Don't be scared of the truth because we need to restart the human
+                    foundation in truth And I love you like Kanye loves Kanye I love
+                    Rick Owens’ bed design but the back is...
+                </Paragraph>
+            </CardBody>
 
-      <CardFooter>
-        <Button color="lightBlue" size="lg" ripple="light">
-          Read More
-        </Button>
-      </CardFooter>
-    </Card>
-  );
+            <CardFooter>
+                <Button color="lightBlue" size="lg" ripple="light">
+                    Read More
+                </Button>
+            </CardFooter>
+        </Card>
+    );
 }`;
 
     return (

@@ -247,9 +247,9 @@ export default function Presentation() {
 import Button from "@material-tailwind/react/Button";
 
 export default function Example() {
-  return (
-    <Button color="lightBlue" ripple="light">Button</Button>
-  )
+    return (
+        <Button color="lightBlue" ripple="light">Button</Button>
+    )
 }`}
                                     ;
                                 </SyntaxHighlighter>

@@ -9,6 +9,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 
 export default function NavbarLinkCode({ copyText, onCopy }) {
     const [color, setColor] = useState('lightBlue');
@@ -27,36 +28,31 @@ import NavbarToggler from "@material-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
+import NavLink from "@material-tailwind/react/NavLink";
 
 export default function Navbar() {
   const [openNavbar, setOpenNavbar] = useState(false);
 
   return (
     <Navbar color="${color}" navbar>
-      <NavbarContainer>
-        <NavbarWrapper>
-          <NavbarBrand>Navbar</NavbarBrand>
-          <NavbarToggler color="white" onClick={() => setOpenMenu(!openMenu)} ripple="light" />
-        </NavbarWrapper>
+        <NavbarContainer>
+            <NavbarWrapper>
+                <NavbarBrand>Navbar</NavbarBrand>
+                <NavbarToggler
+                    color="white"
+                    onClick={() => setOpenNavbar(!openNavbar)}
+                    ripple="light"
+                />
+            </NavbarWrapper>
 
-        <NavbarCollapse open={openNavbar}>
-          <Nav>
-            <NavItem
-              active="light"
-              href="#navbar"
-              ripple="light"
-            >
-              Discover
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              Profile
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              Settings
-            </NavItem>
-          </Nav>
-        </NavbarCollapse>
-      </NavbarContainer>
+            <NavbarCollapse open={openNavbar}>
+                <Nav>
+                    <NavItem active="light" ripple="light">Discover</NavItem>
+                    <NavLink href="#navbar" ripple="light">Profile</NavLink>
+                    <NavItem ripple="light">Settings</NavItem>
+                </Nav>
+            </NavbarCollapse>
+        </NavbarContainer>
     </Navbar>
   );
 }`;
@@ -121,19 +117,13 @@ export default function Navbar() {
 
                         <NavbarCollapse open={openNavbar}>
                             <Nav>
-                                <NavItem
-                                    active="light"
-                                    href="#navbar"
-                                    ripple="light"
-                                >
+                                <NavItem active="light" ripple="light">
                                     Discover
                                 </NavItem>
-                                <NavItem href="#navbar" ripple="light">
+                                <NavLink href="#navbar" ripple="light">
                                     Profile
-                                </NavItem>
-                                <NavItem href="#navbar" ripple="light">
-                                    Settings
-                                </NavItem>
+                                </NavLink>
+                                <NavItem ripple="light">Settings</NavItem>
                             </Nav>
                         </NavbarCollapse>
                     </NavbarContainer>

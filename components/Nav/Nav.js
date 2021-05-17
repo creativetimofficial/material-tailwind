@@ -13,7 +13,11 @@ export default function NavbarList({ children, leftSide, className }) {
     );
 }
 
+NavbarList.defaultProps = {
+    leftSide: false,
+};
+
 NavbarList.propTypes = {
     children: PropTypes.node.isRequired,
-    leftSide: PropTypes.bool,
+    leftSide: PropTypes.bool.isRequired,
 };

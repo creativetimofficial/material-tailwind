@@ -30,6 +30,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     Button
                 </ButtonCode>
@@ -47,6 +48,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     Rounded Button
                 </ButtonCode>
@@ -64,6 +66,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     Small Button
                 </ButtonCode>
@@ -81,6 +84,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     Regular Button
                 </ButtonCode>
@@ -98,6 +102,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     Large Button
                 </ButtonCode>
@@ -115,6 +120,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={true}"
+                    withIconOnly="iconOnly={false}"
                     block
                 >
                     Block Level Button
@@ -135,6 +141,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     <Icon name="favorite" size="sm" />
                     With Icon Before
@@ -155,6 +162,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={false}"
                 >
                     With Icon After
                     <Icon name="favorite" size="sm" />
@@ -176,6 +184,7 @@ export default function Buttons() {
                     rippleEffect='ripple="light"'
                     ripple="light"
                     blockLevel="block={false}"
+                    withIconOnly="iconOnly={true}"
                 >
                     <Icon name="favorite" size="sm" />
                 </ButtonCode>

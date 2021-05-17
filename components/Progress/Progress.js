@@ -64,8 +64,13 @@ export default function Progress({ color, value, percentage }) {
     );
 }
 
+Progress.defaultProps = {
+    color: 'lightBlue',
+    percentage: false,
+};
+
 Progress.propTypes = {
     color: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    percentage: PropTypes.bool,
+    percentage: PropTypes.bool.isRequired,
 };

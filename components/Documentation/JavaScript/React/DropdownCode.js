@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from 'components/Dropdown/Dropdown';
 import DropdownItem from 'components/Dropdown/DropdownItem';
+import DropdownLink from 'components/Dropdown/DropdownLink';
 import DocsSnippet from 'components/Documentation/DocsSnippet.js';
 
 export default function DropdownCode({
@@ -22,45 +23,36 @@ export default function DropdownCode({
     const codeToShow = `import React from "react";
 import Dropdown from "@material-tailwind/react/Dropdown"
 import DropdownItem from "@material-tailwind/react/DropdownItem"
+import DropdownLink from "@material-tailwind/react/DropdownLink"
 
 export default function Dropdown() {
-  return (
-    <Dropdown
-      color="${color}"
-      placement="${placement}"
-      buttonText="${buttonText}"
-      buttonType="${buttonType}"
-      size="${size}"
-      rounded={${rounded}}
-      ${blockLevel}
-      ${rippleEffect}
-    >
-      <DropdownItem
-        href="#"
-        color="${color}"
-        ripple="light"
-        onClick={(e) => e.preventDefault()}
-      >
-        Action
-      </DropdownItem>
-      <DropdownItem
-        href="#"
-        color="${color}"
-        ripple="light"
-        onClick={(e) => e.preventDefault()}
-      >
-        Another Action
-      </DropdownItem>
-      <DropdownItem
-        href="#"
-        color="${color}"
-        ripple="light"
-        onClick={(e) => e.preventDefault()}
-      >
-        Something else
-      </DropdownItem>
-    </Dropdown>
-  )
+    return (
+        <Dropdown
+            color="${color}"
+            placement="${placement}"
+            buttonText="${buttonText}"
+            buttonType="${buttonType}"
+            size="${size}"
+            rounded={${rounded}}
+            ${blockLevel}
+            ${rippleEffect}
+        >
+            <DropdownItem color="${color}" ripple="light">
+                Action
+            </DropdownItem>
+            <DropdownLink
+                href="#"
+                color={color}
+                ripple="light"
+                onClick={(e) => e.preventDefault()}
+            >
+                Another Action
+            </DropdownLink>
+            <DropdownItem color="${color}" ripple="light">
+                Something else
+            </DropdownItem>
+        </Dropdown>
+    )
 }`;
 
     return (
@@ -74,7 +66,13 @@ export default function Dropdown() {
                 onColorClick={(color) => setColor(color)}
                 onFrameworkClick={(type) => setType(type)}
             >
-                <div className="flex justify-center">
+                <div
+                    className={
+                        blockLevel === 'block={true}'
+                            ? 'w-full'
+                            : 'flex justify-center '
+                    }
+                >
                     <Dropdown
                         {...rest}
                         color={color}
@@ -84,28 +82,18 @@ export default function Dropdown() {
                         size={size}
                         rounded={rounded}
                     >
-                        <DropdownItem
-                            color={color}
-                            href="#"
-                            onClick={(e) => e.preventDefault()}
-                            ripple="light"
-                        >
+                        <DropdownItem color={color} ripple="light">
                             Action
                         </DropdownItem>
-                        <DropdownItem
-                            color={color}
+                        <DropdownLink
                             href="#"
-                            onClick={(e) => e.preventDefault()}
+                            color={color}
                             ripple="light"
+                            onClick={(e) => e.preventDefault()}
                         >
                             Another Action
-                        </DropdownItem>
-                        <DropdownItem
-                            color={color}
-                            href="#"
-                            onClick={(e) => e.preventDefault()}
-                            ripple="light"
-                        >
+                        </DropdownLink>
+                        <DropdownItem color={color} ripple="light">
                             Something Else
                         </DropdownItem>
                     </Dropdown>

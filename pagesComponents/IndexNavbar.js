@@ -19,11 +19,13 @@ export default function IndexNavbar() {
         <Navbar color="white" navbar>
             <NavbarContainer>
                 <NavbarWrapper>
-                    <NavbarBrand>
-                        <Link href="/">
-                            <a className="text-gray-900">Material Tailwind</a>
-                        </Link>
-                    </NavbarBrand>
+                    <Link href="/">
+                        <a>
+                            <NavbarBrand color="gray">
+                                Material Tailwind
+                            </NavbarBrand>
+                        </a>
+                    </Link>
                     <NavbarToggler
                         onClick={() => setOpenNavbar(!openNavbar)}
                         ripple="dark"
@@ -36,10 +38,10 @@ export default function IndexNavbar() {
                         <Link href="/documentation/quick-start">
                             <a>
                                 <NavItem ripple="dark">
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="description" size="2xl" />
                                         &nbsp;Docs
-                                    </div>
+                                    </p>
                                 </NavItem>
                             </a>
                         </Link>
@@ -47,10 +49,10 @@ export default function IndexNavbar() {
                         <Link href="/components">
                             <a>
                                 <NavItem ripple="dark">
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="apps" size="2xl" />
                                         &nbsp;Components
-                                    </div>
+                                    </p>
                                 </NavItem>
                             </a>
                         </Link>
@@ -59,10 +61,10 @@ export default function IndexNavbar() {
                             buttonType="link"
                             buttonText={
                                 <>
-                                    <div className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center">
                                         <Icon name="view_carousel" size="2xl" />
                                         &nbsp;Templates
-                                    </div>
+                                    </p>
                                 </>
                             }
                             ripple="dark"
@@ -73,19 +75,34 @@ export default function IndexNavbar() {
                             }}
                         >
                             <Link href="/templates/landing">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Landing
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Landing
+                                    </DropdownItem>
+                                </a>
                             </Link>
                             <Link href="/templates/profile">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Profile
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Profile
+                                    </DropdownItem>
+                                </a>
                             </Link>
                             <Link href="/templates/login">
-                                <DropdownItem color="lightBlue" ripple="light">
-                                    Login
-                                </DropdownItem>
+                                <a>
+                                    <DropdownItem
+                                        color="lightBlue"
+                                        ripple="light"
+                                    >
+                                        Login
+                                    </DropdownItem>
+                                </a>
                             </Link>
                         </Dropdown>
                         <NavItem

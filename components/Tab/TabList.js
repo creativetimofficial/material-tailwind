@@ -56,6 +56,10 @@ export default function TabList({ children, color, className }) {
     );
 }
 
+TabList.defaultProps = {
+    color: 'lightBlue',
+};
+
 TabList.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,

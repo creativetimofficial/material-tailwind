@@ -15,8 +15,13 @@ export default function Image({ src, raised, rounded, className, ...rest }) {
     );
 }
 
+Image.defaultProps = {
+    raised: false,
+    rounded: false,
+};
+
 Image.propTypes = {
     src: PropTypes.string.isRequired,
-    raised: PropTypes.bool,
-    rounded: PropTypes.bool,
+    raised: PropTypes.bool.isRequired,
+    rounded: PropTypes.bool.isRequired,
 };

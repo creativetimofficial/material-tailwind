@@ -9,6 +9,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 import Icon from 'components/Icon/Icon';
 
 export default function MenuIconCode({ copyText, onCopy }) {
@@ -28,39 +29,40 @@ import NavbarToggler from "@material-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
+import NavLink from "@material-tailwind/react/NavLink";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function Menu() {
-  const [openMenu, setOpenMenu] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
 
-  return (
-    <Navbar color="${color}">
-      <NavbarContainer>
-        <NavbarWrapper>
-          <NavbarBrand>Menu</NavbarBrand>
-          <NavbarToggler color="white" onClick={() => setOpenMenu(!openMenu)} ripple="light" />
-        </NavbarWrapper>
+    return (
+        <Navbar color="${color}">
+            <NavbarContainer>
+                <NavbarWrapper>
+                    <NavbarBrand>Menu</NavbarBrand>
+                    <NavbarToggler
+                        color="white"
+                        onClick={() => setOpenMenu(!openMenu)}
+                        ripple="light"
+                    />
+                </NavbarWrapper>
 
-        <NavbarCollapse open={openMenu}>
-          <Nav>
-            <NavItem
-              active="light"
-              href="#navbar"
-              ripple="light"
-            >
-              <Icon name="language" size="xl" />
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              <Icon name="account_circle" size="xl" />
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              <Icon name="settings" size="xl" />
-            </NavItem>
-          </Nav>
-        </NavbarCollapse>
-      </NavbarContainer>
-    </Navbar>
-  );
+                <NavbarCollapse open={openMenu}>
+                    <Nav>
+                        <NavItem active="light" ripple="light">
+                            <Icon name="language" size="xl" />
+                        </NavItem>
+                        <NavLink href="#navbar" ripple="light">
+                            <Icon name="account_circle" size="xl" />
+                        </NavLink>
+                        <NavItem ripple="light">
+                            <Icon name="settings" size="xl" />
+                        </NavItem>
+                    </Nav>
+                </NavbarCollapse>
+            </NavbarContainer>
+        </Navbar>
+    );
 }`;
 
     return (
@@ -123,17 +125,13 @@ export default function Menu() {
 
                         <NavbarCollapse open={openMenu}>
                             <Nav>
-                                <NavItem
-                                    active="light"
-                                    href="#navbar"
-                                    ripple="light"
-                                >
+                                <NavItem active="light" ripple="light">
                                     <Icon name="language" size="xl" />
                                 </NavItem>
-                                <NavItem href="#navbar" ripple="light">
+                                <NavLink href="#navbar" ripple="light">
                                     <Icon name="account_circle" size="xl" />
-                                </NavItem>
-                                <NavItem href="#navbar" ripple="light">
+                                </NavLink>
+                                <NavItem ripple="light">
                                     <Icon name="settings" size="xl" />
                                 </NavItem>
                             </Nav>

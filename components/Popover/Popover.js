@@ -18,6 +18,10 @@ const Popover = forwardRef(({ children, placement }, ref) => {
     );
 });
 
+Popover.defaultProps = {
+    placement: 'top',
+};
+
 Popover.propTypes = {
     children: PropTypes.node.isRequired,
     placement: PropTypes.string.isRequired,

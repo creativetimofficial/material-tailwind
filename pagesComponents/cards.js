@@ -44,7 +44,7 @@ export function LoginCard() {
     return (
         <Card>
             <CardHeader color="lightBlue" size="lg">
-                <H5>Login</H5>
+                <H5 color="white">Login</H5>
             </CardHeader>
 
             <CardBody>
@@ -94,23 +94,14 @@ export function StatusCard() {
         <Card>
             <CardRow>
                 <CardHeader color="lightBlue" size="lg" iconOnly>
-                    <Icon
-                        family="font-awesome"
-                        name="fas fa-users"
-                        size="3xl"
-                        color="white"
-                    />
+                    <Icon name="groups" size="5xl" color="white" />
                 </CardHeader>
 
                 <CardStatus title="Users" amount="350,000" />
             </CardRow>
 
             <CardStatusFooter color="green" amount="97%" date="Since one week">
-                <Icon
-                    family="font-awesome"
-                    color="green"
-                    name="fas fa-arrow-up"
-                />
+                <Icon color="green" name="arrow_upward" />
             </CardStatusFooter>
         </Card>
     );
