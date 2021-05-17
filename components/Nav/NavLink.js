@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Ripple from 'material-ripple-effects';
 
-export default function NavbarItem({ children, active, ripple, ...rest }) {
+export default function NavLink({ children, active, ripple, ...rest }) {
     const rippleEffect = new Ripple();
 
     return (
-        <li
+        <a
             {...rest}
             className={`${active === 'dark' && 'bg-black bg-opacity-20'} ${
                 active === 'light' && 'bg-white bg-opacity-20'
@@ -17,11 +17,11 @@ export default function NavbarItem({ children, active, ripple, ...rest }) {
             }}
         >
             {children}
-        </li>
+        </a>
     );
 }
 
-NavbarItem.propTypes = {
+NavLink.propTypes = {
     children: PropTypes.node.isRequired,
     active: PropTypes.string,
     ripple: PropTypes.string,

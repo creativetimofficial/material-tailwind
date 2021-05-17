@@ -17,6 +17,10 @@ const Tooltip = forwardRef(({ children, placement }, ref) => {
     );
 });
 
+Tooltip.defaultProps = {
+    placement: 'top',
+};
+
 Tooltip.propTypes = {
     children: PropTypes.node.isRequired,
     placement: PropTypes.string.isRequired,

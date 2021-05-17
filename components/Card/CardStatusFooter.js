@@ -25,13 +25,17 @@ const Colors = {
 
 export default function CardStatusFooter({ children, color, amount, date }) {
     return (
-        <div className="text-sm text-gray-700 pt-4">
+        <div className="text-sm text-gray-700 pt-4 flex items-center">
             {children}
             <span className={`${Colors[color]} ml-1 mr-2`}>{amount}</span>
             <span className="font-light whitespace-nowrap">{date}</span>
         </div>
     );
 }
+
+CardStatusFooter.defaultProps = {
+    color: 'lightBlue',
+};
 
 CardStatusFooter.propTypes = {
     children: PropTypes.node,

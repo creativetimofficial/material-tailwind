@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Modal({ children, size = 'Regular', active, toggler }) {
+export default function Modal({ children, size, active, toggler }) {
     let modalSize;
 
     if (size === 'sm') {
@@ -52,9 +52,13 @@ export default function Modal({ children, size = 'Regular', active, toggler }) {
     );
 }
 
+Modal.defaultProps = {
+    size: 'regular',
+};
+
 Modal.propTypes = {
     children: PropTypes.node.isRequired,
-    size: PropTypes.string,
+    size: PropTypes.string.isRequired,
     active: PropTypes.bool.isRequired,
     toggler: PropTypes.func.isRequired,
 };

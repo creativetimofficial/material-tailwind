@@ -47,13 +47,7 @@ const citeColors = {
     red: 'text-red-800',
 };
 
-export default function Quote({
-    children,
-    color = 'blueGray',
-    footer,
-    cite,
-    ...rest
-}) {
+export default function Quote({ children, color, footer, cite, ...rest }) {
     return (
         <div {...rest} className="mb-2">
             <p
@@ -67,6 +61,10 @@ export default function Quote({
         </div>
     );
 }
+
+Quote.defaultProps = {
+    color: 'blueGray',
+};
 
 Quote.propTypes = {
     children: PropTypes.node.isRequired,

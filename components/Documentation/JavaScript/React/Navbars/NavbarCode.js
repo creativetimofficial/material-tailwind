@@ -9,6 +9,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
 
@@ -29,6 +30,7 @@ import NavbarToggler from "@material-tailwind/react/NavbarToggler";
 import NavbarCollapse from "@material-tailwind/react/NavbarCollapse";
 import Nav from "@material-tailwind/react/Nav";
 import NavItem from "@material-tailwind/react/NavItem";
+import NavLink from "@material-tailwind/react/NavLink";
 import NavbarInput from "@material-tailwind/react/NavbarInput";
 import Icon from "@material-tailwind/react/Icon";
 
@@ -37,34 +39,34 @@ export default function Navbar() {
 
   return (
     <Navbar color="${color}" navbar>
-      <NavbarContainer>
-        <NavbarWrapper>
-          <NavbarBrand>Navbar</NavbarBrand>
-          <NavbarToggler color="white" onClick={() => setOpenMenu(!openMenu)} ripple="light" />
-        </NavbarWrapper>
+        <NavbarContainer>
+            <NavbarWrapper>
+                <NavbarBrand>Navbar</NavbarBrand>
+                <NavbarToggler
+                    color="white"
+                    onClick={() => setOpenNavbar(!openNavbar)}
+                    ripple="light"
+                />
+            </NavbarWrapper>
 
-        <NavbarCollapse open={openNavbar}>
-          <Nav leftSide>
-            <NavItem
-              active="light"
-              href="#navbar"
-              ripple="light"
-            >
-              <Icon name="language" size="xl" />
-              Discover
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              <Icon name="account_circle" size="xl" />
-              Profile
-            </NavItem>
-            <NavItem href="#navbar" ripple="light">
-              <Icon name="settings" size="xl" />
-              Settings
-            </NavItem>
-          </Nav>
-          <NavbarInput type="text" placeholder="Search here" />
-        </NavbarCollapse>
-      </NavbarContainer>
+            <NavbarCollapse open={openNavbar}>
+                <Nav leftSide>
+                    <NavItem active="light" ripple="light">
+                        <Icon name="language" size="xl" />
+                        Discover
+                    </NavItem>
+                    <NavLink href="#navbar" ripple="light">
+                        <Icon name="account_circle" size="xl" />
+                        Profile
+                    </NavLink>
+                    <NavItem ripple="light">
+                        <Icon name="settings" size="xl" />
+                        Settings
+                    </NavItem>
+                </Nav>
+                <NavbarInput type="text" placeholder="Search here" />
+            </NavbarCollapse>
+        </NavbarContainer>
     </Navbar>
   );
 }`;
@@ -129,19 +131,15 @@ export default function Navbar() {
 
                         <NavbarCollapse open={openNavbar}>
                             <Nav leftSide>
-                                <NavItem
-                                    active="light"
-                                    href="#navbar"
-                                    ripple="light"
-                                >
+                                <NavItem active="light" ripple="light">
                                     <Icon name="language" size="xl" />
                                     Discover
                                 </NavItem>
-                                <NavItem href="#navbar" ripple="light">
+                                <NavLink href="#navbar" ripple="light">
                                     <Icon name="account_circle" size="xl" />
                                     Profile
-                                </NavItem>
-                                <NavItem href="#navbar" ripple="light">
+                                </NavLink>
+                                <NavItem ripple="light">
                                     <Icon name="settings" size="xl" />
                                     Settings
                                 </NavItem>

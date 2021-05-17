@@ -23,30 +23,21 @@ import CardStatusFooter from "@material-tailwind/react/CardStatusFooter";
 import Icon from "@material-tailwind/react/Icon";
 
 export default function Card() {
-  return (
-    <Card>
-        <CardRow>
-            <CardHeader color="lightBlue" size="lg" iconOnly>
-                <Icon
-                    family="font-awesome"
-                    name="fas fa-users"
-                    size="3xl"
-                    color="white"
-                />
-            </CardHeader>
+    return (
+        <Card>
+            <CardRow>
+                <CardHeader color="lightBlue" size="lg" iconOnly>
+                    <Icon name="groups" size="5xl" color="white" />
+                </CardHeader>
 
-            <CardStatus title="Users" amount="350,000" />
-        </CardRow>
+                <CardStatus title="Users" amount="350,000" />
+            </CardRow>
 
-        <CardStatusFooter color="green" amount="97%" date="Since one week">
-            <Icon
-                family="font-awesome"
-                color="green"
-                name="fas fa-arrow-up"
-            />
-        </CardStatusFooter>
-    </Card>
-  );
+            <CardStatusFooter color="green" amount="97%" date="Since one week">
+                <Icon color="green" name="arrow_upward" />
+            </CardStatusFooter>
+        </Card>
+    );
 }`;
 
     return (
@@ -105,9 +96,8 @@ export default function Card() {
                                     iconOnly
                                 >
                                     <Icon
-                                        family="font-awesome"
-                                        name="fas fa-users"
-                                        size="3xl"
+                                        name="groups"
+                                        size="5xl"
                                         color="white"
                                     />
                                 </CardHeader>
@@ -120,11 +110,7 @@ export default function Card() {
                                 amount="97%"
                                 date="Since one week"
                             >
-                                <Icon
-                                    family="font-awesome"
-                                    color="green"
-                                    name="fas fa-arrow-up"
-                                />
+                                <Icon color="green" name="arrow_upward" />
                             </CardStatusFooter>
                         </Card>
                     </div>

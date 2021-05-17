@@ -10,13 +10,13 @@ export default function CheckboxCode({ copyText, onCopy }) {
 import Checkbox from "@material-tailwind/react/Checkbox"
 
 export default function Checkbox() {
-  return (
-    <Checkbox
-      color="${color}"
-      text="Checkbox"
-      id="checkbox"
-    />
-  )
+    return (
+        <Checkbox
+            color="${color}"
+            text="Checkbox"
+            id="checkbox"
+        />
+    )
 }`;
 
     return (

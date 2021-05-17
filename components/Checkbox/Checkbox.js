@@ -25,23 +25,27 @@ const colors = {
 
 export default function Checkbox({ color, text, id, ...rest }) {
     return (
-        <div class="flex items-center">
+        <div className="flex items-center">
             <input
                 {...rest}
                 id={id}
                 type="checkbox"
-                class={`mt-checkbox ${colors[color]} hidden overflow-hidden`}
+                className={`mt-checkbox ${colors[color]} hidden overflow-hidden`}
             />
             <label
-                for={id}
-                class="flex items-center cursor-pointer text-gray-400 select-none transition-all duration-300"
+                htmlFor={id}
+                className="flex items-center cursor-pointer text-gray-400 select-none transition-all duration-300"
             >
-                <span class="relative w-5 h-5 inline-block mr-2 rounded border border-gray-500 transition-all duration-300"></span>
+                <span className="relative w-5 h-5 inline-block mr-2 rounded border border-gray-500 transition-all duration-300"></span>
                 {text}
             </label>
         </div>
     );
 }
+
+Checkbox.defaultProps = {
+    color: 'lightBlue',
+};
 
 Checkbox.propTypes = {
     color: PropTypes.string.isRequired,

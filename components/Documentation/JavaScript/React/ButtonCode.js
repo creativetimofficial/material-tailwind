@@ -13,6 +13,7 @@ export default function ButtonCode({
     buttonChildren,
     rippleEffect,
     blockLevel,
+    withIconOnly,
     ...rest
 }) {
     const [color, setColor] = useState('lightBlue');
@@ -26,18 +27,19 @@ ${
 }
 
 export default function Button() {
-  return (
-    <Button
-      color="${color}"
-      buttonType="${buttonType}"
-      size="${size}"
-      rounded={${rounded}}
-      ${blockLevel}
-      ${rippleEffect}
-    >
-      ${buttonChildren}
-    </Button>
-  )
+    return (
+        <Button
+            color="${color}"
+            buttonType="${buttonType}"
+            size="${size}"
+            rounded={${rounded}}
+            ${blockLevel}
+            ${withIconOnly}
+            ${rippleEffect}
+        >
+            ${buttonChildren}
+        </Button>
+    )
 }`;
 
     return (

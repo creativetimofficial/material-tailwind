@@ -70,7 +70,7 @@ const borderColors = {
 export default function Input({
     placeholder,
     color,
-    size = 'regular',
+    size,
     outline,
     error,
     success,
@@ -220,10 +220,17 @@ export default function Input({
     );
 }
 
+Input.defaultProps = {
+    color: 'lightBlue',
+    size: 'regular',
+    outline: false,
+};
+
 Input.propTypes = {
     placeholder: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    size: PropTypes.string,
-    outline: PropTypes.bool,
+    size: PropTypes.string.isRequired,
+    outline: PropTypes.bool.isRequired,
     error: PropTypes.string,
+    success: PropTypes.string,
 };

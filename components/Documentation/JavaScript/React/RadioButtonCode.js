@@ -10,20 +10,20 @@ export default function RadioButtonCode({ copyText, onCopy }) {
 import Radio from "@material-tailwind/react/Radio"
 
 export default function RadioButton() {
-  return (
-    <Radio
-      color="${color}"
-      text="Option 1"
-      id="option-1"
-      name="option"
-    />
-    <Radio
-      color="${color}"
-      text="Option 2"
-      id="option-2"
-      name="option"
-    />
-  )
+    return (
+        <Radio
+            color="${color}"
+            text="Option 1"
+            id="option-1"
+            name="option"
+        />
+        <Radio
+            color="${color}"
+            text="Option 2"
+            id="option-2"
+            name="option"
+        />
+    )
 }`;
 
     return (

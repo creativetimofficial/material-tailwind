@@ -46,11 +46,11 @@ const ShadowColors = {
     red: 'hover:shadow-md-red',
 };
 
-export default function DropdownItem({ children, color, ripple, ...rest }) {
+export default function DropdownLink({ children, color, ripple, ...rest }) {
     const rippleEffect = new Ripple();
 
     return (
-        <span
+        <a
             {...rest}
             className={`block w-full text-sm py-3 px-4 font-normal cursor-pointer whitespace-no-wrap rounded-md text-gray-900 hover:text-white ${Colors[color]} ${ShadowColors[color]} transition-all duration-300`}
             onMouseUp={(e) => {
@@ -59,15 +59,15 @@ export default function DropdownItem({ children, color, ripple, ...rest }) {
             }}
         >
             {children}
-        </span>
+        </a>
     );
 }
 
-DropdownItem.defaultProps = {
+DropdownLink.defaultProps = {
     color: 'lightBlue',
 };
 
-DropdownItem.propTypes = {
+DropdownLink.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
     ripple: PropTypes.string,

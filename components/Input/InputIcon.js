@@ -70,11 +70,11 @@ const borderColors = {
 export default function InputIcon({
     placeholder,
     color,
-    size = 'regular',
+    size,
     outline,
     error,
     success,
-    iconFamily = 'material-icons',
+    iconFamily,
     iconName,
     ...rest
 }) {
@@ -255,12 +255,20 @@ export default function InputIcon({
     );
 }
 
+InputIcon.defaultProps = {
+    color: 'lightBlue',
+    size: 'regular',
+    outline: false,
+    iconFamily: 'material-icons',
+};
+
 InputIcon.propTypes = {
     placeholder: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    size: PropTypes.string,
-    outline: PropTypes.bool,
+    size: PropTypes.string.isRequired,
+    outline: PropTypes.bool.isRequired,
     error: PropTypes.string,
-    iconFamily: PropTypes.string,
+    success: PropTypes.string,
+    iconFamily: PropTypes.string.isRequired,
     iconName: PropTypes.string.isRequired,
 };

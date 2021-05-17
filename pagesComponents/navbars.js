@@ -7,6 +7,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 import NavbarInput from 'components/Navbar/NavbarInput';
 import Icon from 'components/Icon/Icon';
 
@@ -26,15 +27,15 @@ export function Navbars({ color, navbarName }) {
 
                 <NavbarCollapse open={openNavbar}>
                     <Nav leftSide>
-                        <NavItem active="light" href="#navbar" ripple="light">
+                        <NavItem active="light" ripple="light">
                             <Icon name="language" size="xl" />
                             Discover
                         </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        <NavLink href="#navbar" ripple="light">
                             <Icon name="account_circle" size="xl" />
                             Profile
-                        </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        </NavLink>
+                        <NavItem ripple="light">
                             <Icon name="settings" size="xl" />
                             Settings
                         </NavItem>
@@ -62,15 +63,15 @@ export function NavbarIconsLinks({ color, navbarName }) {
 
                 <NavbarCollapse open={openNavbar}>
                     <Nav>
-                        <NavItem active="light" href="#navbar" ripple="light">
+                        <NavItem active="light" ripple="light">
                             <Icon name="language" size="xl" />
                             Discover
                         </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        <NavLink href="#navbar" ripple="light">
                             <Icon name="account_circle" size="xl" />
                             Profile
-                        </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        </NavLink>
+                        <NavItem ripple="light">
                             <Icon name="settings" size="xl" />
                             Settings
                         </NavItem>
@@ -97,13 +98,13 @@ export function NavbarIcons({ color, navbarName }) {
 
                 <NavbarCollapse open={openNavbar}>
                     <Nav>
-                        <NavItem active="light" href="#navbar" ripple="light">
+                        <NavItem active="light" ripple="light">
                             <Icon name="language" size="xl" />
                         </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        <NavLink href="#navbar" ripple="light">
                             <Icon name="account_circle" size="xl" />
-                        </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        </NavLink>
+                        <NavItem ripple="light">
                             <Icon name="settings" size="xl" />
                         </NavItem>
                     </Nav>
@@ -129,15 +130,13 @@ export function NavbarLinks({ color, navbarName }) {
 
                 <NavbarCollapse open={openNavbar}>
                     <Nav>
-                        <NavItem active="light" href="#navbar" ripple="light">
+                        <NavItem active="light" ripple="light">
                             Discover
                         </NavItem>
-                        <NavItem href="#navbar" ripple="light">
+                        <NavLink href="#navbar" ripple="light">
                             Profile
-                        </NavItem>
-                        <NavItem href="#navbar" ripple="light">
-                            Settings
-                        </NavItem>
+                        </NavLink>
+                        <NavItem ripple="light">Settings</NavItem>
                     </Nav>
                 </NavbarCollapse>
             </NavbarContainer>
