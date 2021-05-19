@@ -58,9 +58,13 @@ export default function PaginationItem({
     );
 }
 
+PaginationItem.defaultProps = {
+    button: false,
+};
+
 PaginationItem.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string,
-    button: PropTypes.bool,
+    button: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };

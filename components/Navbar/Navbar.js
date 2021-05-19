@@ -37,7 +37,13 @@ export default function Navbar({ children, color, navbar, className }) {
     );
 }
 
+Navbar.defaultProps = {
+    color: 'lightBlue',
+    navbar: false,
+};
+
 Navbar.propTypes = {
     children: PropTypes.node.isRequired,
     color: PropTypes.string.isRequired,
+    navbar: PropTypes.bool,
 };

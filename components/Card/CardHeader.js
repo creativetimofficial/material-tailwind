@@ -76,8 +76,8 @@ const positions = {
 export default function CardHeader({
     children,
     color,
-    size = 'regular',
-    contentPosition = 'center',
+    size,
+    contentPosition,
     iconOnly,
     className,
 }) {

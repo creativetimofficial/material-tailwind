@@ -30,8 +30,12 @@ export default function TabItem({
     );
 }
 
+TabItem.defaultProps = {
+    active: false,
+};
+
 TabItem.propTypes = {
     children: PropTypes.node.isRequired,
-    active: PropTypes.bool,
+    active: PropTypes.bool.isRequired,
     ripple: PropTypes.string,
 };

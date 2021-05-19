@@ -9,6 +9,10 @@ export default function TabPane({ children, active, className }) {
     );
 }
 
+TabPane.defaultProps = {
+    active: false,
+};
+
 TabPane.propTypes = {
     children: PropTypes.node.isRequired,
     active: PropTypes.bool.isRequired,

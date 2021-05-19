@@ -19,6 +19,10 @@ export default function NavbarInput({ fontAwesome, ...rest }) {
     );
 }
 
+NavbarInput.defaultProps = {
+    fontAwesome: false,
+};
+
 NavbarInput.propTypes = {
-    fontAwesome: PropTypes.bool,
+    fontAwesome: PropTypes.bool.isRequired,
 };

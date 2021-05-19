@@ -56,18 +56,22 @@ export default function DropdownItem({
     const rippleEffect = new Ripple();
 
     return (
-        <a
+        <span
             {...rest}
-            className={`text-sm py-3 px-4 font-normal block cursor-pointer whitespace-no-wrap rounded-md text-gray-900 hover:text-white ${Colors[color]} ${ShadowColors[color]} transition-all duration-300 ${className}`}
+            className={`block w-full text-sm py-3 px-4 font-normal cursor-pointer whitespace-no-wrap rounded-md text-gray-900 hover:text-white ${Colors[color]} ${ShadowColors[color]} transition-all duration-300`}
             onMouseUp={(e) => {
                 ripple === 'dark' && rippleEffect.create(e, 'dark');
                 ripple === 'light' && rippleEffect.create(e, 'light');
             }}
         >
             {children}
-        </a>
+        </span>
     );
 }
+
+DropdownItem.defaultProps = {
+    color: 'lightBlue',
+};
 
 DropdownItem.propTypes = {
     children: PropTypes.node.isRequired,

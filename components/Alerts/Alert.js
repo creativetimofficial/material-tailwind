@@ -23,18 +23,22 @@ const colors = {
     red: 'bg-red-500',
 };
 
-export default function Alert({ children, color, className, ...rest }) {
+export default function Alert({ children, color, ...rest }) {
     return (
         <>
             <div
                 {...rest}
-                className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded-lg relative mb-4 ${colors[color]} transition-all duration-300 ${className}`}
+                className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded-lg relative mb-4 ${colors[color]} transition-all duration-300`}
             >
                 {children}
             </div>
         </>
     );
 }
+
+Alert.defaultProps = {
+    color: 'lightBlue',
+};
 
 Alert.propTypes = {
     color: PropTypes.string.isRequired,

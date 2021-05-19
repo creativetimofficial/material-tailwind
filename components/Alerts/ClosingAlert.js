@@ -23,7 +23,7 @@ const colors = {
     red: 'bg-red-500',
 };
 
-export default function ClosingAlert({ children, color, className, ...rest }) {
+export default function ClosingAlert({ children, color, ...rest }) {
     const [showAlert, setShowAlert] = React.useState(true);
 
     const closeAlert = (e) => {
@@ -48,7 +48,7 @@ export default function ClosingAlert({ children, color, className, ...rest }) {
             {showAlert ? (
                 <div
                     {...rest}
-                    className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded-lg relative mb-4 ${colors[color]} transition-all duration-300 ${className}`}
+                    className={`flex items-center gap-3 text-white p-4 pr-12 border-0 rounded-lg relative mb-4 ${colors[color]} transition-all duration-300`}
                 >
                     {children}
                     <button
@@ -62,6 +62,10 @@ export default function ClosingAlert({ children, color, className, ...rest }) {
         </>
     );
 }
+
+ClosingAlert.defaultProps = {
+    color: 'lightBlue',
+};
 
 ClosingAlert.propTypes = {
     color: PropTypes.string.isRequired,
