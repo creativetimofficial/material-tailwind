@@ -1,10 +1,16 @@
 # Change Log
 
-## [0.3.2] 2021-05-07
+## [0.3.2] 2021-05-18
 
 ### New features
 
--   Add className prop for the components
+-   New components are added
+-   className prop added for the components
+-   Default props are added for the components
+
+### Bug fixing
+
+-   Console errors are fixed
 
 ## [0.3.1] 2021-04-28
 
