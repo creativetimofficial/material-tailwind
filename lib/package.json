@@ -21,15 +21,15 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/runtime": "^7.13.10",
+    "@babel/runtime": "^7.14.0",
     "@tippyjs/react": "^4.2.5",
-    "material-icons": "^0.6.0",
+    "material-icons": "^0.6.4",
     "material-ripple-effects": "^2.0.1",
-    "next": "^10.2.0",
+    "next": "^10.2.3",
     "next-images": "^1.7.0",
-    "npm": "^7.8.0",
+    "npm": "^7.14.0",
     "path": "^0.12.7",
-    "postcss-import": "^14.0.1",
+    "postcss-import": "^14.0.2",
     "react": "17.0.2",
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "17.0.2",
@@ -41,13 +41,13 @@
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",
-    "@babel/parser": "^7.13.13",
-    "@babel/preset-env": "^7.13.12",
+    "@babel/parser": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.2.6",
     "create-index": "^2.6.0",
-    "postcss": "^8.2.9",
+    "postcss": "^8.3.0",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.1.1"
+    "tailwindcss": "^2.1.2"
   }
 }
