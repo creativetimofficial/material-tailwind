@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function NavbarList({ children, leftSide, className }) {
+export default function Nav({ children, leftSide, className }) {
     return (
         <ul
             className={`flex lg:items-center flex-col lg:flex-row list-none ${
@@ -13,11 +13,11 @@ export default function NavbarList({ children, leftSide, className }) {
     );
 }
 
-NavbarList.defaultProps = {
+Nav.defaultProps = {
     leftSide: false,
 };
 
-NavbarList.propTypes = {
+Nav.propTypes = {
     children: PropTypes.node.isRequired,
     leftSide: PropTypes.bool.isRequired,
 };
