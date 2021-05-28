@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.3.3] 2021-05-28
+
+### Bug fixing
+
+-   Update indentation for the code example
+-   Rename the NavbarList component name to Nav
+-   Rename the NavbarItem component name to NavItem
+-   Update all the dependencies and dev-dependencies
+
 ## [0.3.2] 2021-05-18
 
 ### New features
