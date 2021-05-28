@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Ripple from 'material-ripple-effects';
 
-export default function NavbarItem({ children, active, ripple, ...rest }) {
+export default function NavItem({ children, active, ripple, ...rest }) {
     const rippleEffect = new Ripple();
 
     return (
@@ -21,7 +21,7 @@ export default function NavbarItem({ children, active, ripple, ...rest }) {
     );
 }
 
-NavbarItem.propTypes = {
+NavItem.propTypes = {
     children: PropTypes.node.isRequired,
     active: PropTypes.string,
     className: PropTypes.string,
