@@ -8,6 +8,7 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 import Dropdown from 'components/Dropdown/Dropdown';
 import DropdownItem from 'components/Dropdown/DropdownItem';
 import Icon from 'components/Icon/Icon';
@@ -105,7 +106,7 @@ export default function IndexNavbar() {
                                 </a>
                             </Link>
                         </Dropdown>
-                        <NavItem
+                        <NavLink
                             href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                             target="_blank"
                             rel="noreferrer"
@@ -119,15 +120,15 @@ export default function IndexNavbar() {
                                 />
                                 &nbsp;Github
                             </div>
-                        </NavItem>
-                        <NavItem
+                        </NavLink>
+                        <NavLink
                             href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
                             target="_blank"
                             rel="noreferrer"
                             ripple="dark"
                         >
                             <div className="text-gray-900">Issues</div>
-                        </NavItem>
+                        </NavLink>
                     </Nav>
                 </NavbarCollapse>
             </NavbarContainer>
