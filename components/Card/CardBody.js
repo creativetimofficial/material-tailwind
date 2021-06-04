@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function CardBody({ children }) {
-  return <div className="px-4 pt-5 pb-4">{children}</div>;
+export default function CardBody({ children, className }) {
+    return <div className={`p-4 ${className}`}>{children}</div>;
 }
 
 CardBody.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };

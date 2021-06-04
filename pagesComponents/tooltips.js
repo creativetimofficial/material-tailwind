@@ -4,17 +4,17 @@ import Tooltip from 'components/Tooltips/Tooltips';
 import TooltipContent from 'components/Tooltips/TooltipsContent';
 
 export default function Tooltips({ color, placement }) {
-  const buttonRef = useRef();
+    const buttonRef = useRef();
 
-  return (
-    <>
-      <Button color={color} ref={buttonRef} ripple="light">
-        Tooltip {placement}
-      </Button>
+    return (
+        <div>
+            <Button color={color} ref={buttonRef} ripple="light">
+                Tooltip {placement}
+            </Button>
 
-      <Tooltip placement={placement} ref={buttonRef}>
-        <TooltipContent>Tooltip {placement}</TooltipContent>
-      </Tooltip>
-    </>
-  );
+            <Tooltip placement={placement} ref={buttonRef}>
+                <TooltipContent>Tooltip {placement}</TooltipContent>
+            </Tooltip>
+        </div>
+    );
 }
