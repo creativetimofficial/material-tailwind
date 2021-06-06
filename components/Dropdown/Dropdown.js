@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types';
 import Ripple from 'material-ripple-effects';
 import Tippy from '@tippyjs/react';
@@ -278,6 +278,7 @@ export default function Dropdown({
     block,
     ripple,
     className,
+    getControl,
     ...rest
 }) {
     const [dropdownShow, setDropdownShow] = React.useState(false);
@@ -374,6 +375,7 @@ export default function Dropdown({
     }
 
     classes = classes.join(' ');
+    useEffect(() => getControl(setDropdownShow), [])
 
     return (
         <div>
@@ -391,6 +393,8 @@ export default function Dropdown({
                 offset={[0, 0]}
                 placement={placement}
                 interactive
+                visible={dropdownShow}
+                onClickOutside={() => setDropdownShow(false)}
             >
                 <button
                     {...rest}
