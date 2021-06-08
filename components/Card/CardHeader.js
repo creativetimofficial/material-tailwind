@@ -119,7 +119,7 @@ export default function CardHeader({
 
     return (
         <div
-            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-10 mb-6 rounded-xl text-white grid items-center ${headerSize} ${shadowColors[color]} ${className}`}
+            className={`bg-gradient-to-tr ${fromColors[color]} ${toColors[color]} -mt-10 mb-4 rounded-xl text-white grid items-center ${headerSize} ${shadowColors[color]} ${className}`}
         >
             {children}
         </div>

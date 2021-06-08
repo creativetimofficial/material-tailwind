@@ -35,14 +35,14 @@ export default function PaginationItem({
     const rippleEffect = new Ripple();
 
     return (
-        <li>
+        <li className="grid place-items-center">
             <a
                 {...rest}
-                className={`text-sm flex ${
+                className={`text-sm leading-none flex ${
                     button
                         ? 'tracking-wider rounded-lg w-14'
                         : 'rounded-full w-8'
-                } h-8 mx-1 p-0 items-center justify-center leading-tight ${
+                } h-8 mx-1 p-0 items-center justify-center ${
                     color
                         ? `${colors[color]} text-white`
                         : 'bg-transparent text-gray-700 hover:bg-gray-500 hover:bg-opacity-20 focus:bg-gray-500 focus:bg-opacity-20 active:bg-gray-500 active:bg-opacity-40'

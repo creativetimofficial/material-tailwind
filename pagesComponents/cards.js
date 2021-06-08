@@ -43,8 +43,10 @@ export function RegularCard() {
 export function LoginCard() {
     return (
         <Card>
-            <CardHeader color="lightBlue" size="lg">
-                <H5 color="white">Login</H5>
+            <CardHeader color="lightBlue">
+                <H5 color="white" style={{ marginBottom: 0 }}>
+                    Login
+                </H5>
             </CardHeader>
 
             <CardBody>
@@ -93,8 +95,8 @@ export function StatusCard() {
     return (
         <Card>
             <CardRow>
-                <CardHeader color="lightBlue" size="lg" iconOnly>
-                    <Icon name="groups" size="5xl" color="white" />
+                <CardHeader color="lightBlue" iconOnly>
+                    <Icon name="groups" size="4xl" color="white" />
                 </CardHeader>
 
                 <CardStatus title="Users" amount="350,000" />

@@ -297,7 +297,7 @@ export default function Dropdown({
         'rounded-lg',
         'font-bold',
         'outline-none',
-        'uppercase',
+        'capitalize',
         'tracking-wider',
         'focus:outline-none',
         'transition-all',
@@ -341,19 +341,19 @@ export default function Dropdown({
     const buttonSM = [
         ...sharedClasses,
         'py-1.5 pl-5 pr-3',
-        'text-xs',
+        'text-sm',
         'leading-normal',
     ];
     const buttonRegular = [
         ...sharedClasses,
         'p-2.5 pl-7 pr-5',
-        'text-xs',
+        'text-sm',
         'leading-normal',
     ];
     const buttonLG = [
         ...sharedClasses,
         'py-3 pl-8 pr-6',
-        'text-sm',
+        'text-base',
         'leading-relaxed',
     ];
 
