@@ -54,10 +54,10 @@ export default function IndexNavbar() {
                             color="transparent"
                             buttonType="link"
                             buttonText={
-                                <>
+                                <div className="flex items-center text-xs uppercase">
                                     <Icon name="view_carousel" size="2xl" />
                                     &nbsp;Templates
-                                </>
+                                </div>
                             }
                             ripple="light"
                             style={{
