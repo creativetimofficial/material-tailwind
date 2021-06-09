@@ -481,7 +481,7 @@ export default function Components() {
                 </div>
 
                 <div className="container max-w-7xl mx-auto mt-36 px-4">
-                    <H4 color="gray">Textareas</H4>
+                    <H4 color="gray">Text Areas</H4>
                     <div className="mt-10">
                         <h4 className="text-xl text-blue-gray-700">Styles</h4>
 
