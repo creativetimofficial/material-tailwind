@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.3.4] 2021-06-09
+
+### New features
+
+-   Update tailwindcss to the latest version
+
+### Bug fixing
+
+-   Update card header margin
+-   Reduce the input icon opacity
+-   Change the dropdown text from uppercase to capitalize
+
 ## [0.3.3] 2021-05-28
 
 ### Bug fixing
