@@ -62,7 +62,7 @@ export default function IndexNavbar() {
                             buttonType="link"
                             buttonText={
                                 <>
-                                    <p className="text-gray-900 flex items-center">
+                                    <p className="text-gray-900 flex items-center uppercase text-xs">
                                         <Icon name="view_carousel" size="2xl" />
                                         &nbsp;Templates
                                     </p>
