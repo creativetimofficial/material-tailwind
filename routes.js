@@ -145,7 +145,7 @@ const routes = [
             },
             {
                 path: '/documentation/react/textareas',
-                name: 'Textareas',
+                name: 'Text Areas',
             },
             {
                 path: '/documentation/react/tooltips',
