@@ -198,7 +198,7 @@ export default function InputIcon({
         iconUI = (
             <span
                 {...rest}
-                className={`${iconFamily} p-0 text-gray-600 border-none absolute top-1/2 ${
+                className={`${iconFamily} p-0 text-gray-600 text-opacity-60 border-none absolute top-1/2 ${
                     outline
                         ? size === 'sm'
                             ? 'right-2'
@@ -213,7 +213,7 @@ export default function InputIcon({
         iconUI = (
             <i
                 {...rest}
-                className={`fas ${iconName} text-gray-600 border-none absolute top-1/2 ${
+                className={`fas ${iconName} text-gray-600 text-opacity-60 border-none absolute top-1/2 ${
                     outline
                         ? size === 'sm'
                             ? 'right-2'
