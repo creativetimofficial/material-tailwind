@@ -45,6 +45,17 @@ export default function Modals() {
           size="lg"
           modalSize="large"
         />
+
+        <div className="h-30">&nbsp;</div>
+
+        <SmallHeading title="Responsive Modal" />
+        <ModalCode
+          copyText={copy === "Modal" ? "Copied" : "Copy"}
+          onCopy={(text) => setCopy(text ? "Modal" : "")}
+          size="lg"
+          modalSize="large"
+          fullWidth={true}
+        />
       </Container>
     </>
   );
