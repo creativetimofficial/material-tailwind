@@ -78,6 +78,7 @@ export default function IndexNavbar() {
                             <DropdownLink
                                 href="https://demos.creative-tim.com/material-tailwind-kit-react/#/landing"
                                 target="_blank"
+                                rel="noreferrer"
                                 color="lightBlue"
                                 ripple="light"
                             >
@@ -86,6 +87,7 @@ export default function IndexNavbar() {
                             <DropdownLink
                                 href="https://demos.creative-tim.com/material-tailwind-kit-react/#/profile"
                                 target="_blank"
+                                rel="noreferrer"
                                 color="lightBlue"
                                 ripple="light"
                             >
@@ -94,6 +96,7 @@ export default function IndexNavbar() {
                             <DropdownLink
                                 href="https://demos.creative-tim.com/material-tailwind-kit-react/#/login"
                                 target="_blank"
+                                rel="noreferrer"
                                 color="lightBlue"
                                 ripple="light"
                             >
@@ -102,6 +105,7 @@ export default function IndexNavbar() {
                             <DropdownLink
                                 href="https://demos.creative-tim.com/material-tailwind-kit-react/#/register"
                                 target="_blank"
+                                rel="noreferrer"
                                 color="lightBlue"
                                 ripple="light"
                             >
@@ -110,6 +114,7 @@ export default function IndexNavbar() {
                             <DropdownLink
                                 href="https://demos.creative-tim.com/material-tailwind-dashboard-react/#/"
                                 target="_blank"
+                                rel="noreferrer"
                                 color="lightBlue"
                                 ripple="light"
                             >

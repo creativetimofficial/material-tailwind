@@ -8,8 +8,9 @@ import NavbarToggler from 'components/Navbar/NavbarToggler';
 import NavbarCollapse from 'components/Navbar/NavbarCollapse';
 import Nav from 'components/Nav/Nav';
 import NavItem from 'components/Nav/NavItem';
+import NavLink from 'components/Nav/NavLink';
 import Dropdown from 'components/Dropdown/Dropdown';
-import DropdownItem from 'components/Dropdown/DropdownItem';
+import DropdownLink from 'components/Dropdown/DropdownLink';
 import Icon from 'components/Icon/Icon';
 
 export default function IndexNavbar() {
@@ -66,38 +67,53 @@ export default function IndexNavbar() {
                                 color: '#fff',
                             }}
                         >
-                            <Link href="/templates/landing">
-                                <a>
-                                    <DropdownItem
-                                        color="lightBlue"
-                                        ripple="light"
-                                    >
-                                        Landing
-                                    </DropdownItem>
-                                </a>
-                            </Link>
-                            <Link href="/templates/profile">
-                                <a>
-                                    <DropdownItem
-                                        color="lightBlue"
-                                        ripple="light"
-                                    >
-                                        Profile
-                                    </DropdownItem>
-                                </a>
-                            </Link>
-                            <Link href="/templates/login">
-                                <a>
-                                    <DropdownItem
-                                        color="lightBlue"
-                                        ripple="light"
-                                    >
-                                        Login
-                                    </DropdownItem>
-                                </a>
-                            </Link>
+                            <DropdownLink
+                                href="https://demos.creative-tim.com/material-tailwind-kit-react/#/landing"
+                                target="_blank"
+                                rel="noreferrer"
+                                color="lightBlue"
+                                ripple="light"
+                            >
+                                Landing
+                            </DropdownLink>
+                            <DropdownLink
+                                href="https://demos.creative-tim.com/material-tailwind-kit-react/#/profile"
+                                target="_blank"
+                                rel="noreferrer"
+                                color="lightBlue"
+                                ripple="light"
+                            >
+                                Profile
+                            </DropdownLink>
+                            <DropdownLink
+                                href="https://demos.creative-tim.com/material-tailwind-kit-react/#/login"
+                                target="_blank"
+                                rel="noreferrer"
+                                color="lightBlue"
+                                ripple="light"
+                            >
+                                Login
+                            </DropdownLink>
+                            <DropdownLink
+                                href="https://demos.creative-tim.com/material-tailwind-kit-react/#/register"
+                                target="_blank"
+                                rel="noreferrer"
+                                color="lightBlue"
+                                ripple="light"
+                            >
+                                Register
+                            </DropdownLink>
+                            <DropdownLink
+                                href="https://demos.creative-tim.com/material-tailwind-dashboard-react/#/"
+                                target="_blank"
+                                rel="noreferrer"
+                                color="lightBlue"
+                                ripple="light"
+                            >
+                                Dashboard
+                            </DropdownLink>
                         </Dropdown>
-                        <NavItem
+                        <NavLink
                             href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                             target="_blank"
                             rel="noreferrer"
@@ -109,15 +125,15 @@ export default function IndexNavbar() {
                                 size="xl"
                             />
                             &nbsp;Github
-                        </NavItem>
-                        <NavItem
+                        </NavLink>
+                        <NavLink
                             href="https://github.com/creativetimofficial/material-tailwind/issues?ref=material-tailwind"
                             target="_blank"
                             rel="noreferrer"
                             ripple="light"
                         >
                             Issues
-                        </NavItem>
+                        </NavLink>
                     </Nav>
                 </NavbarCollapse>
             </div>
