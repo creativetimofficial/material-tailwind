@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 const mtInputColors = {
@@ -67,15 +67,19 @@ const borderColors = {
     red: 'border-red-500',
 };
 
-export default function Input({
-    placeholder,
-    color,
-    size,
-    outline,
-    error,
-    success,
-    ...rest
-}) {
+const Input = forwardRef(
+    (
+        {
+            placeholder,
+            color,
+            size,
+            outline,
+            error,
+            success,
+            ...rest
+        },
+        ref
+    ) => {
     let labelBorderColor,
         mtInputBorderColor,
         mtInputOutlineColor,
@@ -194,6 +198,7 @@ export default function Input({
                 className={`${inputClasses} ${
                     error && 'mt-input-outline-error'
                 } ${success && 'mt-input-outline-success'}`}
+                ref={ref}
             />
             <label className={label}>
                 {outline ? (
@@ -218,7 +223,8 @@ export default function Input({
             )}
         </div>
     );
-}
+  }
+);
 
 Input.defaultProps = {
     color: 'lightBlue',
@@ -234,3 +240,5 @@ Input.propTypes = {
     error: PropTypes.string,
     success: PropTypes.string,
 };
+
+export default Input;
