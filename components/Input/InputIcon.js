@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 const mtInputColors = {
@@ -67,17 +67,22 @@ const borderColors = {
     red: 'border-red-500',
 };
 
-export default function InputIcon({
-    placeholder,
-    color,
-    size,
-    outline,
-    error,
-    success,
-    iconFamily,
-    iconName,
-    ...rest
-}) {
+const InputIcon = forwardRef(
+    (
+        {
+            placeholder,
+            color,
+            size,
+            outline,
+            error,
+            success,
+            iconFamily,
+            iconName,
+            ...rest
+        },
+        ref
+    ) => {
+
     let iconUI,
         iconSize,
         labelBorderColor,
@@ -234,6 +239,7 @@ export default function InputIcon({
                 className={`${inputClasses} ${
                     error && 'mt-input-outline-error'
                 } ${success && 'mt-input-outline-success'}`}
+                ref={ref}
             />
             <label className={label}>
                 {outline ? (
@@ -252,8 +258,9 @@ export default function InputIcon({
                 <span className="block mt-1 text-xs text-red-500">{error}</span>
             )}
         </div>
-    );
-}
+   );
+ }
+);
 
 InputIcon.defaultProps = {
     color: 'lightBlue',
@@ -272,3 +279,5 @@ InputIcon.propTypes = {
     iconFamily: PropTypes.string.isRequired,
     iconName: PropTypes.string.isRequired,
 };
+
+export default InputIcon;
