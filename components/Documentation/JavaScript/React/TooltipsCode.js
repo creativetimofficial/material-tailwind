@@ -28,7 +28,7 @@ export default function Tooltips() {
             </Button>
 
             <Tooltips placement="${placement}" ref={buttonRef}>
-                <TooltipContents>Tooltip ${placement}</TooltipContents>
+                <TooltipsContent>Tooltip ${placement}</TooltipsContent>
             </Tooltips>
         </>
     );
