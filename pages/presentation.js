@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Header from 'components/Documentation/Header';
 import IndexNavbar from 'pagesComponents/IndexNavbar';
-import IndexFooter from 'pagesComponents/IndexFooter';
+// import IndexFooter from 'pagesComponents/IndexFooter';
 import H1 from 'components/Typography/Heading1';
 import H4 from 'components/Typography/Heading4';
 import H5 from 'components/Typography/Heading5';
@@ -11,7 +11,7 @@ import LeadText from 'components/Typography/LeadText';
 import Paragraph from 'components/Typography/Paragraph';
 import Button from 'components/Button/Button';
 import Icon from 'components/Icon/Icon';
-import InputIcon from 'components/Input/InputIcon';
+import Input from 'components/Input/Input';
 import PresentationCard from 'pagesComponents/PresentationCard';
 import PresentationInfoCard from 'pagesComponents/PresentationInfoCard';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -23,8 +23,8 @@ export default function Presentation() {
             <Header title="Presentation" />
             <IndexNavbar />
 
-            <section className="header relative items-center flex">
-                <div className="container max-w-7xl mx-auto">
+            <section className="header relative flex items-center">
+                <div className="max-w-7xl container mx-auto">
                     <div className="w-full px-4 text-center">
                         <img
                             src={require('assets/img/material-tailwind-logo.png')}
@@ -46,7 +46,7 @@ export default function Presentation() {
                             </LeadText>
                         </div>
 
-                        <div className="bg-white py-8 mt-8 w-full mx-auto border border-t border-b border-r-0 border-l-0 md:px-8 lg:px-36 md:w-9/12">
+                        <div className="md:px-8 lg:px-36 md:w-9/12 w-full py-8 mx-auto mt-8 bg-white border border-t border-b border-l-0 border-r-0">
                             <H5 color="gray">Subscribe to our Newsletter</H5>
 
                             <Paragraph color="blueGray">
@@ -62,8 +62,8 @@ export default function Presentation() {
                                 name="mc-embedded-subscribe-form"
                                 target="_blank"
                             >
-                                <div className="flex flex-col gap-4 md:flex-row md:gap-6">
-                                    <InputIcon
+                                <div className="md:flex-row md:gap-6 flex flex-col gap-4">
+                                    <Input
                                         type="email"
                                         placeholder="Enter Your Email Address"
                                         color="lightBlue"
@@ -74,7 +74,7 @@ export default function Presentation() {
                                         id="mce-EMAIL"
                                         required
                                     />
-                                    <div className="w-full md:w-48">
+                                    <div className="md:w-48 w-full">
                                         <Button
                                             color="lightBlue"
                                             size="lg"
@@ -94,7 +94,7 @@ export default function Presentation() {
                             </form>
                         </div>
 
-                        <div className="mt-12 flex flex-col justify-center gap-4 mb-24 md:flex-row">
+                        <div className="md:flex-row flex flex-col justify-center gap-4 mt-12 mb-24">
                             <a href="#how-to-use">
                                 <Button
                                     color="teal"
@@ -145,9 +145,9 @@ export default function Presentation() {
                 </div>
             </section>
             <section className="bg-white" id="how-to-use">
-                <div className="container max-w-7xl mx-auto px-4">
+                <div className="max-w-7xl container px-4 mx-auto">
                     <H5 color="gray">Installation</H5>
-                    <hr className="border border-t-0 border-r-0 border-l-0 border-b-1 border-gray-200 my-4" />
+                    <hr className="border-b-1 my-4 border border-t-0 border-l-0 border-r-0 border-gray-200" />
 
                     <div className="mt-16">
                         <div className="mb-16">
@@ -232,7 +232,7 @@ export default function Presentation() {
                                 Import the components you need
                             </Paragraph>
 
-                            <div className="border border-solid border-gray-300 rounded-lg my-4 p-4 pt-6 relative">
+                            <div className="relative p-4 pt-6 my-4 border border-gray-300 border-solid rounded-lg">
                                 <div className="pb-4">
                                     <Button color="lightBlue" ripple="light">
                                         Button
@@ -259,17 +259,17 @@ export default function Example() {
                 </div>
             </section>
 
-            <section className="mt-48 md:mt-40 py-28 relative bg-gray-100">
-                <div className="container max-w-7xl mx-auto">
+            <section className="md:mt-40 py-28 relative mt-48 bg-gray-100">
+                <div className="max-w-7xl container mx-auto">
                     <div className="container mx-auto">
                         <div className="flex flex-wrap items-center">
-                            <div className="lg:w-4/12 px-12 md:px-4 mr-auto ml-auto relative z-30">
+                            <div className="lg:w-4/12 md:px-4 relative z-30 px-12 ml-auto mr-auto">
                                 <PresentationCard />
                             </div>
 
-                            <div className="w-full md:w-6/12 px-4">
+                            <div className="md:w-6/12 w-full px-4">
                                 <div className="flex flex-wrap">
-                                    <div className="w-full md:w-6/12 px-4">
+                                    <div className="md:w-6/12 w-full px-4">
                                         <PresentationInfoCard
                                             icon="fas fa-sitemap"
                                             title="CSS Components"
@@ -287,7 +287,7 @@ export default function Example() {
                                             future it will future more.
                                         </PresentationInfoCard>
                                     </div>
-                                    <div className="w-full md:w-6/12 px-4">
+                                    <div className="md:w-6/12 w-full px-4">
                                         <PresentationInfoCard
                                             icon="fas fa-newspaper"
                                             title="Templates"
@@ -310,10 +310,10 @@ export default function Example() {
                         </div>
                     </div>
 
-                    <div className="container mx-auto overflow-hidden pb-20">
+                    <div className="container pb-20 mx-auto overflow-hidden">
                         <div className="flex flex-wrap items-center">
-                            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
-                                <div className="text-blue-gray-800 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                            <div className="md:w-4/12 md:px-4 w-full px-12 mt-48 ml-auto mr-auto">
+                                <div className="text-blue-gray-800 inline-flex items-center justify-center w-16 h-16 p-3 mb-6 text-center bg-white rounded-full shadow-md">
                                     <Icon
                                         family="font-awesome"
                                         name="fas fa-sitemap"
@@ -354,7 +354,7 @@ export default function Example() {
                                     </span>
                                 </div>
                                 <Link href="/documentation/react/buttons/filled">
-                                    <a className="font-bold text-blue-gray-900 hover:text-blue-gray-800 transition-all flex items-center gap-2">
+                                    <a className="text-blue-gray-900 hover:text-blue-gray-800 flex items-center gap-2 font-bold transition-all">
                                         View All{' '}
                                         <Icon
                                             family="font-awesome"
@@ -364,12 +364,12 @@ export default function Example() {
                                 </Link>
                             </div>
 
-                            <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
-                                <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
+                            <div className="md:w-5/12 w-full px-4 mt-32 ml-auto mr-auto">
+                                <div className="md:mt-0 relative flex flex-col w-full min-w-0 mt-48 mb-6">
                                     <img
                                         alt="..."
                                         src={require('assets/img/button.svg')}
-                                        className="w-full align-middle rounded absolute shadow-lg z-20"
+                                        className="absolute z-20 w-full align-middle rounded shadow-lg"
                                         style={{
                                             maxWidth: '100px',
                                             left: '100px',
@@ -379,7 +379,7 @@ export default function Example() {
                                     <img
                                         alt="..."
                                         src={require('assets/img/card.svg')}
-                                        className="w-full align-middle rounded-lg absolute"
+                                        className="absolute w-full align-middle rounded-lg"
                                         style={{
                                             maxWidth: '280px',
                                             left: '210px',
@@ -389,7 +389,7 @@ export default function Example() {
                                     <img
                                         alt="..."
                                         src={require('assets/img/dropdown.svg')}
-                                        className="w-full align-middle rounded-lg absolute z-10"
+                                        className="absolute z-10 w-full align-middle rounded-lg"
                                         style={{
                                             maxWidth: '180px',
                                             left: '0',
@@ -399,7 +399,7 @@ export default function Example() {
                                     <img
                                         alt="..."
                                         src={require('assets/img/menu.svg')}
-                                        className="w-full align-middle rounded-lg absolute shadow-lg"
+                                        className="absolute w-full align-middle rounded-lg shadow-lg"
                                         style={{
                                             maxWidth: '580px',
                                             left: '0',
@@ -410,14 +410,14 @@ export default function Example() {
                             </div>
                         </div>
                         <div className="flex flex-wrap items-center pt-32">
-                            <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
-                                <div className="justify-center flex flex-wrap relative">
-                                    <div className="my-4 w-full lg:w-6/12 px-4">
+                            <div className="md:w-6/12 w-full px-4 mt-32 ml-auto mr-auto">
+                                <div className="relative flex flex-wrap justify-center">
+                                    <div className="lg:w-6/12 w-full px-4 my-4">
                                         <a href="#svelte">
-                                            <div className="bg-orange-900 shadow-xl rounded-xl text-center p-8 mt-8">
+                                            <div className="rounded-xl p-8 mt-8 text-center bg-orange-900 shadow-xl">
                                                 <img
                                                     alt="..."
-                                                    className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                    className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                     src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/svelte.jpg"
                                                 />
                                                 <div className="mt-4">
@@ -429,10 +429,10 @@ export default function Example() {
                                         </a>
                                         <Link href="/documentation/react/alerts">
                                             <a>
-                                                <div className="bg-light-blue-500 shadow-xl rounded-xl text-center p-8 mt-8">
+                                                <div className="bg-light-blue-500 rounded-xl p-8 mt-8 text-center shadow-xl">
                                                     <img
                                                         alt="..."
-                                                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                        className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                         src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
                                                     />
                                                     <div className="mt-4">
@@ -444,10 +444,10 @@ export default function Example() {
                                             </a>
                                         </Link>
                                         <a href="#nextjs">
-                                            <div className="bg-gray-900 shadow-xl rounded-xl text-center p-8 mt-8">
+                                            <div className="rounded-xl p-8 mt-8 text-center bg-gray-900 shadow-xl">
                                                 <img
                                                     alt="..."
-                                                    className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                    className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                     src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nextjs.jpg"
                                                 />
                                                 <div className="mt-4">
@@ -458,12 +458,12 @@ export default function Example() {
                                             </div>
                                         </a>
                                     </div>
-                                    <div className="my-4 w-full lg:w-6/12 px-4 lg:mt-16">
+                                    <div className="lg:w-6/12 lg:mt-16 w-full px-4 my-4">
                                         <a href="#js">
-                                            <div className="bg-yellow-600 shadow-xl rounded-xl text-center p-8 mt-8">
+                                            <div className="rounded-xl p-8 mt-8 text-center bg-yellow-600 shadow-xl">
                                                 <img
                                                     alt="..."
-                                                    className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                    className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                     src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/js.png"
                                                 />
                                                 <div className="mt-4">
@@ -474,10 +474,10 @@ export default function Example() {
                                             </div>
                                         </a>
                                         <a href="#angular">
-                                            <div className="bg-red-700 shadow-xl rounded-xl text-center p-8 mt-8">
+                                            <div className="rounded-xl p-8 mt-8 text-center bg-red-700 shadow-xl">
                                                 <img
                                                     alt="..."
-                                                    className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                    className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                     src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
                                                 />
                                                 <div className="mt-4">
@@ -488,10 +488,10 @@ export default function Example() {
                                             </div>
                                         </a>
                                         <a href="#vue">
-                                            <div className="bg-green-500 shadow-xl rounded-xl text-center p-8 mt-8">
+                                            <div className="rounded-xl p-8 mt-8 text-center bg-green-500 shadow-xl">
                                                 <img
                                                     alt="..."
-                                                    className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                                                    className="w-16 max-w-full p-2 mx-auto bg-white rounded-full shadow-md"
                                                     src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
                                                 />
                                                 <div className="mt-4">
@@ -503,8 +503,8 @@ export default function Example() {
                                 </div>
                             </div>
 
-                            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
-                                <div className="text-blue-gray-800 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                            <div className="md:w-4/12 md:px-4 w-full px-12 mt-48 ml-auto mr-auto">
+                                <div className="text-blue-gray-800 inline-flex items-center justify-center w-16 h-16 p-3 mb-6 text-center bg-white rounded-full shadow-md">
                                     <Icon
                                         family="font-awesome"
                                         name="fas fa-drafting-compass"
@@ -549,7 +549,7 @@ export default function Example() {
                                     </span>
                                 </div>
                                 <Link href="/documentation/react/alerts">
-                                    <a className="font-bold text-blue-gray-900 hover:text-blue-gray-800 transition-all flex items-center gap-2">
+                                    <a className="text-blue-gray-900 hover:text-blue-gray-800 flex items-center gap-2 font-bold transition-all">
                                         View All{' '}
                                         <Icon
                                             family="font-awesome"
@@ -559,10 +559,10 @@ export default function Example() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="items-center flex flex-wrap pt-48">
-                            <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
+                        <div className="flex flex-wrap items-center pt-48">
+                            <div className="md:w-5/12 md:px-4 w-full px-12 ml-auto">
                                 <div className="md:pr-12">
-                                    <div className="text-blue-gray-800 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                                    <div className="text-blue-gray-800 inline-flex items-center justify-center w-16 h-16 p-3 mb-6 text-center bg-white rounded-full shadow-md">
                                         <Icon
                                             family="font-awesome"
                                             name="fas fa-file-alt"
@@ -578,10 +578,10 @@ export default function Example() {
                                         change the text and images and you're
                                         good to go.
                                     </LeadText>
-                                    <ul className="list-none mt-6">
+                                    <ul className="mt-6 list-none">
                                         <li className="py-2">
                                             <div className="flex items-center">
-                                                <span className="text-xs font-semibold w-7 h-7 grid place-items-center uppercase rounded-full text-blue-gray-800 bg-gray-100 mr-3">
+                                                <span className="w-7 h-7 place-items-center text-blue-gray-800 grid mr-3 text-xs font-semibold uppercase bg-gray-100 rounded-full">
                                                     <Icon
                                                         family="font-awesome"
                                                         name="fas fa-fingerprint"
@@ -598,7 +598,7 @@ export default function Example() {
                                         </li>
                                         <li className="py-2">
                                             <div className="flex items-center">
-                                                <span className="text-xs font-semibold w-7 h-7 grid place-items-center uppercase rounded-full text-blue-gray-800 bg-gray-100 mr-3">
+                                                <span className="w-7 h-7 place-items-center text-blue-gray-800 grid mr-3 text-xs font-semibold uppercase bg-gray-100 rounded-full">
                                                     <Icon
                                                         family="font-awesome"
                                                         name="fab fa-html5"
@@ -615,7 +615,7 @@ export default function Example() {
                                         </li>
                                         <li className="py-2">
                                             <div className="flex items-center">
-                                                <span className="text-xs font-semibold w-7 h-7 grid place-items-center uppercase rounded-full text-blue-gray-800 bg-gray-100 mr-3">
+                                                <span className="w-7 h-7 place-items-center text-blue-gray-800 grid mr-3 text-xs font-semibold uppercase bg-gray-100 rounded-full">
                                                     <Icon
                                                         family="font-awesome"
                                                         name="far fa-paper-plane"
@@ -634,10 +634,10 @@ export default function Example() {
                                 </div>
                             </div>
 
-                            <div className="w-full md:w-6/12 mr-auto px-4 pt-24 md:pt-0">
+                            <div className="md:w-6/12 md:pt-0 w-full px-4 pt-24 mr-auto">
                                 <img
                                     alt="..."
-                                    className="max-w-full rounded-xl shadow-xl"
+                                    className="rounded-xl max-w-full shadow-xl"
                                     src={require('assets/img/documentation.png')}
                                 />
                             </div>
@@ -646,11 +646,11 @@ export default function Example() {
                 </div>
             </section>
 
-            <section className="py-20 bg-blue-gray-800 overflow-hidden">
-                <div className="container max-w-7xl mx-auto pb-64">
+            <section className="bg-blue-gray-800 py-20 overflow-hidden">
+                <div className="max-w-7xl container pb-64 mx-auto">
                     <div className="flex flex-wrap justify-center">
-                        <div className="w-full md:w-8/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
-                            <div className="text-blue-gray-800 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-md rounded-full bg-white">
+                        <div className="md:w-8/12 md:px-4 md:mt-64 w-full px-12 ml-auto mr-auto">
+                            <div className="text-blue-gray-800 inline-flex items-center justify-center w-16 h-16 p-3 mb-6 text-center bg-white rounded-full shadow-md">
                                 <Icon
                                     family="font-awesome"
                                     name="fas fa-code-branch"
@@ -685,7 +685,7 @@ export default function Example() {
                                 href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-4 inline-block"
+                                className="inline-block mt-4"
                             >
                                 <Button
                                     color="blueGray"
@@ -697,9 +697,9 @@ export default function Example() {
                             </a>
                         </div>
 
-                        <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
+                        <div className="md:w-4/12 relative w-full px-4 mt-32 ml-auto mr-auto">
                             <i
-                                className="fab fa-github text-blue-gray-900 absolute -top-150-px -right-100 opacity-50"
+                                className="fab fa-github text-blue-gray-900 -top-150-px -right-100 absolute opacity-50"
                                 style={{
                                     fontSize: '50rem',
                                     top: '-150px',
@@ -710,11 +710,11 @@ export default function Example() {
                     </div>
                 </div>
             </section>
-            <section className="pb-16 bg-gray-100 relative pt-32">
-                <div className="container max-w-7xl mx-auto">
-                    <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-xl -mt-64 py-24 px-12 relative z-10">
-                        <div className="w-full text-center lg:w-8/12">
-                            <p className="text-6xl text-center mb-5">
+            <section className="relative pt-32 pb-16 bg-gray-100">
+                <div className="max-w-7xl container mx-auto">
+                    <div className="rounded-xl relative z-10 flex flex-wrap justify-center px-12 py-24 -mt-64 bg-white shadow-xl">
+                        <div className="lg:w-8/12 w-full text-center">
+                            <p className="mb-5 text-6xl text-center">
                                 <span role="img" aria-label="love">
                                     😍
                                 </span>
@@ -756,7 +756,7 @@ export default function Example() {
                     </div>
                 </div>
             </section>
-            <IndexFooter />
+            {/* <IndexFooter /> */}
         </>
     );
 }

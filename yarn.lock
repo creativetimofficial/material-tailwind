@@ -1339,6 +1339,25 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/prop-types@*":
+  version "15.7.4"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
+  integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
+
+"@types/react@^17.0.38":
+  version "17.0.38"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.38.tgz#f24249fefd89357d5fa71f739a686b8d7c7202bd"
+  integrity sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/scheduler@*":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
 "@types/unist@*":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
@@ -1965,20 +1984,10 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001181:
-  version "1.0.30001235"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001235.tgz#ad5ca75bc5a1f7b12df79ad806d715a43a5ac4ed"
-  integrity sha512-zWEwIVqnzPkSAXOUlQnPW2oKoYb2aLQ4Q5ejdjBcnH63rfypaW34CxaeBn1VMya2XaEU3P/R2qHpWyj+l0BT1A==
-
-caniuse-lite@^1.0.30001202:
-  version "1.0.30001223"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001223.tgz#39b49ff0bfb3ee3587000d2f66c47addc6e14443"
-  integrity sha512-k/RYs6zc/fjbxTjaWZemeSmOjO0JJV+KguOBA3NwPup8uzxM1cMhR2BD9XmO86GuqaqTCO8CgkgH9Rz//vdDiA==
-
-caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001230:
-  version "1.0.30001230"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001230.tgz#8135c57459854b2240b57a4a6786044bdc5a9f71"
-  integrity sha512-5yBd5nWCBS+jWKTcHOzXwo5xzcj4ePE/yjtkZyUV1BTUmrBaA9MRGC+e7mxnqXSA90CmCA8L3eKLaSUkt099IQ==
+caniuse-lite@^1.0.30001181, caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228, caniuse-lite@^1.0.30001230:
+  version "1.0.30001301"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001301.tgz"
+  integrity sha512-csfD/GpHMqgEL3V3uIgosvh+SVIQvCh43SNu9HRbP1lnxkKm1kjDG4f32PP571JplkLjfS+mg2p1gxR7MYrrIA==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2074,6 +2083,11 @@ classnames@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -2403,6 +2417,11 @@ cssnano-simple@2.0.0:
   integrity sha512-0G3TXaFxlh/szPEG/o3VcmCwl0N3E60XNb9YZZijew5eIs6fLjJuOPxQd9yEBaX2p/YfJtt49i4vYi38iH6/6w==
   dependencies:
     cssnano-preset-simple "^2.0.0"
+
+csstype@^3.0.2:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.10.tgz#2ad3a7bed70f35b965707c092e5f30b327c290e5"
+  integrity sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -5304,6 +5323,11 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
+react-html-props@^1.0.32:
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/react-html-props/-/react-html-props-1.0.32.tgz#3bcd0ff09d582a5c304241a6ccb45a640b9d0769"
+  integrity sha512-iXw0ojB4oz9Jer8fUfTB68Jh7WyXrMIA8PEfCStd7ukBU6ABVg7H0mJfo9fQywJV2TmyxQ+MoT8KxepkQCB1Ag==
+
 react-is@16.13.1, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -6263,6 +6287,11 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+typescript@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
