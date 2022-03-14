@@ -1,7 +1,10 @@
 {
-  "name": "material-tailwind",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@material-tailwind",
+  "version": "1.0.0",
+  "homepage": "https://material-tailwind.com",
+  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
+  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,7 +17,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "eslint-config-next": "12.1.0",
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@material-tailwind/react/*": ["./packages/material-tailwind-react/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
