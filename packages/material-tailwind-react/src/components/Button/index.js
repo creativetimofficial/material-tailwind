@@ -1,27 +1,89 @@
+/* eslint-disable no-unused-expressions */
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
+import Ripple from "material-ripple-effects";
 import { MaterialTailwindTheme } from "context/theme";
+
+const validColors = {
+  "blue-grey": "blue-grey",
+  grey: "grey",
+  brown: "brown",
+  "deep-orange": "deep-orange",
+  orange: "orange",
+  amber: "amber",
+  yellow: "yellow",
+  lime: "lime",
+  "light-green": "light-green",
+  green: "green",
+  teal: "teal",
+  cyan: "cyan",
+  "light-blue": "light-blue",
+  blue: "blue",
+  indigo: "indigo",
+  "deep-purple": "deep-purple",
+  purple: "purple",
+  pink: "pink",
+  red: "red",
+};
 
 export const Button = forwardRef(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
-    const theme = useContext(MaterialTailwindTheme);
-    console.log(theme);
+    const { button } = useContext(MaterialTailwindTheme);
+    const { defaultProps } = button;
+    const { root, variants, sizes, typography, fullWidth: block, transition } = button.styles;
+
+    variant = variant || defaultProps.variant;
+    size = size || defaultProps.size;
+    color = color || defaultProps.color;
+    fullWidth = fullWidth || defaultProps.fullWidth;
+    ripple = ripple === undefined ? defaultProps.ripple : ripple;
+    className = className || defaultProps.className;
+
+    const rippleEffect = ripple !== undefined && new Ripple();
+
+    const buttonVariant = variants[variant]
+      ? Object.values(variants[variant][validColors[color] || defaultProps.color]).join(" ")
+      : "";
+    const buttonSize = sizes[size]
+      ? Object.values(sizes[size])
+          .map((value) => Object.values(value).join(" "))
+          .join(" ")
+      : "";
+    const buttonTypography = Object.values(typography).join(" ");
+
+    const classes = classnames(
+      root,
+      buttonSize,
+      buttonVariant,
+      buttonTypography,
+      { [block]: fullWidth },
+      transition,
+      className,
+    );
+
     return (
-      <button ref={ref} className={className} {...rest}>
+      <button
+        ref={ref}
+        className={classes}
+        {...rest}
+        onMouseUp={(e) => {
+          const { onMouseUp } = rest || undefined;
+
+          if (ripple) {
+            rippleEffect.create(
+              e,
+              variant === "filled" || variant === "gradient" ? "light" : "dark",
+            );
+            typeof onMouseUp === "function" && onMouseUp();
+          }
+        }}
+      >
         {children}
       </button>
     );
   },
 );
-
-Button.defaultProps = {
-  variant: "filled",
-  size: "md",
-  color: "blue",
-  fullWidth: false,
-  ripple: false,
-  className: "",
-};
 
 Button.propTypes = {
   variant: PropTypes.oneOf(["filled", "outlined", "gradient", "text"]),

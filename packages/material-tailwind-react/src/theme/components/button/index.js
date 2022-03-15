@@ -1,12 +1,15 @@
-import buttonFilled from "@material-tailwind/react/theme/components/button/buttonFilled";
-import buttonGradient from "@material-tailwind/react/theme/components/button/buttonGradient";
+import buttonFilled from "theme/components/button/buttonFilled";
+import buttonGradient from "theme/components/button/buttonGradient";
+import buttonOutlined from "theme/components/button/buttonOutlined";
+import buttonText from "theme/components/button/buttonText";
 
-export const button = {
+const button = {
   defaultProps: {
     variant: "filled",
     size: "md",
-    color: "hello",
+    color: "light-blue",
     fullWidth: false,
+    ripple: true,
     className: "",
   },
   styles: {
@@ -14,61 +17,62 @@ export const button = {
     typography: {
       family: "font-sans",
       size: "text-xs",
-      weight: "font-bold",
+      weight: "font-medium",
       align: "text-center",
+      transform: "uppercase",
     },
-    size: {
+    sizes: {
       sm: {
         padding: {
-          x: "px-6",
-          y: "py-2.5",
+          x: "px-4",
+          y: "py-2",
         },
         border: {
-          width: "border-0",
           radius: "rounded-lg",
           color: "border-transparent",
         },
         typography: {
-          size: "size-xs",
-          weight: "font-bold",
+          size: "text-xs",
+          weight: "font-medium",
         },
       },
       md: {
         padding: {
           x: "px-6",
-          y: "py-2.5",
+          y: "py-3",
         },
         border: {
-          width: "border-0",
           radius: "rounded-lg",
           color: "border-transparent",
         },
         typography: {
-          size: "size-xs",
-          weight: "font-bold",
+          size: "text-xs",
+          weight: "font-medium",
         },
       },
       lg: {
         padding: {
           x: "px-7",
-          y: "py-3",
+          y: "py-3.5",
         },
         border: {
-          width: "border-0",
           radius: "rounded-lg",
           color: "border-transparent",
         },
         typography: {
-          size: "size-sm",
-          weight: "font-bold",
+          size: "text-sm",
+          weight: "font-medium",
         },
       },
     },
     variants: {
       filled: buttonFilled,
       gradient: buttonGradient,
+      outlined: buttonOutlined,
+      text: buttonText,
     },
     fullWidth: "block w-full",
+    transition: "transition-all",
   },
 };
 

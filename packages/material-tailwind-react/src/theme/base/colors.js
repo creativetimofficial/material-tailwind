@@ -1,4 +1,9 @@
 const colors = {
+  inherit: "inherit",
+  current: "currentColor",
+  transparent: "transparent",
+  white: "#ffffff",
+  black: "#000000",
   "blue-grey": {
     50: "#eceff1",
     100: "#cfd8dc",

@@ -1,5 +1,7 @@
-export const theme = {
-  button: "button",
+import button from "theme/components/button";
+
+const theme = {
+  button,
 };
 
 export default theme;
