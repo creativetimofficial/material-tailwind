@@ -17,6 +17,8 @@ module.exports = {
     "react/jsx-filename-extension": [1, { extensions: [".js"] }],
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
+    "react/require-default-props": "off",
+    "no-param-reassign": "off",
   },
   settings: {
     "import/resolver": { node: { moduleDirectory: ["node_modules", "src/"] } },
