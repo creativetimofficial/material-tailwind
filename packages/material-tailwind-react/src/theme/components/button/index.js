@@ -29,7 +29,6 @@ const button = {
         },
         border: {
           radius: "rounded-lg",
-          color: "border-transparent",
         },
         typography: {
           size: "text-xs",
@@ -43,7 +42,6 @@ const button = {
         },
         border: {
           radius: "rounded-lg",
-          color: "border-transparent",
         },
         typography: {
           size: "text-xs",
@@ -57,7 +55,6 @@ const button = {
         },
         border: {
           radius: "rounded-lg",
-          color: "border-transparent",
         },
         typography: {
           size: "text-sm",
