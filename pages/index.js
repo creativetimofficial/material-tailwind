@@ -1,9 +1,9 @@
-// import Button from "../packages/material-tailwind-react/src/components/Button";
+import Button from "../packages/material-tailwind-react/src/components/Button";
 
 export default function Home() {
   return (
     <div className="p-10">
-      {/* <h4 className="text-3xl font-bold mb-8">Sizes</h4>
+      <h4 className="text-3xl font-bold mb-8">Sizes</h4>
       <div className="flex items-end gap-4 mb-20">
         <Button size="sm">small</Button>
         <Button>medium</Button>
@@ -19,6 +19,7 @@ export default function Home() {
         <Button color="orange">Button</Button>
         <Button color="amber">Button</Button>
         <Button color="yellow">Button</Button>
+        <Button color="lime">Button</Button>
         <Button color="light-green">Button</Button>
         <Button color="green">Button</Button>
         <Button color="teal">Button</Button>
@@ -53,6 +54,9 @@ export default function Home() {
           Button
         </Button>
         <Button variant="gradient" color="yellow">
+          Button
+        </Button>
+        <Button variant="gradient" color="lime">
           Button
         </Button>
         <Button variant="gradient" color="light-green">
@@ -111,6 +115,9 @@ export default function Home() {
         <Button variant="outlined" color="yellow">
           Button
         </Button>
+        <Button variant="outlined" color="lime">
+          Button
+        </Button>
         <Button variant="outlined" color="light-green">
           Button
         </Button>
@@ -167,6 +174,9 @@ export default function Home() {
         <Button variant="text" color="yellow">
           Button
         </Button>
+        <Button variant="text" color="lime">
+          Button
+        </Button>
         <Button variant="text" color="light-green">
           Button
         </Button>
@@ -198,10 +208,7 @@ export default function Home() {
         <Button variant="text" color="red">
           Button No Ripple
         </Button>
-      </div> */}
-      <button className="button button-lg button-pink" data-ripple-light>
-        primary
-      </button>
+      </div>
     </div>
   );
 }
