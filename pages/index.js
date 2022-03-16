@@ -1,9 +1,9 @@
-import Button from "../packages/material-tailwind-react/src/components/Button";
+// import Button from "../packages/material-tailwind-react/src/components/Button";
 
 export default function Home() {
   return (
     <div className="p-10">
-      <h4 className="text-3xl font-bold mb-8">Sizes</h4>
+      {/* <h4 className="text-3xl font-bold mb-8">Sizes</h4>
       <div className="flex items-end gap-4 mb-20">
         <Button size="sm">small</Button>
         <Button>medium</Button>
@@ -198,7 +198,10 @@ export default function Home() {
         <Button variant="text" color="red">
           Button No Ripple
         </Button>
-      </div>
+      </div> */}
+      <button className="button button-lg button-pink" data-ripple-light>
+        primary
+      </button>
     </div>
   );
 }
