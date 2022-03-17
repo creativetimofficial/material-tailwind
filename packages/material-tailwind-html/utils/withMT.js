@@ -10,6 +10,7 @@ const shadows = require("../theme/base/shadows");
 
 // components styles
 const { button } = require("../theme/components/button");
+const { alert } = require("../theme/components/alert");
 
 const materialTailwindConfig = {
   darkMode: "class",
@@ -22,6 +23,7 @@ const materialTailwindConfig = {
   plugins: [
     plugin(function ({ addComponents, theme }) {
       addComponents(button(theme));
+      addComponents(alert(theme));
     })
   ]
 };
@@ -47,6 +49,8 @@ function withTM(tailwindConfig) {
   } else {
     purge = tailwindConfig.purge;
   }
+
+  console.log(materialTailwindConfig);
 
   return merge(
     materialTailwindConfig,

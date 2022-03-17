@@ -1,4 +1,4 @@
-const withMT = require("./packages/material-tailwind-react/src/utils/withMT");
+const withMT = require("./packages/material-tailwind-html/utils/withMT");
 
 module.exports = withMT({
   content: [
@@ -6,6 +6,14 @@ module.exports = withMT({
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    colors: {
+      pink: {
+        500: "#ff4444"
+      }
+    },
+    fontFamily: {
+      sans: ["Roboto Slab", "sans-serif"]
+    },
     extend: {}
   },
   plugins: []
