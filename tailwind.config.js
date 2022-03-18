@@ -11,9 +11,6 @@ module.exports = withMT({
         500: "#ff4444"
       }
     },
-    fontFamily: {
-      sans: ["Roboto Slab", "sans-serif"]
-    },
     extend: {}
   },
   plugins: []

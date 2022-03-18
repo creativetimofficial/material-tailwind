@@ -21,35 +21,23 @@ const materialTailwindConfig = {
   plugins: [],
 };
 
-function arrayMerge(destinationArray, sourceArray) {
-  return destinationArray.concat(sourceArray).reduce((acc, cur) => {
-    if (acc.includes(cur)) return acc;
-    return [...acc, cur];
-  }, []);
-}
-
 /**
  * Merge @material-tailwind and Tailwind CSS configurations
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
 function withTM(tailwindConfig) {
-  let purge;
-  if (Array.isArray(tailwindConfig.purge)) {
-    purge = {
-      content: tailwindConfig.purge,
-    };
-  } else {
-    purge = tailwindConfig.purge;
+  const themeFont = materialTailwindConfig.theme.fontFamily;
+
+  if (tailwindConfig.theme.fontFamily) {
+    const { sans, serif, body } = tailwindConfig.theme.fontFamily;
+
+    themeFont.sans = sans || themeFont.sans;
+    themeFont.serif = serif || themeFont.serif;
+    themeFont.body = body || themeFont.body;
   }
 
-  return merge(
-    materialTailwindConfig,
-    { ...tailwindConfig, purge },
-    {
-      arrayMerge,
-    },
-  );
+  return merge(materialTailwindConfig, { ...tailwindConfig });
 }
 
 module.exports = withTM;

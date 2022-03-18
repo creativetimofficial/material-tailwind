@@ -226,7 +226,7 @@ export default function Home() {
         <button className="button button-text button-pink" data-ripple-dark>
           Button
         </button>
-        <h2 className="font-sans shadow-md">Hello World</h2>
+        <h2 className="shadow-md">Hello World</h2>
 
         <div className="alert alert-gradient alert-brown">Alert primary</div>
       </div>
