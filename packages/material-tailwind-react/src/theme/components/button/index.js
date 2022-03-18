@@ -17,13 +17,13 @@ const button = {
     typography: {
       family: "font-sans",
       size: "text-xs",
-      weight: "font-medium",
+      weight: "font-semibold",
       align: "text-center",
       transform: "uppercase",
     },
     sizes: {
       sm: {
-        padding: {
+        spacing: {
           x: "px-4",
           y: "py-2",
         },
@@ -36,7 +36,7 @@ const button = {
         },
       },
       md: {
-        padding: {
+        spacing: {
           x: "px-6",
           y: "py-3",
         },
@@ -49,7 +49,7 @@ const button = {
         },
       },
       lg: {
-        padding: {
+        spacing: {
           x: "px-7",
           y: "py-3.5",
         },
