@@ -1,6 +1,10 @@
-import Button from "../packages/material-tailwind-react/src/components/Button";
+import Button from "components/Button";
+import Alert from "components/Alert";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [show, setShow] = useState(false);
   return (
     <div className="p-10">
       <h4 className="text-3xl font-bold mb-8">Sizes</h4>
@@ -205,6 +209,45 @@ export default function Home() {
         <Button variant="text" color="pink">
           Button
         </Button>
+      </div>
+      <h4 className="text-3xl font-bold mt-20 mb-8">Alerts</h4>
+      <div>
+        <Button onClick={() => setShow(true)}>Button</Button>
+        <Alert
+          show={show}
+          dismissble={{
+            onClose: () => setShow(false)
+          }}
+          variant="gradient"
+          color="red"
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          }
+          className="mt-10"
+        >
+          <h4 className="font-medium text-lg mb-2 leading-[1.4]">
+            Hello World
+          </h4>
+          <p className="opacity-80">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            mollitia dicta explicabo maiores cupiditate inventore, et aperiam,
+            quis doloribus vitae aspernatur dolor aut delectus, temporibus
+            expedita iusto dolore adipisci reprehenderit.
+          </p>
+        </Alert>
       </div>
     </div>
   );
