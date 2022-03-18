@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
@@ -67,6 +66,7 @@ export const Button = forwardRef(
         ref={ref}
         className={classes}
         {...rest}
+        type={rest.type || "button"}
         onMouseUp={(e) => {
           const { onMouseUp } = rest || undefined;
 
@@ -75,8 +75,9 @@ export const Button = forwardRef(
               e,
               variant === "filled" || variant === "gradient" ? "light" : "dark",
             );
-            typeof onMouseUp === "function" && onMouseUp();
           }
+
+          return typeof onMouseUp === "function" && onMouseUp();
         }}
       >
         {children}
