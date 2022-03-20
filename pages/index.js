@@ -212,7 +212,7 @@ export default function Home() {
       </div>
       <h4 className="text-3xl font-bold mt-20 mb-8">Alerts</h4>
       <div>
-        <Button onClick={() => setShow(true)}>Button</Button>
+        <Button onClick={() => setShow(!show)}>Trigger Alert</Button>
         <Alert
           show={show}
           dismissble={{
