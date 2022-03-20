@@ -14,7 +14,7 @@ export const Alert = forwardRef(
       color,
       icon,
       show,
-      dismissble,
+      dismissible,
       animate,
       transitionProps,
       className,
@@ -68,7 +68,7 @@ export const Alert = forwardRef(
 
     const iconTemplate = <div className="absolute top-4 left-4">{icon}</div>;
 
-    return dismissble ? (
+    return dismissible ? (
       <Transition
         nodeRef={alertRef}
         in={show}
@@ -92,17 +92,17 @@ export const Alert = forwardRef(
           >
             {icon && iconTemplate}
             <div className={`${icon ? "ml-8" : ""} mr-12`}>{children}</div>
-            {dismissble && (
+            {dismissible && (
               <div className="absolute top-3 right-3 w-max rounded-full hover:bg-white hover:bg-opacity-20 transition-all">
                 <div
                   role="button"
                   tabIndex={0}
-                  onClick={dismissble.onClose}
+                  onClick={dismissible.onClose}
                   onKeyPress={() => null}
-                  onMouseDown={(e) => !dismissble.action && rippleEffect.create(e, "light")}
-                  className={`w-max ${dismissble.action ? "" : "p-1 rounded-full"}`}
+                  onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
+                  className={`w-max ${dismissible.action ? "" : "p-1 rounded-full"}`}
                 >
-                  {dismissble.action || (
+                  {dismissible.action || (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -160,7 +160,7 @@ Alert.propTypes = {
   ]),
   icon: PropTypes.node,
   show: PropTypes.bool,
-  dismissble: PropTypes.shape({
+  dismissible: PropTypes.shape({
     timeout: PropTypes.number,
     action: PropTypes.node,
     onClose: PropTypes.func.isRequired,
