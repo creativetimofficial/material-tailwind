@@ -46,8 +46,8 @@ export const Button = forwardRef(
         className={classes}
         {...rest}
         type={rest.type || "button"}
-        onMouseUp={(e) => {
-          const { onMouseUp } = rest || undefined;
+        onMouseDown={(e) => {
+          const { onMouseDown } = rest || undefined;
 
           if (ripple) {
             rippleEffect.create(
@@ -56,7 +56,7 @@ export const Button = forwardRef(
             );
           }
 
-          return typeof onMouseUp === "function" && onMouseUp();
+          return typeof onMouseDown === "function" && onMouseDown();
         }}
       >
         {children}
