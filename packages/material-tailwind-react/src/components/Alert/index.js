@@ -93,14 +93,14 @@ export const Alert = forwardRef(
             {icon && iconTemplate}
             <div className={`${icon ? "ml-8" : ""} mr-12`}>{children}</div>
             {dismissible && (
-              <div className="absolute top-3 right-3 w-max rounded-full hover:bg-white hover:bg-opacity-20 transition-all">
+              <div className="absolute top-3 right-3 w-max rounded-lg hover:bg-white hover:bg-opacity-20 transition-all">
                 <div
                   role="button"
                   tabIndex={0}
                   onClick={dismissible.onClose}
                   onKeyPress={() => null}
                   onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
-                  className={`w-max ${dismissible.action ? "" : "p-1 rounded-full"}`}
+                  className={`w-max ${dismissible.action ? "" : "p-1 rounded-lg"}`}
                 >
                   {dismissible.action || (
                     <svg

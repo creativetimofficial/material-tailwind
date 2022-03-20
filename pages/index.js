@@ -215,7 +215,7 @@ export default function Home() {
         <Button onClick={() => setShow(!show)}>Trigger Alert</Button>
         <Alert
           show={show}
-          dismissble={{
+          dismissible={{
             onClose: () => setShow(false)
           }}
           variant="gradient"

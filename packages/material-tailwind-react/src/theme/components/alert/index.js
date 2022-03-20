@@ -22,7 +22,7 @@ const alert = {
       y: "py-4",
     },
     border: {
-      radius: "rounded-md",
+      radius: "rounded-lg",
     },
     typography: {
       family: "font-sans",
