@@ -1,10 +1,12 @@
 import Button from "components/Button";
 import Alert from "components/Alert";
+import Chip from "components/Chip";
 
 import { useState } from "react";
 
 export default function Home() {
   const [show, setShow] = useState(false);
+  const [showChip, setShowChip] = useState(false);
   return (
     <div className="p-10">
       <h4 className="text-3xl font-bold mb-8">Sizes</h4>
@@ -212,6 +214,27 @@ export default function Home() {
       </div>
       <h4 className="text-3xl font-bold mt-20 mb-8">Alerts</h4>
       <div>
+        <Alert
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          }
+          className="my-10"
+        >
+          Just a simple alert
+        </Alert>
         <Button onClick={() => setShow(!show)}>Trigger Alert</Button>
         <Alert
           show={show}
@@ -248,6 +271,37 @@ export default function Home() {
             expedita iusto dolore adipisci reprehenderit.
           </p>
         </Alert>
+      </div>
+      <h4 className="text-3xl font-bold mt-20 mb-8">Chips</h4>
+      <div>
+        <div className="block w-full mb-10">
+          <Button onClick={() => setShowChip(!showChip)}>Trigger Chip</Button>
+        </div>
+        <Chip value="a simple chip" color="pink" className="mr-2" />
+        <Chip
+          value="Dismissible Chip"
+          color="teal"
+          variant="gradient"
+          show={showChip}
+          dismissible={{
+            onClose: () => setShowChip(false)
+          }}
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+          }
+        />
       </div>
     </div>
   );
