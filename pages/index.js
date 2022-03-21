@@ -2,6 +2,7 @@ import Button from "components/Button";
 import Alert from "components/Alert";
 import Chip from "components/Chip";
 import Avatar from "components/Avatar";
+import IconButton from "components/IconButton";
 
 import { useState } from "react";
 
@@ -308,23 +309,31 @@ export default function Home() {
       <div className="flex items-end gap-3">
         <Avatar
           size="xs"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           size="sm"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
-        <Avatar src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" />
+        <Avatar
+          alt="avatar"
+          src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+        />
         <Avatar
           size="lg"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           size="xl"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           size="xxl"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
       </div>
@@ -332,20 +341,24 @@ export default function Home() {
         <Avatar
           variant="circular"
           size="xs"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           variant="circular"
           size="sm"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           variant="circular"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
           variant="circular"
           size="lg"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
         <Avatar
@@ -356,8 +369,57 @@ export default function Home() {
         <Avatar
           variant="circular"
           size="xxl"
+          alt="avatar"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
         />
+      </div>
+      <h4 className="text-3xl font-bold mt-20 mb-8">Icon Buttons</h4>
+      <div className="flex items-end gap-4">
+        <IconButton color="green" variant="gradient" size="sm">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+            <path
+              fillRule="evenodd"
+              d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </IconButton>
+        <IconButton color="green" variant="gradient">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+            <path
+              fillRule="evenodd"
+              d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </IconButton>
+        <IconButton color="green" variant="gradient" size="lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+            <path
+              fillRule="evenodd"
+              d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </IconButton>
       </div>
     </div>
   );
