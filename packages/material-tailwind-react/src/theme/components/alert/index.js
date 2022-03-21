@@ -8,8 +8,8 @@ const alert = {
     icon: "",
     show: true,
     dismissble: {
-      action: false,
-      onClose: false,
+      action: "",
+      onClose: () => {},
     },
     animate: {
       unmount: {
