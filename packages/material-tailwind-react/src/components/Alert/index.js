@@ -161,7 +161,6 @@ Alert.propTypes = {
   icon: PropTypes.node,
   show: PropTypes.bool,
   dismissible: PropTypes.shape({
-    timeout: PropTypes.number,
     action: PropTypes.node,
     onClose: PropTypes.func.isRequired,
   }),
