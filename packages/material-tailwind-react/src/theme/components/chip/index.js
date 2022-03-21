@@ -6,13 +6,19 @@ const chip = {
     variant: "filled",
     color: "light-blue",
     icon: "",
-    show: false,
+    show: true,
     dismissble: {
-      action: false,
-      onClose: false,
+      action: "",
+      onClose: () => {},
     },
-    animate: {},
-    transitionProps: {},
+    animate: {
+      unmount: {
+        opacity: 0,
+      },
+      mount: {
+        opacity: 1,
+      },
+    },
     className: "",
   },
   styles: {
@@ -35,20 +41,6 @@ const chip = {
     variants: {
       filled: chipFilled,
       gradient: chipGradient,
-    },
-    animation: {
-      transition: {
-        transitionProperty: "opacity",
-        transitionDuration: "300ms",
-        transitionTimingFunction: "linear",
-        opacity: 0,
-      },
-      state: {
-        entering: { opacity: 1 },
-        entered: { opacity: 1 },
-        exiting: { opacity: 0 },
-        exited: { opacity: 0 },
-      },
     },
   },
 };
