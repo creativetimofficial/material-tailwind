@@ -1,37 +1,24 @@
-import { forwardRef, useContext, useRef } from "react";
+import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { Transition } from "react-transition-group";
+import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import merge from "deepmerge";
 import validColors from "utils/validColors";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Alert = forwardRef(
-  (
-    {
-      variant,
-      color,
-      icon,
-      show,
-      dismissible,
-      animate,
-      transitionProps,
-      className,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
+  ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
     const { alert } = useContext(MaterialTailwindTheme);
     const { defaultProps } = alert;
-    const { root, variants, typography, spacing, border, animation } = alert.styles;
+    const { root, variants, typography, spacing, border } = alert.styles;
     const rippleEffect = new Ripple();
-    const alertRef = useRef(null);
 
     variant = variant || defaultProps.variant;
     color = color || defaultProps.color;
     className = className || defaultProps.className;
+    animate = animate || defaultProps.animate;
+    show = show === undefined ? defaultProps.show : show;
 
     const alertVariant = variants[variant]
       ? Object.values(variants[variant][validColors[color] || defaultProps.color]).join(" ")
@@ -49,45 +36,30 @@ export const Alert = forwardRef(
       className,
     );
 
-    const mainTransition = {
-      transition: {
-        transitionProperty: "opacity",
-        transitionDuration: "300ms",
-        transitionTimingFunction: "linear",
+    const mainAnimation = {
+      unmount: {
         opacity: 0,
       },
-      state: {
-        entering: { opacity: 1 },
-        entered: { opacity: 1 },
-        exiting: { opacity: 0 },
-        exited: { opacity: 0 },
+      mount: {
+        opacity: 1,
       },
     };
 
-    const appliedTransition = merge.all([mainTransition, animation, { ...animate }]);
+    const appliedAnimation = merge(mainAnimation, animate);
 
     const iconTemplate = <div className="absolute top-4 left-4">{icon}</div>;
 
-    return dismissible ? (
-      <Transition
-        nodeRef={alertRef}
-        in={show}
-        timeout={(transitionProps && transitionProps.timeout) || 300}
-        {...transitionProps}
-      >
-        {(state) => (
-          <div
+    return (
+      <AnimatePresence>
+        {show && (
+          <motion.div
             ref={ref}
             role="alert"
             className={classes}
-            style={{
-              ...appliedTransition.transition,
-              ...appliedTransition.state[state],
-              transitionDuration:
-                transitionProps && transitionProps.timeout
-                  ? `${transitionProps.timeout}ms`
-                  : appliedTransition.transition.transitionDuration,
-            }}
+            initial="unmount"
+            exit="unmount"
+            animate={show ? "mount" : "unmount"}
+            variants={appliedAnimation}
             {...rest}
           >
             {icon && iconTemplate}
@@ -117,20 +89,9 @@ export const Alert = forwardRef(
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         )}
-      </Transition>
-    ) : (
-      <div ref={ref} role="alert" className={classes} {...rest}>
-        {icon ? (
-          <>
-            {iconTemplate}
-            <div className="ml-8">{children}</div>
-          </>
-        ) : (
-          children
-        )}
-      </div>
+      </AnimatePresence>
     );
   },
 );
@@ -165,10 +126,9 @@ Alert.propTypes = {
     onClose: PropTypes.func.isRequired,
   }),
   animate: PropTypes.shape({
-    transition: PropTypes.instanceOf(Object),
-    state: PropTypes.instanceOf(Object),
+    mount: PropTypes.instanceOf(Object),
+    unmount: PropTypes.instanceOf(Object),
   }),
-  transitionProps: PropTypes.instanceOf(Object),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
