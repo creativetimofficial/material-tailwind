@@ -36,6 +36,7 @@ export default function Chips() {
 
       <h2 className="text-2xl font-semibold mt-12 mb-4">Chip With Icon</h2>
       <Chip
+        variant="gradient"
         value="with icon"
         icon={
           <svg
@@ -55,7 +56,12 @@ export default function Chips() {
       />
 
       <h2 className="text-2xl font-semibold mt-12 mb-4">Dismissible Chip</h2>
-      <Button onClick={() => setShow(!show)} color="teal" className="mb-6">
+      <Button
+        onClick={() => setShow(!show)}
+        variant="gradient"
+        color="teal"
+        className="mb-6"
+      >
         Trigger Chip
       </Button>
       <div>
