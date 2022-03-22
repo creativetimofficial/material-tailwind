@@ -11,7 +11,7 @@ export const Chip = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {
     const { chip } = useContext(MaterialTailwindTheme);
     const { defaultProps } = chip;
-    const { root, variants, typography, spacing, border } = chip.styles;
+    const { root, variants, typography, spacing, border, closeButtonColor } = chip.styles;
     const rippleEffect = new Ripple();
 
     variant = variant || defaultProps.variant;
@@ -26,6 +26,7 @@ export const Chip = forwardRef(
     const chipTypography = Object.values(typography).join(" ");
     const chipPadding = Object.values(spacing).join(" ");
     const chipBorder = Object.values(border).join(" ");
+    const chipCloseButton = closeButtonColor[color] ? Object.values(closeButtonColor[color]) : "";
 
     const classes = classnames(
       root,
@@ -34,6 +35,12 @@ export const Chip = forwardRef(
       chipPadding,
       chipBorder,
       className,
+    );
+
+    const chipCloseButtonClasses = classnames(
+      "absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded",
+      chipCloseButton,
+      "transition-colors",
     );
 
     const mainAnimation = {
@@ -63,9 +70,9 @@ export const Chip = forwardRef(
           {...rest}
         >
           {icon && iconTemplate}
-          <div className={`${icon ? "ml-4" : ""} ${dismissible ? "mr-4" : ""} mt-px`}>{value}</div>
+          <div className={`${icon ? "ml-4" : ""} ${dismissible ? "mr-5" : ""} mt-px`}>{value}</div>
           {dismissible && (
-            <div className="absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded hover:bg-white hover:bg-opacity-20 transition-all">
+            <div className={chipCloseButtonClasses}>
               <div
                 role="button"
                 tabIndex={0}
