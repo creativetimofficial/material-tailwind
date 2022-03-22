@@ -75,6 +75,7 @@ export default function Alerts() {
 
       <h2 className="text-2xl font-semibold mt-12 mb-4">Alert With Icon</h2>
       <Alert
+        variant="gradient"
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -99,10 +100,14 @@ export default function Alerts() {
         Dismissible Alerts: Simple & Complex
       </h2>
       <div className="flex gap-3 mb-6">
-        <Button onClick={() => setShowSimple(!showSimple)} color="red">
+        <Button
+          variant="gradient"
+          onClick={() => setShowSimple(!showSimple)}
+          color="red"
+        >
           Trigger Simple Alert
         </Button>
-        <Button onClick={() => setShow(!show)} color="green">
+        <Button variant="gradient" onClick={() => setShow(!show)} color="green">
           Trigger Complex Alert
         </Button>
       </div>
