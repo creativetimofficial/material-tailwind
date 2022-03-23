@@ -11,7 +11,7 @@ const checkbox = {
     className: "",
   },
   styles: {
-    root: "flex items-center",
+    root: "inline-flex items-center",
     container: {
       root: "relative flex items-center cursor-pointer",
       spacing: {
