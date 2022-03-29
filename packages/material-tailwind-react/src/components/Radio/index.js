@@ -1,12 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
-// import validColors from "utils/validColors";
 import { MaterialTailwindTheme } from "context/theme";
 
 import objectsToString from "utils/objectsToString";
@@ -15,7 +11,7 @@ export const Radio = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
     const { radio } = useContext(MaterialTailwindTheme);
     const { defaultProps } = radio;
-    const { root, container, radio: input, label: inputLabel, colors } = radio.styles;
+    const { root, container, input, label: inputLabel, colors } = radio.styles;
 
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
@@ -25,14 +21,13 @@ export const Radio = forwardRef(
 
     const containerClasses = classnames(
       objectsToString(container),
-      colors && colors[color] ? colors[color].container : "before:bg-light-blue-500",
       containerProps && containerProps.className ? containerProps.className : "",
     );
 
-    const radioClasses = classnames(
-      "peer",
+    const inputClasses = classnames(
       objectsToString(input),
       colors && colors[color] ? colors[color].border : "checked:border-light-blue-500",
+      colors && colors[color] ? colors[color].before : "checked:before:bg-light-blue-500",
       className,
     );
 
@@ -51,7 +46,7 @@ export const Radio = forwardRef(
         <label
           {...containerProps}
           className={containerClasses}
-          htmlFor={rest.id || "checkbox"}
+          htmlFor={rest.id || "radio"}
           onMouseDown={(e) => {
             const onMouseDown =
               containerProps && containerProps.onMouseDown ? containerProps.onMouseDown : undefined;
@@ -63,7 +58,7 @@ export const Radio = forwardRef(
             return typeof onMouseDown === "function" && onMouseDown();
           }}
         >
-          <input {...rest} type="radio" className={radioClasses} id={rest.id || "checkbox"} />
+          <input {...rest} type="radio" className={inputClasses} id={rest.id || "radio"} />
           <div className={radioIconColor}>
             {icon || (
               <svg
@@ -72,13 +67,13 @@ export const Radio = forwardRef(
                 viewBox="0 0 16 16"
                 fill="currentColor"
               >
-                <circle id="Ellipse_1" data-name="Ellipse 1" cx="8" cy="8" r="8" />
+                <circle data-name="ellipse" cx="8" cy="8" r="8" />
               </svg>
             )}
           </div>
         </label>
         {label && (
-          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "checkbox"}>
+          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "radio"}>
             {label}
           </label>
         )}

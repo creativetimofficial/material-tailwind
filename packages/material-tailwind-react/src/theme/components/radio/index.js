@@ -21,23 +21,9 @@ const radio = {
       border: {
         radius: "rounded-full",
       },
-      before: {
-        root: "before:content[''] before:block",
-        spacing: {
-          width: "before:w-12",
-          height: "before:h-12",
-        },
-        border: {
-          radius: "before:rounded-full",
-        },
-        position: "before:absolute before:top-2/4 before:left-2/4",
-        transform: "before:-translate-y-2/4 before:-translate-x-2/4",
-        transition: "before:transition-opacity",
-        opacity: "before:opacity-0 hover:before:opacity-20",
-      },
     },
-    radio: {
-      root: "relative appearance-none cursor-pointer",
+    input: {
+      root: "peer relative appearance-none cursor-pointer",
       spacing: {
         width: "w-5",
         height: "h-5",
@@ -48,6 +34,20 @@ const radio = {
         color: "border-grey-400",
       },
       transition: "transition-all",
+      before: {
+        root: "before:content[''] before:block before:bg-blue-grey-500",
+        spacing: {
+          width: "before:w-12",
+          height: "before:h-12",
+        },
+        border: {
+          radius: "before:rounded-full",
+        },
+        position: "before:absolute before:top-2/4 before:left-2/4",
+        transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+        transition: "before:transition-opacity",
+        opacity: "before:opacity-0 hover:before:opacity-10",
+      },
     },
     label: {
       root: "cursor-pointer select-none mt-px",

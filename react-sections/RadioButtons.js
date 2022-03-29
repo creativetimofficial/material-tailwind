@@ -12,7 +12,7 @@ export default function RadioButtons() {
       <h2 className="text-2xl font-semibold mb-4">Radio with Label</h2>
       <div className="flex items-center gap-4 mb-12">
         <Radio label="Male" id="male" name="gender" defaultChecked />
-        <Radio label="Female" id="female" name="gender" ripple={false} />
+        <Radio label="Female" id="female" name="gender" />
       </div>
 
       <h2 className="text-2xl font-semibold mb-4">Radio Colors</h2>
