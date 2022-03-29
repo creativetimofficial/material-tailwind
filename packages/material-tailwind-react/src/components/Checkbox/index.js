@@ -6,7 +6,6 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
-// import validColors from "utils/validColors";
 import { MaterialTailwindTheme } from "context/theme";
 
 import objectsToString from "utils/objectsToString";
@@ -15,7 +14,7 @@ export const Checkbox = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
     const { checkbox } = useContext(MaterialTailwindTheme);
     const { defaultProps } = checkbox;
-    const { root, container, checkbox: input, label: inputLabel, colors } = checkbox.styles;
+    const { root, container, input, label: inputLabel, colors } = checkbox.styles;
 
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
@@ -25,15 +24,14 @@ export const Checkbox = forwardRef(
 
     const containerClasses = classnames(
       objectsToString(container),
-      colors && colors[color] ? colors[color].container : "before:bg-light-blue-500",
       containerProps && containerProps.className ? containerProps.className : "",
     );
 
-    const checkboxClasses = classnames(
-      "peer",
+    const inputClasses = classnames(
       objectsToString(input),
       colors && colors[color] ? colors[color].background : "checked:bg-light-blue-500",
       colors && colors[color] ? colors[color].border : "checked:border-light-blue-500",
+      colors && colors[color] ? colors[color].before : "checked:before:bg-light-blue-500",
       className,
     );
 
@@ -59,7 +57,7 @@ export const Checkbox = forwardRef(
             return typeof onMouseDown === "function" && onMouseDown();
           }}
         >
-          <input {...rest} type="checkbox" className={checkboxClasses} id={rest.id || "checkbox"} />
+          <input {...rest} type="checkbox" className={inputClasses} id={rest.id || "checkbox"} />
           <div className="text-white absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">
             {icon || (
               <svg
