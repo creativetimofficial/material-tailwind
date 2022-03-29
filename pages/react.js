@@ -5,6 +5,7 @@ import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
 import RadioButtons from "/react-sections/RadioButtons";
+import Switches from "/react-sections/Switches";
 
 export default function React() {
   return (
@@ -27,6 +28,9 @@ export default function React() {
         <Checkboxes />
         <hr className="my-24" />
         <RadioButtons />
+        <hr className="my-24" />
+        <Switches />
+        <hr className="my-24" />
       </div>
     </div>
   );

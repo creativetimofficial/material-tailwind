@@ -5,6 +5,7 @@ import checkbox from "theme/components/checkbox";
 import chip from "theme/components/chip";
 import iconButton from "theme/components/iconButton";
 import radio from "theme/components/radio";
+import switchButton from "theme/components/switch";
 
 const theme = {
   alert,
@@ -14,6 +15,7 @@ const theme = {
   chip,
   iconButton,
   radio,
+  switch: switchButton,
 };
 
 export default theme;
