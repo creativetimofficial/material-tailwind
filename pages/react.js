@@ -7,6 +7,7 @@ import IconButtons from "/react-sections/IconButtons";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
 import Typos from "/react-sections/Typos";
+import ProgressBars from "/react-sections/ProgressBars";
 
 export default function React() {
   return (
@@ -33,6 +34,8 @@ export default function React() {
         <Switches />
         <hr className="my-24" />
         <Typos />
+        <hr className="my-24" />
+        <ProgressBars />
         <hr className="my-24" />
       </div>
     </div>
