@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
 import validColors from "utils/validColors";
+import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Button = forwardRef(
@@ -21,14 +22,10 @@ export const Button = forwardRef(
     const rippleEffect = ripple !== undefined && new Ripple();
 
     const buttonVariant = variants[variant]
-      ? Object.values(variants[variant][validColors[color] || defaultProps.color]).join(" ")
+      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
       : "";
-    const buttonSize = sizes[size]
-      ? Object.values(sizes[size])
-          .map((value) => Object.values(value).join(" "))
-          .join(" ")
-      : "";
-    const buttonTypography = Object.values(typography).join(" ");
+    const buttonSize = sizes[size] ? objectsToString(sizes[size]) : "";
+    const buttonTypography = objectsToString(typography);
 
     const classes = classnames(
       root,

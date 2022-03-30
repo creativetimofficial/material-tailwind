@@ -3,8 +3,8 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
-import { MaterialTailwindTheme } from "context/theme";
 import objectsToString from "utils/objectsToString";
+import { MaterialTailwindTheme } from "context/theme";
 
 export const Switch = forwardRef(
   ({ color, label, ripple, className, containerProps, circleProps, labelProps, ...rest }, ref) => {

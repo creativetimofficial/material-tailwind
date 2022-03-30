@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import merge from "deepmerge";
 import validColors from "utils/validColors";
+import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Alert = forwardRef(
@@ -21,17 +22,17 @@ export const Alert = forwardRef(
     show = show === undefined ? defaultProps.show : show;
 
     const alertVariant = variants[variant]
-      ? Object.values(variants[variant][validColors[color] || defaultProps.color]).join(" ")
+      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
       : "";
-    const alertTypography = Object.values(typography).join(" ");
-    const alertPadding = Object.values(spacing).join(" ");
-    const alertBorder = Object.values(border).join(" ");
+    const alertTypography = objectsToString(typography);
+    const alertSpacing = objectsToString(spacing);
+    const alertBorder = objectsToString(border);
 
     const classes = classnames(
       root,
       alertVariant,
       alertTypography,
-      alertPadding,
+      alertSpacing,
       alertBorder,
       className,
     );

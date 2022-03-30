@@ -3,6 +3,7 @@
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) => {
@@ -15,7 +16,7 @@ export const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) =>
   className = className || defaultProps.className;
 
   const avatarVariant = variants[variant] || "";
-  const avatarSize = sizes[size] ? Object.values(sizes[size]).join(" ") : "";
+  const avatarSize = sizes[size] ? objectsToString(sizes[size]) : "";
 
   const classes = classnames(root, avatarVariant, avatarSize, className);
 

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import merge from "deepmerge";
 import validColors from "utils/validColors";
+import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Chip = forwardRef(
@@ -21,18 +22,18 @@ export const Chip = forwardRef(
     show = show === undefined ? defaultProps.show : show;
 
     const chipVariant = variants[variant]
-      ? Object.values(variants[variant][validColors[color] || defaultProps.color]).join(" ")
+      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
       : "";
-    const chipTypography = Object.values(typography).join(" ");
-    const chipPadding = Object.values(spacing).join(" ");
-    const chipBorder = Object.values(border).join(" ");
-    const chipCloseButton = closeButtonColor[color] ? Object.values(closeButtonColor[color]) : "";
+    const chipTypography = objectsToString(typography);
+    const chipSpacing = objectsToString(spacing);
+    const chipBorder = objectsToString(border);
+    const chipCloseButton = closeButtonColor[color] ? objectsToString(closeButtonColor[color]) : "";
 
     const classes = classnames(
       root,
       chipVariant,
       chipTypography,
-      chipPadding,
+      chipSpacing,
       chipBorder,
       className,
     );
