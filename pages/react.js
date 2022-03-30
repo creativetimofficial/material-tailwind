@@ -6,6 +6,7 @@ import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
+import Typos from "/react-sections/Typos";
 
 export default function React() {
   return (
@@ -30,6 +31,8 @@ export default function React() {
         <RadioButtons />
         <hr className="my-24" />
         <Switches />
+        <hr className="my-24" />
+        <Typos />
         <hr className="my-24" />
       </div>
     </div>
