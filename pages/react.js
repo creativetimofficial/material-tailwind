@@ -9,6 +9,8 @@ import Switches from "/react-sections/Switches";
 import Typos from "/react-sections/Typos";
 import ProgressBars from "/react-sections/ProgressBars";
 
+import Input from "components/Input";
+
 export default function React() {
   return (
     <div className="container mx-auto">
@@ -36,6 +38,8 @@ export default function React() {
         <Typos />
         <hr className="my-24" />
         <ProgressBars />
+        <hr className="my-24" />
+        <Input color="orange" label="Your Name" size="lg" />
         <hr className="my-24" />
       </div>
     </div>
