@@ -4,8 +4,17 @@ const avatar = {
     size: "md",
     className: "",
   },
+  valid: {
+    variants: ["rounded", "circular"],
+    sizes: ["xs", "sm", "md", "lg", "xl", "xxl"],
+  },
   styles: {
-    root: "inline-block relative object-cover object-center",
+    base: {
+      display: "inline-block",
+      position: "relative",
+      objectFit: "object-cover",
+      objectPosition: "object-center",
+    },
     sizes: {
       xs: {
         with: "w-6",
