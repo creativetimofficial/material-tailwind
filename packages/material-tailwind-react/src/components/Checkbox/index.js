@@ -3,41 +3,43 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Checkbox = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
+    // 1. init
     const { checkbox } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = checkbox;
-    const { root, container, input, label: inputLabel, colors } = checkbox.styles;
+    const { defaultProps, valid } = checkbox;
+    const { base, colors } = checkbox.styles;
 
+    // 2. set default props
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
     className = className || defaultProps.className;
 
+    // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
+    // 4. set styles
+    const rootClasses = classnames(objectsToString(base.root));
     const containerClasses = classnames(
-      objectsToString(container),
+      objectsToString(base.container),
       containerProps && containerProps.className ? containerProps.className : "",
     );
-
     const inputClasses = classnames(
-      objectsToString(input),
-      colors && colors[color] ? colors[color].background : "checked:bg-light-blue-500",
-      colors && colors[color] ? colors[color].border : "checked:border-light-blue-500",
-      colors && colors[color] ? colors[color].before : "checked:before:bg-light-blue-500",
+      objectsToString(base.input),
+      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
       className,
     );
-
     const labelClasses = classnames(
-      objectsToString(inputLabel),
+      objectsToString(base.label),
       labelProps && labelProps.className ? labelProps.className : "",
     );
 
     return (
-      <div ref={ref} className={root}>
+      <div ref={ref} className={rootClasses}>
         <label
           {...containerProps}
           className={containerClasses}
