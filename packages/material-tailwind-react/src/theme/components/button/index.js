@@ -2,6 +2,7 @@ import buttonFilled from "theme/components/button/buttonFilled";
 import buttonGradient from "theme/components/button/buttonGradient";
 import buttonOutlined from "theme/components/button/buttonOutlined";
 import buttonText from "theme/components/button/buttonText";
+import validColors from "utils/validColors";
 
 const button = {
   defaultProps: {
@@ -12,54 +13,40 @@ const button = {
     ripple: true,
     className: "",
   },
+  valid: {
+    variants: ["filled", "outlined", "gradient", "text"],
+    sizes: ["sm", "md", "lg"],
+    colors: validColors,
+  },
   styles: {
-    root: "inline-block align-middle select-none",
-    typography: {
-      family: "font-sans",
-      size: "text-xs",
-      weight: "font-semibold",
-      align: "text-center",
-      transform: "uppercase",
+    base: {
+      display: "inline-block",
+      verticalAlign: "middle",
+      userSelect: "none",
+      fontFamily: "font-sans",
+      fontWeight: "font-medium",
+      textAlign: "center",
+      textTransform: "uppercase",
+      transition: "transition-all",
     },
     sizes: {
       sm: {
-        spacing: {
-          x: "px-4",
-          y: "py-2",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-xs",
-          weight: "font-medium",
-        },
+        fontSize: "text-xs",
+        py: "py-2",
+        px: "px-4",
+        borderRadius: "rounded-lg",
       },
       md: {
-        spacing: {
-          x: "px-6",
-          y: "py-3",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-xs",
-          weight: "font-medium",
-        },
+        fontSize: "text-xs",
+        py: "py-3",
+        px: "px-6",
+        borderRadius: "rounded-lg",
       },
       lg: {
-        spacing: {
-          x: "px-7",
-          y: "py-3.5",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-sm",
-          weight: "font-medium",
-        },
+        fontSize: "text-sm",
+        py: "py-3.5",
+        px: "px-7",
+        borderRadius: "rounded-lg",
       },
     },
     variants: {
@@ -69,7 +56,6 @@ const button = {
       text: buttonText,
     },
     fullWidth: "block w-full",
-    transition: "transition-all",
   },
 };
 

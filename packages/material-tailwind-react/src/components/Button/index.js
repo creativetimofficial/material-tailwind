@@ -1,17 +1,19 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
-import validColors from "utils/validColors";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
+import { useTheme } from "context/theme";
 
 export const Button = forwardRef(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
-    const { button } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = button;
-    const { root, variants, sizes, typography, fullWidth: block, transition } = button.styles;
+    // 1. init
+    const { button } = useTheme();
+    const { valid, defaultProps } = button;
+    const { base, variants, sizes, fullWidth: block } = button.styles;
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     size = size || defaultProps.size;
     color = color || defaultProps.color;
@@ -19,24 +21,26 @@ export const Button = forwardRef(
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
     className = className || defaultProps.className;
 
+    // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
-    const buttonVariant = variants[variant]
-      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
-      : "";
-    const buttonSize = sizes[size] ? objectsToString(sizes[size]) : "";
-    const buttonTypography = objectsToString(typography);
-
+    // 4. set styles
+    const buttonBase = objectsToString(base);
+    const buttonVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "filled")][
+        findMatch(valid.colors, color, "light-blue")
+      ],
+    );
+    const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
     const classes = classnames(
-      root,
+      buttonBase,
       buttonSize,
       buttonVariant,
-      buttonTypography,
       { [block]: fullWidth },
-      transition,
       className,
     );
 
+    // 5. return
     return (
       <button
         ref={ref}
