@@ -4,46 +4,42 @@ import classnames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import merge from "deepmerge";
-import validColors from "utils/validColors";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Chip = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {
+    // 1. init
     const { chip } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = chip;
-    const { root, variants, typography, spacing, border, closeButtonColor } = chip.styles;
+    const { defaultProps, valid } = chip;
+    const { base, variants, closeButtonColor } = chip.styles;
     const rippleEffect = new Ripple();
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     color = color || defaultProps.color;
     className = className || defaultProps.className;
     animate = animate || defaultProps.animate;
     show = show === undefined ? defaultProps.show : show;
 
-    const chipVariant = variants[variant]
-      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
-      : "";
-    const chipTypography = objectsToString(typography);
-    const chipSpacing = objectsToString(spacing);
-    const chipBorder = objectsToString(border);
-    const chipCloseButton = closeButtonColor[color] ? objectsToString(closeButtonColor[color]) : "";
-
-    const classes = classnames(
-      root,
-      chipVariant,
-      chipTypography,
-      chipSpacing,
-      chipBorder,
-      className,
+    // 3. set styles
+    const chipVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "filled")][
+        findMatch(valid.colors, color, "light-blue")
+      ],
     );
-
+    const chipCloseButton = objectsToString(
+      closeButtonColor[findMatch(valid.colors, color, "light-blue")],
+    );
+    const classes = classnames(objectsToString(base), chipVariant, className);
     const chipCloseButtonClasses = classnames(
       "absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded",
       chipCloseButton,
       "transition-colors",
     );
 
+    // 4. set animation
     const mainAnimation = {
       unmount: {
         opacity: 0,
@@ -55,10 +51,12 @@ export const Chip = forwardRef(
 
     const appliedAnimation = merge(mainAnimation, animate);
 
+    // 5. icon template
     const iconTemplate = (
       <div className="w-5 h-5 absolute top-2/4 left-1 -translate-y-2/4">{icon}</div>
     );
 
+    // 6. return
     return (
       <AnimatePresence>
         <motion.div

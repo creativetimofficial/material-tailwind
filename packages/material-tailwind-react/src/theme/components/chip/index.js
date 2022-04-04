@@ -1,6 +1,7 @@
 import chipFilled from "theme/components/chip/chipFilled";
 import chipGradient from "theme/components/chip/chipGradient";
 import chipCloseButtonColors from "theme/components/chip/chipCloseButtonColors";
+import validColors from "utils/validColors";
 
 const chip = {
   defaultProps: {
@@ -22,22 +23,26 @@ const chip = {
     },
     className: "",
   },
+  valid: {
+    variants: ["filled", "gradient"],
+    colors: validColors,
+  },
   styles: {
-    root: "relative inline-block whitespace-nowrap align-baseline select-none",
-    spacing: {
-      x: "px-3.5",
-      y: "py-2",
-    },
-    border: {
-      radius: "rounded-md",
-    },
-    typography: {
-      family: "font-sans",
-      size: "text-xs",
-      weight: "font-bold",
-      transform: "uppercase",
-      align: "center",
+    base: {
+      position: "relative",
+      display: "inline-block",
+      align: "align-baseline",
+      fontFamily: "font-sans",
+      fontSize: "text-xs",
+      fontWeight: "font-bold",
+      textTransform: "uppercase",
+      textAlign: "center",
       lineHeight: "leading-none",
+      whiteSpace: "whitespace-nowrap",
+      py: "py-2",
+      px: "px-3.5",
+      borderRadius: "rounded-md",
+      userSelect: "select-none",
     },
     variants: {
       filled: chipFilled,

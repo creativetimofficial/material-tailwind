@@ -1,4 +1,4 @@
-const chipFilled = {
+const chipCloseButtonColors = {
   "blue-grey": {
     default: "bg-blue-grey-800",
     hover: "hover:bg-blue-grey-900",
@@ -77,4 +77,4 @@ const chipFilled = {
   },
 };
 
-export default chipFilled;
+export default chipCloseButtonColors;
