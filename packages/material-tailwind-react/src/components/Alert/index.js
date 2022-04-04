@@ -1,42 +1,38 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import merge from "deepmerge";
-import validColors from "utils/validColors";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
+import { useTheme } from "context/theme";
 
 export const Alert = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
-    const { alert } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = alert;
-    const { root, variants, typography, spacing, border } = alert.styles;
+    // 1. init
+    const { alert } = useTheme();
+    const { defaultProps, valid } = alert;
+    const { base, variants } = alert.styles;
     const rippleEffect = new Ripple();
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     color = color || defaultProps.color;
     className = className || defaultProps.className;
     animate = animate || defaultProps.animate;
     show = show === undefined ? defaultProps.show : show;
 
-    const alertVariant = variants[variant]
-      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
-      : "";
-    const alertTypography = objectsToString(typography);
-    const alertSpacing = objectsToString(spacing);
-    const alertBorder = objectsToString(border);
-
-    const classes = classnames(
-      root,
-      alertVariant,
-      alertTypography,
-      alertSpacing,
-      alertBorder,
-      className,
+    // 3. set styles
+    const alertBase = objectsToString(base);
+    const alertVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "filled")][
+        findMatch(valid.colors, color, "light-blue")
+      ],
     );
+    const classes = classnames(alertBase, alertVariant, className);
 
+    // 4. set animation
     const mainAnimation = {
       unmount: {
         opacity: 0,
@@ -45,11 +41,12 @@ export const Alert = forwardRef(
         opacity: 1,
       },
     };
-
     const appliedAnimation = merge(mainAnimation, animate);
 
+    // 5. icon template
     const iconTemplate = <div className="absolute top-4 left-4">{icon}</div>;
 
+    // 6. return
     return (
       <AnimatePresence>
         {show && (

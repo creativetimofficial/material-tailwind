@@ -1,5 +1,6 @@
 import alertFilled from "theme/components/alert/alertFilled";
 import alertGradient from "theme/components/alert/alertGradient";
+import validColors from "utils/validColors";
 
 const alert = {
   defaultProps: {
@@ -21,19 +22,21 @@ const alert = {
     },
     className: "",
   },
+  valid: {
+    variants: ["filled", "gradient"],
+    colors: validColors,
+  },
   styles: {
-    root: "relative block w-full",
-    spacing: {
-      x: "px-4",
-      y: "py-4",
-    },
-    border: {
-      radius: "rounded-lg",
-    },
-    typography: {
-      family: "font-sans",
-      size: "text-base",
-      weight: "font-regular",
+    base: {
+      position: "relative",
+      display: "block",
+      width: "w-full",
+      fontFamily: "font-sans",
+      fontSize: "text-base",
+      fontWeight: "font-regular",
+      px: "px-4",
+      py: "py-4",
+      borderRadius: "rounded-lg",
     },
     variants: {
       filled: alertFilled,
