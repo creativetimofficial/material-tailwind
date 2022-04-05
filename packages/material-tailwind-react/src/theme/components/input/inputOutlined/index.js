@@ -5,12 +5,11 @@ import inputOutlinedLabelColors from "theme/components/input/inputOutlined/input
 const inputOutlined = {
   base: {
     input: {
-      simple: {
-        borderWidth: "placeholder-shown:border",
-        borderColor: "placeholder-shown:border-grey-400 placeholder-shown:border-t-grey-400",
-      },
+      borderWidth: "placeholder-shown:border",
+      borderColor:
+        "placeholder-shown:border-blue-grey-200 placeholder-shown:border-t-blue-grey-200",
       floated: {
-        borderWidth: "border-2 focus:border-2",
+        borderWidth: "border focus:border-2",
         borderColor: "border-t-transparent focus:border-t-transparent",
       },
     },

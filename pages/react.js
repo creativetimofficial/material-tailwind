@@ -4,12 +4,11 @@ import Buttons from "/react-sections/Buttons";
 import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
+import Inputs from "/react-sections/Inputs";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
 import Typos from "/react-sections/Typos";
 import ProgressBars from "/react-sections/ProgressBars";
-
-import Input from "components/Input";
 
 export default function React() {
   return (
@@ -39,7 +38,7 @@ export default function React() {
         <hr className="my-24" />
         <ProgressBars />
         <hr className="my-24" />
-        <Input color="orange" label="Your Name" size="lg" />
+        <Inputs />
         <hr className="my-24" />
       </div>
     </div>

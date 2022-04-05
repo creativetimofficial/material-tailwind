@@ -1,4 +1,4 @@
-const inputOutlinedColors = {
+const inputStaticColors = {
   "blue-grey": {
     borderColor: "border-blue-grey-200",
     borderColorFocused: "focus:border-blue-grey-500",
@@ -77,4 +77,4 @@ const inputOutlinedColors = {
   },
 };
 
-export default inputOutlinedColors;
+export default inputStaticColors;

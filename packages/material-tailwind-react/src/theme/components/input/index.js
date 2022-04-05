@@ -1,4 +1,6 @@
 import inputOutlined from "theme/components/input/inputOutlined/index";
+import inputStandard from "theme/components/input/inputStandard/index";
+import inputStatic from "theme/components/input/inputStatic/index";
 import validColors from "utils/validColors";
 
 const input = {
@@ -21,17 +23,18 @@ const input = {
       container: {
         position: "relative",
         width: "w-full",
+        minWidth: "min-w-[200px]",
       },
       input: {
         peer: "peer",
         width: "w-full",
         height: "h-full",
         bg: "bg-transparent",
-        color: "text-grey-800",
+        color: "text-blue-grey-700",
         fontFamily: "font-sans",
         fontWeight: "font-light",
         outline: "outline-0 focus:outlined-0",
-        disabled: "disabled:bg-grey-300 disabled:border-0",
+        disabled: "disabled:bg-blue-grey-100 disabled:border-0",
         transition: "transition-all",
       },
       label: {
@@ -43,21 +46,17 @@ const input = {
         position: "absolute",
         left: "left-0",
         fontWeight: "font-light",
-        simple: {
-          fontSize: "peer-placeholder-shown:text-sm",
-          color: "peer-placeholder-shown:text-grey-500",
-        },
-        floated: {
-          fontSize: "text-[11px] peer-focus:text-[11px]",
-          lineHeight: "leading-tight peer-focus:leading-tight",
-        },
+        color: "peer-placeholder-shown:text-blue-grey-500",
+        lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:
-          "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-grey-500",
+          "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-grey-500",
         transition: "transition-all",
       },
     },
     variants: {
       outlined: inputOutlined,
+      standard: inputStandard,
+      static: inputStatic,
     },
   },
 };

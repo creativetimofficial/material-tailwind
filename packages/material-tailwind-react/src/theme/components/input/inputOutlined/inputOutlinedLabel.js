@@ -1,5 +1,9 @@
 const inputOutlinedLabel = {
   position: "-top-1.5",
+  fontSize: "peer-placeholder-shown:text-sm",
+  floated: {
+    fontSize: "text-[11px] peer-focus:text-[11px]",
+  },
   before: {
     content: "before:content[' ']",
     display: "before:block",
@@ -8,13 +12,11 @@ const inputOutlinedLabel = {
     height: "before:h-1.5",
     mt: "before:mt-[6.5px]",
     mr: "before:mr-1",
-    simple: {
-      borderColor: "peer-placeholder-shown:before:border-transparent",
-      borderRadius: "before:rounded-tl-md",
-    },
+    borderColor: "peer-placeholder-shown:before:border-transparent",
+    borderRadius: "before:rounded-tl-md",
     floated: {
-      bt: "before:border-t-2 peer-focus:before:border-t-2",
-      bl: "before:border-l-2 peer-focus:before:border-l-2",
+      bt: "before:border-t peer-focus:before:border-t-2",
+      bl: "before:border-l peer-focus:before:border-l-2",
     },
     pointerEvents: "before:pointer-events-none",
     transition: "before:transition-all",
@@ -29,13 +31,11 @@ const inputOutlinedLabel = {
     height: "after:h-1.5",
     mt: "after:mt-[6.5px]",
     ml: "after:ml-1",
-    simple: {
-      borderColor: "peer-placeholder-shown:after:border-transparent",
-      borderRadius: "after:rounded-tr-md",
-    },
+    borderColor: "peer-placeholder-shown:after:border-transparent",
+    borderRadius: "after:rounded-tr-md",
     floated: {
-      bt: "after:border-t-2 peer-focus:after:border-t-2",
-      br: "after:border-r-2 peer-focus:after:border-r-2",
+      bt: "after:border-t peer-focus:after:border-t-2",
+      br: "after:border-r peer-focus:after:border-r-2",
     },
     pointerEvents: "after:pointer-events-none",
     transition: "after:transition-all",
