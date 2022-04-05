@@ -1,4 +1,5 @@
 import radioColors from "theme/components/radio/radioColors";
+import validColors from "utils/validColors";
 
 const radio = {
   defaultProps: {
@@ -10,50 +11,55 @@ const radio = {
     ripple: true,
     className: "",
   },
+  valid: {
+    colors: validColors,
+  },
   styles: {
-    root: "inline-flex items-center",
-    container: {
-      root: "relative flex items-center cursor-pointer",
-      spacing: {
-        x: "px-3",
-        y: "py-3",
+    base: {
+      root: {
+        display: "inline-flex",
+        alignItems: "items-center",
       },
-      border: {
-        radius: "rounded-full",
+      container: {
+        position: "relative",
+        display: "flex",
+        alignItems: "items-center",
+        cursor: "cursor-pointer",
+        p: "p-3",
+        borderRadius: "rounded-full",
       },
-    },
-    input: {
-      root: "peer relative appearance-none cursor-pointer",
-      spacing: {
+      input: {
+        peer: "peer",
+        position: "relative",
+        appearance: "appearance-none",
         width: "w-5",
         height: "h-5",
-      },
-      border: {
-        width: "border",
-        radius: "rounded-full",
-        color: "border-grey-400",
-      },
-      transition: "transition-all",
-      before: {
-        root: "before:content[''] before:block before:bg-blue-grey-500",
-        spacing: {
+        borderWidth: "border",
+        borderRadius: "rounded-full",
+        borderColor: "border-grey-400",
+        cursor: "cursor-pointer",
+        transition: "transition-all",
+        before: {
+          content: "before:content['']",
+          display: "before:block",
+          bg: "before:bg-blue-grey-500",
           width: "before:w-12",
           height: "before:h-12",
+          borderRadius: "before:rounded-full",
+          position: "before:absolute",
+          top: "before:top-2/4",
+          left: "before:left-2/4",
+          transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+          opacity: "before:opacity-0 hover:before:opacity-10",
+          transition: "before:transition-opacity",
         },
-        border: {
-          radius: "before:rounded-full",
-        },
-        position: "before:absolute before:top-2/4 before:left-2/4",
-        transform: "before:-translate-y-2/4 before:-translate-x-2/4",
-        transition: "before:transition-opacity",
-        opacity: "before:opacity-0 hover:before:opacity-10",
       },
-    },
-    label: {
-      root: "cursor-pointer select-none mt-px",
-      typography: {
-        weight: "font-light",
+      label: {
         color: "text-grey-700",
+        fontWeight: "font-light",
+        userSelect: "select-none",
+        cursor: "cursor-pointer",
+        mt: "mt-px",
       },
     },
     colors: radioColors,

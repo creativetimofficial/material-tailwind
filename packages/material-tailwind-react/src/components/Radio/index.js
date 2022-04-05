@@ -3,45 +3,47 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Radio = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
+    // 1. init
     const { radio } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = radio;
-    const { root, container, input, label: inputLabel, colors } = radio.styles;
+    const { defaultProps, valid } = radio;
+    const { base, colors } = radio.styles;
 
+    // 2. set default props
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
     className = className || defaultProps.className;
 
+    // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
+    // 4. set styles
+    const rootClasses = classnames(objectsToString(base.root));
     const containerClasses = classnames(
-      objectsToString(container),
+      objectsToString(base.container),
       containerProps && containerProps.className ? containerProps.className : "",
     );
-
     const inputClasses = classnames(
-      objectsToString(input),
-      colors && colors[color] ? colors[color].border : "checked:border-light-blue-500",
-      colors && colors[color] ? colors[color].before : "checked:before:bg-light-blue-500",
+      objectsToString(base.input),
+      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
       className,
     );
-
-    const radioIconColor = classnames(
-      "absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity",
-      colors && colors[color] ? colors[color].color : "checked:bg-light-blue-500",
-    );
-
     const labelClasses = classnames(
-      objectsToString(inputLabel),
+      objectsToString(base.label),
       labelProps && labelProps.className ? labelProps.className : "",
+    );
+    const radioIconClasses = classnames(
+      "absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity",
+      colors[findMatch(valid.colors, color, "light-blue")].color,
     );
 
     return (
-      <div ref={ref} className={root}>
+      <div ref={ref} className={rootClasses}>
         <label
           {...containerProps}
           className={containerClasses}
@@ -58,7 +60,7 @@ export const Radio = forwardRef(
           }}
         >
           <input {...rest} type="radio" className={inputClasses} id={rest.id || "radio"} />
-          <div className={radioIconColor}>
+          <div className={radioIconClasses}>
             {icon || (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
