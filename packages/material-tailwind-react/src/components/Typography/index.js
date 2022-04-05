@@ -1,32 +1,33 @@
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import { MaterialTailwindTheme } from "context/theme";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+import { MaterialTailwindTheme } from "context/theme";
 
 export const Typography = forwardRef(
   ({ variant, color, textGradient, className, children, ...rest }, ref) => {
+    // 1. init
     const { typography } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = typography;
+    const { defaultProps, valid } = typography;
     const { variants, colors, textGradient: gradient } = typography.styles;
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     color = color || defaultProps.color;
     textGradient = textGradient || defaultProps.textGradient;
     className = className || defaultProps.className;
 
-    const typographyVariant = variants[variant] ? objectsToString(variants[variant]) : "";
-    const typographyColor = colors[color]
-      ? colors[color]
-      : {
-          color: "text-blue-grey-900",
-          gradient: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
-        };
-
+    // 3 set styles
+    const typographyVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "paragraph")],
+    );
+    const typographyColor = colors[findMatch(valid.colors, color, "blue-grey")];
+    const gradientTextClasses = objectsToString(gradient);
     const classes = classnames(
       typographyVariant,
       typographyColor.color,
-      { [gradient]: textGradient },
+      { [gradientTextClasses]: textGradient },
       { [typographyColor.gradient]: textGradient },
       className,
     );
