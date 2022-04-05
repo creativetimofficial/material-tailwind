@@ -2,39 +2,38 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
-import validColors from "utils/validColors";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const IconButton = forwardRef(
   ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
+    // 1. init
     const { iconButton } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = iconButton;
-    const { root, variants, sizes, typography, transition } = iconButton.styles;
+    const { valid, defaultProps } = iconButton;
+    const { base, variants, sizes } = iconButton.styles;
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     size = size || defaultProps.size;
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
     className = className || defaultProps.className;
 
+    // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
-    const iconButtonVariant = variants[variant]
-      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
-      : "";
-    const iconButtonSize = sizes[size] ? objectsToString(sizes[size]) : "";
-    const iconButtonTypography = objectsToString(typography);
-
-    const classes = classnames(
-      root,
-      iconButtonSize,
-      iconButtonVariant,
-      iconButtonTypography,
-      transition,
-      className,
+    // 4. set styles
+    const buttonBase = objectsToString(base);
+    const buttonVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "filled")][
+        findMatch(valid.colors, color, "light-blue")
+      ],
     );
+    const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
+    const classes = classnames(buttonBase, buttonSize, buttonVariant, className);
 
+    // 5. return
     return (
       <button
         ref={ref}

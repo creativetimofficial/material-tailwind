@@ -2,6 +2,7 @@ import buttonFilled from "theme/components/button/buttonFilled";
 import buttonGradient from "theme/components/button/buttonGradient";
 import buttonOutlined from "theme/components/button/buttonOutlined";
 import buttonText from "theme/components/button/buttonText";
+import validColors from "utils/validColors";
 
 const button = {
   defaultProps: {
@@ -12,54 +13,46 @@ const button = {
     ripple: true,
     className: "",
   },
+  valid: {
+    variants: ["filled", "outlined", "gradient", "text"],
+    sizes: ["sm", "md", "lg"],
+    colors: validColors,
+  },
   styles: {
-    root: "grid place-items-center inline-block align-middle select-none",
-    typography: {
-      family: "font-sans",
-      size: "text-xs",
-      weight: "font-semibold",
-      align: "text-center",
-      transform: "uppercase",
+    base: {
+      display: "inline-grid",
+      placeItems: "place-items-center",
+      userSelect: "none",
+      fontFamily: "font-sans",
+      fontWeight: "font-medium",
+      textAlign: "text-center",
+      textTransform: "uppercase",
+      transition: "transition-all",
     },
     sizes: {
       sm: {
-        spacing: {
-          width: "w-8 max-w-[32px]",
-          height: "h-8 max-h-[32px]",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-xs",
-          weight: "font-medium",
-        },
+        width: "w-8",
+        maxWidth: "max-w-[32px]",
+        height: "h-8",
+        maxHeight: "max-h-[32px]",
+        borderRadius: "rounded-lg",
+        fontSize: "text-xs",
       },
       md: {
-        spacing: {
-          x: "w-10 max-w-[40px]",
-          y: "h-10 max-h-[40px]",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-xs",
-          weight: "font-medium",
-        },
+        width: "w-10",
+        maxWidth: "max-w-[40px]",
+        height: "h-10",
+        maxHeight: "max-h-[40px]",
+        borderRadius: "rounded-lg",
+        fontSize: "text-xs",
       },
       lg: {
-        spacing: {
-          width: "w-12 max-w-[48px]",
-          height: "h-12 max-h-[48px]",
-        },
-        border: {
-          radius: "rounded-lg",
-        },
-        typography: {
-          size: "text-sm",
-          weight: "font-medium",
-        },
+        width: "w-12",
+        maxWidth: "max-w-[48px]",
+        height: "h-12",
+        maxHeight: "max-h-[48px]",
+        borderRadius: "rounded-lg",
+        fontSize: "text-sm",
       },
     },
     variants: {
@@ -68,7 +61,6 @@ const button = {
       outlined: buttonOutlined,
       text: buttonText,
     },
-    transition: "transition-all",
   },
 };
 
