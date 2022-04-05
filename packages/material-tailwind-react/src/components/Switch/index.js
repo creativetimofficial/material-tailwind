@@ -3,57 +3,51 @@ import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import Ripple from "material-ripple-effects";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Switch = forwardRef(
   ({ color, label, ripple, className, containerProps, circleProps, labelProps, ...rest }, ref) => {
+    // 1. init
     const { switch: toggle } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = toggle;
-    const {
-      root,
-      container,
-      input,
-      circle,
-      ripple: circleRipple,
-      label: inputLabel,
-      colors,
-    } = toggle.styles;
+    const { defaultProps, valid } = toggle;
+    const { base, colors } = toggle.styles;
 
+    // 2. set default props
     color = color || defaultProps.color;
     ripple = ripple === undefined ? defaultProps.ripple : ripple;
     className = className || defaultProps.className;
 
+    // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
+    // 4. set styles
+    const rootClasses = classnames(objectsToString(base.root));
     const containerClasses = classnames(
-      objectsToString(container),
+      objectsToString(base.container),
       containerProps && containerProps.className ? containerProps.className : "",
     );
-
     const inputClasses = classnames(
-      "peer",
-      objectsToString(input),
-      colors && colors[color] ? colors[color].input : "checked:bg-blue-500",
+      objectsToString(base.input),
+      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
       className,
     );
-
     const circleClasses = classnames(
-      objectsToString(circle),
-      colors && colors[color] ? colors[color].circle : "peer-checked:border-light-blue-500",
-      colors && colors[color] ? colors[color].before : "before:bg-light-blue-500",
+      objectsToString(base.circle),
+      colors[findMatch(valid.colors, color, "light-blue")].circle,
+      colors[findMatch(valid.colors, color, "light-blue")].before,
       circleProps && circleProps.className ? circleProps.className : "",
     );
-
-    const rippleClasses = classnames(objectsToString(circleRipple));
-
+    const rippleClasses = classnames(objectsToString(base.ripple));
     const labelClasses = classnames(
-      objectsToString(inputLabel),
+      objectsToString(base.label),
       labelProps && labelProps.className ? labelProps.className : "",
     );
 
+    // 4. return
     return (
-      <div ref={ref} className={root}>
+      <div ref={ref} className={rootClasses}>
         <div {...containerProps} htmlFor={rest.id || "switch"} className={containerClasses}>
           <input {...rest} type="checkbox" id={rest.id || "switch"} className={inputClasses} />
           <label {...circleProps} htmlFor={rest.id || "switch"} className={circleClasses}>

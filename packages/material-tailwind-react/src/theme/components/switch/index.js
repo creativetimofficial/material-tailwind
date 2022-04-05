@@ -1,4 +1,5 @@
 import switchColors from "theme/components/switch/switchColors";
+import validColors from "utils/validColors";
 
 const switchButton = {
   defaultProps: {
@@ -10,79 +11,78 @@ const switchButton = {
     ripple: true,
     className: "",
   },
+  valid: {
+    colors: validColors,
+  },
   styles: {
-    root: "inline-flex items-center",
-    container: {
-      root: "inline-block relative cursor-pointer",
-      spacing: {
+    base: {
+      root: {
+        display: "inline-flex",
+        alignItems: "items-center",
+      },
+      container: {
+        position: "relative",
+        display: "inline-block",
         width: "w-8",
         height: "h-4",
+        cursor: "cursor-pointer",
+        borderRadius: "rounded-full",
       },
-      border: {
-        radius: "rounded-full",
-      },
-    },
-    input: {
-      root: "peer appearance-none cursor-pointer",
-      spacing: {
+      input: {
+        peer: "peer",
+        appearance: "appearance-none",
         width: "w-8",
         height: "h-4",
+        position: "absolute",
+        background: "bg-blue-grey-100",
+        borderRadius: "rounded-full",
+        cursor: "cursor-pointer",
+        transition: "transition-colors duration-300",
       },
-      border: {
-        radius: "rounded-full",
-      },
-      position: "absolute",
-      background: "bg-blue-grey-100",
-      transition: "transition-colors duration-300",
-    },
-    circle: {
-      root: "bg-white shadow-md cursor-pointer",
-      spacing: {
+      circle: {
+        bg: "bg-white",
         width: "w-5",
         height: "h-5",
-      },
-      border: {
-        width: "border",
-        color: "border-blue-grey-100",
-        radius: "rounded-full",
-      },
-      position: "absolute top-2/4 -left-1 -translate-y-2/4",
-      transition: "transition-all duration-300",
-      checked: "peer-checked:translate-x-full",
-      before: {
-        root: "before:content[''] before:block before:bg-blue-grey-500",
-        spacing: {
+        borderWidth: "border",
+        borderColor: "border-blue-grey-100",
+        borderRadius: "rounded-full",
+        boxShadow: "shadow-md",
+        position: "absolute",
+        top: "top-2/4",
+        left: "-left-1",
+        transform: "-translate-y-2/4 peer-checked:translate-x-full",
+        transition: "transition-all duration-300",
+        cursor: "cursor-pointer",
+        before: {
+          content: "before:content['']",
+          display: "before:block",
+          bg: "before:bg-blue-grey-500",
           width: "before:w-10",
           height: "before:h-10",
+          borderRadius: "before:rounded-full",
+          position: "before:absolute",
+          top: "before:top-2/4",
+          left: "before:left-2/4",
+          transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+          transition: "before:transition-opacity",
+          opacity: "before:opacity-0 hover:before:opacity-10",
         },
-        border: {
-          radius: "before:rounded-full",
-        },
-        position:
-          "before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4",
-        transition: "before:transition-opacity",
-        opacity: "before:opacity-0 hover:before:opacity-10",
       },
-    },
-    ripple: {
-      root: "inline-block",
-      position: "relative top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4",
-      spacing: {
-        x: "px-5",
-        y: "py-5",
+      ripple: {
+        display: "inline-block",
+        top: "top-2/4",
+        left: "left-2/4",
+        transform: "-translate-x-2/4 -translate-y-2/4",
+        p: "p-5",
+        borderRadius: "rounded-full",
       },
-      border: {
-        radius: "rounded-full",
-      },
-    },
-    label: {
-      root: "cursor-pointer select-none mt-px",
-      typography: {
-        weight: "font-light",
+      label: {
         color: "text-grey-700",
-      },
-      spacing: {
-        x: "ml-3",
+        fontWeight: "font-light",
+        userSelect: "select-none",
+        cursor: "cursor-pointer",
+        mt: "mt-px",
+        ml: "ml-3",
       },
     },
     colors: switchColors,
