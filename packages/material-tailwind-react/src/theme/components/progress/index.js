@@ -1,5 +1,6 @@
 import progressFilled from "theme/components/progress/progressFilled";
 import progressGradient from "theme/components/progress/progressGradient";
+import validColors from "utils/validColors";
 
 const alert = {
   defaultProps: {
@@ -10,35 +11,38 @@ const alert = {
     className: "",
     barProps: {},
   },
+  valid: {
+    variants: ["filled", "gradient"],
+    colors: validColors,
+  },
   styles: {
-    root: "bg-blue-grey-100 overflow-hidden flex",
-    spacing: {
-      width: "w-full",
-      height: "h-1.5",
-    },
-    border: {
-      radius: "rounded-sm",
-    },
-    typography: {
-      family: "font-sans",
-      size: "text-xs",
-      weight: "font-medium",
+    base: {
+      container: {
+        display: "flex",
+        justifyContent: "flex-start",
+        bg: "bg-blue-grey-100",
+        overflow: "overflow-hidden",
+        width: "w-full",
+        height: "h-1.5",
+        borderRadius: "rounded-sm",
+        fontFamily: "font-sans",
+        fontSize: "text-xs",
+        fontWeight: "font-medium",
+      },
+      bar: {
+        display: "flex",
+        justifyContent: "justify-center",
+        alignItems: "items-center",
+        height: "h-full",
+      },
     },
     variants: {
       filled: progressFilled,
       gradient: progressGradient,
     },
     withLabel: {
-      spacing: {
-        width: "w-full",
-        height: "h-4",
-      },
-      border: {
-        radius: "rounded",
-      },
-    },
-    bar: {
-      root: "flex justify-center items-center h-full",
+      height: "h-4",
+      borderRadius: "rounded",
     },
   },
 };

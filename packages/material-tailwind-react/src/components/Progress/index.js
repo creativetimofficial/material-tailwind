@@ -1,46 +1,45 @@
 import { forwardRef, useContext } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import validColors from "utils/validColors";
+import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 export const Progress = forwardRef(
   ({ variant, color, value, label, className, barProps, ...rest }, ref) => {
+    // 1. init
     const { progress } = useContext(MaterialTailwindTheme);
-    const { defaultProps } = progress;
-    const { root, variants, typography, spacing, border, withLabel, bar } = progress.styles;
+    const { defaultProps, valid } = progress;
+    const { base, variants, withLabel } = progress.styles;
 
+    // 2. set default props
     variant = variant || defaultProps.variant;
     color = color || defaultProps.color;
     label = label || defaultProps.label;
     className = className || defaultProps.className;
     barProps = barProps || defaultProps.barProps;
 
-    const progressVariant = variants[variant]
-      ? objectsToString(variants[variant][validColors[color] || defaultProps.color])
-      : "";
-    const progressTypography = objectsToString(typography);
-    const progressSpacing = objectsToString(spacing);
-    const progressBorder = objectsToString(border);
-    const progressLabel = objectsToString(withLabel);
-    const progressBar = objectsToString(bar);
-
+    // 3. set styles
+    const progressVariant = objectsToString(
+      variants[findMatch(valid.variants, variant, "filled")][
+        findMatch(valid.colors, color, "light-blue")
+      ],
+    );
+    const progressWithLabel = objectsToString(withLabel);
+    const progressContainer = objectsToString(base.container);
+    const progressBar = objectsToString(base.bar);
     const containerClasses = classnames(
-      root,
-      progressTypography,
-      { [progressSpacing]: !label },
-      { [progressBorder]: !label },
-      { [progressLabel]: label },
+      progressContainer,
+      { [progressWithLabel]: label },
       className,
     );
-
     const barClasses = classnames(
       progressBar,
       progressVariant,
       barProps && barProps.className ? barProps.className : "",
     );
 
+    // 4. return
     return (
       <div {...rest} ref={ref} className={containerClasses}>
         <div {...barProps} className={barClasses} style={{ width: `${value}%` }}>
