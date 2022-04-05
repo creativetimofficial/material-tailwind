@@ -1,4 +1,5 @@
 import inputOutlined from "theme/components/input/inputOutlined/index";
+import validColors from "utils/validColors";
 
 const input = {
   defaultProps: {
@@ -9,6 +10,11 @@ const input = {
     inputProps: {},
     labelProps: {},
     className: "",
+  },
+  valid: {
+    variants: ["standard", "outlined", "static"],
+    sizes: ["md", "lg"],
+    colors: validColors,
   },
   styles: {
     base: {
