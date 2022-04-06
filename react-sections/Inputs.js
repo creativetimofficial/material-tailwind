@@ -7,11 +7,7 @@ export default function Inputs() {
       <div className="flex items-end gap-4 mb-12">
         <Input label="Outlined" />
         <Input variant="standard" label="Standard" />
-        <Input
-          variant="static"
-          label="Static"
-          inputProps={{ placeholder: "First Name" }}
-        />
+        <Input variant="static" label="Static" placeholder="First Name" />
       </div>
 
       <h2 className="text-2xl font-semibold mb-4">Input Sizes</h2>
@@ -45,7 +41,7 @@ export default function Inputs() {
 
       <h2 className="text-2xl font-semibold mb-4">Input Disabled</h2>
       <div className="flex items-end gap-4 mb-12">
-        <Input label="Disabled" inputProps={{ disabled: true }} />
+        <Input label="Disabled" disabled />
       </div>
     </div>
   );

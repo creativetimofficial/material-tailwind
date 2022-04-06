@@ -9,7 +9,6 @@ const input = {
     size: "md",
     color: "light-blue",
     label: "",
-    inputProps: {},
     labelProps: {},
     className: "",
   },
