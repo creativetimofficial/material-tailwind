@@ -5,10 +5,11 @@ import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
 import Inputs from "/react-sections/Inputs";
+import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
+import Textareas from "/react-sections/Textareas";
 import Typos from "/react-sections/Typos";
-import ProgressBars from "/react-sections/ProgressBars";
 
 export default function React() {
   return (
@@ -39,6 +40,8 @@ export default function React() {
         <ProgressBars />
         <hr className="my-24" />
         <Inputs />
+        <hr className="my-24" />
+        <Textareas />
         <hr className="my-24" />
       </div>
     </div>
