@@ -6,53 +6,69 @@ import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
-const Input = forwardRef(({ variant, color, size, label, labelProps, className, ...rest }, ref) => {
-  // 1. init
-  const { input } = useContext(MaterialTailwindTheme);
-  const { defaultProps, valid } = input;
-  const { base, variants } = input.styles;
+const Input = forwardRef(
+  ({ variant, color, size, label, error, success, labelProps, className, ...rest }, ref) => {
+    // 1. init
+    const { input } = useContext(MaterialTailwindTheme);
+    const { defaultProps, valid } = input;
+    const { base, variants } = input.styles;
 
-  // 2. set default props
-  variant = variant || defaultProps.variant;
-  size = size || defaultProps.size;
-  color = color || defaultProps.color;
-  label = label || defaultProps.label;
-  labelProps = labelProps || defaultProps.labelProps;
-  className = className || defaultProps.className;
+    // 2. set default props
+    variant = variant || defaultProps.variant;
+    size = size || defaultProps.size;
+    color = color || defaultProps.color;
+    label = label || defaultProps.label;
+    labelProps = labelProps || defaultProps.labelProps;
+    className = className || defaultProps.className;
 
-  // 3. set styles
-  const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];
-  const containerClasses = classnames(
-    objectsToString(base.container),
-    objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].container),
-  );
-  const inputClasses = classnames(
-    objectsToString(base.input),
-    objectsToString(inputVariant.base.input),
-    objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].input),
-    objectsToString(inputVariant.colors.input[findMatch(valid.colors, color, "light-blue")]),
-    className,
-  );
-  const labelClasses = classnames(
-    objectsToString(base.label),
-    objectsToString(inputVariant.base.label),
-    objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].label),
-    objectsToString(inputVariant.colors.label[findMatch(valid.colors, color, "light-blue")]),
-    labelProps && labelProps.className ? labelProps.className : "",
-  );
+    // 3. set styles
+    const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];
+    const inputError = objectsToString(inputVariant.error.input);
+    const inputSuccess = objectsToString(inputVariant.success.input);
+    const inputColor = objectsToString(
+      inputVariant.colors.input[findMatch(valid.colors, color, "light-blue")],
+    );
+    const labelError = objectsToString(inputVariant.error.label);
+    const labelSuccess = objectsToString(inputVariant.success.label);
+    const labelColor = objectsToString(
+      inputVariant.colors.label[findMatch(valid.colors, color, "light-blue")],
+    );
+    const containerClasses = classnames(
+      objectsToString(base.container),
+      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].container),
+    );
+    const inputClasses = classnames(
+      objectsToString(base.input),
+      objectsToString(inputVariant.base.input),
+      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].input),
+      { [inputColor]: !error && !success },
+      { [inputError]: error },
+      { [inputSuccess]: success },
+      className,
+    );
+    const labelClasses = classnames(
+      objectsToString(base.label),
+      objectsToString(inputVariant.base.label),
+      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].label),
+      { [labelColor]: !error && !success },
+      { [labelError]: error },
+      { [labelSuccess]: success },
+      labelProps && labelProps.className ? labelProps.className : "",
+    );
 
-  // 4. return
-  return (
-    <div ref={ref} className={containerClasses}>
-      <input
-        {...rest}
-        className={inputClasses}
-        placeholder={rest && rest.placeholder ? rest.placeholder : " "}
-      />
-      <label className={labelClasses}>{label}</label>
-    </div>
-  );
-});
+    // 4. return
+    return (
+      <div ref={ref} className={containerClasses}>
+        <input
+          {...rest}
+          className={inputClasses}
+          placeholder={rest && rest.placeholder ? rest.placeholder : " "}
+        />
+        <label className={labelClasses}>{label}</label>
+      </div>
+    );
+  },
+);
 
 Input.propTypes = {
   variant: PropTypes.oneOf(["standard", "outlined", "static"]),
@@ -79,6 +95,8 @@ Input.propTypes = {
     "red",
   ]),
   label: PropTypes.string,
+  error: PropTypes.bool,
+  success: PropTypes.bool,
   labelProps: PropTypes.instanceOf(Object),
   className: PropTypes.string,
 };

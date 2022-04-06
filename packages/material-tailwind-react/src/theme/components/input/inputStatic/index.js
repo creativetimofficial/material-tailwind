@@ -43,6 +43,26 @@ const inputStatic = {
     input: inputStaticColors,
     label: inputStaticLabelColors,
   },
+  error: {
+    input: {
+      borderColor: "border-red-500 placeholder-shown:border-red-500",
+      borderColorFocused: "focus:border-red-500",
+    },
+    label: {
+      color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500",
+      after: "after:border-red-500 peer-focus:after:border-red-500",
+    },
+  },
+  success: {
+    input: {
+      borderColor: "border-green-500 placeholder-shown:border-green-500",
+      borderColorFocused: "focus:border-green-500",
+    },
+    label: {
+      color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500",
+      after: "after:border-green-500 peer-focus:after:border-green-500",
+    },
+  },
 };
 
 export default inputStatic;

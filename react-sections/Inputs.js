@@ -16,6 +16,12 @@ export default function Inputs() {
         <Input label="Input Large" size="lg" />
       </div>
 
+      <h2 className="text-2xl font-semibold mb-4">Input Error & Success</h2>
+      <div className="flex items-end gap-4 mb-12">
+        <Input label="Input Error" error />
+        <Input label="Input Success" success />
+      </div>
+
       <h2 className="text-2xl font-semibold mb-4">Input Colors</h2>
       <div className="grid grid-cols-3 gap-4 mb-12">
         <Input color="blue-grey" label="Blue Grey" />

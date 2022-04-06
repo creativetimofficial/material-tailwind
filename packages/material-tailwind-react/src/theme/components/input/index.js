@@ -9,6 +9,8 @@ const input = {
     size: "md",
     color: "light-blue",
     label: "",
+    error: false,
+    success: false,
     labelProps: {},
     className: "",
   },
