@@ -13,7 +13,15 @@ const inputOutlined = {
         borderColor: "border-t-transparent focus:border-t-transparent",
       },
     },
+    inputWithIcon: {
+      pr: "!pr-9",
+    },
     label: inputOutlinedLabel,
+    icon: {
+      top: "top-2/4",
+      right: "right-3",
+      transform: "-translate-y-2/4",
+    },
   },
   sizes: {
     md: {
@@ -29,6 +37,10 @@ const inputOutlined = {
       label: {
         lineHeight: "peer-placeholder-shown:leading-[3.75]",
       },
+      icon: {
+        width: "w-5",
+        height: "h-5",
+      },
     },
     lg: {
       container: {
@@ -42,6 +54,10 @@ const inputOutlined = {
       },
       label: {
         lineHeight: "peer-placeholder-shown:leading-[4.1]",
+      },
+      icon: {
+        width: "w-6",
+        height: "h-6",
       },
     },
   },

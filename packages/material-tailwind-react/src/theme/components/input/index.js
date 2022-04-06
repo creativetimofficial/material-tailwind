@@ -11,6 +11,7 @@ const input = {
     label: "",
     error: false,
     success: false,
+    icon: "",
     labelProps: {},
     className: "",
   },
@@ -52,6 +53,10 @@ const input = {
         disabled:
           "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-grey-500",
         transition: "transition-all",
+      },
+      icon: {
+        position: "absolute",
+        color: "text-blue-grey-500",
       },
     },
     variants: {

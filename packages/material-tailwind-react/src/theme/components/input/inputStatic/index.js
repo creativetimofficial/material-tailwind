@@ -8,7 +8,15 @@ const inputStatic = {
       borderWidth: "border-b",
       borderColor: "placeholder-shown:border-blue-grey-200",
     },
+    inputWithIcon: {
+      pr: "!pr-7",
+    },
     label: inputStaticLabel,
+    icon: {
+      top: "top-2/4",
+      right: "right-0",
+      transform: "-translate-y-1/4",
+    },
   },
   sizes: {
     md: {
@@ -23,6 +31,10 @@ const inputStatic = {
       label: {
         lineHeight: "peer-placeholder-shown:leading-tight",
       },
+      icon: {
+        width: "w-5",
+        height: "h-5",
+      },
     },
     lg: {
       container: {
@@ -36,6 +48,10 @@ const inputStatic = {
       },
       label: {
         lineHeight: "peer-placeholder-shown:leading-tight",
+      },
+      icon: {
+        width: "w-6",
+        height: "h-6",
       },
     },
   },

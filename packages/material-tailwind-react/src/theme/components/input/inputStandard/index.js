@@ -9,6 +9,14 @@ const inputStandard = {
       borderColor: "placeholder-shown:border-blue-grey-200",
     },
     label: inputStandardLabel,
+    inputWithIcon: {
+      pr: "!pr-7",
+    },
+    icon: {
+      top: "top-2/4",
+      right: "right-0",
+      transform: "-translate-y-1/4",
+    },
   },
   sizes: {
     md: {
@@ -23,6 +31,10 @@ const inputStandard = {
       label: {
         lineHeight: "peer-placeholder-shown:leading-[4.25]",
       },
+      icon: {
+        width: "w-5",
+        height: "h-5",
+      },
     },
     lg: {
       container: {
@@ -36,6 +48,10 @@ const inputStandard = {
       },
       label: {
         lineHeight: "peer-placeholder-shown:leading-[4.875]",
+      },
+      icon: {
+        width: "w-6",
+        height: "h-6",
       },
     },
   },

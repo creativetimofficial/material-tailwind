@@ -7,7 +7,7 @@ import objectsToString from "utils/objectsToString";
 import { MaterialTailwindTheme } from "context/theme";
 
 const Input = forwardRef(
-  ({ variant, color, size, label, error, success, labelProps, className, ...rest }, ref) => {
+  ({ variant, color, size, label, error, success, icon, labelProps, className, ...rest }, ref) => {
     // 1. init
     const { input } = useContext(MaterialTailwindTheme);
     const { defaultProps, valid } = input;
@@ -20,9 +20,11 @@ const Input = forwardRef(
     label = label || defaultProps.label;
     labelProps = labelProps || defaultProps.labelProps;
     className = className || defaultProps.className;
+    icon = icon || defaultProps.icon;
 
     // 3. set styles
     const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];
+    const inputSize = inputVariant.sizes[findMatch(valid.sizes, size, "md")];
     const inputError = objectsToString(inputVariant.error.input);
     const inputSuccess = objectsToString(inputVariant.success.input);
     const inputColor = objectsToString(
@@ -35,12 +37,14 @@ const Input = forwardRef(
     );
     const containerClasses = classnames(
       objectsToString(base.container),
-      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].container),
+      objectsToString(inputSize.container),
     );
+
     const inputClasses = classnames(
       objectsToString(base.input),
       objectsToString(inputVariant.base.input),
-      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].input),
+      objectsToString(inputSize.input),
+      { [objectsToString(inputVariant.base.inputWithIcon)]: icon },
       { [inputColor]: !error && !success },
       { [inputError]: error },
       { [inputSuccess]: success },
@@ -49,16 +53,22 @@ const Input = forwardRef(
     const labelClasses = classnames(
       objectsToString(base.label),
       objectsToString(inputVariant.base.label),
-      objectsToString(inputVariant.sizes[findMatch(valid.sizes, size, "md")].label),
+      objectsToString(inputSize.label),
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
       labelProps && labelProps.className ? labelProps.className : "",
     );
+    const iconClasses = classnames(
+      objectsToString(base.icon),
+      objectsToString(inputVariant.base.icon),
+      objectsToString(inputSize.icon),
+    );
 
     // 4. return
     return (
       <div ref={ref} className={containerClasses}>
+        {icon && <div className={iconClasses}>{icon}</div>}
         <input
           {...rest}
           className={inputClasses}
@@ -97,6 +107,7 @@ Input.propTypes = {
   label: PropTypes.string,
   error: PropTypes.bool,
   success: PropTypes.bool,
+  icon: PropTypes.node,
   labelProps: PropTypes.instanceOf(Object),
   className: PropTypes.string,
 };
