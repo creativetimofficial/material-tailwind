@@ -36,7 +36,7 @@ const radio = {
         height: "h-5",
         borderWidth: "border",
         borderRadius: "rounded-full",
-        borderColor: "border-grey-400",
+        borderColor: "border-blue-grey-200",
         cursor: "cursor-pointer",
         transition: "transition-all",
         before: {

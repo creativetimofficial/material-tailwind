@@ -36,7 +36,7 @@ const checkbox = {
         height: "h-5",
         borderWidth: "border",
         borderRadius: "rounded-md",
-        borderColor: "border-grey-400",
+        borderColor: "border-blue-grey-200",
         cursor: "cursor-pointer",
         transition: "transition-all",
         before: {
