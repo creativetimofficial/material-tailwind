@@ -7,6 +7,7 @@ import iconButton from "theme/components/iconButton";
 import input from "theme/components/input";
 import progress from "theme/components/progress";
 import radio from "theme/components/radio";
+import select from "theme/components/select";
 import switchButton from "theme/components/switch";
 import textarea from "theme/components/textarea";
 import typography from "theme/components/typography";
@@ -21,6 +22,7 @@ const theme = {
   input,
   progress,
   radio,
+  select,
   switch: switchButton,
   textarea,
   typography,
