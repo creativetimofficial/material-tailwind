@@ -24,7 +24,7 @@ const textareaOutlined = {
         fontSize: "text-sm",
         px: "px-3",
         py: "py-2.5",
-        borderRadius: "rounded-md",
+        borderRadius: "rounded-[7px]",
       },
       label: {
         lineHeight: "peer-placeholder-shown:leading-[3.75]",
