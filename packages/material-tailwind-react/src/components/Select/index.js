@@ -134,7 +134,7 @@ const Select = forwardRef(
     // 5. return
     return (
       <div ref={ref} className={containerClasses}>
-        <button {...getToggleButtonProps()} {...rest} type="button" className={selectClasses}>
+        <button type="button" {...getToggleButtonProps({ ...rest, className: selectClasses })}>
           <span
             className={`absolute top-2/4 -translate-y-2/4 ${
               variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3"
@@ -159,21 +159,20 @@ const Select = forwardRef(
                 )}
           </div>
         </button>
-        <label {...getLabelProps()} {...labelProps} className={labelClasses}>
-          {label}
-        </label>
+        <label {...getLabelProps({ ...labelProps, className: labelClasses })}>{label}</label>
         <div {...getMenuProps()}>
           <AnimatePresence>
             {isOpen && (
               <motion.ul
-                {...getMenuProps()}
-                {...menuProps}
-                className={menuClasses}
-                initial="unmount"
-                exit="unmount"
-                animate={isOpen ? "mount" : "unmount"}
-                variants={appliedAnimation}
-                transition={{ duration: 0.2, times: [0.4, 0, 0.2, 1] }}
+                {...getMenuProps({
+                  ...menuProps,
+                  className: menuClasses,
+                  initial: "unmount",
+                  exit: "unmount",
+                  animate: isOpen ? "mount" : "unmount",
+                  variants: appliedAnimation,
+                  transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+                })}
               >
                 {React.Children.map(children, (item, index) => (
                   <li
@@ -181,10 +180,10 @@ const Select = forwardRef(
                     {...getItemProps({
                       item,
                       index,
-                    })}
-                    {...item.props}
-                    className={classnames(item.props.className, optionClasses, {
-                      [optionActiveClasses]: highlightedIndex === index,
+                      ...item.props,
+                      className: classnames(item.props.className, optionClasses, {
+                        [optionActiveClasses]: highlightedIndex === index,
+                      }),
                     })}
                   />
                 ))}
