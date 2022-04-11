@@ -1,5 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { forwardRef, useContext, useState, useEffect } from "react";
+import React, {
+  forwardRef,
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  useMemo,
+  cloneElement,
+  Children,
+} from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { useSelect } from "downshift";
@@ -7,9 +16,36 @@ import { AnimatePresence, motion } from "framer-motion";
 import merge from "deepmerge";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
+import { useTheme } from "context/theme";
 
-const Option = forwardRef((props, ref) => <span ref={ref} {...props} />);
+const SelectContext = createContext(null);
+SelectContext.displayName = "SelectContextProvider";
+
+const Option = forwardRef(({ disabled, value, children, ...rest }, ref) => {
+  const { getItemProps } = useContext(SelectContext);
+  return (
+    <li
+      {...getItemProps({
+        ref,
+        disabled,
+        ...rest,
+      })}
+    >
+      {children}
+    </li>
+  );
+});
+
+Option.defaultProps = {
+  disabled: false,
+  value: "",
+};
+
+Option.propTypes = {
+  disabled: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  children: PropTypes.node.isRequired,
+};
 
 const Select = forwardRef(
   (
@@ -21,6 +57,9 @@ const Select = forwardRef(
       error,
       success,
       arrow,
+      open,
+      value,
+      onChange,
       labelProps,
       menuProps,
       className,
@@ -30,20 +69,28 @@ const Select = forwardRef(
     ref,
   ) => {
     // 1. init
-    const { select } = useContext(MaterialTailwindTheme);
+    const { select } = useTheme();
     const { defaultProps, valid } = select;
     const { base, variants } = select.styles;
     const {
       isOpen,
-      selectedItem,
       getToggleButtonProps,
       getLabelProps,
       getMenuProps,
       highlightedIndex,
       getItemProps,
-    } = useSelect({ items: children, id: rest && rest.id ? rest.id : "select" });
-    const [state, setState] = useState("close");
+      selectedItem,
+      openMenu,
+      closeMenu,
+      onHighlightedIndexChange,
+    } = useSelect({
+      items: children,
+      selectedItem: value,
+      onSelectedItemChange: onChange,
+      id: rest && rest.id ? rest.id : "select",
+    });
 
+    const [state, setState] = useState("close");
     useEffect(() => {
       if (isOpen) {
         setState("open");
@@ -53,6 +100,11 @@ const Select = forwardRef(
         setState("close");
       }
     }, [isOpen, selectedItem]);
+
+    useEffect(() => {
+      if (open) openMenu();
+      if (open === false) closeMenu();
+    }, [closeMenu, open, openMenu]);
 
     // 2. set default props
     variant = variant || defaultProps.variant;
@@ -112,6 +164,7 @@ const Select = forwardRef(
     );
     const optionClasses = objectsToString(base.option);
     const optionActiveClasses = objectsToString(base.optionActive);
+    const optionDisabledClasses = objectsToString(base.optionDisabled);
 
     // 4. set animation
     const animation = {
@@ -131,67 +184,72 @@ const Select = forwardRef(
       menuProps && menuProps.animate ? menuProps.animate : {},
     );
 
+    const contextValue = useMemo(
+      () => ({ getItemProps, highlightedIndex, onHighlightedIndexChange }),
+      [getItemProps, highlightedIndex, onHighlightedIndexChange],
+    );
+
     // 5. return
     return (
-      <div ref={ref} className={containerClasses}>
-        <button type="button" {...getToggleButtonProps({ ...rest, className: selectClasses })}>
-          <span
-            className={`absolute top-2/4 -translate-y-2/4 ${
-              variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3"
-            }`}
-          >
-            {selectedItem &&
-              selectedItem.props &&
-              selectedItem.props.children &&
-              selectedItem.props.children}
-          </span>
-          <div className={arrowClasses}>
-            {arrow === false
-              ? null
-              : arrow || (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-          </div>
-        </button>
-        <label {...getLabelProps({ ...labelProps, className: labelClasses })}>{label}</label>
-        <div {...getMenuProps()}>
-          <AnimatePresence>
-            {isOpen && (
-              <motion.ul
-                {...getMenuProps({
-                  ...menuProps,
-                  className: menuClasses,
-                  initial: "unmount",
-                  exit: "unmount",
-                  animate: isOpen ? "mount" : "unmount",
-                  variants: appliedAnimation,
-                  transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
-                })}
-              >
-                {React.Children.map(children, (item, index) => (
-                  <li
-                    key={item}
-                    {...getItemProps({
-                      item,
+      <SelectContext.Provider value={contextValue}>
+        <div ref={ref} className={containerClasses}>
+          <button type="button" {...getToggleButtonProps({ ...rest, className: selectClasses })}>
+            <span
+              className={`absolute top-2/4 -translate-y-2/4 ${
+                variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3"
+              }`}
+            >
+              {selectedItem && selectedItem.props.children}
+            </span>
+            <div className={arrowClasses}>
+              {arrow === false
+                ? null
+                : arrow || (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+            </div>
+          </button>
+          <label {...getLabelProps({ ...labelProps, className: labelClasses })}>{label}</label>
+          <div {...getMenuProps()}>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.ul
+                  {...getMenuProps({
+                    ...menuProps,
+                    className: menuClasses,
+                    initial: "unmount",
+                    exit: "unmount",
+                    animate: isOpen ? "mount" : "unmount",
+                    variants: appliedAnimation,
+                    transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+                  })}
+                >
+                  {Children.map(children, (child, index) =>
+                    cloneElement(child, {
+                      item: children,
                       index,
-                      ...item.props,
-                      className: classnames(item.props.className, optionClasses, {
-                        [optionActiveClasses]: highlightedIndex === index,
-                      }),
-                    })}
-                  />
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
+                      className: classnames(
+                        optionClasses,
+                        {
+                          [optionDisabledClasses]: child.props.disabled,
+                          [optionActiveClasses]: highlightedIndex === index,
+                        },
+                        child.props.className,
+                      ),
+                    }),
+                  )}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
+      </SelectContext.Provider>
     );
   },
 );
@@ -224,6 +282,9 @@ Select.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
   arrow: PropTypes.node,
+  open: PropTypes.bool,
+  value: PropTypes.node,
+  onChange: PropTypes.func,
   labelProps: PropTypes.instanceOf(Object),
   menuProps: PropTypes.instanceOf(Object),
   className: PropTypes.string,

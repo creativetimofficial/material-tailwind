@@ -94,11 +94,17 @@ const select = {
         borderRadius: "rounded-md",
         lightHeight: "leading-tight",
         cursor: "cursor-pointer",
+        userSelect: "select-none",
         transition: "transition-all",
       },
       optionActive: {
         bg: "bg-blue-grey-50 bg-opacity-80",
         color: "text-blue-grey-900",
+      },
+      optionDisabled: {
+        bg: "opacity-50",
+        cursor: "cursor-not-allowed",
+        userSelect: "select-none",
       },
     },
     variants: {
