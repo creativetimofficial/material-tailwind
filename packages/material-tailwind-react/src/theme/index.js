@@ -7,6 +7,7 @@ import iconButton from "theme/components/iconButton";
 import input from "theme/components/input";
 import menu from "theme/components/menu";
 import menuItem from "theme/components/menu/menuItem";
+import popover from "theme/components/popover";
 import progress from "theme/components/progress";
 import radio from "theme/components/radio";
 import select from "theme/components/select";
@@ -24,6 +25,7 @@ const theme = {
   input,
   menu,
   menuItem,
+  popover,
   progress,
   radio,
   select,

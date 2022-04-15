@@ -7,6 +7,7 @@ import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
 import Inputs from "/react-sections/Inputs";
 import Menus from "/react-sections/Menus";
+import Popovers from "/react-sections/Popovers";
 import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
@@ -53,6 +54,8 @@ export default function React() {
           <Selects />
           <hr className="my-24" />
           <Menus />
+          <hr className="my-24" />
+          <Popovers />
           <hr className="my-24" />
         </div>
       </div>
