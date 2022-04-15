@@ -17,12 +17,12 @@ const Textarea = forwardRef(
     const { base, variants } = textarea.styles;
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    size = size || defaultProps.size;
-    color = color || defaultProps.color;
-    label = label || defaultProps.label;
-    labelProps = labelProps || defaultProps.labelProps;
-    className = className || defaultProps.className;
+    variant = variant ?? defaultProps.variant;
+    size = size ?? defaultProps.size;
+    color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    className = className ?? defaultProps.className;
 
     // 3. set styles
     const textareaVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -54,17 +54,13 @@ const Textarea = forwardRef(
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
-      labelProps && labelProps.className ? labelProps.className : "",
+      labelProps?.className,
     );
 
     // 4. return
     return (
       <div ref={ref} className={containerClasses}>
-        <textarea
-          {...rest}
-          className={textareaClasses}
-          placeholder={rest && rest.placeholder ? rest.placeholder : " "}
-        />
+        <textarea {...rest} className={textareaClasses} placeholder={rest?.placeholder || " "} />
         <label className={labelClasses}>{label}</label>
       </div>
     );
