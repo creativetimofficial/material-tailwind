@@ -170,7 +170,7 @@ const MenuCore = forwardRef(
           cloneElement(node, {
             ...getReferenceProps({
               ...node?.props,
-              ref: reference,
+              ref: nodeMergedRef,
             }),
           })
         )}
@@ -235,11 +235,14 @@ MenuCore.propTypes = {
     "left",
     "left-end",
   ]),
-  offset: PropTypes.shape({
-    mainAxis: PropTypes.number,
-    crossAxis: PropTypes.number,
-    alignmentAxis: PropTypes.number,
-  }),
+  offset: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      mainAxis: PropTypes.number,
+      crossAxis: PropTypes.number,
+      alignmentAxis: PropTypes.number,
+    }),
+  ]),
   dismiss: PropTypes.shape({
     enabled: PropTypes.bool,
     escapeKey: PropTypes.bool,

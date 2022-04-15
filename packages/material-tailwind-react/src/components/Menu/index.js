@@ -6,7 +6,10 @@ import MenuCore from "components/Menu/MenuCore";
 import MenuItem from "components/Menu/MenuItem";
 
 const Menu = forwardRef(
-  ({ open, handler, node, placement, offset, dismiss, className, children, ...rest }, ref) => {
+  (
+    { open, handler, node, placement, offset, dismiss, animate, className, children, ...rest },
+    ref,
+  ) => {
     // 1. init
     const parentId = useFloatingParentNodeId();
     const { menu } = useTheme();
@@ -26,6 +29,7 @@ const Menu = forwardRef(
       placement,
       offset,
       dismiss,
+      animate,
       className,
     };
 
@@ -66,11 +70,14 @@ Menu.propTypes = {
     "left",
     "left-end",
   ]),
-  offset: PropTypes.shape({
-    mainAxis: PropTypes.number,
-    crossAxis: PropTypes.number,
-    alignmentAxis: PropTypes.number,
-  }),
+  offset: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.shape({
+      mainAxis: PropTypes.number,
+      crossAxis: PropTypes.number,
+      alignmentAxis: PropTypes.number,
+    }),
+  ]),
   dismiss: PropTypes.shape({
     enabled: PropTypes.bool,
     escapeKey: PropTypes.bool,
@@ -78,6 +85,10 @@ Menu.propTypes = {
     outsidePointerDown: PropTypes.bool,
     ancestorScroll: PropTypes.bool,
     bubbles: PropTypes.bool,
+  }),
+  animate: PropTypes.shape({
+    mount: PropTypes.instanceOf(Object),
+    unmount: PropTypes.instanceOf(Object),
   }),
   className: PropTypes.string,
   children: PropTypes.node.isRequired,

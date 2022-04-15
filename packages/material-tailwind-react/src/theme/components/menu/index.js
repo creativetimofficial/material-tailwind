@@ -26,6 +26,7 @@ const menu = {
       bg: "bg-white",
       minWidth: "min-w-[180px]",
       p: "p-3",
+      border: "border border-blue-grey-50",
       borderRadius: "rounded-md",
       boxShadow: "shadow-lg shadow-blue-grey-50",
       fontFamily: "font-sans",
