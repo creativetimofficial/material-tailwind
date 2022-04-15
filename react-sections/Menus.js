@@ -17,6 +17,7 @@ export default function Menus() {
         placement="bottom"
         open={open}
         handler={setOpen}
+        offset={5}
       >
         <MenuItem onClick={closeMenu}>New tab</MenuItem>
         <MenuItem onClick={closeMenu}>New window</MenuItem>
@@ -24,9 +25,7 @@ export default function Menus() {
           open={open2}
           handler={setOpen2}
           placement="right"
-          offset={{
-            mainAxis: 15
-          }}
+          offset={15}
           node={<MenuItem>More Tabs</MenuItem>}
         >
           <MenuItem onClick={closeMenu2}>New tab</MenuItem>
