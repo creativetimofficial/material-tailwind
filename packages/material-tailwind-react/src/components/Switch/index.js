@@ -15,19 +15,16 @@ export const Switch = forwardRef(
     const { base, colors } = toggle.styles;
 
     // 2. set default props
-    color = color || defaultProps.color;
-    ripple = ripple === undefined ? defaultProps.ripple : ripple;
-    className = className || defaultProps.className;
+    color = color ?? defaultProps.color;
+    ripple = ripple ?? defaultProps.ripple;
+    className = className ?? defaultProps.className;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
     const rootClasses = classnames(objectsToString(base.root));
-    const containerClasses = classnames(
-      objectsToString(base.container),
-      containerProps && containerProps.className ? containerProps.className : "",
-    );
+    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const inputClasses = classnames(
       objectsToString(base.input),
       objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
@@ -37,13 +34,10 @@ export const Switch = forwardRef(
       objectsToString(base.circle),
       colors[findMatch(valid.colors, color, "light-blue")].circle,
       colors[findMatch(valid.colors, color, "light-blue")].before,
-      circleProps && circleProps.className ? circleProps.className : "",
+      circleProps?.className,
     );
     const rippleClasses = classnames(objectsToString(base.ripple));
-    const labelClasses = classnames(
-      objectsToString(base.label),
-      labelProps && labelProps.className ? labelProps.className : "",
-    );
+    const labelClasses = classnames(objectsToString(base.label), labelProps?.className);
 
     // 4. return
     return (
@@ -55,10 +49,7 @@ export const Switch = forwardRef(
               <div
                 className={rippleClasses}
                 onMouseDown={(e) => {
-                  const onMouseDown =
-                    containerProps && containerProps.onMouseDown
-                      ? containerProps.onMouseDown
-                      : undefined;
+                  const onMouseDown = containerProps?.onMouseDown;
 
                   if (ripple) {
                     rippleEffect.create(e, "dark");
