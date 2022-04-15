@@ -17,11 +17,11 @@ export const Alert = forwardRef(
     const rippleEffect = new Ripple();
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    color = color || defaultProps.color;
-    className = className || defaultProps.className;
-    animate = animate || defaultProps.animate;
-    show = show === undefined ? defaultProps.show : show;
+    variant = variant ?? defaultProps.variant;
+    color = color ?? defaultProps.color;
+    className = className ?? defaultProps.className;
+    animate = animate ?? defaultProps.animate;
+    show = show ?? defaultProps.show;
 
     // 3. set styles
     const alertBase = objectsToString(base);
