@@ -14,13 +14,13 @@ const Input = forwardRef(
     const { base, variants } = input.styles;
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    size = size || defaultProps.size;
-    color = color || defaultProps.color;
-    label = label || defaultProps.label;
-    labelProps = labelProps || defaultProps.labelProps;
-    className = className || defaultProps.className;
-    icon = icon || defaultProps.icon;
+    variant = variant ?? defaultProps.variant;
+    size = size ?? defaultProps.size;
+    color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    className = className ?? defaultProps.className;
+    icon = icon ?? defaultProps.icon;
 
     // 3. set styles
     const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -57,7 +57,7 @@ const Input = forwardRef(
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
-      labelProps && labelProps.className ? labelProps.className : "",
+      labelProps?.className,
     );
     const iconClasses = classnames(
       objectsToString(base.icon),
@@ -69,11 +69,7 @@ const Input = forwardRef(
     return (
       <div ref={ref} className={containerClasses}>
         {icon && <div className={iconClasses}>{icon}</div>}
-        <input
-          {...rest}
-          className={inputClasses}
-          placeholder={rest && rest.placeholder ? rest.placeholder : " "}
-        />
+        <input {...rest} className={inputClasses} placeholder={rest?.placeholder || " "} />
         <label className={labelClasses}>{label}</label>
       </div>
     );
