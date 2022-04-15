@@ -78,6 +78,7 @@ const select = {
         bg: "bg-white",
         mt: "mt-1",
         p: "p-3",
+        border: "border border-blue-grey-50",
         borderRadius: "rounded-md",
         boxShadow: "shadow-lg shadow-blue-grey-50",
         fontFamily: "font-sans",
