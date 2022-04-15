@@ -3,6 +3,10 @@ import avatar from "theme/components/avatar";
 import button from "theme/components/button";
 import checkbox from "theme/components/checkbox";
 import chip from "theme/components/chip";
+import dialog from "theme/components/dialog";
+import dialogBody from "theme/components/dialog/dialogBody";
+import dialogFooter from "theme/components/dialog/dialogFooter";
+import dialogHeader from "theme/components/dialog/dialogHeader";
 import iconButton from "theme/components/iconButton";
 import input from "theme/components/input";
 import menu from "theme/components/menu";
@@ -22,6 +26,10 @@ const theme = {
   button,
   checkbox,
   chip,
+  dialog,
+  dialogBody,
+  dialogFooter,
+  dialogHeader,
   iconButton,
   input,
   menu,

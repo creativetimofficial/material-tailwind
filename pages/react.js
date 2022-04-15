@@ -4,6 +4,7 @@ import Avatars from "/react-sections/Avatars";
 import Buttons from "/react-sections/Buttons";
 import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
+import Dialogs from "/react-sections/Dialogs";
 import IconButtons from "/react-sections/IconButtons";
 import Inputs from "/react-sections/Inputs";
 import Menus from "/react-sections/Menus";
@@ -59,6 +60,8 @@ export default function React() {
           <Popovers />
           <hr className="my-24" />
           <Tooltips />
+          <hr className="my-24" />
+          <Dialogs />
           <hr className="my-24" />
         </div>
       </div>
