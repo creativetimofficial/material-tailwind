@@ -14,12 +14,12 @@ export const Button = forwardRef(
     const { base, variants, sizes, fullWidth: block } = button.styles;
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    size = size || defaultProps.size;
-    color = color || defaultProps.color;
-    fullWidth = fullWidth || defaultProps.fullWidth;
-    ripple = ripple === undefined ? defaultProps.ripple : ripple;
-    className = className || defaultProps.className;
+    variant = variant ?? defaultProps.variant;
+    size = size ?? defaultProps.size;
+    color = color ?? defaultProps.color;
+    fullWidth = fullWidth ?? defaultProps.fullWidth;
+    ripple = ripple ?? defaultProps.ripple;
+    className = className ?? defaultProps.className;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -48,7 +48,7 @@ export const Button = forwardRef(
         {...rest}
         type={rest.type || "button"}
         onMouseDown={(e) => {
-          const { onMouseDown } = rest || undefined;
+          const onMouseDown = rest?.onMouseDown;
 
           if (ripple) {
             rippleEffect.create(
