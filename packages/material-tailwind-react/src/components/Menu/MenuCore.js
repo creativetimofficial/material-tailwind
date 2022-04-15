@@ -65,11 +65,13 @@ const MenuCore = forwardRef(
         opacity: 0,
         transformOrigin: "top",
         transform: "scale(0.95)",
+        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
         opacity: 1,
         transformOrigin: "top",
         transform: "scale(1)",
+        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
     const appliedAnimation = merge(animation, animate);
@@ -191,7 +193,6 @@ const MenuCore = forwardRef(
                   exit: "unmount",
                   animate: open ? "mount" : "unmount",
                   variants: appliedAnimation,
-                  transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
                 })}
               >
                 {Children.map(
