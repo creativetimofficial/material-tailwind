@@ -1,11 +1,7 @@
 const popover = {
   defaultProps: {
     placement: "bottom-start",
-    offset: {
-      mainAxis: 0,
-      crossAxis: 0,
-      alignmentAxis: 0,
-    },
+    offset: 5,
     dismiss: {},
     animate: {
       unmount: {

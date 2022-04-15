@@ -17,7 +17,6 @@ export default function Popovers() {
           open={pTop}
           handler={setPTop}
           placement="top"
-          offset={5}
         >
           This is a very beautiful popover, show some love.
         </Popover>
@@ -26,7 +25,6 @@ export default function Popovers() {
           open={pRight}
           handler={setPRight}
           placement="right"
-          offset={5}
         >
           This is a very beautiful popover, show some love.
         </Popover>
@@ -35,7 +33,6 @@ export default function Popovers() {
           open={pBottom}
           handler={setPBottom}
           placement="bottom"
-          offset={5}
         >
           This is a very beautiful popover, show some love.
         </Popover>
@@ -44,7 +41,6 @@ export default function Popovers() {
           open={pLeft}
           handler={setPLeft}
           placement="left"
-          offset={5}
         >
           This is a very beautiful popover, show some love.
         </Popover>
