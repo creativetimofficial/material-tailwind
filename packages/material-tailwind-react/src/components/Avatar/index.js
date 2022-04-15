@@ -14,9 +14,9 @@ export const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) =>
   const { base, variants, sizes } = avatar.styles;
 
   // 2. set default props
-  variant = variant || defaultProps.variant;
-  size = size || defaultProps.size;
-  className = className || defaultProps.className;
+  variant = variant ?? defaultProps.variant;
+  size = size ?? defaultProps.size;
+  className = className ?? defaultProps.className;
 
   // 3. set styles
   const avatarVariant = variants[findMatch(valid.variants, variant, "rounded")];
