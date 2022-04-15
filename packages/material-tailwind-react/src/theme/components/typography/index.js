@@ -17,7 +17,7 @@ const alert = {
       h1: {
         display: "block",
         fontSmoothing: "antialiased",
-        wordSpacing: "-tracking-tighter",
+        wordSpacing: "tracking-tighter",
         fontFamily: "font-serif",
         fontSize: "text-5xl",
         fontWeight: "font-semibold",
@@ -26,7 +26,7 @@ const alert = {
       h2: {
         display: "block",
         fontSmoothing: "antialiased",
-        wordSpacing: "-tracking-tighter",
+        wordSpacing: "tracking-tighter",
         fontFamily: "font-serif",
         fontSize: "text-4xl",
         fontWeight: "font-semibold",
@@ -35,7 +35,7 @@ const alert = {
       h3: {
         display: "block",
         fontSmoothing: "antialiased",
-        wordSpacing: "-tracking-tighter",
+        wordSpacing: "tracking-tighter",
         fontFamily: "font-serif",
         fontSize: "text-3xl",
         fontWeight: "font-semibold",
@@ -44,7 +44,7 @@ const alert = {
       h4: {
         display: "block",
         fontSmoothing: "antialiased",
-        wordSpacing: "-tracking-tighter",
+        wordSpacing: "tracking-tighter",
         fontFamily: "font-sans",
         fontSize: "text-2xl",
         fontWeight: "font-semibold",
