@@ -10,10 +10,11 @@ import Menus from "/react-sections/Menus";
 import Popovers from "/react-sections/Popovers";
 import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
+import Selects from "/react-sections/Selects";
 import Switches from "/react-sections/Switches";
 import Textareas from "/react-sections/Textareas";
+import Tooltips from "/react-sections/Tooltips";
 import Typos from "/react-sections/Typos";
-import Selects from "/react-sections/Selects";
 
 export default function React() {
   return (
@@ -56,6 +57,8 @@ export default function React() {
           <Menus />
           <hr className="my-24" />
           <Popovers />
+          <hr className="my-24" />
+          <Tooltips />
           <hr className="my-24" />
         </div>
       </div>

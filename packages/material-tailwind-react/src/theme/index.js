@@ -13,6 +13,7 @@ import radio from "theme/components/radio";
 import select from "theme/components/select";
 import switchButton from "theme/components/switch";
 import textarea from "theme/components/textarea";
+import tooltip from "theme/components/tooltip";
 import typography from "theme/components/typography";
 
 const theme = {
@@ -31,6 +32,7 @@ const theme = {
   select,
   switch: switchButton,
   textarea,
+  tooltip,
   typography,
 };
 
