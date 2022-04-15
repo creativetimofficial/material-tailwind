@@ -13,11 +13,11 @@ export const Progress = forwardRef(
     const { base, variants, withLabel } = progress.styles;
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    color = color || defaultProps.color;
-    label = label || defaultProps.label;
-    className = className || defaultProps.className;
-    barProps = barProps || defaultProps.barProps;
+    variant = variant ?? defaultProps.variant;
+    color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    className = className ?? defaultProps.className;
+    barProps = barProps ?? defaultProps.barProps;
 
     // 3. set styles
     const progressVariant = objectsToString(
@@ -33,11 +33,7 @@ export const Progress = forwardRef(
       { [progressWithLabel]: label },
       className,
     );
-    const barClasses = classnames(
-      progressBar,
-      progressVariant,
-      barProps && barProps.className ? barProps.className : "",
-    );
+    const barClasses = classnames(progressBar, progressVariant, barProps?.className);
 
     // 4. return
     return (
