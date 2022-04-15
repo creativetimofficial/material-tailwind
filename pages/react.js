@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import Alerts from "/react-sections/Alerts";
 import Avatars from "/react-sections/Avatars";
 import Buttons from "/react-sections/Buttons";
@@ -7,6 +6,7 @@ import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
 import IconButtons from "/react-sections/IconButtons";
 import Inputs from "/react-sections/Inputs";
+import Menus from "/react-sections/Menus";
 import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
 import Switches from "/react-sections/Switches";
@@ -51,6 +51,8 @@ export default function React() {
           <Textareas />
           <hr className="my-24" />
           <Selects />
+          <hr className="my-24" />
+          <Menus />
           <hr className="my-24" />
         </div>
       </div>

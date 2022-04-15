@@ -5,6 +5,8 @@ import checkbox from "theme/components/checkbox";
 import chip from "theme/components/chip";
 import iconButton from "theme/components/iconButton";
 import input from "theme/components/input";
+import menu from "theme/components/menu";
+import menuItem from "theme/components/menu/menuItem";
 import progress from "theme/components/progress";
 import radio from "theme/components/radio";
 import select from "theme/components/select";
@@ -20,6 +22,8 @@ const theme = {
   chip,
   iconButton,
   input,
+  menu,
+  menuItem,
   progress,
   radio,
   select,
