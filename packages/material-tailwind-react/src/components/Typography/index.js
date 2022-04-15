@@ -13,10 +13,10 @@ export const Typography = forwardRef(
     const { variants, colors, textGradient: gradient } = typography.styles;
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    color = color || defaultProps.color;
-    textGradient = textGradient || defaultProps.textGradient;
-    className = className || defaultProps.className;
+    variant = variant ?? defaultProps.variant;
+    color = color ?? defaultProps.color;
+    textGradient = textGradient ?? defaultProps.textGradient;
+    className = className ?? defaultProps.className;
 
     // 3 set styles
     const typographyVariant = objectsToString(
