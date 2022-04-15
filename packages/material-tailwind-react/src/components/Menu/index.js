@@ -13,10 +13,10 @@ const Menu = forwardRef(
     const { defaultProps } = menu;
 
     // 2. set default props
-    placement = placement || defaultProps.placement;
-    offset = offset || defaultProps.offset;
-    dismiss = dismiss || defaultProps.dismiss;
-    className = className || defaultProps.className;
+    placement = placement ?? defaultProps.placement;
+    offset = offset ?? defaultProps.offset;
+    dismiss = dismiss ?? defaultProps.dismiss;
+    className = className ?? defaultProps.className;
 
     // 3. set props object
     const props = {

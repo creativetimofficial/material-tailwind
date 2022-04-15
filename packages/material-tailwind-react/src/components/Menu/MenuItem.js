@@ -13,8 +13,8 @@ const MenuItem = forwardRef(({ className, disabled, children, ...rest }, ref) =>
   } = menuItem;
 
   // 2. set default props
-  className = className || defaultProps.className;
-  disabled = disabled || defaultProps.disabled;
+  className = className ?? defaultProps.className;
+  disabled = disabled ?? defaultProps.disabled;
 
   // 3. set styles
   const menuItemClasses = classnames(

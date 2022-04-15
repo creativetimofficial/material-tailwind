@@ -50,11 +50,11 @@ const MenuCore = forwardRef(
     } = menu;
 
     // 2. set default props
-    placement = placement || defaultProps.placement;
-    offset = offset || defaultProps.offset;
-    dismiss = dismiss || defaultProps.dismiss;
-    animate = animate || defaultProps.animate;
-    className = className || defaultProps.className;
+    placement = placement ?? defaultProps.placement;
+    offset = offset ?? defaultProps.offset;
+    dismiss = dismiss ?? defaultProps.dismiss;
+    animate = animate ?? defaultProps.animate;
+    className = className ?? defaultProps.className;
 
     // 3. set styles
     const menuClasses = classnames(objectsToString(base), className);
