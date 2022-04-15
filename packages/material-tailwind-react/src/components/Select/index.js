@@ -23,6 +23,7 @@ SelectContext.displayName = "SelectContextProvider";
 
 const Option = forwardRef(({ disabled, value, children, ...rest }, ref) => {
   const { getItemProps } = useContext(SelectContext);
+
   return (
     <li
       {...getItemProps({
