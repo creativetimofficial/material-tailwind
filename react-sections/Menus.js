@@ -17,7 +17,6 @@ export default function Menus() {
         placement="bottom"
         open={open}
         handler={setOpen}
-        offset={5}
       >
         <MenuItem onClick={closeMenu}>New tab</MenuItem>
         <MenuItem onClick={closeMenu}>New window</MenuItem>
