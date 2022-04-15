@@ -1,4 +1,4 @@
-import Select, { Option } from "components/Select";
+import { Select, Option } from "components/Select";
 
 export default function Selects() {
   return (

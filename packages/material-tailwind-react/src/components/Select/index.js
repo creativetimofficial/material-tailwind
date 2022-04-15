@@ -107,14 +107,14 @@ const Select = forwardRef(
     }, [closeMenu, open, openMenu]);
 
     // 2. set default props
-    variant = variant || defaultProps.variant;
-    size = size || defaultProps.size;
-    color = color || defaultProps.color;
-    label = label || defaultProps.label;
-    arrow = arrow === undefined ? defaultProps.arrow : arrow;
-    labelProps = labelProps || defaultProps.labelProps;
-    menuProps = menuProps || defaultProps.menuProps;
-    className = className || defaultProps.className;
+    variant = variant ?? defaultProps.variant;
+    size = size ?? defaultProps.size;
+    color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    arrow = arrow ?? defaultProps.arrow;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    menuProps = menuProps ?? defaultProps.menuProps;
+    className = className ?? defaultProps.className;
 
     // 3. set styles
     const selectVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -153,15 +153,12 @@ const Select = forwardRef(
       { [objectsToString(labelError.states[state])]: error },
       { [objectsToString(labelSuccess.base)]: success },
       { [objectsToString(labelSuccess.states[state])]: success },
-      labelProps && labelProps.className ? labelProps.className : "",
+      labelProps.className ?? "",
     );
     const arrowClasses = classnames(objectsToString(base.arrow.base), {
       [objectsToString(base.arrow.active)]: state === "open",
     });
-    const menuClasses = classnames(
-      objectsToString(base.menu),
-      menuProps && menuProps.className ? menuProps.className : "",
-    );
+    const menuClasses = classnames(objectsToString(base.menu), menuProps.className ?? "");
     const optionClasses = objectsToString(base.option);
     const optionActiveClasses = objectsToString(base.optionActive);
     const optionDisabledClasses = objectsToString(base.optionDisabled);
@@ -179,10 +176,7 @@ const Select = forwardRef(
         transform: "scale(1)",
       },
     };
-    const appliedAnimation = merge(
-      animation,
-      menuProps && menuProps.animate ? menuProps.animate : {},
-    );
+    const appliedAnimation = merge(animation, menuProps.animate ?? {});
 
     const contextValue = useMemo(
       () => ({ getItemProps, highlightedIndex, onHighlightedIndexChange }),
@@ -237,10 +231,10 @@ const Select = forwardRef(
                       className: classnames(
                         optionClasses,
                         {
-                          [optionDisabledClasses]: child.props.disabled,
+                          [optionDisabledClasses]: child.props?.disabled,
                           [optionActiveClasses]: highlightedIndex === index,
                         },
-                        child.props.className,
+                        child.props?.className,
                       ),
                     }),
                   )}
@@ -295,5 +289,5 @@ Select.displayName = "Select";
 Option.displayName = "Option";
 Select.Option = Option;
 
-export { Option };
+export { Select, Option };
 export default Select;

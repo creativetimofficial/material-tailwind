@@ -102,7 +102,7 @@ const select = {
         color: "text-blue-grey-900",
       },
       optionDisabled: {
-        bg: "opacity-50",
+        opacity: "opacity-50",
         cursor: "cursor-not-allowed",
         userSelect: "select-none",
       },
