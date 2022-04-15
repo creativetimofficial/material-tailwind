@@ -15,28 +15,22 @@ export const Radio = forwardRef(
     const { base, colors } = radio.styles;
 
     // 2. set default props
-    color = color || defaultProps.color;
-    ripple = ripple === undefined ? defaultProps.ripple : ripple;
-    className = className || defaultProps.className;
+    color = color ?? defaultProps.color;
+    ripple = ripple ?? defaultProps.ripple;
+    className = className ?? defaultProps.className;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
     const rootClasses = classnames(objectsToString(base.root));
-    const containerClasses = classnames(
-      objectsToString(base.container),
-      containerProps && containerProps.className ? containerProps.className : "",
-    );
+    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const inputClasses = classnames(
       objectsToString(base.input),
       objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
       className,
     );
-    const labelClasses = classnames(
-      objectsToString(base.label),
-      labelProps && labelProps.className ? labelProps.className : "",
-    );
+    const labelClasses = classnames(objectsToString(base.label), labelProps?.className);
     const radioIconClasses = classnames(
       "absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity",
       colors[findMatch(valid.colors, color, "light-blue")].color,
@@ -49,8 +43,7 @@ export const Radio = forwardRef(
           className={containerClasses}
           htmlFor={rest.id || "radio"}
           onMouseDown={(e) => {
-            const onMouseDown =
-              containerProps && containerProps.onMouseDown ? containerProps.onMouseDown : undefined;
+            const onMouseDown = containerProps?.onMouseDown;
 
             if (ripple) {
               rippleEffect.create(e, "dark");
