@@ -2,12 +2,16 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
 
-export const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) => {
+const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) => {
   // 1. init
   const { avatar } = useTheme();
   const { valid, defaultProps } = avatar;
