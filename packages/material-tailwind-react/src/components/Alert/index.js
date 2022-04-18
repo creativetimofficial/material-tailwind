@@ -1,11 +1,17 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import merge from "deepmerge";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
 
 export const Alert = forwardRef(
