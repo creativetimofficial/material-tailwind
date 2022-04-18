@@ -1,16 +1,20 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const Checkbox = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const Checkbox = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
     // 1. init
-    const { checkbox } = useContext(MaterialTailwindTheme);
+    const { checkbox } = useTheme();
     const { defaultProps, valid } = checkbox;
     const { base, colors } = checkbox.styles;
 
