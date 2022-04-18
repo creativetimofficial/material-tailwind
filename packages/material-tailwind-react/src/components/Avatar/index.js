@@ -24,7 +24,7 @@ export const Avatar = forwardRef(({ variant, size, className, ...rest }, ref) =>
   const classes = classnames(objectsToString(base), avatarVariant, avatarSize, className);
 
   // 4. return
-  return <img ref={ref} className={classes} {...rest} />;
+  return <img {...rest} ref={ref} className={classes} />;
 });
 
 Avatar.propTypes = {

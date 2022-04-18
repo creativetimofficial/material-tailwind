@@ -60,13 +60,13 @@ export const Chip = forwardRef(
     return (
       <AnimatePresence>
         <motion.div
+          {...rest}
           ref={ref}
           className={classes}
           initial="unmount"
           exit="unmount"
           animate={show ? "mount" : "unmount"}
           variants={appliedAnimation}
-          {...rest}
         >
           {icon && iconTemplate}
           <div className={`${icon ? "ml-4" : ""} ${dismissible ? "mr-5" : ""} mt-px`}>{value}</div>

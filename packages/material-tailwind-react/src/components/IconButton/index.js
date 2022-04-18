@@ -36,9 +36,9 @@ export const IconButton = forwardRef(
     // 5. return
     return (
       <button
+        {...rest}
         ref={ref}
         className={classes}
-        {...rest}
         type={rest.type || "button"}
         onMouseDown={(e) => {
           const onMouseDown = rest?.onMouseDown;
