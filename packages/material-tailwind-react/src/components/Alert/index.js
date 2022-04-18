@@ -14,7 +14,7 @@ import objectsToString from "utils/objectsToString";
 // context
 import { useTheme } from "context/theme";
 
-export const Alert = forwardRef(
+const Alert = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
     // 1. init
     const { alert } = useTheme();
