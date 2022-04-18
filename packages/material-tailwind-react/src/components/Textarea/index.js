@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
+
+// context
+import { useTheme } from "context/theme";
 
 const Textarea = forwardRef(
   (
@@ -12,7 +16,7 @@ const Textarea = forwardRef(
     ref,
   ) => {
     // 1. init
-    const { textarea } = useContext(MaterialTailwindTheme);
+    const { textarea } = useTheme();
     const { defaultProps, valid } = textarea;
     const { base, variants } = textarea.styles;
 
