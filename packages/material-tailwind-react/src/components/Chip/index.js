@@ -1,17 +1,23 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import merge from "deepmerge";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const Chip = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const Chip = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {
     // 1. init
-    const { chip } = useContext(MaterialTailwindTheme);
+    const { chip } = useTheme();
     const { defaultProps, valid } = chip;
     const { base, variants, closeButtonColor } = chip.styles;
     const rippleEffect = new Ripple();
