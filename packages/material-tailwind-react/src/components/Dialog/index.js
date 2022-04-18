@@ -50,16 +50,14 @@ const Dialog = forwardRef(
     const animation = {
       unmount: {
         opacity: 0,
-        transformOrigin: "top",
-        transform: "translateY(-50px)",
+        y: -50,
         transition: {
           duration: 0.3,
         },
       },
       mount: {
         opacity: 1,
-        transformOrigin: "top",
-        transform: "translateY(0px)",
+        y: 0,
         transition: {
           duration: 0.3,
         },
