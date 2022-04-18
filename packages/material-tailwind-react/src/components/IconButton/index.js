@@ -1,15 +1,19 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const IconButton = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const IconButton = forwardRef(
   ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
     // 1. init
-    const { iconButton } = useContext(MaterialTailwindTheme);
+    const { iconButton } = useTheme();
     const { valid, defaultProps } = iconButton;
     const { base, variants, sizes } = iconButton.styles;
 
