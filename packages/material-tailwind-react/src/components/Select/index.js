@@ -1,52 +1,25 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, {
-  forwardRef,
-  useContext,
-  createContext,
-  useState,
-  useEffect,
-  useMemo,
-  cloneElement,
-  Children,
-} from "react";
+import React, { forwardRef, useState, useEffect, useMemo, cloneElement, Children } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// downshift
 import { useSelect } from "downshift";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
+
+// utils
+import classnames from "classnames";
 import merge from "deepmerge";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
+import { SelectContextProvider } from "components/Select/SelectContext";
 
-const SelectContext = createContext(null);
-SelectContext.displayName = "SelectContextProvider";
-
-const Option = forwardRef(({ disabled, value, children, ...rest }, ref) => {
-  const { getItemProps } = useContext(SelectContext);
-
-  return (
-    <li
-      {...getItemProps({
-        ref,
-        disabled,
-        ...rest,
-      })}
-    >
-      {children}
-    </li>
-  );
-});
-
-Option.defaultProps = {
-  disabled: false,
-  value: "",
-};
-
-Option.propTypes = {
-  disabled: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  children: PropTypes.node.isRequired,
-};
+// select components
+import SelectOption from "components/Select/SelectOption";
 
 const Select = forwardRef(
   (
@@ -188,7 +161,7 @@ const Select = forwardRef(
 
     // 5. return
     return (
-      <SelectContext.Provider value={contextValue}>
+      <SelectContextProvider value={contextValue}>
         <div ref={ref} className={containerClasses}>
           <button type="button" {...getToggleButtonProps({ ...rest, className: selectClasses })}>
             <span
@@ -245,7 +218,7 @@ const Select = forwardRef(
             </AnimatePresence>
           </div>
         </div>
-      </SelectContext.Provider>
+      </SelectContextProvider>
     );
   },
 );
@@ -288,8 +261,8 @@ Select.propTypes = {
 };
 
 Select.displayName = "Select";
-Option.displayName = "Option";
-Select.Option = Option;
 
-export { Select, Option };
+Select.Option = SelectOption;
+
+export { Select, SelectOption as Option };
 export default Select;
