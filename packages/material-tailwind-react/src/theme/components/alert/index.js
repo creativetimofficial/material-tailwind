@@ -13,12 +13,8 @@ const alert = {
       onClose: () => {},
     },
     animate: {
-      unmount: {
-        opacity: 0,
-      },
-      mount: {
-        opacity: 1,
-      },
+      unmount: {},
+      mount: {},
     },
     className: "",
   },

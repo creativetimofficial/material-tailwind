@@ -3,16 +3,8 @@ const dialog = {
     size: "md",
     dismiss: {},
     animate: {
-      unmount: {
-        opacity: 0,
-        transformOrigin: "top",
-        transform: "translateY(-50px)",
-      },
-      mount: {
-        opacity: 1,
-        transformOrigin: "top",
-        transform: "translateY(0px)",
-      },
+      unmount: {},
+      mount: {},
     },
     className: "",
   },
