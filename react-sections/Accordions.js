@@ -76,7 +76,7 @@ export default function Accordions() {
             to do the best way I know how.
           </AccordionBody>
         </Accordion>
-        <Accordion open={open === 5} onClick={() => handleOpen(5)}>
+        <Accordion open={open === 5} onClick={() => handleOpen(5)} disabled>
           <AccordionHeader>
             Where do I find the shipping details?
           </AccordionHeader>

@@ -146,34 +146,41 @@ AccordionBody.propTypes = {
 
 AccordionBody.displayName = "AccordionBody";
 
-const Accordion = forwardRef(({ open, icon, animate, className, children, ...rest }, ref) => {
-  // 1. init
-  const { accordion } = useTheme();
-  const {
-    defaultProps,
-    styles: { base },
-  } = accordion;
+const Accordion = forwardRef(
+  ({ open, icon, animate, className, disabled, children, ...rest }, ref) => {
+    // 1. init
+    const { accordion } = useTheme();
+    const {
+      defaultProps,
+      styles: { base },
+    } = accordion;
 
-  // 2. set default props
-  icon = icon ?? defaultProps.icon;
-  animate = animate ?? defaultProps.animate;
-  className = className ?? defaultProps.className;
+    // 2. set default props
+    icon = icon ?? defaultProps.icon;
+    animate = animate ?? defaultProps.animate;
+    className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
 
-  // 3. set styles
-  const accordionClasses = classnames(objectsToString(base.container), className);
+    // 3. set styles
+    const accordionClasses = classnames(
+      objectsToString(base.container),
+      { [objectsToString(base.disabled)]: disabled },
+      className,
+    );
 
-  // 4. memoize context value
-  const contextValue = useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
+    // 4. memoize context value
+    const contextValue = useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
 
-  // 5. return
-  return (
-    <AccordionContext.Provider value={contextValue}>
-      <div {...rest} ref={ref} className={accordionClasses}>
-        {children}
-      </div>
-    </AccordionContext.Provider>
-  );
-});
+    // 5. return
+    return (
+      <AccordionContext.Provider value={contextValue}>
+        <div {...rest} ref={ref} className={accordionClasses} disabled={disabled}>
+          {children}
+        </div>
+      </AccordionContext.Provider>
+    );
+  },
+);
 
 Accordion.propTypes = {
   open: PropTypes.bool.isRequired,
@@ -182,6 +189,7 @@ Accordion.propTypes = {
     mount: PropTypes.instanceOf(Object),
     unmount: PropTypes.instanceOf(Object),
   }),
+  disabled: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };

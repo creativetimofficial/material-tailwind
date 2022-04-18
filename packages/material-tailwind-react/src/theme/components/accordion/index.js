@@ -27,6 +27,7 @@ const accordion = {
           fontSize: "text-xl",
           fontWeight: "font-semibold",
           lineHeight: "leading-snug",
+          userSelect: "select-none",
           hover: "hover:text-blue-grey-900",
           transition: "transition-colors",
         },
@@ -47,6 +48,10 @@ const accordion = {
         fontSize: "text-sm",
         fontWeight: "font-light",
         lineHeight: "leading-normal",
+      },
+      disabled: {
+        pointerEvents: "pointer-events-none",
+        opacity: "opacity-50",
       },
     },
   },
