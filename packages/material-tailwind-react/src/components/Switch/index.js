@@ -1,16 +1,20 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const Switch = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const Switch = forwardRef(
   ({ color, label, ripple, className, containerProps, circleProps, labelProps, ...rest }, ref) => {
     // 1. init
-    const { switch: toggle } = useContext(MaterialTailwindTheme);
+    const { switch: toggle } = useTheme();
     const { defaultProps, valid } = toggle;
     const { base, colors } = toggle.styles;
 
