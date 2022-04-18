@@ -1,12 +1,16 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
+
+// utils
 import Ripple from "material-ripple-effects";
+import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
 
-export const Button = forwardRef(
+const Button = forwardRef(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
     // 1. init
     const { button } = useTheme();
