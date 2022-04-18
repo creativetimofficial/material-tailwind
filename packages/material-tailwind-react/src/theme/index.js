@@ -1,3 +1,4 @@
+import accordion from "theme/components/accordion";
 import alert from "theme/components/alert";
 import avatar from "theme/components/avatar";
 import button from "theme/components/button";
@@ -21,6 +22,7 @@ import tooltip from "theme/components/tooltip";
 import typography from "theme/components/typography";
 
 const theme = {
+  accordion,
   alert,
   avatar,
   button,

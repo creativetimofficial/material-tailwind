@@ -1,4 +1,6 @@
 import Head from "next/head";
+
+import Accordions from "/react-sections/Accordions";
 import Alerts from "/react-sections/Alerts";
 import Avatars from "/react-sections/Avatars";
 import Buttons from "/react-sections/Buttons";
@@ -62,6 +64,8 @@ export default function React() {
           <Tooltips />
           <hr className="my-24" />
           <Dialogs />
+          <hr className="my-24" />
+          <Accordions />
           <hr className="my-24" />
         </div>
       </div>
