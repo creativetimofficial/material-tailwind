@@ -1,7 +1,13 @@
-import React, { forwardRef } from "react";
-import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react-dom-interactions";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// @floating-ui
+import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react-dom-interactions";
+
+// context
 import { useTheme } from "context/theme";
+
+// menu components
 import MenuCore from "components/Menu/MenuCore";
 import MenuItem from "components/Menu/MenuItem";
 

@@ -8,6 +8,9 @@ import React, {
   useRef,
   useState,
 } from "react";
+import PropTypes from "prop-types";
+
+// @floating-ui
 import {
   useFloating,
   useFloatingTree,
@@ -29,12 +32,17 @@ import {
   useTypeahead,
   autoUpdate,
 } from "@floating-ui/react-dom-interactions";
-import mergeRefs from "react-merge-refs";
-import PropTypes from "prop-types";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
+
+// utils
+import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
 
 const MenuCore = forwardRef(
