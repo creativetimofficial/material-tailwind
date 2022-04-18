@@ -1,4 +1,7 @@
 import { forwardRef, cloneElement, useMemo } from "react";
+import PropTypes from "prop-types";
+
+// @floating-ui
 import {
   useFloating,
   useInteractions,
@@ -10,14 +13,21 @@ import {
   FloatingPortal,
   FloatingOverlay,
 } from "@floating-ui/react-dom-interactions";
-import mergeRefs from "react-merge-refs";
-import PropTypes from "prop-types";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
+
+// utils
+import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
+
+// dialog components
 import DialogHeader from "components/Dialog/DialogHeader";
 import DialogBody from "components/Dialog/DialogBody";
 import DialogFooter from "components/Dialog/DialogFooter";

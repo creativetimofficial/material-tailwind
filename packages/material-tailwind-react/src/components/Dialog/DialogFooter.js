@@ -1,7 +1,11 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import objectsToString from "utils/objectsToString";
+
+// context
 import { useTheme } from "context/theme";
 
 const DialogFooter = forwardRef(({ className, children, ...rest }, ref) => {
