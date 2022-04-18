@@ -1,14 +1,18 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const Progress = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const Progress = forwardRef(
   ({ variant, color, value, label, className, barProps, ...rest }, ref) => {
     // 1. init
-    const { progress } = useContext(MaterialTailwindTheme);
+    const { progress } = useTheme();
     const { defaultProps, valid } = progress;
     const { base, variants, withLabel } = progress.styles;
 
