@@ -51,6 +51,7 @@ export const Alert = forwardRef(
       <AnimatePresence>
         {show && (
           <motion.div
+            {...rest}
             ref={ref}
             role="alert"
             className={classes}
@@ -58,7 +59,6 @@ export const Alert = forwardRef(
             exit="unmount"
             animate={show ? "mount" : "unmount"}
             variants={appliedAnimation}
-            {...rest}
           >
             {icon && iconTemplate}
             <div className={`${icon ? "ml-8" : ""} mr-12`}>{children}</div>
