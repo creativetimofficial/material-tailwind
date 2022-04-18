@@ -1,15 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
+
+// context
+import { useTheme } from "context/theme";
 
 const Input = forwardRef(
   ({ variant, color, size, label, error, success, icon, labelProps, className, ...rest }, ref) => {
     // 1. init
-    const { input } = useContext(MaterialTailwindTheme);
+    const { input } = useTheme();
     const { defaultProps, valid } = input;
     const { base, variants } = input.styles;
 
@@ -39,7 +43,6 @@ const Input = forwardRef(
       objectsToString(base.container),
       objectsToString(inputSize.container),
     );
-
     const inputClasses = classnames(
       objectsToString(base.input),
       objectsToString(inputVariant.base.input),
