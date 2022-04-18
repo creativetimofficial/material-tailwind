@@ -1,14 +1,18 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+
+// utils
 import classnames from "classnames";
 import findMatch from "utils/findMatch";
 import objectsToString from "utils/objectsToString";
-import { MaterialTailwindTheme } from "context/theme";
 
-export const Typography = forwardRef(
+// context
+import { useTheme } from "context/theme";
+
+const Typography = forwardRef(
   ({ variant, color, textGradient, className, children, ...rest }, ref) => {
     // 1. init
-    const { typography } = useContext(MaterialTailwindTheme);
+    const { typography } = useTheme();
     const { defaultProps, valid } = typography;
     const { variants, colors, textGradient: gradient } = typography.styles;
 
@@ -18,7 +22,7 @@ export const Typography = forwardRef(
     textGradient = textGradient ?? defaultProps.textGradient;
     className = className ?? defaultProps.className;
 
-    // 3 set styles
+    // 3. set styles
     const typographyVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "paragraph")],
     );
@@ -32,6 +36,7 @@ export const Typography = forwardRef(
       className,
     );
 
+    // 4. set variant
     let template;
 
     switch (variant) {
@@ -107,6 +112,7 @@ export const Typography = forwardRef(
         break;
     }
 
+    // 5. return
     return template;
   },
 );
