@@ -8,7 +8,7 @@ function useSelect() {
   const context = useContext(SelectContext);
 
   if (context === null) {
-    throw new Error("useSelect must be used within a SelectContextProvider");
+    throw new Error("useSelect() must be used within a Select");
   }
 
   return context;
