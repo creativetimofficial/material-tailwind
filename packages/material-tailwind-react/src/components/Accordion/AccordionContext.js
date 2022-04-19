@@ -8,7 +8,7 @@ function useAccordion() {
   const context = useContext(AccordionContext);
 
   if (!context) {
-    throw new Error("useAccordion must be used within an Accordion.");
+    throw new Error("useAccordion() must be used within an Accordion.");
   }
 
   return context;
