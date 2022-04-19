@@ -38,7 +38,7 @@ const textarea = {
         fontWeight: "font-light",
         outline: "outline-0 focus:outlined-0",
         resize: "resize-y",
-        disabled: "disabled:bg-blue-grey-100 disabled:border-0 disabled:resize-none",
+        disabled: "disabled:bg-blue-grey-50 disabled:border-0 disabled:resize-none",
         transition: "transition-all",
       },
       label: {

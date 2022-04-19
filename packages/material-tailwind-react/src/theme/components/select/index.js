@@ -39,7 +39,7 @@ const select = {
         fontWeight: "font-light",
         textAlign: "text-left",
         outline: "outline-0 focus:outlined-0",
-        disabled: "disabled:bg-blue-grey-100 disabled:border-0",
+        disabled: "disabled:bg-blue-grey-50 disabled:border-0",
         transition: "transition-all",
       },
       arrow: {

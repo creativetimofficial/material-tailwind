@@ -91,8 +91,8 @@ const inputOutlinedLabelColors = {
   },
   red: {
     color: "text-blue-grey-400 peer-focus:text-red-500",
-    before: "before:border-red-500 peer-focus:before:border-red-500",
-    after: "after:border-red-500 peer-focus:after:border-red-500",
+    before: "before:border-blue-grey-200 peer-focus:before:border-red-500",
+    after: "after:border-blue-grey-200 peer-focus:after:border-red-500",
   },
 };
 

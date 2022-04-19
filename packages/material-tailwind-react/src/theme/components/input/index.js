@@ -36,7 +36,7 @@ const input = {
         fontFamily: "font-sans",
         fontWeight: "font-light",
         outline: "outline-0 focus:outlined-0",
-        disabled: "disabled:bg-blue-grey-100 disabled:border-0",
+        disabled: "disabled:bg-blue-grey-50 disabled:border-0",
         transition: "transition-all",
       },
       label: {
