@@ -13,8 +13,8 @@ const Progress = forwardRef(
   ({ variant, color, value, label, className, barProps, ...rest }, ref) => {
     // 1. init
     const { progress } = useTheme();
-    const { defaultProps, valid } = progress;
-    const { base, variants, withLabel } = progress.styles;
+    const { defaultProps, valid, styles } = progress;
+    const { base, variants, withLabel } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;

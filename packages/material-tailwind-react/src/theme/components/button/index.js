@@ -20,14 +20,20 @@ const button = {
   },
   styles: {
     base: {
-      display: "inline-block",
-      verticalAlign: "middle",
-      userSelect: "none",
-      fontFamily: "font-sans",
-      fontWeight: "font-medium",
-      textAlign: "center",
-      textTransform: "uppercase",
-      transition: "transition-all",
+      initial: {
+        display: "inline-block",
+        verticalAlign: "middle",
+        userSelect: "none",
+        fontFamily: "font-sans",
+        fontWeight: "font-medium",
+        textAlign: "center",
+        textTransform: "uppercase",
+        transition: "transition-all",
+      },
+      fullWidth: {
+        display: "block",
+        width: "w-full",
+      },
     },
     sizes: {
       sm: {
@@ -55,7 +61,6 @@ const button = {
       outlined: buttonOutlined,
       text: buttonText,
     },
-    fullWidth: "block w-full",
   },
 };
 

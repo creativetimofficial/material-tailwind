@@ -15,8 +15,8 @@ const Radio = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
     // 1. init
     const { radio } = useTheme();
-    const { defaultProps, valid } = radio;
-    const { base, colors } = radio.styles;
+    const { defaultProps, valid, styles } = radio;
+    const { base, colors } = styles;
 
     // 2. set default props
     color = color ?? defaultProps.color;

@@ -7,7 +7,7 @@ const popover = {
   styles: {
     base: {
       root: {
-        base: {
+        initial: {
           width: "w-max",
         },
         fullWidth: { display: "block", width: "w-full" },
@@ -24,7 +24,7 @@ const popover = {
         borderRadius: "rounded-md",
       },
       item: {
-        base: {
+        initial: {
           display: "flex",
           alignItems: "items-center",
           color: "text-blue-grey-900",

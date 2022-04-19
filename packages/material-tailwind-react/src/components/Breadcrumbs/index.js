@@ -22,11 +22,11 @@ const Breadcrumbs = forwardRef(({ separator, fullWidth, className, children, ...
   className = className ?? defaultProps.className;
 
   // 3. set styles
-  const breadcrumbsRootClasses = classnames(objectsToString(base.root.base), {
+  const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
     [objectsToString(base.root.fullWidth)]: fullWidth,
   });
   const breadcrumbsListClasses = classnames(objectsToString(base.list), className);
-  const breadcrumbsItemClasses = classnames(objectsToString(base.item.base));
+  const breadcrumbsItemClasses = classnames(objectsToString(base.item.initial));
   const breadcrumbsSeparatorClasses = classnames(objectsToString(base.separator));
 
   // 4. return

@@ -5,7 +5,7 @@ const dialogBody = {
   },
   styles: {
     base: {
-      container: {
+      initial: {
         position: "relative",
         display: "flex",
         flex: "flex-auto",

@@ -22,7 +22,7 @@ const AccordionHeader = forwardRef(({ className, children, ...rest }, ref) => {
 
   // 3. set styles
   const buttonStyles = classnames(
-    objectsToString(base.header.button),
+    objectsToString(base.header.initial),
     { [objectsToString(base.header.active)]: open },
     className,
   );

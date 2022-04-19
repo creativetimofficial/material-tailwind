@@ -14,8 +14,8 @@ const IconButton = forwardRef(
   ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
     // 1. init
     const { iconButton } = useTheme();
-    const { valid, defaultProps } = iconButton;
-    const { base, variants, sizes } = iconButton.styles;
+    const { valid, defaultProps, styles } = iconButton;
+    const { base, variants, sizes } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;

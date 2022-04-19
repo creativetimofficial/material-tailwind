@@ -14,8 +14,8 @@ const Input = forwardRef(
   ({ variant, color, size, label, error, success, icon, labelProps, className, ...rest }, ref) => {
     // 1. init
     const { input } = useTheme();
-    const { defaultProps, valid } = input;
-    const { base, variants } = input.styles;
+    const { defaultProps, valid, styles } = input;
+    const { base, variants } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;

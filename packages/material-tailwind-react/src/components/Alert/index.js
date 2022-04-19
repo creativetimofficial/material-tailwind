@@ -18,8 +18,8 @@ const Alert = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
     // 1. init
     const { alert } = useTheme();
-    const { defaultProps, valid } = alert;
-    const { base, variants } = alert.styles;
+    const { defaultProps, valid, styles } = alert;
+    const { base, variants } = styles;
     const rippleEffect = new Ripple();
 
     // 2. set default props

@@ -13,8 +13,8 @@ const Typography = forwardRef(
   ({ variant, color, textGradient, className, children, ...rest }, ref) => {
     // 1. init
     const { typography } = useTheme();
-    const { defaultProps, valid } = typography;
-    const { variants, colors, textGradient: gradient } = typography.styles;
+    const { defaultProps, valid, styles } = typography;
+    const { variants, colors, textGradient: gradient } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;

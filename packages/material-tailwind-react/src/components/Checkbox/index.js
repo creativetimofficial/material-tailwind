@@ -15,8 +15,8 @@ const Checkbox = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
     // 1. init
     const { checkbox } = useTheme();
-    const { defaultProps, valid } = checkbox;
-    const { base, colors } = checkbox.styles;
+    const { defaultProps, valid, styles } = checkbox;
+    const { base, colors } = styles;
 
     // 2. set default props
     color = color ?? defaultProps.color;

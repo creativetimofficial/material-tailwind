@@ -19,7 +19,7 @@ const selectOutlined = {
         borderRadius: "rounded-[7px]",
       },
       label: {
-        base: {},
+        initial: {},
         states: {
           close: {
             lineHeight: "leading-[3.75]",
@@ -44,7 +44,7 @@ const selectOutlined = {
         borderRadius: "rounded-[7px]",
       },
       label: {
-        base: {},
+        initial: {},
         states: {
           close: {
             lineHeight: "leading-[4.1]",
@@ -120,7 +120,7 @@ const selectOutlined = {
   },
   error: {
     select: {
-      base: {},
+      initial: {},
       states: {
         close: {
           borderColor: "border-red-500",
@@ -136,7 +136,7 @@ const selectOutlined = {
       },
     },
     label: {
-      base: {},
+      initial: {},
       states: {
         close: {
           color: "text-red-500",
@@ -158,7 +158,7 @@ const selectOutlined = {
   },
   success: {
     select: {
-      base: {},
+      initial: {},
       states: {
         close: {
           borderColor: "border-green-500",
@@ -174,7 +174,7 @@ const selectOutlined = {
       },
     },
     label: {
-      base: {},
+      initial: {},
       states: {
         close: {
           color: "text-green-500",

@@ -22,7 +22,7 @@ const MenuItem = forwardRef(({ className, disabled, children, ...rest }, ref) =>
 
   // 3. set styles
   const menuItemClasses = classnames(
-    objectsToString(base.item),
+    objectsToString(base.initial),
     { [objectsToString(base.disabled)]: disabled },
     className,
   );

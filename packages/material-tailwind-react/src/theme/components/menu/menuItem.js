@@ -5,7 +5,7 @@ const menuItem = {
   },
   styles: {
     base: {
-      item: {
+      initial: {
         display: "block",
         width: "w-full",
         pt: "pt-[9px]",

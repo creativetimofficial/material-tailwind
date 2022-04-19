@@ -44,8 +44,8 @@ const Select = forwardRef(
   ) => {
     // 1. init
     const { select } = useTheme();
-    const { defaultProps, valid } = select;
-    const { base, variants } = select.styles;
+    const { defaultProps, valid, styles } = select;
+    const { base, variants } = styles;
     const {
       isOpen,
       getToggleButtonProps,
@@ -110,9 +110,9 @@ const Select = forwardRef(
       objectsToString(stateStyles.select),
       objectsToString(selectSize.select),
       { [objectsToString(selectColor[state])]: !error && !success },
-      { [objectsToString(selectError.base)]: error },
+      { [objectsToString(selectError.initial)]: error },
       { [objectsToString(selectError.states[state])]: error },
-      { [objectsToString(selectSuccess.base)]: success },
+      { [objectsToString(selectSuccess.initial)]: success },
       { [objectsToString(selectSuccess.states[state])]: success },
       className,
     );
@@ -120,16 +120,16 @@ const Select = forwardRef(
       objectsToString(base.label),
       objectsToString(selectVariant.base.label),
       objectsToString(stateStyles.label),
-      objectsToString(selectSize.label.base),
+      objectsToString(selectSize.label.initial),
       objectsToString(selectSize.label.states[state]),
       { [objectsToString(labelColor[state])]: !error && !success },
-      { [objectsToString(labelError.base)]: error },
+      { [objectsToString(labelError.initial)]: error },
       { [objectsToString(labelError.states[state])]: error },
-      { [objectsToString(labelSuccess.base)]: success },
+      { [objectsToString(labelSuccess.initial)]: success },
       { [objectsToString(labelSuccess.states[state])]: success },
       labelProps.className ?? "",
     );
-    const arrowClasses = classnames(objectsToString(base.arrow.base), {
+    const arrowClasses = classnames(objectsToString(base.arrow.initial), {
       [objectsToString(base.arrow.active)]: state === "open",
     });
     const menuClasses = classnames(objectsToString(base.menu), menuProps.className ?? "");

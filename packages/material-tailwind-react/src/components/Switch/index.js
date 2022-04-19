@@ -15,8 +15,8 @@ const Switch = forwardRef(
   ({ color, label, ripple, className, containerProps, circleProps, labelProps, ...rest }, ref) => {
     // 1. init
     const { switch: toggle } = useTheme();
-    const { defaultProps, valid } = toggle;
-    const { base, colors } = toggle.styles;
+    const { defaultProps, valid, styles } = toggle;
+    const { base, colors } = styles;
 
     // 2. set default props
     color = color ?? defaultProps.color;

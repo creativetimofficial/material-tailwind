@@ -17,8 +17,8 @@ const Textarea = forwardRef(
   ) => {
     // 1. init
     const { textarea } = useTheme();
-    const { defaultProps, valid } = textarea;
-    const { base, variants } = textarea.styles;
+    const { defaultProps, valid, styles } = textarea;
+    const { base, variants } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;

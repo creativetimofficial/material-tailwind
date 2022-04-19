@@ -14,7 +14,7 @@ const accordion = {
         width: "w-full",
       },
       header: {
-        button: {
+        initial: {
           display: "flex",
           justifyContent: "justify-between",
           alignItems: "items-center",
@@ -31,12 +31,12 @@ const accordion = {
           hover: "hover:text-blue-grey-900",
           transition: "transition-colors",
         },
+        active: { color: "!text-blue-grey-900" },
         icon: {
           width: "w-5",
           height: "h-5",
           ml: "ml-4",
         },
-        active: { color: "!text-blue-grey-900" },
       },
       body: {
         display: "block",

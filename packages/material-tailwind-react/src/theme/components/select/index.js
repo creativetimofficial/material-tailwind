@@ -43,7 +43,7 @@ const select = {
         transition: "transition-all",
       },
       arrow: {
-        base: {
+        initial: {
           position: "absolute",
           top: "top-2/4",
           right: "right-2",

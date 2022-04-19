@@ -21,7 +21,7 @@ const DialogBody = forwardRef(({ className, divider, children, ...rest }, ref) =
 
   // 3. set styles
   const dialogBodyClasses = classnames(
-    objectsToString(base.container),
+    objectsToString(base.initial),
     { [objectsToString(base.divider)]: divider },
     className,
   );

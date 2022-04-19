@@ -14,8 +14,8 @@ const Button = forwardRef(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
     // 1. init
     const { button } = useTheme();
-    const { valid, defaultProps } = button;
-    const { base, variants, sizes, fullWidth: block } = button.styles;
+    const { valid, defaultProps, styles } = button;
+    const { base, variants, sizes } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;
@@ -29,7 +29,7 @@ const Button = forwardRef(
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const buttonBase = objectsToString(base);
+    const buttonBase = objectsToString(base.initial);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
         findMatch(valid.colors, color, "light-blue")
@@ -40,7 +40,7 @@ const Button = forwardRef(
       buttonBase,
       buttonSize,
       buttonVariant,
-      { [block]: fullWidth },
+      { [objectsToString(base.fullWidth)]: fullWidth },
       className,
     );
 

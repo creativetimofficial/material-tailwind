@@ -18,7 +18,7 @@ const selectStatic = {
         pb: "pb-1.5",
       },
       label: {
-        base: {},
+        initial: {},
         states: {
           close: {
             lineHeight: "leading-tight",
@@ -43,7 +43,7 @@ const selectStatic = {
         pb: "pb-2",
       },
       label: {
-        base: {},
+        initial: {},
         states: {
           close: {
             lineHeight: "leading-tight",
@@ -102,7 +102,7 @@ const selectStatic = {
   },
   error: {
     select: {
-      base: {},
+      initial: {},
       states: {
         close: {
           borderColor: "border-red-500",
@@ -116,7 +116,7 @@ const selectStatic = {
       },
     },
     label: {
-      base: {},
+      initial: {},
       states: {
         close: {
           color: "text-red-500",
@@ -135,7 +135,7 @@ const selectStatic = {
   },
   success: {
     select: {
-      base: {},
+      initial: {},
       states: {
         close: {
           borderColor: "border-green-500",
@@ -149,7 +149,7 @@ const selectStatic = {
       },
     },
     label: {
-      base: {},
+      initial: {},
       states: {
         close: {
           color: "text-green-500",

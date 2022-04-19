@@ -18,8 +18,8 @@ const Chip = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {
     // 1. init
     const { chip } = useTheme();
-    const { defaultProps, valid } = chip;
-    const { base, variants, closeButtonColor } = chip.styles;
+    const { defaultProps, valid, styles } = chip;
+    const { base, variants, closeButtonColor } = styles;
     const rippleEffect = new Ripple();
 
     // 2. set default props
