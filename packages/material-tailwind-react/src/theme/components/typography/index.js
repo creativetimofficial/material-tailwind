@@ -10,7 +10,7 @@ const alert = {
   },
   valid: {
     variants: ["h1", "h2", "h3", "h4", "h5", "h6", "lead", "paragraph", "small"],
-    colors: validColors,
+    colors: ["black", "white", validColors],
   },
   styles: {
     variants: {

@@ -1,10 +1,16 @@
 const typographyColors = {
+  black: {
+    color: "text-black",
+  },
+  white: {
+    color: "text-white",
+  },
   "blue-grey": {
     color: "text-blue-grey-900",
     gradient: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
   },
   grey: {
-    color: "text-grey-500",
+    color: "text-grey-700",
     gradient: "bg-gradient-to-tr from-grey-600 to-grey-400",
   },
   brown: {
