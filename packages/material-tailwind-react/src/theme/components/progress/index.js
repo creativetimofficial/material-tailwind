@@ -20,7 +20,7 @@ const alert = {
       container: {
         display: "flex",
         justifyContent: "flex-start",
-        bg: "bg-blue-grey-100",
+        bg: "bg-blue-grey-50",
         overflow: "overflow-hidden",
         width: "w-full",
         height: "h-1.5",
