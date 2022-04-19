@@ -3,6 +3,7 @@ import Head from "next/head";
 import Accordions from "/react-sections/Accordions";
 import Alerts from "/react-sections/Alerts";
 import Avatars from "/react-sections/Avatars";
+import BreadcrumbsNav from "/react-sections/Breadcrumbs";
 import Buttons from "/react-sections/Buttons";
 import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
@@ -69,6 +70,8 @@ export default function React() {
           <Accordions />
           <hr className="my-24" />
           <NavTabs />
+          <hr className="my-24" />
+          <BreadcrumbsNav />
           <hr className="my-24" />
         </div>
       </div>

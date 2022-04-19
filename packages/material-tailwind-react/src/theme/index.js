@@ -1,6 +1,7 @@
 import accordion from "theme/components/accordion";
 import alert from "theme/components/alert";
 import avatar from "theme/components/avatar";
+import breadcrumbs from "theme/components/breadcrumbs";
 import button from "theme/components/button";
 import checkbox from "theme/components/checkbox";
 import chip from "theme/components/chip";
@@ -30,6 +31,7 @@ const theme = {
   accordion,
   alert,
   avatar,
+  breadcrumbs,
   button,
   checkbox,
   chip,
