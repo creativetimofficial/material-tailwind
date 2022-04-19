@@ -5,6 +5,7 @@ import Alerts from "/react-sections/Alerts";
 import Avatars from "/react-sections/Avatars";
 import BreadcrumbsNav from "/react-sections/Breadcrumbs";
 import Buttons from "/react-sections/Buttons";
+import Cards from "/react-sections/Cards";
 import Checkboxes from "/react-sections/Checkboxes";
 import Chips from "/react-sections/Chips";
 import Dialogs from "/react-sections/Dialogs";
@@ -72,6 +73,8 @@ export default function React() {
           <NavTabs />
           <hr className="my-24" />
           <BreadcrumbsNav />
+          <hr className="my-24" />
+          <Cards />
           <hr className="my-24" />
         </div>
       </div>

@@ -3,6 +3,10 @@ import alert from "theme/components/alert";
 import avatar from "theme/components/avatar";
 import breadcrumbs from "theme/components/breadcrumbs";
 import button from "theme/components/button";
+import card from "theme/components/card";
+import cardBody from "theme/components/card/cardBody";
+import cardFooter from "theme/components/card/cardFooter";
+import cardHeader from "theme/components/card/cardHeader";
 import checkbox from "theme/components/checkbox";
 import chip from "theme/components/chip";
 import dialog from "theme/components/dialog";
@@ -33,6 +37,10 @@ const theme = {
   avatar,
   breadcrumbs,
   button,
+  card,
+  cardBody,
+  cardFooter,
+  cardHeader,
   checkbox,
   chip,
   dialog,
