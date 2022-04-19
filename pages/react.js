@@ -15,6 +15,7 @@ import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
 import Selects from "/react-sections/Selects";
 import Switches from "/react-sections/Switches";
+import NavTabs from "/react-sections/NavTabs";
 import Textareas from "/react-sections/Textareas";
 import Tooltips from "/react-sections/Tooltips";
 import Typos from "/react-sections/Typos";
@@ -66,6 +67,8 @@ export default function React() {
           <Dialogs />
           <hr className="my-24" />
           <Accordions />
+          <hr className="my-24" />
+          <NavTabs />
           <hr className="my-24" />
         </div>
       </div>

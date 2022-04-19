@@ -17,6 +17,11 @@ import progress from "theme/components/progress";
 import radio from "theme/components/radio";
 import select from "theme/components/select";
 import switchButton from "theme/components/switch";
+import tab from "theme/components/tabs/tab";
+import tabs from "theme/components/tabs";
+import tabsBody from "theme/components/tabs/tabsBody";
+import tabsHeader from "theme/components/tabs/tabsHeader";
+import tabPanel from "theme/components/tabs/tabPanel";
 import textarea from "theme/components/textarea";
 import tooltip from "theme/components/tooltip";
 import typography from "theme/components/typography";
@@ -41,6 +46,11 @@ const theme = {
   radio,
   select,
   switch: switchButton,
+  tab,
+  tabs,
+  tabsBody,
+  tabsHeader,
+  tabPanel,
   textarea,
   tooltip,
   typography,
