@@ -20,7 +20,7 @@ export default function Cards() {
             />
           </CardHeader>
           <CardBody>
-            <Typography variant="h4" className="mb-2">
+            <Typography variant="h4" color="blue-grey" className="mb-2">
               Card Title
             </Typography>
             <Typography variant="paragraph" color="grey">
@@ -45,7 +45,7 @@ export default function Cards() {
           <CardBody className="text-center">
             <Typography
               variant="h5"
-              className="mb-2 font-medium text-[#344767] hover:text-light-blue-500 cursor-pointer transition-colors duration-300"
+              className="mb-2 font-medium !text-[#344767] hover:!text-light-blue-500 cursor-pointer transition-colors duration-300"
             >
               Cozy 5 Stars Apartment
             </Typography>

@@ -12,6 +12,7 @@ import Dialogs from "/react-sections/Dialogs";
 import IconButtons from "/react-sections/IconButtons";
 import Inputs from "/react-sections/Inputs";
 import Menus from "/react-sections/Menus";
+import Navbars from "/react-sections/Navbars";
 import Popovers from "/react-sections/Popovers";
 import ProgressBars from "/react-sections/ProgressBars";
 import RadioButtons from "/react-sections/RadioButtons";
@@ -75,6 +76,8 @@ export default function React() {
           <BreadcrumbsNav />
           <hr className="my-24" />
           <Cards />
+          <hr className="my-24" />
+          <Navbars />
           <hr className="my-24" />
         </div>
       </div>
