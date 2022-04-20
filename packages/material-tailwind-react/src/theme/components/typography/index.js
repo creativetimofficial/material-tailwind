@@ -4,13 +4,13 @@ import validColors from "utils/validColors";
 const alert = {
   defaultProps: {
     variant: "paragraph",
-    color: "blue-grey",
+    color: "inherit",
     textGradient: false,
     className: "",
   },
   valid: {
     variants: ["h1", "h2", "h3", "h4", "h5", "h6", "lead", "paragraph", "small"],
-    colors: ["black", "white", validColors],
+    colors: ["inherit", "current", "black", "white", validColors],
   },
   styles: {
     variants: {

@@ -1,4 +1,10 @@
 const typographyColors = {
+  inherit: {
+    color: "text-inherit",
+  },
+  current: {
+    color: "text-current",
+  },
   black: {
     color: "text-black",
   },

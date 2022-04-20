@@ -10,7 +10,7 @@ import objectsToString from "utils/objectsToString";
 import { useTheme } from "context/theme";
 
 const Typography = forwardRef(
-  ({ variant, color, textGradient, className, children, ...rest }, ref) => {
+  ({ variant, color, textGradient, as, className, children, ...rest }, ref) => {
     // 1. init
     const { typography } = useTheme();
     const { defaultProps, valid, styles } = typography;
@@ -20,6 +20,7 @@ const Typography = forwardRef(
     variant = variant ?? defaultProps.variant;
     color = color ?? defaultProps.color;
     textGradient = textGradient ?? defaultProps.textGradient;
+    as = as ?? undefined;
     className = className ?? defaultProps.className;
 
     // 3. set styles
@@ -38,76 +39,84 @@ const Typography = forwardRef(
 
     // 4. set variant
     let template;
+    const Heading1 = as || "h1";
+    const Heading2 = as || "h2";
+    const Heading3 = as || "h3";
+    const Heading4 = as || "h4";
+    const Heading5 = as || "h5";
+    const Heading6 = as || "h6";
+    const Paragraph = as || "p";
+    const SmallText = as || "small";
 
     switch (variant) {
       case "h1":
         template = (
-          <h1 {...rest} ref={ref} className={classes}>
+          <Heading1 {...rest} ref={ref} className={classes}>
             {children}
-          </h1>
+          </Heading1>
         );
         break;
       case "h2":
         template = (
-          <h2 {...rest} ref={ref} className={classes}>
+          <Heading2 {...rest} ref={ref} className={classes}>
             {children}
-          </h2>
+          </Heading2>
         );
         break;
       case "h3":
         template = (
-          <h3 {...rest} ref={ref} className={classes}>
+          <Heading3 {...rest} ref={ref} className={classes}>
             {children}
-          </h3>
+          </Heading3>
         );
         break;
       case "h4":
         template = (
-          <h4 {...rest} ref={ref} className={classes}>
+          <Heading4 {...rest} ref={ref} className={classes}>
             {children}
-          </h4>
+          </Heading4>
         );
         break;
       case "h5":
         template = (
-          <h5 {...rest} ref={ref} className={classes}>
+          <Heading5 {...rest} ref={ref} className={classes}>
             {children}
-          </h5>
+          </Heading5>
         );
         break;
       case "h6":
         template = (
-          <h6 {...rest} ref={ref} className={classes}>
+          <Heading6 {...rest} ref={ref} className={classes}>
             {children}
-          </h6>
+          </Heading6>
         );
         break;
       case "lead":
         template = (
-          <p {...rest} ref={ref} className={classes}>
+          <Paragraph {...rest} ref={ref} className={classes}>
             {children}
-          </p>
+          </Paragraph>
         );
         break;
       case "paragraph":
         template = (
-          <p {...rest} ref={ref} className={classes}>
+          <Paragraph {...rest} ref={ref} className={classes}>
             {children}
-          </p>
+          </Paragraph>
         );
         break;
       case "small":
         template = (
-          <small {...rest} ref={ref} className={classes}>
+          <SmallText {...rest} ref={ref} className={classes}>
             {children}
-          </small>
+          </SmallText>
         );
         break;
       default:
         template = (
-          <p {...rest} ref={ref} className={classes}>
+          <Paragraph {...rest} ref={ref} className={classes}>
             {children}
-          </p>
+          </Paragraph>
         );
         break;
     }
@@ -120,6 +129,8 @@ const Typography = forwardRef(
 Typography.propTypes = {
   variant: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6", "lead", "paragraph", "small"]),
   color: PropTypes.oneOf([
+    "inherit",
+    "current",
     "black",
     "white",
     "blue-grey",
@@ -142,6 +153,7 @@ Typography.propTypes = {
     "pink",
     "red",
   ]),
+  as: PropTypes.elementType,
   textGradient: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
