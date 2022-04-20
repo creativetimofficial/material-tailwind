@@ -15,7 +15,7 @@ const popover = {
       p: "p-4",
       border: "border border-blue-grey-50",
       borderRadius: "rounded-lg",
-      boxShadow: "shadow-lg shadow-blue-grey-50",
+      boxShadow: "shadow-lg shadow-blue-grey-500/10",
       fontFamily: "font-sans",
       fontSize: "text-sm",
       fontWeight: "font-normal",
