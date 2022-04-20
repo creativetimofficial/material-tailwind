@@ -19,7 +19,7 @@ const Typography = forwardRef(
     // 2. set default props
     variant = variant ?? defaultProps.variant;
     color = color ?? defaultProps.color;
-    textGradient = textGradient ?? defaultProps.textGradient;
+    textGradient = textGradient || defaultProps.textGradient;
     as = as ?? undefined;
     className = className ?? defaultProps.className;
 
@@ -27,11 +27,11 @@ const Typography = forwardRef(
     const typographyVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "paragraph")],
     );
-    const typographyColor = colors[findMatch(valid.colors, color, "blue-grey")];
+    const typographyColor = colors[findMatch(valid.colors, color, "inherit")];
     const gradientTextClasses = objectsToString(gradient);
     const classes = classnames(
       typographyVariant,
-      typographyColor.color,
+      { [typographyColor.color]: !textGradient },
       { [gradientTextClasses]: textGradient },
       { [typographyColor.gradient]: textGradient },
       className,

@@ -35,7 +35,7 @@ export default function Typos() {
       </Typography>
 
       <div className="flex gap-4">
-        <Typography variant="h1" textGradient>
+        <Typography variant="h1" color="blue-grey" textGradient>
           A
         </Typography>
         <Typography variant="h1" color="grey" textGradient>
