@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
@@ -80,9 +80,7 @@ const Chip = forwardRef(
             <div className={chipCloseButtonClasses}>
               <div
                 role="button"
-                tabIndex={0}
                 onClick={dismissible.onClose}
-                onKeyPress={() => null}
                 onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
                 className={`w-5 h-5 ${dismissible.action ? "" : "p-1 rounded"}`}
               >
@@ -145,4 +143,5 @@ Chip.propTypes = {
 
 Chip.displayName = "Chip";
 
+export { Chip };
 export default Chip;

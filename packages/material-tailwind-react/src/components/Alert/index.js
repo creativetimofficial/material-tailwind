@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
@@ -72,9 +72,7 @@ const Alert = forwardRef(
               <div className="absolute top-3 right-3 w-max rounded-lg hover:bg-white hover:bg-opacity-20 transition-all">
                 <div
                   role="button"
-                  tabIndex={0}
                   onClick={dismissible.onClose}
-                  onKeyPress={() => null}
                   onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
                   className={`w-max ${dismissible.action ? "" : "p-1 rounded-lg"}`}
                 >
@@ -139,4 +137,5 @@ Alert.propTypes = {
 
 Alert.displayName = "Alert";
 
+export { Alert };
 export default Alert;

@@ -1,4 +1,4 @@
-import { forwardRef, cloneElement, useEffect, useMemo } from "react";
+import React, { forwardRef, cloneElement, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui
@@ -181,4 +181,5 @@ Tooltip.propTypes = {
 
 Tooltip.displayName = "Tooltip";
 
+export { Tooltip };
 export default Tooltip;

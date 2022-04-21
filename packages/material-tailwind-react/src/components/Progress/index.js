@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -81,4 +81,5 @@ Progress.propTypes = {
 
 Progress.displayName = "Progress";
 
+export { Progress };
 export default Progress;

@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui
@@ -100,8 +100,7 @@ Menu.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Menu.Item = MenuItem;
 Menu.displayName = "Menu";
 
 export { Menu, MenuItem };
-export default Menu;
+export default Object.assign(Menu, { Item: MenuItem });

@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -51,4 +51,4 @@ Tabs.Header = TabsHeader;
 Tabs.Panel = TabPanel;
 
 export { Tabs, Tab, TabsBody, TabsHeader, TabPanel };
-export default Tabs;
+export default Object.assign(Tabs, { Tab, Body: TabsBody, Header: TabsHeader, Panel: TabPanel });

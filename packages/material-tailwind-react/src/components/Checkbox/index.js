@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -114,4 +113,5 @@ Checkbox.propTypes = {
 
 Checkbox.displayName = "Checkbox";
 
+export { Checkbox };
 export default Checkbox;

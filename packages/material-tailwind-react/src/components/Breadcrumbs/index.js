@@ -1,4 +1,4 @@
-import { forwardRef, isValidElement, Children } from "react";
+import React, { forwardRef, isValidElement, Children } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -67,4 +67,5 @@ Breadcrumbs.propTypes = {
 
 Breadcrumbs.displayName = "Breacrumb";
 
+export { Breadcrumbs };
 export default Breadcrumbs;

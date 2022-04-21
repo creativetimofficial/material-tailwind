@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -77,9 +77,10 @@ Card.propTypes = {
 };
 
 Card.displayName = "Card";
-Card.Header = CardHeader;
-Card.Body = CardBody;
-Card.Footer = CardFooter;
 
 export { Card, CardHeader, CardBody, CardFooter };
-export default Card;
+export default Object.assign(Card, {
+  Header: CardHeader,
+  Body: CardBody,
+  Footer: CardFooter,
+});

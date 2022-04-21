@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -107,4 +106,5 @@ Switch.propTypes = {
 
 Switch.displayName = "Switch";
 
+export { Switch };
 export default Switch;

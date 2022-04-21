@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -39,4 +37,5 @@ Avatar.propTypes = {
 
 Avatar.displayName = "Avatar";
 
+export { Avatar };
 export default Avatar;

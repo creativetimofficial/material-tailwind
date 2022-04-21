@@ -3,7 +3,7 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody
-} from "components/Accordion";
+} from "../packages/material-tailwind-react/src";
 
 export default function Accordions() {
   const [open, setOpen] = useState(0);

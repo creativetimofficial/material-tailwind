@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -112,4 +111,5 @@ Radio.propTypes = {
 
 Radio.displayName = "Radio";
 
+export { Radio };
 export default Radio;

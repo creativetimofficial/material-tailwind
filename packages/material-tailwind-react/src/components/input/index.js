@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -113,4 +112,5 @@ Input.propTypes = {
 
 Input.displayName = "Input";
 
+export { Input };
 export default Input;

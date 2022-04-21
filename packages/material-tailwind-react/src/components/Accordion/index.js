@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from "react";
+import React, { forwardRef, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -63,8 +63,5 @@ Accordion.propTypes = {
 
 Accordion.displayName = "Accordion";
 
-Accordion.Header = AccordionHeader;
-Accordion.Body = AccordionBody;
-
 export { Accordion, AccordionHeader, AccordionBody };
-export default Accordion;
+export default Object.assign(Accordion, { Header: AccordionHeader, Body: AccordionBody });

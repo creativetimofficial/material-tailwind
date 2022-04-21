@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -161,4 +161,5 @@ Typography.propTypes = {
 
 Typography.displayName = "Typography";
 
+export { Typography };
 export default Typography;

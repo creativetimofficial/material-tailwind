@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -102,4 +102,5 @@ Button.propTypes = {
 
 Button.displayName = "Button";
 
+export { Button };
 export default Button;

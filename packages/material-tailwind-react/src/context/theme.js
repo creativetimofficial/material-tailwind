@@ -1,15 +1,15 @@
-import { createContext, useContext } from "react";
+import React, { createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import theme from "theme/index";
 import combineMerge from "utils/combineMerge";
 
 const merge = require("deepmerge");
 
-export const MaterialTailwindTheme = createContext(theme);
+const MaterialTailwindTheme = createContext(theme);
 
 MaterialTailwindTheme.displayName = "MaterialTailwindThemeProvider";
 
-export function ThemeProvider({ value, children }) {
+function ThemeProvider({ value, children }) {
   const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
 
   return (
@@ -17,7 +17,7 @@ export function ThemeProvider({ value, children }) {
   );
 }
 
-export const useTheme = () => useContext(MaterialTailwindTheme);
+const useTheme = () => useContext(MaterialTailwindTheme);
 
 ThemeProvider.defaultProps = {
   value: theme,
@@ -27,3 +27,5 @@ ThemeProvider.propTypes = {
   value: PropTypes.instanceOf(Object),
   children: PropTypes.node.isRequired,
 };
+
+export { MaterialTailwindTheme, ThemeProvider, useTheme };

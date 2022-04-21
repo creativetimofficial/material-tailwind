@@ -1,4 +1,4 @@
-import { forwardRef, cloneElement, useMemo } from "react";
+import React, { forwardRef, cloneElement, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui
@@ -190,4 +190,8 @@ Dialog.Footer = DialogFooter;
 Dialog.displayName = "Dialog";
 
 export { Dialog, DialogHeader, DialogBody, DialogFooter };
-export default Dialog;
+export default Object.assign(Dialog, {
+  Header: DialogHeader,
+  Body: DialogBody,
+  Footer: DialogFooter,
+});

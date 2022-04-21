@@ -5,11 +5,13 @@
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "build": "swc ./src -d ../@material-tailwind/react --config-file .swcrc && cp ./package.json ../@material-tailwind/react",
+    "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
+    "prettier:check": "prettier -c ."
   },
   "dependencies": {
     "@floating-ui/react-dom-interactions": "0.1.1",
@@ -24,16 +26,14 @@
     "react-merge-refs": "1.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "1.0.7",
+    "@swc/cli": "0.1.57",
+    "@swc/core": "1.2.170",
     "eslint": "8.11.0",
-    "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.3.0",
-    "prettier": "2.5.1",
-    "vite": "2.8.0"
+    "prettier": "2.5.1"
   }
 }

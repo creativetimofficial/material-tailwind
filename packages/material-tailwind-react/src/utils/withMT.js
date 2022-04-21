@@ -26,7 +26,7 @@ const materialTailwindConfig = {
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
-function withTM(tailwindConfig) {
+function withMT(tailwindConfig) {
   const themeFont = materialTailwindConfig.theme.fontFamily;
 
   if (tailwindConfig.theme.fontFamily) {
@@ -40,4 +40,4 @@ function withTM(tailwindConfig) {
   return merge(materialTailwindConfig, { ...tailwindConfig });
 }
 
-module.exports = withTM;
+module.exports = withMT;

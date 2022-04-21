@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { forwardRef, useState, useEffect, useMemo, cloneElement, Children } from "react";
 import PropTypes from "prop-types";
 
@@ -262,7 +261,5 @@ Select.propTypes = {
 
 Select.displayName = "Select";
 
-Select.Option = SelectOption;
-
 export { Select, SelectOption as Option };
-export default Select;
+export default Object.assign(Select, { Option: SelectOption });

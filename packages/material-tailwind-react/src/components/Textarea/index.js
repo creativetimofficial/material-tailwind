@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -105,4 +104,5 @@ Textarea.propTypes = {
 
 Textarea.displayName = "Textarea";
 
+export { Textarea };
 export default Textarea;

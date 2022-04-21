@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -94,4 +94,5 @@ IconButton.propTypes = {
 
 IconButton.displayName = "IconButton";
 
+export { IconButton };
 export default IconButton;
