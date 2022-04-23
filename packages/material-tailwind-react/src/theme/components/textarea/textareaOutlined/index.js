@@ -1,6 +1,6 @@
-import textareaOutlinedLabel from "theme/components/textarea/textareaOutlined/textareaOutlinedLabel";
-import textareaOutlinedColors from "theme/components/textarea/textareaOutlined/textareaOutlinedColors";
-import textareaOutlinedLabelColors from "theme/components/textarea/textareaOutlined/textareaOutlinedLabelColors";
+import textareaOutlinedLabel from "./textareaOutlinedLabel";
+import textareaOutlinedColors from "./textareaOutlinedColors";
+import textareaOutlinedLabelColors from "./textareaOutlinedLabelColors";
 
 const textareaOutlined = {
   base: {

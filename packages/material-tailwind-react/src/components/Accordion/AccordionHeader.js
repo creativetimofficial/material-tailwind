@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useAccordion } from "components/Accordion/AccordionContext";
-import { useTheme } from "context/theme";
+import { useAccordion } from "./AccordionContext";
+import { useTheme } from "../../context/theme";
 
 const AccordionHeader = forwardRef(({ className, children, ...rest }, ref) => {
   // 1. init

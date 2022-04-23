@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 // utils
 import classnames from "classnames";
 import merge from "deepmerge";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useAccordion } from "components/Accordion/AccordionContext";
-import { useTheme } from "context/theme";
+import { useAccordion } from "./AccordionContext";
+import { useTheme } from "../../context/theme";
 
 const AccordionBody = forwardRef(({ className, children, ...rest }, ref) => {
   // 1. init

@@ -1,36 +1,36 @@
-import accordion from "theme/components/accordion";
-import alert from "theme/components/alert";
-import avatar from "theme/components/avatar";
-import breadcrumbs from "theme/components/breadcrumbs";
-import button from "theme/components/button";
-import card from "theme/components/card";
-import cardBody from "theme/components/card/cardBody";
-import cardFooter from "theme/components/card/cardFooter";
-import cardHeader from "theme/components/card/cardHeader";
-import checkbox from "theme/components/checkbox";
-import chip from "theme/components/chip";
-import dialog from "theme/components/dialog";
-import dialogBody from "theme/components/dialog/dialogBody";
-import dialogFooter from "theme/components/dialog/dialogFooter";
-import dialogHeader from "theme/components/dialog/dialogHeader";
-import iconButton from "theme/components/iconButton";
-import input from "theme/components/input";
-import menu from "theme/components/menu";
-import menuItem from "theme/components/menu/menuItem";
-import navbar from "theme/components/navbar";
-import popover from "theme/components/popover";
-import progress from "theme/components/progress";
-import radio from "theme/components/radio";
-import select from "theme/components/select";
-import switchButton from "theme/components/switch";
-import tab from "theme/components/tabs/tab";
-import tabs from "theme/components/tabs";
-import tabsBody from "theme/components/tabs/tabsBody";
-import tabsHeader from "theme/components/tabs/tabsHeader";
-import tabPanel from "theme/components/tabs/tabPanel";
-import textarea from "theme/components/textarea";
-import tooltip from "theme/components/tooltip";
-import typography from "theme/components/typography";
+import accordion from "./components/accordion";
+import alert from "./components/alert";
+import avatar from "./components/avatar";
+import breadcrumbs from "./components/breadcrumbs";
+import button from "./components/button";
+import card from "./components/card";
+import cardBody from "./components/card/cardBody";
+import cardFooter from "./components/card/cardFooter";
+import cardHeader from "./components/card/cardHeader";
+import checkbox from "./components/checkbox";
+import chip from "./components/chip";
+import dialog from "./components/dialog";
+import dialogBody from "./components/dialog/dialogBody";
+import dialogFooter from "./components/dialog/dialogFooter";
+import dialogHeader from "./components/dialog/dialogHeader";
+import iconButton from "./components/iconButton";
+import input from "./components/input";
+import menu from "./components/menu";
+import menuItem from "./components/menu/menuItem";
+import navbar from "./components/navbar";
+import popover from "./components/popover";
+import progress from "./components/progress";
+import radio from "./components/radio";
+import select from "./components/select";
+import switchButton from "./components/switch";
+import tab from "./components/tabs/tab";
+import tabs from "./components/tabs";
+import tabsBody from "./components/tabs/tabsBody";
+import tabsHeader from "./components/tabs/tabsHeader";
+import tabPanel from "./components/tabs/tabPanel";
+import textarea from "./components/textarea";
+import tooltip from "./components/tooltip";
+import typography from "./components/typography";
 
 const theme = {
   accordion,
@@ -68,5 +68,4 @@ const theme = {
   typography,
 };
 
-export { theme };
 export default theme;

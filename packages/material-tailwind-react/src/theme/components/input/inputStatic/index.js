@@ -1,6 +1,6 @@
-import inputStaticLabel from "theme/components/input/inputStatic/inputStaticLabel";
-import inputStaticColors from "theme/components/input/inputStatic/inputStaticColors";
-import inputStaticLabelColors from "theme/components/input/inputStatic/inputStaticLabelColors";
+import inputStaticLabel from "./inputStaticLabel";
+import inputStaticColors from "./inputStaticColors";
+import inputStaticLabelColors from "./inputStaticLabelColors";
 
 const inputStatic = {
   base: {

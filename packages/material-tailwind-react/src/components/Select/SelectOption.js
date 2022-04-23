@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 // context
-import { useSelect } from "components/Select/SelectContext";
+import { useSelect } from "./SelectContext";
 
 const SelectOption = forwardRef(({ disabled, value, children, ...rest }, ref) => {
   const { getItemProps } = useSelect();

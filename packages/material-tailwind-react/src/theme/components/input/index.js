@@ -1,7 +1,7 @@
-import inputOutlined from "theme/components/input/inputOutlined/index";
-import inputStandard from "theme/components/input/inputStandard/index";
-import inputStatic from "theme/components/input/inputStatic/index";
-import validColors from "utils/validColors";
+import inputOutlined from "./inputOutlined";
+import inputStandard from "./inputStandard";
+import inputStatic from "./inputStatic";
+import validColors from "../../../utils/validColors";
 
 const input = {
   defaultProps: {

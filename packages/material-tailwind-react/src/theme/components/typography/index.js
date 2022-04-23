@@ -1,7 +1,7 @@
-import typographyColors from "theme/components/typography/typographyColors";
-import validColors from "utils/validColors";
+import typographyColors from "./typographyColors";
+import validColors from "../../../utils/validColors";
 
-const alert = {
+const typography = {
   defaultProps: {
     variant: "paragraph",
     color: "inherit",
@@ -99,4 +99,4 @@ const alert = {
   },
 };
 
-export default alert;
+export default typography;

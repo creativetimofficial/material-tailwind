@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 // utils
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
-import { useTabs } from "components/Tabs/TabsContext";
+import { useTheme } from "../../context/theme";
+import { useTabs } from "./TabsContext";
 
 const Tab = forwardRef(({ value, className, disabled, children, ...rest }, ref) => {
   // 1. init

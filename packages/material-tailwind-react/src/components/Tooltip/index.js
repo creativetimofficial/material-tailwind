@@ -24,10 +24,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 const Tooltip = forwardRef(
   (

@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 // card components
-import CardHeader from "components/Card/CardHeader";
-import CardBody from "components/Card/CardBody";
-import CardFooter from "components/Card/CardFooter";
+import CardHeader from "./CardHeader";
+import CardBody from "./CardBody";
+import CardFooter from "./CardFooter";
 
 const Card = forwardRef(({ variant, color, shadow, className, children, ...rest }, ref) => {
   // 1. init

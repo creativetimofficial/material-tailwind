@@ -1,6 +1,6 @@
-import selectStandardLabel from "theme/components/select/selectStandard/selectStandardLabel";
-import selectStandardColors from "theme/components/select/selectStandard/selectStandardColors";
-import selectStandardLabelColors from "theme/components/select/selectStandard/selectStandardLabelColors";
+import selectStandardLabel from "./selectStandardLabel";
+import selectStandardColors from "./selectStandardColors";
+import selectStandardLabelColors from "./selectStandardLabelColors";
 
 const selectStandard = {
   base: {

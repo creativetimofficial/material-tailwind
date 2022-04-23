@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { AccordionContextProvider } from "components/Accordion/AccordionContext";
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
+import { AccordionContextProvider } from "./AccordionContext";
 
 // accordion components
-import AccordionHeader from "components/Accordion/AccordionHeader";
-import AccordionBody from "components/Accordion/AccordionBody";
+import AccordionHeader from "./AccordionHeader";
+import AccordionBody from "./AccordionBody";
 
 const Accordion = forwardRef(
   ({ open, icon, animate, className, disabled, children, ...rest }, ref) => {

@@ -1,8 +1,8 @@
-import buttonFilled from "theme/components/button/buttonFilled";
-import buttonGradient from "theme/components/button/buttonGradient";
-import buttonOutlined from "theme/components/button/buttonOutlined";
-import buttonText from "theme/components/button/buttonText";
-import validColors from "utils/validColors";
+import buttonFilled from "./buttonFilled";
+import buttonGradient from "./buttonGradient";
+import buttonOutlined from "./buttonOutlined";
+import buttonText from "./buttonText";
+import validColors from "../../../utils/validColors";
 
 const button = {
   defaultProps: {

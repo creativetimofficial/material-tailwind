@@ -1,7 +1,7 @@
-import textareaOutlined from "theme/components/textarea/textareaOutlined/index";
-import textareaStandard from "theme/components/textarea/textareaStandard/index";
-import textareaStatic from "theme/components/textarea/textareaStatic/index";
-import validColors from "utils/validColors";
+import textareaOutlined from "./textareaOutlined";
+import textareaStandard from "./textareaStandard";
+import textareaStatic from "./textareaStatic";
+import validColors from "../../../utils/validColors";
 
 const textarea = {
   defaultProps: {

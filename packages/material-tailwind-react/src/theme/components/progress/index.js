@@ -1,6 +1,6 @@
-import progressFilled from "theme/components/progress/progressFilled";
-import progressGradient from "theme/components/progress/progressGradient";
-import validColors from "utils/validColors";
+import progressFilled from "./progressFilled";
+import progressGradient from "./progressGradient";
+import validColors from "../../../utils/validColors";
 
 const alert = {
   defaultProps: {

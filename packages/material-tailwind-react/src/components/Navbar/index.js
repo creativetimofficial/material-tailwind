@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 const Navbar = forwardRef(
   ({ variant, color, shadow, blurred, fullWidth, className, children, ...rest }, ref) => {

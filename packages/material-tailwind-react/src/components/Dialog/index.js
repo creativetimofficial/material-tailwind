@@ -21,16 +21,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 // dialog components
-import DialogHeader from "components/Dialog/DialogHeader";
-import DialogBody from "components/Dialog/DialogBody";
-import DialogFooter from "components/Dialog/DialogFooter";
+import DialogHeader from "./DialogHeader";
+import DialogBody from "./DialogBody";
+import DialogFooter from "./DialogFooter";
 
 const Dialog = forwardRef(
   ({ open, handler, node, size, dismiss, animate, className, children, ...rest }, ref) => {

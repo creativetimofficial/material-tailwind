@@ -1,6 +1,6 @@
-import inputStandardLabel from "theme/components/input/inputStandard/inputStandardLabel";
-import inputStandardColors from "theme/components/input/inputStandard/inputStandardColors";
-import inputStandardLabelColors from "theme/components/input/inputStandard/inputStandardLabelColors";
+import inputStandardLabel from "./inputStandardLabel";
+import inputStandardColors from "./inputStandardColors";
+import inputStandardLabelColors from "./inputStandardLabelColors";
 
 const inputStandard = {
   base: {

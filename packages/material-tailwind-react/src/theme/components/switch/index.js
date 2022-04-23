@@ -1,5 +1,5 @@
-import switchColors from "theme/components/switch/switchColors";
-import validColors from "utils/validColors";
+import switchColors from "./switchColors";
+import validColors from "../../../utils/validColors";
 
 const switchButton = {
   defaultProps: {

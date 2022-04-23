@@ -1,4 +1,4 @@
-const buttonOutlined = {
+const iconButtonOutlined = {
   "blue-grey": {
     backgroud: "border border-blue-grey-500",
     color: "text-blue-grey-500",
@@ -134,4 +134,4 @@ const buttonOutlined = {
   },
 };
 
-export default buttonOutlined;
+export default iconButtonOutlined;

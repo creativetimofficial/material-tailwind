@@ -1,6 +1,6 @@
-import cardFilled from "theme/components/card/cardFilled";
-import cardGradient from "theme/components/card/cardGradient";
-import validColors from "utils/validColors";
+import cardFilled from "./cardFilled";
+import cardGradient from "./cardGradient";
+import validColors from "../../../utils/validColors";
 
 const cardHeader = {
   defaultProps: {

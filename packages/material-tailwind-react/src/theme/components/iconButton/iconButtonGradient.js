@@ -1,4 +1,4 @@
-const buttonGradient = {
+const iconButtonGradient = {
   "blue-grey": {
     backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
     color: "text-white",
@@ -134,4 +134,4 @@ const buttonGradient = {
   },
 };
 
-export default buttonGradient;
+export default iconButtonGradient;

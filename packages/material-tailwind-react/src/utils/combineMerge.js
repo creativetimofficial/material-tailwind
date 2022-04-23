@@ -1,4 +1,4 @@
-const merge = require("deepmerge");
+import merge from "deepmerge";
 
 export default function combineMerge(target, source, options) {
   const destination = target.slice();

@@ -10,15 +10,15 @@ import { AnimatePresence, motion } from "framer-motion";
 // utils
 import classnames from "classnames";
 import merge from "deepmerge";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
-import { SelectContextProvider } from "components/Select/SelectContext";
+import { useTheme } from "../../context/theme";
+import { SelectContextProvider } from "./SelectContext";
 
 // select components
-import SelectOption from "components/Select/SelectOption";
+import SelectOption from "./SelectOption";
 
 const Select = forwardRef(
   (

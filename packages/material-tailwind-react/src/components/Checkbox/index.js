@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 // utils
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 const Checkbox = forwardRef(
   ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {

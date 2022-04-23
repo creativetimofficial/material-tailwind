@@ -1,4 +1,4 @@
-const buttonFilled = {
+const iconButtonFilled = {
   "blue-grey": {
     backgroud: "bg-blue-grey-500",
     color: "text-white",
@@ -153,4 +153,4 @@ const buttonFilled = {
   },
 };
 
-export default buttonFilled;
+export default iconButtonFilled;

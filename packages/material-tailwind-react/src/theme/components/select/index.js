@@ -1,7 +1,7 @@
-import selectOutlined from "theme/components/select/selectOutlined/index";
-import selectStandard from "theme/components/select/selectStandard/index";
-import selectStatic from "theme/components/select/selectStatic/index";
-import validColors from "utils/validColors";
+import selectOutlined from "./selectOutlined";
+import selectStandard from "./selectStandard";
+import selectStatic from "./selectStatic";
+import validColors from "../../../utils/validColors";
 
 const select = {
   defaultProps: {

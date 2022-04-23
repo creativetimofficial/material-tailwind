@@ -1,6 +1,6 @@
-import textareaStandardLabel from "theme/components/textarea/textareaStandard/textareaStandardLabel";
-import textareaStandardColors from "theme/components/textarea/textareaStandard/textareaStandardColors";
-import textareaStandardLabelColors from "theme/components/textarea/textareaStandard/textareaStandardLabelColors";
+import textareaStandardLabel from "./textareaStandardLabel";
+import textareaStandardColors from "./textareaStandardColors";
+import textareaStandardLabelColors from "./textareaStandardLabelColors";
 
 const textareaStandard = {
   base: {

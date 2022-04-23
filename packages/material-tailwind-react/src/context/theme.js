@@ -1,9 +1,9 @@
 import React, { createContext, useContext } from "react";
 import PropTypes from "prop-types";
-import theme from "theme/index";
-import combineMerge from "utils/combineMerge";
+import merge from "deepmerge";
+import theme from "../theme/index";
+import combineMerge from "../utils/combineMerge";
 
-const merge = require("deepmerge");
 
 const MaterialTailwindTheme = createContext(theme);
 

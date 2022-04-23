@@ -1,7 +1,7 @@
-import chipFilled from "theme/components/chip/chipFilled";
-import chipGradient from "theme/components/chip/chipGradient";
-import chipCloseButtonColors from "theme/components/chip/chipCloseButtonColors";
-import validColors from "utils/validColors";
+import chipFilled from "./chipFilled";
+import chipGradient from "./chipGradient";
+import chipCloseButtonColors from "./chipCloseButtonColors";
+import validColors from "../../../utils/validColors";
 
 const chip = {
   defaultProps: {

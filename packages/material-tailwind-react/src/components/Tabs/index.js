@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
-import { TabsContextProvider } from "components/Tabs/TabsContext";
+import { useTheme } from "../../context/theme";
+import { TabsContextProvider } from "./TabsContext";
 
 // tabs components
-import Tab from "components/Tabs/Tab";
-import TabsBody from "components/Tabs/TabsBody";
-import TabsHeader from "components/Tabs/TabsHeader";
-import TabPanel from "components/Tabs/TabPanel";
+import Tab from "./Tab";
+import TabsBody from "./TabsBody";
+import TabsHeader from "./TabsHeader";
+import TabPanel from "./TabPanel";
 
 const Tabs = forwardRef(({ value, className, children, ...rest }, ref) => {
   // 1. init

@@ -8,11 +8,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
 import merge from "deepmerge";
-import findMatch from "utils/findMatch";
-import objectsToString from "utils/objectsToString";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 const Chip = forwardRef(
   ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {

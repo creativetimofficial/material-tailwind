@@ -1,6 +1,6 @@
-import selectStaticLabel from "theme/components/select/selectStatic/selectStaticLabel";
-import selectStaticColors from "theme/components/select/selectStatic/selectStaticColors";
-import selectStaticLabelColors from "theme/components/select/selectStatic/selectStaticLabelColors";
+import selectStaticLabel from "./selectStaticLabel";
+import selectStaticColors from "./selectStaticColors";
+import selectStaticLabelColors from "./selectStaticLabelColors";
 
 const selectStatic = {
   base: {

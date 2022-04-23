@@ -7,11 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 // utils
 import merge from "deepmerge";
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
-import { useTabs } from "components/Tabs/TabsContext";
+import { useTheme } from "../../context/theme";
+import { useTabs } from "./TabsContext";
 
 const TabPanel = forwardRef(({ value, animate, className, children, ...rest }, ref) => {
   // 1. init

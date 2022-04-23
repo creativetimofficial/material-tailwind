@@ -1,6 +1,6 @@
-import selectOutlinedLabel from "theme/components/select/selectOutlined/selectOutlinedLabel";
-import selectOutlinedColors from "theme/components/select/selectOutlined/selectOutlinedColors";
-import selectOutlinedLabelColors from "theme/components/select/selectOutlined/selectOutlinedLabelColors";
+import selectOutlinedLabel from "./selectOutlinedLabel";
+import selectOutlinedColors from "./selectOutlinedColors";
+import selectOutlinedLabelColors from "./selectOutlinedLabelColors";
 
 const selectOutlined = {
   base: {

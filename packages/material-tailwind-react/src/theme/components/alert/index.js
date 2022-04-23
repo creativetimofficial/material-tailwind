@@ -1,6 +1,6 @@
-import alertFilled from "theme/components/alert/alertFilled";
-import alertGradient from "theme/components/alert/alertGradient";
-import validColors from "utils/validColors";
+import alertFilled from "./alertFilled";
+import alertGradient from "./alertGradient";
+import validColors from "../../../utils/validColors";
 
 const alert = {
   defaultProps: {

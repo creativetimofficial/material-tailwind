@@ -1,5 +1,5 @@
-import radioColors from "theme/components/radio/radioColors";
-import validColors from "utils/validColors";
+import radioColors from "./radioColors";
+import validColors from "../../../utils/validColors";
 
 const radio = {
   defaultProps: {

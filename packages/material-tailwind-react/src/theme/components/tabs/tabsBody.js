@@ -1,4 +1,4 @@
-const tabsHeader = {
+const tabsBody = {
   defaultProps: {
     className: "",
   },
@@ -12,4 +12,4 @@ const tabsHeader = {
   },
 };
 
-export default tabsHeader;
+export default tabsBody;

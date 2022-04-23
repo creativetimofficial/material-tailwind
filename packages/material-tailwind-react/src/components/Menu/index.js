@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react-dom-interactions";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 // menu components
-import MenuCore from "components/Menu/MenuCore";
-import MenuItem from "components/Menu/MenuItem";
+import MenuCore from "./MenuCore";
+import MenuItem from "./MenuItem";
 
 const Menu = forwardRef(
   (

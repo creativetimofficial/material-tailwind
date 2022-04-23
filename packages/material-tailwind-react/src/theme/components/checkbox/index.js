@@ -1,5 +1,5 @@
-import checkboxColors from "theme/components/checkbox/checkboxColors";
-import validColors from "utils/validColors";
+import checkboxColors from "./checkboxColors";
+import validColors from "../../../utils/validColors";
 
 const checkbox = {
   defaultProps: {

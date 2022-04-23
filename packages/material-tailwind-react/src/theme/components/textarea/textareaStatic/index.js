@@ -1,6 +1,6 @@
-import textareaStaticLabel from "theme/components/textarea/textareaStatic/textareaStaticLabel";
-import textareaStaticColors from "theme/components/textarea/textareaStatic/textareaStaticColors";
-import textareaStaticLabelColors from "theme/components/textarea/textareaStatic/textareaStaticLabelColors";
+import textareaStaticLabel from "./textareaStaticLabel";
+import textareaStaticColors from "./textareaStaticColors";
+import textareaStaticLabelColors from "./textareaStaticLabelColors";
 
 const textareaStatic = {
   base: {

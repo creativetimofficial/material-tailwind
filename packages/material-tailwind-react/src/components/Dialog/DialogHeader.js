@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
-import objectsToString from "utils/objectsToString";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "context/theme";
+import { useTheme } from "../../context/theme";
 
 const DialogHeader = forwardRef(({ className, children, ...rest }, ref) => {
   // 1. init

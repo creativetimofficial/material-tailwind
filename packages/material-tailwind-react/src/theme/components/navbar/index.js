@@ -1,6 +1,6 @@
-import navbarFilled from "theme/components/navbar/navbarFilled";
-import navbarGradient from "theme/components/navbar/navbarGradient";
-import validColors from "utils/validColors";
+import navbarFilled from "./navbarFilled";
+import navbarGradient from "./navbarGradient";
+import validColors from "../../../utils/validColors";
 
 const navbar = {
   defaultProps: {

@@ -1,6 +1,6 @@
-import inputOutlinedLabel from "theme/components/input/inputOutlined/inputOutlinedLabel";
-import inputOutlinedColors from "theme/components/input/inputOutlined/inputOutlinedColors";
-import inputOutlinedLabelColors from "theme/components/input/inputOutlined/inputOutlinedLabelColors";
+import inputOutlinedLabel from "./inputOutlinedLabel";
+import inputOutlinedColors from "./inputOutlinedColors";
+import inputOutlinedLabelColors from "./inputOutlinedLabelColors";
 
 const inputOutlined = {
   base: {
