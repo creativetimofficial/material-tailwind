@@ -10,8 +10,8 @@ const shadows = require("../theme/base/shadows");
 const materialTailwindConfig = {
   darkMode: "class",
   content: [
-    "./packages/material-tailwind-react/src/components/**/*.{js,ts,jsx,tsx}",
-    "./packages/material-tailwind-react/src/theme/components/**/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/material-tailwind-react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/material-tailwind-react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors,
