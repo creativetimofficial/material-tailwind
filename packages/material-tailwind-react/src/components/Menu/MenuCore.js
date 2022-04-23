@@ -130,8 +130,6 @@ const MenuCore = forwardRef(
       if (open && refs.reference.current && refs.floating.current) {
         return autoUpdate(refs.reference.current, refs.floating.current, update);
       }
-
-      return null;
     }, [open, nested, update, refs.reference, refs.floating]);
 
     useEffect(() => {

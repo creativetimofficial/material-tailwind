@@ -82,8 +82,6 @@ const Tooltip = forwardRef(
       if (refs.reference.current && refs.floating.current && open) {
         return autoUpdate(refs.reference.current, refs.floating.current, update);
       }
-
-      return null;
     }, [open, update, refs.reference, refs.floating]);
 
     const mergedRef = useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
