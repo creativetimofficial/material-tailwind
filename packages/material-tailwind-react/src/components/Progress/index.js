@@ -73,7 +73,7 @@ Progress.propTypes = {
     "pink",
     "red",
   ]),
-  value: PropTypes.number,
+  value: PropTypes.number.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   className: PropTypes.string,
   barProps: PropTypes.instanceOf(Object),

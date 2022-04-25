@@ -1,9 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "es6": true,
-    "commonjs": true
+    "es2021": true
   },
   "extends": ["plugin:react/recommended", "prettier"],
   "parserOptions": {
@@ -13,7 +11,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "import", "prettier"],
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/require-default-props": "off",
@@ -25,5 +23,8 @@
       "version": "detect"
     },
     "import/resolver": { "node": { "moduleDirectory": ["node_modules", "src/"] } }
+  },
+  "globals": {
+    "JSX": true
   }
 }
