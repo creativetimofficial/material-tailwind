@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -10,7 +10,37 @@ import objectsToString from "../../utils/objectsToString";
 // context
 import { useTheme } from "../../context/theme";
 
-const Button = forwardRef(
+// types
+import type {
+  variant,
+  size,
+  color,
+  fullWidth,
+  ripple,
+  className,
+  children
+} from "../../types/components/button";
+import {
+  propTypesVariant,
+  propTypesSize,
+  propTypesColor,
+  propTypesFullWidth,
+  propTypesRipple,
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/button";
+
+export interface ButtonProps extends React.ComponentProps<"button"> {
+  variant?: variant;
+  size?: size;
+  color?: color,
+  fullWidth?: fullWidth,
+  ripple?: ripple,
+  className?: className,
+  children: children,
+}
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
     // 1. init
     const { button } = useTheme();
@@ -32,7 +62,7 @@ const Button = forwardRef(
     const buttonBase = objectsToString(base.initial);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "light-blue")
+      findMatch(valid.colors, color, "light-blue")
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
@@ -61,7 +91,7 @@ const Button = forwardRef(
             );
           }
 
-          return typeof onMouseDown === "function" && onMouseDown();
+          return typeof onMouseDown === "function" && onMouseDown(e);
         }}
       >
         {children}
@@ -71,36 +101,15 @@ const Button = forwardRef(
 );
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(["filled", "outlined", "gradient", "text"]),
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
-  color: PropTypes.oneOf([
-    "blue-grey",
-    "grey",
-    "brown",
-    "deep-orange",
-    "orange",
-    "amber",
-    "yellow",
-    "lime",
-    "light-green",
-    "green",
-    "teal",
-    "cyan",
-    "light-blue",
-    "blue",
-    "indigo",
-    "deep-purple",
-    "purple",
-    "pink",
-    "red",
-  ]),
-  fullWidth: PropTypes.bool,
-  ripple: PropTypes.bool,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(propTypesVariant),
+  size: PropTypes.oneOf(propTypesSize),
+  color: PropTypes.oneOf(propTypesColor),
+  fullWidth: propTypesFullWidth,
+  ripple: propTypesRipple,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-Button.displayName = "Button";
+Button.displayName = "MaterialTailwind.Button";
 
-export { Button };
 export default Button;

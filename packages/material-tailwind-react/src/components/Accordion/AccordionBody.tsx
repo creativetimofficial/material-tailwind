@@ -1,8 +1,8 @@
-import React, { forwardRef, useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -13,7 +13,22 @@ import objectsToString from "../../utils/objectsToString";
 import { useAccordion } from "./AccordionContext";
 import { useTheme } from "../../context/theme";
 
-const AccordionBody = forwardRef(({ className, children, ...rest }, ref) => {
+// types
+import type {
+  className,
+  children
+} from "../../types/components/accordion";
+import {
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/accordion";
+
+export interface AccordionBodyProps extends MotionProps {
+  className?: className,
+  children: children,
+}
+
+export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(({ className, children, ...rest }, ref) => {
   // 1. init
   const { open, animate } = useAccordion();
   const { accordion } = useTheme();
@@ -21,7 +36,7 @@ const AccordionBody = forwardRef(({ className, children, ...rest }, ref) => {
     styles: { base },
   } = accordion;
 
-  const bodyEl = useRef(null);
+  const bodyEl = React.useRef(null);
 
   // 2. set default props
   className = className ?? "";
@@ -80,10 +95,10 @@ const AccordionBody = forwardRef(({ className, children, ...rest }, ref) => {
 });
 
 AccordionBody.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-AccordionBody.displayName = "AccordionBody";
+AccordionBody.displayName = "MaterialTailwind.AccordionBody";
 
 export default AccordionBody;

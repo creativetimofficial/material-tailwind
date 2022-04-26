@@ -1,4 +1,4 @@
-const buttonOutlined = {
+const buttonOutlined: object = {
   "blue-grey": {
     backgroud: "border border-blue-grey-500",
     color: "text-blue-grey-500",

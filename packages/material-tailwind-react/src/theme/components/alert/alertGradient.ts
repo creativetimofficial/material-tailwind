@@ -1,4 +1,4 @@
-const alertGradient = {
+const alertGradient: object = {
   "blue-grey": {
     backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
     color: "text-white",

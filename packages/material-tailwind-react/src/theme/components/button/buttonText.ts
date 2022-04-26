@@ -1,4 +1,4 @@
-const buttonText = {
+const buttonText: object = {
   "blue-grey": {
     color: "text-blue-grey-500",
     hover: "hover:bg-blue-grey-50",
@@ -96,4 +96,4 @@ const buttonText = {
   },
 };
 
-export default buttonText;
+export default buttonText

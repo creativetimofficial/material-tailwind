@@ -1,8 +1,8 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionProps } from "framer-motion";
 
 // utils
 import Ripple from "material-ripple-effects";
@@ -14,7 +14,40 @@ import objectsToString from "../../utils/objectsToString";
 // context
 import { useTheme } from "../../context/theme";
 
-const Alert = forwardRef(
+// types
+import type {
+  variant,
+  color,
+  icon,
+  show,
+  dismissible,
+  animate,
+  className,
+  children
+} from "../../types/components/alert";
+import {
+  propTypesVariant,
+  propTypesColor,
+  propTypesIcon,
+  propTypesShow,
+  propTypesDismissible,
+  propTypesAnimate,
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/alert";
+
+export interface AlertProps extends Omit<MotionProps, "animate"> {
+  variant?: variant,
+  color?: color;
+  icon?: icon;
+  show?: show;
+  dismissible?: dismissible;
+  animate?: animate;
+  className?: className;
+  children: children;
+}
+
+export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
     // 1. init
     const { alert } = useTheme();
@@ -33,7 +66,7 @@ const Alert = forwardRef(
     const alertBase = objectsToString(base);
     const alertVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "light-blue")
+      findMatch(valid.colors, color, "light-blue")
       ],
     );
     const classes = classnames(alertBase, alertVariant, className);
@@ -99,43 +132,16 @@ const Alert = forwardRef(
 );
 
 Alert.propTypes = {
-  variant: PropTypes.oneOf(["filled", "gradient"]),
-  color: PropTypes.oneOf([
-    "blue-grey",
-    "grey",
-    "brown",
-    "deep-orange",
-    "orange",
-    "amber",
-    "yellow",
-    "lime",
-    "light-green",
-    "green",
-    "teal",
-    "cyan",
-    "light-blue",
-    "blue",
-    "indigo",
-    "deep-purple",
-    "purple",
-    "pink",
-    "red",
-  ]),
-  icon: PropTypes.node,
-  show: PropTypes.bool,
-  dismissible: PropTypes.shape({
-    action: PropTypes.node,
-    onClose: PropTypes.func.isRequired,
-  }),
-  animate: PropTypes.shape({
-    mount: PropTypes.instanceOf(Object),
-    unmount: PropTypes.instanceOf(Object),
-  }),
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(propTypesVariant),
+  color: propTypesColor,
+  icon: propTypesIcon,
+  show: propTypesShow,
+  dismissible: propTypesDismissible,
+  animate: propTypesAnimate,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-Alert.displayName = "Alert";
+Alert.displayName = "MaterialTailwind.Alert";
 
-export { Alert };
 export default Alert;

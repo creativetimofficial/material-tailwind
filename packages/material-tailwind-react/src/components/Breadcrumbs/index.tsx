@@ -8,7 +8,28 @@ import objectsToString from "../../utils/objectsToString";
 // context
 import { useTheme } from "../../context/theme";
 
-const Breadcrumbs = forwardRef(({ separator, fullWidth, className, children, ...rest }, ref) => {
+// types
+import type {
+  separator,
+  fullWidth,
+  className,
+  children
+} from "../../types/components/breadcrumbs";
+import {
+  propTypesSeparator,
+  propTypesFullWidth,
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/breadcrumbs";
+
+export interface BreadcrumbsProps extends React.ComponentProps<"ol"> {
+  separator?: separator;
+  fullWidth?: fullWidth;
+  className?: className;
+  children: children;
+}
+
+const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(({ separator, fullWidth, className, children, ...rest }, ref) => {
   // 1. init
   const { breadcrumbs } = useTheme();
   const {
@@ -40,7 +61,6 @@ const Breadcrumbs = forwardRef(({ separator, fullWidth, className, children, ...
                 className={classnames(breadcrumbsItemClasses, {
                   [objectsToString(base.item.disabled)]: child?.props?.disabled,
                 })}
-                disabled={child?.props?.disabled}
               >
                 {child}
                 {index !== Children.count(children) - 1 && (
@@ -59,13 +79,13 @@ const Breadcrumbs = forwardRef(({ separator, fullWidth, className, children, ...
 });
 
 Breadcrumbs.propTypes = {
-  separator: PropTypes.node,
-  fullWidth: PropTypes.bool,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  separator: propTypesSeparator,
+  fullWidth: propTypesFullWidth,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-Breadcrumbs.displayName = "Breacrumb";
+Breadcrumbs.displayName = "MaterialTailwind.Breacrumbs";
 
 export { Breadcrumbs };
 export default Breadcrumbs;

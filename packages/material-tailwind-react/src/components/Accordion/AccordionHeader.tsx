@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -9,7 +9,22 @@ import objectsToString from "../../utils/objectsToString";
 import { useAccordion } from "./AccordionContext";
 import { useTheme } from "../../context/theme";
 
-const AccordionHeader = forwardRef(({ className, children, ...rest }, ref) => {
+// types
+import type {
+  className,
+  children
+} from "../../types/components/accordion";
+import {
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/accordion";
+
+export interface AccordionHeaderProps extends React.ComponentProps<"button"> {
+  className?: className,
+  children: children,
+}
+
+export const AccordionHeader = React.forwardRef<HTMLButtonElement, AccordionHeaderProps>(({ className, children, ...rest }, ref) => {
   // 1. init
   const { open, icon } = useAccordion();
   const { accordion } = useTheme();
@@ -57,10 +72,10 @@ const AccordionHeader = forwardRef(({ className, children, ...rest }, ref) => {
 });
 
 AccordionHeader.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-AccordionHeader.displayName = "AccordionHeader";
+AccordionHeader.displayName = "MaterialTailwind.AccordionHeader";
 
 export default AccordionHeader;

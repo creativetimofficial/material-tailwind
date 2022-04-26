@@ -1,4 +1,4 @@
-const alertFilled = {
+const alertFilled: object = {
   "blue-grey": {
     backgroud: "bg-blue-grey-500",
     color: "text-white",

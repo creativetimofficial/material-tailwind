@@ -5,10 +5,11 @@
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "build:ts": "tsc",
-    "build": "swc ./src -d ./dist --config-file .swcrc && cp ./package.json ./dist",
+    "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
+    "build": "swc ./src -d ./dist --only ./src/**/*.js --config-file .swcrc && cp ./package.json ./dist",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
     "prettier:check": "prettier -c ."
   },

@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "module": "es2020",
     "target": "es2020",
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "noUncheckedIndexedAccess": true,

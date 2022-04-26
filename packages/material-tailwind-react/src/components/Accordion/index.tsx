@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // utils
@@ -9,11 +9,38 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 import { AccordionContextProvider } from "./AccordionContext";
 
+// types
+import type {
+  open,
+  icon,
+  animate,
+  disabled,
+  className,
+  children
+} from "../../types/components/accordion";
+import {
+  propTypesOpen,
+  propTypesIcon,
+  propTypesAnimate,
+  propTypesDisabled,
+  propTypesClassName,
+  propTypesChildren
+} from "../../types/components/accordion";
+
 // accordion components
 import AccordionHeader from "./AccordionHeader";
 import AccordionBody from "./AccordionBody";
 
-const Accordion = forwardRef(
+export interface AccordionProps extends React.ComponentProps<"div"> {
+  open: open;
+  icon?: icon;
+  animate?: animate;
+  disabled?: disabled;
+  className?: className;
+  children: children;
+}
+
+const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
   ({ open, icon, animate, className, disabled, children, ...rest }, ref) => {
     // 1. init
     const { accordion } = useTheme();
@@ -36,12 +63,12 @@ const Accordion = forwardRef(
     );
 
     // 4. memoize context value
-    const contextValue = useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
+    const contextValue = React.useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
 
     // 5. return
     return (
       <AccordionContextProvider value={contextValue}>
-        <div {...rest} ref={ref} className={accordionClasses} disabled={disabled}>
+        <div {...rest} ref={ref} className={accordionClasses}>
           {children}
         </div>
       </AccordionContextProvider>
@@ -50,18 +77,18 @@ const Accordion = forwardRef(
 );
 
 Accordion.propTypes = {
-  open: PropTypes.bool.isRequired,
-  icon: PropTypes.node,
-  animate: PropTypes.shape({
-    mount: PropTypes.instanceOf(Object),
-    unmount: PropTypes.instanceOf(Object),
-  }),
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  open: propTypesOpen,
+  icon: propTypesIcon,
+  animate: propTypesAnimate,
+  disabled: propTypesDisabled,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-Accordion.displayName = "Accordion";
+Accordion.displayName = "MaterialTailwind.Accordion";
 
 export { Accordion, AccordionHeader, AccordionBody };
-export default Object.assign(Accordion, { Header: AccordionHeader, Body: AccordionBody });
+export default Object.assign(Accordion, {
+  Header: AccordionHeader,
+  Body: AccordionBody
+});

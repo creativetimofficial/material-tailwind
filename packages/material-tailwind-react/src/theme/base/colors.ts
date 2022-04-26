@@ -1,4 +1,4 @@
-const colors = {
+export const colors: object = {
   inherit: "inherit",
   current: "currentColor",
   transparent: "transparent",

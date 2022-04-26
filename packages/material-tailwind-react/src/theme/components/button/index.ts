@@ -2,9 +2,56 @@ import buttonFilled from "./buttonFilled";
 import buttonGradient from "./buttonGradient";
 import buttonOutlined from "./buttonOutlined";
 import buttonText from "./buttonText";
-import validColors from "../../../utils/validColors";
 
-const button = {
+// types
+import type {
+  variant,
+  size,
+  color,
+  fullWidth,
+  ripple,
+  className,
+} from "../../../types/components/button";
+import {
+  propTypesVariant,
+  propTypesSize,
+  propTypesColor
+} from "../../../types/components/button";
+
+export interface ButtonStyleTypes {
+  defaultProps: {
+    variant: variant;
+    size: size;
+    color: color;
+    fullWidth: fullWidth;
+    ripple: ripple;
+    className: className;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      fullWidth: object;
+    };
+    sizes: {
+      sm: object;
+      md: object;
+      lg: object;
+    };
+    variants: {
+      filled: typeof buttonFilled;
+      gradient: typeof buttonGradient;
+      outlined: typeof buttonOutlined;
+      text: typeof buttonText;
+    };
+  }
+}
+
+export const button: ButtonStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",
@@ -14,9 +61,9 @@ const button = {
     className: "",
   },
   valid: {
-    variants: ["filled", "outlined", "gradient", "text"],
-    sizes: ["sm", "md", "lg"],
-    colors: validColors,
+    variants: propTypesVariant,
+    sizes: propTypesSize,
+    colors: propTypesColor,
   },
   styles: {
     base: {

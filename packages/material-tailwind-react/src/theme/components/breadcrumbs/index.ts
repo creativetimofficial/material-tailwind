@@ -1,4 +1,33 @@
-const popover = {
+// types
+import type {
+  separator,
+  fullWidth,
+  className
+} from "../../../types/components/breadcrumbs";
+
+export interface BreadcrumbsStyleTypes {
+  defaultProps: {
+    separator: separator,
+    fullWidth: fullWidth,
+    className: className,
+  };
+  styles: {
+    base: {
+      root: {
+        initial: object;
+        fullWidth: object;
+      }
+      list: object;
+      item: {
+        initial: object;
+        disabled: object;
+      }
+      separator: object;
+    };
+  }
+}
+
+export const breadcrumbs: BreadcrumbsStyleTypes = {
   defaultProps: {
     className: "",
     fullWidth: false,
@@ -56,4 +85,4 @@ const popover = {
   },
 };
 
-export default popover;
+export default breadcrumbs;
