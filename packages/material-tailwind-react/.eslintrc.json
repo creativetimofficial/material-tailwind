@@ -13,7 +13,7 @@
   },
   "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
     "react/require-default-props": "off",
     "no-param-reassign": "off",
     "jsx-a11y/alt-text": "off"
