@@ -90,7 +90,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
                     rippleEffect.create(e, "dark");
                   }
 
-                  return typeof onMouseDown === "function" && onMouseDown();
+                  return typeof onMouseDown === "function" && onMouseDown(e);
                 }}
               />
             )}

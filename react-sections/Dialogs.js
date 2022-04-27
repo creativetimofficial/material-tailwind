@@ -6,6 +6,7 @@ import {
   DialogBody,
   DialogFooter
 } from "components/Dialog";
+import Tooltip from "components/Tooltip/index";
 
 export default function Dialogs() {
   const [openXS, setOpenXS] = useState(false);
@@ -19,12 +20,25 @@ export default function Dialogs() {
     <div className="mb-24">
       <h2 className="text-2xl font-semibold mb-4">Dialogs</h2>
       <div className="flex gap-4 justify-between">
-        <Dialog
-          open={openXS}
-          handler={setOpenXS}
-          size="xs"
-          node={<Button variant="gradient">Open Dialog XS</Button>}
-        >
+        <Button onClick={() => setOpenXS(true)} variant="gradient">
+          Open Dialog XS
+        </Button>
+        <Button onClick={() => setOpenSM(true)} variant="gradient">
+          Open Dialog SM
+        </Button>
+        <Button onClick={() => setOpenMD(true)} variant="gradient">
+          Open Dialog MD
+        </Button>
+        <Button onClick={() => setOpenLG(true)} variant="gradient">
+          Open Dialog LG
+        </Button>
+        <Button onClick={() => setOpenXL(true)} variant="gradient">
+          Open Dialog XL
+        </Button>
+        <Button onClick={() => setOpenXXL(true)} variant="gradient">
+          Open Dialog XXL
+        </Button>
+        <Dialog open={openXS} handler={setOpenXS} size="xs">
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -50,12 +64,7 @@ export default function Dialogs() {
             </Button>
           </DialogFooter>
         </Dialog>
-        <Dialog
-          open={openSM}
-          handler={setOpenSM}
-          size="sm"
-          node={<Button variant="gradient">Open Dialog SM</Button>}
-        >
+        <Dialog open={openSM} handler={setOpenSM} size="sm">
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -81,11 +90,7 @@ export default function Dialogs() {
             </Button>
           </DialogFooter>
         </Dialog>
-        <Dialog
-          open={openMD}
-          handler={setOpenMD}
-          node={<Button variant="gradient">Open Dialog MD</Button>}
-        >
+        <Dialog open={openMD} handler={setOpenMD}>
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -111,12 +116,7 @@ export default function Dialogs() {
             </Button>
           </DialogFooter>
         </Dialog>
-        <Dialog
-          open={openLG}
-          handler={setOpenLG}
-          size="lg"
-          node={<Button variant="gradient">Open Dialog LG</Button>}
-        >
+        <Dialog open={openLG} size="lg" handler={setOpenLG}>
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -142,12 +142,7 @@ export default function Dialogs() {
             </Button>
           </DialogFooter>
         </Dialog>
-        <Dialog
-          open={openXL}
-          handler={setOpenXL}
-          size="xl"
-          node={<Button variant="gradient">Open Dialog XL</Button>}
-        >
+        <Dialog open={openXL} size="xl" handler={setOpenXL}>
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -173,12 +168,7 @@ export default function Dialogs() {
             </Button>
           </DialogFooter>
         </Dialog>
-        <Dialog
-          open={openXXL}
-          handler={setOpenXXL}
-          size="xxl"
-          node={<Button variant="gradient">Open Dialog XXL</Button>}
-        >
+        <Dialog open={openXXL} size="xxl" handler={setOpenXXL}>
           <DialogHeader>Its a simple dialog.</DialogHeader>
           <DialogBody divider>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus

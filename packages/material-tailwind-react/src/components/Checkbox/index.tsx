@@ -78,7 +78,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
               rippleEffect.create(e, "dark");
             }
 
-            return typeof onMouseDown === "function" && onMouseDown();
+            return typeof onMouseDown === "function" && onMouseDown(e);
           }}
         >
           <input {...rest} type="checkbox" className={inputClasses} id={rest.id || "checkbox"} />

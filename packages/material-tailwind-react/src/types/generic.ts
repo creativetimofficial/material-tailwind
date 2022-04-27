@@ -28,7 +28,7 @@ export type animation = {
   unmount?: Object;
 };
 
-export type dismiss = {
+export type dismissType = {
   enabled?: boolean;
   escapeKey?: boolean;
   referencePointerDown?: boolean;
@@ -37,7 +37,7 @@ export type dismiss = {
   bubbles?: boolean;
 };
 
-export type offset =
+export type offsetType =
   | number
   | {
       mainAxis?: number;
@@ -76,3 +76,21 @@ export const propTypesAnimation = PropTypes.shape({
   mount: PropTypes.instanceOf(Object),
   unmount: PropTypes.instanceOf(Object),
 });
+
+export const propTypesDismissType = PropTypes.shape({
+  enabled: PropTypes.bool,
+  escapeKey: PropTypes.bool,
+  referencePointerDown: PropTypes.bool,
+  outsidePointerDown: PropTypes.bool,
+  ancestorScroll: PropTypes.bool,
+  bubbles: PropTypes.bool,
+});
+
+export const propTypesOffsetType = PropTypes.oneOfType([
+  PropTypes.number,
+  PropTypes.shape({
+    mainAxis: PropTypes.number,
+    crossAxis: PropTypes.number,
+    alignmentAxis: PropTypes.number,
+  }),
+]);

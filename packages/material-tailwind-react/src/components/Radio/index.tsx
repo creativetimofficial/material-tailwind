@@ -82,7 +82,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               rippleEffect.create(e, "dark");
             }
 
-            return typeof onMouseDown === "function" && onMouseDown();
+            return typeof onMouseDown === "function" && onMouseDown(e);
           }}
         >
           <input {...rest} type="radio" className={inputClasses} id={rest.id || "radio"} />
