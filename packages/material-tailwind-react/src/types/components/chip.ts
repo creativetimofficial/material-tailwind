@@ -6,7 +6,7 @@ import type { colors, animation } from "../generic";
 import { propTypesColors, propTypesAnimation } from "../generic";
 
 /**
- * This file contains the types and prop-types for Alert component.
+ * This file contains the types and prop-types for Chip component.
  */
 
 // typescript types
@@ -20,7 +20,7 @@ export type dismissible = {
 };
 export type animate = animation;
 export type className = string;
-export type children = ReactNode;
+export type value = string | number;
 
 // javascript prop-types
 export const propTypesVariant: any = ["filled", "gradient"];
@@ -33,4 +33,7 @@ export const propTypesDismissible: any = PropTypes.shape({
 });
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesValue: any = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number,
+]).isRequired;

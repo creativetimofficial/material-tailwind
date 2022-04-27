@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 /**
- * This file contains the types and prop-types for breadcrumbs component.
+ * This file contains the types and prop-types for Breadcrumbs component.
  */
 
 // typescript types

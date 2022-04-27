@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /**
- * This file contains the types and prop-types for avatar component.
+ * This file contains the types and prop-types for Avatar component.
  */
 
 // typescript types

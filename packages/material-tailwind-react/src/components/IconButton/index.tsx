@@ -30,7 +30,7 @@ import {
   propTypesChildren,
 } from "../../types/components/button";
 
-export interface ButtonProps extends React.ComponentProps<"button"> {
+export interface IconButtonProps extends React.ComponentProps<"button"> {
   variant?: variant;
   size?: size;
   color?: color;
@@ -40,18 +40,17 @@ export interface ButtonProps extends React.ComponentProps<"button"> {
   children: children;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
+export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
     // 1. init
-    const { button } = useTheme();
-    const { valid, defaultProps, styles } = button;
+    const { iconButton } = useTheme();
+    const { valid, defaultProps, styles } = iconButton;
     const { base, variants, sizes } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
-    fullWidth = fullWidth ?? defaultProps.fullWidth;
     ripple = ripple ?? defaultProps.ripple;
     className = className ?? defaultProps.className;
 
@@ -59,20 +58,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const buttonBase = objectsToString(base.initial);
+    const buttonBase = objectsToString(base);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
         findMatch(valid.colors, color, "light-blue")
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
-    const classes = classnames(
-      buttonBase,
-      buttonSize,
-      buttonVariant,
-      { [objectsToString(base.fullWidth)]: fullWidth },
-      className,
-    );
+    const classes = classnames(buttonBase, buttonSize, buttonVariant, className);
 
     // 5. return
     return (
@@ -100,16 +93,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   },
 );
 
-Button.propTypes = {
+IconButton.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
   size: PropTypes.oneOf(propTypesSize),
   color: PropTypes.oneOf(propTypesColor),
-  fullWidth: propTypesFullWidth,
   ripple: propTypesRipple,
   className: propTypesClassName,
   children: propTypesChildren,
 };
 
-Button.displayName = "MaterialTailwind.Button";
+IconButton.displayName = "MaterialTailwind.IconButton";
 
-export default Button;
+export default IconButton;

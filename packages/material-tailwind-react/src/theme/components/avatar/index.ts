@@ -3,30 +3,30 @@ import type { variant, size, className } from "../../../types/components/avatar"
 import { propTypesVariant, propTypesSize } from "../../../types/components/avatar";
 
 export interface AvatarStyleTypes {
-  defaultProps: {
-    variant: variant;
-    size: size;
-    className: className;
+  defaultProps?: {
+    variant?: variant;
+    size?: size;
+    className?: className;
   };
-  valid: {
-    variants: string[];
-    sizes: string[];
+  valid?: {
+    variants?: string[];
+    sizes?: string[];
   };
-  styles: {
-    base: object;
-    sizes: {
-      xs: object;
-      sm: object;
-      md: object;
-      lg: object;
-      xl: object;
-      xxl: object;
+  styles?: {
+    base?: object;
+    sizes?: {
+      xs?: object;
+      sm?: object;
+      md?: object;
+      lg?: object;
+      xl?: object;
+      xxl?: object;
     };
-    variants: {
-      rounded: object;
-      circular: object;
+    variants?: {
+      rounded?: object;
+      circular?: object;
     };
-  }
+  };
 }
 
 export const avatar: AvatarStyleTypes = {
@@ -81,7 +81,7 @@ export const avatar: AvatarStyleTypes = {
     variants: {
       rounded: {},
       circular: {
-        borderRadius: "rounded-full"
+        borderRadius: "rounded-full",
       },
     },
   },

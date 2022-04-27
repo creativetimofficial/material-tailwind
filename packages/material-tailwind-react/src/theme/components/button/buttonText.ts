@@ -96,4 +96,4 @@ const buttonText: object = {
   },
 };
 
-export default buttonText
+export default buttonText;

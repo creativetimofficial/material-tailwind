@@ -1,7 +1,7 @@
-import buttonFilled from "./buttonFilled";
-import buttonGradient from "./buttonGradient";
-import buttonOutlined from "./buttonOutlined";
-import buttonText from "./buttonText";
+import buttonFilled from "../button/buttonFilled";
+import buttonGradient from "../button/buttonGradient";
+import buttonOutlined from "../button/buttonOutlined";
+import buttonText from "../button/buttonText";
 
 // types
 import type {
@@ -14,7 +14,7 @@ import type {
 } from "../../../types/components/button";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/button";
 
-export interface ButtonStyleTypes {
+export interface IconButtonStyleTypes {
   defaultProps?: {
     variant?: variant;
     size?: size;
@@ -29,10 +29,7 @@ export interface ButtonStyleTypes {
     colors?: string[];
   };
   styles?: {
-    base?: {
-      initial?: object;
-      fullWidth?: object;
-    };
+    base?: object;
     sizes?: {
       sm?: object;
       md?: object;
@@ -47,7 +44,7 @@ export interface ButtonStyleTypes {
   };
 }
 
-export const button: ButtonStyleTypes = {
+export const iconButton: IconButtonStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",
@@ -63,39 +60,39 @@ export const button: ButtonStyleTypes = {
   },
   styles: {
     base: {
-      initial: {
-        display: "inline-block",
-        verticalAlign: "middle",
-        userSelect: "none",
-        fontFamily: "font-sans",
-        fontWeight: "font-medium",
-        textAlign: "center",
-        textTransform: "uppercase",
-        transition: "transition-all",
-      },
-      fullWidth: {
-        display: "block",
-        width: "w-full",
-      },
+      display: "inline-grid",
+      placeItems: "place-items-center",
+      userSelect: "none",
+      fontFamily: "font-sans",
+      fontWeight: "font-medium",
+      textAlign: "text-center",
+      textTransform: "uppercase",
+      transition: "transition-all",
     },
     sizes: {
       sm: {
-        fontSize: "text-xs",
-        py: "py-2",
-        px: "px-4",
+        width: "w-8",
+        maxWidth: "max-w-[32px]",
+        height: "h-8",
+        maxHeight: "max-h-[32px]",
         borderRadius: "rounded-lg",
+        fontSize: "text-xs",
       },
       md: {
-        fontSize: "text-xs",
-        py: "py-3",
-        px: "px-6",
+        width: "w-10",
+        maxWidth: "max-w-[40px]",
+        height: "h-10",
+        maxHeight: "max-h-[40px]",
         borderRadius: "rounded-lg",
+        fontSize: "text-xs",
       },
       lg: {
-        fontSize: "text-sm",
-        py: "py-3.5",
-        px: "px-7",
+        width: "w-12",
+        maxWidth: "max-w-[48px]",
+        height: "h-12",
+        maxHeight: "max-h-[48px]",
         borderRadius: "rounded-lg",
+        fontSize: "text-sm",
       },
     },
     variants: {
@@ -107,4 +104,4 @@ export const button: ButtonStyleTypes = {
   },
 };
 
-export default button;
+export default iconButton;

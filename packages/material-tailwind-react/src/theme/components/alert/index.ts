@@ -13,30 +13,30 @@ import type {
 } from "../../../types/components/alert";
 import { propTypesVariant, propTypesColor } from "../../../types/components/alert";
 
-export interface AlertStyleTypes {
-  defaultProps: {
-    variant: variant;
-    color: color;
-    icon: icon,
-    show: show,
-    dismissble: dismissible,
-    animate: animate,
-    className: className;
+export interface AlertStylesType {
+  defaultProps?: {
+    variant?: variant;
+    color?: color;
+    icon?: icon;
+    show?: show;
+    dismissble?: dismissible;
+    animate?: animate;
+    className?: className;
   };
-  valid: {
-    variants: string[];
-    colors: string[];
+  valid?: {
+    variants?: string[];
+    colors?: string[];
   };
-  styles: {
-    base: object;
-    variants: {
-      filled: typeof alertFilled;
-      gradient: typeof alertGradient;
+  styles?: {
+    base?: object;
+    variants?: {
+      filled?: typeof alertFilled;
+      gradient?: typeof alertGradient;
     };
-  }
+  };
 }
 
-export const alert: AlertStyleTypes = {
+export const alert: AlertStylesType = {
   defaultProps: {
     variant: "filled",
     color: "light-blue",
@@ -44,7 +44,7 @@ export const alert: AlertStyleTypes = {
     show: true,
     dismissble: {
       action: "",
-      onClose: () => { },
+      onClose: () => {},
     },
     animate: {
       unmount: {},

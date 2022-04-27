@@ -1,16 +1,8 @@
 import React from "react";
 
 // types
-import type {
-  open,
-  icon,
-  animate,
-  children
-} from "../../types/components/accordion";
-import {
-  propTypesValue,
-  propTypesChildren,
-} from "../../types/components/accordion";
+import type { open, icon, animate, children } from "../../types/components/accordion";
+import { propTypesValue, propTypesChildren } from "../../types/components/accordion";
 
 export interface AccordionContextType {
   open: open;
@@ -25,7 +17,9 @@ export function useAccordion() {
   const context = React.useContext(AccordionContext);
 
   if (!context) {
-    throw new Error("useAccordion() must be used within an Accordion. It happens when you use AccordionHeader or AccordionBody components outside of Accordion component.");
+    throw new Error(
+      "useAccordion() must be used within an Accordion. It happens when you use AccordionHeader or AccordionBody components outside of Accordion component.",
+    );
   }
 
   return context;

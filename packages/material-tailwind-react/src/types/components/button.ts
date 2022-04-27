@@ -6,7 +6,7 @@ import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
- * This file contains the types and prop-types for button component.
+ * This file contains the types and prop-types for Button and IconButton component.
  */
 
 // typescript types

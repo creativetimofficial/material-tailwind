@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
+// generic types
 import type { animation } from "../generic";
 import { propTypesAnimation } from "../generic";
 
 /**
- * This file contains the types and prop-types for Accordion, AccordionHeader, AccordionBody and AccordionContext files.
+ * This file contains the types and prop-types for Accordion, AccordionHeader, AccordionBody and AccordionContext components.
  */
 
 // typescript types

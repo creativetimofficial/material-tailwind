@@ -16,7 +16,7 @@ import type {
   animate,
   disabled,
   className,
-  children
+  children,
 } from "../../types/components/accordion";
 import {
   propTypesOpen,
@@ -24,7 +24,7 @@ import {
   propTypesAnimate,
   propTypesDisabled,
   propTypesClassName,
-  propTypesChildren
+  propTypesChildren,
 } from "../../types/components/accordion";
 
 // accordion components
@@ -90,5 +90,5 @@ Accordion.displayName = "MaterialTailwind.Accordion";
 export { Accordion, AccordionHeader, AccordionBody };
 export default Object.assign(Accordion, {
   Header: AccordionHeader,
-  Body: AccordionBody
+  Body: AccordionBody,
 });

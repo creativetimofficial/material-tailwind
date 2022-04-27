@@ -15,6 +15,7 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
+import type { NewAnimatePresenceProps } from "../../types/generic";
 import type {
   variant,
   color,
@@ -23,7 +24,7 @@ import type {
   dismissible,
   animate,
   className,
-  children
+  children,
 } from "../../types/components/alert";
 import {
   propTypesVariant,
@@ -33,11 +34,11 @@ import {
   propTypesDismissible,
   propTypesAnimate,
   propTypesClassName,
-  propTypesChildren
+  propTypesChildren,
 } from "../../types/components/alert";
 
 export interface AlertProps extends Omit<MotionProps, "animate"> {
-  variant?: variant,
+  variant?: variant;
   color?: color;
   icon?: icon;
   show?: show;
@@ -66,7 +67,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const alertBase = objectsToString(base);
     const alertVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-      findMatch(valid.colors, color, "light-blue")
+        findMatch(valid.colors, color, "light-blue")
       ],
     );
     const classes = classnames(alertBase, alertVariant, className);
@@ -85,9 +86,12 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     // 5. icon template
     const iconTemplate = <div className="absolute top-4 left-4">{icon}</div>;
 
-    // 6. return
+    // 6. Create an instance of AnimatePresence because of the types issue with the children
+    const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
+
+    // 7. return
     return (
-      <AnimatePresence>
+      <NewAnimatePresence>
         {show && (
           <motion.div
             {...rest}
@@ -126,7 +130,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             )}
           </motion.div>
         )}
-      </AnimatePresence>
+      </NewAnimatePresence>
     );
   },
 );

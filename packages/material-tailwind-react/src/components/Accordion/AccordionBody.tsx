@@ -14,85 +14,81 @@ import { useAccordion } from "./AccordionContext";
 import { useTheme } from "../../context/theme";
 
 // types
-import type {
-  className,
-  children
-} from "../../types/components/accordion";
-import {
-  propTypesClassName,
-  propTypesChildren
-} from "../../types/components/accordion";
+import type { className, children } from "../../types/components/accordion";
+import { propTypesClassName, propTypesChildren } from "../../types/components/accordion";
 
 export interface AccordionBodyProps extends MotionProps {
-  className?: className,
-  children: children,
+  className?: className;
+  children: children;
 }
 
-export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(({ className, children, ...rest }, ref) => {
-  // 1. init
-  const { open, animate } = useAccordion();
-  const { accordion } = useTheme();
-  const {
-    styles: { base },
-  } = accordion;
+export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
+  ({ className, children, ...rest }, ref) => {
+    // 1. init
+    const { open, animate } = useAccordion();
+    const { accordion } = useTheme();
+    const {
+      styles: { base },
+    } = accordion;
 
-  const bodyEl = React.useRef(null);
+    const bodyEl = React.useRef(null);
 
-  // 2. set default props
-  className = className ?? "";
+    // 2. set default props
+    className = className ?? "";
 
-  // 3. set styles
-  const bodyClasses = classnames(objectsToString(base.body), className);
+    // 3. set styles
+    const bodyClasses = classnames(objectsToString(base.body), className);
 
-  // 4. set animation
-  const heightAnimation = {
-    unmount: {
-      height: "0px",
-      transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
-    },
-    mount: {
-      height: `${bodyEl.current?.scrollHeight}px`,
-      transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
-    },
-  };
+    // 4. set animation
+    const heightAnimation = {
+      unmount: {
+        height: "0px",
+        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+      },
+      mount: {
+        height: `${bodyEl.current?.scrollHeight}px`,
+        transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
+      },
+    };
 
-  const mainAnimation = {
-    unmount: {
-      opacity: 0,
-      transition: { duration: 0.3, ease: "linear" },
-    },
-    mount: {
-      opacity: 1,
-      transition: { duration: 0.3, ease: "linear" },
-    },
-  };
+    const mainAnimation = {
+      unmount: {
+        opacity: 0,
+        transition: { duration: 0.3, ease: "linear" },
+      },
+      mount: {
+        opacity: 1,
+        transition: { duration: 0.3, ease: "linear" },
+      },
+    };
 
-  const appliedAnimation = merge(mainAnimation, animate);
+    const appliedAnimation = merge(mainAnimation, animate);
 
-  // 5. return
-  return (
-    <motion.div
-      className="overflow-hidden"
-      ref={bodyEl}
-      initial="unmount"
-      exit="unmount"
-      animate={open ? "mount" : "unmount"}
-      variants={heightAnimation}
-    >
+    // 5. return
+    return (
       <motion.div
-        {...rest}
-        ref={ref}
-        className={bodyClasses}
+        className="overflow-hidden"
+        ref={bodyEl}
         initial="unmount"
         exit="unmount"
         animate={open ? "mount" : "unmount"}
-        variants={appliedAnimation}
+        variants={heightAnimation}
       >
-        {children}
+        <motion.div
+          {...rest}
+          ref={ref}
+          className={bodyClasses}
+          initial="unmount"
+          exit="unmount"
+          animate={open ? "mount" : "unmount"}
+          variants={appliedAnimation}
+        >
+          {children}
+        </motion.div>
       </motion.div>
-    </motion.div>
-  );
-});
+    );
+  },
+);
 
 AccordionBody.propTypes = {
   className: propTypesClassName,

@@ -9,17 +9,12 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import type {
-  separator,
-  fullWidth,
-  className,
-  children
-} from "../../types/components/breadcrumbs";
+import type { separator, fullWidth, className, children } from "../../types/components/breadcrumbs";
 import {
   propTypesSeparator,
   propTypesFullWidth,
   propTypesClassName,
-  propTypesChildren
+  propTypesChildren,
 } from "../../types/components/breadcrumbs";
 
 export interface BreadcrumbsProps extends React.ComponentProps<"ol"> {
@@ -29,54 +24,56 @@ export interface BreadcrumbsProps extends React.ComponentProps<"ol"> {
   children: children;
 }
 
-const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(({ separator, fullWidth, className, children, ...rest }, ref) => {
-  // 1. init
-  const { breadcrumbs } = useTheme();
-  const {
-    defaultProps,
-    styles: { base },
-  } = breadcrumbs;
+export const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(
+  ({ separator, fullWidth, className, children, ...rest }, ref) => {
+    // 1. init
+    const { breadcrumbs } = useTheme();
+    const {
+      defaultProps,
+      styles: { base },
+    } = breadcrumbs;
 
-  // 2. set default props
-  separator = separator ?? defaultProps.separator;
-  fullWidth = fullWidth ?? defaultProps.fullWidth;
-  className = className ?? defaultProps.className;
+    // 2. set default props
+    separator = separator ?? defaultProps.separator;
+    fullWidth = fullWidth ?? defaultProps.fullWidth;
+    className = className ?? defaultProps.className;
 
-  // 3. set styles
-  const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
-    [objectsToString(base.root.fullWidth)]: fullWidth,
-  });
-  const breadcrumbsListClasses = classnames(objectsToString(base.list), className);
-  const breadcrumbsItemClasses = classnames(objectsToString(base.item.initial));
-  const breadcrumbsSeparatorClasses = classnames(objectsToString(base.separator));
+    // 3. set styles
+    const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
+      [objectsToString(base.root.fullWidth)]: fullWidth,
+    });
+    const breadcrumbsListClasses = classnames(objectsToString(base.list), className);
+    const breadcrumbsItemClasses = classnames(objectsToString(base.item.initial));
+    const breadcrumbsSeparatorClasses = classnames(objectsToString(base.separator));
 
-  // 4. return
-  return (
-    <nav aria-label="breadcrumb" className={breadcrumbsRootClasses}>
-      <ol {...rest} ref={ref} className={breadcrumbsListClasses}>
-        {Children.map(children, (child, index) => {
-          if (isValidElement(child)) {
-            return (
-              <li
-                className={classnames(breadcrumbsItemClasses, {
-                  [objectsToString(base.item.disabled)]: child?.props?.disabled,
-                })}
-              >
-                {child}
-                {index !== Children.count(children) - 1 && (
-                  <span aria-hidden="true" className={breadcrumbsSeparatorClasses}>
-                    {separator}
-                  </span>
-                )}
-              </li>
-            );
-          }
-          return null;
-        })}
-      </ol>
-    </nav>
-  );
-});
+    // 4. return
+    return (
+      <nav aria-label="breadcrumb" className={breadcrumbsRootClasses}>
+        <ol {...rest} ref={ref} className={breadcrumbsListClasses}>
+          {Children.map(children, (child, index) => {
+            if (isValidElement(child)) {
+              return (
+                <li
+                  className={classnames(breadcrumbsItemClasses, {
+                    [objectsToString(base.item.disabled)]: child?.props?.disabled,
+                  })}
+                >
+                  {child}
+                  {index !== Children.count(children) - 1 && (
+                    <span aria-hidden="true" className={breadcrumbsSeparatorClasses}>
+                      {separator}
+                    </span>
+                  )}
+                </li>
+              );
+            }
+            return null;
+          })}
+        </ol>
+      </nav>
+    );
+  },
+);
 
 Breadcrumbs.propTypes = {
   separator: propTypesSeparator,
@@ -87,5 +84,4 @@ Breadcrumbs.propTypes = {
 
 Breadcrumbs.displayName = "MaterialTailwind.Breacrumbs";
 
-export { Breadcrumbs };
 export default Breadcrumbs;
