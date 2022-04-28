@@ -10,7 +10,7 @@ export interface AccordionContextType {
   animate: animate;
 }
 
-export const AccordionContext = React.createContext<AccordionContextType>(null);
+export const AccordionContext = React.createContext<AccordionContextType | null>(null);
 AccordionContext.displayName = "MaterialTailwind.AccordionContext";
 
 export function useAccordion() {
@@ -18,7 +18,7 @@ export function useAccordion() {
 
   if (!context) {
     throw new Error(
-      "useAccordion() must be used within an Accordion. It happens when you use AccordionHeader or AccordionBody components outside of Accordion component.",
+      "useAccordion() must be used within an Accordion. It happens when you use AccordionHeader or AccordionBody components outside the Accordion component.",
     );
   }
 

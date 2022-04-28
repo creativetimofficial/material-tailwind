@@ -7,7 +7,7 @@ import objectsToString from "../../utils/objectsToString";
 
 // context
 import { useTheme } from "../../context/theme";
-import { AccordionContextProvider } from "./AccordionContext";
+import { AccordionContextProvider, useAccordion } from "./AccordionContext";
 
 // types
 import type {
@@ -87,7 +87,7 @@ Accordion.propTypes = {
 
 Accordion.displayName = "MaterialTailwind.Accordion";
 
-export { Accordion, AccordionHeader, AccordionBody };
+export { Accordion, AccordionHeader, AccordionBody, useAccordion };
 export default Object.assign(Accordion, {
   Header: AccordionHeader,
   Body: AccordionBody,

@@ -94,3 +94,18 @@ export const propTypesOffsetType = PropTypes.oneOfType([
     alignmentAxis: PropTypes.number,
   }),
 ]);
+
+export const propTypesPlacements: string[] = [
+  "top-start",
+  "top",
+  "top-end",
+  "right-start",
+  "right",
+  "right-end",
+  "bottom-start",
+  "bottom",
+  "bottom-end",
+  "left-start",
+  "left",
+  "left-end",
+];

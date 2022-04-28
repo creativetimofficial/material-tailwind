@@ -1,6 +1,28 @@
-const tooltip = {
+// types
+import type {
+  placement,
+  offset,
+  dismiss,
+  animate,
+  className,
+} from "../../../types/components/popover";
+
+export interface TooltipStylesType {
+  defaultProps?: {
+    placement?: placement;
+    offset?: offset;
+    dismiss?: dismiss;
+    animate?: animate;
+    className?: className;
+  };
+  styles?: {
+    base?: object;
+  };
+}
+
+export const tooltip: TooltipStylesType = {
   defaultProps: {
-    placement: "bottom-start",
+    placement: "bottom",
     offset: 5,
     dismiss: {},
     animate: {

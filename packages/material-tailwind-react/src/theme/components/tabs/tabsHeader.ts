@@ -1,4 +1,16 @@
-const tabsHeader = {
+// types
+import type { className } from "../../../types/components/tabs";
+
+export interface TabsHeaderStylesType {
+  defaultProps?: {
+    className?: className;
+  };
+  styles?: {
+    base?: object;
+  };
+}
+
+export const tabsHeader: TabsHeaderStylesType = {
   defaultProps: {
     className: "",
   },

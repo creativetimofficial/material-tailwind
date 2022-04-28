@@ -1,10 +1,18 @@
-const tabPanel = {
+// types
+import type { className } from "../../../types/components/tabs";
+
+export interface TabPanelStylesType {
+  defaultProps?: {
+    className?: className;
+  };
+  styles?: {
+    base?: object;
+  };
+}
+
+export const tabPanel: TabPanelStylesType = {
   defaultProps: {
     className: "",
-    animate: {
-      unmount: {},
-      mount: {},
-    },
   },
   styles: {
     base: {

@@ -16,7 +16,6 @@ import dialogHeader from "./components/dialog/dialogHeader";
 import iconButton from "./components/iconButton";
 import input from "./components/input";
 import menu from "./components/menu";
-import menuItem from "./components/menu/menuItem";
 import navbar from "./components/navbar";
 import popover from "./components/popover";
 import progress from "./components/progress";
@@ -51,7 +50,6 @@ const theme = {
   iconButton,
   input,
   menu,
-  menuItem,
   navbar,
   popover,
   progress,

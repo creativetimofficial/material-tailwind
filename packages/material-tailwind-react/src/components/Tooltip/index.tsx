@@ -1,4 +1,4 @@
-import React, { forwardRef, cloneElement, useEffect, useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui
@@ -18,7 +18,7 @@ import {
 } from "@floating-ui/react-dom-interactions";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionProps } from "framer-motion";
 
 // utils
 import mergeRefs from "react-merge-refs";
@@ -29,9 +29,61 @@ import objectsToString from "../../utils/objectsToString";
 // context
 import { useTheme } from "../../context/theme";
 
-const Tooltip = forwardRef(
+// types
+import type { NewAnimatePresenceProps } from "../../types/generic";
+import type {
+  open,
+  handler,
+  content,
+  interactive,
+  placement,
+  offset,
+  dismiss,
+  animate,
+  className,
+  children,
+} from "../../types/components/popover";
+import {
+  propTypesOpen,
+  propTypesHandler,
+  propTypesContent,
+  propTypesInteractive,
+  propTypesPlacement,
+  propTypesOffset,
+  propTypesDismiss,
+  propTypesAnimate,
+  propTypesClassName,
+  propTypesChildren,
+} from "../../types/components/popover";
+
+export interface TooltipProps extends React.ComponentProps<"div"> {
+  open?: open;
+  handler?: handler;
+  content?: content;
+  interactive?: interactive;
+  placement?: placement;
+  offset?: offset;
+  dismiss?: dismiss;
+  animate?: animate;
+  className?: className;
+  children: children | React.ComponentProps<any>;
+}
+
+export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
   (
-    { open, handler, content, placement, offset, dismiss, animate, className, children, ...rest },
+    {
+      open,
+      handler,
+      content,
+      interactive,
+      placement,
+      offset,
+      dismiss,
+      animate,
+      className,
+      children,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
@@ -40,8 +92,12 @@ const Tooltip = forwardRef(
       defaultProps,
       styles: { base },
     } = tooltip;
+    const [internalOpen, setInternalOpen] = React.useState(false);
 
     // 2. set default props
+    open = open ?? internalOpen;
+    handler = handler ?? setInternalOpen;
+    interactive = interactive ?? defaultProps.interactive;
     placement = placement ?? defaultProps.placement;
     offset = offset ?? defaultProps.offset;
     dismiss = dismiss ?? defaultProps.dismiss;
@@ -71,23 +127,28 @@ const Tooltip = forwardRef(
     });
 
     const { getReferenceProps, getFloatingProps } = useInteractions([
-      useClick(context),
-      useHover(context),
+      useClick(context, {
+        enabled: interactive,
+      }),
       useFocus(context),
+      useHover(context),
       useRole(context, { role: "tooltip" }),
       useDismiss(context, dismiss),
     ]);
 
-    useEffect(() => {
+    React.useEffect(() => {
       if (refs.reference.current && refs.floating.current && open) {
         return autoUpdate(refs.reference.current, refs.floating.current, update);
       }
     }, [open, update, refs.reference, refs.floating]);
 
-    const mergedRef = useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
-    const childMergedRef = useMemo(() => mergeRefs([ref, reference]), [reference, ref]);
+    const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
+    const childMergedRef = React.useMemo(() => mergeRefs([ref, reference]), [reference, ref]);
 
-    // 6. return
+    // 6. Create an instance of AnimatePresence because of the types issue with the children
+    const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
+
+    // 7. return
     return (
       <>
         {typeof children === "string" ? (
@@ -99,7 +160,7 @@ const Tooltip = forwardRef(
             {children}
           </span>
         ) : (
-          cloneElement(children, {
+          React.cloneElement(children, {
             ...getReferenceProps({
               ...children?.props,
               ref: childMergedRef,
@@ -107,7 +168,7 @@ const Tooltip = forwardRef(
           })
         )}
         <FloatingPortal>
-          <AnimatePresence>
+          <NewAnimatePresence>
             {open && (
               <motion.div
                 {...getFloatingProps({
@@ -119,16 +180,16 @@ const Tooltip = forwardRef(
                     top: y ?? "",
                     left: x ?? "",
                   },
-                  initial: "unmount",
-                  exit: "unmount",
-                  animate: open ? "mount" : "unmount",
-                  variants: appliedAnimation,
                 })}
+                initial="unmount"
+                exit="unmount"
+                animate={open ? "mount" : "unmount"}
+                variants={appliedAnimation}
               >
                 {content}
               </motion.div>
             )}
-          </AnimatePresence>
+          </NewAnimatePresence>
         </FloatingPortal>
       </>
     );
@@ -136,48 +197,18 @@ const Tooltip = forwardRef(
 );
 
 Tooltip.propTypes = {
-  open: PropTypes.bool.isRequired,
-  handler: PropTypes.func.isRequired,
-  content: PropTypes.node.isRequired,
-  placement: PropTypes.oneOf([
-    "top-start",
-    "top",
-    "top-end",
-    "right-start",
-    "right",
-    "right-end",
-    "bottom-start",
-    "bottom",
-    "bottom-end",
-    "left-start",
-    "left",
-    "left-end",
-  ]),
-  offset: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.shape({
-      mainAxis: PropTypes.number,
-      crossAxis: PropTypes.number,
-      alignmentAxis: PropTypes.number,
-    }),
-  ]),
-  dismiss: PropTypes.shape({
-    enabled: PropTypes.bool,
-    escapeKey: PropTypes.bool,
-    referencePointerDown: PropTypes.bool,
-    outsidePointerDown: PropTypes.bool,
-    ancestorScroll: PropTypes.bool,
-    bubbles: PropTypes.bool,
-  }),
-  animate: PropTypes.shape({
-    mount: PropTypes.instanceOf(Object),
-    unmount: PropTypes.instanceOf(Object),
-  }),
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  open: propTypesOpen,
+  handler: propTypesHandler,
+  content: propTypesContent,
+  interactive: propTypesInteractive,
+  placement: propTypesPlacement,
+  offset: propTypesOffset,
+  dismiss: propTypesDismiss,
+  animate: propTypesAnimate,
+  className: propTypesClassName,
+  children: propTypesChildren,
 };
 
-Tooltip.displayName = "Tooltip";
+Tooltip.displayName = "MaterialTailwind.Tooltip";
 
-export { Tooltip };
 export default Tooltip;

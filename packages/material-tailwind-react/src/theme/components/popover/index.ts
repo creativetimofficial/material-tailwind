@@ -1,6 +1,28 @@
-const popover = {
+// types
+import type {
+  placement,
+  offset,
+  dismiss,
+  animate,
+  className,
+} from "../../../types/components/popover";
+
+export interface PopoverStylesType {
+  defaultProps?: {
+    placement?: placement;
+    offset?: offset;
+    dismiss?: dismiss;
+    animate?: animate;
+    className?: className;
+  };
+  styles?: {
+    base?: object;
+  };
+}
+
+export const popover: PopoverStylesType = {
   defaultProps: {
-    placement: "bottom-start",
+    placement: "bottom",
     offset: 5,
     dismiss: {},
     animate: {

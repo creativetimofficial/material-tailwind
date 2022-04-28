@@ -74,8 +74,6 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
       styles: { base, sizes },
     } = dialog;
 
-    const [state, setState] = React.useState(false);
-
     // 2. set default props
     handler = handler ?? undefined;
     size = size ?? defaultProps.size;
@@ -145,10 +143,10 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
     // 7. return
     return (
       <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <FloatingOverlay lockScroll>
-              <FloatingFocusManager context={context}>
+        <FloatingFocusManager context={context}>
+          <NewAnimatePresence>
+            {open && (
+              <FloatingOverlay lockScroll>
                 <motion.div
                   className={size === "xxl" ? "" : backdropClasses}
                   initial="unmount"
@@ -173,10 +171,10 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
                     {children}
                   </motion.div>
                 </motion.div>
-              </FloatingFocusManager>
-            </FloatingOverlay>
-          )}
-        </NewAnimatePresence>
+              </FloatingOverlay>
+            )}
+          </NewAnimatePresence>
+        </FloatingFocusManager>
       </FloatingPortal>
     );
   },
