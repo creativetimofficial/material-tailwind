@@ -61,9 +61,9 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
     // 6. return
     return (
       <FloatingPortal>
-        <FloatingFocusManager context={context}>
-          <NewAnimatePresence>
-            {open && (
+        <NewAnimatePresence>
+          {open && (
+            <FloatingFocusManager context={context}>
               <motion.div
                 {...getFloatingProps({
                   ...rest,
@@ -84,9 +84,9 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
               >
                 {children}
               </motion.div>
-            )}
-          </NewAnimatePresence>
-        </FloatingFocusManager>
+            </FloatingFocusManager>
+          )}
+        </NewAnimatePresence>
       </FloatingPortal>
     );
   },

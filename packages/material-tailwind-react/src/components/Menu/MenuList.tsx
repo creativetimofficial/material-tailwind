@@ -1,9 +1,9 @@
 import React from "react";
 
 // @floating-ui
-import { FloatingPortal } from "@floating-ui/react-dom-interactions";
 
 // framer-motion
+import { FloatingPortal, FloatingOverlay } from "@floating-ui/react-dom-interactions";
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
@@ -45,6 +45,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       getFloatingProps,
       getItemProps,
       appliedAnimation,
+      lockScroll,
     } = useMenu();
 
     // 2. set default props
@@ -56,60 +57,69 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     // 4. set refs
     const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [ref, floating]);
 
-    // 5. Create an instance of AnimatePresence because of the types issue with the children
+    // 5. create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
-    // 6. return
-    return (
-      <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <motion.ul
-              {...getFloatingProps({
-                ...rest,
-                ref: mergedRef,
-                className: menuClasses,
-                style: {
-                  position: strategy,
-                  top: y ?? "",
-                  left: x ?? "",
+    // 6. menu component
+    const menuComponent = (
+      <motion.ul
+        {...getFloatingProps({
+          ...rest,
+          ref: mergedRef,
+          className: menuClasses,
+          style: {
+            position: strategy,
+            top: y ?? "",
+            left: x ?? "",
+          },
+        })}
+        initial="unmount"
+        exit="unmount"
+        animate={open ? "mount" : "unmount"}
+        variants={appliedAnimation}
+      >
+        {React.Children.map(
+          children,
+          (child, index) =>
+            React.isValidElement(child) &&
+            React.cloneElement(
+              child,
+              getItemProps({
+                ...child.props,
+                onClick: (e) => {
+                  const onClickFunction = child.props?.onClick;
+
+                  if (typeof onClickFunction === "function" && handler) {
+                    onClickFunction(e);
+                  } else if (typeof onClickFunction === "function") {
+                    setInternalOpen(false);
+                    onClickFunction(e);
+                  }
+
+                  setInternalOpen(false);
                 },
-              })}
-              initial="unmount"
-              exit="unmount"
-              animate={open ? "mount" : "unmount"}
-              variants={appliedAnimation}
-            >
-              {React.Children.map(
-                children,
-                (child, index) =>
-                  React.isValidElement(child) &&
-                  React.cloneElement(
-                    child,
-                    getItemProps({
-                      ...child.props,
-                      onClick: (e) => {
-                        const onClickFunction = child.props?.onClick;
+                ref(nodeElement) {
+                  listItemsRef.current[index] = nodeElement;
+                },
+              }),
+            ),
+        )}
+      </motion.ul>
+    );
 
-                        if (typeof onClickFunction === "function" && handler) {
-                          onClickFunction(e);
-                        } else if (typeof onClickFunction === "function") {
-                          setInternalOpen(false);
-                          onClickFunction(e);
-                        }
-
-                        setInternalOpen(false);
-                      },
-                      ref(nodeElement) {
-                        listItemsRef.current[index] = nodeElement;
-                      },
-                    }),
-                  ),
-              )}
-            </motion.ul>
-          )}
-        </NewAnimatePresence>
-      </FloatingPortal>
+    // 7. return
+    return (
+      <NewAnimatePresence>
+        {open && (
+          <>
+            {lockScroll ? (
+              <FloatingOverlay lockScroll>{menuComponent}</FloatingOverlay>
+            ) : (
+              <FloatingPortal>{menuComponent}</FloatingPortal>
+            )}
+          </>
+        )}
+      </NewAnimatePresence>
     );
   },
 );

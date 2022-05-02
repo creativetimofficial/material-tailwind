@@ -24,6 +24,7 @@ export type placement = Placement;
 export type offset = offsetType;
 export type dismiss = dismissType;
 export type animate = animation;
+export type lockScroll = boolean;
 export type disabled = boolean;
 export type className = string;
 export type children = ReactNode;
@@ -41,6 +42,7 @@ export type contextValue = {
   getFloatingProps: (userProps?: React.HTMLProps<HTMLElement>) => any;
   getItemProps: (userProps?: React.HTMLProps<HTMLElement>) => any;
   appliedAnimation: animate;
+  lockScroll: boolean;
 };
 
 // javascript prop-types
@@ -50,6 +52,7 @@ export const propTypesPlacement: any = propTypesPlacements;
 export const propTypesOffset: any = propTypesOffsetType;
 export const propTypesDismiss: any = propTypesDismissType;
 export const propTypesAnimate: any = propTypesAnimation;
+export const propTypesLockScroll: any = PropTypes.bool;
 export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
 export const propTypesChildren: any = PropTypes.node.isRequired;
@@ -67,4 +70,5 @@ export const propTypesContextValue: any = PropTypes.shape({
   getFloatingProps: PropTypes.func.isRequired,
   getItemProps: PropTypes.func.isRequired,
   appliedAnimation: propTypesAnimate.isRequired,
+  lockScroll: PropTypes.bool.isRequired,
 });

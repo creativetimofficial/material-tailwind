@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@material-tailwind/react/*": [
+        "./packages/material-tailwind-react/src/*"
+      ],
+      "components/*": ["./packages/material-tailwind-react/src/components/*"],
+      "context/*": ["./packages/material-tailwind-react/src/context/*"],
+      "theme/*": ["./packages/material-tailwind-react/src/theme/*"],
+      "utils/*": ["./packages/material-tailwind-react/src/utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

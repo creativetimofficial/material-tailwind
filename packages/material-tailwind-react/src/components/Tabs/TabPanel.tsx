@@ -31,8 +31,8 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
       defaultProps,
       styles: { base },
     } = tabPanel;
-    const [state] = useTabs();
-    const { active, appliedAnimation } = state;
+    const { tab } = useTabs();
+    const { active, appliedAnimation } = tab;
 
     // 2. set default props
     className = className ?? defaultProps.className;

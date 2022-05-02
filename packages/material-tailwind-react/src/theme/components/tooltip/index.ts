@@ -22,7 +22,7 @@ export interface TooltipStylesType {
 
 export const tooltip: TooltipStylesType = {
   defaultProps: {
-    placement: "bottom",
+    placement: "top",
     offset: 5,
     dismiss: {},
     animate: {

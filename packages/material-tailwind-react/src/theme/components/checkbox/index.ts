@@ -40,7 +40,7 @@ export const checkbox: CheckboxStylesType = {
   defaultProps: {
     color: "light-blue",
     label: "",
-    icon: "",
+    icon: undefined,
     ripple: true,
     className: "",
     containerProps: {},

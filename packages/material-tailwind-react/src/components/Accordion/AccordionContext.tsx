@@ -30,11 +30,13 @@ export interface AccordionContextProviderProps {
   children: children;
 }
 
-export function AccordionContextProvider({ value, children }: AccordionContextProviderProps) {
+export const AccordionContextProvider = ({ value, children }: AccordionContextProviderProps) => {
   return <AccordionContext.Provider value={value}>{children}</AccordionContext.Provider>;
-}
+};
 
 AccordionContextProvider.propTypes = {
   value: propTypesValue,
   children: propTypesChildren,
 };
+
+AccordionContextProvider.displayName = "MaterialTailwind.AccordionContextProvider";

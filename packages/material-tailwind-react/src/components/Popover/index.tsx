@@ -1,4 +1,5 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 // @floating-ui
 import {
@@ -68,7 +69,7 @@ const Popover = ({
   // 1. init
   const { popover } = useTheme();
   const { defaultProps } = popover;
-  const [internalOpen, setInternalOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = React.useState(false);
 
   // 2. set default props
   open = open ?? internalOpen;
@@ -107,7 +108,7 @@ const Popover = ({
     useDismiss(context, dismiss),
   ]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (refs.reference.current && refs.floating.current && open) {
       return autoUpdate(refs.reference.current, refs.floating.current, update);
     }
@@ -151,7 +152,7 @@ const Popover = ({
 Popover.propTypes = {
   open: propTypesOpen,
   handler: propTypesHandler,
-  placement: propTypesPlacement,
+  placement: PropTypes.oneOf(propTypesPlacement),
   offset: propTypesOffset,
   dismiss: propTypesDismiss,
   animate: propTypesAnimate,

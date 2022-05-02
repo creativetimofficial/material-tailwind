@@ -143,7 +143,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
 
 Chip.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
-  color: propTypesColor,
+  color: PropTypes.oneOf(propTypesColor),
   icon: propTypesIcon,
   show: propTypesShow,
   dismissible: propTypesDismissible,

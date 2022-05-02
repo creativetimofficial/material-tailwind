@@ -42,7 +42,7 @@ export const chip: ChipStylesType = {
   defaultProps: {
     variant: "filled",
     color: "light-blue",
-    icon: "",
+    icon: undefined,
     show: true,
     dismissble: {
       action: "",

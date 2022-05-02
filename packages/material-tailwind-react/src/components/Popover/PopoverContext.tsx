@@ -24,11 +24,13 @@ export function usePopover() {
   return context;
 }
 
-export function PopoverContextProvider({ value, children }: PopoverContextProviderProps) {
+export const PopoverContextProvider = ({ value, children }: PopoverContextProviderProps) => {
   return <PopoverContext.Provider value={value}>{children}</PopoverContext.Provider>;
-}
+};
 
 PopoverContextProvider.propTypes = {
   value: propTypesContextValue,
   children: propTypesChildren,
 };
+
+PopoverContextProvider.displayName = "MaterialTailwind.PopoverContextProvider";

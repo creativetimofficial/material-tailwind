@@ -137,7 +137,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
 Alert.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
-  color: propTypesColor,
+  color: PropTypes.oneOf(propTypesColor),
   icon: propTypesIcon,
   show: propTypesShow,
   dismissible: propTypesDismissible,

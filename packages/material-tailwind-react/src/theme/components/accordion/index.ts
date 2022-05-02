@@ -24,7 +24,7 @@ export interface AccordionStylesType {
 
 export const accordion: AccordionStylesType = {
   defaultProps: {
-    icon: "",
+    icon: undefined,
     className: "",
     animate: {
       unmount: {},

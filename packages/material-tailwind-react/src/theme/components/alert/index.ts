@@ -40,7 +40,7 @@ export const alert: AlertStylesType = {
   defaultProps: {
     variant: "filled",
     color: "light-blue",
-    icon: "",
+    icon: undefined,
     show: true,
     dismissble: {
       action: "",

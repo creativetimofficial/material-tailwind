@@ -40,7 +40,7 @@ export const radio: RadioStylesType = {
   defaultProps: {
     color: "light-blue",
     label: "",
-    icon: "",
+    icon: undefined,
     ripple: true,
     className: "",
     containerProps: {},

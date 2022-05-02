@@ -18,7 +18,7 @@ import {
 } from "../../types/components/tabs";
 
 export interface TabsBodyProps extends React.ComponentProps<"div"> {
-  animate: animate;
+  animate?: animate;
   className?: className;
   children: children;
 }

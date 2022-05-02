@@ -31,13 +31,13 @@ export interface TabProps extends React.ComponentProps<"li"> {
 export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
   ({ value, className, disabled, children, ...rest }, ref) => {
     // 1. init
-    const { tab } = useTheme();
+    const { tab: tabTheme } = useTheme();
     const {
       defaultProps,
       styles: { base },
-    } = tab;
-    const [state, setState] = useTabs();
-    const { active } = state;
+    } = tabTheme;
+    const { tab, setTab } = useTabs();
+    const { active } = tab;
 
     // 2. set default props
     className = className ?? defaultProps.className;
@@ -62,11 +62,11 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
           const onClick = rest?.onClick;
 
           if (typeof onClick === "function") {
-            setState({ ...state, active: value });
+            setTab({ ...tab, active: value });
             onClick(e);
           }
 
-          setState({ ...state, active: value });
+          setTab({ ...tab, active: value });
         }}
         data-value={value}
       >

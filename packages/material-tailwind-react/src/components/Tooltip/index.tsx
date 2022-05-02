@@ -201,7 +201,7 @@ Tooltip.propTypes = {
   handler: propTypesHandler,
   content: propTypesContent,
   interactive: propTypesInteractive,
-  placement: propTypesPlacement,
+  placement: PropTypes.oneOf(propTypesPlacement),
   offset: propTypesOffset,
   dismiss: propTypesDismiss,
   animate: propTypesAnimate,

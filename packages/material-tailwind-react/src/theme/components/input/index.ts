@@ -87,7 +87,7 @@ export const input: InputStylesType = {
     label: "",
     error: false,
     success: false,
-    icon: "",
+    icon: undefined,
     labelProps: {},
     className: "",
   },

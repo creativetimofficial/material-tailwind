@@ -33,8 +33,8 @@ export type content = ReactNode;
 export type contextValue = {
   open: open;
   strategy: Strategy;
-  x: number;
-  y: number;
+  x?: number;
+  y?: number;
   context: FloatingContext<ReferenceType>;
   reference: (node: HTMLElement) => void;
   floating: (node: HTMLElement) => void;
@@ -62,8 +62,8 @@ export const propTypesChildren: any = PropTypes.node.isRequired;
 export const propTypesContextValue: any = PropTypes.shape({
   open: PropTypes.bool.isRequired,
   strategy: PropTypes.oneOf(["fixed", "absolute"]).isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
   context: PropTypes.instanceOf(Object).isRequired,
   reference: PropTypes.func.isRequired,
   floating: PropTypes.func.isRequired,
@@ -72,4 +72,4 @@ export const propTypesContextValue: any = PropTypes.shape({
   appliedAnimation: propTypesAnimate.isRequired,
   labelId: PropTypes.string.isRequired,
   descriptionId: PropTypes.string.isRequired,
-});
+}).isRequired;

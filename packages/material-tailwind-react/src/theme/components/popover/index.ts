@@ -22,7 +22,7 @@ export interface PopoverStylesType {
 
 export const popover: PopoverStylesType = {
   defaultProps: {
-    placement: "bottom",
+    placement: "top",
     offset: 5,
     dismiss: {},
     animate: {

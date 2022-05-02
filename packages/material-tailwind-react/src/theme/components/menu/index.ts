@@ -1,5 +1,11 @@
 // types
-import type { placement, offset, dismiss, animate } from "../../../types/components/menu";
+import type {
+  placement,
+  offset,
+  dismiss,
+  animate,
+  lockScroll,
+} from "../../../types/components/menu";
 
 export interface MenuStylesType {
   defaultProps?: {
@@ -7,6 +13,7 @@ export interface MenuStylesType {
     offset?: offset;
     dismiss?: dismiss;
     animate?: animate;
+    lockScroll?: lockScroll;
   };
   styles?: {
     base?: {
@@ -21,13 +28,14 @@ export interface MenuStylesType {
 
 export const menu: MenuStylesType = {
   defaultProps: {
-    placement: "bottom-start",
+    placement: "bottom",
     offset: 5,
     dismiss: {},
     animate: {
       unmount: {},
       mount: {},
     },
+    lockScroll: false,
   },
   styles: {
     base: {

@@ -23,10 +23,10 @@ export interface TabsContextProviderProps {
   children: children;
 }
 
-const TabsContext = createContext<TabsContextType | null>(null);
+export const TabsContext = createContext<TabsContextType | null>(null);
 TabsContext.displayName = "MaterialTailwind.TabsContext";
 
-function useTabs() {
+export function useTabs() {
   const context = useContext(TabsContext);
 
   if (!context) {
@@ -38,7 +38,7 @@ function useTabs() {
   return context;
 }
 
-function TabsContextProvider({ value, children }: TabsContextProviderProps) {
+export const TabsContextProvider = ({ value, children }: TabsContextProviderProps) => {
   const [tab, setTab] = useState({
     active: value,
     appliedAnimation: {
@@ -50,11 +50,11 @@ function TabsContextProvider({ value, children }: TabsContextProviderProps) {
   const contextValue = useMemo(() => ({ tab, setTab }), [tab]);
 
   return <TabsContext.Provider value={contextValue as any}>{children}</TabsContext.Provider>;
-}
+};
 
 TabsContextProvider.propTypes = {
   value: propTypesValue,
   children: propTypesChildren,
 };
 
-export { TabsContextProvider, useTabs };
+TabsContextProvider.displayName = "MaterialTailwind.TabsContextProvider";
