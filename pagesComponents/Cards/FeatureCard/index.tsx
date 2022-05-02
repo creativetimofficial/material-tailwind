@@ -1,0 +1,38 @@
+import { ReactNode } from "react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Typography
+} from "../../../packages/material-tailwind-react/src";
+
+interface FeatureCardProps {
+  icon: string;
+  title: string;
+  children: ReactNode;
+}
+
+export default function FeatureCard({
+  icon,
+  title,
+  children
+}: FeatureCardProps) {
+  return (
+    <Card className="shadow-lg">
+      <CardHeader
+        shadow={false}
+        className="bg-[#1A237E] grid place-items-center w-12 h-12 -mb-3 mx-6 !rounded-lg"
+      >
+        <i className="material-icons text-xl relative text-white">{icon}</i>
+      </CardHeader>
+      <CardBody className="mt-1">
+        <Typography variant="h5" className="font-normal text-[#1A237E] mb-2">
+          {title}
+        </Typography>
+        <Typography className="font-light text-[#1A237E]/60">
+          {children}
+        </Typography>
+      </CardBody>
+    </Card>
+  );
+}
