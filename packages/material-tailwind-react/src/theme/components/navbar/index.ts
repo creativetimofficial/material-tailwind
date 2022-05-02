@@ -60,7 +60,7 @@ export const navbar: NavbarStylesType = {
         justifyContent: "justify-start",
         width: "w-full",
         maxWidth: "max-w-screen-2xl",
-        borderRadius: "rounded-lg",
+        borderRadius: "rounded-xl",
         py: "py-4",
         px: "px-8",
       },
@@ -68,10 +68,10 @@ export const navbar: NavbarStylesType = {
         boxShadow: "shadow-md",
       },
       blurred: {
-        backdropFilter: "backdrop-saturate-200 backdrop-blur-xl",
+        backdropFilter: "backdrop-saturate-200 backdrop-blur-2xl",
         bgOpacity: "bg-opacity-80",
-        borderWidth: "border-b",
-        borderColor: "border-blue-grey-50",
+        borderWidth: "border",
+        borderColor: "border-white/80",
       },
       fullWidth: {
         width: "w-full",
