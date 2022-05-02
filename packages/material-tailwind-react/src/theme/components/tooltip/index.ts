@@ -43,6 +43,7 @@ export const tooltip: TooltipStylesType = {
       color: "text-white",
       outline: "focus:outline-none",
       overflowWrap: "break-words",
+      zIndex: "z-[999]",
       whiteSpace: "whitespace-normal",
     },
   },
