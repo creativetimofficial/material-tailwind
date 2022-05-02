@@ -35,7 +35,7 @@ export default function React() {
         </h1>
 
         <div className="px-48">
-          {/* <Alerts />
+          <Alerts />
           <hr className="mb-24" />
           <Avatars />
           <hr className="my-24" />
@@ -57,27 +57,27 @@ export default function React() {
           <hr className="my-24" />
           <Inputs />
           <hr className="my-24" />
-          <Textareas /> */}
+          <Textareas />
           <hr className="my-24" />
           <Selects />
           <hr className="my-24" />
           <Menus />
           <hr className="my-24" />
-          {/* <Popovers /> */}
+          <Popovers />
           <hr className="my-24" />
-          {/* <Tooltips /> */}
+          <Tooltips />
           <hr className="my-24" />
-          {/* <Dialogs /> */}
+          <Dialogs />
           <hr className="my-24" />
-          {/* <Accordions /> */}
+          <Accordions />
           <hr className="my-24" />
-          {/* <NavTabs /> */}
+          <NavTabs />
           <hr className="my-24" />
-          {/* <BreadcrumbsNav /> */}
+          <BreadcrumbsNav />
           <hr className="my-24" />
-          {/* <Cards /> */}
+          <Cards />
           <hr className="my-24" />
-          {/* <Navbars /> */}
+          <Navbars />
           <hr className="my-24" />
         </div>
       </div>
