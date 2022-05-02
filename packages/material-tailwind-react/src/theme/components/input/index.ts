@@ -110,7 +110,7 @@ export const input: InputStylesType = {
         bg: "bg-transparent",
         color: "text-blue-grey-700",
         fontFamily: "font-sans",
-        fontWeight: "font-light",
+        fontWeight: "font-normal",
         outline: "outline-0 focus:outlined-0",
         disabled: "disabled:bg-blue-grey-50 disabled:border-0",
         transition: "transition-all",
@@ -123,7 +123,7 @@ export const input: InputStylesType = {
         pointerEvents: "pointer-events-none",
         position: "absolute",
         left: "left-0",
-        fontWeight: "font-light",
+        fontWeight: "font-normal",
         color: "peer-placeholder-shown:text-blue-grey-500",
         lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:
