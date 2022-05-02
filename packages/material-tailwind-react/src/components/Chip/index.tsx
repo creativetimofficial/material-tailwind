@@ -74,7 +74,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     );
     const classes = classnames(objectsToString(base), chipVariant, className);
     const chipCloseButtonClasses = classnames(
-      "absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded",
+      "absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded-md",
       chipCloseButton,
       "transition-colors",
     );
@@ -119,7 +119,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                 role="button"
                 onClick={dismissible.onClose}
                 onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
-                className={`w-5 h-5 ${dismissible.action ? "" : "p-1 rounded"}`}
+                className={`w-5 h-5 ${dismissible.action ? "" : "p-1"}`}
               >
                 {dismissible.action || (
                   <svg

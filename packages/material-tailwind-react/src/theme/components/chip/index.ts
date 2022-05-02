@@ -72,7 +72,7 @@ export const chip: ChipStylesType = {
       whiteSpace: "whitespace-nowrap",
       py: "py-2",
       px: "px-3.5",
-      borderRadius: "rounded-md",
+      borderRadius: "rounded-lg",
       userSelect: "select-none",
     },
     variants: {
