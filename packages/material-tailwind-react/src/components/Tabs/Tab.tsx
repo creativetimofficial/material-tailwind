@@ -37,7 +37,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
       styles: { base },
     } = tabTheme;
     const { tab, setTab } = useTabs();
-    const { active } = tab;
+    const { active, indicatorProps } = tab;
 
     // 2. set default props
     className = className ?? defaultProps.className;
@@ -49,7 +49,10 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
       { [objectsToString(base.tab.disabled)]: disabled },
       className,
     );
-    const indicatorClasses = classnames(objectsToString(base.indicator));
+    const indicatorClasses = classnames(
+      objectsToString(base.indicator),
+      indicatorProps?.className ?? "",
+    );
 
     // 4. return
     return (
@@ -73,6 +76,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
         <div className="z-20">{children}</div>
         {active === value && (
           <motion.div
+            {...indicatorProps}
             transition={{ duration: 0.5 }}
             className={indicatorClasses}
             layoutId="indicator"

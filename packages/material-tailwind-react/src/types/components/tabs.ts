@@ -14,6 +14,9 @@ export type value = string | number;
 export type animate = animation;
 export type disabled = boolean;
 export type className = string;
+export type indicatorProps = {
+  [key: string]: any;
+};
 export type children = ReactNode;
 
 // javascript prop-types
@@ -24,4 +27,5 @@ export const propTypesValue: any = PropTypes.oneOfType([
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
+export const propTypesIndicator: any = PropTypes.instanceOf(Object);
 export const propTypesChildren: any = PropTypes.node.isRequired;

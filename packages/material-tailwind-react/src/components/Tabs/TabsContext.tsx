@@ -2,18 +2,26 @@ import React, { createContext, useContext, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // types
-import { value as valueType, animate, children, propTypesValue } from "../../types/components/tabs";
-import { propTypesChildren } from "../../types/components/tabs";
+import {
+  value as valueType,
+  animate,
+  children,
+  propTypesValue,
+  indicatorProps,
+} from "../../types/components/tabs";
+import { propTypesChildren, propTypesIndicator } from "../../types/components/tabs";
 
 export interface TabsContextType {
   tab: {
     active: valueType;
     appliedAnimation: animate;
+    indicatorProps: indicatorProps;
   };
   setTab: React.Dispatch<
     React.SetStateAction<{
       active: valueType;
       appliedAnimation: animate;
+      indicatorProps: indicatorProps;
     }>
   >;
 }
