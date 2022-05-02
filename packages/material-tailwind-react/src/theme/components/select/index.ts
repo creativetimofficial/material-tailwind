@@ -186,7 +186,7 @@ export const select: SelectStylesType = {
         bg: "bg-transparent",
         color: "text-blue-grey-700",
         fontFamily: "font-sans",
-        fontWeight: "font-light",
+        fontWeight: "font-normal",
         textAlign: "text-left",
         outline: "outline-0 focus:outlined-0",
         disabled: "disabled:bg-blue-grey-50 disabled:border-0",
@@ -217,7 +217,7 @@ export const select: SelectStylesType = {
         pointerEvents: "pointer-events-none",
         position: "absolute",
         left: "left-0",
-        fontWeight: "font-light",
+        fontWeight: "font-normal",
         transition: "transition-all",
       },
       menu: {
