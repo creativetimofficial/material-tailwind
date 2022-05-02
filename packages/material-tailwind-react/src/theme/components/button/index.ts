@@ -68,7 +68,7 @@ export const button: ButtonStyleTypes = {
         verticalAlign: "middle",
         userSelect: "none",
         fontFamily: "font-sans",
-        fontWeight: "font-medium",
+        fontWeight: "font-bold",
         textAlign: "center",
         textTransform: "uppercase",
         transition: "transition-all",
