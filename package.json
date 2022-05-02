@@ -14,8 +14,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^6.2.8",
     "next": "^12.1.5",
     "react": "^18.0.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
