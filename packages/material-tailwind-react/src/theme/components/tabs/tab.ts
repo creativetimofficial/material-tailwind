@@ -38,7 +38,7 @@ export const tab: TabStylesType = {
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
           fontSize: "text-base",
-          fontWeight: "font-light",
+          fontWeight: "font-normal",
           lineHeight: "leading-relaxed",
           userSelect: "select-none",
           cursor: "cursor-pointer",
