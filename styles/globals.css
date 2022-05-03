@@ -1,3 +1,121 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.code-editor code[class*="language-"],
+.code-editor pre[class*="language-"] {
+  color: #d6deeb;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.code-editor code[class*="language-"] ::-moz-selection,
+.code-editor code[class*="language-"]::-moz-selection,
+.code-editor pre[class*="language-"] ::-moz-selection,
+.code-editor pre[class*="language-"]::-moz-selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+.code-editor code[class*="language-"] ::selection,
+.code-editor code[class*="language-"]::selection,
+.code-editor pre[class*="language-"] ::selection,
+.code-editor pre[class*="language-"]::selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+@media print {
+  .code-editor code[class*="language-"],
+  .code-editor pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+.code-editor pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+.code-editor :not(pre) > code[class*="language-"],
+.code-editor pre[class*="language-"] {
+  color: #fff;
+  background: #011627;
+}
+.code-editor :not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.code-editor .token.cdata,
+.code-editor .token.comment,
+.code-editor .token.prolog {
+  color: #637777;
+}
+.code-editor .token.punctuation {
+  color: #c792ea;
+}
+.code-editor .namespace {
+  color: #b2ccd6;
+}
+.code-editor .token.deleted {
+  color: rgba(239, 83, 80, 0.56);
+}
+.code-editor .token.property,
+.code-editor .token.symbol {
+  color: #80cbc4;
+}
+.code-editor .token.keyword,
+.code-editor .token.operator,
+.code-editor .token.tag {
+  color: #7fdbca;
+}
+.code-editor .token.boolean {
+  color: #ff5874;
+}
+.code-editor .token.number {
+  color: #f78c6c;
+}
+.code-editor .token.builtin,
+.code-editor .token.char,
+.code-editor .token.constant,
+.code-editor .token.function {
+  color: #82aaff;
+}
+.code-editor .token.doctype,
+.code-editor .token.selector {
+  color: #c792ea;
+}
+.code-editor .token.attr-name,
+.code-editor .token.inserted {
+  color: #addb67;
+}
+.code-editor .language-css .token.string,
+.code-editor .style .token.string,
+.code-editor .token.entity,
+.code-editor .token.string,
+.code-editor .token.url {
+  color: #addb67;
+}
+.code-editor .token.atrule,
+.code-editor .token.attr-value,
+.code-editor .token.class-name {
+  color: #ffcb8b;
+}
+.code-editor .token.important,
+.code-editor .token.regex,
+.code-editor .token.variable {
+  color: #d6deeb;
+}
+.code-editor .token.bold,
+.code-editor .token.important {
+  font-weight: 700;
+}
