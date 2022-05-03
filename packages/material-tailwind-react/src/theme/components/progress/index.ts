@@ -43,7 +43,7 @@ export interface ProgressStylesType {
 export const progress: ProgressStylesType = {
   defaultProps: {
     variant: "filled",
-    color: "light-blue",
+    color: "blue",
     value: 0,
     label: false,
     className: "",

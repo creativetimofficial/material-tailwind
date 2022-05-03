@@ -41,7 +41,7 @@ export interface ChipStylesType {
 export const chip: ChipStylesType = {
   defaultProps: {
     variant: "filled",
-    color: "light-blue",
+    color: "blue",
     icon: undefined,
     show: true,
     dismissble: {

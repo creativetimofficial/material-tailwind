@@ -145,7 +145,7 @@ export interface SelectStylesType {
 export const select: SelectStylesType = {
   defaultProps: {
     variant: "outlined",
-    color: "light-blue",
+    color: "blue",
     size: "md",
     label: "",
     error: false,

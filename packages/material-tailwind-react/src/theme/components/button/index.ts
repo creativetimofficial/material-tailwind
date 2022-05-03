@@ -51,7 +51,7 @@ export const button: ButtonStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",
-    color: "light-blue",
+    color: "blue",
     fullWidth: false,
     ripple: true,
     className: "",

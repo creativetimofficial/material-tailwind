@@ -82,7 +82,7 @@ export const textarea: TextareaStylesType = {
   defaultProps: {
     variant: "outlined",
     size: "md",
-    color: "light-blue",
+    color: "blue",
     label: "",
     error: false,
     success: false,

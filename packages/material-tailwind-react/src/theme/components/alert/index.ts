@@ -39,7 +39,7 @@ export interface AlertStylesType {
 export const alert: AlertStylesType = {
   defaultProps: {
     variant: "filled",
-    color: "light-blue",
+    color: "blue",
     icon: undefined,
     show: true,
     dismissble: {
