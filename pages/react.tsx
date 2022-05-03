@@ -34,7 +34,7 @@ export default function React() {
           React Version Components
         </h1>
 
-        <div className="px-48">
+        <div className="px-10">
           <Alerts />
           <hr className="mb-24" />
           <Avatars />
