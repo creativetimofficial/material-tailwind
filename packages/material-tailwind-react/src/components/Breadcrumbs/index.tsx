@@ -60,9 +60,7 @@ export const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(
                 >
                   {child}
                   {index !== Children.count(children) - 1 && (
-                    <span aria-hidden="true" className={breadcrumbsSeparatorClasses}>
-                      {separator}
-                    </span>
+                    <span className={breadcrumbsSeparatorClasses}>{separator}</span>
                   )}
                 </li>
               );

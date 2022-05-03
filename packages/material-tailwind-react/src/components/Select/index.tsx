@@ -396,7 +396,6 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
                 ...child.props,
                 index: child.props?.index || index + 1,
                 id: `material-tailwind-select-${index}`,
-                "aria-hidden": "true",
               }),
           )}
         </motion.ul>

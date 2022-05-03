@@ -384,7 +384,7 @@ ${buttonCode}
     className="h-48"
   >
     <img
-      src="/img/blog-2.webp"
+      src="/img/blog-2.jpg"
       alt="img-blur-shadow"
       className="w-full h-full"
     />
@@ -418,7 +418,7 @@ ${buttonCode}
                       className="h-48"
                     >
                       <Image
-                        src="/img/blog-2.webp"
+                        src="/img/blog-2.jpg"
                         alt="img-blur-shadow"
                         layout="fill"
                       />
@@ -761,7 +761,7 @@ ${buttonCode}
       {/* start subscribe section */}
       <div
         className="w-4/5 md:w-3/5 rounded-xl -mt-28 mx-auto z-90 relative"
-        style={{ backgroundImage: "url('/img/subscribe.jpg');" }}
+        style={{ backgroundImage: "url('/img/subscribe.jpg')" }}
       >
         <div className="items-center flex flex-wrap p-5 md:p-10">
           <div className="w-full lg:w-6/12 px-4">

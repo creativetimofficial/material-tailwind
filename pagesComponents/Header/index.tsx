@@ -54,7 +54,7 @@ export default function Header() {
                         setVersion("npm i @material-tailwind/react")
                       }
                     >
-                      <i className="fab fa-react" aria-hidden="true" />
+                      <i className="fab fa-react" />
                       &nbsp;React
                     </Tab>
                     <Tab
@@ -64,7 +64,7 @@ export default function Header() {
                         setVersion("npm i @material-tailwind/html")
                       }
                     >
-                      <i className="fab fa-html5" aria-hidden="true" />
+                      <i className="fab fa-html5" />
                       &nbsp;HTML
                     </Tab>
                   </TabsHeader>
@@ -113,7 +113,7 @@ export default function Header() {
               <div className="hidden lg:block w-80 ml-auto lg:mr-24 animate-slide_card">
                 <Card className="mt-16">
                   <CardHeader color="blue" className="relative h-[12rem] z-30">
-                    <a className="block">
+                    <a className="block relative w-full h-full">
                       <Image
                         src="/img/blog.jpg"
                         alt="img-blur-shadow"

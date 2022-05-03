@@ -32,10 +32,7 @@ export default function TestimonialCard({
         {name}
       </Typography>
       <div className="flex items-center mb-5">
-        <i
-          className="fa fa-clock text-sm opacity-60 mr-2"
-          aria-hidden="true"
-        ></i>
+        <i className="fa fa-clock text-sm opacity-60 mr-2"></i>
         <Typography
           className={
             color === "transparent" || color === "white"
@@ -57,11 +54,11 @@ export default function TestimonialCard({
         {children}
       </Typography>
       <div className="space-x-0.5 mt-5">
-        <i className="fas fa-star" aria-hidden="true"></i>
-        <i className="fas fa-star" aria-hidden="true"></i>
-        <i className="fas fa-star" aria-hidden="true"></i>
-        <i className="fas fa-star" aria-hidden="true"></i>
-        <i className="fas fa-star" aria-hidden="true"></i>
+        <i className="fas fa-star"></i>
+        <i className="fas fa-star"></i>
+        <i className="fas fa-star"></i>
+        <i className="fas fa-star"></i>
+        <i className="fas fa-star"></i>
       </div>
     </Card>
   );

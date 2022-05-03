@@ -28,40 +28,28 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i
-                  className="fab fa-twitter bg-white text-light-blue-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"
-                  aria-hidden="true"
-                ></i>
+                <i className="fab fa-twitter bg-white text-light-blue-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
               </a>
               <a
                 href="https://www.facebook.com/creativetim?ref=material-tailwind"
                 target="_blank"
                 rel="noreferrer"
               >
-                <i
-                  className="fab fa-facebook-square bg-white text-light-blue-600 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"
-                  aria-hidden="true"
-                ></i>
+                <i className="fab fa-facebook-square bg-white text-light-blue-600 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
               </a>
               <a
                 href="https://www.dribbble.com/creativetim?ref=material-tailwind"
                 target="_blank"
                 rel="noreferrer"
               >
-                <i
-                  className="fab fa-dribbble bg-white text-pink-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"
-                  aria-hidden="true"
-                ></i>
+                <i className="fab fa-dribbble bg-white text-pink-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
               </a>
               <a
                 href="https://www.github.com/creativetimofficial?ref=material-tailwind"
                 target="_blank"
                 rel="noreferrer"
               >
-                <i
-                  className="fab fa-github bg-white text-grey-900 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"
-                  aria-hidden="true"
-                ></i>
+                <i className="fab fa-github bg-white text-grey-900 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
               </a>
             </div>
           </div>
