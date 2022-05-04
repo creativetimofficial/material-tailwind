@@ -62,13 +62,13 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const inputClasses = classnames(
       objectsToString(base.input),
-      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
+      objectsToString(colors[findMatch(valid.colors, color, "blue")]),
       className,
     );
     const circleClasses = classnames(
       objectsToString(base.circle),
-      colors[findMatch(valid.colors, color, "light-blue")].circle,
-      colors[findMatch(valid.colors, color, "light-blue")].before,
+      colors[findMatch(valid.colors, color, "blue")].circle,
+      colors[findMatch(valid.colors, color, "blue")].before,
       circleProps?.className,
     );
     const rippleClasses = classnames(objectsToString(base.ripple));

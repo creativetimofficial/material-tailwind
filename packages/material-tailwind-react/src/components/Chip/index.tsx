@@ -66,11 +66,11 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     // 3. set styles
     const chipVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "light-blue")
+        findMatch(valid.colors, color, "blue")
       ],
     );
     const chipCloseButton = objectsToString(
-      closeButtonColor[findMatch(valid.colors, color, "light-blue")],
+      closeButtonColor[findMatch(valid.colors, color, "blue")],
     );
     const classes = classnames(objectsToString(base), chipVariant, className);
     const chipCloseButtonClasses = classnames(

@@ -67,7 +67,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const alertBase = objectsToString(base);
     const alertVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "light-blue")
+        findMatch(valid.colors, color, "blue")
       ],
     );
     const classes = classnames(alertBase, alertVariant, className);

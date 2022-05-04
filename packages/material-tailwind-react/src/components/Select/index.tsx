@@ -280,10 +280,10 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const selectSize = selectVariant.sizes[findMatch(valid.sizes, size, "md")];
     const selectError = selectVariant.error.select;
     const selectSuccess = selectVariant.success.select;
-    const selectColor = selectVariant.colors.select[findMatch(valid.colors, color, "light-blue")];
+    const selectColor = selectVariant.colors.select[findMatch(valid.colors, color, "blue")];
     const labelError = selectVariant.error.label;
     const labelSuccess = selectVariant.success.label;
-    const labelColor = selectVariant.colors.label[findMatch(valid.colors, color, "light-blue")];
+    const labelColor = selectVariant.colors.label[findMatch(valid.colors, color, "blue")];
     const stateClasses = selectVariant.states[state];
     const containerClasses = classnames(
       objectsToString(base.container),

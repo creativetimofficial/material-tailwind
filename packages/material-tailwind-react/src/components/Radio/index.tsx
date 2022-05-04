@@ -60,13 +60,13 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const inputClasses = classnames(
       objectsToString(base.input),
-      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
+      objectsToString(colors[findMatch(valid.colors, color, "blue")]),
       className,
     );
     const labelClasses = classnames(objectsToString(base.label), labelProps?.className);
     const radioIconClasses = classnames(
       "absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity",
-      colors[findMatch(valid.colors, color, "light-blue")].color,
+      colors[findMatch(valid.colors, color, "blue")].color,
     );
 
     return (

@@ -68,12 +68,12 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     const textareaError = objectsToString(textareaVariant.error.textarea);
     const textareaSuccess = objectsToString(textareaVariant.success.textarea);
     const textareaColor = objectsToString(
-      textareaVariant.colors.textarea[findMatch(valid.colors, color, "light-blue")],
+      textareaVariant.colors.textarea[findMatch(valid.colors, color, "blue")],
     );
     const labelError = objectsToString(textareaVariant.error.label);
     const labelSuccess = objectsToString(textareaVariant.success.label);
     const labelColor = objectsToString(
-      textareaVariant.colors.label[findMatch(valid.colors, color, "light-blue")],
+      textareaVariant.colors.label[findMatch(valid.colors, color, "blue")],
     );
     const containerClasses = classnames(objectsToString(base.container));
     const textareaClasses = classnames(

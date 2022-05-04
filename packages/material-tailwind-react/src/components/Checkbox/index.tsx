@@ -60,7 +60,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const inputClasses = classnames(
       objectsToString(base.input),
-      objectsToString(colors[findMatch(valid.colors, color, "light-blue")]),
+      objectsToString(colors[findMatch(valid.colors, color, "blue")]),
       className,
     );
     const labelClasses = classnames(objectsToString(base.label), labelProps?.className);

@@ -67,12 +67,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputError = objectsToString(inputVariant.error.input);
     const inputSuccess = objectsToString(inputVariant.success.input);
     const inputColor = objectsToString(
-      inputVariant.colors.input[findMatch(valid.colors, color, "light-blue")],
+      inputVariant.colors.input[findMatch(valid.colors, color, "blue")],
     );
     const labelError = objectsToString(inputVariant.error.label);
     const labelSuccess = objectsToString(inputVariant.success.label);
     const labelColor = objectsToString(
-      inputVariant.colors.label[findMatch(valid.colors, color, "light-blue")],
+      inputVariant.colors.label[findMatch(valid.colors, color, "blue")],
     );
     const containerClasses = classnames(
       objectsToString(base.container),
