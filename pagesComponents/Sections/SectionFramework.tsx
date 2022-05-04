@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
-import CodePreviewCard from "pagesComponents/Cards/CodePreviewCard";
+import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import ReactLogo from "pagesComponents/Icons/React";
 import HtmlLogo from "pagesComponents/Icons/Html";
 import AngularLogo from "pagesComponents/Icons/Angular";
@@ -15,7 +15,6 @@ export default function SectionFramework() {
     switch (framework) {
       case "react":
         setFrameworkCode(`
-
 <Button className="flex items-center">
   <i className="
     material-icons mr-1

@@ -7,7 +7,7 @@ import {
 export default function SectionSubscribe() {
   return (
     <div
-      className="w-4/5 md:w-3/5 rounded-xl -mt-28 mx-auto z-90 relative"
+      className="w-4/5 md:w-3/5 rounded-xl -mt-40 mb-20 mx-auto relative z-90"
       style={{ backgroundImage: "url('/img/subscribe.jpg')" }}
     >
       <div className="items-center flex flex-wrap p-5 md:p-10">

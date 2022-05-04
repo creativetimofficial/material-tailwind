@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import CodePreviewCard from "pagesComponents/Cards/CodePreviewCard";
+import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import {
   Card,
   CardHeader,
@@ -52,11 +52,11 @@ export default function SectionComponents() {
 </Card>`}
           />
           <img
-            className="absolute w-full top-[35rem] -left-40"
+            className="absolute w-full top-28 -left-40"
             src="/img/purple.png"
             alt="blob_purple"
           />
-          <Card className="hidden lg:grid absolute w-5/6 lg:w-[54%] top-0 lg:-top-[60rem] -right-5 md:-right-44 lg:right-auto md:left-60 lg:left-[22rem] z-30 card mt-36 shadow-lg md:mt-0">
+          <Card className="hidden lg:grid absolute w-5/6 lg:w-[54%] top-0 lg:-top-[28rem] -right-5 md:-right-44 lg:right-auto md:left-60 lg:left-[22rem] z-30 card mt-36 shadow-lg md:mt-0">
             <CardHeader variant="gradient" color="grey" className="h-48">
               <Image
                 src="/img/blog-2.jpg"
@@ -84,7 +84,7 @@ export default function SectionComponents() {
             </CardBody>
           </Card>
         </div>
-        <div className="w-full lg:w-6/12 px-4 lg:pt-36 md:pt-0 relative order-first lg:order-last">
+        <div className="w-full lg:w-6/12 px-4 lg:pt-36 md:pt-0 relative order-first lg:order-last -mt-14">
           <div className="w-11/12 lg:ml-24">
             <Chip
               variant="gradient"

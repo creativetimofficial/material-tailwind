@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import CodePreviewCard from "pagesComponents/Cards/CodePreviewCard";
+import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function SectionShadow() {
@@ -48,7 +48,7 @@ export default function SectionShadow() {
             alt="blob_blue"
           />
           <img
-            className="absolute shadow-2xl shadow-blue-grey-500/20 rounded-lg w-1/2 top-36 md:top-10 right-0 lg:-right-24 z-30"
+            className="absolute shadow-2xl shadow-blue-grey-500/20 rounded-lg w-1/2 top-36 md:top-12 right-0 lg:-right-24 z-30"
             src="/img/shadows.png"
             alt="shadows_example"
           />

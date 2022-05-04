@@ -187,7 +187,7 @@ export default function Header() {
                       alt="jay"
                       variant="circular"
                       size="lg"
-                      className="shadow-lg border-2 border-white cursor-pointer"
+                      className="shadow-lg border-2 border-white cursor-pointer hover:z-50"
                     />
                   </Tooltip>
                   <Tooltip content="Mark" placement="bottom">
@@ -196,7 +196,7 @@ export default function Header() {
                       alt="mark"
                       variant="circular"
                       size="lg"
-                      className="shadow-lg border-2 border-white cursor-pointer"
+                      className="shadow-lg border-2 border-white cursor-pointer hover:z-50"
                     />
                   </Tooltip>
                   <Tooltip content="Sara" placement="bottom">
@@ -205,7 +205,7 @@ export default function Header() {
                       alt="sara"
                       variant="circular"
                       size="lg"
-                      className="shadow-lg border-2 border-white cursor-pointer"
+                      className="shadow-lg border-2 border-white cursor-pointer hover:z-50"
                     />
                   </Tooltip>
                   <Tooltip content="Emma" placement="bottom">
@@ -214,7 +214,7 @@ export default function Header() {
                       alt="emma"
                       variant="circular"
                       size="lg"
-                      className="shadow-lg border-2 border-white cursor-pointer"
+                      className="shadow-lg border-2 border-white cursor-pointer hover:z-50"
                     />
                   </Tooltip>
                   <Tooltip content="Lucy" placement="bottom">
@@ -223,7 +223,7 @@ export default function Header() {
                       alt="lucy"
                       variant="circular"
                       size="lg"
-                      className="shadow-lg border-2 border-white cursor-pointer"
+                      className="shadow-lg border-2 border-white cursor-pointer hover:z-50"
                     />
                   </Tooltip>
                 </div>

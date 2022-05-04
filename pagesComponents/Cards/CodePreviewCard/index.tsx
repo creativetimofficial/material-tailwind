@@ -11,11 +11,11 @@ interface CodePreviewCardProps {
 
 export default function CodePreviewCard({ code }: CodePreviewCardProps) {
   return (
-    <div className="w-full rounded-xl shadow-lg overflow-hidden bg-[#1E293B] mb-5 relative z-20">
-      <div className="h-[25px] bg-[#1E293B] relative">
-        <div className="absolute top-1/2 left-2.5 -mt-1.5 w-2.5 h-2.5 rounded-full bg-[#dc143c] shadow-[15px_0_0_#ffa500,_30px_0_0_#32cd32]"></div>
+    <div className="w-full rounded-xl shadow-lg overflow-y-scroll overflow-x-hidden bg-[#1E293B] mb-5 relative z-20">
+      <div className="h-[25px] bg-[#1E293B] sticky top-0 z-30">
+        <div className="absolute top-2/3 left-2.5 -mt-1.5 w-2.5 h-2.5 rounded-full bg-[#dc143c] shadow-[15px_0_0_#ffa500,_30px_0_0_#32cd32]"></div>
       </div>
-      <div className="min-h-[220px] md:min-h-[250px] lg:min-h-[340px] pointer-events-none">
+      <div className="min-h-[220px] md:min-h-[250px] max-h-[400px] lg:min-h-[340px] pointer-events-none">
         <Editor
           value={`${code}`}
           onValueChange={() => null}

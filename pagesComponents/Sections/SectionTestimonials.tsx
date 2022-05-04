@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import TestimonialCard from "pagesComponents/Cards/TestimonialCard";
+import TestimonialCard from "../../pagesComponents/Cards/TestimonialCard";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function SectionTestimonials() {

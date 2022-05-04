@@ -32,7 +32,7 @@ export default function FeatureCard({
         <i className={`${iconClass} text-xl relative text-white`}>{icon}</i>
       </CardHeader>
       <CardBody className="mt-1">
-        <Typography variant="h5" className="font-normal text-[#1A237E] mb-2">
+        <Typography variant="h5" className="text-[#1A237E] mb-2">
           {title}
         </Typography>
         <Typography className="font-light text-[#1A237E]/60">

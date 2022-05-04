@@ -1,4 +1,4 @@
-import FeatureCard from "pagesComponents/Cards/FeatureCard";
+import FeatureCard from "../../pagesComponents/Cards/FeatureCard";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function SectionFeatures() {

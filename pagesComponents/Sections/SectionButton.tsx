@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import JsxParser from "react-jsx-parser";
-import CodePreviewCard from "pagesComponents/Cards/CodePreviewCard";
+import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import { Typography, Button } from "../../packages/material-tailwind-react/src";
 
 export default function SectionButton() {
@@ -129,7 +129,7 @@ ${buttonCode}
             src="/img/blue.png"
             alt="blob_blue"
           />
-          <div className="w-[13rem] md:w-80 h-40 md:h-56 absolute top-44 md:top-14 lg:top-24 right-11 md:-right-24 rounded-lg bg-dark bg-white/80 backdrop-saturate-200 backdrop-blur-2xl shadow-2xl shadow-blue-grey-500/20 flex z-30">
+          <div className="w-[13rem] md:w-80 h-40 md:h-56 absolute top-44 md:top-14 lg:top-20 right-11 md:-right-24 rounded-lg bg-dark bg-white/80 backdrop-saturate-200 backdrop-blur-2xl shadow-2xl shadow-blue-grey-500/20 flex z-30">
             <div className="m-auto">
               <JsxParser components={{ Button }} jsx={buttonCode} />
             </div>

@@ -1,1 +1,1 @@
-declare module "/react-sections/*";
+declare module "react-jsx-parser";

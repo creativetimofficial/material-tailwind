@@ -1,9 +1,9 @@
-import FeatureCard from "pagesComponents/Cards/FeatureCard";
+import FeatureCard from "../../pagesComponents/Cards/FeatureCard";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function SectionCommnunity() {
   return (
-    <section className="md:pt-12 pb-64">
+    <section className="relative z-50 md:pt-12 pb-64">
       <div className="w-full md:w-3/4 mx-auto text-[#1A237E] text-center">
         <Typography
           variant="h2"

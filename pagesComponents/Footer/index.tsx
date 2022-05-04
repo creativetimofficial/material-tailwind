@@ -1,17 +1,19 @@
+import SectionSubscribe from "pagesComponents/Sections/SectionSubscribe";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="pt-16 pb-6 text-[#1A237E]">
+    <footer className="pt-16 pb-6 text-[#1A237E] bg-grey-100 relative z-50">
+      <SectionSubscribe />
       <div className="container mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full md:w-6/12 px-4">
             <Typography
               variant="h3"
               color="inherit"
-              className="!font-sans font-normal mb-2"
+              className="!font-sans mb-2"
             >
               Material Tailwind
             </Typography>

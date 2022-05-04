@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import CodePreviewCard from "pagesComponents/Cards/CodePreviewCard";
+import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import { Typography } from "../../packages/material-tailwind-react/src";
 
 export default function SectionColorsPalette() {
