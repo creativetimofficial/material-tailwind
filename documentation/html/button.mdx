@@ -1,22 +1,151 @@
 ---
-meta-title: Button - Material Tailwind
-title: Button
+meta-title: Tailwind CSS Button - Material Tailwind
+title: Tailwind CSS Button
 description: HTML Button component with Tailwind CSS.
-navigation: ["button", "button-variants", "button-size"]
+navigation: ["button", "button-variants", "simple-buttons", "button-with-gradient", "button-sizes"]
 ---
 
 # Button
 
-###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
-
+In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+<br/>
 <ComponentCard id="button">
-  <button className="button button-pink" data-ripple-light>
-    <span className="font-bold">Button</span>
-  </button>
+  <button className="button button-pink" data-ripple-light>Button</button>
 </ComponentCard>
 
 ```html showLineNumbers
 <button className="button button-pink">Button</button>
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>
+<br/>
+<br/>
+
+### Button Variants
+
+In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+<br/>
+<ComponentCard id="button-variants">
+  <button class="button button-pink mb-3" data-ripple-light>Button</button>
+  <button class="button button-gradient button-pink mb-3" data-ripple-light>Button</button>
+  <button class="button button-outlined button-pink mb-3" data-ripple-dark>Button</button>
+  <button class="button button-text button-pink" data-ripple-dark>Button</button>
+</ComponentCard>
+
+```html showLineNumbers
+<button class="button button-pink mb-3" data-ripple-light>Button</button>
+<button class="button button-gradient button-pink mb-3" data-ripple-light>Button</button>
+<button class="button button-outlined button-pink mb-3" data-ripple-dark>Button</button>
+<button class="button button-text button-pink" data-ripple-dark>Button</button>
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>
+<br/>
+<br/>
+
+### Simple Buttons
+
+In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+<br/>
+<ComponentCard id="simple-buttons">
+  <button className="button button-pink mb-3" data-ripple-light>Button</button>
+  <button className="button button-secondary mb-3" data-ripple-light>Button</button>
+  <button className="button button-green mb-3" data-ripple-light>Button</button>
+  <button className="button button-orange mb-3" data-ripple-light>Button</button>
+  <button className="button button-red mb-3" data-ripple-light>Button</button>
+   <button className="button button-dark mb-3" data-ripple-light>Button</button>
+</ComponentCard>
+
+```html showLineNumbers
+<button className="button button-pink" data-ripple-light>Button</button>
+<button className="button button-secondary" data-ripple-light>Button</button>
+<button className="button button-green" data-ripple-light>Button</button>
+<button className="button button-orange" data-ripple-light>Button</button>
+<button className="button button-red" data-ripple-light>Button</button>
+<button className="button button-dark" data-ripple-light>Button</button>
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>
+<br/>
+<br/>
+
+### Buttons with gradients
+
+In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+<br/>
+<ComponentCard id="buttons-with-gradient">
+  <button className="button button-gradient button-pink mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-secondary mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-green mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-orange mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-red mb-3" data-ripple-light>Button</button>
+   <button className="button button-gradient button-dark mb-3" data-ripple-light>Button</button>
+</ComponentCard>
+
+```html showLineNumbers
+<button className="button button-gradient button-pink" data-ripple-light>Button</button>
+<button className="button button-gradient button-secondary" data-ripple-light>Button</button>
+<button className="button button-gradient button-green" data-ripple-light>Button</button>
+<button className="button button-gradient button-orange" data-ripple-light>Button</button>
+<button className="button button-gradient button-red" data-ripple-light>Button</button>
+<button className="button button-gradient button-dark" data-ripple-light>Button</button>
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>
+<br/>
+<br/>
+
+
+### Button sizes
+
+In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+<br/>
+<ComponentCard id="buttons-with-gradient">
+  <button className="button button-gradient button-sm button-pink mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-pink mb-3" data-ripple-light>Button</button>
+  <button className="button button-gradient button-lg button-pink mb-3" data-ripple-light>Button</button>
+</ComponentCard>
+
+```html showLineNumbers
+<button className="button button-gradient button-sm button-pink mb-3" data-ripple-light>Button</button>
+<button className="button button-gradient button-pink mb-3" data-ripple-light>Button</button>
+<button className="button button-gradient button-lg button-pink mb-3" data-ripple-light>Button</button>
 ```
 
 <Tooltip content="Copy" placement="bottom">
