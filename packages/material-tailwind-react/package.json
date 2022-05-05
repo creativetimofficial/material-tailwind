@@ -1,6 +1,6 @@
 {
-  "name": "material-tailwind-react",
-  "homepage": "https://material-tailwind.com/react",
+  "name": "@material-tailwind/react",
+  "homepage": "https://material-tailwind.com",
   "version": "1.0.0",
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
