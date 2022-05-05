@@ -9,7 +9,7 @@ export default function ComponentCard({
   return (
     <div
       {...rest}
-      className="grid place-items-center w-full min-h-[150px] bg-[#f8fafc] p-6 border border-blue-grey-50 rounded-lg"
+      className="grid place-items-center w-full min-h-[150px] bg-[#f8fafc] p-6 border border-blue-grey-50 rounded-lg scroll-mt-28"
     >
       {children}
     </div>

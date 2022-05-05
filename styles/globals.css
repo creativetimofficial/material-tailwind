@@ -132,22 +132,25 @@
 }
 
 [data-rehype-pretty-code-fragment] .highlighted::after {
-  content: "";
-  display: block;
+  content: " +";
+  display: grid;
+  align-items: center;
   width: calc(100% + 2.5rem);
   height: 100%;
+  color: #4ade80;
+  font-size: 0.875rem;
   position: absolute;
   top: 0;
   left: -1.25rem;
   z-index: 0;
-  border-left: 0.4rem solid #fff;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 0.2rem solid #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
 }
 
 [data-rehype-pretty-code-fragment] .word {
   padding: 0 0.125rem;
   border-radius: 0.25rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(74, 222, 128, 0.1);
 }
 
 [data-rehype-pretty-code-fragment] code {

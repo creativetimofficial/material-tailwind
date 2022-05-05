@@ -6,7 +6,6 @@ import { ThemeProvider } from "../packages/material-tailwind-react/src/context/t
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
-      <Script src="https://kit.fontawesome.com/42d5adcbca.js" />
       <Component {...pageProps} />
     </ThemeProvider>
   );

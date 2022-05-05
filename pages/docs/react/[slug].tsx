@@ -1,14 +1,18 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/Head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import rehypePrettyCode from "rehype-pretty-code";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 // page components
 import Navbar from "pagesComponents/Navbar";
 import ComponentCard from "../../../pagesComponents/Cards/ComponentCard";
+import CodeSandbox from "../../../pagesComponents/Icons/CodeSandbox";
 
 // components
 import {
@@ -57,101 +61,157 @@ const components = {
     />
   ),
   ComponentCard,
+  CodeSandbox,
+  CopyToClipboard,
   Button,
   IconButton,
   Tooltip
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
+  const [hash, setHash] = useState(frontMatter[0]);
+  useEffect(() => {
+    window.addEventListener("hashchange", () => {
+      const hashLink = window.location.hash.replace("#", "");
+
+      setHash(hashLink);
+    });
+  }, []);
+
+  const date = new Date().getFullYear();
+
   return (
-    <div className="w-full h-full bg-white">
-      <Navbar
-        container="mt-0 max-w-full px-0 border-b border-blue-grey-50"
-        className="!max-w-[1440px] mx-auto !text-blue-grey-900"
-        fullWidth
-        shadow={false}
-      />
-      <div className="px-6">
-        <div className="max-w-[1440px] mx-auto flex">
-          <aside className="relative w-64 h-screen pt-20 pb-4 pr-4">
-            <div className="fixed overflow-y-scroll w-64 h-screen pb-48">
-              <Typography variant="h4" color="blue-grey">
-                Documentation
-              </Typography>
-              <div className="mt-4">
-                {routes.map(({ name, icon, pages }, key): any => (
-                  <div key={key}>
-                    <div className="flex items-center mt-8">
-                      <div className="grid place-items-center w-7 h-7 text-xs rounded-lg bg-gradient-to-tr from-blue-400 to-blue-600 text-white mr-3">
-                        <i className={icon} />
-                      </div>
-                      <Typography
-                        color="blue-grey"
-                        className="font-bold capitalize"
-                      >
-                        {name}
-                      </Typography>
-                    </div>
-                    <ul className="space-y-1 py-2 pr-2 pl-9">
-                      {pages.map((page, key) => (
-                        <li
-                          className={`relative w-full list-item py-1 px-1 before:content-[' '] before:absolute before:-left-[25px] before:top-2/4 before:-translate-y-2/4 before:w-1.5 before:h-1.5 before:rounded-full ${
-                            page === slug
-                              ? "before:bg-blue-grey-900"
-                              : "text-blue-grey-300 before:bg-blue-grey-300"
-                          }`}
-                          key={key}
+    <>
+      <Head>
+        <title>{frontMatter["meta-title"]}</title>
+        <meta name="description" content={frontMatter["meta-description"]} />
+      </Head>
+      <div className="w-full h-full bg-white">
+        <Navbar
+          container="mt-0 max-w-full px-0 border-b border-blue-grey-50"
+          className="!max-w-[1440px] mx-auto !text-blue-grey-900"
+          fullWidth
+          shadow={false}
+        />
+        <div className="px-6">
+          <div className="max-w-[1440px] mx-auto flex">
+            <aside className="relative w-64 h-screen pt-20 pb-4 pr-4">
+              <div className="fixed overflow-y-scroll w-64 h-screen pb-48">
+                <Typography variant="h4" color="blue-grey">
+                  Documentation
+                </Typography>
+                <div className="mt-4">
+                  {routes.map(({ name, icon, pages }, key): any => (
+                    <div key={key}>
+                      <div className="flex items-center mt-8">
+                        <div className="grid place-items-center w-7 h-7 text-xs rounded-lg bg-gradient-to-tr from-blue-400 to-blue-600 text-white mr-3">
+                          <i className={icon} />
+                        </div>
+                        <Typography
+                          color="blue-grey"
+                          className="font-bold capitalize"
                         >
-                          <Link href={`/docs/react/${page}`}>
-                            <a>
-                              <Typography
-                                color="grey"
-                                className={`capitalize ${
-                                  page === slug
-                                    ? "font-medium text-blue-grey-900"
-                                    : "font-normal text-blue-grey-400"
-                                }`}
-                              >
-                                {page}
-                              </Typography>
-                            </a>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                          {name}
+                        </Typography>
+                      </div>
+                      <ul className="space-y-1 py-2 pr-2 pl-9">
+                        {pages.map((page, key) => (
+                          <li key={key}>
+                            <Link href={`/docs/react/${page}`}>
+                              <a>
+                                <Typography
+                                  color="grey"
+                                  className={`capitalize relative w-full list-item py-1 px-1 before:content-[' '] before:absolute before:-left-[25px] before:top-2/4 before:-translate-y-2/4 before:w-1.5 before:h-1.5 before:rounded-full hover:text-blue-grey-900 hover:before:bg-blue-grey-900 transition-colors before:transition-colors ${
+                                    page === slug
+                                      ? "font-medium text-blue-grey-900 before:bg-blue-grey-900"
+                                      : "font-normal text-blue-grey-400 before:bg-blue-grey-300"
+                                  }`}
+                                >
+                                  {page}
+                                </Typography>
+                              </a>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </aside>
-          <div className="pt-32 px-6 w-[60%]">
-            <MDXRemote {...mdxSource} components={components} />
-          </div>
-          <aside className="relative w-64 h-screen pt-20 pb-4 pl-16">
-            <div className="fixed w-full h-screen">
-              <Typography variant="h6" color="blue-grey">
-                On This Page
-              </Typography>
-              <ul className="list-none pl-4 pt-4">
-                {frontMatter.navigation.map((el, key) => (
-                  <li
-                    key={key}
-                    className={`relative w-full list-item py-1 px-1 before:content-[' '] before:absolute before:-left-3 before:top-2/4 before:-translate-y-2/4 before:w-1 before:h-1 before:rounded-full text-blue-grey-300 before:bg-blue-grey-300`}
+            </aside>
+            <div className="mt-20 px-6 w-[60%]">
+              <MDXRemote {...mdxSource} components={components} />
+
+              <div className="w-full mt-20 flex justify-between items-center">
+                <Link href={`/docs/react/${frontMatter.prev}`}>
+                  <a>
+                    <Typography className="capitalize !font-medium !text-blue-grey-500 hover:!text-blue-grey-900 !transition-colors">
+                      <i className="fas fa-caret-left mr-2 mt-px" />
+                      {frontMatter.prev.replace("-", " ")}
+                    </Typography>
+                  </a>
+                </Link>
+                <Link href={`/docs/react/${frontMatter.next}`}>
+                  <a>
+                    <Typography className="capitalize !font-medium !text-blue-grey-500 hover:!text-blue-grey-900 !transition-colors">
+                      {frontMatter.next.replace("-", " ")}
+                      <i className="fas fa-caret-right ml-2 mt-px" />
+                    </Typography>
+                  </a>
+                </Link>
+              </div>
+
+              <footer className="mt-14 py-6 border-t border-blue-grey-50 flex justify-between items-center gap-4">
+                <Typography className="!font-normal !text-blue-grey-500">
+                  Copyright &copy; {date} Material Tailwind by{" "}
+                  <a
+                    href="https://www.creative-tim.com?ref=material-tailwind"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-current hover:text-blue-grey-900 transition-colors"
                   >
-                    <a
-                      href={`#${el}`}
-                      className="text-sm text-normal capitalize text-blue-grey-500"
-                    >
-                      {el}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                    Creative Tim
+                  </a>
+                  .
+                </Typography>
+                <Typography
+                  as="a"
+                  href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${frontMatter.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="!font-normal !text-blue-grey-500 hover:!text-blue-grey-900 transition-colors"
+                >
+                  Edit this page on Github
+                </Typography>
+              </footer>
             </div>
-          </aside>
+            <aside className="relative w-64 h-screen pt-20 pb-4 pl-16">
+              <div className="fixed w-64 h-screen">
+                <Typography variant="h6" color="blue-grey">
+                  On This Page
+                </Typography>
+                <ul className="list-none pl-4 pt-2">
+                  {frontMatter.navigation.map((el, key) => (
+                    <li key={key}>
+                      <a
+                        href={`#${el}`}
+                        className={`relative w-full list-item py-1 px-1 before:content-[' '] before:absolute before:-left-3 before:top-2/4 before:-translate-y-2/4 before:w-1 before:h-1 before:rounded-full text-sm capitalize hover:before:bg-blue-grey-900 hover:text-blue-grey-900 focus:before:bg-blue-grey-900 focus:text-blue-grey-900 transition-colors before:transition-colors ${
+                          hash === el
+                            ? "font-semibold text-blue-grey-900 before:bg-blue-grey-900"
+                            : "font-normal text-blue-grey-500 before:bg-blue-grey-300"
+                        }`}
+                      >
+                        {el.replace("-", " ")}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
