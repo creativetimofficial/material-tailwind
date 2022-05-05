@@ -14,6 +14,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
+          <script
+            defer
+            src="https://unpkg.com/material-ripple-effects/ripple.js"
+          />
         </Head>
         <body className="bg-grey-100 antialiased">
           <Main />

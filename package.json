@@ -15,14 +15,19 @@
   },
   "dependencies": {
     "framer-motion": "^6.2.8",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "next": "^12.1.5",
+    "next-mdx-remote": "^4.0.3",
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.28.0",
     "react": "^18.0.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.0.0",
     "react-jsx-parser": "^1.29.0",
-    "react-simple-code-editor": "^0.11.0"
+    "react-simple-code-editor": "^0.11.0",
+    "rehype-pretty-code": "^0.3.1",
+    "shiki": "^0.10.1"
   },
   "devDependencies": {
     "autoprefixer": "10.4.2",

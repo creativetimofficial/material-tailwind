@@ -1,4 +1,4 @@
-const withMT = require("./packages/material-tailwind-react/src/utils/withMT");
+const withMT = require("./packages/material-tailwind-html/utils/withMT");
 
 module.exports = withMT({
   content: [
@@ -6,7 +6,8 @@ module.exports = withMT({
     "./packages/material-tailwind-react/src/theme/components/**/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./pagesComponents/**/*.{js,ts,jsx,tsx}",
-    "./react-sections/*.{js,ts,jsx,tsx}"
+    "./react-sections/*.{js,ts,jsx,tsx}",
+    "./documentation/**/*.mdx"
   ],
   theme: {
     extend: {

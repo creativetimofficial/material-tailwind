@@ -1,0 +1,31 @@
+---
+meta-title: Button - Material Tailwind
+title: Button
+description: HTML Button component with Tailwind CSS.
+navigation: ["button", "button-variants", "button-size"]
+---
+
+# Button
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="button">
+  <button className="button button-pink" data-ripple-light>
+    <span className="font-bold">Button</span>
+  </button>
+</ComponentCard>
+
+```html showLineNumbers
+<button className="button button-pink">Button</button>
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>

@@ -21,7 +21,7 @@ export default function Presentation() {
       <Head>
         <title>Presentation | Material Tailwind</title>
       </Head>
-      <Navbar />
+      <Navbar shadow />
       <main className="relative">
         <Header />
         <Card

@@ -1,0 +1,37 @@
+---
+meta-title: React Button - Material Tailwind
+title: Button
+description: ReactJS or NextJS Button component with Tailwind CSS.
+navigation: ["button", "button-variants", "button-size", "props", "types"]
+---
+
+# Button
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="button">
+  <Button>Button</Button>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 5-7}
+import Button from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Button variant="gradient" color="blue" size="md">
+      Button
+    </Button>
+  );
+}
+```
+
+<Tooltip content="Copy" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="far fa-copy" />
+  </IconButton>
+</Tooltip>
+<Tooltip content="CodeSandbox" placement="bottom">
+  <IconButton variant="text" size="sm" className="float-right">
+    <i className="fas fa-code" />
+  </IconButton>
+</Tooltip>

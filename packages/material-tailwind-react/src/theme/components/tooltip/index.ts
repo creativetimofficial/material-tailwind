@@ -36,7 +36,7 @@ export const tooltip: TooltipStylesType = {
       bg: "bg-black",
       py: "py-1.5",
       px: "px-3",
-      borderRadius: "rounded-md",
+      borderRadius: "rounded-lg",
       fontFamily: "font-sans",
       fontSize: "text-sm",
       fontWeight: "font-normal",

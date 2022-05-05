@@ -12,11 +12,23 @@ interface NewAnimatePresenceProps
   children: React.ReactNode;
 }
 
-export default function Navbar() {
+interface NavbarProps {
+  container?: string;
+  className?: string;
+  shadow?: boolean;
+  [key: string]: any;
+}
+
+export default function Navbar({
+  container,
+  className,
+  shadow,
+  ...rest
+}: NavbarProps) {
   const [open, setOpen] = useState(false);
   const mobileListRef = useRef(null);
   const navbarItemClasses =
-    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-[#1A237E] font-light lg:px-2 cursor-pointer";
+    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-inherit font-light lg:px-2 cursor-pointer";
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -128,17 +140,27 @@ export default function Navbar() {
   const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
   return (
-    <div className="w-full max-w-screen-2xl absolute lg:fixed left-2/4 -translate-x-2/4 z-[999] flex flex-wrap items-center my-4 px-4">
-      <MTNavbar className="!block shadow-2xl shadow-blue-grey-500/10 py-2 pl-6 pr-5">
-        <div className="w-full flex !justify-between items-center">
+    <div
+      className={`w-full max-w-screen-2xl absolute lg:fixed left-2/4 -translate-x-2/4 z-[999] flex flex-wrap items-center my-4 px-4 ${container}`}
+    >
+      <MTNavbar
+        {...rest}
+        className={`!block py-2 pl-6 pr-5 ${
+          shadow ? "shadow-2xl shadow-blue-grey-500/10" : ""
+        }`}
+        shadow={shadow}
+      >
+        <div
+          className={`w-full flex !justify-between items-center text-[#1A237E] ${className}`}
+        >
           <Link href="/">
-            <a className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-[#1A237E] lg:ml-0">
+            <a className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
               Material Tailwind
             </a>
           </Link>
           <IconButton
             variant="text"
-            className="lg:hidden w-6 h-6 ml-auto text-[#1A237E] hover:bg-transparent focus:bg-transparent active:bg-transparent"
+            className="lg:hidden w-6 h-6 ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
             ripple={false}
             onClick={() => setOpen(!open)}
           >
