@@ -148,9 +148,9 @@
 }
 
 [data-rehype-pretty-code-fragment] .word {
-  padding: 0 0.125rem;
+  padding: 0.0875rem 0.125rem;
   border-radius: 0.25rem;
-  background-color: rgba(74, 222, 128, 0.1);
+  background-color: rgba(74, 222, 128, 0.15);
 }
 
 [data-rehype-pretty-code-fragment] code {
@@ -161,10 +161,19 @@
   counter-reset: line;
 }
 
+table tbody tr td code {
+  font-weight: 600;
+}
+
 [data-rehype-pretty-code-fragment] code .line {
   display: inline-block;
   width: 100%;
   position: relative;
+}
+
+[data-rehype-pretty-code-fragment] .line.highlighted span {
+  position: relative;
+  z-index: 2;
 }
 
 [data-rehype-pretty-code-fragment] code > .line::before {
