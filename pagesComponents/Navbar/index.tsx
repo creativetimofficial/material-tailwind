@@ -16,6 +16,8 @@ interface NavbarProps {
   container?: string;
   className?: string;
   shadow?: boolean;
+  sidenavMenu?: any;
+  list?: string;
   [key: string]: any;
 }
 
@@ -23,12 +25,14 @@ export default function Navbar({
   container,
   className,
   shadow,
+  sidenavMenu,
+  list = "text-[#1A237E]",
   ...rest
 }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const mobileListRef = useRef(null);
   const navbarItemClasses =
-    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-inherit font-light lg:px-2 cursor-pointer";
+    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -83,7 +87,7 @@ export default function Navbar({
   );
 
   const navbarMenu = (
-    <ul className="flex flex-col pl-0 mb-0 list-none lg:flex-row gap-2 lg:gap-4 lg:ml-auto">
+    <ul className="flex flex-col pl-0 mb-0 list-none text-inherit lg:flex-row gap-2 lg:gap-4 lg:ml-auto">
       <li>
         <Link href="/docs/quick-start">
           <a className={navbarItemClasses}>
@@ -173,7 +177,7 @@ export default function Navbar({
         <NewAnimatePresence>
           <motion.div
             ref={mobileListRef}
-            className="block overflow-hidden basis-full"
+            className={`block overflow-hidden basis-full ${list}`}
             initial="unmount"
             exit="unmount"
             animate={open ? "mount" : "unmount"}
@@ -182,6 +186,7 @@ export default function Navbar({
             {navbarMenu}
           </motion.div>
         </NewAnimatePresence>
+        {sidenavMenu}
       </MTNavbar>
     </div>
   );
