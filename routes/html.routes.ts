@@ -2,7 +2,11 @@ export const routes = [
   {
     name: "guide",
     icon: "fas fa-book",
-    pages: ["introduction", "getting started"]
+    pages: [
+      "quick start", 
+      "What is Talwind CSS",
+      "license"
+    ]
   },
   {
     name: "components",
@@ -16,13 +20,10 @@ export const routes = [
       "chip",
       "icon-button",
       "input",
-      "navbar",
-      "popover",
       "progress",
       "radio",
       "switch",
       "textarea",
-      "tooltip",
       "typography"
     ]
   }
