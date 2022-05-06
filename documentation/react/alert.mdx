@@ -52,7 +52,7 @@ import { Alert } from "@material-tailwind/react";
 export default function Variants() {
   return (
     <div className="flex flex-col gap-2">
-      <Alert>A simple filled alert for showing message.</Alert>
+      <Alert variant="filled">A simple filled alert for showing message.</Alert>
       <Alert variant="gradient">
         A simple gradient alert for showing message.
       </Alert>
@@ -82,7 +82,7 @@ import { Alert } from "@material-tailwind/react";
 export default function Colors() {
   return (
     <div className="flex flex-col gap-2 w-full">
-      <Alert>An info alert for showing message.</Alert>
+      <Alert color="blue">An info alert for showing message.</Alert>
       <Alert color="red">An error alert for showing message.</Alert>
       <Alert color="green">A success alert for showing message.</Alert>
       <Alert color="amber">A warning alert for showing message.</Alert>
@@ -126,7 +126,7 @@ The alert component is a dismissible component that you can control it using the
   </ComponentCard>
 </State>
 
-```jsx showLineNumbers {5, 8-22}
+```jsx showLineNumbers {5, 8-26}
 import { useState, Fragment } from "react";
 import { Alert } from "@material-tailwind/react";
 
@@ -161,7 +161,7 @@ export default function Colors() {
 
 ## Props
 
-<span id="props" />
+<span id="props" className="scroll-mt-48" />
 The following props are available for the button component. These are the custom
 props that come with we've added for the alert component and you can use all the
 other native props as well.
@@ -181,7 +181,7 @@ other native props as well.
 
 ## Types
 
-<span id="types" />
+<span id="types" className="scroll-mt-48" />
 
 ```ts
 type variant = "filled" | "gradient";
