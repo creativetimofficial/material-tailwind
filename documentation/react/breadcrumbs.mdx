@@ -1,0 +1,58 @@
+---
+title: Breadcrumbs - Material Tailwind
+description: ReactJS or NextJS Breadcrumbs component with Tailwind CSS.
+navigation: ["breadcrumbs", "props"]
+github: breadcrumbs
+prev: avatar
+next: button
+---
+
+# Tailwind CSS Breadcrumbs - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="breadcrumbs">
+  <Breadcrumbs>
+    <a href="#" className="opacity-60">
+      <span>Docs</span>
+    </a>
+    <a href="#" className="opacity-60">
+      <span>Components</span>
+    </a>
+    <a href="#">Breadcrumbs</a>
+  </Breadcrumbs>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 5-13}
+import { Breadcrumbs } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Breadcrumbs>
+      <a href="#" className="opacity-60">
+        Docs
+      </a>
+      <a href="#" className="opacity-60">
+        Components
+      </a>
+      <a href="#">Breadcrumbs</a>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the breadcrumbs component. These are the custom
+props that come with we've added for the breadcrumbs component and you can use all
+the other native props as well.
+
+| Attribute   | Type                       | Description                                               | Default                               |
+| ----------- | -------------------------- | --------------------------------------------------------- | ------------------------------------- |
+| `separator` | <Code small>node</Code>    | Used to change the separator between breadcrumbs elements | <Code small>/</Code>                  |
+| `fullWidth` | <Code small>boolean</Code> | Render breadcrumbs as a block level element               | <Code small>false</Code>              |
+| `className` | <Code small>string</Code>  | Used to add custom classes for breadcrumbs                | `''`                                  |
+| `children`  | <Code small>node</Code>    | Used to add the content of the breadcrumbs                | No default value its a required prop. |
