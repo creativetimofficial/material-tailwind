@@ -1,0 +1,177 @@
+---
+title: Accordion - Material Tailwind
+description: ReactJS or NextJS Accordion component with Tailwind CSS.
+navigation:
+  [
+    "accordion",
+    "accordion-props",
+    "accordion-header-props",
+    "accordion-body-props",
+    "types"
+  ]
+github: accordion
+prev: getting-started
+next: alert
+---
+
+# Tailwind CSS Accordion - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<State initialState={{ active: 0 }}>
+  <ComponentCard id="accordion">
+    <Observe>
+      {({ setState, active }) => (
+        <>
+          <Accordion
+            open={active === 1}
+            onClick={() => setState((s) => ({ active: active === 1 ? 0 : 1 }))}
+          >
+            <AccordionHeader>What is Material Tailwind?</AccordionHeader>
+            <AccordionBody>
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion
+            open={active === 2}
+            onClick={() => setState((s) => ({ active: active === 2 ? 0 : 2 }))}
+          >
+            <AccordionHeader>How to use Material Tailwind?</AccordionHeader>
+            <AccordionBody>
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion
+            open={active === 3}
+            onClick={() => setState((s) => ({ active: active === 3 ? 0 : 3 }))}
+          >
+            <AccordionHeader>
+              What can I do with Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+        </>
+      )}
+    </Observe>
+  </ComponentCard>
+</State>
+
+```jsx showLineNumbers
+import { useState } from "react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(0);
+
+  const handleOpen = (value) => {
+    setOpen(open === value ? 0 : value);
+  };
+
+  return (
+    <Fragment>
+      <Accordion open={open === 1} onClick={() => handleOpen(1)}>
+        <AccordionHeader>What is Material Tailwind?</AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 2} onClick={() => handleOpen(2)}>
+        <AccordionHeader>How to use Material Tailwind?</AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 3} onClick={() => handleOpen(3)}>
+        <AccordionHeader>What can I do with Material Tailwind?</AccordionHeader>
+        <AccordionBody>
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Accordion Props
+
+<span id="accordion-props" className="scroll-mt-48" />
+The following props are available for the accordion component. These are the custom
+props that come with we've added for the accordion component and you can use all
+the other native props as well.
+
+| Attribute   | Type                       | Description                                     | Default                               |
+| ----------- | -------------------------- | ----------------------------------------------- | ------------------------------------- |
+| `open`      | <Code small>boolean</Code> | Used to open the accordion collapse             | No default value its a required prop. |
+| `icon`      | <Code small>node</Code>    | Used to change the accordion collapse end icon  | <Code small>false</Code>              |
+| `animate`   | [Animate](#types)          | Controls animation effect of for accordion body | <Code small>undefined</Code>          |
+| `disabled`  | <Code small>boolean</Code> | Used to make the accordion disabled             | <Code small>false</Code>              |
+| `disabled`  | <Code small>boolean</Code> | Used to make the accordion disabled             | <Code small>false</Code>              |
+| `className` | <Code small>string</Code>  | Used to add custom classes for accordion        | `''`                                  |
+| `children`  | <Code small>node</Code>    | Used to add the content of the accordion        | No default value its a required prop. |
+
+---
+
+## Accordion Header Props
+
+<span id="accordion-header-props" className="scroll-mt-48" />
+The following props are available for the accordion header component. These are the
+custom props that come with we've added for the accordion header component and you
+can use all the other native props as well.
+
+| Attribute   | Type                      | Description                                     | Default                               |
+| ----------- | ------------------------- | ----------------------------------------------- | ------------------------------------- |
+| `className` | <Code small>string</Code> | Used to add custom classes for accordion header | `''`                                  |
+| `children`  | <Code small>node</Code>   | Used to add the content of the accordion header | No default value its a required prop. |
+
+---
+
+## Accordion Body Props
+
+<span id="accordion-body-props" className="scroll-mt-48" />
+The following props are available for the accordion body component. These are the
+custom props that come with we've added for the accordion body component and you
+can use all the other native props as well.
+
+| Attribute   | Type                      | Description                                   | Default                               |
+| ----------- | ------------------------- | --------------------------------------------- | ------------------------------------- |
+| `className` | <Code small>string</Code> | Used to add custom classes for accordion body | `''`                                  |
+| `children`  | <Code small>node</Code>   | Used to add the content of the accordion body | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: Object;
+  unmount?: Object;
+};
+```
