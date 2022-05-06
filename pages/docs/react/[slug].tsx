@@ -286,7 +286,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                                   }`}
                                   onClick={() => setMobileNav(false)}
                                 >
-                                  {page}
+                                  {page.includes("-")
+                                    ? page.split("-").join(" ")
+                                    : page}
                                 </Typography>
                               </a>
                             </Link>
@@ -360,7 +362,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                             : "font-normal text-blue-grey-500 before:bg-blue-grey-300"
                         }`}
                       >
-                        {el.replace("-", " ")}
+                        {el.includes("-") ? el.split("-").join(" ") : el}
                       </a>
                     </li>
                   ))}
