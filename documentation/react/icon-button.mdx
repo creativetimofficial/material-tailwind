@@ -1,0 +1,225 @@
+---
+title: Icon Button - Material Tailwind
+description: ReactJS or NextJS Icon Button component with Tailwind CSS.
+navigation:
+  [
+    "icon-button",
+    "icon-button-variants",
+    "icon-button-sizes",
+    "icon-button-colors",
+    "props",
+    "types"
+  ]
+github: icon-button
+prev: dialog
+next: input
+---
+
+# Tailwind CSS Icon Button - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="button">
+  <IconButton>
+    <i className="fas fa-heart" />
+  </IconButton>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 5-7}
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <IconButton>
+      <i className="fas fa-heart" />
+    </IconButton>
+  );
+}
+```
+
+---
+
+## Button Variants
+
+The icon button component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="button-variants">
+  <div className="flex gap-4">
+    <IconButton>
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="gradient">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="outlined">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="text">
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-17}
+import { IconButton } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <div className="flex gap-4">
+      <IconButton>
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="gradient">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="outlined">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="text">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+
+---
+
+## Button Sizes
+
+The icon button component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+
+<ComponentCard id="button-sizes">
+  <div className="flex items-end gap-4">
+    <IconButton size="sm">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton>
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton size="lg">
+      <i className="fas fa-heart fa-lg" />
+    </IconButton>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-14}
+import { IconButton } from "@material-tailwind/react";
+
+export default function Sizes() {
+  return (
+    <div className="flex items-end gap-4">
+      <IconButton size="sm">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton size="md">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton size="lg">
+        <i className="fas fa-heart fa-lg" />
+      </IconButton>
+    </div>
+  );
+}
+```
+
+---
+
+## Button Colors
+
+The icon button component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="button-colors">
+  <div className="flex gap-4">
+    <IconButton color="blue">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton color="red">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton color="green">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton color="amber">
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-17}
+import { IconButton } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex gap-4">
+      <IconButton color="blue">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton color="red">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton color="green">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton color="amber">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" />
+The following props are available for the icon button component. These are the custom
+props that come with we've added for the icon button component and you can use all
+the other native button props as well.
+
+| Attribute   | Type                       | Description                                | Default                               |
+| ----------- | -------------------------- | ------------------------------------------ | ------------------------------------- |
+| `variant`   | [Variant](#types)          | Change icon button variant                 | <Code small>filled</Code>             |
+| `size`      | [Size](#types)             | Change icon button size                    | <Code small>md</Code>                 |
+| `color`     | [Color](#types)            | Change icon button color                   | <Code small>blue</Code>               |
+| `ripple`    | <Code small>boolean</Code> | Controls the ripple effect for icon button | <Code small>true</Code>               |
+| `className` | <Code small>string</Code>  | Used to add custom classes for icon button | `''`                                  |
+| `children`  | <Code small>node</Code>    | Used to add the content of the icon button | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" />
+
+```ts
+type variant = "filled" | "outlined" | "gradient" | "text";
+```
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
