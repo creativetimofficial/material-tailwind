@@ -112,13 +112,13 @@ const components = {
   tr: (props: any) => <tr {...props} />,
   th: (props: any) => (
     <th
-      className="w-max font-medium text-blue-grey-900 text-left py-3 border-b border-blue-grey-100"
+      className="min-w-[120px] font-medium text-blue-grey-900 text-left py-3 border-b border-blue-grey-100"
       {...props}
     />
   ),
   td: (props: any) => (
     <td
-      className="w-max text-sm text-blue-grey-500 text-left py-3 border-b border-blue-grey-50"
+      className="min-w-[120px] text-sm text-blue-grey-500 text-left py-3 border-b border-blue-grey-50"
       {...props}
     />
   ),
