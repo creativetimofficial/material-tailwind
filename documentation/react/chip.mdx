@@ -37,13 +37,13 @@ The chip component comes with 2 different variants that you can change it using 
   </div>
 </ComponentCard>
 
-```jsx showLineNumbers {5-8}
+```jsx showLineNumbers {6-7}
 import { Chip } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
     <div className="flex gap-2">
-      <Chip value="chip filled" />
+      <Chip variant="filled" value="chip filled" />
       <Chip variant="gradient" value="chip gradient" />
     </div>
   );
@@ -76,7 +76,7 @@ import { Chip } from "@material-tailwind/react";
 export default function Colors() {
   return (
     <div className="flex gap-2">
-      <Chip value="blue" />
+      <Chip color="blue" value="blue" />
       <Chip color="red" value="red" />
       <Chip color="green" value="green" />
       <Chip color="amber" value="amber" />
@@ -124,7 +124,7 @@ The chip component is a dismissible component that you can control it using the 
   </ComponentCard>
 </State>
 
-```jsx showLineNumbers {5, 8-22}
+```jsx showLineNumbers {5, 8-26}
 import { useState, Fragment } from "react";
 import { Chip } from "@material-tailwind/react";
 
@@ -159,7 +159,7 @@ export default function Dismissible() {
 
 ## Props
 
-<span id="props" />
+<span id="props" className="scroll-mt-48" />
 The following props are available for the button component. These are the custom
 props that come with we've added for the chip component and you can use all the other
 native props as well.
@@ -168,7 +168,7 @@ native props as well.
 | ------------- | -------------------------- | ---------------------------------------------------- | ------------------------------------- |
 | `variant`     | [Variant](#types)          | Change chip variant                                  | <Code small>filled</Code>             |
 | `color`       | [Color](#types)            | Change chip color                                    | <Code small>blue</Code>               |
-| `value`       | [Animate](#types)          | Used to add the content of the chip                  | No default value its a required prop. |
+| `value`       | [Value](#types)            | Used to add the content of the chip                  | No default value its a required prop. |
 | `dismissible` | [Dismissible](#types)      | Make the chip dismissible                            | <Code small>undefined</Code>          |
 | `animate`     | [Animate](#types)          | Controls animation effect of chip                    | <Code small>undefined</Code>          |
 | `show`        | <Code small>boolean</Code> | Used to set the chip visibility when its dismissible | <Code small>true</Code>               |
@@ -179,7 +179,7 @@ native props as well.
 
 ## Types
 
-<span id="types" />
+<span id="types" className="scroll-mt-48" />
 
 ```ts
 type variant = "filled" | "gradient";
