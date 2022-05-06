@@ -1,6 +1,5 @@
 import cardFilled from "./cardFilled";
 import cardGradient from "./cardGradient";
-import validColors from "../../../utils/validColors";
 
 // types
 import type { variant, color, shadow, floated, className } from "../../../types/components/card";
