@@ -1,11 +1,21 @@
 ---
-meta-title: React Button - Material Tailwind
-title: Button
+title: Button - Material Tailwind
 description: ReactJS or NextJS Button component with Tailwind CSS.
-navigation: ["button", "button-variants", "button-size", "props", "types"]
+navigation:
+  [
+    "button",
+    "button-variants",
+    "button-sizes",
+    "button-colors",
+    "props",
+    "types"
+  ]
+github: button
+prev: breadcrumbs
+next: card
 ---
 
-# Button
+# Tailwind CSS Button - React
 
 ###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
 
@@ -13,25 +23,154 @@ navigation: ["button", "button-variants", "button-size", "props", "types"]
   <Button>Button</Button>
 </ComponentCard>
 
-```jsx showLineNumbers {1, 5-7}
-import Button from "@material-tailwind/react";
+```jsx showLineNumbers {1, 4}
+import { Button } from "@material-tailwind/react";
 
 export default function Example() {
+  return <Button>Button</Button>;
+}
+```
+
+---
+
+## Button Variants
+
+The button component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="button-variants">
+  <div className="flex gap-4 w-max">
+    <Button>filled</Button>
+    <Button variant="gradient">gradient</Button>
+    <Button variant="outlined">outlined</Button>
+    <Button variant="text">text</Button>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Button } from "@material-tailwind/react";
+
+export default function Variants() {
   return (
-    <Button variant="gradient" color="blue" size="md">
-      Button
-    </Button>
+    <div className="flex gap-4 w-max">
+      <Button variant="filled">filled</Button>
+      <Button variant="gradient">gradient</Button>
+      <Button variant="outlined">outlined</Button>
+      <Button variant="text">text</Button>
+    </div>
   );
 }
 ```
 
-<Tooltip content="Copy" placement="bottom">
-  <IconButton variant="text" size="sm" className="float-right">
-    <i className="far fa-copy" />
-  </IconButton>
-</Tooltip>
-<Tooltip content="CodeSandbox" placement="bottom">
-  <IconButton variant="text" size="sm" className="float-right">
-    <i className="fas fa-code" />
-  </IconButton>
-</Tooltip>
+---
+
+## Button Sizes
+
+The button component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+
+<ComponentCard id="button-sizes">
+  <div className="flex items-end gap-4 w-max">
+    <Button size="sm">small</Button>
+    <Button>medium</Button>
+    <Button size="lg">large</Button>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-8}
+import { Button } from "@material-tailwind/react";
+
+export default function Sizes() {
+  return (
+    <div className="flex items-end gap-4 w-max">
+      <Button size="sm">small</Button>
+      <Button size="md">medium</Button>
+      <Button size="lg">large</Button>
+    </div>
+  );
+}
+```
+
+---
+
+## Button Colors
+
+The button component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="button-colors">
+  <div className="flex gap-4 w-max">
+    <Button color="blue">color blue</Button>
+    <Button color="red">color red</Button>
+    <Button color="green">color green</Button>
+    <Button color="amber">color amber</Button>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Button } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex gap-4 w-max">
+      <Button color="blue">color blue</Button>
+      <Button color="red">color red</Button>
+      <Button color="green">color green</Button>
+      <Button color="amber">color amber</Button>
+    </div>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" />
+The following props are available for the button component. These are the custom
+props that come with we've added for the button component and you can use all the
+other native button props as well.
+
+| Attribute   | Type                       | Description                            | Default                               |
+| ----------- | -------------------------- | -------------------------------------- | ------------------------------------- |
+| `variant`   | [Variant](#types)          | Change button variant                  | <Code small>filled</Code>             |
+| `size`      | [Size](#types)             | Change button size                     | <Code small>md</Code>                 |
+| `color`     | [Color](#types)            | Change button color                    | <Code small>blue</Code>               |
+| `fullWidth` | <Code small>boolean</Code> | Render button as a block level element | <Code small>false</Code>              |
+| `ripple`    | <Code small>boolean</Code> | Controls the ripple effect for button  | <Code small>true</Code>               |
+| `className` | <Code small>string</Code>  | Used to add custom classes for button  | `''`                                  |
+| `children`  | <Code small>node</Code>    | Used to add the content of the button  | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" />
+
+```ts
+type variant = "filled" | "outlined" | "gradient" | "text";
+```
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
