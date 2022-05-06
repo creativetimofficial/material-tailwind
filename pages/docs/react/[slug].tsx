@@ -348,7 +348,11 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             </div>
             <aside className="hidden lg:block relative w-64 h-screen pt-20 pb-4 pl-16">
               <div className="fixed w-64 h-screen">
-                <Typography variant="h6" color="blue-grey">
+                <Typography
+                  variant="h6"
+                  color="blue-grey"
+                  className="capitalize"
+                >
                   On This Page
                 </Typography>
                 <ul className="list-none pl-4 pt-2">
