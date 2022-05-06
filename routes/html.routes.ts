@@ -4,7 +4,7 @@ export const routes = [
     icon: "fas fa-book",
     pages: [
       "quick start", 
-      "What is Talwind CSS",
+      "what is tailwind css",
       "license"
     ]
   },
