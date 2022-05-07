@@ -22,7 +22,6 @@ export const dialogHeader: DialogHeaderStylesType = {
       p: "p-4",
       color: "text-blue-grey-900",
       fontSmoothing: "antialiased",
-      wordSpacing: "tracking-tighter",
       fontFamily: "font-sans",
       fontSize: "text-2xl",
       fontWeight: "font-semibold",
