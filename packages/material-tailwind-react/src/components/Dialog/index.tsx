@@ -145,7 +145,12 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
       <FloatingPortal>
         <NewAnimatePresence>
           {open && (
-            <FloatingOverlay lockScroll>
+            <FloatingOverlay
+              style={{
+                zIndex: 9999,
+              }}
+              lockScroll
+            >
               <FloatingFocusManager context={context}>
                 <motion.div
                   className={size === "xxl" ? "" : backdropClasses}
