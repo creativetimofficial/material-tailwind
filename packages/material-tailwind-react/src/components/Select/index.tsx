@@ -139,14 +139,14 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     size = size ?? defaultProps.size;
     label = label ?? defaultProps.label;
     error = error ?? defaultProps.error;
-    success = success ?? defaultProps.error;
+    success = success ?? defaultProps.success;
     arrow = arrow ?? defaultProps.arrow;
     value = value ?? defaultProps.value;
     onChange = onChange ?? defaultProps.onChange;
     selected = selected ?? defaultProps.selected;
     offset = offset ?? defaultProps.offset;
-    dismiss = dismiss ?? defaultProps.offset;
-    animate = animate ?? defaultProps.offset;
+    dismiss = dismiss ?? defaultProps.dismiss;
+    animate = animate ?? defaultProps.animate;
     labelProps = labelProps ?? defaultProps.labelProps;
     menuProps = menuProps ?? defaultProps.menuProps;
     className = className ?? defaultProps.className;
@@ -338,7 +338,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
-    const appliedAnimation = merge(animation, menuProps.animate ?? {});
+    const appliedAnimation = merge(animation, animate);
 
     // 6. create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
