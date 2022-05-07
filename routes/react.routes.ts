@@ -22,7 +22,7 @@ export const routes = [
       "menu",
       "navbar",
       "popover",
-      "progress",
+      "progress-bar",
       "radio-button",
       "select",
       "switch",
