@@ -194,6 +194,8 @@ export const select: SelectStylesType = {
       },
       arrow: {
         initial: {
+          display: "grid",
+          placeItems: "place-items-center",
           position: "absolute",
           top: "top-2/4",
           right: "right-2",
