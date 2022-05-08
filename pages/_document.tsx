@@ -18,6 +18,7 @@ class MyDocument extends Document {
             defer
             src="https://unpkg.com/material-ripple-effects/ripple.js"
           />
+          <script src="/material-tailwind-html.js" crossOrigin="anonymous" />
         </Head>
         <body className="bg-grey-100 antialiased">
           <Main />

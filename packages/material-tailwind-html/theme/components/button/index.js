@@ -17,7 +17,7 @@ const buttonRoot = {
   "text-transform": "uppercase",
 
   "&.button-icon": {
-    padding: "1rem",
+    padding: ".625rem",
     "line-height": "initial",
 
     "i": {
