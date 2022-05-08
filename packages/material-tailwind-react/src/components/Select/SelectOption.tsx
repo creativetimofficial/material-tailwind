@@ -10,11 +10,12 @@ import { useTheme } from "../../context/theme";
 import { useSelect } from "./SelectContext";
 
 // types
-import type { value, index, disabled, children } from "../../types/components/select";
+import type { value, index, disabled, className, children } from "../../types/components/select";
 import {
   propTypesValue,
   propTypesIndex,
   propTypesDisabled,
+  propTypesClassName,
   propTypesChildren,
 } from "../../types/components/select";
 
@@ -22,12 +23,13 @@ export interface SelectOptionProps extends React.ComponentProps<"li"> {
   value?: value;
   index?: index;
   disabled?: disabled;
+  className?: className;
   children: children;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
   // 1. init
-  const { value, index, disabled, children, ...rest } = props;
+  const { value, index, disabled, className, children, ...rest } = props;
   const { select } = useTheme();
   const { styles } = select;
   const { base } = styles;
@@ -63,10 +65,14 @@ export const SelectOption = (props: SelectOptionProps) => {
   const optionBaseClasses = objectsToString(base.option.initial);
   const optionActiveClasses = objectsToString(base.option.active);
   const optionDisabledClasses = objectsToString(base.option.disabled);
-  const classes = classnames(optionBaseClasses, {
-    [optionActiveClasses]: selectedIndex === index,
-    [optionDisabledClasses]: disabled,
-  });
+  const classes = classnames(
+    optionBaseClasses,
+    {
+      [optionActiveClasses]: selectedIndex === index,
+      [optionDisabledClasses]: disabled,
+    },
+    className ?? "",
+  );
 
   // 4. return
   return (
@@ -109,6 +115,7 @@ export const SelectOption = (props: SelectOptionProps) => {
 SelectOption.defaultProps = {
   value: "",
   index: 0,
+  className: "",
   disabled: false,
 };
 
@@ -116,6 +123,7 @@ SelectOption.propTypes = {
   value: propTypesValue,
   index: propTypesIndex,
   disabled: propTypesDisabled,
+  className: propTypesClassName,
   children: propTypesChildren,
 };
 
