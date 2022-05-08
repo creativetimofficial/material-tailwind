@@ -1,16 +1,9 @@
 import Link from "next/Link";
-import { useState } from "react";
 import { Navbar } from "../packages/material-tailwind-react/src";
 import { Button } from "../packages/material-tailwind-react/src";
 import { Typography } from "../packages/material-tailwind-react/src";
 
 export default function Menus() {
-  const [open, setOpen] = useState(false);
-  const [open2, setOpen2] = useState(false);
-
-  const closeMenu = () => setOpen(false);
-  const closeMenu2 = () => setOpen2(false);
-
   const icon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
