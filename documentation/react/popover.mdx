@@ -10,8 +10,8 @@ navigation:
     "types"
   ]
 github: checkbox
-prev: card
-next: dialog
+prev: navbar
+next: progress-bar
 ---
 
 # Tailwind CSS Popover - React
@@ -51,15 +51,15 @@ export default function Example() {
 ## Popover Props
 
 <span id="popover-props" className="scroll-mt-48" />
-The following props are available for the menu component. These are the custom props
-that come with we've added for the menu component and you can use all the other native
-props as well.
+The following props are available for the popover component. These are the custom
+props that come with we've added for the popover component and you can use all the
+other native props as well.
 
 | Attribute   | Type                        | Description                                        | Default                               |
 | ----------- | --------------------------- | -------------------------------------------------- | ------------------------------------- |
 | `open`      | <Code small>boolean</Code>  | Makes the popover open, when popover is controlled | <Code small>undefined</Code>          |
 | `handler`   | <Code small>function</Code> | Change open state for controlled popover           | <Code small>undefined</Code>          |
-| `placement` | [Placement](#types)         | Change popover placement                           | <Code small>bottom</Code>             |
+| `placement` | [Placement](#types)         | Change popover placement                           | <Code small>top</Code>                |
 | `offset`    | [Offset](#types)            | Change popover offset from it's handler            | <Code small>5</Code>                  |
 | `dismiss`   | [Dismiss](#types)           | Change dismiss listeners when clicking outside     | <Code small>undefined</Code>          |
 | `animate`   | [Animate](#types)           | Change popover animation                           | <Code small>undefined</Code>          |
