@@ -1,0 +1,243 @@
+---
+title: Typography - Material Tailwind
+description: ReactJS or NextJS Typography component with Tailwind CSS.
+navigation:
+  [
+    "typography",
+    "typography-variants",
+    "typography-colors",
+    "typography-gradient-color",
+    "props",
+    "types"
+  ]
+github: typography
+prev: tooltip
+---
+
+# Tailwind CSS Typography - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="typography">
+  <Typography>
+    {`Material Tailwind is an easy to use components library for Tailwind CSS and
+    Material Design. It provides a simple way to customize your components, you
+    can change the colors, fonts, breakpoints and everything you need.`}
+  </Typography>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 5-10}
+import { Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Typography>
+      Material Tailwind is an easy to use components library for Tailwind CSS
+      and Material Design. It provides a simple way to customize your
+      components, you can change the colors, fonts, breakpoints and everything
+      you need.
+    </Typography>
+  );
+}
+```
+
+---
+
+## Typography Variants
+
+The typography component comes with 9 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="typography-variants">
+  <div className="flex flex-col gap-8 text-left">
+    <Typography variant="h1">Material Tailwind</Typography>
+    <Typography variant="h2">Material Tailwind</Typography>
+    <Typography variant="h3">Material Tailwind</Typography>
+    <Typography variant="h4">Material Tailwind</Typography>
+    <Typography variant="h5">Material Tailwind</Typography>
+    <Typography variant="h6">Material Tailwind</Typography>
+    <Typography variant="lead">
+      {`Material Tailwind is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+    <Typography variant="paragraph">
+      {`Material Tailwind is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+    <Typography variant="small">
+      {`Material Tailwind is an easy to use components library for Tailwind CSS and
+      Material Design. It provides a simple way to customize your components, you
+      can change the colors, fonts, breakpoints and everything you need.`}
+    </Typography>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-29}
+import { Typography } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <Fragment>
+      <Typography variant="h1">Material Tailwind</Typography>
+      <Typography variant="h2">Material Tailwind</Typography>
+      <Typography variant="h3">Material Tailwind</Typography>
+      <Typography variant="h4">Material Tailwind</Typography>
+      <Typography variant="h5">Material Tailwind</Typography>
+      <Typography variant="h6">Material Tailwind</Typography>
+      <Typography variant="lead">
+        Material Tailwind is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+      <Typography variant="paragraph">
+        Material Tailwind is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+      <Typography variant="small">
+        Material Tailwind is an easy to use components library for Tailwind CSS
+        and Material Design. It provides a simple way to customize your
+        components, you can change the colors, fonts, breakpoints and everything
+        you need.
+      </Typography>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Typography Colors
+
+The alert component comes with 23 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="typography-colors">
+  <div className="flex flex-col gap-8 text-left">
+    <Typography variant="h1" color="blue-grey">
+      {`Material Tailwind`}
+    </Typography>
+    <Typography variant="h1" color="blue">
+      {`Material Tailwind`}
+    </Typography>
+    <Typography variant="h1" color="red">
+      {`Material Tailwind`}
+    </Typography>
+    <Typography variant="h1" color="green">
+      {`Material Tailwind`}
+    </Typography>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-17}
+import { Typography } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <Fragment>
+      <Typography variant="h1" color="blue-grey">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="blue">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="red">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="green">
+        Material Tailwind
+      </Typography>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Typography Gradient Colors
+
+You can change the typography text color into a gradient color using the <Code>textGradient</Code> prop.
+
+<ComponentCard id="typography-gradient-color">
+  <Typography variant="h1" color="blue" textGradient>
+    {`Material Tailwind`}
+  </Typography>
+</ComponentCard>
+
+```jsx showLineNumbers {5-7}
+import { Typography } from "@material-tailwind/react";
+
+export default function GradientColor() {
+  return (
+    <Typography variant="h1" color="blue" textGradient>
+      Material Tailwind
+    </Typography>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the typography component. These are the custom
+props that come with we've added for the typography component and you can use all
+the other native props as well.
+
+| Attribute      | Type                       | Description                                   | Default                               |
+| -------------- | -------------------------- | --------------------------------------------- | ------------------------------------- |
+| `variant`      | [Variant](#types)          | Change typography variant                     | <Code small>paragraph</Code>          |
+| `color`        | [Color](#types)            | Change typography color                       | <Code small>inherit</Code>            |
+| `textGradient` | <Code small>boolean</Code> | Change typography color into a gradient color | <Code small>false</Code>              |
+| `as`           | <Code small>element</Code> | Change the typography rendered element        | <Code small>undefined</Code>          |
+| `className`    | <Code small>string</Code>  | Add custom className for typography           | `''`                                  |
+| `children`     | <Code small>node</Code>    | Add content for typography                    | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "lead"
+  | "paragraph"
+  | "small";
+```
+
+```ts
+type color =
+  | "inherit"
+  | "current"
+  | "black"
+  | "white"
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
