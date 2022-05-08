@@ -60,7 +60,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-5xl",
         fontWeight: "font-semibold",
         lineHeight: "leading-tight",
-        textTransform: "normal-case",
       },
       h2: {
         display: "block",
@@ -70,7 +69,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-4xl",
         fontWeight: "font-semibold",
         lineHeight: "leading-[1.3]",
-        textTransform: "normal-case",
       },
       h3: {
         display: "block",
@@ -80,7 +78,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-3xl",
         fontWeight: "font-semibold",
         lineHeight: "leading-snug",
-        textTransform: "normal-case",
       },
       h4: {
         display: "block",
@@ -90,7 +87,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-2xl",
         fontWeight: "font-semibold",
         lineHeight: "leading-snug",
-        textTransform: "normal-case",
       },
       h5: {
         display: "block",
@@ -100,7 +96,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-xl",
         fontWeight: "font-semibold",
         lineHeight: "leading-snug",
-        textTransform: "normal-case",
       },
       h6: {
         display: "block",
@@ -110,7 +105,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-base",
         fontWeight: "font-semibold",
         lineHeight: "leading-relaxed",
-        textTransform: "normal-case",
       },
       lead: {
         display: "block",
@@ -119,7 +113,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-xl",
         fontWeight: "font-normal",
         lineHeight: "leading-relaxed",
-        textTransform: "normal-case",
       },
       paragraph: {
         display: "block",
@@ -128,7 +121,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-base",
         fontWeight: "font-light",
         lineHeight: "leading-relaxed",
-        textTransform: "normal-case",
       },
       small: {
         display: "block",
@@ -137,7 +129,6 @@ export const typography: TypographyStylesType = {
         fontSize: "text-sm",
         fontWeight: "font-light",
         lineHeight: "leading-normal",
-        textTransform: "normal-case",
       },
     },
     textGradient: {
