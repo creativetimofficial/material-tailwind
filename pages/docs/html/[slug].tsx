@@ -19,7 +19,7 @@ import {
 } from "../../../packages/material-tailwind-react/src";
 
 // routes
-import { routes } from "../../../routes/react.routes";
+import { routes } from "../../../routes/html.routes";
 
 // rehype-pretty-code configurations
 const options = {
