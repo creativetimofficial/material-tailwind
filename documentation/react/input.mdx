@@ -1,0 +1,225 @@
+---
+title: Input - Material Tailwind
+description: ReactJS or NextJS Input component with Tailwind CSS.
+navigation:
+  [
+    "input",
+    "input-variants",
+    "input-sizes",
+    "input-colors",
+    "input-validations",
+    "input-with-icon",
+    "types"
+  ]
+github: input
+prev: icon-button
+next: menu
+---
+
+# Tailwind CSS Input - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="input">
+  <div className="w-72">
+    <Input label="Username" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Input } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Input label="Username" />;
+}
+```
+
+---
+
+## Input Variants
+
+The input component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="input-variants">
+  <div className="flex items-end gap-4 w-full">
+    <Input variant="outlined" label="Outlined" />
+    <Input variant="standard" label="Standard" />
+    <Input variant="static" label="Static" placeholder="Static" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-8}
+import { Input } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Input variant="outlined" label="Outlined" />
+      <Input variant="standard" label="Standard" />
+      <Input variant="static" label="Static" placeholder="Static" />
+    </div>
+  );
+}
+```
+
+---
+
+## Input Sizes
+
+The input component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+
+<ComponentCard id="input-sizes">
+  <div className="flex items-end gap-4 w-full">
+    <Input size="md" label="Input Medium" />
+    <Input size="lg" label="Input Large" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-7}
+import { Input } from "@material-tailwind/react";
+
+export default function Sizes() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Input size="md" label="Input Medium" />
+      <Input size="lg" label="Input Large" />
+    </div>
+  );
+}
+```
+
+---
+
+## Input Colors
+
+The input component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="input-colors">
+  <div className="flex flex-col gap-4 w-72">
+    <Input color="blue" label="Input Blue" />
+    <Input color="purple" label="Input Purple" />
+    <Input color="indigo" label="Input Indigo" />
+    <Input color="teal" label="Input Teal" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Input } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex flex-col gap-4 w-72">
+      <Input color="blue" label="Input Blue" />
+      <Input color="purple" label="Input Purple" />
+      <Input color="indigo" label="Input Indigo" />
+      <Input color="teal" label="Input Teal" />
+    </div>
+  );
+}
+```
+
+---
+
+## Input Validations
+
+The input component comes with error and success states for performing validations.
+
+<ComponentCard id="input-validations">
+  <div className="flex items-end gap-4 w-full">
+    <Input label="Input Error" error />
+    <Input label="Input Success" success />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-7}
+import { Input } from "@material-tailwind/react";
+
+export default function Validations() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Input label="Input Error" error />
+      <Input label="Input Success" success />
+    </div>
+  );
+}
+```
+
+---
+
+## Input With icon
+
+You can add icon for the input component using the <Code>icon</Code> prop.
+
+<ComponentCard id="input-with-icon">
+  <div className="w-72">
+    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Input } from "@material-tailwind/react";
+
+export default function InputWithIcon() {
+  return (
+    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the checkbox component. These are the custom
+props that come with we've added for the checkbox component and you can use all the
+other native input props as well.
+
+| Attribute    | Type                       | Description                      | Default                      |
+| ------------ | -------------------------- | -------------------------------- | ---------------------------- |
+| `variant`    | [Variant](#types)          | Change input variant             | <Code small>outlined</Code>  |
+| `size`       | [Size](#types)             | Change input size                | <Code small>md</Code>        |
+| `color`      | [Color](#types)            | Change input color               | <Code small>blue</Code>      |
+| `label`      | <Code small>string</Code>  | Add label for input              | `''`                         |
+| `error`      | <Code small>boolean</Code> | Change input state to error      | <Code small>false</Code>     |
+| `success`    | <Code small>boolean</Code> | Change input state to success    | <Code small>false</Code>     |
+| `icon`       | <Code small>node</Code>    | Add icon for the input           | <Code small>undefined</Code> |
+| `labelProps` | <Code small>Object</Code>  | Add custom props for input label | <Code small>undefined</Code> |
+| `className`  | <Code small>string</Code>  | Add custom className for input   | `''`                         |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+```ts
+type variant = "md" | "lg";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
