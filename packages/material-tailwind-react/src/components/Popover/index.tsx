@@ -39,7 +39,6 @@ import {
   propTypesOffset,
   propTypesDismiss,
   propTypesAnimate,
-  propTypesClassName,
   propTypesChildren,
 } from "../../types/components/popover";
 
@@ -156,7 +155,6 @@ Popover.propTypes = {
   offset: propTypesOffset,
   dismiss: propTypesDismiss,
   animate: propTypesAnimate,
-  className: propTypesClassName,
   children: propTypesChildren,
 };
 
