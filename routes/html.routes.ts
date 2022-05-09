@@ -15,7 +15,6 @@ export const routes = [
       "alert",
       "avatar",
       "button",
-      "card",
       "checkbox",
       "chip",
       "icon-button",
