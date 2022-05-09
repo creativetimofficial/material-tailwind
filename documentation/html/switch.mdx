@@ -1,6 +1,5 @@
 ---
-meta-title: Tailwind CSS Switch - Material Tailwind
-title: Tailwind CSS Switch
+title: Tailwind CSS Switch - Material Tailwind
 description: HTML Switch component with Tailwind CSS.
 navigation: ["switch"]
 ---
@@ -8,19 +7,30 @@ navigation: ["switch"]
 # Tailwind CSS Switch
 
 Get started on your web projects with our Tailwind CSS switch which provides contextual feedback messages for typical user actions.
-<br/>
+
+<br />
 
 <ComponentCard id="switch">
-<div class="form-check form-switch flex items-center mb-4">
-  <input class="opacity-0 cursor-pointer absolute z-10 w-8 h-5" data-attribute="toggle" id="remember"/>
-  <div class="form-check-input"></div>
-  <label class="form-check-label mb-0 ml-2" for="remember">Remember me</label>
-</div>
+  <div className="form-check form-switch flex items-center mb-4">
+    <input
+      className="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
+      data-attribute="toggle"
+      id="remember"
+    />
+    <div className="form-check-input"></div>
+    <label className="form-check-label mb-0 ml-2" htmlFor="remember">
+      Remember me
+    </label>
+  </div>
 </ComponentCard>
 
 ```html showLineNumbers
 <div class="form-check form-switch flex items-center mb-4">
-  <input class="opacity-0 cursor-pointer absolute z-10 w-8 h-5" data-attribute="toggle" id="remember"/>
+  <input
+    class="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
+    data-attribute="toggle"
+    id="remember"
+  />
   <div class="form-check-input"></div>
   <label class="form-check-label mb-0 ml-2" for="remember">Remember me</label>
 </div>

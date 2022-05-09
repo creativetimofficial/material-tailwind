@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-script-in-document */
 /* eslint-disable @next/next/no-sync-scripts */
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   render() {
@@ -21,15 +23,16 @@ class MyDocument extends Document {
             integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
             crossOrigin="anonymous"
           />
-          <script
-            defer
-            src="https://unpkg.com/material-ripple-effects/ripple.js"
-          />
-          <script src="/material-tailwind-html.js" crossOrigin="anonymous" />
         </Head>
         <body className="bg-grey-100 antialiased">
           <Main />
           <NextScript />
+          <script
+            src="https://unpkg.com/material-ripple-effects/ripple.js"
+            type="text/javascript"
+            dangerouslySetInnerHTML={{ __html: process.env.rawJsFromFile }}
+          />
+          {/* <Script src="/material-tailwind-html.js" /> */}
         </body>
       </Html>
     );
