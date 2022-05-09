@@ -14,7 +14,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.3.1",
+    "classnames": "^2.3.1",
+    "deepmerge": "^4.2.2",
+    "downshift": "^6.1.7",
     "framer-motion": "^6.2.8",
+    "material-ripple-effects": "^2.0.1",
+    "prop-types": "^15.8.1",
+    "react-merge-refs": "^1.1.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "mdx-observable": "^0.2.0",
