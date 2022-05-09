@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 import { Navbar } from "../packages/material-tailwind-react/src";
 import { Button } from "../packages/material-tailwind-react/src";
 import { Typography } from "../packages/material-tailwind-react/src";
