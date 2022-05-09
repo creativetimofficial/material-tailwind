@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Head from "next/Head";
+import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
