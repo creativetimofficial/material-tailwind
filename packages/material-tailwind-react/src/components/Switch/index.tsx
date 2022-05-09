@@ -24,7 +24,6 @@ import type {
 import {
   propTypesColor,
   propTypesLabel,
-  propTypesIcon,
   propTypesRipple,
   propTypesClassName,
   propTypesContainerProps,

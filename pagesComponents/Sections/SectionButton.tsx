@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import JsxParser from "react-jsx-parser";
 import CodePreviewCard from "../../pagesComponents/Cards/CodePreviewCard";
 import { Typography, Button } from "../../packages/material-tailwind-react/src";
@@ -77,7 +78,11 @@ export default function SectionButton() {
             Putting together a page has never been easier than matching together
             pre-made components. You can easily customize and built your pages.
           </Typography>
-          <Button>Get Started</Button>
+          <Link href="/docs/react/button">
+            <a>
+              <Button>Get Started</Button>
+            </a>
+          </Link>
           <div className="flex flex-wrap mt-7 text-[#1A237E]">
             <div className="w-auto mr-6 md:mr-8 text-center">
               <a

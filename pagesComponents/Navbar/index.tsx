@@ -4,7 +4,11 @@ import { AnimatePresence, AnimatePresenceProps, motion } from "framer-motion";
 import {
   Navbar as MTNavbar,
   IconButton,
-  Tooltip
+  Tooltip,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem
 } from "../../packages/material-tailwind-react/src";
 
 interface NewAnimatePresenceProps
@@ -16,6 +20,8 @@ interface NavbarProps {
   container?: string;
   className?: string;
   shadow?: boolean;
+  sidenavMenu?: any;
+  list?: string;
   [key: string]: any;
 }
 
@@ -23,12 +29,14 @@ export default function Navbar({
   container,
   className,
   shadow,
+  sidenavMenu,
+  list = "text-[#1A237E]",
   ...rest
 }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const mobileListRef = useRef(null);
   const navbarItemClasses =
-    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-inherit font-light lg:px-2 cursor-pointer";
+    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -83,23 +91,53 @@ export default function Navbar({
   );
 
   const navbarMenu = (
-    <ul className="flex flex-col pl-0 mb-0 list-none lg:flex-row gap-2 lg:gap-4 lg:ml-auto">
-      <li>
-        <Link href="/docs/quick-start">
-          <a className={navbarItemClasses}>
-            <i className="material-icons opacity-60 mr-2 text-base">article</i>
-            <span>Docs</span>
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/docs/components/alert">
-          <a className={navbarItemClasses}>
-            <i className="material-icons opacity-60 mr-2 text-base">apps</i>
-            <span>Components</span>
-          </a>
-        </Link>
-      </li>
+    <ul className="flex flex-col pl-0 mb-0 list-none text-inherit lg:flex-row gap-2 lg:gap-4 lg:ml-auto">
+      <Menu placement="bottom" offset={-2.5}>
+        <MenuHandler>
+          <li>
+            <a href="#" className={navbarItemClasses}>
+              <i className="material-icons opacity-60 mr-2 text-base">
+                article
+              </i>
+              <span>Docs</span>
+            </a>
+          </li>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>
+            <Link href="/docs/html/quick-start">
+              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="/docs/react/quick-start">
+              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+            </Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="bottom" offset={-2.5}>
+        <MenuHandler>
+          <li>
+            <a href="#" className={navbarItemClasses}>
+              <i className="material-icons opacity-60 mr-2 text-base">apps</i>
+              <span>Components</span>
+            </a>
+          </li>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>
+            <Link href="/docs/html/alert">
+              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="/docs/react/alert">
+              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+            </Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
       <Tooltip content="Coming Soon" placement="bottom" offset={-2.5}>
         <li className="flex">
           <a className={navbarItemClasses}>
@@ -173,7 +211,7 @@ export default function Navbar({
         <NewAnimatePresence>
           <motion.div
             ref={mobileListRef}
-            className="block overflow-hidden basis-full"
+            className={`block overflow-hidden basis-full ${list}`}
             initial="unmount"
             exit="unmount"
             animate={open ? "mount" : "unmount"}
@@ -182,6 +220,7 @@ export default function Navbar({
             {navbarMenu}
           </motion.div>
         </NewAnimatePresence>
+        {sidenavMenu}
       </MTNavbar>
     </div>
   );

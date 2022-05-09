@@ -131,6 +131,8 @@ export const input: InputStylesType = {
         transition: "transition-all",
       },
       icon: {
+        display: "grid",
+        placeItems: "place-items-center",
         position: "absolute",
         color: "text-blue-grey-500",
       },

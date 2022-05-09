@@ -52,6 +52,7 @@ export const menu: MenuStylesType = {
         color: "text-blue-grey-500",
         overflow: "overflow-auto",
         outline: "focus:outline-none",
+        zIndex: "z-[999]",
       },
       item: {
         initial: {

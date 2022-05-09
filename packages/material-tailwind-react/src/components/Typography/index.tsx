@@ -27,7 +27,7 @@ import {
   propTypesChildren,
 } from "../../types/components/typography";
 
-export interface TypographyProps extends React.ComponentProps<"div"> {
+export interface TypographyProps extends React.ComponentProps<any> {
   variant?: variant;
   color?: color;
   textGradient?: textGradient;
@@ -64,86 +64,118 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
       className,
     );
 
-    // 4. set variant
+    // 4. set template
     let template;
-    const Heading1 = as || "h1";
-    const Heading2 = as || "h2";
-    const Heading3 = as || "h3";
-    const Heading4 = as || "h4";
-    const Heading5 = as || "h5";
-    const Heading6 = as || "h6";
-    const Paragraph = as || "p";
-    const SmallText = as || "small";
 
     switch (variant) {
       case "h1":
-        template = (
-          <Heading1 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading1>
+        template = React.createElement(
+          as || "h1",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "h2":
-        template = (
-          <Heading2 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading2>
+        template = React.createElement(
+          as || "h2",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "h3":
-        template = (
-          <Heading3 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading3>
+        template = React.createElement(
+          as || "h3",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "h4":
-        template = (
-          <Heading4 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading4>
+        template = React.createElement(
+          as || "h4",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "h5":
-        template = (
-          <Heading5 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading5>
+        template = React.createElement(
+          as || "h5",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "h6":
-        template = (
-          <Heading6 {...rest} ref={ref} className={classes}>
-            {children}
-          </Heading6>
+        template = React.createElement(
+          as || "h6",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "lead":
-        template = (
-          <Paragraph {...rest} ref={ref} className={classes}>
-            {children}
-          </Paragraph>
+        template = React.createElement(
+          as || "p",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "paragraph":
-        template = (
-          <Paragraph {...rest} ref={ref} className={classes}>
-            {children}
-          </Paragraph>
+        template = React.createElement(
+          as || "p",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       case "small":
-        template = (
-          <SmallText {...rest} ref={ref} className={classes}>
-            {children}
-          </SmallText>
+        template = React.createElement(
+          as || "p",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
       default:
-        template = (
-          <Paragraph {...rest} ref={ref} className={classes}>
-            {children}
-          </Paragraph>
+        template = React.createElement(
+          as || "p",
+          {
+            ...rest,
+            ref,
+            className: classes,
+          },
+          children,
         );
         break;
     }

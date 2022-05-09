@@ -2,7 +2,7 @@ export const routes = [
   {
     name: "guide",
     icon: "fas fa-book",
-    pages: ["introduction", "getting started"]
+    pages: ["quick-start", "license"]
   },
   {
     name: "components",
@@ -22,8 +22,8 @@ export const routes = [
       "menu",
       "navbar",
       "popover",
-      "progress",
-      "radio",
+      "progress-bar",
+      "radio-button",
       "select",
       "switch",
       "tabs",

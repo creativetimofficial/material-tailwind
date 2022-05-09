@@ -1,0 +1,224 @@
+---
+title: Tabs - Material Tailwind
+description: ReactJS or NextJS Tabs component with Tailwind CSS.
+navigation:
+  [
+    "tabs",
+    "tabs-props",
+    "tabs-header-props",
+    "tabs-body-props",
+    "tab-props",
+    "tab-panel-props",
+    "types"
+  ]
+github: tabs
+prev: switch
+next: textarea
+---
+
+# Tailwind CSS Tabs - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="tabs">
+  <Tabs value="html">
+    <TabsHeader>
+      <Tab value="html">HTML</Tab>
+      <Tab value="react">React</Tab>
+      <Tab value="vue">Vue</Tab>
+      <Tab value="angular">Angular</Tab>
+      <Tab value="svelte">Svelte</Tab>
+    </TabsHeader>
+    <TabsBody>
+      <TabPanel value="html">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="react">
+        {`Because it's about motivating the doers. Because I'm here
+          to follow my dreams and inspire other people to follow their dreams, too.`}
+      </TabPanel>
+      <TabPanel value="vue">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+      <TabPanel value="angular">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="svelte">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+    </TabsBody>
+  </Tabs>
+</ComponentCard>
+
+```jsx showLineNumbers
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`
+    },
+
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're 
+      constantly trying to express ourselves and actualize our dreams.`
+    },
+
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`
+    },
+
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're 
+      constantly trying to express ourselves and actualize our dreams.`
+    }
+  ];
+
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+
+---
+
+## Tabs Props
+
+<span id="tabs-props" className="scroll-mt-48" />
+The following props are available for the tabs component. These are the custom props
+that come with we've added for the tabs component and you can use all the other native
+props as well.
+
+| Attribute   | Type                      | Description                   | Default                               |
+| ----------- | ------------------------- | ----------------------------- | ------------------------------------- |
+| `value`     | [Value](#types)           | Set's the default visible tab | No default value its a required prop. |
+| `className` | <Code small>string</Code> | Add custom className for tabs | `''`                                  |
+| `children`  | <Code small>node</Code>   | Add content for tabs          | No default value its a required prop. |
+
+---
+
+## Tabs Header Props
+
+<span id="tabs-header-props" className="scroll-mt-48" />
+The following props are available for the tabs header component. These are the custom
+props that come with we've added for the tabs header component and you can use all
+the other native props as well.
+
+| Attribute        | Type                      | Description                                | Default                               |
+| ---------------- | ------------------------- | ------------------------------------------ | ------------------------------------- |
+| `indicatorProps` | <Code small>Object</Code> | Add custom props for tabs header indicator | <Code small>undefined</Code>          |
+| `className`      | <Code small>string</Code> | Add custom className for tabs header       | `''`                                  |
+| `children`       | <Code small>node</Code>   | Add content for tabs header                | No default value its a required prop. |
+
+---
+
+## Tabs Body Props
+
+<span id="tabs-body-props" className="scroll-mt-48" />
+The following props are available for the tabs body component. These are the custom
+props that come with we've added for the tabs body component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                        | Default                               |
+| ----------- | ------------------------- | ---------------------------------- | ------------------------------------- |
+| `animate`   | [Animate](#types)         | Change tabs body animation         | <Code small>undefined</Code>          |
+| `className` | <Code small>string</Code> | Add custom className for tabs body | `''`                                  |
+| `children`  | <Code small>node</Code>   | Add content for tabs body          | No default value its a required prop. |
+
+---
+
+## Tab Props
+
+<span id="tab-props" className="scroll-mt-48" />
+The following props are available for the tab component. These are the custom props
+that come with we've added for the tab component and you can use all the other native
+props as well.
+
+| Attribute   | Type                       | Description                                                         | Default                               |
+| ----------- | -------------------------- | ------------------------------------------------------------------- | ------------------------------------- |
+| `value`     | [Value](#types)            | Set's the tab value, it should be the same value as tab panel value | No default value its a required prop. |
+| `disabled`  | <Code small>boolean</Code> | Disable tab                                                         | <Code small>false</Code>              |
+| `className` | <Code small>string</Code>  | Add custom className for tab                                        | `''`                                  |
+| `children`  | <Code small>node</Code>    | Add content for tab                                                 | No default value its a required prop. |
+
+---
+
+## Tab Panel Props
+
+<span id="tab-panel-props" className="scroll-mt-48" />
+The following props are available for the tab panel component. These are the custom
+props that come with we've added for the tab panel component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                                                         | Default                               |
+| ----------- | ------------------------- | ------------------------------------------------------------------- | ------------------------------------- |
+| `value`     | [Value](#types)           | Set's the tab panel value, it should be the same value as tab value | No default value its a required prop. |
+| `className` | <Code small>string</Code> | Add custom className for tab panel                                  | `''`                                  |
+| `children`  | <Code small>node</Code>   | Add content for tab panel                                           | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type value = string | number;
+```
+
+```ts
+type animate = {
+  mount?: Object;
+  unmount?: Object;
+};
+```

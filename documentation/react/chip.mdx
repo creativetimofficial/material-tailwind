@@ -1,0 +1,227 @@
+---
+title: Chip - Material Tailwind
+description: ReactJS or NextJS Chip component with Tailwind CSS.
+navigation:
+  ["chip", "chip-variants", "chip-colors", "chip-dismissible", "props", "types"]
+github: chip
+prev: checkbox
+next: dialog
+---
+
+# Tailwind CSS Chip - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="chip">
+  <Chip value="chip" />
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Chip value="chip" />;
+}
+```
+
+---
+
+## Chip Variants
+
+The chip component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="chip-variants">
+  <div className="flex gap-2">
+    <Chip value="chip filled" />
+    <Chip variant="gradient" value="chip gradient" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-7}
+import { Chip } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <div className="flex gap-2">
+      <Chip variant="filled" value="chip filled" />
+      <Chip variant="gradient" value="chip gradient" />
+    </div>
+  );
+}
+```
+
+---
+
+## Chip Colors
+
+The chip component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="chip-colors">
+  <div className="flex gap-2">
+    <Chip value="blue" />
+    <Chip color="red" value="red" />
+    <Chip color="green" value="green" />
+    <Chip color="amber" value="amber" />
+    <Chip color="pink" value="pink" />
+    <Chip color="indigo" value="indigo" />
+    <Chip color="purple" value="purple" />
+    <Chip color="teal" value="teal" />
+    <Chip color="cyan" value="cyan" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-14}
+import { Chip } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex gap-2">
+      <Chip color="blue" value="blue" />
+      <Chip color="red" value="red" />
+      <Chip color="green" value="green" />
+      <Chip color="amber" value="amber" />
+      <Chip color="pink" value="pink" />
+      <Chip color="indigo" value="indigo" />
+      <Chip color="purple" value="purple" />
+      <Chip color="teal" value="teal" />
+      <Chip color="cyan" value="cyan" />
+    </div>
+  );
+}
+```
+
+---
+
+## Chip Dismissible
+
+The chip component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+
+<State initialState={{ show: true }}>
+  <ComponentCard id="chip-dismissible">
+    <Observe>
+      {({ setState, show }) => (
+        <>
+          {!show && (
+            <Button
+              variant="gradient"
+              className="absolute"
+              onClick={() => setState((s) => ({ show: true }))}
+            >
+              Show Chip
+            </Button>
+          )}
+          <Chip
+            variant="gradient"
+            show={show}
+            dismissible={{
+              onClose: () => setState((s) => ({ show: false }))
+            }}
+            value="Dismissible"
+          />
+        </>
+      )}
+    </Observe>
+  </ComponentCard>
+</State>
+
+```jsx showLineNumbers {5, 8-26}
+import { useState, Fragment } from "react";
+import { Chip } from "@material-tailwind/react";
+
+export default function Dismissible() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <Fragment>
+      {!show && (
+        <Button
+          variant="gradient"
+          className="absolute"
+          onClick={() => setShow(true)}
+        >
+          Show Chip
+        </Button>
+      )}
+      <Chip
+        variant="gradient"
+        show={show}
+        dismissible={{
+          onClose: () => setShow(false)
+        }}
+        value="Dismissible"
+      />
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the button component. These are the custom
+props that come with we've added for the chip component and you can use all the other
+native props as well.
+
+| Attribute     | Type                       | Description                       | Default                               |
+| ------------- | -------------------------- | --------------------------------- | ------------------------------------- |
+| `variant`     | [Variant](#types)          | Change chip variant               | <Code small>filled</Code>             |
+| `color`       | [Color](#types)            | Change chip color                 | <Code small>blue</Code>               |
+| `value`       | [Value](#types)            | Add content for chip              | No default value its a required prop. |
+| `dismissible` | [Dismissible](#types)      | Makes the chip dismissible        | <Code small>undefined</Code>          |
+| `animate`     | [Animate](#types)          | Change chip animation             | <Code small>undefined</Code>          |
+| `show`        | <Code small>boolean</Code> | Change the chip visibility        | <Code small>true</Code>               |
+| `icon`        | <Code small>node</Code>    | Add icon at the beginning of chip | <Code small>undefined</Code>          |
+| `className`   | <Code small>string</Code>  | Add custom className for chip     | `''`                                  |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+```ts
+type value = string | number;
+```
+
+```ts
+type dismissible = {
+  action?: ReactNode;
+  onClose: () => void;
+};
+```
+
+```ts
+type animate = {
+  mount?: Object;
+  unmount?: Object;
+};
+```

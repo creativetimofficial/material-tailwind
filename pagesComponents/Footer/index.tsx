@@ -161,6 +161,8 @@ export default function Footer() {
               Copyright &copy; {year} Material Tailwind by{" "}
               <a
                 href="https://www.creative-tim.com?ref=material-tailwind"
+                target="_blank"
+                rel="noreferrer"
                 className="transition-all"
               >
                 Creative Tim.

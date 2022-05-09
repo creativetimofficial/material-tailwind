@@ -1,5 +1,6 @@
 // types
 import type {
+  interactive,
   placement,
   offset,
   dismiss,
@@ -9,6 +10,7 @@ import type {
 
 export interface TooltipStylesType {
   defaultProps?: {
+    interactive?: interactive;
     placement?: placement;
     offset?: offset;
     dismiss?: dismiss;
@@ -22,6 +24,7 @@ export interface TooltipStylesType {
 
 export const tooltip: TooltipStylesType = {
   defaultProps: {
+    interactive: false,
     placement: "top",
     offset: 5,
     dismiss: {},

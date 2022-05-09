@@ -1,0 +1,225 @@
+---
+title: Alert - Material Tailwind
+description: ReactJS or NextJS Alert component with Tailwind CSS.
+navigation:
+  [
+    "alert",
+    "alert-variants",
+    "alert-colors",
+    "alert-dismissible",
+    "props",
+    "types"
+  ]
+github: alert
+prev: accordion
+next: avatar
+---
+
+# Tailwind CSS Alert - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="alert">
+  <Alert>A simple alert for showing message.</Alert>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Alert } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Alert>A simple alert for showing message.</Alert>;
+}
+```
+
+---
+
+## Alert Variants
+
+The alert component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="alert-variants">
+  <div className="flex flex-col gap-2 w-full">
+    <Alert>A simple filled alert for showing message.</Alert>
+    <Alert variant="gradient">
+      <span>A simple gradient alert for showing message.</span>
+    </Alert>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Alert } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Alert variant="filled">A simple filled alert for showing message.</Alert>
+      <Alert variant="gradient">
+        A simple gradient alert for showing message.
+      </Alert>
+    </div>
+  );
+}
+```
+
+---
+
+## Alert Colors
+
+The alert component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="alert-colors">
+  <div className="flex flex-col gap-2 w-full">
+    <Alert>An info alert for showing message.</Alert>
+    <Alert color="red">An error alert for showing message.</Alert>
+    <Alert color="green">A success alert for showing message.</Alert>
+    <Alert color="amber">A warning alert for showing message.</Alert>
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Alert } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex flex-col gap-2 w-full">
+      <Alert color="blue">An info alert for showing message.</Alert>
+      <Alert color="red">An error alert for showing message.</Alert>
+      <Alert color="green">A success alert for showing message.</Alert>
+      <Alert color="amber">A warning alert for showing message.</Alert>
+    </div>
+  );
+}
+```
+
+---
+
+## Alert Dismissible
+
+The alert component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+
+<State initialState={{ show: true }}>
+  <ComponentCard id="alert-dismissible">
+    <Observe>
+      {({ setState, show }) => (
+        <>
+          {!show && (
+            <Button
+              variant="gradient"
+              className="absolute"
+              onClick={() => setState((s) => ({ show: true }))}
+            >
+              Show Alert
+            </Button>
+          )}
+          <Alert
+            variant="gradient"
+            show={show}
+            dismissible={{
+              onClose: () => setState((s) => ({ show: false }))
+            }}
+          >
+            A dismissible alert for showing message.
+          </Alert>
+        </>
+      )}
+    </Observe>
+  </ComponentCard>
+</State>
+
+```jsx showLineNumbers {5, 8-26}
+import { useState, Fragment } from "react";
+import { Alert } from "@material-tailwind/react";
+
+export default function Colors() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <Fragment>
+      {!show && (
+        <Button
+          variant="gradient"
+          className="absolute"
+          onClick={() => setShow(true)}
+        >
+          Show Alert
+        </Button>
+      )}
+      <Alert
+        show={show}
+        dismissible={{
+          onClose: () => setShow(false)
+        }}
+      >
+        A dismissible alert for showing message.
+      </Alert>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the button component. These are the custom
+props that come with we've added for the alert component and you can use all the
+other native props as well.
+
+| Attribute     | Type                       | Description                        | Default                               |
+| ------------- | -------------------------- | ---------------------------------- | ------------------------------------- |
+| `variant`     | [Variant](#types)          | Change alert variant               | <Code small>filled</Code>             |
+| `color`       | [Color](#types)            | Change alert color                 | <Code small>blue</Code>               |
+| `dismissible` | [Dismissible](#types)      | Makes the alert dismissible        | <Code small>undefined</Code>          |
+| `animate`     | [Animate](#types)          | Change alert animation             | <Code small>undefined</Code>          |
+| `show`        | <Code small>boolean</Code> | Change the alert visibility        | <Code small>true</Code>               |
+| `icon`        | <Code small>node</Code>    | Add icon at the beginning of alert | <Code small>undefined</Code>          |
+| `className`   | <Code small>string</Code>  | Add custom className for alert     | `''`                                  |
+| `children`    | <Code small>node</Code>    | Add content for alert              | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+```ts
+type dismissible = {
+  action?: ReactNode;
+  onClose: () => void;
+};
+```
+
+```ts
+type animate = {
+  mount?: Object;
+  unmount?: Object;
+};
+```

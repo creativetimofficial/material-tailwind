@@ -1,6 +1,5 @@
 ---
-meta-title: Tailwind CSS Quick Start - Material Tailwind
-title: Tailwind CSS Quick Start
+title: Quick Start - Material Tailwind
 description: HTML Quick Start component with Tailwind CSS.
 navigation: ["quick start", "installation", "npm", "yarn", "example"]
 ---
@@ -13,16 +12,17 @@ Material Tailwind is free and open-source components library for Tailwind CSS an
 ### Installation
 
 Learn how to use Material Tailwind components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
-<br/>
+<br />
 
-##### NPM 
+##### NPM
 
 Make sure that you have [Node.js](https://nodejs.org/en/) and [Tailwind CSS](https://tailwindcss.com/) installed.
 <br/>
 Install Material Tailwind as a dependency using NPM by running the following command:
 ```html showLineNumbers
-npm i -E @material-tailwind/html
+npm i @material-tailwind/html
 ```
+
 <br/>
 Require Material Tailwind as a plugin inside the **tailwind.config.js** file:
 ```html showLineNumbers
@@ -42,9 +42,18 @@ Include the main JavaScript file to make interactive elements working:
 ##### Yarn 
 
 ```html showLineNumbers
-yarn add @material-tailwind/html -E
+yarn add @material-tailwind/html
 ```
-<br/>
+
+<br />
+
+##### PNPM
+
+```html showLineNumbers
+pnpm i @material-tailwind/html
+```
+
+<br />
 
 ##### Import Material Tailwind Style Sheet
 
@@ -53,7 +62,8 @@ Import the **tailwind.css** into your project file. Make sure to import the tail
 ```html showLineNumbers
 <link rel="stylesheet" href="styles.css" />
 ```
-<br/>
+
+<br />
 
 ##### Link Material Icons Fonts to your project
 
@@ -61,21 +71,33 @@ Add a link for the material icons fonts inside the head of your project, so to u
 
 ```html showLineNumbers
 // Material Icons Link
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
 
 // Font Awesome Link
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossOrigin="anonymous" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous"
+/>
 ```
-<br/>
+
+<br />
 
 ##### Example
 
 Import the components you need
-<br/>
+
+<br />
 <ComponentCard id="example">
-  <button className="button button-pink" data-ripple-light>Button</button>
+  <button className="button button-pink" data-ripple-light>
+    {`Button`}
+  </button>
 </ComponentCard>
 
 ```html showLineNumbers
-<button className="button button-pink">Button</button>
+<button className="button button-pink" data-ripple-light>Button</button>
 ```

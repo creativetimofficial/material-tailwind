@@ -1,0 +1,203 @@
+---
+title: Textarea - Material Tailwind
+description: ReactJS or NextJS Textarea component with Tailwind CSS.
+navigation:
+  [
+    "textarea",
+    "textarea-variants",
+    "textarea-sizes",
+    "textarea-colors",
+    "textarea-validations",
+    "props",
+    "types"
+  ]
+github: textarea
+prev: tabs
+next: tooltip
+---
+
+# Tailwind CSS Textarea - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="textarea">
+  <div className="w-96">
+    <Textarea label="Message" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Input } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Textarea label="Message" />;
+}
+```
+
+---
+
+## Textarea Variants
+
+The textarea component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+
+<ComponentCard id="textarea-variants">
+  <div className="flex items-end gap-4 w-full">
+    <Textarea variant="outlined" label="Outlined" />
+    <Textarea variant="standard" label="Standard" />
+    <Textarea variant="static" label="Static" placeholder="Static" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-8}
+import { Textarea } from "@material-tailwind/react";
+
+export default function Variants() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Textarea variant="outlined" label="Outlined" />
+      <Textarea variant="standard" label="Standard" />
+      <Textarea variant="static" label="Static" placeholder="Static" />
+    </div>
+  );
+}
+```
+
+---
+
+## Textarea Sizes
+
+The textarea component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+
+<ComponentCard id="textarea-sizes">
+  <div className="flex items-end gap-4 w-full">
+    <Textarea size="md" label="Textarea Medium" />
+    <Textarea size="lg" label="Textarea Large" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-7}
+import { Textarea } from "@material-tailwind/react";
+
+export default function Sizes() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Textarea size="md" label="Textarea Medium" />
+      <Textarea size="lg" label="Textarea Large" />
+    </div>
+  );
+}
+```
+
+---
+
+## Textarea Colors
+
+The textarea component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+
+<ComponentCard id="textarea-colors">
+  <div className="flex flex-col gap-4 w-96">
+    <Textarea color="blue" label="Textarea Blue" />
+    <Textarea color="purple" label="Textarea Purple" />
+    <Textarea color="indigo" label="Textarea Indigo" />
+    <Textarea color="teal" label="Textarea Teal" />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-9}
+import { Textarea } from "@material-tailwind/react";
+
+export default function Colors() {
+  return (
+    <div className="flex flex-col gap-4 w-96">
+      <Textarea color="blue" label="Textarea Blue" />
+      <Textarea color="purple" label="Textarea Purple" />
+      <Textarea color="indigo" label="Textarea Indigo" />
+      <Textarea color="teal" label="Textarea Teal" />
+    </div>
+  );
+}
+```
+
+---
+
+## Textarea Validations
+
+The textarea component comes with error and success states for performing validations.
+
+<ComponentCard id="textarea-validations">
+  <div className="flex items-end gap-4 w-full">
+    <Textarea label="Textarea Error" error />
+    <Textarea label="Textarea Success" success />
+  </div>
+</ComponentCard>
+
+```jsx showLineNumbers {6-7}
+import { Textarea } from "@material-tailwind/react";
+
+export default function Validations() {
+  return (
+    <div className="flex items-end gap-4 w-full">
+      <Textarea label="Textarea Error" error />
+      <Textarea label="Textarea Success" success />
+    </div>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the textarea component. These are the custom
+props that come with we've added for the textarea component and you can use all the
+other native textarea props as well.
+
+| Attribute    | Type                       | Description                         | Default                      |
+| ------------ | -------------------------- | ----------------------------------- | ---------------------------- |
+| `variant`    | [Variant](#types)          | Change textarea variant             | <Code small>outlined</Code>  |
+| `size`       | [Size](#types)             | Change textarea size                | <Code small>md</Code>        |
+| `color`      | [Color](#types)            | Change textarea color               | <Code small>blue</Code>      |
+| `label`      | <Code small>string</Code>  | Add label for textarea              | `''`                         |
+| `error`      | <Code small>boolean</Code> | Change textarea state to error      | <Code small>false</Code>     |
+| `success`    | <Code small>boolean</Code> | Change textarea state to success    | <Code small>false</Code>     |
+| `resize`     | <Code small>boolean</Code> | Makes textarea resizable            | <Code small>false</Code>     |
+| `labelProps` | <Code small>Object</Code>  | Add custom props for textarea label | <Code small>undefined</Code> |
+| `className`  | <Code small>string</Code>  | Add custom className for textarea   | `''`                         |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+```ts
+type variant = "md" | "lg";
+```
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
