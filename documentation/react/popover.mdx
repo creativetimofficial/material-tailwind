@@ -1,0 +1,143 @@
+---
+title: Popover - Material Tailwind
+description: ReactJS or NextJS Popover component with Tailwind CSS.
+navigation:
+  [
+    "popover",
+    "popover-props",
+    "popover-handler-props",
+    "popover-content-props",
+    "types"
+  ]
+github: checkbox
+prev: navbar
+next: progress-bar
+---
+
+# Tailwind CSS Popover - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="popover">
+  <Popover>
+    <PopoverHandler>
+      <Button variant="gradient">Show Popover</Button>
+    </PopoverHandler>
+    <PopoverContent>
+      <span>This is a very beautiful popover, show some love.</span>
+    </PopoverContent>
+  </Popover>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 5-12}
+import { Popover, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverHandler>
+        <Button variant="gradient">Show Popover</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        This is a very beautiful popover, show some love.
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+
+---
+
+## Popover Props
+
+<span id="popover-props" className="scroll-mt-48" />
+The following props are available for the popover component. These are the custom
+props that come with we've added for the popover component and you can use all the
+other native props as well.
+
+| Attribute   | Type                        | Description                                        | Default                               |
+| ----------- | --------------------------- | -------------------------------------------------- | ------------------------------------- |
+| `open`      | <Code small>boolean</Code>  | Makes the popover open, when popover is controlled | <Code small>undefined</Code>          |
+| `handler`   | <Code small>function</Code> | Change open state for controlled popover           | <Code small>undefined</Code>          |
+| `placement` | [Placement](#types)         | Change popover placement                           | <Code small>top</Code>                |
+| `offset`    | [Offset](#types)            | Change popover offset from it's handler            | <Code small>5</Code>                  |
+| `dismiss`   | [Dismiss](#types)           | Change dismiss listeners when clicking outside     | <Code small>undefined</Code>          |
+| `animate`   | [Animate](#types)           | Change popover animation                           | <Code small>undefined</Code>          |
+| `children`  | <Code small>node</Code>     | Add content for popover                            | No default value its a required prop. |
+
+---
+
+## Popover Handler Props
+
+<span id="popover-handler-props" className="scroll-mt-48" />
+The following props are available for the popover handler component. These are the
+custom props that come with we've added for the popover handler component and you
+can use all the other native props as well.
+
+| Attribute  | Type                    | Description                     | Default                               |
+| ---------- | ----------------------- | ------------------------------- | ------------------------------------- |
+| `children` | <Code small>node</Code> | Add content for popover handler | No default value its a required prop. |
+
+---
+
+## Popover Content Props
+
+<span id="popover-content-props" className="scroll-mt-48" />
+The following props are available for the popover content component. These are the
+custom props that come with we've added for the popover content component and you
+can use all the other native props as well.
+
+| Attribute   | Type                    | Description                              | Default                               |
+| ----------- | ----------------------- | ---------------------------------------- | ------------------------------------- |
+| `className` | <Code small>node</Code> | Add custom className for popover content | `''`                                  |
+| `children`  | <Code small>node</Code> | Add content for popover content          | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+```ts
+type dismiss = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePointerDown?: boolean;
+  outsidePointerDown?: boolean;
+  ancestorScroll?: boolean;
+  bubbles?: boolean;
+};
+```
+
+```ts
+type animate = {
+  mount?: Object;
+  unmount?: Object;
+};
+```

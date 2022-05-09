@@ -1,16 +1,29 @@
+const breakpoints = require("../theme/base/breakpoints");
+
 /**
  * This is a helper function for merging the main configuration of @material-tailwind with the Tailwind CSS configuration
  */
 
 const merge = require("deepmerge");
 const plugin = require("tailwindcss/plugin");
+const forms = require("@tailwindcss/forms");
 const colors = require("../theme/base/colors");
 const typography = require("../theme/base/typography");
 const shadows = require("../theme/base/shadows");
 
 // components styles
-const { button } = require("../theme/components/button");
 const { alert } = require("../theme/components/alert");
+const { avatar } = require("../theme/components/avatar");
+const { background } = require("../theme/components/background");
+const { button } = require("../theme/components/button");
+const { card } = require("../theme/components/card");
+const { checkbox } = require("../theme/components/checkbox");
+const { chip } = require("../theme/components/chip");
+const { input } = require("../theme/components/input");
+const { progress } = require("../theme/components/progress");
+const { radio } = require("../theme/components/radio");
+const { toggle } = require("../theme/components/switch");
+const { typo } = require("../theme/components/typo");
 
 const materialTailwindConfig = {
   darkMode: "class",
@@ -18,12 +31,23 @@ const materialTailwindConfig = {
   theme: {
     colors,
     fontFamily: typography,
-    boxShadow: shadows
+    boxShadow: shadows,
+    screens: breakpoints
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
-      addComponents(button(theme));
       addComponents(alert(theme));
+      addComponents(avatar(theme));
+      addComponents(background(theme));
+      addComponents(button(theme));
+      addComponents(card(theme));
+      addComponents(checkbox(theme));
+      addComponents(chip(theme));
+      addComponents(input(theme));
+      addComponents(progress(theme));
+      addComponents(radio(theme));
+      addComponents(toggle(theme));
+      addComponents(typo(theme));
     })
   ]
 };
@@ -33,7 +57,7 @@ const materialTailwindConfig = {
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
-function withTM(tailwindConfig) {
+function withMT(tailwindConfig) {
   const themeFont = materialTailwindConfig.theme.fontFamily;
 
   if (tailwindConfig.theme.fontFamily) {
@@ -47,4 +71,4 @@ function withTM(tailwindConfig) {
   return merge(materialTailwindConfig, { ...tailwindConfig });
 }
 
-module.exports = withTM;
+module.exports = withMT;

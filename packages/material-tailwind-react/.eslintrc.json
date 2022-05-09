@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
+    "react/require-default-props": "off",
+    "no-param-reassign": "off",
+    "jsx-a11y/alt-text": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": { "node": { "moduleDirectory": ["node_modules", "src/"] } }
+  },
+  "globals": {
+    "JSX": true
+  }
+}

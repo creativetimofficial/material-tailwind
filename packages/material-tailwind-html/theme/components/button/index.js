@@ -14,12 +14,23 @@ const buttonRoot = {
   "background-position-x": "25%",
   position: "relative",
   overflow: "hidden",
-  "text-transform": "uppercase"
+  "text-transform": "uppercase",
+
+  "&.button-icon": {
+    padding: ".625rem",
+    "line-height": "initial",
+
+    "i": {
+      position: "relative",
+      top: "1px",
+      "font-size": "1rem"
+    }
+  }
 };
 
 const buttonVariant = (theme, background) => ({
   "background-color": theme(`${background}.500`),
-  color: "#fff",
+  color: theme("colors.white"),
   "box-shadow": `0 4px 6px -1px ${theme(
     `${background}.100`
   )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
@@ -36,13 +47,13 @@ const buttonVariant = (theme, background) => ({
   },
 
   "&.button-amber, &.button-yellow, &.button-lime": {
-    color: "#000"
+    color: theme("colors.black")
   },
 
   "&.button-gradient": {
-    "background-image": `linear-gradient(to top right, ${theme(
-      `${background}.600`
-    )}, ${theme(`${background}.400`)})`,
+    "background-image": `linear-gradient(195deg, ${theme(
+      `${background}.400`
+    )}, ${theme(`${background}.600`)})`,
 
     "&:hover": {
       "box-shadow": `0 10px 15px -3px ${theme(
@@ -118,6 +129,9 @@ const button = (theme) => ({
   ".button-purple": buttonVariant(theme, "colors.purple"),
   ".button-pink": buttonVariant(theme, "colors.pink"),
   ".button-red": buttonVariant(theme, "colors.red"),
+  ".button-secondary": buttonVariant(theme, "colors.secondary"),
+  ".button-light": buttonVariant(theme, "colors.light"),
+  ".button-dark": buttonVariant(theme, "colors.dark"),
   ".button-sm": buttonSize("0.375rem", "1rem"),
   ".button-lg": buttonSize("0.771rem", "1.75rem", "0.875rem"),
   ".button-block": {

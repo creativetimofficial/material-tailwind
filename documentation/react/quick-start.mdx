@@ -1,0 +1,100 @@
+---
+title: Quick Start - Material Tailwind
+description: Learn how to use Material Tailwind React for building beatifule websites
+navigation:
+  ["npm", "yarn", "pnpm", "tailwindcss-config", "theme-provider", "example"]
+github: quick-start
+next: license
+---
+
+# Quick Start
+
+###### You can download and install @material-tailwind/react as a dependency on your project.
+
+## Using NPM
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/react
+```
+
+---
+
+## Using Yarn
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/react
+```
+
+---
+
+## Using PNPM
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/react
+```
+
+---
+
+## TailwindCSS Configurations
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react.
+
+```js {1, 3, 9}
+const withMT = require("@material-tailwind/react");
+
+module.exports = withMT({
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+});
+```
+
+---
+
+## Theme Provider
+
+<span id="theme-provider" className="scroll-mt-48" />
+
+@material-tailwind/react is comes with a theme provider that you can use to provide your own theme to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
+
+```jsx {4, 7, 9}
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "App";
+import { ThemeProvider } from "@material-tailwind/react";
+
+ReactDOM.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
+  document.getElementById("root")
+);
+```
+
+---
+
+## Example
+
+Now you're good to go and use @material-tailwind/react in your project.
+
+<ComponentCard id="example">
+  <Button>Button</Button>
+</ComponentCard>
+
+```jsx showLineNumbers {1, 4}
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button>Button</Button>;
+}
+```

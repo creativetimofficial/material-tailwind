@@ -1,0 +1,63 @@
+---
+title: Tailwind CSS Radio - Material Tailwind
+description: HTML Radio component with Tailwind CSS.
+navigation: ["radio"]
+---
+
+# Tailwind CSS Radio
+
+Get started on your web projects with our Tailwind CSS radio which provides contextual feedback messages for typical user actions.
+
+<br />
+
+<ComponentCard id="radio">
+  <div className="form-check flex">
+    <input
+      className="radio opacity-0 cursor-pointer absolute z-10"
+      type="radio"
+      id="flexRadioDefault1"
+    />
+    <div className="form-check-input"></div>
+    <label className="custom-control-label my-auto" htmlFor="flexRadioDefault1">
+      Default radio
+    </label>
+  </div>
+  <div className="form-check flex">
+    <input
+      className="radio opacity-0 cursor-pointer absolute z-10"
+      type="radio"
+      id="flexRadioDefault2"
+      defaultChecked
+    />
+    <div className="form-check-input"></div>
+    <label className="custom-control-label my-auto" htmlFor="flexRadioDefault2">
+      Default checked radio
+    </label>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div class="form-check flex">
+  <input
+    class="radio opacity-0 cursor-pointer absolute z-10"
+    type="radio"
+    id="flexRadioDefault1"
+  />
+  <div class="form-check-input"></div>
+  <label class="custom-control-label my-auto" for="flexRadioDefault1"
+    >Default radio</label
+  >
+</div>
+<div class="form-check flex">
+  <input
+    class="radio opacity-0 cursor-pointer absolute z-10"
+    type="radio"
+    id="flexRadioDefault2"
+    checked
+  />
+  <div class="form-check-input"></div>
+  <label class="custom-control-label my-auto" for="flexRadioDefault2"
+    >Default checked radio</label
+  >
+</div>
+```

@@ -1,0 +1,90 @@
+---
+title: Quick Start - Material Tailwind
+description: HTML Quick Start component with Tailwind CSS.
+navigation: ["quick start", "installation", "npm", "yarn", "example"]
+---
+
+# Quick Start
+
+Material Tailwind is free and open-source components library for Tailwind CSS and Material Design. It features multiple easy to use React components, all written with Tailwind CSS classes and Material Design guidelines.
+
+<br />
+<br />
+
+### Installation
+
+Learn how to use Material Tailwind components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
+
+<br />
+<br />
+
+##### NPM
+
+```html showLineNumbers
+npm i @material-tailwind/html
+```
+
+<br />
+
+##### Yarn
+
+```html showLineNumbers
+yarn add @material-tailwind/html
+```
+
+<br />
+
+##### PNPM
+
+```html showLineNumbers
+pnpm i @material-tailwind/html
+```
+
+<br />
+
+##### Import Material Tailwind Style Sheet
+
+Import the **tailwind.css** into your project file. Make sure to import the tailwind.css style sheet after all other style sheets.
+
+```html showLineNumbers
+<link rel="stylesheet" href="styles.css" />
+```
+
+<br />
+
+##### Link Material Icons Fonts to your project
+
+Add a link for the material icons fonts inside the head of your project, so to use the material icons with material tailwind components. You can also use font awesome font family for the project just add a link for it inside the head of your project.
+
+```html showLineNumbers
+// Material Icons Link
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+// Font Awesome Link
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous"
+/>
+```
+
+<br />
+
+##### Example
+
+Import the components you need
+
+<br />
+<ComponentCard id="example">
+  <button className="button button-pink" data-ripple-light>
+    {`Button`}
+  </button>
+</ComponentCard>
+
+```html showLineNumbers
+<button className="button button-pink" data-ripple-light>Button</button>
+```

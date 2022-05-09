@@ -1,19 +1,22 @@
-import { createContext } from "react";
+import React, { createContext, useContext } from "react";
 import PropTypes from "prop-types";
-import theme from "theme/index";
+import merge from "deepmerge";
+import theme from "../theme/index.ts";
+import combineMerge from "../utils/combineMerge";
 
-const merge = require("deepmerge");
+const MaterialTailwindTheme = createContext(theme);
 
-export const MaterialTailwindTheme = createContext(theme);
 MaterialTailwindTheme.displayName = "MaterialTailwindThemeProvider";
 
-export function ThemeProvider({ value, children }) {
+function ThemeProvider({ value, children }) {
+  const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
+
   return (
-    <MaterialTailwindTheme.Provider value={merge(theme, value)}>
-      {children}
-    </MaterialTailwindTheme.Provider>
+    <MaterialTailwindTheme.Provider value={mergedValue}>{children}</MaterialTailwindTheme.Provider>
   );
 }
+
+const useTheme = () => useContext(MaterialTailwindTheme);
 
 ThemeProvider.defaultProps = {
   value: theme,
@@ -23,3 +26,5 @@ ThemeProvider.propTypes = {
   value: PropTypes.instanceOf(Object),
   children: PropTypes.node.isRequired,
 };
+
+export { MaterialTailwindTheme, ThemeProvider, useTheme };

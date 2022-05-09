@@ -1,0 +1,209 @@
+---
+title: Navbar - Material Tailwind
+description: ReactJS or NextJS Navbar component with Tailwind CSS.
+navigation: ["navbar", "props", "types"]
+github: navbar
+prev: menu
+next: popover
+---
+
+# Tailwind CSS Navbar - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="navbar">
+  <Navbar className="max-w-screen-xl mx-auto">
+    <div className="container flex justify-between items-center text-blue-grey-900">
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        className="py-1.5 mr-4 font-normal cursor-pointer"
+      >
+        <span>Material Tailwind</span>
+      </Typography>
+      <ul className="flex items-center gap-6">
+        <Typography as="li" variant="small" className="p-1 font-normal">
+          <a href="#" className="flex items-center navbar-item-docs">
+            Pages&nbsp;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 opacity-75"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </Typography>
+        <Typography as="li" variant="small" className="p-1 font-normal">
+          <a href="#" className="flex items-center navbar-item-docs">
+            Account&nbsp;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 opacity-75"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </Typography>
+        <Typography as="li" variant="small" className="p-1 font-normal">
+          <a href="#" className="flex items-center navbar-item-docs">
+            Blocks&nbsp;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 opacity-75"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </Typography>
+        <Typography as="li" variant="small" className="p-1 font-normal">
+          <a href="#" className="flex items-center navbar-item-docs">
+            Docs&nbsp;
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 opacity-75"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        </Typography>
+      </ul>
+      <Button variant="gradient" size="sm">
+        <span>Buy Now</span>
+      </Button>
+    </div>
+  </Navbar>
+</ComponentCard>
+
+```jsx showLineNumbers
+import { Navbar } from "../packages/material-tailwind-react/src";
+import { Button } from "../packages/material-tailwind-react/src";
+import { Typography } from "../packages/material-tailwind-react/src";
+
+export default function Example() {
+  const icon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4 opacity-75"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+
+  return (
+    <Navbar className="max-w-screen-xl mx-auto">
+      <div className="container flex justify-between items-center text-blue-grey-900">
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          className="py-1.5 mr-4 font-normal cursor-pointer"
+        >
+          Material Tailwind
+        </Typography>
+        <ul className="flex items-center gap-6">
+          <Typography as="li" variant="small" className="p-1 font-normal">
+            <a className="flex items-center">Pages&nbsp;{icon}</a>
+          </Typography>
+          <Typography as="li" variant="small" className="p-1 font-normal">
+            <a className="flex items-center">Account&nbsp;{icon}</a>
+          </Typography>
+          <Typography as="li" variant="small" className="p-1 font-normal">
+            <a className="flex items-center">Blocks&nbsp;{icon}</a>
+          </Typography>
+          <Typography as="li" variant="small" className="p-1 font-normal">
+            <a className="flex items-center">Docs&nbsp;{icon}</a>
+          </Typography>
+        </ul>
+        <Button variant="gradient" size="sm">
+          Buy Now
+        </Button>
+      </div>
+    </Navbar>
+  );
+}
+```
+
+---
+
+## Props
+
+<span id="props" className="scroll-mt-48" />
+The following props are available for the navbar component. These are the custom
+props that come with we've added for the navbar component and you can use all the
+other native props as well.
+
+| Attribute   | Type                       | Description                                                               | Default                               |
+| ----------- | -------------------------- | ------------------------------------------------------------------------- | ------------------------------------- |
+| `variant`   | [Variant](#types)          | Change navbar variant                                                     | <Code small>filled</Code>             |
+| `color`     | [Color](#types)            | Change navbar color                                                       | <Code small>white</Code>              |
+| `shadow`    | <Code small>boolean</Code> | Add box-shadow for navbar                                                 | <Code small>true</Code>               |
+| `blurred`   | <Code small>boolean</Code> | Add blur backdrop effect for navbar and makes it's background color white | <Code small>true</Code>               |
+| `fullWidth` | <Code small>boolean</Code> | Change navbar to a block level element and remove its border radius       | <Code small>false</Code>              |
+| `className` | <Code small>string</Code>  | Add custom className for navbar                                           | `''`                                  |
+| `children`  | <Code small>node</Code>    | Add content for navbar                                                    | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+```ts
+type color =
+  | "transparent"
+  | "white"
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```

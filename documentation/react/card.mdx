@@ -1,0 +1,187 @@
+---
+title: Card - Material Tailwind
+description: ReactJS or NextJS Card component with Tailwind CSS.
+navigation:
+  [
+    "card",
+    "card-props",
+    "card-header-props",
+    "card-body-props",
+    "card-footer-props",
+    "types"
+  ]
+github: card
+prev: button
+next: checkbox
+---
+
+# Tailwind CSS Card - React
+
+###### In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+
+<ComponentCard id="card">
+  <Card className="w-96 mt-6">
+    <CardHeader color="blue" className="relative h-56">
+      <Image src="/img/blog.jpg" alt="img-blur-shadow" layout="fill" />
+    </CardHeader>
+    <CardBody className="text-center">
+      <Typography variant="h5" color="blue-grey" className="mb-2">
+        <span>Cozy 5 Stars Apartment</span>
+      </Typography>
+      <Typography>
+        The place is close to Barceloneta Beach and bus stop just 2 min by walk
+        and near to &quot;Naviglio&quot; where you can enjoy the main night life
+        in Barcelona.
+      </Typography>
+    </CardBody>
+    <CardFooter
+      divider
+      className="flex items-center justify-between py-3 -mt-4"
+    >
+      <Typography variant="small">$899/night</Typography>
+      <Typography variant="small" color="grey" className="flex gap-1">
+        <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
+        <span>Barcelona, Spain</span>
+      </Typography>
+    </CardFooter>
+  </Card>
+</ComponentCard>
+
+```jsx showLineNumbers
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96 mt-6">
+      <CardHeader color="blue" className="relative h-56">
+        <img
+          src="/img/blog.jpg"
+          alt="img-blur-shadow"
+          className="w-full h-full"
+        />
+      </CardHeader>
+      <CardBody className="text-center">
+        <Typography variant="h5" className="mb-2">
+          Cozy 5 Stars Apartment
+        </Typography>
+        <Typography>
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to &quot;Naviglio&quot; where you can enjoy the main
+          night life in Barcelona.
+        </Typography>
+      </CardBody>
+      <CardFooter divider className="flex items-center justify-between py-3">
+        <Typography variant="small">$899/night</Typography>
+        <Typography variant="small" color="grey" className="flex gap-1">
+          <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
+          Barcelona, Spain
+        </Typography>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+---
+
+## Card Props
+
+<span id="card-props" className="scroll-mt-48" />
+The following props are available for the card component. These are the custom props
+that come with we've added for the card component and you can use all the other native
+props as well.
+
+| Attribute   | Type                       | Description                   | Default                               |
+| ----------- | -------------------------- | ----------------------------- | ------------------------------------- |
+| `variant`   | [Variant](#types)          | Change card variant           | <Code small>filled</Code>             |
+| `color`     | [Color](#types)            | Change card color             | <Code small>white</Code>              |
+| `shadow`    | <Code small>boolean</Code> | Add box-shadow for card       | <Code small>true</Code>               |
+| `className` | <Code small>string</Code>  | Add custom className for card | `''`                                  |
+| `children`  | <Code small>node</Code>    | Add content for card          | No default value its a required prop. |
+
+---
+
+## Card Header Props
+
+<span id="card-header-props" className="scroll-mt-48" />
+The following props are available for the card header component. These are the custom
+props that come with we've added for the card header component and you can use all
+the other native props as well.
+
+| Attribute   | Type                       | Description                          | Default                               |
+| ----------- | -------------------------- | ------------------------------------ | ------------------------------------- |
+| `variant`   | [Variant](#types)          | Change card header variant           | <Code small>filled</Code>             |
+| `color`     | [Color](#types)            | Change card header color             | <Code small>white</Code>              |
+| `shadow`    | <Code small>boolean</Code> | Add box-shadow for card header       | <Code small>true</Code>               |
+| `floated`   | <Code small>boolean</Code> | Makes card header floated            | <Code small>true</Code>               |
+| `className` | <Code small>string</Code>  | Add custom className for card header | `''`                                  |
+| `children`  | <Code small>node</Code>    | Add content for card header          | No default value its a required prop. |
+
+---
+
+## Card Body Props
+
+<span id="card-body-props" className="scroll-mt-48" />
+The following props are available for the card body component. These are the custom
+props that come with we've added for the card body component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                        | Default                               |
+| ----------- | ------------------------- | ---------------------------------- | ------------------------------------- |
+| `className` | <Code small>string</Code> | Add custom className for card body | `''`                                  |
+| `children`  | <Code small>node</Code>   | Add content for card body          | No default value its a required prop. |
+
+---
+
+## Card Footer Props
+
+<span id="card-footer-props" className="scroll-mt-48" />
+The following props are available for the card footer component. These are the custom
+props that come with we've added for the card footer component and you can use all
+the other native props as well.
+
+| Attribute   | Type                       | Description                          | Default                               |
+| ----------- | -------------------------- | ------------------------------------ | ------------------------------------- |
+| `divider`   | <Code small>boolean</Code> | Add border-top for card footer       | <Code small>false</Code>              |
+| `className` | <Code small>string</Code>  | Add custom className for card footer | `''`                                  |
+| `children`  | <Code small>node</Code>    | Add content for card footer          | No default value its a required prop. |
+
+---
+
+## Types
+
+<span id="types" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+```ts
+type color =
+  | "transparent"
+  | "white"
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```

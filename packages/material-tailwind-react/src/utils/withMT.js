@@ -6,17 +6,19 @@ const merge = require("deepmerge");
 const colors = require("../theme/base/colors");
 const typography = require("../theme/base/typography");
 const shadows = require("../theme/base/shadows");
+const breakpoints = require("../theme/base/breakpoints");
 
 const materialTailwindConfig = {
   darkMode: "class",
   content: [
-    "./packages/material-tailwind-react/src/components/**/*.{js,ts,jsx,tsx}",
-    "./packages/material-tailwind-react/src/theme/components/**/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/material-tailwind-react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/material-tailwind-react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors,
     fontFamily: typography,
     boxShadow: shadows,
+    screens: breakpoints,
   },
   plugins: [],
 };
@@ -26,7 +28,7 @@ const materialTailwindConfig = {
  * @param {object} tailwindConfig - Tailwind config object
  * @return {object} new config object
  */
-function withTM(tailwindConfig) {
+function withMT(tailwindConfig) {
   const themeFont = materialTailwindConfig.theme.fontFamily;
 
   if (tailwindConfig.theme.fontFamily) {
@@ -40,4 +42,4 @@ function withTM(tailwindConfig) {
   return merge(materialTailwindConfig, { ...tailwindConfig });
 }
 
-module.exports = withTM;
+module.exports = withMT;

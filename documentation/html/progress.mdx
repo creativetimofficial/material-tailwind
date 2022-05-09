@@ -1,0 +1,326 @@
+---
+title: Tailwind CSS Progress - Material Tailwind
+description: HTML Progress component with Tailwind CSS.
+navigation:
+  ["progress", "progress-variation", "progress-styles", "progress-gradient"]
+---
+
+# Tailwind CSS Progress
+
+Get started on your web projects with our Tailwind CSS progress which provides contextual feedback messages for typical user actions.
+
+<br />
+
+<ComponentCard id="progress">
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-pink" data-value="50"></div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-pink" data-value="50"></div>
+  </div>
+</div>
+```
+
+<br />
+<br />
+
+### Progress Variation
+
+Use this example to create a simple and versatile progress component.
+
+<br />
+<ComponentCard id="progress-variation">
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-pink" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full mb-4">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-blue progress-stripped"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <div className="progress" percentage="true">
+      <div className="progress-bar progress-pink" data-value="50">
+        <span>50%</span>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-pink" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full mb-4">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-blue progress-stripped"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <div class="progress" percentage="true">
+    <div class="progress-bar progress-pink" data-value="50">
+      <span>50%</span>
+    </div>
+  </div>
+</div>
+```
+
+<br />
+<br />
+
+### Progress Styles
+
+Use this example to create a simple and versatile progress component.
+
+<br />
+<ComponentCard id="progress">
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-pink" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-blue" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-red" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-green" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-orange" data-value="50"></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div className="progress-bar progress-dark" data-value="50"></div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-pink" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-blue" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-red" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-green" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-orange" data-value="50"></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div class="progress-bar progress-dark" data-value="50"></div>
+  </div>
+</div>
+```
+
+<br />
+<br />
+
+### Progress with gradient
+
+Use this example to create a simple and versatile progress component.
+
+<br />
+<ComponentCard id="progress-gradient">
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-pink"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-blue"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-red"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-green"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-orange"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+  <div className="w-full">
+    <span className="text-sm font-normal leading-6 text-blue-grey-500">
+      50%
+    </span>
+    <div className="progress">
+      <div
+        className="progress-bar progress-gradient progress-dark"
+        data-value="50"
+      ></div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-pink"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-blue"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-red"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-green"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-orange"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+<div class="w-full">
+  <span class="text-sm font-normal leading-6 text-blue-grey-500">50%</span>
+  <div class="progress">
+    <div
+      class="progress-bar progress-gradient progress-dark"
+      data-value="50"
+    ></div>
+  </div>
+</div>
+```
