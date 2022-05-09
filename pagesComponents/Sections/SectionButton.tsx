@@ -89,7 +89,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("default")}
                 onClick={() => setButtonType("default")}
               >
-                <i className="material-icons text-xl">radio_button_checked</i>
+                <i className="material-icons !text-xl">radio_button_checked</i>
                 <Typography>Default</Typography>
               </a>
             </div>
@@ -98,7 +98,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("gradient")}
                 onClick={() => setButtonType("gradient")}
               >
-                <i className="material-icons text-xl">gradient</i>
+                <i className="material-icons !text-xl">gradient</i>
                 <Typography>Gradient</Typography>
               </a>
             </div>
@@ -107,7 +107,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("link")}
                 onClick={() => setButtonType("link")}
               >
-                <i className="material-icons text-xl">format_color_text</i>
+                <i className="material-icons !text-xl">format_color_text</i>
                 <Typography>Link</Typography>
               </a>
             </div>
@@ -116,7 +116,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("icon")}
                 onClick={() => setButtonType("icon")}
               >
-                <i className="material-icons text-xl">favorite</i>
+                <i className="material-icons !text-xl">favorite</i>
                 <Typography>Icon</Typography>
               </a>
             </div>

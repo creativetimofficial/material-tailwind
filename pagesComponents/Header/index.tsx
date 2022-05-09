@@ -186,7 +186,7 @@ export default function Header() {
                   color="pink"
                   className="flex items-center active:opacity-[1]"
                 >
-                  <i className="material-icons text-base leading-none mr-1">
+                  <i className="material-icons !text-base leading-none mr-1">
                     favorite
                   </i>
                   Button

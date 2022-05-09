@@ -96,7 +96,7 @@ export default function Navbar({
         <MenuHandler>
           <li>
             <a href="#" className={navbarItemClasses}>
-              <i className="material-icons opacity-60 mr-2 text-base">
+              <i className="material-icons opacity-60 mr-2 !text-base">
                 article
               </i>
               <span>Docs</span>
@@ -120,7 +120,7 @@ export default function Navbar({
         <MenuHandler>
           <li>
             <a href="#" className={navbarItemClasses}>
-              <i className="material-icons opacity-60 mr-2 text-base">apps</i>
+              <i className="material-icons opacity-60 mr-2 !text-base">apps</i>
               <span>Components</span>
             </a>
           </li>
@@ -141,7 +141,7 @@ export default function Navbar({
       <Tooltip content="Coming Soon" placement="bottom" offset={-2.5}>
         <li className="flex">
           <a className={navbarItemClasses}>
-            <i className="material-icons opacity-60 mr-2 text-base">
+            <i className="material-icons opacity-60 mr-2 !text-base">
               view_carousel
             </i>
             <span>Templates</span>
