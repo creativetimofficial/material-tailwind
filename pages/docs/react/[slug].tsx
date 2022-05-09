@@ -271,7 +271,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <div className="px-6">
           <div className="max-w-[1440px] mx-auto flex">
             <aside
-              className={`fixed z-[999] lg:relative w-80 lg:w-64 h-screen lg:pt-20 pb-4 pr-4 transition-all duration-300 lg:left-0 ${
+              className={`fixed z-[999] lg:relative lg:z-10 w-80 lg:w-64 h-screen lg:pt-20 pb-4 pr-4 transition-all duration-300 lg:left-0 ${
                 mobileNav ? "left-0" : "-left-96"
               }`}
             >

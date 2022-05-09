@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import {
   Tabs,
@@ -81,7 +82,19 @@ export default function Header() {
                 Tailwind CSS and Material Design.
               </Typography>
               <div className="flex flex-col-reverse gap-2 lg:flex-row">
-                <Button variant="gradient">Get Started</Button>
+                <Link
+                  href={
+                    version === "npm i @material-tailwind/react"
+                      ? "/docs/react/quick-start"
+                      : "/docs/html/quick-start"
+                  }
+                >
+                  <a>
+                    <Button variant="gradient" className="h-full">
+                      Get Started
+                    </Button>
+                  </a>
+                </Link>
                 <div className="flex rounded-lg bg-white/80 backdrop-saturate-200 backdrop-blur-2xl shadow-2xl shadow-blue-grey-500/40 border border-white/80 py-2.5 px-5 text-[#1A237E]">
                   <CopyToClipboard
                     text={version}
@@ -97,7 +110,7 @@ export default function Header() {
                           className={`${
                             copied ? "fas" : "far"
                           } fa-copy text-sm ml-4 cursor-pointer`}
-                        ></i>
+                        />
                       </Tooltip>
                     </p>
                   </CopyToClipboard>
