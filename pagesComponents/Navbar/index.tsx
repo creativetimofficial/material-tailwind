@@ -4,7 +4,11 @@ import { AnimatePresence, AnimatePresenceProps, motion } from "framer-motion";
 import {
   Navbar as MTNavbar,
   IconButton,
-  Tooltip
+  Tooltip,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem
 } from "../../packages/material-tailwind-react/src";
 
 interface NewAnimatePresenceProps
@@ -88,22 +92,52 @@ export default function Navbar({
 
   const navbarMenu = (
     <ul className="flex flex-col pl-0 mb-0 list-none text-inherit lg:flex-row gap-2 lg:gap-4 lg:ml-auto">
-      <li>
-        <Link href="/docs/quick-start">
-          <a className={navbarItemClasses}>
-            <i className="material-icons opacity-60 mr-2 text-base">article</i>
-            <span>Docs</span>
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/docs/components/alert">
-          <a className={navbarItemClasses}>
-            <i className="material-icons opacity-60 mr-2 text-base">apps</i>
-            <span>Components</span>
-          </a>
-        </Link>
-      </li>
+      <Menu placement="bottom" offset={-2.5}>
+        <MenuHandler>
+          <li>
+            <a href="#" className={navbarItemClasses}>
+              <i className="material-icons opacity-60 mr-2 text-base">
+                article
+              </i>
+              <span>Docs</span>
+            </a>
+          </li>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>
+            <Link href="/docs/html/quick-start">
+              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="/docs/react/quick-start">
+              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+            </Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="bottom" offset={-2.5}>
+        <MenuHandler>
+          <li>
+            <a href="#" className={navbarItemClasses}>
+              <i className="material-icons opacity-60 mr-2 text-base">apps</i>
+              <span>Components</span>
+            </a>
+          </li>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>
+            <Link href="/docs/html/alert">
+              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="/docs/react/alert">
+              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+            </Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
       <Tooltip content="Coming Soon" placement="bottom" offset={-2.5}>
         <li className="flex">
           <a className={navbarItemClasses}>
