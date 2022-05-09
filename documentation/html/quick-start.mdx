@@ -7,23 +7,38 @@ navigation: ["quick start", "installation", "npm", "yarn", "example"]
 
 # Quick Start
 
-Material Tailwind is free and open-source components library for Tailwind CSS and Material Design. It features multiple easy to use React components, all written with Tailwind CSS classes and Material Design guidelines. 
-<br/>
+Material Tailwind is free and open-source components library for Tailwind CSS and Material Design.
 <br/>
 
 ### Installation
 
 Learn how to use Material Tailwind components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
 <br/>
-<br/>
 
 ##### NPM 
 
+Make sure that you have [Node.js](https://nodejs.org/en/) and [Tailwind CSS](https://tailwindcss.com/) installed.
+<br/>
+Install Material Tailwind as a dependency using NPM by running the following command:
 ```html showLineNumbers
 npm i -E @material-tailwind/html
 ```
 <br/>
+Require Material Tailwind as a plugin inside the **tailwind.config.js** file:
+```html showLineNumbers
+module.exports = {
+  plugins: [
+    require('material-tailwind/plugin')
+  ]
+}
+```
+<br/>
+Include the main JavaScript file to make interactive elements working:
+```html showLineNumbers
+<script src="../path/to/material-tailwind.js"></script>
+```
 
+<br/>
 ##### Yarn 
 
 ```html showLineNumbers
