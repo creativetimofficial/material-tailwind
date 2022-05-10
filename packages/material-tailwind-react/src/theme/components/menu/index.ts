@@ -60,7 +60,7 @@ export const menu: MenuStylesType = {
           width: "w-full",
           pt: "pt-[9px]",
           pb: "pb-2",
-          px: "px-4",
+          px: "px-3",
           borderRadius: "rounded-md",
           textAlign: "text-start",
           lightHeight: "leading-tight",
