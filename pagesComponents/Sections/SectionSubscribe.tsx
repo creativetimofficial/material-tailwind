@@ -25,10 +25,19 @@ export default function SectionSubscribe() {
           </Typography>
         </div>
         <div className="w-full lg:w-6/12 px-4">
-          <div className="block md:flex mt-4 lg:mt-0">
+          <form
+            action="https://material-tailwind.us1.list-manage.com/subscribe/post?u=e97df4875fc1b2fb28f609b88&amp;id=628d9b1722"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            target="_blank"
+            className="block md:flex mt-4 lg:mt-0"
+          >
             <div className="w-full md:w-8/12">
               <Input
                 type="email"
+                name="EMAIL"
+                id="mce-EMAIL"
                 label="Enter your email"
                 size="lg"
                 className="text-white/80"
@@ -36,15 +45,19 @@ export default function SectionSubscribe() {
                   className:
                     "peer-placeholder-shown:text-white/80 text-white/80"
                 }}
+                required
               />
             </div>
             <Button
               variant="gradient"
+              type="submit"
+              name="subscribe"
+              id="mc-embedded-subscribe"
               className="mt-3 md:mt-0 md:ml-3 w-full md:w-auto"
             >
               Subscribe
             </Button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
