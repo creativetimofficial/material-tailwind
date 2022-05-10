@@ -107,9 +107,7 @@ export default function SectionComponents() {
               </Typography>
             </Typography>
             <Typography className="text-[#1A237E]/60 text-lg mb-8 md:pr-10 opacity-60">
-              Material Tailwind provides a simple way to customize your button,
-              you can change the colors, fonts, breakpoints and everything you
-              need.
+            Putting together a page has never been easier than matching our pre-made components. Add our ready-styled components to your project or modify them as you would like.
             </Typography>
             <div className="flex flex-wrap gap-x-1 gap-y-3">
               <Chip

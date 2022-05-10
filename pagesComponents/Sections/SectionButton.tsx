@@ -75,8 +75,7 @@ export default function SectionButton() {
             design.
           </Typography>
           <Typography className="text-lg mb-5 md:pr-10 text-[#1A237E]/60">
-            Putting together a page has never been easier than matching together
-            pre-made components. You can easily customize and built your pages.
+            Material Tailwind provides a simple way to customize your button; you can change the colors, fonts, styling, and everything you need.
           </Typography>
           <Link href="/docs/react/button">
             <a>

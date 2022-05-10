@@ -50,9 +50,16 @@ export default function SectionColorsPalette() {
               palette.
             </Typography>
             <Typography className="text-lg lg:pr-2 text-[#1A237E]/60">
-              Material Tailwind provides a simple way to customize your button,
-              you can change the colors, fonts, breakpoints and everything you
-              need.
+              Create a color theme that perfectly matches your style and brand,
+              inspired by{" "}
+              <a
+                href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Material Design
+              </a>
+              . Get color inspiration for your designs with Material Tailwind!
             </Typography>
           </div>
         </div>

@@ -62,9 +62,7 @@ export default function SectionFramework() {
             </Typography>
           </Typography>
           <Typography className="text-lg mb-12 lg:pr-24 text-[#1A237E]/60">
-            Material Tailwind provides a simple way to customize your button,
-            you can change the colors, fonts, breakpoints and everything you
-            need.
+            Material Tailwind components can be used with different popular frameworks like React and HTML. Angular and Vue.js versions are coming soon!
           </Typography>
           <div className="flex flex-wrap mt-7 text-[#344767]">
             <div

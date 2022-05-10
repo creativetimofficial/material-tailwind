@@ -53,6 +53,13 @@ export default function Footer() {
               >
                 <i className="fab fa-github bg-white text-grey-900 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center"></i>
               </a>
+              <a
+                href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-discord bg-white text-blue-700 shadow-lg font-lg py-3 px-2.5 items-center justify-center align-center rounded-full outline-none focus:outline-none inline-block text-center"></i>
+              </a>
             </div>
           </div>
           <div className="w-full md:w-6/12 px-4">
