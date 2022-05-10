@@ -72,5 +72,5 @@ module.exports = withMT({
 Now you're good to go and use @material-tailwind/html in your project.
 
 ```html
-<button className="button button-pink">Button</button>
+<button class="button button-pink">Button</button>
 ```
