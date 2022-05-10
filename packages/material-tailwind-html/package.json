@@ -1,10 +1,16 @@
 {
   "name": "@material-tailwind/html",
-  "homepage": "https://material-tailwind.com/html",
-  "version": "1.0.0",
-  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
+  "homepage": "https://material-tailwind.com",
+  "version": "1.0.2",
+  "description": "@material-tailwind/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "mkdir dist && cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist"
+  },
   "dependencies": {
     "deepmerge": "^4.2.2"
   },
