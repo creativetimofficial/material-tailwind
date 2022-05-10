@@ -25,30 +25,27 @@ export default function SectionCommnunity() {
             iconClass="fab fa-github"
             className="shadow-2xl shadow-blue-grey-500/[0.12]"
           >
-            Material Tailwind comes with a huge number of Fully Coded CSS
-            components.
+            Contribute to our project and help our community!
           </FeatureCard>
         </div>
-        <div className="w-full md:w-1/3 px-4 mt-8 md:mt-0">
+        <div className="w-full md:w-1/3 px-4 mt-12 md:mt-0">
           <FeatureCard
             title="Discord"
             icon=""
             iconClass="fab fa-discord"
             className="shadow-2xl shadow-blue-grey-500/[0.12]"
           >
-            Material Tailwind comes with a huge number of Fully Coded CSS
-            components.
+            Join our Discord community and let’s get to know each other.
           </FeatureCard>
         </div>
-        <div className="w-full md:w-1/3 px-4 mt-8 md:mt-0">
+        <div className="w-full md:w-1/3 px-4 mt-12 md:mt-0">
           <FeatureCard
             title="Twitter"
             icon=""
             iconClass="fab fa-twitter"
             className="shadow-2xl shadow-blue-grey-500/[0.12]"
           >
-            Material Tailwind comes with a huge number of Fully Coded CSS
-            components.
+            Follow us on Twitter and keep up-to-date with our latest news.
           </FeatureCard>
         </div>
       </div>
