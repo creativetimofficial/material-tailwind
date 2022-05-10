@@ -42,7 +42,11 @@ const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
       );
     }
 
-    return <MenuCore {...props}>{children}</MenuCore>;
+    return (
+      <MenuCore ref={ref} {...props}>
+        {children}
+      </MenuCore>
+    );
   },
 );
 

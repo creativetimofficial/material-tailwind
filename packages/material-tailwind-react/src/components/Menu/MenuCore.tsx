@@ -15,7 +15,6 @@ import {
   useHover,
   useClick,
   useRole,
-  useFocusTrap,
   useDismiss,
   safePolygon,
   useListNavigation,
@@ -126,7 +125,6 @@ export const MenuCore = React.forwardRef<HTMLDivElement, MenuProps>(
       useClick(context),
       useRole(context, { role: "menu" }),
       useDismiss(context, dismiss),
-      useFocusTrap(context, { inert: true }),
       useListNavigation(context, {
         listRef: listItemsRef,
         activeIndex,
@@ -190,6 +188,7 @@ export const MenuCore = React.forwardRef<HTMLDivElement, MenuProps>(
         getItemProps,
         appliedAnimation,
         lockScroll,
+        context,
       }),
       [
         open,
@@ -205,6 +204,7 @@ export const MenuCore = React.forwardRef<HTMLDivElement, MenuProps>(
         getItemProps,
         appliedAnimation,
         lockScroll,
+        context,
       ],
     );
 
@@ -224,6 +224,7 @@ MenuCore.propTypes = {
   offset: propTypesOffset,
   dismiss: propTypesDismiss,
   animate: propTypesAnimate,
+  lockScroll: propTypesLockScroll,
   children: propTypesChildren,
 };
 

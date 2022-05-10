@@ -3,7 +3,11 @@ import React from "react";
 // @floating-ui
 
 // framer-motion
-import { FloatingPortal, FloatingOverlay } from "@floating-ui/react-dom-interactions";
+import {
+  FloatingPortal,
+  FloatingOverlay,
+  FloatingFocusManager,
+} from "@floating-ui/react-dom-interactions";
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
@@ -46,6 +50,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       getItemProps,
       appliedAnimation,
       lockScroll,
+      context,
     } = useMenu();
 
     // 2. set default props
@@ -109,17 +114,25 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
 
     // 7. return
     return (
-      <NewAnimatePresence>
-        {open && (
-          <>
-            {lockScroll ? (
-              <FloatingOverlay lockScroll>{menuComponent}</FloatingOverlay>
-            ) : (
-              <FloatingPortal>{menuComponent}</FloatingPortal>
-            )}
-          </>
-        )}
-      </NewAnimatePresence>
+      <FloatingPortal>
+        <NewAnimatePresence>
+          {open && (
+            <>
+              {lockScroll ? (
+                <FloatingOverlay lockScroll>
+                  <FloatingFocusManager context={context} preventTabbing>
+                    {menuComponent}
+                  </FloatingFocusManager>
+                </FloatingOverlay>
+              ) : (
+                <FloatingFocusManager context={context} preventTabbing>
+                  {menuComponent}
+                </FloatingFocusManager>
+              )}
+            </>
+          )}
+        </NewAnimatePresence>
+      </FloatingPortal>
     );
   },
 );

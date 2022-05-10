@@ -2,7 +2,12 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui types
-import type { Placement, Strategy } from "@floating-ui/react-dom-interactions";
+import type {
+  Placement,
+  Strategy,
+  FloatingContext,
+  ReferenceType,
+} from "@floating-ui/react-dom-interactions";
 
 // generic types
 import type { dismissType, animation, offsetType } from "../generic";
@@ -43,6 +48,7 @@ export type contextValue = {
   getItemProps: (userProps?: React.HTMLProps<HTMLElement>) => any;
   appliedAnimation: animate;
   lockScroll: boolean;
+  context: FloatingContext<ReferenceType>;
 };
 
 // javascript prop-types
@@ -71,4 +77,5 @@ export const propTypesContextValue: any = PropTypes.shape({
   getItemProps: PropTypes.func.isRequired,
   appliedAnimation: propTypesAnimate.isRequired,
   lockScroll: PropTypes.bool.isRequired,
+  context: PropTypes.instanceOf(Object).isRequired,
 });
