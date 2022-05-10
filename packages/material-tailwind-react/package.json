@@ -2,14 +2,17 @@
   "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com",
   "version": "1.0.0",
-  "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
+  "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-    "build": "swc ./src -d ./dist --only ./src/**/*.js --config-file .swcrc && cp ./package.json ./dist",
+    "build": "swc ./src -d ./dist --only ./src/**/*.js --config-file .swcrc && cp ./package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist && npm run build:ts",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
     "prettier:check": "prettier -c ."
   },

@@ -49,7 +49,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     } = useMenu();
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = className ?? "";
 
     // 3. set styles
     const menuClasses = classnames(objectsToString(base.menu), className);
