@@ -38,7 +38,7 @@ export default function SectionButton() {
         setButtonCode(`<Button className="flex items-center">
   <i className="
     material-icons mr-1
-    text-base leading-none
+    !text-base leading-none
   ">
     favorite
   </i>

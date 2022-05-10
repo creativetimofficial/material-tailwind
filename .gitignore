@@ -14,7 +14,6 @@
 
 # production
 /build
-/packages/@material-tailwind
 
 # misc
 .DS_Store

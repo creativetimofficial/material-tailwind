@@ -187,7 +187,7 @@ table tbody tr td code {
 }
 
 .navbar-item-docs p {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   font-size: 0.875rem !important;
   color: #212121 !important;
 }
