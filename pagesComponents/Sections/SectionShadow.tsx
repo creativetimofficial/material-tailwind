@@ -24,9 +24,7 @@ export default function SectionShadow() {
             included.
           </Typography>
           <Typography className="text-lg mb-5 md:pr-10 text-[#1A237E]/60">
-            Material Tailwind provides a simple way to customize your button,
-            you can change the colors, fonts, breakpoints and everything you
-            need.
+            Create a cohesive and modern-looking design for your website with our collection of realistic shadows. They will help your elements to pop-up.
           </Typography>
         </div>
         <div className="w-full md:w-6/12 px-4 pt-10 md:pt-0 relative">
