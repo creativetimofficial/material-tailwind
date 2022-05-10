@@ -95,7 +95,7 @@ export default function Navbar({
       <Menu placement="bottom" offset={-2.5}>
         <MenuHandler>
           <li>
-            <a href="#" className={navbarItemClasses}>
+            <a className={navbarItemClasses}>
               <i className="material-icons opacity-60 mr-2 !text-base">
                 article
               </i>
@@ -119,7 +119,7 @@ export default function Navbar({
       <Menu placement="bottom" offset={-2.5}>
         <MenuHandler>
           <li>
-            <a href="#" className={navbarItemClasses}>
+            <a className={navbarItemClasses}>
               <i className="material-icons opacity-60 mr-2 !text-base">apps</i>
               <span>Components</span>
             </a>
