@@ -241,7 +241,7 @@ export const select: SelectStylesType = {
         initial: {
           pt: "pt-[9px]",
           pb: "pb-2",
-          px: "px-4",
+          px: "px-3",
           borderRadius: "rounded-md",
           lightHeight: "leading-tight",
           cursor: "cursor-pointer",
