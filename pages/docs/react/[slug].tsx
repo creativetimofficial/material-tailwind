@@ -262,7 +262,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                   </svg>
                 </li>
                 <li className="capitalize font-semibold text-blue-grey-900 truncate">
-                  {slug}
+                  {slug.includes("-") ? slug.split("-").join(" ") : slug}
                 </li>
               </ol>
             </div>
