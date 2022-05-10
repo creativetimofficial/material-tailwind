@@ -106,12 +106,14 @@ export default function Navbar({
         <MenuList>
           <MenuItem>
             <Link href="/docs/html/quick-start">
-              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+              <a className={`${navbarItemClasses} lg:px-0 px-0 py-0`}>HTML</a>
             </Link>
           </MenuItem>
           <MenuItem>
             <Link href="/docs/react/quick-start">
-              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+              <a className={`${navbarItemClasses} lg:px-0 px-0 py-0`}>
+                ReactJS
+              </a>
             </Link>
           </MenuItem>
         </MenuList>
@@ -128,12 +130,14 @@ export default function Navbar({
         <MenuList>
           <MenuItem>
             <Link href="/docs/html/alert">
-              <a className={`${navbarItemClasses} px-0 py-0`}>HTML</a>
+              <a className={`${navbarItemClasses} lg:px-0 px-0 py-0`}>HTML</a>
             </Link>
           </MenuItem>
           <MenuItem>
             <Link href="/docs/react/alert">
-              <a className={`${navbarItemClasses} px-0 py-0`}>ReactJS</a>
+              <a className={`${navbarItemClasses} lg:px-0 px-0 py-0`}>
+                ReactJS
+              </a>
             </Link>
           </MenuItem>
         </MenuList>
