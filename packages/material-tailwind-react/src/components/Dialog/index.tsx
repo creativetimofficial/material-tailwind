@@ -6,7 +6,6 @@ import {
   useFloating,
   useInteractions,
   useClick,
-  useFocusTrap,
   useRole,
   useDismiss,
   useId,
@@ -16,7 +15,7 @@ import {
 } from "@floating-ui/react-dom-interactions";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 // utils
 import mergeRefs from "react-merge-refs";
