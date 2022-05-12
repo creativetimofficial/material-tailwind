@@ -57,35 +57,35 @@ export default function SectionTestimonials() {
             <img
               className="w-auto"
               src="/img/logos/logo-amazon.webp"
-              alt="logo_amazon"
+              alt="tailwind_logo_amazon"
             />
           </div>
           <div className="w-full md:w-1/5 px-12 md:px-4 mr-8">
             <img
               className="w-auto"
               src="/img/logos/logo-ibm.webp"
-              alt="logo_ibm"
+              alt="tailwind_logo_ibm"
             />
           </div>
           <div className="w-full md:w-1/5 px-12 md:px-4 mr-8">
             <img
               className="w-auto"
               src="/img/logos/logo-microsoft.webp"
-              alt="logo_microsoft"
+              alt="tailwind_logo_microsoft"
             />
           </div>
           <div className="w-full md:w-1/5 px-12 md:px-4 mr-8">
             <img
               className="w-auto"
               src="/img/logos/logo-cisco.webp"
-              alt="logo_cisco"
+              alt="tailwind_logo_cisco"
             />
           </div>
           <div className="w-full md:w-1/5 px-12 md:px-4">
             <img
               className="w-auto"
               src="/img/logos/logo-vodafone.webp"
-              alt="logo_vodafone"
+              alt="tailwind_logo_vodafone"
             />
           </div>
         </div>
