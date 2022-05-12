@@ -116,7 +116,7 @@ export default function SectionFramework() {
           <img
             className="absolute w-full top-48 md:top-24 lg:top-10 md:-right-20 lg:-right-40"
             src="/img/blue.png"
-            alt="blob_blue"
+            alt="tailwind_blob_blue"
           />
         </div>
       </div>

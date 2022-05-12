@@ -15,6 +15,7 @@ const shadows = require("../theme/base/shadows");
 const { alert } = require("../theme/components/alert");
 const { avatar } = require("../theme/components/avatar");
 const { background } = require("../theme/components/background");
+const { breadcrumbs } = require("../theme/components/breadcrumbs");
 const { button } = require("../theme/components/button");
 const { card } = require("../theme/components/card");
 const { checkbox } = require("../theme/components/checkbox");
@@ -39,6 +40,7 @@ const materialTailwindConfig = {
       addComponents(alert(theme));
       addComponents(avatar(theme));
       addComponents(background(theme));
+      addComponents(breadcrumbs(theme));
       addComponents(button(theme));
       addComponents(card(theme));
       addComponents(checkbox(theme));

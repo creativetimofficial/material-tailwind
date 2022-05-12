@@ -131,7 +131,7 @@ ${buttonCode}
           <img
             className="absolute w-full -bottom-16 md:bottom-auto md:top-24 md:-right-40"
             src="/img/blue.png"
-            alt="blob_blue"
+            alt="tailwind_blob_blue"
           />
           <div className="w-[13rem] md:w-80 h-40 md:h-56 absolute top-44 md:top-14 lg:top-20 right-11 md:-right-24 rounded-lg bg-dark bg-white/80 backdrop-saturate-200 backdrop-blur-2xl shadow-2xl shadow-blue-grey-500/20 flex z-30">
             <div className="m-auto">

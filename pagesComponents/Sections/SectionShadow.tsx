@@ -43,12 +43,12 @@ export default function SectionShadow() {
           <img
             className="absolute w-full -bottom-16 md:bottom-auto md:top-24 lg:top-10 md:-right-5 lg:-right-40"
             src="/img/blue.png"
-            alt="blob_blue"
+            alt="tailwind_blob_blue"
           />
           <img
             className="absolute shadow-2xl shadow-blue-grey-500/20 rounded-lg w-1/2 top-36 md:top-12 right-0 lg:-right-24 z-30"
             src="/img/shadows.png"
-            alt="shadows_example"
+            alt="tailwind_shadows"
           />
         </div>
       </div>

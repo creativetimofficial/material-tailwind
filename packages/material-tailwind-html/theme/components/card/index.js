@@ -1,3 +1,5 @@
+const { backgroundColor } = require("tailwindcss/defaultTheme");
+
 const card = (theme) => ({
   ".card": {
     display: "flex",
@@ -8,6 +10,11 @@ const card = (theme) => ({
     "border-radius": ".75rem",
     "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);",
   
+    "&.card-plain": {
+      "box-shadow": "none",
+      "background-color": theme("colors.transparent")
+    },
+
     ".card-header": {
       transform: "translateZ(0)",
       transition: "all .3s cubic-bezier(.34,1.61,.7,1)",
@@ -21,7 +28,7 @@ const card = (theme) => ({
       color: theme("colors.secondary.500")
     },
     ".card-footer": {
-      padding: "1.5rem",
+      padding: "0 1.5rem 1.5rem 1.5rem",
       "background-color": "transparent",
       color: theme("colors.secondary.500")
     },

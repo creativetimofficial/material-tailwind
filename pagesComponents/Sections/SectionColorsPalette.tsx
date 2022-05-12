@@ -23,12 +23,12 @@ export default function SectionColorsPalette() {
           <img
             className="absolute w-full md:top-36 lg:top-24 lg:-left-52 md:-right-24 -bottom-28 md:bottom-auto"
             src="/img/purple.png"
-            alt="blob_purple"
+            alt="tailwind_blob_purple"
           />
           <img
             className="absolute w-1/2 top-10 md:-top-10 right-6 md:-right-10 z-30"
             src="/img/color-palette.png"
-            alt="colors_example"
+            alt="tailwind_colors_pallet"
           />
         </div>
         <div className="w-full md:w-6/12 px-4 relative order-first md:order-last">
