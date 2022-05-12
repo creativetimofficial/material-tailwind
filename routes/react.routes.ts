@@ -2,7 +2,7 @@ export const routes = [
   {
     name: "guide",
     icon: "fas fa-book",
-    pages: ["quick-start", "license", "what-is-tailwind-css"]
+    pages: ["quick-start", "license", "what-is-tailwind-CSS"]
   },
   {
     name: "components",
