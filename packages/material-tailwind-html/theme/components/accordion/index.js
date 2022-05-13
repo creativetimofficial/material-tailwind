@@ -16,7 +16,7 @@ const accordion = (theme) => ({
     width: "100%",
     padding: "1rem 0",
     "font-size": "inherit",
-    color: "#7b809a",
+    color: theme("colors.secondary.500"),
     "text-align": "left",
     "background-color": "transparent",
     border: "0",
@@ -45,7 +45,7 @@ const accordion = (theme) => ({
   },
   
   ".accordion-button:not(.collapsed)": {
-    color: "#344767",
+    color: theme("colors.dark.500"),
     "background-color": "transparent",
     "box-shadow": "inset 0 0 0 rgba(0, 0, 0, .13)"
   },
