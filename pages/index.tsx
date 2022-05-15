@@ -19,7 +19,15 @@ export default function Presentation() {
   return (
     <>
       <Head>
-        <title>Presentation | Material Tailwind</title>
+        <title>
+          Material Tailwind - Easy-to-use Tailwind CSS components library with
+          Material Design
+        </title>
+        <link rel="canonical" href="https://www.material-tailwind.com" />
+        <meta
+          name="description"
+          content="Material Tailwind is a components library that features multiple React & HTML components, all written with Tailwind CSS classes and Material Design guidelines."
+        />
       </Head>
       <Navbar shadow />
       <main className="relative">
