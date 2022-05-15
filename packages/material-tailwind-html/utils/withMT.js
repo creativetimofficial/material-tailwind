@@ -12,6 +12,7 @@ const typography = require("../theme/base/typography");
 const shadows = require("../theme/base/shadows");
 
 // components styles
+const { accordion } = require("../theme/components/accordion");
 const { alert } = require("../theme/components/alert");
 const { avatar } = require("../theme/components/avatar");
 const { background } = require("../theme/components/background");
@@ -37,6 +38,7 @@ const materialTailwindConfig = {
   },
   plugins: [
     plugin(function ({ addComponents, theme }) {
+      addComponents(accordion(theme));
       addComponents(alert(theme));
       addComponents(avatar(theme));
       addComponents(background(theme));

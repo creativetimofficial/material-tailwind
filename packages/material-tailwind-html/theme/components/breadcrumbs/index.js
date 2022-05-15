@@ -12,8 +12,15 @@ const breadcrumbs = (theme) => ({
       "font-size": ".875rem",
       color: theme("colors.dark.500"),
 
-      "+ .breadcrumb-item": {
-        "padding-left": "0.5rem"
+      "+.breadcrumb-item": {
+        "padding-left": "0.5rem",
+
+        "&:before": {
+          float: "left",
+          "padding-right": "0.5rem",
+          color: "#6c757d",
+          content: " / ",
+        }
       }
     }
   }
