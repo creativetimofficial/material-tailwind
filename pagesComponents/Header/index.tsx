@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <div
-      className="bg-no-repeat h-screen"
+      className="bg-no-repeat h-screen min-h-screen"
       style={{
         backgroundImage: "url('/img/bg-header.jpg')"
       }}
