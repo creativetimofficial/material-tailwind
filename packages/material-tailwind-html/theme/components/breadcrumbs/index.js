@@ -14,15 +14,16 @@ const breadcrumbs = (theme) => ({
 
       "+.breadcrumb-item": {
         "padding-left": "0.5rem",
-
+        
         "&:before": {
+          position: "absolute",
           float: "left",
           "padding-right": "0.5rem",
           color: "#6c757d",
-          content: " / ",
+          content: " / "
         }
-      }
-    }
+      },
+    },
   }
 });
 
