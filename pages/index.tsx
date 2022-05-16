@@ -28,6 +28,10 @@ export default function Presentation() {
           name="description"
           content="Material Tailwind is a components library that features multiple React & HTML components, all written with Tailwind CSS classes and Material Design guidelines."
         />
+        <meta
+          name="keywords"
+          content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
+        />
       </Head>
       <Navbar shadow />
       <main className="relative">
