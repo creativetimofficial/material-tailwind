@@ -10,7 +10,7 @@ const menu = (theme) => ({
     "-webkit-backface-visibility": "hidden",
     "backface-visibility": "hidden",
     "will-change": "transform, box-shadow",
-    "box-shadow": theme("shadows.lg"),
+    "box-shadow": theme("boxShadow.lg"),
     transition: "transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1)",
     cursor: "pointer",
     "z-index": "1000",
