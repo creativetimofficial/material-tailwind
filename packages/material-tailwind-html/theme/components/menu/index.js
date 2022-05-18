@@ -29,6 +29,7 @@ const menu = (theme) => ({
 
     "&::before": {
       "font-family": "FontAwesome",
+      'content': '"\\f0d8"',
       position: "absolute",
       top: "0",
       left: "28px",
@@ -49,6 +50,22 @@ const menu = (theme) => ({
         right: "28px",
         left: "auto"
       }
+    },
+
+    ".menu-item + .dropdown-menu": {
+      opacity: "0 !important",
+      left: "102%",
+      top: "1rem",
+
+      "&:before": {
+        top: "15px !important",
+        left: "-9px",
+        right: "auto",
+        transform: "rotate(-90deg)"
+      }
+    },
+    ".menu-item:hover + .dropdown-menu": {
+      opacity: "1 !important",
     }
   },
 
