@@ -75,7 +75,8 @@ export default function SectionButton() {
             design.
           </Typography>
           <Typography className="text-lg mb-5 md:pr-10 text-[#1A237E]/60">
-            Material Tailwind provides a simple way to customize your button; you can change the colors, fonts, styling, and everything you need.
+            Material Tailwind provides a simple way to customize your button;
+            you can change the colors, fonts, styling, and everything you need.
           </Typography>
           <Link href="/docs/react/button">
             <a>
@@ -84,40 +85,40 @@ export default function SectionButton() {
           </Link>
           <div className="flex flex-wrap mt-7 text-[#1A237E]">
             <div className="w-auto mr-6 md:mr-8 text-center">
-              <a
+              <span
                 className={buttonOptionClasses("default")}
                 onClick={() => setButtonType("default")}
               >
                 <i className="material-icons !text-xl">radio_button_checked</i>
                 <Typography>Default</Typography>
-              </a>
+              </span>
             </div>
             <div className="w-auto mr-6 md:mr-8 text-center">
-              <a
+              <span
                 className={buttonOptionClasses("gradient")}
                 onClick={() => setButtonType("gradient")}
               >
                 <i className="material-icons !text-xl">gradient</i>
                 <Typography>Gradient</Typography>
-              </a>
+              </span>
             </div>
             <div className="w-auto mr-6 md:mr-8 text-center">
-              <a
+              <span
                 className={buttonOptionClasses("link")}
                 onClick={() => setButtonType("link")}
               >
                 <i className="material-icons !text-xl">format_color_text</i>
                 <Typography>Link</Typography>
-              </a>
+              </span>
             </div>
             <div className="w-auto mr-6 md:mr-8 text-center">
-              <a
+              <span
                 className={buttonOptionClasses("icon")}
                 onClick={() => setButtonType("icon")}
               >
                 <i className="material-icons !text-xl">favorite</i>
                 <Typography>Icon</Typography>
-              </a>
+              </span>
             </div>
           </div>
         </div>
