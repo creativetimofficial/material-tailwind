@@ -24,6 +24,31 @@ class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
           <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/img/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/img/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/img/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/img/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/img/safari-pinned-tab.svg"
+            color="#2d89ef"
+          />
+          <meta name="msapplication-TileColor" content="#2d89ef" />
+          <meta name="theme-color" content="#ffffff" />
+          <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
             integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -39,7 +64,7 @@ class MyDocument extends Document {
               height="0"
               width="0"
               style={{ display: "none", visibility: "hidden" }}
-            ></iframe>
+            />
           </noscript>
           {/* End Google Tag Manager (noscript) */}
           <Main />
