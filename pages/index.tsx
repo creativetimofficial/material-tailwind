@@ -52,7 +52,7 @@ export default function Presentation() {
           </div>
           <img
             className="absolute w-full bottom-0 md:-bottom-40"
-            src="/img/pre-footer.png"
+            src="/img/pre-footer.jpg"
             alt="bubbles"
           />
         </Card>
