@@ -8,8 +8,10 @@ export const routes = [
     name: "components",
     icon: "fas fa-shapes",
     pages: [
+      "accordion",
       "alert",
       "avatar",
+      "breadcrumbs",
       "button",
       "checkbox",
       "chip",
