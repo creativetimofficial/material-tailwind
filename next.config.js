@@ -1,5 +1,6 @@
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  productionBrowserSourceMaps: true,
 };
 
 module.exports = nextConfig;
