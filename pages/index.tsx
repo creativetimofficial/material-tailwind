@@ -38,7 +38,7 @@ export default function Presentation() {
         <Header />
         <Card
           shadow={false}
-          className="bg-white/80 backdrop-saturate-200 backdrop-blur-2xl border border-white/80 -mt-20 md:-mt-48 mx-6 md:mx-12"
+          className="bg-white -mt-20 md:-mt-48 mx-6 md:mx-12"
         >
           <div className="container mx-auto px-4 z-20">
             <SectionFeatures />
