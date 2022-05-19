@@ -66,7 +66,6 @@ export default function SectionComponents() {
             </CardHeader>
             <CardBody>
               <Typography
-                as="a"
                 variant="h5"
                 className="text-[#1A237E] font-normal text-center cursor-pointer mb-2"
               >
@@ -107,7 +106,9 @@ export default function SectionComponents() {
               </Typography>
             </Typography>
             <Typography className="text-[#1A237E]/60 text-lg mb-8 md:pr-10 opacity-60">
-            Putting together a page has never been easier than matching our pre-made components. Add our ready-styled components to your project or modify them as you would like.
+              Putting together a page has never been easier than matching our
+              pre-made components. Add our ready-styled components to your
+              project or modify them as you would like.
             </Typography>
             <div className="flex flex-wrap gap-x-1 gap-y-3">
               <Chip
