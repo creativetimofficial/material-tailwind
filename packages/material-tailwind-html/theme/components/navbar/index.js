@@ -35,6 +35,45 @@ const navbar = (theme) => ({
       color: theme("colors.dark.500"),
       "font-size": ".875rem",
       "font-weight": "700"
+    },
+
+    ".navbar-trigger": {
+      padding: ".25rem .75rem",
+      "font-size": "1.125rem",
+      "line-height": "1",
+      "background-color": "transparent",
+      border: "1px solid transparent",
+      "border-radius": ".5rem",
+      transition: "box-shadow .15s ease-in-out",
+
+      ".navbar-trigger-icon": {
+        "background-image": "none"
+      }
+    },
+
+    ".navbar-trigger-icon": {
+      display: "inline-block",
+      width: "1.5em",
+      height: "1.5em",
+      "vertical-align": "middle",
+      "background-repeat": "no-repeat",
+      "background-position": "50%",
+      "background-size": "100%"
+    },
+
+    ".navbar-trigger-bar": {
+      display: "block",
+      position: "relative",
+      width: "22px",
+      height: "1px",
+      "border-radius": "1px",
+      background: "#6c757d",
+      transition: "all .2s",
+      margin: "0 auto",
+
+      "&.bar2,&.bar3": {
+        "margin-top": "0.438rem"
+      }
     }
 
   }
