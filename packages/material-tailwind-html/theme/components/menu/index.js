@@ -54,7 +54,7 @@ const menu = (theme) => ({
 
     ".menu-item + .dropdown-menu": {
       opacity: "0 !important",
-      left: "102%",
+      left: "103%",
       top: "1rem",
 
       "&:before": {
