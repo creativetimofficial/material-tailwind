@@ -20,8 +20,8 @@ next: license
 # Quick Start
 
 <span id="quick-start" className="scroll-mt-48" />
-Material Tailwind is free and open-source components library for ReactJS and
-Tailwind CSS inspired by Material Design.
+Material Tailwind is free and open-source components library for ReactJS and Tailwind
+CSS inspired by Material Design.
 
 <br />
 ## Installation
@@ -41,10 +41,13 @@ Install Material Tailwind as a dependency using NPM by running the following com
 ```bash
 npm i @material-tailwind/react
 ```
+
 ---
 
 ## Using Yarn
+
 Or use Yarn:
+
 <span id="yarn" className="scroll-mt-48" />
 
 ```bash
@@ -70,7 +73,7 @@ pnpm i @material-tailwind/react
 Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react.
 
 ```js {1, 3, 9}
-const withMT = require("@material-tailwind/react");
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],

@@ -19,14 +19,26 @@ export default function Presentation() {
   return (
     <>
       <Head>
-        <title>Presentation | Material Tailwind</title>
+        <title>
+          Material Tailwind - Easy-to-use Tailwind CSS components library with
+          Material Design
+        </title>
+        <link rel="canonical" href="https://www.material-tailwind.com" />
+        <meta
+          name="description"
+          content="Material Tailwind is a components library that features multiple React & HTML components, all written with Tailwind CSS classes and Material Design guidelines."
+        />
+        <meta
+          name="keywords"
+          content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
+        />
       </Head>
       <Navbar shadow />
       <main className="relative">
         <Header />
         <Card
           shadow={false}
-          className="bg-white/80 backdrop-saturate-200 backdrop-blur-2xl border border-white/80 -mt-20 md:-mt-48 mx-6 md:mx-12"
+          className="bg-white -mt-20 md:-mt-48 mx-6 md:mx-12"
         >
           <div className="container mx-auto px-4 z-20">
             <SectionFeatures />
@@ -40,7 +52,7 @@ export default function Presentation() {
           </div>
           <img
             className="absolute w-full bottom-0 md:-bottom-40"
-            src="/img/pre-footer.png"
+            src="/img/pre-footer.jpg"
             alt="bubbles"
           />
         </Card>
