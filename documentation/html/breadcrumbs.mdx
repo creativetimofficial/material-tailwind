@@ -1,0 +1,84 @@
+---
+title: Tailwind CSS Breadcrumbs - Material Tailwind
+description: Build collapsing breadcrumbs using this JavaScript plugin.
+navigation: ["breadcrumbs"]
+---
+
+# Tailwind CSS Breadcrumbs
+
+Use our Tailwind CSS breadcrumbs component to simply create beautiful breadcrumbs for your pages with Material Tailwind.
+
+Breadcrumbs are website links that allow users to track where they are on a website and how far they are from the homepage. They are highly important elements for your search engine optimisation (SEO) and user experience.
+
+See below our versatile breadcrumbs component example that you can use in your Tailwind CSS project.
+<br/>
+<ComponentCard id="breadcrumbs">
+  <div className="text-left w-1/2">
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumbs">
+        <li className="breadcrumb-item text-dark-500 active" aria-current="page">
+          <span>Home</span>
+        </li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumbs">
+        <li className="breadcrumb-item text-dark-500 opacity-50">
+          <a href="javascript"><span>Home</span></a>
+        </li>
+        <li className="breadcrumb-item text-dark-500 active" aria-current="page">
+          <span>Library</span>
+        </li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumbs">
+        <li className="breadcrumb-item opacity-50">
+          <a href="#"><span>Home</span></a>
+        </li>
+        <li className="breadcrumb-item opacity-50">
+          <a href="#"><span>Library</span></a>
+        </li>
+        <li className="breadcrumb-item active" aria-current="page">
+          <span>Data</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <nav aria-label="breadcrumb">
+    <ol className="breadcrumbs">
+      <li className="breadcrumb-item text-dark-500 active" aria-current="page">
+        <span>Home</span>
+      </li>
+    </ol>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol className="breadcrumbs">
+      <li className="breadcrumb-item text-dark-500 opacity-50">
+        <a href="javascript"><span>Home</span></a>
+      </li>
+      <li className="breadcrumb-item text-dark-500 active" aria-current="page">
+        <span>Library</span>
+      </li>
+    </ol>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol className="breadcrumbs">
+      <li className="breadcrumb-item opacity-50">
+        <a href="#"><span>Home</span></a>
+      </li>
+      <li className="breadcrumb-item opacity-50">
+        <a href="#"><span>Library</span></a>
+      </li>
+      <li className="breadcrumb-item active" aria-current="page">
+        <span>Data</span>
+      </li>
+    </ol>
+  </nav>
+```
+
+{" "}
+
