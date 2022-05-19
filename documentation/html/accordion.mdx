@@ -1,0 +1,194 @@
+---
+title: Tailwind CSS Accordion - Material Tailwind
+description: Build collapsing accordions using this JavaScript plugin.
+navigation: ["accordion"]
+---
+
+# Tailwind CSS Accordion
+
+Use our Tailwind CSS accordion component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
+
+See below our simple and versatile accordion example that you can use in your Tailwind CSS projects. We also included some accordion props that are available.
+
+To use an accordion example that has items expanded, add the **.open** class on the **.collapse** `<div>`.
+<br/>
+<ComponentCard id="accordion">
+  <div className="accordion">
+    <div className="accordion-item relative mb-3">
+      <h6 className="mb-0">
+        <button className="accordion-button font-semibold text-left" type="button" aria-expanded="false">
+          <span>How do I order?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse open">
+        <div className="py-4 text-sm opacity-60">
+          We’re not always in the position that we want to be at. We’re
+          constantly growing. We’re constantly making mistakes. We’re
+          constantly trying to express ourselves and actualize our
+          dreams. If you have the opportunity to play this game of life
+          you need to appreciate every moment. A lot of people don’t
+          appreciate the moment until it’s passed.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>How can i make the payment?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">
+          It really matters and then like it really doesn’t matter. What
+          matters is the people who are sparked by it. And the people
+          who are like offended by it, it doesn’t matter. Because it's
+          about motivating the doers. Because I’m here to follow my
+          dreams and inspire other people to follow their dreams, too.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>How much time does it take to receive the order?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you
+          believe in, if you were the only one who believed it?
+          If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not
+          trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>Can I resell the products?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you
+          won’t do anything. I was taught I could do everything.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>Where do I find the shipping details?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you
+          won’t do anything. I was taught I could do everything.
+        </div>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+<div className="accordion">
+    <div className="accordion-item relative mb-3">
+      <h6 className="mb-0">
+        <button className="accordion-button font-semibold text-left" type="button" aria-expanded="false">
+          <span>How do I order?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse open">
+        <div className="py-4 text-sm opacity-60">
+          We’re not always in the position that we want to be at. We’re
+          constantly growing. We’re constantly making mistakes. We’re
+          constantly trying to express ourselves and actualize our
+          dreams. If you have the opportunity to play this game of life
+          you need to appreciate every moment. A lot of people don’t
+          appreciate the moment until it’s passed.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>How can i make the payment?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">
+          It really matters and then like it really doesn’t matter. What
+          matters is the people who are sparked by it. And the people
+          who are like offended by it, it doesn’t matter. Because it's
+          about motivating the doers. Because I’m here to follow my
+          dreams and inspire other people to follow their dreams, too.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>How much time does it take to receive the order?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you
+          believe in, if you were the only one who believed it?
+          If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not
+          trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>Can I resell the products?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you
+          won’t do anything. I was taught I could do everything.
+        </div>
+      </div>
+    </div>
+    <div className="accordion-item relative mb-3">
+      <h6 className="accordion-header">
+        <button className="accordion-button font-semibold text-left collapsed" type="button" aria-expanded="false">
+          <span>Where do I find the shipping details?</span>
+          <i className="collapse-close fa fa-plus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+          <i className="collapse-open fa fa-minus text-xs pt-1 absolute right-0" aria-hidden="true"></i>
+        </button>
+      </h6>
+      <div className="collapse">
+        <div className="py-4 text-sm opacity-60">          
+          I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you
+          won’t do anything. I was taught I could do everything.
+        </div>
+      </div>
+    </div>
+  </div>
+```
+
+{" "}
+
