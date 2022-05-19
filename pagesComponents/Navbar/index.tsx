@@ -95,12 +95,12 @@ export default function Navbar({
       <Menu placement="bottom" offset={-2.5}>
         <MenuHandler>
           <li>
-            <a className={navbarItemClasses}>
+            <span className={navbarItemClasses}>
               <i className="material-icons opacity-60 mr-2 !text-base">
                 article
               </i>
               <span>Docs</span>
-            </a>
+            </span>
           </li>
         </MenuHandler>
         <MenuList>
@@ -121,10 +121,10 @@ export default function Navbar({
       <Menu placement="bottom" offset={-2.5}>
         <MenuHandler>
           <li>
-            <a className={navbarItemClasses}>
+            <span className={navbarItemClasses}>
               <i className="material-icons opacity-60 mr-2 !text-base">apps</i>
               <span>Components</span>
-            </a>
+            </span>
           </li>
         </MenuHandler>
         <MenuList>
@@ -144,12 +144,12 @@ export default function Navbar({
       </Menu>
       <Tooltip content="Coming Soon" placement="bottom" offset={-2.5}>
         <li className="flex">
-          <a className={navbarItemClasses}>
+          <span className={navbarItemClasses}>
             <i className="material-icons opacity-60 mr-2 !text-base">
               view_carousel
             </i>
             <span>Templates</span>
-          </a>
+          </span>
         </li>
       </Tooltip>
       <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
