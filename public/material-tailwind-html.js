@@ -1,47 +1,3 @@
-(function() {
-
-  function ready(fn) {
-    if (document.readyState != 'loading'){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
-
-// dialog
-  function opendialog() {
-    var dialogTrigger = document.querySelectorAll('[dialog-trigger]');
-    for(var i = 0; i < dialogTrigger.length; i++) {
-      dialogTrigger[i].onclick = function() {
-        var dialogWindow = this.nextElementSibling;
-        dialogWindow.classList ? dialogWindow.classList.add('open') : dialogWindow.className += ' ' + 'open'; 
-      }
-    }
-  }
-
-  function closedialog(){
-    var closeButton = document.querySelectorAll("[dialog-close]");
-    for(var i = 0; i < closeButton.length; i++) {
-      closeButton[i].onclick = function() {
-        var dialogWindow = this.closest('.dialog');
-        dialogWindow.classList ? dialogWindow.classList.remove('open') : dialogWindow.className = dialogWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-      }
-    }
-  }
-
-  ready(opendialog);
-  ready(closedialog);
-}());
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-      Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
-  } else {
-      obj[key] = value;
-  }
-  return obj;
-};
-
 window.onload = function() {
 
   // Alert Dismiss
@@ -52,7 +8,7 @@ window.onload = function() {
     })
   )
 
-  // Dropdown
+  // Dropdown / Menu
   var dropdown_trigger = document.querySelectorAll('[menu-trigger]');
 
   for (var i = 0; i < dropdown_trigger.length; i++) {
@@ -71,9 +27,7 @@ window.onload = function() {
         }
       }
     });
-  }
-
-
+  };
 
   // Colored shadow
   if (document.querySelectorAll('[blur-shadow-image]')) {
@@ -151,6 +105,24 @@ window.onload = function() {
     }
   }
 
+  // Dialog
+
+  var dialogTrigger = document.querySelectorAll('[dialog-trigger]');
+  for(var i = 0; i < dialogTrigger.length; i++) {
+    dialogTrigger[i].onclick = function() {
+      var dialogWindow = this.nextElementSibling;
+      dialogWindow.classList ? dialogWindow.classList.add('open') : dialogWindow.className += ' ' + 'open'; 
+    }
+  }
+
+  var closeButton = document.querySelectorAll("[dialog-close]");
+  for(var i = 0; i < closeButton.length; i++) {
+    closeButton[i].onclick = function() {
+      var dialogWindow = this.closest('.dialog');
+      dialogWindow.classList ? dialogWindow.classList.remove('open') : dialogWindow.className = dialogWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+  }
+
   // Inputs
 
   // when input is focused add focused class for style
@@ -219,7 +191,6 @@ window.onload = function() {
       this.parentElement.classList.remove('is-focused');
     }, false);
   }
- 
 
   // Collapse
 
@@ -325,7 +296,6 @@ window.onload = function() {
     });
 
   }
-
 
   // Popovers
   if (document.querySelector('[data-target="popover"]')) {
@@ -590,44 +560,6 @@ function getEventTarget(e) {
   return e.target || e.srcElement;
 }
 
-// Navbar collapse
-
-var expand_trigger = document.querySelector("[navbar-trigger]");
-var bar1 = document.querySelector("[bar1]");
-var bar2 = document.querySelector("[bar2]");
-var bar3 = document.querySelector("[bar3]");
-var navbar_collapse = document.querySelector("[navbar-menu]");
-const collapse_height = navbar_collapse.scrollHeight;
-
-expand_trigger.addEventListener("click", function () {
-  elements = navbar_collapse.querySelectorAll("a");
-  if (navbar_collapse.classList.contains("lg-max:max-h-0")) {
-    navbar_collapse.classList.remove("lg-max:max-h-0");
-    navbar_collapse.classList.add("lg-max:max-h-[54rem]");
-    setTimeout(function () {
-      elements.forEach((element) => {
-        element.classList.remove("lg-max:opacity-0");
-      });
-    }, 50);
-  } else {
-    setTimeout(function () {
-      elements.forEach((element) => {
-        element.classList.add("lg-max:opacity-0");
-      });
-    }, 100);
-    navbar_collapse.classList.remove("lg-max:max-h-[54rem]");
-    navbar_collapse.classList.add("lg-max:max-h-0");
-  }
-  bar1.classList.toggle("rotate-45");
-  bar1.classList.toggle("origin-[10%_10%]");
-  bar1.classList.toggle("mt-1");
-  bar2.classList.toggle("opacity-0");
-  bar3.classList.toggle("-rotate-45");
-  bar3.classList.toggle("origin-[10%_90%]");
-  bar3.classList.toggle("mt-[0.1875rem]");
-  bar3.classList.toggle("mt-[0.4375rem]");
-});
-
 // Change the npm install command
 
 var navtabs = document.querySelector('.first-tab');
@@ -653,34 +585,3 @@ if (navtabs_active) {
     code_html.classList.remove('hidden');
   })  
 }
-
-// copy to clipboard
-var copy_clipboard_react = document.getElementById("copy_react");
-var copy_clipboard_html = document.getElementById("copy_html");
-
-copy_clipboard_react.addEventListener('click', function (event) {
-  copyToClipboard(event);
-})
-
-copy_clipboard_html.addEventListener('click', function (event) {
-  copyToClipboard(event);
-})
-
-function copyToClipboard(e) {
-  var
-    t = e.target, 
-    c = t.dataset.copytarget,
-    inp = (c ? document.querySelector(c).innerText : null);
-  console.log(inp);
-
-
-  navigator.clipboard.writeText(inp);
-
-}
-
-
-// Highlight Code
-
-document.querySelectorAll('div.code').forEach(el => {
-  hljs.highlightElement(el);
-});
