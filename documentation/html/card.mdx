@@ -1,0 +1,340 @@
+---
+title: Tailwind CSS Card - Material Tailwind
+description: Customise your web projects with our beautiful cards component for Tailwind CSS using Material Design guidelines.
+navigation: 
+  [
+    "card blog", 
+    "card basic", 
+    "card image inside", 
+    "card signin", 
+    "card horizontal"
+  ]
+---
+
+# Tailwind CSS Card
+
+Use our cards to provide a flexible and extensible content container based on Tailwind CSS with multiple variants and options.
+
+By its definition, a card is a sheet of material that serves as an entry point to more detailed information. Cards usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+
+See below our beautiful card example that you can use in your Tailwind CSS projects. We've also included some card props that are available.
+<br/>
+<ComponentCard id="card blog">
+  <div className="w-2/3 my-10">
+    <div className="card">
+      <div className="card-header mx-4 -mt-6">
+        <a href="#" blur-shadow-image="true">
+          <img
+            className="w-auto rounded-lg"
+            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            alt=""
+          />
+        </a>
+      </div>
+      <div className="card-body">
+        <a href="#">
+          <h4 className="font-medium">Material Tailwind</h4>
+        </a>
+        <p className="mb-3 opcacity-60">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+        <button className="button button-pink" data-ripple-light="true">Read More</button>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <div class="card">
+    <div class="card-header mx-4 -mt-6">
+      <a href="#" blur-shadow-image="true">
+        <img
+          class="w-auto rounded-lg"
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="tailwind-card-image"
+        />
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="#">
+        <h4 class="font-medium">Material Tailwind</h4>
+      </a>
+      <p class="mb-3 opcacity-60">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+      <button class="button button-pink" data-ripple-light="true">Read More</button>
+    </div>
+  </div>
+```
+
+<br/>
+<br/>
+
+#### Simple Card
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+<ComponentCard id="card basic">
+  <div className="w-1/2 my-10">
+    <div className="card">
+      <div className="card-body">
+        <a href="#">
+          <h3>Material Tailwind</h3>
+        </a>
+        <p className="mb-3 opacity-60">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+        <button className="button button-pink" data-ripple-light="true">Read More</button>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <div class="card">
+    <div class="card-body">
+      <a href="#">
+        <h3>Material Tailwind</h3>
+      </a>
+      <p class="mb-3 opacity-60">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+      <button class="button button-pink" data-ripple-light="true">Read More</button>
+    </div>
+  </div>
+```
+
+<br/>
+<br/>
+
+#### Card with image inside
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+<ComponentCard id="card image inside">
+  <div className="w-2/3 my-10">
+   <div className="card">
+      <div className="card-header mx-4 mt-4">
+        <a href="#" blur-shadow-image="true">
+          <img
+            className="w-auto rounded-lg"
+            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+            alt="tailwind-card-image"
+          />
+        </a>
+      </div>
+      <div className="card-body">
+        <span className="font-bold uppercase text-orange-500 text-sm">Hub</span>
+        <a href="#">
+          <h5 className="mt-2 font-medium">Material Tailwind</h5>
+        </a>
+        <p className="mb-3">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+      </div>
+      <div className="card-footer">
+        <div className="flex">
+          <a href="#" className="avatar">
+            <img
+              alt="Image placeholder"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
+            />
+          </a>
+          <div className="ml-3">
+            <span className="font-bold mb-0 text-blue-grey-700">Mathew</span>
+            <p className="text-xs mb-0">Posted on 28 February</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <div class="card">
+    <div class="card-header mx-4 mt-4">
+      <a href="#" blur-shadow-image="true">
+        <img
+          class="w-auto rounded-lg"
+          src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+          alt="tailwind-card-image"
+        />
+      </a>
+    </div>
+    <div class="card-body">
+      <span class="font-bold uppercase text-orange-500 text-sm">Hub</span>
+      <a href="#">
+        <h5 class="mt-2 font-medium">Material Tailwind</h5>
+      </a>
+      <p class="mb-3">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.</p>
+    </div>
+    <div class="card-footer">
+      <div class="flex">
+        <a href="#" class="avatar">
+          <img
+            alt="Image placeholder"
+            src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
+          />
+        </a>
+        <div class="ml-3">
+          <span class="font-bold mb-0 text-blue-grey-700">Mathew</span>
+          <p class="text-xs mb-0">Posted on 28 February</p>
+        </div>
+      </div>
+    </div>
+  </div>
+```
+
+<br/>
+<br/>
+
+#### Card Signin
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+<ComponentCard id="card signin">
+  <div className="w-1/2 my-10">
+    <div className="card">
+      <div className="card-header mx-4 -mt-6">
+        <div className="bg-pink-500 shadow-pink rounded-lg py-3 pe-1">
+          <h4 className="text-white font-bold text-center mt-2 mb-0">Sign in</h4>
+          <div className="flex mt-4">
+            <a className="button button-text ml-auto" href="#">
+              <i className="fab fa-facebook-f text-white text-lg"></i>
+            </a>
+            <a className="button button-text" href="#">
+              <i className="fab fa-github text-white text-lg"></i>
+            </a>
+            <a className="button button-text mr-auto" href="#">
+              <i className="fab fa-google text-white text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="card-body">
+        <form action="role">
+          <div className="input-group input-group-outline my-3">
+            <label className="form-label">Email</label>
+            <input type="email" className="form-control" />
+          </div>
+          <div className="input-group input-group-outline my-3">
+            <label className="form-label">Password</label>
+            <input type="password" className="form-control" />
+          </div>
+        </form>
+        <div className="form-check form-switch flex items-center my-7 ml-1">
+          <input
+            className="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
+            data-attribute="toggle"
+            id="remember"
+          />
+          <div className="form-check-input"></div>
+          <label className="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
+        </div>
+        <button className="button button-pink w-full">Sign In</button>
+        <a href="#">
+          <p className="text-center mt-5 mb-0 text-sm">
+            Don&apos;t have an account?
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <div class="card">
+    <div class="card-header mx-4 -mt-6">
+      <div class="bg-pink-500 shadow-pink rounded-lg py-3 pe-1">
+        <h4 class="text-white font-bold text-center mt-2 mb-0">
+          Sign in
+        </h4>
+        <div class="flex mt-4">
+          <a class="button button-text ml-auto" href="#">
+            <i class="fab fa-facebook-f text-white text-lg"></i>
+          </a>
+          <a class="button button-text" href="#">
+            <i class="fab fa-github text-white text-lg"></i>
+          </a>
+          <a class="button button-text mr-auto" href="#">
+            <i class="fab fa-google text-white text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form action="role">
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" />
+        </div>
+        <div class="input-group input-group-outline my-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" />
+        </div>
+      </form>
+      <div class="form-check form-switch flex items-center my-7 ml-1">
+        <input
+          class="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
+          data-attribute="toggle"
+          id="remember"
+        />
+        <div class="form-check-input"></div>
+        <label class="form-check-label mb-0 ml-2 cursor-pointer">
+          Remember me
+        </label>
+      </div>
+      <button class="button button-pink w-full">Sign In</button>
+      <a href="#">
+        <p class="text-center mt-5 mb-0 text-sm">
+          Don&apos;t have an account?
+        </p>
+      </a>
+    </div>
+  </div>
+```
+
+<br/>
+<br/>
+
+#### Card Horizontal
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+<ComponentCard id="card horizontal">
+  <div className="my-10">
+    <div className="card card-plain">
+      <div className="flex">
+        <div className="w-1/3">
+          <img
+            className="rounded-lg"
+            src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+            alt=""
+          />
+        </div>
+        <div className="w-2/3 card-body">
+          <span className="text-blue-500 font-bold uppercase">Startups</span>
+          <a href="#">
+            <h3 className="mt-4">Lyft launching cross-platform service this week</h3>
+          </a>
+          <p className="opacity-80 mb-5">Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story — and{" "} <a href="#">Read More</a>.</p>
+          <p>by <span className="font-bold">Megan Rose</span>, 2 days ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ComponentCard>
+
+```html showLineNumbers
+  <div class="card card-plain">
+    <div class="flex">
+      <div class="w-1/3">
+        <img
+          class="rounded-lg"
+          src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+          alt=""
+        />
+      </div>
+      <div class="w-2/3 card-body">
+        <span class="text-blue-500 font-bold uppercase">Startups</span>
+        <a href="#">
+          <h3 class="mt-4">Lyft launching cross-platform service this week</h3>
+        </a>
+        <p class="opacity-80 mb-5">Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story — and{" "} <a href="#">Read More</a>.</p>
+        <p>by <span class="font-bold">Megan Rose</span>, 2 days ago</p>
+      </div>
+    </div>
+  </div>
+```
+{" "}
+
