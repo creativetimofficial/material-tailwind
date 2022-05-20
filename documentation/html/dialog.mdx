@@ -23,7 +23,7 @@ See below our dialog example that you can use for your Tailwind CSS project.
 <ComponentCard id="dialog">
   <button className="button button-pink mx-auto flex" dialog-trigger="true" data-ripple-light="true">Demo dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
@@ -49,7 +49,7 @@ See below our dialog example that you can use for your Tailwind CSS project.
   <div class="text-left w-1/2">
   <button class="button button-pink" dialog-trigger="true" data-ripple-light="true">Demo dialog</button>
   <div class="dialog">
-    <div class="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div class="dialog-overlay" dialog-close="true"></div>
     <div class="modal-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
@@ -81,7 +81,7 @@ Use this dialog example if you want to notify the user about an action that he s
 <ComponentCard id="notification dialog">
   <button className="button button-deep-orange" dialog-trigger="true" data-ripple-light="true">Notification dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
@@ -108,7 +108,7 @@ Use this dialog example if you want to notify the user about an action that he s
 ```html showLineNumbers
   <button class="button button-deep-orange" dialog-trigger="true" data-ripple-light="true">Notification dialog</button>
   <div class="dialog">
-    <div class="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div class="dialog-overlay" dialog-close="true"></div>
     <div class="modal-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
@@ -141,7 +141,7 @@ This dialog should be used to help the user send messages easily.
 <ComponentCard id="message dialog">
   <button className="button button-green" dialog-trigger="true" data-ripple-light="true">Message dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
@@ -154,11 +154,11 @@ This dialog should be used to help the user send messages easily.
           <form action="role">
             <div className="input-group input-group-static my-3">
               <label>Recipient:</label>
-              <input type="email" className="form-control" placeholder="Creative Tim" />
+              <input type="email" className="form-control" />
             </div>
             <div className="input-group input-group-static my-3">
               <label>Message:</label>
-              <textarea type="email" className="form-control" placeholder="TailwindCSS" rows="5" />
+              <textarea type="email" className="form-control" rows="5" />
             </div>
           </form>
         </div>
@@ -173,7 +173,7 @@ This dialog should be used to help the user send messages easily.
 ```html showLineNumbers
   <button class="button button-green" dialog-trigger="true" data-ripple-light="true">Message dialog</button>
   <div class="dialog">
-    <div class="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div class="dialog-overlay" dialog-close="true"></div>
     <div class="modal-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
@@ -186,11 +186,11 @@ This dialog should be used to help the user send messages easily.
           <form action="role">
             <div class="input-group input-group-static my-3">
               <label>Recipient:</label>
-              <input type="email" class="form-control" placeholder="Creative Tim" />
+              <input type="email" class="form-control" />
             </div>
             <div class="input-group input-group-static my-3">
               <label>Message:</label>
-              <textarea type="email" class="form-control" placeholder="TailwindCSS" rows="5" />
+              <textarea type="email" class="form-control" rows="5" />
             </div>
           </form>
         </div>
@@ -211,7 +211,7 @@ Use this dialog example to notify the user with longer informational messages.
 <ComponentCard id="long dialog">
   <button className="button button-pink" dialog-trigger="true" data-ripple-light="true">Long dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
@@ -245,7 +245,7 @@ Use this dialog example to notify the user with longer informational messages.
 ```html showLineNumbers
   <button class="button button-pink" dialog-trigger="true" data-ripple-light="true">Long dialog</button>
   <div class="dialog">
-    <div class="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div class="dialog-overlay" dialog-close="true"></div>
     <div class="modal-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
@@ -314,7 +314,7 @@ Use this example to help users Sign in easily
 <ComponentCard id="signin dialog">
   <button className="button button-pink" dialog-trigger="true" data-ripple-light="true">Signin dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
@@ -368,7 +368,7 @@ Use this example to help users Sign in easily
 ```html showLineNumbers
   <button className="button button-pink" dialog-trigger="true" data-ripple-light="true">Signin dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
@@ -429,7 +429,7 @@ Use this example to help users Signup in easily
 <ComponentCard id="signup dialog">
   <button className="button button-cyan" dialog-trigger="true" data-ripple-light="true">Signup dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
@@ -478,7 +478,7 @@ Use this example to help users Signup in easily
 ```html showLineNumbers
   <button className="button button-cyan" dialog-trigger="true" data-ripple-light="true">Signup dialog</button>
   <div className="dialog">
-    <div className="dialog-overlay backdrop-blur-sm" dialog-close="true"></div>
+    <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
