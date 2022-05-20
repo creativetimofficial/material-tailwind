@@ -17,18 +17,14 @@ Use our cards to provide a flexible and extensible content container based on Ta
 
 By its definition, a card is a sheet of material that serves as an entry point to more detailed information. Cards usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-See below our beautiful card example that you can use in your Tailwind CSS projects. We've also included some card props that are available.
+See below our beautiful card example that you can use in your Tailwind CSS projects.
 <br/>
 <ComponentCard id="card blog">
   <div className="w-2/3 my-10">
     <div className="card">
       <div className="card-header mx-4 -mt-6">
         <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt=""
-          />
+          <img className="w-auto rounded-lg" src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt=""/>
         </a>
       </div>
       <div className="card-body">
@@ -46,11 +42,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   <div class="card">
     <div class="card-header mx-4 -mt-6">
       <a href="#" blur-shadow-image="true">
-        <img
-          class="w-auto rounded-lg"
-          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          alt="tailwind-card-image"
-        />
+        <img class="w-auto rounded-lg" src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="tailwind-card-image"/>
       </a>
     </div>
     <div class="card-body">
@@ -68,7 +60,9 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 
 #### Simple Card
 
-Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+Cards support a wide variety of content, including images, text, list groups, links and more. 
+
+Below you can see a card example with only text and link (button).
 
 <ComponentCard id="card basic">
   <div className="w-1/2 my-10">
@@ -101,18 +95,14 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 #### Card with image inside
 
-Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+The card example below includes an image and avatar component.
 
 <ComponentCard id="card image inside">
   <div className="w-2/3 my-10">
    <div className="card">
       <div className="card-header mx-4 mt-4">
         <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-            alt="tailwind-card-image"
-          />
+          <img className="w-auto rounded-lg" src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg" alt="tailwind-card-image"/>
         </a>
       </div>
       <div className="card-body">
@@ -144,11 +134,7 @@ Cards support a wide variety of content, including images, text, list groups, li
   <div class="card">
     <div class="card-header mx-4 mt-4">
       <a href="#" blur-shadow-image="true">
-        <img
-          class="w-auto rounded-lg"
-          src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-          alt="tailwind-card-image"
-        />
+        <img class="w-auto rounded-lg" src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg" alt="tailwind-card-image" />
       </a>
     </div>
     <div class="card-body">
@@ -180,7 +166,7 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 #### Card Signin
 
-Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+Cards also can be used for Login/Signup pages. See below our Tailwind CSS example:
 
 <ComponentCard id="card signin">
   <div className="w-1/2 my-10">
@@ -213,19 +199,13 @@ Cards support a wide variety of content, including images, text, list groups, li
           </div>
         </form>
         <div className="form-check form-switch flex items-center my-7 ml-1">
-          <input
-            className="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
-            data-attribute="toggle"
-            id="remember"
-          />
+          <input className="opacity-0 cursor-pointer absolute z-10 w-8 h-5" data-attribute="toggle" id="remember"/>
           <div className="form-check-input"></div>
           <label className="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
         </div>
         <button className="button button-pink w-full">Sign In</button>
         <a href="#">
-          <p className="text-center mt-5 mb-0 text-sm">
-            Don&apos;t have an account?
-          </p>
+          <p className="text-center mt-5 mb-0 text-sm">Don&apos;t have an account?</p>
         </a>
       </div>
     </div>
@@ -236,9 +216,7 @@ Cards support a wide variety of content, including images, text, list groups, li
   <div class="card">
     <div class="card-header mx-4 -mt-6">
       <div class="bg-pink-500 shadow-pink rounded-lg py-3 pe-1">
-        <h4 class="text-white font-bold text-center mt-2 mb-0">
-          Sign in
-        </h4>
+        <h4 class="text-white font-bold text-center mt-2 mb-0">Sign in</h4>
         <div class="flex mt-4">
           <a class="button button-text ml-auto" href="#">
             <i class="fab fa-facebook-f text-white text-lg"></i>
@@ -270,15 +248,11 @@ Cards support a wide variety of content, including images, text, list groups, li
           id="remember"
         />
         <div class="form-check-input"></div>
-        <label class="form-check-label mb-0 ml-2 cursor-pointer">
-          Remember me
-        </label>
+        <label class="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
       </div>
       <button class="button button-pink w-full">Sign In</button>
       <a href="#">
-        <p class="text-center mt-5 mb-0 text-sm">
-          Don&apos;t have an account?
-        </p>
+        <p class="text-center mt-5 mb-0 text-sm">Don&apos;t have an account?</p>
       </a>
     </div>
   </div>
@@ -289,18 +263,14 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 #### Card Horizontal
 
-Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+Our last card example has an horizontal layout. Use it to your projects!
 
 <ComponentCard id="card horizontal">
   <div className="my-10">
     <div className="card card-plain">
       <div className="flex">
         <div className="w-1/3">
-          <img
-            className="rounded-lg"
-            src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-            alt=""
-          />
+          <img className="rounded-lg" src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987" alt="tailwind_card-horizozntal-image" />
         </div>
         <div className="w-2/3 card-body">
           <span className="text-blue-500 font-bold uppercase">Startups</span>
@@ -319,11 +289,7 @@ Cards support a wide variety of content, including images, text, list groups, li
   <div class="card card-plain">
     <div class="flex">
       <div class="w-1/3">
-        <img
-          class="rounded-lg"
-          src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-          alt=""
-        />
+        <img class="rounded-lg" src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987" alt="tailwind_card-horizozntal-image" />
       </div>
       <div class="w-2/3 card-body">
         <span class="text-blue-500 font-bold uppercase">Startups</span>
