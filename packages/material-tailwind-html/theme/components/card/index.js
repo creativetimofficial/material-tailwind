@@ -33,7 +33,7 @@ const card = (theme) => ({
       color: theme("colors.secondary.500")
     },
   
-    ".card[data-animation='true']:hover": {
+    "&[data-animation='true']:hover": {
       ".card-header": {
         transform: "translate3d(0,-50px,0)"
       }
