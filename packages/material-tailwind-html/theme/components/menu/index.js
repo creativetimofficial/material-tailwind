@@ -64,7 +64,7 @@ const menu = (theme) => ({
         transform: "rotate(-90deg)"
       }
     },
-    ".menu-item:hover + .dropdown-menu": {
+    ".menu-item + .dropdown-menu.open": {
       opacity: "1 !important",
     }
   },
