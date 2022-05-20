@@ -19,6 +19,7 @@ export const routes = [
       "dialog",
       "icon-button",
       "input",
+      "menu",
       "progress",
       "radio",
       "switch",
