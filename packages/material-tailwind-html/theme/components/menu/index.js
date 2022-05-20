@@ -42,7 +42,7 @@ const menu = (theme) => ({
       "box-sizing": "border-box"
     },
 
-    "&.menu-end": {
+    "&.menu-right": {
       right: "0",
       left: "auto",
 
