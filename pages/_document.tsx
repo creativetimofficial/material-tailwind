@@ -54,6 +54,7 @@ class MyDocument extends Document {
             integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
             crossOrigin="anonymous"
           />
+          <script src="https://kit.fontawesome.com/42d5adcbca.js" crossOrigin="anonymous"></script>
         </Head>
         <body className="bg-grey-100 antialiased">
           {/* Google Tag Manager (noscript) */}
