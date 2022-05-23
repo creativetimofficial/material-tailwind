@@ -20,6 +20,7 @@ export const routes = [
       "icon-button",
       "input",
       "menu",
+      "pagination",
       "progress",
       "radio",
       "switch",
