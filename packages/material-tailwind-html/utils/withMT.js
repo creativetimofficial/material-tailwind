@@ -25,6 +25,7 @@ const { dialog } = require("../theme/components/dialog");
 const { input } = require("../theme/components/input");
 const { menu } = require("../theme/components/menu");
 const { navbar } = require("../theme/components/navbar");
+const { pagination } = require("../theme/components/pagination");
 const { progress } = require("../theme/components/progress");
 const { radio } = require("../theme/components/radio");
 const { toggle } = require("../theme/components/switch");
@@ -54,6 +55,7 @@ const materialTailwindConfig = {
       addComponents(input(theme));
       addComponents(menu(theme));
       addComponents(navbar(theme));
+      addComponents(pagination(theme));
       addComponents(progress(theme));
       addComponents(radio(theme));
       addComponents(toggle(theme));
