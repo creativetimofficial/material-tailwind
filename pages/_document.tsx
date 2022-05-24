@@ -50,6 +50,7 @@ class MyDocument extends Document {
             type="text/javascript"
             dangerouslySetInnerHTML={{ __html: process.env.rawJsFromFile }}
           />
+           <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
           <script src="/material-tailwind-html.js" />
         </body>
       </Html>
