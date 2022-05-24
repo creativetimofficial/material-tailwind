@@ -8,9 +8,31 @@ const navbar = (theme) => ({
 
     ".navbar-collapse": {
       display: "flex",
-      "flex-basis": "auto",
+      "flex-basis": "100%",
       "flex-grow": "1",
-      "align-items": "center"
+      "align-items": "center",
+
+      "@media (max-width: 992px)": {
+        "&.collapse:not(.open)": {
+          display: "none"
+        }
+      }
+    },
+    "@media (max-width: 992px)": {
+      ".navbar-collapse": {
+        display: "block",
+        position: "absolute",
+        background: "#fff",
+        width: "100%",
+        left: "0",
+        top: "100%",
+        "z-index": "12",
+
+        ".navbar-nav": {
+        display: "block",
+         
+        }
+      }
     },
 
     ".navbar-nav": {
@@ -34,7 +56,8 @@ const navbar = (theme) => ({
     ".nav-brand": {
       color: theme("colors.dark.500"),
       "font-size": ".875rem",
-      "font-weight": "700"
+      "font-weight": "700",
+      width: "inherit"
     },
 
     ".navbar-trigger": {
@@ -75,7 +98,13 @@ const navbar = (theme) => ({
         "margin-top": "0.438rem"
       }
     }
-
+  },
+  ".container-lg": {
+    display: "flex",
+    width: "100%",
+    "flex-wrap": "inherit",
+    "align-items": "center",
+    "justify-content": "space-between"
   }
 });
 
