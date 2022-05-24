@@ -122,13 +122,17 @@
 
 /* Rehype Pretty Code */
 [data-rehype-pretty-code-fragment] {
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] pre {
   background-color: #1e293b;
   max-height: 32rem;
   margin: 1rem 0;
   padding: 1.25rem;
   border-radius: 0.5rem;
-  overflow: scroll;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: scroll;
 }
 
 [data-rehype-pretty-code-fragment] .highlighted::after {
