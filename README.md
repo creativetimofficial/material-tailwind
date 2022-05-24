@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <a href="https://vercel.com/?utm_source=creativetim&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
+  <a href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
      <img width="30%" src="./public/img/vercel-logo.png" alt="Vercel" />
   </a>
 </p>

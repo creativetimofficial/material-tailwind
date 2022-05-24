@@ -388,7 +388,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               </Typography>
               <footer className="py-6 border-t border-blue-grey-50 flex flex-col lg:flex-row justify-between items-center gap-4">
                 <a
-                  href="https://vercel.com/?utm_source=creativetim&utm_campaign=oss"
+                  href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center no-underline text-dark font-semibold"
