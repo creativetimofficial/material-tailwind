@@ -27,7 +27,7 @@ const popover = (theme) => ({
       "color": theme("colors.secondary.500")
     },
 
-    "&[data-popper-placement='top']": {
+    "&[data-placement='top']": {
       "margin-bottom": ".5rem !important",
 
       ".arrow": {
@@ -36,7 +36,7 @@ const popover = (theme) => ({
       }
     },
 
-    "&[data-popper-placement='right']": {
+    "&[data-placement='right']": {
       "margin-left": ".5rem !important",
 
       ".arrow": {
@@ -44,7 +44,7 @@ const popover = (theme) => ({
       }
     },
 
-    "&[data-popper-placement='bottom']": {
+    "&[data-placement='bottom']": {
       "margin-top": ".5rem !important",
 
       ".arrow": {
@@ -52,7 +52,7 @@ const popover = (theme) => ({
       }
     },
 
-    "&[data-popper-placement='left']": {
+    "&[data-placement='left']": {
       "margin-right": ".5rem !important",
 
       ".arrow": {
