@@ -1,0 +1,76 @@
+---
+title: Tailwind CSS Tooltip - Material Tailwind
+description: Customise your web projects with our easy-to-use Tooltip component for Tailwind CSS using Material Design guidelines.
+navigation: ["tooltip", "tooltip position"]
+---
+
+# Tailwind CSS Tooltip
+
+Customise your web projects with an easy-to-use and responsive Tailwind CSS tooltip!
+
+A tooltip is a small pop-up element that appears while the user moves the mouse pointer over an element. Use it when you want to specify extra information about something when the user moves the mouse pointer over an element.
+
+See below our example that will help you create a simple tooltip for your project.
+
+<br />
+
+<ComponentCard id="tooltip">
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip top</button>
+<div class="tooltip" role="tooltip" data-placement="top">My tooltip<div class="arrow" data-popper-arrow></div></div>
+</ComponentCard>
+
+```html showLineNumbers
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip top</button>
+<div class="tooltip" role="tooltip" data-placement="top">
+  My tooltip
+  <div class="arrow" data-popper-arrow></div>
+</div>
+```
+<br />
+<br />
+{" "}
+
+### Tooltip position
+
+You can simply change the tooltip position by changing the **data-placement=" "** attribute with the following values: ***top***, ***right***, ***bottom***, ***left***.
+
+<br />
+
+<ComponentCard id="tooltip position">
+<div className="flex">
+  <button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip top</button>
+  <div class="tooltip" role="tooltip" data-placement="top">Top tooltip<div class="arrow" data-popper-arrow></div></div>
+  <button class="button button-pink mx-4" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip right</button>
+  <div class="tooltip" role="tooltip" data-placement="right">Right tooltip<div class="arrow" data-popper-arrow></div></div>
+  <button class="button button-pink mr-4" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip bottom</button>
+  <div class="tooltip" role="tooltip" data-placement="bottom">Bottom tooltip<div class="arrow" data-popper-arrow></div></div>
+  <button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip left</button>
+  <div class="tooltip" role="tooltip" data-placement="left">Left tooltip<div class="arrow" data-popper-arrow></div></div>
+</div>
+</ComponentCard>
+
+```html showLineNumbers
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip top</button>
+<div class="tooltip" role="tooltip" data-placement="top">
+  Top tooltip
+  <div class="arrow" data-popper-arrow></div>
+</div>
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip right</button>
+<div class="tooltip" role="tooltip" data-placement="right">
+  Right tooltip
+  <div class="arrow" data-popper-arrow></div>
+</div>
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip bottom</button>
+<div class="tooltip" role="tooltip" data-placement="bottom">
+  Bottom tooltip
+  <div class="arrow" data-popper-arrow></div>
+</div>
+<button class="button button-pink" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip left</button>
+<div class="tooltip" role="tooltip" data-placement="left">
+  Left tooltip
+  <div class="arrow" data-popper-arrow></div>
+</div>
+```
+<br />
+<br />
+{" "}
