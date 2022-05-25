@@ -26,7 +26,9 @@ export const routes = [
       "progress",
       "radio",
       "switch",
+      "tabs",
       "textarea",
+      "tooltip",
       "typography"
     ]
   }
