@@ -29,7 +29,9 @@ const { pagination } = require("../theme/components/pagination");
 const { popover } = require("../theme/components/popover");
 const { progress } = require("../theme/components/progress");
 const { radio } = require("../theme/components/radio");
+const { tabs } = require("../theme/components/tabs");
 const { toggle } = require("../theme/components/switch");
+const { tooltip } = require("../theme/components/tooltip");
 const { typo } = require("../theme/components/typo");
 
 const materialTailwindConfig = {
@@ -60,7 +62,9 @@ const materialTailwindConfig = {
       addComponents(popover(theme));
       addComponents(progress(theme));
       addComponents(radio(theme));
+      addComponents(tabs(theme));
       addComponents(toggle(theme));
+      addComponents(tooltip(theme));
       addComponents(typo(theme));
     })
   ]
