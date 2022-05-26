@@ -12,34 +12,43 @@ const tabs = (theme) => ({
       flex: "1 1 auto",
       "text-align": "center",
       "z-index": "3",
+      
 
-      '.nav-link': {
+      ".nav-link": {
         display: "block",
         position: "relative",
-        transition: "color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out",
+        transition: "color .5s ease,background-color .5s ease,border-color .5s ease",
         "z-index": "99",
         width: "100%",
         color: theme("colors.dark"),
         cursor: "pointer",
         "border-radius": ".5rem",
         "background-color": "inherit",
-        animation: ".2s ease",
+        animation: ".5s ease",
 
         "&.active": {
           background: theme("colors.white"),
-          animation: ".2s ease"
+          animation: ".5s ease"
         }
       }
     },
     ".moving-tab": {
+      display: "block",
+      border: "0",
+      "background-image": "none",
+      "text-align": "center",
+      flex: "1 1 auto",
+      "border-radius": ".5rem",
+      "z-index": "10",
+      animation: ".5s ease",
       padding: "4px !important",
-      animation: ".2s ease",
+
 
       ".nav-link": {
         "&.active": {
           color: theme("colors.white"),
           "font-weight": "600",
-          animation: ".2s ease",
+          animation: ".5s ease",
           background: "transparent",
           color: "transparent"
         }
@@ -49,12 +58,21 @@ const tabs = (theme) => ({
 
   ".tabs-content": {
     ".tab-panel": {
+      color: theme("colors.secondary"),
       opacity: "0",
       display: "none",
+      transition: "opacity .15s linear",
+      "-webkit-font-smoothing": "antialiased",
+      "line-height": "1.625",
+      "font-weight": "300",
+      "font-size": "1rem",
+      "font-family": "Roboto, sans-serif",
+
 
       "&.active": {
         opacity: "1",
-        display: "block"
+        display: "block",
+        transition: "opacity .15s linear"
       }
     }
   }
