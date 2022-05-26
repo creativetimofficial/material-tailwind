@@ -232,31 +232,28 @@ window.onload = function() {
 
   // Navbar collapse
 
-  // var expand_trigger = document.querySelector("[navbar-trigger]");
-  // console.log(expand_trigger);
-  // var bar1 = document.querySelector("[bar1]");
-  // var bar2 = document.querySelector("[bar2]");
-  // var bar3 = document.querySelector("[bar3]");
-  // var navbar_collapse = document.querySelector("[navbar-menu]");
-  // console.log(navbar_collapse);
-
-  // const collapse_height = navbar_collapse.scrollHeight;
-  // console.log(collapse_height);
-
-  // expand_trigger.addEventListener("click", function () {
-  //   elements = navbar_collapse.querySelectorAll("a");
-    
-  //   navbar_collapse.classList.toggle('open');
-
-  //   bar1.classList.toggle("rotate-45");
-  //   bar1.classList.toggle("origin-[10%_10%]");
-  //   bar1.classList.toggle("mt-1");
-  //   bar2.classList.toggle("opacity-0");
-  //   bar3.classList.toggle("-rotate-45");
-  //   bar3.classList.toggle("origin-[10%_90%]");
-  //   bar3.classList.toggle("mt-[0.1875rem]");
-  //   bar3.classList.toggle("mt-[0.4375rem]");
-  // });
+  if (document.querySelector("[navbar-trigger]")) {
+    var expand_trigger = document.querySelector("[navbar-trigger]");
+    var bar1 = document.querySelector("[bar1]");
+    var bar2 = document.querySelector("[bar2]");
+    var bar3 = document.querySelector("[bar3]");
+  
+    expand_trigger.addEventListener("click", function () {
+  
+      var navbar_collapse = document.querySelector("[navbar-menu]");
+      
+      navbar_collapse.classList.toggle('open');
+  
+      bar1.classList.toggle("rotate-45");
+      bar1.classList.toggle("origin-[10%_10%]");
+      bar1.classList.toggle("mt-1");
+      bar2.classList.toggle("opacity-0");
+      bar3.classList.toggle("-rotate-45");
+      bar3.classList.toggle("origin-[10%_90%]");
+      bar3.classList.toggle("mt-[0.1875rem]");
+      bar3.classList.toggle("mt-[0.4375rem]");
+    });  
+  }
 
   // Radio
   var radios = document.querySelectorAll('[type="radio"]');
@@ -418,12 +415,11 @@ window.onload = function() {
     var first_li = item.querySelector("li:first-child .nav-link");
     var tab = first_li.cloneNode();
     tab.innerHTML = "-";
-    tab.classList.remove("bg-inherit");
     tab.classList.add("bg-white");
     tab.classList.add("text-white");
-    tab.style.animation = ".2s ease";
+    tab.style.animation = ".5s ease";
 
-    moving_div.classList.add("moving-tab", "z-10", "absolute", "nav-link", "text-slate-700", "rounded-lg", "bg-inherit", "flex-auto", "text-center", "bg-none", "border-0", "block");
+    moving_div.classList.add("moving-tab", "absolute");
     moving_div.appendChild(tab);
     item.appendChild(moving_div);
 
@@ -444,8 +440,10 @@ window.onload = function() {
         item.querySelector("li:nth-child(" + index + ") .nav-link").onclick = function () {
           item.querySelectorAll("li").forEach(function (list_item) {
             list_item.firstElementChild.classList.remove("active");
+            list_item.firstElementChild.setAttribute("aria-selected", "false");
           });
           li.firstElementChild.classList.add("active");
+          li.firstElementChild.setAttribute("aria-selected", "true");
           moving_div = item.querySelector(".moving-tab");
           let sum = 0;
           if (item.classList.contains("flex-col")) {
@@ -475,9 +473,9 @@ window.onload = function() {
       var tab = item.querySelector(".nav-link.active").cloneNode();
       tab.innerHTML = "-";
       tab.classList.remove("bg-inherit");
-      tab.style.animation = ".2s ease";
+      tab.style.animation = ".5s ease";
 
-      moving_div.classList.add("moving-tab", "z-10", "absolute", "text-slate-700", "rounded-full", "bg-inherit", "flex-auto", "text-center", "bg-none", "border-0", "block");
+      moving_div.classList.add("moving-tab", "absolute");
       moving_div.appendChild(tab);
 
       item.appendChild(moving_div);
@@ -531,7 +529,7 @@ window.onload = function() {
   }
 
   // Nav Tabs Navigation
-  var total = document.querySelectorAll(".tabs");
+  var total = document.querySelectorAll("[tab-panel]");
 
   if (total[0]) {
     total.forEach((nav_pills) => {
@@ -540,10 +538,11 @@ window.onload = function() {
       links.forEach((link) => {
         link.addEventListener("click", function () {
           var clicked_tab = document.querySelector("#" + link.getAttribute("aria-controls"));
-
+  
           if (!clicked_tab.classList.contains("active")) {
-            let active_link = document.querySelector("li a.nav-link.active");
+            let active_link = clicked_tab.closest(".nav-tabs").querySelector("li a.nav-link.active");
             let active_panel = document.querySelector("#" + active_link.getAttribute("aria-controls"));
+      
             active_panel.classList.remove("active");
             clicked_tab.classList.add("active");
           }
