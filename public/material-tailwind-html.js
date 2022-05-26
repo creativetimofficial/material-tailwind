@@ -551,6 +551,13 @@ window.onload = function() {
     });
   }
 
+  // Selectpicker
+
+  if (document.getElementById("choice-button")) {
+    var element = document.getElementById("choice-button");
+    const example = new Choices(element, {});
+  }
+
 }
 
 // Change the npm install command
