@@ -25,6 +25,7 @@ export const routes = [
       "popover",
       "progress",
       "radio",
+      "select",
       "switch",
       "tabs",
       "textarea",
