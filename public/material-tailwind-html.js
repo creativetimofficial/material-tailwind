@@ -555,9 +555,15 @@ window.onload = function() {
 
   if (document.getElementById("choice-button")) {
     var element = document.getElementById("choice-button");
-    const example = new Choices(element, {});
+    const example = new Choices(element, {
+      searchEnabled: false
+    });
   }
 
+  if (document.getElementById("choice-search")) {
+    var element = document.getElementById("choice-search");
+    const example = new Choices(element, {});
+  }
 }
 
 // Change the npm install command
