@@ -21,16 +21,13 @@ const navbar = (theme) => ({
     "@media (max-width: 992px)": {
       ".navbar-collapse": {
         display: "block",
-        position: "absolute",
-        background: "#fff",
+        position: "relative",
         width: "100%",
         left: "0",
-        top: "100%",
         "z-index": "12",
 
         ".navbar-nav": {
-        display: "block",
-         
+        display: "block"
         }
       }
     },
@@ -87,16 +84,11 @@ const navbar = (theme) => ({
     ".navbar-trigger-bar": {
       display: "block",
       position: "relative",
-      width: "22px",
+      width: "28px",
       height: "1px",
       "border-radius": "1px",
       background: "#6c757d",
-      transition: "all .2s",
-      margin: "0 auto",
-
-      "&.bar2,&.bar3": {
-        "margin-top": "0.438rem"
-      }
+      transition: "all .2s"
     }
   },
   ".container-lg": {
@@ -105,6 +97,11 @@ const navbar = (theme) => ({
     "flex-wrap": "inherit",
     "align-items": "center",
     "justify-content": "space-between"
+  },
+  "@media (max-width: 992px)": {
+    ".container-lg": {
+      "flex-wrap": "wrap"
+    }
   }
 });
 
