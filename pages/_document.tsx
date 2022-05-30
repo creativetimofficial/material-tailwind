@@ -51,7 +51,7 @@ class MyDocument extends Document {
             type="text/javascript"
             dangerouslySetInnerHTML={{ __html: process.env.rawJsFromFile }}
           />
-           <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+           <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
            
            {/* Choices JavaScript (latest)  */}
           <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
