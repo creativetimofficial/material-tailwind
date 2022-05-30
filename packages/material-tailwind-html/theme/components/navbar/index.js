@@ -8,9 +8,28 @@ const navbar = (theme) => ({
 
     ".navbar-collapse": {
       display: "flex",
-      "flex-basis": "auto",
+      "flex-basis": "100%",
       "flex-grow": "1",
-      "align-items": "center"
+      "align-items": "center",
+
+      "@media (max-width: 992px)": {
+        "&.collapse:not(.open)": {
+          display: "none"
+        }
+      }
+    },
+    "@media (max-width: 992px)": {
+      ".navbar-collapse": {
+        display: "block",
+        position: "relative",
+        width: "100%",
+        left: "0",
+        "z-index": "12",
+
+        ".navbar-nav": {
+        display: "block"
+        }
+      }
     },
 
     ".navbar-nav": {
@@ -34,7 +53,8 @@ const navbar = (theme) => ({
     ".nav-brand": {
       color: theme("colors.dark.500"),
       "font-size": ".875rem",
-      "font-weight": "700"
+      "font-weight": "700",
+      width: "inherit"
     },
 
     ".navbar-trigger": {
@@ -64,18 +84,24 @@ const navbar = (theme) => ({
     ".navbar-trigger-bar": {
       display: "block",
       position: "relative",
-      width: "22px",
+      width: "28px",
       height: "1px",
       "border-radius": "1px",
       background: "#6c757d",
-      transition: "all .2s",
-      margin: "0 auto",
-
-      "&.bar2,&.bar3": {
-        "margin-top": "0.438rem"
-      }
+      transition: "all .2s"
     }
-
+  },
+  ".container-lg": {
+    display: "flex",
+    width: "100%",
+    "flex-wrap": "inherit",
+    "align-items": "center",
+    "justify-content": "space-between"
+  },
+  "@media (max-width: 992px)": {
+    ".container-lg": {
+      "flex-wrap": "wrap"
+    }
   }
 });
 

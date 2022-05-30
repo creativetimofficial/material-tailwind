@@ -20,10 +20,16 @@ export const routes = [
       "icon-button",
       "input",
       "menu",
+      "navbar",
+      "pagination",
+      "popover",
       "progress",
       "radio",
+      "select",
       "switch",
+      "tabs",
       "textarea",
+      "tooltip",
       "typography"
     ]
   }
