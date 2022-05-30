@@ -26,8 +26,8 @@ See below our select component example that you can use in your Tailwind CSS pro
 </ComponentCard>
 
 ```html showLineNumbers
-<div className="w-1/6">
-  <select className="form-control" name="choice-button" id="choice-button" placeholder="Language">
+<div class="w-1/6">
+  <select class="form-control" name="choice-button" id="choice-button" placeholder="Language">
     <option defaultValue="Choice 1" selected>Brazil</option>
     <option defaultValue="Choice 2">Bucharest</option>
     <option defaultValue="Choice 3">London</option>
@@ -41,9 +41,11 @@ See below our select component example that you can use in your Tailwind CSS pro
 You have to add the following initialization script to run this plugin:
 
 ```js showLineNumbers
-if (document.getElementById("choice-button")) {
-  var element = document.getElementById("choice-button");
-  const example = new Choices(element, {});
+if (document.getElementById("choice-search")) {
+  var element = document.getElementById("choice-search");
+  const example = new Choices(element, {
+    searchEnabled: false
+  });
 }
 ```
 <br/>
@@ -65,8 +67,8 @@ if (document.getElementById("choice-button")) {
 </ComponentCard>
 
 ```html showLineNumbers
-<div className="w-1/6">
-  <select className="form-control" name="choice-search" id="choice-search" placeholder="Location">
+<div class="w-1/6">
+  <select class="form-control" name="choice-search" id="choice-search" placeholder="Location">
     <option defaultValue="Choice 1" selected>Brazil</option>
     <option defaultValue="Choice 2">Bucharest</option>
     <option defaultValue="Choice 3">London</option>
@@ -75,14 +77,12 @@ if (document.getElementById("choice-button")) {
 </div>
 ```
 
-You have to add **searchEnabled: false** to the init function - it will look like this:
+You have to erase the **searchEnabled: false** from the init function - it will look like this:
 
 ```js showLineNumbers
-if (document.getElementById("choice-search")) {
-  var element = document.getElementById("choice-search");
-  const example = new Choices(element, {
-    searchEnabled: false
-  });
+if (document.getElementById("choice-button")) {
+  var element = document.getElementById("choice-button");
+  const example = new Choices(element, {});
 }
 ```
 <br/>
