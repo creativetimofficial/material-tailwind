@@ -17,19 +17,13 @@ const tabs = (theme) => ({
       ".nav-link": {
         display: "block",
         position: "relative",
-        transition: "color .5s ease,background-color .5s ease,border-color .5s ease",
-        "z-index": "99",
+        transition: "background-color .5s ease",
+        "z-index": "10",
         width: "100%",
         color: theme("colors.dark"),
         cursor: "pointer",
         "border-radius": ".5rem",
         "background-color": "inherit",
-        animation: ".5s ease",
-
-        "&.active": {
-          background: theme("colors.white"),
-          animation: ".5s ease"
-        }
       }
     },
     ".moving-tab": {
@@ -39,8 +33,8 @@ const tabs = (theme) => ({
       "text-align": "center",
       flex: "1 1 auto",
       "border-radius": ".5rem",
-      "z-index": "10",
-      animation: ".5s ease",
+      "z-index": "1",
+      background: theme("colors.white"),
       padding: "4px !important",
 
 
@@ -48,8 +42,6 @@ const tabs = (theme) => ({
         "&.active": {
           color: theme("colors.white"),
           "font-weight": "600",
-          animation: ".5s ease",
-          background: "transparent",
           color: "transparent"
         }
       }
