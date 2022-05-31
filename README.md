@@ -5,7 +5,10 @@
 </br>
 <p align="center">
   <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
-    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat" alt="License" />
+    <img src="https://img.shields.io/npm/l/@material-tailwind/react?label=%40material-taiwlind%2Freact" alt="License" />
+  </a>
+  <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/@material-tailwind/html?label=%40material-taiwlind%2Fhtml" alt="License" />
   </a>
   <a href="https://img.shields.io/badge/version-3.1.0-blue.svg">
     <img src="https://img.shields.io/badge/version-3.1.0-blue.svg" alt="Version" />
@@ -42,7 +45,7 @@ Visit [https://www.material-tailwind.com/docs/react/quick-start](https://www.mat
 
 ### Community
 
-We're excited to see the community adopt NextUI, raise issues, and provide feedback.
+We're excited to see the community adopt Material Tailwind, raise issues, and provide feedback.
 Whether it's a feature request, bug report, or a project to showcase, please get involved!
 
 - [Discord](https://discord.com/invite/FhCJCaHdQa)

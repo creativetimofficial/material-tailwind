@@ -239,6 +239,7 @@ const colors = {
     700: "#3a416f"
   },
   light: {
+    300: "#f8f9fa",
     400: "#ebeff4",
     500: "#f0f2f5",
     600: "#ced4da"
