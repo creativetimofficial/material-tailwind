@@ -6,17 +6,28 @@ Material Tailwind HTML is an easy to use components library for Tailwind CSS. Ma
 
 ## Tailwind CSS Components
 
+- Accordion
 - Alert
 - Avatar
+- Breadcrumbs
 - Button
+- Card
 - Checkbox
 - Chip
+- Dialog
 - Icon Button
 - Input
+- Menu
+- Navbar
+- Pagination
+- Popover
 - Progress Bar
 - Radio Button
+- Select
 - Switch
+- Tabs
 - Textarea
+- Tooltip
 - Typography
 
 <br />
