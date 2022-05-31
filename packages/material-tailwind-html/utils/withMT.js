@@ -6,7 +6,6 @@ const breakpoints = require("../theme/base/breakpoints");
 
 const merge = require("deepmerge");
 const plugin = require("tailwindcss/plugin");
-const forms = require("@tailwindcss/forms");
 const colors = require("../theme/base/colors");
 const typography = require("../theme/base/typography");
 const shadows = require("../theme/base/shadows");
