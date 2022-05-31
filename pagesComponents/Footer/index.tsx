@@ -169,7 +169,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="inline-flex items-center no-underline text-dark font-semibold"
           >
-            <span className="mr-1">Sponsored by</span>
+            <span className="mr-1">Powered by</span>
             <span>
               <svg height="20" viewBox="0 0 283 64" fill="none">
                 <path
