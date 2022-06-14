@@ -420,7 +420,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
                 {selected(children[selectedIndex - 1], selectedIndex - 1)}
               </span>
             ) : (
-              <span className={buttonContentClasses} {...children[selectedIndex - 1]?.props} />
+              <span {...children[selectedIndex - 1]?.props} className={buttonContentClasses} />
             )}
             <div className={arrowClasses}>
               {arrow ?? (
