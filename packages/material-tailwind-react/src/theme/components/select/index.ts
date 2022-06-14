@@ -188,7 +188,7 @@ export const select: SelectStylesType = {
         fontFamily: "font-sans",
         fontWeight: "font-normal",
         textAlign: "text-left",
-        outline: "outline-0 focus:outlined-0",
+        outline: "outline outline-0 focus:outline-0",
         disabled: "disabled:bg-blue-grey-50 disabled:border-0",
         transition: "transition-all",
       },
@@ -249,6 +249,7 @@ export const select: SelectStylesType = {
           background: "hover:bg-blue-grey-50 focus:bg-blue-grey-50",
           opacity: "hover:bg-opacity-80 focus:bg-opacity-80",
           color: "hover:text-blue-grey-900 focus:text-blue-grey-900",
+          outline: "outline outline-0",
           transition: "transition-all",
         },
         active: {

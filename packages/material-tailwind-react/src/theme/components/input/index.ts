@@ -111,7 +111,7 @@ export const input: InputStylesType = {
         color: "text-blue-grey-700",
         fontFamily: "font-sans",
         fontWeight: "font-normal",
-        outline: "outline-0 focus:outlined-0",
+        outline: "outline outline-0 focus:outline-0",
         disabled: "disabled:bg-blue-grey-50 disabled:border-0",
         transition: "transition-all",
       },
