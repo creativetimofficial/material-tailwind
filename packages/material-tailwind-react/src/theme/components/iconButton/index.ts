@@ -60,8 +60,8 @@ export const iconButton: IconButtonStyleTypes = {
   },
   styles: {
     base: {
-      display: "inline-grid",
-      placeItems: "place-items-center",
+      position: "relative",
+      verticalAlign: "middle",
       userSelect: "none",
       fontFamily: "font-sans",
       fontWeight: "font-medium",

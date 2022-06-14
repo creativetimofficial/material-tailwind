@@ -29,7 +29,7 @@
 
 ## Getting Started - HTML
 
-Visit <a aria-label="@material-tailwind/html learn" href="https://www.material-tailwind.com/docs/html/quick-start">https://www.material-tailwind.com/docs/react/quick-start</a> to get started with @material-tailwind/html.
+Visit <a aria-label="@material-tailwind/html learn" href="https://www.material-tailwind.com/docs/html/quick-start">https://www.material-tailwind.com/docs/html/quick-start</a> to get started with @material-tailwind/html.
 
 ## Getting Started - React
 
