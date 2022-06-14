@@ -64,7 +64,6 @@ export const button: ButtonStyleTypes = {
   styles: {
     base: {
       initial: {
-        display: "inline-block",
         verticalAlign: "middle",
         userSelect: "none",
         fontFamily: "font-sans",
