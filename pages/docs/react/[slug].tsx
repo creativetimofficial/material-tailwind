@@ -338,7 +338,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                                   onClick={() => setMobileNav(false)}
                                 >
                                   {page.includes("-")
-                                    ? page.split("-").join(" ")
+                                    ? page
+                                        .split("-")
+                                        .map((el) =>
+                                          el === "css" ? "CSS" : el
+                                        )
+                                        .join(" ")
                                     : page}
                                 </Typography>
                               </a>
@@ -360,7 +365,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                     <a>
                       <Typography className="py-2 capitalize !font-medium !text-blue-grey-500 hover:!text-blue-grey-900 !transition-colors">
                         <i className="fas fa-caret-left mr-2 mt-px" />
-                        {frontMatter.prev.replace("-", " ")}
+                        {frontMatter.prev.includes("-")
+                          ? frontMatter.prev
+                              .split("-")
+                              .map((el) => (el === "css" ? "CSS" : el))
+                              .join(" ")
+                          : frontMatter.prev}
                       </Typography>
                     </a>
                   </Link>
@@ -369,7 +379,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                   <Link href={`/docs/react/${frontMatter.next}`}>
                     <a>
                       <Typography className="py-2 capitalize !font-medium !text-blue-grey-500 hover:!text-blue-grey-900 !transition-colors">
-                        {frontMatter.next.replace("-", " ")}
+                        {frontMatter.next.includes("-")
+                          ? frontMatter.next
+                              .split("-")
+                              .map((el) => (el === "css" ? "CSS" : el))
+                              .join(" ")
+                          : frontMatter.next}
                         <i className="fas fa-caret-right ml-2 mt-px" />
                       </Typography>
                     </a>
