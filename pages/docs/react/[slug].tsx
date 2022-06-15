@@ -253,7 +253,6 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                   <svg
                     width="3"
                     height="6"
-                    aria-hidden="true"
                     className="mx-3 overflow-visible text-blue-grey-300"
                   >
                     <path
