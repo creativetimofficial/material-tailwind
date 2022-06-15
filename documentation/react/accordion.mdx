@@ -33,10 +33,9 @@ See below our simple and versatile accordion example that you can use in your Re
           >
             <AccordionHeader>What is Material Tailwind?</AccordionHeader>
             <AccordionBody>
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
             </AccordionBody>
           </Accordion>
           <Accordion
@@ -45,10 +44,9 @@ See below our simple and versatile accordion example that you can use in your Re
           >
             <AccordionHeader>How to use Material Tailwind?</AccordionHeader>
             <AccordionBody>
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
             </AccordionBody>
           </Accordion>
           <Accordion
@@ -59,10 +57,9 @@ See below our simple and versatile accordion example that you can use in your Re
               What can I do with Material Tailwind?
             </AccordionHeader>
             <AccordionBody>
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
             </AccordionBody>
           </Accordion>
         </>
@@ -72,7 +69,7 @@ See below our simple and versatile accordion example that you can use in your Re
 </State>
 
 ```jsx showLineNumbers
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -91,28 +88,25 @@ export default function Example() {
       <Accordion open={open === 1} onClick={() => handleOpen(1)}>
         <AccordionHeader>What is Material Tailwind?</AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 2} onClick={() => handleOpen(2)}>
         <AccordionHeader>How to use Material Tailwind?</AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 3} onClick={() => handleOpen(3)}>
         <AccordionHeader>What can I do with Material Tailwind?</AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
     </Fragment>
