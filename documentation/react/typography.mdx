@@ -19,6 +19,7 @@ prev: tooltip
 Use our Tailwind CSS typography to present your website/web app as clearly and efficiently as possible.
 
 Below we are presenting a simple typography component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+
 <br />
 
 <ComponentCard id="typography">
@@ -29,7 +30,7 @@ Below we are presenting a simple typography component example. It comes in diffe
   </Typography>
 </ComponentCard>
 
-```jsx showLineNumbers {1, 5-10}
+```jsx showLineNumbers
 import { Typography } from "@material-tailwind/react";
 
 export default function Example() {
@@ -78,7 +79,8 @@ The typography component comes with 9 different variants that you can change it 
   </div>
 </ComponentCard>
 
-```jsx showLineNumbers {6-29}
+```jsx showLineNumbers
+import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -136,7 +138,8 @@ The alert component comes with 23 different colors that you can change it using 
   </div>
 </ComponentCard>
 
-```jsx showLineNumbers {6-17}
+```jsx showLineNumbers
+import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -171,7 +174,7 @@ You can change the typography text color into a gradient color using the <Code>t
   </Typography>
 </ComponentCard>
 
-```jsx showLineNumbers {5-7}
+```jsx showLineNumbers
 import { Typography } from "@material-tailwind/react";
 
 export default function GradientColor() {
