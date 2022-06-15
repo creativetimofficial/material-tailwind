@@ -20,7 +20,7 @@ See below our simple chip component example that you can use for your Tailwind C
   <Chip value="chip" />
 </ComponentCard>
 
-```jsx showLineNumbers {1, 4}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
@@ -41,7 +41,7 @@ The chip component comes with 2 different variants that you can change it using 
   </div>
 </ComponentCard>
 
-```jsx showLineNumbers {6-7}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -74,7 +74,7 @@ The chip component comes with 19 different colors that you can change it using t
   </div>
 </ComponentCard>
 
-```jsx showLineNumbers {6-14}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -128,9 +128,9 @@ The chip component is a dismissible component that you can control it using the 
   </ComponentCard>
 </State>
 
-```jsx showLineNumbers {5, 8-26}
+```jsx showLineNumbers
 import { useState, Fragment } from "react";
-import { Chip } from "@material-tailwind/react";
+import { Chip, Button } from "@material-tailwind/react";
 
 export default function Dismissible() {
   const [show, setShow] = useState(true);
