@@ -16,13 +16,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@material-tailwind/react/*": [
-        "./packages/material-tailwind-react/src/*"
-      ],
-      "components/*": ["./packages/material-tailwind-react/src/components/*"],
-      "context/*": ["./packages/material-tailwind-react/src/context/*"],
-      "theme/*": ["./packages/material-tailwind-react/src/theme/*"],
-      "utils/*": ["./packages/material-tailwind-react/src/utils/*"]
+      "@material-tailwind/react": ["./packages/material-tailwind-react/src"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
