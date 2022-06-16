@@ -9,20 +9,38 @@ navigation: ["switch"]
 Use our Tailwind CSS switch component to let users adjust settings on/off. The option that the switch controls, as well as the state it's in, should be made clear from the corresponding inline label.
 
 Use the following example to create a simple and easy-to-use switch component for your Tailwind CSS project.
-<br/>
 
-<ComponentCard id="switch">
-<div className="form-check form-switch flex items-center mb-4">
-  <input className="opacity-0 cursor-pointer absolute z-10 w-8 h-5" data-attribute="toggle" id="remember"/>
-  <div className="form-check-input"></div>
-  <label className="form-check-label mb-0 ml-2 cursor-pointer select-none" for="remember">Remember me</label>
-</div>
-</ComponentCard>
+<br />
+
+<ComponentPreview id="switch">
+  <div className="form-check form-switch mb-4 flex items-center">
+    <input
+      className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+      data-attribute="toggle"
+      id="remember"
+    />
+    <div className="form-check-input"></div>
+    <label
+      className="form-check-label mb-0 ml-2 cursor-pointer select-none"
+      for="remember"
+    >
+      Remember me
+    </label>
+  </div>
+</ComponentPreview>
 
 ```html showLineNumbers
-<div class="form-check form-switch flex items-center mb-4">
-  <input class="opacity-0 cursor-pointer absolute z-10 w-8 h-5" data-attribute="toggle" id="remember"/>
+<div class="form-check form-switch mb-4 flex items-center">
+  <input
+    class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+    data-attribute="toggle"
+    id="remember"
+  />
   <div class="form-check-input"></div>
-  <label class="form-check-label mb-0 ml-2 cursor-pointer select-none" for="remember">Remember me</label>
+  <label
+    class="form-check-label mb-0 ml-2 cursor-pointer select-none"
+    for="remember"
+    >Remember me</label
+  >
 </div>
 ```

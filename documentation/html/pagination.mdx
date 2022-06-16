@@ -6,34 +6,47 @@ navigation: ["pagination", "color-variation", "pagination gradient"]
 
 # Tailwind CSS Pagination
 
-Get started on your web projects with our Tailwind CSS pagination which is a compact elements that represent an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions. 
+Get started on your web projects with our Tailwind CSS pagination which is a compact elements that represent an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions.
 
 See below our simple pagination component example that you can use for your Tailwind CSS project.
-<br/>
 
-<ComponentCard id="pagination">
-<nav>
-  <ul className="pagination pagination-pink">
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Previous">
-        <span className="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li className="page-item active"><a className="page-link" href="#">1</a></li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-    <li className="page-item"><a className="page-link" href="#">3</a></li>
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Next">
-        <span className="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</ComponentCard>
+<br />
+
+<ComponentPreview id="pagination">
+  <nav>
+    <ul className="pagination pagination-pink">
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Previous">
+          <span className="material-icons">keyboard_arrow_left</span>
+        </a>
+      </li>
+      <li className="page-item active">
+        <a className="page-link" href="#">
+          1
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          2
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          3
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Next">
+          <span className="material-icons">keyboard_arrow_right</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</ComponentPreview>
 
 ```html showLineNumbers
 <nav>
-  <ul class="pagination pagination-pink">
+  <ul class="pagination-pink pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span class="material-icons">keyboard_arrow_left</span>
@@ -43,9 +56,9 @@ See below our simple pagination component example that you can use for your Tail
       <a class="page-link" href="#">1</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a>
+      <a class="page-link" href="#">2</a>
     </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next">
         <span class="material-icons">keyboard_arrow_right</span>
@@ -56,6 +69,7 @@ See below our simple pagination component example that you can use for your Tail
 ```
 
 {" "}
+
 <br />
 <br />
 
@@ -64,27 +78,40 @@ See below our simple pagination component example that you can use for your Tail
 Use this example to create a simple and versatile pagination component.
 
 Change the color of the pagination component by simply add the name of the color (from the list below) after the **.pagination** class.
-<br/>
 
-<ComponentCard id="color variation">
-<nav>
-  <ul className="pagination pagination-cyan">
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Previous">
-        <span className="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li className="page-item active"><a className="page-link" href="#">1</a></li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-    <li className="page-item"><a className="page-link" href="#">3</a></li>
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Next">
-        <span className="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</ComponentCard>
+<br />
+
+<ComponentPreview id="color variation">
+  <nav>
+    <ul className="pagination pagination-cyan">
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Previous">
+          <span className="material-icons">keyboard_arrow_left</span>
+        </a>
+      </li>
+      <li className="page-item active">
+        <a className="page-link" href="#">
+          1
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          2
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          3
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Next">
+          <span className="material-icons">keyboard_arrow_right</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</ComponentPreview>
 
 ```html showLineNumbers
 <nav>
@@ -94,7 +121,9 @@ Change the color of the pagination component by simply add the name of the color
         <span className="material-icons">keyboard_arrow_left</span>
       </a>
     </li>
-    <li className="page-item active"><a className="page-link" href="#">1</a></li>
+    <li className="page-item active">
+      <a className="page-link" href="#">1</a>
+    </li>
     <li className="page-item"><a className="page-link" href="#">2</a></li>
     <li className="page-item"><a className="page-link" href="#">3</a></li>
     <li className="page-item">
@@ -108,63 +137,77 @@ Change the color of the pagination component by simply add the name of the color
 
 ```js
 colors: {
-  "blue-grey"
-  "grey"
-  "brown"
-  "deep-orange"
-  "orange"
-  "amber"
-  "yellow"
-  "lime"
-  "light-green"
-  "green"
-  "teal"
-  "cyan"
-  "light-blue"
-  "blue"
-  "indigo"
-  "deep-purple"
-  "purple"
-  "pink"
-  "red"
-  "secondary"
-  "light"
-  "dark"
+  ("blue-grey");
+  ("grey");
+  ("brown");
+  ("deep-orange");
+  ("orange");
+  ("amber");
+  ("yellow");
+  ("lime");
+  ("light-green");
+  ("green");
+  ("teal");
+  ("cyan");
+  ("light-blue");
+  ("blue");
+  ("indigo");
+  ("deep-purple");
+  ("purple");
+  ("pink");
+  ("red");
+  ("secondary");
+  ("light");
+  ("dark");
 }
 ```
 
 {" "}
+
 <br />
 <br />
 
 ### Pagination with gradient
 
 All you have to do is to set the **.pagination-gradient** class.
-<br/>
 
-<ComponentCard id="pagination gradient">
-<nav>
-  <ul className="pagination pagination-pink pagination-gradient">
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Previous">
-        <span className="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li className="page-item active"><a className="page-link" href="#">1</a></li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-    <li className="page-item"><a className="page-link" href="#">3</a></li>
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Next">
-        <span className="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</ComponentCard>
+<br />
+
+<ComponentPreview id="pagination gradient">
+  <nav>
+    <ul className="pagination-pink pagination pagination-gradient">
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Previous">
+          <span className="material-icons">keyboard_arrow_left</span>
+        </a>
+      </li>
+      <li className="page-item active">
+        <a className="page-link" href="#">
+          1
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          2
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#">
+          3
+        </a>
+      </li>
+      <li className="page-item">
+        <a className="page-link" href="#" aria-label="Next">
+          <span className="material-icons">keyboard_arrow_right</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</ComponentPreview>
 
 ```html showLineNumbers
 <nav>
-  <ul class="pagination pagination-pink pagination-gradient">
+  <ul class="pagination-pink pagination pagination-gradient">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span class="material-icons">keyboard_arrow_left</span>

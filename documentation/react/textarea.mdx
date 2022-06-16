@@ -9,7 +9,7 @@ navigation:
     "textarea-colors",
     "textarea-validations",
     "props",
-    "types"
+    "types",
   ]
 github: textarea
 prev: tabs
@@ -24,11 +24,11 @@ See below our example that will help you create a simple textarea for your proje
 
 <br />
 
-<ComponentCard id="textarea">
+<ComponentPreview id="textarea">
   <div className="w-96">
     <Textarea label="Message" />
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -44,20 +44,20 @@ export default function Example() {
 
 The textarea component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="textarea-variants">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="textarea-variants">
+  <div className="flex w-full items-end gap-4">
     <Textarea variant="outlined" label="Outlined" />
     <Textarea variant="standard" label="Standard" />
     <Textarea variant="static" label="Static" placeholder="Static" />
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Textarea variant="outlined" label="Outlined" />
       <Textarea variant="standard" label="Standard" />
       <Textarea variant="static" label="Static" placeholder="Static" />
@@ -72,19 +72,19 @@ export default function Variants() {
 
 The textarea component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentCard id="textarea-sizes">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="textarea-sizes">
+  <div className="flex w-full items-end gap-4">
     <Textarea size="md" label="Textarea Medium" />
     <Textarea size="lg" label="Textarea Large" />
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Textarea size="md" label="Textarea Medium" />
       <Textarea size="lg" label="Textarea Large" />
     </div>
@@ -98,21 +98,21 @@ export default function Sizes() {
 
 The textarea component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="textarea-colors">
-  <div className="flex flex-col gap-4 w-96">
+<ComponentPreview id="textarea-colors">
+  <div className="flex w-96 flex-col gap-4">
     <Textarea color="blue" label="Textarea Blue" />
     <Textarea color="purple" label="Textarea Purple" />
     <Textarea color="indigo" label="Textarea Indigo" />
     <Textarea color="teal" label="Textarea Teal" />
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex flex-col gap-4 w-96">
+    <div className="flex w-96 flex-col gap-4">
       <Textarea color="blue" label="Textarea Blue" />
       <Textarea color="purple" label="Textarea Purple" />
       <Textarea color="indigo" label="Textarea Indigo" />
@@ -128,19 +128,19 @@ export default function Colors() {
 
 The textarea component comes with error and success states for performing validations.
 
-<ComponentCard id="textarea-validations">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="textarea-validations">
+  <div className="flex w-full items-end gap-4">
     <Textarea label="Textarea Error" error />
     <Textarea label="Textarea Success" success />
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Textarea label="Textarea Error" error />
       <Textarea label="Textarea Success" success />
     </div>

@@ -8,7 +8,7 @@ navigation:
     "card-header-props",
     "card-body-props",
     "card-footer-props",
-    "types"
+    "types",
   ]
 github: card
 prev: button
@@ -25,8 +25,8 @@ See below our beautiful card example that you can use in your React and Tailwind
 
 <br />
 
-<ComponentCard id="card">
-  <Card className="w-96 mt-6">
+<ComponentPreview id="card">
+  <Card className="mt-6 w-96">
     <CardHeader color="blue" className="relative h-56">
       <Image src="/img/blog.jpg" alt="img-blur-shadow" layout="fill" />
     </CardHeader>
@@ -42,7 +42,7 @@ See below our beautiful card example that you can use in your React and Tailwind
     </CardBody>
     <CardFooter
       divider
-      className="flex items-center justify-between py-3 -mt-4"
+      className="-mt-4 flex items-center justify-between py-3"
     >
       <Typography variant="small">$899/night</Typography>
       <Typography variant="small" color="grey" className="flex gap-1">
@@ -51,7 +51,7 @@ See below our beautiful card example that you can use in your React and Tailwind
       </Typography>
     </CardFooter>
   </Card>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import {
@@ -59,17 +59,17 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Card className="w-96 mt-6">
+    <Card className="mt-6 w-96">
       <CardHeader color="blue" className="relative h-56">
         <img
           src="/img/blog.jpg"
           alt="img-blur-shadow"
-          className="w-full h-full"
+          className="h-full w-full"
         />
       </CardHeader>
       <CardBody className="text-center">

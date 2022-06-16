@@ -9,7 +9,7 @@ navigation:
     "menu-handler-props",
     "menu-list-props",
     "menu-item-props",
-    "types"
+    "types",
   ]
 github: menu
 prev: input
@@ -26,7 +26,7 @@ See below our menu example that you can use in your Tailwind CSS and React proje
 
 <br />
 
-<ComponentCard id="menu">
+<ComponentPreview id="menu">
   <Menu>
     <MenuHandler>
       <Button variant="gradient">Open Menu</Button>
@@ -37,7 +37,7 @@ See below our menu example that you can use in your Tailwind CSS and React proje
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import {
@@ -45,7 +45,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Button
+  Button,
 } from "@material-tailwind/react";
 
 export default function Example() {
@@ -70,7 +70,7 @@ export default function Example() {
 
 You can nest one menu inside another one very easily.
 
-<ComponentCard id="nested-menu">
+<ComponentPreview id="nested-menu">
   <Menu>
     <MenuHandler>
       <Button variant="gradient">Open Nested Menu</Button>
@@ -91,7 +91,7 @@ You can nest one menu inside another one very easily.
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import {
@@ -99,7 +99,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Button
+  Button,
 } from "@material-tailwind/react";
 
 export default function NestedMenu() {

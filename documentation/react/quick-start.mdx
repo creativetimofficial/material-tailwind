@@ -11,7 +11,7 @@ navigation:
     "tailwindcss-config",
     "theme-provider",
     "example",
-    "typescript"
+    "typescript",
   ]
 github: quick-start
 next: license
@@ -78,9 +78,9 @@ const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 });
 ```
 
@@ -112,9 +112,9 @@ ReactDOM.render(
 
 Now you're good to go and use @material-tailwind/react in your project.
 
-<ComponentCard id="example">
+<ComponentPreview id="example">
   <Button>Button</Button>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers {1, 4}
 import { Button } from "@material-tailwind/react";

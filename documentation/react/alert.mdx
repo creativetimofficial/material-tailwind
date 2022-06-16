@@ -8,7 +8,7 @@ navigation:
     "alert-colors",
     "alert-dismissible",
     "props",
-    "types"
+    "types",
   ]
 github: alert
 prev: accordion
@@ -25,9 +25,9 @@ See below our simple alert example that you can use in your Tailwind CSS and Rea
 
 <br />
 
-<ComponentCard id="alert">
+<ComponentPreview id="alert">
   <Alert>A simple alert for showing message.</Alert>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Alert } from "@material-tailwind/react";
@@ -43,14 +43,14 @@ export default function Example() {
 
 The alert component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="alert-variants">
-  <div className="flex flex-col gap-2 w-full">
+<ComponentPreview id="alert-variants">
+  <div className="flex w-full flex-col gap-2">
     <Alert>A simple filled alert for showing message.</Alert>
     <Alert variant="gradient">
       <span>A simple gradient alert for showing message.</span>
     </Alert>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Alert } from "@material-tailwind/react";
@@ -73,21 +73,21 @@ export default function Variants() {
 
 The alert component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="alert-colors">
-  <div className="flex flex-col gap-2 w-full">
+<ComponentPreview id="alert-colors">
+  <div className="flex w-full flex-col gap-2">
     <Alert>An info alert for showing message.</Alert>
     <Alert color="red">An error alert for showing message.</Alert>
     <Alert color="green">A success alert for showing message.</Alert>
     <Alert color="amber">A warning alert for showing message.</Alert>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Alert } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <div className="flex w-full flex-col gap-2">
       <Alert color="blue">An info alert for showing message.</Alert>
       <Alert color="red">An error alert for showing message.</Alert>
       <Alert color="green">A success alert for showing message.</Alert>
@@ -104,7 +104,7 @@ export default function Colors() {
 The alert component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
 <State initialState={{ show: true }}>
-  <ComponentCard id="alert-dismissible">
+  <ComponentPreview id="alert-dismissible">
     <Observe>
       {({ setState, show }) => (
         <>
@@ -121,7 +121,7 @@ The alert component is a dismissible component that you can control it using the
             variant="gradient"
             show={show}
             dismissible={{
-              onClose: () => setState((s) => ({ show: false }))
+              onClose: () => setState((s) => ({ show: false })),
             }}
           >
             A dismissible alert for showing message.
@@ -129,7 +129,7 @@ The alert component is a dismissible component that you can control it using the
         </>
       )}
     </Observe>
-  </ComponentCard>
+  </ComponentPreview>
 </State>
 
 ```jsx showLineNumbers
@@ -153,7 +153,7 @@ export default function Colors() {
       <Alert
         show={show}
         dismissible={{
-          onClose: () => setShow(false)
+          onClose: () => setShow(false),
         }}
       >
         A dismissible alert for showing message.

@@ -7,7 +7,7 @@ navigation:
     "accordion-props",
     "accordion-header-props",
     "accordion-body-props",
-    "types"
+    "types",
   ]
 github: accordion
 prev: what-is-tailwind-css
@@ -23,7 +23,7 @@ See below our simple and versatile accordion example that you can use in your Re
 <br />
 
 <State initialState={{ active: 0 }}>
-  <ComponentCard id="accordion">
+  <ComponentPreview id="accordion">
     <Observe>
       {({ setState, active }) => (
         <>
@@ -65,7 +65,7 @@ See below our simple and versatile accordion example that you can use in your Re
         </>
       )}
     </Observe>
-  </ComponentCard>
+  </ComponentPreview>
 </State>
 
 ```jsx showLineNumbers
@@ -73,7 +73,7 @@ import { Fragment, useState } from "react";
 import {
   Accordion,
   AccordionHeader,
-  AccordionBody
+  AccordionBody,
 } from "@material-tailwind/react";
 
 export default function Example() {

@@ -15,20 +15,20 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
 
 <br />
 
-<ComponentCard id="navbar">
-  <Navbar className="max-w-screen-xl mx-auto">
-    <div className="container flex justify-between items-center text-blue-grey-900">
+<ComponentPreview id="navbar">
+  <Navbar className="mx-auto max-w-screen-xl">
+    <div className="container flex items-center justify-between text-blue-grey-900">
       <Typography
         as="a"
         href="#"
         variant="small"
-        className="py-1.5 mr-4 font-normal cursor-pointer"
+        className="mr-4 cursor-pointer py-1.5 font-normal"
       >
         <span>Material Tailwind</span>
       </Typography>
       <ul className="flex items-center gap-6">
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center navbar-item-docs">
+          <a href="#" className="navbar-item-docs flex items-center">
             Pages&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center navbar-item-docs">
+          <a href="#" className="navbar-item-docs flex items-center">
             Account&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center navbar-item-docs">
+          <a href="#" className="navbar-item-docs flex items-center">
             Blocks&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center navbar-item-docs">
+          <a href="#" className="navbar-item-docs flex items-center">
             Docs&nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
       </Button>
     </div>
   </Navbar>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Navbar } from "../packages/material-tailwind-react/src";
@@ -125,13 +125,13 @@ export default function Example() {
   );
 
   return (
-    <Navbar className="max-w-screen-xl mx-auto">
-      <div className="container flex justify-between items-center text-blue-grey-900">
+    <Navbar className="mx-auto max-w-screen-xl">
+      <div className="container flex items-center justify-between text-blue-grey-900">
         <Typography
           as="a"
           href="#"
           variant="small"
-          className="py-1.5 mr-4 font-normal cursor-pointer"
+          className="mr-4 cursor-pointer py-1.5 font-normal"
         >
           Material Tailwind
         </Typography>

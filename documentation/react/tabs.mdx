@@ -9,7 +9,7 @@ navigation:
     "tabs-body-props",
     "tab-props",
     "tab-panel-props",
-    "types"
+    "types",
   ]
 github: tabs
 prev: switch
@@ -26,7 +26,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
 
 <br />
 
-<ComponentCard id="tabs">
+<ComponentPreview id="tabs">
   <Tabs value="html">
     <TabsHeader>
       <Tab value="html">HTML</Tab>
@@ -64,7 +64,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
       </TabPanel>
     </TabsBody>
   </Tabs>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import {
@@ -72,7 +72,7 @@ import {
   TabsHeader,
   TabsBody,
   Tab,
-  TabPanel
+  TabPanel,
 } from "@material-tailwind/react";
 
 export default function Example() {
@@ -82,13 +82,13 @@ export default function Example() {
       value: "html",
       desc: `It really matters and then like it really doesn't matter.
       What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`
+      who are like offended by it, it doesn't matter.`,
     },
     {
       label: "React",
       value: "react",
       desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`
+      to follow my dreams and inspire other people to follow their dreams, too.`,
     },
 
     {
@@ -96,14 +96,14 @@ export default function Example() {
       value: "vue",
       desc: `We're not always in the position that we want to be at.
       We're constantly growing. We're constantly making mistakes. We're 
-      constantly trying to express ourselves and actualize our dreams.`
+      constantly trying to express ourselves and actualize our dreams.`,
     },
 
     {
       label: "Angular",
       value: "angular",
       desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`
+      to follow my dreams and inspire other people to follow their dreams, too.`,
     },
 
     {
@@ -111,8 +111,8 @@ export default function Example() {
       value: "svelte",
       desc: `We're not always in the position that we want to be at.
       We're constantly growing. We're constantly making mistakes. We're 
-      constantly trying to express ourselves and actualize our dreams.`
-    }
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
   ];
 
   return (

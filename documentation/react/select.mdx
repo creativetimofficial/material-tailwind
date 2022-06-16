@@ -10,7 +10,7 @@ navigation:
     "select-validations",
     "select-props",
     "select-option-props",
-    "types"
+    "types",
   ]
 github: select
 prev: radio-button
@@ -27,7 +27,7 @@ See below our select component example that you can use in your Tailwind CSS and
 
 <br />
 
-<ComponentCard id="select">
+<ComponentPreview id="select">
   <div className="w-72">
     <Select label="Select Version">
       <Option>Material Tailwind HTML</Option>
@@ -37,7 +37,7 @@ See below our select component example that you can use in your Tailwind CSS and
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Select, Option } from "@material-tailwind/react";
@@ -63,8 +63,8 @@ export default function Example() {
 
 The select component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="select-variants">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="select-variants">
+  <div className="flex w-full items-end gap-4">
     <Select variant="outlined" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -87,14 +87,14 @@ The select component comes with 3 different variants that you can change it usin
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Select variant="outlined" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -127,8 +127,8 @@ export default function Variants() {
 
 The select component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentCard id="select-sizes">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="select-sizes">
+  <div className="flex w-full items-end gap-4">
     <Select size="md" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -144,14 +144,14 @@ The select component comes with 2 different sizes that you can change it using t
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Select size="md" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -177,8 +177,8 @@ export default function Sizes() {
 
 The select component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="select-colors">
-  <div className="flex flex-col gap-4 w-72">
+<ComponentPreview id="select-colors">
+  <div className="flex w-72 flex-col gap-4">
     <Select color="blue" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -201,14 +201,14 @@ The select component comes with 19 different colors that you can change it using
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex flex-col gap-4 w-72">
+    <div className="flex w-72 flex-col gap-4">
       <Select color="blue" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -241,8 +241,8 @@ export default function Colors() {
 
 The select component comes with error and success states for performing validations.
 
-<ComponentCard id="select-validations">
-  <div className="flex items-end gap-4 w-full">
+<ComponentPreview id="select-validations">
+  <div className="flex w-full items-end gap-4">
     <Select label="Select Version" error>
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -258,14 +258,14 @@ The select component comes with error and success states for performing validati
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentCard>
+</ComponentPreview>
 
 ```jsx showLineNumbers
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex items-end gap-4 w-full">
+    <div className="flex w-full items-end gap-4">
       <Select label="Select Version" error>
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
