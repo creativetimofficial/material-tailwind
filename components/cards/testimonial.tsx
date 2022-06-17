@@ -11,7 +11,7 @@ interface Props {
   color?: CardProps["color"];
 }
 
-export default function TestimonialCard({
+export default function Testimonial({
   name,
   date,
   children,

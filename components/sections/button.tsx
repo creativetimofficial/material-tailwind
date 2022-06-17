@@ -11,7 +11,7 @@ import JsxParser from "react-jsx-parser";
 import { Typography, Button } from "@material-tailwind/react";
 
 // page components
-import CodePreview from "components/cards/codePreview";
+import CodePreview from "components/cards/code-preview";
 
 export default function SectionButton() {
   const [buttonType, setButtonType] = useState("icon");

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Typography, Chip } from "@material-tailwind/react";
 
 // page components
-import CodePreview from "components/cards/codePreview";
+import CodePreview from "components/cards/code-preview";
 import ReactLogo from "components/icons/react";
 import HtmlLogo from "components/icons/html";
 import AngularLogo from "components/icons/angular";

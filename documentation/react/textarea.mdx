@@ -24,11 +24,11 @@ See below our example that will help you create a simple textarea for your proje
 
 <br />
 
-<ComponentPreview id="textarea">
+<ComponentDemo id="textarea">
   <div className="w-96">
     <Textarea label="Message" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -44,13 +44,13 @@ export default function Example() {
 
 The textarea component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentPreview id="textarea-variants">
+<ComponentDemo id="textarea-variants">
   <div className="flex w-full items-end gap-4">
     <Textarea variant="outlined" label="Outlined" />
     <Textarea variant="standard" label="Standard" />
     <Textarea variant="static" label="Static" placeholder="Static" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
@@ -72,12 +72,12 @@ export default function Variants() {
 
 The textarea component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentPreview id="textarea-sizes">
+<ComponentDemo id="textarea-sizes">
   <div className="flex w-full items-end gap-4">
     <Textarea size="md" label="Textarea Medium" />
     <Textarea size="lg" label="Textarea Large" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
@@ -98,14 +98,14 @@ export default function Sizes() {
 
 The textarea component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentPreview id="textarea-colors">
+<ComponentDemo id="textarea-colors">
   <div className="flex w-96 flex-col gap-4">
     <Textarea color="blue" label="Textarea Blue" />
     <Textarea color="purple" label="Textarea Purple" />
     <Textarea color="indigo" label="Textarea Indigo" />
     <Textarea color="teal" label="Textarea Teal" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";
@@ -128,12 +128,12 @@ export default function Colors() {
 
 The textarea component comes with error and success states for performing validations.
 
-<ComponentPreview id="textarea-validations">
+<ComponentDemo id="textarea-validations">
   <div className="flex w-full items-end gap-4">
     <Textarea label="Textarea Error" error />
     <Textarea label="Textarea Success" success />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Textarea } from "@material-tailwind/react";

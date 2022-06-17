@@ -13,7 +13,7 @@ import {
 } from "@material-tailwind/react";
 
 // page components
-import CodePreview from "components/cards/codePreview";
+import CodePreview from "components/cards/code-preview";
 
 export default function SectionComponents() {
   const components = [

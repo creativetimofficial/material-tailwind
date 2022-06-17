@@ -110,9 +110,8 @@ export default function Footer() {
                 </span>
                 <ul className="list-unstyled">
                   {usefulLink.map(({ name, link }, key) => (
-                    <li>
+                    <li key={key}>
                       <a
-                        key={key}
                         href={link}
                         target="_blank"
                         rel="noreferrer"
@@ -130,9 +129,8 @@ export default function Footer() {
                 </span>
                 <ul className="list-unstyled">
                   {resources.map(({ name, link }, key) => (
-                    <li>
+                    <li key={key}>
                       <a
-                        key={key}
                         href={link}
                         target="_blank"
                         rel="noreferrer"

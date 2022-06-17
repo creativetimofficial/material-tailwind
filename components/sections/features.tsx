@@ -44,7 +44,10 @@ export default function SectionFeatures() {
       </div>
       <div className="flex flex-row flex-wrap content-center">
         {features.map(({ icon, title, desc }, key) => (
-          <div className="mb-12 w-full max-w-full px-3 sm:w-1/2 sm:flex-none lg:mb-0 xl:mb-0 xl:w-1/4">
+          <div
+            key={key}
+            className="mb-12 w-full max-w-full px-3 sm:w-1/2 sm:flex-none lg:mb-0 xl:mb-0 xl:w-1/4"
+          >
             <Feature icon={icon} title={title}>
               {desc}
             </Feature>

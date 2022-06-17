@@ -5,7 +5,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function ComponentPreview({ children, ...rest }: Props) {
+export default function ComponentDemo({ children, ...rest }: Props) {
   return (
     <div
       {...rest}

@@ -27,11 +27,11 @@ See below our input component example. It comes in different styles and colors, 
 
 <br />
 
-<ComponentPreview id="input">
+<ComponentDemo id="input">
   <div className="w-72">
     <Input label="Username" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -47,13 +47,13 @@ export default function Example() {
 
 The input component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentPreview id="input-variants">
+<ComponentDemo id="input-variants">
   <div className="flex w-full items-end gap-4">
     <Input variant="outlined" label="Outlined" />
     <Input variant="standard" label="Standard" />
     <Input variant="static" label="Static" placeholder="Static" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -75,12 +75,12 @@ export default function Variants() {
 
 The input component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentPreview id="input-sizes">
+<ComponentDemo id="input-sizes">
   <div className="flex w-full items-end gap-4">
     <Input size="md" label="Input Medium" />
     <Input size="lg" label="Input Large" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -101,14 +101,14 @@ export default function Sizes() {
 
 The input component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentPreview id="input-colors">
+<ComponentDemo id="input-colors">
   <div className="flex w-72 flex-col gap-4">
     <Input color="blue" label="Input Blue" />
     <Input color="purple" label="Input Purple" />
     <Input color="indigo" label="Input Indigo" />
     <Input color="teal" label="Input Teal" />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -131,12 +131,12 @@ export default function Colors() {
 
 The input component comes with error and success states for performing validations.
 
-<ComponentPreview id="input-validations">
+<ComponentDemo id="input-validations">
   <div className="flex w-full items-end gap-4">
     <Input label="Input Error" error />
     <Input label="Input Success" success />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";
@@ -157,11 +157,11 @@ export default function Validations() {
 
 You can add icon for the input component using the <Code>icon</Code> prop.
 
-<ComponentPreview id="input-with-icon">
+<ComponentDemo id="input-with-icon">
   <div className="w-72">
     <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
   </div>
-</ComponentPreview>
+</ComponentDemo>
 
 ```jsx showLineNumbers
 import { Input } from "@material-tailwind/react";

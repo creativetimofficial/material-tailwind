@@ -14,7 +14,7 @@ import Footer from "components/layout/footer";
 // sections
 import SectionFeatures from "components/sections/features";
 import SectionButton from "components/sections/button";
-import SectionColorsPalette from "components/sections/colorsPalette";
+import SectionColorsPalette from "components/sections/colors-palette";
 import SectionShadow from "components/sections/shadow";
 import SectionComponents from "components/sections/components";
 import SectionFramework from "components/sections/framework";
