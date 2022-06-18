@@ -21,20 +21,23 @@ Learn how to use Material Tailwind components from this documentation to quickly
 Make sure that you have [Node.js](https://nodejs.org/en/) and [Tailwind CSS](https://tailwindcss.com/) installed.
 
 <br />
-Install Material Tailwind as a dependency using NPM by running the following command:
-```html showLineNumbers npm i @material-tailwind/html ```
 
-<br/>
-Require Material Tailwind as a plugin inside the **tailwind.config.js** file:
+Install Material Tailwind as a dependency using NPM by running the following command:
+
 ```html showLineNumbers
-module.exports = {
-  plugins: [
-    require('material-tailwind/plugin')
-  ]
-}
+npm i @material-tailwind/html
 ```
-<br/>
+
+<br />
+Require Material Tailwind as a plugin inside the **tailwind.config.js** file:
+
+```html showLineNumbers
+module.exports = { plugins: [ require('material-tailwind/plugin') ] }
+```
+
+<br />
 Include the main JavaScript file to make interactive elements working:
+
 ```html showLineNumbers
 <script src="../path/to/material-tailwind.js"></script>
 ```
