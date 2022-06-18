@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 // nest.js components
 import Link from "next/link";
@@ -13,12 +13,17 @@ interface Props {
     icon: string;
     pages: string[];
   }[];
-  type: "react" | "html";
+  type: "html" | "react" | "vue" | "angular" | "svelte";
   slug: string;
+  mobileNav: boolean;
+  setMobileNav: Dispatch<SetStateAction<boolean>>;
 }
 
-function Sidenav({ routes, type, slug }: Props) {
-  const [mobileNav, setMobileNav] = useState(false);
+function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
+  const colors = {
+    html: "from-pink-400 to-pink-600",
+    react: "from-blue-400 to-blue-600",
+  };
 
   return (
     <aside
@@ -61,7 +66,9 @@ function Sidenav({ routes, type, slug }: Props) {
           {routes.map(({ name, icon, pages }, key): any => (
             <div key={key}>
               <div className="mt-8 flex items-center">
-                <div className="mr-3 grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-tr from-blue-400 to-blue-600 text-xs text-white">
+                <div
+                  className={`${colors[type]} mr-3 grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-tr text-xs text-white`}
+                >
                   <i className={icon} />
                 </div>
                 <Typography color="blue-grey" className="font-bold capitalize">
