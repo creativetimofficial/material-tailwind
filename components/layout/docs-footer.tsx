@@ -19,7 +19,7 @@ export default function DocsFooter({ type, frontMatter }: Props) {
     <Fragment>
       <div className="mt-20 flex w-full items-center justify-between">
         {frontMatter.prev && (
-          <Link href={`/docs/react/${frontMatter.prev}`}>
+          <Link href={`/docs/${type}/${frontMatter.prev}`}>
             <a>
               <Typography className="py-2 !font-medium capitalize !text-blue-grey-500 !transition-colors hover:!text-blue-grey-900">
                 <i className="fas fa-caret-left mr-2 mt-px" />
