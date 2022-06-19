@@ -1,0 +1,124 @@
+---
+title: Vite - Installation Guide
+description: Learn how to use Material Tailwind components with Vite (React) and Tailwind CSS to easily create elegant and flexible pages.
+navigation:
+  [
+    "installation",
+    "npm",
+    "yarn",
+    "pnpm",
+    "tailwindcss-config",
+    "theme-provider",
+    "example",
+  ]
+github: guide/next
+prev: installation
+next: license
+---
+
+# Material Tailwind with Vite
+
+<span id="installation" className="scroll-mt-48" />
+Learn how to setup and install @material-tailwind/react with Vite (React).
+
+<br />
+<br />
+
+## Using NPM
+
+Install @material-tailwind/react as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/react
+```
+
+---
+
+## Using Yarn
+
+Install @material-tailwind/react as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/react
+```
+
+---
+
+## Using PNPM
+
+Install @material-tailwind/react as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/react
+```
+
+---
+
+## TailwindCSS Configurations
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react/utils.
+
+```js {1, 3, 9}
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+---
+
+## Theme Provider
+
+<span id="theme-provider" className="scroll-mt-48" />
+
+@material-tailwind/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
+
+On the <Code>src/main.js</Code> or <Code>src/main.tsx</Code> if you're using typescript put the code bellow.
+
+```jsx {6, 10, 12}
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
+import { ThemeProvider } from "@material-tailwind/react";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);
+```
+
+---
+
+## Example
+
+Now you're good to go and use @material-tailwind/react in your project.
+
+<ComponentDemo id="example">
+  <Button>Button</Button>
+</ComponentDemo>
+
+```jsx showLineNumbers {1, 4}
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button>Button</Button>;
+}
+```
