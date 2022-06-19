@@ -5,6 +5,18 @@ export const routes = [
     pages: ["installation", "license", "what-is-tailwind-css"],
   },
   {
+    name: "Customization",
+    icon: "fas fa-paint-brush",
+    pages: [
+      "theming",
+      "color-palette",
+      "typography",
+      "box-shadows",
+      "breakpoints",
+      "default-theme",
+    ],
+  },
+  {
     name: "components",
     icon: "fas fa-shapes",
     pages: [
