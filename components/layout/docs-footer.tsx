@@ -17,7 +17,13 @@ export default function DocsFooter({ type, frontMatter }: Props) {
 
   return (
     <Fragment>
-      <div className="mt-20 flex w-full items-center justify-between">
+      <div
+        className={`mt-20 flex w-full items-center ${
+          !frontMatter.prev && frontMatter.next
+            ? "justify-end"
+            : "justify-between"
+        }`}
+      >
         {frontMatter.prev && (
           <Link href={`/docs/${type}/${frontMatter.prev}`}>
             <a>
