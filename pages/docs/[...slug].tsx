@@ -28,6 +28,11 @@ import Code from "components/code";
 import Pre from "components/pre";
 import CodeSandbox from "components/code-sandbox";
 import StackBlitz from "components/stack-blitz";
+import Framework from "components/cards/framework";
+import CraLogo from "components/icons/cra";
+import NextLogo from "components/icons/next";
+import RemixLogo from "components/icons/remix";
+import ViteLogo from "components/icons/vite";
 
 // @material-tailwind/react components
 import {
@@ -156,6 +161,11 @@ const components = {
   CodeSandbox,
   StackBlitz,
   Code,
+  Framework,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -229,7 +239,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               mobileNav={mobileNav}
               setMobileNav={setMobileNav}
             />
-            <div className="mt-36 w-full lg:mt-20 lg:w-[60%] lg:px-6">
+            <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
