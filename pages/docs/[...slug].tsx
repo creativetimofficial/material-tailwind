@@ -33,6 +33,7 @@ import CraLogo from "components/icons/cra";
 import NextLogo from "components/icons/next";
 import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
+import ColorPalette from "components/color-palette";
 
 // @material-tailwind/react components
 import {
@@ -166,6 +167,7 @@ const components = {
   NextLogo,
   RemixLogo,
   ViteLogo,
+  ColorPalette,
   Accordion,
   AccordionHeader,
   AccordionBody,
