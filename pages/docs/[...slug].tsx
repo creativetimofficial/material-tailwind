@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { Fragment, useState } from "react";
 
 // next.js components
