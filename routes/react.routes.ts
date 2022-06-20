@@ -7,14 +7,7 @@ export const routes = [
   {
     name: "Customization",
     icon: "fas fa-paint-brush",
-    pages: [
-      "theming",
-      "color-palette",
-      "typography",
-      "box-shadows",
-      "breakpoints",
-      "default-theme",
-    ],
+    pages: ["theming", "colors", "fonts", "shadows", "screens"],
   },
   {
     name: "components",
