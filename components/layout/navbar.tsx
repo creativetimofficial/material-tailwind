@@ -117,7 +117,7 @@ export default function Navbar({
             </Link>
           </MenuItem>
           <MenuItem className="!p-0">
-            <Link href="/docs/react/quick-start">
+            <Link href="/docs/react/installation">
               <a className={`${navbarItemClasses} px-3 py-2 lg:px-3`}>
                 ReactJS
               </a>
