@@ -177,7 +177,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           fuiOffset(offset),
           flip({ padding: 8 }),
           fuiSize({
-            apply({ rects, elements }) {
+            apply({ rects, elements }: any) {
               Object.assign(elements.floating.style, {
                 width: `${rects.reference.width}px`,
                 zIndex: 99,
