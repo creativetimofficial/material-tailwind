@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // framer-motion
 import { useIsomorphicLayoutEffect } from "framer-motion";
