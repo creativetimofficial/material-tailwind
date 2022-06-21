@@ -89,7 +89,7 @@ import filterArray from "utils/filter-array";
 import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 const components = {
-  h1: (props: any) => (
+  h1: (props) => (
     <Typography
       as="h1"
       variant="h3"
@@ -98,7 +98,7 @@ const components = {
       {...props}
     />
   ),
-  h2: (props: any) => (
+  h2: (props) => (
     <Typography
       as="h2"
       variant="h4"
@@ -107,7 +107,7 @@ const components = {
       {...props}
     />
   ),
-  h3: (props: any) => (
+  h3: (props) => (
     <Typography
       as="h3"
       variant="h5"
@@ -116,7 +116,7 @@ const components = {
       {...props}
     />
   ),
-  h6: (props: any) => (
+  h6: (props) => (
     <Typography
       as="p"
       variant="h5"
@@ -124,37 +124,37 @@ const components = {
       {...props}
     />
   ),
-  p: (props: any) => (
+  p: (props) => (
     <Typography className="!mb-4 !font-normal !text-blue-grey-500" {...props} />
   ),
   hr: () => <hr className="!mt-24 !mb-20 !border-blue-grey-50" />,
-  a: (props: any) => (
+  a: (props) => (
     <a
       className="!font-sans !font-medium !text-blue-grey-900 !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
-  table: (props: any) => (
+  table: (props) => (
     <div className="!overflow-scroll">
       <table className="!w-full !min-w-[700px] lg:!min-w-full" {...props} />
     </div>
   ),
-  thead: (props: any) => <thead {...props} />,
-  tbody: (props: any) => <tbody {...props} />,
-  tr: (props: any) => <tr {...props} />,
-  th: (props: any) => (
+  thead: (props) => <thead {...props} />,
+  tbody: (props) => <tbody {...props} />,
+  tr: (props) => <tr {...props} />,
+  th: (props) => (
     <th
       className="min-w-[120px] border-b border-blue-grey-100 py-3 text-left font-medium text-blue-grey-900"
       {...props}
     />
   ),
-  td: (props: any) => (
+  td: (props) => (
     <td
       className="min-w-[120px] border-b border-blue-grey-50 py-3 text-left text-sm text-blue-grey-500"
       {...props}
     />
   ),
-  pre: (props: any) => <Pre {...props} />,
+  pre: (props) => <Pre {...props} />,
   State,
   Observe,
   Image,
