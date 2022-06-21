@@ -263,12 +263,18 @@ export const getStaticPaths = async () => {
     const directories = filteredArray[i]
       .split("/")
       .filter((dir) => dir !== baseDirectory);
+    const files = filteredArray[i + 1].includes("/")
+      ? filteredArray[i + 1].split("/").filter((dir) => dir !== baseDirectory)
+      : filteredArray[i + 1];
 
-    paths.push({
-      params: {
-        slug: [...directories, filteredArray[i + 1]],
-      },
-    });
+    const filename = Array.isArray(files) ? null : files;
+
+    filename &&
+      paths.push({
+        params: {
+          slug: [...directories, filename],
+        },
+      });
   }
 
   return {
