@@ -1,15 +1,18 @@
 ---
 title: Tailwind CSS Dialog - Material Tailwind
 description: Customise your web projects with our easy-to-use dialog component for Tailwind CSS using Material Design guidelines.
-navigation: 
+navigation:
   [
     "dialog",
     "notification dialog",
     "long dialog",
     "message dialog",
     "signin dialog",
-    "signup dialog"
+    "signup dialog",
   ]
+github: dialog
+prev: chip
+next: icon-button
 ---
 
 # Tailwind CSS Dialog
@@ -19,134 +22,234 @@ Use our Tailwind CSS dialog component to inform users about a task or important 
 A dialog is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
 
 See below our dialog example that you can use for your Tailwind CSS project.
-<br/>
-<ComponentCard id="dialog">
-  <button className="button button-pink mx-auto flex" dialog-trigger="true" data-ripple-light="true">Demo dialog</button>
+
+<br />
+<ComponentDemo id="dialog">
+  <button
+    className="button button-pink mx-auto flex"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Demo dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
           <h6 className="mb-0">Dialog title</h6>
-          <button type="button" className="button-close me-0" dialog-close="true" aria-label="Close">
+          <button
+            type="button"
+            className="me-0 button-close"
+            dialog-close="true"
+            aria-label="Close"
+          >
             <i className="material-icons">close</i>
           </button>
         </div>
         <div className="dialog-body">
-          <p className="opacity-60">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-          A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p className="opacity-60">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts. Separated they
+            live in Bookmarksgrove right at the coast of the Semantics, a large
+            language ocean. A small river named Duden flows by their place and
+            supplies it with the necessary regelialia. It is a paradisematic
+            country, in which roasted parts of sentences fly into your mouth.
+          </p>
         </div>
         <div className="dialog-footer">
-          <button className="button button-gradient button-dark mr-3 mb-0" dialog-close="true">Close</button>
-          <button className="button button-gradient button-pink mb-0">Save changes</button>
+          <button
+            className="button button-gradient button-dark mr-3 mb-0"
+            dialog-close="true"
+          >
+            Close
+          </button>
+          <button className="button button-gradient button-pink mb-0">
+            Save changes
+          </button>
         </div>
       </div>
     </div>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
 ```html showLineNumbers
-  <div class="text-left w-1/2">
-  <button class="button button-pink" dialog-trigger="true" data-ripple-light="true">Demo dialog</button>
+<div class="w-1/2 text-left">
+  <button
+    class="button button-pink"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    Demo dialog
+  </button>
   <div class="dialog">
     <div class="dialog-overlay" dialog-close="true"></div>
     <div class="modal-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
           <h6 class="mb-0">Dialog title</h6>
-          <button type="button" class="button-close me-0" dialog-close="true" aria-label="Close">
+          <button
+            type="button"
+            class="me-0 button-close"
+            dialog-close="true"
+            aria-label="Close"
+          >
             <i class="material-icons">close</i>
           </button>
         </div>
         <div class="dialog-body">
-          <p class="opacity-60">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-          A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p class="opacity-60">
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts. Separated they
+            live in Bookmarksgrove right at the coast of the Semantics, a large
+            language ocean. A small river named Duden flows by their place and
+            supplies it with the necessary regelialia. It is a paradisematic
+            country, in which roasted parts of sentences fly into your mouth.
+          </p>
         </div>
         <div class="dialog-footer">
-          <button class="button button-gradient button-dark mr-3 mb-0" dialog-close="true">Close</button>
-          <button class="button button-gradient button-pink mb-0">Save changes</button>
+          <button
+            class="button button-gradient button-dark mr-3 mb-0"
+            dialog-close="true"
+          >
+            Close
+          </button>
+          <button class="button button-gradient button-pink mb-0">
+            Save changes
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 
 #### Notification Dialog
 
 Use this dialog example if you want to notify the user about an action that he should take.
 
-<ComponentCard id="notification dialog">
-  <button className="button button-deep-orange" dialog-trigger="true" data-ripple-light="true">Notification dialog</button>
+<ComponentDemo id="notification dialog">
+  <button
+    className="button button-deep-orange"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Notification dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
-          <h6 className="mb-0 text-dark-500 capitalize">Your attention is required</h6>
-          <button type="button" className="button-close me-0" dialog-close="true" aria-label="Close">
+          <h6 className="mb-0 capitalize text-dark-500">
+            Your attention is required
+          </h6>
+          <button
+            type="button"
+            className="me-0 button-close"
+            dialog-close="true"
+            aria-label="Close"
+          >
             <i className="material-icons">close</i>
           </button>
         </div>
         <div className="dialog-body">
           <div className="py-3 text-center">
-            <i className="fa fa-star text-dark-500 text-3xl"></i>
-            <h4 className="text-red-500 mt-4">You should read this!</h4>
-            <p className="opacity-60">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <i className="fa fa-star text-3xl text-dark-500"></i>
+            <h4 className="mt-4 text-red-500">You should read this!</h4>
+            <p className="opacity-60">
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
           </div>
         </div>
         <div className="dialog-footer">
-          <button className="button button-gradient button-pink mb-0">Got it</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentCard>
-
-```html showLineNumbers
-  <button class="button button-deep-orange" dialog-trigger="true" data-ripple-light="true">Notification dialog</button>
-  <div class="dialog">
-    <div class="dialog-overlay" dialog-close="true"></div>
-    <div class="modal-dialog">
-      <div class="dialog-content">
-        <div class="dialog-header">
-          <h6 class="mb-0 text-dark-500 capitalize">Your attention is required</h6>
-          <button type="button" class="button-close me-0" dialog-close="true" aria-label="Close">
-            <i class="material-icons">close</i>
+          <button className="button button-gradient button-pink mb-0">
+            Got it
           </button>
         </div>
-        <div class="dialog-body">
-          <div class="py-3 text-center">
-            <i class="fa fa-star text-dark-500 text-3xl"></i>
-            <h4 class="text-red-500 mt-4">You should read this!</h4>
-            <p class="opacity-60">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          </div>
-        </div>
-        <div class="dialog-footer">
-          <button class="button button-gradient button-deep-orange mb-0">Got it</button>
-        </div>
       </div>
     </div>
   </div>
+</ComponentDemo>
+
+```html showLineNumbers
+<button
+  class="button button-deep-orange"
+  dialog-trigger="true"
+  data-ripple-light="true"
+>
+  Notification dialog
+</button>
+<div class="dialog">
+  <div class="dialog-overlay" dialog-close="true"></div>
+  <div class="modal-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h6 class="mb-0 capitalize text-dark-500">
+          Your attention is required
+        </h6>
+        <button
+          type="button"
+          class="me-0 button-close"
+          dialog-close="true"
+          aria-label="Close"
+        >
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="py-3 text-center">
+          <i class="fa fa-star text-3xl text-dark-500"></i>
+          <h4 class="mt-4 text-red-500">You should read this!</h4>
+          <p class="opacity-60">
+            A small river named Duden flows by their place and supplies it with
+            the necessary regelialia.
+          </p>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button class="button button-gradient button-deep-orange mb-0">
+          Got it
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 
 #### Message Dialog
 
 This dialog should be used to help the user send messages easily.
 
-<ComponentCard id="message dialog">
-  <button className="button button-green" dialog-trigger="true" data-ripple-light="true">Message dialog</button>
+<ComponentDemo id="message dialog">
+  <button
+    className="button button-green"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Message dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
-          <h6 className="mb-0 text-dark-500 capitalize">New message to @MaterialTailwind</h6>
-          <button type="button" className="button-close me-0" dialog-close="true" aria-label="Close">
+          <h6 className="mb-0 capitalize text-dark-500">
+            New message to @MaterialTailwind
+          </h6>
+          <button
+            type="button"
+            className="me-0 button-close"
+            dialog-close="true"
+            aria-label="Close"
+          >
             <i className="material-icons">close</i>
           </button>
         </div>
@@ -163,288 +266,422 @@ This dialog should be used to help the user send messages easily.
           </form>
         </div>
         <div className="dialog-footer">
-          <button className="button button-gradient button-green mb-0">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentCard>
-
-```html showLineNumbers
-  <button class="button button-green" dialog-trigger="true" data-ripple-light="true">Message dialog</button>
-  <div class="dialog">
-    <div class="dialog-overlay" dialog-close="true"></div>
-    <div class="modal-dialog">
-      <div class="dialog-content">
-        <div class="dialog-header">
-          <h6 class="mb-0 text-dark-500 capitalize">New message to @MaterialTailwind</h6>
-          <button type="button" class="button-close me-0" dialog-close="true" aria-label="Close">
-            <i class="material-icons">close</i>
+          <button className="button button-gradient button-green mb-0">
+            Send
           </button>
         </div>
-        <div class="dialog-body">
-          <form action="role">
-            <div class="input-group input-group-static my-3">
-              <label>Recipient:</label>
-              <input type="email" class="form-control" />
-            </div>
-            <div class="input-group input-group-static my-3">
-              <label>Message:</label>
-              <textarea type="email" class="form-control" rows="5" />
-            </div>
-          </form>
-        </div>
-        <div class="dialog-footer">
-          <button class="button button-gradient button-green mb-0">Send</button>
-        </div>
       </div>
     </div>
   </div>
+</ComponentDemo>
+
+```html showLineNumbers
+<button
+  class="button button-green"
+  dialog-trigger="true"
+  data-ripple-light="true"
+>
+  Message dialog
+</button>
+<div class="dialog">
+  <div class="dialog-overlay" dialog-close="true"></div>
+  <div class="modal-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h6 class="mb-0 capitalize text-dark-500">
+          New message to @MaterialTailwind
+        </h6>
+        <button
+          type="button"
+          class="me-0 button-close"
+          dialog-close="true"
+          aria-label="Close"
+        >
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <form action="role">
+          <div class="input-group input-group-static my-3">
+            <label>Recipient:</label>
+            <input type="email" class="form-control" />
+          </div>
+          <div class="input-group input-group-static my-3">
+            <label>Message:</label>
+            <textarea type="email" class="form-control" rows="5" />
+          </div>
+        </form>
+      </div>
+      <div class="dialog-footer">
+        <button class="button button-gradient button-green mb-0">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 
 #### Long Dialog
 
 Use this dialog example to notify the user with longer informational messages.
 
-<ComponentCard id="long dialog">
-  <button className="button button-pink" dialog-trigger="true" data-ripple-light="true">Long dialog</button>
+<ComponentDemo id="long dialog">
+  <button
+    className="button button-pink"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Long dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content">
         <div className="dialog-header">
-          <h5 className="mb-0 text-dark-500 capitalize">Modal title</h5>
-          <button type="button" className="button-close me-0" dialog-close="true" aria-label="Close">
+          <h5 className="mb-0 capitalize text-dark-500">Modal title</h5>
+          <button
+            type="button"
+            className="me-0 button-close"
+            dialog-close="true"
+            aria-label="Close"
+          >
             <i className="material-icons">close</i>
           </button>
         </div>
         <div className="dialog-body">
-          <p className="opacity-60">I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything. I was taught I could do everything.</p>
-          <br/><br/>
-          <p className="opacity-60">As we live, our hearts turn colder. Cause pain is what we go through as we become older. We get insulted by others, lose trust for those others. We get back stabbed by friends. It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all we have. Then we lose family over time. What else could rust the heart more over time? Blackgold.</p>
-          <br/><br/>
-          <p className="opacity-60">We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.</p>
-          <br/><br/>
-          <p className="opacity-60">There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-          <br/><br/>
-          <p className="opacity-60">It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams, too.</p>
-          <br/><br/>
-          <p className="opacity-60">The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one who believed it?</p>
+          <p className="opacity-60">
+            I always felt like I could do anything. That's the main thing people
+            are controlled by! Thoughts- their perception of themselves! They're
+            slowed down by their perception of themselves. If you're taught you
+            can't do anything, you won't do anything. I was taught I could do
+            everything.
+          </p>
+          <br />
+          <br />
+          <p className="opacity-60">
+            As we live, our hearts turn colder. Cause pain is what we go through
+            as we become older. We get insulted by others, lose trust for those
+            others. We get back stabbed by friends. It becomes harder for us to
+            give others a hand. We get our heart broken by people we love, even
+            that we give them all we have. Then we lose family over time. What
+            else could rust the heart more over time? Blackgold.
+          </p>
+          <br />
+          <br />
+          <p className="opacity-60">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams. If
+            you have the opportunity to play this game of life you need to
+            appreciate every moment. A lot of people don't appreciate the moment
+            until it's passed.
+          </p>
+          <br />
+          <br />
+          <p className="opacity-60">
+            There's nothing I really wanted to do in life that I wasn't able to
+            get good at. That's my skill. I'm not really specifically talented
+            at anything except for the ability to learn. That's what I do.
+            That's what I'm here for. Don't be afraid to be wrong because you
+            can't learn anything from a compliment.
+          </p>
+          <br />
+          <br />
+          <p className="opacity-60">
+            It really matters and then like it really doesn't matter. What
+            matters is the people who are sparked by it. And the people who are
+            like offended by it, it doesn't matter. Because it's about
+            motivating the doers. Because I'm here to follow my dreams and
+            inspire other people to follow their dreams, too.
+          </p>
+          <br />
+          <br />
+          <p className="opacity-60">
+            The time is now for it to be okay to be great. People in this world
+            shun people for being great. For being a bright color. For standing
+            out. But the time is now to be okay to be the greatest you. Would
+            you believe in what you believe in, if you were the only one who
+            believed it?
+          </p>
         </div>
         <div className="dialog-footer">
-          <button className="button button-gradient button-dark mr-3 mb-0" dialog-close="true">Close</button>
-          <button className="button button-gradient button-pink mb-0">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentCard>
-
-```html showLineNumbers
-  <button class="button button-pink" dialog-trigger="true" data-ripple-light="true">Long dialog</button>
-  <div class="dialog">
-    <div class="dialog-overlay" dialog-close="true"></div>
-    <div class="modal-dialog">
-      <div class="dialog-content">
-        <div class="dialog-header">
-          <h5 class="mb-0 text-dark-500 capitalize">Modal title</h5>
-          <button type="button" class="button-close me-0" dialog-close="true" aria-label="Close">
-            <i class="material-icons">close</i>
+          <button
+            className="button button-gradient button-dark mr-3 mb-0"
+            dialog-close="true"
+          >
+            Close
+          </button>
+          <button className="button button-gradient button-pink mb-0">
+            Save changes
           </button>
         </div>
-        <div class="dialog-body">
-          <p class="opacity-60">I always felt like I could do anything. That’s the main
-          thing people are controlled by! Thoughts- their perception
-          of themselves! They're slowed down by their perception of
-          themselves. If you're taught you can’t do anything, you
-          won’t do anything. I was taught I could do everything.</p>
-          <br/><br/>
-          <p class="opacity-60">As we live, our hearts turn colder. Cause pain is what we go
-          through as we become older. We get insulted by others, lose
-          trust for those others. We get back stabbed by friends. It
-          becomes harder for us to give others a hand. We get our
-          heart broken by people we love, even that we give them all
-          we have. Then we lose family over time. What else could rust
-          the heart more over time? Blackgold.</p>
-          <br/><br/>
-          <p class="opacity-60">We’re not always in the position that we want to be at.
-          We’re constantly growing. We’re constantly making mistakes.
-          We’re constantly trying to express ourselves and actualize
-          our dreams. If you have the opportunity to play this game of
-          life you need to appreciate every moment. A lot of people
-          don’t appreciate the moment until it’s passed.</p>
-          <br/><br/>
-          <p class="opacity-60">There’s nothing I really wanted to do in life that I wasn’t
-          able to get good at. That’s my skill. I’m not really
-          specifically talented at anything except for the ability to
-          learn. That’s what I do. That’s what I’m here for. Don’t be
-          afraid to be wrong because you can’t learn anything from a
-          compliment.</p>
-          <br/><br/>
-          <p class="opacity-60">It really matters and then like it really doesn’t matter.
-          What matters is the people who are sparked by it. And the
-          people who are like offended by it, it doesn’t matter.
-          Because it's about motivating the doers. Because I’m here to
-          follow my dreams and inspire other people to follow their
-          dreams, too.</p>
-          <br/><br/>
-          <p class="opacity-60">The time is now for it to be okay to be great. People in
-          this world shun people for being great. For being a bright
-          color. For standing out. But the time is now to be okay to
-          be the greatest you. Would you believe in what you believe
-          in, if you were the only one who believed it?</p>
-        </div>
-        <div class="dialog-footer">
-          <button class="button button-gradient button-dark mr-3 mb-0" dialog-close="true">Close</button>
-          <button class="button button-gradient button-pink mb-0">Save changes</button>
-        </div>
       </div>
     </div>
   </div>
+</ComponentDemo>
+
+```html showLineNumbers
+<button
+  class="button button-pink"
+  dialog-trigger="true"
+  data-ripple-light="true"
+>
+  Long dialog
+</button>
+<div class="dialog">
+  <div class="dialog-overlay" dialog-close="true"></div>
+  <div class="modal-dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h5 class="mb-0 capitalize text-dark-500">Modal title</h5>
+        <button
+          type="button"
+          class="me-0 button-close"
+          dialog-close="true"
+          aria-label="Close"
+        >
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <p class="opacity-60">
+          I always felt like I could do anything. That's the main thing people
+          are controlled by! Thoughts- their perception of themselves! They're
+          slowed down by their perception of themselves. If you're taught you
+          can't do anything, you won't do anything. I was taught I could do
+          everything.
+        </p>
+        <br /><br />
+        <p class="opacity-60">
+          As we live, our hearts turn colder. Cause pain is what we go through
+          as we become older. We get insulted by others, lose trust for those
+          others. We get back stabbed by friends. It becomes harder for us to
+          give others a hand. We get our heart broken by people we love, even
+          that we give them all we have. Then we lose family over time. What
+          else could rust the heart more over time? Blackgold.
+        </p>
+        <br /><br />
+        <p class="opacity-60">
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams. If you have the
+          opportunity to play this game of life you need to appreciate every
+          moment. A lot of people don't appreciate the moment until it's passed.
+        </p>
+        <br /><br />
+        <p class="opacity-60">
+          There's nothing I really wanted to do in life that I wasn't able to
+          get good at. That's my skill. I'm not really specifically talented at
+          anything except for the ability to learn. That's what I do. That's
+          what I'm here for. Don't be afraid to be wrong because you can't learn
+          anything from a compliment.
+        </p>
+        <br /><br />
+        <p class="opacity-60">
+          It really matters and then like it really doesn't matter. What matters
+          is the people who are sparked by it. And the people who are like
+          offended by it, it doesn't matter. Because it's about motivating the
+          doers. Because I'm here to follow my dreams and inspire other people
+          to follow their dreams, too.
+        </p>
+        <br /><br />
+        <p class="opacity-60">
+          The time is now for it to be okay to be great. People in this world
+          shun people for being great. For being a bright color. For standing
+          out. But the time is now to be okay to be the greatest you. Would you
+          believe in what you believe in, if you were the only one who believed
+          it?
+        </p>
+      </div>
+      <div class="dialog-footer">
+        <button
+          class="button button-gradient button-dark mr-3 mb-0"
+          dialog-close="true"
+        >
+          Close
+        </button>
+        <button class="button button-gradient button-pink mb-0">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
-<br/>
-<br/>
+
+<br />
+<br />
 
 #### Signin Dialog
 
-Use this example to help users Sign in easily 
+Use this example to help users Sign in easily
 
-<ComponentCard id="signin dialog">
-  <button className="button button-pink" dialog-trigger="true" data-ripple-light="true">Signin dialog</button>
+<ComponentDemo id="signin dialog">
+  <button
+    className="button button-pink"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Signin dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
           <div className="card-header mx-4 -mt-6">
-            <div className="bg-pink-500 shadow-lg rounded-lg py-3 pe-1">
-              <h4 className="text-white font-bold text-center mt-2 mb-0">Sign in</h4>
-              <div className="flex mt-4">
+            <div className="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
+              <h4 className="mt-2 mb-0 text-center font-bold text-white">
+                Sign in
+              </h4>
+              <div className="mt-4 flex">
                 <a className="button button-text ml-auto" href="#">
-                  <i className="fab fa-facebook-f text-white text-lg"></i>
+                  <i className="fab fa-facebook-f text-lg text-white"></i>
                 </a>
                 <a className="button button-text" href="#">
-                  <i className="fab fa-github text-white text-lg"></i>
+                  <i className="fab fa-github text-lg text-white"></i>
                 </a>
                 <a className="button button-text mr-auto" href="#">
-                  <i className="fab fa-google text-white text-lg"></i>
+                  <i className="fab fa-google text-lg text-white"></i>
                 </a>
               </div>
             </div>
           </div>
           <div className="card-body">
             <form action="role">
-              <div className="input-group input-group-outline my-3">
+              <div className="input-group-outline input-group my-3">
                 <label className="form-label">Email</label>
                 <input type="email" className="form-control" />
               </div>
-              <div className="input-group input-group-outline my-3">
+              <div className="input-group-outline input-group my-3">
                 <label className="form-label">Password</label>
                 <input type="password" className="form-control" />
               </div>
             </form>
-            <div className="form-check form-switch flex items-center my-7 ml-1">
+            <div className="form-check form-switch my-7 ml-1 flex items-center">
               <input
-                className="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
+                className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
                 data-attribute="toggle"
                 id="remember"
               />
               <div className="form-check-input"></div>
-              <label className="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
+              <label className="form-check-label mb-0 ml-2 cursor-pointer">
+                Remember me
+              </label>
             </div>
             <button className="button button-pink w-full">Sign In</button>
             <a href="#">
-              <p className="text-center mt-5 mb-0 text-sm">Don&apos;t have an account?</p>
+              <p className="mt-5 mb-0 text-center text-sm">
+                Don&apos;t have an account?
+              </p>
             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
 ```html showLineNumbers
-  <button class="button button-pink" dialog-trigger="true" data-ripple-light="true">Signin dialog</button>
-  <div class="dialog">
-    <div class="dialog-overlay" dialog-close="true"></div>
-    <div class="modal-dialog">
-      <div class="dialog-content mx-12">
-        <div class="card">
-          <div class="card-header mx-4 -mt-6">
-            <div class="bg-pink-500 shadow-lg rounded-lg py-3 pe-1">
-              <h4 class="text-white font-bold text-center mt-2 mb-0">Sign in</h4>
-              <div class="flex mt-4">
-                <a class="button button-text ml-auto" href="#">
-                  <i class="fab fa-facebook-f text-white text-lg"></i>
-                </a>
-                <a class="button button-text" href="#">
-                  <i class="fab fa-github text-white text-lg"></i>
-                </a>
-                <a class="button button-text mr-auto" href="#">
-                  <i class="fab fa-google text-white text-lg"></i>
-                </a>
-              </div>
+<button
+  class="button button-pink"
+  dialog-trigger="true"
+  data-ripple-light="true"
+>
+  Signin dialog
+</button>
+<div class="dialog">
+  <div class="dialog-overlay" dialog-close="true"></div>
+  <div class="modal-dialog">
+    <div class="dialog-content mx-12">
+      <div class="card">
+        <div class="card-header mx-4 -mt-6">
+          <div class="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
+            <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
+            <div class="mt-4 flex">
+              <a class="button button-text ml-auto" href="#">
+                <i class="fab fa-facebook-f text-lg text-white"></i>
+              </a>
+              <a class="button button-text" href="#">
+                <i class="fab fa-github text-lg text-white"></i>
+              </a>
+              <a class="button button-text mr-auto" href="#">
+                <i class="fab fa-google text-lg text-white"></i>
+              </a>
             </div>
           </div>
-          <div class="card-body">
-            <form action="role">
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" />
-              </div>
-              <div class="input-group input-group-outline my-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" />
-              </div>
-            </form>
-            <div class="form-check form-switch flex items-center my-7 ml-1">
-              <input
-                class="opacity-0 cursor-pointer absolute z-10 w-8 h-5"
-                data-attribute="toggle"
-                id="remember"
-              />
-              <div class="form-check-input"></div>
-              <label class="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
+        </div>
+        <div class="card-body">
+          <form action="role">
+            <div class="input-group-outline input-group my-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" />
             </div>
-            <button class="button button-pink w-full">Sign In</button>
-            <a href="#">
-              <p class="text-center mt-5 mb-0 text-sm">Don&apos;t have an account?</p>
-            </a>
+            <div class="input-group-outline input-group my-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" />
+            </div>
+          </form>
+          <div class="form-check form-switch my-7 ml-1 flex items-center">
+            <input
+              class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+              data-attribute="toggle"
+              id="remember"
+            />
+            <div class="form-check-input"></div>
+            <label class="form-check-label mb-0 ml-2 cursor-pointer"
+              >Remember me</label
+            >
           </div>
+          <button class="button button-pink w-full">Sign In</button>
+          <a href="#">
+            <p class="mt-5 mb-0 text-center text-sm">
+              Don&apos;t have an account?
+            </p>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>
 ```
 
-<br/>
-<br/>
+<br />
+<br />
 
 #### Signup Dialog
 
-Use this example to help users Signup in easily 
+Use this example to help users Signup in easily
 
-<ComponentCard id="signup dialog">
-  <button className="button button-cyan" dialog-trigger="true" data-ripple-light="true">Signup dialog</button>
+<ComponentDemo id="signup dialog">
+  <button
+    className="button button-cyan"
+    dialog-trigger="true"
+    data-ripple-light="true"
+  >
+    {`Signup dialog`}
+  </button>
   <div className="dialog">
     <div className="dialog-overlay" dialog-close="true"></div>
     <div className="modal-dialog">
       <div className="dialog-content mx-12">
         <div className="card">
           <div className="card-header mx-4 -mt-6">
-            <div className="bg-cyan-500 shadow-lg rounded-lg py-3 pe-1">
-              <h4 className="text-white font-bold text-center mt-2 mb-0">Sign up</h4>
-              <div className="flex mt-4">
+            <div className="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
+              <h4 className="mt-2 mb-0 text-center font-bold text-white">
+                Sign up
+              </h4>
+              <div className="mt-4 flex">
                 <a className="button button-text ml-auto" href="#">
-                  <i className="fab fa-facebook-f text-white text-lg"></i>
+                  <i className="fab fa-facebook-f text-lg text-white"></i>
                 </a>
                 <a className="button button-text" href="#">
-                  <i className="fab fa-github text-white text-lg"></i>
+                  <i className="fab fa-github text-lg text-white"></i>
                 </a>
                 <a className="button button-text mr-auto" href="#">
-                  <i className="fab fa-google text-white text-lg"></i>
+                  <i className="fab fa-google text-lg text-white"></i>
                 </a>
               </div>
             </div>
@@ -464,64 +701,74 @@ Use this example to help users Signup in easily
                 <input type="password" className="form-control" />
               </div>
             </form>
-            <button className="button button-cyan flex mx-auto">Sign Up</button>
+            <button className="button button-cyan mx-auto flex">Sign Up</button>
             <a href="#">
-              <p className="text-center mt-5 mb-0 text-sm">Already have an account?</p>
+              <p className="mt-5 mb-0 text-center text-sm">
+                Already have an account?
+              </p>
             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
 ```html showLineNumbers
-  <button class="button button-cyan" dialog-trigger="true" data-ripple-light="true">Signup dialog</button>
-  <div class="dialog">
-    <div class="dialog-overlay" dialog-close="true"></div>
-    <div class="modal-dialog">
-      <div class="dialog-content mx-12">
-        <div class="card">
-          <div class="card-header mx-4 -mt-6">
-            <div class="bg-cyan-500 shadow-lg rounded-lg py-3 pe-1">
-              <h4 class="text-white font-bold text-center mt-2 mb-0">Sign up</h4>
-              <div class="flex mt-4">
-                <a class="button button-text ml-auto" href="#">
-                  <i class="fab fa-facebook-f text-white text-lg"></i>
-                </a>
-                <a class="button button-text" href="#">
-                  <i class="fab fa-github text-white text-lg"></i>
-                </a>
-                <a class="button button-text mr-auto" href="#">
-                  <i class="fab fa-google text-white text-lg"></i>
-                </a>
-              </div>
+<button
+  class="button button-cyan"
+  dialog-trigger="true"
+  data-ripple-light="true"
+>
+  Signup dialog
+</button>
+<div class="dialog">
+  <div class="dialog-overlay" dialog-close="true"></div>
+  <div class="modal-dialog">
+    <div class="dialog-content mx-12">
+      <div class="card">
+        <div class="card-header mx-4 -mt-6">
+          <div class="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
+            <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign up</h4>
+            <div class="mt-4 flex">
+              <a class="button button-text ml-auto" href="#">
+                <i class="fab fa-facebook-f text-lg text-white"></i>
+              </a>
+              <a class="button button-text" href="#">
+                <i class="fab fa-github text-lg text-white"></i>
+              </a>
+              <a class="button button-text mr-auto" href="#">
+                <i class="fab fa-google text-lg text-white"></i>
+              </a>
             </div>
           </div>
-          <div class="card-body">
-            <form action="role">
-              <div class="input-group input-group-dynamic my-5">
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control" />
-              </div>
-              <div class="input-group input-group-dynamic my-5">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" />
-              </div>
-              <div class="input-group input-group-dynamic my-5">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" />
-              </div>
-            </form>
-            <button class="button button-cyan flex mx-auto">Sign Up</button>
-            <a href="#">
-              <p class="text-center mt-5 mb-0 text-sm">Already have an account?</p>
-            </a>
-          </div>
+        </div>
+        <div class="card-body">
+          <form action="role">
+            <div class="input-group input-group-dynamic my-5">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="input-group input-group-dynamic my-5">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" />
+            </div>
+            <div class="input-group input-group-dynamic my-5">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" />
+            </div>
+          </form>
+          <button class="button button-cyan mx-auto flex">Sign Up</button>
+          <a href="#">
+            <p class="mt-5 mb-0 text-center text-sm">
+              Already have an account?
+            </p>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>
 ```
-{" "}
 
+{" "}

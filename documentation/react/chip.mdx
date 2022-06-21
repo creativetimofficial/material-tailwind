@@ -16,11 +16,11 @@ See below our simple chip component example that you can use for your Tailwind C
 
 <br />
 
-<ComponentCard id="chip">
+<ComponentDemo id="chip">
   <Chip value="chip" />
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
@@ -34,14 +34,14 @@ export default function Example() {
 
 The chip component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="chip-variants">
+<ComponentDemo id="chip-variants">
   <div className="flex gap-2">
     <Chip value="chip filled" />
     <Chip variant="gradient" value="chip gradient" />
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-7}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -60,7 +60,7 @@ export default function Variants() {
 
 The chip component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="chip-colors">
+<ComponentDemo id="chip-colors">
   <div className="flex gap-2">
     <Chip value="blue" />
     <Chip color="red" value="red" />
@@ -72,9 +72,9 @@ The chip component comes with 19 different colors that you can change it using t
     <Chip color="teal" value="teal" />
     <Chip color="cyan" value="cyan" />
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-14}
+```jsx showLineNumbers
 import { Chip } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -101,7 +101,7 @@ export default function Colors() {
 The chip component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
 <State initialState={{ show: true }}>
-  <ComponentCard id="chip-dismissible">
+  <ComponentDemo id="chip-dismissible">
     <Observe>
       {({ setState, show }) => (
         <>
@@ -118,19 +118,19 @@ The chip component is a dismissible component that you can control it using the 
             variant="gradient"
             show={show}
             dismissible={{
-              onClose: () => setState((s) => ({ show: false }))
+              onClose: () => setState((s) => ({ show: false })),
             }}
             value="Dismissible"
           />
         </>
       )}
     </Observe>
-  </ComponentCard>
+  </ComponentDemo>
 </State>
 
-```jsx showLineNumbers {5, 8-26}
+```jsx showLineNumbers
 import { useState, Fragment } from "react";
-import { Chip } from "@material-tailwind/react";
+import { Chip, Button } from "@material-tailwind/react";
 
 export default function Dismissible() {
   const [show, setShow] = useState(true);
@@ -150,7 +150,7 @@ export default function Dismissible() {
         variant="gradient"
         show={show}
         dismissible={{
-          onClose: () => setShow(false)
+          onClose: () => setShow(false),
         }}
         value="Dismissible"
       />
@@ -168,16 +168,16 @@ The following props are available for the button component. These are the custom
 props that come with we've added for the chip component and you can use all the other
 native props as well.
 
-| Attribute     | Type                       | Description                       | Default                               |
-| ------------- | -------------------------- | --------------------------------- | ------------------------------------- |
-| `variant`     | [Variant](#types)          | Change chip variant               | <Code small>filled</Code>             |
-| `color`       | [Color](#types)            | Change chip color                 | <Code small>blue</Code>               |
-| `value`       | [Value](#types)            | Add content for chip              | No default value its a required prop. |
-| `dismissible` | [Dismissible](#types)      | Makes the chip dismissible        | <Code small>undefined</Code>          |
-| `animate`     | [Animate](#types)          | Change chip animation             | <Code small>undefined</Code>          |
-| `show`        | <Code small>boolean</Code> | Change the chip visibility        | <Code small>true</Code>               |
-| `icon`        | <Code small>node</Code>    | Add icon at the beginning of chip | <Code small>undefined</Code>          |
-| `className`   | <Code small>string</Code>  | Add custom className for chip     | `''`                                  |
+| Attribute     | Type                       | Description                       | Default                                |
+| ------------- | -------------------------- | --------------------------------- | -------------------------------------- |
+| `variant`     | [Variant](#types)          | Change chip variant               | <Code small>filled</Code>              |
+| `color`       | [Color](#types)            | Change chip color                 | <Code small>blue</Code>                |
+| `value`       | [Value](#types)            | Add content for chip              | No default value it's a required prop. |
+| `dismissible` | [Dismissible](#types)      | Makes the chip dismissible        | <Code small>undefined</Code>           |
+| `animate`     | [Animate](#types)          | Change chip animation             | <Code small>undefined</Code>           |
+| `show`        | <Code small>boolean</Code> | Change the chip visibility        | <Code small>true</Code>                |
+| `icon`        | <Code small>node</Code>    | Add icon at the beginning of chip | <Code small>undefined</Code>           |
+| `className`   | <Code small>string</Code>  | Add custom className for chip     | `''`                                   |
 
 ---
 

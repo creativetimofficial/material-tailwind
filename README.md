@@ -33,7 +33,7 @@ Visit <a aria-label="@material-tailwind/html learn" href="https://www.material-t
 
 ## Getting Started - React
 
-Visit <a aria-label="@material-tailwind/react learn" href="https://www.material-tailwind.com/docs/react/quick-start">https://www.material-tailwind.com/docs/react/quick-start</a> to get started with @material-tailwind/react.
+Visit <a aria-label="@material-tailwind/react learn" href="https://www.material-tailwind.com/docs/react/installation">https://www.material-tailwind.com/docs/react/installation</a> to get started with @material-tailwind/react.
 
 ## Documentation - HTML
 
@@ -41,7 +41,7 @@ Visit [https://www.material-tailwind.com/docs/html/quick-start](https://www.mate
 
 ## Documentation - React
 
-Visit [https://www.material-tailwind.com/docs/react/quick-start](https://www.material-tailwind.com/docs/html/quick-start) to view the full documentation.
+Visit [https://www.material-tailwind.com/docs/react/installation](https://www.material-tailwind.com/docs/html/quick-start) to view the full documentation.
 
 ### Community
 

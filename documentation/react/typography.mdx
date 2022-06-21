@@ -8,7 +8,7 @@ navigation:
     "typography-colors",
     "typography-gradient-color",
     "props",
-    "types"
+    "types",
   ]
 github: typography
 prev: tooltip
@@ -19,17 +19,18 @@ prev: tooltip
 Use our Tailwind CSS typography to present your website/web app as clearly and efficiently as possible.
 
 Below we are presenting a simple typography component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+
 <br />
 
-<ComponentCard id="typography">
+<ComponentDemo id="typography">
   <Typography>
     {`Material Tailwind is an easy to use components library for Tailwind CSS and
     Material Design. It provides a simple way to customize your components, you
     can change the colors, fonts, breakpoints and everything you need.`}
   </Typography>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {1, 5-10}
+```jsx showLineNumbers
 import { Typography } from "@material-tailwind/react";
 
 export default function Example() {
@@ -50,7 +51,7 @@ export default function Example() {
 
 The typography component comes with 9 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="typography-variants">
+<ComponentDemo id="typography-variants">
   <div className="flex flex-col gap-8 text-left">
     <Typography variant="h1">Material Tailwind</Typography>
     <Typography variant="h2">Material Tailwind</Typography>
@@ -76,9 +77,10 @@ The typography component comes with 9 different variants that you can change it 
       can change the colors, fonts, breakpoints and everything you need.`}
     </Typography>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-29}
+```jsx showLineNumbers
+import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -119,7 +121,7 @@ export default function Variants() {
 
 The alert component comes with 23 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="typography-colors">
+<ComponentDemo id="typography-colors">
   <div className="flex flex-col gap-8 text-left">
     <Typography variant="h1" color="blue-grey">
       {`Material Tailwind`}
@@ -134,9 +136,10 @@ The alert component comes with 23 different colors that you can change it using 
       {`Material Tailwind`}
     </Typography>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-17}
+```jsx showLineNumbers
+import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -165,13 +168,13 @@ export default function Colors() {
 
 You can change the typography text color into a gradient color using the <Code>textGradient</Code> prop.
 
-<ComponentCard id="typography-gradient-color">
+<ComponentDemo id="typography-gradient-color">
   <Typography variant="h1" color="blue" textGradient>
     {`Material Tailwind`}
   </Typography>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {5-7}
+```jsx showLineNumbers
 import { Typography } from "@material-tailwind/react";
 
 export default function GradientColor() {
@@ -192,14 +195,14 @@ The following props are available for the typography component. These are the cu
 props that come with we've added for the typography component and you can use all
 the other native props as well.
 
-| Attribute      | Type                       | Description                                   | Default                               |
-| -------------- | -------------------------- | --------------------------------------------- | ------------------------------------- |
-| `variant`      | [Variant](#types)          | Change typography variant                     | <Code small>paragraph</Code>          |
-| `color`        | [Color](#types)            | Change typography color                       | <Code small>inherit</Code>            |
-| `textGradient` | <Code small>boolean</Code> | Change typography color into a gradient color | <Code small>false</Code>              |
-| `as`           | <Code small>element</Code> | Change the typography rendered element        | <Code small>undefined</Code>          |
-| `className`    | <Code small>string</Code>  | Add custom className for typography           | `''`                                  |
-| `children`     | <Code small>node</Code>    | Add content for typography                    | No default value its a required prop. |
+| Attribute      | Type                       | Description                                   | Default                                |
+| -------------- | -------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`      | [Variant](#types)          | Change typography variant                     | <Code small>paragraph</Code>           |
+| `color`        | [Color](#types)            | Change typography color                       | <Code small>inherit</Code>             |
+| `textGradient` | <Code small>boolean</Code> | Change typography color into a gradient color | <Code small>false</Code>               |
+| `as`           | <Code small>element</Code> | Change the typography rendered element        | <Code small>undefined</Code>           |
+| `className`    | <Code small>string</Code>  | Add custom className for typography           | `''`                                   |
+| `children`     | <Code small>node</Code>    | Add content for typography                    | No default value it's a required prop. |
 
 ---
 

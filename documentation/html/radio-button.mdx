@@ -1,0 +1,76 @@
+---
+title: Tailwind CSS Radio - Material Tailwind
+description: Customise your web projects with our easy-to-use Radio component for Tailwind CSS using Material Design guidelines.
+navigation: ["radio"]
+github: radio-button
+prev: progress-bar
+next: select
+---
+
+# Tailwind CSS Radio
+
+Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options. Radio buttons should be used instead of checkboxes if only one item can be selected from a list.
+
+Use the following example to create simple radio buttons for your projects.
+
+<br />
+
+<ComponentDemo id="radio">
+  <div className="text-left">
+    <div className="form-check mb-4 flex">
+      <input
+        className="radio absolute z-10 cursor-pointer opacity-0"
+        type="radio"
+        id="flexRadioDefault1"
+      />
+      <div className="form-check-input"></div>
+      <label
+        className="custom-control-label my-auto cursor-pointer"
+        for="flexRadioDefault1"
+      >
+        {`Default radio`}
+      </label>
+    </div>
+    <div className="form-check flex">
+      <input
+        className="radio absolute z-10 cursor-pointer opacity-0"
+        type="radio"
+        id="flexRadioDefault2"
+        checked
+      />
+      <div className="form-check-input"></div>
+      <label
+        className="custom-control-label my-auto cursor-pointer"
+        for="flexRadioDefault2"
+      >
+        {`Default checked radio`}
+      </label>
+    </div>
+  </div>
+</ComponentDemo>
+
+```html showLineNumbers
+<div class="form-check flex">
+  <input
+    class="radio absolute z-10 cursor-pointer opacity-0"
+    type="radio"
+    id="flexRadioDefault1"
+  />
+  <div class="form-check-input"></div>
+  <label class="custom-control-label my-auto" for="flexRadioDefault1"
+    >Default radio</label
+  >
+</div>
+<div class="form-check flex">
+  <input
+    class="radio absolute z-10 cursor-pointer opacity-0"
+    type="radio"
+    id="flexRadioDefault2"
+    checked
+  />
+  <div class="form-check-input"></div>
+  <label class="custom-control-label my-auto" for="flexRadioDefault2"
+    >Default checked radio</label
+  >
+</div>
+```

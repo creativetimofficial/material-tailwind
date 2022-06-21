@@ -2,7 +2,12 @@ export const routes = [
   {
     name: "guide",
     icon: "fas fa-book",
-    pages: ["quick-start", "license", "what-is-tailwind-css"]
+    pages: ["installation", "license", "what-is-tailwind-css"],
+  },
+  {
+    name: "Customization",
+    icon: "fas fa-paint-brush",
+    pages: ["theming", "colors", "fonts", "shadows", "screens"],
   },
   {
     name: "components",
@@ -29,7 +34,7 @@ export const routes = [
       "tabs",
       "textarea",
       "tooltip",
-      "typography"
-    ]
-  }
+      "typography",
+    ],
+  },
 ];

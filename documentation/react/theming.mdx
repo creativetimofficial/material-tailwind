@@ -1,0 +1,109 @@
+---
+title: Theming - Material Tailwind
+description: Learn how to customize and set your own theme for Material Tailwind components.
+navigation:
+  [
+    "theming",
+    "theme-provider",
+    "theme-provider-props",
+    "theme-object-structure",
+    "class-name",
+  ]
+github: theming
+prev: what-is-tailwind-css
+next: colors
+---
+
+# Theming - Material Tailwind
+
+<span id="theming" className="scroll-mt-48" />
+Customize @material-tailwind/react with your own theme. You can change the base styles
+like the colors, typography, box-shadows and breakpoints as well as the components
+style.
+
+@material-tailwind/react come's with a <Code>ThemeProvider</Code> component that you can use to set your own theme or use the default theme provided by @material-tailwind/react.
+
+<br />
+<br />
+
+## Theme Provider
+
+<span id="theme-provider" className="scroll-mt-32" />
+
+The <Code>ThemeProvider</Code> component give you the ability to use and customize the default theme or set your own theme for @material-tailwind/react.
+
+You need to wrap your component or entire application with the <Code>ThemeProvider</Code> component to use the theme.
+
+```js showLineNumbers
+import { ThemeProvider } from "@material-tailwind/react";
+
+export default function App() {
+  const customTheme = { ... }
+
+  return <ThemeProvider value={customTheme}>...</ThemeProvider>;
+}
+```
+
+---
+
+## Theme Provider Props
+
+<span id="theme-provider-props" className="scroll-mt-32" />
+The following props are available for the <Code>ThemeProvider</Code>.
+
+| Attribute  | Type                      | Description                          | Default                                |
+| ---------- | ------------------------- | ------------------------------------ | -------------------------------------- |
+| `value`    | <Code small>object</Code> | Customize the components theme       | @material-tailwind/react default theme |
+| `children` | <Code small>node</Code>   | The component that should be wrapped | No default value it's a required prop. |
+
+---
+
+## Theme Object Structure
+
+<span id="theme-object-structure" className="scroll-mt-32" />
+
+The theme object is a plain object that contains all of the components styles object. All of the components styles are available in the theme object and these styles object has a unique format for different use cases.
+
+```js showLineNumbers
+const themeObject = {
+  componentTheme = {
+    defaultProps: { ... },
+    valid: { ... },
+    styles: { ... }
+  }
+}
+```
+
+<br />
+<br />
+
+| Key            | Description                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| `defaultProps` | Is used to change the default props value for components.           |
+| `valid`        | Is used to change the valid values for components props validation. |
+| `styles`       | Is used to change the styles of a component.                        |
+
+<br />
+<br />
+
+To know more about how to customize the component theme object for a specific component please check the component documentation page.
+
+---
+
+## The `className` Prop
+
+<span id="class-name" className="scroll-mt-32" />
+
+Each component has a <Code>className</Code> prop that you can use to add tailwindcss classnames or your own custom classnames.
+
+The <Code>className</Code> prop overrides the tailwindcss classnames for a component and sometimes you need to use the <Code>!</Code> modifier before the tailwindcss classnames to override the classnames for a component.
+
+e.g. <Code>!text-blue-500</Code>
+
+```jsx showLineNumbers
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button className="!px-8 uppercase">Button</Button>;
+}
+```

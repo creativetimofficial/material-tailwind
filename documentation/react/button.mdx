@@ -8,7 +8,7 @@ navigation:
     "button-sizes",
     "button-colors",
     "props",
-    "types"
+    "types",
   ]
 github: button
 prev: breadcrumbs
@@ -19,17 +19,17 @@ next: card
 
 Use our buttons based on Tailwind CSS for actions in forms, dialogues, and more.
 
-Buttons are an essential element of web design. Basically, buttons are styled links that grab the users’ attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form or placing an order as easy as possible.
+Buttons are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form or placing an order as easy as possible.
 
 See below our button example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
-<ComponentCard id="button">
+<ComponentDemo id="button">
   <Button>Button</Button>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx showLineNumbers
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {
@@ -43,21 +43,21 @@ export default function Example() {
 
 The button component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentCard id="button-variants">
-  <div className="flex gap-4 w-max">
+<ComponentDemo id="button-variants">
+  <div className="flex w-max gap-4">
     <Button>filled</Button>
     <Button variant="gradient">gradient</Button>
     <Button variant="outlined">outlined</Button>
     <Button variant="text">text</Button>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-9}
+```jsx showLineNumbers
 import { Button } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex gap-4 w-max">
+    <div className="flex w-max gap-4">
       <Button variant="filled">filled</Button>
       <Button variant="gradient">gradient</Button>
       <Button variant="outlined">outlined</Button>
@@ -73,20 +73,20 @@ export default function Variants() {
 
 The button component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentCard id="button-sizes">
-  <div className="flex items-end gap-4 w-max">
+<ComponentDemo id="button-sizes">
+  <div className="flex w-max items-end gap-4">
     <Button size="sm">small</Button>
     <Button>medium</Button>
     <Button size="lg">large</Button>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-8}
+```jsx showLineNumbers
 import { Button } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex items-end gap-4 w-max">
+    <div className="flex w-max items-end gap-4">
       <Button size="sm">small</Button>
       <Button size="md">medium</Button>
       <Button size="lg">large</Button>
@@ -101,21 +101,21 @@ export default function Sizes() {
 
 The button component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="button-colors">
-  <div className="flex gap-4 w-max">
+<ComponentDemo id="button-colors">
+  <div className="flex w-max gap-4">
     <Button color="blue">color blue</Button>
     <Button color="red">color red</Button>
     <Button color="green">color green</Button>
     <Button color="amber">color amber</Button>
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-9}
+```jsx showLineNumbers
 import { Button } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex gap-4 w-max">
+    <div className="flex w-max gap-4">
       <Button color="blue">color blue</Button>
       <Button color="red">color red</Button>
       <Button color="green">color green</Button>
@@ -134,15 +134,15 @@ The following props are available for the button component. These are the custom
 props that come with we've added for the button component and you can use all the
 other native button props as well.
 
-| Attribute   | Type                       | Description                            | Default                               |
-| ----------- | -------------------------- | -------------------------------------- | ------------------------------------- |
-| `variant`   | [Variant](#types)          | Change button variant                  | <Code small>filled</Code>             |
-| `size`      | [Size](#types)             | Change button size                     | <Code small>md</Code>                 |
-| `color`     | [Color](#types)            | Change button color                    | <Code small>blue</Code>               |
-| `fullWidth` | <Code small>boolean</Code> | Change button to a block level element | <Code small>false</Code>              |
-| `ripple`    | <Code small>boolean</Code> | Add ripple effect for button           | <Code small>true</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for button        | `''`                                  |
-| `children`  | <Code small>node</Code>    | Add content for button                 | No default value its a required prop. |
+| Attribute   | Type                       | Description                            | Default                                |
+| ----------- | -------------------------- | -------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types)          | Change button variant                  | <Code small>filled</Code>              |
+| `size`      | [Size](#types)             | Change button size                     | <Code small>md</Code>                  |
+| `color`     | [Color](#types)            | Change button color                    | <Code small>blue</Code>                |
+| `fullWidth` | <Code small>boolean</Code> | Change button to a block level element | <Code small>false</Code>               |
+| `ripple`    | <Code small>boolean</Code> | Add ripple effect for button           | <Code small>true</Code>                |
+| `className` | <Code small>string</Code>  | Add custom className for button        | `''`                                   |
+| `children`  | <Code small>node</Code>    | Add content for button                 | No default value it's a required prop. |
 
 ---
 

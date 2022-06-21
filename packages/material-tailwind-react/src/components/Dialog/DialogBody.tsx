@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";

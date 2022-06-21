@@ -4,7 +4,7 @@ description: Customise your web projects  with our beautiful checkbox component 
 navigation: ["checkbox", "checkbox-colors", "props", "types"]
 github: checkbox
 prev: card
-next: dialog
+next: chip
 ---
 
 # Tailwind CSS Checkbox - React
@@ -21,11 +21,11 @@ See below our simple checkbox example that you can use in your React and Tailwin
 
 <br />
 
-<ComponentCard id="checkbox">
+<ComponentDemo id="checkbox">
   <Checkbox defaultChecked />
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx showLineNumbers
 import { Checkbox } from "@material-tailwind/react";
 
 export default function Example() {
@@ -39,8 +39,8 @@ export default function Example() {
 
 The checkbox component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="checkbox-colors">
-  <div className="flex gap-4 w-max">
+<ComponentDemo id="checkbox-colors">
+  <div className="flex w-max gap-4">
     <Checkbox color="blue" defaultChecked />
     <Checkbox color="red" defaultChecked />
     <Checkbox color="green" defaultChecked />
@@ -50,14 +50,14 @@ The checkbox component comes with 19 different colors that you can change it usi
     <Checkbox color="purple" defaultChecked />
     <Checkbox color="pink" defaultChecked />
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-13}
+```jsx showLineNumbers
 import { Checkbox } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex gap-4 w-max">
+    <div className="flex w-max gap-4">
       <Checkbox color="blue" defaultChecked />
       <Checkbox color="red" defaultChecked />
       <Checkbox color="green" defaultChecked />

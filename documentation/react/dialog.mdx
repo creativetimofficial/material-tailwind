@@ -8,7 +8,7 @@ navigation:
     "dialog-header-props",
     "dialog-body-props",
     "dialog-footer-props",
-    "types"
+    "types",
   ]
 github: dialog
 prev: chip
@@ -26,7 +26,7 @@ See below our dialog example that you can use for your Tailwind CSS and React pr
 <br />
 
 <State initialState={{ open: false }}>
-  <ComponentCard id="dialog">
+  <ComponentDemo id="dialog">
     <Observe>
       {({ setState, open }) => (
         <>
@@ -65,16 +65,17 @@ See below our dialog example that you can use for your Tailwind CSS and React pr
         </>
       )}
     </Observe>
-  </ComponentCard>
+  </ComponentDemo>
 </State>
 
 ```jsx showLineNumbers
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
+  Button,
   Dialog,
   DialogHeader,
   DialogBody,
-  DialogFooter
+  DialogFooter,
 } from "@material-tailwind/react";
 
 export default function Example() {
@@ -123,15 +124,15 @@ The following props are available for the dialog component. These are the custom
 props that come with we've added for the dialog component and you can use all the
 other native props as well.
 
-| Attribute   | Type                        | Description                               | Default                               |
-| ----------- | --------------------------- | ----------------------------------------- | ------------------------------------- |
-| `open`      | <Code small>boolean</Code>  | Open the dialog                           | No default value its a required prop. |
-| `handler`   | <Code small>function</Code> | Controls open and close states for dialog | No default value its a required prop. |
-| `size`      | [Size](#types)              | Change dialog size                        | <Code small>md</Code>                 |
-| `dismiss`   | [Dismiss](#types)           | Change backdrop dismiss listeners         | <Code small>undefined</Code>          |
-| `animate`   | [Animate](#types)           | Change dialog animation                   | <Code small>undefined</Code>          |
-| `className` | <Code small>string</Code>   | Add custom className for dialog           | `''`                                  |
-| `children`  | <Code small>node</Code>     | Add content for dialog                    | No default value its a required prop. |
+| Attribute   | Type                        | Description                               | Default                                |
+| ----------- | --------------------------- | ----------------------------------------- | -------------------------------------- |
+| `open`      | <Code small>boolean</Code>  | Open the dialog                           | No default value it's a required prop. |
+| `handler`   | <Code small>function</Code> | Controls open and close states for dialog | No default value it's a required prop. |
+| `size`      | [Size](#types)              | Change dialog size                        | <Code small>md</Code>                  |
+| `dismiss`   | [Dismiss](#types)           | Change backdrop dismiss listeners         | <Code small>undefined</Code>           |
+| `animate`   | [Animate](#types)           | Change dialog animation                   | <Code small>undefined</Code>           |
+| `className` | <Code small>string</Code>   | Add custom className for dialog           | `''`                                   |
+| `children`  | <Code small>node</Code>     | Add content for dialog                    | No default value it's a required prop. |
 
 ---
 
@@ -142,10 +143,10 @@ The following props are available for the dialog header component. These are the
 custom props that come with we've added for the dialog header component and you can
 use all the other native props as well.
 
-| Attribute   | Type                      | Description                            | Default                               |
-| ----------- | ------------------------- | -------------------------------------- | ------------------------------------- |
-| `className` | <Code small>string</Code> | Add custom className for dialog header | `''`                                  |
-| `children`  | <Code small>node</Code>   | Add content for dialog header          | No default value its a required prop. |
+| Attribute   | Type                      | Description                            | Default                                |
+| ----------- | ------------------------- | -------------------------------------- | -------------------------------------- |
+| `className` | <Code small>string</Code> | Add custom className for dialog header | `''`                                   |
+| `children`  | <Code small>node</Code>   | Add content for dialog header          | No default value it's a required prop. |
 
 ---
 
@@ -156,11 +157,11 @@ The following props are available for the dialog body component. These are the c
 props that come with we've added for the dialog body component and you can use all
 the other native props as well.
 
-| Attribute   | Type                       | Description                             | Default                               |
-| ----------- | -------------------------- | --------------------------------------- | ------------------------------------- |
-| `divider`   | <Code small>boolean</Code> | Add border top & bottom for dialog body | <Code small>false</Code>              |
-| `className` | <Code small>string</Code>  | Add custom className for dialog body    | `''`                                  |
-| `children`  | <Code small>node</Code>    | Add content for dialog body             | No default value its a required prop. |
+| Attribute   | Type                       | Description                             | Default                                |
+| ----------- | -------------------------- | --------------------------------------- | -------------------------------------- |
+| `divider`   | <Code small>boolean</Code> | Add border top & bottom for dialog body | <Code small>false</Code>               |
+| `className` | <Code small>string</Code>  | Add custom className for dialog body    | `''`                                   |
+| `children`  | <Code small>node</Code>    | Add content for dialog body             | No default value it's a required prop. |
 
 ---
 
@@ -171,10 +172,10 @@ The following props are available for the dialog footer component. These are the
 custom props that come with we've added for the dialog footer component and you can
 use all the other native props as well.
 
-| Attribute   | Type                      | Description                            | Default                               |
-| ----------- | ------------------------- | -------------------------------------- | ------------------------------------- |
-| `className` | <Code small>string</Code> | Add custom className for dialog footer | `''`                                  |
-| `children`  | <Code small>node</Code>   | Add content for dialog footer          | No default value its a required prop. |
+| Attribute   | Type                      | Description                            | Default                                |
+| ----------- | ------------------------- | -------------------------------------- | -------------------------------------- |
+| `className` | <Code small>string</Code> | Add custom className for dialog footer | `''`                                   |
+| `children`  | <Code small>node</Code>   | Add content for dialog footer          | No default value it's a required prop. |
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: Tailwind CSS Select - Material Tailwind
 description: Customise your web projects with our easy-to-use Select component for Tailwind CSS using Material Design guidelines.
-navigation: ["select", "select with search"]
+navigation: ["select", "select-with-search"]
+github: select
+prev: radio-button
+next: switch
 ---
 
 # Tailwind CSS Select
@@ -12,22 +15,33 @@ A select component is a dropdown menu for displaying choices. Use the radio comp
 
 See below our select component example that you can use in your Tailwind CSS project. The example comes in different colors and styles, so you can adapt it easily to your needs.
 
-
-<br/>
-<ComponentCard id="select">
-<div className="w-1/3">
-  <select className="form-control" name="choice-button" id="choice-button" placeholder="Language">
-    <option defaultValue="Choice 1" selected>Brazil</option>
-    <option defaultValue="Choice 2">Bucharest</option>
-    <option defaultValue="Choice 3">London</option>
-    <option defaultValue="Choice 4">Washington</option>
-  </select>
-</div>
-</ComponentCard>
+<br />
+<ComponentDemo id="select">
+  <div className="w-1/3">
+    <select
+      className="form-control"
+      name="choice-button"
+      id="choice-button"
+      placeholder="Language"
+    >
+      <option defaultValue="Choice 1" selected>
+        Brazil
+      </option>
+      <option defaultValue="Choice 2">Bucharest</option>
+      <option defaultValue="Choice 3">London</option>
+      <option defaultValue="Choice 4">Washington</option>
+    </select>
+  </div>
+</ComponentDemo>
 
 ```html showLineNumbers
 <div class="w-1/6">
-  <select class="form-control" name="choice-button" id="choice-button" placeholder="Language">
+  <select
+    class="form-control"
+    name="choice-button"
+    id="choice-button"
+    placeholder="Language"
+  >
     <option defaultValue="Choice 1" selected>Brazil</option>
     <option defaultValue="Choice 2">Bucharest</option>
     <option defaultValue="Choice 3">London</option>
@@ -35,8 +49,8 @@ See below our select component example that you can use in your Tailwind CSS pro
   </select>
 </div>
 ```
-<br/>
-{" "}
+
+<br />{" "}
 
 You have to add the following initialization script to run this plugin:
 
@@ -44,31 +58,44 @@ You have to add the following initialization script to run this plugin:
 if (document.getElementById("choice-search")) {
   var element = document.getElementById("choice-search");
   const example = new Choices(element, {
-    searchEnabled: false
+    searchEnabled: false,
   });
 }
 ```
-<br/>
-<br/>
-{" "}
 
-### Select with search 
-<br/>
+<br />
+<br />{" "}
 
-<ComponentCard id="select with search">
-<div className="w-1/3">
-  <select className="form-control" name="choice-search" id="choice-search" placeholder="Location">
-    <option defaultValue="Choice 1" selected>Brazil</option>
-    <option defaultValue="Choice 2">Bucharest</option>
-    <option defaultValue="Choice 3">London</option>
-    <option defaultValue="Choice 4">Washington</option>
-  </select>
-</div>
-</ComponentCard>
+### Select with search
+
+<br />
+
+<ComponentDemo id="select with search">
+  <div className="w-1/3">
+    <select
+      className="form-control"
+      name="choice-search"
+      id="choice-search"
+      placeholder="Location"
+    >
+      <option defaultValue="Choice 1" selected>
+        Brazil
+      </option>
+      <option defaultValue="Choice 2">Bucharest</option>
+      <option defaultValue="Choice 3">London</option>
+      <option defaultValue="Choice 4">Washington</option>
+    </select>
+  </div>
+</ComponentDemo>
 
 ```html showLineNumbers
 <div class="w-1/6">
-  <select class="form-control" name="choice-search" id="choice-search" placeholder="Location">
+  <select
+    class="form-control"
+    name="choice-search"
+    id="choice-search"
+    placeholder="Location"
+  >
     <option defaultValue="Choice 1" selected>Brazil</option>
     <option defaultValue="Choice 2">Bucharest</option>
     <option defaultValue="Choice 3">London</option>
@@ -85,5 +112,5 @@ if (document.getElementById("choice-button")) {
   const example = new Choices(element, {});
 }
 ```
-<br/>
-{" "}
+
+<br />{" "}

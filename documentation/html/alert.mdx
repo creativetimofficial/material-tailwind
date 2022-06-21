@@ -1,7 +1,10 @@
 ---
 title: Tailwind CSS Alert - Material Tailwind
 description: Customise your web projects with our easy-to-use Alert component for Tailwind CSS using Material Design guidelines.
-navigation: ["alert", "simple alert", "alert with gradient"]
+navigation: ["alert", "simple-alert", "alert-with-gradient"]
+github: alert
+prev: accordion
+next: avatar
 ---
 
 # Tailwind CSS Alerts
@@ -11,16 +14,18 @@ Get started on your web projects with our Tailwind CSS alert which provides cont
 An alert displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
 
 Below we are presenting examples of alerts that you can use in your Tailwind CSS project. The examples come in different colors and styles so you can adapt them easily to your needs.
-<br/>
-<ComponentCard id="alert">
-  <div className="alert alert-pink w-full mb-0">Alert primary</div>
-</ComponentCard>
+
+<br />
+<ComponentDemo id="alert">
+  <div className="alert alert-pink mb-0 w-full">Alert primary</div>
+</ComponentDemo>
 
 ```html showLineNumbers
 <div class="alert alert-pink w-full">Alert primary</div>
 ```
 
 {" "}
+
 <br />
 <br />
 
@@ -29,16 +34,17 @@ Below we are presenting examples of alerts that you can use in your Tailwind CSS
 Use this example to create a simple and versatile alert component.
 
 {" "}
+
 <br />
-<ComponentCard id="simple-alert">
+<ComponentDemo id="simple-alert">
   <div className="alert alert-pink w-full">Alert primary</div>
   <div className="alert alert-secondary w-full">Alert secondary</div>
   <div className="alert alert-green w-full">Alert success</div>
   <div className="alert alert-red w-full">Alert danger</div>
   <div className="alert alert-orange w-full">Alert warning</div>
   <div className="alert alert-blue w-full">Alert info</div>
-  <div className="alert alert-dark w-full mb-0">Alert Dark</div>
-</ComponentCard>
+  <div className="alert alert-dark mb-0 w-full">Alert Dark</div>
+</ComponentDemo>
 
 ```html showLineNumbers
 <div class="alert alert-pink w-full">Alert primary</div>
@@ -51,31 +57,41 @@ Use this example to create a simple and versatile alert component.
 ```
 
 {" "}
+
 <br />
 <br />
 
 ### Alert with gradient
 
 Use this example to create a beautiful alert with gradients.
- <br/>
-<ComponentCard id="alert with gradient">
-  <div className="alert alert-gradient alert-pink w-full">Alert primary</div>
-  <div className="alert alert-gradient alert-secondary w-full">Alert secondary</div>
+
+{" "}
+
+<br />
+<ComponentDemo id="alert with gradient">
+  <div className="alert alert-pink alert-gradient w-full">Alert primary</div>
+  <div className="alert alert-gradient alert-secondary w-full">
+    {`Alert secondary`}
+  </div>
   <div className="alert alert-gradient alert-green w-full">Alert success</div>
   <div className="alert alert-gradient alert-red w-full">Alert danger</div>
   <div className="alert alert-gradient alert-orange w-full">Alert warning</div>
   <div className="alert alert-gradient alert-blue w-full">Alert info</div>
-  <div className="alert alert-gradient alert-light text-dark-500 w-full">Alert Light</div>
-  <div className="alert alert-gradient alert-dark w-full mb-0">Alert Dark</div>
-</ComponentCard>
+  <div className="alert alert-gradient alert-light w-full text-dark-500">
+    {`Alert light`}
+  </div>
+  <div className="alert alert-gradient alert-dark mb-0 w-full">Alert dark</div>
+</ComponentDemo>
 
 ```html showLineNumbers
-<div class="alert alert-gradient alert-pink w-full">Alert primary</div>
+<div class="alert alert-pink alert-gradient w-full">Alert primary</div>
 <div class="alert alert-gradient alert-secondary w-full">Alert secondary</div>
 <div class="alert alert-gradient alert-green w-full">Alert success</div>
 <div class="alert alert-gradient alert-red w-full">Alert danger</div>
 <div class="alert alert-gradient alert-orange w-full">Alert warning</div>
 <div class="alert alert-gradient alert-blue w-full">Alert info</div>
-<div class="alert alert-gradient alert-light text-dark-500 w-full">Alert Light</div>
+<div class="alert alert-gradient alert-light w-full text-dark-500">
+  Alert Light
+</div>
 <div class="alert alert-gradient alert-dark w-full">Alert Dark</div>
 ```

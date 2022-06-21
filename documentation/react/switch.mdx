@@ -15,11 +15,11 @@ See below our example that will help you create simple and easy-to-use switch co
 
 <br />
 
-<ComponentCard id="switch">
+<ComponentDemo id="switch">
   <Switch id="switch-component" defaultChecked />
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx showLineNumbers
 import { Switch } from "@material-tailwind/react";
 
 export default function Example() {
@@ -33,8 +33,8 @@ export default function Example() {
 
 The switch component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentCard id="switch-colors">
-  <div className="flex gap-4 w-max">
+<ComponentDemo id="switch-colors">
+  <div className="flex w-max gap-4">
     <Switch id="switch-1" color="blue" defaultChecked />
     <Switch id="switch-2" color="red" defaultChecked />
     <Switch id="switch-3" color="green" defaultChecked />
@@ -44,14 +44,14 @@ The switch component comes with 19 different colors that you can change it using
     <Switch id="switch-7" color="purple" defaultChecked />
     <Switch id="switch-8" color="pink" defaultChecked />
   </div>
-</ComponentCard>
+</ComponentDemo>
 
-```jsx showLineNumbers {6-13}
+```jsx showLineNumbers
 import { Switch } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex gap-4 w-max">
+    <div className="flex w-max gap-4">
       <Switch color="blue" defaultChecked />
       <Switch color="red" defaultChecked />
       <Switch color="green" defaultChecked />

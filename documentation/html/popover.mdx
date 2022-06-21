@@ -1,7 +1,10 @@
 ---
 title: Tailwind CSS Popover - Material Tailwind
 description: Customise your web projects with our easy-to-use Popover component for Tailwind CSS using Material Design guidelines.
-navigation: ["popover", "popover position"]
+navigation: ["popover", "popover-position"]
+github: popover
+prev: pagination
+next: progress-bar
 ---
 
 # Tailwind CSS Popover
@@ -12,88 +15,194 @@ See below our popover components examples.
 
 <br />
 
-<ComponentCard id="popover">
-<button className="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover top</button>
-<div className="popover hidden" data-attribute="popover" data-placement="top">
-  <div className="popover-title">Popover title</div>
-  <div className="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
-  <div className="arrow" data-popper-arrow></div>
-</div>
-</ComponentCard>
+<ComponentDemo id="popover">
+  <button
+    className="button button-pink"
+    data-target="popover"
+    type="button"
+    data-ripple-light="true"
+  >
+    {`Popover top`}
+  </button>
+  <div className="popover hidden" data-attribute="popover" data-placement="top">
+    <div className="popover-title">Popover title</div>
+    <div className="popover-body p-3">
+      And here's some amazing content. It's very engaging. Right?
+    </div>
+    <div className="arrow" data-popper-arrow></div>
+  </div>
+</ComponentDemo>
 
 ```html showLineNumbers
-<button class="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover top</button>
+<button
+  class="button button-pink"
+  data-target="popover"
+  type="button"
+  data-ripple-light="true"
+>
+  Popover top
+</button>
 <div class="popover hidden" data-attribute="popover" data-placement="top">
   <div class="popover-title">Gray popover title</div>
-  <div class="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
+  <div class="popover-body p-3">
+    And here's some amazing content. It's very engaging. Right?
+  </div>
   <div class="arrow" data-popper-arrow></div>
 </div>
 ```
+
 <br />
-<br />
-{" "}
+<br />{" "}
 
 ### Popover position
 
-You can simply change the popover position by changing the **data-placement=" "** attribute with the following values: ***top***, ***right***, ***bottom***, ***left***.
+You can simply change the popover position by changing the **data-placement=" "** attribute with the following values: **_top_**, **_right_**, **_bottom_**, **_left_**.
 
 <br />
 
-<ComponentCard id="popover position">
-<div className="flex">
-  <button className="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover top</button>
-  <div className="popover hidden" data-attribute="popover" data-placement="top">
-    <div className="popover-title">Tailwind popover title</div>
-    <div className="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
-    <div className="arrow" data-popper-arrow></div>
+<ComponentDemo id="popover position">
+  <div className="flex">
+    <button
+      className="button button-pink"
+      data-target="popover"
+      type="button"
+      data-ripple-light="true"
+    >
+      {`Popover top`}
+    </button>
+    <div
+      className="popover hidden"
+      data-attribute="popover"
+      data-placement="top"
+    >
+      <div className="popover-title">Tailwind popover title</div>
+      <div className="popover-body p-3">
+        And here's some amazing content. It's very engaging. Right?
+      </div>
+      <div className="arrow" data-popper-arrow></div>
+    </div>
+    <button
+      className="button button-pink mx-4"
+      data-target="popover"
+      type="button"
+      data-ripple-light="true"
+    >
+      {`Popover right`}
+    </button>
+    <div
+      className="popover hidden"
+      data-attribute="popover"
+      data-placement="right"
+    >
+      <div className="popover-title">Tailwind popover title</div>
+      <div className="popover-body p-3">
+        And here's some amazing content. It's very engaging. Right?
+      </div>
+      <div className="arrow" data-popper-arrow></div>
+    </div>
+    <button
+      className="button button-pink mr-4"
+      data-target="popover"
+      type="button"
+      data-ripple-light="true"
+    >
+      {`Popover bottom`}
+    </button>
+    <div
+      className="popover hidden"
+      data-attribute="popover"
+      data-placement="bottom"
+    >
+      <div className="popover-title">Tailwind popover title</div>
+      <div className="popover-body p-3">
+        And here's some amazing content. It's very engaging. Right?
+      </div>
+      <div className="arrow" data-popper-arrow></div>
+    </div>
+    <button
+      className="button button-pink"
+      data-target="popover"
+      type="button"
+      data-ripple-light="true"
+    >
+      {`Popover left`}
+    </button>
+    <div
+      className="popover hidden"
+      data-attribute="popover"
+      data-placement="left"
+    >
+      <div className="popover-title">Tailwind popover title</div>
+      <div className="popover-body p-3">
+        And here's some amazing content. It's very engaging. Right?
+      </div>
+      <div className="arrow" data-popper-arrow></div>
+    </div>
   </div>
-  <button className="button button-pink mx-4" data-target="popover" type="button" data-ripple-light="true">Popover right</button>
-  <div className="popover hidden" data-attribute="popover" data-placement="right">
-    <div className="popover-title">Tailwind popover title</div>
-    <div className="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
-    <div className="arrow" data-popper-arrow></div>
-  </div>
-  <button className="button button-pink mr-4" data-target="popover" type="button" data-ripple-light="true">Popover bottom</button>
-  <div className="popover hidden" data-attribute="popover" data-placement="bottom">
-    <div className="popover-title">Tailwind popover title</div>
-    <div className="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
-    <div className="arrow" data-popper-arrow></div>
-  </div>
-  <button className="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover left</button>
-  <div className="popover hidden" data-attribute="popover" data-placement="left">
-    <div className="popover-title">Tailwind popover title</div>
-    <div className="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
-    <div className="arrow" data-popper-arrow></div>
-  </div>
-</div>
-</ComponentCard>
+</ComponentDemo>
 
 ```html showLineNumbers
-<button class="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover top</button>
+<button
+  class="button button-pink"
+  data-target="popover"
+  type="button"
+  data-ripple-light="true"
+>
+  Popover top
+</button>
 <div class="popover hidden" data-attribute="popover" data-placement="top">
   <div class="popover-title">Tailwind popover title</div>
-  <div class="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
+  <div class="popover-body p-3">
+    And here's some amazing content. It's very engaging. Right?
+  </div>
   <div class="arrow" data-popper-arrow></div>
 </div>
-<button class="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover right</button>
+<button
+  class="button button-pink"
+  data-target="popover"
+  type="button"
+  data-ripple-light="true"
+>
+  Popover right
+</button>
 <div class="popover hidden" data-attribute="popover" data-placement="right">
   <div class="popover-title">Tailwind popover title</div>
-  <div class="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
+  <div class="popover-body p-3">
+    And here's some amazing content. It's very engaging. Right?
+  </div>
   <div class="arrow" data-popper-arrow></div>
 </div>
-<button class="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover bottom</button>
+<button
+  class="button button-pink"
+  data-target="popover"
+  type="button"
+  data-ripple-light="true"
+>
+  Popover bottom
+</button>
 <div class="popover hidden" data-attribute="popover" data-placement="bottom">
   <div class="popover-title">Tailwind popover title</div>
-  <div class="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
+  <div class="popover-body p-3">
+    And here's some amazing content. It's very engaging. Right?
+  </div>
   <div class="arrow" data-popper-arrow></div>
 </div>
-<button class="button button-pink" data-target="popover" type="button" data-ripple-light="true">Popover left</button>
+<button
+  class="button button-pink"
+  data-target="popover"
+  type="button"
+  data-ripple-light="true"
+>
+  Popover left
+</button>
 <div class="popover hidden" data-attribute="popover" data-placement="left">
   <div class="popover-title">Tailwind popover title</div>
-  <div class="popover-body p-3">And here's some amazing content. It's very engaging. Right?</div>
+  <div class="popover-body p-3">
+    And here's some amazing content. It's very engaging. Right?
+  </div>
   <div class="arrow" data-popper-arrow></div>
 </div>
 ```
+
 <br />
-<br />
-{" "}
+<br />{" "}
