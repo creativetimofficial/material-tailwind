@@ -1,4 +1,4 @@
-import { cloneElement, useRef, useState, useEffect, ReactNode } from "react";
+import { cloneElement, useRef, useState, useEffect, ReactElement } from "react";
 
 // @material-tailwind/react components
 import { IconButton, Tooltip, IconButtonProps } from "@material-tailwind/react";
@@ -33,7 +33,7 @@ function copyToClipboard(text) {
 
 // prop-types
 interface Props {
-  children: ReactNode;
+  children: ReactElement;
   color: IconButtonProps["color"];
 }
 
