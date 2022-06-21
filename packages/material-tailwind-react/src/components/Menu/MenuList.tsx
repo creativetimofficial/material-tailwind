@@ -1,7 +1,5 @@
 import React from "react";
 
-// @floating-ui
-
 // framer-motion
 import {
   FloatingPortal,
