@@ -2,7 +2,13 @@
 title: Tailwind CSS Progress - Material Tailwind
 description: Customise your web projects with our easy-to-use Progress component for Tailwind CSS using Material Design guidelines.
 navigation:
-  ["progress", "progress-variation", "progress-styles", "progress-gradient"]
+  [
+    "progress",
+    "progress-variation",
+    "progress-styles",
+    "progress-gradient",
+    required-script,
+  ]
 github: progress-bar
 prev: popover
 next: radio-button
@@ -36,14 +42,11 @@ Below we are presenting our examples of progress components that you can use in 
 </div>
 ```
 
-<br />
-<br />
+---
 
-### Progress Variation
+## Progress Variation
 
 Use this examples to create simple progress components.
-
-<br />
 
 <ComponentDemo id="progress-variation">
   <div className="w-full">
@@ -99,14 +102,11 @@ Use this examples to create simple progress components.
 </div>
 ```
 
-<br />
-<br />
+---
 
-### Progress Styles
+## Progress Styles
 
 Use this example to create progress components on different colors.
-
-<br />
 
 <ComponentDemo id="progress">
   <div className="w-full">
@@ -198,14 +198,11 @@ Use this example to create progress components on different colors.
 </div>
 ```
 
-<br />
-<br />
+---
 
-### Progress with gradient
+## Progress with gradient
 
 Use this example to create beautiful progress components with gradients.
-
-<br />
 
 <ComponentDemo id="progress-gradient">
   <div className="w-full">
@@ -331,4 +328,16 @@ Use this example to create beautiful progress components with gradients.
     ></div>
   </div>
 </div>
+```
+
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The progress component needs a required script files to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/progress.js"></script>
 ```

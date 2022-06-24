@@ -23,17 +23,17 @@ function MyApp({ Component, pageProps }) {
       </Script>
       <Script
         strategy="afterInteractive"
-        src="https://unpkg.com/material-ripple-effects/ripple.js"
-      />
-      <Script
-        strategy="afterInteractive"
         src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"
       />
       <Script
         strategy="afterInteractive"
         src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
       />
-      <Script strategy="afterInteractive" src="/material-tailwind-html.js" />
+      <Script
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+        src="https://kit.fontawesome.com/42d5adcbca.js"
+      />
     </Fragment>
   );
 }

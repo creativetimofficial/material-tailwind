@@ -4,11 +4,12 @@ description: Customise your web projects with our easy-to-use dialog component f
 navigation:
   [
     "dialog",
-    "notification dialog",
-    "long dialog",
-    "message dialog",
-    "signin dialog",
-    "signup dialog",
+    "notification-dialog",
+    "long-dialog",
+    "message-dialog",
+    "signin-dialog",
+    "signup-dialog",
+    "required-script",
   ]
 github: dialog
 prev: chip
@@ -62,10 +63,10 @@ See below our dialog example that you can use for your Tailwind CSS project.
             className="button button-gradient button-dark mr-3 mb-0"
             dialog-close="true"
           >
-            Close
+            {`Close`}
           </button>
           <button className="button button-gradient button-pink mb-0">
-            Save changes
+            {`Save changes`}
           </button>
         </div>
       </div>
@@ -124,14 +125,13 @@ See below our dialog example that you can use for your Tailwind CSS project.
 </div>
 ```
 
-<br />
-<br />
+---
 
-#### Notification Dialog
+## Notification Dialog
 
 Use this dialog example if you want to notify the user about an action that he should take.
 
-<ComponentDemo id="notification dialog">
+<ComponentDemo id="notification-dialog">
   <button
     className="button button-deep-orange"
     dialog-trigger="true"
@@ -145,7 +145,7 @@ Use this dialog example if you want to notify the user about an action that he s
       <div className="dialog-content">
         <div className="dialog-header">
           <h6 className="mb-0 capitalize text-dark-500">
-            Your attention is required
+            {`Your attention is required`}
           </h6>
           <button
             type="button"
@@ -168,7 +168,7 @@ Use this dialog example if you want to notify the user about an action that he s
         </div>
         <div className="dialog-footer">
           <button className="button button-gradient button-pink mb-0">
-            Got it
+            {`Got it`}
           </button>
         </div>
       </div>
@@ -221,14 +221,13 @@ Use this dialog example if you want to notify the user about an action that he s
 </div>
 ```
 
-<br />
-<br />
+---
 
-#### Message Dialog
+## Message Dialog
 
 This dialog should be used to help the user send messages easily.
 
-<ComponentDemo id="message dialog">
+<ComponentDemo id="message-dialog">
   <button
     className="button button-green"
     dialog-trigger="true"
@@ -242,7 +241,7 @@ This dialog should be used to help the user send messages easily.
       <div className="dialog-content">
         <div className="dialog-header">
           <h6 className="mb-0 capitalize text-dark-500">
-            New message to @MaterialTailwind
+            {`New message to @MaterialTailwind`}
           </h6>
           <button
             type="button"
@@ -267,7 +266,7 @@ This dialog should be used to help the user send messages easily.
         </div>
         <div className="dialog-footer">
           <button className="button button-gradient button-green mb-0">
-            Send
+            {`Send`}
           </button>
         </div>
       </div>
@@ -320,14 +319,13 @@ This dialog should be used to help the user send messages easily.
 </div>
 ```
 
-<br />
-<br />
+---
 
-#### Long Dialog
+## Long Dialog
 
 Use this dialog example to notify the user with longer informational messages.
 
-<ComponentDemo id="long dialog">
+<ComponentDemo id="long-dialog">
   <button
     className="button button-pink"
     dialog-trigger="true"
@@ -411,10 +409,10 @@ Use this dialog example to notify the user with longer informational messages.
             className="button button-gradient button-dark mr-3 mb-0"
             dialog-close="true"
           >
-            Close
+            {`Close`}
           </button>
           <button className="button button-gradient button-pink mb-0">
-            Save changes
+            {`Save changes`}
           </button>
         </div>
       </div>
@@ -511,14 +509,13 @@ Use this dialog example to notify the user with longer informational messages.
 </div>
 ```
 
-<br />
-<br />
+---
 
-#### Signin Dialog
+## Signin Dialog
 
 Use this example to help users Sign in easily
 
-<ComponentDemo id="signin dialog">
+<ComponentDemo id="signin-dialog">
   <button
     className="button button-pink"
     dialog-trigger="true"
@@ -534,7 +531,7 @@ Use this example to help users Sign in easily
           <div className="card-header mx-4 -mt-6">
             <div className="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
               <h4 className="mt-2 mb-0 text-center font-bold text-white">
-                Sign in
+                {`Sign in`}
               </h4>
               <div className="mt-4 flex">
                 <a className="button button-text ml-auto" href="#">
@@ -568,7 +565,7 @@ Use this example to help users Sign in easily
               />
               <div className="form-check-input"></div>
               <label className="form-check-label mb-0 ml-2 cursor-pointer">
-                Remember me
+                {`Remember me`}
               </label>
             </div>
             <button className="button button-pink w-full">Sign In</button>
@@ -631,9 +628,9 @@ Use this example to help users Sign in easily
               id="remember"
             />
             <div class="form-check-input"></div>
-            <label class="form-check-label mb-0 ml-2 cursor-pointer"
-              >Remember me</label
-            >
+            <label class="form-check-label mb-0 ml-2 cursor-pointer">
+              Remember me
+            </label>
           </div>
           <button class="button button-pink w-full">Sign In</button>
           <a href="#">
@@ -648,14 +645,13 @@ Use this example to help users Sign in easily
 </div>
 ```
 
-<br />
-<br />
+---
 
-#### Signup Dialog
+## Signup Dialog
 
 Use this example to help users Signup in easily
 
-<ComponentDemo id="signup dialog">
+<ComponentDemo id="signup-dialog">
   <button
     className="button button-cyan"
     dialog-trigger="true"
@@ -671,7 +667,7 @@ Use this example to help users Signup in easily
           <div className="card-header mx-4 -mt-6">
             <div className="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
               <h4 className="mt-2 mb-0 text-center font-bold text-white">
-                Sign up
+                {`Sign up`}
               </h4>
               <div className="mt-4 flex">
                 <a className="button button-text ml-auto" href="#">
@@ -771,4 +767,14 @@ Use this example to help users Signup in easily
 </div>
 ```
 
-{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The dialog component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/dialog.js"></script>
+```

@@ -1,9 +1,9 @@
 ---
 title: Tailwind CSS Accordion - Material Tailwind
 description: Customise your web projects with our easy-to-use accordion component for Tailwind CSS using Material Design guidelines.
-navigation: ["accordion"]
+navigation: ["accordion", "required-script"]
 github: accordion
-prev: license
+prev: screens
 next: alert
 ---
 
@@ -13,7 +13,7 @@ Use our Tailwind CSS accordion component to allow the user to show and hide sect
 
 See below our simple and versatile accordion example that you can use in your Tailwind CSS projects. We also included some accordion props that are available.
 
-To use an accordion example that has items expanded, add the **.open** class on the **.collapse** `<div>`.
+To use an accordion example that has items expanded, add the <Code html html>.open</Code> class on the <Code html html>.collapse</Code> `<div>`.
 
 <br />
 <ComponentDemo id="accordion">
@@ -32,11 +32,11 @@ To use an accordion example that has items expanded, add the **.open** class on 
       </h6>
       <div className="collapse open">
         <div className="py-4 text-sm opacity-60">
-          We’re not always in the position that we want to be at. We’re
-          constantly growing. We’re constantly making mistakes. We’re constantly
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
           trying to express ourselves and actualize our dreams. If you have the
           opportunity to play this game of life you need to appreciate every
-          moment. A lot of people don’t appreciate the moment until it’s passed.
+          moment. A lot of people don't appreciate the moment until it's passed.
         </div>
       </div>
     </div>
@@ -54,10 +54,10 @@ To use an accordion example that has items expanded, add the **.open** class on 
       </h6>
       <div className="collapse">
         <div className="py-4 text-sm opacity-60">
-          It really matters and then like it really doesn’t matter. What matters
+          It really matters and then like it really doesn't matter. What matters
           is the people who are sparked by it. And the people who are like
-          offended by it, it doesn’t matter. Because it's about motivating the
-          doers. Because I’m here to follow my dreams and inspire other people
+          offended by it, it doesn't matter. Because it's about motivating the
+          doers. Because I'm here to follow my dreams and inspire other people
           to follow their dreams, too.
         </div>
       </div>
@@ -102,10 +102,10 @@ To use an accordion example that has items expanded, add the **.open** class on 
       </h6>
       <div className="collapse">
         <div className="py-4 text-sm opacity-60">
-          I always felt like I could do anything. That’s the main thing people
+          I always felt like I could do anything. That's the main thing people
           are controlled by! Thoughts- their perception of themselves! They're
           slowed down by their perception of themselves. If you're taught you
-          can’t do anything, you won’t do anything. I was taught I could do
+          can't do anything, you won't do anything. I was taught I could do
           everything.
         </div>
       </div>
@@ -124,10 +124,10 @@ To use an accordion example that has items expanded, add the **.open** class on 
       </h6>
       <div className="collapse">
         <div className="py-4 text-sm opacity-60">
-          I always felt like I could do anything. That’s the main thing people
+          I always felt like I could do anything. That's the main thing people
           are controlled by! Thoughts- their perception of themselves! They're
           slowed down by their perception of themselves. If you're taught you
-          can’t do anything, you won’t do anything. I was taught I could do
+          can't do anything, you won't do anything. I was taught I could do
           everything.
         </div>
       </div>
@@ -151,11 +151,11 @@ To use an accordion example that has items expanded, add the **.open** class on 
     </h6>
     <div class="collapse open">
       <div class="py-4 text-sm opacity-60">
-        We’re not always in the position that we want to be at. We’re constantly
-        growing. We’re constantly making mistakes. We’re constantly trying to
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
         express ourselves and actualize our dreams. If you have the opportunity
         to play this game of life you need to appreciate every moment. A lot of
-        people don’t appreciate the moment until it’s passed.
+        people don't appreciate the moment until it's passed.
       </div>
     </div>
   </div>
@@ -173,10 +173,10 @@ To use an accordion example that has items expanded, add the **.open** class on 
     </h6>
     <div class="collapse">
       <div class="py-4 text-sm opacity-60">
-        It really matters and then like it really doesn’t matter. What matters
+        It really matters and then like it really doesn't matter. What matters
         is the people who are sparked by it. And the people who are like
-        offended by it, it doesn’t matter. Because it's about motivating the
-        doers. Because I’m here to follow my dreams and inspire other people to
+        offended by it, it doesn't matter. Because it's about motivating the
+        doers. Because I'm here to follow my dreams and inspire other people to
         follow their dreams, too.
       </div>
     </div>
@@ -221,10 +221,10 @@ To use an accordion example that has items expanded, add the **.open** class on 
     </h6>
     <div class="collapse">
       <div class="py-4 text-sm opacity-60">
-        I always felt like I could do anything. That’s the main thing people are
+        I always felt like I could do anything. That's the main thing people are
         controlled by! Thoughts- their perception of themselves! They're slowed
-        down by their perception of themselves. If you're taught you can’t do
-        anything, you won’t do anything. I was taught I could do everything.
+        down by their perception of themselves. If you're taught you can't do
+        anything, you won't do anything. I was taught I could do everything.
       </div>
     </div>
   </div>
@@ -242,14 +242,24 @@ To use an accordion example that has items expanded, add the **.open** class on 
     </h6>
     <div class="collapse">
       <div class="py-4 text-sm opacity-60">
-        I always felt like I could do anything. That’s the main thing people are
+        I always felt like I could do anything. That's the main thing people are
         controlled by! Thoughts- their perception of themselves! They're slowed
-        down by their perception of themselves. If you're taught you can’t do
-        anything, you won’t do anything. I was taught I could do everything.
+        down by their perception of themselves. If you're taught you can't do
+        anything, you won't do anything. I was taught I could do everything.
       </div>
     </div>
   </div>
 </div>
 ```
 
-{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The accordion component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
+```

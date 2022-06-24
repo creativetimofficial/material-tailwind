@@ -79,7 +79,7 @@ export default function Header() {
                   href={
                     version === "npm i @material-tailwind/react"
                       ? "/docs/react/installation"
-                      : "/docs/html/quick-start"
+                      : "/docs/html/installation"
                   }
                 >
                   <a>
