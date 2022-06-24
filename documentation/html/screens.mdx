@@ -1,0 +1,82 @@
+---
+title: Screens - Material Tailwind
+description: Learn how to customize the breakpoints for Material Tailwind.
+navigation:
+  ["default-screens", "customizing-the-default", "adding-new-breakpoint"]
+github: screens
+prev: shadows
+next: accordion
+---
+
+# Customizing Screens - Material Tailwind
+
+Customize the default breakpoints for @material-tailwind/html and add your own custom breakpoints that you like to have for your project.
+
+<br />
+<br />
+
+## Default Screens
+
+<span id="default-screens" className="scroll-mt-48" />
+
+@material-tailwind/html provides a set of default breakpoints for different screen sizes that you can use.
+
+```js showLineNumbers
+const boxShadow = {
+  sm: "540px",
+  md: "720px",
+  lg: "960px",
+  "lg-max": { max: "960px" },
+  xl: "1140px",
+  "2xl": "1320px",
+};
+```
+
+---
+
+## Customize the Default Breakpoints
+
+<span id="customize-the-default" className="scroll-mt-48" />
+
+You can customize the default breakpoints for @material-tailwind/html very easy and straightforward, it's the same as customizing breakpoints for tailwindcss.
+
+You just need to customize the breakpoint that you like throw the <Code html>screens</Code> object for <Code html>tailwind.config.js</Code> file.
+
+```js showLineNumbers {4}
+module.exports = withMT({
+  theme: {
+    screens: {
+      sm: "640px",
+      // rest of the breakpoints
+    },
+  },
+});
+```
+
+---
+
+## Adding New Breakpoint
+
+<span id="adding-new-breakpoint" className="scroll-mt-48" />
+
+You can add new breakpoint for @material-tailwind/html very easy and straightforward, it's the same as adding new breakpoint for tailwindcss.
+
+You just need to add your own breakpoint to the <Code html>extend</Code> and <Code html>screens</Code> object for <Code html>tailwind.config.js</Code> file.
+
+```js showLineNumbers {5}
+module.exports = withMT({
+  theme: {
+    extend: {
+      screens: {
+        "3xl": "1600px",
+      },
+    },
+  },
+});
+```
+
+<br />
+<br />
+<br />
+
+For more information about tailwindcss breakpoints customization, please check the <a href="https://tailwindcss.com/docs/screens?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">TailwindCSS Documentation</a>
