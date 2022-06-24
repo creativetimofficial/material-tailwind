@@ -17,10 +17,10 @@ const radio = (theme) => ({
     "bottom": "0",
     "margin": "auto"
   },
-  ".radio[checked] + .form-check-input": {
+  ".radio:checked + .form-check-input": {
     "border-color": theme("colors.pink.500")
   },
-  ".radio[checked] + .form-check-input:after": {
+  ".radio:checked + .form-check-input:after": {
     "opacity": "1"
   }
 });
