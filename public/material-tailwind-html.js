@@ -18,7 +18,7 @@ window.onload = function() {
       var dropdown_menu = document.querySelectorAll('.menu-item + .dropdown-menu');
       console.log(dropdown_menu);
       for (var i = 0; i < dropdown_menu.length; i++) {
-        var menu_item = dropdown_menu[i].previousSibling;
+        var menu_item = dropdown_menu[i].previousElementSibling;
         menu_item.addEventListener('click', function () {
           this.nextElementSibling.classList.toggle('open');
         })
@@ -31,7 +31,7 @@ window.onload = function() {
     }
     window.addEventListener('click', function(e) {
       if (dropdown.parentElement.classList.contains('open')) {
-        if (!dropdown.contains(e.target) && !dropdown.previousSibling.contains(e.target)){
+        if (!dropdown.contains(e.target) && !dropdown.previousElementSibling.contains(e.target)){
           close();
         }
       }
