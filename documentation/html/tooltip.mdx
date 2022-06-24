@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Tooltip - Material Tailwind
 description: Customise your web projects with our easy-to-use Tooltip component for Tailwind CSS using Material Design guidelines.
-navigation: ["tooltip", "tooltip-position"]
+navigation: ["tooltip", "tooltip-position", "required-script"]
 github: tooltip
 prev: textarea
 next: typography
@@ -27,7 +27,8 @@ See below our example that will help you create a simple tooltip for your projec
     {`Tooltip top`}
   </button>
   <div class="tooltip" role="tooltip" data-placement="top">
-    My tooltip<div class="arrow" data-popper-arrow></div>
+    {`My tooltip`}
+    <div class="arrow" data-popper-arrow></div>
   </div>
 </ComponentDemo>
 
@@ -46,14 +47,11 @@ See below our example that will help you create a simple tooltip for your projec
 </div>
 ```
 
-<br />
-<br />{" "}
+---
 
-### Tooltip position
+## Tooltip position
 
 You can simply change the tooltip position by changing the **data-placement=" "** attribute with the following values: **_top_**, **_right_**, **_bottom_**, **_left_**.
-
-<br />
 
 <ComponentDemo id="tooltip position">
   <div className="flex">
@@ -66,7 +64,8 @@ You can simply change the tooltip position by changing the **data-placement=" "*
       {`Tooltip top`}
     </button>
     <div class="tooltip" role="tooltip" data-placement="top">
-      Top tooltip<div class="arrow" data-popper-arrow></div>
+      {`Top tooltip`}
+      <div class="arrow" data-popper-arrow></div>
     </div>
     <button
       class="button button-pink mx-4"
@@ -77,7 +76,8 @@ You can simply change the tooltip position by changing the **data-placement=" "*
       {`Tooltip right`}
     </button>
     <div class="tooltip" role="tooltip" data-placement="right">
-      Right tooltip<div class="arrow" data-popper-arrow></div>
+      {`Right tooltip`}
+      <div class="arrow" data-popper-arrow></div>
     </div>
     <button
       class="button button-pink mr-4"
@@ -88,7 +88,8 @@ You can simply change the tooltip position by changing the **data-placement=" "*
       {`Tooltip bottom`}
     </button>
     <div class="tooltip" role="tooltip" data-placement="bottom">
-      Bottom tooltip<div class="arrow" data-popper-arrow></div>
+      {`Bottom tooltip`}
+      <div class="arrow" data-popper-arrow></div>
     </div>
     <button
       class="button button-pink"
@@ -99,7 +100,8 @@ You can simply change the tooltip position by changing the **data-placement=" "*
       {`Tooltip left`}
     </button>
     <div class="tooltip" role="tooltip" data-placement="left">
-      Left tooltip<div class="arrow" data-popper-arrow></div>
+      {`Left tooltip`}
+      <div class="arrow" data-popper-arrow></div>
     </div>
   </div>
 </ComponentDemo>
@@ -155,5 +157,15 @@ You can simply change the tooltip position by changing the **data-placement=" "*
 </div>
 ```
 
-<br />
-<br />{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The tooltip component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/tooltip.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+```

@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Alert - Material Tailwind
 description: Customise your web projects with our easy-to-use Alert component for Tailwind CSS using Material Design guidelines.
-navigation: ["menu", "menu-right", "nested-menu"]
+navigation: ["menu", "menu-right", "nested-menu", "required-script"]
 github: menu
 prev: input
 next: navbar
@@ -16,6 +16,7 @@ A menu displays a list of choices on temporary surfaces. It appears when users i
 See below our menu example that you can use in your Tailwind CSS project. The example comes in different colors and styles, so you can adapt them easily to your needs.
 
 <br />
+
 <ComponentDemo id="menu">
   <div className="menu">
     <button
@@ -88,12 +89,9 @@ See below our menu example that you can use in your Tailwind CSS project. The ex
 </div>
 ```
 
-{" "}
+---
 
-<br />
-<br />
-
-### Menu Right
+## Menu Right
 
 Use this example to create a simple menu positioned in the right side of the screen.
 
@@ -121,7 +119,7 @@ Use this example to create a simple menu positioned in the right side of the scr
           <div className="flex items-center py-1">
             <span className="material-icons text-xl">podcasts</span>
             <span className="my-auto ml-2 normal-case">
-              Manage podcast session
+              {`Manage podcast session`}
             </span>
           </div>
         </a>
@@ -131,7 +129,7 @@ Use this example to create a simple menu positioned in the right side of the scr
           <div className="flex items-center py-1">
             <span className="material-icons text-xl">shopping_cart</span>
             <span className="my-auto ml-2 normal-case">
-              Payment successfully completed
+              {`Payment successfully completed`}
             </span>
           </div>
         </a>
@@ -181,12 +179,9 @@ Use this example to create a simple menu positioned in the right side of the scr
 </div>
 ```
 
-{" "}
+---
 
-<br />
-<br />
-
-### Nested Menu
+## Nested Menu
 
 Help users navigate easier your page with this nested menu example that will help you with content organization.
 
@@ -308,4 +303,14 @@ Help users navigate easier your page with this nested menu example that will hel
 </div>
 ```
 
-{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The menu component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/menu.js"></script>
+```

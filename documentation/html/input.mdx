@@ -1,7 +1,8 @@
 ---
 title: Tailwind CSS Input - Material Tailwind
 description: Customise your web projects with our beautiful Input component for Tailwind CSS using Material Design guidelines.
-navigation: ["input-outline", "input-dynamic", "input-static"]
+navigation:
+  ["input-outline", "input-dynamic", "input-static", "required-script"]
 github: input
 prev: icon-button
 next: menu
@@ -11,11 +12,13 @@ next: menu
 
 Easily create inputs with different status and sizes using our components based on Tailwind CSS.
 
-### Input Outline
+<br />
+<br />
+<br />
+
+## Input Outline
 
 Use this example to create outline input components.
-
-<br />
 
 <ComponentDemo id="input-outline">
   <div className="input-group-outline input-group w-1/2">
@@ -31,11 +34,11 @@ Use this example to create outline input components.
 </div>
 ```
 
-### Input Dynamic
+---
+
+## Input Dynamic
 
 Use this example to create easy-to-use dynamic input components.
-
-<br />
 
 <ComponentDemo id="input-dynamic">
   <div className="input-group input-group-dynamic w-1/2">
@@ -51,14 +54,12 @@ Use this example to create easy-to-use dynamic input components.
 </div>
 ```
 
-<br />
-<br />
+---
 
-### Input Static
+## Input Static
 
 Use this example to create simple and versatile input components for your Tailwind CSS projects.
 
-<br />
 <ComponentDemo id="input-static">
   <div className="input-group input-group-static w-1/2">
     <label>Static</label>
@@ -71,4 +72,16 @@ Use this example to create simple and versatile input components for your Tailwi
   <label>Static</label>
   <input type="text" class="form-control" />
 </div>
+```
+
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The input component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/input.js"></script>
 ```
