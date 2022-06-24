@@ -1,0 +1,64 @@
+---
+title: Fonts - Material Tailwind
+description: Learn how to customize the font families for Material Tailwind.
+navigation: ["default-font-families", "customizing-font-families"]
+github: fonts
+prev: colors
+next: shadows
+---
+
+# Customizing Fonts - Material Tailwind
+
+Customize the default font families for @material-tailwind/html and add your own custom fonts that you like to have for your project.
+
+<br />
+<br />
+
+## Default Font Families
+
+<span id="default-font-families" className="scroll-mt-48" />
+
+@material-tailwind/html provides a set of default font families that you can use.
+
+```js showLineNumbers
+const fontFamily = {
+  sans: ["Roboto", "sans-serif"],
+  serif: ["Roboto Slab", "serif"],
+  body: ["Roboto", "sans-serif"],
+  mono: [
+    "SFMono-Regular",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace",
+  ],
+};
+```
+
+---
+
+## Customizing Font Families
+
+<span id="customizing-font-families" className="scroll-mt-48" />
+
+You can customize the default font families for @material-tailwind/html very easy and straightforward, it's the same as customizing font families for tailwindcss.
+
+You just need to customize the font family that you like throw the <Code html>fontFamily</Code> object for <Code html>tailwind.config.js</Code> file.
+
+```js showLineNumbers {4}
+module.exports = withMT({
+  theme: {
+    fontFamily: {
+      sans: ["Open Sans", "sans-serif"],
+    },
+  },
+});
+```
+
+<br />
+<br />
+<br />
+
+For more information about tailwindcss font families customization, please check the <a href="https://tailwindcss.com/docs/font-family?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">TailwindCSS Documentation</a>

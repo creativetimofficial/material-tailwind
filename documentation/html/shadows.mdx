@@ -1,0 +1,84 @@
+---
+title: Shadows - Material Tailwind
+description: Learn how to customize the box shadow for Material Tailwind.
+navigation:
+  ["default-box-shadow", "customizing-the-default", "adding-new-box-shadow"]
+github: shadows
+prev: fonts
+next: screens
+---
+
+# Customizing Box Shadow - Material Tailwind
+
+Customize the default box shadow for @material-tailwind/html and add your own custom box shadow values that you like to have for your project.
+
+<br />
+<br />
+
+## Default Box Shadow
+
+<span id="default-box-shadow" className="scroll-mt-48" />
+
+@material-tailwind/html provides a set of default box shadow values that you can use.
+
+```js showLineNumbers
+const boxShadow = {
+  sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+  DEFAULT: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+  md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+  lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+  xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+  "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+  inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+  none: "0 0 rgb(0, 0 / 0, 0)",
+};
+```
+
+---
+
+## Customizing The Default Box Shadow
+
+<span id="customizing-the-default" className="scroll-mt-48" />
+
+You can customize the default box shadow values for @material-tailwind/html very easy and straightforward, it's the same as customizing box shadow values for tailwindcss.
+
+You just need to customize the box shadow value that you like throw the <Code html>boxShadow</Code> object for <Code html>tailwind.config.js</Code> file.
+
+```js showLineNumbers {4}
+module.exports = withMT({
+  theme: {
+    boxShadow: {
+      sm: "0 2px 4px 0 rgb(0 0 0 / 0.05)",
+      // rest of the box shadow values
+    },
+  },
+});
+```
+
+---
+
+## Adding New Box Shadow
+
+<span id="adding-new-box-shadow" className="scroll-mt-48" />
+
+You can add new box shadow value for @material-tailwind/html very easy and straightforward, it's the same as adding new box shadow value for tailwindcss.
+
+You just need to add your own box shadow value to the <Code html>extend</Code> and <Code html>boxShadow</Code> object for <Code html>tailwind.config.js</Code> file.
+
+```js showLineNumbers {5}
+module.exports = withMT({
+  theme: {
+    extend: {
+      boxShadow: {
+        "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
+      },
+    },
+  },
+});
+```
+
+<br />
+<br />
+<br />
+
+For more information about tailwindcss box shadow customization, please check the <a href="https://tailwindcss.com/docs/box-shadow?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">TailwindCSS Documentation</a>

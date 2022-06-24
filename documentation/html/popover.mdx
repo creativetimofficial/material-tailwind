@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Popover - Material Tailwind
 description: Customise your web projects with our easy-to-use Popover component for Tailwind CSS using Material Design guidelines.
-navigation: ["popover", "popover-position"]
+navigation: ["popover", "popover-position", "required-script"]
 github: popover
 prev: pagination
 next: progress-bar
@@ -27,7 +27,7 @@ See below our popover components examples.
   <div className="popover hidden" data-attribute="popover" data-placement="top">
     <div className="popover-title">Popover title</div>
     <div className="popover-body p-3">
-      And here's some amazing content. It's very engaging. Right?
+      {`And here's some amazing content. It's very engaging. Right?`}
     </div>
     <div className="arrow" data-popper-arrow></div>
   </div>
@@ -51,14 +51,11 @@ See below our popover components examples.
 </div>
 ```
 
-<br />
-<br />{" "}
+---
 
-### Popover position
+## Popover position
 
 You can simply change the popover position by changing the **data-placement=" "** attribute with the following values: **_top_**, **_right_**, **_bottom_**, **_left_**.
-
-<br />
 
 <ComponentDemo id="popover position">
   <div className="flex">
@@ -77,7 +74,7 @@ You can simply change the popover position by changing the **data-placement=" "*
     >
       <div className="popover-title">Tailwind popover title</div>
       <div className="popover-body p-3">
-        And here's some amazing content. It's very engaging. Right?
+        {`And here's some amazing content. It's very engaging. Right?`}
       </div>
       <div className="arrow" data-popper-arrow></div>
     </div>
@@ -96,7 +93,7 @@ You can simply change the popover position by changing the **data-placement=" "*
     >
       <div className="popover-title">Tailwind popover title</div>
       <div className="popover-body p-3">
-        And here's some amazing content. It's very engaging. Right?
+        {`And here's some amazing content. It's very engaging. Right?`}
       </div>
       <div className="arrow" data-popper-arrow></div>
     </div>
@@ -115,7 +112,7 @@ You can simply change the popover position by changing the **data-placement=" "*
     >
       <div className="popover-title">Tailwind popover title</div>
       <div className="popover-body p-3">
-        And here's some amazing content. It's very engaging. Right?
+        {`And here's some amazing content. It's very engaging. Right?`}
       </div>
       <div className="arrow" data-popper-arrow></div>
     </div>
@@ -134,7 +131,7 @@ You can simply change the popover position by changing the **data-placement=" "*
     >
       <div className="popover-title">Tailwind popover title</div>
       <div className="popover-body p-3">
-        And here's some amazing content. It's very engaging. Right?
+        {`And here's some amazing content. It's very engaging. Right?`}
       </div>
       <div className="arrow" data-popper-arrow></div>
     </div>
@@ -204,5 +201,15 @@ You can simply change the popover position by changing the **data-placement=" "*
 </div>
 ```
 
-<br />
-<br />{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The popover component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/popover.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+```

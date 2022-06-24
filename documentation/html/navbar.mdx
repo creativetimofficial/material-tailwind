@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Navbar - Material Tailwind
 description: Customise your web projects with our easy-to-use Navbar component for Tailwind CSS using Material Design guidelines.
-navigation: ["navbar"]
+navigation: ["navbar", "required-script"]
 github: navbar
 prev: menu
 next: pagination
@@ -135,7 +135,14 @@ See below our simple navbar example that you can use in your Tailwind CSS projec
 </nav>
 ```
 
-{" "}
+---
 
-<br />
-<br />
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The navbar component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
+```

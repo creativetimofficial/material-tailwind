@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Select - Material Tailwind
 description: Customise your web projects with our easy-to-use Select component for Tailwind CSS using Material Design guidelines.
-navigation: ["select", "select-with-search"]
+navigation: ["select", "select-with-search", "required-script"]
 github: select
 prev: radio-button
 next: switch
@@ -25,7 +25,7 @@ See below our select component example that you can use in your Tailwind CSS pro
       placeholder="Language"
     >
       <option defaultValue="Choice 1" selected>
-        Brazil
+        {`Brazil`}
       </option>
       <option defaultValue="Choice 2">Bucharest</option>
       <option defaultValue="Choice 3">London</option>
@@ -50,7 +50,9 @@ See below our select component example that you can use in your Tailwind CSS pro
 </div>
 ```
 
-<br />{" "}
+<br />
+<br />
+<br />
 
 You have to add the following initialization script to run this plugin:
 
@@ -63,12 +65,9 @@ if (document.getElementById("choice-search")) {
 }
 ```
 
-<br />
-<br />{" "}
+---
 
-### Select with search
-
-<br />
+## Select with Search
 
 <ComponentDemo id="select with search">
   <div className="w-1/3">
@@ -79,7 +78,7 @@ if (document.getElementById("choice-search")) {
       placeholder="Location"
     >
       <option defaultValue="Choice 1" selected>
-        Brazil
+        {`Brazil`}
       </option>
       <option defaultValue="Choice 2">Bucharest</option>
       <option defaultValue="Choice 3">London</option>
@@ -104,6 +103,10 @@ if (document.getElementById("choice-search")) {
 </div>
 ```
 
+<br />
+<br />
+<br />
+
 You have to erase the **searchEnabled: false** from the init function - it will look like this:
 
 ```js showLineNumbers
@@ -113,4 +116,15 @@ if (document.getElementById("choice-button")) {
 }
 ```
 
-<br />{" "}
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The select component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
+
+```html showLineNumbers
+<script src="node_modules/@material-tailwind/html/scripts/select.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+```

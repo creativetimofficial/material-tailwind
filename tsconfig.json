@@ -19,6 +19,12 @@
       "@material-tailwind/react": ["./packages/material-tailwind-react/src"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "public/material-tailwind-html.js",
+    "public/material-ripple-effects.js"
+  ],
   "exclude": ["node_modules"]
 }

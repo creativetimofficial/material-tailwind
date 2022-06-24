@@ -1,20 +1,27 @@
 {
   "name": "@material-tailwind/html",
   "homepage": "https://material-tailwind.com",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "@material-tailwind/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "mkdir dist && cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist"
+    "copy": "cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
+    "compile:ripple": "swc ./node_modules/material-ripple-effects/ripple.js -o ./dist/scripts/ripple.js --config-file .swcrc",
+    "build:cjs": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
+    "build": "pnpm build:cjs && pnpm compile:ripple && pnpm copy"
   },
   "dependencies": {
-    "deepmerge": "^4.2.2"
+    "deepmerge": "^4.2.2",
+    "material-ripple-effects": "^2.0.1"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.198",
     "@tailwindcss/forms": "^0.5.1"
   }
 }

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 // next.js components
 import Image from "next/image";
@@ -210,6 +210,10 @@ const components = {
   Typography,
 };
 
+// @material-tailwind/html components scripts
+import init from "public/material-tailwind-html";
+import ripple from "public/material-ripple-effects";
+
 export default function Page({ frontMatter, mdxSource, slug }) {
   const { asPath } = useRouter();
   const [mobileNav, setMobileNav] = useState(false);
@@ -223,6 +227,13 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     .split("/")
     .filter((el) => validFrameworks.includes(el))
     .join("") as "html" | "react" | "vue" | "angular" | "svelte";
+
+  useEffect(() => {
+    if (frameworkType === "html") {
+      init();
+      ripple();
+    }
+  }, [frameworkType, slug]);
 
   return (
     <Fragment>
