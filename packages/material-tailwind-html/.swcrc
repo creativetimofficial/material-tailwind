@@ -1,0 +1,14 @@
+{
+  "minify": true,
+  "jsc": {
+    "parser": {
+      "syntax": "ecmascript",
+      "tsx": false,
+      "decorators": false,
+      "dynamicImport": false
+    }
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}
