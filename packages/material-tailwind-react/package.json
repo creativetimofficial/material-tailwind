@@ -14,7 +14,7 @@
     "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",
     "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
     "copy": "cp ./package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
-    "build": "pnpm pnpm build:cjs && pnpm build:dts && pnpm copy",
+    "build": "pnpm build:cjs && pnpm build:dts && pnpm copy",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
     "prettier:check": "prettier -c ."
   },
