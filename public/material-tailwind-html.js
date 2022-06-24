@@ -19,9 +19,7 @@ window.onload = function() {
       console.log(dropdown_menu);
       for (var i = 0; i < dropdown_menu.length; i++) {
         var menu_item = dropdown_menu[i].previousElementSibling;
-        menu_item.addEventListener('click', function () {
-          this.nextElementSibling.classList.toggle('open');
-        })
+        menu_item.addEventListener('click', nestedMenuClickHandler)
       }
     })
 
@@ -37,6 +35,10 @@ window.onload = function() {
       }
     });
   };
+
+  function nestedMenuClickHandler() {
+    this.nextElementSibling.classList.toggle('open');
+  }
 
   // Colored shadow
   if (document.querySelectorAll('[blur-shadow-image]')) {
