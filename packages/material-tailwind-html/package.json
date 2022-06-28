@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/html",
   "homepage": "https://material-tailwind.com",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "@material-tailwind/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -13,7 +13,8 @@
     "copy": "cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
     "compile:ripple": "swc ./node_modules/material-ripple-effects/ripple.js -o ./dist/scripts/ripple.js --config-file .swcrc",
     "build:cjs": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
-    "build": "pnpm build:cjs && pnpm compile:ripple && pnpm copy"
+    "build:utils": "swc ./utils -d ./dist/utils --config-file .swcrc",
+    "build": "pnpm build:cjs && pnpm compile:ripple && pnpm build:utils && pnpm copy"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
