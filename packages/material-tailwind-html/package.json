@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/html",
   "homepage": "https://material-tailwind.com",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "@material-tailwind/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "copy": "cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
     "compile:ripple": "swc ./node_modules/material-ripple-effects/ripple.js -o ./dist/scripts/ripple.js --config-file .swcrc",
     "build:cjs": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
-    "build:css": "npx tailwindcss -i ./styles/tailwind.css -o ./dist/styles/tailwind.css -m",
+    "build:css": "npx tailwindcss -i ./styles/tailwind.css -o ./dist/styles/material-tailwind.css -m",
     "build": "pnpm build:cjs && pnpm compile:ripple && pnpm build:css && pnpm copy"
   },
   "dependencies": {
