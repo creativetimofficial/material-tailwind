@@ -309,20 +309,6 @@ export default function init() {
   })();
   ("use strict");
   (function () {
-    var radios = document.querySelectorAll('[type="radio"]');
-    radios.forEach(function (radio) {
-      return radio.addEventListener("click", function () {
-        for (var i = 0; i < radios.length; i++) {
-          if (radios[i].hasAttribute("checked")) {
-            radios[i].removeAttribute("checked");
-          }
-        }
-        radio.setAttribute("checked", "true");
-      });
-    });
-  })();
-  ("use strict");
-  (function () {
     if (document.getElementById("choice-button")) {
       var element = document.getElementById("choice-button");
       var example = new Choices(element, { searchEnabled: false });
