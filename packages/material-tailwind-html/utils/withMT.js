@@ -18,6 +18,7 @@ const { background } = require("../theme/components/background");
 const { breadcrumbs } = require("../theme/components/breadcrumbs");
 const { button } = require("../theme/components/button");
 const { card } = require("../theme/components/card");
+const { carousel } = require("../theme/components/carousel");
 const { checkbox } = require("../theme/components/checkbox");
 const { chip } = require("../theme/components/chip");
 const { dialog } = require("../theme/components/dialog");
@@ -51,6 +52,7 @@ const materialTailwindConfig = {
       addComponents(breadcrumbs(theme));
       addComponents(button(theme));
       addComponents(card(theme));
+      addComponents(carousel(theme));
       addComponents(checkbox(theme));
       addComponents(chip(theme));
       addComponents(dialog(theme));
