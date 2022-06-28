@@ -8,7 +8,9 @@ navigation:
     "npm",
     "yarn",
     "tailwindcss-config",
+    "ripple-effect",
     "icons",
+    "CDN",
     "example",
   ]
 github: installation
@@ -91,6 +93,24 @@ module.exports = withMT({
 
 ---
 
+## Ripple Effect
+
+<span id="ripple-effect" className="scroll-mt-48" />
+
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+
+The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">material-ripple-effect</a>
+
+```html showLineNumbers
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```
+
+---
+
 ## Icons
 
 <span id="icons" className="scroll-mt-48" />
@@ -111,6 +131,25 @@ Add a link for the material icons fonts inside the head of your project, so to u
   integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
   crossorigin="anonymous"
 />
+```
+
+---
+
+## CDN
+
+<span id="CDN" className="scroll-mt-48" />
+
+You can use @material-tailwind/html as a CDN link as well, you just need to add the stylesheet and the script file for the component you want to use.
+
+```html showLineNumbers
+<!-- stylesheet -->
+<link
+  href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+  rel="stylesheet"
+/>
+
+<!-- script -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 ```
 
 ---
