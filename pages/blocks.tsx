@@ -57,8 +57,12 @@ export default function Presentation() {
                 <i className="material-icons text-white">chevron_left</i>
               </button>
             </div>
-
-            
+            <div className="w-1/4 my-10">
+              <div className="input-group input-group-outline">
+                <label className="form-label">Please select date</label>
+                <input className="form-control datepicker" type="text"/>
+              </div>
+            </div>
           </div>
         </Card>
       </main>
