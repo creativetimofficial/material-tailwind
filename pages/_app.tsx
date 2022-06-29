@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src="https://kit.fontawesome.com/42d5adcbca.js"
       />
+      <Script src="./material-tailwind.js"/>
     </Fragment>
   );
 }
