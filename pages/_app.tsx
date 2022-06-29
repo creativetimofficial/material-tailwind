@@ -9,6 +9,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 // styles
 import "/styles/globals.css";
 import "/styles/choices.css";
+import "/styles/flatpickr.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,6 +29,11 @@ function MyApp({ Component, pageProps }) {
       <Script
         strategy="afterInteractive"
         src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
+      />
+      <Script
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+        src="https://cdn.jsdelivr.net/npm/flatpickr"
       />
       <Script
         crossOrigin="anonymous"
