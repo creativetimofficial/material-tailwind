@@ -2,7 +2,7 @@ const carousel = (theme) => ({
   ".carousel": {
     width: "100%",
     "max-width": "800px",
-    height: "350px",
+    "min-height": "450px",
     position: "relative",
     overflow: "hidden",
     "border-radius": ".5rem",
@@ -10,7 +10,7 @@ const carousel = (theme) => ({
     ".slide": {
       width: "100%",
       "max-width": "800px",
-      height: "350px",
+      "min-height": "450px",
       position: "absolute",
       transition: "all 0.5s",
 
