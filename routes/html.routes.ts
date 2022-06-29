@@ -19,7 +19,6 @@ export const routes = [
       "breadcrumbs",
       "button",
       "card",
-      "carousel",
       "checkbox",
       "chip",
       "dialog",
