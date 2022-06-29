@@ -1,0 +1,65 @@
+---
+title: Tailwind CSS Carousel - Material Tailwind
+description: Customise your web projects with our beautiful carousel component for Tailwind CSS using Material Design guidelines.
+navigation: ["component"]
+github: component
+prev: button
+next: checkbox
+---
+
+# Tailwind CSS Carousel
+
+Use our component to provide a flexible and extensible content container based on Tailwind CSS with multiple variants and options.
+
+By its definition, a card is a sheet of material that serves as an entry point to more detailed information. Carousel usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+
+See below our beautiful card example that you can use in your Tailwind CSS projects.
+
+<br />
+<ComponentDemo id="carousel">
+  <div className="carousel">
+    <div className="slide">
+      <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-1-min.jpg" alt="" />
+    </div>
+
+    <div className="slide">
+      <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-2-min.jpg" alt="" />
+    </div>
+
+    <div className="slide">
+      <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-3-min.jpg" alt="" />
+    </div>
+
+    <button className="button-next">
+      <span className="carousel-icon"></span>
+    </button>
+    <button className="button-prev">
+      <i className="far fa-angle-left text-white"></i>
+    </button>
+  </div>
+</ComponentDemo>
+
+```html showLineNumbers
+<div class="carousel">
+  <div class="slide">
+    <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-1-min.jpg" alt="" />
+  </div>
+
+  <div class="slide">
+    <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-2-min.jpg" alt="" />
+  </div>
+
+  <div class="slide">
+    <img src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-3-min.jpg" alt="" />
+  </div>
+
+  <button class="button-next">
+    <i class="far fa-angle-right text-white"></i>
+  </button>
+  <button class="button-prev">
+    <i class="far fa-angle-left text-white"></i>
+  </button>
+</div>
+```
+
+---
