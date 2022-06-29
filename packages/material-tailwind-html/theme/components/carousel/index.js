@@ -23,7 +23,18 @@ const carousel = (theme) => ({
 
     "button": {
       position: "absolute",
-      "z-index": "10"
+      "z-index": "10",
+
+      i: {
+        "font-size": "2.25rem",
+        opacity: ".8"
+      },
+
+      "&:hover": {
+        i: {
+          opacity: "1"
+        }
+      }
     },
 
     ".button-prev": {
