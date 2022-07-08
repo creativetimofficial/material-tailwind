@@ -2,7 +2,7 @@
 title: Tailwind CSS Accordion Theme - Material Tailwind
 description: Learn how to customize the theme and styles for accordion components.
 navigation: ["theme-object-type", "theme-customization"]
-github: styles/accordion
+github: theme/accordion
 related:
   [
     {
@@ -20,6 +20,18 @@ related:
 
 # Tailwind CSS Accordion - Theme
 
+Learn how to customize the theme and styles for accordion components, the theme object for accordion components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of accordion components.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of accordion components.<br />
+
+The keys inside the <Code>defaultProps</Code> object are unique and you can only change their values, but for the <Code>styles</Code> object there are two types of keys.
+
+**A.** The unique keys that shouldn't be changed: <Code>base</Code> <Code>container</Code> <Code>header</Code> <Code>initial</Code> <Code>active</Code> <Code>icon</Code> <Code>body</Code> <Code>disabled</Code>.<br />
+**B.** The keys that are changeable: all of the keys inside the unique keys object.
+
+You can use Tailwind CSS classes as key paired values inside the unique keys objects.
+
 <br />
 <br />
 
@@ -31,7 +43,7 @@ related:
 const theme = {
   accordion: {
     defaultProps: {
-      icon: ReactNode;
+      icon: node;
       className: string;
       animate: {
         mount: object;
@@ -77,10 +89,10 @@ const theme = {
       base: {
         header: {
           initial: {
-            px: "px-5",
+            py: "py-4",
           },
           active: {
-            color: "!text-blue-500",
+            color: "!text-blue-grey-900",
           },
         },
       },
