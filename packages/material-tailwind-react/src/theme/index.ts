@@ -66,4 +66,36 @@ const theme = {
   typography,
 };
 
+export * from "./components/accordion";
+export * from "./components/alert";
+export * from "./components/avatar";
+export * from "./components/breadcrumbs";
+export * from "./components/button";
+export * from "./components/card";
+export * from "./components/card/cardBody";
+export * from "./components/card/cardFooter";
+export * from "./components/card/cardHeader";
+export * from "./components/checkbox";
+export * from "./components/chip";
+export * from "./components/dialog";
+export * from "./components/dialog/dialogBody";
+export * from "./components/dialog/dialogFooter";
+export * from "./components/dialog/dialogHeader";
+export * from "./components/iconButton";
+export * from "./components/input";
+export * from "./components/menu";
+export * from "./components/navbar";
+export * from "./components/popover";
+export * from "./components/progress";
+export * from "./components/radio";
+export * from "./components/select";
+export * from "./components/switch";
+export * from "./components/tabs/tab";
+export * from "./components/tabs";
+export * from "./components/tabs/tabsBody";
+export * from "./components/tabs/tabsHeader";
+export * from "./components/tabs/tabPanel";
+export * from "./components/textarea";
+export * from "./components/tooltip";
+export * from "./components/typography";
 export default theme;
