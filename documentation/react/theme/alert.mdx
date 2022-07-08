@@ -1,0 +1,114 @@
+---
+title: Tailwind CSS Alert Theme - Material Tailwind
+description: Learn how to customize the theme and styles for alert components.
+navigation: ["theme-object-type", "theme-customization"]
+github: theme/alert
+related:
+  [
+    {
+      title: "Examples",
+      route: "alert",
+      description: "Checkout different examples for alert components.",
+    },
+    {
+      title: "Props",
+      route: "props/alert",
+      description: "Learn more about props definition and types of alert components.",
+    },
+  ]
+---
+
+# Tailwind CSS Alert - Theme
+
+Learn how to customize the theme and styles for alert component, the theme object for alert component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of alert component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of alert component.<br />
+
+The keys inside the <Code>defaultProps</Code> object are unique and you can only change their values, but for the <Code>styles</Code> object there are two types of keys.
+
+**A.** The unique keys that shouldn't be changed: <Code>base</Code> <Code>variants</Code> <Code>filled</Code> <Code>gradient</Code>.<br />
+**B.** The keys that are changeable: all of the keys inside the unique keys object.
+
+You can use Tailwind CSS classes as key paired values inside the unique keys objects.
+
+<br />
+<br />
+
+## Alert Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  alert: {
+    defaultProps: {
+      variant: string;
+      color: string;
+      icon: node;
+      show: boolean;
+      dismissble: {
+        action: node;
+        onClose: func;
+      };
+      animate: {
+        mount: object;
+        unmount: object;
+      };
+      className: string;
+    };
+    valid: {
+      variants: string[];
+      colors: string[];
+    };
+    styles: {
+      base: object;
+      variants: {
+        filled: object;
+        gradient: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { AlertStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Alert Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  alert: {
+    styles: {
+      base: {
+        borderRadius: "rounded-lg",
+      },
+      variants: {
+        filled: {
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+          },
+        },
+        gradient: {
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+          },
+        },
+      },
+    },
+  },
+};
+```
