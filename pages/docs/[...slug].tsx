@@ -34,6 +34,7 @@ import NextLogo from "components/icons/next";
 import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
+import DocsRelated from "components/layout/docs-related";
 
 // @material-tailwind/react components
 import {
@@ -254,6 +255,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
+              {frontMatter.related && (
+                <DocsRelated routes={frontMatter.related} />
+              )}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
