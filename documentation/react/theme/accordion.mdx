@@ -1,0 +1,90 @@
+---
+title: Tailwind CSS Accordion Theme - Material Tailwind
+description: Learn how to customize the theme and styles for accordion components.
+navigation: ["theme-object-type", "theme-customization"]
+github: styles/accordion
+related:
+  [
+    {
+      title: "Examples",
+      route: "accordion",
+      description: "Checkout different examples for accordion components.",
+    },
+    {
+      title: "Props",
+      route: "props/accordion",
+      description: "Learn more about props definition and types of accordion components.",
+    },
+  ]
+---
+
+# Tailwind CSS Accordion - Theme
+
+<br />
+<br />
+
+## Accordion Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  accordion: {
+    defaultProps: {
+      icon: ReactNode;
+      className: string;
+      animate: {
+        mount: object;
+        unmount: object;
+      };
+      disabled: boolean;
+    };
+    styles: {
+      base: {
+        container: object;
+        header: {
+          initial: object;
+          active: object;
+          icon: object;
+        };
+        body: object;
+        disabled: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Accordion Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  accordion: {
+    styles: {
+      base: {
+        header: {
+          initial: {
+            px: "px-5",
+          },
+          active: {
+            color: "!text-blue-500",
+          },
+        },
+      },
+    },
+  },
+};
+```
