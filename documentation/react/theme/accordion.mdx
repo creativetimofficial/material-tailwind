@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Accordion Theme - Material Tailwind
 description: Learn how to customize the theme and styles for accordion components.
-navigation: ["theme-object-type", "theme-customization"]
+navigation: ["theme-object-type", "theme-customization", "examples", "props"]
 github: theme/accordion
 related:
   [
@@ -25,12 +25,7 @@ Learn how to customize the theme and styles for accordion components, the theme 
 **A.** The <Code>defaultProps</Code> object for setting up the default value for props of accordion components.<br />
 **B.** The <Code>styles</Code> object for customizing the theme and styles of accordion components.<br />
 
-The keys inside the <Code>defaultProps</Code> object are unique and you can only change their values, but for the <Code>styles</Code> object there are two types of keys.
-
-**A.** The unique keys that shouldn't be changed: <Code>base</Code> <Code>container</Code> <Code>header</Code> <Code>initial</Code> <Code>active</Code> <Code>icon</Code> <Code>body</Code> <Code>disabled</Code>.<br />
-**B.** The keys that are changeable: all of the keys inside the unique keys object.
-
-You can use Tailwind CSS classes as key paired values inside the unique keys objects.
+You can customize the theme and styles of accordion components by adding Tailwind CSS classes as key paired values for each component object.
 
 <br />
 <br />
@@ -87,16 +82,14 @@ const theme = {
   accordion: {
     styles: {
       base: {
-        header: {
-          initial: {
-            py: "py-4",
-          },
-          active: {
-            color: "!text-blue-grey-900",
-          },
+        container: {
+          bgColor: "bg-white",
         },
       },
     },
   },
 };
 ```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
