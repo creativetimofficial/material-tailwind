@@ -1,0 +1,97 @@
+---
+title: Tailwind CSS Avatar Theme - Material Tailwind
+description: Learn how to customize the theme and styles for avatar component.
+navigation: ["theme-object-type", "theme-customization", "examples", "props"]
+github: theme/avatar
+related:
+  [
+    {
+      title: "Examples",
+      route: "avatar",
+      description: "Checkout different examples for avatar component.",
+    },
+    {
+      title: "Props",
+      route: "props/avatar",
+      description: "Learn more about props definition and types of avatar component.",
+    },
+  ]
+---
+
+# Tailwind CSS Avatar - Theme
+
+Learn how to customize the theme and styles for avatar component, the theme object for avatar component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of avatar component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for avatar component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of avatar component.<br />
+
+You can customize the theme and styles of avatar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Avatar Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  avatar: {
+    defaultProps: {
+      variant: string;
+      size: string;
+      className: string;
+    };
+    valid: {
+      variants: string[];
+      sizes: string[];
+    };
+    styles: {
+      base: object;
+      sizes: {
+        xs: object;
+        sm: object;
+        md: object;
+        lg: object;
+        xl: object;
+        xxl: object;
+      };
+      variants: {
+        rounded: object;
+        circular: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AvatarStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+## Avatar Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  avatar: {
+    styles: {
+      base: {
+        position: "relative",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
