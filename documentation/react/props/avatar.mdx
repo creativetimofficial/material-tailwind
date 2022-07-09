@@ -1,0 +1,64 @@
+---
+title: Tailwind CSS Avatar Props - Material Tailwind
+description: Learn more about props definition and types of avatar component.
+navigation: ["avatar-props", "types-variant", "types-size", "examples", "theme"]
+github: props/avatar
+related:
+  [
+    {
+      title: "Examples",
+      route: "avatar",
+      description: "Checkout different examples for avatar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/avatar",
+      description: "Learn how to customize the theme and styles for avatar component.",
+    },
+  ]
+---
+
+# Tailwind CSS Avatar - Props
+
+<span id="avatar-props" className="scroll-mt-48" />
+The following props are available for avatar component. These are the custom props
+that come with we've added for the avatar component and you can use all the other
+native img props as well.
+
+| Attribute   | Type                      | Description                     | Default              |
+| ----------- | ------------------------- | ------------------------------- | -------------------- |
+| `variant`   | [Variant](#types-variant) | Change avatar variant           | <Code>rounded</Code> |
+| `size`      | [Size](#types-size)       | Change avatar size              | <Code>md</Code>      |
+| `className` | <Code>string</Code>       | Add custom className for avatar | `''`                 |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AvatarProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "rounded" | "circular";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
