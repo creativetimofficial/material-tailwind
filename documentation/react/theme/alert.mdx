@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Alert Theme - Material Tailwind
 description: Learn how to customize the theme and styles for alert components.
-navigation: ["theme-object-type", "theme-customization"]
+navigation: ["theme-object-type", "theme-customization", "examples", "props"]
 github: theme/alert
 related:
   [
@@ -20,17 +20,13 @@ related:
 
 # Tailwind CSS Alert - Theme
 
-Learn how to customize the theme and styles for alert component, the theme object for alert component has two main objects:
+Learn how to customize the theme and styles for alert component, the theme object for alert component has three main objects:
 
 **A.** The <Code>defaultProps</Code> object for setting up the default value for props of alert component.<br />
-**B.** The <Code>styles</Code> object for customizing the theme and styles of alert component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for alert component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of alert component.<br />
 
-The keys inside the <Code>defaultProps</Code> object are unique and you can only change their values, but for the <Code>styles</Code> object there are two types of keys.
-
-**A.** The unique keys that shouldn't be changed: <Code>base</Code> <Code>variants</Code> <Code>filled</Code> <Code>gradient</Code>.<br />
-**B.** The keys that are changeable: all of the keys inside the unique keys object.
-
-You can use Tailwind CSS classes as key paired values inside the unique keys objects.
+You can customize the theme and styles of alert component by adding Tailwind CSS classes as key paired values for component object.
 
 <br />
 <br />
@@ -87,13 +83,10 @@ import { AlertStylesType } from "@material-tailwind/react";
 
 <span id="theme-customization" className="scroll-mt-48" />
 
-```tsx
+```ts
 const theme = {
   alert: {
     styles: {
-      base: {
-        borderRadius: "rounded-lg",
-      },
       variants: {
         filled: {
           blue: {
@@ -112,3 +105,6 @@ const theme = {
   },
 };
 ```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
