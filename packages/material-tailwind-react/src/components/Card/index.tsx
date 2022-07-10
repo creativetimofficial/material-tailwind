@@ -10,9 +10,9 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // card components
-import CardHeader from "./CardHeader";
-import CardBody from "./CardBody";
-import CardFooter from "./CardFooter";
+import { CardHeader, CardHeaderProps } from "./CardHeader";
+import { CardBody, CardBodyProps } from "./CardBody";
+import { CardFooter, CardFooterProps } from "./CardFooter";
 
 // types
 import type { variant, color, shadow, className, children } from "../../types/components/card";
@@ -78,6 +78,7 @@ Card.propTypes = {
 
 Card.displayName = "MaterialTailwind.Card";
 
+export type { CardHeaderProps, CardBodyProps, CardFooterProps };
 export { Card, CardHeader, CardBody, CardFooter };
 export default Object.assign(Card, {
   Header: CardHeader,

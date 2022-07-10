@@ -22,7 +22,7 @@ export interface CardFooterProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
+export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
   ({ divider, className, children, ...rest }, ref) => {
     // 1. init
     const { cardFooter } = useTheme();
