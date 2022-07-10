@@ -1,0 +1,272 @@
+---
+title: Tailwind CSS Card Theme - Material Tailwind
+description: Learn how to customize the theme and styles for card components.
+navigation:
+  [
+    "card-theme",
+    "card-theme-object-type",
+    "card-theme-customization",
+    "card-header-theme-object-type",
+    "card-header-theme-customization",
+    "card-body-theme-object-type",
+    "card-body-theme-customization",
+    "card-footer-theme-object-type",
+    "card-footer-theme-customization",
+    "examples",
+    "props",
+  ]
+github: theme/card
+related:
+  [
+    {
+      title: "Examples",
+      route: "card",
+      description: "Checkout different examples for card components.",
+    },
+    {
+      title: "Props",
+      route: "props/card",
+      description: "Learn more about props definition and types of card components.",
+    },
+  ]
+---
+
+# Tailwind CSS Card - Theme
+
+<span id="card-theme" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for card components, the theme object for card components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of card component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for card component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of card component.<br />
+
+You can customize the theme and styles of card components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Card Theme Object Type
+
+<span id="card-theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  card: {
+    defaultProps: {
+      variant: string;
+      color: string;
+      shadow: boolean;
+      className: string;
+    };
+    valid: {
+      variants: string[];
+      colors: string[];
+    };
+    styles: {
+      base: {
+        initial: object;
+        shadow: object;
+      };
+      variants: {
+        filled: object;
+        gradient: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Card Theme Customization
+
+<span id="card-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  card: {
+    styles: {
+      base: {
+        initial: {
+          position: "relative",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+## Card Header Theme Object Type
+
+<span id="card-header-theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  cardHeader: {
+    defaultProps: {
+      variant: string;
+      color: string;
+      shadow: boolean;
+      floated: boolean;
+      className: string;
+    };
+    valid: {
+      variants: string[];
+      colors: string[];
+    };
+    styles: {
+      base: {
+        initial: object;
+        shadow: object;
+        floated: object;
+      };
+      variants: {
+        filled: object;
+        gradient: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardHeaderStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Card Header Theme Customization
+
+<span id="card-header-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  cardHeader: {
+    styles: {
+      base: {
+        initial: {
+          position: "relative",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+## Card Body Theme Object Type
+
+<span id="card-body-theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  cardBody: {
+    defaultProps: {
+      className: string;
+    };
+    styles: {
+      base: object;
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardBodyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Card Body Theme Customization
+
+<span id="card-body-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  cardBody: {
+    styles: {
+      base: {
+        p: "p-6",
+      },
+    },
+  },
+};
+```
+
+---
+
+## Card Footer Theme Object Type
+
+<span id="card-footer-theme-object-type" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  cardFooter: {
+    defaultProps: {
+      className: string;
+      divider: boolean;
+    };
+    styles: {
+      base: {
+        initial: object;
+        divider: object;
+      };
+    };
+  }
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardFooterStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Card Footer Theme Customization
+
+<span id="card-footer-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  cardBody: {
+    styles: {
+      base: {
+        initial: {
+          p: "p-6",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
