@@ -1,0 +1,98 @@
+---
+title: Tailwind CSS Chip Theme - Material Tailwind
+description: Learn how to customize the theme and styles for chip component.
+navigation: ["theme-object-type", "theme-customization", "examples", "props"]
+github: theme/chip
+related:
+  [
+    {
+      title: "Examples",
+      route: "chip",
+      description: "Checkout different examples for chip component.",
+    },
+    {
+      title: "Props",
+      route: "props/chip",
+      description: "Learn more about props definition and types of chip component.",
+    },
+  ]
+---
+
+# Tailwind CSS Chip - Theme
+
+Learn how to customize the theme and styles for chip component, the theme object for chip component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of chip component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for chip component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of chip component.<br />
+
+You can customize the theme and styles of chip component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Chip Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface ChipStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    icon: node;
+    show: boolean;
+    dismissble: {
+      action: node;
+      onClose: func;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: object;
+    variants: {
+      filled: object;
+      gradient: object;
+    };
+    closeButtonColor: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { ChipStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Chip Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  chip: {
+    styles: {
+      base: {
+        position: "relative",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
