@@ -35,30 +35,28 @@ You can customize the theme and styles of accordion components by adding Tailwin
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  accordion: {
-    defaultProps: {
-      icon: node;
-      className: string;
-      animate: {
-        mount: object;
-        unmount: object;
-      };
-      disabled: boolean;
+interface AccordionStylesType {
+  defaultProps: {
+    icon: node;
+    className: string;
+    animate: {
+      mount: object;
+      unmount: object;
     };
-    styles: {
-      base: {
-        container: object;
-        header: {
-          initial: object;
-          active: object;
-          icon: object;
-        };
-        body: object;
-        disabled: object;
+    disabled: boolean;
+  };
+  styles: {
+    base: {
+      container: object;
+      header: {
+        initial: object;
+        active: object;
+        icon: object;
       };
+      body: object;
+      disabled: object;
     };
-  }
+  };
 }
 ```
 

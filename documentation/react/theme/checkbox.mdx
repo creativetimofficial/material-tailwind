@@ -36,30 +36,28 @@ You can customize the theme and styles of checkbox component by adding Tailwind 
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  checkbox: {
-    defaultProps: {
-      color: string;
-      label: string;
-      icon: node;
-      ripple: boolean;
-      className: string;
-      containerProps: object;
-      labelProps: object;
+interface CheckboxStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    icon: node;
+    ripple: boolean;
+    className: string;
+    containerProps: object;
+    labelProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
     };
-    valid: {
-      colors: string[];
-    };
-    styles: {
-      base: {
-        root: object;
-        container: object;
-        input: object;
-        label: object;
-      };
-      colors: object;
-    };
-  }
+    colors: object;
+  };
 }
 ```
 

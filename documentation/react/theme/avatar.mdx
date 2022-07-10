@@ -36,33 +36,31 @@ You can customize the theme and styles of avatar component by adding Tailwind CS
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  avatar: {
-    defaultProps: {
-      variant: string;
-      size: string;
-      className: string;
+interface AvatarStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+  };
+  styles: {
+    base: object;
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
     };
-    valid: {
-      variants: string[];
-      sizes: string[];
+    variants: {
+      rounded: object;
+      circular: object;
     };
-    styles: {
-      base: object;
-      sizes: {
-        xs: object;
-        sm: object;
-        md: object;
-        lg: object;
-        xl: object;
-        xxl: object;
-      };
-      variants: {
-        rounded: object;
-        circular: object;
-      };
-    };
-  }
+  };
 }
 ```
 

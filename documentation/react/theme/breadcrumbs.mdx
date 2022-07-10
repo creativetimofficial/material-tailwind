@@ -35,28 +35,26 @@ You can customize the theme and styles of breadcrumbs component by adding Tailwi
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  breadcrumbs: {
-    defaultProps: {
-      separator: node;
-      fullWidth: boolean;
-      className: string;
-    };
-    styles: {
-      base: {
-        root: {
-          initial: object;
-          fullWidth: object;
-        };
-        list: object;
-        item: {
-          initial: object;
-          disabled: object;
-        };
-        separator: object;
+interface BreadcrumbsStyleTypes {
+  defaultProps: {
+    separator: node;
+    fullWidth: boolean;
+    className: string;
+  };
+  styles: {
+    base: {
+      root: {
+        initial: object;
+        fullWidth: object;
       };
+      list: object;
+      item: {
+        initial: object;
+        disabled: object;
+      };
+      separator: object;
     };
-  }
+  };
 }
 ```
 

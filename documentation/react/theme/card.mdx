@@ -48,29 +48,27 @@ You can customize the theme and styles of card components by adding Tailwind CSS
 <span id="card-theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  card: {
-    defaultProps: {
-      variant: string;
-      color: string;
-      shadow: boolean;
-      className: string;
+interface CardStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    shadow: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      shadow: object;
     };
-    valid: {
-      variants: string[];
-      colors: string[];
+    variants: {
+      filled: object;
+      gradient: object;
     };
-    styles: {
-      base: {
-        initial: object;
-        shadow: object;
-      };
-      variants: {
-        filled: object;
-        gradient: object;
-      };
-    };
-  }
+  };
 }
 ```
 
@@ -110,31 +108,29 @@ const theme = {
 <span id="card-header-theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  cardHeader: {
-    defaultProps: {
-      variant: string;
-      color: string;
-      shadow: boolean;
-      floated: boolean;
-      className: string;
+interface CardHeaderStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    shadow: boolean;
+    floated: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      shadow: object;
+      floated: object;
     };
-    valid: {
-      variants: string[];
-      colors: string[];
+    variants: {
+      filled: object;
+      gradient: object;
     };
-    styles: {
-      base: {
-        initial: object;
-        shadow: object;
-        floated: object;
-      };
-      variants: {
-        filled: object;
-        gradient: object;
-      };
-    };
-  }
+  };
 }
 ```
 
@@ -174,15 +170,13 @@ const theme = {
 <span id="card-body-theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  cardBody: {
-    defaultProps: {
-      className: string;
-    };
-    styles: {
-      base: object;
-    };
-  }
+interface CardBodyStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
 }
 ```
 
@@ -220,19 +214,17 @@ const theme = {
 <span id="card-footer-theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  cardFooter: {
-    defaultProps: {
-      className: string;
-      divider: boolean;
+interface CardFooterStylesType {
+  defaultProps: {
+    className: string;
+    divider: boolean;
+  };
+  styles: {
+    base: {
+      initial: object;
+      divider: object;
     };
-    styles: {
-      base: {
-        initial: object;
-        divider: object;
-      };
-    };
-  }
+  };
 }
 ```
 

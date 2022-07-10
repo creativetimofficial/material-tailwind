@@ -36,39 +36,37 @@ You can customize the theme and styles of button component by adding Tailwind CS
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  button: {
-    defaultProps?: {
-      variant: string;
-      size: string;
-      color: string;
-      fullWidth: boolean;
-      ripple: boolean;
-      className: string;
+interface ButtonStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    color: string;
+    fullWidth: boolean;
+    ripple: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      fullWidth: object;
     };
-    valid: {
-      variants: string[];
-      sizes: string[];
-      colors: string[];
+    sizes: {
+      sm: object;
+      md: object;
+      lg: object;
     };
-    styles: {
-      base: {
-        initial: object;
-        fullWidth: object;
-      };
-      sizes: {
-        sm: object;
-        md: object;
-        lg: object;
-      };
-      variants: {
-        filled: object;
-        gradient: object;
-        outlined: object;
-        text: object;
-      };
+    variants: {
+      filled: object;
+      gradient: object;
+      outlined: object;
+      text: object;
     };
-  }
+  };
 }
 ```
 

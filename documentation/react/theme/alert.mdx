@@ -36,35 +36,33 @@ You can customize the theme and styles of alert component by adding Tailwind CSS
 <span id="theme-object-type" className="scroll-mt-48" />
 
 ```ts
-const theme = {
-  alert: {
-    defaultProps: {
-      variant: string;
-      color: string;
-      icon: node;
-      show: boolean;
-      dismissble: {
-        action: node;
-        onClose: func;
-      };
-      animate: {
-        mount: object;
-        unmount: object;
-      };
-      className: string;
+interface AlertStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    icon: node;
+    show: boolean;
+    dismissble: {
+      action: node;
+      onClose: func;
     };
-    valid: {
-      variants: string[];
-      colors: string[];
+    animate: {
+      mount: object;
+      unmount: object;
     };
-    styles: {
-      base: object;
-      variants: {
-        filled: object;
-        gradient: object;
-      };
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: object;
+    variants: {
+      filled: object;
+      gradient: object;
     };
-  }
+  };
 }
 ```
 
