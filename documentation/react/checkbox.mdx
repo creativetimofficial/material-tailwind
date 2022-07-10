@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Checkbox for React - Material Tailwind
 description: Customise your web projects  with our beautiful checkbox component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["checkbox", "checkbox-colors", "props", "types"]
+navigation: ["checkbox", "checkbox-colors", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/checkbox",
+      description: "Learn more about props definition and types of checkbox components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/checkbox",
+      description: "Learn how to customize the theme and styles for checkbox components.",
+    },
+  ]
 github: checkbox
 prev: card
 next: chip
@@ -71,50 +84,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for checkbox component. These are the custom props
-that come with we've added for the checkbox component and you can use all the other
-native input props as well.
-
-| Attribute        | Type                 | Description                             | Default                |
-| ---------------- | -------------------- | --------------------------------------- | ---------------------- |
-| `color`          | [Color](#types)      | Change checkbox color                   | <Code>blue</Code>      |
-| `label`          | <Code>string</Code>  | Add label for checkbox                  | `''`                   |
-| `icon`           | <Code>node</Code>    | Change checked icon for checkbox        | <Code>undefined</Code> |
-| `ripple`         | <Code>boolean</Code> | Add ripple effect for checkbox          | <Code>true</Code>      |
-| `className`      | <Code>string</Code>  | Add custom className for checkbox       | `''`                   |
-| `containerProps` | <Code>Object</Code>  | Add custom props for checkbox container | <Code>undefined</Code> |
-| `labelProps`     | <Code>Object</Code>  | Add custom props for checkbox label     | <Code>undefined</Code> |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
