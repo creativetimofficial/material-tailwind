@@ -1,6 +1,14 @@
 if (document.querySelector('.datepicker')) {
   flatpickr(".datepicker", {});
-}
+};
+if (document.querySelector('.timepicker')) {
+  flatpickr(".timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+  });
+};
 "use strict";
 (function () {
   const slides = document.querySelectorAll(".slide");
