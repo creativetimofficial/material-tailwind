@@ -21,6 +21,7 @@ const { card } = require("../theme/components/card");
 const { carousel } = require("../theme/components/carousel");
 const { checkbox } = require("../theme/components/checkbox");
 const { chip } = require("../theme/components/chip");
+const { datepicker } = require("../theme/components/datepicker");
 const { dialog } = require("../theme/components/dialog");
 const { input } = require("../theme/components/input");
 const { menu } = require("../theme/components/menu");
@@ -56,6 +57,7 @@ const materialTailwindConfig = {
       addComponents(checkbox(theme));
       addComponents(chip(theme));
       addComponents(dialog(theme));
+      addComponents(datepicker(theme));
       addComponents(input(theme));
       addComponents(menu(theme));
       addComponents(navbar(theme));
