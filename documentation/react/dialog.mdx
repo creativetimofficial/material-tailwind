@@ -1,14 +1,19 @@
 ---
 title: Tailwind CSS Dialog for React - Material Tailwind
 description: Customise your web projects with our easy-to-use dialog component for Tailwind CSS and React using Material Design guidelines.
-navigation:
+navigation: ["dialog", "props", "theme"]
+related:
   [
-    "dialog",
-    "dialog-props",
-    "dialog-header-props",
-    "dialog-body-props",
-    "dialog-footer-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/dialog",
+      description: "Learn more about props definition and types of dialog components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/dialog",
+      description: "Learn how to customize the theme and styles for dialog components.",
+    },
   ]
 github: dialog
 prev: chip
@@ -115,92 +120,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Dialog Props
-
-<span id="dialog-props" className="scroll-mt-48" />
-The following props are available for dialog component. These are the custom props
-that come with we've added for the dialog component and you can use all the other
-native props as well.
-
-| Attribute   | Type                  | Description                               | Default                                |
-| ----------- | --------------------- | ----------------------------------------- | -------------------------------------- |
-| `open`      | <Code>boolean</Code>  | Open the dialog                           | No default value it's a required prop. |
-| `handler`   | <Code>function</Code> | Controls open and close states for dialog | No default value it's a required prop. |
-| `size`      | [Size](#types)        | Change dialog size                        | <Code>md</Code>                        |
-| `dismiss`   | [Dismiss](#types)     | Change backdrop dismiss listeners         | <Code>undefined</Code>                 |
-| `animate`   | [Animate](#types)     | Change dialog animation                   | <Code>undefined</Code>                 |
-| `className` | <Code>string</Code>   | Add custom className for dialog           | `''`                                   |
-| `children`  | <Code>node</Code>     | Add content for dialog                    | No default value it's a required prop. |
-
----
-
-## Dialog Header Props
-
-<span id="dialog-header-props" className="scroll-mt-48" />
-The following props are available for dialog header component. These are the custom
-props that come with we've added for the dialog header component and you can use
-all the other native props as well.
-
-| Attribute   | Type                | Description                            | Default                                |
-| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
-| `className` | <Code>string</Code> | Add custom className for dialog header | `''`                                   |
-| `children`  | <Code>node</Code>   | Add content for dialog header          | No default value it's a required prop. |
-
----
-
-## Dialog Body Props
-
-<span id="dialog-body-props" className="scroll-mt-48" />
-The following props are available for dialog body component. These are the custom
-props that come with we've added for the dialog body component and you can use all
-the other native props as well.
-
-| Attribute   | Type                 | Description                             | Default                                |
-| ----------- | -------------------- | --------------------------------------- | -------------------------------------- |
-| `divider`   | <Code>boolean</Code> | Add border top & bottom for dialog body | <Code>false</Code>                     |
-| `className` | <Code>string</Code>  | Add custom className for dialog body    | `''`                                   |
-| `children`  | <Code>node</Code>    | Add content for dialog body             | No default value it's a required prop. |
-
----
-
-## Dialog Footer Props
-
-<span id="dialog-footer-props" className="scroll-mt-48" />
-The following props are available for dialog footer component. These are the custom
-props that come with we've added for the dialog footer component and you can use
-all the other native props as well.
-
-| Attribute   | Type                | Description                            | Default                                |
-| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
-| `className` | <Code>string</Code> | Add custom className for dialog footer | `''`                                   |
-| `children`  | <Code>node</Code>   | Add content for dialog footer          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-```
-
-```ts
-type dismissType = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: object;
-  unmount?: object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
