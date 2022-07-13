@@ -75,7 +75,7 @@
   display: block;
   pointer-events: none;
   border: solid transparent;
-  content: '&#39';
+  content: "";
   height: 0;
   width: 0;
   left: 22px;
@@ -241,7 +241,7 @@
 }
 .numInputWrapper span:after {
   display: block;
-  content: '&#34';
+  content: "";
   position: absolute;
 }
 .numInputWrapper span.arrowUp {
@@ -604,7 +604,7 @@ span.flatpickr-weekday {
   display: flex;
 }
 .flatpickr-time:after {
-  content: '&#34';
+  content: "";
   display: table;
   clear: both;
 }
@@ -710,48 +710,4 @@ span.flatpickr-weekday {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
  }
-}
-.datepicker.flatpickr-input {
-  background-color: #fff;
-}
-.flatpickr-calendar.open {
-  margin-left: -38px;
-  margin-top: 4px;
-}
-.flatpickr-calendar.arrowBottom {
-  margin-top: -20px;
-}
-.flatpickr-calendar .flatpickr-innerContainer {
-  margin-top: 15px !important;
-}
-.flatpickr-calendar .numInputWrapper span {
-  border: none;
-  border-bottom: 1px solid rgba(57, 57, 57, 0.15);
-}
-.flatpickr-calendar .numInputWrapper:hover .arrowUp, .flatpickr-calendar .numInputWrapper:hover .arrowDown {
-  margin-top: 3px;
-}
-.flatpickr-calendar .flatpickr-day.today, .flatpickr-calendar .flatpickr-day.selected, .flatpickr-calendar .flatpickr-day.startRange, .flatpickr-calendar .flatpickr-day.endRange {
-  background: #e91e63 !important;
-  color: #fff;
-  border: none;
-}
-.flatpickr-calendar .flatpickr-day.inRange {
-  background: rgba(94, 114, 228, 0.28);
-  border: none;
-  -webkit-box-shadow: -5px 0 0 #d7dcf8, 5px 0 0 #d7dcf8;
-  box-shadow: -5px 0 0 #d7dcf8, 5px 0 0 #d7dcf8;
-}
-.flatpickr-calendar .flatpickr-day:not(.selected):hover, .flatpickr-calendar .flatpickr-day:not(.selected):focus {
-  background: rgba(94, 114, 228, 0.28);
-  border: none;
-}
-.flatpickr-calendar .flatpickr-time input:hover, .flatpickr-calendar .flatpickr-time .flatpickr-am-pm:hover, .flatpickr-calendar .flatpickr-time input:focus, .flatpickr-calendar .flatpickr-time .flatpickr-am-pm:focus {
-  background: rgba(94, 114, 228, 0.28);
-}
-.flatpickr.form-control {
-  background: #fff;
-}
-.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
-  box-shadow: -10px 0 0 #e91e63;
 }
