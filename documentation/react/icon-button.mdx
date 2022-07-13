@@ -8,7 +8,20 @@ navigation:
     "icon-button-sizes",
     "icon-button-colors",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/icon-button",
+      description: "Learn more about props definition and types of icon button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/icon-button",
+      description: "Learn how to customize the theme and styles for icon button component.",
+    },
   ]
 github: icon-button
 prev: dialog
@@ -171,57 +184,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for icon button component. These are the custom
-props that come with we've added for the icon button component and you can use all
-the other native button props as well.
-
-| Attribute   | Type                 | Description                          | Default                                |
-| ----------- | -------------------- | ------------------------------------ | -------------------------------------- |
-| `variant`   | [Variant](#types)    | Change icon button variant           | <Code>filled</Code>                    |
-| `size`      | [Size](#types)       | Change icon button size              | <Code>md</Code>                        |
-| `color`     | [Color](#types)      | Change icon button color             | <Code>blue</Code>                      |
-| `ripple`    | <Code>boolean</Code> | Add ripple effect for icon button    | <Code>true</Code>                      |
-| `className` | <Code>string</Code>  | Add custom className for icon button | `''`                                   |
-| `children`  | <Code>node</Code>    | Add content for icon button          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "outlined" | "gradient" | "text";
-```
-
-```ts
-type size = "sm" | "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
