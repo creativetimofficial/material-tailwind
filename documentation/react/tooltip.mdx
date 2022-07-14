@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Tooltip for React - Material Tailwind
 description: Customise your web projects with our easy-to-use tooltip component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tooltip", "props", "types"]
+navigation: ["tooltip", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/tooltip",
+      description: "Learn more about props definition and types of tooltip component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/tooltip",
+      description: "Learn how to customize the theme and styles for tooltip component.",
+    },
+  ]
 github: tooltip
 prev: textarea
 next: typography
@@ -34,74 +47,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for tooltip component. These are the custom props
-that come with we've added for the tooltip component and you can use all the other
-native props as well.
-
-| Attribute     | Type                  | Description                                        | Default                                |
-| ------------- | --------------------- | -------------------------------------------------- | -------------------------------------- |
-| `open`        | <Code>boolean</Code>  | Makes the tooltip open, when tooltip is controlled | <Code>undefined</Code>                 |
-| `handler`     | <Code>function</Code> | Change open state for controlled tooltip           | <Code>undefined</Code>                 |
-| `content`     | <Code>node</Code>     | Add content for tooltip                            | <Code>undefined</Code>                 |
-| `interactive` | <Code>boolean</Code>  | Make tooltip interactive                           | <Code>false</Code>                     |
-| `placement`   | [Placement](#types)   | Change tooltip placement                           | <Code>top</Code>                       |
-| `offset`      | [Offset](#types)      | Change tooltip offset from it's handler            | <Code>5</Code>                         |
-| `dismiss`     | [Dismiss](#types)     | Change dismiss listeners when clicking outside     | <Code>undefined</Code>                 |
-| `animate`     | [Animate](#types)     | Change tooltip animation                           | <Code>undefined</Code>                 |
-| `className`   | <Code>string</Code>   | Add custom className for tooltip                   | `''`                                   |
-| `children`    | <Code>node</Code>     | The element that tooltip will reference to         | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
-```
-
-```ts
-type offset =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
-```
-
-```ts
-type dismiss = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: object;
-  unmount?: object;
-};
-```
+<span id="theme" className="scroll-mt-48" />
