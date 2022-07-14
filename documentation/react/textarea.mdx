@@ -9,7 +9,20 @@ navigation:
     "textarea-colors",
     "textarea-validations",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/textarea",
+      description: "Learn more about props definition and types of textarea component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/textarea",
+      description: "Learn how to customize the theme and styles for textarea component.",
+    },
   ]
 github: textarea
 prev: tabs
@@ -148,60 +161,5 @@ export default function Validations() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for textarea component. These are the custom props
-that come with we've added for the textarea component and you can use all the other
-native textarea props as well.
-
-| Attribute    | Type                 | Description                         | Default                |
-| ------------ | -------------------- | ----------------------------------- | ---------------------- |
-| `variant`    | [Variant](#types)    | Change textarea variant             | <Code>outlined</Code>  |
-| `size`       | [Size](#types)       | Change textarea size                | <Code>md</Code>        |
-| `color`      | [Color](#types)      | Change textarea color               | <Code>blue</Code>      |
-| `label`      | <Code>string</Code>  | Add label for textarea              | `''`                   |
-| `error`      | <Code>boolean</Code> | Change textarea state to error      | <Code>false</Code>     |
-| `success`    | <Code>boolean</Code> | Change textarea state to success    | <Code>false</Code>     |
-| `resize`     | <Code>boolean</Code> | Makes textarea resizable            | <Code>false</Code>     |
-| `labelProps` | <Code>Object</Code>  | Add custom props for textarea label | <Code>undefined</Code> |
-| `className`  | <Code>string</Code>  | Add custom className for textarea   | `''`                   |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "standard" | "outlined" | "static";
-```
-
-```ts
-type variant = "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
