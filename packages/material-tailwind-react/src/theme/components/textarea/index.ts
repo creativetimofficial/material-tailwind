@@ -10,7 +10,6 @@ import type {
   label,
   error,
   success,
-  icon,
   resize,
   labelProps,
   className,
@@ -39,7 +38,7 @@ export interface TextareaVariantStylesType {
     lg?: TextareaSizeStylesType;
   };
   colors?: {
-    input?: object;
+    textarea?: object;
     label?: object;
   };
   error?: TextareaStateStylesType;
@@ -54,7 +53,6 @@ export interface TextareaStylesType {
     label?: label;
     error?: error;
     success?: success;
-    icon?: icon;
     resize?: resize;
     labelProps?: labelProps;
     className?: className;
