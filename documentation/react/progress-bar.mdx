@@ -8,7 +8,20 @@ navigation:
     "progress-bar-colors",
     "progress-bar-with-label",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/progress-bar",
+      description: "Learn more about props definition and types of progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/progress-bar",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
   ]
 github: progress-bar
 prev: popover
@@ -115,57 +128,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for progress bar component. These are the custom
-props that come with we've added for the progress bar component and you can use all
-the other native props as well.
-
-| Attribute   | Type                | Description                                      | Default                |
-| ----------- | ------------------- | ------------------------------------------------ | ---------------------- |
-| `variant`   | [Variant](#types)   | Change progress bar variant                      | <Code>filled</Code>    |
-| `color`     | [Color](#types)     | Change progress bar color                        | <Code>blue</Code>      |
-| `label`     | [label](#types)     | Add label for progress bar                       | <Code>undefined</Code> |
-| `value`     | <Code>number</Code> | Add the completed percentage for progress bar    | 0                      |
-| `barProps`  | <Code>Object</Code> | Add custom props for progress bar percentage bar | <Code>undefined</Code> |
-| `className` | <Code>string</Code> | Add custom className for progress bar            | `''`                   |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
-
-```ts
-type label = string | boolean;
-```
+<span id="theme" className="scroll-mt-48" />
