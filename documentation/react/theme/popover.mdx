@@ -1,0 +1,101 @@
+---
+title: Tailwind CSS Popover Theme - Material Tailwind
+description: Learn how to customize the theme and styles for popover components.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/popover
+related:
+  [
+    {
+      title: "Examples",
+      route: "popover",
+      description: "Checkout different examples for popover components.",
+    },
+    {
+      title: "Props",
+      route: "props/popover",
+      description: "Learn more about props definition and types of popover components.",
+    },
+  ]
+---
+
+# Tailwind CSS Popover - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for popover components, the theme object for popover components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of popover component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for popover component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of popover component.<br />
+
+You can customize the theme and styles of popover components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Popover Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface PopoverStylesType {
+  defaultProps: {
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePointerDown: boolean;
+      outsidePointerDown: boolean;
+      ancestorScroll: boolean;
+      bubbles: boolean;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { PopoverStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Popover Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  popover: {
+    styles: {
+      base: {
+        bg: "bg-white",
+        color: "text-blue-grey-500",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

@@ -1,13 +1,19 @@
 ---
 title: Tailwind CSS Popover for React - Material Tailwind
 description: Customise your web projects with our easy-to-use popover component for Tailwind CSS and React using Material Design guidelines.
-navigation:
+navigation: ["popover", "props", "theme"]
+related:
   [
-    "popover",
-    "popover-props",
-    "popover-handler-props",
-    "popover-content-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/popover",
+      description: "Learn more about props definition and types of popover component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/popover",
+      description: "Learn how to customize the theme and styles for popover component.",
+    },
   ]
 github: checkbox
 prev: navbar
@@ -55,98 +61,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Popover Props
-
-<span id="popover-props" className="scroll-mt-48" />
-The following props are available for popover component. These are the custom props
-that come with we've added for the popover component and you can use all the other
-native props as well.
-
-| Attribute   | Type                  | Description                                        | Default                                |
-| ----------- | --------------------- | -------------------------------------------------- | -------------------------------------- |
-| `open`      | <Code>boolean</Code>  | Makes the popover open, when popover is controlled | <Code>undefined</Code>                 |
-| `handler`   | <Code>function</Code> | Change open state for controlled popover           | <Code>undefined</Code>                 |
-| `placement` | [Placement](#types)   | Change popover placement                           | <Code>top</Code>                       |
-| `offset`    | [Offset](#types)      | Change popover offset from it's handler            | <Code>5</Code>                         |
-| `dismiss`   | [Dismiss](#types)     | Change dismiss listeners when clicking outside     | <Code>undefined</Code>                 |
-| `animate`   | [Animate](#types)     | Change popover animation                           | <Code>undefined</Code>                 |
-| `children`  | <Code>node</Code>     | Add content for popover                            | No default value it's a required prop. |
-
----
-
-## Popover Handler Props
-
-<span id="popover-handler-props" className="scroll-mt-48" />
-The following props are available for popover handler component. These are the custom
-props that come with we've added for the popover handler component and you can use
-all the other native props as well.
-
-| Attribute  | Type              | Description                     | Default                                |
-| ---------- | ----------------- | ------------------------------- | -------------------------------------- |
-| `children` | <Code>node</Code> | Add content for popover handler | No default value it's a required prop. |
-
----
-
-## Popover Content Props
-
-<span id="popover-content-props" className="scroll-mt-48" />
-The following props are available for popover content component. These are the custom
-props that come with we've added for the popover content component and you can use
-all the other native props as well.
-
-| Attribute   | Type              | Description                              | Default                                |
-| ----------- | ----------------- | ---------------------------------------- | -------------------------------------- |
-| `className` | <Code>node</Code> | Add custom className for popover content | `''`                                   |
-| `children`  | <Code>node</Code> | Add content for popover content          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
-```
-
-```ts
-type offset =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
-```
-
-```ts
-type dismiss = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: object;
-  unmount?: object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
