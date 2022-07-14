@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Navbar for React - Material Tailwind
 description: Customise your web projects with our easy-to-use navbar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["navbar", "props", "types"]
+navigation: ["navbar", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/navbar",
+      description: "Learn more about props definition and types of navbar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/navbar",
+      description: "Learn how to customize the theme and styles for navbar component.",
+    },
+  ]
 github: navbar
 prev: menu
 next: popover
@@ -156,56 +169,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for navbar component. These are the custom props
-that come with we've added for the navbar component and you can use all the other
-native props as well.
-
-| Attribute   | Type                 | Description                                                               | Default                                |
-| ----------- | -------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
-| `variant`   | [Variant](#types)    | Change navbar variant                                                     | <Code>filled</Code>                    |
-| `color`     | [Color](#types)      | Change navbar color                                                       | <Code>white</Code>                     |
-| `shadow`    | <Code>boolean</Code> | Add box-shadow for navbar                                                 | <Code>true</Code>                      |
-| `blurred`   | <Code>boolean</Code> | Add blur backdrop effect for navbar and makes it's background color white | <Code>true</Code>                      |
-| `fullWidth` | <Code>boolean</Code> | Change navbar to a block level element and remove its border radius       | <Code>false</Code>                     |
-| `className` | <Code>string</Code>  | Add custom className for navbar                                           | `''`                                   |
-| `children`  | <Code>node</Code>    | Add content for navbar                                                    | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "transparent"
-  | "white"
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
