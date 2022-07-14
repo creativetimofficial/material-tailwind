@@ -10,7 +10,20 @@ navigation:
     "input-validations",
     "input-with-icon",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/input",
+      description: "Learn more about props definition and types of input component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/input",
+      description: "Learn how to customize the theme and styles for input component.",
+    },
   ]
 github: input
 prev: icon-button
@@ -173,60 +186,5 @@ export default function InputWithIcon() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for input component. These are the custom props
-that come with we've added for the input component and you can use all the other
-native input props as well.
-
-| Attribute    | Type                 | Description                      | Default                |
-| ------------ | -------------------- | -------------------------------- | ---------------------- |
-| `variant`    | [Variant](#types)    | Change input variant             | <Code>outlined</Code>  |
-| `size`       | [Size](#types)       | Change input size                | <Code>md</Code>        |
-| `color`      | [Color](#types)      | Change input color               | <Code>blue</Code>      |
-| `label`      | <Code>string</Code>  | Add label for input              | `''`                   |
-| `error`      | <Code>boolean</Code> | Change input state to error      | <Code>false</Code>     |
-| `success`    | <Code>boolean</Code> | Change input state to success    | <Code>false</Code>     |
-| `icon`       | <Code>node</Code>    | Add icon for the input           | <Code>undefined</Code> |
-| `labelProps` | <Code>Object</Code>  | Add custom props for input label | <Code>undefined</Code> |
-| `className`  | <Code>string</Code>  | Add custom className for input   | `''`                   |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "standard" | "outlined" | "static";
-```
-
-```ts
-type variant = "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

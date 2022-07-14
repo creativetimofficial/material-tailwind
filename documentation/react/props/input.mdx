@@ -1,0 +1,107 @@
+---
+title: Tailwind CSS Input Props - Material Tailwind
+description: Learn more about props definition and types of input component.
+navigation:
+  [
+    "input-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "examples",
+    "theme",
+  ]
+github: props/input
+related:
+  [
+    {
+      title: "Examples",
+      route: "input",
+      description: "Checkout different examples for input component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/input",
+      description: "Learn how to customize the theme and styles for input component.",
+    },
+  ]
+---
+
+# Tailwind CSS Input - Props
+
+<span id="input-props" className="scroll-mt-48" />
+The following props are available for input component. These are the custom props
+that come with we've added for the input component and you can use all the other
+native input props as well.
+
+| Attribute    | Type                      | Description                      | Default                |
+| ------------ | ------------------------- | -------------------------------- | ---------------------- |
+| `variant`    | [Variant](#types-variant) | Change input variant             | <Code>outlined</Code>  |
+| `size`       | [Size](#types-size)       | Change input size                | <Code>md</Code>        |
+| `color`      | [Color](#types-color)     | Change input color               | <Code>blue</Code>      |
+| `label`      | <Code>string</Code>       | Add label for input              | `''`                   |
+| `error`      | <Code>boolean</Code>      | Change input state to error      | <Code>false</Code>     |
+| `success`    | <Code>boolean</Code>      | Change input state to success    | <Code>false</Code>     |
+| `icon`       | <Code>node</Code>         | Add icon for the input           | <Code>undefined</Code> |
+| `labelProps` | <Code>Object</Code>       | Add custom props for input label | <Code>undefined</Code> |
+| `className`  | <Code>string</Code>       | Add custom className for input   | `''`                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "md" | "lg";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
