@@ -1,0 +1,193 @@
+---
+title: Tailwind CSS Select Props - Material Tailwind
+description: Learn more about props definition and types of select component.
+navigation:
+  [
+    "select-props",
+    "select-option-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
+github: props/select
+related:
+  [
+    {
+      title: "Examples",
+      route: "select",
+      description: "Checkout different examples for select components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/select",
+      description: "Learn how to customize the theme and styles for select components.",
+    },
+  ]
+---
+
+# Tailwind CSS Select - Props
+
+<span id="select-props" className="scroll-mt-48" />
+The following props are available for select component. These are the custom props
+that come with we've added for the select component and you can use all the other
+native props as well.
+
+| Attribute    | Type                      | Description                                     | Default                                |
+| ------------ | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `variant`    | [Variant](#types-variant) | Change input variant                            | <Code>outlined</Code>                  |
+| `size`       | [Size](#types-size)       | Change input size                               | <Code>md</Code>                        |
+| `color`      | [Color](#types-color)     | Change input color                              | <Code>blue</Code>                      |
+| `label`      | <Code>string</Code>       | Add label for input                             | `''`                                   |
+| `error`      | <Code>boolean</Code>      | Change input state to error                     | <Code>false</Code>                     |
+| `success`    | <Code>boolean</Code>      | Change input state to success                   | <Code>false</Code>                     |
+| `arrow`      | <Code>node</Code>         | Change select arrow icon                        | <Code>undefined</Code>                 |
+| `value`      | <Code>string</Code>       | Change selected value for select                | <Code>undefined</Code>                 |
+| `onChange`   | <Code>function</Code>     | Return selected value when select value changed | <Code>undefined</Code>                 |
+| `selected`   | <Code>function</Code>     | Return selected element and it's index          | <Code>undefined</Code>                 |
+| `offset`     | [Offset](#types-offset)   | Change select menu offset from it's input       | <Code>5</Code>                         |
+| `dismiss`    | [Dismiss](#types-dismiss) | Change dismiss listeners when clicking outside  | <Code>undefined</Code>                 |
+| `animate`    | [Animate](#types-animate) | Change select menu animation                    | <Code>undefined</Code>                 |
+| `lockScroll` | <Code>boolean</Code>      | Lock page scrolling when select menu is opened  | <Code>false</Code>                     |
+| `labelProps` | <Code>Object</Code>       | Add custom props for select label               | <Code>undefined</Code>                 |
+| `menuProps`  | <Code>Object</Code>       | Add custom props for select menu                | <Code>undefined</Code>                 |
+| `disabled`   | <Code>boolean</Code>      | Disable select input                            | <Code>false</Code>                     |
+| `className`  | <Code>string</Code>       | Add custom className for select input           | `''`                                   |
+| `children`   | <Code>node</Code>         | Add content for select                          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectProps } from "@material-tailwind/react";
+```
+
+---
+
+## Select Option Props
+
+<span id="select-option-props" className="scroll-mt-48" />
+The following props are available for select option component. These are the custom
+props that come with we've added for the select option component and you can use
+all the other native props as well.
+
+| Attribute   | Type                 | Description                                                           | Default                                |
+| ----------- | -------------------- | --------------------------------------------------------------------- | -------------------------------------- |
+| `value`     | <Code>string</Code>  | Add select option value, it works together with value props of select | <Code>undefined</Code>                 |
+| `index`     | <Code>number</Code>  | Add select option value                                               | <Code>undefined</Code>                 |
+| `disabled`  | <Code>boolean</Code> | Disable select option                                                 | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for select option                                | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for select option                                         | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectOptionProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "md" | "lg";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+## Types - Offset
+
+<span id="types-offset" className="scroll-mt-48" />
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+## Types - Dismiss
+
+<span id="types-dismiss" className="scroll-mt-48" />
+
+```ts
+type dismiss = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePointerDown?: boolean;
+  outsidePointerDown?: boolean;
+  ancestorScroll?: boolean;
+  bubbles?: boolean;
+};
+```
+
+---
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
