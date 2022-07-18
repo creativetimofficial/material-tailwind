@@ -11,6 +11,9 @@ const datepicker = (theme) => ({
   ".flatpickr-calendar .flatpickr-innerContainer": {
     "margin-top": "15px !important"
   },
+  ".flatpickr-calendar.hasTime .flatpickr-time": {
+    "border-top": "none !important"
+  },
   ".flatpickr-calendar .numInputWrapper span": {
     border: "none",
     "border-bottom": "1px solid rgba(57, 57, 57, 0.15)"
