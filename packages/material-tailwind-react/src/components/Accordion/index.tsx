@@ -28,8 +28,8 @@ import {
 } from "../../types/components/accordion";
 
 // accordion components
-import AccordionHeader from "./AccordionHeader";
-import AccordionBody from "./AccordionBody";
+import { AccordionHeader, AccordionHeaderProps } from "./AccordionHeader";
+import { AccordionBody, AccordionBodyProps } from "./AccordionBody";
 
 export interface AccordionProps extends React.ComponentProps<"div"> {
   open: open;
@@ -87,6 +87,7 @@ Accordion.propTypes = {
 
 Accordion.displayName = "MaterialTailwind.Accordion";
 
+export type { AccordionHeaderProps, AccordionBodyProps };
 export { Accordion, AccordionHeader, AccordionBody, useAccordion };
 export default Object.assign(Accordion, {
   Header: AccordionHeader,

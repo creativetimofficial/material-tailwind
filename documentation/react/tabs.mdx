@@ -1,15 +1,19 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation:
+navigation: ["tabs", "props", "theme"]
+related:
   [
-    "tabs",
-    "tabs-props",
-    "tabs-header-props",
-    "tabs-body-props",
-    "tab-props",
-    "tab-panel-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/tabs",
+      description: "Learn more about props definition and types of tabs components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/tabs",
+      description: "Learn how to customize the theme and styles for tabs components.",
+    },
   ]
 github: tabs
 prev: switch
@@ -66,7 +70,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
   </Tabs>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Tabs,
   TabsHeader,
@@ -136,95 +140,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Tabs Props
-
-<span id="tabs-props" className="scroll-mt-48" />
-The following props are available for the tabs component. These are the custom props
-that come with we've added for the tabs component and you can use all the other native
-props as well.
-
-| Attribute   | Type                      | Description                   | Default                                |
-| ----------- | ------------------------- | ----------------------------- | -------------------------------------- |
-| `value`     | [Value](#types)           | Set's the default visible tab | No default value it's a required prop. |
-| `className` | <Code small>string</Code> | Add custom className for tabs | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for tabs          | No default value it's a required prop. |
-
----
-
-## Tabs Header Props
-
-<span id="tabs-header-props" className="scroll-mt-48" />
-The following props are available for the tabs header component. These are the custom
-props that come with we've added for the tabs header component and you can use all
-the other native props as well.
-
-| Attribute        | Type                      | Description                                | Default                                |
-| ---------------- | ------------------------- | ------------------------------------------ | -------------------------------------- |
-| `indicatorProps` | <Code small>Object</Code> | Add custom props for tabs header indicator | <Code small>undefined</Code>           |
-| `className`      | <Code small>string</Code> | Add custom className for tabs header       | `''`                                   |
-| `children`       | <Code small>node</Code>   | Add content for tabs header                | No default value it's a required prop. |
-
----
-
-## Tabs Body Props
-
-<span id="tabs-body-props" className="scroll-mt-48" />
-The following props are available for the tabs body component. These are the custom
-props that come with we've added for the tabs body component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                        | Default                                |
-| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
-| `animate`   | [Animate](#types)         | Change tabs body animation         | <Code small>undefined</Code>           |
-| `className` | <Code small>string</Code> | Add custom className for tabs body | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for tabs body          | No default value it's a required prop. |
-
----
-
-## Tab Props
-
-<span id="tab-props" className="scroll-mt-48" />
-The following props are available for the tab component. These are the custom props
-that come with we've added for the tab component and you can use all the other native
-props as well.
-
-| Attribute   | Type                       | Description                                                         | Default                                |
-| ----------- | -------------------------- | ------------------------------------------------------------------- | -------------------------------------- |
-| `value`     | [Value](#types)            | Set's the tab value, it should be the same value as tab panel value | No default value it's a required prop. |
-| `disabled`  | <Code small>boolean</Code> | Disable tab                                                         | <Code small>false</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for tab                                        | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for tab                                                 | No default value it's a required prop. |
-
----
-
-## Tab Panel Props
-
-<span id="tab-panel-props" className="scroll-mt-48" />
-The following props are available for the tab panel component. These are the custom
-props that come with we've added for the tab panel component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                                                         | Default                                |
-| ----------- | ------------------------- | ------------------------------------------------------------------- | -------------------------------------- |
-| `value`     | [Value](#types)           | Set's the tab panel value, it should be the same value as tab value | No default value it's a required prop. |
-| `className` | <Code small>string</Code> | Add custom className for tab panel                                  | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for tab panel                                           | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type value = string | number;
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

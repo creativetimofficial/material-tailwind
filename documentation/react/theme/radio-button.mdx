@@ -1,0 +1,96 @@
+---
+title: Tailwind CSS Radio Theme - Material Tailwind
+description: Learn how to customize the theme and styles for radio component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/radio
+related:
+  [
+    {
+      title: "Examples",
+      route: "radio-button",
+      description: "Checkout different examples for radio button component.",
+    },
+    {
+      title: "Props",
+      route: "props/radio-button",
+      description: "Learn more about props definition and types of radio button component.",
+    },
+  ]
+---
+
+# Tailwind CSS Radio Button - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for radio button component, the theme object for radio button component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of radio button component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for radio button component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of radio button component.<br />
+
+You can customize the theme and styles of radio button component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Radio Button Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface RadioStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    icon: node;
+    ripple: boolean;
+    className: string;
+    containerProps: object;
+    labelProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { RadioStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Radio Button Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  radio: {
+    styles: {
+      root: {
+        display: "inline-flex",
+        alignItems: "items-center",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

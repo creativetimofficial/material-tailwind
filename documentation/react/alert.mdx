@@ -8,7 +8,20 @@ navigation:
     "alert-colors",
     "alert-dismissible",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/alert",
+      description: "Learn more about props definition and types of alert component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/alert",
+      description: "Learn how to customize the theme and styles for alert component.",
+    },
   ]
 github: alert
 prev: accordion
@@ -29,7 +42,7 @@ See below our simple alert example that you can use in your Tailwind CSS and Rea
   <Alert>A simple alert for showing message.</Alert>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Example() {
@@ -52,7 +65,7 @@ The alert component comes with 2 different variants that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -82,7 +95,7 @@ The alert component comes with 19 different colors that you can change it using 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -132,7 +145,7 @@ The alert component is a dismissible component that you can control it using the
   </ComponentDemo>
 </State>
 
-```jsx showLineNumbers
+```jsx
 import { useState, Fragment } from "react";
 import { Alert, Button } from "@material-tailwind/react";
 
@@ -163,69 +176,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the button component. These are the custom
-props that come with we've added for the alert component and you can use all the
-other native props as well.
-
-| Attribute     | Type                       | Description                        | Default                                |
-| ------------- | -------------------------- | ---------------------------------- | -------------------------------------- |
-| `variant`     | [Variant](#types)          | Change alert variant               | <Code small>filled</Code>              |
-| `color`       | [Color](#types)            | Change alert color                 | <Code small>blue</Code>                |
-| `dismissible` | [Dismissible](#types)      | Makes the alert dismissible        | <Code small>undefined</Code>           |
-| `animate`     | [Animate](#types)          | Change alert animation             | <Code small>undefined</Code>           |
-| `show`        | <Code small>boolean</Code> | Change the alert visibility        | <Code small>true</Code>                |
-| `icon`        | <Code small>node</Code>    | Add icon at the beginning of alert | <Code small>undefined</Code>           |
-| `className`   | <Code small>string</Code>  | Add custom className for alert     | `''`                                   |
-| `children`    | <Code small>node</Code>    | Add content for alert              | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
-
-```ts
-type dismissible = {
-  action?: ReactNode;
-  onClose: () => void;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="theme" className="scroll-mt-48" />

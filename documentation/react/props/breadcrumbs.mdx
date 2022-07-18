@@ -1,0 +1,45 @@
+---
+title: Tailwind CSS Breadcrumbs Props - Material Tailwind
+description: Learn more about props definition and types of breadcrumbs component.
+navigation: ["breadcrumbs-props", "examples", "theme"]
+github: props/breadcrumbs
+related:
+  [
+    {
+      title: "Examples",
+      route: "breadcrumbs",
+      description: "Checkout different examples for breadcrumbs component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/breadcrumbs",
+      description: "Learn how to customize the theme and styles for breadcrumbs component.",
+    },
+  ]
+---
+
+# Tailwind CSS Breadcrumbs - Props
+
+<span id="breadcrumbs-props" className="scroll-mt-48" />
+The following props are available for breadcrumbs component. These are the custom
+props that come with we've added for the breadcrumbs component and you can use all
+the other native props as well.
+
+| Attribute   | Type                 | Description                                        | Default                                |
+| ----------- | -------------------- | -------------------------------------------------- | -------------------------------------- |
+| `separator` | <Code>node</Code>    | Change breadcrumbs separator between it's elements | <Code>/</Code>                         |
+| `fullWidth` | <Code>boolean</Code> | Change breadcrumbs to a block level element        | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for breadcrumbs               | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for breadcrumbs                        | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { BreadcrumbsProps } from "@material-tailwind/react";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

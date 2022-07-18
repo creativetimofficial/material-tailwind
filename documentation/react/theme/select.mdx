@@ -1,0 +1,289 @@
+---
+title: Tailwind CSS Select Theme - Material Tailwind
+description: Learn how to customize the theme and styles for select component.
+navigation:
+  [
+    "overview",
+    "select-theme-object-type",
+    "select-variant-object-type",
+    "select-size-object-type",
+    "select-states-object-type",
+    "select-state-object-type",
+    "select-theme-customization",
+    "examples",
+    "props",
+  ]
+github: theme/select
+related:
+  [
+    {
+      title: "Examples",
+      route: "select",
+      description: "Checkout different examples for select components.",
+    },
+    {
+      title: "Props",
+      route: "props/select",
+      description: "Learn more about props definition and types of select components.",
+    },
+  ]
+---
+
+# Tailwind CSS Select - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for select components, the theme object for select components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of select components.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for select components props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of select components.<br />
+
+You can customize the theme and styles of select components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Select Theme Object Type
+
+Variant of <Code>Select</Code> component theme has a specific type of <a href="#select-variant-object-type" className="font-medium hover:text-blue-500 transition-colors">Select Variant Styles Type</a>
+
+<span id="select-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface SelectStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    size: string;
+    label: string;
+    error: boolean;
+    success: boolean;
+    arrow: node;
+    value: string;
+    onChange: func;
+    selected: func;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePointerDown: boolean;
+      outsidePointerDown: boolean;
+      ancestorScroll: boolean;
+      bubbles: boolean;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    autoHeight: boolean;
+    lockScroll: boolean;
+    labelProps: object;
+    menuProps: boolean;
+    className: string;
+    disabled: boolean;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      container: object;
+      select: object;
+      arrow: {
+        initial: object;
+        active: object;
+      };
+      label: object;
+      menu: object;
+      option: {
+        initial: object;
+        active: object;
+        disabled: object;
+      };
+    };
+    variants: {
+      outlined: SelectVariantStylesType;
+      standard: SelectVariantStylesType;
+      static: SelectVariantStylesType;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Select Variant
+
+Select variant object type contains three specific types of <a href="#select-size-object-type" className="font-medium hover:text-blue-500 transition-colors">Select Size Styles Type</a>, <a href="#select-states-object-type" className="font-medium hover:text-blue-500 transition-colors">Select States Styles Type</a> and <a href="#select-state-object-type" className="font-medium hover:text-blue-500 transition-colors">Select State Styles Type</a>
+
+<span id="select-variant-object-type" className="scroll-mt-48" />
+
+```ts
+interface SelectVariantStylesType {
+  base: {
+    select: object;
+    label: object;
+  };
+  sizes: {
+    md: SelectSizeStylesType;
+    lg: SelectSizeStylesType;
+  };
+  colors: {
+    select: object;
+    label: object;
+  };
+  states: SelectStatesStylesType;
+  error: SelectStateStylesType;
+  success: SelectStateStylesType;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectVariantStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Select Size
+
+<span id="select-size-object-type" className="scroll-mt-48" />
+
+```ts
+interface SelectSizeStylesType {
+  container: object;
+  select: object;
+  label: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectSizeStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Select States
+
+<span id="select-states-object-type" className="scroll-mt-48" />
+
+```ts
+interface SelectStatesStylesType {
+  close: {
+    select: object;
+    label: object;
+  };
+  open: {
+    select: object;
+    label: object;
+  };
+  withValue: {
+    select: object;
+    label: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStatesStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Select State
+
+<span id="select-state-object-type" className="scroll-mt-48" />
+
+```ts
+interface SelectStateStylesType {
+  select: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+  label: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStateStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Select Theme Customization
+
+<span id="select-theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  select: {
+    styles: {
+      base: {
+        container: {
+          position: "relative",
+          width: "w-full",
+          minWidth: "min-w-[200px]",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

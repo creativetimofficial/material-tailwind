@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Avatar for React - Material Tailwind
 description: Customise your web projects  with our easy-to-use avatar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["avatar", "avatar-variants", "avatar-sizes", "props", "types"]
+navigation: ["avatar", "avatar-variants", "avatar-sizes", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/avatar",
+      description: "Learn more about props definition and types of avatar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/avatar",
+      description: "Learn how to customize the theme and styles for avatar component.",
+    },
+  ]
 github: avatar
 prev: alert
 next: breadcrumbs
@@ -19,7 +32,7 @@ See below our beautiful avatar example that you can use in your Tailwind CSS and
   <Avatar src="/img/face-2.jpg" />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Example() {
@@ -40,7 +53,7 @@ The avatar component comes with 2 different variants that you can change it usin
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -70,7 +83,7 @@ The avatar component comes with 6 different sizes that you can change it using t
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Sizes() {
@@ -87,31 +100,5 @@ export default function Sizes() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the avatar component. These are the custom
-props that come with we've added for the avatar component and you can use all the
-other native img props as well.
-
-| Attribute   | Type                      | Description                     | Default                    |
-| ----------- | ------------------------- | ------------------------------- | -------------------------- |
-| `variant`   | [Variant](#types)         | Change avatar variant           | <Code small>rounded</Code> |
-| `size`      | [Size](#types)            | Change avatar size              | <Code small>md</Code>      |
-| `className` | <Code small>string</Code> | Add custom className for avatar | `''`                       |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "rounded" | "circular";
-```
-
-```ts
-type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-```
+<span id="theme" className="scroll-mt-48" />

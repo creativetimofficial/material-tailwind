@@ -77,7 +77,7 @@ import {
 } from "../../types/components/select";
 
 // select components
-import SelectOption from "./SelectOption";
+import { SelectOption, SelectOptionProps } from "./SelectOption";
 
 export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" | "onChange"> {
   variant?: variant;
@@ -478,5 +478,6 @@ Select.propTypes = {
 
 Select.displayName = "MaterialTailwind.Select";
 
+export type { SelectOptionProps };
 export { Select, SelectOption as Option, useSelect, usePrevious };
 export default Object.assign(Select, { Option: SelectOption });

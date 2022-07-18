@@ -8,7 +8,20 @@ navigation:
     "button-sizes",
     "button-colors",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/button",
+      description: "Learn more about props definition and types of button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/button",
+      description: "Learn how to customize the theme and styles for button component.",
+    },
   ]
 github: button
 prev: breadcrumbs
@@ -29,7 +42,7 @@ See below our button example that you can use in your Tailwind CSS and React pro
   <Button>Button</Button>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {
@@ -52,7 +65,7 @@ The button component comes with 4 different variants that you can change it usin
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -81,7 +94,7 @@ The button component comes with 3 different sizes that you can change it using t
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Sizes() {
@@ -110,7 +123,7 @@ The button component comes with 19 different colors that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -125,58 +138,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the button component. These are the custom
-props that come with we've added for the button component and you can use all the
-other native button props as well.
-
-| Attribute   | Type                       | Description                            | Default                                |
-| ----------- | -------------------------- | -------------------------------------- | -------------------------------------- |
-| `variant`   | [Variant](#types)          | Change button variant                  | <Code small>filled</Code>              |
-| `size`      | [Size](#types)             | Change button size                     | <Code small>md</Code>                  |
-| `color`     | [Color](#types)            | Change button color                    | <Code small>blue</Code>                |
-| `fullWidth` | <Code small>boolean</Code> | Change button to a block level element | <Code small>false</Code>               |
-| `ripple`    | <Code small>boolean</Code> | Add ripple effect for button           | <Code small>true</Code>                |
-| `className` | <Code small>string</Code>  | Add custom className for button        | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for button                 | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "outlined" | "gradient" | "text";
-```
-
-```ts
-type size = "sm" | "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
