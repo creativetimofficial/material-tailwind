@@ -1,0 +1,100 @@
+---
+title: Tailwind CSS Switch Theme - Material Tailwind
+description: Learn how to customize the theme and styles for switch component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/switch
+related:
+  [
+    {
+      title: "Examples",
+      route: "switch",
+      description: "Checkout different examples for switch component.",
+    },
+    {
+      title: "Props",
+      route: "props/switch",
+      description: "Learn more about props definition and types of switch component.",
+    },
+  ]
+---
+
+# Tailwind CSS Switch - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for switch component, the theme object for switch component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of switch component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for switch component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of switch component.<br />
+
+You can customize the theme and styles of switch component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Switch Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface SwitchButtonStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    ripple: boolean;
+    className: string;
+    containerProps: object;
+    labelProps: object;
+    circleProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      circle: object;
+      ripple: object;
+      label: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SwitchButtonStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Switch Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  switch: {
+    styles: {
+      base: {
+        root: {
+          display: "inline-flex",
+          alignItems: "items-center",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

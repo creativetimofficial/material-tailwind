@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Switch for React - Material Tailwind
 description: Customise your web projects with our easy-to-use switch component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["switch", "switch-colors", "props", "types"]
+navigation: ["switch", "switch-colors", "props", "theme"]
 github: switch
 prev: select
 next: tabs
@@ -65,50 +65,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for switch component. These are the custom props
-that come with we've added for the switch component and you can use all the other
-native input props as well.
-
-| Attribute        | Type                 | Description                           | Default                |
-| ---------------- | -------------------- | ------------------------------------- | ---------------------- |
-| `color`          | [Color](#types)      | Change switch color                   | <Code>blue</Code>      |
-| `label`          | <Code>string</Code>  | Add label for switch                  | `''`                   |
-| `ripple`         | <Code>boolean</Code> | Add ripple effect for switch          | <Code>true</Code>      |
-| `className`      | <Code>string</Code>  | Add custom className for switch       | `''`                   |
-| `containerProps` | <Code>Object</Code>  | Add custom props for switch container | <Code>undefined</Code> |
-| `labelProps`     | <Code>Object</Code>  | Add custom props for switch label     | <Code>undefined</Code> |
-| `circleProps`    | <Code>Object</Code>  | Add custom props for switch circle    | <Code>undefined</Code> |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />
