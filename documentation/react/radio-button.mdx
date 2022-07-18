@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Radio for React - Material Tailwind
 description: Customise your web projects with our easy-to-use radio component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["radio-button", "radio-button-colors", "props", "types"]
+navigation: ["radio-button", "radio-button-colors", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/radio-button",
+      description: "Learn more about props definition and types of radio button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/radio-button",
+      description: "Learn how to customize the theme and styles for radio button component.",
+    },
+  ]
 github: radio-button
 prev: progress
 next: select
@@ -22,7 +35,7 @@ Use the following example to create simple radio buttons for your projects.
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Radio } from "@material-tailwind/react";
 
 export default function Example() {
@@ -54,7 +67,7 @@ The radio button component comes with 19 different colors that you can change it
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Radio } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -73,50 +86,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the radio button component. These are the custom
-props that come with we've added for the radio button component and you can use all
-the other native input props as well.
-
-| Attribute        | Type                       | Description                                 | Default                      |
-| ---------------- | -------------------------- | ------------------------------------------- | ---------------------------- |
-| `color`          | [Color](#types)            | Change radio button color                   | <Code small>blue</Code>      |
-| `label`          | <Code small>string</Code>  | Add label for radio button                  | `''`                         |
-| `icon`           | <Code small>node</Code>    | Change checked icon for radio button        | <Code small>undefined</Code> |
-| `ripple`         | <Code small>boolean</Code> | Add ripple effect for radio button          | <Code small>true</Code>      |
-| `className`      | <Code small>string</Code>  | Add custom className for radio button       | `''`                         |
-| `containerProps` | <Code small>Object</Code>  | Add custom props for radio button container | <Code small>undefined</Code> |
-| `labelProps`     | <Code small>Object</Code>  | Add custom props for radio button label     | <Code small>undefined</Code> |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

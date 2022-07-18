@@ -9,10 +9,10 @@ import { useTheme } from "../../context/theme";
 import { TabsContextProvider, useTabs } from "./TabsContext";
 
 // tabs components
-import Tab from "./Tab";
-import TabsBody from "./TabsBody";
-import TabsHeader from "./TabsHeader";
-import TabPanel from "./TabPanel";
+import { Tab, TabProps } from "./Tab";
+import { TabsBody, TabsBodyProps } from "./TabsBody";
+import { TabsHeader, TabsHeaderProps } from "./TabsHeader";
+import { TabPanel, TabPanelProps } from "./TabPanel";
 
 // types
 import type { value, className, children } from "../../types/components/tabs";
@@ -57,5 +57,6 @@ Tabs.propTypes = {
 
 Tabs.displayName = "MaterialTailwind.Tabs";
 
+export type { TabProps, TabsBodyProps, TabsHeaderProps, TabPanelProps };
 export { Tabs, Tab, TabsBody, TabsHeader, TabPanel, useTabs };
 export default Object.assign(Tabs, { Tab, Body: TabsBody, Header: TabsHeader, Panel: TabPanel });

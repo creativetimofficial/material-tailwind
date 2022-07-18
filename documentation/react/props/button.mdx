@@ -1,0 +1,105 @@
+---
+title: Tailwind CSS Button Props - Material Tailwind
+description: Learn more about props definition and types of button component.
+navigation:
+  [
+    "button-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "examples",
+    "theme",
+  ]
+github: props/button
+related:
+  [
+    {
+      title: "Examples",
+      route: "button",
+      description: "Checkout different examples for button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/button",
+      description: "Learn how to customize the theme and styles for button component.",
+    },
+  ]
+---
+
+# Tailwind CSS Button - Props
+
+<span id="button-props" className="scroll-mt-48" />
+The following props are available for button component. These are the custom props
+that come with we've added for the button component and you can use all the other
+native button props as well.
+
+| Attribute   | Type                      | Description                            | Default                                |
+| ----------- | ------------------------- | -------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change button variant                  | <Code>filled</Code>                    |
+| `size`      | [Size](#types-size)       | Change button size                     | <Code>md</Code>                        |
+| `color`     | [Color](#types-color)     | Change button color                    | <Code>blue</Code>                      |
+| `fullWidth` | <Code>boolean</Code>      | Change button to a block level element | <Code>false</Code>                     |
+| `ripple`    | <Code>boolean</Code>      | Add ripple effect for button           | <Code>true</Code>                      |
+| `className` | <Code>string</Code>       | Add custom className for button        | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for button                 | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ButtonProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "outlined" | "gradient" | "text";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

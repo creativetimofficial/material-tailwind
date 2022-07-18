@@ -16,7 +16,7 @@ export interface DialogHeaderProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
+export const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
   ({ className, children, ...rest }, ref) => {
     // 1. init
     const { dialogHeader } = useTheme();

@@ -1,0 +1,96 @@
+---
+title: Tailwind CSS Accordion Theme - Material Tailwind
+description: Learn how to customize the theme and styles for accordion components.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/accordion
+related:
+  [
+    {
+      title: "Examples",
+      route: "accordion",
+      description: "Checkout different examples for accordion components.",
+    },
+    {
+      title: "Props",
+      route: "props/accordion",
+      description: "Learn more about props definition and types of accordion components.",
+    },
+  ]
+---
+
+# Tailwind CSS Accordion - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for accordion components, the theme object for accordion components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of accordion components.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of accordion components.<br />
+
+You can customize the theme and styles of accordion components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Accordion Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface AccordionStylesType {
+  defaultProps: {
+    icon: node;
+    className: string;
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    disabled: boolean;
+  };
+  styles: {
+    base: {
+      container: object;
+      header: {
+        initial: object;
+        active: object;
+        icon: object;
+      };
+      body: object;
+      disabled: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Accordion Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  accordion: {
+    styles: {
+      base: {
+        container: {
+          bgColor: "bg-white",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

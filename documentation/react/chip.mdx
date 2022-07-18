@@ -2,7 +2,20 @@
 title: Tailwind CSS Chips for React - Material Tailwind
 description: Customise your web projects with our easy-to-use chips component for Tailwind CSS and React using Material Design guidelines.
 navigation:
-  ["chip", "chip-variants", "chip-colors", "chip-dismissible", "props", "types"]
+  ["chip", "chip-variants", "chip-colors", "chip-dismissible", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/chip",
+      description: "Learn more about props definition and types of chip component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/chip",
+      description: "Learn how to customize the theme and styles for chip component.",
+    },
+  ]
 github: chip
 prev: checkbox
 next: dialog
@@ -20,7 +33,7 @@ See below our simple chip component example that you can use for your Tailwind C
   <Chip value="chip" />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
@@ -41,7 +54,7 @@ The chip component comes with 2 different variants that you can change it using 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Chip } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -74,7 +87,7 @@ The chip component comes with 19 different colors that you can change it using t
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Chip } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -128,7 +141,7 @@ The chip component is a dismissible component that you can control it using the 
   </ComponentDemo>
 </State>
 
-```jsx showLineNumbers
+```jsx
 import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
@@ -159,73 +172,5 @@ export default function Dismissible() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the button component. These are the custom
-props that come with we've added for the chip component and you can use all the other
-native props as well.
-
-| Attribute     | Type                       | Description                       | Default                                |
-| ------------- | -------------------------- | --------------------------------- | -------------------------------------- |
-| `variant`     | [Variant](#types)          | Change chip variant               | <Code small>filled</Code>              |
-| `color`       | [Color](#types)            | Change chip color                 | <Code small>blue</Code>                |
-| `value`       | [Value](#types)            | Add content for chip              | No default value it's a required prop. |
-| `dismissible` | [Dismissible](#types)      | Makes the chip dismissible        | <Code small>undefined</Code>           |
-| `animate`     | [Animate](#types)          | Change chip animation             | <Code small>undefined</Code>           |
-| `show`        | <Code small>boolean</Code> | Change the chip visibility        | <Code small>true</Code>                |
-| `icon`        | <Code small>node</Code>    | Add icon at the beginning of chip | <Code small>undefined</Code>           |
-| `className`   | <Code small>string</Code>  | Add custom className for chip     | `''`                                   |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
-
-```ts
-type value = string | number;
-```
-
-```ts
-type dismissible = {
-  action?: ReactNode;
-  onClose: () => void;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="theme" className="scroll-mt-48" />

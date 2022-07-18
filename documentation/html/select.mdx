@@ -34,7 +34,7 @@ See below our select component example that you can use in your Tailwind CSS pro
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <div class="w-1/6">
   <select
     class="form-control"
@@ -56,7 +56,7 @@ See below our select component example that you can use in your Tailwind CSS pro
 
 You have to add the following initialization script to run this plugin:
 
-```js showLineNumbers
+```js
 if (document.getElementById("choice-search")) {
   var element = document.getElementById("choice-search");
   const example = new Choices(element, {
@@ -87,7 +87,7 @@ if (document.getElementById("choice-search")) {
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <div class="w-1/6">
   <select
     class="form-control"
@@ -109,7 +109,7 @@ if (document.getElementById("choice-search")) {
 
 You have to erase the **searchEnabled: false** from the init function - it will look like this:
 
-```js showLineNumbers
+```js
 if (document.getElementById("choice-button")) {
   var element = document.getElementById("choice-button");
   const example = new Choices(element, {});
@@ -124,7 +124,7 @@ if (document.getElementById("choice-button")) {
 
 The select component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
 
-```html showLineNumbers
+```html
 <!-- from node_modules -->
 <script src="node_modules/@material-tailwind/html/scripts/select.js"></script>
 

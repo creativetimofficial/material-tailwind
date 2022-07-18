@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Switch for React - Material Tailwind
 description: Customise your web projects with our easy-to-use switch component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["switch", "switch-colors", "props", "types"]
+navigation: ["switch", "switch-colors", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/switch",
+      description: "Learn more about props definition and types of switch component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/switch",
+      description: "Learn how to customize the theme and styles for switch component.",
+    },
+  ]
 github: switch
 prev: select
 next: tabs
@@ -19,7 +32,7 @@ See below our example that will help you create simple and easy-to-use switch co
   <Switch id="switch-component" defaultChecked />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Switch } from "@material-tailwind/react";
 
 export default function Example() {
@@ -46,7 +59,7 @@ The switch component comes with 19 different colors that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Switch } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -65,50 +78,5 @@ export default function Colors() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the switch component. These are the custom
-props that come with we've added for the switch component and you can use all the
-other native input props as well.
-
-| Attribute        | Type                       | Description                           | Default                      |
-| ---------------- | -------------------------- | ------------------------------------- | ---------------------------- |
-| `color`          | [Color](#types)            | Change switch color                   | <Code small>blue</Code>      |
-| `label`          | <Code small>string</Code>  | Add label for switch                  | `''`                         |
-| `ripple`         | <Code small>boolean</Code> | Add ripple effect for switch          | <Code small>true</Code>      |
-| `className`      | <Code small>string</Code>  | Add custom className for switch       | `''`                         |
-| `containerProps` | <Code small>Object</Code>  | Add custom props for switch container | <Code small>undefined</Code> |
-| `labelProps`     | <Code small>Object</Code>  | Add custom props for switch label     | <Code small>undefined</Code> |
-| `circleProps`    | <Code small>Object</Code>  | Add custom props for switch circle    | <Code small>undefined</Code> |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

@@ -49,9 +49,9 @@ import {
 } from "../../types/components/dialog";
 
 // dialog components
-import DialogHeader from "./DialogHeader";
-import DialogBody from "./DialogBody";
-import DialogFooter from "./DialogFooter";
+import { DialogHeader, DialogHeaderProps } from "./DialogHeader";
+import { DialogBody, DialogBodyProps } from "./DialogBody";
+import { DialogFooter, DialogFooterProps } from "./DialogFooter";
 
 export interface DialogProps extends React.ComponentProps<"div"> {
   open: open;
@@ -196,6 +196,7 @@ Dialog.propTypes = {
 
 Dialog.displayName = "MaterialTailwind.Dialog";
 
+export type { DialogHeaderProps, DialogBodyProps, DialogFooterProps };
 export { Dialog, DialogHeader, DialogBody, DialogFooter };
 export default Object.assign(Dialog, {
   Header: DialogHeader,

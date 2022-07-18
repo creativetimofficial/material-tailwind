@@ -86,7 +86,7 @@ module.exports = withMT({
 
 @material-tailwind/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
 
-On the <Code>src/index.js</Code> or <Code>src/index.tsx</Code> if you're using typescript put the code bellow.
+On the <Code>src/index</Code> put the code bellow.
 
 ```jsx {6, 12, 14}
 import React from "react";
@@ -117,7 +117,7 @@ Now you're good to go and use @material-tailwind/react in your project.
   <Button>Button</Button>
 </ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx {1, 4}
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {

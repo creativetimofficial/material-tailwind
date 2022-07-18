@@ -15,7 +15,6 @@ import type {
   variant,
   size,
   color,
-  fullWidth,
   ripple,
   className,
   children,
@@ -24,7 +23,6 @@ import {
   propTypesVariant,
   propTypesSize,
   propTypesColor,
-  propTypesFullWidth,
   propTypesRipple,
   propTypesClassName,
   propTypesChildren,
@@ -34,7 +32,6 @@ export interface IconButtonProps extends React.ComponentProps<"button"> {
   variant?: variant;
   size?: size;
   color?: color;
-  fullWidth?: fullWidth;
   ripple?: ripple;
   className?: className;
   children: children;

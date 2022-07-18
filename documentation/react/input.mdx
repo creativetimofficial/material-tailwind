@@ -10,7 +10,20 @@ navigation:
     "input-validations",
     "input-with-icon",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/input",
+      description: "Learn more about props definition and types of input component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/input",
+      description: "Learn how to customize the theme and styles for input component.",
+    },
   ]
 github: input
 prev: icon-button
@@ -33,7 +46,7 @@ See below our input component example. It comes in different styles and colors, 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Example() {
@@ -55,7 +68,7 @@ The input component comes with 3 different variants that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -82,7 +95,7 @@ The input component comes with 2 different sizes that you can change it using th
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Sizes() {
@@ -110,7 +123,7 @@ The input component comes with 19 different colors that you can change it using 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -138,7 +151,7 @@ The input component comes with error and success states for performing validatio
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Validations() {
@@ -163,7 +176,7 @@ You can add icon for the input component using the <Code>icon</Code> prop.
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function InputWithIcon() {
@@ -173,60 +186,5 @@ export default function InputWithIcon() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the input component. These are the custom props
-that come with we've added for the input component and you can use all the other
-native input props as well.
-
-| Attribute    | Type                       | Description                      | Default                      |
-| ------------ | -------------------------- | -------------------------------- | ---------------------------- |
-| `variant`    | [Variant](#types)          | Change input variant             | <Code small>outlined</Code>  |
-| `size`       | [Size](#types)             | Change input size                | <Code small>md</Code>        |
-| `color`      | [Color](#types)            | Change input color               | <Code small>blue</Code>      |
-| `label`      | <Code small>string</Code>  | Add label for input              | `''`                         |
-| `error`      | <Code small>boolean</Code> | Change input state to error      | <Code small>false</Code>     |
-| `success`    | <Code small>boolean</Code> | Change input state to success    | <Code small>false</Code>     |
-| `icon`       | <Code small>node</Code>    | Add icon for the input           | <Code small>undefined</Code> |
-| `labelProps` | <Code small>Object</Code>  | Add custom props for input label | <Code small>undefined</Code> |
-| `className`  | <Code small>string</Code>  | Add custom className for input   | `''`                         |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "standard" | "outlined" | "static";
-```
-
-```ts
-type variant = "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

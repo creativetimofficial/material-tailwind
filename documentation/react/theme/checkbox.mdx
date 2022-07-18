@@ -1,0 +1,96 @@
+---
+title: Tailwind CSS Checkbox Theme - Material Tailwind
+description: Learn how to customize the theme and styles for checkbox component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/checkbox
+related:
+  [
+    {
+      title: "Examples",
+      route: "checkbox",
+      description: "Checkout different examples for checkbox component.",
+    },
+    {
+      title: "Props",
+      route: "props/checkbox",
+      description: "Learn more about props definition and types of checkbox component.",
+    },
+  ]
+---
+
+# Tailwind CSS Checkbox - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for checkbox component, the theme object for checkbox component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of checkbox component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for checkbox component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of checkbox component.<br />
+
+You can customize the theme and styles of checkbox component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Checkbox Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface CheckboxStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    icon: node;
+    ripple: boolean;
+    className: string;
+    containerProps: object;
+    labelProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CheckboxStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Checkbox Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  checkbox: {
+    styles: {
+      root: {
+        display: "inline-flex",
+        alignItems: "items-center",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

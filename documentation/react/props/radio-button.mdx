@@ -1,0 +1,77 @@
+---
+title: Tailwind CSS Radio Props - Material Tailwind
+description: Learn more about props definition and types of radio component.
+navigation: ["radio-props", "types-color", "examples", "theme"]
+github: props/radio
+related:
+  [
+    {
+      title: "Examples",
+      route: "radio-button",
+      description: "Checkout different examples for radio button component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/radio-button",
+      description: "Learn how to customize the theme and styles for radio button component.",
+    },
+  ]
+---
+
+# Tailwind CSS Radio Button - Props
+
+<span id="radio-props" className="scroll-mt-48" />
+The following props are available for radio button component. These are the custom
+props that come with we've added for the radio button component and you can use all
+the other native input props as well.
+
+| Attribute        | Type                  | Description                                 | Default                |
+| ---------------- | --------------------- | ------------------------------------------- | ---------------------- |
+| `color`          | [Color](#types-color) | Change radio button color                   | <Code>blue</Code>      |
+| `label`          | <Code>string</Code>   | Add label for radio button                  | `''`                   |
+| `icon`           | <Code>node</Code>     | Change checked icon for radio button        | <Code>undefined</Code> |
+| `ripple`         | <Code>boolean</Code>  | Add ripple effect for radio button          | <Code>true</Code>      |
+| `className`      | <Code>string</Code>   | Add custom className for radio button       | `''`                   |
+| `containerProps` | <Code>object</Code>   | Add custom props for radio button container | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>   | Add custom props for radio button label     | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { RadioProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

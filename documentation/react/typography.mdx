@@ -8,7 +8,20 @@ navigation:
     "typography-colors",
     "typography-gradient-color",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/typography",
+      description: "Learn more about props definition and types of typography component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/typography",
+      description: "Learn how to customize the theme and styles for typography component.",
+    },
   ]
 github: typography
 prev: tooltip
@@ -30,7 +43,7 @@ Below we are presenting a simple typography component example. It comes in diffe
   </Typography>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Typography } from "@material-tailwind/react";
 
 export default function Example() {
@@ -79,7 +92,7 @@ The typography component comes with 9 different variants that you can change it 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
@@ -138,7 +151,7 @@ The alert component comes with 23 different colors that you can change it using 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
 
@@ -174,7 +187,7 @@ You can change the typography text color into a gradient color using the <Code>t
   </Typography>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Typography } from "@material-tailwind/react";
 
 export default function GradientColor() {
@@ -186,66 +199,5 @@ export default function GradientColor() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the typography component. These are the custom
-props that come with we've added for the typography component and you can use all
-the other native props as well.
-
-| Attribute      | Type                       | Description                                   | Default                                |
-| -------------- | -------------------------- | --------------------------------------------- | -------------------------------------- |
-| `variant`      | [Variant](#types)          | Change typography variant                     | <Code small>paragraph</Code>           |
-| `color`        | [Color](#types)            | Change typography color                       | <Code small>inherit</Code>             |
-| `textGradient` | <Code small>boolean</Code> | Change typography color into a gradient color | <Code small>false</Code>               |
-| `as`           | <Code small>element</Code> | Change the typography rendered element        | <Code small>undefined</Code>           |
-| `className`    | <Code small>string</Code>  | Add custom className for typography           | `''`                                   |
-| `children`     | <Code small>node</Code>    | Add content for typography                    | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6"
-  | "lead"
-  | "paragraph"
-  | "small";
-```
-
-```ts
-type color =
-  | "inherit"
-  | "current"
-  | "black"
-  | "white"
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

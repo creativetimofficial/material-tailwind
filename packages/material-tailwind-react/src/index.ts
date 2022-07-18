@@ -26,4 +26,4 @@ export * from "./components/Typography";
 export * from "./context/theme";
 
 // theme
-export { default as theme } from "./theme/index";
+export * from "./theme/index";

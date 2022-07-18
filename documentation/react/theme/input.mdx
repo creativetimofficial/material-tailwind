@@ -1,0 +1,202 @@
+---
+title: Tailwind CSS Input Theme - Material Tailwind
+description: Learn how to customize the theme and styles for input component.
+navigation:
+  [
+    "overview",
+    "input-theme-object-type",
+    "input-variant-object-type",
+    "input-size-object-type",
+    "input-state-object-type",
+    "input-theme-customization",
+    "examples",
+    "props",
+  ]
+github: theme/input
+related:
+  [
+    {
+      title: "Examples",
+      route: "input",
+      description: "Checkout different examples for input component.",
+    },
+    {
+      title: "Props",
+      route: "props/input",
+      description: "Learn more about props definition and types of input component.",
+    },
+  ]
+---
+
+# Tailwind CSS Input - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for input component, the theme object for input component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of input component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for input component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of input component.<br />
+
+You can customize the theme and styles of input component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Input Theme Object Type
+
+Variant of <Code>Input</Code> component theme has a specific type of <a href="#input-variant-object-type" className="font-medium hover:text-blue-500 transition-colors">Input Variant Styles Type</a>
+
+<span id="input-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface InputStylesType {
+  defaultProps: {
+    variant: string;
+    size: string;
+    color: string;
+    label: string;
+    error: boolean;
+    success: boolean;
+    icon: node;
+    labelProps: object;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      container: object;
+      input: object;
+      label: object;
+      icon: object;
+    };
+    variants: {
+      outlined: InputVariantStylesType;
+      standard: InputVariantStylesType;
+      static: InputVariantStylesType;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Input Variant
+
+Input variant object type contains two specific types of <a href="#input-size-object-type" className="font-medium hover:text-blue-500 transition-colors">Input Size Styles Type</a> and <a href="#input-state-object-type" className="font-medium hover:text-blue-500 transition-colors">Input State Styles Type</a>
+
+<span id="input-variant-object-type" className="scroll-mt-48" />
+
+```ts
+interface InputVariantStylesType {
+  base: {
+    input: object;
+    inputWithIcon: object;
+    icon: object;
+    label: object;
+  };
+  sizes: {
+    md: InputSizeStylesType;
+    lg: InputSizeStylesType;
+  };
+  colors: {
+    input: object;
+    label: object;
+  };
+  error: InputStateStylesType;
+  success: InputStateStylesType;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputVariantStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Input Size
+
+<span id="input-size-object-type" className="scroll-mt-48" />
+
+```ts
+interface InputSizeStylesType {
+  container: object;
+  input: object;
+  label: object;
+  icon: object;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputSizeStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Theme Object Type - Input State
+
+<span id="input-state-object-type" className="scroll-mt-48" />
+
+```ts
+interface InputStateStylesType {
+  input: object;
+  label: object;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputStateStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Input Theme Customization
+
+<span id="input-theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  input: {
+    styles: {
+      base: {
+        container: {
+          position: "relative",
+          width: "w-full",
+          minWidth: "min-w-[200px]",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

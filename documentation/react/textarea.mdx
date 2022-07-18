@@ -9,7 +9,20 @@ navigation:
     "textarea-colors",
     "textarea-validations",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/textarea",
+      description: "Learn more about props definition and types of textarea component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/textarea",
+      description: "Learn how to customize the theme and styles for textarea component.",
+    },
   ]
 github: textarea
 prev: tabs
@@ -30,7 +43,7 @@ See below our example that will help you create a simple textarea for your proje
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Textarea } from "@material-tailwind/react";
 
 export default function Example() {
@@ -52,7 +65,7 @@ The textarea component comes with 3 different variants that you can change it us
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Textarea } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -79,7 +92,7 @@ The textarea component comes with 2 different sizes that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Textarea } from "@material-tailwind/react";
 
 export default function Sizes() {
@@ -107,7 +120,7 @@ The textarea component comes with 19 different colors that you can change it usi
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Textarea } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -135,7 +148,7 @@ The textarea component comes with error and success states for performing valida
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Textarea } from "@material-tailwind/react";
 
 export default function Validations() {
@@ -148,60 +161,5 @@ export default function Validations() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the textarea component. These are the custom
-props that come with we've added for the textarea component and you can use all the
-other native textarea props as well.
-
-| Attribute    | Type                       | Description                         | Default                      |
-| ------------ | -------------------------- | ----------------------------------- | ---------------------------- |
-| `variant`    | [Variant](#types)          | Change textarea variant             | <Code small>outlined</Code>  |
-| `size`       | [Size](#types)             | Change textarea size                | <Code small>md</Code>        |
-| `color`      | [Color](#types)            | Change textarea color               | <Code small>blue</Code>      |
-| `label`      | <Code small>string</Code>  | Add label for textarea              | `''`                         |
-| `error`      | <Code small>boolean</Code> | Change textarea state to error      | <Code small>false</Code>     |
-| `success`    | <Code small>boolean</Code> | Change textarea state to success    | <Code small>false</Code>     |
-| `resize`     | <Code small>boolean</Code> | Makes textarea resizable            | <Code small>false</Code>     |
-| `labelProps` | <Code small>Object</Code>  | Add custom props for textarea label | <Code small>undefined</Code> |
-| `className`  | <Code small>string</Code>  | Add custom className for textarea   | `''`                         |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "standard" | "outlined" | "static";
-```
-
-```ts
-type variant = "md" | "lg";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

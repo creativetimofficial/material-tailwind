@@ -1,0 +1,77 @@
+---
+title: Tailwind CSS Checkbox Props - Material Tailwind
+description: Learn more about props definition and types of checkbox component.
+navigation: ["checkbox-props", "types-color", "examples", "theme"]
+github: props/checkbox
+related:
+  [
+    {
+      title: "Examples",
+      route: "checkbox",
+      description: "Checkout different examples for checkbox component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/checkbox",
+      description: "Learn how to customize the theme and styles for checkbox component.",
+    },
+  ]
+---
+
+# Tailwind CSS Checkbox - Props
+
+<span id="checkbox-props" className="scroll-mt-48" />
+The following props are available for checkbox component. These are the custom props
+that come with we've added for the checkbox component and you can use all the other
+native input props as well.
+
+| Attribute        | Type                  | Description                             | Default                |
+| ---------------- | --------------------- | --------------------------------------- | ---------------------- |
+| `color`          | [Color](#types-color) | Change checkbox color                   | <Code>blue</Code>      |
+| `label`          | <Code>string</Code>   | Add label for checkbox                  | `''`                   |
+| `icon`           | <Code>node</Code>     | Change checked icon for checkbox        | <Code>undefined</Code> |
+| `ripple`         | <Code>boolean</Code>  | Add ripple effect for checkbox          | <Code>true</Code>      |
+| `className`      | <Code>string</Code>   | Add custom className for checkbox       | `''`                   |
+| `containerProps` | <Code>object</Code>   | Add custom props for checkbox container | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>   | Add custom props for checkbox label     | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CheckboxProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-grey"
+  | "grey"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

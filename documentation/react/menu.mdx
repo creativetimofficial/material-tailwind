@@ -1,15 +1,19 @@
 ---
 title: Tailwind CSS Menu for React - Material Tailwind
 description: Customise your web projects with our complex menu component for Tailwind CSS and React using Material Design guidelines.
-navigation:
+navigation: ["menu", "nested-menu", "props", "theme"]
+related:
   [
-    "menu",
-    "nested-menu",
-    "menu-props",
-    "menu-handler-props",
-    "menu-list-props",
-    "menu-item-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/menu",
+      description: "Learn more about props definition and types of menu components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/menu",
+      description: "Learn how to customize the theme and styles for menu components.",
+    },
   ]
 github: menu
 prev: input
@@ -39,7 +43,7 @@ See below our menu example that you can use in your Tailwind CSS and React proje
   </Menu>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Menu,
   MenuHandler,
@@ -93,7 +97,7 @@ You can nest one menu inside another one very easily.
   </Menu>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Menu,
   MenuHandler,
@@ -128,114 +132,5 @@ export default function NestedMenu() {
 }
 ```
 
----
-
-## Menu Props
-
-<span id="menu-props" className="scroll-mt-48" />
-The following props are available for the menu component. These are the custom props
-that come with we've added for the menu component and you can use all the other native
-props as well.
-
-| Attribute    | Type                        | Description                                    | Default                                |
-| ------------ | --------------------------- | ---------------------------------------------- | -------------------------------------- |
-| `open`       | <Code small>boolean</Code>  | Makes the menu open, when menu is controlled   | <Code small>undefined</Code>           |
-| `handler`    | <Code small>function</Code> | Change open state for controlled menu          | <Code small>undefined</Code>           |
-| `placement`  | [Placement](#types)         | Change menu placement                          | <Code small>bottom</Code>              |
-| `offset`     | [Offset](#types)            | Change menu offset from it's handler           | <Code small>5</Code>                   |
-| `dismiss`    | [Dismiss](#types)           | Change dismiss listeners when clicking outside | <Code small>undefined</Code>           |
-| `animate`    | [Animate](#types)           | Change menu animation                          | <Code small>undefined</Code>           |
-| `lockScroll` | <Code small>boolean</Code>  | Lock page scrolling when menu is opened        | <Code small>false</Code>               |
-| `children`   | <Code small>node</Code>     | Add content for menu                           | No default value it's a required prop. |
-
----
-
-## Menu Handler Props
-
-<span id="menu-handler-props" className="scroll-mt-48" />
-The following props are available for the menu handler component. These are the custom
-props that come with we've added for the menu handler component and you can use all
-the other native props as well.
-
-| Attribute  | Type                    | Description                  | Default                                |
-| ---------- | ----------------------- | ---------------------------- | -------------------------------------- |
-| `children` | <Code small>node</Code> | Add content for menu handler | No default value it's a required prop. |
-
----
-
-## Menu List Props
-
-<span id="menu-list-props" className="scroll-mt-48" />
-The following props are available for the menu list component. These are the custom
-props that come with we've added for the menu list component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                        | Default                                |
-| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
-| `className` | <Code small>string</Code> | Add custom className for menu list | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for menu list          | No default value it's a required prop. |
-
----
-
-## Menu Item Props
-
-<span id="menu-item-props" className="scroll-mt-48" />
-The following props are available for the menu item component. These are the custom
-props that come with we've added for the menu item component and you can use all
-the other native props as well.
-
-| Attribute   | Type                       | Description                        | Default                                |
-| ----------- | -------------------------- | ---------------------------------- | -------------------------------------- |
-| `disabled`  | <Code small>boolean</Code> | Disable menu item                  | <Code small>false</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for menu item | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for menu item          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
-```
-
-```ts
-type offset =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
-```
-
-```ts
-type dismiss = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
