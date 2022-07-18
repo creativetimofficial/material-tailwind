@@ -1,0 +1,293 @@
+---
+title: Tailwind CSS Tabs Theme - Material Tailwind
+description: Learn how to customize the theme and styles for tabs components.
+navigation:
+  [
+    "overview",
+    "tabs-theme-object-type",
+    "tabs-theme-customization",
+    "tabs-header-theme-object-type",
+    "tabs-header-theme-customization",
+    "tabs-body-theme-object-type",
+    "tabs-body-theme-customization",
+    "tab-theme-object-type",
+    "tab-theme-customization",
+    "tab-panel-theme-object-type",
+    "tab-panel-theme-customization",
+    "examples",
+    "props",
+  ]
+github: theme/tabs
+related:
+  [
+    {
+      title: "Examples",
+      route: "tabs",
+      description: "Checkout different examples for tabs components.",
+    },
+    {
+      title: "Props",
+      route: "props/tabs",
+      description: "Learn more about props definition and types of tabs components.",
+    },
+  ]
+---
+
+# Tailwind CSS Card - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for tabs components, the theme object for tabs components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of tabs component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of tabs component.<br />
+
+You can customize the theme and styles of tabs components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Tabs Theme Object Type
+
+<span id="tabs-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TabsStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tabs Theme Customization
+
+<span id="tabs-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tabs: {
+    styles: {
+      base: {
+        display: "block",
+        overflow: "overflow-hidden",
+      },
+    },
+  },
+};
+```
+
+---
+
+## Tabs Header Theme Object Type
+
+<span id="tabs-header-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TabsHeaderStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsHeaderStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tabs Header Theme Customization
+
+<span id="tabs-header-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tabsHeader: {
+    styles: {
+      base: {
+        display: "flex",
+        position: "relative",
+      },
+    },
+  },
+};
+```
+
+---
+
+## Tabs Body Theme Object Type
+
+<span id="tabs-body-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TabsBodyStylesType {
+  defaultProps: {
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabsBodyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tabs Body Theme Customization
+
+<span id="tabs-body-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tabsBody: {
+    styles: {
+      base: {
+        display: "block",
+        width: "w-full",
+      },
+    },
+  },
+};
+```
+
+---
+
+## Tab Theme Object Type
+
+<span id="tab-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TabStylesType {
+  defaultProps: {
+    className: string;
+    disabled: boolean;
+  };
+  styles: {
+    base: {
+      tab: {
+        initial: object;
+        disabled: object;
+      };
+      indicator: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tab Theme Customization
+
+<span id="tab-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tab: {
+    styles: {
+      base: {
+        tab: {
+          initial: {
+            display: "grid",
+            placeItems: "place-items-center",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+## Tab Panel Theme Object Type
+
+<span id="tab-panel-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TabPanelStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TabPanelStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tab Panel Theme Customization
+
+<span id="tab-panel-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tabPanel: {
+    styles: {
+      base: {
+        width: "w-full",
+        height: "h-max",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />
