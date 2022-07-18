@@ -65,7 +65,6 @@
 }
 .flatpickr-calendar.hasTime .flatpickr-time {
   height: 40px;
-  border-top: 1px solid #e6e6e6;
 }
 .flatpickr-calendar.noCalendar.hasTime .flatpickr-time {
   height: auto;
@@ -634,7 +633,7 @@ span.flatpickr-weekday {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px;
   text-align: center;
   margin: 0;
   padding: 0;
