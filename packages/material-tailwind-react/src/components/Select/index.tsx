@@ -178,8 +178,8 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           flip({ padding: 8 }),
           fuiSize({
             apply({ rects, elements }: any) {
-              Object.assign(elements.floating.style, {
-                width: `${rects.reference.width}px`,
+              Object.assign(elements?.floating?.style, {
+                width: `${rects?.reference?.width}px`,
                 zIndex: 99,
               });
             },
