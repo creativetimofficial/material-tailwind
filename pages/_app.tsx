@@ -33,14 +33,8 @@ function MyApp({ Component, pageProps }) {
       <Script
         crossOrigin="anonymous"
         strategy="afterInteractive"
-        src="https://cdn.jsdelivr.net/npm/flatpickr"
-      />
-      <Script
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
         src="https://kit.fontawesome.com/42d5adcbca.js"
       />
-      <Script src="./material-tailwind.js"/>
     </Fragment>
   );
 }
