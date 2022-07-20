@@ -47,10 +47,6 @@ const carousel = (theme) => ({
       right: "2%"
     }
   }
-
-
-
-
 });
 
 module.exports.carousel = carousel;
