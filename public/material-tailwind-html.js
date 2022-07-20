@@ -1,4 +1,68 @@
+import flatpickr from "flatpickr";
+
 export default function init() {
+
+  "use strict";
+  (function () {
+
+    var triggers = document.querySelectorAll("[data-toast]");
+
+    triggers.forEach((trigger) => {
+      let toastId = trigger.getAttribute("data-target");
+      trigger.addEventListener("click", function () {
+        let toast = document.querySelector("#" + toastId);
+        if (trigger.getAttribute("aria-hidden") == "true") {
+          trigger.setAttribute("aria-hidden", "false");
+          toast.classList.remove("hidden");
+          setTimeout(function () {
+            toast.classList.remove("opacity-0");
+          }, 100);
+          setTimeout(function () {
+            trigger.setAttribute("aria-hidden", "true");
+            toast.classList.add("opacity-0");
+            setTimeout(function () {
+              toast.classList.add("hidden");
+            }, 200);
+          }, 3800);
+        }
+      });
+    });
+    
+
+    // var notificationButtonList = document.querySelectorAll(".notification-button");
+  
+    // for (var i = 0; i < notificationButtonList.length; i++) {
+    //   notificationButtonList[i].addEventListener("click", launch_notification());
+    // }
+
+    // function launch_notification() {
+    //   var x = document.getElementsByClassName("notification")
+    //   x.className = "show";
+    //   setTimeout(function(){ 
+    //     x.className = x.className.replace("show", ""); 
+    //   }, 5000);
+    // }
+  })();
+
+  "use strict";
+  (function () {
+    if (document.querySelector('.datepicker')) {
+      flatpickr(".datepicker", {});
+    };
+  })();
+    
+  "use strict";
+  (function () {
+    if (document.querySelector('.timepicker')) {
+      flatpickr(".timepicker", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+      });
+    };
+  })();
+
   "use strict";
   (function () {
     const slides = document.querySelectorAll(".slide");
