@@ -147,6 +147,24 @@ export default function Presentation() {
                 </div>
               </div>
             </div>
+
+            <div className="flex w-4/12 my-5">
+              <div className="spinner-border text-pink-500 mr-3" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+              <div className="spinner-border text-blue-500 mr-3" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+              <div className="spinner-border text-green-500 mr-3" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+              <div className="spinner-border text-orange-500 mr-3" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+              <div className="spinner-border text-red-500 mr-3" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
           </div>
         </Card>
       </main>
