@@ -1,10 +1,10 @@
 const radio = (theme) => ({
   ".radio": {
     width: "1.23rem",
-    height: "1.23rem",
+    height: "1.23rem"
   },
   ".radio + .form-check-input": {
-    "border-radius": "50%",
+    "border-radius": "50%"
   },
   ".radio + .form-check-input:after": {
     transition: "opacity .25s ease-in-out",
@@ -19,14 +19,14 @@ const radio = (theme) => ({
     right: "0",
     top: "0px",
     bottom: "0",
-    margin: "auto",
+    margin: "auto"
   },
   ".radio:checked + .form-check-input": {
-    "border-color": theme("colors.pink.500"),
+    "border-color": theme("colors.pink.500")
   },
   ".radio:checked + .form-check-input:after": {
-    opacity: "1",
-  },
+    opacity: "1"
+  }
 });
 
 module.exports.radio = radio;
