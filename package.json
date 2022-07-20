@@ -16,6 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.6.5",
     "classnames": "^2.3.1",
     "deepmerge": "^4.2.2",
     "downshift": "^6.1.7",
