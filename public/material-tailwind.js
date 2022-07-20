@@ -1,6 +1,8 @@
+"use strict";
 if (document.querySelector('.datepicker')) {
   flatpickr(".datepicker", {});
 };
+"use strict";
 if (document.querySelector('.timepicker')) {
   flatpickr(".timepicker", {
     enableTime: true,
