@@ -16,7 +16,7 @@ const input = (theme) => ({
   
     "&:focus-visible": {
       outline: "none"
-    }
+    },
   },
   ".form-label": {
     position: "absolute"
@@ -154,6 +154,18 @@ const input = (theme) => ({
 
     "&:focus-visible": {
       outline: "none"
+    },
+
+
+    "small": {
+      color: "#123515",
+      position: "absolute",
+      bottom: "0",
+      left: "0",
+      visibility: "hidden"
+    },
+    "&.error small": {
+      visibility: "visible"
     }
   }
 });
