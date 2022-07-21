@@ -32,6 +32,7 @@ const { pagination } = require("../theme/components/pagination");
 const { popover } = require("../theme/components/popover");
 const { progress } = require("../theme/components/progress");
 const { radio } = require("../theme/components/radio");
+const { range } = require("../theme/components/range");
 const { spinners } = require("../theme/components/spinners");
 const { tabs } = require("../theme/components/tabs");
 const { toggle } = require("../theme/components/switch");
@@ -69,6 +70,7 @@ const materialTailwindConfig = {
       addComponents(pagination(theme));
       addComponents(popover(theme));
       addComponents(progress(theme));
+      addComponents(range(theme));
       addComponents(radio(theme));
       addComponents(spinners(theme));
       addComponents(tabs(theme));
