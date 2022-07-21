@@ -132,20 +132,9 @@ export default function Presentation() {
               </div>
             </div>
             <div className="w-4/12">
-              <button className="button button-pink" data-toast="true" data-target="success-notification" type="button">notification</button>
+              <button className="button button-pink" aria-hidden="true" data-notification="true" data-target="success-notification" type="button">notification</button>
 
-              <div className="notification fade p-2 bg-white hidden" aria-hidden="true" role="alert" id="success-notification" aria-live="assertive" aria-atomic="true">
-                <div className="notification-header border-0">
-                  <i className="material-icons text-green-500 mr-2">check</i>
-                  <span className="mr-auto font-semibold">Material Dashboard </span>
-                  <small className="text-body">11 mins ago</small>
-                  <i className="fas fa-times text-md ml-3 cursor-pointer" data-bs-dismiss="toast" aria-label="Close" aria-hidden="true"></i>
-                </div>
-                <hr className="horizontal dark m-0" />
-                <div className="notification-body">
-                  Hello, world! This is a notification message.
-                </div>
-              </div>
+              <button className="button button-blue ml-3" aria-hidden="true" data-notification="true" data-target="info-notification" type="button">notification</button>
             </div>
 
             <div className="flex w-4/12 my-5">
@@ -165,9 +154,67 @@ export default function Presentation() {
                 <span className="sr-only">Loading...</span>
               </div>
             </div>
+
+            <div className="my-5">
+              <div id="sliderRegular"></div>
+            </div>
+            <div className="w-4/12 my-5"> 
+              <div className="container">
+                <form id="form" className="form">
+                  <h2>Register With Us</h2>
+                  <div className="input-group input-group-outline mb-3">
+                    <label className="form-label">Username</label>
+                    <input type="text" className="form-control" />
+                    <small>Error Message</small>
+                  </div>
+                  <div className="input-group input-group-outline mb-3">
+                    <label className="form-label">Email</label>
+                    <input type="email" className="form-control" />
+                    <small>Error Message</small>
+                  </div>
+                  <div className="input-group input-group-outline mb-3">
+                    <label className="form-label">Password</label>
+                    <input type="password" className="form-control" />
+                    <small>Error Message</small>
+                  </div>
+                  <div className="input-group input-group-outline mb-3">
+                    <label className="form-label">Confirm Password</label>
+                    <input type="password" className="form-control" />
+                    <small>Error Message</small>
+                  </div>
+                  <button className="button button-pink">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
         </Card>
       </main>
+      <div className="fixed bottom-0 right-4 z-50">
+        <div className="notification fade p-2 bg-white" role="alert" id="success-notification" aria-live="assertive" aria-atomic="true">
+          <div className="notification-header border-0">
+            <i className="material-icons text-green-500 mr-2">check</i>
+            <span className="mr-auto font-semibold">Material Dashboard </span>
+            <small className="text-body">11 mins ago</small>
+            <i className="fas fa-times text-md ml-3 cursor-pointer" aria-label="Close"></i>
+          </div>
+          <hr className="horizontal dark m-0" />
+          <div className="notification-body">
+            Hello, world! This is a notification message.
+          </div>
+        </div>
+        <div className="notification fade p-2 bg-blue-500" role="alert" id="info-notification" aria-live="assertive" aria-atomic="true">
+          <div className="notification-header border-0">
+            <i className="material-icons text-white mr-2">check</i>
+            <span className="mr-auto font-semibold text-white">Material Dashboard </span>
+            <small className="text-white">11 mins ago</small>
+            <i className="fas fa-times text-md ml-3 cursor-pointe text-white" aria-label="Close"></i>
+          </div>
+          <hr className="horizontal light m-0" />
+          <div className="notification-body text-white">
+            Hello, world! This is a notification message.
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
