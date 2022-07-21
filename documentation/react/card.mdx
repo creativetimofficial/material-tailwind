@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Card for React - Material Tailwind
 description: Customise your web projects with our beautiful cards component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["card", "props", "theme"]
+navigation: ["card", "profile-card", "props", "theme"]
 related:
   [
     {
@@ -69,7 +69,7 @@ import {
 
 export default function Example() {
   return (
-    <Card className="mt-6 w-96">
+    <Card className="w-96">
       <CardHeader color="blue" className="relative h-56">
         <img
           src="/img/blog.jpg"
@@ -93,6 +93,131 @@ export default function Example() {
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
           Barcelona, Spain
         </Typography>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+---
+
+## Tailwind CSS Profile Card - React
+
+<ComponentDemo id="profile-card">
+  <Card className="w-96">
+    <CardHeader floated={false} className="h-80">
+      <Image
+        src="/img/team-3.jpg"
+        alt="profile-picture"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </CardHeader>
+    <CardBody className="text-center">
+      <Typography variant="h4" color="blue-grey" className="mb-2">
+        {`Natalie Paisley`}
+      </Typography>
+      <Typography color="blue" className="font-medium" textGradient>
+        {`CEO / Co-Founder`}
+      </Typography>
+    </CardBody>
+    <CardFooter className="flex justify-center gap-7 pt-2">
+      <Tooltip content="Like">
+        <Typography
+          as="a"
+          href="#facebook"
+          variant="lead"
+          color="blue"
+          textGradient
+        >
+          <i className="fab fa-facebook" />
+        </Typography>
+      </Tooltip>
+      <Tooltip content="Follow">
+        <Typography
+          as="a"
+          href="#twitter"
+          variant="lead"
+          color="light-blue"
+          textGradient
+        >
+          <i className="fab fa-twitter" />
+        </Typography>
+      </Tooltip>
+      <Tooltip content="Follow">
+        <Typography
+          as="a"
+          href="#instagram"
+          variant="lead"
+          color="purple"
+          textGradient
+        >
+          <i className="fab fa-instagram" />
+        </Typography>
+      </Tooltip>
+    </CardFooter>
+  </Card>
+</ComponentDemo>
+
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <CardHeader floated={false} className="h-80">
+        <img src="/img/team-3.jpg" alt="profile-picture" />
+      </CardHeader>
+      <CardBody className="text-center">
+        <Typography variant="h4" color="blue-grey" className="mb-2">
+          Natalie Paisley
+        </Typography>
+        <Typography color="blue" className="font-medium" textGradient>
+          CEO / Co-Founder
+        </Typography>
+      </CardBody>
+      <CardFooter className="flex justify-center gap-7 pt-2">
+        <Tooltip content="Like">
+          <Typography
+            as="a"
+            href="#facebook"
+            variant="lead"
+            color="blue"
+            textGradient
+          >
+            <i className="fab fa-facebook" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#twitter"
+            variant="lead"
+            color="light-blue"
+            textGradient
+          >
+            <i className="fab fa-twitter" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#instagram"
+            variant="lead"
+            color="purple"
+            textGradient
+          >
+            <i className="fab fa-instagram" />
+          </Typography>
+        </Tooltip>
       </CardFooter>
     </Card>
   );
