@@ -1,47 +1,46 @@
 import flatpickr from "flatpickr";
+import noUiSlider from 'nouislider';
 
 export default function init() {
-
   "use strict";
   (function () {
 
-    var triggers = document.querySelectorAll("[data-toast]");
+    var slider = document.getElementById("sliderRegular");
+    // if (slider) {
+    //   noUiSlider.create(slider, {
+    //     start: 40,
+    //     connect: [true, false],
+    //     range: {
+    //       min: 0,
+    //       max: 100,
+    //     },
+    //   });
+    // }
+  })();
+ 
+  "use strict";
+  (function () {
 
+    var triggers = document.querySelectorAll("[data-notification]");
     triggers.forEach((trigger) => {
-      let toastId = trigger.getAttribute("data-target");
+
+      let notificationId = trigger.getAttribute("data-target");
+
       trigger.addEventListener("click", function () {
-        let toast = document.querySelector("#" + toastId);
+        let notification = document.querySelector("#" + notificationId);
+
         if (trigger.getAttribute("aria-hidden") == "true") {
           trigger.setAttribute("aria-hidden", "false");
-          toast.classList.remove("hidden");
-          setTimeout(function () {
-            toast.classList.remove("opacity-0");
-          }, 100);
+          notification.classList.add("show");
+
+       
           setTimeout(function () {
             trigger.setAttribute("aria-hidden", "true");
-            toast.classList.add("opacity-0");
-            setTimeout(function () {
-              toast.classList.add("hidden");
-            }, 200);
+            notification.classList.remove("show");
           }, 3800);
         }
       });
     });
-    
-
-    // var notificationButtonList = document.querySelectorAll(".notification-button");
-  
-    // for (var i = 0; i < notificationButtonList.length; i++) {
-    //   notificationButtonList[i].addEventListener("click", launch_notification());
-    // }
-
-    // function launch_notification() {
-    //   var x = document.getElementsByClassName("notification")
-    //   x.className = "show";
-    //   setTimeout(function(){ 
-    //     x.className = x.className.replace("show", ""); 
-    //   }, 5000);
-    // }
   })();
 
   "use strict";
