@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Card for React - Material Tailwind
 description: Customise your web projects with our beautiful cards component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["card", "profile-card", "props", "theme"]
+navigation: ["card", "profile-card", "login-card", "props", "theme"]
 related:
   [
     {
@@ -156,6 +156,110 @@ export default function Example() {
           <i className="fab fa-instagram" />
         </Typography>
       </Tooltip>
+    </CardFooter>
+  </Card>
+</ComponentDemo>
+
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <CardHeader floated={false} className="h-80">
+        <img src="/img/team-3.jpg" alt="profile-picture" />
+      </CardHeader>
+      <CardBody className="text-center">
+        <Typography variant="h4" color="blue-grey" className="mb-2">
+          Natalie Paisley
+        </Typography>
+        <Typography color="blue" className="font-medium" textGradient>
+          CEO / Co-Founder
+        </Typography>
+      </CardBody>
+      <CardFooter className="flex justify-center gap-7 pt-2">
+        <Tooltip content="Like">
+          <Typography
+            as="a"
+            href="#facebook"
+            variant="lead"
+            color="blue"
+            textGradient
+          >
+            <i className="fab fa-facebook" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#twitter"
+            variant="lead"
+            color="light-blue"
+            textGradient
+          >
+            <i className="fab fa-twitter" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#instagram"
+            variant="lead"
+            color="purple"
+            textGradient
+          >
+            <i className="fab fa-instagram" />
+          </Typography>
+        </Tooltip>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+---
+
+## Tailwind CSS Login Card - React
+
+<ComponentDemo id="login-card">
+  <Card className="mt-6 w-96">
+    <CardHeader
+      variant="gradient"
+      color="blue"
+      className="mb-4 grid h-28 place-items-center"
+    >
+      <Typography variant="h3" color="white">
+        {`Sign In`}
+      </Typography>
+    </CardHeader>
+    <CardBody className="flex flex-col gap-4">
+      <Input label="Email" size="lg" />
+      <Input label="Password" size="lg" />
+      <div className="-ml-2.5">
+        <Checkbox label="Remember Me" />
+      </div>
+    </CardBody>
+    <CardFooter className="pt-0">
+      <Button fullWidth>Sign In</Button>
+      <Typography variant="small" className="mt-6 flex justify-center">
+        {`Don't have an account?`}
+        <Typography
+          as="a"
+          href="#signup"
+          variant="small"
+          color="blue"
+          className="ml-1 font-bold"
+        >
+          {`Sign up`}
+        </Typography>
+      </Typography>
     </CardFooter>
   </Card>
 </ComponentDemo>
