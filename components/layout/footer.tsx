@@ -78,11 +78,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full px-4 md:w-6/12">
-            <Typography
-              variant="h3"
-              color="inherit"
-              className="mb-2 !font-sans"
-            >
+            <Typography variant="h3" color="inherit" className="mb-2">
               Material Tailwind
             </Typography>
             <Typography

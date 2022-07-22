@@ -13,14 +13,14 @@ export default function SectionShadow() {
         <div className="relative w-full px-4 md:w-5/12">
           <Typography
             variant="h2"
-            className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+            className="mb-2 font-black tracking-normal text-[#1A237E]"
           >
             Realistic <br />
             <Typography
               as="span"
               variant="h2"
               color="blue"
-              className="inline-block !font-sans font-black tracking-normal"
+              className="inline-block font-black tracking-normal"
               textGradient
             >
               Shadows
