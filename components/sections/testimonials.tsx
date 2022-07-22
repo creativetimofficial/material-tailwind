@@ -12,14 +12,14 @@ export default function SectionTestimonials() {
       <div className="mx-auto w-full text-center md:w-1/2">
         <Typography
           variant="h2"
-          className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+          className="mb-2 font-black tracking-normal text-[#1A237E]"
         >
           Trusted by over <br />
           <Typography
             as="span"
             variant="h2"
             color="blue"
-            className="inline-block !font-sans font-black tracking-normal"
+            className="inline-block font-black tracking-normal"
             textGradient
           >
             1,855,822+ web developers

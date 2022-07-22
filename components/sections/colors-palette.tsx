@@ -39,14 +39,14 @@ export default function SectionColorsPalette() {
           <div className="md:ml-7 lg:ml-24 lg:w-2/3">
             <Typography
               variant="h2"
-              className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+              className="mb-2 font-black tracking-normal text-[#1A237E]"
             >
               Awesome <br />
               <Typography
                 as="span"
                 variant="h2"
                 color="blue"
-                className="inline-block !font-sans font-black tracking-normal"
+                className="inline-block font-black tracking-normal"
                 textGradient
               >
                 Color
