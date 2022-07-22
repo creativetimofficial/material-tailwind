@@ -66,7 +66,7 @@ export default function Header() {
               </div>
               <Typography
                 variant="h1"
-                className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+                className="mb-2 font-black tracking-normal text-[#1A237E]"
               >
                 Material Tailwind
               </Typography>

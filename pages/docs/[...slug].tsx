@@ -95,7 +95,7 @@ const components = {
       as="h1"
       variant="h3"
       color="blue-grey"
-      className="!mb-4 !font-sans lg:!text-4xl"
+      className="!mb-4 lg:!text-4xl"
       {...props}
     />
   ),
@@ -104,7 +104,7 @@ const components = {
       as="h2"
       variant="h4"
       color="blue-grey"
-      className="!mb-2 !font-sans"
+      className="!mb-2"
       {...props}
     />
   ),
@@ -113,7 +113,7 @@ const components = {
       as="h3"
       variant="h5"
       color="blue-grey"
-      className="!mb-2 !font-sans"
+      className="!mb-2"
       {...props}
     />
   ),
@@ -131,7 +131,7 @@ const components = {
   hr: () => <hr className="!mt-24 !mb-20 !border-blue-grey-50" />,
   a: (props) => (
     <a
-      className="!font-sans !font-medium !text-blue-grey-900 !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-blue-grey-900 !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),

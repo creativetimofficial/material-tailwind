@@ -12,7 +12,7 @@ export default function SectionSubscribe() {
           <Typography
             variant="h2"
             color="white"
-            className="mb-2 !font-sans font-black tracking-normal"
+            className="mb-2 font-black tracking-normal"
           >
             Sign up for our newsletter
           </Typography>

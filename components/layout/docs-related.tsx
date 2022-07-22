@@ -14,12 +14,7 @@ interface Props {
 export default function DocsRelated({ routes }: { routes: Props[] }) {
   return (
     <div className="mt-36">
-      <Typography
-        as="h2"
-        variant="h4"
-        color="blue-grey"
-        className="!mb-6 !font-sans"
-      >
+      <Typography as="h2" variant="h4" color="blue-grey" className="!mb-6">
         Related
       </Typography>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -30,7 +25,7 @@ export default function DocsRelated({ routes }: { routes: Props[] }) {
                 as="h4"
                 variant="h6"
                 color="blue-grey"
-                className="mb-2 !font-sans"
+                className="mb-2"
               >
                 {title}
               </Typography>

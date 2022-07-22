@@ -8,11 +8,7 @@ export default function SectionCommnunity() {
   return (
     <section className="relative z-50 pb-64 md:pt-12">
       <div className="mx-auto w-full text-center text-[#1A237E] md:w-3/4">
-        <Typography
-          variant="h2"
-          color="inherit"
-          className="mb-4 !font-sans font-black"
-        >
+        <Typography variant="h2" color="inherit" className="mb-4 font-black">
           Join our comumunity
         </Typography>
         <Typography color="inherit" className="text-lg opacity-60">

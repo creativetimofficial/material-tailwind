@@ -110,14 +110,14 @@ export default function SectionComponents() {
             />
             <Typography
               variant="h2"
-              className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+              className="mb-2 font-black tracking-normal text-[#1A237E]"
             >
               Various styles of <br />
               <Typography
                 as="span"
                 variant="h2"
                 color="blue"
-                className="inline-block !font-sans font-black tracking-normal"
+                className="inline-block font-black tracking-normal"
                 textGradient
               >
                 Components.
