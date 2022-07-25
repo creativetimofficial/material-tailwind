@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Breadcrumbs for React - Material Tailwind
 description: Customise your web projects with our easy-to-use breadcrumbs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["breadcrumbs", "props", "theme"]
+navigation:
+  [
+    "breadcrumbs",
+    "breadcrumbs-with-icon",
+    "block-level-breadcrumbs",
+    "custom-breadcrumbs-separator",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -48,6 +56,128 @@ import { Breadcrumbs } from "@material-tailwind/react";
 export default function Example() {
   return (
     <Breadcrumbs>
+      <a href="#" className="opacity-60">
+        Docs
+      </a>
+      <a href="#" className="opacity-60">
+        Components
+      </a>
+      <a href="#">Breadcrumbs</a>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+## Breadcrumbs with icon
+
+You can add any type of icon for the <Code>Breadcrumbs</Code> component as easy as using icon in html.
+
+<ComponentDemo id="breadcrumbs-with-icon">
+  <Breadcrumbs>
+    <a href="#" className="opacity-60">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-4 w-4"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+      </svg>
+    </a>
+    <a href="#" className="opacity-60">
+      <span>Components</span>
+    </a>
+    <a href="#">Breadcrumbs</a>
+  </Breadcrumbs>
+</ComponentDemo>
+
+```jsx
+import { Breadcrumbs } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Breadcrumbs>
+      <a href="#" className="opacity-60">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-4 w-4"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg>
+      </a>
+      <a href="#" className="opacity-60">
+        <span>Components</span>
+      </a>
+      <a href="#">Breadcrumbs</a>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+## Block Level Breadcrumbs
+
+A <Code>Breadcrumbs</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Breadcrumbs</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<ComponentDemo id="block-level-breadcrumbs">
+  <Breadcrumbs fullWidth>
+    <a href="#" className="opacity-60">
+      <span>Docs</span>
+    </a>
+    <a href="#" className="opacity-60">
+      <span>Components</span>
+    </a>
+    <a href="#">Breadcrumbs</a>
+  </Breadcrumbs>
+</ComponentDemo>
+
+```jsx
+import { Breadcrumbs } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Breadcrumbs fullWidth>
+      <a href="#" className="opacity-60">
+        Docs
+      </a>
+      <a href="#" className="opacity-60">
+        Components
+      </a>
+      <a href="#">Breadcrumbs</a>
+    </Breadcrumbs>
+  );
+}
+```
+
+---
+
+## Custom Breadcrumbs Separator
+
+You can modify the <Code>Breadcrumbs</Code> separators by using the <Code>Separator</Code> prop.
+
+<ComponentDemo id="custom-breadcrumbs-separator">
+  <Breadcrumbs separator="-">
+    <a href="#" className="opacity-60">
+      <span>Docs</span>
+    </a>
+    <a href="#" className="opacity-60">
+      <span>Components</span>
+    </a>
+    <a href="#">Breadcrumbs</a>
+  </Breadcrumbs>
+</ComponentDemo>
+
+```jsx
+import { Breadcrumbs } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Breadcrumbs separator="-">
       <a href="#" className="opacity-60">
         Docs
       </a>
