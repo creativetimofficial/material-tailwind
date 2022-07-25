@@ -7,6 +7,8 @@ navigation:
     "button-variants",
     "button-sizes",
     "button-colors",
+    "block-level-button",
+    "button-ripple-effect",
     "props",
     "theme",
   ]
@@ -133,6 +135,50 @@ export default function Colors() {
       <Button color="red">color red</Button>
       <Button color="green">color green</Button>
       <Button color="amber">color amber</Button>
+    </div>
+  );
+}
+```
+
+---
+
+## Block Level Button
+
+A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<ComponentDemo id="block-level-button">
+  <Button fullWidth>block level button</Button>
+</ComponentDemo>
+
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button fullWidth>block level button</Button>;
+}
+```
+
+---
+
+## Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Button</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="button-ripple-effect">
+  <div className="flex w-max gap-4">
+    <Button ripple={true}>Ripple Effect On</Button>
+    <Button ripple={false}>Ripple Effect Off</Button>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Button ripple={true}>Ripple Effect On</Button>
+      <Button ripple={false}>Ripple Effect Off</Button>
     </div>
   );
 }
