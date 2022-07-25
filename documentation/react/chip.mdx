@@ -2,7 +2,16 @@
 title: Tailwind CSS Chips for React - Material Tailwind
 description: Customise your web projects with our easy-to-use chips component for Tailwind CSS and React using Material Design guidelines.
 navigation:
-  ["chip", "chip-variants", "chip-colors", "chip-dismissible", "props", "theme"]
+  [
+    "chip",
+    "chip-variants",
+    "chip-colors",
+    "chip-with-icon",
+    "chip-dismissible",
+    "custom-chip-animation",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -109,6 +118,48 @@ export default function Colors() {
 
 ---
 
+## Chip with Icon
+
+You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
+
+<ComponentDemo id="chip-with-icon">
+  <Chip
+    value="downloads"
+    icon={
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
+      </svg>
+    }
+  />
+</ComponentDemo>
+
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Chip
+      value="downloads"
+      icon={
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
+        </svg>
+      }
+    />
+  );
+}
+```
+
+---
+
 ## Chip Dismissible
 
 The chip component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
@@ -166,6 +217,83 @@ export default function Dismissible() {
           onClose: () => setShow(false),
         }}
         value="Dismissible"
+      />
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Custom Chip Animation
+
+You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
+
+<State initialState={{ show: true }}>
+  <ComponentDemo id="custom-chip-animation">
+    <Observe>
+      {({ setState, show }) => (
+        <>
+          {!show && (
+            <Button
+              variant="gradient"
+              className="absolute"
+              onClick={() => setState((s) => ({ show: true }))}
+            >
+              Show Chip
+            </Button>
+          )}
+          <Chip
+            variant="gradient"
+            show={show}
+            animate={{
+              mount: {
+                y: 0,
+              },
+              unmount: {
+                y: 50,
+              },
+            }}
+            dismissible={{
+              onClose: () => setState((s) => ({ show: false })),
+            }}
+            value="Custom Animation"
+          />
+        </>
+      )}
+    </Observe>
+  </ComponentDemo>
+</State>
+
+```jsx
+import { useState, Fragment } from "react";
+import { Alert, Button } from "@material-tailwind/react";
+
+export default function Colors() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <Fragment>
+      {!show && (
+        <Button
+          variant="gradient"
+          className="absolute"
+          onClick={() => setShow(true)}
+        >
+          Show Chip
+        </Button>
+      )}
+      <Chip
+        variant="gradient"
+        show={show}
+        animate={{
+          mount: { y: 0 },
+          unmount: { y: 50 },
+        }}
+        dismissible={{
+          onClose: () => setShow(false),
+        }}
+        value="Custom Animation"
       />
     </Fragment>
   );
