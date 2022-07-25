@@ -300,12 +300,8 @@ export default function Colors() {
       <Alert
         show={show}
         animate={{
-          mount: {
-            y: 0,
-          },
-          unmount: {
-            y: 100,
-          },
+          mount: { y: 0 },
+          unmount: { y: 100 },
         }}
         dismissible={{
           onClose: () => setShow(false),
