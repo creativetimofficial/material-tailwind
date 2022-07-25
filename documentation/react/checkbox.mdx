@@ -1,7 +1,16 @@
 ---
 title: Tailwind CSS Checkbox for React - Material Tailwind
 description: Customise your web projects  with our beautiful checkbox component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["checkbox", "checkbox-colors", "props", "theme"]
+navigation:
+  [
+    "checkbox",
+    "checkbox-colors",
+    "checkbox-with-label",
+    "checkbox-custom-icon",
+    "checkbox-ripple-effect",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -80,6 +89,102 @@ export default function Colors() {
       <Checkbox color="purple" defaultChecked />
       <Checkbox color="pink" defaultChecked />
     </div>
+  );
+}
+```
+
+---
+
+## Checkbox with Label
+
+You can add a label for the <Code>Checkbox</Code> component by passing the <Code>label</Code> prop to the <Code>Checkbox</Code> component.
+
+<ComponentDemo id="checkbox-with-label">
+  <Checkbox label="Remember Me" />
+</ComponentDemo>
+
+```jsx
+import { Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Checkbox label="Remember Me" />;
+}
+```
+
+---
+
+## Checkbox Custom Icon
+
+You can add a custom icon for the <Code>Checkbox</Code> component when it's checked by passing the <Code>icon</Code> prop to the <Code>Checkbox</Code> component.
+
+<ComponentDemo id="checkbox-custom-icon">
+  <Checkbox
+    icon={
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-3 w-3"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+          clipRule="evenodd"
+        />
+      </svg>
+    }
+    defaultChecked
+  />
+</ComponentDemo>
+
+```jsx
+import { Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Checkbox
+      icon={
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-3 w-3"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+            clipRule="evenodd"
+          />
+        </svg>
+      }
+      defaultChecked
+    />
+  );
+}
+```
+
+---
+
+## Checkbox Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Checkbox</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="checkbox-ripple-effect">
+  <>
+    <Checkbox label="Ripple Effect On" />
+    <Checkbox label="Ripple Effect Off" ripple={false} />
+  </>
+</ComponentDemo>
+
+```jsx
+import { Checkbox, Fragment } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <Checkbox label="Ripple Effect On" ripple={true} />
+      <Checkbox label="Ripple Effect Off" ripple={false} />
+    </Fragment>
   );
 }
 ```
