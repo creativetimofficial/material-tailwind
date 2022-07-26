@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Menu for React - Material Tailwind
 description: Customise your web projects with our complex menu component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["menu", "nested-menu", "props", "theme"]
+navigation:
+  [
+    "menu",
+    "nested-menu",
+    "menu-placement",
+    "custom-menu-animation",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -125,6 +133,343 @@ export default function NestedMenu() {
             <MenuItem>Nested Item 3</MenuItem>
           </MenuList>
         </Menu>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+
+---
+
+## Menu Placement
+
+You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
+
+<ComponentDemo id="menu-placement">
+  <div className="mb-3 flex gap-3">
+    <Menu placement="top">
+      <MenuHandler>
+        <Button variant="gradient">Top</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="top-start">
+      <MenuHandler>
+        <Button variant="gradient">Top Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="top-end">
+      <MenuHandler>
+        <Button variant="gradient">Top End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Menu placement="right">
+      <MenuHandler>
+        <Button variant="gradient">Right</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="right-start">
+      <MenuHandler>
+        <Button variant="gradient">Right Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="right-end">
+      <MenuHandler>
+        <Button variant="gradient">Right End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Menu placement="bottom">
+      <MenuHandler>
+        <Button variant="gradient">Bottom</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="bottom-start">
+      <MenuHandler>
+        <Button variant="gradient">Bottom Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="bottom-end">
+      <MenuHandler>
+        <Button variant="gradient">Bottom End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="flex gap-3">
+    <Menu placement="left">
+      <MenuHandler>
+        <Button variant="gradient">Left</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="left-start">
+      <MenuHandler>
+        <Button variant="gradient">Left Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="left-end">
+      <MenuHandler>
+        <Button variant="gradient">Left End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="top">
+          <MenuHandler>
+            <Button variant="gradient">Top</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="top-start">
+          <MenuHandler>
+            <Button variant="gradient">Top Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="top-end">
+          <MenuHandler>
+            <Button variant="gradient">Top End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="right">
+          <MenuHandler>
+            <Button variant="gradient">Right</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="right-start">
+          <MenuHandler>
+            <Button variant="gradient">Right Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="right-end">
+          <MenuHandler>
+            <Button variant="gradient">Right End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="bottom">
+          <MenuHandler>
+            <Button variant="gradient">Bottom</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="bottom-start">
+          <MenuHandler>
+            <Button variant="gradient">Bottom Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="bottom-end">
+          <MenuHandler>
+            <Button variant="gradient">Bottom End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="flex gap-3">
+        <Menu placement="left">
+          <MenuHandler>
+            <Button variant="gradient">Left</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="left-start">
+          <MenuHandler>
+            <Button variant="gradient">Left Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="left-end">
+          <MenuHandler>
+            <Button variant="gradient">Left End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Custom Menu Animation
+
+You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
+
+<ComponentDemo id="custom-menu-animation">
+  <Menu
+    animate={{
+      mount: { y: 0 },
+      unmount: { y: 25 },
+    }}
+  >
+    <MenuHandler>
+      <Button variant="gradient">Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+    </MenuList>
+  </Menu>
+</ComponentDemo>
+
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu
+      animate={{
+        mount: { y: 0 },
+        unmount: { y: 25 },
+      }}
+    >
+      <MenuHandler>
+        <Button variant="gradient">Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
         <MenuItem>Menu Item 3</MenuItem>
       </MenuList>
     </Menu>
