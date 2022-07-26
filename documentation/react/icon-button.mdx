@@ -7,6 +7,7 @@ navigation:
     "icon-button-variants",
     "icon-button-sizes",
     "icon-button-colors",
+    "icon-button-ripple-effect",
     "props",
     "theme",
   ]
@@ -177,6 +178,40 @@ export default function Colors() {
         <i className="fas fa-heart" />
       </IconButton>
       <IconButton color="amber">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+
+---
+
+## Icon Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>IconButton</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="icon-button-ripple-effect">
+  <div className="flex w-max gap-4">
+    <IconButton ripple={true}>
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton ripple={false}>
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <IconButton ripple={true}>
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton ripple={false}>
         <i className="fas fa-heart" />
       </IconButton>
     </div>
