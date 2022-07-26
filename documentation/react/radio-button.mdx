@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Radio for React - Material Tailwind
 description: Customise your web projects with our easy-to-use radio component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["radio-button", "radio-button-colors", "props", "theme"]
+navigation:
+  [
+    "radio-button",
+    "radio-button-colors",
+    "radio-button-custom-icon",
+    "radio-button-ripple-effect",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -81,6 +89,142 @@ export default function Colors() {
       <Radio id="indigo" name="color" color="indigo" />
       <Radio id="purple" name="color" color="purple" />
       <Radio id="pink" name="color" color="pink" />
+    </div>
+  );
+}
+```
+
+---
+
+## Radio Button Custom Icon
+
+You can add a custom icon for the <Code>Radio</Code> button component when it's checked by passing the <Code>icon</Code> prop to the <Code>Radio</Code> button component.
+
+<ComponentDemo id="radio-button-custom-icon">
+  <Radio
+    id="html-1"
+    name="type"
+    label="HTML"
+    icon={
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-3 w-3"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+          clipRule="evenodd"
+        />
+      </svg>
+    }
+  />
+  <Radio
+    id="react-1"
+    name="type"
+    label="React"
+    icon={
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-3 w-3"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+          clipRule="evenodd"
+        />
+      </svg>
+    }
+    defaultChecked
+  />
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import { Radio } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <Radio
+        id="html"
+        name="type"
+        label="HTML"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-3 w-3"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              clipRule="evenodd"
+            />
+          </svg>
+        }
+      />
+      <Radio
+        id="react"
+        name="type"
+        label="React"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-3 w-3"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              clipRule="evenodd"
+            />
+          </svg>
+        }
+        defaultChecked
+      />
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Radio Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Radio</Code> button component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="radio-button-ripple-effect">
+  <div className="flex gap-10">
+    <Radio id="html-2" name="type" label="Ripple Effect On" />
+    <Radio id="react-2" name="type" label="Ripple Effect Off" ripple={false} />
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import { Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-10">
+      <Radio
+        id="ripple-on"
+        name="type"
+        label="Ripple Effect On"
+        ripple={true}
+      />
+      <Radio
+        id="ripple-off"
+        name="type"
+        label="Ripple Effect Off"
+        ripple={false}
+      />
     </div>
   );
 }
