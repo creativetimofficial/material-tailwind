@@ -100,7 +100,7 @@ export default function Colors() {
 You can add a label for the <Code>Checkbox</Code> component by passing the <Code>label</Code> prop to the <Code>Checkbox</Code> component.
 
 <ComponentDemo id="checkbox-with-label">
-  <Checkbox label="Remember Me" />
+  <Checkbox id="login" label="Remember Me" />
 </ComponentDemo>
 
 ```jsx
@@ -171,19 +171,20 @@ You can turn on/off the ripple effect for the <Code>Checkbox</Code> component us
 
 <ComponentDemo id="checkbox-ripple-effect">
   <>
-    <Checkbox label="Ripple Effect On" />
-    <Checkbox label="Ripple Effect Off" ripple={false} />
+    <Checkbox id="ripple-on" label="Ripple Effect On" />
+    <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
   </>
 </ComponentDemo>
 
 ```jsx
-import { Checkbox, Fragment } from "@material-tailwind/react";
+import { Fragment } from "react";
+import { Checkbox } from "@material-tailwind/react";
 
 export default function Example() {
   return (
     <Fragment>
-      <Checkbox label="Ripple Effect On" ripple={true} />
-      <Checkbox label="Ripple Effect Off" ripple={false} />
+      <Checkbox id="ripple-on" label="Ripple Effect On" ripple={true} />
+      <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
     </Fragment>
   );
 }
