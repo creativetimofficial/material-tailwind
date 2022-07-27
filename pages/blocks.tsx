@@ -158,28 +158,29 @@ export default function Presentation() {
             <div className="my-5">
               <div id="sliderRegular"></div>
             </div>
+
             <div className="w-4/12 my-5"> 
               <div className="container">
                 <form id="form" className="form">
-                  <h2>Register With Us</h2>
+                  <h2>Validation Form</h2>
                   <div className="input-group input-group-outline mb-3">
                     <label className="form-label">Username</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" id="username" />
                     <small>Error Message</small>
                   </div>
                   <div className="input-group input-group-outline mb-3">
                     <label className="form-label">Email</label>
-                    <input type="email" className="form-control" />
+                    <input type="email" className="form-control" id="email" />
                     <small>Error Message</small>
                   </div>
                   <div className="input-group input-group-outline mb-3">
                     <label className="form-label">Password</label>
-                    <input type="password" className="form-control" />
+                    <input type="password" className="form-control" id="password" />
                     <small>Error Message</small>
                   </div>
                   <div className="input-group input-group-outline mb-3">
                     <label className="form-label">Confirm Password</label>
-                    <input type="password" className="form-control" />
+                    <input type="password" className="form-control" id="confirm_password" />
                     <small>Error Message</small>
                   </div>
                   <button className="button button-pink">Submit</button>
