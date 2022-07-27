@@ -8,6 +8,8 @@ navigation:
     "select-sizes",
     "select-colors",
     "select-validations",
+    "custom-select-animation",
+    "disabled-select",
     "props",
     "theme",
   ]
@@ -286,6 +288,90 @@ export default function Validations() {
         <Option>Material Tailwind Svelte</Option>
       </Select>
       <Select label="Select Version" success>
+        <Option>Material Tailwind HTML</Option>
+        <Option>Material Tailwind React</Option>
+        <Option>Material Tailwind Vue</Option>
+        <Option>Material Tailwind Angular</Option>
+        <Option>Material Tailwind Svelte</Option>
+      </Select>
+    </div>
+  );
+}
+```
+
+---
+
+## Custom Select Animation
+
+You can modify the open/close state animation for <Code>Select</Code> component using the <Code>animate</Code> prop.
+
+<ComponentDemo id="custom-select-animation">
+  <div className="w-72">
+    <Select
+      label="Select Version"
+      animate={{
+        mount: { y: 0 },
+        unmount: { y: 25 },
+      }}
+    >
+      <Option>Material Tailwind HTML</Option>
+      <Option>Material Tailwind React</Option>
+      <Option>Material Tailwind Vue</Option>
+      <Option>Material Tailwind Angular</Option>
+      <Option>Material Tailwind Svelte</Option>
+    </Select>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Select, Option } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Select
+        label="Select Version"
+        animate={{
+          mount: { y: 0 },
+          unmount: { y: 25 },
+        }}
+      >
+        <Option>Material Tailwind HTML</Option>
+        <Option>Material Tailwind React</Option>
+        <Option>Material Tailwind Vue</Option>
+        <Option>Material Tailwind Angular</Option>
+        <Option>Material Tailwind Svelte</Option>
+      </Select>
+    </div>
+  );
+}
+```
+
+---
+
+## Disabled Select
+
+A <Code>Select</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Select</Code> component.
+
+<ComponentDemo id="disabled-select">
+  <div className="w-72">
+    <Select label="Select Version" disabled>
+      <Option>Material Tailwind HTML</Option>
+      <Option>Material Tailwind React</Option>
+      <Option>Material Tailwind Vue</Option>
+      <Option>Material Tailwind Angular</Option>
+      <Option>Material Tailwind Svelte</Option>
+    </Select>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Select, Option } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Select label="Select Version" disabled>
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
         <Option>Material Tailwind Vue</Option>
