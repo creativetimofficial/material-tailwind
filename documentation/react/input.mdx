@@ -52,7 +52,11 @@ See below our <Code>Input</Code> component example. It comes in different styles
 import { Input } from "@material-tailwind/react";
 
 export default function Example() {
-  return <Input label="Username" />;
+  return (
+    <div className="w-72">
+      <Input label="Username" />
+    </div>
+  );
 }
 ```
 
@@ -183,7 +187,9 @@ import { Input } from "@material-tailwind/react";
 
 export default function InputWithIcon() {
   return (
-    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    <div className="w-72">
+      <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
   );
 }
 ```
@@ -204,7 +210,11 @@ An <Code>Input</Code> could be disabled as well, it will help you to prevent use
 import { Input } from "@material-tailwind/react";
 
 export default function InputWithIcon() {
-  return <Input label="Disabled" disabled />;
+  return (
+    <div className="w-72">
+      <Input label="Disabled" disabled />
+    </div>
+  );
 }
 ```
 
