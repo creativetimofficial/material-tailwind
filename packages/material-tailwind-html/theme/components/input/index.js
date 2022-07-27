@@ -158,14 +158,64 @@ const input = (theme) => ({
 
 
     "small": {
-      color: "#123515",
+      color: theme("colors.secondary.500"),
       position: "absolute",
       bottom: "0",
       left: "0",
       visibility: "hidden"
     },
+
     "&.error small": {
-      visibility: "visible"
+      visibility: "visible",
+      position: "relative",
+    },
+    
+    "&.success.is-filled": {
+      ".form-control": {
+        "border-color": theme("colors.green.500") + "!important",
+        "border-top": "none",
+        "box-shadow": "inset 1px 0 "+ theme("colors.green.500") + ", inset -1px 0 "+ theme("colors.green.500") + ", inset 0 -1px "+ theme("colors.green.500") + "!important"
+      },
+      ".form-label": {
+        "color": theme("colors.green.500") + "!important",
+
+        "&:before": {
+          "border-top-color": theme("colors.green.500"),
+          "box-shadow": "inset 0 1px" + theme("colors.green.500")
+        },
+        "&:after": {
+          "border-top-color": theme("colors.green.500"),
+          "box-shadow": "inset 0 1px" + theme("colors.green.500")
+        }
+      }
+    },
+
+    "&.success .form-control+small": {
+      "color": theme("colors.green.500")
+    },
+
+    "&.error.is-filled": {
+      ".form-control": {
+        "border-color": theme("colors.red.500") + "!important",
+        "border-top": "none",
+        "box-shadow": "inset 1px 0 "+ theme("colors.red.500") + ", inset -1px 0 "+ theme("colors.red.500") + ", inset 0 -1px "+ theme("colors.red.500") + "!important"
+      },
+      ".form-label": {
+        "color": theme("colors.red.500") + "!important",
+
+        "&:before": {
+          "border-top-color": theme("colors.red.500"),
+          "box-shadow": "inset 0 1px" + theme("colors.red.500")
+        },
+        "&:after": {
+          "border-top-color": theme("colors.red.500"),
+          "box-shadow": "inset 0 1px" + theme("colors.red.500")
+        }
+      }
+    },
+
+    "&.error .form-control+small": {
+      "color": theme("colors.red.500")
     }
   }
 });
