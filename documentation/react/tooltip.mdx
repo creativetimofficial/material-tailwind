@@ -1,7 +1,8 @@
 ---
 title: Tailwind CSS Tooltip for React - Material Tailwind
 description: Customise your web projects with our easy-to-use tooltip component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tooltip", "props", "theme"]
+navigation:
+  ["tooltip", "tooltip-placement", "custom-tooltip-animation", "props", "theme"]
 related:
   [
     {
@@ -24,11 +25,12 @@ next: typography
 
 Customise your web projects with an easy-to-use and responsive Tailwind CSS <Code>Tooltip</Code>!
 
-A <TooltipTextarea</Code> is a small pop-up element that appears while the user moves the mouse pointer over an element. Use it when you want to specify extra information about something when the user moves the mouse pointer over an element.
+A <Code>Tooltip</Code> is a small pop-up element that appears while the user moves the mouse pointer over an element. Use it when you want to specify extra information about something when the user moves the mouse pointer over an element.
 
-See below our example that will help you create a simple <TooltipTextarea</Code> for your React project.
+See below our example that will help you create a simple <Code>Tooltip</Code> for your React project.
 
 <br />
+
 <ComponentDemo id="tooltip">
   <Tooltip content="Material Tailwind">
     <Button variant="gradient">Show Tooltip</Button>
@@ -41,6 +43,156 @@ import { Tooltip, Button } from "@material-tailwind/react";
 export default function Example() {
   return (
     <Tooltip content="Material Tailwind">
+      <Button variant="gradient">Show Tooltip</Button>
+    </Tooltip>
+  );
+}
+```
+
+---
+
+## Tooltip Placement
+
+You can change the position of the <Code>Tooltip</Code> component using the <Code>placement</Code> prop.
+
+<ComponentDemo id="tooltip-placement">
+  <div className="mb-3 flex gap-3">
+    <Tooltip content="Material Tailwind" placement="top">
+      <Button variant="gradient">Top</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="top-start">
+      <Button variant="gradient">Top Start</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="top-end">
+      <Button variant="gradient">Top End</Button>
+    </Tooltip>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Tooltip content="Material Tailwind" placement="right">
+      <Button variant="gradient">Right</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="right-start">
+      <Button variant="gradient">Right Start</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="right-end">
+      <Button variant="gradient">Right End</Button>
+    </Tooltip>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Tooltip content="Material Tailwind" placement="bottom">
+      <Button variant="gradient">Bottom</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="bottom-start">
+      <Button variant="gradient">Bottom Start</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="bottom-end">
+      <Button variant="gradient">Bottom End</Button>
+    </Tooltip>
+  </div>
+  <div className="flex gap-3">
+    <Tooltip content="Material Tailwind" placement="left">
+      <Button variant="gradient">Left</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="left-start">
+      <Button variant="gradient">Left Start</Button>
+    </Tooltip>
+    <Tooltip content="Material Tailwind" placement="left-end">
+      <Button variant="gradient">Left End</Button>
+    </Tooltip>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Tooltip content="Material Tailwind" placement="top">
+          <Button variant="gradient">Top</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="top-start">
+          <Button variant="gradient">Top Start</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="top-end">
+          <Button variant="gradient">Top End</Button>
+        </Tooltip>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Tooltip content="Material Tailwind" placement="right">
+          <Button variant="gradient">Right</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="right-start">
+          <Button variant="gradient">Right Start</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="right-end">
+          <Button variant="gradient">Right End</Button>
+        </Tooltip>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Tooltip content="Material Tailwind" placement="bottom">
+          <Button variant="gradient">Bottom</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="bottom-start">
+          <Button variant="gradient">Bottom Start</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="bottom-end">
+          <Button variant="gradient">Bottom End</Button>
+        </Tooltip>
+      </div>
+      <div className="flex gap-3">
+        <Tooltip content="Material Tailwind" placement="left">
+          <Button variant="gradient">Left</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="left-start">
+          <Button variant="gradient">Left Start</Button>
+        </Tooltip>
+        <Tooltip content="Material Tailwind" placement="left-end">
+          <Button variant="gradient">Left End</Button>
+        </Tooltip>
+      </div>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Custom Tooltip Animation
+
+You can modify the open/close state animation for <Code>Tooltip</Code> component using the <Code>animate</Code> prop.
+
+<ComponentDemo id="custom-tooltip-animation">
+  <Tooltip
+    content="Material Tailwind"
+    animate={{
+      mount: { scale: 1, y: 0 },
+      unmount: { scale: 0, y: 25 },
+    }}
+  >
+    <Button variant="gradient">Show Tooltip</Button>
+  </Tooltip>
+</ComponentDemo>
+
+```jsx
+import { Tooltip, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Tooltip
+      content="Material Tailwind"
+      animate={{
+        mount: { scale: 1, y: 0 },
+        unmount: { scale: 0, y: 25 },
+      }}
+    >
       <Button variant="gradient">Show Tooltip</Button>
     </Tooltip>
   );
