@@ -8,6 +8,7 @@ navigation:
     "textarea-sizes",
     "textarea-colors",
     "textarea-validations",
+    "disabled-textarea",
     "props",
     "theme",
   ]
@@ -47,7 +48,11 @@ See below our example that will help you create a simple <Code>Textarea</Code> f
 import { Textarea } from "@material-tailwind/react";
 
 export default function Example() {
-  return <Textarea label="Message" />;
+  return (
+    <div className="w-96">
+      <Textarea label="Message" />
+    </div>
+  );
 }
 ```
 
@@ -156,6 +161,30 @@ export default function Validations() {
     <div className="flex w-full items-end gap-4">
       <Textarea label="Textarea Error" error />
       <Textarea label="Textarea Success" success />
+    </div>
+  );
+}
+```
+
+---
+
+## Disabled Textarea
+
+A <Code>Textarea</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Textarea</Code> component.
+
+<ComponentDemo id="disabled-textarea">
+  <div className="w-96">
+    <Textarea label="Disabled" disabled />
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Textarea } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-96">
+      <Textarea label="Disabled" disabled />
     </div>
   );
 }
