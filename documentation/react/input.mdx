@@ -9,6 +9,7 @@ navigation:
     "input-colors",
     "input-validations",
     "input-with-icon",
+    "disabled-input",
     "props",
     "theme",
   ]
@@ -184,6 +185,26 @@ export default function InputWithIcon() {
   return (
     <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
   );
+}
+```
+
+---
+
+## Disabled Input
+
+An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
+
+<ComponentDemo id="disabled-input">
+  <div className="w-72">
+    <Input label="Disabled" disabled />
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Input } from "@material-tailwind/react";
+
+export default function InputWithIcon() {
+  return <Input label="Disabled" disabled />;
 }
 ```
 
