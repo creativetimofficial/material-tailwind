@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Switch for React - Material Tailwind
 description: Customise your web projects with our easy-to-use switch component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["switch", "switch-colors", "props", "theme"]
+navigation:
+  [
+    "switch",
+    "switch-colors",
+    "switch-with-label",
+    "switch-ripple-effect",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -74,6 +82,49 @@ export default function Colors() {
       <Switch color="purple" defaultChecked />
       <Switch color="pink" defaultChecked />
     </div>
+  );
+}
+```
+
+---
+
+## Switch with Label
+
+You can add a label for the <Code>Switch</Code> component by passing the <Code>label</Code> prop to the <Code>Switch</Code> component.
+
+<ComponentDemo id="switch-with-label">
+  <Switch id="auto-update" label="Automatic Update" />
+</ComponentDemo>
+
+```jsx
+import { Switch } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Switch id="auto-update" label="Automatic Update" />;
+}
+```
+
+---
+
+## Switch Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Switch</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="switch-ripple-effect">
+  <Switch id="ripple-on" label="Ripple Effect On" />
+  <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import { Switch } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <Switch id="ripple-on" label="Ripple Effect On" ripple={true} />
+      <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+    </Fragment>
   );
 }
 ```
