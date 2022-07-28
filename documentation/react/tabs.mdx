@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tabs", "props", "custom-tabs-animation", "theme"]
+navigation: ["tabs", "custom-tabs-animation", "props", "theme"]
 related:
   [
     {
@@ -148,7 +148,7 @@ export default function Example() {
 You can modify the open/close state animation for <Code>TabsBody</Code> component using the <Code>animate</Code> prop.
 
 <ComponentDemo id="custom-tabs-animation">
-  <Tabs value="html">
+  <Tabs id="custom-animation" value="html">
     <TabsHeader>
       <Tab value="html">HTML</Tab>
       <Tab value="react">React</Tab>
@@ -242,7 +242,7 @@ export default function Example() {
   ];
 
   return (
-    <Tabs value="html">
+    <Tabs id="custom-animation" value="html">
       <TabsHeader>
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>
