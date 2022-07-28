@@ -70,27 +70,27 @@ export default function Presentation() {
               </div>
               <p className="text-sm mt-3">We care about your data in our privacy policy</p>
               <div className="flex mt-5">
-                <a href="#" className="avatar avatar-circular avatar-md">
-                  <img alt="Image placeholder" src="/img/face-2.jpg" />
-                </a>
-                <a href="#" className="avatar avatar-circular avatar-md">
-                  <img alt="Image placeholder" src="/img/face-2.jpg" />
-                </a>
-                <a href="#" className="avatar avatar-circular avatar-md">
-                  <img alt="Image placeholder" src="/img/face-2.jpg" />
-                </a>
-                <a href="#" className="avatar avatar-circular avatar-md">
-                  <img alt="Image placeholder" src="/img/face-2.jpg" />
-                </a>
-                <div className="flex">
+                <div className="avatar-group flex items-center">
+                  <a href="#" className="avatar avatar-circular avatar-sm">
+                    <img alt="Image placeholder" src="/img/face-1.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular avatar-sm">
+                    <img alt="Image placeholder" src="/img/face-2.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular avatar-sm">
+                    <img alt="Image placeholder" src="/img/face-3.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular avatar-sm">
+                    <img alt="Image placeholder" src="/img/face-4.jpg" />
+                  </a>
+                </div>
+                <div className="flex items-center ml-3">
                   <i className="material-icons text-yellow-700">star</i>
                   <i className="material-icons text-yellow-700">star</i>
                   <i className="material-icons text-yellow-700">star</i>
                   <i className="material-icons text-yellow-700">star</i>
                   <i className="material-icons text-yellow-700">star</i>
-                  <br/><br/>
-                  <p>from 200+ reviews</p>
-                  <p className="ml-3 font-semibold">5.0</p>
+                  <p className="ml-2 font-semibold">5.0</p>
                 </div>
               </div>
             </div>
