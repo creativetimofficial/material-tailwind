@@ -121,6 +121,7 @@ export const switchButton: SwitchButtonStylesType = {
         cursor: "cursor-pointer",
         mt: "mt-px",
         ml: "ml-3",
+        mb: "mb-0",
       },
     },
     colors: switchColors,

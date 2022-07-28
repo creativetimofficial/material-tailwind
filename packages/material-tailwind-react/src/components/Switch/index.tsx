@@ -14,7 +14,6 @@ import { useTheme } from "../../context/theme";
 import type {
   color,
   label,
-  icon,
   ripple,
   className,
   containerProps,
