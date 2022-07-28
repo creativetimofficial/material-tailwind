@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr";
-import Choices from "choices.js";
+// import Choices from "choices.js";
 import noUiSlider from 'nouislider';
 
 export default function init() {
@@ -492,10 +492,10 @@ export default function init() {
         var element = document.getElementById("choice-search");
         var example1 = new Choices(element, {});
       }
-      if (document.getElementById("multi-select")) {
-        var element = document.getElementById("multi-select");
-        var example2 = new Choices(element, { searchEnabled: false });
-      }
+      // if (document.getElementById("multi-select")) {
+      //   var element = document.getElementById("multi-select");
+      //   var example2 = new Choices(element, { searchEnabled: false });
+      // }
     }
   })();
   ("use strict");
