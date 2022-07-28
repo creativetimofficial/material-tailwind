@@ -6,6 +6,7 @@ import { motion, AnimatePresence, MotionProps } from "framer-motion";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -38,7 +39,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tabPanelClasses = classnames(objectsToString(base), className);
+    const tabPanelClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;

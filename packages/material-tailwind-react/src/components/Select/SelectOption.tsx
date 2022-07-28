@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -64,12 +65,11 @@ export const SelectOption = (props: SelectOptionProps) => {
   const optionBaseClasses = objectsToString(base.option.initial);
   const optionActiveClasses = objectsToString(base.option.active);
   const optionDisabledClasses = objectsToString(base.option.disabled);
-  const classes = classnames(
-    optionBaseClasses,
-    {
+  const classes = twMerge(
+    classnames(optionBaseClasses, {
       [optionActiveClasses]: selectedIndex === index,
       [optionDisabledClasses]: disabled,
-    },
+    }),
     className ?? "",
   );
 

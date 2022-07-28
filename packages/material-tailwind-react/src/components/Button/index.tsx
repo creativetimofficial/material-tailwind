@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // utils
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -66,11 +67,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
-    const classes = classnames(
-      buttonBase,
-      buttonSize,
-      buttonVariant,
-      { [objectsToString(base.fullWidth)]: fullWidth },
+    const classes = twMerge(
+      classnames(buttonBase, buttonSize, buttonVariant, {
+        [objectsToString(base.fullWidth)]: fullWidth,
+      }),
       className,
     );
 

@@ -57,7 +57,7 @@ export const accordion: AccordionStylesType = {
           hover: "hover:text-blue-gray-900",
           transition: "transition-colors",
         },
-        active: { color: "!text-blue-gray-900" },
+        active: { color: "text-blue-gray-900" },
         icon: {
           width: "w-5",
           height: "h-5",

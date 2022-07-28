@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -29,7 +30,7 @@ export const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const dialogFooterClasses = classnames(objectsToString(base), className);
+    const dialogFooterClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. return
     return (

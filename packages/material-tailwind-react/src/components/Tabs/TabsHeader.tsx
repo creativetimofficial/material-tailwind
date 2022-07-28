@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -40,7 +41,7 @@ export const TabsHeader = React.forwardRef<HTMLUListElement, TabsHeaderProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tabsHeaderClasses = classnames(objectsToString(base), className);
+    const tabsHeaderClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. return
     return (

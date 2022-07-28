@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -34,7 +35,10 @@ export const Avatar = React.forwardRef<HTMLImageElement, AvatarProps>(
     // 3. set styles
     const avatarVariant = objectsToString(variants[findMatch(valid.variants, variant, "rounded")]);
     const avatarSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
-    const classes = classnames(objectsToString(base), avatarVariant, avatarSize, className);
+    const classes = twMerge(
+      classnames(objectsToString(base), avatarVariant, avatarSize),
+      className,
+    );
 
     // 4. return
     return <img {...rest} ref={ref} className={classes} />;

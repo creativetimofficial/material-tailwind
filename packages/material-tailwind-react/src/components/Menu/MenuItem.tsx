@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -34,9 +35,10 @@ export const MenuItem = React.forwardRef<HTMLLIElement, MenuItemProps>(
     disabled = disabled ?? false;
 
     // 3. set styles
-    const menuItemClasses = classnames(
-      objectsToString(base.item.initial),
-      { [objectsToString(base.item.disabled)]: disabled },
+    const menuItemClasses = twMerge(
+      classnames(objectsToString(base.item.initial), {
+        [objectsToString(base.item.disabled)]: disabled,
+      }),
       className,
     );
 

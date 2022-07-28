@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -43,13 +44,14 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
     disabled = disabled ?? defaultProps.disabled;
 
     // 3. set styles
-    const tabClasses = classnames(
-      objectsToString(base.tab.initial),
-      { [objectsToString(base.tab.disabled)]: disabled },
+    const tabClasses = twMerge(
+      classnames(objectsToString(base.tab.initial), {
+        [objectsToString(base.tab.disabled)]: disabled,
+      }),
       className,
     );
-    const indicatorClasses = classnames(
-      objectsToString(base.indicator),
+    const indicatorClasses = twMerge(
+      classnames(objectsToString(base.indicator)),
       indicatorProps?.className ?? "",
     );
 

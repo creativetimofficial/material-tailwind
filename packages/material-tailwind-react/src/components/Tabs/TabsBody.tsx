@@ -3,6 +3,7 @@ import React from "react";
 // utils
 import merge from "deepmerge";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -38,7 +39,7 @@ export const TabsBody = React.forwardRef<HTMLDivElement, TabsBodyProps>(
     animate = animate ?? defaultProps.animate;
 
     // 3. set styles
-    const tabsBodyClasses = classnames(objectsToString(base), className);
+    const tabsBodyClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. set animation
     const mainAnimation = React.useMemo(

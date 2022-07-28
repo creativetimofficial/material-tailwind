@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -36,9 +37,8 @@ export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
     divider = divider ?? defaultProps.divider;
 
     // 3. set styles
-    const cardFooterClasses = classnames(
-      objectsToString(base.initial),
-      { [objectsToString(base.divider)]: divider },
+    const cardFooterClasses = twMerge(
+      classnames(objectsToString(base.initial), { [objectsToString(base.divider)]: divider }),
       className,
     );
 

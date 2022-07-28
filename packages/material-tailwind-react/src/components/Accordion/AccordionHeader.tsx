@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -31,9 +32,10 @@ export const AccordionHeader = React.forwardRef<HTMLButtonElement, AccordionHead
     className = className ?? "";
 
     // 3. set styles
-    const buttonStyles = classnames(
-      objectsToString(base.header.initial),
-      { [objectsToString(base.header.active)]: open },
+    const buttonStyles = twMerge(
+      classnames(objectsToString(base.header.initial), {
+        [objectsToString(base.header.active)]: open,
+      }),
       className,
     );
     const iconClasses = classnames(objectsToString(base.header.icon));

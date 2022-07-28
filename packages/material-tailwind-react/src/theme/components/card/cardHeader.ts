@@ -56,7 +56,7 @@ const cardHeader: CardHeaderStylesType = {
         boxShadow: "shadow-lg",
       },
       floated: {
-        mt: "!-mt-6",
+        mt: "-mt-6",
       },
     },
     variants: {

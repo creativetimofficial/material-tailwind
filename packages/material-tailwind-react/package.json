@@ -26,7 +26,8 @@
     "framer-motion": "^6.5.1",
     "material-ripple-effects": "^2.0.1",
     "prop-types": "^15.8.1",
-    "react-merge-refs": "^2.0.1"
+    "react-merge-refs": "^2.0.1",
+    "tailwind-merge": "^1.5.1"
   },
   "peerDependencies": {
     "react": "^16 || ^17 || ^18",
