@@ -142,7 +142,7 @@ ${buttonCode}
             src="/img/blue.png"
             alt="tailwind_blob_blue"
           />
-          <div className="bg-dark absolute top-44 right-11 z-30 flex h-40 w-[13rem] rounded-lg bg-white/80 shadow-2xl shadow-blue-grey-500/20 backdrop-blur-2xl backdrop-saturate-200 md:top-14 md:-right-24 md:h-56 md:w-80 lg:top-20">
+          <div className="shadow-blue-gray-500/20 bg-dark absolute top-44 right-11 z-30 flex h-40 w-[13rem] rounded-lg bg-white/80 shadow-2xl backdrop-blur-2xl backdrop-saturate-200 md:top-14 md:-right-24 md:h-56 md:w-80 lg:top-20">
             <div className="m-auto">
               <JsxParser components={{ Button }} jsx={buttonCode} />
             </div>

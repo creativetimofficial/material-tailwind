@@ -21,7 +21,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Github"
             iconClass="fab fa-github"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Contribute to our project and help our community!
           </Feature>
@@ -30,7 +30,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Discord"
             iconClass="fab fa-discord"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Join our Discord community and let’s get to know each other.
           </Feature>
@@ -39,7 +39,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Twitter"
             iconClass="fab fa-twitter"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Follow us on Twitter and keep up-to-date with our latest news.
           </Feature>

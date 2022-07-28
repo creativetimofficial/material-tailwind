@@ -1,11 +1,11 @@
 const chipCloseButtonColors: object = {
-  "blue-grey": {
-    default: "bg-blue-grey-800",
-    hover: "hover:bg-blue-grey-900",
+  "blue-gray": {
+    default: "bg-blue-gray-800",
+    hover: "hover:bg-blue-gray-900",
   },
-  grey: {
-    default: "bg-grey-800",
-    hover: "hover:bg-grey-900",
+  gray: {
+    default: "bg-gray-800",
+    hover: "hover:bg-gray-900",
   },
   brown: {
     default: "bg-brown-800",

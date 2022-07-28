@@ -18,7 +18,7 @@ export const tabPanel: TabPanelStylesType = {
     base: {
       width: "w-full",
       height: "h-max",
-      color: "text-grey-700",
+      color: "text-gray-700",
       p: "p-4",
       fontSmoothing: "antialiased",
       fontFamily: "font-sans",

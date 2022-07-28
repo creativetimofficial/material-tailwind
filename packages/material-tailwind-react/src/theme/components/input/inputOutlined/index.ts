@@ -7,7 +7,7 @@ const inputOutlined = {
     input: {
       borderWidth: "placeholder-shown:border",
       borderColor:
-        "placeholder-shown:border-blue-grey-200 placeholder-shown:border-t-blue-grey-200",
+        "placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200",
       floated: {
         borderWidth: "border focus:border-2",
         borderColor: "border-t-transparent focus:border-t-transparent",

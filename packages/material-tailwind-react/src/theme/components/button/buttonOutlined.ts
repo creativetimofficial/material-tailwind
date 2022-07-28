@@ -6,18 +6,18 @@ const buttonOutlined: object = {
     focus: "focus:ring focus:ring-white/50",
     active: "active:opacity-[0.85]",
   },
-  "blue-grey": {
-    border: "border border-blue-grey-500",
-    color: "text-blue-grey-500",
+  "blue-gray": {
+    border: "border border-blue-gray-500",
+    color: "text-blue-gray-500",
     hover: "hover:opacity-75",
-    focus: "focus:ring focus:ring-blue-grey-200",
+    focus: "focus:ring focus:ring-blue-gray-200",
     active: "active:opacity-[0.85]",
   },
-  grey: {
-    border: "border border-grey-500",
-    color: "text-grey-500",
+  gray: {
+    border: "border border-gray-500",
+    color: "text-gray-500",
     hover: "hover:opacity-75",
-    focus: "focus:ring focus:ring-grey-200",
+    focus: "focus:ring focus:ring-gray-200",
     active: "active:opacity-[0.85]",
   },
   brown: {

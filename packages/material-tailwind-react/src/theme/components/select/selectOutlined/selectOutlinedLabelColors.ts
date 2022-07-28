@@ -1,41 +1,41 @@
 const selectOutlinedLabelColors: object = {
-  "blue-grey": {
+  "blue-gray": {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
     open: {
-      color: "text-blue-grey-500",
-      before: "before:border-blue-grey-500",
-      after: "after:border-blue-grey-500",
+      color: "text-blue-gray-500",
+      before: "before:border-blue-gray-500",
+      after: "after:border-blue-gray-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
-  grey: {
+  gray: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
     open: {
-      color: "text-grey-500",
-      before: "before:border-grey-500",
-      after: "after:border-grey-500",
+      color: "text-gray-500",
+      before: "before:border-gray-500",
+      after: "after:border-gray-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   brown: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -45,14 +45,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-brown-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   "deep-orange": {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -62,14 +62,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-deep-orange-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   orange: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -79,14 +79,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-orange-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   amber: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -96,14 +96,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-amber-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   yellow: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -113,14 +113,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-yellow-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   lime: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -130,14 +130,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-lime-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   "light-green": {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -147,14 +147,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-light-green-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   green: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -164,14 +164,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-green-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   teal: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -181,14 +181,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-teal-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   cyan: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -198,14 +198,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-cyan-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   "light-blue": {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -215,14 +215,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-light-blue-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   blue: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -232,14 +232,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-blue-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   indigo: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -249,14 +249,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-indigo-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   "deep-purple": {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -266,14 +266,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-deep-purple-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   purple: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -283,14 +283,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-purple-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   pink: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -300,14 +300,14 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-pink-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
   red: {
     close: {
-      color: "text-blue-grey-400",
+      color: "text-blue-gray-400",
       before: "before:border-transparent",
       after: "after:border-transparent",
     },
@@ -317,9 +317,9 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-red-500",
     },
     withValue: {
-      color: "text-blue-grey-400",
-      before: "before:border-blue-grey-200",
-      after: "after:border-blue-grey-200",
+      color: "text-blue-gray-400",
+      before: "before:border-blue-gray-200",
+      after: "after:border-blue-gray-200",
     },
   },
 };

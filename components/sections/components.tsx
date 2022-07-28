@@ -43,7 +43,7 @@ export default function SectionComponents() {
 <Card className="shadow-lg">
   <CardHeader
     variant="gradient"
-    color="grey"
+    color="gray"
     className="h-48"
   >
     <img
@@ -75,7 +75,7 @@ export default function SectionComponents() {
             alt="tailwind_blob_purple"
           />
           <Card className="card absolute top-0 -right-5 z-30 mt-36 hidden w-5/6 shadow-lg md:-right-44 md:left-60 md:mt-0 lg:-top-[28rem] lg:right-auto lg:left-[22rem] lg:grid lg:w-[54%]">
-            <CardHeader variant="gradient" color="grey" className="h-48">
+            <CardHeader variant="gradient" color="gray" className="h-48">
               <Image
                 src="/img/blog-2.jpg"
                 alt="tailwind_img_blur_shadow"

@@ -1,13 +1,13 @@
 const radioColors: object = {
-  "blue-grey": {
-    color: "text-blue-grey-500",
-    border: "checked:border-blue-grey-500",
-    before: "checked:before:bg-blue-grey-500",
+  "blue-gray": {
+    color: "text-blue-gray-500",
+    border: "checked:border-blue-gray-500",
+    before: "checked:before:bg-blue-gray-500",
   },
-  grey: {
-    color: "text-grey-500",
-    border: "checked:border-grey-500",
-    before: "checked:before:bg-grey-500",
+  gray: {
+    color: "text-gray-500",
+    border: "checked:border-gray-500",
+    before: "checked:before:bg-gray-500",
   },
   brown: {
     color: "text-brown-500",

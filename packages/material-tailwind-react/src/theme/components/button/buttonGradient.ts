@@ -1,24 +1,24 @@
 const buttonGradient: object = {
   white: {
     backgroud: "bg-white",
-    color: "text-blue-grey-900",
-    shadow: "shadow-md shadow-blue-grey-500/10",
-    hover: "hover:shadow-lg hover:shadow-blue-grey-500/20",
+    color: "text-blue-gray-900",
+    shadow: "shadow-md shadow-blue-gray-500/10",
+    hover: "hover:shadow-lg hover:shadow-blue-gray-500/20",
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },
-  "blue-grey": {
-    backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
+  "blue-gray": {
+    backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
     color: "text-white",
-    shadow: "shadow-md shadow-blue-grey-500/20",
-    hover: "hover:shadow-lg hover:shadow-blue-grey-500/40",
+    shadow: "shadow-md shadow-blue-gray-500/20",
+    hover: "hover:shadow-lg hover:shadow-blue-gray-500/40",
     active: "active:opacity-[0.85]",
   },
-  grey: {
-    backgroud: "bg-gradient-to-tr from-grey-600 to-grey-400",
+  gray: {
+    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
     color: "text-white",
-    shadow: "shadow-md shadow-grey-500/20",
-    hover: "hover:shadow-lg hover:shadow-grey-500/40",
+    shadow: "shadow-md shadow-gray-500/20",
+    hover: "hover:shadow-lg hover:shadow-gray-500/40",
     active: "active:opacity-[0.85]",
   },
   brown: {

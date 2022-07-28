@@ -25,7 +25,7 @@ export const cardFooter: CardFooterStylesType = {
       },
       divider: {
         borderWidth: "border-t",
-        borderColor: "border-blue-grey-50",
+        borderColor: "border-blue-gray-50",
       },
     },
   },

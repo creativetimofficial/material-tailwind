@@ -1,35 +1,35 @@
 const selectStaticLabelColors: object = {
-  "blue-grey": {
+  "blue-gray": {
     close: {
-      color: "text-blue-grey-500",
-      after: "after:border-blue-grey-500",
+      color: "text-blue-gray-500",
+      after: "after:border-blue-gray-500",
     },
     open: {
-      color: "text-blue-grey-500",
-      after: "after:border-blue-grey-500",
+      color: "text-blue-gray-500",
+      after: "after:border-blue-gray-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
-      after: "after:border-blue-grey-50",
+      color: "text-blue-gray-500",
+      after: "after:border-blue-gray-50",
     },
   },
-  grey: {
+  gray: {
     close: {
-      color: "text-blue-grey-500",
-      after: "after:border-grey-500",
+      color: "text-blue-gray-500",
+      after: "after:border-gray-500",
     },
     open: {
-      color: "text-grey-500",
-      after: "after:border-grey-500",
+      color: "text-gray-500",
+      after: "after:border-gray-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
-      after: "after:border-grey-500",
+      color: "text-blue-gray-500",
+      after: "after:border-gray-500",
     },
   },
   brown: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-brown-500",
     },
     open: {
@@ -37,13 +37,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-brown-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-brown-500",
     },
   },
   "deep-orange": {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-deep-orange-500",
     },
     open: {
@@ -51,13 +51,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-deep-orange-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-deep-orange-500",
     },
   },
   orange: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-orange-500",
     },
     open: {
@@ -65,13 +65,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-orange-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-orange-500",
     },
   },
   amber: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-amber-500",
     },
     open: {
@@ -79,13 +79,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-amber-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-amber-500",
     },
   },
   yellow: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-yellow-500",
     },
     open: {
@@ -93,13 +93,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-yellow-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-yellow-500",
     },
   },
   lime: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-lime-500",
     },
     open: {
@@ -107,13 +107,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-lime-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-lime-500",
     },
   },
   "light-green": {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-light-green-500",
     },
     open: {
@@ -121,13 +121,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-light-green-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-light-green-500",
     },
   },
   green: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-green-500",
     },
     open: {
@@ -135,13 +135,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-green-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-green-500",
     },
   },
   teal: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-teal-500",
     },
     open: {
@@ -149,13 +149,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-teal-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-teal-500",
     },
   },
   cyan: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-cyan-500",
     },
     open: {
@@ -163,13 +163,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-cyan-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-cyan-500",
     },
   },
   "light-blue": {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-light-blue-500",
     },
     open: {
@@ -177,13 +177,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-light-blue-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-light-blue-500",
     },
   },
   blue: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-blue-500",
     },
     open: {
@@ -191,13 +191,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-blue-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-blue-500",
     },
   },
   indigo: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-indigo-500",
     },
     open: {
@@ -205,13 +205,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-indigo-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-indigo-500",
     },
   },
   "deep-purple": {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-deep-purple-500",
     },
     open: {
@@ -219,13 +219,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-deep-purple-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-deep-purple-500",
     },
   },
   purple: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-purple-500",
     },
     open: {
@@ -233,13 +233,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-purple-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-purple-500",
     },
   },
   pink: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-pink-500",
     },
     open: {
@@ -247,13 +247,13 @@ const selectStaticLabelColors: object = {
       after: "after:border-pink-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-pink-500",
     },
   },
   red: {
     close: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-red-500",
     },
     open: {
@@ -261,7 +261,7 @@ const selectStaticLabelColors: object = {
       after: "after:border-red-500",
     },
     withValue: {
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
       after: "after:border-red-500",
     },
   },

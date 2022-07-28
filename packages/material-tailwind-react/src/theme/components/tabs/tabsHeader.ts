@@ -18,7 +18,7 @@ export const tabsHeader: TabsHeaderStylesType = {
     base: {
       display: "flex",
       position: "relative",
-      bg: "bg-blue-grey-50",
+      bg: "bg-blue-gray-50",
       bgOpacity: "bg-opacity-60",
       borderRadius: "rounded-lg",
       p: "p-1",
