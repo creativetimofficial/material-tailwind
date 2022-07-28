@@ -11,8 +11,12 @@ import {useEffect} from "react";
 
 // page components
 import Navbar from "components/layout/navbar";
-import Header from "components/layout/header";
 import Footer from "components/layout/footer";
+
+import Image from "next/image";
+import Link from "next/link";
+import dynamic from 'next/dynamic';
+
 
 export default function Presentation() {
   useEffect(() => {
@@ -34,11 +38,76 @@ export default function Presentation() {
         <meta
           name="keywords"
           content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
-        />
+        /> 
       </Head>
       <Navbar shadow />
       <main className="relative">
-        <Header />
+      <div className="h-screen min-h-screen">
+      <div className="relative z-50 h-fit py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="mt-48 w-full px-4 md:w-8/12 lg:mt-4 lg:w-5/12">
+              <h1 className="mb-2 !font-sans tracking-normal text-[#1A237E]">
+                People who care about your growth
+              </h1>
+              <p className="mb-6 text-lg !font-light text-[#1A237E] lg:pr-12">
+                Powerful, self-serve product and growth <br/>
+                analytics to help you convert, engage, and retain
+                more
+              </p>
+              <div className="flex flex-col-reverse gap-2 lg:flex-row">
+                <div className="w-6/12">
+                  <div className="input-group input-group-outline">
+                    <label className="form-label">Outline</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+                <div className="w-3/12">
+                  <button className="button button-pink" data-ripple-light="true">
+                    Get started
+                  </button>
+                </div>
+              </div>
+              <p className="text-sm mt-3">We care about your data in our privacy policy</p>
+              <div className="flex mt-5">
+                <a href="#" className="avatar avatar-circular avatar-md">
+                  <img alt="Image placeholder" src="/img/face-2.jpg" />
+                </a>
+                <a href="#" className="avatar avatar-circular avatar-md">
+                  <img alt="Image placeholder" src="/img/face-2.jpg" />
+                </a>
+                <a href="#" className="avatar avatar-circular avatar-md">
+                  <img alt="Image placeholder" src="/img/face-2.jpg" />
+                </a>
+                <a href="#" className="avatar avatar-circular avatar-md">
+                  <img alt="Image placeholder" src="/img/face-2.jpg" />
+                </a>
+                <div className="flex">
+                  <i className="material-icons text-yellow-700">star</i>
+                  <i className="material-icons text-yellow-700">star</i>
+                  <i className="material-icons text-yellow-700">star</i>
+                  <i className="material-icons text-yellow-700">star</i>
+                  <i className="material-icons text-yellow-700">star</i>
+                  <br/><br/>
+                  <p>from 200+ reviews</p>
+                  <p className="ml-3 font-semibold">5.0</p>
+                </div>
+              </div>
+            </div>
+            <div className="hidden w-full max-w-full px-4 pt-24 md:w-6/12 md:pt-0 lg:block">
+              <Image
+                src="/img/team.jpg"
+                alt="components"
+                width={1000}
+                height={700}
+                quality={100}
+                className="aspect-auto rounded-md"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
         <Card
           shadow={false}
           className="mx-6 -mt-20 bg-white md:mx-12 md:-mt-48"
@@ -159,6 +228,21 @@ export default function Presentation() {
               <div id="sliderRegular"></div>
             </div>
 
+            <div className="my-5 w-4/12">
+              <select
+                className="form-control"
+                name="multi-select"
+                id="multi-select"
+                placeholder="Location"
+                data-type="select-multiple"
+              >
+                <option defaultValue="Choice 1" selected>Brazil</option>
+                <option defaultValue="Choice 2">Bucharest</option>
+                <option defaultValue="Choice 3">London</option>
+                <option defaultValue="Choice 4">Washington</option>
+              </select>
+            </div>
+
             <div className="w-4/12 my-5"> 
               <div className="container">
                 <form id="form" className="form">
@@ -186,6 +270,10 @@ export default function Presentation() {
                   <button className="button button-pink">Submit</button>
                 </form>
               </div>
+            </div>
+
+            <div className="my-5">
+              
             </div>
           </div>
         </Card>
