@@ -21,7 +21,7 @@ export interface AccordionHeaderProps extends React.ComponentProps<"button"> {
 export const AccordionHeader = React.forwardRef<HTMLButtonElement, AccordionHeaderProps>(
   ({ className, children, ...rest }, ref) => {
     // 1. init
-    const { open, icon } = useAccordion();
+    const { open, icon, disabled } = useAccordion();
     const { accordion } = useTheme();
     const {
       styles: { base },
@@ -40,7 +40,7 @@ export const AccordionHeader = React.forwardRef<HTMLButtonElement, AccordionHead
 
     // 4. return
     return (
-      <button {...rest} ref={ref} type="button" className={buttonStyles}>
+      <button {...rest} ref={ref} type="button" disabled={disabled} className={buttonStyles}>
         {children}
         <span className={iconClasses}>
           {icon ??

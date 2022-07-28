@@ -63,7 +63,10 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     );
 
     // 4. memoize context value
-    const contextValue = React.useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
+    const contextValue = React.useMemo(
+      () => ({ open, icon, animate, disabled }),
+      [open, icon, animate, disabled],
+    );
 
     // 5. return
     return (

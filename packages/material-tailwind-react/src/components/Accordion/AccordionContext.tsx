@@ -1,13 +1,14 @@
 import React from "react";
 
 // types
-import type { open, icon, animate, children } from "../../types/components/accordion";
+import type { open, icon, animate, children, disabled } from "../../types/components/accordion";
 import { propTypesValue, propTypesChildren } from "../../types/components/accordion";
 
 export interface AccordionContextType {
   open: open;
   icon: icon;
   animate: animate;
+  disabled: disabled;
 }
 
 export const AccordionContext = React.createContext<AccordionContextType | null>(null);
