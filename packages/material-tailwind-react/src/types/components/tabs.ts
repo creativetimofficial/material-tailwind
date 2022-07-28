@@ -10,6 +10,7 @@ import { propTypesAnimation } from "../generic";
  */
 
 // typescript types
+export type id = string;
 export type value = string | number;
 export type animate = animation;
 export type disabled = boolean;
@@ -20,6 +21,7 @@ export type indicatorProps = {
 export type children = ReactNode;
 
 // javascript prop-types
+export const propTypesId: any = PropTypes.string;
 export const propTypesValue: any = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number,

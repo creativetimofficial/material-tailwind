@@ -6,7 +6,7 @@ import objectsToString from "../../utils/objectsToString";
 
 // context
 import { useTheme } from "../../context/theme";
-import { useTabs } from "./TabsContext";
+import { useTabs, setIndicator } from "./TabsContext";
 
 // types
 import type { indicatorProps, className, children } from "../../types/components/tabs";
@@ -30,12 +30,11 @@ export const TabsHeader = React.forwardRef<HTMLUListElement, TabsHeaderProps>(
       defaultProps,
       styles: { base },
     } = tabsHeader;
-    const { tab, setTab } = useTabs();
+    const { dispatch } = useTabs();
 
     React.useEffect(() => {
-      setTab({ ...tab, indicatorProps });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [indicatorProps]);
+      setIndicator(dispatch, indicatorProps);
+    }, [dispatch, indicatorProps]);
 
     // 2. set default props
     className = className ?? defaultProps.className;
