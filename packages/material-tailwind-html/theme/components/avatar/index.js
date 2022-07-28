@@ -44,6 +44,22 @@ const avatar = (theme) => ({
       height: "5rem",
       width: "5rem",
     }
+  },
+
+  ".avatar-group": {
+    ".avatar": {
+      position: "relative",
+      "z-index": "2",
+      border: "2px solid " + theme("colors.white"),
+
+      "&:hover": {
+        "z-index": "3"
+      },
+
+      "+ .avatar": {
+        "margin-left": "-1rem"
+      }
+    }
   }
 });
 
