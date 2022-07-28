@@ -260,6 +260,7 @@ export const select: SelectStylesType = {
           opacity: "opacity-50",
           cursor: "cursor-not-allowed",
           userSelect: "select-none",
+          pointerEvents: "pointer-events-none",
         },
       },
     },

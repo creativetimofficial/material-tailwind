@@ -80,6 +80,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       role="option"
       ref={(node) => (listRef.current[index] = node)}
       className={classes}
+      disabled={disabled}
       tabIndex={activeIndex === index ? 0 : 1}
       aria-selected={activeIndex === index && selectedIndex === index}
       data-selected={selectedIndex === index}
