@@ -9,7 +9,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import classnames from "classnames";
 import objectsToString from "../../utils/objectsToString";
 

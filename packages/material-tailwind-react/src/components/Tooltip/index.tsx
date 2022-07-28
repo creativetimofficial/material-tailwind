@@ -21,7 +21,7 @@ import {
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
 import objectsToString from "../../utils/objectsToString";
