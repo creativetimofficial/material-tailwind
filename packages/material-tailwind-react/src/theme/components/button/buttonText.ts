@@ -1,4 +1,9 @@
 const buttonText: object = {
+  white: {
+    color: "text-white",
+    hover: "hover:bg-white/10",
+    active: "active:bg-white/30",
+  },
   "blue-grey": {
     color: "text-blue-grey-500",
     hover: "hover:bg-blue-grey-500/10",
