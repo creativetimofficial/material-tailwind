@@ -18,11 +18,12 @@ import {
 } from "@floating-ui/react-dom-interactions";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import merge from "deepmerge";
 import objectsToString from "../../utils/objectsToString";
 
@@ -105,7 +106,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tooltipClasses = classnames(objectsToString(base), className);
+    const tooltipClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. set animation
     const animation = {

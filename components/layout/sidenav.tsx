@@ -32,7 +32,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
       }`}
     >
       <div
-        className={`fixed top-0 left-0 h-screen w-screen bg-grey-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed top-0 left-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileNav
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -40,12 +40,12 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
       />
       <div className="fixed h-screen w-80 overflow-y-scroll bg-white pb-48 pt-6 pl-6 lg:w-64 lg:bg-transparent lg:pt-0 lg:pl-0">
         <div className="flex items-center justify-between">
-          <Typography variant="h4" color="blue-grey">
+          <Typography variant="h4" color="blue-gray">
             Documentation
           </Typography>
           <Typography
             variant="h5"
-            className="mr-3 mt-px cursor-pointer p-2 !text-blue-grey-500 transition-colors hover:!text-blue-grey-900 lg:hidden"
+            className="mr-3 mt-px cursor-pointer p-2 text-blue-gray-500 transition-colors hover:text-blue-gray-900 lg:hidden"
             onClick={() => setMobileNav(false)}
           >
             <svg
@@ -71,7 +71,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                 >
                   <i className={icon} />
                 </div>
-                <Typography color="blue-grey" className="font-bold capitalize">
+                <Typography color="blue-gray" className="font-bold capitalize">
                   {name}
                 </Typography>
               </div>
@@ -81,11 +81,11 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                     <Link href={`/docs/${type}/${page}`}>
                       <a>
                         <Typography
-                          color="grey"
-                          className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-grey-900 hover:before:bg-blue-grey-900 ${
+                          color="gray"
+                          className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
                             page === slug
-                              ? "font-medium text-blue-grey-900 before:bg-blue-grey-900"
-                              : "font-normal text-blue-grey-400 before:bg-blue-grey-300"
+                              ? "font-medium text-blue-gray-900 before:bg-blue-gray-900"
+                              : "font-normal text-blue-gray-400 before:bg-blue-gray-300"
                           }`}
                           onClick={() => setMobileNav(false)}
                         >

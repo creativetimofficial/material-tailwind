@@ -1,8 +1,8 @@
 import React, { forwardRef, isValidElement, Children } from "react";
-import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -42,7 +42,7 @@ export const Breadcrumbs = forwardRef<HTMLOListElement, BreadcrumbsProps>(
     const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
       [objectsToString(base.root.fullWidth)]: fullWidth,
     });
-    const breadcrumbsListClasses = classnames(objectsToString(base.list), className);
+    const breadcrumbsListClasses = twMerge(classnames(objectsToString(base.list)), className);
     const breadcrumbsItemClasses = classnames(objectsToString(base.item.initial));
     const breadcrumbsSeparatorClasses = classnames(objectsToString(base.separator));
 

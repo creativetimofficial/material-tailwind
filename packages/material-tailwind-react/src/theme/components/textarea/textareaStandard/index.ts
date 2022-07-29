@@ -6,7 +6,7 @@ const textareaStandard = {
   base: {
     textarea: {
       borderWidth: "border-b",
-      borderColor: "placeholder-shown:border-blue-grey-200",
+      borderColor: "placeholder-shown:border-blue-gray-200",
     },
     label: textareaStandardLabel,
   },

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -56,11 +57,13 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     );
     const typographyColor = colors[findMatch(valid.colors, color, "inherit")];
     const gradientTextClasses = objectsToString(gradient);
-    const classes = classnames(
-      typographyVariant,
-      { [typographyColor.color]: !textGradient },
-      { [gradientTextClasses]: textGradient },
-      { [typographyColor.gradient]: textGradient },
+    const classes = twMerge(
+      classnames(
+        typographyVariant,
+        { [typographyColor.color]: !textGradient },
+        { [gradientTextClasses]: textGradient },
+        { [typographyColor.gradient]: textGradient },
+      ),
       className,
     );
 

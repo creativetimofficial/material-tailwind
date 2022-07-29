@@ -7,6 +7,7 @@ import { motion, MotionProps } from "framer-motion";
 import classnames from "classnames";
 import merge from "deepmerge";
 import objectsToString from "../../utils/objectsToString";
+import { twMerge } from "tailwind-merge";
 
 // context
 import { useAccordion } from "./AccordionContext";
@@ -36,7 +37,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     className = className ?? "";
 
     // 3. set styles
-    const bodyClasses = classnames(objectsToString(base.body), className);
+    const bodyClasses = twMerge(classnames(objectsToString(base.body)), className);
 
     // 4. set animation
     const heightAnimation = {

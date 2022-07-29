@@ -189,9 +189,3 @@ table tbody tr td code {
   text-align: right;
   color: rgba(255, 255, 255, 0.25);
 }
-
-.navbar-item-docs p {
-  margin-bottom: 0 !important;
-  font-size: 0.875rem !important;
-  color: #212121 !important;
-}

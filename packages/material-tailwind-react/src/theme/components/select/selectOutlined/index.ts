@@ -70,7 +70,7 @@ const selectOutlined = {
       },
       label: {
         fontSize: "text-sm",
-        disabled: "peer-disabled:text-blue-grey-400",
+        disabled: "peer-disabled:text-blue-gray-400",
         before: {
           bt: "before:border-t-transparent",
           bl: "before:border-l-transparent",

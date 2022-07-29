@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -59,12 +60,11 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
     const progressContainer = objectsToString(base.container.initial);
     const progressWithLabel = objectsToString(base.container.withLabel);
     const progressBar = objectsToString(base.bar);
-    const containerClasses = classnames(
-      progressContainer,
-      { [progressWithLabel]: label },
+    const containerClasses = twMerge(
+      classnames(progressContainer, { [progressWithLabel]: label }),
       className,
     );
-    const barClasses = classnames(progressBar, progressVariant, barProps?.className);
+    const barClasses = twMerge(classnames(progressBar, progressVariant), barProps?.className);
 
     // 4. return
     return (

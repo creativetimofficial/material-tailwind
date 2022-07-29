@@ -52,7 +52,7 @@ export default function SectionShadow() {
             alt="tailwind_blob_blue"
           />
           <img
-            className="absolute top-36 right-0 z-30 w-1/2 rounded-lg shadow-2xl shadow-blue-grey-500/20 md:top-12 lg:-right-24"
+            className="shadow-blue-gray-500/20 absolute top-36 right-0 z-30 w-1/2 rounded-lg shadow-2xl md:top-12 lg:-right-24"
             src="/img/shadows.png"
             alt="tailwind_shadows"
           />

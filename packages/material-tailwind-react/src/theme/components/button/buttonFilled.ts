@@ -1,17 +1,25 @@
 const buttonFilled: object = {
-  "blue-grey": {
-    backgroud: "bg-blue-grey-500",
-    color: "text-white",
-    shadow: "shadow-md shadow-blue-grey-500/20",
-    hover: "hover:shadow-lg hover:shadow-blue-grey-500/40",
+  white: {
+    backgroud: "bg-white",
+    color: "text-blue-gray-900",
+    shadow: "shadow-md shadow-blue-gray-500/10",
+    hover: "hover:shadow-lg hover:shadow-blue-gray-500/20",
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },
-  grey: {
-    backgroud: "bg-grey-500",
+  "blue-gray": {
+    backgroud: "bg-blue-gray-500",
     color: "text-white",
-    shadow: "shadow-md shadow-grey-500/20",
-    hover: "hover:shadow-lg hover:shadow-grey-500/40",
+    shadow: "shadow-md shadow-blue-gray-500/20",
+    hover: "hover:shadow-lg hover:shadow-blue-gray-500/40",
+    focus: "focus:opacity-[0.85] focus:shadow-none",
+    active: "active:opacity-[0.85] active:shadow-none",
+  },
+  gray: {
+    backgroud: "bg-gray-500",
+    color: "text-white",
+    shadow: "shadow-md shadow-gray-500/20",
+    hover: "hover:shadow-lg hover:shadow-gray-500/40",
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },

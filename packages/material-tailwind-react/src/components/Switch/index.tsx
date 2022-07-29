@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // utils
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -14,7 +15,6 @@ import { useTheme } from "../../context/theme";
 import type {
   color,
   label,
-  icon,
   ripple,
   className,
   containerProps,
@@ -58,20 +58,27 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
 
     // 4. set styles
     const rootClasses = classnames(objectsToString(base.root));
-    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
-    const inputClasses = classnames(
-      objectsToString(base.input),
-      objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+    const containerClasses = twMerge(
+      classnames(objectsToString(base.container)),
+      containerProps?.className,
+    );
+    const inputClasses = twMerge(
+      classnames(
+        objectsToString(base.input),
+        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+      ),
       className,
     );
-    const circleClasses = classnames(
-      objectsToString(base.circle),
-      colors[findMatch(valid.colors, color, "blue")].circle,
-      colors[findMatch(valid.colors, color, "blue")].before,
+    const circleClasses = twMerge(
+      classnames(
+        objectsToString(base.circle),
+        colors[findMatch(valid.colors, color, "blue")].circle,
+        colors[findMatch(valid.colors, color, "blue")].before,
+      ),
       circleProps?.className,
     );
     const rippleClasses = classnames(objectsToString(base.ripple));
-    const labelClasses = classnames(objectsToString(base.label), labelProps?.className);
+    const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
 
     // 4. return
     return (

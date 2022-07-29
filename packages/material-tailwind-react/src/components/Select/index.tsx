@@ -23,6 +23,7 @@ import { AnimatePresence, motion, useIsomorphicLayoutEffect } from "framer-motio
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import merge from "deepmerge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
@@ -289,35 +290,39 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       objectsToString(base.container),
       objectsToString(selectSize.container),
     );
-    const selectClasses = classnames(
-      objectsToString(base.select),
-      objectsToString(selectVariant.base.select),
-      objectsToString(stateClasses.select),
-      objectsToString(selectSize.select),
-      { [objectsToString(selectColor[state])]: !error && !success },
-      { [objectsToString(selectError.initial)]: error },
-      { [objectsToString(selectError.states[state])]: error },
-      { [objectsToString(selectSuccess.initial)]: success },
-      { [objectsToString(selectSuccess.states[state])]: success },
+    const selectClasses = twMerge(
+      classnames(
+        objectsToString(base.select),
+        objectsToString(selectVariant.base.select),
+        objectsToString(stateClasses.select),
+        objectsToString(selectSize.select),
+        { [objectsToString(selectColor[state])]: !error && !success },
+        { [objectsToString(selectError.initial)]: error },
+        { [objectsToString(selectError.states[state])]: error },
+        { [objectsToString(selectSuccess.initial)]: success },
+        { [objectsToString(selectSuccess.states[state])]: success },
+      ),
       className,
     );
-    const labelClasses = classnames(
-      objectsToString(base.label),
-      objectsToString(selectVariant.base.label),
-      objectsToString(stateClasses.label),
-      objectsToString(selectSize.label.initial),
-      objectsToString(selectSize.label.states[state]),
-      { [objectsToString(labelColor[state])]: !error && !success },
-      { [objectsToString(labelError.initial)]: error },
-      { [objectsToString(labelError.states[state])]: error },
-      { [objectsToString(labelSuccess.initial)]: success },
-      { [objectsToString(labelSuccess.states[state])]: success },
+    const labelClasses = twMerge(
+      classnames(
+        objectsToString(base.label),
+        objectsToString(selectVariant.base.label),
+        objectsToString(stateClasses.label),
+        objectsToString(selectSize.label.initial),
+        objectsToString(selectSize.label.states[state]),
+        { [objectsToString(labelColor[state])]: !error && !success },
+        { [objectsToString(labelError.initial)]: error },
+        { [objectsToString(labelError.states[state])]: error },
+        { [objectsToString(labelSuccess.initial)]: success },
+        { [objectsToString(labelSuccess.states[state])]: success },
+      ),
       labelProps.className ?? "",
     );
     const arrowClasses = classnames(objectsToString(base.arrow.initial), {
       [objectsToString(base.arrow.active)]: open,
     });
-    const menuClasses = classnames(objectsToString(base.menu), menuProps.className ?? "");
+    const menuClasses = twMerge(classnames(objectsToString(base.menu)), menuProps.className ?? "");
     const buttonContentClasses = classnames(
       "absolute top-2/4 -translate-y-2/4",
       variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3",

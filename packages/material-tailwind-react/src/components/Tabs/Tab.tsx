@@ -1,16 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // framer-motion
 import { motion } from "framer-motion";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
 import { useTheme } from "../../context/theme";
-import { useTabs } from "./TabsContext";
+import { useTabs, setActive } from "./TabsContext";
 
 // types
 import type { value, className, disabled, children } from "../../types/components/tabs";
@@ -36,21 +36,22 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
       defaultProps,
       styles: { base },
     } = tabTheme;
-    const { tab, setTab } = useTabs();
-    const { active, indicatorProps } = tab;
+    const { state, dispatch } = useTabs();
+    const { id, active, indicatorProps } = state;
 
     // 2. set default props
     className = className ?? defaultProps.className;
     disabled = disabled ?? defaultProps.disabled;
 
     // 3. set styles
-    const tabClasses = classnames(
-      objectsToString(base.tab.initial),
-      { [objectsToString(base.tab.disabled)]: disabled },
+    const tabClasses = twMerge(
+      classnames(objectsToString(base.tab.initial), {
+        [objectsToString(base.tab.disabled)]: disabled,
+      }),
       className,
     );
-    const indicatorClasses = classnames(
-      objectsToString(base.indicator),
+    const indicatorClasses = twMerge(
+      classnames(objectsToString(base.indicator)),
       indicatorProps?.className ?? "",
     );
 
@@ -65,11 +66,11 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
           const onClick = rest?.onClick;
 
           if (typeof onClick === "function") {
-            setTab({ ...tab, active: value });
+            setActive(dispatch, value);
             onClick(e);
           }
 
-          setTab({ ...tab, active: value });
+          setActive(dispatch, value);
         }}
         data-value={value}
       >
@@ -79,7 +80,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
             {...indicatorProps}
             transition={{ duration: 0.5 }}
             className={indicatorClasses}
-            layoutId="indicator"
+            layoutId={id}
           />
         )}
       </li>

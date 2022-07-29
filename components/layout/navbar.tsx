@@ -98,7 +98,11 @@ export default function Navbar({
   );
 
   const navbarMenu = (
-    <ul className="mb-0 flex list-none flex-col gap-2 pl-0 text-inherit lg:ml-auto lg:flex-row lg:gap-4">
+    <ul
+      className={`${
+        open ? "mt-4" : ""
+      } mb-0 flex list-none flex-col gap-2 pl-0 text-inherit transition-all lg:ml-auto lg:flex-row lg:gap-4`}
+    >
       <Menu placement="bottom" offset={-2.5}>
         <MenuHandler>
           <li>
@@ -194,8 +198,8 @@ export default function Navbar({
     >
       <MTNavbar
         {...rest}
-        className={`!block py-2 pl-6 pr-5 ${
-          shadow ? "shadow-2xl shadow-blue-grey-500/10" : ""
+        className={`!block py-4 pl-6 pr-5 lg:py-2 ${
+          shadow ? "shadow-2xl shadow-blue-gray-500/10" : ""
         }`}
         shadow={shadow}
       >

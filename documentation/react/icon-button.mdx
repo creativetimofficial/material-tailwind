@@ -7,6 +7,7 @@ navigation:
     "icon-button-variants",
     "icon-button-sizes",
     "icon-button-colors",
+    "icon-button-ripple-effect",
     "props",
     "theme",
   ]
@@ -56,7 +57,7 @@ export default function Example() {
 
 ## Icon Button Variants
 
-The icon button component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>IconButton</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="icon-button-variants">
   <div className="flex gap-4">
@@ -102,7 +103,7 @@ export default function Variants() {
 
 ## Icon Button Sizes
 
-The icon button component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>IconButton</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
 <ComponentDemo id="icon-button-sizes">
   <div className="flex items-end gap-4">
@@ -142,7 +143,7 @@ export default function Sizes() {
 
 ## Icon Button Colors
 
-The icon button component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>IconButton</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="icon-button-colors">
   <div className="flex gap-4">
@@ -177,6 +178,40 @@ export default function Colors() {
         <i className="fas fa-heart" />
       </IconButton>
       <IconButton color="amber">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+
+---
+
+## Icon Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>IconButton</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="icon-button-ripple-effect">
+  <div className="flex w-max gap-4">
+    <IconButton ripple={true}>
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton ripple={false}>
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <IconButton ripple={true}>
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton ripple={false}>
         <i className="fas fa-heart" />
       </IconButton>
     </div>

@@ -18,9 +18,10 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -82,9 +83,11 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
 
     // 3. set styles
     const backdropClasses = classnames(objectsToString(base.backdrop));
-    const dialogClasses = classnames(
-      objectsToString(base.container),
-      objectsToString(sizes[findMatch(valid.sizes, size, "md")]),
+    const dialogClasses = twMerge(
+      classnames(
+        objectsToString(base.container),
+        objectsToString(sizes[findMatch(valid.sizes, size, "md")]),
+      ),
       className,
     );
 

@@ -7,6 +7,8 @@ navigation:
     "button-variants",
     "button-sizes",
     "button-colors",
+    "block-level-button",
+    "button-ripple-effect",
     "props",
     "theme",
   ]
@@ -30,11 +32,14 @@ next: card
 
 # Tailwind CSS Button - React
 
-Use our buttons based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our <Code>Button</Code> based on Tailwind CSS for actions in forms, dialogues, and more.
 
-Buttons are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form or placing an order as easy as possible.
+<Code>Button</Code> is an essential element of web design. Basically,
+<Code>Button</Code> is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
 
-See below our button example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our <Code>Button</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
@@ -54,7 +59,7 @@ export default function Example() {
 
 ## Button Variants
 
-The button component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Button</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="button-variants">
   <div className="flex w-max gap-4">
@@ -84,7 +89,7 @@ export default function Variants() {
 
 ## Button Sizes
 
-The button component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>Button</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
 <ComponentDemo id="button-sizes">
   <div className="flex w-max items-end gap-4">
@@ -112,7 +117,7 @@ export default function Sizes() {
 
 ## Button Colors
 
-The button component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Button</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="button-colors">
   <div className="flex w-max gap-4">
@@ -133,6 +138,50 @@ export default function Colors() {
       <Button color="red">color red</Button>
       <Button color="green">color green</Button>
       <Button color="amber">color amber</Button>
+    </div>
+  );
+}
+```
+
+---
+
+## Block Level Button
+
+A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<ComponentDemo id="block-level-button">
+  <Button fullWidth>block level button</Button>
+</ComponentDemo>
+
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button fullWidth>block level button</Button>;
+}
+```
+
+---
+
+## Button Ripple Effect
+
+You can turn on/off the ripple effect for the <Code>Button</Code> component using the <Code>ripple</Code> prop.
+
+<ComponentDemo id="button-ripple-effect">
+  <div className="flex w-max gap-4">
+    <Button ripple={true}>Ripple Effect On</Button>
+    <Button ripple={false}>Ripple Effect Off</Button>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-max gap-4">
+      <Button ripple={true}>Ripple Effect On</Button>
+      <Button ripple={false}>Ripple Effect Off</Button>
     </div>
   );
 }

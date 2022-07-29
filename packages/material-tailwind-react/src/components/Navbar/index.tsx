@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -67,7 +68,7 @@ export const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
         ],
       ),
     );
-    const navbarClasses = classnames(navbarRoot, navbarVariant, className);
+    const navbarClasses = twMerge(classnames(navbarRoot, navbarVariant), className);
 
     // 4. return
     return (

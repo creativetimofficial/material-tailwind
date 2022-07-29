@@ -1,22 +1,22 @@
 const cardFilled: object = {
   transparent: {
     backgroud: "bg-transparent",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-none",
   },
   white: {
     backgroud: "bg-white",
-    color: "text-grey-700",
+    color: "text-gray-700",
   },
-  "blue-grey": {
-    backgroud: "bg-blue-grey-500",
+  "blue-gray": {
+    backgroud: "bg-blue-gray-500",
     color: "text-white",
-    shadow: "shadow-blue-grey-500/40",
+    shadow: "shadow-blue-gray-500/40",
   },
-  grey: {
-    backgroud: "bg-grey-500",
+  gray: {
+    backgroud: "bg-gray-500",
     color: "text-white",
-    shadow: "shadow-grey-500/40",
+    shadow: "shadow-gray-500/40",
   },
   brown: {
     backgroud: "bg-brown-500",
@@ -35,17 +35,17 @@ const cardFilled: object = {
   },
   amber: {
     backgroud: "bg-amber-500",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-amber-500/40",
   },
   yellow: {
     backgroud: "bg-yellow-500",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-yellow-500/40",
   },
   lime: {
     backgroud: "bg-lime-500",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-lime-500/40",
   },
   "light-green": {

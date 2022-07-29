@@ -8,6 +8,8 @@ navigation:
     "select-sizes",
     "select-colors",
     "select-validations",
+    "custom-select-animation",
+    "disabled-select",
     "props",
     "theme",
   ]
@@ -31,11 +33,11 @@ next: switch
 
 # Tailwind CSS Select - React
 
-Use our Tailwind CSS select component to collect user provided information from a list of options.
+Use our Tailwind CSS <Code>Select</Code> component to collect user provided information from a list of options.
 
-A select component is a dropdown menu for displaying choices. Use the radio component when there are fewer total options (less than 5).
+A <Code>Select</Code> component is a dropdown menu for displaying choices. Use the radio component when there are fewer total options (less than 5).
 
-See below our select component example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt it easily to your needs.
+See below our <Code>Select</Code> component example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt it easily to your needs.
 
 <br />
 
@@ -73,7 +75,7 @@ export default function Example() {
 
 ## Select Variants
 
-The select component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Select</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="select-variants">
   <div className="flex w-full items-end gap-4">
@@ -137,7 +139,7 @@ export default function Variants() {
 
 ## Select Sizes
 
-The select component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>Select</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
 <ComponentDemo id="select-sizes">
   <div className="flex w-full items-end gap-4">
@@ -187,7 +189,7 @@ export default function Sizes() {
 
 ## Select Colors
 
-The select component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Select</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="select-colors">
   <div className="flex w-72 flex-col gap-4">
@@ -251,7 +253,7 @@ export default function Colors() {
 
 ## Select Validations
 
-The select component comes with error and success states for performing validations.
+The <Code>Select</Code> component comes with error and success states for performing validations.
 
 <ComponentDemo id="select-validations">
   <div className="flex w-full items-end gap-4">
@@ -286,6 +288,90 @@ export default function Validations() {
         <Option>Material Tailwind Svelte</Option>
       </Select>
       <Select label="Select Version" success>
+        <Option>Material Tailwind HTML</Option>
+        <Option>Material Tailwind React</Option>
+        <Option>Material Tailwind Vue</Option>
+        <Option>Material Tailwind Angular</Option>
+        <Option>Material Tailwind Svelte</Option>
+      </Select>
+    </div>
+  );
+}
+```
+
+---
+
+## Custom Select Animation
+
+You can modify the open/close state animation for <Code>Select</Code> component using the <Code>animate</Code> prop.
+
+<ComponentDemo id="custom-select-animation">
+  <div className="w-72">
+    <Select
+      label="Select Version"
+      animate={{
+        mount: { y: 0 },
+        unmount: { y: 25 },
+      }}
+    >
+      <Option>Material Tailwind HTML</Option>
+      <Option>Material Tailwind React</Option>
+      <Option>Material Tailwind Vue</Option>
+      <Option>Material Tailwind Angular</Option>
+      <Option>Material Tailwind Svelte</Option>
+    </Select>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Select, Option } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Select
+        label="Select Version"
+        animate={{
+          mount: { y: 0 },
+          unmount: { y: 25 },
+        }}
+      >
+        <Option>Material Tailwind HTML</Option>
+        <Option>Material Tailwind React</Option>
+        <Option>Material Tailwind Vue</Option>
+        <Option>Material Tailwind Angular</Option>
+        <Option>Material Tailwind Svelte</Option>
+      </Select>
+    </div>
+  );
+}
+```
+
+---
+
+## Disabled Select
+
+A <Code>Select</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Select</Code> component.
+
+<ComponentDemo id="disabled-select">
+  <div className="w-72">
+    <Select label="Select Version" disabled>
+      <Option>Material Tailwind HTML</Option>
+      <Option>Material Tailwind React</Option>
+      <Option>Material Tailwind Vue</Option>
+      <Option>Material Tailwind Angular</Option>
+      <Option>Material Tailwind Svelte</Option>
+    </Select>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Select, Option } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Select label="Select Version" disabled>
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
         <Option>Material Tailwind Vue</Option>

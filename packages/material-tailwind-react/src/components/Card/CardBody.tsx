@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -30,7 +31,7 @@ export const CardBody = React.forwardRef<HTMLDivElement, CardBodyProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const cardBodyClasses = classnames(objectsToString(base), className);
+    const cardBodyClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. return
     return (

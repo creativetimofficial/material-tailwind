@@ -24,13 +24,13 @@ next: popover
 
 Use our responsive Tailwind CSS navigation for your website. You can add links, icons, links with icons, search bars, and brand text.
 
-See below our simple navbar example that you can use in your Tailwind CSS and React project.
+See below our simple <Code>Navbar</Code> example that you can use in your Tailwind CSS and React project.
 
 <br />
 
 <ComponentDemo id="navbar">
   <Navbar className="mx-auto max-w-screen-xl">
-    <div className="container flex items-center justify-between text-blue-grey-900">
+    <div className="text-blue-gray-900 container flex items-center justify-between">
       <Typography
         as="a"
         href="#"
@@ -41,11 +41,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
       </Typography>
       <ul className="flex items-center gap-6">
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Pages&nbsp;
+          <a href="#" className="flex items-center">
+            {`Pages`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -58,11 +58,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Account&nbsp;
+          <a href="#" className="flex items-center">
+            {`Account`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -75,11 +75,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Blocks&nbsp;
+          <a href="#" className="flex items-center">
+            {`Blocks`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -92,11 +92,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Docs&nbsp;
+          <a href="#" className="flex items-center">
+            {`Docs`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -123,7 +123,7 @@ export default function Example() {
   const icon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-4 w-4 opacity-75"
+      className="ml-0.5 h-4 w-4 opacity-75"
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -137,7 +137,7 @@ export default function Example() {
 
   return (
     <Navbar className="mx-auto max-w-screen-xl">
-      <div className="container flex items-center justify-between text-blue-grey-900">
+      <div className="text-blue-gray-900 container flex items-center justify-between">
         <Typography
           as="a"
           href="#"
@@ -148,16 +148,16 @@ export default function Example() {
         </Typography>
         <ul className="flex items-center gap-6">
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Pages&nbsp;{icon}</a>
+            <a className="flex items-center">Pages{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Account&nbsp;{icon}</a>
+            <a className="flex items-center">Account{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Blocks&nbsp;{icon}</a>
+            <a className="flex items-center">Blocks{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Docs&nbsp;{icon}</a>
+            <a className="flex items-center">Docs{icon}</a>
           </Typography>
         </ul>
         <Button variant="gradient" size="sm">

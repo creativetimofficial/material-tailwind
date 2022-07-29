@@ -45,7 +45,7 @@ export default function MyDocument() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="bg-grey-100 antialiased">
+      <body className="bg-gray-100 antialiased">
         <noscript>
           <iframe
             title="google-tag-manage"

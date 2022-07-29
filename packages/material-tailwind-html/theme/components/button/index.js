@@ -20,12 +20,12 @@ const buttonRoot = {
     padding: ".625rem",
     "line-height": "initial",
 
-    "i": {
+    i: {
       position: "relative",
       top: "1px",
-      "font-size": "1rem"
-    }
-  }
+      "font-size": "1rem",
+    },
+  },
 };
 
 const buttonVariant = (theme, background) => ({
@@ -38,16 +38,16 @@ const buttonVariant = (theme, background) => ({
   "&:hover": {
     "box-shadow": `0 10px 15px -3px ${theme(
       `${background}.200`
-    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`
+    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
   },
 
   "&:focus, &:active": {
     "box-shadow": "0 0 rgba(0, 0, 0, 0)",
-    opacity: 0.85
+    opacity: 0.85,
   },
 
   "&.button-amber, &.button-yellow, &.button-lime": {
-    color: theme("colors.black")
+    color: theme("colors.black"),
   },
 
   "&.button-gradient": {
@@ -59,22 +59,22 @@ const buttonVariant = (theme, background) => ({
       "box-shadow": `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 1
+      opacity: 1,
     },
 
     "&:focus:not(:hover)": {
       "box-shadow": `0 4px 6px -1px ${theme(
         `${background}.100`
       )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
-      opacity: 1
+      opacity: 1,
     },
 
     "&:active": {
       "box-shadow": `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 0.85
-    }
+      opacity: 0.85,
+    },
   },
 
   "&.button-outlined": {
@@ -84,8 +84,8 @@ const buttonVariant = (theme, background) => ({
     "box-shadow": "0 0 rgba(0, 0, 0, 0)",
 
     "&:focus:not(:hover)": {
-      "box-shadow": `0 0 0 0.2rem ${theme(`${background}.200`)}`
-    }
+      "box-shadow": `0 0 0 0.2rem ${theme(`${background}.200`)}`,
+    },
   },
 
   "&.button-text": {
@@ -94,24 +94,24 @@ const buttonVariant = (theme, background) => ({
     "box-shadow": "0 0 rgba(0, 0, 0, 0)",
 
     "&:hover": {
-      "background-color": theme(`${background}.50`)
+      "background-color": theme(`${background}.50`),
     },
 
     "&:active": {
-      "background-color": theme(`${background}.100`)
-    }
-  }
+      "background-color": theme(`${background}.100`),
+    },
+  },
 });
 
 const buttonSize = (y, x, fontSize) => ({
   padding: `${y} ${x}`,
-  "font-size": fontSize || "0.75rem"
+  "font-size": fontSize || "0.75rem",
 });
 
 const button = (theme) => ({
   ".button": buttonRoot,
-  ".button-blue-grey": buttonVariant(theme, "colors.blue-grey"),
-  ".button-grey": buttonVariant(theme, "colors.grey"),
+  ".button-blue-gray": buttonVariant(theme, "colors.blue-gray"),
+  ".button-gray": buttonVariant(theme, "colors.gray"),
   ".button-brown": buttonVariant(theme, "colors.brown"),
   ".button-deep-orange": buttonVariant(theme, "colors.deep-orange"),
   ".button-orange": buttonVariant(theme, "colors.orange"),
@@ -136,8 +136,8 @@ const button = (theme) => ({
   ".button-lg": buttonSize("0.771rem", "1.75rem", "0.875rem"),
   ".button-block": {
     display: "block",
-    width: "100%"
-  }
+    width: "100%",
+  },
 });
 
 module.exports.buttonVariant = buttonVariant;

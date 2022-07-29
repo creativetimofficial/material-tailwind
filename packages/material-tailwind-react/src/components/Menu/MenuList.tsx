@@ -9,8 +9,9 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
+import { mergeRefs } from "react-merge-refs";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -32,7 +33,6 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     // 1. init
     const { menu } = useTheme();
     const {
-      defaultProps,
       styles: { base },
     } = menu;
     const {
@@ -55,7 +55,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     className = className ?? "";
 
     // 3. set styles
-    const menuClasses = classnames(objectsToString(base.menu), className);
+    const menuClasses = twMerge(classnames(objectsToString(base.menu)), className);
 
     // 4. set refs
     const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [ref, floating]);

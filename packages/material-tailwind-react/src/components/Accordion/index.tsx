@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -56,14 +57,16 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     disabled = disabled ?? defaultProps.disabled;
 
     // 3. set styles
-    const accordionClasses = classnames(
-      objectsToString(base.container),
-      { [objectsToString(base.disabled)]: disabled },
+    const accordionClasses = twMerge(
+      classnames(objectsToString(base.container), { [objectsToString(base.disabled)]: disabled }),
       className,
     );
 
     // 4. memoize context value
-    const contextValue = React.useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
+    const contextValue = React.useMemo(
+      () => ({ open, icon, animate, disabled }),
+      [open, icon, animate, disabled],
+    );
 
     // 5. return
     return (

@@ -9,6 +9,7 @@ navigation:
     "input-colors",
     "input-validations",
     "input-with-icon",
+    "disabled-input",
     "props",
     "theme",
   ]
@@ -32,11 +33,12 @@ next: menu
 
 # Tailwind CSS Input - React
 
-Easily create inputs with different statuses and sizes using our components based on Tailwind CSS and React.
+Easily create <Code>Input</Code> with different statuses and sizes using our components based on Tailwind CSS and React.
 
-Input fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+<Code>Input</Code> fields are an essential user interface design element, providing
+users with the means to enter non-standardized responses.
 
-See below our input component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+See below our <Code>Input</Code> component example. It comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
@@ -50,7 +52,11 @@ See below our input component example. It comes in different styles and colors, 
 import { Input } from "@material-tailwind/react";
 
 export default function Example() {
-  return <Input label="Username" />;
+  return (
+    <div className="w-72">
+      <Input label="Username" />
+    </div>
+  );
 }
 ```
 
@@ -58,7 +64,7 @@ export default function Example() {
 
 ## Input Variants
 
-The input component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="input-variants">
   <div className="flex w-full items-end gap-4">
@@ -86,7 +92,7 @@ export default function Variants() {
 
 ## Input Sizes
 
-The input component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
 <ComponentDemo id="input-sizes">
   <div className="flex w-full items-end gap-4">
@@ -112,7 +118,7 @@ export default function Sizes() {
 
 ## Input Colors
 
-The input component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="input-colors">
   <div className="flex w-72 flex-col gap-4">
@@ -142,7 +148,7 @@ export default function Colors() {
 
 ## Input Validations
 
-The input component comes with error and success states for performing validations.
+The <Code>Input</Code> component comes with error and success states for performing validations.
 
 <ComponentDemo id="input-validations">
   <div className="flex w-full items-end gap-4">
@@ -168,7 +174,7 @@ export default function Validations() {
 
 ## Input With icon
 
-You can add icon for the input component using the <Code>icon</Code> prop.
+You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
 <ComponentDemo id="input-with-icon">
   <div className="w-72">
@@ -181,7 +187,33 @@ import { Input } from "@material-tailwind/react";
 
 export default function InputWithIcon() {
   return (
-    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    <div className="w-72">
+      <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
+  );
+}
+```
+
+---
+
+## Disabled Input
+
+An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
+
+<ComponentDemo id="disabled-input">
+  <div className="w-72">
+    <Input label="Disabled" disabled />
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Input } from "@material-tailwind/react";
+
+export default function InputWithIcon() {
+  return (
+    <div className="w-72">
+      <Input label="Disabled" disabled />
+    </div>
   );
 }
 ```

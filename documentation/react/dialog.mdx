@@ -1,7 +1,8 @@
 ---
 title: Tailwind CSS Dialog for React - Material Tailwind
 description: Customise your web projects with our easy-to-use dialog component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["dialog", "props", "theme"]
+navigation:
+  ["dialog", "dialog-sizes", "custom-dialog-animation", "props", "theme"]
 related:
   [
     {
@@ -22,11 +23,11 @@ next: icon-button
 
 # Tailwind CSS Dialog - React
 
-Use our Tailwind CSS dialog component to inform users about a task or important information that require decisions, or involves multiple tasks.
+Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that require decisions, or involves multiple tasks.
 
-A dialog is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
+A <Code>Dialog</Code> is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
 
-See below our dialog example that you can use for your Tailwind CSS and React project.
+See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS and React project.
 
 <br />
 
@@ -86,7 +87,7 @@ import {
 export default function Example() {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = (value) => setOpen(!open);
+  const handleOpen = () => setOpen(!open);
 
   return (
     <Fragment>
@@ -94,6 +95,289 @@ export default function Example() {
         Open Dialog
       </Button>
       <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogBody divider>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={handleOpen}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Dialog Sizes
+
+The <Code>Dialog</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
+
+<State initialState={{ size: null }}>
+  <ComponentDemo id="dialog-sizes">
+    <Observe>
+      {({ setState, size }) => (
+        <>
+          <div className="mb-3 flex gap-3">
+            <Button
+              onClick={() => setState((s) => ({ size: "xs" }))}
+              variant="gradient"
+            >
+              Open Dialog XS
+            </Button>
+            <Button
+              onClick={() => setState((s) => ({ size: "sm" }))}
+              variant="gradient"
+            >
+              Open Dialog SM
+            </Button>
+            <Button
+              onClick={() => setState((s) => ({ size: "md" }))}
+              variant="gradient"
+            >
+              Open Dialog MD
+            </Button>
+          </div>
+          <div className="flex gap-3">
+            <Button
+              onClick={() => setState((s) => ({ size: "lg" }))}
+              variant="gradient"
+            >
+              Open Dialog LG
+            </Button>
+            <Button
+              onClick={() => setState((s) => ({ size: "xl" }))}
+              variant="gradient"
+            >
+              Open Dialog XL
+            </Button>
+            <Button
+              onClick={() => setState((s) => ({ size: "xxl" }))}
+              variant="gradient"
+            >
+              Open Dialog XXL
+            </Button>
+          </div>
+          <Dialog
+            open={
+              size === "xs" ||
+              size === "sm" ||
+              size === "md" ||
+              size === "lg" ||
+              size === "xl" ||
+              size === "xxl"
+            }
+            size={size || "md"}
+          >
+            <DialogHeader>Its a simple dialog.</DialogHeader>
+            <DialogBody divider>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </DialogBody>
+            <DialogFooter>
+              <Button
+                variant="text"
+                color="red"
+                onClick={() => setState((s) => ({ size: null }))}
+                className="mr-1"
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="gradient"
+                color="green"
+                onClick={() => setState((s) => ({ size: null }))}
+              >
+                Confirm
+              </Button>
+            </DialogFooter>
+          </Dialog>
+        </>
+      )}
+    </Observe>
+  </ComponentDemo>
+</State>
+
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [size, setSize] = useState(null);
+
+  const handleOpen = (value) => setSize(value);
+
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Button onClick={() => handleOpen("xs")} variant="gradient">
+          Open Dialog XS
+        </Button>
+        <Button onClick={() => handleOpen("sm")} variant="gradient">
+          Open Dialog SM
+        </Button>
+        <Button onClick={() => handleOpen("md")} variant="gradient">
+          Open Dialog MD
+        </Button>
+      </div>
+      <div className="flex gap-3">
+        <Button onClick={() => handleOpen("lg")} variant="gradient">
+          Open Dialog LG
+        </Button>
+        <Button onClick={() => handleOpen("xl")} variant="gradient">
+          Open Dialog XL
+        </Button>
+        <Button onClick={() => handleOpen("xxl")} variant="gradient">
+          Open Dialog XXL
+        </Button>
+      </div>
+      <Dialog
+        open={
+          size === "xs" ||
+          size === "sm" ||
+          size === "md" ||
+          size === "lg" ||
+          size === "xl" ||
+          size === "xxl"
+        }
+        size={size || "md"}
+        handler={handleOpen}
+      >
+        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogBody divider>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="red"
+            onClick={() => handleOpen(null)}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+          <Button
+            variant="gradient"
+            color="green"
+            onClick={() => handleOpen(null)}
+          >
+            <span>Confirm</span>
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </Fragment>
+  );
+}
+```
+
+---
+
+## Custom Dialog Animation
+
+You can modify the open/close state animation for <Code>Dialog</Code> component using the <Code>animate</Code> prop.
+
+<State initialState={{ open: false }}>
+  <ComponentDemo id="custom-dialog-animation">
+    <Observe>
+      {({ setState, open }) => (
+        <>
+          <Button
+            onClick={() => setState((s) => ({ open: true }))}
+            variant="gradient"
+          >
+            Open Dialog
+          </Button>
+          <Dialog
+            open={open}
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0.9, y: -100 },
+            }}
+          >
+            <DialogHeader>Its a simple dialog.</DialogHeader>
+            <DialogBody divider>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </DialogBody>
+            <DialogFooter>
+              <Button
+                variant="text"
+                color="red"
+                onClick={() => setState((s) => ({ open: false }))}
+                className="mr-1"
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="gradient"
+                color="green"
+                onClick={() => setState((s) => ({ open: false }))}
+              >
+                Confirm
+              </Button>
+            </DialogFooter>
+          </Dialog>
+        </>
+      )}
+    </Observe>
+  </ComponentDemo>
+</State>
+
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <Fragment>
+      <Button onClick={handleOpen} variant="gradient">
+        Open Dialog
+      </Button>
+      <Dialog
+        open={open}
+        handler={handleOpen}
+        animate={{
+          mount: { scale: 1, y: 0 },
+          unmount: { scale: 0.9, y: -100 },
+        }}
+      >
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody divider>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad

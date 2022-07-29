@@ -24,7 +24,7 @@ export default function Footer() {
     },
     {
       icon: "fab fa-github",
-      color: "text-grey-900",
+      color: "text-gray-900",
       link: "https://www.github.com/creativetimofficial?ref=material-tailwind",
     },
     {
@@ -73,7 +73,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative z-50 bg-grey-100 pt-16 pb-6 text-[#1A237E]">
+    <footer className="bg-gray-100 relative z-50 pt-16 pb-6 text-[#1A237E]">
       <SectionSubscribe />
       <div className="container mx-auto">
         <div className="flex flex-wrap">
@@ -141,7 +141,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-grey-300" />
+        <hr className="border-gray-300 my-6" />
         <div className="flex flex-wrap items-center justify-center gap-2 md:justify-between">
           <a
             href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
