@@ -36,7 +36,7 @@ export default function Header() {
               <div className="w-full max-w-full sm:my-auto md:w-5/6 md:flex-none lg:w-1/2">
                 <Tabs value="react" className="mb-6">
                   <TabsHeader
-                    className="shadow-blue-gray-500/40 h-10 w-auto rounded-full border border-white/80 bg-white/80 shadow-2xl backdrop-blur-2xl backdrop-saturate-200"
+                    className="h-10 w-auto rounded-full border border-white/80 bg-white/80 shadow-2xl shadow-blue-gray-500/40 backdrop-blur-2xl backdrop-saturate-200"
                     indicatorProps={{
                       className: "rounded-full",
                     }}
@@ -70,7 +70,7 @@ export default function Header() {
               >
                 Material Tailwind
               </Typography>
-              <Typography className="mb-6 text-lg !font-light text-[#1A237E] lg:pr-12">
+              <Typography className="mb-6 text-lg font-light text-[#1A237E] lg:pr-12">
                 Material Tailwind is an easy to use components library for
                 Tailwind CSS and Material Design.
               </Typography>
@@ -88,7 +88,7 @@ export default function Header() {
                     </Button>
                   </a>
                 </Link>
-                <div className="shadow-blue-gray-500/20 flex rounded-lg border border-white/80 bg-white/80 py-2.5 px-5 text-[#1A237E] shadow-2xl backdrop-blur-2xl backdrop-saturate-200">
+                <div className="flex rounded-lg border border-white/80 bg-white/80 py-2.5 px-5 text-[#1A237E] shadow-2xl shadow-blue-gray-500/20 backdrop-blur-2xl backdrop-saturate-200">
                   <CopyToClipboard
                     text={version}
                     onCopy={() => setCopied(true)}

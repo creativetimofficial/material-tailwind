@@ -32,7 +32,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
       }`}
     >
       <div
-        className={`bg-gray-900/20 fixed top-0 left-0 h-screen w-screen backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed top-0 left-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileNav
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -45,7 +45,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
           </Typography>
           <Typography
             variant="h5"
-            className="!text-blue-gray-500 hover:!text-blue-gray-900 mr-3 mt-px cursor-pointer p-2 transition-colors lg:hidden"
+            className="mr-3 mt-px cursor-pointer p-2 text-blue-gray-500 transition-colors hover:text-blue-gray-900 lg:hidden"
             onClick={() => setMobileNav(false)}
           >
             <svg
@@ -82,10 +82,10 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                       <a>
                         <Typography
                           color="gray"
-                          className={`before:content-[' '] hover:text-blue-gray-900 hover:before:bg-blue-gray-900 relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors ${
+                          className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
                             page === slug
-                              ? "text-blue-gray-900 before:bg-blue-gray-900 font-medium"
-                              : "text-blue-gray-400 before:bg-blue-gray-300 font-normal"
+                              ? "font-medium text-blue-gray-900 before:bg-blue-gray-900"
+                              : "font-normal text-blue-gray-400 before:bg-blue-gray-300"
                           }`}
                           onClick={() => setMobileNav(false)}
                         >

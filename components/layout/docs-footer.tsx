@@ -27,7 +27,7 @@ export default function DocsFooter({ type, frontMatter }: Props) {
         {frontMatter.prev && (
           <Link href={`/docs/${type}/${frontMatter.prev}`}>
             <a>
-              <Typography className="!text-blue-gray-500 hover:!text-blue-gray-900 py-2 !font-medium capitalize !transition-colors">
+              <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
                 <i className="fas fa-caret-left mr-2 mt-px" />
                 {frontMatter.prev.includes("-")
                   ? frontMatter.prev
@@ -42,7 +42,7 @@ export default function DocsFooter({ type, frontMatter }: Props) {
         {frontMatter.next && (
           <Link href={`/docs/${type}/${frontMatter.next}`}>
             <a>
-              <Typography className="!text-blue-gray-500 hover:!text-blue-gray-900 py-2 !font-medium capitalize !transition-colors">
+              <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
                 {frontMatter.next.includes("-")
                   ? frontMatter.next
                       .split("-")
@@ -60,11 +60,11 @@ export default function DocsFooter({ type, frontMatter }: Props) {
         href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx`}
         target="_blank"
         rel="noreferrer"
-        className="!text-blue-gray-500 hover:!text-blue-gray-900 mt-14 mb-6 text-right !font-normal transition-colors"
+        className="mt-14 mb-6 text-right font-normal text-blue-gray-500 transition-colors hover:text-blue-gray-900"
       >
         Edit this page on Github
       </Typography>
-      <footer className="border-blue-gray-50 flex flex-col items-center justify-between gap-4 border-t py-6 lg:flex-row">
+      <footer className="flex flex-col items-center justify-between gap-4 border-t border-blue-gray-50 py-6 lg:flex-row">
         <a
           href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
           target="_blank"
@@ -81,13 +81,13 @@ export default function DocsFooter({ type, frontMatter }: Props) {
             </svg>
           </span>
         </a>
-        <Typography className="!text-blue-gray-500 text-center !font-normal lg:text-left">
+        <Typography className="text-center font-normal text-blue-gray-500 lg:text-left">
           Copyright &copy; {date} Material Tailwind by{" "}
           <a
             href="https://www.creative-tim.com?ref=material-tailwind"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-blue-gray-900 text-current transition-colors"
+            className="text-current transition-colors hover:text-blue-gray-900"
           >
             Creative Tim
           </a>

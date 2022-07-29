@@ -30,7 +30,7 @@ export default function Feature({
     >
       <CardHeader
         shadow={false}
-        className="mx-6 -mb-3 grid h-12 w-12 place-items-center !rounded-lg bg-[#1A237E]"
+        className="mx-6 -mb-3 grid h-12 w-12 place-items-center rounded-lg bg-[#1A237E]"
       >
         <i className={`${iconClass} relative text-xl text-white`}>{icon}</i>
       </CardHeader>
