@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "sitemap": "next-sitemap",
     "build:react": "pnpm --filter ./packages/material-tailwind-react build",
     "build:html": "pnpm --filter ./packages/material-tailwind-html build",
     "start": "next start",
