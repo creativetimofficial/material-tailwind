@@ -35,17 +35,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/accordion">
-        <img alt="accordion" src="./public/img/html-thumbnails/accordion.jpg">
+        <img alt="accordion" src="https://www.material-tailwind.com/img/html-thumbnails/accordion.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/alert">
-        <img alt="alert" src="./public/img/html-thumbnails/alert.jpg">
+        <img alt="alert" src="https://www.material-tailwind.com/img/html-thumbnails/alert.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/avatar">
-        <img alt="avatar" src="./public/img/html-thumbnails/avatar.jpg">
+        <img alt="avatar" src="https://www.material-tailwind.com/img/html-thumbnails/avatar.jpg">
       </a>
     </td>
   </tr>
@@ -57,17 +57,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/breadcrumbs">
-        <img alt="breadcrumbs" src="./public/img/html-thumbnails/breadcrumbs.jpg">
+        <img alt="breadcrumbs" src="https://www.material-tailwind.com/img/html-thumbnails/breadcrumbs.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/button">
-        <img alt="button" src="./public/img/html-thumbnails/button.jpg">
+        <img alt="button" src="https://www.material-tailwind.com/img/html-thumbnails/button.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/card">
-        <img alt="card" src="./public/img/html-thumbnails/card.jpg">
+        <img alt="card" src="https://www.material-tailwind.com/img/html-thumbnails/card.jpg">
       </a>
     </td>
   </tr>
@@ -79,17 +79,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/checkbox">
-        <img alt="checkbox" src="./public/img/html-thumbnails/checkbox.jpg">
+        <img alt="checkbox" src="https://www.material-tailwind.com/img/html-thumbnails/checkbox.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/chip">
-        <img alt="chip" src="./public/img/html-thumbnails/chip.jpg">
+        <img alt="chip" src="https://www.material-tailwind.com/img/html-thumbnails/chip.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/dialog">
-        <img alt="dialog" src="./public/img/html-thumbnails/dialog.jpg">
+        <img alt="dialog" src="https://www.material-tailwind.com/img/html-thumbnails/dialog.jpg">
       </a>
     </td>
   </tr>
@@ -101,17 +101,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/icon-button">
-        <img alt="icon-button" src="./public/img/html-thumbnails/icon-button.jpg">
+        <img alt="icon-button" src="https://www.material-tailwind.com/img/html-thumbnails/icon-button.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/input">
-        <img alt="input" src="./public/img/html-thumbnails/input.jpg">
+        <img alt="input" src="https://www.material-tailwind.com/img/html-thumbnails/input.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/menu">
-        <img alt="menu" src="./public/img/html-thumbnails/menu.jpg">
+        <img alt="menu" src="https://www.material-tailwind.com/img/html-thumbnails/menu.jpg">
       </a>
     </td>
   </tr>
@@ -123,17 +123,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/navbar">
-        <img alt="navbar" src="./public/img/html-thumbnails/navbar.jpg">
+        <img alt="navbar" src="https://www.material-tailwind.com/img/html-thumbnails/navbar.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/pagination">
-        <img alt="pagination" src="./public/img/html-thumbnails/pagination.jpg">
+        <img alt="pagination" src="https://www.material-tailwind.com/img/html-thumbnails/pagination.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/popover">
-        <img alt="popover" src="./public/img/html-thumbnails/popover.jpg">
+        <img alt="popover" src="https://www.material-tailwind.com/img/html-thumbnails/popover.jpg">
       </a>
     </td>
   </tr>
@@ -145,17 +145,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/radio-button">
-        <img alt="radio-button" src="./public/img/html-thumbnails/radio-button.jpg">
+        <img alt="radio-button" src="https://www.material-tailwind.com/img/html-thumbnails/radio-button.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/select">
-        <img alt="select" src="./public/img/html-thumbnails/select.jpg">
+        <img alt="select" src="https://www.material-tailwind.com/img/html-thumbnails/select.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/progress-bar">
-        <img alt="progress-bar" src="./public/img/html-thumbnails/progress-bar.jpg">
+        <img alt="progress-bar" src="https://www.material-tailwind.com/img/html-thumbnails/progress-bar.jpg">
       </a>
     </td>
   </tr>
@@ -167,17 +167,17 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/tabs">
-        <img alt="tabs" src="./public/img/html-thumbnails/tabs.jpg">
+        <img alt="tabs" src="https://www.material-tailwind.com/img/html-thumbnails/tabs.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/textarea">
-        <img alt="textarea" src="./public/img/html-thumbnails/text-area.jpg">
+        <img alt="textarea" src="https://www.material-tailwind.com/img/html-thumbnails/text-area.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/switch">
-        <img alt="switch" src="./public/img/html-thumbnails/switch.jpg">
+        <img alt="switch" src="https://www.material-tailwind.com/img/html-thumbnails/switch.jpg">
       </a>
     </td>
   </tr>
@@ -188,12 +188,12 @@ Visit <a href="https://www.material-tailwind.com/docs/html/installation">https:/
   <tr>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/typography">
-        <img alt="typography" src="./public/img/html-thumbnails/typography.jpg">
+        <img alt="typography" src="https://www.material-tailwind.com/img/html-thumbnails/typography.jpg">
       </a>
     </td>
     <td width="33.3333%" style="padding: 0;">
       <a href="https://www.material-tailwind.com/docs/html/tooltip">
-        <img alt="tooltip" src="./public/img/html-thumbnails/tooltip.jpg">
+        <img alt="tooltip" src="https://www.material-tailwind.com/img/html-thumbnails/tooltip.jpg">
       </a>
     </td>
   </tr>
