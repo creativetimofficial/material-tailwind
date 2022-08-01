@@ -2,7 +2,15 @@
 title: Tailwind CSS Navbar Props - Material Tailwind
 description: Learn more about props definition and types of navbar component.
 navigation:
-  ["navbar-props", "types-variant", "types-color", "examples", "theme"]
+  [
+    "navbar-props",
+    "mobile-nav-props",
+    "types-variant",
+    "types-color",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
 github: props/navbar
 related:
   [
@@ -47,6 +55,31 @@ import type { NavbarProps } from "@material-tailwind/react";
 
 ---
 
+# Tailwind CSS Mobile Nav - Props
+
+<span id="mobile-nav-props" className="scroll-mt-48" />
+The following props are available for mobile nav component. These are the custom
+props that come with we've added for the mobile nav component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                                     | Default                                |
+| ----------- | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | If <Code>true</Code> the mobile nav will expand | <Code>true</Code>                      |
+| `animate`   | [Animate](#types-animate) | Change mobile nav animation                     | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for mobile nav             | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for mobile nav                      | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MobileNavProps } from "@material-tailwind/react";
+```
+
+---
+
 ## Types - Variant
 
 <span id="types-variant" className="scroll-mt-48" />
@@ -84,6 +117,17 @@ type color =
   | "purple"
   | "pink"
   | "red";
+```
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
 ```
 
 <span id="examples" className="scroll-mt-48" />

@@ -3,12 +3,10 @@ import { useState, useEffect, useRef } from "react";
 // next.js components
 import Link from "next/link";
 
-// framer-motion components
-import { AnimatePresence, AnimatePresenceProps, motion } from "framer-motion";
-
 // @material-tailwind/react components
 import {
   Navbar as MTNavbar,
+  MobileNav,
   IconButton,
   Tooltip,
   Menu,
@@ -16,12 +14,6 @@ import {
   MenuList,
   MenuItem,
 } from "@material-tailwind/react";
-
-// prop-types
-interface NewAnimatePresenceProps
-  extends Omit<AnimatePresenceProps, "children"> {
-  children: React.ReactNode;
-}
 
 interface NavbarProps {
   container?: string;
@@ -41,7 +33,6 @@ export default function Navbar({
   ...rest
 }: NavbarProps) {
   const [open, setOpen] = useState(false);
-  const mobileListRef = useRef(null);
   const navbarItemClasses =
     "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
 
@@ -50,19 +41,6 @@ export default function Navbar({
       window.innerWidth >= 960 && setOpen(false);
     });
   }, []);
-
-  const heightAnimation = {
-    unmount: {
-      height: "0px",
-      opacity: 0,
-      transition: { duration: 0.3, times: "[0.4, 0, 0.2, 1]" },
-    },
-    mount: {
-      height: `${mobileListRef.current?.scrollHeight}px`,
-      opacity: 1,
-      transition: { duration: 0.3, times: "[0.4, 0, 0.2, 1]" },
-    },
-  };
 
   const menuOpenIcon = (
     <svg
@@ -190,8 +168,6 @@ export default function Navbar({
     </ul>
   );
 
-  const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
-
   return (
     <div
       className={`absolute left-2/4 z-[999] my-4 flex w-full max-w-screen-2xl -translate-x-2/4 flex-wrap items-center px-4 lg:fixed ${container}`}
@@ -223,18 +199,10 @@ export default function Navbar({
             {navbarMenu}
           </div>
         </div>
-        <NewAnimatePresence>
-          <motion.div
-            ref={mobileListRef}
-            className={`block basis-full overflow-hidden ${mobileNavClassName}`}
-            initial="unmount"
-            exit="unmount"
-            animate={open ? "mount" : "unmount"}
-            variants={heightAnimation}
-          >
-            {navbarMenu}
-          </motion.div>
-        </NewAnimatePresence>
+
+        <MobileNav open={open} className={mobileNavClassName}>
+          {navbarMenu}
+        </MobileNav>
         {sidenavMenu}
       </MTNavbar>
     </div>
