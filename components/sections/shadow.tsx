@@ -13,14 +13,14 @@ export default function SectionShadow() {
         <div className="relative w-full px-4 md:w-5/12">
           <Typography
             variant="h2"
-            className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+            className="mb-2 font-black tracking-normal text-[#1A237E]"
           >
             Realistic <br />
             <Typography
               as="span"
               variant="h2"
               color="blue"
-              className="inline-block !font-sans font-black tracking-normal"
+              className="inline-block font-black tracking-normal"
               textGradient
             >
               Shadows
@@ -52,7 +52,7 @@ export default function SectionShadow() {
             alt="tailwind_blob_blue"
           />
           <img
-            className="absolute top-36 right-0 z-30 w-1/2 rounded-lg shadow-2xl shadow-blue-grey-500/20 md:top-12 lg:-right-24"
+            className="shadow-blue-gray-500/20 absolute top-36 right-0 z-30 w-1/2 rounded-lg shadow-2xl md:top-12 lg:-right-24"
             src="/img/shadows.png"
             alt="tailwind_shadows"
           />

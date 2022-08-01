@@ -1,0 +1,101 @@
+---
+title: Tailwind CSS Tooltip Theme - Material Tailwind
+description: Learn how to customize the theme and styles for tooltip components.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/tooltip
+related:
+  [
+    {
+      title: "Examples",
+      route: "tooltip",
+      description: "Checkout different examples for tooltip components.",
+    },
+    {
+      title: "Props",
+      route: "props/tooltip",
+      description: "Learn more about props definition and types of tooltip components.",
+    },
+  ]
+---
+
+# Tailwind CSS Tooltip - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for tooltip components, the theme object for tooltip components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of tooltip component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of tooltip component.<br />
+
+You can customize the theme and styles of tooltip components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Tooltip Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface TooltipStylesType {
+  defaultProps: {
+    interactive: string;
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePointerDown: boolean;
+      outsidePointerDown: boolean;
+      ancestorScroll: boolean;
+      bubbles: boolean;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TooltipStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Tooltip Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  tooltip: {
+    styles: {
+      base: {
+        bg: "bg-black",
+        color: "text-white",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

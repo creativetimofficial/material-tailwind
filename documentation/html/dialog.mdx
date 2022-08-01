@@ -74,7 +74,7 @@ See below our dialog example that you can use for your Tailwind CSS project.
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <div class="w-1/2 text-left">
   <button
     class="button button-pink"
@@ -176,7 +176,7 @@ Use this dialog example if you want to notify the user about an action that he s
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-deep-orange"
   dialog-trigger="true"
@@ -274,7 +274,7 @@ This dialog should be used to help the user send messages easily.
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-green"
   dialog-trigger="true"
@@ -420,7 +420,7 @@ Use this dialog example to notify the user with longer informational messages.
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-pink"
   dialog-trigger="true"
@@ -548,11 +548,11 @@ Use this example to help users Sign in easily
           </div>
           <div className="card-body">
             <form action="role">
-              <div className="input-group-outline input-group my-3">
+              <div className="input-group input-group-outline my-3">
                 <label className="form-label">Email</label>
                 <input type="email" className="form-control" />
               </div>
-              <div className="input-group-outline input-group my-3">
+              <div className="input-group input-group-outline my-3">
                 <label className="form-label">Password</label>
                 <input type="password" className="form-control" />
               </div>
@@ -581,7 +581,7 @@ Use this example to help users Sign in easily
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-pink"
   dialog-trigger="true"
@@ -612,11 +612,11 @@ Use this example to help users Sign in easily
         </div>
         <div class="card-body">
           <form action="role">
-            <div class="input-group-outline input-group my-3">
+            <div class="input-group input-group-outline my-3">
               <label class="form-label">Email</label>
               <input type="email" class="form-control" />
             </div>
-            <div class="input-group-outline input-group my-3">
+            <div class="input-group input-group-outline my-3">
               <label class="form-label">Password</label>
               <input type="password" class="form-control" />
             </div>
@@ -710,7 +710,7 @@ Use this example to help users Signup in easily
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-cyan"
   dialog-trigger="true"
@@ -775,6 +775,10 @@ Use this example to help users Signup in easily
 
 The dialog component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
 
-```html showLineNumbers
+```html
+<!-- from node_modules -->
 <script src="node_modules/@material-tailwind/html/scripts/dialog.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dialog.js"></script>
 ```

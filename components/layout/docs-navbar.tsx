@@ -12,16 +12,16 @@ interface Props {
 export default function DocsNavbar({ slug, setMobileNav }: Props) {
   return (
     <Navbar
-      container="mt-0 max-w-full px-0 border-b border-blue-grey-50"
-      className="mx-auto !max-w-[1440px] !text-blue-grey-900"
-      mobileNavClassName="text-blue-grey-900"
+      container="mt-0 max-w-full px-0 border-b border-blue-gray-50"
+      className="!text-blue-gray-900 mx-auto !max-w-[1440px]"
+      mobileNavClassName="text-blue-gray-900"
       fullWidth
       shadow={false}
       sidenavMenu={
-        <div className="mt-2 flex items-center border-t border-blue-grey-50 pt-4 pb-2 lg:hidden">
+        <div className="border-blue-gray-50 mt-2 flex items-center border-t pt-4 pb-2 lg:hidden">
           <button
             type="button"
-            className="text-blue-grey-900"
+            className="text-blue-gray-900"
             onClick={() => setMobileNav(true)}
           >
             <svg
@@ -39,13 +39,13 @@ export default function DocsNavbar({ slug, setMobileNav }: Props) {
               />
             </svg>
           </button>
-          <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6 text-blue-grey-700">
+          <ol className="text-blue-gray-700 ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6">
             <li className="flex items-center">
               React
               <svg
                 width="3"
                 height="6"
-                className="mx-3 overflow-visible text-blue-grey-300"
+                className="text-blue-gray-300 mx-3 overflow-visible"
               >
                 <path
                   d="M0 0L3 3L0 6"
@@ -56,7 +56,7 @@ export default function DocsNavbar({ slug, setMobileNav }: Props) {
                 ></path>
               </svg>
             </li>
-            <li className="truncate font-semibold capitalize text-blue-grey-900">
+            <li className="text-blue-gray-900 truncate font-semibold capitalize">
               {slug.includes("-") ? slug.split("-").join(" ") : slug}
             </li>
           </ol>

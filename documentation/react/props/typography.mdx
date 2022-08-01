@@ -1,0 +1,100 @@
+---
+title: Tailwind CSS Typography Props - Material Tailwind
+description: Learn more about props definition and types of typography component.
+navigation:
+  ["typography-props", "types-variant", "types-color", "examples", "theme"]
+github: props/typography
+related:
+  [
+    {
+      title: "Examples",
+      route: "typography",
+      description: "Checkout different examples for typography component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/typography",
+      description: "Learn how to customize the theme and styles for typography component.",
+    },
+  ]
+---
+
+# Tailwind CSS Typography - Props
+
+<span id="typography-props" className="scroll-mt-48" />
+The following props are available for typography component. These are the custom
+props that come with we've added for the typography component and you can use all
+the other native props as well.
+
+| Attribute      | Type                      | Description                                   | Default                                |
+| -------------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`      | [Variant](#types-variant) | Change typography variant                     | <Code>paragraph</Code>                 |
+| `color`        | [Color](#types-color)     | Change typography color                       | <Code>inherit</Code>                   |
+| `textGradient` | <Code>boolean</Code>      | Change typography color into a gradient color | <Code>false</Code>                     |
+| `as`           | <Code>element</Code>      | Change the typography rendered element        | <Code>undefined</Code>                 |
+| `className`    | <Code>string</Code>       | Add custom className for typography           | `''`                                   |
+| `children`     | <Code>node</Code>         | Add content for typography                    | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TypographyProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "lead"
+  | "paragraph"
+  | "small";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "inherit"
+  | "current"
+  | "black"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

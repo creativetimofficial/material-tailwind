@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -34,9 +35,8 @@ export const DialogBody = React.forwardRef<HTMLDivElement, DialogBodyProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const dialogBodyClasses = classnames(
-      objectsToString(base.initial),
-      { [objectsToString(base.divider)]: divider },
+    const dialogBodyClasses = twMerge(
+      classnames(objectsToString(base.initial), { [objectsToString(base.divider)]: divider }),
       className,
     );
 

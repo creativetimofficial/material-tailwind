@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // utils
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -57,13 +58,18 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
     // 4. set styles
     const rootClasses = classnames(objectsToString(base.root));
-    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
-    const inputClasses = classnames(
-      objectsToString(base.input),
-      objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+    const containerClasses = twMerge(
+      classnames(objectsToString(base.container)),
+      containerProps?.className,
+    );
+    const inputClasses = twMerge(
+      classnames(
+        objectsToString(base.input),
+        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+      ),
       className,
     );
-    const labelClasses = classnames(objectsToString(base.label), labelProps?.className);
+    const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
 
     return (
       <div ref={ref} className={rootClasses}>

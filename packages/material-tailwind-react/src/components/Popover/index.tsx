@@ -43,8 +43,8 @@ import {
 } from "../../types/components/popover";
 
 // popover components
-import PopoverHandler from "./PopoverHandler";
-import PopoverContent from "./PopoverContent";
+import { PopoverHandler, PopoverHandlerProps } from "./PopoverHandler";
+import { PopoverContent, PopoverContentProps } from "./PopoverContent";
 
 export interface PopoverProps {
   open?: open;
@@ -160,5 +160,6 @@ Popover.propTypes = {
 
 Popover.displayName = "MaterialTailwind.Popover";
 
+export type { PopoverHandlerProps, PopoverContentProps };
 export { Popover, PopoverHandler, PopoverContent, usePopover };
 export default Object.assign(Popover, { Handler: PopoverHandler, Content: PopoverContent });

@@ -34,7 +34,7 @@ The <Code>ThemeProvider</Code> component give you the ability to use and customi
 
 You need to wrap your component or entire application with the <Code>ThemeProvider</Code> component to use the theme.
 
-```js showLineNumbers
+```js
 import { ThemeProvider } from "@material-tailwind/react";
 
 export default function App() {
@@ -49,12 +49,12 @@ export default function App() {
 ## Theme Provider Props
 
 <span id="theme-provider-props" className="scroll-mt-32" />
-The following props are available for the <Code>ThemeProvider</Code>.
+The following props are available for <Code>ThemeProvider</Code>.
 
-| Attribute  | Type                      | Description                          | Default                                |
-| ---------- | ------------------------- | ------------------------------------ | -------------------------------------- |
-| `value`    | <Code small>object</Code> | Customize the components theme       | @material-tailwind/react default theme |
-| `children` | <Code small>node</Code>   | The component that should be wrapped | No default value it's a required prop. |
+| Attribute  | Type                | Description                          | Default                                |
+| ---------- | ------------------- | ------------------------------------ | -------------------------------------- |
+| `value`    | <Code>object</Code> | Customize the components theme       | @material-tailwind/react default theme |
+| `children` | <Code>node</Code>   | The component that should be wrapped | No default value it's a required prop. |
 
 ---
 
@@ -64,9 +64,9 @@ The following props are available for the <Code>ThemeProvider</Code>.
 
 The theme object is a plain object that contains all of the components styles object. All of the components styles are available in the theme object and these styles object has a unique format for different use cases.
 
-```js showLineNumbers
-const themeObject = {
-  componentTheme = {
+```js
+const theme = {
+  component: {
     defaultProps: { ... },
     valid: { ... },
     styles: { ... }
@@ -77,11 +77,13 @@ const themeObject = {
 <br />
 <br />
 
-| Key            | Description                                                         |
-| -------------- | ------------------------------------------------------------------- |
-| `defaultProps` | Is used to change the default props value for components.           |
-| `valid`        | Is used to change the valid values for components props validation. |
-| `styles`       | Is used to change the styles of a component.                        |
+| Key            | Description                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| `theme`        | It's the main theme object that should be passed as value for the <Code>ThemeProvider</Code>. |
+| `component`    | It's the name of component that you want to customize. e.g `button`.                          |
+| `defaultProps` | Is used to change the default props value for components.                                     |
+| `valid`        | Is used to change the valid values for components props validation.                           |
+| `styles`       | Is used to change the styles of a component.                                                  |
 
 <br />
 <br />
@@ -96,11 +98,11 @@ To know more about how to customize the component theme object for a specific co
 
 Each component has a <Code>className</Code> prop that you can use to add tailwindcss classnames or your own custom classnames.
 
-The <Code>className</Code> prop overrides the tailwindcss classnames for a component and sometimes you need to use the <Code>!</Code> modifier before the tailwindcss classnames to override the classnames for a component.
+The <Code>className</Code> prop overrides the tailwindcss classnames for a component and sometimes you need to use the <Code>!</Code> modifier before the tailwindcss classnames to mark the classname as <Code>important</Code> override it over ther other classnames.
 
 e.g. <Code>!text-blue-500</Code>
 
-```jsx showLineNumbers
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {

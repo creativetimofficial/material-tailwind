@@ -8,6 +8,7 @@ import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
 import merge from "deepmerge";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -70,7 +71,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         findMatch(valid.colors, color, "blue")
       ],
     );
-    const classes = classnames(alertBase, alertVariant, className);
+    const classes = twMerge(classnames(alertBase, alertVariant), className);
 
     // 4. set animation
     const mainAnimation = {

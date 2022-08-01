@@ -32,7 +32,7 @@ See below our example that will help you create a simple tooltip for your projec
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-pink"
   data-target="tooltip"
@@ -106,7 +106,7 @@ You can simply change the tooltip position by changing the **data-placement=" "*
   </div>
 </ComponentDemo>
 
-```html showLineNumbers
+```html
 <button
   class="button button-pink"
   data-target="tooltip"
@@ -165,7 +165,12 @@ You can simply change the tooltip position by changing the **data-placement=" "*
 
 The tooltip component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
 
-```html showLineNumbers
+```html
 <script src="node_modules/@material-tailwind/html/scripts/tooltip.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tooltip.js"></script>
+
+<!-- popper.js cdn link -->
 <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 ```

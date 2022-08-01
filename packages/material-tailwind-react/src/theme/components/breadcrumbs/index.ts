@@ -42,7 +42,7 @@ export const breadcrumbs: BreadcrumbsStyleTypes = {
         flexWrap: "flex-wrap",
         alignItems: "items-center",
         width: "w-full",
-        bg: "bg-blue-grey-50",
+        bg: "bg-blue-gray-50",
         bgOpacity: "bg-opacity-60",
         py: "py-2",
         px: "px-4",
@@ -52,7 +52,7 @@ export const breadcrumbs: BreadcrumbsStyleTypes = {
         initial: {
           display: "flex",
           alignItems: "items-center",
-          color: "text-blue-grey-900",
+          color: "text-blue-gray-900",
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
           fontSize: "text-sm",
@@ -67,7 +67,7 @@ export const breadcrumbs: BreadcrumbsStyleTypes = {
         },
       },
       separator: {
-        color: "text-blue-grey-500",
+        color: "text-blue-gray-500",
         fontSize: "text-sm",
         fontSmoothing: "antialiased",
         fontFamily: "font-sans",

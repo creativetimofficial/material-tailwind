@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -10,9 +11,9 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // card components
-import CardHeader from "./CardHeader";
-import CardBody from "./CardBody";
-import CardFooter from "./CardFooter";
+import { CardHeader, CardHeaderProps } from "./CardHeader";
+import { CardBody, CardBodyProps } from "./CardBody";
+import { CardFooter, CardFooterProps } from "./CardFooter";
 
 // types
 import type { variant, color, shadow, className, children } from "../../types/components/card";
@@ -52,10 +53,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         findMatch(valid.colors, color, "white")
       ],
     );
-    const classes = classnames(
-      cardRoot,
-      cardVariant,
-      { [objectsToString(base.shadow)]: shadow },
+    const classes = twMerge(
+      classnames(cardRoot, cardVariant, { [objectsToString(base.shadow)]: shadow }),
       className,
     );
 
@@ -78,6 +77,7 @@ Card.propTypes = {
 
 Card.displayName = "MaterialTailwind.Card";
 
+export type { CardHeaderProps, CardBodyProps, CardFooterProps };
 export { Card, CardHeader, CardBody, CardFooter };
 export default Object.assign(Card, {
   Header: CardHeader,

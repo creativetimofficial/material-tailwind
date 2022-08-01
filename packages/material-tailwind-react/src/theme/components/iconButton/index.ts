@@ -68,6 +68,7 @@ export const iconButton: IconButtonStyleTypes = {
       textAlign: "text-center",
       textTransform: "uppercase",
       transition: "transition-all",
+      disabled: "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
     },
     sizes: {
       sm: {

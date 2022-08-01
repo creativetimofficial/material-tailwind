@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Avatar for React - Material Tailwind
 description: Customise your web projects  with our easy-to-use avatar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["avatar", "avatar-variants", "avatar-sizes", "props", "types"]
+navigation: ["avatar", "avatar-variants", "avatar-sizes", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/avatar",
+      description: "Learn more about props definition and types of avatar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/avatar",
+      description: "Learn how to customize the theme and styles for avatar component.",
+    },
+  ]
 github: avatar
 prev: alert
 next: breadcrumbs
@@ -9,21 +22,21 @@ next: breadcrumbs
 
 # Tailwind CSS Avatar - React
 
-Use our Tailwind CSS avatar component to portray people or objects in your web projects. The Avatar can be used as a visual identifier for a user profile on your website.
+Use our Tailwind CSS <Code>Avatar</Code> component to portray people or objects in your web projects. The <Code>Avatar</Code> can be used as a visual identifier for a user profile on your website.
 
-See below our beautiful avatar example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+See below our beautiful <Code>Avatar</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
 
 <br />
 
 <ComponentDemo id="avatar">
-  <Avatar src="/img/face-2.jpg" />
+  <Avatar src="/img/face-2.jpg" alt="avatar" />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Example() {
-  return <Avatar src="/img/face-2.jpg" />;
+  return <Avatar src="/img/face-2.jpg" alt="avatar" />;
 }
 ```
 
@@ -31,23 +44,23 @@ export default function Example() {
 
 ## Avatar Variants
 
-The avatar component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Avatar</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="avatar-variants">
   <div className="flex gap-4">
-    <Avatar src="/img/face-2.jpg" />
-    <Avatar src="/img/face-2.jpg" variant="circular" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
     <div className="flex gap-4">
-      <Avatar src="/img/face-2.jpg" />
-      <Avatar src="/img/face-2.jpg" variant="circular" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
     </div>
   );
 }
@@ -57,61 +70,35 @@ export default function Variants() {
 
 ## Avatar Sizes
 
-The avatar component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
 <ComponentDemo id="avatar-sizes">
   <div className="flex w-max items-end gap-4">
-    <Avatar src="/img/face-2.jpg" size="xs" />
-    <Avatar src="/img/face-2.jpg" size="sm" />
-    <Avatar src="/img/face-2.jpg" size="md" />
-    <Avatar src="/img/face-2.jpg" size="lg" />
-    <Avatar src="/img/face-2.jpg" size="xl" />
-    <Avatar src="/img/face-2.jpg" size="xxl" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Avatar } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
     <div className="flex w-max items-end gap-4">
-      <Avatar src="/img/face-2.jpg" size="xs" />
-      <Avatar src="/img/face-2.jpg" size="sm" />
-      <Avatar src="/img/face-2.jpg" size="md" />
-      <Avatar src="/img/face-2.jpg" size="lg" />
-      <Avatar src="/img/face-2.jpg" size="xl" />
-      <Avatar src="/img/face-2.jpg" size="xxl" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
     </div>
   );
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the avatar component. These are the custom
-props that come with we've added for the avatar component and you can use all the
-other native img props as well.
-
-| Attribute   | Type                      | Description                     | Default                    |
-| ----------- | ------------------------- | ------------------------------- | -------------------------- |
-| `variant`   | [Variant](#types)         | Change avatar variant           | <Code small>rounded</Code> |
-| `size`      | [Size](#types)            | Change avatar size              | <Code small>md</Code>      |
-| `className` | <Code small>string</Code> | Add custom className for avatar | `''`                       |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "rounded" | "circular";
-```
-
-```ts
-type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-```
+<span id="theme" className="scroll-mt-48" />

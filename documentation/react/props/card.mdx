@@ -1,0 +1,176 @@
+---
+title: Tailwind CSS Card Props - Material Tailwind
+description: Learn more about props definition and types of card components.
+navigation:
+  [
+    "card-props",
+    "card-header-props",
+    "card-body-props",
+    "card-footer-props",
+    "types-variant",
+    "types-color",
+    "examples",
+    "theme",
+  ]
+github: props/card
+related:
+  [
+    {
+      title: "Examples",
+      route: "card",
+      description: "Checkout different examples for card components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/card",
+      description: "Learn how to customize the theme and styles for card components.",
+    },
+  ]
+---
+
+# Tailwind CSS Card - Props
+
+<br />
+<br />
+
+## Card Props
+
+<span id="card-props" className="scroll-mt-48" />
+The following props are available for card component. These are the custom props
+that come with we've added for the card component and you can use all the other native
+props as well.
+
+| Attribute   | Type                      | Description                   | Default                                |
+| ----------- | ------------------------- | ----------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change card variant           | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change card color             | <Code>white</Code>                     |
+| `shadow`    | <Code>boolean</Code>      | Add box-shadow for card       | <Code>true</Code>                      |
+| `className` | <Code>string</Code>       | Add custom className for card | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for card          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardProps } from "@material-tailwind/react";
+```
+
+---
+
+## Card Header Props
+
+<span id="card-header-props" className="scroll-mt-48" />
+The following props are available for card header component. These are the custom
+props that come with we've added for the card header component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                          | Default                                |
+| ----------- | ------------------------- | ------------------------------------ | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change card header variant           | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change card header color             | <Code>white</Code>                     |
+| `shadow`    | <Code>boolean</Code>      | Add box-shadow for card header       | <Code>true</Code>                      |
+| `floated`   | <Code>boolean</Code>      | Makes card header floated            | <Code>true</Code>                      |
+| `className` | <Code>string</Code>       | Add custom className for card header | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for card header          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardHeaderProps } from "@material-tailwind/react";
+```
+
+---
+
+## Card Body Props
+
+<span id="card-body-props" className="scroll-mt-48" />
+The following props are available for card body component. These are the custom props
+that come with we've added for the card body component and you can use all the other
+native props as well.
+
+| Attribute   | Type                | Description                        | Default                                |
+| ----------- | ------------------- | ---------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for card body | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for card body          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardBodyProps } from "@material-tailwind/react";
+```
+
+---
+
+## Card Footer Props
+
+<span id="card-footer-props" className="scroll-mt-48" />
+The following props are available for card footer component. These are the custom
+props that come with we've added for the card footer component and you can use all
+the other native props as well.
+
+| Attribute   | Type                 | Description                          | Default                                |
+| ----------- | -------------------- | ------------------------------------ | -------------------------------------- |
+| `divider`   | <Code>boolean</Code> | Add border-top for card footer       | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for card footer | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for card footer          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CardFooterProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "transparent"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

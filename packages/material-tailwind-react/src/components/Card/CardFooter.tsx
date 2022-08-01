@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -22,7 +23,7 @@ export interface CardFooterProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
+export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
   ({ divider, className, children, ...rest }, ref) => {
     // 1. init
     const { cardFooter } = useTheme();
@@ -36,9 +37,8 @@ const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
     divider = divider ?? defaultProps.divider;
 
     // 3. set styles
-    const cardFooterClasses = classnames(
-      objectsToString(base.initial),
-      { [objectsToString(base.divider)]: divider },
+    const cardFooterClasses = twMerge(
+      classnames(objectsToString(base.initial), { [objectsToString(base.divider)]: divider }),
       className,
     );
 

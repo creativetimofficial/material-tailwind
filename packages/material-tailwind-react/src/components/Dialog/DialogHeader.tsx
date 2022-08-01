@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -16,7 +17,7 @@ export interface DialogHeaderProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
+export const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
   ({ className, children, ...rest }, ref) => {
     // 1. init
     const { dialogHeader } = useTheme();
@@ -29,7 +30,7 @@ const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const dialogHeaderClasses = classnames(objectsToString(base), className);
+    const dialogHeaderClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. return
     return (

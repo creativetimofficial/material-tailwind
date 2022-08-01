@@ -4,7 +4,7 @@ const colors = {
   transparent: "transparent",
   white: "#ffffff",
   black: "#000000",
-  "blue-grey": {
+  "blue-gray": {
     50: "#eceff1",
     100: "#cfd8dc",
     200: "#b0bec5",
@@ -16,7 +16,7 @@ const colors = {
     800: "#37474f",
     900: "#263238",
   },
-  grey: {
+  gray: {
     50: "#fafafa",
     100: "#f5f5f5",
     200: "#eeeeee",

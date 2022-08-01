@@ -2,6 +2,7 @@ import React from "react";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -9,23 +10,29 @@ import { useTheme } from "../../context/theme";
 import { TabsContextProvider, useTabs } from "./TabsContext";
 
 // tabs components
-import Tab from "./Tab";
-import TabsBody from "./TabsBody";
-import TabsHeader from "./TabsHeader";
-import TabPanel from "./TabPanel";
+import { Tab, TabProps } from "./Tab";
+import { TabsBody, TabsBodyProps } from "./TabsBody";
+import { TabsHeader, TabsHeaderProps } from "./TabsHeader";
+import { TabPanel, TabPanelProps } from "./TabPanel";
 
 // types
-import type { value, className, children } from "../../types/components/tabs";
-import { propTypesValue, propTypesClassName, propTypesChildren } from "../../types/components/tabs";
+import type { id, value, className, children } from "../../types/components/tabs";
+import {
+  propTypesId,
+  propTypesValue,
+  propTypesClassName,
+  propTypesChildren,
+} from "../../types/components/tabs";
 
-export interface TabsProps extends React.ComponentProps<"div"> {
+export interface TabsProps extends React.ComponentProps<"div" | any> {
+  id: id;
   value: value;
   className?: className;
   children: children;
 }
 
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ value, className, children, ...rest }, ref) => {
+  ({ id, value, className, children, ...rest }, ref) => {
     // 1. init
     const { tabs } = useTheme();
     const {
@@ -37,10 +44,11 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tabsClasses = classnames(objectsToString(base), className);
+    const tabsClasses = twMerge(classnames(objectsToString(base)), className);
 
+    // 4. return
     return (
-      <TabsContextProvider value={value}>
+      <TabsContextProvider id={id} value={value}>
         <div {...rest} ref={ref} className={tabsClasses}>
           {children}
         </div>
@@ -50,6 +58,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 );
 
 Tabs.propTypes = {
+  id: propTypesId,
   value: propTypesValue,
   className: propTypesClassName,
   children: propTypesChildren,
@@ -57,5 +66,6 @@ Tabs.propTypes = {
 
 Tabs.displayName = "MaterialTailwind.Tabs";
 
+export type { TabProps, TabsBodyProps, TabsHeaderProps, TabPanelProps };
 export { Tabs, Tab, TabsBody, TabsHeader, TabPanel, useTabs };
 export default Object.assign(Tabs, { Tab, Body: TabsBody, Header: TabsHeader, Panel: TabPanel });

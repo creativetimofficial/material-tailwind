@@ -1,0 +1,94 @@
+---
+title: Tailwind CSS Breadcrumbs Theme - Material Tailwind
+description: Learn how to customize the theme and styles for breadcrumbs component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/breadcrumbs
+related:
+  [
+    {
+      title: "Examples",
+      route: "breadcrumbs",
+      description: "Checkout different examples for breadcrumbs component.",
+    },
+    {
+      title: "Props",
+      route: "props/breadcrumbs",
+      description: "Learn more about props definition and types of breadcrumbs component.",
+    },
+  ]
+---
+
+# Tailwind CSS Breadcrumbs - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for breadcrumbs component, the theme object for breadcrumbs component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of breadcrumbs component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of breadcrumbs component.<br />
+
+You can customize the theme and styles of breadcrumbs component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Breadcrumbs Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface BreadcrumbsStyleTypes {
+  defaultProps: {
+    separator: node;
+    fullWidth: boolean;
+    className: string;
+  };
+  styles: {
+    base: {
+      root: {
+        initial: object;
+        fullWidth: object;
+      };
+      list: object;
+      item: {
+        initial: object;
+        disabled: object;
+      };
+      separator: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { BreadcrumbsStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+## Breadcrumbs Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  breadcrumbs: {
+    styles: {
+      base: {
+        separator: {
+          userSelcet: "select-none",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

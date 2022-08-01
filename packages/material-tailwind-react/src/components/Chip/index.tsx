@@ -8,6 +8,7 @@ import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
 import merge from "deepmerge";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -72,7 +73,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     const chipCloseButton = objectsToString(
       closeButtonColor[findMatch(valid.colors, color, "blue")],
     );
-    const classes = classnames(objectsToString(base), chipVariant, className);
+    const classes = twMerge(classnames(objectsToString(base), chipVariant), className);
     const chipCloseButtonClasses = classnames(
       "absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded-md",
       chipCloseButton,

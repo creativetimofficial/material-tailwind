@@ -24,7 +24,7 @@ Customize the default color palette for @material-tailwind/html and add your own
   className="mt-12 grid scroll-mt-56 grid-cols-1 gap-8"
 >
   <ColorPalette
-    name="blue grey"
+    name="blue gray"
     colors={{
       50: "#eceff1",
       100: "#cfd8dc",
@@ -39,7 +39,7 @@ Customize the default color palette for @material-tailwind/html and add your own
     }}
   />
   <ColorPalette
-    name="grey"
+    name="gray"
     colors={{
       50: "#fafafa",
       100: "#f5f5f5",
@@ -320,7 +320,7 @@ Customizing colors for @material-tailwind/html is very easy and straightforward,
 
 You just need to modify the <Code html>colors</Code> object for the <Code html>tailwind.config.js</Code> file.
 
-```js showLineNumbers
+```js
 module.exports = withMT({
   theme: {
     colors: {
@@ -340,7 +340,7 @@ You can add new color to @material-tailwind/html color palette very easy and str
 
 You just need to add your own color to the <Code html>extend</Code> and <Code html>colors</Code> object for <Code html>tailwind.config.js</Code> file.
 
-```js showLineNumbers {5-16}
+```js {5-16}
 module.exports = withMT({
   theme: {
     extend: {

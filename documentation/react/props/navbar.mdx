@@ -1,0 +1,134 @@
+---
+title: Tailwind CSS Navbar Props - Material Tailwind
+description: Learn more about props definition and types of navbar component.
+navigation:
+  [
+    "navbar-props",
+    "mobile-nav-props",
+    "types-variant",
+    "types-color",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
+github: props/navbar
+related:
+  [
+    {
+      title: "Examples",
+      route: "navbar",
+      description: "Checkout different examples for navbar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/navbar",
+      description: "Learn how to customize the theme and styles for navbar component.",
+    },
+  ]
+---
+
+# Tailwind CSS Navbar - Props
+
+<span id="navbar-props" className="scroll-mt-48" />
+The following props are available for navbar component. These are the custom props
+that come with we've added for the navbar component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                                                               | Default                                |
+| ----------- | ------------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change navbar variant                                                     | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change navbar color                                                       | <Code>white</Code>                     |
+| `shadow`    | <Code>boolean</Code>      | Add box-shadow for navbar                                                 | <Code>true</Code>                      |
+| `blurred`   | <Code>boolean</Code>      | Add blur backdrop effect for navbar and makes it's background color white | <Code>true</Code>                      |
+| `fullWidth` | <Code>boolean</Code>      | Change navbar to a block level element and remove its border radius       | <Code>false</Code>                     |
+| `className` | <Code>string</Code>       | Add custom className for navbar                                           | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for navbar                                                    | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { NavbarProps } from "@material-tailwind/react";
+```
+
+---
+
+# Tailwind CSS Mobile Nav - Props
+
+<span id="mobile-nav-props" className="scroll-mt-48" />
+The following props are available for mobile nav component. These are the custom
+props that come with we've added for the mobile nav component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                                     | Default                                |
+| ----------- | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | If <Code>true</Code> the mobile nav will expand | <Code>true</Code>                      |
+| `animate`   | [Animate](#types-animate) | Change mobile nav animation                     | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for mobile nav             | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for mobile nav                      | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MobileNavProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "transparent"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

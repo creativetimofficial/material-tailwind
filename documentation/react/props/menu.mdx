@@ -1,0 +1,203 @@
+---
+title: Tailwind CSS Menu Props - Material Tailwind
+description: Learn more about props definition and types of menu components.
+navigation:
+  [
+    "menu-props",
+    "menu-handler-props",
+    "menu-list-props",
+    "menu-item-props",
+    "types-placement",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
+github: props/menu
+related:
+  [
+    {
+      title: "Examples",
+      route: "menu",
+      description: "Checkout different examples for menu components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/menu",
+      description: "Learn how to customize the theme and styles for menu components.",
+    },
+  ]
+---
+
+# Tailwind CSS Menu - Props
+
+<br />
+<br />
+
+## Menu Props
+
+<span id="menu-props" className="scroll-mt-48" />
+The following props are available for menu component. These are the custom props
+that come with we've added for the menu component and you can use all the other native
+props as well.
+
+| Attribute    | Type                          | Description                                    | Default                                |
+| ------------ | ----------------------------- | ---------------------------------------------- | -------------------------------------- |
+| `open`       | <Code>boolean</Code>          | Makes the menu open, when menu is controlled   | <Code>undefined</Code>                 |
+| `handler`    | <Code>function</Code>         | Change open state for controlled menu          | <Code>undefined</Code>                 |
+| `placement`  | [Placement](#types-placement) | Change menu placement                          | <Code>bottom</Code>                    |
+| `offset`     | [Offset](#types-offset)       | Change menu offset from it's handler           | <Code>5</Code>                         |
+| `dismiss`    | [Dismiss](#types-dismiss)     | Change dismiss listeners when clicking outside | <Code>undefined</Code>                 |
+| `animate`    | [Animate](#types-animate)     | Change menu animation                          | <Code>undefined</Code>                 |
+| `lockScroll` | <Code>boolean</Code>          | Lock page scrolling when menu is opened        | <Code>false</Code>                     |
+| `children`   | <Code>node</Code>             | Add content for menu                           | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuProps } from "@material-tailwind/react";
+```
+
+---
+
+## Menu Handler Props
+
+<span id="menu-handler-props" className="scroll-mt-48" />
+The following props are available for menu handler component. These are the custom
+props that come with we've added for the menu handler component and you can use all
+the other native props as well.
+
+| Attribute  | Type              | Description                  | Default                                |
+| ---------- | ----------------- | ---------------------------- | -------------------------------------- |
+| `children` | <Code>node</Code> | Add content for menu handler | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuHandlerProps } from "@material-tailwind/react";
+```
+
+---
+
+## Menu List Props
+
+<span id="menu-list-props" className="scroll-mt-48" />
+The following props are available for menu list component. These are the custom props
+that come with we've added for the menu list component and you can use all the other
+native props as well.
+
+| Attribute   | Type                | Description                        | Default                                |
+| ----------- | ------------------- | ---------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for menu list | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for menu list          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuListProps } from "@material-tailwind/react";
+```
+
+---
+
+## Menu Item Props
+
+<span id="menu-item-props" className="scroll-mt-48" />
+The following props are available for menu item component. These are the custom props
+that come with we've added for the menu item component and you can use all the other
+native props as well.
+
+| Attribute   | Type                 | Description                        | Default                                |
+| ----------- | -------------------- | ---------------------------------- | -------------------------------------- |
+| `disabled`  | <Code>boolean</Code> | Disable menu item                  | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for menu item | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for menu item          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuItemProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Placement
+
+<span id="types-placement" className="scroll-mt-48" />
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+---
+
+## Types - Offset
+
+<span id="types-offset" className="scroll-mt-48" />
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+## Types - Dismiss
+
+<span id="types-dismiss" className="scroll-mt-48" />
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePointerDown?: boolean;
+  outsidePointerDown?: boolean;
+  ancestorScroll?: boolean;
+  bubbles?: boolean;
+};
+```
+
+---
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

@@ -7,13 +7,10 @@ import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react-dom-in
 import { useMenu } from "./MenuContext";
 
 // menu components
-import MenuCore from "./MenuCore";
-import MenuHandler from "./MenuHandler";
-import MenuList from "./MenuList";
-import MenuItem from "./MenuItem";
-
-// types
-import type { MenuProps } from "./MenuCore";
+import { MenuCore, MenuProps } from "./MenuCore";
+import { MenuHandler, MenuHandlerProps } from "./MenuHandler";
+import { MenuList, MenuListProps } from "./MenuList";
+import { MenuItem, MenuItemProps } from "./MenuItem";
 
 const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
   ({ open, handler, placement, offset, dismiss, animate, lockScroll, children }, ref) => {
@@ -53,5 +50,6 @@ const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
 Menu.propTypes = MenuCore.propTypes;
 Menu.displayName = "MaterialTailwind.Menu";
 
+export type { MenuProps, MenuHandlerProps, MenuListProps, MenuItemProps };
 export { Menu, MenuHandler, MenuList, MenuItem, useMenu };
 export default Object.assign(Menu, { Handler: MenuHandler, List: MenuList, Item: MenuItem });

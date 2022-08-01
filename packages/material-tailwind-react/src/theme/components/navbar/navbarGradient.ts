@@ -1,19 +1,19 @@
 const navbarGradient: object = {
   transparent: {
     backgroud: "bg-transparent",
-    color: "text-blue-grey-900",
+    color: "text-blue-gray-900",
     boxShadow: "shadow-none",
   },
   white: {
     backgroud: "bg-white",
-    color: "text-blue-grey-900",
+    color: "text-blue-gray-900",
   },
-  "blue-grey": {
-    backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
+  "blue-gray": {
+    backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
     color: "text-white",
   },
-  grey: {
-    backgroud: "bg-gradient-to-tr from-grey-600 to-grey-400",
+  gray: {
+    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
     color: "text-white",
   },
   brown: {

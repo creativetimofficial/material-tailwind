@@ -8,7 +8,9 @@ navigation:
     "npm",
     "yarn",
     "tailwindcss-config",
+    "ripple-effect",
     "icons",
+    "CDN",
     "example",
   ]
 github: installation
@@ -30,7 +32,7 @@ by Material Design.
 
 Learn how to use @material-tailwind/html components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
 
-@material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">Tailwind CSS Installation.</a>
+`@material-tailwind/html` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">Tailwind CSS Installation.</a>
 
 <br />
 <br />
@@ -91,13 +93,31 @@ module.exports = withMT({
 
 ---
 
+## Ripple Effect
+
+<span id="ripple-effect" className="scroll-mt-48" />
+
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+
+The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">material-ripple-effect</a>
+
+```html
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```
+
+---
+
 ## Icons
 
 <span id="icons" className="scroll-mt-48" />
 
 Add a link for the material icons fonts inside the head of your project, so to use the material icons with material tailwind components. You can also use font awesome font family for the project just add a link for it inside the head of your project.
 
-```html showLineNumbers
+```html
 <!-- Material Icons Link -->
 <link
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -115,6 +135,25 @@ Add a link for the material icons fonts inside the head of your project, so to u
 
 ---
 
+## CDN
+
+<span id="CDN" className="scroll-mt-48" />
+
+You can use @material-tailwind/html as a CDN link as well, you just need to add the stylesheet and the script file for the component you want to use.
+
+```html
+<!-- stylesheet -->
+<link
+  href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+  rel="stylesheet"
+/>
+
+<!-- script -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
+```
+
+---
+
 ## Example
 
 Now you're good to go and use @material-tailwind/html in your project.
@@ -125,7 +164,7 @@ Now you're good to go and use @material-tailwind/html in your project.
   </button>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 <button class="button button-pink" data-ripple-light="true">
   Button
 </button>

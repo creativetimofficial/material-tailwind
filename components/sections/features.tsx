@@ -33,7 +33,7 @@ export default function SectionFeatures() {
       <div className="mx-auto mb-24 w-full text-center md:w-3/4 lg:w-1/2">
         <Typography
           variant="h2"
-          className="mb-2 !font-sans font-semibold tracking-normal text-[#1A237E]"
+          className="mb-2 font-semibold tracking-normal text-[#1A237E]"
         >
           Tailwind CSS-Based Framework
         </Typography>

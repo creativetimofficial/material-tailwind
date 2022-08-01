@@ -61,7 +61,7 @@ export const dialog: DialogStylesType = {
         m: "m-4",
         borderRadius: "rounded-lg",
         boxShadow: "shadow-2xl",
-        color: "text-blue-grey-500",
+        color: "text-blue-gray-500",
         fontSmoothing: "antialiased",
         fontFamily: "font-sans",
         fontSize: "text-base",

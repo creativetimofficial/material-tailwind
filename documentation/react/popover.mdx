@@ -2,12 +2,19 @@
 title: Tailwind CSS Popover for React - Material Tailwind
 description: Customise your web projects with our easy-to-use popover component for Tailwind CSS and React using Material Design guidelines.
 navigation:
+  ["popover", "popover-placement", "custom-popover-animation", "props", "theme"]
+related:
   [
-    "popover",
-    "popover-props",
-    "popover-handler-props",
-    "popover-content-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/popover",
+      description: "Learn more about props definition and types of popover components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/popover",
+      description: "Learn how to customize the theme and styles for popover components.",
+    },
   ]
 github: checkbox
 prev: navbar
@@ -16,9 +23,9 @@ next: progress-bar
 
 # Tailwind CSS Popover - React
 
-Our popover component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
+Our <Code>Popover</Code> component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
 
-See below our simple popover example that you can use in your web project.
+See below our simple <Code>Popover</Code> example that you can use in your web project.
 
 <br />
 
@@ -33,7 +40,7 @@ See below our simple popover example that you can use in your web project.
   </Popover>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Popover,
   PopoverHandler,
@@ -57,96 +64,286 @@ export default function Example() {
 
 ---
 
-## Popover Props
+## Popover Placement
 
-<span id="popover-props" className="scroll-mt-48" />
-The following props are available for the popover component. These are the custom
-props that come with we've added for the popover component and you can use all the
-other native props as well.
+You can change the position of the <Code>Popover</Code> component using the <Code>placement</Code> prop.
 
-| Attribute   | Type                        | Description                                        | Default                                |
-| ----------- | --------------------------- | -------------------------------------------------- | -------------------------------------- |
-| `open`      | <Code small>boolean</Code>  | Makes the popover open, when popover is controlled | <Code small>undefined</Code>           |
-| `handler`   | <Code small>function</Code> | Change open state for controlled popover           | <Code small>undefined</Code>           |
-| `placement` | [Placement](#types)         | Change popover placement                           | <Code small>top</Code>                 |
-| `offset`    | [Offset](#types)            | Change popover offset from it's handler            | <Code small>5</Code>                   |
-| `dismiss`   | [Dismiss](#types)           | Change dismiss listeners when clicking outside     | <Code small>undefined</Code>           |
-| `animate`   | [Animate](#types)           | Change popover animation                           | <Code small>undefined</Code>           |
-| `children`  | <Code small>node</Code>     | Add content for popover                            | No default value it's a required prop. |
+<ComponentDemo id="popover-placement">
+  <div className="mb-3 flex gap-3">
+    <Popover placement="top">
+      <PopoverHandler>
+        <Button variant="gradient">Top</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="top-start">
+      <PopoverHandler>
+        <Button variant="gradient">Top Start</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="top-end">
+      <PopoverHandler>
+        <Button variant="gradient">Top End</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Popover placement="right">
+      <PopoverHandler>
+        <Button variant="gradient">Right</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="right-start">
+      <PopoverHandler>
+        <Button variant="gradient">Right Start</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="right-end">
+      <PopoverHandler>
+        <Button variant="gradient">Right End</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Popover placement="bottom">
+      <PopoverHandler>
+        <Button variant="gradient">Bottom</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="bottom-start">
+      <PopoverHandler>
+        <Button variant="gradient">Bottom Start</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="bottom-end">
+      <PopoverHandler>
+        <Button variant="gradient">Bottom End</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+  </div>
+  <div className="flex gap-3">
+    <Popover placement="left">
+      <PopoverHandler>
+        <Button variant="gradient">Left</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="left-start">
+      <PopoverHandler>
+        <Button variant="gradient">Left Start</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+    <Popover placement="left-end">
+      <PopoverHandler>
+        <Button variant="gradient">Left End</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        <span>This is a very beautiful popover, show some love.</span>
+      </PopoverContent>
+    </Popover>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="top">
+          <PopoverHandler>
+            <Button variant="gradient">Top</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="top-start">
+          <PopoverHandler>
+            <Button variant="gradient">Top Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="top-end">
+          <PopoverHandler>
+            <Button variant="gradient">Top End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="right">
+          <PopoverHandler>
+            <Button variant="gradient">Right</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="right-start">
+          <PopoverHandler>
+            <Button variant="gradient">Right Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="right-end">
+          <PopoverHandler>
+            <Button variant="gradient">Right End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="bottom">
+          <PopoverHandler>
+            <Button variant="gradient">Bottom</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="bottom-start">
+          <PopoverHandler>
+            <Button variant="gradient">Bottom Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="bottom-end">
+          <PopoverHandler>
+            <Button variant="gradient">Bottom End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+      <div className="flex gap-3">
+        <Popover placement="left">
+          <PopoverHandler>
+            <Button variant="gradient">Left</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="left-start">
+          <PopoverHandler>
+            <Button variant="gradient">Left Start</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="left-end">
+          <PopoverHandler>
+            <Button variant="gradient">Left End</Button>
+          </PopoverHandler>
+          <PopoverContent>
+            <span>This is a very beautiful popover, show some love.</span>
+          </PopoverContent>
+        </Popover>
+      </div>
+    </Fragment>
+  );
+}
+```
 
 ---
 
-## Popover Handler Props
+## Custom Popover Animation
 
-<span id="popover-handler-props" className="scroll-mt-48" />
-The following props are available for the popover handler component. These are the
-custom props that come with we've added for the popover handler component and you
-can use all the other native props as well.
+You can modify the open/close state animation for <Code>Popover</Code> component using the <Code>animate</Code> prop.
 
-| Attribute  | Type                    | Description                     | Default                                |
-| ---------- | ----------------------- | ------------------------------- | -------------------------------------- |
-| `children` | <Code small>node</Code> | Add content for popover handler | No default value it's a required prop. |
+<ComponentDemo id="custom-popover-animation">
+  <Popover
+    animate={{
+      mount: { scale: 1, y: 0 },
+      unmount: { scale: 0, y: 25 },
+    }}
+  >
+    <PopoverHandler>
+      <Button variant="gradient">Show Popover</Button>
+    </PopoverHandler>
+    <PopoverContent>
+      <span>This is a very beautiful popover, show some love.</span>
+    </PopoverContent>
+  </Popover>
+</ComponentDemo>
 
----
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+} from "@material-tailwind/react";
 
-## Popover Content Props
-
-<span id="popover-content-props" className="scroll-mt-48" />
-The following props are available for the popover content component. These are the
-custom props that come with we've added for the popover content component and you
-can use all the other native props as well.
-
-| Attribute   | Type                    | Description                              | Default                                |
-| ----------- | ----------------------- | ---------------------------------------- | -------------------------------------- |
-| `className` | <Code small>node</Code> | Add custom className for popover content | `''`                                   |
-| `children`  | <Code small>node</Code> | Add content for popover content          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
+export default function Example() {
+  return (
+    <Popover
+      animate={{
+        mount: { scale: 1, y: 0 },
+        unmount: { scale: 0, y: 25 },
+      }}
+    >
+      <PopoverHandler>
+        <Button variant="gradient">Show Popover</Button>
+      </PopoverHandler>
+      <PopoverContent>
+        This is a very beautiful popover, show some love.
+      </PopoverContent>
+    </Popover>
+  );
+}
 ```
 
-```ts
-type offset =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
-```
-
-```ts
-type dismiss = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

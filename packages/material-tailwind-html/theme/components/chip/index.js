@@ -12,10 +12,10 @@ const chipRoot = {
   "text-transform": "uppercase",
 
   "&.chip-md": {
-    "padding": "0.65em 1em"
+    padding: "0.65em 1em",
   },
   "&.chip-lg": {
-    "padding": ".85em 1.375em"
+    padding: ".85em 1.375em",
   },
 };
 
@@ -26,8 +26,8 @@ const chipVariant = (theme, background) => ({
   "&.chip-gradient": {
     "background-image": `linear-gradient(to top right, ${theme(
       `${background}.600`
-    )}, ${theme(`${background}.400`)})`
-  }
+    )}, ${theme(`${background}.400`)})`,
+  },
 });
 
 const chip = (theme) => ({
@@ -48,12 +48,12 @@ const chip = (theme) => ({
   ".chip-orange": chipVariant(theme, "colors.orange"),
   ".chip-deep-orange": chipVariant(theme, "colors.deep-orange"),
   ".chip-brown": chipVariant(theme, "colors.brown"),
-  ".chip-grey": chipVariant(theme, "colors.grey"),
-  ".chip-blue-grey": chipVariant(theme, "colors.blue-grey"),
+  ".chip-gray": chipVariant(theme, "colors.gray"),
+  ".chip-blue-gray": chipVariant(theme, "colors.blue-gray"),
   ".chip-red": chipVariant(theme, "colors.red"),
   ".chip-secondary": chipVariant(theme, "colors.secondary"),
   ".chip-dark": chipVariant(theme, "colors.dark"),
-  ".chip-light": chipVariant(theme, "colors.light")
+  ".chip-light": chipVariant(theme, "colors.light"),
 });
 
 module.exports.chipVariant = chipVariant;

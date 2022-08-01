@@ -22,7 +22,7 @@ export const dialogFooter: DialogFooterStylesType = {
       flexShrink: "shrink-0",
       flexWrap: "flex-wrap",
       p: "p-4",
-      color: "text-blue-grey-500",
+      color: "text-blue-gray-500",
     },
   },
 };

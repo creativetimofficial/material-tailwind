@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -57,11 +58,13 @@ export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
         findMatch(valid.colors, color, "white")
       ],
     );
-    const classes = classnames(
-      cardHeaderRoot,
-      cardHeaderVariant,
-      { [objectsToString(base.shadow)]: shadow },
-      { [objectsToString(base.floated)]: floated },
+    const classes = twMerge(
+      classnames(
+        cardHeaderRoot,
+        cardHeaderVariant,
+        { [objectsToString(base.shadow)]: shadow },
+        { [objectsToString(base.floated)]: floated },
+      ),
       className,
     );
 

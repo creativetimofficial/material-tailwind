@@ -47,19 +47,19 @@ export default function SectionFramework() {
   }, [framework]);
 
   return (
-    <section className="py-24 lg:-mt-[30rem]">
+    <section className="py-24 lg:-mt-20">
       <div className="mt-5 flex flex-wrap items-center md:mt-10">
-        <div className="relative w-full md:w-5/12 md:px-4">
+        <div className="relative w-full px-4 md:w-5/12">
           <Typography
             variant="h2"
-            className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+            className="mb-2 font-black tracking-normal text-[#1A237E]"
           >
             With your favorite <br />
             <Typography
               as="span"
               variant="h2"
               color="blue"
-              className="inline-block !font-sans font-black tracking-normal"
+              className="inline-block font-black tracking-normal"
               textGradient
             >
               Framework.
@@ -96,7 +96,7 @@ export default function SectionFramework() {
               <Chip
                 value="soon"
                 variant="gradient"
-                className="!absolute -top-3 rounded-full from-[#191919] to-[#42424a] py-1 px-2"
+                className="absolute -top-3 rounded-full from-[#191919] to-[#42424a] py-1 px-2"
               />
               <Typography className="mt-2 font-bold text-[#1A237E]">
                 Angular
@@ -109,7 +109,7 @@ export default function SectionFramework() {
               <Chip
                 value="soon"
                 variant="gradient"
-                className="!absolute -top-3 rounded-full from-[#191919] to-[#42424a] py-1 px-2"
+                className="absolute -top-3 rounded-full from-[#191919] to-[#42424a] py-1 px-2"
               />
               <Typography className="mt-2 font-bold text-[#1A237E]">
                 Vue.js

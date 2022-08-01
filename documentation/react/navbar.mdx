@@ -1,7 +1,20 @@
 ---
 title: Tailwind CSS Navbar for React - Material Tailwind
 description: Customise your web projects with our easy-to-use navbar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["navbar", "props", "types"]
+navigation: ["navbar", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/navbar",
+      description: "Learn more about props definition and types of navbar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/navbar",
+      description: "Learn how to customize the theme and styles for navbar component.",
+    },
+  ]
 github: navbar
 prev: menu
 next: popover
@@ -11,13 +24,13 @@ next: popover
 
 Use our responsive Tailwind CSS navigation for your website. You can add links, icons, links with icons, search bars, and brand text.
 
-See below our simple navbar example that you can use in your Tailwind CSS and React project.
+See below our simple <Code>Navbar</Code> example that you can use in your Tailwind CSS and React project.
 
 <br />
 
 <ComponentDemo id="navbar">
   <Navbar className="mx-auto max-w-screen-xl">
-    <div className="container flex items-center justify-between text-blue-grey-900">
+    <div className="container flex items-center justify-between text-blue-gray-900">
       <Typography
         as="a"
         href="#"
@@ -28,11 +41,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
       </Typography>
       <ul className="flex items-center gap-6">
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Pages&nbsp;
+          <a href="#" className="flex items-center">
+            {`Pages`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -45,11 +58,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Account&nbsp;
+          <a href="#" className="flex items-center">
+            {`Account`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -62,11 +75,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Blocks&nbsp;
+          <a href="#" className="flex items-center">
+            {`Blocks`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -79,11 +92,11 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
           </a>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="navbar-item-docs flex items-center">
-            Docs&nbsp;
+          <a href="#" className="flex items-center">
+            {`Docs`}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 opacity-75"
+              className="ml-0.5 h-4 w-4 opacity-75"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -103,14 +116,14 @@ See below our simple navbar example that you can use in your Tailwind CSS and Re
   </Navbar>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Navbar, Button, Typography } from "@material-tailwind/react";
 
 export default function Example() {
   const icon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-4 w-4 opacity-75"
+      className="ml-0.5 h-4 w-4 opacity-75"
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -124,7 +137,7 @@ export default function Example() {
 
   return (
     <Navbar className="mx-auto max-w-screen-xl">
-      <div className="container flex items-center justify-between text-blue-grey-900">
+      <div className="container flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
@@ -135,16 +148,16 @@ export default function Example() {
         </Typography>
         <ul className="flex items-center gap-6">
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Pages&nbsp;{icon}</a>
+            <a className="flex items-center">Pages{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Account&nbsp;{icon}</a>
+            <a className="flex items-center">Account{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Blocks&nbsp;{icon}</a>
+            <a className="flex items-center">Blocks{icon}</a>
           </Typography>
           <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Docs&nbsp;{icon}</a>
+            <a className="flex items-center">Docs{icon}</a>
           </Typography>
         </ul>
         <Button variant="gradient" size="sm">
@@ -156,56 +169,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the navbar component. These are the custom
-props that come with we've added for the navbar component and you can use all the
-other native props as well.
-
-| Attribute   | Type                       | Description                                                               | Default                                |
-| ----------- | -------------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
-| `variant`   | [Variant](#types)          | Change navbar variant                                                     | <Code small>filled</Code>              |
-| `color`     | [Color](#types)            | Change navbar color                                                       | <Code small>white</Code>               |
-| `shadow`    | <Code small>boolean</Code> | Add box-shadow for navbar                                                 | <Code small>true</Code>                |
-| `blurred`   | <Code small>boolean</Code> | Add blur backdrop effect for navbar and makes it's background color white | <Code small>true</Code>                |
-| `fullWidth` | <Code small>boolean</Code> | Change navbar to a block level element and remove its border radius       | <Code small>false</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for navbar                                           | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for navbar                                                    | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "transparent"
-  | "white"
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
+<span id="theme" className="scroll-mt-48" />

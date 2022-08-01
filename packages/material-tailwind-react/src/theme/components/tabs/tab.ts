@@ -34,7 +34,7 @@ export const tab: TabStylesType = {
           position: "relative",
           bg: "bg-transparent",
           p: "p-1",
-          color: "text-blue-grey-900",
+          color: "text-blue-gray-900",
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
           fontSize: "text-base",

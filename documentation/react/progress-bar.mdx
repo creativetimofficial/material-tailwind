@@ -8,7 +8,20 @@ navigation:
     "progress-bar-colors",
     "progress-bar-with-label",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/progress-bar",
+      description: "Learn more about props definition and types of progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/progress-bar",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
   ]
 github: progress-bar
 prev: popover
@@ -19,7 +32,7 @@ next: radio-button
 
 Our Tailwind CSS progressbar can be used to show a user how far along he is in a process. The progress can be determinate or indeterminate. Use the Progress Bar to show an ongoing process that takes a noticeable time to finish.
 
-Below we are presenting our examples of progress component that you can use in your Tailwind CSS and React project. It comes in different styles and colors, so you can adapt it easily to your needs.
+Below we are presenting our examples of <Code>Progress</Code> component that you can use in your Tailwind CSS and React project. It comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
@@ -27,7 +40,7 @@ Below we are presenting our examples of progress component that you can use in y
   <Progress value={50} />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Progress } from "@material-tailwind/react";
 
 export default function Example() {
@@ -39,7 +52,7 @@ export default function Example() {
 
 ## Progress Bar Variants
 
-The progress bar component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
+The <Code>Progress</Code> component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
 
 <ComponentDemo id="progress-bar-variants">
   <div className="flex w-full flex-col gap-4">
@@ -48,7 +61,7 @@ The progress bar component comes with 2 different variants that you can change i
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Progress } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -65,7 +78,7 @@ export default function Colors() {
 
 ## Progress Bar Colors
 
-The progress bar component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="progress-bar-colors">
   <div className="flex w-full flex-col gap-4">
@@ -80,7 +93,7 @@ The progress bar component comes with 19 different colors that you can change it
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Progress } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -107,7 +120,7 @@ export default function Colors() {
   <Progress value={50} label="Completed" />
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Progress } from "@material-tailwind/react";
 
 export default function Example() {
@@ -115,57 +128,5 @@ export default function Example() {
 }
 ```
 
----
-
-## Props
-
 <span id="props" className="scroll-mt-48" />
-The following props are available for the progress bar component. These are the custom
-props that come with we've added for the progress bar component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                                      | Default                      |
-| ----------- | ------------------------- | ------------------------------------------------ | ---------------------------- |
-| `variant`   | [Variant](#types)         | Change progress bar variant                      | <Code small>filled</Code>    |
-| `color`     | [Color](#types)           | Change progress bar color                        | <Code small>blue</Code>      |
-| `label`     | [label](#types)           | Add label for progress bar                       | <Code small>undefined</Code> |
-| `value`     | <Code small>number</Code> | Add the completed percentage for progress bar    | 0                            |
-| `barProps`  | <Code small>Object</Code> | Add custom props for progress bar percentage bar | <Code small>undefined</Code> |
-| `className` | <Code small>string</Code> | Add custom className for progress bar            | `''`                         |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
-
-```ts
-type label = string | boolean;
-```
+<span id="theme" className="scroll-mt-48" />

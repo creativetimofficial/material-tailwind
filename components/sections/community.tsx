@@ -8,11 +8,7 @@ export default function SectionCommnunity() {
   return (
     <section className="relative z-50 pb-64 md:pt-12">
       <div className="mx-auto w-full text-center text-[#1A237E] md:w-3/4">
-        <Typography
-          variant="h2"
-          color="inherit"
-          className="mb-4 !font-sans font-black"
-        >
+        <Typography variant="h2" color="inherit" className="mb-4 font-black">
           Join our comumunity
         </Typography>
         <Typography color="inherit" className="text-lg opacity-60">
@@ -25,7 +21,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Github"
             iconClass="fab fa-github"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Contribute to our project and help our community!
           </Feature>
@@ -34,7 +30,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Discord"
             iconClass="fab fa-discord"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Join our Discord community and let’s get to know each other.
           </Feature>
@@ -43,7 +39,7 @@ export default function SectionCommnunity() {
           <Feature
             title="Twitter"
             iconClass="fab fa-twitter"
-            className="shadow-2xl shadow-blue-grey-500/[0.12]"
+            className="shadow-blue-gray-500/[0.12] shadow-2xl"
           >
             Follow us on Twitter and keep up-to-date with our latest news.
           </Feature>

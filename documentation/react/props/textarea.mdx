@@ -1,0 +1,107 @@
+---
+title: Tailwind CSS Textarea Props - Material Tailwind
+description: Learn more about props definition and types of textarea component.
+navigation:
+  [
+    "textarea-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "examples",
+    "theme",
+  ]
+github: props/textarea
+related:
+  [
+    {
+      title: "Examples",
+      route: "textarea",
+      description: "Checkout different examples for textarea component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/textarea",
+      description: "Learn how to customize the theme and styles for textarea component.",
+    },
+  ]
+---
+
+# Tailwind CSS Textarea - Props
+
+<span id="textarea-props" className="scroll-mt-48" />
+The following props are available for textarea component. These are the custom props
+that come with we've added for the textarea component and you can use all the other
+native textarea props as well.
+
+| Attribute    | Type                      | Description                         | Default                |
+| ------------ | ------------------------- | ----------------------------------- | ---------------------- |
+| `variant`    | [Variant](#types-variant) | Change textarea variant             | <Code>outlined</Code>  |
+| `size`       | [Size](#types-size)       | Change textarea size                | <Code>md</Code>        |
+| `color`      | [Color](#types-color)     | Change textarea color               | <Code>blue</Code>      |
+| `label`      | <Code>string</Code>       | Add label for textarea              | `''`                   |
+| `error`      | <Code>boolean</Code>      | Change textarea state to error      | <Code>false</Code>     |
+| `success`    | <Code>boolean</Code>      | Change textarea state to success    | <Code>false</Code>     |
+| `resize`     | <Code>boolean</Code>      | Makes textarea resizable            | <Code>false</Code>     |
+| `labelProps` | <Code>object</Code>       | Add custom props for textarea label | <Code>undefined</Code> |
+| `className`  | <Code>string</Code>       | Add custom className for textarea   | `''`                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { TextareaProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "md" | "lg";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

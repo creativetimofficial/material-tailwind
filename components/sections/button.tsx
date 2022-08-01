@@ -46,7 +46,7 @@ export default function SectionButton() {
         setButtonCode(`<Button className="flex items-center">
   <i className="
     material-icons mr-1
-    !text-base leading-none
+    text-base leading-none
   ">
     favorite
   </i>
@@ -68,14 +68,14 @@ export default function SectionButton() {
         <div className="w-full px-4 lg:w-5/12">
           <Typography
             variant="h2"
-            className="mb-2 !font-sans font-black tracking-normal text-[#1A237E]"
+            className="mb-2 font-black tracking-normal text-[#1A237E]"
           >
             Change your <br />
             <Typography
               as="span"
               variant="h2"
               color="blue"
-              className="inline-block !font-sans font-black tracking-normal"
+              className="inline-block font-black tracking-normal"
               textGradient
             >
               Button&apos;s
@@ -97,7 +97,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("default")}
                 onClick={() => setButtonType("default")}
               >
-                <i className="material-icons !text-xl">radio_button_checked</i>
+                <i className="material-icons text-xl">radio_button_checked</i>
                 <Typography>Default</Typography>
               </span>
             </div>
@@ -106,7 +106,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("gradient")}
                 onClick={() => setButtonType("gradient")}
               >
-                <i className="material-icons !text-xl">gradient</i>
+                <i className="material-icons text-xl">gradient</i>
                 <Typography>Gradient</Typography>
               </span>
             </div>
@@ -115,7 +115,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("link")}
                 onClick={() => setButtonType("link")}
               >
-                <i className="material-icons !text-xl">format_color_text</i>
+                <i className="material-icons text-xl">format_color_text</i>
                 <Typography>Link</Typography>
               </span>
             </div>
@@ -124,7 +124,7 @@ export default function SectionButton() {
                 className={buttonOptionClasses("icon")}
                 onClick={() => setButtonType("icon")}
               >
-                <i className="material-icons !text-xl">favorite</i>
+                <i className="material-icons text-xl">favorite</i>
                 <Typography>Icon</Typography>
               </span>
             </div>
@@ -142,7 +142,7 @@ ${buttonCode}
             src="/img/blue.png"
             alt="tailwind_blob_blue"
           />
-          <div className="bg-dark absolute top-44 right-11 z-30 flex h-40 w-[13rem] rounded-lg bg-white/80 shadow-2xl shadow-blue-grey-500/20 backdrop-blur-2xl backdrop-saturate-200 md:top-14 md:-right-24 md:h-56 md:w-80 lg:top-20">
+          <div className="bg-dark absolute top-44 right-11 z-30 flex h-40 w-[13rem] rounded-lg bg-white/80 shadow-2xl shadow-blue-gray-500/20 backdrop-blur-2xl backdrop-saturate-200 md:top-14 md:-right-24 md:h-56 md:w-80 lg:top-20">
             <div className="m-auto">
               <JsxParser components={{ Button }} jsx={buttonCode} />
             </div>

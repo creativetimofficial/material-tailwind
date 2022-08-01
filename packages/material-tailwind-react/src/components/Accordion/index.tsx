@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -28,8 +29,8 @@ import {
 } from "../../types/components/accordion";
 
 // accordion components
-import AccordionHeader from "./AccordionHeader";
-import AccordionBody from "./AccordionBody";
+import { AccordionHeader, AccordionHeaderProps } from "./AccordionHeader";
+import { AccordionBody, AccordionBodyProps } from "./AccordionBody";
 
 export interface AccordionProps extends React.ComponentProps<"div"> {
   open: open;
@@ -56,14 +57,16 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     disabled = disabled ?? defaultProps.disabled;
 
     // 3. set styles
-    const accordionClasses = classnames(
-      objectsToString(base.container),
-      { [objectsToString(base.disabled)]: disabled },
+    const accordionClasses = twMerge(
+      classnames(objectsToString(base.container), { [objectsToString(base.disabled)]: disabled }),
       className,
     );
 
     // 4. memoize context value
-    const contextValue = React.useMemo(() => ({ open, icon, animate }), [open, icon, animate]);
+    const contextValue = React.useMemo(
+      () => ({ open, icon, animate, disabled }),
+      [open, icon, animate, disabled],
+    );
 
     // 5. return
     return (
@@ -87,6 +90,7 @@ Accordion.propTypes = {
 
 Accordion.displayName = "MaterialTailwind.Accordion";
 
+export type { AccordionHeaderProps, AccordionBodyProps };
 export { Accordion, AccordionHeader, AccordionBody, useAccordion };
 export default Object.assign(Accordion, {
   Header: AccordionHeader,

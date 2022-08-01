@@ -10,7 +10,6 @@ import type {
   label,
   error,
   success,
-  icon,
   resize,
   labelProps,
   className,
@@ -39,7 +38,7 @@ export interface TextareaVariantStylesType {
     lg?: TextareaSizeStylesType;
   };
   colors?: {
-    input?: object;
+    textarea?: object;
     label?: object;
   };
   error?: TextareaStateStylesType;
@@ -54,7 +53,6 @@ export interface TextareaStylesType {
     label?: label;
     error?: error;
     success?: success;
-    icon?: icon;
     resize?: resize;
     labelProps?: labelProps;
     className?: className;
@@ -108,12 +106,12 @@ export const textarea: TextareaStylesType = {
         height: "h-full",
         minHeight: "min-h-[100px]",
         bg: "bg-transparent",
-        color: "text-blue-grey-700",
+        color: "text-blue-gray-700",
         fontFamily: "font-sans",
         fontWeight: "font-normal",
         outline: "outline outline-0 focus:outline-0",
         resize: "resize-y",
-        disabled: "disabled:bg-blue-grey-50 disabled:border-0 disabled:resize-none",
+        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none",
         transition: "transition-all",
       },
       label: {
@@ -125,10 +123,10 @@ export const textarea: TextareaStylesType = {
         position: "absolute",
         left: "left-0",
         fontWeight: "font-normal",
-        color: "peer-placeholder-shown:text-blue-grey-500",
+        color: "peer-placeholder-shown:text-blue-gray-500",
         lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:
-          "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-grey-500",
+          "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500",
         transition: "transition-all",
       },
     },

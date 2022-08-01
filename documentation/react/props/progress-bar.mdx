@@ -1,0 +1,104 @@
+---
+title: Tailwind CSS Progress Bar Props - Material Tailwind
+description: Learn more about props definition and types of progress bar component.
+navigation:
+  [
+    "progress-bar-props",
+    "types-variant",
+    "types-color",
+    "types-label",
+    "examples",
+    "theme",
+  ]
+github: props/progress-bar
+related:
+  [
+    {
+      title: "Examples",
+      route: "progress-bar",
+      description: "Checkout different examples for progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/progress-bar",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
+  ]
+---
+
+# Tailwind CSS Progress Bar - Props
+
+<span id="progress-bar-props" className="scroll-mt-48" />
+The following props are available for progress bar component. These are the custom
+props that come with we've added for the progress bar component and you can use all
+the other native props as well.
+
+| Attribute   | Type                      | Description                                      | Default                |
+| ----------- | ------------------------- | ------------------------------------------------ | ---------------------- |
+| `variant`   | [Variant](#types-variant) | Change progress bar variant                      | <Code>filled</Code>    |
+| `color`     | [Color](#types-color)     | Change progress bar color                        | <Code>blue</Code>      |
+| `label`     | [label](#types-label)     | Add label for progress bar                       | <Code>undefined</Code> |
+| `value`     | <Code>number</Code>       | Add the completed percentage for progress bar    | 0                      |
+| `barProps`  | <Code>object</Code>       | Add custom props for progress bar percentage bar | <Code>undefined</Code> |
+| `className` | <Code>string</Code>       | Add custom className for progress bar            | `''`                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ProgressProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+## Types - Label
+
+<span id="types-label" className="scroll-mt-48" />
+
+```ts
+type label = string | boolean;
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

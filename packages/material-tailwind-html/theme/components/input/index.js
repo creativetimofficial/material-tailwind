@@ -9,25 +9,25 @@ const input = (theme) => ({
     color: "#495057",
     "background-color": "transparent",
     "background-clip": "padding-box",
-    border: `1px solid theme("colors.blue-grey.100")`,
+    border: `1px solid theme("colors.blue-gray.100")`,
     appearance: "none",
     "border-radius": "0.375rem",
     transition: ".2s ease",
-  
+
     "&:focus-visible": {
-      outline: "none"
-    }
+      outline: "none",
+    },
   },
   ".form-label": {
-    position: "absolute"
+    position: "absolute",
   },
   ".form-label,label": {
     "font-size": ".875rem",
     "font-weight": "400",
     "margin-bottom": "0.5rem",
-    color: theme("colors.blue-grey.500"),
+    color: theme("colors.blue-gray.500"),
     "margin-left": "0",
-    "transition": "all .2s ease"
+    transition: "all .2s ease",
   },
   ".input-group": {
     position: "relative",
@@ -48,7 +48,7 @@ const input = (theme) => ({
         "&:before,&:after": {
           content: '""',
           "border-top": "1px solid",
-          "border-top-color": theme("colors.blue-grey.100"),
+          "border-top-color": theme("colors.blue-gray.100"),
           "pointer-events": "none",
           "margin-top": "0.375rem",
           "box-sizing": "border-box",
@@ -56,52 +56,52 @@ const input = (theme) => ({
           height: "0.5rem",
           width: "0.625rem",
           "border-width": "1px 0 0",
-          "border-color": "transparent"
+          "border-color": "transparent",
         },
 
         "&:before": {
           "margin-right": "4px",
           "border-left": "1px solid transparent",
-          "border-radius": "6px 0"
+          "border-radius": "6px 0",
         },
 
         "&:after": {
           "flex-grow": "1",
           "margin-left": "4px",
           "border-right": "1px solid transparent",
-          "border-radius": "0 6px"
-        }
+          "border-radius": "0 6px",
+        },
       },
 
       ".form-control": {
-        "background": "none",
-        border: `1px solid theme("colors.blue-grey.100")`,
+        background: "none",
+        border: `1px solid theme("colors.blue-gray.100")`,
         "border-radius": "0.375rem",
         "border-top-left-radius": "0.375rem",
         "border-bottom-left-radius": "0.375rem",
         padding: "0.625rem 0.75rem",
         "line-height": "1.25rem",
-        "z-index": "20"
-      }
+        "z-index": "20",
+      },
     },
 
     "&.input-group-dynamic,&.input-group-static,": {
       ".form-control": {
         "border-radius": "0",
         border: "0",
-        "background": "no-repeat bottom,50% calc(100% - 1px)",
-        "background-image": `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-grey.100") 1px,hsla(0,0%,82%,0) 0)`,
+        background: "no-repeat bottom,50% calc(100% - 1px)",
+        "background-image": `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-gray.100") 1px,hsla(0,0%,82%,0) 0)`,
         "background-size": "0 100%,100% 100%",
         transition: ".2s ease",
       },
       ".form-label": {
-        top: "0.4rem"
-      }
+        top: "0.4rem",
+      },
     },
 
     "&.input-group-static": {
-      "label": {
-        "margin-bottom": "0"
+      label: {
+        "margin-bottom": "0",
       },
     },
 
@@ -117,49 +117,45 @@ const input = (theme) => ({
         "&:before": {
           opacity: "1",
           "border-top-color": theme("colors.pink.500"),
-          "box-shadow": `inset 0 1px theme("colors.pink.500")`
+          "box-shadow": `inset 0 1px theme("colors.pink.500")`,
         },
 
         "&:after": {
           opacity: "1",
           "border-top-color": theme("colors.pink.500"),
-          "box-shadow": `inset 0 1px theme("colors.pink.500")`
-        }
+          "box-shadow": `inset 0 1px theme("colors.pink.500")`,
+        },
       },
 
       "&.input-group-outline": {
         ".form-label+.form-control": {
           "border-color": theme("colors.pink.500"),
           "border-top-color": "transparent",
-          "box-shadow": `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`
+          "box-shadow": `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`,
         },
       },
 
       "&.input-group-dynamic": {
         ".form-label": {
-          top: "-0.7rem"
-        }
+          top: "-0.7rem",
+        },
       },
 
       "&.input-group-static": {
-        "label": {
-          color: theme("colors.pink.500")
-        }
+        label: {
+          color: theme("colors.pink.500"),
+        },
       },
 
       ".form-control": {
-        "background-size": "100% 100%,100% 100%"
-      }
+        "background-size": "100% 100%,100% 100%",
+      },
     },
 
     "&:focus-visible": {
-      outline: "none"
-    }
-  }
+      outline: "none",
+    },
+  },
 });
 
-
-
 module.exports.input = input;
-
-

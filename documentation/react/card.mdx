@@ -1,14 +1,19 @@
 ---
 title: Tailwind CSS Card for React - Material Tailwind
 description: Customise your web projects with our beautiful cards component for Tailwind CSS and React using Material Design guidelines.
-navigation:
+navigation: ["card", "profile-card", "login-card", "props", "theme"]
+related:
   [
-    "card",
-    "card-props",
-    "card-header-props",
-    "card-body-props",
-    "card-footer-props",
-    "types",
+    {
+      title: "Props",
+      route: "props/card",
+      description: "Learn more about props definition and types of card components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/card",
+      description: "Learn how to customize the theme and styles for card components.",
+    },
   ]
 github: card
 prev: button
@@ -17,11 +22,11 @@ next: checkbox
 
 # Tailwind CSS Card - React
 
-Use our cards to provide a flexible and extensible content container based on Tailwind CSS with multiple variants and options.
+Use our <Code>Card</Code> to provide a flexible and extensible content container based on Tailwind CSS with multiple variants and options.
 
-By its definition, a card is a sheet of material that serves as an entry point to more detailed information. Cards usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+By its definition, a <Code>Card</Code> is a sheet of material that serves as an entry point to more detailed information. <Code>Card</Code> usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-See below our beautiful card example that you can use in your React and Tailwind CSS projects. We've also included some card props that are available.
+See below our beautiful <Code>Card</Code> example that you can use in your React and Tailwind CSS projects. We've also included some <Code>Card</Code> props that are available.
 
 <br />
 
@@ -31,7 +36,7 @@ See below our beautiful card example that you can use in your React and Tailwind
       <Image src="/img/blog.jpg" alt="img-blur-shadow" layout="fill" />
     </CardHeader>
     <CardBody className="text-center">
-      <Typography variant="h5" color="blue-grey" className="mb-2">
+      <Typography variant="h5" color="blue-gray" className="mb-2">
         <span>Cozy 5 Stars Apartment</span>
       </Typography>
       <Typography>
@@ -45,7 +50,7 @@ See below our beautiful card example that you can use in your React and Tailwind
       className="-mt-4 flex items-center justify-between py-3"
     >
       <Typography variant="small">$899/night</Typography>
-      <Typography variant="small" color="grey" className="flex gap-1">
+      <Typography variant="small" color="gray" className="flex gap-1">
         <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
         <span>Barcelona, Spain</span>
       </Typography>
@@ -53,7 +58,7 @@ See below our beautiful card example that you can use in your React and Tailwind
   </Card>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Card,
   CardHeader,
@@ -64,7 +69,7 @@ import {
 
 export default function Example() {
   return (
-    <Card className="mt-6 w-96">
+    <Card className="w-96">
       <CardHeader color="blue" className="relative h-56">
         <img
           src="/img/blog.jpg"
@@ -84,7 +89,7 @@ export default function Example() {
       </CardBody>
       <CardFooter divider className="flex items-center justify-between py-3">
         <Typography variant="small">$899/night</Typography>
-        <Typography variant="small" color="grey" className="flex gap-1">
+        <Typography variant="small" color="gray" className="flex gap-1">
           <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
           Barcelona, Spain
         </Typography>
@@ -96,99 +101,220 @@ export default function Example() {
 
 ---
 
-## Card Props
+## Tailwind CSS Profile Card - React
 
-<span id="card-props" className="scroll-mt-48" />
-The following props are available for the card component. These are the custom props
-that come with we've added for the card component and you can use all the other native
-props as well.
+<ComponentDemo id="profile-card">
+  <Card className="w-96">
+    <CardHeader floated={false} className="h-80">
+      <Image
+        src="/img/team-3.jpg"
+        alt="profile-picture"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </CardHeader>
+    <CardBody className="text-center">
+      <Typography variant="h4" color="blue-gray" className="mb-2">
+        {`Natalie Paisley`}
+      </Typography>
+      <Typography color="blue" className="font-medium" textGradient>
+        {`CEO / Co-Founder`}
+      </Typography>
+    </CardBody>
+    <CardFooter className="flex justify-center gap-7 pt-2">
+      <Tooltip content="Like">
+        <Typography
+          as="a"
+          href="#facebook"
+          variant="lead"
+          color="blue"
+          textGradient
+        >
+          <i className="fab fa-facebook" />
+        </Typography>
+      </Tooltip>
+      <Tooltip content="Follow">
+        <Typography
+          as="a"
+          href="#twitter"
+          variant="lead"
+          color="light-blue"
+          textGradient
+        >
+          <i className="fab fa-twitter" />
+        </Typography>
+      </Tooltip>
+      <Tooltip content="Follow">
+        <Typography
+          as="a"
+          href="#instagram"
+          variant="lead"
+          color="purple"
+          textGradient
+        >
+          <i className="fab fa-instagram" />
+        </Typography>
+      </Tooltip>
+    </CardFooter>
+  </Card>
+</ComponentDemo>
 
-| Attribute   | Type                       | Description                   | Default                                |
-| ----------- | -------------------------- | ----------------------------- | -------------------------------------- |
-| `variant`   | [Variant](#types)          | Change card variant           | <Code small>filled</Code>              |
-| `color`     | [Color](#types)            | Change card color             | <Code small>white</Code>               |
-| `shadow`    | <Code small>boolean</Code> | Add box-shadow for card       | <Code small>true</Code>                |
-| `className` | <Code small>string</Code>  | Add custom className for card | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for card          | No default value it's a required prop. |
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Tooltip,
+} from "@material-tailwind/react";
 
----
-
-## Card Header Props
-
-<span id="card-header-props" className="scroll-mt-48" />
-The following props are available for the card header component. These are the custom
-props that come with we've added for the card header component and you can use all
-the other native props as well.
-
-| Attribute   | Type                       | Description                          | Default                                |
-| ----------- | -------------------------- | ------------------------------------ | -------------------------------------- |
-| `variant`   | [Variant](#types)          | Change card header variant           | <Code small>filled</Code>              |
-| `color`     | [Color](#types)            | Change card header color             | <Code small>white</Code>               |
-| `shadow`    | <Code small>boolean</Code> | Add box-shadow for card header       | <Code small>true</Code>                |
-| `floated`   | <Code small>boolean</Code> | Makes card header floated            | <Code small>true</Code>                |
-| `className` | <Code small>string</Code>  | Add custom className for card header | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for card header          | No default value it's a required prop. |
-
----
-
-## Card Body Props
-
-<span id="card-body-props" className="scroll-mt-48" />
-The following props are available for the card body component. These are the custom
-props that come with we've added for the card body component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                        | Default                                |
-| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
-| `className` | <Code small>string</Code> | Add custom className for card body | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for card body          | No default value it's a required prop. |
-
----
-
-## Card Footer Props
-
-<span id="card-footer-props" className="scroll-mt-48" />
-The following props are available for the card footer component. These are the custom
-props that come with we've added for the card footer component and you can use all
-the other native props as well.
-
-| Attribute   | Type                       | Description                          | Default                                |
-| ----------- | -------------------------- | ------------------------------------ | -------------------------------------- |
-| `divider`   | <Code small>boolean</Code> | Add border-top for card footer       | <Code small>false</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for card footer | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for card footer          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <CardHeader floated={false} className="h-80">
+        <img src="/img/team-3.jpg" alt="profile-picture" />
+      </CardHeader>
+      <CardBody className="text-center">
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Natalie Paisley
+        </Typography>
+        <Typography color="blue" className="font-medium" textGradient>
+          CEO / Co-Founder
+        </Typography>
+      </CardBody>
+      <CardFooter className="flex justify-center gap-7 pt-2">
+        <Tooltip content="Like">
+          <Typography
+            as="a"
+            href="#facebook"
+            variant="lead"
+            color="blue"
+            textGradient
+          >
+            <i className="fab fa-facebook" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#twitter"
+            variant="lead"
+            color="light-blue"
+            textGradient
+          >
+            <i className="fab fa-twitter" />
+          </Typography>
+        </Tooltip>
+        <Tooltip content="Follow">
+          <Typography
+            as="a"
+            href="#instagram"
+            variant="lead"
+            color="purple"
+            textGradient
+          >
+            <i className="fab fa-instagram" />
+          </Typography>
+        </Tooltip>
+      </CardFooter>
+    </Card>
+  );
+}
 ```
 
-```ts
-type color =
-  | "transparent"
-  | "white"
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
+---
+
+## Tailwind CSS Login Card - React
+
+<ComponentDemo id="login-card">
+  <Card className="mt-6 w-96">
+    <CardHeader
+      variant="gradient"
+      color="blue"
+      className="mb-4 grid h-28 place-items-center"
+    >
+      <Typography variant="h3" color="white">
+        {`Sign In`}
+      </Typography>
+    </CardHeader>
+    <CardBody className="flex flex-col gap-4">
+      <Input label="Email" size="lg" />
+      <Input label="Password" size="lg" />
+      <div className="-ml-2.5">
+        <Checkbox label="Remember Me" />
+      </div>
+    </CardBody>
+    <CardFooter className="pt-0">
+      <Button variant="gradient" fullWidth>
+        {`Sign In`}
+      </Button>
+      <Typography variant="small" className="mt-6 flex justify-center">
+        {`Don't have an account?`}
+        <Typography
+          as="a"
+          href="#signup"
+          variant="small"
+          color="blue"
+          className="ml-1 font-bold"
+        >
+          {`Sign up`}
+        </Typography>
+      </Typography>
+    </CardFooter>
+  </Card>
+</ComponentDemo>
+
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <CardHeader
+        variant="gradient"
+        color="blue"
+        className="mb-4 grid h-28 place-items-center"
+      >
+        <Typography variant="h3" color="white">
+          Sign In
+        </Typography>
+      </CardHeader>
+      <CardBody className="flex flex-col gap-4">
+        <Input label="Email" size="lg" />
+        <Input label="Password" size="lg" />
+        <div className="-ml-2.5">
+          <Checkbox label="Remember Me" />
+        </div>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button variant="gradient" fullWidth>
+          Sign In
+        </Button>
+        <Typography variant="small" className="mt-6 flex justify-center">
+          Don't have an account?
+          <Typography
+            as="a"
+            href="#signup"
+            variant="small"
+            color="blue"
+            className="ml-1 font-bold"
+          >
+            Sign up
+          </Typography>
+        </Typography>
+      </CardFooter>
+    </Card>
+  );
+}
 ```
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

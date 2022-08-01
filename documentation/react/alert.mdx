@@ -6,9 +6,24 @@ navigation:
     "alert",
     "alert-variants",
     "alert-colors",
+    "alert-with-icon",
     "alert-dismissible",
+    "custom-alert-animation",
     "props",
-    "types",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/alert",
+      description: "Learn more about props definition and types of alert component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/alert",
+      description: "Learn how to customize the theme and styles for alert component.",
+    },
   ]
 github: alert
 prev: accordion
@@ -17,11 +32,11 @@ next: avatar
 
 # Tailwind CSS Alert - React
 
-Get started on your web projects with our Tailwind CSS alert which provides contextual feedback messages for typical user actions.
+Get started on your web projects with our Tailwind CSS <Code>Alert</Code> which provides contextual feedback messages for typical user actions.
 
-An alert displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
+An <Code>Alert</Code> displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
 
-See below our simple alert example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our simple <Code>Alert</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
@@ -29,7 +44,7 @@ See below our simple alert example that you can use in your Tailwind CSS and Rea
   <Alert>A simple alert for showing message.</Alert>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Example() {
@@ -41,7 +56,7 @@ export default function Example() {
 
 ## Alert Variants
 
-The alert component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Alert</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
 <ComponentDemo id="alert-variants">
   <div className="flex w-full flex-col gap-2">
@@ -52,7 +67,7 @@ The alert component comes with 2 different variants that you can change it using
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Variants() {
@@ -71,7 +86,7 @@ export default function Variants() {
 
 ## Alert Colors
 
-The alert component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Alert</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
 <ComponentDemo id="alert-colors">
   <div className="flex w-full flex-col gap-2">
@@ -82,7 +97,7 @@ The alert component comes with 19 different colors that you can change it using 
   </div>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import { Alert } from "@material-tailwind/react";
 
 export default function Colors() {
@@ -99,9 +114,67 @@ export default function Colors() {
 
 ---
 
+## Alert with Icon
+
+You can add an icon at the beginning of <Code>Alert</Code> component using the <Code>icon</Code> prop.
+
+<ComponentDemo id="alert-with-icon">
+  <Alert
+    icon={
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={2}
+        stroke="currentColor"
+        className="h-6 w-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    }
+  >
+    {`A simple alert with icon for showing message.`}
+  </Alert>
+</ComponentDemo>
+
+```jsx
+import { Alert } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Alert
+      icon={
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="h-6 w-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      }
+    >
+      A simple alert with icon for showing message.
+    </Alert>
+  );
+}
+```
+
+---
+
 ## Alert Dismissible
 
-The alert component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
 <State initialState={{ show: true }}>
   <ComponentDemo id="alert-dismissible">
@@ -132,7 +205,7 @@ The alert component is a dismissible component that you can control it using the
   </ComponentDemo>
 </State>
 
-```jsx showLineNumbers
+```jsx
 import { useState, Fragment } from "react";
 import { Alert, Button } from "@material-tailwind/react";
 
@@ -165,67 +238,81 @@ export default function Colors() {
 
 ---
 
-## Props
+## Custom Alert Animation
+
+You can modify the open/close state animation for <Code>Alert</Code> component using the <Code>animate</Code> prop.
+
+<State initialState={{ show: true }}>
+  <ComponentDemo id="custom-alert-animation">
+    <Observe>
+      {({ setState, show }) => (
+        <>
+          {!show && (
+            <Button
+              variant="gradient"
+              className="absolute"
+              onClick={() => setState((s) => ({ show: true }))}
+            >
+              Show Alert
+            </Button>
+          )}
+          <Alert
+            variant="gradient"
+            show={show}
+            animate={{
+              mount: {
+                y: 0,
+              },
+              unmount: {
+                y: 100,
+              },
+            }}
+            dismissible={{
+              onClose: () => setState((s) => ({ show: false })),
+            }}
+          >
+            A dismissible alert with custom animation.
+          </Alert>
+        </>
+      )}
+    </Observe>
+  </ComponentDemo>
+</State>
+
+```jsx
+import { useState, Fragment } from "react";
+import { Alert, Button } from "@material-tailwind/react";
+
+export default function Colors() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <Fragment>
+      {!show && (
+        <Button
+          variant="gradient"
+          className="absolute"
+          onClick={() => setShow(true)}
+        >
+          Show Alert
+        </Button>
+      )}
+      <Alert
+        show={show}
+        animate={{
+          mount: { y: 0 },
+          unmount: { y: 100 },
+        }}
+        dismissible={{
+          onClose: () => setShow(false),
+        }}
+      >
+        A dismissible alert with custom animation.
+      </Alert>
+    </Fragment>
+  );
+}
+```
 
 <span id="props" className="scroll-mt-48" />
-The following props are available for the button component. These are the custom
-props that come with we've added for the alert component and you can use all the
-other native props as well.
-
-| Attribute     | Type                       | Description                        | Default                                |
-| ------------- | -------------------------- | ---------------------------------- | -------------------------------------- |
-| `variant`     | [Variant](#types)          | Change alert variant               | <Code small>filled</Code>              |
-| `color`       | [Color](#types)            | Change alert color                 | <Code small>blue</Code>                |
-| `dismissible` | [Dismissible](#types)      | Makes the alert dismissible        | <Code small>undefined</Code>           |
-| `animate`     | [Animate](#types)          | Change alert animation             | <Code small>undefined</Code>           |
-| `show`        | <Code small>boolean</Code> | Change the alert visibility        | <Code small>true</Code>                |
-| `icon`        | <Code small>node</Code>    | Add icon at the beginning of alert | <Code small>undefined</Code>           |
-| `className`   | <Code small>string</Code>  | Add custom className for alert     | `''`                                   |
-| `children`    | <Code small>node</Code>    | Add content for alert              | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type variant = "filled" | "gradient";
-```
-
-```ts
-type color =
-  | "blue-grey"
-  | "grey"
-  | "brown"
-  | "deep-orange"
-  | "orange"
-  | "amber"
-  | "yellow"
-  | "lime"
-  | "light-green"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "light-blue"
-  | "blue"
-  | "indigo"
-  | "deep-purple"
-  | "purple"
-  | "pink"
-  | "red";
-```
-
-```ts
-type dismissible = {
-  action?: ReactNode;
-  onClose: () => void;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="theme" className="scroll-mt-48" />

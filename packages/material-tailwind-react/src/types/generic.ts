@@ -3,8 +3,8 @@ import type { AnimatePresenceProps } from "framer-motion";
 
 // typescript types
 export type colors =
-  | "blue-grey"
-  | "grey"
+  | "blue-gray"
+  | "gray"
   | "brown"
   | "deep-orange"
   | "orange"
@@ -24,8 +24,8 @@ export type colors =
   | "red";
 
 export type animation = {
-  mount?: Object;
-  unmount?: Object;
+  mount?: object;
+  unmount?: object;
 };
 
 export type dismissType = {
@@ -51,8 +51,8 @@ export interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "chi
 
 // javascript prop-types
 export const propTypesColors: string[] = [
-  "blue-grey",
-  "grey",
+  "blue-gray",
+  "gray",
   "brown",
   "deep-orange",
   "orange",
