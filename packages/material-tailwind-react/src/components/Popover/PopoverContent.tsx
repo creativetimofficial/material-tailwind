@@ -7,7 +7,7 @@ import { FloatingPortal, FloatingFocusManager } from "@floating-ui/react-dom-int
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import { mergeRefs } from "react-merge-refs";
+import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";

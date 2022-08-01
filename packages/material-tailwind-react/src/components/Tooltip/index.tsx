@@ -21,7 +21,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import { mergeRefs } from "react-merge-refs";
+import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
 import merge from "deepmerge";
