@@ -1,7 +1,7 @@
 import React from "react";
 
 // utils
-import { mergeRefs } from "react-merge-refs";
+import mergeRefs from "react-merge-refs";
 
 // context
 import { useMenu } from "./MenuContext";
