@@ -7,17 +7,22 @@
   <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/@material-tailwind/react?label=%40material-taiwlind%2Freact" alt="License" />
   </a>
+  <a href="https://www.npmjs.com/package/@material-tailwind/react">
+    <img src="https://img.shields.io/npm/dt/@material-tailwind/react.svg" alt="Total Downloads">
+  </a>
+  <a href="https://github.com/creativetimofficial/material-tailwind/releases">
+    <img src="https://img.shields.io/badge/version-1.2.0-blue.svg" alt="Version" />
+  </a>
+</p>
+<p align="center">
   <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/@material-tailwind/html?label=%40material-taiwlind%2Fhtml" alt="License" />
   </a>
-  <a href="https://img.shields.io/badge/version-3.1.0-blue.svg">
-    <img src="https://img.shields.io/badge/version-3.1.0-blue.svg" alt="Version" />
+  <a href="https://www.npmjs.com/package/@material-tailwind/html">
+    <img src="https://img.shields.io/npm/dt/@material-tailwind/html.svg" alt="Total Downloads">
   </a>
-  <a href="https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aopen+is%3Aissue">
-    <img src="https://img.shields.io/github/issues/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg" alt="Open Issues" />
-  </a>
-  <a href="https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aissue+is%3Aclosed">
-    <img src="https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg" alt="Closed Issues" />
+  <a href="https://github.com/creativetimofficial/material-tailwind/releases">
+    <img src="https://img.shields.io/badge/version-1.2.1-blue.svg" alt="Version" />
   </a>
 </p>
 
