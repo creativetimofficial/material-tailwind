@@ -59,9 +59,7 @@ export const navbar: NavbarStylesType = {
     base: {
       navbar: {
         initial: {
-          display: "flex",
-          flexWrap: "flex-nowrap",
-          justifyContent: "justify-start",
+          display: "block",
           width: "w-full",
           maxWidth: "max-w-screen-2xl",
           borderRadius: "rounded-xl",
@@ -88,7 +86,6 @@ export const navbar: NavbarStylesType = {
         display: "block",
         width: "w-full",
         basis: "basis-full",
-        rounded: "rounded-xl",
         overflow: "overflow-hidden",
       },
     },
