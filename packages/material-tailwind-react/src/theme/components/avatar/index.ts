@@ -81,7 +81,7 @@ export const avatar: AvatarStyleTypes = {
     variants: {
       rounded: {},
       circular: {
-        borderRadius: "rounded-full",
+        borderRadius: "!rounded-full",
       },
     },
   },
