@@ -75,20 +75,24 @@ export default function init() {
     
   })();
 
-  "use strict";
+  ("use strict");
   (function () {
-
     var slider = document.getElementById("sliderRegular");
-    // if (slider) {
-    //   noUiSlider.create(slider, {
-    //     start: 40,
-    //     connect: [true, false],
-    //     range: {
-    //       min: 0,
-    //       max: 100,
-    //     },
-    //   });
-    // }
+
+    if (slider) {
+      if (slider.noUiSlider) {
+        slider.noUiSlider.destroy();
+      }
+
+      noUiSlider.create(slider, {
+        start: 40,
+        connect: [true, false],
+        range: {
+          min: 0,
+          max: 100,
+        },
+      });
+    }
   })();
  
   "use strict";
