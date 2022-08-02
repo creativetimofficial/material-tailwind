@@ -61,6 +61,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
+  MobileNav,
   Navbar,
   Option,
   Popover,
@@ -121,17 +122,17 @@ const components = {
     <Typography
       as="p"
       variant="h5"
-      className="!text-blue-gray-500 !mb-12 !font-normal"
+      className="!mb-12 !font-normal !text-blue-gray-500"
       {...props}
     />
   ),
   p: (props) => (
-    <Typography className="!text-blue-gray-500 !mb-4 !font-normal" {...props} />
+    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: () => <hr className="!border-blue-gray-50 !mt-24 !mb-20" />,
+  hr: () => <hr className="!mt-24 !mb-20 !border-blue-gray-50" />,
   a: (props) => (
     <a
-      className="!text-blue-gray-900 !font-medium !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
@@ -145,13 +146,13 @@ const components = {
   tr: (props) => <tr {...props} />,
   th: (props) => (
     <th
-      className="border-blue-gray-100 text-blue-gray-900 min-w-[120px] border-b py-3 text-left font-medium"
+      className="min-w-[120px] border-b border-blue-gray-100 py-3 text-left font-medium text-blue-gray-900"
       {...props}
     />
   ),
   td: (props) => (
     <td
-      className="border-blue-gray-50 text-blue-gray-500 min-w-[120px] border-b py-3 text-left text-sm"
+      className="min-w-[120px] border-b border-blue-gray-50 py-3 text-left text-sm text-blue-gray-500"
       {...props}
     />
   ),
@@ -192,6 +193,7 @@ const components = {
   MenuHandler,
   MenuList,
   MenuItem,
+  MobileNav,
   Navbar,
   Option,
   Popover,

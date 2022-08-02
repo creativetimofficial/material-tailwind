@@ -174,7 +174,7 @@ export default function Navbar({
     >
       <MTNavbar
         {...rest}
-        className={`!block py-4 pl-6 pr-5 lg:py-2 ${
+        className={`py-4 pl-6 pr-5 lg:py-2 ${
           shadow ? "shadow-2xl shadow-blue-gray-500/10" : ""
         }`}
         shadow={shadow}
