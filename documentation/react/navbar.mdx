@@ -28,142 +28,225 @@ See below our simple <Code>Navbar</Code> example that you can use in your Tailwi
 
 <br />
 
-<ComponentDemo id="navbar">
-  <Navbar className="mx-auto max-w-screen-xl">
-    <div className="container flex items-center justify-between text-blue-gray-900">
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        className="mr-4 cursor-pointer py-1.5 font-normal"
-      >
-        <span>Material Tailwind</span>
-      </Typography>
-      <ul className="flex items-center gap-6">
-        <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center">
-            {`Pages`}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-0.5 h-4 w-4 opacity-75"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+<State initialState={{ open: false }}>
+  <ComponentDemo id="navbar">
+    <Observe>
+      {({ setState, open }) => (
+        <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+          <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+            <Typography
+              as="a"
+              href="#"
+              variant="small"
+              className="mr-4 cursor-pointer py-1.5 font-normal"
             >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center">
-            {`Account`}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-0.5 h-4 w-4 opacity-75"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              <span>Material Tailwind</span>
+            </Typography>
+            <ul className="hidden items-center gap-6 lg:flex">
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Pages`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Account`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Blocks`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Docs`}
+                </a>
+              </Typography>
+            </ul>
+            <Button
+              variant="gradient"
+              size="sm"
+              className="hidden lg:inline-block"
             >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center">
-            {`Blocks`}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-0.5 h-4 w-4 opacity-75"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              <span>Buy Now</span>
+            </Button>
+            <IconButton
+              variant="text"
+              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              ripple={false}
+              onClick={() => setState((s) => ({ open: !open }))}
             >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-normal">
-          <a href="#" className="flex items-center">
-            {`Docs`}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-0.5 h-4 w-4 opacity-75"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </Typography>
-      </ul>
-      <Button variant="gradient" size="sm">
-        <span>Buy Now</span>
-      </Button>
-    </div>
-  </Navbar>
-</ComponentDemo>
+              {open ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </IconButton>
+          </div>
+          <MobileNav open={open} className="lg:hidden">
+            <ul className="mt-2 mb-4 flex flex-col gap-2">
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Pages`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Account`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Blocks`}
+                </a>
+              </Typography>
+              <Typography as="li" variant="small" className="p-1 font-normal">
+                <a href="#" className="flex items-center">
+                  {`Docs`}
+                </a>
+              </Typography>
+            </ul>
+            <Button variant="gradient" size="sm" fullWidth className="mb-2">
+              <span>Buy Now</span>
+            </Button>
+          </MobileNav>
+        </Navbar>
+      )}
+    </Observe>
+
+  </ComponentDemo>
+</State>
 
 ```jsx
-import { Navbar, Button, Typography } from "@material-tailwind/react";
+import { useState, useEffect } from "react";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+} from "@material-tailwind/react";
 
-export default function Example() {
-  const icon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="ml-0.5 h-4 w-4 opacity-75"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-        clipRule="evenodd"
-      />
-    </svg>
+export default function Test() {
+  const [openNav, setOpenNav] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+
+  const navList = (
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography as="li" variant="small" className="p-1 font-normal">
+        <a href="#" className="flex items-center">
+          Pages
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-normal">
+        <a href="#" className="flex items-center">
+          Account
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-normal">
+        <a href="#" className="flex items-center">
+          Blocks
+        </a>
+      </Typography>
+      <Typography as="li" variant="small" className="p-1 font-normal">
+        <a href="#" className="flex items-center">
+          Docs
+        </a>
+      </Typography>
+    </ul>
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl">
-      <div className="container flex items-center justify-between text-blue-gray-900">
+    <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           variant="small"
           className="mr-4 cursor-pointer py-1.5 font-normal"
         >
-          Material Tailwind
+          <span>Material Tailwind</span>
         </Typography>
-        <ul className="flex items-center gap-6">
-          <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Pages{icon}</a>
-          </Typography>
-          <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Account{icon}</a>
-          </Typography>
-          <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Blocks{icon}</a>
-          </Typography>
-          <Typography as="li" variant="small" className="p-1 font-normal">
-            <a className="flex items-center">Docs{icon}</a>
-          </Typography>
-        </ul>
-        <Button variant="gradient" size="sm">
-          Buy Now
+        <div className="hidden lg:block">{navList}</div>
+        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
+          <span>Buy Now</span>
         </Button>
+        <IconButton
+          variant="text"
+          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          ripple={false}
+          onClick={() => setOpenNav(!openNav)}
+        >
+          {openNav ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </IconButton>
       </div>
+      <MobileNav open={openNav}>
+        {navList}
+        <Button variant="gradient" size="sm" fullWidth className="mb-2">
+          <span>Buy Now</span>
+        </Button>
+      </MobileNav>
     </Navbar>
   );
 }
