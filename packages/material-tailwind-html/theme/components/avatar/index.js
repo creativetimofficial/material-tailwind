@@ -57,7 +57,7 @@ const avatar = (theme) => ({
       },
 
       "+ .avatar": {
-        "margin-left": "-1rem"
+        "margin-left": "-.75rem"
       }
     }
   }
