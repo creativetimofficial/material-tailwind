@@ -54,7 +54,7 @@ export default function Presentation() {
               </a>
               <a href="#">
                 <li className="antialiased font-sans text-sm leading-normal text-white flex items-center gap-1.5 p-1 font-normal">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd"></path></svg>
                   Account
                 </li>
               </a>
@@ -66,16 +66,16 @@ export default function Presentation() {
               </a>
               <a href="#">
                 <li className="antialiased font-sans text-sm leading-normal text-white flex items-center gap-1.5 p-1 font-normal">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"></path></svg>
                   Docs
                 </li>
               </a>
             </ul>
           </div>
-          <button className="button button-light button-sm hidden lg:inline-block" type="button">Buy Now</button>
+          <button className="button button-light text-dark-500 button-sm hidden lg:inline-block" type="button">Buy Now</button>
           <button className="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 ml-auto inline-block lg:hidden" type="button">
             <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </span>
           </button>
         </div>
@@ -89,7 +89,7 @@ export default function Presentation() {
             </a>
             <a href="#">
               <li className="antialiased font-sans text-sm leading-normal text-white flex items-center gap-1.5 p-1 font-normal">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd"></path></svg>
                 Account
               </li>
             </a>
@@ -101,7 +101,7 @@ export default function Presentation() {
             </a>
             <a href="#">
               <li className="antialiased font-sans text-sm leading-normal text-white flex items-center gap-1.5 p-1 font-normal">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"></path></svg>
                 Docs
               </li>
             </a>
@@ -110,74 +110,116 @@ export default function Presentation() {
         </div>
       </nav>
       <main className="relative">
-        <header className="h-screen min-h-screen">
-          <div className="relative z-50 h-fit py-20 lg:py-32">
-            <div className="container mx-auto px-4">
-              <div className="flex flex-wrap items-center justify-between">
-                <div className="mt-48 w-full px-4 md:w-8/12 lg:mt-4 lg:w-5/12">
-                <h1 className="block antialiased tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl leading-tight md:text-5xl">People who care <br/>about your growth</h1>
-                  <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700 mb-16 md:pr-16 xl:pr-28">Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.</p>
-                  <div className="flex flex-col-reverse gap-2 lg:flex-row">
-                    <div className="w-6/12">
-                      <div className="input-group-outline input-group">
-                        <label className="form-label">Outline</label>
-                        <input type="text" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="w-3/12">
-                      <button
-                        className="button button-pink"
-                        data-ripple-light="true"
-                      >
-                        Get started
-                      </button>
-                    </div>
-                  </div>
-                  <p className="mt-3 antialiased font-sans text-sm font-light leading-normal text-gray-700 flex items-center">
-                    We care about your data in our <a href="#" className="block antialiased font-sans text-sm font-light leading-normal text-inherit underline decoration-gray-500 underline-offset-2">privacy policy</a>
-                  </p>
-                  <div className="mt-5 flex flex-start">
-                    <div className="avatar-group flex items-center">
-                      <a href="#" className="avatar avatar-circular">
-                        <img alt="Image placeholder" src="/img/face-1.jpg" />
-                      </a>
-                      <a href="#" className="avatar avatar-circular">
-                        <img alt="Image placeholder" src="/img/face-2.jpg" />
-                      </a>
-                      <a href="#" className="avatar avatar-circular">
-                        <img alt="Image placeholder" src="/img/face-3.jpg" />
-                      </a>
-                      <a href="#" className="avatar avatar-circular">
-                        <img alt="Image placeholder" src="/img/face-4.jpg" />
-                      </a>
-                    </div>
-                    <div className="mb-6 sm:mb-0 sm:ml-4">
-                      <div className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-700" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-700" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-700" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-700" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-700" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 ml-2 font-semibold">5.0</p>  
-                      </div>
-                      <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mt-1 ml-0.5 font-normal">from 200+ reviews</p>
-                    </div>
-                  </div>
+        <header className="h-full min-h-screen w-screen bg-white px-4 pt-20 md:pt-24 lg:px-8 lg:pt-40">
+          <div className="container mx-auto flex h-full flex-col-reverse items-center lg:flex-row">
+            <div className="mr-0 lg:mr-16 xl:mr-24">
+              <h1 className="block antialiased tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl !leading-tight md:text-5xl">
+                People who care <br />
+                about your growth
+              </h1>
+              <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700 mb-16 md:pr-16 xl:pr-28">
+                Powerful, self-serve product and growth analytics to help you convert,
+                engage, and retain more.
+              </p>
+              <div className="mb-6 flex w-full flex-col gap-2 md:mb-2 md:w-10/12 md:flex-row">
+                <div className="input-group input-group-outline w-full lg:w-8/12">
+                  <label className="form-label">Outline</label>
+                  <input type="text" className="form-control" />
                 </div>
-                <div className="hidden w-full max-w-full px-4 pt-24 md:w-6/12 md:pt-0 lg:block">
-                  <Image
-                    src="/img/team.jpg"
-                    alt="components"
-                    width={700}
-                    height={700}
-                    quality={100}
-                    className="aspect-auto rounded-md"
-                  />
+                <button
+                  className="button button-pink w-full lg:w-5/12"
+                  type="button"
+                >
+                  get started
+                </button>
+              </div>
+              <p className="antialiased font-sans text-sm font-light leading-normal text-gray-700 inline-flex items-center">
+                We care about your data in our&nbsp;
+                <a
+                  href="#"
+                  className="block antialiased font-sans text-sm font-light leading-normal text-inherit underline decoration-gray-500 underline-offset-4"
+                >
+                  privacy policy
+                </a>
+              </p>
+              <div className="mt-16 mb-12 flex flex-col-reverse sm:flex-row sm:items-center lg:mb-0">
+                <div className="avatar-group flex items-center">
+                  <a href="#" className="avatar avatar-circular">
+                    <img alt="Image placeholder" src="/img/face-1.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular">
+                    <img alt="Image placeholder" src="/img/face-2.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular">
+                    <img alt="Image placeholder" src="/img/face-3.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular">
+                    <img alt="Image placeholder" src="/img/face-4.jpg" />
+                  </a>
+                  <a href="#" className="avatar avatar-circular">
+                    <img alt="Image placeholder" src="/img/face-5.jpg" />
+                  </a>
+                </div>
+                <div className="mb-6 sm:mb-0 sm:ml-4">
+                  <div className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-yellow-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-yellow-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-yellow-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-yellow-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-yellow-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 ml-2 font-semibold">
+                      5.0
+                    </p>
+                  </div>
+                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mt-1 ml-0.5 font-normal">
+                    from 200+ reviews
+                  </p>
                 </div>
               </div>
             </div>
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+              alt="team work"
+              className="lg:0 mb-8 h-96 w-full rounded-xl object-cover lg:h-[40rem]"
+            />
           </div>
         </header>
+
 
 
         <header className="h-full min-h-screen w-screen place-items-center bg-white px-8 pt-56 lg:pt-40">
@@ -186,7 +228,7 @@ export default function Presentation() {
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
                 <p className="block antialiased font-sans text-sm leading-normal mr-3 rounded-full bg-white py-0.5 px-3 font-semibold text-pink-500">New</p>
                 <p className="antialiased font-sans text-sm leading-normal text-pink-500 flex items-center font-semibold">Personalized coaching in-app
-                  <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </p>
               </div>
               <h1 className="block antialiased tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Portfolio perfromance tracking made easy</h1>
@@ -208,14 +250,14 @@ export default function Presentation() {
               <p className="block antialiased font-sans text-sm leading-normal mr-3 rounded-full bg-white px-2.5 py-0.5 font-semibold text-pink-500">What's new?</p>
               <p className="antialiased font-sans text-sm leading-normal text-pink-500 flex items-center font-semibold">
                 Instantly issue virtual cards
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </p>
             </div>
             <h1 className="block antialiased tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">No more banking headaches</h1>
             <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700 mx-auto mb-12 w-full px-8 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20">Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.</p>
             <div className="mb-20 flex justify-center gap-3">
               <button className="button button-pink button-lg button-outlined flex" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" className="mr-1.5 -mt-0.5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="mr-1.5 -mt-0.5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 demo
               </button>
               <button className="button button-pink button-lg" type="button">sign up</button>
@@ -270,8 +312,6 @@ export default function Presentation() {
           </div>    
         </header>
 
-
-        
         {/* FEATURES */}
 
         <section className="bg-white py-28 px-4">
@@ -441,7 +481,7 @@ export default function Presentation() {
             <img
               src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGVhbSUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
               alt="delive instant answers"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover rounded-xl"
             />
             <div className="grid w-full items-center p-10 md:p-20 xl:w-10/12">
               <div className="mb-6 grid h-12 w-12 place-items-center rounded-full bg-pink-100/80 p-2.5 text-pink-500 ring-8 ring-pink-100/40">
@@ -626,7 +666,7 @@ export default function Presentation() {
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHRlYW0lMjB3b3JrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
               alt="manage your team with reports"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover rounded-xl"
             />
           </div>
         </section>
@@ -1110,10 +1150,7 @@ export default function Presentation() {
             </div>
           </div>
           <div className="px-12 pb-20 text-center">
-            <button
-              className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-blue-500 hover:bg-blue-500/10 active:bg-blue-500/30 inline-flex items-center pl-4"
-              type="button"
-            >
+            <button className="button button-pink button-text flex mx-auto" type="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="mr-2 h-5 w-5"
@@ -1132,6 +1169,336 @@ export default function Presentation() {
             </button>
           </div>
         </div>
+
+
+        <div className="grid min-h-screen place-items-center bg-white">
+          <div className="my-auto grid grid-cols-1 gap-y-8 p-4 md:p-10 lg:grid-cols-2 lg:gap-y-16 lg:p-20">
+            <div className="card card-plain grid grid-cols-2 gap-2">
+              <div className="card-header">
+                <a href="#" blur-shadow-image="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1486728297118-82a07bc48a28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2429&q=80"
+                    alt="UX review presentations"
+                    className="h-full object-cover rounded-lg"
+                  />
+                </a>
+              </div>
+              <div className="card-body">
+                <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-4 font-semibold">
+                  Design
+                </p>
+                <a
+                  href="#"
+                  className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+                >
+                  UX review presentations
+                </a>
+                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                  How do you create compelling presentations that wow your...
+                </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                    alt="Alec Whitten"
+                    className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
+                  />
+                  <div>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                      Alec Whitten
+                    </p>
+                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                      17 Jan 2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card card-plain grid grid-cols-2 gap-2">
+              <div className="card-header">
+                <a href="#" blur-shadow-image="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1630090896228-88e5ea707294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="Migrating to Linear 101"
+                    className="h-full object-cover rounded-lg"
+                  />
+                </a>
+              </div>
+              <div className="card-body">
+                <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-4 font-semibold">
+                  Product
+                </p>
+                <a
+                  href="#"
+                  className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+                >
+                  Migrating to Linear 101
+                </a>
+                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                  Linear helps streamline software projects, sprints, tasks, and bu...
+                </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                    alt="Demi Wilkinson"
+                    className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
+                  />
+                  <div>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                      Demi Wilkinson
+                    </p>
+                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                      16 Jan 2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card card-plain grid grid-cols-2 gap-2">
+              <div className="card-header">
+                <a href="#" blur-shadow-image="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1548611716-3000815a5803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRlc2slMjBzZXR1cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="Building your API Stack"
+                    className="h-full object-cover rounded-lg"
+                  />
+                </a>
+              </div>
+              <div className="card-body">
+                <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-4 font-semibold">
+                  Software Engineering
+                </p>
+                <a
+                  href="#"
+                  className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+                >
+                  Building your API Stack
+                </a>
+                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                  The rise of RESTful APIs has been met by a rise in tools...
+                </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                    alt="Candice Wu"
+                    className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
+                  />
+                  <div>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                      Candice Wu
+                    </p>
+                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                      15 Jan 2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card card-plain grid grid-cols-2 gap-2">
+              <div className="card-header">
+                <a href="#" blur-shadow-image="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1557425955-df376b5903c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="PM mental models"
+                    className="h-full object-cover rounded-lg"
+                  />
+                </a>
+              </div>
+              <div className="card-body">
+                <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-4 font-semibold">
+                  Product
+                </p>
+                <a
+                  href="#"
+                  className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+                >
+                  PM mental models
+                </a>
+                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                  Mental models are simple expressions of complex...
+                </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
+                    alt="Natali Craig"
+                    className="inline-block relative object-cover object-center rounded-full w-12 h-12"
+                  />
+                  <div>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                      Natali Craig
+                    </p>
+                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                      14 Jan 2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="bg-white">
+          <div className="container mx-auto px-8 py-20">
+            <div className="mb-16 text-center">
+              <p className="block antialiased font-sans text-base leading-relaxed text-pink-500 mb-2 font-semibold">
+                Latest Posts
+              </p>
+              <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
+                Material Tailwind PRO
+              </h2>
+              <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700">
+                Interviews, tips, guides, industry best practices, and news.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 items-start gap-y-16 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="card card-plain">
+                <div className="card-header lg:mx-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1486728297118-82a07bc48a28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2429&q=80"
+                    alt="UX review presentations"
+                    className="h-full w-full object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div className="card-body">
+                  <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-3 font-semibold">
+                    Alec Whitten&nbsp;•&nbsp;17 Jan 2022
+                  </p>
+                  <a
+                    href="#"
+                    className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
+                  >
+                    <div className="col-span-5">
+                      <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                        UX review presentations
+                      </h4>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-auto h-8 w-8 rotate-45"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7 11l5-5m0 0l5 5m-5-5v12"
+                      />
+                    </svg>
+                  </a>
+                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                    How do you create compelling presentations that wow your colleagues
+                    and impress your managers?
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="chip chip-pink rounded-xl">design</div>
+                    <div className="chip chip-blue rounded-xl">research</div>
+                    <div className="chip chip-red rounded-xl">presentation</div>
+                  </div>
+                </div>
+              </div>
+              <div className="card card-plain">
+                <div className="card-header lg:mx-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1630090896228-88e5ea707294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGRldmVsb3BlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="Migrating to Linear 101"
+                    className="h-full w-full object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="card-body">
+                  <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-3 font-semibold">
+                    Demi Wilkinson&nbsp;•&nbsp;16 Jan 2022
+                  </p>
+                  <a
+                    href="#"
+                    className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
+                  >
+                    <div className="col-span-5">
+                      <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                        Migrating to Linear 101
+                      </h4>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-auto h-8 w-8 rotate-45"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7 11l5-5m0 0l5 5m-5-5v12"
+                      />
+                    </svg>
+                  </a>
+                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                    Linear helps streamline software projects, sprints, tasks, and bug
+                    tracking. Here's how to get started.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="chip chip-green rounded-xl">product</div>
+                    <div className="chip chip-pink rounded-xl">tools</div>
+                    <div className="chip chip-orange rounded-xl">sass</div>
+                  </div>
+                </div>
+              </div>
+              <div className="card card-plain">
+                <div className="card-header lg:mx-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1548611716-3000815a5803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRlc2slMjBzZXR1cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    alt="Building your API Stack"
+                    className="h-full w-full object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="card-body">
+                  <p className="block antialiased font-sans text-sm leading-normal text-pink-500 mb-3 font-semibold">
+                    Candice Wu&nbsp;•&nbsp;15 Jan 2022
+                  </p>
+                  <a
+                    href="#"
+                    className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
+                  >
+                    <div className="col-span-5">
+                      <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                        Building your API Stack
+                      </h4>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-auto h-8 w-8 rotate-45"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7 11l5-5m0 0l5 5m-5-5v12"
+                      />
+                    </svg>
+                  </a>
+                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                    The rise of RESTful APIs has been met by a rise in tools for
+                    creating, testing, and managing them.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="chip chip-green rounded-xl">software development</div>
+                    <div className="chip chip-purple rounded-xl">tools</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="px-12 pb-20 text-center">
+            <button className="button button-pink button-lg" type="button">view all posts</button>
+          </div>
+        </div>
+
+
 
 
         <Card
