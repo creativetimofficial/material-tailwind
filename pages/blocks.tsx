@@ -322,7 +322,7 @@ export default function Presentation() {
             <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-4">
               Beautiful analytics to grow smarter
             </h2>
-            <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700 mx-auto w-full px-4 md:w-10/12 lg:w-7/12 lg:px-8">
+            <p className="block antialiased font-sans text-xl leading-relaxed mx-auto w-full px-4 md:w-10/12 lg:w-7/12 lg:px-8">
               Powerful, self-serve product and growth analytics to help you convert,
               engage, and retain more users. Trusted by over 4,000 startups.
             </p>
@@ -347,7 +347,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Share team inboxes
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 Whether you have a team of 2 or 200. our shared team inboxes keep
                 everyone on the same page and in the loop.
               </p>
@@ -371,7 +371,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Deliver instant answers
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 An all-in-one customer service platform that helos you balance
                 everything your customers need to be happy.
               </p>
@@ -395,7 +395,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Manage your team with reports
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 Measure what matters with Untitled's easy-to-use reports. You can
                 filter, export, and drill down on the data in a couple clicks.
               </p>
@@ -419,7 +419,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Connect with customers
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 Solve a problem or close a sale in real-time with chat. If no one is
                 available, customers are seamlessly routed to email without confusion
               </p>
@@ -443,7 +443,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Connect the tools you already use
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 Explore 100+ integrations that make your day-to-day workflow more
                 efficient and familiar. Plus, our extensive developer tools.
               </p>
@@ -467,7 +467,7 @@ export default function Presentation() {
               <h5 className="block antialiased tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
                 Our people make the difference
               </h5>
-              <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 px-8 font-normal">
+              <p className="block antialiased font-sans text-base leading-relaxed px-8">
                 We're an extension of your customer service team, and all of our
                 resources are free. Chat to our friendly team 24/7 when you need help.
               </p>
@@ -502,7 +502,7 @@ export default function Presentation() {
               <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
                 Deliver instant answers
               </h3>
-              <p className="block antialiased font-sans text-xl leading-relaxed text-gray-700 mb-10 font-normal">
+              <p className="block antialiased font-sans text-xl leading-relaxed mb-10">
                 An all-in-one customer service platform that helps you balance
                 everything your customers need to be happy.
               </p>
@@ -524,7 +524,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Keep your customers in the loop with live chat
                   </p>
                 </div>
@@ -545,7 +545,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Embed help articles right on your website
                   </p>
                 </div>
@@ -566,7 +566,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Customers never have to leave the page to find an answer
                   </p>
                 </div>
@@ -593,7 +593,7 @@ export default function Presentation() {
               <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
                 Manage your team with reports
               </h3>
-              <p className="block antialiased font-sans text-xl leading-relaxed text-gray-700 mb-10 font-normal">
+              <p className="block antialiased font-sans text-xl leading-relaxed mb-10">
                 Measure what matters with Untitled's easy-to-use reports. You can
                 filter, export, and drilldown on the data in a couple clicks.
               </p>
@@ -615,7 +615,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Filter, export, and drilldown on the data quickly
                   </p>
                 </div>
@@ -636,7 +636,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Save, schedule, and automate reports to your inbox
                   </p>
                 </div>
@@ -657,7 +657,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </div>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed">
                     Connect the tools you already use with 100+ integrations
                   </p>
                 </div>
@@ -698,7 +698,7 @@ export default function Presentation() {
                 <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
                   Deliver instant answers
                 </h3>
-                <p className="block antialiased font-sans text-xl leading-relaxed text-gray-700 mb-10 font-normal">
+                <p className="block antialiased font-sans text-xl leading-relaxed mb-10">
                   Keep your customers in the flow by embedding help articles right on
                   your website. With Beacon, they never have to leave the page to find
                   an answer.
@@ -753,7 +753,7 @@ export default function Presentation() {
                 <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
                   Manage your team with reports
                 </h3>
-                <p className="block antialiased font-sans text-xl leading-relaxed text-gray-700 mb-10 font-normal">
+                <p className="block antialiased font-sans text-xl leading-relaxed mb-10">
                   Measure what matters with Untitled's easy-to-use reports. You can
                   filter, export, and drilldown on the data in a couple clicks
                 </p>
@@ -832,7 +832,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   Like to know the secrets of transforming a 2-14 team into a 3x Super
                   Bowl winning Dynasty?
                 </p>
@@ -846,7 +846,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Alec Whitten
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       17 Jan 2022
                     </p>
                   </div>
@@ -891,7 +891,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   Mental models are simple expressions of complex processes or
                   relationships.
                 </p>
@@ -905,7 +905,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Demi Wilkinson
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       16 Jan 2022
                     </p>
                   </div>
@@ -950,7 +950,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   Introduction to Wireframing and its Princioles. Learn from the best in
                   the industrv.
                 </p>
@@ -964,7 +964,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Candice Wu
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       15 Jan 2022
                     </p>
                   </div>
@@ -1009,7 +1009,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   Collaboration can make our teams stronger, and our individual designs
                   better.
                 </p>
@@ -1023,7 +1023,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Natali Craig
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       14 Jan 2022
                     </p>
                   </div>
@@ -1068,7 +1068,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   JavaScript frameworks make development easy with extensive features
                   and functionalities.
                 </p>
@@ -1082,7 +1082,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Alec Whitten
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       13 Jan 2022
                     </p>
                   </div>
@@ -1127,7 +1127,7 @@ export default function Presentation() {
                     />
                   </svg>
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-8 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-8 font-normal">
                   Starting a community doesn't need to be complicated, but how do you
                   get started?
                 </p>
@@ -1141,7 +1141,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-semibold">
                       Orlando Diggs
                     </p>
-                    <p className="block antialiased font-sans text-gray-700 text-xs font-normal">
+                    <p className="block antialiased font-sans text-xs font-normal">
                       12 Jan 2022
                     </p>
                   </div>
@@ -1193,7 +1193,7 @@ export default function Presentation() {
                 >
                   UX review presentations
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-12 font-normal">
                   How do you create compelling presentations that wow your...
                 </p>
                 <div className="flex items-center gap-4">
@@ -1206,7 +1206,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                       Alec Whitten
                     </p>
-                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                    <p className="block antialiased font-sans text-sm leading-normal font-normal">
                       17 Jan 2022
                     </p>
                   </div>
@@ -1233,7 +1233,7 @@ export default function Presentation() {
                 >
                   Migrating to Linear 101
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-12 font-normal">
                   Linear helps streamline software projects, sprints, tasks, and bu...
                 </p>
                 <div className="flex items-center gap-4">
@@ -1246,7 +1246,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                       Demi Wilkinson
                     </p>
-                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                    <p className="block antialiased font-sans text-sm leading-normal font-normal">
                       16 Jan 2022
                     </p>
                   </div>
@@ -1273,7 +1273,7 @@ export default function Presentation() {
                 >
                   Building your API Stack
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-12 font-normal">
                   The rise of RESTful APIs has been met by a rise in tools...
                 </p>
                 <div className="flex items-center gap-4">
@@ -1286,7 +1286,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                       Candice Wu
                     </p>
-                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                    <p className="block antialiased font-sans text-sm leading-normal font-normal">
                       15 Jan 2022
                     </p>
                   </div>
@@ -1313,7 +1313,7 @@ export default function Presentation() {
                 >
                   PM mental models
                 </a>
-                <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-12 font-normal">
+                <p className="block antialiased font-sans text-base leading-relaxed mb-12 font-normal">
                   Mental models are simple expressions of complex...
                 </p>
                 <div className="flex items-center gap-4">
@@ -1326,7 +1326,7 @@ export default function Presentation() {
                     <p className="block antialiased font-sans text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                       Natali Craig
                     </p>
-                    <p className="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal">
+                    <p className="block antialiased font-sans text-sm leading-normal font-normal">
                       14 Jan 2022
                     </p>
                   </div>
@@ -1346,7 +1346,7 @@ export default function Presentation() {
               <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
                 Material Tailwind PRO
               </h2>
-              <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-gray-700">
+              <p className="block antialiased font-sans text-xl font-normal leading-relaxed">
                 Interviews, tips, guides, industry best practices, and news.
               </p>
             </div>
@@ -1387,7 +1387,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </a>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed mb-6 font-normal">
                     How do you create compelling presentations that wow your colleagues
                     and impress your managers?
                   </p>
@@ -1434,7 +1434,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </a>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed mb-6 font-normal">
                     Linear helps streamline software projects, sprints, tasks, and bug
                     tracking. Here's how to get started.
                   </p>
@@ -1481,7 +1481,7 @@ export default function Presentation() {
                       />
                     </svg>
                   </a>
-                  <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 mb-6 font-normal">
+                  <p className="block antialiased font-sans text-base leading-relaxed mb-6 font-normal">
                     The rise of RESTful APIs has been met by a rise in tools for
                     creating, testing, and managing them.
                   </p>
@@ -1497,6 +1497,228 @@ export default function Presentation() {
             <button className="button button-pink button-lg" type="button">view all posts</button>
           </div>
         </div>
+
+      {/* CONTENT SECTIONS */}
+
+      <section className="py-16 lg:py-28 px-8">
+        <div className="container mx-auto grid lg:grid-cols-2 items-center">
+          <div className="mt-12 lg:mt-0 lg:pr-12 lg:row-auto row-start-2">
+            <p className="block antialiased font-sans text-base leading-relaxed text-pink-500 font-semibold mb-2">
+              Our Studio
+            </p>
+            <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
+              People first. Design later.
+            </h2>
+            <p className="block antialiased font-sans text-xl leading-relaxed mb-12">
+              I always felt like I could do anything. That’s the main thing people are controlled by! 
+              They're slowed down by {" "}
+              <a
+                href="#"
+                className="hover:text-pink-500 transition-colors underline underline-offset-4"
+              >
+                their perception of themselves
+              </a>
+              . If you're taught you can’t do anything, you won’t do anything. I was taught I could do everything.
+              <br />
+              <br />
+              The time is now for it to be okay to be great. 
+              For being a bright color. For standing out. But the time is now to be okay to 
+              {" "}
+              <a
+                href="#"
+                className="hover:text-pink-500 transition-colors underline underline-offset-4"
+              >
+                be the greatest you
+              </a>
+              . Would you believe in what you believe in, if you were the only one who believed it?
+              <br />
+              <br />
+              We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams.
+            </p>
+            <div className="inline-flex flex-wrap gap-3">
+              <button
+                className="button button-outlined button-lg button-dark"
+                type="button"
+              >
+                get in touch
+              </button>
+              <button
+                className="button button-pink button-lg"
+                type="button"
+              >
+                our process
+              </button>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dGVhbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+            alt="team work"
+            className="w-full h-full rounded-xl object-cover object-center min-h-[50vh] md:min-h-[75vh] "
+          />
+        </div>
+      </section>
+
+      <section className="py-12 px-8">
+        <div className="max-w-screen-md mx-auto">
+          <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
+            Introduction
+          </h2>
+          <p className="block antialiased font-sans text-base leading-relaxed mb-8">
+            It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. 
+            And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. 
+            Because I’m here to follow my dreams and inspire other people to follow their dreams, too.
+            <br />
+            <br />
+            Society has put up so many boundaries, so many limitations on{" "}
+            <a
+              href="#"
+              className="hover:text-pink-500 transition-colors underline underline-offset-4"
+            >
+              what’s right and wrong 
+            </a>{" "}
+            that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you  {" "}
+            <a
+              href="#"
+              className="hover:text-pink-500 transition-colors underline underline-offset-4"
+            >
+              you shouldn’t like pink
+            </a>
+            , because that’s for girls, or you’d instantly become a gay two-year-old. 
+          </p>
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGVhbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+            alt="team work"
+            className="w-full h-full mb-4 rounded-xl"
+          />
+          <p className="block antialiased font-sans text-sm font-light leading-normal text-inherit">
+            Photo by Marvin Meyer on{" "}
+            <a
+              href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-pink-500 transition-colors underline underline-offset-4"
+            >
+              Unsplash
+            </a>
+          </p>
+          <figure className="my-10 border-l-2 border-pink-500 py-4 pl-6">
+            <blockquote cite="#">
+              <p className="block antialiased font-sans text-xl leading-relaxed text-blue-gray-900 font-medium italic mb-8">
+                "In a world older and more complete than ours they move finished and
+                complete, gifted with extensions of the senses we have lost or never
+                attained, living by voices we shall never hear."
+              </p>
+            </blockquote>
+            <figcaption>
+              <p className="block antialiased font-sans text-base leading-relaxed opacity-80">
+                — Olivia Rhype, Product Designer
+              </p>
+            </figcaption>
+          </figure>
+          <p className="block antialiased font-sans text-base leading-relaxed">
+            Why would anyone pick blue over pink? Pink is obviously a better color. 
+            Everyone’s born confident, and everything’s taken away from you{" "}
+            <a
+              href="#"
+              className="hover:text-pink-500 transition-colors underline underline-offset-4"
+            >
+              If everything I did failed
+            </a>
+            - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. 
+          </p>
+        </div>
+      </section>
+
+
+      <div className="max-w-screen-md mx-auto">
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGVhbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+          alt="team work"
+          className="w-full h-full mb-4 rounded-xl"
+        />
+        <p className="block antialiased font-sans text-sm font-light leading-normal text-inherit">
+          Photo by Marvin Meyer on{" "}
+          <a
+            href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-blue-500 transition-colors underline underline-offset-4"
+          >
+            Unsplash
+          </a>
+        </p>
+        <p className="block antialiased font-sans text-base leading-relaxed my-12">
+          The time is now for it to be okay to be great. People in this world shun people for being great. 
+          For being a bright color. For standing out. But the time is now to be okay to be the greatest you. 
+          Would you believe in what you believe in, if you were the only one who believed it?
+          <br />
+          <br />
+          If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. 
+          People are so scared to lose that they don't even try. 
+          Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
+        </p>
+        <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
+          Conclusion
+        </h2>
+        <p className="block antialiased font-sans text-base leading-relaxed mb-10">
+          There’s nothing I really wanted to do in life that I wasn’t able to get good at. 
+          That’s my skill. I’m not really specifically talented at anything except for the ability to learn. 
+          That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.
+
+          <br />
+          <br />
+          It really matters and then like it really doesn’t matter. 
+          What matters is the people who are sparked by it. And the people who are like offended by it, it doesn’t matter. 
+          Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams, too.
+          <br />
+          <br />
+          As we live, our hearts turn colder. Cause pain is what we go through as we become older. 
+          We get insulted by others, lose trust for those others. We get back stabbed by friends. 
+          It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all we have. 
+          Then we lose family over time. What else could rust the heart more over time? Blackgold.
+          <br />
+          <br />
+          Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.
+        </p>
+        <div className="border-t border-blue-gray-50 py-4 flex justify-between flex-wrap gap-6">
+          <div className="inline-flex gap-2 items-center">
+            <div className="chip chip-green rounded-xl">product</div>
+            <div className="chip chip-pink rounded-xl">tools</div>
+            <div className="chip chip-orange rounded-xl">saas</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              className="button button-outlined button-dark flex"
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+              copy link
+            </button>
+            <button className="button button-outlined button-dark button-icon" type="button">
+              <i className="fab fa-twitter text-xl"></i>
+            </button>
+            <button className="button button-outlined button-dark button-icon" type="button">
+              <i className="fab fa-facebook text-xl"></i>
+            </button>
+            <button className="button button-outlined button-dark button-icon" type="button">
+              <i className="fab fa-linkedin text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
 
 
