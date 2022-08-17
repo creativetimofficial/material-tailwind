@@ -18,6 +18,12 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
+import ComponentCarousel from "components/pro/components/carousel";
+import ComponentDatepicker from "components/pro/components/datepicker";
+import ComponentTimepicker from "components/pro/components/timepicker";
+import ComponentNavTabs from "components/pro/components/navtabs";
+import ComponentValidation from "components/pro/components/validation";
+
 import SectionHeader1 from "components/pro/header/header-1";
 import SectionHeader2 from "components/pro/header/header-2";
 import SectionHeader3 from "components/pro/header/header-3";
@@ -38,6 +44,7 @@ import SectionContent3 from "components/pro/content/content-3";
 import SectionPricing1 from "components/pro/pricing/pricing-1";
 import SectionPricing2 from "components/pro/pricing/pricing-2";
 import SectionPricing3 from "components/pro/pricing/pricing-3";
+import Datepicker from "components/pro/components/datepicker";
 
 
 export default function Presentation() {
@@ -133,46 +140,46 @@ export default function Presentation() {
       </nav>
       <main className="relative">
 
-        <SectionHeader1/>
+        <SectionHeader1 />
 
-        <SectionHeader2/>
+        <SectionHeader2 />
 
-        <SectionHeader3/>
+        <SectionHeader3 />
 
-        <SectionHeader4/>
+        <SectionHeader4 />
 
         {/* FEATURES */}
 
-        <SectionFeatures1/>
+        <SectionFeatures1 />
 
-        <SectionFeatures2/>
+        <SectionFeatures2 />
 
-        <SectionFeatures3/>
+        <SectionFeatures3 />
 
         {/* BLOG POSTS */}
 
-        <SectionBlog1/>
+        <SectionBlog1 />
 
-        <SectionBlog2/>
+        <SectionBlog2 />
 
-        <SectionBlog3/>
+        <SectionBlog3 />
           
 
         {/* CONTENT SECTIONS */}
 
-        <SectionContent1/>
+        <SectionContent1 />
 
-        <SectionContent2/>
+        <SectionContent2 />
 
-        <SectionContent3/>
+        <SectionContent3 />
 
         {/* PRICING SECTIONS */}
       
-        <SectionPricing1/>
+        <SectionPricing1 />
 
-        <SectionPricing2/>
+        <SectionPricing2 />
 
-        <SectionPricing3/>
+        <SectionPricing3 />
 
 
 
@@ -182,127 +189,20 @@ export default function Presentation() {
           className="mx-6 bg-white md:mx-12 "
         >
           <div className="container z-20 mx-auto my-32 px-4">
-            <div className="carousel">
-              <div className="slide">
-                <img
-                  src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-1-min.jpg"
-                  alt=""
-                />
-              </div>
+            
+            <ComponentCarousel/>
 
-              <div className="slide">
-                <img
-                  src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-2-min.jpg"
-                  alt=""
-                />
-              </div>
-
-              <div className="slide">
-                <img
-                  src="https://demos.creative-tim.com/material-dashboard-pro/assets/img/products/product-3-min.jpg"
-                  alt=""
-                />
-              </div>
-
-              <button className="button-next">
-                <i className="material-icons text-white">chevron_right</i>
-              </button>
-              <button className="button-prev">
-                <i className="material-icons text-white">chevron_left</i>
-              </button>
-            </div>
             <div className="flex">
               <div className="my-10 w-1/4">
-                <div className="input-group-outline input-group">
-                  <label className="form-label">Please select date</label>
-                  <input className="datepicker form-control" type="text" />
-                </div>
+               <ComponentDatepicker />
               </div>
               <div className="my-10 ml-10 w-1/4">
-                <div className="input-group-outline input-group">
-                  <label className="form-label">Please select time</label>
-                  <input className="timepicker form-control" type="text" />
-                </div>
+               <ComponentTimepicker />
               </div>
             </div>
             <div className="flex">
-              <div className="nav-tabs w-7/12">
-                <nav>
-                  <ul role="tablist" className="tabs p-1" tab-panel="">
-                    <li className="nav-item">
-                      <a
-                        className="nav-link active mb-0 px-0 py-1"
-                        aria-selected="true"
-                        aria-controls="html"
-                        role="tab"
-                      >
-                        {`HTML`}
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link mb-0 px-0 py-1"
-                        aria-selected="false"
-                        aria-controls="react"
-                        role="tab"
-                      >
-                        {`React`}
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link mb-0 px-0 py-1"
-                        aria-selected="false"
-                        aria-controls="vue"
-                        role="tab"
-                      >
-                        {`Vue`}
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link mb-0 px-0 py-1"
-                        aria-selected="false"
-                        aria-controls="angular"
-                        role="tab"
-                      >
-                        {`Angular`}
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link mb-0 px-0 py-1"
-                        aria-selected="false"
-                        aria-controls="svelte"
-                        role="tab"
-                      >
-                        {`Svelte`}
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-                <div className="tabs-content p-5">
-                  <div className="active tab-panel" id="html" role="tabpanel">
-                    Because it&apos;s about motivating the doers. Because
-                    I&apos;m here to follow my dreams and inspire people.
-                  </div>
-                  <div className="tab-panel" id="react" role="tabpanel">
-                    The reading of all good books is like a conversation with
-                    the finest minds of past centuries.
-                  </div>
-                  <div className="tab-panel" id="vue" role="tabpanel">
-                    Comparing yourself to others is the thief of joy.
-                  </div>
-                  <div className="tab-panel" id="angular" role="tabpanel">
-                    It&apos;s better to choose, commit, and get started instead
-                    of waiting for the best possible option.
-                  </div>
-                  <div className="tab-panel" id="svelte" role="tabpanel">
-                    If you think you can learn a lot from reading books, try
-                    writing one.
-                  </div>
-                </div>
-              </div>
+              <ComponentNavTabs />
+              
             </div>
             <div className="w-4/12">
               <button
@@ -370,38 +270,7 @@ export default function Presentation() {
 
             <div className="my-5 w-4/12">
               <div className="container">
-                <form id="form" className="form">
-                  <h2>Validation Form</h2>
-                  <div className="input-group-outline input-group mb-3">
-                    <label className="form-label">Username</label>
-                    <input type="text" className="form-control" id="username" />
-                    <small>Error Message</small>
-                  </div>
-                  <div className="input-group-outline input-group mb-3">
-                    <label className="form-label">Email</label>
-                    <input type="email" className="form-control" id="email" />
-                    <small>Error Message</small>
-                  </div>
-                  <div className="input-group-outline input-group mb-3">
-                    <label className="form-label">Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password"
-                    />
-                    <small>Error Message</small>
-                  </div>
-                  <div className="input-group-outline input-group mb-3">
-                    <label className="form-label">Confirm Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="confirm_password"
-                    />
-                    <small>Error Message</small>
-                  </div>
-                  <button className="button button-pink">Submit</button>
-                </form>
+                <ComponentValidation />
               </div>
             </div>
 
