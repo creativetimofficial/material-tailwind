@@ -45,7 +45,7 @@ export default function SectionPricing1() {
               <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-grey-300 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +150,7 @@ export default function SectionPricing1() {
               <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-grey-300 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +255,7 @@ export default function SectionPricing1() {
               <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-grey-300 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
