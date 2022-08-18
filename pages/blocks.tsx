@@ -44,8 +44,10 @@ import SectionContent3 from "components/pro/content/content-3";
 import SectionPricing1 from "components/pro/pricing/pricing-1";
 import SectionPricing2 from "components/pro/pricing/pricing-2";
 import SectionPricing3 from "components/pro/pricing/pricing-3";
-import Datepicker from "components/pro/components/datepicker";
 
+import SectionTeam1 from "components/pro/team/team-1";
+import SectionTeam2 from "components/pro/team/team-2";
+import SectionTeam3 from "components/pro/team/team-3";
 
 export default function Presentation() {
   useEffect(() => {
@@ -181,8 +183,13 @@ export default function Presentation() {
 
         <SectionPricing3 />
 
+        {/* TEAM SECTIONS */}
 
+        <SectionTeam1/>
 
+        <SectionTeam2/>
+
+        <SectionTeam3/>
 
         <Card
           shadow={false}
