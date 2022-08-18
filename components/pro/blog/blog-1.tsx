@@ -13,7 +13,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Management
             </p>
             <a
@@ -21,7 +21,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   Bill Walsh leadership lessons
                 </h5>
               </div>
@@ -40,7 +40,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               Like to know the secrets of transforming a 2-14 team into a 3x Super
               Bowl winning Dynasty?
             </p>
@@ -51,10 +51,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Alec Whitten
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   17 Jan 2022
                 </p>
               </div>
@@ -72,7 +72,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Product
             </p>
             <a
@@ -80,7 +80,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   PM mental models
                 </h5>
               </div>
@@ -99,7 +99,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               Mental models are simple expressions of complex processes or
               relationships.
             </p>
@@ -110,10 +110,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Demi Wilkinson
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   16 Jan 2022
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Design
             </p>
             <a
@@ -139,7 +139,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   What is Wireframing?
                 </h5>
               </div>
@@ -158,7 +158,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               Introduction to Wireframing and its Princioles. Learn from the best in
               the industrv.
             </p>
@@ -169,10 +169,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Candice Wu
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   15 Jan 2022
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Design
             </p>
             <a
@@ -198,7 +198,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   How collaboration makes us better designers
                 </h5>
               </div>
@@ -217,7 +217,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               Collaboration can make our teams stronger, and our individual designs
               better.
             </p>
@@ -228,10 +228,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Natali Craig
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   14 Jan 2022
                 </p>
               </div>
@@ -249,7 +249,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Product
             </p>
             <a
@@ -257,7 +257,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   Our top 10 Javascript frameworks to use
                 </h5>
               </div>
@@ -276,7 +276,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               JavaScript frameworks make development easy with extensive features
               and functionalities.
             </p>
@@ -287,10 +287,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Alec Whitten
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   13 Jan 2022
                 </p>
               </div>
@@ -308,7 +308,7 @@ export default function SectionBlog1() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-1 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
               Customer Success
             </p>
             <a
@@ -316,7 +316,7 @@ export default function SectionBlog1() {
               className="mb-1 grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
             >
               <div className="col-span-5">
-                <h5 className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
+                <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
                   Podcast: Creating a better CX Community
                 </h5>
               </div>
@@ -335,7 +335,7 @@ export default function SectionBlog1() {
                 />
               </svg>
             </a>
-            <p className="antialiased text-base leading-relaxed mb-8 font-normal">
+            <p className="text-base leading-relaxed mb-8 font-normal">
               Starting a community doesn't need to be complicated, but how do you
               get started?
             </p>
@@ -346,10 +346,10 @@ export default function SectionBlog1() {
                 className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
               />
               <div>
-                <p className="antialiased text-sm leading-normal text-blue-gray-900 font-semibold">
+                <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
                   Orlando Diggs
                 </p>
-                <p className="antialiased text-xs font-normal">
+                <p className="text-xs font-normal">
                   12 Jan 2022
                 </p>
               </div>

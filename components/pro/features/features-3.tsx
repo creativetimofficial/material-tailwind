@@ -22,10 +22,10 @@ export default function SectionFeatures3() {
                 />
               </svg>
             </div>
-            <h3 className="antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
+            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
               Deliver instant answers
             </h3>
-            <p className="antialiased text-xl leading-relaxed mb-10">
+            <p className="text-xl leading-relaxed mb-10">
               Keep your customers in the flow by embedding help articles right on
               your website. With Beacon, they never have to leave the page to find
               an answer.
@@ -77,10 +77,10 @@ export default function SectionFeatures3() {
                 />
               </svg>
             </div>
-            <h3 className="antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
+            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
               Manage your team with reports
             </h3>
-            <p className="antialiased text-xl leading-relaxed mb-10">
+            <p className="text-xl leading-relaxed mb-10">
               Measure what matters with Untitled's easy-to-use reports. You can
               filter, export, and drilldown on the data in a couple clicks
             </p>

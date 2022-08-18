@@ -3,14 +3,14 @@ export default function SectionHeader3() {
     <header className="h-full min-h-screen w-screen bg-white pt-28 md:pt-32 lg:px-8 lg:pt-40">
       <div className="container mx-auto grid h-full items-center text-center">
         <div className="mx-auto mb-8 inline-flex w-max items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
-          <p className="antialiased text-sm leading-normal mr-3 rounded-full bg-white px-2.5 py-0.5 font-semibold text-pink-500">What's new?</p>
-          <p className="antialiased text-sm leading-normal text-pink-500 flex items-center font-semibold">
+          <p className="text-sm leading-normal mr-3 rounded-full bg-white px-2.5 py-0.5 font-semibold text-pink-500">What's new?</p>
+          <p className="text-sm leading-normal text-pink-500 flex items-center font-semibold">
             Instantly issue virtual cards
             <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </p>
         </div>
-        <h1 className="antialiased tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">No more banking headaches</h1>
-        <p className="antialiased text-xl font-normal leading-relaxed text-gray-700 mx-auto mb-12 w-full px-8 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20">Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.</p>
+        <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">No more banking headaches</h1>
+        <p className="text-xl font-normal leading-relaxed text-gray-700 mx-auto mb-12 w-full px-8 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20">Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.</p>
         <div className="mb-20 flex justify-center gap-3">
           <button className="button button-pink button-lg button-outlined flex" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-1.5 -mt-0.5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>

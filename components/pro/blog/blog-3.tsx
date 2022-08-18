@@ -3,13 +3,13 @@ export default function SectionBlog3() {
     <div className="bg-white">
       <div className="container mx-auto px-8 py-20">
         <div className="mb-16 text-center">
-          <p className="antialiased text-base leading-relaxed text-pink-500 mb-2 font-semibold">
+          <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">
             Latest Posts
           </p>
-          <h2 className="antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
+          <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             Material Tailwind PRO
           </h2>
-          <p className="antialiased text-xl font-normal leading-relaxed">
+          <p className="text-xl font-normal leading-relaxed text-blue-grey-700">
             Interviews, tips, guides, industry best practices, and news.
           </p>
         </div>
@@ -23,7 +23,7 @@ export default function SectionBlog3() {
               />
             </div>
             <div className="card-body">
-              <p className="antialiased text-sm leading-normal text-pink-500 mb-3 font-semibold">
+              <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
                 Alec Whitten&nbsp;•&nbsp;17 Jan 2022
               </p>
               <a
@@ -31,7 +31,7 @@ export default function SectionBlog3() {
                 className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
               >
                 <div className="col-span-5">
-                  <h4 className="antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                  <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
                     UX review presentations
                   </h4>
                 </div>
@@ -50,7 +50,7 @@ export default function SectionBlog3() {
                   />
                 </svg>
               </a>
-              <p className="antialiased text-base leading-relaxed mb-6 font-normal">
+              <p className="text-base leading-relaxed mb-6 font-normal">
                 How do you create compelling presentations that wow your colleagues
                 and impress your managers?
               </p>
@@ -70,7 +70,7 @@ export default function SectionBlog3() {
               />
             </div>
             <div className="card-body">
-              <p className="antialiased text-sm leading-normal text-pink-500 mb-3 font-semibold">
+              <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
                 Demi Wilkinson&nbsp;•&nbsp;16 Jan 2022
               </p>
               <a
@@ -78,7 +78,7 @@ export default function SectionBlog3() {
                 className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
               >
                 <div className="col-span-5">
-                  <h4 className="antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                  <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
                     Migrating to Linear 101
                   </h4>
                 </div>
@@ -97,7 +97,7 @@ export default function SectionBlog3() {
                   />
                 </svg>
               </a>
-              <p className="antialiased text-base leading-relaxed mb-6 font-normal">
+              <p className="text-base leading-relaxed mb-6 font-normal">
                 Linear helps streamline software projects, sprints, tasks, and bug
                 tracking. Here's how to get started.
               </p>
@@ -117,7 +117,7 @@ export default function SectionBlog3() {
               />
             </div>
             <div className="card-body">
-              <p className="antialiased text-sm leading-normal text-pink-500 mb-3 font-semibold">
+              <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
                 Candice Wu&nbsp;•&nbsp;15 Jan 2022
               </p>
               <a
@@ -125,7 +125,7 @@ export default function SectionBlog3() {
                 className="grid grid-cols-6 items-start gap-2 text-blue-gray-900 transition-colors hover:text-pink-500"
               >
                 <div className="col-span-5">
-                  <h4 className="antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
+                  <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
                     Building your API Stack
                   </h4>
                 </div>
@@ -144,7 +144,7 @@ export default function SectionBlog3() {
                   />
                 </svg>
               </a>
-              <p className="antialiased text-base leading-relaxed mb-6 font-normal">
+              <p className="text-base leading-relaxed mb-6 font-normal">
                 The rise of RESTful APIs has been met by a rise in tools for
                 creating, testing, and managing them.
               </p>

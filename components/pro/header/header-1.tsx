@@ -3,11 +3,11 @@ export default function SectionHeader1() {
     <header className="h-full min-h-screen w-screen bg-white px-4 pt-20 md:pt-24 lg:px-8 lg:pt-40">
       <div className="container mx-auto flex h-full flex-col-reverse items-center lg:flex-row">
         <div className="mr-0 lg:mr-16 xl:mr-24">
-          <h1 className="antialiased tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl !leading-tight md:text-5xl">
+          <h1 className="tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl !leading-tight md:text-5xl">
             People who care <br />
             about your growth
           </h1>
-          <p className="antialiased text-xl font-normal leading-relaxed text-gray-700 mb-16 md:pr-16 xl:pr-28">
+          <p className="text-xl font-normal leading-relaxed text-gray-700 mb-16 md:pr-16 xl:pr-28">
             Powerful, self-serve product and growth analytics to help you convert,
             engage, and retain more.
           </p>
@@ -23,11 +23,11 @@ export default function SectionHeader1() {
               get started
             </button>
           </div>
-          <p className="antialiased text-sm font-light leading-normal text-gray-700 inline-flex items-center">
+          <p className="text-sm font-light leading-normal text-gray-700 inline-flex items-center">
             We care about your data in our&nbsp;
             <a
               href="#"
-              className="antialiased text-sm font-light leading-normal text-inherit underline decoration-gray-500 underline-offset-4"
+              className="text-sm font-light leading-normal text-inherit underline decoration-gray-500 underline-offset-4"
             >
               privacy policy
             </a>
@@ -92,11 +92,11 @@ export default function SectionHeader1() {
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <p className="antialiased text-base leading-relaxed text-blue-gray-900 ml-2 font-semibold">
+                <p className="text-base leading-relaxed text-blue-gray-900 ml-2 font-semibold">
                   5.0
                 </p>
               </div>
-              <p className="antialiased text-base leading-relaxed text-gray-700 mt-1 ml-0.5 font-normal">
+              <p className="text-base leading-relaxed text-gray-700 mt-1 ml-0.5 font-normal">
                 from 200+ reviews
               </p>
             </div>

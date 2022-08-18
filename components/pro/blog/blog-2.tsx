@@ -13,16 +13,16 @@ export default function SectionBlog2() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-4 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
               Design
             </p>
             <a
               href="#"
-              className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+              className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
               UX review presentations
             </a>
-            <p className="antialiased text-base leading-relaxed mb-12 font-normal">
+            <p className="text-base leading-relaxed mb-12 font-normal">
               How do you create compelling presentations that wow your...
             </p>
             <div className="flex items-center gap-4">
@@ -32,10 +32,10 @@ export default function SectionBlog2() {
                 className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
               />
               <div>
-                <p className="antialiased text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                <p className="text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                   Alec Whitten
                 </p>
-                <p className="antialiased text-sm leading-normal font-normal">
+                <p className="text-sm leading-normal font-normal">
                   17 Jan 2022
                 </p>
               </div>
@@ -53,16 +53,16 @@ export default function SectionBlog2() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-4 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
               Product
             </p>
             <a
               href="#"
-              className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+              className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
               Migrating to Linear 101
             </a>
-            <p className="antialiased text-base leading-relaxed mb-12 font-normal">
+            <p className="text-base leading-relaxed mb-12 font-normal">
               Linear helps streamline software projects, sprints, tasks, and bu...
             </p>
             <div className="flex items-center gap-4">
@@ -72,10 +72,10 @@ export default function SectionBlog2() {
                 className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
               />
               <div>
-                <p className="antialiased text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                <p className="text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                   Demi Wilkinson
                 </p>
-                <p className="antialiased text-sm leading-normal font-normal">
+                <p className="text-sm leading-normal font-normal">
                   16 Jan 2022
                 </p>
               </div>
@@ -93,16 +93,16 @@ export default function SectionBlog2() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-4 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
               Software Engineering
             </p>
             <a
               href="#"
-              className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+              className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
               Building your API Stack
             </a>
-            <p className="antialiased text-base leading-relaxed mb-12 font-normal">
+            <p className="text-base leading-relaxed mb-12 font-normal">
               The rise of RESTful APIs has been met by a rise in tools...
             </p>
             <div className="flex items-center gap-4">
@@ -112,10 +112,10 @@ export default function SectionBlog2() {
                 className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
               />
               <div>
-                <p className="antialiased text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                <p className="text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                   Candice Wu
                 </p>
-                <p className="antialiased text-sm leading-normal font-normal">
+                <p className="text-sm leading-normal font-normal">
                   15 Jan 2022
                 </p>
               </div>
@@ -133,16 +133,16 @@ export default function SectionBlog2() {
             </a>
           </div>
           <div className="card-body">
-            <p className="antialiased text-sm leading-normal text-pink-500 mb-4 font-semibold">
+            <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
               Product
             </p>
             <a
               href="#"
-              className="antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
+              className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
               PM mental models
             </a>
-            <p className="antialiased text-base leading-relaxed mb-12 font-normal">
+            <p className="text-base leading-relaxed mb-12 font-normal">
               Mental models are simple expressions of complex...
             </p>
             <div className="flex items-center gap-4">
@@ -152,10 +152,10 @@ export default function SectionBlog2() {
                 className="inline-block relative object-cover object-center rounded-full w-12 h-12"
               />
               <div>
-                <p className="antialiased text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
+                <p className="text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
                   Natali Craig
                 </p>
-                <p className="antialiased text-sm leading-normal font-normal">
+                <p className="text-sm leading-normal font-normal">
                   14 Jan 2022
                 </p>
               </div>

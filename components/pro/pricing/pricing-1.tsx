@@ -3,13 +3,13 @@ export default function SectionPricing1() {
     <section>
       <div className="bg-pink-500 min-h-[50vh] pt-16 pb-24 px-8">
         <div className="container mx-auto text-center">
-          <p className="antialiased text-base leading-relaxed text-white font-medium opacity-70 mb-2">
+          <p className="text-base leading-relaxed text-white font-medium opacity-70 mb-2">
             Pricing
           </p>
-          <h2 className="antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-white mb-2">
+          <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-white mb-2">
             Pricing Plans
           </h2>
-          <p className="antialiased text-xl font-normal leading-relaxed text-white opacity-70 mb-8">
+          <p className="text-xl font-normal leading-relaxed text-white opacity-70 mb-8">
             Simple, transparent pricing that grows with you. Try any plan free for
             30 days.
           </p>
@@ -34,15 +34,15 @@ export default function SectionPricing1() {
           <div className="card p-8">
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
-                <p className="antialiased text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
+                <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
                   Basic Plan
                 </p>
-                <p className="antialiased text-sm leading-normal text-pink-500 font-medium">
+                <p className="text-sm leading-normal text-pink-500 font-medium">
                   Most Popular
                 </p>
               </div>
-              <h1 className="antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$10/mth</h1>
-              <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$10/mth</h1>
+              <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
               <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
@@ -139,15 +139,15 @@ export default function SectionPricing1() {
           <div className="card p-8">
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
-                <p className="antialiased text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
+                <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
                   Basic Plan
                 </p>
-                <p className="antialiased text-sm leading-normal text-pink-500 font-medium">
+                <p className="text-sm leading-normal text-pink-500 font-medium">
                   Most Popular
                 </p>
               </div>
-              <h1 className="antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$20/mth</h1>
-              <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$20/mth</h1>
+              <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
               <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
@@ -244,15 +244,15 @@ export default function SectionPricing1() {
           <div className="card p-8">
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
-                <p className="antialiased text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
+                <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
                   Basic Plan
                 </p>
-                <p className="antialiased text-sm leading-normal text-pink-500 font-medium">
+                <p className="text-sm leading-normal text-pink-500 font-medium">
                   Most Popular
                 </p>
               </div>
-              <h1 className="antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$40/mth</h1>
-              <p className="antialiased text-base leading-relaxed text-center">Our most popular plan</p>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$40/mth</h1>
+              <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
               <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">

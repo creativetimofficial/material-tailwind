@@ -6,7 +6,7 @@ export default function SectionContent3() {
         alt="team work"
         className="w-full h-full mb-4 rounded-xl"
       />
-      <p className="antialiased text-sm font-light leading-normal text-inherit">
+      <p className="text-sm font-light leading-normal text-inherit">
         Photo by Marvin Meyer on{" "}
         <a
           href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -17,7 +17,7 @@ export default function SectionContent3() {
           Unsplash
         </a>
       </p>
-      <p className="antialiased text-base leading-relaxed my-12">
+      <p className="text-base leading-relaxed my-12">
         The time is now for it to be okay to be great. People in this world shun people for being great. 
         For being a bright color. For standing out. But the time is now to be okay to be the greatest you. 
         Would you believe in what you believe in, if you were the only one who believed it?
@@ -27,10 +27,10 @@ export default function SectionContent3() {
         People are so scared to lose that they don't even try. 
         Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
       </p>
-      <h2 className="antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
+      <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
         Conclusion
       </h2>
-      <p className="antialiased text-base leading-relaxed mb-10">
+      <p className="text-base leading-relaxed mb-10">
         There’s nothing I really wanted to do in life that I wasn’t able to get good at. 
         That’s my skill. I’m not really specifically talented at anything except for the ability to learn. 
         That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.

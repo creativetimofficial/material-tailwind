@@ -2,10 +2,10 @@ export default function SectionContent2() {
   return (
     <section className="py-12 px-8">
       <div className="max-w-screen-md mx-auto">
-        <h2 className="antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
+        <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
           Introduction
         </h2>
-        <p className="antialiased text-base leading-relaxed mb-8">
+        <p className="text-base leading-relaxed mb-8">
           It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. 
           And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. 
           Because I’m here to follow my dreams and inspire other people to follow their dreams, too.
@@ -32,7 +32,7 @@ export default function SectionContent2() {
           alt="team work"
           className="w-full h-full mb-4 rounded-xl"
         />
-        <p className="antialiased text-sm font-light leading-normal text-inherit">
+        <p className="text-sm font-light leading-normal text-inherit">
           Photo by Marvin Meyer on{" "}
           <a
             href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -45,19 +45,19 @@ export default function SectionContent2() {
         </p>
         <figure className="my-10 border-l-2 border-pink-500 py-4 pl-6">
           <blockquote cite="#">
-            <p className="antialiased text-xl leading-relaxed text-blue-gray-900 font-medium italic mb-8">
+            <p className="text-xl leading-relaxed text-blue-gray-900 font-medium italic mb-8">
               "In a world older and more complete than ours they move finished and
               complete, gifted with extensions of the senses we have lost or never
               attained, living by voices we shall never hear."
             </p>
           </blockquote>
           <figcaption>
-            <p className="antialiased text-base leading-relaxed opacity-80">
+            <p className="text-base leading-relaxed opacity-80">
               — Olivia Rhype, Product Designer
             </p>
           </figcaption>
         </figure>
-        <p className="antialiased text-base leading-relaxed">
+        <p className="text-base leading-relaxed">
           Why would anyone pick blue over pink? Pink is obviously a better color. 
           Everyone’s born confident, and everything’s taken away from you{" "}
           <a

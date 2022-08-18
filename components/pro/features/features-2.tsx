@@ -23,10 +23,10 @@ export default function SectionFeatures2() {
               />
             </svg>
           </div>
-          <h3 className="antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
+          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
             Deliver instant answers
           </h3>
-          <p className="antialiased text-xl leading-relaxed mb-10">
+          <p className="text-xl leading-relaxed mb-10">
             An all-in-one customer service platform that helps you balance
             everything your customers need to be happy.
           </p>
@@ -48,7 +48,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Keep your customers in the loop with live chat
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Embed help articles right on your website
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Customers never have to leave the page to find an answer
               </p>
             </div>
@@ -114,10 +114,10 @@ export default function SectionFeatures2() {
               />
             </svg>
           </div>
-          <h3 className="antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
+          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
             Manage your team with reports
           </h3>
-          <p className="antialiased text-xl leading-relaxed mb-10">
+          <p className="text-xl leading-relaxed mb-10">
             Measure what matters with Untitled's easy-to-use reports. You can
             filter, export, and drilldown on the data in a couple clicks.
           </p>
@@ -139,7 +139,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Filter, export, and drilldown on the data quickly
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Save, schedule, and automate reports to your inbox
               </p>
             </div>
@@ -181,7 +181,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="antialiased text-base leading-relaxed">
+              <p className="text-base leading-relaxed">
                 Connect the tools you already use with 100+ integrations
               </p>
             </div>
