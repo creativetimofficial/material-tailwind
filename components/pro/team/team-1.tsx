@@ -9,7 +9,7 @@ export default function SectionTeam1() {
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             Meet the team behind the Material Tailwind
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 px-52">
+          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
             We're a small team that loves to create great experiences and make meaningful connections between builders and customers. Join our remote team!
           </p>
         </div>

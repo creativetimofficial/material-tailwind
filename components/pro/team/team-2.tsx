@@ -6,7 +6,7 @@ export default function SectionTeam2() {
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             Board Members
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 px-52">
+          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
             We're lucky to be suported by some of the best investors in the world.
           </p>
         </div>
