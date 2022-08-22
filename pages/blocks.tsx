@@ -55,6 +55,7 @@ import SectionTestimonials3 from "components/pro/testimonials/testimonials-3";
 
 import SectionStats1 from "components/pro/stats/stats-1";
 import SectionStats2 from "components/pro/stats/stats-2";
+import SectionStats3 from "components/pro/stats/stats-3";
 
 export default function Presentation() {
   useEffect(() => {
@@ -212,6 +213,7 @@ export default function Presentation() {
 
         <SectionStats2/>
 
+        <SectionStats3/>
 
         <Card
           shadow={false}
