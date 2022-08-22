@@ -2,8 +2,8 @@ export default function SectionTeam3() {
   return (
     <div className="bg-white">
       <div className="container mx-auto px-8 py-20">
-        <div className="flex">
-          <div className="w-5/12">
+        <div className="lg:flex">
+          <div className="lg:w-5/12">
             <div className="text-center lg:text-left pt-5">
               <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">Our team</p>
               <h1 className="tracking-normal text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Leadership team</h1>
@@ -14,7 +14,7 @@ export default function SectionTeam3() {
               </div>
             </div>
           </div>
-          <div className="w-7/12">
+          <div className="lg:w-7/12 pt-10 lg:pt-0">
             <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="card card-plain">
                 <div className="card-body">
