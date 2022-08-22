@@ -49,6 +49,13 @@ import SectionTeam1 from "components/pro/team/team-1";
 import SectionTeam2 from "components/pro/team/team-2";
 import SectionTeam3 from "components/pro/team/team-3";
 
+import SectionTestimonials1 from "components/pro/testimonials/testimonials-1";
+import SectionTestimonials2 from "components/pro/testimonials/testimonials-2";
+import SectionTestimonials3 from "components/pro/testimonials/testimonials-3";
+
+import SectionStats1 from "components/pro/stats/stats-1";
+
+
 export default function Presentation() {
   useEffect(() => {
     init();
@@ -190,6 +197,19 @@ export default function Presentation() {
         <SectionTeam2/>
 
         <SectionTeam3/>
+
+        {/* TESTIMONIALS SECTIONS */}
+
+        <SectionTestimonials1/>
+        
+        <SectionTestimonials2/>
+
+        <SectionTestimonials3/>
+
+        {/* STATS SECTIONS */}
+
+        <SectionStats1/>
+
 
         <Card
           shadow={false}
