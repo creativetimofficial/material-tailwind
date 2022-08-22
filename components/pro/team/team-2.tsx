@@ -3,7 +3,7 @@ export default function SectionTeam2() {
     <div className="bg-white">
       <div className="container mx-auto px-8 py-20">
         <div className="mb-16 text-center">
-          <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
+          <h2 className="tracking-normal text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             Board Members
           </h2>
           <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
