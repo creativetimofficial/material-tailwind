@@ -54,7 +54,7 @@ import SectionTestimonials2 from "components/pro/testimonials/testimonials-2";
 import SectionTestimonials3 from "components/pro/testimonials/testimonials-3";
 
 import SectionStats1 from "components/pro/stats/stats-1";
-
+import SectionStats2 from "components/pro/stats/stats-2";
 
 export default function Presentation() {
   useEffect(() => {
@@ -209,6 +209,8 @@ export default function Presentation() {
         {/* STATS SECTIONS */}
 
         <SectionStats1/>
+
+        <SectionStats2/>
 
 
         <Card
