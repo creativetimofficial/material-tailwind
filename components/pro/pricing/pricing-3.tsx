@@ -2,7 +2,7 @@ export default function SectionPricing3() {
   return (
     <section className="py-8 px-8 lg:py-20">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 p-4">
           <div className="hidden lg:block">
             <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
               &nbsp;

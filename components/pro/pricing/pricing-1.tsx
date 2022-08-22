@@ -1,7 +1,7 @@
 export default function SectionPricing1() {
   return (
     <section>
-      <div className="bg-pink-500 min-h-[50vh] pt-16 pb-24 px-8">
+      <div className="bg-pink-500 min-h-[40vh] pt-16 pb-24 px-8">
         <div className="container mx-auto text-center">
           <p className="text-base leading-relaxed text-white font-medium opacity-70 mb-2">
             Pricing
