@@ -1,13 +1,13 @@
 export default function SectionTestimonials2() {
   return (
     <div className="my-20">
-      <div className="container mx-auto flex h-full flex-col-reverse items-center lg:flex-row">
+      <div className="container mx-auto flex h-full flex-col-reverse px-8 items-center lg:flex-row">
         <img
           src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80"
           alt="testimonials2"
-          className="h-96 object-cover lg:h-[20rem] rounded-2xl shadow-xl"
+          className="w-full lg:w-auto h-96 object-cover lg:h-[20rem] rounded-2xl shadow-xl"
         />
-        <div className="mr-0 p-12 lg:px-24">
+        <div className="mr-0 py-12 lg:px-24">
           <div className="mb-6">
             <div className="flex items-center">
               <svg
