@@ -57,6 +57,15 @@ import SectionStats1 from "components/pro/stats/stats-1";
 import SectionStats2 from "components/pro/stats/stats-2";
 import SectionStats3 from "components/pro/stats/stats-3";
 
+import SectionLogoArea1 from "components/pro/logo-area/logo-area-1";
+import SectionLogoArea2 from "components/pro/logo-area/logo-area-2";
+
+import SectionFAQ from "components/pro/faq/faq";
+
+import SectionCard1 from "components/pro/cards/card-1";
+import SectionCard2 from "components/pro/cards/card-2";
+import SectionCard3 from "components/pro/cards/card-3";
+
 export default function Presentation() {
   useEffect(() => {
     init();
@@ -214,6 +223,24 @@ export default function Presentation() {
         <SectionStats2/>
 
         <SectionStats3/>
+
+        {/* LOGO AREAS SECTION */}
+
+        <SectionLogoArea1/>
+        
+        <SectionLogoArea2/>
+        
+        {/* FAQ SECTION */}
+
+        <SectionFAQ/>
+
+        {/* CARDS SECTION */}
+
+        <SectionCard1/>
+
+        <SectionCard2/>
+
+        <SectionCard3/>
 
         <Card
           shadow={false}
