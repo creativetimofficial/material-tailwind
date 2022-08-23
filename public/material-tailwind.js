@@ -500,16 +500,12 @@ if (document.querySelector('.timepicker')) {
       var links = nav_pills.querySelectorAll("li a.nav-link");
       links.forEach(function (link) {
         link.addEventListener("click", function () {
-          var clicked_tab = document.querySelector(
-            "#" + link.getAttribute("aria-controls")
-          );
+          var clicked_tab = document.querySelector("#" + link.getAttribute("aria-controls"));
           if (!clicked_tab.classList.contains("active")) {
             var active_link = clicked_tab
               .closest(".nav-tabs")
               .querySelector("li a.nav-link.active");
-            var active_panel = document.querySelector(
-              "#" + active_link.getAttribute("aria-controls")
-            );
+            var active_panel = document.querySelector("#" + active_link.getAttribute("aria-controls"));
             active_panel.classList.remove("active");
             clicked_tab.classList.add("active");
           }
