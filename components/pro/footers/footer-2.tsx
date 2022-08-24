@@ -1,13 +1,13 @@
 export default function SectionFooter2() {
   return (
     <div className="my-20">
-      <div className="container mx-auto">
-        <div className="flex">
-          <div className="w-full md:w-6/12">
+      <div className="container mx-auto p-8 md:p-0">
+        <div className="md:flex">
+          <div className="w-full md:w-4/12 lg:w-6/12">
             <h5 className="font-bold text-xl mb-6">Material Tailwind</h5>
           </div>
 
-          <div className="w-full md:mb-2 md:w-6/12 grid grid-cols-3">
+          <div className="w-full md:mb-2 md:w-6/12 grid grid-cols-2 md:grid-cols-3 ml-auto">
             <ul className="list-unstyled">
               <p className="text-sm font-medium text-grey-500 mb-4">Product</p>
               <li>
@@ -135,7 +135,7 @@ export default function SectionFooter2() {
                 </a>
               </li>
             </ul>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled mt-10 md:mt-0">
               <p className="text-sm font-medium text-grey-500 mb-4">Resources</p>
               <li>
                 <a
@@ -208,7 +208,7 @@ export default function SectionFooter2() {
               Save countless hours of design and ship great looking design faster.
             </p>
           </div>
-          <div className="w-full px-4 text-center md:w-4/12 md:px-0 md:text-right">
+          <div className="w-full md:px-4 text-left md:w-4/12 md:px-0 md:text-right">
             <p className="py-1 font-normal text-grey-500">
               © {/* */}2077{/* */} Material Tailwind .All rights reserved{/* */}{" "}
             </p>
