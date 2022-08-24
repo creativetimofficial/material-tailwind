@@ -67,6 +67,8 @@ import SectionCard2 from "components/pro/cards/card-2";
 import SectionCard3 from "components/pro/cards/card-3";
 
 import SectionFooter1 from "components/pro/footers/footer-1";
+import SectionFooter2 from "components/pro/footers/footer-2";
+import SectionFooter3 from "components/pro/footers/footer-3";
 
 
 export default function Presentation() {
@@ -244,6 +246,15 @@ export default function Presentation() {
         <SectionCard2/>
 
         <SectionCard3/>
+
+        {/* FOOTERS SECTIONS */}
+
+        <SectionFooter1/>
+        
+        <SectionFooter2/>
+
+        <SectionFooter3/>
+
 
         <Card
           shadow={false}
