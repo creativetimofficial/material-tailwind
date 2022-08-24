@@ -19,6 +19,7 @@ export default function SectionCard3() {
             <p className="opcacity-60 mb-5">It you ve ever wanted to train a machine learning model and integrate it with IF I I I, vou now can with</p>
             <button className="button button-text button-pink" data-ripple-light="true">
               Read More
+              <i className="fas fa-arrow-right text-sm ml-2" aria-hidden="true"></i>
             </button>
           </div>
         </div>
