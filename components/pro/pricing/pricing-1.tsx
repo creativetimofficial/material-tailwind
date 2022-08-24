@@ -14,9 +14,9 @@ export default function SectionPricing1() {
             30 days.
           </p>
           <div className="mx-auto">
-            <div className="nav-tabs w-4/12 mx-auto">
+            <div className="nav-tabs w-1/2 md:w-4/12 mb-10 md:mb-0 mx-auto">
               <nav>
-                <ul role="tablist" className="tabs p-1" tab-panel="">
+                <ul role="tablist" className="tabs p-1">
                   <li className="nav-item">
                     <a className="nav-link active mb-0 px-0 py-1" aria-selected="true" aria-controls="monthly" role="tab">Monthly Billing</a>
                   </li>
