@@ -126,7 +126,7 @@ export default function init() {
       flatpickr(".datepicker", {});
     };
   })();
-    
+  
   "use strict";
   (function () {
     if (document.querySelector('.timepicker')) {
