@@ -66,6 +66,9 @@ import SectionCard1 from "components/pro/cards/card-1";
 import SectionCard2 from "components/pro/cards/card-2";
 import SectionCard3 from "components/pro/cards/card-3";
 
+import SectionFooter1 from "components/pro/footers/footer-1";
+
+
 export default function Presentation() {
   useEffect(() => {
     init();
@@ -250,11 +253,11 @@ export default function Presentation() {
             
             <ComponentCarousel/>
 
-            <div className="flex">
-              <div className="my-10 w-1/4">
+            <div className="lg:flex">
+              <div className="my-10 lg:w-1/4">
                <ComponentDatepicker />
               </div>
-              <div className="my-10 ml-10 w-1/4">
+              <div className="my-10 lg:ml-10 lg:w-1/4">
                <ComponentTimepicker />
               </div>
             </div>
