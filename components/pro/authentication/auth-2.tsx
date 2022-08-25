@@ -32,28 +32,29 @@ export default function SectionAuth2() {
             className="button button-outlined button-dark button-lg w-full mt-4 flex items-center gap-2 justify-center"
             type="button"
           >
-            <i className="fab fa-google not-italic" /> &nbsp; sign in with
-            google
+            <img className="w-5" src="./img/logos/logo-google-2.png" />
+            &nbsp; 
+            sign in with google
           </button>
           <button
             className="button button-outlined button-dark button-lg w-full mt-4 flex items-center gap-2 justify-center"
             type="button"
           >
-            <i className="fab fa-facebook not-italic" /> &nbsp; sign in with
-            facebook
+            <img className="w-5" src="./img/logos/logo-facebook.png" />
+            &nbsp; sign in with facebook
           </button>
           <button
             className="button button-outlined button-dark button-lg w-full mt-4 flex items-center gap-2 justify-center"
             type="button"
           >
-            <i className="fab fa-apple not-italic" /> &nbsp; sign in with
-            apple
+            <img className="w-5" src="./img/logos/logo-apple.png" />
+            &nbsp; sign in with apple
           </button>
-          <p className="block antialiased font-sans text-base leading-relaxed text-gray-700 font-normal text-center mt-6">
+          <p className="block antialiased font-sans text-base leading-relaxed text-grey-700 font-normal text-center mt-6">
             Already have an account?{" "}
             <a
               href="#"
-              className="text-blue-500 font-medium hover:text-blue-700 transition-colors"
+              className="text-pink-500 font-medium hover:text-pink-700 transition-colors"
             >
               Log in
             </a>
