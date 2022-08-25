@@ -76,6 +76,8 @@ import SectionContact2 from "components/pro/contact/contact-2";
 import SectionAuth1 from "components/pro/authentication/auth-1";
 import SectionAuth2 from "components/pro/authentication/auth-2";
 
+import SectionReset from "components/pro/authentication/reset";
+
 export default function Presentation() {
   useEffect(() => {
     init();
@@ -271,6 +273,11 @@ export default function Presentation() {
         <SectionAuth1/>
         
         <SectionAuth2/>
+
+        {/* RESET SECTION */}
+
+        <SectionReset/>
+
 
         <Card
           shadow={false}
