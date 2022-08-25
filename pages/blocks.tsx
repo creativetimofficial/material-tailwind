@@ -70,6 +70,11 @@ import SectionFooter1 from "components/pro/footers/footer-1";
 import SectionFooter2 from "components/pro/footers/footer-2";
 import SectionFooter3 from "components/pro/footers/footer-3";
 
+import SectionContact1 from "components/pro/contact/contact-1";
+import SectionContact2 from "components/pro/contact/contact-2";
+
+import SectionAuth1 from "components/pro/authentication/auth-1";
+import SectionAuth2 from "components/pro/authentication/auth-2";
 
 export default function Presentation() {
   useEffect(() => {
@@ -255,6 +260,17 @@ export default function Presentation() {
 
         <SectionFooter3/>
 
+        {/* CONTACT SECTIONS */}
+
+        <SectionContact1/>
+        
+        <SectionContact2/>
+
+        {/* AUTHENTICATION SECTIONS */}
+
+        <SectionAuth1/>
+        
+        <SectionAuth2/>
 
         <Card
           shadow={false}
