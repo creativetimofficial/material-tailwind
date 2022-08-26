@@ -17,9 +17,7 @@ export default function SectionReset() {
                 <label>Email</label>
                 <input type="text" className="form-control" placeholder="john@email.com" />
               </div>
-
               <button className="button button-pink w-full my-7">Sign In</button>
-
             </div>
           </div>
         </div>
