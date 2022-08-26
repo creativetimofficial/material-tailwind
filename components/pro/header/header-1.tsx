@@ -7,13 +7,13 @@ export default function SectionHeader1() {
             People who care <br />
             about your growth
           </h1>
-          <p className="text-xl font-normal leading-relaxed text-gray-700 mb-16 md:pr-16 xl:pr-28">
+          <p className="text-xl font-normal leading-relaxed text-grey-700 mb-16 md:pr-16 xl:pr-28">
             Powerful, self-serve product and growth analytics to help you convert,
             engage, and retain more.
           </p>
           <div className="mb-6 flex w-full flex-col gap-2 md:mb-2 md:w-10/12 md:flex-row">
             <div className="input-group input-group-outline w-full lg:w-8/12">
-              <label className="form-label">Outline</label>
+              <label className="form-label">Enter your email</label>
               <input type="text" className="form-control" />
             </div>
             <button
@@ -23,7 +23,7 @@ export default function SectionHeader1() {
               get started
             </button>
           </div>
-          <p className="text-sm font-light leading-normal text-gray-700 inline-flex items-center">
+          <p className="text-sm font-light leading-normal text-grey-700 inline-flex items-center">
             We care about your data in our&nbsp;
             <a
               href="#"
@@ -96,7 +96,7 @@ export default function SectionHeader1() {
                   5.0
                 </p>
               </div>
-              <p className="text-base leading-relaxed text-gray-700 mt-1 ml-0.5 font-normal">
+              <p className="text-base leading-relaxed text-grey-700 mt-1 ml-0.5 font-normal">
                 from 200+ reviews
               </p>
             </div>

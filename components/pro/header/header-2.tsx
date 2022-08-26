@@ -10,7 +10,7 @@ export default function SectionHeader2() {
             </p>
           </div>
           <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Portfolio perfromance tracking made easy</h1>
-          <p className="text-xl font-normal leading-relaxed text-gray-700 lg:pr-20">Designed by marketers, for marketers. Untitled gives you the guidance, data and innovation you need to become a better marketer.</p>
+          <p className="text-xl font-normal leading-relaxed text-grey-700 lg:pr-20">Designed by marketers, for marketers. Untitled gives you the guidance, data and innovation you need to become a better marketer.</p>
           <div className="mt-12 flex justify-center gap-3 lg:justify-start">
             <button className="button button-pink" type="button">Download IOS</button>
             <button className="button button-pink" type="button">Download Andriod</button>
