@@ -73,7 +73,7 @@ export default function SectionFooter3() {
 
           <div className="w-full md:mb-2 md:w-4/12 lg:w-2/12 ml-auto">
             <p className="text-white font-semibold text-left md:text-right lg:text-left mb-4 mt-6 md:mt-0">Get the app</p>
-            <div className="flex md:d-block">
+            <div className="flex md:block">
               <button className="button button-outlined md:button-lg button-light md:mb-4 flex items-center md:ml-auto lg:ml-0">
                 <i className="fab fa-apple text-3xl mr-3"></i>
                 App Store
