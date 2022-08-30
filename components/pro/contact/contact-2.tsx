@@ -43,7 +43,7 @@ export default function SectionContact2() {
             <div className="relative w-full min-w-[200px]">
               <div className="input-group input-group-outline">
                 <label className="form-label">Email</label>
-                <textarea type="text" className="form-control" rows="7" />
+                <textarea type="text" className="form-control" rows={7} />
               </div>
             </div>
           </div>
