@@ -16,12 +16,12 @@ export default function SectionPricing1() {
           <div className="mx-auto">
             <div className="nav-tabs w-1/2 md:w-4/12 mb-10 md:mb-0 mx-auto">
               <nav>
-                <ul role="tablist" className="tabs p-1">
+                <ul role="tablist" className="tabs p-1" aria-controls="data-pricing">
                   <li className="nav-item">
-                    <a className="nav-link active mb-0 px-0 py-1" aria-selected="true" aria-controls="monthly" role="tab">Monthly Billing</a>
+                    <a className="nav-link active mb-0 px-0 py-1" aria-selected="true" aria-controls="pricing-monthly" role="tab">Monthly Billing</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link mb-0 px-0 py-1" aria-selected="false" aria-controls="annual" role="tab">Annual Billing</a>
+                    <a className="nav-link mb-0 px-0 py-1" aria-selected="false" aria-controls="pricing-annual" role="tab">Annual Billing</a>
                   </li>
                 </ul>
               </nav>
@@ -31,7 +31,7 @@ export default function SectionPricing1() {
       </div>
       <div className="pt-8 px-8 pb-16 -mt-32">
         <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="card p-8">
+          <div className="card p-8" data-pricing="true">
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
                 <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
@@ -41,7 +41,8 @@ export default function SectionPricing1() {
                   Most Popular
                 </p>
               </div>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$10/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$10/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$100/year</h1>
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
@@ -136,7 +137,7 @@ export default function SectionPricing1() {
             <button className="button button-pink button-lg w-full" type="button">get started</button>
           </div>
 
-          <div className="card p-8">
+          <div className="card p-8" data-pricing>
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
                 <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
@@ -146,7 +147,8 @@ export default function SectionPricing1() {
                   Most Popular
                 </p>
               </div>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$20/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$20/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$200/year</h1>
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
@@ -241,7 +243,7 @@ export default function SectionPricing1() {
             <button className="button button-pink button-lg w-full" type="button">get started</button>
           </div>
 
-          <div className="card p-8">
+          <div className="card p-8" data-pricing>
             <div className="card-header mx-auto">
               <div className="mb-8 inline-flex items-center rounded-full bg-pink-50 py-1 pl-1 pr-3">
                 <p className="text-sm leading-normal mr-3 rounded-full bg-white py-px px-3 font-medium text-pink-500">
@@ -251,7 +253,8 @@ export default function SectionPricing1() {
                   Most Popular
                 </p>
               </div>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2">$40/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$40/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$400/year</h1>
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
