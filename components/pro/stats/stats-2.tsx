@@ -32,7 +32,6 @@ export default function SectionStats2() {
           </div>
         </div>
       </div>
-      
     </div>
   )
 }
