@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // framer-motion
 import { motion, MotionProps } from "framer-motion";
@@ -32,6 +32,11 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     } = accordion;
 
     const bodyEl = React.useRef(null);
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+      setHeight(bodyEl.current?.scrollHeight);
+    }, [bodyEl.current]);
 
     // 2. set default props
     className = className ?? "";
@@ -46,7 +51,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: `${bodyEl.current?.scrollHeight}px`,
+        height: `${height}px`,
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
@@ -69,7 +74,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
       <motion.div
         className="overflow-hidden"
         ref={bodyEl}
-        initial="unmount"
+        initial={open ? "mount" : "unmount"}
         exit="unmount"
         animate={open ? "mount" : "unmount"}
         variants={heightAnimation}
@@ -78,7 +83,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
           {...rest}
           ref={ref}
           className={bodyClasses}
-          initial="unmount"
+          initial={open ? "mount" : "unmount"}
           exit="unmount"
           animate={open ? "mount" : "unmount"}
           variants={appliedAnimation}

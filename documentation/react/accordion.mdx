@@ -36,7 +36,7 @@ See below our simple and versatile <Code>Accordion</Code> example that you can u
 
 <br />
 
-<State initialState={{ active: 0 }}>
+<State initialState={{ active: 1 }}>
   <ComponentDemo id="accordion">
     <Observe>
       {({ setState, active }) => (
@@ -91,7 +91,7 @@ import {
 } from "@material-tailwind/react";
 
 export default function Example() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(1);
 
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
