@@ -1,7 +1,7 @@
 export default function SectionContact2() {
   return (
     <section className="grid lg:grid-cols-2 items-center">
-      <div className="p-20 xl:px-32 xl:py-24">
+      <div className="p-10 md:p-20 xl:px-32 xl:py-24">
         <h1 className="block antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-4">
           Contact us
         </h1>
@@ -71,7 +71,7 @@ export default function SectionContact2() {
           </button>
         </form>
       </div>
-      <div className="bg-pink-500 h-screen w-full">&nbsp;</div>
+      <div className="bg-pink-500 h-screen w-full hidden md:block">&nbsp;</div>
     </section>
   )
 }
