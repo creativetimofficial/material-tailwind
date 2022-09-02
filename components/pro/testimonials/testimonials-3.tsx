@@ -53,7 +53,7 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Untitled really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
@@ -111,7 +111,7 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Untitled really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
@@ -169,7 +169,7 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Untitled really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>

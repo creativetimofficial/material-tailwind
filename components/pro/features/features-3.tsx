@@ -81,7 +81,7 @@ export default function SectionFeatures3() {
               Manage your team with reports
             </h3>
             <p className="text-xl leading-relaxed mb-10">
-              Measure what matters with Untitled's easy-to-use reports. You can
+              Measure what matters with Material's easy-to-use reports. You can
               filter, export, and drilldown on the data in a couple clicks
             </p>
             <div className="flex gap-2">
