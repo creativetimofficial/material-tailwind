@@ -79,7 +79,7 @@ export default function SectionFooter3() {
                 App Store
                 </button>
               <button className="button button-outlined md:button-lg button-light flex items-center ml-auto lg:ml-0">
-                <i className="fab fa-apple text-3xl mr-3"></i>
+                <i className="fab fa-google text-3xl mr-3"></i>
                 Google Play
               </button>
             </div>
