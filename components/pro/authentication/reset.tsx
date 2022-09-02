@@ -5,7 +5,7 @@ export default function SectionReset() {
         <span className="absolute top-0 left-0 w-full h-full bg-center bg-cover opacity-60 bg-gradient-to-tl from-grey-900 to-slate-800" />
       </div>
       <div className="container mx-auto -mt-24">
-          <div className="card relative z-10 w-1/3 mx-auto">
+          <div className="card relative z-10 w-10/12 md:w-1/3 mx-auto">
             <div className="card-header mx-4 -mt-6">
               <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-5">
                 <h4 className="mt-2 mb-0 text-center font-bold text-white">Reset Password</h4>
