@@ -1,7 +1,7 @@
 export default function SectionPricing1() {
   return (
     <section>
-      <div className="bg-pink-500 min-h-[40vh] pt-16 pb-24 px-8">
+      <div className="bg-pink-500 min-h-[40vh] pt-16 pb-24 px-8 mb-6">
         <div className="container mx-auto text-center">
           <p className="text-base leading-relaxed text-white font-medium opacity-70 mb-2">
             Pricing
@@ -14,7 +14,7 @@ export default function SectionPricing1() {
             30 days.
           </p>
           <div className="mx-auto">
-            <div className="nav-tabs w-1/2 md:w-4/12 mb-10 md:mb-0 mx-auto">
+            <div className="nav-tabs w-full md:w-4/12 mb-10 md:mb-0 mx-auto">
               <nav>
                 <ul role="tablist" className="tabs p-1" aria-controls="data-pricing">
                   <li className="nav-item">
