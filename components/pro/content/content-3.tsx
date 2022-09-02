@@ -12,7 +12,7 @@ export default function SectionContent3() {
           href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
           target="_blank"
           rel="noreferrer"
-          className="hover:text-blue-500 transition-colors underline underline-offset-4"
+          className="hover:text-pink-500 transition-colors underline underline-offset-4"
         >
           Unsplash
         </a>
