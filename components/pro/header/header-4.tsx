@@ -23,14 +23,12 @@ export default function SectionHeader4() {
           <h6 className="tracking-normal font-sans text-base font-semibold leading-relaxed text-inherit pl-6">
             Users over time
           </h6>
-          <div style={{ minHeight: 415 }}>
-    
+          <div style={{ "height": "320px" }}>
+            <div id="chart" style={{ "height": "320px" }}></div>
           </div>
           <div className="absolute -right-[5%] -bottom-[7%] hidden h-[280px] w-[280px] rounded-full bg-white shadow-xl shadow-gray-500/20 lg:block xl:-right-[10%]">
-            <div className="-mt-2" style={{ minHeight: "298.7px" }}>
-
-            </div>
-          </div>
+            <div id="chart2" style={{ "margin-top": ".75rem" }}></div>
+          </div> 
         </div>  
       </div>    
     </header>

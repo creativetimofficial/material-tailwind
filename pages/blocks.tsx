@@ -18,6 +18,8 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
+import SectionNavbar1 from "components/pro/navbar/navbar-1";
+
 import ComponentCarousel from "components/pro/components/carousel";
 import ComponentDatepicker from "components/pro/components/datepicker";
 import ComponentTimepicker from "components/pro/components/timepicker";
@@ -101,7 +103,10 @@ export default function Presentation() {
           content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
         />
       </Head>
-      <nav className="block py-4 shadow-md w-full max-w-full rounded-none px-4 bg-blue-500 text-white">
+
+      <SectionNavbar1/>
+
+      {/* <nav className="block py-4 shadow-md w-full max-w-full rounded-none px-4 bg-blue-500 text-white">
         <div className="container mx-auto flex items-center justify-between">
           <a href="#" className="antialiased text-sm leading-normal text-white mr-4 cursor-pointer py-1.5 font-bold">Material Tailwind</a>
           <div className="hidden lg:block">
@@ -168,7 +173,7 @@ export default function Presentation() {
           </ul>
           <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full mb-2" type="button">Buy Now</button>
         </div>
-      </nav>
+      </nav> */}
       <main className="relative">
 
         <SectionHeader1 />
