@@ -1,7 +1,7 @@
 export default function SectionAuth2() {
   return (
     <section className="grid items-center h-screen">
-      <div className="text-center">
+      <div className="p-10 md:p-20 text-center">
         <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
           Create an account
         </h3>
