@@ -1,7 +1,7 @@
 export default function SectionAuth1() {
   return (
     <section className="grid lg:grid-cols-2 items-center h-screen">
-      <div className="p-20 xl:px-32 xl:py-24 text-center my-auto">
+      <div className="p-10 md:p-20 xl:px-32 xl:py-24 text-center my-auto">
         <h3 className="block antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
           Welcome back
         </h3>
