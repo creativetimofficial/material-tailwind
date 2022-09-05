@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // framer-motion
 import { motion, MotionProps } from "framer-motion";
@@ -30,13 +30,12 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     const {
       styles: { base },
     } = accordion;
-
     const bodyEl = React.useRef(null);
-    const [height, setHeight] = useState(0);
+    const [height, setHeight] = React.useState(0);
 
-    useEffect(() => {
+    React.useEffect(() => {
       setHeight(bodyEl.current?.scrollHeight);
-    }, [bodyEl.current]);
+    }, []);
 
     // 2. set default props
     className = className ?? "";
