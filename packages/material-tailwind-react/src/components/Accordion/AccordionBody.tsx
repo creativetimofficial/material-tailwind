@@ -20,6 +20,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/ac
 export interface AccordionBodyProps extends MotionProps {
   className?: className;
   children: children;
+  [key: string]: any;
 }
 
 export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
@@ -50,7 +51,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: `${height}px`,
+        height: `${height + 10}px`,
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
@@ -73,7 +74,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
       <motion.div
         className="overflow-hidden"
         ref={bodyEl}
-        initial={open ? "mount" : "unmount"}
+        initial="unmount"
         exit="unmount"
         animate={open ? "mount" : "unmount"}
         variants={heightAnimation}
@@ -82,7 +83,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
           {...rest}
           ref={ref}
           className={bodyClasses}
-          initial={open ? "mount" : "unmount"}
+          initial="unmount"
           exit="unmount"
           animate={open ? "mount" : "unmount"}
           variants={appliedAnimation}
