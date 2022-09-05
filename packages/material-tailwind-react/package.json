@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -50,5 +50,30 @@
     "path": "^0.12.7",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
-  }
+  },
+  "keywords": [
+    "material tailwind",
+    "material tailwind react",
+    "javascript",
+    "react",
+    "next",
+    "create react app",
+    "remix",
+    "vite",
+    "gatsby",
+    "tailwind",
+    "tailwind components",
+    "tailwind elements",
+    "tailwind library",
+    "react library",
+    "react components library",
+    "tailwind sections",
+    "tailwind css",
+    "tailwind ui",
+    "tailwind css react",
+    "tailwind css next",
+    "tailwind css remix",
+    "tailwind css vite",
+    "tailwind css gatsby"
+  ]
 }
