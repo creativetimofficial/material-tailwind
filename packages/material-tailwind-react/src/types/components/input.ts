@@ -21,6 +21,9 @@ export type resize = boolean;
 export type labelProps = {
   [key: string]: any;
 };
+export type containerProps = {
+  [key: string]: any;
+};
 export type className = string;
 
 // javascript prop-types
@@ -33,4 +36,5 @@ export const propTypesSuccess: any = PropTypes.bool;
 export const propTypesIcon: any = PropTypes.node;
 export const propTypesResize: any = PropTypes.bool;
 export const propTypesLabelProps: any = PropTypes.instanceOf(Object);
+export const propTypesContainerProps: any = PropTypes.instanceOf(Object);
 export const propTypesClassName: any = PropTypes.string;

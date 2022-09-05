@@ -19,6 +19,7 @@ import type {
   success,
   icon,
   labelProps,
+  containerProps,
   className,
 } from "../../types/components/input";
 import {
@@ -30,6 +31,7 @@ import {
   propTypesSuccess,
   propTypesIcon,
   propTypesLabelProps,
+  propTypesContainerProps,
   propTypesClassName,
 } from "../../types/components/input";
 
@@ -42,11 +44,27 @@ export interface InputProps extends Omit<React.ComponentProps<"input">, "size"> 
   success?: success;
   icon?: icon;
   labelProps?: labelProps;
+  containerProps?: containerProps;
   className?: className;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ variant, color, size, label, error, success, icon, labelProps, className, ...rest }, ref) => {
+  (
+    {
+      variant,
+      color,
+      size,
+      label,
+      error,
+      success,
+      icon,
+      containerProps,
+      labelProps,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
     // 1. init
     const { input } = useTheme();
     const { defaultProps, valid, styles } = input;
@@ -77,6 +95,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const containerClasses = classnames(
       objectsToString(base.container),
       objectsToString(inputSize.container),
+      containerProps?.className,
     );
     const inputClasses = classnames(
       objectsToString(base.input),
@@ -105,10 +124,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     // 4. return
     return (
-      <div ref={ref} className={containerClasses}>
+      <div {...containerProps} ref={ref} className={containerClasses}>
         {icon && <div className={iconClasses}>{icon}</div>}
         <input {...rest} className={inputClasses} placeholder={rest?.placeholder || " "} />
-        <label className={labelClasses}>{label}</label>
+        <label {...labelProps} className={labelClasses}>
+          {label}
+        </label>
       </div>
     );
   },
@@ -123,6 +144,7 @@ Input.propTypes = {
   success: propTypesSuccess,
   icon: propTypesIcon,
   labelProps: propTypesLabelProps,
+  containerProps: propTypesContainerProps,
   className: propTypesClassName,
 };
 

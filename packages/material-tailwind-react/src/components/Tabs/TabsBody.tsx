@@ -49,11 +49,13 @@ export const TabsBody = React.forwardRef<HTMLDivElement, TabsBodyProps>(
           position: "absolute",
           top: "0",
           left: "0",
+          zIndex: 1,
           transition: { duration: 0.5, times: [0.4, 0, 0.2, 1] },
         },
         mount: {
           opacity: 1,
           position: "relative",
+          zIndex: 2,
           transition: { duration: 0.5, times: [0.4, 0, 0.2, 1] },
         },
       }),
