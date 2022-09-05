@@ -47,21 +47,19 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     // 5. return
     return (
       <NewAnimatePresence exitBeforeEnter>
-        {active === value && (
-          <motion.div
-            {...rest}
-            ref={ref}
-            role="tabpanel"
-            className={tabPanelClasses}
-            initial="unmount"
-            exit="unmount"
-            animate={active === value ? "mount" : "unmount"}
-            variants={appliedAnimation}
-            data-value={value}
-          >
-            {children}
-          </motion.div>
-        )}
+        <motion.div
+          {...rest}
+          ref={ref}
+          role="tabpanel"
+          className={tabPanelClasses}
+          initial="unmount"
+          exit="unmount"
+          animate={active === value ? "mount" : "unmount"}
+          variants={appliedAnimation}
+          data-value={value}
+        >
+          {children}
+        </motion.div>
       </NewAnimatePresence>
     );
   },

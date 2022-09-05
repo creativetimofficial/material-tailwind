@@ -20,6 +20,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/ac
 export interface AccordionBodyProps extends MotionProps {
   className?: className;
   children: children;
+  [key: string]: any;
 }
 
 export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
@@ -30,8 +31,12 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     const {
       styles: { base },
     } = accordion;
-
     const bodyEl = React.useRef(null);
+    const [height, setHeight] = React.useState(0);
+
+    React.useEffect(() => {
+      setHeight(bodyEl.current?.scrollHeight);
+    }, []);
 
     // 2. set default props
     className = className ?? "";
@@ -46,7 +51,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: `${bodyEl.current?.scrollHeight}px`,
+        height: `${height + 10}px`,
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
