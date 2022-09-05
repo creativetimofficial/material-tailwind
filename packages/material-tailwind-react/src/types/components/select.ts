@@ -27,7 +27,7 @@ export type error = boolean;
 export type success = boolean;
 export type arrow = ReactNode;
 export type value = string;
-export type onChange = (value: ReactNode) => void;
+export type onChange = (value?: ReactNode) => void;
 export type selected = (element?: ReactElement, index?: number) => React.ReactNode;
 export type offset = offsetType;
 export type dismiss = dismissType;
