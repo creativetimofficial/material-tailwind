@@ -7,7 +7,7 @@ export default function SectionTeam3() {
             <div className="text-center lg:text-left pt-5">
               <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">Our team</p>
               <h1 className="tracking-normal text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Leadership team</h1>
-              <p className="text-xl font-normal leading-relaxed text-gray-700 lg:pr-20">We're a cross-disciplinary team that loves to create great experiences for our customers.</p>
+              <p className="text-xl font-normal leading-relaxed text-gray-700 lg:pr-20">They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything.</p>
               <div className="mt-12 flex justify-center gap-3 lg:justify-start">
                 <button className="button button-outlined button-pink button-lg" type="button">About us</button>
                 <button className="button button-pink button-lg" type="button">Open positions</button>
@@ -23,7 +23,7 @@ export default function SectionTeam3() {
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Olivia Rhye</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Founder & CEO</p>
-                  <p>Former co-founder of Opendoor. Early staff at Spotify and Clearbit.</p>
+                  <p>Former co-founder of Spotify. Early staff at Apple and Fitbit.</p>
                   <div className="flex mt-3">
                     <button className="button button-link button-text button-secondary">
                       <i className="fab fa-twitter text-xl" aria-hidden="true"></i>
@@ -45,7 +45,7 @@ export default function SectionTeam3() {
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Pheonix Baker</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Engineering Manager</p>
-                  <p>Lead engineering teams at Figma, Pitch, and Protocol Labs.</p>
+                  <p>Lead engineering teams at Figma, Dribbble, and MatLabs.</p>
                   <div className="flex mt-3">
                     <button className="button button-link button-text button-secondary">
                       <i className="fab fa-twitter text-xl" aria-hidden="true"></i>
@@ -67,7 +67,7 @@ export default function SectionTeam3() {
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Lana Steiner</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Product Manager</p>
-                  <p>Former PM for Linear, Lambda School, and On Deck.</p>
+                  <p>Former PM for Vercel, Lambda School, and Mirror.</p>
                   <div className="flex mt-3">
                     <button className="button button-link button-text button-secondary">
                       <i className="fab fa-twitter text-xl" aria-hidden="true"></i>
@@ -111,7 +111,7 @@ export default function SectionTeam3() {
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Candice Wu</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Backend Developer</p>
-                  <p>Lead backend end at Clarbit. Former Clarbit and Loom.</p>
+                  <p>Lead backend end at FitBit. Former Fitbit and Garmin.</p>
                   <div className="flex mt-3">
                     <button className="button button-link button-text button-secondary">
                       <i className="fab fa-twitter text-xl" aria-hidden="true"></i>
@@ -132,7 +132,7 @@ export default function SectionTeam3() {
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Natali Craig</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Product Designer</p>
-                  <p>Founding design team at Figma. Former Pleo, Stripe, and Tile.</p>
+                  <p>Founding design team at Figma. Former Dribbble, Stripe, and Quip.</p>
                   <div className="flex mt-3">
                     <button className="button button-link button-text button-secondary">
                       <i className="fab fa-twitter text-xl" aria-hidden="true"></i>

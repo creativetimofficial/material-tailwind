@@ -4,13 +4,13 @@ export default function SectionTeam1() {
       <div className="container mx-auto px-8 py-20">
         <div className="mb-16 text-center">
           <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">
-            The team
+            Our team
           </p>
           <h2 className="tracking-normal text-4xl font-semibold leading-[1.3] text-blue-gray-900">
-            Meet the team behind the Material Tailwind
+            You are into a great company
           </h2>
           <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
-            We're a small team that loves to create great experiences and make meaningful connections between builders and customers. Join our remote team!
+            This is the paragraph where you can write more details about your team. Keep you user engaged by providing meaningful information.
           </p>
         </div>
         <div className="grid grid-cols-1 items-start gap-y-16 gap-x-8 md:grid-cols-2 lg:grid-cols-4">
@@ -22,7 +22,7 @@ export default function SectionTeam1() {
               <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Olivia Rhye</h5>
               <p className="text-xl font-normal leading-relaxed text-pink-500">Founder & CEO</p>
               <p className="text-base leading-relaxed mt-3 mb-8 font-normal">
-                Former co-founder of Opendoor. Early Staff at Spotify and Clearbit.
+                Today you are you! That is truer than true! There is no one alive!
               </p>
               <div className="flex gap-1">
                 <button className="button button-link button-text button-secondary">
@@ -46,7 +46,7 @@ export default function SectionTeam1() {
               <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Pheonix Baker</h5>
               <p className="text-xl font-normal leading-relaxed text-pink-500">Engineering Manager</p>
               <p className="text-base leading-relaxed mt-3 mb-8 font-normal">
-                Lead engineering teams at Figma, Pitch, and Protocol Labs.
+                And I love you like Kanye loves Kanye. We need to restart that.
               </p>
               <div className="flex gap-1">
                 <button className="button button-link button-text button-secondary">
@@ -70,7 +70,7 @@ export default function SectionTeam1() {
               <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Lana Steiner</h5>
               <p className="text-xl font-normal leading-relaxed text-pink-500">Product Manager</p>
               <p className="text-base leading-relaxed mt-3 mb-8 font-normal">
-                Former PM for Linear, Lambda School, and On Deck.
+                Artist is a term applied to a person who engages in an activity
               </p>
               <div className="flex gap-1">
                 <button className="button button-link button-text button-secondary">
@@ -94,7 +94,7 @@ export default function SectionTeam1() {
               <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Demi Wilkinson</h5>
               <p className="text-xl font-normal leading-relaxed text-pink-500">Frontend Developer</p>
               <p className="text-base leading-relaxed mt-3 mb-8 font-normal">
-                Former frontend dev for Linear, Coinbase, and Postscript.
+                Success is not final, failure is not fatal: it is the courage to continue
               </p>
               <div className="flex gap-1">
                 <button className="button button-link button-text button-secondary">
