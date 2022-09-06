@@ -53,11 +53,11 @@ export default function SectionTestimonials2() {
             </div>
           </div>
           <h2 className="text-blue-gray-900 mb-8 md:pr-20">
-            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
           </h2>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
-            <span className="text-lg opacity-60">Head of Design, Layers</span>
+            <span className="text-lg opacity-60">Head of Design, Netflix</span>
           </p>
         </div>
       </div>

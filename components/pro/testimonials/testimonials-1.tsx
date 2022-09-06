@@ -48,11 +48,11 @@ export default function SectionTestimonials1() {
             </div>
           </div>
           <h2 className="text-white mb-8 md:pr-20">
-            Love the simplicity of the service and the prompt customer support. We can't imagine working withour it.
+            "We’re not always in the position that we want to be at. We’re constantly growing. 
           </h2>
           <p className="text-xl font-normal leading-relaxed text-white">
-            ─ Renee Wells <br/>
-            <span className="text-lg opacity-60">Product Designer, Quitient</span>
+            ─ Amanda Wells <br/>
+            <span className="text-lg opacity-60">Product Designer, Behance</span>
           </p>
         </div>
         <img

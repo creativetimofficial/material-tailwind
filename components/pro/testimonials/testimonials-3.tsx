@@ -53,11 +53,11 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            The time is now for it to be okay to be great. People in this world shun people for being great.
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
-            <span className="text-lg opacity-60">Head of Design, Layers</span>
+            <span className="text-lg opacity-60">Team leader, Behance</span>
           </p>
         </div>
         <div className="card card-plain">
@@ -111,11 +111,11 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            For being a bright color. For standing out. But the time is now to be okay to be the greatest you.
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
-            <span className="text-lg opacity-60">Head of Design, Layers</span>
+            <span className="text-lg opacity-60">Head of Design, Netflix</span>
           </p>
         </div>
         <div className="card card-plain">
@@ -169,11 +169,11 @@ export default function SectionTestimonials3() {
             </div>
           </div>
           <h4 className="text-blue-gray-900 mb-8 font-semibold">
-            Material really understood the paired-back aesthetic that we wew looking for. We couldn't be happier with our new offices.
+            Would you believe in what you believe in, if you were the only one who believed it?
           </h4>
           <p className="text-xl font-normal leading-relaxed text-gray-700">
             ─ Candice Wu <br/>
-            <span className="text-lg opacity-60">Head of Design, Layers</span>
+            <span className="text-lg opacity-60">Former CEO, Apple</span>
           </p>
         </div>
       </div>
