@@ -5,10 +5,10 @@ export default function SectionFeatures1() {
         <p className="text-base leading-relaxed text-pink-500 mb-2 font-bold">
           Social Analytics
         </p>
-        <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-4">
+        <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-grey-900 mb-4">
           Turn your idea into a startup
         </h2>
-        <p className="text-xl leading-relaxed mx-auto w-full px-4 md:w-10/12 lg:w-7/12 lg:px-8">
+        <p className="text-xl leading-relaxed mx-auto w-full px-4 md:w-10/12 lg:w-7/12 lg:px-8 text-blue-grey-700">
           We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play
         </p>
       </div>
