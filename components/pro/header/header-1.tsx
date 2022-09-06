@@ -102,9 +102,9 @@ export default function SectionHeader1() {
           </div>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+          src="https://images.unsplash.com/photo-1604328727766-a151d1045ab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
           alt="team work"
-          className="lg:0 mb-8 h-96 w-full rounded-xl object-cover lg:h-[40rem]"
+          className="lg:0 mb-8 h-96 w-1/2 w-full rounded-xl object-cover lg:h-[40rem]"
         />
       </div>
     </header>
