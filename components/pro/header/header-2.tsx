@@ -9,8 +9,8 @@ export default function SectionHeader2() {
               <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </p>
           </div>
-          <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Portfolio perfromance tracking made easy</h1>
-          <p className="text-xl font-normal leading-relaxed text-grey-700 lg:pr-20">Designed by marketers, for marketers. Material gives you the guidance, data and innovation you need to become a better marketer.</p>
+          <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Our company mission is to lead the design apps</h1>
+          <p className="text-xl font-normal leading-relaxed text-grey-700 lg:pr-20">It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all we have. Then we lose family over time.</p>
           <div className="mt-12 flex justify-center gap-3 lg:justify-start">
             <button className="button button-pink" type="button">Download IOS</button>
             <button className="button button-pink" type="button">Download Andriod</button>

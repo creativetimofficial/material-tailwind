@@ -4,12 +4,11 @@ export default function SectionHeader1() {
       <div className="container mx-auto flex h-full flex-col-reverse items-center lg:flex-row">
         <div className="mr-0 lg:mr-16 xl:mr-24">
           <h1 className="tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl !leading-tight md:text-5xl">
-            People who care <br />
-            about your growth
+            Your work with <br />
+            Material Tailwind
           </h1>
           <p className="text-xl font-normal leading-relaxed text-grey-700 mb-16 md:pr-16 xl:pr-28">
-            Powerful, self-serve product and growth analytics to help you convert,
-            engage, and retain more.
+            The time is now for it to be okay to be great. People in this world shun people for being great.
           </p>
           <div className="mb-6 flex w-full flex-col gap-2 md:mb-2 md:w-10/12 md:flex-row">
             <div className="input-group input-group-outline w-full lg:w-8/12">
