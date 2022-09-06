@@ -23,10 +23,10 @@ export default function SectionFeatures2() {
               />
             </svg>
           </div>
-          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-0">
+          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-grey-900 mb-0">
             Get your own app
           </h3>
-          <p className="text-xl leading-relaxed mb-10 text-gray-700">
+          <p className="text-xl leading-relaxed mb-10 text-blue-grey-700">
             The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.
           </p>
           <ul className="flex flex-col gap-4 pl-2">
@@ -47,7 +47,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 Showcase and embed your work with
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 Publish across social channels in a click
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 Sell your videos worldwide with this app
               </p>
             </div>
@@ -113,10 +113,10 @@ export default function SectionFeatures2() {
               />
             </svg>
           </div>
-          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-0">
+          <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-grey-900 mb-0">
             Medium Length Headline
           </h3>
-          <p className="text-xl leading-relaxed mb-10 text-gray-700">
+          <p className="text-xl leading-relaxed mb-10 text-blue-grey-700">
             Change the color to match your brand or vision, add your logo, choose the perfect thumbnail, remove the playbar, add controls.
           </p>
           <ul className="flex flex-col gap-4 pl-2">
@@ -137,7 +137,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 Creativity starts with an empty calendar and ends with a full one.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 We get insulted by others, lose trust for those We get back.
               </p>
             </div>
@@ -179,7 +179,7 @@ export default function SectionFeatures2() {
                   />
                 </svg>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-blue-grey-700 leading-relaxed">
                 When playing, surround yourself with people happier than you.
               </p>
             </div>
