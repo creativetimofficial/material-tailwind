@@ -11,7 +11,7 @@ export default function SectionHeader4() {
             <div className="input-group input-group-outline bg-white rounded-md w-full lg:w-8/12">
               <input type="text" className="form-control" placeholder="Enter your email" />
             </div>
-            <button className="button button-light text-dark-500 w-full px-4 md:w-40" type="button">get started</button>
+            <button className="button button-dark w-full px-4 md:w-40" type="button">get started</button>
           </div>
           <p className="text-sm font-light leading-normal text-white block md:flex items-center justify-self-start">We care about your data in our&nbsp;
             <a href="#" className="text-sm font-light leading-normal text-inherit underline decoration-white underline-offset-2">privacy policy</a>
