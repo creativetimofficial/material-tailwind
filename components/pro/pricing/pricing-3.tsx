@@ -11,7 +11,7 @@ export default function SectionPricing3() {
           </div>
           <div className="">
             <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
-              Basic
+              Starter
               <div className="chip chip-pink text-xs rounded-full py-1 px-2.5">popular</div>
             </h4>
             <hr className="border-t mb-6 lg:-mx-12" />
@@ -24,14 +24,14 @@ export default function SectionPricing3() {
               </p>
             </div>
             <p className="text-base leading-relaxed text-grey-700 font-normal mb-8 opacity-80">
-              Basic features for up to 10 emplovees with everything you need.
+              You have Free Unlimited Updates and Premium Support on each package. 
             </p>
             <button className="button button-pink button-lg w-full mb-4" type="button">Get started</button>
             <button className="button button-dark button-lg button-outlined block w-full" type="button">Chat to sales</button>
           </div>
           <div className="">
             <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
-              Business
+              Startup
             </h4>
             <hr className="border-t mb-6 lg:-mx-12" />
             <div className="flex items-end gap-1 mb-4">
@@ -43,7 +43,7 @@ export default function SectionPricing3() {
               </p>
             </div>
             <p className="text-base leading-relaxed text-grey-700 font-normal mb-8 opacity-80">
-              Advanced features and reporting, better workflows and automation.
+              You also have 30 days to request a refund and Premium Support on each.
             </p>
             <button className="button button-pink button-lg w-full mb-4" type="button">Get started</button>
             <button className="button button-dark button-lg button-outlined block w-full" type="button">Chat to sales</button>
@@ -62,7 +62,7 @@ export default function SectionPricing3() {
               </p>
             </div>
             <p className="text-base leading-relaxed text-grey-700 font-normal mb-8 opacity-80">
-              Personalised service and enterprise security for large teams.
+              Personalised support and enterprise security for each product.
             </p>
             <button className="button button-pink button-lg w-full mb-4" type="button">Get started</button>
             <button className="button button-dark button-lg button-outlined block w-full" type="button">Chat to sales</button>
@@ -142,7 +142,7 @@ export default function SectionPricing3() {
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center">
             <div className="flex items-center gap-1.5">
               <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
-                Users
+                Team members
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,10 +160,10 @@ export default function SectionPricing3() {
               </svg>
             </div>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
-              10
+              20
             </p>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
-              20
+              40
             </p>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
               Unlimited
@@ -172,7 +172,7 @@ export default function SectionPricing3() {
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center bg-blue-grey-50/30">
             <div className="flex items-center gap-1.5">
               <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
-                Individual data
+                Cloud Space
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -190,10 +190,10 @@ export default function SectionPricing3() {
               </svg>
             </div>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
-              20GB
+              40GB
             </p>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
-              40GB
+              80GB
             </p>
             <p className="text-base leading-relaxed text-grey-700 opacity-80 font-normal">
               Unlimited
@@ -202,7 +202,7 @@ export default function SectionPricing3() {
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4">
             <div className="flex items-center gap-1.5">
               <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
-                Support
+                Premium Support
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -317,7 +317,7 @@ export default function SectionPricing3() {
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center border-b border-blue-gray-50">
             <div className="flex items-center gap-1.5">
               <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
-                200+ integrations
+                App integrations
               </p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

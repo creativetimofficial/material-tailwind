@@ -9,7 +9,7 @@ export default function SectionPricing2() {
                   Basic Plan
                 </h3>
                 <p className="text-base leading-relaxed text-grey-700 font-normal mt-1">
-                  Our most popular plan for small teams.
+                  You have Unlimited Updates and Premium Support.
                 </p>
               </div>
               <div className="flex">
@@ -50,7 +50,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Access to basic features
+                    Complete documentation
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Attend events
+                    Working materials in Sketch
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -110,7 +110,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Automatic updates
+                    10 team members
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -130,7 +130,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Up to 10 individual users
+                    Integration help
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -150,7 +150,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Backup your account
+                    API Access
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -170,7 +170,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    20GB individual data
+                    20GB Cloud storage
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -190,7 +190,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Audit log and notes
+                    Premium support
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -210,7 +210,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Basic chat support
+                    Private code access
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -230,7 +230,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Feature requests
+                    Pro member accounts
                   </p>
                 </li>
               </ul>
@@ -243,7 +243,7 @@ export default function SectionPricing2() {
             <div className="flex justify-between items-end flex-wrap-reverse gap-2 p-8">
               <div className="mt-1.5">
                 <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3">
-                  Business Plan{" "}
+                  Lifetime Access{" "}
                   <div
                     className="relative inline-block align-baseline font-sans text-xs font-bold uppercase center leading-none whitespace-nowrap select-none bg-pink-500 text-white rounded-full py-1.5 px-3"
                     data-projection-id={1}
@@ -253,7 +253,7 @@ export default function SectionPricing2() {
                   </div>
                 </h3>
                 <p className="text-base leading-relaxed text-grey-700 font-normal mt-1">
-                  Advanced features and reporting.
+                  Pay once, own it forever
                 </p>
               </div>
               <div className="flex">
@@ -261,11 +261,8 @@ export default function SectionPricing2() {
                   $
                 </h2>
                 <h1 className="tracking-normal font-sans font-semibold text-blue-grey-900 text-7xl">
-                  20
+                  459
                 </h1>
-                <p className="text-base leading-relaxed text-grey-700 font-medium mt-auto mb-2 ml-1">
-                  per month
-                </p>
               </div>
             </div>
             <div className="border-y border-blue-grey-50 p-8">
@@ -294,7 +291,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    200+ integrations
+                    Unlimited projects
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -334,7 +331,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Advanced reporting
+                    Advanced buttons
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -354,7 +351,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Audit log and data history
+                    Up to 100 team members
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -374,7 +371,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Up to 20 individual users
+                    Up to 20 admin users
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -414,7 +411,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    40GB individual data
+                    10TB Cloud storage
                   </p>
                 </li>
                 <li className="flex items-center gap-3">
@@ -434,7 +431,7 @@ export default function SectionPricing2() {
                     </svg>
                   </div>
                   <p className="text-base leading-relaxed text-grey-700 font-normal opacity-80">
-                    Personalised service
+                    Support team full assist
                   </p>
                 </li>
                 <li className="flex items-center gap-3">

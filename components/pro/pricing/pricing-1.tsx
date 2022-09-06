@@ -7,11 +7,10 @@ export default function SectionPricing1() {
             Pricing
           </p>
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-white mb-2">
-            Pricing Plans
+            See our pricing
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-white opacity-70 mb-8">
-            Simple, transparent pricing that grows with you. Try any plan free for
-            30 days.
+          <p className="text-xl font-normal leading-relaxed text-white opacity-80 mb-8">
+            You have Free Unlimited Updates and Premium Support on each package.
           </p>
           <div className="mx-auto">
             <div className="nav-tabs w-full md:w-4/12 mb-10 md:mb-0 mx-auto">
@@ -62,7 +61,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Access to all basic features</p>
+                  <p>Free entry to all repositories</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -79,7 +78,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic reporting and analytics</p>
+                  <p>Working materials in Sketch</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -96,7 +95,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Up to 10 individual users</p>
+                  <p>Pro member accounts</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -113,7 +112,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>20GB individual data each user</p>
+                  <p>100GB cloud storage</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -130,7 +129,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic chat and email support</p>
+                  <p>Support team full assist</p>
                 </li>
               </ul>
             </div>
@@ -147,8 +146,8 @@ export default function SectionPricing1() {
                   Most Popular
                 </p>
               </div>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$20/mth</h1>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$200/year</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$29/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$209/year</h1>
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
@@ -168,7 +167,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Access to all basic features</p>
+                  <p>Free entry to all repositories</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -185,7 +184,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic reporting and analytics</p>
+                  <p>Working materials in Sketch</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -202,7 +201,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Up to 10 individual users</p>
+                  <p>Pro member accounts</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -219,7 +218,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>20GB individual data each user</p>
+                  <p>200GB cloud storage</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -236,7 +235,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic chat and email support</p>
+                  <p>Support team full assist</p>
                 </li>
               </ul>
             </div>
@@ -253,8 +252,8 @@ export default function SectionPricing1() {
                   Most Popular
                 </p>
               </div>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$40/mth</h1>
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$400/year</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2" pricing-monthly="true" data-active="true">$49/mth</h1>
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-2 hidden" pricing-annual="true">$499/year</h1>
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
@@ -274,7 +273,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Access to all basic features</p>
+                  <p>Free entry to all repositories</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -291,7 +290,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic reporting and analytics</p>
+                  <p>Working materials in Sketch</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -308,7 +307,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Up to 10 individual users</p>
+                  <p>Pro member accounts</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -325,7 +324,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>20GB individual data each user</p>
+                  <p>400GB cloud storage</p>
                 </li>
                 <li className="flex items-center gap-2">
                   <svg
@@ -342,7 +341,7 @@ export default function SectionPricing1() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <p>Basic chat and email support</p>
+                  <p>Support team full assist</p>
                 </li>
               </ul>
             </div>
