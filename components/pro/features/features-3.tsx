@@ -23,12 +23,10 @@ export default function SectionFeatures3() {
               </svg>
             </div>
             <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
-              Deliver instant answers
+              See our projects
             </h3>
-            <p className="text-xl leading-relaxed mb-10">
-              Keep your customers in the flow by embedding help articles right on
-              your website. With Beacon, they never have to leave the page to find
-              an answer.
+            <p className="text-xl leading-relaxed mb-10 text-gray-700">
+              People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest.
             </p>
             <div className="flex gap-2">
               <button
@@ -56,7 +54,7 @@ export default function SectionFeatures3() {
                 </svg>
                 demo
               </button>
-              <button className="button button-pink button-lg" type="button">learn more</button>
+              <button className="button button-pink button-lg" type="button">read more</button>
             </div>
           </div>
         </div>
@@ -78,11 +76,10 @@ export default function SectionFeatures3() {
               </svg>
             </div>
             <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
-              Manage your team with reports
+              Read More About Us
             </h3>
-            <p className="text-xl leading-relaxed mb-10">
-              Measure what matters with Material's easy-to-use reports. You can
-              filter, export, and drilldown on the data in a couple clicks
+            <p className="text-xl leading-relaxed mb-10 text-gray-700">
+              Pain is what we go through as we become older. We get insulted by others, lose trust for those others. We get back stabbed by friends. It becomes harder for us to give others a hand.
             </p>
             <div className="flex gap-2">
               <button className="button button-pink button-outlined button-lg flex" type="button">
@@ -107,7 +104,7 @@ export default function SectionFeatures3() {
                 </svg>
                 demo
               </button>
-              <button className="button button-pink button-lg" type="button">learn more</button>
+              <button className="button button-pink button-lg" type="button">read more</button>
             </div>
           </div>
           <div className="row-start-1 lg:row-auto lg:pl-10">

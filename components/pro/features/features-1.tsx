@@ -3,14 +3,13 @@ export default function SectionFeatures1() {
     <section className="bg-white py-28 px-4">
       <div className="container mx-auto mb-20 text-center">
         <p className="text-base leading-relaxed text-pink-500 mb-2 font-bold">
-          Features
+          Social Analytics
         </p>
         <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-4">
-          Beautiful analytics to grow smarter
+          Turn your idea into a startup
         </h2>
         <p className="text-xl leading-relaxed mx-auto w-full px-4 md:w-10/12 lg:w-7/12 lg:px-8">
-          Powerful, self-serve product and growth analytics to help you convert,
-          engage, and retain more users. Trusted by over 4,000 startups.
+          We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play
         </p>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-8 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
@@ -31,11 +30,10 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Share team inboxes
+            Check our team
           </h5>
-          <p className="text-base leading-relaxed px-8">
-            Whether you have a team of 2 or 200. our shared team inboxes keep
-            everyone on the same page and in the loop.
+          <p className="text-base leading-relaxed px-8 text-gray-700">
+            For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one
           </p>
         </div>
         <div className="grid justify-center text-center">
@@ -55,11 +53,10 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Deliver instant answers
+            Support 24/7
           </h5>
-          <p className="text-base leading-relaxed px-8">
-            An all-in-one customer service platform that helos you balance
-            everything your customers need to be happy.
+          <p className="text-base leading-relaxed px-8 text-gray-700">
+            As we live, our hearts turn colder. Cause pain is what we go through as we become older. We get insulted by others, lose trust for those others. 
           </p>
         </div>
         <div className="grid justify-center text-center">
@@ -79,11 +76,10 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Manage your team with reports
+            Unlimited revisions
           </h5>
-          <p className="text-base leading-relaxed px-8">
-            Measure what matters with Material`s easy-to-use reports. You can
-            filter, export, and drill down on the data in a couple clicks.
+          <p className="text-base leading-relaxed px-8 text-gray-700">
+            We get back stabbed by friends. It becomes harder for us to give others a hand. We get our heart broken by people we love.
           </p>
         </div>
         <div className="grid justify-center text-center">
@@ -103,11 +99,10 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Connect with customers
+            Payments functionality
           </h5>
-          <p className="text-base leading-relaxed px-8">
-            Solve a problem or close a sale in real-time with chat. If no one is
-            available, customers are seamlessly routed to email without confusion
+          <p className="text-base leading-relaxed px-8 text-gray-700">
+          Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
           </p>
         </div>
         <div className="grid justify-center text-center">
@@ -127,11 +122,10 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Connect the tools you already use
+            Improved platform
           </h5>
-          <p className="text-base leading-relaxed px-8">
-            Explore 100+ integrations that make your day-to-day workflow more
-            efficient and familiar. Plus, our extensive developer tools.
+          <p className="text-base leading-relaxed px-8 text-gray-700">
+            Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams, too.
           </p>
         </div>
         <div className="grid justify-center text-center">
@@ -151,9 +145,9 @@ export default function SectionFeatures1() {
             </svg>
           </div>
           <h5 className="tracking-normal font-sans text-xl leading-snug text-blue-gray-900 font-semibold">
-            Our people make the difference
+            Prebuilt components
           </h5>
-          <p className="text-base leading-relaxed px-8">
+          <p className="text-base leading-relaxed px-8 text-gray-700">
             We're an extension of your customer service team, and all of our
             resources are free. Chat to our friendly team 24/7 when you need help.
           </p>
