@@ -4,13 +4,13 @@ export default function SectionBlog3() {
       <div className="container mx-auto px-8 py-20">
         <div className="mb-16 text-center">
           <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">
-            Latest Posts
+            Material Design
           </p>
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900">
-            Material Tailwind PRO
+            Build something great
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700">
-            Interviews, tips, guides, industry best practices, and news.
+          <p className="text-xl font-normal leading-relaxed text-gray-700 px-44">
+            We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment.
           </p>
         </div>
         <div className="grid grid-cols-1 items-start gap-y-16 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
@@ -24,7 +24,7 @@ export default function SectionBlog3() {
             </div>
             <div className="card-body">
               <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
-                Alec Whitten&nbsp;•&nbsp;17 Jan 2022
+                Alec Whitten • 17 Jul 2022
               </p>
               <a
                 href="#"
@@ -32,7 +32,7 @@ export default function SectionBlog3() {
               >
                 <div className="col-span-5">
                   <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
-                    UX review presentations
+                    Search and Discover
                   </h4>
                 </div>
                 <svg
@@ -51,13 +51,12 @@ export default function SectionBlog3() {
                 </svg>
               </a>
               <p className="text-base leading-relaxed mb-6 font-normal">
-                How do you create compelling presentations that wow your colleagues
-                and impress your managers?
+                As we live, our hearts turn colder. Cause pain is what we go through as we become older. We get insulted by others, lose trust for those others. 
               </p>
               <div className="flex items-center gap-2">
-                <div className="chip chip-pink rounded-xl">design</div>
+                <div className="chip chip-pink rounded-xl">lifestyle</div>
                 <div className="chip chip-blue rounded-xl">research</div>
-                <div className="chip chip-red rounded-xl">presentation</div>
+                <div className="chip chip-red rounded-xl">health</div>
               </div>
             </div>
           </div>
@@ -71,7 +70,7 @@ export default function SectionBlog3() {
             </div>
             <div className="card-body">
               <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
-                Demi Wilkinson&nbsp;•&nbsp;16 Jan 2022
+                Demi Wilkinson • 16 Jun 2022
               </p>
               <a
                 href="#"
@@ -79,7 +78,7 @@ export default function SectionBlog3() {
               >
                 <div className="col-span-5">
                   <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
-                    Migrating to Linear 101
+                    US investment ticks up
                   </h4>
                 </div>
                 <svg
@@ -98,8 +97,7 @@ export default function SectionBlog3() {
                 </svg>
               </a>
               <p className="text-base leading-relaxed mb-6 font-normal">
-                Linear helps streamline software projects, sprints, tasks, and bug
-                tracking. Here's how to get started.
+                Venture investment in U.S. startups rose sequentially in the second quarter of 2022, boosted by large, ate-stage financings.
               </p>
               <div className="flex items-center gap-2">
                 <div className="chip chip-green rounded-xl">product</div>
@@ -118,7 +116,7 @@ export default function SectionBlog3() {
             </div>
             <div className="card-body">
               <p className="text-sm leading-normal text-pink-500 mb-3 font-semibold">
-                Candice Wu&nbsp;•&nbsp;15 Jan 2022
+                Candice Wu • 15 Aug 2022
               </p>
               <a
                 href="#"
@@ -126,7 +124,7 @@ export default function SectionBlog3() {
               >
                 <div className="col-span-5">
                   <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit normal-case">
-                    Building your API Stack
+                    Web3 startups raises $5M
                   </h4>
                 </div>
                 <svg
@@ -145,8 +143,7 @@ export default function SectionBlog3() {
                 </svg>
               </a>
               <p className="text-base leading-relaxed mb-6 font-normal">
-                The rise of RESTful APIs has been met by a rise in tools for
-                creating, testing, and managing them.
+                Insticator is announcing that it has raised $5.2 million in Series A funding. The startup allows online publishers to add quizzes.
               </p>
               <div className="flex items-center gap-2">
                 <div className="chip chip-green rounded-xl">software development</div>

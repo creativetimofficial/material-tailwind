@@ -22,7 +22,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  Bill Walsh leadership lessons
+                  Katie's management lessons
                 </h5>
               </div>
               <svg
@@ -41,18 +41,17 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              Like to know the secrets of transforming a 2-14 team into a 3x Super
-              Bowl winning Dynasty?
+              Finding temporary housing for your dog should be as easy as renting an Airbnb. 
             </p>
             <div className="flex items-center gap-3">
               <img
-                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-                alt="Alec Whitten"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                src="https://demos.creative-tim.com/material-design-system-pro/assets/img/team-1.jpg"
+                alt="Katie Roof"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
-                  Alec Whitten
+                  Katie Roof
                 </p>
                 <p className="text-xs font-normal">
                   17 Jan 2022
@@ -81,7 +80,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  PM mental models
+                  Rover raised to $65 million
                 </h5>
               </div>
               <svg
@@ -100,14 +99,13 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              Mental models are simple expressions of complex processes or
-              relationships.
+              That’s the idea behind Rover, which raised $65 million to expand its products sitting
             </p>
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="Demi Wilkinson"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
@@ -140,7 +138,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  What is Wireframing?
+                  What is Prototyping?
                 </h5>
               </div>
               <svg
@@ -159,14 +157,13 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              Introduction to Wireframing and its Princioles. Learn from the best in
-              the industrv.
+              If you’ve ever wanted to train a machine learning model and integrate it with IFTTT.
             </p>
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="Candice Wu"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
@@ -191,7 +188,7 @@ export default function SectionBlog1() {
           </div>
           <div className="card-body">
             <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
-              Design
+              Strategy
             </p>
             <a
               href="#"
@@ -199,7 +196,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  How collaboration makes us better designers
+                  US venture investment tricks
                 </h5>
               </div>
               <svg
@@ -218,14 +215,13 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              Collaboration can make our teams stronger, and our individual designs
-              better.
+              Venture investment in U.S. startups rose sequentially in the second quarter boosted.
             </p>
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
                 alt="Natali Craig"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
@@ -250,7 +246,7 @@ export default function SectionBlog1() {
           </div>
           <div className="card-body">
             <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
-              Product
+              Development
             </p>
             <a
               href="#"
@@ -258,7 +254,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  Our top 10 Javascript frameworks to use
+                  MLabs mixes machine learning
                 </h5>
               </div>
               <svg
@@ -277,14 +273,13 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              JavaScript frameworks make development easy with extensive features
-              and functionalities.
+              MateVerse, a platform where novices can spin out machine learning and few outsized.
             </p>
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="Alec Whitten"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">
@@ -309,7 +304,7 @@ export default function SectionBlog1() {
           </div>
           <div className="card-body">
             <p className="text-sm leading-normal text-pink-500 mb-1 font-semibold">
-              Customer Success
+              Customer Support
             </p>
             <a
               href="#"
@@ -317,7 +312,7 @@ export default function SectionBlog1() {
             >
               <div className="col-span-5">
                 <h5 className="tracking-normal font-sans text-xl font-semibold leading-snug text-inherit normal-case">
-                  Podcast: Creating a better CX Community
+                 5 Ways to improve your App.
                 </h5>
               </div>
               <svg
@@ -336,14 +331,13 @@ export default function SectionBlog1() {
               </svg>
             </a>
             <p className="text-base leading-relaxed mb-8 font-normal">
-              Starting a community doesn't need to be complicated, but how do you
-              get started?
+              Create first, edit second. Never do them at the same time.
             </p>
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
                 alt="Orlando Diggs"
-                className="inline-block relative object-cover object-center rounded-full w-9 h-9 rounded-md"
+                className="inline-block relative object-cover object-center w-9 h-9 rounded-md"
               />
               <div>
                 <p className="text-sm leading-normal text-blue-gray-900 font-semibold">

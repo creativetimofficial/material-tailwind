@@ -12,7 +12,7 @@ export default function SectionBlog2() {
               />
             </a>
           </div>
-          <div className="card-body">
+          <div className="card-body flex flex-col">
             <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
               Design
             </p>
@@ -20,16 +20,16 @@ export default function SectionBlog2() {
               href="#"
               className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
-              UX review presentations
+              UI/UX review check
             </a>
             <p className="text-base leading-relaxed mb-12 font-normal">
-              How do you create compelling presentations that wow your...
+              Because it's about motivating the doers. Because I’m here to follow my dreams and inspire others.
             </p>
             <div className="flex items-center gap-4">
               <img
                 src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                 alt="Alec Whitten"
-                className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow"
+                className="inline-block relative object-cover object-center rounded-full w-12 h-12 shadow-lg"
               />
               <div>
                 <p className="text-base leading-relaxed text-blue-gray-900 mb-0.5 font-semibold">
@@ -52,18 +52,18 @@ export default function SectionBlog2() {
               />
             </a>
           </div>
-          <div className="card-body">
+          <div className="card-body flex flex-col">
             <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
-              Product
+              Investments
             </p>
             <a
               href="#"
               className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
-              Migrating to Linear 101
+              Miami raised $65 million for pet sitting
             </a>
             <p className="text-base leading-relaxed mb-12 font-normal">
-              Linear helps streamline software projects, sprints, tasks, and bu...
+              Finding temporary housing for your dog should be as easy as renting an Airbnb. That’s the idea...
             </p>
             <div className="flex items-center gap-4">
               <img
@@ -92,18 +92,18 @@ export default function SectionBlog2() {
               />
             </a>
           </div>
-          <div className="card-body">
+          <div className="card-body flex flex-col">
             <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
-              Software Engineering
+              Coworking
             </p>
             <a
               href="#"
               className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
-              Building your API Stack
+              WMG buys concert discovery Songkick
             </a>
             <p className="text-base leading-relaxed mb-12 font-normal">
-              The rise of RESTful APIs has been met by a rise in tools...
+              Warner Music Group announced today it’s acquiring the selected assets of the music.
             </p>
             <div className="flex items-center gap-4">
               <img
@@ -132,18 +132,18 @@ export default function SectionBlog2() {
               />
             </a>
           </div>
-          <div className="card-body">
+          <div className="card-body flex flex-col">
             <p className="text-sm leading-normal text-pink-500 mb-4 font-semibold">
-              Product
+              Highlights
             </p>
             <a
               href="#"
               className="tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900 mb-2 normal-case transition-colors hover:text-pink-500"
             >
-              PM mental models
+              Check out what's new
             </a>
             <p className="text-base leading-relaxed mb-12 font-normal">
-              Mental models are simple expressions of complex...
+              If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to.
             </p>
             <div className="flex items-center gap-4">
               <img
