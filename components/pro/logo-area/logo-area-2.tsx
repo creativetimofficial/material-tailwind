@@ -4,9 +4,9 @@ export default function SectionLogoArea2() {
       <div className="container mx-auto grid lg:grid-cols-2 items-center">
         <div className="mt-12 lg:mt-0 lg:pr-12 lg:row-auto row-start-1 px-8">
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6 lg:pr-12">
-            Join over 4,000+ startups growing with Material Tailwind
+            Trusted by over 1,900,000 web developers
           </h2>
-          <p className="text-xl leading-relaxed mb-12 text-grey-700">Start your 30-day free trial today.</p>
+          <p className="text-xl leading-relaxed mb-12 text-grey-700">Check the possible ways of working with our product</p>
           <div className="inline-flex flex-wrap gap-3">
             <button className="button button-outlined button-lg button-dark" type="button">
               Learn more
