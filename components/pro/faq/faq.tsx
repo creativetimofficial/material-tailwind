@@ -6,8 +6,8 @@ export default function SectionFAQ() {
           <h2 className="tracking-normal text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             Frequently asked questions
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
-            Everything you need to know about the product and billing.
+          <p className="text-xl font-normal leading-relaxed text-gray-700 lg:px-52">
+            A lot of people don't appreciate the moment until it’s passed. I'm not <br/>trying my hardest, and I'm not trying to do
           </p>
         </div>
 
