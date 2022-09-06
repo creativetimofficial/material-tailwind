@@ -6,8 +6,8 @@ export default function SectionTeam3() {
           <div className="lg:w-5/12">
             <div className="text-center lg:text-left pt-5">
               <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">Our team</p>
-              <h1 className="tracking-normal text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Leadership team</h1>
-              <p className="text-xl font-normal leading-relaxed text-gray-700 lg:pr-20">They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything.</p>
+              <h1 className="tracking-normal text-5xl font-semibold text-blue-grey-900 mb-8 leading-tight lg:text-6xl">Leadership team</h1>
+              <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:pr-20">They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything.</p>
               <div className="mt-12 flex justify-center gap-3 lg:justify-start">
                 <button className="button button-outlined button-pink button-lg" type="button">About us</button>
                 <button className="button button-pink button-lg" type="button">Open positions</button>
@@ -107,7 +107,7 @@ export default function SectionTeam3() {
               <div className="card card-plain">
                 <div className="card-body">
                   <a href="#">
-                    <img className="w-1/2 rounded-full" src="https://images.unsplash.com/photo-1447194047554-cfe888edc98c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80" alt="card image"/>
+                    <img className="w-1/2 rounded-full" src="./img/team-6.jpg" alt="card image"/>
                   </a>
                   <h5 className="tracking-normal text-xl font-semibold leading-snug mt-4 mb-0">Candice Wu</h5>
                   <p className="text-lg font-normal leading-relaxed text-pink-500">Backend Developer</p>
