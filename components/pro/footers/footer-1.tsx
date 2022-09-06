@@ -85,7 +85,7 @@ export default function SectionFooter1() {
         <hr className="horizontal dark my-10 md:my-12" />
         <div className="flex flex-wrap items-center justify-center gap-2 md:justify-between">
           <p className="py-1 font-normal text-grey-500">
-            Copyright © {/* */}2077{/* */} Material Tailwind by{/* */}{" "}
+            Copyright © {/* */}2024{/* */} Material Tailwind by{/* */}{" "}
             <a
               href="https://www.creative-tim.com?ref=material-tailwind"
               target="_blank"

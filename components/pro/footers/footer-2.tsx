@@ -210,7 +210,7 @@ export default function SectionFooter2() {
           </div>
           <div className="w-full md:px-4 text-left md:w-4/12 md:px-0 md:text-right">
             <p className="py-1 font-normal text-grey-500">
-              © {/* */}2077{/* */} Material Tailwind .All rights reserved{/* */}{" "}
+              © {/* */}2024{/* */} Material Tailwind. All rights reserved{/* */}{" "}
             </p>
           </div>
         </div>

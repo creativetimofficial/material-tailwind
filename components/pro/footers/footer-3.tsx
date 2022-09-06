@@ -5,7 +5,7 @@ export default function SectionFooter3() {
         <div className="md:flex items-center">
           <div className="w-full md:w-8/12">
             <h5 className="font-bold text-xl mb-6 text-white">Material Tailwind</h5>
-            <p className="text-white/80 mb-8">Design amazing digital experiences that <br/> creates more happiness in the world.</p>
+            <p className="text-white/80 mb-8">Track actions taken on your website that originated from social,<br/> and understand the impact on your bottom line.</p>
             <ul className="block md:flex gap-8 list-unstyled">
               <li>
                 <a
@@ -88,7 +88,7 @@ export default function SectionFooter3() {
         <hr className="horizontal light my-10" />
         <div className="flex flex-wrap items-center justify-center gap-2 md:justify-between">
           <p className="py-1 font-normal text-grey-500">
-            Copyright © {/* */}2077{/* */} Material Tailwind by{/* */}{" "}
+            Copyright © {/* */}2024{/* */} Material Tailwind by{/* */}{" "}
             <a
               href="https://www.creative-tim.com?ref=material-tailwind"
               target="_blank"
