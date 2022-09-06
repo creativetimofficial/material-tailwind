@@ -75,11 +75,14 @@ export default function SectionFooter3() {
             <p className="text-white font-semibold text-left md:text-right lg:text-left mb-4 mt-6 md:mt-0">Get the app</p>
             <div className="flex md:block">
               <button className="button button-outlined md:button-lg button-light md:mb-4 flex items-center md:ml-auto lg:ml-0">
-                <i className="fab fa-apple text-3xl mr-3"></i>
+                <i className="fab fa-apple text-xl mr-3"></i>
                 App Store
                 </button>
               <button className="button button-outlined md:button-lg button-light flex items-center ml-auto lg:ml-0">
-                <i className="fab fa-google text-3xl mr-3"></i>
+                <img 
+                  src="./img/logo-google-play.svg"
+                  className="w-5 mr-3"
+                />
                 Google Play
               </button>
             </div>
