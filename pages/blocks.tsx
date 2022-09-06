@@ -106,6 +106,7 @@ export default function Presentation() {
 
       <SectionNavbar1/>
 
+
       {/* <nav className="block py-4 shadow-md w-full max-w-full rounded-none px-4 bg-blue-500 text-white">
         <div className="container mx-auto flex items-center justify-between">
           <a href="#" className="antialiased text-sm leading-normal text-white mr-4 cursor-pointer py-1.5 font-bold">Material Tailwind</a>
@@ -175,6 +176,98 @@ export default function Presentation() {
         </div>
       </nav> */}
       <main className="relative">
+
+        {/* BLOCKS PRESENTATION */}
+
+        <div className="container mx-auto my-20">
+          <div className="flex">
+            <div className="w-3/12">
+              <h3 className="font-semibold leading-7 text-blue-gray-700">Design Blocks</h3>
+              <p className="mt-4 tracking-tight text-gray-700">A selection of many page sections that fit perfectly in any combination</p>
+              </div>
+            <div className="w-9/12">
+              <div className="grid grid-cols-3">
+                <div className="mx-4">
+                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/page-headers/header-7.jpg"></img>
+                  <h6 className="ml-2 mt-2 mb-0 capitalize">headers</h6>
+                  <p className="ml-2 text-xs text-gray-700">3 sections</p>
+                </div>
+                <div className="mx-4">
+                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/features/features-3.jpg"></img>
+                  <h6 className="ml-2 mt-2 mb-0 capitalize">Features</h6>
+                  <p className="ml-2 text-xs text-gray-700">3 sections</p>
+                </div>
+                <div className="mx-4">
+                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/testimonials/testimonials-2.jpg"></img>
+                  <h6 className="ml-2 mt-2 mb-0 capitalize">Testimonials</h6>
+                  <p className="ml-2 text-xs text-gray-700">3 sections</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        {/* BLOCK PREVIEW */}
+
+        <div className="container mx-auto">
+          <div className="rounded-xl shadow-lg">
+            <div className="grid grid-cols-3 bg-white p-4 rounded-tl-xl rounded-tr-xl">
+              <div className="flex items-center">
+                <h5 className="mb-0">Header 1</h5>
+              </div>
+              <div className="mx-auto">
+                <a className="button button-pink button-outlined button-icon mr-3">
+                <i className="fas fa-tv"></i>
+                </a>
+                <a className="button button-pink button-outlined button-icon mr-3">
+                  <i className="fas fa-tablet-alt"></i>
+                </a>
+                <a className="button button-pink button-outlined button-icon mr-3">
+                  <i className="fas fa-mobile-alt"></i>
+                </a>
+                <a className="button button-pink button-outlined button-icon">
+                  <i className="fas fa-expand-alt mr-2"></i>
+                  Full Screen
+                </a>
+              </div>
+              <div className="w-6/12 ml-auto">
+                <nav>
+                  <ul role="tablist" className="tabs p-1" tab-panel="">
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active mb-0 px-0 py-1"
+                        aria-selected="true"
+                        aria-controls="preview"
+                        role="tab"
+                      >
+                        {`Preview`}
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link mb-0 px-0 py-1"
+                        aria-selected="false"
+                        aria-controls="code"
+                        role="tab"
+                      >
+                        {`Code`}
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div className="tabs-content h-[500px]">
+              <div className="active tab-panel" id="preview" role="tabpanel">
+                <SectionCard1/>
+              </div>
+              <div className="tab-panel" id="code" role="tabpanel">
+                <SectionCard2/>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <SectionHeader1 />
 
