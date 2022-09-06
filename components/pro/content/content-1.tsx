@@ -4,10 +4,10 @@ export default function SectionContent2() {
       <div className="container mx-auto grid lg:grid-cols-2 items-center">
         <div className="mt-12 lg:mt-0 lg:pr-12 lg:row-auto row-start-2">
           <p className="text-base leading-relaxed text-pink-500 font-semibold mb-2">
-            Our Studio
+            Our Vision
           </p>
           <h2 className="tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-6">
-            People first. Design later.
+            Find some great partners
           </h2>
           <p className="text-xl leading-relaxed mb-12 text-grey-700">
             I always felt like I could do anything. That’s the main thing people are controlled by! 

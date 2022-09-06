@@ -6,10 +6,10 @@ export default function SectionContact1() {
           Contact us
         </p>
         <h1 className="block antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mb-4">
-          We'd love to hear from you
+          Got a question?
         </h1>
         <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-grey-700 mx-auto">
-          Our friendly team is always here to chat.
+          We'd like to talk more about what you need
         </p>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-8 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
@@ -72,7 +72,7 @@ export default function SectionContact1() {
               Come say hello at your office HQ.
             </p>
             <p className="block antialiased font-sans text-base leading-relaxed text-pink-500 px-12 font-normal">
-              100 Smith Street Collingwood VIC 3066 AU
+              7125 First Street, 1054 AU
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function SectionContact1() {
               Mon-Fri from 8am to 5pm
             </p>
             <p className="block antialiased font-sans text-base leading-relaxed text-pink-500 px-12 font-normal">
-              +1 (555) 000-0000
+              +1(424) 535 3523
             </p>
           </div>
         </div>
