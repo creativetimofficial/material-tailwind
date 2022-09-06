@@ -3,11 +3,11 @@ export default function SectionHeader1() {
     <header className="h-full min-h-screen w-screen bg-white px-4 pt-20 md:pt-24 lg:px-8 lg:pt-40">
       <div className="container mx-auto flex h-full flex-col-reverse items-center lg:flex-row">
         <div className="mr-0 lg:mr-16 xl:mr-24">
-          <h1 className="tracking-normal font-sans font-semibold text-blue-gray-900 mb-8 text-4xl !leading-tight md:text-5xl">
+          <h1 className="tracking-normal font-sans font-semibold text-blue-grey-900 mb-8 text-4xl !leading-tight md:text-5xl">
             Your work with <br />
             Material Tailwind
           </h1>
-          <p className="text-xl font-normal leading-relaxed text-grey-700 mb-16 md:pr-16 xl:pr-28">
+          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 mb-16 md:pr-16 xl:pr-28">
             The time is now for it to be okay to be great. People in this world shun people for being great.
           </p>
           <div className="mb-6 flex w-full flex-col gap-2 md:mb-2 md:w-10/12 md:flex-row">
@@ -18,6 +18,7 @@ export default function SectionHeader1() {
             <button
               className="button button-pink w-full lg:w-5/12"
               type="button"
+              data-ripple-light="true"
             >
               get started
             </button>
@@ -104,7 +105,7 @@ export default function SectionHeader1() {
         <img
           src="https://images.unsplash.com/photo-1604328727766-a151d1045ab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
           alt="team work"
-          className="lg:0 mb-8 h-96 w-1/2 w-full rounded-xl object-cover lg:h-[40rem]"
+          className="lg:0 mb-8 h-96 w-full lg:w-1/2 w-full rounded-xl object-cover lg:h-[40rem]"
         />
       </div>
     </header>
