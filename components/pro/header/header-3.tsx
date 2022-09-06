@@ -20,7 +20,11 @@ export default function SectionHeader3() {
         </div>
       </div>
       <div className="mx-0 lg:container lg:mx-auto">
-        <img src="https://images.unsplash.com/photo-1571715268998-d6e79bed5fc9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2344&amp;q=80" alt="credit cards" className="h-96 w-full object-cover md:h-[34rem] lg:h-[44rem] rounded-3xl" />  
+        <img 
+          src="https://images.unsplash.com/photo-1571715268998-d6e79bed5fc9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2344&amp;q=80" 
+          alt="credit cards" 
+          className="h-96 w-full object-cover md:h-[34rem] lg:h-[44rem] rounded-xl" 
+        />  
       </div>
     </header>
   )
