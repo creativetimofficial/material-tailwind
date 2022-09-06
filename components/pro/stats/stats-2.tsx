@@ -10,7 +10,7 @@ export default function SectionStats2() {
         <div className="pl-8 lg:pl-24 pt-10">
           <div className="lg:w-10/12">
             <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">Build better, launch faster</p>
-            <h2 className="tracking-normal text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight">We're only just getting started on our journey</h2>
+            <h2 className="tracking-normal text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight">They're slowed down by their perception.</h2>
           </div>
           <div className="grid grid-cols-1 items-start gap-y-12 gap-x-8 pr-24 pt-10 pb-16 md:grid-cols-2">
             <div>
@@ -23,10 +23,10 @@ export default function SectionStats2() {
             </div>
             <div>
               <h1 className="text-pink-500 text-7xl font-semibold mb-4">10k</h1>
-              <h5 className="text-blue-gray-900 font-semibold">Global downloads</h5>
+              <h5 className="text-blue-gray-900 font-semibold">Working hours</h5>
             </div>
             <div>
-              <h1 className="text-pink-500 text-7xl font-semibold mb-4">200+</h1>
+              <h1 className="text-pink-500 text-7xl font-semibold mb-4">3.4K</h1>
               <h5 className="text-blue-gray-900 font-semibold">5-star reviews</h5>
             </div>
           </div>
