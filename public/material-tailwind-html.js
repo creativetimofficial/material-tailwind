@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 // import Choices from "choices.js";
 import noUiSlider from 'nouislider';
-import ApexCharts from 'apexcharts'
+// import ApexCharts from 'apexcharts';
 
 export default function init() {
 
@@ -834,57 +834,57 @@ export default function init() {
     }
   })();
 
-  (function() {
-    var options = {
-      chart: {
-        height: 280,
-        type: "area"
-      },
-      dataLabels: {
-        enabled: false
-      },
-      series: [
-        {
-          name: "Series 1",
-          data: [45, 52, 38, 45, 19, 23, 2]
-        }
-      ],
-      fill: {
-        type: "gradient",
-        gradient: {
-          shadeIntensity: 1,
-          opacityFrom: 0.7,
-          opacityTo: 0.9,
-          stops: [0, 90, 100]
-        }
-      },
-      xaxis: {
-        categories: [
-          "01 Jan",
-          "02 Jan",
-          "03 Jan",
-          "04 Jan",
-          "05 Jan",
-          "06 Jan",
-          "07 Jan"
-        ]
-      }
-    };
+  // (function() {
+  //   var options = {
+  //     chart: {
+  //       height: 280,
+  //       type: "area"
+  //     },
+  //     dataLabels: {
+  //       enabled: false
+  //     },
+  //     series: [
+  //       {
+  //         name: "Series 1",
+  //         data: [45, 52, 38, 45, 19, 23, 2]
+  //       }
+  //     ],
+  //     fill: {
+  //       type: "gradient",
+  //       gradient: {
+  //         shadeIntensity: 1,
+  //         opacityFrom: 0.7,
+  //         opacityTo: 0.9,
+  //         stops: [0, 90, 100]
+  //       }
+  //     },
+  //     xaxis: {
+  //       categories: [
+  //         "01 Jan",
+  //         "02 Jan",
+  //         "03 Jan",
+  //         "04 Jan",
+  //         "05 Jan",
+  //         "06 Jan",
+  //         "07 Jan"
+  //       ]
+  //     }
+  //   };
 
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
+  //   var chart = new ApexCharts(document.querySelector("#chart"), options);
 
-    chart.render();
+  //   chart.render();
 
-    var options1 = {
-      chart: {
-        height: 280,
-        type: "radialBar",
-      },
-      series: [67, 84, 97],
-      labels: ['TEAM A', 'TEAM B', 'TEAM C']
-    };
+  //   var options1 = {
+  //     chart: {
+  //       height: 280,
+  //       type: "radialBar",
+  //     },
+  //     series: [67, 84, 97],
+  //     labels: ['TEAM A', 'TEAM B', 'TEAM C']
+  //   };
 
-    new ApexCharts(document.querySelector("#chart2"), options1).render();
-  })();
+  //   new ApexCharts(document.querySelector("#chart2"), options1).render();
+  // })();
 }
 
