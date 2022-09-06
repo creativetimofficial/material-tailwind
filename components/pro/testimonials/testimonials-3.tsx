@@ -4,7 +4,7 @@ export default function SectionTestimonials3() {
       <div className="container mx-auto grid grid-cols-1 items-start gap-y-12 gap-x-8 px-8 pt-20 pb-16 md:grid-cols-2 lg:grid-cols-3">
         <div className="card card-plain">
           <img
-            src="https://images.unsplash.com/photo-1483995564125-85915c11dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1841&q=80"
+            src="./img/team-2.jpg"
             alt="testimonials2"
             className="h-96 w-fit object-cover lg:h-[15rem] rounded-2xl shadow-xl"
           />
@@ -62,7 +62,7 @@ export default function SectionTestimonials3() {
         </div>
         <div className="card card-plain">
           <img
-            src="https://images.unsplash.com/photo-1483995564125-85915c11dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1841&q=80"
+            src="./img/team-4.jpg"
             alt="testimonials2"
             className="h-96 w-fit object-cover lg:h-[15rem] rounded-2xl shadow-xl"
           />
@@ -120,7 +120,7 @@ export default function SectionTestimonials3() {
         </div>
         <div className="card card-plain">
           <img
-            src="https://images.unsplash.com/photo-1483995564125-85915c11dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1841&q=80"
+            src="./img/team-6.jpg"
             alt="testimonials2"
             className="h-96 w-fit object-cover lg:h-[15rem] rounded-2xl shadow-xl"
           />
