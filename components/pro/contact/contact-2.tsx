@@ -71,7 +71,10 @@ export default function SectionContact2() {
           </button>
         </form>
       </div>
-      <div className="bg-pink-500 h-screen w-full hidden md:block">&nbsp;</div>
+      <img 
+        src="https://images.unsplash.com/photo-1611703371650-333f912c9311?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+        className="w-full"
+      />
     </section>
   )
 }
