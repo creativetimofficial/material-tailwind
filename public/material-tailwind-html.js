@@ -243,24 +243,25 @@ export default function init() {
     for (var i = 0; i < accordion.length; i++) {
       accordion[i].addEventListener("click", openCurrentAccordion);
     }
-    if (document.querySelector("[data-trigger]")) {
-      var expand_trigger = document.querySelector("[data-trigger]");
-      var bar1 = document.querySelector("[bar1]");
-      var bar2 = document.querySelector("[bar2]");
-      var bar3 = document.querySelector("[bar3]");
-      expand_trigger.addEventListener("click", function () {
-        var navbar_collapse = document.querySelector("[navbar-menu]");
-        navbar_collapse.classList.toggle("open");
-        bar1.classList.toggle("rotate-45");
-        bar1.classList.toggle("origin-[10%_10%]");
-        bar1.classList.toggle("mt-1");
-        bar2.classList.toggle("opacity-0");
-        bar3.classList.toggle("-rotate-45");
-        bar3.classList.toggle("origin-[10%_90%]");
-        bar3.classList.toggle("mt-[0.1875rem]");
-        bar3.classList.toggle("mt-[0.4375rem]");
-      });
-    }
+
+
+    var expand_trigger = document.querySelector("[data-trigger]");
+    var bar1 = document.querySelector("[bar1]");
+    var bar2 = document.querySelector("[bar2]");
+    var bar3 = document.querySelector("[bar3]");
+    expand_trigger.addEventListener("click", function () {
+      var navbar_collapse = document.querySelector(".navbar-collapse");
+      navbar_collapse.classList.toggle("open");
+      bar1.classList.toggle("rotate-45");
+      bar1.classList.toggle("origin-[10%_10%]");
+      bar1.classList.toggle("mt-1");
+      bar2.classList.toggle("opacity-0");
+      bar3.classList.toggle("-rotate-45");
+      bar3.classList.toggle("origin-[10%_90%]");
+      bar3.classList.toggle("mt-[0.1875rem]");
+      bar3.classList.toggle("mt-[0.4375rem]");
+    });
+
   })();
   ("use strict");
   (function () {
