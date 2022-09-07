@@ -216,7 +216,7 @@ export default function Presentation() {
 
         {/* BLOCK PREVIEW */}
 
-        <div className="container mx-auto">
+        <div className="container mx-auto my-20">
           <div className="rounded-xl shadow-lg">
             <div className="grid grid-cols-3 bg-white p-4 rounded-tl-xl rounded-tr-xl">
               <div className="flex items-center">
