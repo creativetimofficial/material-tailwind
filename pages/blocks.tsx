@@ -188,18 +188,24 @@ export default function Presentation() {
             <div className="w-9/12">
               <div className="grid grid-cols-3">
                 <div className="mx-4">
-                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/page-headers/header-7.jpg"></img>
-                  <h6 className="ml-2 mt-2 mb-0 capitalize">headers</h6>
+                  <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/page-headers/header-7.jpg"></img>
+                  <a href="#">
+                    <h6 className="ml-2 mt-2 mb-0 capitalize">headers</h6>
+                  </a>
                   <p className="ml-2 text-xs text-gray-700">3 sections</p>
                 </div>
                 <div className="mx-4">
-                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/features/features-3.jpg"></img>
-                  <h6 className="ml-2 mt-2 mb-0 capitalize">Features</h6>
+                  <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/features/features-3.jpg"></img>
+                  <a href="#">
+                    <h6 className="ml-2 mt-2 mb-0 capitalize">Features</h6>
+                  </a>  
                   <p className="ml-2 text-xs text-gray-700">3 sections</p>
                 </div>
                 <div className="mx-4">
-                  <img className="w-auto rounded-lg shadow-lg" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/testimonials/testimonials-2.jpg"></img>
-                  <h6 className="ml-2 mt-2 mb-0 capitalize">Testimonials</h6>
+                  <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/testimonials/testimonials-2.jpg"></img>
+                  <a href="#">
+                    <h6 className="ml-2 mt-2 mb-0 capitalize">Testimonials</h6>
+                  </a>
                   <p className="ml-2 text-xs text-gray-700">3 sections</p>
                 </div>
               </div>
@@ -217,13 +223,13 @@ export default function Presentation() {
                 <h5 className="mb-0">Header 1</h5>
               </div>
               <div className="mx-auto">
-                <a className="button button-pink button-outlined button-icon mr-3">
+                <a className="button button-pink button-outlined button-icon mr-3 w-12">
                 <i className="fas fa-tv"></i>
                 </a>
-                <a className="button button-pink button-outlined button-icon mr-3">
+                <a className="button button-pink button-outlined button-icon mr-3 w-12">
                   <i className="fas fa-tablet-alt"></i>
                 </a>
-                <a className="button button-pink button-outlined button-icon mr-3">
+                <a className="button button-pink button-outlined button-icon mr-3 w-12">
                   <i className="fas fa-mobile-alt"></i>
                 </a>
                 <a className="button button-pink button-outlined button-icon">
