@@ -11,10 +11,11 @@ const navbar = (theme) => ({
       "flex-basis": "100%",
       "flex-grow": "1",
       "align-items": "center",
+      "max-height": "300px",
 
       "@media (max-width: 992px)": {
         "&.collapse:not(.open)": {
-          display: "none"
+          "max-height": "0 !important"
         }
       }
     },
@@ -53,8 +54,7 @@ const navbar = (theme) => ({
     ".nav-brand": {
       color: theme("colors.dark.500"),
       "font-size": ".875rem",
-      "font-weight": "700",
-      width: "inherit"
+      "font-weight": "700"
     },
 
     ".navbar-trigger": {
