@@ -128,6 +128,19 @@ export default function Presentation() {
 
       <main className="relative">
 
+        <div className="container mx-auto">
+          <div className="w-3/12 mt-12">
+            <h5 className="mb-4">Search Block Sections</h5>
+            <div className="input-group input-group-outline">
+              <label className="form-label">Search</label>
+              <input type="text" className="form-control" id="searchbox" />
+            </div>
+          </div>
+        </div>
+        
+
+
+
         {/* BLOCKS PRESENTATION */}
 
         <div className="container mx-auto my-20">
@@ -138,21 +151,21 @@ export default function Presentation() {
               </div>
             <div className="w-full lg:w-9/12 mt-5 lg:mt-0">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
+                <div className="box">
                   <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/page-headers/header-7.jpg"></img>
                   <a href="#">
                     <h6 className="ml-2 mt-2 mb-0 capitalize">headers</h6>
                   </a>
                   <p className="ml-2 text-xs text-gray-700">3 sections</p>
                 </div>
-                <div>
+                <div className="box">
                   <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/features/features-3.jpg"></img>
                   <a href="#">
                     <h6 className="ml-2 mt-2 mb-0 capitalize">Features</h6>
                   </a>  
                   <p className="ml-2 text-xs text-gray-700">3 sections</p>
                 </div>
-                <div>
+                <div className="box">
                   <img className="w-auto rounded-lg shadow-lg cursor-pointer" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/sections/page-sections/testimonials/testimonials-2.jpg"></img>
                   <a href="#">
                     <h6 className="ml-2 mt-2 mb-0 capitalize">Testimonials</h6>
@@ -169,11 +182,11 @@ export default function Presentation() {
 
         <div className="container mx-auto my-20">
           <div className="rounded-xl shadow-lg">
-            <div className="grid grid-cols-3 bg-white p-4 rounded-tl-xl rounded-tr-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-white p-4 rounded-tl-xl rounded-tr-xl">
               <div className="flex items-center">
                 <h5 className="mb-0">Header 1</h5>
               </div>
-              <div className="mx-auto">
+              <div className="mx-auto my-4 md:my-0">
                 <a className="button button-pink button-outlined button-icon mr-3 w-12">
                 <i className="fas fa-tv"></i>
                 </a>
