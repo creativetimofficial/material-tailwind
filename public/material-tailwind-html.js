@@ -4,6 +4,32 @@ import noUiSlider from 'nouislider';
 // import ApexCharts from 'apexcharts';
 
 export default function init() {
+  "use strict";
+  (function() {
+    let cards = document.querySelectorAll('.box')
+    
+    function liveSearch() {
+      let search_query = document.getElementById("searchbox").value;
+      
+      for (var i = 0; i < cards.length; i++) {
+        if(cards[i].textContent.toLowerCase()
+          .includes(search_query.toLowerCase())) {
+          cards[i].classList.remove("hidden");
+        } else {
+          cards[i].classList.add("hidden");
+        }
+      }
+    }
+
+    let typingTimer;               
+    let typeInterval = 200;  
+    let searchInput = document.getElementById('searchbox');
+
+    searchInput.addEventListener('keyup', () => {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(liveSearch, typeInterval);
+    });
+  })();
 
   "use strict";
   (function() {
