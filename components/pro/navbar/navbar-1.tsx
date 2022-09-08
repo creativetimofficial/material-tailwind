@@ -1,7 +1,7 @@
 export default function SectionNavbar1() {
   return (
     <div className="container mx-auto">
-      <nav className="navbar w-9/12 absolute bg-white my-5">
+      <nav className="navbar w-9/12 absolute bg-white py-4 my-5">
         <div className="container px-0 lg:flex">
           <div className="flex w-full items-center">
             <a className="nav-brand mr-auto ml-4" href="#">Material Tailwind</a>
