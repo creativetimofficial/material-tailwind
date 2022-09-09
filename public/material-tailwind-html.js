@@ -37,7 +37,7 @@ export default function init() {
       var nav_pills = document.querySelector(".tabs");
     
       var plans = document.querySelectorAll("[" + nav_pills.getAttribute("aria-controls") + "]");
-    
+
       var links = nav_pills.querySelectorAll("li a.nav-link");
     
       links.forEach((link) => {
