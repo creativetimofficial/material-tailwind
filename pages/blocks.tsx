@@ -128,8 +128,8 @@ export default function Presentation() {
 
       <main className="relative">
 
-        <div className="container mx-auto">
-          <div className="w-3/12 mt-12">
+        <div className="container mx-auto px-8 md:px-0">
+          <div className="w-1/2 lg:w-3/12 mt-12">
             <h5 className="mb-4">Search Block Sections</h5>
             <div className="input-group input-group-outline">
               <label className="form-label">Search</label>
@@ -143,7 +143,7 @@ export default function Presentation() {
 
         {/* BLOCKS PRESENTATION */}
 
-        <div className="container mx-auto my-20">
+        <div className="container mx-auto my-20 px-4 md:px-0">
           <div className="lg:flex">
             <div className="w-full lg:w-3/12">
               <h3 className="font-semibold leading-7 text-blue-gray-700">Design Blocks</h3>
@@ -201,7 +201,7 @@ export default function Presentation() {
                   Full Screen
                 </a>
               </div>
-              <div className="w-6/12 ml-auto">
+              <div className="w-full ml-auto">
                 <nav>
                   <ul role="tablist" className="tabs p-1" tab-panel="">
                     <li className="nav-item">
