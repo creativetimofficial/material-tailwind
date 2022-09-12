@@ -17,10 +17,10 @@ export default function SectionPricing1() {
               <nav>
                 <ul role="tablist" className="tabs p-1" aria-controls="data-pricing">
                   <li className="nav-item">
-                    <a className="nav-link active mb-0 px-0 py-1" aria-selected="true" aria-controls="pricing-monthly" role="tab">Monthly Billing</a>
+                    <a className="nav-link active mb-0 px-0 py-1 text-blue-grey-700" aria-selected="true" aria-controls="pricing-monthly" role="tab">Monthly Billing</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link mb-0 px-0 py-1" aria-selected="false" aria-controls="pricing-annual" role="tab">Annual Billing</a>
+                    <a className="nav-link mb-0 px-0 py-1 text-blue-grey-700" aria-selected="false" aria-controls="pricing-annual" role="tab">Annual Billing</a>
                   </li>
                 </ul>
               </nav>
