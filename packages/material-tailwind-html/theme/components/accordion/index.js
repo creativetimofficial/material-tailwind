@@ -1,13 +1,13 @@
 const accordion = (theme) => ({
   ".accordion": {
     ".collapse.open": {
-      opacity: "1",
-      height: "100%",
+      opacity: theme("opacity.100"),
+      height: theme("height.full"),
       transition: "all .35s ease"
     },
     ".collapse:not(.open)": {
-      opacity: "0",
-      height: "0",
+      opacity: theme("opacity.0"),
+      height: theme("height.0"),
       transition: "all .35s ease"
     },
   
@@ -15,16 +15,10 @@ const accordion = (theme) => ({
       position: "relative",
       display: "flex",
       "align-items": "center",
-      width: "100%",
-      padding: "1rem 0",
-      "font-size": "inherit",
+      width: theme("width.full"),
+      padding: `theme("padding.4") 0`,
       color: theme("colors.secondary.500"),
-      "text-align": "left",
-      "background-color": "transparent",
-      border: "0",
-      "border-radius": "0",
       "border-bottom": "1px solid #dee2e6",
-      "overflow-anchor": "none",
       transition: "all .15s ease-in,border-radius .15s ease",
   
       "&[aria-expanded='true']": {
