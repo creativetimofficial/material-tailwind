@@ -1,7 +1,7 @@
 const avatar = (theme) => ({
   ".avatar": {
     color: theme("colors.white"),
-    // display: "inline-flex",
+    display: "inline-flex",
     height: theme("height.10"),
     width: theme("width.10"),
     transition: "all .2s ease-in-out",
@@ -46,7 +46,7 @@ const avatar = (theme) => ({
     ".avatar": {
       position: "relative",
       "z-index": theme("zIndex.20"),
-      border: theme("spacing.1") + " solid " + theme("colors.white"),
+      border: theme("spacing.[0.5]") + " solid " + theme("colors.white"),
       "border-radius": theme("borderRadius.full"),
 
       "&:hover": {
@@ -54,7 +54,7 @@ const avatar = (theme) => ({
       },
 
       "+ .avatar": {
-        "margin-left": "-.75rem"
+        "margin-left": "-" + theme("spacing.3")
       }
     }
   }
