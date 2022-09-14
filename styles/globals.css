@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .avatar {
-    @apply inline-flex;
-  }
-}
-
 .code-editor code[class*="language-"],
 .code-editor pre[class*="language-"] {
   color: #d6deeb;
