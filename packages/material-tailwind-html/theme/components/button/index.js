@@ -1,33 +1,3 @@
-const buttonRoot = {
-  padding: ".625rem 1.5rem",
-  "border-radius": ".5rem",
-  "font-weight": "500",
-  "font-size": ".75rem",
-  display: "inline-block",
-  "line-height": "1.667",
-  "text-align": "center",
-  "vertical-align": "middle",
-  transition: "all .15s ease-in",
-  cursor: "pointer",
-  "letter-spacing": "0",
-  "background-size": "150%",
-  "background-position-x": "25%",
-  position: "relative",
-  overflow: "hidden",
-  "text-transform": "uppercase",
-
-  "&.button-icon": {
-    padding: ".625rem",
-    "line-height": "initial",
-
-    "i": {
-      position: "relative",
-      top: "1px",
-      "font-size": "1rem"
-    }
-  }
-};
-
 const buttonVariant = (theme, background) => ({
   "background-color": theme(`${background}.500`),
   color: theme("colors.white"),
@@ -109,7 +79,33 @@ const buttonSize = (y, x, fontSize) => ({
 });
 
 const button = (theme) => ({
-  ".button": buttonRoot,
+  ".button": {
+    padding: theme("spacing.[2.5]") + " " + theme("spacing.6"),
+    "border-radius": theme("borderRadius.lg"),
+    "font-weight": theme("fontWeight.medium"),
+    "font-size": theme("fontSize.xs"),
+    display: "inline-block",
+    "line-height": "1.667",
+    transition: "all .15s ease-in",
+    cursor: "pointer",
+    "letter-spacing": "0",
+    "background-size": "150%",
+    "background-position-x": "25%",
+    position: "relative",
+    overflow: "hidden",
+    "text-transform": "uppercase",
+  
+    "&.button-icon": {
+      padding: theme("spacing.[2.5]"),
+      "line-height": "initial",
+  
+      "i": {
+        position: "relative",
+        top: "1px",
+        "font-size": theme("fontSize.base")
+      }
+    }
+  },
   ".button-blue-grey": buttonVariant(theme, "colors.blue-grey"),
   ".button-grey": buttonVariant(theme, "colors.grey"),
   ".button-brown": buttonVariant(theme, "colors.brown"),
