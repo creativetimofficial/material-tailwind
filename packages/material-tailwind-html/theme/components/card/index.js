@@ -29,7 +29,7 @@ const card = (theme) => ({
     },
     ".card-footer": {
       padding: theme("spacing.0") + " " + theme("spacing.6") + " " + theme("spacing.6"),
-      backgroundColor: "transparent",
+      backgroundColor: theme("colors.transparent"),
       color: theme("colors.secondary.500")
     },
   
@@ -39,15 +39,15 @@ const card = (theme) => ({
       }
     },
     ".colored-shadow": {
-      transform: "scale(.94)",
+      transform: "scale"+"("+theme("scale.[95]")+")",
       top: "3.5%",
-      filter: "blur(12px)",
+      filter: "blur" + "(" + theme("blur.md") + ")",
       position: "absolute",
       left: theme("spacing.0"),
       height: theme("height.full"),
       width: theme("width.full"),
-      backgroundSize: "cover",
-      zIndex: "-1",
+      backgroundSize: theme("backgroundSize.cover"),
+      zIndex: "-" + theme("zIndex.[10]"),
     }
   }
 });
