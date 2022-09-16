@@ -2,7 +2,6 @@ const accordion = (theme) => ({
   ".accordion": {
     ".collapse.open": {
       opacity: theme("opacity.100"),
-      height: theme("height.full"),
       transition: "all .35s ease"
     },
     ".collapse:not(.open)": {
@@ -42,7 +41,7 @@ const accordion = (theme) => ({
     
     ".accordion-button:not(.collapsed)": {
       color: theme("colors.dark.500"),
-      "background-color": "transparent",
+      "background-color": theme("colors.transparent"),
       "box-shadow": "inset 0 0 0 rgba(0, 0, 0, .13)"
     },
   }
