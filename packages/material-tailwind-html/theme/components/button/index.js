@@ -1,18 +1,18 @@
 const buttonVariant = (theme, background) => ({
   "background-color": theme(`${background}.500`),
   color: theme("colors.white"),
-  "box-shadow": `0 4px 6px -1px ${theme(
+  boxShadow: `0 4px 6px -1px ${theme(
     `${background}.100`
   )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
 
   "&:hover": {
-    "box-shadow": `0 10px 15px -3px ${theme(
+    boxShadow: `0 10px 15px -3px ${theme(
       `${background}.200`
     )}, 0 4px 6px -4px ${theme(`${background}.200`)}`
   },
 
   "&:focus, &:active": {
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
     opacity: 0.85
   },
 
@@ -21,26 +21,26 @@ const buttonVariant = (theme, background) => ({
   },
 
   "&.button-gradient": {
-    "background-image": `linear-gradient(195deg, ${theme(
+    backgroundImage: `linear-gradient(195deg, ${theme(
       `${background}.400`
     )}, ${theme(`${background}.600`)})`,
 
     "&:hover": {
-      "box-shadow": `0 10px 15px -3px ${theme(
+      boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
       opacity: 1
     },
 
     "&:focus:not(:hover)": {
-      "box-shadow": `0 4px 6px -1px ${theme(
+      boxShadow: `0 4px 6px -1px ${theme(
         `${background}.100`
       )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
       opacity: 1
     },
 
     "&:active": {
-      "box-shadow": `0 10px 15px -3px ${theme(
+      boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
       opacity: 0.85
@@ -48,61 +48,61 @@ const buttonVariant = (theme, background) => ({
   },
 
   "&.button-outlined": {
-    "background-color": `transparent`,
+    backgroundColor: theme("colors.transparent"),
     border: `1px solid ${theme(`${background}.500`)}`,
     color: theme(`${background}.500`),
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:focus:not(:hover)": {
-      "box-shadow": `0 0 0 0.2rem ${theme(`${background}.200`)}`
+      boxShadow: `0 0 0 0.2rem ${theme(`${background}.200`)}`
     }
   },
 
   "&.button-text": {
-    "background-color": `transparent`,
+    backgroundColor: `transparent`,
     color: theme(`${background}.500`),
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:hover": {
-      "background-color": theme(`${background}.50`)
+      backgroundColor: theme(`${background}.50`)
     },
 
     "&:active": {
-      "background-color": theme(`${background}.100`)
+      backgroundColor: theme(`${background}.100`)
     }
   }
 });
 
 const buttonSize = (y, x, fontSize) => ({
   padding: `${y} ${x}`,
-  "font-size": fontSize || "0.75rem"
+  fontSize: fontSize || "0.75rem"
 });
 
 const button = (theme) => ({
   ".button": {
     padding: theme("spacing.[2.5]") + " " + theme("spacing.6"),
-    "border-radius": theme("borderRadius.lg"),
-    "font-weight": theme("fontWeight.medium"),
-    "font-size": theme("fontSize.xs"),
+    borderRadius: theme("borderRadius.lg"),
+    fontWeight: theme("fontWeight.medium"),
+    fontSize: theme("fontSize.xs"),
     display: "inline-block",
-    "line-height": "1.667",
+    lineHeight: "1.667",
     transition: "all .15s ease-in",
     cursor: "pointer",
-    "letter-spacing": "0",
-    "background-size": "150%",
-    "background-position-x": "25%",
+    letterSpacing: "0",
+    backgroundSize: "150%",
+    backgroundPositionX: "25%",
     position: "relative",
     overflow: "hidden",
-    "text-transform": "uppercase",
+    textTransform: "uppercase",
   
     "&.button-icon": {
       padding: theme("spacing.[2.5]"),
-      "line-height": "initial",
+      lineHeight: "initial",
   
       "i": {
         position: "relative",
         top: "1px",
-        "font-size": theme("fontSize.base")
+        fontSize: theme("fontSize.base")
       }
     }
   },
