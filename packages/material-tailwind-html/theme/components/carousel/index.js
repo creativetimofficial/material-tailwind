@@ -1,38 +1,38 @@
 const carousel = (theme) => ({
   ".carousel": {
-    width: "100%",
-    "max-width": "800px",
-    "min-height": "450px",
+    width: theme("width.full"),
+    maxWidth: theme("maxWidth.screen-md"),
+    minHeight: "450px",
     position: "relative",
     overflow: "hidden",
-    "border-radius": ".5rem",
+    borderRadius: theme("borderRadius.lg"),
 
     ".slide": {
-      width: "100%",
-      "max-width": "800px",
-      "min-height": "450px",
+      width: theme("width.full"),
+      maxWidth: theme("maxWidth.screen-md"),
+      minHeight: "450px",
       position: "absolute",
       transition: "all 0.5s",
 
       img: {
-        width: "100%",
-        height: "100%",
-        "object-fit": "cover"
+        width: theme("width.full"),
+        height: theme("height.full"),
+        objectFit: "cover"
       }
     },
 
     "button": {
       position: "absolute",
-      "z-index": "10",
+      zIndex: theme("zIndex.[10]"),
 
       i: {
-        "font-size": "2.25rem",
-        opacity: ".8"
+        fontSize: theme("fontSize.4xl"),
+        opacity: theme("opacity.80")
       },
 
       "&:hover": {
         i: {
-          opacity: "1"
+          opacity: theme("opacity.100")
         }
       }
     },
