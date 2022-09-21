@@ -9,11 +9,11 @@ const avatar = (theme) => ({
     "img": {
       height: theme("height.full"),
       width: theme("width.full"),
-      "border-radius": theme("borderRadius.xl"),
+      borderRadius: theme("borderRadius.xl"),
     },
   
     "&.avatar-circular img": {
-      "border-radius": theme("borderRadius.full")
+      borderRadius: theme("borderRadius.full")
     },
   
     "&.avatar-xs": {
@@ -45,16 +45,16 @@ const avatar = (theme) => ({
   ".avatar-group": {
     ".avatar": {
       position: "relative",
-      "z-index": theme("zIndex.20"),
+      zIndex: theme("zIndex.20"),
       border: theme("spacing.[0.5]") + " solid " + theme("colors.white"),
-      "border-radius": theme("borderRadius.full"),
+      borderRadius: theme("borderRadius.full"),
 
       "&:hover": {
-        "z-index": theme("zIndex.30")
+        zIndex: theme("zIndex.30")
       },
 
       "+ .avatar": {
-        "margin-left": "-" + theme("spacing.3")
+        marginLeft: "-" + theme("spacing.3")
       }
     }
   }

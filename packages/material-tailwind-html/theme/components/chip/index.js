@@ -1,24 +1,3 @@
-const chipRoot = {
-  display: "inline-block",
-  padding: "0.55em 0.9em",
-  "font-size": ".75em",
-  "font-weight": "600",
-  "line-height": "1",
-  color: "#fff",
-  "text-align": "center",
-  "white-space": "nowrap",
-  "vertical-align": "baseline",
-  "border-radius": "0.45rem",
-  "text-transform": "uppercase",
-
-  "&.chip-md": {
-    "padding": "0.65em 1em"
-  },
-  "&.chip-lg": {
-    "padding": ".85em 1.375em"
-  },
-};
-
 const chipVariant = (theme, background) => ({
   "background-color": theme(`${background}.100`),
   color: theme(`${background}.500`),
@@ -30,8 +9,27 @@ const chipVariant = (theme, background) => ({
   }
 });
 
-const chip = (theme) => ({
-  ".chip": chipRoot,
+const chip = (theme) => ({ 
+  ".chip": {
+    fontSize: theme("fontSize.xs"),
+    fontWeight: theme("fontWeight.semibold"),
+    lineHeight: theme("lineHeight.none"),
+    color: theme("colors.white"),
+    display: "inline-block",
+    padding: "0.55em 0.9em",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+    verticalAlign: "baseline",
+    borderRadius: "0.45rem",
+    textTransform: "uppercase",
+
+    "&.chip-md": {
+      padding: "0.65em 1em"
+    },
+    "&.chip-lg": {
+      padding: ".85em 1.375em"
+    },
+  },
   ".chip-pink": chipVariant(theme, "colors.pink"),
   ".chip-purple": chipVariant(theme, "colors.purple"),
   ".chip-deep-purple": chipVariant(theme, "colors.deep-purple"),

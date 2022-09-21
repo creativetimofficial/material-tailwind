@@ -13,11 +13,11 @@ const accordion = (theme) => ({
     ".accordion-button": {
       position: "relative",
       display: "flex",
-      "align-items": "center",
+      alignItems: "center",
       width: theme("width.full"),
       padding: `theme("padding.4") 0`,
       color: theme("colors.secondary.500"),
-      "border-bottom": "1px solid #dee2e6",
+      borderBottom: "1px solid #dee2e6",
       transition: "all .15s ease-in,border-radius .15s ease",
   
       "&[aria-expanded='true']": {
@@ -41,8 +41,8 @@ const accordion = (theme) => ({
     
     ".accordion-button:not(.collapsed)": {
       color: theme("colors.dark.500"),
-      "background-color": theme("colors.transparent"),
-      "box-shadow": "inset 0 0 0 rgba(0, 0, 0, .13)"
+      backgroundColor: theme("colors.transparent"),
+      boxShadow: "inset 0 0 0 rgba(0, 0, 0, .13)"
     },
   }
 });
