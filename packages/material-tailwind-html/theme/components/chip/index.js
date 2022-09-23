@@ -1,11 +1,9 @@
 const chipVariant = (theme, background) => ({
-  "background-color": theme(`${background}.100`),
+  backgroundColor: theme(`${background}.100`),
   color: theme(`${background}.500`),
 
   "&.chip-gradient": {
-    "background-image": `linear-gradient(to top right, ${theme(
-      `${background}.600`
-    )}, ${theme(`${background}.400`)})`
+    backgroundImage: `linear-gradient(to top right, ${theme(`${background}.600`)}, ${theme(`${background}.400`)})`
   }
 });
 
