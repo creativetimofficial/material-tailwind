@@ -59,7 +59,7 @@ const buttonVariant = (theme, background) => ({
   },
 
   "&.button-text": {
-    backgroundColor: `transparent`,
+    backgroundColor: theme("colors.transparent"),
     color: theme(`${background}.500`),
     boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
