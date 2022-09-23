@@ -17,9 +17,6 @@ const chip = (theme) => ({
     color: theme("colors.white"),
     display: "inline-block",
     padding: "0.55em 0.9em",
-    textAlign: "center",
-    whiteSpace: "nowrap",
-    verticalAlign: "baseline",
     borderRadius: "0.45rem",
     textTransform: "uppercase",
 
