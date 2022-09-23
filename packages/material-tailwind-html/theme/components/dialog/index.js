@@ -29,7 +29,7 @@ const dialog = (theme) => ({
     "&.open": {
       visibility: "visible",
       opacity: theme("opacity.100"),
-      zIndex: theme("zIndex.50"),
+      zIndex: "1050",
 
       ".modal-dialog": {
         transform: "none",
