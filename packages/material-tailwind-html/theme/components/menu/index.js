@@ -2,60 +2,60 @@ const menu = (theme) => ({
   ".dropdown-menu": {
     display: "block",
     position: "absolute",
-    opacity: "0",
-    "transform-origin": "0 0",
+    opacity: theme("opacity.0"),
+    transformOrigin: "0 0",
     inset: "0 auto auto 0",
-    "pointer-events": "none",
+    pointerEvents: "none",
     transform: "scale(.95)",
-    "-webkit-backface-visibility": "hidden",
-    "backface-visibility": "hidden",
-    "will-change": "transform, box-shadow",
-    "box-shadow": theme("boxShadow.lg"),
+    "-webkitBackfaceVisibility": "hidden",
+    backfaceVisibility: "hidden",
+    willChange: "transform, box-shadow",
+    boxShadow: theme("boxShadow.lg"),
     transition: "transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1)",
-    cursor: "pointer",
-    "z-index": "1000",
-    "min-width": "11rem",
-    padding: ".5rem 0",
-    margin: "0",
-    "font-size": ".875rem",
+    cursor: theme("cursor.pointer"),
+    zIndex: "1000",
+    minWidth: theme("spacing.44"),
+    padding: "theme('spacing.2') 0",
+    margin: theme("spacing.0"),
+    fontSize: theme("fontSize.sm"),
     color: theme("colors.secondary.500"),
-    "text-align": "left",
-    "list-style": "none",
-    "background-color": theme("colors.white"),
-    "background-clip": "padding-box",
+    textAlign: "left",
+    listStyle: "none",
+    backgroundColor: theme("colors.white"),
+    backgroundClip: "padding-box",
     border: "0 solid transparent",
-    "border-radius": ".375rem",
-    "margin-top": "2.8125rem",
+    borderRadius: theme("borderRadius.md"),
+    marginTop: "2.8125rem",
 
     "&::before": {
-      "font-family": "FontAwesome",
-      'content': '"\\f0d8"',
+      fontFamily: "FontAwesome",
+      content: '"\\f0d8"',
       position: "absolute",
-      top: "0",
-      left: "28px",
+      top: theme("spacing.0"),
+      left: theme("spacing.7"),
       right: "auto",
-      "font-size": "1.375rem",
+      fontSize: "1.375rem",
       color: theme("colors.white"),
       transition: "top .35s ease",
       display: "block",
       clear: "both",
-      "box-sizing": "border-box"
+      boxSizing: "border-box"
     },
 
     "&.menu-right": {
-      right: "0",
+      right: theme("spacing.0"),
       left: "auto",
 
       "&:before": {
-        right: "28px",
+        right: theme("spacing.7"),
         left: "auto"
       }
     },
 
     ".menu-item + .dropdown-menu": {
-      opacity: "0 !important",
+      opacity: theme("opacity.0") + "!important",
       left: "103%",
-      top: "1rem",
+      top: theme("spacing.4"),
 
       "&:before": {
         top: "15px !important",
@@ -65,7 +65,7 @@ const menu = (theme) => ({
       }
     },
     ".menu-item + .dropdown-menu.open": {
-      opacity: "1 !important",
+      opacity: theme("opacity.100") + "!important",
     }
   },
 
@@ -74,10 +74,10 @@ const menu = (theme) => ({
 
     "&.open": {
       ".dropdown-menu": {
-        opacity: "1",
-        "pointer-events": "auto",
+        opacity: theme("opacity.100") + "!important",
+        pointerEvents: "auto",
         transform: "scale(1)",
-        "margin-top": "2.8125rem",
+        marginTop: "2.8125rem",
 
         "&:before": {
           top: "-19px"
@@ -88,21 +88,20 @@ const menu = (theme) => ({
 
   ".menu-item": {
     display: "block",
-    width: "100%",
-    padding: ".3rem 1rem",
+    width: theme("width.full"),
+    padding: ".3rem theme('spacing.4')",
     clear: "both",
-    "font-weight": "400",
+    fontWeight: theme("fontWeight.normal"),
     color: theme("colors.secondary.500"),
-    "text-align": "inherit",
-    "white-space": "nowrap",
-    "border-radius": ".375rem",
-    "background-color": "transparent",
-    border: "0",
+    whiteSpace: "nowrap",
+    borderRadius: theme("borderRadius.md"),
+    backgroundColor: theme("colors.transparent"),
+    border: theme("spacing.0"),
     transition: "background-color .3s ease, color .3s ease",
   
     "&:hover": {
       color: theme("colors.dark.500"),
-      "background-color": theme("colors.light.500")
+      backgroundColor: theme("colors.light.500")
     }
   }
 });
