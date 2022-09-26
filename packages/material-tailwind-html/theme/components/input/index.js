@@ -60,16 +60,16 @@ const input = (theme) => ({
         },
 
         "&:before": {
-          marginRight: "4px",
+          marginRight: theme("spacing.1"),
           borderLeft: "1px solid transparent",
-          borderRadius: "6px 0"
+          borderRadius: "theme('spacing.[1.5]') 0"
         },
 
         "&:after": {
           flexGrow: "1",
-          marginLeft: "4px",
+          marginLeft: theme("spacing.1"),
           borderRight: "1px solid transparent",
-          borderRadius: "0 6px"
+          borderRadius: "0 theme('spacing.[1.5]')"
         }
       },
 
@@ -87,8 +87,8 @@ const input = (theme) => ({
 
     "&.input-group-dynamic,&.input-group-static,": {
       ".form-control": {
-        borderRadius: "0",
-        border: "0",
+        borderRadius: theme("borderRadius.none"),
+        border: theme("borderRadius.none"),
         background: "no-repeat bottom,50% calc(100% - 1px)",
         backgroundImage: `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-grey.100") 1px,hsla(0,0%,82%,0) 0)`,
         backgroundSize: "0 100%,100% 100%",
@@ -101,7 +101,7 @@ const input = (theme) => ({
 
     "&.input-group-static": {
       "label": {
-        marginBottom: "0"
+        marginBottom: theme("spacing.0")
       },
     },
 
@@ -122,16 +122,16 @@ const input = (theme) => ({
 
         "&:after": {
           opacity: "1",
-          "border-top-color": theme("colors.pink.500"),
-          "box-shadow": `inset 0 1px theme("colors.pink.500")`
+          borderTopColor: theme("colors.pink.500"),
+          boxShadow: `inset 0 1px theme("colors.pink.500")`
         }
       },
 
       "&.input-group-outline": {
         ".form-label+.form-control": {
-          "border-color": theme("colors.pink.500"),
-          "border-top-color": "transparent",
-          "box-shadow": `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`
+          borderColor: theme("colors.pink.500"),
+          borderTopColor: theme("colors.transparent"),
+          boxShadow: `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`
         },
       },
 
@@ -148,7 +148,7 @@ const input = (theme) => ({
       },
 
       ".form-control": {
-        "background-size": "100% 100%,100% 100%"
+        backgroundSize: "100% 100%,100% 100%"
       }
     },
 
@@ -160,8 +160,8 @@ const input = (theme) => ({
     "small": {
       color: theme("colors.secondary.500"),
       position: "absolute",
-      bottom: "0",
-      left: "0",
+      bottom: theme("spacing.0"),
+      left: theme("spacing.0"),
       visibility: "hidden"
     },
 
@@ -172,50 +172,50 @@ const input = (theme) => ({
     
     "&.success.is-filled": {
       ".form-control": {
-        "border-color": theme("colors.green.500") + "!important",
-        "border-top": "none",
-        "box-shadow": "inset 1px 0 "+ theme("colors.green.500") + ", inset -1px 0 "+ theme("colors.green.500") + ", inset 0 -1px "+ theme("colors.green.500") + "!important"
+        borderColor: theme("colors.green.500") + "!important",
+        borderTop: "none",
+        boxShadow: "inset 1px 0 "+ theme("colors.green.500") + ", inset -1px 0 "+ theme("colors.green.500") + ", inset 0 -1px "+ theme("colors.green.500") + "!important"
       },
       ".form-label": {
-        "color": theme("colors.green.500") + "!important",
+        color: theme("colors.green.500") + "!important",
 
         "&:before": {
-          "border-top-color": theme("colors.green.500"),
-          "box-shadow": "inset 0 1px" + theme("colors.green.500")
+          borderTopColor: theme("colors.green.500"),
+          boxShadow: "inset 0 1px" + theme("colors.green.500")
         },
         "&:after": {
-          "border-top-color": theme("colors.green.500"),
-          "box-shadow": "inset 0 1px" + theme("colors.green.500")
+          borderTopColor: theme("colors.green.500"),
+          boxShadow: "inset 0 1px" + theme("colors.green.500")
         }
       }
     },
 
     "&.success .form-control+small": {
-      "color": theme("colors.green.500")
+      color: theme("colors.green.500")
     },
 
     "&.error.is-filled": {
       ".form-control": {
-        "border-color": theme("colors.red.500") + "!important",
-        "border-top": "none",
-        "box-shadow": "inset 1px 0 "+ theme("colors.red.500") + ", inset -1px 0 "+ theme("colors.red.500") + ", inset 0 -1px "+ theme("colors.red.500") + "!important"
+        borderColor: theme("colors.red.500") + "!important",
+        borderTop: "none",
+        boxShadow: "inset 1px 0 "+ theme("colors.red.500") + ", inset -1px 0 "+ theme("colors.red.500") + ", inset 0 -1px "+ theme("colors.red.500") + "!important"
       },
       ".form-label": {
-        "color": theme("colors.red.500") + "!important",
+        color: theme("colors.red.500") + "!important",
 
         "&:before": {
-          "border-top-color": theme("colors.red.500"),
-          "box-shadow": "inset 0 1px" + theme("colors.red.500")
+          borderTopColor: theme("colors.red.500"),
+          boxShadow: "inset 0 1px" + theme("colors.red.500")
         },
         "&:after": {
-          "border-top-color": theme("colors.red.500"),
-          "box-shadow": "inset 0 1px" + theme("colors.red.500")
+          borderTopColor: theme("colors.red.500"),
+          boxShadow: "inset 0 1px" + theme("colors.red.500")
         }
       }
     },
 
     "&.error .form-control+small": {
-      "color": theme("colors.red.500")
+      color: theme("colors.red.500")
     }
   }
 });
