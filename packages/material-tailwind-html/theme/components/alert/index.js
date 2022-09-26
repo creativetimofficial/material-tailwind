@@ -15,7 +15,7 @@ const alert = (theme) => ({
     border: "0 solid transparent",
     borderRadius: theme("borderRadius.md"),
     lineHeight: theme("spacing.5"),
-    opacity: "1",
+    opacity: theme("opacity.100"),
     transition: "opacity .15s linear",
   
     "&.hide": {
