@@ -16,7 +16,7 @@ const progress = (theme) => ({
     borderRadius: theme("borderRadius.sm"),
 
     "&[percentage='true']": {
-      height: "1.5rem"
+      height: theme('height.6')
     },
 
     ".progress-bar": {
@@ -29,7 +29,7 @@ const progress = (theme) => ({
       borderRadius: theme("borderRadius.sm"),
 
       "&.progress-stripped": {
-        backgroundImage: "linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent)",
+        backgroundImage: "linear-gradient(theme('rotate.45'), rgba(255,255,255,.15) 25%, theme('colors.transparent') 25%, theme('colors.transparent') 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, theme('colors.transparent') 75%, theme('colors.transparent'))",
         backgroundSize: "theme('spacing.4') theme('spacing.4')"
       },
 
