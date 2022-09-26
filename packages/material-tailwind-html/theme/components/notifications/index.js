@@ -1,24 +1,24 @@
 const notifications = (theme) => ({
   ".notification": {
-    padding: ".75rem",
+    padding: theme("spacing.3"),
     width: "350px",
-    "max-width": "100%",
-    "font-size": ".875rem",
-    "box-shadow": "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
-    "border-radius": ".375rem",
-    "margin-bottom": "1rem",
+    maxWidth: theme("width.full"),
+    fontSize: theme("fontSize.sm"),
+    boxShadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)",
+    borderRadius: theme("borderRadius.md"),
+    marginBottom: theme("spacing.4"),
 
     ".notification-header": {
       display: "flex",
-      "align-items": "center",
-      padding: ".75rem",
+      alignItems: "center",
+      padding: theme("spacing.3"),
       color: theme("colors.dark.500"),
-      "background-clip": "padding-box"
+      backgroundClip: "padding-box"
     },
     
     ".notification-body": {
-      padding: ".75rem",
-      "word-wrap": "break-word"
+      padding: theme("spacing.3"),
+      wordWrap: "break-word"
     }
   },
 
