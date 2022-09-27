@@ -16,14 +16,13 @@ const nextConfig = {
     ];
   },
   async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/blocks/:path*",
-          destination: "https://material-taillwind-pro-bxhm.vercel.app/:path*",
-        },
-      ],
-    };
+    return [
+      {
+        source: "/blocks/:path*",
+        destination:
+          "https://material-taillwind-pro-bxhm.vercel.app/blocks/:path*",
+      },
+    ];
   },
 };
 
