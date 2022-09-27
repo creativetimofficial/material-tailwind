@@ -3,7 +3,7 @@ const spinners = (theme) => ({
     display: "inline-block",
     width: theme("width.8"),
     height: theme("height.8"),
-    verticalAlign: "-" + theme("spacing.[0.5]]"),
+    verticalAlign: "-" + theme("spacing.[0.5]"),
     border: "0.25em solid currentColor",
     borderRightColor: theme("colors.white"),
     borderRadius: "50%",
