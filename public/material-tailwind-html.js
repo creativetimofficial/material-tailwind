@@ -1,138 +1,47 @@
 import flatpickr from "flatpickr";
 // import Choices from "choices.js";
-import noUiSlider from 'nouislider';
+import noUiSlider from "nouislider";
 // import ApexCharts from 'apexcharts';
 
 export default function init() {
   "use strict";
-  (function() {
-    let cards = document.querySelectorAll('.box')
-    
-    function liveSearch() {
-      let search_query = document.getElementById("searchbox").value;
-      
-      for (var i = 0; i < cards.length; i++) {
-        if(cards[i].textContent.toLowerCase()
-          .includes(search_query.toLowerCase())) {
-          cards[i].classList.remove("hidden");
-        } else {
-          cards[i].classList.add("hidden");
-        }
-      }
-    }
-
-    let typingTimer;               
-    let typeInterval = 200;  
-    let searchInput = document.getElementById('searchbox');
-
-    searchInput.addEventListener('keyup', () => {
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(liveSearch, typeInterval);
-    });
-  })();
-
-  "use strict";
-  (function() {
-    if(document.querySelector(".tabs")){
+  (function () {
+    if (document.querySelector(".tabs")) {
       var nav_pills = document.querySelector(".tabs");
-    
-      var plans = document.querySelectorAll("[" + nav_pills.getAttribute("aria-controls") + "]");
+
+      var plans = document.querySelectorAll(
+        "[" + nav_pills.getAttribute("aria-controls") + "]"
+      );
 
       var links = nav_pills.querySelectorAll("li a.nav-link");
-    
+
       links.forEach((link) => {
         link.addEventListener("click", function () {
-    
-          var selected_link = plans[0].querySelector("[" + link.getAttribute("aria-controls") + "]");
-    
+          var selected_link = plans[0].querySelector(
+            "[" + link.getAttribute("aria-controls") + "]"
+          );
+
           if (!selected_link.hasAttribute("data-active")) {
             let active_link = nav_pills.querySelector("li a.nav-link.active");
-    
-            plans.forEach(plan => {              
-              let active_plan = plan.querySelector("[" + active_link.getAttribute("aria-controls") + "]");
-              let selected_plan = plan.querySelector("[" + link.getAttribute("aria-controls") + "]");
+
+            plans.forEach((plan) => {
+              let active_plan = plan.querySelector(
+                "[" + active_link.getAttribute("aria-controls") + "]"
+              );
+              let selected_plan = plan.querySelector(
+                "[" + link.getAttribute("aria-controls") + "]"
+              );
 
               active_plan.classList.add("hidden");
               selected_plan.classList.remove("hidden");
-              
+
               active_plan.removeAttribute("data-active");
               selected_plan.setAttribute("data-active", "true");
             });
           }
         });
       });
-      
     }
-  })();
-  "use strict";
-  (function () {
-    const form = document.getElementById('form');
-    const username = document.getElementById('username');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const confirm_password = document.getElementById('confirm_password');
-    
-    function showError(input, message) {
-      const formControl = input.parentElement;
-      formControl.className = 'input-group input-group-outline mb-3 error is-filled';
-      const small = formControl.querySelector('small');
-      small.innerText = message;
-    }
-    
-    function showSucces(input) {
-      const formControl = input.parentElement;
-      formControl.className = 'input-group input-group-outline mb-3 success is-filled';
-    }
-    
-    function checkEmail(input) {
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if(re.test(input.value.trim())) {
-        showSucces(input)
-      } else {
-        showError(input,'Email is not invalid');
-      }
-    }
-    
-    function checkRequired(inputArr) {
-      inputArr.forEach(function(input){
-        if(input.value.trim() === '') {
-          showError(input,`${getFieldName(input)} is required`)
-        } else {
-          showSucces(input);
-        }
-      });
-    }
-    
-    function checkLength(input, min ,max) {
-      if(input.value.length < min) {
-        showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-      } else if(input.value.length > max) {
-        showError(input, `${getFieldName(input)} must be les than ${max} characters`);
-      } else {
-        showSucces(input);
-      }
-    }
-    
-    function getFieldName(input) {
-      return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-    }
-    
-    function checkPasswordMatch(input1, input2) {
-      if(input1.value !== input2.value) {
-        showError(input2, 'Passwords do not match');
-      }
-    }
-    
-    form.addEventListener('submit',function(e) {
-      e.preventDefault();
-  
-      checkRequired([username, email, password, confirm_password]);
-      checkLength(username,3,15);
-      checkLength(password,6,25);
-      checkEmail(email);
-      checkPasswordMatch(password, confirm_password);
-    });
-    
   })();
 
   ("use strict");
@@ -154,13 +63,11 @@ export default function init() {
       });
     }
   })();
- 
-  "use strict";
-  (function () {
 
+  ("use strict");
+  (function () {
     var triggers = document.querySelectorAll("[data-notification]");
     triggers.forEach((trigger) => {
-
       let notificationId = trigger.getAttribute("data-target");
 
       trigger.addEventListener("click", function () {
@@ -170,7 +77,6 @@ export default function init() {
           trigger.setAttribute("aria-hidden", "false");
           notification.classList.add("show");
 
-       
           setTimeout(function () {
             trigger.setAttribute("aria-hidden", "true");
             notification.classList.remove("show");
@@ -180,64 +86,64 @@ export default function init() {
     });
   })();
 
-  "use strict";
+  ("use strict");
   (function () {
-    if (document.querySelector('.datepicker')) {
+    if (document.querySelector(".datepicker")) {
       flatpickr(".datepicker", {});
-    };
+    }
   })();
-  
-  "use strict";
+
+  ("use strict");
   (function () {
-    if (document.querySelector('.timepicker')) {
+    if (document.querySelector(".timepicker")) {
       flatpickr(".timepicker", {
         enableTime: true,
         noCalendar: true,
         dateFormat: "H:i",
-        time_24hr: true
+        time_24hr: true,
       });
-    };
+    }
   })();
 
-  "use strict";
-  (function () {
-    const slides = document.querySelectorAll(".slide");
+  // ("use strict");
+  // (function () {
+  //   const slides = document.querySelectorAll(".slide");
 
-    slides.forEach((slide, indx) => {
-      slide.style.transform = `translateX(${indx * 100}%)`;
-    });
+  //   slides.forEach((slide, indx) => {
+  //     slide.style.transform = `translateX(${indx * 100}%)`;
+  //   });
 
-    const nextSlide = document.querySelector(".button-next");
-    let curSlide = 0;
-    let maxSlide = slides.length - 1;
+  //   const nextSlide = document.querySelector(".button-next");
+  //   let curSlide = 0;
+  //   let maxSlide = slides.length - 1;
 
-    nextSlide.addEventListener("click", function () {
-      if (curSlide === maxSlide) {
-        curSlide = 0;
-      } else {
-        curSlide++;
-      }
+  //   nextSlide.addEventListener("click", function () {
+  //     if (curSlide === maxSlide) {
+  //       curSlide = 0;
+  //     } else {
+  //       curSlide++;
+  //     }
 
-      slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-      });
-    });
+  //     slides.forEach((slide, indx) => {
+  //       slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  //     });
+  //   });
 
-    const prevSlide = document.querySelector(".button-prev");
-    prevSlide.addEventListener("click", function () {
-      if (curSlide === 0) {
-        curSlide = maxSlide;
-      } else {
-        curSlide--;
-      }
+  //   const prevSlide = document.querySelector(".button-prev");
+  //   prevSlide.addEventListener("click", function () {
+  //     if (curSlide === 0) {
+  //       curSlide = maxSlide;
+  //     } else {
+  //       curSlide--;
+  //     }
 
-      slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-      });
-    });
-  })();
+  //     slides.forEach((slide, indx) => {
+  //       slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  //     });
+  //   });
+  // })();
 
-  "use strict";
+  ("use strict");
   (function () {
     var alert_dismiss = document.querySelectorAll("[alert-dismiss]");
     alert_dismiss.forEach(function (dismiss) {
@@ -247,48 +153,46 @@ export default function init() {
     });
   })();
   ("use strict");
-  (function () {
-    var openCurrentAccordion = function openCurrentAccordion(e) {
-      for (var i = 0; i < accordion.length; i++) {
-        var parent = accordion[i].parentElement;
-        var collapse = parent.nextElementSibling;
-        if (this === accordion[i] && !collapse.classList.contains("open")) {
-          accordion[i].setAttribute("aria-expanded", "true");
-          collapse.classList.add("open");
-          accordion[i].classList.add("collapsed");
-          collapse.style.maxHeight = collapse.scrollHeight + "px";
-        } else {
-          accordion[i].setAttribute("aria-expanded", "false");
-          collapse.classList.remove("open");
-          accordion[i].classList.remove("collapsed");
-          collapse.style.maxHeight = "0px";
-        }
-      }
-    };
-    var accordion = document.querySelectorAll(".accordion-button");
-    for (var i = 0; i < accordion.length; i++) {
-      accordion[i].addEventListener("click", openCurrentAccordion);
-    }
+  // (function () {
+  //   var openCurrentAccordion = function openCurrentAccordion(e) {
+  //     for (var i = 0; i < accordion.length; i++) {
+  //       var parent = accordion[i].parentElement;
+  //       var collapse = parent.nextElementSibling;
+  //       if (this === accordion[i] && !collapse.classList.contains("open")) {
+  //         accordion[i].setAttribute("aria-expanded", "true");
+  //         collapse.classList.add("open");
+  //         accordion[i].classList.add("collapsed");
+  //         collapse.style.maxHeight = collapse.scrollHeight + "px";
+  //       } else {
+  //         accordion[i].setAttribute("aria-expanded", "false");
+  //         collapse.classList.remove("open");
+  //         accordion[i].classList.remove("collapsed");
+  //         collapse.style.maxHeight = "0px";
+  //       }
+  //     }
+  //   };
+  //   var accordion = document.querySelectorAll(".accordion-button");
+  //   for (var i = 0; i < accordion.length; i++) {
+  //     accordion[i].addEventListener("click", openCurrentAccordion);
+  //   }
 
-
-    var expand_trigger = document.querySelector("[data-trigger]");
-    var bar1 = document.querySelector("[bar1]");
-    var bar2 = document.querySelector("[bar2]");
-    var bar3 = document.querySelector("[bar3]");
-    expand_trigger.addEventListener("click", function () {
-      var navbar_collapse = document.querySelector(".navbar-collapse");
-      navbar_collapse.classList.toggle("open");
-      bar1.classList.toggle("rotate-45");
-      bar1.classList.toggle("origin-[10%_10%]");
-      bar1.classList.toggle("mt-1");
-      bar2.classList.toggle("opacity-0");
-      bar3.classList.toggle("-rotate-45");
-      bar3.classList.toggle("origin-[10%_90%]");
-      bar3.classList.toggle("mt-[0.1875rem]");
-      bar3.classList.toggle("mt-[0.4375rem]");
-    });
-
-  })();
+  //   var expand_trigger = document.querySelector("[data-trigger]");
+  //   var bar1 = document.querySelector("[bar1]");
+  //   var bar2 = document.querySelector("[bar2]");
+  //   var bar3 = document.querySelector("[bar3]");
+  //   expand_trigger.addEventListener("click", function () {
+  //     var navbar_collapse = document.querySelector(".navbar-collapse");
+  //     navbar_collapse.classList.toggle("open");
+  //     bar1.classList.toggle("rotate-45");
+  //     bar1.classList.toggle("origin-[10%_10%]");
+  //     bar1.classList.toggle("mt-1");
+  //     bar2.classList.toggle("opacity-0");
+  //     bar3.classList.toggle("-rotate-45");
+  //     bar3.classList.toggle("origin-[10%_90%]");
+  //     bar3.classList.toggle("mt-[0.1875rem]");
+  //     bar3.classList.toggle("mt-[0.4375rem]");
+  //   });
+  // })();
   ("use strict");
   (function () {
     if (document.querySelectorAll("[blur-shadow-image]")) {
@@ -914,4 +818,3 @@ export default function init() {
   //   new ApexCharts(document.querySelector("#chart2"), options1).render();
   // })();
 }
-

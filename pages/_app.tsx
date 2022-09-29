@@ -27,6 +27,10 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"
       />
+      <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
+      />
       <Script
         crossOrigin="anonymous"
         strategy="afterInteractive"
