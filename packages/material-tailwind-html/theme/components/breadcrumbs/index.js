@@ -1,27 +1,27 @@
 const breadcrumbs = (theme) => ({
   ".breadcrumbs": {
     display: "flex",
-    "flex-wrap": "wrap",
-    padding: "0.5rem 1rem",
-    "margin-bottom": "1rem",
-    "list-style": "none",
-    "background-color": theme("colors.light.500"),
-    "border-radius": "0.375rem",
+    flexWrap: "wrap",
+    listStyle: "none",
+    padding: theme("spacing.2") + " " + theme("spacing.4"),
+    marginBottom: theme("spacing.4"),
+    backgroundColor: theme("colors.light.500"),
+    borderRadius: theme("borderRadius.md"),
 
     ".breadcrumb-item": {
-      "font-size": ".875rem",
+      fontSize: theme("fontSize.sm"),
       color: theme("colors.dark.500"),
 
       "+.breadcrumb-item": {
-        "padding-left": "0.5rem",
+        paddingLeft: theme("spacing.2"),
         
         "&:before": {
-          "padding-right": "0.5rem",
+          paddingRight: theme("spacing.2"),
           color: "#6c757d",
           content: '"\\ /"'
         }
-      },
-    },
+      }
+    }
   }
 });
 

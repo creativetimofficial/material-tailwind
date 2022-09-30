@@ -1,161 +1,227 @@
 const input = (theme) => ({
   ".form-control": {
     display: "block",
-    width: "100%",
-    padding: "0.5rem 0",
-    "font-size": ".875rem",
-    "font-weight": "400",
-    "line-height": "1.15rem",
+    width: theme("width.full"),
+    padding: "theme('spacing.2') 0",
+    fontSize: theme("fontSize.sm"),
+    fontWeight: theme("fontWeight.normal"),
+    lineHeight: "1.15rem",
     color: "#495057",
-    "background-color": "transparent",
-    "background-clip": "padding-box",
-    border: `1px solid theme("colors.blue-gray.100")`,
+    backgroundColor: theme("colors.transparent"),
+    backgroundClip: "padding-box",
+    border: `1px solid theme("colors.blue-grey.100")`,
     appearance: "none",
-    "border-radius": "0.375rem",
+    borderRadius: theme("borderRadius.md"),
     transition: ".2s ease",
-
+  
     "&:focus-visible": {
-      outline: "none",
+      outline: "none"
     },
   },
   ".form-label": {
-    position: "absolute",
+    position: "absolute"
   },
   ".form-label,label": {
-    "font-size": ".875rem",
-    "font-weight": "400",
-    "margin-bottom": "0.5rem",
-    color: theme("colors.blue-gray.500"),
-    "margin-left": "0",
-    transition: "all .2s ease",
+    fontSize: theme("fontSize.sm"),
+    fontWeight: theme("fontWeight.normal"),
+    marginBottom: theme("spacing.2"),
+    color: theme("colors.blue-grey.500"),
+    marginLeft: theme("spacing.0"),
+    transition: "all .2s ease"
   },
   ".input-group": {
     position: "relative",
     display: "flex",
-    "flex-wrap": "wrap",
-    "align-items": "stretch",
-    width: "100%",
+    flexWrap: "wrap",
+    alignItems: "stretch",
+    width: theme("width.full"),
     transition: ".2s ease",
     border: "none",
 
     "&.input-group-outline": {
       ".form-label": {
         display: "flex",
-        "line-height": "3.925",
+        lineHeight: "3.925",
         top: "-0.375rem",
-        "margin-bottom": "0",
+        marginBottom: theme("spacing.0"),
 
         "&:before,&:after": {
           content: '""',
-          "border-top": "1px solid",
-          "border-top-color": theme("colors.blue-gray.100"),
-          "pointer-events": "none",
-          "margin-top": "0.375rem",
-          "box-sizing": "border-box",
+          borderTop: "1px solid",
+          borderTopColor: theme("colors.blue-grey.100"),
+          pointerEvents: "none",
+          marginTop: theme("spacing.[1.5]"),
+          boxSizing: "border-box",
           display: "block",
-          height: "0.5rem",
-          width: "0.625rem",
-          "border-width": "1px 0 0",
-          "border-color": "transparent",
+          height: theme("spacing.2"),
+          width: theme("spacing.[2.5]"),
+          borderWidth: "1px 0 0",
+          borderColor: theme("colors.transparent")
         },
 
         "&:before": {
-          "margin-right": "4px",
-          "border-left": "1px solid transparent",
-          "border-radius": "6px 0",
+          marginRight: theme("spacing.1"),
+          borderLeft: "1px solid transparent",
+          borderRadius: "theme('spacing.[1.5]') 0"
         },
 
         "&:after": {
-          "flex-grow": "1",
-          "margin-left": "4px",
-          "border-right": "1px solid transparent",
-          "border-radius": "0 6px",
-        },
+          flexGrow: "1",
+          marginLeft: theme("spacing.1"),
+          borderRight: "1px solid transparent",
+          borderRadius: "0 theme('spacing.[1.5]')"
+        }
       },
 
       ".form-control": {
         background: "none",
-        border: `1px solid theme("colors.blue-gray.100")`,
-        "border-radius": "0.375rem",
-        "border-top-left-radius": "0.375rem",
-        "border-bottom-left-radius": "0.375rem",
-        padding: "0.625rem 0.75rem",
-        "line-height": "1.25rem",
-        "z-index": "20",
-      },
+        border: `1px solid theme("colors.blue-grey.100")`,
+        borderRadius: theme("borderRadius.md"),
+        borderTopLeftRadius: theme("borderRadius.md"),
+        borderBottomLeftRadius: theme("borderRadius.md"),
+        padding: "theme('spacing.[2.5]') theme('spacing.3')",
+        lineHeight: theme("spacing.5"),
+        zIndex: theme("zIndex.20")
+      }
     },
 
     "&.input-group-dynamic,&.input-group-static,": {
       ".form-control": {
-        "border-radius": "0",
-        border: "0",
+        borderRadius: theme("borderRadius.none"),
+        border: theme("borderRadius.none"),
         background: "no-repeat bottom,50% calc(100% - 1px)",
-        "background-image": `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-gray.100") 1px,hsla(0,0%,82%,0) 0)`,
-        "background-size": "0 100%,100% 100%",
+        backgroundImage: `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-grey.100") 1px,hsla(0,0%,82%,0) 0)`,
+        backgroundSize: "0 100%,100% 100%",
         transition: ".2s ease",
       },
       ".form-label": {
-        top: "0.4rem",
-      },
+        top: "0.4rem"
+      }
     },
 
     "&.input-group-static": {
-      label: {
-        "margin-bottom": "0",
+      "label": {
+        marginBottom: theme("spacing.0")
       },
     },
 
     "&.focused,&.is-filled": {
       ".form-label": {
-        width: "100%",
-        height: "100%",
-        "font-size": ".6875rem",
+        width: theme("width.full"),
+        height: theme("height.full"),
+        fontSize: ".6875rem",
         color: theme("colors.pink.500"),
         display: "flex",
-        "line-height": "1.25",
+        lineHeight: "1.25",
 
         "&:before": {
-          opacity: "1",
-          "border-top-color": theme("colors.pink.500"),
-          "box-shadow": `inset 0 1px theme("colors.pink.500")`,
+          opacity: theme("opacity.100"),
+          borderTopColor: theme("colors.pink.500"),
+          boxShadow: `inset 0 1px theme("colors.pink.500")`
         },
 
         "&:after": {
           opacity: "1",
-          "border-top-color": theme("colors.pink.500"),
-          "box-shadow": `inset 0 1px theme("colors.pink.500")`,
-        },
+          borderTopColor: theme("colors.pink.500"),
+          boxShadow: `inset 0 1px theme("colors.pink.500")`
+        }
       },
 
       "&.input-group-outline": {
         ".form-label+.form-control": {
-          "border-color": theme("colors.pink.500"),
-          "border-top-color": "transparent",
-          "box-shadow": `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`,
+          borderColor: theme("colors.pink.500"),
+          borderTopColor: theme("colors.transparent"),
+          boxShadow: `inset 1px 0 theme("colors.pink.500"), inset -1px 0 theme("colors.pink.500"), inset 0 -1px theme("colors.pink.500")`
         },
       },
 
       "&.input-group-dynamic": {
         ".form-label": {
-          top: "-0.7rem",
-        },
+          top: "-0.7rem"
+        }
       },
 
       "&.input-group-static": {
-        label: {
-          color: theme("colors.pink.500"),
-        },
+        "label": {
+          color: theme("colors.pink.500")
+        }
       },
 
       ".form-control": {
-        "background-size": "100% 100%,100% 100%",
-      },
+        backgroundSize: "100% 100%,100% 100%"
+      }
     },
 
     "&:focus-visible": {
-      outline: "none",
+      outline: "none"
     },
-  },
+
+
+    "small": {
+      color: theme("colors.secondary.500"),
+      position: "absolute",
+      bottom: theme("spacing.0"),
+      left: theme("spacing.0"),
+      visibility: "hidden"
+    },
+
+    "&.error small": {
+      visibility: "visible",
+      position: "relative",
+    },
+    
+    "&.success.is-filled": {
+      ".form-control": {
+        borderColor: theme("colors.green.500") + "!important",
+        borderTop: "none",
+        boxShadow: "inset 1px 0 "+ theme("colors.green.500") + ", inset -1px 0 "+ theme("colors.green.500") + ", inset 0 -1px "+ theme("colors.green.500") + "!important"
+      },
+      ".form-label": {
+        color: theme("colors.green.500") + "!important",
+
+        "&:before": {
+          borderTopColor: theme("colors.green.500"),
+          boxShadow: "inset 0 1px" + theme("colors.green.500")
+        },
+        "&:after": {
+          borderTopColor: theme("colors.green.500"),
+          boxShadow: "inset 0 1px" + theme("colors.green.500")
+        }
+      }
+    },
+
+    "&.success .form-control+small": {
+      color: theme("colors.green.500")
+    },
+
+    "&.error.is-filled": {
+      ".form-control": {
+        borderColor: theme("colors.red.500") + "!important",
+        borderTop: "none",
+        boxShadow: "inset 1px 0 "+ theme("colors.red.500") + ", inset -1px 0 "+ theme("colors.red.500") + ", inset 0 -1px "+ theme("colors.red.500") + "!important"
+      },
+      ".form-label": {
+        color: theme("colors.red.500") + "!important",
+
+        "&:before": {
+          borderTopColor: theme("colors.red.500"),
+          boxShadow: "inset 0 1px" + theme("colors.red.500")
+        },
+        "&:after": {
+          borderTopColor: theme("colors.red.500"),
+          boxShadow: "inset 0 1px" + theme("colors.red.500")
+        }
+      }
+    },
+
+    "&.error .form-control+small": {
+      color: theme("colors.red.500")
+    }
+  }
 });
 
+
+
 module.exports.input = input;
+
+

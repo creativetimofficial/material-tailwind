@@ -1,5 +1,149 @@
+import flatpickr from "flatpickr";
+// import Choices from "choices.js";
+import noUiSlider from "nouislider";
+// import ApexCharts from 'apexcharts';
+
 export default function init() {
   "use strict";
+  (function () {
+    if (document.querySelector(".tabs")) {
+      var nav_pills = document.querySelector(".tabs");
+
+      var plans = document.querySelectorAll(
+        "[" + nav_pills.getAttribute("aria-controls") + "]"
+      );
+
+      var links = nav_pills.querySelectorAll("li a.nav-link");
+
+      links.forEach((link) => {
+        link.addEventListener("click", function () {
+          var selected_link = plans[0].querySelector(
+            "[" + link.getAttribute("aria-controls") + "]"
+          );
+
+          if (!selected_link.hasAttribute("data-active")) {
+            let active_link = nav_pills.querySelector("li a.nav-link.active");
+
+            plans.forEach((plan) => {
+              let active_plan = plan.querySelector(
+                "[" + active_link.getAttribute("aria-controls") + "]"
+              );
+              let selected_plan = plan.querySelector(
+                "[" + link.getAttribute("aria-controls") + "]"
+              );
+
+              active_plan.classList.add("hidden");
+              selected_plan.classList.remove("hidden");
+
+              active_plan.removeAttribute("data-active");
+              selected_plan.setAttribute("data-active", "true");
+            });
+          }
+        });
+      });
+    }
+  })();
+
+  ("use strict");
+  (function () {
+    var slider = document.getElementById("sliderRegular");
+
+    if (slider) {
+      if (slider.noUiSlider) {
+        slider.noUiSlider.destroy();
+      }
+
+      noUiSlider.create(slider, {
+        start: 40,
+        connect: [true, false],
+        range: {
+          min: 0,
+          max: 100,
+        },
+      });
+    }
+  })();
+
+  ("use strict");
+  (function () {
+    var triggers = document.querySelectorAll("[data-notification]");
+    triggers.forEach((trigger) => {
+      let notificationId = trigger.getAttribute("data-target");
+
+      trigger.addEventListener("click", function () {
+        let notification = document.querySelector("#" + notificationId);
+
+        if (trigger.getAttribute("aria-hidden") == "true") {
+          trigger.setAttribute("aria-hidden", "false");
+          notification.classList.add("show");
+
+          setTimeout(function () {
+            trigger.setAttribute("aria-hidden", "true");
+            notification.classList.remove("show");
+          }, 3800);
+        }
+      });
+    });
+  })();
+
+  ("use strict");
+  (function () {
+    if (document.querySelector(".datepicker")) {
+      flatpickr(".datepicker", {});
+    }
+  })();
+
+  ("use strict");
+  (function () {
+    if (document.querySelector(".timepicker")) {
+      flatpickr(".timepicker", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true,
+      });
+    }
+  })();
+
+  // ("use strict");
+  // (function () {
+  //   const slides = document.querySelectorAll(".slide");
+
+  //   slides.forEach((slide, indx) => {
+  //     slide.style.transform = `translateX(${indx * 100}%)`;
+  //   });
+
+  //   const nextSlide = document.querySelector(".button-next");
+  //   let curSlide = 0;
+  //   let maxSlide = slides.length - 1;
+
+  //   nextSlide.addEventListener("click", function () {
+  //     if (curSlide === maxSlide) {
+  //       curSlide = 0;
+  //     } else {
+  //       curSlide++;
+  //     }
+
+  //     slides.forEach((slide, indx) => {
+  //       slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  //     });
+  //   });
+
+  //   const prevSlide = document.querySelector(".button-prev");
+  //   prevSlide.addEventListener("click", function () {
+  //     if (curSlide === 0) {
+  //       curSlide = maxSlide;
+  //     } else {
+  //       curSlide--;
+  //     }
+
+  //     slides.forEach((slide, indx) => {
+  //       slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  //     });
+  //   });
+  // })();
+
+  ("use strict");
   (function () {
     var alert_dismiss = document.querySelectorAll("[alert-dismiss]");
     alert_dismiss.forEach(function (dismiss) {
@@ -31,13 +175,14 @@ export default function init() {
     for (var i = 0; i < accordion.length; i++) {
       accordion[i].addEventListener("click", openCurrentAccordion);
     }
+
     if (document.querySelector("[navbar-trigger]")) {
       var expand_trigger = document.querySelector("[navbar-trigger]");
       var bar1 = document.querySelector("[bar1]");
       var bar2 = document.querySelector("[bar2]");
       var bar3 = document.querySelector("[bar3]");
       expand_trigger.addEventListener("click", function () {
-        var navbar_collapse = document.querySelector("[navbar-menu]");
+        var navbar_collapse = document.querySelector(".navbar-collapse");
         navbar_collapse.classList.toggle("open");
         bar1.classList.toggle("rotate-45");
         bar1.classList.toggle("origin-[10%_10%]");
@@ -49,6 +194,7 @@ export default function init() {
         bar3.classList.toggle("mt-[0.4375rem]");
       });
     }
+  
   })();
   ("use strict");
   (function () {
@@ -309,13 +455,19 @@ export default function init() {
   })();
   ("use strict");
   (function () {
-    if (document.getElementById("choice-button")) {
-      var element = document.getElementById("choice-button");
-      var example = new Choices(element, { searchEnabled: false });
-    }
-    if (document.getElementById("choice-search")) {
-      var element = document.getElementById("choice-search");
-      var example1 = new Choices(element, {});
+    if (typeof window !== undefined) {
+      if (document.getElementById("choice-button")) {
+        var element = document.getElementById("choice-button");
+        var example = new Choices(element, { searchEnabled: false });
+      }
+      if (document.getElementById("choice-search")) {
+        var element = document.getElementById("choice-search");
+        var example1 = new Choices(element, {});
+      }
+      // if (document.getElementById("multi-select")) {
+      //   var element = document.getElementById("multi-select");
+      //   var example2 = new Choices(element, { searchEnabled: false });
+      // }
     }
   })();
   ("use strict");
@@ -616,5 +768,56 @@ export default function init() {
     }
   })();
 
-  //# sourceMappingURL=index.js.map
+  // (function() {
+  //   var options = {
+  //     chart: {
+  //       height: 280,
+  //       type: "area"
+  //     },
+  //     dataLabels: {
+  //       enabled: false
+  //     },
+  //     series: [
+  //       {
+  //         name: "Series 1",
+  //         data: [45, 52, 38, 45, 19, 23, 2]
+  //       }
+  //     ],
+  //     fill: {
+  //       type: "gradient",
+  //       gradient: {
+  //         shadeIntensity: 1,
+  //         opacityFrom: 0.7,
+  //         opacityTo: 0.9,
+  //         stops: [0, 90, 100]
+  //       }
+  //     },
+  //     xaxis: {
+  //       categories: [
+  //         "01 Jan",
+  //         "02 Jan",
+  //         "03 Jan",
+  //         "04 Jan",
+  //         "05 Jan",
+  //         "06 Jan",
+  //         "07 Jan"
+  //       ]
+  //     }
+  //   };
+
+  //   var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+  //   chart.render();
+
+  //   var options1 = {
+  //     chart: {
+  //       height: 280,
+  //       type: "radialBar",
+  //     },
+  //     series: [67, 84, 97],
+  //     labels: ['TEAM A', 'TEAM B', 'TEAM C']
+  //   };
+
+  //   new ApexCharts(document.querySelector("#chart2"), options1).render();
+  // })();
 }
