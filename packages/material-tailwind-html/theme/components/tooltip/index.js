@@ -1,12 +1,12 @@
 const tooltip = (theme) => ({
   ".tooltip": {
     background: "#333",
-    "z-index": "1060",
+    zIndex: "1060",
     color: theme("colors.white"),
-    "font-weight": "bold",
-    padding: "4px 8px",
-    "font-size": ".8125rem",
-    "border-radius": ".25rem",
+    fontWeight: theme("fontWeight.bold"),
+    padding: "theme('spacing.1') theme('spacing.2')",
+    fontSize: ".8125rem",
+    borderRadius: theme("borderRadius.rounded"),
     display: "none",
 
     "&[data-show]": {
@@ -14,26 +14,26 @@ const tooltip = (theme) => ({
     },
 
     "&[data-placement^='top'] > .arrow": {
-      bottom: "-4px"
+      bottom: "-" + theme("spacing.1")
     },
 
     "&[data-placement^='bottom'] > .arrow": {
-      top: "-4px"
+      top: "-" + theme("spacing.1")
     },
 
     "&[data-placement^='left'] > .arrow": {
-      right: "-4px"
+      right: "-" + theme("spacing.1")
     },
 
     "&[data-placement^='right'] > .arrow": {
-      left: "-4px"
+      left: "-" + theme("spacing.1")
     },
   
 
     ".arrow,.arrow:before": {
       position: "absolute",
-      width: ".5rem",
-      height: ".5rem",
+      width: theme("width.2"),
+      height: theme("height.2"),
       background: "inherit"
     },
 

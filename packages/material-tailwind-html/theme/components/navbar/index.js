@@ -1,20 +1,22 @@
 const navbar = (theme) => ({
   ".navbar": {
-    "position": "relative",
-    "display": "flex",
-    "padding": ".5rem 1rem",
-    "border-radius": ".75rem",
-    "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);",
+    position: "relative",
+    display: "flex",
+    padding: "theme('spacing.2') theme('spacing.4')",
+    borderRadius: theme("borderRadius.xl"),
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);",
 
     ".navbar-collapse": {
       display: "flex",
-      "flex-basis": "100%",
-      "flex-grow": "1",
-      "align-items": "center",
+      flexBasis: "100%",
+      flexGrow: "1",
+      alignItems: "center",
+      maxHeight: "300px",
 
       "@media (max-width: 992px)": {
         "&.collapse:not(.open)": {
-          display: "none"
+          maxHeight: "theme('height.0') !important",
+          opacity: theme("opacity.0")
         }
       }
     },
@@ -22,9 +24,9 @@ const navbar = (theme) => ({
       ".navbar-collapse": {
         display: "block",
         position: "relative",
-        width: "100%",
-        left: "0",
-        "z-index": "12",
+        width: theme("width.full"),
+        left: theme("spacing.0"),
+        zIndex: theme("zIndex.20"),
 
         ".navbar-nav": {
         display: "block"
@@ -34,73 +36,72 @@ const navbar = (theme) => ({
 
     ".navbar-nav": {
       display: "flex",
-      "flex-direction": "row",
-      "padding-left": "0",
-      "margin-bottom": "0",
-      "list-style": "none",
-      "margin-left": "auto"
+      flexDirection: "row",
+      paddingLeft: theme("spacing.0"),
+      marginBottom: theme("spacing.0"),
+      listStyle: "none",
+      marginLeft: "auto"
     },
   
     ".nav-link": {
-      "padding": ".5rem 1rem",
-      "font-weight": "400",
-      "font-size": ".875rem",
-      "color":  theme("colors.dark.500"),
-      "align-items": "center",
-      "display": "flex"
+      padding: "theme('spacing.2') theme('spacing.4')",
+      fontWeight: theme("fontWeight.normal"),
+      fontSize: theme("fontSize.sm"),
+      color:  theme("colors.dark.500"),
+      alignItems: "center",
+      display: "flex"
     },
 
     ".nav-brand": {
       color: theme("colors.dark.500"),
-      "font-size": ".875rem",
-      "font-weight": "700",
-      width: "inherit"
+      fontSize: theme("fontSize.sm"),
+      fontWeight: theme("fontWeight.bold")
     },
 
     ".navbar-trigger": {
-      padding: ".25rem .75rem",
-      "font-size": "1.125rem",
-      "line-height": "1",
-      "background-color": "transparent",
+      padding: "theme('spacing.1') theme('spacing.3')",
+      fontSize: theme("fontSize.lg"),
+      lineHeight: "1",
+      backgroundColor: theme("colors.transparent"),
       border: "1px solid transparent",
-      "border-radius": ".5rem",
+      borderRadius: theme("borderRadius.lg"),
       transition: "box-shadow .15s ease-in-out",
 
       ".navbar-trigger-icon": {
-        "background-image": "none"
+        backgroundImage: "none"
       }
     },
 
     ".navbar-trigger-icon": {
       display: "inline-block",
-      width: "1.5em",
-      height: "1.5em",
-      "vertical-align": "middle",
-      "background-repeat": "no-repeat",
-      "background-position": "50%",
-      "background-size": "100%"
+      width: theme("spacing.6"),
+      height: theme("spacing.6"),
+      verticalAlign: "middle",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "50%",
+      backgroundSize: "100%"
     },
 
     ".navbar-trigger-bar": {
       display: "block",
       position: "relative",
-      width: "28px",
-      height: "1px",
-      "border-radius": "1px",
+      width: theme("spacing.7"),
+      height: theme("height.px"),
+      borderRadius: "1px",
       background: "#6c757d",
       transition: "all .2s"
     }
   },
   ".container-lg": {
     display: "flex",
-    width: "100%",
-    "flex-wrap": "inherit",
-    "align-items": "center",
-    "justify-content": "space-between"
+    width: theme("width.full"),
+    flexWrap: "inherit",
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   "@media (max-width: 992px)": {
     ".container-lg": {
-      "flex-wrap": "wrap"
+      flexWrap: "wrap"
     }
   }
 });

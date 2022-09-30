@@ -1,117 +1,113 @@
-const buttonRoot = {
-  padding: ".625rem 1.5rem",
-  "border-radius": ".5rem",
-  "font-weight": "500",
-  "font-size": ".75rem",
-  display: "inline-block",
-  "line-height": "1.667",
-  "text-align": "center",
-  "vertical-align": "middle",
-  transition: "all .15s ease-in",
-  cursor: "pointer",
-  "letter-spacing": "0",
-  "background-size": "150%",
-  "background-position-x": "25%",
-  position: "relative",
-  overflow: "hidden",
-  "text-transform": "uppercase",
-
-  "&.button-icon": {
-    padding: ".625rem",
-    "line-height": "initial",
-
-    i: {
-      position: "relative",
-      top: "1px",
-      "font-size": "1rem",
-    },
-  },
-};
-
 const buttonVariant = (theme, background) => ({
   "background-color": theme(`${background}.500`),
   color: theme("colors.white"),
-  "box-shadow": `0 4px 6px -1px ${theme(
+  boxShadow: `0 4px 6px -1px ${theme(
     `${background}.100`
   )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
 
   "&:hover": {
-    "box-shadow": `0 10px 15px -3px ${theme(
+    boxShadow: `0 10px 15px -3px ${theme(
       `${background}.200`
-    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
+    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`
   },
 
   "&:focus, &:active": {
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
-    opacity: 0.85,
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
+    opacity: 0.85
   },
 
   "&.button-amber, &.button-yellow, &.button-lime": {
-    color: theme("colors.black"),
+    color: theme("colors.black")
   },
 
   "&.button-gradient": {
-    "background-image": `linear-gradient(195deg, ${theme(
+    backgroundImage: `linear-gradient(195deg, ${theme(
       `${background}.400`
     )}, ${theme(`${background}.600`)})`,
 
     "&:hover": {
-      "box-shadow": `0 10px 15px -3px ${theme(
+      boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 1,
+      opacity: 1
     },
 
     "&:focus:not(:hover)": {
-      "box-shadow": `0 4px 6px -1px ${theme(
+      boxShadow: `0 4px 6px -1px ${theme(
         `${background}.100`
       )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
-      opacity: 1,
+      opacity: 1
     },
 
     "&:active": {
-      "box-shadow": `0 10px 15px -3px ${theme(
+      boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 0.85,
-    },
+      opacity: 0.85
+    }
   },
 
   "&.button-outlined": {
-    "background-color": `transparent`,
+    backgroundColor: theme("colors.transparent"),
     border: `1px solid ${theme(`${background}.500`)}`,
     color: theme(`${background}.500`),
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:focus:not(:hover)": {
-      "box-shadow": `0 0 0 0.2rem ${theme(`${background}.200`)}`,
-    },
+      boxShadow: `0 0 0 0.2rem ${theme(`${background}.200`)}`
+    }
   },
 
   "&.button-text": {
-    "background-color": `transparent`,
+    backgroundColor: theme("colors.transparent"),
     color: theme(`${background}.500`),
-    "box-shadow": "0 0 rgba(0, 0, 0, 0)",
+    boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:hover": {
-      "background-color": theme(`${background}.50`),
+      backgroundColor: theme(`${background}.50`)
     },
 
     "&:active": {
-      "background-color": theme(`${background}.100`),
-    },
-  },
+      backgroundColor: theme(`${background}.100`)
+    }
+  }
 });
 
 const buttonSize = (y, x, fontSize) => ({
   padding: `${y} ${x}`,
-  "font-size": fontSize || "0.75rem",
+  fontSize: fontSize || "0.75rem"
 });
 
 const button = (theme) => ({
-  ".button": buttonRoot,
-  ".button-blue-gray": buttonVariant(theme, "colors.blue-gray"),
-  ".button-gray": buttonVariant(theme, "colors.gray"),
+  ".button": {
+    padding: theme("spacing.[2.5]") + " " + theme("spacing.6"),
+    borderRadius: theme("borderRadius.lg"),
+    fontWeight: theme("fontWeight.medium"),
+    fontSize: theme("fontSize.xs"),
+    display: "inline-block",
+    lineHeight: "1.667",
+    transition: "all .15s ease-in",
+    cursor: "pointer",
+    letterSpacing: "0",
+    backgroundSize: "150%",
+    backgroundPositionX: "25%",
+    position: "relative",
+    overflow: "hidden",
+    textTransform: "uppercase",
+  
+    "&.button-icon": {
+      padding: theme("spacing.[2.5]"),
+      lineHeight: "initial",
+  
+      "i": {
+        position: "relative",
+        top: "1px",
+        fontSize: theme("fontSize.base")
+      }
+    }
+  },
+  ".button-blue-grey": buttonVariant(theme, "colors.blue-grey"),
+  ".button-grey": buttonVariant(theme, "colors.grey"),
   ".button-brown": buttonVariant(theme, "colors.brown"),
   ".button-deep-orange": buttonVariant(theme, "colors.deep-orange"),
   ".button-orange": buttonVariant(theme, "colors.orange"),
@@ -136,8 +132,8 @@ const button = (theme) => ({
   ".button-lg": buttonSize("0.771rem", "1.75rem", "0.875rem"),
   ".button-block": {
     display: "block",
-    width: "100%",
-  },
+    width: "100%"
+  }
 });
 
 module.exports.buttonVariant = buttonVariant;

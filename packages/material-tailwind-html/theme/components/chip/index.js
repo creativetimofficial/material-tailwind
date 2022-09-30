@@ -1,37 +1,30 @@
-const chipRoot = {
-  display: "inline-block",
-  padding: "0.55em 0.9em",
-  "font-size": ".75em",
-  "font-weight": "600",
-  "line-height": "1",
-  color: "#fff",
-  "text-align": "center",
-  "white-space": "nowrap",
-  "vertical-align": "baseline",
-  "border-radius": "0.45rem",
-  "text-transform": "uppercase",
-
-  "&.chip-md": {
-    padding: "0.65em 1em",
-  },
-  "&.chip-lg": {
-    padding: ".85em 1.375em",
-  },
-};
-
 const chipVariant = (theme, background) => ({
-  "background-color": theme(`${background}.100`),
+  backgroundColor: theme(`${background}.100`),
   color: theme(`${background}.500`),
 
   "&.chip-gradient": {
-    "background-image": `linear-gradient(to top right, ${theme(
-      `${background}.600`
-    )}, ${theme(`${background}.400`)})`,
-  },
+    backgroundImage: `linear-gradient(to top right, ${theme(`${background}.600`)}, ${theme(`${background}.400`)})`
+  }
 });
 
-const chip = (theme) => ({
-  ".chip": chipRoot,
+const chip = (theme) => ({ 
+  ".chip": {
+    fontSize: theme("fontSize.xs"),
+    fontWeight: theme("fontWeight.semibold"),
+    lineHeight: theme("lineHeight.none"),
+    color: theme("colors.white"),
+    display: "inline-block",
+    padding: "0.55em 0.9em",
+    borderRadius: "0.45rem",
+    textTransform: "uppercase",
+
+    "&.chip-md": {
+      padding: "0.65em 1em"
+    },
+    "&.chip-lg": {
+      padding: ".85em 1.375em"
+    },
+  },
   ".chip-pink": chipVariant(theme, "colors.pink"),
   ".chip-purple": chipVariant(theme, "colors.purple"),
   ".chip-deep-purple": chipVariant(theme, "colors.deep-purple"),
@@ -48,12 +41,12 @@ const chip = (theme) => ({
   ".chip-orange": chipVariant(theme, "colors.orange"),
   ".chip-deep-orange": chipVariant(theme, "colors.deep-orange"),
   ".chip-brown": chipVariant(theme, "colors.brown"),
-  ".chip-gray": chipVariant(theme, "colors.gray"),
-  ".chip-blue-gray": chipVariant(theme, "colors.blue-gray"),
+  ".chip-grey": chipVariant(theme, "colors.grey"),
+  ".chip-blue-grey": chipVariant(theme, "colors.blue-grey"),
   ".chip-red": chipVariant(theme, "colors.red"),
   ".chip-secondary": chipVariant(theme, "colors.secondary"),
   ".chip-dark": chipVariant(theme, "colors.dark"),
-  ".chip-light": chipVariant(theme, "colors.light"),
+  ".chip-light": chipVariant(theme, "colors.light")
 });
 
 module.exports.chipVariant = chipVariant;
