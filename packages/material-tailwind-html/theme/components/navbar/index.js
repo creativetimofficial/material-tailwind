@@ -15,7 +15,8 @@ const navbar = (theme) => ({
 
       "@media (max-width: 992px)": {
         "&.collapse:not(.open)": {
-          maxHeight: "theme('height.0') !important"
+          maxHeight: "theme('height.0') !important",
+          opacity: theme("opacity.0")
         }
       }
     },
