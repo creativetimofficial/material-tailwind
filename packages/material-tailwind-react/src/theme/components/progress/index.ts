@@ -59,7 +59,7 @@ export const progress: ProgressStylesType = {
         initial: {
           display: "flex",
           justifyContent: "flex-start",
-          bg: "bg-blue-grey-50",
+          bg: "bg-blue-gray-50",
           overflow: "overflow-hidden",
           width: "w-full",
           height: "h-1.5",

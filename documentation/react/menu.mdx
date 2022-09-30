@@ -5,11 +5,23 @@ navigation:
   [
     "menu",
     "nested-menu",
-    "menu-props",
-    "menu-handler-props",
-    "menu-list-props",
-    "menu-item-props",
-    "types",
+    "menu-placement",
+    "custom-menu-animation",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/menu",
+      description: "Learn more about props definition and types of menu components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/menu",
+      description: "Learn how to customize the theme and styles for menu components.",
+    },
   ]
 github: menu
 prev: input
@@ -18,11 +30,11 @@ next: navbar
 
 # Tailwind CSS Menu - React
 
-Use our responsive Tailwind CSS vertical menu, that can take the user anywhere on your web app!
+Use our responsive Tailwind CSS vertical <Code>Menu</Code>, that can take the user anywhere on your web app!
 
-A menu displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The menu also ensures a consistent and predictable user experience by adhering to an established set of principles
+A <Code>Menu</Code> displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The <Code>Menu</Code> also ensures a consistent and predictable user experience by adhering to an established set of principles
 
-See below our menu example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+See below our <Code>Menu</Code> example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
 
 <br />
 
@@ -39,7 +51,7 @@ See below our menu example that you can use in your Tailwind CSS and React proje
   </Menu>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Menu,
   MenuHandler,
@@ -68,7 +80,7 @@ export default function Example() {
 
 ## Nexted Menu
 
-You can nest one menu inside another one very easily.
+You can nest one <Code>Menu</Code> inside another one very easily.
 
 <ComponentDemo id="nested-menu">
   <Menu>
@@ -93,7 +105,7 @@ You can nest one menu inside another one very easily.
   </Menu>
 </ComponentDemo>
 
-```jsx showLineNumbers
+```jsx
 import {
   Menu,
   MenuHandler,
@@ -130,112 +142,340 @@ export default function NestedMenu() {
 
 ---
 
-## Menu Props
+## Menu Placement
 
-<span id="menu-props" className="scroll-mt-48" />
-The following props are available for the menu component. These are the custom props
-that come with we've added for the menu component and you can use all the other native
-props as well.
+You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
 
-| Attribute    | Type                        | Description                                    | Default                                |
-| ------------ | --------------------------- | ---------------------------------------------- | -------------------------------------- |
-| `open`       | <Code small>boolean</Code>  | Makes the menu open, when menu is controlled   | <Code small>undefined</Code>           |
-| `handler`    | <Code small>function</Code> | Change open state for controlled menu          | <Code small>undefined</Code>           |
-| `placement`  | [Placement](#types)         | Change menu placement                          | <Code small>bottom</Code>              |
-| `offset`     | [Offset](#types)            | Change menu offset from it's handler           | <Code small>5</Code>                   |
-| `dismiss`    | [Dismiss](#types)           | Change dismiss listeners when clicking outside | <Code small>undefined</Code>           |
-| `animate`    | [Animate](#types)           | Change menu animation                          | <Code small>undefined</Code>           |
-| `lockScroll` | <Code small>boolean</Code>  | Lock page scrolling when menu is opened        | <Code small>false</Code>               |
-| `children`   | <Code small>node</Code>     | Add content for menu                           | No default value it's a required prop. |
+<ComponentDemo id="menu-placement">
+  <div className="mb-3 flex gap-3">
+    <Menu placement="top">
+      <MenuHandler>
+        <Button variant="gradient">Top</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="top-start">
+      <MenuHandler>
+        <Button variant="gradient">Top Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="top-end">
+      <MenuHandler>
+        <Button variant="gradient">Top End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Menu placement="right">
+      <MenuHandler>
+        <Button variant="gradient">Right</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="right-start">
+      <MenuHandler>
+        <Button variant="gradient">Right Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="right-end">
+      <MenuHandler>
+        <Button variant="gradient">Right End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="mb-3 flex gap-3">
+    <Menu placement="bottom">
+      <MenuHandler>
+        <Button variant="gradient">Bottom</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="bottom-start">
+      <MenuHandler>
+        <Button variant="gradient">Bottom Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="bottom-end">
+      <MenuHandler>
+        <Button variant="gradient">Bottom End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+  <div className="flex gap-3">
+    <Menu placement="left">
+      <MenuHandler>
+        <Button variant="gradient">Left</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="left-start">
+      <MenuHandler>
+        <Button variant="gradient">Left Start</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+    <Menu placement="left-end">
+      <MenuHandler>
+        <Button variant="gradient">Left End</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  </div>
+</ComponentDemo>
+
+```jsx
+import { Fragment } from "react";
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Fragment>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="top">
+          <MenuHandler>
+            <Button variant="gradient">Top</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="top-start">
+          <MenuHandler>
+            <Button variant="gradient">Top Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="top-end">
+          <MenuHandler>
+            <Button variant="gradient">Top End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="right">
+          <MenuHandler>
+            <Button variant="gradient">Right</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="right-start">
+          <MenuHandler>
+            <Button variant="gradient">Right Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="right-end">
+          <MenuHandler>
+            <Button variant="gradient">Right End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="bottom">
+          <MenuHandler>
+            <Button variant="gradient">Bottom</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="bottom-start">
+          <MenuHandler>
+            <Button variant="gradient">Bottom Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="bottom-end">
+          <MenuHandler>
+            <Button variant="gradient">Bottom End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+      <div className="flex gap-3">
+        <Menu placement="left">
+          <MenuHandler>
+            <Button variant="gradient">Left</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="left-start">
+          <MenuHandler>
+            <Button variant="gradient">Left Start</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu placement="left-end">
+          <MenuHandler>
+            <Button variant="gradient">Left End</Button>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem>Menu Item 1</MenuItem>
+            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem>Menu Item 3</MenuItem>
+          </MenuList>
+        </Menu>
+      </div>
+    </Fragment>
+  );
+}
+```
 
 ---
 
-## Menu Handler Props
+## Custom Menu Animation
 
-<span id="menu-handler-props" className="scroll-mt-48" />
-The following props are available for the menu handler component. These are the custom
-props that come with we've added for the menu handler component and you can use all
-the other native props as well.
+You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
 
-| Attribute  | Type                    | Description                  | Default                                |
-| ---------- | ----------------------- | ---------------------------- | -------------------------------------- |
-| `children` | <Code small>node</Code> | Add content for menu handler | No default value it's a required prop. |
+<ComponentDemo id="custom-menu-animation">
+  <Menu
+    animate={{
+      mount: { y: 0 },
+      unmount: { y: 25 },
+    }}
+  >
+    <MenuHandler>
+      <Button variant="gradient">Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+    </MenuList>
+  </Menu>
+</ComponentDemo>
 
----
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
 
-## Menu List Props
-
-<span id="menu-list-props" className="scroll-mt-48" />
-The following props are available for the menu list component. These are the custom
-props that come with we've added for the menu list component and you can use all
-the other native props as well.
-
-| Attribute   | Type                      | Description                        | Default                                |
-| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
-| `className` | <Code small>string</Code> | Add custom className for menu list | `''`                                   |
-| `children`  | <Code small>node</Code>   | Add content for menu list          | No default value it's a required prop. |
-
----
-
-## Menu Item Props
-
-<span id="menu-item-props" className="scroll-mt-48" />
-The following props are available for the menu item component. These are the custom
-props that come with we've added for the menu item component and you can use all
-the other native props as well.
-
-| Attribute   | Type                       | Description                        | Default                                |
-| ----------- | -------------------------- | ---------------------------------- | -------------------------------------- |
-| `disabled`  | <Code small>boolean</Code> | Disable menu item                  | <Code small>false</Code>               |
-| `className` | <Code small>string</Code>  | Add custom className for menu item | `''`                                   |
-| `children`  | <Code small>node</Code>    | Add content for menu item          | No default value it's a required prop. |
-
----
-
-## Types
-
-<span id="types" className="scroll-mt-48" />
-
-```ts
-type placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
+export default function Example() {
+  return (
+    <Menu
+      animate={{
+        mount: { y: 0 },
+        unmount: { y: 25 },
+      }}
+    >
+      <MenuHandler>
+        <Button variant="gradient">Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
 ```
 
-```ts
-type offset =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
-```
-
-```ts
-type dismiss = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
-  ancestorScroll?: boolean;
-  bubbles?: boolean;
-};
-```
-
-```ts
-type animate = {
-  mount?: Object;
-  unmount?: Object;
-};
-```
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

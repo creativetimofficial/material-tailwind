@@ -69,7 +69,7 @@ const selectStatic = {
       },
       label: {
         fontSize: "text-sm",
-        disabled: "peer-disabled:text-blue-grey-400",
+        disabled: "peer-disabled:text-blue-gray-400",
         after: {
           transform: "after:scale-x-0",
         },

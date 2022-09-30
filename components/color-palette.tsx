@@ -11,7 +11,7 @@ export default function ColorPalette({ name, colors }) {
   return (
     <div className="flex flex-col space-y-1.5 text-xs">
       <div className="flex h-10 flex-col justify-center">
-        <div className="text-base font-bold capitalize text-blue-grey-900">
+        <div className="text-blue-gray-900 text-base font-bold capitalize">
           {name}
         </div>
       </div>
@@ -27,10 +27,10 @@ export default function ColorPalette({ name, colors }) {
                 style={{ backgroundColor: hex }}
               />
               <div className="px-0.5 md:flex md:justify-between md:space-x-2 2xl:block 2xl:space-x-0">
-                <div className="w-6 font-medium text-blue-grey-900 2xl:w-full">
+                <div className="text-blue-gray-900 w-6 font-medium 2xl:w-full">
                   {level}
                 </div>
-                <div className="font-mono lowercase text-blue-grey-500">
+                <div className="text-blue-gray-500 font-mono lowercase">
                   {hex}
                 </div>
               </div>

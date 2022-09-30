@@ -21,6 +21,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -49,9 +50,9 @@ import {
 } from "../../types/components/dialog";
 
 // dialog components
-import DialogHeader from "./DialogHeader";
-import DialogBody from "./DialogBody";
-import DialogFooter from "./DialogFooter";
+import { DialogHeader, DialogHeaderProps } from "./DialogHeader";
+import { DialogBody, DialogBodyProps } from "./DialogBody";
+import { DialogFooter, DialogFooterProps } from "./DialogFooter";
 
 export interface DialogProps extends React.ComponentProps<"div"> {
   open: open;
@@ -82,9 +83,11 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
 
     // 3. set styles
     const backdropClasses = classnames(objectsToString(base.backdrop));
-    const dialogClasses = classnames(
-      objectsToString(base.container),
-      objectsToString(sizes[findMatch(valid.sizes, size, "md")]),
+    const dialogClasses = twMerge(
+      classnames(
+        objectsToString(base.container),
+        objectsToString(sizes[findMatch(valid.sizes, size, "md")]),
+      ),
       className,
     );
 
@@ -196,6 +199,7 @@ Dialog.propTypes = {
 
 Dialog.displayName = "MaterialTailwind.Dialog";
 
+export type { DialogHeaderProps, DialogBodyProps, DialogFooterProps };
 export { Dialog, DialogHeader, DialogBody, DialogFooter };
 export default Object.assign(Dialog, {
   Header: DialogHeader,

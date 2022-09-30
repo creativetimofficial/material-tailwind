@@ -1,10 +1,10 @@
 const alertGradient: object = {
-  "blue-grey": {
-    backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
+  "blue-gray": {
+    backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
     color: "text-white",
   },
-  grey: {
-    backgroud: "bg-gradient-to-tr from-grey-600 to-grey-400",
+  gray: {
+    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
     color: "text-white",
   },
   brown: {

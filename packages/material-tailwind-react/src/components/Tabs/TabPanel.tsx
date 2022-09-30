@@ -6,6 +6,7 @@ import { motion, AnimatePresence, MotionProps } from "framer-motion";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -31,14 +32,14 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
       defaultProps,
       styles: { base },
     } = tabPanel;
-    const { tab } = useTabs();
-    const { active, appliedAnimation } = tab;
+    const { state } = useTabs();
+    const { active, appliedAnimation } = state;
 
     // 2. set default props
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tabPanelClasses = classnames(objectsToString(base), className);
+    const tabPanelClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
@@ -46,21 +47,19 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     // 5. return
     return (
       <NewAnimatePresence exitBeforeEnter>
-        {active === value && (
-          <motion.div
-            {...rest}
-            ref={ref}
-            role="tabpanel"
-            className={tabPanelClasses}
-            initial="unmount"
-            exit="unmount"
-            animate={active === value ? "mount" : "unmount"}
-            variants={appliedAnimation}
-            data-value={value}
-          >
-            {children}
-          </motion.div>
-        )}
+        <motion.div
+          {...rest}
+          ref={ref}
+          role="tabpanel"
+          className={tabPanelClasses}
+          initial="unmount"
+          exit="unmount"
+          animate={active === value ? "mount" : "unmount"}
+          variants={appliedAnimation}
+          data-value={value}
+        >
+          {children}
+        </motion.div>
       </NewAnimatePresence>
     );
   },

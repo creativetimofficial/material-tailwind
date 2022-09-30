@@ -4,7 +4,7 @@ const colors = {
   transparent: "transparent",
   white: "#ffffff",
   black: "#000000",
-  "blue-grey": {
+  "blue-gray": {
     50: "#eceff1",
     100: "#cfd8dc",
     200: "#b0bec5",
@@ -248,19 +248,19 @@ const colors = {
     400: "#747b8a",
     500: "#7b809a",
     600: "#495361",
-    700: "#3a416f"
+    700: "#3a416f",
   },
   light: {
     300: "#f8f9fa",
     400: "#ebeff4",
     500: "#f0f2f5",
-    600: "#ced4da"
+    600: "#ced4da",
   },
   dark: {
     400: "#42424a",
     500: "#344767",
-    600: "#191919"
-  }
+    600: "#191919",
+  },
 };
 
 module.exports = colors;

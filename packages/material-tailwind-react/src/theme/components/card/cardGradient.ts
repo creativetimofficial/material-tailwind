@@ -1,22 +1,22 @@
 const cardGradient: object = {
   transparent: {
     backgroud: "bg-transparent",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-none",
   },
   white: {
     backgroud: "bg-white",
-    color: "text-grey-700",
+    color: "text-gray-700",
   },
-  "blue-grey": {
-    backgroud: "bg-gradient-to-tr from-blue-grey-600 to-blue-grey-400",
+  "blue-gray": {
+    backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
     color: "text-white",
-    shadow: "shadow-blue-grey-500/40",
+    shadow: "shadow-blue-gray-500/40",
   },
-  grey: {
-    backgroud: "bg-gradient-to-tr from-grey-600 to-grey-400",
+  gray: {
+    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
     color: "text-white",
-    shadow: "shadow-grey-500/40",
+    shadow: "shadow-gray-500/40",
   },
   brown: {
     backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
@@ -35,17 +35,17 @@ const cardGradient: object = {
   },
   amber: {
     backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-amber-500/40",
   },
   yellow: {
     backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-yellow-500/40",
   },
   lime: {
     backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
-    color: "text-grey-700",
+    color: "text-gray-700",
     shadow: "shadow-lime-500/40",
   },
   "light-green": {

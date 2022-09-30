@@ -34,6 +34,7 @@ import NextLogo from "components/icons/next";
 import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
+import DocsRelated from "components/layout/docs-related";
 
 // @material-tailwind/react components
 import {
@@ -60,6 +61,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
+  MobileNav,
   Navbar,
   Option,
   Popover,
@@ -93,8 +95,8 @@ const components = {
     <Typography
       as="h1"
       variant="h3"
-      color="blue-grey"
-      className="!mb-4 !font-sans lg:!text-4xl"
+      color="blue-gray"
+      className="!mb-4 lg:!text-4xl"
       {...props}
     />
   ),
@@ -102,8 +104,8 @@ const components = {
     <Typography
       as="h2"
       variant="h4"
-      color="blue-grey"
-      className="!mb-2 !font-sans"
+      color="blue-gray"
+      className="!mb-2"
       {...props}
     />
   ),
@@ -111,8 +113,8 @@ const components = {
     <Typography
       as="h3"
       variant="h5"
-      color="blue-grey"
-      className="!mb-2 !font-sans"
+      color="blue-gray"
+      className="!mb-2"
       {...props}
     />
   ),
@@ -120,17 +122,17 @@ const components = {
     <Typography
       as="p"
       variant="h5"
-      className="!mb-12 !font-normal !text-blue-grey-500"
+      className="!mb-12 !font-normal !text-blue-gray-500"
       {...props}
     />
   ),
   p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-grey-500" {...props} />
+    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: () => <hr className="!mt-24 !mb-20 !border-blue-grey-50" />,
+  hr: () => <hr className="!mt-24 !mb-20 !border-blue-gray-50" />,
   a: (props) => (
     <a
-      className="!font-sans !font-medium !text-blue-grey-900 !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
@@ -144,13 +146,13 @@ const components = {
   tr: (props) => <tr {...props} />,
   th: (props) => (
     <th
-      className="min-w-[120px] border-b border-blue-grey-100 py-3 text-left font-medium text-blue-grey-900"
+      className="min-w-[120px] border-b border-blue-gray-100 py-3 text-left font-medium text-blue-gray-900"
       {...props}
     />
   ),
   td: (props) => (
     <td
-      className="min-w-[120px] border-b border-blue-grey-50 py-3 text-left text-sm text-blue-grey-500"
+      className="min-w-[120px] border-b border-blue-gray-50 py-3 text-left text-sm text-blue-gray-500"
       {...props}
     />
   ),
@@ -191,6 +193,7 @@ const components = {
   MenuHandler,
   MenuList,
   MenuItem,
+  MobileNav,
   Navbar,
   Option,
   Popover,
@@ -254,6 +257,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
+              {frontMatter.related && (
+                <DocsRelated routes={frontMatter.related} />
+              )}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />

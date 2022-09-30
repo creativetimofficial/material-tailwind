@@ -7,6 +7,7 @@ import { motion, MotionProps } from "framer-motion";
 import classnames from "classnames";
 import merge from "deepmerge";
 import objectsToString from "../../utils/objectsToString";
+import { twMerge } from "tailwind-merge";
 
 // context
 import { useAccordion } from "./AccordionContext";
@@ -19,6 +20,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/ac
 export interface AccordionBodyProps extends MotionProps {
   className?: className;
   children: children;
+  [key: string]: any;
 }
 
 export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
@@ -29,14 +31,18 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     const {
       styles: { base },
     } = accordion;
-
     const bodyEl = React.useRef(null);
+    const [height, setHeight] = React.useState(0);
+
+    React.useEffect(() => {
+      setHeight(bodyEl.current?.scrollHeight);
+    }, []);
 
     // 2. set default props
     className = className ?? "";
 
     // 3. set styles
-    const bodyClasses = classnames(objectsToString(base.body), className);
+    const bodyClasses = twMerge(classnames(objectsToString(base.body)), className);
 
     // 4. set animation
     const heightAnimation = {
@@ -45,7 +51,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: `${bodyEl.current?.scrollHeight}px`,
+        height: `${height + 10}px`,
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };

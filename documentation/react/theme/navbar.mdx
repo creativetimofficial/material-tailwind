@@ -1,0 +1,105 @@
+---
+title: Tailwind CSS Navbar Theme - Material Tailwind
+description: Learn how to customize the theme and styles for navbar component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/navbar
+related:
+  [
+    {
+      title: "Examples",
+      route: "navbar",
+      description: "Checkout different examples for navbar component.",
+    },
+    {
+      title: "Props",
+      route: "props/navbar",
+      description: "Learn more about props definition and types of navbar component.",
+    },
+  ]
+---
+
+# Tailwind CSS Navbar - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for navbar component, the theme object for navbar component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of navbar component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for navbar component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of navbar component.<br />
+
+You can customize the theme and styles of navbar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Navbar Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface NavbarStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    shadow: boolean;
+    blurred: boolean;
+    fullWidth: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      navbar: {
+        initial: object;
+        shadow: object;
+        blurred: object;
+        fullWidth: object;
+      };
+      mobileNav: object;
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { NavbarStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Navbar Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  navbar: {
+    styles: {
+      base: {
+        initial: {
+          display: "flex",
+          flexWrap: "flex-nowrap",
+          justifyContent: "justify-start",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

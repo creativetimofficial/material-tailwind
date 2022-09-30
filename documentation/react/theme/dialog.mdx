@@ -1,0 +1,265 @@
+---
+title: Tailwind CSS Dialog Theme - Material Tailwind
+description: Learn how to customize the theme and styles for dialog components.
+navigation:
+  [
+    "overview",
+    "dialog-theme-object-type",
+    "dialog-theme-customization",
+    "dialog-header-theme-object-type",
+    "dialog-header-theme-customization",
+    "dialog-body-theme-object-type",
+    "dialog-body-theme-customization",
+    "dialog-footer-theme-object-type",
+    "dialog-footer-theme-customization",
+    "examples",
+    "props",
+  ]
+github: theme/dialog
+related:
+  [
+    {
+      title: "Examples",
+      route: "dialog",
+      description: "Checkout different examples for dialog components.",
+    },
+    {
+      title: "Props",
+      route: "props/dialog",
+      description: "Learn more about props definition and types of dialog components.",
+    },
+  ]
+---
+
+# Tailwind CSS Dialog - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for dialog components, the theme object for dialog components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of dialog component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for dialog component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of dialog component.<br />
+
+You can customize the theme and styles of dialog components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Dialog Theme Object Type
+
+<span id="dialog-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface DialogStylesType {
+  defaultProps: {
+    size: string;
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePointerDown: boolean;
+      outsidePointerDown: boolean;
+      ancestorScroll: boolean;
+      bubbles: boolean;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  valid: {
+    sizes: string[];
+  };
+  styles: {
+    base: {
+      backdrop: object;
+      container: object;
+    };
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Dialog Theme Customization
+
+<span id="dialog-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  dialog: {
+    styles: {
+      sizes: {
+        xs: {
+          width: "w-1/4",
+          minWidth: "min-w-[25%]",
+          maxWidth: "max-w-[25%]",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+## Dialog Header Theme Object Type
+
+<span id="dialog-header-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface DialogHeaderStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogHeaderStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Dialog Header Theme Customization
+
+<span id="dialog-header-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  dialogHeader: {
+    styles: {
+      base: {
+        display: "flex",
+        alignItems: "items-center",
+      },
+    },
+  },
+};
+```
+
+---
+
+## Dialog Body Theme Object Type
+
+<span id="dialog-body-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface DialogBodyStylesType {
+  defaultProps: {
+    className: string;
+    divider: boolean;
+  };
+  styles: {
+    base: {
+      initial: object;
+      divider: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogBodyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Dialog Body Theme Customization
+
+<span id="dialog-body-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  dialogBody: {
+    styles: {
+      base: {
+        divider: {
+          borderTop: "border-t",
+          borderBottom: "border-b",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+## Dialog Footer Theme Object Type
+
+<span id="dialog-footer-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface DialogFooterStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogFooterStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Dialog Footer Theme Customization
+
+<span id="dialog-footer-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  dialogFooter: {
+    styles: {
+      base: {
+        display: "flex",
+        alignItems: "items-center",
+        justifyContent: "justify-end",
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

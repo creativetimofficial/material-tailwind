@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 // utils
 import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -50,7 +51,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const popoverClasses = classnames(objectsToString(base), className);
+    const popoverClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. set refs
     const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [floating, ref]);

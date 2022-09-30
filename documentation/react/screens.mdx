@@ -21,7 +21,7 @@ Customize the default breakpoints for @material-tailwind/react and add your own 
 
 @material-tailwind/react provides a set of default breakpoints for different screen sizes that you can use.
 
-```js showLineNumbers
+```js
 const boxShadow = {
   sm: "540px",
   md: "720px",
@@ -42,7 +42,7 @@ You can customize the default breakpoints for @material-tailwind/react very easy
 
 You just need to customize the breakpoint that you like throw the <Code>screens</Code> object for <Code>tailwind.config.js</Code> file.
 
-```js showLineNumbers {4}
+```js {4}
 module.exports = withMT({
   theme: {
     screens: {
@@ -63,7 +63,7 @@ You can add new breakpoint for @material-tailwind/react very easy and straightfo
 
 You just need to add your own breakpoint to the <Code>extend</Code> and <Code>screens</Code> object for <Code>tailwind.config.js</Code> file.
 
-```js showLineNumbers {5}
+```js {5}
 module.exports = withMT({
   theme: {
     extend: {

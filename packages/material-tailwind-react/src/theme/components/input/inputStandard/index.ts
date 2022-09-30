@@ -6,7 +6,7 @@ const inputStandard = {
   base: {
     input: {
       borderWidth: "border-b",
-      borderColor: "placeholder-shown:border-blue-grey-200",
+      borderColor: "placeholder-shown:border-blue-gray-200",
     },
     inputWithIcon: {
       pr: "!pr-7",

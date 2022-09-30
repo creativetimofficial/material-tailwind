@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // utils
 import Ripple from "material-ripple-effects";
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -15,7 +16,6 @@ import type {
   variant,
   size,
   color,
-  fullWidth,
   ripple,
   className,
   children,
@@ -24,7 +24,6 @@ import {
   propTypesVariant,
   propTypesSize,
   propTypesColor,
-  propTypesFullWidth,
   propTypesRipple,
   propTypesClassName,
   propTypesChildren,
@@ -34,7 +33,6 @@ export interface IconButtonProps extends React.ComponentProps<"button"> {
   variant?: variant;
   size?: size;
   color?: color;
-  fullWidth?: fullWidth;
   ripple?: ripple;
   className?: className;
   children: children;
@@ -65,7 +63,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
-    const classes = classnames(buttonBase, buttonSize, buttonVariant, className);
+    const classes = twMerge(classnames(buttonBase, buttonSize, buttonVariant), className);
 
     // 5. return
     return (

@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
 // context
 import { useTheme } from "../../context/theme";
+
+// navbar components
+import { MobileNav, MobileNavProps } from "./MobileNav";
 
 // types
 import type {
@@ -39,7 +43,7 @@ export interface NavbarProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-export const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
+const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
   ({ variant, color, shadow, blurred, fullWidth, className, children, ...rest }, ref) => {
     // 1. init
     const { navbar } = useTheme();
@@ -55,10 +59,10 @@ export const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const navbarRoot = classnames(objectsToString(base.initial), {
-      [objectsToString(base.shadow)]: shadow,
-      [objectsToString(base.blurred)]: blurred && color === "white",
-      [objectsToString(base.fullWidth)]: fullWidth,
+    const navbarRoot = classnames(objectsToString(base.navbar.initial), {
+      [objectsToString(base.navbar.shadow)]: shadow,
+      [objectsToString(base.navbar.blurred)]: blurred && color === "white",
+      [objectsToString(base.navbar.fullWidth)]: fullWidth,
     });
     const navbarVariant = classnames(
       objectsToString(
@@ -67,7 +71,7 @@ export const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
         ],
       ),
     );
-    const navbarClasses = classnames(navbarRoot, navbarVariant, className);
+    const navbarClasses = twMerge(classnames(navbarRoot, navbarVariant), className);
 
     // 4. return
     return (
@@ -90,4 +94,8 @@ Navbar.propTypes = {
 
 Navbar.displayName = "MaterialTailwind.Navbar";
 
-export default Navbar;
+export type { MobileNavProps };
+export { Navbar, MobileNav };
+export default Object.assign(Navbar, {
+  MobileNav,
+});

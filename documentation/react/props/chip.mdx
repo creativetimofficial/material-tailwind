@@ -1,0 +1,134 @@
+---
+title: Tailwind CSS Chip Props - Material Tailwind
+description: Learn more about props definition and types of chip component.
+navigation:
+  [
+    "chip-props",
+    "types-variant",
+    "types-color",
+    "types-value",
+    "types-dismissible",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
+github: props/chip
+related:
+  [
+    {
+      title: "Examples",
+      route: "chip",
+      description: "Checkout different examples for chip component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/chip",
+      description: "Learn how to customize the theme and styles for chip component.",
+    },
+  ]
+---
+
+# Tailwind CSS Chip - Props
+
+<span id="alert-props" className="scroll-mt-48" />
+The following props are available for button component. These are the custom props
+that come with we've added for the chip component and you can use all the other native
+props as well.
+
+| Attribute     | Type                              | Description                       | Default                                |
+| ------------- | --------------------------------- | --------------------------------- | -------------------------------------- |
+| `variant`     | [Variant](#types-variant)         | Change chip variant               | <Code>filled</Code>                    |
+| `color`       | [Color](#types-color)             | Change chip color                 | <Code>blue</Code>                      |
+| `value`       | [Value](#types-value)             | Add content for chip              | No default value it's a required prop. |
+| `dismissible` | [Dismissible](#types-dismissible) | Makes the chip dismissible        | <Code>undefined</Code>                 |
+| `animate`     | [Animate](#types-animate)         | Change chip animation             | <Code>undefined</Code>                 |
+| `show`        | <Code>boolean</Code>              | Change the chip visibility        | <Code>true</Code>                      |
+| `icon`        | <Code>node</Code>                 | Add icon at the beginning of chip | <Code>undefined</Code>                 |
+| `className`   | <Code>string</Code>               | Add custom className for chip     | `''`                                   |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { ChipProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Variant
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+## Types - Color
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+## Types - Value
+
+<span id="types-value" className="scroll-mt-48" />
+
+```ts
+type value = string | number;
+```
+
+---
+
+## Types - Dismissible
+
+<span id="types-dismissible" className="scroll-mt-48" />
+
+```ts
+type dismissible = {
+  action?: ReactNode;
+  onClose: () => void;
+};
+```
+
+---
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

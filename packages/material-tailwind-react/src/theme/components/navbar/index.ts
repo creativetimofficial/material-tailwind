@@ -27,10 +27,13 @@ export interface NavbarStylesType {
   };
   styles?: {
     base?: {
-      initial?: object;
-      shadow?: object;
-      blurred?: object;
-      fullWidth?: object;
+      navbar?: {
+        initial?: object;
+        shadow?: object;
+        blurred?: object;
+        fullWidth?: object;
+      };
+      mobileNav?: object;
     };
     variants?: {
       filled?: typeof navbarFilled;
@@ -54,30 +57,36 @@ export const navbar: NavbarStylesType = {
   },
   styles: {
     base: {
-      initial: {
-        display: "flex",
-        flexWrap: "flex-nowrap",
-        justifyContent: "justify-start",
+      navbar: {
+        initial: {
+          display: "block",
+          width: "w-full",
+          maxWidth: "max-w-screen-2xl",
+          borderRadius: "rounded-xl",
+          py: "py-4",
+          px: "px-8",
+        },
+        shadow: {
+          boxShadow: "shadow-md",
+        },
+        blurred: {
+          backdropFilter: "backdrop-saturate-200 backdrop-blur-2xl",
+          bgOpacity: "bg-opacity-80",
+          borderWidth: "border",
+          borderColor: "border-white/80",
+        },
+        fullWidth: {
+          width: "w-full",
+          maxWidth: "max-w-full",
+          rounded: "rounded-none",
+          px: "px-4",
+        },
+      },
+      mobileNav: {
+        display: "block",
         width: "w-full",
-        maxWidth: "max-w-screen-2xl",
-        borderRadius: "rounded-xl",
-        py: "py-4",
-        px: "px-8",
-      },
-      shadow: {
-        boxShadow: "shadow-md",
-      },
-      blurred: {
-        backdropFilter: "backdrop-saturate-200 backdrop-blur-2xl",
-        bgOpacity: "bg-opacity-80",
-        borderWidth: "border",
-        borderColor: "border-white/80",
-      },
-      fullWidth: {
-        width: "w-full",
-        maxWidth: "max-w-full",
-        rounded: "rounded-none",
-        px: "px-4",
+        basis: "basis-full",
+        overflow: "overflow-hidden",
       },
     },
     variants: {

@@ -21,6 +21,8 @@ next: license
 <span id="installation" className="scroll-mt-48" />
 Learn how to setup and install @material-tailwind/react with Remix.
 
+> `@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/guides/remix?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>.
+
 <br />
 <br />
 
@@ -86,7 +88,7 @@ module.exports = withMT({
 
 @material-tailwind/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
 
-On the <Code>app/entry.client.jsx</Code> or <Code>app/entry.client.tsx</Code> if you're using typescript put the code bellow.
+On the <Code>app/entry.client</Code> put the code bellow.
 
 ```jsx {3, 6, 8}
 import { RemixBrowser } from "@remix-run/react";
@@ -111,7 +113,7 @@ Now you're good to go and use @material-tailwind/react in your project.
   <Button>Button</Button>
 </ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx {1, 4}
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {

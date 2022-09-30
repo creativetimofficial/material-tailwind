@@ -1,0 +1,119 @@
+---
+title: Tailwind CSS Menu Theme - Material Tailwind
+description: Learn how to customize the theme and styles for menu components.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/menu
+related:
+  [
+    {
+      title: "Examples",
+      route: "menu",
+      description: "Checkout different examples for menu components.",
+    },
+    {
+      title: "Props",
+      route: "props/menu",
+      description: "Learn more about props definition and types of menu components.",
+    },
+  ]
+---
+
+# Tailwind CSS Menu - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for menu components, the theme object for menu components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of menu component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for menu component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of menu component.<br />
+
+You can customize the theme and styles of menu components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Menu Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface MenuStylesType {
+  defaultProps: {
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePointerDown: boolean;
+      outsidePointerDown: boolean;
+      ancestorScroll: boolean;
+      bubbles: boolean;
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    lockScroll: boolean;
+  };
+  styles: {
+    base: {
+      menu: object;
+      item: {
+        initial: object;
+        disabled: object;
+      };
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Menu Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  menu: {
+    styles: {
+      base: {
+        menu: {
+          bg: "bg-white",
+          p: "p-3",
+        },
+        item: {
+          initial: {
+            display: "block",
+            width: "w-full",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

@@ -71,6 +71,7 @@ export const button: ButtonStyleTypes = {
         textAlign: "center",
         textTransform: "uppercase",
         transition: "transition-all",
+        disabled: "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
       },
       fullWidth: {
         display: "block",

@@ -7,8 +7,8 @@ const backgroundColor = (theme, background) => ({
 });
 
 const background = (theme) => ({
-  ".bg-blue-grey": backgroundColor(theme, "colors.blue-grey"),
-  ".bg-grey": backgroundColor(theme, "colors.grey"),
+  ".bg-blue-gray": backgroundColor(theme, "colors.blue-gray"),
+  ".bg-gray": backgroundColor(theme, "colors.gray"),
   ".bg-brown": backgroundColor(theme, "colors.brown"),
   ".bg-deep-orange": backgroundColor(theme, "colors.deep-orange"),
   ".bg-orange": backgroundColor(theme, "colors.orange"),
@@ -28,7 +28,7 @@ const background = (theme) => ({
   ".bg-red": backgroundColor(theme, "colors.red"),
   ".bg-secondary": backgroundColor(theme, "colors.secondary"),
   ".bg-light": backgroundColor(theme, "colors.light"),
-  ".bg-dark": backgroundColor(theme, "colors.dark")
+  ".bg-dark": backgroundColor(theme, "colors.dark"),
 });
 
 module.exports.backgroundColor = backgroundColor;

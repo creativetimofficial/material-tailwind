@@ -21,6 +21,8 @@ next: license
 <span id="installation" className="scroll-mt-48" />
 Learn how to setup and install @material-tailwind/react with Next.js.
 
+> `@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/guides/nextjs?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>.
+
 <br />
 <br />
 
@@ -66,8 +68,6 @@ pnpm i @material-tailwind/react
 
 Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react/utils.
 
-On the <Code>pages/\_app.js</Code> or <Code>pages/\_app.tsx</Code> if you're using typescript put the code bellow.
-
 ```js {1, 3, 9}
 const withMT = require("@material-tailwind/react/utils/withMT");
 
@@ -87,6 +87,8 @@ module.exports = withMT({
 <span id="theme-provider" className="scroll-mt-48" />
 
 @material-tailwind/react comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the <Code>ThemeProvider</Code> coming from @material-tailwind/react.
+
+On the <Code>pages/\_app</Code> put the code bellow.
 
 ```jsx {3, 7, 9}
 import "/styles/globals.css";
@@ -112,7 +114,7 @@ Now you're good to go and use @material-tailwind/react in your project.
   <Button>Button</Button>
 </ComponentDemo>
 
-```jsx showLineNumbers {1, 4}
+```jsx {1, 4}
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {

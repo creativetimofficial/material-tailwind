@@ -39,12 +39,12 @@ const alert = (theme) => ({
   ".alert-orange": alertVariant(theme, "colors.orange"),
   ".alert-deep-orange": alertVariant(theme, "colors.deep-orange"),
   ".alert-brown": alertVariant(theme, "colors.brown"),
-  ".alert-grey": alertVariant(theme, "colors.grey"),
-  ".alert-blue-grey": alertVariant(theme, "colors.blue-grey"),
+  ".alert-gray": alertVariant(theme, "colors.gray"),
+  ".alert-blue-gray": alertVariant(theme, "colors.blue-gray"),
   ".alert-red": alertVariant(theme, "colors.red"),
   ".alert-secondary": alertVariant(theme, "colors.secondary"),
   ".alert-dark": alertVariant(theme, "colors.dark"),
-  ".alert-light": alertVariant(theme, "colors.light")
+  ".alert-light": alertVariant(theme, "colors.light"),
 });
 
 module.exports.alertVariant = alertVariant;
