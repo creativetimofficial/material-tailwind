@@ -4,11 +4,12 @@ const toggle = (theme) => ({
       position: "relative",
       height: ".9375rem",
       width: "1.875rem",
-      backgroundColor: theme("colors.blue-grey.100"),
+      backgroundColor: theme("colors.blue-gray.100"),
       backgroundImage: "none",
       backgroundPosition: "0",
       borderRadius: "1.875rem",
-      transition: "background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out",
+      transition:
+        "background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out",
 
       "&:after": {
         position: "absolute",
@@ -17,13 +18,14 @@ const toggle = (theme) => ({
         content: '""',
         width: theme("width.5"),
         height: theme("height.5"),
-        border: `1px solid theme("colors.blue-grey.100")`,
+        border: `1px solid theme("colors.blue-gray.100")`,
         borderRadius: "50%",
         backgroundColor: theme("colors.white"),
         transform: "translateX(1px)",
-        transition: "transform .25s ease-in-out, background-color .25s ease-in-out",
-        boxShadow: "0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%)",
-       
+        transition:
+          "transform .25s ease-in-out, background-color .25s ease-in-out",
+        boxShadow:
+          "0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%)",
       },
 
       "&[checked]": {
@@ -34,11 +36,11 @@ const toggle = (theme) => ({
 
         "&:after": {
           transform: "translateX(21px)",
-          borderColor: theme("colors.grey.800")
-        }
-      }
-    }
-  }
+          borderColor: theme("colors.grey.800"),
+        },
+      },
+    },
+  },
 });
 
 module.exports.toggle = toggle;

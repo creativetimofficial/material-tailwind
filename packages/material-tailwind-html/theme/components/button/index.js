@@ -8,16 +8,16 @@ const buttonVariant = (theme, background) => ({
   "&:hover": {
     boxShadow: `0 10px 15px -3px ${theme(
       `${background}.200`
-    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`
+    )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
   },
 
   "&:focus, &:active": {
     boxShadow: "0 0 rgba(0, 0, 0, 0)",
-    opacity: 0.85
+    opacity: 0.85,
   },
 
   "&.button-amber, &.button-yellow, &.button-lime": {
-    color: theme("colors.black")
+    color: theme("colors.black"),
   },
 
   "&.button-gradient": {
@@ -29,22 +29,22 @@ const buttonVariant = (theme, background) => ({
       boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 1
+      opacity: 1,
     },
 
     "&:focus:not(:hover)": {
       boxShadow: `0 4px 6px -1px ${theme(
         `${background}.100`
       )}, 0 2px 4px -2px ${theme(`${background}.100`)}`,
-      opacity: 1
+      opacity: 1,
     },
 
     "&:active": {
       boxShadow: `0 10px 15px -3px ${theme(
         `${background}.200`
       )}, 0 4px 6px -4px ${theme(`${background}.200`)}`,
-      opacity: 0.85
-    }
+      opacity: 0.85,
+    },
   },
 
   "&.button-outlined": {
@@ -54,8 +54,8 @@ const buttonVariant = (theme, background) => ({
     boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:focus:not(:hover)": {
-      boxShadow: `0 0 0 0.2rem ${theme(`${background}.200`)}`
-    }
+      boxShadow: `0 0 0 0.2rem ${theme(`${background}.200`)}`,
+    },
   },
 
   "&.button-text": {
@@ -64,18 +64,18 @@ const buttonVariant = (theme, background) => ({
     boxShadow: "0 0 rgba(0, 0, 0, 0)",
 
     "&:hover": {
-      backgroundColor: theme(`${background}.50`)
+      backgroundColor: theme(`${background}.50`),
     },
 
     "&:active": {
-      backgroundColor: theme(`${background}.100`)
-    }
-  }
+      backgroundColor: theme(`${background}.100`),
+    },
+  },
 });
 
 const buttonSize = (y, x, fontSize) => ({
   padding: `${y} ${x}`,
-  fontSize: fontSize || "0.75rem"
+  fontSize: fontSize || "0.75rem",
 });
 
 const button = (theme) => ({
@@ -94,19 +94,19 @@ const button = (theme) => ({
     position: "relative",
     overflow: "hidden",
     textTransform: "uppercase",
-  
+
     "&.button-icon": {
       padding: theme("spacing.[2.5]"),
       lineHeight: "initial",
-  
-      "i": {
+
+      i: {
         position: "relative",
         top: "1px",
-        fontSize: theme("fontSize.base")
-      }
-    }
+        fontSize: theme("fontSize.base"),
+      },
+    },
   },
-  ".button-blue-grey": buttonVariant(theme, "colors.blue-grey"),
+  ".button-blue-gray": buttonVariant(theme, "colors.blue-gray"),
   ".button-grey": buttonVariant(theme, "colors.grey"),
   ".button-brown": buttonVariant(theme, "colors.brown"),
   ".button-deep-orange": buttonVariant(theme, "colors.deep-orange"),
@@ -132,8 +132,8 @@ const button = (theme) => ({
   ".button-lg": buttonSize("0.771rem", "1.75rem", "0.875rem"),
   ".button-block": {
     display: "block",
-    width: "100%"
-  }
+    width: "100%",
+  },
 });
 
 module.exports.buttonVariant = buttonVariant;

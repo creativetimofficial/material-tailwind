@@ -6,14 +6,14 @@ const checkbox = (theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "50%",
     backgroundSize: theme("backgroundSize.contain"),
-    border: `1px solid theme("colors.blue-grey.100")`,
+    border: `1px solid theme("colors.blue-gray.100")`,
     position: "relative",
     backgroundImage: theme("backgroundImage.none"),
     borderRadius: theme("borderRadius.md"),
     cursor: theme("cursor.pointer"),
     marginRight: theme("spacing.2"),
     transition:
-      "background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out"
+      "background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out",
   },
   ".checkbox:checked + .form-check-input:after": {
     transition: "opacity .25s ease-in-out",
@@ -24,13 +24,13 @@ const checkbox = (theme) => ({
     backgroundPosition: theme("backgroundPosition.center"),
     width: theme("width.full"),
     height: theme("height.full"),
-    position: "absolute"
+    position: "absolute",
   },
 
   ".checkbox:checked + .form-check-input": {
     backgroundColor: theme("colors.pink.500"),
-    borderColor: theme("colors.pink.500")
-  }
+    borderColor: theme("colors.pink.500"),
+  },
 });
 
 module.exports.checkbox = checkbox;

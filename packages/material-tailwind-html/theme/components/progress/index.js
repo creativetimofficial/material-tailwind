@@ -2,8 +2,10 @@ const progressVariant = (theme, background) => ({
   backgroundColor: theme(`${background}.500`),
 
   "&.progress-gradient": {
-    backgroundImage: `linear-gradient(to top right, ${theme(`${background}.600`)}, ${theme(`${background}.400`)})`
-  }
+    backgroundImage: `linear-gradient(to top right, ${theme(
+      `${background}.600`
+    )}, ${theme(`${background}.400`)})`,
+  },
 });
 
 const progress = (theme) => ({
@@ -16,7 +18,7 @@ const progress = (theme) => ({
     borderRadius: theme("borderRadius.sm"),
 
     "&[percentage='true']": {
-      height: theme('height.6')
+      height: theme("height.6"),
     },
 
     ".progress-bar": {
@@ -29,16 +31,17 @@ const progress = (theme) => ({
       borderRadius: theme("borderRadius.sm"),
 
       "&.progress-stripped": {
-        backgroundImage: "linear-gradient(theme('rotate.45'), rgba(255,255,255,.15) 25%, theme('colors.transparent') 25%, theme('colors.transparent') 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, theme('colors.transparent') 75%, theme('colors.transparent'))",
-        backgroundSize: "theme('spacing.4') theme('spacing.4')"
+        backgroundImage:
+          "linear-gradient(theme('rotate.45'), rgba(255,255,255,.15) 25%, theme('colors.transparent') 25%, theme('colors.transparent') 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, theme('colors.transparent') 75%, theme('colors.transparent'))",
+        backgroundSize: "theme('spacing.4') theme('spacing.4')",
       },
 
-      "span": {
+      span: {
         position: "absolute",
-        marginTop: "3px"
-      }
-    }
-  },  
+        marginTop: "3px",
+      },
+    },
+  },
   ".progress-pink": progressVariant(theme, "colors.pink"),
   ".progress-purple": progressVariant(theme, "colors.purple"),
   ".progress-deep-purple": progressVariant(theme, "colors.deep-purple"),
@@ -56,11 +59,11 @@ const progress = (theme) => ({
   ".progress-deep-orange": progressVariant(theme, "colors.deep-orange"),
   ".progress-brown": progressVariant(theme, "colors.brown"),
   ".progress-grey": progressVariant(theme, "colors.grey"),
-  ".progress-blue-grey": progressVariant(theme, "colors.blue-grey"),
+  ".progress-blue-gray": progressVariant(theme, "colors.blue-gray"),
   ".progress-red": progressVariant(theme, "colors.red"),
   ".progress-secondary": progressVariant(theme, "colors.secondary"),
   ".progress-dark": progressVariant(theme, "colors.dark"),
-  ".progress-light": progressVariant(theme, "colors.light")
+  ".progress-light": progressVariant(theme, "colors.light"),
 });
 
 module.exports.progressVariant = progressVariant;
