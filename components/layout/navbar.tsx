@@ -262,8 +262,8 @@ export default function Navbar({
         <a
           href={`${
             query.slug && query.slug[0] === "html"
-              ? "https://www.material-tailwind.com/blocks/html#pricing"
-              : "https://www.material-tailwind.com/blocks/react#pricing"
+              ? "https://www.material-tailwind.com/blocks/html"
+              : "https://www.material-tailwind.com/blocks/react"
           }`}
           target="_blank"
           rel="noreferrer"
