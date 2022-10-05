@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/html",
   "homepage": "https://material-tailwind.com",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "@material-tailwind/html is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
