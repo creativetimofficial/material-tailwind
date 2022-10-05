@@ -17,10 +17,10 @@ export default function SectionPricing1() {
               <nav>
                 <ul role="tablist" className="tabs p-1" aria-controls="data-pricing">
                   <li className="nav-item">
-                    <a className="nav-link active mb-0 px-0 py-1 text-blue-grey-700" aria-selected="true" aria-controls="pricing-monthly" role="tab">Monthly Billing</a>
+                    <a className="nav-link active mb-0 px-0 py-1 text-blue-gray-700" aria-selected="true" aria-controls="pricing-monthly" role="tab">Monthly Billing</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link mb-0 px-0 py-1 text-blue-grey-700" aria-selected="false" aria-controls="pricing-annual" role="tab">Annual Billing</a>
+                    <a className="nav-link mb-0 px-0 py-1 text-blue-gray-700" aria-selected="false" aria-controls="pricing-annual" role="tab">Annual Billing</a>
                   </li>
                 </ul>
               </nav>
@@ -45,7 +45,7 @@ export default function SectionPricing1() {
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-gray-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ export default function SectionPricing1() {
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-gray-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ export default function SectionPricing1() {
               <p className="text-base leading-relaxed text-center">Our most popular plan</p>
             </div>
             <div className="card-body !p-0">
-              <ul className="border-y border-blue-grey-50 py-6 flex flex-col gap-3 my-8">
+              <ul className="border-y border-blue-gray-50 py-6 flex flex-col gap-3 my-8">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

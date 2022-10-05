@@ -54,7 +54,7 @@ export default function SectionNavbar2() {
               </li>
             </ul>
           </div>
-          <button className="button button-light text-blue-grey-900 button-sm hidden lg:inline-block" type="button">Buy Now</button>
+          <button className="button button-light text-blue-gray-900 button-sm hidden lg:inline-block" type="button">Buy Now</button>
       </div>
     </nav>
   )

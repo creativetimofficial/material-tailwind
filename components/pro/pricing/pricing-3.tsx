@@ -4,19 +4,19 @@ export default function SectionPricing3() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 p-4">
           <div className="hidden lg:block">
-            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
+            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900 flex items-center gap-3 py-4">
               &nbsp;
             </h4>
             <hr className="border-t mb-6 lg:-mx-4" />
           </div>
           <div className="">
-            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
+            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900 flex items-center gap-3 py-4">
               Starter
               <div className="chip chip-pink text-xs rounded-full py-1 px-2.5">popular</div>
             </h4>
             <hr className="border-t mb-6 lg:-mx-12" />
             <div className="flex items-end gap-1 mb-4">
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-grey-900">
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900">
                 $10
               </h1>
               <p className="text-base leading-relaxed text-grey-700 font-medium mb-2">
@@ -30,12 +30,12 @@ export default function SectionPricing3() {
             <button className="button button-dark button-lg button-outlined block w-full" type="button">Chat to sales</button>
           </div>
           <div className="">
-            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
+            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900 flex items-center gap-3 py-4">
               Startup
             </h4>
             <hr className="border-t mb-6 lg:-mx-12" />
             <div className="flex items-end gap-1 mb-4">
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-grey-900">
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900">
                 $20
               </h1>
               <p className="text-base leading-relaxed text-grey-700 font-medium mb-2">
@@ -49,12 +49,12 @@ export default function SectionPricing3() {
             <button className="button button-dark button-lg button-outlined block w-full" type="button">Chat to sales</button>
           </div>
           <div className="">
-            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-grey-900 flex items-center gap-3 py-4">
+            <h4 className="tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900 flex items-center gap-3 py-4">
               Enterprise
             </h4>
             <hr className="border-t mb-6 lg:-mx-4" />
             <div className="flex items-end gap-1 mb-4">
-              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-grey-900">
+              <h1 className="tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900">
                 $40
               </h1>
               <p className="text-base leading-relaxed text-grey-700 font-medium mb-2">
@@ -76,9 +76,9 @@ export default function SectionPricing3() {
           </div>
         </div>
         <div className="overflow-x-scroll">
-          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 bg-blue-grey-50/30">
+          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 bg-blue-gray-50/30">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 Basic features
               </p>
               <svg
@@ -141,7 +141,7 @@ export default function SectionPricing3() {
           </div>
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 Team members
               </p>
               <svg
@@ -169,9 +169,9 @@ export default function SectionPricing3() {
               Unlimited
             </p>
           </div>
-          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center bg-blue-grey-50/30">
+          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center bg-blue-gray-50/30">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 Cloud Space
               </p>
               <svg
@@ -201,7 +201,7 @@ export default function SectionPricing3() {
           </div>
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 Premium Support
               </p>
               <svg
@@ -262,9 +262,9 @@ export default function SectionPricing3() {
               />
             </svg>
           </div>
-          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center bg-blue-grey-50/30">
+          <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center bg-blue-gray-50/30">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 Automated workflows
               </p>
               <svg
@@ -316,7 +316,7 @@ export default function SectionPricing3() {
           </div>
           <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4 text-center border-b border-blue-gray-50">
             <div className="flex items-center gap-1.5">
-              <p className="text-base leading-relaxed text-blue-grey-900 font-medium">
+              <p className="text-base leading-relaxed text-blue-gray-900 font-medium">
                 App integrations
               </p>
               <svg

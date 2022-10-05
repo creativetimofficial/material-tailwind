@@ -9,7 +9,7 @@ const input = (theme) => ({
     color: "#495057",
     backgroundColor: theme("colors.transparent"),
     backgroundClip: "padding-box",
-    border: `1px solid theme("colors.blue-grey.100")`,
+    border: `1px solid theme("colors.blue-gray.100")`,
     appearance: "none",
     borderRadius: theme("borderRadius.md"),
     transition: ".2s ease",
@@ -25,7 +25,7 @@ const input = (theme) => ({
     fontSize: theme("fontSize.sm"),
     fontWeight: theme("fontWeight.normal"),
     marginBottom: theme("spacing.2"),
-    color: theme("colors.blue-grey.500"),
+    color: theme("colors.blue-gray.500"),
     marginLeft: theme("spacing.0"),
     transition: "all .2s ease"
   },
@@ -48,7 +48,7 @@ const input = (theme) => ({
         "&:before,&:after": {
           content: '""',
           borderTop: "1px solid",
-          borderTopColor: theme("colors.blue-grey.100"),
+          borderTopColor: theme("colors.blue-gray.100"),
           pointerEvents: "none",
           marginTop: theme("spacing.[1.5]"),
           boxSizing: "border-box",
@@ -75,7 +75,7 @@ const input = (theme) => ({
 
       ".form-control": {
         background: "none",
-        border: `1px solid theme("colors.blue-grey.100")`,
+        border: `1px solid theme("colors.blue-gray.100")`,
         borderRadius: theme("borderRadius.md"),
         borderTopLeftRadius: theme("borderRadius.md"),
         borderBottomLeftRadius: theme("borderRadius.md"),
@@ -90,7 +90,7 @@ const input = (theme) => ({
         borderRadius: theme("borderRadius.none"),
         border: theme("borderRadius.none"),
         background: "no-repeat bottom,50% calc(100% - 1px)",
-        backgroundImage: `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-grey.100") 1px,hsla(0,0%,82%,0) 0)`,
+        backgroundImage: `linear-gradient(0deg,theme("colors.pink.500") 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,theme("colors.blue-gray.100") 1px,hsla(0,0%,82%,0) 0)`,
         backgroundSize: "0 100%,100% 100%",
         transition: ".2s ease",
       },

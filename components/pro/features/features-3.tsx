@@ -25,10 +25,10 @@ export default function SectionFeatures3() {
                 />
               </svg>
             </div>
-            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-grey-900 mb-2">
+            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
               See our projects
             </h3>
-            <p className="text-xl leading-relaxed mb-10 text-blue-grey-700">
+            <p className="text-xl leading-relaxed mb-10 text-blue-gray-700">
               People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest.
             </p>
             <div className="flex gap-2">
@@ -78,10 +78,10 @@ export default function SectionFeatures3() {
                 />
               </svg>
             </div>
-            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-grey-900 mb-2">
+            <h3 className="tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900 mb-2">
               Read More About Us
             </h3>
-            <p className="text-xl leading-relaxed mb-10 text-blue-grey-700">
+            <p className="text-xl leading-relaxed mb-10 text-blue-gray-700">
               Pain is what we go through as we become older. We get insulted by others, lose trust for those others. We get back stabbed by friends. It becomes harder for us to give others a hand.
             </p>
             <div className="flex gap-2">

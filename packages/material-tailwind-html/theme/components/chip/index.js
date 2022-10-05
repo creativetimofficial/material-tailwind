@@ -42,7 +42,7 @@ const chip = (theme) => ({
   ".chip-deep-orange": chipVariant(theme, "colors.deep-orange"),
   ".chip-brown": chipVariant(theme, "colors.brown"),
   ".chip-grey": chipVariant(theme, "colors.grey"),
-  ".chip-blue-grey": chipVariant(theme, "colors.blue-grey"),
+  ".chip-blue-gray": chipVariant(theme, "colors.blue-gray"),
   ".chip-red": chipVariant(theme, "colors.red"),
   ".chip-secondary": chipVariant(theme, "colors.secondary"),
   ".chip-dark": chipVariant(theme, "colors.dark"),

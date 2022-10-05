@@ -9,8 +9,8 @@ export default function SectionHeader2() {
               <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </p>
           </div>
-          <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-grey-900 mb-8 leading-tight lg:text-6xl">Our company mission is to lead the design apps</h1>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:pr-20">It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all we have. Then we lose family over time.</p>
+          <h1 className="tracking-normal font-sans text-5xl font-semibold text-blue-gray-900 mb-8 leading-tight lg:text-6xl">Our company mission is to lead the design apps</h1>
+          <p className="text-xl font-normal leading-relaxed text-blue-gray-700 lg:pr-20">It becomes harder for us to give others a hand. We get our heart broken by people we love, even that we give them all we have. Then we lose family over time.</p>
           <div className="mt-12 flex justify-center gap-3 lg:justify-start">
             <button className="button button-pink flex" type="button" data-ripple-light="true">
             <svg className="mr-2" width="20px" height="20px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">

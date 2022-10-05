@@ -6,10 +6,10 @@ export default function SectionTeam1() {
           <p className="text-base leading-relaxed text-pink-500 mb-2 font-semibold">
             Our team
           </p>
-          <h2 className="tracking-normal text-4xl font-semibold leading-[1.3] text-blue-grey-900">
+          <h2 className="tracking-normal text-4xl font-semibold leading-[1.3] text-blue-gray-900">
             You are into a great company
           </h2>
-          <p className="text-xl font-normal leading-relaxed text-blue-grey-700 lg:px-52">
+          <p className="text-xl font-normal leading-relaxed text-blue-gray-700 lg:px-52">
             This is the paragraph where you can write more details about your team. Keep you user engaged by providing meaningful information.
           </p>
         </div>

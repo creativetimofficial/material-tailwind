@@ -56,7 +56,7 @@ const progress = (theme) => ({
   ".progress-deep-orange": progressVariant(theme, "colors.deep-orange"),
   ".progress-brown": progressVariant(theme, "colors.brown"),
   ".progress-grey": progressVariant(theme, "colors.grey"),
-  ".progress-blue-grey": progressVariant(theme, "colors.blue-grey"),
+  ".progress-blue-gray": progressVariant(theme, "colors.blue-gray"),
   ".progress-red": progressVariant(theme, "colors.red"),
   ".progress-secondary": progressVariant(theme, "colors.secondary"),
   ".progress-dark": progressVariant(theme, "colors.dark"),

@@ -106,7 +106,7 @@ const button = (theme) => ({
       }
     }
   },
-  ".button-blue-grey": buttonVariant(theme, "colors.blue-grey"),
+  ".button-blue-gray": buttonVariant(theme, "colors.blue-gray"),
   ".button-grey": buttonVariant(theme, "colors.grey"),
   ".button-brown": buttonVariant(theme, "colors.brown"),
   ".button-deep-orange": buttonVariant(theme, "colors.deep-orange"),

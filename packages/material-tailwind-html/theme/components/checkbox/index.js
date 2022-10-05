@@ -6,7 +6,7 @@ const checkbox = (theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "50%",
     backgroundSize: theme("backgroundSize.contain"),
-    border: `1px solid theme("colors.blue-grey.100")`,
+    border: `1px solid theme("colors.blue-gray.100")`,
     position: "relative",
     backgroundImage: theme("backgroundImage.none"),
     borderRadius: theme("borderRadius.md"),

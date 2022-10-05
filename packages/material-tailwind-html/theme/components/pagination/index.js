@@ -68,7 +68,7 @@ const pagination = (theme) => ({
   ".pagination-deep-orange": paginationVariant(theme, "colors.deep-orange"),
   ".pagination-brown": paginationVariant(theme, "colors.brown"),
   ".pagination-grey": paginationVariant(theme, "colors.grey"),
-  ".pagination-blue-grey": paginationVariant(theme, "colors.blue-grey"),
+  ".pagination-blue-gray": paginationVariant(theme, "colors.blue-gray"),
   ".pagination-red": paginationVariant(theme, "colors.red"),
   ".pagination-secondary": paginationVariant(theme, "colors.secondary"),
   ".pagination-dark": paginationVariant(theme, "colors.dark"),
