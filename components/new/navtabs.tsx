@@ -2,7 +2,7 @@ export default function ComponentNavTabs() {
   return (
     <div className="nav-tabs w-7/12">
       <nav>
-        <ul role="tablist" className="tabs p-1" tab-panel="">
+        <ul role="tablist" className="tabs p-1"> 
           <li className="nav-item">
             <a
               className="nav-link active mb-0 px-0 py-1"
