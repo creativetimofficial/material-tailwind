@@ -1,6 +1,6 @@
-import flatpickr from "flatpickr";
+// import flatpickr from "flatpickr";
 // import Choices from "choices.js";
-import noUiSlider from "nouislider";
+// import noUiSlider from "nouislider";
 // import ApexCharts from 'apexcharts';
 
 export default function init() {
@@ -194,7 +194,6 @@ export default function init() {
         bar3.classList.toggle("mt-[0.4375rem]");
       });
     }
-  
   })();
   ("use strict");
   (function () {
