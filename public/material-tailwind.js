@@ -1,17 +1,17 @@
 "use strict";
-if (document.querySelector('.datepicker')) {
+if (document.querySelector(".datepicker")) {
   flatpickr(".datepicker", {});
-};
-"use strict";
-if (document.querySelector('.timepicker')) {
+}
+("use strict");
+if (document.querySelector(".timepicker")) {
   flatpickr(".timepicker", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
-    time_24hr: true
+    time_24hr: true,
   });
-};
-"use strict";
+}
+("use strict");
 (function () {
   const slides = document.querySelectorAll(".slide");
 
@@ -49,7 +49,7 @@ if (document.querySelector('.timepicker')) {
   });
 })();
 
-"use strict";
+("use strict");
 (function () {
   var alert_dismiss = document.querySelectorAll("[alert-dismiss]");
   alert_dismiss.forEach(function (dismiss) {
@@ -112,8 +112,7 @@ if (document.querySelector('.timepicker')) {
         var div = document.createElement("DIV");
         shadowCardsRounded[i].parentElement.appendChild(div);
         div.classList.add("colored-shadow", "rounded-full");
-        var currentSrc =
-          shadowCardsRounded[i].children[0].getAttribute("src");
+        var currentSrc = shadowCardsRounded[i].children[0].getAttribute("src");
         var el = shadowCardsRounded[i].nextElementSibling;
         el.style.backgroundImage = "url(" + currentSrc + ")";
       }
@@ -432,8 +431,8 @@ if (document.querySelector('.timepicker')) {
               moving_div.style.transform =
                 "translate3d(" + sum + "px, 0px, 0px)";
               moving_div.style.width =
-                item.querySelector("li:nth-child(" + index + ")")
-                  .offsetWidth + "px";
+                item.querySelector("li:nth-child(" + index + ")").offsetWidth +
+                "px";
             }
           };
       }
@@ -500,12 +499,16 @@ if (document.querySelector('.timepicker')) {
       var links = nav_pills.querySelectorAll("li a.nav-link");
       links.forEach(function (link) {
         link.addEventListener("click", function () {
-          var clicked_tab = document.querySelector("#" + link.getAttribute("aria-controls"));
+          var clicked_tab = document.querySelector(
+            "#" + link.getAttribute("aria-controls")
+          );
           if (!clicked_tab.classList.contains("active")) {
             var active_link = clicked_tab
               .closest(".nav-tabs")
               .querySelector("li a.nav-link.active");
-            var active_panel = document.querySelector("#" + active_link.getAttribute("aria-controls"));
+            var active_panel = document.querySelector(
+              "#" + active_link.getAttribute("aria-controls")
+            );
             active_panel.classList.remove("active");
             clicked_tab.classList.add("active");
           }
