@@ -22,7 +22,7 @@
     <img src="https://img.shields.io/npm/dt/@material-tailwind/html.svg" alt="Total Downloads">
   </a>
   <a href="https://github.com/creativetimofficial/material-tailwind/releases">
-    <img src="https://img.shields.io/badge/version-1.2.1-blue.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-1.2.3-blue.svg" alt="Version" />
   </a>
 </p>
 

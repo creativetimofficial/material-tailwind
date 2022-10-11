@@ -1,18 +1,20 @@
 const hr = (theme) => ({
-  "hr": {
+  hr: {
     height: theme("spacing.px"),
     opacity: theme("opacity.25"),
     borderTopWidth: theme("spacing.0"),
 
-    "&.horizontal" : {
+    "&.horizontal": {
       backgroundColor: theme("colors.transparent"),
 
       "&.dark": {
-        backgroundImage: "linear-gradient(theme('rotate.90'), theme('colors.transparent'), rgba(0,0,0,.4), theme('colors.transparent'))"
+        backgroundImage:
+          "linear-gradient(theme('rotate.90'), theme('colors.transparent'), rgba(0,0,0,.4), theme('colors.transparent'))",
       },
       "&.light": {
-        backgroundImage: "linear-gradient(theme('rotate.90'), hsla(0,0%,100%,0), theme('colors.white'), hsla(0,0%,100%,0))"
-      }
+        backgroundImage:
+          "linear-gradient(theme('rotate.90'), hsla(0,0%,100%,0), theme('colors.white'), hsla(0,0%,100%,0))",
+      },
     },
 
     "&.vertical": {
@@ -22,16 +24,18 @@ const hr = (theme) => ({
       right: theme("spacing.0"),
       top: theme("spacing.0"),
       width: theme("spacing.px"),
-    
+
       "&.light": {
-        backgroundImage: "background-image: linear-gradient(theme('rotate.90'), hsla(0,0%,100%,0), theme('colors.white'), hsla(0,0%,100%,0))"
+        backgroundImage:
+          "linear-gradient(theme('rotate.90'), hsla(0,0%,100%,0), theme('colors.white'), hsla(0,0%,100%,0))",
       },
-    
+
       "&.dark": {
-        backgroundImage: "linear-gradient(theme('rotate.90'), theme('colors.transparent'), rgba(0,0,0,.4), theme('colors.transparent'))"
-      }
-    }
-  }
+        backgroundImage:
+          "linear-gradient(theme('rotate.90'), theme('colors.transparent'), rgba(0,0,0,.4), theme('colors.transparent'))",
+      },
+    },
+  },
 });
 
 module.exports.hr = hr;
