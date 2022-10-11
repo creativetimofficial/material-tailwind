@@ -10,43 +10,42 @@ const tooltip = (theme) => ({
     display: "none",
 
     "&[data-show]": {
-      display: "block"
+      display: "block",
     },
 
     "&[data-placement^='top'] > .arrow": {
-      bottom: "-" + theme("spacing.1")
+      bottom: "-" + theme("spacing.1"),
     },
 
     "&[data-placement^='bottom'] > .arrow": {
-      top: "-" + theme("spacing.1")
+      top: "-" + theme("spacing.1"),
     },
 
     "&[data-placement^='left'] > .arrow": {
-      right: "-" + theme("spacing.1")
+      right: "-" + theme("spacing.1"),
     },
 
     "&[data-placement^='right'] > .arrow": {
-      left: "-" + theme("spacing.1")
+      left: "-" + theme("spacing.1"),
     },
-  
 
     ".arrow,.arrow:before": {
       position: "absolute",
       width: theme("width.2"),
       height: theme("height.2"),
-      background: "inherit"
+      background: "inherit",
     },
 
     ".arrow": {
       visibility: "hidden",
     },
-    
+
     ".arrow:before": {
       visibility: "visible",
       content: "''",
-      transform: "rotate(45deg)"
-    }
-  }
+      transform: "rotate(45deg)",
+    },
+  },
 });
 
 module.exports.tooltip = tooltip;

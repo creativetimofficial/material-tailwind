@@ -3,8 +3,10 @@ const alertVariant = (theme, background) => ({
   color: theme("colors.white"),
 
   "&.alert-gradient": {
-    backgroundImage: `linear-gradient(195deg, ${theme(`${background}.400`)}, ${theme(`${background}.600`)})`
-  }
+    backgroundImage: `linear-gradient(195deg, ${theme(
+      `${background}.400`
+    )}, ${theme(`${background}.600`)})`,
+  },
 });
 
 const alert = (theme) => ({
@@ -17,11 +19,11 @@ const alert = (theme) => ({
     lineHeight: theme("spacing.5"),
     opacity: theme("opacity.100"),
     transition: "opacity .15s linear",
-  
+
     "&.hide": {
       opacity: "0",
-      display: "none"
-    }
+      display: "none",
+    },
   },
   ".alert-pink": alertVariant(theme, "colors.pink"),
   ".alert-purple": alertVariant(theme, "colors.purple"),

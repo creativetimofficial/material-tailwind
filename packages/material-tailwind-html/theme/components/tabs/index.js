@@ -12,7 +12,6 @@ const tabs = (theme) => ({
       flex: "1 1 auto",
       textAlign: "center",
       zIndex: "3",
-      
 
       ".nav-link": {
         display: "block",
@@ -24,7 +23,7 @@ const tabs = (theme) => ({
         cursor: "pointer",
         borderRadius: theme("borderRadius.lg"),
         backgroundColor: "inherit",
-      }
+      },
     },
     ".moving-tab": {
       display: "block",
@@ -41,10 +40,10 @@ const tabs = (theme) => ({
         "&.active": {
           color: theme("colors.white"),
           fontWeight: theme("fontWeight.semibold"),
-          color: theme("colors.transparent")
-        }
-      }
-    }
+          color: theme("colors.transparent"),
+        },
+      },
+    },
   },
 
   ".tabs-content": {
@@ -59,14 +58,13 @@ const tabs = (theme) => ({
       fontSize: theme("fontSize.base"),
       fontFamily: "Roboto, sans-serif",
 
-
       "&.active": {
         opacity: theme("opacity.100"),
         display: "block",
-        transition: "opacity .15s linear"
-      }
-    }
-  }
+        transition: "opacity .15s linear",
+      },
+    },
+  },
 });
 
 module.exports.tabs = tabs;

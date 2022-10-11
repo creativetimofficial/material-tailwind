@@ -17,14 +17,13 @@ const popover = (theme) => ({
       padding: theme("spacing.4"),
       paddingBottom: theme("spacing.2"),
       color: theme("colors.secondary.500"),
-      borderBottom: "1px solid rgba(241, 245, 249, 1)"
-
+      borderBottom: "1px solid rgba(241, 245, 249, 1)",
     },
 
     ".popover-body": {
       padding: theme("spacing.4"),
       paddingTop: theme("spacing.2"),
-      color: theme("colors.secondary.500")
+      color: theme("colors.secondary.500"),
     },
 
     "&[data-placement='top']": {
@@ -32,53 +31,52 @@ const popover = (theme) => ({
 
       ".arrow": {
         bottom: "-" + theme("spacing.1"),
-        top: "auto"
-      }
+        top: "auto",
+      },
     },
 
     "&[data-placement='right']": {
       marginLeft: theme("spacing.2") + "!important",
 
       ".arrow": {
-        left: "-" + theme("spacing.1")
-      }
+        left: "-" + theme("spacing.1"),
+      },
     },
 
     "&[data-placement='bottom']": {
       marginTop: theme("spacing.2") + "!important",
 
       ".arrow": {
-        top: "-" + theme("spacing.1")
-      }
+        top: "-" + theme("spacing.1"),
+      },
     },
 
     "&[data-placement='left']": {
       marginRight: theme("spacing.2") + "!important",
 
       ".arrow": {
-        right: "-" + theme("spacing.1")
-      }
+        right: "-" + theme("spacing.1"),
+      },
     },
 
     ".arrow,.arrow:before": {
       position: "absolute",
       width: theme("width.2"),
       height: theme("height.2"),
-      background: "inherit"
+      background: "inherit",
     },
 
     ".arrow": {
       visibility: "hidden",
-      top:  "-" + theme("spacing.1")
+      top: "-" + theme("spacing.1"),
     },
 
     ".arrow:before": {
       visibility: "visible",
       content: "''",
-      transform: "rotate(45deg)"
-    }
-
-  }
+      transform: "rotate(45deg)",
+    },
+  },
 });
 
 module.exports.popover = popover;

@@ -17,14 +17,14 @@ const spinners = (theme) => ({
       overflow: "hidden",
       padding: theme("spacing.0"),
       position: "absolute",
-      width: theme("width.px")
-    }
+      width: theme("width.px"),
+    },
   },
   "@keyframes b": {
-    "100%": { 
-      transform: "rotate(1turn)" 
-    }
-  }
+    "100%": {
+      transform: "rotate(1turn)",
+    },
+  },
 });
 
 module.exports.spinners = spinners;

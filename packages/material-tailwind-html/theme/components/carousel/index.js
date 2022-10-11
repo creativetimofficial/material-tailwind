@@ -17,36 +17,36 @@ const carousel = (theme) => ({
       img: {
         width: theme("width.full"),
         height: theme("height.full"),
-        objectFit: "cover"
-      }
+        objectFit: "cover",
+      },
     },
 
-    "button": {
+    button: {
       position: "absolute",
       zIndex: theme("zIndex.[10]"),
 
       i: {
         fontSize: theme("fontSize.4xl"),
-        opacity: theme("opacity.80")
+        opacity: theme("opacity.80"),
       },
 
       "&:hover": {
         i: {
-          opacity: theme("opacity.100")
-        }
-      }
+          opacity: theme("opacity.100"),
+        },
+      },
     },
 
     ".button-prev": {
       top: "45%",
-      left: "2%"
+      left: "2%",
     },
-    
+
     ".button-next": {
       top: "45%",
-      right: "2%"
-    }
-  }
+      right: "2%",
+    },
+  },
 });
 
 module.exports.carousel = carousel;

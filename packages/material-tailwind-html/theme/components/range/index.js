@@ -1,5 +1,3 @@
-const range = (theme) => ({
- 
-});
+const range = (theme) => ({});
 
 module.exports.range = range;

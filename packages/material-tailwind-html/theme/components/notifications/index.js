@@ -13,13 +13,13 @@ const notifications = (theme) => ({
       alignItems: "center",
       padding: theme("spacing.3"),
       color: theme("colors.dark.500"),
-      backgroundClip: "padding-box"
+      backgroundClip: "padding-box",
     },
-    
+
     ".notification-body": {
       padding: theme("spacing.3"),
-      wordWrap: "break-word"
-    }
+      wordWrap: "break-word",
+    },
   },
 
   ".fade": {
@@ -27,8 +27,8 @@ const notifications = (theme) => ({
   },
 
   ".notification:not(.show)": {
-    display: "none"
-  }
+    display: "none",
+  },
 });
 
 module.exports.notifications = notifications;

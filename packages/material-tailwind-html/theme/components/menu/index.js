@@ -11,7 +11,8 @@ const menu = (theme) => ({
     backfaceVisibility: "hidden",
     willChange: "transform, box-shadow",
     boxShadow: theme("boxShadow.lg"),
-    transition: "transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1)",
+    transition:
+      "transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1)",
     cursor: theme("cursor.pointer"),
     zIndex: "1000",
     minWidth: theme("spacing.44"),
@@ -39,7 +40,7 @@ const menu = (theme) => ({
       transition: "top .35s ease",
       display: "block",
       clear: "both",
-      boxSizing: "border-box"
+      boxSizing: "border-box",
     },
 
     "&.menu-right": {
@@ -48,8 +49,8 @@ const menu = (theme) => ({
 
       "&:before": {
         right: theme("spacing.7"),
-        left: "auto"
-      }
+        left: "auto",
+      },
     },
 
     ".menu-item + .dropdown-menu": {
@@ -61,12 +62,12 @@ const menu = (theme) => ({
         top: "15px !important",
         left: "-9px",
         right: "auto",
-        transform: "rotate(-90deg)"
-      }
+        transform: "rotate(-90deg)",
+      },
     },
     ".menu-item + .dropdown-menu.open": {
       opacity: theme("opacity.100") + "!important",
-    }
+    },
   },
 
   ".menu": {
@@ -80,10 +81,10 @@ const menu = (theme) => ({
         marginTop: "2.8125rem",
 
         "&:before": {
-          top: "-19px"
-        }
-      }
-    }
+          top: "-19px",
+        },
+      },
+    },
   },
 
   ".menu-item": {
@@ -98,12 +99,12 @@ const menu = (theme) => ({
     backgroundColor: theme("colors.transparent"),
     border: theme("spacing.0"),
     transition: "background-color .3s ease, color .3s ease",
-  
+
     "&:hover": {
       color: theme("colors.dark.500"),
-      backgroundColor: theme("colors.light.500")
-    }
-  }
+      backgroundColor: theme("colors.light.500"),
+    },
+  },
 });
 
 module.exports.menu = menu;

@@ -14,15 +14,15 @@ const breadcrumbs = (theme) => ({
 
       "+.breadcrumb-item": {
         paddingLeft: theme("spacing.2"),
-        
+
         "&:before": {
           paddingRight: theme("spacing.2"),
           color: "#6c757d",
-          content: '"\\ /"'
-        }
-      }
-    }
-  }
+          content: '"\\ /"',
+        },
+      },
+    },
+  },
 });
 
 module.exports.breadcrumbs = breadcrumbs;

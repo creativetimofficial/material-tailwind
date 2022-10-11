@@ -4,7 +4,8 @@ const navbar = (theme) => ({
     display: "flex",
     padding: "theme('spacing.2') theme('spacing.4')",
     borderRadius: theme("borderRadius.xl"),
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);",
+    boxShadow:
+      "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);",
 
     ".navbar-collapse": {
       display: "flex",
@@ -16,9 +17,9 @@ const navbar = (theme) => ({
       "@media (max-width: 992px)": {
         "&.collapse:not(.open)": {
           maxHeight: "theme('height.0') !important",
-          opacity: theme("opacity.0")
-        }
-      }
+          opacity: theme("opacity.0"),
+        },
+      },
     },
     "@media (max-width: 992px)": {
       ".navbar-collapse": {
@@ -29,9 +30,9 @@ const navbar = (theme) => ({
         zIndex: theme("zIndex.20"),
 
         ".navbar-nav": {
-        display: "block"
-        }
-      }
+          display: "block",
+        },
+      },
     },
 
     ".navbar-nav": {
@@ -40,22 +41,22 @@ const navbar = (theme) => ({
       paddingLeft: theme("spacing.0"),
       marginBottom: theme("spacing.0"),
       listStyle: "none",
-      marginLeft: "auto"
+      marginLeft: "auto",
     },
-  
+
     ".nav-link": {
       padding: "theme('spacing.2') theme('spacing.4')",
       fontWeight: theme("fontWeight.normal"),
       fontSize: theme("fontSize.sm"),
-      color:  theme("colors.dark.500"),
+      color: theme("colors.dark.500"),
       alignItems: "center",
-      display: "flex"
+      display: "flex",
     },
 
     ".nav-brand": {
       color: theme("colors.dark.500"),
       fontSize: theme("fontSize.sm"),
-      fontWeight: theme("fontWeight.bold")
+      fontWeight: theme("fontWeight.bold"),
     },
 
     ".navbar-trigger": {
@@ -68,8 +69,8 @@ const navbar = (theme) => ({
       transition: "box-shadow .15s ease-in-out",
 
       ".navbar-trigger-icon": {
-        backgroundImage: "none"
-      }
+        backgroundImage: "none",
+      },
     },
 
     ".navbar-trigger-icon": {
@@ -79,7 +80,7 @@ const navbar = (theme) => ({
       verticalAlign: "middle",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "50%",
-      backgroundSize: "100%"
+      backgroundSize: "100%",
     },
 
     ".navbar-trigger-bar": {
@@ -89,21 +90,21 @@ const navbar = (theme) => ({
       height: theme("height.px"),
       borderRadius: "1px",
       background: "#6c757d",
-      transition: "all .2s"
-    }
+      transition: "all .2s",
+    },
   },
   ".container-lg": {
     display: "flex",
     width: theme("width.full"),
     flexWrap: "inherit",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   "@media (max-width: 992px)": {
     ".container-lg": {
-      flexWrap: "wrap"
-    }
-  }
+      flexWrap: "wrap",
+    },
+  },
 });
 
 module.exports.navbar = navbar;

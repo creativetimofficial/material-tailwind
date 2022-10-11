@@ -2,8 +2,10 @@ const backgroundColor = (theme, background) => ({
   backgroundColor: theme(`${background}.500`),
 
   "&.bg-gradient": {
-    backgroundImage: `linear-gradient(195deg, ${theme(`${background}.400`)}, ${theme(`${background}.600`)})`
-  }
+    backgroundImage: `linear-gradient(195deg, ${theme(
+      `${background}.400`
+    )}, ${theme(`${background}.600`)})`,
+  },
 });
 
 const background = (theme) => ({
