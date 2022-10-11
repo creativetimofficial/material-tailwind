@@ -16,13 +16,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@floating-ui/react-dom-interactions": "^0.10.1",
+    "@floating-ui/react-dom-interactions": "^0.8.1",
     "choices.js": "^10.1.0",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
     "downshift": "^6.1.12",
     "flatpickr": "^4.6.13",
-    "framer-motion": "^7.5.3",
+     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "material-ripple-effects": "^2.0.1",
     "mdx-observable": "^0.2.0",
