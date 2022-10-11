@@ -36,7 +36,7 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-jsx-parser": "^1.29.0",
-    "react-merge-refs": "^2.0.1",
+    "react-merge-refs": "^1.1.0",
     "react-simple-code-editor": "^0.13.1",
     "rehype-pretty-code": "^0.3.2",
     "remark-gfm": "^3.0.1",
