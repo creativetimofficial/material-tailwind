@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run sitemap",
     "sitemap": "next-sitemap",
     "build:react": "pnpm --filter ./packages/material-tailwind-react build",
     "build:html": "pnpm --filter ./packages/material-tailwind-html build",
