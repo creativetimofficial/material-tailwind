@@ -20,8 +20,7 @@ const nextConfig = {
     return [
       {
         source: "/blocks/:path*",
-        destination:
-          "https://material-taillwind-pro-bxhm.vercel.app/blocks/:path*",
+        destination: "https://material-tailwind-pro.vercel.app/blocks/:path*",
       },
     ];
   },
