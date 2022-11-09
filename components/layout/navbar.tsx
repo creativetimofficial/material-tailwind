@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 // next.js components
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 // @material-tailwind/react components
 import {
@@ -60,7 +59,6 @@ export default function Navbar({
   mobileNavClassName = "text-[#1A237E]",
   ...rest
 }: NavbarProps) {
-  const { query } = useRouter();
   const [open, setOpen] = useState(false);
   const [stars, setStars] = useState(0);
   const navbarItemClasses =
@@ -156,41 +154,25 @@ export default function Navbar({
             </MenuItem>
           </MenuList>
         </Menu>
-        <Menu placement="bottom" offset={-2.5}>
-          <MenuHandler>
-            <li>
-              <span className={navbarItemClasses}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="mr-1.5 h-[18px] w-[18px] opacity-75"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 6a3 3 0 013-3h2.25a3 3 0 013 3v2.25a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm9.75 0a3 3 0 013-3H18a3 3 0 013 3v2.25a3 3 0 01-3 3h-2.25a3 3 0 01-3-3V6zM3 15.75a3 3 0 013-3h2.25a3 3 0 013 3V18a3 3 0 01-3 3H6a3 3 0 01-3-3v-2.25zm9.75 0a3 3 0 013-3H18a3 3 0 013 3V18a3 3 0 01-3 3h-2.25a3 3 0 01-3-3v-2.25z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Blocks</span>
-              </span>
-            </li>
-          </MenuHandler>
-          <MenuList>
-            <MenuItem className="!p-0">
-              <Link href="/blocks/html">
-                <a className={`${navbarItemClasses} px-3 py-2 lg:px-3`}>HTML</a>
-              </Link>
-            </MenuItem>
-            <MenuItem className="!p-0">
-              <Link href="/blocks/react">
-                <a className={`${navbarItemClasses} px-3 py-2 lg:px-3`}>
-                  ReactJS
-                </a>
-              </Link>
-            </MenuItem>
-          </MenuList>
-        </Menu>
+        <li>
+          <Link href="/blocks">
+            <a className={navbarItemClasses}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="mr-1.5 h-[18px] w-[18px] opacity-75"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 6a3 3 0 013-3h2.25a3 3 0 013 3v2.25a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm9.75 0a3 3 0 013-3H18a3 3 0 013 3v2.25a3 3 0 01-3 3h-2.25a3 3 0 01-3-3V6zM3 15.75a3 3 0 013-3h2.25a3 3 0 013 3V18a3 3 0 01-3 3H6a3 3 0 01-3-3v-2.25zm9.75 0a3 3 0 013-3H18a3 3 0 013 3V18a3 3 0 01-3 3h-2.25a3 3 0 01-3-3v-2.25z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Blocks
+            </a>
+          </Link>
+        </li>
         <li>
           <a
             href="https://services.creative-tim.com/?ref=material-tailwind"
@@ -260,18 +242,13 @@ export default function Navbar({
           </Tooltip>
         </ul>
         <a
-          href={`${
-            query.slug && query.slug[0] === "html"
-              ? "https://www.material-tailwind.com/blocks/html"
-              : "https://www.material-tailwind.com/blocks/react"
-          }`}
+          href="https://www.material-tailwind.com/blocks"
           target="_blank"
           rel="noreferrer"
         >
           <Button
-            color={query.slug && query.slug[0] === "html" ? "pink" : "blue"}
             variant="gradient"
-            className="my-3 flex items-center lg:my-0 lg:ml-4"
+            className="mt-3 mb-5 flex items-center lg:mt-0 lg:mb-0 lg:ml-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
