@@ -39,10 +39,14 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
   containerProps?: containerProps;
   labelProps?: labelProps;
   circleProps?: circleProps;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ color, label, ripple, className, containerProps, circleProps, labelProps, ...rest }, ref) => {
+  (
+    { color, label, ripple, className, containerProps, circleProps, labelProps, inputRef, ...rest },
+    ref,
+  ) => {
     // 1. init
     const { switch: toggle } = useTheme();
     const { defaultProps, valid, styles } = toggle;
@@ -84,7 +88,13 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     return (
       <div ref={ref} className={rootClasses}>
         <div {...containerProps} className={containerClasses}>
-          <input {...rest} type="checkbox" id={rest.id || "switch"} className={inputClasses} />
+          <input
+            {...rest}
+            ref={inputRef}
+            type="checkbox"
+            id={rest.id || "switch"}
+            className={inputClasses}
+          />
           <label {...circleProps} htmlFor={rest.id || "switch"} className={circleClasses}>
             {ripple && (
               <div
