@@ -123,6 +123,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       objectsToString(inputVariant.base.icon),
       objectsToString(inputSize.icon),
     );
+    const asteriskClasses = classnames(objectsToString(base.asterisk));
 
     // 4. return
     return (
@@ -135,7 +136,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           placeholder={rest?.placeholder || " "}
         />
         <label {...labelProps} className={labelClasses}>
-          {label}
+          {label} {rest.required ? <span className={asteriskClasses}>*</span> : ""}
         </label>
       </div>
     );
