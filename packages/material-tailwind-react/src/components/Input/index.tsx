@@ -46,6 +46,7 @@ export interface InputProps extends Omit<React.ComponentProps<"input">, "size"> 
   labelProps?: labelProps;
   containerProps?: containerProps;
   className?: className;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -61,6 +62,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       containerProps,
       labelProps,
       className,
+      inputRef,
       ...rest
     },
     ref,
@@ -126,7 +128,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div {...containerProps} ref={ref} className={containerClasses}>
         {icon && <div className={iconClasses}>{icon}</div>}
-        <input {...rest} className={inputClasses} placeholder={rest?.placeholder || " "} />
+        <input
+          {...rest}
+          ref={inputRef}
+          className={inputClasses}
+          placeholder={rest?.placeholder || " "}
+        />
         <label {...labelProps} className={labelClasses}>
           {label}
         </label>
