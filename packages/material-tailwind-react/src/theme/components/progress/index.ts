@@ -76,8 +76,10 @@ export const progress: ProgressStylesType = {
       bar: {
         display: "flex",
         justifyContent: "justify-center",
-        alignItems: "items-center",
+        alignItems: "items-baseline",
         height: "h-full",
+        overflow: "overflow-hidden",
+        wordBreak: "break-all",
       },
     },
     variants: {
