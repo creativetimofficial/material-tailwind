@@ -35,6 +35,7 @@ import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
+import CodeTabs from "components/code-tabs";
 
 // @material-tailwind/react components
 import {
@@ -159,6 +160,7 @@ const components = {
   pre: (props) => <Pre {...props} />,
   State,
   Observe,
+  CodeTabs,
   Image,
   ComponentDemo,
   CodeSandbox,

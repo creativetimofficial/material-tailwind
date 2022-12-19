@@ -22,7 +22,7 @@
     "deepmerge": "^4.2.2",
     "downshift": "^6.1.12",
     "flatpickr": "^4.6.13",
-     "framer-motion": "^6.5.1",
+    "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "material-ripple-effects": "^2.0.1",
     "mdx-observable": "^0.2.0",
