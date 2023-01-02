@@ -27,7 +27,7 @@ export type error = boolean;
 export type success = boolean;
 export type arrow = ReactNode;
 export type value = string;
-export type onChange = (value?: ReactNode) => void;
+export type onChange = (value?: string) => void;
 export type selected = (element?: ReactElement, index?: number) => React.ReactNode;
 export type offset = offsetType;
 export type dismiss = dismissType;
@@ -43,6 +43,7 @@ export type menuProps = {
 export type index = number;
 export type disabled = boolean;
 export type className = string;
+export type name = string;
 export type children = ReactNode;
 export type contextValue = {
   selectedIndex: number;
@@ -77,6 +78,7 @@ export const propTypesMenuProps: any = PropTypes.instanceOf(Object);
 export const propTypesIndex: any = PropTypes.number;
 export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
+export const propTypesName: any = PropTypes.string;
 export const propTypesChildren: any = PropTypes.node.isRequired;
 export const propTypesContextValue: any = PropTypes.shape({
   selectedIndex: PropTypes.number.isRequired,
