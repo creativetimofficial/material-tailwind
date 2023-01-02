@@ -31,12 +31,6 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     const {
       styles: { base },
     } = accordion;
-    const bodyEl = React.useRef(null);
-    const [height, setHeight] = React.useState(0);
-
-    React.useEffect(() => {
-      setHeight(bodyEl.current?.scrollHeight);
-    }, []);
 
     // 2. set default props
     className = className ?? "";
@@ -51,7 +45,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: `${height + 10}px`,
+        height: "100%",
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
@@ -73,7 +67,6 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
     return (
       <motion.div
         className="overflow-hidden"
-        ref={bodyEl}
         initial="unmount"
         exit="unmount"
         animate={open ? "mount" : "unmount"}
