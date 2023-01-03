@@ -45,7 +45,7 @@ const pagination = (theme) => ({
       position: "relative",
       backgroundColor: theme("colors.white"),
       border: "1px solid #dee2e6",
-      trasition:
+      transition:
         "color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out",
 
       "&:hover": {
