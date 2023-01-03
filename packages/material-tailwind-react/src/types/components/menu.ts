@@ -2,12 +2,7 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui types
-import type {
-  Placement,
-  Strategy,
-  FloatingContext,
-  ReferenceType,
-} from "@floating-ui/react-dom-interactions";
+import type { Placement, Strategy, FloatingContext, ReferenceType } from "@floating-ui/react";
 
 // generic types
 import type { dismissType, animation, offsetType } from "../generic";

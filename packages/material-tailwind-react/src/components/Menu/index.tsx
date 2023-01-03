@@ -1,7 +1,7 @@
 import React from "react";
 
 // @floating-ui
-import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react-dom-interactions";
+import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 
 // context
 import { useMenu } from "./MenuContext";

@@ -1,7 +1,7 @@
 import React from "react";
 
 // @floating-ui
-import { FloatingPortal, FloatingFocusManager } from "@floating-ui/react-dom-interactions";
+import { FloatingPortal, FloatingFocusManager } from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion } from "framer-motion";

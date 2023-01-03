@@ -15,7 +15,7 @@ import {
   useHover,
   useFocus,
   FloatingPortal,
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion } from "framer-motion";

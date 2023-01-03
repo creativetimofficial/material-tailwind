@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui types
-import type { ContextData } from "@floating-ui/react-dom-interactions";
+import type { ContextData } from "@floating-ui/react";
 
 // generic types
 import type { colors, dismissType, animation, offsetType } from "../generic";

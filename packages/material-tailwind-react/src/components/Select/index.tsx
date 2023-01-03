@@ -16,7 +16,7 @@ import {
   autoUpdate,
   size as fuiSize,
   FloatingOverlay,
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion, useIsomorphicLayoutEffect } from "framer-motion";
@@ -363,7 +363,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
 
     // 8. select menu
     const selectMenu = (
-      <FloatingFocusManager context={context} preventTabbing>
+      <FloatingFocusManager context={context}>
         <motion.ul
           {...getFloatingProps({
             ...menuProps,
