@@ -20,7 +20,7 @@ import {
   useListNavigation,
   useTypeahead,
   autoUpdate,
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 
 // utils
 import merge from "deepmerge";

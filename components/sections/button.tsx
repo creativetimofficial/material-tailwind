@@ -87,9 +87,7 @@ export default function SectionButton() {
             you can change the colors, fonts, styling, and everything you need.
           </Typography>
           <Link href="/docs/react/button">
-            <a>
-              <Button>Get Started</Button>
-            </a>
+            <Button>Get Started</Button>
           </Link>
           <div className="mt-7 flex flex-wrap text-[#1A237E]">
             <div className="mr-6 w-auto text-center md:mr-8">

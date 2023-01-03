@@ -39,10 +39,14 @@ export interface CheckboxProps extends React.ComponentProps<"input"> {
   className?: className;
   containerProps?: containerProps;
   labelProps?: labelProps;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
+  (
+    { color, label, icon, ripple, className, containerProps, labelProps, inputRef, ...rest },
+    ref,
+  ) => {
     // 1. init
     const { checkbox } = useTheme();
     const { defaultProps, valid, styles } = checkbox;
@@ -87,7 +91,13 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             return typeof onMouseDown === "function" && onMouseDown(e);
           }}
         >
-          <input {...rest} type="checkbox" className={inputClasses} id={rest.id || "checkbox"} />
+          <input
+            {...rest}
+            ref={inputRef}
+            type="checkbox"
+            className={inputClasses}
+            id={rest.id || "checkbox"}
+          />
           <div className="text-white absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">
             {icon || (
               <svg

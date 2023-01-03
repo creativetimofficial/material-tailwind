@@ -26,32 +26,28 @@ export default function DocsFooter({ type, frontMatter }: Props) {
       >
         {frontMatter.prev && (
           <Link href={`/docs/${type}/${frontMatter.prev}`}>
-            <a>
-              <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
-                <i className="fas fa-caret-left mr-2 mt-px" />
-                {frontMatter.prev.includes("-")
-                  ? frontMatter.prev
-                      .split("-")
-                      .map((el) => (el === "css" ? "CSS" : el))
-                      .join(" ")
-                  : frontMatter.prev}
-              </Typography>
-            </a>
+            <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
+              <i className="fas fa-caret-left mr-2 mt-px" />
+              {frontMatter.prev.includes("-")
+                ? frontMatter.prev
+                    .split("-")
+                    .map((el) => (el === "css" ? "CSS" : el))
+                    .join(" ")
+                : frontMatter.prev}
+            </Typography>
           </Link>
         )}
         {frontMatter.next && (
           <Link href={`/docs/${type}/${frontMatter.next}`}>
-            <a>
-              <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
-                {frontMatter.next.includes("-")
-                  ? frontMatter.next
-                      .split("-")
-                      .map((el) => (el === "css" ? "CSS" : el))
-                      .join(" ")
-                  : frontMatter.next}
-                <i className="fas fa-caret-right ml-2 mt-px" />
-              </Typography>
-            </a>
+            <Typography className="py-2 font-medium capitalize text-blue-gray-500 transition-colors hover:text-blue-gray-900">
+              {frontMatter.next.includes("-")
+                ? frontMatter.next
+                    .split("-")
+                    .map((el) => (el === "css" ? "CSS" : el))
+                    .join(" ")
+                : frontMatter.next}
+              <i className="fas fa-caret-right ml-2 mt-px" />
+            </Typography>
           </Link>
         )}
       </div>

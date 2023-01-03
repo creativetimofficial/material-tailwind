@@ -39,10 +39,14 @@ export interface RadioProps extends React.ComponentProps<"input"> {
   className?: className;
   containerProps?: containerProps;
   labelProps?: labelProps;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
-  ({ color, label, icon, ripple, className, containerProps, labelProps, ...rest }, ref) => {
+  (
+    { color, label, icon, ripple, className, containerProps, labelProps, inputRef, ...rest },
+    ref,
+  ) => {
     // 1. init
     const { radio } = useTheme();
     const { defaultProps, valid, styles } = radio;
@@ -91,7 +95,13 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             return typeof onMouseDown === "function" && onMouseDown(e);
           }}
         >
-          <input {...rest} type="radio" className={inputClasses} id={rest.id || "radio"} />
+          <input
+            {...rest}
+            ref={inputRef}
+            type="radio"
+            className={inputClasses}
+            id={rest.id || "radio"}
+          />
           <div className={radioIconClasses}>
             {icon || (
               <svg

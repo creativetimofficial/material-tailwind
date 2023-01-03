@@ -141,36 +141,38 @@ export default function Navbar({
           </MenuHandler>
           <MenuList>
             <MenuItem className="!p-0">
-              <Link href="/docs/html/installation">
-                <a className={`${navbarItemClasses} lg:px-3`}>HTML</a>
+              <Link
+                href="/docs/html/installation"
+                className={`${navbarItemClasses} lg:px-3`}
+              >
+                HTML
               </Link>
             </MenuItem>
             <MenuItem className="!p-0">
-              <Link href="/docs/react/installation">
-                <a className={`${navbarItemClasses} px-3 py-2 lg:px-3`}>
-                  ReactJS
-                </a>
+              <Link
+                href="/docs/react/installation"
+                className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
+              >
+                ReactJS
               </Link>
             </MenuItem>
           </MenuList>
         </Menu>
         <li>
-          <Link href="/blocks">
-            <a className={navbarItemClasses}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="mr-1.5 h-[18px] w-[18px] opacity-75"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 6a3 3 0 013-3h2.25a3 3 0 013 3v2.25a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm9.75 0a3 3 0 013-3H18a3 3 0 013 3v2.25a3 3 0 01-3 3h-2.25a3 3 0 01-3-3V6zM3 15.75a3 3 0 013-3h2.25a3 3 0 013 3V18a3 3 0 01-3 3H6a3 3 0 01-3-3v-2.25zm9.75 0a3 3 0 013-3H18a3 3 0 013 3V18a3 3 0 01-3 3h-2.25a3 3 0 01-3-3v-2.25z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Blocks
-            </a>
+          <Link href="/blocks" className={navbarItemClasses}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="mr-1.5 h-[18px] w-[18px] opacity-75"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 6a3 3 0 013-3h2.25a3 3 0 013 3v2.25a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm9.75 0a3 3 0 013-3H18a3 3 0 013 3v2.25a3 3 0 01-3 3h-2.25a3 3 0 01-3-3V6zM3 15.75a3 3 0 013-3h2.25a3 3 0 013 3V18a3 3 0 01-3 3H6a3 3 0 01-3-3v-2.25zm9.75 0a3 3 0 013-3H18a3 3 0 013 3V18a3 3 0 01-3 3h-2.25a3 3 0 01-3-3v-2.25z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Blocks
           </Link>
         </li>
         <li>
@@ -284,10 +286,11 @@ export default function Navbar({
         <div
           className={`flex w-full items-center !justify-between text-[#1A237E] ${className}`}
         >
-          <Link href="/">
-            <a className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
-              Material Tailwind
-            </a>
+          <Link
+            href="/"
+            className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0"
+          >
+            Material Tailwind
           </Link>
           <IconButton
             variant="text"

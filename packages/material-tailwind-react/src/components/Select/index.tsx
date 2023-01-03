@@ -16,7 +16,7 @@ import {
   autoUpdate,
   size as fuiSize,
   FloatingOverlay,
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion, useIsomorphicLayoutEffect } from "framer-motion";
@@ -53,6 +53,7 @@ import type {
   menuProps,
   className,
   disabled,
+  name,
   children,
 } from "../../types/components/select";
 import {
@@ -74,6 +75,7 @@ import {
   propTypesMenuProps,
   propTypesClassName,
   propTypesDisabled,
+  propTypesName,
   propTypesChildren,
 } from "../../types/components/select";
 
@@ -99,6 +101,7 @@ export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" |
   menuProps?: menuProps;
   className?: className;
   disabled?: disabled;
+  name?: name;
   children: children;
 }
 
@@ -123,6 +126,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       menuProps,
       className,
       disabled,
+      name,
       children,
       ...rest
     },
@@ -348,9 +352,18 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // 6. create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
-    // 7. select menu
+    // 7. validate the controlled and uncontrolled select
+    React.useEffect(() => {
+      if (value && !onChange) {
+        console.error(
+          "Warning: You provided a `value` prop to a select component without an `onChange` handler. This will render a read-only select. If the field should be mutable use `onChange` handler with `value` together.",
+        );
+      }
+    }, [value, onChange]);
+
+    // 8. select menu
     const selectMenu = (
-      <FloatingFocusManager context={context} preventTabbing>
+      <FloatingFocusManager context={context}>
         <motion.ul
           {...getFloatingProps({
             ...menuProps,
@@ -407,7 +420,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       </FloatingFocusManager>
     );
 
-    // 8. return
+    // 9. return
     return (
       <SelectContextProvider value={contextValue}>
         <div ref={ref} className={containerClasses}>
@@ -418,12 +431,15 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               ref: reference,
               className: selectClasses,
               disabled: disabled,
+              name: name,
             })}
           >
             {typeof selected === "function" ? (
               <span className={buttonContentClasses}>
                 {selected(children[selectedIndex - 1], selectedIndex - 1)}
               </span>
+            ) : value && !onChange ? (
+              <span className={buttonContentClasses}>{value}</span>
             ) : (
               <span {...children[selectedIndex - 1]?.props} className={buttonContentClasses} />
             )}
@@ -478,6 +494,7 @@ Select.propTypes = {
   menuProps: propTypesMenuProps,
   className: propTypesClassName,
   disabled: propTypesDisabled,
+  name: propTypesName,
   children: propTypesChildren,
 };
 
