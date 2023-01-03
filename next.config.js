@@ -19,8 +19,19 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/blocks/:path*",
-        destination: "https://material-tailwind-pro.vercel.app/blocks/:path*",
+        source: "/blocks",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+      },
+      {
+        source: "/blocks/react",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+      },
+      {
+        source: "/blocks/html",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
       },
     ];
   },

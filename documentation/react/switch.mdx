@@ -73,14 +73,14 @@ import { Switch } from "@material-tailwind/react";
 export default function Colors() {
   return (
     <div className="flex w-max gap-4">
-      <Switch color="blue" defaultChecked />
-      <Switch color="red" defaultChecked />
-      <Switch color="green" defaultChecked />
-      <Switch color="amber" defaultChecked />
-      <Switch color="teal" defaultChecked />
-      <Switch color="indigo" defaultChecked />
-      <Switch color="purple" defaultChecked />
-      <Switch color="pink" defaultChecked />
+      <Switch id="blue" color="blue" defaultChecked />
+      <Switch id="red" color="red" defaultChecked />
+      <Switch id="green" color="green" defaultChecked />
+      <Switch id="amber" color="amber" defaultChecked />
+      <Switch id="teal" color="teal" defaultChecked />
+      <Switch id="indigo" color="indigo" defaultChecked />
+      <Switch id="purple" color="purple" defaultChecked />
+      <Switch id="pink" color="pink" defaultChecked />
     </div>
   );
 }
@@ -116,15 +116,14 @@ You can turn on/off the ripple effect for the <Code>Switch</Code> component usin
 </ComponentDemo>
 
 ```jsx
-import { Fragment } from "react";
 import { Switch } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Fragment>
+    <div className="space-x-8">
       <Switch id="ripple-on" label="Ripple Effect On" ripple={true} />
       <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
-    </Fragment>
+    </div>
   );
 }
 ```

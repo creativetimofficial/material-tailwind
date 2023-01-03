@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 
 // next.js components
 import Head from "next/head";

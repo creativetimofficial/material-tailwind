@@ -79,7 +79,10 @@ export default function SectionComponents() {
               <Image
                 src="/img/blog-2.jpg"
                 alt="tailwind_img_blur_shadow"
-                layout="fill"
+                className="h-full w-full object-cover"
+                quality={100}
+                width={1000}
+                height={1000}
               />
             </CardHeader>
             <CardBody>

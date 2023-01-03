@@ -82,11 +82,9 @@ export default function Header() {
                       : "/docs/html/installation"
                   }
                 >
-                  <a>
-                    <Button variant="gradient" className="h-full w-full">
-                      Get Started
-                    </Button>
-                  </a>
+                  <Button variant="gradient" className="h-full w-full">
+                    Get Started
+                  </Button>
                 </Link>
                 <div className="flex rounded-lg border border-white/80 bg-white/80 py-2.5 px-5 text-[#1A237E] shadow-2xl shadow-blue-gray-500/20 backdrop-blur-2xl backdrop-saturate-200">
                   <CopyToClipboard

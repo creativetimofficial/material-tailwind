@@ -13,7 +13,7 @@ import {
   useDismiss,
   useId,
   useClick,
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 
 // utils
 import merge from "deepmerge";

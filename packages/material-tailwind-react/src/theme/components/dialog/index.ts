@@ -67,7 +67,6 @@ export const dialog: DialogStylesType = {
         fontSize: "text-base",
         fontWeight: "font-light",
         lineHeight: "leading-relaxed",
-        overflow: "overflow-hidden",
       },
     },
     sizes: {

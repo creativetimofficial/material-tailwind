@@ -23,8 +23,6 @@ export const dialogBody: DialogBodyStylesType = {
     base: {
       initial: {
         position: "relative",
-        display: "flex",
-        flex: "flex-auto",
         p: "p-4",
         color: "text-blue-gray-500",
         fontSmoothing: "antialiased",
