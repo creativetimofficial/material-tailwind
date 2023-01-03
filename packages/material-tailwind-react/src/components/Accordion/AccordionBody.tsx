@@ -45,7 +45,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
       mount: {
-        height: "100%",
+        height: "auto",
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
     };
