@@ -14,7 +14,12 @@ const breadcrumbs = (theme) => ({
 
       "+.breadcrumb-item": {
         paddingLeft: theme("spacing.2"),
-        
+      }
+    }
+  },
+  "ol": {
+    "li": {
+      "+li": {
         "&:before": {
           paddingRight: theme("spacing.2"),
           color: "#6c757d",
