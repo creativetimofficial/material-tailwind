@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
-// import Choices from "choices.js";
 import noUiSlider from "nouislider";
+// import Choices from "choices.js";
 // import ApexCharts from 'apexcharts';
 
 export default function init() {
