@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs, TabsHeader, TabsBody, Tab } from "@material-tailwind/react";
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
   children: React.ReactNode[];
@@ -7,7 +8,7 @@ interface Props {
 
 export default function CodeTabs({ children }: Props) {
   return (
-    <Tabs value={1} className="my-4 overflow-visible rounded-lg bg-[#1e293b]">
+    <Tabs id={uuidv4()} value={1} className="my-4 overflow-visible rounded-lg bg-[#1e293b]">
       <TabsHeader
         className="rounded-none border-b border-white/10 bg-transparent"
         indicatorProps={{
