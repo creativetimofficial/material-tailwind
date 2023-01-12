@@ -39,7 +39,7 @@ See below our button components examples.
   <TabPanel value={2}>
     ```html
     <button
-      class="relative inline-block cursor-pointer overflow-hidden rounded-lg bg-pink-500 text-xs font-medium uppercase"
+      class="relative inline-block cursor-pointer py-2.5 px-6 overflow-hidden rounded-lg bg-pink text-xs font-medium uppercase"
       data-ripple-light="true"
     >
       Button
@@ -77,30 +77,55 @@ See our button examples below. They come in different styles and color.
     >
       {`Button`}
     </button>
-    <button className="button button-icon button-pink" data-ripple-light="true">
-      <i className="material-icons">dashboard</i>
+    <button class="button button-icon button-pink" data-ripple-light="true">
+      <i class="material-icons">dashboard</i>
     </button>
   </div>
 </ComponentDemo>
 
-```html
-<button class="button button-pink mr-3" data-ripple-light="true">Button</button>
-<button
-  class="button button-gradient button-pink mr-3"
-  data-ripple-light="true"
->
-  Button
-</button>
-<button class="button button-outlined button-pink mr-3" data-ripple-dark="true">
-  Button
-</button>
-<button class="button button-text button-pink mr-3" data-ripple-dark="true">
-  Button
-</button>
-<button class="button button-icon button-pink" data-ripple-light="true">
-  <i class="material-icons">dashboard</i>
-</button>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <button class="button button-pink mr-3" data-ripple-light="true">Button</button>
+    <button
+      class="button button-gradient button-pink mr-3"
+      data-ripple-light="true"
+    >
+      Button
+    </button>
+    <button class="button button-outlined button-pink mr-3" data-ripple-dark="true">
+      Button
+    </button>
+    <button class="button button-text button-pink mr-3" data-ripple-dark="true">
+      Button
+    </button>
+    <button class="button button-icon button-pink" data-ripple-light="true">
+      <i class="material-icons">dashboard</i>
+    </button>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <button class="relative inline-block cursor-pointer py-2.5 px-6 overflow-hidden rounded-lg bg-pink text-xs font-medium uppercase mr-3" data-ripple-light="true">Button</button>
+    <button
+      class="button button-gradient button-pink mr-3"
+      data-ripple-light="true"
+    >
+      Button
+    </button>
+    <button class="relative inline-block cursor-pointer py-2.5 px-6 overflow-hidden rounded-lg text-xs font-medium uppercase bg-transparent border border-pink-500 shadow-none text-pink-500 mr-3" data-ripple-dark="true">
+      Button
+    </button>
+    <button class="relative inline-block cursor-pointer py-2.5 px-6 leading-[1.667] overflow-hidden rounded-lg transition-[all .15s ease-in] text-xs font-medium uppercase bg-transparent hover:bg-[#fce4ec] active:bg-[#f8bbd0] shadow-none text-pink-500 mr-3" data-ripple-dark="true">
+      Button
+    </button>
+    <button className="relative inline-block cursor-pointer p-2.5 overflow-hidden rounded-lg bg-pink text-white" data-ripple-light="true">
+      <i className="material-icons relative top-px text-base leading-none">dashboard</i>
+    </button>
+
+    ```
+  </TabPanel>
+</CodeTabs>
 
 ---
 
