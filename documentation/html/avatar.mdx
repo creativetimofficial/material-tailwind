@@ -21,11 +21,22 @@ See below our avatar components examples.
   </a>
 </ComponentDemo>
 
-```html
-<a href="#" class="avatar">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <a href="#" class="avatar">
+      <img alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <a href="#" class="inline-flex h-10 w-10">
+      <img class="h-full w-full rounded-xl" alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    ```
+  </TabPanel>
+</CodeTabs>
 
 ---
 
@@ -44,14 +55,28 @@ Use the following example to create rounded and circular avatar components for y
   </div>
 </ComponentDemo>
 
-```html
-<a href="#" class="avatar">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <a href="#" class="avatar">
+      <img alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    <a href="#" class="avatar avatar-circular">
+      <img alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <a href="#" class="inline-flex h-10 w-10">
+      <img class="h-full w-full rounded-xl" alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    <a href="#" class="inline-flex h-10 w-10">
+      <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+    </a>
+    ```
+  </TabPanel>
+</CodeTabs>
 
 ---
 
@@ -82,23 +107,54 @@ Use the following example to create avatars with different sizes, from small siz
   </div>
 </ComponentDemo>
 
-```html
-<a href="#" class="avatar avatar-circular avatar-xs">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-sm">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-md">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-lg">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-xl">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-xxl">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="flex">
+      <a href="#" class="avatar avatar-circular avatar-xs mr-3">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="avatar avatar-circular avatar-sm mr-3">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="avatar avatar-circular avatar-md mr-3">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="avatar avatar-circular avatar-lg mr-3">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="avatar avatar-circular avatar-xl mr-3">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="avatar avatar-circular avatar-xxl">
+        <img alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="flex">
+      <a href="#" class="inline-flex h-5 w-5 mr-3">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="inline-flex h-7 w-7 mr-3">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="inline-flex h-10 w-10 mr-3">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="inline-flex h-12 w-12 mr-3">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="inline-flex h-16 w-16 mr-3">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+      <a href="#" class="inline-flex h-20 w-20">
+        <img class="h-full w-full rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+      </a>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
+
