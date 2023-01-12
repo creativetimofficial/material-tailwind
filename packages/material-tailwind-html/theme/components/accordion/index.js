@@ -2,7 +2,8 @@ const accordion = (theme) => ({
   ".accordion": {
     ".collapse.open": {
       opacity: theme("opacity.100"),
-      transition: "all .35s ease"
+      transition: "all .35s ease",
+      visibility: "visible"
     },
     ".collapse:not(.open)": {
       opacity: theme("opacity.0"),
