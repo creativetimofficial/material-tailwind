@@ -1,5 +1,5 @@
 (function () {
-  let accordion = document.querySelectorAll(".accordion-button");
+  let accordion = document.querySelectorAll("h6 > button");
 
   for (let i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener("click", openCurrentAccordion);
