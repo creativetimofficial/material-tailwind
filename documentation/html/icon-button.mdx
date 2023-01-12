@@ -18,8 +18,23 @@ Use this example to create buttons with icon for your Tailwind CSS project.
   </button>
 </ComponentDemo>
 
-```html
-<button class="button button-icon button-pink" data-ripple-light="true">
-  <i class="material-icons">dashboard</i>
-</button>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <button class="button button-icon button-pink" data-ripple-light="true">
+      <i class="material-icons">dashboard</i>
+    </button>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <button
+      class="relative inline-block cursor-pointer overflow-hidden rounded-lg bg-pink text-xs font-medium uppercase"
+      data-ripple-light="true"
+    >
+      Button
+    </button>
+    ```
+  </TabPanel>
+</CodeTabs>
+
