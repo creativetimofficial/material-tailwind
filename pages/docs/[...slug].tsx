@@ -279,9 +279,9 @@ export const getStaticPaths = async () => {
   const filteredArray = filterArray(allDir);
 
   for (let i = 0; i < filteredArray.length - 1; i++) {
-    const directories = filteredArray[i]
-      .split("/")
-      .filter((dir) => dir !== baseDirectory);
+    const directories = filteredArray[i] !== null && filteredArray[i]
+    .split("/")
+    .filter((dir) => dir !== baseDirectory);
     const files = filteredArray[i + 1].includes("/")
       ? filteredArray[i + 1].split("/").filter((dir) => dir !== baseDirectory)
       : filteredArray[i + 1];
