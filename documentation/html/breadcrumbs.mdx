@@ -63,35 +63,77 @@ See below our versatile breadcrumbs component example that you can use in your T
   </div>
 </ComponentDemo>
 
-```html
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumbs">
-    <li class="breadcrumb-item active text-dark-500" aria-current="page">
-      <span>Home</span>
-    </li>
-  </ol>
-</nav>
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumbs">
-    <li class="breadcrumb-item text-dark-500 opacity-50">
-      <a href="#home"><span>Home</span></a>
-    </li>
-    <li class="breadcrumb-item active text-dark-500" aria-current="page">
-      <span>Library</span>
-    </li>
-  </ol>
-</nav>
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumbs">
-    <li class="breadcrumb-item opacity-50">
-      <a href="#home"><span>Home</span></a>
-    </li>
-    <li class="breadcrumb-item opacity-50">
-      <a href="#library"><span>Library</span></a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      <span>Data</span>
-    </li>
-  </ol>
-</nav>
-```
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="w-1/2 text-left">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item active text-dark-500" aria-current="page">
+            <span>Home</span>
+          </li>
+        </ol>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item text-dark-500 opacity-50">
+            <a href="#home"><span>Home</span></a>
+          </li>
+          <li class="breadcrumb-item active text-dark-500" aria-current="page">
+            <span>Library</span>
+          </li>
+        </ol>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item opacity-50">
+            <a href="#home"><span>Home</span></a>
+          </li>
+          <li class="breadcrumb-item opacity-50">
+            <a href="#library"><span>Library</span></a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="w-1/2 text-left">
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
+          <li class="text-sm text-dark-500" aria-current="page">
+            <span>Home</span>
+          </li>
+        </ol>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
+          <li class="text-sm text-dark-500 opacity-50">
+            <a href="#home"><span>Home</span></a>
+          </li>
+          <li class="text-sm pl-2 text-dark-500" aria-current="page">
+            <span>Library</span>
+          </li>
+        </ol>
+      </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
+          <li class="text-sm opacity-50">
+            <a href="#home"><span>Home</span></a>
+          </li>
+          <li class="text-sm pl-2 opacity-50">
+            <a href="#library"><span>Library</span></a>
+          </li>
+          <li class="text-sm pl-2 pr-2 active" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
