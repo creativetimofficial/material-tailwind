@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.15.1",
+    "@heroicons/react": "^2.0.13",
     "choices.js": "^10.2.0",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
@@ -40,7 +41,8 @@
     "rehype-pretty-code": "^0.3.2",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.11.1",
-    "tailwind-merge": "^1.8.1"
+    "tailwind-merge": "^1.8.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

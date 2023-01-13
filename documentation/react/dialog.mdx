@@ -31,8 +31,8 @@ See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS
 
 <br />
 
-<State initialState={{ open: false }}>
-  <ComponentDemo id="dialog">
+<CodePreview id="dialog" link="dialog#dialog" component={
+  <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (
         <>
@@ -71,9 +71,8 @@ See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -120,6 +119,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -127,8 +127,8 @@ export default function Example() {
 
 The <Code>Dialog</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
-<State initialState={{ size: null }}>
-  <ComponentDemo id="dialog-sizes">
+<CodePreview id="dialog-sizes" link="dialog#dialog-sizes" component={
+  <State initialState={{ size: null }}>
     <Observe>
       {({ setState, size }) => (
         <>
@@ -211,9 +211,8 @@ The <Code>Dialog</Code> component comes with 6 different sizes that you can chan
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -294,6 +293,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -301,8 +301,8 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>Dialog</Code> component using the <Code>animate</Code> prop.
 
-<State initialState={{ open: false }}>
-  <ComponentDemo id="custom-dialog-animation">
+<CodePreview id="custom-dialog-animation" link="dialog#custom-dialog-animation" component={
+  <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (
         <>
@@ -347,9 +347,8 @@ You can modify the open/close state animation for <Code>Dialog</Code> component 
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -403,6 +402,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

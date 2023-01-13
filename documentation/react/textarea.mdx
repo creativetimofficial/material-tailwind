@@ -38,12 +38,11 @@ See below our example that will help you create a simple <Code>Textarea</Code> f
 
 <br />
 
-<ComponentDemo id="textarea">
+<CodePreview id="textarea" link="textarea#textarea" component={
   <div className="w-96">
     <Textarea label="Message" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -55,6 +54,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -62,14 +62,13 @@ export default function Example() {
 
 The <Code>Textarea</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="textarea-variants">
+<CodePreview id="textarea-variants" link="textarea#textarea-variants" component={
   <div className="flex w-full items-end gap-4">
     <Textarea variant="outlined" label="Outlined" />
     <Textarea variant="standard" label="Standard" />
     <Textarea variant="static" label="Static" placeholder="Static" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -83,6 +82,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -90,13 +90,12 @@ export default function Variants() {
 
 The <Code>Textarea</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="textarea-sizes">
+<CodePreview id="textarea-sizes" link="textarea#textarea-sizes" component={
   <div className="flex w-full items-end gap-4">
     <Textarea size="md" label="Textarea Medium" />
     <Textarea size="lg" label="Textarea Large" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -109,6 +108,7 @@ export default function Sizes() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -116,15 +116,14 @@ export default function Sizes() {
 
 The <Code>Textarea</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentDemo id="textarea-colors">
+<CodePreview id="textarea-colors" link="textarea#textarea-colors" component={
   <div className="flex w-96 flex-col gap-4">
     <Textarea color="blue" label="Textarea Blue" />
     <Textarea color="purple" label="Textarea Purple" />
     <Textarea color="indigo" label="Textarea Indigo" />
     <Textarea color="teal" label="Textarea Teal" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -139,6 +138,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -146,13 +146,12 @@ export default function Colors() {
 
 The <Code>Textarea</Code> component comes with error and success states for performing validations.
 
-<ComponentDemo id="textarea-validations">
+<CodePreview id="textarea-validations" link="textarea#textarea-validations" component={
   <div className="flex w-full items-end gap-4">
     <Textarea label="Textarea Error" error />
     <Textarea label="Textarea Success" success />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -165,6 +164,7 @@ export default function Validations() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -172,12 +172,11 @@ export default function Validations() {
 
 A <Code>Textarea</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Textarea</Code> component.
 
-<ComponentDemo id="disabled-textarea">
+<CodePreview id="disabled-textarea" link="textarea#disabled-textarea" component={
   <div className="w-96">
     <Textarea label="Disabled" disabled />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Textarea } from "@material-tailwind/react";
 
@@ -189,6 +188,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

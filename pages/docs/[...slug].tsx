@@ -35,6 +35,7 @@ import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
+import CodePreview from "components/code-preview";
 
 // @material-tailwind/react components
 import {
@@ -129,7 +130,7 @@ const components = {
   p: (props) => (
     <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: () => <hr className="!mt-24 !mb-20 !border-blue-gray-50" />,
+  hr: () => <hr className="!mt-16 !mb-12 !border-blue-gray-50" />,
   a: (props) => (
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
@@ -156,7 +157,6 @@ const components = {
       {...props}
     />
   ),
-  pre: (props) => <Pre {...props} />,
   State,
   Observe,
   Image,
@@ -170,6 +170,7 @@ const components = {
   RemixLogo,
   ViteLogo,
   ColorPalette,
+  CodePreview,
   Accordion,
   AccordionHeader,
   AccordionBody,

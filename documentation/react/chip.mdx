@@ -38,10 +38,7 @@ See below our simple <Code>Chip</Code> component example that you can use for yo
 
 <br />
 
-<ComponentDemo id="chip">
-  <Chip value="chip" />
-</ComponentDemo>
-
+<CodePreview id="chip" link="chip#chip" component={<Chip value="chip" />}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
@@ -49,6 +46,7 @@ export default function Example() {
   return <Chip value="chip" />;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -56,13 +54,12 @@ export default function Example() {
 
 The <Code>Chip</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="chip-variants">
+<CodePreview id="chip-variants" link="chip#chip-variants" component={
   <div className="flex gap-2">
     <Chip value="chip filled" />
     <Chip variant="gradient" value="chip gradient" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
@@ -75,6 +72,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -82,7 +80,7 @@ export default function Variants() {
 
 The <Code>Chip</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentDemo id="chip-colors">
+<CodePreview id="chip-colors" link="chip#chip-colors" component={
   <div className="flex gap-2">
     <Chip value="blue" />
     <Chip color="red" value="red" />
@@ -94,8 +92,7 @@ The <Code>Chip</Code> component comes with 19 different colors that you can chan
     <Chip color="teal" value="teal" />
     <Chip color="cyan" value="cyan" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
@@ -115,6 +112,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -122,7 +120,7 @@ export default function Colors() {
 
 You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
 
-<ComponentDemo id="chip-with-icon">
+<CodePreview id="chip-with-icon" link="chip#chip-with-icon" component={
   <Chip
     value="downloads"
     icon={
@@ -135,8 +133,7 @@ You can add an icon at the beginning of <Code>Chip</Code> component using the <C
       </svg>
     }
   />
-</ComponentDemo>
-
+}>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
@@ -157,6 +154,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -164,8 +162,8 @@ export default function Example() {
 
 The <Code>Chip</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
-<State initialState={{ show: true }}>
-  <ComponentDemo id="chip-dismissible">
+<CodePreview id="chip-dismissible" link="chip#chip-dismissible" component={
+  <State initialState={{ show: true }}>
     <Observe>
       {({ setState, show }) => (
         <>
@@ -189,9 +187,8 @@ The <Code>Chip</Code> component is a dismissible component that you can control 
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
@@ -222,6 +219,7 @@ export default function Dismissible() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -229,8 +227,8 @@ export default function Dismissible() {
 
 You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
 
-<State initialState={{ show: true }}>
-  <ComponentDemo id="custom-chip-animation">
+<CodePreview id="custom-chip-animation" link="chip#custom-chip-animation" component={
+  <State initialState={{ show: true }}>
     <Observe>
       {({ setState, show }) => (
         <>
@@ -262,9 +260,8 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
@@ -299,6 +296,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

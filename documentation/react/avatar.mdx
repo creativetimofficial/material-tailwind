@@ -28,10 +28,7 @@ See below our beautiful <Code>Avatar</Code> example that you can use in your Tai
 
 <br />
 
-<ComponentDemo id="avatar">
-  <Avatar src="/img/face-2.jpg" alt="avatar" />
-</ComponentDemo>
-
+<CodePreview id="avatar" link="avatar#avatar" component={<Avatar src="/img/face-2.jpg" alt="avatar" />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
@@ -39,6 +36,7 @@ export default function Example() {
   return <Avatar src="/img/face-2.jpg" alt="avatar" />;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -46,13 +44,12 @@ export default function Example() {
 
 The <Code>Avatar</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="avatar-variants">
+<CodePreview id="avatar-variants" link="avatar#avatar-variants" component={
   <div className="flex gap-4">
     <Avatar src="/img/face-2.jpg" alt="avatar" />
     <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
@@ -65,6 +62,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -72,7 +70,7 @@ export default function Variants() {
 
 The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="avatar-sizes">
+<CodePreview id="avatar-sizes" link="avatar#avatar-sizes" component={
   <div className="flex w-max items-end gap-4">
     <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
     <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
@@ -81,8 +79,7 @@ The <Code>Avatar</Code> component comes with 6 different sizes that you can chan
     <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
     <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
@@ -99,6 +96,7 @@ export default function Sizes() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

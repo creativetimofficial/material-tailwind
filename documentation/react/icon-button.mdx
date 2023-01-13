@@ -36,12 +36,11 @@ Use this example to create user-friendly buttons with icon for your Tailwind CSS
 
 <br />
 
-<ComponentDemo id="icon-button">
+<CodePreview id="icon-button" link="icon-button#icon-button" component={
   <IconButton>
     <i className="fas fa-heart" />
   </IconButton>
-</ComponentDemo>
-
+}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
@@ -53,6 +52,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -60,7 +60,7 @@ export default function Example() {
 
 The <Code>IconButton</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="icon-button-variants">
+<CodePreview id="icon-button-variants" link="icon-button#icon-button-variants" component={
   <div className="flex gap-4">
     <IconButton>
       <i className="fas fa-heart" />
@@ -75,8 +75,7 @@ The <Code>IconButton</Code> component comes with 4 different variants that you c
       <i className="fas fa-heart" />
     </IconButton>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
@@ -99,6 +98,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -106,7 +106,7 @@ export default function Variants() {
 
 The <Code>IconButton</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="icon-button-sizes">
+<CodePreview id="icon-button-sizes" link="icon-button#icon-button-sizes" component={
   <div className="flex items-end gap-4">
     <IconButton size="sm">
       <i className="fas fa-heart" />
@@ -118,8 +118,7 @@ The <Code>IconButton</Code> component comes with 3 different sizes that you can 
       <i className="fas fa-heart fa-lg" />
     </IconButton>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
@@ -139,6 +138,7 @@ export default function Sizes() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -146,7 +146,7 @@ export default function Sizes() {
 
 The <Code>IconButton</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentDemo id="icon-button-colors">
+<CodePreview id="icon-button-colors" link="icon-button#icon-button-colors" component={
   <div className="flex gap-4">
     <IconButton color="blue">
       <i className="fas fa-heart" />
@@ -161,8 +161,7 @@ The <Code>IconButton</Code> component comes with 19 different colors that you ca
       <i className="fas fa-heart" />
     </IconButton>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
@@ -185,6 +184,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -192,7 +192,7 @@ export default function Colors() {
 
 You can turn on/off the ripple effect for the <Code>IconButton</Code> component using the <Code>ripple</Code> prop.
 
-<ComponentDemo id="icon-button-ripple-effect">
+<CodePreview id="icon-button-ripple-effect" link="icon-button#icon-button-ripple-effect" component={
   <div className="flex w-max gap-4">
     <IconButton ripple={true}>
       <i className="fas fa-heart" />
@@ -201,8 +201,7 @@ You can turn on/off the ripple effect for the <Code>IconButton</Code> component 
       <i className="fas fa-heart" />
     </IconButton>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
@@ -219,6 +218,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 

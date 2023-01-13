@@ -35,14 +35,13 @@ Below we are presenting a simple <Code>Typography</Code> component example. It c
 
 <br />
 
-<ComponentDemo id="typography">
+<CodePreview id="typography" link="typography#typography" component={
   <Typography>
     {`Material Tailwind is an easy to use components library for Tailwind CSS and
     Material Design. It provides a simple way to customize your components, you
     can change the colors, fonts, breakpoints and everything you need.`}
   </Typography>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
@@ -57,6 +56,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -64,7 +64,7 @@ export default function Example() {
 
 The <Code>Typography</Code> component comes with 9 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="typography-variants">
+<CodePreview id="typography-variants" link="typography#typography-variants" component={
   <div className="flex flex-col gap-8 text-left">
     <Typography variant="h1">Material Tailwind</Typography>
     <Typography variant="h2">Material Tailwind</Typography>
@@ -90,8 +90,7 @@ The <Code>Typography</Code> component comes with 9 different variants that you c
       can change the colors, fonts, breakpoints and everything you need.`}
     </Typography>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
@@ -127,6 +126,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -134,7 +134,7 @@ export default function Variants() {
 
 The <Code>Typography</Code> component comes with 23 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
 
-<ComponentDemo id="typography-colors">
+<CodePreview id="typography-colors" link="typography#typography-colors" component={
   <div className="flex flex-col gap-8 text-left">
     <Typography variant="h1" color="blue-gray">
       {`Material Tailwind`}
@@ -149,8 +149,7 @@ The <Code>Typography</Code> component comes with 23 different colors that you ca
       {`Material Tailwind`}
     </Typography>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Fragment } from "react";
 import { Typography } from "@material-tailwind/react";
@@ -174,6 +173,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -181,12 +181,11 @@ export default function Colors() {
 
 You can change the <Code>Typography</Code> text color into a gradient color using the <Code>textGradient</Code> prop.
 
-<ComponentDemo id="typography-gradient-color">
+<CodePreview id="typography-gradient-color" link="typography#typography-gradient-color" component={
   <Typography variant="h1" color="blue" textGradient>
     {`Material Tailwind`}
   </Typography>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
@@ -198,6 +197,7 @@ export default function GradientColor() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

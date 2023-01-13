@@ -29,7 +29,7 @@ See below our simple <Code>Popover</Code> example that you can use in your web p
 
 <br />
 
-<ComponentDemo id="popover">
+<CodePreview id="popover" link="popover#popover" component={
   <Popover>
     <PopoverHandler>
       <Button variant="gradient">Show Popover</Button>
@@ -38,8 +38,7 @@ See below our simple <Code>Popover</Code> example that you can use in your web p
       <span>This is a very beautiful popover, show some love.</span>
     </PopoverContent>
   </Popover>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Popover,
@@ -61,6 +60,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -68,113 +68,114 @@ export default function Example() {
 
 You can change the position of the <Code>Popover</Code> component using the <Code>placement</Code> prop.
 
-<ComponentDemo id="popover-placement">
-  <div className="mb-3 flex gap-3">
-    <Popover placement="top">
-      <PopoverHandler>
-        <Button variant="gradient">Top</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="top-start">
-      <PopoverHandler>
-        <Button variant="gradient">Top Start</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="top-end">
-      <PopoverHandler>
-        <Button variant="gradient">Top End</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Popover placement="right">
-      <PopoverHandler>
-        <Button variant="gradient">Right</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="right-start">
-      <PopoverHandler>
-        <Button variant="gradient">Right Start</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="right-end">
-      <PopoverHandler>
-        <Button variant="gradient">Right End</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Popover placement="bottom">
-      <PopoverHandler>
-        <Button variant="gradient">Bottom</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="bottom-start">
-      <PopoverHandler>
-        <Button variant="gradient">Bottom Start</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="bottom-end">
-      <PopoverHandler>
-        <Button variant="gradient">Bottom End</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-  </div>
-  <div className="flex gap-3">
-    <Popover placement="left">
-      <PopoverHandler>
-        <Button variant="gradient">Left</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="left-start">
-      <PopoverHandler>
-        <Button variant="gradient">Left Start</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-    <Popover placement="left-end">
-      <PopoverHandler>
-        <Button variant="gradient">Left End</Button>
-      </PopoverHandler>
-      <PopoverContent>
-        <span>This is a very beautiful popover, show some love.</span>
-      </PopoverContent>
-    </Popover>
-  </div>
-</ComponentDemo>
-
+<CodePreview id="popover-placement" link="popover#popover-placement" component={
+  <>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="top">
+        <PopoverHandler>
+          <Button variant="gradient">Top</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="top-start">
+        <PopoverHandler>
+          <Button variant="gradient">Top Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="top-end">
+        <PopoverHandler>
+          <Button variant="gradient">Top End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="right">
+        <PopoverHandler>
+          <Button variant="gradient">Right</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="right-start">
+        <PopoverHandler>
+          <Button variant="gradient">Right Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="right-end">
+        <PopoverHandler>
+          <Button variant="gradient">Right End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Popover placement="bottom">
+        <PopoverHandler>
+          <Button variant="gradient">Bottom</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="bottom-start">
+        <PopoverHandler>
+          <Button variant="gradient">Bottom Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="bottom-end">
+        <PopoverHandler>
+          <Button variant="gradient">Bottom End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+    <div className="flex gap-3">
+      <Popover placement="left">
+        <PopoverHandler>
+          <Button variant="gradient">Left</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="left-start">
+        <PopoverHandler>
+          <Button variant="gradient">Left Start</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+      <Popover placement="left-end">
+        <PopoverHandler>
+          <Button variant="gradient">Left End</Button>
+        </PopoverHandler>
+        <PopoverContent>
+          <span>This is a very beautiful popover, show some love.</span>
+        </PopoverContent>
+      </Popover>
+    </div>
+  </>
+}>
 ```jsx
 import { Fragment } from "react";
 import {
@@ -295,6 +296,8 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
+
 
 ---
 
@@ -302,7 +305,7 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>Popover</Code> component using the <Code>animate</Code> prop.
 
-<ComponentDemo id="custom-popover-animation">
+<CodePreview id="custom-popover-animation" link="popover#custom-popover-animation" component={
   <Popover
     animate={{
       mount: { scale: 1, y: 0 },
@@ -316,8 +319,7 @@ You can modify the open/close state animation for <Code>Popover</Code> component
       <span>This is a very beautiful popover, show some love.</span>
     </PopoverContent>
   </Popover>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Popover,
@@ -344,6 +346,8 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
+
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
