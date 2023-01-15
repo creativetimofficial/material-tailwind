@@ -28,99 +28,210 @@ Below we are presenting examples of alerts that you can use in your Tailwind CSS
   </TabPanel>
   <TabPanel value={2}>
     ```html
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-pink w-full">Alert primary</div>
+    <div class="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">
+      Alert primary
+    </div>
     ```
   </TabPanel>
 </CodeTabs>
 
+---
+
+## Alert Variants
+
+The <Code>Alert</Code> component comes with 2 different variants that you can change it using the <Code>gradient</Code> classes.
+
+<ComponentDemo id="alert-variants">
+  <div className="flex w-full flex-col gap-2">
+    <div className="alert alert-pink w-full">Alert primary</div>
+    <div className="alert alert-pink alert-gradient w-full">Alert primary</div>
+  </div>
+</ComponentDemo>
+
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="flex w-full flex-col gap-2">
+      <div className="alert alert-pink w-full">Alert primary</div>
+      <div className="alert alert-pink alert-gradient w-full">Alert primary</div>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="flex w-full flex-col gap-2">
+      <div className="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100">Alert primary</div>
+      <div className="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">Alert primary</div>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
 
 ---
 
-## Simple Alert
+## Alert Colors
 
-Use this example to create a simple and versatile alert component.
+The <Code>Alert</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> classes, below there are some examples of the colors but you can check all of the them.
 
 <ComponentDemo id="simple-alert">
-  <div className="alert alert-pink w-full">Alert primary</div>
-  <div className="alert alert-secondary w-full">Alert secondary</div>
-  <div className="alert alert-green w-full">Alert success</div>
-  <div className="alert alert-red w-full">Alert danger</div>
-  <div className="alert alert-orange w-full">Alert warning</div>
-  <div className="alert alert-blue w-full">Alert info</div>
-  <div className="alert alert-dark mb-0 w-full">Alert Dark</div>
+  <div className="alert alert-blue w-full">An info alert for showing message.</div>
+  <div className="alert alert-red w-full">An error alert for showing message.</div>
+  <div className="alert alert-green w-full">A success alert for showing message.</div>
+  <div className="alert alert-orange w-full">A warning alert for showing message.</div>
 </ComponentDemo>
 
 <CodeTabs>
   <TabPanel value={1}>
     ```html
-    <div class="alert alert-pink w-full">Alert primary</div>
-    <div class="alert alert-secondary w-full">Alert secondary</div>
-    <div class="alert alert-green w-full">Alert success</div>
-    <div class="alert alert-red w-full">Alert danger</div>
-    <div class="alert alert-orange w-full">Alert warning</div>
-    <div class="alert alert-blue w-full">Alert info</div>
-    <div class="alert alert-dark w-full">Alert Dark</div>
+    <div className="alert alert-blue w-full">An info alert for showing message.</div>
+    <div className="alert alert-red w-full">An error alert for showing message.</div>
+    <div className="alert alert-green w-full">A success alert for showing message.</div>
+    <div className="alert alert-orange w-full">A warning alert for showing message.</div>
     ```
   </TabPanel>
   <TabPanel value={2}>
     ```html
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-pink w-full">Alert primary</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-secondary w-full">Alert secondary</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-greeen w-full">Alert success</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-red w-full">Alert danger</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-deep-orange w-full">Alert warning</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-blue w-full">Alert info</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-dark w-full">Alert dark</div>
+    <div class="font-regular relative mb-4 block w-full rounded-lg bg-blue-500 p-4 text-base leading-5 text-white opacity-100">
+      An info alert for showing message.
+    </div>
+    <div class="font-regular relative mb-4 block w-full rounded-lg bg-red-500 p-4 text-base leading-5 text-white opacity-100">
+      An error alert for showing message.
+    </div>
+    <div class="font-regular relative mb-4 block w-full rounded-lg bg-green-500 p-4 text-base leading-5 text-white opacity-100">
+      A success alert for showing message.
+    </div>
+    <div class="font-regular relative mb-4 block w-full rounded-lg bg-orange-500 p-4 text-base leading-5 text-white opacity-100">
+      A warning alert for showing message.
+    </div>
     ```
   </TabPanel>
 </CodeTabs>
 
 ---
 
-## Alert with gradient
+## Alert with Icon
 
-Use this example to create a beautiful alert with gradients.
+You can add an icon at the beginning of <Code>Alert</Code> component using the <Code>i</Code> tag.
 
-<ComponentDemo id="alert-with-gradient">
-  <div className="alert alert-pink alert-gradient w-full">Alert primary</div>
-  <div className="alert alert-gradient alert-secondary w-full">
-    {`Alert secondary`}
+The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+
+<ComponentDemo id="alert-dismissible">
+  <div className="alert alert-pink mb-0 flex w-full">
+    <i class="fas fa-exclamation mr-2"></i>
+    {`Alert primary`}
   </div>
-  <div className="alert alert-gradient alert-green w-full">Alert success</div>
-  <div className="alert alert-gradient alert-red w-full">Alert danger</div>
-  <div className="alert alert-gradient alert-orange w-full">Alert warning</div>
-  <div className="alert alert-gradient alert-blue w-full">Alert info</div>
-  <div className="alert alert-gradient alert-light w-full text-dark-500">
-    {`Alert light`}
-  </div>
-  <div className="alert alert-gradient alert-dark mb-0 w-full">Alert dark</div>
 </ComponentDemo>
 
 <CodeTabs>
   <TabPanel value={1}>
     ```html
-    <div class="alert alert-gradient alert-pink w-full">Alert primary</div>
-    <div class="alert alert-gradient alert-secondary w-full">Alert secondary</div>
-    <div class="alert alert-gradient alert-green w-full">Alert success</div>
-    <div class="alert alert-gradient alert-red w-full">Alert danger</div>
-    <div class="alert alert-gradient alert-orange w-full">Alert warning</div>
-    <div class="alert alert-gradient alert-blue w-full">Alert info</div>
-    <div class="alert alert-gradient alert-light w-full text-dark-500">
-      Alert Light
+    <div className="alert alert-pink mb-0 flex w-full">
+      <i class="fas fa-exclamation mr-2"></i>
+      Alert primary
     </div>
-    <div class="alert alert-gradient alert-dark w-full">Alert Dark</div>
     ```
   </TabPanel>
   <TabPanel value={2}>
     ```html
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-pink w-full">Alert primary</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-secondary w-full">Alert secondary</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-greeen w-full">Alert success</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-red w-full">Alert danger</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-deep-orange w-full">Alert warning</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-blue w-full">Alert info</div>
-    <div class="relative p-4 mb-4 rounded-md leading-5 opacity-100 bg-dark w-full">Alert dark</div>
+    <div class="font-regular relative mb-4 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-4 text-base leading-5 text-white opacity-100">
+      <i class="fas fa-exclamation mr-2"></i>
+      Alert primary
+    </div>
     ```
   </TabPanel>
 </CodeTabs>
 
+---
+
+## Alert Dismissible
+
+The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>[alert-dismiss]</Code> attribute.
+
+<ComponentDemo id="alert-dismissible">
+  <div className="alert alert-pink mb-0 w-full" alert-dismiss>
+    <div className="mr-12">Alert primary</div>
+    <div class="absolute top-2.5 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
+      <button
+        role="button"
+        class="w-max rounded-lg p-1"
+        alert-dismiss=""
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</ComponentDemo>
+
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="alert alert-pink mb-0 w-full" alert-dismiss>
+      <div className="mr-12">Alert primary</div>
+      <div class="absolute top-2.5 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
+        <button
+          role="button"
+          class="w-max rounded-lg p-1"
+          alert-dismiss=""
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="font-regular relative block w-full rounded-lg bg-pink-500 p-4 text-base leading-5 text-white opacity-100" alert-dismiss>
+      <div className="mr-12">Alert primary</div>
+      <div class="absolute top-2.5 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
+        <button
+          role="button"
+          class="w-max rounded-lg p-1"
+          alert-dismiss=""
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
