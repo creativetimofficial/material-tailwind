@@ -20,37 +20,12 @@ See below our versatile breadcrumbs component example that you can use in your T
   <div className="w-1/2 text-left">
     <nav aria-label="breadcrumb">
       <ol className="breadcrumbs">
-        <li
-          className="breadcrumb-item active text-dark-500"
-          aria-current="page"
-        >
-          <span>Home</span>
-        </li>
-      </ol>
-    </nav>
-    <nav aria-label="breadcrumb">
-      <ol className="breadcrumbs">
-        <li className="breadcrumb-item text-dark-500 opacity-50">
-          <a href="#home">
-            <span>Home</span>
-          </a>
-        </li>
-        <li
-          className="breadcrumb-item active text-dark-500"
-          aria-current="page"
-        >
-          <span>Library</span>
-        </li>
-      </ol>
-    </nav>
-    <nav aria-label="breadcrumb">
-      <ol className="breadcrumbs">
-        <li className="breadcrumb-item opacity-50">
+        <li className="breadcrumb-item opacity-60">
           <a href="#library">
             <span>Home</span>
           </a>
         </li>
-        <li className="breadcrumb-item opacity-50">
+        <li className="breadcrumb-item opacity-60">
           <a href="#home">
             <span>Library</span>
           </a>
@@ -69,27 +44,10 @@ See below our versatile breadcrumbs component example that you can use in your T
     <div className="w-1/2 text-left">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumbs">
-          <li class="breadcrumb-item active text-dark-500" aria-current="page">
-            <span>Home</span>
-          </li>
-        </ol>
-      </nav>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumbs">
-          <li class="breadcrumb-item text-dark-500 opacity-50">
+          <li class="breadcrumb-item opacity-60">
             <a href="#home"><span>Home</span></a>
           </li>
-          <li class="breadcrumb-item active text-dark-500" aria-current="page">
-            <span>Library</span>
-          </li>
-        </ol>
-      </nav>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumbs">
-          <li class="breadcrumb-item opacity-50">
-            <a href="#home"><span>Home</span></a>
-          </li>
-          <li class="breadcrumb-item opacity-50">
+          <li class="breadcrumb-item opacity-60">
             <a href="#library"><span>Library</span></a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
@@ -105,30 +63,13 @@ See below our versatile breadcrumbs component example that you can use in your T
     <div className="w-1/2 text-left">
       <nav aria-label="breadcrumb">
         <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li class="text-sm text-dark-500" aria-current="page">
-            <span>Home</span>
-          </li>
-        </ol>
-      </nav>
-      <nav aria-label="breadcrumb">
-        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li class="text-sm text-dark-500 opacity-50">
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
             <a href="#home"><span>Home</span></a>
           </li>
-          <li class="text-sm pl-2 text-dark-500" aria-current="page">
-            <span>Library</span>
-          </li>
-        </ol>
-      </nav>
-      <nav aria-label="breadcrumb">
-        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li class="text-sm opacity-50">
-            <a href="#home"><span>Home</span></a>
-          </li>
-          <li class="text-sm pl-2 opacity-50">
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
             <a href="#library"><span>Library</span></a>
           </li>
-          <li class="text-sm pl-2 pr-2 active" aria-current="page">
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
             <span>Data</span>
           </li>
         </ol>
@@ -137,3 +78,176 @@ See below our versatile breadcrumbs component example that you can use in your T
     ```
   </TabPanel>
 </CodeTabs>
+
+---
+
+## Breadcrumbs with icon
+
+You can add any type of icon for the <Code>Breadcrumbs</Code> component as easy as using icon in html.
+
+<ComponentDemo id="breadcrumbs-with-icon">
+  <div className="w-1/2 text-left">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumbs">
+        <li class="breadcrumb-item opacity-60">
+          <a href="#home">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="relative h-4 w-4 top-0.5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="breadcrumb-item opacity-60">
+          <a href="#library"><span>Library</span></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <span>Data</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</ComponentDemo>
+
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="w-1/2 text-left">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumbs">
+          <li class="breadcrumb-item opacity-60">
+            <a href="#home">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="relative h-4 w-4 top-0.5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="breadcrumb-item opacity-60">
+            <a href="#library"><span>Library</span></a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="w-1/2 text-left">
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60">
+            <a href="#home">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
+            <a href="#library"><span>Library</span></a>
+          </li>
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
+
+---
+
+## Block Level Breadcrumbs
+
+A <Code>Breadcrumbs</Code> could be a block level component as well that get's all the available space in a row. You can display a <Code>Breadcrumbs</Code> as a block level element using the <Code>w-full</Code> class.
+
+<ComponentDemo id="breadcrumbs">
+  <div className="w-full text-left">
+    <nav aria-label="breadcrumb">
+      <ol className="breadcrumbs">
+        <li className="breadcrumb-item opacity-60">
+          <a href="#library">
+            <span>Home</span>
+          </a>
+        </li>
+        <li className="breadcrumb-item opacity-60">
+          <a href="#home">
+            <span>Library</span>
+          </a>
+        </li>
+        <li className="breadcrumb-item active" aria-current="page">
+          <span>Data</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</ComponentDemo>
+
+<CodeTabs>
+  <TabPanel value={1}>
+    ```html
+    <div className="w-full text-left">
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumbs">
+          <li className="breadcrumb-item opacity-60">
+            <a href="#library">
+              <span>Home</span>
+            </a>
+          </li>
+          <li className="breadcrumb-item opacity-60">
+            <a href="#home">
+              <span>Library</span>
+            </a>
+          </li>
+          <li className="breadcrumb-item active" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+  <TabPanel value={2}>
+    ```html
+    <div className="w-full text-left">
+      <nav aria-label="breadcrumb">
+        <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
+            <a href="#home"><span>Home</span></a>
+          </li>
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
+            <a href="#library"><span>Library</span></a>
+          </li>
+          <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
+            <span>Data</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    ```
+  </TabPanel>
+</CodeTabs>
+
+---
