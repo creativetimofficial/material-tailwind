@@ -1,7 +1,6 @@
 const breadcrumbs = (theme) => ({
   ".breadcrumbs": {
     display: "flex",
-    flexWrap: "wrap",
     listStyle: "none",
     padding: theme("spacing.2") + " " + theme("spacing.4"),
     marginBottom: theme("spacing.4"),
@@ -10,10 +9,13 @@ const breadcrumbs = (theme) => ({
 
     ".breadcrumb-item": {
       fontSize: theme("fontSize.sm"),
-      color: theme("colors.dark.500"),
+      color: theme("colors.blue-gray-900"),
 
       "+.breadcrumb-item": {
         paddingLeft: theme("spacing.2"),
+      },
+      "&.active": {
+        color: theme("colors.blue-gray-900")
       }
     }
   },
