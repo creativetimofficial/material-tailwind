@@ -145,12 +145,13 @@ export default function init() {
 
   ("use strict");
   (function () {
-    var alert_dismiss = document.querySelectorAll("[alert-dismiss]");
-    alert_dismiss.forEach(function (dismiss) {
-      return dismiss.addEventListener("click", function () {
-        dismiss.parentElement.classList.add("hide");
-      });
-    });
+    let alert_dismiss = document.querySelectorAll("[alert-dismiss]");
+  
+    alert_dismiss.forEach((dismiss) =>
+      dismiss.addEventListener("click", function () {
+        dismiss.parentElement.parentElement.classList.add("hidden");
+      })
+    );
   })();
   ("use strict");
   (function () {
