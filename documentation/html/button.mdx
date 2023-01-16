@@ -50,68 +50,46 @@ See below our button components examples.
 
 See our button examples below. They come in different styles and color.
 
-<ComponentDemo id="button-variants">
-  <div className="flex items-center">
-    <button className="button button-pink mr-3" data-ripple-light="true">
-      {`Button`}
-    </button>
-    <button
-      className="button button-pink button-gradient mr-3"
-      data-ripple-light="true"
-    >
-      {`Button`}
-    </button>
-    <button
-      className="button button-pink button-outlined mr-3"
-      data-ripple-dark="true"
-    >
-      {`Button`}
-    </button>
-    <button
-      className="button button-pink button-text mr-3"
-      data-ripple-dark="true"
-    >
-      {`Button`}
-    </button>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button class="button button-pink mr-3" data-ripple-light="true">Button</button>
-    <button
-      class="button button-gradient button-pink mr-3"
-      data-ripple-light="true"
-    >
-      Button
-    </button>
-    <button class="button button-outlined button-pink mr-3" data-ripple-dark="true">
-      Button
-    </button>
-    <button class="button button-text button-pink mr-3" data-ripple-dark="true">
-      Button
-    </button>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="button-variants"
+  link="button#button-variants"
+  component={
+    <div className="flex">
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
+      <button
+        class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-3"
+        data-ripple-light="true"
+      >
+        {`Button`}
+      </button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-pink-500 text-pink-500 hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] mr-3" data-ripple-dark="true">
+        {`Button`}
+      </button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-pink-500 hover:bg-pink-500/10 active:bg-pink-500/30" data-ripple-dark="true">
+        {`Button`}
+      </button>
+    </div>
+  }
+>
+  ```html
+  <div className="flex">
     <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
     <button
       class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-3"
       data-ripple-light="true"
     >
-      Button
+      {`Button`}
     </button>
     <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-pink-500 text-pink-500 hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] mr-3" data-ripple-dark="true">
-      Button
+      {`Button`}
     </button>
     <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-pink-500 hover:bg-pink-500/10 active:bg-pink-500/30" data-ripple-dark="true">
-      Button
+      {`Button`}
     </button>
-    ```
-  </TabPanel>
-</CodeTabs>
+  </div>
+  ```
+</CodePreview>
+
 
 ---
 
