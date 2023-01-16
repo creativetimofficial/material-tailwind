@@ -15,22 +15,17 @@ See below our avatar components examples.
 
 <br />
 
-<ComponentDemo id="avatar">
-  <img className="avatar" alt="Image placeholder" src="/img/face-2.jpg" />
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <img className="avatar" alt="Image placeholder" src="/img/face-2.jpg" />
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="avatar"
+  link="button#avatar"
+  component={
     <img className="inline-block relative object-cover object-center w-12 h-12 rounded-lg" alt="Image placeholder" src="/img/face-2.jpg" />
-    ```
-  </TabPanel>
-</CodeTabs>
+  }
+>
+  ```html
+  <img className="inline-block relative object-cover object-center w-12 h-12 rounded-lg" alt="Image placeholder" src="/img/face-2.jpg" />
+  ```
+</CodePreview>
 
 ---
 
@@ -38,27 +33,21 @@ See below our avatar components examples.
 
 Use the following example to create rounded and circular avatar components for you Tailwind CSS project.
 
-<ComponentDemo id="avatar-style">
-  <div className="flex">
-    <img className="avatar mr-3" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-circular" alt="Image placeholder" src="/img/face-2.jpg" />
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <img className="avatar" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-circular" alt="Image placeholder" src="/img/face-2.jpg" />
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="avatar-variants"
+  link="button#avatar-variants"
+  component={
+    <div className="flex">
+      <img className="inline-block relative object-cover object-center w-12 h-12 mr-4 rounded-lg" alt="Image placeholder" src="/img/face-2.jpg" />
+      <img className="inline-block relative object-cover object-center w-12 h-12 rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
+    </div>
+  }
+>
+  ```html
     <img className="inline-block relative object-cover object-center w-12 h-12 rounded-lg" alt="Image placeholder" src="/img/face-2.jpg" />
     <img className="inline-block relative object-cover object-center w-12 h-12 rounded-full" alt="Image placeholder" src="/img/face-2.jpg" />
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
@@ -66,33 +55,11 @@ Use the following example to create rounded and circular avatar components for y
 
 Use the following example to create avatars with different sizes, from small sized to large sized.
 
-<ComponentDemo id="avatar-sizes">
-  <div className="flex items-end">
-    <img className="avatar avatar-xs mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-sm mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-lg mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-xl mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-    <img className="avatar avatar-xxl" alt="Image placeholder" src="/img/face-2.jpg" />
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div className="flex">
-      <img className="avatar avatar-xs mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-      <img className="avatar avatar-sm mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-      <img className="avatar avatar-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-      <img className="avatar avatar-lg mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-      <img className="avatar avatar-xl mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
-      <img className="avatar avatar-xxl" alt="Image placeholder" src="/img/face-2.jpg" />
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div className="flex">
+<CodePreview
+  id="avatar-sizes"
+  link="button#avatar-sizes"
+  component={
+    <div className="flex items-end">
       <img className="inline-block relative object-cover object-center w-6 h-6 rounded-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
       <img className="inline-block relative object-cover object-center w-9 h-9 rounded-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
       <img className="inline-block relative object-cover object-center w-12 h-12 rounded-lg mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
@@ -100,7 +67,15 @@ Use the following example to create avatars with different sizes, from small siz
       <img className="inline-block relative object-cover object-center w-20 h-20 rounded-xl mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
       <img className="inline-block relative object-cover object-center w-24 h-24 rounded-2xl" alt="Image placeholder" src="/img/face-2.jpg" />
     </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  }
+>
+  ```html
+  <img className="inline-block relative object-cover object-center w-6 h-6 rounded-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
+  <img className="inline-block relative object-cover object-center w-9 h-9 rounded-md mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
+  <img className="inline-block relative object-cover object-center w-12 h-12 rounded-lg mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
+  <img className="inline-block relative object-cover object-center w-16 h-16 rounded-lg mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
+  <img className="inline-block relative object-cover object-center w-20 h-20 rounded-xl mr-4" alt="Image placeholder" src="/img/face-2.jpg" />
+  <img className="inline-block relative object-cover object-center w-24 h-24 rounded-2xl" alt="Image placeholder" src="/img/face-2.jpg" />
+  ```
+</CodePreview>
 
