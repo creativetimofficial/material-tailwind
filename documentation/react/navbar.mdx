@@ -28,8 +28,8 @@ See below our simple <Code>Navbar</Code> example that you can use in your Tailwi
 
 <br />
 
-<State initialState={{ open: false }}>
-  <ComponentDemo id="navbar">
+<CodePreview id="navbar" link="navbar#navbar" component={
+  <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (
         <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
@@ -110,39 +110,39 @@ See below our simple <Code>Navbar</Code> example that you can use in your Tailwi
             </IconButton>
           </div>
           <MobileNav open={open} className="lg:hidden">
-            <ul className="mt-2 mb-4 flex flex-col gap-2">
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Pages`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Account`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Blocks`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Docs`}
-                </a>
-              </Typography>
-            </ul>
-            <Button variant="gradient" size="sm" fullWidth className="mb-2">
-              <span>Buy Now</span>
-            </Button>
+            <div className="container mx-auto">
+              <ul className="mt-2 mb-4 flex flex-col gap-2">
+                <Typography as="li" variant="small" className="p-1 font-normal">
+                  <a href="#" className="flex items-center">
+                    {`Pages`}
+                  </a>
+                </Typography>
+                <Typography as="li" variant="small" className="p-1 font-normal">
+                  <a href="#" className="flex items-center">
+                    {`Account`}
+                  </a>
+                </Typography>
+                <Typography as="li" variant="small" className="p-1 font-normal">
+                  <a href="#" className="flex items-center">
+                    {`Blocks`}
+                  </a>
+                </Typography>
+                <Typography as="li" variant="small" className="p-1 font-normal">
+                  <a href="#" className="flex items-center">
+                    {`Docs`}
+                  </a>
+                </Typography>
+              </ul>
+              <Button variant="gradient" size="sm" fullWidth className="mb-2">
+                <span>Buy Now</span>
+              </Button>
+            </div>
           </MobileNav>
         </Navbar>
       )}
     </Observe>
-
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { useState, useEffect } from "react";
 import {
@@ -262,15 +262,19 @@ export default function Example() {
         </IconButton>
       </div>
       <MobileNav open={openNav}>
-        {navList}
-        <Button variant="gradient" size="sm" fullWidth className="mb-2">
-          <span>Buy Now</span>
-        </Button>
+        <div className="container mx-auto">
+          {navList}
+          <Button variant="gradient" size="sm" fullWidth className="mb-2">
+            <span>Buy Now</span>
+          </Button>
+        </div>
       </MobileNav>
     </Navbar>
   );
 }
 ```
+</CodePreview>
+
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

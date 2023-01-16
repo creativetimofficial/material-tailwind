@@ -128,11 +128,19 @@
 [data-rehype-pretty-code-fragment] pre {
   background-color: #1e293b;
   max-height: 32rem;
-  margin: 1rem 0;
+  margin: 0;
   padding: 1.25rem;
+  margin-right: 0.75rem;
   border-radius: 0.5rem;
   border: 0;
   overflow: scroll;
+}
+
+.code-preview [data-rehype-pretty-code-fragment] pre {
+  max-height: max-content;
+  border: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 [data-rehype-pretty-code-fragment] .highlighted::after {

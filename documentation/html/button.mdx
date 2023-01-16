@@ -22,31 +22,27 @@ Buttons are an essential element of web design. Basically, buttons are styled li
 
 See below our button components examples.
 
-<ComponentDemo id="button">
-  <button className="button button-pink" data-ripple-light="true">
-    {`Button`}
-  </button>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button class="button button-pink" data-ripple-light="true">
-      Button
-    </button>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="button"
+  link="button#button"
+  component={
     <button
-      class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+      className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-light="true"
     >
-      Button
+      {`Button`}
     </button>
-    ```
-  </TabPanel>
-</CodeTabs>
+  }
+>
+  ```html
+  <button
+    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    data-ripple-light="true"
+  >
+    Button
+  </button>
+  ```
+</CodePreview>
 
 ---
 
@@ -60,19 +56,19 @@ See our button examples below. They come in different styles and color.
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-pink mr-3"
+      className="button button-pink button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-outlined button-pink mr-3"
+      className="button button-pink button-outlined mr-3"
       data-ripple-dark="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-text button-pink mr-3"
+      className="button button-pink button-text mr-3"
       data-ripple-dark="true"
     >
       {`Button`}
@@ -147,19 +143,19 @@ Use this example to create buttons in different sizes.
 </ComponentDemo>
 ```html
 <button
-  class="button button-gradient button-pink button-sm mb-3"
+  class="button button-pink button-gradient button-sm mb-3"
   data-ripple-light="true"
 >
   Button
 </button>
 <button
-  class="button button-gradient button-pink mb-3"
+  class="button button-pink button-gradient mb-3"
   data-ripple-light="true"
 >
   Button
 </button>
 <button
-  class="button button-gradient button-pink button-lg mb-3"
+  class="button button-pink button-gradient button-lg mb-3"
   data-ripple-light="true"
 >
   Button

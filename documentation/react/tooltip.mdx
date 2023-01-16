@@ -31,12 +31,11 @@ See below our example that will help you create a simple <Code>Tooltip</Code> fo
 
 <br />
 
-<ComponentDemo id="tooltip">
+<CodePreview id="tooltip" link="tooltip#tooltip" component={
   <Tooltip content="Material Tailwind">
     <Button variant="gradient">Show Tooltip</Button>
   </Tooltip>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Tooltip, Button } from "@material-tailwind/react";
 
@@ -48,6 +47,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -55,61 +55,57 @@ export default function Example() {
 
 You can change the position of the <Code>Tooltip</Code> component using the <Code>placement</Code> prop.
 
-<ComponentDemo id="tooltip-placement">
-  <div className="mb-3 flex gap-3">
-    <Tooltip content="Material Tailwind" placement="top">
-      <Button variant="gradient">Top</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="top-start">
-      <Button variant="gradient">Top Start</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="top-end">
-      <Button variant="gradient">Top End</Button>
-    </Tooltip>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Tooltip content="Material Tailwind" placement="right">
-      <Button variant="gradient">Right</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="right-start">
-      <Button variant="gradient">Right Start</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="right-end">
-      <Button variant="gradient">Right End</Button>
-    </Tooltip>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Tooltip content="Material Tailwind" placement="bottom">
-      <Button variant="gradient">Bottom</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="bottom-start">
-      <Button variant="gradient">Bottom Start</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="bottom-end">
-      <Button variant="gradient">Bottom End</Button>
-    </Tooltip>
-  </div>
-  <div className="flex gap-3">
-    <Tooltip content="Material Tailwind" placement="left">
-      <Button variant="gradient">Left</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="left-start">
-      <Button variant="gradient">Left Start</Button>
-    </Tooltip>
-    <Tooltip content="Material Tailwind" placement="left-end">
-      <Button variant="gradient">Left End</Button>
-    </Tooltip>
-  </div>
-</ComponentDemo>
-
+<CodePreview id="tooltip-placement" link="tooltip#tooltip-placement" component={
+  <>
+    <div className="mb-3 flex gap-3">
+      <Tooltip content="Material Tailwind" placement="top">
+        <Button variant="gradient">Top</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="top-start">
+        <Button variant="gradient">Top Start</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="top-end">
+        <Button variant="gradient">Top End</Button>
+      </Tooltip>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Tooltip content="Material Tailwind" placement="right">
+        <Button variant="gradient">Right</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="right-start">
+        <Button variant="gradient">Right Start</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="right-end">
+        <Button variant="gradient">Right End</Button>
+      </Tooltip>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Tooltip content="Material Tailwind" placement="bottom">
+        <Button variant="gradient">Bottom</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="bottom-start">
+        <Button variant="gradient">Bottom Start</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="bottom-end">
+        <Button variant="gradient">Bottom End</Button>
+      </Tooltip>
+    </div>
+    <div className="flex gap-3">
+      <Tooltip content="Material Tailwind" placement="left">
+        <Button variant="gradient">Left</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="left-start">
+        <Button variant="gradient">Left Start</Button>
+      </Tooltip>
+      <Tooltip content="Material Tailwind" placement="left-end">
+        <Button variant="gradient">Left End</Button>
+      </Tooltip>
+    </div>
+  </>
+}>
 ```jsx
 import { Fragment } from "react";
-import {
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-  Button,
-} from "@material-tailwind/react";
+import { Tooltip, Button } from "@material-tailwind/react";
 
 export default function Example() {
   return (
@@ -162,6 +158,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -169,7 +166,7 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>Tooltip</Code> component using the <Code>animate</Code> prop.
 
-<ComponentDemo id="custom-tooltip-animation">
+<CodePreview id="custom-tooltip-animation" link="tooltip#custom-tooltip-animation" component={
   <Tooltip
     content="Material Tailwind"
     animate={{
@@ -179,8 +176,7 @@ You can modify the open/close state animation for <Code>Tooltip</Code> component
   >
     <Button variant="gradient">Show Tooltip</Button>
   </Tooltip>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Tooltip, Button } from "@material-tailwind/react";
 
@@ -198,6 +194,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

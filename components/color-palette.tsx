@@ -4,10 +4,10 @@ interface Props {
   colors: {
     name: number;
     hex: string;
-  }[];
+  };
 }
 
-export default function ColorPalette({ name, colors }) {
+export default function ColorPalette({ name, colors }: Props) {
   return (
     <div className="flex flex-col space-y-1.5 text-xs">
       <div className="flex h-10 flex-col justify-center">

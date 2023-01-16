@@ -1,11 +1,7 @@
 import React from "react";
 
 // framer-motion
-import {
-  FloatingPortal,
-  FloatingOverlay,
-  FloatingFocusManager,
-} from "@floating-ui/react-dom-interactions";
+import { FloatingPortal, FloatingOverlay, FloatingFocusManager } from "@floating-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
@@ -118,14 +114,10 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
             <>
               {lockScroll ? (
                 <FloatingOverlay lockScroll>
-                  <FloatingFocusManager context={context} preventTabbing>
-                    {menuComponent}
-                  </FloatingFocusManager>
+                  <FloatingFocusManager context={context}>{menuComponent}</FloatingFocusManager>
                 </FloatingOverlay>
               ) : (
-                <FloatingFocusManager context={context} preventTabbing>
-                  {menuComponent}
-                </FloatingFocusManager>
+                <FloatingFocusManager context={context}>{menuComponent}</FloatingFocusManager>
               )}
             </>
           )}

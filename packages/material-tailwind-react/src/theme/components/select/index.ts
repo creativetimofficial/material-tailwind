@@ -151,7 +151,7 @@ export const select: SelectStylesType = {
     error: false,
     success: false,
     arrow: undefined,
-    value: "select",
+    value: undefined,
     onChange: undefined,
     selected: undefined,
     offset: 5,

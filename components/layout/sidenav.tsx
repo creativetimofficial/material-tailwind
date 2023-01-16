@@ -79,24 +79,22 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                 {pages.map((page, key) => (
                   <li key={key}>
                     <Link href={`/docs/${type}/${page}`}>
-                      <a>
-                        <Typography
-                          color="gray"
-                          className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
-                            page === slug
-                              ? "font-medium text-blue-gray-900 before:bg-blue-gray-900"
-                              : "font-normal text-blue-gray-400 before:bg-blue-gray-300"
-                          }`}
-                          onClick={() => setMobileNav(false)}
-                        >
-                          {page.includes("-")
-                            ? page
-                                .split("-")
-                                .map((el) => (el === "css" ? "CSS" : el))
-                                .join(" ")
-                            : page}
-                        </Typography>
-                      </a>
+                      <Typography
+                        color="gray"
+                        className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
+                          page === slug
+                            ? "font-medium text-blue-gray-900 before:bg-blue-gray-900"
+                            : "font-normal text-blue-gray-400 before:bg-blue-gray-300"
+                        }`}
+                        onClick={() => setMobileNav(false)}
+                      >
+                        {page.includes("-")
+                          ? page
+                              .split("-")
+                              .map((el) => (el === "css" ? "CSS" : el))
+                              .join(" ")
+                          : page}
+                      </Typography>
                     </Link>
                   </li>
                 ))}

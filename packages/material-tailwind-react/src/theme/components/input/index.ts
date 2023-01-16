@@ -70,6 +70,7 @@ export interface InputStylesType {
       input?: object;
       label?: object;
       icon?: object;
+      asterisk?: object;
     };
     variants?: {
       outlined: InputVariantStylesType;
@@ -135,6 +136,11 @@ export const input: InputStylesType = {
         placeItems: "place-items-center",
         position: "absolute",
         color: "text-blue-gray-500",
+      },
+      asterisk: {
+        display: "inline-block",
+        color: "text-red-500",
+        ml: "ml-0.5",
       },
     },
     variants: {
