@@ -55,9 +55,9 @@ See our button examples below. They come in different styles and color.
   link="button#button-variants"
   component={
     <div className="flex">
-      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
       <button
-        class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-3"
+        class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-4"
         data-ripple-light="true"
       >
         {`Button`}
@@ -97,89 +97,79 @@ See our button examples below. They come in different styles and color.
 
 Use this example to create buttons in different sizes.
 
-<ComponentDemo id="button-sizes">
-  <div className="flex items-end gap-4">
+<CodePreview
+  id="button-sizes"
+  link="button#button-sizes"
+  component={
+    <div className="flex items-end">
+      <button
+        className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4"
+        data-ripple-light="true"
+      >
+        {`Small`}
+      </button>
+      <button
+        className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4"
+        data-ripple-light="true"
+      >
+        {`Medium`}
+      </button>
+      <button
+        className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+        data-ripple-light="true"
+      >
+        {`Large`}
+      </button>
+    </div>
+  }
+>
+  ```html
     <button
-      className="button button-gradient button-pink button-sm mb-3"
+      className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
       data-ripple-light="true"
     >
-      {`Button`}
+      Small
     </button>
     <button
-      className="button button-gradient button-pink mb-3"
+      className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
       data-ripple-light="true"
     >
-      {`Button`}
+      Medium
     </button>
     <button
-      className="button button-gradient button-pink button-lg mb-3"
+      className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
       data-ripple-light="true"
     >
-      {`Button`}
+      Large
     </button>
-  </div>
-</ComponentDemo>
-```html
-<button
-  class="button button-pink button-gradient button-sm mb-3"
-  data-ripple-light="true"
->
-  Button
-</button>
-<button
-  class="button button-pink button-gradient mb-3"
-  data-ripple-light="true"
->
-  Button
-</button>
-<button
-  class="button button-pink button-gradient button-lg mb-3"
-  data-ripple-light="true"
->
-  Button
-</button>
-```
+  ```
+</CodePreview>
+
 ---
 
 ### Button Colors
 
 Use this example to create a simple button element for your Tailwind CSS project.
 
-<ComponentDemo id="button-colors">
-  <div className="flex">
-    <button className="button button-blue mr-3" data-ripple-light="true">
-      {`Button`}
-    </button>
-    <button className="button button-red mr-3" data-ripple-light="true">
-      {`Button`}
-    </button>
-    <button className="button button-green mr-3" data-ripple-light="true">
-      {`Button`}
-    </button>
-    <button className="button button-orange mr-3" data-ripple-light="true">
-      {`Button`}
-    </button>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button class="button button-blue mr-3" data-ripple-light="true">Button</button>
-    <button class="button button-red mr-3" data-ripple-light="true">Button</button>
-    <button class="button button-green mr-3" data-ripple-light="true">Button</button>
-    <button class="button button-orange" data-ripple-light="true">Button</button>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">Button</button>
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-orange-500 text-white shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="true">Button</button>
-    ```
-  </TabPanel>
-</CodeTabs>
+<CodePreview
+  id="button-colors"
+  link="button#button-colors"
+  component={
+    <div className="flex items-end">
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-orange-500 text-white shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="true">Button</button>
+    </div>
+  }
+>
+  ```html
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-orange-500 text-white shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="true">Button</button>
+  ```
+</CodePreview>
 
 ---
 
@@ -187,24 +177,17 @@ Use this example to create a simple button element for your Tailwind CSS project
 
 A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>w-full</Code> class.
 
-<ComponentDemo id="block-level-button">
-  <button className="button button-pink w-full" data-ripple-light="true">
-    {`Button`}
-  </button>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button class="button button-pink w-full" data-ripple-light="true">Button</button>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="block-level-button"
+  link="button#block-level-button"
+  component={
     <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full" data-ripple-light="true">Button</button>
-    ```
-  </TabPanel>
-</CodeTabs>
+  }
+>
+  ```html
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full" data-ripple-light="true">Button</button>
+  ```
+</CodePreview>
 
 ---
 
@@ -212,7 +195,10 @@ A <Code>Button</Code> could be a block level component as well that get's all th
 
 You can turn on/off the ripple effect for the <Code>Button</Code> component by changing between the <Code>true/false</Code> attribute's value.
 
-<ComponentDemo id="button-ripple-effect">
+<CodePreview
+  id="button-ripple-effect"
+  link="button#button-ripple-effect"
+  component={
   <div className="flex">
     <button className="button button-pink mr-3" data-ripple-light="true">
       {`Ripple Effect On`}
@@ -220,20 +206,11 @@ You can turn on/off the ripple effect for the <Code>Button</Code> component by c
     <button className="button button-pink" data-ripple-light="false">
       {`Ripple Effect Off`}
     </button>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button class="button button-pink mr-3" data-ripple-light="true">Ripple Effect On</button>
-    <button class="button button-pink" data-ripple-light="false">Ripple Effect Off</button>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="true">Ripple Effect On</button>
-    <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="false">ButtRipple Effect Off</button>
-    ```
-  </TabPanel>
-</CodeTabs>
+  </div> 
+  }
+>
+  ```html
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="true">Ripple Effect On</button>
+  <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="false">ButtRipple Effect Off</button>
+  ```
+</CodePreview>
