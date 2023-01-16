@@ -35,6 +35,7 @@ import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
+import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
 
 // @material-tailwind/react components
@@ -312,7 +313,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: false,
+      
     },
   });
 
