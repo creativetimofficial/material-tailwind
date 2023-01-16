@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Tabs,
   TabsHeader,
@@ -25,10 +26,11 @@ import { v4 as uuidv4 } from "uuid";
 
 export function CodePreview({ id, component, link, children }) {
   const codeRef = React.useRef(null);
+  const { query } = useRouter();
   const [mode, setMode] = React.useState("preview");
   const [copied, setCopied] = React.useState(false);
-  const [version, setVersion] = React.useState("react");
-  const [isMenuOpen, setIsOpenMenu] = React.useState(false);
+  const [version, setVersion] = React.useState(query.slug[0]);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleCopy = () => {
     copyToClipboard(codeRef.current.innerText);
@@ -89,7 +91,7 @@ export function CodePreview({ id, component, link, children }) {
           </TabsHeader>
         </Tabs>
         <div className="flex items-center gap-2 px-1">
-          <Menu open={isMenuOpen} handler={setIsOpenMenu}>
+          <Menu open={isMenuOpen} handler={setIsMenuOpen}>
             <MenuHandler>
               <Button
                 variant="text"

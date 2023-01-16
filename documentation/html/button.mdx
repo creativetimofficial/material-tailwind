@@ -22,16 +22,27 @@ Buttons are an essential element of web design. Basically, buttons are styled li
 
 See below our button components examples.
 
-<ComponentDemo id="button">
-  <button className="button button-pink" data-ripple-light="true">
-    {`Button`}
+<CodePreview
+  id="button"
+  link="button#button"
+  component={
+    <button
+      className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      {`Button`}
+    </button>
+  }
+>
+  ```html
+  <button
+    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    data-ripple-light="true"
+  >
+    Button
   </button>
-</ComponentDemo>
-```html
-<button class="button button-pink" data-ripple-light="true">
-  Button
-</button>
-```
+  ```
+</CodePreview>
 
 ---
 
@@ -45,19 +56,19 @@ See our button examples below. They come in different styles and color.
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-pink mr-3"
+      className="button button-pink button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-outlined button-pink mr-3"
+      className="button button-pink button-outlined mr-3"
       data-ripple-dark="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-text button-pink mr-3"
+      className="button button-pink button-text mr-3"
       data-ripple-dark="true"
     >
       {`Button`}
@@ -71,15 +82,15 @@ See our button examples below. They come in different styles and color.
 ```html
 <button class="button button-pink mr-3" data-ripple-light="true">Button</button>
 <button
-  class="button button-gradient button-pink mr-3"
+  class="button button-pink button-gradient mr-3"
   data-ripple-light="true"
 >
   Button
 </button>
-<button class="button button-outlined button-pink mr-3" data-ripple-dark="true">
+<button class="button button-pink button-outlined mr-3" data-ripple-dark="true">
   Button
 </button>
-<button class="button button-text button-pink mr-3" data-ripple-dark="true">
+<button class="button button-pink button-text mr-3" data-ripple-dark="true">
   Button
 </button>
 <button class="button button-icon button-pink" data-ripple-light="true">
@@ -134,31 +145,31 @@ Use this example to create a simple button element with gradient for your Tailwi
 <ComponentDemo id="buttons-with-gradient">
   <div className="flex">
     <button
-      className="button button-gradient button-pink mr-3"
+      className="button button-pink button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-secondary mr-3"
+      className="button button-secondary button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-green mr-3"
+      className="button button-green button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-orange mr-3"
+      className="button button-orange button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
     </button>
     <button
-      className="button button-gradient button-red mr-3"
+      className="button button-red button-gradient mr-3"
       data-ripple-light="true"
     >
       {`Button`}
@@ -173,22 +184,22 @@ Use this example to create a simple button element with gradient for your Tailwi
 </ComponentDemo>
 
 ```html
-<button class="button button-gradient button-pink" data-ripple-light="true">
+<button class="button button-pink button-gradient" data-ripple-light="true">
   Button
 </button>
 <button
-  class="button button-gradient button-secondary"
+  class="button button-secondary button-gradient"
   data-ripple-light="true"
 >
   Button
 </button>
-<button class="button button-gradient button-green" data-ripple-light="true">
+<button class="button button-green button-gradient" data-ripple-light="true">
   Button
 </button>
-<button class="button button-gradient button-orange" data-ripple-light="true">
+<button class="button button-orange button-gradient" data-ripple-light="true">
   Button
 </button>
-<button class="button button-gradient button-red" data-ripple-light="true">
+<button class="button button-red button-gradient" data-ripple-light="true">
   Button
 </button>
 <button class="button button-gradient button-dark" data-ripple-light="true">
@@ -204,19 +215,19 @@ Use this example to create buttons in different sizes.
 
 <ComponentDemo id="buttons-with-gradient">
   <button
-    className="button button-gradient button-pink button-sm mb-3"
+    className="button button-pink button-gradient button-sm mb-3"
     data-ripple-light="true"
   >
     {`Button`}
   </button>
   <button
-    className="button button-gradient button-pink mb-3"
+    className="button button-pink button-gradient mb-3"
     data-ripple-light="true"
   >
     {`Button`}
   </button>
   <button
-    className="button button-gradient button-pink button-lg mb-3"
+    className="button button-pink button-gradient button-lg mb-3"
     data-ripple-light="true"
   >
     {`Button`}
@@ -224,19 +235,19 @@ Use this example to create buttons in different sizes.
 </ComponentDemo>
 ```html
 <button
-  class="button button-gradient button-pink button-sm mb-3"
+  class="button button-pink button-gradient button-sm mb-3"
   data-ripple-light="true"
 >
   Button
 </button>
 <button
-  class="button button-gradient button-pink mb-3"
+  class="button button-pink button-gradient mb-3"
   data-ripple-light="true"
 >
   Button
 </button>
 <button
-  class="button button-gradient button-pink button-lg mb-3"
+  class="button button-pink button-gradient button-lg mb-3"
   data-ripple-light="true"
 >
   Button
