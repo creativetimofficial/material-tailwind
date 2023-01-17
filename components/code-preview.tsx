@@ -24,7 +24,7 @@ import {
 import copyToClipboard from "utils/copy-to-clipboard";
 import { v4 as uuidv4 } from "uuid";
 
-export function CodePreview({ id, component, link, children }) {
+export function CodePreview({ id, component, link, children, className }) {
   const codeRef = React.useRef(null);
   const { query } = useRouter();
   const [mode, setMode] = React.useState("preview");
@@ -42,7 +42,7 @@ export function CodePreview({ id, component, link, children }) {
       id={id}
       className={`scroll-mt-64 rounded-xl border border-blue-gray-50 ${
         mode === "code" ? "bg-[#1e293b]" : "bg-[#f8fafc]"
-      }`}
+      } ${className || ""}`}
     >
       <div
         className={`flex items-center justify-between border-b border-blue-gray-50 p-1 ${
