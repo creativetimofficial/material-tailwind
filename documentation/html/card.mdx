@@ -23,87 +23,60 @@ By its definition, a card is a sheet of material that serves as an entry point t
 See below our beautiful card example that you can use in your Tailwind CSS projects.
 
 <br />
-<ComponentDemo id="card-blog">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-header mx-4 -mt-6">
-        <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt="card image"
-          />
-        </a>
+
+<CodePreview
+  id="card-blog"
+  link="button#card-blog"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+        <div className="translate-y-0 mx-4 -mt-6">
+          <a href="#" blur-shadow-image="true">
+            <img
+              className="w-auto rounded-lg"
+              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              alt="card image"
+            />
+          </a>
+        </div>
+        <div className="p-6 flex-1 text-secondary">
+          <a href="#">
+            <h4 className="font-medium">Material Tailwind</h4>
+          </a>
+          <p className="opcacity-60 mb-3">
+            The time is now for it to be okay to be great. People in this world shun
+            people for being great. For being a bright color. For standing out.
+          </p>
+          <button className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Read More</button>
+        </div>
       </div>
-      <div className="card-body">
-        <a href="#">
-          <h4 className="font-medium">Material Tailwind</h4>
-        </a>
-        <p className="opcacity-60 mb-4">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-        <button className="button button-pink" data-ripple-light="true">
-          {`Read More`}
-        </button>
-      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+    <div class="translate-y-0 mx-4 -mt-6">
+      <a href="#" blur-shadow-image="true">
+        <img
+          class="w-auto rounded-lg"
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="card image"
+        />
+      </a>
+    </div>
+    <div class="p-6 flex-1 text-secondary">
+      <a href="#">
+        <h4 class="font-medium">Material Tailwind</h4>
+      </a>
+      <p class="opcacity-60 mb-3">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+      <button className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Read More</button>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="card">
-      <div class="card-header mx-4 -mt-6">
-        <a href="#" blur-shadow-image="true">
-          <img
-            class="w-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div class="card-body">
-        <a href="#">
-          <h4 class="font-medium">Material Tailwind</h4>
-        </a>
-        <p class="opcacity-60 mb-3">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-        <button class="button button-pink" data-ripple-light="true">Read More</button>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
-      <div class="translate-y-0 mx-4 -mt-6">
-        <a href="#" blur-shadow-image="true">
-          <img
-            class="w-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div class="p-6 flex-1 text-secondary">
-        <a href="#">
-          <h4 class="font-medium">Material Tailwind</h4>
-        </a>
-        <p class="opcacity-60 mb-3">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-        <button class="relative inline-block cursor-pointer py-2.5 px-6 overflow-hidden rounded-lg bg-pink text-white text-xs font-medium uppercase mr-3" data-ripple-light="true">Read More</button>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
@@ -113,62 +86,41 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 Below you can see a card example with only text and link (button).
 
-<ComponentDemo id="card-basic">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-body">
-        <a href="#">
-          <h3>Material Tailwind</h3>
-        </a>
-        <p className="mb-3 opacity-60">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-        <button className="button button-pink" data-ripple-light="true">
-          {`Read More`}
-        </button>
+<CodePreview
+  id="card-basic"
+  link="button#card-basic"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+        <div className="p-6 flex-1 text-secondary">
+          <a href="#">
+            <h3>Material Tailwind</h3>
+          </a>
+          <p className="mb-3 opacity-60">
+            The time is now for it to be okay to be great. People in this world shun
+            people for being great. For being a bright color. For standing out.
+          </p>
+          <button className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Read More</button>
+        </div>
       </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+    <div class="p-6 flex-1 text-secondary">
+      <a href="#">
+        <h3>Material Tailwind</h3>
+      </a>
+      <p class="mb-3 opacity-60">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+      <button class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Read More</button>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="card">
-      <div class="card-body">
-        <a href="#">
-          <h3>Material Tailwind</h3>
-        </a>
-        <p class="mb-3 opacity-60">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-        <button class="button button-pink" data-ripple-light="true">
-          Read More
-        </button>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
-      <div class="p-6 flex-1 text-secondary">
-        <a href="#">
-          <h3>Material Tailwind</h3>
-        </a>
-        <p class="mb-3 opacity-60">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-        <button class="relative inline-block cursor-pointer py-2.5 px-6 overflow-hidden rounded-lg bg-pink text-white text-xs font-medium uppercase mr-3" data-ripple-light="true">Read More</button>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
@@ -176,124 +128,81 @@ Below you can see a card example with only text and link (button).
 
 The card example below includes an image and avatar component.
 
-<ComponentDemo id="card-image-inside">
-  <div className="my-10 w-2/3">
-    <div className="card">
-      <div className="card-header mx-4 mt-4">
-        <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div className="card-body">
-        <span className="text-sm font-bold uppercase text-orange-500">Hub</span>
-        <a href="#">
-          <h5 className="mt-2 font-medium">Material Tailwind</h5>
-        </a>
-        <p className="mb-3">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-      </div>
-      <div className="card-footer">
-        <div className="flex">
-          <a href="#" className="avatar">
+<CodePreview
+  id="card-image-inside"
+  link="button#card-image-inside"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+        <div className="translate-y-0 mx-4 mt-4">
+          <a href="#" blur-shadow-image="true">
             <img
-              src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
-              alt="avatar"
+              className="w-auto rounded-lg"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+              alt="card image"
             />
           </a>
-          <div className="ml-3">
-            <span className="text-blue-gray-700 mb-0 font-bold">Mathew</span>
-            <p className="mb-0 text-xs">Posted on 28 February</p>
+        </div>
+        <div className="p-6 flex-1 text-secondary">
+          <span className="text-sm font-bold uppercase text-orange-500">Hub</span>
+          <a href="#">
+            <h5 className="mt-2 font-medium">Material Tailwind</h5>
+          </a>
+          <p className="mb-3">
+            The time is now for it to be okay to be great. People in this world shun
+            people for being great. For being a bright color. For standing out.
+          </p>
+        </div>
+        <div className="p-6 pt-0 bg-transparent">
+          <div className="flex">
+            <a href="#" className="inline-flex h-10 w-10">
+              <img className="h-full w-full rounded-xl" src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg" alt="avatar" />
+            </a>
+            <div className="ml-3">
+              <span className="text-blue-gray-700 mb-0 font-bold">Mathew</span>
+              <p className="mb-0 text-xs">Posted on 28 February</p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+    <div class="translate-y-0 mx-4 mt-4">
+      <a href="#" blur-shadow-image="true">
+        <img
+          class="w-auto rounded-lg"
+          src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+          alt="card image"
+        />
+      </a>
+    </div>
+    <div class="p-6 flex-1 text-secondary">
+      <span class="text-sm font-bold uppercase text-orange-500">Hub</span>
+      <a href="#">
+        <h5 class="mt-2 font-medium">Material Tailwind</h5>
+      </a>
+      <p class="mb-3">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+    </div>
+    <div class="p-6 pt-0 bg-transparent">
+      <div class="flex">
+        <a href="#" class="inline-flex h-10 w-10">
+          <img class="h-full w-full rounded-xl" src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg" alt="avatar" />
+        </a>
+        <div class="ml-3">
+          <span class="text-blue-gray-700 mb-0 font-bold">Mathew</span>
+          <p class="mb-0 text-xs">Posted on 28 February</p>
         </div>
       </div>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="card">
-      <div class="card-header mx-4 mt-4">
-        <a href="#" blur-shadow-image="true">
-          <img
-            class="w-auto rounded-lg"
-            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div class="card-body">
-        <span class="text-sm font-bold uppercase text-orange-500">Hub</span>
-        <a href="#">
-          <h5 class="mt-2 font-medium">Material Tailwind</h5>
-        </a>
-        <p class="mb-3">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-      </div>
-      <div class="card-footer">
-        <div class="flex">
-          <a href="#" class="avatar">
-            <img
-              src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
-              alt="avatar"
-            />
-          </a>
-          <div class="ml-3">
-            <span class="text-blue-gray-700 mb-0 font-bold">Mathew</span>
-            <p class="mb-0 text-xs">Posted on 28 February</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
-      <div class="translate-y-0 mx-4 mt-4">
-        <a href="#" blur-shadow-image="true">
-          <img
-            class="w-auto rounded-lg"
-            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div class="p-6 flex-1 text-secondary">
-        <span class="text-sm font-bold uppercase text-orange-500">Hub</span>
-        <a href="#">
-          <h5 class="mt-2 font-medium">Material Tailwind</h5>
-        </a>
-        <p class="mb-3">
-          The time is now for it to be okay to be great. People in this world shun
-          people for being great. For being a bright color. For standing out.
-        </p>
-      </div>
-      <div class="p-6 pt-0 bg-transparent">
-        <div class="flex">
-          <a href="#" class="inline-flex h-10 w-10">
-            <img class="h-full w-full rounded-xl" src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg" alt="avatar" />
-          </a>
-          <div class="ml-3">
-            <span class="text-blue-gray-700 mb-0 font-bold">Mathew</span>
-            <p class="mb-0 text-xs">Posted on 28 February</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
@@ -301,158 +210,103 @@ The card example below includes an image and avatar component.
 
 Cards also can be used for Login/Signup pages. See below our Tailwind CSS example:
 
-<ComponentDemo id="card-signin">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-header mx-4 -mt-6">
-        <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
-          <h4 className="mt-2 mb-0 text-center font-bold text-white">
-            {`Sign in`}
-          </h4>
-          <div className="mt-4 flex">
-            <a className="button button-text ml-auto" href="#">
-              <i className="fab fa-facebook-f text-lg text-white"></i>
-            </a>
-            <a className="button button-text" href="#">
-              <i className="fab fa-github text-lg text-white"></i>
-            </a>
-            <a className="button button-text mr-auto" href="#">
-              <i className="fab fa-google text-lg text-white"></i>
-            </a>
+<CodePreview
+  id="card-signin"
+  link="button#card-signin"
+  component={
+    <div className="my-10 w-1/2">
+      <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+        <div className="translate-y-0 mx-4 -mt-6">
+          <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
+            <h4 className="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
+            <div className="mt-4 flex">
+              <a className="button button-text ml-auto" href="#">
+                <i className="fab fa-facebook-f text-lg text-white"></i>
+              </a>
+              <a className="button button-text" href="#">
+                <i className="fab fa-github text-lg text-white"></i>
+              </a>
+              <a className="button button-text mr-auto" href="#">
+                <i className="fab fa-google text-lg text-white"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="card-body">
-        <form action="role">
-          <div className="input-group-outline input-group my-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control" />
+        <div className="p-6 flex-1 text-secondary">
+          <form action="role">
+            <div className="input-group-outline input-group my-3">
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" />
+            </div>
+            <div className="input-group-outline input-group my-3">
+              <label className="form-label">Password</label>
+              <input type="password" className="form-control" />
+            </div>
+          </form>
+          <div className="form-check form-switch my-7 ml-1 flex items-center">
+            <input
+              className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+              data-attribute="toggle"
+              id="remember"
+            />
+            <div className="form-check-input"></div>
+            <label className="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
           </div>
-          <div className="input-group-outline input-group my-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-        </form>
-        <div className="form-check form-switch my-7 ml-1 flex items-center">
-          <input
-            className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-            data-attribute="toggle"
-            id="remember"
-          />
-          <div className="form-check-input"></div>
-          <label className="form-check-label mb-0 ml-2 cursor-pointer">
-            Remember me
-          </label>
+          <button className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none w-full" data-ripple-light="true">Sign In</button>
+          <a href="#">
+            <p className="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
+          </a>
         </div>
-        <button className="button button-pink w-full">Sign In</button>
-        <a href="#">
-          <p className="mt-5 mb-0 text-center text-sm">
-            Don&apos;t have an account?
-          </p>
-        </a>
       </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
+    <div class="translate-y-0 mx-4 -mt-6">
+      <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
+        <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
+        <div class="mt-4 flex">
+          <a class="button button-text ml-auto" href="#">
+            <i class="fab fa-facebook-f text-lg text-white"></i>
+          </a>
+          <a class="button button-text" href="#">
+            <i class="fab fa-github text-lg text-white"></i>
+          </a>
+          <a class="button button-text mr-auto" href="#">
+            <i class="fab fa-google text-lg text-white"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="p-6 flex-1 text-secondary">
+      <form action="role">
+        <div class="input-group-outline input-group my-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" />
+        </div>
+        <div class="input-group-outline input-group my-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" />
+        </div>
+      </form>
+      <div class="form-check form-switch my-7 ml-1 flex items-center">
+        <input
+          class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+          data-attribute="toggle"
+          id="remember"
+        />
+        <div class="form-check-input"></div>
+        <label class="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
+      </div>
+      <button class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Sign In</button>
+      <a href="#">
+        <p class="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
+      </a>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="card">
-      <div class="card-header mx-4 -mt-6">
-        <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
-          <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
-          <div class="mt-4 flex">
-            <a class="button button-text ml-auto" href="#">
-              <i class="fab fa-facebook-f text-lg text-white"></i>
-            </a>
-            <a class="button button-text" href="#">
-              <i class="fab fa-github text-lg text-white"></i>
-            </a>
-            <a class="button button-text mr-auto" href="#">
-              <i class="fab fa-google text-lg text-white"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <form action="role">
-          <div class="input-group-outline input-group my-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" />
-          </div>
-          <div class="input-group-outline input-group my-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" />
-          </div>
-        </form>
-        <div class="form-check form-switch my-7 ml-1 flex items-center">
-          <input
-            class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-            data-attribute="toggle"
-            id="remember"
-          />
-          <div class="form-check-input"></div>
-          <label class="form-check-label mb-0 ml-2 cursor-pointer"
-            >Remember me</label
-          >
-        </div>
-        <button class="button button-pink w-full">Sign In</button>
-        <a href="#">
-          <p class="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
-        </a>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-card">
-      <div class="translate-y-0 mx-4 -mt-6">
-        <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
-          <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
-          <div class="mt-4 flex">
-            <a class="button button-text ml-auto" href="#">
-              <i class="fab fa-facebook-f text-lg text-white"></i>
-            </a>
-            <a class="button button-text" href="#">
-              <i class="fab fa-github text-lg text-white"></i>
-            </a>
-            <a class="button button-text mr-auto" href="#">
-              <i class="fab fa-google text-lg text-white"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="p-6 flex-1 text-secondary">
-        <form action="role">
-          <div class="input-group-outline input-group my-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" />
-          </div>
-          <div class="input-group-outline input-group my-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" />
-          </div>
-        </form>
-        <div class="form-check form-switch my-7 ml-1 flex items-center">
-          <input
-            class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-            data-attribute="toggle"
-            id="remember"
-          />
-          <div class="form-check-input"></div>
-          <label class="form-check-label mb-0 ml-2 cursor-pointer">Remember me</label>
-        </div>
-        <button class="relative inline-block cursor-pointer py-2.5 px-6 w-full overflow-hidden rounded-lg bg-pink text-white text-xs font-medium uppercase mr-3" data-ripple-light="true">Sign In</button>
-        <a href="#">
-          <p class="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
-        </a>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
@@ -460,70 +314,39 @@ Cards also can be used for Login/Signup pages. See below our Tailwind CSS exampl
 
 Our last card example has an horizontal layout. Use it to your projects!
 
-<ComponentDemo id="card-horizontal">
-  <div className="my-10">
-    <div className="card card-plain">
-      <div className="flex">
-        <div className="w-1/3">
-          <img
-            className="rounded-lg"
-            src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-            alt="card image"
-          />
-        </div>
-        <div className="card-body w-2/3">
-          <span className="font-bold uppercase text-blue-500">Startups</span>
-          <a href="#">
-            <h3 className="mt-4">
-              Lyft launching cross-platform service this week
-            </h3>
-          </a>
-          <p className="mb-5 opacity-80">
-            Like so many organizations these days, Autodesk is a company in
-            transition. It was until recently a traditional boxed software
-            company selling licenses. Yet its own business model disruption is
-            only part of the story — and <a href="#">Read More</a>.
-          </p>
-          <p>
-            by <span className="font-bold">Megan Rose</span>, 2 days ago
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="card card-plain">
-      <div class="flex">
-        <div class="w-1/3">
-          <img
-            class="rounded-lg"
-            src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-            alt="card image"
-          />
-        </div>
-        <div class="card-body w-2/3">
-          <span class="font-bold uppercase text-blue-500">Startups</span>
-          <a href="#">
-            <h3 class="mt-4">Lyft launching cross-platform service this week</h3>
-          </a>
-          <p class="mb-5 opacity-80">
-            Like so many organizations these days, Autodesk is a company in
-            transition. It was until recently a traditional boxed software company
-            selling licenses. Yet its own business model disruption is only part of
-            the story — and{" "} <a href="#">Read More</a>.
-          </p>
-          <p>by <span class="font-bold">Megan Rose</span>, 2 days ago</p>
+<CodePreview
+  id="card-horizontal"
+  link="button#card-horizontal"
+  component={
+    <div className="my-10">
+      <div className="flex flex-col bg-white bg-clip-border rounded-xl shadow-none bg-transparent">
+        <div className="flex">
+          <div className="w-1/3">
+            <img
+              className="rounded-lg"
+              src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+              alt="card image"
+            />
+          </div>
+          <div className="p-6 flex-1 text-secondary w-2/3">
+            <span className="font-bold uppercase text-blue-500">Startups</span>
+            <a href="#">
+              <h3 className="mt-4">Lyft launching cross-platform service this week</h3>
+            </a>
+            <p className="mb-5 opacity-80">
+              Like so many organizations these days, Autodesk is a company in
+              transition. It was until recently a traditional boxed software company
+              selling licenses. Yet its own business model disruption is only part of
+              the story — and{" "} <a href="#">Read More</a>.
+            </p>
+            <p>by <span className="font-bold">Megan Rose</span>, 2 days ago</p>
+          </div>
         </div>
       </div>
     </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+  }
+>
+  ```html
     <div class="flex flex-col bg-white bg-clip-border rounded-xl shadow-none bg-transparent">
       <div class="flex">
         <div class="w-1/3">
@@ -548,6 +371,6 @@ Our last card example has an horizontal layout. Use it to your projects!
         </div>
       </div>
     </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
+
