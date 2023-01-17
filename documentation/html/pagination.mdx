@@ -15,66 +15,63 @@ See below our simple pagination component example that you can use for your Tail
 
 <br />
 
-<ComponentDemo id="pagination">
+<CodePreview
+  id="pagination"
+  link="button#pagination"
+  component={
+    <nav>
+      <ul className="flex">
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+            <span className="material-icons text-sm">keyboard_arrow_left</span>
+          </a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-pink shadow-md text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+            <span className="material-icons text-sm">keyboard_arrow_right</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  }
+>
+  ```html
   <nav>
-    <ul className="pagination-pink pagination">
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Previous">
-          <span className="material-icons">keyboard_arrow_left</span>
+    <ul class="flex">
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+          <span class="material-icons text-sm">keyboard_arrow_left</span>
         </a>
       </li>
-      <li className="page-item active">
-        <a className="page-link" href="#">
-          {`1`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-pink shadow-md text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`2`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`3`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Next">
-          <span className="material-icons">keyboard_arrow_right</span>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+          <span class="material-icons text-sm">keyboard_arrow_right</span>
         </a>
       </li>
     </ul>
   </nav>
-</ComponentDemo>
+  ```
+</CodePreview>
 
-```html
-<nav>
-  <ul class="pagination-pink pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#">2</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-```
-
-{" "}
-
-<br />
-<br />
+--- 
 
 ### Pagination Colors Variation
 
@@ -84,60 +81,62 @@ Change the color of the pagination component by simply add the name of the color
 
 <br />
 
-<ComponentDemo id="color variation">
+<CodePreview
+  id="pagination-variation"
+  link="button#pagination-variation"
+  component={
+    <nav>
+      <ul className="flex">
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+            <span className="material-icons text-sm">keyboard_arrow_left</span>
+          </a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-cyan shadow-md text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+            <span className="material-icons text-sm">keyboard_arrow_right</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  }
+>
+  ```html
   <nav>
-    <ul className="pagination pagination-cyan">
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Previous">
-          <span className="material-icons">keyboard_arrow_left</span>
+    <ul class="flex">
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+          <span class="material-icons text-sm">keyboard_arrow_left</span>
         </a>
       </li>
-      <li className="page-item active">
-        <a className="page-link" href="#">
-          {`1`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-cyan shadow-md text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`2`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`3`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Next">
-          <span className="material-icons">keyboard_arrow_right</span>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+          <span class="material-icons text-sm">keyboard_arrow_right</span>
         </a>
       </li>
     </ul>
   </nav>
-</ComponentDemo>
-
-```html
-<nav>
-  <ul className="pagination pagination-cyan">
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Previous">
-        <span className="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li className="page-item active">
-      <a className="page-link" href="#">1</a>
-    </li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-    <li className="page-item"><a className="page-link" href="#">3</a></li>
-    <li className="page-item">
-      <a className="page-link" href="#" aria-label="Next">
-        <span className="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-```
-
+  ```
+</CodePreview>
+-
 ```js
 colors: {
   ("blue-gray");
@@ -164,11 +163,7 @@ colors: {
   ("dark");
 }
 ```
-
-{" "}
-
-<br />
-<br />
+---
 
 ### Pagination with gradient
 
@@ -176,54 +171,59 @@ All you have to do is to set the **.pagination-gradient** class.
 
 <br />
 
-<ComponentDemo id="pagination gradient">
+<CodePreview
+  id="pagination-gradient"
+  link="button#pagination-gradient"
+  component={
+    <nav>
+      <ul className="flex">
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+            <span className="material-icons text-sm">keyboard_arrow_left</span>
+          </a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-gradient-to-tr from-pink-600 to-pink-400 shadow-md shadow-pink-500/20 text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
+        </li>
+        <li>
+          <a className="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+            <span className="material-icons text-sm">keyboard_arrow_right</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  }
+>
+  ```html
   <nav>
-    <ul className="pagination-pink pagination pagination-gradient">
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Previous">
-          <span className="material-icons">keyboard_arrow_left</span>
+    <ul class="flex">
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Previous">
+          <span class="material-icons text-sm">keyboard_arrow_left</span>
         </a>
       </li>
-      <li className="page-item active">
-        <a className="page-link" href="#">
-          {`1`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-gradient-to-tr from-pink-600 to-pink-400 shadow-md shadow-pink-500/20 text-sm text-white rounded-full transition duration-150 ease-in-out" href="#">1</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`2`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">2</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#">
-          {`3`}
-        </a>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#">3</a>
       </li>
-      <li className="page-item">
-        <a className="page-link" href="#" aria-label="Next">
-          <span className="material-icons">keyboard_arrow_right</span>
+      <li>
+        <a class="flex items-center justify-center p-0 mx-1 w-9 h-9 bg-white hover:bg-light-300 text-sm text-secondary-500 rounded-full border border-slate-300 transition duration-150 ease-in-out" href="#" aria-label="Next">
+          <span class="material-icons text-sm">keyboard_arrow_right</span>
         </a>
       </li>
     </ul>
   </nav>
-</ComponentDemo>
+  ```
+</CodePreview>
 
-```html
-<nav>
-  <ul class="pagination-pink pagination pagination-gradient">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="material-icons">keyboard_arrow_left</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="material-icons">keyboard_arrow_right</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-```
