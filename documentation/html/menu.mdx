@@ -17,77 +17,49 @@ See below our menu example that you can use in your Tailwind CSS project. The ex
 
 <br />
 
-<ComponentDemo id="menu">
-  <div className="menu">
-    <button
-      className="button button-pink"
-      menu-trigger="true"
-      aria-expanded="true"
-      data-ripple-light="true"
-    >
-      {`menu`}
-    </button>
-    <ul className="dropdown-menu p-2">
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 1</span>
-          </div>
-        </a>
-      </li>
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 2</span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 3</span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="menu">
-  <button
-    class="button button-pink"
-    menu-trigger="true"
-    aria-expanded="true"
-    data-ripple-light="true"
-  >
-    menu
-  </button>
-  <ul class="dropdown-menu p-2">
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 1</span>
-        </div>
-      </a>
-    </li>
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 2</span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 3</span>
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-```
+<CodePreview
+  id="menu"
+  link="button#menu"
+  component={
+    <div className="menu">
+      <button
+        className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        menu-trigger="true"
+        aria-expanded="true"
+        data-ripple-light="true"
+      >
+        {`Open menu`}
+      </button>
+      <ul className="bg-white min-w-[180px] p-3 border border-blue-gray-50 rounded-md shadow-lg shadow-blue-gray-500/10 font-sans text-sm font-normal text-blue-gray-500 overflow-auto focus:outline-none z-[999]">
+        <li className="mb-2">
+          <a className="block w-full pt-[9px] pb-2 px-3 rounded-md text-start leading-tight cursor-pointer select-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900" href="#">
+            <div className="flex items-center py-1">
+              <span className="my-auto ml-2 normal-case">Menu Item 1</span>
+            </div>
+          </a>
+        </li>
+        <li className="mb-2">
+          <a className="block w-full pt-[9px] pb-2 px-3 rounded-md text-start leading-tight cursor-pointer select-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900" href="#">
+            <div className="flex items-center py-1">
+              <span className="my-auto ml-2 normal-case">Menu Item 2</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a className="block w-full pt-[9px] pb-2 px-3 rounded-md text-start leading-tight cursor-pointer select-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900" href="#">
+            <div className="flex items-center py-1">
+              <span className="my-auto ml-2 normal-case">Menu Item 3</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  }
+>
+  ```html
+  
+  ```
+</CodePreview>
 
 ---
 
