@@ -564,7 +564,7 @@
   "fade": "",
   "notification:not( show)": "hidden",
   "pagination": "flex ",
-  "pagination page-item page-link, pagination page-item span": "flex items-center justify-center    w-9 h-9 text-sm",
+  "pagination page-item page-link, pagination page-item span": "flex items-center justify-center p-0 mx-1 w-9 h-9 text-sm",
   "pagination page-item active page-link": " ",
   "pagination page-link": "relative bg-[#ffffff]",
   "pagination page-link:hover": " bg-[#e9ecef]",
