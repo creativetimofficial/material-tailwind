@@ -15,22 +15,17 @@ See below our simple chip component example that you can use for your Tailwind C
 
 <br />
 
-<ComponentDemo id="chip">
-  <div className="chip chip-pink mr-2">chip pink</div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="chip chip-pink mr-2">chip pink</div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
+<CodePreview
+  id="chip"
+  link="button#chip"
+  component={
     <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  }
+>
+  ```html
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
+  ```
+</CodePreview>
 
 ---
 
@@ -40,36 +35,26 @@ Use this example to create a simple and versatile badge component.
 
 <br />
 
-<ComponentDemo id="chip">
-  <div className="flex">
-    <div className="chip chip-pink mr-2">chip pink</div>
-    <div className="chip chip-blue mr-2">chip blue</div>
-    <div className="chip chip-green mr-2">chip green</div>
-    <div className="chip chip-red mr-2">chip red</div>
-    <div className="chip chip-orange mr-2">chip orange</div>
-    <div className="chip chip-purple">chip purple</div>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <div class="chip chip-pink mr-2">chip pink</div>
-    <div class="chip chip-blue mr-2">chip blue</div>
-    <div class="chip chip-green mr-2">chip green</div>
-    <div class="chip chip-red mr-2">chip red</div>
-    <div class="chip chip-orange mr-2">chip orange</div>
-    <div class="chip chip-purple">chip purple</div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-blue-100 text-blue-500 rounded-lg py-2 px-4 mr-2">chip blue</div>
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-green-100 text-green-500 rounded-lg py-2 px-4 mr-2">chip green</div>
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-red-100 text-red-500 rounded-lg py-2 px-4 mr-2">chip red</div>
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-orange-100 text-orange-500 rounded-lg py-2 px-4 mr-2">chip orange</div>
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-purple-100 text-purple-500 rounded-lg py-2 px-4 mr-2">chip purple</div>
-    ```
-  </TabPanel>
-</CodeTabs>
+<CodePreview
+  id="chip-variation"
+  link="button#chip-variation"
+  component={
+    <div className="flex">
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-blue-100 text-blue-500 rounded-lg py-2 px-4 mr-2">chip blue</div>
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-green-100 text-green-500 rounded-lg py-2 px-4 mr-2">chip green</div>
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-red-100 text-red-500 rounded-lg py-2 px-4 mr-2">chip red</div>
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-orange-100 text-orange-500 rounded-lg py-2 px-4 mr-2">chip orange</div>
+      <div className="text-xs font-semibold leading-none inline-block uppercase bg-purple-100 text-purple-500 rounded-lg py-2 px-4 mr-2">chip purple</div>
+    </div>
+  }
+>
+  ```html
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-blue-100 text-blue-500 rounded-lg py-2 px-4 mr-2">chip blue</div>
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-green-100 text-green-500 rounded-lg py-2 px-4 mr-2">chip green</div>
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-red-100 text-red-500 rounded-lg py-2 px-4 mr-2">chip red</div>
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-orange-100 text-orange-500 rounded-lg py-2 px-4 mr-2">chip orange</div>
+  <div class="text-xs font-semibold leading-none inline-block uppercase bg-purple-100 text-purple-500 rounded-lg py-2 px-4 mr-2">chip purple</div>
+  ```
+</CodePreview>
