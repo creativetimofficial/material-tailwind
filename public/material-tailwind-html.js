@@ -172,7 +172,7 @@ export default function init() {
         }
       }
     };
-    var accordion = document.querySelectorAll(".accordion-button");
+    var accordion = document.querySelectorAll("[accordion-button]");
     for (var i = 0; i < accordion.length; i++) {
       accordion[i].addEventListener("click", openCurrentAccordion);
     }
