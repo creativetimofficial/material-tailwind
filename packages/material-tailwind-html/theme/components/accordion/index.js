@@ -1,17 +1,17 @@
 const accordion = (theme) => ({
-  ".accordion": {
-    ".collapse.open": {
+  "[data-accordion]": {
+    "[data-collapse].open": {
       opacity: theme("opacity.100"),
       transition: "all .35s ease",
       visibility: "visible"
     },
-    ".collapse:not(.open)": {
+    "[data-collapse]:not(.open)": {
       opacity: theme("opacity.0"),
       height: theme("height.0"),
       transition: "all .35s ease"
     },
   
-    ".accordion-button": {
+    "[accordion-button]": {
       position: "relative",
       display: "flex",
       alignItems: "center",
@@ -40,7 +40,7 @@ const accordion = (theme) => ({
       }
     },
     
-    ".accordion-button:not(.collapsed)": {
+    "[accordion-button]:not(.collapsed)": {
       color: theme("colors.dark.500"),
       backgroundColor: theme("colors.transparent"),
       boxShadow: "inset 0 0 0 rgba(0, 0, 0, .13)"
