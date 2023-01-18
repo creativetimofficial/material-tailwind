@@ -21,20 +21,21 @@ To use an accordion example that has items expanded, add the <Code html html>.op
   id="accordion"
   link="button#accordion"
   component={
-    <div class="accordion">
+    <div data-accordion="">
       <div class="relative mb-3">
         <h6 class="mb-0">
           <button
             class="relative flex items-center w-full py-4 text-secondary-500 border-b border-grey-300 text-left font-semibold"
             type="button"
             aria-expanded="false"
+            accordion-button=""
           >
             <span>How do I order?</span>
             <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
             <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
           </button>
         </h6>
-        <div class="collapse open">
+        <div data-collapse="" class="open">
           <div class="py-4 text-sm opacity-60">
             We're not always in the position that we want to be at. We're constantly
             growing. We're constantly making mistakes. We're constantly trying to
@@ -50,13 +51,14 @@ To use an accordion example that has items expanded, add the <Code html html>.op
             class="relative flex items-center w-full py-4 text-dark-500 border-b border-grey-300 collapsed text-left font-semibold"
             type="button"
             aria-expanded="false"
+            accordion-button=""
           >
             <span>How can i make the payment?</span>
             <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
             <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
           </button>
         </h6>
-        <div class="collapse">
+        <div data-collapse="">
           <div class="py-4 text-sm opacity-60">
             It really matters and then like it really doesn't matter. What matters
             is the people who are sparked by it. And the people who are like
@@ -72,13 +74,14 @@ To use an accordion example that has items expanded, add the <Code html html>.op
             class="relative flex items-center w-full py-4 text-dark-500 border-b border-grey-300 collapsed text-left font-semibold"
             type="button"
             aria-expanded="false"
+            accordion-button=""
           >
             <span>How much time does it take to receive the order?</span>
             <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
             <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
           </button>
         </h6>
-        <div class="collapse">
+        <div data-collapse="">
           <div class="py-4 text-sm opacity-60">
             The time is now for it to be okay to be great. People in this world shun
             people for being great. For being a bright color. For standing out. But
@@ -98,13 +101,14 @@ To use an accordion example that has items expanded, add the <Code html html>.op
             class="relative flex items-center w-full py-4 text-dark-500 border-b border-grey-300 collapsed text-left font-semibold"
             type="button"
             aria-expanded="false"
+            accordion-button=""
           >
             <span>Can I resell the products?</span>
             <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
             <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
           </button>
         </h6>
-        <div class="collapse">
+        <div data-collapse="">
           <div class="py-4 text-sm opacity-60">
             I always felt like I could do anything. That's the main thing people are
             controlled by! Thoughts- their perception of themselves! They're slowed
@@ -119,13 +123,14 @@ To use an accordion example that has items expanded, add the <Code html html>.op
             class="relative flex items-center w-full py-4 text-dark-500 border-b border-grey-300 collapsed text-left font-semibold"
             type="button"
             aria-expanded="false"
+            accordion-button=""
           >
             <span>Where do I find the shipping details?</span>
             <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
             <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
           </button>
         </h6>
-        <div class="collapse">
+        <div data-collapse="">
           <div class="py-4 text-sm opacity-60">
             I always felt like I could do anything. That's the main thing people are
             controlled by! Thoughts- their perception of themselves! They're slowed
