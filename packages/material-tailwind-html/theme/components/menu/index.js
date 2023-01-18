@@ -27,31 +27,6 @@ const menu = (theme) => ({
     borderRadius: theme("borderRadius.md"),
     marginTop: "2.8125rem",
 
-    "&::before": {
-      fontFamily: "FontAwesome",
-      content: '"\\f0d8"',
-      position: "absolute",
-      top: theme("spacing.0"),
-      left: theme("spacing.7"),
-      right: "auto",
-      fontSize: "1.375rem",
-      color: theme("colors.white"),
-      transition: "top .35s ease",
-      display: "block",
-      clear: "both",
-      boxSizing: "border-box"
-    },
-
-    "&.menu-right": {
-      right: theme("spacing.0"),
-      left: "auto",
-
-      "&:before": {
-        right: theme("spacing.7"),
-        left: "auto"
-      }
-    },
-
     ".menu-item + .dropdown-menu": {
       opacity: theme("opacity.0") + "!important",
       left: "103%",
@@ -69,18 +44,18 @@ const menu = (theme) => ({
     }
   },
 
-  ".menu": {
+  "[menu]": {
     position: "relative",
 
     "&.open": {
-      ".dropdown-menu": {
+      "ul": {
         opacity: theme("opacity.100") + "!important",
         pointerEvents: "auto",
         transform: "scale(1)",
-        marginTop: "2.8125rem",
+        marginTop: theme("spacing.1"),
 
         "&:before": {
-          top: "-19px"
+          top: theme("spacing.5")
         }
       }
     }
@@ -103,7 +78,34 @@ const menu = (theme) => ({
       color: theme("colors.dark.500"),
       backgroundColor: theme("colors.light.500")
     }
-  }
+  },
+
+  // ".dropdown-menu,[dropdown-menu]": {
+  //   "&::before": {
+  //     fontFamily: "FontAwesome",
+  //     content: '"\\f0d8"',
+  //     position: "absolute",
+  //     top: theme("spacing.0"),
+  //     left: theme("spacing.7"),
+  //     right: "auto",
+  //     fontSize: "1.375rem",
+  //     color: theme("colors.white"),
+  //     transition: "top .35s ease",
+  //     display: "block",
+  //     clear: "both",
+  //     boxSizing: "border-box"
+  //   },
+
+  //   "&.menu-right": {
+  //     right: theme("spacing.0"),
+  //     left: "auto",
+
+  //     "&:before": {
+  //       right: theme("spacing.7"),
+  //       left: "auto"
+  //     }
+  //   },
+  // }
 });
 
 module.exports.menu = menu;
