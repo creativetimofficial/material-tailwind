@@ -8,9 +8,6 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 // styles
 import "/styles/globals.css";
-import "/styles/choices.css";
-import "/styles/flatpickr.css";
-import "/styles/nouislider.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -26,10 +23,6 @@ function MyApp({ Component, pageProps }) {
       <Script
         strategy="afterInteractive"
         src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-      />
-      <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
       />
       <Script
         crossOrigin="anonymous"
