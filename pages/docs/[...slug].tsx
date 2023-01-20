@@ -3,6 +3,7 @@ import { Fragment, useState, useEffect } from "react";
 // next.js components
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 // next-mdx-remote components
@@ -91,6 +92,9 @@ import { routes as reactRoutes } from "routes/react.routes";
 import config from "utils/rehype-pretty-code-config";
 import filterArray from "utils/filter-array";
 import getDirectoriesAndFile from "utils/get-directories-and-files";
+
+// material tailwind html script
+import initHtmlScripts from "public/material-tailwind-html-v2";
 
 const components = {
   h1: (props) => (
@@ -214,11 +218,8 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
+  Link
 };
-
-// @material-tailwind/html components scripts
-import init from "public/material-tailwind-html";
-import ripple from "public/material-ripple-effects";
 
 export default function Page({ frontMatter, mdxSource, slug }) {
   const { asPath } = useRouter();
@@ -235,10 +236,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     .join("") as "html" | "react" | "vue" | "angular" | "svelte";
 
   useEffect(() => {
-    if (frameworkType === "html") {
-      init();
-      ripple();
-    }
+    if (frameworkType === "html" && typeof window !== "undefined") {
+      initHtmlScripts();
+    } 
   }, [frameworkType, slug]);
 
   return (
@@ -280,9 +280,9 @@ export const getStaticPaths = async () => {
   const filteredArray = filterArray(allDir);
 
   for (let i = 0; i < filteredArray.length - 1; i++) {
-    const directories = filteredArray[i] !== null && filteredArray[i]
-    .split("/")
-    .filter((dir) => dir !== baseDirectory);
+    const directories =
+      filteredArray[i] !== null &&
+      filteredArray[i].split("/").filter((dir) => dir !== baseDirectory);
     const files = filteredArray[i + 1].includes("/")
       ? filteredArray[i + 1].split("/").filter((dir) => dir !== baseDirectory)
       : filteredArray[i + 1];
@@ -309,11 +309,12 @@ export const getStaticProps = async ({ params: { slug } }) => {
   );
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      
+      development: false,
     },
   });
 

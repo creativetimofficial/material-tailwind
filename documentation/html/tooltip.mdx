@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Tooltip - Material Tailwind
 description: Customise your web projects with our easy-to-use Tooltip component for Tailwind CSS using Material Design guidelines.
-navigation: ["tooltip", "tooltip-position", "required-script"]
+navigation:
+  [
+    "tooltip",
+    "tooltip-placement",
+    "custom-tooltip-animation",
+    "tooltip-trigger-data-attributes",
+    "tooltip-data-attributes",
+    "required-script",
+  ]
 github: tooltip
 prev: textarea
 next: typography
@@ -17,145 +25,492 @@ See below our example that will help you create a simple tooltip for your projec
 
 <br />
 
-<ComponentDemo id="tooltip">
-  <button
-    className="button button-pink"
-    data-target="tooltip"
-    aria-describedby="tooltip"
-    data-ripple-light="true"
-  >
-    {`Tooltip top`}
-  </button>
-  <div className="tooltip" role="tooltip" data-placement="top">
-    {`My tooltip`}
-    <div className="arrow" data-popper-arrow></div>
-  </div>
-</ComponentDemo>
+You can initialize a new tooltip by adding the <Code html>data-tooltip-target="`{tooltipName}`"</Code> data attribute to the trigger element and the <Code html>data-tooltip="`{tooltipName}`"</Code> to the element that you want to use as the tooltip.
 
-```html
-<button
-  class="button button-pink"
-  data-target="tooltip"
-  aria-describedby="tooltip"
-  data-ripple-light="true"
+<CodePreview
+  id="tooltip"
+  link="tooltip#tooltip"
+  component={
+    <>
+      <button
+        data-ripple-light="true"
+        data-tooltip-target="tooltip"
+        className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        {`Show Tooltip`}
+      </button>
+      <div
+        data-tooltip="tooltip"
+        className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+      >
+        {`Material Tailwind`}
+      </div>
+    </>
+  }
 >
-  Tooltip top
-</button>
-<div class="tooltip" role="tooltip" data-placement="top">
-  My tooltip
-  <div class="arrow" data-popper-arrow></div>
-</div>
-```
+  ```html
+  <button
+    data-ripple-light="true"
+    data-tooltip-target="tooltip"
+    class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  >
+    Show Tooltip
+  </button>
+  <div
+    data-tooltip="tooltip"
+    class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+  >
+    Material Tailwind
+  </div>
+  ```
+</CodePreview>
 
 ---
 
-## Tooltip position
+## Tooltip Placement
 
-You can simply change the tooltip position by changing the **data-placement=" "** attribute with the following values: **_top_**, **_right_**, **_bottom_**, **_left_**.
+You can change the position of the tooltip relative to it's trigger element by adding the <Code html>data-tooltip-placement="`{top}`"</Code> data attribute to the tooltip element by default it set's to <Code html>top</Code>. <br /> Check the placement values for tooltip <a className="hover:text-pink-500 font-medium" href="#tooltip-data-attributes">here</a>.
 
-<ComponentDemo id="tooltip position">
-  <div className="flex">
+<CodePreview
+  id="tooltip-placement"
+  link="tooltip#tooltip-placement"
+  component={
+    <>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-top"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Top`}
+        </button>
+        <div
+          data-tooltip="tooltip-top"
+          data-tooltip-placement="top"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-top-start"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Top Start`}
+        </button>
+        <div
+          data-tooltip="tooltip-top-start"
+          data-tooltip-placement="top-start"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-top-end"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Top End`}
+        </button>
+        <div
+          data-tooltip="tooltip-top-end"
+          data-tooltip-placement="top-end"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-right"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Right`}
+        </button>
+        <div
+          data-tooltip="tooltip-right"
+          data-tooltip-placement="right"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-right-start"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Right Start`}
+        </button>
+        <div
+          data-tooltip="tooltip-right-start"
+          data-tooltip-placement="right-start"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-right-end"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Right End`}
+        </button>
+        <div
+          data-tooltip="tooltip-right-end"
+          data-tooltip-placement="right-end"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-bottom"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Bottom`}
+        </button>
+        <div
+          data-tooltip="tooltip-bottom"
+          data-tooltip-placement="bottom"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-bottom-start"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Bottom Start`}
+        </button>
+        <div
+          data-tooltip="tooltip-bottom-start"
+          data-tooltip-placement="bottom-start"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-bottom-end"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Bottom End`}
+        </button>
+        <div
+          data-tooltip="tooltip-bottom-end"
+          data-tooltip-placement="bottom-end"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-left"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Left`}
+        </button>
+        <div
+          data-tooltip="tooltip-left"
+          data-tooltip-placement="left"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-left-start"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Left Start`}
+        </button>
+        <div
+          data-tooltip="tooltip-left-start"
+          data-tooltip-placement="left-start"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+        <button
+          data-ripple-light="true"
+          data-tooltip-target="tooltip-left-end"
+          className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Left End`}
+        </button>
+        <div
+          data-tooltip="tooltip-left-end"
+          data-tooltip-placement="left-end"
+          className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+        >
+          {`Material Tailwind`}
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="mb-3 flex gap-3">
     <button
-      className="button button-pink"
-      data-target="tooltip"
-      aria-describedby="tooltip"
       data-ripple-light="true"
+      data-tooltip-target="tooltip-top"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     >
-      {`Tooltip top`}
+      Top
     </button>
-    <div className="tooltip" role="tooltip" data-placement="top">
-      {`Top tooltip`}
-      <div className="arrow" data-popper-arrow></div>
+    <div
+      data-tooltip="tooltip-top"
+      data-tooltip-placement="top"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
     </div>
     <button
-      className="button button-pink mx-4"
-      data-target="tooltip"
-      aria-describedby="tooltip"
       data-ripple-light="true"
+      data-tooltip-target="tooltip-top-start"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     >
-      {`Tooltip right`}
+      Top Start
     </button>
-    <div className="tooltip" role="tooltip" data-placement="right">
-      {`Right tooltip`}
-      <div className="arrow" data-popper-arrow></div>
+    <div
+      data-tooltip="tooltip-top-start"
+      data-tooltip-placement="top-start"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
     </div>
     <button
-      className="button button-pink mr-4"
-      data-target="tooltip"
-      aria-describedby="tooltip"
       data-ripple-light="true"
+      data-tooltip-target="tooltip-top-end"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     >
-      {`Tooltip bottom`}
+      Top End
     </button>
-    <div className="tooltip" role="tooltip" data-placement="bottom">
-      {`Bottom tooltip`}
-      <div className="arrow" data-popper-arrow></div>
-    </div>
-    <button
-      className="button button-pink"
-      data-target="tooltip"
-      aria-describedby="tooltip"
-      data-ripple-light="true"
+    <div
+      data-tooltip="tooltip-top-end"
+      data-tooltip-placement="top-end"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
     >
-      {`Tooltip left`}
-    </button>
-    <div className="tooltip" role="tooltip" data-placement="left">
-      {`Left tooltip`}
-      <div className="arrow" data-popper-arrow></div>
+      Material Tailwind
     </div>
   </div>
-</ComponentDemo>
+  <div class="mb-3 flex gap-3">
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-right"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Right
+    </button>
+    <div
+      data-tooltip="tooltip-right"
+      data-tooltip-placement="right"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-right-start"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Right Start
+    </button>
+    <div
+      data-tooltip="tooltip-right-start"
+      data-tooltip-placement="right-start"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-right-end"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Right End
+    </button>
+    <div
+      data-tooltip="tooltip-right-end"
+      data-tooltip-placement="right-end"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+  </div>
+  <div class="mb-3 flex gap-3">
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-bottom"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Bottom
+    </button>
+    <div
+      data-tooltip="tooltip-bottom"
+      data-tooltip-placement="bottom"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-bottom-start"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Bottom Start
+    </button>
+    <div
+      data-tooltip="tooltip-bottom-start"
+      data-tooltip-placement="bottom-start"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-bottom-end"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Bottom End
+    </button>
+    <div
+      data-tooltip="tooltip-bottom-end"
+      data-tooltip-placement="bottom-end"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+  </div>
+  <div class="mb-3 flex gap-3">
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-left"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Left
+    </button>
+    <div
+      data-tooltip="tooltip-left"
+      data-tooltip-placement="left"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-left-start"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Left Start
+    </button>
+    <div
+      data-tooltip="tooltip-left-start"
+      data-tooltip-placement="left-start"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+    <button
+      data-ripple-light="true"
+      data-tooltip-target="tooltip-left-end"
+      class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Left End
+    </button>
+    <div
+      data-tooltip="tooltip-left-end"
+      data-tooltip-placement="left-end"
+      class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+    >
+      Material Tailwind
+    </div>
+  </div>
+  ```
+</CodePreview>
 
-```html
-<button
-  class="button button-pink"
-  data-target="tooltip"
-  aria-describedby="tooltip"
-  data-ripple-light="true"
+---
+
+## Custom Tooltip Animation
+
+You can modify the open/close state animation for tooltip by adding the <Code html>data-tooltip-mount="`{opacity-100}`"</Code>, <Code html>data-tooltip-unmount="`{opacity-0}`"</Code> and <Code html>data-tooltip-transition="`{transition-opacity}`"</Code> data attributes to the tooltip element. You can pass tailwind css classnames for those data attributes for animation the tooltip. <br /> Check more about animation data attributes for tooltip <a className="hover:text-pink-500 font-medium" href="#tooltip-data-attributes">here</a>.
+
+<CodePreview
+  id="custom-tooltip-animation"
+  link="tooltip#custom-tooltip-animation"
+  component={
+    <>
+      <button
+        data-ripple-light="true"
+        data-tooltip-target="tooltip-animation"
+        className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        {`Show Tooltip`}
+      </button>
+      <div
+        data-tooltip="tooltip-animation"
+        data-tooltip-mount="opacity-100 scale-100"
+        data-tooltip-unmount="opacity-0 scale-0 pointer-events-none"
+        data-tooltip-transition="transition-all duration-200 origin-bottom"
+        className="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+      >
+        {`Material Tailwind`}
+      </div>
+    </>
+  }
 >
-  Tooltip top
-</button>
-<div class="tooltip" role="tooltip" data-placement="top">
-  Top tooltip
-  <div class="arrow" data-popper-arrow></div>
-</div>
-<button
-  class="button button-pink"
-  data-target="tooltip"
-  aria-describedby="tooltip"
-  data-ripple-light="true"
->
-  Tooltip right
-</button>
-<div class="tooltip" role="tooltip" data-placement="right">
-  Right tooltip
-  <div class="arrow" data-popper-arrow></div>
-</div>
-<button
-  class="button button-pink"
-  data-target="tooltip"
-  aria-describedby="tooltip"
-  data-ripple-light="true"
->
-  Tooltip bottom
-</button>
-<div class="tooltip" role="tooltip" data-placement="bottom">
-  Bottom tooltip
-  <div class="arrow" data-popper-arrow></div>
-</div>
-<button
-  class="button button-pink"
-  data-target="tooltip"
-  aria-describedby="tooltip"
-  data-ripple-light="true"
->
-  Tooltip left
-</button>
-<div class="tooltip" role="tooltip" data-placement="left">
-  Left tooltip
-  <div class="arrow" data-popper-arrow></div>
-</div>
-```
+  ```html
+  <button
+    data-ripple-light="true"
+    data-tooltip-target="tooltip-animation"
+    class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  >
+    Show Tooltip
+  </button>
+  <div
+    data-tooltip="tooltip-animation"
+    data-tooltip-mount="opacity-100 scale-100"
+    data-tooltip-unmount="opacity-0 scale-0 pointer-events-none"
+    data-tooltip-transition="transition-all duration-200 origin-bottom"
+    class="absolute z-50 whitespace-normal break-words rounded-lg bg-black py-1.5 px-3 font-sans text-sm font-normal text-white focus:outline-none"
+  >
+    Material Tailwind
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Tooltip Trigger Data Attributes
+
+<span id="tooltip-trigger-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for tooltip trigger element.
+
+| Attribute             | Description                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| `data-tooltip-target` | Set the tooltip target element, it should be the same as the `data-tooltip` data attribute. |
+
+---
+
+## Tooltip Data Attributes
+
+<span id="tooltip-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for tooltip element.
+
+| Attribute                 | Description                                                                         | Default                                                                  |
+| ------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `data-tooltip`            | Set the name of the tooltip and reference it to the <br /> tooltip trigger element. |                                                                          |
+| `data-tooltip-offset`     | Set the offset between the tooltip and the tooltip trigger element.                 | 5                                                                        |
+| `data-tooltip-placement`  | Set the position of the tooltip relative to it's trigger element.                   | <Code html>top</Code>                                                    |
+| `data-tooltip-mount`      | Set the classnaes that should be used when the <br /> tooltip is visible.           | <Code html>opacity-1</Code>                                              |
+| `data-tooltip-unmount`    | Set the classnaes that should be used when the <br /> tooltip is hidden.            | <Code html>opacity-0</Code><br /><Code html>pointer-events-none</Code>   |
+| `data-tooltip-transition` | Set the classnaes that should be used for <br /> transition of the tooltip.         | <Code html>transition-opacity</Code><br /><Code html>duration-300</Code> |
 
 ---
 
@@ -163,14 +518,12 @@ You can simply change the tooltip position by changing the **data-placement=" "*
 
 <span id="required-script" className="scroll-mt-56" />
 
-The tooltip component needs some required script files to work, you just need to add the below script file to the bottom of your html file.
+The tooltip component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
 
 ```html
-<script src="node_modules/@material-tailwind/html/scripts/tooltip.js"></script>
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/tooltip.js"></script>
 
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tooltip.js"></script>
-
-<!-- popper.js cdn link -->
-<script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 ```

@@ -43,7 +43,6 @@ export default function Pre({ children, color = "blue", ...rest }: Props) {
   const handleCopy = () => {
     copyToClipboard(codeRef.current.innerText);
     setCopied(true);
-    console.log(codeRef.current.innerText);
   };
 
   useEffect(() => {

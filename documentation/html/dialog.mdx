@@ -4,11 +4,11 @@ description: Customise your web projects with our easy-to-use dialog component f
 navigation:
   [
     "dialog",
-    "notification-dialog",
-    "long-dialog",
-    "message-dialog",
-    "signin-dialog",
-    "signup-dialog",
+    "dialog-sizes",
+    "custom-dialog-animation",
+    "dialog-trigger-data-attributes",
+    "dialog-backdrop-data-attributes",
+    "dialog-data-attributes",
     "required-script",
   ]
 github: dialog
@@ -24,1125 +24,799 @@ A dialog is a type of modal window with critical information which disable all a
 
 See below our dialog example that you can use for your Tailwind CSS project.
 
+You can initialize a new dialog by adding the <Code html>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code html>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code html>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
+
+You can also use the <Code html>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
+
 <br />
-<ComponentDemo id="dialog">
+
+<CodePreview
+  id="dialog"
+  link="dialog#dialog"
+  component={
+    <>
+      <button
+        className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+        data-dialog-target="dialog"
+      >
+        {`Open Dialog`}
+      </button>
+      <div
+        data-dialog-backdrop="dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="dialog"
+          className="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            {`Its a simple dialog.`}
+          </div>
+          <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            {`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+                reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+                dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+                corrupti explicabo!`}
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+            <button
+              data-ripple-dark="true"
+              data-dialog-close="true"
+              className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              {`Cancel`}
+            </button>
+            <button
+              data-ripple-light="true"
+              data-dialog-close="true"
+              className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              {`Confirm`}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
   <button
-    className="button button-pink mx-auto flex"
-    dialog-trigger="true"
     data-ripple-light="true"
+    data-dialog-target="dialog"
+    class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
   >
-    {`Demo dialog`}
+    Open Dialog
   </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content">
-        <div className="dialog-header">
-          <h6 className="mb-0">Dialog title</h6>
-          <button
-            type="button"
-            className="me-0 button-close"
-            dialog-close="true"
-            aria-label="Close"
-          >
-            <i className="material-icons">close</i>
-          </button>
-        </div>
-        <div className="dialog-body">
-          <p className="opacity-60">
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in Bookmarksgrove right at the coast of the Semantics, a large
-            language ocean. A small river named Duden flows by their place and
-            supplies it with the necessary regelialia. It is a paradisematic
-            country, in which roasted parts of sentences fly into your mouth.
-          </p>
-        </div>
-        <div className="dialog-footer">
-          <button
-            className="button button-gradient button-dark mr-3 mb-0"
-            dialog-close="true"
-          >
-            {`Close`}
-          </button>
-          <button className="button button-gradient button-pink mb-0">
-            {`Save changes`}
-          </button>
-        </div>
+  <div
+    data-dialog-backdrop="dialog"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="dialog"
+      class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+    >
+      <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        Its a simple dialog.
+      </div>
+      <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+        reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+        dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+        corrupti explicabo!
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <button
+          data-ripple-dark="true"
+          data-dialog-close="true"
+          class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          Cancel
+        </button>
+        <button
+          data-ripple-light="true"
+          data-dialog-close="true"
+          class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          Confirm
+        </button>
       </div>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button
-      class="button button-pink"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Demo dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h6 class="mb-0">Dialog title</h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <p class="opacity-60">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large
-              language ocean. A small river named Duden flows by their place and
-              supplies it with the necessary regelialia. It is a paradisematic
-              country, in which roasted parts of sentences fly into your mouth.
-            </p>
-          </div>
-          <div class="dialog-footer">
-            <button
-              class="button button-gradient button-dark mr-3 mb-0"
-              dialog-close="true"
-            >
-              Close
-            </button>
-            <button class="button button-gradient button-pink mb-0">
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button
-      class="relative inline-block py-2.5 px-6 cursor-pointer overflow-hidden rounded-lg bg-pink text-xs font-medium uppercase"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Demo dialog
-    </button>
-    <div class="fixed top-0 left-0 z-0 w-full h-full overflow-x-hidden overflow-y-auto opacity-0 invisible">
-      <div class="fixed top-0 left-0 w-screen h-screen z-[1200] bg-[rgba(0,0,0,0.5)] transition-[opacity .15s linear]" dialog-close="true"></div>
-      <div class="flex items-center relative w-auto pointer-events-none m-[1.75rem auto] max-w-[31rem] min-h-[calc(100% - 15rem)]">
-        <div class="relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md shadow-dialog outline-0 z-[1300]">
-          <div class="flex shrink-0 items-center space-between p-4 border-b border-[#dee2e6]">
-            <h6 class="mb-0">Dialog title</h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="relative p-4">
-            <p class="opacity-60">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large
-              language ocean. A small river named Duden flows by their place and
-              supplies it with the necessary regelialia. It is a paradisematic
-              country, in which roasted parts of sentences fly into your mouth.
-            </p>
-          </div>
-          <div class="flex items-center justify-end p-3">
-            <button
-              class="button button-gradient button-dark mr-3 mb-0"
-              dialog-close="true"
-            >
-              Close
-            </button>
-            <button class="button button-gradient button-pink mb-0">
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
-## Notification Dialog
+## Dialog Sizes
 
-Use this dialog example if you want to notify the user about an action that he should take.
+You can set the size of the dialog by your own using the tailwind css classes, check the below examples for more details.
 
-<ComponentDemo id="notification-dialog">
-  <button
-    className="button button-deep-orange"
-    dialog-trigger="true"
-    data-ripple-light="true"
-  >
-    {`Notification dialog`}
-  </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content">
-        <div className="dialog-header">
-          <h6 className="mb-0 capitalize text-dark-500">
-            {`Your attention is required`}
-          </h6>
-          <button
-            type="button"
-            className="me-0 button-close"
-            dialog-close="true"
-            aria-label="Close"
+<CodePreview
+  id="dialog-sizes"
+  link="dialog#sizes"
+  component={
+    <>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-xs"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog XS`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-xs"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-xs"
+            className="relative m-4 w-1/4 min-w-[25%] max-w-[25%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
           >
-            <i className="material-icons">close</i>
-          </button>
-        </div>
-        <div className="dialog-body">
-          <div className="py-3 text-center">
-            <i className="fa fa-star text-3xl text-dark-500"></i>
-            <h4 className="mt-4 text-red-500">You should read this!</h4>
-            <p className="opacity-60">
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
-            </p>
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              Its a simple dialog.
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Cancel
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Confirm
+              </button>
+            </div>
           </div>
         </div>
-        <div className="dialog-footer">
-          <button className="button button-gradient button-pink mb-0">
-            {`Got it`}
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-sm"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog SM`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-sm"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-sm"
+            className="relative m-4 w-1/3 min-w-[33.333333%] max-w-[33.333333%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          >
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              Its a simple dialog.
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Cancel
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-md"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog MD`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-md"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-md"
+            className="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          >
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              {`Its a simple dialog.`}
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              {`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+                  reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+                  dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+                  corrupti explicabo!`}
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                {`Cancel`}
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                {`Confirm`}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-lg"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog LG`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-lg"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-lg"
+            className="relative m-4 w-3/5 min-w-[60%] max-w-[60%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          >
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              Its a simple dialog.
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Cancel
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-xl"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog XL`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-xl"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-xl"
+            className="relative m-4 w-3/4 min-w-[75%] max-w-[75%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          >
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              Its a simple dialog.
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+              architecto perspiciatis, dolorum dolorem iure quia saepe autem
+              accusamus eum praesentium magni corrupti explicabo!
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Cancel
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          data-ripple-light="true"
+          data-dialog-target="dialog-xxl"
+          className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          {`Open Dialog XXL`}
+        </button>
+        <div
+          data-dialog-backdrop="dialog-xxl"
+          data-dialog-backdrop-close="true"
+          className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+        >
+          <div
+            data-dialog="dialog-xxl"
+            className="relative h-screen w-screen min-w-[100vw] max-w-[100vw] bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased"
+          >
+            <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+              {`Its a simple dialog.`}
+            </div>
+            <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+              {`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+                  reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+                  dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+                  corrupti explicabo!`}
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+              <button
+                data-ripple-dark="true"
+                data-dialog-close="true"
+                className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                {`Cancel`}
+              </button>
+              <button
+                data-ripple-light="true"
+                data-dialog-close="true"
+                className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                {`Confirm`}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="mb-3 flex gap-3">
+    <button
+      data-ripple-light="true"
+      data-dialog-target="dialog-xs"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Open Dialog XS
+    </button>
+    <div
+      data-dialog-backdrop="dialog-xs"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-xs"
+        class="relative m-4 w-1/4 min-w-[25%] max-w-[25%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      data-ripple-light="true"
+      data-dialog-target="dialog-sm"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Open Dialog SM
+    </button>
+    <div
+      data-dialog-backdrop="dialog-sm"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-sm"
+        class="relative m-4 w-1/3 min-w-[33.333333%] max-w-[33.333333%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      data-ripple-light="true"
+      data-dialog-target="dialog-md"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Open Dialog MD
+    </button>
+    <div
+      data-dialog-backdrop="dialog-md"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-md"
+        class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
           </button>
         </div>
       </div>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
+  <div class="mb-3 flex gap-3">
     <button
-      class="button button-deep-orange"
-      dialog-trigger="true"
       data-ripple-light="true"
+      data-dialog-target="dialog-lg"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     >
-      Notification dialog
+      Open Dialog LG
     </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h6 class="mb-0 capitalize text-dark-500">
-              Your attention is required
-            </h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <div class="py-3 text-center">
-              <i class="fa fa-star text-3xl text-dark-500"></i>
-              <h4 class="mt-4 text-red-500">You should read this!</h4>
-              <p class="opacity-60">
-                A small river named Duden flows by their place and supplies it with
-                the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div class="dialog-footer">
-            <button class="button button-gradient button-deep-orange mb-0">
-              Got it
-            </button>
-          </div>
+    <div
+      data-dialog-backdrop="dialog-lg"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-lg"
+        class="relative m-4 w-3/5 min-w-[60%] max-w-[60%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
     <button
-      class="button button-deep-orange"
-      dialog-trigger="true"
       data-ripple-light="true"
+      data-dialog-target="dialog-xl"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     >
-      Notification dialog
+      Open Dialog XL
     </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h6 class="mb-0 capitalize text-dark-500">
-              Your attention is required
-            </h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <div class="py-3 text-center">
-              <i class="fa fa-star text-3xl text-dark-500"></i>
-              <h4 class="mt-4 text-red-500">You should read this!</h4>
-              <p class="opacity-60">
-                A small river named Duden flows by their place and supplies it with
-                the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div class="dialog-footer">
-            <button class="button button-gradient button-deep-orange mb-0">
-              Got it
-            </button>
-          </div>
+    <div
+      data-dialog-backdrop="dialog-xl"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-xl"
+        class="relative m-4 w-3/4 min-w-[75%] max-w-[75%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+    <button
+      data-ripple-light="true"
+      data-dialog-target="dialog-xxl"
+      class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    >
+      Open Dialog XXL
+    </button>
+    <div
+      data-dialog-backdrop="dialog-xxl"
+      data-dialog-backdrop-close="true"
+      class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    >
+      <div
+        data-dialog="dialog-xxl"
+        class="relative h-screen w-screen min-w-[100vw] max-w-[100vw] bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased"
+      >
+        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          Its a simple dialog.
+        </div>
+        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+          reprehenderit omnis perspiciatis aut odit! Unde architecto
+          perspiciatis, dolorum dolorem iure quia saepe autem accusamus eum
+          praesentium magni corrupti explicabo!
+        </div>
+        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+          <button
+            data-ripple-dark="true"
+            data-dialog-close="true"
+            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Cancel
+          </button>
+          <button
+            data-ripple-light="true"
+            data-dialog-close="true"
+            class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
 
 ---
 
-## Message Dialog
+## Custom Dialog Animation
 
-This dialog should be used to help the user send messages easily.
+You can modify the open/close state animation for dialog by adding the <Code html>data-dialog-mount="`{opacity-100}`"</Code>, <Code html>data-dialog-unmount="`{opacity-0}`"</Code> and <Code html>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-pink-500 font-medium" href="#dialog-data-attributes">here</a>.
 
-<ComponentDemo id="message-dialog">
+<CodePreview
+  id="custom-dialog-animation"
+  link="dialog#custom-dialog-animation"
+  component={
+    <>
+      <button
+        className="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+        data-dialog-target="animated-dialog"
+      >
+        {`Open Dialog`}
+      </button>
+      <div
+        data-dialog-backdrop="animated-dialog"
+        data-dialog-backdrop-close="true"
+        className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+      >
+        <div
+          data-dialog="animated-dialog"
+          data-dialog-mount="opacity-100 translate-y-0 scale-100"
+          data-dialog-unmount="opacity-0 -translate-y-28 scale-90 pointer-events-none"
+          data-dialog-transition="transition-all duration-300"
+          className="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+        >
+          <div className="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+            {`Its a simple dialog.`}
+          </div>
+          <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+            {`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+                reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+                dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+                corrupti explicabo!`}
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+            <button
+              data-ripple-dark="true"
+              data-dialog-close="true"
+              className="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              {`Cancel`}
+            </button>
+            <button
+              data-ripple-light="true"
+              data-dialog-close="true"
+              className="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            >
+              {`Confirm`}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
   <button
-    className="button button-green"
-    dialog-trigger="true"
+    class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     data-ripple-light="true"
+    data-dialog-target="animated-dialog"
   >
-    {`Message dialog`}
+    {`Open Dialog`}
   </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content">
-        <div className="dialog-header">
-          <h6 className="mb-0 capitalize text-dark-500">
-            {`New message to @MaterialTailwind`}
-          </h6>
-          <button
-            type="button"
-            className="me-0 button-close"
-            dialog-close="true"
-            aria-label="Close"
-          >
-            <i className="material-icons">close</i>
-          </button>
-        </div>
-        <div className="dialog-body">
-          <form action="role">
-            <div className="input-group input-group-static my-3">
-              <label>Recipient:</label>
-              <input type="email" className="form-control" />
-            </div>
-            <div className="input-group input-group-static my-3">
-              <label>Message:</label>
-              <textarea type="email" className="form-control" rows="5" />
-            </div>
-          </form>
-        </div>
-        <div className="dialog-footer">
-          <button className="button button-gradient button-green mb-0">
-            {`Send`}
-          </button>
-        </div>
+  <div
+    data-dialog-backdrop="animated-dialog"
+    data-dialog-backdrop-close="true"
+    class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      data-dialog="animated-dialog"
+      data-dialog-mount="opacity-100 translate-y-0 scale-100"
+      data-dialog-unmount="opacity-0 -translate-y-28 scale-90 pointer-events-none"
+      data-dialog-transition="transition-all duration-300"
+      class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+    >
+      <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        Its a simple dialog.
+      </div>
+      <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ad
+        reprehenderit omnis perspiciatis aut odit! Unde architecto perspiciatis,
+        dolorum dolorem iure quia saepe autem accusamus eum praesentium magni
+        corrupti explicabo!
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <button
+          data-ripple-dark="true"
+          data-dialog-close="true"
+          class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          Cancel
+        </button>
+        <button
+          data-ripple-light="true"
+          data-dialog-close="true"
+          class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        >
+          Confirm
+        </button>
       </div>
     </div>
   </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button
-      class="button button-green"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Message dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h6 class="mb-0 capitalize text-dark-500">
-              New message to @MaterialTailwind
-            </h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <form action="role">
-              <div class="input-group input-group-static my-3">
-                <label>Recipient:</label>
-                <input type="email" class="form-control" />
-              </div>
-              <div class="input-group input-group-static my-3">
-                <label>Message:</label>
-                <textarea type="email" class="form-control" rows="5" />
-              </div>
-            </form>
-          </div>
-          <div class="dialog-footer">
-            <button class="button button-gradient button-green mb-0">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button
-      class="button button-green"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Message dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h6 class="mb-0 capitalize text-dark-500">
-              New message to @MaterialTailwind
-            </h6>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <form action="role">
-              <div class="input-group input-group-static my-3">
-                <label>Recipient:</label>
-                <input type="email" class="form-control" />
-              </div>
-              <div class="input-group input-group-static my-3">
-                <label>Message:</label>
-                <textarea type="email" class="form-control" rows="5" />
-              </div>
-            </form>
-          </div>
-          <div class="dialog-footer">
-            <button class="button button-gradient button-green mb-0">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+  ```
+</CodePreview>
 
 ---
 
-## Long Dialog
+## Dialog Trigger Data Attributes
 
-Use this dialog example to notify the user with longer informational messages.
+<span id="dialog-trigger-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for dialog trigger element.
 
-<ComponentDemo id="long-dialog">
-  <button
-    className="button button-pink"
-    dialog-trigger="true"
-    data-ripple-light="true"
-  >
-    {`Long dialog`}
-  </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content">
-        <div className="dialog-header">
-          <h5 className="mb-0 capitalize text-dark-500">Modal title</h5>
-          <button
-            type="button"
-            className="me-0 button-close"
-            dialog-close="true"
-            aria-label="Close"
-          >
-            <i className="material-icons">close</i>
-          </button>
-        </div>
-        <div className="dialog-body">
-          <p className="opacity-60">
-            I always felt like I could do anything. That's the main thing people
-            are controlled by! Thoughts- their perception of themselves! They're
-            slowed down by their perception of themselves. If you're taught you
-            can't do anything, you won't do anything. I was taught I could do
-            everything.
-          </p>
-          <br />
-          <br />
-          <p className="opacity-60">
-            As we live, our hearts turn colder. Cause pain is what we go through
-            as we become older. We get insulted by others, lose trust for those
-            others. We get back stabbed by friends. It becomes harder for us to
-            give others a hand. We get our heart broken by people we love, even
-            that we give them all we have. Then we lose family over time. What
-            else could rust the heart more over time? Blackgold.
-          </p>
-          <br />
-          <br />
-          <p className="opacity-60">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams. If
-            you have the opportunity to play this game of life you need to
-            appreciate every moment. A lot of people don't appreciate the moment
-            until it's passed.
-          </p>
-          <br />
-          <br />
-          <p className="opacity-60">
-            There's nothing I really wanted to do in life that I wasn't able to
-            get good at. That's my skill. I'm not really specifically talented
-            at anything except for the ability to learn. That's what I do.
-            That's what I'm here for. Don't be afraid to be wrong because you
-            can't learn anything from a compliment.
-          </p>
-          <br />
-          <br />
-          <p className="opacity-60">
-            It really matters and then like it really doesn't matter. What
-            matters is the people who are sparked by it. And the people who are
-            like offended by it, it doesn't matter. Because it's about
-            motivating the doers. Because I'm here to follow my dreams and
-            inspire other people to follow their dreams, too.
-          </p>
-          <br />
-          <br />
-          <p className="opacity-60">
-            The time is now for it to be okay to be great. People in this world
-            shun people for being great. For being a bright color. For standing
-            out. But the time is now to be okay to be the greatest you. Would
-            you believe in what you believe in, if you were the only one who
-            believed it?
-          </p>
-        </div>
-        <div className="dialog-footer">
-          <button
-            className="button button-gradient button-dark mr-3 mb-0"
-            dialog-close="true"
-          >
-            {`Close`}
-          </button>
-          <button className="button button-gradient button-pink mb-0">
-            {`Save changes`}
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button
-      class="button button-pink"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Long dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h5 class="mb-0 capitalize text-dark-500">Modal title</h5>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <p class="opacity-60">
-              I always felt like I could do anything. That's the main thing people
-              are controlled by! Thoughts- their perception of themselves! They're
-              slowed down by their perception of themselves. If you're taught you
-              can't do anything, you won't do anything. I was taught I could do
-              everything.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              As we live, our hearts turn colder. Cause pain is what we go through
-              as we become older. We get insulted by others, lose trust for those
-              others. We get back stabbed by friends. It becomes harder for us to
-              give others a hand. We get our heart broken by people we love, even
-              that we give them all we have. Then we lose family over time. What
-              else could rust the heart more over time? Blackgold.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              We're not always in the position that we want to be at. We're
-              constantly growing. We're constantly making mistakes. We're constantly
-              trying to express ourselves and actualize our dreams. If you have the
-              opportunity to play this game of life you need to appreciate every
-              moment. A lot of people don't appreciate the moment until it's passed.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              There's nothing I really wanted to do in life that I wasn't able to
-              get good at. That's my skill. I'm not really specifically talented at
-              anything except for the ability to learn. That's what I do. That's
-              what I'm here for. Don't be afraid to be wrong because you can't learn
-              anything from a compliment.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              It really matters and then like it really doesn't matter. What matters
-              is the people who are sparked by it. And the people who are like
-              offended by it, it doesn't matter. Because it's about motivating the
-              doers. Because I'm here to follow my dreams and inspire other people
-              to follow their dreams, too.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              The time is now for it to be okay to be great. People in this world
-              shun people for being great. For being a bright color. For standing
-              out. But the time is now to be okay to be the greatest you. Would you
-              believe in what you believe in, if you were the only one who believed
-              it?
-            </p>
-          </div>
-          <div class="dialog-footer">
-            <button
-              class="button button-gradient button-dark mr-3 mb-0"
-              dialog-close="true"
-            >
-              Close
-            </button>
-            <button class="button button-gradient button-pink mb-0">
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button
-      class="button button-pink"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Long dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content">
-          <div class="dialog-header">
-            <h5 class="mb-0 capitalize text-dark-500">Modal title</h5>
-            <button
-              type="button"
-              class="me-0 button-close"
-              dialog-close="true"
-              aria-label="Close"
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="dialog-body">
-            <p class="opacity-60">
-              I always felt like I could do anything. That's the main thing people
-              are controlled by! Thoughts- their perception of themselves! They're
-              slowed down by their perception of themselves. If you're taught you
-              can't do anything, you won't do anything. I was taught I could do
-              everything.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              As we live, our hearts turn colder. Cause pain is what we go through
-              as we become older. We get insulted by others, lose trust for those
-              others. We get back stabbed by friends. It becomes harder for us to
-              give others a hand. We get our heart broken by people we love, even
-              that we give them all we have. Then we lose family over time. What
-              else could rust the heart more over time? Blackgold.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              We're not always in the position that we want to be at. We're
-              constantly growing. We're constantly making mistakes. We're constantly
-              trying to express ourselves and actualize our dreams. If you have the
-              opportunity to play this game of life you need to appreciate every
-              moment. A lot of people don't appreciate the moment until it's passed.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              There's nothing I really wanted to do in life that I wasn't able to
-              get good at. That's my skill. I'm not really specifically talented at
-              anything except for the ability to learn. That's what I do. That's
-              what I'm here for. Don't be afraid to be wrong because you can't learn
-              anything from a compliment.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              It really matters and then like it really doesn't matter. What matters
-              is the people who are sparked by it. And the people who are like
-              offended by it, it doesn't matter. Because it's about motivating the
-              doers. Because I'm here to follow my dreams and inspire other people
-              to follow their dreams, too.
-            </p>
-            <br /><br />
-            <p class="opacity-60">
-              The time is now for it to be okay to be great. People in this world
-              shun people for being great. For being a bright color. For standing
-              out. But the time is now to be okay to be the greatest you. Would you
-              believe in what you believe in, if you were the only one who believed
-              it?
-            </p>
-          </div>
-          <div class="dialog-footer">
-            <button
-              class="button button-gradient button-dark mr-3 mb-0"
-              dialog-close="true"
-            >
-              Close
-            </button>
-            <button class="button button-gradient button-pink mb-0">
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+| Attribute            | Description                                                                                                                                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-dialog-target` | Set the dialog target element, it should be the same as the `data-dialog` <br /> and `data-dialog-backdrop` data attributes.                                                 |
+| `data-dialog-close`  | It's an optional data attribute, you can set it for any element and it will turn the element <br /> to a close trigger for dialog when click event happened on that element. |
 
 ---
 
-## Signin Dialog
+## Dialog Backdrop Data Attributes
 
-Use this example to help users Sign in easily
+<span id="dialog-backdrop-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for dialog backdrop element.
 
-<ComponentDemo id="signin-dialog">
-  <button
-    className="button button-pink"
-    dialog-trigger="true"
-    data-ripple-light="true"
-  >
-    {`Signin dialog`}
-  </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content mx-12">
-        <div className="card">
-          <div className="card-header mx-4 -mt-6">
-            <div className="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
-              <h4 className="mt-2 mb-0 text-center font-bold text-white">
-                {`Sign in`}
-              </h4>
-              <div className="mt-4 flex">
-                <a className="button button-text ml-auto" href="#">
-                  <i className="fab fa-facebook-f text-lg text-white"></i>
-                </a>
-                <a className="button button-text" href="#">
-                  <i className="fab fa-github text-lg text-white"></i>
-                </a>
-                <a className="button button-text mr-auto" href="#">
-                  <i className="fab fa-google text-lg text-white"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="card-body">
-            <form action="role">
-              <div className="input-group input-group-outline my-3">
-                <label className="form-label">Email</label>
-                <input type="email" className="form-control" />
-              </div>
-              <div className="input-group input-group-outline my-3">
-                <label className="form-label">Password</label>
-                <input type="password" className="form-control" />
-              </div>
-            </form>
-            <div className="form-check form-switch my-7 ml-1 flex items-center">
-              <input
-                className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-                data-attribute="toggle"
-                id="remember"
-              />
-              <div className="form-check-input"></div>
-              <label className="form-check-label mb-0 ml-2 cursor-pointer">
-                {`Remember me`}
-              </label>
-            </div>
-            <button className="button button-pink w-full">Sign In</button>
-            <a href="#">
-              <p className="mt-5 mb-0 text-center text-sm">
-                Don&apos;t have an account?
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button
-      class="button button-pink"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Signin dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content mx-12">
-          <div class="card">
-            <div class="card-header mx-4 -mt-6">
-              <div class="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
-                <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
-                <div class="mt-4 flex">
-                  <a class="button button-text ml-auto" href="#">
-                    <i class="fab fa-facebook-f text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text" href="#">
-                    <i class="fab fa-github text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text mr-auto" href="#">
-                    <i class="fab fa-google text-lg text-white"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form action="role">
-                <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" />
-                </div>
-                <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" />
-                </div>
-              </form>
-              <div class="form-check form-switch my-7 ml-1 flex items-center">
-                <input
-                  class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-                  data-attribute="toggle"
-                  id="remember"
-                />
-                <div class="form-check-input"></div>
-                <label class="form-check-label mb-0 ml-2 cursor-pointer">
-                  Remember me
-                </label>
-              </div>
-              <button class="button button-pink w-full">Sign In</button>
-              <a href="#">
-                <p class="mt-5 mb-0 text-center text-sm">
-                  Don&apos;t have an account?
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button
-      class="button button-pink"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Signin dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content mx-12">
-          <div class="card">
-            <div class="card-header mx-4 -mt-6">
-              <div class="pe-1 rounded-lg bg-pink-500 py-3 shadow-lg">
-                <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
-                <div class="mt-4 flex">
-                  <a class="button button-text ml-auto" href="#">
-                    <i class="fab fa-facebook-f text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text" href="#">
-                    <i class="fab fa-github text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text mr-auto" href="#">
-                    <i class="fab fa-google text-lg text-white"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form action="role">
-                <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" />
-                </div>
-                <div class="input-group input-group-outline my-3">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" />
-                </div>
-              </form>
-              <div class="form-check form-switch my-7 ml-1 flex items-center">
-                <input
-                  class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-                  data-attribute="toggle"
-                  id="remember"
-                />
-                <div class="form-check-input"></div>
-                <label class="form-check-label mb-0 ml-2 cursor-pointer">
-                  Remember me
-                </label>
-              </div>
-              <button class="button button-pink w-full">Sign In</button>
-              <a href="#">
-                <p class="mt-5 mb-0 text-center text-sm">
-                  Don&apos;t have an account?
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+| Attribute                    | Description                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `data-dialog-backdrop`       | Set the dialog backdrop element, it should be the same as the `data-dialog` <br /> and `data-dialog-target` data attributes. |
+| `data-dialog-backdrop-close` | Sets whether to close dialog when clicking on it's backdrop or not.                                                          |
 
 ---
 
-## Signup Dialog
+## Dialog Data Attributes
 
-Use this example to help users Signup in easily
+<span id="dialog-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for dialog element.
 
-<ComponentDemo id="signup-dialog">
-  <button
-    className="button button-cyan"
-    dialog-trigger="true"
-    data-ripple-light="true"
-  >
-    {`Signup dialog`}
-  </button>
-  <div className="dialog">
-    <div className="dialog-overlay" dialog-close="true"></div>
-    <div className="modal-dialog">
-      <div className="dialog-content mx-12">
-        <div className="card">
-          <div className="card-header mx-4 -mt-6">
-            <div className="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
-              <h4 className="mt-2 mb-0 text-center font-bold text-white">
-                {`Sign up`}
-              </h4>
-              <div className="mt-4 flex">
-                <a className="button button-text ml-auto" href="#">
-                  <i className="fab fa-facebook-f text-lg text-white"></i>
-                </a>
-                <a className="button button-text" href="#">
-                  <i className="fab fa-github text-lg text-white"></i>
-                </a>
-                <a className="button button-text mr-auto" href="#">
-                  <i className="fab fa-google text-lg text-white"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="card-body">
-            <form action="role">
-              <div className="input-group input-group-dynamic my-5">
-                <label className="form-label">Username</label>
-                <input type="text" className="form-control" />
-              </div>
-              <div className="input-group input-group-dynamic my-5">
-                <label className="form-label">Email</label>
-                <input type="email" className="form-control" />
-              </div>
-              <div className="input-group input-group-dynamic my-5">
-                <label className="form-label">Password</label>
-                <input type="password" className="form-control" />
-              </div>
-            </form>
-            <button className="button button-cyan mx-auto flex">Sign Up</button>
-            <a href="#">
-              <p className="mt-5 mb-0 text-center text-sm">
-                Already have an account?
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
-
-<CodeTabs>
-  <TabPanel value={1}>
-    ```html
-    <button
-      class="button button-cyan"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Signup dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content mx-12">
-          <div class="card">
-            <div class="card-header mx-4 -mt-6">
-              <div class="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
-                <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign up</h4>
-                <div class="mt-4 flex">
-                  <a class="button button-text ml-auto" href="#">
-                    <i class="fab fa-facebook-f text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text" href="#">
-                    <i class="fab fa-github text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text mr-auto" href="#">
-                    <i class="fab fa-google text-lg text-white"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form action="role">
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Username</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" />
-                </div>
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" />
-                </div>
-              </form>
-              <button class="button button-cyan mx-auto flex">Sign Up</button>
-              <a href="#">
-                <p class="mt-5 mb-0 text-center text-sm">
-                  Already have an account?
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-  <TabPanel value={2}>
-    ```html
-    <button
-      class="button button-cyan"
-      dialog-trigger="true"
-      data-ripple-light="true"
-    >
-      Signup dialog
-    </button>
-    <div class="dialog">
-      <div class="dialog-overlay" dialog-close="true"></div>
-      <div class="modal-dialog">
-        <div class="dialog-content mx-12">
-          <div class="card">
-            <div class="card-header mx-4 -mt-6">
-              <div class="pe-1 rounded-lg bg-cyan-500 py-3 shadow-lg">
-                <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign up</h4>
-                <div class="mt-4 flex">
-                  <a class="button button-text ml-auto" href="#">
-                    <i class="fab fa-facebook-f text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text" href="#">
-                    <i class="fab fa-github text-lg text-white"></i>
-                  </a>
-                  <a class="button button-text mr-auto" href="#">
-                    <i class="fab fa-google text-lg text-white"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form action="role">
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Username</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" />
-                </div>
-                <div class="input-group input-group-dynamic my-5">
-                  <label class="form-label">Password</label>
-                  <input type="password" class="form-control" />
-                </div>
-              </form>
-              <button class="button button-cyan mx-auto flex">Sign Up</button>
-              <a href="#">
-                <p class="mt-5 mb-0 text-center text-sm">
-                  Already have an account?
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    ```
-  </TabPanel>
-</CodeTabs>
+| Attribute                 | Description                                                                                     | Default                                                                                                       |
+| ------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `data-dialog`             | Set the name of the dialog and reference it to the <br /> dialog trigger and backdrop elements. |                                                                                                               |
+| `data-popover-mount`      | Set the classnaes that should be used when the <br /> dialog is visible.                        | <Code html>opacity-1</Code><br /><Code html>translate-y-0</Code>                                              |
+| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> dialog is hidden.                         | <Code html>opacity-0</Code><br /><Code html>-translate-y-14</Code><br /><Code html>pointer-events-none</Code> |
+| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the dialog.                      | <Code html>transition-all</Code><br /><Code html>duration-300</Code>                                          |
 
 ---
 
@@ -1154,7 +828,7 @@ The dialog component needs a required script file to work, you just need to add 
 
 ```html
 <!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html/scripts/dialog.js"></script>
+<script src="node_modules/@material-tailwind/html@latest/scripts/dialog.js"></script>
 
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dialog.js"></script>

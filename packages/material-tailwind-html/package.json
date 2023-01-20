@@ -12,9 +12,10 @@
   "scripts": {
     "copy": "cp -r ./theme ./dist/theme && cp -r ./utils ./dist && cp package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
     "compile:ripple": "swc ./node_modules/material-ripple-effects/ripple.js -o ./dist/scripts/ripple.js --config-file .swcrc",
-    "build:cjs": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
+    "build:js": "swc ./new-scripts -d ./dist/scripts --config-file .swcrc",
+    "build:js:bundle": "swc ./new-scripts -o ./dist/scripts/index.min.js --config-file .swcrc",
     "build:css": "npx tailwindcss -i ./styles/tailwind.css -o ./dist/styles/material-tailwind.css -m",
-    "build": "pnpm build:cjs && pnpm compile:ripple && pnpm build:css && pnpm copy"
+    "build": "pnpm build:js && pnpm compile:ripple && pnpm build:css && pnpm copy"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
@@ -23,7 +24,6 @@
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.198",
-    "@tailwindcss/forms": "^0.5.1",
     "autoprefixer": "10.4.2",
     "postcss": "8.4.8",
     "tailwindcss": "3.0.23"
