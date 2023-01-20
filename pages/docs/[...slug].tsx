@@ -218,7 +218,7 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
-  Link
+  Link,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -238,7 +238,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
   useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
       initHtmlScripts();
-    } 
+    }
   }, [frameworkType, slug]);
 
   return (
