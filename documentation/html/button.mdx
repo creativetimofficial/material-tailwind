@@ -56,17 +56,19 @@ See our button examples below. They come in different styles and color.
   link="button#button-variants"
   component={
     <div className="flex">
-      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">Button</button>
+      <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-4" data-ripple-light="true">
+        {`Button`}
+      </button>
       <button
-        class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-4"
+        className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] mr-4"
         data-ripple-light="true"
       >
         {`Button`}
       </button>
-      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-pink-500 text-pink-500 hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] mr-3" data-ripple-dark="true">
+      <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-pink-500 text-pink-500 hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] mr-3" data-ripple-dark="true">
         {`Button`}
       </button>
-      <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-pink-500 hover:bg-pink-500/10 active:bg-pink-500/30" data-ripple-dark="true">
+      <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-pink-500 hover:bg-pink-500/10 active:bg-pink-500/30" data-ripple-dark="true">
         {`Button`}
       </button>
     </div>
@@ -90,7 +92,6 @@ See our button examples below. They come in different styles and color.
   </div>
   ```
 </CodePreview>
-
 
 ---
 
@@ -201,10 +202,10 @@ You can turn on/off the ripple effect for the <Code>Button</Code> component by c
   link="button#button-ripple-effect"
   component={
   <div className="flex">
-    <button className="button button-pink mr-3" data-ripple-light="true">
+    <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none mr-3" data-ripple-light="true">
       {`Ripple Effect On`}
     </button>
-    <button className="button button-pink" data-ripple-light="false">
+    <button className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-pink-500 text-white shadow-md shadow-pink-500/20 hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" data-ripple-light="false">
       {`Ripple Effect Off`}
     </button>
   </div> 
