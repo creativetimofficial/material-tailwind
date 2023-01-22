@@ -175,9 +175,255 @@ To use an accordion example that has items expanded, add the <Code html html>.op
   }
 >
   ```html
-
+  <div data-collapse="true">
+    <div data-collapse-section="true" class="relative mb-3">
+      <h6 class="mb-0">
+        <button
+          class="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+          type="button"
+          aria-expanded="true"
+          data-collapse-trigger="true"
+        >
+          <span>How do I order?</span>
+          <i 
+            class="fa fa-plus absolute right-0 pt-1 text-xs hidden"
+            section-open-icon="true"
+          ></i>
+          <i 
+            class="fa fa-minus absolute right-0 pt-1 text-xs"
+            section-close-icon="true"
+            ></i>
+        </button>
+      </h6>
+      <div data-collapse-content="true" class="overflow-hidden transition-all ease-in-out duration-300">
+        <div class="p-4 leading-normal text-sm text-blue-gray-500/80">
+          We're not always in the position that we want to be at. We're constantly
+          growing. We're constantly making mistakes. We're constantly trying to
+          express ourselves and actualize our dreams. If you have the opportunity
+          to play this game of life you need to appreciate every moment. A lot of
+          people don't appreciate the moment until it's passed.
+        </div>
+      </div>
+    </div>
+    <div data-collapse-section="true" class="relative mb-3">
+      <h6 class="mb-0">
+        <button
+          class="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+          type="button"
+          aria-expanded="false"
+          data-collapse-trigger="true"
+        >
+          <span>How can i make the payment?</span>
+          <i 
+            class="fa fa-plus absolute right-0 pt-1 text-xs"
+            section-open-icon="true"
+          ></i>
+          <i 
+            class="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+            section-close-icon="true"
+            ></i>
+        </button>
+      </h6>
+      <div data-collapse-content="true" class="overflow-hidden transition-all ease-in-out duration-300">
+        <div class="p-4 leading-normal text-sm text-blue-gray-500/80">
+          It really matters and then like it really doesn't matter. What matters
+          is the people who are sparked by it. And the people who are like
+          offended by it, it doesn't matter. Because it's about motivating the
+          doers. Because I'm here to follow my dreams and inspire other people
+          to follow their dreams, too.
+        </div>
+      </div>
+    </div>
+    <div data-collapse-section="true" class="relative mb-3">
+      <h6 class="mb-0">
+        <button
+          class="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+          type="button"
+          aria-expanded="false"
+          data-collapse-trigger="true"
+        >
+          <span>How much time does it take to receive the order?</span>
+          <i 
+            class="fa fa-plus absolute right-0 pt-1 text-xs"
+            section-open-icon="true"
+          ></i>
+          <i 
+            class="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+            section-close-icon="true"
+            ></i>
+        </button>
+      </h6>
+      <div data-collapse-content="true" class="overflow-hidden transition-all ease-in-out duration-300">
+        <div class="p-4 leading-normal text-sm text-blue-gray-500/80">
+          The time is now for it to be okay to be great. People in this world
+          shun people for being great. For being a bright color. For standing
+          out. But the time is now to be okay to be the greatest you. Would you
+          believe in what you believe in, if you were the only one who believed
+          it? If everything I did failed - which it doesn't, it actually
+          succeeds - just the fact that I'm willing to fail is an inspiration.
+          People are so scared to lose that they don't even try. Like, one thing
+          people can't say is that I'm not trying, and I'm not trying my
+          hardest, and I'm not trying to do the best way I know how.
+        </div>
+      </div>
+    </div>
+    <div data-collapse-section="true" class="relative mb-3">
+      <h6 class="mb-0">
+        <button
+          class="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+          type="button"
+          aria-expanded="false"
+          data-collapse-trigger="true"
+        >
+          <span>Can I resell the products?</span>
+          <i 
+            class="fa fa-plus absolute right-0 pt-1 text-xs"
+            section-open-icon="true"
+          ></i>
+          <i 
+            class="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+            section-close-icon="true"
+            ></i>
+        </button>
+      </h6>
+      <div data-collapse-content="true" class="overflow-hidden transition-all ease-in-out duration-300">
+        <div class="p-4 leading-normal text-sm text-blue-gray-500/80">
+          I always felt like I could do anything. That's the main thing people
+          are controlled by! Thoughts- their perception of themselves! They're
+          slowed down by their perception of themselves. If you're taught you
+          can't do anything, you won't do anything. I was taught I could do
+          everything.
+        </div>
+      </div>
+    </div>
+    <div data-collapse-section="true" class="relative mb-3">
+      <h6 class="mb-0">
+        <button
+          class="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+          type="button"
+          aria-expanded="false"
+          data-collapse-trigger="true"
+        >
+          <span>Where do I find the shipping details?</span>
+          <i 
+            class="fa fa-plus absolute right-0 pt-1 text-xs"
+            section-open-icon="true"
+          ></i>
+          <i 
+            class="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+            section-close-icon="true"
+            ></i>
+        </button>
+      </h6>
+      <div data-collapse-content="true" class="overflow-hidden transition-all ease-in-out duration-300">
+        <div class="p-4 leading-normal text-sm text-blue-gray-500/80">
+          I always felt like I could do anything. That's the main thing people
+          are controlled by! Thoughts- their perception of themselves! They're
+          slowed down by their perception of themselves. If you're taught you
+          can't do anything, you won't do anything. I was taught I could do
+          everything.
+        </div>
+      </div>
+    </div>
+  </div>
   ```
 </CodePreview>
+
+
+---
+
+## Custom Accordion Icon
+
+You can modify the open/close state icon for Accordion component.
+
+<CodePreview
+  id="accordion-with-icon"
+  link="button#accordion-with-icon"
+  component={
+    <div data-collapse="true">
+      <div data-collapse-section="true" className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+            type="button"
+            aria-expanded="true"
+            data-collapse-trigger="true"
+          >
+            <span>What is Material Tailwind?</span>
+            <i 
+              className="fas fa-chevron-down absolute right-0 pt-1 text-xs hidden"
+              section-open-icon="true"
+            ></i>
+            <i 
+              className="fas fa-chevron-up absolute right-0 pt-1 text-xs"
+              section-close-icon="true"
+              ></i>
+          </button>
+        </h6>
+        <div data-collapse-content="true" className="overflow-hidden transition-all ease-in-out duration-300">
+          <div className="p-4 leading-normal text-sm text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div data-collapse-section="true" className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+            type="button"
+            aria-expanded="false"
+            data-collapse-trigger="true"
+          >
+            <span>How to use Material Tailwind?</span>
+            <i 
+              className="fa fa-plus absolute right-0 pt-1 text-xs"
+              section-open-icon="true"
+            ></i>
+            <i 
+              className="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+              section-close-icon="true"
+              ></i>
+          </button>
+        </h6>
+        <div data-collapse-content="true" className="overflow-hidden transition-all ease-in-out duration-300">
+          <div className="p-4 leading-normal text-sm text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div data-collapse-section="true" className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="relative flex items-center w-full p-4 font-semibold text-dark-500 text-left transition-all border-b border-solid cursor-pointer border-slate-100 ease-in text-slate-700 rounded-t-1"
+            type="button"
+            aria-expanded="false"
+            data-collapse-trigger="true"
+          >
+            <span>What can I do with Material Tailwind?</span>
+            <i 
+              className="fa fa-plus absolute right-0 pt-1 text-xs"
+              section-open-icon="true"
+            ></i>
+            <i 
+              className="fa fa-minus absolute right-0 pt-1 text-xs hidden"
+              section-close-icon="true"
+              ></i>
+          </button>
+        </h6>
+        <div data-collapse-content="true" className="overflow-hidden transition-all ease-in-out duration-300">
+          <div className="p-4 leading-normal text-sm text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+>
+  ```html
+ 
+  ```
+</CodePreview>
+
 
 ---
 
