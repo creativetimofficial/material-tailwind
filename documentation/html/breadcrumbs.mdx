@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Breadcrumbs - Material Tailwind
 description: Customise your web projects with our easy-to-use breadcrumbs component for Tailwind CSS using Material Design guidelines.
-navigation: ["breadcrumbs", "breadcrumbs-with-icon", "block-level-breadcrumbs"]
+navigation: ["breadcrumbs", "breadcrumbs-with-icon", "block-level-breadcrumbs", "custom-breadcrumbs-separator"]
 github: breadcrumbs
 prev: avatar
 next: button
@@ -21,17 +21,32 @@ See below our versatile breadcrumbs component example that you can use in your T
   id="breadcrumbs"
   link="button#breadcrumbs"
   component={
-    <div className="w-1/2 text-left">
+    <div className="w-max text-left">
       <nav aria-label="breadcrumb">
-        <ol className="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-            <a href="#home"><span>Home</span></a>
+        <ol className="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Docs</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-            <a href="#library"><span>Library</span></a>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Components</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-            <span>Data</span>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a
+              className="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+              href="#"
+            >
+              Breadcrumbs
+            </a>
           </li>
         </ol>
       </nav>
@@ -39,17 +54,32 @@ See below our versatile breadcrumbs component example that you can use in your T
   }
 >
   ```html
-  <div class="w-1/2 text-left">
+  <div class="w-max text-left">
     <nav aria-label="breadcrumb">
-      <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-          <a href="#home"><span>Home</span></a>
+      <ol class="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Docs</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-          <a href="#library"><span>Library</span></a>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Components</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-          <span>Data</span>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a
+            class="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+            href="#"
+          >
+            Breadcrumbs
+          </a>
         </li>
       </ol>
     </nav>
@@ -68,27 +98,38 @@ You can add any type of icon for the <Code>Breadcrumbs</Code> component as easy 
   link="button#breadcrumbs-with-icon"
   component={
     <div className="w-1/2 text-left">
-      <nav aria-label="breadcrumb">
-        <ol className="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60">
-            <a href="#home">
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                </svg>
-              </span>
+      <nav aria-label="breadcrumb" className="w-max">
+        <ol className="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
             </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-            <a href="#library"><span>Library</span></a>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Components</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-            <span>Data</span>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a
+              className="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+              href="#"
+            >
+              Breadcrumbs
+            </a>
           </li>
         </ol>
       </nav>
@@ -96,32 +137,42 @@ You can add any type of icon for the <Code>Breadcrumbs</Code> component as easy 
   }
 >
   ```html
-  <div class="w-1/2 text-left">
-    <nav aria-label="breadcrumb">
-      <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60">
-          <a href="#home">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-              </svg>
-            </span>
+  <div className="w-1/2 text-left">
+    <nav aria-label="breadcrumb" class="w-max">
+      <ol class="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+            </svg>
           </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-          <a href="#library"><span>Library</span></a>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Components</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-          <span>Data</span>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a
+            class="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+            href="#"
+          >
+            Breadcrumbs
+          </a>
         </li>
       </ol>
     </nav>
-  </div>
   ```
 </CodePreview>
 
@@ -136,16 +187,31 @@ A <Code>Breadcrumbs</Code> could be a block level component as well that get's a
   link="button#block-level-breadcrumbs"
   component={
     <div className="w-full text-left">
-      <nav aria-label="breadcrumb">
-        <ol className="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-            <a href="#home"><span>Home</span></a>
+      <nav aria-label="breadcrumb" className="block w-max w-full">
+        <ol className="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Docs</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-            <a href="#library"><span>Library</span></a>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Components</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              /
+            </span>
           </li>
-          <li className="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-            <span>Data</span>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a
+              className="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+              href="#"
+            >
+              Breadcrumbs
+            </a>
           </li>
         </ol>
       </nav>
@@ -154,16 +220,107 @@ A <Code>Breadcrumbs</Code> could be a block level component as well that get's a
 >
   ```html
   <div class="w-full text-left">
-    <nav aria-label="breadcrumb">
-      <ol class="flex flex-wrap py-2 px-4 mb-4 bg-light rounded-md">
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-          <a href="#home"><span>Home</span></a>
+    <nav aria-label="breadcrumb" class="block w-max w-full">
+      <ol class="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Docs</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500 opacity-60 mr-2">
-          <a href="#library"><span>Library</span></a>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Components</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            /
+          </span>
         </li>
-        <li class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-pink-500" aria-current="page">
-          <span>Data</span>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a
+            class="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+            href="#"
+          >
+            Breadcrumbs
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Custom Breadcrumbs Separator
+
+You can modify the Breadcrumbs separators, here is an example:
+
+<CodePreview
+  id="custom-breadcrumbs-separator"
+  link="button#custom-breadcrumbs-separator"
+  component={
+    <div className="w-max text-left">
+      <nav aria-label="breadcrumb" className="w-max">
+        <ol className="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Docs</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              -
+            </span>
+          </li>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a className="opacity-60" href="#">
+              <span>Components</span>
+            </a>
+            <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              -
+            </span>
+          </li>
+          <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+            <a
+              className="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+              href="#"
+            >
+              Breadcrumbs
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  }
+>
+  ```html
+  <div class="w-max text-left">
+    <nav aria-label="breadcrumb" class="w-max">
+      <ol class="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Docs</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            -
+          </span>
+        </li>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a class="opacity-60" href="#">
+            <span>Components</span>
+          </a>
+          <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            -
+          </span>
+        </li>
+        <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+          <a
+            class="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
+            href="#"
+          >
+            Breadcrumbs
+          </a>
         </li>
       </ol>
     </nav>
