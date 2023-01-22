@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Chip - Material Tailwind
 description: Customise your web projects with our easy-to-use Chip component for Tailwind CSS using Material Design guidelines.
-navigation: ["chip", "chip-variation"]
+navigation: ["chip", "chip-variants", "chip-colors", "chip-dismissible"]
 github: chip
 prev: checkbox
 next: dialog
@@ -19,42 +19,205 @@ See below our simple chip component example that you can use for your Tailwind C
   id="chip"
   link="button#chip"
   component={
-    <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
+    <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      chip
+    </div>
   }
 >
   ```html
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
+  <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+    chip
+  </div>
   ```
 </CodePreview>
 
 ---
 
-## Chips Variation
+## Chips Variants
 
 Use this example to create a simple and versatile badge component.
 
 <br />
 
 <CodePreview
-  id="chip-variation"
-  link="button#chip-variation"
+  id="chip-variants"
+  link="button#chip-variants"
   component={
-    <div className="flex">
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-blue-100 text-blue-500 rounded-lg py-2 px-4 mr-2">chip blue</div>
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-green-100 text-green-500 rounded-lg py-2 px-4 mr-2">chip green</div>
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-red-100 text-red-500 rounded-lg py-2 px-4 mr-2">chip red</div>
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-orange-100 text-orange-500 rounded-lg py-2 px-4 mr-2">chip orange</div>
-      <div className="text-xs font-semibold leading-none inline-block uppercase bg-purple-100 text-purple-500 rounded-lg py-2 px-4 mr-2">chip purple</div>
+    <div className="flex gap-2">
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">chip filled</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">chip gradient</div>
+      </div>
     </div>
   }
 >
   ```html
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-pink-100 text-pink-500 rounded-lg py-2 px-4 mr-2">chip pink</div>
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-blue-100 text-blue-500 rounded-lg py-2 px-4 mr-2">chip blue</div>
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-green-100 text-green-500 rounded-lg py-2 px-4 mr-2">chip green</div>
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-red-100 text-red-500 rounded-lg py-2 px-4 mr-2">chip red</div>
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-orange-100 text-orange-500 rounded-lg py-2 px-4 mr-2">chip orange</div>
-  <div class="text-xs font-semibold leading-none inline-block uppercase bg-purple-100 text-purple-500 rounded-lg py-2 px-4 mr-2">chip purple</div>
+  <div class="flex gap-2">
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">chip filled</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">chip gradient</div>
+    </div>
+  </div>
   ```
 </CodePreview>
+
+---
+
+## Chips Colors
+
+The Chip component comes with 19 different colors that you can change it using the color class, below there are some examples of the colors
+
+<br />
+
+<CodePreview
+  id="chip-colors"
+  link="button#chip-colors"
+  component={
+    <div className="flex gap-2">
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">blue</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-red-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">red</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-green-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">green</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-amber-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black">
+        <div className="mt-px">amber</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">pink</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-indigo-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">indigo</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-purple-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">purple</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-teal-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">teal</div>
+      </div>
+      <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-cyan-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+        <div className="mt-px">cyan</div>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex gap-2">
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">blue</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-red-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">red</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-green-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">green</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-amber-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-black">
+      <div class="mt-px">amber</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">pink</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-indigo-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">indigo</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-purple-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">purple</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-teal-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">teal</div>
+    </div>
+    <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-cyan-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div class="mt-px">cyan</div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Chips with Icon
+
+Use this example to create a simple and versatile badge component.
+
+<br />
+<CodePreview
+  id="chip-with-icon"
+  link="button#chip-with-icon"
+  component={
+    <div className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"></path>
+        </svg>
+      </div>
+      <div className="ml-4  mt-px">downloads</div>
+    </div>
+  }
+>
+  ```html
+  <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"></path>
+      </svg>
+    </div>
+    <div class="ml-4 mt-px">downloads</div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Chips Dismissible
+
+Use this example to create a simple and versatile badge component.
+
+<br />
+<CodePreview
+  id="chip-dismissible"
+  link="button#chip-dismissible"
+  component={
+    <div className="relative inline-block align-baseline font-sans text-xs font-bold uppercase center leading-none whitespace-nowrap py-2 px-3.5 rounded-lg select-none bg-gradient-to-tr from-pink-600 to-pink-400 text-white" data-dismiss>
+      <div className="mr-5 mt-px">Dismissible</div>
+      <div className="absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded-md bg-pink-800 hover:bg-pink-900 transition-colors"
+      >
+        <div role="button" className="w-5 h-5 p-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="relative inline-block align-baseline font-sans text-xs font-bold uppercase center leading-none whitespace-nowrap py-2 px-3.5 rounded-lg select-none bg-gradient-to-tr from-pink-600 to-pink-400 text-white" data-dismiss>
+    <div class="mr-5 mt-px">Dismissible</div>
+    <div class="absolute top-1 right-1 mt-[0.5px] mx-px w-max rounded-md bg-pink-800 hover:bg-pink-900 transition-colors"
+    >
+      <div role="button" class="w-5 h-5 p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+```
