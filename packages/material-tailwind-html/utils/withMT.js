@@ -1,34 +1,22 @@
-const breakpoints = require("../theme/base/breakpoints");
-
 /**
  * This is a helper function for merging the main configuration of @material-tailwind with the Tailwind CSS configuration
  */
 
 const merge = require("deepmerge");
-const plugin = require("tailwindcss/plugin");
 const colors = require("../theme/base/colors");
 const typography = require("../theme/base/typography");
 const shadows = require("../theme/base/shadows");
-
-// components styles
-// const { accordion } = require("../theme/components/accordion");
-
+const breakpoints = require("../theme/base/breakpoints");
 
 const materialTailwindConfig = {
-  darkMode: "class",
-  content: ["hello"],
+  content: [],
   theme: {
     colors,
     fontFamily: typography,
     boxShadow: shadows,
     screens: breakpoints,
   },
-  plugins: [
-    plugin(function ({ addComponents, theme }) {
-      // addComponents(accordion(theme));
-
-    }),
-  ],
+  plugins: [],
 };
 
 /**

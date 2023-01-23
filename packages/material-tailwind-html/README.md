@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/npm/dt/@material-tailwind/html.svg" alt="Total Downloads">
   </a>
   <a href="https://github.com/creativetimofficial/material-tailwind/releases">
-    <img src="https://img.shields.io/badge/version-1.2.4-blue.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-2.0.0-blue.svg" alt="Version" />
   </a>
   <a href="https://www.material-tailwind.com/docs/html/license">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="Licenese">
@@ -234,10 +234,6 @@ module.exports = withMT({
 <br />
 
 4. Congratulations 🥳, you did it, now you're ready to use @material-tailwind/html.
-
-```html
-<button class="button button-pink">Button</button>
-```
 
 <br />
 <br />
