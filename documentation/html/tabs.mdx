@@ -1,14 +1,7 @@
 ---
 title: Tailwind CSS Tabs - Material Tailwind
 description: Customise your web projects with our easy-to-use Tabs component for Tailwind CSS using Material Design guidelines.
-navigation:
-  [
-    "tabs-simple",
-    "tabs-icons",
-    "content-tabs",
-    "vertical-tabs",
-    "required-script",
-  ]
+navigation: ["tabs", "tabs-icons", "tabs-content", "required-script"]
 github: tabs
 prev: switch
 next: textarea
@@ -25,8 +18,8 @@ See below our example that will help you create a simple and easy-to-use tabs fo
 <br />
 
 <CodePreview
-  id="tabs-simple"
-  link="button#tabs-simple"
+  id="tabs"
+  link="tabs#tabs"
   component={
     <div className="w-full">
       <div className="relative right-0">
@@ -37,7 +30,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
         >
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               active
               role="tab"
@@ -48,7 +41,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -58,7 +51,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -68,7 +61,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="true"
@@ -78,7 +71,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="true"
@@ -101,7 +94,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
       >
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             active
             role="tab"
@@ -112,7 +105,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -122,7 +115,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -132,7 +125,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="true"
@@ -142,7 +135,7 @@ See below our example that will help you create a simple and easy-to-use tabs fo
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="true"
@@ -160,11 +153,11 @@ See below our example that will help you create a simple and easy-to-use tabs fo
 
 ## Tabs with Icons
 
-The <Code>Tabs</Code> component comes with different variants including icons.
+The tabs component comes with different variants including icons.
 
 <CodePreview
   id="tabs-icons"
-  link="button#tabs-icons"
+  link="tabs#tabs"
   component={
     <div className="w-2/3">
       <div className="relative right-0">
@@ -175,7 +168,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         >
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               active
               role="tab"
@@ -219,7 +212,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -258,7 +251,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -315,7 +308,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
       >
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             active
             role="tab"
@@ -359,7 +352,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -398,7 +391,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -452,7 +445,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
 
 <CodePreview
   id="tabs-content"
-  link="button#tabs-content"
+  link="tabs#tabs"
   component={
     <div className="w-full">
       <div className="relative right-0">
@@ -463,7 +456,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         >
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="true"
@@ -474,7 +467,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -485,7 +478,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
           </li>
           <li className="z-30 flex-auto text-center">
             <a
-              className="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
               data-tab-target=""
               role="tab"
               aria-selected="false"
@@ -497,17 +490,20 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         </ul>
         <div data-tab-content="" className="p-5">
           <div className="block opacity-100" id="app" role="tabpanel">
-            <p className="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
-              Because it's about motivating the doers. Because I'm here to follow my dreams and inspire other people to follow their dreams, too.
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+              Because it's about motivating the doers. Because I'm here to
+              follow my dreams and inspire other people to follow their dreams,
+              too.
             </p>
           </div>
           <div className="hidden opacity-0" id="message" role="tabpanel">
-            <p className="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
-              The reading of all good books is like a conversation with the finest minds of past centuries.
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+              The reading of all good books is like a conversation with the
+              finest minds of past centuries.
             </p>
           </div>
           <div className="hidden opacity-0" id="settings" role="tabpanel">
-            <p className="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
               Comparing yourself to others is the thief of joy.
             </p>
           </div>
@@ -526,7 +522,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
       >
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             active=""
             role="tab"
@@ -538,7 +534,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -549,7 +545,7 @@ The <Code>Tabs</Code> component comes with different variants including icons.
         </li>
         <li class="z-30 flex-auto text-center">
           <a
-            class="ease-in-out text-slate-700 z-30 mb-0 flex items-center justify-center w-full rounded-lg border-0 bg-inherit px-0 py-1 transition-all cursor-pointer"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
             data-tab-target=""
             role="tab"
             aria-selected="false"
@@ -561,17 +557,19 @@ The <Code>Tabs</Code> component comes with different variants including icons.
       </ul>
       <div data-tab-content="" class="p-5">
         <div class="block opacity-100" id="app" role="tabpanel">
-          <p class="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
-            Because it's about motivating the doers. Because I'm here to follow my dreams and inspire other people to follow their dreams, too.
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+            Because it's about motivating the doers. Because I'm here to follow
+            my dreams and inspire other people to follow their dreams, too.
           </p>
         </div>
         <div class="hidden opacity-0" id="message" role="tabpanel">
-          <p class="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
-            The reading of all good books is like a conversation with the finest minds of past centuries.
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+            The reading of all good books is like a conversation with the finest
+            minds of past centuries.
           </p>
         </div>
         <div class="hidden opacity-0" id="settings" role="tabpanel">
-          <p class="block antialiased font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
             Comparing yourself to others is the thief of joy.
           </p>
         </div>
