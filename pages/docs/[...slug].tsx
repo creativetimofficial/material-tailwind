@@ -135,7 +135,7 @@ const components = {
   p: (props) => (
     <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: () => <hr className="!mt-16 !mb-12 !border-blue-gray-50" />,
+  hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
   a: (props) => (
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
