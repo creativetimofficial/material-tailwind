@@ -1,7 +1,14 @@
 ---
 title: Tailwind CSS Menu - Material Tailwind
 description: Customise your web projects with our easy-to-use Menu component for Tailwind CSS using Material Design guidelines.
-navigation: ["menu", "menu-right", "nested-menu", "required-script"]
+navigation:
+  [
+    "menu",
+    "nested-menu",
+    "menu-trigger-data-attributes",
+    "menu-data-attributes",
+    "required-script",
+  ]
 github: menu
 prev: input
 next: navbar
@@ -9,299 +16,257 @@ next: navbar
 
 # Tailwind CSS Menu
 
-Use our responsive Tailwind CSS vertical menu, that can take the user anywhere on your web app!
+Use our responsive Tailwind CSS menu, that can take the user anywhere on your web app!
 
 A menu displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The menu also ensures a consistent and predictable user experience by adhering to an established set of principles
 
-See below our menu example that you can use in your Tailwind CSS project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+See below our menu examples that you can use in your Tailwind CSS project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+
+To create a menu you can use the <Link href="/docs/html/popover#popover-trigger-data-attribute"><Code html>data-popover-target="`{menuName}`"</Code></Link> and <Link href="/docs/html/popover#popover-data-attribute"><Code html>data-popover="`{menuName}`"</Code></Link> data attributes.
 
 <br />
 
-<ComponentDemo id="menu">
-  <div className="menu">
-    <button
-      className="button button-pink"
-      menu-trigger="true"
-      aria-expanded="true"
-      data-ripple-light="true"
-    >
-      {`menu`}
-    </button>
-    <ul className="dropdown-menu p-2">
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 1</span>
-          </div>
-        </a>
-      </li>
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 2</span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-2">
-            <span className="my-auto ml-2 normal-case">Menu Item 3</span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="menu">
+<CodePreview
+  id="menu"
+  link="menu#menu"
+  component={
+    <>
+      <button
+        data-ripple-light="true"
+        data-popover-target="menu"
+        className="middle none center mr-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        {`Open Menu`}
+      </button>
+      <ul
+        role="menu"
+        data-popover="menu"
+        data-popover-placement="bottom"
+        className="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+      >
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 1`}
+        </li>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 2`}
+        </li>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 3`}
+        </li>
+      </ul>
+    </>
+  }
+>
+  ```html
   <button
-    class="button button-pink"
-    menu-trigger="true"
-    aria-expanded="true"
     data-ripple-light="true"
+    data-popover-target="menu"
+    class="middle none center mr-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
   >
-    menu
+    Open Menu
   </button>
-  <ul class="dropdown-menu p-2">
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 1</span>
-        </div>
-      </a>
+  <ul
+    role="menu"
+    data-popover="menu"
+    data-popover-placement="bottom"
+    class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+  >
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 1
     </li>
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 2</span>
-        </div>
-      </a>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 2
     </li>
-    <li>
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 3</span>
-        </div>
-      </a>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 3
     </li>
   </ul>
-</div>
-```
-
----
-
-## Menu Right
-
-Use this example to create a simple menu positioned in the right side of the screen.
-
-<ComponentDemo id="menu right">
-  <div className="menu ml-auto">
-    <button
-      className="button button-cyan"
-      menu-trigger="true"
-      aria-expanded="true"
-      data-ripple-light="true"
-    >
-      {`menu right`}
-    </button>
-    <ul className="dropdown-menu menu-right p-2">
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-1">
-            <span className="material-icons text-xl">email</span>
-            <span className="my-auto ml-2 normal-case">Check new messages</span>
-          </div>
-        </a>
-      </li>
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-1">
-            <span className="material-icons text-xl">podcasts</span>
-            <span className="my-auto ml-2 normal-case">
-              {`Manage podcast session`}
-            </span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-1">
-            <span className="material-icons text-xl">shopping_cart</span>
-            <span className="my-auto ml-2 normal-case">
-              {`Payment successfully completed`}
-            </span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="menu ml-auto">
-  <button
-    class="button button-cyan"
-    menu-trigger="true"
-    aria-expanded="true"
-    data-ripple-light="true"
-  >
-    menu right
-  </button>
-  <ul class="dropdown-menu menu-right p-2">
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="material-icons text-xl">email</span>
-          <span class="my-auto ml-2 normal-case">Check new messages</span>
-        </div>
-      </a>
-    </li>
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="material-icons text-xl">podcasts</span>
-          <span class="my-auto ml-2 normal-case">Manage podcast session</span>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="material-icons text-xl">shopping_cart</span>
-          <span class="my-auto ml-2 normal-case"
-            >Payment successfully completed</span
-          >
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-```
+  ```
+</CodePreview>
 
 ---
 
 ## Nested Menu
 
-Help users navigate easier your page with this nested menu example that will help you with content organization.
+You can created nested/multi-level menus by setting the <Link href="/docs/html/popover#popover-trigger-data-attribures"><Code html>data-popover-nested="true"</Code></Link> data attribure to the menu trigger element.
 
-<ComponentDemo id="nested menu">
-  <div className="menu">
-    <button
-      className="button button-red"
-      menu-trigger="true"
-      aria-expanded="true"
-      data-ripple-light="true"
-    >
-      {`menu`}
-    </button>
-    <ul className="dropdown-menu p-2">
-      <li className="mb-2">
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-1">
-            <span className="my-auto ml-2 normal-case">Menu Item 1</span>
-          </div>
-        </a>
-      </li>
-      <li className="mb-2">
-        <a className="menu-item" href="#tailwind-menu">
-          <div className="flex items-center py-1">
-            <span className="my-auto ml-2 normal-case">Nested Menu</span>
-          </div>
-        </a>
-        <ul className="dropdown-menu p-2">
-          <li className="mb-2">
-            <a className="menu-item" href="#">
-              <div className="flex items-center py-1">
-                <span className="my-auto ml-2 normal-case">Nested Item 1</span>
-              </div>
-            </a>
-          </li>
-          <li className="mb-2">
-            <a className="menu-item" href="#">
-              <div className="flex items-center py-1">
-                <span className="my-auto ml-2 normal-case">Nested Item 2</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a className="menu-item" href="#">
-              <div className="flex items-center py-1">
-                <span className="my-auto ml-2 normal-case">Nested Item 3</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a className="menu-item" href="#">
-          <div className="flex items-center py-1">
-            <span className="my-auto ml-2 normal-case">Menu Item 2</span>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="menu">
-  <button
-    class="button button-red"
-    menu-trigger="true"
-    aria-expanded="true"
-    data-ripple-light="true"
-  >
-    menu
-  </button>
-  <ul class="dropdown-menu p-2">
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 1</span>
-        </div>
-      </a>
-    </li>
-    <li class="mb-2">
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Nested Menu</span>
-        </div>
-      </a>
-      <ul class="dropdown-menu p-2">
-        <li class="mb-2">
-          <a class="menu-item" href="#">
-            <div class="flex items-center py-1">
-              <span class="my-auto ml-2 normal-case">Nested Item 1</span>
-            </div>
-          </a>
+<CodePreview
+  id="nested-menu"
+  link="menu#nested-menu"
+  component={
+    <>
+      <button
+        data-ripple-light="true"
+        data-popover-target="menu"
+        data-popover-nested="true"
+        className="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        {`Open Nested Menu`}
+      </button>
+      <ul
+        role="menu"
+        data-popover="menu"
+        data-popover-placement="bottom"
+        className="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+      >
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 1`}
         </li>
-        <li class="mb-2">
-          <a class="menu-item" href="#">
-            <div class="flex items-center py-1">
-              <span class="my-auto ml-2 normal-case">Nested Item 2</span>
-            </div>
-          </a>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 2`}
         </li>
-        <li>
-          <a class="menu-item" href="#">
-            <div class="flex items-center py-1">
-              <span class="my-auto ml-2 normal-case">Nested Item 3</span>
-            </div>
-          </a>
+        <li
+          role="menuitem"
+          data-popover-target="nested-menu"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Nested Menu`}
+        </li>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 3`}
         </li>
       </ul>
+      <ul
+        role="menu"
+        data-popover="nested-menu"
+        data-popover-offset="20"
+        data-popover-placement="right-start"
+        className="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+      >
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 1`}
+        </li>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 2`}
+        </li>
+        <li
+          role="menuitem"
+          className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+        >
+          {`Menu Item 3`}
+        </li>
+      </ul>
+    </>
+  }
+>
+  ```html
+  <button
+    data-ripple-light="true"
+    data-popover-target="menu"
+    data-popover-nested="true"
+    class="middle none center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  >
+    Open Nested Menu
+  </button>
+  <ul
+    role="menu"
+    data-popover="menu"
+    data-popover-placement="bottom"
+    class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+  >
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 1
     </li>
-    <li>
-      <a class="menu-item" href="#">
-        <div class="flex items-center py-1">
-          <span class="my-auto ml-2 normal-case">Menu Item 2</span>
-        </div>
-      </a>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 2
+    </li>
+    <li
+      role="menuitem"
+      data-popover-target="nested-menu"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Nested Menu
+    </li>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 3
     </li>
   </ul>
-</div>
-```
+  <ul
+    role="menu"
+    data-popover="nested-menu"
+    data-popover-offset="20"
+    data-popover-placement="right-start"
+    class="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+  >
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 1
+    </li>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 2
+    </li>
+    <li
+      role="menuitem"
+      class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+    >
+      Menu Item 3
+    </li>
+  </ul>
+  ```
+</CodePreview>
+
+---
+
+## Menu Trigger Data Attributes
+
+<span id="menu-trigger-data-attributes" className="scroll-mt-48" />
+
+The trigger element of the menu uses the <Link href="/docs/html/popover#popover-trigger-data-attributes" className="font-medium hover:text-pink-500">popover trigger data attribure</Link> to work.
+
+---
+
+## Menu Data Attributes
+
+<span id="menu-data-attributes" className="scroll-mt-48" />
+
+The menu element uses the <Link href="/docs/html/popover#popover-data-attributes" className="font-medium hover:text-pink-500">popover data attribures</Link> to work.
 
 ---
 
@@ -309,12 +274,18 @@ Help users navigate easier your page with this nested menu example that will hel
 
 <span id="required-script" className="scroll-mt-56" />
 
-The menu component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
+The menu component needs the popover script to works, you just need to add the below script file to the bottom of your html file.
 
 ```html
 <!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html/scripts/menu.js"></script>
+<script
+  type="module"
+  src="node_modules/@material-tailwind/html@latest/scripts/popover.js"
+></script>
 
 <!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/menu.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+></script>
 ```

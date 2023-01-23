@@ -30,7 +30,7 @@ See below our beautiful <Code>Card</Code> example that you can use in your React
 
 <br />
 
-<ComponentDemo id="card">
+<CodePreview id="card" link="card#card" component={
   <Card className="mt-6 w-96">
     <CardHeader color="blue" className="relative h-56">
       <Image src="/img/blog.jpg" alt="img-blur-shadow" layout="fill" />
@@ -56,8 +56,7 @@ See below our beautiful <Code>Card</Code> example that you can use in your React
       </Typography>
     </CardFooter>
   </Card>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Card,
@@ -98,12 +97,13 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Tailwind CSS Profile Card - React
 
-<ComponentDemo id="profile-card">
+<CodePreview id="profile-card" className="mt-4" component={
   <Card className="w-96">
     <CardHeader floated={false} className="h-80">
       <Image
@@ -158,8 +158,7 @@ export default function Example() {
       </Tooltip>
     </CardFooter>
   </Card>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Card,
@@ -223,12 +222,13 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Tailwind CSS Login Card - React
 
-<ComponentDemo id="login-card">
+<CodePreview id="login-card" link="card#login-card" className="mt-4" component={
   <Card className="mt-6 w-96">
     <CardHeader
       variant="gradient"
@@ -264,8 +264,7 @@ export default function Example() {
       </Typography>
     </CardFooter>
   </Card>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Card,
@@ -318,6 +317,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

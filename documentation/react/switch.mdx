@@ -36,10 +36,7 @@ See below our example that will help you create simple and easy-to-use <Code>Swi
 
 <br />
 
-<ComponentDemo id="switch">
-  <Switch id="switch-component" defaultChecked />
-</ComponentDemo>
-
+<CodePreview id="switch" link="switch#switch" component={<Switch id="switch-component" defaultChecked />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -47,14 +44,15 @@ export default function Example() {
   return <Switch defaultChecked />;
 }
 ```
+</CodePreview>
 
 ---
 
 ## Switch Colors
 
-The <Code>Switch</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Switch</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="switch-colors">
+<CodePreview id="switch-colors" link="switch#switch-colors" component={
   <div className="flex w-max gap-4">
     <Switch id="switch-1" color="blue" defaultChecked />
     <Switch id="switch-2" color="red" defaultChecked />
@@ -65,8 +63,7 @@ The <Code>Switch</Code> component comes with 19 different colors that you can ch
     <Switch id="switch-7" color="purple" defaultChecked />
     <Switch id="switch-8" color="pink" defaultChecked />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -85,6 +82,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -92,10 +90,9 @@ export default function Colors() {
 
 You can add a label for the <Code>Switch</Code> component by passing the <Code>label</Code> prop to the <Code>Switch</Code> component.
 
-<ComponentDemo id="switch-with-label">
+<CodePreview id="switch-with-label" link="switch#switch-with-label" component={
   <Switch id="auto-update" label="Automatic Update" />
-</ComponentDemo>
-
+}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -103,6 +100,7 @@ export default function Example() {
   return <Switch id="auto-update" label="Automatic Update" />;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -110,11 +108,12 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Switch</Code> component using the <Code>ripple</Code> prop.
 
-<ComponentDemo id="switch-ripple-effect">
-  <Switch id="ripple-on" label="Ripple Effect On" />
-  <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
-</ComponentDemo>
-
+<CodePreview id="switch-ripple-effect" link="switch#switch-ripple-effect" component={
+  <>
+    <Switch id="ripple-on" label="Ripple Effect On" />
+    <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+  </>
+}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -127,6 +126,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

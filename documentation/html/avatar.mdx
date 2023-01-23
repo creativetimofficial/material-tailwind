@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Avatar - Material Tailwind
 description: Customise your web projects with our easy-to-use Avatar component for Tailwind CSS using Material Design guidelines.
-navigation: ["avatar", "avatar-style", "avatar-sizes"]
+navigation: ["avatar", "avatar-variants", "avatar-sizes"]
 github: avatar
 prev: alert
 next: breadcrumbs
@@ -15,43 +15,63 @@ See below our avatar components examples.
 
 <br />
 
-<ComponentDemo id="avatar">
-  <a href="#" className="avatar">
-    <img alt="Image placeholder" src="/img/face-2.jpg" />
-  </a>
-</ComponentDemo>
-
-```html
-<a href="#" class="avatar">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodePreview
+  id="avatar"
+  link="avatar#avatar"
+  component={
+    <img
+      className="relative inline-block h-12 w-12 rounded-lg object-cover object-center"
+      alt="Image placeholder"
+      src="/img/face-2.jpg"
+    />
+  }
+>
+  ```html
+  <img
+    class="relative inline-block h-12 w-12 rounded-lg object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  ```
+</CodePreview>
 
 ---
 
-## Avatar Styles
+## Avatar Variants
 
 Use the following example to create rounded and circular avatar components for you Tailwind CSS project.
 
-<ComponentDemo id="avatar-style">
-  <div className="flex">
-    <a href="#" className="avatar mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-  </div>
-</ComponentDemo>
-
-```html
-<a href="#" class="avatar">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodePreview
+  id="avatar-variants"
+  link="avatar#avatar-variants"
+  component={
+    <div className="flex">
+      <img
+        className="relative mr-4 inline-block h-12 w-12 rounded-lg object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+    </div>
+  }
+>
+  ```html
+  <img
+    class="relative inline-block h-12 w-12 rounded-lg object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  ```
+</CodePreview>
 
 ---
 
@@ -59,46 +79,74 @@ Use the following example to create rounded and circular avatar components for y
 
 Use the following example to create avatars with different sizes, from small sized to large sized.
 
-<ComponentDemo id="avatar-sizes">
-  <div className="flex">
-    <a href="#" className="avatar avatar-circular avatar-xs mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular avatar-sm mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular avatar-md mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular avatar-lg mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular avatar-xl mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-    <a href="#" className="avatar avatar-circular avatar-xxl mr-3">
-      <img alt="Image placeholder" src="/img/face-2.jpg" />
-    </a>
-  </div>
-</ComponentDemo>
-
-```html
-<a href="#" class="avatar avatar-circular avatar-xs">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-sm">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-md">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-lg">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-xl">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-<a href="#" class="avatar avatar-circular avatar-xxl">
-  <img alt="Image placeholder" src="/img/face-2.jpg" />
-</a>
-```
+<CodePreview
+  id="avatar-sizes"
+  link="avatar#avatar-sizes"
+  component={
+    <div className="flex items-end">
+      <img
+        className="relative mr-4 inline-block h-6 w-6 rounded-md object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative mr-4 inline-block h-9 w-9 rounded-md object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative mr-4 inline-block h-12 w-12 rounded-lg object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative mr-4 inline-block h-16 w-16 rounded-lg object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative mr-4 inline-block h-20 w-20 rounded-xl object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+      <img
+        className="relative inline-block h-24 w-24 rounded-2xl object-cover object-center"
+        alt="Image placeholder"
+        src="/img/face-2.jpg"
+      />
+    </div>
+  }
+>
+  ```html
+  <img
+    class="relative mr-4 inline-block h-6 w-6 rounded-md object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative mr-4 inline-block h-9 w-9 rounded-md object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative mr-4 inline-block h-12 w-12 rounded-lg object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative mr-4 inline-block h-16 w-16 rounded-lg object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative mr-4 inline-block h-20 w-20 rounded-xl object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  <img
+    class="relative inline-block h-24 w-24 rounded-2xl object-cover object-center"
+    alt="Image placeholder"
+    src="/img/face-2.jpg"
+  />
+  ```
+</CodePreview>

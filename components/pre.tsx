@@ -40,7 +40,6 @@ interface Props {
 export default function Pre({ children, color = "blue", ...rest }: Props) {
   const [copied, setCopied] = useState(false);
   const codeRef = useRef<HTMLElement>(null);
-
   const handleCopy = () => {
     copyToClipboard(codeRef.current.innerText);
     setCopied(true);

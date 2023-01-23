@@ -97,7 +97,7 @@ module.exports = withMT({
 
 <span id="ripple-effect" className="scroll-mt-48" />
 
-@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code html>data-ripple-light="true"</Code> for light ripple effect and <Code html>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
 
 The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-pink-500 transition-colors">material-ripple-effect</a>
 
@@ -144,8 +144,8 @@ You can use @material-tailwind/html as a CDN link as well, you just need to add 
 ```html
 <!-- stylesheet -->
 <link
-  href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
   rel="stylesheet"
+  href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
 />
 
 <!-- script -->
@@ -158,14 +158,23 @@ You can use @material-tailwind/html as a CDN link as well, you just need to add 
 
 Now you're good to go and use @material-tailwind/html in your project.
 
-<ComponentDemo id="example">
-  <button className="button button-pink" data-ripple-light="true">
-    {`Button`}
+<CodePreview
+  id="example"
+  component={
+    <button
+      className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      {`Button`}
+    </button>
+  }
+>
+  ```html
+  <button
+    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    data-ripple-light="true"
+  >
+    Button
   </button>
-</ComponentDemo>
-
-```jsx
-<button class="button button-pink" data-ripple-light="true">
-  Button
-</button>
-```
+  ```
+</CodePreview>

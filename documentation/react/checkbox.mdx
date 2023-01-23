@@ -43,10 +43,7 @@ See below our simple <Code>Checkbox</Code> example that you can use in your Reac
 
 <br />
 
-<ComponentDemo id="checkbox">
-  <Checkbox defaultChecked />
-</ComponentDemo>
-
+<CodePreview id="checkbox" link="checkbox#checkbox" component={<Checkbox defaultChecked />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
@@ -54,14 +51,15 @@ export default function Example() {
   return <Checkbox defaultChecked />;
 }
 ```
+</CodePreview>
 
 ---
 
 ## Checkbox Colors
 
-The <Code>Checkbox</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Checkbox</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="checkbox-colors">
+<CodePreview id="checkbox-colors" link="checkbox#checkbox-colors" component={
   <div className="flex w-max gap-4">
     <Checkbox color="blue" defaultChecked />
     <Checkbox color="red" defaultChecked />
@@ -72,8 +70,7 @@ The <Code>Checkbox</Code> component comes with 19 different colors that you can 
     <Checkbox color="purple" defaultChecked />
     <Checkbox color="pink" defaultChecked />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
@@ -92,6 +89,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -99,10 +97,7 @@ export default function Colors() {
 
 You can add a label for the <Code>Checkbox</Code> component by passing the <Code>label</Code> prop to the <Code>Checkbox</Code> component.
 
-<ComponentDemo id="checkbox-with-label">
-  <Checkbox id="login" label="Remember Me" />
-</ComponentDemo>
-
+<CodePreview id="checkbox-with-label" link="checkbox#checkbox-with-label" component={<Checkbox id="login" label="Remember Me" />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
@@ -110,6 +105,7 @@ export default function Example() {
   return <Checkbox label="Remember Me" />;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -117,7 +113,7 @@ export default function Example() {
 
 You can add a custom icon for the <Code>Checkbox</Code> component when it's checked by passing the <Code>icon</Code> prop to the <Code>Checkbox</Code> component.
 
-<ComponentDemo id="checkbox-custom-icon">
+<CodePreview id="checkbox-custom-icon" component={
   <Checkbox
     icon={
       <svg
@@ -135,8 +131,7 @@ You can add a custom icon for the <Code>Checkbox</Code> component when it's chec
     }
     defaultChecked
   />
-</ComponentDemo>
-
+}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
@@ -162,6 +157,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -169,11 +165,12 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Checkbox</Code> component using the <Code>ripple</Code> prop.
 
-<ComponentDemo id="checkbox-ripple-effect">
-  <Checkbox id="ripple-on" label="Ripple Effect On" />
-  <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
-</ComponentDemo>
-
+<CodePreview id="checkbox-ripple-effect" link="checkbox#checkbox-ripple-effect" component={
+  <>
+    <Checkbox id="ripple-on" label="Ripple Effect On" />
+    <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
+  </>
+}>
 ```jsx
 import { Fragment } from "react";
 import { Checkbox } from "@material-tailwind/react";
@@ -187,6 +184,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

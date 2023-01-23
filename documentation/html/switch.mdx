@@ -1,7 +1,14 @@
 ---
 title: Tailwind CSS Switch - Material Tailwind
 description: Customise your web projects with our easy-to-use Switch component for Tailwind CSS using Material Design guidelines.
-navigation: ["switch", "required-script"]
+navigation:
+  [
+    "switch",
+    "switch-colors",
+    "switch-with-label",
+    "switch-ripple-effect",
+    "required-script",
+  ]
 github: switch
 prev: select
 next: tabs
@@ -15,38 +22,536 @@ Use the following example to create a simple and easy-to-use switch component fo
 
 <br />
 
-<ComponentDemo id="switch">
-  <div className="form-check form-switch mb-4 flex items-center">
-    <input
-      className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-      data-attribute="toggle"
-      id="remember"
-    />
-    <div className="form-check-input"></div>
+<CodePreview
+  id="switch"
+  link="switch#switch"
+  className="mt-4"
+  component={
+    <div className="inline-flex items-center">
+      <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-component"
+          type="checkbox"
+          className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          defaultChecked
+        />
+        <label
+          htmlFor="switch-component"
+          className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        >
+          <div
+            className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="inline-flex items-center">
+    <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+      <input
+        id="switch-component"
+        type="checkbox"
+        class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+      />
+      <label
+        for="switch-component"
+        class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+      >
+        <div
+          class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+          data-ripple-dark="true"
+        ></div>
+      </label>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Switch Colors
+
+<CodePreview
+  id="switch-colors"
+  link="switch#switch-colors"
+  className="mt-4"
+  component={
+    <div className="flex w-max gap-6">
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-8"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          />
+          <label
+            htmlFor="switch-8"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-2"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-red-500 peer-checked:border-red-500 peer-checked:before:bg-red-500"
+          />
+          <label
+            htmlFor="switch-2"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-red-500 peer-checked:before:bg-red-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-3"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-green-500 peer-checked:border-green-500 peer-checked:before:bg-green-500"
+          />
+          <label
+            htmlFor="switch-3"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-green-500 peer-checked:before:bg-green-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-4"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-amber-500 peer-checked:border-amber-500 peer-checked:before:bg-amber-500"
+          />
+          <label
+            htmlFor="switch-4"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-amber-500 peer-checked:before:bg-amber-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-5"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-teal-500 peer-checked:border-teal-500 peer-checked:before:bg-teal-500"
+          />
+          <label
+            htmlFor="switch-5"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-teal-500 peer-checked:before:bg-teal-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-6"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-indigo-500 peer-checked:border-indigo-500 peer-checked:before:bg-indigo-500"
+          />
+          <label
+            htmlFor="switch-6"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-indigo-500 peer-checked:before:bg-indigo-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-7"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-purple-500 peer-checked:border-purple-500 peer-checked:before:bg-purple-500"
+          />
+          <label
+            htmlFor="switch-7"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-purple-500 peer-checked:before:bg-purple-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            defaultChecked
+            id="switch-1"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:before:bg-blue-500"
+          />
+          <label
+            htmlFor="switch-1"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-blue-500 peer-checked:before:bg-blue-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex w-max gap-6">
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-8"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          for="switch-8"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-2"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-red-500 peer-checked:border-red-500 peer-checked:before:bg-red-500"
+        />
+        <label
+          for="switch-2"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-red-500 peer-checked:before:bg-red-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-3"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-green-500 peer-checked:border-green-500 peer-checked:before:bg-green-500"
+        />
+        <label
+          for="switch-3"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-green-500 peer-checked:before:bg-green-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-4"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-amber-500 peer-checked:border-amber-500 peer-checked:before:bg-amber-500"
+        />
+        <label
+          for="switch-4"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-amber-500 peer-checked:before:bg-amber-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-5"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-teal-500 peer-checked:border-teal-500 peer-checked:before:bg-teal-500"
+        />
+        <label
+          for="switch-5"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-teal-500 peer-checked:before:bg-teal-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-6"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-indigo-500 peer-checked:border-indigo-500 peer-checked:before:bg-indigo-500"
+        />
+        <label
+          for="switch-6"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-indigo-500 peer-checked:before:bg-indigo-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-7"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-purple-500 peer-checked:border-purple-500 peer-checked:before:bg-purple-500"
+        />
+        <label
+          for="switch-7"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-purple-500 peer-checked:before:bg-purple-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="switch-1"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:before:bg-blue-500"
+        />
+        <label
+          for="switch-1"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-blue-500 peer-checked:before:bg-blue-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+    </div>
+  </div>
+  ````
+</CodePreview>
+
+---
+
+## Switch with Label
+
+<CodePreview
+  id="switch-with-label"
+  link="switch#switch-with-label"
+  className="mt-4"
+  component={
+    <div className="inline-flex items-center">
+      <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="auto-update"
+          type="checkbox"
+          className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          htmlFor="auto-update"
+          className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        >
+          <div
+            className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+      <label
+        htmlFor="auto-update"
+        className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+      >
+        Automatic Update
+      </label>
+    </div>
+  }
+>
+  ```html
+  <div class="inline-flex items-center">
+    <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+      <input
+        id="auto-update"
+        type="checkbox"
+        class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+      />
+      <label
+        for="auto-update"
+        class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+      >
+        <div
+          class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+          data-ripple-dark="true"
+        ></div>
+      </label>
+    </div>
     <label
-      className="form-check-label mb-0 ml-2 cursor-pointer select-none"
-      htmlFor="remember"
+      for="auto-update"
+      class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
     >
-      {`Remember me`}
+      Automatic Update
     </label>
   </div>
-</ComponentDemo>
+  ```
+</CodePreview>
 
-```html
-<div class="form-check form-switch mb-4 flex items-center">
-  <input
-    class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-    data-attribute="toggle"
-    id="remember"
-  />
-  <div class="form-check-input"></div>
-  <label
-    class="form-check-label mb-0 ml-2 cursor-pointer select-none"
-    for="remember"
-    >Remember me</label
-  >
-</div>
-```
+---
+
+## Switch Ripple Effect
+
+<CodePreview
+  id="switch-ripple-effect"
+  link="switch#switch-ripple-effect"
+  className="mt-4"
+  component={
+    <div className="flex flex-col gap-6">
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            id="ripple-on"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          />
+          <label
+            htmlFor="ripple-on"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+              data-ripple-dark="true"
+            ></div>
+          </label>
+        </div>
+        <label
+          htmlFor="ripple-on"
+          className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+        >
+          Ripple Effect On
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+          <input
+            id="ripple-off"
+            type="checkbox"
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          />
+          <label
+            htmlFor="ripple-off"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          ></label>
+        </div>
+        <label
+          htmlFor="ripple-off"
+          className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+        >
+          Ripple Effect Off
+        </label>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex flex-col gap-6">
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="ripple-on"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          for="ripple-on"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+      <label
+        for="ripple-on"
+        class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+      >
+        Ripple Effect On
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="ripple-off"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          for="ripple-off"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        ></label>
+      </div>
+      <label
+        for="ripple-off"
+        class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+      >
+        Ripple Effect Off
+      </label>
+    </div>
+  </div>
+  ```
+</CodePreview>
 
 ---
 
@@ -54,12 +559,12 @@ Use the following example to create a simple and easy-to-use switch component fo
 
 <span id="required-script" className="scroll-mt-56" />
 
-The switch/toggle component needs a required script files to work, you just need to add the below script file to the bottom of your html file.
+The switch component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
 
 ```html
 <!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html/scripts/toggle.js"></script>
+<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
 <!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/toggle.js"></script>
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```

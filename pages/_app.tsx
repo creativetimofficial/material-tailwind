@@ -8,9 +8,6 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 // styles
 import "/styles/globals.css";
-import "/styles/choices.css";
-import "/styles/flatpickr.css";
-import "/styles/nouislider.css";
 
 function MyApp({ Component, pageProps }) {
   return (

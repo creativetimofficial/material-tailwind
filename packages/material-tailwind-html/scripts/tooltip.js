@@ -1,58 +1,78 @@
+import {
+  computePosition,
+  flip,
+  inline,
+  offset,
+  shift,
+} from "https://cdn.jsdelivr.net/npm/@floating-ui/dom@latest/+esm";
+
 (function () {
-  if (document.querySelectorAll('[data-target="tooltip"]')) {
-    let buttons = document.querySelectorAll('[data-target="tooltip"]');
+  const triggers = document.querySelectorAll("[data-tooltip-target]");
+  const tooltips = document.querySelectorAll("[data-tooltip]");
 
-    buttons.forEach((button) => {
-      let tooltip = button.nextElementSibling;
-      let placement = tooltip.getAttribute("data-placement");
+  if (triggers && tooltips) {
+    Array.from(triggers).forEach((trigger) =>
+      Array.from(tooltips).forEach((tooltip) => {
+        if (trigger.dataset.tooltipTarget === tooltip.dataset.tooltip) {
+          const placement = tooltip.dataset.tooltipPlacement || "top";
+          const offsetValue = tooltip.dataset.tooltipOffset || 5;
+          const mountValue = tooltip.dataset.tooltipMount || "opacity-1";
+          const unmountValue =
+            tooltip.dataset.tooltipUnmount || "pointer-events-none opacity-0";
+          const transitionValue =
+            tooltip.dataset.tooltipTransition ||
+            "transition-opacity duration-300";
+          const mountClasses = mountValue.split(" ");
+          const unmountClasses = unmountValue.split(" ");
+          const transitionClasses = transitionValue.split(" ");
 
-      let popperInstance = Popper.createPopper(button, tooltip, {
-        modifiers: [
-          {
-            name: "offset",
-            options: {
-              offset: [0, 8],
-            },
-          },
-        ],
-        placement: placement,
-      });
+          
+          tooltip.classList.add(...unmountClasses);
+          
+          if (!tooltip.hasAttribute("tabindex"))
+          tooltip.setAttribute("tabindex", 0);
+          if (transitionValue !== "false")
+          tooltip.classList.add(...transitionClasses);
+          
+          function setPosition() {
+            computePosition(trigger, tooltip, {
+              placement,
+              middleware: [
+                flip(),
+                inline(),
+                shift(),
+                offset(Number(offsetValue)),
+              ],
+            }).then(({ x, y }) => {
+              Object.assign(tooltip.style, {
+                top: `${y}px`,
+                left: `${x}px`,
+              });
+            });
+          }
 
-      function show() {
-        tooltip.setAttribute("data-show", "");
+          function mountTooltip() {
+            setPosition();
+            tooltip.classList.remove(...unmountClasses);
+            tooltip.classList.add(...mountClasses);
+          }
 
-        popperInstance.setOptions((options) => ({
-          ...options,
-          modifiers: [
-            ...options.modifiers,
-            { name: "eventListeners", enabled: true },
-          ],
-        }));
+          function unmountTooltip() {
+            setPosition();
+            tooltip.classList.remove(...mountClasses);
+            tooltip.classList.add(...unmountClasses);
+          }
 
-        popperInstance.update();
-      }
-
-      function hide() {
-        tooltip.removeAttribute("data-show");
-        popperInstance.setOptions((options) => ({
-          ...options,
-          modifiers: [
-            ...options.modifiers,
-            { name: "eventListeners", enabled: false },
-          ],
-        }));
-      }
-
-      let showEvents = ["mouseenter", "focus"];
-      let hideEvents = ["mouseleave", "blur"];
-
-      showEvents.forEach((event) => {
-        button.addEventListener(event, show);
-      });
-
-      hideEvents.forEach((event) => {
-        button.addEventListener(event, hide);
-      });
-    });
+          [
+            ["mouseenter", mountTooltip],
+            ["mouseleave", unmountTooltip],
+            ["focus", mountTooltip],
+            ["blur", unmountTooltip],
+          ].forEach(([event, listener]) => {
+            trigger.addEventListener(event, listener);
+          });
+        }
+      })
+    );
   }
 })();

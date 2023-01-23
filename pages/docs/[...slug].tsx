@@ -3,6 +3,7 @@ import { Fragment, useState, useEffect } from "react";
 // next.js components
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 // next-mdx-remote components
@@ -35,6 +36,8 @@ import RemixLogo from "components/icons/remix";
 import ViteLogo from "components/icons/vite";
 import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
+import CodeTabs from "components/code-tabs";
+import CodePreview from "components/code-preview";
 
 // @material-tailwind/react components
 import {
@@ -90,6 +93,9 @@ import config from "utils/rehype-pretty-code-config";
 import filterArray from "utils/filter-array";
 import getDirectoriesAndFile from "utils/get-directories-and-files";
 
+// material tailwind html script
+import initHtmlScripts from "public/material-tailwind-html-v2";
+
 const components = {
   h1: (props) => (
     <Typography
@@ -129,7 +135,7 @@ const components = {
   p: (props) => (
     <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: () => <hr className="!mt-24 !mb-20 !border-blue-gray-50" />,
+  hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
   a: (props) => (
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
@@ -156,9 +162,9 @@ const components = {
       {...props}
     />
   ),
-  pre: (props) => <Pre {...props} />,
   State,
   Observe,
+  CodeTabs,
   Image,
   ComponentDemo,
   CodeSandbox,
@@ -170,6 +176,7 @@ const components = {
   RemixLogo,
   ViteLogo,
   ColorPalette,
+  CodePreview,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -211,11 +218,8 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
+  Link,
 };
-
-// @material-tailwind/html components scripts
-import init from "public/material-tailwind-html";
-import ripple from "public/material-ripple-effects";
 
 export default function Page({ frontMatter, mdxSource, slug }) {
   const { asPath } = useRouter();
@@ -232,9 +236,8 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     .join("") as "html" | "react" | "vue" | "angular" | "svelte";
 
   useEffect(() => {
-    if (frameworkType === "html") {
-      init();
-      ripple();
+    if (frameworkType === "html" && typeof window !== "undefined") {
+      initHtmlScripts();
     }
   }, [frameworkType, slug]);
 
@@ -277,9 +280,9 @@ export const getStaticPaths = async () => {
   const filteredArray = filterArray(allDir);
 
   for (let i = 0; i < filteredArray.length - 1; i++) {
-    const directories = filteredArray[i]
-      .split("/")
-      .filter((dir) => dir !== baseDirectory);
+    const directories =
+      filteredArray[i] !== null &&
+      filteredArray[i].split("/").filter((dir) => dir !== baseDirectory);
     const files = filteredArray[i + 1].includes("/")
       ? filteredArray[i + 1].split("/").filter((dir) => dir !== baseDirectory)
       : filteredArray[i + 1];
@@ -306,6 +309,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   );
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
