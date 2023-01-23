@@ -1,7 +1,14 @@
 ---
 title: Tailwind CSS Tabs - Material Tailwind
 description: Customise your web projects with our easy-to-use Tabs component for Tailwind CSS using Material Design guidelines.
-navigation: ["tabs", "tabs-icons", "tabs-content", "required-script"]
+navigation:
+  [
+    "tabs",
+    "tabs-icons",
+    "tabs-content",
+    "tabs-data-attributes",
+    "required-script",
+  ]
 github: tabs
 prev: switch
 next: textarea
@@ -577,6 +584,20 @@ The tabs component comes with different variants including icons.
   </div>
   ```
 </CodePreview>
+
+---
+
+## Tabs Data Attributes
+
+<span id="tabs-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for tabs.
+
+| Attribute          | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `data-tabs`        | Set the main container for the tabs.                                                                          |
+| `data-tab-target`  | Set the tab tigger element that when a click happened on it, it's content should be visible.                  |
+| `data-tab-content` | Set tab content element.                                                                                      |
+| `active`           | Set default active tab, it should be used for the trigger element where the <br /> `data-tab-target` is used. |
 
 ---
 
