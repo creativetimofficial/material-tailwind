@@ -459,92 +459,98 @@ Use the following example to create a simple and easy-to-use switch component fo
   component={
     <div className="flex flex-col gap-6">
       <div className="inline-flex items-center">
-        <div className="relative inline-block w-8 h-4 cursor-pointer rounded-full">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
           <input
             id="ripple-on"
             type="checkbox"
-            className="peer appearance-none w-8 h-4 absolute bg-blue-gray-100 rounded-full cursor-pointer transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-          /><label
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          />
+          <label
             htmlFor="ripple-on"
-            className="bg-white w-5 h-5 border border-blue-gray-100 rounded-full shadow-md absolute top-2/4 -left-1 -translate-y-2/4 peer-checked:translate-x-full transition-all duration-300 cursor-pointer before:content[''] before:block before:bg-blue-gray-500 before:w-10 before:h-10 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:transition-opacity before:opacity-0 hover:before:opacity-10 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-            ><div
-              className="inline-block top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 p-5 rounded-full"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          >
+            <div
+              className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
               data-ripple-dark="true"
-            ></div
-          ></label>
+            ></div>
+          </label>
         </div>
         <label
           htmlFor="ripple-on"
-          className="text-gray-700 font-light select-none cursor-pointer mt-px ml-3 mb-0"
-          >Ripple Effect On</label
+          className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
         >
+          Ripple Effect On
+        </label>
       </div>
       <div className="inline-flex items-center">
-        <div className="relative inline-block w-8 h-4 cursor-pointer rounded-full">
+        <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
           <input
             id="ripple-off"
             type="checkbox"
-            className="peer appearance-none w-8 h-4 absolute bg-blue-gray-100 rounded-full cursor-pointer transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-          /><label
+            className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+          />
+          <label
             htmlFor="ripple-off"
-            className="bg-white w-5 h-5 border border-blue-gray-100 rounded-full shadow-md absolute top-2/4 -left-1 -translate-y-2/4 peer-checked:translate-x-full transition-all duration-300 cursor-pointer before:content[''] before:block before:bg-blue-gray-500 before:w-10 before:h-10 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:transition-opacity before:opacity-0 hover:before:opacity-10 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+            className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
           ></label>
         </div>
         <label
           htmlFor="ripple-off"
-          className="text-gray-700 font-light select-none cursor-pointer mt-px ml-3 mb-0"
-          >Ripple Effect Off</label
+          className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
         >
+          Ripple Effect Off
+        </label>
       </div>
     </div>
-
-}
-
+  }
 >
-
-```html
-<div class="flex flex-col gap-6">
-  <div class="inline-flex items-center">
-    <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
-      <input
-        id="ripple-on"
-        type="checkbox"
-        class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-      /><label
+  ```html
+  <div class="flex flex-col gap-6">
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="ripple-on"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          for="ripple-on"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        >
+          <div
+            class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+            data-ripple-dark="true"
+          ></div>
+        </label>
+      </div>
+      <label
         for="ripple-on"
-        class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-        ><div
-          class="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
-          data-ripple-dark="true"
-        ></div
-      ></label>
+        class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+      >
+        Ripple Effect On
+      </label>
     </div>
-    <label
-      for="ripple-on"
-      class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
-      >Ripple Effect On</label
-    >
-  </div>
-  <div class="inline-flex items-center">
-    <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
-      <input
-        id="ripple-off"
-        type="checkbox"
-        class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-      /><label
+    <div class="inline-flex items-center">
+      <div class="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+        <input
+          id="ripple-off"
+          type="checkbox"
+          class="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        />
+        <label
+          for="ripple-off"
+          class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+        ></label>
+      </div>
+      <label
         for="ripple-off"
-        class="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
-      ></label>
+        class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+      >
+        Ripple Effect Off
+      </label>
     </div>
-    <label
-      for="ripple-off"
-      class="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
-      >Ripple Effect Off</label
-    >
   </div>
-</div>
-```
-
+  ```
 </CodePreview>
 
 ---
