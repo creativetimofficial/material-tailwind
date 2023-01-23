@@ -38,16 +38,15 @@ Easily create <Code>Input</Code> with different statuses and sizes using our com
 <Code>Input</Code> fields are an essential user interface design element, providing
 users with the means to enter non-standardized responses.
 
-See below our <Code>Input</Code> component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+See below our <Code>Input</Code> component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
 
 <br />
 
-<ComponentDemo id="input">
+<CodePreview id="input" link="input#input" component={
   <div className="w-72">
     <Input label="Required" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
@@ -59,6 +58,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -66,27 +66,27 @@ export default function Example() {
 
 The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="input-variants">
-  <div className="flex w-full items-end gap-4">
-    <Input variant="outlined" label="Outlined" />
-    <Input variant="standard" label="Standard" />
+<CodePreview id="input-variants" link="input#input-variants" component={
+  <div className="flex flex-col w-72 gap-6">
     <Input variant="static" label="Static" placeholder="Static" />
+    <Input variant="standard" label="Standard" />
+    <Input variant="outlined" label="Outlined" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex w-full items-end gap-4">
-      <Input variant="outlined" label="Outlined" />
-      <Input variant="standard" label="Standard" />
+    <div className="flex flex-col w-72 gap-6">
       <Input variant="static" label="Static" placeholder="Static" />
+      <Input variant="standard" label="Standard" />
+      <Input variant="outlined" label="Outlined" />
     </div>
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -94,47 +94,46 @@ export default function Variants() {
 
 The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="input-sizes">
-  <div className="flex w-full items-end gap-4">
+<CodePreview id="input-sizes" link="input#input-sizes" component={
+  <div className="flex flex-col w-72 items-end gap-6">
     <Input size="md" label="Input Medium" />
     <Input size="lg" label="Input Large" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 items-end gap-6">
       <Input size="md" label="Input Medium" />
       <Input size="lg" label="Input Large" />
     </div>
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Input Colors
 
-The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="input-colors">
-  <div className="flex w-72 flex-col gap-4">
+<CodePreview id="input-colors" link="input#input-colors" component={
+  <div className="flex w-72 flex-col gap-6">
     <Input color="blue" label="Input Blue" />
     <Input color="purple" label="Input Purple" />
     <Input color="indigo" label="Input Indigo" />
     <Input color="teal" label="Input Teal" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex w-72 flex-col gap-4">
+    <div className="flex w-72 flex-col gap-6">
       <Input color="blue" label="Input Blue" />
       <Input color="purple" label="Input Purple" />
       <Input color="indigo" label="Input Indigo" />
@@ -143,6 +142,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -150,25 +150,25 @@ export default function Colors() {
 
 The <Code>Input</Code> component comes with error and success states for performing validations.
 
-<ComponentDemo id="input-validations">
-  <div className="flex w-full items-end gap-4">
+<CodePreview id="input-validations" link="input#input-validations" component={
+  <div div className="flex flex-col w-72 items-end gap-6">
     <Input label="Input Error" error />
     <Input label="Input Success" success />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 items-end gap-6">
       <Input label="Input Error" error />
       <Input label="Input Success" success />
     </div>
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -176,12 +176,11 @@ export default function Validations() {
 
 You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
-<ComponentDemo id="input-with-icon">
+<CodePreview id="input-with-icon" link="input#input-with-icon" component={
   <div className="w-72">
     <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
@@ -193,6 +192,7 @@ export default function InputWithIcon() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -200,12 +200,11 @@ export default function InputWithIcon() {
 
 An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
 
-<ComponentDemo id="disabled-input">
+<CodePreview id="disabled-input" link="input#disabled-input" component={
   <div className="w-72">
     <Input label="Disabled" disabled />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
@@ -217,6 +216,7 @@ export default function InputWithIcon() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

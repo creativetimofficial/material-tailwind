@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 // next.js components
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 // @material-tailwind/react components
 import {
@@ -59,6 +60,7 @@ export default function Navbar({
   mobileNavClassName = "text-[#1A237E]",
   ...rest
 }: NavbarProps) {
+  const { query } = useRouter();
   const [open, setOpen] = useState(false);
   const [stars, setStars] = useState(0);
   const navbarItemClasses =
@@ -250,6 +252,7 @@ export default function Navbar({
         >
           <Button
             variant="gradient"
+            color={query.slug && query.slug[0] === "html" ? "pink" : "blue"}
             className="mt-3 mb-5 flex items-center lg:mt-0 lg:mb-0 lg:ml-4"
           >
             <svg

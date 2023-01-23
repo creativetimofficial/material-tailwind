@@ -3,10 +3,10 @@ title: Tailwind CSS Tabs - Material Tailwind
 description: Customise your web projects with our easy-to-use Tabs component for Tailwind CSS using Material Design guidelines.
 navigation:
   [
-    "tabs-simple",
+    "tabs",
     "tabs-icons",
-    "content-tabs",
-    "vertical-tabs",
+    "tabs-content",
+    "tabs-data-attributes",
     "required-script",
   ]
 github: tabs
@@ -24,412 +24,582 @@ See below our example that will help you create a simple and easy-to-use tabs fo
 
 <br />
 
-<ComponentDemo id="tabs simple">
-  <div className="w-1/2">
-    <nav>
-      <ul role="tablist" className="tabs p-1">
-        <li className="nav-item">
-          <a className="nav-link active mb-0 px-0 py-1" aria-selected="true">
-            {`My Profile`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link mb-0 px-0 py-1" aria-selected="false">
-            {`Dashboard`}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="w-9/12">
-  <nav>
-    <ul role="tablist" class="tabs p-1">
-      <li class="nav-item">
-        <a
-          class="nav-link active mb-0 px-0 py-1"
-          aria-selected="true"
-          aria-controls="myprofile"
-          role="tab"
-          >My Profile</a
+<CodePreview
+  id="tabs"
+  link="tabs#tabs"
+  component={
+    <div className="w-full">
+      <div className="relative right-0">
+        <ul
+          className="relative flex list-none flex-wrap rounded-lg bg-blue-gray-50/60 p-1"
+          data-tabs="tabs"
+          role="list"
         >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="mydashboard"
-          role="tab"
-          >Dashboard</a
-        >
-      </li>
-    </ul>
-  </nav>
-</div>
-```
-
----
-
-## Tabs with icon
-
-<ComponentDemo id="tabs icons">
-  <div className="w-9/12">
-    <nav>
-      <ul role="tablist" className="tabs p-1">
-        <li className="nav-item">
-          <a
-            className="nav-link active mb-0 px-0 py-1"
-            aria-selected="true"
-            aria-controls="profile"
-            role="tab"
-          >
-            <i className="material-icons mr-2 text-sm">person</i>
-            {`My Profile`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="dashboard"
-            role="tab"
-          >
-            <i className="material-icons mr-2 text-sm">dashboard</i>
-            {`Dashboard`}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="w-9/12">
-  <nav>
-    <ul role="tablist" class="tabs p-1">
-      <li class="nav-item">
-        <a
-          class="nav-link active mb-0 px-0 py-1"
-          aria-selected="true"
-          aria-controls="profile"
-          role="tab"
-          ><i class="material-icons mr-2 text-sm">person</i>My Profile</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="dashboard"
-          role="tab"
-          ><i class="material-icons mr-2 text-sm">dashboard</i>Dashboard</a
-        >
-      </li>
-    </ul>
-  </nav>
-</div>
-```
-
----
-
-## Tabs with content
-
-<ComponentDemo id="content tabs">
-  <div className="nav-tabs w-9/12">
-    <nav>
-      <ul role="tablist" className="tabs p-1" tab-panel="">
-        <li className="nav-item">
-          <a
-            className="nav-link active mb-0 px-0 py-1"
-            aria-selected="true"
-            aria-controls="html"
-            role="tab"
-          >
-            {`HTML`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="react"
-            role="tab"
-          >
-            {`React`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="vue"
-            role="tab"
-          >
-            {`Vue`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="angular"
-            role="tab"
-          >
-            {`Angular`}
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            className="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="svelte"
-            role="tab"
-          >
-            {`Svelte`}
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div className="tabs-content p-5">
-      <div className="active tab-panel" id="html" role="tabpanel">
-        Because it's about motivating the doers. Because I'm here to follow my
-        dreams and inspire other people to follow their dreams, too.
-      </div>
-      <div className="tab-panel" id="react" role="tabpanel">
-        The reading of all good books is like a conversation with the finest
-        minds of past centuries.
-      </div>
-      <div className="tab-panel" id="vue" role="tabpanel">
-        Comparing yourself to others is the thief of joy.
-      </div>
-      <div className="tab-panel" id="angular" role="tabpanel">
-        It's better to choose, commit, and get started instead of waiting for
-        the best possible option.
-      </div>
-      <div className="tab-panel" id="svelte" role="tabpanel">
-        If you think you can learn a lot from reading books, try writing one.
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="nav-tabs w-9/12">
-  <nav>
-    <ul role="tablist" class="tabs p-1" tab-panel="">
-      <li class="nav-item">
-        <a
-          class="nav-link active mb-0 px-0 py-1"
-          aria-selected="true"
-          aria-controls="html"
-          role="tab"
-          >HTML</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="react"
-          role="tab"
-          >React</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="vue"
-          role="tab"
-          >Vue</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="angular"
-          role="tab"
-          >Angular</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link mb-0 px-0 py-1"
-          aria-selected="false"
-          aria-controls="svelte"
-          role="tab"
-          >Svelte</a
-        >
-      </li>
-    </ul>
-  </nav>
-  <div class="tabs-content p-5">
-    <div class="active tab-panel" id="html" role="tabpanel">
-      Because it's about motivating the doers. Because I'm here to follow my
-      dreams and inspire other people to follow their dreams, too.
-    </div>
-    <div class="tab-panel" id="react" role="tabpanel">
-      The reading of all good books is like a conversation with the finest minds
-      of past centuries.
-    </div>
-    <div class="tab-panel" id="vue" role="tabpanel">
-      Comparing yourself to others is the thief of joy.
-    </div>
-    <div class="tab-panel" id="angular" role="tabpanel">
-      It's better to choose, commit, and get started instead of waiting for the
-      best possible option.
-    </div>
-    <div class="tab-panel" id="svelte" role="tabpanel">
-      If you think you can learn a lot from reading books, try writing one.
-    </div>
-  </div>
-</div>
-```
-
----
-
-## Vertical Tabs Content
-
-All you have to do is to set **.flex-col** class for the **_ul_**
-
-<ComponentDemo id="vertical tabs">
-  <div className="nav-tabs flex w-9/12">
-    <div className="w-1/3">
-      <nav>
-        <ul role="tablist" className="tabs flex-col p-1" tab-panel="">
-          <li className="nav-item">
+          <li className="z-30 flex-auto text-center">
             <a
-              className="nav-link active mb-0 px-0 py-1"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              active
+              role="tab"
               aria-selected="true"
-              aria-controls="home"
-              role="tab"
             >
-              {`Home`}
+              <span className="ml-1">HTML</span>
             </a>
           </li>
-          <li className="nav-item">
+          <li className="z-30 flex-auto text-center">
             <a
-              className="nav-link mb-0 px-0 py-1"
-              aria-selected="false"
-              aria-controls="profile"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
               role="tab"
+              aria-selected="false"
             >
-              {`Profile`}
+              <span className="ml-1">React</span>
             </a>
           </li>
-          <li className="nav-item">
+          <li className="z-30 flex-auto text-center">
             <a
-              className="nav-link mb-0 px-0 py-1"
-              aria-selected="false"
-              aria-controls="messages"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
               role="tab"
+              aria-selected="false"
             >
-              {`Messages`}
+              <span className="ml-1">Vue</span>
             </a>
           </li>
-          <li className="nav-item">
+          <li className="z-30 flex-auto text-center">
             <a
-              className="nav-link mb-0 px-0 py-1"
-              aria-selected="false"
-              aria-controls="settings"
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
               role="tab"
+              aria-selected="true"
             >
-              {`Settings`}
+              <span className="ml-1">Angular</span>
+            </a>
+          </li>
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="true"
+            >
+              <span className="ml-1">Svelte</span>
             </a>
           </li>
         </ul>
-      </nav>
-    </div>
-    <div className="w-2/3">
-      <div className="tabs-content p-5">
-        <div className="active tab-panel" id="home" role="tabpanel">
-          Because it's about motivating the doers. Because I'm here to follow my
-          dreams and inspire other people to follow their dreams, too.
-        </div>
-        <div className="tab-panel" id="profile" role="tabpanel">
-          The reading of all good books is like a conversation with the finest
-          minds of past centuries.
-        </div>
-        <div className="tab-panel" id="messages" role="tabpanel">
-          Comparing yourself to others is the thief of joy.
-        </div>
-        <div className="tab-panel" id="settings" role="tabpanel">
-          It's better to choose, commit, and get started instead of waiting for
-          the best possible option.
-        </div>
       </div>
     </div>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="nav-tabs flex w-9/12">
-  <div class="w-1/3">
-    <nav>
-      <ul role="tablist" class="tabs flex-col p-1" tab-panel="">
-        <li class="nav-item">
+  }
+>
+  ```html
+  <div class="w-full">
+    <div class="relative right-0">
+      <ul
+        class="relative flex list-none flex-wrap rounded-lg bg-blue-gray-50/60 p-1"
+        data-tabs="tabs"
+        role="list"
+      >
+        <li class="z-30 flex-auto text-center">
           <a
-            class="nav-link active mb-0 px-0 py-1"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            active
+            role="tab"
             aria-selected="true"
-            aria-controls="html"
-            role="tab"
-            >Home</a
           >
+            <span class="ml-1">HTML</span>
+          </a>
         </li>
-        <li class="nav-item">
+        <li class="z-30 flex-auto text-center">
           <a
-            class="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="react"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
             role="tab"
-            >Profile</a
+            aria-selected="false"
           >
+            <span class="ml-1">React</span>
+          </a>
         </li>
-        <li class="nav-item">
+        <li class="z-30 flex-auto text-center">
           <a
-            class="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="vue"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
             role="tab"
-            >Messages</a
+            aria-selected="false"
           >
+            <span class="ml-1">Vue</span>
+          </a>
         </li>
-        <li class="nav-item">
+        <li class="z-30 flex-auto text-center">
           <a
-            class="nav-link mb-0 px-0 py-1"
-            aria-selected="false"
-            aria-controls="angular"
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
             role="tab"
-            >Settings</a
+            aria-selected="true"
           >
+            <span class="ml-1">Angular</span>
+          </a>
+        </li>
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            role="tab"
+            aria-selected="true"
+          >
+            <span class="ml-1">Svelte</span>
+          </a>
         </li>
       </ul>
-    </nav>
+    </div>
   </div>
+  ```
+</CodePreview>
+
+---
+
+## Tabs with Icons
+
+The tabs component comes with different variants including icons.
+
+<CodePreview
+  id="tabs-icons"
+  component={
+    <div className="w-2/3">
+      <div className="relative right-0">
+        <ul
+          className="relative flex list-none flex-wrap rounded-xl bg-blue-gray-50/60 p-1"
+          data-tabs="tabs"
+          role="list"
+        >
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              active
+              role="tab"
+              aria-selected="true"
+            >
+              <svg
+                className="text-slate-700"
+                width="16px"
+                height="16px"
+                viewBox="0 0 42 42"
+                version="1.1"
+              >
+                <g stroke="none" strokeWidth="1" fill="none">
+                  <g
+                    transform="translate(-2319.000000, -291.000000)"
+                    fill="#90a4ae"
+                  >
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(603.000000, 0.000000)">
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"
+                        ></path>
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"
+                          opacity="0.7"
+                        ></path>
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"
+                          opacity="0.7"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span className="ml-1">App</span>
+            </a>
+          </li>
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+            >
+              <svg
+                className="text-slate-700"
+                width="16px"
+                height="16px"
+                viewBox="0 0 40 44"
+                version="1.1"
+              >
+                <title>document</title>
+                <g stroke="none" strokeWidth="1" fill="none">
+                  <g
+                    transform="translate(-1870.000000, -591.000000)"
+                    fill="#90a4ae"
+                  >
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"
+                          opacity="0.603585379"
+                        ></path>
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span className="ml-1">Messages</span>
+            </a>
+          </li>
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+            >
+              <svg
+                className="text-slate-700"
+                width="16px"
+                height="16px"
+                viewBox="0 0 40 40"
+                version="1.1"
+              >
+                <title>settings</title>
+                <g stroke="none" strokeWidth="1" fill="none">
+                  <g
+                    transform="translate(-2020.000000, -442.000000)"
+                    fill="#90a4ae"
+                  >
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(304.000000, 151.000000)">
+                        <polygon
+                          className="fill-blue-gray-500"
+                          opacity="0.596981957"
+                          points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"
+                        ></polygon>
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"
+                          opacity="0.596981957"
+                        ></path>
+                        <path
+                          className="fill-blue-gray-500"
+                          d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span className="ml-1">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  }
+>
+  ```html
   <div class="w-2/3">
-    <div class="tabs-content p-5">
-      <div class="active tab-panel" id="home" role="tabpanel">
-        Because it's about motivating the doers. Because I'm here to follow my
-        dreams and inspire other people to follow their dreams, too.
+    <div class="relative right-0">
+      <ul
+        class="relative flex list-none flex-wrap rounded-xl bg-blue-gray-50/60 p-1"
+        data-tabs="tabs"
+        role="list"
+      >
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            active
+            role="tab"
+            aria-selected="true"
+          >
+            <svg
+              class="text-slate-700"
+              width="16px"
+              height="16px"
+              viewBox="0 0 42 42"
+              version="1.1"
+            >
+              <g stroke="none" strokeWidth="1" fill="none">
+                <g
+                  transform="translate(-2319.000000, -291.000000)"
+                  fill="#90a4ae"
+                >
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(603.000000, 0.000000)">
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"
+                      ></path>
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"
+                        opacity="0.7"
+                      ></path>
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"
+                        opacity="0.7"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span class="ml-1">App</span>
+          </a>
+        </li>
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            role="tab"
+            aria-selected="false"
+          >
+            <svg
+              class="text-slate-700"
+              width="16px"
+              height="16px"
+              viewBox="0 0 40 44"
+              version="1.1"
+            >
+              <title>document</title>
+              <g stroke="none" strokeWidth="1" fill="none">
+                <g
+                  transform="translate(-1870.000000, -591.000000)"
+                  fill="#90a4ae"
+                >
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(154.000000, 300.000000)">
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"
+                        opacity="0.603585379"
+                      ></path>
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span class="ml-1">Messages</span>
+          </a>
+        </li>
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            role="tab"
+            aria-selected="false"
+          >
+            <svg
+              class="text-slate-700"
+              width="16px"
+              height="16px"
+              viewBox="0 0 40 40"
+              version="1.1"
+            >
+              <title>settings</title>
+              <g stroke="none" strokeWidth="1" fill="none">
+                <g
+                  transform="translate(-2020.000000, -442.000000)"
+                  fill="#90a4ae"
+                >
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(304.000000, 151.000000)">
+                      <polygon
+                        class="fill-blue-gray-500"
+                        opacity="0.596981957"
+                        points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"
+                      ></polygon>
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"
+                        opacity="0.596981957"
+                      ></path>
+                      <path
+                        class="fill-blue-gray-500"
+                        d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span class="ml-1">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Tabs with Content
+
+You can reference a specific content for each tab option, using the <Code html>data-tab-content</Code> data attribute.
+
+<CodePreview
+  id="tabs-content"
+  link="tabs#tabs"
+  component={
+    <div className="w-full">
+      <div className="relative right-0">
+        <ul
+          className="relative flex list-none flex-wrap rounded-xl bg-blue-gray-50/60 p-1"
+          data-tabs="tabs"
+          role="list"
+        >
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="true"
+              aria-controls="app"
+            >
+              <span className="ml-1">App</span>
+            </a>
+          </li>
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="message"
+            >
+              <span className="ml-1">Messages</span>
+            </a>
+          </li>
+          <li className="z-30 flex-auto text-center">
+            <a
+              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="settings"
+            >
+              <span className="ml-1">Settings</span>
+            </a>
+          </li>
+        </ul>
+        <div data-tab-content="" className="p-5">
+          <div className="block opacity-100" id="app" role="tabpanel">
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+              Because it's about motivating the doers. Because I'm here to
+              follow my dreams and inspire other people to follow their dreams,
+              too.
+            </p>
+          </div>
+          <div className="hidden opacity-0" id="message" role="tabpanel">
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+              The reading of all good books is like a conversation with the
+              finest minds of past centuries.
+            </p>
+          </div>
+          <div className="hidden opacity-0" id="settings" role="tabpanel">
+            <p className="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+              Comparing yourself to others is the thief of joy.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="tab-panel" id="profile" role="tabpanel">
-        The reading of all good books is like a conversation with the finest
-        minds of past centuries.
-      </div>
-      <div class="tab-panel" id="messages" role="tabpanel">
-        Comparing yourself to others is the thief of joy.
-      </div>
-      <div class="tab-panel" id="settings" role="tabpanel">
-        It's better to choose, commit, and get started instead of waiting for
-        the best possible option.
+    </div>
+  }
+>
+  ```html
+  <div class="w-2/3">
+    <div class="relative right-0">
+      <ul
+        class="relative flex list-none flex-wrap rounded-xl bg-blue-gray-50/60 p-1"
+        data-tabs="tabs"
+        role="list"
+      >
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            active=""
+            role="tab"
+            aria-selected="true"
+            aria-controls="app"
+          >
+            <span class="ml-1">App</span>
+          </a>
+        </li>
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            role="tab"
+            aria-selected="false"
+            aria-controls="message"
+          >
+            <span class="ml-1">Messages</span>
+          </a>
+        </li>
+        <li class="z-30 flex-auto text-center">
+          <a
+            class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
+            data-tab-target=""
+            role="tab"
+            aria-selected="false"
+            aria-controls="settings"
+          >
+            <span class="ml-1">Settings</span>
+          </a>
+        </li>
+      </ul>
+      <div data-tab-content="" class="p-5">
+        <div class="block opacity-100" id="app" role="tabpanel">
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+            Because it's about motivating the doers. Because I'm here to follow
+            my dreams and inspire other people to follow their dreams, too.
+          </p>
+        </div>
+        <div class="hidden opacity-0" id="message" role="tabpanel">
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+            The reading of all good books is like a conversation with the finest
+            minds of past centuries.
+          </p>
+        </div>
+        <div class="hidden opacity-0" id="settings" role="tabpanel">
+          <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500 antialiased">
+            Comparing yourself to others is the thief of joy.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-```
+  ```
+</CodePreview>
+
+---
+
+## Tabs Data Attributes
+
+<span id="tabs-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for tabs.
+
+| Attribute          | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `data-tabs`        | Set the main container for the tabs.                                                                          |
+| `data-tab-target`  | Set the tab tigger element that when a click happened on it, it's content should be visible.                  |
+| `data-tab-content` | Set tab content element.                                                                                      |
+| `active`           | Set default active tab, it should be used for the trigger element where the <br /> `data-tab-target` is used. |
 
 ---
 

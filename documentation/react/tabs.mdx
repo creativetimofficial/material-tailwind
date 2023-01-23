@@ -31,7 +31,7 @@ See below our example that will help you create a simple and easy-to-use <Code>T
 
 <br />
 
-<ComponentDemo id="tabs">
+<CodePreview id="tabs" link="tabs#tabs" component={
   <Tabs value="html">
     <TabsHeader>
       <Tab value="html">HTML</Tab>
@@ -69,8 +69,7 @@ See below our example that will help you create a simple and easy-to-use <Code>T
       </TabPanel>
     </TabsBody>
   </Tabs>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Tabs,
@@ -95,27 +94,24 @@ export default function Example() {
       desc: `Because it's about motivating the doers. Because I'm here
       to follow my dreams and inspire other people to follow their dreams, too.`,
     },
-
     {
       label: "Vue",
       value: "vue",
       desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're 
+      We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
-
     {
       label: "Angular",
       value: "angular",
       desc: `Because it's about motivating the doers. Because I'm here
       to follow my dreams and inspire other people to follow their dreams, too.`,
     },
-
     {
       label: "Svelte",
       value: "svelte",
       desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're 
+      We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
   ];
@@ -125,7 +121,7 @@ export default function Example() {
       <TabsHeader>
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>
-            {label}
+          {label}
           </Tab>
         ))}
       </TabsHeader>
@@ -139,7 +135,8 @@ export default function Example() {
     </Tabs>
   );
 }
-```
+````
+</CodePreview>
 
 ---
 
@@ -147,7 +144,7 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>TabsBody</Code> component using the <Code>animate</Code> prop.
 
-<ComponentDemo id="custom-tabs-animation">
+<CodePreview id="custom-tabs-animation" component={
   <Tabs id="custom-animation" value="html">
     <TabsHeader>
       <Tab value="html">HTML</Tab>
@@ -190,8 +187,7 @@ You can modify the open/close state animation for <Code>TabsBody</Code> componen
       </TabPanel>
     </TabsBody>
   </Tabs>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Tabs,
@@ -207,7 +203,7 @@ export default function Example() {
       label: "HTML",
       value: "html",
       desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
+      What matters is the people who are sparked by it. And the people
       who are like offended by it, it doesn't matter.`,
     },
     {
@@ -221,7 +217,7 @@ export default function Example() {
       label: "Vue",
       value: "vue",
       desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're 
+      We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
 
@@ -236,7 +232,7 @@ export default function Example() {
       label: "Svelte",
       value: "svelte",
       desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're 
+      We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
   ];
@@ -265,7 +261,9 @@ export default function Example() {
     </Tabs>
   );
 }
-```
+````
+
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

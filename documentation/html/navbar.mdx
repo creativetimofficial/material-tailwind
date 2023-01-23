@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Navbar - Material Tailwind
 description: Customise your web projects with our easy-to-use Navbar component for Tailwind CSS using Material Design guidelines.
-navigation: ["navbar", "required-script"]
+navigation: ["navbar", "navbar-responsive", "required-script"]
 github: navbar
 prev: menu
 next: pagination
@@ -10,143 +10,219 @@ next: pagination
 # Tailwind CSS Navbar
 
 Use our responsive Tailwind CSS navigation for your website. You can add links, icons, links with icons, search bars, and brand text.
-
 See below our simple navbar example that you can use in your Tailwind CSS project.
 
 <br />
-<ComponentDemo id="navbar">
-  <nav className="navbar w-full bg-white">
-    <div className="container-lg px-0">
-      <div className="flex w-full items-center">
-        <a className="nav-brand mr-auto ml-0" href="#">
-          {`Material Tailwind`}
-        </a>
-        <button
-          navbar-trigger="true"
-          className="navbar-trigger ml-auto mr-0 mb-0 block lg:hidden"
-          type="button"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+
+<CodePreview
+  id="navbar"
+  link="navbar#navbar"
+  component={
+    <nav className="mx-auto block w-full max-w-screen-xl rounded-xl border border-white/80 bg-white bg-opacity-80 py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+      <div>
+        <div className="container mx-auto flex items-center justify-between text-gray-900">
+          <a
+            href="#"
+            className="mr-4 block cursor-pointer py-1.5 font-sans text-sm font-normal leading-normal text-inherit antialiased"
+          >
+            <span>Material Tailwind</span>
+          </a>
+          <ul className="hidden items-center gap-6 lg:flex">
+            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+              <a className="flex items-center" href="#">
+                Pages
+              </a>
+            </li>
+            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+              <a className="flex items-center" href="#">
+                Account
+              </a>
+            </li>
+            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+              <a className="flex items-center" href="#">
+                Blocks
+              </a>
+            </li>
+            <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+              <a className="flex items-center" href="#">
+                Docs
+              </a>
+            </li>
+          </ul>
+          <button
+            className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+            type="button"
+          >
+            <span>Buy Now</span>
+          </button>
+          <button
+            className="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+            data-collapse-target="navbar"
+          >
+            <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          className="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in lg:hidden"
+          data-collapse="navbar"
         >
-          <span className="navbar-trigger-icon">
-            <span bar1="" className="navbar-trigger-bar mt-1">
-              <span className="hidden origin-[10%_10%] rotate-45"></span>
-            </span>
-            <span bar2="" className="bar2 navbar-trigger-bar mt-2"></span>
-            <span bar3="" className="bar3 navbar-trigger-bar mt-2">
-              <span className="mt-[0.4375rem] hidden origin-[10%_90%] -rotate-45"></span>
-            </span>
-          </span>
-        </button>
+          <div className="container mx-auto pb-2">
+            <ul className="mt-2 mb-4 flex flex-col gap-2">
+              <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+                <a className="flex items-center" href="#">
+                  Pages
+                </a>
+              </li>
+              <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+                <a className="flex items-center" href="#">
+                  Account
+                </a>
+              </li>
+              <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+                <a className="flex items-center" href="#">
+                  Blocks
+                </a>
+              </li>
+              <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+                <a className="flex items-center" href="#">
+                  Docs
+                </a>
+              </li>
+            </ul>
+            <button
+              className="middle none center mb-2 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+            >
+              <span>Buy Now</span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="collapse navbar-collapse" navbar-menu="">
-        <ul className="navbar-nav">
-          <li>
-            <a className="nav-link" aria-current="page" href="#">
-              <i className="material-icons mr-2 text-base opacity-60">
-                {`article`}
-              </i>
-              <span>Documantation</span>
+    </nav>
+  }
+>
+  ```html
+  <nav class="mx-auto block w-full max-w-screen-xl rounded-xl border border-white/80 bg-white bg-opacity-80 py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
+    <div>
+      <div class="container mx-auto flex items-center justify-between text-gray-900">
+        <a
+          href="#"
+          class="mr-4 block cursor-pointer py-1.5 font-sans text-sm font-normal leading-normal text-inherit antialiased"
+        >
+          <span>Material Tailwind</span>
+        </a>
+        <ul class="hidden items-center gap-6 lg:flex">
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="#">
+              Pages
             </a>
           </li>
-          <li>
-            <a className="nav-link" href="#">
-              <i className="material-icons mr-2 text-base opacity-60">apps</i>
-              <span>Components</span>
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="#">
+              Account
             </a>
           </li>
-          <li className="flex">
-            <a className="nav-link" href="#">
-              <i className="material-icons mr-2 text-base opacity-60">
-                {`view_carousel`}
-              </i>
-              <span>Templates</span>
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="#">
+              Blocks
             </a>
           </li>
-          <li>
-            <a className="nav-link" href="#">
-              <i className="fab fa-github mr-2 text-base opacity-60"></i>
-              <span>Github</span>
+          <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+            <a class="flex items-center" href="#">
+              Docs
             </a>
           </li>
         </ul>
+        <button
+          class="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+          type="button"
+        >
+          <span>Buy Now</span>
+        </button>
+        <button
+          class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+          data-collapse-target="navbar"
+        >
+          <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in lg:hidden"
+        data-collapse="navbar"
+      >
+        <div class="container mx-auto">
+          <ul class="mt-2 mb-4 flex flex-col gap-2">
+            <li class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+              <a class="flex items-center" href="#">
+                Pages
+              </a>
+            </li>
+            <li class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+              <a class="flex items-center" href="#">
+                Account
+              </a>
+            </li>
+            <li class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+              <a class="flex items-center" href="#">
+                Blocks
+              </a>
+            </li>
+            <li class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-600 text-inherit antialiased">
+              <a class="flex items-center" href="#">
+                Docs
+              </a>
+            </li>
+          </ul>
+          <button
+            class="middle none center mb-2 block w-full rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            <span>Buy Now</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
-</ComponentDemo>
-
-```html
-<nav class="navbar w-full bg-white">
-  <div class="container-lg px-0">
-    <div class="flex w-full items-center">
-      <a class="nav-brand mr-auto ml-0" href="#">Material Tailwind</a>
-      <button
-        navbar-trigger=""
-        class="navbar-trigger ml-auto mr-0 mb-0 block lg:hidden"
-        type="button"
-        aria-controls="navigation"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-trigger-icon">
-          <span bar1="" class="navbar-trigger-bar mt-1"
-            ><span class="hidden origin-[10%_10%] rotate-45"></span
-          ></span>
-          <span bar2="" class="bar2 navbar-trigger-bar mt-2"></span>
-          <span bar3="" class="bar3 navbar-trigger-bar mt-2"
-            ><span
-              class="mt-mt-[0.4375rem] hidden origin-[10%_90%] -rotate-45"
-            ></span
-          ></span>
-        </span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" navbar-menu="">
-      <ul class="navbar-nav">
-        <li>
-          <a class="nav-link" aria-current="page" href="#">
-            <i class="material-icons mr-2 text-base opacity-60">article</i>
-            <span>Documantation</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#">
-            <i class="material-icons mr-2 text-base opacity-60">apps</i>
-            <span>Components</span>
-          </a>
-        </li>
-        <li class="flex">
-          <a class="nav-link" href="#">
-            <i class="material-icons mr-2 text-base opacity-60"
-              >view_carousel</i
-            >
-            <span>Templates</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="#">
-            <i class="fab fa-github mr-2 text-base opacity-60"></i>
-            <span>Github</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-```
+  ````
+</CodePreview>
 
 ---
 
 ## Required Scrips
 
 <span id="required-script" className="scroll-mt-56" />
-
 The navbar component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
 ```html
 <!-- from node_modules -->
 <script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
-
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-```
+````

@@ -36,8 +36,8 @@ See below our simple and versatile <Code>Accordion</Code> example that you can u
 
 <br />
 
-<State initialState={{ active: 1 }}>
-  <ComponentDemo id="accordion">
+<CodePreview id="accordion" link="accordion#accordion" component={
+  <State initialState={{ active: 1 }}>
     <Observe>
       {({ setState, active }) => (
         <>
@@ -89,9 +89,8 @@ See below our simple and versatile <Code>Accordion</Code> example that you can u
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -146,6 +145,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -153,8 +153,8 @@ export default function Example() {
 
 You can modify the open/close state icon for <Code>Accordion</Code> component using the <Code>icon</Code> prop.
 
-<State initialState={{ active: 0 }}>
-  <ComponentDemo id="custom-accordion-icon">
+<CodePreview id="custom-accordion-icon" link="accordion#custom-accordion-icon" component={
+  <State initialState={{ active: 0 }}>
     <Observe>
       {({ setState, active }) => (
         <>
@@ -266,9 +266,8 @@ You can modify the open/close state icon for <Code>Accordion</Code> component us
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -340,6 +339,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -347,8 +347,8 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>Accordion</Code> component using the <Code>animate</Code> prop.
 
-<State initialState={{ active: 0 }}>
-  <ComponentDemo id="custom-accordion-animation">
+<CodePreview id="custom-accordion-animation" component={
+  <State initialState={{ active: 0 }}>
     <Observe>
       {({ setState, active }) => (
         <>
@@ -430,9 +430,8 @@ You can modify the open/close state animation for <Code>Accordion</Code> compone
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { useState, Fragment } from "react";
 import {
@@ -492,6 +491,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -499,8 +499,8 @@ export default function Example() {
 
 An <Code>Accordion</Code> could be disabled as well, it will help you to prevent user interactions like click over the <Code>Accordion</Code> component.
 
-<State initialState={{ active: 0 }}>
-  <ComponentDemo id="disabled-accordion">
+<CodePreview id="disabled-accordion" link="accordion#disabled-accordion" component={
+  <State initialState={{ active: 0 }}>
     <Observe>
       {({ setState, active }) => (
         <>
@@ -552,9 +552,8 @@ An <Code>Accordion</Code> could be disabled as well, it will help you to prevent
         </>
       )}
     </Observe>
-  </ComponentDemo>
-</State>
-
+  </State>
+}>
 ```jsx
 import { Fragment, useState } from "react";
 import {
@@ -609,6 +608,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

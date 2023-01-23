@@ -43,10 +43,7 @@ See below our <Code>Button</Code> example that you can use in your Tailwind CSS 
 
 <br />
 
-<ComponentDemo id="button">
-  <Button>Button</Button>
-</ComponentDemo>
-
+<CodePreview id="button" link="button#button" component={<Button>Button</Button>}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -54,6 +51,7 @@ export default function Example() {
   return <Button>Button</Button>;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -61,15 +59,14 @@ export default function Example() {
 
 The <Code>Button</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="button-variants">
+<CodePreview id="button-variants" link="button#button-variants" component={
   <div className="flex w-max gap-4">
     <Button>filled</Button>
     <Button variant="gradient">gradient</Button>
     <Button variant="outlined">outlined</Button>
     <Button variant="text">text</Button>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -84,6 +81,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -91,14 +89,13 @@ export default function Variants() {
 
 The <Code>Button</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="button-sizes">
+<CodePreview id="button-sizes" link="button#button-sizes" component={
   <div className="flex w-max items-end gap-4">
     <Button size="sm">small</Button>
     <Button>medium</Button>
     <Button size="lg">large</Button>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -112,22 +109,22 @@ export default function Sizes() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Button Colors
 
-The <Code>Button</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Button</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="button-colors">
+<CodePreview id="button-colors" link="button#button-colors" component={
   <div className="flex w-max gap-4">
     <Button color="blue">color blue</Button>
     <Button color="red">color red</Button>
     <Button color="green">color green</Button>
     <Button color="amber">color amber</Button>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -142,6 +139,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -149,10 +147,7 @@ export default function Colors() {
 
 A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
 
-<ComponentDemo id="block-level-button">
-  <Button fullWidth>block level button</Button>
-</ComponentDemo>
-
+<CodePreview id="block-level-button" link="button#block-level-button" component={<Button fullWidth>block level button</Button>}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -160,6 +155,7 @@ export default function Example() {
   return <Button fullWidth>block level button</Button>;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -167,13 +163,12 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Button</Code> component using the <Code>ripple</Code> prop.
 
-<ComponentDemo id="button-ripple-effect">
+<CodePreview id="button-ripple-effect" link="button#button-ripple-effect" component={
   <div className="flex w-max gap-4">
     <Button ripple={true}>Ripple Effect On</Button>
     <Button ripple={false}>Ripple Effect Off</Button>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
@@ -186,6 +181,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

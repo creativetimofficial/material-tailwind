@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Accordion - Material Tailwind
 description: Customise your web projects with our easy-to-use accordion component for Tailwind CSS using Material Design guidelines.
-navigation: ["accordion", "required-script"]
+navigation:
+  [
+    "accordion",
+    "custom-accordion-icon",
+    "disabled-accordion",
+    "accordion-trigger-data-attributes",
+    "accordion-data-attributes",
+    "required-script",
+  ]
 github: accordion
 prev: screens
 next: alert
@@ -16,241 +24,465 @@ See below our simple and versatile accordion example that you can use in your Ta
 To use an accordion example that has items expanded, add the <Code html html>.open</Code> class on the <Code html html>.collapse</Code> `<div>`.
 
 <br />
-<ComponentDemo id="accordion">
-  <div className="accordion">
-    <div className="accordion-item relative mb-3">
-      <h6 className="mb-0">
-        <button
-          className="accordion-button text-left font-semibold"
-          type="button"
-          aria-expanded="false"
-        >
-          <span>How do I order?</span>
-          <i className="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-          <i className="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
-        </button>
-      </h6>
-      <div className="collapse open">
-        <div className="py-4 text-sm opacity-60">
-          We're not always in the position that we want to be at. We're
-          constantly growing. We're constantly making mistakes. We're constantly
-          trying to express ourselves and actualize our dreams. If you have the
-          opportunity to play this game of life you need to appreciate every
-          moment. A lot of people don't appreciate the moment until it's passed.
-        </div>
-      </div>
-    </div>
-    <div className="accordion-item relative mb-3">
-      <h6 className="accordion-header">
-        <button
-          className="accordion-button collapsed text-left font-semibold"
-          type="button"
-          aria-expanded="false"
-        >
-          <span>How can i make the payment?</span>
-          <i className="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-          <i className="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
-        </button>
-      </h6>
-      <div className="collapse">
-        <div className="py-4 text-sm opacity-60">
-          It really matters and then like it really doesn't matter. What matters
-          is the people who are sparked by it. And the people who are like
-          offended by it, it doesn't matter. Because it's about motivating the
-          doers. Because I'm here to follow my dreams and inspire other people
-          to follow their dreams, too.
-        </div>
-      </div>
-    </div>
-    <div className="accordion-item relative mb-3">
-      <h6 className="accordion-header">
-        <button
-          className="accordion-button collapsed text-left font-semibold"
-          type="button"
-          aria-expanded="false"
-        >
-          <span>How much time does it take to receive the order?</span>
-          <i className="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-          <i className="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
-        </button>
-      </h6>
-      <div className="collapse">
-        <div className="py-4 text-sm opacity-60">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out. But the time is now to be okay to be the greatest you. Would you
-          believe in what you believe in, if you were the only one who believed
-          it? If everything I did failed - which it doesn't, it actually
-          succeeds - just the fact that I'm willing to fail is an inspiration.
-          People are so scared to lose that they don't even try. Like, one thing
-          people can't say is that I'm not trying, and I'm not trying my
-          hardest, and I'm not trying to do the best way I know how.
-        </div>
-      </div>
-    </div>
-    <div className="accordion-item relative mb-3">
-      <h6 className="accordion-header">
-        <button
-          className="accordion-button collapsed text-left font-semibold"
-          type="button"
-          aria-expanded="false"
-        >
-          <span>Can I resell the products?</span>
-          <i className="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-          <i className="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
-        </button>
-      </h6>
-      <div className="collapse">
-        <div className="py-4 text-sm opacity-60">
-          I always felt like I could do anything. That's the main thing people
-          are controlled by! Thoughts- their perception of themselves! They're
-          slowed down by their perception of themselves. If you're taught you
-          can't do anything, you won't do anything. I was taught I could do
-          everything.
-        </div>
-      </div>
-    </div>
-    <div className="accordion-item relative mb-3">
-      <h6 className="accordion-header">
-        <button
-          className="accordion-button collapsed text-left font-semibold"
-          type="button"
-          aria-expanded="false"
-        >
-          <span>Where do I find the shipping details?</span>
-          <i className="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-          <i className="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
-        </button>
-      </h6>
-      <div className="collapse">
-        <div className="py-4 text-sm opacity-60">
-          I always felt like I could do anything. That's the main thing people
-          are controlled by! Thoughts- their perception of themselves! They're
-          slowed down by their perception of themselves. If you're taught you
-          can't do anything, you won't do anything. I was taught I could do
-          everything.
-        </div>
-      </div>
-    </div>
-  </div>
-</ComponentDemo>
 
-```html
-<div class="accordion">
-  <div class="accordion-item relative mb-3">
+<CodePreview
+  id="accordion"
+  link="accordion#accordion"
+  component={
+    <>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="collapse-1"
+          >
+            <span>What is Material Tailwind?</span>
+            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="collapse-1"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="collapse-2"
+          >
+            <span>How to use Material Tailwind?</span>
+            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="collapse-2"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="collapse-3"
+          >
+            <span>What can I do with Material Tailwind?</span>
+            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="collapse-3"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="accordion-button text-left font-semibold"
-        type="button"
-        aria-expanded="false"
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="collapse-1"
       >
-        <span>How do I order?</span>
-        <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-        <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
+        <span>What is Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
       </button>
     </h6>
-    <div class="collapse open">
-      <div class="py-4 text-sm opacity-60">
+    <div
+      data-collapse="collapse-1"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
         We're not always in the position that we want to be at. We're constantly
         growing. We're constantly making mistakes. We're constantly trying to
-        express ourselves and actualize our dreams. If you have the opportunity
-        to play this game of life you need to appreciate every moment. A lot of
-        people don't appreciate the moment until it's passed.
+        express ourselves and actualize our dreams.
       </div>
     </div>
   </div>
-  <div class="accordion-item relative mb-3">
-    <h6 class="accordion-header">
+  <div class="relative mb-3">
+    <h6 class="mb-0">
       <button
-        class="accordion-button collapsed text-left font-semibold"
-        type="button"
-        aria-expanded="false"
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="collapse-2"
       >
-        <span>How can i make the payment?</span>
-        <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-        <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
+        <span>How to use Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
       </button>
     </h6>
-    <div class="collapse">
-      <div class="py-4 text-sm opacity-60">
-        It really matters and then like it really doesn't matter. What matters
-        is the people who are sparked by it. And the people who are like
-        offended by it, it doesn't matter. Because it's about motivating the
-        doers. Because I'm here to follow my dreams and inspire other people to
-        follow their dreams, too.
+    <div
+      data-collapse="collapse-2"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
       </div>
     </div>
   </div>
-  <div class="accordion-item relative mb-3">
-    <h6 class="accordion-header">
+  <div class="relative mb-3">
+    <h6 class="mb-0">
       <button
-        class="accordion-button collapsed text-left font-semibold"
-        type="button"
-        aria-expanded="false"
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="collapse-3"
       >
-        <span>How much time does it take to receive the order?</span>
-        <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-        <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
+        <span>What can I do with Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
       </button>
     </h6>
-    <div class="collapse">
-      <div class="py-4 text-sm opacity-60">
-        The time is now for it to be okay to be great. People in this world shun
-        people for being great. For being a bright color. For standing out. But
-        the time is now to be okay to be the greatest you. Would you believe in
-        what you believe in, if you were the only one who believed it? If
-        everything I did failed - which it doesn't, it actually succeeds - just
-        the fact that I'm willing to fail is an inspiration. People are so
-        scared to lose that they don't even try. Like, one thing people can't
-        say is that I'm not trying, and I'm not trying my hardest, and I'm not
-        trying to do the best way I know how.
+    <div
+      data-collapse="collapse-3"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
       </div>
     </div>
   </div>
-  <div class="accordion-item relative mb-3">
-    <h6 class="accordion-header">
+  ```
+</CodePreview>
+
+---
+
+## Custom Accordion Icon
+
+You can use custom icons for the accordion trigger element and using the <Code html>group-open</Code> attribute selector in tailwind css you can control the icon for open and close states of accordion.
+
+<CodePreview
+  id="custom-accordion-icon"
+  link="accordion#custom-accordion-icon"
+  component={
+    <>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="animated-collapse-1"
+          >
+            <span>What is Material Tailwind?</span>
+            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="animated-collapse-1"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="animated-collapse-2"
+          >
+            <span>How to use Material Tailwind?</span>
+            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="animated-collapse-2"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="animated-collapse-3"
+          >
+            <span>What can I do with Material Tailwind?</span>
+            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="animated-collapse-3"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="relative mb-3">
+    <h6 class="mb-0">
       <button
-        class="accordion-button collapsed text-left font-semibold"
-        type="button"
-        aria-expanded="false"
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="animated-collapse-1"
       >
-        <span>Can I resell the products?</span>
-        <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-        <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
+        <span>What is Material Tailwind?</span>
+        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
       </button>
     </h6>
-    <div class="collapse">
-      <div class="py-4 text-sm opacity-60">
-        I always felt like I could do anything. That's the main thing people are
-        controlled by! Thoughts- their perception of themselves! They're slowed
-        down by their perception of themselves. If you're taught you can't do
-        anything, you won't do anything. I was taught I could do everything.
+    <div
+      data-collapse="animated-collapse-1"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
       </div>
     </div>
   </div>
-  <div class="accordion-item relative mb-3">
-    <h6 class="accordion-header">
+  <div class="relative mb-3">
+    <h6 class="mb-0">
       <button
-        class="accordion-button collapsed text-left font-semibold"
-        type="button"
-        aria-expanded="false"
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="animated-collapse-2"
       >
-        <span>Where do I find the shipping details?</span>
-        <i class="fa fa-plus collapse-close absolute right-0 pt-1 text-xs"></i>
-        <i class="fa fa-minus collapse-open absolute right-0 pt-1 text-xs"></i>
+        <span>How to use Material Tailwind?</span>
+        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
       </button>
     </h6>
-    <div class="collapse">
-      <div class="py-4 text-sm opacity-60">
-        I always felt like I could do anything. That's the main thing people are
-        controlled by! Thoughts- their perception of themselves! They're slowed
-        down by their perception of themselves. If you're taught you can't do
-        anything, you won't do anything. I was taught I could do everything.
+    <div
+      data-collapse="animated-collapse-2"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
       </div>
     </div>
   </div>
-</div>
-```
+  <div class="relative mb-3">
+    <h6 class="mb-0">
+      <button
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="animated-collapse-3"
+      >
+        <span>What can I do with Material Tailwind?</span>
+        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+      </button>
+    </h6>
+    <div
+      data-collapse="animated-collapse-3"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Disabled Accordion
+
+<CodePreview
+  id="disabled-accordion"
+  link="accordion#disabled-accordion"
+  className="mt-4"
+  component={
+    <>
+      <div className="relative mb-3">
+        <h6 className="pointer-events-none relative block w-full opacity-50">
+          <button
+            className="flex w-full select-none items-center justify-between border-b border-b-blue-gray-100 py-4 font-sans text-xl font-semibold leading-snug text-blue-gray-700 antialiased transition-colors hover:text-blue-gray-900"
+            data-collapse-target="disabled-collapse-1"
+          >
+            <span>What is Material Tailwind?</span>
+            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="disabled-collapse-1"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="disabled-collapse-2"
+          >
+            <span>How to use Material Tailwind?</span>
+            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="disabled-collapse-2"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+      <div className="relative mb-3">
+        <h6 className="mb-0">
+          <button
+            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+            data-collapse-target="disabled-collapse-3"
+          >
+            <span>What can I do with Material Tailwind?</span>
+            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+          </button>
+        </h6>
+        <div
+          data-collapse="disabled-collapse-3"
+          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        >
+          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
+            We're not always in the position that we want to be at. We're
+            constantly growing. We're constantly making mistakes. We're
+            constantly trying to express ourselves and actualize our dreams.
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="relative mb-3">
+    <h6 class="pointer-events-none relative block w-full opacity-50">
+      <button
+        class="flex w-full select-none items-center justify-between border-b border-b-blue-gray-100 py-4 font-sans text-xl font-semibold leading-snug text-blue-gray-700 antialiased transition-colors hover:text-blue-gray-900"
+        data-collapse-target="disabled-collapse-1"
+      >
+        <span>What is Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+      </button>
+    </h6>
+    <div
+      data-collapse="disabled-collapse-1"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </div>
+    </div>
+  </div>
+  <div class="relative mb-3">
+    <h6 class="mb-0">
+      <button
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="disabled-collapse-2"
+      >
+        <span>How to use Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+      </button>
+    </h6>
+    <div
+      data-collapse="disabled-collapse-2"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </div>
+    </div>
+  </div>
+  <div class="relative mb-3">
+    <h6 class="mb-0">
+      <button
+        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        data-collapse-target="disabled-collapse-3"
+      >
+        <span>What can I do with Material Tailwind?</span>
+        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
+        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+      </button>
+    </h6>
+    <div
+      data-collapse="disabled-collapse-3"
+      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
+    >
+      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Accordion Trigger Data Attributes
+
+<span id="accordion-trigger-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for accordion trigger element.
+
+| Attribute              | Description                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------------- |
+| `data-collapse-target` | Set the accordion target element, it should be the same as the <br /> `data-collapse` data attribute. |
+
+---
+
+## Accordion Data Attributes
+
+<span id="accordion-data-attributes" className="scroll-mt-48" />
+The following data attributes are available for accordion element.
+
+| Attribute       | Description                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| `data-collapse` | Set the accordion element, it should be the same as the <br /> `data-collapse-target` data attribute. |
 
 ---
 

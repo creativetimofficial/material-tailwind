@@ -41,7 +41,7 @@ See below our <Code>Select</Code> component example that you can use in your Tai
 
 <br />
 
-<ComponentDemo id="select">
+<CodePreview id="select" link="select#select" component={
   <div className="w-72">
     <Select label="Select Version">
       <Option>Material Tailwind HTML</Option>
@@ -51,8 +51,7 @@ See below our <Code>Select</Code> component example that you can use in your Tai
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
@@ -70,6 +69,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -77,9 +77,9 @@ export default function Example() {
 
 The <Code>Select</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<ComponentDemo id="select-variants">
-  <div className="flex w-full items-end gap-4">
-    <Select variant="outlined" label="Select Version">
+<CodePreview id="select-variants" component={
+  <div className="flex flex-col w-72 gap-6">
+    <Select variant="static" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
       <Option>Material Tailwind Vue</Option>
@@ -93,7 +93,7 @@ The <Code>Select</Code> component comes with 3 different variants that you can c
       <Option>Material Tailwind Angular</Option>
       <Option>Material Tailwind Svelte</Option>
     </Select>
-    <Select variant="static" label="Select Version">
+    <Select variant="outlined" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
       <Option>Material Tailwind Vue</Option>
@@ -101,15 +101,14 @@ The <Code>Select</Code> component comes with 3 different variants that you can c
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex w-full items-end gap-4">
-      <Select variant="outlined" label="Select Version">
+    <div className="flex flex-col w-72 gap-6">
+      <Select variant="static" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
         <Option>Material Tailwind Vue</Option>
@@ -123,7 +122,7 @@ export default function Variants() {
         <Option>Material Tailwind Angular</Option>
         <Option>Material Tailwind Svelte</Option>
       </Select>
-      <Select variant="static" label="Select Version">
+      <Select variant="outlined" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
         <Option>Material Tailwind Vue</Option>
@@ -134,6 +133,7 @@ export default function Variants() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -141,8 +141,8 @@ export default function Variants() {
 
 The <Code>Select</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<ComponentDemo id="select-sizes">
-  <div className="flex w-full items-end gap-4">
+<CodePreview id="select-sizes" component={
+  <div className="flex flex-col w-72 gap-6">
     <Select size="md" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -158,14 +158,13 @@ The <Code>Select</Code> component comes with 2 different sizes that you can chan
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 gap-6">
       <Select size="md" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -184,15 +183,16 @@ export default function Sizes() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Select Colors
 
-The <Code>Select</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Select</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="select-colors">
-  <div className="flex w-72 flex-col gap-4">
+<CodePreview id="select-colors" component={
+  <div className="flex w-72 flex-col gap-6">
     <Select color="blue" label="Select Version">
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -215,14 +215,13 @@ The <Code>Select</Code> component comes with 19 different colors that you can ch
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex w-72 flex-col gap-4">
+    <div className="flex w-72 flex-col gap-6">
       <Select color="blue" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -248,6 +247,7 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -255,8 +255,8 @@ export default function Colors() {
 
 The <Code>Select</Code> component comes with error and success states for performing validations.
 
-<ComponentDemo id="select-validations">
-  <div className="flex w-full items-end gap-4">
+<CodePreview id="select-validations" component={
+  <div className="flex flex-col w-72 gap-6">
     <Select label="Select Version" error>
       <Option>Material Tailwind HTML</Option>
       <Option>Material Tailwind React</Option>
@@ -272,14 +272,13 @@ The <Code>Select</Code> component comes with error and success states for perfor
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 gap-6">
       <Select label="Select Version" error>
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -298,6 +297,7 @@ export default function Validations() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -305,7 +305,7 @@ export default function Validations() {
 
 You can modify the open/close state animation for <Code>Select</Code> component using the <Code>animate</Code> prop.
 
-<ComponentDemo id="custom-select-animation">
+<CodePreview id="custom-select-animation" component={
   <div className="w-72">
     <Select
       label="Select Version"
@@ -321,8 +321,7 @@ You can modify the open/close state animation for <Code>Select</Code> component 
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
@@ -346,6 +345,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -353,7 +353,7 @@ export default function Example() {
 
 A <Code>Select</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Select</Code> component.
 
-<ComponentDemo id="disabled-select">
+<CodePreview id="disabled-select" component={
   <div className="w-72">
     <Select label="Select Version" disabled>
       <Option>Material Tailwind HTML</Option>
@@ -363,8 +363,7 @@ A <Code>Select</Code> could be disabled as well, it will help you to prevent use
       <Option>Material Tailwind Svelte</Option>
     </Select>
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
@@ -382,6 +381,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

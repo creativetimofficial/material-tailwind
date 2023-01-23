@@ -1,7 +1,13 @@
 ---
 title: Tailwind CSS Radio - Material Tailwind
 description: Customise your web projects with our easy-to-use Radio component for Tailwind CSS using Material Design guidelines.
-navigation: ["radio"]
+navigation:
+  [
+    "radio-button",
+    "radio-button-colors",
+    "radio-button-ripple-effect",
+    "required-script",
+  ]
 github: radio-button
 prev: progress-bar
 next: select
@@ -9,72 +15,690 @@ next: select
 
 # Tailwind CSS Radio
 
-Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options. Radio buttons should be used instead of checkboxes if only one item can be selected from a list.
+Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options. Radio buttons should be used instead of radioes if only one item can be selected from a list.
 
 Use the following example to create simple radio buttons for your projects.
 
 <br />
 
-<ComponentDemo id="radio">
-  <div className="text-left">
-    <div className="form-check mb-4 flex">
-      <input
-        name="inputName"
-        className="radio absolute z-10 cursor-pointer opacity-0"
-        type="radio"
-        id="flexRadioDefault1"
-      />
-      <div className="form-check-input"></div>
+<CodePreview
+  id="radio"
+  link="radio#radio"
+  className="mt-4"
+  component={
+    <div className="flex gap-10">
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="html"
+          data-ripple-dark="true"
+        >
+          <input
+            id="html"
+            name="type"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+            defaultChecked
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+        <label
+          className="mt-px cursor-pointer select-none font-light text-gray-700"
+          htmlFor="html"
+        >
+          HTML
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="react"
+          data-ripple-dark="true"
+        >
+          <input
+            id="react"
+            name="type"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+        <label
+          className="mt-px cursor-pointer select-none font-light text-gray-700"
+          htmlFor="react"
+        >
+          React
+        </label>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex gap-10">
+    <div class="inline-flex items-center">
       <label
-        className="custom-control-label my-auto cursor-pointer"
-        htmlFor="flexRadioDefault1"
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="html"
+        data-ripple-dark="true"
       >
-        {`Default radio`}
+        <input
+          id="html"
+          name="type"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+      <label
+        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        for="html"
+      >
+        HTML
       </label>
     </div>
-    <div className="form-check flex">
-      <input
-        name="inputName"
-        className="radio absolute z-10 cursor-pointer opacity-0"
-        type="radio"
-        id="flexRadioDefault2"
-        defaultChecked
-      />
-      <div className="form-check-input"></div>
+    <div class="inline-flex items-center">
       <label
-        className="custom-control-label my-auto cursor-pointer"
-        htmlFor="flexRadioDefault2"
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="react"
+        data-ripple-dark="true"
       >
-        {`Default checked radio`}
+        <input
+          id="react"
+          name="type"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+      <label
+        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        for="react"
+      >
+        React
       </label>
     </div>
   </div>
-</ComponentDemo>
+  ```
+</CodePreview>
+
+---
+
+## Radio Colors
+
+<CodePreview
+  id="radio-colors"
+  link="radio#radio-colors"
+  className="mt-4"
+  component={
+    <div className="flex w-max gap-4">
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="pink"
+        >
+          <input
+            id="pink"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+            defaultChecked
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="red"
+        >
+          <input
+            id="red"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-red-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:before:bg-red-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-red-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="green"
+        >
+          <input
+            id="green"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-green-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:before:bg-green-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-green-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="amber"
+        >
+          <input
+            id="amber"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-amber-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="teal"
+        >
+          <input
+            id="teal"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-teal-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-teal-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="indigo"
+        >
+          <input
+            id="indigo"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-indigo-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-indigo-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="purple"
+        >
+          <input
+            id="purple"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-purple-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-purple-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+      <div className="inline-flex items-center">
+        <label
+          className="relative flex cursor-pointer items-center rounded-full p-3"
+          htmlFor="blue"
+        >
+          <input
+            id="blue"
+            name="color"
+            type="radio"
+            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+          />
+          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3.5 w-3.5"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="flex w-max gap-4">
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="pink"
+      >
+        <input
+          id="pink"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+          checked
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="red"
+      >
+        <input
+          id="red"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-red-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:before:bg-red-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-red-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="green"
+      >
+        <input
+          id="green"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-green-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:before:bg-green-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-green-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="amber"
+      >
+        <input
+          id="amber"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-amber-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="teal"
+      >
+        <input
+          id="teal"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-teal-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-teal-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="indigo"
+      >
+        <input
+          id="indigo"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-indigo-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-indigo-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="purple"
+      >
+        <input
+          id="purple"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-purple-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-purple-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="blue"
+      >
+        <input
+          id="blue"
+          name="color"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+    </div>
+  </div>
+  ````
+</CodePreview>
+
+---
+
+## Radio Ripple Effect
+
+<CodePreview
+  id="radio-ripple-effect"
+  link="radio#radio-ripple-effect"
+  className="mt-4"
+  component={
+    <>
+      <div className="flex gap-10">
+        <div className="inline-flex items-center">
+          <label
+            className="relative flex cursor-pointer items-center rounded-full p-3"
+            htmlFor="ripple-on"
+            data-ripple-dark="true"
+          >
+            <input
+              id="ripple-on"
+              name="ripple"
+              type="radio"
+              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+              defaultChecked
+            />
+            <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3.5 w-3.5"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+              >
+                <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+              </svg>
+            </div>
+          </label>
+          <label
+            className="mt-px cursor-pointer select-none font-light text-gray-700"
+            htmlFor="ripple-on"
+          >
+            Ripple Effect On
+          </label>
+        </div>
+        <div className="inline-flex items-center">
+          <label
+            className="relative flex cursor-pointer items-center rounded-full p-3"
+            htmlFor="ripple-off"
+          >
+            <input
+              id="ripple-off"
+              name="ripple"
+              type="radio"
+              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+            />
+            <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3.5 w-3.5"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+              >
+                <circle dataName="ellipse" cx="8" cy="8" r="8"></circle>
+              </svg>
+            </div>
+          </label>
+          <label
+            className="mt-px cursor-pointer select-none font-light text-gray-700"
+            htmlFor="ripple-off"
+          >
+            Ripple Effect Off
+          </label>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <div class="flex gap-10">
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="ripple-on"
+        data-ripple-dark="true"
+      >
+        <input
+          id="ripple-on"
+          name="ripple"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+          checked
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+      <label
+        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        for="ripple-on"
+      >
+        Ripple Effect On
+      </label>
+    </div>
+    <div class="inline-flex items-center">
+      <label
+        class="relative flex cursor-pointer items-center rounded-full p-3"
+        for="ripple-off"
+      >
+        <input
+          id="ripple-off"
+          name="ripple"
+          type="radio"
+          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+        />
+        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+          >
+            <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+          </svg>
+        </div>
+      </label>
+      <label
+        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        for="ripple-off"
+      >
+        Ripple Effect Off
+      </label>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The radio component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
 
 ```html
-<div class="form-check flex">
-  <input
-    name="inputName"
-    class="radio absolute z-10 cursor-pointer opacity-0"
-    type="radio"
-    id="flexRadioDefault1"
-  />
-  <div class="form-check-input"></div>
-  <label class="custom-control-label my-auto" for="flexRadioDefault1"
-    >Default radio</label
-  >
-</div>
-<div class="form-check flex">
-  <input
-    name="inputName"
-    class="radio absolute z-10 cursor-pointer opacity-0"
-    type="radio"
-    id="flexRadioDefault2"
-    checked
-  />
-  <div class="form-check-input"></div>
-  <label class="custom-control-label my-auto" for="flexRadioDefault2"
-    >Default checked radio</label
-  >
-</div>
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```

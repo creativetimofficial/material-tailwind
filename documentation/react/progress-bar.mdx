@@ -36,10 +36,7 @@ Below we are presenting our examples of <Code>Progress</Code> component that you
 
 <br />
 
-<ComponentDemo id="progress-bar">
-  <Progress value={50} />
-</ComponentDemo>
-
+<CodePreview id="progress-bar" link="progress-bar#progress-bar" component={<Progress value={50} />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
@@ -47,6 +44,7 @@ export default function Example() {
   return <Progress value={50} />;
 }
 ```
+</CodePreview>
 
 ---
 
@@ -54,13 +52,12 @@ export default function Example() {
 
 The <Code>Progress</Code> component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="progress-bar-variants">
+<CodePreview id="progress-bar-variants" link="progress-bar#progress-bar-variants" component={
   <div className="flex w-full flex-col gap-4">
     <Progress value={50} variant="filled" />
     <Progress value={50} variant="gradient" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
@@ -73,14 +70,15 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Progress Bar Colors
 
-The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<ComponentDemo id="progress-bar-colors">
+<CodePreview id="progress-bar-colors" link="progress-bar#progress-bar-colors" component={
   <div className="flex w-full flex-col gap-4">
     <Progress value={50} color="blue" />
     <Progress value={50} color="red" />
@@ -91,8 +89,7 @@ The <Code>Progress</Code> component comes with 19 different colors that you can 
     <Progress value={50} color="purple" />
     <Progress value={50} color="pink" />
   </div>
-</ComponentDemo>
-
+}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
@@ -111,15 +108,15 @@ export default function Colors() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
 ## Progress Bar with Label
 
-<ComponentDemo id="progress-bar-with-label">
-  <Progress value={50} label="Completed" />
-</ComponentDemo>
+You can add custom label inside the progress bar using the <Code>label</Code> prop.
 
+<CodePreview id="progress-bar-with-label" link="progress-bar#progress-bar-with-label" component={<Progress value={50} label="Completed" />}>
 ```jsx
 import { Progress } from "@material-tailwind/react";
 
@@ -127,6 +124,7 @@ export default function Example() {
   return <Progress value={50} label="Completed" />;
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />

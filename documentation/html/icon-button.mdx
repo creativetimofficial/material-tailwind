@@ -1,7 +1,16 @@
 ---
 title: Tailwind CSS Button - Material Tailwind
 description: Customise your web projects with our easy-to-use Icon Button component for Tailwind CSS using Material Design guidelines.
-navigation: ["icon-button"]
+navigation:
+  [
+    "icon-button",
+    "icon-button-variants",
+    "icon-button-sizes",
+    "icon-button-colors",
+    "icon-button-ripple-effect",
+    "font-awesome-cdn-link",
+    "required-script",
+  ]
 github: icon-button
 prev: dialog
 next: input
@@ -9,17 +18,334 @@ next: input
 
 # Button with Icon
 
-Use this example to create buttons with icon for your Tailwind CSS project.
+Use this example to create icon buttons with icon for your Tailwind CSS project.
 
 <br />
-<ComponentDemo id="button-variants">
-  <button className="button button-icon button-pink" data-ripple-light="true">
-    <i className="material-icons">dashboard</i>
+
+<CodePreview
+  id="icon-button"
+  link="icon-button#icon-button"
+  component={
+    <button
+      className="item-center middle none center flex justify-center rounded-lg bg-pink-500 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i className="fas fa-heart text-lg leading-none"></i>
+    </button>
+  }
+>
+  ```html
+  <button
+    class="middle none center rounded-lg bg-pink-500 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    data-ripple-light="true"
+  >
+    <i class="material-icons">dashboard</i>
   </button>
-</ComponentDemo>
+  ```
+</CodePreview>
+
+---
+
+## Icon Button Variants
+
+See our icon button examples below. They come in different styles and color.
+
+<CodePreview
+  id="icon-button-variants"
+  link="icon-button#icon-button-variants"
+  component={
+    <div className="flex">
+      <button
+        className="middle none center mr-4 flex items-center justify-center rounded-lg bg-pink-500 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        <i className="fas fa-heart text-lg leading-none"></i>
+      </button>
+      <button
+        className="middle none center mr-4 flex items-center justify-center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        <i className="fas fa-heart text-lg leading-none"></i>
+      </button>
+      <button
+        className="middle none center mr-3 flex items-center justify-center rounded-lg border border-pink-500 p-3 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-dark="true"
+      >
+        <i className="fas fa-heart text-lg leading-none"></i>
+      </button>
+      <button
+        className="middle none center flex items-center justify-center rounded-lg p-3 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-dark="true"
+      >
+        <i className="fas fa-heart text-lg leading-none"></i>
+      </button>
+    </div>
+  }
+>
+  ```html
+  <div class="flex">
+    <button
+      class="middle none center mr-4 flex items-center justify-center rounded-lg bg-pink-500 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i class="fas fa-heart text-lg leading-none"></i>
+    </button>
+    <button
+      class="middle none center mr-4 flex items-center justify-center rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 p-3 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i class="fas fa-heart text-lg leading-none"></i>
+    </button>
+    <button
+      class="middle none center mr-3 flex items-center justify-center rounded-lg border border-pink-500 p-3 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-dark="true"
+    >
+      <i class="fas fa-heart text-lg leading-none"></i>
+    </button>
+    <button
+      class="middle none center flex items-center justify-center rounded-lg p-3 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-dark="true"
+    >
+      <i class="fas fa-heart text-lg leading-none"></i>
+    </button>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+### Icon Button Sizes
+
+Use this example to create icon buttons in different sizes.
+
+<CodePreview
+  id="icon-button-sizes"
+  link="icon-button#icon-button-sizes"
+  component={
+    <div className="flex items-end">
+      <button
+        className="middle none center mr-4 h-8 max-h-[32px] w-8 max-w-[32px] rounded-lg bg-pink-500 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        <i className="fas fa-heart text-xs leading-none"></i>
+      </button>
+      <button
+        className="middle none center mr-4 h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        <i className="fas fa-heart text-lg leading-none"></i>
+      </button>
+      <button
+        className="middle none center h-12 max-h-[48px] w-12 max-w-[48px] rounded-lg bg-pink-500 font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        <i className="fas fa-heart text-2xl leading-none"></i>
+      </button>
+    </div>
+  }
+>
+  ```html
+  <div class="flex items-end">
+    <button
+      class="middle none center mr-4 h-8 max-h-[32px] w-8 max-w-[32px] rounded-lg bg-pink-500 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i class="fas fa-heart text-xs leading-none"></i>
+    </button>
+    <button
+      class="middle none center mr-4 h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i class="fas fa-heart text-lg leading-none"></i>
+    </button>
+    <button
+      class="middle none center h-12 max-h-[48px] w-12 max-w-[48px] rounded-lg bg-pink-500 font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      data-ripple-light="true"
+    >
+      <i class="fas fa-heart text-2xl leading-none"></i>
+    </button>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+### Icon Button Colors
+
+Use this example to create a simple icon button element for your Tailwind CSS project.
+
+<CodePreview
+  id="icon-button-colors"
+  link="icon-button#icon-button-colors"
+  component={
+    <div className="flex gap-4">
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-red-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-green-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-amber-500 text-center font-sans text-xs font-medium uppercase text-black shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+    </div>
+  }
+>
+  ```html
+  <div class="flex gap-4">
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-red-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-green-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-amber-500 text-center font-sans text-xs font-medium uppercase text-black shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Icon Button Ripple Effect
+
+You can turn on/off the ripple effect for the icon button component by changing <Code html>data-ripple-light</Code> or <Code html>data-ripple-dark</Code> data attributes to <Code html>true/false</Code>.
+
+<CodePreview
+  id="icon-button-ripple-effect"
+  link="icon-button#icon-button-ripple-effect"
+  component={
+    <div class="flex w-max gap-4">
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+      <button
+        className="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+          <i
+            className="fas fa-heart text-lg leading-none"
+            aria-hidden="true"
+          ></i>
+        </span>
+      </button>
+    </div>
+  }
+>
+  ```html
+  <div class="flex w-max gap-4">
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+    <button
+      class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Required Scrips
+
+<span id="required-script" className="scroll-mt-56" />
+
+The icon button component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
 
 ```html
-<button class="button button-icon button-pink" data-ripple-light="true">
-  <i class="material-icons">dashboard</i>
-</button>
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```

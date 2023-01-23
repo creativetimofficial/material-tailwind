@@ -2,13 +2,7 @@
 title: Tailwind CSS Card - Material Tailwind
 description: Customise your web projects with our beautiful cards component for Tailwind CSS using Material Design guidelines.
 navigation:
-  [
-    "card-blog",
-    "card-basic",
-    "card-image-inside",
-    "card-signin",
-    "card horizontal",
-  ]
+  ["card", "card-basic", "card-image-inside", "login-card", "card-horizontal"]
 github: card
 prev: button
 next: checkbox
@@ -23,60 +17,71 @@ By its definition, a card is a sheet of material that serves as an entry point t
 See below our beautiful card example that you can use in your Tailwind CSS projects.
 
 <br />
-<ComponentDemo id="card-blog">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-header mx-4 -mt-6">
-        <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div className="card-body">
-        <a href="#">
-          <h4 className="font-medium">Material Tailwind</h4>
-        </a>
-        <p className="opcacity-60 mb-4">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-        <button className="button button-pink" data-ripple-light="true">
-          {`Read More`}
-        </button>
+
+<CodePreview
+  id="card"
+  link="card#card"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+        <div className="mx-4 -mt-6 translate-y-0">
+          <a href="#" blur-shadow-image="true">
+            <img
+              className="w-auto rounded-lg"
+              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              alt="card image"
+            />
+          </a>
+        </div>
+        <div className="text-secondary flex-1 p-6">
+          <a href="#">
+            <h4 className="font-medium">Material Tailwind</h4>
+          </a>
+          <p className="opcacity-60 mb-3">
+            The time is now for it to be okay to be great. People in this world
+            shun people for being great. For being a bright color. For standing
+            out.
+          </p>
+          <button
+            className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            data-ripple-light="true"
+          >
+            Read More
+          </button>
+        </div>
       </div>
     </div>
+  }
+>
+  ```html
+  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+    <div class="mx-4 -mt-6 translate-y-0">
+      <a href="#" blur-shadow-image="true">
+        <img
+          class="w-auto rounded-lg"
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="card image"
+        />
+      </a>
+    </div>
+    <div class="text-secondary flex-1 p-6">
+      <a href="#">
+        <h4 class="font-medium">Material Tailwind</h4>
+      </a>
+      <p class="opcacity-60 mb-3">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+      <button
+        className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        Read More
+      </button>
+    </div>
   </div>
-</ComponentDemo>
-
-```html
-<div class="card">
-  <div class="card-header mx-4 -mt-6">
-    <a href="#" blur-shadow-image="true">
-      <img
-        class="w-auto rounded-lg"
-        src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-        alt="card image"
-      />
-    </a>
-  </div>
-  <div class="card-body">
-    <a href="#">
-      <h4 class="font-medium">Material Tailwind</h4>
-    </a>
-    <p class="opcacity-60 mb-3">
-      The time is now for it to be okay to be great. People in this world shun
-      people for being great. For being a bright color. For standing out.
-    </p>
-    <button class="button button-pink" data-ripple-light="true">
-      Read More
-    </button>
-  </div>
-</div>
-```
+  ```
+</CodePreview>
 
 ---
 
@@ -86,42 +91,51 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 Below you can see a card example with only text and link (button).
 
-<ComponentDemo id="card-basic">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-body">
-        <a href="#">
-          <h3>Material Tailwind</h3>
-        </a>
-        <p className="mb-3 opacity-60">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-        <button className="button button-pink" data-ripple-light="true">
-          {`Read More`}
-        </button>
+<CodePreview
+  id="card-basic"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+        <div className="text-secondary flex-1 p-6">
+          <a href="#">
+            <h3>Material Tailwind</h3>
+          </a>
+          <p className="mb-3 opacity-60">
+            The time is now for it to be okay to be great. People in this world
+            shun people for being great. For being a bright color. For standing
+            out.
+          </p>
+          <button
+            className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            data-ripple-light="true"
+          >
+            Read More
+          </button>
+        </div>
       </div>
     </div>
+  }
+>
+  ```html
+  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+    <div class="text-secondary flex-1 p-6">
+      <a href="#">
+        <h3>Material Tailwind</h3>
+      </a>
+      <p class="mb-3 opacity-60">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+      <button
+        class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
+      >
+        Read More
+      </button>
+    </div>
   </div>
-</ComponentDemo>
-
-```html
-<div class="card">
-  <div class="card-body">
-    <a href="#">
-      <h3>Material Tailwind</h3>
-    </a>
-    <p class="mb-3 opacity-60">
-      The time is now for it to be okay to be great. People in this world shun
-      people for being great. For being a bright color. For standing out.
-    </p>
-    <button class="button button-pink" data-ripple-light="true">
-      Read More
-    </button>
-  </div>
-</div>
-```
+  ```
+</CodePreview>
 
 ---
 
@@ -129,192 +143,254 @@ Below you can see a card example with only text and link (button).
 
 The card example below includes an image and avatar component.
 
-<ComponentDemo id="card-image-inside">
-  <div className="my-10 w-2/3">
-    <div className="card">
-      <div className="card-header mx-4 mt-4">
-        <a href="#" blur-shadow-image="true">
-          <img
-            className="w-auto rounded-lg"
-            src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-            alt="card image"
-          />
-        </a>
-      </div>
-      <div className="card-body">
-        <span className="text-sm font-bold uppercase text-orange-500">Hub</span>
-        <a href="#">
-          <h5 className="mt-2 font-medium">Material Tailwind</h5>
-        </a>
-        <p className="mb-3">
-          The time is now for it to be okay to be great. People in this world
-          shun people for being great. For being a bright color. For standing
-          out.
-        </p>
-      </div>
-      <div className="card-footer">
-        <div className="flex">
-          <a href="#" className="avatar">
+<CodePreview
+  id="card-image-inside"
+  component={
+    <div className="my-10 w-1/2">
+      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+        <div className="mx-4 mt-4 translate-y-0">
+          <a href="#" blur-shadow-image="true">
             <img
-              src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
-              alt="avatar"
+              className="w-auto rounded-lg"
+              src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+              alt="card image"
             />
           </a>
-          <div className="ml-3">
-            <span className="text-blue-gray-700 mb-0 font-bold">Mathew</span>
-            <p className="mb-0 text-xs">Posted on 28 February</p>
+        </div>
+        <div className="text-secondary flex-1 p-6">
+          <span className="text-sm font-bold uppercase text-orange-500">
+            Hub
+          </span>
+          <a href="#">
+            <h5 className="mt-2 font-medium">Material Tailwind</h5>
+          </a>
+          <p className="mb-3">
+            The time is now for it to be okay to be great. People in this world
+            shun people for being great. For being a bright color. For standing
+            out.
+          </p>
+        </div>
+        <div className="bg-transparent p-6 pt-0">
+          <div className="flex">
+            <a href="#" className="inline-flex h-10 w-10">
+              <img
+                className="h-full w-full rounded-xl"
+                src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
+                alt="avatar"
+              />
+            </a>
+            <div className="ml-3">
+              <span className="mb-0 font-bold text-blue-gray-700">Mathew</span>
+              <p className="mb-0 text-xs">Posted on 28 February</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="card">
-  <div class="card-header mx-4 mt-4">
-    <a href="#" blur-shadow-image="true">
-      <img
-        class="w-auto rounded-lg"
-        src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
-        alt="card image"
-      />
-    </a>
-  </div>
-  <div class="card-body">
-    <span class="text-sm font-bold uppercase text-orange-500">Hub</span>
-    <a href="#">
-      <h5 class="mt-2 font-medium">Material Tailwind</h5>
-    </a>
-    <p class="mb-3">
-      The time is now for it to be okay to be great. People in this world shun
-      people for being great. For being a bright color. For standing out.
-    </p>
-  </div>
-  <div class="card-footer">
-    <div class="flex">
-      <a href="#" class="avatar">
+  }
+>
+  ```html
+  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+    <div class="mx-4 mt-4 translate-y-0">
+      <a href="#" blur-shadow-image="true">
         <img
-          src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
-          alt="avatar"
+          class="w-auto rounded-lg"
+          src="https://demos.creative-tim.com/material-kit-pro/assets/img/annie-spratt.jpg"
+          alt="card image"
         />
       </a>
-      <div class="ml-3">
-        <span class="text-blue-gray-700 mb-0 font-bold">Mathew</span>
-        <p class="mb-0 text-xs">Posted on 28 February</p>
+    </div>
+    <div class="text-secondary flex-1 p-6">
+      <span class="text-sm font-bold uppercase text-orange-500">Hub</span>
+      <a href="#">
+        <h5 class="mt-2 font-medium">Material Tailwind</h5>
+      </a>
+      <p class="mb-3">
+        The time is now for it to be okay to be great. People in this world shun
+        people for being great. For being a bright color. For standing out.
+      </p>
+    </div>
+    <div class="bg-transparent p-6 pt-0">
+      <div class="flex">
+        <a href="#" class="inline-flex h-10 w-10">
+          <img
+            class="h-full w-full rounded-xl"
+            src="https://demos.creative-tim.com/material-kit-pro/assets/img/marie.jpg"
+            alt="avatar"
+          />
+        </a>
+        <div class="ml-3">
+          <span class="mb-0 font-bold text-blue-gray-700">Mathew</span>
+          <p class="mb-0 text-xs">Posted on 28 February</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-```
+  ```
+</CodePreview>
 
 ---
 
-## Card Signin
+## Login Card
 
 Cards also can be used for Login/Signup pages. See below our Tailwind CSS example:
 
-<ComponentDemo id="card-signin">
-  <div className="my-10 w-1/2">
-    <div className="card">
-      <div className="card-header mx-4 -mt-6">
-        <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
-          <h4 className="mt-2 mb-0 text-center font-bold text-white">
-            {`Sign in`}
-          </h4>
-          <div className="mt-4 flex">
-            <a className="button button-text ml-auto" href="#">
-              <i className="fab fa-facebook-f text-lg text-white"></i>
-            </a>
-            <a className="button button-text" href="#">
-              <i className="fab fa-github text-lg text-white"></i>
-            </a>
-            <a className="button button-text mr-auto" href="#">
-              <i className="fab fa-google text-lg text-white"></i>
-            </a>
+<CodePreview
+  id="login-card"
+  link="card#login-card"
+  component={
+    <div className="my-10 w-1/2">
+      <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+        <div className="mx-4 -mt-6 translate-y-0">
+          <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
+            <h4 className="mt-2 mb-0 text-center font-bold text-white">
+              Sign in
+            </h4>
+            <div className="mt-4 flex">
+              <a className="button button-text ml-auto" href="#">
+                <i className="fab fa-facebook-f text-lg text-white"></i>
+              </a>
+              <a className="button button-text mx-4" href="#">
+                <i className="fab fa-github text-lg text-white"></i>
+              </a>
+              <a className="button button-text mr-auto" href="#">
+                <i className="fab fa-google text-lg text-white"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="card-body">
-        <form action="role">
-          <div className="input-group-outline input-group my-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control" />
+        <div className="text-secondary flex-1 p-6">
+          <form action="role">
+            <div className="flex flex-col gap-4">
+              <div className="relative h-10 w-full min-w-[200px]">
+                <input
+                  type="email"
+                  className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                  placeholder=" "
+                />
+                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                  Email
+                </label>
+              </div>
+              <div className="relative h-10 w-full min-w-[200px]">
+                <input
+                  type="password"
+                  className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                  placeholder=" "
+                />
+                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                  Password
+                </label>
+              </div>
+            </div>
+          </form>
+          <div className="mt-5 mb-6 ml-2 inline-flex items-center">
+            <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
+              <input
+                id="auto-update"
+                type="checkbox"
+                className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-pink-500 peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+              />
+              <label
+                htmlFor="auto-update"
+                className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-pink-500 peer-checked:before:bg-pink-500"
+              >
+                <div
+                  className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
+                  data-ripple-dark="true"
+                ></div>
+              </label>
+            </div>
+            <label
+              htmlFor="auto-update"
+              className="mt-px ml-3 mb-0 cursor-pointer select-none font-light text-gray-700"
+            >
+              Remember Me
+            </label>
           </div>
-          <div className="input-group-outline input-group my-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-        </form>
-        <div className="form-check form-switch my-7 ml-1 flex items-center">
-          <input
-            className="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-            data-attribute="toggle"
-            id="remember"
-          />
-          <div className="form-check-input"></div>
-          <label className="form-check-label mb-0 ml-2 cursor-pointer">
-            Remember me
-          </label>
+          <button
+            className="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            data-ripple-light="true"
+          >
+            Sign In
+          </button>
+          <a href="#">
+            <p className="mt-5 mb-0 text-center text-sm">
+              Don&apos;t have an account?
+            </p>
+          </a>
         </div>
-        <button className="button button-pink w-full">Sign In</button>
-        <a href="#">
-          <p className="mt-5 mb-0 text-center text-sm">
-            Don&apos;t have an account?
-          </p>
-        </a>
       </div>
     </div>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="card">
-  <div class="card-header mx-4 -mt-6">
-    <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
-      <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
-      <div class="mt-4 flex">
-        <a class="button button-text ml-auto" href="#">
-          <i class="fab fa-facebook-f text-lg text-white"></i>
-        </a>
-        <a class="button button-text" href="#">
-          <i class="fab fa-github text-lg text-white"></i>
-        </a>
-        <a class="button button-text mr-auto" href="#">
-          <i class="fab fa-google text-lg text-white"></i>
-        </a>
+  }
+>
+  ```html
+  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+    <div class="mx-4 -mt-6 translate-y-0">
+      <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
+        <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
+        <div class="mt-4 flex">
+          <a class="button button-text ml-auto" href="#">
+            <i class="fab fa-facebook-f text-lg text-white"></i>
+          </a>
+          <a class="button button-text" href="#">
+            <i class="fab fa-github text-lg text-white"></i>
+          </a>
+          <a class="button button-text mr-auto" href="#">
+            <i class="fab fa-google text-lg text-white"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card-body">
-    <form action="role">
-      <div class="input-group-outline input-group my-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" />
+    <div class="text-secondary flex-1 p-6">
+      <form action="role">
+        <div class="flex flex-col gap-4">
+          <div class="relative h-10 w-full min-w-[200px]">
+            <input
+              type="email"
+              class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              placeholder=" "
+            />
+            <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+              Email
+            </label>
+          </div>
+          <div class="relative h-10 w-full min-w-[200px]">
+            <input
+              type="password"
+              class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              placeholder=" "
+            />
+            <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+              Password
+            </label>
+          </div>
+        </div>
+      </form>
+      <div class="form-check form-switch my-7 ml-1 flex items-center">
+        <input
+          class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
+          data-attribute="toggle"
+          id="remember"
+        />
+        <div class="form-check-input"></div>
+        <label class="form-check-label mb-0 ml-2 cursor-pointer">
+          Remember me
+        </label>
       </div>
-      <div class="input-group-outline input-group my-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" />
-      </div>
-    </form>
-    <div class="form-check form-switch my-7 ml-1 flex items-center">
-      <input
-        class="absolute z-10 h-5 w-8 cursor-pointer opacity-0"
-        data-attribute="toggle"
-        id="remember"
-      />
-      <div class="form-check-input"></div>
-      <label class="form-check-label mb-0 ml-2 cursor-pointer"
-        >Remember me</label
+      <button
+        class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        data-ripple-light="true"
       >
+        Sign In
+      </button>
+      <a href="#">
+        <p class="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
+      </a>
     </div>
-    <button class="button button-pink w-full">Sign In</button>
-    <a href="#">
-      <p class="mt-5 mb-0 text-center text-sm">Don&apos;t have an account?</p>
-    </a>
   </div>
-</div>
-```
+  ```
+</CodePreview>
 
 ---
 
@@ -322,62 +398,67 @@ Cards also can be used for Login/Signup pages. See below our Tailwind CSS exampl
 
 Our last card example has an horizontal layout. Use it to your projects!
 
-<ComponentDemo id="card-horizontal">
-  <div className="my-10">
-    <div className="card card-plain">
-      <div className="flex">
-        <div className="w-1/3">
-          <img
-            className="rounded-lg"
-            src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-            alt="card image"
-          />
-        </div>
-        <div className="card-body w-2/3">
-          <span className="font-bold uppercase text-blue-500">Startups</span>
-          <a href="#">
-            <h3 className="mt-4">
-              Lyft launching cross-platform service this week
-            </h3>
-          </a>
-          <p className="mb-5 opacity-80">
-            Like so many organizations these days, Autodesk is a company in
-            transition. It was until recently a traditional boxed software
-            company selling licenses. Yet its own business model disruption is
-            only part of the story — and <a href="#">Read More</a>.
-          </p>
-          <p>
-            by <span className="font-bold">Megan Rose</span>, 2 days ago
-          </p>
+<CodePreview
+  id="card-horizontal"
+  component={
+    <div className="my-10">
+      <div className="flex flex-col rounded-xl bg-white bg-transparent bg-clip-border shadow-none">
+        <div className="flex">
+          <div className="w-1/3">
+            <img
+              className="rounded-lg"
+              src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+              alt="card image"
+            />
+          </div>
+          <div className="text-secondary w-2/3 flex-1 p-6">
+            <span className="font-bold uppercase text-blue-500">Startups</span>
+            <a href="#">
+              <h3 className="mt-4">
+                Lyft launching cross-platform service this week
+              </h3>
+            </a>
+            <p className="mb-5 opacity-80">
+              Like so many organizations these days, Autodesk is a company in
+              transition. It was until recently a traditional boxed software
+              company selling licenses. Yet its own business model disruption is
+              only part of the story — and <a href="#">Read More</a>.
+            </p>
+            <p>
+              by <span className="font-bold">Megan Rose</span>, 2 days ago
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</ComponentDemo>
-
-```html
-<div class="card card-plain">
-  <div class="flex">
-    <div class="w-1/3">
-      <img
-        class="rounded-lg"
-        src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
-        alt="card image"
-      />
+  }
+>
+  ```html
+  <div class="flex flex-col rounded-xl bg-white bg-transparent bg-clip-border shadow-none">
+    <div class="flex">
+      <div class="w-1/3">
+        <img
+          class="rounded-lg"
+          src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987"
+          alt="card image"
+        />
+      </div>
+      <div class="text-secondary w-2/3 flex-1 p-6">
+        <span class="font-bold uppercase text-blue-500">Startups</span>
+        <a href="#">
+          <h3 class="mt-4">Lyft launching cross-platform service this week</h3>
+        </a>
+        <p class="mb-5 opacity-80">
+          Like so many organizations these days, Autodesk is a company in
+          transition. It was until recently a traditional boxed software company
+          selling licenses. Yet its own business model disruption is only part
+          of the story — and <a href="#">Read More</a>.
+        </p>
+        <p>
+          by <span class="font-bold">Megan Rose</span>, 2 days ago
+        </p>
+      </div>
     </div>
-    <div class="card-body w-2/3">
-      <span class="font-bold uppercase text-blue-500">Startups</span>
-      <a href="#">
-        <h3 class="mt-4">Lyft launching cross-platform service this week</h3>
-      </a>
-      <p class="mb-5 opacity-80">
-        Like so many organizations these days, Autodesk is a company in
-        transition. It was until recently a traditional boxed software company
-        selling licenses. Yet its own business model disruption is only part of
-        the story — and{" "} <a href="#">Read More</a>.
-      </p>
-      <p>by <span class="font-bold">Megan Rose</span>, 2 days ago</p>
-    </div>
   </div>
-</div>
-```
+  ```
+</CodePreview>

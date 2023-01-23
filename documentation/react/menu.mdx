@@ -38,7 +38,7 @@ See below our <Code>Menu</Code> example that you can use in your Tailwind CSS an
 
 <br />
 
-<ComponentDemo id="menu">
+<CodePreview id="menu" link="menu#menu" component={
   <Menu>
     <MenuHandler>
       <Button variant="gradient">Open Menu</Button>
@@ -49,8 +49,7 @@ See below our <Code>Menu</Code> example that you can use in your Tailwind CSS an
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Menu,
@@ -75,14 +74,15 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
-## Nexted Menu
+## Nested Menu
 
 You can nest one <Code>Menu</Code> inside another one very easily.
 
-<ComponentDemo id="nested-menu">
+<CodePreview id="nested-menu" link="menu#nested-menu" component={
   <Menu>
     <MenuHandler>
       <Button variant="gradient">Open Nested Menu</Button>
@@ -103,8 +103,7 @@ You can nest one <Code>Menu</Code> inside another one very easily.
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Menu,
@@ -139,6 +138,7 @@ export default function NestedMenu() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -146,137 +146,138 @@ export default function NestedMenu() {
 
 You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
 
-<ComponentDemo id="menu-placement">
-  <div className="mb-3 flex gap-3">
-    <Menu placement="top">
-      <MenuHandler>
-        <Button variant="gradient">Top</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="top-start">
-      <MenuHandler>
-        <Button variant="gradient">Top Start</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="top-end">
-      <MenuHandler>
-        <Button variant="gradient">Top End</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Menu placement="right">
-      <MenuHandler>
-        <Button variant="gradient">Right</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="right-start">
-      <MenuHandler>
-        <Button variant="gradient">Right Start</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="right-end">
-      <MenuHandler>
-        <Button variant="gradient">Right End</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-  </div>
-  <div className="mb-3 flex gap-3">
-    <Menu placement="bottom">
-      <MenuHandler>
-        <Button variant="gradient">Bottom</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="bottom-start">
-      <MenuHandler>
-        <Button variant="gradient">Bottom Start</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="bottom-end">
-      <MenuHandler>
-        <Button variant="gradient">Bottom End</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-  </div>
-  <div className="flex gap-3">
-    <Menu placement="left">
-      <MenuHandler>
-        <Button variant="gradient">Left</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="left-start">
-      <MenuHandler>
-        <Button variant="gradient">Left Start</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-    <Menu placement="left-end">
-      <MenuHandler>
-        <Button variant="gradient">Left End</Button>
-      </MenuHandler>
-      <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-      </MenuList>
-    </Menu>
-  </div>
-</ComponentDemo>
-
+<CodePreview id="menu-placement" component={
+  <>
+    <div className="mb-3 flex gap-3">
+      <Menu placement="top">
+        <MenuHandler>
+          <Button variant="gradient">Top</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="top-start">
+        <MenuHandler>
+          <Button variant="gradient">Top Start</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="top-end">
+        <MenuHandler>
+          <Button variant="gradient">Top End</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Menu placement="right">
+        <MenuHandler>
+          <Button variant="gradient">Right</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="right-start">
+        <MenuHandler>
+          <Button variant="gradient">Right Start</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="right-end">
+        <MenuHandler>
+          <Button variant="gradient">Right End</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+    </div>
+    <div className="mb-3 flex gap-3">
+      <Menu placement="bottom">
+        <MenuHandler>
+          <Button variant="gradient">Bottom</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="bottom-start">
+        <MenuHandler>
+          <Button variant="gradient">Bottom Start</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="bottom-end">
+        <MenuHandler>
+          <Button variant="gradient">Bottom End</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+    </div>
+    <div className="flex gap-3">
+      <Menu placement="left">
+        <MenuHandler>
+          <Button variant="gradient">Left</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="left-start">
+        <MenuHandler>
+          <Button variant="gradient">Left Start</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+      <Menu placement="left-end">
+        <MenuHandler>
+          <Button variant="gradient">Left End</Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem>Menu Item 1</MenuItem>
+          <MenuItem>Menu Item 2</MenuItem>
+          <MenuItem>Menu Item 3</MenuItem>
+        </MenuList>
+      </Menu>
+    </div>
+  </>
+}>
 ```jsx
 import { Fragment } from "react";
 import {
@@ -422,6 +423,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 ---
 
@@ -429,7 +431,7 @@ export default function Example() {
 
 You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
 
-<ComponentDemo id="custom-menu-animation">
+<CodePreview id="custom-menu-animation" component={
   <Menu
     animate={{
       mount: { y: 0 },
@@ -445,8 +447,7 @@ You can modify the open/close state animation for <Code>Menu</Code> component us
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
-</ComponentDemo>
-
+}>
 ```jsx
 import {
   Menu,
@@ -476,6 +477,7 @@ export default function Example() {
   );
 }
 ```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
