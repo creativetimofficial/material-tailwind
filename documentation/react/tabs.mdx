@@ -94,7 +94,6 @@ export default function Example() {
       desc: `Because it's about motivating the doers. Because I'm here
       to follow my dreams and inspire other people to follow their dreams, too.`,
     },
-
     {
       label: "Vue",
       value: "vue",
@@ -102,14 +101,12 @@ export default function Example() {
       We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
-
     {
       label: "Angular",
       value: "angular",
       desc: `Because it's about motivating the doers. Because I'm here
       to follow my dreams and inspire other people to follow their dreams, too.`,
     },
-
     {
       label: "Svelte",
       value: "svelte",
@@ -117,29 +114,27 @@ export default function Example() {
       We're constantly growing. We're constantly making mistakes. We're
       constantly trying to express ourselves and actualize our dreams.`,
     },
+  ];
 
-];
-
-return (
-<Tabs value="html">
-<TabsHeader>
-{data.map(({ label, value }) => (
-<Tab key={value} value={value}>
-{label}
-</Tab>
-))}
-</TabsHeader>
-<TabsBody>
-{data.map(({ value, desc }) => (
-<TabPanel key={value} value={value}>
-{desc}
-</TabPanel>
-))}
-</TabsBody>
-</Tabs>
-);
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+          {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
 }
-
 ````
 </CodePreview>
 

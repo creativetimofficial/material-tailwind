@@ -67,10 +67,10 @@ export default function Example() {
 The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="input-variants" link="input#input-variants" component={
-  <div className="flex w-full items-end gap-4">
-    <Input variant="outlined" label="Outlined" />
-    <Input variant="standard" label="Standard" />
+  <div className="flex flex-col w-72 gap-6">
     <Input variant="static" label="Static" placeholder="Static" />
+    <Input variant="standard" label="Standard" />
+    <Input variant="outlined" label="Outlined" />
   </div>
 }>
 ```jsx
@@ -78,10 +78,10 @@ import { Input } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex w-full items-end gap-4">
-      <Input variant="outlined" label="Outlined" />
-      <Input variant="standard" label="Standard" />
+    <div className="flex flex-col w-72 gap-6">
       <Input variant="static" label="Static" placeholder="Static" />
+      <Input variant="standard" label="Standard" />
+      <Input variant="outlined" label="Outlined" />
     </div>
   );
 }
@@ -95,7 +95,7 @@ export default function Variants() {
 The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
 <CodePreview id="input-sizes" link="input#input-sizes" component={
-  <div className="flex w-full items-end gap-4">
+  <div className="flex flex-col w-72 items-end gap-6">
     <Input size="md" label="Input Medium" />
     <Input size="lg" label="Input Large" />
   </div>
@@ -105,7 +105,7 @@ import { Input } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 items-end gap-6">
       <Input size="md" label="Input Medium" />
       <Input size="lg" label="Input Large" />
     </div>
@@ -118,10 +118,10 @@ export default function Sizes() {
 
 ## Input Colors
 
-The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
 <CodePreview id="input-colors" link="input#input-colors" component={
-  <div className="flex w-72 flex-col gap-4">
+  <div className="flex w-72 flex-col gap-6">
     <Input color="blue" label="Input Blue" />
     <Input color="purple" label="Input Purple" />
     <Input color="indigo" label="Input Indigo" />
@@ -133,7 +133,7 @@ import { Input } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex w-72 flex-col gap-4">
+    <div className="flex w-72 flex-col gap-6">
       <Input color="blue" label="Input Blue" />
       <Input color="purple" label="Input Purple" />
       <Input color="indigo" label="Input Indigo" />
@@ -151,7 +151,7 @@ export default function Colors() {
 The <Code>Input</Code> component comes with error and success states for performing validations.
 
 <CodePreview id="input-validations" link="input#input-validations" component={
-  <div div className="flex w-full items-end gap-4">
+  <div div className="flex flex-col w-72 items-end gap-6">
     <Input label="Input Error" error />
     <Input label="Input Success" success />
   </div>
@@ -161,7 +161,7 @@ import { Input } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-72 items-end gap-6">
       <Input label="Input Error" error />
       <Input label="Input Success" success />
     </div>

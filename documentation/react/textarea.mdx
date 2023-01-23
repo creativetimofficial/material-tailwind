@@ -63,10 +63,10 @@ export default function Example() {
 The <Code>Textarea</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="textarea-variants" link="textarea#textarea-variants" component={
-  <div className="flex w-full items-end gap-4">
-    <Textarea variant="outlined" label="Outlined" />
-    <Textarea variant="standard" label="Standard" />
+  <div className="flex flex-col w-96 gap-6">
     <Textarea variant="static" label="Static" placeholder="Static" />
+    <Textarea variant="standard" label="Standard" />
+    <Textarea variant="outlined" label="Outlined" />
   </div>
 }>
 ```jsx
@@ -74,10 +74,10 @@ import { Textarea } from "@material-tailwind/react";
 
 export default function Variants() {
   return (
-    <div className="flex w-full items-end gap-4">
-      <Textarea variant="outlined" label="Outlined" />
-      <Textarea variant="standard" label="Standard" />
+    <div className="flex flex-col w-96 gap-6">
       <Textarea variant="static" label="Static" placeholder="Static" />
+      <Textarea variant="standard" label="Standard" />
+      <Textarea variant="outlined" label="Outlined" />
     </div>
   );
 }
@@ -91,7 +91,7 @@ export default function Variants() {
 The <Code>Textarea</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
 <CodePreview id="textarea-sizes" link="textarea#textarea-sizes" component={
-  <div className="flex w-full items-end gap-4">
+  <div className="flex flex-col w-96 gap-6">
     <Textarea size="md" label="Textarea Medium" />
     <Textarea size="lg" label="Textarea Large" />
   </div>
@@ -101,7 +101,7 @@ import { Textarea } from "@material-tailwind/react";
 
 export default function Sizes() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-96 gap-6">
       <Textarea size="md" label="Textarea Medium" />
       <Textarea size="lg" label="Textarea Large" />
     </div>
@@ -114,10 +114,10 @@ export default function Sizes() {
 
 ## Textarea Colors
 
-The <Code>Textarea</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop, below there are some examples of the colors but you can check all of the them [here.](#props)
+The <Code>Textarea</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
 <CodePreview id="textarea-colors" link="textarea#textarea-colors" component={
-  <div className="flex w-96 flex-col gap-4">
+  <div className="flex w-96 flex-col gap-6">
     <Textarea color="blue" label="Textarea Blue" />
     <Textarea color="purple" label="Textarea Purple" />
     <Textarea color="indigo" label="Textarea Indigo" />
@@ -129,7 +129,7 @@ import { Textarea } from "@material-tailwind/react";
 
 export default function Colors() {
   return (
-    <div className="flex w-96 flex-col gap-4">
+    <div className="flex w-96 flex-col gap-6">
       <Textarea color="blue" label="Textarea Blue" />
       <Textarea color="purple" label="Textarea Purple" />
       <Textarea color="indigo" label="Textarea Indigo" />
@@ -147,7 +147,7 @@ export default function Colors() {
 The <Code>Textarea</Code> component comes with error and success states for performing validations.
 
 <CodePreview id="textarea-validations" link="textarea#textarea-validations" component={
-  <div className="flex w-full items-end gap-4">
+  <div className="flex flex-col w-96 gap-6">
     <Textarea label="Textarea Error" error />
     <Textarea label="Textarea Success" success />
   </div>
@@ -157,7 +157,7 @@ import { Textarea } from "@material-tailwind/react";
 
 export default function Validations() {
   return (
-    <div className="flex w-full items-end gap-4">
+    <div className="flex flex-col w-96 gap-6">
       <Textarea label="Textarea Error" error />
       <Textarea label="Textarea Success" success />
     </div>
