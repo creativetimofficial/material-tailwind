@@ -15,7 +15,7 @@
     "build:js": "swc ./scripts -d ./dist/scripts --config-file .swcrc",
     "build:js:bundle": "swc ./scripts -o ./dist/scripts/material-tailwind.min.js --config-file .swcrc",
     "build:css": "npx tailwindcss -i ./styles/tailwind.css -o ./dist/styles/material-tailwind.css -m",
-    "build": "pnpm build:js && pnpm compile:ripple && pnpm build:css && pnpm copy"
+    "build": "pnpm build:js && pnpm build:js:bundle && pnpm compile:ripple && pnpm build:css && pnpm copy"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
