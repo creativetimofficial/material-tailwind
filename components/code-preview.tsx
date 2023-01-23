@@ -91,60 +91,64 @@ export function CodePreview({ id, component, link, children, className }) {
           </TabsHeader>
         </Tabs>
         <div className="flex items-center gap-2 px-1">
-          <Menu open={isMenuOpen} handler={setIsMenuOpen}>
-            <MenuHandler>
-              <Button
-                variant="text"
-                size="sm"
-                color={mode === "code" ? "white" : "blue-gray"}
-                className={`flex items-center gap-2 px-3 ${
-                  mode === "code"
-                    ? "text-white/80 hover:text-white"
-                    : "hover:text-blue-gray-900"
-                } ${
-                  mode === "code" && isMenuOpen ? "bg-white/10 text-white" : ""
-                } ${
-                  mode === "preview" && isMenuOpen
-                    ? "bg-blue-gray-500/10 text-blue-gray-900"
-                    : ""
-                }`}
-              >
-                {version}
-                <ChevronDownIcon
-                  strokeWidth={4}
-                  className={`h-2.5 w-2.5 transform transition-transform ${
-                    isMenuOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                />
-              </Button>
-            </MenuHandler>
-            <MenuList className="flex min-w-[100px] flex-col gap-1 rounded-lg p-1.5">
-              <Link href={`/docs/html/${link}`}>
-                <MenuItem
-                  className={`py-1.5 px-2.5 text-xs font-medium ${
-                    version === "html"
-                      ? "bg-blue-gray-50/80 text-blue-gray-900"
+          {link && (
+            <Menu open={isMenuOpen} handler={setIsMenuOpen}>
+              <MenuHandler>
+                <Button
+                  variant="text"
+                  size="sm"
+                  color={mode === "code" ? "white" : "blue-gray"}
+                  className={`flex items-center gap-2 px-3 ${
+                    mode === "code"
+                      ? "text-white/80 hover:text-white"
+                      : "hover:text-blue-gray-900"
+                  } ${
+                    mode === "code" && isMenuOpen
+                      ? "bg-white/10 text-white"
+                      : ""
+                  } ${
+                    mode === "preview" && isMenuOpen
+                      ? "bg-blue-gray-500/10 text-blue-gray-900"
                       : ""
                   }`}
-                  onClick={() => setVersion("html")}
                 >
-                  HTML
-                </MenuItem>
-              </Link>
-              <Link href={`/docs/react/${link}`}>
-                <MenuItem
-                  className={`py-1.5 px-2.5 text-xs font-medium ${
-                    version === "react"
-                      ? "bg-blue-gray-50/80 text-blue-gray-900"
-                      : ""
-                  }`}
-                  onClick={() => setVersion("react")}
-                >
-                  React
-                </MenuItem>
-              </Link>
-            </MenuList>
-          </Menu>
+                  {version}
+                  <ChevronDownIcon
+                    strokeWidth={4}
+                    className={`h-2.5 w-2.5 transform transition-transform ${
+                      isMenuOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </Button>
+              </MenuHandler>
+              <MenuList className="flex min-w-[100px] flex-col gap-1 rounded-lg p-1.5">
+                <Link href={`/docs/html/${link}`}>
+                  <MenuItem
+                    className={`py-1.5 px-2.5 text-xs font-medium ${
+                      version === "html"
+                        ? "bg-blue-gray-50/80 text-blue-gray-900"
+                        : ""
+                    }`}
+                    onClick={() => setVersion("html")}
+                  >
+                    HTML
+                  </MenuItem>
+                </Link>
+                <Link href={`/docs/react/${link}`}>
+                  <MenuItem
+                    className={`py-1.5 px-2.5 text-xs font-medium ${
+                      version === "react"
+                        ? "bg-blue-gray-50/80 text-blue-gray-900"
+                        : ""
+                    }`}
+                    onClick={() => setVersion("react")}
+                  >
+                    React
+                  </MenuItem>
+                </Link>
+              </MenuList>
+            </Menu>
+          )}
           <Tooltip
             content={copied ? "Copied" : "Copy"}
             placement="top"
