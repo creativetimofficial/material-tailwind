@@ -44,6 +44,16 @@ export default function MyDocument() {
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossOrigin="anonymous"
         />
+        <script
+          defer
+          data-domain="material-tailwind.com"
+          src="https://plausible.io/js/script.js"
+        />
+        <script
+          defer
+          data-site="material-tailwind.com"
+          src="https://cta-api.updivision.work/js/tracker.js"
+        />
       </Head>
       <body className="bg-gray-100 antialiased">
         <noscript>
