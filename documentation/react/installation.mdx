@@ -26,9 +26,68 @@ CSS inspired by Material Design.
 
 <span id="installation" className="scroll-mt-48" />
 
-Learn how to use @material-tailwind/react components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
+1. Create your React app with `npx create-react-app`
 
-`@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>
+2. `@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>
+
+3. Intall `@material-tailwind/react`.
+
+```bash
+npm i @material-tailwind/react
+```
+
+<br />
+
+4. Once you install `@material-tailwind/react` you need to wrap your tailwind css configurations with the `withMT()` function coming from  `@material-tailwind/react/utils`. Edit `tailwind.config.js` file:
+
+```js
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+    Note: Don't found tailwind.config.js file? Back to item 2, install Tailwind first.
+
+<br />
+
+5. `@material-tailwind/react` comes with a theme provider that set's the default theme/styles for components or to provide your own theme/styles to your components. You need to wrap your entire application with the `ThemeProvider` coming from `@material-tailwind/react`. Edit `src\index.js` file:
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+// @material-tailwind/react
+import { ThemeProvider } from "@material-tailwind/react";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+);
+```
+
+<br />
+
+4. Congratulations 🥳, you did it, now you're ready to use `@material-tailwind/react`.
+
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button>Button</Button>;
+}
+```
 
 <br />
 <br />
