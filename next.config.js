@@ -26,12 +26,12 @@ const nextConfig = {
       {
         source: "/blocks/react",
         destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/react",
       },
       {
         source: "/blocks/html",
         destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/html",
       },
     ];
   },
