@@ -16,35 +16,24 @@ const nextConfig = {
       },
     ];
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/blocks",
-  //       destination:
-  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-  //     },
-  //     {
-  //       source: "/blocks/react",
-  //       destination:
-  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/react",
-  //     },
-  //     {
-  //       source: "/blocks/html",
-  //       destination:
-  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/html",
-  //     },
-  //   ];
-  // },
   async rewrites() {
-    return {
-      fallback: [
-        {
-          source: "/blocks/:path*",
-          destination:
-            "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:path*",
-        },
-      ],
-    };
+    return [
+      {
+        source: "/blocks",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+      },
+      {
+        source: "/blocks/react",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/react",
+      },
+      {
+        source: "/blocks/html",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/html",
+      },
+    ];
   },
 };
 
