@@ -1,5 +1,8 @@
 import React from "react";
 
+// framer-motion
+import { useIsomorphicLayoutEffect } from "framer-motion";
+
 // utils
 import merge from "deepmerge";
 import classnames from "classnames";
@@ -44,6 +47,14 @@ export const TabsBody = React.forwardRef<HTMLDivElement, TabsBodyProps>(
     // 4. set animation
     const mainAnimation = React.useMemo(
       () => ({
+        initial: {
+          opacity: 0,
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: 1,
+          transition: { duration: 0 },
+        },
         unmount: {
           opacity: 0,
           position: "absolute",
@@ -67,7 +78,7 @@ export const TabsBody = React.forwardRef<HTMLDivElement, TabsBodyProps>(
       [animate, mainAnimation],
     );
 
-    React.useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       setAnimation(dispatch, appliedAnimation);
     }, [appliedAnimation, dispatch]);
 
