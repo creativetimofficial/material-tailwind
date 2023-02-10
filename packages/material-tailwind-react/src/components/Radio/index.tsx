@@ -18,8 +18,7 @@ import type {
   icon,
   ripple,
   className,
-  containerProps,
-  labelProps,
+  objectType,
 } from "../../types/components/checkbox";
 import {
   propTypesColor,
@@ -27,8 +26,7 @@ import {
   propTypesIcon,
   propTypesRipple,
   propTypesClassName,
-  propTypesContainerProps,
-  propTypesLabelProps,
+  propTypesObject,
 } from "../../types/components/checkbox";
 
 export interface RadioProps extends React.ComponentProps<"input"> {
@@ -37,14 +35,26 @@ export interface RadioProps extends React.ComponentProps<"input"> {
   icon?: icon;
   ripple?: ripple;
   className?: className;
-  containerProps?: containerProps;
-  labelProps?: labelProps;
+  containerProps?: objectType;
+  labelProps?: objectType;
+  iconProps?: objectType;
   inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
-    { color, label, icon, ripple, className, containerProps, labelProps, inputRef, ...rest },
+    {
+      color,
+      label,
+      icon,
+      ripple,
+      className,
+      containerProps,
+      labelProps,
+      iconProps,
+      inputRef,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
@@ -54,8 +64,13 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
 
     // 2. set default props
     color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
     className = className ?? defaultProps.className;
+    containerProps = containerProps ?? defaultProps.containerProps;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    iconProps = iconProps ?? defaultProps.iconProps;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -75,8 +90,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     );
     const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
     const radioIconClasses = classnames(
-      "absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity",
+      classnames(objectsToString(base.icon)),
       colors[findMatch(valid.colors, color, "blue")].color,
+      iconProps?.className,
     );
 
     return (
@@ -102,7 +118,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             className={inputClasses}
             id={rest.id || "radio"}
           />
-          <div className={radioIconClasses}>
+          <span className={radioIconClasses}>
             {icon || (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +129,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
                 <circle data-name="ellipse" cx="8" cy="8" r="8" />
               </svg>
             )}
-          </div>
+          </span>
         </label>
         {label && (
           <label {...labelProps} className={labelClasses} htmlFor={rest.id || "radio"}>
@@ -131,8 +147,8 @@ Radio.propTypes = {
   icon: propTypesIcon,
   ripple: propTypesRipple,
   className: propTypesClassName,
-  containerProps: propTypesContainerProps,
-  labelProps: propTypesLabelProps,
+  containerProps: propTypesObject,
+  labelProps: propTypesObject,
 };
 
 Radio.displayName = "MaterialTailwind.Radio";
