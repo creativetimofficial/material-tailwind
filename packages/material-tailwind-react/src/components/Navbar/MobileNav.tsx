@@ -3,10 +3,12 @@ import React from "react";
 // framer-motion components
 import { AnimatePresence, AnimatePresenceProps, motion, MotionProps } from "framer-motion";
 
+// @floating-ui
+import { useMergeRefs } from "@floating-ui/react";
+
 // utils
 import merge from "deepmerge";
 import classnames from "classnames";
-import mergeRefs from "react-merge-refs";
 import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
@@ -73,7 +75,7 @@ export const MobileNav = React.forwardRef<HTMLDivElement, MobileNavProps>(
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
     // 5. set refs
-    const mergedRef = React.useMemo(() => mergeRefs([ref, mobileNavRef]), [ref, mobileNavRef]);
+    const mergedRef = useMergeRefs([ref, mobileNavRef]);
 
     // 6. return
     return (

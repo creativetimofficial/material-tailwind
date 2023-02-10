@@ -15,13 +15,13 @@ import {
   useHover,
   useFocus,
   FloatingPortal,
+  useMergeRefs,
 } from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
 import merge from "deepmerge";
@@ -143,8 +143,8 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
       }
     }, [open, update, refs.reference, refs.floating]);
 
-    const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
-    const childMergedRef = React.useMemo(() => mergeRefs([ref, reference]), [reference, ref]);
+    const mergedRef = useMergeRefs([ref, floating]);
+    const childMergedRef = useMergeRefs([ref, reference]);
 
     // 6. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;

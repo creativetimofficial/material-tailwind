@@ -1,13 +1,12 @@
 import React from "react";
 
 // @floating-ui
-import { FloatingPortal, FloatingFocusManager } from "@floating-ui/react";
+import { FloatingPortal, FloatingFocusManager, useMergeRefs } from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
@@ -54,7 +53,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
     const popoverClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. set refs
-    const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
+    const mergedRef = useMergeRefs([ref, floating]);
 
     // 5. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
