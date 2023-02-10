@@ -64,11 +64,11 @@ export const button: ButtonStyleTypes = {
   styles: {
     base: {
       initial: {
-        verticalAlign: "middle",
-        userSelect: "none",
+        verticalAlign: "align-middle",
+        userSelect: "select-none",
         fontFamily: "font-sans",
         fontWeight: "font-bold",
-        textAlign: "center",
+        textAlign: "text-center",
         textTransform: "uppercase",
         transition: "transition-all",
         disabled: "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
