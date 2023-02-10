@@ -8,7 +8,7 @@ const MaterialTailwindTheme = createContext(theme);
 
 MaterialTailwindTheme.displayName = "MaterialTailwindThemeProvider";
 
-function ThemeProvider({ value, children }) {
+function ThemeProvider({ value = theme, children }) {
   const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
 
   return (
@@ -17,10 +17,6 @@ function ThemeProvider({ value, children }) {
 }
 
 const useTheme = () => useContext(MaterialTailwindTheme);
-
-ThemeProvider.defaultProps = {
-  value: theme,
-};
 
 ThemeProvider.propTypes = {
   value: PropTypes.instanceOf(Object),
