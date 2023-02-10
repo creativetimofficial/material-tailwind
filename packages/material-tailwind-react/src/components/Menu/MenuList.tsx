@@ -104,7 +104,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
               getItemProps({
                 tabIndex: activeIndex === index ? 0 : -1,
                 role: "menuitem",
-                className: "MenuItem",
+                className: child.props.className,
                 ref(node: HTMLButtonElement) {
                   listItemsRef.current[index] = node;
                 },
