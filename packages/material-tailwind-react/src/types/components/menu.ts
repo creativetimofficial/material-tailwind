@@ -2,7 +2,13 @@ import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // @floating-ui types
-import type { Placement, Strategy, FloatingContext, ReferenceType } from "@floating-ui/react";
+import type {
+  Placement,
+  Strategy,
+  FloatingContext,
+  ReferenceType,
+  FloatingTreeType,
+} from "@floating-ui/react";
 
 // generic types
 import type { dismissType, animation, offsetType } from "../generic";
@@ -35,7 +41,7 @@ export type contextValue = {
   strategy: Strategy;
   x: number;
   y: number;
-  reference: (node: HTMLElement) => void;
+  reference: (instance: HTMLButtonElement) => void;
   floating: (node: HTMLElement) => void;
   listItemsRef: React.MutableRefObject<any[]>;
   getReferenceProps: (userProps?: React.HTMLProps<Element>) => any;
@@ -44,6 +50,11 @@ export type contextValue = {
   appliedAnimation: animate;
   lockScroll: boolean;
   context: FloatingContext<ReferenceType>;
+  tree: FloatingTreeType<ReferenceType>;
+  allowHover: boolean;
+  activeIndex: number;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+  nested: boolean;
 };
 
 // javascript prop-types
@@ -73,4 +84,9 @@ export const propTypesContextValue: any = PropTypes.shape({
   appliedAnimation: propTypesAnimate.isRequired,
   lockScroll: PropTypes.bool.isRequired,
   context: PropTypes.instanceOf(Object).isRequired,
+  tree: PropTypes.any.isRequired,
+  allowHover: PropTypes.bool.isRequired,
+  activeIndex: PropTypes.number.isRequired,
+  setActiveIndex: PropTypes.func.isRequired,
+  nested: PropTypes.bool.isRequired,
 });
