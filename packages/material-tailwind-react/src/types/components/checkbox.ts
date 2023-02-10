@@ -11,7 +11,7 @@ import { propTypesColors } from "../generic";
 
 // typescript types
 export type color = colors;
-export type label = string;
+export type label = ReactNode;
 export type icon = ReactNode;
 export type ripple = boolean;
 export type className = string;
@@ -27,7 +27,7 @@ export type circleProps = {
 
 // javascript prop-types
 export const propTypesColor: any = propTypesColors;
-export const propTypesLabel: any = PropTypes.string;
+export const propTypesLabel: any = PropTypes.node;
 export const propTypesIcon: any = PropTypes.node;
 export const propTypesRipple: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
