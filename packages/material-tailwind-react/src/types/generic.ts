@@ -24,6 +24,7 @@ export type colors =
   | "red";
 
 export type animation = {
+  initial?: object;
   mount?: object;
   unmount?: object;
 };
