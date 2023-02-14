@@ -11,8 +11,8 @@ const breakpoints = require("../theme/base/breakpoints");
 const materialTailwindConfig = {
   darkMode: "class",
   content: [
-    __dirname + "@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
-    __dirname + "@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+    __dirname + "/components/**/*.{js,ts,jsx,tsx}",
+    __dirname + "/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors,
