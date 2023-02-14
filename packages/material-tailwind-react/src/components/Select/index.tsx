@@ -259,12 +259,12 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     React.useEffect(() => {
       if (open) {
         setState("open");
-      } else if (!open && selectedIndex) {
+      } else if ((!open && selectedIndex) || (!open && value)) {
         setState("withValue");
       } else {
         setState("close");
       }
-    }, [open, selectedIndex]);
+    }, [open, value, selectedIndex, selected]);
 
     // 4. set styles
     const selectVariant = variants[findMatch(valid.variants, variant, "outlined")];
