@@ -83,6 +83,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
     className = className ?? defaultProps.className;
+    shrink = shrink ?? defaultProps.shrink;
     icon = icon ?? defaultProps.icon;
 
     // 3. set styles
