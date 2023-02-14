@@ -63,6 +63,13 @@ const textareaStandard = {
       after: "after:border-green-500 peer-focus:after:border-green-500",
     },
   },
+  shrink: {
+    textarea: {},
+    label: {
+      fontSize: "!text-[11px]",
+      lineHeight: "!leading-tight",
+    },
+  },
 };
 
 export default textareaStandard;

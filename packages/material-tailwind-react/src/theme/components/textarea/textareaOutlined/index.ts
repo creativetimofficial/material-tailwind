@@ -73,6 +73,16 @@ const textareaOutlined = {
       after: "after:border-green-500 peer-focus:after:border-green-500",
     },
   },
+  shrink: {
+    textarea: {
+      borderTop: "!border-t-transparent",
+    },
+    label: {
+      fontSize: "!text-[11px]",
+      lineHeight: "!leading-tight",
+      borderColor: "before:!border-blue-gray-200 after:!border-blue-gray-200",
+    },
+  },
 };
 
 export default textareaOutlined;

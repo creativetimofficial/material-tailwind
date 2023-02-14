@@ -18,8 +18,7 @@ import type {
   icon,
   ripple,
   className,
-  containerProps,
-  labelProps,
+  objectType,
 } from "../../types/components/checkbox";
 import {
   propTypesColor,
@@ -27,8 +26,7 @@ import {
   propTypesIcon,
   propTypesRipple,
   propTypesClassName,
-  propTypesContainerProps,
-  propTypesLabelProps,
+  propTypesObject,
 } from "../../types/components/checkbox";
 
 export interface CheckboxProps extends React.ComponentProps<"input"> {
@@ -37,14 +35,26 @@ export interface CheckboxProps extends React.ComponentProps<"input"> {
   icon?: icon;
   ripple?: ripple;
   className?: className;
-  containerProps?: containerProps;
-  labelProps?: labelProps;
+  containerProps?: objectType;
+  labelProps?: objectType;
+  iconProps?: objectType;
   inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   (
-    { color, label, icon, ripple, className, containerProps, labelProps, inputRef, ...rest },
+    {
+      color,
+      label,
+      icon,
+      ripple,
+      className,
+      containerProps,
+      labelProps,
+      iconProps,
+      inputRef,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
@@ -54,8 +64,13 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
     // 2. set default props
     color = color ?? defaultProps.color;
+    label = label ?? defaultProps.label;
+    icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
     className = className ?? defaultProps.className;
+    containerProps = containerProps ?? defaultProps.containerProps;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    iconProps = iconProps ?? defaultProps.iconProps;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -74,6 +89,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       className,
     );
     const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
+    const iconContainerClasses = twMerge(
+      classnames(objectsToString(base.icon)),
+      iconProps?.className,
+    );
 
     return (
       <div ref={ref} className={rootClasses}>
@@ -98,7 +117,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             className={inputClasses}
             id={rest.id || "checkbox"}
           />
-          <div className="text-white absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity">
+          <span className={iconContainerClasses}>
             {icon || (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +134,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
                 />
               </svg>
             )}
-          </div>
+          </span>
         </label>
         {label && (
           <label {...labelProps} className={labelClasses} htmlFor={rest.id || "checkbox"}>
@@ -133,8 +152,8 @@ Checkbox.propTypes = {
   icon: propTypesIcon,
   ripple: propTypesRipple,
   className: propTypesClassName,
-  containerProps: propTypesContainerProps,
-  labelProps: propTypesLabelProps,
+  containerProps: propTypesObject,
+  labelProps: propTypesObject,
 };
 
 Checkbox.displayName = "MaterialTailwind.Checkbox";

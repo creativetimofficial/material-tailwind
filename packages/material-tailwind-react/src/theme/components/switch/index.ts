@@ -7,9 +7,7 @@ import type {
   icon,
   ripple,
   className,
-  containerProps,
-  labelProps,
-  circleProps,
+  objectType,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
 
@@ -19,9 +17,9 @@ export interface SwitchButtonStylesType {
     label?: label;
     ripple?: ripple;
     className?: className;
-    containerProps?: containerProps;
-    labelProps?: labelProps;
-    circleProps?: circleProps;
+    containerProps?: objectType;
+    labelProps?: objectType;
+    circleProps?: objectType;
   };
   valid?: {
     colors?: string[];

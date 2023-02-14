@@ -10,7 +10,7 @@ import objectsToString from "../../utils/objectsToString";
 
 // context
 import { useTheme } from "../../context/theme";
-import { useTabs, setActive } from "./TabsContext";
+import { useTabs, setActive, setIsInitial } from "./TabsContext";
 
 // types
 import type { value, className, disabled, children } from "../../types/components/tabs";
@@ -67,9 +67,11 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
 
           if (typeof onClick === "function") {
             setActive(dispatch, value);
+            setIsInitial(dispatch, false);
             onClick(e);
           }
 
+          setIsInitial(dispatch, false);
           setActive(dispatch, value);
         }}
         data-value={value}

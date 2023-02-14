@@ -20,6 +20,7 @@ import type {
   resize,
   labelProps,
   className,
+  shrink,
 } from "../../types/components/input";
 import {
   propTypesVariant,
@@ -31,6 +32,7 @@ import {
   propTypesResize,
   propTypesLabelProps,
   propTypesClassName,
+  propTypesShrink,
 } from "../../types/components/input";
 
 export interface TextareaProps extends React.ComponentProps<"textarea"> {
@@ -42,12 +44,13 @@ export interface TextareaProps extends React.ComponentProps<"textarea"> {
   success?: success;
   resize?: resize;
   labelProps?: labelProps;
+  shrink?: shrink;
   className?: className;
 }
 
 export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
   (
-    { variant, color, size, label, error, success, resize, labelProps, className, ...rest },
+    { variant, color, size, label, error, success, resize, labelProps, shrink, className, ...rest },
     ref,
   ) => {
     // 1. init
@@ -61,17 +64,20 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
+    shrink = shrink ?? defaultProps.shrink;
     className = className ?? defaultProps.className;
 
     // 3. set styles
     const textareaVariant = variants[findMatch(valid.variants, variant, "outlined")];
     const textareaError = objectsToString(textareaVariant.error.textarea);
     const textareaSuccess = objectsToString(textareaVariant.success.textarea);
+    const textareaShrink = objectsToString(textareaVariant.shrink.textarea);
     const textareaColor = objectsToString(
       textareaVariant.colors.textarea[findMatch(valid.colors, color, "blue")],
     );
     const labelError = objectsToString(textareaVariant.error.label);
     const labelSuccess = objectsToString(textareaVariant.success.label);
+    const labelShrink = objectsToString(textareaVariant.shrink.label);
     const labelColor = objectsToString(
       textareaVariant.colors.label[findMatch(valid.colors, color, "blue")],
     );
@@ -83,6 +89,7 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
       { [textareaColor]: !error && !success },
       { [textareaError]: error },
       { [textareaSuccess]: success },
+      { [textareaShrink]: shrink },
       !resize ? "!resize-none" : "",
       className,
     );
@@ -93,6 +100,7 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
+      { [labelShrink]: shrink },
       labelProps?.className,
     );
 

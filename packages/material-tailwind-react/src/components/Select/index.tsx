@@ -170,28 +170,29 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const [controlledScrolling, setControlledScrolling] = React.useState(false);
     const prevActiveIndex = usePrevious<number | null>(activeIndex);
 
+    const { x, y, strategy, refs, context } = useFloating({
+      placement: "bottom-start",
+      open,
+      onOpenChange: setOpen,
+      whileElementsMounted: autoUpdate,
+      middleware: [
+        fuiOffset(5),
+        flip({ padding: 10 }),
+        fuiSize({
+          apply({ rects, elements }: any) {
+            Object.assign(elements?.floating?.style, {
+              width: `${rects?.reference?.width}px`,
+              zIndex: 99,
+            });
+          },
+          padding: 20,
+        }),
+      ],
+    });
+
     React.useEffect(() => {
       setSelectedIndex(Math.max(0, listContentRef.current.indexOf(value) + 1));
     }, [value]);
-
-    const { x, y, reference, floating, strategy, context, refs, middlewareData, update } =
-      useFloating({
-        open,
-        onOpenChange: setOpen,
-        middleware: [
-          fuiOffset(offset),
-          flip({ padding: 8 }),
-          fuiSize({
-            apply({ rects, elements }: any) {
-              Object.assign(elements?.floating?.style, {
-                width: `${rects?.reference?.width}px`,
-                zIndex: 99,
-              });
-            },
-            padding: 20,
-          }),
-        ],
-      });
 
     const floatingRef = refs.floating;
 
@@ -204,20 +205,15 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         activeIndex,
         selectedIndex,
         onNavigate: setActiveIndex,
+        loop: true,
       }),
       useTypeahead(context, {
         listRef: listContentRef,
-        onMatch: open ? setActiveIndex : setSelectedIndex,
         activeIndex,
         selectedIndex,
+        onMatch: open ? setActiveIndex : setSelectedIndex,
       }),
     ]);
-
-    React.useEffect(() => {
-      if (refs.reference.current && refs.floating.current && open) {
-        return autoUpdate(refs.reference.current, refs.floating.current, update);
-      }
-    }, [refs.reference, refs.floating, open, update]);
 
     useIsomorphicLayoutEffect(() => {
       const floating = floatingRef.current;
@@ -245,16 +241,6 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       }
     }, [open, controlledScrolling, prevActiveIndex, activeIndex]);
 
-    useIsomorphicLayoutEffect(() => {
-      const floating = refs.floating.current;
-      if (open && floating && floating.offsetHeight < floating.scrollHeight) {
-        const item = listItemsRef.current[selectedIndex];
-        if (item) {
-          floating.scrollTop = item.offsetTop - floating.offsetHeight / 2 + item.offsetHeight / 2;
-        }
-      }
-    }, [open, selectedIndex, refs.floating, refs.reference, middlewareData]);
-
     const contextValue = React.useMemo(
       () => ({
         selectedIndex,
@@ -273,12 +259,12 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     React.useEffect(() => {
       if (open) {
         setState("open");
-      } else if (!open && selectedIndex) {
+      } else if ((!open && selectedIndex) || (!open && value)) {
         setState("withValue");
       } else {
         setState("close");
       }
-    }, [open, selectedIndex]);
+    }, [open, value, selectedIndex, selected]);
 
     // 4. set styles
     const selectVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -363,17 +349,17 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
 
     // 8. select menu
     const selectMenu = (
-      <FloatingFocusManager context={context}>
+      <FloatingFocusManager context={context} modal={false}>
         <motion.ul
           {...getFloatingProps({
             ...menuProps,
-            ref: floating,
+            ref: refs.setFloating,
             role: "listbox",
             className: menuClasses,
             style: {
               position: strategy,
-              top: y ?? "",
-              left: x ?? "",
+              top: y ?? 0,
+              left: x ?? 0,
               overflow: "auto",
             },
             onPointerEnter(e) {
@@ -428,7 +414,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             type="button"
             {...getReferenceProps({
               ...rest,
-              ref: reference,
+              ref: refs.setReference,
               className: selectClasses,
               disabled: disabled,
               name: name,

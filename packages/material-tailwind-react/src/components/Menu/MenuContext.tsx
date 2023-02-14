@@ -9,7 +9,7 @@ export interface MenuContextProviderProps {
   children: children;
 }
 
-export const MenuContext = React.createContext<contextValue | null>(null);
+export const MenuContext = React.createContext<null | contextValue>(null);
 MenuContext.displayName = "MaterialTailwind.MenuContext";
 
 export function useMenu() {

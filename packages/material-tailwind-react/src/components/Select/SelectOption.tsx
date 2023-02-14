@@ -27,9 +27,14 @@ export interface SelectOptionProps extends React.ComponentProps<"li"> {
   children: children;
 }
 
-export const SelectOption = (props: SelectOptionProps) => {
-  // 1. init
-  const { value, index, disabled, className, children, ...rest } = props;
+export const SelectOption = ({
+  value = "",
+  index = 0,
+  disabled = false,
+  className = "",
+  children,
+  ...rest
+}: SelectOptionProps) => {
   const { select } = useTheme();
   const { styles } = select;
   const { base } = styles;
@@ -110,13 +115,6 @@ export const SelectOption = (props: SelectOptionProps) => {
       {children}
     </li>
   );
-};
-
-SelectOption.defaultProps = {
-  value: "",
-  index: 0,
-  className: "",
-  disabled: false,
 };
 
 SelectOption.propTypes = {
