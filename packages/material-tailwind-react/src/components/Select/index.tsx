@@ -215,6 +215,32 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       }),
     ]);
 
+    useIsomorphicLayoutEffect(() => {
+      const floating = floatingRef.current;
+
+      if (open && controlledScrolling && floating) {
+        const item =
+          activeIndex != null
+            ? listItemsRef.current[activeIndex]
+            : selectedIndex != null
+            ? listItemsRef.current[selectedIndex]
+            : null;
+
+        if (item && prevActiveIndex != null) {
+          const itemHeight = listItemsRef.current[prevActiveIndex]?.offsetHeight ?? 0;
+          const floatingHeight = floating.offsetHeight;
+          const top = item.offsetTop;
+          const bottom = top + itemHeight;
+
+          if (top < floating.scrollTop) {
+            floating.scrollTop -= floating.scrollTop - top + 5;
+          } else if (bottom > floatingHeight + floating.scrollTop) {
+            floating.scrollTop += bottom - floatingHeight - floating.scrollTop + 5;
+          }
+        }
+      }
+    }, [open, controlledScrolling, prevActiveIndex, activeIndex]);
+
     const contextValue = React.useMemo(
       () => ({
         selectedIndex,
