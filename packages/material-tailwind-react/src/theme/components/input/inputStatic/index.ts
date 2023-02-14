@@ -79,6 +79,10 @@ const inputStatic = {
       after: "after:border-green-500 peer-focus:after:border-green-500",
     },
   },
+  shrink: {
+    input: {},
+    label: {},
+  },
 };
 
 export default inputStatic;

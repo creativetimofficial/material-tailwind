@@ -1,7 +1,7 @@
 import React from "react";
 
-// utils
-import mergeRefs from "react-merge-refs";
+// @floating-ui
+import { useMergeRefs } from "@floating-ui/react";
 
 // context
 import { useMenu } from "./MenuContext";
@@ -14,16 +14,22 @@ export interface MenuHandlerProps extends React.ComponentProps<any> {
   children: children | React.ComponentProps<any>;
 }
 
-export const MenuHandler = React.forwardRef<HTMLElement, MenuHandlerProps>(
+export const MenuHandler = React.forwardRef<HTMLButtonElement, MenuHandlerProps>(
   ({ children, ...rest }, ref) => {
-    const { getReferenceProps, reference } = useMenu();
+    const { getReferenceProps, reference, nested } = useMenu();
 
-    const mergedRef = React.useMemo(() => mergeRefs([ref, reference]), [ref, reference]);
+    const mergedRef = useMergeRefs([ref, reference]);
 
     return React.cloneElement(children, {
       ...getReferenceProps({
         ...rest,
         ref: mergedRef,
+        onClick(event) {
+          event.stopPropagation();
+        },
+        ...(nested && {
+          role: "menuitem",
+        }),
       }),
     });
   },

@@ -79,6 +79,13 @@ const inputStandard = {
       after: "after:border-green-500 peer-focus:after:border-green-500",
     },
   },
+  shrink: {
+    input: {},
+    label: {
+      fontSize: "!text-[11px]",
+      lineHeight: "!leading-tight",
+    },
+  },
 };
 
 export default inputStandard;

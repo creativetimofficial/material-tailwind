@@ -22,34 +22,35 @@ export interface MenuItemProps extends React.ComponentProps<"li"> {
   children: children;
 }
 
-export const MenuItem = React.forwardRef<HTMLLIElement, MenuItemProps>(
-  ({ className, disabled, children, ...rest }, ref) => {
-    // 1. init
-    const { menu } = useTheme();
-    const {
-      styles: { base },
-    } = menu;
+export const MenuItem = React.forwardRef<
+  HTMLButtonElement,
+  MenuItemProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, disabled, children, ...rest }, ref) => {
+  // 1. init
+  const { menu } = useTheme();
+  const {
+    styles: { base },
+  } = menu;
 
-    // 2. set default props
-    className = className ?? "";
-    disabled = disabled ?? false;
+  // 2. set default props
+  className = className ?? "";
+  disabled = disabled ?? false;
 
-    // 3. set styles
-    const menuItemClasses = twMerge(
-      classnames(objectsToString(base.item.initial), {
-        [objectsToString(base.item.disabled)]: disabled,
-      }),
-      className,
-    );
+  // 3. set styles
+  const menuItemClasses = twMerge(
+    classnames(objectsToString(base.item.initial), {
+      [objectsToString(base.item.disabled)]: disabled,
+    }),
+    className,
+  );
 
-    // 4. return
-    return (
-      <li {...rest} ref={ref} role="menuitem" className={menuItemClasses}>
-        {children}
-      </li>
-    );
-  },
-);
+  // 4. return
+  return (
+    <button {...rest} ref={ref} role="menuitem" className={menuItemClasses}>
+      {children}
+    </button>
+  );
+});
 
 MenuItem.propTypes = {
   className: propTypesClassName,

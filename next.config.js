@@ -24,14 +24,9 @@ const nextConfig = {
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
       },
       {
-        source: "/blocks/react",
+        source: "/blocks/:slug*",
         destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-      },
-      {
-        source: "/blocks/html",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
       },
     ];
   },

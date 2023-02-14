@@ -116,25 +116,26 @@ export default function Example() {
     },
   ];
 
-  return (
-    <Tabs value="html">
-      <TabsHeader>
-        {data.map(({ label, value }) => (
-          <Tab key={value} value={value}>
-          {label}
-          </Tab>
-        ))}
-      </TabsHeader>
-      <TabsBody>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
-  );
-}
+return (
+
+<Tabs value="html">
+  <TabsHeader>
+    {data.map(({ label, value }) => (
+      <Tab key={value} value={value}>
+        {label}
+      </Tab>
+    ))}
+  </TabsHeader>
+  <TabsBody>
+    {data.map(({ value, desc }) => (
+      <TabPanel key={value} value={value}>
+        {desc}
+      </TabPanel>
+    ))}
+  </TabsBody>
+</Tabs>
+); }
+
 ````
 </CodePreview>
 
@@ -155,6 +156,7 @@ You can modify the open/close state animation for <Code>TabsBody</Code> componen
     </TabsHeader>
     <TabsBody
       animate={{
+        initial: { y: 250 },
         mount: { y: 0 },
         unmount: { y: 250 },
       }}
@@ -248,6 +250,7 @@ export default function Example() {
       </TabsHeader>
       <TabsBody
         animate={{
+          initial: { y: 250 },
           mount: { y: 0 },
           unmount: { y: 250 },
         }}
