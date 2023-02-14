@@ -8,6 +8,7 @@ navigation:
     "yarn",
     "pnpm",
     "tailwindcss-config",
+    "with-server-components",
     "with-monorepo",
     "theme-provider",
     "example",
@@ -22,10 +23,21 @@ next: license
 <span id="installation" className="scroll-mt-48" />
 Learn how to setup and install @material-tailwind/react with Next.js.
 
-> `@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/guides/nextjs?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>.
+<br />
+<br />
+
+First you need to create a new project using next.js, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://nextjs.org/docs/getting-started?ref=material-tailwind">Next.JS Official Documentation</a>
+
+```bash
+npx create-next-app@latest
+```
 
 <br />
-<br />
+
+Then you need to install Tailwind CSS since @material-tailwind/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
+Check <a href="https://tailwindcss.com/docs/guides/nextjs?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation</a> for next.js on Tailwind CSS Documentation.
+
+---
 
 ## Using NPM
 
@@ -87,7 +99,7 @@ module.exports = withMT({
 
 <span id="with-monorepo" className="scroll-mt-48" />
 
-If you're using monorepo in your project you need to add the `theme` and `components` paths to your `tailwind.config.js`.
+By default @material-tailwind/react supports monorepo but in case if you don't get the correct styles add the <Code>theme</Code> and <Code>components</Code> paths to your <Code>tailwind.config.js</Code>.
 
 ```js {6,7}
 const withMT = require("@material-tailwind/react/utils/withMT");
@@ -103,6 +115,36 @@ module.exports = withMT({
   },
   plugins: [],
 });
+```
+
+---
+
+## With Next.js 13 appDir and Server Components
+
+<span id="with-server-components" className="scroll-mt-48" />
+
+If you want to use @material-tailwind/react with Next.js 13 appDir feature you need to make use of the <br /> <Code>'use client'</Code> to makes it possible a simple approach is to make a new export file for the components you want to use from @material-tailwind/react
+
+```js
+"use client";
+
+import { ThemeProvider, Button } from "@material-tailwind/react";
+
+export { ThemeProvider, Button };
+```
+
+<br />
+<br />
+
+Once you've created the export file for the components now you need to import the
+components you want to use from that new created file rather than @material-tailwind/react.
+
+```js
+// ❌ invalid - this is not working with server components
+import { Button } from "@material-tailwind/react";
+
+// ✅ valid - this will work fine with server components
+import { Button } from "path/to/the/new/file";
 ```
 
 ---
@@ -135,14 +177,12 @@ export default function MyApp({ Component, pageProps }) {
 
 Now you're good to go and use @material-tailwind/react in your project.
 
-<ComponentDemo id="example">
-  <Button>Button</Button>
-</ComponentDemo>
-
-```jsx {1, 4}
+<CodePreview id="example" component={<Button>Button</Button>}>
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {
   return <Button>Button</Button>;
 }
 ```
+</CodePreview>

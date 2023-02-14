@@ -61,8 +61,8 @@ export const iconButton: IconButtonStyleTypes = {
   styles: {
     base: {
       position: "relative",
-      verticalAlign: "middle",
-      userSelect: "none",
+      verticalAlign: "align-middle",
+      userSelect: "select-none",
       fontFamily: "font-sans",
       fontWeight: "font-medium",
       textAlign: "text-center",

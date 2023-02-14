@@ -12,7 +12,7 @@ import { MenuHandler, MenuHandlerProps } from "./MenuHandler";
 import { MenuList, MenuListProps } from "./MenuList";
 import { MenuItem, MenuItemProps } from "./MenuItem";
 
-const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
+const Menu = React.forwardRef<HTMLButtonElement, MenuProps>(
   ({ open, handler, placement, offset, dismiss, animate, lockScroll, children }, ref) => {
     // 1. init
     const parentId = useFloatingParentNodeId();

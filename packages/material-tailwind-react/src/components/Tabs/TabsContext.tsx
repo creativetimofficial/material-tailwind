@@ -16,12 +16,14 @@ export interface TabsContextType {
   state: {
     id: id;
     active: valueType;
+    isInitial: boolean;
     appliedAnimation: animate;
     indicatorProps: indicatorProps;
   };
   dispatch: React.Dispatch<{
     id: id;
     active: valueType;
+    isInitial: boolean;
     appliedAnimation: animate;
     indicatorProps: indicatorProps;
   }>;
@@ -46,6 +48,9 @@ function reducer(state, action) {
     }
     case "SET_INDICATOR": {
       return { ...state, indicatorProps: action.value };
+    }
+    case "SET_IS_INITIAL": {
+      return { ...state, isInitial: action.value };
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -73,7 +78,9 @@ export const TabsContextProvider = ({ id, value, children }: TabsContextProvider
     () => ({
       id: id ?? "indicator",
       active: value,
+      isInitial: true,
       appliedAnimation: {
+        initial: {},
         unmount: {},
         mount: {},
       },
@@ -96,6 +103,8 @@ export const setAnimation = (dispatch: (arg: object) => void, value: animate) =>
   dispatch({ type: "SET_ANIMATION", value });
 export const setIndicator = (dispatch: (arg: object) => void, value: indicatorProps) =>
   dispatch({ type: "SET_INDICATOR", value });
+export const setIsInitial = (dispatch: (arg: object) => void, value: boolean) =>
+  dispatch({ type: "SET_IS_INITIAL", value });
 
 TabsContextProvider.propTypes = {
   id: propTypesId,

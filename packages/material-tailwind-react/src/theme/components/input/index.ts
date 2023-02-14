@@ -12,6 +12,7 @@ import type {
   success,
   icon,
   labelProps,
+  shrink,
   className,
 } from "../../../types/components/input";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/input";
@@ -45,6 +46,7 @@ export interface InputVariantStylesType {
   };
   error?: InputStateStylesType;
   success?: InputStateStylesType;
+  shrink?: InputStateStylesType;
 }
 
 export interface InputStylesType {
@@ -57,6 +59,7 @@ export interface InputStylesType {
     success?: success;
     icon?: icon;
     labelProps?: labelProps;
+    shrink?: shrink;
     className?: className;
   };
   valid?: {
@@ -90,6 +93,7 @@ export const input: InputStylesType = {
     success: false,
     icon: undefined,
     labelProps: {},
+    shrink: false,
     className: "",
   },
   valid: {

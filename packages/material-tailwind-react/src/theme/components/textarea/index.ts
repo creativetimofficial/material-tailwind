@@ -13,6 +13,7 @@ import type {
   resize,
   labelProps,
   className,
+  shrink,
 } from "../../../types/components/input";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/input";
 
@@ -43,6 +44,7 @@ export interface TextareaVariantStylesType {
   };
   error?: TextareaStateStylesType;
   success?: TextareaStateStylesType;
+  shrink?: TextareaStateStylesType;
 }
 
 export interface TextareaStylesType {
@@ -55,6 +57,7 @@ export interface TextareaStylesType {
     success?: success;
     resize?: resize;
     labelProps?: labelProps;
+    shrink?: shrink;
     className?: className;
   };
   valid?: {
@@ -86,6 +89,7 @@ export const textarea: TextareaStylesType = {
     success: false,
     resize: true,
     labelProps: {},
+    shrink: false,
     className: "",
   },
   valid: {

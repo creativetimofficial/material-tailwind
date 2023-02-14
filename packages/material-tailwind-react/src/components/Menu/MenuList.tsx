@@ -1,11 +1,15 @@
 import React from "react";
 
 // framer-motion
-import { FloatingPortal, FloatingOverlay, FloatingFocusManager } from "@floating-ui/react";
+import {
+  FloatingPortal,
+  FloatingOverlay,
+  FloatingFocusManager,
+  useMergeRefs,
+} from "@floating-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
@@ -34,7 +38,6 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     const {
       open,
       handler,
-      setInternalOpen,
       strategy,
       x,
       y,
@@ -45,6 +48,11 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       appliedAnimation,
       lockScroll,
       context,
+      activeIndex,
+      tree,
+      allowHover,
+      setActiveIndex,
+      nested,
     } = useMenu();
 
     // 2. set default props
@@ -54,22 +62,31 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
     const menuClasses = twMerge(classnames(objectsToString(base.menu)), className);
 
     // 4. set refs
-    const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [ref, floating]);
+    const mergedRef = useMergeRefs([ref, floating]);
 
     // 5. create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
     // 6. menu component
     const menuComponent = (
-      <motion.ul
+      <motion.div
+        {...rest}
+        ref={mergedRef}
+        style={{
+          position: strategy,
+          top: y ?? 0,
+          left: x ?? 0,
+        }}
+        className={menuClasses}
         {...getFloatingProps({
-          ...rest,
-          ref: mergedRef,
-          className: menuClasses,
-          style: {
-            position: strategy,
-            top: y ?? "",
-            left: x ?? "",
+          onKeyDown(event) {
+            if (event.key === "Tab") {
+              handler(false);
+
+              if (event.shiftKey) {
+                event.preventDefault();
+              }
+            }
           },
         })}
         initial="unmount"
@@ -84,26 +101,25 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
             React.cloneElement(
               child,
               getItemProps({
-                ...child.props,
-                onClick: (e) => {
-                  const onClickFunction = child.props?.onClick;
-
-                  if (typeof onClickFunction === "function" && handler) {
-                    onClickFunction(e);
-                  } else if (typeof onClickFunction === "function") {
-                    setInternalOpen(false);
-                    onClickFunction(e);
-                  }
-
-                  setInternalOpen(false);
+                tabIndex: activeIndex === index ? 0 : -1,
+                role: "menuitem",
+                className: child.props.className,
+                ref(node: HTMLButtonElement) {
+                  listItemsRef.current[index] = node;
                 },
-                ref(nodeElement) {
-                  listItemsRef.current[index] = nodeElement;
+                onClick(event) {
+                  child.props.onClick?.(event);
+                  tree?.events.emit("click");
+                },
+                onMouseEnter() {
+                  if (allowHover && open) {
+                    setActiveIndex(index);
+                  }
                 },
               }),
             ),
         )}
-      </motion.ul>
+      </motion.div>
     );
 
     // 7. return
@@ -114,10 +130,26 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
             <>
               {lockScroll ? (
                 <FloatingOverlay lockScroll>
-                  <FloatingFocusManager context={context}>{menuComponent}</FloatingFocusManager>
+                  <FloatingFocusManager
+                    context={context}
+                    modal={!nested}
+                    initialFocus={nested ? -1 : 0}
+                    returnFocus={!nested}
+                    visuallyHiddenDismiss
+                  >
+                    {menuComponent}
+                  </FloatingFocusManager>
                 </FloatingOverlay>
               ) : (
-                <FloatingFocusManager context={context}>{menuComponent}</FloatingFocusManager>
+                <FloatingFocusManager
+                  context={context}
+                  modal={!nested}
+                  initialFocus={nested ? -1 : 0}
+                  returnFocus={!nested}
+                  visuallyHiddenDismiss
+                >
+                  {menuComponent}
+                </FloatingFocusManager>
               )}
             </>
           )}

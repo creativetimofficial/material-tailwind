@@ -12,23 +12,13 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import type {
-  color,
-  label,
-  ripple,
-  className,
-  containerProps,
-  labelProps,
-  circleProps,
-} from "../../types/components/checkbox";
+import type { color, label, ripple, className, objectType } from "../../types/components/checkbox";
 import {
   propTypesColor,
   propTypesLabel,
   propTypesRipple,
   propTypesClassName,
-  propTypesContainerProps,
-  propTypesLabelProps,
-  propTypesCircleProps,
+  propTypesObject,
 } from "../../types/components/checkbox";
 
 export interface SwitchProps extends React.ComponentProps<"input"> {
@@ -36,9 +26,9 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
   label?: label;
   ripple?: ripple;
   className?: className;
-  containerProps?: containerProps;
-  labelProps?: labelProps;
-  circleProps?: circleProps;
+  containerProps?: objectType;
+  labelProps?: objectType;
+  circleProps?: objectType;
   inputRef?: React.Ref<HTMLInputElement>;
 }
 
@@ -127,9 +117,9 @@ Switch.propTypes = {
   label: propTypesLabel,
   ripple: propTypesRipple,
   className: propTypesClassName,
-  containerProps: propTypesContainerProps,
-  labelProps: propTypesLabelProps,
-  circleProps: propTypesCircleProps,
+  containerProps: propTypesObject,
+  labelProps: propTypesObject,
+  circleProps: propTypesObject,
 };
 
 Switch.displayName = "MaterialTailwind.Switch";

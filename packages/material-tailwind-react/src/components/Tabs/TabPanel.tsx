@@ -33,7 +33,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
       styles: { base },
     } = tabPanel;
     const { state } = useTabs();
-    const { active, appliedAnimation } = state;
+    const { active, appliedAnimation, isInitial } = state;
 
     // 2. set default props
     className = className ?? defaultProps.className;
@@ -54,7 +54,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
           className={tabPanelClasses}
           initial="unmount"
           exit="unmount"
-          animate={active === value ? "mount" : "unmount"}
+          animate={active === value ? "mount" : isInitial ? "initial" : "unmount"}
           variants={appliedAnimation}
           data-value={value}
         >

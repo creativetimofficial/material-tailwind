@@ -1,7 +1,7 @@
 {
   "name": "@material-tailwind/react",
   "homepage": "https://material-tailwind.com",
-  "version": "1.2.5",
+  "version": "1.4.0",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "prettier:check": "prettier -c ."
   },
   "dependencies": {
-    "@floating-ui/react": "^0.15.1",
+    "@floating-ui/react": "^0.19.0",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
     "framer-motion": "^6.5.1",
@@ -27,7 +27,6 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-merge-refs": "1.1.0",
     "tailwind-merge": "^1.8.1"
   },
   "peerDependencies": {

@@ -12,13 +12,13 @@ import {
   FloatingPortal,
   FloatingOverlay,
   FloatingFocusManager,
+  useMergeRefs,
 } from "@floating-ui/react";
 
 // framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
-import mergeRefs from "react-merge-refs";
 import classnames from "classnames";
 import merge from "deepmerge";
 import { twMerge } from "tailwind-merge";
@@ -137,7 +137,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
       useDismiss(context, dismiss),
     ]);
 
-    const mergedRef = React.useMemo(() => mergeRefs([ref, floating]), [floating, ref]);
+    const mergedRef = useMergeRefs([ref, floating]);
 
     // 6. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;

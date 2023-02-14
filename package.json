@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.1.0",
-    "@floating-ui/react": "^0.15.1",
+    "@floating-ui/react": "^0.19.0",
     "@heroicons/react": "^2.0.13",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
@@ -35,7 +35,6 @@
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-jsx-parser": "^1.29.0",
-    "react-merge-refs": "^1.1.0",
     "react-simple-code-editor": "^0.13.1",
     "rehype-pretty-code": "^0.3.2",
     "remark-gfm": "^3.0.1",

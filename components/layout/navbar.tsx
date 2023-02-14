@@ -142,7 +142,7 @@ export default function Navbar({
             </li>
           </MenuHandler>
           <MenuList>
-            <MenuItem className="!p-0">
+            <MenuItem className="p-0">
               <Link
                 href="/docs/html/installation"
                 className={`${navbarItemClasses} lg:px-3`}
@@ -150,7 +150,7 @@ export default function Navbar({
                 HTML
               </Link>
             </MenuItem>
-            <MenuItem className="!p-0">
+            <MenuItem className="p-0">
               <Link
                 href="/docs/react/installation"
                 className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
@@ -179,7 +179,7 @@ export default function Navbar({
         </li>
         <li>
           <a
-            href="https://services.creative-tim.com/?ref=material-tailwind"
+            href="https://www.creative-tim.com/services/updivision/?ref=material-tailwind"
             target="_blank"
             rel="noreferrer"
             className={`${navbarItemClasses} px-3 py-2 lg:px-3`}

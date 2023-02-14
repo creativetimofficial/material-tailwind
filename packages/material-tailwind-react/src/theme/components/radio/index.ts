@@ -7,8 +7,7 @@ import type {
   icon,
   ripple,
   className,
-  containerProps,
-  labelProps,
+  objectType,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
 
@@ -19,8 +18,9 @@ export interface RadioStylesType {
     icon?: icon;
     ripple?: ripple;
     className?: className;
-    containerProps?: containerProps;
-    labelProps?: labelProps;
+    containerProps?: objectType;
+    labelProps?: objectType;
+    iconProps?: objectType;
   };
   valid?: {
     colors?: string[];
@@ -31,6 +31,7 @@ export interface RadioStylesType {
       container?: object;
       input?: object;
       label?: object;
+      icon?: object;
     };
     colors: typeof radioColors;
   };
@@ -39,12 +40,13 @@ export interface RadioStylesType {
 export const radio: RadioStylesType = {
   defaultProps: {
     color: "blue",
-    label: "",
+    label: undefined,
     icon: undefined,
     ripple: true,
     className: "",
-    containerProps: {},
-    labelProps: {},
+    containerProps: undefined,
+    labelProps: undefined,
+    iconProps: undefined,
   },
   valid: {
     colors: propTypesColor,
@@ -95,6 +97,15 @@ export const radio: RadioStylesType = {
         userSelect: "select-none",
         cursor: "cursor-pointer",
         mt: "mt-px",
+      },
+      icon: {
+        position: "absolute",
+        top: "top-2/4",
+        left: "left-2/4",
+        translate: "-translate-y-2/4 -translate-x-2/4",
+        pointerEvents: "pointer-events-none",
+        opacity: "opacity-0 peer-checked:opacity-100",
+        transition: "transition-opacity",
       },
     },
     colors: radioColors,

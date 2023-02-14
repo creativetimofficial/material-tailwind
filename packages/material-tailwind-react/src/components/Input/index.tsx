@@ -20,6 +20,7 @@ import type {
   icon,
   labelProps,
   containerProps,
+  shrink,
   className,
 } from "../../types/components/input";
 import {
@@ -32,6 +33,7 @@ import {
   propTypesIcon,
   propTypesLabelProps,
   propTypesContainerProps,
+  propTypesShrink,
   propTypesClassName,
 } from "../../types/components/input";
 
@@ -46,6 +48,7 @@ export interface InputProps extends Omit<React.ComponentProps<"input">, "size"> 
   labelProps?: labelProps;
   containerProps?: containerProps;
   className?: className;
+  shrink?: shrink;
   inputRef?: React.Ref<HTMLInputElement>;
 }
 
@@ -62,6 +65,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       containerProps,
       labelProps,
       className,
+      shrink,
       inputRef,
       ...rest
     },
@@ -79,6 +83,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
     className = className ?? defaultProps.className;
+    shrink = shrink ?? defaultProps.shrink;
     icon = icon ?? defaultProps.icon;
 
     // 3. set styles
@@ -86,11 +91,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputSize = inputVariant.sizes[findMatch(valid.sizes, size, "md")];
     const inputError = objectsToString(inputVariant.error.input);
     const inputSuccess = objectsToString(inputVariant.success.input);
+    const inputShrink = objectsToString(inputVariant.shrink.input);
     const inputColor = objectsToString(
       inputVariant.colors.input[findMatch(valid.colors, color, "blue")],
     );
     const labelError = objectsToString(inputVariant.error.label);
     const labelSuccess = objectsToString(inputVariant.success.label);
+    const labelShrink = objectsToString(inputVariant.shrink.label);
     const labelColor = objectsToString(
       inputVariant.colors.label[findMatch(valid.colors, color, "blue")],
     );
@@ -107,6 +114,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       { [inputColor]: !error && !success },
       { [inputError]: error },
       { [inputSuccess]: success },
+      { [inputShrink]: shrink },
       className,
     );
     const labelClasses = classnames(
@@ -116,6 +124,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
+      { [labelShrink]: shrink },
       labelProps?.className,
     );
     const iconClasses = classnames(
@@ -153,6 +162,7 @@ Input.propTypes = {
   icon: propTypesIcon,
   labelProps: propTypesLabelProps,
   containerProps: propTypesContainerProps,
+  shrink: propTypesShrink,
   className: propTypesClassName,
 };
 

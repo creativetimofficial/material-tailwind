@@ -22,10 +22,21 @@ next: license
 <span id="installation" className="scroll-mt-48" />
 Learn how to setup and install @material-tailwind/react with Vite (React).
 
-> `@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/guides/vite?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation.</a>.
+<br />
+<br />
+
+First you need to create a new project using vite, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://remix.run/docs/en/v1?ref=material-tailwind">Vite Official Documentation</a>
+
+```bash
+npm create vite@latest
+```
 
 <br />
-<br />
+
+Then you need to install Tailwind CSS since @material-tailwind/react is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
+Check <a href="https://tailwindcss.com/docs/guides/vite?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">Tailwind CSS Installation</a> for vite on Tailwind CSS Documentation
+
+---
 
 ## Using NPM
 
@@ -87,7 +98,7 @@ module.exports = withMT({
 
 <span id="with-monorepo" className="scroll-mt-48" />
 
-If you're using monorepo in your project you need to add the `theme` and `components` paths to your `tailwind.config.js`.
+By default @material-tailwind/react supports monorepo but in case if you don't get the correct styles add the <Code>theme</Code> and <Code>components</Code> paths to your <Code>tailwind.config.js</Code>.
 
 ```js {7,8}
 const withMT = require("@material-tailwind/react/utils/withMT");
@@ -139,14 +150,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 Now you're good to go and use @material-tailwind/react in your project.
 
-<ComponentDemo id="example">
-  <Button>Button</Button>
-</ComponentDemo>
-
-```jsx {1, 4}
+<CodePreview id="example" component={<Button>Button</Button>}>
+```jsx
 import { Button } from "@material-tailwind/react";
 
 export default function Example() {
   return <Button>Button</Button>;
 }
 ```
+</CodePreview>

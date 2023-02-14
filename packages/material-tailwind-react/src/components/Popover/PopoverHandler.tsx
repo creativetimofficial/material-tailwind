@@ -1,7 +1,7 @@
 import React from "react";
 
-// utils
-import mergeRefs from "react-merge-refs";
+// @floating-ui
+import { useMergeRefs } from "@floating-ui/react";
 
 // context
 import { usePopover } from "./PopoverContext";
@@ -17,7 +17,7 @@ export const PopoverHandler = React.forwardRef<HTMLDivElement, PopoverHandlerPro
   ({ children, ...rest }, ref) => {
     const { getReferenceProps, reference } = usePopover();
 
-    const mergedRef = React.useMemo(() => mergeRefs([ref, reference]), [ref, reference]);
+    const mergedRef = useMergeRefs([ref, reference]);
 
     return React.cloneElement(children, {
       ...getReferenceProps({
