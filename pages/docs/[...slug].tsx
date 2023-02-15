@@ -39,6 +39,7 @@ import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
+import Warning from "components/warning";
 
 // @material-tailwind/react components
 import {
@@ -224,6 +225,7 @@ const components = {
   Typography,
   Collapse,
   Link,
+  Warning,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
