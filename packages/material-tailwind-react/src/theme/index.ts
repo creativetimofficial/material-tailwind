@@ -30,6 +30,7 @@ import tabPanel from "./components/tabs/tabPanel";
 import textarea from "./components/textarea";
 import tooltip from "./components/tooltip";
 import typography from "./components/typography";
+import collapse from "./components/collapse";
 
 const theme = {
   accordion,
@@ -64,6 +65,7 @@ const theme = {
   textarea,
   tooltip,
   typography,
+  collapse,
 };
 
 export * from "./components/accordion";
@@ -98,4 +100,5 @@ export * from "./components/tabs/tabPanel";
 export * from "./components/textarea";
 export * from "./components/tooltip";
 export * from "./components/typography";
+export * from "./components/collapse";
 export default theme;
