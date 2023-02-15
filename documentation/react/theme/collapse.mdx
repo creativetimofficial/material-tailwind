@@ -1,0 +1,84 @@
+---
+title: Tailwind CSS Collapse Theme - Material Tailwind
+description: Learn how to customize the theme and styles for collapse component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/collapse
+related:
+  [
+    {
+      title: "Examples",
+      route: "collapse",
+      description: "Checkout different examples for collapse component.",
+    },
+    {
+      title: "Props",
+      route: "props/collapse",
+      description: "Learn more about props definition and types of collapse component.",
+    },
+  ]
+---
+
+# Tailwind CSS Collapse - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for collapse component, the theme object for collapse component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of collapse component.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of collapse component.<br />
+
+You can customize the theme and styles of collapse component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Collapse Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface CollapseStylesType {
+  defaultProps: {
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CollapseStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Collapse Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  collapse: {
+    styles: {
+      base: {
+        backgroundColor: "bg-white",
+        borderRadius: "rounded-lg"
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

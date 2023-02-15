@@ -1,0 +1,85 @@
+---
+title: Tailwind CSS Collapse for React - Material Tailwind
+description: Customise your web projects with our easy-to-use collapse component for Tailwind CSS and React using Material Design guidelines.
+navigation: ["collapse", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/collapse",
+      description: "Learn more about props definition and types of collapse component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/collapse",
+      description: "Learn how to customize the theme and styles for collapse component.",
+    },
+  ]
+github: collapse
+prev: chip
+next: dialog
+---
+
+# Tailwind CSS Collapse - React
+
+Use our Tailwind CSS collapse for your website. You can use if for accordion, collapsible items and much more.
+
+See below our simple <Code>Collapse</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="collapse" component={
+  <State initialState={{ open: false }}>
+    <Observe>
+      {({ setState, open }) => (
+        <>
+          <Button onClick={() => setState((s) => ({ open: !open }))}>Open Collapse</Button>
+          <Collapse open={open}>
+            <Card className="my-4 w-8/12 mx-auto">
+              <CardBody>
+                <Typography>
+                  Use our Tailwind CSS collapse for your website. You can use if for accordion, collapsible items and much more.
+                </Typography>
+              </CardBody> 
+            </Card>
+          </Collapse>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import {
+  Collapse,
+  Button,
+  Card,
+  Typography
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(false);
+  const toggleOpen = () => setOpen(cur => !cur);
+
+  return (
+    <React.Fragment>
+      <Button onClick={toggleOpen}>Open Collapse</Button>
+      <Collapse open={open}>
+        <Card className="my-4 w-8/12 mx-auto">
+          <CardBody>
+            <Typography>
+              Use our Tailwind CSS collapse for your website. You can use if for accordion, collapsible items and much more.
+            </Typography>
+          </CardBody> 
+        </Card>
+      </Collapse>
+    </React.Fragment>
+  )
+}
+```
+</CodePreview>
+
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
+```
