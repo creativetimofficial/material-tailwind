@@ -42,6 +42,13 @@ interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "children">
 
 export const MobileNav = React.forwardRef<HTMLDivElement, MobileNavProps>(
   ({ open, animate, className, children, ...rest }, ref) => {
+    console.error(
+      `<MobileNav /> will be deprecated in the future versions of @material-tailwind/react use <Collapse /> instead.
+      
+More details: https://www.material-tailwind.com/docs/react/collapse
+      `,
+    );
+
     // 1. init
     const mobileNavRef = React.useRef(null);
     const { navbar } = useTheme();
