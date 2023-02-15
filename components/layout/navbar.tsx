@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 // @material-tailwind/react components
 import {
   Navbar as MTNavbar,
-  MobileNav,
+  Collapse,
   IconButton,
   Tooltip,
   Menu,
@@ -308,9 +308,9 @@ export default function Navbar({
           </div>
         </div>
 
-        <MobileNav open={open} className={mobileNavClassName}>
+        <Collapse open={open} className={mobileNavClassName}>
           {navbarMenu}
-        </MobileNav>
+        </Collapse>
         {sidenavMenu}
       </MTNavbar>
     </div>
