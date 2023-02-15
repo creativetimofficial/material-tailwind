@@ -26,7 +26,6 @@ import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
 import Code from "components/code";
-import Pre from "components/pre";
 import CodeSandbox from "components/code-sandbox";
 import StackBlitz from "components/stack-blitz";
 import Framework from "components/cards/framework";
@@ -84,6 +83,7 @@ import {
   Textarea,
   Tooltip,
   Typography,
+  Collapse,
 } from "@material-tailwind/react";
 
 // routes
@@ -222,6 +222,7 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
+  Collapse,
   Link,
 };
 
@@ -318,7 +319,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: false,
+      development: true,
     },
   });
 
