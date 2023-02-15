@@ -31,6 +31,7 @@ import textarea from "./components/textarea";
 import tooltip from "./components/tooltip";
 import typography from "./components/typography";
 import collapse from "./components/collapse";
+import list from "./components/list";
 
 const theme = {
   accordion,
@@ -66,6 +67,7 @@ const theme = {
   tooltip,
   typography,
   collapse,
+  list,
 };
 
 export * from "./components/accordion";
@@ -101,4 +103,5 @@ export * from "./components/textarea";
 export * from "./components/tooltip";
 export * from "./components/typography";
 export * from "./components/collapse";
+export * from "./components/list";
 export default theme;
