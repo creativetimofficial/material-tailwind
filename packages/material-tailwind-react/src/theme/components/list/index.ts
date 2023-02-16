@@ -1,12 +1,11 @@
 // types
-import type {
-  ripple,
-  className
-} from "../../../types/components/list";
+import type { ripple, selected, disabled, className } from "../../../types/components/list";
 
 export interface ListStylesType {
   defaultProps?: {
     ripple?: ripple;
+    selected?: selected;
+    disabled?: disabled;
     className?: className;
   };
   styles?: {
@@ -14,6 +13,7 @@ export interface ListStylesType {
       list?: object;
       item?: {
         initial?: object;
+        selected?: object;
         disabled?: object;
       };
       itemPrefix?: object;
@@ -25,6 +25,8 @@ export interface ListStylesType {
 export const list: ListStylesType = {
   defaultProps: {
     ripple: true,
+    disabled: false,
+    selected: false,
     className: "",
   },
   styles: {
@@ -54,6 +56,10 @@ export const list: ListStylesType = {
           bg: "hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80",
           color: "hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900",
           outline: "outline-none",
+        },
+        selected: {
+          bg: "bg-blue-gray-50/50",
+          color: "text-blue-gray-700",
         },
         disabled: {
           opacity: "opacity-50",

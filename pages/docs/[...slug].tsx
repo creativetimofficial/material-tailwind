@@ -85,7 +85,14 @@ import {
   Tooltip,
   Typography,
   Collapse,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
 } from "@material-tailwind/react";
+
+// hero icons
+import { TrashIcon } from "@heroicons/react/24/solid";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
@@ -224,8 +231,13 @@ const components = {
   Tooltip,
   Typography,
   Collapse,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
   Link,
   Warning,
+  TrashIcon,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

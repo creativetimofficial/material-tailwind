@@ -10,23 +10,29 @@ import { twMerge } from "tailwind-merge";
 import objectsToString from "../../utils/objectsToString";
 
 // types
-import type { className, disabled, children,ripple } from "../../types/components/list";
-import { propTypesClassName, propTypesDisabled, propTypesRipple, propTypesChildren } from "../../types/components/list";
+import type { className, disabled, children, selected, ripple } from "../../types/components/list";
+import {
+  propTypesClassName,
+  propTypesDisabled,
+  propTypesRipple,
+  propTypesSelected,
+  propTypesChildren,
+} from "../../types/components/list";
 
 // list item components
 import { ListItemPrefix, ListItemPrefixProps } from "./ListItemPrefix";
 import { ListItemSuffix, ListItemSuffixProps } from "./ListItemSuffix";
 
-
 export interface ListItemProps extends React.ComponentProps<"div"> {
   className?: className;
   disabled?: disabled;
-  ripple?: ripple
+  selected?: selected;
+  ripple?: ripple;
   children: children;
 }
 
 export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
-  ({ className, disabled, ripple, children, ...rest }, ref) => {
+  ({ className, disabled, selected, ripple, children, ...rest }, ref) => {
     // 1. init
     const { list } = useTheme();
     const {
@@ -36,6 +42,8 @@ export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
 
     // 2. set default props
     ripple = ripple ?? defaultProps.ripple;
+    disabled = disabled ?? defaultProps.ripple;
+    selected = selected ?? defaultProps.ripple;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -44,6 +52,7 @@ export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
     const listItemClasses = twMerge(
       classnames(objectsToString(base.item.initial), {
         [objectsToString(base.item.disabled)]: disabled,
+        [objectsToString(base.item.selected)]: selected && !disabled,
       }),
       className,
     );
@@ -69,6 +78,7 @@ export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
 
 ListItem.propTypes = {
   className: propTypesClassName,
+  selected: propTypesSelected,
   disabled: propTypesDisabled,
   ripple: propTypesRipple,
   children: propTypesChildren,
@@ -78,5 +88,4 @@ ListItem.displayName = "MaterialTailwind.ListItem";
 
 export type { ListItemPrefixProps, ListItemSuffixProps };
 export { ListItemPrefix, ListItemSuffix };
-export default Object.assign(ListItem, { Prefix: ListItemPrefix, Suffix: ListItemSuffix });;
-
+export default Object.assign(ListItem, { Prefix: ListItemPrefix, Suffix: ListItemSuffix });
