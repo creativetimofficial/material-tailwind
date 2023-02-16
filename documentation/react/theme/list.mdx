@@ -1,0 +1,92 @@
+---
+title: Tailwind CSS List Theme - Material Tailwind
+description: Learn how to customize the theme and styles for list component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/list
+related:
+  [
+    {
+      title: "Examples",
+      route: "list",
+      description: "Checkout different examples for list component.",
+    },
+    {
+      title: "Props",
+      route: "props/list",
+      description: "Learn more about props definition and types of list component.",
+    },
+  ]
+---
+
+# Tailwind CSS List - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for list component, the theme object for list component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of list component.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of list component.<br />
+
+You can customize the theme and styles of list component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## List Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface ListStylesType {
+  defaultProps: {
+    ripple: boolean;
+    selected: boolean;
+    className: string;
+  };
+  styles: {
+    base: {
+      list: object;
+      item: {
+        initial: object;
+        selected: object;
+        disabled: object;
+      };
+      itemPrefix: object;
+      itemSuffix: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { ListStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## List Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  list: {
+    styles: {
+      base: {
+        list: {
+          bg: "bg-white",
+        },
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

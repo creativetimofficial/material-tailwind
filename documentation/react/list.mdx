@@ -1,0 +1,325 @@
+---
+title: Tailwind CSS List for React - Material Tailwind
+description: Customise your web projects with our complex list component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "list",
+    "list-with-avatar",
+    "list-with-icon",
+    "list-with-selected-item",
+    "list-with-disabled-item",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/list",
+      description: "Learn more about props definition and types of list components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/list",
+      description: "Learn how to customize the theme and styles for list components.",
+    },
+  ]
+github: list
+prev: input
+next: menu
+---
+
+# Tailwind CSS List - React
+
+Use our responsive Tailwind CSS vertical <Code>List</Code> anywhere on your web app!
+
+A <Code>List</Code> displays a list of items containing images, icons, and text that represents a specific action.
+
+See below our <Code>List</Code> example that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt them easily to your needs.
+
+<br />
+
+<CodePreview id="list" component={
+  <Card className="w-96 rounded-lg">
+    <List>
+      <ListItem>Inbox</ListItem>
+      <ListItem>Trash</ListItem>
+      <ListItem>Settings</ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import { List, ListItem, Card } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96 rounded-lg">
+      <List>
+        <ListItem>Inbox</ListItem>
+        <ListItem>Trash</ListItem>
+        <ListItem>Settings</ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## List With Avatar
+
+You can use the <Code>{`<ListItemPrefix />`}</Code> component to put images or icons before the list item text.
+
+<CodePreview id="list-with-avatar" component={
+  <Card className="w-96 rounded-lg">
+    <List>
+      <ListItem>
+        <ListItemPrefix>
+          <Avatar variant="circular" alt="candice" src="/img/face-1.jpg" />
+        </ListItemPrefix>
+        <div>
+          <Typography variant="h6" color="blue-gray">
+            Candice Wu
+          </Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Software Engineer @ Material Tailwind
+          </Typography>
+        </div>
+      </ListItem>
+      <ListItem>
+        <ListItemPrefix>
+          <Avatar variant="circular" alt="alexander" src="/img/face-2.jpg" />
+        </ListItemPrefix>
+        <div>
+          <Typography variant="h6" color="blue-gray">
+            Alexander
+          </Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Backend Developer @ Material Tailwind
+          </Typography>
+        </div>
+      </ListItem>
+      <ListItem>
+        <ListItemPrefix>
+          <Avatar variant="circular" alt="emma" src="/img/face-3.jpg" />
+        </ListItemPrefix>
+        <div>
+          <Typography variant="h6" color="blue-gray">
+            Emma Willever
+          </Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            UI/UX Designer @ Material Tailwind
+          </Typography>
+        </div>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  List,
+  ListItem,
+  ListItemPrefix,
+  Avatar,
+  Card,
+  Typography,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96 rounded-lg">
+      <List>
+        <ListItem>
+          <ListItemPrefix>
+            <Avatar variant="circular" alt="candice" src="/img/face-1.jpg" />
+          </ListItemPrefix>
+          <div>
+            <Typography variant="h6" color="blue-gray">
+              Candice Wu
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              Software Engineer @ Material Tailwind
+            </Typography>
+          </div>
+        </ListItem>
+        <ListItem>
+          <ListItemPrefix>
+            <Avatar variant="circular" alt="alexander" src="/img/face-2.jpg" />
+          </ListItemPrefix>
+          <div>
+            <Typography variant="h6" color="blue-gray">
+              Alexander
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              Backend Developer @ Material Tailwind
+            </Typography>
+          </div>
+        </ListItem>
+        <ListItem>
+          <ListItemPrefix>
+            <Avatar variant="circular" alt="emma" src="/img/face-3.jpg" />
+          </ListItemPrefix>
+          <div>
+            <Typography variant="h6" color="blue-gray">
+              Emma Willever
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              UI/UX Designer @ Material Tailwind
+            </Typography>
+          </div>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## List With Icon
+
+You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or icons after the list item text.
+
+<CodePreview id="list-with-icon" component={
+  <Card className="w-96 rounded-lg">
+    <List>
+      <ListItem ripple={false} className="py-1 pr-1 pl-4">
+        Item One
+        <ListItemSuffix>
+          <IconButton variant="text" color="blue-gray">
+            <TrashIcon className="h-5 w-5" />
+          </IconButton>
+        </ListItemSuffix>
+      </ListItem>
+      <ListItem ripple={false} className="py-1 pr-1 pl-4">
+        Item Two
+        <ListItemSuffix>
+          <IconButton variant="text" color="blue-gray">
+            <TrashIcon className="h-5 w-5" />
+          </IconButton>
+        </ListItemSuffix>
+      </ListItem>
+      <ListItem ripple={false} className="py-1 pr-1 pl-4">
+        Item Three
+        <ListItemSuffix>
+          <IconButton variant="text" color="blue-gray">
+            <TrashIcon className="h-5 w-5" />
+          </IconButton>
+        </ListItemSuffix>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  List,
+  ListItem,
+  ListItemSuffix,
+  Card,
+  IconButton,
+} from "@material-tailwind/react";
+import { TrashIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Card className="w-96 rounded-lg">
+      <List>
+        <ListItem ripple={false} className="py-1 pr-1 pl-4">
+          Item One
+          <ListItemSuffix>
+            <IconButton variant="text" color="blue-gray">
+              <TrashIcon className="h-5 w-5" />
+            </IconButton>
+          </ListItemSuffix>
+        </ListItem>
+        <ListItem ripple={false} className="py-1 pr-1 pl-4">
+          Item Two
+          <ListItemSuffix>
+            <IconButton variant="text" color="blue-gray">
+              <TrashIcon className="h-5 w-5" />
+            </IconButton>
+          </ListItemSuffix>
+        </ListItem>
+        <ListItem ripple={false} className="py-1 pr-1 pl-4">
+          Item Three
+          <ListItemSuffix>
+            <IconButton variant="text" color="blue-gray">
+              <TrashIcon className="h-5 w-5" />
+            </IconButton>
+          </ListItemSuffix>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## List With Selected Item
+
+You can make a list item selected by default using the <Code>selected</Code> prop for the <Code>{`<ListItem />`}</Code> component.
+
+<CodePreview id="list-with-selected-item" component={
+  <Card className="w-96 rounded-lg">
+    <List>
+      <ListItem selected={true}>Inbox</ListItem>
+      <ListItem>Trash</ListItem>
+      <ListItem>Settings</ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import { List, ListItem, Card } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96 rounded-lg">
+      <List>
+        <ListItem selected={true}>Inbox</ListItem>
+        <ListItem>Trash</ListItem>
+        <ListItem>Settings</ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## List With Disabled Item
+
+You can make a list item disabled using the <Code>disabled</Code> prop for the <Code>{`<ListItem />`}</Code> component.
+
+<CodePreview id="list-with-disabled-item" component={
+  <Card className="w-96 rounded-lg">
+    <List>
+      <ListItem disabled={true}>Inbox</ListItem>
+      <ListItem>Trash</ListItem>
+      <ListItem>Settings</ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import { List, ListItem, Card } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96 rounded-lg">
+      <List>
+        <ListItem disabled={true}>Inbox</ListItem>
+        <ListItem>Trash</ListItem>
+        <ListItem>Settings</ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
