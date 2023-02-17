@@ -42,8 +42,6 @@ export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
 
     // 2. set default props
     ripple = ripple ?? defaultProps.ripple;
-    disabled = disabled ?? defaultProps.ripple;
-    selected = selected ?? defaultProps.ripple;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
