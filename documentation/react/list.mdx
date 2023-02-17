@@ -35,12 +35,12 @@ Use our responsive Tailwind CSS vertical <Code>List</Code> anywhere on your web 
 
 A <Code>List</Code> displays a list of items containing images, icons, and text that represents a specific action.
 
-See below our <Code>List</Code> example that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt them easily to your needs.
+See below our <Code>List</Code> example that you can use in your Tailwind CSS and React project. The examples comes in different styles, so you can adapt them easily to your needs.
 
 <br />
 
 <CodePreview id="list" component={
-  <Card className="w-96 rounded-lg">
+  <Card className="w-96">
     <List>
       <ListItem>Inbox</ListItem>
       <ListItem>Trash</ListItem>
@@ -53,7 +53,7 @@ import { List, ListItem, Card } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Card className="w-96 rounded-lg">
+    <Card className="w-96">
       <List>
         <ListItem>Inbox</ListItem>
         <ListItem>Trash</ListItem>
@@ -69,10 +69,10 @@ export default function Example() {
 
 ## List With Avatar
 
-You can use the <Code>{`<ListItemPrefix />`}</Code> component to put images or icons before the list item text.
+You can use the <Code>{`<ListItemPrefix />`}</Code> component to put images or icons before the list item content.
 
 <CodePreview id="list-with-avatar" component={
-  <Card className="w-96 rounded-lg">
+  <Card className="w-96">
     <List>
       <ListItem>
         <ListItemPrefix>
@@ -128,7 +128,7 @@ import {
 
 export default function Example() {
   return (
-    <Card className="w-96 rounded-lg">
+    <Card className="w-96">
       <List>
         <ListItem>
           <ListItemPrefix>
@@ -180,10 +180,10 @@ export default function Example() {
 
 ## List With Icon
 
-You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or icons after the list item text.
+You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or icons after the list item content.
 
 <CodePreview id="list-with-icon" component={
-  <Card className="w-96 rounded-lg">
+  <Card className="w-96">
     <List>
       <ListItem ripple={false} className="py-1 pr-1 pl-4">
         Item One
@@ -224,7 +224,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 
 export default function Example() {
   return (
-    <Card className="w-96 rounded-lg">
+    <Card className="w-96">
       <List>
         <ListItem ripple={false} className="py-1 pr-1 pl-4">
           Item One
@@ -264,26 +264,42 @@ export default function Example() {
 You can make a list item selected by default using the <Code>selected</Code> prop for the <Code>{`<ListItem />`}</Code> component.
 
 <CodePreview id="list-with-selected-item" component={
-  <Card className="w-96 rounded-lg">
-    <List>
-      <ListItem selected={true}>Inbox</ListItem>
-      <ListItem>Trash</ListItem>
-      <ListItem>Settings</ListItem>
-    </List>
-  </Card>
+  <State initialState={{ selected: 1 }}>
+    <Observe>
+      {({ setState, selected }) => (
+        <Card className="w-96">
+          <List>
+            <ListItem selected={selected === 1} onClick={() => setState((s) => ({ selected: 1 }))}>Inbox</ListItem>
+            <ListItem selected={selected === 2} onClick={() => setState((s) => ({ selected: 2 }))}>Trash</ListItem>
+            <ListItem selected={selected === 3} onClick={() => setState((s) => ({ selected: 3 }))}>Settings</ListItem>
+          </List>
+        </Card>
+      )}
+    </Observe>
+  </State>
 }>
 ```jsx
+import React from "react";
 import { List, ListItem, Card } from "@material-tailwind/react";
 
 export default function Example() {
+  const [selected, setSelected] = React.useState(1);
+  const setSelectedItem = (value) => setSelected(value);
+
   return (
-    <Card className="w-96 rounded-lg">
+    <Card className="w-96">
       <List>
-        <ListItem selected={true}>Inbox</ListItem>
-        <ListItem>Trash</ListItem>
-        <ListItem>Settings</ListItem>
+        <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
+          Inbox
+        </ListItem>
+        <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
+          Trash
+        </ListItem>
+        <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
+          Settings
+        </ListItem>
       </List>
-    </Card>
+    </Card>;
   );
 }
 ```
@@ -296,7 +312,7 @@ export default function Example() {
 You can make a list item disabled using the <Code>disabled</Code> prop for the <Code>{`<ListItem />`}</Code> component.
 
 <CodePreview id="list-with-disabled-item" component={
-  <Card className="w-96 rounded-lg">
+  <Card className="w-96">
     <List>
       <ListItem disabled={true}>Inbox</ListItem>
       <ListItem>Trash</ListItem>
@@ -309,7 +325,7 @@ import { List, ListItem, Card } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Card className="w-96 rounded-lg">
+    <Card className="w-96">
       <List>
         <ListItem disabled={true}>Inbox</ListItem>
         <ListItem>Trash</ListItem>

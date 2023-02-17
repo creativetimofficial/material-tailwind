@@ -23,10 +23,10 @@ related:
 
 <span id="overview" className="scroll-mt-48" />
 
-Learn how to customize the theme and styles for list component, the theme object for list component has three main objects:
+Learn how to customize the theme and styles for list component, the theme object for list component has two main objects:
 
 **A.** The <Code>defaultProps</Code> object for setting up the default value for props of list component.<br />
-**C.** The <Code>styles</Code> object for customizing the theme and styles of list component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of list component.<br />
 
 You can customize the theme and styles of list component by adding Tailwind CSS classes as key paired values for objects.
 
@@ -41,7 +41,6 @@ You can customize the theme and styles of list component by adding Tailwind CSS 
 interface ListStylesType {
   defaultProps: {
     ripple: boolean;
-    selected: boolean;
     className: string;
   };
   styles: {
