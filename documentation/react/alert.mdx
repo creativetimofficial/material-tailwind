@@ -181,7 +181,6 @@ The <Code>Alert</Code> component is a dismissible component that you can control
         <>
           {!show && (
             <Button
-              variant="gradient"
               className="absolute"
               onClick={() => setState((s) => ({ show: true }))}
             >
@@ -189,7 +188,6 @@ The <Code>Alert</Code> component is a dismissible component that you can control
             </Button>
           )}
           <Alert
-            variant="gradient"
             show={show}
             dismissible={{
               onClose: () => setState((s) => ({ show: false })),
@@ -213,7 +211,6 @@ export default function Example() {
     <Fragment>
       {!show && (
         <Button
-          variant="gradient"
           className="absolute"
           onClick={() => setShow(true)}
         >
@@ -247,7 +244,6 @@ You can modify the open/close state animation for <Code>Alert</Code> component u
         <>
           {!show && (
             <Button
-              variant="gradient"
               className="absolute"
               onClick={() => setState((s) => ({ show: true }))}
             >
@@ -255,7 +251,6 @@ You can modify the open/close state animation for <Code>Alert</Code> component u
             </Button>
           )}
           <Alert
-            variant="gradient"
             show={show}
             animate={{
               mount: {
@@ -287,7 +282,6 @@ export default function Example() {
     <Fragment>
       {!show && (
         <Button
-          variant="gradient"
           className="absolute"
           onClick={() => setShow(true)}
         >

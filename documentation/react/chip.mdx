@@ -169,7 +169,6 @@ The <Code>Chip</Code> component is a dismissible component that you can control 
         <>
           {!show && (
             <Button
-              variant="gradient"
               className="absolute"
               onClick={() => setState((s) => ({ show: true }))}
             >
@@ -177,7 +176,6 @@ The <Code>Chip</Code> component is a dismissible component that you can control 
             </Button>
           )}
           <Chip
-            variant="gradient"
             show={show}
             dismissible={{
               onClose: () => setState((s) => ({ show: false })),
@@ -200,7 +198,6 @@ export default function Example() {
     <Fragment>
       {!show && (
         <Button
-          variant="gradient"
           className="absolute"
           onClick={() => setShow(true)}
         >
@@ -208,7 +205,6 @@ export default function Example() {
         </Button>
       )}
       <Chip
-        variant="gradient"
         show={show}
         dismissible={{
           onClose: () => setShow(false),
@@ -234,7 +230,6 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
         <>
           {!show && (
             <Button
-              variant="gradient"
               className="absolute"
               onClick={() => setState((s) => ({ show: true }))}
             >
@@ -242,7 +237,6 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
             </Button>
           )}
           <Chip
-            variant="gradient"
             show={show}
             animate={{
               mount: {
@@ -273,7 +267,6 @@ export default function Example() {
     <Fragment>
       {!show && (
         <Button
-          variant="gradient"
           className="absolute"
           onClick={() => setShow(true)}
         >
@@ -281,7 +274,6 @@ export default function Example() {
         </Button>
       )}
       <Chip
-        variant="gradient"
         show={show}
         animate={{
           mount: { y: 0 },
