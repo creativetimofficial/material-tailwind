@@ -76,7 +76,7 @@ The <Code>Input</Code> component comes with 3 different variants that you can ch
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Variants() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 gap-6">
       <Input variant="static" label="Static" placeholder="Static" />
@@ -103,7 +103,7 @@ The <Code>Input</Code> component comes with 2 different sizes that you can chang
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Sizes() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 items-end gap-6">
       <Input size="md" label="Input Medium" />
@@ -131,7 +131,7 @@ The <Code>Input</Code> component comes with 19 different colors that you can cha
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Colors() {
+export default function Example() {
   return (
     <div className="flex w-72 flex-col gap-6">
       <Input color="blue" label="Input Blue" />
@@ -159,7 +159,7 @@ The <Code>Input</Code> component comes with error and success states for perform
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Validations() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 items-end gap-6">
       <Input label="Input Error" error />
@@ -184,7 +184,7 @@ You can add icon for the <Code>Input</Code> component using the <Code>icon</Code
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function InputWithIcon() {
+export default function Example() {
   return (
     <div className="w-72">
       <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
@@ -208,7 +208,7 @@ An <Code>Input</Code> could be disabled as well, it will help you to prevent use
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function InputWithIcon() {
+export default function Example() {
   return (
     <div className="w-72">
       <Input label="Disabled" disabled />

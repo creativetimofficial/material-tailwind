@@ -37,10 +37,10 @@ See below our simple <Code>Navbar</Code> example that you can use in your Tailwi
             <Typography
               as="a"
               href="#"
-              variant="small"
-              className="mr-4 cursor-pointer py-1.5 font-normal"
+              href="#"
+              className="mr-4 cursor-pointer py-1.5 font-medium"
             >
-              <span>Material Tailwind</span>
+              {`Material Tailwind`}
             </Typography>
             <ul className="hidden items-center gap-6 lg:flex">
               <Typography as="li" variant="small" className="p-1 font-normal">
@@ -211,10 +211,9 @@ export default function Example() {
         <Typography
           as="a"
           href="#"
-          variant="small"
-          className="mr-4 cursor-pointer py-1.5 font-normal"
+          className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          <span>Material Tailwind</span>
+          Material Tailwind
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block">
