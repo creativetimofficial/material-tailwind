@@ -27,11 +27,9 @@ export const TabsHeader = React.forwardRef<HTMLUListElement, TabsHeaderProps>(
   ({ indicatorProps, className, children, ...rest }, ref) => {
     // 1. init
     const { tabsHeader } = useTheme();
-    const {
-      defaultProps,
-      styles: { base },
-    } = tabsHeader;
-    const { dispatch } = useTabs();
+    const { defaultProps, styles } = tabsHeader;
+    const { state, dispatch } = useTabs();
+    const { orientation } = state;
 
     React.useEffect(() => {
       setIndicator(dispatch, indicatorProps);
@@ -41,7 +39,12 @@ export const TabsHeader = React.forwardRef<HTMLUListElement, TabsHeaderProps>(
     className = className ?? defaultProps.className;
 
     // 3. set styles
-    const tabsHeaderClasses = twMerge(classnames(objectsToString(base)), className);
+    const tabsHeaderClasses = twMerge(
+      classnames(objectsToString(styles.base), {
+        [styles[orientation] && objectsToString(styles[orientation])]: orientation,
+      }),
+      className,
+    );
 
     // 4. return
     return (

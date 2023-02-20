@@ -4,6 +4,7 @@ import type { className, disabled } from "../../../types/components/tabs";
 export interface TabStylesType {
   defaultProps?: {
     className?: className;
+    activeClassName?: className;
     disabled?: disabled;
   };
   styles?: {
@@ -20,6 +21,7 @@ export interface TabStylesType {
 export const tab: TabStylesType = {
   defaultProps: {
     className: "",
+    activeClassName: "",
     disabled: false,
   },
   styles: {
@@ -33,7 +35,8 @@ export const tab: TabStylesType = {
           height: "h-full",
           position: "relative",
           bg: "bg-transparent",
-          p: "p-1",
+          py: "py-1",
+          px: "px-2",
           color: "text-blue-gray-900",
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
@@ -52,9 +55,7 @@ export const tab: TabStylesType = {
       },
       indicator: {
         position: "absolute",
-        top: "top-0",
-        left: "left-0",
-        right: "right-0",
+        inset: "inset-0",
         zIndex: "z-10",
         height: "h-full",
         bg: "bg-white",
