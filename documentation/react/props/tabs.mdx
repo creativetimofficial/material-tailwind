@@ -9,6 +9,7 @@ navigation:
     "tab-props",
     "tab-panel-props",
     "types-value",
+    "types-orientation",
     "types-animate",
     "examples",
     "theme",
@@ -38,14 +39,15 @@ related:
 
 <span id="tabs-props" className="scroll-mt-48" />
 The following props are available for tabs component. These are the custom props
-that we've added for the tabs component and you can use all the other native
-props as well.
+that we've added for the tabs component and you can use all the other native props
+as well.
 
-| Attribute   | Type                  | Description                   | Default                                |
-| ----------- | --------------------- | ----------------------------- | -------------------------------------- |
-| `value`     | [Value](#types-value) | Set's the default visible tab | No default value it's a required prop. |
-| `className` | <Code>string</Code>   | Add custom className for tabs | `''`                                   |
-| `children`  | <Code>node</Code>     | Add content for tabs          | No default value it's a required prop. |
+| Attribute     | Type                              | Description                   | Default                                |
+| ------------- | --------------------------------- | ----------------------------- | -------------------------------------- |
+| `value`       | [Value](#types-value)             | Set's the default visible tab | No default value it's a required prop. |
+| `orientation` | [Orientation](#types-orientation) | Set's the tab orientation     | <Code>horizontal</Code>.               |
+| `className`   | <Code>string</Code>               | Add custom className for tabs | `''`                                   |
+| `children`    | <Code>node</Code>                 | Add content for tabs          | No default value it's a required prop. |
 
 <br />
 <br />
@@ -62,8 +64,8 @@ import type { TabsProps } from "@material-tailwind/react";
 
 <span id="tabs-header-props" className="scroll-mt-48" />
 The following props are available for tabs header component. These are the custom
-props that we've added for the tabs header component and you can use all
-the other native props as well.
+props that we've added for the tabs header component and you can use all the other
+native props as well.
 
 | Attribute        | Type                | Description                                | Default                                |
 | ---------------- | ------------------- | ------------------------------------------ | -------------------------------------- |
@@ -86,8 +88,8 @@ import type { TabsHeaderProps } from "@material-tailwind/react";
 
 <span id="tabs-body-props" className="scroll-mt-48" />
 The following props are available for tabs body component. These are the custom props
-that we've added for the tabs body component and you can use all the other
-native props as well.
+that we've added for the tabs body component and you can use all the other native
+props as well.
 
 | Attribute   | Type                      | Description                        | Default                                |
 | ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
@@ -135,8 +137,8 @@ import type { TabProps } from "@material-tailwind/react";
 
 <span id="tab-panel-props" className="scroll-mt-48" />
 The following props are available for tab panel component. These are the custom props
-that we've added for the tab panel component and you can use all the other
-native props as well.
+that we've added for the tab panel component and you can use all the other native
+props as well.
 
 | Attribute   | Type                | Description                                                         | Default                                |
 | ----------- | ------------------- | ------------------------------------------------------------------- | -------------------------------------- |
@@ -161,6 +163,16 @@ import type { TabPanelProps } from "@material-tailwind/react";
 
 ```ts
 type value = string | number;
+```
+
+---
+
+## Types - Orientation
+
+<span id="types-orientation" className="scroll-mt-48" />
+
+```ts
+type value = "horizontal" | "vertical";
 ```
 
 ---

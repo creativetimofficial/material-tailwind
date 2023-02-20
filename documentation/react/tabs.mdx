@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tabs", "custom-tabs-animation", "props", "theme"]
+navigation: ["tabs", "custom-tabs-animation", "vertical-tabs", "props", "theme"]
 related:
   [
     {
@@ -116,26 +116,25 @@ export default function Example() {
     },
   ];
 
-return (
-
-<Tabs value="html">
-  <TabsHeader>
-    {data.map(({ label, value }) => (
-      <Tab key={value} value={value}>
-        {label}
-      </Tab>
-    ))}
-  </TabsHeader>
-  <TabsBody>
-    {data.map(({ value, desc }) => (
-      <TabPanel key={value} value={value}>
-        {desc}
-      </TabPanel>
-    ))}
-  </TabsBody>
-</Tabs>
-); }
-
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
 ````
 </CodePreview>
 
@@ -265,7 +264,119 @@ export default function Example() {
   );
 }
 ````
+</CodePreview>
 
+---
+
+## Vertical Tabs
+
+You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
+
+<CodePreview id="vertical-tabs" link="tabs#vertical-tabs" component={
+  <Tabs id="vertical-tabs" value="html" orientation="vertical">
+    <TabsHeader className="w-32">
+      <Tab value="html">HTML</Tab>
+      <Tab value="react">React</Tab>
+      <Tab value="vue">Vue</Tab>
+      <Tab value="angular">Angular</Tab>
+      <Tab value="svelte">Svelte</Tab>
+    </TabsHeader>
+    <TabsBody>
+      <TabPanel value="html" className="py-0">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="react" className="py-0">
+        {`Because it's about motivating the doers. Because I'm here
+          to follow my dreams and inspire other people to follow their dreams, too.`}
+      </TabPanel>
+      <TabPanel value="vue" className="py-0">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+      <TabPanel value="angular" className="py-0">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="svelte" className="py-0">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+    </TabsBody>
+  </Tabs>
+}>
+```jsx
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+
+  return (
+    <Tabs value="html" orientation="vertical">
+      <TabsHeader className="w-32">
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value} className="py-0">
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+````
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
