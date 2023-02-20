@@ -86,6 +86,9 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
+// @heroicons
+import * as OutlineIcons from "@heroicons/react/24/outline";
+
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
 import { routes as reactRoutes } from "routes/react.routes";
@@ -223,6 +226,7 @@ const components = {
   Tooltip,
   Typography,
   Link,
+  OutlineIcons,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

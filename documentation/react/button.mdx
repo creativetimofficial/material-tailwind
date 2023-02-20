@@ -7,6 +7,7 @@ navigation:
     "button-variants",
     "button-sizes",
     "button-colors",
+    "button-with-icon",
     "block-level-button",
     "button-ripple-effect",
     "props",
@@ -135,6 +136,76 @@ export default function Colors() {
       <Button color="red">color red</Button>
       <Button color="green">color green</Button>
       <Button color="amber">color amber</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Block Level Button
+
+A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<CodePreview id="block-level-button" link="button#block-level-button" component={<Button fullWidth>block level button</Button>}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button fullWidth>block level button</Button>;
+}
+```
+</CodePreview>
+
+---
+
+## Button with Icon
+
+You can use any type of icons inside the button, in the below example we've used the <a href="https://heroicons.com/?ref=material-tailwind" target="_blank" className="hover:text-blue-500 transition-colors font-medium">@heroicons</a>.
+
+<CodePreview id="button-with-icon" link="button#button-with-icon" component={
+  <div className="flex items-center gap-4">
+    <Button className="flex items-center gap-3">
+      <OutlineIcons.BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+    </Button>
+    <Button variant="gradient" className="flex items-center gap-3">
+      <OutlineIcons.CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+    </Button>
+    <Button variant="outlined" className="flex items-center gap-3">
+      Refresh
+      <OutlineIcons.ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+    <Button variant="text" className="flex items-center gap-2">
+      Read More <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+import {
+  CloudArrowUpIcon,
+  ArrowLongRightIcon,
+  ArrowPathIcon,
+  BookmarkIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Day01() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button className="flex items-center gap-3">
+        <BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+      </Button>
+      <Button variant="gradient" className="flex items-center gap-3">
+        <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+      </Button>
+      <Button variant="outlined" className="flex items-center gap-3">
+        Refresh
+        <ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
+      <Button variant="text" className="flex items-center gap-2">
+        Read More <ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
     </div>
   );
 }
