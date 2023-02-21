@@ -7,8 +7,10 @@ navigation:
     "button-variants",
     "button-sizes",
     "button-colors",
+    "button-with-icon",
     "block-level-button",
     "button-ripple-effect",
+    "custom-auth-buttons",
     "props",
     "theme",
   ]
@@ -159,6 +161,76 @@ export default function Example() {
 
 ---
 
+## Button with Icon
+
+You can use any type of icons inside the button, in the below example we've used the <a href="https://heroicons.com/?ref=material-tailwind" target="_blank" className="hover:text-blue-500 transition-colors font-medium">@heroicons</a>.
+
+<CodePreview id="button-with-icon" link="button#button-with-icon" component={
+  <div className="flex items-center gap-4">
+    <Button className="flex items-center gap-3">
+      <OutlineIcons.BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+    </Button>
+    <Button variant="gradient" className="flex items-center gap-3">
+      <OutlineIcons.CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+    </Button>
+    <Button variant="outlined" className="flex items-center gap-3">
+      Refresh
+      <OutlineIcons.ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+    <Button variant="text" className="flex items-center gap-2">
+      Read More <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+import {
+  CloudArrowUpIcon,
+  ArrowLongRightIcon,
+  ArrowPathIcon,
+  BookmarkIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Day01() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button className="flex items-center gap-3">
+        <BookmarkIcon strokeWidth={2} className="h-5 w-5" /> Add to Bookmark
+      </Button>
+      <Button variant="gradient" className="flex items-center gap-3">
+        <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Files
+      </Button>
+      <Button variant="outlined" className="flex items-center gap-3">
+        Refresh
+        <ArrowPathIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
+      <Button variant="text" className="flex items-center gap-2">
+        Read More <ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Block Level Button
+
+A <Code>Button</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>Button</Code> as a block level element using the <Code>fullWidth</Code> prop.
+
+<CodePreview id="block-level-button" link="button#block-level-button" component={<Button fullWidth>block level button</Button>}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Button fullWidth>block level button</Button>;
+}
+```
+</CodePreview>
+
+---
+
 ## Button Ripple Effect
 
 You can turn on/off the ripple effect for the <Code>Button</Code> component using the <Code>ripple</Code> prop.
@@ -177,6 +249,76 @@ export default function Example() {
     <div className="flex w-max gap-4">
       <Button ripple={true}>Ripple Effect On</Button>
       <Button ripple={false}>Ripple Effect Off</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Custom Auth Buttons
+
+You can use tailwind css classes with <Code>Button</Code> to create beautiful buttons for different purposes, below you can use some button examples used for authentication with social media and web 3.0.
+
+<CodePreview id="custom-auth-buttons" link="button#custom-auth-buttons" component={
+  <div className="flex flex-col items-center gap-4">
+    <Button size="lg" color="white" className="flex items-center gap-3">
+      <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+      Connect Wallet
+    </Button>
+    <Button
+      size="lg"
+      variant="outlined"
+      color="blue-gray"
+      className="flex items-center gap-3"
+    >
+      <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+      Continue with Google
+    </Button>
+    <Button
+      size="lg"
+      variant="gradient"
+      color="light-blue"
+      className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+    >
+      Sign in with Twitter
+      <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+        <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+      </span>
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <Button size="lg" color="white" className="flex items-center gap-3">
+        <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+        Connect Wallet
+      </Button>
+      <Button
+        size="lg"
+        variant="outlined"
+        color="blue-gray"
+        className="flex items-center gap-3"
+      >
+        <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+        Continue with Google
+      </Button>
+      <Button
+        size="lg"
+        variant="gradient"
+        color="light-blue"
+        className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+      >
+        Sign in with Twitter
+        <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+          <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+        </span>
+      </Button>
     </div>
   );
 }

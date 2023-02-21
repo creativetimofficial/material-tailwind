@@ -91,8 +91,9 @@ import {
   ListItemSuffix,
 } from "@material-tailwind/react";
 
-// hero icons
-import { TrashIcon } from "@heroicons/react/24/solid";
+// @heroicons
+import * as OutlineIcons from "@heroicons/react/24/outline";
+import * as SolidIcons from "@heroicons/react/24/solid";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
@@ -236,8 +237,8 @@ const components = {
   ListItemPrefix,
   ListItemSuffix,
   Link,
-  Warning,
-  TrashIcon,
+  OutlineIcons,
+  SolidIcons,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

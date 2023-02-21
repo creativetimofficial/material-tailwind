@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
+  style="--arc-palette-title:#DCDEFDF4; --arc-palette-maxContrastColor:#ECEDFEFF; --arc-background-gradient-color0:#01021EFF; --arc-palette-foregroundTertiary:#3139FBFF; --arc-palette-background:#0A0D4EF6; --arc-background-gradient-color1:#17011EFF; --arc-palette-hover:#5D64FB7A; --arc-palette-foregroundSecondary:#8489FBFF; --arc-palette-foregroundPrimary:#ECEDFEFF; --arc-palette-subtitle:#797A82F9; --arc-palette-focus:#4D54FBCE; --arc-palette-minContrastColor:#212AFBFF; --arc-palette-backgroundExtra:#050727F4; --arc-palette-cutoutColor:#212AFBFF;">
+  <path fill="#fff" d="M0 0h28v28H0z" />
+  <path fill="#3375BB" fill-rule="evenodd"
+    d="M20.99 7.55a.92.92 0 0 1 .9.92 63.1 63.1 0 0 1-.33 6.19 12.91 12.91 0 0 1-.87 3.7 5.86 5.86 0 0 1-1.03 1.6 8.03 8.03 0 0 1-1.86 1.43l-.91.53c-.68.38-1.43.8-2.27 1.37-.3.2-.7.2-1.01 0-.86-.57-1.62-1-2.3-1.39l-.45-.25c-.8-.47-1.52-.9-2.15-1.55a5.5 5.5 0 0 1-1.08-1.54 10.7 10.7 0 0 1-.85-3.07c-.27-1.7-.4-3.93-.44-7.02a.91.91 0 0 1 .9-.92h.38a9.5 9.5 0 0 0 5.93-1.83.91.91 0 0 1 1.12 0 9.54 9.54 0 0 0 5.94 1.83h.38Zm-2.04 10.23c.29-.6.52-1.4.7-2.56.22-1.4.35-3.29.41-5.86-1.37-.04-3.71-.3-5.95-1.8a11.24 11.24 0 0 1-5.94 1.8c.05 2.13.15 3.78.3 5.08.18 1.48.42 2.48.74 3.19.2.46.43.8.7 1.1.36.4.82.73 1.45 1.1l.85.5c.56.31 1.2.67 1.9 1.12.7-.44 1.33-.8 1.87-1.11l.48-.27a7.94 7.94 0 0 0 1.76-1.24c.29-.3.52-.61.73-1.05Z"
+    clip-rule="evenodd" />
+</svg>
