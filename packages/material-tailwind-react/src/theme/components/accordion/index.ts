@@ -51,6 +51,7 @@ export const accordion: AccordionStylesType = {
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
           fontSize: "text-xl",
+          textAlign: "text-left",
           fontWeight: "font-semibold",
           lineHeight: "leading-snug",
           userSelect: "select-none",
