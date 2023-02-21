@@ -189,7 +189,7 @@ You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or i
         Item One
         <ListItemSuffix>
           <IconButton variant="text" color="blue-gray">
-            <TrashIcon className="h-5 w-5" />
+            <SolidIcons.TrashIcon className="h-5 w-5" />
           </IconButton>
         </ListItemSuffix>
       </ListItem>
@@ -197,7 +197,7 @@ You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or i
         Item Two
         <ListItemSuffix>
           <IconButton variant="text" color="blue-gray">
-            <TrashIcon className="h-5 w-5" />
+            <SolidIcons.TrashIcon className="h-5 w-5" />
           </IconButton>
         </ListItemSuffix>
       </ListItem>
@@ -205,7 +205,7 @@ You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or i
         Item Three
         <ListItemSuffix>
           <IconButton variant="text" color="blue-gray">
-            <TrashIcon className="h-5 w-5" />
+            <SolidIcons.TrashIcon className="h-5 w-5" />
           </IconButton>
         </ListItemSuffix>
       </ListItem>
@@ -286,23 +286,24 @@ export default function Example() {
   const [selected, setSelected] = React.useState(1);
   const setSelectedItem = (value) => setSelected(value);
 
-  return (
-    <Card className="w-96">
-      <List>
-        <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
-          Inbox
-        </ListItem>
-        <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
-          Trash
-        </ListItem>
-        <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
-          Settings
-        </ListItem>
-      </List>
-    </Card>;
-  );
+return (
+<Card className="w-96">
+<List>
+<ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
+Inbox
+</ListItem>
+<ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
+Trash
+</ListItem>
+<ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
+Settings
+</ListItem>
+</List>
+</Card>;
+);
 }
-```
+
+````
 </CodePreview>
 
 ---
@@ -334,7 +335,8 @@ export default function Example() {
     </Card>
   );
 }
-```
+````
+
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
