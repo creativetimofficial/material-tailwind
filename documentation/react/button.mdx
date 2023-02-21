@@ -10,6 +10,7 @@ navigation:
     "button-with-icon",
     "block-level-button",
     "button-ripple-effect",
+    "custom-auth-buttons",
     "props",
     "theme",
   ]
@@ -248,6 +249,76 @@ export default function Example() {
     <div className="flex w-max gap-4">
       <Button ripple={true}>Ripple Effect On</Button>
       <Button ripple={false}>Ripple Effect Off</Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Custom Auth Buttons
+
+You can use tailwind css classes with <Code>Button</Code> to create beautiful buttons for different purposes, below you can use some button examples used for authentication with social media and web 3.0.
+
+<CodePreview id="custom-auth-buttons" link="button#custom-auth-buttons" component={
+  <div className="flex flex-col items-center gap-4">
+    <Button size="lg" color="white" className="flex items-center gap-3">
+      <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+      Connect Wallet
+    </Button>
+    <Button
+      size="lg"
+      variant="outlined"
+      color="blue-gray"
+      className="flex items-center gap-3"
+    >
+      <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+      Continue with Google
+    </Button>
+    <Button
+      size="lg"
+      variant="gradient"
+      color="light-blue"
+      className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+    >
+      Sign in with Twitter
+      <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+        <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+      </span>
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <Button size="lg" color="white" className="flex items-center gap-3">
+        <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+        Connect Wallet
+      </Button>
+      <Button
+        size="lg"
+        variant="outlined"
+        color="blue-gray"
+        className="flex items-center gap-3"
+      >
+        <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+        Continue with Google
+      </Button>
+      <Button
+        size="lg"
+        variant="gradient"
+        color="light-blue"
+        className="group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+      >
+        Sign in with Twitter
+        <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
+          <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+        </span>
+      </Button>
     </div>
   );
 }
