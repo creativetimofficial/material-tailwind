@@ -7,6 +7,7 @@ navigation:
     "alert-variants",
     "alert-colors",
     "alert-with-icon",
+    "alert-with-list",
     "alert-dismissible",
     "custom-alert-animation",
     "props",
@@ -65,7 +66,7 @@ The <Code>Alert</Code> component comes with 2 different variants that you can ch
     <Alert color="green" variant="outlined">
       <span>A simple outlined alert for showing message.</span>
     </Alert>
-    <Alert color="amber" variant="ghost">
+    <Alert color="orange" variant="ghost">
       <span>A simple ghost alert for showing message.</span>
     </Alert>
   </div>
@@ -83,7 +84,7 @@ export default function Example() {
       <Alert color="green" variant="outlined">
         <span>A simple outlined alert for showing message.</span>
       </Alert>
-      <Alert color="amber" variant="ghost">
+      <Alert color="orange" variant="ghost">
         <span>A simple ghost alert for showing message.</span>
       </Alert>
     </div>
@@ -224,6 +225,150 @@ export default function Example() {
         }
       >
         A simple alert with icon for showing message
+      </Alert>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Alert with List
+
+You can add any element you want for the <Code>Alert</Code> component, below is a example of alert with a list inside.
+
+<CodePreview id="alert-with-list" link="alert#alert-with-list" component={
+  <div className="flex w-full flex-col gap-2">
+    <Alert
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
+        />
+      }
+    >
+      <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+      <ul class="mt-2 ml-2 list-disc list-inside">
+        <li>At least 10 characters (and up to 100 characters)</li>
+        <li>At least one lowercase character</li>
+        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+      </ul>
+    </Alert>
+    <Alert
+      variant="gradient"
+      color="red"
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
+        />
+      }
+    >
+      <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+      <ul class="mt-2 ml-2 list-disc list-inside">
+        <li>At least 10 characters (and up to 100 characters)</li>
+        <li>At least one lowercase character</li>
+        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+      </ul>
+    </Alert>
+    <Alert
+      variant="outlined"
+      color="green"
+      icon={
+        <SolidIcons.InformationCircleIcon className="h-6 w-6" />
+      }
+    >
+      <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+      <ul class="mt-2 ml-2 list-disc list-inside">
+        <li>At least 10 characters (and up to 100 characters)</li>
+        <li>At least one lowercase character</li>
+        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+      </ul>
+    </Alert>
+    <Alert
+      variant="ghost"
+      color="orange"
+      icon={
+        <SolidIcons.InformationCircleIcon className="h-6 w-6" />
+      }
+    >
+      <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+      <ul class="mt-2 ml-2 list-disc list-inside">
+        <li>At least 10 characters (and up to 100 characters)</li>
+        <li>At least one lowercase character</li>
+        <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+      </ul>
+    </Alert>
+  </div>
+}>
+```jsx
+import { Alert } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/outline"
+import { InformationCircleIcon as InformationCircleIconSolid  } from "@heroicons/react/24/solid"
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-2">
+      <Alert
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
+          />
+        }
+      >
+        <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+        <ul class="mt-2 ml-2 list-disc list-inside">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert
+        variant="gradient"
+        color="red"
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
+          />
+        }
+      >
+        <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+        <ul class="mt-2 ml-2 list-disc list-inside">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert
+        variant="outlined"
+        color="green"
+        icon={
+          <InformationCircleIconSolid className="h-6 w-6" />
+        }
+      >
+        <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+        <ul class="mt-2 ml-2 list-disc list-inside">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
+      </Alert>
+      <Alert
+        variant="ghost"
+        color="orange"
+        icon={
+          <InformationCircleIconSolid className="h-6 w-6" />
+        }
+      >
+        <Typography className="font-medium">Ensure that these requirements are met:</Typography>
+        <ul class="mt-2 ml-2 list-disc list-inside">
+          <li>At least 10 characters (and up to 100 characters)</li>
+          <li>At least one lowercase character</li>
+          <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+        </ul>
       </Alert>
     </div>
   );
