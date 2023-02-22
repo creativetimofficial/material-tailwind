@@ -8,6 +8,11 @@ navigation:
     "checkbox-with-label",
     "checkbox-custom-icon",
     "checkbox-ripple-effect",
+    "disabled-checkbox",
+    "checkbox-with-link",
+    "checkbox-with-description",
+    "checkbox-vertical-list-group",
+    "checkbox-horizontal-list-group",
     "props",
     "theme",
   ]
@@ -181,6 +186,345 @@ export default function Example() {
       <Checkbox id="ripple-on" label="Ripple Effect On" ripple={true} />
       <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
     </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Disabled Checkbox
+
+You can make a checkbox disable by passing the <Code>disabled</Code> prop to the <Code>Checkbox</Code> component.
+
+<CodePreview id="disabled-checkbox" link="checkbox#disabled-checkbox" component={<Checkbox id="disabled" label="Remember Me" disabled={true} />}>
+```jsx
+import { Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Checkbox label="Remember Me" disabled={true} />;
+}
+```
+</CodePreview>
+
+---
+
+## Checkbox with Link
+
+The <Code>label</Code> prop for the the checkbox can accept dom elements and because of that you can put links or any other dom elements you like to have with your checkbox label.
+
+<CodePreview id="checkbox-with-link" link="checkbox#checkbox-with-link" component={
+  <Checkbox id="terms" label={
+    <Typography color="blue-gray" className="font-medium flex">I agree with the
+      <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+        &nbsp;terms and conditions
+      </Typography>.
+    </Typography>
+  } />
+}>
+```jsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Checkbox label={
+      <Typography color="blue-gray" className="font-medium flex">I agree with the
+        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+          &nbsp;terms and conditions
+        </Typography>.
+      </Typography>
+    } />
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Checkbox with Description
+
+Use the example below for a more complex usage of checkbox with label that contains some description.
+
+<CodePreview id="checkbox-with-description" link="checkbox#checkbox-with-description" component={
+  <Checkbox 
+    id="description"
+    label={
+      <div>
+        <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          You'll be able to login without password for 24 hours.
+        </Typography>
+      </div>
+    }
+    containerProps={{
+      className: "-mt-5"
+    }}
+  />
+}>
+```jsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Checkbox 
+      label={
+        <div>
+          <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            You'll be able to login without password for 24 hours.
+          </Typography>
+        </div>
+      }
+      containerProps={{
+        className: "-mt-5"
+      }}
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Checkbox Vertical List Group
+
+Use the example below for a vertical list of checkboxes.
+
+<CodePreview id="checkbox-vertical-list-group" link="checkbox#checkbox-vertical-list-group" component={
+  <Card>
+    <List>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="vertical-list-react" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">React.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="vertical-list-vue" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="vertical-list-svelte" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+        </label>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  Checkbox,
+  Card,
+  List,
+  ListItem,
+  ListItemPrefix,
+  Typography
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card>
+      <List>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="vertical-list-react" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="vertical-list-vue" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="vertical-list-svelte" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+          </label>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Checkbox Horizontal List Group
+
+Use the example below for a horizontal list of checkboxes.
+
+<CodePreview id="checkbox-horizontal-list-group" link="checkbox#checkbox-horizontal-list-group" component={
+  <Card className="w-full max-w-[24rem]">
+    <List className="flex-row">
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="horizontal-list-react" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">React.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="horizontal-list-vue" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Checkbox 
+              id="horizontal-list-svelte" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+        </label>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  Checkbox,
+  Card,
+  List,
+  ListItem,
+  ListItemPrefix,
+  Typography
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-full max-w-[24rem]">
+      <List className="flex-row">
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="horizontal-list-react" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="horizontal-list-vue" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Checkbox 
+                id="horizontal-list-svelte" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+          </label>
+        </ListItem>
+      </List>
+    </Card>
   );
 }
 ```
