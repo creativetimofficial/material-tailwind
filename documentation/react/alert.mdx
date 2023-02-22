@@ -55,7 +55,7 @@ export default function Example() {
 
 ## Alert Variants
 
-The <Code>Alert</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Alert</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="alert-variants" link="alert#alert-variants" component={
   <div className="flex w-full flex-col gap-2">
@@ -380,7 +380,7 @@ export default function Example() {
 
 ## Alert Dismissible
 
-The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
+The <Code>Alert</Code> component is a dismissible component that you can control it using the <Code>onClose</Code> and <Code>open</Code> props.
 
 <CodePreview id="alert-dismissible" link="alert#alert-dismissible" component={
   <State initialState={{ open: true }}>
