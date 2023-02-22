@@ -1,7 +1,15 @@
 ---
 title: Tailwind CSS Avatar for React - Material Tailwind
 description: Customise your web projects  with our easy-to-use avatar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["avatar", "avatar-variants", "avatar-sizes", "props", "theme"]
+navigation:
+  [
+    "avatar",
+    "avatar-variants",
+    "avatar-sizes",
+    "avatar-with-border",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -42,12 +50,13 @@ export default function Example() {
 
 ## Avatar Variants
 
-The <Code>Avatar</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Avatar</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="avatar-variants" link="avatar#avatar-variants" component={
   <div className="flex gap-4">
     <Avatar src="/img/face-2.jpg" alt="avatar" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
   </div>
 }>
 ```jsx
@@ -57,7 +66,8 @@ export default function Example() {
   return (
     <div className="flex gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="circular" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
     </div>
   );
 }
@@ -92,6 +102,34 @@ export default function Example() {
       <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
       <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
       <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar with border
+
+You can add border around the avatar using the <Code>withBorder</Code> prop. To change the color of the avatar border use the <Code>color</Code> prop, by default it's <Code>blue</Code>.
+
+<CodePreview id="avatar-with-border" link="avatar#avatar-with-border" component={
+  <div className="flex gap-4">
+    <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
+    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
+  </div>
+}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
+      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
     </div>
   );
 }
