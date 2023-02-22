@@ -37,18 +37,10 @@ export interface AlertStylesType {
       action?: object;
     };
     variants?: {
-      alert?: {
-        filled?: typeof alertFilled;
-        gradient?: typeof alertGradient;
-        outlined?: typeof alertOutlined;
-        ghost?: typeof alertGhost;
-      };
-      action?: {
-        filled?: typeof alertFilled;
-        gradient?: typeof alertGradient;
-        outlined?: typeof alertOutlined;
-        ghost?: typeof alertGhost;
-      };
+      filled?: typeof alertFilled;
+      gradient?: typeof alertGradient;
+      outlined?: typeof alertOutlined;
+      ghost?: typeof alertGhost;
     };
   };
 }
@@ -86,27 +78,15 @@ export const alert: AlertStylesType = {
       },
       action: {
         position: "!absolute",
-        top: "top-3.5",
-        right: "right-3.5",
-        rounded: "rounded-lg",
-        padding: "p-0.5",
-        overflow: "overflow-hidden",
-        transition: "transition-all",
+        top: "top-3",
+        right: "right-3",
       },
     },
     variants: {
-      alert: {
-        filled: alertFilled,
-        gradient: alertGradient,
-        outlined: alertOutlined,
-        ghost: alertGhost,
-      },
-      action: {
-        filled: alertFilled,
-        gradient: alertGradient,
-        outlined: alertOutlined,
-        ghost: alertGhost,
-      },
+      filled: alertFilled,
+      gradient: alertGradient,
+      outlined: alertOutlined,
+      ghost: alertGhost,
     },
   },
 };

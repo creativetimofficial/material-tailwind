@@ -42,6 +42,7 @@ import {
   propTypesChildren,
   propTypesOnClose,
 } from "../../types/components/alert";
+import IconButton from "../IconButton";
 
 export interface AlertProps extends Omit<MotionProps, "animate"> {
   variant?: variant;
@@ -76,17 +77,12 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const alertBase = objectsToString(base.alert);
     const alertAction = objectsToString(base.action);
     const alertVariant = objectsToString(
-      variants.alert[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
-      ],
-    );
-    const actionVariant = objectsToString(
-      variants.action[findMatch(valid.variants, variant, "filled")][
+      variants[findMatch(valid.variants, variant, "filled")][
         findMatch(valid.colors, color, "blue")
       ],
     );
     const classes = twMerge(classnames(alertBase, alertVariant), className);
-    const actionClasses = classnames(alertAction, actionVariant);
+    const actionClasses = classnames(alertAction);
 
     // 4. set animation
     const mainAnimation = {
@@ -122,14 +118,15 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             {icon && iconTemplate}
             <div className={`${icon ? "ml-3" : ""} mr-12`}>{children}</div>
             {onClose && !action && (
-              <div
-                role="button"
+              <IconButton
                 onClick={onClose}
+                size="sm"
+                variant="text"
+                color={variant === "outlined" || variant === "ghost" ? color : "white"}
                 className={actionClasses}
-                onMouseDown={(e) => rippleEffect.create(e, "light")}
               >
                 <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-              </div>
+              </IconButton>
             )}
             {action || null}
           </motion.div>
