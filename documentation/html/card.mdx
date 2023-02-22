@@ -2,7 +2,14 @@
 title: Tailwind CSS Card - Material Tailwind
 description: Customise your web projects with our beautiful cards component for Tailwind CSS using Material Design guidelines.
 navigation:
-  ["card", "card-basic", "card-image-inside", "login-card", "card-horizontal"]
+  [
+    "card",
+    "card-basic",
+    "card-image-inside",
+    "login-card",
+    "card-horizontal",
+    "pricing-card",
+  ]
 github: card
 prev: button
 next: checkbox
@@ -23,7 +30,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   link="card#card"
   component={
     <div className="my-10 w-1/2">
-      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+      <div className="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
         <div className="mx-4 -mt-6 translate-y-0">
           <a href="#" blur-shadow-image="true">
             <img
@@ -54,7 +61,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+  <div class="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
     <div class="mx-4 -mt-6 translate-y-0">
       <a href="#" blur-shadow-image="true">
         <img
@@ -95,7 +102,7 @@ Below you can see a card example with only text and link (button).
   id="card-basic"
   component={
     <div className="my-10 w-1/2">
-      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+      <div className="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
         <div className="text-secondary flex-1 p-6">
           <a href="#">
             <h3>Material Tailwind</h3>
@@ -117,7 +124,7 @@ Below you can see a card example with only text and link (button).
   }
 >
   ```html
-  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+  <div class="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
     <div class="text-secondary flex-1 p-6">
       <a href="#">
         <h3>Material Tailwind</h3>
@@ -147,7 +154,7 @@ The card example below includes an image and avatar component.
   id="card-image-inside"
   component={
     <div className="my-10 w-1/2">
-      <div className="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+      <div className="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
         <div className="mx-4 mt-4 translate-y-0">
           <a href="#" blur-shadow-image="true">
             <img
@@ -190,7 +197,7 @@ The card example below includes an image and avatar component.
   }
 >
   ```html
-  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+  <div class="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
     <div class="mx-4 mt-4 translate-y-0">
       <a href="#" blur-shadow-image="true">
         <img
@@ -240,7 +247,7 @@ Cards also can be used for Login/Signup pages. See below our Tailwind CSS exampl
   link="card#login-card"
   component={
     <div className="my-10 w-1/2">
-      <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+      <div class="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
         <div className="mx-4 -mt-6 translate-y-0">
           <div className="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
             <h4 className="mt-2 mb-0 text-center font-bold text-white">
@@ -325,7 +332,7 @@ Cards also can be used for Login/Signup pages. See below our Tailwind CSS exampl
   }
 >
   ```html
-  <div class="flex flex-col rounded-xl bg-white bg-clip-border shadow-card">
+  <div class="shadow-card flex flex-col rounded-xl bg-white bg-clip-border">
     <div class="mx-4 -mt-6 translate-y-0">
       <div class="shadow-pink pe-1 rounded-lg bg-pink-500 py-3">
         <h4 class="mt-2 mb-0 text-center font-bold text-white">Sign in</h4>
@@ -458,6 +465,288 @@ Our last card example has an horizontal layout. Use it to your projects!
           by <span class="font-bold">Megan Rose</span>, 2 days ago
         </p>
       </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Pricing Card
+
+<CodePreview
+  id="pricing-card"
+  link="card#pricing-card"
+  component={
+    <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border p-8 text-white shadow-md shadow-pink-500/40">
+      <div className="relative m-0 mb-8 overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center text-gray-700 shadow-none">
+        <p className="block font-sans text-sm font-normal uppercase leading-normal text-white antialiased">
+          standard
+        </p>
+        <h1 className="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal text-white antialiased">
+          <span className="mt-2 text-4xl">$</span>29
+          <span className="self-end text-4xl">/mo</span>
+        </h1>
+      </div>
+      <div className="p-0">
+        <ul className="flex flex-col gap-4">
+          <li className="flex items-center gap-4">
+            <span className="rounded-full border border-white/20 bg-white/20 p-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-3 w-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                ></path>
+              </svg>
+            </span>
+            <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+              5 team members
+            </p>
+          </li>
+          <li className="flex items-center gap-4">
+            <span className="rounded-full border border-white/20 bg-white/20 p-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-3 w-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                ></path>
+              </svg>
+            </span>
+            <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+              200+ components
+            </p>
+          </li>
+          <li className="flex items-center gap-4">
+            <span className="rounded-full border border-white/20 bg-white/20 p-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-3 w-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                ></path>
+              </svg>
+            </span>
+            <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+              40+ built-in pages
+            </p>
+          </li>
+          <li className="flex items-center gap-4">
+            <span className="rounded-full border border-white/20 bg-white/20 p-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-3 w-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                ></path>
+              </svg>
+            </span>
+            <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+              1 year free updates
+            </p>
+          </li>
+          <li className="flex items-center gap-4">
+            <span className="rounded-full border border-white/20 bg-white/20 p-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-3 w-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                ></path>
+              </svg>
+            </span>
+            <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+              Life time technical support
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div className="mt-12 p-0">
+        <button
+          className="block w-full select-none rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-pink-500 shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+          data-ripple-dark="true"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border p-8 text-white shadow-md shadow-pink-500/40">
+    <div class="relative m-0 mb-8 overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center text-gray-700 shadow-none">
+      <p class="block font-sans text-sm font-normal uppercase leading-normal text-white antialiased">
+        standard
+      </p>
+      <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal text-white antialiased">
+        <span class="mt-2 text-4xl">$</span>29
+        <span class="self-end text-4xl">/mo</span>
+      </h1>
+    </div>
+    <div class="p-0">
+      <ul class="flex flex-col gap-4">
+        <li class="flex items-center gap-4">
+          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-3 w-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+            5 team members
+          </p>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-3 w-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+            200+ components
+          </p>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-3 w-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+            40+ built-in pages
+          </p>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-3 w-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+            1 year free updates
+          </p>
+        </li>
+        <li class="flex items-center gap-4">
+          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="h-3 w-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+              ></path>
+            </svg>
+          </span>
+          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+            Life time technical support
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-12 p-0">
+      <button
+        class="block w-full select-none rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-pink-500 shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-dark="true"
+      >
+        Buy Now
+      </button>
     </div>
   </div>
   ```
