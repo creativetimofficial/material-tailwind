@@ -6,7 +6,6 @@ navigation:
     "alert-props",
     "types-variant",
     "types-color",
-    "types-dismissible",
     "types-animate",
     "examples",
     "theme",
@@ -31,19 +30,20 @@ related:
 
 <span id="alert-props" className="scroll-mt-48" />
 The following props are available for button component. These are the custom props
-that we've added for the alert component and you can use all the other
-native props as well.
+that we've added for the alert component and you can use all the other native props
+as well.
 
-| Attribute     | Type                              | Description                        | Default                                |
-| ------------- | --------------------------------- | ---------------------------------- | -------------------------------------- |
-| `variant`     | [Variant](#types-variant)         | Change alert variant               | <Code>filled</Code>                    |
-| `color`       | [Color](#types-color)             | Change alert color                 | <Code>blue</Code>                      |
-| `dismissible` | [Dismissible](#types-dismissible) | Makes alert dismissible            | <Code>undefined</Code>                 |
-| `animate`     | [Animate](#types-animate)         | Change alert animation             | <Code>undefined</Code>                 |
-| `show`        | <Code>boolean</Code>              | Change alert visibility            | <Code>true</Code>                      |
-| `icon`        | <Code>node</Code>                 | Add icon at the beginning of alert | <Code>undefined</Code>                 |
-| `className`   | <Code>string</Code>               | Add custom className for alert     | `''`                                   |
-| `children`    | <Code>node</Code>                 | Add content for alert              | No default value it's a required prop. |
+| Attribute   | Type                      | Description                                   | Default                                |
+| ----------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change alert variant                          | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change alert color                            | <Code>blue</Code>                      |
+| `onClose`   | <Code>func</Code>         | Callback for closing the alert component      | <Code>undefined</Code>                 |
+| `action`    | <Code>node</Code>         | Change the <Code>onClose</Code> action button | <Code>undefined</Code>                 |
+| `animate`   | [Animate](#types-animate) | Change alert animation                        | <Code>undefined</Code>                 |
+| `open`      | <Code>boolean</Code>      | Change alert visibility                       | <Code>true</Code>                      |
+| `icon`      | <Code>node</Code>         | Add icon at the beginning of alert            | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for alert                | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for alert                         | No default value it's a required prop. |
 
 <br />
 <br />
@@ -91,19 +91,6 @@ type color =
   | "purple"
   | "pink"
   | "red";
-```
-
----
-
-## Types - Dismissible
-
-<span id="types-dismissible" className="scroll-mt-48" />
-
-```ts
-type dismissible = {
-  action?: ReactNode;
-  onClose: () => void;
-};
 ```
 
 ---

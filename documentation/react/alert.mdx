@@ -59,8 +59,14 @@ The <Code>Alert</Code> component comes with 2 different variants that you can ch
 <CodePreview id="alert-variants" link="alert#alert-variants" component={
   <div className="flex w-full flex-col gap-2">
     <Alert>A simple filled alert for showing message.</Alert>
-    <Alert variant="gradient">
+    <Alert color="red" variant="gradient">
       <span>A simple gradient alert for showing message.</span>
+    </Alert>
+    <Alert color="green" variant="outlined">
+      <span>A simple outlined alert for showing message.</span>
+    </Alert>
+    <Alert color="amber" variant="ghost">
+      <span>A simple ghost alert for showing message.</span>
     </Alert>
   </div>
 }>
@@ -70,9 +76,15 @@ import { Alert } from "@material-tailwind/react";
 export default function Example() {
   return (
     <div className="flex flex-col gap-2">
-      <Alert variant="filled">A simple filled alert for showing message.</Alert>
-      <Alert variant="gradient">
-        A simple gradient alert for showing message.
+      <Alert>A simple filled alert for showing message.</Alert>
+      <Alert color="red" variant="gradient">
+        <span>A simple gradient alert for showing message.</span>
+      </Alert>
+      <Alert color="green" variant="outlined">
+        <span>A simple outlined alert for showing message.</span>
+      </Alert>
+      <Alert color="amber" variant="ghost">
+        <span>A simple ghost alert for showing message.</span>
       </Alert>
     </div>
   );
@@ -91,7 +103,7 @@ The <Code>Alert</Code> component comes with 19 different colors that you can cha
     <Alert>An info alert for showing message.</Alert>
     <Alert color="red">An error alert for showing message.</Alert>
     <Alert color="green">A success alert for showing message.</Alert>
-    <Alert color="yellow">A warning alert for showing message.</Alert>
+    <Alert color="amber">A warning alert for showing message.</Alert>
   </div>
 }>
 ```jsx
@@ -117,52 +129,103 @@ export default function Example() {
 You can add an icon at the beginning of <Code>Alert</Code> component using the <Code>icon</Code> prop.
 
 <CodePreview id="alert-with-icon" link="alert#alert-with-icon" component={
-  <Alert
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        className="h-6 w-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  <div className="flex w-full flex-col gap-2">
+    <Alert
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
         />
-      </svg>
-    }
-  >
-    {`A simple alert with icon for showing message`}
-  </Alert>
+      }
+    >
+      {`A simple alert with icon for showing message`}
+    </Alert>
+    <Alert
+      color="red"
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
+        />
+      }
+    >
+      {`A simple alert with icon for showing message`}
+    </Alert>
+    <Alert
+      color="green"
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
+        />
+      }
+    >
+      {`A simple alert with icon for showing message`}
+    </Alert>
+    <Alert
+      color="amber"
+      icon={
+        <OutlineIcons.InformationCircleIcon
+          strokeWidth={2}
+          className="h-6 w-6"
+        />
+      }
+    >
+      {`A simple alert with icon for showing message`}
+    </Alert>
+  </div>
 }>
 ```jsx
 import { Alert } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/outline"
 
 export default function Example() {
   return (
-    <Alert
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+    <div className="flex w-full flex-col gap-2">
+      <Alert
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
           />
-        </svg>
-      }
-    >
-      A simple alert with icon for showing message.
-    </Alert>
+        }
+      >
+        A simple alert with icon for showing message
+      </Alert>
+      <Alert
+        color="red"
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
+          />
+        }
+      >
+        A simple alert with icon for showing message
+      </Alert>
+      <Alert
+        color="green"
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
+          />
+        }
+      >
+        A simple alert with icon for showing message
+      </Alert>
+      <Alert
+        color="amber"
+        icon={
+          <InformationCircleIcon
+            strokeWidth={2}
+            className="h-6 w-6"
+          />
+        }
+      >
+        A simple alert with icon for showing message
+      </Alert>
+    </div>
   );
 }
 ```
@@ -189,7 +252,6 @@ The <Code>Alert</Code> component is a dismissible component that you can control
           )}
           <Alert
             open={open}
-            variant="outlined"
             onClose={() => setState((s) => ({ open: false }))}
           >
             A dismissible alert for showing message.
@@ -204,27 +266,21 @@ import { useState, Fragment } from "react";
 import { Alert, Button } from "@material-tailwind/react";
 
 export default function Example() {
-  const [show, setShow] = useState(true);
-
-return (
-
-<Fragment>
-  {!show && (
-    <Button className="absolute" onClick={() => setShow(true)}>
-      Show Alert
-    </Button>
-  )}
-  <Alert
-    show={show}
-    dismissible={{
-      onClose: () => setShow(false),
-    }}
-  >
-    A dismissible alert for showing message.
-  </Alert>
-</Fragment>
-); }
-
+  const [open, setOpen] = useState(true);
+  
+  return (
+    <Fragment>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
+          Show Alert
+        </Button>
+      )}
+      <Alert open={open} onClose={() => setOpen(false)}>
+        A dismissible alert for showing message.
+      </Alert>
+    </Fragment>
+  );
+}
 ````
 </CodePreview>
 
@@ -235,20 +291,20 @@ return (
 You can modify the open/close state animation for <Code>Alert</Code> component using the <Code>animate</Code> prop.
 
 <CodePreview id="custom-alert-animation" component={
-  <State initialState={{ show: true }}>
+  <State initialState={{ open: true }}>
     <Observe>
-      {({ setState, show }) => (
+      {({ setState, open }) => (
         <>
-          {!show && (
+          {!open && (
             <Button
               className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
+              onClick={() => setState((s) => ({ open: true }))}
             >
               Show Alert
             </Button>
           )}
           <Alert
-            show={show}
+            open={open}
             animate={{
               mount: {
                 y: 0,
@@ -257,9 +313,7 @@ You can modify the open/close state animation for <Code>Alert</Code> component u
                 y: 100,
               },
             }}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
+            onClose={() => setState((s) => ({ open: false }))}
           >
             A dismissible alert with custom animation.
           </Alert>
@@ -273,36 +327,33 @@ import { useState, Fragment } from "react";
 import { Alert, Button } from "@material-tailwind/react";
 
 export default function Example() {
-  const [show, setShow] = useState(true);
+  const [open, setOpen] = useState(true);
 
-  return (
-    <Fragment>
-      {!show && (
-        <Button
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
-          Show Alert
-        </Button>
-      )}
-      <Alert
-        show={show}
-        animate={{
-          mount: { y: 0 },
-          unmount: { y: 100 },
-        }}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
-      >
-        A dismissible alert with custom animation.
-      </Alert>
-    </Fragment>
-  );
-}
-````
+return (
+
+<Fragment>
+  {!open && (
+    <Button className="absolute" onClick={() => setOpen(true)}>
+      Show Alert
+    </Button>
+  )}
+  <Alert
+    open={open}
+    onClose={() => setOpen(false)}
+    animate={{
+      mount: { y: 0 },
+      unmount: { y: 100 },
+    }}
+  >
+    A dismissible alert with custom animation.
+  </Alert>
+</Fragment>
+); }
+
+```
 
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
+```
