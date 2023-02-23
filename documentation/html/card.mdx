@@ -9,6 +9,7 @@ navigation:
     "login-card",
     "card-horizontal",
     "pricing-card",
+    "blog-card",
   ]
 github: card
 prev: button
@@ -751,3 +752,101 @@ Our last card example has an horizontal layout. Use it to your projects!
   </div>
   ```
 </CodePreview>
+
+---
+
+## Blog Card
+
+<CodePreview id="blog-card" link="card#blog-card" className="mt-4" component={
+  <div
+    className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md max-w-[24rem] overflow-hidden"
+  >
+    <div
+      className="relative bg-clip-border overflow-hidden bg-transparent text-gray-700 shadow-none m-0 rounded-none"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+        alt="ui/ux review check"
+      />
+    </div>
+    <div className="p-6">
+      <h4
+        className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
+      >
+        UI/UX Review Check
+      </h4>
+      <p
+        className="block antialiased font-sans text-xl leading-relaxed text-gray-700 mt-3 font-normal"
+      >
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire others.
+      </p>
+    </div>
+    <div className="p-6 flex items-center justify-between">
+      <div className="flex items-center -space-x-3">
+        <img
+          alt="natali craig"
+          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
+          className="inline-block relative object-cover object-center rounded-full w-9 h-9 border-2 border-white hover:z-10"
+        /><img
+          alt="candice wu"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          className="inline-block relative object-cover object-center rounded-full w-9 h-9 border-2 border-white hover:z-10"
+        />
+      </div>
+      <p
+        className="block antialiased font-sans text-base leading-relaxed text-inherit font-normal"
+      >
+        January 10
+      </p>
+    </div>
+  </div>
+}>
+```jsx
+<div
+  class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md max-w-[24rem] overflow-hidden"
+>
+  <div
+    class="relative bg-clip-border overflow-hidden bg-transparent text-gray-700 shadow-none m-0 rounded-none"
+  >
+    <img
+      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+      alt="ui/ux review check"
+    />
+  </div>
+  <div class="p-6">
+    <h4
+      class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
+    >
+      UI/UX Review Check
+    </h4>
+    <p
+      class="block antialiased font-sans text-xl leading-relaxed text-gray-700 mt-3 font-normal"
+    >
+      Because it's about motivating the doers. Because I'm here to follow my
+      dreams and inspire others.
+    </p>
+  </div>
+  <div class="p-6 flex items-center justify-between">
+    <div class="flex items-center -space-x-3">
+      <img
+        alt="natali craig"
+        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
+        class="inline-block relative object-cover object-center rounded-full w-9 h-9 border-2 border-white hover:z-10"
+      /><img
+        alt="candice wu"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+        class="inline-block relative object-cover object-center rounded-full w-9 h-9 border-2 border-white hover:z-10"
+      />
+    </div>
+    <p
+      class="block antialiased font-sans text-base leading-relaxed text-inherit font-normal"
+    >
+      January 10
+    </p>
+  </div>
+</div>
+```
+</CodePreview
+
+>
