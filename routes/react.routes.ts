@@ -18,6 +18,7 @@ export const routes = [
       "avatar",
       "breadcrumbs",
       "button",
+      "button-group",
       "card",
       "checkbox",
       "chip",
