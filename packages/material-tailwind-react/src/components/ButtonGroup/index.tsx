@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // utils
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
+import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
 // context
@@ -43,8 +44,8 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
   ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
     // 1. init
     const { buttonGroup } = useTheme();
-    const { defaultProps, styles } = buttonGroup;
-    const { base } = styles;
+    const { defaultProps, styles, valid } = buttonGroup;
+    const { base, dividerColor } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;
@@ -58,6 +59,9 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
     const classes = twMerge(
       classnames(objectsToString(base.initial), {
         [objectsToString(base.fullWidth)]: fullWidth,
+        "divide-x": variant !== "outlined",
+        [objectsToString(dividerColor[findMatch(valid.colors, color, "blue")])]:
+          variant !== "outlined",
       }),
       className,
     );

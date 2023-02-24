@@ -1,3 +1,5 @@
+import buttonGroupDividerColor from "./buttonGroupDividerColor";
+
 // types
 import type {
   variant,
@@ -28,6 +30,7 @@ export interface ButtonGroupStyleTypes {
       initial?: object;
       fullWidth?: object;
     };
+    dividerColor?: typeof buttonGroupDividerColor;
   };
 }
 
@@ -55,6 +58,7 @@ export const buttonGroup: ButtonGroupStyleTypes = {
         width: "w-full",
       },
     },
+    dividerColor: buttonGroupDividerColor,
   },
 };
 
