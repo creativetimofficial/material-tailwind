@@ -78,7 +78,9 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           if (ripple) {
             rippleEffect.create(
               e,
-              variant === "filled" || variant === "gradient" ? "light" : "dark",
+              (variant === "filled" || variant === "gradient") && color !== "white"
+                ? "light"
+                : "dark",
             );
           }
 
