@@ -7,7 +7,6 @@ navigation:
     "types-variant",
     "types-color",
     "types-value",
-    "types-dismissible",
     "types-animate",
     "examples",
     "theme",
@@ -32,19 +31,20 @@ related:
 
 <span id="alert-props" className="scroll-mt-48" />
 The following props are available for button component. These are the custom props
-that we've added for the chip component and you can use all the other native
-props as well.
+that we've added for the chip component and you can use all the other native props
+as well.
 
-| Attribute     | Type                              | Description                       | Default                                |
-| ------------- | --------------------------------- | --------------------------------- | -------------------------------------- |
-| `variant`     | [Variant](#types-variant)         | Change chip variant               | <Code>filled</Code>                    |
-| `color`       | [Color](#types-color)             | Change chip color                 | <Code>blue</Code>                      |
-| `value`       | [Value](#types-value)             | Add content for chip              | No default value it's a required prop. |
-| `dismissible` | [Dismissible](#types-dismissible) | Makes the chip dismissible        | <Code>undefined</Code>                 |
-| `animate`     | [Animate](#types-animate)         | Change chip animation             | <Code>undefined</Code>                 |
-| `show`        | <Code>boolean</Code>              | Change the chip visibility        | <Code>true</Code>                      |
-| `icon`        | <Code>node</Code>                 | Add icon at the beginning of chip | <Code>undefined</Code>                 |
-| `className`   | <Code>string</Code>               | Add custom className for chip     | `''`                                   |
+| Attribute   | Type                      | Description                                   | Default                                |
+| ----------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change chip variant                           | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change chip color                             | <Code>blue</Code>                      |
+| `value`     | [Value](#types-value)     | Add content for chip                          | No default value it's a required prop. |
+| `onClose`   | <Code>func</Code>         | Callback for closing the chip component       | <Code>undefined</Code>                 |
+| `action`    | <Code>node</Code>         | Change the <Code>onClose</Code> action button | <Code>undefined</Code>                 |
+| `open`      | <Code>boolean</Code>      | Change chip visibility                        | <Code>true</Code>                      |
+| `animate`   | [Animate](#types-animate) | Change chip animation                         | <Code>undefined</Code>                 |
+| `icon`      | <Code>node</Code>         | Add icon at the beginning of chip             | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for chip                 | `''`                                   |
 
 <br />
 <br />
@@ -62,8 +62,10 @@ import type { ChipProps } from "@material-tailwind/react";
 <span id="types-variant" className="scroll-mt-48" />
 
 ```ts
-type variant = "filled" | "gradient";
+type variant = "filled" | "gradient" | "outlined" | "ghost";
 ```
+
+````
 
 ---
 
@@ -92,7 +94,7 @@ type color =
   | "purple"
   | "pink"
   | "red";
-```
+````
 
 ---
 
@@ -101,20 +103,7 @@ type color =
 <span id="types-value" className="scroll-mt-48" />
 
 ```ts
-type value = string | number;
-```
-
----
-
-## Types - Dismissible
-
-<span id="types-dismissible" className="scroll-mt-48" />
-
-```ts
-type dismissible = {
-  action?: ReactNode;
-  onClose: () => void;
-};
+type variant = "filled" | "gradient" | "outlined" | "ghost";
 ```
 
 ---

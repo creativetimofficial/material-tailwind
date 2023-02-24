@@ -44,11 +44,9 @@ interface ChipStylesType {
     variant: string;
     color: string;
     icon: node;
-    show: boolean;
-    dismissble: {
-      action: node;
-      onClose: func;
-    };
+    open: boolean;
+    action: node;
+    onClose: func;
     animate: {
       mount: object;
       unmount: object;
@@ -60,12 +58,16 @@ interface ChipStylesType {
     colors: string[];
   };
   styles: {
-    base: object;
+    base: {
+      chip: object;
+      action: object;
+    };
     variants: {
       filled: object;
       gradient: object;
+      outlined: object;
+      ghost: object;
     };
-    closeButtonColor: object;
   };
 }
 ```

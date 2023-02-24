@@ -5,8 +5,10 @@ navigation:
   [
     "chip",
     "chip-variants",
+    "chip-sizes",
     "chip-colors",
     "chip-with-icon",
+    "pills-chip",
     "chip-dismissible",
     "custom-chip-animation",
     "props",
@@ -52,12 +54,14 @@ export default function Example() {
 
 ## Chip Variants
 
-The <Code>Chip</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Chip</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="chip-variants" link="chip#chip-variants" component={
   <div className="flex gap-2">
     <Chip value="chip filled" />
     <Chip variant="gradient" value="chip gradient" />
+    <Chip variant="outlined" value="chip outlined" />
+    <Chip variant="ghost" value="chip ghost" />
   </div>
 }>
 ```jsx
@@ -66,8 +70,39 @@ import { Chip } from "@material-tailwind/react";
 export default function Example() {
   return (
     <div className="flex gap-2">
-      <Chip variant="filled" value="chip filled" />
+      <Chip value="chip filled" />
       <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip Sizes
+
+The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="chip-sizes" link="chip#chip-sizes" component={
+  <div className="flex items-end gap-2">
+    <Chip size="sm" value="chip small" />
+    <Chip size="md" value="chip medium" />
+    <Chip size="lg" value="chip large" />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="chip filled" />
+      <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
     </div>
   );
 }
@@ -121,36 +156,70 @@ export default function Example() {
 You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
 
 <CodePreview id="chip-with-icon" link="chip#chip-with-icon" component={
-  <Chip
-    value="downloads"
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-      </svg>
-    }
-  />
+  <div className="flex gap-2">
+    <Chip
+      value="account"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="gradient"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="outlined"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="ghost"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="account" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="gradient" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="outlined" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="ghost" icon={<UserCircleIcon />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Pills Chip
+
+You can pass tailwind css classes for the <Code>Chip</Code> component using the <Code>className</Code> prop this helps to do any sort of customization for the chip.
+
+<CodePreview id="pills-chip" link="chip#pills-chip" component={
+  <div className="flex gap-2">
+    <Chip value="pills chip" className="rounded-full" />
+    <Chip variant="gradient" value="pills chip" className="rounded-full" />
+    <Chip variant="outlined" value="pills chip" className="rounded-full" />
+    <Chip variant="ghost" value="pills chip" className="rounded-full" />
+  </div>
 }>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Chip
-      value="downloads"
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-        </svg>
-      }
-    />
+    <div className="flex gap-2">
+      <Chip value="chip filled" />
+      <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
+    </div>
   );
 }
 ```
@@ -163,24 +232,22 @@ export default function Example() {
 The <Code>Chip</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
 <CodePreview id="chip-dismissible" link="chip#chip-dismissible" component={
-  <State initialState={{ show: true }}>
+  <State initialState={{ open: true }}>
     <Observe>
-      {({ setState, show }) => (
+      {({ setState, open }) => (
         <>
-          {!show && (
+          {!open && (
             <Button
               className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
+              onClick={() => setState((s) => ({ open: true }))}
             >
               Show Chip
             </Button>
           )}
           <Chip
-            show={show}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
+            open={open}
             value="Dismissible"
+            onClose={() => setState((s) => ({ open: false }))}
           />
         </>
       )}
@@ -192,29 +259,21 @@ import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
 export default function Example() {
-  const [show, setShow] = useState(true);
+  const [open, setOpen] = useState(true);
 
-  return (
-    <Fragment>
-      {!show && (
-        <Button
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
-          Show Chip
-        </Button>
-      )}
-      <Chip
-        show={show}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
-        value="Dismissible"
-      />
-    </Fragment>
-  );
-}
-```
+return (
+
+<Fragment>
+  {!open && (
+    <Button className="absolute" onClick={() => setOpen(true)}>
+      Show Chip
+    </Button>
+  )}
+  <Chip open={open} value="Dismissible" onClose={() => setOpen(false)} />
+</Fragment>
+); }
+
+````
 </CodePreview>
 
 ---
@@ -224,20 +283,20 @@ export default function Example() {
 You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
 
 <CodePreview id="custom-chip-animation" component={
-  <State initialState={{ show: true }}>
+  <State initialState={{ open: true }}>
     <Observe>
-      {({ setState, show }) => (
+      {({ setState, open }) => (
         <>
-          {!show && (
+          {!open && (
             <Button
               className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
+              onClick={() => setState((s) => ({ open: true }))}
             >
               Show Chip
             </Button>
           )}
           <Chip
-            show={show}
+            open={open}
             animate={{
               mount: {
                 y: 0,
@@ -246,10 +305,8 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
                 y: 50,
               },
             }}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
             value="Custom Animation"
+            onClose={() => setState((s) => ({ open: false }))}
           />
         </>
       )}
@@ -261,33 +318,32 @@ import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
 export default function Example() {
-  const [show, setShow] = useState(true);
+  const [open, setOpen] = useState(true);
 
   return (
     <Fragment>
-      {!show && (
+      {!open && (
         <Button
           className="absolute"
-          onClick={() => setShow(true)}
+          onClick={() => setOpen(true)}
         >
           Show Chip
         </Button>
       )}
       <Chip
-        show={show}
+        open={open}
         animate={{
           mount: { y: 0 },
           unmount: { y: 50 },
         }}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
         value="Custom Animation"
+        onClose={() => setOpen(false)}
       />
     </Fragment>
   );
 }
-```
+````
+
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
