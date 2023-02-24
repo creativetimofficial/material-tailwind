@@ -89,6 +89,7 @@ import {
   ListItem,
   ListItemPrefix,
   ListItemSuffix,
+  ButtonGroup,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -236,6 +237,7 @@ const components = {
   ListItem,
   ListItemPrefix,
   ListItemSuffix,
+  ButtonGroup,
   Link,
   OutlineIcons,
   SolidIcons,
