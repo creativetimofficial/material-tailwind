@@ -52,7 +52,6 @@ export const buttonGroup: ButtonGroupStyleTypes = {
         flexDirection: "row",
       },
       fullWidth: {
-        display: "block",
         width: "w-full",
       },
     },

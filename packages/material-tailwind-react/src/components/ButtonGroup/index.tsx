@@ -74,6 +74,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
               size,
               color,
               ripple,
+              fullWidth,
               className: classnames({
                 "rounded-r-none": index !== React.Children.count(children) - 1,
                 "border-r-0": index !== React.Children.count(children) - 1,
