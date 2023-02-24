@@ -9,6 +9,8 @@ navigation:
     "login-card",
     "card-horizontal",
     "pricing-card",
+    "blog-card",
+    "background-blog-card",
   ]
 github: card
 prev: button
@@ -747,6 +749,140 @@ Our last card example has an horizontal layout. Use it to your projects!
       >
         Buy Now
       </button>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Blog Card
+
+<CodePreview
+  id="blog-card"
+  link="card#blog-card"
+  className="mt-4"
+  component={
+    <div className="relative flex max-w-[24rem] flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+      <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+          alt="ui/ux review check"
+        />
+      </div>
+      <div className="p-6">
+        <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+          UI/UX Review Check
+        </h4>
+        <p className="mt-3 block font-sans text-xl font-normal leading-relaxed text-gray-700 antialiased">
+          Because it's about motivating the doers. Because I'm here to follow my
+          dreams and inspire others.
+        </p>
+      </div>
+      <div className="flex items-center justify-between p-6">
+        <div className="flex items-center -space-x-3">
+          <img
+            alt="natali craig"
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
+            className="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+          />
+          <img
+            alt="candice wu"
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+            className="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+          />
+        </div>
+        <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          January 10
+        </p>
+      </div>
+    </div>
+  }
+>
+  ```jsx
+  <div class="relative flex max-w-[24rem] flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+    <div class="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+        alt="ui/ux review check"
+      />
+    </div>
+    <div class="p-6">
+      <h4 class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+        UI/UX Review Check
+      </h4>
+      <p class="mt-3 block font-sans text-xl font-normal leading-relaxed text-gray-700 antialiased">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire others.
+      </p>
+    </div>
+    <div class="flex items-center justify-between p-6">
+      <div class="flex items-center -space-x-3">
+        <img
+          alt="natali craig"
+          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
+          class="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+        />
+        <img
+          alt="candice wu"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          class="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+        />
+      </div>
+      <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+        January 10
+      </p>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Background Blog Card
+
+<CodePreview
+  id="background-blog-card"
+  link="card#background-blog-card"
+  className="mt-4"
+  component={
+    <div className="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+      <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
+      </div>
+      <div className="relative p-6 py-14 px-6 md:px-12">
+        <h2 className="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
+          How we design and code open-source projects?
+        </h2>
+        <h5 className="mb-4 block font-sans text-xl font-semibold leading-snug tracking-normal text-gray-400 antialiased">
+          Candice Wu
+        </h5>
+        <img
+          alt="candice wu"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          className="relative inline-block h-[74px] w-[74px] rounded-full border-2 border-white object-cover object-center"
+        />
+      </div>
+    </div>
+  }
+>
+  ```jsx
+  <div class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+    <div class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
+      <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
+    </div>
+    <div class="relative p-6 py-14 px-6 md:px-12">
+      <h2 class="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
+        How we design and code open-source projects?
+      </h2>
+      <h5 class="mb-4 block font-sans text-xl font-semibold leading-snug tracking-normal text-gray-400 antialiased">
+        Candice Wu
+      </h5>
+      <img
+        alt="candice wu"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+        class="relative inline-block h-[74px] w-[74px] rounded-full border-2 border-white object-cover object-center"
+      />
     </div>
   </div>
   ```
