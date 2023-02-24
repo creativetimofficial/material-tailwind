@@ -23,6 +23,7 @@ export * from "./components/Tooltip";
 export * from "./components/Typography";
 export * from "./components/Collapse";
 export * from "./components/List";
+export * from "./components/ButtonGroup";
 
 // context
 export * from "./context/theme";

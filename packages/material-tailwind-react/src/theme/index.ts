@@ -32,6 +32,7 @@ import tooltip from "./components/tooltip";
 import typography from "./components/typography";
 import collapse from "./components/collapse";
 import list from "./components/list";
+import buttonGroup from "./components/buttonGroup";
 
 const theme = {
   accordion,
@@ -68,6 +69,7 @@ const theme = {
   typography,
   collapse,
   list,
+  buttonGroup,
 };
 
 export * from "./components/accordion";
@@ -104,4 +106,5 @@ export * from "./components/tooltip";
 export * from "./components/typography";
 export * from "./components/collapse";
 export * from "./components/list";
+export * from "./components/buttonGroup";
 export default theme;
