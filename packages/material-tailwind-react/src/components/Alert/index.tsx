@@ -8,7 +8,6 @@ import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 // utils
-import Ripple from "material-ripple-effects";
 import classnames from "classnames";
 import merge from "deepmerge";
 import { twMerge } from "tailwind-merge";
@@ -62,7 +61,6 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const { alert } = useTheme();
     const { defaultProps, valid, styles } = alert;
     const { base, variants } = styles;
-    const rippleEffect = new Ripple();
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;
