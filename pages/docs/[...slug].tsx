@@ -88,6 +88,7 @@ import {
 
 // @heroicons
 import * as OutlineIcons from "@heroicons/react/24/outline";
+import * as SolidIcons from "@heroicons/react/24/solid";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
@@ -227,6 +228,7 @@ const components = {
   Typography,
   Link,
   OutlineIcons,
+  SolidIcons,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
