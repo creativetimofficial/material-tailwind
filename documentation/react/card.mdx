@@ -9,6 +9,8 @@ navigation:
     "pricing-card",
     "blog-card",
     "background-blog-card",
+    "booking-card",
+    "testimonial-card",
     "props",
     "theme",
   ]
@@ -553,7 +555,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 
-export default function Day04() {
+export default function Example() {
   return (
     <Card className="max-w-[24rem] overflow-hidden">
       <CardHeader
@@ -652,7 +654,7 @@ import {
   Avatar,
 } from "@material-tailwind/react";
 
-export default function Day05() {
+export default function Example() {
   return (
     <Card
       shadow={false}
@@ -684,6 +686,281 @@ export default function Day05() {
           className="border-2 border-white"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
+      </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Booking Card - React
+
+<CodePreview id="booking-card" link="card#booking-card" className="mt-4" component={
+  <Card className="w-full max-w-[26rem] shadow-lg">
+    <CardHeader floated={false} color="blue-gray">
+      <img
+        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        alt="ui/ux review check"
+      />
+      <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+      <IconButton
+        size="sm"
+        color="red"
+        variant="text"
+        className="!absolute top-4 right-4 rounded-full"
+      >
+        <SolidIcons.HeartIcon className="h-6 w-6" />
+      </IconButton>
+    </CardHeader>
+    <CardBody>
+      <div className="mb-3 flex items-center justify-between">
+        <Typography variant="h5" color="blue-gray" className="font-medium">
+          Wooden House, Florida
+        </Typography>
+        <Typography
+          color="blue-gray"
+          className="flex items-center gap-1.5 font-normal"
+        >
+          <SolidIcons.StarIcon className="-mt-0.5 h-5 w-5 text-yellow-700" />
+          5.0
+        </Typography>
+      </div>
+      <Typography color="gray">
+        Enter a freshly updated and thoughtfully furnished peaceful home
+        surrounded by ancient trees, stone walls, and open meadows.
+      </Typography>
+      <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
+        <Tooltip content="$129 per night">
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            <SolidIcons.BanknotesIcon className="h-5 w-5" />
+          </span>
+        </Tooltip>
+        <Tooltip content="Free wifi">
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            <SolidIcons.WifiIcon className="h-5 w-5" />
+          </span>
+        </Tooltip>
+        <Tooltip content="2 bedrooms">
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            <SolidIcons.HomeIcon className="h-5 w-5" />
+          </span>
+        </Tooltip>
+        <Tooltip content={`65" HDTV`}>
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            <SolidIcons.TvIcon className="h-5 w-5" />
+          </span>
+        </Tooltip>
+        <Tooltip content="Fire alert">
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            <SolidIcons.FireIcon className="h-5 w-5" />
+          </span>
+        </Tooltip>
+        <Tooltip content="And +20 more">
+          <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+            +20
+          </span>
+        </Tooltip>
+      </div>
+    </CardBody>
+    <CardFooter className="pt-3">
+      <Button size="lg" fullWidth={true}>
+        Reserve
+      </Button>
+    </CardFooter>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+  Tooltip,
+  IconButton,
+} from "@material-tailwind/react";
+import {
+  BanknotesIcon,
+  StarIcon,
+  HeartIcon,
+  WifiIcon,
+  HomeIcon,
+  TvIcon,
+  FireIcon,
+} from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Card className="w-full max-w-[26rem] shadow-lg">
+      <CardHeader floated={false} color="blue-gray">
+        <img
+          src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          alt="ui/ux review check"
+        />
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+        <IconButton
+          size="sm"
+          color="red"
+          variant="text"
+          className="!absolute top-4 right-4 rounded-full"
+        >
+          <HeartIcon className="h-6 w-6" />
+        </IconButton>
+      </CardHeader>
+      <CardBody>
+        <div className="mb-3 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray" className="font-medium">
+            Wooden House, Florida
+          </Typography>
+          <Typography
+            color="blue-gray"
+            className="flex items-center gap-1.5 font-normal"
+          >
+            <StarIcon className="-mt-0.5 h-5 w-5 text-yellow-700" />
+            5.0
+          </Typography>
+        </div>
+        <Typography color="gray">
+          Enter a freshly updated and thoughtfully furnished peaceful home
+          surrounded by ancient trees, stone walls, and open meadows.
+        </Typography>
+        <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
+          <Tooltip content="$129 per night">
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              <BanknotesIcon className="h-5 w-5" />
+            </span>
+          </Tooltip>
+          <Tooltip content="Free wifi">
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              <WifiIcon className="h-5 w-5" />
+            </span>
+          </Tooltip>
+          <Tooltip content="2 bedrooms">
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              <HomeIcon className="h-5 w-5" />
+            </span>
+          </Tooltip>
+          <Tooltip content={`65" HDTV`}>
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              <TvIcon className="h-5 w-5" />
+            </span>
+          </Tooltip>
+          <Tooltip content="Fire alert">
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              <FireIcon className="h-5 w-5" />
+            </span>
+          </Tooltip>
+          <Tooltip content="And +20 more">
+            <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
+              +20
+            </span>
+          </Tooltip>
+        </div>
+      </CardBody>
+      <CardFooter className="pt-3">
+        <Button size="lg" fullWidth={true}>
+          Reserve
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Testimonial Card - React
+
+<CodePreview id="testimonial-card" link="card#testimonial-card" className="mt-4" component={
+  <Card color="transparent" shadow={false} className="w-full max-w-[26rem]">
+    <CardHeader
+      color="transparent"
+      floated={false}
+      shadow={false}
+      className="mx-0 flex items-center gap-4 pt-0 pb-8"
+    >
+      <Avatar
+        size="lg"
+        variant="circular"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+        alt="candice wu"
+      />
+      <div className="flex w-full flex-col gap-0.5">
+        <div className="flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Candice Wu
+          </Typography>
+          <div className="5 flex items-center gap-0">
+            <SolidIcons.StarIcon className="h-5 w-5 text-yellow-700" />
+            <SolidIcons.StarIcon className="h-5 w-5 text-yellow-700" />
+            <SolidIcons.StarIcon className="h-5 w-5 text-yellow-700" />
+            <SolidIcons.StarIcon className="h-5 w-5 text-yellow-700" />
+            <SolidIcons.StarIcon className="h-5 w-5 text-yellow-700" />
+          </div>
+        </div>
+        <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+      </div>
+    </CardHeader>
+    <CardBody className="mb-6 p-0">
+      <Typography>
+        &quot;I found solution to all my design needs from Creative Tim. I use
+        them as a freelancer in my hobby projects for fun! And its really
+        affordable, very humble guys !!!&quot;
+      </Typography>
+    </CardBody>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Avatar,
+} from "@material-tailwind/react";
+import { StarIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Card color="transparent" shadow={false} className="w-full max-w-[26rem]">
+      <CardHeader
+        color="transparent"
+        floated={false}
+        shadow={false}
+        className="mx-0 flex items-center gap-4 pt-0 pb-8"
+      >
+        <Avatar
+          size="lg"
+          variant="circular"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+          alt="candice wu"
+        />
+        <div className="flex w-full flex-col gap-0.5">
+          <div className="flex items-center justify-between">
+            <Typography variant="h5" color="blue-gray">
+              Candice Wu
+            </Typography>
+            <div className="5 flex items-center gap-0">
+              <StarIcon className="h-5 w-5 text-yellow-700" />
+              <StarIcon className="h-5 w-5 text-yellow-700" />
+              <StarIcon className="h-5 w-5 text-yellow-700" />
+              <StarIcon className="h-5 w-5 text-yellow-700" />
+              <StarIcon className="h-5 w-5 text-yellow-700" />
+            </div>
+          </div>
+          <Typography color="blue-gray">Frontend Lead @ Google</Typography>
+        </div>
+      </CardHeader>
+      <CardBody className="mb-6 p-0">
+        <Typography>
+          &quot;I found solution to all my design needs from Creative Tim. I use
+          them as a freelancer in my hobby projects for fun! And its really
+          affordable, very humble guys !!!&quot;
+        </Typography>
       </CardBody>
     </Card>
   );
