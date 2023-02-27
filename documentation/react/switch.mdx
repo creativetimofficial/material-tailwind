@@ -4,9 +4,12 @@ description: Customise your web projects with our easy-to-use switch component f
 navigation:
   [
     "switch",
+    "checked-switch",
     "switch-colors",
     "switch-with-label",
     "switch-ripple-effect",
+    "disabled-switch",
+    "switch-with-description",
     "props",
     "theme",
   ]
@@ -36,7 +39,23 @@ See below our example that will help you create simple and easy-to-use <Code>Swi
 
 <br />
 
-<CodePreview id="switch" link="switch#switch" component={<Switch id="switch-component" defaultChecked />}>
+<CodePreview id="switch" link="switch#switch" component={<Switch id="switch-component" />}>
+```jsx
+import { Switch } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Switch />;
+}
+```
+</CodePreview>
+
+---
+
+## Checked Switch
+
+Make a <Code>Switch</Code> component checked by default using the <Code>defaultChecked</Code> props.
+
+<CodePreview id="checked-switch" link="switch#checked-switch" component={<Switch id="checked-switch-component" defaultChecked />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -123,6 +142,70 @@ export default function Example() {
       <Switch id="ripple-on" label="Ripple Effect On" ripple={true} />
       <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
     </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Disabled Switch
+
+You can make a switch disable by passing the <Code>disabled</Code> prop to the <Code>Switch</Code> component.
+
+
+<CodePreview id="disabled-switch" link="switch#disabled-switch" component={
+  <Switch id="switch-disabled" disabled={true} />
+}>
+```jsx
+import { Switch } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Switch disabled={true} />;
+}
+```
+</CodePreview>
+
+---
+
+## Switch with Description
+
+Use the example below for a more complex usage of switch with label that contains some description.
+
+<CodePreview id="switch-with-description" link="switch#switch-with-description" component={
+  <Switch
+    id="switch-description"
+    label={
+      <div>
+        <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+        <Typography variant="small" color="gray" className="font-normal">
+          You'll be able to login without password for 24 hours.
+        </Typography>
+      </div>
+    } 
+    containerProps={{
+      className: "-mt-5"
+    }}
+  />
+}>
+```jsx
+import { Switch } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Switch
+      label={
+        <div>
+          <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            You'll be able to login without password for 24 hours.
+          </Typography>
+        </div>
+      } 
+      containerProps={{
+        className: "-mt-5"
+      }}
+    />
   );
 }
 ```
