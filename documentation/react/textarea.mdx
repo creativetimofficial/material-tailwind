@@ -9,6 +9,8 @@ navigation:
     "textarea-colors",
     "textarea-validations",
     "disabled-textarea",
+    "comment-box-textarea",
+    "twitter-chatbox-textarea",
     "props",
     "theme",
   ]
@@ -184,6 +186,128 @@ export default function Example() {
   return (
     <div className="w-96">
       <Textarea label="Disabled" disabled />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Comment Box Textarea
+
+Use the example below for a comment box that uses <Code>Textarea</Code> component.
+
+<CodePreview id="comment-box-textarea" link="textarea#comment-box-textarea" component={
+  <div className="relative w-[32rem]">
+    <Textarea variant="static" placeholder="Your Comment" rows={8} />
+    <div className="w-full flex justify-between py-1.5">
+      <IconButton variant="text" color="blue-gray" size="sm">
+        <OutlineIcons.LinkIcon strokeWidth={2} className="w-4 h-4" />
+      </IconButton>
+      <div className="flex gap-2">
+        <Button
+          size="sm"
+          color="red"
+          variant="text"
+          className="rounded-md"
+        >
+          Cancel
+        </Button>
+        <Button size="sm" className="rounded-md">Post Comment</Button>
+      </div>
+    </div>
+  </div>
+}>
+```jsx
+import { Textarea, Button, IconButton } from "@material-tailwind/react";
+import { LinkIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <div className="relative w-[32rem]">
+      <Textarea variant="static" placeholder="Your Comment" rows={8} />
+      <div className="w-full flex justify-between py-1.5">
+        <IconButton variant="text" color="blue-gray" size="sm">
+          <LinkIcon strokeWidth={2} className="w-4 h-4" />
+        </IconButton>
+        <div className="flex gap-2">
+          <Button
+            size="sm"
+            color="red"
+            variant="text"
+            className="rounded-md"
+          >
+            Cancel
+          </Button>
+          <Button size="sm" className="rounded-md">Post Comment</Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Twitter Chatbox Textarea
+
+Use the example below for a chat input that uses <Code>Textarea</Code> component.
+
+<CodePreview id="twitter-chatbox-textarea" link="textarea#twitter-chatbox-textarea" component={
+  <div className="bg-blue-500/10 border border-blue-gray-500/20 rounded-[99px] w-full flex flex-row items-center gap-2 p-2">
+    <div className="flex">
+      <IconButton variant="text" className="rounded-full">
+        <OutlineIcons.PhotoIcon strokeWidth={2} className="w-5 h-5" />
+      </IconButton>
+      <IconButton variant="text" className="rounded-full">
+        <OutlineIcons.FaceSmileIcon strokeWidth={2} className="w-5 h-5" />
+      </IconButton>
+    </div>
+    <Textarea
+      rows={1}
+      resize={true}
+      placeholder="Your Message"
+      className="min-h-full focus:border-transparent !border-0"
+      containerProps={{
+        className: "grid h-full"
+      }}
+      labelProps={{
+        className: "before:content-none after:content-none"
+      }}
+    />
+    <div>
+      <IconButton variant="text" className="rounded-full">
+        <OutlineIcons.PaperAirplaneIcon strokeWidth={2} className="w-5 h-5" />
+      </IconButton>
+    </div>
+  </div>
+}>
+```jsx
+import { Textarea, Button, IconButton } from "@material-tailwind/react";
+import { LinkIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <div className="relative w-[32rem]">
+      <Textarea variant="static" placeholder="Your Comment" rows={8} />
+      <div className="w-full flex justify-between py-1.5">
+        <IconButton variant="text" color="blue-gray" size="sm">
+          <LinkIcon strokeWidth={2} className="w-4 h-4" />
+        </IconButton>
+        <div className="flex gap-2">
+          <Button
+            size="sm"
+            color="red"
+            variant="text"
+            className="rounded-md"
+          >
+            Cancel
+          </Button>
+          <Button size="sm" className="rounded-md">Post Comment</Button>
+        </div>
+      </div>
     </div>
   );
 }
