@@ -12,12 +12,20 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import type { color, label, ripple, className, objectType } from "../../types/components/checkbox";
+import type {
+  color,
+  label,
+  ripple,
+  className,
+  disabled,
+  objectType,
+} from "../../types/components/checkbox";
 import {
   propTypesColor,
   propTypesLabel,
   propTypesRipple,
   propTypesClassName,
+  propTypesDisabled,
   propTypesObject,
 } from "../../types/components/checkbox";
 
@@ -26,6 +34,7 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
   label?: label;
   ripple?: ripple;
   className?: className;
+  disabled?: disabled;
   containerProps?: objectType;
   labelProps?: objectType;
   circleProps?: objectType;
@@ -34,7 +43,18 @@ export interface SwitchProps extends React.ComponentProps<"input"> {
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   (
-    { color, label, ripple, className, containerProps, circleProps, labelProps, inputRef, ...rest },
+    {
+      color,
+      label,
+      ripple,
+      className,
+      disabled,
+      containerProps,
+      circleProps,
+      labelProps,
+      inputRef,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
@@ -46,12 +66,18 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
     className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
+    containerProps = containerProps ?? defaultProps.containerProps;
+    labelProps = labelProps ?? defaultProps.labelProps;
+    circleProps = circleProps ?? defaultProps.circleProps;
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const rootClasses = classnames(objectsToString(base.root));
+    const rootClasses = classnames(objectsToString(base.root), {
+      [objectsToString(base.disabled)]: disabled,
+    });
     const containerClasses = twMerge(
       classnames(objectsToString(base.container)),
       containerProps?.className,
@@ -82,6 +108,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             {...rest}
             ref={inputRef}
             type="checkbox"
+            disabled={disabled}
             id={rest.id || "switch"}
             className={inputClasses}
           />
@@ -117,6 +144,7 @@ Switch.propTypes = {
   label: propTypesLabel,
   ripple: propTypesRipple,
   className: propTypesClassName,
+  disabled: propTypesDisabled,
   containerProps: propTypesObject,
   labelProps: propTypesObject,
   circleProps: propTypesObject,
