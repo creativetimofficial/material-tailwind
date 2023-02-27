@@ -7,6 +7,11 @@ navigation:
     "radio-button-colors",
     "radio-button-custom-icon",
     "radio-button-ripple-effect",
+    "disabled-radio-button",
+    "radio-button-with-link",
+    "radio-button-with-description",
+    "radio-button-vertical-list-group",
+    "radio-button-horizontal-list-group",
     "props",
     "theme",
   ]
@@ -230,6 +235,423 @@ export default function Example() {
 }
 ```
 </CodePreview>
+
+---
+
+## Disabled Radio Button
+
+You can make a radio button disable by passing the <Code>disabled</Code> prop to the <Code>Radio</Code> component.
+
+<CodePreview id="disabled-radio-button" link="radio-button#disabled-radio-button" component={
+  <div className="flex gap-10">
+    <Radio id="disabled-html" name="type" label="HTML" disabled={true} />
+    <Radio id="disabled-react" name="type" label="React" disabled={true} defaultChecked={true} />
+  </div>
+}>
+```jsx
+import { Radio } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-10">
+      <Radio id="html" name="type" label="HTML" disable={true} />
+      <Radio id="react" name="type" label="React" disable={true} defaultChecked={true} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Radio Button with Link
+
+The <Code>label</Code> prop for the the radio button can accept dom elements and because of that you can put links or any other dom elements you like to have with your radio button label.
+
+<CodePreview id="radio-button-with-link" link="radio-button#radio-button-with-link" component={
+  <div className="flex flex-col gap-2">
+    <Radio id="terms-html" name="terms" label={
+      <Typography color="blue-gray" className="font-medium flex">I agree with HTML
+        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+          &nbsp;terms and conditions
+        </Typography>.
+      </Typography>
+    } />
+    <Radio id="terms-react" name="terms" label={
+      <Typography color="blue-gray" className="font-medium flex">I agree with React
+        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+          &nbsp;terms and conditions
+        </Typography>.
+      </Typography>
+    } />
+  </div>
+}>
+```jsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Radio id="terms-html" name="terms" label={
+        <Typography color="blue-gray" className="font-medium flex">I agree with HTML
+          <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+            &nbsp;terms and conditions
+          </Typography>.
+        </Typography>
+      } />
+      <Radio id="terms-react" name="terms" label={
+        <Typography color="blue-gray" className="font-medium flex">I agree with React
+          <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
+            &nbsp;terms and conditions
+          </Typography>.
+        </Typography>
+      } />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Radio Button with Description
+
+Use the example below for a more complex usage of radio button with label that contains some description.
+
+<CodePreview id="radio-button-with-description" link="radio-button#radio-button-with-description" component={
+  <div className="flex flex-col gap-8">
+    <Radio 
+      name="description"
+      id="description-html"
+      label={
+        <div>
+          <Typography color="blue-gray" className="font-medium">HTML Version</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            @material-tailwind/html, packed with rich components and widgets.
+          </Typography>
+        </div>
+      }
+      containerProps={{
+        className: "-mt-5"
+      }}
+    />
+    <Radio 
+      name="description"
+      id="description-react"
+      label={
+        <div>
+          <Typography color="blue-gray" className="font-medium">React Version</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            @material-tailwind/react, packed with rich components and widgets.
+          </Typography>
+        </div>
+      }
+      containerProps={{
+        className: "-mt-5"
+      }}
+    />
+  </div>
+}>
+```jsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-8">
+      <Radio 
+        name="description"
+        id="description-html"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">HTML Version</Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/html, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5"
+        }}
+      />
+      <Radio 
+        name="description"
+        id="description-react"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">React Version</Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5"
+        }}
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Radio Button Vertical List Group
+
+Use the example below for a vertical list of radio buttons.
+
+<CodePreview id="radio-button-vertical-list-group" link="radio-button#radio-button-vertical-list-group" component={
+  <Card>
+    <List>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio
+              name="vertical-list" 
+              id="vertical-list-react" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">React.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio
+              name="vertical-list"
+              id="vertical-list-vue" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio
+              name="vertical-list"
+              id="vertical-list-svelte" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+        </label>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  Radio,
+  Card,
+  List,
+  ListItem,
+  ListItemPrefix,
+  Typography
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card>
+      <List>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio
+                name="vertical-list" 
+                id="vertical-list-react" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio
+                name="vertical-list"
+                id="vertical-list-vue" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio
+                name="vertical-list"
+                id="vertical-list-svelte" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+          </label>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Radio Button Horizontal List Group
+
+Use the example below for a horizontal list of radio buttons.
+
+<CodePreview id="radio-button-horizontal-list-group" link="radio-button#radio-button-horizontal-list-group" component={
+  <Card className="w-full max-w-[24rem]">
+    <List className="flex-row">
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio 
+              name="horizontal-list"
+              id="horizontal-list-react" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">React.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio 
+              name="horizontal-list"
+              id="horizontal-list-vue" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+        </label>
+      </ListItem>
+      <ListItem className="p-0">
+        <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <ListItemPrefix className="mr-3">
+            <Radio 
+              name="horizontal-list" 
+              id="horizontal-list-svelte" 
+              ripple={false} 
+              className="hover:before:opacity-0"
+              containerProps={{
+                className: "p-0"
+              }}
+            />
+          </ListItemPrefix>
+          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+        </label>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  Radio,
+  Card,
+  List,
+  ListItem,
+  ListItemPrefix,
+  Typography
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-full max-w-[24rem]">
+      <List className="flex-row">
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio 
+                name="horizontal-list"
+                id="horizontal-list-react" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio 
+                name="horizontal-list"
+                id="horizontal-list-vue" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+            <ListItemPrefix className="mr-3">
+              <Radio 
+                name="horizontal-list" 
+                id="horizontal-list-svelte" 
+                ripple={false} 
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0"
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+          </label>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
