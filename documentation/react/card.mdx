@@ -4,6 +4,8 @@ description: Customise your web projects with our beautiful cards component for 
 navigation:
   [
     "card",
+    "simple-card",
+    "card-with-link",
     "profile-card",
     "login-card",
     "pricing-card",
@@ -11,6 +13,8 @@ navigation:
     "background-blog-card",
     "booking-card",
     "testimonial-card",
+    "horizontal-card",
+    "ecommerce-card",
     "props",
     "theme",
   ]
@@ -36,36 +40,27 @@ next: checkbox
 
 Use our <Code>Card</Code> to provide a flexible and extensible content container based on Tailwind CSS with multiple variants and options.
 
-By its definition, a <Code>Card</Code> is a sheet of material that serves as an entry point to more detailed information. <Code>Card</Code> usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+By its definition, a Card is a sheet of material that serves as an entry point to more detailed information. Card usually include a photo, text, and a link about a single subject. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-See below our beautiful <Code>Card</Code> example that you can use in your React and Tailwind CSS projects. We've also included some <Code>Card</Code> props that are available.
+See below our beautiful Card example that you can use in your React and Tailwind CSS projects. We've also included some Card props that are available.
 
 <br />
 
 <CodePreview id="card" link="card#card" component={
   <Card className="mt-6 w-96">
-    <CardHeader color="blue" className="relative h-56">
-      <Image src="/img/blog.jpg" alt="img-blur-shadow" layout="fill" />
+    <CardHeader color="blue-gray" className="relative h-56">
+      <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="img-blur-shadow" layout="fill" />
     </CardHeader>
-    <CardBody className="text-center">
+    <CardBody>
       <Typography variant="h5" color="blue-gray" className="mb-2">
-        <span>Cozy 5 Stars Apartment</span>
+        UI/UX Review Check
       </Typography>
       <Typography>
-        The place is close to Barceloneta Beach and bus stop just 2 min by walk
-        and near to &quot;Naviglio&quot; where you can enjoy the main night life
-        in Barcelona.
+        Because it's about motivating the doers. Because I'm here to follow my dreams and inspire others.
       </Typography>
     </CardBody>
-    <CardFooter
-      divider
-      className="-mt-4 flex items-center justify-between py-3"
-    >
-      <Typography variant="small">$899/night</Typography>
-      <Typography variant="small" color="gray" className="flex gap-1">
-        <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-        <span>Barcelona, Spain</span>
-      </Typography>
+    <CardFooter className="pt-0">
+      <Button>Read More</Button>
     </CardFooter>
   </Card>
 }>
@@ -76,34 +71,139 @@ import {
   CardBody,
   CardFooter,
   Typography,
+  Button
 } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Card className="w-96">
-      <CardHeader color="blue" className="relative h-56">
-        <img
-          src="/img/blog.jpg"
-          alt="img-blur-shadow"
-          className="h-full w-full"
-        />
+    <Card className="mt-6 w-96">
+      <CardHeader color="blue-gray" className="relative h-56">
+        <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="img-blur-shadow" layout="fill" />
       </CardHeader>
-      <CardBody className="text-center">
-        <Typography variant="h5" className="mb-2">
-          Cozy 5 Stars Apartment
+      <CardBody>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          UI/UX Review Check
         </Typography>
         <Typography>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to "Naviglio" where you can enjoy the main night life in
-          Barcelona.
+          The place is close to Barceloneta Beach and bus stop just 2 min by walk
+          and near to &quot;Naviglio&quot; where you can enjoy the main night life
+          in Barcelona.
         </Typography>
       </CardBody>
-      <CardFooter divider className="flex items-center justify-between py-3">
-        <Typography variant="small">$899/night</Typography>
-        <Typography variant="small" color="gray" className="flex gap-1">
-          <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-          Barcelona, Spain
+      <CardFooter className="pt-0">
+        <Button>Read More</Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Simple Card - React
+
+<CodePreview id="simple-card" link="card#simple-card" className="mt-4" component={
+  <Card className="mt-6 w-96">
+    <CardBody>
+      <Typography variant="h5" color="blue-gray" className="mb-2">
+        UI/UX Review Check
+      </Typography>
+      <Typography>
+        Because it's about motivating the doers. Because I'm here to follow my dreams and inspire others.
+      </Typography>
+    </CardBody>
+    <CardFooter className="pt-0">
+      <Button>Read More</Button>
+    </CardFooter>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="mt-6 w-96">
+      <CardBody>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          UI/UX Review Check
         </Typography>
+        <Typography>
+          The place is close to Barceloneta Beach and bus stop just 2 min by walk
+          and near to &quot;Naviglio&quot; where you can enjoy the main night life
+          in Barcelona.
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button>Read More</Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Card with Link - React
+
+<CodePreview id="card-with-link" link="card#card-with-link" className="mt-4" component={
+  <Card className="mt-6 w-96">
+    <CardBody>
+      <SolidIcons.RocketLaunchIcon className="text-blue-500 w-12 h-12 mb-4" />
+      <Typography variant="h5" color="blue-gray" className="mb-2">
+        UI/UX Review Check
+      </Typography>
+      <Typography>
+        Because it's about motivating the doers. Because I'm here to follow my dreams and inspire others.
+      </Typography>
+    </CardBody>
+    <CardFooter className="pt-0">
+      <a href="#" className="inline-block">
+        <Button size="sm" variant="text" className="flex items-center gap-2">
+          Learn More 
+          <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
+        </Button>
+      </a>
+    </CardFooter>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Card className="mt-6 w-96">
+      <CardBody>
+        <RocketLaunchIcon className="text-blue-500 w-12 h-12 mb-4" />
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          UI/UX Review Check
+        </Typography>
+        <Typography>
+          Because it's about motivating the doers. Because I'm here to follow my dreams and inspire others.
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <a href="#" className="inline-block">
+          <Button size="sm" variant="text" className="flex items-center gap-2">
+            Learn More 
+            <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
+          </Button>
+        </a>
       </CardFooter>
     </Card>
   );
@@ -115,15 +215,12 @@ export default function Example() {
 
 ## Tailwind CSS Profile Card - React
 
-<CodePreview id="profile-card" className="mt-4" component={
+<CodePreview id="profile-card" link="card#profile-card" className="mt-4" component={
   <Card className="w-96">
     <CardHeader floated={false} className="h-80">
-      <Image
+      <img
         src="/img/team-3.jpg"
         alt="profile-picture"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
       />
     </CardHeader>
     <CardBody className="text-center">
@@ -962,6 +1059,159 @@ export default function Example() {
           affordable, very humble guys !!!&quot;
         </Typography>
       </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Horizontal Card - React
+
+<CodePreview id="horizontal-card" link="card#horizontal-card" className="mt-4" component={
+  <Card className="flex-row w-full max-w-[48rem]">
+    <CardHeader shadow={false} floated={false} className="w-2/5 shrink-0 m-0 rounded-r-none">
+      <img 
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" 
+        alt="image" 
+        className="w-full h-full object-cover"
+      />
+    </CardHeader>
+    <CardBody>
+      <Typography variant="h6" color="blue" className="uppercase mb-4">startups</Typography>
+      <Typography variant="h4" color="blue-gray" className="mb-2">
+        Lyft launching cross-platform service this week
+      </Typography>
+      <Typography color="gray" className="font-normal mb-8">
+        Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story
+      </Typography>
+      <a href="#" className="inline-block">
+        <Button variant="text" className="flex items-center gap-2">
+          Learn More 
+          <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
+        </Button>
+      </a>
+    </CardBody>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Card className="flex-row w-full max-w-[48rem]">
+      <CardHeader shadow={false} floated={false} className="w-2/5 shrink-0 m-0 rounded-r-none">
+        <img 
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" 
+          alt="image" 
+          className="w-full h-full object-cover"
+        />
+      </CardHeader>
+      <CardBody>
+        <Typography variant="h6" color="blue" className="uppercase mb-4">startups</Typography>
+        <Typography variant="h4" color="blue-gray" className="mb-2">
+          Lyft launching cross-platform service this week
+        </Typography>
+        <Typography color="gray" className="font-normal mb-8">
+          Like so many organizations these days, Autodesk is a company in transition. It was until recently a traditional boxed software company selling licenses. Yet its own business model disruption is only part of the story
+        </Typography>
+        <a href="#" className="inline-block">
+          <Button variant="text" className="flex items-center gap-2">
+            Learn More 
+            <ArrowLongRightIcon strokeWidth={2} className="w-4 h-4" />
+          </Button>
+        </a>
+      </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tailwind CSS Ecommerce Card - React
+
+<CodePreview id="ecommerce-card" link="card#ecommerce-card" className="mt-4" component={
+  <Card className="w-96">
+    <CardHeader shadow={false} floated={false} className="h-96">
+      <img 
+        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80" 
+        className="w-full h-full object-cover"
+      />
+    </CardHeader>
+    <CardBody>
+      <div className="flex items-center justify-between mb-2">
+        <Typography color="blue-gray" className="font-medium">
+          Apple AirPods
+        </Typography>
+        <Typography color="blue-gray" className="font-medium">
+          $95.00
+        </Typography>
+      </div>
+      <Typography variant="small" color="gray" className="font-normal opacity-75">
+        With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+      </Typography>
+    </CardBody>
+    <CardFooter className="pt-0">
+      <Button
+        ripple={false}
+        fullWidth={true}
+        className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
+      >
+        Add to Cart
+      </Button>
+    </CardFooter>
+  </Card>
+}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <CardHeader shadow={false} floated={false} className="h-96">
+        <img 
+          src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80" 
+          className="w-full h-full object-cover"
+        />
+      </CardHeader>
+      <CardBody>
+        <div className="flex items-center justify-between mb-2">
+          <Typography color="blue-gray" className="font-medium">
+            Apple AirPods
+          </Typography>
+          <Typography color="blue-gray" className="font-medium">
+            $95.00
+          </Typography>
+        </div>
+        <Typography variant="small" color="gray" className="font-normal opacity-75">
+          With plenty of talk and listen time, voice-activated Siri access, and an available wireless charging case.
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button
+          ripple={false}
+          fullWidth={true}
+          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
+        >
+          Add to Cart
+        </Button>
+      </CardFooter>
     </Card>
   );
 }
