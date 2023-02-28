@@ -79,7 +79,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
         }}
         data-value={value}
       >
-        <span className="z-20 text-inherit">{children}</span>
+        <div className="z-20 text-inherit">{children}</div>
         {active === value && (
           <motion.div
             {...indicatorProps}
