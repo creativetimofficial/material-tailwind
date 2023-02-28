@@ -2,7 +2,14 @@
 title: Tailwind CSS Tooltip for React - Material Tailwind
 description: Customise your web projects with our easy-to-use tooltip component for Tailwind CSS and React using Material Design guidelines.
 navigation:
-  ["tooltip", "tooltip-placement", "custom-tooltip-animation", "props", "theme"]
+  [
+    "tooltip",
+    "tooltip-placement",
+    "custom-tooltip-animation",
+    "tooltip-with-helper-icon",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -190,6 +197,57 @@ export default function Example() {
       }}
     >
       <Button>Show Tooltip</Button>
+    </Tooltip>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Tooltip with Helper Icon
+
+<CodePreview id="tooltip-with-helper-icon" link="tooltip#tooltip-with-helper-icon" className="mt-4" component={
+  <Tooltip content={
+    <div className="w-80">
+      <Typography color="white" className="font-medium">Material Tailwind</Typography>
+      <Typography
+        variant="small"
+        color="white" 
+        className="font-normal opacity-80"
+      >
+        Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
+      </Typography>
+    </div>
+  }>
+    <OutlineIcons.InformationCircleIcon 
+      strokeWidth={2} 
+      className="text-blue-gray-500 w-5 h-5 cursor-pointer" 
+    />
+  </Tooltip>
+}>
+```jsx
+import { Tooltip, Typography } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Tooltip content={
+      <div className="w-80">
+        <Typography color="white" className="font-medium">Material Tailwind</Typography>
+        <Typography
+          variant="small"
+          color="white" 
+          className="font-normal opacity-80"
+        >
+          Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
+        </Typography>
+      </div>
+    }>
+      <InformationCircleIcon 
+        strokeWidth={2} 
+        className="text-blue-gray-500 w-5 h-5 cursor-pointer" 
+      />
     </Tooltip>
   );
 }
