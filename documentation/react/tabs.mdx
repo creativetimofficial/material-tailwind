@@ -1,7 +1,17 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tabs", "custom-tabs-animation", "vertical-tabs", "props", "theme"]
+navigation:
+  [
+    "tabs",
+    "tabs-with-icon",
+    "custom-tabs-animation",
+    "vertical-tabs",
+    "vertical-tabs-with-icon",
+    "underline-tabs",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -122,6 +132,119 @@ export default function Example() {
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>
             {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+````
+</CodePreview>
+
+---
+
+## Tabs with Icon
+
+Use tabs with icon to display the content in a more organized way.
+
+<CodePreview id="tabs-with-icon" link="tabs#tabs-with-icon" component={
+  <Tabs id="tabs-with-icon-component" value="dashboard">
+    <TabsHeader>
+      <Tab value="dashboard">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Square3Stack3DIcon className="w-5 h-5" />
+          Dashboard
+        </div>
+      </Tab>
+      <Tab value="profile">
+        <div className="flex items-center gap-2">
+          <SolidIcons.UserCircleIcon className="w-5 h-5" />
+          Profile
+        </div>
+      </Tab>
+      <Tab value="settings">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Cog6ToothIcon className="w-5 h-5" />
+          Settings
+        </div>
+      </Tab>
+    </TabsHeader>
+    <TabsBody>
+      <TabPanel value="dashboard">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="profile">
+        {`Because it's about motivating the doers. Because I'm here
+          to follow my dreams and inspire other people to follow their dreams, too.`}
+      </TabPanel>
+      <TabPanel value="settings">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+    </TabsBody>
+  </Tabs>
+}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import {
+  Square3Stack3DIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const data = [
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      icon: Square3Stack3DIcon,
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "Profile",
+      value: "profile",
+      icon: UserCircleIcon,
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Settings",
+      value: "settings",
+      icon: Cog6ToothIcon,
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value="dashboard">
+      <TabsHeader>
+        {data.map(({ label, value, icon }) => (
+          <Tab key={value} value={value}>
+            <div className="flex items-center gap-2">
+              {React.createElement(icon, { className: "w-5 h-5" })}
+              {label}
+            </div>
           </Tab>
         ))}
       </TabsHeader>
@@ -369,6 +492,284 @@ export default function Example() {
       <TabsBody>
         {data.map(({ value, desc }) => (
           <TabPanel key={value} value={value} className="py-0">
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+````
+</CodePreview>
+
+---
+
+## Vertical Tabs with Icon
+
+You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
+
+<CodePreview id="vertical-tabs-with-icon" link="tabs#vertical-tabs-with-icon" component={
+  <Tabs id="vertical-tabs-wit-icon-component" value="dashboard" orientation="vertical">
+    <TabsHeader className="w-40">
+      <Tab value="dashboard" className="place-items-start">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Square3Stack3DIcon className="w-5 h-5" />
+          Dashboard
+        </div>
+      </Tab>
+      <Tab value="profile" className="place-items-start">
+        <div className="flex items-center gap-2">
+          <SolidIcons.UserCircleIcon className="w-5 h-5" />
+          Profile
+        </div>
+      </Tab>
+      <Tab value="settings" className="place-items-start">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Cog6ToothIcon className="w-5 h-5" />
+          Settings
+        </div>
+      </Tab>
+    </TabsHeader>
+    <TabsBody>
+      <TabPanel value="dashboard" className="py-0">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
+      </TabPanel>
+      <TabPanel value="profile" className="py-0">
+        {`Because it's about motivating the doers. Because I'm here
+          to follow my dreams and inspire other people to follow their dreams, too.`}
+      </TabPanel>
+      <TabPanel value="settings" className="py-0">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+    </TabsBody>
+  </Tabs>
+}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import {
+  Square3Stack3DIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const data = [
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      icon: Square3Stack3DIcon,
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "Profile",
+      value: "profile",
+      icon: UserCircleIcon,
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Settings",
+      value: "settings",
+      icon: Cog6ToothIcon,
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value="dashboard" orientation="vertical">
+      <TabsHeader className="w-40">
+        {data.map(({ label, value, icon }) => (
+          <Tab key={value} value={value} className="place-items-start">
+            <div className="flex items-center gap-2">
+              {React.createElement(icon, { className: "w-5 h-5" })}
+              {label}
+            </div>
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value} className="py-0">
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+````
+</CodePreview>
+
+---
+
+## Underline Tabs
+
+You can use tailwind css classes for customizing the tabs components, see the example below for an underline tabs component.
+
+<CodePreview id="underline-tabs" link="tabs#underline-tabs" component={
+  <State initialState={{ activeTab: "html" }}>
+    <Observe>
+      {({ setState, activeTab }) => (
+        <Tabs id="underline-tabs-component" value={activeTab}>
+          <TabsHeader
+            className="bg-transparent rounded-none border-b border-blue-gray-50 p-0"
+            indicatorProps={{
+              className: "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
+            }}
+          >
+            <Tab
+              value="html"
+              onClick={() => setState((s) => ({ activeTab: "html" }))}
+              className={activeTab === "html" ? "text-blue-500" : ""}
+            >
+              HTML
+            </Tab>
+            <Tab
+              value="react"
+              onClick={() => setState((s) => ({ activeTab: "react" }))}
+              className={activeTab === "react" ? "text-blue-500" : ""}
+            >
+              React
+            </Tab>
+            <Tab
+              value="vue"
+              onClick={() => setState((s) => ({ activeTab: "vue" }))}
+              className={activeTab === "vue" ? "text-blue-500" : ""}
+            >
+              Vue
+            </Tab>
+            <Tab
+              value="angular"
+              onClick={() => setState((s) => ({ activeTab: "angular" }))}
+              className={activeTab === "angular" ? "text-blue-500" : ""}
+            >
+              Angular
+            </Tab>
+            <Tab
+              value="svelte"
+              onClick={() => setState((s) => ({ activeTab: "svelte" }))}
+              className={activeTab === "svelte" ? "text-blue-500" : ""}
+            >
+              Svelte
+            </Tab>
+          </TabsHeader>
+          <TabsBody>
+            <TabPanel value="html">
+              {`It really matters and then like it really doesn't matter. What
+                matters is the people who are sparked by it. And the people who are
+                like offended by it, it doesn't matter.`}
+            </TabPanel>
+            <TabPanel value="react">
+              {`Because it's about motivating the doers. Because I'm here
+                to follow my dreams and inspire other people to follow their dreams, too.`}
+            </TabPanel>
+            <TabPanel value="vue">
+              {`We're not always in the position that we want to be at.
+                We're constantly growing. We're constantly making mistakes.
+                We're constantly trying to express ourselves and actualize our
+                dreams.`}
+            </TabPanel>
+            <TabPanel value="angular">
+              {`It really matters and then like it really doesn't matter. What
+                matters is the people who are sparked by it. And the people who are
+                like offended by it, it doesn't matter.`}
+            </TabPanel>
+            <TabPanel value="svelte">
+              {`We're not always in the position that we want to be at.
+                We're constantly growing. We're constantly making mistakes.
+                We're constantly trying to express ourselves and actualize our
+                dreams.`}
+            </TabPanel>
+          </TabsBody>
+        </Tabs>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [activeTab, setActiveTab] = React.useState("html");
+  const data = [
+    {
+      label: "HTML",
+      value: "html",
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "React",
+      value: "react",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Vue",
+      value: "vue",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+    {
+      label: "Angular",
+      value: "angular",
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Svelte",
+      value: "svelte",
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value={activeTab}>
+      <TabsHeader
+        className="rounded-none border-b border-blue-gray-50 bg-transparent p-0"
+        indicatorProps={{
+          className: "bg-transparent border-b-2 border-blue-500 shadow-none rounded-none",
+        }}
+      >
+        {data.map(({ label, value }) => (
+          <Tab
+            key={value}
+            value={value}
+            onClick={() => setActiveTab(value)}
+            className={activeTab === value ? "text-blue-500" : ""}
+          >
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
             {desc}
           </TabPanel>
         ))}
