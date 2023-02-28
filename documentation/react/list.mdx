@@ -8,6 +8,8 @@ navigation:
     "list-with-icon",
     "list-with-selected-item",
     "list-with-disabled-item",
+    "list-with-links",
+    "list-with-badges",
     "props",
     "theme",
   ]
@@ -286,23 +288,24 @@ export default function Example() {
   const [selected, setSelected] = React.useState(1);
   const setSelectedItem = (value) => setSelected(value);
 
-  return (
-    <Card className="w-96">
-      <List>
-        <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
-          Inbox
-        </ListItem>
-        <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
-          Trash
-        </ListItem>
-        <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
-          Settings
-        </ListItem>
-      </List>
-    </Card>;
-  );
-}
-```
+return (
+
+<Card className="w-96">
+  <List>
+    <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
+      Inbox
+    </ListItem>
+    <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
+      Trash
+    </ListItem>
+    <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
+      Settings
+    </ListItem>
+  </List>
+</Card>
+; ); }
+
+````
 </CodePreview>
 
 ---
@@ -330,6 +333,115 @@ export default function Example() {
         <ListItem disabled={true}>Inbox</ListItem>
         <ListItem>Trash</ListItem>
         <ListItem>Settings</ListItem>
+      </List>
+    </Card>
+  );
+}
+````
+
+</CodePreview>
+
+---
+
+## List With Links
+
+<CodePreview id="list-with-links" className="mt-4" component={
+  <Card className="w-96">
+    <List>
+      <a href="#" className="text-initial">
+        <ListItem>Inbox</ListItem>
+      </a>
+      <a href="#" className="text-initial">
+        <ListItem>Trash</ListItem>
+      </a>
+      <a href="#" className="text-initial">
+        <ListItem>Settings</ListItem>
+      </a>
+    </List>
+  </Card>
+}>
+```jsx
+import { List, ListItem, Card } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <List>
+        <a href="#" className="text-initial">
+          <ListItem>Inbox</ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>Trash</ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>Settings</ListItem>
+        </a>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## List With Badges
+
+<CodePreview id="list-with-badges" className="mt-4" component={
+  <Card className="w-96">
+    <List>
+      <ListItem>
+        Inbox
+        <ListItemSuffix>
+          <Chip value="14" variant="ghost" size="sm" className="rounded-full" />
+        </ListItemSuffix>
+      </ListItem>
+      <ListItem>
+        Spam
+        <ListItemSuffix>
+          <Chip value="2" variant="ghost" size="sm" className="rounded-full" />
+        </ListItemSuffix>
+      </ListItem>
+      <ListItem>
+        Trash
+        <ListItemSuffix>
+          <Chip value="40" variant="ghost" size="sm" className="rounded-full" />
+        </ListItemSuffix>
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import {
+  List,
+  ListItem,
+  ListItemSuffix,
+  Chip,
+  Card
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Card className="w-96">
+      <List>
+        <ListItem>
+          Inbox
+          <ListItemSuffix>
+            <Chip value="14" variant="ghost" size="sm" className="rounded-full" />
+          </ListItemSuffix>
+        </ListItem>
+        <ListItem>
+          Spam
+          <ListItemSuffix>
+            <Chip value="2" variant="ghost" size="sm" className="rounded-full" />
+          </ListItemSuffix>
+        </ListItem>
+        <ListItem>
+          Trash
+          <ListItemSuffix>
+            <Chip value="40" variant="ghost" size="sm" className="rounded-full" />
+          </ListItemSuffix>
+        </ListItem>
       </List>
     </Card>
   );
