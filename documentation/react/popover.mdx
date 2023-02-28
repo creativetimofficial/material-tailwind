@@ -2,7 +2,16 @@
 title: Tailwind CSS Popover for React - Material Tailwind
 description: Customise your web projects with our easy-to-use popover component for Tailwind CSS and React using Material Design guidelines.
 navigation:
-  ["popover", "popover-placement", "custom-popover-animation", "props", "theme"]
+  [
+    "popover",
+    "popover-placement",
+    "custom-popover-animation",
+    "subscription-popover",
+    "contact-popover",
+    "popover-with-image",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -298,7 +307,6 @@ export default function Example() {
 ```
 </CodePreview>
 
-
 ---
 
 ## Custom Popover Animation
@@ -348,6 +356,246 @@ export default function Example() {
 ```
 </CodePreview>
 
+---
+
+## Subscription Popover
+
+<CodePreview id="subscription-popover" link="popover#subscription-popover" className="mt-4" component={
+  <Popover placement="bottom">
+    <PopoverHandler>
+      <Button>Subscribe</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-96">
+      <Typography
+        variant="h6"
+        color="blue-gray"
+        className="mb-6"
+      >
+        Newsletter Subscription
+      </Typography>
+      <div className="flex gap-2">
+        <Input label="Email Address" />
+        <Button variant="gradient">Subscribe</Button>
+      </div>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Typography,
+  Input
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Popover placement="bottom">
+      <PopoverHandler>
+        <Button>Subscribe</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-96">
+        <Typography
+          variant="h6"
+          color="blue-gray"
+          className="mb-6"
+        >
+          Newsletter Subscription
+        </Typography>
+        <div className="flex gap-2">
+          <Input label="Email Address" />
+          <Button variant="gradient">Subscribe</Button>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Contact Popover
+
+<CodePreview id="contact-popover" link="popover#contact-popover" className="mt-4" component={
+  <Popover placement="bottom">
+    <PopoverHandler>
+      <Button>Contact Us</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-72">
+      <div className="flex items-center gap-4 border-b border-blue-gray-50 pb-4 mb-4">
+        <Avatar src="/img/team-4.jpg" alt="candice wu" />
+        <div>
+          <Typography variant="h6" color="blue-gray">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">General Manager</Typography>
+        </div>
+      </div>
+      <List className="p-0">
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.BuildingOffice2Icon className="w-5 h-5" />
+            </ListItemPrefix>
+            ABC Construction
+          </ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.PhoneIcon className="w-5 h-5" />
+            </ListItemPrefix>
+            00 123 456 789
+          </ListItem>
+        </a>
+        <a href="#" className="text-initial">
+          <ListItem>
+            <ListItemPrefix>
+              <SolidIcons.EnvelopeIcon className="w-5 h-5" />
+            </ListItemPrefix>
+            person@example.com
+          </ListItem>
+        </a>
+      </List>
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Avatar,
+  Button,
+  Typography,
+  List,
+  ListItem,
+  ListItemPrefix
+} from "@material-tailwind/react";
+import {
+  BuildingOffice2Icon,
+  PhoneIcon,
+  EnvelopeIcon
+} from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Popover placement="bottom">
+      <PopoverHandler>
+        <Button>Contact Us</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-72">
+        <div className="flex items-center gap-4 border-b border-blue-gray-50 pb-4 mb-4">
+          <Avatar src="/img/team-4.jpg" alt="candice wu" />
+          <div>
+            <Typography variant="h6" color="blue-gray">Candice Wu</Typography>
+            <Typography variant="small" color="gray" className="font-normal">General Manager</Typography>
+          </div>
+        </div>
+        <List className="p-0">
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.BuildingOffice2Icon className="w-5 h-5" />
+              </ListItemPrefix>
+              ABC Construction
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.PhoneIcon className="w-5 h-5" />
+              </ListItemPrefix>
+              00 123 456 789
+            </ListItem>
+          </a>
+          <a href="#" className="text-initial">
+            <ListItem>
+              <ListItemPrefix>
+                <SolidIcons.EnvelopeIcon className="w-5 h-5" />
+              </ListItemPrefix>
+              person@example.com
+            </ListItem>
+          </a>
+        </List>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Popover with Image
+
+<CodePreview id="popover-with-image" link="popover#popover-with-image" className="mt-4" component={
+  <Popover>
+    <PopoverHandler>
+      <Button>More Info</Button>
+    </PopoverHandler>
+    <PopoverContent className="w-[28rem] p-0 overflow-hidden flex z-[999]">
+      <div className="p-4">
+        <Typography color="blue-gray" className="font-medium mb-2">Material Tailwind</Typography>
+        <Typography variant="small" color="gray" className="font-normal mb-4">
+          Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React and HTML components, all written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <a href="#" className="inline-block">
+          <Button size="sm" variant="text" className="flex items-center gap-1 capitalize">
+            Read More 
+            <OutlineIcons.ArrowLongRightIcon strokeWidth={2} className="w-3.5 h-3.5" />
+          </Button>
+        </a>
+      </div>
+      <img 
+        src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        alt="image"
+        className="w-1/2 h-full object-cover"
+      />
+    </PopoverContent>
+  </Popover>
+}>
+```jsx
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Typography,
+} from "@material-tailwind/react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Popover>
+      <PopoverHandler>
+        <Button>More Info</Button>
+      </PopoverHandler>
+      <PopoverContent className="w-[28rem] p-0 overflow-hidden flex">
+        <div className="p-4">
+          <Typography color="blue-gray" className="font-medium mb-2">Material Tailwind</Typography>
+          <Typography variant="small" color="gray" className="font-normal mb-4">
+            Material Tailwind is an easy to use components library for Tailwind CSS and Material Design. It features multiple React and HTML components, all written with Tailwind CSS classes and Material Design guidelines.
+          </Typography>
+          <a href="#" className="inline-block">
+            <Button size="sm" variant="text" className="flex items-center gap-1 capitalize">
+              Read More 
+              <ArrowLongRightIcon strokeWidth={2} className="w-3.5 h-3.5" />
+            </Button>
+          </a>
+        </div>
+        <img 
+          src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+          alt="image"
+          className="w-1/2 h-full object-cover"
+        />
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
