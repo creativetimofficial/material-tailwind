@@ -9,6 +9,8 @@ navigation:
     "chip-colors",
     "chip-with-icon",
     "pills-chip",
+    "chip-with-status",
+    "chip-with-checkbox",
     "chip-dismissible",
     "custom-chip-animation",
     "props",
@@ -219,6 +221,126 @@ export default function Example() {
       <Chip variant="gradient" value="chip gradient" />
       <Chip variant="outlined" value="chip outlined" />
       <Chip variant="ghost" value="chip ghost" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip with Status
+
+<CodePreview id="chip-with-status" link="chip#chip-with-status" className="mt-4" component={
+  <div className="flex gap-2">
+    <Chip
+      variant="ghost"
+      color="green"
+      size="sm"
+      value="Online"
+      icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-green-900" />}
+    />
+    <Chip
+      variant="ghost"
+      color="red"
+      size="sm"
+      value="Offline"
+      icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-red-900" />}
+    />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        variant="ghost"
+        color="green"
+        size="sm"
+        value="Online"
+        icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-green-900" />}
+      />
+      <Chip
+        variant="ghost"
+        color="red"
+        size="sm"
+        value="Offline"
+        icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-red-900" />}
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip with Checkbox
+
+<CodePreview id="chip-with-checkbox" link="chip#chip-with-checkbox" className="mt-4" component={
+  <div className="flex gap-2">
+    <Chip
+      value="Online"
+      variant="ghost"
+      color="green"
+      icon={
+        <Checkbox 
+          color="green"
+          ripple={false}
+          containerProps={{ className: "p-0" }}
+          className="border-green-900 border-2 checked:bg-green-900 checked:border-green-900 -ml-px before:hidden"
+        />
+      }
+    />
+    <Chip
+      value="Offline"
+      variant="ghost"
+      color="red"
+      icon={
+        <Checkbox 
+          color="red"
+          ripple={false}
+          containerProps={{ className: "p-0" }}
+          className="border-red-900 border-2 checked:bg-red-900 checked:border-red-900 -ml-px before:hidden"
+        />
+      }
+    />
+  </div>
+}>
+```jsx
+import { Chip, Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        value="Online"
+        variant="ghost"
+        color="green"
+        icon={
+          <Checkbox 
+            color="green"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="border-green-900 border-2 checked:bg-green-900 checked:border-green-900 -ml-px before:hidden"
+          />
+        }
+      />
+      <Chip
+        value="Offline"
+        variant="ghost"
+        color="red"
+        icon={
+          <Checkbox 
+            color="red"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="border-red-900 border-2 checked:bg-red-900 checked:border-red-900 -ml-px before:hidden"
+          />
+        }
+      />
     </div>
   );
 }
