@@ -9,6 +9,10 @@ navigation:
     "custom-menu-animation",
     "menu-with-custom-list",
     "notifications-menu",
+    "menu-with-divider",
+    "menu-with-checkboxes",
+    "menu-with-search",
+    "menu-with-srolling-content",
     "props",
     "theme",
   ]
@@ -804,6 +808,143 @@ export default function Day10() {
               <ClockIcon className="h-3 w-3" />5 hours ago
             </Typography>
           </div>
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Divider
+
+<CodePreview id="menu-with-divider" link="menu#menu-with-divider" className="mt-4" component={
+  <Menu>
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+      <hr className="!mt-3 !mb-3" />
+      <MenuItem>Menu Item 4</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <hr className="my-3" />
+        <MenuItem>Menu Item 4</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Checkboxes
+
+<CodePreview id="menu-with-checkboxes" link="menu#menu-with-checkboxes" className="mt-4" component={
+  <Menu>
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem>
+        <Checkbox
+          ripple={false}
+          containerProps={{ className: "p-0" }}
+        />
+        Menu Item 1
+      </MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import React from "react";
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = React.useState(false);
+  const [option1, setOption1] = React.useState(false);
+  const [option2, setOption2] = React.useState(false);
+  const [option3, setOption3] = React.useState(false);
+
+  return (
+    <Menu open={open} handler={setOpen}>
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem
+          className="flex items-center gap-2"
+          onClick={() => setOption1(!option1)}
+        >
+          <Checkbox
+            ripple={false}
+            className="before:hidden"
+            containerProps={{ className: "p-0" }}
+            checked={option1}
+            onChange={() => setOption1(!option1)}
+          />
+          Menu Item 1
+        </MenuItem>
+        <MenuItem
+          className="flex items-center gap-2"
+          onClick={() => setOption2(!option2)}
+        >
+          <Checkbox
+            ripple={false}
+            className="before:hidden"
+            containerProps={{ className: "p-0" }}
+            checked={option2}
+            onChange={() => setOption2(!option2)}
+          />
+          Menu Item 2
+        </MenuItem>
+        <MenuItem
+          className="flex items-center gap-2"
+          onClick={() => setOption3(!option3)}
+        >
+          <Checkbox
+            ripple={false}
+            className="before:hidden"
+            containerProps={{ className: "p-0" }}
+            checked={option3}
+            onChange={() => setOption3(!option3)}
+          />
+          Menu Item 3
         </MenuItem>
       </MenuList>
     </Menu>
