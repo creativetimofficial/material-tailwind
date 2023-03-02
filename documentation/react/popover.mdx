@@ -7,6 +7,7 @@ navigation:
     "popover-placement",
     "custom-popover-animation",
     "profile-info-popover",
+    "popover-with-description",
     "props",
     "theme",
   ]
@@ -370,7 +371,7 @@ export default function Example() {
             <Button variant="text">Profile Info</Button>
           </PopoverHandler>
           <PopoverContent
-            className="max-w-[24em]"
+            className="max-w-[24rem]"
             onMouseEnter={() => setState((s) => ({ open: true }))}
             onMouseLeave={() => setState((s) => ({ open: false }))}
           >
@@ -458,7 +459,7 @@ export default function Example() {
       <PopoverHandler {...triggers}>
         <Button variant="text">Profile Info</Button>
       </PopoverHandler>
-      <PopoverContent {...triggers} className="max-w-[24em]">
+      <PopoverContent {...triggers} className="max-w-[24rem]">
         <div className="mb-2 flex items-center justify-between gap-4">
           <Avatar
             size="md"
@@ -512,6 +513,144 @@ export default function Example() {
             />
             Material Tailwind
           </Typography>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Popover with Description
+
+<CodePreview id="popover-with-description" link="popover#popover-with-description" className="mt-4" component={
+  <State initialState={{ open: false }}>
+    <Observe>
+      {({ setState, open }) => (
+        <Popover open={open} handler={setState}>
+          <PopoverHandler
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <Button>Repository Details</Button>
+          </PopoverHandler>
+          <PopoverContent
+            className="max-w-[26rem]"
+            onMouseEnter={() => setState((s) => ({ open: true }))}
+            onMouseLeave={() => setState((s) => ({ open: false }))}
+          >
+            <div className="mb-2 flex items-center gap-3">
+              <Typography
+                as="a"
+                href="#"
+                variant="h6"
+                color="blue-gray"
+                className="font-medium transition-colors hover:text-blue-500"
+              >
+                @material-tailwind
+              </Typography>
+              <Chip
+                value="Public"
+                color="blue"
+                className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+              />
+            </div>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind is an easy-to-use components library for Tailwind
+              CSS and Material Design.
+            </Typography>
+            <div className="mt-4 flex items-center gap-5">
+              <div className="flex items-center gap-1">
+                <span className="h-3 w-3 rounded-full bg-blue-700" />
+                <Typography color="gray" className="text-xs font-normal">
+                  TypeScript
+                </Typography>
+              </div>
+              <div className="flex items-center gap-1">
+                <SolidIcons.StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
+                <Typography color="gray" className="text-xs font-normal">
+                  1,480
+                </Typography>
+              </div>
+              <div className="flex items-center gap-1">
+                <SolidIcons.CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
+                <Typography color="gray" className="text-xs font-normal">
+                  Veritied
+                </Typography>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Button,
+  Chip,
+  Typography,
+} from "@material-tailwind/react";
+import { StarIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
+
+export default function Day12() {
+  const [openPopover, setOpenPopover] = React.useState(false);
+  const triggers = {
+    onMouseEnter: () => setOpenPopover(true),
+    onMouseLeave: () => setOpenPopover(false),
+  };
+
+  return (
+    <Popover open={openPopover} handler={setOpenPopover}>
+      <PopoverHandler {...triggers}>
+        <Button>Repository Details</Button>
+      </PopoverHandler>
+      <PopoverContent {...triggers} className="max-w-[26rem]">
+        <div className="mb-2 flex items-center gap-3">
+          <Typography
+            as="a"
+            href="#"
+            variant="h6"
+            color="blue-gray"
+            className="font-medium transition-colors hover:text-blue-500"
+          >
+            @material-tailwind
+          </Typography>
+          <Chip
+            value="Public"
+            color="blue"
+            className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+          />
+        </div>
+        <Typography variant="small" color="gray" className="font-normal">
+          @material-tailwind is an easy-to-use components library for Tailwind
+          CSS and Material Design.
+        </Typography>
+        <div className="mt-4 flex items-center gap-5">
+          <div className="flex items-center gap-1">
+            <span className="h-3 w-3 rounded-full bg-blue-700" />
+            <Typography color="gray" className="text-xs font-normal">
+              TypeScript
+            </Typography>
+          </div>
+          <div className="flex items-center gap-1">
+            <StarIcon className="-mt-0.5 h-4 w-4 text-yellow-700" />
+            <Typography color="gray" className="text-xs font-normal">
+              1,480
+            </Typography>
+          </div>
+          <div className="flex items-center gap-1">
+            <CheckBadgeIcon className="-mt-px h-4 w-4 text-green-500" />
+            <Typography color="gray" className="text-xs font-normal">
+              Veritied
+            </Typography>
+          </div>
         </div>
       </PopoverContent>
     </Popover>
