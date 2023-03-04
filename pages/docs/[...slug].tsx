@@ -40,6 +40,7 @@ import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
+import CountriesSelect from "components/docs/countries-select";
 
 // @material-tailwind/react components
 import {
@@ -229,6 +230,7 @@ const components = {
   Link,
   OutlineIcons,
   SolidIcons,
+  CountriesSelect,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
