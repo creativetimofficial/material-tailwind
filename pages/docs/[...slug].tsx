@@ -41,6 +41,7 @@ import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
 import CountriesSelect from "components/docs/countries-select";
+import CheckoutForm from "components/docs/checkout-form";
 
 // @material-tailwind/react components
 import {
@@ -231,6 +232,7 @@ const components = {
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
+  CheckoutForm,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

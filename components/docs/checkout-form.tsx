@@ -1,143 +1,4 @@
----
-title: Tailwind CSS Form for React - Material Tailwind
-description: Customise your web projects with our complex form components for Tailwind CSS and React using Material Design guidelines.
-navigation: ["simple-registration-form", "checkout-form"]
-github: form
-prev: input
-next: menu
----
-
-# Tailwind CSS Form - React
-
-Easily create form using our components based on Tailwind CSS and React.
-
-Forms are essential user interface design element, providing
-users with the means to enter non-standardized responses.
-
-See below our form component examples.
-
----
-
-## Simple Registration Form
-
-<CodePreview id="simple-registration-form" link="form#simple-registration-form" className="mt-4" component={
-  <Card color="transparent" shadow={false}>
-    <Typography variant="h4" color="blue-gray">
-      Sign Up
-    </Typography>
-    <Typography color="gray" className="mt-1 font-normal">
-      Enter your details to register.
-    </Typography>
-    <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-      <div className="mb-4 flex flex-col gap-6">
-        <Input size="lg" label="Name" />
-        <Input size="lg" label="Email" />
-        <Input type="password" size="lg" label="Password" />
-      </div>
-      <Checkbox
-        label={
-          (
-            <Typography
-              variant="small"
-              color="gray"
-              className="flex items-center font-normal"
-            >
-              I agree the
-              <a
-                href="#"
-                className="font-medium transition-colors hover:text-blue-500"
-              >
-                &nbsp;Terms and Conditions
-              </a>
-            </Typography>
-          )
-        }
-        containerProps={{ className: "-ml-2.5" }}
-      />
-      <Button className="mt-6" fullWidth>
-        Register
-      </Button>
-      <Typography color="gray" className="mt-4 text-center font-normal">
-        Already have an account?{" "}
-        <a
-          href="#"
-          className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-        >
-          Sign In
-        </a>
-      </Typography>
-    </form>
-  </Card>
-}>
-```jsx
-import {
-  Card,
-  Input,
-  Checkbox,
-  Button,
-  Typography,
-} from "@material-tailwind/react";
-
-export default function Example() {
-  return (
-    <Card color="transparent" shadow={false}>
-      <Typography variant="h4" color="blue-gray">
-        Sign Up
-      </Typography>
-      <Typography color="gray" className="mt-1 font-normal">
-        Enter your details to register.
-      </Typography>
-      <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-        <div className="mb-4 flex flex-col gap-6">
-          <Input size="lg" label="Name" />
-          <Input size="lg" label="Email" />
-          <Input type="password" size="lg" label="Password" />
-        </div>
-        <Checkbox
-          label={
-            (
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
-              >
-                I agree the
-                <a
-                  href="#"
-                  className="font-medium transition-colors hover:text-blue-500"
-                >
-                  &nbsp;Terms and Conditions
-                </a>
-              </Typography>
-            )
-          }
-          containerProps={{ className: "-ml-2.5" }}
-        />
-        <Button className="mt-6" fullWidth>
-          Register
-        </Button>
-        <Typography color="gray" className="mt-4 text-center font-normal">
-          Already have an account?{" "}
-          <a
-            href="#"
-            className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-          >
-            Sign In
-          </a>
-        </Typography>
-      </form>
-    </Card>
-  );
-}
-```
-</CodePreview>
-
----
-
-## Checkout Form
-
-<CodePreview id="checkout-form" link="form#checkout-form" className="mt-4" component={<CheckoutForm />}>
-```jsx
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { useCountries } from "use-react-countries";
 import {
@@ -187,7 +48,7 @@ function formatExpires(value: string) {
     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export default function Example() {
+export default function CheckoutForm() {
   const { countries } = useCountries();
   const [type, setType] = React.useState("card");
   const [cardNumber, setCardNumber] = React.useState("");
@@ -347,5 +208,3 @@ export default function Example() {
     </Card>
   );
 }
-```
-</CodePreview>
