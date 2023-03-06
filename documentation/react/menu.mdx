@@ -11,8 +11,8 @@ navigation:
     "notifications-menu",
     "menu-with-divider",
     "menu-with-checkboxes",
-    "menu-with-search",
-    "menu-with-srolling-content",
+    "menu-with-search-input",
+    "menu-with-scrolling-content",
     "props",
     "theme",
   ]
@@ -867,85 +867,262 @@ export default function Example() {
 ## Menu with Checkboxes
 
 <CodePreview id="menu-with-checkboxes" link="menu#menu-with-checkboxes" className="mt-4" component={
-  <Menu>
+  <Menu
+    dismiss={{
+      itemPress: false,
+    }}
+  >
     <MenuHandler>
       <Button>Open Menu</Button>
     </MenuHandler>
     <MenuList>
-      <MenuItem>
-        <Checkbox
-          ripple={false}
-          containerProps={{ className: "p-0" }}
-        />
-        Menu Item 1
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-1"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-1"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 1
+        </label>
       </MenuItem>
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-2"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-2"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 2
+        </label>
+      </MenuItem>
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-3"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-3"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 3
+        </label>
+      </MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-1"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-1"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 1
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-2"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-2"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 2
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-3"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-3"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 3
+          </label>
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Search Input
+
+<CodePreview id="menu-with-search-input" link="menu#menu-with-search-input" className="mt-4" component={
+  <Menu
+    dismiss={{
+      itemPress: false,
+    }}
+  >
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList className="max-h-96">
+      <Input
+        label="Search"
+        containerProps={{
+          className: "mb-4",
+        }}
+      />
+      <MenuItem>Menu Item 1</MenuItem>
       <MenuItem>Menu Item 2</MenuItem>
       <MenuItem>Menu Item 3</MenuItem>
     </MenuList>
   </Menu>
 }>
 ```jsx
-import React from "react";
 import {
   Menu,
   MenuHandler,
+  Button,
   MenuList,
   MenuItem,
-  Button,
-  Checkbox,
+  Input,
 } from "@material-tailwind/react";
 
 export default function Example() {
-  const [open, setOpen] = React.useState(false);
-  const [option1, setOption1] = React.useState(false);
-  const [option2, setOption2] = React.useState(false);
-  const [option3, setOption3] = React.useState(false);
-
   return (
-    <Menu open={open} handler={setOpen}>
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
       <MenuHandler>
         <Button>Open Menu</Button>
       </MenuHandler>
       <MenuList>
-        <MenuItem
-          className="flex items-center gap-2"
-          onClick={() => setOption1(!option1)}
-        >
-          <Checkbox
-            ripple={false}
-            className="before:hidden"
-            containerProps={{ className: "p-0" }}
-            checked={option1}
-            onChange={() => setOption1(!option1)}
-          />
-          Menu Item 1
-        </MenuItem>
-        <MenuItem
-          className="flex items-center gap-2"
-          onClick={() => setOption2(!option2)}
-        >
-          <Checkbox
-            ripple={false}
-            className="before:hidden"
-            containerProps={{ className: "p-0" }}
-            checked={option2}
-            onChange={() => setOption2(!option2)}
-          />
-          Menu Item 2
-        </MenuItem>
-        <MenuItem
-          className="flex items-center gap-2"
-          onClick={() => setOption3(!option3)}
-        >
-          <Checkbox
-            ripple={false}
-            className="before:hidden"
-            containerProps={{ className: "p-0" }}
-            checked={option3}
-            onChange={() => setOption3(!option3)}
-          />
-          Menu Item 3
-        </MenuItem>
+        <Input
+          label="Search"
+          containerProps={{
+            className: "mb-4",
+          }}
+        />
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Scrolling Content
+
+<CodePreview id="menu-with-scrolling-content" link="menu#menu-with-scrolling-content" className="mt-4" component={
+  <Menu>
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList className="max-h-72">
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+      <MenuItem>Menu Item 4</MenuItem>
+      <MenuItem>Menu Item 5</MenuItem>
+      <MenuItem>Menu Item 6</MenuItem>
+      <MenuItem>Menu Item 7</MenuItem>
+      <MenuItem>Menu Item 8</MenuItem>
+      <MenuItem>Menu Item 9</MenuItem>
+      <MenuItem>Menu Item 10</MenuItem>
+      <MenuItem>Menu Item 11</MenuItem>
+      <MenuItem>Menu Item 12</MenuItem>
+      <MenuItem>Menu Item 13</MenuItem>
+      <MenuItem>Menu Item 14</MenuItem>
+      <MenuItem>Menu Item 15</MenuItem>
+      <MenuItem>Menu Item 16</MenuItem>
+      <MenuItem>Menu Item 17</MenuItem>
+      <MenuItem>Menu Item 18</MenuItem>
+      <MenuItem>Menu Item 19</MenuItem>
+      <MenuItem>Menu Item 20</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList className="max-h-72">
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <MenuItem>Menu Item 4</MenuItem>
+        <MenuItem>Menu Item 5</MenuItem>
+        <MenuItem>Menu Item 6</MenuItem>
+        <MenuItem>Menu Item 7</MenuItem>
+        <MenuItem>Menu Item 8</MenuItem>
+        <MenuItem>Menu Item 9</MenuItem>
+        <MenuItem>Menu Item 10</MenuItem>
+        <MenuItem>Menu Item 11</MenuItem>
+        <MenuItem>Menu Item 12</MenuItem>
+        <MenuItem>Menu Item 13</MenuItem>
+        <MenuItem>Menu Item 14</MenuItem>
+        <MenuItem>Menu Item 15</MenuItem>
+        <MenuItem>Menu Item 16</MenuItem>
+        <MenuItem>Menu Item 17</MenuItem>
+        <MenuItem>Menu Item 18</MenuItem>
+        <MenuItem>Menu Item 19</MenuItem>
+        <MenuItem>Menu Item 20</MenuItem>
       </MenuList>
     </Menu>
   );
