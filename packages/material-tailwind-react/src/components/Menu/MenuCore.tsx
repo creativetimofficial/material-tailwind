@@ -137,7 +137,7 @@ export const MenuCore = React.forwardRef<
       ignoreMouse: nested,
     }),
     useRole(context, { role: "menu" }),
-    useDismiss(context),
+    useDismiss(context, dismiss),
     useListNavigation(context, {
       listRef: listItemsRef,
       activeIndex,
@@ -153,7 +153,7 @@ export const MenuCore = React.forwardRef<
 
   React.useEffect(() => {
     function handleTreeClick() {
-      handler(false);
+      if (dismiss.itemPress) handler(false);
     }
 
     function onSubMenuOpen(event: { nodeId: string; parentId: string }) {
@@ -169,7 +169,7 @@ export const MenuCore = React.forwardRef<
       tree?.events.off("click", handleTreeClick);
       tree?.events.off("menuopen", onSubMenuOpen);
     };
-  }, [tree, nodeId, parentId]);
+  }, [tree, nodeId, parentId, handler, dismiss]);
 
   React.useEffect(() => {
     if (open) {

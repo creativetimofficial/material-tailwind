@@ -25,6 +25,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/me
 
 export interface MenuListProps extends React.ComponentProps<"ul"> {
   className?: className;
+  dismissible?: boolean;
   children: children;
 }
 
@@ -110,9 +111,9 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                 onClick(event) {
                   if (child.props.onClick) {
                     child.props.onClick?.(event);
-                  } else {
-                    tree?.events.emit("click");
                   }
+
+                  tree?.events.emit("click");
                 },
                 onMouseEnter() {
                   if (allowHover && open) {
