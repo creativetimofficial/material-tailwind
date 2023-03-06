@@ -27,6 +27,7 @@ export const routes = [
       "icon-button",
       "input",
       "list",
+      "form",
       "menu",
       "navbar",
       "popover",

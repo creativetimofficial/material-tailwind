@@ -6,6 +6,8 @@ navigation:
     "popover",
     "popover-placement",
     "custom-popover-animation",
+    "profile-info-popover",
+    "popover-with-description",
     "popover-trigger-data-attributes",
     "popover-data-attributes",
     "required-script",
@@ -479,6 +481,353 @@ You can modify the open/close state animation for popover by adding the <Code ht
     class="absolute w-max whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-white p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
   >
     This is a very beautiful popover, show some love.
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Profile Info Popover
+
+<CodePreview
+  id="profile-info-popover"
+  link="popover#profile-info-popover"
+  className="mt-4"
+  component={
+    <>
+      <button
+        data-ripple-dark="true"
+        data-popover-target="profile-info-popover"
+        className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Profile Info
+      </button>
+      <div
+        data-popover="profile-info-popover"
+        className="absolute max-w-[24rem] whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-white p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+      >
+        <div className="mb-2 flex items-center justify-between gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+            alt="candice wu"
+            className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+          />
+          <button
+            className="select-none rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 text-center align-middle font-sans text-xs font-medium capitalize text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+            data-ripple-light="true"
+          >
+            Follow
+          </button>
+        </div>
+        <h6 className="mb-2 flex items-center gap-2 font-sans text-base font-medium leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+          <span>Candice Wu</span> •{" "}
+          <a class="text-sm text-blue-gray-700" href="#">
+            @canwu
+          </a>
+        </h6>
+        <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+          Frontend Developer • Major interest in Web Development: motivated to
+          achieve measurable results, to deepen my knowledge and improve my
+          skills.
+        </p>
+        <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
+          <p className="flex items-center gap-1 font-sans text-xs font-normal text-gray-700 antialiased">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              className="-mt-0.5 h-3.5 w-3.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              ></path>
+            </svg>
+            United Kingdom
+          </p>
+          <a
+            href="#"
+            className="flex items-center gap-1 font-sans text-xs font-normal text-gray-700 antialiased"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              aria-hidden="true"
+              className="-mt-0.5 h-3.5 w-3.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+              ></path>
+            </svg>
+            Material Tailwind
+          </a>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <button
+    data-ripple-dark="true"
+    data-popover-target="profile-info-popover"
+    class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  >
+    Profile Info
+  </button>
+  <div
+    data-popover="profile-info-popover"
+    className="absolute max-w-[24rem] whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-white p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+  >
+    <div className="mb-2 flex items-center justify-between gap-4">
+      <img
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+        alt="candice wu"
+        className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
+      />
+      <button
+        className="select-none rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 text-center align-middle font-sans text-xs font-medium capitalize text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+        data-ripple-light="true"
+      >
+        Follow
+      </button>
+    </div>
+    <h6 className="mb-2 flex items-center gap-2 font-sans text-base font-medium leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+      <span>Candice Wu</span> •{" "}
+      <a class="text-sm text-blue-gray-700" href="#">
+        @canwu
+      </a>
+    </h6>
+    <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+      Frontend Developer • Major interest in Web Development: motivated to
+      achieve measurable results, to deepen my knowledge and improve my skills.
+    </p>
+    <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
+      <p className="flex items-center gap-1 font-sans text-xs font-normal text-gray-700 antialiased">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          aria-hidden="true"
+          className="-mt-0.5 h-3.5 w-3.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+          ></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+          ></path>
+        </svg>
+        United Kingdom
+      </p>
+      <a
+        href="#"
+        className="flex items-center gap-1 font-sans text-xs font-normal text-gray-700 antialiased"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          aria-hidden="true"
+          className="-mt-0.5 h-3.5 w-3.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+          ></path>
+        </svg>
+        Material Tailwind
+      </a>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Popover with Description
+
+<CodePreview
+  id="popover-with-description"
+  link="popover#popover-with-description"
+  className="mt-4"
+  component={
+    <>
+      <button
+        data-ripple-dark="true"
+        data-popover-target="popover-with-description"
+        className="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      >
+        Repository Details
+      </button>
+      <div
+        data-popover="popover-with-description"
+        className="absolute max-w-[26rem] whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-white p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+      >
+        <div className="mb-2 flex items-center gap-3">
+          <a
+            href="#"
+            className="block font-sans text-base font-medium leading-relaxed tracking-normal text-blue-gray-900 antialiased transition-colors hover:text-pink-500"
+          >
+            @material-tailwind
+          </a>
+          <div
+            className="center relative inline-block select-none whitespace-nowrap rounded-full bg-pink-500 py-1 px-2 align-baseline font-sans text-xs font-medium capitalize leading-none tracking-wide text-white"
+            data-projection-id="2"
+          >
+            <div className="mt-px">Public</div>
+          </div>
+        </div>
+        <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+          @material-tailwind is an easy-to-use components library htmlFor
+          Tailwind CSS and Material Design.
+        </p>
+        <div className="mt-4 flex items-center gap-5">
+          <div className="flex items-center gap-1">
+            <span className="h-3 w-3 rounded-full bg-blue-700"></span>
+            <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
+              TypeScript
+            </p>
+          </div>
+          <div className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              className="-mt-0.5 h-4 w-4 text-yellow-700"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
+              1,480
+            </p>
+          </div>
+          <div className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              className="-mt-px h-4 w-4 text-green-500"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
+              Veritied
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  }
+>
+  ```html
+  <button
+    data-ripple-dark="true"
+    data-popover-target="popover-with-description"
+    class="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  >
+    Repository Details
+  </button>
+  <div
+    data-popover="popover-with-description"
+    class="absolute max-w-[26rem] whitespace-normal break-words rounded-lg border border-blue-gray-50 bg-white p-4 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
+  >
+    <div class="mb-2 flex items-center gap-3">
+      <a
+        href="#"
+        class="block font-sans text-base font-medium leading-relaxed tracking-normal text-blue-gray-900 antialiased transition-colors hover:text-pink-500"
+      >
+        @material-tailwind
+      </a>
+      <div
+        class="center relative inline-block select-none whitespace-nowrap rounded-full bg-pink-500 py-1 px-2 align-baseline font-sans text-xs font-medium capitalize leading-none tracking-wide text-white"
+        data-projection-id="2"
+      >
+        <div class="mt-px">Public</div>
+      </div>
+    </div>
+    <p class="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+      @material-tailwind is an easy-to-use components library for Tailwind CSS
+      and Material Design.
+    </p>
+    <div class="mt-4 flex items-center gap-5">
+      <div class="flex items-center gap-1">
+        <span class="h-3 w-3 rounded-full bg-blue-700"></span>
+        <p class="block font-sans text-xs font-normal text-gray-700 antialiased">
+          TypeScript
+        </p>
+      </div>
+      <div class="flex items-center gap-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          class="-mt-0.5 h-4 w-4 text-yellow-700"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <p class="block font-sans text-xs font-normal text-gray-700 antialiased">
+          1,480
+        </p>
+      </div>
+      <div class="flex items-center gap-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          class="-mt-px h-4 w-4 text-green-500"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <p class="block font-sans text-xs font-normal text-gray-700 antialiased">
+          Veritied
+        </p>
+      </div>
+    </div>
   </div>
   ```
 </CodePreview>
