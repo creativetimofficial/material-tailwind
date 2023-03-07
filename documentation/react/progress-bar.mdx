@@ -5,8 +5,11 @@ navigation:
   [
     "progress-bar",
     "progress-bar-variants",
+    "progress-bar-sizes",
     "progress-bar-colors",
     "progress-bar-with-label",
+    "progress-bar-sizes-with-label",
+    "progress-bar-with-label-outside",
     "props",
     "theme",
   ]
@@ -74,6 +77,34 @@ export default function Example() {
 
 ---
 
+## Progress Bar Sizes
+
+The <Code>Progress</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="progress-bar-sizes" link="progress-bar#progress-bar-sizes" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={25} size="sm" />
+    <Progress value={50} size="md" />
+    <Progress value={75} size="lg" />
+  </div>
+}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" />
+      <Progress value={50} size="md" />
+      <Progress value={75} size="lg" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
 ## Progress Bar Colors
 
 The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
@@ -122,6 +153,66 @@ import { Progress } from "@material-tailwind/react";
 
 export default function Example() {
   return <Progress value={50} label="Completed" />;
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar Sizes with Label
+
+The <Code>Progress</Code> component sizes are different when you use the <Code>label</Code> prop, this helps to make the label text more readable.
+
+<CodePreview id="progress-bar-sizes-with-label" link="progress-bar#progress-bar-sizes-with-label" component={
+  <div className="flex w-full flex-col gap-4">
+    <Progress value={25} size="sm" label="Small" />
+    <Progress value={50} size="md" label="Medium" />
+    <Progress value={75} size="lg" label="Large" />
+  </div>
+}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Progress value={25} size="sm" label="Small" />
+      <Progress value={50} size="md" label="Medium" />
+      <Progress value={75} size="lg" label="Large" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Progress Bar with Label Outside
+
+Use the example below to add the label outside the progress bar.
+
+<CodePreview id="progress-bar-with-label-outside" link="progress-bar#progress-bar-with-label-outside" component={
+  <div className="w-full">
+    <div className="flex items-center justify-between gap-4 mb-2">
+      <Typography color="blue" variant="h6">Completed</Typography>
+      <Typography color="blue" variant="h6">50%</Typography>
+    </div>
+    <Progress value={50} />
+  </div>
+}>
+```jsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-between gap-4 mb-2">
+        <Typography color="blue" variant="h6">Completed</Typography>
+        <Typography color="blue" variant="h6">50%</Typography>
+      </div>
+      <Progress value={50} />
+    </div>
+  );
 }
 ```
 </CodePreview>

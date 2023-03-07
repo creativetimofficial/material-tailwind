@@ -37,6 +37,7 @@ the other native props as well.
 | ----------- | ------------------------- | ------------------------------------------------ | ---------------------- |
 | `variant`   | [Variant](#types-variant) | Change progress bar variant                      | <Code>filled</Code>    |
 | `color`     | [Color](#types-color)     | Change progress bar color                        | <Code>blue</Code>      |
+| `size`     | [Size](#types-size)     | Change progress bar size                        | <Code>md</Code>      |
 | `label`     | [label](#types-label)     | Add label for progress bar                       | <Code>undefined</Code> |
 | `value`     | <Code>number</Code>       | Add the completed percentage for progress bar    | 0                      |
 | `barProps`  | <Code>object</Code>       | Add custom props for progress bar percentage bar | <Code>undefined</Code> |
@@ -88,6 +89,16 @@ type color =
   | "purple"
   | "pink"
   | "red";
+```
+
+---
+
+## Types - Size
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "sm" | "md" | "lg";
 ```
 
 ---

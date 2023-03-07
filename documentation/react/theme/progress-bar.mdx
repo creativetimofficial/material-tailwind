@@ -43,6 +43,7 @@ interface ProgressStylesType {
   defaultProps: {
     variant: string;
     color: string;
+    size: string;
     value: number;
     label: string | boolean;
     barProps: object;
@@ -51,6 +52,7 @@ interface ProgressStylesType {
   valid: {
     variants: string[];
     colors: string[];
+    sizes: string[];
   };
   styles: {
     base: {
@@ -59,6 +61,29 @@ interface ProgressStylesType {
         withLabel: object;
       };
       bar: object;
+    };
+    sizes: {
+      sm: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
+      md: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
+      lg: {
+        container: {
+          initial: object;
+          withLabel: object;
+        };
+        bar: object;
+      };
     };
     variants: {
       filled: object;
