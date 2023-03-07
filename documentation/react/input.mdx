@@ -9,6 +9,7 @@ navigation:
     "input-colors",
     "input-validations",
     "input-with-icon",
+    "input-with-helper-text",
     "disabled-input",
     "props",
     "theme",
@@ -172,7 +173,7 @@ export default function Example() {
 
 ---
 
-## Input With icon
+## Input With Icon
 
 You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
@@ -188,6 +189,39 @@ export default function Example() {
   return (
     <div className="w-72">
       <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Helper Text
+
+Use the example below for an input with a helper text.
+
+<CodePreview id="input-with-helper-text" link="input#input-with-helper-text" component={
+  <div className="w-[32rem]">
+    <Input type="password" label="Password" />
+    <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+      <SolidIcons.InformationCircleIcon className="w-4 h-4 -mt-px" />
+      Use at least 8 characters, one uppercase, one lowercase and one number.
+    </Typography>
+  </div>
+}>
+```jsx
+import { Input } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/solid"
+
+export default function Example() {
+  return (
+    <div className="w-[32rem]">
+      <Input type="password" label="Password" />
+      <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+        <SolidIcons.InformationCircleIcon className="w-4 h-4 -mt-px" />
+        Use at least 8 characters, one uppercase, one lowercase and one number.
+      </Typography>
     </div>
   );
 }
