@@ -17,12 +17,12 @@ related:
   ]
 github: collapse
 prev: chip
-next: dialog
+next: carousel
 ---
 
 # Tailwind CSS Collapse - React
 
-Use our Tailwind CSS collapse for your website. You can use if for accordion, collapsible items and much more.
+Use our Tailwind CSS collapse for your website. You can use it for accordion, collapsible items and much more.
 
 See below our simple <Code>Collapse</Code> example that you can use in your Tailwind CSS and React project.
 
@@ -61,21 +61,23 @@ export default function Example() {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => setOpen(cur => !cur);
 
-  return (
-    <React.Fragment>
-      <Button onClick={toggleOpen}>Open Collapse</Button>
-      <Collapse open={open}>
-        <Card className="my-4 w-8/12 mx-auto">
-          <CardBody>
-            <Typography>
-              Use our Tailwind CSS collapse for your website. You can use if for accordion, collapsible items and much more.
-            </Typography>
-          </CardBody> 
-        </Card>
-      </Collapse>
-    </React.Fragment>
-  )
-}
+return (
+
+<React.Fragment>
+  <Button onClick={toggleOpen}>Open Collapse</Button>
+  <Collapse open={open}>
+    <Card className="my-4 mx-auto w-8/12">
+      <CardBody>
+        <Typography>
+          Use our Tailwind CSS collapse for your website. You can use if for
+          accordion, collapsible items and much more.
+        </Typography>
+      </CardBody>
+    </Card>
+  </Collapse>
+</React.Fragment>
+) }
+
 ```
 </CodePreview>
 
