@@ -1,0 +1,109 @@
+---
+title: Tailwind CSS Carousel Theme - Material Tailwind
+description: Learn how to customize the theme and styles for carousel component.
+navigation:
+  ["overview", "theme-object-type", "theme-customization", "examples", "props"]
+github: theme/carousel
+related:
+  [
+    {
+      title: "Examples",
+      route: "carousel",
+      description: "Checkout different examples for carousel component.",
+    },
+    {
+      title: "Props",
+      route: "props/carousel",
+      description: "Learn more about props definition and types of carousel component.",
+    },
+  ]
+---
+
+# Tailwind CSS Carousel - Theme
+
+<span id="overview" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for carousel component, the theme object for carousel component has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of carousel component.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of carousel component.<br />
+
+You can customize the theme and styles of carousel component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+## Carousel Theme Object Type
+
+<span id="theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface CarouselStylesType {
+  defaultProps: {
+    prevArrow: (args: {
+      loop: boolean;
+      handlePrev: () => void;
+      activeIndex: number;
+      firstIndex: boolean;
+    }) => React.ReactNode | void;
+    nextArrow: (args: {
+      loop: boolean;
+      handleNext: () => void;
+      activeIndex: number;
+      lastIndex: boolean;
+    }) => React.ReactNode | void;
+    navigation: (args: {
+      setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+      activeIndex: number;
+      length: number;
+    }) => React.ReactNode | void;
+    autoplay: boolean;
+    autoplayDelay: number;
+    transitionDuration: number;
+    loop: boolean;
+    className: string;
+  };
+  styles: {
+    base: {
+      carousel: object;
+      slide: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import { CarouselStylesType } from "@material-tailwind/react";
+```
+
+---
+
+## Carousel Theme Customization
+
+<span id="theme-customization" className="scroll-mt-48" />
+
+```ts
+const theme = {
+  carousel: {
+    styles: {
+      base: {
+        carousel: {
+          display: "flex",
+        }
+        slide: {
+          border: "border-2",
+          borderColor: "border-blue-500"
+        }
+      },
+    },
+  },
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="props" className="scroll-mt-48" />

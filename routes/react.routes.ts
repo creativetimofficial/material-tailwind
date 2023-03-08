@@ -23,6 +23,7 @@ export const routes = [
       "checkbox",
       "chip",
       "collapse",
+      "carousel",
       "dialog",
       "icon-button",
       "input",

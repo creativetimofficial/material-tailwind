@@ -1,0 +1,552 @@
+---
+title: Tailwind CSS Carousel for React - Material Tailwind
+description: Customise your web projects with our easy-to-use carousel component for Tailwind CSS and React using Material Design guidelines.
+navigation: ["carousel", "carousel-with-content", "carousel-duration", "carousel-with-custom-arrows", "carousel-with-custom-navigation", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/carousel",
+      description: "Learn more about props definition and types of carousel component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/carousel",
+      description: "Learn how to customize the theme and styles for carousel component.",
+    },
+  ]
+github: carousel
+prev: collapse
+next: dialog
+---
+
+# Tailwind CSS Carousel - React
+
+Use our Tailwind CSS carousel for your website for sliding through multiple elements or images.
+
+See below our simple <Code>Carousel</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="carousel" component={
+  <Carousel className="rounded-xl">
+    <img
+      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+      alt="image 1"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      alt="image 2"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+      alt="image 3"
+      className="h-full w-full object-cover"
+    />
+  </Carousel>
+}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Carousel className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Carousel with Content
+
+Use the example below for a complex carousel example with more content.
+
+<CodePreview id="carousel-with-content" component={
+  <Carousel className="rounded-xl">
+    <div className="relative h-full w-full">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+        <div className="w-full text-center lg:w-3/4">
+          <Typography
+            variant="h2"
+            color="white"
+            className="mb-4 text-2xl md:text-3xl lg:text-4xl"
+          >
+            The Beauty of Nature
+          </Typography>
+          <Typography
+            variant="lead"
+            color="white"
+            className="mb-12 opacity-80"
+          >
+            It is not so much for its beauty that the forest makes a claim
+            upon men&apos;s hearts, as for that subtle something, that
+            quality of air that emanation from old trees, that so
+            wonderfully changes and renews a weary spirit.
+          </Typography>
+          <div className="flex justify-center gap-2">
+            <Button size="lg" color="white">
+              Explore
+            </Button>
+            <Button size="lg" color="white" variant="text">
+              Gallery
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="relative h-full w-full">
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+        <div className="w-3/4 pl-16">
+          <Typography
+            variant="h2"
+            color="white"
+            className="mb-4 text-2xl md:text-3xl lg:text-4xl"
+          >
+            The Beauty of Nature
+          </Typography>
+          <Typography
+            variant="lead"
+            color="white"
+            className="mb-12 opacity-80"
+          >
+            It is not so much for its beauty that the forest makes a claim
+            upon men&apos;s hearts, as for that subtle something, that
+            quality of air that emanation from old trees, that so
+            wonderfully changes and renews a weary spirit.
+          </Typography>
+          <div className="flex gap-2">
+            <Button size="lg" color="white">
+              Explore
+            </Button>
+            <Button size="lg" color="white" variant="text">
+              Gallery
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="relative h-full w-full">
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+        <div className="w-3/4 pl-16 pb-16">
+          <Typography
+            variant="h2"
+            color="white"
+            className="mb-4 text-2xl md:text-3xl lg:text-4xl"
+          >
+            The Beauty of Nature
+          </Typography>
+          <Typography
+            variant="lead"
+            color="white"
+            className="mb-12 opacity-80"
+          >
+            It is not so much for its beauty that the forest makes a claim
+            upon men&apos;s hearts, as for that subtle something, that
+            quality of air that emanation from old trees, that so
+            wonderfully changes and renews a weary spirit.
+          </Typography>
+          <div className="flex gap-2">
+            <Button size="lg" color="white">
+              Explore
+            </Button>
+            <Button size="lg" color="white" variant="text">
+              Gallery
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Carousel>
+}>
+```jsx
+import { Carousel, Typography, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Carousel className="rounded-xl">
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+          alt="image 1"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+          <div className="w-3/4 text-center md:w-2/4">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that
+              quality of air that emanation from old trees, that so
+              wonderfully changes and renews a weary spirit.
+            </Typography>
+            <div className="flex justify-center gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+          alt="image 2"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
+          <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that
+              quality of air that emanation from old trees, that so
+              wonderfully changes and renews a weary spirit.
+            </Typography>
+            <div className="flex gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+          alt="image 3"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+          <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              The Beauty of Nature
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+              It is not so much for its beauty that the forest makes a claim
+              upon men&apos;s hearts, as for that subtle something, that
+              quality of air that emanation from old trees, that so
+              wonderfully changes and renews a weary spirit.
+            </Typography>
+            <div className="flex gap-2">
+              <Button size="lg" color="white">
+                Explore
+              </Button>
+              <Button size="lg" color="white" variant="text">
+                Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Carousel Duration
+
+You can change the carousel transition duration using the <Code>transitionDuration</Code> prop, you can pass the transition duration as seconds for <Code>transitionDuration</Code> prop.
+
+<CodePreview id="carousel-duration" component={
+  <Carousel transitionDuration={5} className="rounded-xl">
+    <img
+      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+      alt="image 1"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      alt="image 2"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+      alt="image 3"
+      className="h-full w-full object-cover"
+    />
+  </Carousel>
+}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Carousel transitionDuration={5} className="rounded-xl">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Carousel with Custom Arrows
+
+You can change the carousel arrows using the <Code>prevArrow</Code> and <Code>nextArrow</Code> props.
+
+<CodePreview id="carousel-with-custom-arrows" component={
+  <Carousel
+    className="rounded-xl"
+    prevArrow={({ handlePrev }) => (
+      <IconButton
+        variant="text"
+        color="white"
+        size="lg"
+        onClick={handlePrev}
+        className="!absolute top-2/4 -translate-y-2/4 left-4"
+      >
+        <OutlineIcons.ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
+      </IconButton>
+    )}
+    nextArrow={({ handleNext }) => (
+      <IconButton
+        variant="text"
+        color="white"
+        size="lg"
+        onClick={handleNext}
+        className="!absolute top-2/4 -translate-y-2/4 !right-4"
+      >
+        <OutlineIcons.ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
+      </IconButton>
+    )}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+      alt="image 1"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      alt="image 2"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+      alt="image 3"
+      className="h-full w-full object-cover"
+    />
+  </Carousel>
+}>
+```jsx
+import { Carousel, IconButton } from "@material-tailwind/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
+
+export default function Example() {
+  return (
+    <Carousel
+      className="rounded-xl"
+      prevArrow={({ handlePrev }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handlePrev}
+          className="!absolute top-2/4 -translate-y-2/4 left-4"
+        >
+          <ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
+        </IconButton>
+      )}
+      nextArrow={({ handleNext }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handleNext}
+          className="!absolute top-2/4 -translate-y-2/4 !right-4"
+        >
+          <ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
+        </IconButton>
+      )}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Carousel with Custom Navigation
+
+You can change the carousel bottom navigation using the <Code>navigation</Code> prop.
+
+<CodePreview id="carousel-with-custom-navigation" component={
+  <Carousel
+    className="rounded-xl"
+    navigation={({ setActiveIndex, activeIndex, length }) => (
+      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+        {new Array(length).fill("").map((_, i) => (
+          <span
+            key={i}
+            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+              activeIndex === i ? "bg-white w-8" : "bg-white/50 w-4"
+            }`}
+            onClick={() => setActiveIndex(i)}
+          />
+        ))}
+      </div>
+    )}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+      alt="image 1"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      alt="image 2"
+      className="h-full w-full object-cover"
+    />
+    <img
+      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+      alt="image 3"
+      className="h-full w-full object-cover"
+    />
+  </Carousel>
+}>
+```jsx
+import { Carousel } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Carousel
+      className="rounded-xl"
+      navigation={({ setActiveIndex, activeIndex, length }) => (
+        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+          {new Array(length).fill("").map((_, i) => (
+            <span
+              key={i}
+              className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+                activeIndex === i ? "bg-white w-8" : "bg-white/50 w-4"
+              }`}
+              onClick={() => setActiveIndex(i)}
+            />
+          ))}
+        </div>
+      )}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
+```
+</CodePreview>
+
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
