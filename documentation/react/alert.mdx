@@ -11,6 +11,7 @@ navigation:
     "alert-dismissible",
     "custom-alert-animation",
     "custom-alert-close-icon",
+    "alert-with-content",
     "props",
     "theme",
   ]
@@ -452,12 +453,8 @@ You can modify the open/close state animation for <Code>Alert</Code> component u
           <Alert
             open={open}
             animate={{
-              mount: {
-                y: 0,
-              },
-              unmount: {
-                y: 100,
-              },
+              mount: { y: 0 },
+              unmount: { y: 100 },
             }}
             onClose={() => setState((s) => ({ open: false }))}
           >
@@ -475,29 +472,27 @@ import { Alert, Button } from "@material-tailwind/react";
 export default function Example() {
   const [open, setOpen] = useState(true);
 
-return (
-
-<Fragment>
-  {!open && (
-    <Button className="absolute" onClick={() => setOpen(true)}>
-      Show Alert
-    </Button>
-  )}
-  <Alert
-    open={open}
-    onClose={() => setOpen(false)}
-    animate={{
-      mount: { y: 0 },
-      unmount: { y: 100 },
-    }}
-  >
-    A dismissible alert with custom animation.
-  </Alert>
-</Fragment>
-); }
-
-````
-
+  return (
+    <Fragment>
+      {!open && (
+        <Button className="absolute" onClick={() => setOpen(true)}>
+          Show Alert
+        </Button>
+      )}
+      <Alert
+        open={open}
+        onClose={() => setOpen(false)}
+        animate={{
+          mount: { y: 0 },
+          unmount: { y: 100 },
+        }}
+      >
+        A dismissible alert with custom animation.
+      </Alert>
+    </Fragment>
+  );
+}
+```
 </CodePreview>
 
 ---
@@ -562,9 +557,11 @@ export default function Example() {
         </Button>
       )}
       <Alert
-        open={open}
+        variant="gradient"
         color="red"
-        icon={<ExclamationTriangleIcon className="h-6 w-6" />}
+        open={open}
+        icon={<SolidIcons.ExclamationTriangleIcon className="h-6 w-6" />}
+        open={open}
         action={
           <Button
             variant="text"
@@ -582,10 +579,90 @@ export default function Example() {
     </React.Fragment>
   );
 }
-````
+```
+</CodePreview>
 
+---
+
+## Alert with Content
+
+Use the example below to use <Code>Alert</Code> component with more content like title and description.
+
+<CodePreview id="alert-with-content" link="alert#alert-with-content" className="mt-4" component={
+  <State initialState={{ open: true }}>
+    <Observe>
+      {({ setState, open }) => (
+        <>
+          {!open && (
+            <Button
+              color="green"
+              className="absolute"
+              onClick={() => setState((s) => ({ open: true }))}
+            >
+              Show Alert
+            </Button>
+          )}
+          <Alert
+            open={open}
+            color="green"
+            className="max-w-screen-md"
+            icon={<SolidIcons.CheckCircleIcon className="mt-px h-6 w-6" />}
+            onClose={() => setState((s) => ({ open: false }))}
+          >
+            <Typography variant="h5" color="white">
+              Success
+            </Typography>
+            <Typography color="white" className="mt-2 font-normal">
+              I don&apos;t know what that word means. I&apos;m happy. But success,
+              that goes back to what in somebody&apos;s eyes success means. For me,
+              success is inner peace. That&apos;s a good day for me.
+            </Typography>
+          </Alert>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import { Alert, Button, Typography } from "@material-tailwind/react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <React.Fragment>
+      {!open && (
+        <Button
+          color="green"
+          className="absolute"
+          onClick={() => setOpen(true)}
+        >
+          Show Alert
+        </Button>
+      )}
+      <Alert
+        open={open}
+        color="green"
+        className="max-w-screen-md"
+        icon={<CheckCircleIcon className="mt-px h-6 w-6" />}
+        onClose={() => setOpen(false)}
+      >
+        <Typography variant="h5" color="white">
+          Success
+        </Typography>
+        <Typography color="white" className="mt-2 font-normal">
+          I don&apos;t know what that word means. I&apos;m happy. But success,
+          that goes back to what in somebody&apos;s eyes success means. For me,
+          success is inner peace. That&apos;s a good day for me.
+        </Typography>
+      </Alert>
+    </React.Fragment>
+  );
+}
+```
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
-```
