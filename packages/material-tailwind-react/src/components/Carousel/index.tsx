@@ -33,7 +33,7 @@ import {
   propTypesLoop,
 } from "../../types/components/carousel";
 
-interface CarouselProps extends React.ComponentProps<"div"> {
+export interface CarouselProps extends React.ComponentProps<"div"> {
   children: children;
   prevArrow?: prevArrow;
   nextArrow?: nextArrow;
@@ -108,6 +108,12 @@ export function Carousel({
 
     return controls.stop;
   }, [calculateNewX, index, x, transitionDuration]);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", () => {
+      animate(x, calculateNewX(), { ...transition, duration: transitionDuration });
+    })
+  }, [calculateNewX, transitionDuration, x])
 
   React.useEffect(() => {
     if (!autoplay) {
