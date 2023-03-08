@@ -33,6 +33,7 @@ import typography from "./components/typography";
 import collapse from "./components/collapse";
 import list from "./components/list";
 import buttonGroup from "./components/buttonGroup";
+import carousel from "./components/carousel";
 
 const theme = {
   accordion,
@@ -70,6 +71,7 @@ const theme = {
   collapse,
   list,
   buttonGroup,
+  carousel,
 };
 
 export * from "./components/accordion";
@@ -107,4 +109,5 @@ export * from "./components/typography";
 export * from "./components/collapse";
 export * from "./components/list";
 export * from "./components/buttonGroup";
+export * from "./components/carousel";
 export default theme;
