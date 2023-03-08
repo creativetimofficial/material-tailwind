@@ -10,6 +10,7 @@ navigation:
     "alert-dismissible",
     "custom-alert-animation",
     "custom-alert-close-icon",
+    "alert-with-content",
     "props",
     "theme",
   ]
@@ -210,29 +211,30 @@ import { Alert, Button } from "@material-tailwind/react";
 export default function Colors() {
   const [show, setShow] = useState(true);
 
-  return (
-    <Fragment>
-      {!show && (
-        <Button
-          variant="gradient"
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
-          Show Alert
-        </Button>
-      )}
-      <Alert
-        show={show}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
-      >
-        A dismissible alert for showing message.
-      </Alert>
-    </Fragment>
-  );
-}
-```
+return (
+
+<Fragment>
+  {!show && (
+    <Button
+      variant="gradient"
+      className="absolute"
+      onClick={() => setShow(true)}
+    >
+      Show Alert
+    </Button>
+  )}
+  <Alert
+    show={show}
+    dismissible={{
+      onClose: () => setShow(false),
+    }}
+  >
+    A dismissible alert for showing message.
+  </Alert>
+</Fragment>
+); }
+
+````
 </CodePreview>
 
 ---
@@ -310,7 +312,8 @@ export default function Colors() {
     </Fragment>
   );
 }
-```
+````
+
 </CodePreview>
 
 ---
@@ -363,32 +366,120 @@ import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
 export default function Example() {
   const [show, setShow] = React.useState(true);
 
+return (
+
+<React.Fragment>
+  {!show && (
+    <Button className="absolute" color="red" onClick={() => setShow(true)}>
+      Show Alert
+    </Button>
+  )}
+  <Alert
+    show={show}
+    color="red"
+    icon={<ExclamationTriangleIcon className="h-6 w-6" />}
+    dismissible={{
+      onClose: () => setShow(false),
+      action: (
+        <Button variant="text" color="white" size="sm">
+          Close
+        </Button>
+      ),
+    }}
+  >
+    Sorry, something went wrong please try again.
+  </Alert>
+</React.Fragment>
+); }
+
+````
+</CodePreview>
+
+---
+
+## Alert with Content
+
+Use the example below to use <Code>Alert</Code> component with more content like title and description.
+
+<CodePreview id="alert-with-content" link="alert#alert-with-content" className="mt-4" component={
+  <State initialState={{ show: true }}>
+    <Observe>
+      {({ setState, show }) => (
+        <>
+          {!show && (
+            <Button
+              color="green"
+              className="absolute"
+              onClick={() => setState((s) => ({ show: true }))}
+            >
+              Show Alert
+            </Button>
+          )}
+          <Alert
+            show={show}
+            color="green"
+            className="max-w-screen-md"
+            icon={<SolidIcons.CheckCircleIcon className="mt-px h-6 w-6" />}
+            dismissible={{
+              onClose: () => setState((s) => ({ show: false })),
+            }}
+          >
+            <Typography variant="h5" color="white">
+              Success
+            </Typography>
+            <Typography color="white" className="mt-2 font-normal">
+              I don&apos;t know what that word means. I&apos;m happy. But success,
+              that goes back to what in somebody&apos;s eyes success means. For me,
+              success is inner peace. That&apos;s a good day for me.
+            </Typography>
+          </Alert>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import React from "react";
+import { Alert, Button, Typography } from "@material-tailwind/react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const [show, setShow] = React.useState(true);
+
   return (
     <React.Fragment>
       {!show && (
-        <Button className="absolute" color="red" onClick={() => setShow(true)}>
+        <Button
+          color="green"
+          className="absolute"
+          onClick={() => setShow(true)}
+        >
           Show Alert
         </Button>
       )}
       <Alert
         show={show}
-        color="red"
-        icon={<ExclamationTriangleIcon className="h-6 w-6" />}
+        color="green"
+        className="max-w-screen-md"
+        icon={<CheckCircleIcon className="mt-px h-6 w-6" />}
         dismissible={{
           onClose: () => setShow(false),
-          action: (
-            <Button variant="text" color="white" size="sm">
-              Close
-            </Button>
-          ),
         }}
       >
-        Sorry, something went wrong please try again.
+        <Typography variant="h5" color="white">
+          Success
+        </Typography>
+        <Typography color="white" className="mt-2 font-normal">
+          I don&apos;t know what that word means. I&apos;m happy. But success,
+          that goes back to what in somebody&apos;s eyes success means. For me,
+          success is inner peace. That&apos;s a good day for me.
+        </Typography>
       </Alert>
     </React.Fragment>
   );
 }
-```
+````
+
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
