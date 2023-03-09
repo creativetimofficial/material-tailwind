@@ -9,6 +9,7 @@ navigation:
     "input-colors",
     "input-validations",
     "input-with-icon",
+    "input-with-button",
     "disabled-input",
     "props",
     "theme",
@@ -188,6 +189,47 @@ export default function InputWithIcon() {
   return (
     <div className="w-72">
       <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Button
+
+Use the example below for an input containing a button inside.
+
+<CodePreview id="input-with-button" link="input#input-with-button" component={<InputWithButton />}>
+```jsx
+import React from "react";
+import { Input, Button } from "@material-tailwind/react";
+
+export default function Day17() {
+  const [email, setEmail] = React.useState("");
+  const onChange = ({ target }: any) => setEmail(target.value);
+  
+  return (
+    <div className="relative flex w-full max-w-[24rem]">
+      <Input
+        type="email"
+        label="Email Address"
+        value={email}
+        onChange={onChange}
+        className="pr-20"
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      <Button
+        size="sm"
+        color={email ? "blue" : "blue-gray"}
+        disabled={!email}
+        className="absolute right-1 top-1 rounded"
+      >
+        Invite
+      </Button>
     </div>
   );
 }
