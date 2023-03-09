@@ -42,6 +42,7 @@ import CodePreview from "components/code-preview";
 import Warning from "components/warning";
 import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
+import InputWithButton from "components/docs/input-with-button";
 
 // @material-tailwind/react components
 import {
@@ -248,6 +249,7 @@ const components = {
   Warning,
   CountriesSelect,
   CheckoutForm,
+  InputWithButton,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
