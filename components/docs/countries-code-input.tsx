@@ -58,9 +58,9 @@ export default function CountriesCodeInput() {
       <Input
         type="tel"
         placeholder="Mobile Number"
-        className="rounded-l-none focus:border-t-blue-500"
+        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-blue-500"
         labelProps={{
-          className: "before:!content-none after:!content-none",
+          className: "before:content-none after:content-none",
         }}
         containerProps={{
           className: "min-w-0",
