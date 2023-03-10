@@ -30,9 +30,7 @@ export type animation = {
   unmount?: object;
 };
 
-export interface dismissType extends UseDismissProps {
-  itemPress?: boolean;
-}
+export interface dismissType extends UseDismissProps {}
 
 export type offsetType =
   | number
@@ -77,11 +75,18 @@ export const propTypesAnimation = PropTypes.shape({
 export const propTypesDismissType = PropTypes.shape({
   enabled: PropTypes.bool,
   escapeKey: PropTypes.bool,
-  referencePointerDown: PropTypes.bool,
-  outsidePointerDown: PropTypes.bool,
+  referencePress: PropTypes.bool,
+  referencePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  outsidePress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  outsidePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
   ancestorScroll: PropTypes.bool,
-  bubbles: PropTypes.bool,
-  itemPress: PropTypes.bool,
+  bubbles: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      escapeKey: PropTypes.bool,
+      outsidePress: PropTypes.bool,
+    }),
+  ]),
 });
 
 export const propTypesOffsetType = PropTypes.oneOfType([

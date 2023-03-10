@@ -48,7 +48,7 @@ export interface CarouselProps extends React.ComponentProps<"div"> {
   transition?: transition;
   loop?: loop;
   className?: className;
-  slideRef: slideRef;
+  slideRef?: slideRef;
 }
 
 export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(

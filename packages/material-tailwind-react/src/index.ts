@@ -25,6 +25,7 @@ export * from "./components/Collapse";
 export * from "./components/List";
 export * from "./components/ButtonGroup";
 export * from "./components/Carousel";
+export * from "./components/Drawer";
 
 // context
 export * from "./context/theme";
