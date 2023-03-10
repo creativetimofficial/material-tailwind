@@ -1,7 +1,16 @@
 ---
 title: Tailwind CSS Carousel for React - Material Tailwind
 description: Customise your web projects with our easy-to-use carousel component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["carousel", "carousel-with-content", "carousel-duration", "carousel-with-custom-arrows", "carousel-with-custom-navigation", "props", "theme"]
+navigation:
+  [
+    "carousel",
+    "carousel-with-content",
+    "carousel-transition",
+    "carousel-with-custom-arrows",
+    "carousel-with-custom-navigation",
+    "props",
+    "theme",
+  ]
 related:
   [
     {
@@ -314,12 +323,12 @@ export default function Example() {
 
 ---
 
-## Carousel Duration
+## Carousel Transition
 
-You can change the carousel transition duration using the <Code>transitionDuration</Code> prop, you can pass the transition duration as seconds for <Code>transitionDuration</Code> prop.
+You can change the carousel transition using the <Code>transition</Code> prop, you can pass the transition duration as seconds for <Code>transition</Code> prop.
 
-<CodePreview id="carousel-duration" component={
-  <Carousel transitionDuration={5} className="rounded-xl">
+<CodePreview id="carousel-transition" component={
+  <Carousel transition={{ duration: 2 }} className="rounded-xl">
     <img
       src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
       alt="image 1"
@@ -342,7 +351,7 @@ import { Carousel } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <Carousel transitionDuration={5} className="rounded-xl">
+    <Carousel transition={{ duration: 2 }} className="rounded-xl">
       <img
         src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
         alt="image 1"
@@ -546,7 +555,6 @@ export default function Example() {
 }
 ```
 </CodePreview>
-
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
