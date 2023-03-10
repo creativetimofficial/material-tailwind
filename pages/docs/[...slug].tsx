@@ -43,6 +43,7 @@ import CodePreview from "components/code-preview";
 import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
+import CountriesCodeInput from "components/docs/countries-code-input";
 
 // @material-tailwind/react components
 import {
@@ -235,6 +236,7 @@ const components = {
   CountriesSelect,
   CheckoutForm,
   InputWithButton,
+  CountriesCodeInput,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
