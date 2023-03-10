@@ -28,7 +28,9 @@ export type open = boolean;
 export type handler = React.Dispatch<React.SetStateAction<any>>;
 export type placement = Placement;
 export type offset = offsetType;
-export type dismiss = dismissType;
+export interface dismiss extends dismissType {
+  itemPress?: boolean;
+}
 export type animate = animation;
 export type lockScroll = boolean;
 export type disabled = boolean;
@@ -62,7 +64,10 @@ export const propTypesOpen: any = PropTypes.bool;
 export const propTypesHandler: any = PropTypes.func;
 export const propTypesPlacement: any = propTypesPlacements;
 export const propTypesOffset: any = propTypesOffsetType;
-export const propTypesDismiss: any = propTypesDismissType;
+export const propTypesDismiss: any = PropTypes.shape({
+  ...propTypesDismissType,
+  itemPress: PropTypes.bool,
+});
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesLockScroll: any = PropTypes.bool;
 export const propTypesDisabled: any = PropTypes.bool;
