@@ -8,7 +8,7 @@ import type {
   navigation,
   autoplay,
   autoplayDelay,
-  transitionDuration,
+  transition,
   loop,
   className,
 } from "../../../types/components/carousel";
@@ -20,7 +20,7 @@ export interface CarouselStylesType {
     navigation?: navigation;
     autoplay?: autoplay;
     autoplayDelay?: autoplayDelay;
-    transitionDuration?: transitionDuration;
+    transition?: transition;
     loop?: loop;
     className?: className;
   };
@@ -69,7 +69,10 @@ export const carousel: CarouselStylesType = {
     ),
     autoplay: false,
     autoplayDelay: 5000,
-    transitionDuration: 1,
+    transition: {
+      type: "tween",
+      duration: 0.5,
+    },
     loop: false,
     className: "",
   },
