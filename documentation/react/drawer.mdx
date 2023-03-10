@@ -1,0 +1,349 @@
+---
+title: Tailwind CSS Drawer for React - Material Tailwind
+description: Customise your web projects with our easy-to-use drawer component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "drawer",
+    "drawer-placement",
+    "drawer-with-navigation",
+    "drawer-with-form",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/drawer",
+      description: "Learn more about props definition and types of drawer component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/drawer",
+      description: "Learn how to customize the theme and styles for drawer component.",
+    },
+  ]
+github: drawer
+prev: dialog
+next: icon-button
+---
+
+# Tailwind CSS Drawer - React
+
+Use our Tailwind CSS drawer for side menus in your website.
+
+See below our simple <Code>Drawer</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="drawer" component={<DrawerExamples.DefaultDrawer />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer} className="p-4">
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Material Tailwind
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm">Get Started</Button>
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+        </div>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Drawer Placement
+
+You can change the position of the <Code>Drawer</Code> component using the <Code>placement</Code> prop.
+
+<CodePreview id="drawer-placement" component={<DrawerExamples.DrawerPlacement />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function Example() {
+  const [openTop, setOpenTop] = React.useState(false);
+  const [openRight, setOpenRight] = React.useState(false);
+  const [openBottom, setOpenBottom] = React.useState(false);
+  const [openLeft, setOpenLeft] = React.useState(false);
+
+  const openDrawerTop = () => setOpenTop(true);
+  const closeDrawerTop = () => setOpenTop(false);
+  const openDrawerRight = () => setOpenRight(true);
+  const closeDrawerRight = () => setOpenRight(false);
+  const openDrawerBottom = () => setOpenBottom(true);
+  const closeDrawerBottom = () => setOpenBottom(false);
+  const openDrawerLeft = () => setOpenLeft(true);
+  const closeDrawerLeft = () => setOpenLeft(false);
+
+  return (
+    <React.Fragment>
+      <div className="flex flex-wrap gap-4">
+        <Button onClick={openDrawerTop}>Open Drawer Top</Button>
+        <Button onClick={openDrawerRight}>Open Drawer Right</Button>
+        <Button onClick={openDrawerBottom}>Open Drawer Bottom</Button>
+        <Button onClick={openDrawerLeft}>Open Drawer Left</Button>
+      </div>
+      <Drawer
+        placement="top"
+        open={openTop}
+        onClose={closeDrawerTop}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Drawer on Top
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawerTop}>
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="right"
+        open={openRight}
+        onClose={closeDrawerRight}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Drawer on Right
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerRight}
+          >
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="bottom"
+        open={openBottom}
+        onClose={closeDrawerBottom}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Drawer on Bottom
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerBottom}
+          >
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+      </Drawer>
+      <Drawer
+        placement="left"
+        open={openLeft}
+        onClose={closeDrawerLeft}
+        className="p-4"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="blue-gray">
+            Drawer on LefopenLeft
+          </Typography>
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            onClick={closeDrawerLeft}
+          >
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Drawer with Navigation
+
+<CodePreview id="drawer-with-navigation" className="mt-4" component={<DrawerExamples.DrawerWithNavigation />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Chip,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  PresentationChartBarIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+  InboxIcon,
+  PowerIcon,
+} from "@heroicons/react/24/solid";
+
+export function Example() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer}>
+        <div className="mb-2 flex items-center justify-between p-4">
+          <Typography variant="h5" color="blue-gray">
+            Side Menu
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+        <List>
+          <ListItem>
+            <ListItemPrefix>
+              <PresentationChartBarIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Dashboard
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <ShoppingBagIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            E-Commerce
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <InboxIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Inbox
+            <ListItemSuffix>
+              <Chip
+                value="14"
+                size="sm"
+                variant="ghost"
+                color="blue-gray"
+                className="rounded-full"
+              />
+            </ListItemSuffix>
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Profile
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <Cog6ToothIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Settings
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <PowerIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Log Out
+          </ListItem>
+        </List>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Drawer with Form
+
+<CodePreview id="drawer-with-form" className="mt-4" component={<DrawerExamples.DrawerWithForm />}>
+```jsx
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  Input,
+  Textarea,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function Example() {
+  const [open, setOpen] = React.useState(false);
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  return (
+    <React.Fragment>
+      <Button onClick={openDrawer}>Open Drawer</Button>
+      <Drawer open={open} onClose={closeDrawer}>
+        <div className="mb-2 flex items-center justify-between p-4">
+          <Typography variant="h5" color="blue-gray">
+            Contact Us
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+          </IconButton>
+        </div>
+        <form className="flex flex-col gap-6 p-4">
+          <Input type="email" label="Email" />
+          <Input label="Subject" />
+          <Textarea rows={6} label="Message" />
+          <Button>Send Message</Button>
+        </form>
+      </Drawer>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

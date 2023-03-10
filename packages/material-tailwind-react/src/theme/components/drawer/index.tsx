@@ -1,6 +1,3 @@
-import React from "react";
-import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-
 // types
 import type {
   size,
@@ -40,11 +37,7 @@ export const drawer: DrawerStylesType = {
     placement: "left",
     overlayProps: undefined,
     className: "",
-    dismiss: {
-      enabled: true,
-      escapeKey: true,
-      outsidePress: true,
-    },
+    dismiss: undefined,
     onClose: undefined,
     transition: {
       type: "tween",
@@ -55,7 +48,7 @@ export const drawer: DrawerStylesType = {
     base: {
       drawer: {
         position: "fixed",
-        zIndex: "z-10",
+        zIndex: "z-[9999]",
         pointerEvents: "pointer-events-auto",
         backgroundColor: "bg-white",
         boxSizing: "box-border",
@@ -68,7 +61,7 @@ export const drawer: DrawerStylesType = {
         width: "w-full",
         height: "h-full",
         pointerEvents: "pointer-events-auto",
-        zIndex: "z-0",
+        zIndex: "z-[9995]",
         backgroundColor: "bg-black",
         backgroundOpacity: "bg-opacity-60",
         backdropBlur: "backdrop-blur-sm",

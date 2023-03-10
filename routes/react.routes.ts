@@ -25,6 +25,7 @@ export const routes = [
       "collapse",
       "carousel",
       "dialog",
+      "drawer",
       "icon-button",
       "input",
       "form",
