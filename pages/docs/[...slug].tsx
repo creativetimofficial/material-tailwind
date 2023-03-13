@@ -44,6 +44,8 @@ import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import * as DrawerExamples from "components/docs/drawer";
+import CountriesCodeInput from "components/docs/countries-code-input";
+import DialogWithForm from "components/docs/dialog-with-form";
 
 // @material-tailwind/react components
 import {
@@ -252,6 +254,8 @@ const components = {
   CheckoutForm,
   InputWithButton,
   DrawerExamples,
+  CountriesCodeInput,
+  DialogWithForm,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
