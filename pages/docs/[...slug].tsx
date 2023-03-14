@@ -45,6 +45,7 @@ import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import DialogWithForm from "components/docs/dialog-with-form";
+import DialogWithImage from "components/docs/dialog-with-image";
 
 // @material-tailwind/react components
 import {
@@ -239,6 +240,7 @@ const components = {
   InputWithButton,
   CountriesCodeInput,
   DialogWithForm,
+  DialogWithImage,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
