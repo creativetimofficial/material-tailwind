@@ -35,6 +35,7 @@ import list from "./components/list";
 import buttonGroup from "./components/buttonGroup";
 import carousel from "./components/carousel";
 import drawer from "./components/drawer";
+import badge from "./components/badge";
 
 const theme = {
   accordion,
@@ -73,7 +74,8 @@ const theme = {
   list,
   buttonGroup,
   carousel,
-  drawer
+  drawer,
+  badge,
 };
 
 export * from "./components/accordion";
@@ -113,4 +115,5 @@ export * from "./components/list";
 export * from "./components/buttonGroup";
 export * from "./components/carousel";
 export * from "./components/drawer";
+export * from "./components/badge";
 export default theme;
