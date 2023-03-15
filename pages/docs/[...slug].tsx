@@ -46,6 +46,7 @@ import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import DialogWithForm from "components/docs/dialog-with-form";
 import DialogWithImage from "components/docs/dialog-with-image";
+import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 
 // @material-tailwind/react components
 import {
@@ -241,6 +242,7 @@ const components = {
   CountriesCodeInput,
   DialogWithForm,
   DialogWithImage,
+  WalletConnectDialog,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
