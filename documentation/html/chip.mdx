@@ -8,6 +8,7 @@ navigation:
     "chip-colors",
     "chip-with-icon",
     "chip-dismissible",
+    "chip-with-avatar",
     "chip-data-attributes",
     "chip-trigger-data-attributes",
     "required-script",
@@ -250,6 +251,50 @@ You can make a chip dismissible by adding the <Code html>data-dismissible="{`chi
           ></path>
         </svg>
       </div>
+    </div>
+  </div>
+  ```
+</CodePreview>
+
+---
+
+## Chips with Avatar
+
+Use the example below for a chip containing an avatar.
+
+<CodePreview
+  id="chip-with-avatar"
+  link="chip#chip-with-avatar"
+  component={
+    <div className="center relative inline-block select-none whitespace-nowrap rounded-full bg-teal-500 px-3.5 py-1.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+      <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+        <img
+          alt="candice wu"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          className="relative inline-block h-5 w-5 translate-x-px translate-y-px rounded-full object-cover object-center"
+        />
+      </div>
+      <div className="ml-4 mt-px">
+        <p className="block font-sans text-sm font-medium capitalize leading-none text-white antialiased">
+          Candice Wu
+        </p>
+      </div>
+    </div>
+  }
+>
+  ```html
+  <div class="center relative inline-block select-none whitespace-nowrap rounded-full bg-teal-500 px-3.5 py-1.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
+    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+      <img
+        alt="candice wu"
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+        class="relative inline-block h-5 w-5 translate-x-px translate-y-px rounded-full object-cover object-center"
+      />
+    </div>
+    <div class="ml-4 mt-px">
+      <p class="block font-sans text-sm font-medium capitalize leading-none text-white antialiased">
+        Candice Wu
+      </p>
     </div>
   </div>
   ```

@@ -26,6 +26,7 @@ import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
 import Code from "components/code";
+import Pre from "components/pre";
 import CodeSandbox from "components/code-sandbox";
 import StackBlitz from "components/stack-blitz";
 import Framework from "components/cards/framework";
@@ -39,14 +40,13 @@ import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
-import Warning from "components/warning";
 import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
-import * as DrawerExamples from "components/docs/drawer";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import DialogWithForm from "components/docs/dialog-with-form";
 import DialogWithImage from "components/docs/dialog-with-image";
+import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 
 // @material-tailwind/react components
 import {
@@ -91,13 +91,6 @@ import {
   Textarea,
   Tooltip,
   Typography,
-  Collapse,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  ButtonGroup,
-  Carousel,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -155,7 +148,7 @@ const components = {
   p: (props) => (
     <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
   ),
-  hr: (props) => <hr className="!mt-16 !mb-12 border-transparent" {...props} />,
+  hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
   a: (props) => (
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
@@ -240,24 +233,16 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
-  Collapse,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  ButtonGroup,
-  Carousel,
   Link,
   OutlineIcons,
   SolidIcons,
-  Warning,
   CountriesSelect,
   CheckoutForm,
   InputWithButton,
-  DrawerExamples,
   CountriesCodeInput,
   DialogWithForm,
   DialogWithImage,
+  WalletConnectDialog,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -353,7 +338,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: true,
+      // development: false,
     },
   });
 
