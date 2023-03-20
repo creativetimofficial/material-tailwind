@@ -27,6 +27,7 @@ export * from "./components/ButtonGroup";
 export * from "./components/Carousel";
 export * from "./components/Drawer";
 export * from "./components/Badge";
+export * from "./components/Rating";
 
 // context
 export * from "./context/theme";
