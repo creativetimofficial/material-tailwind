@@ -48,6 +48,7 @@ import DialogWithForm from "components/docs/dialog-with-form";
 import DialogWithImage from "components/docs/dialog-with-image";
 import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
+import AvatarStack from "components/docs/avatar-stack";
 
 // @material-tailwind/react components
 import {
@@ -245,6 +246,7 @@ const components = {
   DialogWithImage,
   WalletConnectDialog,
   ProfileMenu,
+  AvatarStack,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
