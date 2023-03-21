@@ -38,6 +38,7 @@ import drawer from "./components/drawer";
 import badge from "./components/badge";
 import rating from "./components/rating";
 import slider from "./components/slider";
+import spinner from "./components/spinner";
 
 const theme = {
   accordion,
@@ -80,6 +81,7 @@ const theme = {
   badge,
   rating,
   slider,
+  spinner,
 };
 
 export * from "./components/accordion";
@@ -122,4 +124,5 @@ export * from "./components/drawer";
 export * from "./components/badge";
 export * from "./components/rating";
 export * from "./components/slider";
+export * from "./components/spinner";
 export default theme;

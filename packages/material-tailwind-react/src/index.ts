@@ -29,6 +29,7 @@ export * from "./components/Drawer";
 export * from "./components/Badge";
 export * from "./components/Rating";
 export * from "./components/Slider";
+export * from "./components/Spinner";
 
 // context
 export * from "./context/theme";
