@@ -28,6 +28,7 @@ export * from "./components/Carousel";
 export * from "./components/Drawer";
 export * from "./components/Badge";
 export * from "./components/Rating";
+export * from "./components/Slider";
 
 // context
 export * from "./context/theme";
