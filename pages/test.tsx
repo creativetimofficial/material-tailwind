@@ -1,9 +1,9 @@
-import { Spinner } from "@material-tailwind/react";
+import { RatingWithComment } from "components/docs/react/rating";
 
 export default function Test() {
   return (
     <div className="grid h-screen w-screen place-items-center px-24">
-      <Spinner width={48} height={48} color="indigo" />
+      <RatingWithComment />
     </div>
   );
 }

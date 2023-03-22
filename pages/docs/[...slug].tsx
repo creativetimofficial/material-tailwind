@@ -26,7 +26,6 @@ import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
 import Code from "components/code";
-import Pre from "components/pre";
 import CodeSandbox from "components/code-sandbox";
 import StackBlitz from "components/stack-blitz";
 import Framework from "components/cards/framework";
@@ -50,6 +49,9 @@ import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
+
+// new imports
+import * as DrawerExamples from "components/docs/react/drawer";
 
 // @material-tailwind/react components
 import {
@@ -249,6 +251,7 @@ const components = {
   ProfileMenu,
   AvatarStack,
   StickyNavbar,
+  DrawerExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
