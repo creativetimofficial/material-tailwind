@@ -93,13 +93,17 @@ export const badge: BadgeStyleTypes = {
           fontSize: "text-xs",
           fontWeight: "font-medium",
           content: "content-['']",
+          lineHeight: "leading-none",
+          display: "grid",
+          placeItems: "place-items-center",
         },
         withBorder: {
           borderWidth: "border-2",
           borderColor: "border-white",
         },
         withContent: {
-          paddingY: "py-0.5",
+          minWidth: "min-w-[24px]",
+          minHeight: "min-h-[24px]",
         },
       },
     },
