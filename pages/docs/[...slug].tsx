@@ -50,6 +50,7 @@ import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
+import ComplexNavbar from "components/docs/complex-navbar";
 
 // @material-tailwind/react components
 import {
@@ -249,6 +250,7 @@ const components = {
   ProfileMenu,
   AvatarStack,
   StickyNavbar,
+  ComplexNavbar,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
