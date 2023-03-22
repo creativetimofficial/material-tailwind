@@ -21,7 +21,7 @@ export default function InputWithButton() {
         size="sm"
         color={email ? "blue" : "blue-gray"}
         disabled={!email}
-        className="absolute right-1 top-1 rounded"
+        className="!absolute right-1 top-1 rounded"
       >
         Invite
       </Button>
