@@ -7,6 +7,7 @@ import type {
   color,
   className,
   onChange,
+  readonly as readonlyType,
 } from "../../../types/components/rating";
 import { propTypesColor } from "../../../types/components/rating";
 import ratingColors from "./ratingColors";
@@ -23,6 +24,7 @@ export interface RatingStyleTypes {
     unratedColor?: color;
     className?: className;
     onChange?: onChange;
+    readonly?: readonlyType;
   };
   valid?: {
     colors?: string[];
@@ -46,6 +48,7 @@ export const rating: RatingStyleTypes = {
     unratedColor: "blue-gray",
     className: undefined,
     onChange: undefined,
+    readonly: false,
   },
   valid: {
     colors: propTypesColor,

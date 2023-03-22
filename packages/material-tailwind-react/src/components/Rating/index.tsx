@@ -19,6 +19,7 @@ import type {
   color,
   className,
   onChange,
+  readonly as readonlyType,
 } from "../../types/components/rating";
 import {
   propTypesCount,
@@ -28,6 +29,7 @@ import {
   propTypesColor,
   propTypesClassName,
   propTypesOnChange,
+  propTypesReadonly,
 } from "../../types/components/rating";
 
 export interface RatingProps extends Omit<React.ComponentProps<"div">, "onChange"> {
@@ -39,6 +41,7 @@ export interface RatingProps extends Omit<React.ComponentProps<"div">, "onChange
   unratedColor?: color;
   className?: className;
   onChange?: onChange;
+  readonly?: readonlyType;
 }
 
 export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
@@ -52,6 +55,7 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
       unratedColor,
       className,
       onChange,
+      readonly,
       ...rest
     },
     ref,
@@ -60,14 +64,6 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     const { rating } = useTheme();
     const { valid, defaultProps, styles } = rating;
     const { base, colors } = styles;
-    const [ratingValue, setRatingValue] = React.useState(() => [
-      ...Array(value).fill("rated"),
-      ...Array(count - value).fill("un_rated"),
-    ]);
-    const [ratingOnHover, setRatingOnHover] = React.useState(() => [
-      ...Array(count).fill("un_rated"),
-    ]);
-    const [isHover, setIsHover] = React.useState(false);
 
     // 2. set default props
     count = count ?? defaultProps.count;
@@ -79,6 +75,16 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     unratedColor = unratedColor ?? defaultProps.unratedColor;
     className = className ?? defaultProps.className;
     onChange = onChange ?? defaultProps.onChange;
+    readonly = readonly ?? defaultProps.readonly;
+
+    const [ratingValue, setRatingValue] = React.useState(() => [
+      ...Array(value).fill("rated"),
+      ...Array(count - value).fill("un_rated"),
+    ]);
+    const [ratingOnHover, setRatingOnHover] = React.useState(() => [
+      ...Array(count).fill("un_rated"),
+    ]);
+    const [isHover, setIsHover] = React.useState(false);
 
     // 3. set styles
     const ratedColorClasses = objectsToString(
@@ -93,16 +99,34 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     // 4. setting up the rating icons
     const ratedIconInstance = ratedIcon as React.ReactElement;
     const unratedIconInstance = unratedIcon as React.ReactElement;
-    const customRatedIcon = React.cloneElement(ratedIconInstance as React.ReactElement, {
-      className: twMerge(
-        classnames(ratingIconClasses, ratedColorClasses, ratedIconInstance?.props?.className),
-      ),
-    });
-    const customUnratedIcon = React.cloneElement(unratedIconInstance as React.ReactElement, {
-      className: twMerge(
-        classnames(ratingIconClasses, unratedColorClasses, unratedIconInstance?.props?.className),
-      ),
-    });
+
+    const customRatedIcon =
+      React.isValidElement(ratedIcon) &&
+      React.cloneElement(ratedIconInstance, {
+        className: twMerge(
+          classnames(ratingIconClasses, ratedColorClasses, ratedIconInstance?.props?.className),
+        ),
+      });
+
+    const customUnratedIcon =
+      React.isValidElement(ratedIcon) &&
+      React.cloneElement(unratedIconInstance, {
+        className: twMerge(
+          classnames(ratingIconClasses, unratedColorClasses, unratedIconInstance?.props?.className),
+        ),
+      });
+
+    const ratedIconEl =
+      !React.isValidElement(ratedIcon) &&
+      React.createElement(ratedIcon as React.ElementType, {
+        className: twMerge(classnames(ratingIconClasses, ratedColorClasses)),
+      });
+
+    const unratedIconEl =
+      !React.isValidElement(ratedIcon) &&
+      React.createElement(unratedIcon as React.ElementType, {
+        className: twMerge(classnames(ratingIconClasses, unratedColorClasses)),
+      });
 
     const renderRating = (data) =>
       data.map((el, index) => {
@@ -111,29 +135,32 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
           {
             key: index,
             onClick: () => {
+              if (readonly) return;
+
               const nextRating = ratingValue.map((el, i) => (i <= index ? "rated" : "un_rated"));
 
               setRatingValue(nextRating);
-              onChange(nextRating.filter((el) => el === "rated").length);
+              onChange &&
+                typeof onChange === "function" &&
+                onChange(nextRating.filter((el) => el === "rated").length);
             },
             onMouseEnter: () => {
+              if (readonly) return;
+
               const nextRating = ratingOnHover.map((el, i) => (i <= index ? "rated" : "un_rated"));
 
               setIsHover(true);
               setRatingOnHover(nextRating);
             },
-            onMouseLeave: () => setIsHover(false),
+            onMouseLeave: () => !readonly && setIsHover(false),
           },
           React.isValidElement(el === "rated" ? ratedIcon : unratedIcon)
-            ? React.cloneElement(el === "rated" ? customRatedIcon : customUnratedIcon)
-            : React.createElement((el === "rated" ? ratedIcon : unratedIcon) as React.ElementType, {
-                className: twMerge(
-                  classnames(ratingIconClasses, {
-                    [ratedColorClasses]: el === "rated",
-                    [unratedColorClasses]: el === "un_rated",
-                  }),
-                ),
-              }),
+            ? el === "rated"
+              ? customRatedIcon
+              : customUnratedIcon
+            : el === "rated"
+            ? ratedIconEl
+            : unratedIconEl,
         );
       });
 
@@ -155,6 +182,7 @@ Rating.propTypes = {
   unratedColor: PropTypes.oneOf(propTypesColor),
   className: propTypesClassName,
   onChange: propTypesOnChange,
+  readonly: propTypesReadonly,
 };
 
 Rating.displayName = "MaterialTailwind.Rating";
