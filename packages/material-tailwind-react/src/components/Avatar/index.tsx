@@ -64,7 +64,7 @@ Avatar.propTypes = {
   size: PropTypes.oneOf(propTypesSize),
   className: propTypesClassName,
   withBorder: propTypesWithBorder,
-  color: propTypesColor,
+  color: PropTypes.oneOf(propTypesColor),
 };
 
 Avatar.displayName = "MaterialTailwind.Avatar";
