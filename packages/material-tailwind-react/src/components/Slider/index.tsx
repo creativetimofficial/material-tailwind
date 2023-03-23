@@ -20,6 +20,7 @@ import type {
   thumbClassName,
   barClassName,
   value,
+  defaultValue,
   onChange,
   min,
   max,
@@ -35,6 +36,7 @@ import {
   propTypesThumbClassName,
   propTypesBarClassName,
   propTypesValue,
+  propTypesDefaultValue,
   propTypesOnChange,
   propTypesMin,
   propTypesMax,
@@ -52,6 +54,7 @@ export interface SliderProps extends React.ComponentProps<"div"> {
   thumbClassName?: thumbClassName;
   barClassName?: barClassName;
   value?: value;
+  defaultValue?: defaultValue;
   onChange?: onChange;
   min?: min;
   max?: max;
@@ -70,6 +73,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
       thumbClassName,
       barClassName,
       value,
+      defaultValue,
       onChange,
       min,
       max,
@@ -84,7 +88,11 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     const { slider } = useTheme();
     const { valid, defaultProps, styles } = slider;
     const { base, sizes, colors } = styles;
-    const [innerValue, setInnerValue] = React.useState(0);
+    const [innerValue, setInnerValue] = React.useState(defaultValue || 0);
+
+    React.useMemo(() => {
+      if (defaultValue) setInnerValue(defaultValue);
+    }, [defaultValue]);
 
     // 2. set default props
     color = color ?? defaultProps.color;
@@ -135,7 +143,8 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
           min={min}
           step={step}
           className={sliderCLasses}
-          value={value || innerValue}
+          {...(value ? { value } : null)}
+          defaultValue={defaultValue}
           onChange={(e) => (onChange ? onChange(e) : setInnerValue(Number(e.target.value)))}
         />
       </div>
@@ -150,6 +159,7 @@ Slider.propTypes = {
   trackClassName: propTypesTrackClassName,
   thumbClassName: propTypesThumbClassName,
   barClassName: propTypesBarClassName,
+  defaultValue: propTypesDefaultValue,
   value: propTypesValue,
   onChange: propTypesOnChange,
   min: propTypesMin,
