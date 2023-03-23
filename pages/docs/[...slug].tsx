@@ -51,6 +51,7 @@ import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
 import ComplexNavbar from "components/docs/complex-navbar";
+import SimpleFooter from "components/docs/simple-footer";
 
 // @material-tailwind/react components
 import {
@@ -251,6 +252,7 @@ const components = {
   AvatarStack,
   StickyNavbar,
   ComplexNavbar,
+  SimpleFooter,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
