@@ -49,6 +49,7 @@ import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
+import ComplexNavbar from "components/docs/complex-navbar";
 
 // new imports
 import * as DrawerExamples from "components/docs/react/drawer";
@@ -241,6 +242,7 @@ const components = {
   Link,
   OutlineIcons,
   SolidIcons,
+  DrawerExamples,
   CountriesSelect,
   CheckoutForm,
   InputWithButton,
@@ -251,7 +253,7 @@ const components = {
   ProfileMenu,
   AvatarStack,
   StickyNavbar,
-  DrawerExamples,
+  ComplexNavbar,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
