@@ -23,6 +23,7 @@ import type {
   menuProps,
   className,
   disabled,
+  containerProps,
 } from "../../../types/components/select";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/select";
 
@@ -112,6 +113,7 @@ export interface SelectStylesType {
     menuProps?: menuProps;
     className?: className;
     disabled?: disabled;
+    containerProps?: containerProps;
   };
   valid?: {
     variants?: string[];
@@ -166,6 +168,7 @@ export const select: SelectStylesType = {
     menuProps: {},
     className: "",
     disabled: false,
+    containerProps: undefined,
   },
   valid: {
     variants: propTypesVariant,
