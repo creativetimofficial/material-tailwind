@@ -24,8 +24,11 @@ export type labelProps = {
 export type containerProps = {
   [key: string]: any;
 };
-export type shrink = boolean;
+export type iconProps = {
+  [key: string]: any;
+};
 export type className = string;
+export type shrink = boolean;
 
 // javascript prop-types
 export const propTypesVariant: any = ["standard", "outlined", "static"];
@@ -36,7 +39,8 @@ export const propTypesError: any = PropTypes.bool;
 export const propTypesSuccess: any = PropTypes.bool;
 export const propTypesIcon: any = PropTypes.node;
 export const propTypesResize: any = PropTypes.bool;
+export const propTypesShrink:any = PropTypes.bool;
 export const propTypesLabelProps: any = PropTypes.instanceOf(Object);
 export const propTypesContainerProps: any = PropTypes.instanceOf(Object);
-export const propTypesShrink: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
+export const propTypesIconProps: any = PropTypes.instanceOf(Object);
