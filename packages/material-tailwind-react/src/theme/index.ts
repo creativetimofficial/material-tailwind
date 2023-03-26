@@ -39,8 +39,16 @@ import badge from "./components/badge";
 import rating from "./components/rating";
 import slider from "./components/slider";
 import spinner from "./components/spinner";
+import {
+  timeline,
+  timelineItem,
+  timelineIcon,
+  timelineConnector,
+  timelineHeader,
+  timelineBody,
+} from "./components/timeline";
 
-const theme = {
+const theme: any = {
   accordion,
   alert,
   avatar,
@@ -82,6 +90,12 @@ const theme = {
   rating,
   slider,
   spinner,
+  timeline,
+  timelineItem,
+  timelineIcon,
+  timelineHeader,
+  timelineBody,
+  timelineConnector,
 };
 
 export * from "./components/accordion";
@@ -125,4 +139,5 @@ export * from "./components/badge";
 export * from "./components/rating";
 export * from "./components/slider";
 export * from "./components/spinner";
+export * from "./components/timeline";
 export default theme;
