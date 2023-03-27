@@ -49,10 +49,10 @@ export default function MyDocument() {
           data-domain="material-tailwind.com"
           src="https://plausible.io/js/script.js"
         />
-        <script
-          defer
-          data-site="material-tailwind.com"
-          src="https://cta-api.updivision.work/js/tracker.js"
+        <script 
+          defer 
+          data-site="material-tailwind.com" 
+          src="https://api.nepcha.com/js/nepcha-analytics.js"
         />
       </Head>
       <body className="bg-gray-100 antialiased">
