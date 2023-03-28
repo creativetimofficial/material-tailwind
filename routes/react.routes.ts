@@ -36,6 +36,7 @@ export const routes = [
       "popover",
       "progress-bar",
       "radio-button",
+      "rating-bar",
       "select",
       "switch",
       "tabs",

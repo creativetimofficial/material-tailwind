@@ -28,7 +28,7 @@ related:
     },
   ]
 github: select
-prev: radio-button
+prev: rating-bar
 next: switch
 ---
 
@@ -401,34 +401,35 @@ import { Select, Option } from "@material-tailwind/react";
 export default function CountriesSelect() {
   const { countries } = useCountries();
 
-  return (
-    <div className="w-72">
-      <Select
-        size="lg"
-        label="Select Country"
-        selected={(element) =>
-          element &&
-          React.cloneElement(element, {
-            className: "flex items-center px-0 gap-2 pointer-events-none",
-          })
-        }
-      >
-        {countries.map(({ name, flags }) => (
-          <Option key={name} value={name} className="flex items-center gap-2">
-            <img
+return (
+<div className="w-72">
+<Select
+size="lg"
+label="Select Country"
+selected={(element) =>
+element &&
+React.cloneElement(element, {
+className: "flex items-center px-0 gap-2 pointer-events-none",
+})
+} >
+{countries.map(({ name, flags }) => (
+<Option key={name} value={name} className="flex items-center gap-2">
+<img
               src={flags.svg}
               alt={name}
               className="h-5 w-5 rounded-full object-cover"
             />
-            {name}
-          </Option>
-        ))}
-      </Select>
-    </div>
-  );
+{name}
+</Option>
+))}
+</Select>
+</div>
+);
 }
+
 ```
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
+```

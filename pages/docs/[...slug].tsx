@@ -52,8 +52,9 @@ import StickyNavbar from "components/docs/sticky-navbar";
 import ComplexNavbar from "components/docs/complex-navbar";
 
 // new imports
-import * as DrawerExamples from "components/docs/react/drawer";
 import * as BadgeExamples from "components/docs/react/badge";
+import * as DrawerExamples from "components/docs/react/drawer";
+import * as RatingExamples from "components/docs/react/rating";
 
 // @material-tailwind/react components
 import {
@@ -258,6 +259,7 @@ const components = {
   // new components
   BadgeExamples,
   DrawerExamples,
+  RatingExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

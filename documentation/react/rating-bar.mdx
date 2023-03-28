@@ -1,0 +1,173 @@
+---
+title: Tailwind CSS Rating Bar for React - Material Tailwind
+description: Customise your web projects with our complex rating bar component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "rating",
+    "rating-colors",
+    "readonly-rating",
+    "custom-rating-icon",
+    "rating-with-text",
+    "rating-with-comment",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/rating-bar",
+      description: "Learn more about props definition and types of rating-bar components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/rating-bar",
+      description: "Learn how to customize the theme and styles for rating-bar components.",
+    },
+  ]
+github: rating-bar
+prev: radtio-button
+next: select
+---
+
+# Tailwind CSS Rating Bar - React
+
+Use our Tailwind CSS <Code>Rating</Code> component to show reviews and ratings in your web projects. The <Code>Rating</Code> can be used as a visual identifier for reviews and rating on your website.
+
+See below our beautiful <Code>Rating</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="rating" link="rating#rating" component={<RatingExamples.DefaultRating />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Rating />;
+}
+```
+</CodePreview>
+
+---
+
+## Rating Colors
+
+The <Code>Rating</Code> component comes with 20 different colors that you can change it using the <Code>unratedColor</Code> prop for the unrated state of <Code>Rating</Code> component and <Code>ratedColor</Code> prop for the rated state of <Code>Rating</Code> component.
+
+<CodePreview id="rating-colors" link="rating#rating-colors" component={<RatingExamples.RatingColors />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Rating unratedColor="amber" ratedColor="amber" />
+      <Rating unratedColor="blue" ratedColor="blue" />
+      <Rating unratedColor="green" ratedColor="green" />
+      <Rating unratedColor="red" ratedColor="red" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Readonly Rating
+
+You can make a <Code>Rating</Code> component readonly by using the <Code>readonly</Code> prop. This will prevent the user from changing the rating.
+
+<CodePreview id="readonly-rating" link="rating#readonly-rating" component={<RatingExamples.ReadonlyRating />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+
+export function Example() {
+  return <Rating value={4} readonly />;
+}
+```
+</CodePreview>
+
+---
+
+## Custom Rating Icon
+
+You can customize the <Code>Rating</Code> component icon by using the <Code>unratedIcon</Code> and <Code>ratedIcon</Code> props.
+
+<CodePreview id="custom-rating-icon" link="rating#custom-rating-icon" component={<RatingExamples.CustomRatingIcon />}>
+```jsx
+import { Rating } from "@material-tailwind/react";
+import { HeartIcon as RatedIcon } from "@heroicons/react/24/solid";
+import { HeartIcon as UnratedIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Rating
+      ratedColor="red"
+      ratedIcon={<RatedIcon className="h-6 w-6" />}
+      unratedIcon={<UnratedIcon className="h-6 w-6" />}
+    />
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Rating with Text
+
+Use the example below for a <Code>Rating</Code> component with helper text.
+
+<CodePreview id="rating-with-text" link="rating#rating-with-text" component={<RatingExamples.RatingWithText />}>
+```jsx
+import React from "react";
+import { Rating, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  const [rated, setRated] = React.useState(4);
+  
+  return (
+    <div className="flex items-center gap-2">
+      <Rating value={4} onChange={(value) => setRated(value)} />
+      <Typography color="blue-gray" className="font-medium">
+        {rated}.0 Rated
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Rating with Comment
+
+Use the example below for a <Code>Rating</Code> component with comment.
+
+<CodePreview id="rating-with-comment" link="rating#rating-with-comment" component={<RatingExamples.RatingWithComment />}>
+```jsx
+import { Typography, Avatar, Rating } from "@material-tailwind/react";
+
+export function Example() {
+  return (
+    <div className="px-8 text-center">
+      <Typography variant="h2" color="blue-gray" className="mb-6 font-medium">
+        &quot;This is an excellent product, the documentation is excellent and
+        helped me get things done more efficiently.&quot;
+      </Typography>
+      <Avatar
+        src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        alt="image"
+        size="lg"
+      />
+      <Typography variant="h6" className="mt-4">
+        Candic Wu
+      </Typography>
+      <Typography color="gray" className="mb-4 font-normal">
+        Lead Frontend Developer
+      </Typography>
+      <Rating value={5} readonly />
+    </div>
+  );
+}
+```
+</CodePreview>
