@@ -55,7 +55,6 @@ export function DefaultTimeline() {
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
-          <TimelineConnector />
           <TimelineHeader className="h-3">
             <TimelineIcon />
             <Typography variant="h6" color="blue-gray" className="leading-none">

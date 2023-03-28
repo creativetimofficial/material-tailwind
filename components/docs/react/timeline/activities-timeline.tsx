@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Timeline,
   TimelineItem,
@@ -13,7 +12,7 @@ import {
   CurrencyDollarIcon,
 } from "@heroicons/react/24/solid";
 
-export function TimelineWithActivities() {
+export function ActivitiesTimeline() {
   return (
     <div className="w-[25rem]">
       <Timeline>

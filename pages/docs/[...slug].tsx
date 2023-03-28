@@ -57,6 +57,7 @@ import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
 import * as SpinnerExamples from "components/docs/react/spinner";
+import * as TimelineExamples from "components/docs/react/timeline";
 
 // @material-tailwind/react components
 import {
@@ -264,6 +265,7 @@ const components = {
   RatingExamples,
   SliderExamples,
   SpinnerExamples,
+  TimelineExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

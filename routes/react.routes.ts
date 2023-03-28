@@ -43,6 +43,7 @@ export const routes = [
       "switch",
       "tabs",
       "textarea",
+      "timeline",
       "tooltip",
       "typography",
     ],

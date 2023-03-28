@@ -56,7 +56,6 @@ export function TimelineWithIcon() {
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
-          <TimelineConnector />
           <TimelineHeader>
             <TimelineIcon className="p-2">
               <CurrencyDollarIcon className="h-4 w-4" />

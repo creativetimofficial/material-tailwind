@@ -8,11 +8,6 @@ import {
   Typography,
   Avatar,
 } from "@material-tailwind/react";
-import {
-  HomeIcon,
-  BellIcon,
-  CurrencyDollarIcon,
-} from "@heroicons/react/24/solid";
 
 export function TimelineWithAvatar() {
   return (
@@ -57,7 +52,6 @@ export function TimelineWithAvatar() {
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
-          <TimelineConnector />
           <TimelineHeader>
             <TimelineIcon className="p-0">
               <Avatar size="sm" src="/img/team-3.jpg" alt="user 3" withBorder />
