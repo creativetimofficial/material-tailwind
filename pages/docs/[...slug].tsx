@@ -55,6 +55,7 @@ import ComplexNavbar from "components/docs/complex-navbar";
 import * as BadgeExamples from "components/docs/react/badge";
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
+import * as SliderExamples from "components/docs/react/slider";
 
 // @material-tailwind/react components
 import {
@@ -260,6 +261,7 @@ const components = {
   BadgeExamples,
   DrawerExamples,
   RatingExamples,
+  SliderExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

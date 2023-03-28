@@ -1,0 +1,88 @@
+---
+title: Tailwind CSS Range Slider for React - Material Tailwind
+description: Customise your web projects with our range slider component for Tailwind CSS and React using Material Design guidelines.
+navigation: ["slider", "slider-sizes", "slider-colors", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/slider",
+      description: "Learn more about props definition and types of slider components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/slider",
+      description: "Learn how to customize the theme and styles for slider components.",
+    },
+  ]
+github: slider
+prev: select
+next: switch
+---
+
+# Tailwind CSS Range Slider - React
+
+Use our Tailwind CSS <Code>Slider</Code> component in your web projects. The <Code>Slider</Code> can be used for adjusting settings such as volume, brightness, or applying image filters.
+
+See below our beautiful <Code>Slider</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="slider" link="slider#slider" component={<SliderExamples.DefaultSlider />}>
+```jsx
+import { Slider } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-96">
+      <Slider defaultValue={50} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Slider Sizes
+
+The <Code>Slider</Code> component comes with 3 different sizes, that you can change it using the <Code>size</Code> prop.
+
+<CodePreview id="slider-sizes" link="slider#slider-sizes" component={<SliderExamples.SliderSizes />}>
+```jsx
+import { Slider } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-96 flex-col gap-8">
+      <Slider size="sm" defaultValue={50} />
+      <Slider size="md" defaultValue={50} />
+      <Slider size="lg" defaultValue={50} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Slider Colors
+
+The <Code>Slider</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="slider-colors" link="slider#slider-colors" component={<SliderExamples.SliderColors />}>
+```jsx
+import { Slider } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex w-96 flex-col gap-8">
+      <Slider color="blue" defaultValue={50} />
+      <Slider color="red" defaultValue={50} />
+      <Slider color="green" defaultValue={50} />
+      <Slider color="amber" defaultValue={50} />
+    </div>
+  );
+}
+```
+</CodePreview>

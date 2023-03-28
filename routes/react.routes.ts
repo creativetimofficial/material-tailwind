@@ -38,6 +38,7 @@ export const routes = [
       "radio-button",
       "rating-bar",
       "select",
+      "slider",
       "switch",
       "tabs",
       "textarea",
