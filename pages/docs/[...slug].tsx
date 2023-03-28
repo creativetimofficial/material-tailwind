@@ -53,6 +53,7 @@ import ComplexNavbar from "components/docs/complex-navbar";
 
 // new imports
 import * as DrawerExamples from "components/docs/react/drawer";
+import * as BadgeExamples from "components/docs/react/badge";
 
 // @material-tailwind/react components
 import {
@@ -242,7 +243,6 @@ const components = {
   Link,
   OutlineIcons,
   SolidIcons,
-  DrawerExamples,
   CountriesSelect,
   CheckoutForm,
   InputWithButton,
@@ -254,6 +254,10 @@ const components = {
   AvatarStack,
   StickyNavbar,
   ComplexNavbar,
+
+  // new components
+  BadgeExamples,
+  DrawerExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

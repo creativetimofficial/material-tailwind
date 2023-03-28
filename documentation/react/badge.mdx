@@ -1,0 +1,200 @@
+---
+title: Tailwind CSS Badge for React - Material Tailwind
+description: Customise your web projects with our easy-to-use badge component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "badge",
+    "badge-colors",
+    "badge-placement",
+    "badge-overlap",
+    "badge-with-border",
+    "dot-badge",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/badge",
+      description: "Learn more about props definition and types of badge component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/badge",
+      description: "Learn how to customize the theme and styles for badge component.",
+    },
+  ]
+github: badge
+prev: avatar
+next: breadcrumbs
+---
+
+# Tailwind CSS Badge - React
+
+Use our Tailwind CSS <Code>Badge</Code> component to show status in your web projects. The <Code>Badge</Code> can be used as a visual identifier for notifications on your website.
+
+See below our beautiful <Code>Badge</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="badge" link="badge#badge" component={<BadgeExamples.DefaultBadge />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Badge content="5">
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Badge Colors
+
+The <Code>Badge</Code> component comes with 20 different colors that you can change it using the <Code>color</Code> prop.
+
+<CodePreview id="badge-colors" link="badge#badge-colors" component={<BadgeExamples.BadgeColors />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <Badge color="red">
+        <Button>Red</Button>
+      </Badge>
+      <Badge color="green">
+        <Button>Green</Button>
+      </Badge>
+      <Badge color="amber">
+        <Button>Amber</Button>
+      </Badge>
+      <Badge color="purple">
+        <Button>Purple</Button>
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Badge Placement
+
+You can change the position of the <Code>Badge</Code> component using the <Code>placement</Code> prop.
+
+<CodePreview id="badge-placement" link="badge#badge-placement" component={<BadgeExamples.BadgePlacement />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <Badge placement="top-start">
+        <Button>Top Start</Button>
+      </Badge>
+      <Badge placement="top-end">
+        <Button>Top End</Button>
+      </Badge>
+      <Badge placement="bottom-start">
+        <Button>Bottom Start</Button>
+      </Badge>
+      <Badge placement="bottom-end">
+        <Button>Bottom End</Button>
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Badge Overlap
+
+You can change the overlap of the <Code>Badge</Code> component using the <Code>overlap</Code> prop. This can help to place the <Code>Badge</Code> component on it's right place when using it with circular elements.
+
+<CodePreview id="badge-overlap" link="badge#badge-overlap" component={<BadgeExamples.BadgeOverlap />}>
+```jsx
+import { Badge, IconButton, Avatar } from "@material-tailwind/react";
+import { HomeIcon } from "@heroicons/react/24/solid";
+
+export function Example() {
+  return (
+    <div className="flex items-center gap-8">
+      <Badge content="5">
+        <IconButton>
+          <HomeIcon className="h-4 w-4" />
+        </IconButton>
+      </Badge>
+      <Badge>
+        <IconButton>
+          <HomeIcon className="h-4 w-4" />
+        </IconButton>
+      </Badge>
+      <Badge content="5" overlap="circular" placement="bottom-end">
+        <Avatar
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          alt="profile picture"
+        />
+      </Badge>
+      <Badge overlap="circular" placement="bottom-end">
+        <Avatar
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+          alt="profile picture"
+        />
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Badge with Border
+
+You can add a border to the <Code>Badge</Code> component using the <Code>withBorder</Code> prop.
+
+<CodePreview id="badge-with-border" link="badge#badge-with-border" component={<BadgeExamples.BadgeWithBorder />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function Example() {
+  return (
+    <Badge content="5" withBorder>
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Dot Badge
+
+You can use the <Code>Badge</Code> component as a dot when you don't provide and <Code>content</Code> prop.
+
+<CodePreview id="dot-badge" link="badge#dot-badge" component={<BadgeExamples.DotBadge />}>
+```jsx
+import { Badge, Button } from "@material-tailwind/react";
+
+export function Example() {
+  return (
+    <Badge>
+      <Button>Notifications</Button>
+    </Badge>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

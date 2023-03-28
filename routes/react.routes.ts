@@ -16,6 +16,7 @@ export const routes = [
       "accordion",
       "alert",
       "avatar",
+      "badge",
       "breadcrumbs",
       "button",
       "button-group",
