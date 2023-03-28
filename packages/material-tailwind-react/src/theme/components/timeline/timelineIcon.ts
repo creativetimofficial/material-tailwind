@@ -40,6 +40,7 @@ export const timelineIcon: TimelineIconStyleTypes = {
       padding: "p-1.5",
       position: "relative",
       zIndex: "z-[2]",
+      flexShrink: "flex-shrink-0",
       borderRadius: "rounded-full",
       overflow: "overflow-hidden",
     },

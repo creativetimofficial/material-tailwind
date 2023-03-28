@@ -49,8 +49,12 @@ export const TimelineIcon = React.forwardRef<HTMLSpanElement, TimelineIconProps>
         const { width } = iconElement.getBoundingClientRect();
 
         setWidth(width);
+
+        return () => {
+          setWidth(0);
+        };
       }
-    }, [setWidth]);
+    }, [setWidth, className, children]);
 
     // 3. set styles
     const variantClasses = objectsToString(
@@ -70,9 +74,9 @@ export const TimelineIcon = React.forwardRef<HTMLSpanElement, TimelineIconProps>
 );
 
 TimelineIcon.propTypes = {
+  children: propTypeChildren,
   className: propTypeClassName,
   color: PropTypes.oneOf(propTypeColor),
-  children: propTypeChildren.isRequired,
   variant: PropTypes.oneOf(propTypeVariant),
 };
 
