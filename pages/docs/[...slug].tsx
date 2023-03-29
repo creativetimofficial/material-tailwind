@@ -50,6 +50,7 @@ import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
 import ComplexNavbar from "components/docs/complex-navbar";
+import Warning from "components/warning";
 
 // new imports
 import * as BadgeExamples from "components/docs/react/badge";
@@ -105,6 +106,10 @@ import {
   ButtonGroup,
   Carousel,
   List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -251,6 +256,10 @@ const components = {
   ButtonGroup,
   Carousel,
   List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
@@ -264,6 +273,7 @@ const components = {
   AvatarStack,
   StickyNavbar,
   ComplexNavbar,
+  Warning,
 
   // new components
   BadgeExamples,
