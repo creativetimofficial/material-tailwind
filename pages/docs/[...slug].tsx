@@ -104,6 +104,7 @@ import {
   Typography,
   ButtonGroup,
   Carousel,
+  List,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -249,6 +250,7 @@ const components = {
   Link,
   ButtonGroup,
   Carousel,
+  List,
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
