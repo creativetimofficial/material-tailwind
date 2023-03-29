@@ -102,6 +102,8 @@ import {
   Textarea,
   Tooltip,
   Typography,
+  ButtonGroup,
+  Carousel,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -245,6 +247,8 @@ const components = {
   Tooltip,
   Typography,
   Link,
+  ButtonGroup,
+  Carousel,
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
