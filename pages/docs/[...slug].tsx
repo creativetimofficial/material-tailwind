@@ -54,6 +54,7 @@ import ComplexNavbar from "components/docs/complex-navbar";
 import SimpleFooter from "components/docs/simple-footer";
 import FooterWithLogo from "components/docs/footer-with-logo";
 import TransparentTabs from "components/docs/transparent-tabs";
+import TabsWithIcon from "components/docs/tabs-with-icon";
 
 // @material-tailwind/react components
 import {
@@ -257,6 +258,7 @@ const components = {
   SimpleFooter,
   FooterWithLogo,
   TransparentTabs,
+  TabsWithIcon,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -352,7 +354,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: false,
+      // development: false,
     },
   });
 
