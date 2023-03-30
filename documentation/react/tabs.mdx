@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Tabs for React - Material Tailwind
 description: Customise your web projects with our beautiful tabs component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["tabs", "custom-tabs-animation", "transparent-tabs", "tabs-with-icon", "props", "theme"]
+navigation: ["tabs", "tabs-with-icon", "custom-tabs-animation", "transparent-tabs", "props", "theme"]
 related:
   [
     {
@@ -116,26 +116,138 @@ export default function Example() {
     },
   ];
 
-return (
+  return (
+    <Tabs value="html">
+      <TabsHeader>
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
+```
+</CodePreview>
 
-<Tabs value="html">
-  <TabsHeader>
-    {data.map(({ label, value }) => (
-      <Tab key={value} value={value}>
-        {label}
+---
+
+## Tabs with Icon
+
+Use tabs with icon to display the content in a more organized way.
+
+<CodePreview id="tabs-with-icon" link="tabs#tabs-icons" component={
+  <Tabs id="tabs-with-icon-component" value="dashboard">
+    <TabsHeader>
+      <Tab value="dashboard">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Square3Stack3DIcon className="w-5 h-5" />
+          Dashboard
+        </div>
       </Tab>
-    ))}
-  </TabsHeader>
-  <TabsBody>
-    {data.map(({ value, desc }) => (
-      <TabPanel key={value} value={value}>
-        {desc}
+      <Tab value="profile">
+        <div className="flex items-center gap-2">
+          <SolidIcons.UserCircleIcon className="w-5 h-5" />
+          Profile
+        </div>
+      </Tab>
+      <Tab value="settings">
+        <div className="flex items-center gap-2">
+          <SolidIcons.Cog6ToothIcon className="w-5 h-5" />
+          Settings
+        </div>
+      </Tab>
+    </TabsHeader>
+    <TabsBody>
+      <TabPanel value="dashboard">
+        {`It really matters and then like it really doesn't matter. What
+          matters is the people who are sparked by it. And the people who are
+          like offended by it, it doesn't matter.`}
       </TabPanel>
-    ))}
-  </TabsBody>
-</Tabs>
-); }
+      <TabPanel value="profile">
+        {`Because it's about motivating the doers. Because I'm here
+          to follow my dreams and inspire other people to follow their dreams, too.`}
+      </TabPanel>
+      <TabPanel value="settings">
+        {`We're not always in the position that we want to be at.
+          We're constantly growing. We're constantly making mistakes.
+          We're constantly trying to express ourselves and actualize our
+          dreams.`}
+      </TabPanel>
+    </TabsBody>
+  </Tabs>
+}>
+```jsx
+import React from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import {
+  Square3Stack3DIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
 
+export default function Example() {
+  const data = [
+    {
+      label: "Dashboard",
+      value: "dashboard",
+      icon: Square3Stack3DIcon,
+      desc: `It really matters and then like it really doesn't matter.
+      What matters is the people who are sparked by it. And the people 
+      who are like offended by it, it doesn't matter.`,
+    },
+    {
+      label: "Profile",
+      value: "profile",
+      icon: UserCircleIcon,
+      desc: `Because it's about motivating the doers. Because I'm here
+      to follow my dreams and inspire other people to follow their dreams, too.`,
+    },
+    {
+      label: "Settings",
+      value: "settings",
+      icon: Cog6ToothIcon,
+      desc: `We're not always in the position that we want to be at.
+      We're constantly growing. We're constantly making mistakes. We're
+      constantly trying to express ourselves and actualize our dreams.`,
+    },
+  ];
+  return (
+    <Tabs value="dashboard">
+      <TabsHeader>
+        {data.map(({ label, value, icon }) => (
+          <Tab key={value} value={value}>
+            <div className="flex items-center gap-2">
+              {React.createElement(icon, { className: "w-5 h-5" })}
+              {label}
+            </div>
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, desc }) => (
+          <TabPanel key={value} value={value}>
+            {desc}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}
 ```
 </CodePreview>
 
@@ -274,86 +386,6 @@ export default function Example() {
 Use the example below to create <Code>Tabs</Code> component with a transparent header.
 
 <CodePreview id="transparent-tabs" component={<TransparentTabs />}>
-```jsx
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
-
-export default function TransparentTabs() {
-  const data = [
-    {
-      label: "HTML",
-      value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
-    },
-    {
-      label: "React",
-      value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Vue",
-      value: "vue",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
-    },
-    {
-      label: "Angular",
-      value: "angular",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Svelte",
-      value: "svelte",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
-    },
-  ];
-
-  return (
-    <Tabs value="html" className="max-w-[40rem]">
-      <TabsHeader
-        className="bg-transparent"
-        indicatorProps={{
-          className: "bg-blue-500/10 shadow-none text-blue-500",
-        }}
-      >
-        {data.map(({ label, value }) => (
-          <Tab key={value} value={value}>
-            {label}
-          </Tab>
-        ))}
-      </TabsHeader>
-      <TabsBody>
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </TabsBody>
-    </Tabs>
-  );
-}
-```
-</CodePreview>
-
----
-
-## Tabs with Icon
-
-Use the example below to create <Code>Tabs</Code> component containing icon on it's header.
-
-<CodePreview id="tabs-with-icon" component={<TabsWithIcon />}>
 ```jsx
 import {
   Tabs,
