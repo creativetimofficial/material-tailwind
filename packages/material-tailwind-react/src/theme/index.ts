@@ -47,6 +47,7 @@ import {
   timelineHeader,
   timelineBody,
 } from "./components/timeline";
+import { step, stepper } from "./components/stepper";
 
 const theme: any = {
   accordion,
@@ -96,6 +97,8 @@ const theme: any = {
   timelineHeader,
   timelineBody,
   timelineConnector,
+  step,
+  stepper,
 };
 
 export * from "./components/accordion";
@@ -140,4 +143,5 @@ export * from "./components/rating";
 export * from "./components/slider";
 export * from "./components/spinner";
 export * from "./components/timeline";
+export * from "./components/stepper";
 export default theme;

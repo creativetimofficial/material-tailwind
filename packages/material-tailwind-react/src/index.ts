@@ -31,6 +31,7 @@ export * from "./components/Rating";
 export * from "./components/Slider";
 export * from "./components/Spinner";
 export * from "./components/Timeline";
+export * from "./components/Stepper";
 
 // context
 export * from "./context/theme";
