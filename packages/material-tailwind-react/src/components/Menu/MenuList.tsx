@@ -1,12 +1,14 @@
 import React from "react";
 
-// framer-motion
+// @floating-ui
 import {
   FloatingPortal,
   FloatingOverlay,
   FloatingFocusManager,
   useMergeRefs,
 } from "@floating-ui/react";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
