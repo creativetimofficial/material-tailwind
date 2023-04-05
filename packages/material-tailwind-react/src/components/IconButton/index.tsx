@@ -36,10 +36,11 @@ export interface IconButtonProps extends React.ComponentProps<"button"> {
   ripple?: ripple;
   className?: className;
   children: children;
+  fullWidth?: boolean;
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
+  ({ variant, size, color, ripple, className, children, fullWidth, ...rest }, ref) => {
     // 1. init
     const { iconButton } = useTheme();
     const { valid, defaultProps, styles } = iconButton;
