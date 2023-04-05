@@ -48,6 +48,7 @@ import {
   timelineBody,
 } from "./components/timeline";
 import { step, stepper } from "./components/stepper";
+import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
 
 const theme: any = {
   accordion,
@@ -99,6 +100,9 @@ const theme: any = {
   timelineConnector,
   step,
   stepper,
+  speedDial,
+  speedDialContent,
+  speedDialAction,
 };
 
 export * from "./components/accordion";
@@ -144,4 +148,5 @@ export * from "./components/slider";
 export * from "./components/spinner";
 export * from "./components/timeline";
 export * from "./components/stepper";
+export * from "./components/speedDial";
 export default theme;
