@@ -79,11 +79,14 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
               color,
               ripple,
               fullWidth,
-              className: classnames({
-                "rounded-r-none": index !== React.Children.count(children) - 1,
-                "border-r-0": index !== React.Children.count(children) - 1,
-                "rounded-l-none": index !== 0,
-              }),
+              className: twMerge(
+                classnames({
+                  "rounded-r-none": index !== React.Children.count(children) - 1,
+                  "border-r-0": index !== React.Children.count(children) - 1,
+                  "rounded-l-none": index !== 0,
+                }),
+                child.props?.className,
+              ),
             } as any),
         )}
       </div>
