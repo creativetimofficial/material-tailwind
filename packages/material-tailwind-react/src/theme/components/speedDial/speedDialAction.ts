@@ -4,6 +4,11 @@ export interface SpeedDialActionStyleTypes {
 
 export const speedDialAction: SpeedDialActionStyleTypes = {
   styles: {
+    display: "flex",
+    flexDirection: "flex-col",
+    alignItems: "items-center",
+    justifyContent: "justify-center",
+    gap: "gap-1",
     padding: "p-1",
     margin: "m-0.5",
     borderWidth: "border",
@@ -13,6 +18,8 @@ export const speedDialAction: SpeedDialActionStyleTypes = {
     backgroundColor: "bg-white",
     borderRadius: "rounded-full",
     borderColor: "border-blue-gray-50",
+    scale: "hover:scale-110 focus:scale-110 active:scale-100",
+    transition: "transition-transform duration-300 ease-in-out",
   },
 };
 

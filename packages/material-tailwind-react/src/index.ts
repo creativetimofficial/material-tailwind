@@ -32,6 +32,7 @@ export * from "./components/Slider";
 export * from "./components/Spinner";
 export * from "./components/Timeline";
 export * from "./components/Stepper";
+export * from "./components/SpeedDial";
 
 // context
 export * from "./context/theme";

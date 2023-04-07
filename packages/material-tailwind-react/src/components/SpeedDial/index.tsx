@@ -141,7 +141,9 @@ function SpeedDial({
   // 5. return
   return (
     <SpeedDialContext.Provider value={contextValue}>
-      <FloatingNode id={nodeId}>{children}</FloatingNode>
+      <div className="group">
+        <FloatingNode id={nodeId}>{children}</FloatingNode>
+      </div>
     </SpeedDialContext.Provider>
   );
 }
