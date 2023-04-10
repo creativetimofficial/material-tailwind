@@ -35,6 +35,7 @@ export const routes = [
       "navbar",
       "popover",
       "progress-bar",
+      "pagination",
       "radio-button",
       "rating-bar",
       "select",

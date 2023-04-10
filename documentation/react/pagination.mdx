@@ -1,0 +1,279 @@
+---
+title: Tailwind CSS Pagination for React - Material Tailwind
+description: Customise your web projects with our easy-to-use pagination component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "pagination",
+    "circular-pagination",
+    "simple-pagination",
+    "pagination-group",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/pagination",
+      description: "Learn more about props definition and types of progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/pagination",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
+  ]
+github: pagination
+prev: popover
+next: pagination
+---
+
+# Tailwind CSS Pagination - React
+
+Our Tailwind CSS pagination can be used to show a user how to navigate between different pages of table or a group of elements.
+
+Below we are presenting our examples of pagination component build using <Code>Button</Code>, <Code>IconButton</Code> and <Code>ButtonGroup</Code> components that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview id="pagination" link="pagination#pagination" component={<PaginationExamples.DefaultPagination />}>
+```jsx
+import React from "react";
+import { Button, IconButton } from "@material-tailwind/react";
+import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+
+export function DefaultPagination() {
+  const [active, setActive] = React.useState(1);
+
+  const getItemProps = (index) =>
+    ({
+      variant: active === index ? "filled" : "text",
+      color: active === index ? "blue" : "blue-gray",
+      onClick: () => setActive(index),
+    } as any);
+
+  const next = () => {
+    if (active === 5) return;
+
+    setActive(active + 1);
+  };
+
+  const prev = () => {
+    if (active === 1) return;
+
+    setActive(active - 1);
+  };
+
+  return (
+    <div className="flex items-center gap-4">
+      <Button
+        variant="text"
+        color="blue-gray"
+        className="flex items-center gap-2"
+        onClick={prev}
+        disabled={active === 1}
+      >
+        <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" /> Previous
+      </Button>
+      <div className="flex items-center gap-2">
+        <IconButton {...getItemProps(1)}>1</IconButton>
+        <IconButton {...getItemProps(2)}>2</IconButton>
+        <IconButton {...getItemProps(3)}>3</IconButton>
+        <IconButton {...getItemProps(4)}>4</IconButton>
+        <IconButton {...getItemProps(5)}>5</IconButton>
+      </div>
+      <Button
+        variant="text"
+        color="blue-gray"
+        className="flex items-center gap-2"
+        onClick={next}
+        disabled={active === 5}
+      >
+        Next
+        <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Circular Pagination
+
+Use the example below to create a pagination with circular buttons shape.
+
+<CodePreview id="circular-pagination" link="pagination#circular-pagination" component={<PaginationExamples.CircularPagination />}>
+```jsx
+import React from "react";
+import { Button, IconButton } from "@material-tailwind/react";
+import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+
+export function Example() {
+  const [active, setActive] = React.useState(1);
+
+  const getItemProps = (index) =>
+    ({
+      variant: active === index ? "filled" : "text",
+      color: active === index ? "blue" : "blue-gray",
+      onClick: () => setActive(index),
+      className: "rounded-full",
+    } as any);
+
+  const next = () => {
+    if (active === 5) return;
+
+    setActive(active + 1);
+  };
+
+  const prev = () => {
+    if (active === 1) return;
+
+    setActive(active - 1);
+  };
+
+  return (
+    <div className="flex items-center gap-4">
+      <Button
+        variant="text"
+        color="blue-gray"
+        className="flex items-center gap-2 rounded-full"
+        onClick={prev}
+        disabled={active === 1}
+      >
+        <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" /> Previous
+      </Button>
+      <div className="flex items-center gap-2">
+        <IconButton {...getItemProps(1)}>1</IconButton>
+        <IconButton {...getItemProps(2)}>2</IconButton>
+        <IconButton {...getItemProps(3)}>3</IconButton>
+        <IconButton {...getItemProps(4)}>4</IconButton>
+        <IconButton {...getItemProps(5)}>5</IconButton>
+      </div>
+      <Button
+        variant="text"
+        color="blue-gray"
+        className="flex items-center gap-2 rounded-full"
+        onClick={next}
+        disabled={active === 5}
+      >
+        Next
+        <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Simple Pagination
+
+Use the example below to create a simple and minimal pagination.
+
+<CodePreview id="simple-pagination" link="pagination#simple-pagination" component={<PaginationExamples.SimplePagination />}>
+```jsx
+import React from "react";
+import { IconButton, Typography } from "@material-tailwind/react";
+import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+
+export function Example() {
+  const [active, setActive] = React.useState(1);
+
+  const next = () => {
+    if (active === 10) return;
+
+    setActive(active + 1);
+  };
+
+  const prev = () => {
+    if (active === 1) return;
+
+    setActive(active - 1);
+  };
+
+  return (
+    <div className="flex items-center gap-8">
+      <IconButton
+        size="sm"
+        variant="outlined"
+        color="blue-gray"
+        onClick={prev}
+        disabled={active === 1}
+      >
+        <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
+      </IconButton>
+      <Typography color="gray" className="font-normal">
+        Page <strong className="text-blue-gray-900">{active}</strong> of{" "}
+        <strong className="text-blue-gray-900">10</strong>
+      </Typography>
+      <IconButton
+        size="sm"
+        variant="outlined"
+        color="blue-gray"
+        onClick={next}
+        disabled={active === 10}
+      >
+        <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Pagination Group
+
+Use the example below to create a pagination that uses <Code>ButtonGroup</Code> for creating a group pagination.
+
+<CodePreview id="pagination-group" link="pagination#pagination-group" component={<PaginationExamples.PaginationGroup />}>
+```jsx
+import React from "react";
+import { IconButton, ButtonGroup } from "@material-tailwind/react";
+import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+
+export function Example() {
+  const [active, setActive] = React.useState(1);
+
+  const getItemProps = (index) => ({
+    className: active === index ? "bg-blue-gray-100 text-blue-gray-900" : "",
+    onClick: () => setActive(index),
+  });
+
+  const next = () => {
+    if (active === 5) return;
+
+    setActive(active + 1);
+  };
+
+  const prev = () => {
+    if (active === 1) return;
+
+    setActive(active - 1);
+  };
+
+  return (
+    <ButtonGroup variant="outlined" color="blue-gray">
+      <IconButton onClick={prev}>
+        <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
+      </IconButton>
+      <IconButton {...getItemProps(1)}>1</IconButton>
+      <IconButton {...getItemProps(2)}>2</IconButton>
+      <IconButton {...getItemProps(3)}>3</IconButton>
+      <IconButton {...getItemProps(4)}>4</IconButton>
+      <IconButton {...getItemProps(5)}>5</IconButton>
+      <IconButton onClick={next}>
+        <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+      </IconButton>
+    </ButtonGroup>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />
