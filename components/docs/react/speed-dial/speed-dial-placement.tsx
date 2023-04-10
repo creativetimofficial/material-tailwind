@@ -14,8 +14,8 @@ import {
 
 export function SpeedDialPlacement() {
   return (
-    <>
-      <div className="absolute bottom-16 right-16">
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
         <SpeedDial placement="top">
           <SpeedDialHandler>
             <IconButton size="lg" className="rounded-full">
@@ -35,7 +35,7 @@ export function SpeedDialPlacement() {
           </SpeedDialContent>
         </SpeedDial>
       </div>
-      <div className="absolute bottom-16 left-16">
+      <div className="absolute bottom-0 left-0">
         <SpeedDial placement="right">
           <SpeedDialHandler>
             <IconButton size="lg" className="rounded-full">
@@ -55,7 +55,7 @@ export function SpeedDialPlacement() {
           </SpeedDialContent>
         </SpeedDial>
       </div>
-      <div className="absolute top-16 left-16">
+      <div className="absolute top-0 left-0">
         <SpeedDial placement="bottom">
           <SpeedDialHandler>
             <IconButton size="lg" className="rounded-full">
@@ -75,7 +75,7 @@ export function SpeedDialPlacement() {
           </SpeedDialContent>
         </SpeedDial>
       </div>
-      <div className="absolute top-16 right-16">
+      <div className="absolute top-0 right-0">
         <SpeedDial placement="left">
           <SpeedDialHandler>
             <IconButton size="lg" className="rounded-full">
@@ -95,6 +95,6 @@ export function SpeedDialPlacement() {
           </SpeedDialContent>
         </SpeedDial>
       </div>
-    </>
+    </div>
   );
 }

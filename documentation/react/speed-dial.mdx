@@ -1,0 +1,428 @@
+---
+title: Tailwind CSS Speed Dial for React - Material Tailwind
+description: Customise your web projects with our easy-to-use speed dial component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "speed-dial",
+    "speed-dial-placement",
+    "speed-dial-custom-icon",
+    "controlled-speed-dial",
+    "speed-dial-with-text-inside",
+    "speed-dial-with-text-outside",
+    "props",
+    "theme",
+  ]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/speed-dial",
+      description: "Learn more about props definition and types of progress bar component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/speed-dial",
+      description: "Learn how to customize the theme and styles for progress bar component.",
+    },
+  ]
+github: speed-dial
+prev: popover
+next: speed-dial
+---
+
+# Tailwind CSS Speed Dial - React
+
+Our Tailwind CSS pagination can be used to show different actions when hovering the button.
+
+See below our <Code>SpeedDial</Code> component example that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="speed-dial" link="speed-dial#speed-dial" component={<SpeedDialExamples.DefaultSpeedDial />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function DefaultSpeedDial() {
+  return (
+    <div className="relative w-full h-80">
+      <div className="absolute bottom-0 right-0">
+      <SpeedDial>
+        <SpeedDialHandler>
+          <IconButton size="lg" className="rounded-full">
+            <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+          </IconButton>
+        </SpeedDialHandler>
+        <SpeedDialContent>
+          <SpeedDialAction>
+            <HomeIcon className="h-5 w-5" />
+          </SpeedDialAction>
+          <SpeedDialAction>
+            <CogIcon className="h-5 w-5" />
+          </SpeedDialAction>
+          <SpeedDialAction>
+            <Square3Stack3DIcon className="h-5 w-5" />
+          </SpeedDialAction>
+        </SpeedDialContent>
+      </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Speed Dial Placement
+
+Use the example below for using <Code>SpeedDial</Code> with different placements in a page.
+
+<CodePreview id="speed-dial-placement" link="speed-dial#speed-dial-placement" component={<SpeedDialExamples.SpeedDialPlacement />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial placement="top">
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+      <div className="absolute bottom-0 left-0">
+        <SpeedDial placement="right">
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent className="flex-row">
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+      <div className="absolute top-0 left-0">
+        <SpeedDial placement="bottom">
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+      <div className="absolute top-0 right-0">
+        <SpeedDial placement="left">
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent className="flex-row">
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Speed Dial Custom Icon
+
+Use the example below for using custom icon for <Code>SpeedDial</Code> handler.
+
+<CodePreview id="speed-dial-custom-icon" link="speed-dial#speed-dial-custom-icon" component={<SpeedDialExamples.SpeedDialCustomIcon />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react";
+import {
+  EnvelopeIcon,
+  EnvelopeOpenIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <div className="relative w-full h-80">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <EnvelopeOpenIcon className="hidden h-5 w-5 group-hover:block" />
+              <EnvelopeIcon className="block h-5 w-5 group-hover:hidden" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Controlled Speed Dial
+
+Use the example below to make the <Code>SpeedDial</Code> a controlled component using React state. This is helpful if you need the <Code>open/close</Code> states of <Code>SpeedDial</Code>.
+
+<CodePreview id="controlled-speed-dial" link="speed-dial#controlled-speed-dial" component={<SpeedDialExamples.ControlledSpeedDial />}>
+```jsx
+import React from "react";
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial open={open} handler={setOpen}>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Speed Dial With Text Inside
+
+Use the example below for a <Code>SpeedDial</Code> that has a label inside of it's actions.
+
+<CodePreview id="speed-dial-with-text-inside" link="speed-dial#speed-dial-with-text-inside" component={<SpeedDialExamples.SpeedDialWithTextInside />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+  Typography,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction className="h-16 w-16">
+              <HomeIcon className="h-5 w-5" />
+              <Typography color="blue-gray" className="text-xs font-normal">
+                Home
+              </Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="h-16 w-16">
+              <CogIcon className="h-5 w-5" />
+              <Typography color="blue-gray" className="text-xs font-normal">
+                Settings
+              </Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="h-16 w-16">
+              <Square3Stack3DIcon className="h-5 w-5" />
+              <Typography color="blue-gray" className="text-xs font-normal">
+                Pages
+              </Typography>
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Speed Dial With Text Outside
+
+Use the example below for a <Code>SpeedDial</Code> that has a label outside of it's actions.
+
+<CodePreview id="speed-dial-with-text-outside" link="speed-dial#speed-dial-with-text-outside" component={<SpeedDialExamples.SpeedDialWithTextOutside />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+  Typography,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  const labelProps = {
+    variant: "small",
+    color: "blue-gray",
+    className:
+      "absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-normal",
+  };
+
+  return (
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction className="relative">
+              <HomeIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Home</Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="relative">
+              <CogIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Settings</Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="relative">
+              <Square3Stack3DIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Pages</Typography>
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+<span id="props" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

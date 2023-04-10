@@ -22,26 +22,30 @@ export function SpeedDialWithTextOutside() {
   };
 
   return (
-    <SpeedDial>
-      <SpeedDialHandler>
-        <IconButton size="lg" className="rounded-full">
-          <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
-        </IconButton>
-      </SpeedDialHandler>
-      <SpeedDialContent>
-        <SpeedDialAction className="relative">
-          <HomeIcon className="h-5 w-5" />
-          <Typography {...labelProps}>Home</Typography>
-        </SpeedDialAction>
-        <SpeedDialAction className="relative">
-          <CogIcon className="h-5 w-5" />
-          <Typography {...labelProps}>Settings</Typography>
-        </SpeedDialAction>
-        <SpeedDialAction className="relative">
-          <Square3Stack3DIcon className="h-5 w-5" />
-          <Typography {...labelProps}>Pages</Typography>
-        </SpeedDialAction>
-      </SpeedDialContent>
-    </SpeedDial>
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction className="relative">
+              <HomeIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Home</Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="relative">
+              <CogIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Settings</Typography>
+            </SpeedDialAction>
+            <SpeedDialAction className="relative">
+              <Square3Stack3DIcon className="h-5 w-5" />
+              <Typography {...labelProps}>Pages</Typography>
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
   );
 }

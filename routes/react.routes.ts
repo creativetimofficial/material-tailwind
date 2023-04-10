@@ -40,6 +40,7 @@ export const routes = [
       "rating-bar",
       "select",
       "slider",
+      "speed-dial",
       "spinner",
       "switch",
       "tabs",
