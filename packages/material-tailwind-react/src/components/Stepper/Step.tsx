@@ -19,7 +19,7 @@ export interface StepProps extends React.ComponentProps<"div"> {
   className?: className;
   activeClassName?: className;
   completedClassName?: className;
-  children: children;
+  children?: children;
 }
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>(
