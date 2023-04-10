@@ -61,6 +61,7 @@ import * as SpinnerExamples from "components/docs/react/spinner";
 import * as TimelineExamples from "components/docs/react/timeline";
 import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
+import * as StepperExamples from "components/docs/react/stepper";
 
 // @material-tailwind/react components
 import {
@@ -286,6 +287,7 @@ const components = {
   TimelineExamples,
   PaginationExamples,
   SpeedDialExamples,
+  StepperExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

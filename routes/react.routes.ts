@@ -42,6 +42,7 @@ export const routes = [
       "slider",
       "speed-dial",
       "spinner",
+      "stepper",
       "switch",
       "tabs",
       "textarea",

@@ -1,0 +1,259 @@
+---
+title: Tailwind CSS Stepper for React - Material Tailwind
+description: Customise your web projects with our stepper component for Tailwind CSS and React using Material Design guidelines.
+navigation: ["stepper", "stepper-with-icon", "stepper-with-dots", "stepper-with-content", "props", "theme"]
+related:
+  [
+    {
+      title: "Props",
+      route: "props/stepper",
+      description: "Learn more about props definition and types of stepper components.",
+    },
+    {
+      title: "Theme",
+      route: "theme/stepper",
+      description: "Learn how to customize the theme and styles for stepper components.",
+    },
+  ]
+github: stepper
+prev: spinner
+next: switch
+---
+
+# Tailwind CSS Stepper - React
+
+Use our Tailwind CSS <Code>Stepper</Code> component in your web projects. The <Code>Stepper</Code> can be used for multi-step processes or forms.
+
+See below our beautiful <Code>Stepper</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="stepper" link="stepper#stepper" component={<StepperExamples.DefaultStepper />}>
+```jsx
+import React from "react";
+import { Stepper, Step, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [isLastStep, setIsLastStep] = React.useState(false);
+  const [isFirstStep, setIsFirstStep] = React.useState(false);
+
+  const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+  const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+  return (
+    <div className="w-full py-4 px-8">
+      <Stepper
+        activeStep={activeStep}
+        isLastStep={(value) => setIsLastStep(value)}
+        isFirstStep={(value) => setIsFirstStep(value)}
+      >
+        <Step onClick={() => setActiveStep(0)}>1</Step>
+        <Step onClick={() => setActiveStep(1)}>2</Step>
+        <Step onClick={() => setActiveStep(2)}>3</Step>
+      </Stepper>
+      <div className="mt-16 flex justify-between">
+        <Button onClick={handlePrev} disabled={isFirstStep}>
+          Prev
+        </Button>
+        <Button onClick={handleNext} disabled={isLastStep}>
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Stepper With Icon
+
+You can also pass any sort of icon as children for stepper <Code>Step</Code> component.
+
+<CodePreview id="stepper-with-icon" link="stepper#stepper-with-icon" component={<StepperExamples.StepperWithIcon />}>
+```jsx
+import React from "react";
+import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
+import { Stepper, Step, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [isLastStep, setIsLastStep] = React.useState(false);
+  const [isFirstStep, setIsFirstStep] = React.useState(false);
+
+  const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+  const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+  return (
+    <div className="w-full py-4 px-8">
+      <Stepper
+        activeStep={activeStep}
+        isLastStep={(value) => setIsLastStep(value)}
+        isFirstStep={(value) => setIsFirstStep(value)}
+      >
+        <Step onClick={() => setActiveStep(0)}>
+          <HomeIcon className="h-5 w-5" />
+        </Step>
+        <Step onClick={() => setActiveStep(1)}>
+          <UserIcon className="h-5 w-5" />
+        </Step>
+        <Step onClick={() => setActiveStep(2)}>
+          <CogIcon className="h-5 w-5" />
+        </Step>
+      </Stepper>
+      <div className="mt-16 flex justify-between">
+        <Button onClick={handlePrev} disabled={isFirstStep}>
+          Prev
+        </Button>
+        <Button onClick={handleNext} disabled={isLastStep}>
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Stepper With Dots
+
+Use the example below for a stepper with dot steps.
+
+<CodePreview id="stepper-with-dots" link="stepper#stepper-with-dots" component={<StepperExamples.StepperWithDots />}>
+```jsx
+import React from "react";
+import { Stepper, Step, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [isLastStep, setIsLastStep] = React.useState(false);
+  const [isFirstStep, setIsFirstStep] = React.useState(false);
+
+  const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+  const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+  return (
+    <div className="w-full py-4 px-8">
+      <Stepper
+        activeStep={activeStep}
+        isLastStep={(value) => setIsLastStep(value)}
+        isFirstStep={(value) => setIsFirstStep(value)}
+      >
+        <Step className="h-4 w-4" onClick={() => setActiveStep(0)} />
+        <Step className="h-4 w-4" onClick={() => setActiveStep(1)} />
+        <Step className="h-4 w-4" onClick={() => setActiveStep(2)} />
+      </Stepper>
+      <div className="mt-16 flex justify-between">
+        <Button onClick={handlePrev} disabled={isFirstStep}>
+          Prev
+        </Button>
+        <Button onClick={handleNext} disabled={isLastStep}>
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Stepper With Content
+
+Use the example below for a stepper with some title and description for it's each step.
+
+<CodePreview id="stepper-with-content" link="stepper#stepper-with-content" component={<StepperExamples.StepperWithContent />}>
+```jsx
+import React from "react";
+import { Stepper, Step, Button, Typography } from "@material-tailwind/react";
+import {
+  CogIcon,
+  UserIcon,
+  BuildingLibraryIcon,
+} from "@heroicons/react/24/outline";
+
+export default function Example() {
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [isLastStep, setIsLastStep] = React.useState(false);
+  const [isFirstStep, setIsFirstStep] = React.useState(false);
+
+  const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+  const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+  return (
+    <div className="w-full py-4 px-8">
+      <Stepper
+        activeStep={activeStep}
+        isLastStep={(value) => setIsLastStep(value)}
+        isFirstStep={(value) => setIsFirstStep(value)}
+      >
+        <Step onClick={() => setActiveStep(0)}>
+          <UserIcon className="h-5 w-5" />
+          <div className="absolute -bottom-[4.5rem] w-max text-center">
+            <Typography
+              variant="h6"
+              color={activeStep === 0 ? "blue" : "blue-gray"}
+            >
+              Personal Details
+            </Typography>
+            <Typography
+              color={activeStep === 0 ? "blue" : "gray"}
+              className="font-normal"
+            >
+              Your name and email address.
+            </Typography>
+          </div>
+        </Step>
+        <Step onClick={() => setActiveStep(1)}>
+          <CogIcon className="h-5 w-5" />
+          <div className="absolute -bottom-[4.5rem] w-max text-center">
+            <Typography
+              variant="h6"
+              color={activeStep === 1 ? "blue" : "blue-gray"}
+            >
+              Security Details
+            </Typography>
+            <Typography
+              color={activeStep === 1 ? "blue" : "gray"}
+              className="font-normal"
+            >
+              Your password and secret key.
+            </Typography>
+          </div>
+        </Step>
+        <Step onClick={() => setActiveStep(2)}>
+          <BuildingLibraryIcon className="h-5 w-5" />
+          <div className="absolute -bottom-[4.5rem] w-max text-center">
+            <Typography
+              variant="h6"
+              color={activeStep === 2 ? "blue" : "blue-gray"}
+            >
+              Organization Details
+            </Typography>
+            <Typography
+              color={activeStep === 2 ? "blue" : "gray"}
+              className="font-normal"
+            >
+              Your company details.
+            </Typography>
+          </div>
+        </Step>
+      </Stepper>
+      <div className="mt-32 flex justify-between">
+        <Button onClick={handlePrev} disabled={isFirstStep}>
+          Prev
+        </Button>
+        <Button onClick={handleNext} disabled={isLastStep}>
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
