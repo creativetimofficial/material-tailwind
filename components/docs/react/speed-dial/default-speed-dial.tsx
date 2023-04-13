@@ -14,7 +14,7 @@ import {
 
 export function DefaultSpeedDial() {
   return (
-    <div className="relative w-full h-80">
+    <div className="relative h-80 w-full">
       <div className="absolute bottom-0 right-0">
         <SpeedDial>
           <SpeedDialHandler>
