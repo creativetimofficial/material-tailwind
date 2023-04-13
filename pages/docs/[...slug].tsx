@@ -62,6 +62,7 @@ import * as TimelineExamples from "components/docs/react/timeline";
 import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
+import * as NavbarExamples from "components/docs/react/navbar";
 
 // @material-tailwind/react components
 import {
@@ -288,6 +289,7 @@ const components = {
   PaginationExamples,
   SpeedDialExamples,
   StepperExamples,
+  NavbarExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
