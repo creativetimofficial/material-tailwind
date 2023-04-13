@@ -54,6 +54,7 @@ export type contextValue = {
   context: FloatingContext<ReferenceType>;
   tree: FloatingTreeType<ReferenceType>;
   allowHover: boolean;
+  internalAllowHover: boolean;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
   nested: boolean;

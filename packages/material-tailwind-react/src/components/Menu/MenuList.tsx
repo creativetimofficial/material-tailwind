@@ -54,6 +54,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       activeIndex,
       tree,
       allowHover,
+      internalAllowHover,
       setActiveIndex,
       nested,
     } = useMenu();
@@ -118,7 +119,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                   tree?.events.emit("click");
                 },
                 onMouseEnter() {
-                  if (allowHover && open) {
+                  if ((allowHover && open) || (internalAllowHover && open)) {
                     setActiveIndex(index);
                   }
                 },
