@@ -63,6 +63,9 @@ import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 import * as NavbarExamples from "components/docs/react/navbar";
+import SimpleFooter from "components/docs/simple-footer";
+import FooterWithLogo from "components/docs/footer-with-logo";
+import TransparentTabs from "components/docs/transparent-tabs";
 
 // @material-tailwind/react components
 import {
@@ -290,6 +293,9 @@ const components = {
   SpeedDialExamples,
   StepperExamples,
   NavbarExamples,
+  SimpleFooter,
+  FooterWithLogo,
+  TransparentTabs,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

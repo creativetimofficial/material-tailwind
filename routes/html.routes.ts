@@ -37,6 +37,7 @@ export const routes = [
       "textarea",
       "tooltip",
       "typography",
+      "footer",
     ],
   },
 ];

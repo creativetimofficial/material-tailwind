@@ -49,6 +49,7 @@ export const routes = [
       "timeline",
       "tooltip",
       "typography",
+      "footer",
     ],
   },
 ];
