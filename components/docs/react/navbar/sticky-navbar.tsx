@@ -9,7 +9,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 
-export default function StickyNavbar() {
+export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

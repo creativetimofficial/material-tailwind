@@ -45,8 +45,6 @@ import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
-import StickyNavbar from "components/docs/sticky-navbar";
-import ComplexNavbar from "components/docs/complex-navbar";
 import Warning from "components/warning";
 
 // new imports
@@ -248,8 +246,6 @@ const components = {
   CountriesCodeInput,
   ProfileMenu,
   AvatarStack,
-  StickyNavbar,
-  ComplexNavbar,
   Warning,
 
   // new components
