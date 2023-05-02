@@ -43,9 +43,6 @@ import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
-import DialogWithForm from "components/docs/dialog-with-form";
-import DialogWithImage from "components/docs/dialog-with-image";
-import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import StickyNavbar from "components/docs/sticky-navbar";
@@ -63,6 +60,7 @@ import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 import * as NavbarExamples from "components/docs/react/navbar";
+import * as DialogExamples from "components/docs/react/dialog";
 import SimpleFooter from "components/docs/simple-footer";
 import FooterWithLogo from "components/docs/footer-with-logo";
 import TransparentTabs from "components/docs/transparent-tabs";
@@ -137,32 +135,10 @@ import initHtmlScripts from "public/material-tailwind-html-v2";
 
 const components = {
   h1: (props) => (
-    <Typography
-      as="h1"
-      variant="h3"
-      color="blue-gray"
-      className="!mb-4 lg:!text-4xl"
-      {...props}
-    />
+    <Typography as="h1" variant="h3" color="blue-gray" className="!mb-4 lg:!text-4xl" {...props} />
   ),
-  h2: (props) => (
-    <Typography
-      as="h2"
-      variant="h4"
-      color="blue-gray"
-      className="!mb-2"
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <Typography
-      as="h3"
-      variant="h5"
-      color="blue-gray"
-      className="!mb-2"
-      {...props}
-    />
-  ),
+  h2: (props) => <Typography as="h2" variant="h4" color="blue-gray" className="!mb-2" {...props} />,
+  h3: (props) => <Typography as="h3" variant="h5" color="blue-gray" className="!mb-2" {...props} />,
   h6: (props) => (
     <Typography
       as="p"
@@ -171,9 +147,7 @@ const components = {
       {...props}
     />
   ),
-  p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
-  ),
+  p: (props) => <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />,
   hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
   a: (props) => (
     <a
@@ -273,9 +247,6 @@ const components = {
   CheckoutForm,
   InputWithButton,
   CountriesCodeInput,
-  DialogWithForm,
-  DialogWithImage,
-  WalletConnectDialog,
   ProfileMenu,
   AvatarStack,
   StickyNavbar,
@@ -293,6 +264,7 @@ const components = {
   SpeedDialExamples,
   StepperExamples,
   NavbarExamples,
+  DialogExamples,
   SimpleFooter,
   FooterWithLogo,
   TransparentTabs,
@@ -337,9 +309,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && (
-                <DocsRelated routes={frontMatter.related} />
-              )}
+              {frontMatter.related && <DocsRelated routes={frontMatter.related} />}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
@@ -381,9 +351,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(
-    `documentation/${slug.join("/")}.mdx`
-  );
+  const markdownWithMeta = fs.readFileSync(`documentation/${slug.join("/")}.mdx`);
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 

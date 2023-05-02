@@ -16,7 +16,7 @@ export function NotificationDialog() {
 
   return (
     <Fragment>
-      <Button onClick={handleOpen} variant="gradient" color="amber">
+      <Button onClick={handleOpen}>
         Notification
       </Button>
       <Dialog open={open} handler={handleOpen}>

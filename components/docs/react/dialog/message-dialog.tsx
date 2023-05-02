@@ -17,7 +17,7 @@ export function MessageDialog() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleOpen} variant="gradient" color="green">
+      <Button onClick={handleOpen}>
         Message Dialog
       </Button>
       <Dialog open={open} handler={handleOpen}>

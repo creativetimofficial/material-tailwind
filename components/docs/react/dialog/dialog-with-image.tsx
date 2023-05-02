@@ -13,7 +13,7 @@ import {
 } from "@material-tailwind/react";
 import { HeartIcon, ShareIcon } from "@heroicons/react/24/solid";
 
-export default function DialogWithImage() {
+export function DialogWithImage() {
   const [open, setOpen] = React.useState(false);
   const [isFavorite, setIsFavorite] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);

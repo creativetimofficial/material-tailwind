@@ -15,7 +15,7 @@ export function LongDialog() {
 
   return (
     <Fragment>
-      <Button onClick={handleOpen} variant="gradient" color="red">
+      <Button onClick={handleOpen}>
         Long Dialog
       </Button>
       <Dialog open={open} handler={handleOpen}>

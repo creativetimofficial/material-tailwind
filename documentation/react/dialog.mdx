@@ -9,6 +9,9 @@ navigation:
     "dialog-with-form",
     "dialog-with-image",
     "web-3-dialog",
+    "long-dialog",
+    "message-dialog",
+    "notification-dialog",
     "props",
     "theme"
   ]
@@ -419,7 +422,7 @@ export default function Example() {
 
 Use the example below to create a dialog with a sign in form.
 
-<CodePreview id="dialog-with-form" link="dialog#dialog-with-form" component={<DialogWithForm />}>
+<CodePreview id="dialog-with-form" link="dialog#dialog-with-form" component={<DialogExamples.DialogWithForm />}>
 ```jsx
 import React from "react";
 import {
@@ -496,7 +499,7 @@ export default function Example() {
 
 Use the example below to create a dialog with an image inside, similar to unsplash.
 
-<CodePreview id="dialog-with-image" link="dialog#dialog-with-image" component={<DialogWithImage />}>
+<CodePreview id="dialog-with-image" link="dialog#dialog-with-image" component={<DialogExamples.DialogWithImage />}>
 ```jsx
 import React from "react";
 import {
@@ -618,7 +621,7 @@ export default function Example() {
 
 Use the example below to create a Web 3.0 wallet connect dialog.
 
-<CodePreview id="web-3-dialog" link="dialog#web-3-dialog" component={<WalletConnectDialog />}>
+<CodePreview id="web-3-dialog" link="dialog#web-3-dialog" component={<DialogExamples.WalletConnectDialog />}>
 ```jsx
 import React from "react";
 import {
@@ -738,6 +741,197 @@ export default function Example() {
         </DialogFooter>
       </Dialog>
     </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Long Dialog
+
+<CodePreview id="long-dialog" link="dialog#long-dialog" className="mt-4" component={<DialogExamples.LongDialog />}>
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <Fragment>
+      <Button onClick={handleOpen}>
+        Long Dialog
+      </Button>
+      <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>Long modal</DialogHeader>
+        <DialogBody divider className="h-[40rem] overflow-scroll">
+          <Typography className="font-normal">
+            I always felt like I could do anything. That&apos;s the main thing people are controlled
+            by! Thoughts- their perception of themselves! They&apos;re slowed down by their
+            perception of themselves. If you&apos;re taught you can&apos;t do anything, you
+            won&apos;t do anything. I was taught I could do everything. As we live, our hearts turn
+            colder. Cause pain is what we go through as we become older. We get insulted by others,
+            lose trust for those others. We get back stabbed by friends. It becomes harder for us to
+            give others a hand. We get our heart broken by people we love, even that we give them
+            all we have. Then we lose family over time. What else could rust the heart more over
+            time? Blackgold.
+            <br />
+            <br />
+            We&apos;re not always in the position that we want to be at. We&apos;re constantly
+            growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
+            ourselves and actualize our dreams. If you have the opportunity to play this game of
+            life you need to appreciate every moment. A lot of people don&apos;t appreciate the
+            moment until it&apos;s passed.
+            <br /> <br />
+            There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
+            at. That&apos;s my skill. I&apos;m not really specifically talented at anything except
+            for the ability to learn. That&apos;s what I do. That&apos;s what I&apos;m here for.
+            Don&apos;t be afraid to be wrong because you can&apos;t learn anything from a
+            compliment.
+            <br /> <br />
+            It really matters and then like it really doesn&apos;t matter. What matters is the
+            people who are sparked by it. And the people who are like offended by it, it
+            doesn&apos;t matter. Because it&apos;s about motivating the doers. Because I&apos;m here
+            to follow my dreams and inspire other people to follow their dreams, too.
+            <br /> <br />
+            The time is now for it to be okay to be great. People in this world shun people for
+            being great. For being a bright color. For standing out. But the time is now to be okay
+            to be the greatest you. Would you believe in what you believe in, if you were the only
+            one who believed it?
+          </Typography>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="outlined" color="red" onClick={handleOpen}>
+            close
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            Save changes
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Message Dialog
+
+<CodePreview id="message-dialog" link="dialog#message-dialog" className="mt-4" component={<DialogExamples.MessageDialog />}>
+```jsx
+import React from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Input,
+  Textarea,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <React.Fragment>
+      <Button onClick={handleOpen}>
+        Message Dialog
+      </Button>
+      <Dialog open={open} handler={handleOpen}>
+        <div className="flex items-center justify-between">
+          <DialogHeader>New message to @</DialogHeader>
+          <XMarkIcon className="mr-3 h-5 w-5" onClick={handleOpen} />
+        </div>
+        <DialogBody divider>
+          <div className="grid gap-6">
+            <Input label="Username" />
+            <Textarea label="Message" />
+          </div>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="outlined" color="red" onClick={handleOpen}>
+            close
+          </Button>
+          <Button variant="gradient" color="green" onClick={handleOpen}>
+            send message
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </React.Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Notification Dialog
+
+<CodePreview id="notification-dialog" link="dialog#notification-dialog" className="mt-4" component={<DialogExamples.NotificationDialog />}>
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  Typography,
+} from "@material-tailwind/react";
+import { BellIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <Fragment>
+      <Button onClick={handleOpen}>
+        Notification
+      </Button>
+      <Dialog open={open} handler={handleOpen}>
+        <DialogHeader>
+          <Typography variant="h5" color="blue-gray">
+            Your Attention is Required!
+          </Typography>
+        </DialogHeader>
+        <DialogBody divider className="grid place-items-center gap-4">
+          <BellIcon className="h-16 w-16 text-red-500" />
+          <Typography color="red" variant="h4">
+            You should read this!
+          </Typography>
+          <Typography className="text-center font-normal">
+            A small river named Duden flows by their place and supplies it with the necessary
+            regelialia.
+          </Typography>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="text" color="blue-gray" onClick={handleOpen}>
+            close
+          </Button>
+          <Button variant="gradient" onClick={handleOpen}>
+            Ok, Got it
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </Fragment>
   );
 }
 ```
