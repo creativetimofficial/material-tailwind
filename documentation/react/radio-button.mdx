@@ -242,7 +242,7 @@ export default function Example() {
 
 You can make a radio button disable by passing the <Code>disabled</Code> prop to the <Code>Radio</Code> component.
 
-<CodePreview id="disabled-radio-button" link="radio-button#disabled-radio-button" component={
+<CodePreview id="disabled-radio-button" component={
   <div className="flex gap-10">
     <Radio id="disabled-html" name="type" label="HTML" disabled={true} />
     <Radio id="disabled-react" name="type" label="React" disabled={true} defaultChecked={true} />
@@ -268,7 +268,7 @@ export default function Example() {
 
 The <Code>label</Code> prop for the the radio button can accept dom elements and because of that you can put links or any other dom elements you like to have with your radio button label.
 
-<CodePreview id="radio-button-with-link" link="radio-button#radio-button-with-link" component={
+<CodePreview id="radio-button-with-link" component={
   <div className="flex flex-col gap-2">
     <Radio id="terms-html" name="terms" label={
       <Typography color="blue-gray" className="font-medium flex">I agree with HTML
@@ -318,7 +318,7 @@ export default function Example() {
 
 Use the example below for a more complex usage of radio button with label that contains some description.
 
-<CodePreview id="radio-button-with-description" link="radio-button#radio-button-with-description" component={
+<CodePreview id="radio-button-with-description" component={
   <div className="flex flex-col gap-8">
     <Radio 
       name="description"
@@ -400,7 +400,7 @@ export default function Example() {
 
 Use the example below for a vertical list of radio buttons.
 
-<CodePreview id="radio-button-vertical-list-group" link="radio-button#radio-button-vertical-list-group" component={
+<CodePreview id="radio-button-vertical-list-group" component={
   <Card>
     <List>
       <ListItem className="p-0">
@@ -529,7 +529,7 @@ export default function Example() {
 
 Use the example below for a horizontal list of radio buttons.
 
-<CodePreview id="radio-button-horizontal-list-group" link="radio-button#radio-button-horizontal-list-group" component={
+<CodePreview id="radio-button-horizontal-list-group" component={
   <Card className="w-full max-w-[24rem]">
     <List className="flex-row">
       <ListItem className="p-0">

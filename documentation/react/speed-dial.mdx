@@ -9,22 +9,22 @@ navigation:
     "controlled-speed-dial",
     "speed-dial-with-text-inside",
     "speed-dial-with-text-outside",
-    "props",
-    "theme",
+    # "props",
+    # "theme",
   ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/speed-dial",
-      description: "Learn more about props definition and types of progress bar component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/speed-dial",
-      description: "Learn how to customize the theme and styles for progress bar component.",
-    },
-  ]
+# related:
+#   [
+#     {
+#       title: "Props",
+#       route: "props/speed-dial",
+#       description: "Learn more about props definition and types of progress bar component.",
+#     },
+#     {
+#       title: "Theme",
+#       route: "theme/speed-dial",
+#       description: "Learn how to customize the theme and styles for progress bar component.",
+#     },
+#   ]
 github: speed-dial
 prev: slider
 next: spinner
@@ -38,7 +38,7 @@ See below our <Code>SpeedDial</Code> component example that you can use in your 
 
 <br />
 
-<CodePreview id="speed-dial" link="speed-dial#speed-dial" component={<SpeedDialExamples.DefaultSpeedDial />}>
+<CodePreview id="speed-dial" component={<SpeedDialExamples.DefaultSpeedDial />}>
 ```jsx
 import {
   IconButton,
@@ -89,7 +89,7 @@ export default function DefaultSpeedDial() {
 
 Use the example below for using <Code>SpeedDial</Code> with different placements in a page.
 
-<CodePreview id="speed-dial-placement" link="speed-dial#speed-dial-placement" component={<SpeedDialExamples.SpeedDialPlacement />}>
+<CodePreview id="speed-dial-placement" component={<SpeedDialExamples.SpeedDialPlacement />}>
 ```jsx
 import {
   IconButton,
@@ -200,7 +200,7 @@ export default function Example() {
 
 Use the example below for using custom icon for <Code>SpeedDial</Code> handler.
 
-<CodePreview id="speed-dial-custom-icon" link="speed-dial#speed-dial-custom-icon" component={<SpeedDialExamples.SpeedDialCustomIcon />}>
+<CodePreview id="speed-dial-custom-icon" component={<SpeedDialExamples.SpeedDialCustomIcon />}>
 ```jsx
 import {
   IconButton,
@@ -253,7 +253,7 @@ export default function Example() {
 
 Use the example below to make the <Code>SpeedDial</Code> a controlled component using React state. This is helpful if you need the <Code>open/close</Code> states of <Code>SpeedDial</Code>.
 
-<CodePreview id="controlled-speed-dial" link="speed-dial#controlled-speed-dial" component={<SpeedDialExamples.ControlledSpeedDial />}>
+<CodePreview id="controlled-speed-dial" component={<SpeedDialExamples.ControlledSpeedDial />}>
 ```jsx
 import React from "react";
 import {
@@ -307,7 +307,7 @@ export default function Example() {
 
 Use the example below for a <Code>SpeedDial</Code> that has a label inside of it's actions.
 
-<CodePreview id="speed-dial-with-text-inside" link="speed-dial#speed-dial-with-text-inside" component={<SpeedDialExamples.SpeedDialWithTextInside />}>
+<CodePreview id="speed-dial-with-text-inside" component={<SpeedDialExamples.SpeedDialWithTextInside />}>
 ```jsx
 import {
   IconButton,
@@ -368,7 +368,7 @@ export default function Example() {
 
 Use the example below for a <Code>SpeedDial</Code> that has a label outside of it's actions.
 
-<CodePreview id="speed-dial-with-text-outside" link="speed-dial#speed-dial-with-text-outside" component={<SpeedDialExamples.SpeedDialWithTextOutside />}>
+<CodePreview id="speed-dial-with-text-outside" component={<SpeedDialExamples.SpeedDialWithTextOutside />}>
 ```jsx
 import {
   IconButton,

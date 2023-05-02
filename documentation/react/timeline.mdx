@@ -7,22 +7,22 @@ navigation:
     "timeline-with-icon",
     "timeline-with-avatar",
     "activities-timeline",
-    "props",
-    "theme",
+    # "props",
+    # "theme",
   ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/timeline",
-      description: "Learn more about props definition and types of timeline components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/timeline",
-      description: "Learn how to customize the theme and styles for timeline components.",
-    },
-  ]
+# related:
+#   [
+#     {
+#       title: "Props",
+#       route: "props/timeline",
+#       description: "Learn more about props definition and types of timeline components.",
+#     },
+#     {
+#       title: "Theme",
+#       route: "theme/timeline",
+#       description: "Learn how to customize the theme and styles for timeline components.",
+#     },
+#   ]
 github: timeline
 prev: textarea
 next: tooltip
@@ -36,7 +36,7 @@ See below our beautiful <Code>Timeline</Code> example that you can use in your T
 
 <br />
 
-<CodePreview id="timeline" link="timeline#timeline" component={<TimelineExamples.DefaultTimeline />}>
+<CodePreview id="timeline" component={<TimelineExamples.DefaultTimeline />}>
 ```jsx
 import {
   Timeline,
@@ -128,7 +128,7 @@ export default function Example() {
 
 Use the example below for a <Code>Timeline</Code> component with icon.
 
-<CodePreview id="timeline-with-icon" link="timeline#timeline-with-icon" component={<TimelineExamples.TimelineWithIcon />}>
+<CodePreview id="timeline-with-icon" component={<TimelineExamples.TimelineWithIcon />}>
 ```jsx
 import {
   Timeline,
@@ -218,7 +218,7 @@ export default function Example() {
 
 Use the example below for a <Code>Timeline</Code> component with avatar.
 
-<CodePreview id="timeline-with-avatar" link="timeline#timeline-with-avatar" component={<TimelineExamples.TimelineWithAvatar />}>
+<CodePreview id="timeline-with-avatar" component={<TimelineExamples.TimelineWithAvatar />}>
 ```jsx
 import {
   Timeline,
@@ -304,7 +304,7 @@ export default function Example() {
 
 Use the example below for a <Code>Timeline</Code> component with activities.
 
-<CodePreview id="activities-timeline" link="timeline#activities-timeline" component={<TimelineExamples.ActivitiesTimeline />}>
+<CodePreview id="activities-timeline" component={<TimelineExamples.ActivitiesTimeline />}>
 ```jsx
 import {
   Timeline,

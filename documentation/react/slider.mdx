@@ -1,20 +1,26 @@
 ---
 title: Tailwind CSS Range Slider for React - Material Tailwind
 description: Customise your web projects with our range slider component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["slider", "slider-sizes", "slider-colors", "props", "theme"]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/slider",
-      description: "Learn more about props definition and types of slider components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/slider",
-      description: "Learn how to customize the theme and styles for slider components.",
-    },
-  ]
+navigation: [
+  "slider", 
+  "slider-sizes", 
+  "slider-colors", 
+  # "props", 
+  # "theme"
+]
+# related:
+#   [
+#     {
+#       title: "Props",
+#       route: "props/slider",
+#       description: "Learn more about props definition and types of slider components.",
+#     },
+#     {
+#       title: "Theme",
+#       route: "theme/slider",
+#       description: "Learn how to customize the theme and styles for slider components.",
+#     },
+#   ]
 github: slider
 prev: select
 next: speed-dial
@@ -28,7 +34,7 @@ See below our beautiful <Code>Slider</Code> example that you can use in your Tai
 
 <br />
 
-<CodePreview id="slider" link="slider#slider" component={<SliderExamples.DefaultSlider />}>
+<CodePreview id="slider" component={<SliderExamples.DefaultSlider />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
@@ -48,7 +54,7 @@ export default function Example() {
 
 The <Code>Slider</Code> component comes with 3 different sizes, that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="slider-sizes" link="slider#slider-sizes" component={<SliderExamples.SliderSizes />}>
+<CodePreview id="slider-sizes" component={<SliderExamples.SliderSizes />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
@@ -70,7 +76,7 @@ export default function Example() {
 
 The <Code>Slider</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="slider-colors" link="slider#slider-colors" component={<SliderExamples.SliderColors />}>
+<CodePreview id="slider-colors" component={<SliderExamples.SliderColors />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 

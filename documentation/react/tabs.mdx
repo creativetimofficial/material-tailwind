@@ -479,7 +479,7 @@ export default function TransparentTabs() {
 
 You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
 
-<CodePreview id="vertical-tabs" link="tabs#vertical-tabs" component={
+<CodePreview id="vertical-tabs" component={
   <Tabs id="vertical-tabs" value="html" orientation="vertical">
     <TabsHeader className="w-32">
       <Tab value="html">HTML</Tab>
@@ -592,7 +592,7 @@ export default function Example() {
 
 You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
 
-<CodePreview id="vertical-tabs-with-icon" link="tabs#vertical-tabs-with-icon" component={
+<CodePreview id="vertical-tabs-with-icon" component={
   <Tabs id="vertical-tabs-wit-icon-component" value="dashboard" orientation="vertical">
     <TabsHeader className="w-40">
       <Tab value="dashboard" className="place-items-start">
@@ -705,7 +705,7 @@ export default function Example() {
 
 You can use tailwind css classes for customizing the tabs components, see the example below for an underline tabs component.
 
-<CodePreview id="underline-tabs" link="tabs#underline-tabs" component={
+<CodePreview id="underline-tabs" component={
   <State initialState={{ activeTab: "html" }}>
     <Observe>
       {({ setState, activeTab }) => (

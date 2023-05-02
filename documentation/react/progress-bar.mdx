@@ -81,7 +81,7 @@ export default function Example() {
 
 The <Code>Progress</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="progress-bar-sizes" link="progress-bar#progress-bar-sizes" component={
+<CodePreview id="progress-bar-sizes" component={
   <div className="flex w-full flex-col gap-4">
     <Progress value={25} size="sm" />
     <Progress value={50} size="md" />
@@ -163,7 +163,7 @@ export default function Example() {
 
 The <Code>Progress</Code> component sizes are different when you use the <Code>label</Code> prop, this helps to make the label text more readable.
 
-<CodePreview id="progress-bar-sizes-with-label" link="progress-bar#progress-bar-sizes-with-label" component={
+<CodePreview id="progress-bar-sizes-with-label" component={
   <div className="flex w-full flex-col gap-4">
     <Progress value={25} size="sm" label="Small" />
     <Progress value={50} size="md" label="Medium" />
@@ -191,7 +191,7 @@ export default function Example() {
 
 Use the example below to add the label outside the progress bar.
 
-<CodePreview id="progress-bar-with-label-outside" link="progress-bar#progress-bar-with-label-outside" component={
+<CodePreview id="progress-bar-with-label-outside" component={
   <div className="w-full">
     <div className="flex items-center justify-between gap-4 mb-2">
       <Typography color="blue" variant="h6">Completed</Typography>

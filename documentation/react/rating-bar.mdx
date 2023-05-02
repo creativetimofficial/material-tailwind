@@ -9,22 +9,22 @@ navigation:
     "custom-rating-icon",
     "rating-with-text",
     "rating-with-comment",
-    "props",
-    "theme",
+    # "props",
+    # "theme",
   ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/rating-bar",
-      description: "Learn more about props definition and types of rating-bar components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/rating-bar",
-      description: "Learn how to customize the theme and styles for rating-bar components.",
-    },
-  ]
+# related:
+#   [
+#     {
+#       title: "Props",
+#       route: "props/rating-bar",
+#       description: "Learn more about props definition and types of rating-bar components.",
+#     },
+#     {
+#       title: "Theme",
+#       route: "theme/rating-bar",
+#       description: "Learn how to customize the theme and styles for rating-bar components.",
+#     },
+#   ]
 github: rating-bar
 prev: radtio-button
 next: select
@@ -38,7 +38,7 @@ See below our beautiful <Code>Rating</Code> example that you can use in your Tai
 
 <br />
 
-<CodePreview id="rating" link="rating#rating" component={<RatingExamples.DefaultRating />}>
+<CodePreview id="rating" component={<RatingExamples.DefaultRating />}>
 ```jsx
 import { Rating } from "@material-tailwind/react";
 
@@ -54,7 +54,7 @@ export default function Example() {
 
 The <Code>Rating</Code> component comes with 20 different colors that you can change it using the <Code>unratedColor</Code> prop for the unrated state of <Code>Rating</Code> component and <Code>ratedColor</Code> prop for the rated state of <Code>Rating</Code> component.
 
-<CodePreview id="rating-colors" link="rating#rating-colors" component={<RatingExamples.RatingColors />}>
+<CodePreview id="rating-colors" component={<RatingExamples.RatingColors />}>
 ```jsx
 import { Rating } from "@material-tailwind/react";
 
@@ -77,7 +77,7 @@ export default function Example() {
 
 You can make a <Code>Rating</Code> component readonly by using the <Code>readonly</Code> prop. This will prevent the user from changing the rating.
 
-<CodePreview id="readonly-rating" link="rating#readonly-rating" component={<RatingExamples.ReadonlyRating />}>
+<CodePreview id="readonly-rating" component={<RatingExamples.ReadonlyRating />}>
 ```jsx
 import { Rating } from "@material-tailwind/react";
 
@@ -93,7 +93,7 @@ export function Example() {
 
 You can customize the <Code>Rating</Code> component icon by using the <Code>unratedIcon</Code> and <Code>ratedIcon</Code> props.
 
-<CodePreview id="custom-rating-icon" link="rating#custom-rating-icon" component={<RatingExamples.CustomRatingIcon />}>
+<CodePreview id="custom-rating-icon" component={<RatingExamples.CustomRatingIcon />}>
 ```jsx
 import { Rating } from "@material-tailwind/react";
 import { HeartIcon as RatedIcon } from "@heroicons/react/24/solid";
@@ -117,7 +117,7 @@ export default function Example() {
 
 Use the example below for a <Code>Rating</Code> component with helper text.
 
-<CodePreview id="rating-with-text" link="rating#rating-with-text" component={<RatingExamples.RatingWithText />}>
+<CodePreview id="rating-with-text" component={<RatingExamples.RatingWithText />}>
 ```jsx
 import React from "react";
 import { Rating, Typography } from "@material-tailwind/react";
@@ -143,7 +143,7 @@ export default function Example() {
 
 Use the example below for a <Code>Rating</Code> component with comment.
 
-<CodePreview id="rating-with-comment" link="rating#rating-with-comment" component={<RatingExamples.RatingWithComment />}>
+<CodePreview id="rating-with-comment" component={<RatingExamples.RatingWithComment />}>
 ```jsx
 import { Typography, Avatar, Rating } from "@material-tailwind/react";
 

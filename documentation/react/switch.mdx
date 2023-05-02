@@ -55,7 +55,7 @@ export default function Example() {
 
 Make a <Code>Switch</Code> component checked by default using the <Code>defaultChecked</Code> props.
 
-<CodePreview id="checked-switch" link="switch#checked-switch" component={<Switch id="checked-switch-component" defaultChecked />}>
+<CodePreview id="checked-switch" component={<Switch id="checked-switch-component" defaultChecked />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
@@ -153,7 +153,7 @@ export default function Example() {
 
 You can make a switch disable by passing the <Code>disabled</Code> prop to the <Code>Switch</Code> component.
 
-<CodePreview id="disabled-switch" link="switch#disabled-switch" component={
+<CodePreview id="disabled-switch" component={
   <Switch id="switch-disabled" disabled={true} />
 }>
 ```jsx
@@ -171,7 +171,7 @@ export default function Example() {
 
 Use the example below for a more complex usage of switch with label that contains some description.
 
-<CodePreview id="switch-with-description" link="switch#switch-with-description" component={
+<CodePreview id="switch-with-description" component={
   <Switch
     id="switch-description"
     label={

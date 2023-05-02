@@ -1,20 +1,27 @@
 ---
 title: Tailwind CSS Stepper for React - Material Tailwind
 description: Customise your web projects with our stepper component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["stepper", "stepper-with-icon", "stepper-with-dots", "stepper-with-content", "props", "theme"]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/stepper",
-      description: "Learn more about props definition and types of stepper components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/stepper",
-      description: "Learn how to customize the theme and styles for stepper components.",
-    },
-  ]
+navigation: [
+  "stepper", 
+  "stepper-with-icon", 
+  "stepper-with-dots", 
+  "stepper-with-content", 
+  # "props", 
+  # "theme"
+]
+# related:
+#   [
+#     {
+#       title: "Props",
+#       route: "props/stepper",
+#       description: "Learn more about props definition and types of stepper components.",
+#     },
+#     {
+#       title: "Theme",
+#       route: "theme/stepper",
+#       description: "Learn how to customize the theme and styles for stepper components.",
+#     },
+#   ]
 github: stepper
 prev: spinner
 next: switch
@@ -28,7 +35,7 @@ See below our beautiful <Code>Stepper</Code> example that you can use in your Ta
 
 <br />
 
-<CodePreview id="stepper" link="stepper#stepper" component={<StepperExamples.DefaultStepper />}>
+<CodePreview id="stepper" component={<StepperExamples.DefaultStepper />}>
 ```jsx
 import React from "react";
 import { Stepper, Step, Button } from "@material-tailwind/react";
@@ -72,7 +79,7 @@ export default function Example() {
 
 You can also pass any sort of icon as children for stepper <Code>Step</Code> component.
 
-<CodePreview id="stepper-with-icon" link="stepper#stepper-with-icon" component={<StepperExamples.StepperWithIcon />}>
+<CodePreview id="stepper-with-icon" component={<StepperExamples.StepperWithIcon />}>
 ```jsx
 import React from "react";
 import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
@@ -123,7 +130,7 @@ export default function Example() {
 
 Use the example below for a stepper with dot steps.
 
-<CodePreview id="stepper-with-dots" link="stepper#stepper-with-dots" component={<StepperExamples.StepperWithDots />}>
+<CodePreview id="stepper-with-dots" component={<StepperExamples.StepperWithDots />}>
 ```jsx
 import React from "react";
 import { Stepper, Step, Button } from "@material-tailwind/react";
@@ -167,7 +174,7 @@ export default function Example() {
 
 Use the example below for a stepper with some title and description for it's each step.
 
-<CodePreview id="stepper-with-content" link="stepper#stepper-with-content" component={<StepperExamples.StepperWithContent />}>
+<CodePreview id="stepper-with-content" component={<StepperExamples.StepperWithContent />}>
 ```jsx
 import React from "react";
 import { Stepper, Step, Button, Typography } from "@material-tailwind/react";
