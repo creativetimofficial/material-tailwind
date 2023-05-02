@@ -1,0 +1,67 @@
+---
+title: Tailwind CSS Video for React - Material Tailwind
+description: Customise your web projects with our easy-to-use video examples for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "video",
+    "autoplay-video",
+    "muted-video",
+  ]
+github: video
+prev: img
+---
+
+# Tailwind CSS Video - React
+
+Use our Tailwind CSS <Code>video</Code> example to video in your web projects. The <Code>video</Code> can be used to display media content specially videos on your website.
+
+See below our beautiful <Code>video</Code> example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+<br />
+
+<CodePreview id="video" link="video#video" component={<VideoExamples.DefaultVideo />}>
+```jsx
+export default function Example() {
+  return (
+    <video className="h-full w-full rounded-lg" controls>
+      <source src="/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Autoplay Video
+
+<CodePreview id="autoplay-video" link="video#autoplay-video" className="mt-4" component={<VideoExamples.AutoplayVideo />}>
+```jsx
+export default function Example() {
+  return (
+    <video className="h-full w-full rounded-lg" controls autoPlay>
+      <source src="/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Muted Video
+
+<CodePreview id="muted-video" link="video#muted-video" className="mt-4" component={<VideoExamples.MutedVideo />}>
+```jsx
+export default function Example() {
+  return (
+    <video className="h-full w-full rounded-lg" controls autoPlay muted>
+      <source src="/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</CodePreview>

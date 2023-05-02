@@ -50,6 +50,8 @@ export const routes = [
       "tooltip",
       "typography",
       "footer",
+      "img",
+      "video",
     ],
   },
 ];

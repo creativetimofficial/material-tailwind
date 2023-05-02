@@ -60,6 +60,8 @@ import * as StepperExamples from "components/docs/react/stepper";
 import * as NavbarExamples from "components/docs/react/navbar";
 import * as DialogExamples from "components/docs/react/dialog";
 import * as FooterExamples from "components/docs/react/footer";
+import * as ImgExamples from "components/docs/react/img";
+import * as VideoExamples from "components/docs/react/video";
 import TransparentTabs from "components/docs/transparent-tabs";
 
 // @material-tailwind/react components
@@ -261,6 +263,8 @@ const components = {
   NavbarExamples,
   DialogExamples,
   FooterExamples,
+  ImgExamples,
+  VideoExamples,
   TransparentTabs,
 };
 
