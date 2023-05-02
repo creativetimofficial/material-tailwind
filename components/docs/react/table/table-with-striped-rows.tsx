@@ -32,7 +32,7 @@ const TABLE_ROWS = [
 
 export function TableWithStripedRows() {
   return (
-    <Card className="overflow-scroll">
+    <Card className="h-full w-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>

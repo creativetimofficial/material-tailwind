@@ -71,7 +71,7 @@ const TABLE_ROWS = [
 
 export function TransactionsTable() {
   return (
-    <Card>
+    <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
         <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>

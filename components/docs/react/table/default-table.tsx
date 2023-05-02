@@ -32,7 +32,7 @@ const TABLE_ROWS = [
 
 export function DefaultTable() {
   return (
-    <Card className="overflow-scroll">
+    <Card className="w-full h-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
