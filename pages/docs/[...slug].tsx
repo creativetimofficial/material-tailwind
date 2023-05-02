@@ -61,8 +61,7 @@ import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 import * as NavbarExamples from "components/docs/react/navbar";
 import * as DialogExamples from "components/docs/react/dialog";
-import SimpleFooter from "components/docs/simple-footer";
-import FooterWithLogo from "components/docs/footer-with-logo";
+import * as FooterExamples from "components/docs/react/footer";
 import TransparentTabs from "components/docs/transparent-tabs";
 
 // @material-tailwind/react components
@@ -265,8 +264,7 @@ const components = {
   StepperExamples,
   NavbarExamples,
   DialogExamples,
-  SimpleFooter,
-  FooterWithLogo,
+  FooterExamples,
   TransparentTabs,
 };
 

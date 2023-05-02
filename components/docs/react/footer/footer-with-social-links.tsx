@@ -19,8 +19,8 @@ const currentYear = new Date().getFullYear();
 
 export function FooterWithSocialLinks() {
   return (
-    <footer className="mt-10 px-8 pt-20">
-      <div className="container mx-auto">
+    <footer className="relative w-full">
+      <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Typography variant="h5" className="mb-6">
             Material Tailwind
