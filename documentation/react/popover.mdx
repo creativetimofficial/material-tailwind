@@ -362,7 +362,9 @@ export default function Example() {
 
 ## Subscription Popover
 
-<CodePreview id="subscription-popover" className="mt-4" component={
+Use this beautiful popover if you want to let the users subscribe easily.
+
+<CodePreview id="subscription-popover" component={
   <Popover placement="bottom">
     <PopoverHandler>
       <Button>Subscribe</Button>
@@ -401,14 +403,16 @@ export default function Example() {
     </div>
   </PopoverContent>
 </Popover>
-````
+```
 </CodePreview>
 
 ---
 
 ## Contact Popover
 
-<CodePreview id="contact-popover" className="mt-4" component={
+Use this example of  a popover component to help users get the help they need easier.
+
+<CodePreview id="contact-popover" component={
   <Popover placement="bottom">
     <PopoverHandler>
       <Button>Contact Us</Button>
@@ -513,14 +517,16 @@ export default function Example() {
     </Popover>
   );
 }
-````
+```
 </CodePreview>
 
 ---
 
 ## Popover with Image
 
-<CodePreview id="popover-with-image" className="mt-4" component={
+This example is used to show more information. It contains an image, headline, description, and link.
+
+<CodePreview id="popover-with-image" component={
   <Popover>
     <PopoverHandler>
       <Button>More Info</Button>
@@ -591,7 +597,9 @@ export default function Example() {
 
 ## Profile Info Popover
 
-<CodePreview id="profile-info-popover" link="popover#profile-info-popover" className="mt-4" component={
+Use this example to help the user find out more information about a profile.
+
+<CodePreview id="profile-info-popover" link="popover#profile-info-popover" component={
   <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (

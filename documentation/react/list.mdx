@@ -288,24 +288,24 @@ export default function Example() {
   const [selected, setSelected] = React.useState(1);
   const setSelectedItem = (value) => setSelected(value);
 
-return (
+  return (
+    <Card className="w-96">
+      <List>
+        <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
+          Inbox
+        </ListItem>
+        <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
+          Trash
+        </ListItem>
+        <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
+          Settings
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
 
-<Card className="w-96">
-  <List>
-    <ListItem selected={selected === 1} onClick={() => setSelectedItem(1)}>
-      Inbox
-    </ListItem>
-    <ListItem selected={selected === 2} onClick={() => setSelectedItem(2)}>
-      Trash
-    </ListItem>
-    <ListItem selected={selected === 3} onClick={() => setSelectedItem(3)}>
-      Settings
-    </ListItem>
-  </List>
-</Card>
-; ); }
-
-````
+```
 </CodePreview>
 
 ---
@@ -337,7 +337,7 @@ export default function Example() {
     </Card>
   );
 }
-````
+```
 
 </CodePreview>
 
@@ -345,7 +345,9 @@ export default function Example() {
 
 ## List With Links
 
-<CodePreview id="list-with-links" className="mt-4" component={
+Display a collection of options that are clickable and lead to different pages with our simple and versatile list example.
+
+<CodePreview id="list-with-links" component={
   <Card className="w-96">
     <List>
       <a href="#" className="text-initial">
@@ -387,7 +389,9 @@ export default function Example() {
 
 ## List With Badges
 
-<CodePreview id="list-with-badges" className="mt-4" component={
+This example is similar to the previous list component, but it also includes badges to present more information about the options (for example, the quantity).
+
+<CodePreview id="list-with-badges" component={
   <Card className="w-96">
     <List>
       <ListItem>

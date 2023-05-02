@@ -490,7 +490,9 @@ export default function Example() {
 
 ## Menu with Custom List
 
-<CodePreview id="menu-with-custom-list" className="mt-4" component={
+Use this menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
+
+<CodePreview id="menu-with-custom-list" component={
   <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (
@@ -661,7 +663,9 @@ export default function Day09() {
 
 ## Menu with Divider
 
-<CodePreview id="menu-with-divider" className="mt-4" component={
+This example can be used if you want to group the menu items, improving the readability.
+
+<CodePreview id="menu-with-divider" component={
   <Menu>
     <MenuHandler>
       <Button>Open Menu</Button>
@@ -707,7 +711,9 @@ export default function Example() {
 
 ## Menu with Checkboxes
 
-<CodePreview id="menu-with-checkboxes" className="mt-4" component={
+Use this simple example of menu with checkboxes if you want to allow users to select multiple options from a list.
+
+<CodePreview id="menu-with-checkboxes" component={
   <Menu
     dismiss={{
       itemPress: false,
@@ -836,7 +842,9 @@ export default function Example() {
 
 ## Menu with Search Input
 
-<CodePreview id="menu-with-search-input" className="mt-4" component={
+This example is perfect if you have more options. Use it to let the users find easier what they are looking for, without scrolling too much.
+
+<CodePreview id="menu-with-search-input" component={
   <Menu
     dismiss={{
       itemPress: false,
@@ -899,7 +907,9 @@ export default function Example() {
 
 ## Menu with Scrolling Content
 
-<CodePreview id="menu-with-scrolling-content" className="mt-4" component={
+You can use this example if you have more options in the list, so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
+
+<CodePreview id="menu-with-scrolling-content" component={
   <Menu>
     <MenuHandler>
       <Button>Open Menu</Button>
@@ -975,7 +985,9 @@ export default function Example() {
 
 ## Notifications Menu
 
-<CodePreview id="notifications-menu" link="menu#notifications-menu" className="mt-4" component={
+Add this menu if you want to group all the notifications in one place, avoiding a cluttered screen.
+
+<CodePreview id="notifications-menu" link="menu#notifications-menu" component={
   <Menu>
     <MenuHandler>
       <IconButton variant="text">
@@ -1135,7 +1147,9 @@ export default function Day10() {
 
 ## Profile Menu
 
-<CodePreview id="profile-menu" link="menu#profile-menu" className="mt-4" component={<ProfileMenu />}>
+Are you creating a web app or a mobile app? This component is a must!
+
+<CodePreview id="profile-menu" link="menu#profile-menu" component={<ProfileMenu />}>
 ```jsx
 import {
   Menu,
