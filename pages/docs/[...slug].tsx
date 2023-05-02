@@ -62,6 +62,8 @@ import * as DialogExamples from "components/docs/react/dialog";
 import * as FooterExamples from "components/docs/react/footer";
 import * as ImgExamples from "components/docs/react/img";
 import * as VideoExamples from "components/docs/react/video";
+import * as SidebarExamples from "components/docs/react/sidebar";
+import * as TableExamples from "components/docs/react/table";
 import TransparentTabs from "components/docs/transparent-tabs";
 
 // @material-tailwind/react components
@@ -265,6 +267,8 @@ const components = {
   FooterExamples,
   ImgExamples,
   VideoExamples,
+  SidebarExamples,
+  TableExamples,
   TransparentTabs,
 };
 

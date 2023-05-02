@@ -52,6 +52,8 @@ export const routes = [
       "footer",
       "img",
       "video",
+      "sidebar",
+      "table",
     ],
   },
 ];
