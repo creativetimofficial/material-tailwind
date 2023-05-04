@@ -11,6 +11,7 @@
     "sitemap": "next-sitemap",
     "build:react": "pnpm --filter ./packages/material-tailwind-react build",
     "build:html": "pnpm --filter ./packages/material-tailwind-html build",
+    "build:solid": "pnpm --filter ./packages/material-tailwind-solid build",
     "start": "next start",
     "export": "next export",
     "lint": "next lint"
