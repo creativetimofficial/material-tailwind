@@ -1,0 +1,97 @@
+{
+  "name": "@material-tailwind/solid",
+  "homepage": "https://material-tailwind.com",
+  "version": "0.0.1",
+  "description": "@material-tailwind/solid is an easy-to-use components library for SolidJS & Tailwind CSS inspired by Material Design.",
+  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/source/index.js",
+      "import": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
+    },
+    "./utils/withMT": "./dist/source/utils/withMT.js"
+  },
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js",
+    "dev": "rollup --watch -c ./rollup.config.js",
+    "copy": "cp ./package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist && cp -r ./src/theme ./dist/theme && cp -r ./src/utils ./dist",
+    "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.cjs --no-eslintrc",
+    "prettier:check": "prettier -c ."
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.2.7",
+    "@motionone/solid": "^10.16.0",
+    "@motionone/types": "^10.15.1",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@types/prop-types": "^15.7.5",
+    "babel-preset-solid": "^1.7.3",
+    "classnames": "^2.3.2",
+    "deepmerge": "^4.3.1",
+    "deepmerge-ts": "^5.1.0",
+    "material-ripple-effects": "^2.0.1",
+    "prop-types": "^15.8.1",
+    "solid-collapse": "^1.1.0",
+    "solid-js": "^1.7.4",
+    "solid-start": "^0.2.26",
+    "tailwind-merge": "^1.12.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.56",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "babel-preset-solid": "^1.6.10",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-solid": "^0.12.1",
+    "path": "^0.12.7",
+    "prettier": "^2.8.8",
+    "rollup": "3.21.3",
+    "rollup-preset-solid": "^2.0.1",
+    "ts-essentials": "^9.3.2",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6.0"
+  },
+  "keywords": [
+    "material tailwind",
+    "material tailwind solidjs",
+    "javascript",
+    "solidjs",
+    "next",
+    "remix",
+    "vite",
+    "gatsby",
+    "tailwind",
+    "tailwind components",
+    "tailwind elements",
+    "tailwind library",
+    "solidjs library",
+    "solidjs components library",
+    "tailwind sections",
+    "tailwind css",
+    "tailwind ui",
+    "tailwind css solidjs",
+    "tailwind css next",
+    "tailwind css remix",
+    "tailwind css vite",
+    "tailwind css gatsby"
+  ]
+}
