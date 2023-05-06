@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps } from "framer-motion";
 
 // utils
 import Ripple from "material-ripple-effects";
@@ -18,24 +18,24 @@ import { useTheme } from "../../context/theme";
 // types
 import type { NewAnimatePresenceProps } from "../../types/generic";
 import type {
-  variant,
+  animate,
+  children,
+  className,
   color,
+  dismissible,
   icon,
   show,
-  dismissible,
-  animate,
-  className,
-  children,
+  variant,
 } from "../../types/components/alert";
 import {
-  propTypesVariant,
+  propTypesAnimate,
+  propTypesChildren,
+  propTypesClassName,
   propTypesColor,
+  propTypesDismissible,
   propTypesIcon,
   propTypesShow,
-  propTypesDismissible,
-  propTypesAnimate,
-  propTypesClassName,
-  propTypesChildren,
+  propTypesVariant,
 } from "../../types/components/alert";
 
 export interface AlertProps extends Omit<MotionProps, "animate"> {
@@ -85,7 +85,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const appliedAnimation = merge(mainAnimation, animate);
 
     // 5. icon template
-    const iconTemplate = <div className="absolute top-4 left-4">{icon}</div>;
+    const iconTemplate = <div className="absolute left-4 top-4">{icon}</div>;
 
     // 6. Create an instance of AnimatePresence because of the types issue with the children
     const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
@@ -94,7 +94,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     return (
       <NewAnimatePresence>
         {show && (
-          <motion.div
+          <m.div
             {...rest}
             ref={ref}
             role="alert"
@@ -107,12 +107,12 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             {icon && iconTemplate}
             <div className={`${icon ? "ml-8" : ""} mr-12`}>{children}</div>
             {dismissible && (
-              <div className="absolute top-3 right-3 w-max rounded-lg hover:bg-white hover:bg-opacity-20 transition-all">
+              <div className="absolute right-3 top-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
                 <div
                   role="button"
                   onClick={dismissible.onClose}
                   onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
-                  className={`w-max ${dismissible.action ? "" : "p-1 rounded-lg"}`}
+                  className={`w-max ${dismissible.action ? "" : "rounded-lg p-1"}`}
                 >
                   {dismissible.action || (
                     <svg
@@ -129,7 +129,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 </div>
               </div>
             )}
-          </motion.div>
+          </m.div>
         )}
       </NewAnimatePresence>
     );

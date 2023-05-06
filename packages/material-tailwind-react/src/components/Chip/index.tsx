@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps } from "framer-motion";
 
 // utils
 import Ripple from "material-ripple-effects";
@@ -104,7 +104,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     return (
       <NewAnimatePresence>
         {show && (
-          <motion.div
+          <m.div
             {...rest}
             ref={ref}
             className={classes}
@@ -123,7 +123,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                   role="button"
                   onClick={dismissible.onClose}
                   onMouseDown={(e) => !dismissible.action && rippleEffect.create(e, "light")}
-                  className={`w-5 h-5 ${dismissible.action ? "" : "p-1"}`}
+                  className={`h-5 w-5 ${dismissible.action ? "" : "p-1"}`}
                 >
                   {dismissible.action || (
                     <svg
@@ -139,7 +139,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                 </div>
               </div>
             )}
-          </motion.div>
+          </m.div>
         )}
       </NewAnimatePresence>
     );

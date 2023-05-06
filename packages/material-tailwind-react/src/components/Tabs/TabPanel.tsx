@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { motion, AnimatePresence, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -47,7 +47,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     // 5. return
     return (
       <NewAnimatePresence exitBeforeEnter>
-        <motion.div
+        <m.div
           {...rest}
           ref={ref}
           role="tabpanel"
@@ -59,7 +59,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
           data-value={value}
         >
           {children}
-        </motion.div>
+        </m.div>
       </NewAnimatePresence>
     );
   },

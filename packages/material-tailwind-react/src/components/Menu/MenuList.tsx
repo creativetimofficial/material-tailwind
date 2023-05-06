@@ -7,7 +7,7 @@ import {
   FloatingFocusManager,
   useMergeRefs,
 } from "@floating-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -69,7 +69,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
 
     // 6. menu component
     const menuComponent = (
-      <motion.div
+      <m.div
         {...rest}
         ref={mergedRef}
         style={{
@@ -119,7 +119,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
               }),
             ),
         )}
-      </motion.div>
+      </m.div>
     );
 
     // 7. return
