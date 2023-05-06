@@ -19,7 +19,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion, useIsomorphicLayoutEffect } from "framer-motion";
+import { AnimatePresence, m, useIsomorphicLayoutEffect } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -350,7 +350,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // 8. select menu
     const selectMenu = (
       <FloatingFocusManager context={context} modal={false}>
-        <motion.ul
+        <m.ul
           {...getFloatingProps({
             ...menuProps,
             ref: refs.setFloating,
@@ -402,7 +402,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
                 id: `material-tailwind-select-${index}`,
               }),
           )}
-        </motion.ul>
+        </m.ul>
       </FloatingFocusManager>
     );
 
