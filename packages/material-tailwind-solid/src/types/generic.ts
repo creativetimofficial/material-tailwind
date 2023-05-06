@@ -54,7 +54,7 @@ export interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "chi
 }
 
 // javascript prop-types
-export const propTypesColors: string[] = [
+export const propTypesColors = [
   "blue-gray",
   "gray",
   "brown",
@@ -74,7 +74,7 @@ export const propTypesColors: string[] = [
   "purple",
   "pink",
   "red",
-];
+] as const;
 
 export const propTypesAnimation = PropTypes.shape({
   mount: PropTypes.instanceOf(Object),
