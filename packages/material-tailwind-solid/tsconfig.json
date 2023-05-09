@@ -1,6 +1,7 @@
 {
   "include": ["src"],
   "compilerOptions": {
+    "strict": true,
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,6 +12,11 @@
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
-    "strict": true
+    "declaration": true
+    // "emitDeclarationOnly": true
+    // "declarationMap": true
+    // "typeRoots": ["./node_modules/@types"],
+    // "resolveJsonModule": true,
+    // "baseUrl": "."
   }
 }
