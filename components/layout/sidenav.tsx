@@ -4,14 +4,17 @@ import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 
 // @material-tailwind/react components
-import { Typography } from "@material-tailwind/react";
+import { Typography, Chip } from "@material-tailwind/react";
 
 // prop-types
 interface Props {
   routes: {
     name: string;
     icon: string;
-    pages: string[];
+    pages: {
+      name: string;
+      label?: string;
+    }[];
   }[];
   type: "html" | "react" | "vue" | "angular" | "svelte";
   slug: string;
@@ -33,9 +36,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
     >
       <div
         className={`fixed top-0 left-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          mobileNav
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
+          mobileNav ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
       <div className="fixed h-screen w-80 overflow-y-scroll bg-white pb-48 pt-6 pl-6 lg:w-64 lg:bg-transparent lg:pt-0 lg:pl-0">
@@ -76,25 +77,34 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                 </Typography>
               </div>
               <ul className="space-y-1 py-2 pr-2 pl-9">
-                {pages.map((page, key) => (
+                {pages.map(({ name: pageName, label }, key) => (
                   <li key={key}>
-                    <Link href={`/docs/${type}/${page}`}>
+                    <Link href={`/docs/${type}/${pageName}`} className="flex items-center gap-2">
                       <Typography
                         color="gray"
-                        className={`before:content-[' '] relative list-item w-full py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
-                          page === slug
+                        className={`before:content-[' '] relative list-item w-max py-1 px-1 capitalize transition-colors before:absolute before:-left-[25px] before:top-2/4 before:h-1.5 before:w-1.5 before:-translate-y-2/4 before:rounded-full before:transition-colors hover:text-blue-gray-900 hover:before:bg-blue-gray-900 ${
+                          pageName === slug
                             ? "font-medium text-blue-gray-900 before:bg-blue-gray-900"
                             : "font-normal text-blue-gray-400 before:bg-blue-gray-300"
                         }`}
                         onClick={() => setMobileNav(false)}
                       >
-                        {page.includes("-")
-                          ? page
+                        {pageName.includes("-")
+                          ? pageName
                               .split("-")
                               .map((el) => (el === "css" ? "CSS" : el))
                               .join(" ")
-                          : page}
+                          : pageName}
                       </Typography>
+                      {label && (
+                        <Chip
+                          size="sm"
+                          value={label}
+                          variant="ghost"
+                          color={label === "new" ? "green" : "blue"}
+                          className="rounded-full capitalize"
+                        />
+                      )}
                     </Link>
                   </li>
                 ))}

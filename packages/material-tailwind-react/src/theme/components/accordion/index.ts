@@ -51,6 +51,7 @@ export const accordion: AccordionStylesType = {
           fontSmoothing: "antialiased",
           fontFamily: "font-sans",
           fontSize: "text-xl",
+          textAlign: "text-left",
           fontWeight: "font-semibold",
           lineHeight: "leading-snug",
           userSelect: "select-none",
@@ -59,8 +60,6 @@ export const accordion: AccordionStylesType = {
         },
         active: { color: "text-blue-gray-900" },
         icon: {
-          width: "w-5",
-          height: "h-5",
           ml: "ml-4",
         },
       },

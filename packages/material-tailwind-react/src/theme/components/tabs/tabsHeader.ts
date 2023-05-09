@@ -7,6 +7,8 @@ export interface TabsHeaderStylesType {
   };
   styles?: {
     base?: object;
+    horizontal?: object;
+    vertical?: object;
   };
 }
 
@@ -22,6 +24,12 @@ export const tabsHeader: TabsHeaderStylesType = {
       bgOpacity: "bg-opacity-60",
       borderRadius: "rounded-lg",
       p: "p-1",
+    },
+    horizontal: {
+      flexDirection: "flex-row",
+    },
+    vertical: {
+      flexDirection: "flex-col",
     },
   },
 };

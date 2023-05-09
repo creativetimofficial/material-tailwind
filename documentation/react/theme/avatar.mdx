@@ -44,13 +44,19 @@ interface AvatarStyleTypes {
     variant: string;
     size: string;
     className: string;
+    withBorder: boolean;
+    color: string;
   };
   valid: {
     variants: string[];
     sizes: string[];
+    colors: string[];
   };
   styles: {
-    base: object;
+    base: {
+      initial: object;
+      withBorder: object;
+    };
     sizes: {
       xs: object;
       sm: object;
@@ -60,9 +66,11 @@ interface AvatarStyleTypes {
       xxl: object;
     };
     variants: {
+      square: object;
       rounded: object;
       circular: object;
     };
+    borderColor: object;
   };
 }
 ```
@@ -87,7 +95,9 @@ const theme = {
   avatar: {
     styles: {
       base: {
-        position: "relative",
+        initial: {
+          position: "relative",
+        },
       },
     },
   },

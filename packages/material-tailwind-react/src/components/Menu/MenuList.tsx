@@ -1,12 +1,14 @@
 import React from "react";
 
-// framer-motion
+// @floating-ui
 import {
   FloatingPortal,
   FloatingOverlay,
   FloatingFocusManager,
   useMergeRefs,
 } from "@floating-ui/react";
+
+// framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 // utils
@@ -25,6 +27,7 @@ import { propTypesClassName, propTypesChildren } from "../../types/components/me
 
 export interface MenuListProps extends React.ComponentProps<"ul"> {
   className?: className;
+  dismissible?: boolean;
   children: children;
 }
 
@@ -51,6 +54,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
       activeIndex,
       tree,
       allowHover,
+      internalAllowHover,
       setActiveIndex,
       nested,
     } = useMenu();
@@ -108,11 +112,14 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                   listItemsRef.current[index] = node;
                 },
                 onClick(event) {
-                  child.props.onClick?.(event);
+                  if (child.props.onClick) {
+                    child.props.onClick?.(event);
+                  }
+
                   tree?.events.emit("click");
                 },
                 onMouseEnter() {
-                  if (allowHover && open) {
+                  if ((allowHover && open) || (internalAllowHover && open)) {
                     setActiveIndex(index);
                   }
                 },

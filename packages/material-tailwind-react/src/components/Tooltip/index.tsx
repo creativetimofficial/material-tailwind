@@ -57,7 +57,7 @@ import {
   propTypesChildren,
 } from "../../types/components/popover";
 
-export interface TooltipProps extends React.ComponentProps<"div"> {
+export interface TooltipProps extends React.ComponentProps<any> {
   open?: open;
   handler?: handler;
   content?: content;

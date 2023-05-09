@@ -14,6 +14,7 @@ import type {
   labelProps,
   className,
   shrink,
+  containerProps,
 } from "../../../types/components/input";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/input";
 
@@ -57,6 +58,7 @@ export interface TextareaStylesType {
     success?: success;
     resize?: resize;
     labelProps?: labelProps;
+    containerProps?: containerProps;
     shrink?: shrink;
     className?: className;
   };
@@ -88,7 +90,8 @@ export const textarea: TextareaStylesType = {
     error: false,
     success: false,
     resize: true,
-    labelProps: {},
+    labelProps: undefined,
+    containerProps: undefined,
     shrink: false,
     className: "",
   },

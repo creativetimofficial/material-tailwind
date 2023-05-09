@@ -16,39 +16,44 @@ import { TabsHeader, TabsHeaderProps } from "./TabsHeader";
 import { TabPanel, TabPanelProps } from "./TabPanel";
 
 // types
-import type { id, value, className, children } from "../../types/components/tabs";
+import type { id, value, className, orientation, children } from "../../types/components/tabs";
 import {
   propTypesId,
   propTypesValue,
   propTypesClassName,
+  propTypesOrientation,
   propTypesChildren,
 } from "../../types/components/tabs";
 
 export interface TabsProps extends React.ComponentProps<"div" | any> {
   id: id;
   value: value;
+  orientation?: orientation;
   className?: className;
   children: children;
 }
 
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ id, value, className, children, ...rest }, ref) => {
+  ({ id, value, className, orientation, children, ...rest }, ref) => {
     // 1. init
     const { tabs } = useTheme();
-    const {
-      defaultProps,
-      styles: { base },
-    } = tabs;
+    const { defaultProps, styles } = tabs;
 
     // 2. set default props
     className = className ?? defaultProps.className;
+    orientation = orientation ?? defaultProps.orientation;
 
     // 3. set styles
-    const tabsClasses = twMerge(classnames(objectsToString(base)), className);
+    const tabsClasses = twMerge(
+      classnames(objectsToString(styles.base), {
+        [styles[orientation] && objectsToString(styles[orientation])]: orientation,
+      }),
+      className,
+    );
 
     // 4. return
     return (
-      <TabsContextProvider id={id} value={value}>
+      <TabsContextProvider id={id} value={value} orientation={orientation}>
         <div {...rest} ref={ref} className={tabsClasses}>
           {children}
         </div>
@@ -61,6 +66,7 @@ Tabs.propTypes = {
   id: propTypesId,
   value: propTypesValue,
   className: propTypesClassName,
+  orientation: propTypesOrientation,
   children: propTypesChildren,
 };
 

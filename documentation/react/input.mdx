@@ -9,6 +9,7 @@ navigation:
     "input-colors",
     "input-validations",
     "input-with-icon",
+    "input-with-helper-text",
     "input-with-button",
     "input-with-dropdown",
     "disabled-input",
@@ -37,8 +38,8 @@ next: form
 
 Easily create <Code>Input</Code> with different statuses and sizes using our components based on Tailwind CSS and React.
 
-<Code>Input</Code> fields are an essential user interface design element, providing
-users with the means to enter non-standardized responses.
+<Code>Input</Code> fields are an essential user interface design element, providing users with the means
+to enter non-standardized responses.
 
 See below our <Code>Input</Code> component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
 
@@ -78,7 +79,7 @@ The <Code>Input</Code> component comes with 3 different variants that you can ch
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Variants() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 gap-6">
       <Input variant="static" label="Static" placeholder="Static" />
@@ -105,7 +106,7 @@ The <Code>Input</Code> component comes with 2 different sizes that you can chang
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Sizes() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 items-end gap-6">
       <Input size="md" label="Input Medium" />
@@ -120,7 +121,7 @@ export default function Sizes() {
 
 ## Input Colors
 
-The <Code>Input</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+The <Code>Input</Code> component comes with 21 different colors that you can change it using the <Code>color</Code> prop.
 
 <CodePreview id="input-colors" link="input#input-colors" component={
   <div className="flex w-72 flex-col gap-6">
@@ -133,7 +134,7 @@ The <Code>Input</Code> component comes with 19 different colors that you can cha
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Colors() {
+export default function Example() {
   return (
     <div className="flex w-72 flex-col gap-6">
       <Input color="blue" label="Input Blue" />
@@ -161,7 +162,7 @@ The <Code>Input</Code> component comes with error and success states for perform
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Validations() {
+export default function Example() {
   return (
     <div className="flex flex-col w-72 items-end gap-6">
       <Input label="Input Error" error />
@@ -174,7 +175,7 @@ export default function Validations() {
 
 ---
 
-## Input With icon
+## Input With Icon
 
 You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
@@ -186,10 +187,43 @@ You can add icon for the <Code>Input</Code> component using the <Code>icon</Code
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function InputWithIcon() {
+export default function Example() {
   return (
     <div className="w-72">
       <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Input With Helper Text
+
+Use the example below for an input with a helper text.
+
+<CodePreview id="input-with-helper-text" component={
+  <div className="w-[32rem]">
+    <Input type="password" label="Password" />
+    <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+      <SolidIcons.InformationCircleIcon className="w-4 h-4 -mt-px" />
+      Use at least 8 characters, one uppercase, one lowercase and one number.
+    </Typography>
+  </div>
+}>
+```jsx
+import { Input, Typography } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/solid"
+
+export default function Example() {
+  return (
+    <div className="w-[32rem]">
+      <Input type="password" label="Password" />
+      <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
+        <InformationCircleIcon className="w-4 h-4 -mt-px" />
+        Use at least 8 characters, one uppercase, one lowercase and one number.
+      </Typography>
     </div>
   );
 }
@@ -209,7 +243,7 @@ import { Input, Button } from "@material-tailwind/react";
 
 export default function Example() {
   const [email, setEmail] = React.useState("");
-  const onChange = ({ target }: any) => setEmail(target.value);
+  const onChange = ({ target }) => setEmail(target.value);
   
   return (
     <div className="relative flex w-full max-w-[24rem]">
@@ -239,7 +273,7 @@ export default function Example() {
 
 ---
 
-## Input With Dropdwon
+## Input With Dropdown
 
 Use the example below for an input containing a countries code dropdown.
 
@@ -315,7 +349,7 @@ export default function Example() {
     </div>
   );
 }
-````
+```
 </CodePreview>
 
 ---
@@ -332,15 +366,14 @@ An <Code>Input</Code> could be disabled as well, it will help you to prevent use
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function InputWithIcon() {
+export default function Example() {
   return (
     <div className="w-72">
       <Input label="Disabled" disabled />
     </div>
   );
 }
-````
-
+```
 </CodePreview>
 
 <span id="props" className="scroll-mt-48" />

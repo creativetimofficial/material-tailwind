@@ -26,7 +26,6 @@ import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
 import Code from "components/code";
-import Pre from "components/pre";
 import CodeSandbox from "components/code-sandbox";
 import StackBlitz from "components/stack-blitz";
 import Framework from "components/cards/framework";
@@ -44,15 +43,27 @@ import CountriesSelect from "components/docs/countries-select";
 import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
-import DialogWithForm from "components/docs/dialog-with-form";
-import DialogWithImage from "components/docs/dialog-with-image";
-import WalletConnectDialog from "components/docs/wallet-connect-dialog";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
-import StickyNavbar from "components/docs/sticky-navbar";
-import ComplexNavbar from "components/docs/complex-navbar";
-import SimpleFooter from "components/docs/simple-footer";
-import FooterWithLogo from "components/docs/footer-with-logo";
+import Warning from "components/warning";
+
+// new imports
+import * as BadgeExamples from "components/docs/react/badge";
+import * as DrawerExamples from "components/docs/react/drawer";
+import * as RatingExamples from "components/docs/react/rating";
+import * as SliderExamples from "components/docs/react/slider";
+import * as SpinnerExamples from "components/docs/react/spinner";
+import * as TimelineExamples from "components/docs/react/timeline";
+import * as PaginationExamples from "components/docs/react/pagination";
+import * as SpeedDialExamples from "components/docs/react/speed-dial";
+import * as StepperExamples from "components/docs/react/stepper";
+import * as NavbarExamples from "components/docs/react/navbar";
+import * as DialogExamples from "components/docs/react/dialog";
+import * as FooterExamples from "components/docs/react/footer";
+import * as ImgExamples from "components/docs/react/img";
+import * as VideoExamples from "components/docs/react/video";
+import * as SidebarExamples from "components/docs/react/sidebar";
+import * as TableExamples from "components/docs/react/table";
 import TransparentTabs from "components/docs/transparent-tabs";
 
 // @material-tailwind/react components
@@ -98,6 +109,13 @@ import {
   Textarea,
   Tooltip,
   Typography,
+  ButtonGroup,
+  Carousel,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -118,32 +136,10 @@ import initHtmlScripts from "public/material-tailwind-html-v2";
 
 const components = {
   h1: (props) => (
-    <Typography
-      as="h1"
-      variant="h3"
-      color="blue-gray"
-      className="!mb-4 lg:!text-4xl"
-      {...props}
-    />
+    <Typography as="h1" variant="h3" color="blue-gray" className="!mb-4 lg:!text-4xl" {...props} />
   ),
-  h2: (props) => (
-    <Typography
-      as="h2"
-      variant="h4"
-      color="blue-gray"
-      className="!mb-2"
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <Typography
-      as="h3"
-      variant="h5"
-      color="blue-gray"
-      className="!mb-2"
-      {...props}
-    />
-  ),
+  h2: (props) => <Typography as="h2" variant="h4" color="blue-gray" className="!mb-2" {...props} />,
+  h3: (props) => <Typography as="h3" variant="h5" color="blue-gray" className="!mb-2" {...props} />,
   h6: (props) => (
     <Typography
       as="p"
@@ -152,10 +148,8 @@ const components = {
       {...props}
     />
   ),
-  p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
-  ),
-  hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
+  p: (props) => <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />,
+  hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
   a: (props) => (
     <a
       className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
@@ -241,21 +235,40 @@ const components = {
   Tooltip,
   Typography,
   Link,
+  ButtonGroup,
+  Carousel,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
   CheckoutForm,
   InputWithButton,
   CountriesCodeInput,
-  DialogWithForm,
-  DialogWithImage,
-  WalletConnectDialog,
   ProfileMenu,
   AvatarStack,
-  StickyNavbar,
-  ComplexNavbar,
-  SimpleFooter,
-  FooterWithLogo,
+  Warning,
+
+  // new components
+  BadgeExamples,
+  DrawerExamples,
+  RatingExamples,
+  SliderExamples,
+  SpinnerExamples,
+  TimelineExamples,
+  PaginationExamples,
+  SpeedDialExamples,
+  StepperExamples,
+  NavbarExamples,
+  DialogExamples,
+  FooterExamples,
+  ImgExamples,
+  VideoExamples,
+  SidebarExamples,
+  TableExamples,
   TransparentTabs,
 };
 
@@ -298,9 +311,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && (
-                <DocsRelated routes={frontMatter.related} />
-              )}
+              {frontMatter.related && <DocsRelated routes={frontMatter.related} />}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
@@ -342,9 +353,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(
-    `documentation/${slug.join("/")}.mdx`
-  );
+  const markdownWithMeta = fs.readFileSync(`documentation/${slug.join("/")}.mdx`);
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
@@ -352,7 +361,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: false,
+      development: process.env.NODE_ENV === "development",
     },
   });
 

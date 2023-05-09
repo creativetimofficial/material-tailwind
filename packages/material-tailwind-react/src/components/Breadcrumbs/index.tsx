@@ -80,6 +80,6 @@ Breadcrumbs.propTypes = {
   children: propTypesChildren,
 };
 
-Breadcrumbs.displayName = "MaterialTailwind.Breacrumbs";
+Breadcrumbs.displayName = "MaterialTailwind.Breadcrumbs";
 
 export default Breadcrumbs;
