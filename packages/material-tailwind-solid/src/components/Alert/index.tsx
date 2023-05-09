@@ -36,7 +36,7 @@ export interface AlertProps {
 export const Alert: ParentComponent<AlertProps & JSX.HTMLAttributes<HTMLDivElement>> = (p) => {
   // ({ variant, color, icon, show, dismissible, animate, className, children, ...rest }, ref) => {
   // 1. init
-  const { alert } = useTheme();
+  const theme = useTheme();
   const [alertProps, props] = splitProps(p, [
     "variant",
     "color",
@@ -46,30 +46,28 @@ export const Alert: ParentComponent<AlertProps & JSX.HTMLAttributes<HTMLDivEleme
     "dismissible",
     "icon",
   ]);
-  // const { defaultProps, valid, styles } = alert;
+  // const { defaultProps, valid, styles } = theme().alert;
   // const { base, variants } = styles;
 
   const rippleEffect = new Ripple();
 
   // 2. set default props
-  const defaultProps = mergeProps(alert.defaultProps, alertProps);
-  // variant = variant ?? defaultProps.variant;
-  // color = color ?? defaultProps.color;
-  // className = className ?? defaultProps.className;
-  // animate = animate ?? defaultProps.animate;
-  // show = show ?? defaultProps.show;
+  const defaultProps = mergeProps(() => theme().alert.defaultProps, alertProps);
 
   // 3. set styles
 
   const alertVariant = createMemo(() => {
-    const variants = alert.styles.variants;
-    const variant = findMatch(alert.valid.variants, defaultProps.variant, "filled");
-    const color = findMatch(alert.valid.colors, defaultProps.color, "blue");
+    const variants = theme().alert.styles.variants;
+    const variant = findMatch(theme().alert.valid.variants, defaultProps.variant, "filled");
+    const color = findMatch(theme().alert.valid.colors, defaultProps.color, "blue");
 
     return objectsToString(variants[variant][color]);
   });
   const classes = createMemo(() =>
-    twMerge(classnames(objectsToString(alert.styles.base), alertVariant()), defaultProps.class),
+    twMerge(
+      classnames(objectsToString(theme().alert.styles.base), alertVariant()),
+      defaultProps.class,
+    ),
   );
 
   // 7. return

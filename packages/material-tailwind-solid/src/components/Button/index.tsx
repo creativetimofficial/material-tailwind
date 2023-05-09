@@ -35,9 +35,10 @@ export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTML
   props,
 ) => {
   // 1. init
-  const { button } = useTheme();
+  const theme = useTheme();
+
   // 2. set default props
-  const mergedProps = mergeProps(button.defaultProps, props);
+  const mergedProps = mergeProps(() => theme().button.defaultProps, props);
   const [defaultProps, rest] = splitProps(mergedProps, [
     "variant",
     "size",
@@ -50,23 +51,27 @@ export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTML
   const rippleEffect = createMemo(() => defaultProps.ripple !== undefined && new Ripple());
 
   // 4. set styles
-  const buttonBase = objectsToString(button.styles.base.initial);
+  const buttonBase = objectsToString(theme().button.styles.base.initial);
 
   const buttonVariant = createMemo(() => {
-    const fColor = findMatch(button.valid.colors, defaultProps.color, "blue");
-    const fVariant = findMatch(button.valid.variants, defaultProps.variant, "filled");
-    const variants = button.styles.variants;
-    return objectsToString(variants[fVariant][fColor]);
+    const fColor = findMatch(theme().button.valid.colors, defaultProps.color, "blue");
+
+    const fVariant = findMatch(theme().button.valid.variants, defaultProps.variant, "filled");
+    const variants = theme().button.styles.variants;
+    console.log({ fColor, themeColor: theme().button.defaultProps.color, props });
+    return objectsToString(variants[fVariant!][fColor!]);
   });
 
   const buttonSize = createMemo(() =>
-    objectsToString(button.styles.sizes[findMatch(button.valid.sizes, defaultProps.size, "md")]),
+    objectsToString(
+      theme().button.styles.sizes[findMatch(theme().button.valid.sizes, props.size!, "md")],
+    ),
   );
 
   const classes = createMemo(() =>
     twMerge(
       classnames(buttonBase, buttonSize(), buttonVariant(), {
-        [objectsToString(button.styles.base.fullWidth)]: defaultProps.fullWidth,
+        [objectsToString(theme().button.styles.base.fullWidth)]: defaultProps.fullWidth,
       }),
       props.class,
     ),

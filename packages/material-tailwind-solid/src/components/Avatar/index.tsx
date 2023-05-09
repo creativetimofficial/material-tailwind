@@ -17,38 +17,34 @@ export interface AvatarProps {
 }
 
 export const Avatar: Component<JSX.ImgHTMLAttributes<HTMLImageElement> & AvatarProps> = (props) => {
-  // ({ variant, size, className, ...rest }, ref) => {
   // 1. init
-  const { avatar } = useTheme();
+  const theme = useTheme();
   const [avatarProps, rest] = splitProps(props, ["variant", "size", "class"]);
-  // const { valid, defaultProps, styles } = avatar;
-  // const { base, variants, sizes } = styles;
-  const defaultProps = mergeProps(avatar.defaultProps, avatarProps);
 
-  // 2. set default props
-  // variant = variant ?? defaultProps.variant;
-  // size = size ?? defaultProps.size;
+  const defaultProps = mergeProps(() => theme().avatar.defaultProps, avatarProps);
 
   // 3. set styles
   const avatarVariant = createMemo(() =>
     objectsToString(
-      avatar.styles.variants[findMatch(avatar.valid.variants, defaultProps.variant, "rounded")],
+      theme().avatar.styles.variants[
+        findMatch(theme().avatar.valid.variants, defaultProps.variant, "rounded")
+      ],
     ),
   );
 
   const avatarSize = createMemo(() => {
-    const size = findMatch(avatar.valid.sizes, defaultProps.size, "md");
-    const styleSize = avatar.styles.sizes[size];
+    const size = findMatch(theme().avatar.valid.sizes, defaultProps.size, "md");
+    const styleSize = theme().avatar.styles.sizes[size];
     return objectsToString(styleSize);
   });
+
   const classes = createMemo(() =>
     twMerge(
-      classnames(objectsToString(avatar.styles.base), avatarVariant(), avatarSize()),
+      classnames(objectsToString(theme().avatar.styles.base), avatarVariant(), avatarSize()),
       defaultProps.class,
     ),
   );
 
-  createEffect(() => console.log(avatarVariant(), avatarSize(), classes()));
   // 4. return
   return <img {...rest} class={classes()} />;
 };

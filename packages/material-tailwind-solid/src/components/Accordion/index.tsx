@@ -27,25 +27,26 @@ export interface AccordionProps extends JSX.HTMLAttributes<HTMLDivElement> {
 
 const Accordion: ParentComponent<AccordionProps> = (p) => {
   // 1. init
-  const { accordion } = useTheme();
+  const theme = useTheme();
   const [contextProps, props] = splitProps(p, ["open", "icon", "animate", "disabled"]);
 
   // 2. set default props
-  const contextValue = mergeProps(accordion.defaultProps, contextProps);
+  const contextValue = mergeProps(() => theme().accordion.defaultProps, contextProps);
 
   // 3. set styles
   const accordionClasses = createMemo(() => {
     return twMerge(
-      classnames(objectsToString(accordion.styles.base.container), {
-        [objectsToString(accordion.styles.base.disabled)]: contextProps.disabled,
+      classnames(objectsToString(theme().accordion.styles.base.container), {
+        [objectsToString(theme().accordion.styles.base.disabled)]: contextProps.disabled,
       }),
+      theme().accordion.defaultProps?.class,
       props.class,
     );
   });
 
   // 5. return
   return (
-    //@ts-ignore icons are incompatible !?
+    //@ts-ignore type of icons are incompatible !?
     <AccordionContext.Provider value={() => contextValue}>
       <div {...props} class={accordionClasses()}>
         {props.children}
