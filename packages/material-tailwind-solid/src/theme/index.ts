@@ -1,8 +1,12 @@
 import accordion from "./components/accordion";
+import type { AccordionType } from "./components/accordion";
 import alert from "./components/alert";
+import type { AlertType } from "./components/alert";
 import avatar from "./components/avatar";
-// import breadcrumbs from "./components/breadcrumbs";
+import type { AvatarType } from "./components/avatar";
+import breadcrumbs, { BreadCrumbsType } from "./components/breadcrumbs";
 import button from "./components/button";
+import type { ButtonType } from "./components/button";
 // import card from "./components/card";
 // import cardBody from "./components/card/cardBody";
 // import cardFooter from "./components/card/cardFooter";
@@ -30,12 +34,21 @@ import button from "./components/button";
 // import textarea from "./components/textarea";
 // import tooltip from "./components/tooltip";
 // import typography from "./components/typography";\
+export type Theme = {
+  accordion: AccordionType;
+  alert: AlertType;
+  avatar: AvatarType;
+  button: ButtonType;
+  breadcrumbs: BreadCrumbsType;
+};
 
-const theme = {
+//Had to use any because of
+//  "The inferred type of this node exceeds the maximum length the compiler will serialize. An explicit type annotation is needed." TS7056
+const theme: Theme = {
   accordion,
   alert,
   avatar,
-  // breadcrumbs,
+  breadcrumbs,
   button,
   // card,
   // cardBody,
