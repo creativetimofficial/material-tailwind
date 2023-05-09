@@ -14,18 +14,18 @@ export const AccordionHeader: ParentComponent<JSX.ButtonHTMLAttributes<HTMLButto
 ) => {
   // 1. init
   const context = useAccordion();
-  const { accordion } = useTheme();
+  const theme = useTheme();
 
   // 2. set styles
-  const buttonStyles = createMemo(() =>
-    twMerge(
-      classnames(objectsToString(accordion.styles.base.header.initial), {
-        [objectsToString(accordion.styles.base.header.active)]: context().open,
+  const buttonStyles = createMemo(() => {
+    return twMerge(
+      classnames(objectsToString(theme().accordion.styles.base.header.initial), {
+        [objectsToString(theme().accordion.styles.base.header.active)]: context().open,
       }),
       props.class || "",
-    ),
-  );
-  const iconClasses = classnames(objectsToString(accordion.styles.base.header.icon));
+    );
+  });
+  const iconClasses = classnames(objectsToString(theme().accordion.styles.base.header.icon));
 
   // 3. return
   return (

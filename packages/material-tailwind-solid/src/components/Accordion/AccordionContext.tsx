@@ -4,7 +4,7 @@ import type { children, disabled, icon, open } from "../../types/components/acco
 import type { ParentComponent } from "solid-js";
 import { createContext, createEffect, useContext } from "solid-js";
 import type { Accessor } from "solid-js";
-import { animation } from "../../types/generic";
+import type { animation } from "../../types/generic";
 
 export interface AccordionContextType {
   open: open;
