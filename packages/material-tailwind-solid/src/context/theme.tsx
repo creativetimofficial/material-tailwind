@@ -1,27 +1,24 @@
-import { deepmerge } from "deepmerge-ts";
-import theme from "../theme/index";
-import combineMerge from "../utils/combineMerge";
-import { createContext, createMemo, useContext } from "solid-js";
+import { createContext, useContext, createMemo } from "solid-js";
 import type { ParentComponent } from "solid-js";
-export type Theme = typeof theme;
-const MaterialTailwindTheme = createContext(theme);
+import { deepmerge } from "deepmerge-ts";
+import defaultTheme from "../theme/index";
+import type { Theme } from "../theme/index";
+import type { DeepPartial } from "ts-essentials";
+
+const MaterialTailwindTheme = createContext(() => defaultTheme);
 
 const ThemeProvider: ParentComponent<IThemeProvider> = (props) => {
-  const mergedValue = createMemo(() =>
-    props.value ? deepmerge(theme, props.value, { arrayMerge: combineMerge }) : theme,
-  );
+  const theme = createMemo(() => deepmerge(defaultTheme, props.defaultValue) as Theme);
 
   return (
-    <MaterialTailwindTheme.Provider value={mergedValue()}>
-      {props.children}
-    </MaterialTailwindTheme.Provider>
+    <MaterialTailwindTheme.Provider value={theme}>{props.children}</MaterialTailwindTheme.Provider>
   );
 };
 
 const useTheme = () => useContext(MaterialTailwindTheme);
 
 interface IThemeProvider {
-  value?: typeof theme;
+  defaultValue?: DeepPartial<Theme>;
 }
 
 export { MaterialTailwindTheme, ThemeProvider, useTheme };
