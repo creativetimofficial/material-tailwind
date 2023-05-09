@@ -40,7 +40,9 @@ export interface ButtonStyleTypes {
   };
 }
 
-export const button: DeepRequired<ButtonStyleTypes> = {
+export type ButtonType = DeepRequired<ButtonStyleTypes>;
+
+export const button: ButtonType = {
   defaultProps: {
     variant: "filled",
     size: "md",

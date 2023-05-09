@@ -7,6 +7,7 @@ import type { animate, dismissible, icon, show, variant } from "../../../types/c
 import { variants } from "../../../types/components/alert";
 import type { colors } from "../../../types/generic";
 import { color } from "../../../types/generic";
+import { type } from "os";
 
 export interface AlertStylesType {
   defaultProps?: {
@@ -15,6 +16,7 @@ export interface AlertStylesType {
     icon?: icon;
     show?: show;
     dismissible?: dismissible;
+    class?: string;
     animate?: animate;
   };
   valid?: {
@@ -29,8 +31,7 @@ export interface AlertStylesType {
     };
   };
 }
-
-export const alert: DeepRequired<
+export type AlertType = DeepRequired<
   DeepOmit<
     AlertStylesType,
     { defaultProps: { animate: { initial: never; unmount: never; mount: never } } }
@@ -39,12 +40,14 @@ export const alert: DeepRequired<
   DeepPick<
     AlertStylesType,
     { defaultProps: { animate: { initial: true; unmount: true; mount: true } } }
-  > = {
+  >;
+export const alert: AlertType = {
   defaultProps: {
     variant: "filled",
     color: "blue",
     icon: "",
     show: true,
+    class: "",
     dismissible: {
       action: "",
       onClose: () => undefined,

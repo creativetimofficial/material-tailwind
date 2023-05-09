@@ -7,6 +7,7 @@ export interface AvatarStyleTypes {
   defaultProps?: {
     variant?: variant;
     size?: size;
+    class?: string;
   };
   valid?: {
     variants?: variant[];
@@ -28,11 +29,13 @@ export interface AvatarStyleTypes {
     };
   };
 }
+export type AvatarType = DeepRequired<AvatarStyleTypes>;
 
-export const avatar: DeepRequired<AvatarStyleTypes> = {
+export const avatar: AvatarType = {
   defaultProps: {
     variant: "rounded",
     size: "md",
+    class: "",
   },
   valid: {
     variants: [...propTypesVariant],

@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
-import type { AnimatePresenceProps } from "framer-motion";
 import type { VariantDefinition } from "@motionone/solid/dist/types/types";
+import PropTypes from "prop-types";
 
 export const color = [
   "blue-gray",
@@ -48,10 +47,6 @@ export type offsetType =
       crossAxis?: number;
       alignmentAxis?: number | null;
     };
-
-export interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "children"> {
-  children: React.ReactNode;
-}
 
 // javascript prop-types
 export const propTypesColors = [

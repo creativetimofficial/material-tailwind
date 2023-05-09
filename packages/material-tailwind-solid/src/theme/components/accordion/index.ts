@@ -7,6 +7,7 @@ export interface AccordionStylesType {
     icon?: icon;
     animate?: animate;
     disabled?: disabled;
+    class?: "";
   };
   styles?: {
     base?: {
@@ -21,8 +22,7 @@ export interface AccordionStylesType {
     };
   };
 }
-
-export const accordion: DeepRequired<
+export type AccordionType = DeepRequired<
   DeepOmit<
     AccordionStylesType,
     { defaultProps: { animate: { initial: never; unmount: never; mount: never } } }
@@ -31,9 +31,12 @@ export const accordion: DeepRequired<
   DeepPick<
     AccordionStylesType,
     { defaultProps: { animate: { initial: true; unmount: true; mount: true } } }
-  > = {
+  >;
+export const accordion: AccordionType = {
+  // export const accordion:AccordionStylesType = {
   defaultProps: {
     icon: "", //maybe reset to undefined
+    class: "",
     animate: {
       initial: {
         height: "0px",
