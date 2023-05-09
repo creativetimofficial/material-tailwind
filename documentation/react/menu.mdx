@@ -8,6 +8,10 @@ navigation:
     "menu-placement",
     "custom-menu-animation",
     "menu-with-custom-list",
+    "menu-with-divider",
+    "menu-with-checkboxes",
+    "menu-with-search-input",
+    "menu-with-scrolling-content",
     "notifications-menu",
     "profile-menu",
     "props",
@@ -44,7 +48,7 @@ See below our <Code>Menu</Code> example that you can use in your Tailwind CSS an
 <CodePreview id="menu" link="menu#menu" component={
   <Menu>
     <MenuHandler>
-      <Button variant="gradient">Open Menu</Button>
+      <Button>Open Menu</Button>
     </MenuHandler>
     <MenuList>
       <MenuItem>Menu Item 1</MenuItem>
@@ -66,7 +70,7 @@ export default function Example() {
   return (
     <Menu>
       <MenuHandler>
-        <Button variant="gradient">Open Menu</Button>
+        <Button>Open Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
@@ -88,7 +92,7 @@ You can nest one <Code>Menu</Code> inside another one very easily.
 <CodePreview id="nested-menu" link="menu#nested-menu" component={
   <Menu>
     <MenuHandler>
-      <Button variant="gradient">Open Nested Menu</Button>
+      <Button>Open Nested Menu</Button>
     </MenuHandler>
     <MenuList>
       <MenuItem>Menu Item 1</MenuItem>
@@ -116,11 +120,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function NestedMenu() {
+export default function Example() {
   return (
     <Menu>
       <MenuHandler>
-        <Button variant="gradient">Open Nested Menu</Button>
+        <Button>Open Nested Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
@@ -154,7 +158,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
     <div className="mb-3 flex gap-3">
       <Menu placement="top">
         <MenuHandler>
-          <Button variant="gradient">Top</Button>
+          <Button>Top</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -164,7 +168,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="top-start">
         <MenuHandler>
-          <Button variant="gradient">Top Start</Button>
+          <Button>Top Start</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -174,7 +178,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="top-end">
         <MenuHandler>
-          <Button variant="gradient">Top End</Button>
+          <Button>Top End</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -186,7 +190,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
     <div className="mb-3 flex gap-3">
       <Menu placement="right">
         <MenuHandler>
-          <Button variant="gradient">Right</Button>
+          <Button>Right</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -196,7 +200,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="right-start">
         <MenuHandler>
-          <Button variant="gradient">Right Start</Button>
+          <Button>Right Start</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -206,7 +210,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="right-end">
         <MenuHandler>
-          <Button variant="gradient">Right End</Button>
+          <Button>Right End</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -218,7 +222,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
     <div className="mb-3 flex gap-3">
       <Menu placement="bottom">
         <MenuHandler>
-          <Button variant="gradient">Bottom</Button>
+          <Button>Bottom</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -228,7 +232,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="bottom-start">
         <MenuHandler>
-          <Button variant="gradient">Bottom Start</Button>
+          <Button>Bottom Start</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -238,7 +242,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="bottom-end">
         <MenuHandler>
-          <Button variant="gradient">Bottom End</Button>
+          <Button>Bottom End</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -250,7 +254,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
     <div className="flex gap-3">
       <Menu placement="left">
         <MenuHandler>
-          <Button variant="gradient">Left</Button>
+          <Button>Left</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -260,7 +264,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="left-start">
         <MenuHandler>
-          <Button variant="gradient">Left Start</Button>
+          <Button>Left Start</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -270,7 +274,7 @@ You can change the position of the <Code>Menu</Code> component using the <Code>p
       </Menu>
       <Menu placement="left-end">
         <MenuHandler>
-          <Button variant="gradient">Left End</Button>
+          <Button>Left End</Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Menu Item 1</MenuItem>
@@ -297,7 +301,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <MenuHandler>
-            <Button variant="gradient">Top</Button>
+            <Button>Top</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -307,7 +311,7 @@ export default function Example() {
         </Menu>
         <Menu placement="top-start">
           <MenuHandler>
-            <Button variant="gradient">Top Start</Button>
+            <Button>Top Start</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -317,7 +321,7 @@ export default function Example() {
         </Menu>
         <Menu placement="top-end">
           <MenuHandler>
-            <Button variant="gradient">Top End</Button>
+            <Button>Top End</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -329,7 +333,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Menu placement="right">
           <MenuHandler>
-            <Button variant="gradient">Right</Button>
+            <Button>Right</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -339,7 +343,7 @@ export default function Example() {
         </Menu>
         <Menu placement="right-start">
           <MenuHandler>
-            <Button variant="gradient">Right Start</Button>
+            <Button>Right Start</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -349,7 +353,7 @@ export default function Example() {
         </Menu>
         <Menu placement="right-end">
           <MenuHandler>
-            <Button variant="gradient">Right End</Button>
+            <Button>Right End</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -361,7 +365,7 @@ export default function Example() {
       <div className="mb-3 flex gap-3">
         <Menu placement="bottom">
           <MenuHandler>
-            <Button variant="gradient">Bottom</Button>
+            <Button>Bottom</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -371,7 +375,7 @@ export default function Example() {
         </Menu>
         <Menu placement="bottom-start">
           <MenuHandler>
-            <Button variant="gradient">Bottom Start</Button>
+            <Button>Bottom Start</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -381,7 +385,7 @@ export default function Example() {
         </Menu>
         <Menu placement="bottom-end">
           <MenuHandler>
-            <Button variant="gradient">Bottom End</Button>
+            <Button>Bottom End</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -393,7 +397,7 @@ export default function Example() {
       <div className="flex gap-3">
         <Menu placement="left">
           <MenuHandler>
-            <Button variant="gradient">Left</Button>
+            <Button>Left</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -403,7 +407,7 @@ export default function Example() {
         </Menu>
         <Menu placement="left-start">
           <MenuHandler>
-            <Button variant="gradient">Left Start</Button>
+            <Button>Left Start</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -413,7 +417,7 @@ export default function Example() {
         </Menu>
         <Menu placement="left-end">
           <MenuHandler>
-            <Button variant="gradient">Left End</Button>
+            <Button>Left End</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -442,7 +446,7 @@ You can modify the open/close state animation for <Code>Menu</Code> component us
     }}
   >
     <MenuHandler>
-      <Button variant="gradient">Open Menu</Button>
+      <Button>Open Menu</Button>
     </MenuHandler>
     <MenuList>
       <MenuItem>Menu Item 1</MenuItem>
@@ -469,7 +473,7 @@ export default function Example() {
       }}
     >
       <MenuHandler>
-        <Button variant="gradient">Open Menu</Button>
+        <Button>Open Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>
@@ -486,7 +490,9 @@ export default function Example() {
 
 ## Menu with Custom List
 
-<CodePreview id="menu-with-custom-list" className="mt-4" component={
+Use this menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
+
+<CodePreview id="menu-with-custom-list" component={
   <State initialState={{ open: false }}>
     <Observe>
       {({ setState, open }) => (
@@ -655,9 +661,333 @@ export default function Day09() {
 
 ---
 
+## Menu with Divider
+
+This example can be used if you want to group the menu items, improving the readability.
+
+<CodePreview id="menu-with-divider" component={
+  <Menu>
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+      <span className="!mt-3 !mb-3 border-b border-blue-gray-50 block" />
+      <MenuItem>Menu Item 4</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <hr className="my-3" />
+        <MenuItem>Menu Item 4</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Checkboxes
+
+Use this simple example of menu with checkboxes if you want to allow users to select multiple options from a list.
+
+<CodePreview id="menu-with-checkboxes" component={
+  <Menu
+    dismiss={{
+      itemPress: false,
+    }}
+  >
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList>
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-1"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-1"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 1
+        </label>
+      </MenuItem>
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-2"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-2"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 2
+        </label>
+      </MenuItem>
+      <MenuItem className="p-0">
+        <label
+          htmlFor="item-3"
+          className="flex cursor-pointer items-center gap-2 p-2"
+        >
+          <Checkbox
+            ripple={false}
+            id="item-3"
+            containerProps={{ className: "p-0" }}
+            className="hover:before:content-none"
+          />
+          Menu Item 3
+        </label>
+      </MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-1"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-1"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 1
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-2"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-2"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 2
+          </label>
+        </MenuItem>
+        <MenuItem className="p-0">
+          <label
+            htmlFor="item-3"
+            className="flex cursor-pointer items-center gap-2 p-2"
+          >
+            <Checkbox
+              ripple={false}
+              id="item-3"
+              containerProps={{ className: "p-0" }}
+              className="hover:before:content-none"
+            />
+            Menu Item 3
+          </label>
+        </MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Search Input
+
+This example is perfect if you have more options. Use it to let the users find easier what they are looking for, without scrolling too much.
+
+<CodePreview id="menu-with-search-input" component={
+  <Menu
+    dismiss={{
+      itemPress: false,
+    }}
+  >
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList className="max-h-96">
+      <Input
+        label="Search"
+        containerProps={{
+          className: "mb-4",
+        }}
+      />
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+  Input,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu
+      dismiss={{
+        itemPress: false,
+      }}
+    >
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList>
+        <Input
+          label="Search"
+          containerProps={{
+            className: "mb-4",
+          }}
+        />
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Menu with Scrolling Content
+
+You can use this example if you have more options in the list, so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
+
+<CodePreview id="menu-with-scrolling-content" component={
+  <Menu>
+    <MenuHandler>
+      <Button>Open Menu</Button>
+    </MenuHandler>
+    <MenuList className="max-h-72">
+      <MenuItem>Menu Item 1</MenuItem>
+      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Menu Item 3</MenuItem>
+      <MenuItem>Menu Item 4</MenuItem>
+      <MenuItem>Menu Item 5</MenuItem>
+      <MenuItem>Menu Item 6</MenuItem>
+      <MenuItem>Menu Item 7</MenuItem>
+      <MenuItem>Menu Item 8</MenuItem>
+      <MenuItem>Menu Item 9</MenuItem>
+      <MenuItem>Menu Item 10</MenuItem>
+      <MenuItem>Menu Item 11</MenuItem>
+      <MenuItem>Menu Item 12</MenuItem>
+      <MenuItem>Menu Item 13</MenuItem>
+      <MenuItem>Menu Item 14</MenuItem>
+      <MenuItem>Menu Item 15</MenuItem>
+      <MenuItem>Menu Item 16</MenuItem>
+      <MenuItem>Menu Item 17</MenuItem>
+      <MenuItem>Menu Item 18</MenuItem>
+      <MenuItem>Menu Item 19</MenuItem>
+      <MenuItem>Menu Item 20</MenuItem>
+    </MenuList>
+  </Menu>
+}>
+```jsx
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Menu>
+      <MenuHandler>
+        <Button>Open Menu</Button>
+      </MenuHandler>
+      <MenuList className="max-h-72">
+        <MenuItem>Menu Item 1</MenuItem>
+        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem>Menu Item 3</MenuItem>
+        <MenuItem>Menu Item 4</MenuItem>
+        <MenuItem>Menu Item 5</MenuItem>
+        <MenuItem>Menu Item 6</MenuItem>
+        <MenuItem>Menu Item 7</MenuItem>
+        <MenuItem>Menu Item 8</MenuItem>
+        <MenuItem>Menu Item 9</MenuItem>
+        <MenuItem>Menu Item 10</MenuItem>
+        <MenuItem>Menu Item 11</MenuItem>
+        <MenuItem>Menu Item 12</MenuItem>
+        <MenuItem>Menu Item 13</MenuItem>
+        <MenuItem>Menu Item 14</MenuItem>
+        <MenuItem>Menu Item 15</MenuItem>
+        <MenuItem>Menu Item 16</MenuItem>
+        <MenuItem>Menu Item 17</MenuItem>
+        <MenuItem>Menu Item 18</MenuItem>
+        <MenuItem>Menu Item 19</MenuItem>
+        <MenuItem>Menu Item 20</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
 ## Notifications Menu
 
-<CodePreview id="notifications-menu" link="menu#notifications-menu" className="mt-4" component={
+Add this menu if you want to group all the notifications in one place, avoiding a cluttered screen.
+
+<CodePreview id="notifications-menu" link="menu#notifications-menu" component={
   <Menu>
     <MenuHandler>
       <IconButton variant="text">
@@ -817,7 +1147,9 @@ export default function Day10() {
 
 ## Profile Menu
 
-<CodePreview id="profile-menu" link="menu#profile-menu" className="mt-4" component={<ProfileMenu />}>
+Are you creating a web app or a mobile app? This component is a must!
+
+<CodePreview id="profile-menu" link="menu#profile-menu" component={<ProfileMenu />}>
 ```jsx
 import {
   Menu,

@@ -14,6 +14,7 @@ import { useTheme } from "../../context/theme";
 import type {
   variant,
   color,
+  size,
   value,
   label,
   barProps,
@@ -22,6 +23,7 @@ import type {
 import {
   propTypesVariant,
   propTypesColor,
+  propTypesSize,
   propTypesValue,
   propTypesLabel,
   propTypesBarProps,
@@ -31,6 +33,7 @@ import {
 export interface ProgressProps extends React.ComponentProps<"div"> {
   variant?: variant;
   color?: color;
+  size?: size;
   value?: value;
   label?: label;
   barProps?: barProps;
@@ -38,15 +41,16 @@ export interface ProgressProps extends React.ComponentProps<"div"> {
 }
 
 export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
-  ({ variant, color, value, label, className, barProps, ...rest }, ref) => {
+  ({ variant, color, size, value, label, className, barProps, ...rest }, ref) => {
     // 1. init
     const { progress } = useTheme();
     const { defaultProps, valid, styles } = progress;
-    const { base, variants } = styles;
+    const { base, variants, sizes } = styles;
 
     // 2. set default props
     variant = variant ?? defaultProps.variant;
     color = color ?? defaultProps.color;
+    size = size ?? defaultProps.size;
     label = label ?? defaultProps.label;
     className = className ?? defaultProps.className;
     barProps = barProps ?? defaultProps.barProps;
@@ -57,9 +61,22 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
         findMatch(valid.colors, color, "blue")
       ],
     );
-    const progressContainer = objectsToString(base.container.initial);
-    const progressWithLabel = objectsToString(base.container.withLabel);
-    const progressBar = objectsToString(base.bar);
+    const progressContainerSize = objectsToString(
+      sizes[findMatch(valid.sizes, size, "md")]["container"]["initial"],
+    );
+    const progressContainer = classnames(
+      objectsToString(base.container.initial),
+      progressContainerSize,
+    );
+    const progressWithLabelSize = objectsToString(
+      sizes[findMatch(valid.sizes, size, "md")]["container"]["withLabel"],
+    );
+    const progressWithLabel = classnames(
+      objectsToString(base.container.withLabel),
+      progressWithLabelSize,
+    );
+    const progressBarSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]["bar"]);
+    const progressBar = classnames(objectsToString(base.bar), progressBarSize);
     const containerClasses = twMerge(
       classnames(progressContainer, { [progressWithLabel]: label }),
       className,
@@ -80,6 +97,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
 Progress.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
   color: PropTypes.oneOf(propTypesColor),
+  size: PropTypes.oneOf(propTypesSize),
   value: propTypesValue,
   label: propTypesLabel,
   barProps: propTypesBarProps,

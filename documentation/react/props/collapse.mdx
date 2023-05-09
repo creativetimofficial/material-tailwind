@@ -1,0 +1,64 @@
+---
+title: Tailwind CSS Collapse Props - Material Tailwind
+description: Learn more about props definition and types of collapse component.
+navigation:
+  [
+    "collapse-props",
+    "types-animate",
+    "examples",
+    "theme",
+  ]
+github: props/collapse
+related:
+  [
+    {
+      title: "Examples",
+      route: "collapse",
+      description: "Checkout different examples for collapse component.",
+    },
+    {
+      title: "Theme",
+      route: "theme/collapse",
+      description: "Learn how to customize the theme and styles for collapse component.",
+    },
+  ]
+---
+
+# Tailwind CSS Collapse - Props
+
+<span id="collapse-props" className="scroll-mt-48" />
+The following props are available for collapse component. These are the custom props
+that we've added for the collapse component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                                     | Default                                |
+| ----------- | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | If <Code>true</Code> the collapse will expand | No default value it's a required prop.                     |
+| `animate`   | [Animate](#types-animate) | Change collapse animation                     | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for collapse             | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for collapse                      | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CollapseProps } from "@material-tailwind/react";
+```
+
+---
+
+## Types - Animate
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+<span id="examples" className="scroll-mt-48" />
+<span id="theme" className="scroll-mt-48" />

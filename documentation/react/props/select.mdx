@@ -34,7 +34,7 @@ related:
 
 <span id="select-props" className="scroll-mt-48" />
 The following props are available for select component. These are the custom props
-that come with we've added for the select component and you can use all the other
+that we've added for the select component and you can use all the other
 native props as well.
 
 | Attribute    | Type                      | Description                                     | Default                                |
@@ -75,7 +75,7 @@ import type { SelectProps } from "@material-tailwind/react";
 
 <span id="select-option-props" className="scroll-mt-48" />
 The following props are available for select option component. These are the custom
-props that come with we've added for the select option component and you can use
+props that we've added for the select option component and you can use
 all the other native props as well.
 
 | Attribute   | Type                 | Description                                                           | Default                                |
@@ -167,13 +167,18 @@ type offset =
 <span id="types-dismiss" className="scroll-mt-48" />
 
 ```ts
-type dismiss = {
+type dismissType = {
   enabled?: boolean;
   escapeKey?: boolean;
-  referencePointerDown?: boolean;
-  outsidePointerDown?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
   ancestorScroll?: boolean;
-  bubbles?: boolean;
+  bubbles?: boolean | {
+      escapeKey?: boolean;
+      outsidePress?: boolean;
+  };
 };
 ```
 

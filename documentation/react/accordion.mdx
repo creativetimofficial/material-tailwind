@@ -4,8 +4,10 @@ description: Customise your web projects with our easy-to-use accordion componen
 navigation:
   [
     "accordion",
+    "accordion-always-open",
     "custom-accordion-icon",
     "custom-accordion-animation",
+    "accordion-with-custom-styles",
     "disabled-accordion",
     "props",
     "theme",
@@ -139,6 +141,120 @@ export default function Example() {
           We&apos;re constantly growing. We&apos;re constantly making mistakes.
           We&apos;re constantly trying to express ourselves and actualize our
           dreams.
+        </AccordionBody>
+      </Accordion>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Accordion Always Open
+
+You can make an <Code>Accordion</Code> component to be always open and doesn't close when it's next or previous <Code>Accordion</Code> component opened using a separate state.
+
+<CodePreview id="accordion-always-open" component={
+  <State initialState={{ active: 0, alwaysOpen: true }}>
+    <Observe>
+      {({ setState, active, alwaysOpen }) => (
+        <>
+          <Accordion open={alwaysOpen}>
+            <AccordionHeader
+              onClick={() => setState((s) => ({ alwaysOpen: !alwaysOpen }))}
+            >
+              What is Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={active === 1}>
+            <AccordionHeader
+              onClick={() =>
+                setState((s) => ({ active: active === 1 ? 0 : 1 }))
+              }
+            >
+              How to use Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={active === 2}>
+            <AccordionHeader
+              onClick={() =>
+                setState((s) => ({ active: active === 2 ? 0 : 2 }))
+              }
+            >
+              What can I do with Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(0);
+  const [alwaysOpen, setAlwaysOpen] = useState(true);
+
+  const handleOpen = (value) => {
+    setOpen(open === value ? 0 : value);
+  };
+
+  const handleAlwaysOpen = () => {
+    setOpen((cur) => !cur);
+  };
+
+  return (
+    <Fragment>
+      <Accordion open={alwaysOpen}>
+        <AccordionHeader onClick={handleAlwaysOpen}>
+          What is Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 1}>
+        <AccordionHeader onClick={() => handleOpen(1)}>
+          How to use Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={open === 2}>
+        <AccordionHeader onClick={() => handleOpen(2)}>
+          What can I do with Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
     </Fragment>
@@ -481,6 +597,150 @@ export default function Example() {
           What can I do with Material Tailwind?
         </AccordionHeader>
         <AccordionBody>
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Accordion with Custom Styles
+
+You can use tailwind css classes to add custom styles to the <Code>Accordion</Code> component.
+
+<CodePreview id="accordion-with-custom-styles" component={
+  <State initialState={{ active: 1 }}>
+    <Observe>
+      {({ setState, active }) => (
+        <>
+          <Accordion open={active === 1} className="border border-blue-gray-100 px-4 rounded-lg mb-2">
+            <AccordionHeader
+              onClick={() =>
+                setState((s) => ({ active: active === 1 ? 0 : 1 }))
+              }
+              className={`border-b-0 transition-colors ${active === 1 ? "text-blue-500 hover:!text-blue-700" : ""}`}
+            >
+              What is Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody className="text-base font-normal pt-0">
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={active === 2} className="border border-blue-gray-100 px-4 rounded-lg mb-2">
+            <AccordionHeader
+              onClick={() =>
+                setState((s) => ({ active: active === 2 ? 0 : 2 }))
+              }
+             className={`border-b-0 transition-colors ${active === 2 ? "text-blue-500 hover:!text-blue-700" : ""}`}
+            >
+              How to use Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody className="text-base font-normal pt-0">
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={active === 3} className="border border-blue-gray-100 px-4 rounded-lg">
+            <AccordionHeader
+              onClick={() =>
+                setState((s) => ({ active: active === 3 ? 0 : 3 }))
+              }
+             className={`border-b-0 transition-colors ${active === 3 ? "text-blue-500 hover:!text-blue-700" : ""}`}
+            >
+              What can I do with Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody className="text-base font-normal pt-0">
+              We&apos;re not always in the position that we want to be at.
+              We&apos;re constantly growing. We&apos;re constantly making
+              mistakes. We&apos;re constantly trying to express ourselves and
+              actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [open, setOpen] = useState(1);
+
+  const handleOpen = (value) => {
+    setOpen(open === value ? 0 : value);
+  };
+
+  return (
+    <Fragment>
+      <Accordion
+        open={open === 1}
+        className="border border-blue-gray-100 px-4 rounded-lg mb-2"
+      >
+        <AccordionHeader
+          onClick={() => handleOpen(1)}
+          className={`border-b-0 transition-colors ${
+            active === 1 ? "text-blue-500 hover:!text-blue-700" : ""
+          }`}
+        >
+          What is Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody className="text-base font-normal pt-0">
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion
+        open={open === 2}
+        className="border border-blue-gray-100 px-4 rounded-lg mb-2"
+      >
+        <AccordionHeader
+          onClick={() => handleOpen(2)}
+          className={`border-b-0 transition-colors ${
+            active === 2 ? "text-blue-500 hover:!text-blue-700" : ""
+          }`}
+        >
+          How to use Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody className="text-base font-normal pt-0">
+          We&apos;re not always in the position that we want to be at.
+          We&apos;re constantly growing. We&apos;re constantly making mistakes.
+          We&apos;re constantly trying to express ourselves and actualize our
+          dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion
+        open={open === 3}
+        className="border border-blue-gray-100 px-4 rounded-lg"
+      >
+        <AccordionHeader
+          onClick={() => handleOpen(3)}
+          className={`border-b-0 transition-colors ${
+            active === 3 ? "text-blue-500 hover:!text-blue-700" : ""
+          }`}
+        >
+          What can I do with Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody className="text-base font-normal pt-0">
           We&apos;re not always in the position that we want to be at.
           We&apos;re constantly growing. We&apos;re constantly making mistakes.
           We&apos;re constantly trying to express ourselves and actualize our

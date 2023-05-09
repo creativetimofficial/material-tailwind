@@ -55,6 +55,7 @@ import type {
   disabled,
   name,
   children,
+  containerProps,
 } from "../../types/components/select";
 import {
   propTypesVariant,
@@ -77,6 +78,7 @@ import {
   propTypesDisabled,
   propTypesName,
   propTypesChildren,
+  propTypesContainerProps,
 } from "../../types/components/select";
 
 // select components
@@ -103,6 +105,7 @@ export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" |
   disabled?: disabled;
   name?: name;
   children: children;
+  containerProps?: containerProps;
 }
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(
@@ -128,6 +131,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       disabled,
       name,
       children,
+      containerProps,
       ...rest
     },
     ref,
@@ -154,6 +158,8 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     animate = animate ?? defaultProps.animate;
     labelProps = labelProps ?? defaultProps.labelProps;
     menuProps = menuProps ?? defaultProps.menuProps;
+    containerProps =
+      merge(containerProps, defaultProps?.containerProps || {}) ?? defaultProps.containerProps;
     className = className ?? defaultProps.className;
 
     // 3. @floating-ui
@@ -279,6 +285,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     const containerClasses = classnames(
       objectsToString(base.container),
       objectsToString(selectSize.container),
+      containerProps?.className,
     );
     const selectClasses = twMerge(
       classnames(
@@ -409,7 +416,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // 9. return
     return (
       <SelectContextProvider value={contextValue}>
-        <div ref={ref} className={containerClasses}>
+        <div {...containerProps} ref={ref} className={containerClasses}>
           <button
             type="button"
             {...getReferenceProps({
@@ -482,6 +489,7 @@ Select.propTypes = {
   disabled: propTypesDisabled,
   name: propTypesName,
   children: propTypesChildren,
+  containerProps: propTypesContainerProps,
 };
 
 Select.displayName = "MaterialTailwind.Select";

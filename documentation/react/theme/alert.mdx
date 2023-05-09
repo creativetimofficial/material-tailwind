@@ -44,11 +44,9 @@ interface AlertStylesType {
     variant: string;
     color: string;
     icon: node;
-    show: boolean;
-    dismissble: {
-      action: node;
-      onClose: func;
-    };
+    open: boolean;
+    action: node;
+    onClose: func;
     animate: {
       mount: object;
       unmount: object;
@@ -60,10 +58,15 @@ interface AlertStylesType {
     colors: string[];
   };
   styles: {
-    base: object;
+    base: {
+      alert: object;
+      action: object;
+    };
     variants: {
       filled: object;
       gradient: object;
+      outlined: object;
+      ghost: object;
     };
   };
 }

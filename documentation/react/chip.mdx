@@ -5,8 +5,12 @@ navigation:
   [
     "chip",
     "chip-variants",
+    "chip-sizes",
     "chip-colors",
     "chip-with-icon",
+    "pills-chip",
+    "chip-with-status",
+    "chip-with-checkbox",
     "chip-dismissible",
     "custom-chip-animation",
     "chip-with-avatar",
@@ -28,7 +32,7 @@ related:
   ]
 github: chip
 prev: checkbox
-next: dialog
+next: collapse
 ---
 
 # Tailwind CSS Chip - React
@@ -53,22 +57,55 @@ export default function Example() {
 
 ## Chip Variants
 
-The <Code>Chip</Code> component comes with 2 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Chip</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
 <CodePreview id="chip-variants" link="chip#chip-variants" component={
   <div className="flex gap-2">
     <Chip value="chip filled" />
     <Chip variant="gradient" value="chip gradient" />
+    <Chip variant="outlined" value="chip outlined" />
+    <Chip variant="ghost" value="chip ghost" />
   </div>
 }>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Variants() {
+export default function Example() {
   return (
     <div className="flex gap-2">
-      <Chip variant="filled" value="chip filled" />
+      <Chip value="chip filled" />
       <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip Sizes
+
+The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>variant</Code> prop.
+
+<CodePreview id="chip-sizes" component={
+  <div className="flex items-end gap-2">
+    <Chip size="sm" value="chip small" />
+    <Chip size="md" value="chip medium" />
+    <Chip size="lg" value="chip large" />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="chip filled" />
+      <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
     </div>
   );
 }
@@ -97,7 +134,7 @@ The <Code>Chip</Code> component comes with 19 different colors that you can chan
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
-export default function Colors() {
+export default function Example() {
   return (
     <div className="flex gap-2">
       <Chip color="blue" value="blue" />
@@ -122,36 +159,194 @@ export default function Colors() {
 You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
 
 <CodePreview id="chip-with-icon" link="chip#chip-with-icon" component={
-  <Chip
-    value="downloads"
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-      </svg>
-    }
-  />
+  <div className="flex gap-2">
+    <Chip
+      value="account"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="gradient"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="outlined"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+    <Chip
+      value="account"
+      variant="ghost"
+      icon={<SolidIcons.UserCircleIcon />}
+    />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip value="account" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="gradient" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="outlined" icon={<UserCircleIcon />} />
+      <Chip value="account" variant="ghost" icon={<UserCircleIcon />} />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Pills Chip
+
+You can pass tailwind css classes for the <Code>Chip</Code> component using the <Code>className</Code> prop this helps to do any sort of customization for the chip.
+
+<CodePreview id="pills-chip" component={
+  <div className="flex gap-2">
+    <Chip value="pills chip" className="rounded-full" />
+    <Chip variant="gradient" value="pills chip" className="rounded-full" />
+    <Chip variant="outlined" value="pills chip" className="rounded-full" />
+    <Chip variant="ghost" value="pills chip" className="rounded-full" />
+  </div>
 }>
 ```jsx
 import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
   return (
+    <div className="flex gap-2">
+      <Chip value="chip filled" />
+      <Chip variant="gradient" value="chip gradient" />
+      <Chip variant="outlined" value="chip outlined" />
+      <Chip variant="ghost" value="chip ghost" />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip with Status
+
+This chip element example is perfect if you want to announce the status of a particular item, process, or person.
+
+<CodePreview id="chip-with-status" component={
+  <div className="flex gap-2">
     <Chip
-      value="downloads"
+      variant="ghost"
+      color="green"
+      size="sm"
+      value="Online"
+      icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-green-900" />}
+    />
+    <Chip
+      variant="ghost"
+      color="red"
+      size="sm"
+      value="Offline"
+      icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-red-900" />}
+    />
+  </div>
+}>
+```jsx
+import { Chip } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        variant="ghost"
+        color="green"
+        size="sm"
+        value="Online"
+        icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-green-900" />}
+      />
+      <Chip
+        variant="ghost"
+        color="red"
+        size="sm"
+        value="Offline"
+        icon={<span className="content-[''] block w-2 h-2 rounded-full mx-auto mt-1 bg-red-900" />}
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Chip with Checkbox
+
+Use this example to represent selectable items or options in a compact manner. 
+
+<CodePreview id="chip-with-checkbox" component={
+  <div className="flex gap-2">
+    <Chip
+      value="Online"
+      variant="ghost"
+      color="green"
       icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
-        </svg>
+        <Checkbox 
+          color="green"
+          ripple={false}
+          containerProps={{ className: "p-0" }}
+          className="border-green-900 border-2 checked:bg-green-900 checked:border-green-900 -ml-px before:hidden"
+        />
       }
     />
+    <Chip
+      value="Offline"
+      variant="ghost"
+      color="red"
+      icon={
+        <Checkbox 
+          color="red"
+          ripple={false}
+          containerProps={{ className: "p-0" }}
+          className="border-red-900 border-2 checked:bg-red-900 checked:border-red-900 -ml-px before:hidden"
+        />
+      }
+    />
+  </div>
+}>
+```jsx
+import { Chip, Checkbox } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      <Chip
+        value="Online"
+        variant="ghost"
+        color="green"
+        icon={
+          <Checkbox 
+            color="green"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="border-green-900 border-2 checked:bg-green-900 checked:border-green-900 -ml-px before:hidden"
+          />
+        }
+      />
+      <Chip
+        value="Offline"
+        variant="ghost"
+        color="red"
+        icon={
+          <Checkbox 
+            color="red"
+            ripple={false}
+            containerProps={{ className: "p-0" }}
+            className="border-red-900 border-2 checked:bg-red-900 checked:border-red-900 -ml-px before:hidden"
+          />
+        }
+      />
+    </div>
   );
 }
 ```
@@ -164,26 +359,22 @@ export default function Example() {
 The <Code>Chip</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
 <CodePreview id="chip-dismissible" link="chip#chip-dismissible" component={
-  <State initialState={{ show: true }}>
+  <State initialState={{ open: true }}>
     <Observe>
-      {({ setState, show }) => (
+      {({ setState, open }) => (
         <>
-          {!show && (
+          {!open && (
             <Button
-              variant="gradient"
               className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
+              onClick={() => setState((s) => ({ open: true }))}
             >
               Show Chip
             </Button>
           )}
           <Chip
-            variant="gradient"
-            show={show}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
+            open={open}
             value="Dismissible"
+            onClose={() => setState((s) => ({ open: false }))}
           />
         </>
       )}
@@ -194,31 +385,21 @@ The <Code>Chip</Code> component is a dismissible component that you can control 
 import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
-export default function Dismissible() {
-  const [show, setShow] = useState(true);
+export default function Example() {
+  const [open, setOpen] = useState(true);
 
-  return (
-    <Fragment>
-      {!show && (
-        <Button
-          variant="gradient"
-          className="absolute"
-          onClick={() => setShow(true)}
-        >
-          Show Chip
-        </Button>
-      )}
-      <Chip
-        variant="gradient"
-        show={show}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
-        value="Dismissible"
-      />
-    </Fragment>
-  );
-}
+return (
+
+<Fragment>
+  {!open && (
+    <Button className="absolute" onClick={() => setOpen(true)}>
+      Show Chip
+    </Button>
+  )}
+  <Chip open={open} value="Dismissible" onClose={() => setOpen(false)} />
+</Fragment>
+); }
+
 ```
 </CodePreview>
 
@@ -229,22 +410,20 @@ export default function Dismissible() {
 You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
 
 <CodePreview id="custom-chip-animation" component={
-  <State initialState={{ show: true }}>
+  <State initialState={{ open: true }}>
     <Observe>
-      {({ setState, show }) => (
+      {({ setState, open }) => (
         <>
-          {!show && (
+          {!open && (
             <Button
-              variant="gradient"
               className="absolute"
-              onClick={() => setState((s) => ({ show: true }))}
+              onClick={() => setState((s) => ({ open: true }))}
             >
               Show Chip
             </Button>
           )}
           <Chip
-            variant="gradient"
-            show={show}
+            open={open}
             animate={{
               mount: {
                 y: 0,
@@ -253,10 +432,8 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
                 y: 50,
               },
             }}
-            dismissible={{
-              onClose: () => setState((s) => ({ show: false })),
-            }}
             value="Custom Animation"
+            onClose={() => setState((s) => ({ open: false }))}
           />
         </>
       )}
@@ -267,37 +444,32 @@ You can modify the open/close state animation for <Code>Chip</Code> component us
 import { useState, Fragment } from "react";
 import { Chip, Button } from "@material-tailwind/react";
 
-export default function Colors() {
-  const [show, setShow] = useState(true);
+export default function Example() {
+  const [open, setOpen] = useState(true);
 
   return (
     <Fragment>
-      {!show && (
+      {!open && (
         <Button
-          variant="gradient"
           className="absolute"
-          onClick={() => setShow(true)}
+          onClick={() => setOpen(true)}
         >
           Show Chip
         </Button>
       )}
       <Chip
-        variant="gradient"
-        show={show}
+        open={open}
         animate={{
           mount: { y: 0 },
           unmount: { y: 50 },
         }}
-        dismissible={{
-          onClose: () => setShow(false),
-        }}
         value="Custom Animation"
+        onClose={() => setOpen(false)}
       />
     </Fragment>
   );
 }
-````
-
+```
 </CodePreview>
 
 ---
@@ -312,7 +484,7 @@ Use the example below for a chip containing an avatar.
       <Avatar
         size="xs"
         variant="circular"
-        className="h-5 w-5 translate-x-px translate-y-px"
+        className="w-full h-full -translate-x-0.5"
         alt="candice wu"
         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
       />
@@ -340,7 +512,7 @@ export default function Example() {
         <Avatar
           size="xs"
           variant="circular"
-          className="h-5 w-5 translate-x-px translate-y-px"
+          className="w-full h-full -translate-x-0.5"
           alt="candice wu"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />

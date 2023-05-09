@@ -55,9 +55,12 @@ You can customize the theme and styles of tabs components by adding Tailwind CSS
 interface TabsStylesType {
   defaultProps: {
     className: string;
+    orientation: "horizontal" | "vertical";
   };
   styles: {
     base: object;
+    vertical: object;
+    horizontal: object;
   };
 }
 ```
@@ -103,6 +106,8 @@ interface TabsHeaderStylesType {
   };
   styles: {
     base: object;
+    horizontal: object;
+    vertical: object;
   };
 }
 ```

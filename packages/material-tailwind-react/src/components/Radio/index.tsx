@@ -18,6 +18,7 @@ import type {
   icon,
   ripple,
   className,
+  disabled,
   objectType,
 } from "../../types/components/checkbox";
 import {
@@ -26,6 +27,7 @@ import {
   propTypesIcon,
   propTypesRipple,
   propTypesClassName,
+  propTypesDisabled,
   propTypesObject,
 } from "../../types/components/checkbox";
 
@@ -35,6 +37,7 @@ export interface RadioProps extends React.ComponentProps<"input"> {
   icon?: icon;
   ripple?: ripple;
   className?: className;
+  disabled?: disabled;
   containerProps?: objectType;
   labelProps?: objectType;
   iconProps?: objectType;
@@ -49,6 +52,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       icon,
       ripple,
       className,
+      disabled,
       containerProps,
       labelProps,
       iconProps,
@@ -68,6 +72,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
     className = className ?? defaultProps.className;
+    disabled = disabled ?? defaultProps.disabled;
     containerProps = containerProps ?? defaultProps.containerProps;
     labelProps = labelProps ?? defaultProps.labelProps;
     iconProps = iconProps ?? defaultProps.iconProps;
@@ -76,7 +81,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const rippleEffect = ripple !== undefined && new Ripple();
 
     // 4. set styles
-    const rootClasses = classnames(objectsToString(base.root));
+    const rootClasses = classnames(objectsToString(base.root), {
+      [objectsToString(base.disabled)]: disabled,
+    });
     const containerClasses = twMerge(
       classnames(objectsToString(base.container)),
       containerProps?.className,
@@ -115,6 +122,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             {...rest}
             ref={inputRef}
             type="radio"
+            disabled={disabled}
             className={inputClasses}
             id={rest.id || "radio"}
           />
@@ -147,6 +155,7 @@ Radio.propTypes = {
   icon: propTypesIcon,
   ripple: propTypesRipple,
   className: propTypesClassName,
+  disabled: propTypesDisabled,
   containerProps: propTypesObject,
   labelProps: propTypesObject,
 };

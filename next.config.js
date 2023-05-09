@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
+  images: {
+    domains: ["images.unsplash.com"],
+  },
   async redirects() {
     return [
       {

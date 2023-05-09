@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "public/material-tailwind-html.js",
-    "public/material-ripple-effects.js"
+    "public/material-ripple-effects.js",
+    "components/docs/react/table/table-with-striped-rows.tss"
   ],
   "exclude": ["node_modules"]
 }

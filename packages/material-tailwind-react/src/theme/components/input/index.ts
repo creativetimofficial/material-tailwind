@@ -14,6 +14,7 @@ import type {
   labelProps,
   shrink,
   className,
+  containerProps,
 } from "../../../types/components/input";
 import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/input";
 
@@ -59,6 +60,7 @@ export interface InputStylesType {
     success?: success;
     icon?: icon;
     labelProps?: labelProps;
+    containerProps?: containerProps;
     shrink?: shrink;
     className?: className;
   };
@@ -92,7 +94,8 @@ export const input: InputStylesType = {
     error: false,
     success: false,
     icon: undefined,
-    labelProps: {},
+    labelProps: undefined,
+    containerProps: undefined,
     shrink: false,
     className: "",
   },
