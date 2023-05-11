@@ -1,9 +1,8 @@
 // types
 import type { children, disabled, icon, open } from "../../types/components/accordion";
 // import { propTypesValue, propTypesChildren } from "../../types/components/accordion";
-import type { ParentComponent } from "solid-js";
-import { createContext, createEffect, useContext } from "solid-js";
-import type { Accessor } from "solid-js";
+import type { Accessor, ParentComponent } from "solid-js";
+import { createContext, useContext } from "solid-js";
 import type { animation } from "../../types/generic";
 
 export interface AccordionContextType {
@@ -37,6 +36,5 @@ export interface AccordionContextProviderProps {
 }
 
 export const AccordionContextProvider: ParentComponent<AccordionContextProviderProps> = (props) => {
-  createEffect(() => console.log("AccordionContextProvider", props.value()));
   return <AccordionContext.Provider {...props}>{props.children}</AccordionContext.Provider>;
 };

@@ -7,7 +7,6 @@ import type { animate, dismissible, icon, show, variant } from "../../../types/c
 import { variants } from "../../../types/components/alert";
 import type { colors } from "../../../types/generic";
 import { color } from "../../../types/generic";
-import { type } from "os";
 
 export interface AlertStylesType {
   defaultProps?: {

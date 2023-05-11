@@ -1,7 +1,14 @@
+import type { AccordionType } from "./components/accordion";
 import accordion from "./components/accordion";
+import type { AlertType } from "./components/alert";
 import alert from "./components/alert";
+import type { AvatarType } from "./components/avatar";
 import avatar from "./components/avatar";
-// import breadcrumbs from "./components/breadcrumbs";
+import type { BadgeType } from "./components/badge";
+import badge from "./components/badge";
+import type { BreadCrumbsType } from "./components/breadcrumbs";
+import breadcrumbs from "./components/breadcrumbs";
+import type { ButtonType } from "./components/button";
 import button from "./components/button";
 // import card from "./components/card";
 // import cardBody from "./components/card/cardBody";
@@ -30,12 +37,20 @@ import button from "./components/button";
 // import textarea from "./components/textarea";
 // import tooltip from "./components/tooltip";
 // import typography from "./components/typography";\
-
-const theme = {
+export type Theme = {
+  accordion: AccordionType;
+  alert: AlertType;
+  avatar: AvatarType;
+  breadcrumbs: BreadCrumbsType;
+  badge: BadgeType;
+  button: ButtonType;
+};
+const theme: Theme = {
   accordion,
   alert,
   avatar,
-  // breadcrumbs,
+  breadcrumbs,
+  badge,
   button,
   // card,
   // cardBody,
@@ -69,7 +84,8 @@ const theme = {
 export * from "./components/accordion";
 export * from "./components/alert";
 export * from "./components/avatar";
-// export * from "./components/breadcrumbs";
+export * from "./components/badge";
+export * from "./components/breadcrumbs";
 export * from "./components/button";
 // export * from "./components/card";
 // export * from "./components/card/cardBody";

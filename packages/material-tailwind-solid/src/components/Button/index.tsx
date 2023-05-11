@@ -1,9 +1,9 @@
-import { createMemo, mergeProps, splitProps } from "solid-js";
 import type { JSX, ParentComponent } from "solid-js";
+import { createMemo, mergeProps, splitProps } from "solid-js";
 
 // utils
-import Ripple from "material-ripple-effects";
 import classnames from "classnames";
+import Ripple from "material-ripple-effects";
 import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
@@ -12,7 +12,7 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import type { variant, size, color, fullWidth, ripple } from "../../types/components/button";
+import type { color, fullWidth, ripple, size, variant } from "../../types/components/button";
 // import {
 //   propTypesVariant,
 //   propTypesSize,
@@ -58,7 +58,6 @@ export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTML
 
     const fVariant = findMatch(theme().button.valid.variants, defaultProps.variant, "filled");
     const variants = theme().button.styles.variants;
-    console.log({ fColor, themeColor: theme().button.defaultProps.color, props });
     return objectsToString(variants[fVariant!][fColor!]);
   });
 

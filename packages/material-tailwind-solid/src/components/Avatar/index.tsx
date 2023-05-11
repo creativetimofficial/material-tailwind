@@ -8,8 +8,8 @@ import objectsToString from "../../utils/objectsToString";
 import { useTheme } from "../../context/theme";
 
 // types
-import { createEffect, createMemo, mergeProps, splitProps } from "solid-js";
 import type { Component, JSX } from "solid-js";
+import { createMemo, mergeProps, splitProps } from "solid-js";
 import type { size, variant } from "../../types/components/avatar";
 export interface AvatarProps {
   variant?: variant;
