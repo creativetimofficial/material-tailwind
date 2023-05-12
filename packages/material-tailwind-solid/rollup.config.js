@@ -6,5 +6,5 @@ export default withSolid({
   targets: ["esm", "cjs"],
   watch: {},
   printInstructions: true,
-  treeshake: false, // TODO: Enable this once we figured out how to include withMT function
+  treeshake: true, // TODO: Enable this once we figured out how to include withMT function
 });
