@@ -12,10 +12,14 @@ import type { ButtonType } from "./components/button";
 import button from "./components/button";
 import type { ButtonGroupType } from "./components/buttonGroup";
 import buttonGroup from "./components/buttonGroup";
-// import card from "./components/card";
-// import cardBody from "./components/card/cardBody";
-// import cardFooter from "./components/card/cardFooter";
-// import cardHeader from "./components/card/cardHeader";
+import type { CardType } from "./components/card";
+import card from "./components/card";
+import type { CardBodyProps as CardBodyType } from "./components/card/cardBody";
+import cardBody from "./components/card/cardBody";
+import type { CardFooterType } from "./components/card/cardFooter";
+import cardFooter from "./components/card/cardFooter";
+import type { CardHeaderType } from "./components/card/cardHeader";
+import cardHeader from "./components/card/cardHeader";
 // import checkbox from "./components/checkbox";
 // import chip from "./components/chip";
 // import dialog from "./components/dialog";
@@ -47,6 +51,10 @@ export type Theme = {
   badge: BadgeType;
   button: ButtonType;
   buttonGroup: ButtonGroupType;
+  card: CardType;
+  cardBody: CardBodyType;
+  cardFooter: CardFooterType;
+  cardHeader: CardHeaderType;
 };
 const theme: Theme = {
   accordion,
@@ -56,10 +64,10 @@ const theme: Theme = {
   badge,
   button,
   buttonGroup,
-  // card,
-  // cardBody,
-  // cardFooter,
-  // cardHeader,
+  card,
+  cardBody,
+  cardFooter,
+  cardHeader,
   // checkbox,
   // chip,
   // dialog,
@@ -92,10 +100,10 @@ export * from "./components/badge";
 export * from "./components/breadcrumbs";
 export * from "./components/button";
 export * from "./components/buttonGroup";
-// export * from "./components/card";
-// export * from "./components/card/cardBody";
-// export * from "./components/card/cardFooter";
-// export * from "./components/card/cardHeader";
+export * from "./components/card";
+export * from "./components/card/cardBody";
+export * from "./components/card/cardFooter";
+export * from "./components/card/cardHeader";
 // export * from "./components/checkbox";
 // export * from "./components/chip";
 // export * from "./components/dialog";
