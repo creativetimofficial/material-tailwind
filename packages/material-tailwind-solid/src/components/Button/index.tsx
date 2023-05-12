@@ -1,5 +1,5 @@
-import type { JSX, ParentComponent } from "solid-js";
 import { createMemo, mergeProps, splitProps } from "solid-js";
+import type { JSX, ParentComponent } from "solid-js";
 
 // utils
 import classnames from "classnames";
@@ -13,6 +13,7 @@ import { useTheme } from "../../context/theme";
 
 // types
 import type { color, fullWidth, ripple, size, variant } from "../../types/components/button";
+import { useButtonGroupContext } from "../ButtonGroup";
 // import {
 //   propTypesVariant,
 //   propTypesSize,
@@ -30,15 +31,20 @@ export interface ButtonProps {
   fullWidth?: fullWidth;
   ripple?: ripple;
 }
-
-export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>> = (
-  props,
-) => {
+export type ButtonComponent = ParentComponent<
+  ButtonProps & JSX.ButtonHTMLAttributes<HTMLButtonElement>
+>;
+export const Button: ButtonComponent = (props) => {
   // 1. init
   const theme = useTheme();
-
+  const groupContext = useButtonGroupContext();
   // 2. set default props
-  const mergedProps = mergeProps(() => theme().button.defaultProps, props);
+  const mergedProps = mergeProps(
+    () => theme().button.defaultProps,
+    () => groupContext(),
+    props,
+  );
+
   const [defaultProps, rest] = splitProps(mergedProps, [
     "variant",
     "size",
@@ -55,7 +61,6 @@ export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTML
 
   const buttonVariant = createMemo(() => {
     const fColor = findMatch(theme().button.valid.colors, defaultProps.color, "blue");
-
     const fVariant = findMatch(theme().button.valid.variants, defaultProps.variant, "filled");
     const variants = theme().button.styles.variants;
     return objectsToString(variants[fVariant!][fColor!]);
@@ -95,6 +100,11 @@ export const Button: ParentComponent<ButtonProps & JSX.ButtonHTMLAttributes<HTML
         }
 
         return typeof onMouseDown === "function" && onMouseDown(e);
+      }}
+      onMouseUp={(e) => {
+        const onMouseUp = props.onMouseDown;
+        e.currentTarget.blur();
+        return typeof onMouseUp === "function" && onMouseUp(e);
       }}
     >
       {props.children}

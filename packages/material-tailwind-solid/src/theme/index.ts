@@ -10,6 +10,8 @@ import type { BreadCrumbsType } from "./components/breadcrumbs";
 import breadcrumbs from "./components/breadcrumbs";
 import type { ButtonType } from "./components/button";
 import button from "./components/button";
+import type { ButtonGroupType } from "./components/buttonGroup";
+import buttonGroup from "./components/buttonGroup";
 // import card from "./components/card";
 // import cardBody from "./components/card/cardBody";
 // import cardFooter from "./components/card/cardFooter";
@@ -44,6 +46,7 @@ export type Theme = {
   breadcrumbs: BreadCrumbsType;
   badge: BadgeType;
   button: ButtonType;
+  buttonGroup: ButtonGroupType;
 };
 const theme: Theme = {
   accordion,
@@ -52,6 +55,7 @@ const theme: Theme = {
   breadcrumbs,
   badge,
   button,
+  buttonGroup,
   // card,
   // cardBody,
   // cardFooter,
@@ -87,6 +91,7 @@ export * from "./components/avatar";
 export * from "./components/badge";
 export * from "./components/breadcrumbs";
 export * from "./components/button";
+export * from "./components/buttonGroup";
 // export * from "./components/card";
 // export * from "./components/card/cardBody";
 // export * from "./components/card/cardFooter";

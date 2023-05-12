@@ -32,7 +32,7 @@ export interface BadgeProps {
   containerRef?: containerRef;
 }
 
-export const Badge: ParentComponent<JSX.HTMLAttributes<HTMLSpanElement> & BadgeProps> = (props) => {
+export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElement>> = (props) => {
   // (
   //   {
   //     color,
@@ -72,6 +72,7 @@ export const Badge: ParentComponent<JSX.HTMLAttributes<HTMLSpanElement> & BadgeP
     "containerProps",
     "containerRef",
     "children",
+    "class",
   ]);
   const mergedProps = mergeProps(
     () => theme().badge.defaultProps,
@@ -114,12 +115,7 @@ export const Badge: ParentComponent<JSX.HTMLAttributes<HTMLSpanElement> & BadgeP
       ),
     ),
   );
-  createEffect(() =>
-    console.log({
-      props: props.content,
-      badgeProps: badgeProps.content,
-    }),
-  );
+
   // 4. return
   return (
     //containerProps contains ref
