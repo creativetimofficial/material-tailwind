@@ -10,7 +10,7 @@ import type {
   objectType,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
-import { DeepRequired } from "ts-essentials";
+import type { DeepRequired } from "ts-essentials";
 
 export interface CheckboxStylesType {
   defaultProps?: {
