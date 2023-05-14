@@ -22,7 +22,8 @@ import type { CardHeaderType } from "./components/card/cardHeader";
 import cardHeader from "./components/card/cardHeader";
 import type { CarouselType } from "./components/carousel";
 import carousel from "./components/carousel";
-// import checkbox from "./components/checkbox";
+import type { CheckboxType } from "./components/checkbox";
+import checkbox from "./components/checkbox";
 // import chip from "./components/chip";
 // import dialog from "./components/dialog";
 // import dialogBody from "./components/dialog/dialogBody";
@@ -58,6 +59,7 @@ export type Theme = {
   cardFooter: CardFooterType;
   cardHeader: CardHeaderType;
   carousel: CarouselType;
+  checkbox: CheckboxType;
 };
 const theme: Theme = {
   accordion,
@@ -72,7 +74,7 @@ const theme: Theme = {
   cardFooter,
   cardHeader,
   carousel,
-  // checkbox,
+  checkbox,
   // chip,
   // dialog,
   // dialogBody,
