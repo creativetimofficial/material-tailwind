@@ -116,7 +116,7 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
 );
 
 Badge.propTypes = {
-  color: propTypesColor,
+  color: PropTypes.oneOf(propTypesColor),
   invisible: propTypesInvisible,
   withBorder: propTypesWithBorder,
   overlap: propTypesOverlap,
