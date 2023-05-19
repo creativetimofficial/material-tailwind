@@ -26,6 +26,7 @@ import type { CheckboxType } from "./components/checkbox";
 import checkbox from "./components/checkbox";
 import type { ChipType } from "./components/chip";
 import chip from "./components/chip";
+import collapse, { CollapseStylesType } from "./components/collapse";
 
 import type { IconButtonType } from "./components/iconButton";
 import iconButton from "./components/iconButton";
@@ -65,6 +66,7 @@ export type Theme = {
   carousel: CarouselType;
   checkbox: CheckboxType;
   chip: ChipType;
+  collapse: CollapseStylesType;
   iconButton: IconButtonType;
 };
 const theme: Theme = {
@@ -82,6 +84,7 @@ const theme: Theme = {
   carousel,
   checkbox,
   chip,
+  collapse,
   // dialog,
   // dialogBody,
   // dialogFooter,
@@ -119,7 +122,8 @@ export * from "./components/card/cardFooter";
 export * from "./components/card/cardHeader";
 export * from "./components/carousel";
 export * from "./components/checkbox";
-// export * from "./components/chip";
+export * from "./components/chip";
+export * from "./components/collapse";
 // export * from "./components/dialog";
 // export * from "./components/dialog/dialogBody";
 // export * from "./components/dialog/dialogFooter";

@@ -1,4 +1,4 @@
-import type { VariantDefinition } from "@motionone/solid/dist/types/types";
+import type { Variant, VariantDefinition } from "@motionone/solid/dist/types/types";
 import PropTypes from "prop-types";
 
 export const colorPropType = [
@@ -26,9 +26,9 @@ export const colorPropType = [
 export type colors = (typeof colorPropType)[number];
 
 export type animation = {
-  initial?: false | VariantDefinition | undefined;
-  mount?: VariantDefinition | undefined;
-  unmount?: VariantDefinition | undefined;
+  initial?: false | Variant | undefined;
+  mount?: Variant | undefined;
+  unmount?: Variant | undefined;
 };
 
 export type dismissType = {
