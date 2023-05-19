@@ -1,10 +1,11 @@
 import withSolid from "rollup-preset-solid";
-// import commonjs from "@rollup/plugin-commonjs";
+import filesize from "rollup-plugin-filesize";
 
 export default withSolid({
   input: "src/index.ts",
   targets: ["esm", "cjs"],
   watch: {},
   printInstructions: true,
-  treeshake: true, // TODO: Enable this once we figured out how to include withMT function
+  plugins: [filesize()],
+  treeshake: true,
 });
