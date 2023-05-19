@@ -1,4 +1,4 @@
-import type { Variant, VariantDefinition } from "@motionone/solid/dist/types/types";
+import type { Variant } from "@motionone/solid/dist/types/types";
 import PropTypes from "prop-types";
 
 export const colorPropType = [

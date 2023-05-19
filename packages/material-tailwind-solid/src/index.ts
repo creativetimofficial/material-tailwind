@@ -11,7 +11,7 @@ export * from "./components/Carousel";
 export * from "./components/Checkbox";
 export * from "./components/Chip";
 export * from "./components/Collapse";
-// export * from "./components/Dialog";
+export * from "./components/Dialog";
 export * from "./components/IconButton";
 // export * from "./components/Input";
 // export * from "./components/Menu";

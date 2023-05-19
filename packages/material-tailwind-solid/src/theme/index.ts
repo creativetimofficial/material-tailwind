@@ -26,14 +26,18 @@ import type { CheckboxType } from "./components/checkbox";
 import checkbox from "./components/checkbox";
 import type { ChipType } from "./components/chip";
 import chip from "./components/chip";
-import collapse, { CollapseStylesType } from "./components/collapse";
-
+import type { CollapseStylesType } from "./components/collapse";
+import collapse from "./components/collapse";
 import type { IconButtonType } from "./components/iconButton";
 import iconButton from "./components/iconButton";
-// import dialog from "./components/dialog";
-// import dialogBody from "./components/dialog/dialogBody";
-// import dialogFooter from "./components/dialog/dialogFooter";
-// import dialogHeader from "./components/dialog/dialogHeader";
+import type { DialogStylesType } from "./components/dialog";
+import dialog from "./components/dialog";
+import type { DialogBodyStylesType } from "./components/dialog/dialogBody";
+import dialogBody from "./components/dialog/dialogBody";
+import type { DialogFooterStylesType } from "./components/dialog/dialogFooter";
+import dialogFooter from "./components/dialog/dialogFooter";
+import type { DialogHeaderStylesType } from "./components/dialog/dialogHeader";
+import dialogHeader from "./components/dialog/dialogHeader";
 // import iconButton from "./components/iconButton";
 // import input from "./components/input";
 // import menu from "./components/menu";
@@ -67,6 +71,10 @@ export type Theme = {
   checkbox: CheckboxType;
   chip: ChipType;
   collapse: CollapseStylesType;
+  dialog: DialogStylesType;
+  dialogBody: DialogBodyStylesType;
+  dialogHeader: DialogHeaderStylesType;
+  dialogFooter: DialogFooterStylesType;
   iconButton: IconButtonType;
 };
 const theme: Theme = {
@@ -85,10 +93,10 @@ const theme: Theme = {
   checkbox,
   chip,
   collapse,
-  // dialog,
-  // dialogBody,
-  // dialogFooter,
-  // dialogHeader,
+  dialog,
+  dialogBody,
+  dialogFooter,
+  dialogHeader,
   iconButton,
 
   // input,
@@ -124,11 +132,11 @@ export * from "./components/carousel";
 export * from "./components/checkbox";
 export * from "./components/chip";
 export * from "./components/collapse";
-// export * from "./components/dialog";
-// export * from "./components/dialog/dialogBody";
-// export * from "./components/dialog/dialogFooter";
-// export * from "./components/dialog/dialogHeader";
-// export * from "./components/iconButton";
+export * from "./components/dialog";
+export * from "./components/dialog/dialogBody";
+export * from "./components/dialog/dialogFooter";
+export * from "./components/dialog/dialogHeader";
+export * from "./components/iconButton";
 // export * from "./components/input";
 // export * from "./components/menu";
 // export * from "./components/navbar";
