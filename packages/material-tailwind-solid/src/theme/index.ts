@@ -24,7 +24,11 @@ import type { CarouselType } from "./components/carousel";
 import carousel from "./components/carousel";
 import type { CheckboxType } from "./components/checkbox";
 import checkbox from "./components/checkbox";
-// import chip from "./components/chip";
+import type { ChipType } from "./components/chip";
+import chip from "./components/chip";
+
+import type { IconButtonType } from "./components/iconButton";
+import iconButton from "./components/iconButton";
 // import dialog from "./components/dialog";
 // import dialogBody from "./components/dialog/dialogBody";
 // import dialogFooter from "./components/dialog/dialogFooter";
@@ -60,6 +64,8 @@ export type Theme = {
   cardHeader: CardHeaderType;
   carousel: CarouselType;
   checkbox: CheckboxType;
+  chip: ChipType;
+  iconButton: IconButtonType;
 };
 const theme: Theme = {
   accordion,
@@ -75,12 +81,13 @@ const theme: Theme = {
   cardHeader,
   carousel,
   checkbox,
-  // chip,
+  chip,
   // dialog,
   // dialogBody,
   // dialogFooter,
   // dialogHeader,
-  // iconButton,
+  iconButton,
+
   // input,
   // menu,
   // navbar,

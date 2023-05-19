@@ -1,7 +1,7 @@
 import type { VariantDefinition } from "@motionone/solid/dist/types/types";
 import PropTypes from "prop-types";
 
-export const color = [
+export const colorPropType = [
   "blue-gray",
   "gray",
   "brown",
@@ -23,7 +23,7 @@ export const color = [
   "red",
 ] as const;
 // typescript types
-export type colors = (typeof color)[number];
+export type colors = (typeof colorPropType)[number];
 
 export type animation = {
   initial?: false | VariantDefinition | undefined;

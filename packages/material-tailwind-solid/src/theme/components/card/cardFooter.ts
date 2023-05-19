@@ -1,5 +1,5 @@
 // types
-import { DeepRequired } from "ts-essentials";
+import type { DeepRequired } from "ts-essentials";
 import type { divider } from "../../../types/components/card";
 
 export interface CardFooterStylesType {

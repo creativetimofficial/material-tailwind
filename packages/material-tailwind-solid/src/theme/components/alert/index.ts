@@ -6,7 +6,7 @@ import type { DeepOmit, DeepPick, DeepRequired } from "ts-essentials";
 import type { animate, dismissible, icon, show, variant } from "../../../types/components/alert";
 import { variants } from "../../../types/components/alert";
 import type { colors } from "../../../types/generic";
-import { color } from "../../../types/generic";
+import { colorPropType } from "../../../types/generic";
 
 export interface AlertStylesType {
   defaultProps?: {
@@ -65,7 +65,7 @@ export const alert: AlertType = {
   },
   valid: {
     variants: [...variants],
-    colors: [...color],
+    colors: [...colorPropType],
   },
   styles: {
     base: {

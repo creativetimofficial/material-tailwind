@@ -9,7 +9,8 @@ import { useTheme } from "../../context/theme";
 
 // types
 import type { variant, color, shadow, floated } from "../../types/components/card";
-import { ParentComponent, JSX, mergeProps, createMemo } from "solid-js";
+import type { ParentComponent, JSX} from "solid-js";
+import { mergeProps, createMemo } from "solid-js";
 
 export interface CardHeaderProps {
   variant?: variant;

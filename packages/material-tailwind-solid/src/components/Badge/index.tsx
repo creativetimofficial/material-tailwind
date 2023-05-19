@@ -1,5 +1,5 @@
-import { Show, createEffect, createMemo, mergeProps, splitProps } from "solid-js";
 import type { JSX, ParentComponent } from "solid-js";
+import { Show, createMemo, mergeProps, splitProps } from "solid-js";
 // utils
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
@@ -33,34 +33,14 @@ export interface BadgeProps {
 }
 
 export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElement>> = (props) => {
-  // (
-  //   {
-  //     color,
-  //     invisible,
-  //     withBorder,
-  //     overlap,
-  //     placement,
-  //     className,
-  //     content,
-  //     children,
-  //     containerProps,
-  //     containerRef,
-  //     ...rest
-  //   },
-  //   ref,
-  // ) => {
   // 1. init
   const theme = useTheme();
-  // const { valid, defaultProps, styles } = theme().badge;
-  // const { base, placements, colors } = styles;
 
   // 2. set default props
-  // color = color ?? defaultProps.color;
-  // invisible = invisible ?? defaultProps.invisible;
-  // withBorder = withBorder ?? defaultProps.withBorder;
-  // overlap = overlap ?? defaultProps.overlap;
-  // placement = placement ?? defaultProps.placement;
-  // className = classnames(className, defaultProps.className) ?? defaultProps.className;
+  const mergedProps = mergeProps(
+    () => theme().badge.defaultProps,
+    () => badgeProps,
+  );
 
   const [badgeProps, rest] = splitProps(props, [
     "color",
@@ -74,13 +54,6 @@ export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElem
     "children",
     "class",
   ]);
-  const mergedProps = mergeProps(
-    () => theme().badge.defaultProps,
-    () => badgeProps,
-  );
-
-  // const containerProps =
-  //   mergeProps(()=>props.containerProps, ()=>defaultProps.containerProps || {}) ?? defaultProps.containerProps;
 
   // 3. set styles
   const badgeClasses = createMemo(() => {
@@ -118,7 +91,6 @@ export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElem
 
   // 4. return
   return (
-    //containerProps contains ref
     <div
       {...mergedProps.containerProps}
       ref={mergedProps.containerRef}
@@ -134,20 +106,5 @@ export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElem
     </div>
   );
 };
-
-// Badge.propTypes = {
-//   color: propTypesColor,
-//   invisible: propTypesInvisible,
-//   withBorder: propTypesWithBorder,
-//   overlap: propTypesOverlap,
-//   className: propTypesClassName,
-//   content: propTypesContent,
-//   children: propTypesChildren,
-//   placement: propTypesPlacement,
-//   containerProps: propTypesContainerProps,
-//   containerRef: propTypesContainerRef,
-// };
-
-// Badge.displayName = "MaterialTailwind.Badge";
 
 export default Badge;
