@@ -1,5 +1,5 @@
 import { Motion, Presence } from "@motionone/solid";
-import { JSX, ParentComponent, createEffect } from "solid-js";
+import type { JSX, ParentComponent } from "solid-js";
 import { Show } from "solid-js";
 // utils
 import classnames from "classnames";
@@ -20,7 +20,6 @@ import type { DialogBodyProps } from "./DialogBody";
 import { DialogBody } from "./DialogBody";
 import { DialogFooter } from "./DialogFooter";
 import { DialogHeader } from "./DialogHeader";
-import { animation } from "../../types/generic";
 
 export interface DialogProps {
   open: open;

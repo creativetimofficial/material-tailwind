@@ -29,7 +29,6 @@ import chip from "./components/chip";
 import type { CollapseStylesType } from "./components/collapse";
 import collapse from "./components/collapse";
 import type { IconButtonType } from "./components/iconButton";
-import iconButton from "./components/iconButton";
 import type { DialogStylesType } from "./components/dialog";
 import dialog from "./components/dialog";
 import type { DialogBodyStylesType } from "./components/dialog/dialogBody";
@@ -38,7 +37,10 @@ import type { DialogFooterStylesType } from "./components/dialog/dialogFooter";
 import dialogFooter from "./components/dialog/dialogFooter";
 import type { DialogHeaderStylesType } from "./components/dialog/dialogHeader";
 import dialogHeader from "./components/dialog/dialogHeader";
-// import iconButton from "./components/iconButton";
+import type { DrawerStylesType } from "./components/drawer";
+import drawer from "./components/drawer";
+import iconButton from "./components/iconButton";
+
 // import input from "./components/input";
 // import menu from "./components/menu";
 // import navbar from "./components/navbar";
@@ -75,6 +77,7 @@ export type Theme = {
   dialogBody: DialogBodyStylesType;
   dialogHeader: DialogHeaderStylesType;
   dialogFooter: DialogFooterStylesType;
+  drawer: DrawerStylesType;
   iconButton: IconButtonType;
 };
 const theme: Theme = {
@@ -97,6 +100,7 @@ const theme: Theme = {
   dialogBody,
   dialogFooter,
   dialogHeader,
+  drawer,
   iconButton,
 
   // input,
@@ -136,6 +140,7 @@ export * from "./components/dialog";
 export * from "./components/dialog/dialogBody";
 export * from "./components/dialog/dialogFooter";
 export * from "./components/dialog/dialogHeader";
+export * from "./components/drawer";
 export * from "./components/iconButton";
 // export * from "./components/input";
 // export * from "./components/menu";
