@@ -1,5 +1,5 @@
 import { Motion, Presence } from "@motionone/solid";
-import type { JSX, ParentComponent } from "solid-js";
+import { JSX, ParentComponent, createEffect } from "solid-js";
 import { Show } from "solid-js";
 // utils
 import classnames from "classnames";
@@ -20,6 +20,7 @@ import type { DialogBodyProps } from "./DialogBody";
 import { DialogBody } from "./DialogBody";
 import { DialogFooter } from "./DialogFooter";
 import { DialogHeader } from "./DialogHeader";
+import { animation } from "../../types/generic";
 
 export interface DialogProps {
   open: open;
@@ -67,30 +68,35 @@ const Dialog: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & DialogProps> 
 
   // 7. return
   return (
-    <Presence exitBeforeEnter>
-      <Show when={dialogProps.open}>
-        <Motion.div
-          class={mergedProps.size === "xxl" ? "" : cProps().backdropClasses}
-          initial={backdropAnimation.unmount}
-          exit={backdropAnimation.unmount}
-          animate={mergedProps.open ? backdropAnimation.mount : backdropAnimation.unmount}
-          transition={{ duration: 0.2 }}
-          onClick={dialogProps.handler}
-        >
+    <>
+      <Presence exitBeforeEnter>
+        <Show when={dialogProps.open}>
           <Motion.div
-            {...rest}
-            class={cProps().dialogClasses}
-            aria-labelledby={labelId}
-            aria-describedby={descriptionId}
-            initial={mergedProps.animate.unmount}
-            exit={mergedProps.animate.unmount}
-            animate={mergedProps.open ? mergedProps.animate.mount : mergedProps.animate.unmount}
+            class={mergedProps.size === "xxl" ? "" : cProps().backdropClasses}
+            initial={backdropAnimation.unmount}
+            exit={backdropAnimation.unmount}
+            animate={mergedProps.open ? backdropAnimation.mount : backdropAnimation.unmount}
+            transition={{ duration: 0.2 }}
+            onClick={dialogProps.handler}
           >
-            {props.children}
+            <Motion.div
+              {...rest}
+              class={cProps().dialogClasses}
+              aria-labelledby={labelId}
+              aria-describedby={descriptionId}
+              initial={mergedProps.animate.initial || mergedProps.animate.unmount}
+              exit={mergedProps.animate.unmount}
+              animate={mergedProps.open ? mergedProps.animate.mount : mergedProps.animate.unmount}
+            >
+              {props.children}
+            </Motion.div>
           </Motion.div>
-        </Motion.div>
+        </Show>
+      </Presence>
+      <Show when={dialogProps.open}>
+        <style>{`body { overflow: hidden!important; }`}</style>
       </Show>
-    </Presence>
+    </>
   );
 };
 
@@ -103,6 +109,7 @@ export default Object.assign(Dialog, {
 });
 
 const animation = {
+  initial: undefined,
   unmount: {
     opacity: 0,
     y: -50,
