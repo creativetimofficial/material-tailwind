@@ -40,6 +40,8 @@ import dialogHeader from "./components/dialog/dialogHeader";
 import type { DrawerStylesType } from "./components/drawer";
 import drawer from "./components/drawer";
 import iconButton from "./components/iconButton";
+import type { InputStylesType } from "./components/input";
+import input from "./components/input";
 
 // import input from "./components/input";
 // import menu from "./components/menu";
@@ -79,6 +81,7 @@ export type Theme = {
   dialogFooter: DialogFooterStylesType;
   drawer: DrawerStylesType;
   iconButton: IconButtonType;
+  input: InputStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -102,8 +105,7 @@ const theme: Theme = {
   dialogHeader,
   drawer,
   iconButton,
-
-  // input,
+  input,
   // menu,
   // navbar,
   // popover,
@@ -142,7 +144,7 @@ export * from "./components/dialog/dialogFooter";
 export * from "./components/dialog/dialogHeader";
 export * from "./components/drawer";
 export * from "./components/iconButton";
-// export * from "./components/input";
+export * from "./components/input";
 // export * from "./components/menu";
 // export * from "./components/navbar";
 // export * from "./components/popover";

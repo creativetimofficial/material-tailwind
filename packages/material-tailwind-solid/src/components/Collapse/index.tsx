@@ -40,21 +40,18 @@ export const Collapse: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Coll
     },
   };
 
+  // 2. set default props
   const mergedProps = mergeProps(
     () => theme().collapse.defaultProps,
     { animate: mainAnimation },
 
     props,
   );
-  // 2. set default props
 
   // 3. set styles
   const classes = createMemo(() =>
     twMerge(classnames(objectsToString(theme().collapse.styles.base)), mergedProps.class),
   );
-
-  // 4. set animations
-  createEffect(() => console.log(mergedProps.animate));
 
   const animate = createMemo(() => {
     return deepmerge(mergedProps.animate.mount, {
