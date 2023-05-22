@@ -42,6 +42,8 @@ import drawer from "./components/drawer";
 import iconButton from "./components/iconButton";
 import type { InputStylesType } from "./components/input";
 import input from "./components/input";
+import type { ListStylesType } from "./components/list";
+import list from "./components/list";
 
 // import input from "./components/input";
 // import menu from "./components/menu";
@@ -82,6 +84,7 @@ export type Theme = {
   drawer: DrawerStylesType;
   iconButton: IconButtonType;
   input: InputStylesType;
+  list: ListStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -106,6 +109,7 @@ const theme: Theme = {
   drawer,
   iconButton,
   input,
+  list,
   // menu,
   // navbar,
   // popover,
@@ -145,6 +149,7 @@ export * from "./components/dialog/dialogHeader";
 export * from "./components/drawer";
 export * from "./components/iconButton";
 export * from "./components/input";
+export * from "./components/list";
 // export * from "./components/menu";
 // export * from "./components/navbar";
 // export * from "./components/popover";
