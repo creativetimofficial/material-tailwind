@@ -52,6 +52,7 @@ export const Input: ParentComponent<JSX.InputHTMLAttributes<HTMLInputElement> & 
     "icon",
     "labelProps",
     "containerProps",
+    "containerRef",
     "shrink",
     "class",
     "error",
