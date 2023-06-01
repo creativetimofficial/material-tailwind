@@ -31,17 +31,21 @@
     "prettier:check": "prettier -c ."
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.2.7",
+    "@floating-ui/dom": "^1.1.0",
     "@motionone/solid": "^10.16.0",
     "@motionone/types": "^10.15.1",
     "@rollup/plugin-commonjs": "^24.1.0",
+    "@solid-primitives/refs": "^1.0.4",
+    "@types/body-scroll-lock": "^3.1.0",
     "@types/prop-types": "^15.7.5",
     "babel-preset-solid": "^1.7.3",
+    "body-scroll-lock": "4.0.0-beta.0",
     "classnames": "^2.3.2",
     "deepmerge-ts": "^5.1.0",
     "material-ripple-effects": "^2.0.1",
     "motion": "^10.15.5",
     "prop-types": "^15.8.1",
+    "solid-floating-ui": "^0.2.1",
     "solid-js": "^1.7.4",
     "solid-start": "^0.2.26",
     "tailwind-merge": "^1.12.0"

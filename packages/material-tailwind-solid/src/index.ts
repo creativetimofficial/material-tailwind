@@ -16,7 +16,7 @@ export * from "./components/Drawer";
 export * from "./components/IconButton";
 export * from "./components/Input";
 export * from "./components/List";
-// export * from "./components/Menu";
+export * from "./components/Menu";
 // export * from "./components/Navbar";
 // export * from "./components/Popover";
 // export * from "./components/Progress";
