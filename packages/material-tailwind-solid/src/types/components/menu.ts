@@ -1,12 +1,3 @@
-// @floating-ui types
-// import type {
-//   FloatingContext,
-//   FloatingTreeType,
-//   Placement,
-//   ReferenceType,
-//   Strategy,
-// } from "@floating-ui/react";
-
 // generic types
 import type { UseFloatingResult } from "solid-floating-ui";
 import type { animation, dismissType, offsetType, placements } from "../generic";
