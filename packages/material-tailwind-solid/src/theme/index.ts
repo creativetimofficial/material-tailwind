@@ -46,7 +46,7 @@ import type { ListStylesType } from "./components/list";
 import list from "./components/list";
 
 // import input from "./components/input";
-// import menu from "./components/menu";
+import menu, { MenuStylesType } from "./components/menu";
 // import navbar from "./components/navbar";
 // import popover from "./components/popover";
 // import progress from "./components/progress";
@@ -85,6 +85,7 @@ export type Theme = {
   iconButton: IconButtonType;
   input: InputStylesType;
   list: ListStylesType;
+  menu: MenuStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -110,7 +111,7 @@ const theme: Theme = {
   iconButton,
   input,
   list,
-  // menu,
+  menu,
   // navbar,
   // popover,
   // progress,
@@ -150,7 +151,7 @@ export * from "./components/drawer";
 export * from "./components/iconButton";
 export * from "./components/input";
 export * from "./components/list";
-// export * from "./components/menu";
+export * from "./components/menu";
 // export * from "./components/navbar";
 // export * from "./components/popover";
 // export * from "./components/progress";

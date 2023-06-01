@@ -94,7 +94,7 @@ export const propTypesOffsetType = PropTypes.oneOfType([
   }),
 ]);
 
-export const propTypesPlacements: string[] = [
+export const propTypesPlacements = [
   "top-start",
   "top",
   "top-end",
@@ -107,4 +107,6 @@ export const propTypesPlacements: string[] = [
   "left-start",
   "left",
   "left-end",
-];
+] as const;
+
+export type placements = (typeof propTypesPlacements)[number];
