@@ -14,7 +14,6 @@ import { useTheme } from "../../context/theme";
 import type { MotionProxy, Variant } from "@motionone/solid";
 import { Motion } from "@motionone/solid";
 import type { JSX, ParentComponent } from "solid-js";
-import { createEffect } from "solid-js";
 import { createMemo, mergeProps } from "solid-js";
 import type { animate, open } from "../../types/components/collapse";
 import { deepmerge } from "deepmerge-ts";
