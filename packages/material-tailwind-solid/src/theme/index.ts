@@ -49,7 +49,7 @@ import menu from "./components/menu";
 import type { NavbarStylesType } from "./components/navbar";
 import navbar from "./components/navbar";
 
-// import popover from "./components/popover";
+import popover, { PopoverStylesType } from "./components/popover";
 // import progress from "./components/progress";
 // import radio from "./components/radio";
 // import select from "./components/select";
@@ -88,6 +88,7 @@ export type Theme = {
   list: ListStylesType;
   menu: MenuStylesType;
   navbar: NavbarStylesType;
+  popover: PopoverStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -115,7 +116,7 @@ const theme: Theme = {
   list,
   menu,
   navbar,
-  // popover,
+  popover,
   // progress,
   // radio,
   // select,
@@ -154,8 +155,8 @@ export * from "./components/iconButton";
 export * from "./components/input";
 export * from "./components/list";
 export * from "./components/menu";
-// export * from "./components/navbar";
-// export * from "./components/popover";
+export * from "./components/navbar";
+export * from "./components/popover";
 // export * from "./components/progress";
 // export * from "./components/radio";
 // export * from "./components/select";
