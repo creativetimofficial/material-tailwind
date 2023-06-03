@@ -44,10 +44,11 @@ import type { InputStylesType } from "./components/input";
 import input from "./components/input";
 import type { ListStylesType } from "./components/list";
 import list from "./components/list";
+import type { MenuStylesType } from "./components/menu";
+import menu from "./components/menu";
+import type { NavbarStylesType } from "./components/navbar";
+import navbar from "./components/navbar";
 
-// import input from "./components/input";
-import menu, { MenuStylesType } from "./components/menu";
-// import navbar from "./components/navbar";
 // import popover from "./components/popover";
 // import progress from "./components/progress";
 // import radio from "./components/radio";
@@ -86,6 +87,7 @@ export type Theme = {
   input: InputStylesType;
   list: ListStylesType;
   menu: MenuStylesType;
+  navbar: NavbarStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -112,7 +114,7 @@ const theme: Theme = {
   input,
   list,
   menu,
-  // navbar,
+  navbar,
   // popover,
   // progress,
   // radio,
