@@ -19,7 +19,7 @@ export * from "./components/List";
 export * from "./components/Menu";
 export * from "./components/Navbar";
 export * from "./components/Popover";
-// export * from "./components/Progress";
+export * from "./components/Progress";
 // export * from "./components/Radio";
 // export * from "./components/Select";
 // export * from "./components/Switch";
