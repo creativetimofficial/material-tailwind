@@ -17,7 +17,7 @@ import type {
   disabled,
   objectType,
 } from "../../types/components/checkbox";
-import type { ParentComponent, JSX } from "solid-js";
+import type { JSX, Component } from "solid-js";
 import { mergeProps, splitProps, createMemo, Show } from "solid-js";
 
 export interface CheckboxProps {
@@ -32,24 +32,14 @@ export interface CheckboxProps {
   containerRef?: HTMLDivElement;
 }
 
-export const Checkbox: ParentComponent<
-  JSX.InputHTMLAttributes<HTMLInputElement> & CheckboxProps
-> = (props) => {
+export const Checkbox: Component<JSX.InputHTMLAttributes<HTMLInputElement> & CheckboxProps> = (
+  props,
+) => {
   // 1. init
   const theme = useTheme();
-  // const { defaultProps, valid, styles } = checkbox;
-  // const { base, colors } = styles;
 
   // 2. set default props
-  // color = color ?? defaultProps.color;
-  // label = label ?? defaultProps.label;
-  // icon = icon ?? defaultProps.icon;
-  // ripple = ripple ?? defaultProps.ripple;
-  // class = class ?? defaultProps.class;
-  // disabled = disabled ?? defaultProps.disabled;
-  // containerProps = containerProps ?? defaultProps.containerProps;
-  // labelProps = labelProps ?? defaultProps.labelProps;
-  // iconProps = iconProps ?? defaultProps.iconProps;
+
   const mergedProps = mergeProps(() => theme().checkbox.defaultProps, props);
   const [checkboxProps, rest] = splitProps(mergedProps, [
     "color",
@@ -67,48 +57,43 @@ export const Checkbox: ParentComponent<
   const rippleEffect = new Ripple();
 
   // 4. set styles
-  const rootClasses = createMemo(() =>
-    classnames(objectsToString(theme().checkbox.styles.base.root), {
-      [objectsToString(theme().checkbox.styles.base.disabled)]: checkboxProps.disabled,
-    }),
-  );
+  const cProps = createMemo(() => {
+    const { valid, styles } = theme().checkbox;
+    const { base, colors } = styles;
+    const rootClasses = classnames(objectsToString(styles.base.root), {
+      [objectsToString(styles.base.disabled)]: checkboxProps.disabled,
+    });
 
-  const containerClasses = createMemo(() =>
-    twMerge(
-      classnames(objectsToString(theme().checkbox.styles.base.container)),
+    const containerClasses = twMerge(
+      classnames(objectsToString(styles.base.container)),
       checkboxProps.containerProps?.class,
-    ),
-  );
-  const inputClasses = createMemo(() => {
-    const base = theme().checkbox.styles.base.input;
-    const colors = theme().checkbox.styles.colors;
-    const validColors = theme().checkbox.valid.colors;
-    return twMerge(
+    );
+
+    const inputClasses = twMerge(
       classnames(
         objectsToString(base),
-        objectsToString(colors[findMatch(validColors, checkboxProps.color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, checkboxProps.color, "blue")]),
       ),
       checkboxProps.class,
     );
-  });
-  const labelClasses = createMemo(() =>
-    twMerge(
-      classnames(objectsToString(theme().checkbox.styles.base.label)),
-      checkboxProps.labelProps?.class,
-    ),
-  );
-  const iconContainerClasses = createMemo(() =>
-    twMerge(
-      classnames(objectsToString(theme().checkbox.styles.base.icon)),
-      checkboxProps.iconProps?.class,
-    ),
-  );
 
+    const labelClasses = twMerge(
+      classnames(objectsToString(styles.base.label)),
+      checkboxProps.labelProps?.class,
+    );
+
+    const iconContainerClasses = twMerge(
+      classnames(objectsToString(styles.base.icon)),
+      checkboxProps.iconProps?.class,
+    );
+
+    return { iconContainerClasses, labelClasses, inputClasses, containerClasses, rootClasses };
+  });
   return (
-    <div ref={props.containerRef} class={rootClasses()}>
+    <div ref={props.containerRef} class={cProps().rootClasses}>
       <label
         {...checkboxProps.containerProps}
-        class={containerClasses()}
+        class={cProps().containerClasses}
         for={rest.id || "checkbox"}
         onMouseDown={(e) => {
           const onMouseDown = checkboxProps.containerProps?.onMouseDown;
@@ -124,10 +109,10 @@ export const Checkbox: ParentComponent<
           {...rest}
           type="checkbox"
           disabled={checkboxProps.disabled}
-          class={inputClasses()}
+          class={cProps().inputClasses}
           id={rest.id || "checkbox"}
         />
-        <span class={iconContainerClasses()}>
+        <span class={cProps().iconContainerClasses}>
           <Show when={!checkboxProps.icon} fallback={<>{checkboxProps.icon}</>}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -147,25 +132,16 @@ export const Checkbox: ParentComponent<
         </span>
       </label>
       <Show when={!!checkboxProps.label}>
-        <label {...checkboxProps.labelProps} class={labelClasses()} for={rest.id || "checkbox"}>
+        <label
+          {...checkboxProps.labelProps}
+          class={cProps().labelClasses}
+          for={rest.id || "checkbox"}
+        >
           {checkboxProps.label as string}
         </label>
       </Show>
     </div>
   );
 };
-
-// Checkbox.propTypes = {
-//   color: PropTypes.oneOf(propTypesColor),
-//   label: propTypesLabel,
-//   icon: propTypesIcon,
-//   ripple: propTypesRipple,
-//   class: propTypesClassName,
-//   disabled: propTypesDisabled,
-//   containerProps: propTypesObject,
-//   labelProps: propTypesObject,
-// };
-
-// Checkbox.displayName = "MaterialTailwind.Checkbox";
 
 export default Checkbox;

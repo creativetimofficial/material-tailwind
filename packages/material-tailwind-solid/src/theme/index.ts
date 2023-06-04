@@ -52,7 +52,7 @@ import type { PopoverStylesType } from "./components/popover";
 import popover from "./components/popover";
 import type { ProgressStylesType } from "./components/progress";
 import progress from "./components/progress";
-// import radio from "./components/radio";
+import radio, { RadioStylesType } from "./components/radio";
 // import select from "./components/select";
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
@@ -91,6 +91,7 @@ export type Theme = {
   navbar: NavbarStylesType;
   popover: PopoverStylesType;
   progress: ProgressStylesType;
+  radio: RadioStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -120,7 +121,7 @@ const theme: Theme = {
   navbar,
   popover,
   progress,
-  // radio,
+  radio,
   // select,
   // switch: switchButton,
   // tab,
@@ -160,7 +161,7 @@ export * from "./components/menu";
 export * from "./components/navbar";
 export * from "./components/popover";
 export * from "./components/progress";
-// export * from "./components/radio";
+export * from "./components/radio";
 // export * from "./components/select";
 // export * from "./components/switch";
 // export * from "./components/tabs/tab";
