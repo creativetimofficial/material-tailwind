@@ -87,7 +87,7 @@ export default function Example() {
 
 ## Chip Sizes
 
-The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>variant</Code> prop.
+The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
 <CodePreview id="chip-sizes" component={
   <div className="flex items-end gap-2">
@@ -101,11 +101,10 @@ import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <div className="flex gap-2">
-      <Chip value="chip filled" />
-      <Chip variant="gradient" value="chip gradient" />
-      <Chip variant="outlined" value="chip outlined" />
-      <Chip variant="ghost" value="chip ghost" />
+    <div className="flex items-end gap-2">
+      <Chip size="sm" value="chip small" />
+      <Chip size="md" value="chip medium" />
+      <Chip size="lg" value="chip large" />
     </div>
   );
 }
