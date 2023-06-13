@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps } from "framer-motion";
 
 // @heroicons
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -122,7 +122,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     return (
       <NewAnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             {...rest}
             ref={ref}
             className={classes}
@@ -152,7 +152,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
               </IconButton>
             )}
             {action || null}
-          </motion.div>
+          </m.div>
         )}
       </NewAnimatePresence>
     );

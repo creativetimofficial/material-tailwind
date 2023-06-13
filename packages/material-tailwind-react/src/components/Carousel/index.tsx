@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { animate, AnimationOptions, motion, useMotionValue } from "framer-motion";
+import { animate, m, useMotionValue } from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -137,7 +137,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     return (
       <div {...rest} ref={mergedRefs} className={carouselClasses}>
         {childrens.map((child, i) => (
-          <motion.div
+          <m.div
             key={i}
             ref={slideRef}
             className={slideClasses}
@@ -148,7 +148,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
             }}
           >
             {child}
-          </motion.div>
+          </m.div>
         ))}
 
         {/* arrows */}

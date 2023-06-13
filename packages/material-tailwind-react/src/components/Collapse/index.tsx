@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion components
-import { AnimatePresence, AnimatePresenceProps, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, AnimatePresenceProps, m, MotionProps } from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -76,7 +76,7 @@ export const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
     // 6. return
     return (
       <NewAnimatePresence>
-        <motion.div
+        <m.div
           {...rest}
           ref={mergedRef}
           className={classes}
@@ -86,7 +86,7 @@ export const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
           variants={appliedAnimation}
         >
           {children}
-        </motion.div>
+        </m.div>
       </NewAnimatePresence>
     );
   },

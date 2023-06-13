@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps } from "framer-motion";
 
 // @heroicons
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -103,7 +103,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     return (
       <NewAnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             {...rest}
             ref={ref}
             role="alert"
@@ -127,7 +127,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
               </IconButton>
             )}
             {action || null}
-          </motion.div>
+          </m.div>
         )}
       </NewAnimatePresence>
     );

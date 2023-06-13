@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, m, useAnimation } from "framer-motion";
 
 // @floating-ui
 import { useFloating, useInteractions, useDismiss } from "@floating-ui/react";
@@ -146,7 +146,7 @@ export const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
       <React.Fragment>
         <AnimatePresence>
           {overlay && open && (
-            <motion.div
+            <m.div
               ref={overlayRef}
               className={overlayClasses}
               initial="unmount"
@@ -157,7 +157,7 @@ export const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
             />
           )}
         </AnimatePresence>
-        <motion.div
+        <m.div
           {...getFloatingProps({
             ref,
             ...rest,
@@ -174,7 +174,7 @@ export const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
           transition={transition}
         >
           {children}
-        </motion.div>
+        </m.div>
       </React.Fragment>
     );
   },

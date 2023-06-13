@@ -4,7 +4,7 @@ import React from "react";
 import { FloatingPortal, FloatingFocusManager, useMergeRefs } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -64,7 +64,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
         <NewAnimatePresence>
           {open && (
             <FloatingFocusManager context={context}>
-              <motion.div
+              <m.div
                 {...getFloatingProps({
                   ...rest,
                   ref: mergedRef,
@@ -83,7 +83,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
                 variants={appliedAnimation}
               >
                 {children}
-              </motion.div>
+              </m.div>
             </FloatingFocusManager>
           )}
         </NewAnimatePresence>

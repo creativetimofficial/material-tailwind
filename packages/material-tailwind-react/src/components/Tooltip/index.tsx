@@ -19,7 +19,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -171,7 +171,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
         <FloatingPortal>
           <NewAnimatePresence>
             {open && (
-              <motion.div
+              <m.div
                 {...getFloatingProps({
                   ...rest,
                   ref: mergedRef,
@@ -188,7 +188,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
                 variants={appliedAnimation}
               >
                 {content}
-              </motion.div>
+              </m.div>
             )}
           </NewAnimatePresence>
         </FloatingPortal>

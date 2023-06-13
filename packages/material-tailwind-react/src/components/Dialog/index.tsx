@@ -16,7 +16,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -154,7 +154,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
               lockScroll
             >
               <FloatingFocusManager context={context}>
-                <motion.div
+                <m.div
                   className={size === "xxl" ? "" : backdropClasses}
                   initial="unmount"
                   exit="unmount"
@@ -162,7 +162,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
                   variants={backdropAnimation}
                   transition={{ duration: 0.2 }}
                 >
-                  <motion.div
+                  <m.div
                     {...getFloatingProps({
                       ...rest,
                       ref: mergedRef,
@@ -176,8 +176,8 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
                     variants={appliedAnimation}
                   >
                     {children}
-                  </motion.div>
-                </motion.div>
+                  </m.div>
+                </m.div>
               </FloatingFocusManager>
             </FloatingOverlay>
           )}

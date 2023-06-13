@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -81,7 +81,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
       >
         <div className="z-20 text-inherit">{children}</div>
         {active === value && (
-          <motion.div
+          <m.div
             {...indicatorProps}
             transition={{ duration: 0.5 }}
             className={indicatorClasses}

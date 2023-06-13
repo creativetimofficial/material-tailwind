@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -51,14 +51,14 @@ export const SpeedDialContent = React.forwardRef<HTMLDivElement, SpeedDialConten
             {...getFloatingProps()}
           >
             {React.Children.map(children, (child: React.ReactElement) => (
-              <motion.div
+              <m.div
                 initial="unmount"
                 exit="unmount"
                 animate={open ? "mount" : "unmount"}
                 variants={animation}
               >
                 {child}
-              </motion.div>
+              </m.div>
             ))}
           </div>
         )}
