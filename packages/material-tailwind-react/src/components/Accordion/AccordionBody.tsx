@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { m, MotionProps } from "framer-motion";
+import { m, MotionProps, domAnimation, LazyMotion } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -63,25 +63,27 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
 
     // 5. return
     return (
-      <m.div
-        className="overflow-hidden"
-        initial="unmount"
-        exit="unmount"
-        animate={open ? "mount" : "unmount"}
-        variants={heightAnimation}
-      >
+      <LazyMotion features={domAnimation}>
         <m.div
-          {...rest}
-          ref={ref}
-          className={bodyClasses}
+          className="overflow-hidden"
           initial="unmount"
           exit="unmount"
           animate={open ? "mount" : "unmount"}
-          variants={appliedAnimation}
+          variants={heightAnimation}
         >
-          {children}
+          <m.div
+            {...rest}
+            ref={ref}
+            className={bodyClasses}
+            initial="unmount"
+            exit="unmount"
+            animate={open ? "mount" : "unmount"}
+            variants={appliedAnimation}
+          >
+            {children}
+          </m.div>
         </m.div>
-      </m.div>
+      </LazyMotion>
     );
   },
 );
