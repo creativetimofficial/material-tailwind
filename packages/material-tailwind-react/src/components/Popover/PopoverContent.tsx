@@ -4,7 +4,7 @@ import React from "react";
 import { FloatingPortal, FloatingFocusManager, useMergeRefs } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -60,34 +60,36 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
 
     // 6. return
     return (
-      <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <FloatingFocusManager context={context}>
-              <m.div
-                {...getFloatingProps({
-                  ...rest,
-                  ref: mergedRef,
-                  className: popoverClasses,
-                  style: {
-                    position: strategy,
-                    top: y ?? "",
-                    left: x ?? "",
-                  },
-                  "aria-labelledby": labelId,
-                  "aria-describedby": descriptionId,
-                })}
-                initial="unmount"
-                exit="unmount"
-                animate={open ? "mount" : "unmount"}
-                variants={appliedAnimation}
-              >
-                {children}
-              </m.div>
-            </FloatingFocusManager>
-          )}
-        </NewAnimatePresence>
-      </FloatingPortal>
+      <LazyMotion features={domAnimation}>
+        <FloatingPortal>
+          <NewAnimatePresence>
+            {open && (
+              <FloatingFocusManager context={context}>
+                <m.div
+                  {...getFloatingProps({
+                    ...rest,
+                    ref: mergedRef,
+                    className: popoverClasses,
+                    style: {
+                      position: strategy,
+                      top: y ?? "",
+                      left: x ?? "",
+                    },
+                    "aria-labelledby": labelId,
+                    "aria-describedby": descriptionId,
+                  })}
+                  initial="unmount"
+                  exit="unmount"
+                  animate={open ? "mount" : "unmount"}
+                  variants={appliedAnimation}
+                >
+                  {children}
+                </m.div>
+              </FloatingFocusManager>
+            )}
+          </NewAnimatePresence>
+        </FloatingPortal>
+      </LazyMotion>
     );
   },
 );

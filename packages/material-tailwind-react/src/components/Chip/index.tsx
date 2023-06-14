@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, m, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps, LazyMotion, domAnimation } from "framer-motion";
 
 // @heroicons
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -120,41 +120,43 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
 
     // 7. return
     return (
-      <NewAnimatePresence>
-        {open && (
-          <m.div
-            {...rest}
-            ref={ref}
-            className={classes}
-            initial="unmount"
-            exit="unmount"
-            animate={open ? "mount" : "unmount"}
-            variants={appliedAnimation}
-          >
-            {icon && iconTemplate}
-            <span className={contentClasses}>{value}</span>
-            {onClose && !action && (
-              <IconButton
-                onClick={onClose}
-                size="sm"
-                variant="text"
-                color={variant === "outlined" || variant === "ghost" ? color : "white"}
-                className={actionClasses}
-              >
-                <XMarkIcon
-                  className={classnames({
-                    "h-3.5 w-3.5": size === "sm",
-                    "h-4 w-4": size === "md",
-                    "h-5 w-5": size === "lg",
-                  })}
-                  strokeWidth={2}
-                />
-              </IconButton>
-            )}
-            {action || null}
-          </m.div>
-        )}
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence>
+          {open && (
+            <m.div
+              {...rest}
+              ref={ref}
+              className={classes}
+              initial="unmount"
+              exit="unmount"
+              animate={open ? "mount" : "unmount"}
+              variants={appliedAnimation}
+            >
+              {icon && iconTemplate}
+              <span className={contentClasses}>{value}</span>
+              {onClose && !action && (
+                <IconButton
+                  onClick={onClose}
+                  size="sm"
+                  variant="text"
+                  color={variant === "outlined" || variant === "ghost" ? color : "white"}
+                  className={actionClasses}
+                >
+                  <XMarkIcon
+                    className={classnames({
+                      "h-3.5 w-3.5": size === "sm",
+                      "h-4 w-4": size === "md",
+                      "h-5 w-5": size === "lg",
+                    })}
+                    strokeWidth={2}
+                  />
+                </IconButton>
+              )}
+              {action || null}
+            </m.div>
+          )}
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );

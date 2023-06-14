@@ -19,7 +19,13 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, m, useIsomorphicLayoutEffect } from "framer-motion";
+import {
+  AnimatePresence,
+  m,
+  useIsomorphicLayoutEffect,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -451,17 +457,19 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           <label {...labelProps} className={labelClasses}>
             {label}
           </label>
-          <NewAnimatePresence>
-            {open && (
-              <>
-                {lockScroll ? (
-                  <FloatingOverlay lockScroll>{selectMenu}</FloatingOverlay>
-                ) : (
-                  selectMenu
-                )}
-              </>
-            )}
-          </NewAnimatePresence>
+          <LazyMotion features={domAnimation}>
+            <NewAnimatePresence>
+              {open && (
+                <>
+                  {lockScroll ? (
+                    <FloatingOverlay lockScroll>{selectMenu}</FloatingOverlay>
+                  ) : (
+                    selectMenu
+                  )}
+                </>
+              )}
+            </NewAnimatePresence>
+          </LazyMotion>
         </div>
       </SelectContextProvider>
     );

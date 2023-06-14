@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { AnimatePresence, m, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -45,21 +45,23 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
 
     // 5. return
     return (
-      <NewAnimatePresence exitBeforeEnter>
-        <m.div
-          {...rest}
-          ref={ref}
-          role="tabpanel"
-          className={tabPanelClasses}
-          initial="unmount"
-          exit="unmount"
-          animate={active === value ? "mount" : isInitial ? "initial" : "unmount"}
-          variants={appliedAnimation}
-          data-value={value}
-        >
-          {children}
-        </m.div>
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence exitBeforeEnter>
+          <m.div
+            {...rest}
+            ref={ref}
+            role="tabpanel"
+            className={tabPanelClasses}
+            initial="unmount"
+            exit="unmount"
+            animate={active === value ? "mount" : isInitial ? "initial" : "unmount"}
+            variants={appliedAnimation}
+            data-value={value}
+          >
+            {children}
+          </m.div>
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );

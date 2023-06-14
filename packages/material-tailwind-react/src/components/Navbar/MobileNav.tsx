@@ -1,7 +1,14 @@
 import React from "react";
 
 // framer-motion components
-import { AnimatePresence, AnimatePresenceProps, m, MotionProps } from "framer-motion";
+import {
+  AnimatePresence,
+  AnimatePresenceProps,
+  m,
+  MotionProps,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -86,19 +93,21 @@ More details: https://www.material-tailwind.com/docs/react/collapse
 
     // 6. return
     return (
-      <NewAnimatePresence>
-        <m.div
-          {...rest}
-          ref={mergedRef}
-          className={classes}
-          initial="unmount"
-          exit="unmount"
-          animate={open ? "mount" : "unmount"}
-          variants={appliedAnimation}
-        >
-          {children}
-        </m.div>
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence>
+          <m.div
+            {...rest}
+            ref={mergedRef}
+            className={classes}
+            initial="unmount"
+            exit="unmount"
+            animate={open ? "mount" : "unmount"}
+            variants={appliedAnimation}
+          >
+            {children}
+          </m.div>
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );

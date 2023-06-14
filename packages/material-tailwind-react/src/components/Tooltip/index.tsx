@@ -19,7 +19,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -168,30 +168,32 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
             }),
           })
         )}
-        <FloatingPortal>
-          <NewAnimatePresence>
-            {open && (
-              <m.div
-                {...getFloatingProps({
-                  ...rest,
-                  ref: mergedRef,
-                  className: tooltipClasses,
-                  style: {
-                    position: strategy,
-                    top: y ?? "",
-                    left: x ?? "",
-                  },
-                })}
-                initial="unmount"
-                exit="unmount"
-                animate={open ? "mount" : "unmount"}
-                variants={appliedAnimation}
-              >
-                {content}
-              </m.div>
-            )}
-          </NewAnimatePresence>
-        </FloatingPortal>
+        <LazyMotion features={domAnimation}>
+          <FloatingPortal>
+            <NewAnimatePresence>
+              {open && (
+                <m.div
+                  {...getFloatingProps({
+                    ...rest,
+                    ref: mergedRef,
+                    className: tooltipClasses,
+                    style: {
+                      position: strategy,
+                      top: y ?? "",
+                      left: x ?? "",
+                    },
+                  })}
+                  initial="unmount"
+                  exit="unmount"
+                  animate={open ? "mount" : "unmount"}
+                  variants={appliedAnimation}
+                >
+                  {content}
+                </m.div>
+              )}
+            </NewAnimatePresence>
+          </FloatingPortal>
+        </LazyMotion>
       </>
     );
   },

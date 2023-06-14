@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { AnimatePresence, m } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -37,32 +37,34 @@ export const SpeedDialContent = React.forwardRef<HTMLDivElement, SpeedDialConten
 
     // 4. return
     return (
-      <NewAnimatePresence>
-        {open && (
-          <div
-            {...rest}
-            ref={mergedRefs}
-            className={classes}
-            style={{
-              position: strategy,
-              top: y ?? 0,
-              left: x ?? 0,
-            }}
-            {...getFloatingProps()}
-          >
-            {React.Children.map(children, (child: React.ReactElement) => (
-              <m.div
-                initial="unmount"
-                exit="unmount"
-                animate={open ? "mount" : "unmount"}
-                variants={animation}
-              >
-                {child}
-              </m.div>
-            ))}
-          </div>
-        )}
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence>
+          {open && (
+            <div
+              {...rest}
+              ref={mergedRefs}
+              className={classes}
+              style={{
+                position: strategy,
+                top: y ?? 0,
+                left: x ?? 0,
+              }}
+              {...getFloatingProps()}
+            >
+              {React.Children.map(children, (child: React.ReactElement) => (
+                <m.div
+                  initial="unmount"
+                  exit="unmount"
+                  animate={open ? "mount" : "unmount"}
+                  variants={animation}
+                >
+                  {child}
+                </m.div>
+              ))}
+            </div>
+          )}
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );
