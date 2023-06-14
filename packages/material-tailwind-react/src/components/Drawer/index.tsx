@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, m, useAnimation } from "framer-motion";
+import { AnimatePresence, m, useAnimation, domAnimation, LazyMotion } from "framer-motion";
 
 // @floating-ui
 import { useFloating, useInteractions, useDismiss } from "@floating-ui/react";
@@ -144,37 +144,39 @@ export const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
     // 5. return
     return (
       <React.Fragment>
-        <AnimatePresence>
-          {overlay && open && (
-            <m.div
-              ref={overlayRef}
-              className={overlayClasses}
-              initial="unmount"
-              exit="unmount"
-              animate={open ? "mount" : "unmount"}
-              variants={backdropAnimation}
-              transition={{ duration: 0.3 }}
-            />
-          )}
-        </AnimatePresence>
-        <m.div
-          {...getFloatingProps({
-            ref,
-            ...rest,
-          })}
-          className={drawerClasses}
-          style={{
-            maxWidth: placement === "left" || placement === "right" ? size : "100%",
-            maxHeight: placement === "top" || placement === "bottom" ? size : "100%",
-            height: placement === "left" || placement === "right" ? "100vh" : "100%",
-          }}
-          initial="close"
-          animate={constrols}
-          variants={drawerAnimation}
-          transition={transition}
-        >
-          {children}
-        </m.div>
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence>
+            {overlay && open && (
+              <m.div
+                ref={overlayRef}
+                className={overlayClasses}
+                initial="unmount"
+                exit="unmount"
+                animate={open ? "mount" : "unmount"}
+                variants={backdropAnimation}
+                transition={{ duration: 0.3 }}
+              />
+            )}
+          </AnimatePresence>
+          <m.div
+            {...getFloatingProps({
+              ref,
+              ...rest,
+            })}
+            className={drawerClasses}
+            style={{
+              maxWidth: placement === "left" || placement === "right" ? size : "100%",
+              maxHeight: placement === "top" || placement === "bottom" ? size : "100%",
+              height: placement === "left" || placement === "right" ? "100vh" : "100%",
+            }}
+            initial="close"
+            animate={constrols}
+            variants={drawerAnimation}
+            transition={transition}
+          >
+            {children}
+          </m.div>
+        </LazyMotion>
       </React.Fragment>
     );
   },
