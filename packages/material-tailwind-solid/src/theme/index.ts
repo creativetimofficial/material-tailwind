@@ -52,9 +52,14 @@ import type { PopoverStylesType } from "./components/popover";
 import popover from "./components/popover";
 import type { ProgressStylesType } from "./components/progress";
 import progress from "./components/progress";
-import radio, { RadioStylesType } from "./components/radio";
-import rating, { RatingStyleTypes } from "./components/rating";
-import select, { SelectStylesType } from "./components/select";
+import type { RadioStylesType } from "./components/radio";
+import radio from "./components/radio";
+import type { RatingStyleTypes } from "./components/rating";
+import rating from "./components/rating";
+import type { SelectStylesType } from "./components/select";
+import select from "./components/select";
+import type { SliderStyleTypes } from "./components/slider";
+import slider from "./components/slider";
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
 // import tabs from "./components/tabs";
@@ -95,6 +100,7 @@ export type Theme = {
   radio: RadioStylesType;
   rating: RatingStyleTypes;
   select: SelectStylesType;
+  slider: SliderStyleTypes;
 };
 const theme: Theme = {
   accordion,
@@ -127,6 +133,7 @@ const theme: Theme = {
   radio,
   rating,
   select,
+  slider,
   // switch: switchButton,
   // tab,
   // tabs,
@@ -168,6 +175,7 @@ export * from "./components/progress";
 export * from "./components/radio";
 export * from "./components/rating";
 export * from "./components/select";
+export * from "./components/slider";
 // export * from "./components/switch";
 // export * from "./components/tabs/tab";
 // export * from "./components/tabs";
