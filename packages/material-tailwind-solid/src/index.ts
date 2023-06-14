@@ -22,7 +22,7 @@ export * from "./components/Popover";
 export * from "./components/Progress";
 export * from "./components/Radio";
 export * from "./components/Rating";
-// export * from "./components/Select";
+export * from "./components/Select";
 // export * from "./components/Switch";
 // export * from "./components/Tabs";
 // export * from "./components/Textarea";
