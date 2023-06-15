@@ -9,6 +9,8 @@ navigation:
     "button-colors",
     "button-with-icon",
     "block-level-button",
+    "rounded-buttons",
+    "buttons-with-link",
     "button-ripple-effect",
     "custom-auth-buttons",
     "props",
@@ -209,6 +211,98 @@ import { Button } from "@material-tailwind/react";
 
 export default function Example() {
   return <Button fullWidth>block level button</Button>;
+}
+```
+</CodePreview>
+
+---
+
+## Rounded Buttons
+
+You can use tailwind css <Code>rounded-full</Code> class with <Code>Button</Code> to create rounded buttons.
+
+<CodePreview id="rounded-buttons" link="button#rounded-buttons" component={
+  <div className="flex items-center gap-4">
+    <Button className="rounded-full">
+      Filled
+    </Button>
+    <Button variant="gradient" className="rounded-full">
+      Gradient
+    </Button>
+    <Button variant="outlined" className="rounded-full">
+      Outlined
+    </Button>
+    <Button variant="text" className="rounded-full">
+      Text
+    </Button>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button className="rounded-full">
+        Filled
+      </Button>
+      <Button variant="gradient" className="rounded-full">
+        Gradient
+      </Button>
+      <Button variant="outlined" className="rounded-full">
+        Outlined
+      </Button>
+      <Button variant="text" className="rounded-full">
+        Text
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Buttons with Link
+
+You can wrap <Code>Button</Code> component with <Code>{`<a>`}</Code> tag to make it a link.
+
+<CodePreview id="buttons-with-link" link="button#buttons-with-link" component={
+  <div className="flex items-center gap-4">
+    <a href="#buttons-with-link">
+      <Button>Filled</Button>
+    </a>
+    <a href="#buttons-with-link">
+      <Button variant="gradient">Gradient</Button>
+    </a>
+    <a href="#buttons-with-link">
+      <Button variant="outlined">Outlined</Button>
+    </a>
+    <a href="#buttons-with-link">
+      <Button variant="text">Text</Button>
+    </a>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <a href="#buttons-with-link">
+        <Button>Filled</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="gradient">Gradient</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="outlined">Outlined</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="text">Text</Button>
+      </a>
+    </div>
+  );
 }
 ```
 </CodePreview>

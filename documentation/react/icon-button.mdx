@@ -7,6 +7,8 @@ navigation:
     "icon-button-variants",
     "icon-button-sizes",
     "icon-button-colors",
+    "rounded-icon-buttons",
+    "icon-buttons-with-link",
     "icon-button-ripple-effect",
     "font-awesome-cdn-link",
     "props",
@@ -180,6 +182,106 @@ export default function Example() {
       <IconButton color="amber">
         <i className="fas fa-heart" />
       </IconButton>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Rounded Icon Buttons
+
+You can use tailwind css <Code>rounded-full</Code> class with <Code>IconButton</Code> to create rounded icon buttons.
+
+<CodePreview id="rounded-icon-buttons" link="button#rounded-icon-buttons" component={
+  <div className="flex items-center gap-4">
+    <IconButton className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="gradient" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="outlined" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="text" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+}>
+```jsx
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <IconButton className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="gradient" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="outlined" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="text" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Icon Buttons with Link
+
+You can wrap <Code>IconButton</Code> component with <Code>{`<a>`}</Code> tag to make it a link.
+
+<CodePreview id="icon-buttons-with-link" link="button#icon-buttons-with-link" component={
+  <div className="flex items-center gap-4">
+    <a href="#icon-buttons-with-link">
+      <IconButton>
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="gradient">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="outlined">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="text">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <a href="#buttons-with-link">
+        <Button>Filled</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="gradient">Gradient</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="outlined">Outlined</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="text">Text</Button>
+      </a>
     </div>
   );
 }
