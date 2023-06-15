@@ -112,6 +112,7 @@ export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" |
   name?: name;
   children: children;
   containerProps?: containerProps;
+  requiredStyle?: boolean;
 }
 
 const Select = React.forwardRef<HTMLDivElement, SelectProps>(
@@ -330,6 +331,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       "absolute top-2/4 -translate-y-2/4",
       variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3",
     );
+    const asteriskClasses = classnames(objectsToString(base.asterisk));
 
     // 5. set animation
     const animation = {
@@ -455,7 +457,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
             </div>
           </button>
           <label {...labelProps} className={labelClasses}>
-            {label}
+            {label} {rest.requiredStyle ? <span className={asteriskClasses}>*</span> : ""}
           </label>
           <LazyMotion features={domAnimation}>
             <NewAnimatePresence>
