@@ -135,6 +135,7 @@ export interface SelectStylesType {
         active?: object;
         disabled?: object;
       };
+      asterisk?: object;
     };
     variants?: {
       outlined: SelectVariantStylesType;
@@ -265,6 +266,11 @@ export const select: SelectStylesType = {
           userSelect: "select-none",
           pointerEvents: "pointer-events-none",
         },
+      },
+      asterisk: {
+        display: "inline-block",
+        color: "text-red-500",
+        ml: "ml-0.5",
       },
     },
     variants: {
