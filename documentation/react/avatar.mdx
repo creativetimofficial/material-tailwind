@@ -9,6 +9,7 @@ navigation:
     "avatar-with-border",
     "avatar-with-text",
     "avatar-stack",
+    "avatar-with-custom-styles",
     "props",
     "theme",
   ]
@@ -244,6 +245,36 @@ export default function Example() {
         src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
       />
     </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Avatar with Custom Styles
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Avatar</Code> component.
+
+<CodePreview id="avatar-with-custom-styles" component={
+  <Avatar 
+    size="lg" 
+    alt="avatar"
+    src="/img/face-2.jpg" 
+    className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
+  />
+}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Avatar 
+      size="lg" 
+      alt="avatar"
+      src="/img/face-2.jpg" 
+      className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
+    />
   );
 }
 ```
