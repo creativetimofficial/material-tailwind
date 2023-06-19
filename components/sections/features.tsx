@@ -14,7 +14,7 @@ export default function SectionFeatures() {
     {
       icon: "terminal",
       title: "JavaScript Components",
-      desc: "Material Tailwind only features React and HTML components, but in the near future it will future more.",
+      desc: "Material Tailwind only features React and HTML components, but in the near future it will feature more.",
     },
     {
       icon: "description",
