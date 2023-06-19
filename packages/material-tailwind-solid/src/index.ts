@@ -26,6 +26,7 @@ export * from "./components/Select";
 export * from "./components/Slider";
 export * from "./components/SpeedDial";
 export * from "./components/Spinner";
+export * from "./components/Stepper";
 // export * from "./components/Switch";
 // export * from "./components/Tabs";
 // export * from "./components/Textarea";

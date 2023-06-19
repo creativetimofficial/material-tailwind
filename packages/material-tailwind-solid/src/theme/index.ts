@@ -67,6 +67,7 @@ import type {
 } from "./components/speedDial";
 import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
 import spinner, { SpinnerStyleTypes } from "./components/spinner";
+import { StepStyleTypes, StepperStyleTypes, step, stepper } from "./components/stepper";
 
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
@@ -113,6 +114,8 @@ export type Theme = {
   speedDialAction: SpeedDialActionStyleTypes;
   speedDialContent: SpeedDialContentStyleTypes;
   spinner: SpinnerStyleTypes;
+  step: StepStyleTypes;
+  stepper: StepperStyleTypes;
 };
 const theme: Theme = {
   accordion,
@@ -150,6 +153,8 @@ const theme: Theme = {
   speedDialContent,
   speedDialAction,
   spinner,
+  step,
+  stepper,
   // switch: switchButton,
   // tab,
   // tabs,
@@ -194,6 +199,7 @@ export * from "./components/select";
 export * from "./components/slider";
 export * from "./components/speedDial";
 export * from "./components/spinner";
+export * from "./components/stepper";
 
 // export * from "./components/switch";
 // export * from "./components/tabs/tab";
