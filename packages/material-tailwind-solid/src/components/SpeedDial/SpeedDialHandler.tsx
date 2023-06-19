@@ -19,24 +19,15 @@ export const SpeedDialHandler: ParentComponent<JSX.HTMLAttributes<HTMLDivElement
     },
   ) => {
     const onMouseEnter = props.onMouseEnter;
-    if (!("ontouchstart" in window)) context()?.handler(true);
+    // if (!("ontouchstart" in window)) context()?.handler(true);
+    context()?.handler(true);
     if (typeof onMouseEnter === "function") onMouseEnter(e);
   };
-  const handleClick = (
-    e: MouseEvent & {
-      currentTarget: HTMLDivElement;
-      target: Element;
-    },
-  ) => {
-    const onClick = props.onClick;
-    if (typeof onClick === "function") onClick(e);
-    context()?.handler(!context()?.open());
-  };
+
   // 2. return
   return (
     <div
       {...props}
-      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       ref={mergeRefs((el) => context()?.setReference(el), props?.ref)}
     >

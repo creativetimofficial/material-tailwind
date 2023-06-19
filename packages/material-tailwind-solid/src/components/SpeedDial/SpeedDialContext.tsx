@@ -8,6 +8,7 @@ interface ISpeedDialContext {
   handler: handler;
   position: UseFloatingResult;
   animation: animate;
+  rootRef: Accessor<HTMLDivElement | undefined>;
   setFloating: Setter<HTMLDivElement | undefined>;
   setReference: Setter<HTMLDivElement | undefined>;
 }

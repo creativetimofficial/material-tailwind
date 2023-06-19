@@ -28,7 +28,7 @@ import { mergeRefs } from "@solid-primitives/refs";
 import SpeedDialAction from "./SpeedDialAction";
 import SpeedDialContent from "./SpeedDialContent";
 import SpeedDialHandler from "./SpeedDialHandler";
-import { SpeedDialContext } from "./SpeedDialContext";
+import { SpeedDialContext, useSpeedDial } from "./SpeedDialContext";
 
 export interface SpeedDialProps {
   open?: open;
@@ -83,10 +83,12 @@ const SpeedDial: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & SpeedDialP
   // 5. build context
   const open = createMemo(() => internalProps.open ?? internalOpen());
   const handler = createMemo(() => internalProps.handler ?? setInternalOpen);
+  const [containerRef, setContainerRef] = createSignal<HTMLDivElement>();
 
   const ctx = createMemo(() => ({
     position,
     open,
+    rootRef: containerRef,
     setFloating,
     setReference,
     handler: handler(),
@@ -94,7 +96,6 @@ const SpeedDial: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & SpeedDialP
   }));
   // 6. Close on mouse move outside
   let moveOutsideRef!: HTMLDivElement;
-  const [containerRef, setContainerRef] = createSignal<HTMLDivElement>();
   onMount(() => {
     //close  menu when click outside
     window.addEventListener("keydown", function (e) {
@@ -186,7 +187,7 @@ const SpeedDial: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & SpeedDialP
   );
 };
 
-export { SpeedDial, SpeedDialHandler, SpeedDialContent, SpeedDialAction };
+export { SpeedDial, SpeedDialHandler, SpeedDialContent, SpeedDialAction, useSpeedDial };
 export default Object.assign(SpeedDial, {
   Handler: SpeedDialHandler,
   Content: SpeedDialContent,
