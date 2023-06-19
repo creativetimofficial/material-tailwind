@@ -60,6 +60,13 @@ import type { SelectStylesType } from "./components/select";
 import select from "./components/select";
 import type { SliderStyleTypes } from "./components/slider";
 import slider from "./components/slider";
+import type {
+  SpeedDialActionStyleTypes,
+  SpeedDialContentStyleTypes,
+  SpeedDialStyleTypes,
+} from "./components/speedDial";
+import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
+
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
 // import tabs from "./components/tabs";
@@ -101,6 +108,9 @@ export type Theme = {
   rating: RatingStyleTypes;
   select: SelectStylesType;
   slider: SliderStyleTypes;
+  speedDial: SpeedDialStyleTypes;
+  speedDialAction: SpeedDialActionStyleTypes;
+  speedDialContent: SpeedDialContentStyleTypes;
 };
 const theme: Theme = {
   accordion,
@@ -134,6 +144,9 @@ const theme: Theme = {
   rating,
   select,
   slider,
+  speedDial,
+  speedDialContent,
+  speedDialAction,
   // switch: switchButton,
   // tab,
   // tabs,
@@ -176,6 +189,8 @@ export * from "./components/radio";
 export * from "./components/rating";
 export * from "./components/select";
 export * from "./components/slider";
+export * from "./components/speedDial";
+
 // export * from "./components/switch";
 // export * from "./components/tabs/tab";
 // export * from "./components/tabs";
