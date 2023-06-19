@@ -5,6 +5,7 @@ navigation:
   [
     "accordion",
     "accordion-always-open",
+    "accordion-all-open",
     "custom-accordion-icon",
     "custom-accordion-animation",
     "accordion-with-custom-styles",
@@ -249,6 +250,113 @@ export default function Example() {
       </Accordion>
       <Accordion open={open === 2}>
         <AccordionHeader onClick={() => handleOpen(2)}>
+          What can I do with Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+    </Fragment>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Accordion All Open
+
+You can make the <Code>Accordion</Code> component to be all open and doesn't close when it's next or previous <Code>Accordion</Code> component opened using a separate state.
+
+<CodePreview id="accordion-all-open" component={
+  <State initialState={{ acc1: true, acc2: true, acc3: true }}>
+    <Observe>
+      {({ setState, acc1, acc2, acc3 }) => (
+        <>
+          <Accordion open={acc1}>
+            <AccordionHeader
+              onClick={() => setState((s) => ({ acc1: !acc1 }))}
+            >
+              What is Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={acc2}>
+            <AccordionHeader
+              onClick={() => setState((s) => ({ acc2: !acc2 }))}
+            >
+              How to use Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+          <Accordion open={acc3}>
+            <AccordionHeader
+              onClick={() => setState((s) => ({ acc3: !acc3 }))}
+            >
+              What can I do with Material Tailwind?
+            </AccordionHeader>
+            <AccordionBody>
+              We're not always in the position that we want to be at. We're
+              constantly growing. We're constantly making mistakes. We're
+              constantly trying to express ourselves and actualize our dreams.
+            </AccordionBody>
+          </Accordion>
+        </>
+      )}
+    </Observe>
+  </State>
+}>
+```jsx
+import { Fragment, useState } from "react";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+
+export default function Example() {
+  const [openAcc1, setOpenAcc1] = useState(true);
+  const [openAcc2, setOpenAcc2] = useState(true);
+  const [openAcc3, setOpenAcc3] = useState(true);
+
+  const handleOpenAcc1 = () => setOpenAcc1(cur => !cur);
+  const handleOpenAcc2 = () => setOpenAcc2(cur => !cur);
+  const handleOpenAcc3 = () => setOpenAcc3(cur => !cur);
+
+  return (
+    <Fragment>
+      <Accordion open={openAcc1}>
+        <AccordionHeader onClick={handleOpenAcc1}>
+          What is Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={openAcc2}>
+        <AccordionHeader onClick={handleOpenAcc2}>
+          How to use Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          We're not always in the position that we want to be at. We're
+          constantly growing. We're constantly making mistakes. We're constantly
+          trying to express ourselves and actualize our dreams.
+        </AccordionBody>
+      </Accordion>
+      <Accordion open={openAcc3}>
+        <AccordionHeader onClick={handleOpenAcc3}>
           What can I do with Material Tailwind?
         </AccordionHeader>
         <AccordionBody>
