@@ -12,6 +12,7 @@ navigation:
     "custom-alert-animation",
     "custom-alert-close-icon",
     "alert-with-content",
+    "alert-with-custom-styles",
     "props",
     "theme",
   ]
@@ -660,6 +661,35 @@ export default function Example() {
       </Alert>
     </React.Fragment>
   );
+}
+```
+</CodePreview>
+
+---
+
+## Alert with Custom Styles
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Alert</Code> component.
+
+<CodePreview id="alert-with-custom-styles" link="alert#alert-with-custom-styles" component={
+  <Alert 
+    icon={<SolidIcons.CheckCircleIcon className="mt-px h-6 w-6" />}
+    className="bg-[#2ec946]/10 text-[#2ec946] border-l-4 border-[#2ec946] rounded-none font-medium">
+    A simple alert for showing message.
+  </Alert>
+}>
+```jsx
+import { Alert } from "@material-tailwind/react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <Alert 
+      icon={<SolidIcons.CheckCircleIcon className="mt-px h-6 w-6" />}
+      className="bg-[#2ec946]/10 text-[#2ec946] border-l-4 border-[#2ec946] rounded-none font-medium">
+      A simple alert for showing message.
+    </Alert>
+  )
 }
 ```
 </CodePreview>
