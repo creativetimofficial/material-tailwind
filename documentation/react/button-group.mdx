@@ -7,8 +7,9 @@ navigation:
     "button-group-variants",
     "button-group-sizes",
     "button-group-colors",
-    "block-level-button",
-    "button-ripple-effect",
+    "block-level-button-group",
+    "button-group-ripple-effect",
+    "button-group-with-custom-styles",
     "props",
     "theme",
   ]
@@ -42,7 +43,7 @@ See below our <Code>ButtonGroup</Code> example that you can use in your Tailwind
 
 <br />
 
-<CodePreview id="button-group" link="button-group#button-group" component={
+<CodePreview id="button-group" component={
   <ButtonGroup>
     <Button>One</Button>
     <Button>Two</Button>
@@ -70,7 +71,7 @@ export default function Example() {
 
 The <Code>ButtonGroup</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="button-group-variants" link="button#button-group-variants" component={
+<CodePreview id="button-group-variants" component={
   <div className="flex flex-col w-max gap-4">
     <ButtonGroup>
       <Button>One</Button>
@@ -132,7 +133,7 @@ export default function Example() {
 
 The <Code>ButtonGroup</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="button-group-sizes" link="button#button-group-sizes" component={
+<CodePreview id="button-group-sizes" component={
   <div className="flex flex-col w-max gap-4">
     <ButtonGroup size="sm">
       <Button>One</Button>
@@ -184,7 +185,7 @@ export default function Example() {
 
 The <Code>ButtonGroup</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="button-group-colors" link="button#button-group-colors" component={
+<CodePreview id="button-group-colors" component={
   <div className="flex flex-col w-max gap-4">
     <ButtonGroup color="blue">
       <Button>One</Button>
@@ -246,7 +247,7 @@ export default function Example() {
 
 A <Code>ButtonGroup</Code> could be a block level component as well that get's all the available space in a row. You can render a <Code>ButtonGroup</Code> as a block level element using the <Code>fullWidth</Code> prop.
 
-<CodePreview id="block-level-button-group" link="button#block-level-button-group" component={
+<CodePreview id="block-level-button-group" component={
   <ButtonGroup fullWidth={true}>
     <Button>One</Button>
     <Button>Two</Button>
@@ -274,7 +275,7 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>ButtonGroup</Code> component using the <Code>ripple</Code> prop.
 
-<CodePreview id="button-group-ripple-effect" link="button#button-group-ripple-effect" component={
+<CodePreview id="button-group-ripple-effect" component={
   <div className="flex flex-col w-max gap-4">
     <ButtonGroup ripple={true}>
       <Button>One</Button>
@@ -305,6 +306,34 @@ export default function Example() {
         <Button>Three</Button>
       </ButtonGroup>
     </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Button Group with Custom Styles
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>ButtonGroup</Code> component.
+
+<CodePreview id="button-group-with-custom-styles" component={
+  <ButtonGroup className="gap-1 bg-blue-500/25 p-1">
+    <Button className="rounded-none">One</Button>
+    <Button className="rounded-none">Two</Button>
+    <Button className="rounded-none">Three</Button>
+  </ButtonGroup>
+}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <ButtonGroup className="gap-1 bg-blue-500/25 p-1">
+      <Button className="rounded-none">One</Button>
+      <Button className="rounded-none">Two</Button>
+      <Button className="rounded-none">Three</Button>
+    </ButtonGroup>
   );
 }
 ```
