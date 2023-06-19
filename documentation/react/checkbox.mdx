@@ -13,6 +13,7 @@ navigation:
     "checkbox-with-description",
     "checkbox-vertical-list-group",
     "checkbox-horizontal-list-group",
+    "checkbox-with-custom-styles",
     "props",
     "theme",
   ]
@@ -527,6 +528,34 @@ export default function Example() {
         </ListItem>
       </List>
     </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Checkbox with Custom Styles
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Checkbox</Code> component.
+
+<CodePreview id="checkbox-with-custom-styles" component={
+  <Checkbox
+    defaultChecked
+    ripple={false}
+    className="rounded-full w-8 h-8 hover:before:opacity-0 hover:scale-105 bg-blue-500/25 border-blue-500/50 transition-all"
+  />
+}>
+```jsx
+import { ButtonGroup, Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Checkbox
+      defaultChecked
+      ripple={false}
+      className="rounded-full w-8 h-8 hover:before:opacity-0 hover:scale-105 bg-blue-500/25 border-blue-500/50 transition-all"
+    />
   );
 }
 ```
