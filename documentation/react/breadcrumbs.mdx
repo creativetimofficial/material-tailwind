@@ -7,6 +7,7 @@ navigation:
     "breadcrumbs-with-icon",
     "block-level-breadcrumbs",
     "custom-breadcrumbs-separator",
+    "breadcrumbs-with-custom-styles",
     "props",
     "theme",
   ]
@@ -191,6 +192,54 @@ export default function Example() {
 }
 ```
 </CodePreview>
+
+---
+
+## Breadcrumbs with Custom Styles
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Breadcrumbs</Code> component.
+
+<CodePreview id="breadcrumbs-with-custom-styles" component={
+  <Breadcrumbs
+    separator={<OutlineIcons.ArrowLongRightIcon className="w-4 h-4 text-white" strokeWidth={2.5} />}
+    className="rounded-full p-1 bg-gradient-to-tr from-blue-400 to-blue-600 border border-white"
+  >
+    <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+      Docs
+    </a>
+    <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+      Components
+    </a>
+    <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+      Breadcrumbs
+    </a>
+  </Breadcrumbs>
+}>
+```jsx
+import { Breadcrumbs } from "@material-tailwind/react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Breadcrumbs
+      separator={<ArrowLongRightIcon className="w-4 h-4 text-white" strokeWidth={2.5} />}
+      className="rounded-full p-1 bg-gradient-to-tr from-blue-400 to-blue-600 border border-white"
+    >
+      <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+        Docs
+      </a>
+      <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+        Components
+      </a>
+      <a href="#" className="text-blue-gray-700 font-medium bg-white px-3 py-1 rounded-full">
+        Breadcrumbs
+      </a>
+    </Breadcrumbs>
+  );
+}
+```
+</CodePreview>
+
 
 <span id="props" className="scroll-mt-48" />
 <span id="theme" className="scroll-mt-48" />
