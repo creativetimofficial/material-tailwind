@@ -10,6 +10,7 @@ navigation:
     "list-with-disabled-item",
     "list-with-links",
     "list-with-badges",
+    "list-with-custom-styles",
     "props",
     "theme",
   ]
@@ -69,7 +70,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-avatar">
 ## List With Avatar
+</DocsTitle>
 
 You can use the <Code>{`<ListItemPrefix />`}</Code> component to put images or icons before the list item content.
 
@@ -180,7 +183,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-icon">
 ## List With Icon
+</DocsTitle>
 
 You can use the <Code>{`<ListItemSuffix />`}</Code> component to put images or icons after the list item content.
 
@@ -261,7 +266,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-selected-item">
 ## List With Selected Item
+</DocsTitle>
 
 You can make a list item selected by default using the <Code>selected</Code> prop for the <Code>{`<ListItem />`}</Code> component.
 
@@ -310,7 +317,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-disabled-item">
 ## List With Disabled Item
+</DocsTitle>
 
 You can make a list item disabled using the <Code>disabled</Code> prop for the <Code>{`<ListItem />`}</Code> component.
 
@@ -343,7 +352,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-links">
 ## List With Links
+</DocsTitle>
 
 Display a collection of options that are clickable and lead to different pages with our simple and versatile list example.
 
@@ -387,7 +398,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="list-with-badges">
 ## List With Badges
+</DocsTitle>
 
 This example is similar to the previous list component, but it also includes badges to present more information about the options (for example, the quantity).
 
@@ -445,6 +458,89 @@ export default function Example() {
           <ListItemSuffix>
             <Chip value="40" variant="ghost" size="sm" className="rounded-full" />
           </ListItemSuffix>
+        </ListItem>
+      </List>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="list-with-custom-styles">
+## List with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>List</Code>, <Code>ListItem</Code>, <Code>ListItemPrefix</Code> and <Code>ListItemSuffix</Code> components.
+
+<CodePreview id="list-with-custom-styles" component={
+  <Card className="w-96 overflow-hidden rounded-md">
+    <List className="p-0 my-2">
+      <ListItem
+        className="group rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+      >
+        <ListItemPrefix>
+          <OutlineIcons.InboxArrowDownIcon className="w-4 h-4" />
+        </ListItemPrefix>
+        Inbox
+        <ListItemSuffix>
+          <Chip value="+99" variant="ghost" size="sm" className="rounded-full px-2 py-1 text-xs group-hover:bg-white/20 group-hover:text-white" />
+        </ListItemSuffix>
+      </ListItem>
+      <ListItem
+        className="rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+      >
+        <ListItemPrefix>
+          <OutlineIcons.TrashIcon className="w-4 h-4" />
+        </ListItemPrefix>
+        Trash
+      </ListItem>
+      <ListItem
+        className="rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+      >
+        <ListItemPrefix>
+          <OutlineIcons.Cog6ToothIcon className="w-4 h-4" />
+        </ListItemPrefix>
+        Settings
+      </ListItem>
+    </List>
+  </Card>
+}>
+```jsx
+import { List, ListItem, ListItemPrefix, ListItemSuffix, Chip, Card } from "@material-tailwind/react";
+import { InboxArrowDownIcon, TrashIcon, Cog6ToothIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Card className="w-96 overflow-hidden rounded-md">
+      <List className="p-0 my-2">
+        <ListItem
+          className="group rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+        >
+          <ListItemPrefix>
+            <OutlineIcons.InboxArrowDownIcon className="w-4 h-4" />
+          </ListItemPrefix>
+          Inbox
+          <ListItemSuffix>
+            <Chip value="+99" variant="ghost" size="sm" className="rounded-full px-2 py-1 text-xs group-hover:bg-white/20 group-hover:text-white" />
+          </ListItemSuffix>
+        </ListItem>
+        <ListItem
+          className="rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+        >
+          <ListItemPrefix>
+            <OutlineIcons.TrashIcon className="w-4 h-4" />
+          </ListItemPrefix>
+          Trash
+        </ListItem>
+        <ListItem
+          className="rounded-none text-sm py-1.5 px-3 font-normal text-blue-gray-700 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white"
+        >
+          <ListItemPrefix>
+            <OutlineIcons.Cog6ToothIcon className="w-4 h-4" />
+          </ListItemPrefix>
+          Settings
         </ListItem>
       </List>
     </Card>
