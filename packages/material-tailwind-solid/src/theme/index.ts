@@ -68,6 +68,11 @@ import type {
 import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
 import spinner, { SpinnerStyleTypes } from "./components/spinner";
 import { StepStyleTypes, StepperStyleTypes, step, stepper } from "./components/stepper";
+import tabs, { TabsStylesType } from "./components/tabs";
+import tab, { TabStylesType } from "./components/tabs/tab";
+import tabPanel, { TabPanelStylesType } from "./components/tabs/tabPanel";
+import tabsBody, { TabsBodyStylesType } from "./components/tabs/tabsBody";
+import tabsHeader, { TabsHeaderStylesType } from "./components/tabs/tabsHeader";
 
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
@@ -116,6 +121,11 @@ export type Theme = {
   spinner: SpinnerStyleTypes;
   step: StepStyleTypes;
   stepper: StepperStyleTypes;
+  tab: TabStylesType;
+  tabs: TabsStylesType;
+  tabsBody: TabsBodyStylesType;
+  tabsHeader: TabsHeaderStylesType;
+  tabPanel: TabPanelStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -156,11 +166,11 @@ const theme: Theme = {
   step,
   stepper,
   // switch: switchButton,
-  // tab,
-  // tabs,
-  // tabsBody,
-  // tabsHeader,
-  // tabPanel,
+  tab,
+  tabs,
+  tabsBody,
+  tabsHeader,
+  tabPanel,
   // textarea,
   // tooltip,
   // typography,
@@ -202,11 +212,11 @@ export * from "./components/spinner";
 export * from "./components/stepper";
 
 // export * from "./components/switch";
-// export * from "./components/tabs/tab";
-// export * from "./components/tabs";
-// export * from "./components/tabs/tabsBody";
-// export * from "./components/tabs/tabsHeader";
-// export * from "./components/tabs/tabPanel";
+export * from "./components/tabs/tab";
+export * from "./components/tabs";
+export * from "./components/tabs/tabsBody";
+export * from "./components/tabs/tabsHeader";
+export * from "./components/tabs/tabPanel";
 // export * from "./components/textarea";
 // export * from "./components/tooltip";
 // export * from "./components/typography";
