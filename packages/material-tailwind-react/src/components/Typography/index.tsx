@@ -27,8 +27,8 @@ import {
   propTypesClassName,
   propTypesChildren,
 } from "../../types/components/typography";
-
-export interface TypographyProps extends React.ComponentProps<any> {
+type BaseTypographyProps=React.ComponentProps<"p"> & React.ComponentProps<"h1"> & React.ComponentProps<"h2"> & React.ComponentProps<"h3"> & React.ComponentProps<"h4"> & React.ComponentProps<"h5"> & React.ComponentProps<"h6">
+export interface TypographyProps extends BaseTypographyProps {
   variant?: variant;
   color?: color;
   textGradient?: textGradient;
