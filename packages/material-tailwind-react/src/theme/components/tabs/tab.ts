@@ -28,8 +28,9 @@ export const tab: TabStylesType = {
     base: {
       tab: {
         initial: {
-          display: "grid",
-          placeItems: "place-items-center",
+          display: "flex",
+          alignItems: "items-center",
+          justifyContent: "justify-center",
           textAlign: "text-center",
           width: "w-full",
           height: "h-full",

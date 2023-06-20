@@ -101,7 +101,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                           size="sm"
                           value={label}
                           variant="ghost"
-                          color={label === "new" ? "green" : "blue"}
+                          color={label === "new" ? "green" : label === "new example" ? "amber" : "blue"}
                           className="rounded-full capitalize"
                         />
                       )}

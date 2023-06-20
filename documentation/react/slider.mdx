@@ -5,6 +5,7 @@ navigation: [
   "slider", 
   "slider-sizes", 
   "slider-colors", 
+  "slider-with-custom-styles",
   # "props", 
   # "theme"
 ]
@@ -50,7 +51,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="slider-sizes">
 ## Slider Sizes
+</DocsTitle>
 
 The <Code>Slider</Code> component comes with 3 different sizes, that you can change it using the <Code>size</Code> prop.
 
@@ -72,7 +75,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="slider-colors">
 ## Slider Colors
+</DocsTitle>
 
 The <Code>Slider</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -89,6 +94,44 @@ export default function Example() {
       <Slider color="amber" defaultValue={50} />
     </div>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="slider-with-custom-styles">
+## Slider with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Slider</Code> component.
+
+<CodePreview id="slider-with-custom-styles" component={
+  <div className="w-96">
+    <Slider
+      defaultValue={50}
+      className="text-[#2ec947]"
+      barClassName="rounded-none bg-[#2ec946]"
+      thumbClassName="[&::-moz-range-thumb]:rounded-none [&::-webkit-slider-thumb]:rounded-none [&::-moz-range-thumb]:-mt-[4px] [&::-webkit-slider-thumb]:-mt-[4px]"
+      trackClassName="[&::-webkit-slider-runnable-track]:bg-transparent [&::-moz-range-track]:bg-transparent rounded-none !bg-[#2ec946]/10 border border-[#2ec946]/20"
+    />
+  </div>
+}>
+```jsx
+import { Slider } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-96">
+      <Slider
+        defaultValue={50}
+        className="text-[#2ec947]"
+        barClassName="rounded-none bg-[#2ec946]"
+        thumbClassName="[&::-moz-range-thumb]:rounded-none [&::-webkit-slider-thumb]:rounded-none [&::-moz-range-thumb]:-mt-[4px] [&::-webkit-slider-thumb]:-mt-[4px]"
+        trackClassName="[&::-webkit-slider-runnable-track]:bg-transparent [&::-moz-range-track]:bg-transparent rounded-none !bg-[#2ec946]/10 border border-[#2ec946]/20"
+      />
+    </div>
+  )
 }
 ```
 </CodePreview>

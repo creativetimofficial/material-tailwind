@@ -13,6 +13,7 @@ navigation:
     "input-with-button",
     "input-with-dropdown",
     "disabled-input",
+    "input-with-custom-styles",
     "props",
     "theme",
   ]
@@ -65,7 +66,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-variants">
 ## Input Variants
+</DocsTitle>
 
 The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
@@ -93,7 +96,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-sizes">
 ## Input Sizes
+</DocsTitle>
 
 The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
@@ -119,7 +124,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-colors">
 ## Input Colors
+</DocsTitle>
 
 The <Code>Input</Code> component comes with 21 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -149,7 +156,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-validations">
 ## Input Validations
+</DocsTitle>
 
 The <Code>Input</Code> component comes with error and success states for performing validations.
 
@@ -175,7 +184,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-with-icon">
 ## Input With Icon
+</DocsTitle>
 
 You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
@@ -199,7 +210,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-with-helper-text">
 ## Input With Helper Text
+</DocsTitle>
 
 Use the example below for an input with a helper text.
 
@@ -232,7 +245,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-with-button">
 ## Input With Button
+</DocsTitle>
 
 Use the example below for an input containing a button inside.
 
@@ -273,7 +288,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="input-with-dropdown">
 ## Input With Dropdown
+</DocsTitle>
 
 Use the example below for an input containing a countries code dropdown.
 
@@ -354,7 +371,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="disabled-input">
 ## Disabled Input
+</DocsTitle>
 
 An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
 
@@ -372,6 +391,48 @@ export default function Example() {
       <Input label="Disabled" disabled />
     </div>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="input-with-custom-styles">
+## Input with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code>, <Code>labelProps</Code> and <Code>containerProps</Code> props to add custom styles to the <Code>Input</Code> component.
+
+<CodePreview id="input-with-custom-styles" component={
+  <div className="w-72">
+    <Input
+      type="email"
+      placeholder="Email Address"
+      className="focus:!border-t-blue-500 focus:!border-blue-500 ring-4 ring-transparent focus:ring-blue-500/20 !border !border-blue-gray-50 bg-white shadow-lg shadow-blue-gray-900/5 placeholder:text-blue-gray-200 text-blue-gray-500"
+      labelProps={{
+        className: "hidden" 
+      }}
+      containerProps={{ className: "min-w-[100px]" }}
+    />
+  </div>
+}>
+```jsx
+import { Input } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Input
+        type="email"
+        placeholder="Email Address"
+        className="focus:!border-t-blue-500 focus:!border-blue-500 ring-4 ring-transparent focus:ring-blue-500/20 !border !border-blue-gray-50 bg-white shadow-lg shadow-blue-gray-900/5 placeholder:text-blue-gray-200 text-blue-gray-500"
+        labelProps={{
+          className: "hidden" 
+        }}
+        containerProps={{ className: "min-w-[100px]" }}
+      />
+    </div>
+  )
 }
 ```
 </CodePreview>

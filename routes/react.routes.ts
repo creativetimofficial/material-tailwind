@@ -34,27 +34,27 @@ export const routes = [
       },
       {
         name: "alert",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "avatar",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "badge",
-        label: "new",
+        label: "new example",
       },
       {
         name: "breadcrumbs",
-        label: null,
+        label: "new example",
       },
       {
         name: "button",
-        label: null,
+        label: "updated",
       },
       {
         name: "button-group",
-        label: "new",
+        label: "new example",
       },
       {
         name: "card",
@@ -62,19 +62,19 @@ export const routes = [
       },
       {
         name: "checkbox",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "chip",
-        label: "updated",
+        label: null,
       },
       {
         name: "collapse",
-        label: "new",
+        label: null,
       },
       {
         name: "carousel",
-        label: "new",
+        label: null,
       },
       {
         name: "dialog",
@@ -82,31 +82,31 @@ export const routes = [
       },
       {
         name: "drawer",
-        label: "new",
+        label: null,
       },
       {
         name: "icon-button",
-        label: null,
+        label: "updated",
       },
       {
         name: "input",
-        label: null,
+        label: "new example",
       },
       {
         name: "form",
-        label: "new",
+        label: null,
       },
       {
         name: "list",
-        label: "new",
+        label: "new example",
       },
       {
         name: "menu",
-        label: "updated",
+        label: null,
       },
       {
         name: "navbar",
-        label: "updated",
+        label: null,
       },
       {
         name: "popover",
@@ -114,19 +114,19 @@ export const routes = [
       },
       {
         name: "progress-bar",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "pagination",
-        label: "new",
+        label: null,
       },
       {
         name: "radio-button",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "rating-bar",
-        label: "new",
+        label: null,
       },
       {
         name: "select",
@@ -134,27 +134,27 @@ export const routes = [
       },
       {
         name: "slider",
-        label: "new",
+        label: "new example",
       },
       {
         name: "speed-dial",
-        label: "new",
+        label: "new example",
       },
       {
         name: "spinner",
-        label: "new",
+        label: "new example",
       },
       {
         name: "stepper",
-        label: "new",
+        label: "new example",
       },
       {
         name: "switch",
-        label: "updated",
+        label: "new example",
       },
       {
         name: "tabs",
-        label: "updated",
+        label: null,
       },
       {
         name: "textarea",
@@ -162,11 +162,11 @@ export const routes = [
       },
       {
         name: "timeline",
-        label: "new",
+        label: null,
       },
       {
         name: "tooltip",
-        label: null,
+        label: "new example",
       },
       {
         name: "typography",
@@ -174,23 +174,23 @@ export const routes = [
       },
       {
         name: "footer",
-        label: "new",
+        label: null,
       },
       {
         name: "img",
-        label: "new",
+        label: null,
       },
       {
         name: "video",
-        label: "new",
+        label: null,
       },
       {
         name: "sidebar",
-        label: "new",
+        label: null,
       },
       {
         name: "table",
-        label: "new",
+        label: null,
       },
     ],
   },

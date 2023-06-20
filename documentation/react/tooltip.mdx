@@ -7,6 +7,7 @@ navigation:
     "tooltip-placement",
     "custom-tooltip-animation",
     "tooltip-with-helper-icon",
+    "tooltip-with-custom-styles",
     "props",
     "theme",
   ]
@@ -58,7 +59,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="tooltip-placement">
 ## Tooltip Placement
+</DocsTitle>
 
 You can change the position of the <Code>Tooltip</Code> component using the <Code>placement</Code> prop.
 
@@ -169,7 +172,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="custom-tooltip-animation">
 ## Custom Tooltip Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Tooltip</Code> component using the <Code>animate</Code> prop.
 
@@ -205,7 +210,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="tooltip-with-helper-icon">
 ## Tooltip with Helper Icon
+</DocsTitle>
 
 This tooltip example is perfect if you want to avoid cluttering the screen. It provides additional info about a specific element on the website.
 
@@ -252,6 +259,69 @@ export default function Example() {
       />
     </Tooltip>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="tooltip-with-custom-styles">
+## Tooltip with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Tooltip</Code> component.
+
+<CodePreview id="tooltip-with-custom-styles" component={
+  <Tooltip 
+    placement="bottom"
+    className="bg-white border border-blue-gray-50 shadow-xl shadow-black/10 px-4 py-3"
+    content={
+      <div className="w-80">
+        <Typography color="blue-gray" className="font-medium">Material Tailwind</Typography>
+        <Typography
+          variant="small"
+          color="blue-gray" 
+          className="font-normal opacity-80"
+        >
+          Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
+        </Typography>
+      </div>
+    }
+  >
+    <OutlineIcons.InformationCircleIcon 
+      strokeWidth={2} 
+      className="text-blue-gray-500 w-5 h-5 cursor-pointer" 
+    />
+  </Tooltip>
+}>
+```jsx
+import { Alert } from "@material-tailwind/react";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
+
+export default function Example() {
+  return (
+    <Tooltip 
+      placement="bottom"
+      className="bg-white border border-blue-gray-50 shadow-xl shadow-black/10 px-4 py-3"
+      content={
+        <div className="w-80">
+          <Typography color="blue-gray" className="font-medium">Material Tailwind</Typography>
+          <Typography
+            variant="small"
+            color="blue-gray" 
+            className="font-normal opacity-80"
+          >
+            Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
+          </Typography>
+        </div>
+      }
+    >
+      <InformationCircleIcon 
+        strokeWidth={2} 
+        className="text-blue-gray-500 w-5 h-5 cursor-pointer" 
+      />
+    </Tooltip>
+  )
 }
 ```
 </CodePreview>

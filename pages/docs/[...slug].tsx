@@ -65,6 +65,7 @@ import * as VideoExamples from "components/docs/react/video";
 import * as SidebarExamples from "components/docs/react/sidebar";
 import * as TableExamples from "components/docs/react/table";
 import TransparentTabs from "components/docs/transparent-tabs";
+import DocsTitle from "components/docs-title";
 
 // @material-tailwind/react components
 import {
@@ -116,6 +117,7 @@ import {
   ListItemPrefix,
   ListItemSuffix,
   Collapse,
+  Slider,
 } from "@material-tailwind/react";
 
 // @heroicons
@@ -193,6 +195,7 @@ const components = {
   GatsbyLogo,
   ColorPalette,
   CodePreview,
+  DocsTitle,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -242,6 +245,7 @@ const components = {
   ListItemPrefix,
   ListItemSuffix,
   Collapse,
+  Slider,
   OutlineIcons,
   SolidIcons,
   CountriesSelect,

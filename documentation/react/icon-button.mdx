@@ -7,7 +7,10 @@ navigation:
     "icon-button-variants",
     "icon-button-sizes",
     "icon-button-colors",
+    "rounded-icon-buttons",
+    "icon-buttons-with-link",
     "icon-button-ripple-effect",
+    "icon-button-with-custom-styles",
     "font-awesome-cdn-link",
     "props",
     "theme",
@@ -56,7 +59,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="icon-button-variants">
 ## Icon Button Variants
+</DocsTitle>
 
 The <Code>IconButton</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
@@ -102,7 +107,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="icon-button-sizes">
 ## Icon Button Sizes
+</DocsTitle>
 
 The <Code>IconButton</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
@@ -142,7 +149,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="icon-button-colors">
 ## Icon Button Colors
+</DocsTitle>
 
 The <Code>IconButton</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -188,7 +197,113 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="rounded-icon-buttons">
+## Rounded Icon Buttons
+</DocsTitle>
+
+You can use tailwind css <Code>rounded-full</Code> class with <Code>IconButton</Code> to create rounded icon buttons.
+
+<CodePreview id="rounded-icon-buttons" component={
+  <div className="flex items-center gap-4">
+    <IconButton className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="gradient" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="outlined" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+    <IconButton variant="text" className="rounded-full">
+      <i className="fas fa-heart" />
+    </IconButton>
+  </div>
+}>
+```jsx
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <IconButton className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="gradient" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="outlined" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+      <IconButton variant="text" className="rounded-full">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="icon-buttons-with-link">
+## Icon Buttons with Link
+</DocsTitle>
+
+You can wrap <Code>IconButton</Code> component with <Code>{`<a>`}</Code> tag to make it a link.
+
+<CodePreview id="icon-buttons-with-link" component={
+  <div className="flex items-center gap-4">
+    <a href="#icon-buttons-with-link">
+      <IconButton>
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="gradient">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="outlined">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+    <a href="#icon-buttons-with-link">
+      <IconButton variant="text">
+        <i className="fas fa-heart" />
+      </IconButton>
+    </a>
+  </div>
+}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex items-center gap-4">
+      <a href="#buttons-with-link">
+        <Button>Filled</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="gradient">Gradient</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="outlined">Outlined</Button>
+      </a>
+      <a href="#buttons-with-link">
+        <Button variant="text">Text</Button>
+      </a>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="icon-button-ripple-effect">
 ## Icon Button Ripple Effect
+</DocsTitle>
 
 You can turn on/off the ripple effect for the <Code>IconButton</Code> component using the <Code>ripple</Code> prop.
 
@@ -222,7 +337,57 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="icon-button-with-custom-styles">
+## Icon Button with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>IconButton</Code> component.
+
+<CodePreview id="icon-button-with-custom-styles" component={
+  <div className="flex gap-4">
+    <IconButton className="bg-[#ea4335] rounded hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10">
+      <i className="fab fa-google text-lg" />
+    </IconButton>
+    <IconButton className="bg-[#1DA1F2] rounded hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10">
+      <i className="fab fa-twitter text-lg" />
+    </IconButton>
+    <IconButton className="bg-[#ea4c89] rounded hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10">
+      <i className="fab fa-dribbble text-lg" />
+    </IconButton>
+    <IconButton className="bg-[#333333] rounded hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10">
+      <i className="fab fa-github text-lg" />
+    </IconButton>
+  </div>
+}>
+```jsx
+import { IconButton } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <IconButton className="bg-[#ea4335] rounded hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10">
+        <i className="fab fa-google text-lg" />
+      </IconButton>
+      <IconButton className="bg-[#1DA1F2] rounded hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10">
+        <i className="fab fa-twitter text-lg" />
+      </IconButton>
+      <IconButton className="bg-[#ea4c89] rounded hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10">
+        <i className="fab fa-dribbble text-lg" />
+      </IconButton>
+      <IconButton className="bg-[#333333] rounded hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10">
+        <i className="fab fa-github text-lg" />
+      </IconButton>
+    </div>
+  )
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="font-awesome-cdn-link">
 ## Font Awesome CDN Link
+</DocsTitle>
 
 In case of using icon fonts rather than svg icons please add their cdn links to your project, if you're using font awesome you can use the below cdn link.
 
