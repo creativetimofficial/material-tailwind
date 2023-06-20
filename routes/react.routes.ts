@@ -34,19 +34,19 @@ export const routes = [
       },
       {
         name: "alert",
-        label: null,
+        label: "new example",
       },
       {
         name: "avatar",
-        label: null,
+        label: "new example",
       },
       {
         name: "badge",
-        label: null,
+        label: "new example",
       },
       {
         name: "breadcrumbs",
-        label: null,
+        label: "new example",
       },
       {
         name: "button",
@@ -54,7 +54,7 @@ export const routes = [
       },
       {
         name: "button-group",
-        label: null,
+        label: "new example",
       },
       {
         name: "card",
@@ -62,7 +62,7 @@ export const routes = [
       },
       {
         name: "checkbox",
-        label: null,
+        label: "new example",
       },
       {
         name: "chip",
@@ -90,7 +90,7 @@ export const routes = [
       },
       {
         name: "input",
-        label: null,
+        label: "new example",
       },
       {
         name: "form",
@@ -98,7 +98,7 @@ export const routes = [
       },
       {
         name: "list",
-        label: null,
+        label: "new example",
       },
       {
         name: "menu",
@@ -114,7 +114,7 @@ export const routes = [
       },
       {
         name: "progress-bar",
-        label: null,
+        label: "new example",
       },
       {
         name: "pagination",
@@ -122,7 +122,7 @@ export const routes = [
       },
       {
         name: "radio-button",
-        label: null,
+        label: "new example",
       },
       {
         name: "rating-bar",
@@ -134,23 +134,23 @@ export const routes = [
       },
       {
         name: "slider",
-        label: null,
+        label: "new example",
       },
       {
         name: "speed-dial",
-        label: null,
+        label: "new example",
       },
       {
         name: "spinner",
-        label: null,
+        label: "new example",
       },
       {
         name: "stepper",
-        label: null,
+        label: "new example",
       },
       {
         name: "switch",
-        label: null,
+        label: "new example",
       },
       {
         name: "tabs",
@@ -166,7 +166,7 @@ export const routes = [
       },
       {
         name: "tooltip",
-        label: null,
+        label: "new example",
       },
       {
         name: "typography",
