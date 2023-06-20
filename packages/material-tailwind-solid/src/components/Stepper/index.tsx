@@ -57,7 +57,6 @@ const Stepper: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & StepperProps
     const isFirstStepValue = stepperProps.activeStep === 0;
     const isLastStepValue = stepperProps.activeStep === tree().length - 1;
     const isReachEnd = !stepperProps.activeStep || stepperProps.activeStep > tree().length - 1;
-    console.log({ isLastStepValue, isReachEnd, widthPerStepCalc });
 
     // 3. set styles
     const stepperClasses = twMerge(objectsToString(base.stepper), stepperProps.class);
