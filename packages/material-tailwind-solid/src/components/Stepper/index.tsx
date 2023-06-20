@@ -51,7 +51,8 @@ const Stepper: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & StepperProps
     } = theme().step;
 
     const containerRefRect = containerRef()?.getBoundingClientRect();
-    const widthPerStepCalc = (containerRefRect?.width || 0) / (tree().length - 1);
+    const steps = tree().length === 1 ? 1 : tree().length - 1;
+    const widthPerStepCalc = (containerRefRect?.width || 0) / steps;
 
     const isFirstStepValue = stepperProps.activeStep === 0;
     const isLastStepValue = stepperProps.activeStep === tree().length - 1;
