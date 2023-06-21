@@ -66,13 +66,22 @@ import type {
   SpeedDialStyleTypes,
 } from "./components/speedDial";
 import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
-import spinner, { SpinnerStyleTypes } from "./components/spinner";
-import { StepStyleTypes, StepperStyleTypes, step, stepper } from "./components/stepper";
-import tabs, { TabsStylesType } from "./components/tabs";
-import tab, { TabStylesType } from "./components/tabs/tab";
-import tabPanel, { TabPanelStylesType } from "./components/tabs/tabPanel";
-import tabsBody, { TabsBodyStylesType } from "./components/tabs/tabsBody";
-import tabsHeader, { TabsHeaderStylesType } from "./components/tabs/tabsHeader";
+import type { SpinnerStyleTypes } from "./components/spinner";
+import spinner from "./components/spinner";
+import type { StepStyleTypes, StepperStyleTypes } from "./components/stepper";
+import { step, stepper } from "./components/stepper";
+import type { TabsStylesType } from "./components/tabs";
+import tabs from "./components/tabs";
+import type { TabStylesType } from "./components/tabs/tab";
+import tab from "./components/tabs/tab";
+import type { TabPanelStylesType } from "./components/tabs/tabPanel";
+import tabPanel from "./components/tabs/tabPanel";
+import type { TabsBodyStylesType } from "./components/tabs/tabsBody";
+import tabsBody from "./components/tabs/tabsBody";
+import type { TabsHeaderStylesType } from "./components/tabs/tabsHeader";
+import tabsHeader from "./components/tabs/tabsHeader";
+import type { SwitchButtonStylesType } from "./components/switch";
+import switchButton from "./components/switch";
 
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
@@ -126,6 +135,7 @@ export type Theme = {
   tabsBody: TabsBodyStylesType;
   tabsHeader: TabsHeaderStylesType;
   tabPanel: TabPanelStylesType;
+  switch: SwitchButtonStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -165,7 +175,7 @@ const theme: Theme = {
   spinner,
   step,
   stepper,
-  // switch: switchButton,
+  switch: switchButton,
   tab,
   tabs,
   tabsBody,
@@ -210,8 +220,7 @@ export * from "./components/slider";
 export * from "./components/speedDial";
 export * from "./components/spinner";
 export * from "./components/stepper";
-
-// export * from "./components/switch";
+export * from "./components/switch";
 export * from "./components/tabs/tab";
 export * from "./components/tabs";
 export * from "./components/tabs/tabsBody";
