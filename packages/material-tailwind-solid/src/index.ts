@@ -30,6 +30,7 @@ export * from "./components/Stepper";
 export * from "./components/Switch";
 export * from "./components/Tabs";
 export * from "./components/Textarea";
+export * from "./components/Timeline";
 // export * from "./components/Tooltip";
 // export * from "./components/Typography";
 

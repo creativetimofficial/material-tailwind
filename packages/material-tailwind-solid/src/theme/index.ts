@@ -84,8 +84,23 @@ import type { SwitchButtonStylesType } from "./components/switch";
 import switchButton from "./components/switch";
 import type { TextareaStylesType } from "./components/textarea";
 import textarea from "./components/textarea";
+import type {
+  TimelineBodyStyleTypes,
+  TimelineConnectorStyleTypes,
+  TimelineHeaderStyleTypes,
+  TimelineIconStyleTypes,
+  TimelineItemStyleTypes,
+  TimelineStyleTypes,
+} from "./components/timeline";
+import {
+  timeline,
+  timelineBody,
+  timelineConnector,
+  timelineHeader,
+  timelineIcon,
+  timelineItem,
+} from "./components/timeline";
 
-// import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
 // import tabs from "./components/tabs";
 // import tabsBody from "./components/tabs/tabsBody";
@@ -139,6 +154,12 @@ export type Theme = {
   tabPanel: TabPanelStylesType;
   switch: SwitchButtonStylesType;
   textarea: TextareaStylesType;
+  timeline: TimelineStyleTypes;
+  timelineItem: TimelineItemStyleTypes;
+  timelineIcon: TimelineIconStyleTypes;
+  timelineHeader: TimelineHeaderStyleTypes;
+  timelineBody: TimelineBodyStyleTypes;
+  timelineConnector: TimelineConnectorStyleTypes;
 };
 const theme: Theme = {
   accordion,
@@ -185,6 +206,12 @@ const theme: Theme = {
   tabsHeader,
   tabPanel,
   textarea,
+  timeline,
+  timelineItem,
+  timelineIcon,
+  timelineHeader,
+  timelineBody,
+  timelineConnector,
   // tooltip,
   // typography,
 };
@@ -230,6 +257,8 @@ export * from "./components/tabs/tabsBody";
 export * from "./components/tabs/tabsHeader";
 export * from "./components/tabs/tabPanel";
 export * from "./components/textarea";
+export * from "./components/timeline";
+
 // export * from "./components/tooltip";
 // export * from "./components/typography";
 // export * from "./components/box";
