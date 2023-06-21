@@ -13,6 +13,7 @@ navigation:
     "input-with-button",
     "input-with-dropdown",
     "disabled-input",
+    "input-for-dark-surface",
     "input-with-custom-styles",
     "props",
     "theme",
@@ -391,6 +392,42 @@ export default function Example() {
       <Input label="Disabled" disabled />
     </div>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="input-for-dark-surface">
+## Input for Dark Surface
+</DocsTitle>
+
+You can use the <Code>color="white"</Code> for <Code>Input</Code> to make it visible and accessible on dark surfaces.
+
+<CodePreview id="input-for-dark-surface" component={
+  <div className="w-full h-full bg-blue-gray-900 grid place-items-center rounded-xl">
+    <div className="w-72">
+      <Input
+        type="email"
+        color="white"
+        label="Email Address"
+      />
+    </div>
+  </div>
+}>
+```jsx
+import { Input } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <div className="w-72">
+      <Input
+        type="email"
+        color="white"
+        label="Email Address"
+      />
+    </div>
+  )
 }
 ```
 </CodePreview>
