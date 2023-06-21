@@ -82,6 +82,8 @@ import type { TabsHeaderStylesType } from "./components/tabs/tabsHeader";
 import tabsHeader from "./components/tabs/tabsHeader";
 import type { SwitchButtonStylesType } from "./components/switch";
 import switchButton from "./components/switch";
+import type { TextareaStylesType } from "./components/textarea";
+import textarea from "./components/textarea";
 
 // import switchButton from "./components/switch";
 // import tab from "./components/tabs/tab";
@@ -136,6 +138,7 @@ export type Theme = {
   tabsHeader: TabsHeaderStylesType;
   tabPanel: TabPanelStylesType;
   switch: SwitchButtonStylesType;
+  textarea: TextareaStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -181,7 +184,7 @@ const theme: Theme = {
   tabsBody,
   tabsHeader,
   tabPanel,
-  // textarea,
+  textarea,
   // tooltip,
   // typography,
 };
@@ -226,7 +229,7 @@ export * from "./components/tabs";
 export * from "./components/tabs/tabsBody";
 export * from "./components/tabs/tabsHeader";
 export * from "./components/tabs/tabPanel";
-// export * from "./components/textarea";
+export * from "./components/textarea";
 // export * from "./components/tooltip";
 // export * from "./components/typography";
 // export * from "./components/box";
