@@ -53,7 +53,9 @@ export const PopoverContent: ParentComponent<JSX.HTMLAttributes<HTMLDivElement>>
   onCleanup(() => {
     window.removeEventListener("click", () => undefined);
   });
-
+  const animate = createMemo(() =>
+    context()?.open() ? mergedProps.animate.mount : mergedProps.animate.unmount,
+  );
   // 6. return
   return (
     <div
@@ -75,7 +77,7 @@ export const PopoverContent: ParentComponent<JSX.HTMLAttributes<HTMLDivElement>>
           aria-describedby={context()?.descriptionId}
           initial={mergedProps.animate.unmount}
           exit={mergedProps.animate.unmount}
-          animate={context()?.open() ? mergedProps.animate.mount : mergedProps.animate.unmount}
+          animate={animate()}
         >
           {mergedProps.children}
         </Motion.div>

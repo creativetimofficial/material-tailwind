@@ -100,6 +100,8 @@ import {
   timelineIcon,
   timelineItem,
 } from "./components/timeline";
+import type { TooltipStylesType } from "./components/tooltip";
+import tooltip from "./components/tooltip";
 
 // import tab from "./components/tabs/tab";
 // import tabs from "./components/tabs";
@@ -160,6 +162,7 @@ export type Theme = {
   timelineHeader: TimelineHeaderStyleTypes;
   timelineBody: TimelineBodyStyleTypes;
   timelineConnector: TimelineConnectorStyleTypes;
+  tooltip: TooltipStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -212,7 +215,7 @@ const theme: Theme = {
   timelineHeader,
   timelineBody,
   timelineConnector,
-  // tooltip,
+  tooltip,
   // typography,
 };
 
@@ -258,8 +261,7 @@ export * from "./components/tabs/tabsHeader";
 export * from "./components/tabs/tabPanel";
 export * from "./components/textarea";
 export * from "./components/timeline";
-
-// export * from "./components/tooltip";
+export * from "./components/tooltip";
 // export * from "./components/typography";
 // export * from "./components/box";
 export default theme;
