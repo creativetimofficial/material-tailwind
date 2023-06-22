@@ -5,6 +5,7 @@ import {
   SpeedDialContent,
   SpeedDialAction,
   Typography,
+  TypographyProps,
 } from "@material-tailwind/react";
 import {
   PlusIcon,
@@ -14,7 +15,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export function SpeedDialWithTextOutside() {
-  const labelProps = {
+  const labelProps:Pick<TypographyProps,"variant"|"color"|"className"> = {
     variant: "small",
     color: "blue-gray",
     className:
