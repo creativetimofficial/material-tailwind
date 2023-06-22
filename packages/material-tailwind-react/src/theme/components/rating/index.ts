@@ -42,8 +42,8 @@ export const rating: RatingStyleTypes = {
   defaultProps: {
     count: 5,
     value: 0,
-    ratedIcon: RatedIcon,
-    unratedIcon: UnratedIcon,
+    ratedIcon: RatedIcon as ratedIcon,
+    unratedIcon: UnratedIcon as unratedIcon,
     ratedColor: "yellow",
     unratedColor: "blue-gray",
     className: undefined,
