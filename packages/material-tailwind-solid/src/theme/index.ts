@@ -102,15 +102,9 @@ import {
 } from "./components/timeline";
 import type { TooltipStylesType } from "./components/tooltip";
 import tooltip from "./components/tooltip";
+import type { TypographyStylesType } from "./components/typography";
+import typography from "./components/typography";
 
-// import tab from "./components/tabs/tab";
-// import tabs from "./components/tabs";
-// import tabsBody from "./components/tabs/tabsBody";
-// import tabsHeader from "./components/tabs/tabsHeader";
-// import tabPanel from "./components/tabs/tabPanel";
-// import textarea from "./components/textarea";
-// import tooltip from "./components/tooltip";
-// import typography from "./components/typography";\
 export type Theme = {
   accordion: AccordionType;
   alert: AlertType;
@@ -163,6 +157,7 @@ export type Theme = {
   timelineBody: TimelineBodyStyleTypes;
   timelineConnector: TimelineConnectorStyleTypes;
   tooltip: TooltipStylesType;
+  typography: TypographyStylesType;
 };
 const theme: Theme = {
   accordion,
@@ -216,7 +211,7 @@ const theme: Theme = {
   timelineBody,
   timelineConnector,
   tooltip,
-  // typography,
+  typography,
 };
 
 export * from "./components/accordion";
@@ -262,6 +257,5 @@ export * from "./components/tabs/tabPanel";
 export * from "./components/textarea";
 export * from "./components/timeline";
 export * from "./components/tooltip";
-// export * from "./components/typography";
-// export * from "./components/box";
+export * from "./components/typography";
 export default theme;

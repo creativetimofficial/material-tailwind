@@ -32,7 +32,7 @@ export * from "./components/Tabs";
 export * from "./components/Textarea";
 export * from "./components/Timeline";
 export * from "./components/Tooltip";
-// export * from "./components/Typography";
+export * from "./components/Typography";
 
 // context
 export * from "./context/theme";
