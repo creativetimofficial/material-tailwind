@@ -78,7 +78,7 @@ export const Tooltip: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Toolt
     "class",
   ]);
 
-  // 3. set styles
+  // 4. set styles
   const styles = createMemo(() => {
     const {
       styles: { base },
@@ -94,32 +94,6 @@ export const Tooltip: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Toolt
     whileElementsMounted: autoUpdate,
     middleware: [flip(), shift(), fuiOffset(mergedProps.offset)],
   });
-
-  // const { x, y, reference, floating, strategy, refs, update, context } = useFloating({
-  //   open,
-  //   onOpenChange: handler,
-  //   middleware: [fuiOffset(offset), flip(), shift()],
-  //   placement,
-  // });
-
-  // const { getReferenceProps, getFloatingProps } = useInteractions([
-  //   useClick(context, {
-  //     enabled: interactive,
-  //   }),
-  //   useFocus(context),
-  //   useHover(context),
-  //   useRole(context, { role: "tooltip" }),
-  //   useDismiss(context, dismiss),
-  // ]);
-
-  // React.useEffect(() => {
-  //   if (refs.reference.current && refs.floating.current && open) {
-  //     return autoUpdate(refs.reference.current, refs.floating.current, update);
-  //   }
-  // }, [open, update, refs.reference, refs.floating]);
-
-  // const mergedRef = useMergeRefs([ref, floating]);
-  // const childMergedRef = useMergeRefs([ref, reference]);
 
   // 6. Create an instance of AnimatePresence because of the types issue with the children
   const animate = createMemo(() =>
