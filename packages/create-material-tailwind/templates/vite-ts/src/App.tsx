@@ -11,7 +11,7 @@ export default function App() {
         </Card>
         <Card className="h-max w-max flex-row items-center border border-blue-gray-50 font-semibold text-blue-gray-900 shadow-lg shadow-blue-gray-900/5">
           <img src="/vite.svg" alt="Vite Logo" className="ml-4 h-7 w-7" />
-          <div className="px-5 py-4">Vite + TypeScript Template</div>
+          <div className="py-4 pl-4 pr-5">Vite + TypeScript Template</div>
         </Card>
       </div>
       <div className="flex-col gap-2 pt-56 pb-40 text-center">
