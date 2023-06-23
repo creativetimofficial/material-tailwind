@@ -6,7 +6,7 @@ export default function App() {
       <div className="flex flex-col-reverse items-center justify-between gap-4 self-start md:flex-row">
         <Card className="h-max w-max border border-blue-gray-50 py-4 px-5 shadow-lg shadow-blue-gray-900/5">
           <code className="text-blue-gray-900">
-            Get started by editing <strong>src/App.jsx</strong>
+            Get started by editing <strong>src/App.tsx</strong>
           </code>
         </Card>
         <Card className="h-max w-max flex-row items-center border border-blue-gray-50 font-semibold text-blue-gray-900 shadow-lg shadow-blue-gray-900/5">
