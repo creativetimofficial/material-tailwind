@@ -4,16 +4,7 @@ import { fileURLToPath } from "node:url";
 import spawn from "cross-spawn";
 import minimist from "minimist";
 import prompts from "prompts";
-import {
-  blue,
-  white,
-  lightBlue,
-  magenta,
-  red,
-  reset,
-  yellow,
-  lightMagenta,
-} from "kolorist";
+import { blue, white, lightBlue, magenta, red, reset, yellow, lightMagenta } from "kolorist";
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -39,17 +30,17 @@ type FrameworkVariant = {
 
 const FRAMEWORKS: Framework[] = [
   {
-    name: "react",
-    display: "React",
+    name: "cra",
+    display: "Create React App",
     color: blue,
     variants: [
       {
-        name: "react",
+        name: "cra",
         display: "JavaScript",
         color: yellow,
       },
       {
-        name: "react-ts",
+        name: "cra-ts",
         display: "TypeScript",
         color: blue,
       },
@@ -143,7 +134,7 @@ const FRAMEWORKS: Framework[] = [
 ];
 
 const TEMPLATES = FRAMEWORKS.map(
-  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name]
+  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name],
 ).reduce((a, b) => a.concat(b), []);
 
 const renameFiles: Record<string, string | undefined> = {
@@ -157,8 +148,7 @@ async function init() {
   const argTemplate = argv.template || argv.t;
 
   let targetDir = argTargetDir || defaultTargetDir;
-  const getProjectName = () =>
-    targetDir === "." ? path.basename(path.resolve()) : targetDir;
+  const getProjectName = () => (targetDir === "." ? path.basename(path.resolve()) : targetDir);
 
   let result: prompts.Answers<
     "projectName" | "overwrite" | "packageName" | "framework" | "variant"
@@ -177,13 +167,10 @@ async function init() {
           },
         },
         {
-          type: () =>
-            !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : "confirm",
+          type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : "confirm"),
           name: "overwrite",
           message: () =>
-            (targetDir === "."
-              ? "Current directory"
-              : `Target directory "${targetDir}"`) +
+            (targetDir === "." ? "Current directory" : `Target directory "${targetDir}"`) +
             ` is not empty. Remove existing files and continue?`,
         },
         {
@@ -200,18 +187,14 @@ async function init() {
           name: "packageName",
           message: reset("Package name:"),
           initial: () => toValidPackageName(getProjectName()),
-          validate: (dir) =>
-            isValidPackageName(dir) || "Invalid package.json name",
+          validate: (dir) => isValidPackageName(dir) || "Invalid package.json name",
         },
         {
-          type:
-            argTemplate && TEMPLATES.includes(argTemplate) ? null : "select",
+          type: argTemplate && TEMPLATES.includes(argTemplate) ? null : "select",
           name: "framework",
           message:
             typeof argTemplate === "string" && !TEMPLATES.includes(argTemplate)
-              ? reset(
-                  `"${argTemplate}" isn't a valid template. Please choose from below: `
-                )
+              ? reset(`"${argTemplate}" isn't a valid template. Please choose from below: `)
               : reset("Select a framework:"),
           initial: 0,
           choices: FRAMEWORKS.map((framework) => {
@@ -223,8 +206,7 @@ async function init() {
           }),
         },
         {
-          type: (framework: Framework) =>
-            framework && framework.variants ? "select" : null,
+          type: (framework: Framework) => (framework && framework.variants ? "select" : null),
           name: "variant",
           message: reset("Select a variant:"),
           choices: (framework: Framework) =>
@@ -241,7 +223,7 @@ async function init() {
         onCancel: () => {
           throw new Error(red("✖") + " Operation cancelled");
         },
-      }
+      },
     );
   } catch (cancelled: any) {
     console.log(cancelled.message);
@@ -267,8 +249,7 @@ async function init() {
   const isYarn1 = pkgManager === "yarn" && pkgInfo?.version.startsWith("1.");
 
   const { customCommand } =
-    FRAMEWORKS.flatMap((f) => f.variants).find((v) => v.name === template) ??
-    {};
+    FRAMEWORKS.flatMap((f) => f.variants).find((v) => v.name === template) ?? {};
 
   if (customCommand) {
     const fullCustomCommand = customCommand
@@ -300,9 +281,7 @@ async function init() {
 
     const [command, ...args] = fullCustomCommand.split(" ");
     // we replace TARGET_DIR here because targetDir may include a space
-    const replacedArgs = args.map((arg) =>
-      arg.replace("TARGET_DIR", targetDir)
-    );
+    const replacedArgs = args.map((arg) => arg.replace("TARGET_DIR", targetDir));
     const { status } = spawn.sync(command, replacedArgs, {
       stdio: "inherit",
     });
@@ -311,11 +290,7 @@ async function init() {
 
   console.log(`\nScaffolding project in ${root}...`);
 
-  const templateDir = path.resolve(
-    fileURLToPath(import.meta.url),
-    "../../templates/",
-    template
-  );
+  const templateDir = path.resolve(fileURLToPath(import.meta.url), "../../templates/", template);
 
   const write = (file: string, content?: string) => {
     const targetPath = path.join(root, renameFiles[file] ?? file);
@@ -331,9 +306,7 @@ async function init() {
     write(file);
   }
 
-  const pkg = JSON.parse(
-    fs.readFileSync(path.join(templateDir, `package.json`), "utf-8")
-  );
+  const pkg = JSON.parse(fs.readFileSync(path.join(templateDir, `package.json`), "utf-8"));
 
   pkg.name = packageName || getProjectName();
 
@@ -342,11 +315,7 @@ async function init() {
   const cdProjectName = path.relative(cwd, root);
   console.log(`\nDone. Now run:\n`);
   if (root !== cwd) {
-    console.log(
-      `  cd ${
-        cdProjectName.includes(" ") ? `"${cdProjectName}"` : cdProjectName
-      }`
-    );
+    console.log(`  cd ${cdProjectName.includes(" ") ? `"${cdProjectName}"` : cdProjectName}`);
   }
   switch (pkgManager) {
     case "yarn":
@@ -375,9 +344,7 @@ function copy(src: string, dest: string) {
 }
 
 function isValidPackageName(projectName: string) {
-  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
-    projectName
-  );
+  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(projectName);
 }
 
 function toValidPackageName(projectName: string) {

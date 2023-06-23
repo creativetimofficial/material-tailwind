@@ -41,8 +41,8 @@ pnpm create material-tailwind my-material-tailwind-app --template next
 
 Currently supported template presets include:
 
-- `react`
-- `react-ts`
+- `cra`
+- `cra-ts`
 - `next`
 - `next-ts`
 - `remix`
