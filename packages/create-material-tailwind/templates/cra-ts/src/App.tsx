@@ -10,7 +10,7 @@ export default function App() {
           </code>
         </Card>
         <Card className="h-max w-max flex-row items-center border border-blue-gray-50 font-semibold text-blue-gray-900 shadow-lg shadow-blue-gray-900/5">
-          <img src="/logo512.png" alt="CRA Logo" className="ml-4 h-7 w-7" />
+          <img src="/logo512.png" alt="React Logo" className="ml-4 h-7 w-7" />
           <div className="py-4 pl-4 pr-5">CRA + TypeScript Template</div>
         </Card>
       </div>
