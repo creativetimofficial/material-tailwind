@@ -14,7 +14,7 @@ export default function Index() {
           </code>
         </Card>
         <Card className="h-max w-max flex-row items-center border border-blue-gray-50 font-semibold text-blue-gray-900 shadow-lg shadow-blue-gray-900/5">
-          <img src="/favicon.ico" alt="Next Logo" className="ml-4 h-7 w-7" />
+          <img src="/favicon.ico" alt="Remix Logo" className="ml-4 h-7 w-7" />
           <div className="py-4 pl-4 pr-5">Remix Template</div>
         </Card>
       </div>

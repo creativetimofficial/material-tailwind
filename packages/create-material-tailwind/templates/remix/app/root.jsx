@@ -1,7 +1,7 @@
 import stylesheet from "~/tailwind.css";
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
-export const links = () => [...[{ rel: "stylesheet", href: stylesheet }]];
+export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
 export default function App() {
   return (
