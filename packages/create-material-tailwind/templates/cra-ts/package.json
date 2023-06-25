@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@material-tailwind/react": "^2.0.4",
-    "@types/node": "^16.18.36",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@material-tailwind/react": "2.0.4",
+    "@types/node": "16.18.36",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +37,6 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "3.3.2"
   }
 }

@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@material-tailwind/react": "^2.0.4",
+    "@material-tailwind/react": "2.0.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",

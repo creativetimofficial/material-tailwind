@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@material-tailwind/react": "^2.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@material-tailwind/react": "2.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -33,6 +33,6 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "3.3.2"
   }
 }
