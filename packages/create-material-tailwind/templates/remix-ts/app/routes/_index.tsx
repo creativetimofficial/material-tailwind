@@ -2,7 +2,7 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import { Typography, Card } from "@material-tailwind/react";
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Material Tailwind + Remix" }];
+  return [{ title: "Material Tailwind + Remix + TS" }];
 };
 
 export default function Index() {
