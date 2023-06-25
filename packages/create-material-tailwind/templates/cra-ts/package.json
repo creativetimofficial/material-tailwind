@@ -1,6 +1,6 @@
 {
-  "name": "cra-ts",
-  "version": "0.1.0",
+  "name": "material-tailwind-cra-ts",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@material-tailwind/react": "^2.0.4",
