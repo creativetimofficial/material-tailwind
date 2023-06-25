@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 gap-4 self-end md:grid-cols-2 lg:grid-cols-4">
           <a
-            href="https://www.material-tailwind.com/docs/react/accordion?ref=template-vite"
+            href="https://www.material-tailwind.com/docs/react/accordion?ref=template-next-ts"
             target="_blank"
             rel="noreferrer"
           >
@@ -61,7 +61,7 @@ export default function Home() {
             </Card>
           </a>
           <a
-            href="https://www.material-tailwind.com/blocks?ref=template-vite"
+            href="https://www.material-tailwind.com/blocks?ref=template-next-ts"
             target="_blank"
             rel="noreferrer"
           >
@@ -93,7 +93,7 @@ export default function Home() {
             </Card>
           </a>
           <a
-            href="https://github.com/creativetimofficial/material-tailwind?ref=template-vite"
+            href="https://github.com/creativetimofficial/material-tailwind?ref=template-next-ts"
             target="_blank"
             rel="noreferrer"
           >
@@ -113,7 +113,7 @@ export default function Home() {
             </Card>
           </a>
           <a
-            href="https://github.com/creativetimofficial/material-tailwind?ref=template-vite"
+            href="https://github.com/creativetimofficial/material-tailwind?ref=template-next-ts"
             target="_blank"
             rel="noreferrer"
           >
