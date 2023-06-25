@@ -47,11 +47,7 @@ Currently supported template presets include:
 - `next-ts`
 - `remix`
 - `remix-ts`
-- `astro`
-- `astro-ts`
 - `vite`
 - `vite-ts`
-- `gatsby`
-- `gatsby-ts`
 
 You can use `.` for the project name to scaffold in the current directory.

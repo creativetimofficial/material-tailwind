@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import spawn from "cross-spawn";
 import minimist from "minimist";
 import prompts from "prompts";
-import { blue, white, lightBlue, magenta, red, reset, yellow, lightMagenta } from "kolorist";
+import { blue, white, lightBlue, red, reset, yellow } from "kolorist";
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -80,23 +80,23 @@ const FRAMEWORKS: Framework[] = [
       },
     ],
   },
-  {
-    name: "astro",
-    display: "Astro",
-    color: magenta,
-    variants: [
-      {
-        name: "astro-ts",
-        display: "TypeScript",
-        color: blue,
-      },
-      {
-        name: "astro",
-        display: "JavaScript",
-        color: yellow,
-      },
-    ],
-  },
+  // {
+  //   name: "astro",
+  //   display: "Astro",
+  //   color: magenta,
+  //   variants: [
+  //     {
+  //       name: "astro-ts",
+  //       display: "TypeScript",
+  //       color: blue,
+  //     },
+  //     {
+  //       name: "astro",
+  //       display: "JavaScript",
+  //       color: yellow,
+  //     },
+  //   ],
+  // },
   {
     name: "vite",
     display: "Vite",
@@ -114,23 +114,23 @@ const FRAMEWORKS: Framework[] = [
       },
     ],
   },
-  {
-    name: "gatsby",
-    display: "Gatsby",
-    color: lightMagenta,
-    variants: [
-      {
-        name: "gatsby-ts",
-        display: "TypeScript",
-        color: blue,
-      },
-      {
-        name: "gatsby",
-        display: "JavaScript",
-        color: yellow,
-      },
-    ],
-  },
+  // {
+  //   name: "gatsby",
+  //   display: "Gatsby",
+  //   color: lightMagenta,
+  //   variants: [
+  //     {
+  //       name: "gatsby-ts",
+  //       display: "TypeScript",
+  //       color: blue,
+  //     },
+  //     {
+  //       name: "gatsby",
+  //       display: "JavaScript",
+  //       color: yellow,
+  //     },
+  //   ],
+  // },
 ];
 
 const TEMPLATES = FRAMEWORKS.map(
