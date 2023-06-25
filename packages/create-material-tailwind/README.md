@@ -8,19 +8,19 @@
 With NPM:
 
 ```bash
-$ npm create material-tailwind
+$ npx create-material-tailwind
 ```
 
 With Yarn:
 
 ```bash
-$ yarn create material-tailwind
+$ yarn create-material-tailwind
 ```
 
 With PNPM:
 
 ```bash
-$ pnpm create material-tailwind
+$ pnpm create-material-tailwind
 ```
 
 Then follow the prompts!
@@ -29,14 +29,14 @@ You can also directly specify the project name and the template you want to use 
 
 ```bash
 # npm
-npm create material-tailwind my-material-tailwind-app --template next
+npx create-material-tailwind my-material-tailwind-app --template next
 
 # yarn
-yarn create material-tailwind my-material-tailwind-app --template next
+yarn create-material-tailwind my-material-tailwind-app --template next
 
 
 # pnpm
-pnpm create material-tailwind my-material-tailwind-app --template next
+pnpm create-material-tailwind my-material-tailwind-app --template next
 ```
 
 Currently supported template presets include:
