@@ -92,7 +92,7 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                         {pageName.includes("-")
                           ? pageName
                               .split("-")
-                              .map((el) => (el === "css" ? "CSS" : el))
+                              .map((el) => (el === "css" ? "CSS" : el === "cli" ? "CLI" : el))
                               .join(" ")
                           : pageName}
                       </Typography>
@@ -101,7 +101,9 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
                           size="sm"
                           value={label}
                           variant="ghost"
-                          color={label === "new" ? "green" : label === "new example" ? "amber" : "blue"}
+                          color={
+                            label === "new" ? "green" : label === "new example" ? "amber" : "blue"
+                          }
                           className="rounded-full capitalize"
                         />
                       )}

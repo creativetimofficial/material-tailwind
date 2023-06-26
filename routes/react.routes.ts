@@ -4,6 +4,7 @@ export const routes = [
     icon: "fas fa-book",
     pages: [
       { name: "installation", label: null },
+      { name: "installation-with-cli", label: "new" },
       { name: "license", label: null },
       { name: "what-is-tailwind-css", label: null },
     ],
@@ -34,27 +35,27 @@ export const routes = [
       },
       {
         name: "alert",
-        label: "new example",
+        label: null,
       },
       {
         name: "avatar",
-        label: "new example",
+        label: null,
       },
       {
         name: "badge",
-        label: "new example",
+        label: null,
       },
       {
         name: "breadcrumbs",
-        label: "new example",
+        label: null,
       },
       {
         name: "button",
-        label: "updated",
+        label: null,
       },
       {
         name: "button-group",
-        label: "new example",
+        label: null,
       },
       {
         name: "card",
@@ -62,7 +63,7 @@ export const routes = [
       },
       {
         name: "checkbox",
-        label: "new example",
+        label: null,
       },
       {
         name: "chip",
@@ -86,11 +87,11 @@ export const routes = [
       },
       {
         name: "icon-button",
-        label: "updated",
+        label: null,
       },
       {
         name: "input",
-        label: "new example",
+        label: "updated",
       },
       {
         name: "form",
@@ -98,7 +99,7 @@ export const routes = [
       },
       {
         name: "list",
-        label: "new example",
+        label: null,
       },
       {
         name: "menu",
@@ -114,7 +115,7 @@ export const routes = [
       },
       {
         name: "progress-bar",
-        label: "new example",
+        label: null,
       },
       {
         name: "pagination",
@@ -122,7 +123,7 @@ export const routes = [
       },
       {
         name: "radio-button",
-        label: "new example",
+        label: null,
       },
       {
         name: "rating-bar",
@@ -134,23 +135,23 @@ export const routes = [
       },
       {
         name: "slider",
-        label: "new example",
+        label: null,
       },
       {
         name: "speed-dial",
-        label: "new example",
+        label: null,
       },
       {
         name: "spinner",
-        label: "new example",
+        label: null,
       },
       {
         name: "stepper",
-        label: "new example",
+        label: null,
       },
       {
         name: "switch",
-        label: "new example",
+        label: null,
       },
       {
         name: "tabs",
@@ -166,7 +167,7 @@ export const routes = [
       },
       {
         name: "tooltip",
-        label: "new example",
+        label: null,
       },
       {
         name: "typography",
