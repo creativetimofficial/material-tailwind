@@ -1,11 +1,14 @@
 {
-  "name": "@material-tailwind/cli",
-  "version": "0.1.0",
+  "name": "create-material-tailwind",
+  "version": "0.1.4",
   "description": "CLI for creating @material-tailwind project.",
   "main": "index.js",
   "author": "Sajad",
   "license": "MIT",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "create-material-tailwind": "index.js",
     "cmt": "index.js"
@@ -41,6 +44,7 @@
     "kolorist": "^1.8.0",
     "minimist": "^1.2.8",
     "prompts": "^2.4.2",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "unbuild": "^1.2.1"
   }
 }
