@@ -55,7 +55,7 @@ export default function MyDocument() {
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         />
       </Head>
-      <body className="bg-gray-100 antialiased">
+      <body className="bg-gray-50">
         <noscript>
           <iframe
             title="google-tag-manage"
