@@ -13,7 +13,7 @@ import Header from "components/layout/figma/header";
 import Footer from "components/layout/footer";
 
 // sections
-import SectionFeatures from "components/sections/features";
+import FigmaFeatures from "components/sections/figma/features";
 import SectionButton from "components/sections/button";
 import SectionColorsPalette from "components/sections/colors-palette";
 import SectionShadow from "components/sections/shadow";
@@ -43,12 +43,8 @@ export default function Figma() {
       <Navbar shadow />
       <main className="relative">
         <Header />
-        <Card
-          shadow={false}
-          className="mx-6 -mt-20 bg-white md:mx-12 md:-mt-48"
-        >
-          <div className="container z-20 mx-auto px-4">
-            <SectionFeatures />
+        <div className="container z-20 mx-auto px-4">
+            <FigmaFeatures />
             <SectionButton />
             {/* <SectionColorsPalette />
             <SectionShadow />
@@ -57,12 +53,6 @@ export default function Figma() {
             <SectionTestimonials />
             <SectionCommunity /> */}
           </div>
-          <img
-            className="absolute bottom-0 w-full md:-bottom-40"
-            src="/img/pre-footer.jpg"
-            alt="bubbles"
-          />
-        </Card>
       </main>
       <Footer />
     </>
