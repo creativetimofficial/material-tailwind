@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // next.js components
 import Link from "next/link";
@@ -67,6 +67,7 @@ export default function Navbar({
   const [stars, setStars] = useState(0);
   const navbarItemClasses =
     "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-blue-gray-800 font-medium lg:px-2 cursor-pointer";
+  const targetRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -80,6 +81,24 @@ export default function Navbar({
     )
       .then((response) => response.json())
       .then((data) => setStars(formatNumber(data.stargazers_count, 1)));
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetElement = targetRef.current;
+       const classes = ['bg-white/50', 'shadow-sm', 'backdrop-blur-lg']
+      if (window.scrollY > 100) {
+        targetElement.classList.add(...classes);
+      } else {
+        targetElement.classList.remove(...classes);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const menuOpenIcon = (
@@ -207,7 +226,7 @@ export default function Navbar({
               type="email"
               placeholder="Search"
               icon={<i className="fas fa-search text-sm" />}
-              className="focus:!border-t-blue-gray-800 focus:!border-blue-gray-800 ring-4 ring-transparent !border !border-blue-gray-200 bg-white placeholder:text-blue-gray-600 text-blue-gray-800"
+              className="focus:!border-t-blue-gray-800 focus:!border-blue-gray-800 ring-4 ring-transparent !border !border-blue-gray-100 bg-white placeholder:text-blue-gray-600 text-blue-gray-800"
               labelProps={{
                 className: "hidden" 
               }}
@@ -267,15 +286,16 @@ export default function Navbar({
 
   return (
     <div
-      className={`absolute left-2/4 z-[999] my-4 flex w-full max-w-screen-2xl -translate-x-2/4 flex-wrap items-center px-4 lg:fixed ${container}`}
+      ref={targetRef}
+      className={`z-[999] flex w-full flex-wrap items-center fixed ${container}`}
     >
       <MTNavbar
         {...rest}
-        className={`py-4 pl-6 pr-2 lg:py-2.5 bg-transparent backdrop-blur-none border-0`}
+        className={`py-4 pl-6 w-full mx-auto bg-transparent backdrop-blur-none border-0`}
         shadow={false}
       >
         <div
-          className={`flex w-full items-center !justify-between text-[#1A237E] ${className}`}
+          className={`flex w-full items-center !justify-between ${className}`}
         >
           <Link
             href="/"
