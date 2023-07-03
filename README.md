@@ -222,7 +222,7 @@ Learn how to use @material-tailwind/react components to quickly and easily creat
 
 <br />
 
-1. Intall `@material-tailwind/react`.
+1. Install `@material-tailwind/react`.
 
 ```bash
 npm i @material-tailwind/react
@@ -474,7 +474,7 @@ Learn how to use @material-tailwind/html components to quickly and easily create
 
 <br />
 
-1. Intall `@material-tailwind/html`
+1. Install `@material-tailwind/html`
 
 ```bash
 npm i @material-tailwind/html
