@@ -11,33 +11,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-
-interface CardsProps {
-  title: string;
-  children: ReactNode;
-  img: string;
-}
-
-const Cards: React.FC<CardsProps> = ({ title, children, img }) => {
-  return (
-    <>
-      <Card className="border bg-white shadow-md rounded-2xl min-h-[480px] relative overflow-hidden">
-        <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-16"></div>
-        <CardBody className="z-10">
-          <Typography variant="h2" className="font-semibold text-blue-gray-900">
-            {title}
-          </Typography>
-          <Typography variant="paragraph" className="py-4 text-lg font-normal text-blue-gray-400">
-            {children}
-          </Typography>
-        </CardBody>
-        <CardFooter className="py-0 z-10">
-          <Image src={img} width={1000} height={500} alt={title} />
-        </CardFooter>
-      </Card>
-    </>
-  );
-};
+import ContentCards from "components/layout/figma/card";
 
 const cardContentAbove = [
   {
@@ -79,18 +53,24 @@ export default function FigmaFeatures() {
       <div className="flex items-center">
         {cardContentAbove.map((card, i) => (
           <div className={`relative flex-auto ${card.customClass} px-4`} key={i}>
-            <Cards title={card.title} img={card.img}>
+            <ContentCards 
+              minHeight="min-h-[480px]" 
+              title={card.title} 
+              img={card.img}>
               {card.children}
-            </Cards>
+            </ContentCards>
           </div>
         ))}
       </div>
       <div className="flex items-center mt-8">
         {cardContentBelow.map((card, i) => (
           <div className="relative flex-auto px-4" key={i}>
-            <Cards title={card.title} img={card.img}>
+            <ContentCards
+              minHeight="min-h-[480px]" 
+              title={card.title} 
+              img={card.img}>
               {card.children}
-            </Cards>
+            </ContentCards>
           </div>
         ))}
       </div>
