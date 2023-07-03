@@ -14,6 +14,9 @@ import Footer from "components/layout/footer";
 
 // sections
 import FigmaFeatures from "components/sections/figma/features";
+import ReadyMade from "components/sections/figma/ready-made";
+import PixelCrafted from "components/sections/figma/pixel-crafted";
+import Customize from "components/sections/figma/customize";
 import SectionButton from "components/sections/button";
 import SectionColorsPalette from "components/sections/colors-palette";
 import SectionShadow from "components/sections/shadow";
@@ -45,7 +48,9 @@ export default function Figma() {
         <Header />
         <div className="container z-20 mx-auto px-4">
             <FigmaFeatures />
-            <SectionButton />
+            <ReadyMade />
+            <PixelCrafted />
+            <Customize />
             {/* <SectionColorsPalette />
             <SectionShadow />
             <SectionComponents />
@@ -54,7 +59,7 @@ export default function Figma() {
             <SectionCommunity /> */}
           </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
