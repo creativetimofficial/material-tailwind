@@ -18,13 +18,7 @@ import ReadyMade from "components/sections/figma/ready-made";
 import PixelCrafted from "components/sections/figma/pixel-crafted";
 import Customize from "components/sections/figma/customize";
 import Testimonials from "components/sections/figma/testimonials";
-import SectionButton from "components/sections/button";
-import SectionColorsPalette from "components/sections/colors-palette";
-import SectionShadow from "components/sections/shadow";
-import SectionComponents from "components/sections/components";
-import SectionFramework from "components/sections/framework";
-import SectionTestimonials from "components/sections/testimonials";
-import SectionCommunity from "components/sections/community";
+import Pricing from "components/sections/figma/pricing";
 
 export default function Figma() {
   return (
@@ -53,6 +47,7 @@ export default function Figma() {
             <PixelCrafted />
             <Customize />
             <Testimonials />
+            <Pricing />
             {/* <SectionColorsPalette />
             <SectionShadow />
             <SectionComponents />
