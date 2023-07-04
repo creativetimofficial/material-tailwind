@@ -17,6 +17,7 @@ import FigmaFeatures from "components/sections/figma/features";
 import ReadyMade from "components/sections/figma/ready-made";
 import PixelCrafted from "components/sections/figma/pixel-crafted";
 import Customize from "components/sections/figma/customize";
+import Testimonials from "components/sections/figma/testimonials";
 import SectionButton from "components/sections/button";
 import SectionColorsPalette from "components/sections/colors-palette";
 import SectionShadow from "components/sections/shadow";
@@ -51,6 +52,7 @@ export default function Figma() {
             <ReadyMade />
             <PixelCrafted />
             <Customize />
+            <Testimonials />
             {/* <SectionColorsPalette />
             <SectionShadow />
             <SectionComponents />
