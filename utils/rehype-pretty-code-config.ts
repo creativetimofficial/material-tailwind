@@ -11,6 +11,7 @@ const config = {
   onVisitHighlightedWord(node) {
     node.properties.className = ["word"];
   },
+  keepBackground: false,
 };
 
 export default config;

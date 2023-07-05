@@ -48,6 +48,8 @@ import AvatarStack from "components/docs/avatar-stack";
 import Warning from "components/warning";
 
 // new imports
+import * as AccordionExamples from "docs-content/react/accordion";
+
 import * as BadgeExamples from "components/docs/react/badge";
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -64,6 +66,7 @@ import * as ImgExamples from "components/docs/react/img";
 import * as VideoExamples from "components/docs/react/video";
 import * as SidebarExamples from "components/docs/react/sidebar";
 import * as TableExamples from "components/docs/react/table";
+
 import TransparentTabs from "components/docs/transparent-tabs";
 import DocsTitle from "components/docs-title";
 
@@ -257,6 +260,7 @@ const components = {
   Warning,
 
   // new components
+  AccordionExamples,
   BadgeExamples,
   DrawerExamples,
   RatingExamples,
