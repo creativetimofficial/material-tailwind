@@ -180,7 +180,7 @@ export function PricingSection() {
                 className="max-w-[12rem] text-center"
               >
                 <div className="inline-flex w-max cursor-pointer items-center gap-1.5">
-                  <Typography className="font-medium text-primary">
+                  <Typography className="font-medium text-md">
                     Documentation
                   </Typography>
                   <Info />
@@ -196,7 +196,7 @@ export function PricingSection() {
                 className="max-w-[12rem] text-center"
               >
                 <div className="inline-flex w-max cursor-pointer items-center gap-1.5">
-                  <Typography className="font-medium text-primary">
+                  <Typography className="font-medium text-md">
                     Full Code
                   </Typography>
                   <Info />
@@ -212,7 +212,7 @@ export function PricingSection() {
                 className="max-w-[12rem] text-center"
               >
                 <div className="inline-flex w-max cursor-pointer items-center gap-1.5">
-                  <Typography className="font-medium text-primary">
+                  <Typography className="font-medium text-md">
                     Free Updates
                   </Typography>
                   <Info />
@@ -228,7 +228,7 @@ export function PricingSection() {
                 className="max-w-[16rem] text-center"
               >
                 <div className="inline-flex w-max cursor-pointer items-center gap-1.5">
-                  <Typography className="font-medium text-primary">
+                  <Typography className="font-medium text-md">
                     Support
                   </Typography>
                   <Info />
@@ -240,7 +240,7 @@ export function PricingSection() {
             </div>
             <div className="grid min-w-[64rem] border-b border-blue-gray-100 grid-cols-4 gap-x-16 p-4">
               <div className="flex items-center gap-1.5">
-                <Typography className="font-medium text-primary">
+                <Typography className="font-medium text-md">
                   HTML Technology
                 </Typography>
               </div>
@@ -250,7 +250,7 @@ export function PricingSection() {
             </div>
             <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 border-b border-blue-gray-100 p-4">
               <div className="flex items-center gap-1.5">
-                <Typography className="font-medium text-primary">
+                <Typography className="font-medium text-md">
                   React Technology
                 </Typography>
               </div>
@@ -260,7 +260,7 @@ export function PricingSection() {
             </div>
             <div className="grid min-w-[64rem] grid-cols-4 gap-x-16 p-4">
               <div className="flex items-center gap-1.5">
-                <Typography className="font-medium text-primary">
+                <Typography className="font-medium text-md">
                   Figma
                 </Typography>
               </div>
@@ -311,9 +311,20 @@ export function PricingSection() {
         </div>
 
         <div className="mt-20 text-center text-blue-gray-400">
-          <div>Secured Payment by Paddle with:</div>
-          <div className="mt-8">
-            Info: If you are a Registered Company inside the European Union you will be able to add your <br></br> VAT ID after your Press “Buy Now”
+          <Typography className="text-md font-medium text-blue-gray-400">
+            <i className="fa fa-lock"></i> Secured Payment by Paddle with:
+          </Typography>
+          <Typography className="text-md font-medium mt-2">
+            <i className="fa fa-cc-paypal text-3xl text-slate-950"></i>
+            <i className="fa fa-cc-visa text-3xl text-slate-950 ml-2"></i>
+            <i className="fa fa-cc-mastercard text-3xl text-slate-950 ml-2"></i>
+            <i className="fa fa-cc-amex text-3xl text-slate-950 ml-2"></i>
+          </Typography>
+          <div className="mt-6">
+            <Typography className="text-md font-medium mt-2 text-blue-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" className="inline-block -mt-1 mr-1" height="1em" viewBox="0 0 512 512"><path className="fill-blue-gray-500" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+              Info: If you are a Registered Company inside the European Union you will be able to add your <br></br> VAT ID after your Press “Buy Now” 
+            </Typography>
           </div>
         </div>
       </section>
