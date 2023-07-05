@@ -4,7 +4,7 @@ import { Typography, Button, Input } from "@material-tailwind/react";
 export default function SectionSubscribe() {
   return (
     <div
-      className="z-90 relative mx-auto -mt-40 mb-20 w-12/12 rounded-xl container"
+      className="z-90 relative mx-auto mb-20 w-12/12 rounded-xl container"
       style={{ backgroundImage: "url('/img/subscribe.jpg')" }}
     >
       <div className="flex flex-wrap items-center p-20 md:p-10">
