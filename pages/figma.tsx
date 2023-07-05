@@ -10,7 +10,7 @@ import { Card } from "@material-tailwind/react";
 // page components
 import Navbar from "components/layout/figma/navbar";
 import Header from "components/layout/figma/header";
-import Footer from "components/layout/footer";
+import Footer from "components/layout/figma/footer";
 
 // sections
 import FigmaFeatures from "components/sections/figma/features";
@@ -19,6 +19,8 @@ import PixelCrafted from "components/sections/figma/pixel-crafted";
 import Customize from "components/sections/figma/customize";
 import Testimonials from "components/sections/figma/testimonials";
 import Pricing from "components/sections/figma/pricing";
+import Faq from "components/sections/figma/faq";
+import Community from "components/sections/figma/community";
 
 export default function Figma() {
   return (
@@ -48,6 +50,8 @@ export default function Figma() {
             <Customize />
             <Testimonials />
             <Pricing />
+            <Faq />
+            <Community />
             {/* <SectionColorsPalette />
             <SectionShadow />
             <SectionComponents />
@@ -56,7 +60,7 @@ export default function Figma() {
             <SectionCommunity /> */}
           </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
