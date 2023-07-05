@@ -27,8 +27,7 @@ export default function Presentation() {
     <>
       <Head>
         <title>
-          Material Tailwind - Easy-to-use Tailwind CSS components library with
-          Material Design
+          Material Tailwind - Easy-to-use Tailwind CSS components library with Material Design
         </title>
         <link rel="canonical" href="https://www.material-tailwind.com" />
         <meta
@@ -43,10 +42,7 @@ export default function Presentation() {
       <Navbar shadow />
       <main className="relative">
         <Header />
-        <Card
-          shadow={false}
-          className="mx-6 -mt-20 bg-white md:mx-12 md:-mt-48"
-        >
+        <Card shadow={false} className="mx-6 -mt-20 bg-white md:mx-12 md:-mt-48">
           <div className="container z-20 mx-auto px-4">
             <SectionFeatures />
             <SectionButton />

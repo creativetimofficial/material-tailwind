@@ -10,21 +10,13 @@ navigation:
     "custom-accordion-animation",
     "accordion-with-custom-styles",
     "disabled-accordion",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/accordion",
-      description: "Learn more about props definition and types of accordion components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/accordion",
-      description: "Learn how to customize the theme and styles for accordion components.",
-    },
+    "accordion-props",
+    "accordion-header-props",
+    "accordion-body-props",
+    "types-animate",
+    "accordion-theme",
+    "accordion-theme-object-type",
+    "accordion-theme-customization"
   ]
 github: accordion
 prev: screens
@@ -158,7 +150,7 @@ export default function Example() {
 
 You can make an <Code>Accordion</Code> component to be always open and doesn't close when it's next or previous <Code>Accordion</Code> component opened using a separate state.
 
-<CodePreview id="accordion-always-open" component={
+<CodePreview component={
   <State initialState={{ active: 0, alwaysOpen: true }}>
     <Observe>
       {({ setState, active, alwaysOpen }) => (
@@ -990,5 +982,177 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="accordion-props">
+## Accordion - Props
+</DocsTitle>
+
+<span id="accordion-props" className="scroll-mt-48" />
+The following props are available for accordion component. These are the custom props
+that we've added for the accordion component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                        | Default                                |
+| ----------- | ------------------------- | ---------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | Open accordion collapse            | No default value it's a required prop. |
+| `icon`      | <Code>node</Code>         | Change accordion collapse end icon | <Code>undefined</Code>                 |
+| `animate`   | [Animate](#types-animate) | Change accordion body animation    | <Code>undefined</Code>                 |
+| `disabled`  | <Code>boolean</Code>      | Disable the accordion              | <Code>false</Code>                     |
+| `className` | <Code>string</Code>       | Add custom className for accordion | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for accordion          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="accordion-header-props">
+## Accordion Header - Props
+</DocsTitle>
+
+<span id="accordion-header-props" className="scroll-mt-48" />
+The following props are available for accordion header component. These are the custom
+props that we've added for the accordion header component and you can use
+all the other native props as well.
+
+| Attribute   | Type                | Description                               | Default                                |
+| ----------- | ------------------- | ----------------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for accordion header | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for accordion header          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionHeaderProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="accordion-body-props">
+## Accordion Body - Props
+</DocsTitle>
+
+<span id="accordion-body-props" className="scroll-mt-48" />
+The following props are available for accordion body component. These are the custom
+props that we've added for the accordion body component and you can use
+all the other native props as well.
+
+| Attribute   | Type                | Description                             | Default                                |
+| ----------- | ------------------- | --------------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for accordion body | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for accordion body          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionBodyProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+<span id="types-animate" className="scroll-mt-48" />
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="accordion-theme">
+## Accordion Theme
+</DocsTitle>
+
+<span id="accordion-theme" className="scroll-mt-48" />
+
+Learn how to customize the theme and styles for accordion components, the theme object for accordion components has two main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of accordion components.<br />
+**B.** The <Code>styles</Code> object for customizing the theme and styles of accordion components.<br />
+
+You can customize the theme and styles of accordion components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="accordion-theme-object-type">
+## Accordion Theme Object Type
+</DocsTitle>
+
+<span id="accordion-theme-object-type" className="scroll-mt-48" />
+
+```ts
+interface AccordionStylesType {
+  defaultProps: {
+    icon: node;
+    className: string;
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    disabled: boolean;
+  };
+  styles: {
+    base: {
+      container: object;
+      header: {
+        initial: object;
+        active: object;
+        icon: object;
+      };
+      body: object;
+      disabled: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AccordionStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="accordion-theme-customization">
+## Accordion Theme Customization
+</DocsTitle>
+
+<span id="accordion-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  accordion: {
+    styles: {
+      base: {
+        container: {
+          bgColor: "bg-white",
+        },
+      },
+    },
+  },
+};
+```
