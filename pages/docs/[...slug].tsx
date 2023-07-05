@@ -49,6 +49,7 @@ import Warning from "components/warning";
 
 // new imports
 import * as AccordionExamples from "docs-content/react/accordion";
+import * as AlertExamples from "docs-content/react/alert";
 
 import * as BadgeExamples from "components/docs/react/badge";
 import * as DrawerExamples from "components/docs/react/drawer";
@@ -141,10 +142,32 @@ import initHtmlScripts from "public/material-tailwind-html-v2";
 
 const components = {
   h1: (props) => (
-    <Typography as="h1" variant="h3" color="blue-gray" className="!mb-4 lg:!text-4xl" {...props} />
+    <Typography
+      as="h1"
+      variant="h3"
+      color="blue-gray"
+      className="!mb-4 lg:!text-4xl"
+      {...props}
+    />
   ),
-  h2: (props) => <Typography as="h2" variant="h4" color="blue-gray" className="!mb-2" {...props} />,
-  h3: (props) => <Typography as="h3" variant="h5" color="blue-gray" className="!mb-2" {...props} />,
+  h2: (props) => (
+    <Typography
+      as="h2"
+      variant="h4"
+      color="blue-gray"
+      className="!mb-2"
+      {...props}
+    />
+  ),
+  h3: (props) => (
+    <Typography
+      as="h3"
+      variant="h5"
+      color="blue-gray"
+      className="!mb-2"
+      {...props}
+    />
+  ),
   h6: (props) => (
     <Typography
       as="p"
@@ -153,7 +176,9 @@ const components = {
       {...props}
     />
   ),
-  p: (props) => <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />,
+  p: (props) => (
+    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
+  ),
   hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
   a: (props) => (
     <a
@@ -261,6 +286,8 @@ const components = {
 
   // new components
   AccordionExamples,
+  AlertExamples,
+
   BadgeExamples,
   DrawerExamples,
   RatingExamples,
@@ -319,7 +346,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && <DocsRelated routes={frontMatter.related} />}
+              {frontMatter.related && (
+                <DocsRelated routes={frontMatter.related} />
+              )}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
@@ -361,7 +390,9 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(`documentation/${slug.join("/")}.mdx`);
+  const markdownWithMeta = fs.readFileSync(
+    `documentation/${slug.join("/")}.mdx`,
+  );
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
