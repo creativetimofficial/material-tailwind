@@ -47,7 +47,7 @@ const cardContent = [
 export default function Faq() {
   return (
     <section className="pb-12 pt-20">
-      <div className="mx-auto mb-10 text-center w-8/12">
+      <div className="mx-auto mb-10 text-center lg:w-10/12 xl:w-8/12">
         <Typography
           variant="h3"
           className="mb-5 mt-10 relative text-center text-2xl leading-tight tracking-normal text-slate-950"
@@ -56,22 +56,22 @@ export default function Faq() {
         </Typography>
         <Typography
           variant="h1"
-          className="mb-5 mt-5 relative text-center text-5xl font-semibold leading-tight tracking-normal text-blue-gray-900"
+          className="mb-5 mt-5 relative text-center text-4xl md:text-5xl font-semibold leading-tight tracking-normal text-blue-gray-900"
         >
           Frequently Asked Questions
         </Typography>
         <Typography
           variant="paragraph"
-          className="mb-5 mt-5 relative text-center text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
+          className="mb-5 mt-5 relative text-center text-lg md:text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
         >
           You&apos;ll find answers to common inquiries that will provide valuable insights into the features and functionality of Material Tailwind. 
         </Typography>
       </div>
-      <div className="flex flex-wrap items-center mt-16">
+      <div className="flex flex-col lg:flex-row flex-wrap items-center mt-16">
         {cardContent.map((card, i) => (
-          <div className="w-1/3" key={i}>
+          <div className="lg:w-1/3" key={i}>
             <Card className="bg-transparent shadow-none">
-              <CardBody className="min-h-[350px]">
+              <CardBody className="lg:min-h-[350px]">
                 <div className="w-[50px] h-[50px] rounded-full bg-gray-900 flex items-center justify-center">
                   <i className={card.icon}></i>
                 </div>
@@ -86,7 +86,7 @@ export default function Faq() {
           </div>
         ))}
       </div>
-      <div className="bg-white border px-6 rounded-lg flex p-6">
+      <div className="bg-white border px-6 rounded-lg flex flex-col lg:flex-row p-6 mt-10 lg:mt-0">
         <div className="w-10/12">
           <Typography className="text-xl font-semibold text-gray-900">
             Still have questions?
@@ -95,7 +95,7 @@ export default function Faq() {
             Reach our team and we will have an answer for you.
           </Typography>
         </div>
-        <div className="w-2/12 flex items-center justify-end">
+        <div className="lg:w-2/12 flex items-center justify-end">
           <Button size="lg" className="mb-0 bg-slate-950 hover:shadow-blue-gray-500/40 shadow-blue-gray-500/20">Chat with us</Button>
         </div>
       </div>
