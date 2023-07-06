@@ -18,19 +18,19 @@ const cardContentAbove = [
     title: "Colors and Styles",
     img: "/img/img-1.jpg",
     children: "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
-    customClass: "w-40"
+    customClass: "lg:w-40"
   },
   {
     title: "Figma Variants",
     img: "/img/img-2.jpg",
     children: "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
-    customClass: "w-72"
+    customClass: "lg:w-72"
   },
   {
     title: "Typography",
     img: "/img/img-3.jpg",
     children: "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
-    customClass: "w-40"
+    customClass: "lg:w-40"
   },
 ]
 
@@ -49,10 +49,10 @@ const cardContentBelow = [
 
 export default function FigmaFeatures() {
   return (
-    <section className="py-12 -mt-24">
-      <div className="flex items-center">
+    <section className="py-12 -mt-40 md:-mt-24">
+      <div className="flex flex-col lg:flex-row items-center">
         {cardContentAbove.map((card, i) => (
-          <div className={`relative flex-auto ${card.customClass} px-4`} key={i}>
+          <div className={`relative flex-auto mt-8 lg:mt-0 ${card.customClass} px-4`} key={i}>
             <ContentCards 
               minHeight="min-h-[480px]" 
               title={card.title} 
@@ -62,9 +62,9 @@ export default function FigmaFeatures() {
           </div>
         ))}
       </div>
-      <div className="flex items-center mt-8">
+      <div className="flex flex-col lg:flex-row items-center mt-8">
         {cardContentBelow.map((card, i) => (
-          <div className="relative flex-auto px-4" key={i}>
+          <div className="relative flex-auto mt-8 lg:mt-0 px-4" key={i}>
             <ContentCards
               minHeight="min-h-[480px]" 
               title={card.title} 
