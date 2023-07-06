@@ -51,8 +51,8 @@ import Warning from "components/warning";
 import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
+import * as BadgeExamples from "docs-content/react/badge";
 
-import * as BadgeExamples from "components/docs/react/badge";
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -289,8 +289,8 @@ const components = {
   AccordionExamples,
   AlertExamples,
   AvatarExamples,
-
   BadgeExamples,
+
   DrawerExamples,
   RatingExamples,
   SliderExamples,
