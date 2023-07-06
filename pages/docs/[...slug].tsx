@@ -52,6 +52,7 @@ import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
 import * as BadgeExamples from "docs-content/react/badge";
+import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -290,6 +291,7 @@ const components = {
   AlertExamples,
   AvatarExamples,
   BadgeExamples,
+  BreadcrumbsExamples,
 
   DrawerExamples,
   RatingExamples,
