@@ -109,24 +109,24 @@ export default function Testimonials() {
       <div className="mx-auto mb-14 text-center w-12/12">
         <Typography
           variant="h3"
-          className="mb-5 mt-10 relative text-center text-2xl leading-tight tracking-normal text-slate-950"
+          className="mb-5 mt-10 relative text-center text-xl md:text-2xl leading-tight tracking-normal text-slate-950"
         >
           Trusted by over 10,000+ Web Developers
         </Typography>
         <Typography
           variant="h1"
-          className="mb-5 mt-5 relative text-center text-4xl font-semibold leading-tight tracking-normal text-blue-gray-900"
+          className="mb-5 mt-5 relative text-center text-3xl md:text-4xl font-semibold leading-tight tracking-normal text-blue-gray-900"
         >
           Embraced by freelancers and businesses alike on a global scale.
         </Typography>
         <Typography
           variant="paragraph"
-          className="mb-5 mt-5 relative text-center text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
+          className="mb-5 mt-5 relative text-center text-lg md:text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
         >
           See what other fellow developers and designers are saying about <br></br> Material Tailwind.
         </Typography>
       </div>
-      <div className="flex items-center">
+      <div className="flex flex-col lg:flex-row items-center">
         {cardContentAbove.map((card, i) => (
           <div className="flex-auto px-4" key={i}>
             <CardTestiomonial img={card.img} position={card.position} name={card.name}>
@@ -135,7 +135,7 @@ export default function Testimonials() {
           </div>  
         ))}
       </div>
-      <div className="flex items-center mt-8">
+      <div className="flex flex-col lg:flex-row items-center mt-8">
         {cardContentBelow.map((card, i) => (
           <div className="flex-auto px-4" key={i}>
             <CardTestiomonial img={card.img} position={card.position} name={card.name}>
@@ -146,12 +146,12 @@ export default function Testimonials() {
       </div>
 
       <div className="mt-28 border-t border-blue-gray-50 mx-4"></div>
-      <div className="bg-white flex items-center justify-center p-4 w-2/3 mx-auto -mt-12">
-        <img src="/img/logos/logo-amazon.webp" width={100} />
-        <img src="/img/logos/logo-ibm.webp" className="mx-5" width={100} />
-        <img src="/img/logos/logo-microsoft.webp" className="mx-5" width={100} />
-        <img src="/img/logos/logo-cisco.webp" className="mx-5" width={100} />
-        <img src="/img/logos/logo-vodafone.webp" width={100} />
+      <div className="bg-white flex flex-wrap lg:flex-nowrap items-center justify-center p-4 w-2/3 mx-auto -mt-12">
+        <img src="/img/logos/logo-amazon.webp" className="m-5 lg:mx-5" width={100} />
+        <img src="/img/logos/logo-ibm.webp" className="m-5 lg:mx-5" width={100} />
+        <img src="/img/logos/logo-microsoft.webp" className="m-5 lg:mx-5" width={100} />
+        <img src="/img/logos/logo-cisco.webp" className="m-5 lg:mx-5" width={100} />
+        <img src="/img/logos/logo-vodafone.webp" className="m-5 lg:mx-5" width={100} />
       </div>
     </section>
   );
