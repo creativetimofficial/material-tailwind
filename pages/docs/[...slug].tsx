@@ -57,6 +57,7 @@ import * as ButtonGroupExamples from "docs-content/react/button-group";
 import * as ButtonExamples from "docs-content/react/button";
 import * as CardExamples from "docs-content/react/card";
 import * as CarouselExamples from "docs-content/react/carousel";
+import * as CheckboxExamples from "docs-content/react/checkbox";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -300,6 +301,7 @@ const components = {
   ButtonExamples,
   CardExamples,
   CarouselExamples,
+  CheckboxExamples,
 
   DrawerExamples,
   RatingExamples,
