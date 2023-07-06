@@ -23,7 +23,9 @@ prev: screens
 next: alert
 ---
 
+<DocsTitle href="accordion">
 # Tailwind CSS Accordion - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Accordion</Code> component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
 
@@ -31,7 +33,7 @@ See below our simple and versatile <Code>Accordion</Code> example that you can u
 
 <br />
 
-<CodePreview id="accordion" link="accordion#accordion" component={<AccordionExamples.DefaultAccordion />}>
+<CodePreview link="accordion#accordion" component={<AccordionExamples.DefaultAccordion />}>
 ```jsx
 import React from "react";
 import {
@@ -149,7 +151,7 @@ export function AccordionAlwaysOpen() {
 
 You can make the <Code>Accordion</Code> component to be all open and doesn't close when it's next or previous <Code>Accordion</Code> component opened using a separate state.
 
-<CodePreview id="accordion-all-open" component={<AccordionExamples.AccordionAllOpen />}>
+<CodePreview component={<AccordionExamples.AccordionAllOpen />}>
 ```jsx
 import React from "react";
 import {
@@ -209,7 +211,7 @@ export default function Example() {
 
 You can modify the open/close state icon for <Code>Accordion</Code> component using the <Code>icon</Code> prop.
 
-<CodePreview id="accordion-custom-icon" link="accordion#accordion-custom-icon" component={<AccordionExamples.AccordionCustomIcon />}>
+<CodePreview link="accordion#accordion-custom-icon" component={<AccordionExamples.AccordionCustomIcon />}>
 ```jsx
 import React from "react";
 import {
@@ -282,7 +284,7 @@ export function AccordionCustomIcon() {
 
 You can modify the open/close state animation for <Code>Accordion</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="accordion-custom-animation" component={<AccordionExamples.AccordionCustomAnimation />}>
+<CodePreview component={<AccordionExamples.AccordionCustomAnimation />}>
 ```jsx
 import React from "react";
 import {
@@ -345,7 +347,7 @@ export function AccordionCustomAnimation() {
 
 You can use tailwind css classes to add custom styles to the <Code>Accordion</Code> component.
 
-<CodePreview id="accordion-custom-styles" component={<AccordionExamples.AccordionCustomStyles />}>
+<CodePreview component={<AccordionExamples.AccordionCustomStyles />}>
 ```jsx
 import React from "react";
 import {
@@ -420,7 +422,7 @@ export function AccordionCustomStyles() {
 
 An <Code>Accordion</Code> could be disabled as well, it will help you to prevent user interactions like click over the <Code>Accordion</Code> component.
 
-<CodePreview id="accordion-disabled" link="accordion#accordion-disabled" component={<AccordionExamples.AccordionDisabled />}>
+<CodePreview link="accordion#accordion-disabled" component={<AccordionExamples.AccordionDisabled />}>
 ```jsx
 import React from "react";
 import {
@@ -473,10 +475,9 @@ export function AccordionDisabled() {
 ---
 
 <DocsTitle href="accordion-props">
-## Accordion - Props
+## Accordion Props
 </DocsTitle>
 
-<span id="accordion-props" className="scroll-mt-48" />
 The following props are available for accordion component. These are the custom props
 that we've added for the accordion component and you can use all the other
 native props as well.
@@ -502,10 +503,9 @@ import type { AccordionProps } from "@material-tailwind/react";
 ---
 
 <DocsTitle href="accordion-header-props">
-## Accordion Header - Props
+## Accordion Header Props
 </DocsTitle>
 
-<span id="accordion-header-props" className="scroll-mt-48" />
 The following props are available for accordion header component. These are the custom
 props that we've added for the accordion header component and you can use
 all the other native props as well.
@@ -527,10 +527,9 @@ import type { AccordionHeaderProps } from "@material-tailwind/react";
 ---
 
 <DocsTitle href="accordion-body-props">
-## Accordion Body - Props
+## Accordion Body Props
 </DocsTitle>
 
-<span id="accordion-body-props" className="scroll-mt-48" />
 The following props are available for accordion body component. These are the custom
 props that we've added for the accordion body component and you can use
 all the other native props as well.
@@ -555,8 +554,6 @@ import type { AccordionBodyProps } from "@material-tailwind/react";
 ## Types - Animate
 </DocsTitle>
 
-<span id="types-animate" className="scroll-mt-48" />
-
 ```ts
 type animate = {
   mount?: object;
@@ -569,8 +566,6 @@ type animate = {
 <DocsTitle href="accordion-theme">
 ## Accordion Theme
 </DocsTitle>
-
-<span id="accordion-theme" className="scroll-mt-48" />
 
 Learn how to customize the theme and styles for accordion components, the theme object for accordion components has two main objects:
 
@@ -585,8 +580,6 @@ You can customize the theme and styles of accordion components by adding Tailwin
 <DocsTitle href="accordion-theme-object-type">
 ## Accordion Theme Object Type
 </DocsTitle>
-
-<span id="accordion-theme-object-type" className="scroll-mt-48" />
 
 ```ts
 interface AccordionStylesType {
@@ -628,8 +621,6 @@ import type { AccordionStylesType } from "@material-tailwind/react";
 <DocsTitle href="accordion-theme-customization">
 ## Accordion Theme Customization
 </DocsTitle>
-
-<span id="accordion-theme-customization" className="scroll-mt-48" />
 
 ```tsx
 const theme = {
