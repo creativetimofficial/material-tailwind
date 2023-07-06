@@ -56,6 +56,7 @@ import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
 import * as ButtonGroupExamples from "docs-content/react/button-group";
 import * as ButtonExamples from "docs-content/react/button";
 import * as CardExamples from "docs-content/react/card";
+import * as CarouselExamples from "docs-content/react/carousel";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -298,6 +299,7 @@ const components = {
   ButtonGroupExamples,
   ButtonExamples,
   CardExamples,
+  CarouselExamples,
 
   DrawerExamples,
   RatingExamples,
