@@ -9,29 +9,23 @@ navigation:
     "avatar-with-border",
     "avatar-with-text",
     "avatar-stack",
-    "avatar-with-custom-styles",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/avatar",
-      description: "Learn more about props definition and types of avatar component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/avatar",
-      description: "Learn how to customize the theme and styles for avatar component.",
-    },
+    "avatar-custom-styles",
+    "avatar-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "avatar-theme",
+    "avatar-theme-object-type",
+    "avatar-theme-customization"
   ]
 github: avatar
 prev: alert
 next: badge
 ---
 
+<DocsTitle href="avatar">
 # Tailwind CSS Avatar - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Avatar</Code> component to portray people or objects in your web projects. The <Code>Avatar</Code> can be used as a visual identifier for a user profile on your website.
 
@@ -39,11 +33,11 @@ See below our beautiful <Code>Avatar</Code> example that you can use in your Tai
 
 <br />
 
-<CodePreview id="avatar" link="avatar#avatar" component={<Avatar src="/img/face-2.jpg" alt="avatar" />}>
+<CodePreview link="avatar#avatar" component={<AvatarExamples.AvatarDefault />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarDefault() {
   return <Avatar src="/img/face-2.jpg" alt="avatar" />;
 }
 ```
@@ -57,17 +51,11 @@ export default function Example() {
 
 The <Code>Avatar</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="avatar-variants" link="avatar#avatar-variants" component={
-  <div className="flex gap-4">
-    <Avatar src="/img/face-2.jpg" alt="avatar" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
-  </div>
-}>
+<CodePreview link="avatar#avatar-variants" component={<AvatarExamples.AvatarVariants />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarVariants() {
   return (
     <div className="flex gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" />
@@ -87,20 +75,11 @@ export default function Example() {
 
 The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="avatar-sizes" link="avatar#avatar-sizes" component={
-  <div className="flex w-max items-end gap-4">
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="sm" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="md" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="lg" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xl" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" size="xxl" />
-  </div>
-}>
+<CodePreview link="avatar#avatar-sizes" component={<AvatarExamples.AvatarSizes />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarSizes() {
   return (
     <div className="flex w-max items-end gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" size="xs" />
@@ -123,22 +102,35 @@ export default function Example() {
 
 You can add border around the avatar using the <Code>withBorder</Code> prop. To change the color of the avatar border use the <Code>color</Code> prop, by default it's <Code>blue</Code>.
 
-<CodePreview id="avatar-with-border" component={
-  <div className="flex gap-4">
-    <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
-    <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
-  </div>
-}>
+<CodePreview component={<AvatarExamples.AvatarWithBorder />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarWithBorder() {
   return (
     <div className="flex gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" withBorder={true} color="pink" className="p-0.5" />
+      <Avatar
+        src="/img/face-2.jpg"
+        alt="avatar"
+        withBorder={true}
+        className="p-0.5"
+      />
+      <Avatar
+        src="/img/face-2.jpg"
+        alt="avatar"
+        variant="rounded"
+        withBorder={true}
+        color="green"
+        className="p-0.5"
+      />
+      <Avatar
+        src="/img/face-2.jpg"
+        alt="avatar"
+        variant="square"
+        withBorder={true}
+        color="pink"
+        className="p-0.5"
+      />
     </div>
   );
 }
@@ -153,58 +145,40 @@ export default function Example() {
 
 You can use avatar with other components as well, see example below.
 
-<CodePreview id="avatar-with-text" component={
-  <div className="flex flex-col gap-6">
-    <div className="flex items-center gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" />
-      <div>
-        <Typography variant="h6">Tania Andrew</Typography>
-        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
-      </div>
-    </div> 
-    <div className="flex items-center gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
-      <div>
-        <Typography variant="h6">Tania Andrew</Typography>
-        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
-      </div>
-    </div> 
-    <div className="flex items-center gap-4">
-      <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
-      <div>
-        <Typography variant="h6">Tania Andrew</Typography>
-        <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
-      </div>
-    </div> 
-  </div>
-}>
+<CodePreview component={<AvatarExamples.AvatarWithText />}>
 ```jsx
 import { Avatar, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarWithText() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" />
         <div>
-          <Typography variant="h6">Tania Andrew</Typography>
-          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
         </div>
-      </div> 
+      </div>
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
         <div>
-          <Typography variant="h6">Tania Andrew</Typography>
-          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
         </div>
-      </div> 
+      </div>
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
         <div>
-          <Typography variant="h6">Tania Andrew</Typography>
-          <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
+          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="small" color="gray" className="font-normal">
+            Web Developer
+          </Typography>
         </div>
-      </div> 
+      </div>
     </div>
   );
 }
@@ -217,11 +191,11 @@ export default function Example() {
 ## Avatar Stack
 </DocsTitle>
 
-<CodePreview id="avatar-stack" link="avatar#avatar-stack" className="mt-4" component={<AvatarStack />}>
+<CodePreview link="avatar#avatar-stack" className="mt-4" component={<AvatarExamples.AvatarStack />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarStack() {
   return (
     <div className="flex items-center -space-x-4">
       <Avatar
@@ -262,35 +236,188 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="avatar-with-custom-styles">
+<DocsTitle href="avatar-custom-styles">
 ## Avatar with Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>Avatar</Code> component.
 
-<CodePreview id="avatar-with-custom-styles" component={
-  <Avatar 
-    size="lg" 
-    alt="avatar"
-    src="/img/face-2.jpg" 
-    className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
-  />
-}>
+<CodePreview component={<AvatarExamples.AvatarCustomStyles />}>
 ```jsx
 import { Avatar } from "@material-tailwind/react";
 
-export default function Example() {
+export function AvatarCustomStyles() {
   return (
-    <Avatar 
-      size="lg" 
+    <Avatar
+      size="lg"
       alt="avatar"
-      src="/img/face-2.jpg" 
-      className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
+      src="/img/face-2.jpg"
+      className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
     />
   );
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="avatar-props">
+## Avatar Props
+</DocsTitle>
+
+The following props are available for avatar component. These are the custom props that we've added for
+the avatar component and you can use all the other native img props as well.
+
+| Attribute    | Type                      | Description                      | Default               |
+| ------------ | ------------------------- | -------------------------------- | --------------------- |
+| `variant`    | [Variant](#types-variant) | Change avatar variant            | <Code>circular</Code> |
+| `size`       | [Size](#types-size)       | Change avatar size               | <Code>md</Code>       |
+| `color`      | [Color](#types-color)     | Change avatar border color       | <Code>blue</Code>     |
+| `className`  | <Code>string</Code>       | Add custom className for avatar  | `''`                  |
+| `withBorder` | <Code>boolean</Code>      | Add 2px border around the avatar | <Code>false</Code>    |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AvatarProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "rounded" | "circular";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+```ts
+type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="avatar-theme">
+## Avatar Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for avatar component, the theme object for avatar component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of avatar component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for avatar component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of avatar component.<br />
+
+You can customize the theme and styles of avatar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="alert-theme-object-type">
+## Avatar Theme Object Type
+</DocsTitle>
+
+```ts
+interface AvatarStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    className: string;
+    withBorder: boolean;
+    color: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      initial: object;
+      withBorder: object;
+    };
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
+    };
+    variants: {
+      square: object;
+      rounded: object;
+      circular: object;
+    };
+    borderColor: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { AvatarStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="avatar-theme-customization">
+## Avatar Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  avatar: {
+    styles: {
+      base: {
+        initial: {
+          position: "relative",
+        },
+      },
+    },
+  },
+};
+```

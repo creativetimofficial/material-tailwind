@@ -50,6 +50,7 @@ import Warning from "components/warning";
 // new imports
 import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
+import * as AvatarExamples from "docs-content/react/avatar";
 
 import * as BadgeExamples from "components/docs/react/badge";
 import * as DrawerExamples from "components/docs/react/drawer";
@@ -287,6 +288,7 @@ const components = {
   // new components
   AccordionExamples,
   AlertExamples,
+  AvatarExamples,
 
   BadgeExamples,
   DrawerExamples,
