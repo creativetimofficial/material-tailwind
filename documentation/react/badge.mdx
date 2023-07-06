@@ -397,14 +397,62 @@ import type { BadgeStyleTypes } from "@material-tailwind/react";
 ```ts
 const theme = {
   badge: {
+    defaultProps: {
+      color: "red",
+      invisible: false,
+      withBorder: false,
+      overlap: "square",
+      content: undefined,
+      placement: "top-end",
+      className: undefined,
+      containerProps: undefined,
+    },
+    valid: {
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+      overlaps: ["circular", "square"],
+      placements: ["top-start", "top-end", "bottom-start", "bottom-end"],
+    },
     styles: {
       base: {
+        container: {
+          position: "relative",
+          display: "inline-flex",
+        },
         badge: {
           initial: {
             position: "absolute",
+            minWidth: "min-w-[12px]",
+            minHeight: "min-h-[12px]",
+            borderRadius: "rounded-full",
             paddingY: "py-1",
             paddingX: "px-1",
             fontSize: "text-xs",
+            fontWeight: "font-medium",
+            content: "content-['']",
+            lineHeight: "leading-none",
+            display: "grid",
+            placeItems: "place-items-center",
           },
           withBorder: {
             borderWidth: "border-2",
@@ -414,6 +462,146 @@ const theme = {
             minWidth: "min-w-[24px]",
             minHeight: "min-h-[24px]",
           },
+        },
+      },
+      placements: {
+        "top-start": {
+          square: {
+            top: "top-[4%]",
+            left: "left-[2%]",
+            translateX: "-translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+          circular: {
+            top: "top-[14%]",
+            left: "left-[14%]",
+            translateX: "-translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+        },
+        "top-end": {
+          square: {
+            top: "top-[4%]",
+            right: "right-[2%]",
+            translateX: "translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+          circular: {
+            top: "top-[14%]",
+            right: "right-[14%]",
+            translateX: "translate-x-2/4",
+            translateY: "-translate-y-2/4",
+          },
+        },
+        "bottom-start": {
+          square: {
+            bottom: "bottom-[4%]",
+            left: "left-[2%]",
+            translateX: "-translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+          circular: {
+            bottom: "bottom-[14%]",
+            left: "left-[14%]",
+            translateX: "-translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+        },
+        "bottom-end": {
+          square: {
+            bottom: "bottom-[4%]",
+            right: "right-[2%]",
+            translateX: "translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+          circular: {
+            bottom: "bottom-[14%]",
+            right: "right-[14%]",
+            translateX: "translate-x-2/4",
+            translateY: "translate-y-2/4",
+          },
+        },
+      },
+      colors: {
+        white: {
+          backgroud: "bg-white",
+          color: "text-blue-gray-900",
+        },
+        "blue-gray": {
+          backgroud: "bg-blue-gray-500",
+          color: "text-white",
+        },
+        gray: {
+          backgroud: "bg-gray-500",
+          color: "text-white",
+        },
+        brown: {
+          backgroud: "bg-brown-500",
+          color: "text-white",
+        },
+        "deep-orange": {
+          backgroud: "bg-deep-orange-500",
+          color: "text-white",
+        },
+        orange: {
+          backgroud: "bg-orange-500",
+          color: "text-white",
+        },
+        amber: {
+          backgroud: "bg-amber-500",
+          color: "text-black",
+        },
+        yellow: {
+          backgroud: "bg-yellow-500",
+          color: "text-black",
+        },
+        lime: {
+          backgroud: "bg-lime-500",
+          color: "text-black",
+        },
+        "light-green": {
+          backgroud: "bg-light-green-500",
+          color: "text-white",
+        },
+        green: {
+          backgroud: "bg-green-500",
+          color: "text-white",
+        },
+        teal: {
+          backgroud: "bg-teal-500",
+          color: "text-white",
+        },
+        cyan: {
+          backgroud: "bg-cyan-500",
+          color: "text-white",
+        },
+        "light-blue": {
+          backgroud: "bg-light-blue-500",
+          color: "text-white",
+        },
+        blue: {
+          backgroud: "bg-blue-500",
+          color: "text-white",
+        },
+        indigo: {
+          backgroud: "bg-indigo-500",
+          color: "text-white",
+        },
+        "deep-purple": {
+          backgroud: "bg-deep-purple-500",
+          color: "text-white",
+        },
+        purple: {
+          backgroud: "bg-purple-500",
+          color: "text-white",
+        },
+        pink: {
+          backgroud: "bg-pink-500",
+          color: "text-white",
+        },
+        red: {
+          backgroud: "bg-red-500",
+          color: "text-white",
         },
       },
     },
