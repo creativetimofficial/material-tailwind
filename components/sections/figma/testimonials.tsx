@@ -32,7 +32,6 @@ const CardTestiomonial = ({ children, img, position, name }: CardsProps) => {
       >
         <Avatar
           size="lg"
-          variant="rounded"
           src={img}
           alt="candice wu"
         />
@@ -64,19 +63,19 @@ const CardTestiomonial = ({ children, img, position, name }: CardsProps) => {
 
 const cardContentAbove = [
   {
-    img: "/img/img-1.jpg",
+    img: "/img/avatars/avatar-1.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
   },
   {
-    img: "/img/img-2.jpg",
+    img: "/img/avatars/avatar-2.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
   },
   {
-    img: "/img/img-3.jpg",
+    img: "/img/avatars/avatar-3.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
@@ -85,19 +84,19 @@ const cardContentAbove = [
 
 const cardContentBelow = [
   {
-    img: "/img/img-1.jpg",
+    img: "/img/avatars/avatar-4.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
   },
   {
-    img: "/img/img-2.jpg",
+    img: "/img/avatars/avatar-5.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
   },
   {
-    img: "/img/img-3.jpg",
+    img: "/img/avatars/avatar-6.jpg",
     children: "I can confidently say that our team's productivity has increased significantly since implementing this UI design system.",
     position: "Designer, Company",
     name: "Veda Wilson",
