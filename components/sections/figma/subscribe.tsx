@@ -7,7 +7,7 @@ export default function SectionSubscribe() {
       className="z-90 relative mx-auto mb-20 w-12/12 rounded-xl container"
       style={{ backgroundImage: "url('/img/bg-gradient.jpg')" }}
     >
-      <div className="flex flex-wrap items-center p-16">
+      <div className="flex flex-wrap items-center p-10 lg:p-16">
         <div className="w-full px-4 lg:w-5/12">
           <Typography
             variant="h2"
