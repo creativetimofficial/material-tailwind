@@ -53,6 +53,7 @@ import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
 import * as BadgeExamples from "docs-content/react/badge";
 import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
+import * as ButtonGroupExamples from "docs-content/react/button-group";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -292,6 +293,7 @@ const components = {
   AvatarExamples,
   BadgeExamples,
   BreadcrumbsExamples,
+  ButtonGroupExamples,
 
   DrawerExamples,
   RatingExamples,
