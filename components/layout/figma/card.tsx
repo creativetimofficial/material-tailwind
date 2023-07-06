@@ -14,7 +14,7 @@ export default function ContentCards({ title, children, img, minHeight }: CardsP
       <Card className={`border bg-white shadow-md rounded-2xl ${minHeight} relative overflow-hidden`}>
         <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-16"></div>
         <CardBody className="z-10">
-          <Typography variant="h2" className="font-semibold text-blue-gray-900">
+          <Typography variant="h2" className="font-semibold text-3xl md:text-4xl text-blue-gray-900">
             {title}
           </Typography>
           <Typography variant="paragraph" className="py-4 text-lg font-normal text-blue-gray-400">
