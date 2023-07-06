@@ -47,7 +47,7 @@ import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import Warning from "components/warning";
 
-// new imports
+// components examples
 import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
@@ -55,6 +55,7 @@ import * as BadgeExamples from "docs-content/react/badge";
 import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
 import * as ButtonGroupExamples from "docs-content/react/button-group";
 import * as ButtonExamples from "docs-content/react/button";
+import * as CardExamples from "docs-content/react/card";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -296,6 +297,7 @@ const components = {
   BreadcrumbsExamples,
   ButtonGroupExamples,
   ButtonExamples,
+  CardExamples,
 
   DrawerExamples,
   RatingExamples,
