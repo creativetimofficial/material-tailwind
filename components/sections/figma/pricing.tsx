@@ -99,7 +99,7 @@ export function PricingSection() {
         </Typography>
       </div>
       <section className="pb-0 pt-10 px-4" id="pricing">
-        <div className="container mx-auto bg-white border rounded-2xl p-6">
+        <div className="container mx-auto bg-white shadow-md border rounded-2xl p-6">
           <div className="grid grid-cols-1 gap-12 p-4 lg:grid-cols-4">
             {plans.map(
               ({ id, tag, title, marked, price, link, off, desc }, key) => (
@@ -271,10 +271,10 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="flex bg-white border rounded-2xl mt-8 px-10 p-8">
+        <div className="flex bg-white shadow-md border rounded-2xl mt-8 px-10 p-8">
           <div className="w-7/12">
             <Typography className="text-2xl font-semibold">
-              Material Tailwind Pro | Team Pricing
+              Material Tailwind Pro | Team Pricingss
             </Typography>
             <Typography className="text-blue-gray-500 mt-2 font-normal">
               Get access to both HTML + React code versions and Figma File use our components library to create faster your stunning web projects.
