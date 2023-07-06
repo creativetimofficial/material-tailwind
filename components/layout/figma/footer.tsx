@@ -201,7 +201,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="text-inherit transition-all"
               >
-                Creative Tim.
+                Creative Tim. Made with ❤️ for a better web.
               </a>
             </div>
           </div>
