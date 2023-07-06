@@ -87,13 +87,13 @@ export function PricingSection() {
         </Typography>
         <Typography
           variant="h1"
-          className="mt-5 relative text-center text-4xl font-semibold leading-tight tracking-normal text-blue-gray-900"
+          className="mt-5 mb-5 relative text-center text-4xl md:text-5xl font-semibold leading-tight tracking-normal text-blue-gray-900"
         >
           Choose your favorite plan
         </Typography>
         <Typography
           variant="paragraph"
-          className="mb-5 mt-1 relative text-center text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
+          className="mb-5 mt-1 relative text-center text-lg md:text-xl font-normal leading-relaxed tracking-normal text-blue-gray-400"
         >
           Buy one and get lifetime access for each plan mentioned below.
         </Typography>
@@ -271,10 +271,10 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="flex bg-white shadow-md border rounded-2xl mt-8 px-10 p-8">
-          <div className="w-7/12">
+        <div className="flex flex-col lg:flex-row bg-white shadow-md border rounded-2xl mt-8 px-10 p-8">
+          <div className="w-full lg:w-7/12">
             <Typography className="text-2xl font-semibold">
-              Material Tailwind Pro | Team Pricingss
+              Material Tailwind Pro | Team Pricing
             </Typography>
             <Typography className="text-blue-gray-500 mt-2 font-normal">
               Get access to both HTML + React code versions and Figma File use our components library to create faster your stunning web projects.
@@ -282,22 +282,22 @@ export function PricingSection() {
             <Typography className="mt-2 font-semibold text-md text-blue-gray-800 mt-7">
               What&apos;s Included
             </Typography>
-            <div className="flex mt-5">
+            <div className="flex flex-col lg:flex-row mt-5">
               <div className="flex-auto">
-                <div className="font-semibold text-blue-gray-900"><i className="fa fa-check mr-2"></i> 10+ Team Members</div>
+                <div className="font-semibold text-blue-gray-900 mt-2 lg:mt-0"><i className="fa fa-check mr-2"></i> 10+ Team Members</div>
                 <div className="font-semibold text-blue-gray-900 mt-2"><i className="fa fa-check mr-2"></i> Full Code</div>
               </div>
               <div className="flex-auto">
-                <div className="font-semibold text-blue-gray-900"><i className="fa fa-check mr-2"></i> Free Updates</div>
+                <div className="font-semibold text-blue-gray-900 mt-2 lg:mt-0"><i className="fa fa-check mr-2"></i> Free Updates</div>
                 <div className="font-semibold text-blue-gray-900 mt-2"><i className="fa fa-check mr-2"></i> Priority Support</div>
               </div>
               <div className="flex-auto">
-                <div className="font-semibold text-blue-gray-900"><i className="fa fa-check mr-2"></i> Figma File PRO</div>
+                <div className="font-semibold text-blue-gray-900 mt-2 lg:mt-0"><i className="fa fa-check mr-2"></i> Figma File PRO</div>
                 <div className="font-semibold text-blue-gray-900 mt-2"><i className="fa fa-check mr-2"></i> Documentation</div>
               </div>
             </div>
           </div>
-          <div className="w-4/12 ml-auto">
+          <div className="w-full lg:w-4/12 mt-10 lg:mt-0 ml-auto">
             <div className="bg-slate-950 rounded-2xl text-center p-6">
               <Typography className="text-md font-semibold text-white">
                 Pay once, <br></br> Own it forever
