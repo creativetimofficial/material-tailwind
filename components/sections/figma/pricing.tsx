@@ -98,7 +98,7 @@ export function PricingSection() {
           Buy one and get lifetime access for each plan mentioned below.
         </Typography>
       </div>
-      <section className="pb-0 pt-10 px-4" id="pricing">
+      <section className="pb-0 pt-10" id="pricing">
         <div className="container mx-auto bg-white shadow-md border rounded-2xl p-6">
           <div className="grid grid-cols-1 gap-12 p-4 lg:grid-cols-4">
             {plans.map(
