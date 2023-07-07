@@ -128,7 +128,7 @@ export default function Testimonials() {
       </div>
       <div className="flex flex-col lg:flex-row items-center">
         {cardContentAbove.map((card, i) => (
-          <div className="flex-auto px-4" key={i}>
+          <div className="flex-auto lg:px-4" key={i}>
             <CardTestiomonial img={card.img} position={card.position} name={card.name}>
               {card.children}
             </CardTestiomonial>
@@ -137,7 +137,7 @@ export default function Testimonials() {
       </div>
       <div className="flex flex-col lg:flex-row items-center mt-8">
         {cardContentBelow.map((card, i) => (
-          <div className="flex-auto px-4" key={i}>
+          <div className="flex-auto lg:px-4" key={i}>
             <CardTestiomonial img={card.img} position={card.position} name={card.name}>
               {card.children}
             </CardTestiomonial>
