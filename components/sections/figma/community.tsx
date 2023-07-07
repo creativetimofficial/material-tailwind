@@ -51,7 +51,7 @@ export default function Community() {
       </div>
       <div className="flex flex-col lg:flex-row items-center mt-16">
         {socials.map((social, i) => (
-          <div className="lg:w-4/12 mt-8 lg:mt-0 px-4" key={i}>
+          <div className="w-full lg:w-4/12 mt-8 lg:mt-0 md:px-4" key={i}>
             <Card className="bg-white border shadow-md">
               <CardBody>
                 <div className={`w-[50px] h-[50px] rounded-lg ${social.bg} flex items-center justify-center`}>
@@ -74,10 +74,10 @@ export default function Community() {
           </div>
         ))}
       </div>
-      <div className="lg:w-full flex lg:block justify-center lg:flex-row px-4 mt-8">
-        <Card className="bg-white border shadow-md">
+      <div className="w-full flex justify-center lg:flex-row mt-8 md:px-4">
+        <Card className="bg-white border shadow-md w-full">
           <CardBody className="flex py-0">
-            <div className="lg:w-4/12 py-6">
+            <div className="lg:w-4/12 w-full md:pr-12 py-6">
               <div className="w-[50px] h-[50px] rounded-lg bg-gray-900 flex items-center justify-center">
                 <i className="fa fa-group text-white"></i>
               </div>
