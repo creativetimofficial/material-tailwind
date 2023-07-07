@@ -46,7 +46,7 @@ export default function PixelCrafted() {
       </div>
       <div className="flex flex-col lg:flex-row items-center mt-16">
         {cardContent.map((card, i) => (
-          <div className="relative flex-auto mt-8 lg:mt-0 px-4" key={i}>
+          <div className="relative flex-auto mt-8 lg:mt-0 md:px-4" key={i}>
             <ContentCards 
               minHeight="min-h-[480px]" 
               title={card.title} 
