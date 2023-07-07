@@ -21,13 +21,11 @@ export const step: StepStyleTypes = {
         borderRadius: "rounded-full",
         backgroundColor: "bg-blue-gray-200",
         color: "text-white",
-        ring: "ring-0 ring-blue-100",
         fontWeight: "font-bold",
         transition: "transition-all duration-300",
       },
       active: {
         backgroundColor: "bg-blue-500",
-        ring: "ring-8",
       },
       completed: {
         backgroundColor: "bg-blue-500",
