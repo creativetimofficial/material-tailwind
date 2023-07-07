@@ -18,7 +18,7 @@ const nextConfig = {
         permanent: true,
       },
     ];
-  }
+  },
   async rewrites() {
     return [
       {
