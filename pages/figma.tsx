@@ -21,6 +21,7 @@ import Testimonials from "components/sections/figma/testimonials";
 import Pricing from "components/sections/figma/pricing";
 import Faq from "components/sections/figma/faq";
 import Community from "components/sections/figma/community";
+import SectionSubscribe from "components/sections/figma/subscribe";
 
 export default function Figma() {
   return (
@@ -43,7 +44,7 @@ export default function Figma() {
       <Navbar shadow />
       <main className="relative">
         <Header />
-        <div className="container z-20 mx-auto px-4">
+        <div className="container z-20 mx-auto px-6">
             <FigmaFeatures />
             <ReadyMade />
             <PixelCrafted />
@@ -52,6 +53,7 @@ export default function Figma() {
             <Pricing />
             <Faq />
             <Community />
+            <SectionSubscribe />
             {/* <SectionColorsPalette />
             <SectionShadow />
             <SectionComponents />
