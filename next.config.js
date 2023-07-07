@@ -19,6 +19,20 @@ const nextConfig = {
       },
     ];
   }
+  async rewrites() {
+    return [
+      {
+        source: "/blocks",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+      },
+      {
+        source: "/blocks/:slug*",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
