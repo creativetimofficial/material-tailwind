@@ -52,7 +52,7 @@ export default function FigmaFeatures() {
     <section className="py-12 -mt-40 md:-mt-24">
       <div className="flex flex-col lg:flex-row items-center">
         {cardContentAbove.map((card, i) => (
-          <div className={`relative flex-auto mt-8 lg:mt-0 ${card.customClass} px-4`} key={i}>
+          <div className={`relative flex-auto mt-8 lg:mt-0 ${card.customClass} md:px-4`} key={i}>
             <ContentCards 
               minHeight="min-h-[480px]" 
               title={card.title} 
@@ -64,7 +64,7 @@ export default function FigmaFeatures() {
       </div>
       <div className="flex flex-col lg:flex-row items-center mt-8">
         {cardContentBelow.map((card, i) => (
-          <div className="relative flex-auto mt-8 lg:mt-0 px-4" key={i}>
+          <div className="relative flex-auto mt-8 lg:mt-0 md:px-4" key={i}>
             <ContentCards
               minHeight="min-h-[480px]" 
               title={card.title} 
