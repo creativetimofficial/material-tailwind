@@ -114,7 +114,7 @@ export default function Navbar({
   );
 
   const navbarMenu = (
-    <div className="flex w-full flex-col lg:flex-row xl:ml-40">
+    <div className="flex w-full flex-col lg:flex-row">
       <ul
         className={`${
           open ? "mt-4" : ""
@@ -160,7 +160,7 @@ export default function Navbar({
             </MenuItem>
           </MenuList>
         </Menu>
-        <li>
+        {/* <li>
           <Link href="/blocks" className={navbarItemClasses}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +176,7 @@ export default function Navbar({
             </svg>
             Blocks
           </Link>
-        </li>
+        </li> */}
         <li>
           <a
             href="https://www.creative-tim.com/services/updivision/?ref=material-tailwind"
@@ -245,7 +245,7 @@ export default function Navbar({
             </li>
           </Tooltip>
         </ul>
-        <a
+        {/* <a
           href="https://www.material-tailwind.com/blocks"
           target="_blank"
           rel="noreferrer"
@@ -270,7 +270,7 @@ export default function Navbar({
             </svg>
             PRO Version
           </Button>
-        </a>
+        </a> */}
       </div>
     </div>
   );
