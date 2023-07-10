@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // next.js components
 import Image from "next/image";
@@ -11,6 +11,11 @@ import {
 } from "@material-tailwind/react";
 
 export default function Header() {
+  const handleButtonClick = () => {
+    const section = document.getElementById('pricing');
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="h-screen min-h-screen bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat">
       <div className="relative z-50 h-fit pt-32">
@@ -39,7 +44,7 @@ export default function Header() {
                   <Image src="/img/icon-figma.svg" width="30" height="30" alt="Figma Logo" className="absolute" />
                   <span className="pl-8">Preview in Figma</span>
                 </Button>
-                <Button size="lg" variant="filled" className="ml-4 text-md font-medium capitalize bg-blue-gray-900 hover:shadow-blue-gray-500/40 shadow-blue-gray-500/20">Pricing & FAQ</Button>
+                <Button size="lg" variant="filled" onClick={handleButtonClick} className="ml-4 text-md font-medium capitalize bg-blue-gray-900 hover:shadow-blue-gray-500/40 shadow-blue-gray-500/20">Pricing & FAQ</Button>
               </div>
             </div>
           </div>
