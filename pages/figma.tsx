@@ -24,12 +24,6 @@ import Community from "components/sections/figma/community";
 import SectionSubscribe from "components/sections/figma/subscribe";
 
 export default function Figma() {
-  const pricingRef = useRef<HTMLDivElement>(null);
-
-  const handleChildRef = (ref) => {
-    pricingRef.current = ref;
-  };
-
   return (
     <>
       <Head>
@@ -60,12 +54,6 @@ export default function Figma() {
             <Faq />
             <Community />
             <SectionSubscribe />
-            {/* <SectionColorsPalette />
-            <SectionShadow />
-            <SectionComponents />
-            <SectionFramework />
-            <SectionTestimonials />
-            <SectionCommunity /> */}
           </div>
       </main>
       <Footer />
