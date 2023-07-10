@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Button, Typography, Chip, Tooltip } from "@material-tailwind/react";
 import { CheckCircleIcon, MinusCircleIcon } from "@heroicons/react/24/outline";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
@@ -26,6 +26,12 @@ function Info() {
 }
 
 export function PricingSection() {
+  const myRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollTeam = () => {
+    myRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+  
   const plans = [
     {
       tag: null,
@@ -78,7 +84,7 @@ export function PricingSection() {
   return (
     <React.Fragment>
       {/* <PaddleLoader /> */}
-      <div className="mx-auto text-center w-12/12">
+      <div id="pricing" className="mx-auto text-center w-12/12">
         <Typography
           variant="h3"
           className="mb-5 mt-10 relative text-center text-2xl leading-tight tracking-normal text-slate-950"
@@ -166,7 +172,7 @@ export function PricingSection() {
                       >
                         Buy Now
                       </Button>
-                      {marked && <Typography className="uppercase text-md font-semibold underline text-center py-3">Team Pricing $449 <i className="fa fa-chevron-right ml-1" aria-hidden="true"></i></Typography>}
+                      {marked && <Typography className="uppercase text-md font-semibold underline text-center py-3 cursor-pointer" onClick={handleScrollTeam}>Team Pricing $449 <i className="fa fa-chevron-right ml-1" aria-hidden="true"></i></Typography>}
                     </div>
                   )}
                 </div>
@@ -271,7 +277,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row bg-white shadow-md border rounded-2xl mt-8 px-10 p-8">
+        <div ref={myRef} className="flex flex-col lg:flex-row bg-white shadow-md border rounded-2xl mt-8 px-10 p-8">
           <div className="w-full lg:w-7/12">
             <Typography className="text-2xl font-semibold">
               Material Tailwind Pro | Team Pricing
