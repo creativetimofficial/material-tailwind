@@ -5,7 +5,7 @@ import React from "react";
 import Head from "next/head";
 
 // @material-tailwind/react components
-import { Card } from "@material-tailwind/react";
+import { Button, Card, Chip, Typography } from "@material-tailwind/react";
 
 // page components
 import Navbar from "components/layout/navbar";
@@ -21,6 +21,9 @@ import SectionComponents from "components/sections/components";
 import SectionFramework from "components/sections/framework";
 import SectionTestimonials from "components/sections/testimonials";
 import SectionCommunity from "components/sections/community";
+import Frameworks from "components/sections/landing/frameworks";
+import Community from "components/sections/community";
+import SectionSubscribe from "components/sections/subscribe";
 
 export default function Presentation() {
   return (
@@ -42,27 +45,54 @@ export default function Presentation() {
       </Head>
       <Navbar shadow />
       <main className="relative">
-        <Header />
-        <Card
-          shadow={false}
-          className="mx-6 -mt-20 bg-white md:mx-12 md:-mt-48"
-        >
-          <div className="container z-20 mx-auto px-4">
-            <SectionFeatures />
-            <SectionButton />
-            <SectionColorsPalette />
-            <SectionShadow />
-            <SectionComponents />
-            <SectionFramework />
-            <SectionTestimonials />
-            <SectionCommunity />
+        <Header img={'/img/header-bg.png'}>
+          <div className="flex flex-wrap items-center justify-between relative">
+            <div className="mt-46 mx-auto px-4 lg:mt-12 lg:w-10/12 xl:w-9/12 text-center">
+              <div className="border border-blue-gray-100 bg-white text-blue-gray-900 p-3 py-2.5 pr-5 rounded-lg inline-flex items-center font-semibold">
+                <Chip value="New" className="mr-4 rounded-md font-medium bg-slate-900" />
+                Latest Update Material Tailwind released on July 05, 2023
+              </div>
+              <Typography
+                variant="h1"
+                className="mb-10 mt-10 relative text-center text-4xl md:text-5xl font-black !leading-tight tracking-normal text-blue-gray-900"
+              >
+                The Tailwind CSS Components Library that Skyrockets your UI
+              </Typography>
+              <Typography className="mb-10 relative text-lg md:text-md text-center font-medium leading-normal text-blue-gray-500 lg:pr-12">
+                Material Tailwind is an open-source library that uses the power of Tailwind CSS and React to help you build unique web projects faster and easier. The stunning design inspired by Material Design is a bonus!
+              </Typography>
+
+              <div>
+                <Button
+                  size="lg"
+                  variant="outlined"
+                  className="capitalize bg-white relative font-medium text-md gap-3 inline-flex items-center text-blue-gray-800 border-blue-gray-100 focus:ring-transparent"
+                >
+                  Check out all components
+                </Button>
+                <Button
+                  size="lg"
+                  variant="filled"
+                  className="ml-4 text-md font-medium capitalize bg-blue-gray-900 hover:shadow-blue-gray-500/40 shadow-blue-gray-500/20"
+                >
+                  Get Started
+                </Button>
+              </div>
+            </div>
           </div>
-          <img
-            className="absolute bottom-0 w-full md:-bottom-40"
-            src="/img/pre-footer.jpg"
-            alt="bubbles"
-          />
-        </Card>
+        </Header>
+        <div className="container z-20 mx-auto px-4">
+          <Frameworks />
+          <Community />
+          <SectionSubscribe />
+          {/* <SectionButton />
+          <SectionColorsPalette />
+          <SectionShadow />
+          <SectionComponents />
+          <SectionFramework />
+          <SectionTestimonials />
+          <SectionCommunity /> */}
+        </div>
       </main>
       <Footer />
     </>
