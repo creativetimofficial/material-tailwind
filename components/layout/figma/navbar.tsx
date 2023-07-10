@@ -105,11 +105,12 @@ export default function Navbar({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-6 w-6"
-      fill="none"
-      stroke="currentColor"
+      fill="fill-slate-950"
+      stroke="fill-slate-950"
       strokeWidth={2}
     >
       <path
+        fill="fill-slate-950"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M4 6h16M4 12h16M4 18h16"
@@ -120,13 +121,14 @@ export default function Navbar({
   const menuCloseIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill="fill-slate-950"
       className="h-6 w-6"
       viewBox="0 0 24 24"
-      stroke="currentColor"
+      stroke="fill-slate-950"
       strokeWidth={2}
     >
       <path
+        fill="fill-slate-950"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M6 18L18 6M6 6l12 12"
