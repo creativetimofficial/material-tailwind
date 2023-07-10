@@ -14,6 +14,7 @@ import { useTheme } from "../../context/theme";
 // types
 import type { color, fullWidth, ripple, size, variant } from "../../types/components/button";
 import { useButtonGroupContext } from "../ButtonGroup";
+import { create } from "domain";
 // import {
 //   propTypesVariant,
 //   propTypesSize,
@@ -45,55 +46,56 @@ export const Button: ButtonComponent = (props) => {
     props,
   );
 
-  const [defaultProps, rest] = splitProps(mergedProps, [
+  const [buttonProps, rest] = splitProps(mergedProps, [
     "variant",
     "size",
     "color",
     "fullWidth",
     "ripple",
+    "class",
+    "onMouseDown",
   ]);
 
   // 3. set ripple effect instance
-  const rippleEffect = createMemo(() => defaultProps.ripple !== undefined && new Ripple());
+  const rippleEffect = createMemo(() => buttonProps.ripple !== undefined && new Ripple());
 
   // 4. set styles
-  const buttonBase = objectsToString(theme().button.styles.base.initial);
+  const styles = createMemo(() => {
+    const button = theme().button;
+    const { valid, styles } = button;
+    const { base, variants, sizes } = styles;
+    const buttonBase = objectsToString(base.initial);
 
-  const buttonVariant = createMemo(() => {
-    const fColor = findMatch(theme().button.valid.colors, defaultProps.color, "blue");
-    const fVariant = findMatch(theme().button.valid.variants, defaultProps.variant, "filled");
-    const variants = theme().button.styles.variants;
-    return objectsToString(variants[fVariant!][fColor!]);
-  });
+    const buttonVariant = objectsToString(
+      variants[findMatch(valid.variants, buttonProps.variant, "filled")][
+        findMatch(valid.colors, buttonProps.color, "blue")
+      ],
+    );
 
-  const buttonSize = createMemo(() =>
-    objectsToString(
-      theme().button.styles.sizes[findMatch(theme().button.valid.sizes, props.size!, "md")],
-    ),
-  );
+    const buttonSize = objectsToString(sizes[findMatch(valid.sizes, buttonProps.size, "md")]);
 
-  const classes = createMemo(() =>
-    twMerge(
-      classnames(buttonBase, buttonSize(), buttonVariant(), {
-        [objectsToString(theme().button.styles.base.fullWidth)]: defaultProps.fullWidth,
+    const root = twMerge(
+      classnames(buttonBase, buttonSize, buttonVariant, {
+        [objectsToString(base.fullWidth)]: buttonProps.fullWidth,
       }),
-      props.class,
-    ),
-  );
+      buttonProps.class,
+    );
 
+    return root;
+  });
   // 5. return
   return (
     <button
       {...rest}
-      class={classes()}
+      class={styles()}
       type={props.type || "button"}
       onMouseDown={(e) => {
-        const onMouseDown = props.onMouseDown;
+        const onMouseDown = buttonProps.onMouseDown;
 
-        if (defaultProps.ripple) {
+        if (buttonProps.ripple) {
           rippleEffect().create(
             e,
-            defaultProps.variant === "filled" || defaultProps.variant === "gradient"
+            buttonProps.variant === "filled" || buttonProps.variant === "gradient"
               ? "light"
               : "dark",
           );
@@ -102,7 +104,7 @@ export const Button: ButtonComponent = (props) => {
         return typeof onMouseDown === "function" && onMouseDown(e);
       }}
       onMouseUp={(e) => {
-        const onMouseUp = props.onMouseDown;
+        const onMouseUp = props.onMouseUp;
         e.currentTarget.blur();
         return typeof onMouseUp === "function" && onMouseUp(e);
       }}
@@ -111,17 +113,5 @@ export const Button: ButtonComponent = (props) => {
     </button>
   );
 };
-
-// Button.propTypes = {
-//   variant: PropTypes.oneOf(propTypesVariant),
-//   size: PropTypes.oneOf(propTypesSize),
-//   color: PropTypes.oneOf(propTypesColor),
-//   fullWidth: propTypesFullWidth,
-//   ripple: propTypesRipple,
-//   className: propTypesClassName,
-//   children: propTypesChildren,
-// };
-
-// Button.displayName = "MaterialTailwind.Button";
 
 export default Button;

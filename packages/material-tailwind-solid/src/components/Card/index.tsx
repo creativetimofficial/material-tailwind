@@ -34,15 +34,20 @@ const Card: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & CardProps> = (p
 
   // 3. set styles
   const classes = createMemo(() => {
-    const cardRoot = objectsToString(theme().card.styles.base.initial);
-    const color = findMatch(theme().card.valid.colors, mergedProps.color, "white");
-    const variant = findMatch(theme().card.valid.variants, mergedProps.variant, "filled");
-    const variants = theme().card.styles.variants;
-    const cardVariant = objectsToString(variants[variant][color]);
+    const card = theme().card;
+    const { styles, valid } = card;
+    const { base, variants } = styles;
+
+    const cardRoot = objectsToString(base.initial);
+    const cardVariant = objectsToString(
+      variants[findMatch(valid.variants, mergedProps.variant, "filled")][
+        findMatch(valid.colors, mergedProps.color, "white")
+      ],
+    );
 
     return twMerge(
       classnames(cardRoot, cardVariant, {
-        [objectsToString(theme().card.styles.base.shadow)]: mergedProps.shadow,
+        [objectsToString(base.shadow)]: mergedProps.shadow,
       }),
       mergedProps.class,
     );
@@ -55,16 +60,6 @@ const Card: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & CardProps> = (p
     </div>
   );
 };
-
-// Card.propTypes = {
-//   variant: PropTypes.oneOf(propTypesVariant),
-//   color: PropTypes.oneOf(propTypesColor),
-//   shadow: propTypesShadow,
-//   className: propTypesClassName,
-//   children: propTypesChildren,
-// };
-
-// Card.displayName = "MaterialTailwind.Card";
 
 export type { CardHeaderProps, CardFooterProps };
 export { Card, CardHeader, CardBody, CardFooter };

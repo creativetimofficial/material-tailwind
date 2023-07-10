@@ -19,42 +19,31 @@ export interface AvatarProps {
 export const Avatar: Component<JSX.ImgHTMLAttributes<HTMLImageElement> & AvatarProps> = (props) => {
   // 1. init
   const theme = useTheme();
-  const [avatarProps, rest] = splitProps(props, ["variant", "size", "class"]);
-
-  const defaultProps = mergeProps(() => theme().avatar.defaultProps, avatarProps);
+  const mergedProps = mergeProps(() => theme().avatar.defaultProps, props);
+  const [avatarProps, rest] = splitProps(mergedProps, ["variant", "size", "class"]);
 
   // 3. set styles
-  const avatarVariant = createMemo(() =>
-    objectsToString(
-      theme().avatar.styles.variants[
-        findMatch(theme().avatar.valid.variants, defaultProps.variant, "rounded")
-      ],
-    ),
-  );
+  const styles = createMemo(() => {
+    const { valid, styles } = theme().avatar;
+    const { base, variants } = styles;
 
-  const avatarSize = createMemo(() => {
-    const size = findMatch(theme().avatar.valid.sizes, defaultProps.size, "md");
-    const styleSize = theme().avatar.styles.sizes[size];
-    return objectsToString(styleSize);
+    const avatarVariant = objectsToString(
+      variants[findMatch(valid.variants, avatarProps.variant, "rounded")],
+    );
+
+    const size = findMatch(valid.sizes, avatarProps.size, "md");
+    const styleSize = styles.sizes[size];
+    const avatarSize = objectsToString(styleSize);
+
+    const classes = twMerge(
+      classnames(objectsToString(base), avatarVariant, avatarSize),
+      avatarProps.class,
+    );
+    return { classes };
   });
 
-  const classes = createMemo(() =>
-    twMerge(
-      classnames(objectsToString(theme().avatar.styles.base), avatarVariant(), avatarSize()),
-      defaultProps.class,
-    ),
-  );
-
   // 4. return
-  return <img {...rest} class={classes()} />;
+  return <img {...rest} class={styles().classes} />;
 };
-
-// Avatar.propTypes = {
-//   variant: PropTypes.oneOf(propTypesVariant),
-//   size: PropTypes.oneOf(propTypesSize),
-//   className: propTypesClassName,
-// };
-
-// Avatar.displayName = "MaterialTailwind.Avatar";
 
 export default Avatar;

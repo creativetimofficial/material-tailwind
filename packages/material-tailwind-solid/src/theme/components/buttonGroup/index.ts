@@ -6,29 +6,29 @@ import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/
 import type { DeepRequired } from "ts-essentials";
 
 export interface ButtonGroupStyleTypes {
-  defaultProps?: {
-    variant?: variant;
-    size?: size;
-    color?: color;
-    fullWidth?: fullWidth;
-    ripple?: ripple;
-    class?: string;
+  defaultProps: {
+    variant: variant;
+    size: size;
+    color: color;
+    fullWidth: fullWidth;
+    ripple: ripple;
+    class: string;
   };
-  valid?: {
-    variants?: variant[];
-    sizes?: size[];
-    colors?: color[];
+  valid: {
+    variants: variant[];
+    sizes: size[];
+    colors: color[];
   };
-  styles?: {
-    base?: {
-      initial?: object;
-      fullWidth?: object;
+  styles: {
+    base: {
+      initial: object;
+      fullWidth: object;
     };
-    dividerColor?: typeof buttonGroupDividerColor;
+    dividerColor: typeof buttonGroupDividerColor;
   };
 }
-export type ButtonGroupType = DeepRequired<ButtonGroupStyleTypes>;
-export const buttonGroup: ButtonGroupType = {
+
+export const buttonGroup: ButtonGroupStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",

@@ -35,14 +35,10 @@ export interface BadgeProps {
 export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElement>> = (props) => {
   // 1. init
   const theme = useTheme();
-
   // 2. set default props
-  const mergedProps = mergeProps(
-    () => theme().badge.defaultProps,
-    () => badgeProps,
-  );
+  const mergedProps = mergeProps(() => theme().badge.defaultProps, props);
 
-  const [badgeProps, rest] = splitProps(props, [
+  const [badgeProps, rest] = splitProps(mergedProps, [
     "color",
     "invisible",
     "withBorder",
@@ -56,50 +52,45 @@ export const Badge: ParentComponent<BadgeProps & JSX.HTMLAttributes<HTMLSpanElem
   ]);
 
   // 3. set styles
-  const badgeClasses = createMemo(() => {
-    const base = theme().badge.styles.base;
+  const styles = createMemo(() => {
+    const { valid, styles } = theme().badge;
+    const { base, placements, colors } = styles;
+
     const badgeInitialClasses = objectsToString(base.badge.initial);
     const badgeWithBorderClasses = objectsToString(base.badge.withBorder);
     const badgeWithContentClasses = objectsToString(base.badge.withContent);
-    const color = findMatch(theme().badge.valid.colors, mergedProps.color, "red");
+    const color = findMatch(valid.colors, badgeProps.color, "red");
 
-    const placement = findMatch(theme().badge.valid.placements, mergedProps.placement, "top-end");
-    const overlap = findMatch(theme().badge.valid.overlaps, mergedProps.overlap, "square");
-    const badgeColorClasses = objectsToString(theme().badge.styles.colors[color]);
+    const placement = findMatch(valid.placements, badgeProps.placement, "top-end");
+    const overlap = findMatch(valid.overlaps, badgeProps.overlap, "square");
+    const badgeColorClasses = objectsToString(colors[color]);
 
-    const badgePlacementClasses = objectsToString(
-      theme().badge.styles.placements[placement][overlap],
-    );
+    const badgePlacementClasses = objectsToString(placements[placement][overlap]);
 
-    return twMerge(
+    const badgeClasses = twMerge(
       classnames(badgeInitialClasses, badgePlacementClasses, badgeColorClasses, {
         [badgeWithBorderClasses]: badgeProps.withBorder,
         [badgeWithContentClasses]: !!badgeProps.content,
       }),
-      mergedProps.class,
+      badgeProps.class,
     );
+
+    const badgeContainerClasses = twMerge(
+      classnames(objectsToString(base.container), badgeProps.containerProps?.class),
+    );
+    return { badgeClasses, badgeContainerClasses };
   });
-
-  const badgeContainerClasses = createMemo(() =>
-    twMerge(
-      classnames(
-        objectsToString(theme().badge.styles.base.container),
-        mergedProps.containerProps?.class,
-      ),
-    ),
-  );
-
   // 4. return
   return (
     <div
-      {...mergedProps.containerProps}
-      ref={mergedProps.containerRef}
-      class={badgeContainerClasses()}
+      {...badgeProps.containerProps}
+      ref={badgeProps.containerRef}
+      class={styles().badgeContainerClasses}
     >
       {badgeProps.children}
 
       <Show when={!badgeProps.invisible}>
-        <span {...rest} class={badgeClasses()}>
+        <span {...rest} class={styles().badgeClasses}>
           {badgeProps.content}
         </span>
       </Show>

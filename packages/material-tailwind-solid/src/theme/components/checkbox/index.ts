@@ -3,43 +3,42 @@ import checkboxColors from "./checkboxColors";
 // types
 import type {
   color,
-  label,
-  icon,
-  ripple,
   disabled,
+  icon,
+  label,
   objectType,
+  ripple,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
-import type { DeepRequired } from "ts-essentials";
 
 export interface CheckboxStylesType {
-  defaultProps?: {
-    color?: color;
-    label?: label;
-    icon?: icon;
-    ripple?: ripple;
-    disabled?: disabled;
-    containerProps?: objectType;
-    labelProps?: objectType;
-    iconProps?: objectType;
+  defaultProps: {
+    color: color;
+    label: label;
+    icon: icon;
+    ripple: ripple;
+    disabled: disabled;
+    containerProps: objectType;
+    labelProps: objectType;
+    iconProps: objectType;
   };
-  valid?: {
-    colors?: color[];
+  valid: {
+    colors: color[];
   };
-  styles?: {
-    base?: {
-      root?: object;
-      container?: object;
-      input?: object;
-      label?: object;
-      icon?: object;
-      disabled?: object;
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
+      icon: object;
+      disabled: object;
     };
     colors: typeof checkboxColors;
   };
 }
-export type CheckboxType = DeepRequired<CheckboxStylesType>;
-export const checkbox: CheckboxType = {
+
+export const checkbox: CheckboxStylesType = {
   defaultProps: {
     color: "blue",
     label: null,

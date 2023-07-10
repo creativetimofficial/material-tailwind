@@ -1,39 +1,28 @@
 // types
-import type { DeepOmit, DeepPick, DeepRequired } from "ts-essentials";
 import type { animate, disabled, icon } from "../../../types/components/accordion";
 
 export interface AccordionStylesType {
-  defaultProps?: {
-    icon?: icon;
-    animate?: animate;
-    disabled?: disabled;
-    class?: "";
+  defaultProps: {
+    icon: icon;
+    animate: animate;
+    disabled: disabled;
+    class: "";
   };
-  styles?: {
-    base?: {
-      container?: object;
-      header?: {
-        initial?: object;
-        active?: object;
-        icon?: object;
+  styles: {
+    base: {
+      container: object;
+      header: {
+        initial: object;
+        active: object;
+        icon: object;
       };
-      body?: object;
-      disabled?: object;
+      body: object;
+      disabled: object;
     };
   };
 }
-export type AccordionType = DeepRequired<
-  DeepOmit<
-    AccordionStylesType,
-    { defaultProps: { animate: { initial: never; unmount: never; mount: never } } }
-  >
-> &
-  DeepPick<
-    AccordionStylesType,
-    { defaultProps: { animate: { initial: true; unmount: true; mount: true } } }
-  >;
-export const accordion: AccordionType = {
-  // export const accordion:AccordionStylesType = {
+
+export const accordion: AccordionStylesType = {
   defaultProps: {
     icon: "", //maybe reset to undefined
     class: "",

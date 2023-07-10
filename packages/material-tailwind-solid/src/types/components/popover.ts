@@ -1,5 +1,4 @@
-// @floating-ui types
-import type { Placement } from "@floating-ui/react";
+import type { Placement } from "@floating-ui/dom";
 
 // generic types
 import type { UseFloatingResult } from "solid-floating-ui";
@@ -32,41 +31,4 @@ export type contextValue = {
   appliedAnimation: animate;
   labelId: string;
   descriptionId: string;
-  // parentID: string;
-  // tree: Accessor<treeRefType[]>;
-  // addToTree: (el: treeRefType) => treeRefType[];
-  // menuHandlerId: Accessor<string | undefined>;
-  // setMenuHandlerId: Setter<string | undefined>;
-  // removeFromTree: (id: string) => treeRefType[] | undefined;
-  // allowHover: boolean;
-  // activeItem: Accessor<string>;
-  // setActiveItem: Setter<string>;
-  // nested: boolean;
-  // parentContext: ParentContext;
 };
-
-// javascript prop-types
-// export const propTypesOpen: any = PropTypes.bool;
-// export const propTypesHandler: any = PropTypes.func;
-// export const propTypesPlacement: any = propTypesPlacements;
-// export const propTypesOffset: any = propTypesOffsetType;
-// export const propTypesDismiss: any = propTypesDismissType;
-// export const propTypesAnimate: any = propTypesAnimation;
-// export const propTypesContent: any = PropTypes.node;
-// export const propTypesInteractive: any = PropTypes.bool;
-// export const propTypesClassName: any = PropTypes.string;
-// export const propTypesChildren: any = PropTypes.node.isRequired;
-// export const propTypesContextValue: any = PropTypes.shape({
-//   open: PropTypes.bool.isRequired,
-//   strategy: PropTypes.oneOf(["fixed", "absolute"]).isRequired,
-//   x: PropTypes.number,
-//   y: PropTypes.number,
-//   context: PropTypes.instanceOf(Object).isRequired,
-//   reference: PropTypes.func.isRequired,
-//   floating: PropTypes.func.isRequired,
-//   getReferenceProps: PropTypes.func.isRequired,
-//   getFloatingProps: PropTypes.func.isRequired,
-//   appliedAnimation: propTypesAnimate.isRequired,
-//   labelId: PropTypes.string.isRequired,
-//   descriptionId: PropTypes.string.isRequired,
-// }).isRequired;

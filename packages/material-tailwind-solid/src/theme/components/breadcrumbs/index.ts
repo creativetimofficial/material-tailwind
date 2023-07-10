@@ -1,33 +1,29 @@
 // types
-import type { DeepOmit, DeepPick, DeepRequired } from "ts-essentials";
-import type { separator, fullWidth } from "../../../types/components/breadcrumbs";
+import type { fullWidth, separator } from "../../../types/components/breadcrumbs";
 
 export interface BreadcrumbsStyleTypes {
-  defaultProps?: {
-    separator?: separator;
-    fullWidth?: fullWidth;
-    class?: string;
+  defaultProps: {
+    separator: separator;
+    fullWidth: fullWidth;
+    class: string;
   };
-  styles?: {
-    base?: {
-      root?: {
-        initial?: object;
-        fullWidth?: object;
+  styles: {
+    base: {
+      root: {
+        initial: Record<string, string>;
+        fullWidth: Record<string, string>;
       };
-      list?: object;
-      item?: {
-        initial?: object;
-        disabled?: object;
+      list: Record<string, string>;
+      item: {
+        initial: Record<string, string>;
+        disabled: Record<string, string>;
       };
-      separator?: object;
+      separator: Record<string, string>;
     };
   };
 }
-export type BreadCrumbsType = DeepRequired<
-  DeepOmit<BreadcrumbsStyleTypes, { defaultProps: { separator: never } }>
-> &
-  DeepPick<BreadcrumbsStyleTypes, { defaultProps: { separator: true } }>;
-export const breadcrumbs: BreadCrumbsType = {
+
+export const breadcrumbs: BreadcrumbsStyleTypes = {
   defaultProps: {
     class: "",
     fullWidth: false,

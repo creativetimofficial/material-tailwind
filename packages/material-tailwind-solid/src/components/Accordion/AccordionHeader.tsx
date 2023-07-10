@@ -17,21 +17,22 @@ export const AccordionHeader: ParentComponent<JSX.ButtonHTMLAttributes<HTMLButto
   const theme = useTheme();
 
   // 2. set styles
-  const buttonStyles = createMemo(() => {
-    return twMerge(
+  const styles = createMemo(() => {
+    const buttonStyles = twMerge(
       classnames(objectsToString(theme().accordion.styles.base.header.initial), {
         [objectsToString(theme().accordion.styles.base.header.active)]: context().open,
       }),
       props.class || "",
     );
+    const iconClasses = classnames(objectsToString(theme().accordion.styles.base.header.icon));
+    return { buttonStyles, iconClasses };
   });
-  const iconClasses = classnames(objectsToString(theme().accordion.styles.base.header.icon));
 
   // 3. return
   return (
-    <button {...props} type="button" disabled={context().disabled} class={buttonStyles()}>
+    <button {...props} type="button" disabled={context().disabled} class={styles().buttonStyles}>
       {props.children}
-      <span class={iconClasses}>
+      <span class={styles().iconClasses}>
         <Show
           when={context().icon}
           fallback={

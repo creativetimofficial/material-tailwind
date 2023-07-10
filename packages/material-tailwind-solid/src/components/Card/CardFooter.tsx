@@ -42,12 +42,5 @@ export const CardFooter: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Ca
     </div>
   );
 };
-// CardFooter.propTypes = {
-//   divider: propTypesDivider,
-//   className: propTypesClassName,
-//   children: propTypesChildren,
-// };
-
-// CardFooter.displayName = "MaterialTailwind.CardFooter";
 
 export default CardFooter;

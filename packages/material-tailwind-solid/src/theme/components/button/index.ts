@@ -2,47 +2,44 @@ import buttonFilled from "./buttonFilled";
 import buttonGradient from "./buttonGradient";
 import buttonOutlined from "./buttonOutlined";
 import buttonText from "./buttonText";
-import type { DeepRequired } from "ts-essentials";
 
 // types
-import type { variant, size, color, fullWidth, ripple } from "../../../types/components/button";
-import { propTypesVariant, propTypesSize, propTypesColor } from "../../../types/components/button";
+import type { color, fullWidth, ripple, size, variant } from "../../../types/components/button";
+import { propTypesColor, propTypesSize, propTypesVariant } from "../../../types/components/button";
 
 export interface ButtonStyleTypes {
-  defaultProps?: {
-    variant?: variant;
-    size?: size;
-    color?: color;
-    fullWidth?: fullWidth;
-    ripple?: ripple;
+  defaultProps: {
+    variant: variant;
+    size: size;
+    color: color;
+    fullWidth: fullWidth;
+    ripple: ripple;
   };
-  valid?: {
-    variants?: variant[];
-    sizes?: size[];
-    colors?: color[];
+  valid: {
+    variants: variant[];
+    sizes: size[];
+    colors: color[];
   };
-  styles?: {
-    base?: {
-      initial?: object;
-      fullWidth?: object;
+  styles: {
+    base: {
+      initial: object;
+      fullWidth: object;
     };
-    sizes?: {
-      sm?: object;
-      md?: object;
-      lg?: object;
+    sizes: {
+      sm: object;
+      md: object;
+      lg: object;
     };
-    variants?: {
-      filled?: typeof buttonFilled;
-      gradient?: typeof buttonGradient;
-      outlined?: typeof buttonOutlined;
-      text?: typeof buttonText;
+    variants: {
+      filled: typeof buttonFilled;
+      gradient: typeof buttonGradient;
+      outlined: typeof buttonOutlined;
+      text: typeof buttonText;
     };
   };
 }
 
-export type ButtonType = DeepRequired<ButtonStyleTypes>;
-
-export const button: ButtonType = {
+export const button: ButtonStyleTypes = {
   defaultProps: {
     variant: "filled",
     size: "md",

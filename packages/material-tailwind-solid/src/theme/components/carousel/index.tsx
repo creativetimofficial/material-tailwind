@@ -12,28 +12,25 @@ import type {
 } from "../../../types/components/carousel";
 
 export interface CarouselStylesType {
-  defaultProps?: {
-    prevArrow?: prevArrow;
-    nextArrow?: nextArrow;
-    navigation?: navigation;
-    autoplay?: autoplay;
-    autoplayDelay?: autoplayDelay;
+  defaultProps: {
+    prevArrow: prevArrow;
+    nextArrow: nextArrow;
+    navigation: navigation;
+    autoplay: autoplay;
+    autoplayDelay: autoplayDelay;
     transition?: transition;
-    loop?: loop;
-    class?: string;
+    loop: loop;
+    class: string;
   };
-  styles?: {
-    base?: {
-      carousel?: object;
-      slide?: object;
+  styles: {
+    base: {
+      carousel: object;
+      slide: object;
     };
   };
 }
-export type CarouselType = DeepRequired<
-  DeepOmit<CarouselStylesType, { defaultProps: { transition: never } }>
-> &
-  DeepPick<CarouselStylesType, { defaultProps: { transition: true } }>;
-export const carousel: CarouselType = {
+
+export const carousel: CarouselStylesType = {
   defaultProps: {
     prevArrow: (props) => {
       return (

@@ -4,34 +4,33 @@ import type { variant, size } from "../../../types/components/avatar";
 import { propTypesVariant, propTypesSize } from "../../../types/components/avatar";
 
 export interface AvatarStyleTypes {
-  defaultProps?: {
-    variant?: variant;
-    size?: size;
-    class?: string;
+  defaultProps: {
+    variant: variant;
+    size: size;
+    class: string;
   };
-  valid?: {
-    variants?: variant[];
-    sizes?: size[];
+  valid: {
+    variants: variant[];
+    sizes: size[];
   };
-  styles?: {
-    base?: object;
-    sizes?: {
-      xs?: object;
-      sm?: object;
-      md?: object;
-      lg?: object;
-      xl?: object;
-      xxl?: object;
+  styles: {
+    base: object;
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
     };
-    variants?: {
-      rounded?: object;
-      circular?: object;
+    variants: {
+      rounded: object;
+      circular: object;
     };
   };
 }
-export type AvatarType = DeepRequired<AvatarStyleTypes>;
 
-export const avatar: AvatarType = {
+export const avatar: AvatarStyleTypes = {
   defaultProps: {
     variant: "rounded",
     size: "md",

@@ -28,11 +28,5 @@ export const CardBody: ParentComponent<JSX.HTMLAttributes<HTMLDivElement>> = (pr
     </div>
   );
 };
-// CardBody.propTypes = {
-//   className: propTypesClassName,
-//   children: propTypesChildren,
-// };
-
-// CardBody.displayName = "MaterialTailwind.CardBody";
 
 export default CardBody;

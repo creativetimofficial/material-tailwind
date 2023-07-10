@@ -2,15 +2,15 @@
 import type { DeepRequired } from "ts-essentials";
 
 export interface CardBodyStylesType {
-  defaultProps?: {
-    class?: string;
+  defaultProps: {
+    class: string;
   };
-  styles?: {
-    base?: object;
+  styles: {
+    base: Record<string, string>;
   };
 }
-export type CardBodyProps = DeepRequired<CardBodyStylesType>;
-export const cardBody: CardBodyProps = {
+
+export const cardBody: CardBodyStylesType = {
   defaultProps: {
     class: "",
   },

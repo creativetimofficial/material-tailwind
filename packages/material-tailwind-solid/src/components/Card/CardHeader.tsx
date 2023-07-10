@@ -9,7 +9,7 @@ import { useTheme } from "../../context/theme";
 
 // types
 import type { variant, color, shadow, floated } from "../../types/components/card";
-import type { ParentComponent, JSX} from "solid-js";
+import type { ParentComponent, JSX } from "solid-js";
 import { mergeProps, createMemo } from "solid-js";
 
 export interface CardHeaderProps {
@@ -29,19 +29,23 @@ export const CardHeader: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Ca
 
   // 3. set styles
   const classes = createMemo(() => {
-    const cardHeaderRoot = objectsToString(theme().cardHeader.styles.base.initial);
+    const cardHeader = theme().cardHeader;
+    const { styles, valid } = cardHeader;
+    const { base, variants } = styles;
+    const cardHeaderRoot = objectsToString(base.initial);
 
-    const fColor = findMatch(theme().cardHeader.valid.colors, mergedProps.color, "white");
-    const fVariant = findMatch(theme().cardHeader.valid.variants, mergedProps.variant, "filled");
-    const variants = theme().cardHeader.styles.variants;
-    const cardHeaderVariant = objectsToString(variants[fVariant][fColor]);
+    const cardHeaderVariant = objectsToString(
+      variants[findMatch(valid.variants, mergedProps.variant, "filled")][
+        findMatch(valid.colors, mergedProps.color, "white")
+      ],
+    );
 
     return twMerge(
       classnames(
         cardHeaderRoot,
         cardHeaderVariant,
-        { [objectsToString(theme().cardHeader.styles.base.shadow)]: mergedProps.shadow },
-        { [objectsToString(theme().cardHeader.styles.base.floated)]: mergedProps.floated },
+        { [objectsToString(base.shadow)]: mergedProps.shadow },
+        { [objectsToString(base.floated)]: mergedProps.floated },
       ),
       mergedProps.class,
     );
@@ -54,16 +58,5 @@ export const CardHeader: ParentComponent<JSX.HTMLAttributes<HTMLDivElement> & Ca
     </div>
   );
 };
-
-// CardHeader.propTypes = {
-//   variant: PropTypes.oneOf(propTypesVariant),
-//   color: PropTypes.oneOf(propTypesColor),
-//   shadow: propTypesShadow,
-//   floated: propTypesFloated,
-//   className: propTypesClassName,
-//   children: propTypesChildren,
-// };
-
-// CardHeader.displayName = "MaterialTailwind.CardHeader";
 
 export default CardHeader;

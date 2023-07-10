@@ -9,38 +9,29 @@ import type { colors } from "../../../types/generic";
 import { colorPropType } from "../../../types/generic";
 
 export interface AlertStylesType {
-  defaultProps?: {
-    variant?: variant;
-    color?: colors;
-    icon?: icon;
-    show?: show;
-    dismissible?: dismissible;
-    class?: string;
-    animate?: animate;
+  defaultProps: {
+    variant: variant;
+    color: colors;
+    icon: icon;
+    show: show;
+    dismissible: dismissible;
+    class: string;
+    animate: animate;
   };
-  valid?: {
-    variants?: variant[];
-    colors?: colors[];
+  valid: {
+    variants: variant[];
+    colors: colors[];
   };
-  styles?: {
-    base?: object;
-    variants?: {
-      filled?: typeof alertFilled;
-      gradient?: typeof alertGradient;
+  styles: {
+    base: object;
+    variants: {
+      filled: typeof alertFilled;
+      gradient: typeof alertGradient;
     };
   };
 }
-export type AlertType = DeepRequired<
-  DeepOmit<
-    AlertStylesType,
-    { defaultProps: { animate: { initial: never; unmount: never; mount: never } } }
-  >
-> &
-  DeepPick<
-    AlertStylesType,
-    { defaultProps: { animate: { initial: true; unmount: true; mount: true } } }
-  >;
-export const alert: AlertType = {
+
+export const alert: AlertStylesType = {
   defaultProps: {
     variant: "filled",
     color: "blue",

@@ -1,86 +1,60 @@
 import chipFilled from "./chipFilled";
+import chipGhost from "./chipGhost";
 import chipGradient from "./chipGradient";
 import chipOutlined from "./chipOutlined";
-import chipGhost from "./chipGhost";
 
 // types
 import type {
-  variant,
-  size,
-  color,
-  icon,
-  open,
-  onClose,
   action,
   animate,
+  color,
+  icon,
+  onClose,
+  open,
+  size,
+  variant,
 } from "../../../types/components/chip";
 import { propTypesSize, propTypesVariant } from "../../../types/components/chip";
 import { colorPropType } from "../../../types/generic";
-import type { DeepOmit, DeepPick, DeepRequired } from "ts-essentials";
 
 export interface ChipStylesType {
-  defaultProps?: {
-    variant?: variant;
-    size?: size;
-    color?: color;
-    icon?: icon;
-    open?: open;
+  defaultProps: {
+    variant: variant;
+    size: size;
+    color: color;
+    icon: icon;
+    open: open;
     onClose?: onClose;
-    action?: action;
-    animate?: animate;
-    class?: string;
+    action: action;
+    animate: animate;
+    class: string;
   };
-  valid?: {
-    variants?: variant[];
-    sizes?: size[];
-    colors?: color[];
+  valid: {
+    variants: variant[];
+    sizes: size[];
+    colors: color[];
   };
-  styles?: {
-    base?: {
-      chip?: object;
-      action?: object;
-      icon?: object;
+  styles: {
+    base: {
+      chip: object;
+      action: object;
+      icon: object;
     };
-    sizes?: {
-      sm?: { chip: object; action: object; icon: object };
-      md?: { chip: object; action: object; icon: object };
-      lg?: { chip: object; action: object; icon: object };
+    sizes: {
+      sm: { chip: object; action: object; icon: object };
+      md: { chip: object; action: object; icon: object };
+      lg: { chip: object; action: object; icon: object };
     };
-    variants?: {
-      filled?: typeof chipFilled;
-      gradient?: typeof chipGradient;
-      outlined?: typeof chipOutlined;
-      ghost?: typeof chipGhost;
+    variants: {
+      filled: typeof chipFilled;
+      gradient: typeof chipGradient;
+      outlined: typeof chipOutlined;
+      ghost: typeof chipGhost;
     };
   };
 }
 
-export type ChipType = DeepRequired<
-  DeepOmit<
-    ChipStylesType,
-    {
-      defaultProps: {
-        animate: { initial: never; unmount: never; mount: never };
-        icon: never;
-        action: never;
-        onClose: never;
-      };
-    }
-  >
-> &
-  DeepPick<
-    ChipStylesType,
-    {
-      defaultProps: {
-        animate: { initial: true; unmount: true; mount: true };
-        icon: true;
-        action: true;
-        onClose: true;
-      };
-    }
-  >;
-
-export const chip: ChipType = {
+export const chip: ChipStylesType = {
   defaultProps: {
     variant: "filled",
     size: "md",

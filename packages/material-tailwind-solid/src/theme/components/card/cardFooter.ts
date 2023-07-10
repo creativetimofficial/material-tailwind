@@ -1,21 +1,20 @@
 // types
-import type { DeepRequired } from "ts-essentials";
 import type { divider } from "../../../types/components/card";
 
 export interface CardFooterStylesType {
-  defaultProps?: {
-    class?: string;
-    divider?: divider;
+  defaultProps: {
+    class: string;
+    divider: divider;
   };
-  styles?: {
-    base?: {
-      initial?: object;
-      divider?: object;
+  styles: {
+    base: {
+      initial: object;
+      divider: object;
     };
   };
 }
-export type CardFooterType = DeepRequired<CardFooterStylesType>;
-export const cardFooter: CardFooterType = {
+
+export const cardFooter: CardFooterStylesType = {
   defaultProps: {
     class: "",
     divider: false,

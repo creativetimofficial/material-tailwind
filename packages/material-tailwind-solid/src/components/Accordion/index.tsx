@@ -25,10 +25,10 @@ export interface AccordionProps extends JSX.HTMLAttributes<HTMLDivElement> {
   disabled?: disabled;
 }
 
-const Accordion: ParentComponent<AccordionProps> = (p) => {
+const Accordion: ParentComponent<AccordionProps> = (props) => {
   // 1. init
   const theme = useTheme();
-  const [contextProps, props] = splitProps(p, ["open", "icon", "animate", "disabled"]);
+  const [contextProps, rest] = splitProps(props, ["open", "icon", "animate", "disabled"]);
 
   // 2. set default props
   const contextValue = mergeProps(() => theme().accordion.defaultProps, contextProps);
@@ -40,7 +40,7 @@ const Accordion: ParentComponent<AccordionProps> = (p) => {
         [objectsToString(theme().accordion.styles.base.disabled)]: contextProps.disabled,
       }),
       theme().accordion.defaultProps?.class,
-      props.class,
+      rest.class,
     );
   });
 
@@ -48,7 +48,7 @@ const Accordion: ParentComponent<AccordionProps> = (p) => {
   return (
     //@ts-ignore type of icons are incompatible !?
     <AccordionContext.Provider value={() => contextValue}>
-      <div {...props} class={accordionClasses()}>
+      <div {...rest} class={accordionClasses()}>
         {props.children}
       </div>
     </AccordionContext.Provider>

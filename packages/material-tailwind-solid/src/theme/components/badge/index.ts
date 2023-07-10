@@ -1,70 +1,69 @@
 // types
-import type { DeepOmit, DeepPick, DeepRequired } from "ts-essentials";
 import type {
   color,
-  invisible,
-  withBorder,
-  overlap,
-  content,
-  placement,
   containerProps,
+  content,
+  invisible,
+  overlap,
+  placement,
+  withBorder,
 } from "../../../types/components/badge";
-import { propTypesPlacement } from "../../../types/components/badge";
-import { propTypesColor, propTypesOverlap } from "../../../types/components/badge";
+import {
+  propTypesColor,
+  propTypesOverlap,
+  propTypesPlacement,
+} from "../../../types/components/badge";
 import badgeColors from "./badgeColors";
 
 export interface BadgeStyleTypes {
-  defaultProps?: {
-    color?: color;
-    invisible?: invisible;
-    placement?: placement;
-    withBorder?: withBorder;
-    overlap?: overlap;
-    content?: content;
-    class?: string;
+  defaultProps: {
+    color: color;
+    invisible: invisible;
+    placement: placement;
+    withBorder: withBorder;
+    overlap: overlap;
+    content: content;
+    class: string;
     containerProps?: containerProps; //contains containers ref if set
     containerRef?: HTMLDivElement;
   };
-  valid?: {
-    colors?: color[];
-    overlaps?: overlap[];
-    placements?: placement[];
+  valid: {
+    colors: color[];
+    overlaps: overlap[];
+    placements: placement[];
   };
-  styles?: {
-    base?: {
-      container?: object;
-      badge?: {
-        initial?: object;
-        withBorder?: object;
-        withContent?: object;
+  styles: {
+    base: {
+      container: object;
+      badge: {
+        initial: object;
+        withBorder: object;
+        withContent: object;
       };
     };
-    placements?: {
-      "top-start"?: {
-        square?: object;
-        circular?: object;
+    placements: {
+      "top-start": {
+        square: object;
+        circular: object;
       };
-      "top-end"?: {
-        square?: object;
-        circular?: object;
+      "top-end": {
+        square: object;
+        circular: object;
       };
-      "bottom-start"?: {
-        square?: object;
-        circular?: object;
+      "bottom-start": {
+        square: object;
+        circular: object;
       };
-      "bottom-end"?: {
-        square?: object;
-        circular?: object;
+      "bottom-end": {
+        square: object;
+        circular: object;
       };
     };
-    colors?: typeof badgeColors;
+    colors: typeof badgeColors;
   };
 }
-export type BadgeType = DeepRequired<
-  DeepOmit<BadgeStyleTypes, { defaultProps: { containerProps: never; containerRef: never } }>
-> &
-  DeepPick<BadgeStyleTypes, { defaultProps: { containerProps: true; containerRef: true } }>;
-export const badge: BadgeType = {
+
+export const badge: BadgeStyleTypes = {
   defaultProps: {
     color: "red",
     invisible: false,

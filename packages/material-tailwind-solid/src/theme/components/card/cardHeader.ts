@@ -7,31 +7,31 @@ import { propTypesVariant, propTypesColor } from "../../../types/components/card
 import type { DeepRequired } from "ts-essentials";
 
 export interface CardHeaderStylesType {
-  defaultProps?: {
-    variant?: variant;
-    color?: color;
-    shadow?: shadow;
-    floated?: floated;
-    class?: string;
+  defaultProps: {
+    variant: variant;
+    color: color;
+    shadow: shadow;
+    floated: floated;
+    class: string;
   };
-  valid?: {
-    variants?: variant[];
-    colors?: color[];
+  valid: {
+    variants: variant[];
+    colors: color[];
   };
-  styles?: {
-    base?: {
-      initial?: object;
-      shadow?: object;
-      floated?: object;
+  styles: {
+    base: {
+      initial: object;
+      shadow: object;
+      floated: object;
     };
-    variants?: {
-      filled?: typeof cardFilled;
-      gradient?: typeof cardGradient;
+    variants: {
+      filled: typeof cardFilled;
+      gradient: typeof cardGradient;
     };
   };
 }
-export type CardHeaderType = DeepRequired<CardHeaderStylesType>;
-const cardHeader: CardHeaderType = {
+
+const cardHeader: CardHeaderStylesType = {
   defaultProps: {
     variant: "filled",
     color: "white",

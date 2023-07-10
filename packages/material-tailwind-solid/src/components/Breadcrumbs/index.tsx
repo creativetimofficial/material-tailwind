@@ -20,46 +20,49 @@ export interface BreadcrumbsProps {
 export const Breadcrumbs: ParentComponent<
   JSX.OlHTMLAttributes<HTMLOListElement> & BreadcrumbsProps
 > = (props) => {
-  // ({ separator, fullWidth, className, children, ...rest }, ref) => {
   // 1. init
   const theme = useTheme();
-  const [breadcrumbProps, rest] = splitProps(props, ["separator", "fullWidth", "class"]);
-  const defaultProps = mergeProps(() => theme().breadcrumbs.defaultProps, breadcrumbProps);
-  // const {
-  //   defaultProps,
-  //   styles: { base },
-  // } = breadcrumbs;
-  // 2. set default props
-  // separator = separator ?? defaultProps.separator;
-  // fullWidth = fullWidth ?? defaultProps.fullWidth;
-  // className = className ?? defaultProps.className;
+  const mergedProps = mergeProps(() => theme().breadcrumbs.defaultProps, props);
+  const [breadcrumbProps, rest] = splitProps(mergedProps, ["separator", "fullWidth", "class"]);
 
   // 3. set styles
-  const breadcrumbsRootClasses = createMemo(() =>
-    classnames(objectsToString(theme().breadcrumbs.styles.base.root.initial), {
-      [objectsToString(theme().breadcrumbs.styles.base.root.fullWidth)]: defaultProps.fullWidth,
-    }),
-  );
-  const breadcrumbsListClasses = createMemo(() =>
-    twMerge(classnames(objectsToString(theme().breadcrumbs.styles.base.list)), defaultProps.class),
-  );
-  const breadcrumbsItemClasses = createMemo(() =>
-    classnames(objectsToString(theme().breadcrumbs.styles.base.item.initial)),
-  );
-  const breadcrumbsSeparatorClasses = createMemo(() =>
-    classnames(objectsToString(theme().breadcrumbs.styles.base.separator)),
-  );
+  const styles = createMemo(() => {
+    const breadcrumbs = theme().breadcrumbs;
+    const {
+      styles: { base },
+    } = breadcrumbs;
+
+    const breadcrumbsRootClasses = classnames(objectsToString(base.root.initial), {
+      [objectsToString(base.root.fullWidth)]: breadcrumbProps.fullWidth,
+    });
+
+    const breadcrumbsListClasses = twMerge(
+      classnames(objectsToString(base.list)),
+      breadcrumbProps.class,
+    );
+
+    const breadcrumbsItemClasses = classnames(objectsToString(base.item.initial));
+
+    const breadcrumbsSeparatorClasses = classnames(objectsToString(base.separator));
+
+    return {
+      breadcrumbsRootClasses,
+      breadcrumbsListClasses,
+      breadcrumbsItemClasses,
+      breadcrumbsSeparatorClasses,
+    };
+  });
 
   const listItems = children(() => props.children);
   // 4. return
   return (
-    <nav aria-label="breadcrumb" class={breadcrumbsRootClasses()}>
-      <ol {...rest} class={breadcrumbsListClasses()}>
+    <nav aria-label="breadcrumb" class={styles().breadcrumbsRootClasses}>
+      <ol {...rest} class={styles().breadcrumbsListClasses}>
         <For each={listItems.toArray()}>
           {(item, index) => {
             return (
               <li
-                class={classnames(breadcrumbsItemClasses(), {
+                class={classnames(styles().breadcrumbsItemClasses, {
                   [objectsToString(theme().breadcrumbs.styles.base.item.disabled)]:
                     //@ts-ignore --> disabled does not exist on type string, number,...
                     item?.disabled,
@@ -67,7 +70,9 @@ export const Breadcrumbs: ParentComponent<
               >
                 {item}
                 <Show when={index() !== listItems.toArray().length - 1}>
-                  <span class={breadcrumbsSeparatorClasses()}>{defaultProps.separator}</span>
+                  <span class={styles().breadcrumbsSeparatorClasses}>
+                    {breadcrumbProps.separator}
+                  </span>
                 </Show>
               </li>
             );
