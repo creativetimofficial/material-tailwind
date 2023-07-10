@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useRef } from "react";
 
 // next.js components
 import Head from "next/head";
@@ -24,6 +24,12 @@ import Community from "components/sections/figma/community";
 import SectionSubscribe from "components/sections/figma/subscribe";
 
 export default function Figma() {
+  const pricingRef = useRef<HTMLDivElement>(null);
+
+  const handleChildRef = (ref) => {
+    pricingRef.current = ref;
+  };
+
   return (
     <>
       <Head>
