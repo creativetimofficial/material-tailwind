@@ -24,39 +24,39 @@ const CardTestiomonial = ({ children, img, position, name }: CardsProps) => {
   return (
     <>
       <Card color="white" shadow={false} className=" border mt-5 lg:mt-0">
-      <CardHeader
-        color="transparent"
-        floated={false}
-        shadow={false}
-        className="flex items-center"
-      >
-        <Avatar
-          size="lg"
-          src={img}
-          alt="candice wu"
-        />
-      </CardHeader>
-      <CardBody className="min-h-[208px]">
-        <div className="pb-5 flex items-center gap-0">
-          <StarIcon className="h-5 w-5 text-yellow-700" />
-          <StarIcon className="h-5 w-5 text-yellow-700" />
-          <StarIcon className="h-5 w-5 text-yellow-700" />
-          <StarIcon className="h-5 w-5 text-yellow-700" />
-          <StarIcon className="h-5 w-5 text-yellow-700" />
-        </div>
-        <Typography className="font-semibold text-gray-900 text-2xl">
-          &apos;&apos;{children}&apos;&apos;
-        </Typography>
-        <div className="flex w-full flex-col mt-8">
-          <div className="flex items-center justify-between">
-            <Typography variant="h5" className="font-normal text-gray-900">
-              {name}
-            </Typography>
+        <CardHeader
+          color="transparent"
+          floated={false}
+          shadow={false}
+          className="flex items-center"
+        >
+          <Avatar
+            size="lg"
+            src={img}
+            alt="candice wu"
+          />
+        </CardHeader>
+        <CardBody className="min-h-[208px]">
+          <div className="pb-5 flex items-center gap-0">
+            <StarIcon className="h-5 w-5 text-yellow-700" />
+            <StarIcon className="h-5 w-5 text-yellow-700" />
+            <StarIcon className="h-5 w-5 text-yellow-700" />
+            <StarIcon className="h-5 w-5 text-yellow-700" />
+            <StarIcon className="h-5 w-5 text-yellow-700" />
           </div>
-          <Typography className="text-blue-gray-400 text-lg font-normal">{position}</Typography>
-        </div>
-      </CardBody>
-    </Card>
+          <Typography className="font-semibold text-gray-900 text-2xl">
+            &apos;&apos;{children}&apos;&apos;
+          </Typography>
+          <div className="flex w-full flex-col mt-8">
+            <div className="flex items-center justify-between">
+              <Typography variant="h5" className="font-normal text-gray-900">
+                {name}
+              </Typography>
+            </div>
+            <Typography className="text-blue-gray-400 text-lg font-normal">{position}</Typography>
+          </div>
+        </CardBody>
+      </Card>
     </>
   );
 }
