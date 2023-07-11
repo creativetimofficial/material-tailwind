@@ -50,7 +50,7 @@ const cardContentBelow = [
 
 export default function Variants() {
   return (
-    <section className="py-12 -mt-40 md:-mt-24">
+    <section className="py-12 ">
       <div className="mx-auto mb-10 text-center lg:w-10/12 xl:w-8/12">
         <Typography
           variant="h3"
