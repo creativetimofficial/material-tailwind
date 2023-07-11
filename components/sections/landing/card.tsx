@@ -16,14 +16,14 @@ export default function ContentCards({ title, subtitle, children, img, minHeight
       <Card className={`border bg-white shadow-md rounded-2xl ${minHeight} relative overflow-hidden`}>
         <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-40"></div>
         <CardBody className="z-10">
-          <Typography variant="h4" className={`font-semibold ${inverseTitle ? 'text-3xl md:text-4xl' : 'text-xl' } text-blue-gray-900`}>
+          <Typography variant="h4" className={`font-semibold ${inverseTitle ? 'text-2xl md:text-3xl' : 'text-xl' } text-blue-gray-900`}>
             {subtitle}
           </Typography>
 
-          <Typography variant="h2" className={`mt-3 font-semibold ${inverseTitle ? 'text-xl' : 'text-3xl md:text-4xl' } text-blue-gray-900`}>
+          <Typography variant="h2" className={`mt-3 font-semibold ${inverseTitle ? 'text-xl' : 'text-2xl md:text-3xl' } text-blue-gray-900`}>
             {title}
           </Typography>
-          <Typography variant="paragraph" className="py-4 text-lg font-normal text-blue-gray-400">
+          <Typography variant="paragraph" className="py-4 text-md font-normal text-blue-gray-400">
             {children}
           </Typography>
         </CardBody>
