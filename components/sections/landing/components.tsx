@@ -14,7 +14,99 @@ const components = [
   {
     title: "Accordion",
     img: "/img/accordion-thumbnail.jpg",
-  }
+  },
+  {
+    title: "Alerts",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Avatars",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Breadcrumbs",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Buttons",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Cards",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Checkboxes",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Chips",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Dialogs",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Icon Buttons",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Inputs",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Menus",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Navbars",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Pagination",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Popovers",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Progress Bars",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Radio Buttons",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Selects",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Switch",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Tabs",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Text Areas",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Tooltips",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Typography",
+    img: "/img/accordion-thumbnail.jpg",
+  },
+  {
+    title: "Tabs",
+    img: "/img/accordion-thumbnail.jpg",
+  },
 ]
 
 export default function Components() {
