@@ -132,6 +132,7 @@ export const input: InputStylesType = {
         position: "absolute",
         left: "left-0",
         fontWeight: "font-normal",
+        textOverflow: "truncate",
         color: "peer-placeholder-shown:text-blue-gray-500",
         lineHeight: "leading-tight peer-focus:leading-tight",
         disabled:

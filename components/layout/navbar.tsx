@@ -114,7 +114,7 @@ export default function Navbar({
   );
 
   const navbarMenu = (
-    <div className="flex w-full flex-col lg:flex-row xl:ml-40">
+    <div className="flex w-full flex-col lg:flex-row">
       <ul
         className={`${
           open ? "mt-4" : ""
@@ -160,23 +160,6 @@ export default function Navbar({
             </MenuItem>
           </MenuList>
         </Menu>
-        <li>
-          <Link href="/blocks" className={navbarItemClasses}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="mr-1.5 h-[18px] w-[18px] opacity-75"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 6a3 3 0 013-3h2.25a3 3 0 013 3v2.25a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm9.75 0a3 3 0 013-3H18a3 3 0 013 3v2.25a3 3 0 01-3 3h-2.25a3 3 0 01-3-3V6zM3 15.75a3 3 0 013-3h2.25a3 3 0 013 3V18a3 3 0 01-3 3H6a3 3 0 01-3-3v-2.25zm9.75 0a3 3 0 013-3H18a3 3 0 013 3V18a3 3 0 01-3 3h-2.25a3 3 0 01-3-3v-2.25z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Blocks
-          </Link>
-        </li>
         <li>
           <a
             href="https://www.creative-tim.com/services/updivision/?ref=material-tailwind"
@@ -245,32 +228,6 @@ export default function Navbar({
             </li>
           </Tooltip>
         </ul>
-        <a
-          href="https://www.material-tailwind.com/blocks"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Button
-            variant="gradient"
-            color={query.slug && query.slug[0] === "html" ? "pink" : "blue"}
-            className="mt-3 mb-5 flex items-center lg:mt-0 lg:mb-0 lg:ml-4"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="mr-1.5 -mt-px h-[18px] w-[18px]"
-            >
-              <path d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 01-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004zM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 01-.921.42z" />
-              <path
-                fillRule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v.816a3.836 3.836 0 00-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 01-.921-.421l-.879-.66a.75.75 0 00-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 001.5 0v-.81a4.124 4.124 0 001.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 00-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 00.933-1.175l-.415-.33a3.836 3.836 0 00-1.719-.755V6z"
-                clipRule="evenodd"
-              />
-            </svg>
-            PRO Version
-          </Button>
-        </a>
       </div>
     </div>
   );

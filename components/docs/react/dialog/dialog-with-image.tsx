@@ -37,7 +37,7 @@ export function DialogWithImage() {
             <Avatar
               size="sm"
               variant="circular"
-              alt="candice wu"
+              alt="tania andrew"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
             />
             <div className="-mt-px flex flex-col">
@@ -46,7 +46,7 @@ export function DialogWithImage() {
                 color="blue-gray"
                 className="font-medium"
               >
-                Candice Wu
+                Tania Andrew
               </Typography>
               <Typography
                 variant="small"

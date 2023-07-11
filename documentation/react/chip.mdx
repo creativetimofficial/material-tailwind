@@ -55,7 +55,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-variants">
 ## Chip Variants
+</DocsTitle>
 
 The <Code>Chip</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
@@ -85,9 +87,11 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-sizes">
 ## Chip Sizes
+</DocsTitle>
 
-The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>variant</Code> prop.
+The <Code>Chip</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
 <CodePreview id="chip-sizes" component={
   <div className="flex items-end gap-2">
@@ -101,11 +105,10 @@ import { Chip } from "@material-tailwind/react";
 
 export default function Example() {
   return (
-    <div className="flex gap-2">
-      <Chip value="chip filled" />
-      <Chip variant="gradient" value="chip gradient" />
-      <Chip variant="outlined" value="chip outlined" />
-      <Chip variant="ghost" value="chip ghost" />
+    <div className="flex items-end gap-2">
+      <Chip size="sm" value="chip small" />
+      <Chip size="md" value="chip medium" />
+      <Chip size="lg" value="chip large" />
     </div>
   );
 }
@@ -114,7 +117,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-colors">
 ## Chip Colors
+</DocsTitle>
 
 The <Code>Chip</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -154,7 +159,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-with-icon">
 ## Chip with Icon
+</DocsTitle>
 
 You can add an icon at the beginning of <Code>Chip</Code> component using the <Code>icon</Code> prop.
 
@@ -200,7 +207,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="pills-chip">
 ## Pills Chip
+</DocsTitle>
 
 You can pass tailwind css classes for the <Code>Chip</Code> component using the <Code>className</Code> prop this helps to do any sort of customization for the chip.
 
@@ -230,7 +239,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-with-status">
 ## Chip with Status
+</DocsTitle>
 
 This chip element example is perfect if you want to announce the status of a particular item, process, or person.
 
@@ -280,7 +291,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-with-checkbox">
 ## Chip with Checkbox
+</DocsTitle>
 
 Use this example to represent selectable items or options in a compact manner. 
 
@@ -354,7 +367,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-dismissible">
 ## Chip Dismissible
+</DocsTitle>
 
 The <Code>Chip</Code> component is a dismissible component that you can control it using the <Code>dismissible</Code> and <Code>show</Code> props.
 
@@ -405,7 +420,9 @@ return (
 
 ---
 
+<DocsTitle href="custom-chip-animation">
 ## Custom Chip Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>Chip</Code> component using the <Code>animate</Code> prop.
 
@@ -474,7 +491,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="chip-with-avatar">
 ## Chip with Avatar
+</DocsTitle>
 
 Use the example below for a chip containing an avatar.
 
@@ -485,7 +504,7 @@ Use the example below for a chip containing an avatar.
         size="xs"
         variant="circular"
         className="w-full h-full -translate-x-0.5"
-        alt="candice wu"
+        alt="tania andrew"
         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
       />
     }
@@ -495,7 +514,7 @@ Use the example below for a chip containing an avatar.
         color="white"
         className="font-medium capitalize leading-none"
       >
-        Candice Wu
+        Tania Andrew
       </Typography>
     }
     color="teal"
@@ -513,7 +532,7 @@ export default function Example() {
           size="xs"
           variant="circular"
           className="w-full h-full -translate-x-0.5"
-          alt="candice wu"
+          alt="tania andrew"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
       }
@@ -523,7 +542,7 @@ export default function Example() {
           color="white"
           className="font-medium capitalize leading-none"
         >
-          Candice Wu
+          Tania Andrew
         </Typography>
       }
       color="teal"

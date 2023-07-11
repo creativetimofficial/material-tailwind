@@ -4,3 +4,4 @@ export * from "./badge-placement";
 export * from "./badge-with-border";
 export * from "./default-badge";
 export * from "./dot-badge";
+export * from "./badge-custom-styles";

@@ -9,6 +9,7 @@ navigation:
     "avatar-with-border",
     "avatar-with-text",
     "avatar-stack",
+    "avatar-with-custom-styles",
     "props",
     "theme",
   ]
@@ -50,7 +51,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="avatar-variants">
 ## Avatar Variants
+</DocsTitle>
 
 The <Code>Avatar</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
@@ -78,7 +81,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="avatar-sizes">
 ## Avatar Sizes
+</DocsTitle>
 
 The <Code>Avatar</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
@@ -112,11 +117,13 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="avatar-with-border">
 ## Avatar with border
+</DocsTitle>
 
 You can add border around the avatar using the <Code>withBorder</Code> prop. To change the color of the avatar border use the <Code>color</Code> prop, by default it's <Code>blue</Code>.
 
-<CodePreview id="avatar-with-border" link="avatar#avatar-with-border" component={
+<CodePreview id="avatar-with-border" component={
   <div className="flex gap-4">
     <Avatar src="/img/face-2.jpg" alt="avatar" withBorder={true} className="p-0.5" />
     <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" withBorder={true} color="green" className="p-0.5" />
@@ -140,30 +147,32 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="avatar-with-text">
 ## Avatar with Text
+</DocsTitle>
 
 You can use avatar with other components as well, see example below.
 
-<CodePreview id="avatar-with-text" link="avatar#avatar-with-text" component={
+<CodePreview id="avatar-with-text" component={
   <div className="flex flex-col gap-6">
     <div className="flex items-center gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" />
       <div>
-        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="h6">Tania Andrew</Typography>
         <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
       </div>
     </div> 
     <div className="flex items-center gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
       <div>
-        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="h6">Tania Andrew</Typography>
         <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
       </div>
     </div> 
     <div className="flex items-center gap-4">
       <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
       <div>
-        <Typography variant="h6">Candice Wu</Typography>
+        <Typography variant="h6">Tania Andrew</Typography>
         <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
       </div>
     </div> 
@@ -178,21 +187,21 @@ export default function Example() {
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
         </div>
       </div> 
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
         </div>
       </div> 
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">Web Developer</Typography>
         </div>
       </div> 
@@ -204,7 +213,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="avatar-stack">
 ## Avatar Stack
+</DocsTitle>
 
 <CodePreview id="avatar-stack" link="avatar#avatar-stack" className="mt-4" component={<AvatarStack />}>
 ```jsx
@@ -244,6 +255,38 @@ export default function Example() {
         src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
       />
     </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-with-custom-styles">
+## Avatar with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Avatar</Code> component.
+
+<CodePreview id="avatar-with-custom-styles" component={
+  <Avatar 
+    size="lg" 
+    alt="avatar"
+    src="/img/face-2.jpg" 
+    className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
+  />
+}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Avatar 
+      size="lg" 
+      alt="avatar"
+      src="/img/face-2.jpg" 
+      className="ring-4 ring-green-500/30 border border-green-500 shadow-xl shadow-green-900/20"
+    />
   );
 }
 ```

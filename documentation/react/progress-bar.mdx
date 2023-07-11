@@ -10,6 +10,7 @@ navigation:
     "progress-bar-with-label",
     "progress-bar-sizes-with-label",
     "progress-bar-with-label-outside",
+    "progress-bar-with-custom-styles",
     "props",
     "theme",
   ]
@@ -51,7 +52,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-variants">
 ## Progress Bar Variants
+</DocsTitle>
 
 The <Code>Progress</Code> component comes with 2 different variants that you can change it using the <Code>color</Code> prop.
 
@@ -77,7 +80,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-sizes">
 ## Progress Bar Sizes
+</DocsTitle>
 
 The <Code>Progress</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
@@ -105,7 +110,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-colors">
 ## Progress Bar Colors
+</DocsTitle>
 
 The <Code>Progress</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -143,7 +150,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-with-label">
 ## Progress Bar with Label
+</DocsTitle>
 
 You can add custom label inside the progress bar using the <Code>label</Code> prop.
 
@@ -159,7 +168,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-sizes-with-label">
 ## Progress Bar Sizes with Label
+</DocsTitle>
 
 The <Code>Progress</Code> component sizes are different when you use the <Code>label</Code> prop, this helps to make the label text more readable.
 
@@ -187,7 +198,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="progress-bar-with-label-outside">
 ## Progress Bar with Label Outside
+</DocsTitle>
 
 Use the example below to add the label outside the progress bar.
 
@@ -213,6 +226,36 @@ export default function Example() {
       <Progress value={50} />
     </div>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="progress-bar-with-custom-styles">
+## Progress Bar with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Progress</Code> component.
+
+<CodePreview id="progress-bar-with-custom-styles" component={
+  <Progress
+    value={50}
+    size="lg"
+    className="bg-blue-500/10 p-1 border border-blue-500/20"
+  />
+}>
+```jsx
+import { Progress } from "@material-tailwind/react";
+
+export default function Example() {
+  return (
+    <Progress
+      value={50}
+      size="lg"
+      className="bg-blue-500/10 p-1 border border-blue-500/20"
+    />
+  )
 }
 ```
 </CodePreview>

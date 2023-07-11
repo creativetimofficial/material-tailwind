@@ -4,6 +4,7 @@ export const routes = [
     icon: "fas fa-book",
     pages: [
       { name: "installation", label: null },
+      { name: "installation-with-cli", label: "new" },
       { name: "license", label: null },
       { name: "what-is-tailwind-css", label: null },
     ],
@@ -34,15 +35,15 @@ export const routes = [
       },
       {
         name: "alert",
-        label: "updated",
+        label: null,
       },
       {
         name: "avatar",
-        label: "updated",
+        label: null,
       },
       {
         name: "badge",
-        label: "new",
+        label: null,
       },
       {
         name: "breadcrumbs",
@@ -54,7 +55,7 @@ export const routes = [
       },
       {
         name: "button-group",
-        label: "new",
+        label: null,
       },
       {
         name: "card",
@@ -62,19 +63,19 @@ export const routes = [
       },
       {
         name: "checkbox",
-        label: "updated",
+        label: null,
       },
       {
         name: "chip",
-        label: "updated",
+        label: null,
       },
       {
         name: "collapse",
-        label: "new",
+        label: null,
       },
       {
         name: "carousel",
-        label: "new",
+        label: null,
       },
       {
         name: "dialog",
@@ -82,7 +83,7 @@ export const routes = [
       },
       {
         name: "drawer",
-        label: "new",
+        label: null,
       },
       {
         name: "icon-button",
@@ -90,23 +91,23 @@ export const routes = [
       },
       {
         name: "input",
-        label: null,
+        label: "updated",
       },
       {
         name: "form",
-        label: "new",
+        label: null,
       },
       {
         name: "list",
-        label: "new",
+        label: null,
       },
       {
         name: "menu",
-        label: "updated",
+        label: null,
       },
       {
         name: "navbar",
-        label: "updated",
+        label: null,
       },
       {
         name: "popover",
@@ -114,19 +115,19 @@ export const routes = [
       },
       {
         name: "progress-bar",
-        label: "updated",
+        label: null,
       },
       {
         name: "pagination",
-        label: "new",
+        label: null,
       },
       {
         name: "radio-button",
-        label: "updated",
+        label: null,
       },
       {
         name: "rating-bar",
-        label: "new",
+        label: null,
       },
       {
         name: "select",
@@ -134,27 +135,27 @@ export const routes = [
       },
       {
         name: "slider",
-        label: "new",
+        label: null,
       },
       {
         name: "speed-dial",
-        label: "new",
+        label: null,
       },
       {
         name: "spinner",
-        label: "new",
+        label: null,
       },
       {
         name: "stepper",
-        label: "new",
+        label: null,
       },
       {
         name: "switch",
-        label: "updated",
+        label: null,
       },
       {
         name: "tabs",
-        label: "updated",
+        label: null,
       },
       {
         name: "textarea",
@@ -162,7 +163,7 @@ export const routes = [
       },
       {
         name: "timeline",
-        label: "new",
+        label: null,
       },
       {
         name: "tooltip",
@@ -174,23 +175,23 @@ export const routes = [
       },
       {
         name: "footer",
-        label: "new",
+        label: null,
       },
       {
         name: "img",
-        label: "new",
+        label: null,
       },
       {
         name: "video",
-        label: "new",
+        label: null,
       },
       {
         name: "sidebar",
-        label: "new",
+        label: null,
       },
       {
         name: "table",
-        label: "new",
+        label: null,
       },
     ],
   },

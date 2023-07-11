@@ -9,6 +9,7 @@ navigation:
     "controlled-speed-dial",
     "speed-dial-with-text-inside",
     "speed-dial-with-text-outside",
+    "speed-dial-with-custom-styles",
     # "props",
     # "theme",
   ]
@@ -85,7 +86,9 @@ export default function DefaultSpeedDial() {
 
 ---
 
+<DocsTitle href="speed-dial-placement">
 ## Speed Dial Placement
+</DocsTitle>
 
 Use the example below for using <Code>SpeedDial</Code> with different placements in a page.
 
@@ -196,7 +199,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="speed-dial-custom-icon">
 ## Speed Dial Custom Icon
+</DocsTitle>
 
 Use the example below for using custom icon for <Code>SpeedDial</Code> handler.
 
@@ -249,7 +254,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="controlled-speed-dial">
 ## Controlled Speed Dial
+</DocsTitle>
 
 Use the example below to make the <Code>SpeedDial</Code> a controlled component using React state. This is helpful if you need the <Code>open/close</Code> states of <Code>SpeedDial</Code>.
 
@@ -303,7 +310,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="speed-dial-with-text-inside">
 ## Speed Dial With Text Inside
+</DocsTitle>
 
 Use the example below for a <Code>SpeedDial</Code> that has a label inside of it's actions.
 
@@ -364,7 +373,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="speed-dial-with-text-outside">
 ## Speed Dial With Text Outside
+</DocsTitle>
 
 Use the example below for a <Code>SpeedDial</Code> that has a label outside of it's actions.
 
@@ -414,6 +425,59 @@ export default function Example() {
             <SpeedDialAction className="relative">
               <Square3Stack3DIcon className="h-5 w-5" />
               <Typography {...labelProps}>Pages</Typography>
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="speed-dial-with-custom-styles">
+## Speed Dial with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>SpeedDial</Code> component.
+
+<CodePreview id="speed-dial-with-custom-styles" component={<SpeedDialExamples.CustomSpeedDial />}>
+```jsx
+import {
+  IconButton,
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react";
+import {
+  PlusIcon,
+  HomeIcon,
+  CogIcon,
+  Square3Stack3DIcon,
+} from "@heroicons/react/24/outline";
+
+export default function DefaultSpeedDial() {
+  return (
+    <div className="relative h-80 w-full">
+      <div className="absolute bottom-0 right-0">
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton color="white" size="lg" className="rounded-full border border-blue-gray-50 shadow-xl">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent className="rounded-full border border-blue-gray-50 bg-white shadow-xl shadow-black/10">
+            <SpeedDialAction className="bg-blue-gray-50">
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction className="bg-blue-gray-50">
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction className="bg-blue-gray-50">
+              <Square3Stack3DIcon className="h-5 w-5" />
             </SpeedDialAction>
           </SpeedDialContent>
         </SpeedDial>

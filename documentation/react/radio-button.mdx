@@ -12,6 +12,7 @@ navigation:
     "radio-button-with-description",
     "radio-button-vertical-list-group",
     "radio-button-horizontal-list-group",
+    "radio-button-with-custom-styles",
     "props",
     "theme",
   ]
@@ -63,7 +64,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-colors">
 ## Radio Button Colors
+</DocsTitle>
 
 The <Code>Radio</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -101,7 +104,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-custom-icon">
 ## Radio Button Custom Icon
+</DocsTitle>
 
 You can add a custom icon for the <Code>Radio</Code> button component when it's checked by passing the <Code>icon</Code> prop to the <Code>Radio</Code> button component.
 
@@ -202,7 +207,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-ripple-effect">
 ## Radio Button Ripple Effect
+</DocsTitle>
 
 You can turn on/off the ripple effect for the <Code>Radio</Code> button component using the <Code>ripple</Code> prop.
 
@@ -238,7 +245,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="disabled-radio-button">
 ## Disabled Radio Button
+</DocsTitle>
 
 You can make a radio button disable by passing the <Code>disabled</Code> prop to the <Code>Radio</Code> component.
 
@@ -264,7 +273,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-with-link">
 ## Radio Button with Link
+</DocsTitle>
 
 The <Code>label</Code> prop for the the radio button can accept dom elements and because of that you can put links or any other dom elements you like to have with your radio button label.
 
@@ -314,7 +325,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-with-description">
 ## Radio Button with Description
+</DocsTitle>
 
 Use the example below for a more complex usage of radio button with label that contains some description.
 
@@ -396,7 +409,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-vertical-list-group">
 ## Radio Button Vertical List Group
+</DocsTitle>
 
 Use the example below for a vertical list of radio buttons.
 
@@ -525,7 +540,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="radio-button-horizontal-list-group">
 ## Radio Button Horizontal List Group
+</DocsTitle>
 
 Use the example below for a horizontal list of radio buttons.
 
@@ -647,6 +664,67 @@ export default function Example() {
         </ListItem>
       </List>
     </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="radio-button-with-custom-styles">
+## Radio Button with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Radio</Code> component.
+
+<CodePreview id="radio-button-with-custom-styles" component={
+  <div className="flex gap-10">
+    <Radio
+      id="premium"
+      name="type"
+      ripple={false}
+      icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
+      className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
+      label={<Typography color="blue-gray" className="font-normal">Premium</Typography>}
+    />
+    <Radio
+      id="free"
+      name="type"
+      label="React"
+      defaultChecked
+      ripple={false}
+      icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
+      className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
+      label={<Typography color="blue-gray" className="font-normal">Free</Typography>}
+    />
+  </div>
+}>
+```jsx
+import { Radio, Typography} from "@material-tailwind/react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+
+export default function Example() {
+  return (
+    <div className="flex gap-10">
+      <Radio
+        id="premium"
+        name="type"
+        ripple={false}
+        icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
+        className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
+        label={<Typography color="blue-gray" className="font-normal">Premium</Typography>}
+      />
+      <Radio
+        id="free"
+        name="type"
+        label="React"
+        defaultChecked
+        ripple={false}
+        icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
+        className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
+        label={<Typography color="blue-gray" className="font-normal">Free</Typography>}
+      />
+    </div>
   );
 }
 ```

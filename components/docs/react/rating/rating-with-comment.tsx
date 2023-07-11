@@ -13,7 +13,7 @@ export function RatingWithComment() {
         size="lg"
       />
       <Typography variant="h6" className="mt-4">
-        Candic Wu
+        Tania Andrew
       </Typography>
       <Typography color="gray" className="mb-4 font-normal">
         Lead Frontend Developer

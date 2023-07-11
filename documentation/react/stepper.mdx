@@ -6,6 +6,7 @@ navigation: [
   "stepper-with-icon", 
   "stepper-with-dots", 
   "stepper-with-content", 
+  "stepper-with-custom-styles", 
   # "props", 
   # "theme"
 ]
@@ -75,7 +76,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="stepper-with-icon">
 ## Stepper With Icon
+</DocsTitle>
 
 You can also pass any sort of icon as children for stepper <Code>Step</Code> component.
 
@@ -126,7 +129,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="stepper-with-dots">
 ## Stepper With Dots
+</DocsTitle>
 
 Use the example below for a stepper with dot steps.
 
@@ -170,7 +175,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="stepper-with-content">
 ## Stepper With Content
+</DocsTitle>
 
 Use the example below for a stepper with some title and description for it's each step.
 
@@ -259,6 +266,80 @@ export default function Example() {
           Next
         </Button>
       </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="stepper-with-custom-styles">
+## Stepper with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code>, <Code>lineClassName</Code> and <Code>activeLineClassName</Code> prop to add custom styles to the <Code>Stepper</Code> component and use the <Code>className</Code>, <Code>activeClassName</Code> and <Code>completedClassName</Code> prop to add custom styles to the <Code>Step</Code> component.
+
+<CodePreview id="stepper-with-custom-styles" component={<StepperExamples.CustomStepper />}>
+```jsx
+import React from "react";
+import { Stepper, Step, CardHeader, Typography } from "@material-tailwind/react";
+
+export default function Example() {
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  return (
+    <div className="w-full py-4 px-8">
+      <CardHeader floated={false} variant="gradient" color="blue" className="grid h-24 m-0 place-items-center">
+        <div className="w-full px-20 pt-4 pb-8">
+          <Stepper
+            activeStep={activeStep}
+            lineClassName="bg-white/50"
+            activeLineClassName="bg-white"
+          >
+            <Step
+              className="h-4 w-4 !bg-blue-gray-50 text-white/75 cursor-pointer"
+              activeClassName="ring-0 !bg-white text-white"
+              completedClassName="!bg-white text-white"
+              onClick={() => setActiveStep(0)}
+            >
+              <div className="absolute -bottom-[2.3rem] w-max text-center text-xs">
+                <Typography variant="h6" color="inherit">HTML</Typography>
+              </div>
+            </Step>
+            <Step
+              className="h-4 w-4 !bg-blue-gray-50 text-white/75 cursor-pointer"
+              activeClassName="ring-0 !bg-white text-white"
+              completedClassName="!bg-white text-white"
+              onClick={() => setActiveStep(1)}
+            >
+              <div className="absolute -bottom-[2.3rem] w-max text-center text-xs">
+                <Typography variant="h6" color="inherit">React</Typography>
+              </div>
+            </Step>
+            <Step
+              className="h-4 w-4 !bg-blue-gray-50 text-white/75 cursor-pointer"
+              activeClassName="ring-0 !bg-white text-white"
+              completedClassName="!bg-white text-white"
+              onClick={() => setActiveStep(2)}
+            >
+              <div className="absolute -bottom-[2.3rem] w-max text-center text-xs">
+                <Typography variant="h6" color="inherit">Vue</Typography>
+              </div>
+            </Step>
+            <Step
+              className="h-4 w-4 !bg-blue-gray-50 text-white/75 cursor-pointer"
+              activeClassName="ring-0 !bg-white text-white"
+              completedClassName="!bg-white text-white"
+              onClick={() => setActiveStep(3)}
+            >
+              <div className="absolute -bottom-[2.3rem] w-max text-center text-xs">
+                <Typography variant="h6" color="inherit">Svelte</Typography>
+              </div>
+            </Step>
+          </Stepper>
+        </div>
+      </CardHeader>
     </div>
   );
 }

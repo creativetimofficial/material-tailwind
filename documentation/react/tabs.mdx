@@ -152,7 +152,9 @@ return (
 
 ---
 
+<DocsTitle href="tabs-with-icon">
 ## Tabs with Icon
+</DocsTitle>
 
 Use tabs with icon to display the content in a more organized way.
 
@@ -265,7 +267,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="custom-tabs-animation">
 ## Custom Tabs Animation
+</DocsTitle>
 
 You can modify the open/close state animation for <Code>TabsBody</Code> component using the <Code>animate</Code> prop.
 
@@ -395,7 +399,9 @@ return (
 
 ---
 
+<DocsTitle href="transparent-tabs">
 ## Transparent Tabs
+</DocsTitle>
 
 Use the example below to create <Code>Tabs</Code> component with a transparent header.
 
@@ -475,13 +481,15 @@ export default function TransparentTabs() {
 
 ---
 
+<DocsTitle href="vertical-tabs">
 ## Vertical Tabs
+</DocsTitle>
 
 You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
 
 <CodePreview id="vertical-tabs" component={
-  <Tabs id="vertical-tabs" value="html" orientation="vertical">
-    <TabsHeader className="w-32">
+  <Tabs id="vertical-tabs-component" value="html" orientation="vertical">
+    <TabsHeader className="w-40">
       <Tab value="html">HTML</Tab>
       <Tab value="react">React</Tab>
       <Tab value="vue">Vue</Tab>
@@ -588,26 +596,28 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="vertical-tabs-with-icon">
 ## Vertical Tabs with Icon
+</DocsTitle>
 
 You can change the tabs orientation from horizontal to vertical using the <Code>orientation</Code> prop.
 
 <CodePreview id="vertical-tabs-with-icon" component={
   <Tabs id="vertical-tabs-wit-icon-component" value="dashboard" orientation="vertical">
     <TabsHeader className="w-40">
-      <Tab value="dashboard" className="place-items-start">
+      <Tab value="dashboard" className="justify-start">
         <div className="flex items-center gap-2">
           <SolidIcons.Square3Stack3DIcon className="w-5 h-5" />
           Dashboard
         </div>
       </Tab>
-      <Tab value="profile" className="place-items-start">
+      <Tab value="profile" className="justify-start">
         <div className="flex items-center gap-2">
           <SolidIcons.UserCircleIcon className="w-5 h-5" />
           Profile
         </div>
       </Tab>
-      <Tab value="settings" className="place-items-start">
+      <Tab value="settings" className="justify-start">
         <div className="flex items-center gap-2">
           <SolidIcons.Cog6ToothIcon className="w-5 h-5" />
           Settings
@@ -701,7 +711,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="underline-tabs">
 ## Underline Tabs
+</DocsTitle>
 
 You can use tailwind css classes for customizing the tabs components, see the example below for an underline tabs component.
 

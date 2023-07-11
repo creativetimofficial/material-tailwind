@@ -4,7 +4,8 @@ description: Customise your web projects with our spinner component for Tailwind
 navigation: [
   "spinner", 
   "spinner-sizes", 
-  "spinner-colors", 
+  "spinner-colors",
+  "spinner-with-custom-styles" 
   # "props", 
   # "theme"
 ]
@@ -46,7 +47,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="spinner-sizes">
 ## Spinner Sizes
+</DocsTitle>
 
 You can customize the size of the <Code>Spinner</Code> component using the tailwind css <Code>w-{`*`}</Code> and <Code>h-{`*`}</Code> classes or using the <Code>width</Code> and <Code>height</Code> props.
 
@@ -70,7 +73,9 @@ export default function Example() {
 
 ---
 
+<DocsTitle href="spinner-colors">
 ## Spinner Colors
+</DocsTitle>
 
 The <Code>Spinner</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
@@ -91,6 +96,24 @@ export default function Example() {
       <Spinner color="pink" />
     </div>
   );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="spinner-with-custom-styles">
+## Spinner with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the <Code>Spinner</Code> component.
+
+<CodePreview id="spinner-with-custom-styles" component={<SpinnerExamples.CustomSpinner />}>
+```jsx
+import { Spinner } from "@material-tailwind/react";
+
+export default function Example() {
+  return <Spinner className="h-16 w-16 text-blue-500/10" />;
 }
 ```
 </CodePreview>

@@ -9,7 +9,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -73,7 +73,7 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
 
     // 6. menu component
     const menuComponent = (
-      <motion.div
+      <m.div
         {...rest}
         ref={mergedRef}
         style={{
@@ -126,17 +126,29 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
               }),
             ),
         )}
-      </motion.div>
+      </m.div>
     );
 
     // 7. return
     return (
-      <FloatingPortal>
-        <NewAnimatePresence>
-          {open && (
-            <>
-              {lockScroll ? (
-                <FloatingOverlay lockScroll>
+      <LazyMotion features={domAnimation}>
+        <FloatingPortal>
+          <NewAnimatePresence>
+            {open && (
+              <>
+                {lockScroll ? (
+                  <FloatingOverlay lockScroll>
+                    <FloatingFocusManager
+                      context={context}
+                      modal={!nested}
+                      initialFocus={nested ? -1 : 0}
+                      returnFocus={!nested}
+                      visuallyHiddenDismiss
+                    >
+                      {menuComponent}
+                    </FloatingFocusManager>
+                  </FloatingOverlay>
+                ) : (
                   <FloatingFocusManager
                     context={context}
                     modal={!nested}
@@ -146,22 +158,12 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(
                   >
                     {menuComponent}
                   </FloatingFocusManager>
-                </FloatingOverlay>
-              ) : (
-                <FloatingFocusManager
-                  context={context}
-                  modal={!nested}
-                  initialFocus={nested ? -1 : 0}
-                  returnFocus={!nested}
-                  visuallyHiddenDismiss
-                >
-                  {menuComponent}
-                </FloatingFocusManager>
-              )}
-            </>
-          )}
-        </NewAnimatePresence>
-      </FloatingPortal>
+                )}
+              </>
+            )}
+          </NewAnimatePresence>
+        </FloatingPortal>
+      </LazyMotion>
     );
   },
 );
