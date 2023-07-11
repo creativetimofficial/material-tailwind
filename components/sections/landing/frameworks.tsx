@@ -63,7 +63,7 @@ const Cards: React.FC<CardsProps> = ({ children }) => {
 const Frameworks = () => {
   return (
     <section className="pb-12">
-      <div className="mb-10 :w-12/12">
+      <div className="mb-10 w-12/12 -mt-20">
         <Typography
           variant="h1"
           className="mb-3 mt-5 relative text-3xl md:text-4xl font-semibold leading-tight tracking-normal text-blue-gray-900"
