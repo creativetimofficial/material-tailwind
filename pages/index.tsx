@@ -13,17 +13,13 @@ import Header from "components/layout/header";
 import Footer from "components/layout/footer";
 
 // sections
-import SectionFeatures from "components/sections/features";
-import SectionButton from "components/sections/button";
-import SectionColorsPalette from "components/sections/colors-palette";
-import SectionShadow from "components/sections/shadow";
-import SectionComponents from "components/sections/components";
-import SectionFramework from "components/sections/framework";
-import SectionTestimonials from "components/sections/testimonials";
-import SectionCommunity from "components/sections/community";
 import Frameworks from "components/sections/landing/frameworks";
 import Community from "components/sections/community";
 import SectionSubscribe from "components/sections/subscribe";
+import Features from "components/sections/landing/features";
+import Variants from "components/sections/landing/variants";
+import Premium from "components/sections/landing/premium";
+import Components from "components/sections/landing/components";
 
 export default function Presentation() {
   return (
@@ -83,6 +79,10 @@ export default function Presentation() {
         </Header>
         <div className="container z-20 mx-auto px-4">
           <Frameworks />
+          <Features />
+          <Components />
+          <Premium />
+          <Variants />
           <Community />
           <SectionSubscribe />
           {/* <SectionButton />
