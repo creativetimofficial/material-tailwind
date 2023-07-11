@@ -65,10 +65,10 @@ export default function Features() {
                 <Typography variant="h4" className="font-semibold text-xl text-blue-gray-900">
                   Global Style
                 </Typography>
-                <Typography variant="h2" className="mt-3 font-semibold text-3xl md:text-4xl text-blue-gray-900">
+                <Typography variant="h2" className="mt-3 font-semibold text-2xl md:text-3xl text-blue-gray-900">
                   Awesome color palette and realistic shadows.
                 </Typography>
-                <Typography variant="paragraph" className="py-4 text-lg font-normal text-blue-gray-400">
+                <Typography variant="paragraph" className="py-4 text-md font-normal text-blue-gray-400">
                   Enhance your web product with our vibrant color palettes and realistic shadows, creating a memorable user experience that breathes life into your design.
                 </Typography>
               </div>
