@@ -133,7 +133,7 @@ export default function Components() {
         </Typography>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="lg:flex lg:flex-wrap">
         {components.map((component, i) => (
           <div className="lg:w-4/12 px-4 mt-8" key={i}>
             <Card className={`border bg-white shadow-md rounded-2xl min-h-[300px] w-full relative overflow-hidden`}>
