@@ -37,7 +37,7 @@ export default function Premium() {
         </Typography>
       </div>
       <div className="lg:flex">
-        <div className="lg:w-4/12 px-4">
+        <div className="lg:w-4/12 lg:px-4">
           <ContentCards 
             inverseTitle
             minHeight="min-h-[480px]" 
@@ -47,7 +47,7 @@ export default function Premium() {
             {'Awesome color palette and realistic shadows.'}
           </ContentCards>
         </div>
-        <div className="lg:w-4/12 px-4 mt-8 lg:mt-0">
+        <div className="lg:w-4/12 lg:px-4 mt-8 lg:mt-0">
           <ContentCards 
             inverseTitle
             minHeight="min-h-[480px]" 
@@ -57,7 +57,7 @@ export default function Premium() {
             {'Material Tailwind comes with a huge number of Fully Coded CSS components.'}
           </ContentCards>
         </div>
-        <div className="lg:w-4/12 px-4 mt-8 lg:mt-0">
+        <div className="lg:w-4/12 lg:px-4 mt-8 lg:mt-0">
           <ContentCards 
             inverseTitle
             minHeight="min-h-[480px]" 
@@ -70,7 +70,7 @@ export default function Premium() {
       </div>
 
       <div className="flex">
-        <div className="lg:w-12/12 px-4 mt-8">
+        <div className="lg:w-12/12 lg:px-4 mt-8">
           <Card className={`border bg-white shadow-md rounded-2xl min-h-[300px] relative overflow-hidden`}>
             <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-40"></div>
             <CardBody className="z-10 lg:flex">
