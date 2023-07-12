@@ -135,7 +135,7 @@ export default function Components() {
 
       <div className="lg:flex lg:flex-wrap">
         {components.map((component, i) => (
-          <div className="lg:w-4/12 px-4 mt-8" key={i}>
+          <div className="lg:w-4/12 lg:px-4 mt-8" key={i}>
             <Card className={`border bg-white shadow-md rounded-2xl min-h-[300px] w-full relative overflow-hidden`}>
               <div style={{backgroundImage: `url(${component.img})`}} className={`w-full h-full bg-cover bg-center bg-no-repeat absolute z-10`}></div>
             </Card>
