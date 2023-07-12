@@ -163,33 +163,11 @@ export default function Navbar({
           open ? "mt-4" : ""
         } mb-0 flex list-none flex-col gap-2 pl-0 text-inherit transition-all lg:ml-auto lg:flex-row`}
       >
-        <Menu placement="bottom" offset={-2.5}>
-          <MenuHandler>
-            <li>
-              <span className={navbarItemClasses}>
-                <span>Docs</span>
-              </span>
-            </li>
-          </MenuHandler>
-          <MenuList>
-            <MenuItem className="p-0">
-              <Link
-                href="/docs/html/installation"
-                className={`${navbarItemClasses} lg:px-3`}
-              >
-                HTML
-              </Link>
-            </MenuItem>
-            <MenuItem className="p-0">
-              <Link
-                href="/docs/react/installation"
-                className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
-              >
-                ReactJS
-              </Link>
-            </MenuItem>
-          </MenuList>
-        </Menu>
+        <li>
+          <Link passHref href="/docs/react/installation" className={navbarItemClasses}>
+            Docs
+          </Link>
+        </li>
         <li>
           <Link passHref href="/blocks" className={navbarItemClasses}>
             Blocks
