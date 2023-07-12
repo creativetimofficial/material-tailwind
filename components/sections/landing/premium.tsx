@@ -36,7 +36,7 @@ export default function Premium() {
           Build faster your website with our exclusive collection of stunning component and sections that will get you started in no time!
         </Typography>
       </div>
-      <div className="flex">
+      <div className="lg:flex">
         <div className="lg:w-4/12 px-4">
           <ContentCards 
             inverseTitle
@@ -47,7 +47,7 @@ export default function Premium() {
             {'Awesome color palette and realistic shadows.'}
           </ContentCards>
         </div>
-        <div className="lg:w-4/12 px-4">
+        <div className="lg:w-4/12 px-4 mt-8 lg:mt-0">
           <ContentCards 
             inverseTitle
             minHeight="min-h-[480px]" 
@@ -57,7 +57,7 @@ export default function Premium() {
             {'Material Tailwind comes with a huge number of Fully Coded CSS components.'}
           </ContentCards>
         </div>
-        <div className="lg:w-4/12 px-4">
+        <div className="lg:w-4/12 px-4 mt-8 lg:mt-0">
           <ContentCards 
             inverseTitle
             minHeight="min-h-[480px]" 
@@ -73,8 +73,8 @@ export default function Premium() {
         <div className="lg:w-12/12 px-4 mt-8">
           <Card className={`border bg-white shadow-md rounded-2xl min-h-[300px] relative overflow-hidden`}>
             <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-40"></div>
-            <CardBody className="z-10 flex">
-              <div className="w-4/12">
+            <CardBody className="z-10 lg:flex">
+              <div className="lg:w-4/12">
                 <Typography variant="h4" className="font-semibold text-3xl md:text-4xl text-blue-gray-900">
                   50+
                 </Typography>
@@ -85,7 +85,7 @@ export default function Premium() {
                   Fully coded sample sections so you could start working instantly.
                 </Typography>
               </div>
-              <div className="ml-auto w-6/12">
+              <div className="ml-auto lg:w-6/12">
                 <Image src={'/img/img-5.jpg'} width={1000} height={500} alt={'img'} />
               </div>
             </CardBody>
