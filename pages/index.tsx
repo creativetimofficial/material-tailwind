@@ -77,7 +77,7 @@ export default function Presentation() {
             </div>
           </div>
         </Header>
-        <div className="container z-20 mx-auto px-4">
+        <div className="container z-20 mx-auto px-8">
           <Frameworks />
           <Features />
           <Components />
