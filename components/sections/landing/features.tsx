@@ -35,7 +35,7 @@ export default function Features() {
           Get Material Tailwind and take advantage of its free components and features that will help you setup your web project quickly.
         </Typography>
       </div>
-      <div className="flex">
+      <div className="lg:flex">
         <div className="lg:w-6/12 px-4">
           <ContentCards 
             minHeight="min-h-[480px]" 
@@ -45,7 +45,7 @@ export default function Features() {
             {'Material Tailwind comes with stunning fully coded components based on React or HTML. Choose you favorite version! Angular and Vue.js components coming soon.'}
           </ContentCards>
         </div>
-        <div className="lg:w-6/12 px-4">
+        <div className="lg:w-6/12 px-4 mt-8 lg:mt-0">
           <ContentCards 
             minHeight="min-h-[480px]" 
             subtitle="CSS Components"
@@ -60,8 +60,8 @@ export default function Features() {
         <div className="lg:w-12/12 px-4 mt-8">
           <Card className={`border bg-white shadow-md rounded-2xl min-h-[300px] relative overflow-hidden`}>
             <div className="bg-[url('/img/header-figma.jpg')] bg-cover bg-center bg-no-repeat h-full w-full absolute top-40"></div>
-            <CardBody className="z-10 flex">
-              <div className="w-4/12">
+            <CardBody className="z-10 lg:flex">
+              <div className="lg:w-4/12">
                 <Typography variant="h4" className="font-semibold text-xl text-blue-gray-900">
                   Global Style
                 </Typography>
@@ -72,7 +72,7 @@ export default function Features() {
                   Enhance your web product with our vibrant color palettes and realistic shadows, creating a memorable user experience that breathes life into your design.
                 </Typography>
               </div>
-              <div className="ml-auto w-6/12">
+              <div className="ml-auto lg:w-6/12">
                 <Image src={'/img/img-5.jpg'} width={1000} height={500} alt={'img'} />
               </div>
             </CardBody>
