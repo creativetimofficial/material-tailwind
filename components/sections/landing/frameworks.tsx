@@ -50,7 +50,7 @@ const Cards: React.FC<CardsProps> = ({ children }) => {
           shadow={false}
           className="flex items-center"
         >
-          img
+          <img src="/img/react.png" alt="react" className="w-10 h-10" />
         </CardHeader>
         <CardBody className="relative z-10">
           {children}
@@ -79,9 +79,9 @@ const Frameworks = () => {
 
         <div className="flex flex-wrap">
           {content.map((item, i) => (
-            <div className="w-3/12 px-4" key={i}>
+            <div className="lg:w-3/12 px-4 mt-4 lg:mt-0" key={i}>
               <Cards>
-                <Typography className="font-semibold text-gray-900 text-2xl">
+                <Typography className="font-semibold text-gray-900 text-xl">
                   {item.title}
                 </Typography>
                 <Typography className="mt-1 font-normal text-blue-gray-400">
