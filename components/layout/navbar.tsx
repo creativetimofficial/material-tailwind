@@ -68,6 +68,11 @@ export default function Navbar({
   const navbarItemClasses =
     "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-blue-gray-800 font-medium lg:px-2 cursor-pointer";
   const targetRef = useRef(null);
+  const mobile = useRef(null);
+
+  const activeClass = "show";
+  const initialClasses = ['bg-white/50', 'shadow-sm', 'backdrop-blur-lg'];
+  const [classes] = useState(initialClasses);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -86,11 +91,12 @@ export default function Navbar({
   useEffect(() => {
     const handleScroll = () => {
       const targetElement = targetRef.current;
-       const classes = ['bg-white/50', 'shadow-sm', 'backdrop-blur-lg']
       if (window.scrollY > 100) {
         targetElement.classList.add(...classes);
       } else {
-        targetElement.classList.remove(...classes);
+        if (!targetElement.classList.contains(activeClass)) {
+          targetElement.classList.remove(...classes);
+        }
       }
     };
 
@@ -101,16 +107,33 @@ export default function Navbar({
     };
   }, []);
 
+  const setNavbarBlur = () => {
+    const targetElement = targetRef.current;
+    const targetMobile = mobile.current;
+
+    if (!targetElement.classList.contains(activeClass)) {
+      targetMobile.style.height = '330px';
+      targetElement.classList.add(activeClass);
+
+      classes.forEach(className => {
+        targetElement.classList.add(className);
+      });
+    } else {
+      targetElement.classList.remove(activeClass);
+
+      classes.forEach(className => {
+        targetElement.classList.remove(className);
+      });
+    }
+  }
+
   const menuOpenIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6"
-      fill="fill-slate-950"
-      stroke="fill-slate-950"
+      className="h-6 w-6 text-slate-950 stroke-slate-950"
       strokeWidth={2}
     >
       <path
-        fill="fill-slate-950"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M4 6h16M4 12h16M4 18h16"
@@ -121,14 +144,11 @@ export default function Navbar({
   const menuCloseIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="fill-slate-950"
-      className="h-6 w-6"
+      className="h-6 w-6 text-slate-950 stroke-slate-950"
       viewBox="0 0 24 24"
-      stroke="fill-slate-950"
       strokeWidth={2}
     >
       <path
-        fill="fill-slate-950"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M6 18L18 6M6 6l12 12"
@@ -309,7 +329,7 @@ export default function Navbar({
             variant="text"
             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
             ripple={false}
-            onClick={() => setOpen(!open)}
+            onClick={() => {setOpen(!open); setNavbarBlur();}}
           >
             {open ? menuCloseIcon : menuOpenIcon}
           </IconButton>
@@ -318,7 +338,7 @@ export default function Navbar({
           </div>
         </div>
 
-        <MobileNav open={open} className={mobileNavClassName}>
+        <MobileNav open={open} className={`${mobileNavClassName}`} ref={mobile}>
           {navbarMenu}
         </MobileNav>
         {sidenavMenu}
