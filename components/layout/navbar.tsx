@@ -17,6 +17,7 @@ import {
   Chip,
   Button,
 } from "@material-tailwind/react";
+import { CurrencyDollarIcon, Square3Stack3DIcon as BlocksIcon } from "@heroicons/react/24/solid";
 
 function formatNumber(number, decPlaces) {
   decPlaces = Math.pow(10, decPlaces);
@@ -161,6 +162,15 @@ export default function Navbar({
           </MenuList>
         </Menu>
         <li>
+          <Link
+            href="/blocks"
+            className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
+          >
+            <BlocksIcon className="mr-1.5 h-[18px] w-[18px] opacity-75" />
+            Blocks
+          </Link>
+        </li>
+        <li>
           <a
             href="https://www.creative-tim.com/services/updivision/?ref=material-tailwind"
             target="_blank"
@@ -228,6 +238,15 @@ export default function Navbar({
             </li>
           </Tooltip>
         </ul>
+        <Link href="/blocks#pricing">
+          <Button
+            variant="gradient"
+            className="mt-3 mb-6 flex w-full items-center justify-center lg:mt-0 lg:mb-0 lg:ml-4 lg:w-auto"
+          >
+            <CurrencyDollarIcon className="mr-1.5 -mt-px h-[18px] w-[18px]" />
+            See Pricing
+          </Button>
+        </Link>
       </div>
     </div>
   );
