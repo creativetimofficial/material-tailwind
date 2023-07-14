@@ -61,6 +61,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const { switch: toggle } = useTheme();
     const { defaultProps, valid, styles } = toggle;
     const { base, colors } = styles;
+    const switchId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
@@ -109,10 +110,10 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             ref={inputRef}
             type="checkbox"
             disabled={disabled}
-            id={rest.id || "switch"}
+            id={rest.id || switchId}
             className={inputClasses}
           />
-          <label {...circleProps} htmlFor={rest.id || "switch"} className={circleClasses}>
+          <label {...circleProps} htmlFor={rest.id || switchId} className={circleClasses}>
             {ripple && (
               <div
                 className={rippleClasses}
@@ -130,7 +131,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           </label>
         </div>
         {label && (
-          <label {...labelProps} htmlFor={rest.id || "switch"} className={labelClasses}>
+          <label {...labelProps} htmlFor={rest.id || switchId} className={labelClasses}>
             {label}
           </label>
         )}
