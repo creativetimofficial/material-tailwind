@@ -6,7 +6,7 @@ export function AvatarWithText() {
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">
             Web Developer
           </Typography>
@@ -15,7 +15,7 @@ export function AvatarWithText() {
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="rounded" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">
             Web Developer
           </Typography>
@@ -24,7 +24,7 @@ export function AvatarWithText() {
       <div className="flex items-center gap-4">
         <Avatar src="/img/face-2.jpg" alt="avatar" variant="square" />
         <div>
-          <Typography variant="h6">Candice Wu</Typography>
+          <Typography variant="h6">Tania Andrew</Typography>
           <Typography variant="small" color="gray" className="font-normal">
             Web Developer
           </Typography>

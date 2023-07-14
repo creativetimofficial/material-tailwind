@@ -29,12 +29,12 @@ export function BackgroundBlogCard() {
           How we design and code open-source projects?
         </Typography>
         <Typography variant="h5" className="mb-4 text-gray-400">
-          Candice Wu
+          Tania Andrew
         </Typography>
         <Avatar
           size="xl"
           variant="circular"
-          alt="candice wu"
+          alt="Tania Andrew"
           className="border-2 border-white"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
