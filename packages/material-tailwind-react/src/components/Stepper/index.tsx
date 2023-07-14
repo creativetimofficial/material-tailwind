@@ -95,11 +95,14 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
     const activeStepClasses = objectsToString(stepBase.active);
     const completedStepClasses = objectsToString(stepBase.completed);
 
+    React.useEffect(() => {
+      isLastStep && typeof isLastStep === "function" && isLastStep(isLastStepValue);
+      isFirstStep && typeof isFirstStep === "function" && isFirstStep(isFirstStepValue);
+    }, [isFirstStep, isFirstStepValue, isLastStep, isLastStepValue]);
+
     // 4. return
     return (
       <div {...rest} ref={containerRef} className={stepperClasses}>
-        {(isLastStep && typeof isLastStep === "function" && isLastStep(isLastStepValue)) as any}
-        {(isFirstStep && typeof isFirstStep === "function" && isFirstStep(isFirstStepValue)) as any}
         <div className={lineClasses} />
         <div
           className={activeLineClasses}
