@@ -103,12 +103,12 @@ module.exports = withMT({
 ---
 
 <DocsTitle href="with-server-components">
-## With Next.js 13 appDir and Server Components
+## With Next.js 13 App Router and Server Components
 </DocsTitle>
 
 <span id="with-server-components" className="scroll-mt-48" />
 
-If you want to use @material-tailwind/react with the Next.js 13 appDir feature, you need to make use of the <br /> <Code>'use client'</Code> directive since many Material Tailwind components can only be rendered on the client side. A simple approach is to re-export or wrap Material Tailwind components in your own components.
+If you want to use @material-tailwind/react with the Next.js 13 App Router, you need to make use of the <br /> <Code>'use client'</Code> directive since many Material Tailwind components can only be rendered on the client side. A simple approach is to re-export or wrap Material Tailwind components in your own components.
 
 ```js
 "use client";
@@ -141,7 +141,7 @@ import { Button } from "path/to/the/new/file";
 
 @material-tailwind/react comes with a theme provider that sets the default or custom theme/styles for Material Tailwind components. Wrap your entire application with the <Code>ThemeProvider</Code> component from @material-tailwind/react. The file to add this to depends on your Next.js setup:
 
-With the App Router: <Code>app/layout</Code>
+With the App Router: <Code>app/layout</Code>  
 With the Pages Router: <Code>pages/\_app</Code>
 
 ```jsx {3, 7, 9}
