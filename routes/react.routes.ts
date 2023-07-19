@@ -1,16 +1,17 @@
 export const routes = [
   {
-    name: "guide",
+    name: "Getting Started",
     icon: "fas fa-book",
     pages: [
       { name: "installation", label: null },
       { name: "installation-with-cli", label: "new" },
       { name: "license", label: null },
       { name: "what-is-tailwind-css", label: null },
+      { name: "release-notes", label: "new" },
     ],
   },
   {
-    name: "migration",
+    name: "upgrad guide",
     icon: "fas fa-rocket",
     pages: [{ name: "2.x-migration-guide", label: null }],
   },
