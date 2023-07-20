@@ -16,8 +16,8 @@ import { State, Observe } from "mdx-observable";
 // markdown utils
 import fs from "fs";
 import matter from "gray-matter";
-import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code";
 
 // page components
 import DocsFooter from "components/layout/docs-footer";
@@ -40,8 +40,6 @@ import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
 import CountriesSelect from "components/docs/countries-select";
-import InputWithButton from "components/docs/input-with-button";
-import CountriesCodeInput from "components/docs/countries-code-input";
 import ProfileMenu from "components/docs/profile-menu";
 import Warning from "components/warning";
 
@@ -69,6 +67,7 @@ import * as PaginationExamples from "docs-content/react/pagination";
 import * as SidebarExamples from "docs-content/react/sidebar";
 import * as FormExamples from "docs-content/react/form";
 import * as IconButtonExamples from "docs-content/react/icon-button";
+import * as InputExamples from "docs-content/react/input";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -275,7 +274,6 @@ const components = {
   Tooltip,
   Typography,
   Link,
-  ButtonGroup,
   Carousel,
   List,
   ListItem,
@@ -286,8 +284,6 @@ const components = {
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
-  InputWithButton,
-  CountriesCodeInput,
   ProfileMenu,
   Warning,
 
@@ -315,6 +311,7 @@ const components = {
   FooterExamples,
   FormExamples,
   IconButtonExamples,
+  InputExamples,
 
   RatingExamples,
   SliderExamples,
