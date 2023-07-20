@@ -14,12 +14,30 @@ github: table
 prev: sidebar
 ---
 
+<DocsTitle href="table">
 # Tailwind CSS Table - React
+</DocsTitle>
 
 Use our Tailwind CSS table example to display sets of data in your web projects.
 
 See below our beautiful table examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt it easily to your needs.
 
+<br />
+
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+# npm
+npm i @heroicons/react
+
+# yarn
+yarn add @heroicons/react
+
+# pnpm
+pnpm i @heroicons/react
+```
+
+<br />
 <br />
 
 <CodePreview id="table" component={<TableExamples.DefaultTable />}>
@@ -56,9 +74,9 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function DefaultTable() {
   return (
-    <Card className="overflow-scroll h-full w-full">
+    <Card className="w-full h-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
@@ -119,7 +137,7 @@ export default function Example() {
 ## Table With Striped Rows
 </DocsTitle>
 
-<CodePreview id="table-with-striped-rows" className="mt-4" component={<TableExamples.TableWithStripedRows />}>
+<CodePreview component={<TableExamples.TableWithStripedRows />}>
 ```jsx
 import { Card, Typography } from "@material-tailwind/react";
 
@@ -153,9 +171,9 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function TableWithStripedRows() {
   return (
-    <Card className="overflow-scroll h-full w-full">
+    <Card className="h-full w-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
@@ -211,7 +229,7 @@ export default function Example() {
 ## Table With Striped Columns
 </DocsTitle>
 
-<CodePreview id="table-with-striped-columns" className="mt-4" component={<TableExamples.TableWithStripedColumns />}>
+<CodePreview component={<TableExamples.TableWithStripedColumns />}>
 ```jsx
 import { Card, Typography } from "@material-tailwind/react";
 
@@ -245,9 +263,9 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function TableWithStripedColumns() {
   return (
-    <Card className="overflow-scroll h-full w-full">
+    <Card className="h-full w-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
@@ -308,7 +326,7 @@ export default function Example() {
 ## Transactions Table
 </DocsTitle>
 
-<CodePreview id="transactions-table" className="mt-4" component={<TableExamples.TransactionsTable />}>
+<CodePreview component={<TableExamples.TransactionsTable />}>
 ```jsx
 import { PencilIcon } from "@heroicons/react/24/solid";
 import { ArrowDownTrayIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -381,7 +399,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function TransactionsTable() {
   return (
     <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
@@ -554,7 +572,7 @@ export default function Example() {
 ## Members Table
 </DocsTitle>
 
-<CodePreview id="members-table" className="mt-4" component={<TableExamples.MembersTable />}>
+<CodePreview component={<TableExamples.MembersTable />}>
 ```jsx
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
@@ -640,7 +658,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function MembersTable() {
   return (
     <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
@@ -785,7 +803,7 @@ export default function Example() {
 ## Sortable Table
 </DocsTitle>
 
-<CodePreview id="sortable-table" className="mt-4" component={<TableExamples.SortableTable />}>
+<CodePreview component={<TableExamples.SortableTable />}>
 ```jsx
 import { MagnifyingGlassIcon, ChevronUpDownIcon } from "@heroicons/react/24/outline";
 import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
@@ -871,7 +889,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function Example() {
+export function SortableTable() {
   return (
     <Card className="h-full w-full">
       <CardHeader floated={false} shadow={false} className="rounded-none">
