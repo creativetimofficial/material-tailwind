@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { useCountries } from "use-react-countries";
 import {
@@ -48,7 +47,7 @@ function formatExpires(value: string) {
     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export default function CheckoutForm() {
+export function CheckoutForm() {
   const { countries } = useCountries();
   const [type, setType] = React.useState("card");
   const [cardNumber, setCardNumber] = React.useState("");

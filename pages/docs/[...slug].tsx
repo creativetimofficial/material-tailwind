@@ -40,7 +40,6 @@ import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
 import CountriesSelect from "components/docs/countries-select";
-import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import ProfileMenu from "components/docs/profile-menu";
@@ -68,6 +67,7 @@ import * as VideoExamples from "docs-content/react/video";
 import * as TableExamples from "docs-content/react/table";
 import * as PaginationExamples from "docs-content/react/pagination";
 import * as SidebarExamples from "docs-content/react/sidebar";
+import * as FormExamples from "docs-content/react/form";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -285,7 +285,6 @@ const components = {
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
-  CheckoutForm,
   InputWithButton,
   CountriesCodeInput,
   ProfileMenu,
@@ -304,22 +303,23 @@ const components = {
   CheckboxExamples,
   ChipExamples,
   CollapseExamples,
-
   DrawerExamples,
-  RatingExamples,
-  SliderExamples,
-  SpinnerExamples,
-  TimelineExamples,
   PaginationExamples,
-  SpeedDialExamples,
-  StepperExamples,
   NavbarExamples,
-  DialogExamples,
-  FooterExamples,
   ImgExamples,
   VideoExamples,
   SidebarExamples,
   TableExamples,
+  DialogExamples,
+  FooterExamples,
+  FormExamples,
+
+  RatingExamples,
+  SliderExamples,
+  SpinnerExamples,
+  TimelineExamples,
+  SpeedDialExamples,
+  StepperExamples,
   TransparentTabs,
 };
 

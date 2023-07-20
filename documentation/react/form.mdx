@@ -7,7 +7,10 @@ prev: input
 next: list
 ---
 
+
+<DocsTitle href="form">
 # Tailwind CSS Form - React
+</DocsTitle>
 
 Easily create form using our components based on Tailwind CSS and React.
 
@@ -24,55 +27,7 @@ See below our form component examples.
 
 Use our form example if you want to allow users to leave their information for a registration process.
 
-<CodePreview id="simple-registration-form" link="form#simple-registration-form" component={
-  <Card color="transparent" shadow={false}>
-    <Typography variant="h4" color="blue-gray">
-      Sign Up
-    </Typography>
-    <Typography color="gray" className="mt-1 font-normal">
-      Enter your details to register.
-    </Typography>
-    <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-      <div className="mb-4 flex flex-col gap-6">
-        <Input size="lg" label="Name" />
-        <Input size="lg" label="Email" />
-        <Input type="password" size="lg" label="Password" />
-      </div>
-      <Checkbox
-        label={
-          (
-            <Typography
-              variant="small"
-              color="gray"
-              className="flex items-center font-normal"
-            >
-              I agree the
-              <a
-                href="#"
-                className="font-medium transition-colors hover:text-blue-500"
-              >
-                &nbsp;Terms and Conditions
-              </a>
-            </Typography>
-          )
-        }
-        containerProps={{ className: "-ml-2.5" }}
-      />
-      <Button className="mt-6" fullWidth>
-        Register
-      </Button>
-      <Typography color="gray" className="mt-4 text-center font-normal">
-        Already have an account?{" "}
-        <a
-          href="#"
-          className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-        >
-          Sign In
-        </a>
-      </Typography>
-    </form>
-  </Card>
-}>
+<CodePreview link="form#simple-registration-form" component={<FormExamples.SimpleRegistrationForm />}>
 ```jsx
 import {
   Card,
@@ -82,7 +37,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function SimpleRegistrationForm() {
   return (
     <Card color="transparent" shadow={false}>
       <Typography variant="h4" color="blue-gray">
@@ -99,21 +54,19 @@ export default function Example() {
         </div>
         <Checkbox
           label={
-            (
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
+            <Typography
+              variant="small"
+              color="gray"
+              className="flex items-center font-normal"
+            >
+              I agree the
+              <a
+                href="#"
+                className="font-medium transition-colors hover:text-blue-500"
               >
-                I agree the
-                <a
-                  href="#"
-                  className="font-medium transition-colors hover:text-blue-500"
-                >
-                  &nbsp;Terms and Conditions
-                </a>
-              </Typography>
-            )
+                &nbsp;Terms and Conditions
+              </a>
+            </Typography>
           }
           containerProps={{ className: "-ml-2.5" }}
         />
@@ -144,7 +97,17 @@ export default function Example() {
 
 This checkout form is a must for your website's checkout process. You already have the options of paying with card or paying with Paypal.
 
-<CodePreview id="checkout-form" component={<CheckoutForm />}>
+<br />
+
+This example is using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> and <Code><a href="https://www.npmjs.com/package/use-react-countries" target="_blank">use-react-countries</a></Code> make sure you have installed them.
+
+```bash
+npm i @heroicons/react use-react-countries
+```
+
+<br />
+
+<CodePreview component={<FormExamples.CheckoutForm />}>
 ```jsx
 import React from "react";
 import { useCountries } from "use-react-countries";
@@ -170,65 +133,65 @@ import {
 } from "@heroicons/react/24/solid";
 
 function formatCardNumber(value: string) {
-const val = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-const matches = val.match(/\d{4,16}/g);
-const match = (matches && matches[0]) || "";
-const parts = [];
+  const val = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+  const matches = val.match(/\d{4,16}/g);
+  const match = (matches && matches[0]) || "";
+  const parts = [];
 
-for (let i = 0, len = match.length; i < len; i += 4) {
-parts.push(match.substring(i, i + 4));
-}
+  for (let i = 0, len = match.length; i < len; i += 4) {
+    parts.push(match.substring(i, i + 4));
+  }
 
-if (parts.length) {
-return parts.join(" ");
-} else {
-return value;
-}
+  if (parts.length) {
+    return parts.join(" ");
+  } else {
+    return value;
+  }
 }
 
 function formatExpires(value: string) {
-return value
-.replace(/[^0-9]/g, "")
-.replace(/^([2-9])$/g, "0$1")
+  return value
+    .replace(/[^0-9]/g, "")
+    .replace(/^([2-9])$/g, "0$1")
     .replace(/^(1{1})([3-9]{1})$/g, "0$1/$2")
-.replace(/^0{1,}/g, "0")
-.replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).\*/g, "$1/$2");
+    .replace(/^0{1,}/g, "0")
+    .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export default function Example() {
+export default function CheckoutForm() {
   const { countries } = useCountries();
   const [type, setType] = React.useState("card");
   const [cardNumber, setCardNumber] = React.useState("");
   const [cardExpires, setCardExpires] = React.useState("");
 
-return (
-<Card className="w-full max-w-[24rem]">
-<CardHeader
+  return (
+    <Card className="w-full max-w-[24rem]">
+      <CardHeader
         color="blue"
         floated={false}
         shadow={false}
         className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"
       >
-<div className="mb-4 rounded-full border border-white/10 bg-white/10 p-6 text-white">
-<BanknotesIcon className="h-10 w-10" />
-</div>
-<Typography variant="h4" color="white">
-Material Tailwind PRO
-</Typography>
-</CardHeader>
-<CardBody>
-<Tabs value={type} className="overflow-visible">
-<TabsHeader className="relative z-0 ">
-<Tab value="card" onClick={() => setType("card")}>
-Pay with Card
-</Tab>
-<Tab value="paypal" onClick={() => setType("paypal")}>
-Pay with PayPal
-</Tab>
-</TabsHeader>
-<TabsBody
-className="!overflow-x-hidden !overflow-y-visible"
-animate={{
+        <div className="mb-4 rounded-full border border-white/10 bg-white/10 p-6 text-white">
+          <BanknotesIcon className="h-10 w-10" />
+        </div>
+        <Typography variant="h4" color="white">
+          Material Tailwind PRO
+        </Typography>
+      </CardHeader>
+      <CardBody>
+        <Tabs value={type} className="overflow-visible">
+          <TabsHeader className="relative z-0 ">
+            <Tab value="card" onClick={() => setType("card")}>
+              Pay with Card
+            </Tab>
+            <Tab value="paypal" onClick={() => setType("paypal")}>
+              Pay with PayPal
+            </Tab>
+          </TabsHeader>
+          <TabsBody
+            className="!overflow-x-hidden !overflow-y-visible"
+            animate={{
               initial: {
                 x: type === "card" ? 400 : -400,
               },
@@ -238,19 +201,20 @@ animate={{
               unmount: {
                 x: type === "card" ? 400 : -400,
               },
-            }} >
-<TabPanel value="card" className="p-0">
-<form className="mt-12 flex flex-col gap-4">
-<div>
-<Typography
+            }}
+          >
+            <TabPanel value="card" className="p-0">
+              <form className="mt-12 flex flex-col gap-4">
+                <div>
+                  <Typography
                     variant="small"
                     color="blue-gray"
                     className="mb-4 font-medium"
                   >
-Personal Details
-</Typography>
-<Input type="email" label="Email Address" />
-</div>
+                    Personal Details
+                  </Typography>
+                  <Input type="email" label="Email Address" />
+                </div>
 
                 <div className="my-6">
                   <Typography
@@ -352,10 +316,7 @@ Personal Details
         </Tabs>
       </CardBody>
     </Card>
-
-);
+  );
 }
-
 ```
 </CodePreview>
-```
