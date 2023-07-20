@@ -68,6 +68,7 @@ import * as TableExamples from "docs-content/react/table";
 import * as PaginationExamples from "docs-content/react/pagination";
 import * as SidebarExamples from "docs-content/react/sidebar";
 import * as FormExamples from "docs-content/react/form";
+import * as IconButtonExamples from "docs-content/react/icon-button";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -313,6 +314,7 @@ const components = {
   DialogExamples,
   FooterExamples,
   FormExamples,
+  IconButtonExamples,
 
   RatingExamples,
   SliderExamples,
