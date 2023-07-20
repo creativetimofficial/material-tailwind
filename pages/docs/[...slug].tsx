@@ -60,6 +60,7 @@ import * as CarouselExamples from "docs-content/react/carousel";
 import * as CheckboxExamples from "docs-content/react/checkbox";
 import * as ChipExamples from "docs-content/react/chip";
 import * as CollapseExamples from "docs-content/react/collapse";
+import * as DialogExamples from "docs-content/react/dialog";
 
 import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
@@ -70,7 +71,7 @@ import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 import * as NavbarExamples from "components/docs/react/navbar";
-import * as DialogExamples from "components/docs/react/dialog";
+
 import * as FooterExamples from "components/docs/react/footer";
 import * as ImgExamples from "components/docs/react/img";
 import * as VideoExamples from "components/docs/react/video";
