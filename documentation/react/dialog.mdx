@@ -1065,6 +1065,18 @@ import type { DialogStylesType } from "@material-tailwind/react";
 ```tsx
 const theme = {
   dialog: {
+    defaultProps: {
+      size: "md",
+      dismiss: {},
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    valid: {
+      sizes: ["xs", "sm", "md", "lg", "xl", "xxl"],
+    },
     styles: {
       base: {
         backdrop: {
@@ -1172,6 +1184,9 @@ import type { DialogHeaderStylesType } from "@material-tailwind/react";
 ```tsx
 const theme = {
   dialogHeader: {
+    defaultProps: {
+      className: "",
+    },
     styles: {
       base: {
         display: "flex",
@@ -1231,6 +1246,10 @@ import type { DialogBodyStylesType } from "@material-tailwind/react";
 ```tsx
 const theme = {
   dialogBody: {
+    defaultProps: {
+      className: "",
+      divider: false,
+    },
     styles: {
       base: {
         initial: {
@@ -1290,6 +1309,9 @@ import type { DialogFooterStylesType } from "@material-tailwind/react";
 ```tsx
 const theme = {
   dialogFooter: {
+    defaultProps: {
+      className: "",
+    },
     styles: {
       base: {
         display: "flex",

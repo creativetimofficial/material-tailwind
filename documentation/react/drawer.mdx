@@ -655,6 +655,19 @@ import { DrawerStylesType } from "@material-tailwind/react";
 ```ts
 const theme = {
   drawer: {
+    defaultProps: {
+      size: 300,
+      overlay: true,
+      placement: "left",
+      overlayProps: undefined,
+      className: "",
+      dismiss: undefined,
+      onClose: undefined,
+      transition: {
+        type: "tween",
+        duration: 0.3,
+      },
+    },
     styles: {
       base: {
         drawer: {

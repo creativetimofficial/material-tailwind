@@ -443,6 +443,40 @@ import type { IconButtonStyleTypes } from "@material-tailwind/react";
 ```ts
 const theme = {
   iconButton: {
+    defaultProps: {
+      variant: "filled",
+      size: "md",
+      color: "blue",
+      fullWidth: false,
+      ripple: true,
+      className: "",
+    },
+    valid: {
+      variants: ["filled", "outlined", "gradient", "text"],
+      sizes: ["sm", "md", "lg"],
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
     styles: {
       base: {
         position: "relative",
