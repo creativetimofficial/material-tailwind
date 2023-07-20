@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Typography } from "@material-tailwind/react";
 
 export function FooterWithLogo() {

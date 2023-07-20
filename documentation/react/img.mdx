@@ -15,7 +15,9 @@ prev: footer
 next: video
 ---
 
+<DocsTitle href="img">
 # Tailwind CSS Image - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>img</Code> example to portray people or objects in your web projects. The <Code>img</Code> can be used to display media content on your website.
 
@@ -23,12 +25,12 @@ See below our beautiful <Code>img</Code> examples that you can use in your Tailw
 
 <br />
 
-<CodePreview id="img" component={<ImgExamples.DefaultImg />}>
+<CodePreview component={<ImgExamples.DefaultImg />}>
 ```jsx
-export default function Example() {
+export function DefaultImg() {
   return (
     <img
-      className="h-full w-full"
+      className="h-96 w-full object-cover object-center"
       src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
       alt="nature image"
     />
@@ -43,12 +45,12 @@ export default function Example() {
 ## Image With Rounded Corners
 </DocsTitle>
 
-<CodePreview id="img-with-rounded-corners" className="mt-4" component={<ImgExamples.ImgWithRoundedCorners />}>
+<CodePreview className="mt-4" component={<ImgExamples.ImgWithRoundedCorners />}>
 ```jsx
-export default function Example() {
+export function ImgWithRoundedCorners() {
   return (
     <img
-      className="h-full w-full rounded-lg"
+      className="h-96 w-full rounded-lg object-cover object-center"
       src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
       alt="nature image"
     />
@@ -63,12 +65,12 @@ export default function Example() {
 ## Circular Image
 </DocsTitle>
 
-<CodePreview id="circular-img" className="mt-4" component={<ImgExamples.CircularImg />}>
+<CodePreview className="mt-4" component={<ImgExamples.CircularImg />}>
 ```jsx
-export default function Example() {
+export function CircularImg() {
   return (
     <img
-      className="h-96 w-96 rounded-full"
+      className="h-96 w-96 rounded-full object-cover object-center"
       src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
       alt="nature image"
     />
@@ -83,15 +85,15 @@ export default function Example() {
 ## Image with Caption
 </DocsTitle>
 
-<CodePreview id="img-with-caption" className="mt-4" component={<ImgExamples.ImgWithCaption />}>
+<CodePreview className="mt-4" component={<ImgExamples.ImgWithCaption />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function ImgWithCaption() {
   return (
     <figure>
       <img
-        className="h-full w-full rounded-lg"
+        className="h-96 w-full rounded-lg object-cover object-center"
         src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
         alt="nature image"
       />
@@ -110,12 +112,12 @@ export default function Example() {
 ## Image with Shadow
 </DocsTitle>
 
-<CodePreview id="img-with-shadow" className="mt-4" component={<ImgExamples.ImgWithShadow />}>
+<CodePreview className="mt-4" component={<ImgExamples.ImgWithShadow />}>
 ```jsx
-export default function Example() {
+export function ImgWithShadow() {
   return (
     <img
-      className="h-full w-full rounded-lg shadow-xl shadow-blue-gray-900/50"
+      className="h-96 w-full rounded-lg object-cover object-center shadow-xl shadow-blue-gray-900/50"
       src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
       alt="nature image"
     />
@@ -130,15 +132,15 @@ export default function Example() {
 ## Image with Blurred Caption
 </DocsTitle>
 
-<CodePreview id="img-with-blurred-caption" className="mt-4" component={<ImgExamples.ImgWithBlurredCaption />}>
+<CodePreview className="mt-4" component={<ImgExamples.ImgWithBlurredCaption />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function ImgWithBlurredCaption() {
   return (
-    <figure className="relative h-full w-full">
+    <figure className="relative h-96 w-full">
       <img
-        className="h-full w-full rounded-xl"
+        className="h-full w-full rounded-xl object-cover object-center"
         src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
         alt="nature image"
       />

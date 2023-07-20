@@ -44,7 +44,6 @@ import CheckoutForm from "components/docs/checkout-form";
 import InputWithButton from "components/docs/input-with-button";
 import CountriesCodeInput from "components/docs/countries-code-input";
 import ProfileMenu from "components/docs/profile-menu";
-import AvatarStack from "components/docs/avatar-stack";
 import Warning from "components/warning";
 
 // components examples
@@ -62,6 +61,9 @@ import * as ChipExamples from "docs-content/react/chip";
 import * as CollapseExamples from "docs-content/react/collapse";
 import * as DialogExamples from "docs-content/react/dialog";
 import * as DrawerExamples from "docs-content/react/drawer";
+import * as NavbarExamples from "docs-content/react/navbar";
+import * as FooterExamples from "docs-content/react/footer";
+import * as ImgExamples from "docs-content/react/img";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -70,10 +72,6 @@ import * as TimelineExamples from "components/docs/react/timeline";
 import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
-import * as NavbarExamples from "components/docs/react/navbar";
-
-import * as FooterExamples from "components/docs/react/footer";
-import * as ImgExamples from "components/docs/react/img";
 import * as VideoExamples from "components/docs/react/video";
 import * as SidebarExamples from "components/docs/react/sidebar";
 import * as TableExamples from "components/docs/react/table";
@@ -291,7 +289,6 @@ const components = {
   InputWithButton,
   CountriesCodeInput,
   ProfileMenu,
-  AvatarStack,
   Warning,
 
   // new components
