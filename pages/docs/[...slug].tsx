@@ -61,8 +61,8 @@ import * as CheckboxExamples from "docs-content/react/checkbox";
 import * as ChipExamples from "docs-content/react/chip";
 import * as CollapseExamples from "docs-content/react/collapse";
 import * as DialogExamples from "docs-content/react/dialog";
+import * as DrawerExamples from "docs-content/react/drawer";
 
-import * as DrawerExamples from "components/docs/react/drawer";
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
 import * as SpinnerExamples from "components/docs/react/spinner";

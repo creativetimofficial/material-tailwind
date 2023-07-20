@@ -351,7 +351,6 @@ import {
   Typography,
   Card,
 } from "@material-tailwind/react";
-import { HeartIcon, ShareIcon } from "@heroicons/react/24/solid";
 
 export function DialogWithImage() {
   const [open, setOpen] = React.useState(false);
@@ -405,7 +404,14 @@ export function DialogWithImage() {
               color={isFavorite ? "red" : "blue-gray"}
               onClick={handleIsFavorite}
             >
-              <HeartIcon className="h-5 w-5" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
             </IconButton>
             <Button color="green" size="sm">
               Free Download
@@ -444,7 +450,19 @@ export function DialogWithImage() {
             color="blue-gray"
             className="flex items-center gap-3"
           >
-            <ShareIcon className="h-4 w-4" /> Share
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                fillRule="evenodd"
+                d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Share
           </Button>
         </DialogFooter>
       </Dialog>
@@ -475,7 +493,6 @@ import {
   Typography,
   MenuItem,
 } from "@material-tailwind/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export function Web3Dialog() {
   const [open, setOpen] = React.useState(false);
@@ -496,7 +513,20 @@ export function Web3Dialog() {
             variant="text"
             onClick={handleOpen}
           >
-            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </IconButton>
         </DialogHeader>
         <DialogBody className="overflow-y-scroll pr-2">
@@ -691,7 +721,6 @@ import {
   Input,
   Textarea,
 } from "@material-tailwind/react";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 
 export function MessageDialog() {
   const [open, setOpen] = React.useState(false);
@@ -704,7 +733,19 @@ export function MessageDialog() {
       <Dialog open={open} handler={handleOpen}>
         <div className="flex items-center justify-between">
           <DialogHeader>New message to @</DialogHeader>
-          <XMarkIcon className="mr-3 h-5 w-5" onClick={handleOpen} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="mr-3 h-5 w-5"
+            onClick={handleOpen}
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
         </div>
         <DialogBody divider>
           <div className="grid gap-6">
@@ -744,7 +785,6 @@ import {
   DialogFooter,
   Typography,
 } from "@material-tailwind/react";
-import { BellIcon } from "@heroicons/react/24/solid";
 
 export function NotificationDialog() {
   const [open, setOpen] = React.useState(false);
@@ -761,7 +801,18 @@ export function NotificationDialog() {
           </Typography>
         </DialogHeader>
         <DialogBody divider className="grid place-items-center gap-4">
-          <BellIcon className="h-16 w-16 text-red-500" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-16 w-16 text-red-500"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clipRule="evenodd"
+            />
+          </svg>
           <Typography color="red" variant="h4">
             You should read this!
           </Typography>
