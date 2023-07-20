@@ -15,7 +15,9 @@ prev: video
 next: table
 ---
 
+<DocsTitle href="sidebar">
 # Tailwind CSS Sidebar - React
+</DocsTitle>
 
 Use our Tailwind CSS sidebar example to display a sidenav menu in your web projects.
 
@@ -23,7 +25,23 @@ See below our beautiful sidebar examples that you can use in your Tailwind CSS a
 
 <br />
 
-<CodePreview id="sidebar" component={<SidebarExamples.DefaultSidebar />}>
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+# npm
+npm i @heroicons/react
+
+# yarn
+yarn add @heroicons/react
+
+# pnpm
+pnpm i @heroicons/react
+```
+
+<br />
+<br />
+
+<CodePreview component={<SidebarExamples.DefaultSidebar />}>
 ```jsx
 import {
   Card,
@@ -43,9 +61,9 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function DefaultSidebar() {
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Sidebar
@@ -104,7 +122,7 @@ export default function Example() {
 ## Multi Level Sidebar
 </DocsTitle>
 
-<CodePreview id="multi-level-sidebar" className="mt-4" component={<SidebarExamples.MultiLevelSidebar />}>
+<CodePreview className="mt-4" component={<SidebarExamples.MultiLevelSidebar />}>
 ```jsx
 import React from "react";
 import {
@@ -129,7 +147,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function MultiLevelSidebar() {
   const [open, setOpen] = React.useState(0);
 
   const handleOpen = (value) => {
@@ -137,7 +155,7 @@ export default function Example() {
   };
 
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Sidebar
@@ -262,7 +280,7 @@ export default function Example() {
 ## Sidebar With Content Separator
 </DocsTitle>
 
-<CodePreview id="sidebar-with-content-separator" className="mt-4" component={<SidebarExamples.SidebarWithContentSeparator />}>
+<CodePreview className="mt-4" component={<SidebarExamples.SidebarWithContentSeparator />}>
 ```jsx
 import React from "react";
 import {
@@ -287,7 +305,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SidebarWithContentSeparator() {
   const [open, setOpen] = React.useState(0);
 
   const handleOpen = (value) => {
@@ -295,7 +313,7 @@ export default function Example() {
   };
 
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Sidebar
@@ -421,7 +439,7 @@ export default function Example() {
 ## Sidebar With CTA
 </DocsTitle>
 
-<CodePreview id="sidebar-with-cta" className="mt-4" component={<SidebarExamples.SidebarWithCta />}>
+<CodePreview className="mt-4" component={<SidebarExamples.SidebarWithCta />}>
 ```jsx
 import React from "react";
 import {
@@ -451,7 +469,7 @@ import {
   CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SidebarWithCta() {
   const [open, setOpen] = React.useState(0);
   const [openAlert, setOpenAlert] = React.useState(true);
 
@@ -460,7 +478,7 @@ export default function Example() {
   };
 
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Sidebar
@@ -610,7 +628,7 @@ export default function Example() {
 ## Sidebar With Logo
 </DocsTitle>
 
-<CodePreview id="sidebar-with-logo" className="mt-4" component={<SidebarExamples.SidebarWithLogo />}>
+<CodePreview className="mt-4" component={<SidebarExamples.SidebarWithLogo />}>
 ```jsx
 import React from "react";
 import {
@@ -640,7 +658,7 @@ import {
   CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SidebarWithLogo() {
   const [open, setOpen] = React.useState(0);
   const [openAlert, setOpenAlert] = React.useState(true);
 
@@ -649,7 +667,7 @@ export default function Example() {
   };
 
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 flex items-center gap-4 p-4">
         <img src="/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
         <Typography variant="h5" color="blue-gray">
@@ -800,7 +818,7 @@ export default function Example() {
 ## Sidebar With Search
 </DocsTitle>
 
-<CodePreview id="sidebar-with-search" className="mt-4" component={<SidebarExamples.SidebarWithSearch />}>
+<CodePreview className="mt-4" component={<SidebarExamples.SidebarWithSearch />}>
 ```jsx
 import React from "react";
 import {
@@ -832,7 +850,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SidebarWithSearch() {
   const [open, setOpen] = React.useState(0);
   const [openAlert, setOpenAlert] = React.useState(true);
 
@@ -841,7 +859,7 @@ export default function Example() {
   };
 
   return (
-    <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 flex items-center gap-4 p-4">
         <img src="/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
         <Typography variant="h5" color="blue-gray">
