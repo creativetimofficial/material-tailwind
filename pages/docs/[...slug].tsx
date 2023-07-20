@@ -66,12 +66,12 @@ import * as FooterExamples from "docs-content/react/footer";
 import * as ImgExamples from "docs-content/react/img";
 import * as VideoExamples from "docs-content/react/video";
 import * as TableExamples from "docs-content/react/table";
+import * as PaginationExamples from "docs-content/react/pagination";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
 import * as SpinnerExamples from "components/docs/react/spinner";
 import * as TimelineExamples from "components/docs/react/timeline";
-import * as PaginationExamples from "components/docs/react/pagination";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 import * as SidebarExamples from "components/docs/react/sidebar";
