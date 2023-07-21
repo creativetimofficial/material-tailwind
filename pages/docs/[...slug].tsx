@@ -84,7 +84,7 @@ import * as TextareaExamples from "docs-content/react/textarea";
 import DocsTitle from "components/docs-title";
 
 // @material-tailwind/react components
-import { Typography } from "@material-tailwind/react";
+import { Typography, Tooltip } from "@material-tailwind/react";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
@@ -164,6 +164,7 @@ const components = {
       {...props}
     />
   ),
+  Tooltip,
   CodeTabs,
   Image,
   ComponentDemo,
@@ -313,6 +314,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMeta = fs.readFileSync(
     `documentation/${slug.join("/")}.mdx`,
   );
+
+  console.log(slug);
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
