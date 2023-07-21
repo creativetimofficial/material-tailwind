@@ -81,8 +81,8 @@ import * as StepperExamples from "docs-content/react/stepper";
 import * as TimelineExamples from "docs-content/react/timeline";
 import * as TooltipExamples from "docs-content/react/tooltip";
 import * as SwitchExamples from "docs-content/react/switch";
+import * as TabsExamples from "docs-content/react/tabs";
 
-import TransparentTabs from "components/docs/transparent-tabs";
 import DocsTitle from "components/docs-title";
 
 // @material-tailwind/react components
@@ -330,8 +330,7 @@ const components = {
   TimelineExamples,
   TooltipExamples,
   SwitchExamples,
-
-  TransparentTabs,
+  TabsExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
