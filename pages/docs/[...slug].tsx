@@ -10,9 +10,6 @@ import { useRouter } from "next/router";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
-// mdx-observable components
-import { State, Observe } from "mdx-observable";
-
 // markdown utils
 import fs from "fs";
 import matter from "gray-matter";
@@ -87,60 +84,7 @@ import * as TextareaExamples from "docs-content/react/textarea";
 import DocsTitle from "components/docs-title";
 
 // @material-tailwind/react components
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Alert,
-  Avatar,
-  Breadcrumbs,
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Checkbox,
-  Chip,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-  IconButton,
-  Input,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  MobileNav,
-  Navbar,
-  Option,
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-  Progress,
-  Radio,
-  Select,
-  Switch,
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-  Textarea,
-  Tooltip,
-  Typography,
-  Carousel,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Collapse,
-  Slider,
-} from "@material-tailwind/react";
-
-// @heroicons
-import * as OutlineIcons from "@heroicons/react/24/outline";
-import * as SolidIcons from "@heroicons/react/24/solid";
+import { Typography } from "@material-tailwind/react";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
@@ -220,8 +164,6 @@ const components = {
       {...props}
     />
   ),
-  State,
-  Observe,
   CodeTabs,
   Image,
   ComponentDemo,
@@ -238,57 +180,7 @@ const components = {
   ColorPalette,
   CodePreview,
   DocsTitle,
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Alert,
-  Avatar,
-  Breadcrumbs,
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Checkbox,
-  Chip,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-  IconButton,
-  Input,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  MobileNav,
-  Navbar,
-  Option,
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-  Progress,
-  Radio,
-  Select,
-  Switch,
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-  Textarea,
-  Tooltip,
-  Typography,
   Link,
-  Carousel,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Collapse,
-  Slider,
-  OutlineIcons,
-  SolidIcons,
   Warning,
 
   // new components
