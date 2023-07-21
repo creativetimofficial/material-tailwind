@@ -7,34 +7,26 @@ navigation:
     "radio-button-colors",
     "radio-button-custom-icon",
     "radio-button-ripple-effect",
-    "disabled-radio-button",
+    "radio-button-disabled",
     "radio-button-with-link",
     "radio-button-with-description",
     "radio-button-vertical-list-group",
     "radio-button-horizontal-list-group",
-    "radio-button-with-custom-styles",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/radio-button",
-      description: "Learn more about props definition and types of radio button component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/radio-button",
-      description: "Learn how to customize the theme and styles for radio button component.",
-    },
+    "radio-button-custom-styles",
+    "radio-button-props",
+    "types-color",
+    "radio-button-theme",
+    "radio-button-theme-object-type",
+    "radio-button-theme-customization"
   ]
 github: radio-button
 prev: pagination
 next: rating-bar
 ---
 
+<DocsTitle href="radio-button">
 # Tailwind CSS Radio Button - React
+</DocsTitle>
 
 Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options. <Code>Radio</Code> buttons should be used instead of checkboxes if only one item can be selected from a list.
 
@@ -42,20 +34,15 @@ Use the following example to create simple <Code>Radio</Code> buttons for your p
 
 <br />
 
-<CodePreview id="radio-button" link="radio-button#radio-button" component={
-  <div className="flex gap-10">
-    <Radio id="html" name="type" label="HTML" />
-    <Radio id="react" name="type" label="React" defaultChecked />
-  </div>
-}>
+<CodePreview link="radio-button#radio-button" component={<RadioExamples.RadioDefault />}>
 ```jsx
 import { Radio } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioDefault() {
   return (
     <div className="flex gap-10">
-      <Radio id="html" name="type" label="HTML" />
-      <Radio id="react" name="type" label="React" defaultChecked />
+      <Radio name="type" label="HTML" />
+      <Radio name="type" label="React" defaultChecked />
     </div>
   );
 }
@@ -70,32 +57,21 @@ export default function Example() {
 
 The <Code>Radio</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="radio-button-colors" link="radio-button#radio-button-colors" component={
-  <div className="flex w-max gap-4">
-    <Radio id="blue" name="color" color="blue" defaultChecked />
-    <Radio id="red" name="color" color="red" />
-    <Radio id="green" name="color" color="green" />
-    <Radio id="amber" name="color" color="amber" />
-    <Radio id="teal" name="color" color="teal" />
-    <Radio id="indigo" name="color" color="indigo" />
-    <Radio id="purple" name="color" color="purple" />
-    <Radio id="pink" name="color" color="pink" />
-  </div>
-}>
+<CodePreview link="radio-button#radio-button-colors" component={<RadioExamples.RadioColors />}>
 ```jsx
 import { Radio } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioColors() {
   return (
     <div className="flex w-max gap-4">
-      <Radio id="blue" name="color" color="blue" defaultChecked />
-      <Radio id="red" name="color" color="red" />
-      <Radio id="green" name="color" color="green" />
-      <Radio id="amber" name="color" color="amber" />
-      <Radio id="teal" name="color" color="teal" />
-      <Radio id="indigo" name="color" color="indigo" />
-      <Radio id="purple" name="color" color="purple" />
-      <Radio id="pink" name="color" color="pink" />
+      <Radio name="color" color="blue" defaultChecked />
+      <Radio name="color" color="red" />
+      <Radio name="color" color="green" />
+      <Radio name="color" color="amber" />
+      <Radio name="color" color="teal" />
+      <Radio name="color" color="indigo" />
+      <Radio name="color" color="purple" />
+      <Radio name="color" color="pink" />
     </div>
   );
 }
@@ -110,58 +86,14 @@ export default function Example() {
 
 You can add a custom icon for the <Code>Radio</Code> button component when it's checked by passing the <Code>icon</Code> prop to the <Code>Radio</Code> button component.
 
-<CodePreview id="radio-button-custom-icon" component={
-  <>
-    <Radio
-      id="html-1"
-      name="type"
-      label="HTML"
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-            clipRule="evenodd"
-          />
-        </svg>
-      }
-    />
-    <Radio
-      id="react-1"
-      name="type"
-      label="React"
-      icon={
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-            clipRule="evenodd"
-          />
-        </svg>
-      }
-      defaultChecked
-    />
-  </>
-}>
+<CodePreview id="radio-button-custom-icon" component={<RadioExamples.RadioCustomIcon />}>
 ```jsx
-import { Fragment } from "react";
 import { Radio } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioCustomIcon() {
   return (
-    <Fragment>
+    <>
       <Radio
-        id="html"
         name="type"
         label="HTML"
         icon={
@@ -180,7 +112,6 @@ export default function Example() {
         }
       />
       <Radio
-        id="react"
         name="type"
         label="React"
         icon={
@@ -199,7 +130,7 @@ export default function Example() {
         }
         defaultChecked
       />
-    </Fragment>
+    </>
   );
 }
 ```
@@ -213,30 +144,15 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Radio</Code> button component using the <Code>ripple</Code> prop.
 
-<CodePreview id="radio-button-ripple-effect" link="radio-button#radio-button-ripple-effect" component={
-  <div className="flex gap-10">
-    <Radio id="html-2" name="type" label="Ripple Effect On" />
-    <Radio id="react-2" name="type" label="Ripple Effect Off" ripple={false} />
-  </div>
-}>
+<CodePreview link="radio-button#radio-button-ripple-effect" component={<RadioExamples.RadioRippleEffect />}>
 ```jsx
 import { Radio } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioRippleEffect() {
   return (
     <div className="flex gap-10">
-      <Radio
-        id="ripple-on"
-        name="type"
-        label="Ripple Effect On"
-        ripple={true}
-      />
-      <Radio
-        id="ripple-off"
-        name="type"
-        label="Ripple Effect Off"
-        ripple={false}
-      />
+      <Radio name="type" label="Ripple Effect On" ripple={true} />
+      <Radio name="type" label="Ripple Effect Off" ripple={false} />
     </div>
   );
 }
@@ -245,26 +161,21 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="disabled-radio-button">
-## Disabled Radio Button
+<DocsTitle href="radio-button-disabled">
+## Radio Button Disabled
 </DocsTitle>
 
 You can make a radio button disable by passing the <Code>disabled</Code> prop to the <Code>Radio</Code> component.
 
-<CodePreview id="disabled-radio-button" component={
-  <div className="flex gap-10">
-    <Radio id="disabled-html" name="type" label="HTML" disabled={true} />
-    <Radio id="disabled-react" name="type" label="React" disabled={true} defaultChecked={true} />
-  </div>
-}>
+<CodePreview component={<RadioExamples.RadioDisabled />}>
 ```jsx
 import { Radio } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioDisabled() {
   return (
     <div className="flex gap-10">
-      <Radio id="html" name="type" label="HTML" disable={true} />
-      <Radio id="react" name="type" label="React" disable={true} defaultChecked={true} />
+      <Radio name="type" label="HTML" disabled />
+      <Radio name="type" label="React" disabled defaultChecked />
     </div>
   );
 }
@@ -279,44 +190,47 @@ export default function Example() {
 
 The <Code>label</Code> prop for the the radio button can accept dom elements and because of that you can put links or any other dom elements you like to have with your radio button label.
 
-<CodePreview id="radio-button-with-link" component={
-  <div className="flex flex-col gap-2">
-    <Radio id="terms-html" name="terms" label={
-      <Typography color="blue-gray" className="font-medium flex">I agree with HTML
-        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-          &nbsp;terms and conditions
-        </Typography>.
-      </Typography>
-    } />
-    <Radio id="terms-react" name="terms" label={
-      <Typography color="blue-gray" className="font-medium flex">I agree with React
-        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-          &nbsp;terms and conditions
-        </Typography>.
-      </Typography>
-    } />
-  </div>
-}>
+<CodePreview component={<RadioExamples.RadioWithLink />}>
 ```jsx
 import { Radio, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioWithLink() {
   return (
     <div className="flex flex-col gap-2">
-      <Radio id="terms-html" name="terms" label={
-        <Typography color="blue-gray" className="font-medium flex">I agree with HTML
-          <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-            &nbsp;terms and conditions
-          </Typography>.
-        </Typography>
-      } />
-      <Radio id="terms-react" name="terms" label={
-        <Typography color="blue-gray" className="font-medium flex">I agree with React
-          <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-            &nbsp;terms and conditions
-          </Typography>.
-        </Typography>
-      } />
+      <Radio
+        name="terms"
+        label={
+          <Typography color="blue-gray" className="flex font-medium">
+            I agree with HTML
+            <Typography
+              as="a"
+              href="#"
+              color="blue"
+              className="font-medium transition-colors hover:text-blue-700"
+            >
+              &nbsp;terms and conditions
+            </Typography>
+            .
+          </Typography>
+        }
+      />
+      <Radio
+        name="terms"
+        label={
+          <Typography color="blue-gray" className="flex font-medium">
+            I agree with React
+            <Typography
+              as="a"
+              href="#"
+              color="blue"
+              className="font-medium transition-colors hover:text-blue-700"
+            >
+              &nbsp;terms and conditions
+            </Typography>
+            .
+          </Typography>
+        }
+      />
     </div>
   );
 }
@@ -331,74 +245,43 @@ export default function Example() {
 
 Use the example below for a more complex usage of radio button with label that contains some description.
 
-<CodePreview id="radio-button-with-description" component={
-  <div className="flex flex-col gap-8">
-    <Radio 
-      name="description"
-      id="description-html"
-      label={
-        <div>
-          <Typography color="blue-gray" className="font-medium">HTML Version</Typography>
-          <Typography variant="small" color="gray" className="font-normal">
-            @material-tailwind/html, packed with rich components and widgets.
-          </Typography>
-        </div>
-      }
-      containerProps={{
-        className: "-mt-5"
-      }}
-    />
-    <Radio 
-      name="description"
-      id="description-react"
-      label={
-        <div>
-          <Typography color="blue-gray" className="font-medium">React Version</Typography>
-          <Typography variant="small" color="gray" className="font-normal">
-            @material-tailwind/react, packed with rich components and widgets.
-          </Typography>
-        </div>
-      }
-      containerProps={{
-        className: "-mt-5"
-      }}
-    />
-  </div>
-}>
+<CodePreview component={<RadioExamples.RadioWithDescription />}>
 ```jsx
 import { Radio, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioWithDescription() {
   return (
     <div className="flex flex-col gap-8">
-      <Radio 
+      <Radio
         name="description"
-        id="description-html"
         label={
           <div>
-            <Typography color="blue-gray" className="font-medium">HTML Version</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              HTML Version
+            </Typography>
             <Typography variant="small" color="gray" className="font-normal">
               @material-tailwind/html, packed with rich components and widgets.
             </Typography>
           </div>
         }
         containerProps={{
-          className: "-mt-5"
+          className: "-mt-5",
         }}
       />
-      <Radio 
+      <Radio
         name="description"
-        id="description-react"
         label={
           <div>
-            <Typography color="blue-gray" className="font-medium">React Version</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
             <Typography variant="small" color="gray" className="font-normal">
               @material-tailwind/react, packed with rich components and widgets.
             </Typography>
           </div>
         }
         containerProps={{
-          className: "-mt-5"
+          className: "-mt-5",
         }}
       />
     </div>
@@ -415,60 +298,7 @@ export default function Example() {
 
 Use the example below for a vertical list of radio buttons.
 
-<CodePreview id="radio-button-vertical-list-group" component={
-  <Card>
-    <List>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio
-              name="vertical-list" 
-              id="vertical-list-react" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">React.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio
-              name="vertical-list"
-              id="vertical-list-vue" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio
-              name="vertical-list"
-              id="vertical-list-svelte" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
-        </label>
-      </ListItem>
-    </List>
-  </Card>
-}>
+<CodePreview component={<RadioExamples.RadioVerticalList />}>
 ```jsx
 import {
   Radio,
@@ -476,59 +306,74 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioVerticalList() {
   return (
     <Card>
       <List>
         <ListItem className="p-0">
-          <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
-            <ListItemPrefix className="mr-3">
-              <Radio
-                name="vertical-list" 
-                id="vertical-list-react" 
-                ripple={false} 
-                className="hover:before:opacity-0"
-                containerProps={{
-                  className: "p-0"
-                }}
-              />
-            </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">React.js</Typography>
-          </label>
-        </ListItem>
-        <ListItem className="p-0">
-          <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="vertical-list-react"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
               <Radio
                 name="vertical-list"
-                id="vertical-list-vue" 
-                ripple={false} 
+                id="vertical-list-react"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              React.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="vertical-list-vue"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
               <Radio
                 name="vertical-list"
-                id="vertical-list-svelte" 
-                ripple={false} 
+                id="vertical-list-vue"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Vue.js
+            </Typography>
+          </label>
+        </ListItem>
+        <ListItem className="p-0">
+          <label
+            htmlFor="vertical-list-svelte"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
+            <ListItemPrefix className="mr-3">
+              <Radio
+                name="vertical-list"
+                id="vertical-list-svelte"
+                ripple={false}
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0",
+                }}
+              />
+            </ListItemPrefix>
+            <Typography color="blue-gray" className="font-medium">
+              Svelte.js
+            </Typography>
           </label>
         </ListItem>
       </List>
@@ -546,60 +391,7 @@ export default function Example() {
 
 Use the example below for a horizontal list of radio buttons.
 
-<CodePreview id="radio-button-horizontal-list-group" component={
-  <Card className="w-full max-w-[24rem]">
-    <List className="flex-row">
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio 
-              name="horizontal-list"
-              id="horizontal-list-react" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">React.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio 
-              name="horizontal-list"
-              id="horizontal-list-vue" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Radio 
-              name="horizontal-list" 
-              id="horizontal-list-svelte" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
-        </label>
-      </ListItem>
-    </List>
-  </Card>
-}>
+<CodePreview component={<RadioExamples.RadioHorizontalList />}>
 ```jsx
 import {
   Radio,
@@ -607,59 +399,74 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function RadioHorizontalList() {
   return (
     <Card className="w-full max-w-[24rem]">
       <List className="flex-row">
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-react"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Radio 
+              <Radio
                 name="horizontal-list"
-                id="horizontal-list-react" 
-                ripple={false} 
+                id="horizontal-list-react"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              React.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-vue"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Radio 
+              <Radio
                 name="horizontal-list"
-                id="horizontal-list-vue" 
-                ripple={false} 
+                id="horizontal-list-vue"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Vue.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-svelte"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Radio 
-                name="horizontal-list" 
-                id="horizontal-list-svelte" 
-                ripple={false} 
+              <Radio
+                name="horizontal-list"
+                id="horizontal-list-svelte"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Svelte.js
+            </Typography>
           </label>
         </ListItem>
       </List>
@@ -671,58 +478,58 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="radio-button-with-custom-styles">
-## Radio Button with Custom Styles
+<DocsTitle href="radio-button-custom-styles">
+## Radio Button Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>Radio</Code> component.
 
-<CodePreview id="radio-button-with-custom-styles" component={
-  <div className="flex gap-10">
-    <Radio
-      id="premium"
-      name="type"
-      ripple={false}
-      icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
-      className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
-      label={<Typography color="blue-gray" className="font-normal">Premium</Typography>}
-    />
-    <Radio
-      id="free"
-      name="type"
-      label="React"
-      defaultChecked
-      ripple={false}
-      icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
-      className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
-      label={<Typography color="blue-gray" className="font-normal">Free</Typography>}
-    />
-  </div>
-}>
+<CodePreview component={<RadioExamples.RadioCustomStyles />}>
 ```jsx
-import { Radio, Typography} from "@material-tailwind/react";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { Radio, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+function Icon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-full w-full scale-105"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+export function RadioCustomStyles() {
   return (
     <div className="flex gap-10">
       <Radio
-        id="premium"
         name="type"
         ripple={false}
-        icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
-        className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
-        label={<Typography color="blue-gray" className="font-normal">Premium</Typography>}
+        icon={<Icon />}
+        className="border-blue-500/50 bg-blue-500/25 p-0 transition-all hover:before:opacity-0"
+        label={
+          <Typography color="blue-gray" className="font-normal">
+            Premium
+          </Typography>
+        }
       />
       <Radio
-        id="free"
         name="type"
-        label="React"
         defaultChecked
         ripple={false}
-        icon={<SolidIcons.CheckCircleIcon className="w-full h-full scale-105" />}
-        className="hover:before:opacity-0 bg-blue-500/25 border-blue-500/50 transition-all p-0"
-        label={<Typography color="blue-gray" className="font-normal">Free</Typography>}
+        icon={<Icon />}
+        className="border-blue-500/50 bg-blue-500/25 p-0 transition-all hover:before:opacity-0"
+        label={
+          <Typography color="blue-gray" className="font-normal">
+            Free
+          </Typography>
+        }
       />
     </div>
   );
@@ -730,5 +537,329 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="radio-button-props">
+## Radio Button Props
+</DocsTitle>
+
+The following props are available for radio button component. These are the custom
+props that we've added for the radio button component and you can use all the other
+native input props as well.
+
+| Attribute        | Type                  | Description                                   | Default                |
+| ---------------- | --------------------- | --------------------------------------------- | ---------------------- |
+| `color`          | [Color](#types-color) | Change radio button color                     | <Code>blue</Code>      |
+| `label`          | <Code>node</Code>     | Add label for radio button                    | <Code>undefined</Code> |
+| `icon`           | <Code>node</Code>     | Change checked icon for radio button          | <Code>undefined</Code> |
+| `ripple`         | <Code>boolean</Code>  | Add ripple effect for radio button            | <Code>true</Code>      |
+| `className`      | <Code>string</Code>   | Add custom className for radio button         | `''`                   |
+| `disabled`       | <Code>boolean</Code>  | Makes the radio button disabled               | <Code>false</Code>     |
+| `containerProps` | <Code>object</Code>   | Add custom props for radio button container   | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>   | Add custom props for radio button label       | <Code>undefined</Code> |
+| `iconProps`      | <Code>object</Code>   | Add custom props for radio button icon        | <Code>undefined</Code> |
+| `inputRef`       | <Code>ref</Code>      | Add reference for <Code>input</Code> element. | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { RadioProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="radio-button-theme">
+## Radio Button Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for radio button component, the theme object for radio button component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of radio button component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for radio button component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of radio button component.<br />
+
+You can customize the theme and styles of radio button component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="radio-button-theme-object-type">
+## Radio Button Theme Object Type
+</DocsTitle>
+
+```ts
+interface RadioStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    icon: node;
+    ripple: boolean;
+    className: string;
+    disabled: boolean;
+    containerProps: object;
+    labelProps: object;
+    iconProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
+      icon: object;
+      disabled: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { RadioStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="radio-button-theme-customization">
+## Radio Button Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  radio: {
+    defaultProps: {
+      color: "blue",
+      label: undefined,
+      icon: undefined,
+      ripple: true,
+      className: "",
+      disabled: false,
+      containerProps: undefined,
+      labelProps: undefined,
+      iconProps: undefined,
+    },
+    valid: {
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        root: {
+          display: "inline-flex",
+          alignItems: "items-center",
+        },
+        container: {
+          position: "relative",
+          display: "flex",
+          alignItems: "items-center",
+          cursor: "cursor-pointer",
+          p: "p-3",
+          borderRadius: "rounded-full",
+        },
+        input: {
+          peer: "peer",
+          position: "relative",
+          appearance: "appearance-none",
+          width: "w-5",
+          height: "h-5",
+          borderWidth: "border",
+          borderRadius: "rounded-full",
+          borderColor: "border-blue-gray-200",
+          cursor: "cursor-pointer",
+          transition: "transition-all",
+          before: {
+            content: "before:content['']",
+            display: "before:block",
+            bg: "before:bg-blue-gray-500",
+            width: "before:w-12",
+            height: "before:h-12",
+            borderRadius: "before:rounded-full",
+            position: "before:absolute",
+            top: "before:top-2/4",
+            left: "before:left-2/4",
+            transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+            opacity: "before:opacity-0 hover:before:opacity-10",
+            transition: "before:transition-opacity",
+          },
+        },
+        label: {
+          color: "text-gray-700",
+          fontWeight: "font-light",
+          userSelect: "select-none",
+          cursor: "cursor-pointer",
+          mt: "mt-px",
+        },
+        icon: {
+          position: "absolute",
+          top: "top-2/4",
+          left: "left-2/4",
+          translate: "-translate-y-2/4 -translate-x-2/4",
+          pointerEvents: "pointer-events-none",
+          opacity: "opacity-0 peer-checked:opacity-100",
+          transition: "transition-opacity",
+        },
+        disabled: {
+          opacity: "opacity-50",
+          pointerEvents: "pointer-events-none",
+        },
+      },
+      colors: {
+        "blue-gray": {
+          color: "text-blue-gray-500",
+          border: "checked:border-blue-gray-500",
+          before: "checked:before:bg-blue-gray-500",
+        },
+        gray: {
+          color: "text-gray-500",
+          border: "checked:border-gray-500",
+          before: "checked:before:bg-gray-500",
+        },
+        brown: {
+          color: "text-brown-500",
+          border: "checked:border-brown-500",
+          before: "checked:before:bg-brown-500",
+        },
+        "deep-orange": {
+          color: "text-deep-orange-500",
+          border: "checked:border-deep-orange-500",
+          before: "checked:before:bg-deep-orange-500",
+        },
+        orange: {
+          color: "text-orange-500",
+          border: "checked:border-orange-500",
+          before: "checked:before:bg-orange-500",
+        },
+        amber: {
+          color: "text-amber-500",
+          border: "checked:border-amber-500",
+          before: "checked:before:bg-amber-500",
+        },
+        yellow: {
+          color: "text-yellow-500",
+          border: "checked:border-yellow-500",
+          before: "checked:before:bg-yellow-500",
+        },
+        lime: {
+          color: "text-lime-500",
+          border: "checked:border-lime-500",
+          before: "checked:before:bg-lime-500",
+        },
+        "light-green": {
+          color: "text-light-green-500",
+          border: "checked:border-light-green-500",
+          before: "checked:before:bg-light-green-500",
+        },
+        green: {
+          color: "text-green-500",
+          border: "checked:border-green-500",
+          before: "checked:before:bg-green-500",
+        },
+        teal: {
+          color: "text-teal-500",
+          border: "checked:border-teal-500",
+          before: "checked:before:bg-teal-500",
+        },
+        cyan: {
+          color: "text-cyan-500",
+          border: "checked:border-cyan-500",
+          before: "checked:before:bg-cyan-500",
+        },
+        "light-blue": {
+          color: "text-light-blue-500",
+          border: "checked:border-light-blue-500",
+          before: "checked:before:bg-light-blue-500",
+        },
+        blue: {
+          color: "text-blue-500",
+          border: "checked:border-blue-500",
+          before: "checked:before:bg-blue-500",
+        },
+        indigo: {
+          color: "text-indigo-500",
+          border: "checked:border-indigo-500",
+          before: "checked:before:bg-indigo-500",
+        },
+        "deep-purple": {
+          color: "text-deep-purple-500",
+          border: "checked:border-deep-purple-500",
+          before: "checked:before:bg-deep-purple-500",
+        },
+        purple: {
+          color: "text-purple-500",
+          border: "checked:border-purple-500",
+          before: "checked:before:bg-purple-500",
+        },
+        pink: {
+          color: "text-pink-500",
+          border: "checked:border-pink-500",
+          before: "checked:before:bg-pink-500",
+        },
+        red: {
+          color: "text-red-500",
+          border: "checked:border-red-500",
+          before: "checked:before:bg-red-500",
+        },
+      },
+    },
+  },
+};
+```

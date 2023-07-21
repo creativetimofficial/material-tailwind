@@ -10,14 +10,11 @@ import { useRouter } from "next/router";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
-// mdx-observable components
-import { State, Observe } from "mdx-observable";
-
 // markdown utils
 import fs from "fs";
 import matter from "gray-matter";
-import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code";
 
 // page components
 import DocsFooter from "components/layout/docs-footer";
@@ -39,32 +36,51 @@ import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
-import CountriesSelect from "components/docs/countries-select";
-import CheckoutForm from "components/docs/checkout-form";
-import InputWithButton from "components/docs/input-with-button";
-import CountriesCodeInput from "components/docs/countries-code-input";
-import ProfileMenu from "components/docs/profile-menu";
-import AvatarStack from "components/docs/avatar-stack";
 import Warning from "components/warning";
 
-// new imports
-import * as BadgeExamples from "components/docs/react/badge";
-import * as DrawerExamples from "components/docs/react/drawer";
-import * as RatingExamples from "components/docs/react/rating";
-import * as SliderExamples from "components/docs/react/slider";
-import * as SpinnerExamples from "components/docs/react/spinner";
-import * as TimelineExamples from "components/docs/react/timeline";
-import * as PaginationExamples from "components/docs/react/pagination";
-import * as SpeedDialExamples from "components/docs/react/speed-dial";
-import * as StepperExamples from "components/docs/react/stepper";
-import * as NavbarExamples from "components/docs/react/navbar";
-import * as DialogExamples from "components/docs/react/dialog";
-import * as FooterExamples from "components/docs/react/footer";
-import * as ImgExamples from "components/docs/react/img";
-import * as VideoExamples from "components/docs/react/video";
-import * as SidebarExamples from "components/docs/react/sidebar";
-import * as TableExamples from "components/docs/react/table";
-import TransparentTabs from "components/docs/transparent-tabs";
+// components examples
+import * as AccordionExamples from "docs-content/react/accordion";
+import * as AlertExamples from "docs-content/react/alert";
+import * as AvatarExamples from "docs-content/react/avatar";
+import * as BadgeExamples from "docs-content/react/badge";
+import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
+import * as ButtonGroupExamples from "docs-content/react/button-group";
+import * as ButtonExamples from "docs-content/react/button";
+import * as CardExamples from "docs-content/react/card";
+import * as CarouselExamples from "docs-content/react/carousel";
+import * as CheckboxExamples from "docs-content/react/checkbox";
+import * as ChipExamples from "docs-content/react/chip";
+import * as CollapseExamples from "docs-content/react/collapse";
+import * as DialogExamples from "docs-content/react/dialog";
+import * as DrawerExamples from "docs-content/react/drawer";
+import * as NavbarExamples from "docs-content/react/navbar";
+import * as FooterExamples from "docs-content/react/footer";
+import * as ImgExamples from "docs-content/react/img";
+import * as VideoExamples from "docs-content/react/video";
+import * as TableExamples from "docs-content/react/table";
+import * as PaginationExamples from "docs-content/react/pagination";
+import * as SidebarExamples from "docs-content/react/sidebar";
+import * as FormExamples from "docs-content/react/form";
+import * as IconButtonExamples from "docs-content/react/icon-button";
+import * as InputExamples from "docs-content/react/input";
+import * as ListExamples from "docs-content/react/list";
+import * as TypographyExamples from "docs-content/react/typography";
+import * as MenuExamples from "docs-content/react/menu";
+import * as RatingExamples from "docs-content/react/rating";
+import * as PopoverExamples from "docs-content/react/popover";
+import * as ProgressExamples from "docs-content/react/progress";
+import * as RadioExamples from "docs-content/react/radio";
+import * as SliderExamples from "docs-content/react/slider";
+import * as SelectExamples from "docs-content/react/select";
+import * as SpeedDialExamples from "docs-content/react/speed-dial";
+import * as SpinnerExamples from "docs-content/react/spinner";
+import * as StepperExamples from "docs-content/react/stepper";
+import * as TimelineExamples from "docs-content/react/timeline";
+import * as TooltipExamples from "docs-content/react/tooltip";
+import * as SwitchExamples from "docs-content/react/switch";
+import * as TabsExamples from "docs-content/react/tabs";
+import * as TextareaExamples from "docs-content/react/textarea";
+
 import DocsTitle from "components/docs-title";
 
 // @material-tailwind/react components
@@ -120,10 +136,6 @@ import {
   Slider,
 } from "@material-tailwind/react";
 
-// @heroicons
-import * as OutlineIcons from "@heroicons/react/24/outline";
-import * as SolidIcons from "@heroicons/react/24/solid";
-
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
 import { routes as reactRoutes } from "routes/react.routes";
@@ -138,10 +150,32 @@ import initHtmlScripts from "public/material-tailwind-html-v2";
 
 const components = {
   h1: (props) => (
-    <Typography as="h1" variant="h3" color="blue-gray" className="!mb-4 lg:!text-4xl" {...props} />
+    <Typography
+      as="h1"
+      variant="h3"
+      color="blue-gray"
+      className="!mb-4 lg:!text-4xl"
+      {...props}
+    />
   ),
-  h2: (props) => <Typography as="h2" variant="h4" color="blue-gray" className="!mb-2" {...props} />,
-  h3: (props) => <Typography as="h3" variant="h5" color="blue-gray" className="!mb-2" {...props} />,
+  h2: (props) => (
+    <Typography
+      as="h2"
+      variant="h4"
+      color="blue-gray"
+      className="!mb-2"
+      {...props}
+    />
+  ),
+  h3: (props) => (
+    <Typography
+      as="h3"
+      variant="h5"
+      color="blue-gray"
+      className="!mb-2"
+      {...props}
+    />
+  ),
   h6: (props) => (
     <Typography
       as="p"
@@ -150,7 +184,9 @@ const components = {
       {...props}
     />
   ),
-  p: (props) => <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />,
+  p: (props) => (
+    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
+  ),
   hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
   a: (props) => (
     <a
@@ -178,24 +214,6 @@ const components = {
       {...props}
     />
   ),
-  State,
-  Observe,
-  CodeTabs,
-  Image,
-  ComponentDemo,
-  CodeSandbox,
-  StackBlitz,
-  Code,
-  Framework,
-  CraLogo,
-  NextLogo,
-  RemixLogo,
-  ViteLogo,
-  AstroLogo,
-  GatsbyLogo,
-  ColorPalette,
-  CodePreview,
-  DocsTitle,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -237,7 +255,6 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
-  Link,
   ButtonGroup,
   Carousel,
   List,
@@ -246,34 +263,67 @@ const components = {
   ListItemSuffix,
   Collapse,
   Slider,
-  OutlineIcons,
-  SolidIcons,
-  CountriesSelect,
-  CheckoutForm,
-  InputWithButton,
-  CountriesCodeInput,
-  ProfileMenu,
-  AvatarStack,
+  CodeTabs,
+  Image,
+  ComponentDemo,
+  CodeSandbox,
+  StackBlitz,
+  Code,
+  Framework,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
+  AstroLogo,
+  GatsbyLogo,
+  ColorPalette,
+  CodePreview,
+  DocsTitle,
+  Link,
   Warning,
 
   // new components
+  AccordionExamples,
+  AlertExamples,
+  AvatarExamples,
   BadgeExamples,
+  BreadcrumbsExamples,
+  ButtonGroupExamples,
+  ButtonExamples,
+  CardExamples,
+  CarouselExamples,
+  CheckboxExamples,
+  ChipExamples,
+  CollapseExamples,
   DrawerExamples,
-  RatingExamples,
-  SliderExamples,
-  SpinnerExamples,
-  TimelineExamples,
   PaginationExamples,
-  SpeedDialExamples,
-  StepperExamples,
   NavbarExamples,
-  DialogExamples,
-  FooterExamples,
   ImgExamples,
   VideoExamples,
   SidebarExamples,
   TableExamples,
-  TransparentTabs,
+  DialogExamples,
+  FooterExamples,
+  FormExamples,
+  IconButtonExamples,
+  InputExamples,
+  ListExamples,
+  TypographyExamples,
+  MenuExamples,
+  RatingExamples,
+  PopoverExamples,
+  ProgressExamples,
+  RadioExamples,
+  SelectExamples,
+  SliderExamples,
+  SpeedDialExamples,
+  SpinnerExamples,
+  StepperExamples,
+  TimelineExamples,
+  TooltipExamples,
+  SwitchExamples,
+  TabsExamples,
+  TextareaExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -315,7 +365,9 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && <DocsRelated routes={frontMatter.related} />}
+              {frontMatter.related && (
+                <DocsRelated routes={frontMatter.related} />
+              )}
               <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
@@ -357,7 +409,9 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(`documentation/${slug.join("/")}.mdx`);
+  const markdownWithMeta = fs.readFileSync(
+    `documentation/${slug.join("/")}.mdx`,
+  );
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 

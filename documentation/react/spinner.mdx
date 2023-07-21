@@ -5,29 +5,16 @@ navigation: [
   "spinner", 
   "spinner-sizes", 
   "spinner-colors",
-  "spinner-with-custom-styles" 
-  # "props", 
-  # "theme"
+  "spinner-custom-styles" 
 ]
-# related:
-#   [
-#     {
-#       title: "Props",
-#       route: "props/spinner",
-#       description: "Learn more about props definition and types of spinner components.",
-#     },
-#     {
-#       title: "Theme",
-#       route: "theme/spinner",
-#       description: "Learn how to customize the theme and styles for spinner components.",
-#     },
-#   ]
 github: spinner
 prev: speed-dial
 next: stepper
 ---
 
+<DocsTitle href="spinner">
 # Tailwind CSS Spinner - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Spinner</Code> component in your web projects. The <Code>Spinner</Code> can be used for loading states on your website.
 
@@ -35,11 +22,11 @@ See below our beautiful <Code>Spinner</Code> example that you can use in your Ta
 
 <br />
 
-<CodePreview id="spinner" component={<SpinnerExamples.DefaultSpinner />}>
+<CodePreview component={<SpinnerExamples.DefaultSpinner />}>
 ```jsx
 import { Spinner } from "@material-tailwind/react";
 
-export default function Example() {
+export function DefaultSpinner() {
   return <Spinner />;
 }
 ```
@@ -53,11 +40,11 @@ export default function Example() {
 
 You can customize the size of the <Code>Spinner</Code> component using the tailwind css <Code>w-{`*`}</Code> and <Code>h-{`*`}</Code> classes or using the <Code>width</Code> and <Code>height</Code> props.
 
-<CodePreview id="spinner-sizes" component={<SpinnerExamples.SpinnerSizes />}>
+<CodePreview component={<SpinnerExamples.SpinnerSizes />}>
 ```jsx
 import { Spinner } from "@material-tailwind/react";
 
-export default function Example() {
+export function SpinnerSizes() {
   return (
     <div className="flex items-end gap-8">
       <Spinner className="h-4 w-4" />
@@ -79,11 +66,11 @@ export default function Example() {
 
 The <Code>Spinner</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="spinner-colors" component={<SpinnerExamples.SpinnerColors />}>
+<CodePreview component={<SpinnerExamples.SpinnerColors />}>
 ```jsx
 import { Spinner } from "@material-tailwind/react";
 
-export default function Example() {
+export function SpinnerColors() {
   return (
     <div className="flex gap-8">
       <Spinner color="blue" />
@@ -102,17 +89,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="spinner-with-custom-styles">
+<DocsTitle href="spinner-custom-styles">
 ## Spinner with Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>Spinner</Code> component.
 
-<CodePreview id="spinner-with-custom-styles" component={<SpinnerExamples.CustomSpinner />}>
+<CodePreview component={<SpinnerExamples.CustomSpinner />}>
 ```jsx
 import { Spinner } from "@material-tailwind/react";
 
-export default function Example() {
+export function CustomSpinner() {
   return <Spinner className="h-16 w-16 text-blue-500/10" />;
 }
 ```

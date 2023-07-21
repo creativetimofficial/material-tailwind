@@ -5,35 +5,38 @@ navigation:
   [
     "dialog",
     "dialog-sizes",
-    "custom-dialog-animation",
+    "dialog-custom-animation",
     "dialog-with-form",
     "dialog-with-image",
     "web-3-dialog",
     "long-dialog",
     "message-dialog",
     "notification-dialog",
-    "props",
-    "theme"
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/dialog",
-      description: "Learn more about props definition and types of dialog components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/dialog",
-      description: "Learn how to customize the theme and styles for dialog components.",
-    },
+    "dialog-props",
+    "dialog-header-props",
+    "dialog-body-props",
+    "dialog-footer-props",
+    "types-size",
+    "types-dismiss",
+    "types-animate",
+    "dialog-theme",
+    "dialog-theme-object-type",
+    "dialog-theme-customization",
+    "dialog-header-theme-object-type",
+    "dialog-header-theme-customization",
+    "dialog-body-theme-object-type",
+    "dialog-body-theme-customization",
+    "dialog-footer-theme-object-type",
+    "dialog-footer-theme-customization",
   ]
 github: dialog
 prev: chip
 next: icon-button
 ---
 
+<DocsTitle href="dialog">
 # Tailwind CSS Dialog - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that require decisions, or involves multiple tasks.
 
@@ -43,50 +46,9 @@ See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS
 
 <br />
 
-<CodePreview id="dialog" link="dialog#dialog" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <>
-          <Button
-            onClick={() => setState((s) => ({ open: true }))}
-            variant="gradient"
-          >
-            Open Dialog
-          </Button>
-          <Dialog open={open}>
-            <DialogHeader>Its a simple dialog.</DialogHeader>
-            <DialogBody divider>
-              The key to more success is to have a lot of pillows. Put it this way, it took me
-              twenty five years to get these plants, twenty five years of blood sweat and tears, and
-              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-              luv.
-            </DialogBody>
-            <DialogFooter>
-              <Button
-                variant="text"
-                color="red"
-                onClick={() => setState((s) => ({ open: false }))}
-                className="mr-1"
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="gradient"
-                color="green"
-                onClick={() => setState((s) => ({ open: false }))}
-              >
-                Confirm
-              </Button>
-            </DialogFooter>
-          </Dialog>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="dialog#dialog" component={<DialogExamples.DialogDefault />}>
 ```jsx
-import { Fragment, useState } from "react";
+import React from "react";
 import {
   Button,
   Dialog,
@@ -95,23 +57,23 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [open, setOpen] = useState(false);
+export function DialogDefault() {
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <Fragment>
+    <>
       <Button onClick={handleOpen} variant="gradient">
         Open Dialog
       </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody divider>
-          The key to more success is to have a lot of pillows. Put it this way, it took me
-              twenty five years to get these plants, twenty five years of blood sweat and tears, and
-              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-              luv.
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
         </DialogBody>
         <DialogFooter>
           <Button
@@ -127,7 +89,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -141,94 +103,9 @@ export default function Example() {
 
 The <Code>Dialog</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="dialog-sizes" link="dialog#dialog-sizes" component={
-  <State initialState={{ size: null }}>
-    <Observe>
-      {({ setState, size }) => (
-        <>
-          <div className="mb-3 flex gap-3">
-            <Button
-              onClick={() => setState((s) => ({ size: "xs" }))}
-              variant="gradient"
-            >
-              Open Dialog XS
-            </Button>
-            <Button
-              onClick={() => setState((s) => ({ size: "sm" }))}
-              variant="gradient"
-            >
-              Open Dialog SM
-            </Button>
-            <Button
-              onClick={() => setState((s) => ({ size: "md" }))}
-              variant="gradient"
-            >
-              Open Dialog MD
-            </Button>
-          </div>
-          <div className="flex gap-3">
-            <Button
-              onClick={() => setState((s) => ({ size: "lg" }))}
-              variant="gradient"
-            >
-              Open Dialog LG
-            </Button>
-            <Button
-              onClick={() => setState((s) => ({ size: "xl" }))}
-              variant="gradient"
-            >
-              Open Dialog XL
-            </Button>
-            <Button
-              onClick={() => setState((s) => ({ size: "xxl" }))}
-              variant="gradient"
-            >
-              Open Dialog XXL
-            </Button>
-          </div>
-          <Dialog
-            open={
-              size === "xs" ||
-              size === "sm" ||
-              size === "md" ||
-              size === "lg" ||
-              size === "xl" ||
-              size === "xxl"
-            }
-            size={size || "md"}
-          >
-            <DialogHeader>Its a simple dialog.</DialogHeader>
-            <DialogBody divider>
-              The key to more success is to have a lot of pillows. Put it this way, it took me
-              twenty five years to get these plants, twenty five years of blood sweat and tears, and
-              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-              luv.
-            </DialogBody>
-            <DialogFooter>
-              <Button
-                variant="text"
-                color="red"
-                onClick={() => setState((s) => ({ size: null }))}
-                className="mr-1"
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="gradient"
-                color="green"
-                onClick={() => setState((s) => ({ size: null }))}
-              >
-                Confirm
-              </Button>
-            </DialogFooter>
-          </Dialog>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="dialog#dialog-sizes" component={<DialogExamples.DialogSizes />}>
 ```jsx
-import { Fragment, useState } from "react";
+import React from "react";
 import {
   Button,
   Dialog,
@@ -237,13 +114,13 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [size, setSize] = useState(null);
+export function DialogSizes() {
+  const [size, setSize] = React.useState(null);
 
   const handleOpen = (value) => setSize(value);
 
   return (
-    <Fragment>
+    <>
       <div className="mb-3 flex gap-3">
         <Button onClick={() => handleOpen("xs")} variant="gradient">
           Open Dialog XS
@@ -280,10 +157,10 @@ export default function Example() {
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody divider>
-          The key to more success is to have a lot of pillows. Put it this way, it took me
-          twenty five years to get these plants, twenty five years of blood sweat and tears, and
-          I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-          luv.
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
         </DialogBody>
         <DialogFooter>
           <Button
@@ -303,7 +180,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -311,62 +188,15 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="custom-dialog-animation">
-## Custom Dialog Animation
+<DocsTitle href="dialog-custom-animation">
+## Dialog Custom Animation
 </DocsTitle>
 
 You can modify the open/close state animation for <Code>Dialog</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-dialog-animation" link="dialog#custom-dialog-animation" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <>
-          <Button
-            onClick={() => setState((s) => ({ open: true }))}
-            variant="gradient"
-          >
-            Open Dialog
-          </Button>
-          <Dialog
-            open={open}
-            animate={{
-              mount: { scale: 1, y: 0 },
-              unmount: { scale: 0.9, y: -100 },
-            }}
-          >
-            <DialogHeader>Its a simple dialog.</DialogHeader>
-            <DialogBody divider>
-              The key to more success is to have a lot of pillows. Put it this way, it took me
-              twenty five years to get these plants, twenty five years of blood sweat and tears, and
-              I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-              luv.
-            </DialogBody>
-            <DialogFooter>
-              <Button
-                variant="text"
-                color="red"
-                onClick={() => setState((s) => ({ open: false }))}
-                className="mr-1"
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="gradient"
-                color="green"
-                onClick={() => setState((s) => ({ open: false }))}
-              >
-                Confirm
-              </Button>
-            </DialogFooter>
-          </Dialog>
-        </>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview link="dialog#dialog-custom-animation" component={<DialogExamples.DialogCustomAnimation />}>
 ```jsx
-import { Fragment, useState } from "react";
+import React from "react";
 import {
   Button,
   Dialog,
@@ -375,13 +205,13 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [open, setOpen] = useState(false);
+export function DialogCustomAnimation() {
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <Fragment>
+    <>
       <Button onClick={handleOpen} variant="gradient">
         Open Dialog
       </Button>
@@ -395,10 +225,10 @@ export default function Example() {
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody divider>
-          The key to more success is to have a lot of pillows. Put it this way, it took me
-          twenty five years to get these plants, twenty five years of blood sweat and tears, and
-          I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-          luv.
+          The key to more success is to have a lot of pillows. Put it this way,
+          it took me twenty five years to get these plants, twenty five years of
+          blood sweat and tears, and I&apos;m never giving up, I&apos;m just
+          getting started. I&apos;m up to something. Fan luv.
         </DialogBody>
         <DialogFooter>
           <Button
@@ -414,7 +244,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -428,7 +258,7 @@ export default function Example() {
 
 Use the example below to create a dialog with a sign in form.
 
-<CodePreview id="dialog-with-form" link="dialog#dialog-with-form" component={<DialogExamples.DialogWithForm />}>
+<CodePreview link="dialog#dialog-with-form" component={<DialogExamples.DialogWithForm />}>
 ```jsx
 import React from "react";
 import {
@@ -443,12 +273,12 @@ import {
   Checkbox,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function DialogWithForm() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
   return (
-    <React.Fragment>
+    <>
       <Button onClick={handleOpen}>Sign In</Button>
       <Dialog
         size="xs"
@@ -493,7 +323,7 @@ export default function Example() {
           </CardFooter>
         </Card>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
 ```
@@ -507,7 +337,7 @@ export default function Example() {
 
 Use the example below to create a dialog with an image inside, similar to unsplash.
 
-<CodePreview id="dialog-with-image" link="dialog#dialog-with-image" component={<DialogExamples.DialogWithImage />}>
+<CodePreview link="dialog#dialog-with-image" component={<DialogExamples.DialogWithImage />}>
 ```jsx
 import React from "react";
 import {
@@ -521,16 +351,16 @@ import {
   Typography,
   Card,
 } from "@material-tailwind/react";
-import { HeartIcon, ShareIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function DialogWithImage() {
   const [open, setOpen] = React.useState(false);
   const [isFavorite, setIsFavorite] = React.useState(false);
+
   const handleOpen = () => setOpen((cur) => !cur);
   const handleIsFavorite = () => setIsFavorite((cur) => !cur);
 
   return (
-    <React.Fragment>
+    <>
       <Card
         className="h-64 w-96 cursor-pointer overflow-hidden transition-opacity hover:opacity-90"
         onClick={handleOpen}
@@ -574,7 +404,14 @@ export default function Example() {
               color={isFavorite ? "red" : "blue-gray"}
               onClick={handleIsFavorite}
             >
-              <HeartIcon className="h-5 w-5" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
             </IconButton>
             <Button color="green" size="sm">
               Free Download
@@ -613,11 +450,23 @@ export default function Example() {
             color="blue-gray"
             className="flex items-center gap-3"
           >
-            <ShareIcon className="h-4 w-4" /> Share
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                fillRule="evenodd"
+                d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Share
           </Button>
         </DialogFooter>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
 ```
@@ -631,7 +480,7 @@ export default function Example() {
 
 Use the example below to create a Web 3.0 wallet connect dialog.
 
-<CodePreview id="web-3-dialog" link="dialog#web-3-dialog" component={<DialogExamples.WalletConnectDialog />}>
+<CodePreview link="dialog#web-3-dialog" component={<DialogExamples.Web3Dialog />}>
 ```jsx
 import React from "react";
 import {
@@ -644,14 +493,14 @@ import {
   Typography,
   MenuItem,
 } from "@material-tailwind/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function Web3Dialog() {
   const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen((cur) => !cur);
 
   return (
-    <React.Fragment>
+    <>
       <Button onClick={handleOpen}>Connect Wallet</Button>
       <Dialog size="xs" open={open} handler={handleOpen}>
         <DialogHeader className="justify-between">
@@ -664,7 +513,20 @@ export default function Example() {
             variant="text"
             onClick={handleOpen}
           >
-            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </IconButton>
         </DialogHeader>
         <DialogBody className="overflow-y-scroll pr-2">
@@ -750,7 +612,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
 ```
@@ -762,9 +624,9 @@ export default function Example() {
 ## Long Dialog
 </DocsTitle>
 
-<CodePreview id="long-dialog" className="mt-4" component={<DialogExamples.LongDialog />}>
+<CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
 ```jsx
-import { Fragment, useState } from "react";
+import React from "react";
 import {
   Button,
   Dialog,
@@ -774,52 +636,56 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [open, setOpen] = useState(false);
+export function LongDialog() {
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <Fragment>
-      <Button onClick={handleOpen}>
-        Long Dialog
-      </Button>
+    <>
+      <Button onClick={handleOpen}>Long Dialog</Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Long modal</DialogHeader>
         <DialogBody divider className="h-[40rem] overflow-scroll">
           <Typography className="font-normal">
-            I always felt like I could do anything. That&apos;s the main thing people are controlled
-            by! Thoughts- their perception of themselves! They&apos;re slowed down by their
-            perception of themselves. If you&apos;re taught you can&apos;t do anything, you
-            won&apos;t do anything. I was taught I could do everything. As we live, our hearts turn
-            colder. Cause pain is what we go through as we become older. We get insulted by others,
-            lose trust for those others. We get back stabbed by friends. It becomes harder for us to
-            give others a hand. We get our heart broken by people we love, even that we give them
-            all we have. Then we lose family over time. What else could rust the heart more over
-            time? Blackgold.
+            I always felt like I could do anything. That&apos;s the main thing
+            people are controlled by! Thoughts- their perception of themselves!
+            They&apos;re slowed down by their perception of themselves. If
+            you&apos;re taught you can&apos;t do anything, you won&apos;t do
+            anything. I was taught I could do everything. As we live, our hearts
+            turn colder. Cause pain is what we go through as we become older. We
+            get insulted by others, lose trust for those others. We get back
+            stabbed by friends. It becomes harder for us to give others a hand.
+            We get our heart broken by people we love, even that we give them
+            all we have. Then we lose family over time. What else could rust the
+            heart more over time? Blackgold.
             <br />
             <br />
-            We&apos;re not always in the position that we want to be at. We&apos;re constantly
-            growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-            ourselves and actualize our dreams. If you have the opportunity to play this game of
-            life you need to appreciate every moment. A lot of people don&apos;t appreciate the
-            moment until it&apos;s passed.
+            We&apos;re not always in the position that we want to be at.
+            We&apos;re constantly growing. We&apos;re constantly making
+            mistakes. We&apos;re constantly trying to express ourselves and
+            actualize our dreams. If you have the opportunity to play this game
+            of life you need to appreciate every moment. A lot of people
+            don&apos;t appreciate the moment until it&apos;s passed.
             <br /> <br />
-            There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-            at. That&apos;s my skill. I&apos;m not really specifically talented at anything except
-            for the ability to learn. That&apos;s what I do. That&apos;s what I&apos;m here for.
-            Don&apos;t be afraid to be wrong because you can&apos;t learn anything from a
-            compliment.
+            There&apos;s nothing I really wanted to do in life that I
+            wasn&apos;t able to get good at. That&apos;s my skill. I&apos;m not
+            really specifically talented at anything except for the ability to
+            learn. That&apos;s what I do. That&apos;s what I&apos;m here for.
+            Don&apos;t be afraid to be wrong because you can&apos;t learn
+            anything from a compliment.
             <br /> <br />
-            It really matters and then like it really doesn&apos;t matter. What matters is the
-            people who are sparked by it. And the people who are like offended by it, it
-            doesn&apos;t matter. Because it&apos;s about motivating the doers. Because I&apos;m here
-            to follow my dreams and inspire other people to follow their dreams, too.
+            It really matters and then like it really doesn&apos;t matter. What
+            matters is the people who are sparked by it. And the people who are
+            like offended by it, it doesn&apos;t matter. Because it&apos;s about
+            motivating the doers. Because I&apos;m here to follow my dreams and
+            inspire other people to follow their dreams, too.
             <br /> <br />
-            The time is now for it to be okay to be great. People in this world shun people for
-            being great. For being a bright color. For standing out. But the time is now to be okay
-            to be the greatest you. Would you believe in what you believe in, if you were the only
-            one who believed it?
+            The time is now for it to be okay to be great. People in this world
+            shun people for being great. For being a bright color. For standing
+            out. But the time is now to be okay to be the greatest you. Would
+            you believe in what you believe in, if you were the only one who
+            believed it?
           </Typography>
         </DialogBody>
         <DialogFooter className="space-x-2">
@@ -831,7 +697,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -843,7 +709,7 @@ export default function Example() {
 ## Message Dialog
 </DocsTitle>
 
-<CodePreview id="message-dialog" className="mt-4" component={<DialogExamples.MessageDialog />}>
+<CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
 ```jsx
 import React from "react";
 import {
@@ -855,22 +721,31 @@ import {
   Input,
   Textarea,
 } from "@material-tailwind/react";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function MessageDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <React.Fragment>
-      <Button onClick={handleOpen}>
-        Message Dialog
-      </Button>
+    <>
+      <Button onClick={handleOpen}>Message Dialog</Button>
       <Dialog open={open} handler={handleOpen}>
         <div className="flex items-center justify-between">
           <DialogHeader>New message to @</DialogHeader>
-          <XMarkIcon className="mr-3 h-5 w-5" onClick={handleOpen} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="mr-3 h-5 w-5"
+            onClick={handleOpen}
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
         </div>
         <DialogBody divider>
           <div className="grid gap-6">
@@ -887,7 +762,7 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
 ```
@@ -899,9 +774,9 @@ export default function Example() {
 ## Notification Dialog
 </DocsTitle>
 
-<CodePreview id="notification-dialog" className="mt-4" component={<DialogExamples.NotificationDialog />}>
+<CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
-import { Fragment, useState } from "react";
+import React from "react";
 import {
   Button,
   Dialog,
@@ -910,18 +785,15 @@ import {
   DialogFooter,
   Typography,
 } from "@material-tailwind/react";
-import { BellIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
-  const [open, setOpen] = useState(false);
+export function NotificationDialog() {
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 
   return (
-    <Fragment>
-      <Button onClick={handleOpen}>
-        Notification
-      </Button>
+    <>
+      <Button onClick={handleOpen}>Notification</Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>
           <Typography variant="h5" color="blue-gray">
@@ -929,13 +801,24 @@ export default function Example() {
           </Typography>
         </DialogHeader>
         <DialogBody divider className="grid place-items-center gap-4">
-          <BellIcon className="h-16 w-16 text-red-500" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-16 w-16 text-red-500"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clipRule="evenodd"
+            />
+          </svg>
           <Typography color="red" variant="h4">
             You should read this!
           </Typography>
           <Typography className="text-center font-normal">
-            A small river named Duden flows by their place and supplies it with the necessary
-            regelialia.
+            A small river named Duden flows by their place and supplies it with
+            the necessary regelialia.
           </Typography>
         </DialogBody>
         <DialogFooter className="space-x-2">
@@ -947,11 +830,499 @@ export default function Example() {
           </Button>
         </DialogFooter>
       </Dialog>
-    </Fragment>
+    </>
   );
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="dialog-props">
+## Dialog Props
+</DocsTitle>
+
+The following props are available for dialog component. These are the custom props
+that we've added for the dialog component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                               | Default                                |
+| ----------- | ------------------------- | ----------------------------------------- | -------------------------------------- |
+| `open`      | <Code>boolean</Code>      | Open the dialog                           | No default value it's a required prop. |
+| `handler`   | <Code>function</Code>     | Controls open and close states for dialog | No default value it's a required prop. |
+| `size`      | [Size](#types-size)       | Change dialog size                        | <Code>md</Code>                        |
+| `dismiss`   | [Dismiss](#types-dismiss) | Change backdrop dismiss listeners         | <Code>undefined</Code>                 |
+| `animate`   | [Animate](#types-animate) | Change dialog animation                   | <Code>undefined</Code>                 |
+| `className` | <Code>string</Code>       | Add custom className for dialog           | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for dialog                    | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-header-props">
+## Dialog Header Props
+</DocsTitle>
+
+The following props are available for dialog header component. These are the custom
+props that we've added for the dialog header component and you can use
+all the other native props as well.
+
+| Attribute   | Type                | Description                            | Default                                |
+| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for dialog header | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for dialog header          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogHeaderProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-body-props">
+## Dialog Body Props
+</DocsTitle>
+
+The following props are available for dialog body component. These are the custom
+props that we've added for the dialog body component and you can use all
+the other native props as well.
+
+| Attribute   | Type                 | Description                             | Default                                |
+| ----------- | -------------------- | --------------------------------------- | -------------------------------------- |
+| `divider`   | <Code>boolean</Code> | Add border top & bottom for dialog body | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for dialog body    | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for dialog body             | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogBodyProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-footer-props">
+## Dialog Footer Props
+</DocsTitle>
+
+The following props are available for dialog footer component. These are the custom
+props that we've added for the dialog footer component and you can use
+all the other native props as well.
+
+| Attribute   | Type                | Description                            | Default                                |
+| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for dialog footer | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for dialog footer          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogFooterProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+```ts
+type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  ancestorScroll?: boolean;
+  bubbles?: boolean | {
+      escapeKey?: boolean;
+      outsidePress?: boolean;
+  };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="dialog-theme">
+## Dialog Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for dialog components, the theme object for dialog components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of dialog component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for dialog component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of dialog component.<br />
+
+You can customize the theme and styles of dialog components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="dialog-theme-object-type">
+## Dialog Theme Object Type
+</DocsTitle>
+
+```ts
+interface DialogStylesType {
+  defaultProps: {
+    size: string;
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    className: string;
+  };
+  valid: {
+    sizes: string[];
+  };
+  styles: {
+    base: {
+      backdrop: object;
+      container: object;
+    };
+    sizes: {
+      xs: object;
+      sm: object;
+      md: object;
+      lg: object;
+      xl: object;
+      xxl: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-theme-customization">
+## Dialog Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  dialog: {
+    defaultProps: {
+      size: "md",
+      dismiss: {},
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      className: "",
+    },
+    valid: {
+      sizes: ["xs", "sm", "md", "lg", "xl", "xxl"],
+    },
+    styles: {
+      base: {
+        backdrop: {
+          display: "grid",
+          placeItems: "place-items-center",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "w-screen",
+          height: "h-screen",
+          backgroundColor: "bg-black",
+          backgroundOpacity: "bg-opacity-60",
+          backdropFilter: "backdrop-blur-sm",
+        },
+        container: {
+          position: "relative",
+          bg: "bg-white",
+          m: "m-4",
+          borderRadius: "rounded-lg",
+          boxShadow: "shadow-2xl",
+          color: "text-blue-gray-500",
+          fontSmoothing: "antialiased",
+          fontFamily: "font-sans",
+          fontSize: "text-base",
+          fontWeight: "font-light",
+          lineHeight: "leading-relaxed",
+        },
+      },
+      sizes: {
+        xs: {
+          width: "w-full md:w-3/5 lg:w-2/5 2xl:w-1/4",
+          minWidth: "min-w-[80%] md:min-w-[60%] lg:min-w-[40%] 2xl:min-w-[25%]",
+          maxWidth: "max-w-[80%] md:max-w-[60%] lg:max-w-[40%] 2xl:max-w-[25%]",
+        },
+        sm: {
+          width: "w-full md:w-2/3 lg:w-2/4 2xl:w-1/3",
+          minWidth: "min-w-[80%] md:min-w-[66.666667%] lg:min-w-[50%] 2xl:min-w-[33.333333%]",
+          maxWidth: "max-w-[80%] md:max-w-[66.666667%] lg:max-w-[50%] 2xl:max-w-[33.333333%]",
+        },
+        md: {
+          width: "w-full md:w-3/4 lg:w-3/5 2xl:w-2/5",
+          minWidth: "min-w-[90%] md:min-w-[75%] lg:min-w-[60%] 2xl:min-w-[40%]",
+          maxWidth: "max-w-[90%] md:max-w-[75%] lg:max-w-[60%] 2xl:max-w-[40%]",
+        },
+        lg: {
+          width: "w-full md:w-5/6 lg:w-3/4 2xl:w-3/5",
+          minWidth: "min-w-[90%] md:min-w-[83.333333%] lg:min-w-[75%] 2xl:min-w-[60%]",
+          maxWidth: "max-w-[90%] md:max-w-[83.333333%] lg:max-w-[75%] 2xl:max-w-[60%]",
+        },
+        xl: {
+          width: "w-full md:w-5/6 2xl:w-3/4",
+          minWidth: "min-w-[95%] md:min-w-[83.333333%] 2xl:min-w-[75%]",
+          maxWidth: "max-w-[95%] md:max-w-[83.333333%] 2xl:max-w-[75%]",
+        },
+        xxl: {
+          display: "flex",
+          flexDirection: "flex-col",
+          width: "w-screen",
+          minWidth: "min-w-[100vw]",
+          maxWidth: "max-w-[100vw]",
+          height: "h-screen",
+          minHeight: "min-h-[100vh]",
+          maxHeight: "max-h-[100vh]",
+          m: "m-0",
+          borderRadius: "rounded-none",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="dialog-header-theme-object-type">
+## Dialog Header Theme Object Type
+</DocsTitle>
+
+```ts
+interface DialogHeaderStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogHeaderStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-header-theme-customization">
+## Dialog Header Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  dialogHeader: {
+    defaultProps: {
+      className: "",
+    },
+    styles: {
+      base: {
+        display: "flex",
+        alignItems: "items-center",
+        flexShrink: "shrink-0",
+        p: "p-4",
+        color: "text-blue-gray-900",
+        fontSmoothing: "antialiased",
+        fontFamily: "font-sans",
+        fontSize: "text-2xl",
+        fontWeight: "font-semibold",
+        lineHeight: "leading-snug",
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="dialog-body-theme-object-type">
+## Dialog Body Theme Object Type
+</DocsTitle>
+
+```ts
+interface DialogBodyStylesType {
+  defaultProps: {
+    className: string;
+    divider: boolean;
+  };
+  styles: {
+    base: {
+      initial: object;
+      divider: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogBodyStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-body-theme-customization">
+## Dialog Body Theme Customization
+</DocsTitle>
+
+<span id="dialog-body-theme-customization" className="scroll-mt-48" />
+
+```tsx
+const theme = {
+  dialogBody: {
+    defaultProps: {
+      className: "",
+      divider: false,
+    },
+    styles: {
+      base: {
+        initial: {
+          position: "relative",
+          p: "p-4",
+          color: "text-blue-gray-500",
+          fontSmoothing: "antialiased",
+          fontFamily: "font-sans",
+          fontSize: "text-base",
+          fontWeight: "font-light",
+          lineHeight: "leading-relaxed",
+        },
+        divider: {
+          borderTop: "border-t",
+          borderTopColor: "border-t-blue-gray-100",
+          borderBottom: "border-b",
+          borderBottomColor: "border-b-blue-gray-100",
+        },
+      },
+    },
+  },
+};
+```
+
+---
+
+<DocsTitle href="dialog-footer-theme-object-type">
+## Dialog Footer Theme Object Type
+</DocsTitle>
+
+```ts
+interface DialogFooterStylesType {
+  defaultProps: {
+    className: string;
+  };
+  styles: {
+    base: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { DialogFooterStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="dialog-footer-theme-customization">
+## Dialog Footer Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  dialogFooter: {
+    defaultProps: {
+      className: "",
+    },
+    styles: {
+      base: {
+        display: "flex",
+        alignItems: "items-center",
+        justifyContent: "justify-end",
+        flexShrink: "shrink-0",
+        flexWrap: "flex-wrap",
+        p: "p-4",
+        color: "text-blue-gray-500",
+      },
+    },
+  },
+};
+```

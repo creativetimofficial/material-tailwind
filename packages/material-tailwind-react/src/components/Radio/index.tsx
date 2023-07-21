@@ -65,6 +65,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const { radio } = useTheme();
     const { defaultProps, valid, styles } = radio;
     const { base, colors } = styles;
+    const radioId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
@@ -107,7 +108,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         <label
           {...containerProps}
           className={containerClasses}
-          htmlFor={rest.id || "radio"}
+          htmlFor={rest.id || radioId}
           onMouseDown={(e) => {
             const onMouseDown = containerProps?.onMouseDown;
 
@@ -124,7 +125,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
             type="radio"
             disabled={disabled}
             className={inputClasses}
-            id={rest.id || "radio"}
+            id={rest.id || radioId}
           />
           <span className={radioIconClasses}>
             {icon || (
@@ -140,7 +141,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           </span>
         </label>
         {label && (
-          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "radio"}>
+          <label {...labelProps} className={labelClasses} htmlFor={rest.id || radioId}>
             {label}
           </label>
         )}

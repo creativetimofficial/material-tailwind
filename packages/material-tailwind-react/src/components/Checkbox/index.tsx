@@ -65,6 +65,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const { checkbox } = useTheme();
     const { defaultProps, valid, styles } = checkbox;
     const { base, colors } = styles;
+    const checkboxId = React.useId();
 
     // 2. set default props
     color = color ?? defaultProps.color;
@@ -106,7 +107,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         <label
           {...containerProps}
           className={containerClasses}
-          htmlFor={rest.id || "checkbox"}
+          htmlFor={rest.id || checkboxId}
           onMouseDown={(e) => {
             const onMouseDown = containerProps?.onMouseDown;
 
@@ -123,7 +124,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
             type="checkbox"
             disabled={disabled}
             className={inputClasses}
-            id={rest.id || "checkbox"}
+            id={rest.id || checkboxId}
           />
           <span className={iconContainerClasses}>
             {icon || (
@@ -145,7 +146,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           </span>
         </label>
         {label && (
-          <label {...labelProps} className={labelClasses} htmlFor={rest.id || "checkbox"}>
+          <label {...labelProps} className={labelClasses} htmlFor={rest.id || checkboxId}>
             {label}
           </label>
         )}

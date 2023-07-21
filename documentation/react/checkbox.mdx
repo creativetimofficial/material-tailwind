@@ -5,7 +5,7 @@ navigation:
   [
     "checkbox",
     "checkbox-colors",
-    "checkbox-with-label",
+    "checkbox-label",
     "checkbox-custom-icon",
     "checkbox-ripple-effect",
     "disabled-checkbox",
@@ -13,29 +13,21 @@ navigation:
     "checkbox-with-description",
     "checkbox-vertical-list-group",
     "checkbox-horizontal-list-group",
-    "checkbox-with-custom-styles",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/checkbox",
-      description: "Learn more about props definition and types of checkbox component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/checkbox",
-      description: "Learn how to customize the theme and styles for checkbox component.",
-    },
+    "checkbox-custom-styles",
+    "checkbox-props",
+    "types-color",
+    "checkbox-theme",
+    "checkbox-theme-object-type",
+    "checkbox-theme-customization"
   ]
 github: checkbox
 prev: card
 next: chip
 ---
 
+<DocsTitle href="checkbox">
 # Tailwind CSS Checkbox - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Checkbox</Code> to allow the user to select one or more items from a set.
 
@@ -49,11 +41,11 @@ See below our simple <Code>Checkbox</Code> example that you can use in your Reac
 
 <br />
 
-<CodePreview id="checkbox" link="checkbox#checkbox" component={<Checkbox defaultChecked />}>
+<CodePreview link="checkbox#checkbox" component={<CheckboxExamples.CheckboxDefault />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxDefault() {
   return <Checkbox defaultChecked />;
 }
 ```
@@ -67,22 +59,11 @@ export default function Example() {
 
 The <Code>Checkbox</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="checkbox-colors" link="checkbox#checkbox-colors" component={
-  <div className="flex w-max gap-4">
-    <Checkbox color="blue" defaultChecked />
-    <Checkbox color="red" defaultChecked />
-    <Checkbox color="green" defaultChecked />
-    <Checkbox color="amber" defaultChecked />
-    <Checkbox color="teal" defaultChecked />
-    <Checkbox color="indigo" defaultChecked />
-    <Checkbox color="purple" defaultChecked />
-    <Checkbox color="pink" defaultChecked />
-  </div>
-}>
+<CodePreview link="checkbox#checkbox-colors" component={<CheckboxExamples.CheckboxColors />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Colors() {
+export function CheckboxColors() {
   return (
     <div className="flex w-max gap-4">
       <Checkbox color="blue" defaultChecked />
@@ -101,17 +82,17 @@ export default function Colors() {
 
 ---
 
-<DocsTitle href="checkbox-with-label">
-## Checkbox with Label
+<DocsTitle href="checkbox-label">
+## Checkbox Label
 </DocsTitle>
 
 You can add a label for the <Code>Checkbox</Code> component by passing the <Code>label</Code> prop to the <Code>Checkbox</Code> component.
 
-<CodePreview id="checkbox-with-label" link="checkbox#checkbox-with-label" component={<Checkbox id="login" label="Remember Me" />}>
+<CodePreview link="checkbox#checkbox-label" component={<CheckboxExamples.CheckboxLabel />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxLabel() {
   return <Checkbox label="Remember Me" />;
 }
 ```
@@ -125,29 +106,11 @@ export default function Example() {
 
 You can add a custom icon for the <Code>Checkbox</Code> component when it's checked by passing the <Code>icon</Code> prop to the <Code>Checkbox</Code> component.
 
-<CodePreview id="checkbox-custom-icon" component={
-  <Checkbox
-    icon={
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-3 w-3"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fillRule="evenodd"
-          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-          clipRule="evenodd"
-        />
-      </svg>
-    }
-    defaultChecked
-  />
-}>
+<CodePreview component={<CheckboxExamples.CheckboxCustomIcon />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxCustomIcon() {
   return (
     <Checkbox
       icon={
@@ -179,22 +142,16 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Checkbox</Code> component using the <Code>ripple</Code> prop.
 
-<CodePreview id="checkbox-ripple-effect" link="checkbox#checkbox-ripple-effect" component={
-  <>
-    <Checkbox id="ripple-on" label="Ripple Effect On" />
-    <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
-  </>
-}>
+<CodePreview link="checkbox#checkbox-ripple-effect" component={<CheckboxExamples.CheckboxRippleEffect />}>
 ```jsx
-import { Fragment } from "react";
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxRippleEffect() {
   return (
-    <Fragment>
+    <>
       <Checkbox id="ripple-on" label="Ripple Effect On" ripple={true} />
       <Checkbox id="ripple-off" label="Ripple Effect Off" ripple={false} />
-    </Fragment>
+    </>
   );
 }
 ```
@@ -208,13 +165,11 @@ export default function Example() {
 
 You can make a checkbox disable by passing the <Code>disabled</Code> prop to the <Code>Checkbox</Code> component.
 
-<CodePreview id="disabled-checkbox" link="checkbox#disabled-checkbox" component={
-  <Checkbox id="disabled" label="Remember Me" disabled={true} />
-}>
+<CodePreview link="checkbox#disabled-checkbox" component={<CheckboxExamples.DisabledCheckbox />}>
 ```jsx
 import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function DisabledCheckbox() {
   return <Checkbox label="Remember Me" disabled={true} />;
 }
 ```
@@ -228,27 +183,28 @@ export default function Example() {
 
 The <Code>label</Code> prop for the the checkbox can accept dom elements and because of that you can put links or any other dom elements you like to have with your checkbox label.
 
-<CodePreview id="checkbox-with-link" component={
-  <Checkbox id="terms" label={
-    <Typography color="blue-gray" className="font-medium flex">I agree with the
-      <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-        &nbsp;terms and conditions
-      </Typography>.
-    </Typography>
-  } />
-}>
+<CodePreview component={<CheckboxExamples.CheckboxWithLink />}>
 ```jsx
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxWithLink() {
   return (
-    <Checkbox label={
-      <Typography color="blue-gray" className="font-medium flex">I agree with the
-        <Typography as="a" href="#" color="blue" className="font-medium hover:text-blue-700 transition-colors">
-          &nbsp;terms and conditions
-        </Typography>.
-      </Typography>
-    } />
+    <Checkbox
+      label={
+        <Typography color="blue-gray" className="flex font-medium">
+          I agree with the
+          <Typography
+            as="a"
+            href="#"
+            color="blue"
+            className="font-medium transition-colors hover:text-blue-700"
+          >
+            &nbsp;terms and conditions
+          </Typography>
+          .
+        </Typography>
+      }
+    />
   );
 }
 ```
@@ -257,43 +213,30 @@ export default function Example() {
 ---
 
 <DocsTitle href="checkbox-with-description">
-## Checkbox with Description
+## Checkbox With Description
 </DocsTitle>
 
 Use the example below for a more complex usage of checkbox with label that contains some description.
 
-<CodePreview id="checkbox-with-description" component={
-  <Checkbox 
-    id="description"
-    label={
-      <div>
-        <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          You'll be able to login without password for 24 hours.
-        </Typography>
-      </div>
-    }
-    containerProps={{
-      className: "-mt-5"
-    }}
-  />
-}>
+<CodePreview component={<CheckboxExamples.CheckboxWithDescription />}>
 ```jsx
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxWithDescription() {
   return (
-    <Checkbox 
+    <Checkbox
       label={
         <div>
-          <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+          <Typography color="blue-gray" className="font-medium">
+            Remember Me
+          </Typography>
           <Typography variant="small" color="gray" className="font-normal">
-            You'll be able to login without password for 24 hours.
+            You&apos;ll be able to login without password for 24 hours.
           </Typography>
         </div>
       }
       containerProps={{
-        className: "-mt-5"
+        className: "-mt-5",
       }}
     />
   );
@@ -309,57 +252,7 @@ export default function Example() {
 
 Use the example below for a vertical list of checkboxes.
 
-<CodePreview id="checkbox-vertical-list-group" component={
-  <Card>
-    <List>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="vertical-list-react" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">React.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="vertical-list-vue" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="vertical-list-svelte" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
-        </label>
-      </ListItem>
-    </List>
-  </Card>
-}>
+<CodePreview component={<CheckboxExamples.CheckboxVerticalListGroup />}>
 ```jsx
 import {
   Checkbox,
@@ -367,56 +260,71 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxVerticalListGroup() {
   return (
     <Card>
       <List>
         <ListItem className="p-0">
-          <label htmlFor="vertical-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="vertical-list-react"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="vertical-list-react" 
-                ripple={false} 
+              <Checkbox
+                id="vertical-list-react"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              React.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="vertical-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="vertical-list-vue"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="vertical-list-vue" 
-                ripple={false} 
+              <Checkbox
+                id="vertical-list-vue"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Vue.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="vertical-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="vertical-list-svelte"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="vertical-list-svelte" 
-                ripple={false} 
+              <Checkbox
+                id="vertical-list-svelte"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Svelte.js
+            </Typography>
           </label>
         </ListItem>
       </List>
@@ -434,57 +342,7 @@ export default function Example() {
 
 Use the example below for a horizontal list of checkboxes.
 
-<CodePreview id="checkbox-horizontal-list-group" component={
-  <Card className="w-full max-w-[24rem]">
-    <List className="flex-row">
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="horizontal-list-react" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">React.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="horizontal-list-vue" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
-        </label>
-      </ListItem>
-      <ListItem className="p-0">
-        <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
-          <ListItemPrefix className="mr-3">
-            <Checkbox 
-              id="horizontal-list-svelte" 
-              ripple={false} 
-              className="hover:before:opacity-0"
-              containerProps={{
-                className: "p-0"
-              }}
-            />
-          </ListItemPrefix>
-          <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
-        </label>
-      </ListItem>
-    </List>
-  </Card>
-}>
+<CodePreview component={<CheckboxExamples.CheckboxHorizontalListGroup />}>
 ```jsx
 import {
   Checkbox,
@@ -492,56 +350,71 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxHorizontalListGroup() {
   return (
     <Card className="w-full max-w-[24rem]">
       <List className="flex-row">
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-react" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-react"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="horizontal-list-react" 
-                ripple={false} 
+              <Checkbox
+                id="horizontal-list-react"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">React.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              React.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-vue" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-vue"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="horizontal-list-vue" 
-                ripple={false} 
+              <Checkbox
+                id="horizontal-list-vue"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Vue.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Vue.js
+            </Typography>
           </label>
         </ListItem>
         <ListItem className="p-0">
-          <label htmlFor="horizontal-list-svelte" className="px-3 py-2 flex items-center w-full cursor-pointer">
+          <label
+            htmlFor="horizontal-list-svelte"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
             <ListItemPrefix className="mr-3">
-              <Checkbox 
-                id="horizontal-list-svelte" 
-                ripple={false} 
+              <Checkbox
+                id="horizontal-list-svelte"
+                ripple={false}
                 className="hover:before:opacity-0"
                 containerProps={{
-                  className: "p-0"
+                  className: "p-0",
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">Svelte.js</Typography>
+            <Typography color="blue-gray" className="font-medium">
+              Svelte.js
+            </Typography>
           </label>
         </ListItem>
       </List>
@@ -553,33 +426,352 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="checkbox-with-custom-styles">
-## Checkbox with Custom Styles
+<DocsTitle href="checkbox-custom-styles">
+## Checkbox Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>Checkbox</Code> component.
 
-<CodePreview id="checkbox-with-custom-styles" component={
-  <Checkbox
-    defaultChecked
-    ripple={false}
-    className="rounded-full w-8 h-8 hover:before:opacity-0 hover:scale-105 bg-blue-500/25 border-blue-500/50 transition-all"
-  />
-}>
+<CodePreview component={<CheckboxExamples.CheckboxCustomStyles />}>
 ```jsx
-import { ButtonGroup, Button } from "@material-tailwind/react";
+import { Checkbox } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckboxCustomStyles() {
   return (
     <Checkbox
       defaultChecked
       ripple={false}
-      className="rounded-full w-8 h-8 hover:before:opacity-0 hover:scale-105 bg-blue-500/25 border-blue-500/50 transition-all"
+      className="h-8 w-8 rounded-full border-blue-500/50 bg-blue-500/25 transition-all hover:scale-105 hover:before:opacity-0"
     />
   );
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="checkbox-props">
+## Checkbox Props
+</DocsTitle>
+
+The following props are available for checkbox component. These are the custom props
+that we've added for the checkbox component and you can use all the other native
+input props as well.
+
+| Attribute        | Type                  | Description                                   | Default                |
+| ---------------- | --------------------- | --------------------------------------------- | ---------------------- |
+| `color`          | [Color](#types-color) | Change checkbox color                         | <Code>blue</Code>      |
+| `label`          | <Code>node</Code>     | Add label for checkbox                        | <Code>undefined</Code> |
+| `icon`           | <Code>node</Code>     | Change checked icon for checkbox              | <Code>undefined</Code> |
+| `ripple`         | <Code>boolean</Code>  | Add ripple effect for checkbox                | <Code>true</Code>      |
+| `className`      | <Code>string</Code>   | Add custom className for checkbox             | `''`                   |
+| `disabled`       | <Code>boolean</Code>  | Makes the checkbox disabled                   | <Code>false</Code>     |
+| `containerProps` | <Code>object</Code>   | Add custom props for checkbox container       | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>   | Add custom props for checkbox label           | <Code>undefined</Code> |
+| `iconProps`      | <Code>object</Code>   | Add custom props for checkbox icon            | <Code>undefined</Code> |
+| `inputRef`       | <Code>ref</Code>      | Add reference for <Code>input</Code> element. | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CheckboxProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="checkbox-theme">
+## Checkbox Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for checkbox component, the theme object for checkbox component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of checkbox component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for checkbox component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of checkbox component.<br />
+
+You can customize the theme and styles of checkbox component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="checkbox-theme-object-type">
+## Checkbox Theme Object Type
+</DocsTitle>
+
+```ts
+interface CheckboxStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    icon: node;
+    ripple: boolean;
+    className: string;
+    disabled: boolean;
+    containerProps: object;
+    labelProps: object;
+    iconProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      label: object;
+      icon: object;
+      disabled: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { CheckboxStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="checkbox-theme-customization">
+## Checkbox Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  checkbox: {
+    defaultProps: {
+      color: "blue",
+      label: undefined,
+      icon: undefined,
+      ripple: true,
+      className: "",
+      disabled: false,
+      containerProps: undefined,
+      labelProps: undefined,
+      iconProps: undefined,
+    },
+    valid: {
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        root: {
+          display: "inline-flex",
+          alignItems: "items-center",
+        },
+        container: {
+          position: "relative",
+          display: "flex",
+          alignItems: "items-center",
+          cursor: "cursor-pointer",
+          p: "p-3",
+          borderRadius: "rounded-full",
+        },
+        input: {
+          peer: "peer",
+          position: "relative",
+          appearance: "appearance-none",
+          width: "w-5",
+          height: "h-5",
+          borderWidth: "border",
+          borderRadius: "rounded-md",
+          borderColor: "border-blue-gray-200",
+          cursor: "cursor-pointer",
+          transition: "transition-all",
+          before: {
+            content: "before:content['']",
+            display: "before:block",
+            bg: "before:bg-blue-gray-500",
+            width: "before:w-12",
+            height: "before:h-12",
+            borderRadius: "before:rounded-full",
+            position: "before:absolute",
+            top: "before:top-2/4",
+            left: "before:left-2/4",
+            transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+            opacity: "before:opacity-0 hover:before:opacity-10",
+            transition: "before:transition-opacity",
+          },
+        },
+        label: {
+          color: "text-gray-700",
+          fontWeight: "font-light",
+          userSelect: "select-none",
+          cursor: "cursor-pointer",
+          mt: "mt-px",
+        },
+        icon: {
+          color: "text-white",
+          position: "absolute",
+          top: "top-2/4",
+          left: "left-2/4",
+          translate: "-translate-y-2/4 -translate-x-2/4",
+          pointerEvents: "pointer-events-none",
+          opacity: "opacity-0 peer-checked:opacity-100",
+          transition: "transition-opacity",
+        },
+        disabled: {
+          opacity: "opacity-50",
+          pointerEvents: "pointer-events-none",
+        },
+      },
+      colors: {
+        "blue-gray": {
+          background: "checked:bg-blue-gray-500",
+          border: "checked:border-blue-gray-500",
+          before: "checked:before:bg-blue-gray-500",
+        },
+        gray: {
+          background: "checked:bg-gray-500",
+          border: "checked:border-gray-500",
+          before: "checked:before:bg-gray-500",
+        },
+        brown: {
+          background: "checked:bg-brown-500",
+          border: "checked:border-brown-500",
+          before: "checked:before:bg-brown-500",
+        },
+        "deep-orange": {
+          background: "checked:bg-deep-orange-500",
+          border: "checked:border-deep-orange-500",
+          before: "checked:before:bg-deep-orange-500",
+        },
+        orange: {
+          background: "checked:bg-orange-500",
+          border: "checked:border-orange-500",
+          before: "checked:before:bg-orange-500",
+        },
+        amber: {
+          background: "checked:bg-amber-500",
+          border: "checked:border-amber-500",
+          before: "checked:before:bg-amber-500",
+        },
+        yellow: {
+          background: "checked:bg-yellow-500",
+          border: "checked:border-yellow-500",
+          before: "checked:before:bg-yellow-500",
+        },
+        lime: {
+          background: "checked:bg-lime-500",
+          border: "checked:border-lime-500",
+          before: "checked:before:bg-lime-500",
+        },
+        "light-green": {
+          background: "checked:bg-light-green-500",
+          border: "checked:border-light-green-500",
+          before: "checked:before:bg-light-green-500",
+        },
+        green: {
+          background: "checked:bg-green-500",
+          border: "checked:border-green-500",
+          before: "checked:before:bg-green-500",
+        },
+        teal: {
+          background: "checked:bg-teal-500",
+          border: "checked:border-teal-500",
+          before: "checked:before:bg-teal-500",
+        },
+        cyan: {
+          background: "checked:bg-cyan-500",
+          border: "checked:border-cyan-500",
+          before: "checked:before:bg-cyan-500",
+        },
+        "light-blue": {
+          background: "checked:bg-light-blue-500",
+          border: "checked:border-light-blue-500",
+          before: "checked:before:bg-light-blue-500",
+        },
+        blue: {
+          background: "checked:bg-blue-500",
+          border: "checked:border-blue-500",
+          before: "checked:before:bg-blue-500",
+        },
+        indigo: {
+          background: "checked:bg-indigo-500",
+          border: "checked:border-indigo-500",
+          before: "checked:before:bg-indigo-500",
+        },
+        "deep-purple": {
+          background: "checked:bg-deep-purple-500",
+          border: "checked:border-deep-purple-500",
+          before: "checked:before:bg-deep-purple-500",
+        },
+        purple: {
+          background: "checked:bg-purple-500",
+          border: "checked:border-purple-500",
+          before: "checked:before:bg-purple-500",
+        },
+        pink: {
+          background: "checked:bg-pink-500",
+          border: "checked:border-pink-500",
+          before: "checked:before:bg-pink-500",
+        },
+        red: {
+          background: "checked:bg-red-500",
+          border: "checked:border-red-500",
+          before: "checked:before:bg-red-500",
+        },
+      },
+    },
+  },
+};
+```

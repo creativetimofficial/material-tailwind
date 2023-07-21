@@ -9,29 +9,16 @@ navigation:
     "controlled-speed-dial",
     "speed-dial-with-text-inside",
     "speed-dial-with-text-outside",
-    "speed-dial-with-custom-styles",
-    # "props",
-    # "theme",
+    "speed-dial-custom-styles",
   ]
-# related:
-#   [
-#     {
-#       title: "Props",
-#       route: "props/speed-dial",
-#       description: "Learn more about props definition and types of progress bar component.",
-#     },
-#     {
-#       title: "Theme",
-#       route: "theme/speed-dial",
-#       description: "Learn how to customize the theme and styles for progress bar component.",
-#     },
-#   ]
 github: speed-dial
 prev: slider
 next: spinner
 ---
 
+<DocsTitle href="speed-dial">
 # Tailwind CSS Speed Dial - React
+</DocsTitle>
 
 Our Tailwind CSS pagination can be used to show different actions when hovering the button.
 
@@ -39,7 +26,16 @@ See below our <Code>SpeedDial</Code> component example that you can use in your 
 
 <br />
 
-<CodePreview id="speed-dial" component={<SpeedDialExamples.DefaultSpeedDial />}>
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+npm i @heroicons/react
+```
+
+<br />
+<br />
+
+<CodePreview component={<SpeedDialExamples.DefaultSpeedDial />}>
 ```jsx
 import {
   IconButton,
@@ -55,28 +51,28 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function DefaultSpeedDial() {
+export function DefaultSpeedDial() {
   return (
-    <div className="relative w-full h-80">
+    <div className="relative h-80 w-full">
       <div className="absolute bottom-0 right-0">
-      <SpeedDial>
-        <SpeedDialHandler>
-          <IconButton size="lg" className="rounded-full">
-            <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
-          </IconButton>
-        </SpeedDialHandler>
-        <SpeedDialContent>
-          <SpeedDialAction>
-            <HomeIcon className="h-5 w-5" />
-          </SpeedDialAction>
-          <SpeedDialAction>
-            <CogIcon className="h-5 w-5" />
-          </SpeedDialAction>
-          <SpeedDialAction>
-            <Square3Stack3DIcon className="h-5 w-5" />
-          </SpeedDialAction>
-        </SpeedDialContent>
-      </SpeedDial>
+        <SpeedDial>
+          <SpeedDialHandler>
+            <IconButton size="lg" className="rounded-full">
+              <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
+            </IconButton>
+          </SpeedDialHandler>
+          <SpeedDialContent>
+            <SpeedDialAction>
+              <HomeIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <CogIcon className="h-5 w-5" />
+            </SpeedDialAction>
+            <SpeedDialAction>
+              <Square3Stack3DIcon className="h-5 w-5" />
+            </SpeedDialAction>
+          </SpeedDialContent>
+        </SpeedDial>
       </div>
     </div>
   );
@@ -92,7 +88,7 @@ export default function DefaultSpeedDial() {
 
 Use the example below for using <Code>SpeedDial</Code> with different placements in a page.
 
-<CodePreview id="speed-dial-placement" component={<SpeedDialExamples.SpeedDialPlacement />}>
+<CodePreview component={<SpeedDialExamples.SpeedDialPlacement />}>
 ```jsx
 import {
   IconButton,
@@ -108,7 +104,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SpeedDialPlacement() {
   return (
     <div className="relative h-80 w-full">
       <div className="absolute bottom-0 right-0">
@@ -205,7 +201,7 @@ export default function Example() {
 
 Use the example below for using custom icon for <Code>SpeedDial</Code> handler.
 
-<CodePreview id="speed-dial-custom-icon" component={<SpeedDialExamples.SpeedDialCustomIcon />}>
+<CodePreview component={<SpeedDialExamples.SpeedDialCustomIcon />}>
 ```jsx
 import {
   IconButton,
@@ -222,7 +218,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SpeedDialCustomIcon() {
   return (
     <div className="relative w-full h-80">
       <div className="absolute bottom-0 right-0">
@@ -260,7 +256,7 @@ export default function Example() {
 
 Use the example below to make the <Code>SpeedDial</Code> a controlled component using React state. This is helpful if you need the <Code>open/close</Code> states of <Code>SpeedDial</Code>.
 
-<CodePreview id="controlled-speed-dial" component={<SpeedDialExamples.ControlledSpeedDial />}>
+<CodePreview component={<SpeedDialExamples.ControlledSpeedDial />}>
 ```jsx
 import React from "react";
 import {
@@ -277,7 +273,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function ControlledSpeedDial() {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -316,7 +312,7 @@ export default function Example() {
 
 Use the example below for a <Code>SpeedDial</Code> that has a label inside of it's actions.
 
-<CodePreview id="speed-dial-with-text-inside" component={<SpeedDialExamples.SpeedDialWithTextInside />}>
+<CodePreview component={<SpeedDialExamples.SpeedDialWithTextInside />}>
 ```jsx
 import {
   IconButton,
@@ -333,7 +329,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SpeedDialWithTextInside() {
   return (
     <div className="relative h-80 w-full">
       <div className="absolute bottom-0 right-0">
@@ -379,7 +375,7 @@ export default function Example() {
 
 Use the example below for a <Code>SpeedDial</Code> that has a label outside of it's actions.
 
-<CodePreview id="speed-dial-with-text-outside" component={<SpeedDialExamples.SpeedDialWithTextOutside />}>
+<CodePreview component={<SpeedDialExamples.SpeedDialWithTextOutside />}>
 ```jsx
 import {
   IconButton,
@@ -396,7 +392,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function SpeedDialWithTextOutside() {
   const labelProps = {
     variant: "small",
     color: "blue-gray",
@@ -437,13 +433,13 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="speed-dial-with-custom-styles">
+<DocsTitle href="speed-dial-custom-styles">
 ## Speed Dial with Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>SpeedDial</Code> component.
 
-<CodePreview id="speed-dial-with-custom-styles" component={<SpeedDialExamples.CustomSpeedDial />}>
+<CodePreview component={<SpeedDialExamples.CustomSpeedDial />}>
 ```jsx
 import {
   IconButton,
@@ -459,7 +455,7 @@ import {
   Square3Stack3DIcon,
 } from "@heroicons/react/24/outline";
 
-export default function DefaultSpeedDial() {
+export function CustomSpeedDial() {
   return (
     <div className="relative h-80 w-full">
       <div className="absolute bottom-0 right-0">
