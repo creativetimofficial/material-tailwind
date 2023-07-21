@@ -76,8 +76,8 @@ import * as RadioExamples from "docs-content/react/radio";
 import * as SliderExamples from "docs-content/react/slider";
 import * as SelectExamples from "docs-content/react/select";
 import * as SpeedDialExamples from "docs-content/react/speed-dial";
+import * as SpinnerExamples from "docs-content/react/spinner";
 
-import * as SpinnerExamples from "components/docs/react/spinner";
 import * as TimelineExamples from "components/docs/react/timeline";
 import * as StepperExamples from "components/docs/react/stepper";
 
@@ -325,8 +325,8 @@ const components = {
   SelectExamples,
   SliderExamples,
   SpeedDialExamples,
-
   SpinnerExamples,
+
   TimelineExamples,
   StepperExamples,
   TransparentTabs,
