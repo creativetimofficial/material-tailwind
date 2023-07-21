@@ -39,7 +39,6 @@ import ColorPalette from "components/color-palette";
 import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
-import CountriesSelect from "components/docs/countries-select";
 import Warning from "components/warning";
 
 // components examples
@@ -70,9 +69,13 @@ import * as InputExamples from "docs-content/react/input";
 import * as ListExamples from "docs-content/react/list";
 import * as TypographyExamples from "docs-content/react/typography";
 import * as MenuExamples from "docs-content/react/menu";
+import * as RatingExamples from "docs-content/react/rating";
+import * as PopoverExamples from "docs-content/react/popover";
+import * as ProgressExamples from "docs-content/react/progress";
+import * as RadioExamples from "docs-content/react/radio";
+import * as SliderExamples from "docs-content/react/slider";
+import * as SelectExamples from "docs-content/react/select";
 
-import * as RatingExamples from "components/docs/react/rating";
-import * as SliderExamples from "components/docs/react/slider";
 import * as SpinnerExamples from "components/docs/react/spinner";
 import * as TimelineExamples from "components/docs/react/timeline";
 import * as SpeedDialExamples from "components/docs/react/speed-dial";
@@ -285,7 +288,6 @@ const components = {
   Slider,
   OutlineIcons,
   SolidIcons,
-  CountriesSelect,
   Warning,
 
   // new components
@@ -316,9 +318,13 @@ const components = {
   ListExamples,
   TypographyExamples,
   MenuExamples,
-
   RatingExamples,
+  PopoverExamples,
+  ProgressExamples,
+  RadioExamples,
+  SelectExamples,
   SliderExamples,
+
   SpinnerExamples,
   TimelineExamples,
   SpeedDialExamples,

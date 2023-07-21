@@ -8,31 +8,33 @@ navigation:
     "select-sizes",
     "select-colors",
     "select-validations",
-    "custom-select-animation",
-    "disabled-select",
+    "select-custom-animation",
+    "select-disabled",
     "countries-select",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/select",
-      description: "Learn more about props definition and types of select components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/select",
-      description: "Learn how to customize the theme and styles for select components.",
-    },
+    "select-props",
+    "select-option-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "select-theme",
+    "select-theme-object-type",
+    "select-variant-object-type",
+    "select-size-object-type",
+    "select-states-object-type",
+    "select-state-object-type",
+    "select-theme-customization",
   ]
 github: select
 prev: rating-bar
 next: slider
 ---
 
+<DocsTitle href="select">
 # Tailwind CSS Select - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Select</Code> component to collect user provided information from a list of options.
 
@@ -42,21 +44,11 @@ See below our <Code>Select</Code> component example that you can use in your Tai
 
 <br />
 
-<CodePreview id="select" link="select#select" component={
-  <div className="w-72">
-    <Select label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview link="select#select" component={<SelectExamples.SelectDefault />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectDefault() {
   return (
     <div className="w-72">
       <Select label="Select Version">
@@ -80,37 +72,13 @@ export default function Example() {
 
 The <Code>Select</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="select-variants" component={
-  <div className="flex flex-col w-72 gap-6">
-    <Select variant="static" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select variant="standard" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select variant="outlined" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview component={<SelectExamples.SelectVariants />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectVariants() {
   return (
-    <div className="flex flex-col w-72 gap-6">
+    <div className="flex w-72 flex-col gap-6">
       <Select variant="static" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -146,30 +114,13 @@ export default function Example() {
 
 The <Code>Select</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="select-sizes" component={
-  <div className="flex flex-col w-72 gap-6">
-    <Select size="md" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select size="lg" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview component={<SelectExamples.SelectSizes />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectSizes() {
   return (
-    <div className="flex flex-col w-72 gap-6">
+    <div className="flex w-72 flex-col gap-6">
       <Select size="md" label="Select Version">
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -198,35 +149,11 @@ export default function Example() {
 
 The <Code>Select</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="select-colors" component={
-  <div className="flex w-72 flex-col gap-6">
-    <Select color="blue" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select color="purple" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select color="teal" label="Select Version">
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview component={<SelectExamples.SelectColors />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectColors() {
   return (
     <div className="flex w-72 flex-col gap-6">
       <Select color="blue" label="Select Version">
@@ -264,30 +191,13 @@ export default function Example() {
 
 The <Code>Select</Code> component comes with error and success states for performing validations.
 
-<CodePreview id="select-validations" component={
-  <div className="flex flex-col w-72 gap-6">
-    <Select label="Select Version" error>
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-    <Select label="Select Version" success>
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview id="select-validations" component={<SelectExamples.SelectValidations />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectValidations() {
   return (
-    <div className="flex flex-col w-72 gap-6">
+    <div className="flex w-72 flex-col gap-6">
       <Select label="Select Version" error>
         <Option>Material Tailwind HTML</Option>
         <Option>Material Tailwind React</Option>
@@ -310,33 +220,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="custom-select-animation">
-## Custom Select Animation
+<DocsTitle href="select-custom-animation">
+## Select Custom Animation
 </DocsTitle>
 
 You can modify the open/close state animation for <Code>Select</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-select-animation" component={
-  <div className="w-72">
-    <Select
-      label="Select Version"
-      animate={{
-        mount: { y: 0 },
-        unmount: { y: 25 },
-      }}
-    >
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview component={<SelectExamples.SelectCustomAnimation />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectCustomAnimation() {
   return (
     <div className="w-72">
       <Select
@@ -360,27 +254,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="disabled-select">
-## Disabled Select
+<DocsTitle href="select-disabled">
+## Select Disabled
 </DocsTitle>
 
 A <Code>Select</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Select</Code> component.
 
-<CodePreview id="disabled-select" component={
-  <div className="w-72">
-    <Select label="Select Version" disabled>
-      <Option>Material Tailwind HTML</Option>
-      <Option>Material Tailwind React</Option>
-      <Option>Material Tailwind Vue</Option>
-      <Option>Material Tailwind Angular</Option>
-      <Option>Material Tailwind Svelte</Option>
-    </Select>
-  </div>
-}>
+<CodePreview component={<SelectExamples.SelectDisabled />}>
 ```jsx
 import { Select, Option } from "@material-tailwind/react";
 
-export default function Example() {
+export function SelectDisabled() {
   return (
     <div className="w-72">
       <Select label="Select Version" disabled>
@@ -404,7 +288,17 @@ export default function Example() {
 
 See the example below to see how you can create a <Code>Select</Code> component with a list of countries.
 
-<CodePreview id="countries-select" component={
+<br />
+
+This example is using <Code><a href="https://www.npmjs.com/package/use-react-countries" target="_blank">use-react-countries</a></Code> make sure you have installed it.
+
+```bash
+npm i use-react-countries
+```
+
+<br />
+
+<CodePreview component={
   <CountriesSelect />
 }>
 ```jsx
@@ -412,38 +306,2706 @@ import React from "react";
 import { useCountries } from "use-react-countries";
 import { Select, Option } from "@material-tailwind/react";
 
-export default function CountriesSelect() {
+export function CountriesSelect() {
   const { countries } = useCountries();
 
-return (
-
-<div className="w-72">
-  <Select
-    size="lg"
-    label="Select Country"
-    selected={(element) =>
-      element &&
-      React.cloneElement(element, {
-        className: "flex items-center px-0 gap-2 pointer-events-none",
-      })
-    }
-  >
-    {countries.map(({ name, flags }) => (
-      <Option key={name} value={name} className="flex items-center gap-2">
-        <img
-          src={flags.svg}
-          alt={name}
-          className="h-5 w-5 rounded-full object-cover"
-        />
-        {name}
-      </Option>
-    ))}
-  </Select>
-</div>
-); }
-
+  return (
+    <div className="w-72">
+      <Select
+        size="lg"
+        label="Select Country"
+        selected={(element) =>
+          element &&
+          React.cloneElement(element, {
+            className: "flex items-center px-0 gap-2 pointer-events-none",
+          })
+        }
+      >
+        {countries.map(({ name, flags }) => (
+          <Option key={name} value={name} className="flex items-center gap-2">
+            <img
+              src={flags.svg}
+              alt={name}
+              className="h-5 w-5 rounded-full object-cover"
+            />
+            {name}
+          </Option>
+        ))}
+      </Select>
+    </div>
+  );
+}
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+
+<DocsTitle href="select-props">
+## Select Props
+</DocsTitle>
+
+The following props are available for select component. These are the custom props
+that we've added for the select component and you can use all the other
+native props as well.
+
+| Attribute    | Type                      | Description                                     | Default                                |
+| ------------ | ------------------------- | ----------------------------------------------- | -------------------------------------- |
+| `variant`    | [Variant](#types-variant) | Change select variant                           | <Code>outlined</Code>                  |
+| `size`       | [Size](#types-size)       | Change select size                              | <Code>md</Code>                        |
+| `color`      | [Color](#types-color)     | Change select color                             | <Code>blue</Code>                      |
+| `label`      | <Code>string</Code>       | Add label for select                            | `''`                                   |
+| `error`      | <Code>boolean</Code>      | Change select state to error                    | <Code>false</Code>                     |
+| `success`    | <Code>boolean</Code>      | Change select state to success                  | <Code>false</Code>                     |
+| `arrow`      | <Code>node</Code>         | Change select arrow icon                        | <Code>undefined</Code>                 |
+| `value`      | <Code>string</Code>       | Change selected value for select                | <Code>undefined</Code>                 |
+| `onChange`   | <Code>function</Code>     | Return selected value when select value changed | <Code>undefined</Code>                 |
+| `selected`   | <Code>function</Code>     | Return selected element and it's index          | <Code>undefined</Code>                 |
+| `offset`     | [Offset](#types-offset)   | Change select menu offset from it's input       | <Code>5</Code>                         |
+| `dismiss`    | [Dismiss](#types-dismiss) | Change dismiss listeners when clicking outside  | <Code>undefined</Code>                 |
+| `animate`    | [Animate](#types-animate) | Change select menu animation                    | <Code>undefined</Code>                 |
+| `lockScroll` | <Code>boolean</Code>      | Lock page scrolling when select menu is opened  | <Code>false</Code>                     |
+| `labelProps` | <Code>object</Code>       | Add custom props for select label               | <Code>undefined</Code>                 |
+| `menuProps`  | <Code>object</Code>       | Add custom props for select menu                | <Code>undefined</Code>                 |
+| `disabled`   | <Code>boolean</Code>      | Disable select                                  | <Code>false</Code>                     |
+| `name`       | <Code>string</Code>       | Add name for select                             | <Code>false</Code>                     |
+| `className`  | <Code>string</Code>       | Add custom className for select                 | `''`                                   |
+| `children`   | <Code>node</Code>         | Add content for select                          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-option-props">
+## Select Option Props
+</DocsTitle>
+
+The following props are available for select option component. These are the custom
+props that we've added for the select option component and you can use
+all the other native props as well.
+
+| Attribute   | Type                 | Description                                                           | Default                                |
+| ----------- | -------------------- | --------------------------------------------------------------------- | -------------------------------------- |
+| `value`     | <Code>string</Code>  | Add select option value, it works together with value props of select | <Code>undefined</Code>                 |
+| `index`     | <Code>number</Code>  | Add select option value                                               | <Code>undefined</Code>                 |
+| `disabled`  | <Code>boolean</Code> | Disable select option                                                 | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for select option                                | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for select option                                         | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectOptionProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+```ts
+type size = "md" | "lg";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-offset">
+## Types - Offset
+</DocsTitle>
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
+  ancestorScroll?: boolean;
+  bubbles?: boolean | {
+      escapeKey?: boolean;
+      outsidePress?: boolean;
+  };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="select-theme">
+## Select Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for select components, the theme object for select components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of select components.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for select components props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of select components.<br />
+
+You can customize the theme and styles of select components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="select-theme-object-type">
+## Select Theme Object Type
+</DocsTitle>
+
+Variant of <Code>Select</Code> component theme has a specific type of <a href="#select-variant-object-type" className="font-medium hover:text-blue-500 transition-colors">Select Variant Styles Type</a>
+
+```ts
+interface SelectStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    size: string;
+    label: string;
+    error: boolean;
+    success: boolean;
+    arrow: node;
+    value: string;
+    onChange: func;
+    selected: func;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    autoHeight: boolean;
+    lockScroll: boolean;
+    labelProps: object;
+    menuProps: boolean;
+    className: string;
+    disabled: boolean;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      container: object;
+      select: object;
+      arrow: {
+        initial: object;
+        active: object;
+      };
+      label: object;
+      menu: object;
+      option: {
+        initial: object;
+        active: object;
+        disabled: object;
+      };
+    };
+    variants: {
+      outlined: SelectVariantStylesType;
+      standard: SelectVariantStylesType;
+      static: SelectVariantStylesType;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-variant-object-type">
+## Theme Object Type - Select Variant
+</DocsTitle>
+
+
+Select variant object type contains three specific types of <a href="#select-size-object-type" className="font-medium hover:text-blue-500 transition-colors">Select Size Styles Type</a>, <a href="#select-states-object-type" className="font-medium hover:text-blue-500 transition-colors">Select States Styles Type</a> and <a href="#select-state-object-type" className="font-medium hover:text-blue-500 transition-colors">Select State Styles Type</a>
+
+```ts
+interface SelectVariantStylesType {
+  base: {
+    select: object;
+    label: object;
+  };
+  sizes: {
+    md: SelectSizeStylesType;
+    lg: SelectSizeStylesType;
+  };
+  colors: {
+    select: object;
+    label: object;
+  };
+  states: SelectStatesStylesType;
+  error: SelectStateStylesType;
+  success: SelectStateStylesType;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectVariantStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-size-object-type">
+## Theme Object Type - Select Size
+</DocsTitle>
+
+```ts
+interface SelectSizeStylesType {
+  container: object;
+  select: object;
+  label: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectSizeStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-states-object-type">
+## Theme Object Type - Select States
+</DocsTitle>
+
+```ts
+interface SelectStatesStylesType {
+  close: {
+    select: object;
+    label: object;
+  };
+  open: {
+    select: object;
+    label: object;
+  };
+  withValue: {
+    select: object;
+    label: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStatesStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-state-object-type">
+## Theme Object Type - Select State
+</DocsTitle>
+
+```ts
+interface SelectStateStylesType {
+  select: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+  label: {
+    initial: object;
+    states: {
+      close: object;
+      open: object;
+      withValue: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SelectStateStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="select-theme-customization">
+## Select Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  select: {
+    defaultProps: {
+      variant: "outlined",
+      color: "blue",
+      size: "md",
+      label: "",
+      error: false,
+      success: false,
+      arrow: undefined,
+      value: undefined,
+      onChange: undefined,
+      selected: undefined,
+      offset: 5,
+      dismiss: {},
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      autoHeight: false,
+      lockScroll: false,
+      labelProps: {},
+      menuProps: {},
+      className: "",
+      disabled: false,
+      containerProps: undefined,
+    },
+    valid: {
+      variants: ["standard", "outlined", "static"],
+      sizes: ["md", "lg"],
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        container: {
+          position: "relative",
+          width: "w-full",
+          minWidth: "min-w-[200px]",
+        },
+        select: {
+          peer: "peer",
+          width: "w-full",
+          height: "h-full",
+          bg: "bg-transparent",
+          color: "text-blue-gray-700",
+          fontFamily: "font-sans",
+          fontWeight: "font-normal",
+          textAlign: "text-left",
+          outline: "outline outline-0 focus:outline-0",
+          disabled: "disabled:bg-blue-gray-50 disabled:border-0",
+          transition: "transition-all",
+        },
+        arrow: {
+          initial: {
+            display: "grid",
+            placeItems: "place-items-center",
+            position: "absolute",
+            top: "top-2/4",
+            right: "right-2",
+            pt: "pt-px",
+            width: "w-5",
+            height: "h-5",
+            color: "text-blue-gray-400",
+            transform: "rotate-0 -translate-y-2/4",
+            transition: "transition-all",
+          },
+          active: {
+            transform: "rotate-180",
+            mt: "mt-px",
+          },
+        },
+        label: {
+          display: "flex",
+          width: "w-full",
+          height: "h-full",
+          userSelect: "select-none",
+          pointerEvents: "pointer-events-none",
+          position: "absolute",
+          left: "left-0",
+          fontWeight: "font-normal",
+          transition: "transition-all",
+        },
+        menu: {
+          width: "w-full",
+          maxHeight: "max-h-96",
+          bg: "bg-white",
+          p: "p-3",
+          border: "border border-blue-gray-50",
+          borderRadius: "rounded-md",
+          boxShadow: "shadow-lg shadow-blue-gray-500/10",
+          fontFamily: "font-sans",
+          fontSize: "text-sm",
+          fontWeight: "font-normal",
+          color: "text-blue-gray-500",
+          overflow: "overflow-auto",
+          outline: "focus:outline-none",
+        },
+        option: {
+          initial: {
+            pt: "pt-[9px]",
+            pb: "pb-2",
+            px: "px-3",
+            borderRadius: "rounded-md",
+            lightHeight: "leading-tight",
+            cursor: "cursor-pointer",
+            userSelect: "select-none",
+            background: "hover:bg-blue-gray-50 focus:bg-blue-gray-50",
+            opacity: "hover:bg-opacity-80 focus:bg-opacity-80",
+            color: "hover:text-blue-gray-900 focus:text-blue-gray-900",
+            outline: "outline outline-0",
+            transition: "transition-all",
+          },
+          active: {
+            bg: "bg-blue-gray-50 bg-opacity-80",
+            color: "text-blue-gray-900",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+            userSelect: "select-none",
+            pointerEvents: "pointer-events-none",
+          },
+        },
+      },
+      variants: {
+        outlined: {
+          base: {
+            select: {},
+            label: {
+              position: "-top-1.5",
+              before: {
+                content: "before:content[' ']",
+                display: "before:block",
+                boxSizing: "before:box-border",
+                width: "before:w-2.5",
+                height: "before:h-1.5",
+                mt: "before:mt-[6.5px]",
+                mr: "before:mr-1",
+                borderRadius: "before:rounded-tl-md",
+                pointerEvents: "before:pointer-events-none",
+                transition: "before:transition-all",
+                disabled: "peer-disabled:before:border-transparent",
+              },
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                flexGrow: "after:flex-grow",
+                boxSizing: "after:box-border",
+                width: "after:w-2.5",
+                height: "after:h-1.5",
+                mt: "after:mt-[6.5px]",
+                ml: "after:ml-1",
+                borderRadius: "after:rounded-tr-md",
+                pointerEvents: "after:pointer-events-none",
+                transition: "after:transition-all",
+                disabled: "peer-disabled:after:border-transparent",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-10",
+              },
+              select: {
+                fontSize: "text-sm",
+                px: "px-3",
+                py: "py-2.5",
+                borderRadius: "rounded-[7px]",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-[3.75]",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+            lg: {
+              container: {
+                height: "h-11",
+              },
+              select: {
+                fontSize: "text-sm",
+                px: "px-3",
+                py: "py-3",
+                borderRadius: "rounded-[7px]",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-[4.1]",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+          },
+          colors: {
+            select: {
+              "blue-gray": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-gray-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              gray: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-gray-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              brown: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-brown-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-orange-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              orange: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-orange-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              amber: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-amber-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              yellow: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-yellow-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              lime: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-lime-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              "light-green": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-green-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              green: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              teal: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-teal-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              cyan: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-cyan-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              "light-blue": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-blue-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              blue: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              indigo: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-indigo-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-purple-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              purple: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-purple-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              pink: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-pink-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+              red: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+            },
+            label: {
+              "blue-gray": {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-blue-gray-500",
+                  before: "before:border-blue-gray-500",
+                  after: "after:border-blue-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              gray: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-gray-500",
+                  before: "before:border-gray-500",
+                  after: "after:border-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              brown: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-brown-500",
+                  before: "before:border-brown-500",
+                  after: "after:border-brown-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-deep-orange-500",
+                  before: "before:border-deep-orange-500",
+                  after: "after:border-deep-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              orange: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-orange-500",
+                  before: "before:border-orange-500",
+                  after: "after:border-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              amber: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-amber-500",
+                  before: "before:border-amber-500",
+                  after: "after:border-amber-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              yellow: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-yellow-500",
+                  before: "before:border-yellow-500",
+                  after: "after:border-yellow-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              lime: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-lime-500",
+                  before: "before:border-lime-500",
+                  after: "after:border-lime-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              "light-green": {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-light-green-500",
+                  before: "before:border-light-green-500",
+                  after: "after:border-light-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              green: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-green-500",
+                  before: "before:border-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              teal: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-teal-500",
+                  before: "before:border-teal-500",
+                  after: "after:border-teal-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              cyan: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-cyan-500",
+                  before: "before:border-cyan-500",
+                  after: "after:border-cyan-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              "light-blue": {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-light-blue-500",
+                  before: "before:border-light-blue-500",
+                  after: "after:border-light-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              blue: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-blue-500",
+                  before: "before:border-blue-500",
+                  after: "after:border-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              indigo: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-indigo-500",
+                  before: "before:border-indigo-500",
+                  after: "after:border-indigo-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-deep-purple-500",
+                  before: "before:border-deep-purple-500",
+                  after: "after:border-deep-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              purple: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-purple-500",
+                  before: "before:border-purple-500",
+                  after: "after:border-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              pink: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-pink-500",
+                  before: "before:border-pink-500",
+                  after: "after:border-pink-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+              red: {
+                close: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-transparent",
+                  after: "after:border-transparent",
+                },
+                open: {
+                  color: "text-red-500",
+                  before: "before:border-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-400",
+                  before: "before:border-blue-gray-200",
+                  after: "after:border-blue-gray-200",
+                },
+              },
+            },
+          },
+          states: {
+            close: {
+              select: {
+                borderWidth: "border",
+              },
+              label: {
+                fontSize: "text-sm",
+                disabled: "peer-disabled:text-blue-gray-400",
+                before: {
+                  bt: "before:border-t-transparent",
+                  bl: "before:border-l-transparent",
+                },
+                after: {
+                  bt: "after:border-t-transparent",
+                  br: "after:border-r-transparent",
+                },
+              },
+            },
+            open: {
+              select: {
+                borderWidth: "border-2",
+                borderColor: "border-t-transparent",
+              },
+              label: {
+                fontSize: "text-[11px]",
+                disabled: "peer-disabled:text-transparent",
+                before: {
+                  bt: "before:border-t-2",
+                  bl: "before:border-l-2",
+                },
+                after: {
+                  bt: "after:border-t-2",
+                  br: "after:border-r-2",
+                },
+              },
+            },
+            withValue: {
+              select: {
+                borderWidth: "border",
+                borderColor: "border-t-transparent",
+              },
+              label: {
+                fontSize: "text-[11px]",
+                disabled: "peer-disabled:text-transparent",
+                before: {
+                  bt: "before:border-t",
+                  bl: "before:border-l",
+                },
+                after: {
+                  bt: "after:border-t",
+                  br: "after:border-r",
+                },
+              },
+            },
+          },
+          error: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-red-500",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-red-500",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-red-500",
+                  before: "before:border-red-500",
+                  after: "after:border-red-500",
+                },
+                open: {
+                  color: "text-red-500",
+                  before: "before:border-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-red-500",
+                  before: "before:border-red-500",
+                  after: "after:border-red-500",
+                },
+              },
+            },
+          },
+          success: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-green-500",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                  borderTopColor: "border-t-transparent",
+                },
+                withValue: {
+                  borderColor: "border-green-500",
+                  borderTopColor: "border-t-transparent",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-green-500",
+                  before: "before:border-green-500",
+                  after: "after:border-green-500",
+                },
+                open: {
+                  color: "text-green-500",
+                  before: "before:border-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-green-500",
+                  before: "before:border-green-500",
+                  after: "after:border-green-500",
+                },
+              },
+            },
+          },
+        },
+        standard: {
+          base: {
+            select: {},
+            label: {
+              position: "-top-1.5",
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                width: "after:w-full",
+                position: "after:absolute",
+                bottom: "after:-bottom-1.5",
+                left: "left-0",
+                borderWidth: "after:border-b-2",
+                transition: "after:transition-transform after:duration-300",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-11",
+              },
+              select: {
+                fontSize: "text-sm",
+                pt: "pt-4",
+                pb: "pb-1.5",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-[4.25]",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+            lg: {
+              container: {
+                height: "h-12",
+              },
+              select: {
+                fontSize: "text-sm",
+                px: "px-px",
+                pt: "pt-5",
+                pb: "pb-2",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-[4.875]",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+          },
+          colors: {
+            select: {
+              "blue-gray": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-gray-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              gray: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-gray-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              brown: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-brown-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-orange-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              orange: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-orange-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              amber: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-amber-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              yellow: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-yellow-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              lime: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-lime-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "light-green": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-green-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              green: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              teal: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-teal-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              cyan: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-cyan-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "light-blue": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-blue-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              blue: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              indigo: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-indigo-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-purple-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              purple: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-purple-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              pink: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-pink-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              red: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+            },
+            label: {
+              "blue-gray": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-500",
+                },
+                open: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-50",
+                },
+              },
+              gray: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-gray-500",
+                },
+                open: {
+                  color: "text-gray-500",
+                  after: "after:border-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-gray-500",
+                },
+              },
+              brown: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-brown-500",
+                },
+                open: {
+                  color: "text-brown-500",
+                  after: "after:border-brown-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-brown-500",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-orange-500",
+                },
+                open: {
+                  color: "text-deep-orange-500",
+                  after: "after:border-deep-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-orange-500",
+                },
+              },
+              orange: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-orange-500",
+                },
+                open: {
+                  color: "text-orange-500",
+                  after: "after:border-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-orange-500",
+                },
+              },
+              amber: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-amber-500",
+                },
+                open: {
+                  color: "text-amber-500",
+                  after: "after:border-amber-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-amber-500",
+                },
+              },
+              yellow: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-yellow-500",
+                },
+                open: {
+                  color: "text-yellow-500",
+                  after: "after:border-yellow-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-yellow-500",
+                },
+              },
+              lime: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-lime-500",
+                },
+                open: {
+                  color: "text-lime-500",
+                  after: "after:border-lime-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-lime-500",
+                },
+              },
+              "light-green": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-green-500",
+                },
+                open: {
+                  color: "text-light-green-500",
+                  after: "after:border-light-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-green-500",
+                },
+              },
+              green: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-green-500",
+                },
+                open: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-green-500",
+                },
+              },
+              teal: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-teal-500",
+                },
+                open: {
+                  color: "text-teal-500",
+                  after: "after:border-teal-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-teal-500",
+                },
+              },
+              cyan: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-cyan-500",
+                },
+                open: {
+                  color: "text-cyan-500",
+                  after: "after:border-cyan-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-cyan-500",
+                },
+              },
+              "light-blue": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-blue-500",
+                },
+                open: {
+                  color: "text-light-blue-500",
+                  after: "after:border-light-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-blue-500",
+                },
+              },
+              blue: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-500",
+                },
+                open: {
+                  color: "text-blue-500",
+                  after: "after:border-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-500",
+                },
+              },
+              indigo: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-indigo-500",
+                },
+                open: {
+                  color: "text-indigo-500",
+                  after: "after:border-indigo-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-indigo-500",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-purple-500",
+                },
+                open: {
+                  color: "text-deep-purple-500",
+                  after: "after:border-deep-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-purple-500",
+                },
+              },
+              purple: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-purple-500",
+                },
+                open: {
+                  color: "text-purple-500",
+                  after: "after:border-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-purple-500",
+                },
+              },
+              pink: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-pink-500",
+                },
+                open: {
+                  color: "text-pink-500",
+                  after: "after:border-pink-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-pink-500",
+                },
+              },
+              red: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-red-500",
+                },
+                open: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-red-500",
+                },
+              },
+            },
+          },
+          states: {
+            close: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-sm",
+                disabled: "peer-disabled:text-blue-gray-400",
+                after: {
+                  transform: "after:scale-x-0",
+                },
+              },
+            },
+            open: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-[11px]",
+                disabled: "peer-disabled:text-transparent",
+                after: {
+                  transform: "after:scale-x-100",
+                },
+              },
+            },
+            withValue: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-[11px]",
+                disabled: "peer-disabled:text-transparent",
+                after: {
+                  transform: "after:scale-x-0",
+                },
+              },
+            },
+          },
+          error: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-red-500",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                },
+                withValue: {
+                  borderColor: "border-red-500",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                open: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+              },
+            },
+          },
+          success: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-green-500",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                },
+                withValue: {
+                  borderColor: "border-green-500",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                open: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+              },
+            },
+          },
+        },
+        static: {
+          base: {
+            select: {},
+            label: {
+              position: "-top-2.5",
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                width: "after:w-full",
+                position: "after:absolute",
+                bottom: "after:-bottom-2.5",
+                left: "left-0",
+                borderWidth: "after:border-b-2",
+                transition: "after:transition-transform after:duration-300",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-11",
+              },
+              select: {
+                fontSize: "text-sm",
+                pt: "pt-4",
+                pb: "pb-1.5",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-tight",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+            lg: {
+              container: {
+                height: "h-12",
+              },
+              select: {
+                fontSize: "text-sm",
+                px: "px-px",
+                pt: "pt-5",
+                pb: "pb-2",
+              },
+              label: {
+                initial: {},
+                states: {
+                  close: {
+                    lineHeight: "leading-tight",
+                  },
+                  open: {
+                    lineHeight: "leading-tight",
+                  },
+                  withValue: {
+                    lineHeight: "leading-tight",
+                  },
+                },
+              },
+            },
+          },
+          colors: {
+            select: {
+              "blue-gray": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-gray-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              gray: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-gray-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              brown: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-brown-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-orange-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              orange: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-orange-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              amber: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-amber-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              yellow: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-yellow-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              lime: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-lime-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "light-green": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-green-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              green: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              teal: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-teal-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              cyan: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-cyan-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "light-blue": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-light-blue-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              blue: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-blue-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              indigo: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-indigo-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-deep-purple-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              purple: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-purple-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              pink: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-pink-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+              red: {
+                close: {
+                  borderColor: "border-blue-gray-200",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                },
+                withValue: {
+                  borderColor: "border-blue-gray-200",
+                },
+              },
+            },
+            label: {
+              "blue-gray": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-500",
+                },
+                open: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-gray-50",
+                },
+              },
+              gray: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-gray-500",
+                },
+                open: {
+                  color: "text-gray-500",
+                  after: "after:border-gray-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-gray-500",
+                },
+              },
+              brown: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-brown-500",
+                },
+                open: {
+                  color: "text-brown-500",
+                  after: "after:border-brown-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-brown-500",
+                },
+              },
+              "deep-orange": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-orange-500",
+                },
+                open: {
+                  color: "text-deep-orange-500",
+                  after: "after:border-deep-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-orange-500",
+                },
+              },
+              orange: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-orange-500",
+                },
+                open: {
+                  color: "text-orange-500",
+                  after: "after:border-orange-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-orange-500",
+                },
+              },
+              amber: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-amber-500",
+                },
+                open: {
+                  color: "text-amber-500",
+                  after: "after:border-amber-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-amber-500",
+                },
+              },
+              yellow: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-yellow-500",
+                },
+                open: {
+                  color: "text-yellow-500",
+                  after: "after:border-yellow-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-yellow-500",
+                },
+              },
+              lime: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-lime-500",
+                },
+                open: {
+                  color: "text-lime-500",
+                  after: "after:border-lime-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-lime-500",
+                },
+              },
+              "light-green": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-green-500",
+                },
+                open: {
+                  color: "text-light-green-500",
+                  after: "after:border-light-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-green-500",
+                },
+              },
+              green: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-green-500",
+                },
+                open: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-green-500",
+                },
+              },
+              teal: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-teal-500",
+                },
+                open: {
+                  color: "text-teal-500",
+                  after: "after:border-teal-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-teal-500",
+                },
+              },
+              cyan: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-cyan-500",
+                },
+                open: {
+                  color: "text-cyan-500",
+                  after: "after:border-cyan-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-cyan-500",
+                },
+              },
+              "light-blue": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-blue-500",
+                },
+                open: {
+                  color: "text-light-blue-500",
+                  after: "after:border-light-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-light-blue-500",
+                },
+              },
+              blue: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-500",
+                },
+                open: {
+                  color: "text-blue-500",
+                  after: "after:border-blue-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-blue-500",
+                },
+              },
+              indigo: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-indigo-500",
+                },
+                open: {
+                  color: "text-indigo-500",
+                  after: "after:border-indigo-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-indigo-500",
+                },
+              },
+              "deep-purple": {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-purple-500",
+                },
+                open: {
+                  color: "text-deep-purple-500",
+                  after: "after:border-deep-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-deep-purple-500",
+                },
+              },
+              purple: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-purple-500",
+                },
+                open: {
+                  color: "text-purple-500",
+                  after: "after:border-purple-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-purple-500",
+                },
+              },
+              pink: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-pink-500",
+                },
+                open: {
+                  color: "text-pink-500",
+                  after: "after:border-pink-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-pink-500",
+                },
+              },
+              red: {
+                close: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-red-500",
+                },
+                open: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-blue-gray-500",
+                  after: "after:border-red-500",
+                },
+              },
+            },
+          },
+          states: {
+            close: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-sm",
+                disabled: "peer-disabled:text-blue-gray-400",
+                after: {
+                  transform: "after:scale-x-0",
+                },
+              },
+            },
+            open: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-sm",
+                disabled: "peer-disabled:text-transparent",
+                after: {
+                  transform: "after:scale-x-100",
+                },
+              },
+            },
+            withValue: {
+              select: {
+                borderWidth: "border-b",
+              },
+              label: {
+                fontSize: "text-sm",
+                disabled: "peer-disabled:text-transparent",
+                after: {
+                  transform: "after:scale-x-0",
+                },
+              },
+            },
+          },
+          error: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-red-500",
+                },
+                open: {
+                  borderColor: "border-red-500",
+                },
+                withValue: {
+                  borderColor: "border-red-500",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                open: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+                withValue: {
+                  color: "text-red-500",
+                  after: "after:border-red-500",
+                },
+              },
+            },
+          },
+          success: {
+            select: {
+              initial: {},
+              states: {
+                close: {
+                  borderColor: "border-green-500",
+                },
+                open: {
+                  borderColor: "border-green-500",
+                },
+                withValue: {
+                  borderColor: "border-green-500",
+                },
+              },
+            },
+            label: {
+              initial: {},
+              states: {
+                close: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                open: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+                withValue: {
+                  color: "text-green-500",
+                  after: "after:border-green-500",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+```
