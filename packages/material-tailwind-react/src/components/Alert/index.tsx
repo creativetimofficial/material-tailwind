@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 // framer-motion
 import { AnimatePresence, m, MotionProps, domAnimation, LazyMotion } from "framer-motion";
 
-// @heroicons
-import { XMarkIcon } from "@heroicons/react/24/outline";
-
 // utils
 import classnames from "classnames";
 import merge from "deepmerge";
@@ -124,7 +121,16 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                   color={variant === "outlined" || variant === "ghost" ? color : "white"}
                   className={actionClasses}
                 >
-                  <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </IconButton>
               )}
               {action || null}
