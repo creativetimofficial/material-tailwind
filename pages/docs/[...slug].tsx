@@ -40,7 +40,6 @@ import DocsRelated from "components/layout/docs-related";
 import CodeTabs from "components/code-tabs";
 import CodePreview from "components/code-preview";
 import CountriesSelect from "components/docs/countries-select";
-import ProfileMenu from "components/docs/profile-menu";
 import Warning from "components/warning";
 
 // components examples
@@ -70,6 +69,7 @@ import * as IconButtonExamples from "docs-content/react/icon-button";
 import * as InputExamples from "docs-content/react/input";
 import * as ListExamples from "docs-content/react/list";
 import * as TypographyExamples from "docs-content/react/typography";
+import * as MenuExamples from "docs-content/react/menu";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -286,7 +286,6 @@ const components = {
   OutlineIcons,
   SolidIcons,
   CountriesSelect,
-  ProfileMenu,
   Warning,
 
   // new components
@@ -316,6 +315,7 @@ const components = {
   InputExamples,
   ListExamples,
   TypographyExamples,
+  MenuExamples,
 
   RatingExamples,
   SliderExamples,

@@ -6,36 +6,34 @@ navigation:
     "menu",
     "nested-menu",
     "menu-placement",
-    "custom-menu-animation",
-    "menu-with-custom-list",
-    "menu-with-divider",
+    "menu-custom-animation",
+    "menu-custom-list",
+    "menu-divider",
     "menu-with-checkboxes",
     "menu-with-search-input",
     "menu-with-scrolling-content",
     "notifications-menu",
     "profile-menu",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/menu",
-      description: "Learn more about props definition and types of menu components.",
-    },
-    {
-      title: "Theme",
-      route: "theme/menu",
-      description: "Learn how to customize the theme and styles for menu components.",
-    },
+    "menu-props",
+    "menu-handler-props",
+    "menu-list-props",
+    "menu-item-props",
+    "types-placement",
+    "types-offset",
+    "types-dismiss",
+    "types-animate",
+    "menu-theme",
+    "menu-theme-object-type",
+    "menu-theme-customization"
   ]
 github: menu
 prev: input
 next: navbar
 ---
 
+<DocsTitle href="menu">
 # Tailwind CSS Menu - React
+</DocsTitle>
 
 Use our responsive Tailwind CSS vertical <Code>Menu</Code>, that can take the user anywhere on your web app!
 
@@ -45,18 +43,7 @@ See below our <Code>Menu</Code> example that you can use in your Tailwind CSS an
 
 <br />
 
-<CodePreview id="menu" link="menu#menu" component={
-  <Menu>
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview link="menu#menu" component={<MenuExamples.MenuDefault />}>
 ```jsx
 import {
   Menu,
@@ -66,7 +53,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuDefault() {
   return (
     <Menu>
       <MenuHandler>
@@ -92,28 +79,7 @@ export default function Example() {
 
 You can nest one <Code>Menu</Code> inside another one very easily.
 
-<CodePreview id="nested-menu" link="menu#nested-menu" component={
-  <Menu>
-    <MenuHandler>
-      <Button>Open Nested Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <Menu placement="right-start" offset={15}>
-        <MenuHandler>
-          <MenuItem>Nested Item</MenuItem>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Nested Item 1</MenuItem>
-          <MenuItem>Nested Item 2</MenuItem>
-          <MenuItem>Nested Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview link="menu#nested-menu" component={<MenuExamples.NestedMenu />}>
 ```jsx
 import {
   Menu,
@@ -123,7 +89,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function NestedMenu() {
   return (
     <Menu>
       <MenuHandler>
@@ -158,140 +124,8 @@ export default function Example() {
 
 You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
 
-<CodePreview id="menu-placement" component={
-  <>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="top">
-        <MenuHandler>
-          <Button>Top</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="top-start">
-        <MenuHandler>
-          <Button>Top Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="top-end">
-        <MenuHandler>
-          <Button>Top End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="right">
-        <MenuHandler>
-          <Button>Right</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="right-start">
-        <MenuHandler>
-          <Button>Right Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="right-end">
-        <MenuHandler>
-          <Button>Right End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="mb-3 flex gap-3">
-      <Menu placement="bottom">
-        <MenuHandler>
-          <Button>Bottom</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="bottom-start">
-        <MenuHandler>
-          <Button>Bottom Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="bottom-end">
-        <MenuHandler>
-          <Button>Bottom End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-    <div className="flex gap-3">
-      <Menu placement="left">
-        <MenuHandler>
-          <Button>Left</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="left-start">
-        <MenuHandler>
-          <Button>Left Start</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-      <Menu placement="left-end">
-        <MenuHandler>
-          <Button>Left End</Button>
-        </MenuHandler>
-        <MenuList>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
-        </MenuList>
-      </Menu>
-    </div>
-  </>
-}>
+<CodePreview component={<MenuExamples.MenuPlacement />}>
 ```jsx
-import { Fragment } from "react";
 import {
   Menu,
   MenuHandler,
@@ -300,9 +134,9 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuPlacement() {
   return (
-    <Fragment>
+    <>
       <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <MenuHandler>
@@ -431,7 +265,7 @@ export default function Example() {
           </MenuList>
         </Menu>
       </div>
-    </Fragment>
+    </>
   );
 }
 ```
@@ -439,29 +273,13 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="custom-menu-animation">
-## Custom Menu Animation
+<DocsTitle href="menu-custom-animation">
+## Menu Custom Animation
 </DocsTitle>
 
 You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview id="custom-menu-animation" component={
-  <Menu
-    animate={{
-      mount: { y: 0 },
-      unmount: { y: 25 },
-    }}
-  >
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuCustomAnimation />}>
 ```jsx
 import {
   Menu,
@@ -471,7 +289,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuCustomAnimation() {
   return (
     <Menu
       animate={{
@@ -495,86 +313,13 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="menu-with-custom-list">
-## Menu with Custom List
+<DocsTitle href="menu-custom-list">
+## Menu Custom List
 </DocsTitle>
 
 Use this menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
 
-<CodePreview id="menu-with-custom-list" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <Menu open={open} handler={setState}>
-          <MenuHandler>
-            <Button
-              onMouseEnter={() => setState((s) => ({ open: true }))}
-              onMouseLeave={() => setState((s) => ({ open: false }))}
-              variant="text"
-              className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
-            >
-              Technology{" "}
-              <OutlineIcons.ChevronDownIcon
-                strokeWidth={2.5}
-                className={`h-3.5 w-3.5 transition-transform ${
-                  open ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
-          </MenuHandler>
-          <MenuList
-            onMouseEnter={() => setState((s) => ({ open: true }))}
-            onMouseLeave={() => setState((s) => ({ open: false }))}
-            className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
-          >
-            <Card
-              color="blue"
-              shadow={false}
-              variant="gradient"
-              className="col-span-3 grid h-full w-full place-items-center rounded-md"
-            >
-              <OutlineIcons.RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-            </Card>
-            <ul className="col-span-4 flex w-full flex-col gap-1">
-              {[
-                {
-                  title: "@material-tailwind/html",
-                  description:
-                    "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-                },
-                {
-                  title: "@material-tailwind/react",
-                  description:
-                    "Learn how to use @material-tailwind/react, packed with rich components for React.",
-                },
-                {
-                  title: "Material Tailwind PRO",
-                  description:
-                    "A complete set of UI Elements for building faster websites in less time.",
-                },
-              ].map(({ title, description }) => (
-                <a href="#" key={title}>
-                  <MenuItem>
-                    <Typography variant="h6" color="blue-gray" className="mb-1">
-                      {title}
-                    </Typography>
-                    <Typography
-                      variant="small"
-                      color="gray"
-                      className="font-normal"
-                    >
-                      {description}
-                    </Typography>
-                  </MenuItem>
-                </a>
-              ))}
-            </ul>
-          </MenuList>
-        </Menu>
-      )}
-    </Observe>
-  </State>
-}>
+<CodePreview component={<MenuExamples.MenuCustomList />}>
 ```jsx
 import React from "react";
 import {
@@ -606,19 +351,13 @@ const menuItems = [
   },
 ];
 
-export default function Day09() {
+export function MenuCustomList() {
   const [openMenu, setOpenMenu] = React.useState(false);
 
-  const triggers = {
-    onMouseEnter: () => setOpenMenu(true),
-    onMouseLeave: () => setOpenMenu(false),
-  };
-
   return (
-    <Menu open={openMenu} handler={setOpenMenu}>
+    <Menu open={openMenu} handler={setOpenMenu} allowHover>
       <MenuHandler>
         <Button
-          {...triggers}
           variant="text"
           className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
         >
@@ -631,10 +370,7 @@ export default function Day09() {
           />
         </Button>
       </MenuHandler>
-      <MenuList
-        {...triggers}
-        className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
-      >
+      <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
         <Card
           color="blue"
           shadow={false}
@@ -670,26 +406,13 @@ export default function Day09() {
 
 ---
 
-<DocsTitle href="menu-with-divider">
-## Menu with Divider
+<DocsTitle href="menu-divider">
+## Menu Divider
 </DocsTitle>
 
 This example can be used if you want to group the menu items, improving the readability.
 
-<CodePreview id="menu-with-divider" component={
-  <Menu>
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-      <span className="!mt-3 !mb-3 border-b border-blue-gray-50 block" />
-      <MenuItem>Menu Item 4</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuDivider />}>
 ```jsx
 import {
   Menu,
@@ -699,7 +422,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuDivider() {
   return (
     <Menu>
       <MenuHandler>
@@ -726,61 +449,7 @@ export default function Example() {
 
 Use this simple example of menu with checkboxes if you want to allow users to select multiple options from a list.
 
-<CodePreview id="menu-with-checkboxes" component={
-  <Menu
-    dismiss={{
-      itemPress: false,
-    }}
-  >
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList>
-      <MenuItem className="p-0">
-        <label
-          htmlFor="item-1"
-          className="flex cursor-pointer items-center gap-2 p-2"
-        >
-          <Checkbox
-            ripple={false}
-            id="item-1"
-            containerProps={{ className: "p-0" }}
-            className="hover:before:content-none"
-          />
-          Menu Item 1
-        </label>
-      </MenuItem>
-      <MenuItem className="p-0">
-        <label
-          htmlFor="item-2"
-          className="flex cursor-pointer items-center gap-2 p-2"
-        >
-          <Checkbox
-            ripple={false}
-            id="item-2"
-            containerProps={{ className: "p-0" }}
-            className="hover:before:content-none"
-          />
-          Menu Item 2
-        </label>
-      </MenuItem>
-      <MenuItem className="p-0">
-        <label
-          htmlFor="item-3"
-          className="flex cursor-pointer items-center gap-2 p-2"
-        >
-          <Checkbox
-            ripple={false}
-            id="item-3"
-            containerProps={{ className: "p-0" }}
-            className="hover:before:content-none"
-          />
-          Menu Item 3
-        </label>
-      </MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuWithCheckbox />}>
 ```jsx
 import {
   Menu,
@@ -791,7 +460,7 @@ import {
   Checkbox,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuWithCheckbox() {
   return (
     <Menu
       dismiss={{
@@ -859,28 +528,7 @@ export default function Example() {
 
 This example is perfect if you have more options. Use it to let the users find easier what they are looking for, without scrolling too much.
 
-<CodePreview id="menu-with-search-input" component={
-  <Menu
-    dismiss={{
-      itemPress: false,
-    }}
-  >
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList className="max-h-96">
-      <Input
-        label="Search"
-        containerProps={{
-          className: "mb-4",
-        }}
-      />
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuWithSearchInput />}>
 ```jsx
 import {
   Menu,
@@ -891,7 +539,7 @@ import {
   Input,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuWithSearchInput() {
   return (
     <Menu
       dismiss={{
@@ -926,35 +574,7 @@ export default function Example() {
 
 You can use this example if you have more options in the list, so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
 
-<CodePreview id="menu-with-scrolling-content" component={
-  <Menu>
-    <MenuHandler>
-      <Button>Open Menu</Button>
-    </MenuHandler>
-    <MenuList className="max-h-72">
-      <MenuItem>Menu Item 1</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
-      <MenuItem>Menu Item 3</MenuItem>
-      <MenuItem>Menu Item 4</MenuItem>
-      <MenuItem>Menu Item 5</MenuItem>
-      <MenuItem>Menu Item 6</MenuItem>
-      <MenuItem>Menu Item 7</MenuItem>
-      <MenuItem>Menu Item 8</MenuItem>
-      <MenuItem>Menu Item 9</MenuItem>
-      <MenuItem>Menu Item 10</MenuItem>
-      <MenuItem>Menu Item 11</MenuItem>
-      <MenuItem>Menu Item 12</MenuItem>
-      <MenuItem>Menu Item 13</MenuItem>
-      <MenuItem>Menu Item 14</MenuItem>
-      <MenuItem>Menu Item 15</MenuItem>
-      <MenuItem>Menu Item 16</MenuItem>
-      <MenuItem>Menu Item 17</MenuItem>
-      <MenuItem>Menu Item 18</MenuItem>
-      <MenuItem>Menu Item 19</MenuItem>
-      <MenuItem>Menu Item 20</MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview component={<MenuExamples.MenuWithScrollingContent />}>
 ```jsx
 import {
   Menu,
@@ -964,7 +584,7 @@ import {
   MenuItem,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function MenuWithScrollingContent() {
   return (
     <Menu>
       <MenuHandler>
@@ -1006,75 +626,7 @@ export default function Example() {
 
 Add this menu if you want to group all the notifications in one place, avoiding a cluttered screen.
 
-<CodePreview id="notifications-menu" link="menu#notifications-menu" component={
-  <Menu>
-    <MenuHandler>
-      <IconButton variant="text">
-        <SolidIcons.BellIcon className="h-5 w-5" />
-      </IconButton>
-    </MenuHandler>
-    <MenuList className="flex flex-col gap-2">
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="tania andrew"
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">Tania</span> send
-            you a message
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
-          >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />
-            13 minutes ago
-          </Typography>
-        </div>
-      </MenuItem>
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="natali craig"
-          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">Natali</span>{" "}
-            reply to your email
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
-          >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />a hour ago
-          </Typography>
-        </div>
-      </MenuItem>
-      <MenuItem className="flex items-center gap-4 py-2 pr-8 pl-2">
-        <Avatar
-          variant="circular"
-          alt="paypal"
-          src="https://dwglogo.com/wp-content/uploads/2016/08/PayPal_Logo_Icon.png"
-        />
-        <div className="flex flex-col gap-1">
-          <Typography variant="small" color="gray" className="font-normal">
-            <span className="font-medium text-blue-gray-900">PayPal</span>{" "}
-            you&apos;ve received a payment.
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center gap-1 text-xs text-gray-600"
-          >
-            <OutlineIcons.ClockIcon className="h-3 w-3" />5 hours ago
-          </Typography>
-        </div>
-      </MenuItem>
-    </MenuList>
-  </Menu>
-}>
+<CodePreview link="menu#notifications-menu" component={<MenuExamples.NotificationsMenu />}>
 ```jsx
 import {
   Menu,
@@ -1085,15 +637,43 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import { BellIcon } from "@heroicons/react/24/solid";
-import { ClockIcon } from "@heroicons/react/24/outline";
 
-export default function Day10() {
+function ClockIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-3 w-3"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+  );
+}
+
+export function NotificationsMenu() {
   return (
     <Menu>
       <MenuHandler>
         <IconButton variant="text">
-          <BellIcon className="h-5 w-5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+              clipRule="evenodd"
+            />
+          </svg>
         </IconButton>
       </MenuHandler>
       <MenuList className="flex flex-col gap-2">
@@ -1112,7 +692,7 @@ export default function Day10() {
               variant="small"
               className="flex items-center gap-1 text-xs text-gray-600"
             >
-              <ClockIcon className="h-3 w-3" />
+              <ClockIcon />
               13 minutes ago
             </Typography>
           </div>
@@ -1132,7 +712,7 @@ export default function Day10() {
               variant="small"
               className="flex items-center gap-1 text-xs text-gray-600"
             >
-              <ClockIcon className="h-3 w-3" />a hour ago
+              <ClockIcon />a hour ago
             </Typography>
           </div>
         </MenuItem>
@@ -1151,7 +731,7 @@ export default function Day10() {
               variant="small"
               className="flex items-center gap-1 text-xs text-gray-600"
             >
-              <ClockIcon className="h-3 w-3" />5 hours ago
+              <ClockIcon />5 hours ago
             </Typography>
           </div>
         </MenuItem>
@@ -1170,7 +750,7 @@ export default function Day10() {
 
 Are you creating a web app or a mobile app? This component is a must!
 
-<CodePreview id="profile-menu" link="menu#profile-menu" component={<ProfileMenu />}>
+<CodePreview link="menu#profile-menu" component={<MenuExamples.ProfileMenu />}>
 ```jsx
 import {
   Menu,
@@ -1180,15 +760,8 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
-import {
-  Cog6ToothIcon,
-  PowerIcon,
-  InboxArrowDownIcon,
-  UserCircleIcon,
-  LifebuoyIcon,
-} from "@heroicons/react/24/outline";
 
-export default function Example() {
+export function ProfileMenu() {
   return (
     <Menu>
       <MenuHandler>
@@ -1201,32 +774,102 @@ export default function Example() {
       </MenuHandler>
       <MenuList>
         <MenuItem className="flex items-center gap-2">
-          <UserCircleIcon strokeWidth={2} className="h-4 w-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
           <Typography variant="small" className="font-normal">
             My Profile
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <Cog6ToothIcon strokeWidth={2} className="h-4 w-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
           <Typography variant="small" className="font-normal">
             Edit Profile
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <InboxArrowDownIcon strokeWidth={2} className="h-4 w-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"
+            />
+          </svg>
           <Typography variant="small" className="font-normal">
             Inbox
           </Typography>
         </MenuItem>
         <MenuItem className="flex items-center gap-2">
-          <LifebuoyIcon strokeWidth={2} className="h-4 w-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288"
+            />
+          </svg>
           <Typography variant="small" className="font-normal">
             Help
           </Typography>
         </MenuItem>
         <hr className="my-2 border-blue-gray-50" />
         <MenuItem className="flex items-center gap-2 ">
-          <PowerIcon strokeWidth={2} className="h-4 w-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5.636 5.636a9 9 0 1012.728 0M12 3v9"
+            />
+          </svg>
           <Typography variant="small" className="font-normal">
             Sign Out
           </Typography>
@@ -1238,5 +881,324 @@ export default function Example() {
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="menu-props">
+## Menu Props
+</DocsTitle>
+
+The following props are available for menu component. These are the custom props
+that we've added for the menu component and you can use all the other native props
+as well.
+
+| Attribute    | Type                          | Description                                    | Default                                |
+| ------------ | ----------------------------- | ---------------------------------------------- | -------------------------------------- |
+| `open`       | <Code>boolean</Code>          | Makes the menu open, when menu is controlled   | <Code>undefined</Code>                 |
+| `handler`    | <Code>function</Code>         | Change open state for controlled menu          | <Code>undefined</Code>                 |
+| `placement`  | [Placement](#types-placement) | Change menu placement                          | <Code>bottom</Code>                    |
+| `offset`     | [Offset](#types-offset)       | Change menu offset from it's handler           | <Code>5</Code>                         |
+| `dismiss`    | [Dismiss](#types-dismiss)     | Change dismiss listeners when clicking outside | <Code>undefined</Code>                 |
+| `animate`    | [Animate](#types-animate)     | Change menu animation                          | <Code>undefined</Code>                 |
+| `lockScroll` | <Code>boolean</Code>          | Lock page scrolling when menu is opened        | <Code>false</Code>                     |
+| `allowHover` | <Code>boolean</Code>          | Open the menu when hovering it's handler.      | <Code>false</Code>                     |
+| `children`   | <Code>node</Code>             | Add content for menu                           | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="menu-handler-props">
+## Menu Handler Props
+</DocsTitle>
+
+The following props are available for menu handler component. These are the custom
+props that we've added for the menu handler component and you can use all the other
+native props as well.
+
+| Attribute  | Type              | Description                  | Default                                |
+| ---------- | ----------------- | ---------------------------- | -------------------------------------- |
+| `children` | <Code>node</Code> | Add content for menu handler | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuHandlerProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="menu-list-props">
+## Menu List Props
+</DocsTitle>
+
+The following props are available for menu list component. These are the custom props
+that we've added for the menu list component and you can use all the other native
+props as well.
+
+| Attribute   | Type                | Description                        | Default                                |
+| ----------- | ------------------- | ---------------------------------- | -------------------------------------- |
+| `className` | <Code>string</Code> | Add custom className for menu list | `''`                                   |
+| `children`  | <Code>node</Code>   | Add content for menu list          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuListProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="menu-item-props">
+## Menu Item Props
+</DocsTitle>
+
+The following props are available for menu item component. These are the custom props
+that we've added for the menu item component and you can use all the other native
+props as well.
+
+| Attribute   | Type                 | Description                        | Default                                |
+| ----------- | -------------------- | ---------------------------------- | -------------------------------------- |
+| `disabled`  | <Code>boolean</Code> | Disable menu item                  | <Code>false</Code>                     |
+| `className` | <Code>string</Code>  | Add custom className for menu item | `''`                                   |
+| `children`  | <Code>node</Code>    | Add content for menu item          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuItemProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-placement">
+## Types - Placement
+</DocsTitle>
+
+```ts
+type placement =
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+```
+
+---
+
+<DocsTitle href="types-offset">
+## Types - Offset
+</DocsTitle>
+
+```ts
+type offset =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
+```
+
+---
+
+<DocsTitle href="types-dismiss">
+## Types - Dismiss
+</DocsTitle>
+
+```ts
+type dismissType = {
+  enabled?: boolean;
+  escapeKey?: boolean;
+  referencePress?: boolean;
+  referencePressEvent?: "pointerdown" | "mousedown" | "click";
+  outsidePress?: boolean | ((event: MouseEvent) => boolean);
+  outsidePressEvent?: "pointerdown" | "mousedown" | "click";
+  ancestorScroll?: boolean;
+  itemPress?: boolean;
+  bubbles?:
+    | boolean
+    | {
+        escapeKey?: boolean;
+        outsidePress?: boolean;
+      };
+};
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="menu-theme">
+## Menu Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for menu components, the theme object for menu components has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of menu component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for menu component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of menu component.<br />
+
+You can customize the theme and styles of menu components by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="menu-theme-object-type">
+## Menu Theme Object Type
+</DocsTitle>
+
+```ts
+interface MenuStylesType {
+  defaultProps: {
+    placement: string;
+    offset:
+      | number
+      | {
+          mainAxis: number;
+          crossAxis: number;
+          alignmentAxis: number;
+        };
+    dismiss: {
+      enabled: boolean;
+      escapeKey: boolean;
+      referencePress: boolean;
+      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      outsidePress: boolean | ((event: MouseEvent) => boolean);
+      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
+      ancestorScroll: boolean;
+      itemPress: boolean;
+      bubbles: boolean | {
+          escapeKey: boolean;
+          outsidePress: boolean;
+      };
+    };
+    animate: {
+      mount: object;
+      unmount: object;
+    };
+    lockScroll: boolean;
+  };
+  styles: {
+    base: {
+      menu: object;
+      item: {
+        initial: object;
+        disabled: object;
+      };
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { MenuStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="menu-theme-customization">
+## Menu Theme Customization
+</DocsTitle>
+
+```tsx
+const theme = {
+  menu: {
+    defaultProps: {
+      placement: "bottom",
+      offset: 5,
+      dismiss: {
+        itemPress: true
+      },
+      animate: {
+        unmount: {},
+        mount: {},
+      },
+      lockScroll: false,
+    },
+    styles: {
+      base: {
+        menu: {
+          bg: "bg-white",
+          minWidth: "min-w-[180px]",
+          p: "p-3",
+          border: "border border-blue-gray-50",
+          borderRadius: "rounded-md",
+          boxShadow: "shadow-lg shadow-blue-gray-500/10",
+          fontFamily: "font-sans",
+          fontSize: "text-sm",
+          fontWeight: "font-normal",
+          color: "text-blue-gray-500",
+          overflow: "overflow-auto",
+          outline: "focus:outline-none",
+          zIndex: "z-[999]",
+        },
+        item: {
+          initial: {
+            display: "block",
+            width: "w-full",
+            pt: "pt-[9px]",
+            pb: "pb-2",
+            px: "px-3",
+            borderRadius: "rounded-md",
+            textAlign: "text-start",
+            lightHeight: "leading-tight",
+            cursor: "cursor-pointer",
+            userSelect: "select-none",
+            transition: "transition-all",
+            bg: "hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80",
+            color: "hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900",
+            outline: "outline-none",
+          },
+          disabled: {
+            opacity: "opacity-50",
+            cursor: "cursor-not-allowed",
+            pointerEvents: "pointer-events-none",
+            userSelect: "select-none",
+            bg: "hover:bg-transparent focus:bg-transparent active:bg-transparent",
+            color: "hover:text-blue-gray-500 focus:text-blue-gray-500 active:text-blue-gray-500",
+          },
+        },
+      },
+    },
+  },
+};
+```
