@@ -78,7 +78,7 @@ import * as SelectExamples from "docs-content/react/select";
 import * as SpeedDialExamples from "docs-content/react/speed-dial";
 import * as SpinnerExamples from "docs-content/react/spinner";
 import * as StepperExamples from "docs-content/react/stepper";
-import * as TimelineExamples from "components/docs/react/timeline";
+import * as TimelineExamples from "docs-content/react/timeline";
 
 import TransparentTabs from "components/docs/transparent-tabs";
 import DocsTitle from "components/docs-title";
