@@ -82,6 +82,7 @@ import * as TimelineExamples from "docs-content/react/timeline";
 import * as TooltipExamples from "docs-content/react/tooltip";
 import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
+import * as TextareaExamples from "docs-content/react/textarea";
 
 import DocsTitle from "components/docs-title";
 
@@ -331,6 +332,7 @@ const components = {
   TooltipExamples,
   SwitchExamples,
   TabsExamples,
+  TextareaExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
