@@ -68,6 +68,8 @@ import * as SidebarExamples from "docs-content/react/sidebar";
 import * as FormExamples from "docs-content/react/form";
 import * as IconButtonExamples from "docs-content/react/icon-button";
 import * as InputExamples from "docs-content/react/input";
+import * as ListExamples from "docs-content/react/list";
+import * as TypographyExamples from "docs-content/react/typography";
 
 import * as RatingExamples from "components/docs/react/rating";
 import * as SliderExamples from "components/docs/react/slider";
@@ -312,6 +314,8 @@ const components = {
   FormExamples,
   IconButtonExamples,
   InputExamples,
+  ListExamples,
+  TypographyExamples,
 
   RatingExamples,
   SliderExamples,
