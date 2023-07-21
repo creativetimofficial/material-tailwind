@@ -75,10 +75,10 @@ import * as ProgressExamples from "docs-content/react/progress";
 import * as RadioExamples from "docs-content/react/radio";
 import * as SliderExamples from "docs-content/react/slider";
 import * as SelectExamples from "docs-content/react/select";
+import * as SpeedDialExamples from "docs-content/react/speed-dial";
 
 import * as SpinnerExamples from "components/docs/react/spinner";
 import * as TimelineExamples from "components/docs/react/timeline";
-import * as SpeedDialExamples from "components/docs/react/speed-dial";
 import * as StepperExamples from "components/docs/react/stepper";
 
 import TransparentTabs from "components/docs/transparent-tabs";
@@ -324,10 +324,10 @@ const components = {
   RadioExamples,
   SelectExamples,
   SliderExamples,
+  SpeedDialExamples,
 
   SpinnerExamples,
   TimelineExamples,
-  SpeedDialExamples,
   StepperExamples,
   TransparentTabs,
 };
