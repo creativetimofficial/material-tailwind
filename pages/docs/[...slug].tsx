@@ -77,9 +77,8 @@ import * as SliderExamples from "docs-content/react/slider";
 import * as SelectExamples from "docs-content/react/select";
 import * as SpeedDialExamples from "docs-content/react/speed-dial";
 import * as SpinnerExamples from "docs-content/react/spinner";
-
+import * as StepperExamples from "docs-content/react/stepper";
 import * as TimelineExamples from "components/docs/react/timeline";
-import * as StepperExamples from "components/docs/react/stepper";
 
 import TransparentTabs from "components/docs/transparent-tabs";
 import DocsTitle from "components/docs-title";
@@ -326,9 +325,9 @@ const components = {
   SliderExamples,
   SpeedDialExamples,
   SpinnerExamples,
-
-  TimelineExamples,
   StepperExamples,
+  TimelineExamples,
+
   TransparentTabs,
 };
 

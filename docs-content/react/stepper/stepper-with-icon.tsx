@@ -1,6 +1,6 @@
 import React from "react";
-import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
 import { Stepper, Step, Button } from "@material-tailwind/react";
+import { HomeIcon, CogIcon, UserIcon } from "@heroicons/react/24/outline";
 
 export function StepperWithIcon() {
   const [activeStep, setActiveStep] = React.useState(0);
