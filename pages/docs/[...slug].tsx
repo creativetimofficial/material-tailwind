@@ -46,6 +46,7 @@ import CountriesCodeInput from "components/docs/countries-code-input";
 import ProfileMenu from "components/docs/profile-menu";
 import AvatarStack from "components/docs/avatar-stack";
 import Warning from "components/warning";
+import ReleaseNotes from "components/release-notes";
 
 // new imports
 import * as BadgeExamples from "components/docs/react/badge";
@@ -255,6 +256,7 @@ const components = {
   ProfileMenu,
   AvatarStack,
   Warning,
+  ReleaseNotes,
 
   // new components
   BadgeExamples,
