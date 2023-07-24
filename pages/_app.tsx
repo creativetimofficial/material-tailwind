@@ -9,6 +9,7 @@ import { SearchProvider } from "components/search";
 
 // styles
 import "/styles/globals.css";
+import "@docsearch/css";
 
 function MyApp({ Component, pageProps }) {
   return (
