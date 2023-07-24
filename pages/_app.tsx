@@ -5,7 +5,6 @@ import Script from "next/script";
 
 // @material-tailwind components
 import { ThemeProvider } from "@material-tailwind/react";
-import { SearchProvider } from "components/search";
 
 // styles
 import "/styles/globals.css";
@@ -15,9 +14,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       <ThemeProvider>
-        <SearchProvider>
-          <Component {...pageProps} />
-        </SearchProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
       <Script id="google-analytics" strategy="afterInteractive">
         {`
