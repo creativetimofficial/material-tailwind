@@ -15,8 +15,8 @@ export default function ReleaseNotes() {
   return (
     <div className="ml-28">
       <Timeline>
-        {releases.map((release) => (
-          <TimelineItem>
+        {releases.map((release, key) => (
+          <TimelineItem key={key}>
             <div className="absolute -left-28 -top-8 flex flex-col items-end">
               <Chip
                 variant="outlined"
@@ -46,14 +46,14 @@ export default function ReleaseNotes() {
                   5 new components and 5 sections.
                 </span> */}
               </Typography>
-              {release.content.map((conten) => (
-                <div>
+              {release.content.map((content, idx) => (
+                <div key={idx}>
                   <Typography className="mb-1 font-semibold capitalize text-blue-gray-800">
-                    {conten.title}
+                    {content.title}
                   </Typography>
                   <div>
-                    {conten.data.map((arrData) => (
-                      <div className="mb-1 flex items-center">
+                    {content.data.map((arrData, i) => (
+                      <div key={i} className="mb-1 flex items-center">
                         <div className="mr-2 h-2 w-2 rounded-full bg-blue-gray-100"></div>
                         <Typography className="font-medium text-blue-gray-400">
                           {arrData}
