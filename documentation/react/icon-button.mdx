@@ -7,47 +7,37 @@ navigation:
     "icon-button-variants",
     "icon-button-sizes",
     "icon-button-colors",
-    "rounded-icon-buttons",
-    "icon-buttons-with-link",
+    "icon-button-rounded",
+    "icon-button-with-link",
     "icon-button-ripple-effect",
     "icon-button-with-custom-styles",
     "font-awesome-cdn-link",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/icon-button",
-      description: "Learn more about props definition and types of icon button component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/icon-button",
-      description: "Learn how to customize the theme and styles for icon button component.",
-    },
+    "icon-button-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "icon-button-theme",
+    "icon-button-theme-object-type",
+    "icon-button-theme-customization"
   ]
 github: icon-button
 prev: drawer
 next: input
 ---
 
+<DocsTitle href="icon-button">
 # Tailwind CSS Icon Button - React
+</DocsTitle>
 
 Use this example to create user-friendly buttons with icon for your Tailwind CSS and React project.
 
 <br />
 
-<CodePreview id="icon-button" link="icon-button#icon-button" component={
-  <IconButton>
-    <i className="fas fa-heart" />
-  </IconButton>
-}>
+<CodePreview id="icon-button" link="icon-button#icon-button" component={<IconButtonExamples.IconButtonDefault />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonDefault() {
   return (
     <IconButton>
       <i className="fas fa-heart" />
@@ -65,26 +55,11 @@ export default function Example() {
 
 The <Code>IconButton</Code> component comes with 4 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="icon-button-variants" link="icon-button#icon-button-variants" component={
-  <div className="flex gap-4">
-    <IconButton>
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="gradient">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="outlined">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="text">
-      <i className="fas fa-heart" />
-    </IconButton>
-  </div>
-}>
+<CodePreview link="icon-button#icon-button-variants" component={<IconButtonExamples.IconButtonVariants />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonVariants() {
   return (
     <div className="flex gap-4">
       <IconButton>
@@ -113,23 +88,11 @@ export default function Example() {
 
 The <Code>IconButton</Code> component comes with 3 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="icon-button-sizes" link="icon-button#icon-button-sizes" component={
-  <div className="flex items-end gap-4">
-    <IconButton size="sm">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton>
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton size="lg">
-      <i className="fas fa-heart fa-lg" />
-    </IconButton>
-  </div>
-}>
+<CodePreview link="icon-button#icon-button-sizes" component={<IconButtonExamples.IconButtonSizes />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonSizes() {
   return (
     <div className="flex items-end gap-4">
       <IconButton size="sm">
@@ -155,26 +118,11 @@ export default function Example() {
 
 The <Code>IconButton</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="icon-button-colors" link="icon-button#icon-button-colors" component={
-  <div className="flex gap-4">
-    <IconButton color="blue">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton color="red">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton color="green">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton color="amber">
-      <i className="fas fa-heart" />
-    </IconButton>
-  </div>
-}>
+<CodePreview link="icon-button#icon-button-colors" component={<IconButtonExamples.IconButtonColors />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonColors() {
   return (
     <div className="flex gap-4">
       <IconButton color="blue">
@@ -197,32 +145,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="rounded-icon-buttons">
-## Rounded Icon Buttons
+<DocsTitle href="icon-button-rounded">
+## Icon Button Rounded
 </DocsTitle>
 
 You can use tailwind css <Code>rounded-full</Code> class with <Code>IconButton</Code> to create rounded icon buttons.
 
-<CodePreview id="rounded-icon-buttons" component={
-  <div className="flex items-center gap-4">
-    <IconButton className="rounded-full">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="gradient" className="rounded-full">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="outlined" className="rounded-full">
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton variant="text" className="rounded-full">
-      <i className="fas fa-heart" />
-    </IconButton>
-  </div>
-}>
+<CodePreview component={<IconButtonExamples.IconButtonRounded />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonRounded() {
   return (
     <div className="flex items-center gap-4">
       <IconButton className="rounded-full">
@@ -245,40 +178,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="icon-buttons-with-link">
-## Icon Buttons with Link
+<DocsTitle href="icon-button-with-link">
+## Icon Button with Link
 </DocsTitle>
 
 You can wrap <Code>IconButton</Code> component with <Code>{`<a>`}</Code> tag to make it a link.
 
-<CodePreview id="icon-buttons-with-link" component={
-  <div className="flex items-center gap-4">
-    <a href="#icon-buttons-with-link">
-      <IconButton>
-        <i className="fas fa-heart" />
-      </IconButton>
-    </a>
-    <a href="#icon-buttons-with-link">
-      <IconButton variant="gradient">
-        <i className="fas fa-heart" />
-      </IconButton>
-    </a>
-    <a href="#icon-buttons-with-link">
-      <IconButton variant="outlined">
-        <i className="fas fa-heart" />
-      </IconButton>
-    </a>
-    <a href="#icon-buttons-with-link">
-      <IconButton variant="text">
-        <i className="fas fa-heart" />
-      </IconButton>
-    </a>
-  </div>
-}>
+<CodePreview component={<IconButtonExamples.IconButtonWithLink />}>
 ```jsx
 import { Button } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonWithLink() {
   return (
     <div className="flex items-center gap-4">
       <a href="#buttons-with-link">
@@ -307,20 +217,11 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>IconButton</Code> component using the <Code>ripple</Code> prop.
 
-<CodePreview id="icon-button-ripple-effect" link="icon-button#icon-button-ripple-effect" component={
-  <div className="flex w-max gap-4">
-    <IconButton ripple={true}>
-      <i className="fas fa-heart" />
-    </IconButton>
-    <IconButton ripple={false}>
-      <i className="fas fa-heart" />
-    </IconButton>
-  </div>
-}>
+<CodePreview link="icon-button#icon-button-ripple-effect" component={<IconButtonExamples.IconButtonRippleEffect />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonRippleEffect() {
   return (
     <div className="flex w-max gap-4">
       <IconButton ripple={true}>
@@ -343,42 +244,27 @@ export default function Example() {
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>IconButton</Code> component.
 
-<CodePreview id="icon-button-with-custom-styles" component={
-  <div className="flex gap-4">
-    <IconButton className="bg-[#ea4335] rounded hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10">
-      <i className="fab fa-google text-lg" />
-    </IconButton>
-    <IconButton className="bg-[#1DA1F2] rounded hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10">
-      <i className="fab fa-twitter text-lg" />
-    </IconButton>
-    <IconButton className="bg-[#ea4c89] rounded hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10">
-      <i className="fab fa-dribbble text-lg" />
-    </IconButton>
-    <IconButton className="bg-[#333333] rounded hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10">
-      <i className="fab fa-github text-lg" />
-    </IconButton>
-  </div>
-}>
+<CodePreview component={<IconButtonExamples.IconButtonCustomStyles />}>
 ```jsx
 import { IconButton } from "@material-tailwind/react";
 
-export default function Example() {
+export function IconButtonCustomStyles() {
   return (
     <div className="flex gap-4">
-      <IconButton className="bg-[#ea4335] rounded hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10">
+      <IconButton className="rounded bg-[#ea4335] hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10">
         <i className="fab fa-google text-lg" />
       </IconButton>
-      <IconButton className="bg-[#1DA1F2] rounded hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10">
+      <IconButton className="rounded bg-[#1DA1F2] hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10">
         <i className="fab fa-twitter text-lg" />
       </IconButton>
-      <IconButton className="bg-[#ea4c89] rounded hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10">
+      <IconButton className="rounded bg-[#ea4c89] hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10">
         <i className="fab fa-dribbble text-lg" />
       </IconButton>
-      <IconButton className="bg-[#333333] rounded hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10">
+      <IconButton className="rounded bg-[#333333] hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10">
         <i className="fab fa-github text-lg" />
       </IconButton>
     </div>
-  )
+  );
 }
 ```
 </CodePreview>
@@ -403,5 +289,784 @@ In case of using icon fonts rather than svg icons please add their cdn links to 
 />
 ```
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="icon-button-props">
+## Icon Button Props
+</DocsTitle>
+
+The following props are available for icon button component. These are the custom
+props that we've added for the icon button component and you can use all the other
+native button props as well.
+
+| Attribute   | Type                      | Description                          | Default                                |
+| ----------- | ------------------------- | ------------------------------------ | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change icon button variant           | <Code>filled</Code>                    |
+| `size`      | [Size](#types-size)       | Change icon button size              | <Code>md</Code>                        |
+| `color`     | [Color](#types-color)     | Change icon button color             | <Code>blue</Code>                      |
+| `ripple`    | <Code>boolean</Code>      | Add ripple effect for icon button    | <Code>true</Code>                      |
+| `className` | <Code>string</Code>       | Add custom className for icon button | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for icon button          | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { IconButtonProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+<span id="types-variant" className="scroll-mt-48" />
+
+```ts
+type variant = "filled" | "outlined" | "gradient" | "text";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+<span id="types-size" className="scroll-mt-48" />
+
+```ts
+type size = "sm" | "md" | "lg";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+<span id="types-color" className="scroll-mt-48" />
+
+```ts
+type color =
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="icon-button-theme">
+## Icon Button Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for icon button component, the theme object for icon button component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of icon button component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for icon button component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of icon button component.<br />
+
+You can customize the theme and styles of icon button component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="icon-button-theme-object-type">
+## Icon Button Theme Object Type
+</DocsTitle>
+
+```ts
+interface IconButtonStyleTypes {
+  defaultProps: {
+    variant: string;
+    size: string;
+    color: string;
+    ripple: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: object;
+    sizes: {
+      sm: object;
+      md: object;
+      lg: object;
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+      outlined: object;
+      text: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { IconButtonStyleTypes } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="icon-button-theme-customization">
+## Icon Button Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  iconButton: {
+    defaultProps: {
+      variant: "filled",
+      size: "md",
+      color: "blue",
+      fullWidth: false,
+      ripple: true,
+      className: "",
+    },
+    valid: {
+      variants: ["filled", "outlined", "gradient", "text"],
+      sizes: ["sm", "md", "lg"],
+      colors: [
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        position: "relative",
+        verticalAlign: "align-middle",
+        userSelect: "select-none",
+        fontFamily: "font-sans",
+        fontWeight: "font-medium",
+        textAlign: "text-center",
+        textTransform: "uppercase",
+        transition: "transition-all",
+        disabled: "disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
+      },
+      sizes: {
+        sm: {
+          width: "w-8",
+          maxWidth: "max-w-[32px]",
+          height: "h-8",
+          maxHeight: "max-h-[32px]",
+          borderRadius: "rounded-lg",
+          fontSize: "text-xs",
+        },
+        md: {
+          width: "w-10",
+          maxWidth: "max-w-[40px]",
+          height: "h-10",
+          maxHeight: "max-h-[40px]",
+          borderRadius: "rounded-lg",
+          fontSize: "text-xs",
+        },
+        lg: {
+          width: "w-12",
+          maxWidth: "max-w-[48px]",
+          height: "h-12",
+          maxHeight: "max-h-[48px]",
+          borderRadius: "rounded-lg",
+          fontSize: "text-sm",
+        },
+      },
+      variants: {
+        filled: {
+          white: {
+            backgroud: "bg-white",
+            color: "text-blue-gray-900",
+            shadow: "shadow-md shadow-blue-gray-500/10",
+            hover: "hover:shadow-lg hover:shadow-blue-gray-500/20",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-blue-gray-500/20",
+            hover: "hover:shadow-lg hover:shadow-blue-gray-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          gray: {
+            backgroud: "bg-gray-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-gray-500/20",
+            hover: "hover:shadow-lg hover:shadow-gray-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          brown: {
+            backgroud: "bg-brown-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-brown-500/20",
+            hover: "hover:shadow-lg hover:shadow-brown-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-deep-orange-500/20",
+            hover: "hover:shadow-lg hover:shadow-deep-orange-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          orange: {
+            backgroud: "bg-orange-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-orange-500/20",
+            hover: "hover:shadow-lg hover:shadow-orange-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          amber: {
+            backgroud: "bg-amber-500",
+            color: "text-black",
+            shadow: "shadow-md shadow-amber-500/20",
+            hover: "hover:shadow-lg hover:shadow-amber-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500",
+            color: "text-black",
+            shadow: "shadow-md shadow-yellow-500/20",
+            hover: "hover:shadow-lg hover:shadow-yellow-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          lime: {
+            backgroud: "bg-lime-500",
+            color: "text-black",
+            shadow: "shadow-md shadow-lime-500/20",
+            hover: "hover:shadow-lg hover:shadow-lime-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-light-green-500/20",
+            hover: "hover:shadow-lg hover:shadow-light-green-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          green: {
+            backgroud: "bg-green-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-green-500/20",
+            hover: "hover:shadow-lg hover:shadow-green-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          teal: {
+            backgroud: "bg-teal-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-teal-500/20",
+            hover: "hover:shadow-lg hover:shadow-teal-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-cyan-500/20",
+            hover: "hover:shadow-lg hover:shadow-cyan-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-light-blue-500/20",
+            hover: "hover:shadow-lg hover:shadow-light-blue-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-blue-500/20",
+            hover: "hover:shadow-lg hover:shadow-blue-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-indigo-500/20",
+            hover: "hover:shadow-lg hover:shadow-indigo-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-deep-purple-500/20",
+            hover: "hover:shadow-lg hover:shadow-deep-purple-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          purple: {
+            backgroud: "bg-purple-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-purple-500/20",
+            hover: "hover:shadow-lg hover:shadow-purple-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          pink: {
+            backgroud: "bg-pink-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-pink-500/20",
+            hover: "hover:shadow-lg hover:shadow-pink-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          red: {
+            backgroud: "bg-red-500",
+            color: "text-white",
+            shadow: "shadow-md shadow-red-500/20",
+            hover: "hover:shadow-lg hover:shadow-red-500/40",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+        },
+        gradient: {
+          white: {
+            backgroud: "bg-white",
+            color: "text-blue-gray-900",
+            shadow: "shadow-md shadow-blue-gray-500/10",
+            hover: "hover:shadow-lg hover:shadow-blue-gray-500/20",
+            focus: "focus:opacity-[0.85] focus:shadow-none",
+            active: "active:opacity-[0.85] active:shadow-none",
+          },
+          "blue-gray": {
+            backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-blue-gray-500/20",
+            hover: "hover:shadow-lg hover:shadow-blue-gray-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          gray: {
+            backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-gray-500/20",
+            hover: "hover:shadow-lg hover:shadow-gray-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          brown: {
+            backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-brown-500/20",
+            hover: "hover:shadow-lg hover:shadow-brown-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          "deep-orange": {
+            backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-deep-orange-500/20",
+            hover: "hover:shadow-lg hover:shadow-deep-orange-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          orange: {
+            backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-orange-500/20",
+            hover: "hover:shadow-lg hover:shadow-orange-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          amber: {
+            backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
+            color: "text-black",
+            shadow: "shadow-md shadow-amber-500/20",
+            hover: "hover:shadow-lg hover:shadow-amber-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          yellow: {
+            backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+            color: "text-black",
+            shadow: "shadow-md shadow-yellow-500/20",
+            hover: "hover:shadow-lg hover:shadow-yellow-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          lime: {
+            backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
+            color: "text-black",
+            shadow: "shadow-md shadow-lime-500/20",
+            hover: "hover:shadow-lg hover:shadow-lime-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          "light-green": {
+            backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-light-green-500/20",
+            hover: "hover:shadow-lg hover:shadow-light-green-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          green: {
+            backgroud: "bg-gradient-to-tr from-green-600 to-green-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-green-500/20",
+            hover: "hover:shadow-lg hover:shadow-green-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          teal: {
+            backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-teal-500/20",
+            hover: "hover:shadow-lg hover:shadow-teal-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          cyan: {
+            backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-cyan-500/20",
+            hover: "hover:shadow-lg hover:shadow-cyan-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          "light-blue": {
+            backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-light-blue-500/20",
+            hover: "hover:shadow-lg hover:shadow-light-blue-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-blue-500/20",
+            hover: "hover:shadow-lg hover:shadow-blue-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          indigo: {
+            backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-indigo-500/20",
+            hover: "hover:shadow-lg hover:shadow-indigo-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          "deep-purple": {
+            backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-deep-purple-500/20",
+            hover: "hover:shadow-lg hover:shadow-deep-purple-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          purple: {
+            backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-purple-500/20",
+            hover: "hover:shadow-lg hover:shadow-purple-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          pink: {
+            backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-pink-500/20",
+            hover: "hover:shadow-lg hover:shadow-pink-500/40",
+            active: "active:opacity-[0.85]",
+          },
+          red: {
+            backgroud: "bg-gradient-to-tr from-red-600 to-red-400",
+            color: "text-white",
+            shadow: "shadow-md shadow-red-500/20",
+            hover: "hover:shadow-lg hover:shadow-red-500/40",
+            active: "active:opacity-[0.85]",
+          },
+        },
+        outlined: {
+          white: {
+            border: "border border-white",
+            color: "text-white",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-white/50",
+            active: "active:opacity-[0.85]",
+          },
+          "blue-gray": {
+            border: "border border-blue-gray-500",
+            color: "text-blue-gray-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-blue-gray-200",
+            active: "active:opacity-[0.85]",
+          },
+          gray: {
+            border: "border border-gray-500",
+            color: "text-gray-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-gray-200",
+            active: "active:opacity-[0.85]",
+          },
+          brown: {
+            border: "border border-brown-500",
+            color: "text-brown-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-brown-200",
+            active: "active:opacity-[0.85]",
+          },
+          "deep-orange": {
+            border: "border border-deep-orange-500",
+            color: "text-deep-orange-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-deep-orange-200",
+            active: "active:opacity-[0.85]",
+          },
+          orange: {
+            border: "border border-orange-500",
+            color: "text-orange-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-orange-200",
+            active: "active:opacity-[0.85]",
+          },
+          amber: {
+            border: "border border-amber-500",
+            color: "text-amber-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-amber-200",
+            active: "active:opacity-[0.85]",
+          },
+          yellow: {
+            border: "border border-yellow-500",
+            color: "text-yellow-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-yellow-200",
+            active: "active:opacity-[0.85]",
+          },
+          lime: {
+            border: "border border-lime-500",
+            color: "text-lime-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-lime-200",
+            active: "active:opacity-[0.85]",
+          },
+          "light-green": {
+            border: "border border-light-green-500",
+            color: "text-light-green-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-light-green-200",
+            active: "active:opacity-[0.85]",
+          },
+          green: {
+            border: "border border-green-500",
+            color: "text-green-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-green-200",
+            active: "active:opacity-[0.85]",
+          },
+          teal: {
+            border: "border border-teal-500",
+            color: "text-teal-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-teal-200",
+            active: "active:opacity-[0.85]",
+          },
+          cyan: {
+            border: "border border-cyan-500",
+            color: "text-cyan-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-cyan-200",
+            active: "active:opacity-[0.85]",
+          },
+          "light-blue": {
+            border: "border border-light-blue-500",
+            color: "text-light-blue-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-light-blue-200",
+            active: "active:opacity-[0.85]",
+          },
+          blue: {
+            border: "border border-blue-500",
+            color: "text-blue-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-blue-200",
+            active: "active:opacity-[0.85]",
+          },
+          indigo: {
+            border: "border border-indigo-500",
+            color: "text-indigo-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-indigo-200",
+            active: "active:opacity-[0.85]",
+          },
+          "deep-purple": {
+            border: "border border-deep-purple-500",
+            color: "text-deep-purple-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-deep-purple-200",
+            active: "active:opacity-[0.85]",
+          },
+          purple: {
+            border: "border border-purple-500",
+            color: "text-purple-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-purple-200",
+            active: "active:opacity-[0.85]",
+          },
+          pink: {
+            border: "border border-pink-500",
+            color: "text-pink-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-pink-200",
+            active: "active:opacity-[0.85]",
+          },
+          red: {
+            border: "border border-red-500",
+            color: "text-red-500",
+            hover: "hover:opacity-75",
+            focus: "focus:ring focus:ring-red-200",
+            active: "active:opacity-[0.85]",
+          },
+        },
+        text: {
+          white: {
+            color: "text-white",
+            hover: "hover:bg-white/10",
+            active: "active:bg-white/30",
+          },
+          "blue-gray": {
+            color: "text-blue-gray-500",
+            hover: "hover:bg-blue-gray-500/10",
+            active: "active:bg-blue-gray-500/30",
+          },
+          gray: {
+            color: "text-gray-500",
+            hover: "hover:bg-gray-500/10",
+            active: "active:bg-gray-500/30",
+          },
+          brown: {
+            color: "text-brown-500",
+            hover: "hover:bg-brown-500/10",
+            active: "active:bg-brown-500/30",
+          },
+          "deep-orange": {
+            color: "text-deep-orange-500",
+            hover: "hover:bg-deep-orange-500/10",
+            active: "active:bg-deep-orange-500/30",
+          },
+          orange: {
+            color: "text-orange-500",
+            hover: "hover:bg-orange-500/10",
+            active: "active:bg-orange-500/30",
+          },
+          amber: {
+            color: "text-amber-500",
+            hover: "hover:bg-amber-500/10",
+            active: "active:bg-amber-500/30",
+          },
+          yellow: {
+            color: "text-yellow-500",
+            hover: "hover:bg-yellow-500/10",
+            active: "active:bg-yellow-500/30",
+          },
+          lime: {
+            color: "text-lime-500",
+            hover: "hover:bg-lime-500/10",
+            active: "active:bg-lime-500/30",
+          },
+          "light-green": {
+            color: "text-light-green-500",
+            hover: "hover:bg-light-green-500/10",
+            active: "active:bg-light-green-500/30",
+          },
+          green: {
+            color: "text-green-500",
+            hover: "hover:bg-green-500/10",
+            active: "active:bg-green-500/30",
+          },
+          teal: {
+            color: "text-teal-500",
+            hover: "hover:bg-teal-500/10",
+            active: "active:bg-teal-500/30",
+          },
+          cyan: {
+            color: "text-cyan-500",
+            hover: "hover:bg-cyan-500/10",
+            active: "active:bg-cyan-500/30",
+          },
+          "light-blue": {
+            color: "text-light-blue-500",
+            hover: "hover:bg-light-blue-500/10",
+            active: "active:bg-light-blue-500/30",
+          },
+          blue: {
+            color: "text-blue-500",
+            hover: "hover:bg-blue-500/10",
+            active: "active:bg-blue-500/30",
+          },
+          indigo: {
+            color: "text-indigo-500",
+            hover: "hover:bg-indigo-500/10",
+            active: "active:bg-indigo-500/30",
+          },
+          "deep-purple": {
+            color: "text-deep-purple-500",
+            hover: "hover:bg-deep-purple-500/10",
+            active: "active:bg-deep-purple-500/30",
+          },
+          purple: {
+            color: "text-purple-500",
+            hover: "hover:bg-purple-500/10",
+            active: "active:bg-purple-500/30",
+          },
+          pink: {
+            color: "text-pink-500",
+            hover: "hover:bg-pink-500/10",
+            active: "active:bg-pink-500/30",
+          },
+          red: {
+            color: "text-red-500",
+            hover: "hover:bg-red-500/10",
+            active: "active:bg-red-500/30",
+          },
+        },
+      },
+    },
+  },
+};
+```

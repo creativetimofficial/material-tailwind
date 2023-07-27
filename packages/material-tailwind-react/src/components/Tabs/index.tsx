@@ -26,7 +26,6 @@ import {
 } from "../../types/components/tabs";
 
 export interface TabsProps extends React.ComponentProps<"div" | any> {
-  id: id;
   value: value;
   orientation?: orientation;
   className?: className;
@@ -34,10 +33,11 @@ export interface TabsProps extends React.ComponentProps<"div" | any> {
 }
 
 const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
-  ({ id, value, className, orientation, children, ...rest }, ref) => {
+  ({ value, className, orientation, children, ...rest }, ref) => {
     // 1. init
     const { tabs } = useTheme();
     const { defaultProps, styles } = tabs;
+    const tabsId = React.useId();
 
     // 2. set default props
     className = className ?? defaultProps.className;
@@ -53,7 +53,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 
     // 4. return
     return (
-      <TabsContextProvider id={id} value={value} orientation={orientation}>
+      <TabsContextProvider id={tabsId} value={value} orientation={orientation}>
         <div {...rest} ref={ref} className={tabsClasses}>
           {children}
         </div>

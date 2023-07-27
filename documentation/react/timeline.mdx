@@ -7,28 +7,15 @@ navigation:
     "timeline-with-icon",
     "timeline-with-avatar",
     "activities-timeline",
-    # "props",
-    # "theme",
   ]
-# related:
-#   [
-#     {
-#       title: "Props",
-#       route: "props/timeline",
-#       description: "Learn more about props definition and types of timeline components.",
-#     },
-#     {
-#       title: "Theme",
-#       route: "theme/timeline",
-#       description: "Learn how to customize the theme and styles for timeline components.",
-#     },
-#   ]
 github: timeline
 prev: textarea
 next: tooltip
 ---
 
+<DocsTitle href="timeline">
 # Tailwind CSS Timeline - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Timeline</Code> component in your web projects. The <Code>Timeline</Code> can be used for displaying a list of events in order.
 
@@ -36,7 +23,16 @@ See below our beautiful <Code>Timeline</Code> example that you can use in your T
 
 <br />
 
-<CodePreview id="timeline" component={<TimelineExamples.DefaultTimeline />}>
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+npm i @heroicons/react
+```
+
+<br />
+<br />
+
+<CodePreview component={<TimelineExamples.DefaultTimeline />}>
 ```jsx
 import {
   Timeline,
@@ -48,7 +44,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function DefaultTimeline() {
   return (
     <div className="w-[32rem]">
       <Timeline>
@@ -61,11 +57,7 @@ export default function Example() {
             </Typography>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
-              variant="small"
-              color="gary"
-              className="font-normal text-gray-600"
-            >
+            <Typography variant="small" color="gary" className="font-normal text-gray-600">
               The key to more success is to have a lot of pillows. Put it this way, it took me
               twenty five years to get these plants, twenty five years of blood sweat and tears, and
               I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
@@ -82,11 +74,7 @@ export default function Example() {
             </Typography>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
-              variant="small"
-              color="gary"
-              className="font-normal text-gray-600"
-            >
+            <Typography variant="small" color="gary" className="font-normal text-gray-600">
               The key to more success is to have a lot of pillows. Put it this way, it took me
               twenty five years to get these plants, twenty five years of blood sweat and tears, and
               I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
@@ -95,7 +83,6 @@ export default function Example() {
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
-          <TimelineConnector />
           <TimelineHeader className="h-3">
             <TimelineIcon />
             <Typography variant="h6" color="blue-gray" className="leading-none">
@@ -103,11 +90,7 @@ export default function Example() {
             </Typography>
           </TimelineHeader>
           <TimelineBody>
-            <Typography
-              variant="small"
-              color="gary"
-              className="font-normal text-gray-600"
-            >
+            <Typography variant="small" color="gary" className="font-normal text-gray-600">
               The key to more success is to have a lot of pillows. Put it this way, it took me
               twenty five years to get these plants, twenty five years of blood sweat and tears, and
               I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
@@ -141,13 +124,9 @@ import {
   TimelineBody,
   Typography,
 } from "@material-tailwind/react";
-import {
-  HomeIcon,
-  BellIcon,
-  CurrencyDollarIcon,
-} from "@heroicons/react/24/solid";
+import { HomeIcon, BellIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function TimelineWithIcon() {
   return (
     <div className="w-[32rem]">
       <Timeline>
@@ -235,7 +214,7 @@ import {
   Avatar,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function TimelineWithAvatar() {
   return (
     <div className="w-[32rem]">
       <Timeline>
@@ -326,7 +305,7 @@ import {
   CurrencyDollarIcon,
 } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function ActivitiesTimeline() {
   return (
     <div className="w-[25rem]">
       <Timeline>

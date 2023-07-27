@@ -8,35 +8,32 @@ navigation:
     "input-sizes",
     "input-colors",
     "input-validations",
-    "input-with-icon",
+    "input-icon",
     "input-with-helper-text",
     "input-with-button",
     "input-with-dropdown",
-    "disabled-input",
+    "input-disabled",
     "input-for-dark-surface",
-    "input-with-custom-styles",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/input",
-      description: "Learn more about props definition and types of input component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/input",
-      description: "Learn how to customize the theme and styles for input component.",
-    },
+    "input-custom-styles",
+    "input-props",
+    "types-variant",
+    "types-size",
+    "types-color",
+    "input-theme",
+    "input-theme-object-type",
+    "input-variant-object-type",
+    "input-size-object-type",
+    "input-state-object-type",
+    "input-theme-customization",
   ]
 github: input
 prev: icon-button
 next: form
 ---
 
+<DocsTitle href="input">
 # Tailwind CSS Input - React
+</DocsTitle>
 
 Easily create <Code>Input</Code> with different statuses and sizes using our components based on Tailwind CSS and React.
 
@@ -47,15 +44,11 @@ See below our <Code>Input</Code> component examples. It comes in different style
 
 <br />
 
-<CodePreview id="input" link="input#input" component={
-  <div className="w-72">
-    <Input label="Required" />
-  </div>
-}>
+<CodePreview link="input#input" component={<InputExamples.InputDefault />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputDefault() {
   return (
     <div className="w-72">
       <Input label="Username" />
@@ -73,19 +66,13 @@ export default function Example() {
 
 The <Code>Input</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
 
-<CodePreview id="input-variants" link="input#input-variants" component={
-  <div className="flex flex-col w-72 gap-6">
-    <Input variant="static" label="Static" placeholder="Static" />
-    <Input variant="standard" label="Standard" />
-    <Input variant="outlined" label="Outlined" />
-  </div>
-}>
+<CodePreview link="input#input-variants" component={<InputExamples.InputVariants />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputVariants() {
   return (
-    <div className="flex flex-col w-72 gap-6">
+    <div className="flex w-72 flex-col gap-6">
       <Input variant="static" label="Static" placeholder="Static" />
       <Input variant="standard" label="Standard" />
       <Input variant="outlined" label="Outlined" />
@@ -103,18 +90,13 @@ export default function Example() {
 
 The <Code>Input</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="input-sizes" link="input#input-sizes" component={
-  <div className="flex flex-col w-72 items-end gap-6">
-    <Input size="md" label="Input Medium" />
-    <Input size="lg" label="Input Large" />
-  </div>
-}>
+<CodePreview link="input#input-sizes" component={<InputExamples.InputSizes />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputSizes() {
   return (
-    <div className="flex flex-col w-72 items-end gap-6">
+    <div className="flex w-72 flex-col items-end gap-6">
       <Input size="md" label="Input Medium" />
       <Input size="lg" label="Input Large" />
     </div>
@@ -131,18 +113,11 @@ export default function Example() {
 
 The <Code>Input</Code> component comes with 21 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="input-colors" link="input#input-colors" component={
-  <div className="flex w-72 flex-col gap-6">
-    <Input color="blue" label="Input Blue" />
-    <Input color="purple" label="Input Purple" />
-    <Input color="indigo" label="Input Indigo" />
-    <Input color="teal" label="Input Teal" />
-  </div>
-}>
+<CodePreview link="input#input-colors" component={<InputExamples.InputColors />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputColors() {
   return (
     <div className="flex w-72 flex-col gap-6">
       <Input color="blue" label="Input Blue" />
@@ -163,18 +138,13 @@ export default function Example() {
 
 The <Code>Input</Code> component comes with error and success states for performing validations.
 
-<CodePreview id="input-validations" link="input#input-validations" component={
-  <div div className="flex flex-col w-72 items-end gap-6">
-    <Input label="Input Error" error />
-    <Input label="Input Success" success />
-  </div>
-}>
+<CodePreview link="input#input-validations" component={<InputExamples.InputValidations />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputValidations() {
   return (
-    <div className="flex flex-col w-72 items-end gap-6">
+    <div className="flex w-72 flex-col items-end gap-6">
       <Input label="Input Error" error />
       <Input label="Input Success" success />
     </div>
@@ -185,21 +155,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="input-with-icon">
-## Input With Icon
+<DocsTitle href="input-icon">
+## Input Icon
 </DocsTitle>
 
 You can add icon for the <Code>Input</Code> component using the <Code>icon</Code> prop.
 
-<CodePreview id="input-with-icon" link="input#input-with-icon" component={
-  <div className="w-72">
-    <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
-  </div>
-}>
+<CodePreview link="input#input-icon" component={<InputExamples.InputIcon />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputIcon() {
   return (
     <div className="w-72">
       <Input label="Input With Icon" icon={<i className="fas fa-heart" />} />
@@ -217,25 +183,31 @@ export default function Example() {
 
 Use the example below for an input with a helper text.
 
-<CodePreview id="input-with-helper-text" component={
-  <div className="w-[32rem]">
-    <Input type="password" label="Password" />
-    <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
-      <SolidIcons.InformationCircleIcon className="w-4 h-4 -mt-px" />
-      Use at least 8 characters, one uppercase, one lowercase and one number.
-    </Typography>
-  </div>
-}>
+<CodePreview component={<InputExamples.InputWithHelperText />}>
 ```jsx
 import { Input, Typography } from "@material-tailwind/react";
-import { InformationCircleIcon } from "@heroicons/react/24/solid"
 
-export default function Example() {
+export function InputWithHelperText() {
   return (
     <div className="w-[32rem]">
       <Input type="password" label="Password" />
-      <Typography variant="small" color="gray" className="flex items-center gap-1 font-normal mt-2">
-        <InformationCircleIcon className="w-4 h-4 -mt-px" />
+      <Typography
+        variant="small"
+        color="gray"
+        className="mt-2 flex items-center gap-1 font-normal"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="-mt-px h-4 w-4"
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
         Use at least 8 characters, one uppercase, one lowercase and one number.
       </Typography>
     </div>
@@ -252,15 +224,15 @@ export default function Example() {
 
 Use the example below for an input containing a button inside.
 
-<CodePreview id="input-with-button" link="input#input-with-button" component={<InputWithButton />}>
+<CodePreview link="input#input-with-button" component={<InputExamples.InputWithButton />}>
 ```jsx
 import React from "react";
 import { Input, Button } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputWithButton() {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
-  
+
   return (
     <div className="relative flex w-full max-w-[24rem]">
       <Input
@@ -295,7 +267,17 @@ export default function Example() {
 
 Use the example below for an input containing a countries code dropdown.
 
-<CodePreview id="input-with-dropdown" component={<CountriesCodeInput />}>
+<br />
+
+This example is using <Code><a href="https://www.npmjs.com/package/use-react-countries" target="_blank">use-react-countries</a></Code> make sure you have installed it.
+
+```bash
+npm i use-react-countries
+```
+
+<br />
+
+<CodePreview component={<InputExamples.InputWithDropdown />}>
 ```jsx
 import React from "react";
 import { useCountries } from "use-react-countries";
@@ -307,12 +289,12 @@ import {
   MenuItem,
   Button,
 } from "@material-tailwind/react";
- 
-export default function Example() {
+
+export function InputWithDropdown() {
   const { countries } = useCountries();
   const [country, setCountry] = React.useState(0);
   const { name, flags, countryCallingCode } = countries[country];
- 
+
   return (
     <div className="relative flex w-full max-w-[24rem]">
       <Menu placement="bottom-start">
@@ -332,25 +314,23 @@ export default function Example() {
           </Button>
         </MenuHandler>
         <MenuList className="max-h-[20rem] max-w-[18rem]">
-          {countries.map(
-            ({ name, flags, countryCallingCode }, index) => {
-              return (
-                <MenuItem
-                  key={name}
-                  value={name}
-                  className="flex items-center gap-2"
-                  onClick={() => setCountry(index)}
-                >
-                  <img
-                    src={flags.svg}
-                    alt={name}
-                    className="h-5 w-5 rounded-full object-cover"
-                  />
-                  {name} <span className="ml-auto">{countryCallingCode}</span>
-                </MenuItem>
-              );
-            }
-          )}
+          {countries.map(({ name, flags, countryCallingCode }, index) => {
+            return (
+              <MenuItem
+                key={name}
+                value={name}
+                className="flex items-center gap-2"
+                onClick={() => setCountry(index)}
+              >
+                <img
+                  src={flags.svg}
+                  alt={name}
+                  className="h-5 w-5 rounded-full object-cover"
+                />
+                {name} <span className="ml-auto">{countryCallingCode}</span>
+              </MenuItem>
+            );
+          })}
         </MenuList>
       </Menu>
       <Input
@@ -372,21 +352,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="disabled-input">
-## Disabled Input
+<DocsTitle href="input-disabled">
+## Input Disabled
 </DocsTitle>
 
 An <Code>Input</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Input</Code> component.
 
-<CodePreview id="disabled-input" link="input#disabled-input" component={
-  <div className="w-72">
-    <Input label="Disabled" disabled />
-  </div>
-}>
+<CodePreview id="input-disabled" link="input#input-disabled" component={<InputExamples.InputDisabled />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputDisabled() {
   return (
     <div className="w-72">
       <Input label="Disabled" disabled />
@@ -404,75 +380,1269 @@ export default function Example() {
 
 You can use the <Code>color="white"</Code> for <Code>Input</Code> to make it visible and accessible on dark surfaces.
 
-<CodePreview id="input-for-dark-surface" component={
-  <div className="w-full h-full bg-blue-gray-900 grid place-items-center rounded-xl">
-    <div className="w-72">
-      <Input
-        type="email"
-        color="white"
-        label="Email Address"
-      />
-    </div>
-  </div>
-}>
+<CodePreview id="input-for-dark-surface" component={<InputExamples.InputForDarkSurface />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputForDarkSurface() {
   return (
     <div className="w-72">
-      <Input
-        type="email"
-        color="white"
-        label="Email Address"
-      />
+      <Input type="email" color="white" label="Email Address" />
     </div>
-  )
+  );
 }
 ```
 </CodePreview>
 
 ---
 
-<DocsTitle href="input-with-custom-styles">
-## Input with Custom Styles
+<DocsTitle href="input-custom-styles">
+## Input Custom Styles
 </DocsTitle>
 
 You can use the <Code>className</Code>, <Code>labelProps</Code> and <Code>containerProps</Code> props to add custom styles to the <Code>Input</Code> component.
 
-<CodePreview id="input-with-custom-styles" component={
-  <div className="w-72">
-    <Input
-      type="email"
-      placeholder="Email Address"
-      className="focus:!border-t-blue-500 focus:!border-blue-500 ring-4 ring-transparent focus:ring-blue-500/20 !border !border-blue-gray-50 bg-white shadow-lg shadow-blue-gray-900/5 placeholder:text-blue-gray-200 text-blue-gray-500"
-      labelProps={{
-        className: "hidden" 
-      }}
-      containerProps={{ className: "min-w-[100px]" }}
-    />
-  </div>
-}>
+<CodePreview component={<InputExamples.InputCustomStyles />}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
-export default function Example() {
+export function InputCustomStyles() {
   return (
     <div className="w-72">
       <Input
         type="email"
         placeholder="Email Address"
-        className="focus:!border-t-blue-500 focus:!border-blue-500 ring-4 ring-transparent focus:ring-blue-500/20 !border !border-blue-gray-50 bg-white shadow-lg shadow-blue-gray-900/5 placeholder:text-blue-gray-200 text-blue-gray-500"
+        className="!border !border-blue-gray-50 bg-white text-blue-gray-500 shadow-lg shadow-blue-gray-900/5 ring-4 ring-transparent placeholder:text-blue-gray-200 focus:!border-blue-500 focus:!border-t-blue-500 focus:ring-blue-500/20"
         labelProps={{
-          className: "hidden" 
+          className: "hidden",
         }}
         containerProps={{ className: "min-w-[100px]" }}
       />
     </div>
-  )
+  );
 }
 ```
 </CodePreview>
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+---
+
+<DocsTitle href="input-props">
+## Input Props
+</DocsTitle>
+
+The following props are available for input component. These are the custom props
+that we've added for the input component and you can use all the other
+native input props as well.
+
+| Attribute        | Type                      | Description                                   | Default                |
+| ---------------- | ------------------------- | --------------------------------------------- | ---------------------- |
+| `variant`        | [Variant](#types-variant) | Change input variant                          | <Code>outlined</Code>  |
+| `size`           | [Size](#types-size)       | Change input size                             | <Code>md</Code>        |
+| `color`          | [Color](#types-color)     | Change input color                            | <Code>blue</Code>      |
+| `label`          | <Code>string</Code>       | Add label for input                           | `''`                   |
+| `error`          | <Code>boolean</Code>      | Change input state to error                   | <Code>false</Code>     |
+| `success`        | <Code>boolean</Code>      | Change input state to success                 | <Code>false</Code>     |
+| `icon`           | <Code>node</Code>         | Add icon for the input                        | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>       | Add custom props for input label              | <Code>undefined</Code> |
+| `containerProps` | <Code>object</Code>       | Add custom props for input container          | <Code>undefined</Code> |
+| `className`      | <Code>string</Code>       | Add custom className for input                | `''`                   |
+| `shrink`         | <Code>boolean</Code>      | Makes the input floated by default.           | <Code>false</Code>     |
+| `inputRef`       | <Code>ref</Code>          | Add reference for <Code>input</Code> element. | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "standard" | "outlined" | "static";
+```
+
+---
+
+<DocsTitle href="types-size">
+## Types - Size
+</DocsTitle>
+
+```ts
+type size = "md" | "lg";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blakc"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="input-theme">
+## Input Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for input component, the theme object for input component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of input component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for input component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of input component.<br />
+
+You can customize the theme and styles of input component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="input-theme-object-type">
+## Input Theme Object Type
+</DocsTitle>
+
+Variant of <Code>Input</Code> component theme has a specific type of <a href="#input-variant-object-type" className="font-medium hover:text-blue-500 transition-colors">Input Variant Styles Type</a>
+
+```ts
+interface InputStylesType {
+  defaultProps: {
+    variant: string;
+    size: string;
+    color: string;
+    label: string;
+    error: boolean;
+    success: boolean;
+    icon: node;
+    labelProps: object;
+    containerProps: object;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    sizes: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      container: object;
+      input: object;
+      label: object;
+      icon: object;
+      asterisk: object;
+    };
+    variants: {
+      outlined: InputVariantStylesType;
+      standard: InputVariantStylesType;
+      static: InputVariantStylesType;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="input-variant-object-type">
+## Theme Object Type - Input Variant
+</DocsTitle>
+
+Input variant object type contains two specific types of <a href="#input-size-object-type" className="font-medium hover:text-blue-500 transition-colors">Input Size Styles Type</a> and <a href="#input-state-object-type" className="font-medium hover:text-blue-500 transition-colors">Input State Styles Type</a>
+
+```ts
+interface InputVariantStylesType {
+  base: {
+    input: object;
+    inputWithIcon: object;
+    icon: object;
+    label: object;
+  };
+  sizes: {
+    md: InputSizeStylesType;
+    lg: InputSizeStylesType;
+  };
+  colors: {
+    input: object;
+    label: object;
+  };
+  error: InputStateStylesType;
+  success: InputStateStylesType;
+  shrink: InputStateStylesType;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputVariantStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="input-size-object-type">
+## Theme Object Type - Input Size
+</DocsTitle>
+
+```ts
+interface InputSizeStylesType {
+  container: object;
+  input: object;
+  label: object;
+  icon: object;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputSizeStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="input-state-object-type">
+## Theme Object Type - Input State
+</DocsTitle>
+
+```ts
+interface InputStateStylesType {
+  input: object;
+  label: object;
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { InputStateStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="input-theme-customization">
+## Input Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  input: {
+    defaultProps: {
+      variant: "outlined",
+      size: "md",
+      color: "blue",
+      label: "",
+      error: false,
+      success: false,
+      icon: undefined,
+      labelProps: undefined,
+      containerProps: undefined,
+      shrink: false,
+      className: "",
+    },
+    valid: {
+      variants: ["standard", "outlined", "static"],
+      sizes: ["md", "lg"],
+      colors: [
+        "black",
+        "white",
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        container: {
+          position: "relative",
+          width: "w-full",
+          minWidth: "min-w-[200px]",
+        },
+        input: {
+          peer: "peer",
+          width: "w-full",
+          height: "h-full",
+          bg: "bg-transparent",
+          color: "text-blue-gray-700",
+          fontFamily: "font-sans",
+          fontWeight: "font-normal",
+          outline: "outline outline-0 focus:outline-0",
+          disabled: "disabled:bg-blue-gray-50 disabled:border-0",
+          transition: "transition-all",
+        },
+        label: {
+          display: "flex",
+          width: "w-full",
+          height: "h-full",
+          userSelect: "select-none",
+          pointerEvents: "pointer-events-none",
+          position: "absolute",
+          left: "left-0",
+          fontWeight: "font-normal",
+          textOverflow: "truncate",
+          color: "peer-placeholder-shown:text-blue-gray-500",
+          lineHeight: "leading-tight peer-focus:leading-tight",
+          disabled:
+            "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500",
+          transition: "transition-all",
+        },
+        icon: {
+          display: "grid",
+          placeItems: "place-items-center",
+          position: "absolute",
+          color: "text-blue-gray-500",
+        },
+        asterisk: {
+          display: "inline-block",
+          color: "text-red-500",
+          ml: "ml-0.5",
+        },
+      },
+      variants: {
+        outlined: {
+          base: {
+            input: {
+              borderWidth: "placeholder-shown:border",
+              borderColor:
+                "placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200",
+              floated: {
+                borderWidth: "border focus:border-2",
+                borderColor: "border-t-transparent focus:border-t-transparent",
+              },
+            },
+            inputWithIcon: {
+              pr: "!pr-9",
+            },
+            icon: {
+              top: "top-2/4",
+              right: "right-3",
+              transform: "-translate-y-2/4",
+            },
+            label: {
+              position: "-top-1.5",
+              fontSize: "peer-placeholder-shown:text-sm",
+              floated: {
+                fontSize: "text-[11px] peer-focus:text-[11px]",
+              },
+              before: {
+                content: "before:content[' ']",
+                display: "before:block",
+                boxSizing: "before:box-border",
+                width: "before:w-2.5",
+                height: "before:h-1.5",
+                mt: "before:mt-[6.5px]",
+                mr: "before:mr-1",
+                borderColor: "peer-placeholder-shown:before:border-transparent",
+                borderRadius: "before:rounded-tl-md",
+                floated: {
+                  bt: "before:border-t peer-focus:before:border-t-2",
+                  bl: "before:border-l peer-focus:before:border-l-2",
+                },
+                pointerEvents: "before:pointer-events-none",
+                transition: "before:transition-all",
+                disabled: "peer-disabled:before:border-transparent",
+              },
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                flexGrow: "after:flex-grow",
+                boxSizing: "after:box-border",
+                width: "after:w-2.5",
+                height: "after:h-1.5",
+                mt: "after:mt-[6.5px]",
+                ml: "after:ml-1",
+                borderColor: "peer-placeholder-shown:after:border-transparent",
+                borderRadius: "after:rounded-tr-md",
+                floated: {
+                  bt: "after:border-t peer-focus:after:border-t-2",
+                  br: "after:border-r peer-focus:after:border-r-2",
+                },
+                pointerEvents: "after:pointer-events-none",
+                transition: "after:transition-all",
+                disabled: "peer-disabled:after:border-transparent",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-10",
+              },
+              input: {
+                fontSize: "text-sm",
+                px: "px-3",
+                py: "py-2.5",
+                borderRadius: "rounded-[7px]",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-[3.75]",
+              },
+              icon: {
+                width: "w-5",
+                height: "h-5",
+              },
+            },
+            lg: {
+              container: {
+                height: "h-11",
+              },
+              input: {
+                fontSize: "text-sm",
+                px: "px-3",
+                py: "py-3",
+                borderRadius: "rounded-md",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-[4.1]",
+              },
+              icon: {
+                width: "w-6",
+                height: "h-6",
+              },
+            },
+          },
+          colors: {
+            input: {
+              black: {
+                color: "text-black",
+                borderColor: "border-black",
+                borderColorFocused: "focus:border-black",
+              },
+              white: {
+                color: "text-white",
+                borderColor: "border-white",
+                borderColorFocused: "focus:border-white",
+              },
+              "blue-gray": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-gray-500",
+              },
+              gray: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-gray-500",
+              },
+              brown: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-brown-500",
+              },
+              "deep-orange": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-orange-500",
+              },
+              orange: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-orange-500",
+              },
+              amber: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-amber-500",
+              },
+              yellow: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-yellow-500",
+              },
+              lime: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-lime-500",
+              },
+              "light-green": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-green-500",
+              },
+              green: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-green-500",
+              },
+              teal: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-teal-500",
+              },
+              cyan: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-cyan-500",
+              },
+              "light-blue": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-blue-500",
+              },
+              blue: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-500",
+              },
+              indigo: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-indigo-500",
+              },
+              "deep-purple": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-purple-500",
+              },
+              purple: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-purple-500",
+              },
+              pink: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-pink-500",
+              },
+              red: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-red-500",
+              },
+            },
+            label: {
+              black: {
+                color: "!text-black peer-focus:text-black",
+                before: "before:border-black peer-focus:before:!border-black",
+                after: "after:border-black peer-focus:after:!border-black",
+              },
+              white: {
+                color: "!text-white peer-focus:text-white",
+                before: "before:border-white peer-focus:before:!border-white",
+                after: "after:border-white peer-focus:after:!border-white",
+              },
+              "blue-gray": {
+                color: "text-blue-gray-400 peer-focus:text-blue-gray-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-blue-gray-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-blue-gray-500",
+              },
+              gray: {
+                color: "text-blue-gray-400 peer-focus:text-gray-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-gray-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-gray-500",
+              },
+              brown: {
+                color: "text-blue-gray-400 peer-focus:text-brown-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-brown-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-brown-500",
+              },
+              "deep-orange": {
+                color: "text-blue-gray-400 peer-focus:text-deep-orange-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-deep-orange-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-deep-orange-500",
+              },
+              orange: {
+                color: "text-blue-gray-400 peer-focus:text-orange-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-orange-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-orange-500",
+              },
+              amber: {
+                color: "text-blue-gray-400 peer-focus:text-amber-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-amber-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-amber-500",
+              },
+              yellow: {
+                color: "text-blue-gray-400 peer-focus:text-yellow-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-yellow-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-yellow-500",
+              },
+              lime: {
+                color: "text-blue-gray-400 peer-focus:text-lime-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-lime-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-lime-500",
+              },
+              "light-green": {
+                color: "text-blue-gray-400 peer-focus:text-light-green-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-light-green-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-light-green-500",
+              },
+              green: {
+                color: "text-blue-gray-400 peer-focus:text-green-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-green-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-green-500",
+              },
+              teal: {
+                color: "text-blue-gray-400 peer-focus:text-teal-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-teal-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-teal-500",
+              },
+              cyan: {
+                color: "text-blue-gray-400 peer-focus:text-cyan-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-cyan-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-cyan-500",
+              },
+              "light-blue": {
+                color: "text-blue-gray-400 peer-focus:text-light-blue-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-light-blue-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-light-blue-500",
+              },
+              blue: {
+                color: "text-blue-gray-400 peer-focus:text-blue-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-blue-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-blue-500",
+              },
+              indigo: {
+                color: "text-blue-gray-400 peer-focus:text-indigo-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-indigo-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-indigo-500",
+              },
+              "deep-purple": {
+                color: "text-blue-gray-400 peer-focus:text-deep-purple-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-deep-purple-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-deep-purple-500",
+              },
+              purple: {
+                color: "text-blue-gray-400 peer-focus:text-purple-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-purple-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-purple-500",
+              },
+              pink: {
+                color: "text-blue-gray-400 peer-focus:text-pink-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-pink-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-pink-500",
+              },
+              red: {
+                color: "text-blue-gray-400 peer-focus:text-red-500",
+                before: "before:border-blue-gray-200 peer-focus:before:!border-red-500",
+                after: "after:border-blue-gray-200 peer-focus:after:!border-red-500",
+              },
+            },
+          },
+          error: {
+            input: {
+              borderColor:
+                "border-red-500 placeholder-shown:border-t-red-500 placeholder-shown:border-red-500",
+              borderColorFocused: "focus:border-red-500",
+            },
+            label: {
+              color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500",
+              before: "before:border-red-500 peer-focus:before:border-red-500",
+              after: "after:border-red-500 peer-focus:after:border-red-500",
+            },
+          },
+          success: {
+            input: {
+              borderColor:
+                "border-green-500 placeholder-shown:border-t-green-500 placeholder-shown:border-green-500",
+              borderColorFocused: "focus:border-green-500",
+            },
+            label: {
+              color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500",
+              before: "before:border-green-500 peer-focus:before:border-green-500",
+              after: "after:border-green-500 peer-focus:after:border-green-500",
+            },
+          },
+          shrink: {
+            input: {
+              borderTop: "!border-t-transparent",
+            },
+            label: {
+              fontSize: "!text-[11px]",
+              lineHeight: "!leading-tight",
+              borderColor: "before:!border-blue-gray-200 after:!border-blue-gray-200",
+            },
+          },
+        },
+        standard: {
+          base: {
+            input: {
+              borderWidth: "border-b",
+              borderColor: "placeholder-shown:border-blue-gray-200",
+            },
+            inputWithIcon: {
+              pr: "!pr-7",
+            },
+            icon: {
+              top: "top-2/4",
+              right: "right-0",
+              transform: "-translate-y-1/4",
+            },
+            label: {
+              position: "-top-1.5",
+              fontSize: "peer-placeholder-shown:text-sm",
+              floated: {
+                fontSize: "text-[11px] peer-focus:text-[11px]",
+              },
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                width: "after:w-full",
+                position: "after:absolute",
+                bottom: "after:-bottom-1.5",
+                left: "left-0",
+                borderWidth: "after:border-b-2",
+                scale: "after:scale-x-0",
+                floated: {
+                  scale: "peer-focus:after:scale-x-100",
+                },
+                transition: "after:transition-transform after:duration-300",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-11",
+              },
+              input: {
+                fontSize: "text-sm",
+                pt: "pt-4",
+                pb: "pb-1.5",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-[4.25]",
+              },
+              icon: {
+                width: "w-5",
+                height: "h-5",
+              },
+            },
+            lg: {
+              container: {
+                height: "h-12",
+              },
+              input: {
+                fontSize: "text-sm",
+                px: "px-px",
+                pt: "pt-5",
+                pb: "pb-2",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-[4.875]",
+              },
+              icon: {
+                width: "w-6",
+                height: "h-6",
+              },
+            },
+          },
+          colors: {
+            input: {
+              black: {
+                color: "text-black",
+                borderColor: "border-black",
+                borderColorFocused: "focus:border-black",
+              },
+              white: {
+                color: "text-white",
+                borderColor: "border-white",
+                borderColorFocused: "focus:border-white",
+              },
+              "blue-gray": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-gray-500",
+              },
+              gray: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-gray-500",
+              },
+              brown: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-brown-500",
+              },
+              "deep-orange": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-orange-500",
+              },
+              orange: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-orange-500",
+              },
+              amber: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-amber-500",
+              },
+              yellow: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-yellow-500",
+              },
+              lime: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-lime-500",
+              },
+              "light-green": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-green-500",
+              },
+              green: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-green-500",
+              },
+              teal: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-teal-500",
+              },
+              cyan: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-cyan-500",
+              },
+              "light-blue": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-blue-500",
+              },
+              blue: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-500",
+              },
+              indigo: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-indigo-500",
+              },
+              "deep-purple": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-purple-500",
+              },
+              purple: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-purple-500",
+              },
+              pink: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-pink-500",
+              },
+              red: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-red-500",
+              },
+            },
+            label: {
+              black: {
+                color: "!text-black peer-focus:text-black",
+                after: "after:border-black peer-focus:after:border-black",
+              },
+              white: {
+                color: "!text-white peer-focus:text-white",
+                after: "after:border-white peer-focus:after:border-white",
+              },
+              "blue-gray": {
+                color: "text-blue-gray-500 peer-focus:text-blue-gray-500",
+                after: "after:border-blue-gray-500 peer-focus:after:border-blue-gray-500",
+              },
+              gray: {
+                color: "text-blue-gray-500 peer-focus:text-gray-500",
+                after: "after:border-gray-500 peer-focus:after:border-gray-500",
+              },
+              brown: {
+                color: "text-blue-gray-500 peer-focus:text-brown-500",
+                after: "after:border-brown-500 peer-focus:after:border-brown-500",
+              },
+              "deep-orange": {
+                color: "text-blue-gray-500 peer-focus:text-deep-orange-500",
+                after: "after:border-deep-orange-500 peer-focus:after:border-deep-orange-500",
+              },
+              orange: {
+                color: "text-blue-gray-500 peer-focus:text-orange-500",
+                after: "after:border-orange-500 peer-focus:after:border-orange-500",
+              },
+              amber: {
+                color: "text-blue-gray-500 peer-focus:text-amber-500",
+                after: "after:border-amber-500 peer-focus:after:border-amber-500",
+              },
+              yellow: {
+                color: "text-blue-gray-500 peer-focus:text-yellow-500",
+                after: "after:border-yellow-500 peer-focus:after:border-yellow-500",
+              },
+              lime: {
+                color: "text-blue-gray-500 peer-focus:text-lime-500",
+                after: "after:border-lime-500 peer-focus:after:border-lime-500",
+              },
+              "light-green": {
+                color: "text-blue-gray-500 peer-focus:text-light-green-500",
+                after: "after:border-light-green-500 peer-focus:after:border-light-green-500",
+              },
+              green: {
+                color: "text-blue-gray-500 peer-focus:text-green-500",
+                after: "after:border-green-500 peer-focus:after:border-green-500",
+              },
+              teal: {
+                color: "text-blue-gray-500 peer-focus:text-teal-500",
+                after: "after:border-teal-500 peer-focus:after:border-teal-500",
+              },
+              cyan: {
+                color: "text-blue-gray-500 peer-focus:text-cyan-500",
+                after: "after:border-cyan-500 peer-focus:after:border-cyan-500",
+              },
+              "light-blue": {
+                color: "text-blue-gray-500 peer-focus:text-light-blue-500",
+                after: "after:border-light-blue-500 peer-focus:after:border-light-blue-500",
+              },
+              blue: {
+                color: "text-blue-gray-500 peer-focus:text-blue-500",
+                after: "after:border-blue-500 peer-focus:after:border-blue-500",
+              },
+              indigo: {
+                color: "text-blue-gray-500 peer-focus:text-indigo-500",
+                after: "after:border-indigo-500 peer-focus:after:border-indigo-500",
+              },
+              "deep-purple": {
+                color: "text-blue-gray-500 peer-focus:text-deep-purple-500",
+                after: "after:border-deep-purple-500 peer-focus:after:border-deep-purple-500",
+              },
+              purple: {
+                color: "text-blue-gray-500 peer-focus:text-purple-500",
+                after: "after:border-purple-500 peer-focus:after:border-purple-500",
+              },
+              pink: {
+                color: "text-blue-gray-500 peer-focus:text-pink-500",
+                after: "after:border-pink-500 peer-focus:after:border-pink-500",
+              },
+              red: {
+                color: "text-blue-gray-500 peer-focus:text-red-500",
+                after: "after:border-red-500 peer-focus:after:border-red-500",
+              },
+            },
+          },
+          error: {
+            input: {
+              borderColor: "border-red-500 placeholder-shown:border-red-500",
+              borderColorFocused: "focus:border-red-500",
+            },
+            label: {
+              color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500",
+              after: "after:border-red-500 peer-focus:after:border-red-500",
+            },
+          },
+          success: {
+            input: {
+              borderColor: "border-green-500 placeholder-shown:border-green-500",
+              borderColorFocused: "focus:border-green-500",
+            },
+            label: {
+              color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500",
+              after: "after:border-green-500 peer-focus:after:border-green-500",
+            },
+          },
+          shrink: {
+            input: {},
+            label: {
+              fontSize: "!text-[11px]",
+              lineHeight: "!leading-tight",
+            },
+          },
+        },
+        static: {
+          base: {
+            input: {
+              borderWidth: "border-b",
+              borderColor: "placeholder-shown:border-blue-gray-200",
+            },
+            inputWithIcon: {
+              pr: "!pr-7",
+            },
+            icon: {
+              top: "top-2/4",
+              right: "right-0",
+              transform: "-translate-y-1/4",
+            },
+            label: {
+              position: "-top-2.5",
+              fontSize: "text-sm peer-focus:text-sm",
+              after: {
+                content: "after:content[' ']",
+                display: "after:block",
+                width: "after:w-full",
+                position: "after:absolute",
+                bottom: "after:-bottom-2.5",
+                left: "left-0",
+                borderWidth: "after:border-b-2",
+                scale: "after:scale-x-0",
+                floated: {
+                  scale: "peer-focus:after:scale-x-100",
+                },
+                transition: "after:transition-transform after:duration-300",
+              },
+            },
+          },
+          sizes: {
+            md: {
+              container: {
+                height: "h-11",
+              },
+              input: {
+                fontSize: "text-sm",
+                pt: "pt-4",
+                pb: "pb-1.5",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-tight",
+              },
+              icon: {
+                width: "w-5",
+                height: "h-5",
+              },
+            },
+            lg: {
+              container: {
+                height: "h-12",
+              },
+              input: {
+                fontSize: "text-sm",
+                px: "px-px",
+                pt: "pt-5",
+                pb: "pb-2",
+              },
+              label: {
+                lineHeight: "peer-placeholder-shown:leading-tight",
+              },
+              icon: {
+                width: "w-6",
+                height: "h-6",
+              },
+            },
+          },
+          colors: {
+            input: {
+              black: {
+                color: "text-black",
+                borderColor: "border-black",
+                borderColorFocused: "focus:border-black",
+              },
+              white: {
+                color: "text-white",
+                borderColor: "border-white",
+                borderColorFocused: "focus:border-white",
+              },
+              "blue-gray": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-gray-500",
+              },
+              gray: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-gray-500",
+              },
+              brown: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-brown-500",
+              },
+              "deep-orange": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-orange-500",
+              },
+              orange: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-orange-500",
+              },
+              amber: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-amber-500",
+              },
+              yellow: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-yellow-500",
+              },
+              lime: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-lime-500",
+              },
+              "light-green": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-green-500",
+              },
+              green: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-green-500",
+              },
+              teal: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-teal-500",
+              },
+              cyan: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-cyan-500",
+              },
+              "light-blue": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-light-blue-500",
+              },
+              blue: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-blue-500",
+              },
+              indigo: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-indigo-500",
+              },
+              "deep-purple": {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-deep-purple-500",
+              },
+              purple: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-purple-500",
+              },
+              pink: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-pink-500",
+              },
+              red: {
+                borderColor: "border-blue-gray-200",
+                borderColorFocused: "focus:border-red-500",
+              },
+            },
+            label: {
+              black: {
+                color: "!text-black peer-focus:black",
+                after: "after:border-black peer-focus:after:border-black",
+              },
+              white: {
+                color: "!text-white peer-focus:white",
+                after: "after:border-white peer-focus:after:border-white",
+              },
+              "blue-gray": {
+                color: "text-blue-gray-500 peer-focus:text-blue-gray-500",
+                after: "after:border-blue-gray-500 peer-focus:after:border-blue-gray-500",
+              },
+              gray: {
+                color: "text-blue-gray-500 peer-focus:text-gray-500",
+                after: "after:border-gray-500 peer-focus:after:border-gray-500",
+              },
+              brown: {
+                color: "text-blue-gray-500 peer-focus:text-brown-500",
+                after: "after:border-brown-500 peer-focus:after:border-brown-500",
+              },
+              "deep-orange": {
+                color: "text-blue-gray-500 peer-focus:text-deep-orange-500",
+                after: "after:border-deep-orange-500 peer-focus:after:border-deep-orange-500",
+              },
+              orange: {
+                color: "text-blue-gray-500 peer-focus:text-orange-500",
+                after: "after:border-orange-500 peer-focus:after:border-orange-500",
+              },
+              amber: {
+                color: "text-blue-gray-500 peer-focus:text-amber-500",
+                after: "after:border-amber-500 peer-focus:after:border-amber-500",
+              },
+              yellow: {
+                color: "text-blue-gray-500 peer-focus:text-yellow-500",
+                after: "after:border-yellow-500 peer-focus:after:border-yellow-500",
+              },
+              lime: {
+                color: "text-blue-gray-500 peer-focus:text-lime-500",
+                after: "after:border-lime-500 peer-focus:after:border-lime-500",
+              },
+              "light-green": {
+                color: "text-blue-gray-500 peer-focus:text-light-green-500",
+                after: "after:border-light-green-500 peer-focus:after:border-light-green-500",
+              },
+              green: {
+                color: "text-blue-gray-500 peer-focus:text-green-500",
+                after: "after:border-green-500 peer-focus:after:border-green-500",
+              },
+              teal: {
+                color: "text-blue-gray-500 peer-focus:text-teal-500",
+                after: "after:border-teal-500 peer-focus:after:border-teal-500",
+              },
+              cyan: {
+                color: "text-blue-gray-500 peer-focus:text-cyan-500",
+                after: "after:border-cyan-500 peer-focus:after:border-cyan-500",
+              },
+              "light-blue": {
+                color: "text-blue-gray-500 peer-focus:text-light-blue-500",
+                after: "after:border-light-blue-500 peer-focus:after:border-light-blue-500",
+              },
+              blue: {
+                color: "text-blue-gray-500 peer-focus:text-blue-500",
+                after: "after:border-blue-500 peer-focus:after:border-blue-500",
+              },
+              indigo: {
+                color: "text-blue-gray-500 peer-focus:text-indigo-500",
+                after: "after:border-indigo-500 peer-focus:after:border-indigo-500",
+              },
+              "deep-purple": {
+                color: "text-blue-gray-500 peer-focus:text-deep-purple-500",
+                after: "after:border-deep-purple-500 peer-focus:after:border-deep-purple-500",
+              },
+              purple: {
+                color: "text-blue-gray-500 peer-focus:text-purple-500",
+                after: "after:border-purple-500 peer-focus:after:border-purple-500",
+              },
+              pink: {
+                color: "text-blue-gray-500 peer-focus:text-pink-500",
+                after: "after:border-pink-500 peer-focus:after:border-pink-500",
+              },
+              red: {
+                color: "text-blue-gray-500 peer-focus:text-red-500",
+                after: "after:border-red-500 peer-focus:after:border-red-500",
+              },
+            },
+          },
+          error: {
+            input: {
+              borderColor: "border-red-500 placeholder-shown:border-red-500",
+              borderColorFocused: "focus:border-red-500",
+            },
+            label: {
+              color: "text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500",
+              after: "after:border-red-500 peer-focus:after:border-red-500",
+            },
+          },
+          success: {
+            input: {
+              borderColor: "border-green-500 placeholder-shown:border-green-500",
+              borderColorFocused: "focus:border-green-500",
+            },
+            label: {
+              color: "text-green-500 peer-focus:text-green-500 peer-placeholder-shown:text-green-500",
+              after: "after:border-green-500 peer-focus:after:border-green-500",
+            },
+          },
+          shrink: {
+            input: {},
+            label: {},
+          },
+        },
+      },
+    },
+  },
+};
+```

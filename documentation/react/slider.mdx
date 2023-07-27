@@ -6,28 +6,15 @@ navigation: [
   "slider-sizes", 
   "slider-colors", 
   "slider-with-custom-styles",
-  # "props", 
-  # "theme"
 ]
-# related:
-#   [
-#     {
-#       title: "Props",
-#       route: "props/slider",
-#       description: "Learn more about props definition and types of slider components.",
-#     },
-#     {
-#       title: "Theme",
-#       route: "theme/slider",
-#       description: "Learn how to customize the theme and styles for slider components.",
-#     },
-#   ]
 github: slider
 prev: select
 next: speed-dial
 ---
 
+<DocsTitle href="slider">
 # Tailwind CSS Range Slider - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Slider</Code> component in your web projects. The <Code>Slider</Code> can be used for adjusting settings such as volume, brightness, or applying image filters.
 
@@ -35,11 +22,11 @@ See below our beautiful <Code>Slider</Code> example that you can use in your Tai
 
 <br />
 
-<CodePreview id="slider" component={<SliderExamples.DefaultSlider />}>
+<CodePreview component={<SliderExamples.DefaultSlider />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
-export default function Example() {
+export function DefaultSlider() {
   return (
     <div className="w-96">
       <Slider defaultValue={50} />
@@ -57,11 +44,11 @@ export default function Example() {
 
 The <Code>Slider</Code> component comes with 3 different sizes, that you can change it using the <Code>size</Code> prop.
 
-<CodePreview id="slider-sizes" component={<SliderExamples.SliderSizes />}>
+<CodePreview component={<SliderExamples.SliderSizes />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
-export default function Example() {
+export function SliderSizes() {
   return (
     <div className="flex w-96 flex-col gap-8">
       <Slider size="sm" defaultValue={50} />
@@ -81,11 +68,11 @@ export default function Example() {
 
 The <Code>Slider</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="slider-colors" component={<SliderExamples.SliderColors />}>
+<CodePreview component={<SliderExamples.SliderColors />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
-export default function Example() {
+export function SliderColors() {
   return (
     <div className="flex w-96 flex-col gap-8">
       <Slider color="blue" defaultValue={50} />
@@ -106,21 +93,11 @@ export default function Example() {
 
 You can use the <Code>className</Code> prop to add custom styles to the <Code>Slider</Code> component.
 
-<CodePreview id="slider-with-custom-styles" component={
-  <div className="w-96">
-    <Slider
-      defaultValue={50}
-      className="text-[#2ec947]"
-      barClassName="rounded-none bg-[#2ec946]"
-      thumbClassName="[&::-moz-range-thumb]:rounded-none [&::-webkit-slider-thumb]:rounded-none [&::-moz-range-thumb]:-mt-[4px] [&::-webkit-slider-thumb]:-mt-[4px]"
-      trackClassName="[&::-webkit-slider-runnable-track]:bg-transparent [&::-moz-range-track]:bg-transparent rounded-none !bg-[#2ec946]/10 border border-[#2ec946]/20"
-    />
-  </div>
-}>
+<CodePreview component={<SliderExamples.SliderCustomStyles />}>
 ```jsx
 import { Slider } from "@material-tailwind/react";
 
-export default function Example() {
+export function SliderCustomStyles() {
   return (
     <div className="w-96">
       <Slider
@@ -131,7 +108,7 @@ export default function Example() {
         trackClassName="[&::-webkit-slider-runnable-track]:bg-transparent [&::-moz-range-track]:bg-transparent rounded-none !bg-[#2ec946]/10 border border-[#2ec946]/20"
       />
     </div>
-  )
+  );
 }
 ```
 </CodePreview>

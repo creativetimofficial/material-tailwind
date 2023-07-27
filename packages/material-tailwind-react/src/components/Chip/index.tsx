@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 // framer-motion
 import { AnimatePresence, m, MotionProps, LazyMotion, domAnimation } from "framer-motion";
 
-// @heroicons
-import { XMarkIcon } from "@heroicons/react/24/outline";
-
 // utils
 import classnames from "classnames";
 import merge from "deepmerge";
@@ -142,14 +139,20 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                   color={variant === "outlined" || variant === "ghost" ? color : "white"}
                   className={actionClasses}
                 >
-                  <XMarkIcon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                     className={classnames({
                       "h-3.5 w-3.5": size === "sm",
                       "h-4 w-4": size === "md",
                       "h-5 w-5": size === "lg",
                     })}
                     strokeWidth={2}
-                  />
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </IconButton>
               )}
               {action || null}

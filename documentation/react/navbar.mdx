@@ -1,26 +1,30 @@
 ---
 title: Tailwind CSS Navbar for React - Material Tailwind
 description: Customise your web projects with our easy-to-use navbar component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["navbar", "sticky-navbar", "complex-navbar", "navbar-with-search", "dark-navbar", "simple-navbar", "navbar-with-mega-menu", "props", "theme"]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/navbar",
-      description: "Learn more about props definition and types of navbar component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/navbar",
-      description: "Learn how to customize the theme and styles for navbar component.",
-    },
-  ]
+navigation: [
+  "navbar",
+  "sticky-navbar",
+  "complex-navbar",
+  "navbar-with-search",
+  "dark-navbar",
+  "simple-navbar",
+  "navbar-with-mega-menu",
+  "navbar-props",
+  "types-variant",
+  "types-color",
+  "types-animate",
+  "navbar-theme",
+  "navbar-theme-object-type",
+  "navbar-theme-customization"
+]
 github: navbar
 prev: menu
 next: popover
 ---
 
+<DocsTitle href="navbar">
 # Tailwind CSS Navbar - React
+</DocsTitle>
 
 Use our responsive Tailwind CSS navigation for your website. You can add links, icons, links with icons, search bars, and brand text.
 
@@ -28,123 +32,18 @@ See below our simple <Code>Navbar</Code> example that you can use in your Tailwi
 
 <br />
 
-<CodePreview id="navbar" link="navbar#navbar" component={
-  <State initialState={{ open: false }}>
-    <Observe>
-      {({ setState, open }) => (
-        <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
-          <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-            <Typography
-              as="a"
-              href="#"
-              href="#"
-              className="mr-4 cursor-pointer py-1.5 font-medium"
-            >
-              {`Material Tailwind`}
-            </Typography>
-            <ul className="hidden items-center gap-6 lg:flex">
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Pages`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Account`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Blocks`}
-                </a>
-              </Typography>
-              <Typography as="li" variant="small" className="p-1 font-normal">
-                <a href="#" className="flex items-center">
-                  {`Docs`}
-                </a>
-              </Typography>
-            </ul>
-            <Button
-              variant="gradient"
-              size="sm"
-              className="hidden lg:inline-block"
-            >
-              <span>Buy Now</span>
-            </Button>
-            <IconButton
-              variant="text"
-              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-              ripple={false}
-              onClick={() => setState((s) => ({ open: !open }))}
-            >
-              {open ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </IconButton>
-          </div>
-          <Collapse open={open} className="lg:hidden">
-            <div className="container mx-auto">
-              <ul className="mt-2 mb-4 flex flex-col gap-2">
-                <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-                  <a href="#" className="flex items-center">
-                    {`Pages`}
-                  </a>
-                </Typography>
-                <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-                  <a href="#" className="flex items-center">
-                    {`Account`}
-                  </a>
-                </Typography>
-                <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-                  <a href="#" className="flex items-center">
-                    {`Blocks`}
-                  </a>
-                </Typography>
-                <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-                  <a href="#" className="flex items-center">
-                    {`Docs`}
-                  </a>
-                </Typography>
-              </ul>
-              <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                <span>Buy Now</span>
-              </Button>
-            </div>
-          </Collapse>
-        </Navbar>
-      )}
-    </Observe>
-  </State>
-}>
+Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
+
+```bash
+npm i @heroicons/react
+```
+
+<br />
+<br />
+
+<CodePreview link="navbar#navbar" component={<NavbarExamples.NavbarDefault />}>
 ```jsx
-import { useState, useEffect } from "react";
+import React from "react";
 import {
   Navbar,
   MobileNav,
@@ -153,11 +52,14 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
-export default function Example() {
-  const [openNav, setOpenNav] = useState(false);
+export function NavbarDefault() {
+  const [openNav, setOpenNav] = React.useState(false);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpenNav(false));
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false),
+    );
   }, []);
 
   const navList = (
@@ -279,7 +181,7 @@ export default function Example() {
 
 Use this example if you want your navbar to remain in a fixed position when scrolling.  From the navbar, give access to the users to different sections/ web pages.
 
-<CodePreview id="sticky-navbar" link="navbar#sticky-navbar" component={
+<CodePreview link="navbar#sticky-navbar" component={
   <NavbarExamples.StickyNavbar />
 }>
 ```jsx
@@ -293,7 +195,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 
-export default function Example() {
+export function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -349,8 +251,8 @@ export default function Example() {
   );
 
   return (
-    <>
-      <Navbar className="sticky top z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
@@ -441,7 +343,7 @@ export default function Example() {
           the next time.
         </Typography>
       </div>
-    </>
+    </div>
   );
 }
 ```
@@ -455,7 +357,7 @@ export default function Example() {
 
 If you want a more sophisticated navbar, use this example with icons and dropdown.
 
-<CodePreview id="complex-navbar" component={
+<CodePreview component={
   <NavbarExamples.ComplexNavbar />
 }>
 ```jsx
@@ -513,6 +415,7 @@ const profileMenuItems = [
 
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -593,11 +496,6 @@ const navListMenuItems = [
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const triggers = {
-    onMouseEnter: () => setIsMenuOpen(true),
-    onMouseLeave: () => setIsMenuOpen(false),
-  };
-
   const renderItems = navListMenuItems.map(({ title, description }) => (
     <a href="#" key={title}>
       <MenuItem>
@@ -613,13 +511,10 @@ function NavListMenu() {
 
   return (
     <React.Fragment>
-      <Menu open={isMenuOpen} handler={setIsMenuOpen}>
+      <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
           <Typography as="a" href="#" variant="small" className="font-normal">
-            <MenuItem
-              {...triggers}
-              className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
-            >
+            <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
               <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Pages{" "}
               <ChevronDownIcon
                 strokeWidth={2}
@@ -630,10 +525,7 @@ function NavListMenu() {
             </MenuItem>
           </Typography>
         </MenuHandler>
-        <MenuList
-          {...triggers}
-          className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
-        >
+        <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
           <Card
             color="blue"
             shadow={false}
@@ -696,14 +588,15 @@ function NavList() {
   );
 }
 
-export default function ComplexNavbar() {
+export function ComplexNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
+
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false)
+      () => window.innerWidth >= 960 && setIsNavOpen(false),
     );
   }, []);
 
@@ -746,7 +639,7 @@ export default function ComplexNavbar() {
 ## Navbar With Search
 </DocsTitle>
 
-<CodePreview id="navbar-with-search" className="mt-4" component={
+<CodePreview component={
   <NavbarExamples.NavbarWithSearch />
 }>
 ```jsx
@@ -759,7 +652,7 @@ import {
 } from "@material-tailwind/react";
 import { BellIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function NavbarWithSearch() {
   return (
     <Navbar className="mx-auto max-w-screen-xl px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-y-4 text-blue-gray-900">
@@ -805,7 +698,7 @@ export default function Example() {
 ## Dark Navbar
 </DocsTitle>
 
-<CodePreview id="dark-navbar" className="mt-4" component={
+<CodePreview component={
   <NavbarExamples.NavbarDark />
 }>
 ```jsx
@@ -818,7 +711,7 @@ import {
 } from "@material-tailwind/react";
 import { BellIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
 
-export default function Example() {
+export function NavbarDark() {
   return (
     <Navbar
       variant="gradient"
@@ -873,7 +766,7 @@ export default function Example() {
 ## Simple Navbar
 </DocsTitle>
 
-<CodePreview id="simple-navbar" className="mt-4" component={
+<CodePreview component={
   <NavbarExamples.NavbarSimple />
 }>
 ```jsx
@@ -933,7 +826,7 @@ function NavList() {
   );
 }
 
-export default function Example() {
+export function NavbarSimple() {
   const [openNav, setOpenNav] = React.useState(false);
 
   const handleWindowResize = () =>
@@ -989,7 +882,7 @@ export default function Example() {
 ## Navbar With Mega Menu
 </DocsTitle>
 
-<CodePreview id="navbar-with-mega-menu" className="mt-4" component={
+<CodePreview component={
   <NavbarExamples.NavbarWithMegaMenu />
 }>
 ```jsx
@@ -1205,7 +1098,7 @@ function NavList() {
   );
 }
 
-export default function Example() {
+export function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -1267,6 +1160,371 @@ export default function Example() {
 ```
 </CodePreview>
 
+---
 
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
+<DocsTitle href="navbar-props">
+## Navbar Props
+</DocsTitle>
+
+The following props are available for navbar component. These are the custom props
+that we've added for the navbar component and you can use all the other
+native props as well.
+
+| Attribute   | Type                      | Description                                                               | Default                                |
+| ----------- | ------------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
+| `variant`   | [Variant](#types-variant) | Change navbar variant                                                     | <Code>filled</Code>                    |
+| `color`     | [Color](#types-color)     | Change navbar color                                                       | <Code>white</Code>                     |
+| `shadow`    | <Code>boolean</Code>      | Add box-shadow for navbar                                                 | <Code>true</Code>                      |
+| `blurred`   | <Code>boolean</Code>      | Add blur backdrop effect for navbar and makes it's background color white | <Code>true</Code>                      |
+| `fullWidth` | <Code>boolean</Code>      | Change navbar to a block level element and remove its border radius       | <Code>false</Code>                     |
+| `className` | <Code>string</Code>       | Add custom className for navbar                                           | `''`                                   |
+| `children`  | <Code>node</Code>         | Add content for navbar                                                    | No default value it's a required prop. |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { NavbarProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-variant">
+## Types - Variant
+</DocsTitle>
+
+```ts
+type variant = "filled" | "gradient";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "transparent"
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="types-animate">
+## Types - Animate
+</DocsTitle>
+
+```ts
+type animate = {
+  mount?: object;
+  unmount?: object;
+};
+```
+
+---
+
+<DocsTitle href="navbar-theme">
+## Navbar Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for navbar component, the theme object for navbar component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of navbar component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for navbar component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of navbar component.<br />
+
+You can customize the theme and styles of navbar component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="navbar-theme-object-type">
+## Navbar Theme Object Type
+</DocsTitle>
+
+```ts
+interface NavbarStylesType {
+  defaultProps: {
+    variant: string;
+    color: string;
+    shadow: boolean;
+    blurred: boolean;
+    fullWidth: boolean;
+    className: string;
+  };
+  valid: {
+    variants: string[];
+    colors: string[];
+  };
+  styles: {
+    base: {
+      navbar: {
+        initial: object;
+        shadow: object;
+        blurred: object;
+        fullWidth: object;
+      };
+      mobileNav: object;
+    };
+    variants: {
+      filled: object;
+      gradient: object;
+    };
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { NavbarStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="navbar-theme-customization">
+## Navbar Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  navbar: {
+    styles: {
+      base: {
+        navbar: {
+          initial: {
+            display: "block",
+            width: "w-full",
+            maxWidth: "max-w-screen-2xl",
+            borderRadius: "rounded-xl",
+            py: "py-4",
+            px: "px-8",
+          },
+          shadow: {
+            boxShadow: "shadow-md",
+          },
+          blurred: {
+            backdropFilter: "backdrop-saturate-200 backdrop-blur-2xl",
+            bgOpacity: "bg-opacity-80",
+            borderWidth: "border",
+            borderColor: "border-white/80",
+          },
+          fullWidth: {
+            width: "w-full",
+            maxWidth: "max-w-full",
+            rounded: "rounded-none",
+            px: "px-4",
+          },
+        },
+        mobileNav: {
+          display: "block",
+          width: "w-full",
+          basis: "basis-full",
+          overflow: "overflow-hidden",
+        },
+      },
+      variants: {
+        filled: {
+          transparent: {
+            backgroud: "bg-transparent",
+            color: "text-white",
+            boxShadow: "shadow-none",
+          },
+          white: {
+            backgroud: "bg-white",
+            color: "text-white",
+          },
+          "blue-gray": {
+            backgroud: "bg-blue-gray-500",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gray-500",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-brown-500",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-deep-orange-500",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-orange-500",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-amber-500",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-yellow-500",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-lime-500",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-light-green-500",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-green-500",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-teal-500",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-cyan-500",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-light-blue-500",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-blue-500",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-indigo-500",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-deep-purple-500",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-purple-500",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-pink-500",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-red-500",
+            color: "text-white",
+          },
+        },
+        gradient: {
+          transparent: {
+            backgroud: "bg-transparent",
+            color: "text-blue-gray-900",
+            boxShadow: "shadow-none",
+          },
+          white: {
+            backgroud: "bg-white",
+            color: "text-blue-gray-900",
+          },
+          "blue-gray": {
+            backgroud: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
+            color: "text-white",
+          },
+          gray: {
+            backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+            color: "text-white",
+          },
+          brown: {
+            backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",
+            color: "text-white",
+          },
+          "deep-orange": {
+            backgroud: "bg-gradient-to-tr from-deep-orange-600 to-deep-orange-400",
+            color: "text-white",
+          },
+          orange: {
+            backgroud: "bg-gradient-to-tr from-orange-600 to-orange-400",
+            color: "text-white",
+          },
+          amber: {
+            backgroud: "bg-gradient-to-tr from-amber-600 to-amber-400",
+            color: "text-black",
+          },
+          yellow: {
+            backgroud: "bg-gradient-to-tr from-yellow-600 to-yellow-400",
+            color: "text-black",
+          },
+          lime: {
+            backgroud: "bg-gradient-to-tr from-lime-600 to-lime-400",
+            color: "text-black",
+          },
+          "light-green": {
+            backgroud: "bg-gradient-to-tr from-light-green-600 to-light-green-400",
+            color: "text-white",
+          },
+          green: {
+            backgroud: "bg-gradient-to-tr from-green-600 to-green-400",
+            color: "text-white",
+          },
+          teal: {
+            backgroud: "bg-gradient-to-tr from-teal-600 to-teal-400",
+            color: "text-white",
+          },
+          cyan: {
+            backgroud: "bg-gradient-to-tr from-cyan-600 to-cyan-400",
+            color: "text-white",
+          },
+          "light-blue": {
+            backgroud: "bg-gradient-to-tr from-light-blue-600 to-light-blue-400",
+            color: "text-white",
+          },
+          blue: {
+            backgroud: "bg-gradient-to-tr from-blue-600 to-blue-400",
+            color: "text-white",
+          },
+          indigo: {
+            backgroud: "bg-gradient-to-tr from-indigo-600 to-indigo-400",
+            color: "text-white",
+          },
+          "deep-purple": {
+            backgroud: "bg-gradient-to-tr from-deep-purple-600 to-deep-purple-400",
+            color: "text-white",
+          },
+          purple: {
+            backgroud: "bg-gradient-to-tr from-purple-600 to-purple-400",
+            color: "text-white",
+          },
+          pink: {
+            backgroud: "bg-gradient-to-tr from-pink-600 to-pink-400",
+            color: "text-white",
+          },
+          red: {
+            backgroud: "bg-gradient-to-tr from-red-600 to-red-400",
+            color: "text-white",
+          },
+        },
+      },
+    },
+  },
+};
+```

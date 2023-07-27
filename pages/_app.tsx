@@ -8,6 +8,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 // styles
 import "/styles/globals.css";
+import "@docsearch/css";
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -1,13 +1,21 @@
 ---
 title: Tailwind CSS Footer for React - Material Tailwind
 description: Customise your web projects with our beautiful footer component for Tailwind CSS and React using Material Design guidelines.
-navigation: ["footer", "footer-with-logo", "footer-with-social-links", "footer-with-sitemap"]
+navigation: [
+  "footer",
+  "footer-with-logo",
+  "footer-with-social-links",
+  "footer-with-sitemap"
+]
 github: footer
 prev: typography
 next: img
 ---
 
+<DocsTitle href="footer">
 # Tailwind CSS Footer - React
+</DocsTitle>
+
 
 Use our Tailwind CSS Footer to present your website/web app as clearly and efficiently as possible.
 
@@ -15,11 +23,11 @@ Below we are presenting a simple Footer component example.
 
 <br />
 
-<CodePreview id="footer" link="footer#footer" component={<FooterExamples.SimpleFooter />}>
+<CodePreview link="footer#footer" component={<FooterExamples.SimpleFooter />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function SimpleFooter() {
+export function SimpleFooter() {
   return (
     <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-between">
       <Typography color="blue-gray" className="font-normal">
@@ -79,11 +87,11 @@ export default function SimpleFooter() {
 ## Footer with Logo
 </DocsTitle>
 
-<CodePreview id="footer-with-logo" link="footer#footer-with-logo" className="mt-4" component={<FooterExamples.FooterWithLogo />}>
+<CodePreview link="footer#footer-with-logo" className="mt-4" component={<FooterExamples.FooterWithLogo />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function FooterWithLogo() {
   return (
     <footer className="w-full bg-white p-8">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
@@ -147,7 +155,7 @@ export default function Example() {
 ## Footer with Social Links
 </DocsTitle>
 
-<CodePreview id="footer-with-social-links" className="mt-4" component={<FooterExamples.FooterWithSocialLinks />}>
+<CodePreview className="mt-4" component={<FooterExamples.FooterWithSocialLinks />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
@@ -168,7 +176,7 @@ const LINKS = [
 
 const currentYear = new Date().getFullYear();
 
-export default function Example() {
+export function FooterWithSocialLinks() {
   return (
     <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
@@ -267,7 +275,7 @@ export default function Example() {
 ## Footer with Sitemap
 </DocsTitle>
 
-<CodePreview id="footer-with-sitemap" className="mt-4" component={<FooterExamples.FooterWithSitemap />}>
+<CodePreview className="mt-4" component={<FooterExamples.FooterWithSitemap />}>
 ```jsx
 import { Typography } from "@material-tailwind/react";
 
@@ -292,7 +300,7 @@ const SITEMAP = [
 
 const currentYear = new Date().getFullYear();
 
-export default function Example() {
+export function FooterWithSitemap() {
   return (
     <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">

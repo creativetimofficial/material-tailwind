@@ -6,33 +6,25 @@ navigation:
     "switch",
     "checked-switch",
     "switch-colors",
-    "switch-with-label",
+    "switch-label",
     "switch-ripple-effect",
-    "disabled-switch",
+    "switch-disabled",
     "switch-with-description",
     "switch-with-custom-styles",
-    "props",
-    "theme",
-  ]
-related:
-  [
-    {
-      title: "Props",
-      route: "props/switch",
-      description: "Learn more about props definition and types of switch component.",
-    },
-    {
-      title: "Theme",
-      route: "theme/switch",
-      description: "Learn how to customize the theme and styles for switch component.",
-    },
+    "switch-props",
+    "types-color",
+    "switch-theme",
+    "switch-theme-object-type",
+    "switch-theme-customization"
   ]
 github: switch
 prev: stepper
 next: tabs
 ---
 
+<DocsTitle href="switch">
 # Tailwind CSS Switch - React
+</DocsTitle>
 
 Use our Tailwind CSS <Code>Switch</Code> component to let users adjust settings on/off. The option that the <Code>Switch</Code> controls, as well as the state it's in, should be made clear from the corresponding inline label.
 
@@ -40,11 +32,11 @@ See below our example that will help you create simple and easy-to-use <Code>Swi
 
 <br />
 
-<CodePreview id="switch" link="switch#switch" component={<Switch id="switch-component" />}>
+<CodePreview link="switch#switch" component={<SwitchExamples.SwitchDefault />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
+export function SwitchDefault() {
   return <Switch />;
 }
 ```
@@ -58,11 +50,11 @@ export default function Example() {
 
 Make a <Code>Switch</Code> component checked by default using the <Code>defaultChecked</Code> props.
 
-<CodePreview id="checked-switch" component={<Switch id="checked-switch-component" defaultChecked />}>
+<CodePreview component={<SwitchExamples.CheckedSwitch />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
+export function CheckedSwitch() {
   return <Switch defaultChecked />;
 }
 ```
@@ -76,32 +68,21 @@ export default function Example() {
 
 The <Code>Switch</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
 
-<CodePreview id="switch-colors" link="switch#switch-colors" component={
-  <div className="flex w-max gap-4">
-    <Switch id="switch-1" color="blue" defaultChecked />
-    <Switch id="switch-2" color="red" defaultChecked />
-    <Switch id="switch-3" color="green" defaultChecked />
-    <Switch id="switch-4" color="amber" defaultChecked />
-    <Switch id="switch-5" color="teal" defaultChecked />
-    <Switch id="switch-6" color="indigo" defaultChecked />
-    <Switch id="switch-7" color="purple" defaultChecked />
-    <Switch id="switch-8" color="pink" defaultChecked />
-  </div>
-}>
+<CodePreview link="switch#switch-colors" component={<SwitchExamples.SwitchColors />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
+export function SwitchColors() {
   return (
     <div className="flex w-max gap-4">
-      <Switch id="blue" color="blue" defaultChecked />
-      <Switch id="red" color="red" defaultChecked />
-      <Switch id="green" color="green" defaultChecked />
-      <Switch id="amber" color="amber" defaultChecked />
-      <Switch id="teal" color="teal" defaultChecked />
-      <Switch id="indigo" color="indigo" defaultChecked />
-      <Switch id="purple" color="purple" defaultChecked />
-      <Switch id="pink" color="pink" defaultChecked />
+      <Switch color="blue" defaultChecked />
+      <Switch color="red" defaultChecked />
+      <Switch color="green" defaultChecked />
+      <Switch color="amber" defaultChecked />
+      <Switch color="teal" defaultChecked />
+      <Switch color="indigo" defaultChecked />
+      <Switch color="purple" defaultChecked />
+      <Switch color="pink" defaultChecked />
     </div>
   );
 }
@@ -110,20 +91,18 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="switch-with-label">
+<DocsTitle href="switch-label">
 ## Switch with Label
 </DocsTitle>
 
 You can add a label for the <Code>Switch</Code> component by passing the <Code>label</Code> prop to the <Code>Switch</Code> component.
 
-<CodePreview id="switch-with-label" link="switch#switch-with-label" component={
-  <Switch id="auto-update" label="Automatic Update" />
-}>
+<CodePreview link="switch#switch-label" component={<SwitchExamples.SwitchLabel />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
-  return <Switch id="auto-update" label="Automatic Update" />;
+export function SwitchLabel() {
+  return <Switch label="Automatic Update" />;
 }
 ```
 </CodePreview>
@@ -136,20 +115,15 @@ export default function Example() {
 
 You can turn on/off the ripple effect for the <Code>Switch</Code> component using the <Code>ripple</Code> prop.
 
-<CodePreview id="switch-ripple-effect" link="switch#switch-ripple-effect" component={
-  <>
-    <Switch id="ripple-on" label="Ripple Effect On" />
-    <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
-  </>
-}>
+<CodePreview link="switch#switch-ripple-effect" component={<SwitchExamples.SwitchRippleEffect />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
+export function SwitchRippleEffect() {
   return (
     <div className="space-x-8">
-      <Switch id="ripple-on" label="Ripple Effect On" ripple={true} />
-      <Switch id="ripple-off" label="Ripple Effect Off" ripple={false} />
+      <Switch label="Ripple Effect On" ripple={true} />
+      <Switch label="Ripple Effect Off" ripple={false} />
     </div>
   );
 }
@@ -158,19 +132,17 @@ export default function Example() {
 
 ---
 
-<DocsTitle href="disabled-switch">
-## Disabled Switch
+<DocsTitle href="switch-disabled">
+## Switch Disabled
 </DocsTitle>
 
 You can make a switch disable by passing the <Code>disabled</Code> prop to the <Code>Switch</Code> component.
 
-<CodePreview id="disabled-switch" component={
-  <Switch id="switch-disabled" disabled={true} />
-}>
+<CodePreview component={<SwitchExamples.SwitchDisabled />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
+export function SwitchDisabled() {
   return <Switch disabled={true} />;
 }
 ```
@@ -184,47 +156,31 @@ export default function Example() {
 
 Use the example below for a more complex usage of switch with label that contains some description.
 
-<CodePreview id="switch-with-description" component={
-  <Switch
-    id="switch-description"
-    label={
-      <div>
-        <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          You'll be able to login without password for 24 hours.
-        </Typography>
-      </div>
-    } 
-    containerProps={{
-      className: "-mt-5"
-    }}
-  />
-}>
+<CodePreview component={<SwitchExamples.SwitchWithDescription />}>
 ```jsx
-import { Switch } from "@material-tailwind/react";
+import { Switch, Typography } from "@material-tailwind/react";
 
-export default function Example() {
+export function SwitchWithDescription() {
   return (
     <Switch
       label={
         <div>
-          <Typography color="blue-gray" className="font-medium">Remember Me</Typography>
+          <Typography color="blue-gray" className="font-medium">
+            Remember Me
+          </Typography>
           <Typography variant="small" color="gray" className="font-normal">
-            You'll be able to login without password for 24 hours.
+            You&apos;ll be able to login without password for 24 hours.
           </Typography>
         </div>
-      } 
+      }
       containerProps={{
-        className: "-mt-5"
+        className: "-mt-5",
       }}
     />
   );
 }
 ```
 </CodePreview>
-
-<span id="props" className="scroll-mt-48" />
-<span id="theme" className="scroll-mt-48" />
 
 ---
 
@@ -234,24 +190,364 @@ export default function Example() {
 
 You can use the <Code>className</Code>, <Code>containerProps</Code>, <Code>circleProps</Code> and <Code>labelProps</Code> prop to add custom styles to the <Code>Switch</Code> component.
 
-<CodePreview id="switch-with-custom-styles" component={
-  <Switch
-    id="custom-switch-component"
-    ripple={false}
-    className="w-full h-full checked:bg-[#2ec946]"
-    containerProps={{
-      className: "w-11 h-6"
-    }}
-    circleProps={{
-      className: "before:hidden left-0.5 border-none",
-    }}
-  />
-}>
+<CodePreview component={<SwitchExamples.SwitchCustomStyles />}>
 ```jsx
 import { Switch } from "@material-tailwind/react";
 
-export default function Example() {
-  return <Switch />;
+export function SwitchCustomStyles() {
+  return (
+    <Switch
+      id="custom-switch-component"
+      ripple={false}
+      className="h-full w-full checked:bg-[#2ec946]"
+      containerProps={{
+        className: "w-11 h-6",
+      }}
+      circleProps={{
+        className: "before:hidden left-0.5 border-none",
+      }}
+    />
+  );
 }
 ```
 </CodePreview>
+
+---
+
+<DocsTitle href="switch-props">
+## Switch Props
+</DocsTitle>
+
+The following props are available for switch component. These are the custom props
+that we've added for the switch component and you can use all the other native input
+props as well.
+
+| Attribute        | Type                  | Description                                   | Default                |
+| ---------------- | --------------------- | --------------------------------------------- | ---------------------- |
+| `color`          | [Color](#types-color) | Change switch color                           | <Code>blue</Code>      |
+| `label`          | <Code>node</Code>     | Add label for switch                          | <Code>undefined</Code> |
+| `ripple`         | <Code>boolean</Code>  | Add ripple effect for switch                  | <Code>true</Code>      |
+| `className`      | <Code>string</Code>   | Add custom className for switch               | `''`                   |
+| `disabled`       | <Code>boolean</Code>  | Makes the switch disabled                     | <Code>false</Code>     |
+| `containerProps` | <Code>object</Code>   | Add custom props for switch container         | <Code>undefined</Code> |
+| `labelProps`     | <Code>object</Code>   | Add custom props for switch label             | <Code>undefined</Code> |
+| `circleProps`    | <Code>object</Code>   | Add custom props for switch circle            | <Code>undefined</Code> |
+| `inputRef`       | <Code>ref</Code>      | Add reference for <Code>input</Code> element. | <Code>undefined</Code> |
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SwitchProps } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="types-color">
+## Types - Color
+</DocsTitle>
+
+```ts
+type color =
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+```
+
+---
+
+<DocsTitle href="switch-theme">
+## Switch Theme
+</DocsTitle>
+
+Learn how to customize the theme and styles for switch component, the theme object for switch component has three main objects:
+
+**A.** The <Code>defaultProps</Code> object for setting up the default value for props of switch component.<br />
+**B.** The <Code>valid</Code> object for customizing the valid values for switch component props.<br />
+**C.** The <Code>styles</Code> object for customizing the theme and styles of switch component.<br />
+
+You can customize the theme and styles of switch component by adding Tailwind CSS classes as key paired values for objects.
+
+<br />
+<br />
+
+<DocsTitle href="switch-theme-object-theme">
+## Switch Theme Object Type
+</DocsTitle>
+
+```ts
+interface SwitchButtonStylesType {
+  defaultProps: {
+    color: string;
+    label: string;
+    ripple: boolean;
+    className: string;
+    disabled: boolean;
+    containerProps: object;
+    labelProps: object;
+    circleProps: object;
+  };
+  valid: {
+    colors: string[];
+  };
+  styles: {
+    base: {
+      root: object;
+      container: object;
+      input: object;
+      circle: object;
+      ripple: object;
+      label: object;
+      disabled: object;
+    };
+    colors: object;
+  };
+}
+```
+
+<br />
+<br />
+
+### For TypeScript Only
+
+```tsx
+import type { SwitchButtonStylesType } from "@material-tailwind/react";
+```
+
+---
+
+<DocsTitle href="switch-theme-customization">
+## Switch Theme Customization
+</DocsTitle>
+
+```ts
+const theme = {
+  switch: {
+    defaultProps: {
+      color: "blue",
+      label: "",
+      ripple: true,
+      className: "",
+      disabled: false,
+      containerProps: undefined,
+      labelProps: undefined,
+      circleProps: undefined,
+    },
+    valid: {
+      colors: [
+        "blue-gray",
+        "gray",
+        "brown",
+        "deep-orange",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "light-green",
+        "green",
+        "teal",
+        "cyan",
+        "light-blue",
+        "blue",
+        "indigo",
+        "deep-purple",
+        "purple",
+        "pink",
+        "red",
+      ],
+    },
+    styles: {
+      base: {
+        root: {
+          display: "inline-flex",
+          alignItems: "items-center",
+        },
+        container: {
+          position: "relative",
+          display: "inline-block",
+          width: "w-8",
+          height: "h-4",
+          cursor: "cursor-pointer",
+          borderRadius: "rounded-full",
+        },
+        input: {
+          peer: "peer",
+          appearance: "appearance-none",
+          width: "w-8",
+          height: "h-4",
+          position: "absolute",
+          background: "bg-blue-gray-100",
+          borderRadius: "rounded-full",
+          cursor: "cursor-pointer",
+          transition: "transition-colors duration-300",
+        },
+        circle: {
+          bg: "bg-white",
+          width: "w-5",
+          height: "h-5",
+          borderWidth: "border",
+          borderColor: "border-blue-gray-100",
+          borderRadius: "rounded-full",
+          boxShadow: "shadow-md",
+          position: "absolute",
+          top: "top-2/4",
+          left: "-left-1",
+          transform: "-translate-y-2/4 peer-checked:translate-x-full",
+          transition: "transition-all duration-300",
+          cursor: "cursor-pointer",
+          before: {
+            content: "before:content['']",
+            display: "before:block",
+            bg: "before:bg-blue-gray-500",
+            width: "before:w-10",
+            height: "before:h-10",
+            borderRadius: "before:rounded-full",
+            position: "before:absolute",
+            top: "before:top-2/4",
+            left: "before:left-2/4",
+            transform: "before:-translate-y-2/4 before:-translate-x-2/4",
+            transition: "before:transition-opacity",
+            opacity: "before:opacity-0 hover:before:opacity-10",
+          },
+        },
+        ripple: {
+          display: "inline-block",
+          top: "top-2/4",
+          left: "left-2/4",
+          transform: "-translate-x-2/4 -translate-y-2/4",
+          p: "p-5",
+          borderRadius: "rounded-full",
+        },
+        label: {
+          color: "text-gray-700",
+          fontWeight: "font-light",
+          userSelect: "select-none",
+          cursor: "cursor-pointer",
+          mt: "mt-px",
+          ml: "ml-3",
+          mb: "mb-0",
+        },
+        disabled: {
+          opacity: "opacity-50",
+          pointerEvents: "pointer-events-none",
+        },
+      },
+      colors: {
+        "blue-gray": {
+          input: "checked:bg-blue-gray-500",
+          circle: "peer-checked:border-blue-gray-500",
+          before: "peer-checked:before:bg-blue-gray-500",
+        },
+        gray: {
+          input: "checked:bg-gray-500",
+          circle: "peer-checked:border-gray-500",
+          before: "peer-checked:before:bg-gray-500",
+        },
+        brown: {
+          input: "checked:bg-brown-500",
+          circle: "peer-checked:border-brown-500",
+          before: "peer-checked:before:bg-brown-500",
+        },
+        "deep-orange": {
+          input: "checked:bg-deep-orange-500",
+          circle: "peer-checked:border-deep-orange-500",
+          before: "peer-checked:before:bg-deep-orange-500",
+        },
+        orange: {
+          input: "checked:bg-orange-500",
+          circle: "peer-checked:border-orange-500",
+          before: "peer-checked:before:bg-orange-500",
+        },
+        amber: {
+          input: "checked:bg-amber-500",
+          circle: "peer-checked:border-amber-500",
+          before: "peer-checked:before:bg-amber-500",
+        },
+        yellow: {
+          input: "checked:bg-yellow-500",
+          circle: "peer-checked:border-yellow-500",
+          before: "peer-checked:before:bg-yellow-500",
+        },
+        lime: {
+          input: "checked:bg-lime-500",
+          circle: "peer-checked:border-lime-500",
+          before: "peer-checked:before:bg-lime-500",
+        },
+        "light-green": {
+          input: "checked:bg-light-green-500",
+          circle: "peer-checked:border-light-green-500",
+          before: "peer-checked:before:bg-light-green-500",
+        },
+        green: {
+          input: "checked:bg-green-500",
+          circle: "peer-checked:border-green-500",
+          before: "peer-checked:before:bg-green-500",
+        },
+        teal: {
+          input: "checked:bg-teal-500",
+          circle: "peer-checked:border-teal-500",
+          before: "peer-checked:before:bg-teal-500",
+        },
+        cyan: {
+          input: "checked:bg-cyan-500",
+          circle: "peer-checked:border-cyan-500",
+          before: "peer-checked:before:bg-cyan-500",
+        },
+        "light-blue": {
+          input: "checked:bg-light-blue-500",
+          circle: "peer-checked:border-light-blue-500",
+          before: "peer-checked:before:bg-light-blue-500",
+        },
+        blue: {
+          input: "checked:bg-blue-500",
+          circle: "peer-checked:border-blue-500",
+          before: "peer-checked:before:bg-blue-500",
+        },
+        indigo: {
+          input: "checked:bg-indigo-500",
+          circle: "peer-checked:border-indigo-500",
+          before: "peer-checked:before:bg-indigo-500",
+        },
+        "deep-purple": {
+          input: "checked:bg-deep-purple-500",
+          circle: "peer-checked:border-deep-purple-500",
+          before: "peer-checked:before:bg-deep-purple-500",
+        },
+        purple: {
+          input: "checked:bg-purple-500",
+          circle: "peer-checked:border-purple-500",
+          before: "peer-checked:before:bg-purple-500",
+        },
+        pink: {
+          input: "checked:bg-pink-500",
+          circle: "peer-checked:border-pink-500",
+          before: "peer-checked:before:bg-pink-500",
+        },
+        red: {
+          input: "checked:bg-red-500",
+          circle: "peer-checked:border-red-500",
+          before: "peer-checked:before:bg-red-500",
+        },
+      },
+    },
+  },
+};
+```
