@@ -20,8 +20,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 
 // page components
-import DocsFooter from "components/layout/docs-footer";
-import DocsNavbar from "components/layout/docs-navbar";
+import { DocsNavbar, Footer } from "@widgets";
 import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
@@ -281,10 +280,10 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
       </Head>
-      <div className="relative h-full w-full bg-white">
-        <DocsNavbar slug={slug[slug.length - 1]} setMobileNav={setMobileNav} />
+      <div className="relative mb-8 h-full w-full bg-white">
+        <DocsNavbar />
         <div className="px-6">
-          <div className="mx-auto flex max-w-[1440px]">
+          <div className="container mx-auto flex">
             <Sidenav
               routes={routes[frameworkType]}
               type={frameworkType}
@@ -297,12 +296,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               {frontMatter.related && (
                 <DocsRelated routes={frontMatter.related} />
               )}
-              <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
           </div>
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 }

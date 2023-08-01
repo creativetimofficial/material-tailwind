@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors");
 const withMT = require("./packages/material-tailwind-html/utils/withMT");
 
 module.exports = withMT({
@@ -7,14 +7,15 @@ module.exports = withMT({
     "./packages/material-tailwind-react/src/theme/components/**/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./widgets/**/*.{js,ts,jsx,tsx}",
     "./documentation/**/*.mdx",
     "./public/material-tailwind-html-v2.js",
   ],
   theme: {
     extend: {
       colors: {
-        slate: colors.slate,
-      }
+        primary: "#020617",
+      },
     },
   },
   plugins: [],

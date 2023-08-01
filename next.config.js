@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
+  images: {
+    domains: ["nepcha.com"],
+  },
   async redirects() {
     return [
       {

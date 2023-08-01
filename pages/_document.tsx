@@ -49,13 +49,13 @@ export default function MyDocument() {
           data-domain="material-tailwind.com"
           src="https://plausible.io/js/script.js"
         />
-        <script 
-          defer 
-          data-site="material-tailwind.com" 
+        <script
+          defer
+          data-site="material-tailwind.com"
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         />
       </Head>
-      <body className="bg-gray-50/50 ">
+      <body>
         <noscript>
           <iframe
             title="google-tag-manage"

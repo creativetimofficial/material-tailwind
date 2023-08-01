@@ -19,6 +19,7 @@
     "@floating-ui/dom": "^1.1.0",
     "@floating-ui/react": "^0.19.0",
     "@heroicons/react": "^2.0.13",
+    "@material-tailwind/react": "^2.0.8",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
     "flatpickr": "^4.6.13",

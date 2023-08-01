@@ -1,42 +1,255 @@
 export const routes = [
   {
-    name: "guide",
-    icon: "fas fa-book",
-    pages: ["installation", "license", "what-is-tailwind-css"],
+    name: "Getting Started",
+    pages: [
+      {
+        name: "Installation",
+        route: "installation",
+      },
+      {
+        name: "License",
+        route: "license",
+      },
+      {
+        name: "What is Tailwind CSS",
+        route: "what-is-tailwind-css",
+      },
+      {
+        name: "Release Notes",
+        route: "release-notes",
+      },
+    ],
+  },
+  {
+    name: "Upgrade Guide",
+    pages: [
+      {
+        name: "v2 Migration Guide",
+        route: "v2-migration-guide",
+      },
+    ],
+  },
+  {
+    name: "Integration Guide",
+    pages: [
+      {
+        name: "Next.js",
+        route: "guide/next",
+      },
+      {
+        name: "Create React App",
+        route: "guide/cra",
+      },
+      {
+        name: "Remix",
+        route: "remix",
+      },
+      {
+        name: "Vite",
+        route: "vite",
+      },
+      {
+        name: "Astro",
+        route: "astro",
+      },
+      {
+        name: "Gatsby",
+        route: "gatsby",
+      },
+    ],
   },
   {
     name: "Customization",
-    icon: "fas fa-paint-brush",
-    pages: ["theming", "colors", "fonts", "shadows", "screens"],
+    pages: [
+      {
+        name: "Theming",
+        route: "theming",
+      },
+      {
+        name: "Colors",
+        route: "colors",
+      },
+      {
+        name: "Fonts",
+        route: "fonts",
+      },
+      {
+        name: "Shadow",
+        route: "shadow",
+      },
+      {
+        name: "Screens",
+        route: "screens",
+      },
+    ],
   },
   {
-    name: "components",
-    icon: "fas fa-shapes",
+    name: "Components",
     pages: [
-      "accordion",
-      "alert",
-      "avatar",
-      "breadcrumbs",
-      "button",
-      "card",
-      "checkbox",
-      "chip",
-      "dialog",
-      "icon-button",
-      "input",
-      "form",
-      "menu",
-      "navbar",
-      "popover",
-      "progress-bar",
-      "radio-button",
-      "select",
-      "switch",
-      "tabs",
-      "textarea",
-      "tooltip",
-      "typography",
-      "footer",
+      {
+        name: "Accordion",
+        route: "accordion",
+      },
+      {
+        name: "Alert",
+        route: "alert",
+      },
+      {
+        name: "Avatar",
+        route: "avatar",
+      },
+      {
+        name: "Badge",
+        route: "badge",
+      },
+      {
+        name: "Breadcrumbs",
+        route: "breadcrumbs",
+      },
+      {
+        name: "Button",
+        route: "button",
+      },
+      {
+        name: "Button Group",
+        route: "button-group",
+      },
+      {
+        name: "Card",
+        route: "card",
+      },
+      {
+        name: "Checkbox",
+        route: "checkbox",
+      },
+      {
+        name: "Chip",
+        route: "chip",
+      },
+      {
+        name: "Collpase",
+        route: "collpase",
+      },
+      {
+        name: "Carousel",
+        route: "carousel",
+      },
+      {
+        name: "Dialog",
+        route: "dialog",
+      },
+      {
+        name: "Drawer",
+        route: "drawer",
+      },
+      {
+        name: "Icon Button",
+        route: "icon-button",
+      },
+      {
+        name: "Input",
+        route: "input",
+      },
+      {
+        name: "Form",
+        route: "form",
+      },
+      {
+        name: "List",
+        route: "list",
+      },
+      {
+        name: "Menu",
+        route: "menu",
+      },
+      {
+        name: "Navbar",
+        route: "navbar",
+      },
+      {
+        name: "Popover",
+        route: "popover",
+      },
+      {
+        name: "Progress Bar",
+        route: "progress-bar",
+      },
+      {
+        name: "Pagination",
+        route: "pagination",
+      },
+      {
+        name: "Radio Button",
+        route: "radio-button",
+      },
+      {
+        name: "Rating Bar",
+        route: "rating bar",
+      },
+      {
+        name: "Select",
+        route: "select",
+      },
+      {
+        name: "Slider",
+        route: "slider",
+      },
+      {
+        name: "Speed Dial",
+        route: "speed-dial",
+      },
+      {
+        name: "Spinner",
+        route: "spinner",
+      },
+      {
+        name: "Stepper",
+        route: "stepper",
+      },
+      {
+        name: "Switch",
+        route: "switch",
+      },
+      {
+        name: "Tabs",
+        route: "tabs",
+      },
+      {
+        name: "Textarea",
+        route: "textarea",
+      },
+      {
+        name: "Timeline",
+        route: "timeline",
+      },
+      {
+        name: "Tooltip",
+        route: "tooltip",
+      },
+      {
+        name: "Typography",
+        route: "typography",
+      },
+      {
+        name: "Footer",
+        route: "footer",
+      },
+      {
+        name: "Img",
+        route: "img",
+      },
+      {
+        name: "Video",
+        route: "video",
+      },
+      {
+        name: "Sidebar",
+        route: "sidebar",
+      },
+      {
+        name: "Table",
+        route: "table",
+      },
     ],
   },
 ];
