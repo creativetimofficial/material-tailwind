@@ -141,7 +141,7 @@ export function Navbar() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="mt-[2.5px] !ml-1 h-3.5 w-3.5"
+                  className="mt-[2.5px] !ml-0 h-3.5 w-3.5"
                 >
                   <path
                     fillRule="evenodd"
