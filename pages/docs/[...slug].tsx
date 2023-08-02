@@ -118,8 +118,7 @@ const components = {
     <Typography
       as="h1"
       variant="h3"
-      color="blue-gray"
-      className="!mb-4 lg:!text-4xl"
+      className="!mb-4 text-primary lg:!text-3xl"
       {...props}
     />
   ),
@@ -127,8 +126,7 @@ const components = {
     <Typography
       as="h2"
       variant="h4"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -136,8 +134,7 @@ const components = {
     <Typography
       as="h3"
       variant="h5"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -145,17 +142,17 @@ const components = {
     <Typography
       as="p"
       variant="h5"
-      className="!mb-12 !font-normal !text-blue-gray-500"
+      className="!mb-12 !font-normal !text-gray-600"
       {...props}
     />
   ),
   p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
+    <Typography className="!mb-4 !font-normal !text-gray-600" {...props} />
   ),
   hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
   a: (props) => (
     <a
-      className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-primary !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
