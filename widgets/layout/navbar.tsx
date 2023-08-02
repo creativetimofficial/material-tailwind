@@ -141,7 +141,7 @@ export function Navbar() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="mt-[2.5px] ml-1 h-3.5 w-3.5"
+                  className="mt-[2.5px] !ml-1 h-3.5 w-3.5"
                 >
                   <path
                     fillRule="evenodd"
@@ -150,7 +150,7 @@ export function Navbar() {
                   />
                 </svg>
               }
-              className="flex-items-center gap-2 bg-primary py-[3px] pr-2 pl-5 text-xs"
+              className="flex-items-center gap-2 bg-primary py-[3px] !pr-2 !pl-5 text-xs"
             />
             <i className="fab fa-github text-xl leading-none" />
           </a>
