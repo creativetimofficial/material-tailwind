@@ -36,7 +36,7 @@ export function PageMap({ type, frontMatter }) {
 
   return (
     <aside className="relative ml-auto hidden h-screen w-64 pt-24 pb-4 lg:block">
-      <div className="fixed h-screen w-64">
+      <div className="fixed z-10 h-screen w-64 overflow-y-scroll pb-40">
         <Typography
           variant="small"
           className="font-bold capitalize text-primary"
