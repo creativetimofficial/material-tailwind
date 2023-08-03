@@ -1,6 +1,7 @@
 // base
 export * from "./logo";
 export * from "./code";
+export * from "./search";
 export * from "./docs-title";
 export * from "./code-preview";
 export * from "./framework-card";
