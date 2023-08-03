@@ -28,6 +28,7 @@ import {
   GatsbyLogo,
   CodePreview,
   DocsTitle,
+  ColorPalette,
 } from "@widgets";
 
 // docs-content
@@ -305,6 +306,7 @@ const components = {
   TabsExamples,
   TextareaExamples,
   ReleaseNotes,
+  ColorPalette,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

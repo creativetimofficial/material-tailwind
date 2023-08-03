@@ -4,6 +4,7 @@ export * from "./code";
 export * from "./search";
 export * from "./docs-title";
 export * from "./code-preview";
+export * from "./color-palette";
 export * from "./framework-card";
 
 // layout
