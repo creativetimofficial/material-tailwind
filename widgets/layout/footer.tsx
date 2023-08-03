@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Typography } from "@material-tailwind/react";
 
@@ -48,49 +49,49 @@ const COMPANY = [
 const HELP = [
   {
     name: "Knowledge Center",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=material-tailwind",
+    link: "https://www.creative-tim.com/knowledge-center?ref=material-tailwind",
   },
   {
     name: "Contact Us",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind",
+    link: "https://www.creative-tim.com/contact-us?ref=material-tailwind",
   },
   {
     name: "Premium Support",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/CODE_OF_CONDUCT.md?ref=material-tailwind",
+    link: "https://www.creative-tim.com/support-terms?ref=material-tailwind",
   },
   {
     name: "Pricing",
-    link: "https://www.creative-tim.com/contact-us?ref=material-tailwind",
+    link: "/blocks#pricing",
   },
 ];
 
 const RESOURCES = [
   {
     name: "Documentation",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=material-tailwind",
+    link: "/docs/react/installation",
   },
   {
     name: "Custom Development",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind",
+    link: "https://www.creative-tim.com/services/updivision?ref=material-tailwind",
   },
   {
     name: "Discord",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/CODE_OF_CONDUCT.md?ref=material-tailwind",
+    link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
   },
   {
     name: "Bits",
-    link: "https://www.creative-tim.com/contact-us?ref=material-tailwind",
+    link: "https://www.creative-tim.com/bits?ref=material-tailwind",
   },
 ];
 
 const TECHS = [
   {
     name: "React",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=material-tailwind",
+    link: "/docs/react/installation",
   },
   {
     name: "HTML",
-    link: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind",
+    link: "/docs/html/installation",
   },
 ];
 
@@ -147,14 +148,14 @@ export function Footer() {
                 <ul className="list-unstyled">
                   {HELP.map(({ name, link }, key) => (
                     <li key={key}>
-                      <a
+                      <Link
                         href={link}
-                        target="_blank"
                         rel="noreferrer"
+                        target={name === "Pricing" ? "_self" : "_blank"}
                         className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -166,14 +167,14 @@ export function Footer() {
                 <ul className="list-unstyled">
                   {RESOURCES.map(({ name, link }, key) => (
                     <li key={key}>
-                      <a
+                      <Link
                         href={link}
-                        target="_blank"
                         rel="noreferrer"
+                        target={name === "Documentation" ? "_self" : "_blank"}
                         className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -185,14 +186,12 @@ export function Footer() {
                 <ul className="list-unstyled">
                   {TECHS.map(({ name, link }, key) => (
                     <li key={key}>
-                      <a
+                      <Link
                         href={link}
-                        target="_blank"
-                        rel="noreferrer"
                         className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                       >
                         {name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -232,7 +231,7 @@ export function Footer() {
             </div>
           </div>
           <div className="ml-auto w-full px-4 text-center md:w-4/12 md:px-0 md:text-right">
-            <a href="https://nepcha.com">
+            <a href="https://nepcha.com?ref=material-tailwind">
               <Image
                 src="https://nepcha.com/img/media/badges/analytics-by-nepcha-black-transparent.png"
                 className="mx-auto lg:mr-0 lg:ml-auto"

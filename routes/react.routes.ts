@@ -25,7 +25,7 @@ export const routes = [
     pages: [
       {
         name: "v2 Migration Guide",
-        route: "v2-migration-guide",
+        route: "2.x-migration-guide",
       },
     ],
   },
@@ -42,19 +42,19 @@ export const routes = [
       },
       {
         name: "Remix",
-        route: "remix",
+        route: "guide/remix",
       },
       {
         name: "Vite",
-        route: "vite",
+        route: "guide/vite",
       },
       {
         name: "Astro",
-        route: "astro",
+        route: "guide/astro",
       },
       {
         name: "Gatsby",
-        route: "gatsby",
+        route: "guide/gatsby",
       },
     ],
   },
@@ -74,8 +74,8 @@ export const routes = [
         route: "fonts",
       },
       {
-        name: "Shadow",
-        route: "shadow",
+        name: "Shadows",
+        route: "shadows",
       },
       {
         name: "Screens",

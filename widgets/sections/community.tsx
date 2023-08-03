@@ -1,23 +1,27 @@
 import Image from "next/image";
 import { Typography, Card, CardBody, Button } from "@material-tailwind/react";
+import Link from "next/link";
 
 const DATA = [
   {
     title: "Github",
     bg: "bg-primary",
     icon: "github",
+    link: "https://www.github.com/creativetimofficial?ref=material-tailwind",
     desc: "Get it free on Github and please help us spread the news with a Star.",
   },
   {
     title: "Discord",
     bg: "bg-indigo-400",
     icon: "discord",
+    link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
     desc: "For issues, feature requests and contribute.",
   },
   {
     title: "Twitter",
     bg: "bg-blue-500",
     icon: "twitter",
+    link: "https://www.twitter.com/creativetim?ref=material-tailwind",
     desc: "For announcements, articles, and other resources.",
   },
 ];
@@ -44,35 +48,37 @@ export function Community() {
           </Typography>
         </div>
         <div className="mt-28 grid gap-16 md:grid-cols-1 lg:grid-cols-3">
-          {DATA.map(({ bg, title, desc, icon }, i) => (
-            <Card key={i} color="transparent" shadow={false}>
-              <CardBody className="flex h-full flex-col justify-between p-0">
-                <div>
-                  <div
-                    className={`${bg} flex h-14 w-14  items-center justify-center rounded-lg`}
-                  >
-                    <i className={`fab fa-${icon} text-2xl text-white`} />
+          {DATA.map(({ bg, title, desc, icon, link }, i) => (
+            <Link key={i} href={link} target="_blank">
+              <Card color="transparent" shadow={false}>
+                <CardBody className="flex h-full flex-col justify-between p-0">
+                  <div>
+                    <div
+                      className={`${bg} flex h-14 w-14  items-center justify-center rounded-lg`}
+                    >
+                      <i className={`fab fa-${icon} text-2xl text-white`} />
+                    </div>
+                    <Typography
+                      variant="h5"
+                      className="mt-6 mb-1 font-semibold text-primary"
+                    >
+                      {title}
+                    </Typography>
+                    <Typography className="mb-4 font-normal text-gray-600">
+                      {desc}
+                    </Typography>
                   </div>
-                  <Typography
-                    variant="h5"
-                    className="mt-6 mb-1 font-semibold text-primary"
+                  <Button
+                    color="blue-gray"
+                    variant="outlined"
+                    fullWidth
+                    className="border-[1.5px] border-blue-gray-50 bg-white !text-base font-medium capitalize text-primary focus:ring-transparent"
                   >
-                    {title}
-                  </Typography>
-                  <Typography className="mb-4 font-normal text-gray-600">
-                    {desc}
-                  </Typography>
-                </div>
-                <Button
-                  color="blue-gray"
-                  variant="outlined"
-                  fullWidth
-                  className="border-[1.5px] border-blue-gray-50 bg-white !text-base font-medium capitalize text-primary focus:ring-transparent"
-                >
-                  {title === "Discord" ? "Join" : "Visit"}
-                </Button>
-              </CardBody>
-            </Card>
+                    {title === "Discord" ? "Join" : "Visit"}
+                  </Button>
+                </CardBody>
+              </Card>
+            </Link>
           ))}
         </div>
         <Card
@@ -107,14 +113,16 @@ export function Community() {
               <Typography className="mt-2 !font-normal text-gray-600">
                 Join our community of open-source <br /> contribuitors.
               </Typography>
-              <Button
-                fullWidth
-                size="lg"
-                color="gray"
-                className="mt-8 bg-primary text-base font-medium capitalize"
-              >
-                Join
-              </Button>
+              <Link href="https://www.github.com/creativetimofficial?ref=material-tailwind">
+                <Button
+                  fullWidth
+                  size="lg"
+                  color="gray"
+                  className="mt-8 bg-primary text-base font-medium capitalize"
+                >
+                  Join
+                </Button>
+              </Link>
             </div>
             <div className="absolute top-1/2 right-0 -translate-y-1/2">
               <Image

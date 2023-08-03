@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Button, Typography, Card, CardBody } from "@material-tailwind/react";
 
@@ -93,28 +94,32 @@ export function Figma() {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <Button
-            size="lg"
-            variant="outlined"
-            className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
-          >
-            <Image
-              src="/svg/figma.svg"
-              width={24}
-              height={24}
-              alt="Figma Logo"
-              className="absolute"
-            />
-            <span className="pl-8">Preview in Figma</span>
-          </Button>
-          <Button
-            size="lg"
-            variant="filled"
-            color="gray"
-            className="ml-4 bg-primary text-base font-medium capitalize"
-          >
-            Pricing & FAQ
-          </Button>
+          <Link href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916%3A5781&mode=design&t=ysoJhYSAH7d3PZ02-1">
+            <Button
+              size="lg"
+              variant="outlined"
+              className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
+            >
+              <Image
+                src="/svg/figma.svg"
+                width={24}
+                height={24}
+                alt="Figma Logo"
+                className="absolute"
+              />
+              <span className="pl-8">Preview in Figma</span>
+            </Button>
+          </Link>
+          <Link href="/figma#pricing">
+            <Button
+              size="lg"
+              variant="filled"
+              color="gray"
+              className="ml-4 bg-primary text-base font-medium capitalize"
+            >
+              Pricing & FAQ
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

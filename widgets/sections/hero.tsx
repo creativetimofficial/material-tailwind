@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Chip, Typography, Button } from "@material-tailwind/react";
 
 export function Hero() {
@@ -24,21 +25,25 @@ export function Hero() {
           bonus!
         </Typography>
         <div>
-          <Button
-            size="lg"
-            variant="outlined"
-            className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
-          >
-            Check out all components
-          </Button>
-          <Button
-            size="lg"
-            color="gray"
-            variant="filled"
-            className="ml-4 bg-primary text-base font-medium capitalize"
-          >
-            Get Started
-          </Button>
+          <Link href="/docs/react/button">
+            <Button
+              size="lg"
+              variant="outlined"
+              className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
+            >
+              Check out all components
+            </Button>
+          </Link>
+          <Link href="/docs/react/installation">
+            <Button
+              size="lg"
+              color="gray"
+              variant="filled"
+              className="ml-4 bg-primary text-base font-medium capitalize"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
