@@ -399,7 +399,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
-      development: false,
+      // development: false,
     },
   });
 
