@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
-export default function PageMap({ type, frontMatter }) {
+export function PageMap({ type, frontMatter }) {
   const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState(frontMatter[0]);
   const [feedbackType, setFeedbackType] = React.useState("issue");

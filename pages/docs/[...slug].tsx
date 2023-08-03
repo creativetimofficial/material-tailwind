@@ -1,43 +1,36 @@
-import { Fragment, useState, useEffect } from "react";
-
-// next.js components
-import Image from "next/image";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
-// next-mdx-remote components
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-
-// markdown utils
+// mdx
 import fs from "fs";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
+import { MDXRemote } from "next-mdx-remote";
 import rehypePrettyCode from "rehype-pretty-code";
+import { serialize } from "next-mdx-remote/serialize";
 
-// page components
-import { DocsNavbar, Footer } from "@widgets";
-import Sidenav from "components/layout/sidenav";
-import PageMap from "components/layout/page-map";
-import ComponentDemo from "components/cards/component-demo";
-import Code from "components/code";
-import CodeSandbox from "components/code-sandbox";
-import StackBlitz from "components/stack-blitz";
-import Framework from "components/cards/framework";
-import CraLogo from "components/icons/cra";
-import NextLogo from "components/icons/next";
-import RemixLogo from "components/icons/remix";
-import ViteLogo from "components/icons/vite";
-import AstroLogo from "components/icons/astro";
-import GatsbyLogo from "components/icons/gatsby";
-import ColorPalette from "components/color-palette";
-import DocsRelated from "components/layout/docs-related";
-import CodeTabs from "components/code-tabs";
-import CodePreview from "components/code-preview";
-import Warning from "components/warning";
+// @widgets
+import {
+  DocsNavbar,
+  Footer,
+  Sidenav,
+  PageMap,
+  Code,
+  FrameworkCard,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
+  AstroLogo,
+  GatsbyLogo,
+  CodePreview,
+  DocsTitle,
+} from "@widgets";
 
-// components examples
+// docs-content
 import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
@@ -80,9 +73,7 @@ import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
 
-import DocsTitle from "components/docs-title";
-
-// @material-tailwind/react components
+// @material-tailwind/react
 import {
   Accordion,
   AccordionHeader,
@@ -140,8 +131,8 @@ import { routes as htmlRoutes } from "routes/html.routes";
 import { routes as reactRoutes } from "routes/react.routes";
 
 // utils
-import config from "utils/rehype-pretty-code-config";
 import filterArray from "utils/filter-array";
+import { rehypePrettyCodeConfig } from "@utils";
 import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
@@ -259,26 +250,18 @@ const components = {
   ListItemSuffix,
   Collapse,
   Slider,
-  CodeTabs,
   Image,
-  ComponentDemo,
-  CodeSandbox,
-  StackBlitz,
   Code,
-  Framework,
+  FrameworkCard,
   CraLogo,
   NextLogo,
   RemixLogo,
   ViteLogo,
   AstroLogo,
   GatsbyLogo,
-  ColorPalette,
   CodePreview,
   DocsTitle,
   Link,
-  Warning,
-
-  // new components
   AccordionExamples,
   AlertExamples,
   AvatarExamples,
@@ -324,7 +307,7 @@ const components = {
 
 export default function Page({ frontMatter, mdxSource, slug }) {
   const { asPath } = useRouter();
-  const [mobileNav, setMobileNav] = useState(false);
+  const [mobileNav, setMobileNav] = React.useState(false);
 
   const routes = {
     html: htmlRoutes,
@@ -336,14 +319,14 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     .filter((el) => validFrameworks.includes(el))
     .join("") as "html" | "react" | "vue" | "angular" | "svelte";
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
       initHtmlScripts();
     }
   }, [frameworkType, slug]);
 
   return (
-    <Fragment>
+    <>
       <Head>
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
@@ -361,16 +344,13 @@ export default function Page({ frontMatter, mdxSource, slug }) {
             />
             <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && (
-                <DocsRelated routes={frontMatter.related} />
-              )}
             </div>
             <PageMap type={frameworkType} frontMatter={frontMatter} />
           </div>
         </div>
       </div>
       <Footer />
-    </Fragment>
+    </>
   );
 }
 
@@ -413,7 +393,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [[rehypePrettyCode, config]],
+      rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
       development: false,
     },

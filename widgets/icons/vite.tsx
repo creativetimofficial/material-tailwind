@@ -1,4 +1,4 @@
-export default function ViteLogo() {
+export function ViteLogo() {
   return (
     <svg
       className="mx-auto"

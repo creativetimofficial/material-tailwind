@@ -1,4 +1,4 @@
-export default function RemixLogo() {
+export function RemixLogo() {
   return (
     <svg
       className="mx-auto"

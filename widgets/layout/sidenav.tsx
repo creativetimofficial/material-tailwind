@@ -1,12 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
-
-// nest.js components
+import React from "react";
 import Link from "next/link";
-
-// @material-tailwind/react components
 import { Typography, Chip } from "@material-tailwind/react";
 
-// prop-types
 interface Props {
   routes: {
     name: string;
@@ -19,10 +14,16 @@ interface Props {
   type: "html" | "react" | "vue" | "angular" | "svelte";
   slug: string;
   mobileNav: boolean;
-  setMobileNav: Dispatch<SetStateAction<boolean>>;
+  setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
+export function Sidenav({
+  routes,
+  type,
+  slug,
+  mobileNav,
+  setMobileNav,
+}: Props) {
   return (
     <aside
       className={`fixed z-[999] h-screen w-80 pb-4 pr-4 transition-all duration-300 lg:relative lg:left-0 lg:z-10 lg:w-56 lg:pt-20 ${
@@ -90,5 +91,3 @@ function Sidenav({ routes, type, slug, mobileNav, setMobileNav }: Props) {
     </aside>
   );
 }
-
-export default Sidenav;

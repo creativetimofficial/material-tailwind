@@ -1,4 +1,4 @@
-export default function NextLogo() {
+export function NextLogo() {
   return (
     <svg
       className="mx-auto"

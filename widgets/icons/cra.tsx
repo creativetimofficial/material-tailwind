@@ -1,4 +1,4 @@
-export default function CraLogo() {
+export function CraLogo() {
   return (
     <svg
       className="mx-auto"

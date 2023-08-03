@@ -1,16 +1,13 @@
-import { ReactNode, forwardRef } from "react";
-
-// next.js components
+import React from "react";
 import Link from "next/link";
 
-// prop-types
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
   route: string;
   center?: boolean;
 }
 
-const Framework = forwardRef(
+export const FrameworkCard = React.forwardRef(
   ({ children, route, center = false }: Props, ref: any) => {
     return (
       <Link
@@ -23,9 +20,9 @@ const Framework = forwardRef(
         {children}
       </Link>
     );
-  }
+  },
 );
 
-Framework.displayName = "Framework";
+FrameworkCard.displayName = "FrameworkCard";
 
-export default Framework;
+export default FrameworkCard;

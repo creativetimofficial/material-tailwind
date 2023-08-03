@@ -1,11 +1,10 @@
-// prop-types
 interface Props {
   html: boolean;
   children: any;
   className: string;
 }
 
-export default function Code({ html = false, children, className }: Props) {
+export function Code({ html = false, children }: Props) {
   return (
     <code
       className={`rounded-md px-1 font-['Fira_Code'] font-normal ${
