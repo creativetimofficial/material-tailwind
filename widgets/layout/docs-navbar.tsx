@@ -48,7 +48,7 @@ export function DocsNavbar() {
 
   React.useEffect(() => {
     const stars = fetch(
-      "https://api.github.com/repos/creativetimofficial/material-tailwind"
+      "https://api.github.com/repos/creativetimofficial/material-tailwind",
     )
       .then((response) => response.json())
       .then((data) => setStars(formatNumber(data.stargazers_count, 1)));
@@ -86,6 +86,7 @@ export function DocsNavbar() {
   const navbarMenu = (
     <div className="flex w-full flex-col justify-end lg:!ml-auto lg:flex-row">
       <List className="px-0 lg:!flex-row">
+        <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <Menu placement="bottom" offset={-2.5} allowHover>
           <MenuHandler>
@@ -94,25 +95,18 @@ export function DocsNavbar() {
             </span>
           </MenuHandler>
           <MenuList className="rounded-[10px] p-1.5">
-            <Link className="!outline-none" href="/docs/html/installation">
-              <MenuItem className="flex items-center gap-2 rounded-lg !p-1 text-blue-gray-800 hover:text-primary">
-                <div className="grid h-7 w-7 place-items-center rounded bg-orange-900/10">
-                  <i className="fab fa-html5 translate-y-px text-lg text-orange-900" />
-                </div>
-                HTML
-              </MenuItem>
-            </Link>
-            <Link className="!outline-none" href="/docs/react/installation">
-              <MenuItem className="flex items-center gap-2 rounded-lg !p-1 text-blue-gray-800 hover:text-primary">
-                <div className="grid h-7 w-7 place-items-center rounded bg-blue-500/10">
-                  <i className="fab fa-react text-lg text-blue-500" />
-                </div>
-                React JS
+            <Link
+              target="_blank"
+              className="!outline-none"
+              href="https://www.creative-tim.com/services/updivision?ref=material-tailwind"
+            >
+              <MenuItem className="flex items-center gap-2 rounded-md text-blue-gray-800 hover:text-primary">
+                Custom Development
               </MenuItem>
             </Link>
           </MenuList>
         </Menu>
-        <NavItem href="#">PRO Version</NavItem>
+        <NavItem href="/figma">Figma</NavItem>
         <NavItem href="#">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
@@ -134,13 +128,13 @@ export function DocsNavbar() {
             href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
           >
             <Chip
-              value={stars}
+              value={<span className="-ml-1.5">{stars}</span>}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="mt-[2.5px] ml-1 h-3.5 w-3.5"
+                  className="mt-[2.5px] !ml-0 h-3.5 w-3.5"
                 >
                   <path
                     fillRule="evenodd"
@@ -149,7 +143,7 @@ export function DocsNavbar() {
                   />
                 </svg>
               }
-              className="flex-items-center gap-2 bg-primary py-[3px] pr-2 pl-5 text-xs"
+              className="flex-items-center gap-2 bg-primary py-[3px] !pr-2 text-xs"
             />
             <i className="fab fa-github text-xl leading-none" />
           </a>

@@ -128,7 +128,7 @@ export const routes = [
       },
       {
         name: "Collpase",
-        route: "collpase",
+        route: "collapse",
       },
       {
         name: "Carousel",
@@ -184,7 +184,7 @@ export const routes = [
       },
       {
         name: "Rating Bar",
-        route: "rating bar",
+        route: "rating-bar",
       },
       {
         name: "Select",

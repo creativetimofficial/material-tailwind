@@ -17,7 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@utils": ["./utils/index.ts"],
-      "@widgets": ["./widgets/index.ts"]
+      "@widgets": ["./widgets/index.ts"],
+      "@material-tailwind/react": [
+        "./packages/material-tailwind-react/src/index.ts"
+      ]
     }
   },
   "include": [

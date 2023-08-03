@@ -48,7 +48,7 @@ export function Navbar() {
 
   React.useEffect(() => {
     const stars = fetch(
-      "https://api.github.com/repos/creativetimofficial/material-tailwind"
+      "https://api.github.com/repos/creativetimofficial/material-tailwind",
     )
       .then((response) => response.json())
       .then((data) => setStars(formatNumber(data.stargazers_count, 1)));
@@ -128,7 +128,7 @@ export function Navbar() {
             href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
           >
             <Chip
-              value={stars}
+              value={<span className="-ml-1.5">{stars}</span>}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ export function Navbar() {
                   />
                 </svg>
               }
-              className="flex-items-center gap-2 bg-primary py-[3px] !pr-2 !pl-5 text-xs"
+              className="flex-items-center gap-2 bg-primary py-[3px] !pr-2 text-xs"
             />
             <i className="fab fa-github text-xl leading-none" />
           </a>

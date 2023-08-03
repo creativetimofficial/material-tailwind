@@ -365,7 +365,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
                 <DocsRelated routes={frontMatter.related} />
               )}
             </div>
-            <PageMap frontMatter={frontMatter} />
+            <PageMap type={frameworkType} frontMatter={frontMatter} />
           </div>
         </div>
       </div>
@@ -415,7 +415,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, config]],
       remarkPlugins: [remarkGfm],
-      development: process.env.NODE_ENV === "development",
+      development: false,
     },
   });
 

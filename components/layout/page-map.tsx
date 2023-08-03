@@ -8,14 +8,12 @@ import {
   DialogFooter,
   Tabs,
   TabsHeader,
-  TabsBody,
   Tab,
-  TabPanel,
   Textarea,
   IconButton,
 } from "@material-tailwind/react";
 
-export default function PageMap({ frontMatter }) {
+export default function PageMap({ type, frontMatter }) {
   const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState(frontMatter[0]);
   const [feedbackType, setFeedbackType] = React.useState("issue");
@@ -72,7 +70,8 @@ export default function PageMap({ frontMatter }) {
         <ul className="mb-8 list-none pt-2">
           <li>
             <a
-              href="#"
+              target="_blank"
+              href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Contributor guides
@@ -80,20 +79,21 @@ export default function PageMap({ frontMatter }) {
           </li>
           <li>
             <a
-              href="#"
+              target="_blank"
+              href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx?ref=material-tailwind`}
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Edit this page
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Translate this page
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <Typography
@@ -105,7 +105,8 @@ export default function PageMap({ frontMatter }) {
         <ul className="mb-8 list-none pt-2">
           <li>
             <a
-              href="#"
+              target="_blank"
+              href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Join un on Discord
@@ -113,7 +114,8 @@ export default function PageMap({ frontMatter }) {
           </li>
           <li>
             <a
-              href="#"
+              target="_blank"
+              href="https://www.creative-tim.com/blog?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Read blog posts
@@ -121,13 +123,13 @@ export default function PageMap({ frontMatter }) {
           </li>
           <li>
             <a
-              href="#"
+              href="https://opencollective.com/material-tailwind?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >
               Open Collective
             </a>
           </li>
-          <li className="mt-4">
+          {/* <li className="mt-4">
             <Button
               size="sm"
               variant="outlined"
@@ -136,7 +138,7 @@ export default function PageMap({ frontMatter }) {
             >
               give us feedback
             </Button>
-          </li>
+          </li> */}
         </ul>
       </div>
       <Dialog
