@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@material-tailwind/react": ["./packages/material-tailwind-react/src"]
+      "@utils": ["./utils/index.ts"],
+      "@widgets": ["./widgets/index.ts"]
     }
   },
   "include": [

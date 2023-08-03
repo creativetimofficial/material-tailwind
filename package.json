@@ -16,7 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@docsearch/css": "^3.5.1",
+    "@docsearch/css": "3.5.1",
     "@docsearch/react": "3.5.1",
     "@floating-ui/dom": "1.1.0",
     "@floating-ui/react": "0.19.0",

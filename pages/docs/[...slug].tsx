@@ -17,8 +17,7 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 
 // page components
-import DocsFooter from "components/layout/docs-footer";
-import DocsNavbar from "components/layout/docs-navbar";
+import { DocsNavbar, Footer } from "@widgets";
 import Sidenav from "components/layout/sidenav";
 import PageMap from "components/layout/page-map";
 import ComponentDemo from "components/cards/component-demo";
@@ -153,8 +152,7 @@ const components = {
     <Typography
       as="h1"
       variant="h3"
-      color="blue-gray"
-      className="!mb-4 lg:!text-4xl"
+      className="!mb-4 text-primary lg:!text-3xl"
       {...props}
     />
   ),
@@ -162,8 +160,7 @@ const components = {
     <Typography
       as="h2"
       variant="h4"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -171,8 +168,7 @@ const components = {
     <Typography
       as="h3"
       variant="h5"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -180,17 +176,17 @@ const components = {
     <Typography
       as="p"
       variant="h5"
-      className="!mb-12 !font-normal !text-blue-gray-500"
+      className="!mb-12 !font-normal !text-gray-600"
       {...props}
     />
   ),
   p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
+    <Typography className="!mb-4 !font-normal !text-gray-600" {...props} />
   ),
   hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
   a: (props) => (
     <a
-      className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-primary !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
@@ -352,10 +348,10 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
       </Head>
-      <div className="relative h-full w-full bg-white">
-        <DocsNavbar slug={slug[slug.length - 1]} setMobileNav={setMobileNav} />
+      <div className="relative mb-8 h-full w-full bg-white">
+        <DocsNavbar />
         <div className="px-6">
-          <div className="mx-auto flex max-w-[1440px]">
+          <div className="container mx-auto flex">
             <Sidenav
               routes={routes[frameworkType]}
               type={frameworkType}
@@ -368,12 +364,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               {frontMatter.related && (
                 <DocsRelated routes={frontMatter.related} />
               )}
-              <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
             <PageMap frontMatter={frontMatter} />
           </div>
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 }
