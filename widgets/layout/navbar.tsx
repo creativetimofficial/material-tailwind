@@ -107,10 +107,10 @@ export function Navbar() {
           </MenuList>
         </Menu>
         <NavItem href="/figma">Figma</NavItem>
-        <NavItem href="#">Pricing & FAQ</NavItem>
+        <NavItem href="/blocks#pricing">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
-        <Input
+        {/* <Input
           type="email"
           placeholder="Search"
           icon={<i className="fas fa-search text-sm text-primary" />}
@@ -119,7 +119,7 @@ export function Navbar() {
             className: "hidden",
           }}
           containerProps={{ className: "min-w-[100px]" }}
-        />
+        /> */}
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
           <a
             target="_blank"

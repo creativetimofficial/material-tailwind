@@ -49,25 +49,25 @@ export function Community() {
         </div>
         <div className="mt-28 grid gap-16 md:grid-cols-1 lg:grid-cols-3">
           {DATA.map(({ bg, title, desc, icon, link }, i) => (
-            <Link key={i} href={link} target="_blank">
-              <Card color="transparent" shadow={false}>
-                <CardBody className="flex h-full flex-col justify-between p-0">
-                  <div>
-                    <div
-                      className={`${bg} flex h-14 w-14  items-center justify-center rounded-lg`}
-                    >
-                      <i className={`fab fa-${icon} text-2xl text-white`} />
-                    </div>
-                    <Typography
-                      variant="h5"
-                      className="mt-6 mb-1 font-semibold text-primary"
-                    >
-                      {title}
-                    </Typography>
-                    <Typography className="mb-4 font-normal text-gray-600">
-                      {desc}
-                    </Typography>
+            <Card key={i} color="transparent" shadow={false}>
+              <CardBody className="flex h-full flex-col justify-between p-0">
+                <div>
+                  <div
+                    className={`${bg} flex h-14 w-14  items-center justify-center rounded-lg`}
+                  >
+                    <i className={`fab fa-${icon} text-2xl text-white`} />
                   </div>
+                  <Typography
+                    variant="h5"
+                    className="mt-6 mb-1 font-semibold text-primary"
+                  >
+                    {title}
+                  </Typography>
+                  <Typography className="mb-4 font-normal text-gray-600">
+                    {desc}
+                  </Typography>
+                </div>
+                <Link href={link} target="_blank">
                   <Button
                     color="blue-gray"
                     variant="outlined"
@@ -76,9 +76,9 @@ export function Community() {
                   >
                     {title === "Discord" ? "Join" : "Visit"}
                   </Button>
-                </CardBody>
-              </Card>
-            </Link>
+                </Link>
+              </CardBody>
+            </Card>
           ))}
         </div>
         <Card
