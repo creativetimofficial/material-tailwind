@@ -22,14 +22,19 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: "/figma",
+        destination:
+          "https://material-taillwind-eu19csbi7-ct-tailwind-team.vercel.app/figma",
+      },
+      {
         source: "/blocks",
         destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+          "https://material-taillwind-eu19csbi7-ct-tailwind-team.vercel.app/blocks",
       },
       {
         source: "/blocks/:slug*",
         destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
+          "https://material-taillwind-eu19csbi7-ct-tailwind-team.vercel.app/blocks/:slug*",
       },
     ];
   },
