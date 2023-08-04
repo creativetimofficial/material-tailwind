@@ -335,10 +335,10 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
       </Head>
-      <div className="relative mb-8 h-full w-full bg-white">
+      <div className="relative w-full h-full mb-8 bg-white">
         <DocsNavbar />
         <div className="px-6">
-          <div className="container mx-auto flex">
+          <div className="container flex mx-auto">
             <Sidenav
               routes={routes[frameworkType]}
               type={frameworkType}
@@ -399,7 +399,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
-      // development: false,
+      development: false,
     },
   });
 

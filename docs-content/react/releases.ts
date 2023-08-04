@@ -1,5 +1,17 @@
 export const releases = [
   {
+    version: "2.0.8",
+    date: "aug 2, 2023",
+    name: "Material-tailwind/react",
+    description: "Material Tailwind v2.0.8 ",
+    content: [
+      {
+        title: "patch changes",
+        data: ["Fix the export issue for components."],
+      },
+    ],
+  },
+  {
     version: "2.0.7",
     date: "July 22, 2023",
     name: "Material-tailwind/react",
@@ -99,6 +111,21 @@ export const releases = [
     ],
   },
   {
+    version: "2.0.1",
+    date: "May 16, 2023",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Fixed",
+        data: [
+          "Add @heroicons/react as dependency to fix the missing dependency issue.",
+          "Fix the <Badge /> proptypes issue for color.",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.0.0",
     date: "may 5, 2023",
     name: "Material-tailwind/react",
@@ -150,6 +177,22 @@ export const releases = [
           "Add new page Sidebar",
           "Add new page Table",
         ],
+      },
+    ],
+  },
+  {
+    version: "1.4.2",
+    date: "Feb 14, 2023",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Fix",
+        data: ["Fix the path issue with withMT() config file."],
+      },
+      {
+        title: "Docs",
+        data: ["Update the monorepo guidelines for tailwind.config.js"],
       },
     ],
   },
@@ -333,6 +376,46 @@ export const releases = [
     ],
   },
   {
+    version: "1.1.0",
+    date: "July 29, 2022",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Updates",
+        data: [
+          "Update all of the dependencies to their latest versions.",
+          "Rename blue-grey to blue-gray.",
+          "Rename grey to gray.",
+        ],
+      },
+      {
+        title: "features",
+        data: [
+          "Use tailwind-merge library for merging className props for components.",
+          "Add new white color for button and icon button.",
+        ],
+      },
+      {
+        title: "Fix",
+        data: [
+          "Fix accordion disabled state for keyboard.",
+          "Fix the select option disabled state.",
+          "Remove the unnecessary margin bottom from the switch label.",
+          "Fix issue #169.",
+          "Fix issue #144.",
+        ],
+      },
+      {
+        title: "Docs ",
+        data: [
+          "Refactor the documentation.",
+          "Add variety of examples and use cases for all components.",
+        ],
+      },
+    ],
+  },
+  {
     version: "1.0.8",
     date: "jul 22, 2022",
     name: "Material-tailwind/react",
@@ -417,46 +500,7 @@ export const releases = [
       },
     ],
   },
-  {
-    version: "1.1.0",
-    date: "jul 29, 2022",
-    name: "Material-tailwind/react",
-    description: "",
-    content: [
-      {
-        title: "Updates",
-        data: [
-          "Update all of the dependencies to their latest versions.",
-          "Rename blue-grey to blue-gray.",
-          "Rename grey to gray.",
-        ],
-      },
-      {
-        title: "features",
-        data: [
-          "Use tailwind-merge library for merging className props for components.",
-          "Add new white color for button and icon button.",
-        ],
-      },
-      {
-        title: "Fix",
-        data: [
-          "Fix accordion disabled state for keyboard.",
-          "Fix the select option disabled state.",
-          "Remove the unnecessary margin bottom from the switch label.",
-          "Fix issue #169.",
-          "Fix issue #144.",
-        ],
-      },
-      {
-        title: "Docs Changes",
-        data: [
-          "Refactor the documentation.",
-          "Add variety of examples and use cases for all components.",
-        ],
-      },
-    ],
-  },
+
   {
     version: "1.0.3",
     date: "may 11, 2022",
@@ -485,6 +529,191 @@ export const releases = [
       {
         title: "Updates",
         data: ["Update README"],
+      },
+    ],
+  },
+  {
+    version: "1.0.1",
+    date: "may 10, 2022",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "@material-tailwind/react",
+        data: ["Update README"],
+      },
+      {
+        title: "@material-tailwind/html",
+        data: ["Update README"],
+      },
+    ],
+  },
+  {
+    version: "1.0.0",
+    date: "may 10, 2022",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: ["@material-tailwind/html", "@material-tailwind/react"],
+      },
+      {
+        title: "Note",
+        data: [
+          "The entire library has been changes and there is a totally new things there, please checkout the official documentation of the library for a better understanding. Material Tailwind",
+        ],
+      },
+    ],
+  },
+  {
+    version: "1.0.0 Beta",
+    date: "may 10, 2022",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: ["@material-tailwind/html", "@material-tailwind/react"],
+      },
+      {
+        title: "Note",
+        data: [
+          "The entire library has been changes and there is a totally new things there, please checkout the official documentation of the library for a better understanding. Material Tailwind",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.3.4",
+    date: "June 9, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: ["Update tailwindcss to the latest version"],
+      },
+      {
+        title: "Bug fixing",
+        data: [
+          "Update card header margin",
+          "Reduce the input icon opacity",
+          "Change the dropdown text from uppercase to capitalize",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.3.3",
+    date: "May 28, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Bug fixing",
+        data: [
+          "Update indentation for the code example",
+          "Rename the NavbarList component name to Nav",
+          "Rename the NavbarItem component name to NavItem",
+          "Update all the dependencies and dev-dependencies",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.3.2",
+    date: "May 18, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: [
+          "New components are added",
+          "className prop added for the components",
+          "Default props are added for the components",
+        ],
+      },
+      {
+        title: "Bug fixing",
+        data: ["Console errors are fixed"],
+      },
+    ],
+  },
+  {
+    version: "0.3.1",
+    date: "Apr 28, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Bug fixing",
+        data: [
+          "Solve the issue of tippy.js style sheets for popover, tooltips and dropdown component",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.3.0",
+    date: "Apr 26, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: [
+          "New components: Textarea, Checkbox, Radio Button, Card Row, Card Status, Card Status Footer",
+          "Update components design",
+        ],
+      },
+      {
+        title: "Bug fixing",
+        data: ["Solve the issue with the tippy.js style modules"],
+      },
+    ],
+  },
+  {
+    version: "0.2.0",
+    date: "Apr 6, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "New features",
+        data: [
+          "Update components design",
+          "Add new features for the components",
+          "Add transparent background for components",
+        ],
+      },
+    ],
+  },
+  {
+    version: "0.1.1",
+    date: "Mar 31, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Bug fixing",
+        data: ["Solve ripple effect and css publish on npm"],
+      },
+    ],
+  },
+  {
+    version: "0.1.0",
+    date: "Mar 31, 2021",
+    name: "Material-tailwind/react",
+    description: "",
+    content: [
+      {
+        title: "Original Release",
+        data: [
+          "Started project from Tailwind CSS and Material Design 2",
+          "Added design from Material Design 2 using Tailwind CSS",
+        ],
       },
     ],
   },
