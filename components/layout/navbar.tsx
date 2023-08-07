@@ -164,7 +164,7 @@ export default function Navbar({
         <li>
           <Link
             href="/blocks"
-            className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
+            className={`${navbarItemClasses} py-2 lg:px-3`}
           >
             <BlocksIcon className="mr-1.5 h-[18px] w-[18px] opacity-75" />
             Blocks
@@ -175,7 +175,7 @@ export default function Navbar({
             href="https://www.creative-tim.com/services/updivision/?ref=material-tailwind"
             target="_blank"
             rel="noreferrer"
-            className={`${navbarItemClasses} px-3 py-2 lg:px-3`}
+            className={`${navbarItemClasses} py-2 lg:px-3`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
