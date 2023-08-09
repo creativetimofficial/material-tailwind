@@ -6,7 +6,7 @@ export function PaginationGroup() {
   const [active, setActive] = React.useState(1);
 
   const getItemProps = (index) => ({
-    className: active === index ? "bg-blue-gray-100 text-blue-gray-900" : "",
+    className: active === index ? "bg-gray-100 text-gray-900" : "",
     onClick: () => setActive(index),
   });
 
@@ -23,7 +23,7 @@ export function PaginationGroup() {
   };
 
   return (
-    <ButtonGroup variant="outlined" color="blue-gray">
+    <ButtonGroup variant="outlined">
       <IconButton onClick={prev}>
         <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
       </IconButton>

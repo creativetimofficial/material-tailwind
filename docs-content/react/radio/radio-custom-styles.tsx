@@ -24,7 +24,7 @@ export function RadioCustomStyles() {
         name="type"
         ripple={false}
         icon={<Icon />}
-        className="border-blue-500/50 bg-blue-500/25 p-0 transition-all hover:before:opacity-0"
+        className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
           <Typography color="blue-gray" className="font-normal">
             Premium
@@ -36,7 +36,7 @@ export function RadioCustomStyles() {
         defaultChecked
         ripple={false}
         icon={<Icon />}
-        className="border-blue-500/50 bg-blue-500/25 p-0 transition-all hover:before:opacity-0"
+        className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
           <Typography color="blue-gray" className="font-normal">
             Free

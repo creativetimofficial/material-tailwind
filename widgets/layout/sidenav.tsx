@@ -26,7 +26,7 @@ export function Sidenav({
 }: Props) {
   return (
     <aside
-      className={`fixed z-[999] h-screen w-80 pb-4 pr-4 transition-all duration-300 lg:relative lg:left-0 lg:z-10 lg:w-56 lg:pt-20 ${
+      className={`fixed top-0 z-[999] h-screen w-80 overflow-y-scroll pb-4 pr-4 transition-all duration-300 lg:sticky lg:top-16 lg:left-0 lg:z-10 lg:w-56 ${
         mobileNav ? "left-0" : "-left-96"
       }`}
     >
@@ -37,7 +37,7 @@ export function Sidenav({
             : "pointer-events-none opacity-0"
         }`}
       />
-      <div className="fixed z-50 h-screen w-80 overflow-y-scroll !bg-white pb-48 pt-6 pl-6 lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
+      <div className="fixed top-0 z-[9999] w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
         <div className="mt-4">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>

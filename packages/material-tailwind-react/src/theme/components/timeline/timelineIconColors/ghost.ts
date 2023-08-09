@@ -12,8 +12,8 @@ const ghost: object = {
     background: "bg-blue-gray-500/10",
   },
   gray: {
-    color: "text-gray-500",
-    background: "bg-gray-500/10",
+    color: "text-gray-900",
+    background: "bg-gray-900/10",
   },
   brown: {
     color: "text-brown-500",

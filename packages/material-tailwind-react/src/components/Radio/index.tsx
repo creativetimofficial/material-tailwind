@@ -92,14 +92,14 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );
     const labelClasses = twMerge(classnames(objectsToString(base.label)), labelProps?.className);
     const radioIconClasses = classnames(
       classnames(objectsToString(base.icon)),
-      colors[findMatch(valid.colors, color, "blue")].color,
+      colors[findMatch(valid.colors, color, "gray")].color,
       iconProps?.className,
     );
 

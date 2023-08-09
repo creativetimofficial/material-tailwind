@@ -62,15 +62,15 @@ import { Alert } from "@material-tailwind/react";
 
 export function AlertVariants() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2">
       <Alert>A simple filled alert for showing message.</Alert>
-      <Alert color="red" variant="gradient">
+      <Alert variant="gradient">
         <span>A simple gradient alert for showing message.</span>
       </Alert>
-      <Alert color="green" variant="outlined">
+      <Alert variant="outlined">
         <span>A simple outlined alert for showing message.</span>
       </Alert>
-      <Alert color="orange" variant="ghost">
+      <Alert variant="ghost">
         <span>A simple ghost alert for showing message.</span>
       </Alert>
     </div>
@@ -137,20 +137,7 @@ function Icon() {
 
 export function AlertIcon() {
   return (
-    <div className="flex w-full flex-col gap-2">
-      <Alert icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="red" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="green" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="amber" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-    </div>
+    <Alert icon={<Icon />}>A simple alert with icon for showing message</Alert>
   );
 }
 ```
@@ -204,7 +191,7 @@ function IconSolid() {
   );
 }
 
-export default function Example() {
+export function AlertWithList() {
   return (
     <div className="flex w-full flex-col gap-2">
       <Alert icon={<IconOutlined />}>
@@ -217,7 +204,7 @@ export default function Example() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="gradient" color="red" icon={<IconOutlined />}>
+      <Alert variant="gradient" icon={<IconOutlined />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>
@@ -227,7 +214,7 @@ export default function Example() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="outlined" color="green" icon={<IconSolid />}>
+      <Alert variant="outlined" icon={<IconSolid />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>
@@ -237,7 +224,7 @@ export default function Example() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="ghost" color="orange" icon={<IconSolid />}>
+      <Alert variant="ghost" icon={<IconSolid />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>
@@ -360,13 +347,12 @@ export default function AlertCustomCloseIcon() {
   return (
     <>
       {!open && (
-        <Button className="absolute" color="red" onClick={() => setOpen(true)}>
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Alert
         </Button>
       )}
       <Alert
         variant="gradient"
-        color="red"
         open={open}
         icon={<Icon />}
         action={
@@ -426,7 +412,6 @@ export function AlertWithContent() {
     <>
       {!open && (
         <Button
-          color="green"
           className="absolute"
           onClick={() => setOpen(true)}
         >
@@ -435,7 +420,6 @@ export function AlertWithContent() {
       )}
       <Alert
         open={open}
-        color="green"
         className="max-w-screen-md"
         icon={<Icon />}
         onClose={() => setOpen(false)}
@@ -510,7 +494,7 @@ as well.
 | Attribute   | Type                      | Description                                   | Default                                |
 | ----------- | ------------------------- | --------------------------------------------- | -------------------------------------- |
 | `variant`   | [Variant](#types-variant) | Change alert variant                          | <Code>filled</Code>                    |
-| `color`     | [Color](#types-color)     | Change alert color                            | <Code>blue</Code>                      |
+| `color`     | [Color](#types-color)     | Change alert color                            | <Code>gray</Code>                      |
 | `onClose`   | <Code>func</Code>         | Callback for closing the alert component      | <Code>undefined</Code>                 |
 | `action`    | <Code>node</Code>         | Change the <Code>onClose</Code> action button | <Code>undefined</Code>                 |
 | `animate`   | [Animate](#types-animate) | Change alert animation                        | <Code>undefined</Code>                 |

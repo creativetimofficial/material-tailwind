@@ -21,7 +21,7 @@ export function HorizontalCard() {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="h6" color="blue" className="mb-4 uppercase">
+        <Typography variant="h6" color="gray" className="mb-4 uppercase">
           startups
         </Typography>
         <Typography variant="h4" color="blue-gray" className="mb-2">

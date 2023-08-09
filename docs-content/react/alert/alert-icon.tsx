@@ -21,19 +21,6 @@ function Icon() {
 
 export function AlertIcon() {
   return (
-    <div className="flex w-full flex-col gap-2">
-      <Alert icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="red" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="green" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-      <Alert color="amber" icon={<Icon />}>
-        A simple alert with icon for showing message
-      </Alert>
-    </div>
+    <Alert icon={<Icon />}>A simple alert with icon for showing message</Alert>
   );
 }

@@ -55,7 +55,7 @@ export function InputWithDropdown() {
       <Input
         type="tel"
         placeholder="Mobile Number"
-        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-blue-500"
+        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-gray-900"
         labelProps={{
           className: "before:content-none after:content-none",
         }}

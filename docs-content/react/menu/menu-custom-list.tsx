@@ -49,7 +49,7 @@ export function MenuCustomList() {
       </MenuHandler>
       <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
         <Card
-          color="blue"
+          color="gray"
           shadow={false}
           variant="gradient"
           className="col-span-3 grid h-full w-full place-items-center rounded-md"

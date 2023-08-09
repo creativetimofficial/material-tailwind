@@ -58,7 +58,7 @@ export const chip: ChipStylesType = {
   defaultProps: {
     variant: "filled",
     size: "md",
-    color: "blue",
+    color: "gray",
     icon: undefined,
     open: true,
     onClose: undefined,

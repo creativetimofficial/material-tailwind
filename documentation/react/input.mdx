@@ -247,7 +247,7 @@ export function InputWithButton() {
       />
       <Button
         size="sm"
-        color={email ? "blue" : "blue-gray"}
+        color={email ? "gray" : "blue-gray"}
         disabled={!email}
         className="!absolute right-1 top-1 rounded"
       >
@@ -336,7 +336,7 @@ export function InputWithDropdown() {
       <Input
         type="tel"
         placeholder="Mobile Number"
-        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-blue-500"
+        className="rounded-l-none !border-t-blue-gray-200 focus:!border-t-gray-900"
         labelProps={{
           className: "before:content-none after:content-none",
         }}
@@ -380,7 +380,11 @@ export function InputDisabled() {
 
 You can use the <Code>color="white"</Code> for <Code>Input</Code> to make it visible and accessible on dark surfaces.
 
-<CodePreview id="input-for-dark-surface" component={<InputExamples.InputForDarkSurface />}>
+<CodePreview id="input-for-dark-surface" component={
+  <div className="bg-gray-900 w-full h-full rounded-lg grid place-items-center">
+    <InputExamples.InputForDarkSurface />
+  </div>
+}>
 ```jsx
 import { Input } from "@material-tailwind/react";
 
@@ -412,7 +416,7 @@ export function InputCustomStyles() {
       <Input
         type="email"
         placeholder="Email Address"
-        className="!border !border-blue-gray-50 bg-white text-blue-gray-500 shadow-lg shadow-blue-gray-900/5 ring-4 ring-transparent placeholder:text-blue-gray-200 focus:!border-blue-500 focus:!border-t-blue-500 focus:ring-blue-500/20"
+        className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
         labelProps={{
           className: "hidden",
         }}
@@ -438,7 +442,7 @@ native input props as well.
 | ---------------- | ------------------------- | --------------------------------------------- | ---------------------- |
 | `variant`        | [Variant](#types-variant) | Change input variant                          | <Code>outlined</Code>  |
 | `size`           | [Size](#types-size)       | Change input size                             | <Code>md</Code>        |
-| `color`          | [Color](#types-color)     | Change input color                            | <Code>blue</Code>      |
+| `color`          | [Color](#types-color)     | Change input color                            | <Code>gray</Code>      |
 | `label`          | <Code>string</Code>       | Add label for input                           | `''`                   |
 | `error`          | <Code>boolean</Code>      | Change input state to error                   | <Code>false</Code>     |
 | `success`        | <Code>boolean</Code>      | Change input state to success                 | <Code>false</Code>     |

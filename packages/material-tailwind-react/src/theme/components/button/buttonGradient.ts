@@ -15,10 +15,10 @@ const buttonGradient: object = {
     active: "active:opacity-[0.85]",
   },
   gray: {
-    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+    backgroud: "bg-gradient-to-tr from-gray-900 to-gray-800",
     color: "text-white",
-    shadow: "shadow-md shadow-gray-500/20",
-    hover: "hover:shadow-lg hover:shadow-gray-500/40",
+    shadow: "shadow-md shadow-gray-900/10",
+    hover: "hover:shadow-lg hover:shadow-gray-900/20",
     active: "active:opacity-[0.85]",
   },
   brown: {

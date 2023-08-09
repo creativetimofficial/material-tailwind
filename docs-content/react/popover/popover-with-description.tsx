@@ -21,20 +21,19 @@ export function PopoverWithDescription() {
       <PopoverHandler {...triggers}>
         <Button>Repository Details</Button>
       </PopoverHandler>
-      <PopoverContent {...triggers} className="max-w-[26rem]">
+      <PopoverContent {...triggers} className="z-50 max-w-[26rem]">
         <div className="mb-2 flex items-center gap-3">
           <Typography
             as="a"
             href="#"
             variant="h6"
             color="blue-gray"
-            className="font-medium transition-colors hover:text-blue-500"
+            className="font-medium transition-colors hover:text-gray-900"
           >
             @material-tailwind
           </Typography>
           <Chip
             value="Public"
-            color="blue"
             className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
           />
         </div>

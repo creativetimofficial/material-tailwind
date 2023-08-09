@@ -9,14 +9,19 @@ import {
   MenuList,
   MenuItem,
   Chip,
-  Input,
   Typography,
   List,
   ListItem,
   Tooltip,
+  Input,
 } from "@material-tailwind/react";
-import { Logo } from "@widgets";
+import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
+
+interface DocsNavbar {
+  slug: string[];
+  setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 function NavItem({
   children,
@@ -36,10 +41,10 @@ function NavItem({
   );
 }
 
-export function DocsNavbar() {
+export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
   const [stars, setStars] = React.useState(0);
   const [open, setOpen] = React.useState(false);
-
+  console.log(slug);
   React.useEffect(() => {
     window.addEventListener("resize", () => {
       window.innerWidth >= 960 && setOpen(false);
@@ -110,16 +115,29 @@ export function DocsNavbar() {
         <NavItem href="#">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
-        {/* <Input
-          type="email"
-          placeholder="Search"
-          icon={<i className="fas fa-search text-sm text-primary" />}
-          className="!w-full !border-[1.5px] !border-blue-gray-50 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary"
-          labelProps={{
-            className: "hidden",
-          }}
-          containerProps={{ className: "min-w-[100px]" }}
-        /> */}
+        <div className="group relative">
+          <Input
+            type="email"
+            placeholder="Search"
+            className="!w-full !border-[1.5px] !border-blue-gray-50 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            labelProps={{
+              className: "hidden",
+            }}
+            containerProps={{ className: "min-w-[100px]" }}
+          />
+          <div className="absolute top-2/4 right-3.5 -translate-y-2/4">
+            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+              <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
+                ⌘
+              </span>
+              K
+            </kbd>
+          </div>
+          <div className="absolute inset-0 w-full opacity-0">
+            <Search />
+            ab
+          </div>
+        </div>
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
           <a
             target="_blank"
@@ -163,7 +181,7 @@ export function DocsNavbar() {
   );
 
   return (
-    <div className="fixed top-0 z-[999] flex w-full items-center">
+    <div className="sticky top-0 z-[999] flex w-full items-center">
       <Navbar
         className="w-full max-w-full rounded-none border-b-[1.5px] !border-blue-gray-50 bg-white py-1.5 !pl-2 !pr-3 lg:!px-4 lg:!py-0.5"
         shadow={false}
@@ -212,6 +230,52 @@ export function DocsNavbar() {
               {navbarMenu}
             </div>
           </Collapse>
+        </div>
+        <div className="mt-2 flex items-center border-t border-blue-gray-50 pt-4 pb-2 lg:hidden">
+          <button
+            type="button"
+            className="text-blue-gray-900"
+            onClick={() => setMobileNav(true)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </button>
+          <ol className="ml-4 flex min-w-0 whitespace-nowrap text-sm leading-6 text-blue-gray-700">
+            {slug.map((el, key) => (
+              <li key={key} className="flex items-center capitalize">
+                {el}
+                {key === slug.length - 1 ? (
+                  ""
+                ) : (
+                  <svg
+                    width="3"
+                    height="6"
+                    className="mx-3 overflow-visible text-blue-gray-300"
+                  >
+                    <path
+                      d="M0 0L3 3L0 6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    ></path>
+                  </svg>
+                )}
+              </li>
+            ))}
+          </ol>
         </div>
       </Navbar>
     </div>

@@ -14,7 +14,7 @@ export function LoginCard() {
     <Card className="w-96">
       <CardHeader
         variant="gradient"
-        color="blue"
+        color="gray"
         className="mb-4 grid h-28 place-items-center"
       >
         <Typography variant="h3" color="white">
@@ -38,7 +38,7 @@ export function LoginCard() {
             as="a"
             href="#signup"
             variant="small"
-            color="blue"
+            color="blue-gray"
             className="ml-1 font-bold"
           >
             Sign up

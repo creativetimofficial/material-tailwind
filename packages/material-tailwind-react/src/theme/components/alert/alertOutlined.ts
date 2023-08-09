@@ -4,8 +4,8 @@ const alertOutlined: object = {
     color: "text-blue-gray-700",
   },
   gray: {
-    border: "border border-gray-500",
-    color: "text-gray-700",
+    border: "border border-gray-900",
+    color: "text-gray-900",
   },
   brown: {
     border: "border border-brown-500",

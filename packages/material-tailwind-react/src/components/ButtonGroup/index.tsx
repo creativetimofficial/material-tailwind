@@ -60,7 +60,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
       classnames(objectsToString(base.initial), {
         [objectsToString(base.fullWidth)]: fullWidth,
         "divide-x": variant !== "outlined",
-        [objectsToString(dividerColor[findMatch(valid.colors, color, "blue")])]:
+        [objectsToString(dividerColor[findMatch(valid.colors, color, "gray")])]:
           variant !== "outlined",
       }),
       className,

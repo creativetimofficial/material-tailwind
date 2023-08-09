@@ -81,7 +81,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     const chipIcon = objectsToString(base.icon);
     const chipVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const chipSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]["chip"]);

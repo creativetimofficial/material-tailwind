@@ -12,6 +12,7 @@ import {
   Community,
   Subscribe,
 } from "@widgets";
+import { Alert, Button } from "@material-tailwind/react";
 
 export default function Presentation() {
   return (
@@ -31,6 +32,15 @@ export default function Presentation() {
           content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
         />
       </Head>
+      <Alert className="w-full justify-center rounded-none">
+        <div className="flex  items-center justify-center gap-4">
+          NEW | Material Tailwind PRO, a comprehensive compilation of 200+
+          sections, now available for your use.
+          <Button size="sm" color="white">
+            check out
+          </Button>
+        </div>
+      </Alert>
       <Navbar />
       <main className="relative">
         <Hero />

@@ -90,13 +90,13 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     const textareaSuccess = objectsToString(textareaVariant.success.textarea);
     const textareaShrink = objectsToString(textareaVariant.shrink.textarea);
     const textareaColor = objectsToString(
-      textareaVariant.colors.textarea[findMatch(valid.colors, color, "blue")],
+      textareaVariant.colors.textarea[findMatch(valid.colors, color, "gray")],
     );
     const labelError = objectsToString(textareaVariant.error.label);
     const labelSuccess = objectsToString(textareaVariant.success.label);
     const labelShrink = objectsToString(textareaVariant.shrink.label);
     const labelColor = objectsToString(
-      textareaVariant.colors.label[findMatch(valid.colors, color, "blue")],
+      textareaVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
     const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const textareaClasses = classnames(

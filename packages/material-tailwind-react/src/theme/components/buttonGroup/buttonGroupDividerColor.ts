@@ -6,7 +6,7 @@ const buttonGroupDividerColor: object = {
     divideColor: "divide-blue-gray-600",
   },
   gray: {
-    divideColor: "divide-gray-600",
+    divideColor: "divide-gray-800",
   },
   brown: {
     divideColor: "divide-brown-600",

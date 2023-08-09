@@ -92,7 +92,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );

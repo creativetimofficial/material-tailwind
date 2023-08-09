@@ -47,10 +47,10 @@ export function Community() {
             provide a vibrant and supportive environment for your.
           </Typography>
         </div>
-        <div className="mt-28 grid gap-16 md:grid-cols-1 lg:grid-cols-3">
+        <div className="mt-28 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
           {DATA.map(({ bg, title, desc, icon, link }, i) => (
-            <Card key={i} color="transparent" shadow={false}>
-              <CardBody className="flex h-full flex-col justify-between p-0">
+            <Card key={i} className="border-blue border-[1.5px]">
+              <CardBody className="flex h-full flex-col justify-between">
                 <div>
                   <div
                     className={`${bg} flex h-14 w-14  items-center justify-center rounded-lg`}
@@ -83,8 +83,7 @@ export function Community() {
         </div>
         <Card
           color="white"
-          shadow={false}
-          className="relative mt-16 overflow-hidden border-[1.5px] border-blue-gray-50"
+          className="relative mt-12 overflow-hidden border-[1.5px] border-blue-gray-50"
         >
           <CardBody>
             <div className="relative z-10 max-w-xs">
@@ -127,8 +126,7 @@ export function Community() {
             <div className="absolute top-1/2 right-0 -translate-y-1/2">
               <Image
                 alt="community"
-                src="
-/svg/community.svg"
+                src="/svg/community.svg"
                 width={500}
                 height={500}
                 className="scale-[1.30] opacity-25 lg:opacity-100"

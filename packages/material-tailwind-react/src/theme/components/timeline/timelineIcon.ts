@@ -26,7 +26,7 @@ export interface TimelineIconStyleTypes {
 
 export const timelineIcon: TimelineIconStyleTypes = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     variant: "filled",
   },
   valid: {

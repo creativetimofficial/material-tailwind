@@ -12,9 +12,7 @@ import { useTheme } from "../../context/theme";
 
 // types
 import type { color, className } from "../../types/components/spinner";
-import {
-  propTypesColor, propTypesClassName
-} from "../../types/components/spinner";
+import { propTypesColor, propTypesClassName } from "../../types/components/spinner";
 
 export interface SpinnerProps extends React.ComponentProps<"svg"> {
   color?: color;
@@ -36,7 +34,7 @@ export const Spinner = forwardRef<SVGSVGElement, SpinnerProps>(
     className = classnames(defaultProps.className, className) ?? defaultProps.className;
 
     // 3. set styles
-    const spinnerColor = objectsToString(colors[findMatch(valid.colors, color, "blue")]);
+    const spinnerColor = objectsToString(colors[findMatch(valid.colors, color, "gray")]);
     const spinnerClasses = twMerge(classnames(objectsToString(base)), className);
 
     // 4. return

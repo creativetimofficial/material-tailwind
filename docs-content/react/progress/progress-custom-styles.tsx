@@ -5,7 +5,7 @@ export function ProgressCustomStyles() {
     <Progress
       value={50}
       size="lg"
-      className="border border-blue-500/20 bg-blue-500/10 p-1"
+      className="border border-gray-900/10 bg-gray-900/5 p-1"
     />
   );
 }

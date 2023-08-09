@@ -24,13 +24,12 @@ export function AlertCustomCloseIcon() {
   return (
     <>
       {!open && (
-        <Button className="absolute" color="red" onClick={() => setOpen(true)}>
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Alert
         </Button>
       )}
       <Alert
         variant="gradient"
-        color="red"
         open={open}
         icon={<Icon />}
         action={

@@ -35,8 +35,8 @@ export function PageMap({ type, frontMatter }) {
   }, []);
 
   return (
-    <aside className="relative ml-auto hidden h-screen w-64 pt-24 pb-4 lg:block">
-      <div className="fixed z-10 h-screen w-64 overflow-y-scroll pb-40">
+    <aside className="sticky top-14 ml-auto hidden h-screen w-64 pt-6 pb-4 lg:block">
+      <div className="h-screen w-64 overflow-y-scroll pb-40">
         <Typography
           variant="small"
           className="font-bold capitalize text-primary"
@@ -73,6 +73,7 @@ export function PageMap({ type, frontMatter }) {
               target="_blank"
               href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              rel="noreferrer"
             >
               Contributor guides
             </a>
@@ -82,6 +83,7 @@ export function PageMap({ type, frontMatter }) {
               target="_blank"
               href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx?ref=material-tailwind`}
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              rel="noreferrer"
             >
               Edit this page
             </a>
@@ -108,6 +110,7 @@ export function PageMap({ type, frontMatter }) {
               target="_blank"
               href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              rel="noreferrer"
             >
               Join un on Discord
             </a>
@@ -117,6 +120,7 @@ export function PageMap({ type, frontMatter }) {
               target="_blank"
               href="https://www.creative-tim.com/blog?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              rel="noreferrer"
             >
               Read blog posts
             </a>

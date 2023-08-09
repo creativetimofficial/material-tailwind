@@ -8,7 +8,7 @@ export function CircularPagination() {
   const getItemProps = (index) =>
     ({
       variant: active === index ? "filled" : "text",
-      color: active === index ? "blue" : "blue-gray",
+      color: "gray",
       onClick: () => setActive(index),
       className: "rounded-full",
     } as any);
@@ -29,7 +29,6 @@ export function CircularPagination() {
     <div className="flex items-center gap-4">
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2 rounded-full"
         onClick={prev}
         disabled={active === 1}
@@ -45,7 +44,6 @@ export function CircularPagination() {
       </div>
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2 rounded-full"
         onClick={next}
         disabled={active === 5}

@@ -4,7 +4,7 @@ const chipOutlined: object = {
     color: "text-blue-gray-700",
   },
   gray: {
-    border: "border border-gray-500",
+    border: "border border-gray-900",
     color: "text-gray-700",
   },
   brown: {

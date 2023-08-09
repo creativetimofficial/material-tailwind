@@ -6,7 +6,7 @@ const avatarBorderColor: object = {
     borderColor: "border-blue-gray-500",
   },
   gray: {
-    borderColor: "border-gray-500",
+    borderColor: "border-gray-900",
   },
   brown: {
     borderColor: "border-brown-500",

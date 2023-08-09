@@ -21,7 +21,6 @@ export function ChipWithAvatar() {
           Tania Andrew
         </Typography>
       }
-      color="teal"
       className="rounded-full py-1.5"
     />
   );

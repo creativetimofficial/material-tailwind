@@ -335,8 +335,17 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
       </Head>
+      <Alert className="w-full justify-center rounded-none">
+        <div className="flex  items-center justify-center gap-4">
+          NEW | Material Tailwind PRO, a comprehensive compilation of 200+
+          sections, now available for your use.
+          <Button size="sm" color="white">
+            check out
+          </Button>
+        </div>
+      </Alert>
       <div className="relative mb-8 h-full w-full bg-white">
-        <DocsNavbar />
+        <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
         <div className="px-6">
           <div className="container mx-auto flex">
             <Sidenav
@@ -346,7 +355,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               mobileNav={mobileNav}
               setMobileNav={setMobileNav}
             />
-            <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
+            <div className="mt-6 w-full lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
             </div>
             <PageMap type={frameworkType} frontMatter={frontMatter} />
@@ -399,7 +408,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
-      // development: false,
+      development: false,
     },
   });
 

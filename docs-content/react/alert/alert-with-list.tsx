@@ -49,7 +49,7 @@ export function AlertWithList() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="gradient" color="red" icon={<IconOutlined />}>
+      <Alert variant="gradient" icon={<IconOutlined />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>
@@ -59,7 +59,7 @@ export function AlertWithList() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="outlined" color="green" icon={<IconSolid />}>
+      <Alert variant="outlined" icon={<IconSolid />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>
@@ -69,7 +69,7 @@ export function AlertWithList() {
           <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
         </ul>
       </Alert>
-      <Alert variant="ghost" color="orange" icon={<IconSolid />}>
+      <Alert variant="ghost" icon={<IconSolid />}>
         <Typography className="font-medium">
           Ensure that these requirements are met:
         </Typography>

@@ -16,10 +16,10 @@ const buttonFilled: object = {
     active: "active:opacity-[0.85] active:shadow-none",
   },
   gray: {
-    backgroud: "bg-gray-500",
+    backgroud: "bg-gray-900",
     color: "text-white",
-    shadow: "shadow-md shadow-gray-500/20",
-    hover: "hover:shadow-lg hover:shadow-gray-500/40",
+    shadow: "shadow-md shadow-gray-900/10",
+    hover: "hover:shadow-lg hover:shadow-gray-900/20",
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },

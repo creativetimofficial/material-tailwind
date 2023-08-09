@@ -8,7 +8,7 @@ export function DefaultPagination() {
   const getItemProps = (index) =>
     ({
       variant: active === index ? "filled" : "text",
-      color: active === index ? "blue" : "blue-gray",
+      color: "gray",
       onClick: () => setActive(index),
     } as any);
 
@@ -28,7 +28,6 @@ export function DefaultPagination() {
     <div className="flex items-center gap-4">
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2"
         onClick={prev}
         disabled={active === 1}
@@ -44,7 +43,6 @@ export function DefaultPagination() {
       </div>
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2"
         onClick={next}
         disabled={active === 5}

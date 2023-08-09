@@ -58,7 +58,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
     // 3. set styles
     const progressVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const progressContainerSize = objectsToString(

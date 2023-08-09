@@ -73,7 +73,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const alertAction = objectsToString(base.action);
     const alertVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const classes = twMerge(classnames(alertBase, alertVariant), className);

@@ -4,7 +4,7 @@ const chipGhost: object = {
     color: "text-blue-gray-900",
   },
   gray: {
-    backgroud: "bg-gray-500/20",
+    backgroud: "bg-gray-900/10",
     color: "text-gray-900",
   },
   brown: {

@@ -48,7 +48,7 @@ export function TransparentTabs() {
       <TabsHeader
         className="bg-transparent"
         indicatorProps={{
-          className: "bg-blue-500/10 shadow-none text-blue-500",
+          className: "bg-gray-900/10 shadow-none !text-gray-900",
         }}
       >
         {data.map(({ label, value }) => (

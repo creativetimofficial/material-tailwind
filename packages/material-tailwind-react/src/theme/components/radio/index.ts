@@ -42,7 +42,7 @@ export interface RadioStylesType {
 
 export const radio: RadioStylesType = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     label: undefined,
     icon: undefined,
     ripple: true,

@@ -86,15 +86,15 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const inputClasses = twMerge(
       classnames(
         objectsToString(base.input),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
       ),
       className,
     );
     const circleClasses = twMerge(
       classnames(
         objectsToString(base.circle),
-        colors[findMatch(valid.colors, color, "blue")].circle,
-        colors[findMatch(valid.colors, color, "blue")].before,
+        colors[findMatch(valid.colors, color, "gray")].circle,
+        colors[findMatch(valid.colors, color, "gray")].before,
       ),
       circleProps?.className,
     );

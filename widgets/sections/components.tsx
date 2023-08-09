@@ -137,7 +137,7 @@ export function Components() {
             variant="h1"
             className="my-5 text-center text-4xl font-semibold text-primary md:text-5xl"
           >
-            X+ Tailwind CSS Components
+            200+ Tailwind CSS Components
           </Typography>
           <Typography
             variant="paragraph"
@@ -176,27 +176,6 @@ export function Components() {
               </Typography>
             </Link>
           ))}
-        </div>
-        <div className="mt-16 text-center">
-          <Link href="/docs/react/button">
-            <Button
-              size="lg"
-              variant="outlined"
-              className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
-            >
-              Check out all components
-            </Button>
-          </Link>
-          <Link href="/docs/react/installation">
-            <Button
-              size="lg"
-              color="gray"
-              variant="filled"
-              className="ml-4 bg-primary text-base font-medium capitalize"
-            >
-              Documentation
-            </Button>
-          </Link>
         </div>
       </div>
     </section>

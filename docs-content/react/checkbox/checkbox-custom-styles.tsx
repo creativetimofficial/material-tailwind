@@ -5,7 +5,7 @@ export function CheckboxCustomStyles() {
     <Checkbox
       defaultChecked
       ripple={false}
-      className="h-8 w-8 rounded-full border-blue-500/50 bg-blue-500/25 transition-all hover:scale-105 hover:before:opacity-0"
+      className="h-8 w-8 rounded-full border-gray-900/20 bg-gray-900/10 transition-all hover:scale-105 hover:before:opacity-0"
     />
   );
 }

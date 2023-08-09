@@ -4,10 +4,10 @@ import { Button, Typography, Card, CardBody } from "@material-tailwind/react";
 
 const DATA = [
   {
-    title: "Colors and Styles",
+    title: "Color Palette",
     img: "/image/variants.png",
     description:
-      "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
+      "Inspired by Material Design.Create a color theme that perfectly matches your style and brand!.",
   },
   {
     col2: true,
@@ -15,27 +15,27 @@ const DATA = [
     title: "Figma Variants",
     img: "/image/figma-variants.png",
     description:
-      "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
+      "Each component comes with multiple design variants for endless creative possibilities. Add our ready-styled components to your project or modify them as you would like.",
   },
   {
     title: "Typography",
     img: "/image/typography.png",
     description:
-      "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
+      "Our Figma Design Files come with implemented text styles for consistent design.",
   },
   {
     col2: true,
     title: "Built for Desktop and Mobile",
     img: "/image/desktop-mobile.png",
     description:
-      "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
+      "Forget about responsiveness. With Material Tailwind we got you covered! Our design files are using features like Constraints and Auto Layout.",
   },
   {
     col2: true,
     title: "Auto Layout",
     img: "/image/auto-layout.png",
     description:
-      "Material Tailwind Pro features all the React or HTML components. Material Tailwind Pro features all the React or HTML components.",
+      "Our design files feature auto layout from Figma, making it easy to change the order and width of columns and rows",
   },
 ];
 
@@ -64,33 +64,39 @@ export function Figma() {
         </div>
         <div className="grid grid-cols-1 gap-y-6 lg:grid-cols-4 lg:gap-x-6">
           {DATA.map(({ title, img, description, floated, col2 }, i) => (
-            <Card
+            <Link
               key={i}
-              color="white"
-              shadow={false}
-              className={`relative h-full max-h-[420px] w-full overflow-hidden border-[1.5px] border-blue-gray-50 ${
-                col2 ? "col-span-2" : "col-span-1"
-              }`}
+              href="/figma"
+              className={col2 ? "col-span-2" : "col-span-1"}
             >
-              <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
-              <CardBody className="relative flex h-full flex-col p-6">
-                <Typography variant="h3" className="font-semibold text-primary">
-                  {title}
-                </Typography>
-                <Typography className="mt-1 mb-4 w-10/12 font-normal !text-gray-600">
-                  {description}
-                </Typography>
-                <Image
-                  src={img}
-                  width={768}
-                  height={768}
-                  alt="card-image"
-                  className={`mt-auto rounded-lg object-cover ${
-                    floated ? "translate-y-3 translate-x-6 scale-110" : ""
-                  }`}
-                />
-              </CardBody>
-            </Card>
+              <Card
+                color="white"
+                shadow={false}
+                className="relative h-full max-h-[420px] w-full overflow-hidden border-[1.5px] border-blue-gray-50"
+              >
+                <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+                <CardBody className="relative flex h-full flex-col p-6">
+                  <Typography
+                    variant="h3"
+                    className="font-semibold text-primary"
+                  >
+                    {title}
+                  </Typography>
+                  <Typography className="mt-1 mb-4 w-10/12 font-normal !text-gray-600">
+                    {description}
+                  </Typography>
+                  <Image
+                    src={img}
+                    width={768}
+                    height={768}
+                    alt="card-image"
+                    className={`mt-auto rounded-lg object-cover ${
+                      floated ? "translate-y-3 translate-x-6 scale-110" : ""
+                    }`}
+                  />
+                </CardBody>
+              </Card>
+            </Link>
           ))}
         </div>
         <div className="mt-16 text-center">

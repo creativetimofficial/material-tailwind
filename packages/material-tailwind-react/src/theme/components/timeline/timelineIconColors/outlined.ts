@@ -12,8 +12,8 @@ const outlined: object = {
     color: "text-blue-gray-500",
   },
   gray: {
-    border: "border border-gray-500",
-    color: "text-gray-500",
+    border: "border border-gray-900",
+    color: "text-gray-900",
   },
   brown: {
     border: "border border-brown-500",

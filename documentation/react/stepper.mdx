@@ -181,7 +181,11 @@ Use the example below for a stepper with some title and description for it's eac
 ```jsx
 import React from "react";
 import { Stepper, Step, Button, Typography } from "@material-tailwind/react";
-import { CogIcon, UserIcon, BuildingLibraryIcon } from "@heroicons/react/24/outline";
+import {
+  CogIcon,
+  UserIcon,
+  BuildingLibraryIcon,
+} from "@heroicons/react/24/outline";
 
 export function StepperWithContent() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -201,10 +205,16 @@ export function StepperWithContent() {
         <Step onClick={() => setActiveStep(0)}>
           <UserIcon className="h-5 w-5" />
           <div className="absolute -bottom-[4.5rem] w-max text-center">
-            <Typography variant="h6" color={activeStep === 0 ? "blue" : "blue-gray"}>
+            <Typography
+              variant="h6"
+              color={activeStep === 0 ? "blue-gray" : "gray"}
+            >
               Step 1
             </Typography>
-            <Typography color={activeStep === 0 ? "blue" : "gray"} className="font-normal">
+            <Typography
+              color={activeStep === 0 ? "blue-gray" : "gray"}
+              className="font-normal"
+            >
               Details about yout account.
             </Typography>
           </div>
@@ -212,10 +222,16 @@ export function StepperWithContent() {
         <Step onClick={() => setActiveStep(1)}>
           <CogIcon className="h-5 w-5" />
           <div className="absolute -bottom-[4.5rem] w-max text-center">
-            <Typography variant="h6" color={activeStep === 1 ? "blue" : "blue-gray"}>
+            <Typography
+              variant="h6"
+              color={activeStep === 1 ? "blue-gray" : "gray"}
+            >
               Step 2
             </Typography>
-            <Typography color={activeStep === 1 ? "blue" : "gray"} className="font-normal">
+            <Typography
+              color={activeStep === 1 ? "blue-gray" : "gray"}
+              className="font-normal"
+            >
               Details about yout account.
             </Typography>
           </div>
@@ -223,10 +239,16 @@ export function StepperWithContent() {
         <Step onClick={() => setActiveStep(2)}>
           <BuildingLibraryIcon className="h-5 w-5" />
           <div className="absolute -bottom-[4.5rem] w-max text-center">
-            <Typography variant="h6" color={activeStep === 2 ? "blue" : "blue-gray"}>
+            <Typography
+              variant="h6"
+              color={activeStep === 2 ? "blue-gray" : "gray"}
+            >
               Step 3
             </Typography>
-            <Typography color={activeStep === 2 ? "blue" : "gray"} className="font-normal">
+            <Typography
+              color={activeStep === 2 ? "blue-gray" : "gray"}
+              className="font-normal"
+            >
               Details about yout account.
             </Typography>
           </div>
@@ -264,7 +286,7 @@ export function CustomStepper() {
 
   return (
     <div className="w-full py-4 px-8">
-      <CardHeader floated={false} variant="gradient" color="blue" className="grid h-24 m-0 place-items-center">
+      <CardHeader floated={false} variant="gradient" color="gray" className="grid h-24 m-0 place-items-center">
         <div className="w-full px-20 pt-4 pb-8">
           <Stepper
             activeStep={activeStep}

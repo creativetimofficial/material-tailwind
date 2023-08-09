@@ -16,7 +16,7 @@ export interface TimelineItemStyleTypes {
 
 export const timelineItem: TimelineItemStyleTypes = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     variant: "filled",
   },
   valid: {

@@ -41,7 +41,7 @@ export interface SwitchButtonStylesType {
 
 export const switchButton: SwitchButtonStylesType = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     label: "",
     ripple: true,
     className: "",

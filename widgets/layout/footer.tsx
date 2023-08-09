@@ -79,8 +79,8 @@ const RESOURCES = [
     link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
   },
   {
-    name: "Bits",
-    link: "https://www.creative-tim.com/bits?ref=material-tailwind",
+    name: "Tailwind Components",
+    link: "https://tailwindcomponents.com/?ref=material-tailwind",
   },
 ];
 

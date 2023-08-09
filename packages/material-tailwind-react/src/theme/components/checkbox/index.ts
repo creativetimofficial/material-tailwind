@@ -42,7 +42,7 @@ export interface CheckboxStylesType {
 
 export const checkbox: CheckboxStylesType = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     label: undefined,
     icon: undefined,
     ripple: true,

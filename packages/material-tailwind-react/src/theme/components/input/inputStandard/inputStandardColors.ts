@@ -5,13 +5,13 @@ const inputStandardColors: object = {
     borderColorFocused: "focus:border-black",
   },
   white: {
-    color: "text-white",
+    color: "!text-white",
     borderColor: "border-white",
     borderColorFocused: "focus:border-white",
   },
   "blue-gray": {
     borderColor: "border-blue-gray-200",
-    borderColorFocused: "focus:border-blue-gray-500",
+    borderColorFocused: "focus:border-blue-gray-900",
   },
   gray: {
     borderColor: "border-blue-gray-200",

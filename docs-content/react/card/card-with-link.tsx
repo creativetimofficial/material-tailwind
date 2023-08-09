@@ -14,7 +14,7 @@ export function CardWithLink() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="mb-4 h-12 w-12 text-blue-500"
+          className="mb-4 h-12 w-12 text-gray-900"
         >
           <path
             fillRule="evenodd"

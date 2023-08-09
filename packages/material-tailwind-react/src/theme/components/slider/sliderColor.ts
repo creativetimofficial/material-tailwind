@@ -3,7 +3,7 @@ const sliderColor: object = {
     color: "text-blue-gray-500",
   },
   gray: {
-    color: "text-gray-500",
+    color: "text-gray-900",
   },
   brown: {
     color: "text-brown-500",

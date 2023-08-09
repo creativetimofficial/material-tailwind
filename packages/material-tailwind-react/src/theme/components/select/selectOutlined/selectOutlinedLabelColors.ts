@@ -23,9 +23,9 @@ const selectOutlinedLabelColors: object = {
       after: "after:border-transparent",
     },
     open: {
-      color: "text-gray-500",
-      before: "before:border-gray-500",
-      after: "after:border-gray-500",
+      color: "text-gray-900",
+      before: "before:border-gray-900",
+      after: "after:border-gray-900",
     },
     withValue: {
       color: "text-blue-gray-400",

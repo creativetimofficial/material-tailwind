@@ -1,5 +1,8 @@
 import { PencilIcon } from "@heroicons/react/24/solid";
-import { ArrowDownTrayIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowDownTrayIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 import {
   Card,
   CardHeader,
@@ -84,9 +87,12 @@ export function TransactionsTable() {
           </div>
           <div className="flex w-full shrink-0 gap-2 md:w-max">
             <div className="w-full md:w-72">
-              <Input label="Search" icon={<MagnifyingGlassIcon className="h-5 w-5" />} />
+              <Input
+                label="Search"
+                icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+              />
             </div>
-            <Button className="flex items-center gap-3" color="blue" size="sm">
+            <Button className="flex items-center gap-3" size="sm">
               <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Download
             </Button>
           </div>
@@ -97,7 +103,10 @@ export function TransactionsTable() {
           <thead>
             <tr>
               {TABLE_HEAD.map((head) => (
-                <th key={head} className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+                <th
+                  key={head}
+                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                >
                   <Typography
                     variant="small"
                     color="blue-gray"
@@ -111,9 +120,23 @@ export function TransactionsTable() {
           </thead>
           <tbody>
             {TABLE_ROWS.map(
-              ({ img, name, amount, date, status, account, accountNumber, expiry }, index) => {
+              (
+                {
+                  img,
+                  name,
+                  amount,
+                  date,
+                  status,
+                  account,
+                  accountNumber,
+                  expiry,
+                },
+                index,
+              ) => {
                 const isLast = index === TABLE_ROWS.length - 1;
-                const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+                const classes = isLast
+                  ? "p-4"
+                  : "p-4 border-b border-blue-gray-50";
 
                 return (
                   <tr key={name}>
@@ -125,18 +148,30 @@ export function TransactionsTable() {
                           size="md"
                           className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
                         />
-                        <Typography variant="small" color="blue-gray" className="font-bold">
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-bold"
+                        >
                           {name}
                         </Typography>
                       </div>
                     </td>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
                         {amount}
                       </Typography>
                     </td>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
                         {date}
                       </Typography>
                     </td>
@@ -147,7 +182,11 @@ export function TransactionsTable() {
                           variant="ghost"
                           value={status}
                           color={
-                            status === "paid" ? "green" : status === "pending" ? "amber" : "red"
+                            status === "paid"
+                              ? "green"
+                              : status === "pending"
+                              ? "amber"
+                              : "red"
                           }
                         />
                       </div>
@@ -187,7 +226,7 @@ export function TransactionsTable() {
                     </td>
                     <td className={classes}>
                       <Tooltip content="Edit User">
-                        <IconButton variant="text" color="blue-gray">
+                        <IconButton variant="text">
                           <PencilIcon className="h-4 w-4" />
                         </IconButton>
                       </Tooltip>
@@ -200,33 +239,33 @@ export function TransactionsTable() {
         </table>
       </CardBody>
       <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-        <Button variant="outlined" color="blue-gray" size="sm">
+        <Button variant="outlined" size="sm">
           Previous
         </Button>
         <div className="flex items-center gap-2">
-          <IconButton variant="outlined" color="blue-gray" size="sm">
+          <IconButton variant="outlined" size="sm">
             1
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             2
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             3
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             ...
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             8
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             9
           </IconButton>
-          <IconButton variant="text" color="blue-gray" size="sm">
+          <IconButton variant="text" size="sm">
             10
           </IconButton>
         </div>
-        <Button variant="outlined" color="blue-gray" size="sm">
+        <Button variant="outlined" size="sm">
           Next
         </Button>
       </CardFooter>

@@ -15,7 +15,7 @@ import {
   ListItem,
   Tooltip,
 } from "@material-tailwind/react";
-import { Logo } from "@widgets";
+import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
 
 function NavItem({
@@ -110,16 +110,29 @@ export function Navbar() {
         <NavItem href="/blocks#pricing">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
-        {/* <Input
-          type="email"
-          placeholder="Search"
-          icon={<i className="fas fa-search text-sm text-primary" />}
-          className="!w-full !border-[1.5px] !border-blue-gray-50 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary"
-          labelProps={{
-            className: "hidden",
-          }}
-          containerProps={{ className: "min-w-[100px]" }}
-        /> */}
+        <div className="group relative">
+          <Input
+            type="email"
+            placeholder="Search"
+            className="!w-full !border-[1.5px] !border-blue-gray-50 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            labelProps={{
+              className: "hidden",
+            }}
+            containerProps={{ className: "min-w-[100px]" }}
+          />
+          <div className="absolute top-2/4 right-3.5 -translate-y-2/4">
+            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+              <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
+                ⌘
+              </span>
+              K
+            </kbd>
+          </div>
+          <div className="absolute inset-0 w-full opacity-0">
+            <Search />
+            ab
+          </div>
+        </div>
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
           <a
             target="_blank"
@@ -163,9 +176,9 @@ export function Navbar() {
   );
 
   return (
-    <div className="fixed top-4 z-[999] flex w-full items-center px-4">
+    <div className="sticky top-4 z-[999] flex w-full items-center px-4">
       <MTNavbar
-        className="mx-auto w-full border-[1.5px] !border-blue-gray-50 bg-white py-1.5 !pl-2 !pr-3 lg:!px-4 lg:!py-0.5"
+        className="mx-auto w-full bg-white py-1.5 !pl-2 !pr-3 lg:!px-4 lg:!py-0.5"
         shadow={false}
       >
         <div className={`flex w-full items-center !justify-between`}>

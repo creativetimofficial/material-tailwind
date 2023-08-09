@@ -21,7 +21,7 @@ export function ProfileInfoPopover() {
       <PopoverHandler {...triggers}>
         <Button variant="text">Profile Info</Button>
       </PopoverHandler>
-      <PopoverContent {...triggers} className="max-w-[24rem]">
+      <PopoverContent {...triggers} className="z-50 max-w-[24rem]">
         <div className="mb-2 flex items-center justify-between gap-4">
           <Avatar
             size="md"
@@ -31,7 +31,6 @@ export function ProfileInfoPopover() {
           />
           <Button
             variant="gradient"
-            color="blue"
             size="sm"
             className="font-medium capitalize"
           >

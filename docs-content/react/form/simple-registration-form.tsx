@@ -31,7 +31,7 @@ export function SimpleRegistrationForm() {
               I agree the
               <a
                 href="#"
-                className="font-medium transition-colors hover:text-blue-500"
+                className="font-medium transition-colors hover:text-gray-900"
               >
                 &nbsp;Terms and Conditions
               </a>
@@ -44,10 +44,7 @@ export function SimpleRegistrationForm() {
         </Button>
         <Typography color="gray" className="mt-4 text-center font-normal">
           Already have an account?{" "}
-          <a
-            href="#"
-            className="font-medium text-blue-500 transition-colors hover:text-blue-700"
-          >
+          <a href="#" className="font-medium text-gray-900">
             Sign In
           </a>
         </Typography>

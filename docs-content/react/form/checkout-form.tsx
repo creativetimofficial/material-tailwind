@@ -56,7 +56,7 @@ export function CheckoutForm() {
   return (
     <Card className="w-full max-w-[24rem]">
       <CardHeader
-        color="blue"
+        color="gray"
         floated={false}
         shadow={false}
         className="m-0 grid place-items-center rounded-b-none py-8 px-4 text-center"

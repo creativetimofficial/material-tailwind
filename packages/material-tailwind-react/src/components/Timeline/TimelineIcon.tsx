@@ -59,7 +59,7 @@ export const TimelineIcon = React.forwardRef<HTMLSpanElement, TimelineIconProps>
     // 3. set styles
     const variantClasses = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const classes = twMerge(objectsToString(base), variantClasses, className);

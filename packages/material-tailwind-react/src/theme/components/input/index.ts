@@ -89,7 +89,7 @@ export const input: InputStylesType = {
   defaultProps: {
     variant: "outlined",
     size: "md",
-    color: "blue",
+    color: "gray",
     label: "",
     error: false,
     success: false,
@@ -132,6 +132,7 @@ export const input: InputStylesType = {
         position: "absolute",
         left: "left-0",
         fontWeight: "font-normal",
+        overflow: "!overflow-visible",
         textOverflow: "truncate",
         color: "peer-placeholder-shown:text-blue-gray-500",
         lineHeight: "leading-tight peer-focus:leading-tight",

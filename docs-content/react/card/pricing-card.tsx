@@ -28,7 +28,7 @@ function CheckIcon() {
 
 export function PricingCard() {
   return (
-    <Card color="blue" variant="gradient" className="w-full max-w-[20rem] p-8">
+    <Card color="gray" variant="gradient" className="w-full max-w-[20rem] p-8">
       <CardHeader
         floated={false}
         shadow={false}
@@ -91,7 +91,7 @@ export function PricingCard() {
         <Button
           size="lg"
           color="white"
-          className="text-blue-500 hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
+          className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
           ripple={false}
           fullWidth={true}
         >

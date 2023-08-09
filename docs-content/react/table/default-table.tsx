@@ -32,12 +32,15 @@ const TABLE_ROWS = [
 
 export function DefaultTable() {
   return (
-    <Card className="w-full h-full overflow-scroll">
+    <Card className="h-full w-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>
             {TABLE_HEAD.map((head) => (
-              <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+              <th
+                key={head}
+                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
+              >
                 <Typography
                   variant="small"
                   color="blue-gray"
@@ -57,22 +60,40 @@ export function DefaultTable() {
             return (
               <tr key={name}>
                 <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
                     {name}
                   </Typography>
                 </td>
                 <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
                     {job}
                   </Typography>
                 </td>
                 <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
                     {date}
                   </Typography>
                 </td>
                 <td className={classes}>
-                  <Typography as="a" href="#" variant="small" color="blue" className="font-medium">
+                  <Typography
+                    as="a"
+                    href="#"
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium"
+                  >
                     Edit
                   </Typography>
                 </td>

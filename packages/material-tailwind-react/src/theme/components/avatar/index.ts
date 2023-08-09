@@ -44,7 +44,7 @@ export const avatar: AvatarStyleTypes = {
     size: "md",
     className: "",
     withBorder: false,
-    color: "blue",
+    color: "gray",
   },
   valid: {
     variants: propTypesVariant,

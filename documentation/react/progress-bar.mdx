@@ -178,10 +178,10 @@ export function ProgressLabelOutside() {
   return (
     <div className="w-full">
       <div className="mb-2 flex items-center justify-between gap-4">
-        <Typography color="blue" variant="h6">
+        <Typography color="blue-gray" variant="h6">
           Completed
         </Typography>
-        <Typography color="blue" variant="h6">
+        <Typography color="blue-gray" variant="h6">
           50%
         </Typography>
       </div>
@@ -209,7 +209,7 @@ export function ProgressCustomStyles() {
     <Progress
       value={50}
       size="lg"
-      className="border border-blue-500/20 bg-blue-500/10 p-1"
+      className="border border-gray-900/10 bg-gray-900/5 p-1"
     />
   );
 }
@@ -229,7 +229,7 @@ the other native props as well.
 | Attribute   | Type                      | Description                                      | Default                |
 | ----------- | ------------------------- | ------------------------------------------------ | ---------------------- |
 | `variant`   | [Variant](#types-variant) | Change progress bar variant                      | <Code>filled</Code>    |
-| `color`     | [Color](#types-color)     | Change progress bar color                        | <Code>blue</Code>      |
+| `color`     | [Color](#types-color)     | Change progress bar color                        | <Code>gray</Code>      |
 | `size`     | [Size](#types-size)     | Change progress bar size                        | <Code>md</Code>      |
 | `label`     | [label](#types-label)     | Add label for progress bar                       | <Code>undefined</Code> |
 | `value`     | <Code>number</Code>       | Add the completed percentage for progress bar    | 0                      |

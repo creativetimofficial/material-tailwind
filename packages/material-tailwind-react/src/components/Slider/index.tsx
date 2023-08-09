@@ -112,7 +112,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     const sliderContainerClasses = twMerge(
       classnames(
         objectsToString(base.container),
-        objectsToString(colors[findMatch(valid.colors, color, "blue")]),
+        objectsToString(colors[findMatch(valid.colors, color, "gray")]),
         objectsToString(sizes[findMatch(valid.sizes, size, "md")]["container"]),
         className,
       ),

@@ -19,7 +19,7 @@ export interface SpinnerStyleTypes {
 
 export const spinner: SpinnerStyleTypes = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     className: "",
   },
   valid: {
@@ -27,7 +27,7 @@ export const spinner: SpinnerStyleTypes = {
   },
   styles: {
     base: {
-      color: "text-blue-gray-100",
+      color: "text-gray-300",
       animation: "animate-spin",
     },
     colors: spinnerColor,

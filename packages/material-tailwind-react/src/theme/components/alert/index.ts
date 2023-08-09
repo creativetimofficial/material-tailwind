@@ -48,7 +48,7 @@ export interface AlertStylesType {
 export const alert: AlertStylesType = {
   defaultProps: {
     variant: "filled",
-    color: "blue",
+    color: "gray",
     icon: undefined,
     open: true,
     action: undefined,

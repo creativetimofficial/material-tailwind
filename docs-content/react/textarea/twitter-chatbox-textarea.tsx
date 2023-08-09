@@ -3,7 +3,7 @@ import { LinkIcon } from "@heroicons/react/24/outline";
 
 export function TwitterChatboxTextarea() {
   return (
-    <div className="flex w-full flex-row items-center gap-2 rounded-[99px] border border-blue-gray-500/20 bg-blue-500/10 p-2">
+    <div className="flex w-full flex-row items-center gap-2 rounded-[99px] border border-gray-900/10 bg-gray-900/5 p-2">
       <div className="flex">
         <IconButton variant="text" className="rounded-full">
           <svg

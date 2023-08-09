@@ -24,17 +24,12 @@ export function AlertWithContent() {
   return (
     <>
       {!open && (
-        <Button
-          color="green"
-          className="absolute"
-          onClick={() => setOpen(true)}
-        >
+        <Button className="absolute" onClick={() => setOpen(true)}>
           Show Alert
         </Button>
       )}
       <Alert
         open={open}
-        color="green"
         className="max-w-screen-md"
         icon={<Icon />}
         onClose={() => setOpen(false)}

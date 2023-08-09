@@ -68,7 +68,7 @@ export interface SliderStyleTypes {
 
 export const slider: SliderStyleTypes = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     size: "md",
     min: undefined,
     max: undefined,

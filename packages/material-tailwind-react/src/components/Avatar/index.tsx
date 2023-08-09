@@ -45,7 +45,7 @@ export const Avatar = React.forwardRef<HTMLImageElement, AvatarProps>(
     // 3. set styles
     const avatarVariant = objectsToString(variants[findMatch(valid.variants, variant, "rounded")]);
     const avatarSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
-    const avatarBorderColor = objectsToString(borderColor[findMatch(valid.colors, color, "blue")]);
+    const avatarBorderColor = objectsToString(borderColor[findMatch(valid.colors, color, "gray")]);
     const classes = twMerge(
       classnames(objectsToString(base.initial), avatarVariant, avatarSize, {
         [objectsToString(base.withBorder)]: withBorder,

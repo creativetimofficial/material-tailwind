@@ -220,3 +220,14 @@ table tbody tr td code {
   text-align: right;
   color: rgba(255, 255, 255, 0.25);
 }
+
+.DocSearch-Container {
+  z-index: 9999 !important;
+}
+
+.DocSearch-Button {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+}

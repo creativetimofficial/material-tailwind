@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import Script from "next/script";
 
 // @material-tailwind components
-import { ThemeProvider } from "@material-tailwind/react";
+import { Alert, Button, ThemeProvider } from "@material-tailwind/react";
 
 // styles
 import "/styles/globals.css";

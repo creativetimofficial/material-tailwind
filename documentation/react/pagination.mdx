@@ -44,7 +44,7 @@ export function DefaultPagination() {
   const getItemProps = (index) =>
     ({
       variant: active === index ? "filled" : "text",
-      color: active === index ? "blue" : "blue-gray",
+      color: "gray",
       onClick: () => setActive(index),
     } as any);
 
@@ -64,7 +64,6 @@ export function DefaultPagination() {
     <div className="flex items-center gap-4">
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2"
         onClick={prev}
         disabled={active === 1}
@@ -80,7 +79,6 @@ export function DefaultPagination() {
       </div>
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2"
         onClick={next}
         disabled={active === 5}
@@ -114,7 +112,7 @@ export function CircularPagination() {
   const getItemProps = (index) =>
     ({
       variant: active === index ? "filled" : "text",
-      color: active === index ? "blue" : "blue-gray",
+      color: "gray",
       onClick: () => setActive(index),
       className: "rounded-full",
     } as any);
@@ -135,7 +133,6 @@ export function CircularPagination() {
     <div className="flex items-center gap-4">
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2 rounded-full"
         onClick={prev}
         disabled={active === 1}
@@ -151,7 +148,6 @@ export function CircularPagination() {
       </div>
       <Button
         variant="text"
-        color="blue-gray"
         className="flex items-center gap-2 rounded-full"
         onClick={next}
         disabled={active === 5}
@@ -199,20 +195,18 @@ export function SimplePagination() {
       <IconButton
         size="sm"
         variant="outlined"
-        color="blue-gray"
         onClick={prev}
         disabled={active === 1}
       >
         <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
       </IconButton>
       <Typography color="gray" className="font-normal">
-        Page <strong className="text-blue-gray-900">{active}</strong> of{" "}
-        <strong className="text-blue-gray-900">10</strong>
+        Page <strong className="text-gray-900">{active}</strong> of{" "}
+        <strong className="text-gray-900">10</strong>
       </Typography>
       <IconButton
         size="sm"
         variant="outlined"
-        color="blue-gray"
         onClick={next}
         disabled={active === 10}
       >
@@ -242,7 +236,7 @@ export function PaginationGroup() {
   const [active, setActive] = React.useState(1);
 
   const getItemProps = (index) => ({
-    className: active === index ? "bg-blue-gray-100 text-blue-gray-900" : "",
+    className: active === index ? "bg-gray-100 text-gray-900" : "",
     onClick: () => setActive(index),
   });
 
@@ -259,7 +253,7 @@ export function PaginationGroup() {
   };
 
   return (
-    <ButtonGroup variant="outlined" color="blue-gray">
+    <ButtonGroup variant="outlined">
       <IconButton onClick={prev}>
         <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
       </IconButton>

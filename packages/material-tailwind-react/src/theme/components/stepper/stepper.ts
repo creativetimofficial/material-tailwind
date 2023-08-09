@@ -28,10 +28,10 @@ export const stepper: StepperStyleTypes = {
           height: "h-0.5",
           width: "w-full",
           transform: "-translate-y-2/4",
-          backgroundColor: "bg-blue-gray-200",
+          backgroundColor: "bg-gray-300",
         },
         active: {
-          backgroundColor: "bg-blue-500",
+          backgroundColor: "bg-gray-900",
           transition: "transition-all",
           duration: "duration-500",
         },

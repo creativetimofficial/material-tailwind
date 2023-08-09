@@ -19,7 +19,7 @@ export function InputWithButton() {
       />
       <Button
         size="sm"
-        color={email ? "blue" : "blue-gray"}
+        color={email ? "gray" : "blue-gray"}
         disabled={!email}
         className="!absolute right-1 top-1 rounded"
       >

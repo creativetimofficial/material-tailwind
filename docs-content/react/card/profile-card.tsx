@@ -17,7 +17,7 @@ export function ProfileCard() {
         <Typography variant="h4" color="blue-gray" className="mb-2">
           Natalie Paisley
         </Typography>
-        <Typography color="blue" className="font-medium" textGradient>
+        <Typography color="blue-gray" className="font-medium" textGradient>
           CEO / Co-Founder
         </Typography>
       </CardBody>

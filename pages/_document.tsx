@@ -12,31 +12,17 @@ export default function MyDocument() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/img/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/img/favicon-16x16.png"
-        />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
         <link rel="manifest" href="/img/site.webmanifest" />
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
-          color="#2d89ef"
+          color="#020617"
         />
-        <meta name="msapplication-TileColor" content="#2d89ef" />
+        <meta name="msapplication-TileColor" content="#020617" />
         <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"

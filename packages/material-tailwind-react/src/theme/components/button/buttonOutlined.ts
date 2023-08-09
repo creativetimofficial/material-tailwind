@@ -14,10 +14,10 @@ const buttonOutlined: object = {
     active: "active:opacity-[0.85]",
   },
   gray: {
-    border: "border border-gray-500",
-    color: "text-gray-500",
+    border: "border border-gray-900",
+    color: "text-gray-900",
     hover: "hover:opacity-75",
-    focus: "focus:ring focus:ring-gray-200",
+    focus: "focus:ring focus:ring-gray-300",
     active: "active:opacity-[0.85]",
   },
   brown: {
