@@ -106,7 +106,7 @@ export function Navbar() {
             </Link>
           </MenuList>
         </Menu> */}
-{/*         <NavItem href="/figma">Figma</NavItem> */}
+        <NavItem href="/figma">Figma</NavItem>
         <NavItem href="/blocks#pricing">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
