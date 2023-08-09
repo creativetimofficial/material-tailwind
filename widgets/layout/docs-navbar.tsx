@@ -111,8 +111,8 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             </Link>
           </MenuList>
         </Menu> */}
-        <NavItem href="/figma">Figma</NavItem>
-        <NavItem href="#">Pricing & FAQ</NavItem>
+{/*         <NavItem href="/figma">Figma</NavItem> */}
+        <NavItem href="/blocks/pricing#">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative">
