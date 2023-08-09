@@ -127,6 +127,8 @@ export function PageMap({ type, frontMatter }) {
           </li>
           <li>
             <a
+              target="_blank"
+              rel="noreferrer"
               href="https://opencollective.com/material-tailwind?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
             >

@@ -88,7 +88,7 @@ export function Navbar() {
       <List className="px-0 lg:!flex-row">
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
-        <Menu placement="bottom" offset={-2.5} allowHover>
+        {/* <Menu placement="bottom" offset={-2.5} allowHover>
           <MenuHandler>
             <span>
               <NavItem>Ecosystem</NavItem>
@@ -105,7 +105,7 @@ export function Navbar() {
               </MenuItem>
             </Link>
           </MenuList>
-        </Menu>
+        </Menu> */}
         <NavItem href="/figma">Figma</NavItem>
         <NavItem href="/blocks#pricing">Pricing & FAQ</NavItem>
       </List>

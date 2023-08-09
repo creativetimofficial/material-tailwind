@@ -339,9 +339,11 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <div className="flex  items-center justify-center gap-4">
           NEW | Material Tailwind PRO, a comprehensive compilation of 200+
           sections, now available for your use.
-          <Button size="sm" color="white">
-            check out
-          </Button>
+          <Link href="/blocks">
+            <Button size="sm" color="white">
+              check out
+            </Button>
+          </Link>
         </div>
       </Alert>
       <div className="relative mb-8 h-full w-full bg-white">

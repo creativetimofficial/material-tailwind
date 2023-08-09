@@ -13,6 +13,7 @@ import {
   Subscribe,
 } from "@widgets";
 import { Alert, Button } from "@material-tailwind/react";
+import Link from "next/link";
 
 export default function Presentation() {
   return (
@@ -36,9 +37,11 @@ export default function Presentation() {
         <div className="flex  items-center justify-center gap-4">
           NEW | Material Tailwind PRO, a comprehensive compilation of 200+
           sections, now available for your use.
-          <Button size="sm" color="white">
-            check out
-          </Button>
+          <Link href="/blocks">
+            <Button size="sm" color="white">
+              check out
+            </Button>
+          </Link>
         </div>
       </Alert>
       <Navbar />
