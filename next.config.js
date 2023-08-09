@@ -24,7 +24,7 @@ const nextConfig = {
       {
         source: "/figma",
         destination:
-          "https://material-taillwind-eu19csbi7-ct-tailwind-team.vercel.app/figma",
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/figma",
       },
        {
         source: "/blocks",
