@@ -5,49 +5,58 @@ import {
   CardHeader,
   Typography,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 const CONTENT = [
   {
     title: "React",
     img: "/svg/react.svg",
+    route: "/docs/react/installation",
     description:
       "Open-source JavaScript framework and library developed by Facebook.",
   },
   {
     title: "Html",
     img: "/svg/html.svg",
+    route: "/docs/html/installation",
     description: "The standard markup language for creating Web pages.",
   },
   {
     title: "Next.js",
     img: "/svg/nextjs.svg",
+    route: "/docs/react/guide/next",
     description:
       "React framework that gives you building blocks to create web apps.",
   },
   {
     title: "Create React App",
     img: "/svg/cra.svg",
+    route: "/docs/react/guide/cra",
     description: "Set up a modern web app by running one command.",
   },
   {
     title: "Remix",
     img: "/svg/remix.svg",
+    route: "/docs/react/guide/remix",
     description:
       "Full stack web framework that lets you focus on the user interface.",
   },
   {
     title: "Vite",
     img: "/svg/vitejs.svg",
+    route: "/docs/react/guide/vite",
     description: "Flexible programmatic APIs with full TypeScript typing.",
   },
   {
     title: "Astro",
     img: "/svg/astro.svg",
+    route: "/docs/react/guide/astro",
     description: "All-in-one web framework designed for speed.",
   },
   {
     title: "Gatsby",
     img: "/svg/gatsby.svg",
+    route: "/docs/react/guide/gatsby",
     description: "The Fastest Frontend for the Headless Web.",
   },
 ];
@@ -70,37 +79,38 @@ export function Integrations() {
           tools using Material Tailwind.
         </Typography>
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {CONTENT.map(({ title, description, img }, index) => (
-            <Card
-              key={index}
-              shadow={false}
-              color="transparent"
-              className="overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50"
-            >
-              <div className="absolute top-0 h-full w-full bg-[url('/image/header-figma.jpg')] bg-cover bg-center bg-no-repeat"></div>
-              <CardHeader
-                color="transparent"
-                floated={false}
+          {CONTENT.map(({ title, description, route, img }, index) => (
+            <Link key={index} href={route}>
+              <Card
                 shadow={false}
-                className="flex items-center"
+                color="transparent"
+                className="overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50 transition-colors duration-300 hover:border-blue-gray-100"
               >
-                <Image
-                  src={img}
-                  width={480}
-                  height={480}
-                  alt="card image"
-                  className="h-8 w-8"
-                />
-              </CardHeader>
-              <CardBody className="relative z-10 p-4">
-                <Typography className="mb-1 text-lg font-semibold text-gray-900">
-                  {title}
-                </Typography>
-                <Typography className="font-normal text-gray-600">
-                  {description}
-                </Typography>
-              </CardBody>
-            </Card>
+                <div className="absolute top-0 h-full w-full bg-[url('/image/header-figma.jpg')] bg-cover bg-center bg-no-repeat"></div>
+                <CardHeader
+                  color="transparent"
+                  floated={false}
+                  shadow={false}
+                  className="flex items-center"
+                >
+                  <Image
+                    src={img}
+                    width={480}
+                    height={480}
+                    alt="card image"
+                    className="h-8 w-8"
+                  />
+                </CardHeader>
+                <CardBody className="relative z-10 p-4">
+                  <Typography className="mb-1 text-lg font-semibold text-gray-900">
+                    {title}
+                  </Typography>
+                  <Typography className="font-normal text-gray-600">
+                    {description}
+                  </Typography>
+                </CardBody>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

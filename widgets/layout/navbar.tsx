@@ -195,7 +195,7 @@ export function Navbar() {
             </Typography>
             <hr className="mx-2 h-8 border-r border-primary/10" />
             <Chip
-              value="v2.1.1"
+              value="v2.1.0"
               variant="outlined"
               className="rounded-full border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
             />

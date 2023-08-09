@@ -7,6 +7,10 @@ export const routes = [
         route: "installation",
       },
       {
+        name: "Installation with CLI",
+        route: "installation-with-cli",
+      },
+      {
         name: "License",
         route: "license",
       },

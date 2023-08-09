@@ -200,7 +200,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                 Material <br /> Tailwind
               </Typography>
               <Chip
-                value="v2.1.1"
+                value="v2.1.0"
                 variant="outlined"
                 className="ml-2 rounded-full border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
               />

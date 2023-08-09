@@ -219,7 +219,11 @@ export function Footer() {
               </span>
             </a>
             <div className="text-md mt-2 py-1 font-normal text-gray-600">
-              Copyright &copy; {YEAR} Material Tailwind by{" "}
+              Copyright &copy; {YEAR}{" "}
+              <Link href="/" className="text-inherit transition-all">
+                Material Tailwind
+              </Link>{" "}
+              by{" "}
               <a
                 href="https://www.creative-tim.com?ref=material-tailwind"
                 target="_blank"

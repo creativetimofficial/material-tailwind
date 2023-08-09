@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Chip, Typography, Button, Carousel } from "@material-tailwind/react";
@@ -11,13 +10,15 @@ export function Hero() {
   return (
     <div className="grid h-full min-h-[84vh] place-items-center bg-[url('/svg/header-bg.svg')] bg-cover bg-center bg-no-repeat">
       <div className="container mx-auto px-4 text-center lg:w-8/12 xl:w-7/12">
-        <div className="inline-flex items-center rounded-full border-[1.5px] border-blue-gray-50 bg-white py-1 pl-1 pr-8 font-medium text-primary">
-          <Chip
-            value="New"
-            className="mr-3 rounded-full bg-primary px-3.5 !pb-2 pt-2.5 font-medium leading-none"
-          />
-          Latest Update Material Tailwind released on July 05, 2023
-        </div>
+        <Link href="/docs/react/release-notes">
+          <div className="inline-flex items-center rounded-full border-[1.5px] border-blue-gray-50 bg-white py-1 pl-1 pr-8 font-medium text-primary">
+            <Chip
+              value="New"
+              className="mr-3 rounded-full bg-primary px-3.5 !pb-2 pt-2.5 font-medium leading-none"
+            />
+            Update is available for @material-tailwind/react
+          </div>
+        </Link>
         <Typography
           variant="h1"
           className="relative mx-auto mt-10 mb-6 text-center text-4xl font-black !leading-tight tracking-normal text-primary md:text-5xl lg:max-w-5xl"
@@ -31,7 +32,7 @@ export function Hero() {
           bonus!
         </Typography>
         <div className="my-4 mx-auto grid max-w-sm justify-center">
-          <Carousel autoplay loop autoplayDelay={3000}>
+          <Carousel autoplay loop autoplayDelay={5000}>
             <img
               src="/image/carousel-1.png"
               alt="carousel 1"

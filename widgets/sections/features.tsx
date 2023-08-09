@@ -7,34 +7,39 @@ import {
   Chip,
   Button,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 function FavoriteFramework() {
   return (
     <div className="mt-16 flex items-center gap-12 px-4">
-      <div className="flex flex-col items-center justify-center gap-2">
-        <Image
-          src="/svg/react.svg"
-          alt="react logo"
-          width={480}
-          height={480}
-          className="h-10 w-10"
-        />
-        <Typography variant="h6" className="text-primary">
-          React
-        </Typography>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-2">
-        <Image
-          src="/svg/html.svg"
-          alt="html logo"
-          width={480}
-          height={480}
-          className="h-10 w-10"
-        />
-        <Typography variant="h6" className="text-primary">
-          HTML
-        </Typography>
-      </div>
+      <Link href="/docs/react/installation">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Image
+            src="/svg/react.svg"
+            alt="react logo"
+            width={480}
+            height={480}
+            className="h-10 w-10"
+          />
+          <Typography variant="h6" className="text-primary">
+            React
+          </Typography>
+        </div>
+      </Link>
+      <Link href="/docs/html/installation">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Image
+            src="/svg/html.svg"
+            alt="html logo"
+            width={480}
+            height={480}
+            className="h-10 w-10"
+          />
+          <Typography variant="h6" className="text-primary">
+            HTML
+          </Typography>
+        </div>
+      </Link>
       <div className="relative flex flex-col items-center justify-center gap-2">
         <Image
           src="/svg/angular.svg"

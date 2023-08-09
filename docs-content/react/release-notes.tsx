@@ -16,14 +16,21 @@ export function ReleaseNotes() {
     <div className="ml-28">
       <Timeline>
         {releases.map((release, key) => (
-          <TimelineItem key={key}>
+          <TimelineItem
+            key={key}
+            id={`v${release.version}`}
+            className="scroll-mt-48"
+          >
             <div className="absolute -left-28 -top-8 flex flex-col items-end">
               <Chip
                 variant="outlined"
                 value={`v${release.version}`}
                 className="mb-2 w-max rounded-full border-blue-gray-50 px-2 py-1 lowercase text-primary"
               />
-              <Typography variant="small" className="font-bold text-primary">
+              <Typography
+                variant="small"
+                className="font-bold capitalize text-primary"
+              >
                 {release.date}
               </Typography>
             </div>
