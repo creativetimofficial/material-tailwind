@@ -338,7 +338,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
       <Alert className="w-full justify-center rounded-none">
         <div className="flex  items-center justify-center gap-4">
           NEW | Material Tailwind PRO, a comprehensive compilation of 200+
-          sections, now available for your use.
+          blocks, now available for your use.
           <Link href="/blocks">
             <Button size="sm" color="white">
               check out
