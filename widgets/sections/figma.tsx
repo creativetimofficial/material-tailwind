@@ -101,7 +101,7 @@ export function Figma() {
         </div>
         <div className="mt-16 text-center">
           <Link
-            href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916%3A5781&mode=design&t=ysoJhYSAH7d3PZ02-1"
+            href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916-5781&mode=design&t=WzeVRo5zGAzGdjHv-0"
             target="_blank"
           >
             <Button
