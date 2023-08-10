@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Typography,
   Button,
@@ -12,11 +13,15 @@ import {
   Textarea,
   IconButton,
 } from "@material-tailwind/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export function PageMap({ type, frontMatter }) {
+  const { query } = useRouter();
   const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState(frontMatter[0]);
   const [feedbackType, setFeedbackType] = React.useState("issue");
+  const frameWorkType = query?.slug?.[0];
 
   const handleOpen = () => setOpen(!open);
 
@@ -145,6 +150,71 @@ export function PageMap({ type, frontMatter }) {
               give us feedback
             </Button>
           </li> */}
+        </ul>
+        <Typography
+          variant="small"
+          className="font-bold capitalize text-primary"
+        >
+          Frameworks
+        </Typography>
+        <ul className="mb-8 list-none pt-2">
+          <li className="mb-3">
+            <Link
+              href="/docs/react/installation"
+              className={`${
+                frameWorkType === "react"
+                  ? "pointer-events-none"
+                  : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
+              } flex items-center gap-2`}
+            >
+              <Image
+                src="/svg/react.svg"
+                alt="react"
+                width={48}
+                height={48}
+                className="h-5 w-5"
+              />
+              <Typography variant="small" className="font-medium text-primary">
+                React
+              </Typography>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/docs/html/installation"
+              className={`${
+                frameWorkType === "html"
+                  ? "pointer-events-none"
+                  : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
+              } flex items-center gap-2`}
+            >
+              <Image
+                src="/svg/html.svg"
+                alt="html"
+                width={48}
+                height={48}
+                className="h-5 w-5"
+              />
+              <Typography variant="small" className="font-medium text-primary">
+                HTML
+              </Typography>
+            </Link>
+          </li>
+          <li className="mt-8">
+            <Link
+              href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
+              target="_blank"
+            >
+              <Button
+                size="sm"
+                variant="outlined"
+                className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-sm font-medium capitalize text-primary focus:ring-transparent"
+              >
+                <i className="fab fa-github text-base text-primary" />
+                Give us Star
+              </Button>
+            </Link>
+          </li>
         </ul>
       </div>
       <Dialog
