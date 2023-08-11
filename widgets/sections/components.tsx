@@ -9,14 +9,19 @@ const DATA = [
     img: "/image/components/accordion-thumbnail.jpg",
   },
   {
-    title: "Alerts",
+    title: "Alert",
     route: "alert",
     img: "/image/components/alert-thumbnail.jpg",
   },
   {
-    title: "Avatars",
+    title: "Avatar",
     route: "avatar",
     img: "/image/components/avatar-thumbnail.jpg",
+  },
+  {
+    title: "Badge",
+    route: "badge",
+    img: "/image/components/badge-thumbnail.jpg",
   },
   {
     title: "Breadcrumbs",
@@ -24,49 +29,89 @@ const DATA = [
     img: "/image/components/breadcrumbs-thumbnail.jpg",
   },
   {
-    title: "Buttons",
+    title: "Button",
     route: "button",
     img: "/image/components/button-thumbnail.jpg",
   },
   {
-    title: "Cards",
+    title: "Button Group",
+    route: "button-group",
+    img: "/image/components/buttongroup-thumbnail.jpg",
+  },
+  {
+    title: "Card",
     route: "card",
     img: "/image/components/card-thumbnail.jpg",
   },
   {
-    title: "Checkboxes",
+    title: "Checkboxe",
     route: "checkbox",
     img: "/image/components/checkbox-thumbnail.jpg",
   },
   {
-    title: "Chips",
+    title: "Chip",
     route: "chip",
     img: "/image/components/chip-thumbnail.jpg",
   },
   {
-    title: "Dialogs",
+    title: "Collapse",
+    route: "collapse",
+    img: "/image/components/collapse-thumbnail.jpg",
+  },
+  {
+    title: "Carousel",
+    route: "carousel",
+    img: "/image/components/carousel-thumbnail.jpg",
+  },
+  {
+    title: "Dialog",
     route: "dialog",
     img: "/image/components/dialog-thumbnail.jpg",
   },
   {
-    title: "Icon Buttons",
+    title: "Drawer",
+    route: "drawer",
+    img: "/image/components/drawer-thumbnail.jpg",
+  },
+  {
+    title: "Icon Button",
     route: "icon-button",
     img: "/image/components/icon-button-thumbnail.jpg",
   },
   {
-    title: "Inputs",
+    title: "Input",
     route: "input",
     img: "/image/components/input-thumbnail.jpg",
   },
   {
-    title: "Menus",
+    title: "Form",
+    route: "form",
+    img: "/image/components/form-thumbnail.jpg",
+  },
+  {
+    title: "List",
+    route: "list",
+    img: "/image/components/list-thumbnail.jpg",
+  },
+  {
+    title: "Menu",
     route: "menu",
     img: "/image/components/menu-thumbnail.jpg",
   },
   {
-    title: "Navbars",
+    title: "Navbar",
     route: "navbar",
     img: "/image/components/navbar-thumbnail.jpg",
+  },
+  {
+    title: "Popover",
+    route: "popover",
+    img: "/image/components/popover-thumbnail.jpg",
+  },
+  {
+    title: "Progress Bar",
+    route: "progress-bar",
+    img: "/image/components/progress-bar-thumbnail.jpg",
   },
   {
     title: "Pagination",
@@ -74,24 +119,39 @@ const DATA = [
     img: "/image/components/pagination-thumbnail.jpg",
   },
   {
-    title: "Popovers",
-    route: "popover",
-    img: "/image/components/popover-thumbnail.jpg",
-  },
-  {
-    title: "Progress Bars",
-    route: "progress-bar",
-    img: "/image/components/progress-bar-thumbnail.jpg",
-  },
-  {
-    title: "Radio Buttons",
+    title: "Radio Button",
     route: "radio-button",
     img: "/image/components/radio-button-thumbnail.jpg",
   },
   {
-    title: "Selects",
+    title: "Rating Bar",
+    route: "rating-bar",
+    img: "/image/components/ratingbar-thumbnail.jpg",
+  },
+  {
+    title: "Select",
     route: "select",
     img: "/image/components/select-thumbnail.jpg",
+  },
+  {
+    title: "Slider",
+    route: "slider",
+    img: "/image/components/slider-thumbnail.jpg",
+  },
+  {
+    title: "Speed Dial",
+    route: "speeddial",
+    img: "/image/components/speeddial-thumbnail.jpg",
+  },
+  {
+    title: "Spinner",
+    route: "spinner",
+    img: "/image/components/spinner-thumbnail.jpg",
+  },
+  {
+    title: "Stepper",
+    route: "stepper",
+    img: "/image/components/stepper-thumbnail.jpg",
   },
   {
     title: "Switch",
@@ -104,12 +164,17 @@ const DATA = [
     img: "/image/components/tabs-thumbnail.jpg",
   },
   {
-    title: "Text Areas",
+    title: "Text Area",
     route: "textarea",
     img: "/image/components/text-area-thumbnail.jpg",
   },
   {
-    title: "Tooltips",
+    title: "Timeline",
+    route: "timeline",
+    img: "/image/components/timeline-thumbnail.jpg",
+  },
+  {
+    title: "Tooltip",
     route: "tooltip",
     img: "/image/components/tooltip-thumbnail.jpg",
   },
@@ -119,9 +184,29 @@ const DATA = [
     img: "/image/components/typography-thumbnail.jpg",
   },
   {
-    title: "Tabs",
-    route: "tabs",
-    img: "/image/components/tabs-thumbnail.jpg",
+    title: "Footer",
+    route: "footer",
+    img: "/image/components/footer-thumbnail.jpg",
+  },
+  {
+    title: "Image",
+    route: "img",
+    img: "/image/components/img-thumbnail.jpg",
+  },
+  {
+    title: "Video",
+    route: "video",
+    img: "/image/components/video-thumbnail.jpg",
+  },
+  {
+    title: "Sidebar",
+    route: "sidebar",
+    img: "/image/components/sidebar-thumbnail.jpg",
+  },
+  {
+    title: "Table",
+    route: "table",
+    img: "/image/components/table-thumbnail.jpg",
   },
 ];
 
