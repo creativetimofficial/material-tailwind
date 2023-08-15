@@ -44,7 +44,7 @@ const DATA = [
     img: "/image/components/card-thumbnail.jpg",
   },
   {
-    title: "Checkboxe",
+    title: "Checkbox",
     route: "checkbox",
     img: "/image/components/checkbox-thumbnail.jpg",
   },
