@@ -23,7 +23,7 @@ export function Hero() {
           variant="h1"
           className="relative mx-auto mt-10 mb-6 text-center text-4xl font-black !leading-tight tracking-normal text-primary md:text-5xl lg:max-w-5xl"
         >
-          The Tailwind CSS Components Library that Skyrockets your UI
+          The Tailwind CSS Components Library For Coding 10x Faster
         </Typography>
         <Typography className="md:text-md relative mx-auto text-center text-lg font-normal leading-normal !text-gray-600 lg:max-w-5xl">
           Material Tailwind is an open-source library that uses the power of
