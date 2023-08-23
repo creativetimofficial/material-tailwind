@@ -17,6 +17,16 @@ const nextConfig = {
         destination: "/docs/react/button",
         permanent: true,
       },
+      {
+        source: "/docs/react/theme/:slug*",
+        destination: "/docs/react/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/docs/react/props/:slug*",
+        destination: "/docs/react/:slug*",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
@@ -35,14 +45,6 @@ const nextConfig = {
         source: "/blocks/:slug*",
         destination:
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
-      },
-      {
-        source: "/docs/react/theme/:slug*",
-        destination: "/docs/react/:slug*",
-      },
-      {
-        source: "/docs/react/props/:slug*",
-        destination: "/docs/react/:slug*",
       },
     ];
   },
