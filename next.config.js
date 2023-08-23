@@ -26,7 +26,7 @@ const nextConfig = {
         destination:
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/figma",
       },
-       {
+      {
         source: "/blocks",
         destination:
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
@@ -35,6 +35,14 @@ const nextConfig = {
         source: "/blocks/:slug*",
         destination:
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
+      },
+      {
+        source: "/docs/react/theme/:slug*",
+        destination: "/docs/react/:slug*",
+      },
+      {
+        source: "/docs/react/props/:slug*",
+        destination: "/docs/react/:slug*",
       },
     ];
   },
