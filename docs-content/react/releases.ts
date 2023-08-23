@@ -169,7 +169,7 @@ export const releases = [
         data: [
           "Add new component Badge",
           "Add new component ButtonGroup",
-          "Add new component Collpase",
+          "Add new component Collapse",
           "Add new component Carousel",
           "Add new component Drawer",
           "Add new component List",
@@ -388,7 +388,7 @@ export const releases = [
       },
       {
         title: "features",
-        data: ["Add MobileNav component for responsive Navbar collpase."],
+        data: ["Add MobileNav component for responsive Navbar collapse."],
       },
       {
         title: "updates",

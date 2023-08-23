@@ -131,7 +131,7 @@ export const routes = [
         route: "chip",
       },
       {
-        name: "Collpase",
+        name: "Collapse",
         route: "collapse",
       },
       {
