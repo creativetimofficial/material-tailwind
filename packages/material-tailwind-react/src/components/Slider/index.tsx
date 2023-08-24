@@ -126,7 +126,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
       objectsToString(base.thumb),
       objectsToString(sizes[findMatch(valid.sizes, size, "md")]["thumb"]),
     );
-    const sliderCLasses = classnames(
+    const sliderClasses = classnames(
       objectsToString(base.slider),
       twMerge(sliderTrackClasses, trackClassName),
       twMerge(sliderThumbClasses, thumbClassName),
@@ -142,7 +142,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
           max={max}
           min={min}
           step={step}
-          className={sliderCLasses}
+          className={sliderClasses}
           {...(value ? { value } : null)}
           defaultValue={defaultValue}
           onChange={(e) => (onChange ? onChange(e) : setInnerValue(Number(e.target.value)))}
