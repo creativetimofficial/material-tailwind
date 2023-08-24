@@ -131,7 +131,7 @@ function NavListMenu() {
           </div>
         </MenuItem>
       </a>
-    )
+    ),
   );
 
   return (
@@ -168,7 +168,9 @@ function NavListMenu() {
           </Typography>
         </MenuHandler>
         <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
-          <ul className="grid grid-cols-4 gap-y-2">{renderItems}</ul>
+          <ul className="grid grid-cols-4 gap-y-2 outline-none outline-0">
+            {renderItems}
+          </ul>
         </MenuList>
       </Menu>
       <div className="block lg:hidden">
@@ -216,7 +218,7 @@ export function NavbarWithMegaMenu() {
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
+      () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
 
