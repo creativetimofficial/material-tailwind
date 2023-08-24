@@ -19,7 +19,9 @@ export function SubscriptionPopover() {
         </Typography>
         <div className="flex gap-2">
           <Input label="Email Address" />
-          <Button variant="gradient">Subscribe</Button>
+          <Button variant="gradient" className="flex-shrink-0">
+            Subscribe
+          </Button>
         </div>
       </PopoverContent>
     </Popover>
