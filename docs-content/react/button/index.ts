@@ -8,3 +8,4 @@ export * from "./button-sizes";
 export * from "./button-variants";
 export * from "./button-with-icon";
 export * from "./button-with-link";
+export * from "./button-loading";
