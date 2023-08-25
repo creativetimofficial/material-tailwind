@@ -76,16 +76,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       classnames(buttonBase, buttonSize, buttonVariant, {
           [objectsToString(base.fullWidth)]: fullWidth,
         },
-        { "flex items-center gap-3": loading },
+        { 
+          "flex items-center gap-2": loading,
+          "gap-3": size === 'lg',
+        },
       ),
       className,
     );
+
+    const spinnerClass = twMerge(classnames({
+      "w-4 h-4": true,
+      "w-5 h-5": size === 'lg',
+    }));
 
     // 5. return
     return (
       <button
         {...rest}
-        disabled={rest.disabled || loading}
+        disabled={rest.disabled ?? loading}
         ref={ref}
         className={classes}
         type={rest.type || "button"}
@@ -103,7 +111,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           return typeof onMouseDown === "function" && onMouseDown(e);
         }}
       >
-        {loading && <Spinner />}
+        {loading && <Spinner className={spinnerClass} />}
         {children}
       </button>
     );
