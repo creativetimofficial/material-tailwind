@@ -117,7 +117,7 @@ export function PageMap({ type, frontMatter }) {
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
-              Join un on Discord
+              Join us on Discord
             </a>
           </li>
           <li>
