@@ -1,5 +1,27 @@
 export const releases = [
   {
+    version: "2.1.1",
+    date: "August 24, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.1",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Update typography types",
+          "Fix grammer and typo issues"
+        ],
+      },
+      {
+        title: "docs updates",
+        data: [
+          "Fix outlined issue on examples.",
+          "Fix code issues for components demo.",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.1.0",
     date: "August 9, 2023",
     name: "@material-tailwind/react",
