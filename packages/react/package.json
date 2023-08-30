@@ -1,0 +1,35 @@
+{
+  "name": "@material-tailwind/react",
+  "version": "3.0.0",
+  "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "tsup src -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/material-tailwind.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/material-tailwind/issues"
+  },
+  "homepage": "https://github.com/creativetimofficial/material-tailwind#readme",
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "clsx": "1.2.1",
+    "deepmerge": "^4.3.1",
+    "material-ripple-effects": "^2.0.1",
+    "react-spring": "^9.7.2",
+    "tailwind-merge": "1.8.1"
+  }
+}

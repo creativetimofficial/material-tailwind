@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "declaration": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@utils": ["./src/utils/index.ts"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@theme": ["./src/theme/index.ts"],
+      "@types": ["./src/types/index.ts"]
+    }
+  },
+  "include": ["src", "index.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
