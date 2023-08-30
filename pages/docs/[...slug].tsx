@@ -329,11 +329,17 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     }
   }, [frameworkType, slug]);
 
+  const canonical = slug.join("/");
+
   return (
     <>
       <Head>
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
+        <link
+          rel="canonical"
+          href={`https://www.material-tailwind.com/docs/${canonical}`}
+        />
       </Head>
       <Alert className="w-full justify-center rounded-none">
         <div className="flex  items-center justify-center gap-4">
