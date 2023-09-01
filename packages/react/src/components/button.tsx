@@ -1,36 +1,73 @@
 import React from "react";
-import clsx from "clsx";
+
+// @utils
 import { twMerge } from "tailwind-merge";
-import buttonTheme from "../theme/button";
 import Ripple from "material-ripple-effects";
+
+// @context
+import { useTheme } from "src/context";
+
+// @theme
+import { buttonTheme } from "src/theme";
+
+// @types
 import type { BaseComponent } from "@types";
 
 export interface ButtonProps extends BaseComponent<"button"> {
   ripple?: boolean;
   rounded?: boolean;
   fullWidth?: boolean;
+  className?: string;
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/button) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/button#button-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/button#button-theme)
+ *
+ * @example
+ * ```tsx
+ * import { Button } from "@material-tailwind/react";
+ *
+ * export default function Example() {
+ *  return <Button>Button</Button>;
+ * }
+ * ```
+ */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { color, variant, size, ripple, rounded, fullWidth, children, ...rest },
+    {
+      color,
+      variant,
+      size,
+      ripple,
+      rounded,
+      fullWidth,
+      className,
+      children,
+      ...rest
+    },
     ref,
   ) => {
-    size ??= "md";
-    variant ??= "solid";
-    color ??= "primary";
-    ripple ??= true;
+    const contextTheme = useTheme();
+    const theme = contextTheme?.button ?? buttonTheme;
+    const defaultProps = contextTheme?.button?.defaultProps;
+
+    size ??= (defaultProps?.size as ButtonProps["size"]) ?? "md";
+    ripple ??= (defaultProps?.ripple as ButtonProps["ripple"]) ?? true;
+    color ??= (defaultProps?.color as ButtonProps["color"]) ?? "primary";
+    variant ??= (defaultProps?.variant as ButtonProps["variant"]) ?? "solid";
+    fullWidth ??=
+      (defaultProps?.fullWidth as ButtonProps["fullWidth"]) ?? false;
 
     const rippleEffect = ripple !== undefined && new Ripple();
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       const onClick = rest?.onClick;
       const isDarkRipple =
-        variant === "ghost" ||
-        variant === "outline" ||
-        color === "secondary" ||
-        color === "warning";
+        variant === "ghost" || color === "secondary" || color === "warning";
 
       if (ripple) {
         rippleEffect.create(e, isDarkRipple ? "dark" : "light");
@@ -40,11 +77,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const styles = twMerge(
-      buttonTheme.baseStyle,
-      buttonTheme["size"][size],
-      buttonTheme["variant"][variant][color],
-      rounded && buttonTheme["rounded"],
-      fullWidth && buttonTheme["fullWidth"],
+      theme.baseStyle,
+      theme["size"][size],
+      theme["variant"][variant][color],
+      rounded && theme["rounded"],
+      fullWidth && theme["fullWidth"],
+      className,
     );
 
     return (

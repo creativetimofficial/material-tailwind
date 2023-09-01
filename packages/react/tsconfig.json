@@ -18,10 +18,12 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
+      "@theme": ["src/theme/index.ts"],
       "@utils": ["./src/utils/index.ts"],
       "@hooks": ["./src/hooks/index.ts"],
-      "@theme": ["./src/theme/index.ts"],
-      "@types": ["./src/types/index.ts"]
+      "@types": ["./src/types/index.ts"],
+      "@context": ["src/context/index.tsx"],
+      "@components": ["src/components/index.ts"]
     }
   },
   "include": ["src", "index.d.ts"],

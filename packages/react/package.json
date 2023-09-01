@@ -2,10 +2,11 @@
   "name": "@material-tailwind/react",
   "version": "3.0.0",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "tsup src --dts",
-    "dev": "tsup src -- --watch"
+    "dev": "tsup src --watch"
   },
   "repository": {
     "type": "git",
