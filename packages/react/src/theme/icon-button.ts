@@ -1,19 +1,17 @@
-export const buttonTheme = {
+export const iconButtonTheme = {
   defaultProps: {
     size: "md",
     color: "primary",
     variant: "solid",
     ripple: true,
-    fullWidth: false,
   },
   baseStyle:
-    "inline-block border align-middle select-none font-sans font-medium text-center transition-all duration-300 disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
+    "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
   rounded: "rounded-full",
-  fullWidth: "block w-full",
   size: {
-    sm: "text-sm leading-none py-2 px-2.5 rounded-md",
-    md: "text-sm leading-none py-2.5 px-3.5 rounded-md",
-    lg: "text-base leading-none py-3.5 px-5 rounded-lg",
+    sm: "text-sm leading-none min-w-[32px] min-h-[32px] rounded-md",
+    md: "text-sm leading-none min-w-[36px] min-h-[36px] rounded-md",
+    lg: "text-base leading-none min-w-[46px] min-h-[46px] rounded-lg",
   },
   variant: {
     ghost: {
@@ -71,4 +69,4 @@ export const buttonTheme = {
   },
 };
 
-export default buttonTheme;
+export default iconButtonTheme;
