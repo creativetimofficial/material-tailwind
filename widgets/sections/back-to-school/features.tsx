@@ -25,7 +25,7 @@ const DATA = [
 
 export function BTSFeatures() {
   return (
-    <section className="px-4 py-56">
+    <section className="px-4 pb-24 pt-56">
       <div className="container mx-auto">
         <div className="mx-auto mb-10 text-center lg:w-10/12 xl:w-11/12">
           <Typography variant="h3" className="mb-5 text-center text-primary">
