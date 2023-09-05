@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Typography, Button, Card } from "@material-tailwind/react";
+import { Typography, Card } from "@material-tailwind/react";
 
 const DATA = [
   {
@@ -255,7 +255,7 @@ export function Components() {
               </Card>
               <Typography
                 variant="h6"
-                className="mt-3 ml-1.5 text-gray-600 transition-colors peer-hover:text-primary"
+                className="ml-1.5 mt-3 text-gray-600 transition-colors peer-hover:text-primary"
               >
                 {title}
               </Typography>

@@ -20,16 +20,18 @@ export default function Presentation() {
     <>
       <Head>
         <title>
-          Material Tailwind - Easy-to-use Tailwind CSS components library with React and Material Design
+          Material Tailwind - Easy-to-use Tailwind CSS components library with
+          React and Material Design
         </title>
         <link rel="canonical" href="https://www.material-tailwind.com" />
         <meta
           name="description"
           content="Material Tailwind is a components library that features multiple React & HTML components, all written with Tailwind CSS classes and Material Design guidelines."
         />
-        <meta 
-          name="title" 
-          content="Material Tailwind - Easy-to-use Tailwind CSS components library with React and Material Design" />
+        <meta
+          name="title"
+          content="Material Tailwind - Easy-to-use Tailwind CSS components library with React and Material Design"
+        />
         <meta
           name="keywords"
           content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
@@ -37,9 +39,9 @@ export default function Presentation() {
       </Head>
       <Alert className="w-full justify-center rounded-none">
         <div className="flex  items-center justify-center gap-4">
-          NEW | Material Tailwind PRO, a comprehensive compilation of 200+
-          blocks, now available for your use.
-          <Link href="/blocks">
+          🎉 Back to School 🎉 - 10 Versatile Material Tailwind Templates for
+          all Developer Needs at a Special Price ⏰
+          <Link href="/back-to-school">
             <Button size="sm" color="white">
               check out
             </Button>

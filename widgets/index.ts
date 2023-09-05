@@ -31,3 +31,8 @@ export * from "./sections/community";
 export * from "./sections/subscribe";
 export * from "./sections/components";
 export * from "./sections/integrations";
+export * from "./sections/back-to-school/hero";
+export * from "./sections/back-to-school/features";
+export * from "./sections/back-to-school/templates";
+export * from "./sections/back-to-school/pricing";
+export * from "./sections/back-to-school/faq";
