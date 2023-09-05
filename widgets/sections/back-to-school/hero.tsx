@@ -19,7 +19,9 @@ export function BTSHero() {
           variant="h1"
           className="relative mx-auto mb-6 mt-10 text-center text-4xl font-black !leading-tight tracking-normal text-primary md:text-5xl lg:max-w-5xl"
         >
-          Back to School is Here! Access our Exclusive Web Templates
+          Back to School is Here!
+          <br />
+          Access our Exclusive Web Templates
         </Typography>
         <Typography className="md:text-md relative mx-auto text-center text-lg font-normal leading-normal !text-gray-600 lg:max-w-5xl">
           Our exclusive &quot;Back to School&quot; Campaign has arrived, and

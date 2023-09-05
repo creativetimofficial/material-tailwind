@@ -49,35 +49,34 @@ export function BTSFeatures() {
         </div>
         <div className="mt-28 grid gap-6 md:grid-cols-1 lg:grid-cols-3">
           {DATA.map(({ title, description, img }, i) => (
-            <Link key={i} href="/blocks">
-              <Card
-                color="white"
-                shadow={false}
-                className="relative h-full w-full overflow-hidden border-[1.5px] border-blue-gray-50"
-              >
-                <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
-                <CardBody className="relative flex h-full flex-col justify-between p-6">
-                  <div>
-                    <Typography
-                      variant="h2"
-                      className="font-semibold text-primary"
-                    >
-                      {title}
-                    </Typography>
-                    <Typography className="mt-1 w-10/12 font-normal !text-gray-600">
-                      {description}
-                    </Typography>
-                  </div>
-                  <Image
-                    src={img}
-                    width={768}
-                    height={768}
-                    className="mt-6 h-64 w-full rounded-lg object-cover"
-                    alt="card-image"
-                  />
-                </CardBody>
-              </Card>
-            </Link>
+            <Card
+              key={i}
+              color="white"
+              shadow={false}
+              className="relative h-full w-full overflow-hidden border-[1.5px] border-blue-gray-50"
+            >
+              <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+              <CardBody className="relative flex h-full flex-col justify-between p-6">
+                <div>
+                  <Typography
+                    variant="h2"
+                    className="font-semibold text-primary"
+                  >
+                    {title}
+                  </Typography>
+                  <Typography className="mt-1 w-10/12 font-normal !text-gray-600">
+                    {description}
+                  </Typography>
+                </div>
+                <Image
+                  src={img}
+                  width={768}
+                  height={768}
+                  className="mt-6 h-64 w-full rounded-lg object-cover"
+                  alt="card-image"
+                />
+              </CardBody>
+            </Card>
           ))}
         </div>
       </div>
