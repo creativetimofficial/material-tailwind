@@ -86,7 +86,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     return (
-      <button ref={ref} className={styles} onClick={handleClick}>
+      <button {...rest} ref={ref} className={styles} onClick={handleClick}>
         {children}
       </button>
     );
