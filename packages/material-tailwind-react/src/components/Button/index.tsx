@@ -54,7 +54,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     color = color ?? defaultProps.color;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
     ripple = ripple ?? defaultProps.ripple;
-    className = twMerge(className, defaultProps.className);
+    className = twMerge(defaultProps.className, className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
