@@ -1,19 +1,21 @@
 import React from "react";
 
 // @utils
+import { mergeRefs } from "@utils";
 import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 
-// @context
-import { useTheme } from "src/context";
+// @hooks
+import { useTheme } from "@context";
 
 // @theme
-import { buttonTheme } from "src/theme";
+import { buttonTheme } from "@theme";
 
 // @types
 import type { BaseComponent } from "@types";
 
 export interface ButtonProps extends BaseComponent<"button"> {
+  as?: React.ElementType;
   ripple?: boolean;
   rounded?: boolean;
   fullWidth?: boolean;
@@ -39,6 +41,7 @@ export interface ButtonProps extends BaseComponent<"button"> {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      as,
       color,
       variant,
       size,
@@ -51,6 +54,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
+    const Element = as ?? "button";
     const contextTheme = useTheme();
     const theme = contextTheme?.button ?? buttonTheme;
     const defaultProps = contextTheme?.button?.defaultProps;
@@ -86,9 +90,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     return (
-      <button {...rest} ref={ref} className={styles} onClick={handleClick}>
+      <Element {...rest} ref={ref} className={styles} onClick={handleClick}>
         {children}
-      </button>
+      </Element>
     );
   },
 );

@@ -27,6 +27,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@react-aria/button": "^3.8.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "1.2.1",
     "deepmerge": "^4.3.1",
     "material-ripple-effects": "^2.0.1",

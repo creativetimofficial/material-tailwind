@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./packages/react/src/theme/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "./v3-components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
