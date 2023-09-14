@@ -1,5 +1,24 @@
 export const releases = [
   {
+    version: "2.1.2",
+    date: "September 14, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.2",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Add native event listeners for <SpeedDialAction />",
+          "Fix prop-types warning for <Badge />",
+        ],
+      },
+      {
+        title: "docs updates",
+        data: ["Fix the issue with countries select example."],
+      },
+    ],
+  },
+  {
     version: "2.1.1",
     date: "August 24, 2023",
     name: "@material-tailwind/react",
@@ -7,10 +26,7 @@ export const releases = [
     content: [
       {
         title: "patch changes",
-        data: [
-          "Update typography types",
-          "Fix grammer and typo issues"
-        ],
+        data: ["Update typography types", "Fix grammer and typo issues"],
       },
       {
         title: "docs updates",

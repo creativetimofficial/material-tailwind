@@ -13,7 +13,7 @@ import { propTypesChildren, propTypesClassName } from "../../types/components/sp
 export interface SpeedDialActionProps extends React.ComponentProps<"button"> {}
 
 export const SpeedDialAction = React.forwardRef<HTMLButtonElement, SpeedDialActionProps>(
-  ({ className, children }, ref) => {
+  ({ className, children, ...rest }, ref) => {
     // 1. init
     const {
       speedDialAction: { styles },
@@ -24,7 +24,7 @@ export const SpeedDialAction = React.forwardRef<HTMLButtonElement, SpeedDialActi
 
     // 3. return
     return (
-      <button ref={ref} className={classes}>
+      <button {...rest} ref={ref} className={classes}>
         {children}
       </button>
     );

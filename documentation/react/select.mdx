@@ -317,7 +317,9 @@ export function CountriesSelect() {
         selected={(element) =>
           element &&
           React.cloneElement(element, {
-            className: "flex items-center px-0 gap-2 pointer-events-none",
+            disabled: true,
+            className:
+              "flex items-center opacity-100 px-0 gap-2 pointer-events-none",
           })
         }
       >

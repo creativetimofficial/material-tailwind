@@ -119,11 +119,11 @@ Badge.propTypes = {
   color: PropTypes.oneOf(propTypesColor),
   invisible: propTypesInvisible,
   withBorder: propTypesWithBorder,
-  overlap: propTypesOverlap,
+  overlap: PropTypes.oneOf(propTypesOverlap),
   className: propTypesClassName,
   content: propTypesContent,
   children: propTypesChildren,
-  placement: propTypesPlacement,
+  placement: PropTypes.oneOf(propTypesPlacement),
   containerProps: propTypesContainerProps,
   containerRef: propTypesContainerRef,
 };

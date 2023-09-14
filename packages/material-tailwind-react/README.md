@@ -1,5 +1,5 @@
 <a href="https://www.material-tailwind.com">
-    <img width="100%" src="https://www.material-tailwind.com/img/material-tailwind-thumbnail.jpg" alt="material-tailwind" style="border-radius: 24px" />
+    <img width="100%" src="https://www.material-tailwind.com/image/material-tailwind-readme.jpg" alt="material-tailwind" style="border-radius: 24px" />
     <h1 align="center">Material Tailwind</h1>
 </a>
 </br>
@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/npm/dt/@material-tailwind/react.svg" alt="Total Downloads">
   </a>
   <a href="https://github.com/creativetimofficial/material-tailwind/releases">
-    <img src="https://img.shields.io/badge/version-2.1.1-blue.svg" alt="Version" />
+    <img src="https://img.shields.io/badge/version-2.1.2-blue.svg" alt="Version" />
   </a>
   <a href="https://www.material-tailwind.com/docs/react/license">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="Licenese">

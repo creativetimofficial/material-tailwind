@@ -120,8 +120,8 @@ export function Navbar() {
             }}
             containerProps={{ className: "min-w-[100px]" }}
           />
-          <div className="absolute top-2/4 right-3.5 -translate-y-2/4">
-            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+          <div className="absolute right-3.5 top-2/4 -translate-y-2/4">
+            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pb-0 pt-px text-xs font-medium text-gray-900 shadow shadow-black/5">
               <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
                 ⌘
               </span>
@@ -147,7 +147,7 @@ export function Navbar() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="mt-[2.5px] !ml-0 h-3.5 w-3.5"
+                  className="!ml-0 mt-[2.5px] h-3.5 w-3.5"
                 >
                   <path
                     fillRule="evenodd"
@@ -195,7 +195,7 @@ export function Navbar() {
             </Typography>
             <hr className="mx-2 h-8 border-r border-primary/10" />
             <Chip
-              value="v2.1.1"
+              value="v2.1.2"
               variant="outlined"
               className="rounded-full border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
             />
