@@ -1,5 +1,5 @@
 <a href="https://www.material-tailwind.com">
-    <img width="100%" src="./public/img/material-tailwind-readme.jpg" alt="material-tailwind" style="border-radius: 24px" />
+    <img width="100%" src="./public/image/material-tailwind-readme.jpg" alt="material-tailwind" style="border-radius: 24px" />
     <h1 align="center">Material Tailwind</h1>
 </a>
 </br>
