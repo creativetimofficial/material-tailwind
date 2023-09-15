@@ -1,14 +1,13 @@
-import React, { JSXElementConstructor } from "react";
+import React from "react";
 
 // @utils
 import { twMerge } from "tailwind-merge";
-import Ripple from "material-ripple-effects";
 
 // @context
-import { useTheme } from "src/context";
+import { useTheme } from "@context";
 
 // @theme
-import { buttonGroupTheme } from "src/theme";
+import { buttonGroupTheme } from "@theme";
 
 // @types
 import type { BaseComponent } from "@types";

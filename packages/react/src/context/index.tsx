@@ -5,7 +5,7 @@ import { theme } from "src/theme";
 
 // @utils
 import merge from "deepmerge";
-import { parseObject, mergeTheme } from "legacy/utils";
+import { parseObject, mergeTheme } from "@utils";
 
 export const MaterialTailwindThemeContext = React.createContext<any>(theme);
 

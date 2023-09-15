@@ -12,3 +12,4 @@ yarn.lock
 pnpm-lock.yaml
 /dist
 .turbo
+/legacy

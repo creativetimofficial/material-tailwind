@@ -5,10 +5,10 @@ import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 
 // @context
-import { useTheme } from "src/context";
+import { useTheme } from "@context";
 
 // @theme
-import { iconButtonTheme } from "src/theme";
+import { iconButtonTheme } from "@theme";
 
 // @types
 import type { BaseComponent } from "@types";

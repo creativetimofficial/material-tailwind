@@ -1,7 +1,6 @@
 import React from "react";
 
 // @utils
-import { mergeRefs } from "legacy/utils";
 import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 
