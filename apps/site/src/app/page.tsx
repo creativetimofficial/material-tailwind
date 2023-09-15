@@ -1,5 +1,3 @@
 export default function Page() {
-return <div className="border border-slate-800 rounded-lg m-4">
-  Hello
-</div>;
+  return <div className="m-4 rounded-lg border border-slate-800">Hello</div>;
 }
