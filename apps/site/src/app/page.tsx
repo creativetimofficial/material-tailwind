@@ -1,3 +1,5 @@
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>;
+return <div className="border border-slate-800 rounded-lg m-4">
+  Hello
+</div>;
 }

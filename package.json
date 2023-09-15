@@ -1,10 +1,20 @@
 {
   "name": "material-tailwind",
-  "version": "0.0.0",
-  "homepage": "https://material-tailwind.com",
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
-  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/material-tailwind.git"
+  },
+   "author": {
+    "name": "sajadevo",
+    "url": "https://twitter.com/sajadevo_"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/material-tailwind/issues"
+  },
+  "homepage": "https://material-tailwind.com",
+  "private": true,
   "scripts": {
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -18,7 +28,7 @@
     "eslint-config-custom": "workspace:*",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
-    "turbo": "1.10.13"
+    "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0"
 }
