@@ -16,8 +16,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@utils": ["./utils/index.ts"],
-      "@widgets": ["./widgets/index.ts"],
+      "@utils": ["legacy/utils/index.ts"],
+      "@widgets": ["legacy/widgets/index.ts"],
       "@material-tailwind/react": [
         "./packages/material-tailwind-react/src/index.ts"
       ]
@@ -27,8 +27,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "public/material-tailwind-html.js",
-    "public/material-ripple-effects.js"
+    "legacy/public/material-tailwind-html.js",
+    "legacy/public/material-ripple-effects.js"
   ],
   "exclude": ["node_modules"]
 }

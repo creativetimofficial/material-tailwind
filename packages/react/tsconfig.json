@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -9,7 +10,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noFallthroughCasesInSwitch": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
