@@ -18,6 +18,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/back-to-school",
+        destination: "/blocks",
+        permanent: true,
+      },
+      {
         source: "/docs/react/theme/:slug*",
         destination: "/docs/react/:slug*",
         permanent: true,
@@ -38,6 +43,11 @@ const nextConfig = {
       },
       {
         source: "/blocks",
+        destination:
+          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+      },
+      {
+        source: "/back-to-school",
         destination:
           "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
       },
