@@ -1,0 +1,9 @@
+<div className="relative m-2 h-[calc(100vh-16px)] overflow-hidden rounded-xl border border-slate-200 p-0.5">
+      <span
+        aria-hidden="true"
+        className="content[''] bg-conic-gradient animate-gradient-spin absolute left-2/4 top-2/4 block w-[calc(100%*1.5)] -translate-x-2/4 -translate-y-2/4 rounded-full pb-[calc(100%*1.5)] duration-[5000]"
+      />
+      <div className="relative z-10 h-full w-full rounded-[9px] bg-white">
+        Hello
+      </div>
+    </div>

@@ -1,8 +1,11 @@
 // layout
 export * from "./layout/toc";
+export * from "./layout/docs";
 export * from "./layout/navbar";
 export * from "./layout/footer";
 export * from "./layout/sidenav";
 
 // docs components
-export * from "./docs-title";
+export * from "./brand";
+export * from "./vercel";
+export * from "./toggle-button";

@@ -11,6 +11,7 @@
   "dependencies": {
     "@docsearch/css": "3.5.1",
     "@docsearch/react": "3.5.1",
+    "clsx": "1.2.1",
     "gray-matter": "4.0.3",
     "iconoir-react": "^6.11.0",
     "material-ripple-effects": "2.0.1",
@@ -22,7 +23,9 @@
     "remark": "14.0.3",
     "remark-gfm": "3.0.1",
     "remark-mdx": "2.3.0",
-    "shiki": "0.11.1"
+    "scroll-into-view-if-needed": "3.1.0",
+    "shiki": "0.11.1",
+    "usehooks-ts": "2.9.1"
   },
   "devDependencies": {
     "@types/node": "18.11.18",

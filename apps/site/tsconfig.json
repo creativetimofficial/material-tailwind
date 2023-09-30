@@ -6,6 +6,7 @@
     "paths": {
       "@assets/*": ["./public/*"],
       "@hooks": ["src/hooks/index.ts"],
+      "@routes": ["src/routes.ts"],
       "@components": ["src/components/index.ts"]
     },
     "plugins": [
