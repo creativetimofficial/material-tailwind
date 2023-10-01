@@ -329,7 +329,10 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     }
   }, [frameworkType, slug]);
 
-  const canonical = slug.join("/").replace("html/", "react/");
+  const replaceMatch = ["html/what-is-tailwind-css", "html/license", "html/colors", "html/fonts", "html/shadows", "html/screens"];
+  const headLink = slug.join("/");
+  const matchTheSlug = replaceMatch.includes(headLink);
+  const canonical = matchTheSlug ? headLink.replace("html/", "react/") : headLink;
 
   return (
     <>
