@@ -329,7 +329,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     }
   }, [frameworkType, slug]);
 
-  const canonical = slug.join("/");
+  const canonical = slug.join("/").replace("html/", "react/");
 
   return (
     <>
