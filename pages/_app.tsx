@@ -13,7 +13,7 @@ import "@docsearch/css";
 import * as fbq from '../utils/fpixel'
 import { useRouter } from "next/router";
 
-function MyApp({ Component, pageProps }) {  
+function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {
