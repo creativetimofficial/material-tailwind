@@ -29,10 +29,13 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
+  const NewComponent = Component as any;
+  
   return (
     <Fragment>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <NewComponent {...pageProps} />
       </ThemeProvider>
 
       {/* Global Site Code Pixel - Facebook Pixel */}
