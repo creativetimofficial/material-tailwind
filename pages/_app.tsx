@@ -30,12 +30,10 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.events])
 
-  const NewComponent = Component as any;
-  
   return (
     <Fragment>
       <ThemeProvider>
-        <NewComponent {...pageProps} />
+        <Component {...pageProps} />
       </ThemeProvider>
 
       {/* Global Site Code Pixel - Facebook Pixel */}
