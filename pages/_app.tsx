@@ -10,7 +10,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import "/styles/globals.css";
 import "@docsearch/css";
 
-import * as fbq from '../utils/fpixel'
+// import * as fbq from '../utils/fpixel'
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {  
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       </ThemeProvider>
 
       {/* Global Site Code Pixel - Facebook Pixel */}
-      <Script
+{/*       <Script
         id="fb-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
             fbq('init', ${fbq.FB_PIXEL_ID});
           `,
         }}
-      />
+      /> */}
 
       <Script id="google-analytics" strategy="afterInteractive">
         {`
