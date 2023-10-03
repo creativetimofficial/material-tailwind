@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
 // next.js components
 import Script from "next/script";
@@ -6,11 +6,28 @@ import Script from "next/script";
 // @material-tailwind components
 import { ThemeProvider } from "@material-tailwind/react";
 
+import { useRouter } from 'next/router'
+
 // styles
 import "/styles/globals.css";
 import "@docsearch/css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('111649226022273') // facebookPixelId
+        ReactPixel.pageView()
+
+        router.events.on('routeChangeComplete', () => {
+          ReactPixel.pageView()
+        })
+      })
+  }, [router.events])
+  
   return (
     <Fragment>
       <ThemeProvider>
