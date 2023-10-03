@@ -29,6 +29,6 @@
     "**/*.tsx",
     "public/material-tailwind-html.js",
     "public/material-ripple-effects.js"
-  ],
+, "utils/fpixel.js"  ],
   "exclude": ["node_modules"]
 }
