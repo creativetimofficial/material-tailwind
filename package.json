@@ -56,6 +56,7 @@
     "cross-spawn": "7.0.3",
     "eslint": "8.31.0",
     "eslint-config-next": "12.3.4",
+    "eslint-config-prettier": "8.5.0",
     "fs": "0.0.1-security",
     "kolorist": "1.8.0",
     "minimist": "1.2.8",
