@@ -21,20 +21,21 @@ export function Subscribe() {
             </div>
             <div className="ml-auto w-full px-4 lg:w-6/12">
               <form
-                action="https://material-tailwind.us1.list-manage.com/subscribe/post?u=e97df4875fc1b2fb28f609b88&amp;id=628d9b1722"
+                action="https://gmail.us13.list-manage.com/subscribe/post?u=2343d646c60fd2780c7858d3b&amp;id=aae21e5fd9&amp;f_id=00c88fe4f0"
                 method="post"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
-                target="_blank"
                 className="mt-4 flex flex-col justify-end gap-4 md:flex-row lg:mt-0"
+                target="_self"
+                noValidate
               >
                 <div className="mt-6 w-full lg:mt-0 lg:w-8/12">
                   <Input
                     required
                     type="email"
-                    size="lg"
                     name="EMAIL"
                     id="mce-EMAIL"
+                    size="lg"
                     placeholder="Enter your email"
                     className="!border-[1.5px] !border-blue-gray-50 !bg-white py-6 !px-4 text-primary !ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-primary focus:ring-primary/20"
                     labelProps={{
@@ -44,11 +45,11 @@ export function Subscribe() {
                   />
                 </div>
                 <Button
+                  size="lg"
+                  color="blue-gray"
                   type="submit"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  size="lg"
-                  color="blue-gray"
                   className="mt-2 shrink-0 bg-primary text-base font-medium capitalize md:mt-0 md:w-auto"
                 >
                   Subscribe
