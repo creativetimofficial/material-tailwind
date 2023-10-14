@@ -17,55 +17,49 @@ export function LongDialog() {
     <>
       <Button onClick={handleOpen}>Long Dialog</Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Long modal</DialogHeader>
-        <DialogBody divider className="h-[40rem] overflow-scroll">
+        <DialogHeader>Long Dialog</DialogHeader>
+        <DialogBody className="h-[42rem] overflow-scroll">
           <Typography className="font-normal">
-            I always felt like I could do anything. That&apos;s the main thing
-            people are controlled by! Thoughts- their perception of themselves!
-            They&apos;re slowed down by their perception of themselves. If
-            you&apos;re taught you can&apos;t do anything, you won&apos;t do
-            anything. I was taught I could do everything. As we live, our hearts
-            turn colder. Cause pain is what we go through as we become older. We
-            get insulted by others, lose trust for those others. We get back
-            stabbed by friends. It becomes harder for us to give others a hand.
-            We get our heart broken by people we love, even that we give them
-            all we have. Then we lose family over time. What else could rust the
-            heart more over time? Blackgold.
+            I&apos;ve always had unwavering confidence in my abilities, and I
+            believe our thoughts and self-perception are the primary forces that
+            shape us. Many people limit themselves by their own self-doubt,
+            slowing their progress. Fortunately, I was raised with the belief
+            that I could achieve anything.
             <br />
             <br />
-            We&apos;re not always in the position that we want to be at.
-            We&apos;re constantly growing. We&apos;re constantly making
-            mistakes. We&apos;re constantly trying to express ourselves and
-            actualize our dreams. If you have the opportunity to play this game
-            of life you need to appreciate every moment. A lot of people
-            don&apos;t appreciate the moment until it&apos;s passed.
+            As we journey through life, we often encounter challenges that
+            harden our hearts. Pain, insults, broken trust, and betrayal can
+            make us hesitant to help others. Love can lead to heartbreak, and
+            time can distance us from family. These experiences can gradually
+            erode our optimism.
             <br /> <br />
-            There&apos;s nothing I really wanted to do in life that I
-            wasn&apos;t able to get good at. That&apos;s my skill. I&apos;m not
-            really specifically talented at anything except for the ability to
-            learn. That&apos;s what I do. That&apos;s what I&apos;m here for.
-            Don&apos;t be afraid to be wrong because you can&apos;t learn
-            anything from a compliment.
+            Life doesn&apos;t always place us where we want to be. We grow, make
+            mistakes, and strive to express ourselves and fulfill our dreams. If
+            we&apos;re fortunate enough to participate in life&apos;s journey,
+            we should cherish every moment. Regrettably, some only recognize the
+            value of a moment after it&apos;s passed.
             <br /> <br />
-            It really matters and then like it really doesn&apos;t matter. What
-            matters is the people who are sparked by it. And the people who are
-            like offended by it, it doesn&apos;t matter. Because it&apos;s about
-            motivating the doers. Because I&apos;m here to follow my dreams and
-            inspire other people to follow their dreams, too.
+            One thing I&apos;ve learned is that I can excel at anything I set my
+            mind to. My skill is my ability to learn. I&apos;m here to learn, to
+            grow, and to inspire others to do the same. Don&apos;t fear making
+            mistakes; they teach us far more than compliments ever will.
+            Ultimately, what truly matters is how our actions inspire and
+            motivate others. Some will be ignited by our endeavors, while others
+            may be offended—it&apos;s all part of the process. I'm here to
+            pursue my dreams and encourage others to do the same.
             <br /> <br />
-            The time is now for it to be okay to be great. People in this world
-            shun people for being great. For being a bright color. For standing
-            out. But the time is now to be okay to be the greatest you. Would
-            you believe in what you believe in, if you were the only one who
-            believed it?
+            Now is the time to embrace greatness without fear of judgment. Some
+            may resent those who shine brightly or stand out, but it&apos;s time
+            to be the best version of ourselves. Do you have faith in your
+            beliefs, even if you&apos;re the only one who does?
           </Typography>
         </DialogBody>
         <DialogFooter className="space-x-2">
-          <Button variant="outlined" color="red" onClick={handleOpen}>
-            close
+          <Button variant="text" color="blue-gray" onClick={handleOpen}>
+            cancel
           </Button>
           <Button variant="gradient" color="green" onClick={handleOpen}>
-            Save changes
+            confirm
           </Button>
         </DialogFooter>
       </Dialog>

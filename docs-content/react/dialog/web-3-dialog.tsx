@@ -20,9 +20,14 @@ export function Web3Dialog() {
       <Button onClick={handleOpen}>Connect Wallet</Button>
       <Dialog size="xs" open={open} handler={handleOpen}>
         <DialogHeader className="justify-between">
-          <Typography variant="h5" color="blue-gray">
-            Connect a Wallet
-          </Typography>
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Connect a Wallet
+            </Typography>
+            <Typography color="gray" variant="paragraph">
+              Choose which card you want to connect
+            </Typography>
+          </div>
           <IconButton
             color="blue-gray"
             size="sm"
@@ -45,85 +50,77 @@ export function Web3Dialog() {
             </svg>
           </IconButton>
         </DialogHeader>
-        <DialogBody className="overflow-y-scroll pr-2">
+        <DialogBody className="overflow-y-scroll !px-5">
           <div className="mb-6">
             <Typography
-              variant="small"
-              color="gray"
-              className="font-semibold opacity-70"
+              variant="paragraph"
+              color="blue-gray"
+              className="py-3 font-semibold uppercase opacity-70"
             >
               Popular
             </Typography>
-            <ul className="mt-1 -ml-2 flex flex-col gap-1">
-              <MenuItem className="flex items-center gap-3">
+            <ul className="mt-3 -ml-2 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/metamask.svg"
                   alt="metamast"
                   className="h-6 w-6"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  MetaMask
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with MetaMask
                 </Typography>
               </MenuItem>
-              <MenuItem className="flex items-center gap-3">
+              <MenuItem className="mb-1 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/coinbase.svg"
                   alt="metamast"
                   className="h-6 w-6 rounded-md"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  Coinbase Wallet
-                </Typography>
-              </MenuItem>
-              <MenuItem className="flex items-center gap-3">
-                <img
-                  src="/icons/connect-wallet.svg"
-                  alt="metamast"
-                  className="h-6 w-6 rounded-md"
-                />
-                <Typography color="blue-gray" variant="h6">
-                  Connect Wallet
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Coinbase
                 </Typography>
               </MenuItem>
             </ul>
           </div>
           <div>
             <Typography
-              variant="small"
-              color="gray"
-              className="font-semibold opacity-70"
+              variant="paragraph"
+              color="blue-gray"
+              className="py-4 font-semibold uppercase opacity-70"
             >
-              More
+              Other
             </Typography>
-            <ul className="mt-1 -ml-2.5 flex flex-col gap-1">
-              <MenuItem className="flex items-center gap-3">
+            <ul className="mt-4 -ml-2.5 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/trust-wallet.svg"
                   alt="metamast"
                   className="h-7 w-7 rounded-md border border-blue-gray-50"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  Trust Wallet
-                </Typography>
-              </MenuItem>
-              <MenuItem className="flex items-center gap-3">
-                <img
-                  src="/icons/argent-wallet.svg"
-                  alt="metamast"
-                  className="h-7 w-7 rounded-md border border-blue-gray-50"
-                />
-                <Typography color="blue-gray" variant="h6">
-                  Coinbase Wallet
+                <Typography
+                  className="uppsecase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Trust Wallet
                 </Typography>
               </MenuItem>
             </ul>
           </div>
         </DialogBody>
-        <DialogFooter className="justify-between gap-2 border-t border-blue-gray-50">
+        <DialogFooter className="justify-between gap-2">
           <Typography variant="small" color="gray" className="font-normal">
             New to Ethereum wallets?
           </Typography>
-          <Button variant="text" size="sm">
+          <Button variant="outlined" size="sm">
             Learn More
           </Button>
         </DialogFooter>

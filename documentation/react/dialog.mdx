@@ -69,7 +69,7 @@ export function DialogDefault() {
       </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Its a simple dialog.</DialogHeader>
-        <DialogBody divider>
+        <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
           blood sweat and tears, and I&apos;m never giving up, I&apos;m just
@@ -156,7 +156,7 @@ export function DialogSizes() {
         handler={handleOpen}
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
-        <DialogBody divider>
+        <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
           blood sweat and tears, and I&apos;m never giving up, I&apos;m just
@@ -224,7 +224,7 @@ export function DialogCustomAnimation() {
         }}
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
-        <DialogBody divider>
+        <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
           blood sweat and tears, and I&apos;m never giving up, I&apos;m just
@@ -287,19 +287,26 @@ export function DialogWithForm() {
         className="bg-transparent shadow-none"
       >
         <Card className="mx-auto w-full max-w-[24rem]">
-          <CardHeader
-            variant="gradient"
-            color="blue"
-            className="mb-4 grid h-28 place-items-center"
-          >
-            <Typography variant="h3" color="white">
+          <CardBody className="flex flex-col gap-4">
+            <Typography variant="h4" color="blue-gray">
               Sign In
             </Typography>
-          </CardHeader>
-          <CardBody className="flex flex-col gap-4">
+            <Typography
+              className="mb-3 font-normal"
+              variant="paragraph"
+              color="gray"
+            >
+              Enter your email and password to Sign In.
+            </Typography>
+            <Typography className="-mb-2" variant="h6">
+              Your Email
+            </Typography>
             <Input label="Email" size="lg" />
+            <Typography className="-mb-2" variant="h6">
+              Your Password
+            </Typography>
             <Input label="Password" size="lg" />
-            <div className="-ml-2.5">
+            <div className="-ml-2.5 -mt-3">
               <Checkbox label="Remember Me" />
             </div>
           </CardBody>
@@ -307,13 +314,13 @@ export function DialogWithForm() {
             <Button variant="gradient" onClick={handleOpen} fullWidth>
               Sign In
             </Button>
-            <Typography variant="small" className="mt-6 flex justify-center">
+            <Typography variant="small" className="mt-4 flex justify-center">
               Don&apos;t have an account?
               <Typography
                 as="a"
                 href="#signup"
                 variant="small"
-                color="blue"
+                color="blue-gray"
                 className="ml-1 font-bold"
                 onClick={handleOpen}
               >
@@ -371,7 +378,7 @@ export function DialogWithImage() {
           src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
         />
       </Card>
-      <Dialog size="xl" open={open} handler={handleOpen}>
+       <Dialog size="xl" open={open} handler={handleOpen}>
         <DialogHeader className="justify-between">
           <div className="flex items-center gap-3">
             <Avatar
@@ -393,7 +400,7 @@ export function DialogWithImage() {
                 color="gray"
                 className="text-xs font-normal"
               >
-                @canwu
+                @emmaroberts
               </Typography>
             </div>
           </div>
@@ -413,15 +420,15 @@ export function DialogWithImage() {
                 <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
               </svg>
             </IconButton>
-            <Button color="green" size="sm">
+            <Button color="gray" size="sm">
               Free Download
             </Button>
           </div>
         </DialogHeader>
-        <DialogBody divider={true} className="p-0">
+        <DialogBody>
           <img
             alt="nature"
-            className="h-[48rem] w-full object-cover object-center"
+            className="h-[48rem] w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
           />
         </DialogBody>
@@ -448,20 +455,8 @@ export function DialogWithImage() {
             size="sm"
             variant="outlined"
             color="blue-gray"
-            className="flex items-center gap-3"
+            className="mr-5 flex items-center"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                fillRule="evenodd"
-                d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"
-                clipRule="evenodd"
-              />
-            </svg>
             Share
           </Button>
         </DialogFooter>
@@ -502,11 +497,16 @@ export function Web3Dialog() {
   return (
     <>
       <Button onClick={handleOpen}>Connect Wallet</Button>
-      <Dialog size="xs" open={open} handler={handleOpen}>
+    <Dialog size="xs" open={open} handler={handleOpen}>
         <DialogHeader className="justify-between">
-          <Typography variant="h5" color="blue-gray">
-            Connect a Wallet
-          </Typography>
+          <div>
+            <Typography variant="h5" color="blue-gray">
+              Connect a Wallet
+            </Typography>
+            <Typography color="gray" variant="paragraph">
+              Choose which card you want to connect
+            </Typography>
+          </div>
           <IconButton
             color="blue-gray"
             size="sm"
@@ -529,85 +529,77 @@ export function Web3Dialog() {
             </svg>
           </IconButton>
         </DialogHeader>
-        <DialogBody className="overflow-y-scroll pr-2">
+        <DialogBody className="overflow-y-scroll !px-5">
           <div className="mb-6">
             <Typography
-              variant="small"
-              color="gray"
-              className="font-semibold opacity-70"
+              variant="paragraph"
+              color="blue-gray"
+              className="py-3 font-semibold uppercase opacity-70"
             >
               Popular
             </Typography>
-            <ul className="mt-1 -ml-2 flex flex-col gap-1">
-              <MenuItem className="flex items-center gap-3">
+            <ul className="mt-3 -ml-2 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/metamask.svg"
                   alt="metamast"
                   className="h-6 w-6"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  MetaMask
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with MetaMask
                 </Typography>
               </MenuItem>
-              <MenuItem className="flex items-center gap-3">
+              <MenuItem className="mb-1 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/coinbase.svg"
                   alt="metamast"
                   className="h-6 w-6 rounded-md"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  Coinbase Wallet
-                </Typography>
-              </MenuItem>
-              <MenuItem className="flex items-center gap-3">
-                <img
-                  src="/icons/connect-wallet.svg"
-                  alt="metamast"
-                  className="h-6 w-6 rounded-md"
-                />
-                <Typography color="blue-gray" variant="h6">
-                  Connect Wallet
+                <Typography
+                  className="uppercase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Coinbase
                 </Typography>
               </MenuItem>
             </ul>
           </div>
           <div>
             <Typography
-              variant="small"
-              color="gray"
-              className="font-semibold opacity-70"
+              variant="paragraph"
+              color="blue-gray"
+              className="py-4 font-semibold uppercase opacity-70"
             >
-              More
+              Other
             </Typography>
-            <ul className="mt-1 -ml-2.5 flex flex-col gap-1">
-              <MenuItem className="flex items-center gap-3">
+            <ul className="mt-4 -ml-2.5 flex flex-col gap-1">
+              <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="/icons/trust-wallet.svg"
                   alt="metamast"
                   className="h-7 w-7 rounded-md border border-blue-gray-50"
                 />
-                <Typography color="blue-gray" variant="h6">
-                  Trust Wallet
-                </Typography>
-              </MenuItem>
-              <MenuItem className="flex items-center gap-3">
-                <img
-                  src="/icons/argent-wallet.svg"
-                  alt="metamast"
-                  className="h-7 w-7 rounded-md border border-blue-gray-50"
-                />
-                <Typography color="blue-gray" variant="h6">
-                  Coinbase Wallet
+                <Typography
+                  className="uppsecase"
+                  color="blue-gray"
+                  variant="h6"
+                >
+                  Connect with Trust Wallet
                 </Typography>
               </MenuItem>
             </ul>
           </div>
         </DialogBody>
-        <DialogFooter className="justify-between gap-2 border-t border-blue-gray-50">
+        <DialogFooter className="justify-between gap-2">
           <Typography variant="small" color="gray" className="font-normal">
             New to Ethereum wallets?
           </Typography>
-          <Button variant="text" size="sm">
+          <Button variant="outlined" size="sm">
             Learn More
           </Button>
         </DialogFooter>
@@ -645,55 +637,49 @@ export function LongDialog() {
     <>
       <Button onClick={handleOpen}>Long Dialog</Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Long modal</DialogHeader>
-        <DialogBody divider className="h-[40rem] overflow-scroll">
+        <DialogHeader>Long Dialog</DialogHeader>
+        <DialogBody className="h-[42rem] overflow-scroll">
           <Typography className="font-normal">
-            I always felt like I could do anything. That&apos;s the main thing
-            people are controlled by! Thoughts- their perception of themselves!
-            They&apos;re slowed down by their perception of themselves. If
-            you&apos;re taught you can&apos;t do anything, you won&apos;t do
-            anything. I was taught I could do everything. As we live, our hearts
-            turn colder. Cause pain is what we go through as we become older. We
-            get insulted by others, lose trust for those others. We get back
-            stabbed by friends. It becomes harder for us to give others a hand.
-            We get our heart broken by people we love, even that we give them
-            all we have. Then we lose family over time. What else could rust the
-            heart more over time? Blackgold.
+            I&apos;ve always had unwavering confidence in my abilities, and I
+            believe our thoughts and self-perception are the primary forces that
+            shape us. Many people limit themselves by their own self-doubt,
+            slowing their progress. Fortunately, I was raised with the belief
+            that I could achieve anything.
             <br />
             <br />
-            We&apos;re not always in the position that we want to be at.
-            We&apos;re constantly growing. We&apos;re constantly making
-            mistakes. We&apos;re constantly trying to express ourselves and
-            actualize our dreams. If you have the opportunity to play this game
-            of life you need to appreciate every moment. A lot of people
-            don&apos;t appreciate the moment until it&apos;s passed.
+            As we journey through life, we often encounter challenges that
+            harden our hearts. Pain, insults, broken trust, and betrayal can
+            make us hesitant to help others. Love can lead to heartbreak, and
+            time can distance us from family. These experiences can gradually
+            erode our optimism.
             <br /> <br />
-            There&apos;s nothing I really wanted to do in life that I
-            wasn&apos;t able to get good at. That&apos;s my skill. I&apos;m not
-            really specifically talented at anything except for the ability to
-            learn. That&apos;s what I do. That&apos;s what I&apos;m here for.
-            Don&apos;t be afraid to be wrong because you can&apos;t learn
-            anything from a compliment.
+            Life doesn&apos;t always place us where we want to be. We grow, make
+            mistakes, and strive to express ourselves and fulfill our dreams. If
+            we&apos;re fortunate enough to participate in life&apos;s journey,
+            we should cherish every moment. Regrettably, some only recognize the
+            value of a moment after it&apos;s passed.
             <br /> <br />
-            It really matters and then like it really doesn&apos;t matter. What
-            matters is the people who are sparked by it. And the people who are
-            like offended by it, it doesn&apos;t matter. Because it&apos;s about
-            motivating the doers. Because I&apos;m here to follow my dreams and
-            inspire other people to follow their dreams, too.
+            One thing I&apos;ve learned is that I can excel at anything I set my
+            mind to. My skill is my ability to learn. I&apos;m here to learn, to
+            grow, and to inspire others to do the same. Don&apos;t fear making
+            mistakes; they teach us far more than compliments ever will.
+            Ultimately, what truly matters is how our actions inspire and
+            motivate others. Some will be ignited by our endeavors, while others
+            may be offended—it&apos;s all part of the process. I'm here to
+            pursue my dreams and encourage others to do the same.
             <br /> <br />
-            The time is now for it to be okay to be great. People in this world
-            shun people for being great. For being a bright color. For standing
-            out. But the time is now to be okay to be the greatest you. Would
-            you believe in what you believe in, if you were the only one who
-            believed it?
+            Now is the time to embrace greatness without fear of judgment. Some
+            may resent those who shine brightly or stand out, but it&apos;s time
+            to be the best version of ourselves. Do you have faith in your
+            beliefs, even if you&apos;re the only one who does?
           </Typography>
         </DialogBody>
         <DialogFooter className="space-x-2">
-          <Button variant="outlined" color="red" onClick={handleOpen}>
-            close
+          <Button variant="text" color="blue-gray" onClick={handleOpen}>
+            cancel
           </Button>
           <Button variant="gradient" color="green" onClick={handleOpen}>
-            Save changes
+            confirm
           </Button>
         </DialogFooter>
       </Dialog>
@@ -730,9 +716,14 @@ export function MessageDialog() {
   return (
     <>
       <Button onClick={handleOpen}>Message Dialog</Button>
-      <Dialog open={open} handler={handleOpen}>
+    <Dialog open={open} size="xs" handler={handleOpen}>
         <div className="flex items-center justify-between">
-          <DialogHeader>New message to @</DialogHeader>
+          <DialogHeader className="flex flex-col items-start">
+            {" "}
+            <Typography className="mb-1" variant="h4">
+              New message to @{" "}
+            </Typography>
+          </DialogHeader>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -747,17 +738,23 @@ export function MessageDialog() {
             />
           </svg>
         </div>
-        <DialogBody divider>
+        <DialogBody>
+          <Typography className="mb-10 -mt-7 " color="gray" variant="lead">
+            Write the message and then click button.
+          </Typography>
           <div className="grid gap-6">
+            <Typography className="-mb-1" color="blue-gray" variant="h6">
+              Username
+            </Typography>
             <Input label="Username" />
             <Textarea label="Message" />
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">
-          <Button variant="outlined" color="red" onClick={handleOpen}>
-            close
+          <Button variant="text" color="gray" onClick={handleOpen}>
+            cancel
           </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
+          <Button variant="gradient" color="gray" onClick={handleOpen}>
             send message
           </Button>
         </DialogFooter>
