@@ -15,7 +15,7 @@ export function MenuWithCheckbox() {
       }}
     >
       <MenuHandler>
-        <Button>Open Menu</Button>
+        <Button> Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem className="p-0">

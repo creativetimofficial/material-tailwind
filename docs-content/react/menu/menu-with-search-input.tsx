@@ -15,7 +15,7 @@ export function MenuWithSearchInput() {
       }}
     >
       <MenuHandler>
-        <Button>Open Menu</Button>
+        <Button> Menu</Button>
       </MenuHandler>
       <MenuList>
         <Input

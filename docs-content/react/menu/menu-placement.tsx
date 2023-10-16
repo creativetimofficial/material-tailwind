@@ -12,7 +12,7 @@ export function MenuPlacement() {
       <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <MenuHandler>
-            <Button>Top</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -22,7 +22,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="top-start">
           <MenuHandler>
-            <Button>Top Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -32,7 +32,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="top-end">
           <MenuHandler>
-            <Button>Top End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -44,7 +44,7 @@ export function MenuPlacement() {
       <div className="mb-3 flex gap-3">
         <Menu placement="right">
           <MenuHandler>
-            <Button>Right</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -54,7 +54,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="right-start">
           <MenuHandler>
-            <Button>Right Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -64,7 +64,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="right-end">
           <MenuHandler>
-            <Button>Right End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -76,7 +76,7 @@ export function MenuPlacement() {
       <div className="mb-3 flex gap-3">
         <Menu placement="bottom">
           <MenuHandler>
-            <Button>Bottom</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -86,7 +86,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="bottom-start">
           <MenuHandler>
-            <Button>Bottom Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -96,7 +96,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="bottom-end">
           <MenuHandler>
-            <Button>Bottom End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -108,7 +108,7 @@ export function MenuPlacement() {
       <div className="flex gap-3">
         <Menu placement="left">
           <MenuHandler>
-            <Button>Left</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -118,7 +118,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="left-start">
           <MenuHandler>
-            <Button>Left Start</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>
@@ -128,7 +128,7 @@ export function MenuPlacement() {
         </Menu>
         <Menu placement="left-end">
           <MenuHandler>
-            <Button>Left End</Button>
+            <Button>Menu</Button>
           </MenuHandler>
           <MenuList>
             <MenuItem>Menu Item 1</MenuItem>

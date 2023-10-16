@@ -10,7 +10,7 @@ export function MenuDefault() {
   return (
     <Menu>
       <MenuHandler>
-        <Button>Open Menu</Button>
+        <Button>Menu</Button>
       </MenuHandler>
       <MenuList>
         <MenuItem>Menu Item 1</MenuItem>

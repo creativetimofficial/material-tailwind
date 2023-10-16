@@ -48,9 +48,9 @@ import {
 
 export function PopoverDefault() {
   return (
-    <Popover>
+  <Popover>
       <PopoverHandler>
-        <Button>Show Popover</Button>
+        <Button>Popover</Button>
       </PopoverHandler>
       <PopoverContent>
         This is a very beautiful popover, show some love.
@@ -80,11 +80,11 @@ import {
 
 export function PopoverPlacement() {
   return (
-    <>
+     <>
       <div className="mb-3 flex gap-3">
         <Popover placement="top">
           <PopoverHandler>
-            <Button>Top</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -92,7 +92,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="top-start">
           <PopoverHandler>
-            <Button>Top Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -100,7 +100,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="top-end">
           <PopoverHandler>
-            <Button>Top End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -110,7 +110,7 @@ export function PopoverPlacement() {
       <div className="mb-3 flex gap-3">
         <Popover placement="right">
           <PopoverHandler>
-            <Button>Right</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -118,7 +118,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="right-start">
           <PopoverHandler>
-            <Button>Right Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -126,7 +126,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="right-end">
           <PopoverHandler>
-            <Button>Right End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -136,7 +136,7 @@ export function PopoverPlacement() {
       <div className="mb-3 flex gap-3">
         <Popover placement="bottom">
           <PopoverHandler>
-            <Button>Bottom</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -144,7 +144,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="bottom-start">
           <PopoverHandler>
-            <Button>Bottom Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -152,7 +152,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="bottom-end">
           <PopoverHandler>
-            <Button>Bottom End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -162,7 +162,7 @@ export function PopoverPlacement() {
       <div className="flex gap-3">
         <Popover placement="left">
           <PopoverHandler>
-            <Button>Left</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -170,7 +170,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="left-start">
           <PopoverHandler>
-            <Button>Left Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -178,7 +178,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="left-end">
           <PopoverHandler>
-            <Button>Left End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -217,7 +217,7 @@ export function PopoverCustomAnimation() {
       }}
     >
       <PopoverHandler>
-        <Button>Show Popover</Button>
+        <Button>Popover</Button>
       </PopoverHandler>
       <PopoverContent>
         This is a very beautiful popover, show some love.
@@ -257,9 +257,25 @@ export function SubscriptionPopover() {
         <Typography variant="h6" color="blue-gray" className="mb-6">
           Newsletter Subscription
         </Typography>
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-bold"
+        >
+          Your Name
+        </Typography>
         <div className="flex gap-2">
-          <Input label="Email Address" />
-          <Button variant="gradient">Subscribe</Button>
+          <Input
+            size="lg"
+            placeholder="name@mail.com"
+            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+            labelProps={{
+              className: "before:content-none after:content-none",
+            }}
+          />
+          <Button variant="gradient" className="flex-shrink-0">
+            Subscribe
+          </Button>
         </div>
       </PopoverContent>
     </Popover>
@@ -292,7 +308,7 @@ import {
 
 export default function Example() {
   return (
-    <Popover placement="bottom">
+   <Popover placement="bottom-end">
       <PopoverHandler>
         <Button>Contact Us</Button>
       </PopoverHandler>
@@ -303,61 +319,74 @@ export default function Example() {
             <Typography variant="h6" color="blue-gray">
               Tania Andrew
             </Typography>
-            <Typography variant="small" color="gray" className="font-normal">
+            <Typography
+              variant="small"
+              color="gray"
+              className="font-medium text-blue-gray-500"
+            >
               General Manager
             </Typography>
           </div>
         </div>
         <List className="p-0">
-          <a href="#" className="text-initial">
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
             <ListItem>
               <ListItemPrefix>
                 <svg
+                  width="14"
+                  height="16"
+                  viewBox="0 0 14 16"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-5 w-5"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
-                    clipRule="evenodd"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1 2C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H11C11.5304 0 12.0391 0.210714 12.4142 0.585786C12.7893 0.960859 13 1.46957 13 2V14C13.2652 14 13.5196 14.1054 13.7071 14.2929C13.8946 14.4804 14 14.7348 14 15C14 15.2652 13.8946 15.5196 13.7071 15.7071C13.5196 15.8946 13.2652 16 13 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V13C9 12.7348 8.89464 12.4804 8.70711 12.2929C8.51957 12.1054 8.26522 12 8 12H6C5.73478 12 5.48043 12.1054 5.29289 12.2929C5.10536 12.4804 5 12.7348 5 13V15C5 15.2652 4.89464 15.5196 4.70711 15.7071C4.51957 15.8946 4.26522 16 4 16H1C0.734784 16 0.48043 15.8946 0.292893 15.7071C0.105357 15.5196 0 15.2652 0 15C0 14.7348 0.105357 14.4804 0.292893 14.2929C0.48043 14.1054 0.734784 14 1 14V2ZM4 3H6V5H4V3ZM6 7H4V9H6V7ZM8 3H10V5H8V3ZM10 7H8V9H10V7Z"
+                    fill="#90A4AE"
                   />
                 </svg>
               </ListItemPrefix>
               ABC Construction
             </ListItem>
           </a>
-          <a href="#" className="text-initial">
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
             <ListItem>
               <ListItemPrefix>
                 <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-5 w-5"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                    clipRule="evenodd"
+                    d="M0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H3.153C3.38971 0.000108969 3.6187 0.0841807 3.79924 0.23726C3.97979 0.390339 4.10018 0.602499 4.139 0.836L4.879 5.271C4.91436 5.48222 4.88097 5.69921 4.78376 5.89003C4.68655 6.08085 4.53065 6.23543 4.339 6.331L2.791 7.104C3.34611 8.47965 4.17283 9.72928 5.22178 10.7782C6.27072 11.8272 7.52035 12.6539 8.896 13.209L9.67 11.661C9.76552 11.4695 9.91994 11.3138 10.1106 11.2166C10.3012 11.1194 10.5179 11.0859 10.729 11.121L15.164 11.861C15.3975 11.8998 15.6097 12.0202 15.7627 12.2008C15.9158 12.3813 15.9999 12.6103 16 12.847V15C16 15.2652 15.8946 15.5196 15.7071 15.7071C15.5196 15.8946 15.2652 16 15 16H13C5.82 16 0 10.18 0 3V1Z"
+                    fill="#90A4AE"
                   />
                 </svg>
               </ListItemPrefix>
               00 123 456 789
             </ListItem>
           </a>
-          <a href="#" className="text-initial">
+          <a href="#" className="text-initial font-medium text-blue-gray-500">
             <ListItem>
               <ListItemPrefix>
                 <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-5 w-5"
                 >
-                  <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                  <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                  <path
+                    d="M2.00299 5.884L9.99999 9.882L17.997 5.884C17.9674 5.37444 17.7441 4.89549 17.3728 4.54523C17.0015 4.19497 16.5104 3.99991 16 4H3.99999C3.48958 3.99991 2.99844 4.19497 2.62717 4.54523C2.2559 4.89549 2.03259 5.37444 2.00299 5.884Z"
+                    fill="#90A4AE"
+                  />
+                  <path
+                    d="M18 8.11798L10 12.118L2 8.11798V14C2 14.5304 2.21071 15.0391 2.58579 15.4142C2.96086 15.7893 3.46957 16 4 16H16C16.5304 16 17.0391 15.7893 17.4142 15.4142C17.7893 15.0391 18 14.5304 18 14V8.11798Z"
+                    fill="#90A4AE"
+                  />
                 </svg>
               </ListItemPrefix>
               person@example.com
@@ -391,50 +420,58 @@ import {
 
 export function PopoverWithImage() {
   return (
-    <Popover>
+      <Popover>
       <PopoverHandler>
         <Button>More Info</Button>
       </PopoverHandler>
-      <PopoverContent className="z-[999] flex w-[28rem] overflow-hidden p-0">
+      <PopoverContent className="z-[999] grid w-[28rem] grid-cols-2 overflow-hidden p-0">
         <div className="p-4">
-          <Typography color="blue-gray" className="mb-2 font-medium">
+          <Typography color="blue-gray" className="mb-2 text-lg font-bold">
             Material Tailwind
           </Typography>
-          <Typography variant="small" color="gray" className="mb-4 font-normal">
+          <Typography
+            variant="small"
+            color="gray"
+            className="mb-14 font-normal text-blue-gray-500"
+          >
             Material Tailwind is an easy to use components library for Tailwind
             CSS and Material Design. It features multiple React and HTML
             components, all written with Tailwind CSS classes and Material
             Design guidelines.
           </Typography>
-          <a href="#" className="inline-block">
+          <a href="#" className="-ml-3 inline-block">
             <Button
               size="sm"
               variant="text"
-              className="flex items-center gap-1 capitalize"
+              className="flex items-center gap-x-2 capitalize"
             >
               Read More
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="12"
+                viewBox="0 0 7 12"
                 fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-3.5 w-3.5"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  d="M1.25 1.91669L5.33333 6.00002L1.25 10.0834"
+                  stroke="#212121"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
               </svg>
             </Button>
           </a>
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-          alt="image"
-          className="h-full w-1/2 object-cover"
-        />
+
+        <div className="min-h-full !w-full p-3">
+          <img
+            src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMGJ1aWxkaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            alt="image"
+            className="h-full w-full rounded-lg object-cover"
+          />
+        </div>
       </PopoverContent>
     </Popover>
   );
@@ -492,16 +529,20 @@ export function ProfileInfoPopover() {
           </Button>
         </div>
         <Typography
-          variant="h6"
+          variant="h5"
           color="blue-gray"
           className="mb-2 flex items-center gap-2 font-medium"
         >
           <span>Tania Andrew</span> •{" "}
-          <a href="#" className="text-sm text-blue-gray-700">
-            @canwu
+          <a href="#" className="text-md font-medium text-gray-900">
+            @emmaro
           </a>
         </Typography>
-        <Typography variant="small" color="gray" className="font-normal">
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal text-blue-gray-500"
+        >
           Frontend Developer • Major interest in Web Development: motivated to
           achieve measurable results, to deepen my knowledge and improve my
           skills.
@@ -510,25 +551,20 @@ export function ProfileInfoPopover() {
           <Typography
             variant="small"
             color="gray"
-            className="flex items-center gap-1 text-xs font-normal"
+            className="flex items-center gap-2 text-sm font-normal text-blue-gray-500"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="-mt-0.5 h-3.5 w-3.5"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 16C10.1217 16 12.1566 15.1571 13.6569 13.6569C15.1571 12.1566 16 10.1217 16 8C16 5.87827 15.1571 3.84344 13.6569 2.34315C12.1566 0.842855 10.1217 0 8 0C5.87827 0 3.84344 0.842855 2.34315 2.34315C0.842855 3.84344 0 5.87827 0 8C0 10.1217 0.842855 12.1566 2.34315 13.6569C3.84344 15.1571 5.87827 16 8 16ZM2.332 6.027C2.70329 4.96372 3.36579 4.0261 4.244 3.321C4.512 3.73 4.974 4 5.5 4C5.89782 4 6.27936 4.15804 6.56066 4.43934C6.84196 4.72064 7 5.10218 7 5.5V6C7 6.53043 7.21071 7.03914 7.58579 7.41421C7.96086 7.78929 8.46957 8 9 8C9.53043 8 10.0391 7.78929 10.4142 7.41421C10.7893 7.03914 11 6.53043 11 6C10.9998 5.55242 11.1498 5.11773 11.4259 4.76547C11.702 4.41321 12.0883 4.16375 12.523 4.057C13.4773 5.14867 14.0022 6.55002 14 8C14 8.34 13.972 8.675 13.917 9H13C12.4696 9 11.9609 9.21071 11.5858 9.58579C11.2107 9.96086 11 10.4696 11 11V13.197C10.0883 13.7245 9.05331 14.0015 8 14V12C8 11.4696 7.78929 10.9609 7.41421 10.5858C7.03914 10.2107 6.53043 10 6 10C5.46957 10 4.96086 9.78929 4.58579 9.41421C4.21071 9.03914 4 8.53043 4 8C4.00018 7.527 3.83271 7.06924 3.52733 6.70803C3.22195 6.34681 2.79844 6.10552 2.332 6.027Z"
+                fill="#90A4AE"
               />
             </svg>
             United Kingdom
@@ -538,20 +574,20 @@ export function ProfileInfoPopover() {
             href="#"
             variant="small"
             color="gray"
-            className="flex items-center gap-1 text-xs font-normal"
+            className="flex items-center gap-2 text-sm font-normal text-blue-gray-500"
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="16"
+              viewBox="0 0 14 16"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="-mt-0.5 h-3.5 w-3.5"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1 2C1 1.46957 1.21071 0.960859 1.58579 0.585786C1.96086 0.210714 2.46957 0 3 0H11C11.5304 0 12.0391 0.210714 12.4142 0.585786C12.7893 0.960859 13 1.46957 13 2V14C13.2652 14 13.5196 14.1054 13.7071 14.2929C13.8946 14.4804 14 14.7348 14 15C14 15.2652 13.8946 15.5196 13.7071 15.7071C13.5196 15.8946 13.2652 16 13 16H10C9.73478 16 9.48043 15.8946 9.29289 15.7071C9.10536 15.5196 9 15.2652 9 15V13C9 12.7348 8.89464 12.4804 8.70711 12.2929C8.51957 12.1054 8.26522 12 8 12H6C5.73478 12 5.48043 12.1054 5.29289 12.2929C5.10536 12.4804 5 12.7348 5 13V15C5 15.2652 4.89464 15.5196 4.70711 15.7071C4.51957 15.8946 4.26522 16 4 16H1C0.734784 16 0.48043 15.8946 0.292893 15.7071C0.105357 15.5196 0 15.2652 0 15C0 14.7348 0.105357 14.4804 0.292893 14.2929C0.48043 14.1054 0.734784 14 1 14V2ZM4 3H6V5H4V3ZM6 7H4V9H6V7ZM8 3H10V5H8V3ZM10 7H8V9H10V7Z"
+                fill="#90A4AE"
               />
             </svg>
             Material Tailwind
@@ -602,23 +638,30 @@ export function PopoverWithDescription() {
             href="#"
             variant="h6"
             color="blue-gray"
-            className="font-medium transition-colors hover:text-gray-900"
+            className="font-bold transition-colors hover:text-gray-900"
           >
             @material-tailwind
           </Typography>
           <Chip
             value="Public"
-            className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+            className="rounded-full px-2 py-1 font-medium capitalize tracking-wide"
           />
         </div>
-        <Typography variant="small" color="gray" className="font-normal">
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal text-blue-gray-500"
+        >
           @material-tailwind is an easy-to-use components library for Tailwind
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-5">
           <div className="flex items-center gap-1">
             <span className="h-3 w-3 rounded-full bg-blue-700" />
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               TypeScript
             </Typography>
           </div>
@@ -635,7 +678,10 @@ export function PopoverWithDescription() {
                 clipRule="evenodd"
               />
             </svg>
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               1,480
             </Typography>
           </div>
@@ -652,7 +698,10 @@ export function PopoverWithDescription() {
                 clipRule="evenodd"
               />
             </svg>
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               Veritied
             </Typography>
           </div>

@@ -64,14 +64,13 @@ import { Radio } from "@material-tailwind/react";
 export function RadioColors() {
   return (
     <div className="flex w-max gap-4">
-      <Radio name="color" color="blue" defaultChecked />
-      <Radio name="color" color="red" />
+      <Radio name="color" />
+      <Radio name="color" color="gray" defaultChecked />
+      <Radio name="color" color="blue" />
       <Radio name="color" color="green" />
+      <Radio name="color" color="red" />
       <Radio name="color" color="amber" />
-      <Radio name="color" color="teal" />
-      <Radio name="color" color="indigo" />
-      <Radio name="color" color="purple" />
-      <Radio name="color" color="pink" />
+      <Radio name="color" disabled color="purple" />
     </div>
   );
 }
@@ -95,7 +94,7 @@ export function RadioCustomIcon() {
     <>
       <Radio
         name="type"
-        label="HTML"
+        label="React"
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -196,17 +195,20 @@ import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioWithLink() {
   return (
-    <div className="flex flex-col gap-2">
+   <div className="flex flex-col gap-2">
       <Radio
         name="terms"
         label={
-          <Typography color="blue-gray" className="flex font-medium">
+          <Typography
+            color="blue-gray"
+            className="flex font-medium text-blue-gray-500"
+          >
             I agree with HTML
             <Typography
               as="a"
               href="#"
-              color="blue"
-              className="font-medium transition-colors hover:text-blue-700"
+              color="blue-gray"
+              className="hover:text-blueg-gray-900 font-medium transition-colors"
             >
               &nbsp;terms and conditions
             </Typography>
@@ -217,13 +219,16 @@ export function RadioWithLink() {
       <Radio
         name="terms"
         label={
-          <Typography color="blue-gray" className="flex font-medium">
-            I agree with React
+          <Typography
+            color="blue-gray"
+            className="flex font-medium text-blue-gray-500"
+          >
+            I agree with HTML
             <Typography
               as="a"
               href="#"
-              color="blue"
-              className="font-medium transition-colors hover:text-blue-700"
+              color="blue-gray"
+              className="hover:text-blueg-gray-900 font-medium transition-colors"
             >
               &nbsp;terms and conditions
             </Typography>
@@ -270,6 +275,92 @@ export function RadioWithDescription() {
       />
       <Radio
         name="description"
+        defaultChecked
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5",
+        }}
+      />
+      <Radio
+        name="description"
+        color="blue"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5",
+        }}
+      />
+      <Radio
+        name="description"
+        color="green"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5",
+        }}
+      />
+      <Radio
+        name="description"
+        color="red"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5",
+        }}
+      />
+      <Radio
+        name="description"
+        color="amber"
+        label={
+          <div>
+            <Typography color="blue-gray" className="font-medium">
+              React Version
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              @material-tailwind/react, packed with rich components and widgets.
+            </Typography>
+          </div>
+        }
+        containerProps={{
+          className: "-mt-5",
+        }}
+      />
+      <Radio
+        name="description"
+        disabled
         label={
           <div>
             <Typography color="blue-gray" className="font-medium">
@@ -329,7 +420,10 @@ export function RadioVerticalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               React.js
             </Typography>
           </label>
@@ -350,7 +444,10 @@ export function RadioVerticalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Vue.js
             </Typography>
           </label>
@@ -371,7 +468,10 @@ export function RadioVerticalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Svelte.js
             </Typography>
           </label>
@@ -422,7 +522,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               React.js
             </Typography>
           </label>
@@ -443,7 +546,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Vue.js
             </Typography>
           </label>
@@ -464,7 +570,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Svelte.js
             </Typography>
           </label>
@@ -514,8 +623,11 @@ export function RadioCustomStyles() {
         icon={<Icon />}
         className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
-          <Typography color="blue-gray" className="font-normal">
-            Premium
+          <Typography
+            color="blue-gray"
+            className="font-normal text-blue-gray-400"
+          >
+            React
           </Typography>
         }
       />
@@ -526,8 +638,11 @@ export function RadioCustomStyles() {
         icon={<Icon />}
         className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
-          <Typography color="blue-gray" className="font-normal">
-            Free
+          <Typography
+            color="blue-gray"
+            className="font-normal text-blue-gray-400"
+          >
+            React
           </Typography>
         }
       />

@@ -17,7 +17,7 @@ export function DrawerWithForm() {
     <React.Fragment>
       <Button onClick={openDrawer}>Open Drawer</Button>
       <Drawer open={open} onClose={closeDrawer}>
-        <div className="mb-2 flex items-center justify-between p-4">
+        <div className="flex items-center justify-between px-4 pb-2">
           <Typography variant="h5" color="blue-gray">
             Contact Us
           </Typography>
@@ -38,7 +38,15 @@ export function DrawerWithForm() {
             </svg>
           </IconButton>
         </div>
+        <div className="mb-5 px-4">
+          <Typography variant="small" color="gray" className="font-normal ">
+            Write the message and then click button.
+          </Typography>
+        </div>
         <form className="flex flex-col gap-6 p-4">
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Email
+          </Typography>
           <Input type="email" label="Email" />
           <Input label="Subject" />
           <Textarea rows={6} label="Message" />

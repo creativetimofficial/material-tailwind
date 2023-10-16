@@ -27,7 +27,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               React.js
             </Typography>
           </label>
@@ -48,7 +51,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Vue.js
             </Typography>
           </label>
@@ -69,7 +75,10 @@ export function RadioHorizontalList() {
                 }}
               />
             </ListItemPrefix>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
               Svelte.js
             </Typography>
           </label>

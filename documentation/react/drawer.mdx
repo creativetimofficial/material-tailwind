@@ -77,10 +77,10 @@ export function DrawerDefault() {
           written with Tailwind CSS classes and Material Design guidelines.
         </Typography>
         <div className="flex gap-2">
-          <Button size="sm">Get Started</Button>
           <Button size="sm" variant="outlined">
             Documentation
           </Button>
+          <Button size="sm">Get Started</Button>
         </div>
       </Drawer>
     </React.Fragment>
@@ -130,7 +130,7 @@ export function DrawerPlacement() {
         <Button onClick={openDrawerBottom}>Open Drawer Bottom</Button>
         <Button onClick={openDrawerLeft}>Open Drawer Left</Button>
       </div>
-      <Drawer
+       <Drawer
         placement="top"
         open={openTop}
         onClose={closeDrawerTop}
@@ -138,7 +138,7 @@ export function DrawerPlacement() {
       >
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray">
-            Drawer on Top
+            Material Tailwind
           </Typography>
           <IconButton variant="text" color="blue-gray" onClick={closeDrawerTop}>
             <svg
@@ -157,6 +157,16 @@ export function DrawerPlacement() {
             </svg>
           </IconButton>
         </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
       </Drawer>
       <Drawer
         placement="right"
@@ -166,7 +176,7 @@ export function DrawerPlacement() {
       >
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray">
-            Drawer on Right
+            Material Tailwind
           </Typography>
           <IconButton
             variant="text"
@@ -189,6 +199,16 @@ export function DrawerPlacement() {
             </svg>
           </IconButton>
         </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
       </Drawer>
       <Drawer
         placement="bottom"
@@ -198,7 +218,7 @@ export function DrawerPlacement() {
       >
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray">
-            Drawer on Bottom
+            Material Tailwind
           </Typography>
           <IconButton
             variant="text"
@@ -221,6 +241,16 @@ export function DrawerPlacement() {
             </svg>
           </IconButton>
         </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
       </Drawer>
       <Drawer
         placement="left"
@@ -230,7 +260,7 @@ export function DrawerPlacement() {
       >
         <div className="mb-6 flex items-center justify-between">
           <Typography variant="h5" color="blue-gray">
-            Drawer on Left
+            Material Tailwind
           </Typography>
           <IconButton
             variant="text"
@@ -252,6 +282,16 @@ export function DrawerPlacement() {
               />
             </svg>
           </IconButton>
+        </div>
+        <Typography color="gray" className="mb-8 pr-4 font-normal">
+          Material Tailwind features multiple React and HTML components, all
+          written with Tailwind CSS classes and Material Design guidelines.
+        </Typography>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outlined">
+            Documentation
+          </Button>
+          <Button size="sm">Get Started</Button>
         </div>
       </Drawer>
     </React.Fragment>
@@ -294,7 +334,7 @@ export function DrawerWithNavigation() {
       <Drawer open={open} onClose={closeDrawer}>
         <div className="mb-2 flex items-center justify-between p-4">
           <Typography variant="h5" color="blue-gray">
-            Side Menu
+            Material Tailwind
           </Typography>
           <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
             <svg
@@ -346,7 +386,15 @@ export function DrawerWithNavigation() {
                 />
               </svg>
             </ListItemPrefix>
-            E-Commerce
+            Analytics
+            <ListItemSuffix>
+              <Chip
+                value="5"
+                size="sm"
+                color="green"
+                className="rounded-full"
+              />
+            </ListItemSuffix>
           </ListItem>
           <ListItem>
             <ListItemPrefix>
@@ -363,16 +411,7 @@ export function DrawerWithNavigation() {
                 />
               </svg>
             </ListItemPrefix>
-            Inbox
-            <ListItemSuffix>
-              <Chip
-                value="14"
-                size="sm"
-                variant="ghost"
-                color="blue-gray"
-                className="rounded-full"
-              />
-            </ListItemSuffix>
+            Sales
           </ListItem>
           <ListItem>
             <ListItemPrefix>
@@ -406,26 +445,12 @@ export function DrawerWithNavigation() {
                 />
               </svg>
             </ListItemPrefix>
-            Settings
-          </ListItem>
-          <ListItem>
-            <ListItemPrefix>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-5 w-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12 2.25a.75.75 0 01.75.75v9a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM6.166 5.106a.75.75 0 010 1.06 8.25 8.25 0 1011.668 0 .75.75 0 111.06-1.06c3.808 3.807 3.808 9.98 0 13.788-3.807 3.808-9.98 3.808-13.788 0-3.808-3.807-3.808-9.98 0-13.788a.75.75 0 011.06 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </ListItemPrefix>
-            Log Out
+            Tables
           </ListItem>
         </List>
+        <Button className="mt-3 ml-5" size="sm">
+          Documentation
+        </Button>
       </Drawer>
     </React.Fragment>
   );
@@ -461,8 +486,8 @@ export function DrawerWithForm() {
   return (
     <React.Fragment>
       <Button onClick={openDrawer}>Open Drawer</Button>
-      <Drawer open={open} onClose={closeDrawer}>
-        <div className="mb-2 flex items-center justify-between p-4">
+     <Drawer open={open} onClose={closeDrawer}>
+        <div className="flex items-center justify-between px-4 pb-2">
           <Typography variant="h5" color="blue-gray">
             Contact Us
           </Typography>
@@ -483,7 +508,15 @@ export function DrawerWithForm() {
             </svg>
           </IconButton>
         </div>
+        <div className="mb-5 px-4">
+          <Typography variant="small" color="gray" className="font-normal ">
+            Write the message and then click button.
+          </Typography>
+        </div>
         <form className="flex flex-col gap-6 p-4">
+          <Typography variant="h6" color="blue-gray" className="-mb-3">
+            Your Email
+          </Typography>
           <Input type="email" label="Email" />
           <Input label="Subject" />
           <Textarea rows={6} label="Message" />
