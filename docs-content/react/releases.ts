@@ -1,5 +1,21 @@
 export const releases = [
   {
+    version: "2.1.3",
+    date: "Octuber 17, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.3",
+    content: [
+      {
+        title: "patch changes",
+        data: ["Fix theme issue with <Button /> component."],
+      },
+      {
+        title: "docs updates",
+        data: ["Fix typos.", "Update the design"],
+      },
+    ],
+  },
+  {
     version: "2.1.2",
     date: "September 14, 2023",
     name: "@material-tailwind/react",
