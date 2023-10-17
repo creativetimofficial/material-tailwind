@@ -57,6 +57,10 @@ export const routes = [
         route: "avatar",
       },
       {
+        name: "Badge",
+        route: "badge",
+      },
+      {
         name: "Breadcrumbs",
         route: "breadcrumbs",
       },
@@ -64,6 +68,7 @@ export const routes = [
         name: "Button",
         route: "button",
       },
+
       {
         name: "Card",
         route: "card",
@@ -75,6 +80,10 @@ export const routes = [
       {
         name: "Chip",
         route: "chip",
+      },
+      {
+        name: "Collapse",
+        route: "collapes",
       },
       {
         name: "Dialog",
