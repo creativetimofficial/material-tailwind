@@ -132,10 +132,7 @@ export function Pro() {
           </Link>
         </div>
         <div className="mt-16 text-center">
-          <Link
-            href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916-5781&mode=design&t=WzeVRo5zGAzGdjHv-0"
-            target="_blank"
-          >
+          <Link href="/blocks">
             <Button
               size="lg"
               variant="outlined"
@@ -144,7 +141,7 @@ export function Pro() {
               Material Tailwind PRO
             </Button>
           </Link>
-          <Link href="/figma#pricing">
+          <Link href="/blocks#pricing">
             <Button
               size="lg"
               variant="filled"

@@ -1,17 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import {
   Chip,
   Typography,
   Button,
   Card,
   IconButton,
-  Menu,
-  MenuHandler,
-  MenuItem,
-  MenuList,
 } from "@material-tailwind/react";
 
 interface StatsCardPropsType {
@@ -55,7 +51,7 @@ const stats = [
 
 export function Hero() {
   const [copied, setCopied] = React.useState(false);
-  const [active, setActive] = React.useState(2);
+  const [isHtml, setIsHtml] = React.useState(false);
 
   return (
     <>
@@ -83,53 +79,54 @@ export function Hero() {
             bonus!
           </Typography>
           <div className="flex shrink-0 flex-wrap place-content-center items-center gap-4">
-            <div className="inline-flex items-center justify-between gap-3 rounded-lg border-[1.5px] border-blue-gray-50 bg-white py-1 px-2 font-medium text-primary">
-              <Typography variant="h6">
-                npm i @material-tailwind/react
+            <div className="inline-flex items-center justify-between gap-0.5 rounded-lg border-[1.5px] border-blue-gray-50 bg-white p-1 font-medium text-primary">
+              <Typography variant="h6" className="mx-4">
+                npm i @material-tailwind/{isHtml ? "html" : "react"}
               </Typography>
               <div>
                 <CopyToClipboard
                   onCopy={() => setCopied(true)}
-                  text="npm i @material-tailwind/react"
+                  text={`npm i @material-tailwind/${isHtml ? "html" : "react"}`}
                 >
                   <IconButton
                     color="white"
-                    className={`cursor-pointer ${
-                      active === 1 ? "opacity-100" : "opacity-50"
-                    }`}
+                    variant="text"
                     onMouseLeave={() => setCopied(false)}
-                    onClick={() => setActive(1)}
                   >
-                    <DocumentDuplicateIcon className="h-5 w-5 text-gray-700" />
+                    {copied ? (
+                      <CheckIcon className="h-5 w-5 text-green-600" />
+                    ) : (
+                      <DocumentDuplicateIcon className="h-5 w-5 text-gray-700" />
+                    )}
                   </IconButton>
                 </CopyToClipboard>
               </div>
               <IconButton
                 className={`cursor-pointer ${
-                  active === 2 ? "opacity-100" : "opacity-50 grayscale"
+                  !isHtml ? "opacity-100" : "opacity-50 grayscale"
                 }`}
-                size="sm"
                 color="white"
-                onClick={() => setActive(2)}
+                variant="text"
+                onClick={() => setIsHtml(false)}
               >
                 <img
                   src="/img/logos/icon-react.svg"
                   alt="react-icon"
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                 />
               </IconButton>
               <IconButton
                 className={`cursor-pointer ${
-                  active === 3 ? "opacity-100" : "opacity-50 grayscale"
+                  isHtml ? "opacity-100" : "opacity-50 grayscale"
                 }`}
-                size="sm"
+                variant="text"
                 color="white"
-                onClick={() => setActive(3)}
+                onClick={() => setIsHtml(true)}
               >
                 <img
                   src="/img/logos/icon-html.svg"
                   alt="html-icon"
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                 />
               </IconButton>
             </div>
@@ -151,57 +148,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <Card className="fixed right-10 top-20 translate-y-[42rem] border border-gray-100 p-3">
-        <Menu placement="bottom-end">
-          <MenuHandler>
-            <IconButton size="lg" color="white">
-              <img
-                src="/img/logos/icon-react.svg"
-                alt="react-icon"
-                className="h-20 w-20"
-              />
-            </IconButton>
-          </MenuHandler>
-          <MenuList className="mt-4">
-            <Link href="/docs/react/installation" target="_blank">
-              <MenuItem className="flex items-center gap-2">
-                <img
-                  src="/img/logos/icon-react.svg"
-                  alt="react-icon"
-                  className="h-6 w-6"
-                />
-                <Typography variant="h6" color="blue-gray">
-                  React
-                </Typography>
-              </MenuItem>
-            </Link>
-            <Link href="/docs/html/installation" target="_blank">
-              <MenuItem className="flex items-center gap-2">
-                <img
-                  src="/img/logos/icon-html.svg"
-                  alt="html-icon"
-                  className="h-6 w-6"
-                />
-                <Typography variant="h6" color="blue-gray">
-                  HTML
-                </Typography>
-              </MenuItem>
-            </Link>
-            <Link href="/figma" target="_blank">
-              <MenuItem className="flex items-center gap-2">
-                <img
-                  src="/img/icon-figma.svg"
-                  alt="figma-icon"
-                  className="h-6 w-6"
-                />
-                <Typography variant="h6" color="blue-gray">
-                  Figma
-                </Typography>
-              </MenuItem>
-            </Link>
-          </MenuList>
-        </Menu>
-      </Card>
     </>
   );
 }
