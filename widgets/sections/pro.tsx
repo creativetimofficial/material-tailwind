@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Typography, Card, CardBody } from "@material-tailwind/react";
+import { Typography, Card, CardBody, Button } from "@material-tailwind/react";
 
 const DATA = [
   {
@@ -82,7 +82,7 @@ export function Pro() {
                       floated ? "translate-y-3 translate-x-6 scale-110" : ""
                     } ${
                       mini
-                        ? "mx-auto mt-12 scale-[0.6] lg:mt-auto"
+                        ? "mx-auto mt-12 scale-[0.8] lg:mt-auto"
                         : "mt-6 h-64 w-full"
                     }`}
                     alt="card-image"
@@ -106,7 +106,7 @@ export function Pro() {
                     variant="h2"
                     className="font-semibold text-primary"
                   >
-                    50+
+                    170+
                   </Typography>
                   <Typography
                     variant="h5"
@@ -129,6 +129,30 @@ export function Pro() {
                 </div>
               </CardBody>
             </Card>
+          </Link>
+        </div>
+        <div className="mt-16 text-center">
+          <Link
+            href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916-5781&mode=design&t=WzeVRo5zGAzGdjHv-0"
+            target="_blank"
+          >
+            <Button
+              size="lg"
+              variant="outlined"
+              className="bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
+            >
+              Material Tailwind PRO
+            </Button>
+          </Link>
+          <Link href="/figma#pricing">
+            <Button
+              size="lg"
+              variant="filled"
+              color="gray"
+              className="ml-4 bg-primary text-base font-medium capitalize"
+            >
+              Pricing & FAQ
+            </Button>
           </Link>
         </div>
       </div>

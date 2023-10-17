@@ -222,7 +222,7 @@ export function Components() {
             variant="h1"
             className="my-5 text-center text-4xl font-semibold text-primary md:text-5xl"
           >
-            200+ Tailwind CSS Components
+            460+ Tailwind CSS Components
           </Typography>
           <Typography
             variant="paragraph"

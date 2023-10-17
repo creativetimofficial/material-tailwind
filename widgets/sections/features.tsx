@@ -144,13 +144,13 @@ function CssComponents() {
 
 function GlobalStyles() {
   return (
-    <Image
-      width={1280}
-      height={1280}
-      alt="card background"
-      src="/image/global-styles.png"
-      className="h-full w-full object-cover object-center"
-    />
+      <Image
+        width={1280}
+        height={1280}
+        alt="card background"
+        src="/image/global-styles.png"
+        className="h-full w-full object-cover object-center"
+      />
   );
 }
 
