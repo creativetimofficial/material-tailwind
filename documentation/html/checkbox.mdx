@@ -66,7 +66,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   ```html
   <div class="inline-flex items-center">
     <label
-      class="relative flex cursor-pointer items-center rounded-full p-3"
+      class="relative flex items-center p-3 rounded-full cursor-pointer"
       for="checkbox"
       data-ripple-dark="true"
     >
@@ -76,7 +76,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
         id="checkbox"
         checked
       />
-      <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5"
@@ -351,10 +351,10 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   }
 >
   ```html
-  <div class="flex w-max gap-6">
+  <div class="flex gap-6 w-max">
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-1"
         data-ripple-dark="true"
       >
@@ -362,9 +362,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
           id="checkbox-1"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -384,7 +384,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-2"
         data-ripple-dark="true"
       >
@@ -392,9 +392,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:bg-red-500 checked:before:bg-red-500 hover:before:opacity-10"
           id="checkbox-2"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -414,7 +414,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-3"
         data-ripple-dark="true"
       >
@@ -422,9 +422,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
           id="checkbox-3"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -444,7 +444,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-4"
         data-ripple-dark="true"
       >
@@ -452,9 +452,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
           id="checkbox-4"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -474,7 +474,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-5"
         data-ripple-dark="true"
       >
@@ -482,9 +482,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:bg-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
           id="checkbox-5"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -504,7 +504,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-6"
         data-ripple-dark="true"
       >
@@ -512,9 +512,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:bg-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
           id="checkbox-6"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -534,7 +534,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-7"
         data-ripple-dark="true"
       >
@@ -542,9 +542,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:bg-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
           id="checkbox-7"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -564,7 +564,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="checkbox-8"
         data-ripple-dark="true"
       >
@@ -572,9 +572,9 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
           type="checkbox"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
           id="checkbox-8"
-          defaultChecked
+          checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -645,7 +645,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   ```html
   <div class="inline-flex items-center">
     <label
-      class="relative flex cursor-pointer items-center rounded-full p-3"
+      class="relative flex items-center p-3 rounded-full cursor-pointer"
       for="login"
       data-ripple-dark="true"
     >
@@ -654,7 +654,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
         type="checkbox"
         class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
       />
-      <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5"
@@ -672,7 +672,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
       </div>
     </label>
     <label
-      class="mt-px cursor-pointer select-none font-light text-gray-700"
+      class="mt-px font-light text-gray-700 cursor-pointer select-none"
       for="login"
     >
       Remember Me
@@ -766,7 +766,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   ```html
   <div class="inline-flex items-center">
     <label
-      class="relative flex cursor-pointer items-center rounded-full p-3"
+      class="relative flex items-center p-3 rounded-full cursor-pointer"
       for="ripple-on"
       data-ripple-dark="true"
     >
@@ -775,7 +775,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
         type="checkbox"
         class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
       />
-      <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5"
@@ -793,7 +793,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
       </div>
     </label>
     <label
-      class="mt-px cursor-pointer select-none font-light text-gray-700"
+      class="mt-px font-light text-gray-700 cursor-pointer select-none"
       for="ripple-on"
     >
       Ripple Effect On
@@ -801,7 +801,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   </div>
   <div class="inline-flex items-center">
     <label
-      class="relative flex cursor-pointer items-center rounded-full p-3"
+      class="relative flex items-center p-3 rounded-full cursor-pointer"
       for="ripple-off"
     >
       <input
@@ -809,7 +809,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
         type="checkbox"
         class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
       />
-      <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5"
@@ -827,7 +827,7 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
       </div>
     </label>
     <label
-      class="mt-px cursor-pointer select-none font-light text-gray-700"
+      class="mt-px font-light text-gray-700 cursor-pointer select-none"
       for="ripple-off"
     >
       Ripple Effect Off
