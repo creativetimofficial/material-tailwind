@@ -329,10 +329,19 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     }
   }, [frameworkType, slug]);
 
-  const replaceMatch = ["html/what-is-tailwind-css", "html/license", "html/colors", "html/fonts", "html/shadows", "html/screens"];
+  const replaceMatch = [
+    "html/what-is-tailwind-css",
+    "html/license",
+    "html/colors",
+    "html/fonts",
+    "html/shadows",
+    "html/screens",
+  ];
   const headLink = slug.join("/");
   const matchTheSlug = replaceMatch.includes(headLink);
-  const canonical = matchTheSlug ? headLink.replace("html/", "react/") : headLink;
+  const canonical = matchTheSlug
+    ? headLink.replace("html/", "react/")
+    : headLink;
 
   return (
     <>
@@ -346,7 +355,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
       </Head>
       <Alert className="w-full justify-center rounded-none">
         <div className="flex  items-center justify-center gap-4">
-          NEW | Material Tailwind PRO, a comprehensive compilation of 200+
+          NEW | Material Tailwind PRO, a comprehensive compilation of 170+
           blocks, now available for your use.
           <Link href="/blocks">
             <Button size="sm" color="white">

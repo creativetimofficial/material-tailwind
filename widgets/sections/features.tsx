@@ -29,14 +29,14 @@ function FavoriteFramework() {
       <Link href="/docs/html/installation">
         <div className="flex flex-col items-center justify-center gap-2">
           <Image
-            src="/svg/html.svg"
-            alt="html logo"
+            src="/svg/tailwind.svg"
+            alt="tailwind logo"
             width={480}
             height={480}
             className="h-10 w-10"
           />
           <Typography variant="h6" className="text-primary">
-            HTML
+            Tailwind CSS
           </Typography>
         </div>
       </Link>
@@ -144,13 +144,13 @@ function CssComponents() {
 
 function GlobalStyles() {
   return (
-      <Image
-        width={1280}
-        height={1280}
-        alt="card background"
-        src="/image/global-styles.png"
-        className="h-full w-full object-cover object-center"
-      />
+    <Image
+      width={1280}
+      height={1280}
+      alt="card background"
+      src="/image/global-styles.png"
+      className="h-full w-full object-cover object-center"
+    />
   );
 }
 
@@ -175,6 +175,7 @@ const CONTENT = [
     description:
       "Enhance your web product with our vibrant color palettes and realistic shadows, creating a memorable user experience that breathes life into your design.",
     children: <GlobalStyles />,
+    route: "/docs/react/colors",
   },
 ];
 
@@ -204,42 +205,54 @@ export function Features() {
           </Typography>
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          {CONTENT.map(({ tag, title, description, children }, index) => (
-            <Card
-              key={index}
-              shadow={false}
-              color="transparent"
-              className={`relative !grid overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50 bg-white ${
-                index === 2 ? "col-span-1 lg:col-span-2" : "col-span-1"
-              }`}
-            >
-              <Image
-                src="/image/header-figma.jpg"
-                alt="card background"
-                width={768}
-                height={768}
-                className="absolute left-0 -bottom-16 h-full w-full object-cover object-bottom"
-              />
-              <CardBody
-                className={`relative z-10 grid ${
-                  index === 2 ? "gap-8 md:grid-cols-2" : ""
+          {CONTENT.map(
+            ({ tag, title, description, children, route }, index) => (
+              <Card
+                key={index}
+                shadow={false}
+                color="transparent"
+                className={`relative !grid overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50 bg-white ${
+                  index === 2 ? "col-span-1 lg:col-span-2" : "col-span-1"
                 }`}
               >
-                <div className={index === 2 ? "max-w-md" : ""}>
-                  <Typography variant="h6" className="text-primary">
-                    {tag}
-                  </Typography>
-                  <Typography variant="h3" className="my-2 text-primary">
-                    {title}
-                  </Typography>
-                  <Typography className="font-normal text-gray-600">
-                    {description}
-                  </Typography>
-                </div>
-                <div className="self-end">{children}</div>
-              </CardBody>
-            </Card>
-          ))}
+                <Image
+                  src="/image/header-figma.jpg"
+                  alt="card background"
+                  width={768}
+                  height={768}
+                  className="absolute left-0 -bottom-16 h-full w-full object-cover object-bottom"
+                />
+                <CardBody
+                  className={`relative z-10 grid ${
+                    index === 2 ? "gap-8 md:grid-cols-2" : ""
+                  }`}
+                >
+                  <div className={index === 2 ? "max-w-md" : ""}>
+                    <Typography variant="h6" className="text-primary">
+                      {tag}
+                    </Typography>
+                    <Typography variant="h3" className="my-2 text-primary">
+                      {title}
+                    </Typography>
+                    <Typography className="font-normal text-gray-600">
+                      {description}
+                    </Typography>
+                    {route && (
+                      <Link href={route} className="mt-8 inline-block">
+                        <Button
+                          color="gray"
+                          className="bg-primary py-3 text-base font-medium capitalize"
+                        >
+                          Explore
+                        </Button>
+                      </Link>
+                    )}
+                  </div>
+                  <div className="self-end">{children}</div>
+                </CardBody>
+              </Card>
+            ),
+          )}
         </div>
       </div>
     </section>

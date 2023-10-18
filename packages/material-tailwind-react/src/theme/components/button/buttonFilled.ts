@@ -16,7 +16,7 @@ const buttonFilled: object = {
     active: "active:opacity-[0.85] active:shadow-none",
   },
   gray: {
-    background: "bg-gray-500",
+    background: "bg-gray-900",
     color: "text-white",
     shadow: "shadow-md shadow-gray-900/10",
     hover: "hover:shadow-lg hover:shadow-gray-900/20",

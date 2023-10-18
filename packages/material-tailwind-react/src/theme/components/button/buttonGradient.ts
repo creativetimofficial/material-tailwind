@@ -15,7 +15,7 @@ const buttonGradient: object = {
     active: "active:opacity-[0.85]",
   },
   gray: {
-    background: "bg-gradient-to-tr from-gray-600 to-gray-400",
+    background: "bg-gradient-to-tr from-gray-900 to-gray-800",
     color: "text-white",
     shadow: "shadow-md shadow-gray-900/10",
     hover: "hover:shadow-lg hover:shadow-gray-900/20",
