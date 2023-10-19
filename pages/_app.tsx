@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider>
         <Component {...pageProps} />
         <div className="fixed top-2/4 right-4 hidden -translate-y-2/4 lg:block">
-          <Menu placement="left">
+          <Menu placement="left" allowHover>
             <MenuHandler>
               <IconButton
                 size="lg"
