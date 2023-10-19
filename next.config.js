@@ -11,7 +11,7 @@ const nextConfig = {
     domains: ["images.unsplash.com", "nepcha.com"],
   },
   assetPrefix: isProd
-    ? `https://docs-test.material-tailwind.com`
+    ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}`
     : undefined,
   async redirects() {
     return [
@@ -26,7 +26,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "https://test.material-tailwind.com",
+        destination: `${process.env.NEXT_PUBLIC_ROOT_URL}`,
       },
     ];
   },
