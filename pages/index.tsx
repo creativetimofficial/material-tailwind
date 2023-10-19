@@ -37,9 +37,9 @@ export default function Presentation() {
           content="tailwind css, material design, react, next, react.js, next.js, tailwind template, tailwind css theme, tailwindcss components"
         />
       </Head>
-       <Alert className="w-full justify-center rounded-none">
+      <Alert className="w-full justify-center rounded-none">
         <div className="flex  items-center justify-center gap-4">
-          NEW | Material Tailwind PRO, a comprehensive compilation of 200+
+          NEW | Material Tailwind PRO, a comprehensive compilation of 170+
           blocks, now available for your use.
           <Link href="/blocks">
             <Button size="sm" color="white">

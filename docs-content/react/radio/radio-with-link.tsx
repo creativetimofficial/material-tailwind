@@ -6,13 +6,16 @@ export function RadioWithLink() {
       <Radio
         name="terms"
         label={
-          <Typography color="blue-gray" className="flex font-medium">
+          <Typography
+            color="blue-gray"
+            className="flex font-medium text-blue-gray-500"
+          >
             I agree with HTML
             <Typography
               as="a"
               href="#"
-              color="blue"
-              className="font-medium transition-colors hover:text-blue-700"
+              color="blue-gray"
+              className="hover:text-blueg-gray-900 font-medium transition-colors"
             >
               &nbsp;terms and conditions
             </Typography>
@@ -23,13 +26,16 @@ export function RadioWithLink() {
       <Radio
         name="terms"
         label={
-          <Typography color="blue-gray" className="flex font-medium">
-            I agree with React
+          <Typography
+            color="blue-gray"
+            className="flex font-medium text-blue-gray-500"
+          >
+            I agree with HTML
             <Typography
               as="a"
               href="#"
-              color="blue"
-              className="font-medium transition-colors hover:text-blue-700"
+              color="blue-gray"
+              className="hover:text-blueg-gray-900 font-medium transition-colors"
             >
               &nbsp;terms and conditions
             </Typography>

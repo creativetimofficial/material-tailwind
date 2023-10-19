@@ -26,8 +26,11 @@ export function RadioCustomStyles() {
         icon={<Icon />}
         className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
-          <Typography color="blue-gray" className="font-normal">
-            Premium
+          <Typography
+            color="blue-gray"
+            className="font-normal text-blue-gray-400"
+          >
+            React
           </Typography>
         }
       />
@@ -38,8 +41,11 @@ export function RadioCustomStyles() {
         icon={<Icon />}
         className="border-gray-900/10 bg-gray-900/5 p-0 transition-all hover:before:opacity-0"
         label={
-          <Typography color="blue-gray" className="font-normal">
-            Free
+          <Typography
+            color="blue-gray"
+            className="font-normal text-blue-gray-400"
+          >
+            React
           </Typography>
         }
       />

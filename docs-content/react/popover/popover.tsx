@@ -9,7 +9,7 @@ export function PopoverDefault() {
   return (
     <Popover>
       <PopoverHandler>
-        <Button>Show Popover</Button>
+        <Button>Popover</Button>
       </PopoverHandler>
       <PopoverContent>
         This is a very beautiful popover, show some love.

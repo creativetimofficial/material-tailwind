@@ -42,10 +42,10 @@ export function DrawerDefault() {
           written with Tailwind CSS classes and Material Design guidelines.
         </Typography>
         <div className="flex gap-2">
-          <Button size="sm">Get Started</Button>
           <Button size="sm" variant="outlined">
             Documentation
           </Button>
+          <Button size="sm">Get Started</Button>
         </div>
       </Drawer>
     </React.Fragment>

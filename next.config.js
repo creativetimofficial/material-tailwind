@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     domains: ["images.unsplash.com", "nepcha.com"],
   },

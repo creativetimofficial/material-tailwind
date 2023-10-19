@@ -11,7 +11,7 @@ export function PopoverPlacement() {
       <div className="mb-3 flex gap-3">
         <Popover placement="top">
           <PopoverHandler>
-            <Button>Top</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -19,7 +19,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="top-start">
           <PopoverHandler>
-            <Button>Top Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -27,7 +27,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="top-end">
           <PopoverHandler>
-            <Button>Top End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -37,7 +37,7 @@ export function PopoverPlacement() {
       <div className="mb-3 flex gap-3">
         <Popover placement="right">
           <PopoverHandler>
-            <Button>Right</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -45,7 +45,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="right-start">
           <PopoverHandler>
-            <Button>Right Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -53,7 +53,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="right-end">
           <PopoverHandler>
-            <Button>Right End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -63,7 +63,7 @@ export function PopoverPlacement() {
       <div className="mb-3 flex gap-3">
         <Popover placement="bottom">
           <PopoverHandler>
-            <Button>Bottom</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -71,7 +71,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="bottom-start">
           <PopoverHandler>
-            <Button>Bottom Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -79,7 +79,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="bottom-end">
           <PopoverHandler>
-            <Button>Bottom End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -89,7 +89,7 @@ export function PopoverPlacement() {
       <div className="flex gap-3">
         <Popover placement="left">
           <PopoverHandler>
-            <Button>Left</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -97,7 +97,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="left-start">
           <PopoverHandler>
-            <Button>Left Start</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>
@@ -105,7 +105,7 @@ export function PopoverPlacement() {
         </Popover>
         <Popover placement="left-end">
           <PopoverHandler>
-            <Button>Left End</Button>
+            <Button>Popover</Button>
           </PopoverHandler>
           <PopoverContent>
             <span>This is a very beautiful popover, show some love.</span>

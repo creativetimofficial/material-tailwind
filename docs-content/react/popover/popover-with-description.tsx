@@ -28,23 +28,30 @@ export function PopoverWithDescription() {
             href="#"
             variant="h6"
             color="blue-gray"
-            className="font-medium transition-colors hover:text-gray-900"
+            className="font-bold transition-colors hover:text-gray-900"
           >
             @material-tailwind
           </Typography>
           <Chip
             value="Public"
-            className="rounded-full py-1 px-2 font-medium capitalize tracking-wide"
+            className="rounded-full px-2 py-1 font-medium capitalize tracking-wide"
           />
         </div>
-        <Typography variant="small" color="gray" className="font-normal">
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal text-blue-gray-500"
+        >
           @material-tailwind is an easy-to-use components library for Tailwind
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-5">
           <div className="flex items-center gap-1">
             <span className="h-3 w-3 rounded-full bg-blue-700" />
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               TypeScript
             </Typography>
           </div>
@@ -61,7 +68,10 @@ export function PopoverWithDescription() {
                 clipRule="evenodd"
               />
             </svg>
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               1,480
             </Typography>
           </div>
@@ -78,7 +88,10 @@ export function PopoverWithDescription() {
                 clipRule="evenodd"
               />
             </svg>
-            <Typography color="gray" className="text-xs font-normal">
+            <Typography
+              color="gray"
+              className="text-xs font-medium text-blue-gray-500"
+            >
               Veritied
             </Typography>
           </div>

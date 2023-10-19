@@ -8,7 +8,8 @@ import {
   Card,
   Typography,
 } from "@material-tailwind/react";
-import { ChevronDownIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 
 const menuItems = [
   {
@@ -51,10 +52,12 @@ export function MenuCustomList() {
         <Card
           color="gray"
           shadow={false}
-          variant="gradient"
-          className="col-span-3 grid h-full w-full place-items-center rounded-md"
+          className="col-span-3 flex h-full w-full items-center justify-center rounded-2xl p-4"
         >
-          <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+          <CursorArrowRaysIcon strokeWidth={1} className="h-10 w-10" />
+          <Typography className="mt-5 text-center" variant="h5">
+            Material Tailwind PRO
+          </Typography>
         </Card>
         <ul className="col-span-4 flex w-full flex-col gap-1">
           {menuItems.map(({ title, description }) => (

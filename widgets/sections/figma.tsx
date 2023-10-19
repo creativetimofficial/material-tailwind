@@ -101,7 +101,7 @@ export function Figma() {
         </div>
         <div className="mt-16 text-center">
           <Link
-            href="https://www.figma.com/file/UxNLsnbwl4Hps3KdbFvcgK/Material-Tailwind-Figma-v2.0.0?type=design&node-id=916-5781&mode=design&t=WzeVRo5zGAzGdjHv-0"
+            href="/figma"
             target="_blank"
           >
             <Button
@@ -116,7 +116,7 @@ export function Figma() {
                 alt="Figma Logo"
                 className="absolute"
               />
-              <span className="pl-8">Preview in Figma</span>
+              <span className="pl-8">Explore in Figma</span>
             </Button>
           </Link>
           <Link href="/figma#pricing">

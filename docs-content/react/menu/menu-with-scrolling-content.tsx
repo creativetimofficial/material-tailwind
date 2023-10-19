@@ -10,7 +10,7 @@ export function MenuWithScrollingContent() {
   return (
     <Menu>
       <MenuHandler>
-        <Button>Open Menu</Button>
+        <Button> Menu</Button>
       </MenuHandler>
       <MenuList className="max-h-72">
         <MenuItem>Menu Item 1</MenuItem>

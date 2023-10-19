@@ -7,6 +7,7 @@ import {
   DialogFooter,
   Input,
   Textarea,
+  Typography,
 } from "@material-tailwind/react";
 
 export function MessageDialog() {
@@ -17,9 +18,14 @@ export function MessageDialog() {
   return (
     <>
       <Button onClick={handleOpen}>Message Dialog</Button>
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open} size="xs" handler={handleOpen}>
         <div className="flex items-center justify-between">
-          <DialogHeader>New message to @</DialogHeader>
+          <DialogHeader className="flex flex-col items-start">
+            {" "}
+            <Typography className="mb-1" variant="h4">
+              New message to @{" "}
+            </Typography>
+          </DialogHeader>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -34,17 +40,23 @@ export function MessageDialog() {
             />
           </svg>
         </div>
-        <DialogBody divider>
+        <DialogBody>
+          <Typography className="mb-10 -mt-7 " color="gray" variant="lead">
+            Write the message and then click button.
+          </Typography>
           <div className="grid gap-6">
+            <Typography className="-mb-1" color="blue-gray" variant="h6">
+              Username
+            </Typography>
             <Input label="Username" />
             <Textarea label="Message" />
           </div>
         </DialogBody>
         <DialogFooter className="space-x-2">
-          <Button variant="outlined" color="red" onClick={handleOpen}>
-            close
+          <Button variant="text" color="gray" onClick={handleOpen}>
+            cancel
           </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
+          <Button variant="gradient" color="gray" onClick={handleOpen}>
             send message
           </Button>
         </DialogFooter>

@@ -19,7 +19,7 @@ export function DialogDefault() {
       </Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Its a simple dialog.</DialogHeader>
-        <DialogBody divider>
+        <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
           blood sweat and tears, and I&apos;m never giving up, I&apos;m just

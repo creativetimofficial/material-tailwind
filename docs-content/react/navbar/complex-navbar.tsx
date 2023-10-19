@@ -24,7 +24,7 @@ import {
   PowerIcon,
   RocketLaunchIcon,
   Bars2Icon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
 
 // profile menu component
 const profileMenuItems = [
@@ -151,8 +151,9 @@ function NavListMenu() {
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
           <Typography as="a" href="#" variant="small" className="font-normal">
-            <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
-              <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Pages{" "}
+            <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
+              <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
+              Pages{" "}
               <ChevronDownIcon
                 strokeWidth={2}
                 className={`h-3 w-3 transition-transform ${
@@ -176,8 +177,9 @@ function NavListMenu() {
           </ul>
         </MenuList>
       </Menu>
-      <MenuItem className="flex items-center gap-2 text-blue-gray-900 lg:hidden">
-        <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Pages{" "}
+      <MenuItem className="flex items-center gap-2 font-medium text-blue-gray-900 lg:hidden">
+        <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
+        Pages{" "}
       </MenuItem>
       <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
         {renderItems}
@@ -204,7 +206,7 @@ const navListItems = [
 
 function NavList() {
   return (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       <NavListMenu />
       {navListItems.map(({ label, icon }, key) => (
         <Typography
@@ -212,12 +214,12 @@ function NavList() {
           as="a"
           href="#"
           variant="small"
-          color="blue-gray"
-          className="font-normal"
+          color="gray"
+          className="font-medium text-blue-gray-500"
         >
           <MenuItem className="flex items-center gap-2 lg:rounded-full">
             {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
-            {label}
+            <span className="text-gray-900"> {label}</span>
           </MenuItem>
         </Typography>
       ))}
@@ -239,7 +241,7 @@ export function ComplexNavbar() {
 
   return (
     <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
-      <div className="relative mx-auto flex items-center text-blue-gray-900">
+      <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
@@ -247,7 +249,7 @@ export function ComplexNavbar() {
         >
           Material Tailwind
         </Typography>
-        <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+        <div className="hidden lg:block">
           <NavList />
         </div>
         <IconButton
@@ -259,6 +261,10 @@ export function ComplexNavbar() {
         >
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
+
+        <Button size="sm" variant="text">
+          <span>Log In</span>
+        </Button>
         <ProfileMenu />
       </div>
       <MobileNav open={isNavOpen} className="overflow-scroll">

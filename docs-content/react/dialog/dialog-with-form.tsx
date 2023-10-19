@@ -25,19 +25,26 @@ export function DialogWithForm() {
         className="bg-transparent shadow-none"
       >
         <Card className="mx-auto w-full max-w-[24rem]">
-          <CardHeader
-            variant="gradient"
-            color="blue"
-            className="mb-4 grid h-28 place-items-center"
-          >
-            <Typography variant="h3" color="white">
+          <CardBody className="flex flex-col gap-4">
+            <Typography variant="h4" color="blue-gray">
               Sign In
             </Typography>
-          </CardHeader>
-          <CardBody className="flex flex-col gap-4">
+            <Typography
+              className="mb-3 font-normal"
+              variant="paragraph"
+              color="gray"
+            >
+              Enter your email and password to Sign In.
+            </Typography>
+            <Typography className="-mb-2" variant="h6">
+              Your Email
+            </Typography>
             <Input label="Email" size="lg" />
+            <Typography className="-mb-2" variant="h6">
+              Your Password
+            </Typography>
             <Input label="Password" size="lg" />
-            <div className="-ml-2.5">
+            <div className="-ml-2.5 -mt-3">
               <Checkbox label="Remember Me" />
             </div>
           </CardBody>
@@ -45,13 +52,13 @@ export function DialogWithForm() {
             <Button variant="gradient" onClick={handleOpen} fullWidth>
               Sign In
             </Button>
-            <Typography variant="small" className="mt-6 flex justify-center">
+            <Typography variant="small" className="mt-4 flex justify-center">
               Don&apos;t have an account?
               <Typography
                 as="a"
                 href="#signup"
                 variant="small"
-                color="blue"
+                color="blue-gray"
                 className="ml-1 font-bold"
                 onClick={handleOpen}
               >
