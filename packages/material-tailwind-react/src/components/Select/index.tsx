@@ -409,11 +409,10 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // 9. return
     return (
       <SelectContextProvider value={contextValue}>
-        <div ref={ref} className={containerClasses}>
+        <div ref={ref} {...rest} className={containerClasses}>
           <button
             type="button"
             {...getReferenceProps({
-              ...rest,
               ref: refs.setReference,
               className: selectClasses,
               disabled: disabled,
