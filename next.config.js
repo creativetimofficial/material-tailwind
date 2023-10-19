@@ -22,6 +22,14 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "https://test.material-tailwind.com",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
