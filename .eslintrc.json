@@ -1,6 +1,8 @@
 {
-  "extends": "next/core-web-vitals",
+  "parser": "@typescript-eslint/parser",
+  "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
-    "react/no-unknown-property": "off"
+    "react/no-unknown-property": "off",
+    "@next/next/no-img-element": "off"
   }
 }

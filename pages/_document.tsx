@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { FB_PIXEL_ID } from '../utils/fpixel'
 
 export default function MyDocument() {
   return (
@@ -12,32 +13,28 @@ export default function MyDocument() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/img/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/img/favicon-16x16.png"
-        />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
         <link rel="manifest" href="/img/site.webmanifest" />
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
-          color="#2d89ef"
+          color="#020617"
         />
-        <meta name="msapplication-TileColor" content="#2d89ef" />
+        <meta name="msapplication-TileColor" content="#020617" />
         <meta name="theme-color" content="#ffffff" />
+        
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -49,13 +46,13 @@ export default function MyDocument() {
           data-domain="material-tailwind.com"
           src="https://plausible.io/js/script.js"
         />
-        <script 
-          defer 
-          data-site="material-tailwind.com" 
+        <script
+          defer
+          data-site="material-tailwind.com"
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         />
       </Head>
-      <body className="bg-gray-100 antialiased">
+      <body>
         <noscript>
           <iframe
             title="google-tag-manage"

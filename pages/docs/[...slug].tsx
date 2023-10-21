@@ -1,59 +1,81 @@
-import { Fragment, useState, useEffect } from "react";
-
-// next.js components
-import Image from "next/image";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
-// next-mdx-remote components
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-
-// mdx-observable components
-import { State, Observe } from "mdx-observable";
-
-// markdown utils
+// mdx
 import fs from "fs";
 import matter from "gray-matter";
-import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import { MDXRemote } from "next-mdx-remote";
+import rehypePrettyCode from "rehype-pretty-code";
+import { serialize } from "next-mdx-remote/serialize";
 
-// page components
-import DocsFooter from "components/layout/docs-footer";
-import DocsNavbar from "components/layout/docs-navbar";
-import Sidenav from "components/layout/sidenav";
-import PageMap from "components/layout/page-map";
-import ComponentDemo from "components/cards/component-demo";
-import Code from "components/code";
-import Pre from "components/pre";
-import CodeSandbox from "components/code-sandbox";
-import StackBlitz from "components/stack-blitz";
-import Framework from "components/cards/framework";
-import CraLogo from "components/icons/cra";
-import NextLogo from "components/icons/next";
-import RemixLogo from "components/icons/remix";
-import ViteLogo from "components/icons/vite";
-import AstroLogo from "components/icons/astro";
-import GatsbyLogo from "components/icons/gatsby";
-import ColorPalette from "components/color-palette";
-import DocsRelated from "components/layout/docs-related";
-import CodeTabs from "components/code-tabs";
-import CodePreview from "components/code-preview";
-import CountriesSelect from "components/docs/countries-select";
-import CheckoutForm from "components/docs/checkout-form";
-import InputWithButton from "components/docs/input-with-button";
-import CountriesCodeInput from "components/docs/countries-code-input";
-import DialogWithForm from "components/docs/dialog-with-form";
-import DialogWithImage from "components/docs/dialog-with-image";
-import WalletConnectDialog from "components/docs/wallet-connect-dialog";
-import ProfileMenu from "components/docs/profile-menu";
-import AvatarStack from "components/docs/avatar-stack";
-import StickyNavbar from "components/docs/sticky-navbar";
-import ComplexNavbar from "components/docs/complex-navbar";
-import SimpleFooter from "components/docs/simple-footer";
+// @widgets
+import {
+  DocsNavbar,
+  Footer,
+  Sidenav,
+  PageMap,
+  Code,
+  FrameworkCard,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
+  AstroLogo,
+  GatsbyLogo,
+  CodePreview,
+  DocsTitle,
+  ColorPalette,
+} from "@widgets";
 
-// @material-tailwind/react components
+// docs-content
+import * as AccordionExamples from "docs-content/react/accordion";
+import * as AlertExamples from "docs-content/react/alert";
+import * as AvatarExamples from "docs-content/react/avatar";
+import * as BadgeExamples from "docs-content/react/badge";
+import * as BreadcrumbsExamples from "docs-content/react/breadcrumbs";
+import * as ButtonGroupExamples from "docs-content/react/button-group";
+import * as ButtonExamples from "docs-content/react/button";
+import * as CardExamples from "docs-content/react/card";
+import * as CarouselExamples from "docs-content/react/carousel";
+import * as CheckboxExamples from "docs-content/react/checkbox";
+import * as ChipExamples from "docs-content/react/chip";
+import * as CollapseExamples from "docs-content/react/collapse";
+import * as DialogExamples from "docs-content/react/dialog";
+import * as DrawerExamples from "docs-content/react/drawer";
+import * as NavbarExamples from "docs-content/react/navbar";
+import * as FooterExamples from "docs-content/react/footer";
+import * as ImgExamples from "docs-content/react/img";
+import * as VideoExamples from "docs-content/react/video";
+import * as TableExamples from "docs-content/react/table";
+import * as PaginationExamples from "docs-content/react/pagination";
+import * as SidebarExamples from "docs-content/react/sidebar";
+import * as FormExamples from "docs-content/react/form";
+import * as IconButtonExamples from "docs-content/react/icon-button";
+import * as InputExamples from "docs-content/react/input";
+import * as ListExamples from "docs-content/react/list";
+import * as TypographyExamples from "docs-content/react/typography";
+import * as MenuExamples from "docs-content/react/menu";
+import * as RatingExamples from "docs-content/react/rating";
+import * as PopoverExamples from "docs-content/react/popover";
+import * as ProgressExamples from "docs-content/react/progress";
+import * as RadioExamples from "docs-content/react/radio";
+import * as SliderExamples from "docs-content/react/slider";
+import * as SelectExamples from "docs-content/react/select";
+import * as SpeedDialExamples from "docs-content/react/speed-dial";
+import * as SpinnerExamples from "docs-content/react/spinner";
+import * as StepperExamples from "docs-content/react/stepper";
+import * as TimelineExamples from "docs-content/react/timeline";
+import * as TooltipExamples from "docs-content/react/tooltip";
+import * as SwitchExamples from "docs-content/react/switch";
+import * as TabsExamples from "docs-content/react/tabs";
+import * as TextareaExamples from "docs-content/react/textarea";
+import ReleaseNotes from "docs-content/react/release-notes";
+
+// @material-tailwind/react
 import {
   Accordion,
   AccordionHeader,
@@ -96,19 +118,23 @@ import {
   Textarea,
   Tooltip,
   Typography,
+  ButtonGroup,
+  Carousel,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
+  Slider,
 } from "@material-tailwind/react";
-
-// @heroicons
-import * as OutlineIcons from "@heroicons/react/24/outline";
-import * as SolidIcons from "@heroicons/react/24/solid";
 
 // routes
 import { routes as htmlRoutes } from "routes/html.routes";
 import { routes as reactRoutes } from "routes/react.routes";
 
 // utils
-import config from "utils/rehype-pretty-code-config";
 import filterArray from "utils/filter-array";
+import { rehypePrettyCodeConfig } from "@utils";
 import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
@@ -119,8 +145,7 @@ const components = {
     <Typography
       as="h1"
       variant="h3"
-      color="blue-gray"
-      className="!mb-4 lg:!text-4xl"
+      className="!mb-4 text-primary lg:!text-3xl"
       {...props}
     />
   ),
@@ -128,8 +153,7 @@ const components = {
     <Typography
       as="h2"
       variant="h4"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -137,8 +161,7 @@ const components = {
     <Typography
       as="h3"
       variant="h5"
-      color="blue-gray"
-      className="!mb-2"
+      className="!mb-2 text-primary"
       {...props}
     />
   ),
@@ -146,17 +169,17 @@ const components = {
     <Typography
       as="p"
       variant="h5"
-      className="!mb-12 !font-normal !text-blue-gray-500"
+      className="!mb-12 !font-normal !text-gray-600"
       {...props}
     />
   ),
   p: (props) => (
-    <Typography className="!mb-4 !font-normal !text-blue-gray-500" {...props} />
+    <Typography className="!mb-4 !font-normal !text-gray-600" {...props} />
   ),
-  hr: () => <hr className="!mt-16 !mb-12 border-transparent" />,
+  hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
   a: (props) => (
     <a
-      className="!font-medium !text-blue-gray-900 !transition-colors hover:!text-blue-500"
+      className="!font-medium !text-primary !transition-colors hover:!text-blue-500"
       {...props}
     />
   ),
@@ -180,23 +203,6 @@ const components = {
       {...props}
     />
   ),
-  State,
-  Observe,
-  CodeTabs,
-  Image,
-  ComponentDemo,
-  CodeSandbox,
-  StackBlitz,
-  Code,
-  Framework,
-  CraLogo,
-  NextLogo,
-  RemixLogo,
-  ViteLogo,
-  AstroLogo,
-  GatsbyLogo,
-  ColorPalette,
-  CodePreview,
   Accordion,
   AccordionHeader,
   AccordionBody,
@@ -238,26 +244,74 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
+  ButtonGroup,
+  Carousel,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
+  Slider,
+  Image,
+  Code,
+  FrameworkCard,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
+  AstroLogo,
+  GatsbyLogo,
+  CodePreview,
+  DocsTitle,
   Link,
-  OutlineIcons,
-  SolidIcons,
-  CountriesSelect,
-  CheckoutForm,
-  InputWithButton,
-  CountriesCodeInput,
-  DialogWithForm,
-  DialogWithImage,
-  WalletConnectDialog,
-  ProfileMenu,
-  AvatarStack,
-  StickyNavbar,
-  ComplexNavbar,
-  SimpleFooter,
+  AccordionExamples,
+  AlertExamples,
+  AvatarExamples,
+  BadgeExamples,
+  BreadcrumbsExamples,
+  ButtonGroupExamples,
+  ButtonExamples,
+  CardExamples,
+  CarouselExamples,
+  CheckboxExamples,
+  ChipExamples,
+  CollapseExamples,
+  DrawerExamples,
+  PaginationExamples,
+  NavbarExamples,
+  ImgExamples,
+  VideoExamples,
+  SidebarExamples,
+  TableExamples,
+  DialogExamples,
+  FooterExamples,
+  FormExamples,
+  IconButtonExamples,
+  InputExamples,
+  ListExamples,
+  TypographyExamples,
+  MenuExamples,
+  RatingExamples,
+  PopoverExamples,
+  ProgressExamples,
+  RadioExamples,
+  SelectExamples,
+  SliderExamples,
+  SpeedDialExamples,
+  SpinnerExamples,
+  StepperExamples,
+  TimelineExamples,
+  TooltipExamples,
+  SwitchExamples,
+  TabsExamples,
+  TextareaExamples,
+  ReleaseNotes,
+  ColorPalette,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
   const { asPath } = useRouter();
-  const [mobileNav, setMobileNav] = useState(false);
+  const [mobileNav, setMobileNav] = React.useState(false);
 
   const routes = {
     html: htmlRoutes,
@@ -269,22 +323,51 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     .filter((el) => validFrameworks.includes(el))
     .join("") as "html" | "react" | "vue" | "angular" | "svelte";
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
       initHtmlScripts();
     }
   }, [frameworkType, slug]);
 
+  const replaceMatch = [
+    "html/what-is-tailwind-css",
+    "html/license",
+    "html/colors",
+    "html/fonts",
+    "html/shadows",
+    "html/screens",
+  ];
+  const headLink = slug.join("/");
+  const matchTheSlug = replaceMatch.includes(headLink);
+  const canonical = matchTheSlug
+    ? headLink.replace("html/", "react/")
+    : headLink;
+
   return (
-    <Fragment>
+    <>
       <Head>
         <title>{frontMatter.title}</title>
         <meta name="description" content={frontMatter.description} />
+        <link
+          rel="canonical"
+          href={`https://www.material-tailwind.com/docs/${canonical}`}
+        />
       </Head>
-      <div className="relative h-full w-full bg-white">
-        <DocsNavbar slug={slug[slug.length - 1]} setMobileNav={setMobileNav} />
+      <Alert className="w-full justify-center rounded-none">
+        <div className="flex  items-center justify-center gap-4">
+          NEW | Material Tailwind PRO, a comprehensive compilation of 170+
+          blocks, now available for your use.
+          <Link href="/blocks">
+            <Button size="sm" color="white">
+              check out
+            </Button>
+          </Link>
+        </div>
+      </Alert>
+      <div className="relative mb-8 h-full w-full bg-white">
+        <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
         <div className="px-6">
-          <div className="mx-auto flex max-w-[1440px]">
+          <div className="container mx-auto flex">
             <Sidenav
               routes={routes[frameworkType]}
               type={frameworkType}
@@ -292,18 +375,15 @@ export default function Page({ frontMatter, mdxSource, slug }) {
               mobileNav={mobileNav}
               setMobileNav={setMobileNav}
             />
-            <div className="mt-36 w-full lg:mt-24 lg:w-[60%] lg:px-6">
+            <div className="mt-6 w-full lg:w-[60%] lg:px-6">
               <MDXRemote {...mdxSource} components={components} />
-              {frontMatter.related && (
-                <DocsRelated routes={frontMatter.related} />
-              )}
-              <DocsFooter type={frameworkType} frontMatter={frontMatter} />
             </div>
-            <PageMap frontMatter={frontMatter} />
+            <PageMap type={frameworkType} frontMatter={frontMatter} />
           </div>
         </div>
       </div>
-    </Fragment>
+      <Footer />
+    </>
   );
 }
 
@@ -339,14 +419,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMeta = fs.readFileSync(
-    `documentation/${slug.join("/")}.mdx`
+    `documentation/${slug.join("/")}.mdx`,
   );
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      rehypePlugins: [[rehypePrettyCode, config]],
+      rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
       development: false,
     },

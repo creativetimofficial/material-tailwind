@@ -4,8 +4,8 @@ const textareaStaticLabelColors: object = {
     after: "after:border-blue-gray-500 peer-focus:after:border-blue-gray-500",
   },
   gray: {
-    color: "text-blue-gray-500 peer-focus:text-gray-500",
-    after: "after:border-gray-500 peer-focus:after:border-gray-500",
+    color: "text-gray-500 peer-focus:text-gray-900",
+    after: "after:border-gray-500 peer-focus:after:border-gray-900",
   },
   brown: {
     color: "text-blue-gray-500 peer-focus:text-brown-500",

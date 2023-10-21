@@ -4,9 +4,9 @@ import switchColors from "./switchColors";
 import type {
   color,
   label,
-  icon,
   ripple,
   className,
+  disabled,
   objectType,
 } from "../../../types/components/checkbox";
 import { propTypesColor } from "../../../types/components/checkbox";
@@ -17,6 +17,7 @@ export interface SwitchButtonStylesType {
     label?: label;
     ripple?: ripple;
     className?: className;
+    disabled?: disabled;
     containerProps?: objectType;
     labelProps?: objectType;
     circleProps?: objectType;
@@ -32,6 +33,7 @@ export interface SwitchButtonStylesType {
       circle?: object;
       ripple?: object;
       label?: object;
+      disabled?: object;
     };
     colors: typeof switchColors;
   };
@@ -39,13 +41,14 @@ export interface SwitchButtonStylesType {
 
 export const switchButton: SwitchButtonStylesType = {
   defaultProps: {
-    color: "blue",
+    color: "gray",
     label: "",
     ripple: true,
     className: "",
-    containerProps: {},
-    labelProps: {},
-    circleProps: {},
+    disabled: false,
+    containerProps: undefined,
+    labelProps: undefined,
+    circleProps: undefined,
   },
   valid: {
     colors: propTypesColor,
@@ -120,6 +123,10 @@ export const switchButton: SwitchButtonStylesType = {
         mt: "mt-px",
         ml: "ml-3",
         mb: "mb-0",
+      },
+      disabled: {
+        opacity: "opacity-50",
+        pointerEvents: "pointer-events-none",
       },
     },
     colors: switchColors,

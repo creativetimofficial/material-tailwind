@@ -63,7 +63,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonBase = objectsToString(base.initial);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
@@ -87,7 +87,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           if (ripple) {
             rippleEffect.create(
               e,
-              variant === "filled" || variant === "gradient" ? "light" : "dark",
+              (variant === "filled" || variant === "gradient") && color !== "white"
+                ? "light"
+                : "dark",
             );
           }
 

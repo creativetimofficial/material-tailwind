@@ -15,6 +15,8 @@ export type value = string | number;
 export type animate = animation;
 export type disabled = boolean;
 export type className = string;
+export type isInitial = boolean;
+export type orientation = "horizontal" | "vertical";
 export type indicatorProps = {
   [key: string]: any;
 };
@@ -29,5 +31,6 @@ export const propTypesValue: any = PropTypes.oneOfType([
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesDisabled: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
+export const propTypesOrientation: any = PropTypes.oneOf(["horizontal", "vertical"]);
 export const propTypesIndicator: any = PropTypes.instanceOf(Object);
 export const propTypesChildren: any = PropTypes.node.isRequired;

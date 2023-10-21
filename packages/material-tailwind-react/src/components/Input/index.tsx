@@ -82,6 +82,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
+    containerProps = containerProps ?? defaultProps.containerProps;
     className = className ?? defaultProps.className;
     shrink = shrink ?? defaultProps.shrink;
     icon = icon ?? defaultProps.icon;
@@ -93,13 +94,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputSuccess = objectsToString(inputVariant.success.input);
     const inputShrink = objectsToString(inputVariant.shrink.input);
     const inputColor = objectsToString(
-      inputVariant.colors.input[findMatch(valid.colors, color, "blue")],
+      inputVariant.colors.input[findMatch(valid.colors, color, "gray")],
     );
     const labelError = objectsToString(inputVariant.error.label);
     const labelSuccess = objectsToString(inputVariant.success.label);
     const labelShrink = objectsToString(inputVariant.shrink.label);
     const labelColor = objectsToString(
-      inputVariant.colors.label[findMatch(valid.colors, color, "blue")],
+      inputVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
     const containerClasses = classnames(
       objectsToString(base.container),

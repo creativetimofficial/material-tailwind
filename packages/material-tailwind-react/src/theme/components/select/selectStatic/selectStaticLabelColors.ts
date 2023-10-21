@@ -19,8 +19,8 @@ const selectStaticLabelColors: object = {
       after: "after:border-gray-500",
     },
     open: {
-      color: "text-gray-500",
-      after: "after:border-gray-500",
+      color: "text-gray-900",
+      after: "after:border-gray-900",
     },
     withValue: {
       color: "text-blue-gray-500",

@@ -14,9 +14,9 @@ const cardGradient: object = {
     shadow: "shadow-blue-gray-500/40",
   },
   gray: {
-    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+    backgroud: "bg-gradient-to-tr from-gray-900 to-gray-800",
     color: "text-white",
-    shadow: "shadow-gray-500/40",
+    shadow: "shadow-gray-900/20",
   },
   brown: {
     backgroud: "bg-gradient-to-tr from-brown-600 to-brown-400",

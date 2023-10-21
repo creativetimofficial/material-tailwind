@@ -36,10 +36,11 @@ export interface IconButtonProps extends React.ComponentProps<"button"> {
   ripple?: ripple;
   className?: className;
   children: children;
+  fullWidth?: boolean;
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
+  ({ variant, size, color, ripple, className, children, fullWidth, ...rest }, ref) => {
     // 1. init
     const { iconButton } = useTheme();
     const { valid, defaultProps, styles } = iconButton;
@@ -59,7 +60,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     const buttonBase = objectsToString(base);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
@@ -78,7 +79,9 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           if (ripple) {
             rippleEffect.create(
               e,
-              variant === "filled" || variant === "gradient" ? "light" : "dark",
+              (variant === "filled" || variant === "gradient") && color !== "white"
+                ? "light"
+                : "dark",
             );
           }
 

@@ -1,4 +1,27 @@
 @tailwind base;
+
+/* Firefox */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: transparent !important;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -196,4 +219,15 @@ table tbody tr td code {
   margin-right: 1.125rem;
   text-align: right;
   color: rgba(255, 255, 255, 0.25);
+}
+
+.DocSearch-Container {
+  z-index: 9999 !important;
+}
+
+.DocSearch-Button {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
 }

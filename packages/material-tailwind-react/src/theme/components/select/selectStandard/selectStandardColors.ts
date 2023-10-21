@@ -15,7 +15,7 @@ const selectStandardColors: object = {
       borderColor: "border-blue-gray-200",
     },
     open: {
-      borderColor: "border-gray-500",
+      borderColor: "border-gray-900",
     },
     withValue: {
       borderColor: "border-blue-gray-200",

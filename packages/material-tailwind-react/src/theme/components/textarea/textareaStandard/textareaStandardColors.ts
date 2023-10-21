@@ -5,7 +5,7 @@ const textareaStandardColors: object = {
   },
   gray: {
     borderColor: "border-blue-gray-200",
-    borderColorFocused: "focus:border-gray-500",
+    borderColorFocused: "focus:border-gray-900",
   },
   brown: {
     borderColor: "border-blue-gray-200",

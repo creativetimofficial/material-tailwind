@@ -28,7 +28,11 @@ import {
   propTypesChildren,
 } from "../../types/components/typography";
 
-export interface TypographyProps extends React.ComponentProps<any> {
+type Props<T extends keyof JSX.IntrinsicElements> = React.ComponentProps<T>;
+
+
+type BaseTypographyProps =Props<"p"> & Props<"h1"> & Props<"h2"> & Props<"h3"> & Props<"h4"> & Props<"h5"> & Props<"h6"> & Props<"a"> 
+export interface TypographyProps extends BaseTypographyProps {
   variant?: variant;
   color?: color;
   textGradient?: textGradient;

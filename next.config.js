@@ -1,17 +1,23 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    domains: ["images.unsplash.com", "nepcha.com"],
+  },
+  assetPrefix: isProd
+    ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}`
+    : undefined,
   async redirects() {
     return [
       {
-        source: "/documentation/quick-start",
+        source: "/",
         destination: "/docs/react/installation",
-        permanent: true,
-      },
-      {
-        source: "/components",
-        destination: "/docs/react/button",
         permanent: true,
       },
     ];
@@ -19,14 +25,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/blocks",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-      },
-      {
-        source: "/blocks/:slug*",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
+        source: "/",
+        destination: `${process.env.NEXT_PUBLIC_ROOT_URL}`,
       },
     ];
   },
