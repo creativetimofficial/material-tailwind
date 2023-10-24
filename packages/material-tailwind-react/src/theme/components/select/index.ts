@@ -133,6 +133,7 @@ export interface SelectStylesType {
         active?: object;
         disabled?: object;
       };
+      cancelButton?: object
     };
     variants?: {
       outlined: SelectVariantStylesType;
@@ -262,6 +263,23 @@ export const select: SelectStylesType = {
           userSelect: "select-none",
           pointerEvents: "pointer-events-none",
         },
+      },
+      cancelButton: {
+        display: "grid",
+        placeItems: "place-items-center",
+        position: "absolute",
+        top: "top-2/4",
+        right: "right-10",
+        pt: "pt-px",
+        width: "w-5",
+        height: "h-5",
+        color: "text-blue-gray-400",
+        transform: "rotate-0 -translate-y-2/4",
+        transition: "transition-all",
+        cursor: "cursor-pointer",
+        bg: 'bg-blue-gray-50 hover:bg-blue-gray-100',
+        borderRadius: 'rounded-full',
+        userSelect: 'select-none',
       },
     },
     variants: {

@@ -317,6 +317,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       "absolute top-2/4 -translate-y-2/4",
       variant === "outlined" ? "left-3 pt-0.5" : "left-0 pt-3",
     );
+    const clearSelectButtonClasses = classnames(objectsToString(base.cancelButton));
 
     // 5. set animation
     const animation = {
@@ -346,6 +347,29 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         );
       }
     }, [value, onChange]);
+
+    function clearOption() {
+      setOpen(false);
+      setActiveIndex(null);
+      setSelectedIndex(0);
+    }
+
+    function handleKeyDown(e: any) {
+      if (e.key === "Escape" || e.key === "Backspace" || e.key === "Delete") {
+        e.preventDefault();
+        clearOption();
+      }
+    }
+
+    function handleClearSelectOption() {
+      clearOption();
+    }
+
+    const clearSelectOptionButton = (
+      <div role="button" onClick={handleClearSelectOption} className={clearSelectButtonClasses}>
+        &times;
+      </div>
+    );
 
     // 8. select menu
     const selectMenu = (
@@ -418,16 +442,34 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
               className: selectClasses,
               disabled: disabled,
               name: name,
+              onKeyDown(e: any) {
+                const onKeyDown = rest?.onKeyDown;
+
+                if (typeof onKeyDown === "function") {
+                  onKeyDown(e);
+                  handleKeyDown(e);
+                }
+                handleKeyDown(e);
+              },
             })}
           >
             {typeof selected === "function" ? (
-              <span className={buttonContentClasses}>
-                {selected(children[selectedIndex - 1], selectedIndex - 1)}
-              </span>
+              <>
+                <span className={buttonContentClasses}>
+                  {selected(children[selectedIndex - 1], selectedIndex - 1)}{" "}
+                </span>
+                {selectedIndex > 0 && clearSelectOptionButton}
+              </>
             ) : value && !onChange ? (
-              <span className={buttonContentClasses}>{value}</span>
+              <>
+                <span className={buttonContentClasses}>{value}</span>
+                {selectedIndex > 0 && clearSelectOptionButton}
+              </>
             ) : (
-              <span {...children[selectedIndex - 1]?.props} className={buttonContentClasses} />
+              <>
+                <span {...children[selectedIndex - 1]?.props} className={buttonContentClasses} />
+                {selectedIndex > 0 && clearSelectOptionButton}
+              </>
             )}
             <div className={arrowClasses}>
               {arrow ?? (
