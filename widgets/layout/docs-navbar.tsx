@@ -10,6 +10,7 @@ import {
   ListItem,
   Tooltip,
   Input,
+  Button,
 } from "@material-tailwind/react";
 import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
@@ -86,29 +87,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
 
   const navbarMenu = (
     <div className="flex w-full flex-col justify-end lg:!ml-auto lg:flex-row">
-      <List className="px-0 lg:!flex-row">
+      <List className="min-w-max px-0 lg:!flex-row">
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
-        {/* <Menu placement="bottom" offset={-2.5} allowHover>
-          <MenuHandler>
-            <span>
-              <NavItem>Ecosystem</NavItem>
-            </span>
-          </MenuHandler>
-          <MenuList className="rounded-[10px] p-1.5">
-            <Link
-              target="_blank"
-              className="!outline-none"
-              href="https://www.creative-tim.com/services/updivision?ref=material-tailwind"
-            >
-              <MenuItem className="flex items-center gap-2 rounded-md text-blue-gray-800 hover:text-primary">
-                Custom Development
-              </MenuItem>
-            </Link>
-          </MenuList>
-        </Menu> */}
-        {/*         <NavItem href="/figma">Figma</NavItem> */}
-        <NavItem href="/blocks#pricing">Pricing & FAQ</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative">
@@ -172,6 +153,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             <i className="fab fa-discord text-lg leading-none" />
           </a>
         </Tooltip>
+        <Link href="/blocks#pricing">
+          <Button size="sm">Pricing & FAQ</Button>
+        </Link>
       </div>
     </div>
   );
