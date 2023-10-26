@@ -17,7 +17,7 @@ navigation:
     "ecommerce-card",
   ]
 github: card
-prev: button
+prev: button-group
 next: checkbox
 ---
 
@@ -65,8 +65,8 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+  <div class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+    <div class="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
       <img
         src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
         alt="img-blur-shadow"
@@ -74,10 +74,10 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
       />
     </div>
     <div class="p-6">
-      <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         UI/UX Review Check
       </h5>
-      <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         The place is close to Barceloneta Beach and bus stop just 2 min by walk
         and near to "Naviglio" where you can enjoy the main night life in
         Barcelona.
@@ -128,12 +128,12 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
     <div class="p-6">
-      <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         UI/UX Review Check
       </h5>
-      <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         The place is close to Barceloneta Beach and bus stop just 2 min by walk
         and near to "Naviglio" where you can enjoy the main night life in
         Barcelona.
@@ -218,14 +218,14 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="relative mt-6 flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
     <div class="p-6">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"
-        class="mb-4 h-12 w-12 text-pink-500"
+        class="w-12 h-12 mb-4 text-pink-500"
       >
         <path
           fill-rule="evenodd"
@@ -234,10 +234,10 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
         ></path>
         <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"></path>
       </svg>
-      <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         UI/UX Review Check
       </h5>
-      <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         Because it's about motivating the doers. Because I'm here to follow my
         dreams and inspire others.
       </p>
@@ -248,7 +248,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
         href="#"
       >
         <button
-          class="flex select-none items-center gap-2 rounded-lg py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center gap-2 px-4 py-2 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
           data-ripple-dark="true"
         >
@@ -260,7 +260,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             stroke-width="2"
             stroke="currentColor"
             aria-hidden="true"
-            class="h-4 w-4"
+            class="w-4 h-4"
           >
             <path
               stroke-linecap="round"
@@ -320,34 +320,34 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+  <div class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg h-80 rounded-xl bg-clip-border">
       <img src="/img/team-3.jpg" alt="profile-picture" />
     </div>
     <div class="p-6 text-center">
-      <h4 class="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         Natalie Paisley
       </h4>
-      <p class="block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
+      <p class="block font-sans text-base antialiased font-medium leading-relaxed text-transparent bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text">
         CEO / Co-Founder
       </p>
     </div>
-    <div class="flex justify-center gap-7 p-6 pt-2">
+    <div class="flex justify-center p-6 pt-2 gap-7">
       <a
         href="#facebook"
-        class="block bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+        class="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text"
       >
         <i class="fab fa-facebook" aria-hidden="true"></i>
       </a>
       <a
         href="#twitter"
-        class="block bg-gradient-to-tr from-light-blue-600 to-light-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+        class="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-gradient-to-tr from-light-blue-600 to-light-blue-400 bg-clip-text"
       >
         <i class="fab fa-twitter" aria-hidden="true"></i>
       </a>
       <a
         href="#instagram"
-        class="block bg-gradient-to-tr from-purple-600 to-purple-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+        class="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-gradient-to-tr from-purple-600 to-purple-400 bg-clip-text"
       >
         <i class="fab fa-instagram" aria-hidden="true"></i>
       </a>
@@ -681,11 +681,11 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 >
   ```html
   <div class="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border p-8 text-white shadow-md shadow-pink-500/40">
-    <div class="relative m-0 mb-8 overflow-hidden rounded-none border-b border-white/10 bg-transparent bg-clip-border pb-8 text-center text-gray-700 shadow-none">
-      <p class="block font-sans text-sm font-normal uppercase leading-normal text-white antialiased">
+    <div class="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none border-white/10 bg-clip-border">
+      <p class="block font-sans text-sm antialiased font-normal leading-normal text-white uppercase">
         standard
       </p>
-      <h1 class="mt-6 flex justify-center gap-1 font-sans text-7xl font-normal tracking-normal text-white antialiased">
+      <h1 class="flex justify-center gap-1 mt-6 font-sans antialiased font-normal tracking-normal text-white text-7xl">
         <span class="mt-2 text-4xl">$</span>29
         <span class="self-end text-4xl">/mo</span>
       </h1>
@@ -693,7 +693,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
     <div class="p-0">
       <ul class="flex flex-col gap-4">
         <li class="flex items-center gap-4">
-          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <span class="p-1 border rounded-full border-white/20 bg-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -701,7 +701,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               stroke-width="2"
               stroke="currentColor"
               aria-hidden="true"
-              class="h-3 w-3"
+              class="w-3 h-3"
             >
               <path
                 stroke-linecap="round"
@@ -710,12 +710,12 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               ></path>
             </svg>
           </span>
-          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
             5 team members
           </p>
         </li>
         <li class="flex items-center gap-4">
-          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <span class="p-1 border rounded-full border-white/20 bg-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -723,7 +723,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               stroke-width="2"
               stroke="currentColor"
               aria-hidden="true"
-              class="h-3 w-3"
+              class="w-3 h-3"
             >
               <path
                 stroke-linecap="round"
@@ -732,12 +732,12 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               ></path>
             </svg>
           </span>
-          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
             200+ components
           </p>
         </li>
         <li class="flex items-center gap-4">
-          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <span class="p-1 border rounded-full border-white/20 bg-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -745,7 +745,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               stroke-width="2"
               stroke="currentColor"
               aria-hidden="true"
-              class="h-3 w-3"
+              class="w-3 h-3"
             >
               <path
                 stroke-linecap="round"
@@ -754,12 +754,12 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               ></path>
             </svg>
           </span>
-          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
             40+ built-in pages
           </p>
         </li>
         <li class="flex items-center gap-4">
-          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <span class="p-1 border rounded-full border-white/20 bg-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -767,7 +767,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               stroke-width="2"
               stroke="currentColor"
               aria-hidden="true"
-              class="h-3 w-3"
+              class="w-3 h-3"
             >
               <path
                 stroke-linecap="round"
@@ -776,12 +776,12 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               ></path>
             </svg>
           </span>
-          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
             1 year free updates
           </p>
         </li>
         <li class="flex items-center gap-4">
-          <span class="rounded-full border border-white/20 bg-white/20 p-1">
+          <span class="p-1 border rounded-full border-white/20 bg-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -789,7 +789,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               stroke-width="2"
               stroke="currentColor"
               aria-hidden="true"
-              class="h-3 w-3"
+              class="w-3 h-3"
             >
               <path
                 stroke-linecap="round"
@@ -798,13 +798,13 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               ></path>
             </svg>
           </span>
-          <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+          <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
             Life time technical support
           </p>
         </li>
       </ul>
     </div>
-    <div class="mt-12 p-0">
+    <div class="p-0 mt-12">
       <button
         class="block w-full select-none rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-pink-500 shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
@@ -878,17 +878,17 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 >
   ```html
   <div class="relative flex max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
+    <div class="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
       <img
         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
         alt="ui/ux review check"
       />
     </div>
     <div class="p-6">
-      <h4 class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 class="block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         UI/UX Review Check
       </h4>
-      <p class="mt-3 block font-sans text-xl font-normal leading-relaxed text-gray-700 antialiased">
+      <p class="block mt-3 font-sans text-xl antialiased font-normal leading-relaxed text-gray-700">
         Because it's about motivating the doers. Because I'm here to follow my
         dreams and inspire others.
       </p>
@@ -898,7 +898,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
         <img
           alt="natali craig"
           src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1061&amp;q=80"
-          class="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+          class="relative inline-block object-cover object-center border-2 border-white rounded-full h-9 w-9 hover:z-10"
           data-tooltip-target="author-1"
         />
         <div
@@ -910,7 +910,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
         <img
           alt="tania andrew"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-          class="relative inline-block h-9 w-9 rounded-full border-2 border-white object-cover object-center hover:z-10"
+          class="relative inline-block object-cover object-center border-2 border-white rounded-full h-9 w-9 hover:z-10"
           data-tooltip-target="author-2"
         />
         <div
@@ -920,7 +920,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
           Tania Andrew
         </div>
       </div>
-      <p class="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+      <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
         January 10
       </p>
     </div>
@@ -960,13 +960,13 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   ```html
   <div class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
     <div class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
-      <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
+      <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/50"></div>
     </div>
-    <div class="relative p-6 py-14 px-6 md:px-12">
+    <div class="relative p-6 px-6 py-14 md:px-12">
       <h2 class="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
         How we design and code open-source projects?
       </h2>
-      <h5 class="mb-4 block font-sans text-xl font-semibold leading-snug tracking-normal text-gray-400 antialiased">
+      <h5 class="block mb-4 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-400">
         Tania Andrew
       </h5>
       <img
@@ -1188,24 +1188,24 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 >
   ```html
   <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-    <div class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+    <div class="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
       <img
         src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
         alt="ui/ux review check"
       />
-      <div class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
+      <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
       <button
         class="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
         data-ripple-dark="true"
       >
-        <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+        <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-6 w-6"
+            class="w-6 h-6"
           >
             <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
           </svg>
@@ -1213,8 +1213,8 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
       </button>
     </div>
     <div class="p-6">
-      <div class="mb-3 flex items-center justify-between">
-        <h5 class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <div class="flex items-center justify-between mb-3">
+        <h5 class="block font-sans text-xl antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
           Wooden House, Florida
         </h5>
         <p class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -1234,11 +1234,11 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
           5.0
         </p>
       </div>
-      <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
         Enter a freshly updated and thoughtfully furnished peaceful home
         surrounded by ancient trees, stone walls, and open meadows.
       </p>
-      <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
+      <div class="inline-flex flex-wrap items-center gap-3 mt-8 group">
         <span
           data-tooltip-target="money"
           class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-pink-500 transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70"
@@ -1248,7 +1248,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"></path>
             <path
@@ -1274,7 +1274,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path
               fill-rule="evenodd"
@@ -1298,7 +1298,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
             <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
@@ -1319,7 +1319,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path d="M19.5 6h-15v9h15V6z"></path>
             <path
@@ -1344,7 +1344,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path
               fill-rule="evenodd"
@@ -1492,7 +1492,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 >
   ```html
   <div class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-    <div class="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
+    <div class="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
       <img
         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
         alt="tania andrew"
@@ -1500,16 +1500,16 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
       />
       <div class="flex w-full flex-col gap-0.5">
         <div class="flex items-center justify-between">
-          <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+          <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
             Tania Andrew
           </h5>
-          <div class="5 flex items-center gap-0">
+          <div class="flex items-center gap-0 5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              class="h-5 w-5 text-yellow-700"
+              class="w-5 h-5 text-yellow-700"
             >
               <path
                 fill-rule="evenodd"
@@ -1522,7 +1522,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              class="h-5 w-5 text-yellow-700"
+              class="w-5 h-5 text-yellow-700"
             >
               <path
                 fill-rule="evenodd"
@@ -1535,7 +1535,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              class="h-5 w-5 text-yellow-700"
+              class="w-5 h-5 text-yellow-700"
             >
               <path
                 fill-rule="evenodd"
@@ -1548,7 +1548,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              class="h-5 w-5 text-yellow-700"
+              class="w-5 h-5 text-yellow-700"
             >
               <path
                 fill-rule="evenodd"
@@ -1561,7 +1561,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
-              class="h-5 w-5 text-yellow-700"
+              class="w-5 h-5 text-yellow-700"
             >
               <path
                 fill-rule="evenodd"
@@ -1571,13 +1571,13 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             </svg>
           </div>
         </div>
-        <p class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased">
+        <p class="block font-sans text-base antialiased font-light leading-relaxed text-blue-gray-900">
           Frontend Lead @ Google
         </p>
       </div>
     </div>
-    <div class="mb-6 p-0">
-      <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    <div class="p-0 mb-6">
+      <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
         "I found solution to all my design needs from Creative Tim. I use them
         as a freelancer in my hobby projects for fun! And its really affordable,
         very humble guys !!!"
@@ -1646,21 +1646,21 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
 >
   ```html
   <div class="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
+    <div class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
       <img
         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
         alt="image"
-        class="h-full w-full object-cover"
+        class="object-cover w-full h-full"
       />
     </div>
     <div class="p-6">
-      <h6 class="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-pink-500 antialiased">
+      <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-pink-500 uppercase">
         startups
       </h6>
-      <h4 class="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
         Lyft launching cross-platform service this week
       </h4>
-      <p class="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+      <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
         Like so many organizations these days, Autodesk is a company in
         transition. It was until recently a traditional boxed software company
         selling licenses. Yet its own business model disruption is only part of
@@ -1668,7 +1668,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
       </p>
       <a class="inline-block" href="#">
         <button
-          class="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           Learn More
@@ -1679,7 +1679,7 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
             stroke-width="2"
             stroke="currentColor"
             aria-hidden="true"
-            class="h-4 w-4"
+            class="w-4 h-4"
           >
             <path
               stroke-linecap="round"
@@ -1736,23 +1736,23 @@ See below our beautiful card example that you can use in your Tailwind CSS proje
   }
 >
   ```html
-  <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+  <div class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+    <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
       <img
         src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
-        class="h-full w-full object-cover"
+        class="object-cover w-full h-full"
       />
     </div>
     <div class="p-6">
-      <div class="mb-2 flex items-center justify-between">
-        <p class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+      <div class="flex items-center justify-between mb-2">
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
           Apple AirPods
         </p>
-        <p class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
           $95.00
         </p>
       </div>
-      <p class="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
+      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
         With plenty of talk and listen time, voice-activated Siri access, and an
         available wireless charging case.
       </p>

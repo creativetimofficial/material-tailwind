@@ -15,7 +15,7 @@ navigation:
   ]
 github: button
 prev: breadcrumbs
-next: card
+next: button-group
 ---
 
 # Tailwind CSS Button
@@ -78,7 +78,7 @@ See our button examples below. They come in different styles and color.
         {`Button`}
       </button>
       <button
-        class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         data-ripple-dark="true"
       >
         {`Button`}
@@ -107,7 +107,7 @@ See our button examples below. They come in different styles and color.
       Button
     </button>
     <button
-      class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-dark="true"
     >
       Button
@@ -351,7 +351,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -373,7 +373,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -396,7 +396,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -406,7 +406,7 @@ You can use any type of icons inside the button, in the below example we've used
     </svg>
   </button>
   <button
-    class="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     type="button"
     data-ripple-dark="true"
   >
@@ -418,7 +418,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -546,7 +546,7 @@ You can use tailwind css classes with <Code html>Button</Code> to create beautif
     type="button"
     data-ripple-dark="true"
   >
-    <img src="/icons/metamask.svg" alt="metamask" class="h-6 w-6" />
+    <img src="/icons/metamask.svg" alt="metamask" class="w-6 h-6" />
     Connect Wallet
   </button>
   <button
@@ -554,7 +554,7 @@ You can use tailwind css classes with <Code html>Button</Code> to create beautif
     type="button"
     data-ripple-dark="true"
   >
-    <img src="/icons/google.svg" alt="metamask" class="h-6 w-6" />
+    <img src="/icons/google.svg" alt="metamask" class="w-6 h-6" />
     Continue with Google
   </button>
   <button
@@ -563,8 +563,8 @@ You can use tailwind css classes with <Code html>Button</Code> to create beautif
     data-ripple-light="true"
   >
     Sign in with Twitter
-    <span class="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-      <img src="/icons/twitter.svg" alt="metamask" class="h-6 w-6" />
+    <span class="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-blue-600 group-hover:bg-light-blue-700">
+      <img src="/icons/twitter.svg" alt="metamask" class="w-6 h-6" />
     </span>
   </button>
   ```

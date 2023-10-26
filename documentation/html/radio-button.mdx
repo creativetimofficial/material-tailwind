@@ -10,7 +10,7 @@ navigation:
   ]
 github: radio-button
 prev: progress-bar
-next: select
+next: Rating
 ---
 
 # Tailwind CSS Radio
@@ -95,7 +95,7 @@ Use the following example to create simple radio buttons for your projects.
   <div class="flex gap-10">
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="html"
         data-ripple-dark="true"
       >
@@ -105,7 +105,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-pink-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -117,7 +117,7 @@ Use the following example to create simple radio buttons for your projects.
         </div>
       </label>
       <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        class="mt-px font-light text-gray-700 cursor-pointer select-none"
         for="html"
       >
         HTML
@@ -125,7 +125,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="react"
         data-ripple-dark="true"
       >
@@ -135,7 +135,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-pink-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -147,7 +147,7 @@ Use the following example to create simple radio buttons for your projects.
         </div>
       </label>
       <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        class="mt-px font-light text-gray-700 cursor-pointer select-none"
         for="react"
       >
         React
@@ -356,10 +356,10 @@ Use the following example to create simple radio buttons for your projects.
   }
 >
   ```html
-  <div class="flex w-max gap-4">
+  <div class="flex gap-4 w-max">
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="pink"
       >
         <input
@@ -369,7 +369,7 @@ Use the following example to create simple radio buttons for your projects.
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
           checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-pink-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -383,7 +383,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="red"
       >
         <input
@@ -392,7 +392,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-red-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:before:bg-red-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-red-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-red-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -406,7 +406,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="green"
       >
         <input
@@ -415,7 +415,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-green-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:before:bg-green-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-green-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-green-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -429,7 +429,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="amber"
       >
         <input
@@ -438,7 +438,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-amber-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-amber-500 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -452,7 +452,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="teal"
       >
         <input
@@ -461,7 +461,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-teal-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-teal-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-teal-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -475,7 +475,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="indigo"
       >
         <input
@@ -484,7 +484,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-indigo-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-indigo-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-indigo-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -498,7 +498,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="purple"
       >
         <input
@@ -507,7 +507,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-purple-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-purple-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-purple-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -521,7 +521,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="blue"
       >
         <input
@@ -530,7 +530,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-blue-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -625,7 +625,7 @@ Use the following example to create simple radio buttons for your projects.
   <div class="flex gap-10">
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="ripple-on"
         data-ripple-dark="true"
       >
@@ -636,7 +636,7 @@ Use the following example to create simple radio buttons for your projects.
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
           checked
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-pink-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -648,7 +648,7 @@ Use the following example to create simple radio buttons for your projects.
         </div>
       </label>
       <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        class="mt-px font-light text-gray-700 cursor-pointer select-none"
         for="ripple-on"
       >
         Ripple Effect On
@@ -656,7 +656,7 @@ Use the following example to create simple radio buttons for your projects.
     </div>
     <div class="inline-flex items-center">
       <label
-        class="relative flex cursor-pointer items-center rounded-full p-3"
+        class="relative flex items-center p-3 rounded-full cursor-pointer"
         for="ripple-off"
       >
         <input
@@ -665,7 +665,7 @@ Use the following example to create simple radio buttons for your projects.
           type="radio"
           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-pink-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
         />
-        <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-pink-500 opacity-0 transition-opacity peer-checked:opacity-100">
+        <div class="absolute text-pink-500 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-3.5 w-3.5"
@@ -677,7 +677,7 @@ Use the following example to create simple radio buttons for your projects.
         </div>
       </label>
       <label
-        class="mt-px cursor-pointer select-none font-light text-gray-700"
+        class="mt-px font-light text-gray-700 cursor-pointer select-none"
         for="ripple-off"
       >
         Ripple Effect Off
