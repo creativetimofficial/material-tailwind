@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { FB_PIXEL_ID } from '../utils/fpixel'
+import { FB_PIXEL_ID } from "../utils/fpixel";
 
 export default function MyDocument() {
   return (
@@ -13,11 +13,32 @@ export default function MyDocument() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-        <link rel="manifest" href="/img/site.webmanifest" />
+        <link
+          rel="shortcut icon"
+          href="https://docs.material-tailwind.com/favicon.png/favicon.png"
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://docs.material-tailwind.com/favicon.png/favicon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://docs.material-tailwind.com/favicon.png/favicon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://docs.material-tailwind.com/favicon.png/favicon.png"
+        />
+        <link
+          rel="manifest"
+          href="https://docs.material-tailwind.com/favicon.png/img/site.webmanifest"
+        />
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
@@ -25,12 +46,12 @@ export default function MyDocument() {
         />
         <meta name="msapplication-TileColor" content="#020617" />
         <meta name="theme-color" content="#ffffff" />
-        
+
         <noscript>
           <img
             height="1"
             width="1"
-            style={{ display: 'none' }}
+            style={{ display: "none" }}
             src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
