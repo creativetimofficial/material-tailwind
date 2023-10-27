@@ -36,7 +36,7 @@ yarn-error.log*
 .vercel
 
 # dist
-# dist/
+dist/
 
 # lock files
 package-lock.json
