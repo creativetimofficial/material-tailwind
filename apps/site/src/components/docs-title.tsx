@@ -2,7 +2,7 @@ export function DocsTitle({ children, href }) {
   return (
     <div
       id={href}
-      className="group relative -ml-4 flex scroll-mt-40 items-center pl-4"
+      className="group relative -ml-4 flex scroll-pt-64 items-center pl-4"
     >
       <a
         href={`#${href}`}

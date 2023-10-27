@@ -5,8 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./public/*"],
-      "@hooks": ["src/hooks/index.ts"],
       "@routes": ["src/routes.ts"],
+      "@utils": ["src/utils/index.ts"],
+      "@hooks": ["src/hooks/index.ts"],
       "@components": ["src/components/index.ts"]
     },
     "plugins": [

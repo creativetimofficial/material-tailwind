@@ -9,3 +9,4 @@ export * from "./layout/sidenav";
 export * from "./brand";
 export * from "./vercel";
 export * from "./toggle-button";
+export * from "./component-preview";

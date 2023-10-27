@@ -1,3 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Rehype Pretty Code */
+[data-rehype-pretty-code-fragment] {
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] pre {
+  max-height: 32rem;
+  margin: 0;
+  padding: 0;
+  margin-right: 0;
+  border-radius: 0.5rem;
+  border: 0;
+  overflow: scroll;
+}
+
+.code-preview [data-rehype-pretty-code-fragment] pre {
+  max-height: max-content;
+  border: 0;
+  background: transparent;
+  padding: 12px 4px;
+}
+
+[data-rehype-pretty-code-fragment] .highlighted::after {
+  content: " +";
+  display: grid;
+  align-items: center;
+  width: calc(100% + 2.5rem);
+  height: 100%;
+  color: #4ade80;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
+  z-index: 0;
+  border-left: 0.2rem solid #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+[data-rehype-pretty-code-fragment] .word {
+  padding: 0.0875rem 0.125rem;
+  border-radius: 0.25rem;
+  background-color: rgba(74, 222, 128, 0.15);
+}
+
+[data-rehype-pretty-code-fragment] code {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  counter-reset: line;
+  background: transparent !important;
+  border: 0;
+  line-height: 1.5;
+  font-family: "Fira Code", monospace;
+}
+
+table tbody tr td code {
+  font-weight: 600;
+}
+
+[data-rehype-pretty-code-fragment] code .line {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+
+[data-rehype-pretty-code-fragment] .line.highlighted span {
+  position: relative;
+  z-index: 2;
+}
+
+[data-rehype-pretty-code-fragment] code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.25);
+}

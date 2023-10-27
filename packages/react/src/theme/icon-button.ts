@@ -1,3 +1,7 @@
+import type { DeepPartial } from "@types";
+
+export type IconButtonTheme = DeepPartial<typeof iconButtonTheme>;
+
 export const iconButtonTheme = {
   defaultProps: {
     size: "md",

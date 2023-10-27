@@ -30,15 +30,17 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
         } else if (heading.tagName === "H3") {
           const parentHeading = innerToc[innerToc.length - 1];
 
-          Object.assign(parentHeading, {
-            subHeadings: [
-              ...(parentHeading.subHeadings ?? []),
-              {
-                id: heading.id,
-                text: heading.textContent,
-              },
-            ],
-          });
+          if (parentHeading) {
+            Object.assign(parentHeading, {
+              subHeadings: [
+                ...(parentHeading?.subHeadings ?? []),
+                {
+                  id: heading.id,
+                  text: heading.textContent,
+                },
+              ],
+            });
+          }
         }
       });
     }
@@ -61,7 +63,7 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
   React.useEffect(function getActiveToc() {
     if (ref) {
       activeTocRef.current = new IntersectionObserver(handleActiveToc, {
-        rootMargin: "0px 0px -70%",
+        rootMargin: "0px 0px -60%",
         threshold: [0, 1],
       });
 

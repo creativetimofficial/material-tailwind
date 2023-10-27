@@ -1,3 +1,7 @@
+import type { DeepPartial } from "@types";
+
+export type ButtonGroupTheme = DeepPartial<typeof buttonGroupTheme>;
+
 export const buttonGroupTheme = {
   defaultProps: {
     size: "md",

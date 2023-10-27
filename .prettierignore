@@ -13,3 +13,5 @@ pnpm-lock.yaml
 /dist
 .turbo
 /legacy
+
+*.mdx
