@@ -14,6 +14,7 @@ import { iconButtonTheme } from "@theme";
 import type { BaseComponent } from "@types";
 
 export interface IconButtonProps extends BaseComponent<"button"> {
+  as?: React.ElementType;
   ripple?: boolean;
   rounded?: boolean;
   className?: string;
@@ -52,9 +53,10 @@ export interface IconButtonProps extends BaseComponent<"button"> {
  */
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    { color, variant, size, ripple, rounded, className, children, ...rest },
+    { as, color, variant, size, ripple, rounded, className, children, ...rest },
     ref,
   ) => {
+    const Element = as ?? "button";
     const contextTheme = useTheme();
     const theme = contextTheme?.iconButton ?? iconButtonTheme;
     const defaultProps = contextTheme?.iconButton?.defaultProps;
@@ -88,9 +90,9 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     );
 
     return (
-      <button {...rest} ref={ref} className={styles} onClick={handleClick}>
+      <Element {...rest} ref={ref} className={styles} onClick={handleClick}>
         {children}
-      </button>
+      </Element>
     );
   },
 );

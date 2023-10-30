@@ -1,0 +1,230 @@
+---
+title: TailwindCSS Icon Button - Material Tailwind
+description: Customise your web projects with our easy-to-use icon button component for Tailwind CSS and React using Material Design guidelines.
+github: icon-button
+prev: docs/react/checkbox
+next: docs/react/input
+---
+
+# Tailwind CSS Icon Button - React
+
+Use our `IconButton` based on Tailwind CSS for actions.
+
+`IconButton` is an essential element of web design. Basically,
+`IconButton` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action.
+
+See below our `IconButton` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+The below example are using the [Iconoir](https://iconoir.com/) icon library but you can use any icon library you want.
+
+---
+
+## Icon Button Demo
+
+<ComponentPreview demo={<IconButton.IconButtonDemo />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function IconButtonDemo() {
+  return (
+    <IconButton>
+      <BrightStar className="h-4 w-4 stroke-2" />
+    </IconButton>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Icon Button Variants
+
+The `IconButton` component comes with 4 different variants that you can change it using the `variant` prop.
+
+<ComponentPreview demo={<IconButton.IconButtonVariants />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function IconButtonVariants() {
+  return (
+    <div className="flex gap-4">
+      <IconButton variant="ghost">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton variant="outline">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton variant="solid">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton variant="gradient">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Icon Button Sizes
+
+The `IconButton` component comes with 3 different sizes that you can change it using the `size` prop.
+
+<ComponentPreview demo={<IconButton.IconButtonSizes />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function IconButtonSizes() {
+  return (
+    <div className="flex items-end gap-4">
+      <IconButton size="sm">
+        <BrightStar className="h-3 w-3 stroke-2" />
+      </IconButton>
+      <IconButton size="md">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton size="lg">
+        <BrightStar className="h-5 w-5 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Icon Button Colors
+
+The `IconButton` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<IconButton.IconButtonColors />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function IconButtonColors() {
+  return (
+    <div className="flex gap-4">
+      <IconButton color="primary">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton color="secondary">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton color="info">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton color="success">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton color="warning">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton color="error">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Rounded Icon Button
+
+You can make the `IconButton` component to have rounded (circular) corners by using the `rounded` prop.
+
+<ComponentPreview demo={<IconButton.RoundedIconButton />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function RoundedIconButton() {
+  return (
+    <div className="flex gap-4">
+      <IconButton rounded variant="ghost">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton rounded variant="outline">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton rounded variant="solid">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton rounded variant="gradient">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Icon Button As Link
+
+You can use the `IconButton` component as any other HTML element using the `as` prop and passing the HTML element you want to use. For example, you can use it as a link by using the `as="a"` prop or `as={Link}` if you're using Next.js `Link` component.
+
+<ComponentPreview demo={<IconButton.IconButtonAsLink />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { BrightStar } from "iconoir-react";
+
+export function IconButtonAsLink() {
+  return (
+    <div className="flex gap-4">
+      <IconButton as="a" href="#" variant="ghost">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton as="a" href="#" variant="outline">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton as="a" href="#" variant="solid">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton as="a" href="#" variant="gradient">
+        <BrightStar className="h-4 w-4 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Icon Button
+
+You can customize the `IconButton` component the way you want, for example, you can create custom social media buttons.
+
+<ComponentPreview demo={<IconButton.CustomIconButton />}>
+```tsx
+import { IconButton } from "@material-tailwind/react";
+import { GitHub, Dribbble, Facebook } from "iconoir-react";
+
+export function CustomIconButton() {
+  return (
+    <div className="flex gap-4">
+      <IconButton className="border-black bg-black text-white hover:border-black/90 hover:bg-black/90 focus:border-black/90 focus:bg-black/90 dark:border-white dark:bg-white dark:text-black dark:hover:border-white/90 dark:hover:bg-white/90 dark:focus:border-white/90 dark:focus:bg-white/90">
+        <GitHub className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton className="border-pink-500 bg-pink-500 text-white hover:border-pink-600 hover:bg-pink-600 focus:border-pink-600 focus:bg-pink-600 dark:border-pink-500 dark:bg-pink-500 dark:text-white dark:hover:border-pink-600 dark:hover:bg-pink-600 dark:focus:border-pink-600 dark:focus:bg-pink-600">
+        <Dribbble className="h-4 w-4 stroke-2" />
+      </IconButton>
+      <IconButton className="border-blue-500 bg-blue-500 text-white hover:border-blue-600 hover:bg-blue-600 focus:border-blue-600 focus:bg-blue-600 dark:border-blue-500 dark:bg-blue-500 dark:text-white dark:hover:border-blue-600 dark:hover:bg-blue-600 dark:focus:border-blue-600 dark:focus:bg-blue-600">
+        <Facebook className="h-4 w-4 stroke-2" />
+      </IconButton>
+    </div>
+  );
+}
+```
+</ComponentPreview>

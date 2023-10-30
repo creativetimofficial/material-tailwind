@@ -7,6 +7,7 @@ import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // @docs-components
 import * as Button from "@components/docs/button";
+import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
 
 const components = {
@@ -56,6 +57,7 @@ const components = {
 
   // docs-components
   Button,
+  IconButton,
   ButtonGroup,
 };
 
