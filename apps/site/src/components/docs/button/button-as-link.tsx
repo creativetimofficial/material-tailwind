@@ -1,0 +1,20 @@
+import { Button } from "@material-tailwind/react/dist";
+
+export function ButtonAsLink() {
+  return (
+    <div className="flex gap-4">
+      <Button as="a" href="#" variant="ghost">
+        Ghost
+      </Button>
+      <Button as="a" href="#" variant="outline">
+        Outline
+      </Button>
+      <Button as="a" href="#" variant="solid">
+        Solid
+      </Button>
+      <Button as="a" href="#" variant="gradient">
+        Gradient
+      </Button>
+    </div>
+  );
+}

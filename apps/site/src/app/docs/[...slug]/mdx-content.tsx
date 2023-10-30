@@ -1,14 +1,16 @@
 "use client";
 
+// @components
+import { ComponentPreview } from "@components";
+import { Typography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
-// mdx components
-import { ComponentPreview } from "@components";
-import { Button, Typography } from "@material-tailwind/react/dist";
+// @docs-components
+import * as Button from "@components/docs/button";
+import * as ButtonGroup from "@components/docs/button-group";
 
 const components = {
   ComponentPreview,
-  Button,
   h1: (props) => (
     <Typography
       as="h1"
@@ -21,7 +23,7 @@ const components = {
     <Typography
       as="h2"
       variant="h4"
-      className="mb-4 dark:text-gray-100"
+      className="mb-4 scroll-mt-40 dark:text-gray-100"
       {...props}
     />
   ),
@@ -45,6 +47,16 @@ const components = {
       {...props}
     />
   ),
+  a: (props) => (
+    <a
+      className="text-blue-500 underline transition-colors duration-300 hover:text-gray-950"
+      {...props}
+    />
+  ),
+
+  // docs-components
+  Button,
+  ButtonGroup,
 };
 
 type MdxContentProps = {

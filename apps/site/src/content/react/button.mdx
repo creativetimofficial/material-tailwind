@@ -21,7 +21,7 @@ See below our `Button` example that you can use in your Tailwind CSS and React p
 
 ## Button Demo
 
-<ComponentPreview demo={<Button>Button</Button>}>
+<ComponentPreview demo={<Button.ButtonDemo />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
 
@@ -37,14 +37,7 @@ export function ButtonDemo() {
 
 The `Button` component comes with 4 different variants that you can change it using the `variant` prop.
 
-<ComponentPreview demo={
-  <div className="flex gap-4">
-    <Button variant="ghost">Ghost</Button>
-    <Button variant="outline">Outline</Button>
-    <Button variant="solid">Solid</Button>
-    <Button variant="gradient">Gradient</Button>
-  </div>
-}>
+<ComponentPreview demo={<Button.ButtonVariants />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
 
@@ -67,13 +60,7 @@ export function ButtonVariants() {
 
 The `Button` component comes with 3 different sizes that you can change it using the `size` prop.
 
-<ComponentPreview demo={
-  <div className="flex gap-4 items-end">
-    <Button size="sm">Small</Button>
-    <Button size="md">Medium</Button>
-    <Button size="lg">Large</Button>
-  </div>
-}>
+<ComponentPreview demo={<Button.ButtonSizes />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
 
@@ -93,18 +80,9 @@ export function ButtonSizes() {
 
 ## Button Colors
 
-The `Button` component comes with 19 different colors that you can change it using the `color` prop.
+The `Button` component comes with 6 different colors that you can change it using the `color` prop.
 
-<ComponentPreview demo={
-  <div className="flex gap-4">
-    <Button color="primary">Primary</Button>
-    <Button color="secondary">Secondary</Button>
-    <Button color="info">Info</Button>
-    <Button color="success">Success</Button>
-    <Button color="warning">Warning</Button>
-    <Button color="error">Error</Button>
-  </div>
-}>
+<ComponentPreview demo={<Button.ButtonColors />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
 
@@ -119,6 +97,169 @@ export function ButtonColors() {
       <Button color="error">Error</Button>
     </div>
   )
+}
+```
+</ComponentPreview>
+
+---
+
+## Button With Icon
+
+You can place your favorite icon inside the `Button` component, the below example is using the [Iconoir](https://iconoir.com/) icon library but you can use any icon library you want.
+
+<ComponentPreview demo={<Button.ButtonWithIcon />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+import {
+  NavArrowRight,
+  RefreshDouble,
+  CloudUpload,
+  BrightStar,
+} from "iconoir-react";
+
+export function ButtonWithIcon() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="ghost">
+        Read More
+        <NavArrowRight className="ml-1 h-4 w-4 stroke-2" />
+      </Button>
+      <Button variant="outline">
+        Refresh
+        <RefreshDouble className="ml-2 h-4 w-4 stroke-2" />
+      </Button>
+      <Button variant="solid">
+        <CloudUpload className="mr-2 h-4 w-4 stroke-2" />
+        Upload Assets
+      </Button>
+      <Button variant="gradient">
+        Give Us Star
+        <BrightStar className="ml-2 h-4 w-4 stroke-2" />
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Block Level Button
+
+You can make the `Button` component to take the full width of its parent by using the `fullWidth` prop.
+
+<ComponentPreview demo={<Button.BlockLevelButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function BlockLevelButton() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Button fullWidth variant="ghost">
+        Ghost Block Level Button
+      </Button>
+      <Button fullWidth variant="outline">
+        Outline Block Level Button
+      </Button>
+      <Button fullWidth variant="solid">
+        Solid Block Level Button
+      </Button>
+      <Button fullWidth variant="gradient">
+        Gradient Block Level Button
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Rounded Button
+
+You can make the `Button` component to have rounded (circular) corners by using the `rounded` prop.
+
+<ComponentPreview demo={<Button.RoundedButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function RoundedButton() {
+  return (
+    <div className="flex gap-4">
+      <Button rounded variant="ghost">
+        Ghost
+      </Button>
+      <Button rounded variant="outline">
+        Outline
+      </Button>
+      <Button rounded variant="solid">
+        Solid
+      </Button>
+      <Button rounded variant="gradient">
+        Gradient
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button As Link
+
+You can use the `Button` component as any other HTML element using the `as` prop and passing the HTML element you want to use. For example, you can use it as a link by using the `as="a"` prop or `as={Link}` if you're using Next.js `Link` component.
+
+<ComponentPreview demo={<Button.ButtonAsLink />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonAsLink() {
+  return (
+    <div className="flex gap-4">
+      <Button as="a" href="#" variant="ghost">
+        Ghost
+      </Button>
+      <Button as="a" href="#" variant="outline">
+        Outline
+      </Button>
+      <Button as="a" href="#" variant="solid">
+        Solid
+      </Button>
+      <Button as="a" href="#" variant="gradient">
+        Gradient
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Auth Button
+
+You can customize the `Button` component the way you want, for example, you can create custom auth buttons.
+
+<ComponentPreview demo={<Button.CustomAuthButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
+
+export function CustomAuthButton() {
+  return (
+    <div className="flex gap-4">
+      <Button className="border-amber-500 bg-amber-500 hover:border-amber-600 hover:bg-amber-600 focus:border-amber-600 focus:bg-amber-600">
+        <BitcoinCircle className="mr-2 h-4 w-4 stroke-2" /> Connect Wallet
+      </Button>
+      <Button className="border-blue-50 bg-white text-gray-950 shadow-lg shadow-gray-100 hover:border-blue-100 hover:bg-white hover:text-blue-500 focus:border-blue-100 focus:bg-white focus:text-blue-500">
+        <GoogleCircle className="mr-2 h-4 w-4 stroke-2" /> Continue with Google
+      </Button>
+      <Button className="border-blue-500 bg-blue-500 hover:border-blue-600 hover:bg-blue-600 focus:border-blue-600 focus:bg-blue-600">
+        <Facebook className="mr-2 h-4 w-4 stroke-2" /> Continue with Facebook
+      </Button>
+    </div>
+  );
 }
 ```
 </ComponentPreview>

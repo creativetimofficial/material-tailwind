@@ -99,11 +99,11 @@ export const routes = [
         pages: [
           {
             title: "Button",
-            path: "/button",
+            path: "/docs/react/button",
           },
           {
             title: "Button Group",
-            path: "/button-group",
+            path: "/docs/react/button-group",
           },
           {
             title: "Checkbox",
@@ -111,7 +111,7 @@ export const routes = [
           },
           {
             title: "Icon Button",
-            path: "/icon-button",
+            path: "/docs/react/icon-button",
           },
           {
             title: "Input",

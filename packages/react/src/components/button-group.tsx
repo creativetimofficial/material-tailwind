@@ -13,7 +13,8 @@ import { buttonGroupTheme } from "@theme";
 import type { BaseComponent } from "@types";
 import type { ButtonProps } from "@components";
 
-export interface ButtonGroupProps extends BaseComponent<"div"> {
+export interface ButtonGroupProps extends BaseComponent<any> {
+  as?: React.ElementType;
   ripple?: boolean;
   rounded?: boolean;
   fullWidth?: boolean;
@@ -43,9 +44,10 @@ export interface ButtonGroupProps extends BaseComponent<"div"> {
  * }
  * ```
  */
-export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+export const ButtonGroup = React.forwardRef<HTMLElement, ButtonGroupProps>(
   (
     {
+      as,
       color,
       variant,
       size,
@@ -59,6 +61,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
     },
     ref,
   ) => {
+    const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.buttonGroup ?? buttonGroupTheme;
     const defaultProps = contextTheme?.buttonGroup?.defaultProps;
@@ -89,7 +92,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
     );
 
     return (
-      <div {...rest} ref={ref} className={styles}>
+      <Element {...rest} ref={ref} className={styles}>
         {React.Children.map(
           children,
           (child) =>
@@ -104,7 +107,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
               ...child.props,
             } as ButtonProps),
         )}
-      </div>
+      </Element>
     );
   },
 );

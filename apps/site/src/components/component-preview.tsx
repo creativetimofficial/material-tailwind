@@ -1,9 +1,16 @@
 "use client";
+
+// @components
 import React from "react";
-import { twMerge } from "tailwind-merge";
+import { Check, Copy } from "iconoir-react";
 import { Fira_Code } from "next/font/google";
 import { IconButton } from "@material-tailwind/react/dist";
-import { Check, Copy } from "iconoir-react";
+
+// @hooks
+import { useCopyToClipboard } from "usehooks-ts";
+
+// @utils
+import { twMerge } from "tailwind-merge";
 
 const firaCode = Fira_Code({
   weight: ["400", "500"],
@@ -24,9 +31,13 @@ export function ComponentPreview({
   className,
 }: ComponentPreviewProps) {
   const codeRef = React.useRef<any>(null);
+  const [, copy] = useCopyToClipboard();
   const [isCopied, setIsCopied] = React.useState(false);
 
-  const copyCode = () => setIsCopied(true);
+  const copyCode = () => {
+    setIsCopied(true);
+    copy(codeRef.current.innerText);
+  };
   const resetCopy = () => setIsCopied(false);
 
   const containerStyles = twMerge(
@@ -41,7 +52,7 @@ export function ComponentPreview({
 
   return (
     <div className={containerStyles}>
-      <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md lg:overflow-hidden">
+      <div className="mb-2 grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md lg:overflow-hidden">
         {demo}
       </div>
       <div className={codeBlockStyles}>
