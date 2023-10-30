@@ -29,7 +29,6 @@ export interface TypographyProps extends BaseTypographyProps {
   as?: React.ElementType;
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
   color?: BaseComponent<any>["color"];
-  isGradient?: boolean;
   className?: string;
   children: React.ReactNode;
 }
@@ -50,8 +49,8 @@ export interface TypographyProps extends BaseTypographyProps {
  * ```
  */
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ as, color, variant, isGradient, className, children, ...rest }, ref) => {
-    const Element = as ?? variant ?? "p";
+  ({ as, color, variant, className, children, ...rest }, ref) => {
+    const Element: any = as ?? variant ?? "p";
     const contextTheme = useTheme();
     const theme = contextTheme?.typography ?? typographyTheme;
     const defaultProps = contextTheme?.typography?.defaultProps;
@@ -63,7 +62,6 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
       theme.baseStyle,
       theme["variant"][variant],
       theme["color"][color],
-      isGradient ? theme["isGradient"] : {},
       className,
     );
 

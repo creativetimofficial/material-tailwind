@@ -3,7 +3,7 @@ import { Bold, Italic, Underline } from "iconoir-react";
 
 export function ButtonGroupWithIcon() {
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="flex flex-col gap-4">
       <ButtonGroup variant="ghost">
         <Button>
           <Bold className="mr-1.5 h-4 w-4 stroke-2" />

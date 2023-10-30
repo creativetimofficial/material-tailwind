@@ -2,18 +2,19 @@
 
 // @components
 import { ComponentPreview } from "@components";
-import { Typography } from "@material-tailwind/react/dist";
+import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // @docs-components
 import * as Button from "@components/docs/button";
+import * as Typography from "@components/docs/typography";
 import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
 
 const components = {
   ComponentPreview,
   h1: (props) => (
-    <Typography
+    <MTTypography
       as="h1"
       variant="h3"
       className="mb-4 dark:text-gray-100"
@@ -21,7 +22,7 @@ const components = {
     />
   ),
   h2: (props) => (
-    <Typography
+    <MTTypography
       as="h2"
       variant="h4"
       className="mb-4 scroll-mt-40 dark:text-gray-100"
@@ -29,7 +30,7 @@ const components = {
     />
   ),
   h3: (props) => (
-    <Typography
+    <MTTypography
       as="h3"
       variant="h5"
       className="mb-4 dark:text-gray-100"
@@ -37,11 +38,14 @@ const components = {
     />
   ),
   p: (props) => (
-    <Typography className="mb-4 text-gray-500 dark:text-gray-400" {...props} />
+    <MTTypography
+      className="mb-4 text-gray-500 dark:text-gray-400"
+      {...props}
+    />
   ),
   hr: () => <hr className="my-8 border-transparent" />,
   code: (props) => (
-    <Typography
+    <MTTypography
       as="code"
       variant="small"
       className="inline-block rounded border border-gray-200 bg-gray-100 px-1 py-0.5 font-mono leading-none text-gray-500 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400"
@@ -58,6 +62,7 @@ const components = {
   // docs-components
   Button,
   IconButton,
+  Typography,
   ButtonGroup,
 };
 

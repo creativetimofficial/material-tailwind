@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react/dist";
 
 export function BlockLevelButton() {
   return (
-    <div className="flex w-full flex-col gap-4 p-4">
+    <div className="flex w-full flex-col gap-4">
       <Button fullWidth variant="ghost">
         Ghost Block Level Button
       </Button>

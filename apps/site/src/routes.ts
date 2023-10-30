@@ -115,31 +115,31 @@ export const routes = [
           },
           {
             title: "Input",
-            path: "/input",
+            path: "/docs/react/input",
           },
           {
             title: "Radio Button",
-            path: "/radio",
+            path: "/docs/react/radio",
           },
           {
             title: "Rating Bar",
-            path: "/rating",
+            path: "/docs/react/rating",
           },
           {
             title: "Select",
-            path: "/select",
+            path: "/docs/react/select",
           },
           {
             title: "Slider",
-            path: "/slider",
+            path: "/docs/react/slider",
           },
           {
             title: "Switch",
-            path: "/Switch",
+            path: "/docs/react/Switch",
           },
           {
             title: "Textarea",
-            path: "/textarea",
+            path: "/docs/react/textarea",
           },
         ],
       },
@@ -148,59 +148,59 @@ export const routes = [
         pages: [
           {
             title: "Accordion",
-            path: "/accordion",
+            path: "/docs/react/accordion",
           },
           {
             title: "Avatar",
-            path: "/avatar",
+            path: "/docs/react/avatar",
           },
           {
             title: "Badge",
-            path: "/badge",
+            path: "/docs/react/badge",
           },
           {
             title: "Card",
-            path: "/card",
+            path: "/docs/react/card",
           },
           {
             title: "Chip",
-            path: "/chip",
+            path: "/docs/react/chip",
           },
           {
             title: "Collapse",
-            path: "/collapse",
+            path: "/docs/react/collapse",
           },
           {
             title: "Image",
-            path: "/image",
+            path: "/docs/react/image",
           },
           {
             title: "List",
-            path: "/list",
+            path: "/docs/react/list",
           },
           {
             title: "Popover",
-            path: "/popover",
+            path: "/docs/react/popover",
           },
           {
             title: "Table",
-            path: "/table",
+            path: "/docs/react/table",
           },
           {
             title: "Timeline",
-            path: "/timeline",
+            path: "/docs/react/timeline",
           },
           {
             title: "Tooltip",
-            path: "/tooltip",
+            path: "/docs/react/tooltip",
           },
           {
             title: "Typography",
-            path: "/typography",
+            path: "/docs/react/typography",
           },
           {
             title: "Video",
-            path: "/video",
+            path: "/docs/react/video",
           },
         ],
       },
@@ -209,19 +209,19 @@ export const routes = [
         pages: [
           {
             title: "Alert",
-            path: "/alert",
+            path: "/docs/react/alert",
           },
           {
             title: "Dialog",
-            path: "/dialog",
+            path: "/docs/react/dialog",
           },
           {
             title: "Spinner",
-            path: "/spinner",
+            path: "/docs/react/spinner",
           },
           {
             title: "Progress Bar",
-            path: "/progress",
+            path: "/docs/react/progress",
           },
         ],
       },
@@ -230,35 +230,35 @@ export const routes = [
         pages: [
           {
             title: "Breadcrumbs",
-            path: "/breadcrumbs",
+            path: "/docs/react/breadcrumbs",
           },
           {
             title: "Drawer",
-            path: "/drawer",
+            path: "/docs/react/drawer",
           },
           {
             title: "Link",
-            path: "/link",
+            path: "/docs/react/link",
           },
           {
             title: "Menu",
-            path: "/menu",
+            path: "/docs/react/menu",
           },
           {
             title: "Pagination",
-            path: "/pagination",
+            path: "/docs/react/pagination",
           },
           {
             title: "Speed Dial",
-            path: "/speed-dial",
+            path: "/docs/react/speed-dial",
           },
           {
             title: "Stepper",
-            path: "/stepper",
+            path: "/docs/react/stepper",
           },
           {
             title: "Tabs",
-            path: "/tabs",
+            path: "/docs/react/tabs",
           },
         ],
       },
@@ -267,23 +267,23 @@ export const routes = [
         pages: [
           {
             title: "Carousel",
-            path: "/carousel",
+            path: "/docs/react/carousel",
           },
           {
             title: "Footer",
-            path: "/footer",
+            path: "/docs/react/footer",
           },
           {
             title: "Form",
-            path: "/form",
+            path: "/docs/react/form",
           },
           {
             title: "Navbar",
-            path: "/navbar",
+            path: "/docs/react/navbar",
           },
           {
             title: "Sidebar",
-            path: "/sidebar",
+            path: "/docs/react/sidebar",
           },
         ],
       },

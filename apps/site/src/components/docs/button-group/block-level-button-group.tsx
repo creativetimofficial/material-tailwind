@@ -2,7 +2,7 @@ import { ButtonGroup, Button } from "@material-tailwind/react/dist";
 
 export function BlockLevelButtonGroup() {
   return (
-    <div className="flex w-full flex-col gap-4 p-4">
+    <div className="flex w-full flex-col gap-4">
       <ButtonGroup fullWidth variant="ghost">
         <Button>React</Button>
         <Button>Vue</Button>

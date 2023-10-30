@@ -1,0 +1,137 @@
+---
+title: Tailwind CSS Typography for React - Material Tailwind
+description: Customise your web projects with our beautiful typography component for Tailwind CSS and React using Material Design guidelines.
+github: typography
+prev: docs/react/tooltip
+next: docs/react/video
+---
+
+# Tailwind CSS Typography - React
+
+Use our Tailwind CSS `Typography` to present your website/web app as clearly and efficiently as possible.
+
+Below we are presenting a simple `Typography` component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Headings
+
+<ComponentPreview demo={<Typography.Headings />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function Headings() {
+  return (
+    <div className="flex flex-col gap-4 py-4">
+      <Typography variant="h1">Material Tailwind (H1)</Typography>
+      <Typography variant="h2">Material Tailwind (H2)</Typography>
+      <Typography variant="h3">Material Tailwind (H3)</Typography>
+      <Typography variant="h4">Material Tailwind (H4)</Typography>
+      <Typography variant="h5">Material Tailwind (H5)</Typography>
+      <Typography variant="h6">Material Tailwind (H6)</Typography>
+    </div>
+  );
+}
+
+```
+</ComponentPreview>
+
+---
+
+## Paragraph
+
+<ComponentPreview demo={<Typography.Paragraph />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function Paragraph() {
+  return (
+    <Typography>
+      Material Tailwind is an easy to use components library for Tailwind CSS
+      and Material Design. It provides a simple way to customize your
+      components, you can change the colors, fonts, breakpoints and everything
+      you need.
+    </Typography>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Lead Paragraph
+
+<ComponentPreview demo={<Typography.LeadParagraph />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function LeadParagraph() {
+  return (
+    <Typography as="p" variant="h6" className="font-normal">
+      Material Tailwind is an easy to use components library for Tailwind CSS
+      and Material Design. It provides a simple way to customize your
+      components, you can change the colors, fonts, breakpoints and everything
+      you need.
+    </Typography>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Small Text
+
+<ComponentPreview demo={<Typography.SmallText />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function SmallText() {
+  return (
+    <Typography variant="small">
+      Material Tailwind is an easy to use components library for Tailwind CSS
+      and Material Design. It provides a simple way to customize your
+      components, you can change the colors, fonts, breakpoints and everything
+      you need.
+    </Typography>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Typography Colors
+
+The `Typography` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<Typography.TypographyColors />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function TypographyColors() {
+  return (
+    <div className="flex flex-col gap-4 py-4">
+      <Typography variant="h1" color="primary">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="secondary">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="info">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="success">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="warning">
+        Material Tailwind
+      </Typography>
+      <Typography variant="h1" color="error">
+        Material Tailwind
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>

@@ -52,7 +52,7 @@ export function ComponentPreview({
 
   return (
     <div className={containerStyles}>
-      <div className="mb-2 grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md lg:overflow-hidden">
+      <div className="mb-2 grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md p-4 lg:overflow-hidden">
         {demo}
       </div>
       <div className={codeBlockStyles}>

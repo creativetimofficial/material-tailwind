@@ -9,7 +9,6 @@ export const typographyTheme = {
     isGradient: false,
   },
   baseStyle: "block font-sans antialiased",
-  isGradient: "bg-clip-text text-transparent",
   variant: {
     h1: "text-5xl font-bold",
     h2: "text-4xl font-bold",

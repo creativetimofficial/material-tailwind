@@ -2,7 +2,7 @@ import { ButtonGroup, Button } from "@material-tailwind/react/dist";
 
 export function ButtonGroupColors() {
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="flex flex-col gap-4">
       <ButtonGroup color="primary">
         <Button>React</Button>
         <Button>Vue</Button>
