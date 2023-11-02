@@ -353,17 +353,23 @@ export default function Page({ frontMatter, mdxSource, slug }) {
           href={`https://www.material-tailwind.com/docs/${canonical}`}
         />
       </Head>
-      <Alert className="w-full justify-center rounded-none">
-        <div className="flex  items-center justify-center gap-4">
-          NEW | Material Tailwind PRO, a comprehensive compilation of 170+
-          blocks, now available for your use.
-          <Link href="/blocks">
-            <Button size="sm" color="white">
-              check out
-            </Button>
-          </Link>
-        </div>
-      </Alert>
+      <Link href="/blocks">
+        <Alert variant="ghost" className="w-full bg-blue-gray-50 justify-center rounded-none">
+          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
+            <span className="font-medium m-0 flex items-center">
+              <Chip variant="outlined" value="NEW" className="mr-2 !text-blue-gray-900" /> Material Tailwind Blocks</span>, a comprehensive compilation of <span className="font-bold mx-1">170+</span>
+            blocks, now available for your use.&nbsp;
+            
+            <span className="font-bold flex items-center">
+              Check out 
+              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-1">
+                <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </Alert>
+      </Link>
+
       <div className="relative mb-8 h-full w-full bg-white">
         <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
         <div className="px-6">

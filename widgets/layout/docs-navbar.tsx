@@ -90,29 +90,30 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
       <List className="min-w-max px-0 lg:!flex-row">
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
+        <NavItem href="/figma">Figma</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
-        <div className="group relative">
+        <div className="group relative mt-1">
           <Input
-            type="email"
-            placeholder="Search"
-            className="!w-full !border-[1.5px] !border-blue-gray-50 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
-            labelProps={{
-              className: "hidden",
-            }}
-            containerProps={{ className: "min-w-[100px]" }}
+              type="email"
+              placeholder="Search"
+              className="w-full !h-9 border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+              labelProps={{
+                  className: "hidden",
+              }}
+              containerProps={{ className: "min-w-[100px]" }}
           />
-          <div className="absolute right-3.5 top-2/4 -translate-y-2/4">
-            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pb-0 pt-px text-xs font-medium text-gray-900 shadow shadow-black/5">
-              <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
-                ⌘
-              </span>
-              K
-            </kbd>
+          <div className="absolute top-1.5 right-3.5 ">
+              <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
+                  <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
+                      ⌘
+                  </span>
+                  K
+              </kbd>
           </div>
           <div className="absolute inset-0 w-full opacity-0">
-            <Search />
-            ab
+              <Search />
+              ab
           </div>
         </div>
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
@@ -123,12 +124,12 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"
           >
             <Chip
-              value={<span className="-ml-1.5">{stars}</span>}
+              value={<span className="-ml-2 text-blue-gray-900">{stars}</span>}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="text-blue-gray-900"
                   className="!ml-0 mt-[2.5px] h-3.5 w-3.5"
                 >
                   <path
@@ -138,9 +139,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                   />
                 </svg>
               }
-              className="flex-items-center gap-2 bg-primary py-[3px] !pr-2 text-xs"
+              className="items-center gap-2 bg-white border py-1 !border-blue-gray-100 !pr-2 text-xs text-blue-gray-900"
             />
-            <i className="fab fa-github text-xl leading-none" />
+            <i className="fab fa-github text-xl leading-none opacity-80" />
           </a>
         </Tooltip>
         <Tooltip content="Join our community" placement="bottom" offset={-2.5}>
@@ -154,7 +155,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           </a>
         </Tooltip>
         <Link href="/blocks#pricing">
-          <Button size="sm">Pricing & FAQ</Button>
+          <Button size="sm" className="flex items-center justify-between bg-primary py-2.5">Pricing & FAQ</Button>
         </Link>
       </div>
     </div>
