@@ -357,7 +357,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <Alert variant="ghost" className="w-full bg-blue-gray-50 justify-center rounded-none">
           <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
             <span className="font-medium m-0 flex items-center">
-              <Chip variant="outlined" value="NEW" className="mr-2 !text-blue-gray-900" /> Material Tailwind Blocks</span>, a comprehensive compilation of <span className="font-bold mx-1">170+</span>
+              <Chip variant="outlined" value="NEW" className="mr-2 !text-blue-gray-900 py-1 px-2.5" /> Material Tailwind Blocks</span>, a comprehensive compilation of <span className="font-bold mx-1">170+</span>
             blocks, now available for your use.&nbsp;
             
             <span className="font-bold flex items-center">

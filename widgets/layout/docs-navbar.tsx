@@ -183,7 +183,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
               <Chip
                 value={`v${process.env.NEXT_PUBLIC_MT_FRAMEWORK_VERSION}`}
                 variant="outlined"
-                className="ml-2 rounded-full border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
+                className="ml-2 border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
               />
               <hr className="mx-2 h-8 border-r border-primary/10" />
               <Typography
