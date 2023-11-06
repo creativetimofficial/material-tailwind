@@ -91,6 +91,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <NavItem href="/figma">Figma</NavItem>
+        <NavItem href="/blog">Blog</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative mt-1">
