@@ -10,9 +10,7 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "nepcha.com"],
   },
-  assetPrefix: isProd
-    ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}`
-    : undefined,
+  assetPrefix: isProd ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}` : undefined,
   async redirects() {
     return [
       {
@@ -22,14 +20,14 @@ const nextConfig = {
       },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: `${process.env.NEXT_PUBLIC_ROOT_URL}`,
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: `${process.env.NEXT_PUBLIC_ROOT_URL}`,
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;

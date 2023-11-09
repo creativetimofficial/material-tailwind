@@ -12,6 +12,9 @@ import {
   Tab,
   Textarea,
   IconButton,
+  CardBody,
+  Card,
+  CardHeader,
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -216,6 +219,34 @@ export function PageMap({ type, frontMatter }) {
             </Link>
           </li>
         </ul>
+        <Card
+          color="transparent"
+          shadow={false}
+          className="border border-blue-gray-50"
+        >
+          <CardHeader
+            floated={false}
+            shadow={false}
+            color="transparent"
+            className="mx-4 mt-4 mb-0"
+          >
+            Hello
+          </CardHeader>
+          <CardBody className="p-4">
+            <Typography variant="h6" color="blue-gray">
+              Roots of UI/UX Design
+            </Typography>
+            <Typography
+              variant="small"
+              className="mb-2 block font-normal !text-gray-600"
+            >
+              By Creative Tim
+            </Typography>
+            <Typography variant="small" className="font-normal !text-gray-600">
+              Learn to Develop Intuitive Web Experiences
+            </Typography>
+          </CardBody>
+        </Card>
       </div>
       <Dialog
         size="sm"
