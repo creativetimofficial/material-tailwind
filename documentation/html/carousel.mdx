@@ -28,7 +28,7 @@ The Tailwind CSS Carousel component helps you create responsive image carousels 
   link="carousel#carousel"
   component={
    <>
- <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+ <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
   <div class="relative flex w-full h-full overflow-x-hidden rounded-xl">
     <div class="left-0 right-0 flex-none inline-block w-full h-full transform-none " ><img
         src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
@@ -59,7 +59,7 @@ The Tailwind CSS Carousel component helps you create responsive image carousels 
   }
 >
   ```html
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
   <div class="relative flex w-full h-full overflow-x-hidden rounded-xl">
     <div class="left-0 right-0 flex-none inline-block w-full h-full transform-none " ><img
         src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
@@ -99,40 +99,18 @@ The Tailwind CSS Carousel component helps you create responsive image carousels 
   className="mt-4"
   component={
    <>
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg  lg:overflow-visible">
   <div class="relative flex w-full h-full overflow-x-hidden rounded-xl">
-    <div class="w-full h-full inline-block flex-none left-[0%] right-[0%] -translate-x-[1172px] "
-      >
-      <div class="relative w-full h-full"><img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
-          alt="image 1" class="object-cover w-full h-full"/>
-        <div class="absolute inset-0 grid w-full h-full place-items-center bg-black/75">
-          <div class="w-3/4 text-center md:w-2/4">
-            <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
-              The Beauty of Nature</h1>
-            <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
-              not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
-              that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.
-            </p>
-            <div class="flex justify-center gap-2"><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                type="button">Explore</button><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg text-white hover:bg-white/10 active:bg-white/30"
-                type="button">Gallery</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full h-full inline-block flex-none left-[100%] right-[100%] -translate-x-[1172px] "
-     >
+    
+    <div class="flex-none inline-block w-full h-full "
+    >
       <div class="relative w-full h-full"><img
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
           alt="image 2" class="object-cover w-full h-full"/>
         <div class="absolute inset-0 grid items-center w-full h-full bg-black/75">
-          <div class="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+          <div class="w-3/4 pl-12 md:w-2/4 md:!pl-20 lg:!pl-32">
             <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
+              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl ">
               The Beauty of Nature</h1>
             <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
               not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
@@ -147,83 +125,40 @@ The Tailwind CSS Carousel component helps you create responsive image carousels 
         </div>
       </div>
     </div>
-    <div class="w-full h-full inline-block flex-none left-[200%] right-[200%] -translate-x-[1172px]  "
-     >
-      <div class="relative w-full h-full"><img
-          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-          alt="image 3" class="object-cover w-full h-full"/>
-        <div class="absolute inset-0 grid items-end w-full h-full bg-black/75">
-          <div class="w-3/4 pb-12 pl-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
-            <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
-              The Beauty of Nature</h1>
-            <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
-              not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
-              that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.
-            </p>
-            <div class="flex gap-2"><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                type="button">Explore</button><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg text-white hover:bg-white/10 active:bg-white/30"
-                type="button">Gallery</button></div>
-          </div>
-        </div>
-      </div>
-    </div><button
+    
+    <button
       class="!absolute top-2/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"><svg
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
         class="-ml-1 h-7 w-7">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
       </svg></button><button
-      class="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
-      disabled=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        stroke-width="3" class="ml-1 h-7 w-7">
+      class="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"><svg
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+        class="ml-1 h-7 w-7">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
       </svg></button>
     <div class="absolute z-50 flex gap-2 bottom-4 left-2/4 -translate-x-2/4"><span
         class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span><span
-        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span><span
-        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white"></span></div>
+        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white"></span><span
+        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span></div>
   </div>
 </div>
    </>
   }
 >
   ```html
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg  lg:overflow-visible">
   <div class="relative flex w-full h-full overflow-x-hidden rounded-xl">
-    <div class="w-full h-full inline-block flex-none left-[0%] right-[0%] -translate-x-[1172px] "
-      >
-      <div class="relative w-full h-full"><img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
-          alt="image 1" class="object-cover w-full h-full"/>
-        <div class="absolute inset-0 grid w-full h-full place-items-center bg-black/75">
-          <div class="w-3/4 text-center md:w-2/4">
-            <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
-              The Beauty of Nature</h1>
-            <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
-              not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
-              that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.
-            </p>
-            <div class="flex justify-center gap-2"><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                type="button">Explore</button><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg text-white hover:bg-white/10 active:bg-white/30"
-                type="button">Gallery</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="w-full h-full inline-block flex-none left-[100%] right-[100%] -translate-x-[1172px] "
-     >
+    
+    <div class="flex-none inline-block w-full h-full "
+    >
       <div class="relative w-full h-full"><img
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
           alt="image 2" class="object-cover w-full h-full"/>
         <div class="absolute inset-0 grid items-center w-full h-full bg-black/75">
-          <div class="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+          <div class="w-3/4 pl-12 md:w-2/4 md:!pl-20 lg:!pl-32">
             <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
+              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl ">
               The Beauty of Nature</h1>
             <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
               not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
@@ -238,43 +173,22 @@ The Tailwind CSS Carousel component helps you create responsive image carousels 
         </div>
       </div>
     </div>
-    <div class="w-full h-full inline-block flex-none left-[200%] right-[200%] -translate-x-[1172px]  "
-     >
-      <div class="relative w-full h-full"><img
-          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-          alt="image 3" class="object-cover w-full h-full"/>
-        <div class="absolute inset-0 grid items-end w-full h-full bg-black/75">
-          <div class="w-3/4 pb-12 pl-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
-            <h1
-              class="block mb-4 font-sans text-3xl antialiased font-semibold tracking-normal text-white md:text-4xl lg:text-5xl">
-              The Beauty of Nature</h1>
-            <p class="block mb-12 font-sans text-xl antialiased font-normal leading-relaxed text-white opacity-80">It is
-              not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something,
-              that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit.
-            </p>
-            <div class="flex gap-2"><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                type="button">Explore</button><button
-                class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg text-white hover:bg-white/10 active:bg-white/30"
-                type="button">Gallery</button></div>
-          </div>
-        </div>
-      </div>
-    </div><button
+    
+    <button
       class="!absolute top-2/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"><svg
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
         class="-ml-1 h-7 w-7">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
       </svg></button><button
-      class="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
-      disabled=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        stroke-width="3" class="ml-1 h-7 w-7">
+      class="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"><svg
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+        class="ml-1 h-7 w-7">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
       </svg></button>
     <div class="absolute z-50 flex gap-2 bottom-4 left-2/4 -translate-x-2/4"><span
         class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span><span
-        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span><span
-        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white"></span></div>
+        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white"></span><span
+        class="block h-3 w-3 cursor-pointer rounded-full transition-colors content-[''] bg-white/50"></span></div>
   </div>
 </div>
   ```
