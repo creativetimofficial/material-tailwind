@@ -5,61 +5,61 @@ import { Typography, Card } from "@material-tailwind/react";
 const DATA = [
   {
     title: "Campaign Page",
-    img: "/image/templates/campaign-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/campaign-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-18618&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Portfolio Page",
-    img: "/image/templates/portfolio-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/portfolio-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-18254&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "My Resume Page",
-    img: "/image/templates/my-resume-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/my-resume-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-17969&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Author Page",
-    img: "/image/templates/author-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/author-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-17811&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Courses Home Page",
-    img: "/image/templates/courses-home-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/courses-home-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-17456&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Course Details Page",
-    img: "/image/templates/courses-details-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/courses-details-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-17220&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Events Page",
-    img: "/image/templates/events-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/events-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-16958&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Blog Page",
-    img: "/image/templates/blog-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/blog-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-16712&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Blog Post Page",
-    img: "/image/templates/blog-post-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/blog-post-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=1-16447&mode=design&t=hz47kqVjnJgzymHM-0",
   },
   {
     title: "Application Page",
-    img: "/image/templates/application-page-thumbnail.jpg",
+    img: "https://docs.material-tailwind.com/image/templates/application-page-thumbnail.jpg",
     route:
       "https://www.figma.com/file/dW9TIA7QOMaDOvEbfv0E7s/Material-Tailwind-%22Back-to-School%22-Bundle?type=design&node-id=0-1&mode=design&t=hz47kqVjnJgzymHM-0",
   },

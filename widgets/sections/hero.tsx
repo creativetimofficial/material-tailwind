@@ -55,7 +55,7 @@ export function Hero() {
 
   return (
     <>
-      <div className="grid h-full min-h-[84vh] place-items-center bg-[url('/image/header-bg.png')] bg-cover bg-center bg-no-repeat">
+      <div className="grid h-full min-h-[84vh] place-items-center bg-[url('https://docs.material-tailwind.com/image/header-bg.png')] bg-cover bg-center bg-no-repeat">
         <div className="container mx-auto px-4 text-center lg:w-8/12 xl:w-7/12">
           <Link href="/docs/react/release-notes">
             <div className="inline-flex items-center rounded-lg border-[1.5px] border-blue-gray-50 bg-white py-1 pl-1 pr-8 font-medium text-primary">
@@ -110,7 +110,7 @@ export function Hero() {
                 onClick={() => setIsHtml(false)}
               >
                 <img
-                  src="/img/logos/icon-react.svg"
+                  src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
                   alt="react-icon"
                   className="h-6 w-6"
                 />
@@ -124,7 +124,7 @@ export function Hero() {
                 onClick={() => setIsHtml(true)}
               >
                 <img
-                  src="/img/logos/icon-html.svg"
+                  src="https://docs.material-tailwind.com/img/logos/icon-html.svg"
                   alt="html-icon"
                   className="h-6 w-6"
                 />

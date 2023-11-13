@@ -37,7 +37,11 @@ export function SidebarWithLogo() {
   return (
     <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 flex items-center gap-4 p-4">
-        <img src="/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
+        <img
+          src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
+          alt="brand"
+          className="h-8 w-8"
+        />
         <Typography variant="h5" color="blue-gray">
           Sidebar
         </Typography>
@@ -48,12 +52,17 @@ export function SidebarWithLogo() {
           icon={
             <ChevronDownIcon
               strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${open === 1 ? "rotate-180" : ""}`}
+              className={`mx-auto h-4 w-4 transition-transform ${
+                open === 1 ? "rotate-180" : ""
+              }`}
             />
           }
         >
           <ListItem className="p-0" selected={open === 1}>
-            <AccordionHeader onClick={() => handleOpen(1)} className="border-b-0 p-3">
+            <AccordionHeader
+              onClick={() => handleOpen(1)}
+              className="border-b-0 p-3"
+            >
               <ListItemPrefix>
                 <PresentationChartBarIcon className="h-5 w-5" />
               </ListItemPrefix>
@@ -90,12 +99,17 @@ export function SidebarWithLogo() {
           icon={
             <ChevronDownIcon
               strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${open === 2 ? "rotate-180" : ""}`}
+              className={`mx-auto h-4 w-4 transition-transform ${
+                open === 2 ? "rotate-180" : ""
+              }`}
             />
           }
         >
           <ListItem className="p-0" selected={open === 2}>
-            <AccordionHeader onClick={() => handleOpen(2)} className="border-b-0 p-3">
+            <AccordionHeader
+              onClick={() => handleOpen(2)}
+              className="border-b-0 p-3"
+            >
               <ListItemPrefix>
                 <ShoppingBagIcon className="h-5 w-5" />
               </ListItemPrefix>
@@ -128,7 +142,13 @@ export function SidebarWithLogo() {
           </ListItemPrefix>
           Inbox
           <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+            <Chip
+              value="14"
+              size="sm"
+              variant="ghost"
+              color="blue-gray"
+              className="rounded-full"
+            />
           </ListItemSuffix>
         </ListItem>
         <ListItem>
@@ -150,14 +170,18 @@ export function SidebarWithLogo() {
           Log Out
         </ListItem>
       </List>
-      <Alert open={openAlert} className="mt-auto" onClose={() => setOpenAlert(false)}>
+      <Alert
+        open={openAlert}
+        className="mt-auto"
+        onClose={() => setOpenAlert(false)}
+      >
         <CubeTransparentIcon className="mb-4 h-12 w-12" />
         <Typography variant="h6" className="mb-1">
           Upgrade to PRO
         </Typography>
         <Typography variant="small" className="font-normal opacity-80">
-          Upgrade to Material Tailwind PRO and get even more components, plugins, advanced features
-          and premium.
+          Upgrade to Material Tailwind PRO and get even more components,
+          plugins, advanced features and premium.
         </Typography>
         <div className="mt-4 flex gap-3">
           <Typography

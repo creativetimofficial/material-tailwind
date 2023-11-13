@@ -62,7 +62,11 @@ export function CheckoutForm() {
           {type === "card" ? (
             <CreditCardIcon className="h-10 w-10 text-white" />
           ) : (
-            <img alt="paypal " className="w-14 " src="/icons/paypall.png" />
+            <img
+              alt="paypal "
+              className="w-14 "
+              src="https://docs.material-tailwind.com/icons/paypall.png"
+            />
           )}
         </div>
         <Typography variant="h5" color="white">

@@ -4,7 +4,11 @@ export function AuthButtons() {
   return (
     <div className="flex flex-col items-center gap-4">
       <Button size="lg" color="white" className="flex items-center gap-3">
-        <img src="/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
+        <img
+          src="https://docs.material-tailwind.com/icons/metamask.svg"
+          alt="metamask"
+          className="h-6 w-6"
+        />
         Connect Wallet
       </Button>
       <Button
@@ -13,7 +17,11 @@ export function AuthButtons() {
         color="blue-gray"
         className="flex items-center gap-3"
       >
-        <img src="/icons/google.svg" alt="metamask" className="h-6 w-6" />
+        <img
+          src="https://docs.material-tailwind.com/icons/google.svg"
+          alt="metamask"
+          className="h-6 w-6"
+        />
         Continue with Google
       </Button>
       <Button
@@ -24,7 +32,11 @@ export function AuthButtons() {
       >
         Sign in with Twitter
         <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-          <img src="/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
+          <img
+            src="https://docs.material-tailwind.com/icons/twitter.svg"
+            alt="metamask"
+            className="h-6 w-6"
+          />
         </span>
       </Button>
     </div>

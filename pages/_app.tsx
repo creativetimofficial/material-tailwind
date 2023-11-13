@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
                 className="border border-blue-gray-50"
               >
                 <img
-                  src="/img/logos/icon-react.svg"
+                  src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
                   alt="react-icon"
                   className="h-20 w-20"
                 />
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
               <Link href="/docs/react/installation" target="_blank">
                 <MenuItem className="flex items-center gap-2">
                   <img
-                    src="/img/logos/icon-react.svg"
+                    src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
                     alt="react-icon"
                     className="h-6 w-6"
                   />
@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }) {
               <Link href="/docs/html/installation" target="_blank">
                 <MenuItem className="flex items-center gap-2">
                   <img
-                    src="/img/logos/icon-html.svg"
+                    src="https://docs.material-tailwind.com/img/logos/icon-html.svg"
                     alt="html-icon"
                     className="h-6 w-6"
                   />
@@ -86,7 +86,7 @@ function MyApp({ Component, pageProps }) {
               <Link href="/figma" target="_blank">
                 <MenuItem className="flex items-center gap-2">
                   <img
-                    src="/img/icon-figma.svg"
+                    src="https://docs.material-tailwind.com/img/icon-figma.svg"
                     alt="figma-icon"
                     className="h-6 w-6"
                   />

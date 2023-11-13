@@ -171,7 +171,7 @@ export function PageMap({ type, frontMatter }) {
               } flex items-center gap-2`}
             >
               <Image
-                src="/svg/react.svg"
+                src="https://docs.material-tailwind.com/svg/react.svg"
                 alt="react"
                 width={48}
                 height={48}
@@ -192,7 +192,7 @@ export function PageMap({ type, frontMatter }) {
               } flex items-center gap-2`}
             >
               <Image
-                src="/svg/html.svg"
+                src="https://docs.material-tailwind.com/svg/html.svg"
                 alt="html"
                 width={48}
                 height={48}
@@ -235,7 +235,7 @@ export function PageMap({ type, frontMatter }) {
               className="mx-4 mt-4 mb-0"
             >
               <Image
-                src="/image/ui-ux-book.jpg"
+                src="https://docs.material-tailwind.com/image/ui-ux-book.jpg"
                 alt="book"
                 width={768}
                 height={768}

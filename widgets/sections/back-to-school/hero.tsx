@@ -32,12 +32,12 @@ export function BTSHero() {
         <div className="mx-auto my-4 grid max-w-sm justify-center">
           <Carousel autoplay loop autoplayDelay={5000}>
             <img
-              src="/image/carousel-1.png"
+              src="https://docs.material-tailwind.com/image/carousel-1.png"
               alt="carousel 1"
               className="h-full w-full"
             />
             <img
-              src="/image/carousel-3.png"
+              src="https://docs.material-tailwind.com/image/carousel-3.png"
               alt="carousel 3"
               className="h-full w-full"
             />
