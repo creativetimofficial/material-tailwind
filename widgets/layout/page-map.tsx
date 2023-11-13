@@ -219,34 +219,48 @@ export function PageMap({ type, frontMatter }) {
             </Link>
           </li>
         </ul>
-        <Card
-          color="transparent"
-          shadow={false}
-          className="border border-blue-gray-50"
+        <Link
+          href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
+          target="_blank"
         >
-          <CardHeader
-            floated={false}
-            shadow={false}
+          <Card
             color="transparent"
-            className="mx-4 mt-4 mb-0"
+            shadow={false}
+            className="border border-blue-gray-50"
           >
-            Hello
-          </CardHeader>
-          <CardBody className="p-4">
-            <Typography variant="h6" color="blue-gray">
-              Roots of UI/UX Design
-            </Typography>
-            <Typography
-              variant="small"
-              className="mb-2 block font-normal !text-gray-600"
+            <CardHeader
+              floated={false}
+              shadow={false}
+              color="transparent"
+              className="mx-4 mt-4 mb-0"
             >
-              By Creative Tim
-            </Typography>
-            <Typography variant="small" className="font-normal !text-gray-600">
-              Learn to Develop Intuitive Web Experiences
-            </Typography>
-          </CardBody>
-        </Card>
+              <Image
+                src="/image/ui-ux-book.jpg"
+                alt="book"
+                width={768}
+                height={768}
+                className="h-full w-full object-cover"
+              />
+            </CardHeader>
+            <CardBody className="p-4">
+              <Typography variant="h6" color="blue-gray">
+                Roots of UI/UX Design
+              </Typography>
+              <Typography
+                variant="small"
+                className="mb-2 block font-normal !text-gray-600"
+              >
+                By Creative Tim
+              </Typography>
+              <Typography
+                variant="small"
+                className="font-normal !text-gray-600"
+              >
+                Learn to Develop Intuitive Web Experiences
+              </Typography>
+            </CardBody>
+          </Card>
+        </Link>
       </div>
       <Dialog
         size="sm"
