@@ -105,11 +105,11 @@ export function Navbar() {
           target="_blank"
           href="https://github.com/creativetimofficial/material-tailwind"
         >
-          <NavItem icon={GitHub} hoverIcon={BrightStar}>
+          {/* <NavItem icon={GitHub} hoverIcon={BrightStar}>
             2.5K
-          </NavItem>
+          </NavItem> */}
         </Link>
-        <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-6">
+        {/* <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-6">
           <Link href="/blocks">
             <NavItem icon={Svg3DSelectFace}>Blocks</NavItem>
           </Link>
@@ -119,7 +119,7 @@ export function Navbar() {
           <Link href="/figma">
             <NavItem icon={Figma}>Figma</NavItem>
           </Link>
-        </div>
+        </div> */}
         <div className="flex gap-2">
           <NavIcon
             tabIndex={0}

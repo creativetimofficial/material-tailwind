@@ -1,0 +1,200 @@
+---
+title: Tailwind CSS Checkbox for React - Material Tailwind
+description: Customise your web projects  with our beautiful checkbox component for Tailwind CSS and React using Material Design guidelines.
+github: checkbox
+prev: docs/customization/button-group
+next: docs/react/icon-button
+---
+
+# Tailwind CSS Checkbox - React
+
+Use our Tailwind CSS `Checkbox` to allow the user to select one or more items from a set.
+
+You can use a `Checkbox` for:
+
+- Selecting one or more options from a list.
+- Presenting a list containing sub-selections.
+- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Checkbox` and use an on/off switch instead).
+
+See below our simple `Checkbox` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
+
+---
+
+## Checkbox Demo
+
+<ComponentPreview demo={<Checkbox.CheckboxDemo />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxDemo() {
+  return <Checkbox />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox Colors
+
+The `Checkbox` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<Checkbox.CheckboxColors />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxColors() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Checkbox color="primary" />
+      <Checkbox color="secondary" />
+      <Checkbox color="info" />
+      <Checkbox color="success" />
+      <Checkbox color="warning" />
+      <Checkbox color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Label
+
+You can use the `Typography` component to add a label to your `Checkbox`.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithLabel />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+const ID = "checkbox";
+
+export function CheckboxWithLabel() {
+  return (
+    <div className="flex items-center gap-2">
+      <Checkbox id={ID} />
+      <Typography
+        as="label"
+        htmlFor={ID}
+        className="text-gray-500 dark:text-gray-400"
+      >
+        Remember Me
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Custom Icon
+
+You can modify the `Checkbox` checked icon using the `icon` prop.
+
+<ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
+```tsx
+import { Star } from "iconoir-react";
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxWithCustomIcon() {
+  return <Checkbox icon={<Star className="h-4 w-4 stroke-2" />} />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Disabled Checkbox
+
+You can disable the `Checkbox` using the `disabled` prop.
+
+<ComponentPreview demo={<Checkbox.DisabledCheckbox />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function DisabledCheckbox() {
+  return <Checkbox disabled />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Link
+
+<ComponentPreview demo={<Checkbox.CheckboxWithLink />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+const ID = "checkbox-link";
+
+export function CheckboxWithLink() {
+  return (
+    <div className="flex items-center gap-2">
+      <Checkbox id={ID} />
+      <Typography
+        as="label"
+        htmlFor={ID}
+        className="flex gap-1 text-gray-500 dark:text-gray-400"
+      >
+        I agree with the
+        <Typography as="a" href="#" color="info">
+          terms and conditions
+        </Typography>
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Description
+
+<ComponentPreview demo={<Checkbox.CheckboxWithDescription />}>
+```tsx
+import { Checkbox, Typography } from "@material-tailwind/react";
+
+const ID = "checkbox-description";
+
+export function CheckboxWithDescription() {
+  return (
+    <div className="flex gap-2">
+      <Checkbox id={ID} />
+      <label htmlFor={ID} className="-translate-y-1">
+        <Typography color="gray" className="font-medium">
+          Remember Me
+        </Typography>
+        <Typography variant="small" className="text-gray-500 dark:text-gray-400">
+          You&apos;ll be able to login without password for 24 hours.
+        </Typography>
+      </label>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Checkbox
+
+You can customize the `Checkbox` using the `baseClassName`, `className` and `iconClassName` props.
+
+<ComponentPreview demo={<Checkbox.CustomCheckbox />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CustomCheckbox() {
+  return (
+    <Checkbox
+      baseClassName="w-7 h-7"
+      className="rounded-full bg-gray-200 dark:bg-gray-900"
+    />
+  );
+}
+
+```
+</ComponentPreview>

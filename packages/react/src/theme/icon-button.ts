@@ -10,7 +10,7 @@ export const iconButtonTheme = {
     ripple: true,
   },
   baseStyle:
-    "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
+    "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
   rounded: "rounded-full",
   size: {
     sm: "text-sm leading-none min-w-[28px] min-h-[28px] rounded-md",

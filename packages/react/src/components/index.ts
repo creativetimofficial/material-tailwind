@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./collapse";
+export * from "./checkbox";
 export * from "./typography";
 export * from "./icon-button";
 export * from "./button-group";

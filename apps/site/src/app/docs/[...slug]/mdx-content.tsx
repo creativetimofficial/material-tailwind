@@ -7,6 +7,7 @@ import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // @docs-components
 import * as Button from "@components/docs/button";
+import * as Checkbox from "@components/docs/checkbox";
 import * as Typography from "@components/docs/typography";
 import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
@@ -58,9 +59,19 @@ const components = {
       {...props}
     />
   ),
+  ul: (props) => (
+    <ul className="my-4 list-inside list-disc space-y-0.5" {...props} />
+  ),
+  li: (props) => (
+    <li
+      className="font-sans text-base font-normal text-gray-500 antialiased dark:text-gray-400"
+      {...props}
+    />
+  ),
 
   // docs-components
   Button,
+  Checkbox,
   IconButton,
   Typography,
   ButtonGroup,
