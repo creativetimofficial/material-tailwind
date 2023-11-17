@@ -107,7 +107,7 @@ export const routes = [
           },
           {
             title: "Checkbox",
-            path: "/checkbox",
+            path: "/docs/react/checkbox",
           },
           {
             title: "Icon Button",

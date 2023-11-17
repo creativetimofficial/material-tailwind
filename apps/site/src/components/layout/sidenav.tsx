@@ -83,7 +83,7 @@ function getRoutes() {
 
 export function Sidenav() {
   return (
-    <div className="fixed bottom-0 top-[65px] z-20 w-60 overflow-y-scroll pb-10">
+    <div className="fixed -left-64 bottom-0 top-[65px] z-20 w-60 overflow-y-scroll pb-10 lg:left-auto">
       <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-white from-50% to-transparent dark:from-gray-950" />
       <ul className="pr-2">{getRoutes()}</ul>
     </div>

@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react/dist";
 
 export function ButtonColors() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button color="primary">Primary</Button>
       <Button color="secondary">Secondary</Button>
       <Button color="info">Info</Button>

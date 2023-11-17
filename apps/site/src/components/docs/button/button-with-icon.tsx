@@ -8,7 +8,7 @@ import {
 
 export function ButtonWithIcon() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button variant="ghost">
         Read More
         <NavArrowRight className="ml-1 h-4 w-4 stroke-2" />

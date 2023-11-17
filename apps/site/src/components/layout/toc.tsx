@@ -133,7 +133,7 @@ export function Toc({
   }
 
   return (
-    <div className="fixed bottom-0 right-[max(0px,calc(50%-42rem))] top-[65px] z-20 w-60 overflow-y-scroll pb-10">
+    <div className="fixed bottom-0 right-[max(0px,calc(50%-42rem))] top-[65px] z-20 hidden w-60 overflow-y-scroll pb-10 lg:block">
       <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-white from-50% to-transparent dark:from-gray-950" />
       <ul className="border-b border-gray-200 pb-4 dark:border-gray-900">
         <li className="p-2 text-sm font-medium text-gray-950 dark:text-gray-100">
