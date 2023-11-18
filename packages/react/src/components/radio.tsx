@@ -30,13 +30,23 @@ export interface RadioProps extends BaseComponent<"input"> {
  *
  * @example
  * ```tsx
- * import { Radio } from "@material-tailwind/react";
+ * import { Radio, Typography } from "@material-tailwind/react";
  *
  * export default function Example() {
  *  return (
  *    <div className="flex gap-10">
- *      <Radio name="type" label="HTML" />
- *      <Radio name="type" label="React" />
+ *      <div className="flex items-center gap-2">
+ *        <Radio id="html" name="type" />
+ *        <Typography as="label" htmlFor="html" className="text-gray-500 dark:text-gray-400">
+ *          HTML
+ *        </Typography>
+ *      </div>
+ *      <div className="flex items-center gap-2">
+ *        <Radio id="react" name="type" />
+ *        <Typography as="label" htmlFor="react" className="text-gray-500 dark:text-gray-400">
+ *          React
+ *        </Typography>
+ *      </div>
  *    </div>
  *  )
  * }
