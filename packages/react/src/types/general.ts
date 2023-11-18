@@ -10,3 +10,6 @@ export type BaseComponent<T extends keyof JSX.IntrinsicElements> =
 export type DeepPartial<T> = {
   [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };
+
+export type Props<T extends keyof JSX.IntrinsicElements> =
+  React.ComponentProps<T>;

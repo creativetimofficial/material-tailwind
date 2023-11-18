@@ -12,7 +12,7 @@ import { collapseTheme } from "@theme";
 // @types
 import type { BaseComponent } from "@types";
 
-export interface CollapseProps extends BaseComponent<"div"> {
+export interface CollapseProps extends BaseComponent<any> {
   as?: React.ElementType;
   isOpen: boolean;
   className?: string;
@@ -59,26 +59,26 @@ export interface CollapseProps extends BaseComponent<"div"> {
  * }
  * ```
  */
-export const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
-  ({ as, isOpen, className, children, ...rest }, ref) => {
-    // @ts-ignore
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.collapse ?? collapseTheme;
+export const Collapse = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  CollapseProps
+>(({ as, isOpen, className, children, ...rest }, ref) => {
+  const Element = as ?? "div";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.collapse ?? collapseTheme;
 
-    const styles = twMerge(
-      theme.baseStyle,
-      isOpen ? theme.openStyle : theme.closeStyle,
-      className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    isOpen ? theme.openStyle : theme.closeStyle,
+    className,
+  );
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+  return (
+    <Element {...rest} ref={ref} className={styles}>
+      {children}
+    </Element>
+  );
+});
 
 Collapse.displayName = "MaterialTailwind.Collapse";
 

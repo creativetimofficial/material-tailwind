@@ -1,5 +1,5 @@
 import { ButtonGroup, Button } from "@material-tailwind/react/dist";
-import { Facebook, Dribbble, LinkedIn, Instagram } from "iconoir-react";
+import { Facebook, Dribbble, Linkedin, Instagram } from "iconoir-react";
 
 export function CustomButtonGroup() {
   return (
@@ -13,7 +13,7 @@ export function CustomButtonGroup() {
         Follow
       </Button>
       <Button className="border-sky-500 bg-sky-500 text-white hover:border-sky-600 hover:bg-sky-600 focus:border-sky-600 focus:bg-sky-600 dark:border-sky-500 dark:bg-sky-500 dark:text-white dark:hover:border-sky-600 dark:hover:bg-sky-600 dark:focus:border-sky-600 dark:focus:bg-sky-600">
-        <LinkedIn className="mr-1.5 h-4 w-4 stroke-2" />
+        <Linkedin className="mr-1.5 h-4 w-4 stroke-2" />
         Connect
       </Button>
       <Button className="border-pink-500 bg-pink-500 text-white hover:border-pink-600 hover:bg-pink-600 focus:border-pink-600 focus:bg-pink-600 dark:border-pink-500 dark:bg-pink-500 dark:text-white dark:hover:border-pink-600 dark:hover:bg-pink-600 dark:focus:border-pink-600 dark:focus:bg-pink-600">

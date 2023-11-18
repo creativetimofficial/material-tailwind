@@ -44,7 +44,10 @@ export interface ButtonGroupProps extends BaseComponent<any> {
  * }
  * ```
  */
-export const ButtonGroup = React.forwardRef<HTMLElement, ButtonGroupProps>(
+export const ButtonGroup = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  ButtonGroupProps
+>(
   (
     {
       as,

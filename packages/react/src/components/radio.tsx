@@ -52,7 +52,7 @@ export interface RadioProps extends BaseComponent<"input"> {
  * }
  * ```
  */
-export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
+export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
   (
     {
       as,

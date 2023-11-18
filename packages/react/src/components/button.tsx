@@ -11,9 +11,11 @@ import { useTheme } from "@context";
 import { buttonTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseComponent, Props } from "@types";
 
-export interface ButtonProps extends BaseComponent<"button"> {
+type BaseButtonProps = BaseComponent<"button"> & Props<any>;
+
+export interface ButtonProps extends BaseButtonProps {
   as?: React.ElementType;
   ripple?: boolean;
   rounded?: boolean;
@@ -37,7 +39,10 @@ export interface ButtonProps extends BaseComponent<"button"> {
  * }
  * ```
  */
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<
+  HTMLButtonElement | HTMLElement,
+  ButtonProps
+>(
   (
     {
       as,

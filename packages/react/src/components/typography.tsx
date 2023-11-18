@@ -10,9 +10,7 @@ import { useTheme } from "@context";
 import { typographyTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
-
-type Props<T extends keyof JSX.IntrinsicElements> = React.ComponentProps<T>;
+import type { BaseComponent, Props } from "@types";
 
 type BaseTypographyProps = Props<"p"> &
   Props<"h1"> &
@@ -50,7 +48,7 @@ export interface TypographyProps extends BaseTypographyProps {
  */
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
   ({ as, color, variant, className, children, ...rest }, ref) => {
-    const Element: any = as ?? variant ?? "p";
+    const Element = as ?? variant ?? "p";
     const contextTheme = useTheme();
     const theme = contextTheme?.typography ?? typographyTheme;
     const defaultProps = contextTheme?.typography?.defaultProps;

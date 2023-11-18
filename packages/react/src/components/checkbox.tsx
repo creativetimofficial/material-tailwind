@@ -37,7 +37,10 @@ export interface CheckboxProps extends BaseComponent<"input"> {
  * }
  * ```
  */
-export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
+export const Checkbox = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  CheckboxProps
+>(
   (
     {
       as,
