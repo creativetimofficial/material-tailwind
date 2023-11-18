@@ -1,0 +1,111 @@
+import React from "react";
+
+// @utils
+import { twMerge } from "tailwind-merge";
+
+// @hooks
+import { useTheme } from "@context";
+
+// @theme
+import { radioTheme } from "@theme";
+
+// @types
+import type { BaseComponent } from "@types";
+
+export interface RadioProps extends BaseComponent<"input"> {
+  as?: React.ElementType;
+  icon?: React.ReactNode;
+  className?: string;
+  baseClassName?: string;
+  iconClassName?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
+  iconRef?: React.RefObject<HTMLSpanElement>;
+}
+
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/radio) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/radio#radio-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/radio#radio-theme)
+ *
+ * @example
+ * ```tsx
+ * import { Radio } from "@material-tailwind/react";
+ *
+ * export default function Example() {
+ *  return (
+ *    <div className="flex gap-10">
+ *      <Radio name="type" label="HTML" />
+ *      <Radio name="type" label="React" />
+ *    </div>
+ *  )
+ * }
+ * ```
+ */
+export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
+  (
+    {
+      as,
+      color,
+      icon,
+      className,
+      baseClassName,
+      iconClassName,
+      inputRef,
+      iconRef,
+      ...rest
+    },
+    ref,
+  ) => {
+    const Element = as ?? "div";
+    const innerID = React.useId();
+    const contextTheme = useTheme();
+    const theme = contextTheme?.radio ?? radioTheme;
+    const defaultProps = contextTheme?.radio?.defaultProps;
+
+    icon ??= (defaultProps?.icon as RadioProps["icon"]) ?? (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-2 w-2"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+      >
+        <circle data-name="ellipse" cx="8" cy="8" r="8" />
+      </svg>
+    );
+    color ??= (defaultProps?.color as RadioProps["color"]) ?? "primary";
+
+    const baseStyles = twMerge(theme.baseStyle, baseClassName);
+
+    const inputStyles = twMerge(
+      theme.inputStyle,
+      theme.inputColor[color],
+      className,
+    );
+
+    const iconStyles = twMerge(
+      theme.iconStyle,
+      theme.iconColor[color],
+      iconClassName,
+    );
+
+    return (
+      <Element ref={ref} className={baseStyles}>
+        <input
+          {...rest}
+          ref={inputRef}
+          type="radio"
+          className={inputStyles}
+          id={rest?.id || innerID}
+        />
+        <span ref={iconRef} className={iconStyles}>
+          {icon}
+        </span>
+      </Element>
+    );
+  },
+);
+
+Radio.displayName = "MaterialTailwind.Radio";
+
+export default Radio;

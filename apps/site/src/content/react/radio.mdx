@@ -1,0 +1,286 @@
+---
+title: Tailwind CSS Radio Button for React - Material Tailwind
+description: Customise your web projects  with our beautiful radio button component for Tailwind CSS and React using Material Design guidelines.
+github: radio
+prev: docs/customization/input
+next: docs/react/rating
+---
+
+# Tailwind CSS Radio Button - React
+
+Our Tailwind CSS `Radio` button component will let your users choose only one of a predefined set of mutually exclusive options. `Radio` buttons should be used instead of checkboxes if only one item can be selected from a list.
+
+Use the following example to create simple `Radio` buttons for your projects.
+
+---
+
+## Radio Button Demo
+
+<ComponentPreview demo={<Radio.RadioDemo />}>
+```tsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function RadioDemo() {
+  return (
+    <div className="flex gap-10">
+      <div className="flex items-center gap-2">
+        <Radio id="html" name="type" />
+        <Typography as="label" htmlFor="html" className="text-gray-500 dark:text-gray-400">
+          HTML
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio id="react" name="type" />
+        <Typography as="label" htmlFor="react" className="text-gray-500 dark:text-gray-400">
+          React
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Radio Button Colors
+
+The `Radio` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<Radio.RadioColors />}>
+```tsx
+import { Radio } from "@material-tailwind/react";
+
+export function RadioColors() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Radio name="color" color="primary" />
+      <Radio name="color" color="secondary" />
+      <Radio name="color" color="info" />
+      <Radio name="color" color="success" />
+      <Radio name="color" color="warning" />
+      <Radio name="color" color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Radio Button With Custom Icon
+
+You can modify the `Radio` checked icon using the `icon` prop.
+
+<ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
+```tsx
+import { Check } from "iconoir-react";
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function RadioWithCustomIcon() {
+  return (
+    <div className="flex gap-10">
+      <div className="flex items-center gap-2">
+        <Radio
+          id="male"
+          name="gender"
+          icon={<Check className="h-4 w-4 stroke-2" />}
+        />
+        <Typography as="label" htmlFor="male" className="text-gray-500 dark:text-gray-400">
+          Male
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio
+          id="female"
+          name="gender"
+          icon={<Check className="h-4 w-4 stroke-2" />}
+        />
+        <Typography as="label" htmlFor="female" className="text-gray-500 dark:text-gray-400">
+          Female
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Disabled Radio Button
+
+You can disable the `Radio` using the `disabled` prop.
+
+<ComponentPreview demo={<Radio.DisabledRadio />}>
+```tsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function DisabledRadio() {
+  return (
+    <div className="flex gap-10">
+      <div className="flex items-center gap-2">
+        <Radio id="light" name="type" disabled />
+        <Typography
+          as="theme"
+          htmlFor="light"
+          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+        >
+          Light
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio id="dark" name="type" disabled />
+        <Typography
+          as="theme"
+          htmlFor="dark"
+          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+        >
+          Dark
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Radio Button With Link
+
+<ComponentPreview demo={<Radio.RadioWithLink />}>
+```tsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function RadioWithLink() {
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-2">
+        <Radio name="terms" id="radio-link-agreen" />
+        <Typography
+          as="label"
+          htmlFor="radio-link-agreen"
+          className="flex gap-1 text-gray-500 dark:text-gray-400"
+        >
+          I agree with the
+          <Typography as="a" href="#" color="info">
+            terms and conditions
+          </Typography>
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio name="terms" id="radio-link-disagree" />
+        <Typography
+          as="label"
+          htmlFor="radio-link-disagree"
+          className="flex gap-1 text-gray-500 dark:text-gray-400"
+        >
+          I disagree with the
+          <Typography as="a" href="#" color="info">
+            terms and conditions
+          </Typography>
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Radio Button With Description
+
+<ComponentPreview demo={<Radio.RadioWithDescription />}>
+```tsx
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function RadioWithDescription() {
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex gap-2">
+        <Radio name="version" id="radio-description-html" />
+        <label htmlFor="radio-description-html" className="-translate-y-1">
+          <Typography color="gray" className="font-medium">
+            HTML Version
+          </Typography>
+          <Typography
+            variant="small"
+            className="text-gray-500 dark:text-gray-400"
+          >
+            @material-tailwind/html, packed with rich components and widgets.
+          </Typography>
+        </label>
+      </div>
+      <div className="flex gap-2">
+        <Radio name="version" id="radio-description-react" />
+        <label htmlFor="radio-description-react" className="-translate-y-1">
+          <Typography color="gray" className="font-medium">
+            React Version
+          </Typography>
+          <Typography
+            variant="small"
+            className="text-gray-500 dark:text-gray-400"
+          >
+            @material-tailwind/react, packed with rich components and widgets.
+          </Typography>
+        </label>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Radio Button
+
+You can customize the `Radio` using the `baseClassName`, `className` and `iconClassName` props.
+
+<ComponentPreview demo={<Radio.CustomRadio />}>
+```tsx
+import { Check } from "iconoir-react";
+import { Radio, Typography } from "@material-tailwind/react";
+
+export function CustomRadio() {
+  return (
+    <div className="flex gap-10">
+      <div className="flex items-center gap-2">
+        <Radio
+          id="black"
+          name="color"
+          baseClassName="rounded"
+          className="rounded bg-gray-200 dark:bg-gray-900"
+          icon={<Check className="h-4 w-4 stroke-2" />}
+        />
+        <Typography
+          as="label"
+          htmlFor="black"
+          className="text-gray-500 dark:text-gray-400"
+        >
+          Black
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio
+          id="white"
+          name="color"
+          baseClassName="rounded"
+          className="rounded bg-gray-200 dark:bg-gray-900"
+          icon={<Check className="h-4 w-4 stroke-2" />}
+        />
+        <Typography
+          as="label"
+          htmlFor="white"
+          className="text-gray-500 dark:text-gray-400"
+        >
+          White
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>

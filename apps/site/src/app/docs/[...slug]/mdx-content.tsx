@@ -6,6 +6,7 @@ import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // @docs-components
+import * as Radio from "@components/docs/radio";
 import * as Button from "@components/docs/button";
 import * as Checkbox from "@components/docs/checkbox";
 import * as Typography from "@components/docs/typography";
@@ -70,6 +71,7 @@ const components = {
   ),
 
   // docs-components
+  Radio,
   Button,
   Checkbox,
   IconButton,

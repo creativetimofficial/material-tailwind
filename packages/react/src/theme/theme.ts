@@ -1,3 +1,4 @@
+import radioTheme from "./radio";
 import buttonTheme from "./button";
 import collapseTheme from "./collapse";
 import checkboxTheme from "./checkbox";
@@ -12,11 +13,12 @@ export type Theme = DeepPartial<typeof theme>;
 
 export const theme = {
   button: buttonTheme,
-  collapse: collapseTheme,
+  buttonGroup: buttonGroupTheme,
   checkbox: checkboxTheme,
   iconButton: iconButtonTheme,
+  radio: radioTheme,
+  collapse: collapseTheme,
   typography: typographyTheme,
-  buttonGroup: buttonGroupTheme,
 };
 
 export default theme;

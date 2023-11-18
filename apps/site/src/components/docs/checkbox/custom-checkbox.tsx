@@ -3,7 +3,7 @@ import { Checkbox } from "@material-tailwind/react/dist";
 export function CustomCheckbox() {
   return (
     <Checkbox
-      baseClassName="w-7 h-7"
+      iconClassName="scale-50 peer-checked:scale-75"
       className="rounded-full bg-gray-200 dark:bg-gray-900"
     />
   );
