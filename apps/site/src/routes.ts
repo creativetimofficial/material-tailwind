@@ -135,7 +135,7 @@ export const routes = [
           },
           {
             title: "Switch",
-            path: "/docs/react/Switch",
+            path: "/docs/react/switch",
           },
           {
             title: "Textarea",
