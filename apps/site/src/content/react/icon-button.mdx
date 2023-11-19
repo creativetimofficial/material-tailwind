@@ -16,7 +16,7 @@ navigate our websites or apps and drive them to a particular action.
 
 See below our `IconButton` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
-The below example are using the [Iconoir](https://iconoir.com/) icon library but you can use any icon library you want.
+The below examples are using the [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 ---
 
@@ -209,13 +209,13 @@ You can customize the `IconButton` component the way you want, for example, you 
 <ComponentPreview demo={<IconButton.CustomIconButton />}>
 ```tsx
 import { IconButton } from "@material-tailwind/react";
-import { GitHub, Dribbble, Facebook } from "iconoir-react";
+import { Github, Dribbble, Facebook } from "iconoir-react";
 
 export function CustomIconButton() {
   return (
     <div className="flex gap-4">
       <IconButton className="border-black bg-black text-white hover:border-black/90 hover:bg-black/90 focus:border-black/90 focus:bg-black/90 dark:border-white dark:bg-white dark:text-black dark:hover:border-white/90 dark:hover:bg-white/90 dark:focus:border-white/90 dark:focus:bg-white/90">
-        <GitHub className="h-4 w-4 stroke-2" />
+        <Github className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton className="border-pink-500 bg-pink-500 text-white hover:border-pink-600 hover:bg-pink-600 focus:border-pink-600 focus:bg-pink-600 dark:border-pink-500 dark:bg-pink-500 dark:text-white dark:hover:border-pink-600 dark:hover:bg-pink-600 dark:focus:border-pink-600 dark:focus:bg-pink-600">
         <Dribbble className="h-4 w-4 stroke-2" />
