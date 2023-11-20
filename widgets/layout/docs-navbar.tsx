@@ -91,6 +91,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <NavItem href="/figma">Figma</NavItem>
+        <NavItem href="/roots-of-ui-ux-design">Book</NavItem>
         <NavItem href="/blog">Blog</NavItem>
       </List>
       <div className="ml-2 flex items-center gap-2">
@@ -156,7 +157,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           </a>
         </Tooltip>
         <Link href="/blocks#pricing">
-          <Button size="sm" className="flex items-center justify-between bg-primary py-2.5">Pricing & FAQ</Button>
+          <Button size="sm" className="flex items-center justify-between bg-deep-orange-500 py-2.5">Black Friday</Button>
         </Link>
       </div>
     </div>

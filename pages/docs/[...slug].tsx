@@ -139,6 +139,7 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
+import CountDown from "widgets/black-friday/count-down";
 
 const components = {
   h1: (props) => (
@@ -354,18 +355,14 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         />
       </Head>
       <Link href="/blocks">
-        <Alert variant="ghost" className="w-full bg-blue-gray-50 justify-center rounded-none">
-          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
-            <span className="font-medium m-0 flex items-center">
-              <Chip variant="outlined" value="NEW" className="mr-2 !text-blue-gray-900 py-1 px-2.5" /> Material Tailwind Blocks</span>, a comprehensive compilation of <span className="font-bold mx-1">170+</span>
-            blocks, now available for your use.&nbsp;
+        <Alert className="w-full bg-deep-orange-500 justify-center rounded-none">
+          <div className="flex flex-wrap items-center justify-center !text-white">
+            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF  ⏰ Hurry up!
+            <CountDown type="plain" />
             
-            <span className="font-bold flex items-center">
-              Check out 
-              <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-1">
-                <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            <Button className="font-bold ml-10 bg-primary mb-0">
+              View Offer
+            </Button>
           </div>
         </Alert>
       </Link>
