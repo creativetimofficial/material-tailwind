@@ -75,6 +75,9 @@ import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
 import ReleaseNotes from "docs-content/react/release-notes";
 
+// html docs content
+import * as HTMLButtonExamples from "docs-content/html/button";
+
 // @material-tailwind/react
 import {
   Accordion,
@@ -307,6 +310,9 @@ const components = {
   TextareaExamples,
   ReleaseNotes,
   ColorPalette,
+
+  // html docs content
+  HTMLButtonExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -329,10 +335,19 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     }
   }, [frameworkType, slug]);
 
-  const replaceMatch = ["html/what-is-tailwind-css", "html/license", "html/colors", "html/fonts", "html/shadows", "html/screens"];
+  const replaceMatch = [
+    "html/what-is-tailwind-css",
+    "html/license",
+    "html/colors",
+    "html/fonts",
+    "html/shadows",
+    "html/screens",
+  ];
   const headLink = slug.join("/");
   const matchTheSlug = replaceMatch.includes(headLink);
-  const canonical = matchTheSlug ? headLink.replace("html/", "react/") : headLink;
+  const canonical = matchTheSlug
+    ? headLink.replace("html/", "react/")
+    : headLink;
 
   return (
     <>
