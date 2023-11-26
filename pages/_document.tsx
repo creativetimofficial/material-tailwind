@@ -78,6 +78,14 @@ export default function MyDocument() {
           href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
         />
         <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+        />
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"
+        ></script>
       </Head>
       <body>
         <noscript>
