@@ -73,6 +73,7 @@ import * as TooltipExamples from "docs-content/react/tooltip";
 import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
+import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
 
 // @material-tailwind/react
@@ -308,6 +309,7 @@ const components = {
   TextareaExamples,
   ReleaseNotes,
   ColorPalette,
+  Plugins,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -355,12 +357,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         />
       </Head>
       <Link href="/blocks">
-        <Alert className="w-full bg-deep-orange-500 justify-center rounded-none">
+        <Alert className="w-full justify-center rounded-none bg-deep-orange-500">
           <div className="flex flex-wrap items-center justify-center !text-white">
-            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF  ⏰ Hurry up!
+            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF
+            ⏰ Hurry up!
             <CountDown type="plain" />
-            
-            <Button className="font-bold ml-10 bg-primary mb-0">
+            <Button className="ml-10 mb-0 bg-primary font-bold">
               View Offer
             </Button>
           </div>
