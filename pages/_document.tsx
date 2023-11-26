@@ -72,6 +72,12 @@ export default function MyDocument() {
           data-site="material-tailwind.com"
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         />
+        <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+        />
+        <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
       </Head>
       <body>
         <noscript>

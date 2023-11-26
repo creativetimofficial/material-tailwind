@@ -76,6 +76,9 @@ import * as TextareaExamples from "docs-content/react/textarea";
 import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
 
+// html docs content
+import * as HtmlPlugins from "docs-content/html/plugins";
+
 // @material-tailwind/react
 import {
   Accordion,
@@ -310,6 +313,9 @@ const components = {
   ReleaseNotes,
   ColorPalette,
   Plugins,
+
+  // html docs content
+  HtmlPlugins,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {

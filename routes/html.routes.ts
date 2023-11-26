@@ -146,4 +146,21 @@ export const routes = [
       },
     ],
   },
+  {
+    name: "Plugins",
+    pages: [
+      {
+        name: "Algolia Search",
+        route: "/plugins/algolia-search",
+      },
+      {
+        name: "Charts",
+        route: "/plugins/charts",
+      },
+      {
+        name: "Date Picker",
+        route: "/plugins/date-picker",
+      },
+    ],
+  },
 ];
