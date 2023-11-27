@@ -26,21 +26,17 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
 <CodePreview
   id="image"
   link="image#image"
-  component={
-   <>
-   <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full h-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-   </>
-  }
+  component={<HTMLImageExamples.DefaultImg/>}
 >
-  ```html
- <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full h-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-  ```
+```html
+    <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
 </CodePreview>
 
 ---
@@ -51,21 +47,17 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
   id="image-with-rounded-corners"
   link="image#image-with-rounded-corners"
   className="mt-4"
-  component={
-   <>
-   <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full rounded-lg h-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-   </>
-  }
+  component={<HTMLImageExamples.ImgWithRoundedCorners/>}
 >
-  ```html
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full rounded-lg h-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-  ```
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
 </CodePreview>
 
 ---
@@ -77,21 +69,17 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
   id="circular-image"
   link="image#circular-image"
   className="mt-4"
-  component={
-   <>
-  <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center rounded-full h-96 w-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-   </>
-  }
+  component={<HTMLImageExamples.CircularImg/>}
 >
-  ```html
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center rounded-full h-96 w-96"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-  ```
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+        <img
+          class="object-cover object-center rounded-full h-96 w-96"
+          src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+          alt="nature image"
+        />
+      </div>
+```
 </CodePreview>
 
 ---
@@ -103,27 +91,20 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
   id="image-with-caption"
   link="image#image-with-caption"
   className="mt-4"
-  component={
-   <>
- <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-  <img class="object-cover object-center w-full rounded-lg h-96"
-      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-      alt="nature image"/>
-    <div class="block mt-2 font-sans text-sm antialiased font-normal leading-normal text-center text-inherit">Image
-      caption</div>
-</div>
-   </>
-  }
+  component={<HTMLImageExamples.ImgWithCaption/>}
 >
-  ```html
- <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-  <img class="object-cover object-center w-full rounded-lg h-96"
-      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-      alt="nature image"/>
-    <div class="block mt-2 font-sans text-sm antialiased font-normal leading-normal text-center text-inherit">Image
-      caption</div>
-</div>
-  ```
+```html
+      <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg h-96"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+      <div class="block mt-2 font-sans text-sm antialiased font-normal leading-normal text-center text-inherit">
+        Image caption
+      </div>
+    </div>
+```
 </CodePreview>
 
 ---
@@ -134,21 +115,17 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
   id="image-with-shadow"
   link="image#image-with-shadow"
   className="mt-4"
-  component={
-   <>
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-   </>
-  }
+  component={<HTMLImageExamples.ImgWithShadow/>}
 >
-  ```html
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible"><img
-    class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50"
-    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-    alt="nature image"/></div>
-  ```
+```html
+   <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <img
+        class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50"
+        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+        alt="nature image"
+      />
+    </div>
+```
 </CodePreview>
 
 ---
@@ -160,45 +137,32 @@ Our Tailwind CSS Image component simplifies image handling and styling, offering
   id="image-with-blurred-caption"
   link="image#image-with-blurred-caption"
   className="mt-4"
-  component={
-   <>
-<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-  <figure class="relative w-full h-96"><img class="object-cover object-center w-full h-full rounded-xl"
-      src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-      alt="nature image"/>
-    <figcaption
-      class="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
-      <div>
-        <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-          Sara Lamalo</h5>
-        <p class="block mt-2 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">20 July 2022</p>
-      </div>
-      <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-        Growth</h5>
-    </figcaption>
-  </figure>
-</div>
-   </>
-  }
+  component={<HTMLImageExamples.ImgWithBlurredCaption/>}
 >
-  ```html
+```html
 <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-  <figure class="relative w-full h-96"><img class="object-cover object-center w-full h-full rounded-xl"
+  <figure class="relative w-full h-96">
+    <img class="object-cover object-center w-full h-full rounded-xl"
       src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-      alt="nature image"/>
+      alt="nature image" />
     <figcaption
       class="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
       <div>
-        <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-          Sara Lamalo</h5>
-        <p class="block mt-2 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">20 July 2022</p>
+        <h5
+          class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          Sara Lamalo
+        </h5>
+        <p class="block mt-2 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+          20 July 2022
+        </p>
       </div>
       <h5 class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-        Growth</h5>
+        Growth
+      </h5>
     </figcaption>
   </figure>
 </div>
-  ```
+```
 </CodePreview>
 
 ---
