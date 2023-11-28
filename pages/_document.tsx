@@ -86,6 +86,11 @@ export default function MyDocument() {
           defer
           src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"
         ></script>
+        <script
+          async
+          defer
+          src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
+        ></script>
       </Head>
       <body>
         <noscript>

@@ -17,6 +17,35 @@ export const routes = [
     ],
   },
   {
+    name: "Integration Guide",
+    pages: [
+      {
+        name: "React",
+        route: "guide/react-vite",
+      },
+      {
+        name: "Next.js",
+        route: "guide/next",
+      },
+      {
+        name: "Vue",
+        route: "guide/vue-vite",
+      },
+      {
+        name: "Nuxt.js",
+        route: "guide/nuxt",
+      },
+      {
+        name: "Svelte",
+        route: "guide/svelte",
+      },
+      {
+        name: "Laravel",
+        route: "guide/laravel",
+      },
+    ],
+  },
+  {
     name: "Customization",
     pages: [
       {

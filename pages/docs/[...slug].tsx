@@ -326,11 +326,11 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     html: htmlRoutes,
     react: reactRoutes,
   };
-  const validFrameworks = ["html", "react", "vue", "angular", "svelte"];
+  const validFrameworks = ["html", "react"];
   const frameworkType = asPath
     .split("/")
     .filter((el) => validFrameworks.includes(el))
-    .join("") as "html" | "react" | "vue" | "angular" | "svelte";
+    .join("") as "html" | "react";
 
   React.useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
@@ -380,7 +380,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <div className="px-6">
           <div className="container mx-auto flex">
             <Sidenav
-              routes={routes[frameworkType]}
+              routes={routes[frameworkType] as any}
               type={frameworkType}
               slug={slug[slug.length - 1]}
               mobileNav={mobileNav}

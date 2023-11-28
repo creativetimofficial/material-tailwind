@@ -8,7 +8,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["images.unsplash.com", "nepcha.com"],
+    domains: [
+      "images.unsplash.com",
+      "nepcha.com",
+      "docs.material-tailwind.com",
+    ],
   },
   assetPrefix: isProd ? `${process.env.NEXT_PUBLIC_ROOT_DOCS_URL}` : undefined,
   async redirects() {

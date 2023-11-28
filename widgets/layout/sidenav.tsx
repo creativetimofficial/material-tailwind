@@ -11,7 +11,7 @@ interface Props {
       label?: string;
     }[];
   }[];
-  type: "html" | "react" | "vue" | "angular" | "svelte";
+  type: "html" | "react";
   slug: string;
   mobileNav: boolean;
   setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
