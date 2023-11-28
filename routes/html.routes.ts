@@ -115,14 +115,6 @@ export const routes = [
         route: "chip",
       },
       {
-        name: "Collapse",
-        route: "collapse",
-      },
-      {
-        name: "Carousel",
-        route: "carousel",
-      },
-      {
         name: "Dialog",
         route: "dialog",
       },
