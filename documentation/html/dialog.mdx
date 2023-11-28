@@ -15,7 +15,7 @@ navigation:
     "required-script",
   ]
 github: dialog
-prev: chip
+prev: carousel
 next: icon-button
 ---
 
@@ -101,20 +101,20 @@ You can also use the <Code html>data-dialog-close="true"</Code> for the element 
       data-dialog="dialog"
       class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
     >
-      <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+      <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
         Its a simple dialog.
       </div>
-      <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+      <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
         The key to more success is to have a lot of pillows. Put it this way, it took me
         twenty five years to get these plants, twenty five years of blood sweat and tears, and
         I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
         luv.
       </div>
-      <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+      <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
         <button
           data-ripple-dark="true"
           data-dialog-close="true"
-          class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         >
           Cancel
         </button>
@@ -408,7 +408,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
   }
 >
   ```html
-  <div class="mb-3 flex gap-3">
+  <div class="flex gap-3 mb-3">
     <button
       data-ripple-light="true"
       data-dialog-target="dialog-xs"
@@ -425,20 +425,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-xs"
         class="relative m-4 w-1/4 min-w-[25%] max-w-[25%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
               twenty five years to get these plants, twenty five years of blood sweat and tears, and
               I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
               luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -468,20 +468,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-sm"
         class="relative m-4 w-1/3 min-w-[33.333333%] max-w-[33.333333%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
           luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -511,20 +511,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-md"
         class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
           luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -539,7 +539,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
       </div>
     </div>
   </div>
-  <div class="mb-3 flex gap-3">
+  <div class="flex gap-3 mb-3">
     <button
       data-ripple-light="true"
       data-dialog-target="dialog-lg"
@@ -556,20 +556,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-lg"
         class="relative m-4 w-3/5 min-w-[60%] max-w-[60%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
           luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -599,20 +599,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-xl"
         class="relative m-4 w-3/4 min-w-[75%] max-w-[75%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
           luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -642,20 +642,20 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         data-dialog="dialog-xxl"
         class="relative h-screen w-screen min-w-[100vw] max-w-[100vw] bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased"
       >
-        <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
           Its a simple dialog.
         </div>
-        <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+        <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
           The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
           luv.
         </div>
-        <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+        <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button
             data-ripple-dark="true"
             data-dialog-close="true"
-            class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             Cancel
           </button>
@@ -753,20 +753,20 @@ You can modify the open/close state animation for dialog by adding the <Code htm
       data-dialog-transition="transition-all duration-300"
       class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
     >
-      <div class="flex shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+      <div class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
         Its a simple dialog.
       </div>
-      <div class="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+      <div class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
         The key to more success is to have a lot of pillows. Put it this way, it took me
         twenty five years to get these plants, twenty five years of blood sweat and tears, and
         I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
         luv.
       </div>
-      <div class="flex shrink-0 flex-wrap items-center justify-end p-4 text-blue-gray-500">
+      <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
         <button
           data-ripple-dark="true"
           data-dialog-close="true"
-          class="middle none center mr-1 rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         >
           Cancel
         </button>
@@ -912,15 +912,15 @@ Use the example below to create a dialog with a sign in form.
       data-dialog="sign-in-dialog"
       class="relative mx-auto flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
-      <div class="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
-        <h3 class="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
+      <div class="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border shadow-pink-500/40">
+        <h3 class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
           Sign In
         </h3>
       </div>
       <div class="flex flex-col gap-4 p-6">
         <div class="relative h-11 w-full min-w-[200px]">
           <input
-            class="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            class="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeholder=" "
           />
           <label class="behtmlFore:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -929,7 +929,7 @@ Use the example below to create a dialog with a sign in form.
         </div>
         <div class="relative h-11 w-full min-w-[200px]">
           <input
-            class="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            class="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             placeholder=" "
           />
           <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -939,7 +939,7 @@ Use the example below to create a dialog with a sign in form.
         <div class="-ml-2.5">
           <div class="inline-flex items-center">
             <label
-              class="relative flex cursor-pointer items-center rounded-full p-3"
+              class="relative flex items-center p-3 rounded-full cursor-pointer"
               for="checkbox"
               data-ripple-dark="true"
             >
@@ -948,7 +948,7 @@ Use the example below to create a dialog with a sign in form.
                 class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
                 id="checkbox"
               />
-              <span class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+              <span class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-3.5 w-3.5"
@@ -966,7 +966,7 @@ Use the example below to create a dialog with a sign in form.
               </span>
             </label>
             <label
-              class="mt-px cursor-pointer select-none font-light text-gray-700"
+              class="mt-px font-light text-gray-700 cursor-pointer select-none"
               for="checkbox"
             >
               Remember Me
@@ -982,11 +982,11 @@ Use the example below to create a dialog with a sign in form.
         >
           Sign In
         </button>
-        <p class="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+        <p class="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
           Don't have an account?
           <a
             href="#signup"
-            class="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased"
+            class="block ml-1 font-sans text-sm antialiased font-bold leading-normal text-pink-500"
           >
             Sign up
           </a>
@@ -1435,10 +1435,10 @@ Use the example below to create a Web 3.0 wallet connect dialog.
     data-dialog="web-3-dialog"
   >
     <div
-      class="flex items-center shrink-0 p-4 text-blue-gray-900 antialiased font-sans text-2xl font-semibold leading-snug justify-between"
+      class="flex items-center justify-between p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900"
     >
       <h5
-        class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900"
+        class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900"
       >
         Connect a Wallet
       </h5>
@@ -1449,7 +1449,7 @@ Use the example below to create a Web 3.0 wallet connect dialog.
         data-dialog-close="true"
       >
         <span
-          class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1458,7 +1458,7 @@ Use the example below to create a Web 3.0 wallet connect dialog.
             stroke-width="2"
             stroke="currentColor"
             aria-hidden="true"
-            class="h-5 w-5"
+            class="w-5 h-5"
           >
             <path
               stroke-linecap="round"
@@ -1470,22 +1470,22 @@ Use the example below to create a Web 3.0 wallet connect dialog.
       </button>
     </div>
     <div
-      class="relative p-4 text-blue-gray-500 antialiased font-sans text-base font-light leading-relaxed overflow-y-scroll pr-2"
+      class="relative p-4 pr-2 overflow-y-scroll font-sans text-base antialiased font-light leading-relaxed text-blue-gray-500"
     >
       <div class="mb-6">
         <p
-          class="block antialiased font-sans text-sm leading-normal text-gray-700 font-semibold opacity-70"
+          class="block font-sans text-sm antialiased font-semibold leading-normal text-gray-700 opacity-70"
         >
           Popular
         </p>
-        <ul class="mt-1 -ml-2 flex flex-col gap-1">
+        <ul class="flex flex-col gap-1 mt-1 -ml-2">
           <button
             role="menuitem"
             class="w-full pt-[9px] pb-2 px-3 rounded-md text-start leading-tight cursor-pointer select-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-blue-gray-900 focus:text-blue-gray-900 active:text-blue-gray-900 outline-none flex items-center gap-3"
           >
             <img src="https://docs.material-tailwind.com/icons/metamask.svg" alt="metamast" class="h-6 w-6" />
             <h6
-              class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900"
+              class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
             >
               MetaMask
             </h6>
@@ -1497,10 +1497,10 @@ Use the example below to create a Web 3.0 wallet connect dialog.
             <img
               src="https://docs.material-tailwind.com/icons/coinbase.svg"
               alt="metamast"
-              class="h-6 w-6 rounded-md"
+              class="w-6 h-6 rounded-md"
             />
             <h6
-              class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900"
+              class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
             >
               Coinbase Wallet
             </h6>
@@ -1512,10 +1512,10 @@ Use the example below to create a Web 3.0 wallet connect dialog.
             <img
               src="https://docs.material-tailwind.com/icons/connect-wallet.svg"
               alt="metamast"
-              class="h-6 w-6 rounded-md"
+              class="w-6 h-6 rounded-md"
             />
             <h6
-              class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900"
+              class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
             >
               Connect Wallet
             </h6>
@@ -1524,7 +1524,7 @@ Use the example below to create a Web 3.0 wallet connect dialog.
       </div>
       <div>
         <p
-          class="block antialiased font-sans text-sm leading-normal text-gray-700 font-semibold opacity-70"
+          class="block font-sans text-sm antialiased font-semibold leading-normal text-gray-700 opacity-70"
         >
           More
         </p>
@@ -1536,10 +1536,10 @@ Use the example below to create a Web 3.0 wallet connect dialog.
             <img
               src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
               alt="metamast"
-              class="h-7 w-7 rounded-md border border-blue-gray-50"
+              class="border rounded-md h-7 w-7 border-blue-gray-50"
             />
             <h6
-              class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900"
+              class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
             >
               Trust Wallet
             </h6>
@@ -1551,10 +1551,10 @@ Use the example below to create a Web 3.0 wallet connect dialog.
             <img
               src="https://docs.material-tailwind.com/icons/argent-wallet.svg"
               alt="metamast"
-              class="h-7 w-7 rounded-md border border-blue-gray-50"
+              class="border rounded-md h-7 w-7 border-blue-gray-50"
             />
             <h6
-              class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900"
+              class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-blue-gray-900"
             >
               Coinbase Wallet
             </h6>
@@ -1563,15 +1563,15 @@ Use the example below to create a Web 3.0 wallet connect dialog.
       </div>
     </div>
     <div
-      class="flex items-center shrink-0 flex-wrap p-4 text-blue-gray-500 justify-between gap-2 border-t border-blue-gray-50"
+      class="flex flex-wrap items-center justify-between gap-2 p-4 border-t shrink-0 text-blue-gray-500 border-blue-gray-50"
     >
       <p
-        class="block antialiased font-sans text-sm leading-normal text-gray-700 font-normal"
+        class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700"
       >
         New to Ethereum wallets?
       </p>
       <button
-        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg text-pink-500 hover:bg-pink-500/10 active:bg-pink-500/30"
+        class="px-4 py-2 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-pink-500/10 active:bg-pink-500/30"
         type="button"
         data-ripple-dark="true"
       >

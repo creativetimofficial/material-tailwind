@@ -15,7 +15,7 @@ navigation:
   ]
 github: button
 prev: breadcrumbs
-next: card
+next: button-group
 ---
 
 # Tailwind CSS Button
@@ -29,23 +29,16 @@ See below our button components examples.
 <CodePreview
   id="button"
   link="button#button"
-  component={
-    <button
-      className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-light="true"
-    >
-      {`Button`}
-    </button>
-  }
+  component={<HTMLButtonExamples.ButtonDefault />}
 >
-  ```html
-  <button
-    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
-  </button>
-  ```
+```html
+<button
+  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+  type="button"
+>
+  Button
+</button>
+```
 </CodePreview>
 
 ---
@@ -78,7 +71,7 @@ See our button examples below. They come in different styles and color.
         {`Button`}
       </button>
       <button
-        class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         data-ripple-dark="true"
       >
         {`Button`}
@@ -107,7 +100,7 @@ See our button examples below. They come in different styles and color.
       Button
     </button>
     <button
-      class="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-dark="true"
     >
       Button
@@ -351,7 +344,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -373,7 +366,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -396,7 +389,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"
@@ -406,7 +399,7 @@ You can use any type of icons inside the button, in the below example we've used
     </svg>
   </button>
   <button
-    class="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     type="button"
     data-ripple-dark="true"
   >
@@ -418,7 +411,7 @@ You can use any type of icons inside the button, in the below example we've used
       stroke-width="2"
       stroke="currentColor"
       aria-hidden="true"
-      class="h-5 w-5"
+      class="w-5 h-5"
     >
       <path
         stroke-linecap="round"

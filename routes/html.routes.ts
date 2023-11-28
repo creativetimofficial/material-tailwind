@@ -86,6 +86,10 @@ export const routes = [
         route: "avatar",
       },
       {
+        name: "Badge",
+        route: "badge",
+      },
+      {
         name: "Breadcrumbs",
         route: "breadcrumbs",
       },
@@ -93,6 +97,11 @@ export const routes = [
         name: "Button",
         route: "button",
       },
+      {
+        name: "Button-Group",
+        route: "button-group",
+      },
+
       {
         name: "Card",
         route: "card",
@@ -104,6 +113,14 @@ export const routes = [
       {
         name: "Chip",
         route: "chip",
+      },
+      {
+        name: "Collapse",
+        route: "collapse",
+      },
+      {
+        name: "Carousel",
+        route: "carousel",
       },
       {
         name: "Dialog",
@@ -120,6 +137,11 @@ export const routes = [
       {
         name: "Form",
         route: "form",
+      },
+
+      {
+        name: "List",
+        route: "list",
       },
       {
         name: "Menu",
@@ -146,8 +168,28 @@ export const routes = [
         route: "radio-button",
       },
       {
+        name: "Rating",
+        route: "rating",
+      },
+      {
         name: "Select",
         route: "select",
+      },
+      // {
+      //   name: "Slider",
+      //   route: "slider",
+      // },
+      {
+        name: "Speed Dial",
+        route: "speed-dial",
+      },
+      {
+        name: "Spinner",
+        route: "spinner",
+      },
+      {
+        name: "Stepper",
+        route: "stepper",
       },
       {
         name: "Switch",
@@ -172,6 +214,14 @@ export const routes = [
       {
         name: "Footer",
         route: "footer",
+      },
+      {
+        name: "Image",
+        route: "image",
+      },
+      {
+        name: "Table",
+        route: "table",
       },
     ],
   },

@@ -15,7 +15,7 @@ navigation:
   ]
 github: chip
 prev: checkbox
-next: dialog
+next: collapse
 ---
 
 # Tailwind CSS Chips
@@ -174,7 +174,7 @@ Use this example to create a simple and versatile badge component.
 >
   ```html
   <div class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-pink-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+    <div class="absolute w-5 h-5 top-2/4 left-1 -translate-y-2/4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -183,7 +183,7 @@ Use this example to create a simple and versatile badge component.
         <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"></path>
       </svg>
     </div>
-    <div class="ml-4 mt-px">downloads</div>
+    <div class="mt-px ml-4">downloads</div>
   </div>
   ```
 </CodePreview>
@@ -231,12 +231,12 @@ You can make a chip dismissible by adding the <Code html>data-dismissible="{`chi
     class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
     data-dismissible="chip"
   >
-    <div class="mr-5 mt-px">Dismissible</div>
+    <div class="mt-px mr-5">Dismissible</div>
     <div
       class="absolute top-1 right-1 mx-px mt-[0.5px] w-max rounded-md bg-pink-800 transition-colors hover:bg-pink-900"
       data-dismissible-target="chip"
     >
-      <div role="button" class="h-5 w-5 p-1">
+      <div role="button" class="w-5 h-5 p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -284,15 +284,15 @@ Use the example below for a chip containing an avatar.
 >
   ```html
   <div class="center relative inline-block select-none whitespace-nowrap rounded-full bg-teal-500 px-3.5 py-1.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white">
-    <div class="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+    <div class="absolute w-5 h-5 top-2/4 left-1 -translate-y-2/4">
       <img
         alt="tania andrew"
         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-        class="relative inline-block h-5 w-5 translate-x-px translate-y-px rounded-full object-cover object-center"
+        class="relative inline-block object-cover object-center w-5 h-5 translate-x-px translate-y-px rounded-full"
       />
     </div>
-    <div class="ml-4 mt-px">
-      <p class="block font-sans text-sm font-medium capitalize leading-none text-white antialiased">
+    <div class="mt-px ml-4">
+      <p class="block font-sans text-sm antialiased font-medium leading-none text-white capitalize">
         Tania Andrew
       </p>
     </div>

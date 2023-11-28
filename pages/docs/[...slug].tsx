@@ -78,6 +78,7 @@ import ReleaseNotes from "docs-content/react/release-notes";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
+import * as HTMLButtonExamples from "docs-content/html/button";
 
 // @material-tailwind/react
 import {
@@ -316,6 +317,7 @@ const components = {
 
   // html docs content
   HtmlPlugins,
+  HTMLButtonExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
