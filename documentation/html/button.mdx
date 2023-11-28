@@ -9,6 +9,8 @@ navigation:
     "button-colors",
     "button-with-icon",
     "block-level-button",
+    "rounded-button",
+    "button-with-link",
     "button-ripple-effect",
     "custom-auth-buttons",
     "required-script",
@@ -50,63 +52,34 @@ See our button examples below. They come in different styles and color.
 <CodePreview
   id="button-variants"
   link="button#button-variants"
-  component={
-    <div className="flex">
-      <button
-        class="middle none center mr-4 rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Button
-      </button>
-      <button
-        class="middle none center mr-4 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        {`Button`}
-      </button>
-      <button
-        class="middle none center mr-3 rounded-lg border border-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-dark="true"
-      >
-        {`Button`}
-      </button>
-      <button
-        class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-dark="true"
-      >
-        {`Button`}
-      </button>
-    </div>
-  }
+ component={<HTMLButtonExamples.ButtonVariants />}
 >
-  ```html
-  <div class="flex">
-    <button
-      class="middle none center mr-3 rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-light="true"
-    >
-      Button
-    </button>
-    <button
-      class="middle none center mr-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-light="true"
-    >
-      Button
-    </button>
-    <button
-      class="middle none center mr-3 rounded-lg border border-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-dark="true"
-    >
-      Button
-    </button>
-    <button
-      class="px-6 py-3 font-sans text-xs font-bold text-pink-500 uppercase transition-all rounded-lg middle none center hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-dark="true"
-    >
-      Button
-    </button>
-  </div>
-  ```
+```html
+      <button
+        class="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        filled
+      </button>
+      <button
+        class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        gradient
+      </button>
+      <button
+        class="select-none rounded-lg border border-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        outlined
+      </button>
+      <button
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        text
+      </button>
+```
 </CodePreview>
 
 ---
@@ -118,49 +91,28 @@ Use this example to create buttons in different sizes.
 <CodePreview
   id="button-sizes"
   link="button#button-sizes"
-  component={
-    <div className="flex items-end">
-      <button
-        className="middle none center mr-4 rounded-lg bg-pink-500 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        {`Small`}
-      </button>
-      <button
-        className="middle none center mr-4 rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        {`Medium`}
-      </button>
-      <button
-        className="middle none center rounded-lg bg-pink-500 py-3.5 px-7 font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        {`Large`}
-      </button>
-    </div>
-  }
+ component={<HTMLButtonExamples.ButtonSizes />}
 >
-  ```html
-  <button
-    class="middle none center rounded-lg bg-pink-500 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Small
-  </button>
-  <button
-    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Medium
-  </button>
-  <button
-    class="middle none center rounded-lg bg-pink-500 py-3.5 px-7 font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Large
-  </button>
-  ```
+```html
+      <button
+        class="select-none rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        small
+      </button>
+      <button
+        class="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        medium
+      </button>
+      <button
+        class="select-none rounded-lg bg-gray-900 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        large
+      </button>
+```
 </CodePreview>
 
 ---
@@ -172,255 +124,90 @@ Use this example to create a simple button element for your Tailwind CSS project
 <CodePreview
   id="button-colors"
   link="button#button-colors"
-  component={
-    <div className="flex items-end">
-      <button
-        className="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Button
-      </button>
-      <button
-        className="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Button
-      </button>
-      <button
-        className="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Button
-      </button>
-      <button
-        className="middle none center rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-orange-500/20 transition-all hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Button
-      </button>
-    </div>
-  }
+ component={<HTMLButtonExamples.ButtonColors />}
 >
-  ```html
-  <button
-    class="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
-  </button>
-  <button
-    class="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
-  </button>
-  <button
-    class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
-  </button>
-  <button
-    class="middle none center rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-orange-500/20 transition-all hover:shadow-lg hover:shadow-orange-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
-  </button>
-  ```
+```html
+      <button
+        class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        color blue
+      </button>
+      <button
+        class="select-none rounded-lg bg-red-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        color red
+      </button>
+      <button
+        class="select-none rounded-lg bg-green-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        color green
+      </button>
+      <button
+        class="select-none rounded-lg bg-amber-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md shadow-amber-500/20 transition-all hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        type="button"
+      >
+        color amber
+      </button>
+```
 </CodePreview>
 
 ---
 
 ### Button with Icon
 
-You can use any type of icons inside the button, in the below example we've used the <a href="https://heroicons.com/?ref=material-tailwind" target="_blank" className="hover:text-pink-500 transition-colors font-medium">@heroicons</a>.
+You can use any type of icons inside the button, in the below example we've used the <a href="https://heroicons.com/?ref=material-tailwind" target="_blank" class="font-medium transition-colors hover:text-pink-500">@heroicons</a>.
 
 <CodePreview
   id="button-with-icon"
   link="button#button-with-icon"
-  component={
-    <div className="flex items-center gap-4">
-      <button
-        className="flex select-none items-center gap-3 rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-light="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          aria-hidden="true"
-          className="h-5 w-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-          ></path>
-        </svg>
-        Add to Bookmark
-      </button>
-      <button
-        className="flex select-none items-center gap-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-light="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          aria-hidden="true"
-          className="h-5 w-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
-          ></path>
-        </svg>
-        Upload Files
-      </button>
-      <button
-        className="flex select-none items-center gap-3 rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-dark="true"
-      >
-        Refresh
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          aria-hidden="true"
-          className="h-5 w-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-          ></path>
-        </svg>
-      </button>
-      <button
-        className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-dark="true"
-      >
-        Read More
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          aria-hidden="true"
-          className="h-5 w-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-          ></path>
-        </svg>
-      </button>
-    </div>
-  }
+  component={<HTMLButtonExamples.ButtonWithIcon />}
 >
-  ```html
+```html
   <button
-    class="flex select-none items-center gap-3 rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-light="true"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      aria-hidden="true"
-      class="w-5 h-5"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-      ></path>
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+    type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z">
+      </path>
     </svg>
     Add to Bookmark
   </button>
   <button
-    class="flex select-none items-center gap-3 rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-light="true"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      aria-hidden="true"
-      class="w-5 h-5"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
-      ></path>
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] flex items-center gap-3"
+    type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z">
+      </path>
     </svg>
     Upload Files
   </button>
   <button
-    class="flex select-none items-center gap-3 rounded-lg border border-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:opacity-75 focus:ring focus:ring-pink-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-dark="true"
-  >
-    Refresh
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      aria-hidden="true"
-      class="w-5 h-5"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
-      ></path>
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] flex items-center gap-3"
+    type="button">
+    Refresh<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+      stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99">
+      </path>
     </svg>
   </button>
   <button
-    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-dark="true"
-  >
+    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+    type="button">
     Read More
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      aria-hidden="true"
-      class="w-5 h-5"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-      ></path>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+      class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
     </svg>
   </button>
-  ```
+```
 </CodePreview>
 
 ---
@@ -432,23 +219,94 @@ A button could be a block-level component as well that gets all the available sp
 <CodePreview
   id="block-level-button"
   link="button#block-level-button"
-  component={
-    <button
-      className="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      data-ripple-light="true"
-    >
-      Button
-    </button>
-  }
+  component={<HTMLButtonExamples.BlockLevelButton />}
 >
-  ```html
+```html
+ <button
+  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full"
+  type="button">
+  block level button
+</button>
+```
+</CodePreview>
+
+---
+
+### Rounded Button
+
+You can use tailwind css <Code html>rounded-full</Code> class with Button to create rounded buttons.
+
+<CodePreview
+  id="rounded-button"
+  link="button#rounded-button"
+  component={<HTMLButtonExamples.ButtonRounded />}
+>
+```html
   <button
-    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    data-ripple-light="true"
-  >
-    Button
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-full"
+    type="button">
+    Filled
   </button>
-  ```
+  <button
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-full"
+    type="button">
+    Gradient
+  </button>
+  <button
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] rounded-full"
+    type="button">
+    Outlined
+  </button>
+  <button
+    class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-full select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+    type="button">
+    Text
+  </button>
+```
+</CodePreview>
+
+---
+
+
+### Button With Link
+
+You can wrap <Code html>Button</Code> component with <Code html>{`<a>`}</Code> tag to make it a link.
+
+<CodePreview
+  id="button-with-link"
+  link="button#button-with-link"
+  component={<HTMLButtonExamples.ButtonWithLink />}
+>
+```html
+  <a href="#buttons-with-link">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+      type="button">
+      Filled
+    </button>
+  </a>
+  <a href="#buttons-with-link">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85]"
+      type="button">
+      Gradient
+    </button>
+  </a>
+  <a href="#buttons-with-link">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
+      type="button">
+      Outlined
+    </button>
+  </a>
+  <a href="#buttons-with-link">
+    <button
+      class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+      type="button">
+      Text
+    </button>
+  </a>
+```
 </CodePreview>
 
 ---
@@ -460,37 +318,23 @@ You can turn on/off the ripple effect for the button component by changing <Code
 <CodePreview
   id="button-ripple-effect"
   link="button#button-ripple-effect"
-  component={
-    <div className="flex gap-4">
-      <button
-        className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="true"
-      >
-        Ripple Effect On
-      </button>
-      <button
-        className="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        data-ripple-light="false"
-      >
-        ButtRipple Effect Off
-      </button>
-    </div>
-  }
+ component={<HTMLButtonExamples.ButtonRippleEffect />}
 >
-  ```html
+```html
   <button
-    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+    type="button"
     data-ripple-light="true"
-  >
-    Ripple Effect On
-  </button>
+    >
+    Ripple Effect On</button>
   <button
-    class="middle none center rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+    type="button"
     data-ripple-light="false"
-  >
-    ButtRipple Effect Off
+    >
+    Ripple Effect Off
   </button>
-  ```
+```
 </CodePreview>
 
 ---
@@ -502,72 +346,37 @@ You can use tailwind css classes with <Code html>Button</Code> to create beautif
 <CodePreview
   id="custom-auth-buttons"
   link="button#custom-auth-buttons"
-  component={
-    <div className="flex flex-col items-center gap-4">
-      <button
-        className="flex select-none items-center gap-3 rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-900 shadow-md shadow-blue-gray-500/10 transition-all hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-dark="true"
-      >
-        <img src="https://docs.material-tailwind.com/icons/metamask.svg" alt="metamask" className="h-6 w-6" />
-        Connect Wallet
-      </button>
-      <button
-        className="flex select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-dark="true"
-      >
-        <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
-        Continue with Google
-      </button>
-      <button
-        className="group relative flex select-none items-center gap-3 overflow-hidden rounded-lg bg-gradient-to-tr from-light-blue-600 to-light-blue-400 py-3.5 px-7 pr-[72px] text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-light-blue-500/20 transition-all hover:shadow-lg hover:shadow-light-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-        data-ripple-light="true"
-      >
-        Sign in with Twitter
-        <span className="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-          <img src="https://docs.material-tailwind.com/icons/twitter.svg" alt="metamask" className="h-6 w-6" />
-        </span>
-      </button>
-    </div>
-  }
+  component={<HTMLButtonExamples.AuthButtons />}
 >
-  ```html
+```html
   <button
-    class="flex select-none items-center gap-3 rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-900 shadow-md shadow-blue-gray-500/10 transition-all hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-dark="true"
-  >
-    <img src="https://docs.material-tailwind.com/icons/metamask.svg" alt="metamask" class="h-6 w-6" />
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+    type="button">
+    <img src="https://docs.material-tailwind.com/icons/metamask.svg" alt="metamask" class="w-6 h-6" />
     Connect Wallet
   </button>
   <button
-    class="flex select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-dark="true"
-  >
-    <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" class="h-6 w-6" />
-    Continue with Google
-  </button>
-  <button
-    class="group relative flex select-none items-center gap-3 overflow-hidden rounded-lg bg-gradient-to-tr from-light-blue-600 to-light-blue-400 py-3.5 px-7 pr-[72px] text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-light-blue-500/20 transition-all hover:shadow-lg hover:shadow-light-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button"
-    data-ripple-light="true"
-  >
-    Sign in with Twitter
-    <span class="absolute right-0 grid h-full w-12 place-items-center bg-light-blue-600 transition-colors group-hover:bg-light-blue-700">
-      <img src="https://docs.material-tailwind.com/icons/twitter.svg" alt="metamask" class="h-6 w-6" />
-    </span>
-  </button>
-  ```
+    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg border border-blue-gray-500 text-blue-gray-500 hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] flex items-center gap-3"
+    type="button">
+    <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" class="w-6 h-6" />
+    Continue with
+    Google</b>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-gradient-to-tr from-light-blue-600 to-light-blue-400 text-white shadow-md shadow-light-blue-500/20 hover:shadow-lg hover:shadow-light-blue-500/40 active:opacity-[0.85] group relative flex items-center gap-3 overflow-hidden pr-[72px]"
+      type="button">
+      Sign in with Twitter
+      <span class="absolute right-0 grid w-12 h-full transition-colors place-items-center bg-light-blue-600 group-hover:bg-light-blue-700">
+        <img src="https://docs.material-tailwind.com/icons/twitter.svg" alt="metamask" class="w-6 h-6" />
+      </span>
+    </button>
+```
 </CodePreview>
 
 ---
 
 ## t
 
-<span id="required-script" className="scroll-mt-56" />
+<span id="required-script" class="scroll-mt-56" />
 
 The button component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
 

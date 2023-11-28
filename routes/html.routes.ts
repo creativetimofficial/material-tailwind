@@ -204,6 +204,10 @@ export const routes = [
         route: "textarea",
       },
       {
+        name: "Timeline",
+        route: "timeline",
+      },
+      {
         name: "Tooltip",
         route: "tooltip",
       },
@@ -218,6 +222,14 @@ export const routes = [
       {
         name: "Image",
         route: "image",
+      },
+      {
+        name: "Video",
+        route: "video",
+      },
+      {
+        name: "Sidebar",
+        route: "sidebar",
       },
       {
         name: "Table",
