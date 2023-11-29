@@ -14,6 +14,7 @@ import {
 } from "@material-tailwind/react";
 import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
+import { useRouter } from "next/router";
 
 interface DocsNavbar {
   slug: string[];
@@ -41,6 +42,7 @@ function NavItem({
 export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
   const [stars, setStars] = React.useState(0);
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     window.addEventListener("resize", () => {
@@ -183,7 +185,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                 Material <br /> Tailwind
               </Typography>
               <Chip
-                value={`v${process.env.NEXT_PUBLIC_MT_FRAMEWORK_VERSION}`}
+                value={`v${router.asPath.includes("docs/react") ? process.env.NEXT_PUBLIC_MT_FRAMEWORK_VERSION : process.env.NEXT_PUBLIC_MT_HTML_FRAMEWORK_VERSION}`}
                 variant="outlined"
                 className="ml-2 border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
               />
