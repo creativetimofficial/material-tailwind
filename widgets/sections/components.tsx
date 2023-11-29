@@ -140,7 +140,7 @@ const DATA = [
   },
   {
     title: "Speed Dial",
-    route: "speeddial",
+    route: "speed-dial",
     img: "https://docs.material-tailwind.com/image/components/speeddial-thumbnail.jpg",
   },
   {
