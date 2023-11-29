@@ -11,7 +11,7 @@ interface Props {
       label?: string;
     }[];
   }[];
-  type: "html" | "react" | "vue" | "angular" | "svelte";
+  type: "html" | "react";
   slug: string;
   mobileNav: boolean;
   setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -38,7 +38,7 @@ export function Sidenav({
         }`}
       />
       <div className="fixed top-0 z-[9999] w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
-        <div className="mt-4">
+        <div className="mt-4 mb-10">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>
               <Typography

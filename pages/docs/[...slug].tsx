@@ -73,7 +73,48 @@ import * as TooltipExamples from "docs-content/react/tooltip";
 import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
+import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
+
+// html docs content
+import * as HtmlPlugins from "docs-content/html/plugins";
+import * as HTMLButtonExamples from "docs-content/html/button";
+import * as HTMLAccordianExamples from "docs-content/html/accordion";
+import * as HTMLAlertExamples from "docs-content/html/alert";
+import * as HTMLAvatarExamples from "docs-content/html/avatar";
+import * as HTMLBadgeExamples from "docs-content/html/badge";
+import * as HTMLBreadcrumbsExamples from "docs-content/html/breadcrumbs";
+import * as HTMLButtonGroupExamples from "docs-content/html/button-group";
+import * as HTMLCardExamples from "docs-content/html/card";
+import * as HTMLCheckboxExamples from "docs-content/html/checkbox";
+import * as HTMLChipExamples from "docs-content/html/chip";
+import * as HTMLDialogExamples from "docs-content/html/dialog";
+import * as HTMLIconButtonExamples from "docs-content/html/icon-button";
+import * as HTMLInputExamples from "docs-content/html/input";
+import * as HTMLFormExamples from "docs-content/html/form";
+import * as HTMLListExamples from "docs-content/html/list";
+import * as HTMLMenuExamples from "docs-content/html/menu";
+import * as HTMLNavbarExamples from "docs-content/html/navbar";
+import * as HTMLPaginationExamples from "docs-content/html/pagination";
+import * as HTMLPopoverExamples from "docs-content/html/popover";
+import * as HTMLProgressExamples from "docs-content/html/progress";
+import * as HTMLRadioExamples from "docs-content/html/radio";
+import * as HTMLRatingExamples from "docs-content/html/rating";
+import * as HTMLSelectExamples from "docs-content/html/select";
+import * as HTMLSpeedDialExamples from "docs-content/html/speed-dial";
+import * as HTMLSpinnerExamples from "docs-content/html/spinner";
+import * as HTMLStepperExamples from "docs-content/html/stepper";
+import * as HTMLSwitchExamples from "docs-content/html/switch";
+import * as HTMLTabsExamples from "docs-content/html/tabs";
+import * as HTMLTextareaExamples from "docs-content/html/textarea";
+import * as HTMLTimelineExamples from "docs-content/html/timeline";
+import * as HTMLTooltipExamples from "docs-content/html/tooltip";
+import * as HTMLTypographyExamples from "docs-content/html/typography";
+import * as HTMLFooterExamples from "docs-content/html/footer";
+import * as HTMLImageExamples from "docs-content/html/img";
+import * as HTMLTableExamples from "docs-content/html/table";
+import * as HTMLVideoExamples from "docs-content/html/video";
+import * as HTMLSidebarExamples from "docs-content/html/sidebar";
 
 // @material-tailwind/react
 import {
@@ -308,6 +349,47 @@ const components = {
   TextareaExamples,
   ReleaseNotes,
   ColorPalette,
+  Plugins,
+
+  // html docs content
+  HtmlPlugins,
+  HTMLButtonExamples,
+  HTMLAccordianExamples,
+  HTMLAlertExamples,
+  HTMLAvatarExamples,
+  HTMLBadgeExamples,
+  HTMLBreadcrumbsExamples,
+  HTMLButtonGroupExamples,
+  HTMLCardExamples,
+  HTMLCheckboxExamples,
+  HTMLChipExamples,
+  HTMLDialogExamples,
+  HTMLIconButtonExamples,
+  HTMLInputExamples,
+  HTMLFormExamples,
+  HTMLListExamples,
+  HTMLMenuExamples,
+  HTMLNavbarExamples,
+  HTMLPaginationExamples,
+  HTMLPopoverExamples,
+  HTMLProgressExamples,
+  HTMLRadioExamples,
+  HTMLRatingExamples,
+  HTMLSelectExamples,
+  HTMLSpeedDialExamples,
+  HTMLSpinnerExamples,
+  HTMLStepperExamples,
+  HTMLSwitchExamples,
+  HTMLTabsExamples,
+  HTMLTextareaExamples,
+  HTMLTimelineExamples,
+  HTMLTooltipExamples,
+  HTMLTypographyExamples,
+  HTMLFooterExamples,
+  HTMLImageExamples,
+  HTMLTableExamples,
+  HTMLVideoExamples,
+  HTMLSidebarExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -318,11 +400,11 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     html: htmlRoutes,
     react: reactRoutes,
   };
-  const validFrameworks = ["html", "react", "vue", "angular", "svelte"];
+  const validFrameworks = ["html", "react"];
   const frameworkType = asPath
     .split("/")
     .filter((el) => validFrameworks.includes(el))
-    .join("") as "html" | "react" | "vue" | "angular" | "svelte";
+    .join("") as "html" | "react";
 
   React.useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
@@ -355,12 +437,12 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         />
       </Head>
       <Link href="/blocks">
-        <Alert className="w-full bg-deep-orange-500 justify-center rounded-none">
+        <Alert className="w-full justify-center rounded-none bg-deep-orange-500">
           <div className="flex flex-wrap items-center justify-center !text-white">
-            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF  ⏰ Hurry up!
+            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF
+            ⏰ Hurry up!
             <CountDown type="plain" />
-            
-            <Button className="font-bold ml-10 bg-primary mb-0">
+            <Button className="ml-10 mb-0 bg-primary font-bold">
               View Offer
             </Button>
           </div>
@@ -372,7 +454,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
         <div className="px-6">
           <div className="container mx-auto flex">
             <Sidenav
-              routes={routes[frameworkType]}
+              routes={routes[frameworkType] as any}
               type={frameworkType}
               slug={slug[slug.length - 1]}
               mobileNav={mobileNav}
