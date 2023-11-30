@@ -57,7 +57,7 @@ export function Sidenav({
                       <Typography
                         variant="small"
                         className={`relative list-item w-full py-1 capitalize transition-colors hover:text-primary ${
-                          route === slug
+                          route.includes(slug)
                             ? "font-medium text-blue-500"
                             : "font-normal text-gray-600"
                         }`}

@@ -14,6 +14,10 @@ export const routes = [
         name: "What is Tailwind CSS",
         route: "what-is-tailwind-css",
       },
+      {
+        name: "Release Notes",
+        route: "release-notes",
+      },
     ],
   },
   {

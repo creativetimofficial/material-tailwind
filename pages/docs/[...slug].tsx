@@ -115,6 +115,7 @@ import * as HTMLImageExamples from "docs-content/html/img";
 import * as HTMLTableExamples from "docs-content/html/table";
 import * as HTMLVideoExamples from "docs-content/html/video";
 import * as HTMLSidebarExamples from "docs-content/html/sidebar";
+import { ReleaseNotes as HTMLReleaseNotes } from "docs-content/html/release-notes";
 
 // @material-tailwind/react
 import {
@@ -390,6 +391,7 @@ const components = {
   HTMLTableExamples,
   HTMLVideoExamples,
   HTMLSidebarExamples,
+  HTMLReleaseNotes,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
