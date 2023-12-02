@@ -12,6 +12,7 @@ const inputOutlined = {
         borderWidth: "border focus:border-2",
         borderColor: "border-t-transparent focus:border-t-transparent",
       },
+      placeholder: "placeholder:opacity-0 focus:placeholder:opacity-100",
     },
     inputWithIcon: {
       pr: "!pr-9",
