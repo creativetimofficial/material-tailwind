@@ -48,41 +48,47 @@ export function Sidenav({
                 {name}
               </Typography>
               <ul className="py-2">
-                {pages.map(({ name, route, label }: any, key) => (
-                  <li
-                    key={key}
-                    className={key === pages.length - 1 ? "!mb-4" : ""}
-                  >
-                    <Link href={`/docs/${type}/${route}`}>
-                      <Typography
-                        variant="small"
-                        className={`relative list-item w-full py-1 capitalize transition-colors hover:text-primary ${
-                          route.includes(slug)
-                            ? "font-medium text-blue-500"
-                            : "font-normal text-gray-600"
-                        }`}
-                        onClick={() => setMobileNav(false)}
-                      >
-                        {name}
-                      </Typography>
-                      {label && (
-                        <Chip
-                          size="sm"
-                          value={label}
-                          variant="ghost"
-                          color={
-                            label === "new"
-                              ? "green"
-                              : label === "new example"
-                              ? "amber"
-                              : "blue"
-                          }
-                          className="rounded-full capitalize"
-                        />
-                      )}
-                    </Link>
-                  </li>
-                ))}
+                {pages.map(({ name, route, label }: any, key) => {
+                  const isActive =
+                    slug === "installation"
+                      ? route === slug
+                      : route.includes(slug);
+                  return (
+                    <li
+                      key={key}
+                      className={key === pages.length - 1 ? "!mb-4" : ""}
+                    >
+                      <Link href={`/docs/${type}/${route}`}>
+                        <Typography
+                          variant="small"
+                          className={`relative list-item w-full py-1 capitalize transition-colors hover:text-primary ${
+                            isActive
+                              ? "font-medium text-blue-500"
+                              : "font-normal text-gray-600"
+                          }`}
+                          onClick={() => setMobileNav(false)}
+                        >
+                          {name}
+                        </Typography>
+                        {label && (
+                          <Chip
+                            size="sm"
+                            value={label}
+                            variant="ghost"
+                            color={
+                              label === "new"
+                                ? "green"
+                                : label === "new example"
+                                ? "amber"
+                                : "blue"
+                            }
+                            className="rounded-full capitalize"
+                          />
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
