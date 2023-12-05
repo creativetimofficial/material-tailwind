@@ -5,3 +5,4 @@ export * from "./icon-button";
 export * from "./radio";
 export * from "./collapse";
 export * from "./typography";
+export * from "./switch";

@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Svg3DSelectFace,
+  SelectFace3d,
   Figma,
-  GitHub,
+  Github,
   Discord,
   Search,
   BrightStar,
@@ -105,13 +105,13 @@ export function Navbar() {
           target="_blank"
           href="https://github.com/creativetimofficial/material-tailwind"
         >
-          {/* <NavItem icon={GitHub} hoverIcon={BrightStar}>
+          <NavItem icon={Github} hoverIcon={BrightStar}>
             2.5K
-          </NavItem> */}
+          </NavItem>
         </Link>
-        {/* <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-6">
+        <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-6">
           <Link href="/blocks">
-            <NavItem icon={Svg3DSelectFace}>Blocks</NavItem>
+            <NavItem icon={SelectFace3d}>Blocks</NavItem>
           </Link>
           <Link href="/" className="h-12 w-12">
             <Brand />
@@ -119,7 +119,7 @@ export function Navbar() {
           <Link href="/figma">
             <NavItem icon={Figma}>Figma</NavItem>
           </Link>
-        </div> */}
+        </div>
         <div className="flex gap-2">
           <NavIcon
             tabIndex={0}

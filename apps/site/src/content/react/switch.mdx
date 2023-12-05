@@ -1,0 +1,179 @@
+---
+title: Tailwind CSS Checkbox for React - Material Tailwind
+description: Customise your web projects  with our beautiful checkbox component for Tailwind CSS and React using Material Design guidelines.
+github: checkbox
+prev: docs/customization/button-group
+next: docs/react/icon-button
+---
+
+# Tailwind CSS Checkbox - React
+
+Use our Tailwind CSS `Checkbox` to allow the user to select one or more items from a set.
+
+You can use a `Checkbox` for:
+
+- Selecting one or more options from a list.
+- Presenting a list containing sub-selections.
+- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Checkbox` and use an on/off switch instead).
+
+See below our simple `Checkbox` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
+
+---
+
+## Checkbox Demo
+
+<ComponentPreview demo={<Switch.SwitchDemo />}>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+export function CheckboxDemo() {
+  return <Checkbox />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch Colors
+
+The `Switch` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<Switch.SwitchColors />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function SwitchColors() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Switch color="primary" />
+      <Switch color="secondary" />
+      <Switch color="info" />
+      <Switch color="success" />
+      <Switch color="warning" />
+      <Switch color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch With Label
+
+You can use the `Typography` component to add a label to your `Switch`.
+
+<ComponentPreview demo={<Switch.SwitchWithLabel />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+const ID = "switch";
+
+export function SwitchWithLabel() {
+  return (
+    <div className="flex items-center gap-2">
+      <Switch id={ID} />
+      <Typography
+        as="label"
+        htmlFor={ID}
+        className="text-gray-500 dark:text-gray-400"
+      >
+        Dark Mode
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Disabled Switch
+
+You can disable the `Switch` using the `disabled` prop.
+
+<ComponentPreview demo={<Switch.DisabledSwitch />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function DisabledSwitch() {
+  return <Switch disabled />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Checkbox With Link
+
+<ComponentPreview demo={<Switch.SwitchWithLink />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+const ID = "switch-link";
+
+export function SwitchWithLink() {
+  return (
+    <div className="flex items-center gap-2">
+      <Switch id={ID} />
+      <Typography
+        as="label"
+        htmlFor={ID}
+        className="flex gap-1 text-gray-500 dark:text-gray-400"
+      >
+        I agree with the
+        <Typography as="a" href="#" color="info">
+          terms and conditions
+        </Typography>
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch With Description
+
+<ComponentPreview demo={<Switch.SwitchWithDescription />}>
+```tsx
+import { Switch, Typography } from "@material-tailwind/react";
+
+const ID = "switch-description";
+
+export function SwitchWithDescription() {
+  return (
+    <div className="flex gap-2">
+      <Switch id={ID} />
+      <label htmlFor={ID} className="-translate-y-1">
+        <Typography color="gray" className="font-medium">
+          Remember Me
+        </Typography>
+        <Typography variant="small" className="text-gray-500 dark:text-gray-400">
+          You&apos;ll be able to login without password for 24 hours.
+        </Typography>
+      </label>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Switch
+
+You can customize the `Switch` using the `baseClassName`, `className` and `iconClassName` props.
+
+<ComponentPreview demo={<Switch.CustomSwitch />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function CustomSwitch() {
+  return (
+    <Switch />
+  );
+}
+```
+</ComponentPreview>

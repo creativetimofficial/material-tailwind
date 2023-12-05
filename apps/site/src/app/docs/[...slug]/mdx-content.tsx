@@ -12,6 +12,7 @@ import * as Checkbox from "@components/docs/checkbox";
 import * as Typography from "@components/docs/typography";
 import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
+import * as Switch from "@components/docs/switch";
 
 const components = {
   ComponentPreview,
@@ -77,6 +78,7 @@ const components = {
   IconButton,
   Typography,
   ButtonGroup,
+  Switch,
 };
 
 type MdxContentProps = {

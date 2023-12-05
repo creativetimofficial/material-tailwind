@@ -5,6 +5,7 @@ import checkboxTheme from "./checkbox";
 import typographyTheme from "./typography";
 import iconButtonTheme from "./icon-button";
 import buttonGroupTheme from "./button-group";
+import swtichTheme from "./switch";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -19,6 +20,7 @@ export const theme = {
   radio: radioTheme,
   collapse: collapseTheme,
   typography: typographyTheme,
+  switch: swtichTheme,
 };
 
 export default theme;
