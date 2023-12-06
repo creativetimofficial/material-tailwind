@@ -8,3 +8,4 @@ export * from "./collapse";
 export * from "./switch";
 export * from "./typography";
 export * from "./input";
+export * from "./textarea";

@@ -14,6 +14,7 @@ import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
 import * as Switch from "@components/docs/switch";
 import * as Input from "@components/docs/input";
+import * as Textarea from "@components/docs/textarea";
 
 const components = {
   ComponentPreview,
@@ -81,6 +82,7 @@ const components = {
   ButtonGroup,
   Switch,
   Input,
+  Textarea,
 };
 
 type MdxContentProps = {

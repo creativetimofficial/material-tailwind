@@ -7,3 +7,4 @@ export * from "./collapse";
 export * from "./typography";
 export * from "./switch";
 export * from "./input";
+export * from "./textarea";

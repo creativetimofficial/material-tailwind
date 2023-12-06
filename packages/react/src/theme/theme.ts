@@ -7,6 +7,7 @@ import iconButtonTheme from "./icon-button";
 import buttonGroupTheme from "./button-group";
 import swtichTheme from "./switch";
 import inputTheme from "./input";
+import textareaTheme from "./textarea";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -23,6 +24,7 @@ export const theme = {
   typography: typographyTheme,
   switch: swtichTheme,
   input: inputTheme,
+  textarea: textareaTheme,
 };
 
 export default theme;
