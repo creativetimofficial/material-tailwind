@@ -8,6 +8,7 @@ export const buttonTheme = {
     color: "primary",
     variant: "solid",
     ripple: true,
+    rounded: false,
     fullWidth: false,
   },
   baseStyle:

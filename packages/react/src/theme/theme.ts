@@ -6,6 +6,7 @@ import typographyTheme from "./typography";
 import iconButtonTheme from "./icon-button";
 import buttonGroupTheme from "./button-group";
 import swtichTheme from "./switch";
+import inputTheme from "./input";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -21,6 +22,7 @@ export const theme = {
   collapse: collapseTheme,
   typography: typographyTheme,
   switch: swtichTheme,
+  input: inputTheme,
 };
 
 export default theme;

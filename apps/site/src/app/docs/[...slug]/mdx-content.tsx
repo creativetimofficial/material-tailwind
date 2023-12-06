@@ -13,6 +13,7 @@ import * as Typography from "@components/docs/typography";
 import * as IconButton from "@components/docs/icon-button";
 import * as ButtonGroup from "@components/docs/button-group";
 import * as Switch from "@components/docs/switch";
+import * as Input from "@components/docs/input";
 
 const components = {
   ComponentPreview,
@@ -79,6 +80,7 @@ const components = {
   Typography,
   ButtonGroup,
   Switch,
+  Input,
 };
 
 type MdxContentProps = {

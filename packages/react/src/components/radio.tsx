@@ -10,10 +10,11 @@ import { useTheme } from "@context";
 import { radioTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseComponent, Props } from "@types";
 
-export interface RadioProps extends BaseComponent<"input"> {
+export interface RadioProps extends Props<"input"> {
   as?: React.ElementType;
+  color?: BaseComponent<"input">["color"];
   icon?: React.ReactNode;
   className?: string;
   baseClassName?: string;

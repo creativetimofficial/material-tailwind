@@ -10,10 +10,11 @@ import { useTheme } from "@context";
 import { checkboxTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseComponent, Props } from "@types";
 
-export interface CheckboxProps extends BaseComponent<"input"> {
+export interface CheckboxProps extends Props<"input"> {
   as?: React.ElementType;
+  color?: BaseComponent<"input">["color"];
   icon?: React.ReactNode;
   className?: string;
   baseClassName?: string;
