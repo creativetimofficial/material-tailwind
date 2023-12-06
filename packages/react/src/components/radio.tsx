@@ -17,7 +17,7 @@ export interface RadioProps extends Props<"input"> {
   color?: BaseComponent<"input">["color"];
   icon?: React.ReactNode;
   className?: string;
-  baseClassName?: string;
+  inputClassName?: string;
   iconClassName?: string;
   inputRef?: React.RefObject<HTMLInputElement>;
   iconRef?: React.RefObject<HTMLSpanElement>;
@@ -60,7 +60,7 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
       color,
       icon,
       className,
-      baseClassName,
+      inputClassName,
       iconClassName,
       inputRef,
       iconRef,
@@ -86,12 +86,12 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
     );
     color ??= (defaultProps?.color as RadioProps["color"]) ?? "primary";
 
-    const baseStyles = twMerge(theme.baseStyle, baseClassName);
+    const baseStyles = twMerge(theme.baseStyle, className);
 
     const inputStyles = twMerge(
       theme.inputStyle,
       theme.inputColor[color],
-      className,
+      inputClassName,
     );
 
     const iconStyles = twMerge(

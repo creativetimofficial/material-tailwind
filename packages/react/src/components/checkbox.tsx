@@ -17,7 +17,7 @@ export interface CheckboxProps extends Props<"input"> {
   color?: BaseComponent<"input">["color"];
   icon?: React.ReactNode;
   className?: string;
-  baseClassName?: string;
+  inputClassName?: string;
   iconClassName?: string;
   inputRef?: React.RefObject<HTMLInputElement>;
   iconRef?: React.RefObject<HTMLSpanElement>;
@@ -48,7 +48,7 @@ export const Checkbox = React.forwardRef<
       color,
       icon,
       className,
-      baseClassName,
+      inputClassName,
       iconClassName,
       inputRef,
       iconRef,
@@ -80,12 +80,12 @@ export const Checkbox = React.forwardRef<
     );
     color ??= (defaultProps?.color as CheckboxProps["color"]) ?? "primary";
 
-    const baseStyles = twMerge(theme.baseStyle, baseClassName);
+    const baseStyles = twMerge(theme.baseStyle, className);
 
     const inputStyles = twMerge(
       theme.inputStyle,
       theme.inputColor[color],
-      className,
+      inputClassName,
     );
 
     const iconStyles = twMerge(

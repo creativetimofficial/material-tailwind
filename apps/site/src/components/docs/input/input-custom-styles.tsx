@@ -4,7 +4,7 @@ export function InputCustomStyles() {
   return (
     <Input
       placeholder="Username"
-      inputClassName="rounded-none border-0 border-b border-gray-400 px-0.5 ring-0 hover:border-gray-900 focus:border-gray-900"
+      inputClassName="rounded-none border-0 border-b border-gray-400 px-0.5 ring-0 hover:border-gray-900 focus:border-gray-900 dark:border-gray-600 dark:hover:border-gray-50 dark:focus:border-gray-50"
     />
   );
 }

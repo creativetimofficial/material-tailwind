@@ -24,7 +24,7 @@ export const checkboxTheme = {
   },
   baseStyle: "inline-block relative h-5 w-5",
   inputStyle:
-    "peer h-full w-full appearance-none rounded bg-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:bg-secondary-dm-dark",
+    "peer h-full w-full appearance-none rounded bg-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:bg-secondary-dm-main",
   inputColor: {
     primary: "checked:bg-primary-main dark:checked:bg-primary-dm-main",
     secondary: "checked:bg-secondary-main dark:checked:bg-secondary-dm-main",
