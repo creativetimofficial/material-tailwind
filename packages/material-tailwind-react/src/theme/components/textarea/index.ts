@@ -118,7 +118,7 @@ export const textarea: TextareaStylesType = {
         fontWeight: "font-normal",
         outline: "outline outline-0 focus:outline-0",
         resize: "resize-y",
-        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none",
+        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none disabled:cursor-not-allowed",
         transition: "transition-all",
       },
       label: {
