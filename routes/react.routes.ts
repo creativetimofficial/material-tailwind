@@ -147,17 +147,26 @@ export const routes = [
         route: "drawer",
       },
       {
-        name: "Icon Button",
-        route: "icon-button",
-      },
-      {
-        name: "Input",
-        route: "input",
+        name: "Footer",
+        route: "footer",
       },
       {
         name: "Form",
         route: "form",
       },
+      {
+        name: "Icon Button",
+        route: "icon-button",
+      },
+      {
+        name: "Img",
+        route: "img",
+      },
+      {
+        name: "Input",
+        route: "input",
+      },
+
       {
         name: "List",
         route: "list",
@@ -193,6 +202,10 @@ export const routes = [
       {
         name: "Select",
         route: "select",
+      },
+      {
+        name: "Sidebar",
+        route: "sidebar",
       },
       {
         name: "Slider",
@@ -234,22 +247,12 @@ export const routes = [
         name: "Typography",
         route: "typography",
       },
-      {
-        name: "Footer",
-        route: "footer",
-      },
-      {
-        name: "Img",
-        route: "img",
-      },
+
       {
         name: "Video",
         route: "video",
       },
-      {
-        name: "Sidebar",
-        route: "sidebar",
-      },
+
       {
         name: "Table",
         route: "table",
