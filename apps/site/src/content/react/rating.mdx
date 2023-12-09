@@ -1,0 +1,117 @@
+---
+title: Tailwind CSS Rating for React - Material Tailwind
+description: Customise your web projects  with our beautiful rating component for Tailwind CSS and React using Material Design guidelines.
+github: rating
+prev: docs/react/button-group
+next: docs/react/icon-button
+---
+
+# Tailwind CSS Rating - React
+
+Use our Tailwind CSS `Rating` component to show reviews and ratings in your web projects. The `Rating` can be used as a visual identifier for reviews and rating on your website.
+
+See below our beautiful `Rating` examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+---
+
+## Rating Demo
+
+<ComponentPreview demo={<Rating.RatingDemo />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function RatingDemo() {
+  return <Rating value={4} />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Rating Colors
+
+The `Rating` component comes with 6 different colors that you can change it using the `color` prop.
+
+<ComponentPreview demo={<Rating.RatingColors />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function RatingColors() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Rating value={4} color="primary" />
+      <Rating value={4} color="secondary" />
+      <Rating value={4} color="info" />
+      <Rating value={4} color="success" />
+      <Rating value={4} color="warning" />
+      <Rating value={4} color="error" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Readonly Rating
+
+You can make a `Rating` component readonly by using the `readonly` prop. This will prevent the user from changing the rating.
+
+<ComponentPreview demo={<Rating.ReadonlyRating />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+
+export function ReadonlyRating() {
+  return <Rating value={4} readonly />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Rating Icon
+
+You can customize the `Rating` component icon by using the `unratedIcon` and `ratedIcon` props.
+
+The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
+
+
+<ComponentPreview demo={<Rating.CustomRatingIcon />}>
+```tsx
+import { Rating } from "@material-tailwind/react";
+import { Heart, HeartSolid } from "iconoir-react";
+
+export function CustomRatingIcon() {
+  return <Rating value={4} unratedIcon={Heart} ratedIcon={HeartSolid} />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Rating with Text
+
+Use the example below for a `Rating` component with helper text.
+
+<ComponentPreview demo={<Rating.RatingWithText />}>
+```tsx
+import React from "react";
+import { Rating, Typography } from "@material-tailwind/react";
+
+export function RatingWithText() {
+  const [rated, setRated] = React.useState(4);
+
+  return (
+    <div className="flex items-center gap-2">
+      <Typography color="primary" className="font-medium">
+        {rated}.7
+      </Typography>
+      <Rating value={4} onChange={(value) => setRated(value)} />
+      <Typography color="primary" className="font-medium">
+        Based on 134 Reviews
+      </Typography>
+    </div>
+  );
+}
+```
+</ComponentPreview>

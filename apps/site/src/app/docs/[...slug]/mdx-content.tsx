@@ -4,7 +4,7 @@
 import { ComponentPreview } from "@components";
 import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
-
+import { Star } from "iconoir-react";
 // @docs-components
 import * as Radio from "@components/docs/radio";
 import * as Button from "@components/docs/button";
@@ -15,6 +15,7 @@ import * as ButtonGroup from "@components/docs/button-group";
 import * as Switch from "@components/docs/switch";
 import * as Input from "@components/docs/input";
 import * as Textarea from "@components/docs/textarea";
+import * as Rating from "@components/docs/rating";
 
 const components = {
   ComponentPreview,
@@ -83,6 +84,7 @@ const components = {
   Switch,
   Input,
   Textarea,
+  Rating,
 };
 
 type MdxContentProps = {

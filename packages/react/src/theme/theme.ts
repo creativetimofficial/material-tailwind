@@ -8,6 +8,7 @@ import buttonGroupTheme from "./button-group";
 import swtichTheme from "./switch";
 import inputTheme from "./input";
 import textareaTheme from "./textarea";
+import ratingTheme from "./rating";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -25,6 +26,7 @@ export const theme = {
   switch: swtichTheme,
   input: inputTheme,
   textarea: textareaTheme,
+  rating: ratingTheme,
 };
 
 export default theme;
