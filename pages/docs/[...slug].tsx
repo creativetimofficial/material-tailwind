@@ -182,6 +182,7 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
 import CountDown from "widgets/black-friday/count-down";
+import OfferBar from "widgets/black-friday/offer-bar";
 
 const components = {
   h1: (props) => (
@@ -438,18 +439,7 @@ export default function Page({ frontMatter, mdxSource, slug }) {
           href={`https://www.material-tailwind.com/docs/${canonical}`}
         />
       </Head>
-      <Link href="/blocks">
-        <Alert className="w-full justify-center rounded-none bg-deep-orange-500">
-          <div className="flex flex-wrap items-center justify-center !text-white">
-            Exclusive Black Friday Bundle for Developers and Designers - 80% OFF
-            ⏰ Hurry up!
-            <CountDown type="plain" />
-            <Button className="ml-10 mb-0 bg-primary font-bold">
-              View Offer
-            </Button>
-          </div>
-        </Alert>
-      </Link>
+      <OfferBar />
 
       <div className="relative mb-8 h-full w-full bg-white">
         <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
