@@ -7,6 +7,7 @@ navigation:
     "button-variants",
     "button-sizes",
     "button-colors",
+    "loading-button",
     "button-with-icon",
     "block-level-button",
     "button-rounded",
@@ -122,6 +123,38 @@ export function ButtonColors() {
     </div>
   );
 }
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="loading-button">
+## Loading Button
+</DocsTitle>
+
+You can add loading state and disable <Code>Button</Code> component using the <Code>loading</Code> prop.
+
+<CodePreview component={<ButtonExamples.ButtonLoading />}>
+```jsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonLoading() {
+  return (
+    <div className="flex items-center gap-4">
+      <Button loading={true}>Loading</Button>
+      <Button variant="outlined" loading={true}>
+        Loading
+      </Button>
+      <Button variant="text" loading={true}>
+        Loading
+      </Button>
+      <Button className="rounded-full" loading={true}>
+        Loading
+      </Button>
+    </div>
+  );
+}
+
 ```
 </CodePreview>
 
@@ -383,6 +416,7 @@ props as well.
 | `ripple`    | <Code>boolean</Code>      | Add ripple effect for button           | <Code>true</Code>                      |
 | `className` | <Code>string</Code>       | Add custom className for button        | `''`                                   |
 | `children`  | <Code>node</Code>         | Add content for button                 | No default value it's a required prop. |
+| `loading`   | <Code>loading</Code>      | Add loading state and disable button   | <Code>undefined</Code>                 |
 
 <br />
 <br />

@@ -11,6 +11,9 @@ import objectsToString from "../../utils/objectsToString";
 // context
 import { useTheme } from "../../context/theme";
 
+// components
+import Spinner from "../Spinner";
+
 // types
 import type {
   variant,
@@ -29,6 +32,7 @@ import {
   propTypesRipple,
   propTypesClassName,
   propTypesChildren,
+  propTypesLoading,
 } from "../../types/components/button";
 
 export interface ButtonProps extends React.ComponentProps<"button"> {
@@ -39,10 +43,11 @@ export interface ButtonProps extends React.ComponentProps<"button"> {
   ripple?: ripple;
   className?: className;
   children: children;
+  loading?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, color, fullWidth, ripple, className, children, ...rest }, ref) => {
+  ({ variant, size, color, fullWidth, ripple, className, children, loading, ...rest }, ref) => {
     // 1. init
     const { button } = useTheme();
     const { valid, defaultProps, styles } = button;
@@ -69,15 +74,26 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
     const classes = twMerge(
       classnames(buttonBase, buttonSize, buttonVariant, {
-        [objectsToString(base.fullWidth)]: fullWidth,
-      }),
+          [objectsToString(base.fullWidth)]: fullWidth,
+        },
+        { 
+          "flex items-center gap-2": loading,
+          "gap-3": size === 'lg',
+        },
+      ),
       className,
     );
+
+    const spinnerClass = twMerge(classnames({
+      "w-4 h-4": true,
+      "w-5 h-5": size === 'lg',
+    }));
 
     // 5. return
     return (
       <button
         {...rest}
+        disabled={rest.disabled ?? loading}
         ref={ref}
         className={classes}
         type={rest.type || "button"}
@@ -92,10 +108,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 : "dark",
             );
           }
-
           return typeof onMouseDown === "function" && onMouseDown(e);
         }}
       >
+        {loading && <Spinner className={spinnerClass} />}
         {children}
       </button>
     );
@@ -110,6 +126,7 @@ Button.propTypes = {
   ripple: propTypesRipple,
   className: propTypesClassName,
   children: propTypesChildren,
+  loading: propTypesLoading,
 };
 
 Button.displayName = "MaterialTailwind.Button";

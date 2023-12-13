@@ -159,13 +159,14 @@ export const routes = [
         route: "icon-button",
       },
       {
-        name: "Image",
+        name: "Img",
         route: "img",
       },
       {
         name: "Input",
         route: "input",
       },
+
       {
         name: "List",
         route: "list",
@@ -203,6 +204,10 @@ export const routes = [
         route: "select",
       },
       {
+        name: "Sidebar",
+        route: "sidebar",
+      },
+      {
         name: "Slider",
         route: "slider",
       },
@@ -221,10 +226,6 @@ export const routes = [
       {
         name: "Switch",
         route: "switch",
-      },
-      {
-        name: "Sidebar",
-        route: "sidebar",
       },
       {
         name: "Tabs",
@@ -246,13 +247,15 @@ export const routes = [
         name: "Typography",
         route: "typography",
       },
-      {
-        name: "Table",
-        route: "table",
-      },
+
       {
         name: "Video",
         route: "video",
+      },
+
+      {
+        name: "Table",
+        route: "table",
       },
     ],
   },

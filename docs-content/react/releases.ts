@@ -1,5 +1,46 @@
 export const releases = [
   {
+    version: "2.1.6",
+    date: "December 13, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.6",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Improved disabled state style for input and select.",
+          "Fixed input placeholder overlap with label.",
+          "Fixed textarea label issue.",
+          "Fixed typos in navbar theme object.",
+          "Added loading state for the button.",
+        ],
+      },
+      {
+        title: "docs changes",
+        data: [
+          "Fixed broken links.",
+          "Fixed typos.",
+          "Updated button docs page.",
+          "Improved Next.js integration guide.",
+        ],
+      },
+    ],
+  },
+  {
+    version: "2.1.5",
+    date: "November 29, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.5",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Plugins integration guides (Date Picker, Charts and Algolia Search).",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.1.4",
     date: "Octuber 18, 2023",
     name: "@material-tailwind/react",

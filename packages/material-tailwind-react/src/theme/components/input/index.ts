@@ -120,7 +120,7 @@ export const input: InputStylesType = {
         fontFamily: "font-sans",
         fontWeight: "font-normal",
         outline: "outline outline-0 focus:outline-0",
-        disabled: "disabled:bg-blue-gray-50 disabled:border-0",
+        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:cursor-not-allowed",
         transition: "transition-all",
       },
       label: {

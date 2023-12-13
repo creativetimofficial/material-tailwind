@@ -19,6 +19,7 @@ const textareaStandard = {
         fontSize: "text-sm",
         pt: "pt-4",
         pb: "pb-1.5",
+        mt: "mt-1.5"
       },
       label: {
         lineHeight: "peer-placeholder-shown:leading-[4.25]",
