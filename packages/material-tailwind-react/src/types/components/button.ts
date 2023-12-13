@@ -17,6 +17,7 @@ export type fullWidth = boolean;
 export type ripple = boolean;
 export type className = string;
 export type children = ReactNode;
+export type loading = boolean;
 
 // javascript prop-types
 export const propTypesVariant: any = ["filled", "outlined", "gradient", "text"];
@@ -26,3 +27,4 @@ export const propTypesFullWidth: any = PropTypes.bool;
 export const propTypesRipple: any = PropTypes.bool;
 export const propTypesClassName: any = PropTypes.string;
 export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesLoading: any = PropTypes.bool;
