@@ -12,7 +12,6 @@ export const releases = [
           "Fixed input placeholder overlap with label.",
           "Fixed textarea label issue.",
           "Fixed typos in navbar theme object.",
-          "Fixed typos in navbar theme object.",
           "Added loading state for the button.",
         ],
       },
