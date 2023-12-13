@@ -147,16 +147,24 @@ export const routes = [
         route: "drawer",
       },
       {
-        name: "Icon Button",
-        route: "icon-button",
-      },
-      {
-        name: "Input",
-        route: "input",
+        name: "Footer",
+        route: "footer",
       },
       {
         name: "Form",
         route: "form",
+      },
+      {
+        name: "Icon Button",
+        route: "icon-button",
+      },
+      {
+        name: "Image",
+        route: "img",
+      },
+      {
+        name: "Input",
+        route: "input",
       },
       {
         name: "List",
@@ -215,6 +223,10 @@ export const routes = [
         route: "switch",
       },
       {
+        name: "Sidebar",
+        route: "sidebar",
+      },
+      {
         name: "Tabs",
         route: "tabs",
       },
@@ -235,24 +247,29 @@ export const routes = [
         route: "typography",
       },
       {
-        name: "Footer",
-        route: "footer",
-      },
-      {
-        name: "Img",
-        route: "img",
+        name: "Table",
+        route: "table",
       },
       {
         name: "Video",
         route: "video",
       },
+    ],
+  },
+  {
+    name: "Plugins",
+    pages: [
       {
-        name: "Sidebar",
-        route: "sidebar",
+        name: "Algolia Search",
+        route: "/plugins/algolia-search",
       },
       {
-        name: "Table",
-        route: "table",
+        name: "Charts",
+        route: "/plugins/charts",
+      },
+      {
+        name: "Date Picker",
+        route: "/plugins/date-picker",
       },
     ],
   },

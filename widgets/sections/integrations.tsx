@@ -10,52 +10,52 @@ import Link from "next/link";
 const CONTENT = [
   {
     title: "React",
-    img: "/svg/react.svg",
+    img: "https://docs.material-tailwind.com/svg/react.svg",
     route: "/docs/react/installation",
     description:
       "Open-source JavaScript framework and library developed by Facebook.",
   },
   {
     title: "Html",
-    img: "/svg/html.svg",
+    img: "https://docs.material-tailwind.com/svg/html.svg",
     route: "/docs/html/installation",
     description: "The standard markup language for creating Web pages.",
   },
   {
     title: "Next.js",
-    img: "/svg/nextjs.svg",
+    img: "https://docs.material-tailwind.com/svg/nextjs.svg",
     route: "/docs/react/guide/next",
     description:
       "React framework that gives you building blocks to create web apps.",
   },
   {
     title: "Create React App",
-    img: "/svg/cra.svg",
+    img: "https://docs.material-tailwind.com/svg/cra.svg",
     route: "/docs/react/guide/cra",
     description: "Set up a modern web app by running one command.",
   },
   {
     title: "Remix",
-    img: "/svg/remix.svg",
+    img: "https://docs.material-tailwind.com/svg/remix.svg",
     route: "/docs/react/guide/remix",
     description:
       "Full stack web framework that lets you focus on the user interface.",
   },
   {
     title: "Vite",
-    img: "/svg/vitejs.svg",
+    img: "https://docs.material-tailwind.com/svg/vitejs.svg",
     route: "/docs/react/guide/vite",
     description: "Flexible programmatic APIs with full TypeScript typing.",
   },
   {
     title: "Astro",
-    img: "/svg/astro.svg",
+    img: "https://docs.material-tailwind.com/svg/astro.svg",
     route: "/docs/react/guide/astro",
     description: "All-in-one web framework designed for speed.",
   },
   {
     title: "Gatsby",
-    img: "/svg/gatsby.svg",
+    img: "https://docs.material-tailwind.com/svg/gatsby.svg",
     route: "/docs/react/guide/gatsby",
     description: "The Fastest Frontend for the Headless Web.",
   },
@@ -86,7 +86,7 @@ export function Integrations() {
                 color="transparent"
                 className="overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50 transition-colors duration-300 hover:border-blue-gray-100"
               >
-                <div className="absolute top-0 h-full w-full bg-[url('/image/header-figma.jpg')] bg-cover bg-center bg-no-repeat"></div>
+                <div className="absolute top-0 h-full w-full bg-[url('https://docs.material-tailwind.com/image/header-figma.jpg')] bg-cover bg-center bg-no-repeat"></div>
                 <CardHeader
                   color="transparent"
                   floated={false}

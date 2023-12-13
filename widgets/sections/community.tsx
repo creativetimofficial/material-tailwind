@@ -126,7 +126,7 @@ export function Community() {
             <div className="absolute top-1/2 right-0 -translate-y-1/2">
               <Image
                 alt="community"
-                src="/svg/community.svg"
+                src="https://docs.material-tailwind.com/svg/community.svg"
                 width={500}
                 height={500}
                 className="scale-[1.30] opacity-25 lg:opacity-100"

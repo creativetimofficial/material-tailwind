@@ -5,7 +5,7 @@ import { Button, Typography, Card, CardBody } from "@material-tailwind/react";
 const DATA = [
   {
     title: "Color Palette",
-    img: "/image/variants.png",
+    img: "https://docs.material-tailwind.com/image/variants.png",
     description:
       "Inspired by Material Design.Create a color theme that perfectly matches your style and brand!.",
   },
@@ -13,27 +13,27 @@ const DATA = [
     col2: true,
     floated: true,
     title: "Figma Variants",
-    img: "/image/figma-variants.png",
+    img: "https://docs.material-tailwind.com/image/figma-variants.png",
     description:
       "Each component comes with multiple design variants for endless creative possibilities. Add our ready-styled components to your project or modify them as you would like.",
   },
   {
     title: "Typography",
-    img: "/image/typography.png",
+    img: "https://docs.material-tailwind.com/image/typography.png",
     description:
       "Our Figma Design Files come with implemented text styles for consistent design.",
   },
   {
     col2: true,
     title: "Built for Desktop and Mobile",
-    img: "/image/desktop-mobile.png",
+    img: "https://docs.material-tailwind.com/image/desktop-mobile.png",
     description:
       "Forget about responsiveness. With Material Tailwind we got you covered! Our design files are using features like Constraints and Auto Layout.",
   },
   {
     col2: true,
     title: "Auto Layout",
-    img: "/image/auto-layout.png",
+    img: "https://docs.material-tailwind.com/image/auto-layout.png",
     description:
       "Our design files feature auto layout from Figma, making it easy to change the order and width of columns and rows",
   },
@@ -74,7 +74,7 @@ export function Figma() {
                 shadow={false}
                 className="relative h-full max-h-[420px] w-full overflow-hidden border-[1.5px] border-blue-gray-50"
               >
-                <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+                <div className="absolute top-0 h-full w-full scale-110 bg-[url('https://docs.material-tailwind.com/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
                 <CardBody className="relative flex h-full flex-col p-6">
                   <Typography
                     variant="h3"
@@ -100,17 +100,14 @@ export function Figma() {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <Link
-            href="/figma"
-            target="_blank"
-          >
+          <Link href="/figma" target="_blank">
             <Button
               size="lg"
               variant="outlined"
               className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-base font-medium capitalize text-primary focus:ring-transparent"
             >
               <Image
-                src="/svg/figma.svg"
+                src="https://docs.material-tailwind.com/svg/figma.svg"
                 width={24}
                 height={24}
                 alt="Figma Logo"

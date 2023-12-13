@@ -4,13 +4,13 @@ export function AvatarWithBorder() {
   return (
     <div className="flex gap-4">
       <Avatar
-        src="/img/face-2.jpg"
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
         alt="avatar"
         withBorder={true}
         className="p-0.5"
       />
       <Avatar
-        src="/img/face-2.jpg"
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
         alt="avatar"
         variant="rounded"
         withBorder={true}
@@ -18,7 +18,7 @@ export function AvatarWithBorder() {
         className="p-0.5"
       />
       <Avatar
-        src="/img/face-2.jpg"
+        src="https://docs.material-tailwind.com/img/face-2.jpg"
         alt="avatar"
         variant="square"
         withBorder={true}

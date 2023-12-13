@@ -49,48 +49,7 @@ export function CodePreview({ id, component, link, children, className }) {
           mode === "code" ? "border-opacity-10" : ""
         }`}
       >
-        <Tabs id={uuidv4()} value={mode} className="w-max overflow-visible">
-          <TabsHeader
-            className="bg-transparent"
-            indicatorProps={{
-              className: `shadow-none rounded-lg ${
-                mode === "preview" ? "bg-blue-gray-500/10" : "bg-white/10"
-              }`,
-            }}
-          >
-            <Tab
-              value="preview"
-              className="pt-[6px] pb-[5px]"
-              onClick={() => setMode("preview")}
-            >
-              <Typography
-                variant="small"
-                className={`flex w-[86px] items-center justify-center gap-2 text-center font-medium transition-colors ${
-                  mode === "preview" ? "text-blue-gray-900" : "text-white/80"
-                }`}
-              >
-                <EyeIcon strokeWidth={2} className="-mt-px h-4 w-4" />
-                Preview
-              </Typography>
-            </Tab>
-            <Tab
-              value="code"
-              className="pt-[6px] pb-[5px]"
-              onClick={() => setMode("code")}
-            >
-              <Typography
-                variant="small"
-                className={`flex w-[86px] items-center justify-center gap-2 text-center font-medium transition-colors ${
-                  mode === "code" ? "text-white" : "text-blue-gray-500"
-                }`}
-              >
-                <CodeBracketIcon strokeWidth={2} className="-mt-px h-4 w-4" />
-                Code
-              </Typography>
-            </Tab>
-          </TabsHeader>
-        </Tabs>
-        <div className="flex items-center gap-2 px-1">
+        <div className="flex w-full items-center justify-between gap-2">
           {link && (
             <Menu open={isMenuOpen} handler={setIsMenuOpen}>
               <MenuHandler>
@@ -182,14 +141,10 @@ export function CodePreview({ id, component, link, children, className }) {
           </Tooltip>
         </div>
       </div>
-      <div
-        className={`${
-          mode === "preview" ? "grid" : "hidden"
-        } min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible`}
-      >
+      <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
         {component}
       </div>
-      <div className={`code-preview ${mode === "code" ? "block" : "hidden"}`}>
+      <div className="code-preview block">
         {React.cloneElement(children, { ref: codeRef })}
       </div>
     </div>

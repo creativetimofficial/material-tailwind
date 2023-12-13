@@ -13,7 +13,11 @@ export function ListWithAvatar() {
       <List>
         <ListItem>
           <ListItemPrefix>
-            <Avatar variant="circular" alt="candice" src="/img/face-1.jpg" />
+            <Avatar
+              variant="circular"
+              alt="candice"
+              src="https://docs.material-tailwind.com/img/face-1.jpg"
+            />
           </ListItemPrefix>
           <div>
             <Typography variant="h6" color="blue-gray">
@@ -26,7 +30,11 @@ export function ListWithAvatar() {
         </ListItem>
         <ListItem>
           <ListItemPrefix>
-            <Avatar variant="circular" alt="alexander" src="/img/face-2.jpg" />
+            <Avatar
+              variant="circular"
+              alt="alexander"
+              src="https://docs.material-tailwind.com/img/face-2.jpg"
+            />
           </ListItemPrefix>
           <div>
             <Typography variant="h6" color="blue-gray">
@@ -39,7 +47,11 @@ export function ListWithAvatar() {
         </ListItem>
         <ListItem>
           <ListItemPrefix>
-            <Avatar variant="circular" alt="emma" src="/img/face-3.jpg" />
+            <Avatar
+              variant="circular"
+              alt="emma"
+              src="https://docs.material-tailwind.com/img/face-3.jpg"
+            />
           </ListItemPrefix>
           <div>
             <Typography variant="h6" color="blue-gray">

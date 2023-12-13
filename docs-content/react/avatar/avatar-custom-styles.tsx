@@ -5,7 +5,7 @@ export function AvatarCustomStyles() {
     <Avatar
       size="lg"
       alt="avatar"
-      src="/img/face-2.jpg"
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
       className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
     />
   );

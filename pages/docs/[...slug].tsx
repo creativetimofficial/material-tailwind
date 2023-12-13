@@ -73,7 +73,49 @@ import * as TooltipExamples from "docs-content/react/tooltip";
 import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
+import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
+
+// html docs content
+import * as HtmlPlugins from "docs-content/html/plugins";
+import * as HTMLButtonExamples from "docs-content/html/button";
+import * as HTMLAccordianExamples from "docs-content/html/accordion";
+import * as HTMLAlertExamples from "docs-content/html/alert";
+import * as HTMLAvatarExamples from "docs-content/html/avatar";
+import * as HTMLBadgeExamples from "docs-content/html/badge";
+import * as HTMLBreadcrumbsExamples from "docs-content/html/breadcrumbs";
+import * as HTMLButtonGroupExamples from "docs-content/html/button-group";
+import * as HTMLCardExamples from "docs-content/html/card";
+import * as HTMLCheckboxExamples from "docs-content/html/checkbox";
+import * as HTMLChipExamples from "docs-content/html/chip";
+import * as HTMLDialogExamples from "docs-content/html/dialog";
+import * as HTMLIconButtonExamples from "docs-content/html/icon-button";
+import * as HTMLInputExamples from "docs-content/html/input";
+import * as HTMLFormExamples from "docs-content/html/form";
+import * as HTMLListExamples from "docs-content/html/list";
+import * as HTMLMenuExamples from "docs-content/html/menu";
+import * as HTMLNavbarExamples from "docs-content/html/navbar";
+import * as HTMLPaginationExamples from "docs-content/html/pagination";
+import * as HTMLPopoverExamples from "docs-content/html/popover";
+import * as HTMLProgressExamples from "docs-content/html/progress";
+import * as HTMLRadioExamples from "docs-content/html/radio";
+import * as HTMLRatingExamples from "docs-content/html/rating";
+import * as HTMLSelectExamples from "docs-content/html/select";
+import * as HTMLSpeedDialExamples from "docs-content/html/speed-dial";
+import * as HTMLSpinnerExamples from "docs-content/html/spinner";
+import * as HTMLStepperExamples from "docs-content/html/stepper";
+import * as HTMLSwitchExamples from "docs-content/html/switch";
+import * as HTMLTabsExamples from "docs-content/html/tabs";
+import * as HTMLTextareaExamples from "docs-content/html/textarea";
+import * as HTMLTimelineExamples from "docs-content/html/timeline";
+import * as HTMLTooltipExamples from "docs-content/html/tooltip";
+import * as HTMLTypographyExamples from "docs-content/html/typography";
+import * as HTMLFooterExamples from "docs-content/html/footer";
+import * as HTMLImageExamples from "docs-content/html/img";
+import * as HTMLTableExamples from "docs-content/html/table";
+import * as HTMLVideoExamples from "docs-content/html/video";
+import * as HTMLSidebarExamples from "docs-content/html/sidebar";
+import { ReleaseNotes as HTMLReleaseNotes } from "docs-content/html/release-notes";
 
 // @material-tailwind/react
 import {
@@ -139,6 +181,8 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
+import CountDown from "widgets/campaign/count-down";
+import OfferBar from "widgets/campaign/offer-bar";
 
 const components = {
   h1: (props) => (
@@ -307,6 +351,48 @@ const components = {
   TextareaExamples,
   ReleaseNotes,
   ColorPalette,
+  Plugins,
+
+  // html docs content
+  HtmlPlugins,
+  HTMLButtonExamples,
+  HTMLAccordianExamples,
+  HTMLAlertExamples,
+  HTMLAvatarExamples,
+  HTMLBadgeExamples,
+  HTMLBreadcrumbsExamples,
+  HTMLButtonGroupExamples,
+  HTMLCardExamples,
+  HTMLCheckboxExamples,
+  HTMLChipExamples,
+  HTMLDialogExamples,
+  HTMLIconButtonExamples,
+  HTMLInputExamples,
+  HTMLFormExamples,
+  HTMLListExamples,
+  HTMLMenuExamples,
+  HTMLNavbarExamples,
+  HTMLPaginationExamples,
+  HTMLPopoverExamples,
+  HTMLProgressExamples,
+  HTMLRadioExamples,
+  HTMLRatingExamples,
+  HTMLSelectExamples,
+  HTMLSpeedDialExamples,
+  HTMLSpinnerExamples,
+  HTMLStepperExamples,
+  HTMLSwitchExamples,
+  HTMLTabsExamples,
+  HTMLTextareaExamples,
+  HTMLTimelineExamples,
+  HTMLTooltipExamples,
+  HTMLTypographyExamples,
+  HTMLFooterExamples,
+  HTMLImageExamples,
+  HTMLTableExamples,
+  HTMLVideoExamples,
+  HTMLSidebarExamples,
+  HTMLReleaseNotes,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
@@ -317,11 +403,11 @@ export default function Page({ frontMatter, mdxSource, slug }) {
     html: htmlRoutes,
     react: reactRoutes,
   };
-  const validFrameworks = ["html", "react", "vue", "angular", "svelte"];
+  const validFrameworks = ["html", "react"];
   const frameworkType = asPath
     .split("/")
     .filter((el) => validFrameworks.includes(el))
-    .join("") as "html" | "react" | "vue" | "angular" | "svelte";
+    .join("") as "html" | "react";
 
   React.useEffect(() => {
     if (frameworkType === "html" && typeof window !== "undefined") {
@@ -353,23 +439,14 @@ export default function Page({ frontMatter, mdxSource, slug }) {
           href={`https://www.material-tailwind.com/docs/${canonical}`}
         />
       </Head>
-      <Alert className="w-full justify-center rounded-none">
-        <div className="flex  items-center justify-center gap-4">
-          NEW | Material Tailwind PRO, a comprehensive compilation of 170+
-          blocks, now available for your use.
-          <Link href="/blocks">
-            <Button size="sm" color="white">
-              check out
-            </Button>
-          </Link>
-        </div>
-      </Alert>
+      <OfferBar />
+
       <div className="relative mb-8 h-full w-full bg-white">
         <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
         <div className="px-6">
           <div className="container mx-auto flex">
             <Sidenav
-              routes={routes[frameworkType]}
+              routes={routes[frameworkType] as any}
               type={frameworkType}
               slug={slug[slug.length - 1]}
               mobileNav={mobileNav}

@@ -7,14 +7,14 @@ const DATA = [
     value: "200+",
     floated: true,
     title: "Global Style",
-    img: "/image/variants.png",
+    img: "https://docs.material-tailwind.com/image/variants.png",
     description: "Awesome color palette and realistic shadows.",
   },
   {
     floated: true,
     value: "100+",
     title: "CSS Components",
-    img: "/image/css-components.png",
+    img: "https://docs.material-tailwind.com/image/css-components.png",
     description:
       "Material Tailwind comes with a huge number of Fully Coded CSS components.",
   },
@@ -22,7 +22,7 @@ const DATA = [
     mini: true,
     value: "2",
     title: "Popular Technologies",
-    img: "/svg/popular-tech.svg",
+    img: "https://docs.material-tailwind.com/svg/popular-tech.svg",
     description: "Specially designed for React and HTML developers. ",
   },
 ];
@@ -57,7 +57,7 @@ export function Pro() {
                 shadow={false}
                 className="relative h-full w-full overflow-hidden border-[1.5px] border-blue-gray-50"
               >
-                <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+                <div className="absolute top-0 h-full w-full scale-110 bg-[url('https://docs.material-tailwind.com/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
                 <CardBody className="relative flex h-full flex-col p-6">
                   <Typography
                     variant="h2"
@@ -99,7 +99,7 @@ export function Pro() {
               shadow={false}
               className="relative min-h-[480px] w-full overflow-hidden rounded-xl border-[1.5px] border-blue-gray-50"
             >
-              <div className="absolute top-40 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="absolute top-40 h-full w-full scale-110 bg-[url('https://docs.material-tailwind.com/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
               <CardBody className="z-10 lg:flex">
                 <div className="lg:w-4/12">
                   <Typography
@@ -121,7 +121,7 @@ export function Pro() {
                 </div>
                 <div className="absolute right-0 bottom-0 ml-auto lg:-bottom-2 lg:w-9/12">
                   <Image
-                    src="/image/ready-made-sections.png"
+                    src="https://docs.material-tailwind.com/image/ready-made-sections.png"
                     width={1000}
                     height={1000}
                     alt="card image"

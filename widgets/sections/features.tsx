@@ -15,7 +15,7 @@ function FavoriteFramework() {
       <Link href="/docs/react/installation">
         <div className="flex flex-col items-center justify-center gap-2">
           <Image
-            src="/svg/react.svg"
+            src="https://docs.material-tailwind.com/svg/react.svg"
             alt="react logo"
             width={480}
             height={480}
@@ -29,7 +29,7 @@ function FavoriteFramework() {
       <Link href="/docs/html/installation">
         <div className="flex flex-col items-center justify-center gap-2">
           <Image
-            src="/svg/tailwind.svg"
+            src="https://docs.material-tailwind.com/svg/tailwind.svg"
             alt="tailwind logo"
             width={480}
             height={480}
@@ -42,7 +42,7 @@ function FavoriteFramework() {
       </Link>
       <div className="relative flex flex-col items-center justify-center gap-2">
         <Image
-          src="/svg/angular.svg"
+          src="https://docs.material-tailwind.com/svg/angular.svg"
           alt="angular logo"
           width={480}
           height={480}
@@ -59,7 +59,7 @@ function FavoriteFramework() {
       </div>
       <div className="relative flex flex-col items-center justify-center gap-2">
         <Image
-          src="/svg/vue.svg"
+          src="https://docs.material-tailwind.com/svg/vue.svg"
           alt="vue logo"
           width={480}
           height={480}
@@ -148,7 +148,7 @@ function GlobalStyles() {
       width={1280}
       height={1280}
       alt="card background"
-      src="/image/global-styles.png"
+      src="https://docs.material-tailwind.com/image/global-styles.png"
       className="h-full w-full object-cover object-center"
     />
   );
@@ -216,7 +216,7 @@ export function Features() {
                 }`}
               >
                 <Image
-                  src="/image/header-figma.jpg"
+                  src="https://docs.material-tailwind.com/image/header-figma.jpg"
                   alt="card background"
                   width={768}
                   height={768}

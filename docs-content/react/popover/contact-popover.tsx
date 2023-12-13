@@ -18,7 +18,10 @@ export function ContactPopover() {
       </PopoverHandler>
       <PopoverContent className="w-72">
         <div className="mb-4 flex items-center gap-4 border-b border-blue-gray-50 pb-4">
-          <Avatar src="/img/team-4.jpg" alt="tania andrew" />
+          <Avatar
+            src="https://docs.material-tailwind.com/img/team-4.jpg"
+            alt="tania andrew"
+          />
           <div>
             <Typography variant="h6" color="blue-gray">
               Tania Andrew

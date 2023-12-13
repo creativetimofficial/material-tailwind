@@ -7,7 +7,15 @@ navigation:
     "checkbox-colors",
     "checkbox-with-label",
     "checkbox-ripple-effect",
+    "checkbox-custom-icon",
+    "disabled-checkbox",
+    "checkbox-with-link",
+    "checkbox-with-description",
+    "checkbox-vertical-list-group",
+    "checkbox-horizontal-list-group",
+    "checkbox-custom-style",
     "required-script",
+
   ]
 github: checkbox
 prev: card
@@ -30,71 +38,26 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   id="checkbox"
   link="checkbox#checkbox"
   className="mt-4"
-  component={
-    <div className="inline-flex items-center">
-      <label
-        className="relative flex cursor-pointer items-center rounded-full p-3"
-        htmlFor="checkbox"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          id="checkbox"
-          defaultChecked
-        />
-        <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            strokeWidth="1"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-  }
+  component={<HTMLCheckboxExamples.CheckboxDefault/>}
 >
-  ```html
-  <div class="inline-flex items-center">
-    <label
-      class="relative flex items-center p-3 rounded-full cursor-pointer"
-      for="checkbox"
-      data-ripple-dark="true"
-    >
-      <input
-        type="checkbox"
-        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-        id="checkbox"
-        checked
-      />
-      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-3.5 w-3.5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </div>
-    </label>
-  </div>
-  ```
+```html
+<div class="inline-flex items-center">
+  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="checkbox">
+    <input type="checkbox"
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+      id="checkbox" checked />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+</div> 
+```
 </CodePreview>
 
 ---
@@ -105,495 +68,141 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   id="checkbox-colors"
   link="checkbox#checkbox-colors"
   className="mt-4"
-  component={
-    <div className="flex w-max gap-6">
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-1"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-            id="checkbox-1"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-2"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:bg-red-500 checked:before:bg-red-500 hover:before:opacity-10"
-            id="checkbox-2"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-3"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
-            id="checkbox-3"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-4"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
-            id="checkbox-4"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-5"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:bg-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
-            id="checkbox-5"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-6"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:bg-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
-            id="checkbox-6"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-7"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:bg-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
-            id="checkbox-7"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="checkbox-8"
-          data-ripple-dark="true"
-        >
-          <input
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-            id="checkbox-8"
-            defaultChecked
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-      </div>
-    </div>
-  }
+  component={<HTMLCheckboxExamples.CheckboxColors/>}
+ 
 >
-  ```html
-  <div class="flex gap-6 w-max">
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-1"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          id="checkbox-1"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-2"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:bg-red-500 checked:before:bg-red-500 hover:before:opacity-10"
-          id="checkbox-2"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-3"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
-          id="checkbox-3"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-4"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
-          id="checkbox-4"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-5"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:bg-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
-          id="checkbox-5"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-6"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:bg-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
-          id="checkbox-6"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-7"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:bg-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
-          id="checkbox-7"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="inline-flex items-center">
-      <label
-        class="relative flex items-center p-3 rounded-full cursor-pointer"
-        for="checkbox-8"
-        data-ripple-dark="true"
-      >
-        <input
-          type="checkbox"
-          class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-          id="checkbox-8"
-          checked
-        />
-        <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-    </div>
+```html
+<div class="flex gap-4 w-max">
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="blue">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+        id="blue" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
   </div>
-  ````
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="red">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-500 checked:bg-red-500 checked:before:bg-red-500 hover:before:opacity-10"
+        id="red" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="amber">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
+        id="amber" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="green">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-amber-500 checked:bg-amber-500 checked:before:bg-amber-500 hover:before:opacity-10"
+        id="green" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="teal">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-teal-500 checked:bg-teal-500 checked:before:bg-teal-500 hover:before:opacity-10"
+        id="teal" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="indigo">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo-500 checked:bg-indigo-500 checked:before:bg-indigo-500 hover:before:opacity-10"
+        id="indigo" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="purple">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-500 checked:bg-purple-500 checked:before:bg-purple-500 hover:before:opacity-10"
+        id="purple" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="inline-flex items-center">
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="pink">
+      <input type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
+        id="pink" checked />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+</div> 
+```
 </CodePreview>
 
 ---
@@ -604,81 +213,29 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   id="checkbox-with-label"
   link="checkbox#checkbox-with-label"
   className="mt-4"
-  component={
-    <div className="inline-flex items-center">
-      <label
-        className="relative flex cursor-pointer items-center rounded-full p-3"
-        htmlFor="login"
-        data-ripple-dark="true"
-      >
-        <input
-          id="login"
-          type="checkbox"
-          className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-        />
-        <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            strokeWidth="1"
-          >
-            <path
-              fillRule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </div>
-      </label>
-      <label
-        className="mt-px cursor-pointer select-none font-light text-gray-700"
-        htmlFor="login"
-      >
-        Remember Me
-      </label>
-    </div>
-  }
+  component={<HTMLCheckboxExamples.CheckboxLabel/>}
 >
-  ```html
-  <div class="inline-flex items-center">
-    <label
-      class="relative flex items-center p-3 rounded-full cursor-pointer"
-      for="login"
-      data-ripple-dark="true"
-    >
-      <input
-        id="login"
-        type="checkbox"
-        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-      />
-      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-3.5 w-3.5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </div>
-    </label>
-    <label
-      class="mt-px font-light text-gray-700 cursor-pointer select-none"
-      for="login"
-    >
-      Remember Me
-    </label>
-  </div>
-  ```
+```html
+<div class="inline-flex items-center">
+  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="check">
+    <input type="checkbox"
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+      id="check" />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="check">
+    Remember Me
+  </label>
+</div> 
+```
 </CodePreview>
 
 ---
@@ -689,156 +246,437 @@ See below our easy-to-use checkbox component that you can use for your Tailwind 
   id="checkbox-ripple-effect"
   link="checkbox#checkbox-ripple-effect"
   className="mt-4"
-  component={
-    <>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="ripple-on"
-          data-ripple-dark="true"
-        >
-          <input
-            id="ripple-on"
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-        <label
-          className="mt-px cursor-pointer select-none font-light text-gray-700"
-          htmlFor="ripple-on"
-        >
-          Ripple Effect On
-        </label>
-      </div>
-      <div className="inline-flex items-center">
-        <label
-          className="relative flex cursor-pointer items-center rounded-full p-3"
-          htmlFor="ripple-off"
-        >
-          <input
-            id="ripple-off"
-            type="checkbox"
-            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-          />
-          <div className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </div>
-        </label>
-        <label
-          className="mt-px cursor-pointer select-none font-light text-gray-700"
-          htmlFor="ripple-off"
-        >
-          Ripple Effect Off
-        </label>
-      </div>
-    </>
-  }
+  component={<HTMLCheckboxExamples.CheckboxRippleEffect/>}
 >
-  ```html
+```html
   <div class="inline-flex items-center">
-    <label
-      class="relative flex items-center p-3 rounded-full cursor-pointer"
-      for="ripple-on"
-      data-ripple-dark="true"
-    >
-      <input
-        id="ripple-on"
-        type="checkbox"
-        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-      />
-      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-3.5 w-3.5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-        >
-          <path
-            fill-rule="evenodd"
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="ripple-on"
+      data-ripple-dark="true">
+      <input id="ripple-on" type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10" />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          ></path>
+            clip-rule="evenodd"></path>
         </svg>
-      </div>
+      </span>
     </label>
-    <label
-      class="mt-px font-light text-gray-700 cursor-pointer select-none"
-      for="ripple-on"
-    >
+    <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="ripple-on">
       Ripple Effect On
     </label>
   </div>
   <div class="inline-flex items-center">
-    <label
-      class="relative flex items-center p-3 rounded-full cursor-pointer"
-      for="ripple-off"
-    >
-      <input
-        id="ripple-off"
-        type="checkbox"
-        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-pink-500 checked:bg-pink-500 checked:before:bg-pink-500 hover:before:opacity-10"
-      />
-      <div class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-3.5 w-3.5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          stroke="currentColor"
-          stroke-width="1"
-        >
-          <path
-            fill-rule="evenodd"
+    <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="ripple-off">
+      <input id="ripple-off" type="checkbox"
+        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10" />
+      <span
+        class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+          stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd"
             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          ></path>
+            clip-rule="evenodd"></path>
         </svg>
-      </div>
+      </span>
     </label>
-    <label
-      class="mt-px font-light text-gray-700 cursor-pointer select-none"
-      for="ripple-off"
-    >
+    <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="ripple-off">
       Ripple Effect Off
     </label>
   </div>
-  ```
+```
 </CodePreview>
 
 ---
 
-## Required Scripts
+
+## Checkbox Custom Icon
+
+<CodePreview
+  id="checkbox-custom-icon"
+  link="checkbox#checkbox-custom-icon"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxCustomIcon/>}
+>
+```html
+<div class="inline-flex items-center">
+  <label
+    class="relative flex items-center p-3 rounded-full cursor-pointer"
+    htmlFor="custom"
+    >
+    <input
+      type="checkbox"
+      class="peer relative appearance-none w-5 h-5 border rounded-md border-blue-gray-200 cursor-pointer transition-all before:content[''] before:block before:bg-blue-gray-500 before:w-12 before:h-12 before:rounded-full before:absolute before:top-2/4 before:left-2/4 before:-translate-y-2/4 before:-translate-x-2/4 before:opacity-0 hover:before:opacity-10 before:transition-opacity checked:bg-gray-900 checked:border-gray-900 checked:before:bg-gray-900"
+      id="custom"
+       /><span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-3 h-3"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+          clip-rule="evenodd"
+        ></path></svg></span
+  ></label>
+</div>
+```
+</CodePreview>
+
+---
+
+## Disabled Checkbox
+
+<CodePreview
+  id="disabled-checkbox"
+  link="checkbox#disabled-checkbox"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.DisabledCheckbox/>}
+>
+```html
+<div class="inline-flex items-center opacity-50 pointer-events-none">
+  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="checkbox">
+    <input type="checkbox" disabled
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+      id="checkbox" />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="checkbox">
+    Remember Me
+  </label>
+</div>
+```
+</CodePreview>
+
+---
+
+## checkbox with Link
+
+<CodePreview
+  id="checkbox-with-link"
+  link="checkbox#checkbox-with-link"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxWithLink/>}
+>
+```html
+<div class="inline-flex items-center">
+  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="link">
+    <input type="checkbox"
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+      id="link" />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="link">
+    <p class="flex font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+      I agree with the
+      <a href="#"
+        class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-500 transition-colors hover:text-blue-700">
+        &nbsp;terms and conditions
+      </a>
+      .
+    </p>
+  </label>
+</div>
+```
+</CodePreview>
+
+---
+
+## Checkbox With Description
+
+Use the example below for a more complex usage of checkbox with label that contains some description.
+
+<CodePreview
+  id="checkbox-with-description"
+  link="checkbox#checkbox-with-description"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxWithDescription/>}
+>
+```html
+<div class="inline-flex items-center">
+  <label class="relative flex items-center p-3 -mt-5 rounded-full cursor-pointer" htmlFor="description">
+    <input type="checkbox"
+      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+      id="description" />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="description">
+    <div>
+      <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+        Remember Me
+      </p>
+      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+        You&apos;ll be able to login without password for 24 hours.
+      </p>
+    </div>
+  </label>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Checkbox Vertical List Group
+
+Use the example below for a vertical list of checkboxes.
+
+<CodePreview
+  id="checkbox-vertical-list-group"
+  link="checkbox#checkbox-vertical-list-group"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxVerticalListGroup/>}
+>
+```html
+<div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+  <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="vertical-list-react" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="vertical-list-react">
+              <input id="vertical-list-react" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          React.js
+        </p>
+      </label>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="vertical-list-vue" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="vertical-list-vue">
+              <input id="vertical-list-vue" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          Vue.js
+        </p>
+      </label>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="vertical-list-svelte" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+              htmlFor="vertical-list-svelte">
+              <input id="vertical-list-svelte" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          Svelte.js
+        </p>
+      </label>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+## Checkbox Horizontal List Group
+
+Use the example below for a horizontal list of checkboxes.
+
+<CodePreview
+  id="checkbox-horizontal-list-group"
+  link="checkbox#checkbox-horizontal-list-group"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxHorizontalListGroup/>}
+>
+```html
+<div class="relative flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <nav class="flex min-w-[240px] flex-row gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="horizontal-list-react" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+              htmlFor="horizontal-list-react">
+              <input id="horizontal-list-react" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          React.js
+        </p>
+      </label>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="horizontal-list-vue" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="horizontal-list-vue">
+              <input id="horizontal-list-vue" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          Vue.js
+        </p>
+      </label>
+    </div>
+    <div role="button"
+      class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+      <label htmlFor="horizontal-list-svelte" class="flex items-center w-full px-3 py-2 cursor-pointer">
+        <div class="grid mr-3 place-items-center">
+          <div class="inline-flex items-center">
+            <label class="relative flex items-center p-0 rounded-full cursor-pointer"
+              htmlFor="horizontal-list-svelte">
+              <input id="horizontal-list-svelte" type="checkbox"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0" />
+              <span
+                class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                  stroke="currentColor" stroke-width="1">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+          Svelte.js
+        </p>
+      </label>
+    </div>
+  </nav>
+</div>
+```
+</CodePreview>
+
+---
+
+
+
+## Checkbox Custom Styles
+
+You can use the classes to add custom styles to the Checkbox component.
+
+<CodePreview
+  id="checkbox-custom-style"
+  link="checkbox#checkbox-custom-style"
+  className="mt-4"
+  component={<HTMLCheckboxExamples.CheckboxCustomStyles/>}
+>
+```html
+<div class="inline-flex items-center">
+  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="customStyle">
+    <input type="checkbox"
+      class="before:content[''] peer relative h-8 w-8 cursor-pointer appearance-none rounded-full border border-gray-900/20 bg-gray-900/10 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:scale-105 hover:before:opacity-0"
+      id="customStyle"  />
+    <span
+      class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+        stroke="currentColor" stroke-width="1">
+        <path fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </label>
+</div>
+```
+</CodePreview>
+
+---
+
+
+
+
+## Required Scrips
 
 <span id="required-script" className="scroll-mt-56" />
 

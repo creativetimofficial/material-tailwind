@@ -12,6 +12,9 @@ import {
   Tab,
   Textarea,
   IconButton,
+  CardBody,
+  Card,
+  CardHeader,
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -117,7 +120,7 @@ export function PageMap({ type, frontMatter }) {
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
-              Join un on Discord
+              Join us on Discord
             </a>
           </li>
           <li>
@@ -168,7 +171,7 @@ export function PageMap({ type, frontMatter }) {
               } flex items-center gap-2`}
             >
               <Image
-                src="/svg/react.svg"
+                src="https://docs.material-tailwind.com/svg/react.svg"
                 alt="react"
                 width={48}
                 height={48}
@@ -189,7 +192,7 @@ export function PageMap({ type, frontMatter }) {
               } flex items-center gap-2`}
             >
               <Image
-                src="/svg/html.svg"
+                src="https://docs.material-tailwind.com/svg/html.svg"
                 alt="html"
                 width={48}
                 height={48}
@@ -216,6 +219,48 @@ export function PageMap({ type, frontMatter }) {
             </Link>
           </li>
         </ul>
+        <Link
+          href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
+          target="_blank"
+        >
+          <Card
+            color="transparent"
+            shadow={false}
+            className="border border-blue-gray-50"
+          >
+            <CardHeader
+              floated={false}
+              shadow={false}
+              color="transparent"
+              className="mx-4 mt-4 mb-0"
+            >
+              <Image
+                src="https://docs.material-tailwind.com/image/ui-ux-book.jpg"
+                alt="book"
+                width={768}
+                height={768}
+                className="h-full w-full object-cover"
+              />
+            </CardHeader>
+            <CardBody className="p-4">
+              <Typography variant="h6" color="blue-gray">
+                Roots of UI/UX Design
+              </Typography>
+              <Typography
+                variant="small"
+                className="mb-2 block font-normal !text-gray-600"
+              >
+                By Creative Tim
+              </Typography>
+              <Typography
+                variant="small"
+                className="font-normal !text-gray-600"
+              >
+                Learn to Develop Intuitive Web Experiences
+              </Typography>
+            </CardBody>
+          </Card>
+        </Link>
       </div>
       <Dialog
         size="sm"

@@ -14,6 +14,39 @@ export const routes = [
         name: "What is Tailwind CSS",
         route: "what-is-tailwind-css",
       },
+      {
+        name: "Release Notes",
+        route: "release-notes",
+      },
+    ],
+  },
+  {
+    name: "Integration Guide",
+    pages: [
+      {
+        name: "React",
+        route: "guide/react-vite",
+      },
+      {
+        name: "Next.js",
+        route: "guide/next",
+      },
+      {
+        name: "Vue",
+        route: "guide/vue-vite",
+      },
+      {
+        name: "Nuxt.js",
+        route: "guide/nuxt",
+      },
+      {
+        name: "Svelte",
+        route: "guide/svelte",
+      },
+      {
+        name: "Laravel",
+        route: "guide/laravel",
+      },
     ],
   },
   {
@@ -57,6 +90,10 @@ export const routes = [
         route: "avatar",
       },
       {
+        name: "Badge",
+        route: "badge",
+      },
+      {
         name: "Breadcrumbs",
         route: "breadcrumbs",
       },
@@ -64,6 +101,11 @@ export const routes = [
         name: "Button",
         route: "button",
       },
+      {
+        name: "Button-Group",
+        route: "button-group",
+      },
+
       {
         name: "Card",
         route: "card",
@@ -92,6 +134,11 @@ export const routes = [
         name: "Form",
         route: "form",
       },
+
+      {
+        name: "List",
+        route: "list",
+      },
       {
         name: "Menu",
         route: "menu",
@@ -117,8 +164,28 @@ export const routes = [
         route: "radio-button",
       },
       {
+        name: "Rating",
+        route: "rating",
+      },
+      {
         name: "Select",
         route: "select",
+      },
+      // {
+      //   name: "Slider",
+      //   route: "slider",
+      // },
+      {
+        name: "Speed Dial",
+        route: "speed-dial",
+      },
+      {
+        name: "Spinner",
+        route: "spinner",
+      },
+      {
+        name: "Stepper",
+        route: "stepper",
       },
       {
         name: "Switch",
@@ -133,6 +200,10 @@ export const routes = [
         route: "textarea",
       },
       {
+        name: "Timeline",
+        route: "timeline",
+      },
+      {
         name: "Tooltip",
         route: "tooltip",
       },
@@ -143,6 +214,39 @@ export const routes = [
       {
         name: "Footer",
         route: "footer",
+      },
+      {
+        name: "Image",
+        route: "image",
+      },
+      {
+        name: "Video",
+        route: "video",
+      },
+      {
+        name: "Sidebar",
+        route: "sidebar",
+      },
+      {
+        name: "Table",
+        route: "table",
+      },
+    ],
+  },
+  {
+    name: "Plugins",
+    pages: [
+      {
+        name: "Algolia Search",
+        route: "/plugins/algolia-search",
+      },
+      {
+        name: "Charts",
+        route: "/plugins/charts",
+      },
+      {
+        name: "Date Picker",
+        route: "/plugins/date-picker",
       },
     ],
   },

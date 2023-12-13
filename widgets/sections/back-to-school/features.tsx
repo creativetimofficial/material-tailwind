@@ -5,19 +5,19 @@ import { Typography, Card, CardBody } from "@material-tailwind/react";
 const DATA = [
   {
     title: "10 Website Templates",
-    img: "/image/bts-card-1.png",
+    img: "https://docs.material-tailwind.com/image/bts-card-1.png",
     description:
       "From simple portfolio website page to complex presentation pages.",
   },
   {
     title: "Fully Coded Components",
-    img: "/image/bts-card-2.png",
+    img: "https://docs.material-tailwind.com/image/bts-card-2.png",
     description:
       "The templates come fully coded and ready to be customized based on your needs.",
   },
   {
     title: "Designer Files Included",
-    img: "/image/bts-card-3.png",
+    img: "https://docs.material-tailwind.com/image/bts-card-3.png",
     description:
       "If you're a designer, gain access to Figma files with each template.",
   },
@@ -55,7 +55,7 @@ export function BTSFeatures() {
               shadow={false}
               className="relative h-full w-full overflow-hidden border-[1.5px] border-blue-gray-50"
             >
-              <div className="absolute top-0 h-full w-full scale-110 bg-[url('/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
+              <div className="absolute top-0 h-full w-full scale-110 bg-[url('https://docs.material-tailwind.com/image/lines.jpg')] bg-cover bg-center bg-no-repeat" />
               <CardBody className="relative flex h-full flex-col justify-between p-6">
                 <div>
                   <Typography
