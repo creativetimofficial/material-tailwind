@@ -119,20 +119,36 @@ export const routes = [
         route: "chip",
       },
       {
+        name: "Collapse",
+        route: "collapse",
+      },
+      {
+        name: "Carousel",
+        route: "carousel",
+      },
+      {
         name: "Dialog",
         route: "dialog",
+      },
+      {
+        name: "Footer",
+        route: "footer",
+      },
+      {
+        name: "Form",
+        route: "form",
       },
       {
         name: "Icon Button",
         route: "icon-button",
       },
       {
-        name: "Input",
-        route: "input",
+        name: "Image",
+        route: "image",
       },
       {
-        name: "Form",
-        route: "form",
+        name: "Input",
+        route: "input",
       },
 
       {
@@ -170,6 +186,10 @@ export const routes = [
       {
         name: "Select",
         route: "select",
+      },
+      {
+        name: "Sidebar",
+        route: "sidebar",
       },
       // {
       //   name: "Slider",
@@ -211,22 +231,12 @@ export const routes = [
         name: "Typography",
         route: "typography",
       },
-      {
-        name: "Footer",
-        route: "footer",
-      },
-      {
-        name: "Image",
-        route: "image",
-      },
+
       {
         name: "Video",
         route: "video",
       },
-      {
-        name: "Sidebar",
-        route: "sidebar",
-      },
+
       {
         name: "Table",
         route: "table",
