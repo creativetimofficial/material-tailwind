@@ -181,8 +181,8 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
-import CountDown from "widgets/black-friday/count-down";
-import OfferBar from "widgets/black-friday/offer-bar";
+import CountDown from "widgets/campaign/count-down";
+import OfferBar from "widgets/campaign/offer-bar";
 
 const components = {
   h1: (props) => (
