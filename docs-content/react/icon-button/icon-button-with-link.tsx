@@ -1,19 +1,27 @@
-import { Button } from "@material-tailwind/react";
+import { IconButton } from "@material-tailwind/react";
 
 export function IconButtonWithLink() {
   return (
     <div className="flex items-center gap-4">
       <a href="#buttons-with-link">
-        <Button>Filled</Button>
+        <IconButton>
+          <i className="fas fa-heart" />
+        </IconButton>
       </a>
       <a href="#buttons-with-link">
-        <Button variant="gradient">Gradient</Button>
+        <IconButton variant="gradient">
+          <i className="fas fa-heart" />
+        </IconButton>
       </a>
       <a href="#buttons-with-link">
-        <Button variant="outlined">Outlined</Button>
+        <IconButton variant="outlined">
+          <i className="fas fa-heart" />
+        </IconButton>
       </a>
       <a href="#buttons-with-link">
-        <Button variant="text">Text</Button>
+        <IconButton variant="text">
+          <i className="fas fa-heart" />
+        </IconButton>
       </a>
     </div>
   );
