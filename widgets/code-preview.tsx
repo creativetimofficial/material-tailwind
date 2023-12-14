@@ -2,10 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-  Tabs,
-  TabsHeader,
-  Tab,
-  Typography,
   Tooltip,
   IconButton,
   Button,
@@ -15,14 +11,11 @@ import {
   MenuItem,
 } from "@material-tailwind/react";
 import {
-  EyeIcon,
-  CodeBracketIcon,
   ClipboardDocumentListIcon,
   ClipboardDocumentCheckIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import copyToClipboard from "utils/copy-to-clipboard";
-import { v4 as uuidv4 } from "uuid";
 
 export function CodePreview({ id, component, link, children, className }) {
   const codeRef = React.useRef(null);
@@ -40,7 +33,7 @@ export function CodePreview({ id, component, link, children, className }) {
   return (
     <div
       id={id}
-      className={`scroll-mt-64 rounded-xl border border-blue-gray-50 ${
+      className={`scroll-mt-64 overflow-hidden rounded-xl border border-blue-gray-50 ${
         mode === "code" ? "bg-[#1e293b]" : "bg-[#f8fafc]"
       } ${className || ""}`}
     >
@@ -144,7 +137,7 @@ export function CodePreview({ id, component, link, children, className }) {
       <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
         {component}
       </div>
-      <div className="code-preview block">
+      <div className="code-preview block max-h-[40rem] overflow-scroll rounded-b-xl">
         {React.cloneElement(children, { ref: codeRef })}
       </div>
     </div>
