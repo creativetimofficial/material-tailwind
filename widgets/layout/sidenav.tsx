@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Typography, Chip } from "@material-tailwind/react";
+import { Typography, Chip, IconButton } from "@material-tailwind/react";
+import { useLockedBody } from "usehooks-ts";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   routes: {
@@ -24,6 +26,16 @@ export function Sidenav({
   mobileNav,
   setMobileNav,
 }: Props) {
+  const [locked, setLocked] = useLockedBody(false, "root");
+
+  React.useEffect(() => {
+    if (mobileNav) {
+      setLocked(true);
+    } else {
+      setLocked(false);
+    }
+  }, [mobileNav, setLocked]);
+
   return (
     <aside
       className={`fixed top-0 z-[999] h-screen w-80 overflow-y-scroll pb-4 pr-4 transition-all duration-300 lg:sticky lg:top-16 lg:left-0 lg:z-10 lg:w-56 ${
@@ -31,14 +43,25 @@ export function Sidenav({
       }`}
     >
       <div
+        onClick={() => setMobileNav(false)}
         className={`fixed top-0 left-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileNav
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
       />
-      <div className="fixed top-0 z-[9999] w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
-        <div className="mt-4 mb-10">
+      {mobileNav && (
+        <IconButton
+          onClick={() => setMobileNav(false)}
+          ripple={false}
+          color="white"
+          className="!fixed top-2 right-2"
+        >
+          <XMarkIcon className="h-6 w-6 stroke-2" />
+        </IconButton>
+      )}
+      <div className="fixed top-0 z-[9999] h-screen w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
+        <div className="mt-6 mb-10">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>
               <Typography

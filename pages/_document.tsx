@@ -92,7 +92,7 @@ export default function MyDocument() {
           src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
         ></script>
       </Head>
-      <body>
+      <body className="root">
         <noscript>
           <iframe
             title="google-tag-manage"

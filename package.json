@@ -55,6 +55,7 @@
     "tailwind-merge": "1.8.1",
     "un": "0.0.0",
     "use-react-countries": "1.1.0",
+    "usehooks-ts": "^2.9.1",
     "uuid": "9.0.0"
   },
   "devDependencies": {
