@@ -216,6 +216,10 @@ export const routes = [
         route: "tabs",
       },
       {
+        name: "Table",
+        route: "table",
+      },
+      {
         name: "Textarea",
         route: "textarea",
       },
@@ -235,11 +239,6 @@ export const routes = [
       {
         name: "Video",
         route: "video",
-      },
-
-      {
-        name: "Table",
-        route: "table",
       },
     ],
   },
