@@ -7,6 +7,13 @@ const buttonGradient: object = {
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },
+  black: {
+    background: "bg-gradient-to-tr from-gray-900 to-gray-800",
+    color: "text-white",
+    shadow: "shadow-md shadow-gray-900/10",
+    hover: "hover:shadow-lg hover:shadow-gray-900/20",
+    active: "active:opacity-[0.85]",
+  },
   "blue-gray": {
     background: "bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400",
     color: "text-white",

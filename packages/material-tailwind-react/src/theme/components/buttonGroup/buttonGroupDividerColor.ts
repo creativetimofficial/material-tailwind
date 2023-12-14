@@ -2,6 +2,9 @@ const buttonGroupDividerColor: object = {
   white: {
     divideColor: "divide-blue-gray-50",
   },
+  black: {
+    divideColor: "divide-gray-800",
+  },
   "blue-gray": {
     divideColor: "divide-blue-gray-600",
   },

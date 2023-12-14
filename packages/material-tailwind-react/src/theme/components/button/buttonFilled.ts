@@ -7,6 +7,14 @@ const buttonFilled: object = {
     focus: "focus:opacity-[0.85] focus:shadow-none",
     active: "active:opacity-[0.85] active:shadow-none",
   },
+  black: {
+    background: "bg-gray-900",
+    color: "text-white",
+    shadow: "shadow-md shadow-gray-900/10",
+    hover: "hover:shadow-lg hover:shadow-gray-900/20",
+    focus: "focus:opacity-[0.85] focus:shadow-none",
+    active: "active:opacity-[0.85] active:shadow-none",
+  },
   "blue-gray": {
     background: "bg-blue-gray-500",
     color: "text-white",

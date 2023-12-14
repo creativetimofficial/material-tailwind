@@ -1,5 +1,25 @@
 export const releases = [
   {
+    version: "2.1.7",
+    date: "December 14, 2023",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.7",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Add black color for <Button />, <IconButton /> and <ButtonGroup /> components.",
+        ],
+      },
+      {
+        title: "docs changes",
+        data: [
+          "Update the button, icon button and button group documentation pages.",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.1.6",
     date: "December 13, 2023",
     name: "@material-tailwind/react",
