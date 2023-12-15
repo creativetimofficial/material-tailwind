@@ -159,7 +159,7 @@ export const routes = [
         route: "icon-button",
       },
       {
-        name: "Img",
+        name: "Image",
         route: "img",
       },
       {
