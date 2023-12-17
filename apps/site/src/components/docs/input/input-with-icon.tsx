@@ -4,15 +4,18 @@ import { ProfileCircle, Lock } from "iconoir-react";
 export function InputWithIcon() {
   return (
     <div className="w-[240px] space-y-4">
-      <Input
-        placeholder="Username"
-        startIcon={<ProfileCircle className="h-5 w-5" />}
-      />
-      <Input
-        type="password"
-        placeholder="Password"
-        endIcon={<Lock className="h-5 w-5" />}
-      />
+      <Input>
+        <Input.Field placeholder="Username" />
+        <Input.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Input.Icon>
+      </Input>
+      <Input>
+        <Input.Field type="password" placeholder="Password" />
+        <Input.Icon placement="end">
+          <Lock className="h-full w-full" />
+        </Input.Icon>
+      </Input>
     </div>
   );
 }

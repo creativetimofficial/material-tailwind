@@ -1,5 +1,5 @@
 import React from "react";
-import { Star } from "iconoir-react";
+
 // @utils
 import { twMerge } from "tailwind-merge";
 

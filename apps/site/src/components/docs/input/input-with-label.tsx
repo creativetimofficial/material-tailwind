@@ -12,7 +12,13 @@ export function InputWithLabel() {
       >
         Email
       </Typography>
-      <Input id="email" type="email" placeholder="someone@example.com" />
+      <Input>
+        <Input.Field
+          id="email"
+          type="email"
+          placeholder="someone@example.com"
+        />
+      </Input>
     </div>
   );
 }

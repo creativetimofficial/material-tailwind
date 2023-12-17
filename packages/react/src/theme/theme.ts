@@ -6,7 +6,7 @@ import typographyTheme from "./typography";
 import iconButtonTheme from "./icon-button";
 import buttonGroupTheme from "./button-group";
 import swtichTheme from "./switch";
-import inputTheme from "./input";
+import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
 import textareaTheme from "./textarea";
 import ratingTheme from "./rating";
 import selectTheme from "./select";
@@ -26,6 +26,8 @@ export const theme = {
   typography: typographyTheme,
   switch: swtichTheme,
   input: inputTheme,
+  inputField: inputFieldTheme,
+  inputIcon: inputIconTheme,
   textarea: textareaTheme,
   rating: ratingTheme,
   select: selectTheme,

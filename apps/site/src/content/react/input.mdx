@@ -23,7 +23,11 @@ See below our `Input` component examples. It comes in different styles and color
 import { Input } from "@material-tailwind/react";
 
 export function InputDemo() {
-  return <Input placeholder="Input" />;
+  return (
+    <Input>
+      <Input.Field placeholder="Input" />
+    </Input>
+  );
 }
 ```
 </ComponentPreview>
@@ -41,9 +45,15 @@ import { Input } from "@material-tailwind/react";
 export function InputSizes() {
   return (
     <div className="w-[240px] space-y-4">
-      <Input size="sm" placeholder="Input Small" />
-      <Input size="md" placeholder="Input Medium" />
-      <Input size="lg" placeholder="Input Large" />
+      <Input size="sm">
+        <Input.Field placeholder="Input Small" />
+      </Input>
+      <Input size="md">
+        <Input.Field placeholder="Input Medium" />
+      </Input>
+      <Input size="lg">
+        <Input.Field placeholder="Input Large" />
+      </Input>
     </div>
   );
 }
@@ -63,12 +73,24 @@ import { Input } from "@material-tailwind/react";
 export function InputColors() {
   return (
     <div className="w-[240px] space-y-4">
-      <Input color="primary" placeholder="Input Primary" />
-      <Input color="secondary" placeholder="Input Secondary" />
-      <Input color="info" placeholder="Input Info" />
-      <Input color="success" placeholder="Input Success" />
-      <Input color="warning" placeholder="Input Warning" />
-      <Input color="error" placeholder="Input Error" />
+      <Input color="primary">
+        <Input.Field placeholder="Input Primary" />
+      </Input>
+      <Input color="secondary">
+        <Input.Field placeholder="Input Secondary" />
+      </Input>
+      <Input color="info">
+        <Input.Field placeholder="Input Info" />
+      </Input>
+      <Input color="success">
+        <Input.Field placeholder="Input Success" />
+      </Input>
+      <Input color="warning">
+        <Input.Field placeholder="Input Warning" />
+      </Input>
+      <Input color="error">
+        <Input.Field placeholder="Input Error" />
+      </Input>
     </div>
   );
 }
@@ -79,7 +101,7 @@ export function InputColors() {
 
 ## Input with Validation
 
-You can combine the `Input` component with the `Typography` component to create a validation message.
+You can combine the `Input` component with the `Typography` component to create a validation message, use the `isSuccess` prop for the success state and the `isError` prop for the error state.
 
 <ComponentPreview demo={<Input.InputWithValidation />}>
 ```tsx
@@ -89,13 +111,17 @@ export function InputWithValidation() {
   return (
     <div className="w-[240px] space-y-6">
       <div className="w-full space-y-1">
-        <Input color="error" placeholder="Input Error" isError />
+        <Input color="error" isError>
+          <Input.Field placeholder="Input Error" />
+        </Input>
         <Typography variant="small" color="error">
           Something went wrong!
         </Typography>
       </div>
       <div className="w-full space-y-1">
-        <Input color="success" placeholder="Input Success" isSuccess />
+        <Input color="success" isSuccess>
+          <Input.Field placeholder="Input Success" />
+        </Input>
         <Typography variant="small" color="success">
           Congratulations 🎉
         </Typography>
@@ -110,7 +136,7 @@ export function InputWithValidation() {
 
 ## Input with Icon
 
-You can add an icon to the `Input` component using the `startIcon` and `endIcon` props.
+You can add an icon for the `Input` component using the `Input.Icon` component.
 
 The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
@@ -122,15 +148,18 @@ import { ProfileCircle, Lock } from "iconoir-react";
 export function InputWithIcon() {
   return (
     <div className="w-[240px] space-y-4">
-      <Input
-        placeholder="Username"
-        startIcon={<ProfileCircle className="h-5 w-5" />}
-      />
-      <Input
-        type="password"
-        placeholder="Password"
-        endIcon={<Lock className="h-5 w-5" />}
-      />
+      <Input>
+        <Input.Field placeholder="Username" />
+        <Input.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Input.Icon>
+      </Input>
+      <Input>
+        <Input.Field type="password" placeholder="Password" />
+        <Input.Icon placement="end">
+          <Lock className="h-full w-full" />
+        </Input.Icon>
+      </Input>
     </div>
   );
 }
@@ -159,7 +188,13 @@ export function InputWithLabel() {
       >
         Email
       </Typography>
-      <Input id="email" type="email" placeholder="someone@example.com" />
+      <Input>
+        <Input.Field
+          id="email"
+          type="email"
+          placeholder="someone@example.com"
+        />
+      </Input>
     </div>
   );
 }
@@ -182,7 +217,9 @@ import { InfoCircle } from "iconoir-react";
 export function InputWithHelperText() {
   return (
     <div className="w-[240px] space-y-2">
-      <Input placeholder="Password" />
+      <Input>
+        <Input.Field type="password" placeholder="Password" />
+      </Input>
       <div className="flex gap-1.5 text-gray-600">
         <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
         <Typography variant="small">
@@ -209,7 +246,9 @@ import { Button, Input } from "@material-tailwind/react";
 export function InputWithButton() {
   return (
     <form action="#" className="flex w-full items-center justify-center gap-2">
-      <Input type="email" placeholder="someone@example.com" />
+      <Input>
+        <Input.Field type="email" placeholder="someone@example.com" />
+      </Input>
       <Button type="submit">Subscribe</Button>
     </form>
   );
@@ -221,14 +260,18 @@ export function InputWithButton() {
 
 ## Input Disabled
 
-You can disable the `Input` component using the `disabled` prop.
+You can disable the `Input` component by adding the `disabled` prop for the `Input.Field` component.
 
 <ComponentPreview demo={<Input.InputDisabled />}>
 ```tsx
 import { Input } from "@material-tailwind/react";
 
-export function DisabledInput() {
-  return <Input placeholder="Username" />;
+export function InputDisabled() {
+  return (
+    <Input disabled>
+      <Input.Field placeholder="Input" />
+    </Input>
+  );
 }
 ```
 </ComponentPreview>
@@ -237,18 +280,24 @@ export function DisabledInput() {
 
 ## Input Custom Styles
 
-You can customize the `Input` using the `className`, `inputClassName` and `iconClassName` props.
+Each piece of `Input` component is customizable using the `className` prop.
 
 <ComponentPreview demo={<Input.InputCustomStyles />}>
 ```tsx
 import { Input } from "@material-tailwind/react";
+import { ProfileCircle } from "iconoir-react";
 
 export function InputCustomStyles() {
   return (
-    <Input
-      placeholder="Username"
-      inputClassName="rounded-none border-0 border-b border-gray-400 px-0.5 ring-0 hover:border-gray-900 focus:border-gray-900 dark:border-gray-600 dark:hover:border-gray-50 dark:focus:border-gray-50"
-    />
+    <Input>
+      <Input.Field
+        placeholder="Username"
+        className="rounded-none border-0 border-b border-gray-400 pr-0.5 ring-0 hover:border-gray-900 focus:border-gray-900 data-[icon-placement=start]:pl-[26px] dark:border-gray-600 dark:hover:border-gray-50 dark:focus:border-gray-50"
+      />
+      <Input.Icon className="data-[placement=start]:left-px">
+        <ProfileCircle className="h-full w-full" />
+      </Input.Icon>
+    </Input>
   );
 }
 ```

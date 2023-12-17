@@ -5,60 +5,66 @@ import { twMerge } from "tailwind-merge";
 
 // @hooks
 import { useTheme } from "@context";
-import { useElementSize } from "usehooks-ts";
 
 // @theme
-import { inputTheme } from "@theme";
+import { inputTheme, inputFieldTheme, inputIconTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseComponent, Props } from "@types";
 
-export interface InputProps extends Omit<BaseComponent<"input">, "variant"> {
-  as?: React.ElementType;
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-  className?: string;
-  rounded?: boolean;
-  fullWidth?: boolean;
+// input context
+export interface InputContextProps {
+  size?: BaseComponent<any>["size"];
+  color?: BaseComponent<any>["color"];
+  iconPlacement?: "start" | "end" | string;
+  isIconDefined?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
-  inputClassName?: string;
-  iconClassName?: string;
-  inputRef?: React.RefObject<HTMLInputElement>;
+  disabled?: boolean;
+  setIconPlacement: React.Dispatch<React.SetStateAction<string>>;
+  setIsIconDefined: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-/**
- * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/input) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/input#input-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/input#input-theme)
- *
- * @example
- * ```tsx
- * import { Input } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Input />;
- * }
- * ```
- */
-export const Input = React.forwardRef<HTMLDivElement | HTMLElement, InputProps>(
+export const InputContext = React.createContext<InputContextProps>({
+  size: "md",
+  color: "primary",
+  isError: false,
+  isSuccess: false,
+  iconPlacement: "start",
+  isIconDefined: false,
+  disabled: false,
+  setIconPlacement: () => null,
+  setIsIconDefined: () => null,
+});
+
+// input root
+export interface InputProps extends Props<any> {
+  as?: React.ElementType;
+  size?: BaseComponent<any>["size"];
+  color?: BaseComponent<any>["color"];
+  isRounded?: boolean;
+  isFullWidth?: boolean;
+  isError?: boolean;
+  isSuccess?: boolean;
+  disabled?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
   (
     {
       as,
       color,
       size,
-      startIcon,
-      endIcon,
-      rounded,
-      fullWidth,
+      isRounded,
+      isFullWidth,
       isError,
       isSuccess,
+      disabled,
       className,
-      inputClassName,
-      iconClassName,
-      inputRef,
-      ...rest
+      children,
+      ...props
     },
     ref,
   ) => {
@@ -66,59 +72,161 @@ export const Input = React.forwardRef<HTMLDivElement | HTMLElement, InputProps>(
     const contextTheme = useTheme();
     const theme = contextTheme?.input ?? inputTheme;
     const defaultProps = contextTheme?.input?.defaultProps;
-
-    const [iconRef, { width }] = useElementSize();
+    const [isIconDefined, setIsIconDefined] = React.useState(false);
+    const [iconPlacement, setIconPlacement] = React.useState("start");
 
     size ??= (defaultProps?.size as InputProps["size"]) ?? "md";
     color ??= (defaultProps?.color as InputProps["color"]) ?? "primary";
-    rounded ??= (defaultProps?.rounded as InputProps["rounded"]) ?? false;
-    fullWidth ??= (defaultProps?.fullWidth as InputProps["fullWidth"]) ?? false;
+    isRounded ??= (defaultProps?.isRounded as InputProps["isRounded"]) ?? false;
+    isFullWidth ??=
+      (defaultProps?.isFullWidth as InputProps["isFullWidth"]) ?? false;
     isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
     isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
 
-    const baseStyles = twMerge(
-      theme.baseStyle,
-      fullWidth && theme["fullWidth"],
+    const styles = twMerge(
+      theme.base,
+      theme.size[size],
+      isRounded && theme["isRounded"],
+      isFullWidth && theme["isFullWidth"],
       className,
     );
 
-    const inputStyles = twMerge(
-      theme.inputStyle,
-      theme.color[color],
-      theme.size[size],
-      rounded && theme["rounded"],
-      fullWidth && theme["fullWidth"],
-      isError && theme["isError"],
-      isSuccess && theme["isSuccess"],
-      inputClassName,
-    );
-
-    const iconStyles = twMerge(
-      theme.iconStyle,
-      startIcon && theme["startIcon"],
-      endIcon && theme["endIcon"],
-      iconClassName,
+    const contextValue = React.useMemo(
+      () => ({
+        size,
+        color,
+        isError,
+        isSuccess,
+        iconPlacement,
+        isIconDefined,
+        disabled,
+        setIconPlacement,
+        setIsIconDefined,
+      }),
+      [
+        size,
+        color,
+        isError,
+        isSuccess,
+        iconPlacement,
+        isIconDefined,
+        disabled,
+        setIconPlacement,
+        setIsIconDefined,
+      ],
     );
 
     return (
-      <Element ref={ref} className={baseStyles}>
-        <input
-          {...rest}
-          ref={inputRef}
-          className={inputStyles}
-          style={{
-            paddingLeft: startIcon ? `${width + 12}px` : undefined,
-            paddingRight: endIcon ? `${width + 12}px` : undefined,
-          }}
-        />
-        <span ref={iconRef} className={iconStyles}>
-          {startIcon || endIcon}
-        </span>
+      <Element {...props} ref={ref} className={styles} aria-disabled={disabled}>
+        <InputContext.Provider value={contextValue}>
+          {children}
+        </InputContext.Provider>
       </Element>
     );
   },
 );
 
-Input.displayName = "MaterialTailwind.Input";
+InputRoot.displayName = "MaterialTailwind.Input";
+
+// input field
+export const InputField = React.forwardRef<HTMLInputElement, Props<"input">>(
+  (props, ref) => {
+    const contextTheme = useTheme();
+    const {
+      size,
+      color,
+      iconPlacement,
+      isIconDefined,
+      isError,
+      isSuccess,
+      disabled,
+    } = React.useContext(InputContext);
+    const theme = contextTheme?.inputField ?? inputFieldTheme;
+
+    const styles = twMerge(
+      theme.base,
+      theme.size[size],
+      theme.color[color],
+      props?.className,
+      "peer",
+    );
+
+    return (
+      <input
+        {...props}
+        ref={ref}
+        className={styles}
+        disabled={disabled}
+        data-error={isError}
+        data-success={isSuccess}
+        data-icon-placement={isIconDefined ? iconPlacement : ""}
+      />
+    );
+  },
+);
+
+InputField.displayName = "MaterialTailwind.InputField";
+
+// input icon
+export interface InputIconProps extends Props<"span"> {
+  placement?: "start" | "end";
+}
+
+export const InputIcon = React.forwardRef<HTMLSpanElement, InputIconProps>(
+  ({ placement, ...props }, ref) => {
+    const contextTheme = useTheme();
+    const {
+      size,
+      iconPlacement,
+      setIconPlacement,
+      setIsIconDefined,
+      isError,
+      isSuccess,
+      disabled,
+    } = React.useContext(InputContext);
+    const theme = contextTheme?.inputIcon ?? inputIconTheme;
+    const defaultProps = contextTheme?.inputIcon?.defaultProps;
+
+    placement ??=
+      (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
+
+    React.useEffect(() => {
+      setIsIconDefined(true);
+
+      return () => {
+        setIsIconDefined(false);
+      };
+    }, []);
+
+    React.useEffect(() => {
+      setIconPlacement(placement as string);
+
+      return () => {
+        setIconPlacement("start");
+      };
+    }, [placement]);
+
+    const styles = twMerge(theme.base, theme.size[size], props?.className);
+
+    return (
+      <span
+        {...props}
+        ref={ref}
+        className={styles}
+        data-error={isError}
+        data-success={isSuccess}
+        aria-disabled={disabled}
+        data-placement={iconPlacement}
+      />
+    );
+  },
+);
+
+InputIcon.displayName = "MaterialTailwind.InputIcon";
+
+export const Input = Object.assign(InputRoot, {
+  Field: InputField,
+  Icon: InputIcon,
+});
 
 export default Input;
