@@ -18,7 +18,7 @@ export const radioTheme = {
   },
   baseStyle: "inline-block relative h-5 w-5 rounded-full",
   inputStyle:
-    "peer h-full w-full appearance-none rounded-full bg-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:bg-secondary-dm-main",
+    "peer h-full w-full appearance-none rounded-full bg-secondary-dark transition-all duration-200 ease-in disabled:opacity-50 disabled:pointer-events-none dark:bg-secondary-dm-main",
   inputColor: {
     primary: "checked:bg-primary-main dark:checked:bg-primary-dm-main",
     secondary: "checked:bg-secondary-main dark:checked:bg-secondary-dm-main",
@@ -28,7 +28,7 @@ export const radioTheme = {
     error: "checked:bg-error-main dark:checked:bg-error-dm-main",
   },
   iconStyle:
-    "pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-300 ease-in peer-checked:scale-100 peer-checked:opacity-100",
+    "pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100",
   iconColor: {
     primary: "text-primary-content dark:text-primary-dm-content",
     secondary: "text-secondary-content dark:text-secondary-dm-content",

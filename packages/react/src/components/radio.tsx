@@ -21,6 +21,7 @@ export interface RadioProps extends Props<"input"> {
   iconClassName?: string;
   inputRef?: React.RefObject<HTMLInputElement>;
   iconRef?: React.RefObject<HTMLSpanElement>;
+  children?: React.ReactNode;
 }
 
 /**
@@ -64,6 +65,7 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
       iconClassName,
       inputRef,
       iconRef,
+      children,
       ...rest
     },
     ref,
@@ -92,6 +94,7 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
       theme.inputStyle,
       theme.inputColor[color],
       inputClassName,
+      children && "hidden",
     );
 
     const iconStyles = twMerge(
@@ -102,16 +105,31 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
 
     return (
       <Element ref={ref} className={baseStyles}>
-        <input
-          {...rest}
-          ref={inputRef}
-          type="radio"
-          className={inputStyles}
-          id={rest?.id || innerID}
-        />
-        <span ref={iconRef} className={iconStyles}>
-          {icon}
-        </span>
+        {children ? (
+          <label htmlFor={rest?.id || innerID}>
+            <input
+              {...rest}
+              ref={inputRef}
+              type="radio"
+              className={inputStyles}
+              id={rest?.id || innerID}
+            />
+            {children}
+          </label>
+        ) : (
+          <>
+            <input
+              {...rest}
+              ref={inputRef}
+              type="radio"
+              className={inputStyles}
+              id={rest?.id || innerID}
+            />
+            <span ref={iconRef} className={iconStyles}>
+              {icon}
+            </span>
+          </>
+        )}
       </Element>
     );
   },

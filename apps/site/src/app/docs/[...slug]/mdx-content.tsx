@@ -16,6 +16,7 @@ import * as Switch from "@components/docs/switch";
 import * as Input from "@components/docs/input";
 import * as Textarea from "@components/docs/textarea";
 import * as Rating from "@components/docs/rating";
+import * as Select from "@material-tailwind/react/dist";
 
 const components = {
   ComponentPreview,
@@ -85,6 +86,7 @@ const components = {
   Input,
   Textarea,
   Rating,
+  Select,
 };
 
 type MdxContentProps = {

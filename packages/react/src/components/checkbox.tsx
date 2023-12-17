@@ -21,6 +21,7 @@ export interface CheckboxProps extends Props<"input"> {
   iconClassName?: string;
   inputRef?: React.RefObject<HTMLInputElement>;
   iconRef?: React.RefObject<HTMLSpanElement>;
+  children?: React.ReactNode;
 }
 
 /**
@@ -52,6 +53,7 @@ export const Checkbox = React.forwardRef<
       iconClassName,
       inputRef,
       iconRef,
+      children,
       ...rest
     },
     ref,
@@ -86,6 +88,7 @@ export const Checkbox = React.forwardRef<
       theme.inputStyle,
       theme.inputColor[color],
       inputClassName,
+      children && "hidden",
     );
 
     const iconStyles = twMerge(
@@ -96,16 +99,31 @@ export const Checkbox = React.forwardRef<
 
     return (
       <Element ref={ref} className={baseStyles}>
-        <input
-          {...rest}
-          ref={inputRef}
-          type="checkbox"
-          className={inputStyles}
-          id={rest?.id || innerID}
-        />
-        <span ref={iconRef} className={iconStyles}>
-          {icon}
-        </span>
+        {children ? (
+          <label htmlFor={rest?.id || innerID}>
+            <input
+              {...rest}
+              ref={inputRef}
+              type="checkbox"
+              className={inputStyles}
+              id={rest?.id || innerID}
+            />
+            {children}
+          </label>
+        ) : (
+          <>
+            <input
+              {...rest}
+              ref={inputRef}
+              type="checkbox"
+              className={inputStyles}
+              id={rest?.id || innerID}
+            />
+            <span ref={iconRef} className={iconStyles}>
+              {icon}
+            </span>
+          </>
+        )}
       </Element>
     );
   },

@@ -32,6 +32,7 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
+    "@floating-ui/react": "0.26.3",
     "@react-aria/button": "3.8.2",
     "class-variance-authority": "0.7.0",
     "clsx": "1.2.1",

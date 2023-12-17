@@ -8,8 +8,8 @@ export function CustomRadio() {
         <Radio
           id="black"
           name="color"
-          baseClassName="rounded"
-          className="rounded bg-gray-200 dark:bg-gray-900"
+          className="rounded"
+          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography
@@ -24,8 +24,8 @@ export function CustomRadio() {
         <Radio
           id="white"
           name="color"
-          baseClassName="rounded"
-          className="rounded bg-gray-200 dark:bg-gray-900"
+          className="rounded"
+          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography

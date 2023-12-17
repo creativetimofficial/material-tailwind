@@ -1,33 +1,33 @@
 ---
-title: Tailwind CSS Checkbox for React - Material Tailwind
-description: Customise your web projects  with our beautiful checkbox component for Tailwind CSS and React using Material Design guidelines.
-github: checkbox
-prev: docs/react/button-group
-next: docs/react/icon-button
+title: Tailwind CSS Switch for React - Material Tailwind
+description: Customise your web projects  with our beautiful switch component for Tailwind CSS and React using Material Design guidelines.
+github: switch
+prev: docs/react/slider
+next: docs/react/textarea
 ---
 
-# Tailwind CSS Checkbox - React
+# Tailwind CSS Switch - React
 
-Use our Tailwind CSS `Checkbox` to allow the user to select one or more items from a set.
+Use our Tailwind CSS `Switch` to allow the user to select one or more items from a set.
 
-You can use a `Checkbox` for:
+You can use a `Switch` for:
 
 - Selecting one or more options from a list.
 - Presenting a list containing sub-selections.
-- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Checkbox` and use an on/off switch instead).
+- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Switch` and use an on/off switch instead).
 
-See below our simple `Checkbox` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
+See below our simple `Switch` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
 
 ---
 
-## Checkbox Demo
+## Switch Demo
 
 <ComponentPreview demo={<Switch.SwitchDemo />}>
 ```tsx
-import { Checkbox } from "@material-tailwind/react";
+import { Switch } from "@material-tailwind/react";
 
-export function CheckboxDemo() {
-  return <Checkbox />;
+export function SwitchDemo() {
+  return <Switch />;
 }
 ```
 </ComponentPreview>
@@ -104,7 +104,7 @@ export function DisabledSwitch() {
 
 ---
 
-## Checkbox With Link
+## Switch With Link
 
 <ComponentPreview demo={<Switch.SwitchWithLink />}>
 ```tsx
@@ -164,15 +164,15 @@ export function SwitchWithDescription() {
 
 ## Custom Switch
 
-You can customize the `Switch` using the `baseClassName`, `className` and `iconClassName` props.
+You can customize the `Switch` using the `className` prop.
 
 <ComponentPreview demo={<Switch.CustomSwitch />}>
 ```tsx
-import { Switch } from "@material-tailwind/react";
+import { Switch } from "@material-tailwind/react/dist";
 
 export function CustomSwitch() {
   return (
-    <Switch />
+    <Switch className="after:shadow-sm after:shadow-black/10 checked:before:bg-[#2ec946] dark:before:bg-slate-700 dark:after:bg-white dark:checked:before:bg-[#2ec946]" />
   );
 }
 ```

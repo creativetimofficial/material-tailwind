@@ -90,18 +90,29 @@ export function CheckboxWithLabel() {
 
 ## Checkbox With Custom Icon
 
-You can modify the `Checkbox` checked icon using the `icon` prop.
+You can use icons to behave as a `Checkbox` using the `children` prop for `Checkbox`, you can use the `peer-checked` class to set the styles for the icons based on the `Checkbox` state.
 
 The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 
 <ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
 ```tsx
-import { Star } from "iconoir-react";
+import { Star, StarSolid } from "iconoir-react";
 import { Checkbox } from "@material-tailwind/react";
 
+const SHARED_CLASSES = "absolute inset-0 h-full w-full";
+
 export function CheckboxWithCustomIcon() {
-  return <Checkbox icon={<Star className="h-4 w-4 stroke-2" />} />;
+  return (
+    <Checkbox>
+      <Star
+        className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
+      />
+      <StarSolid
+        className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
+      />
+    </Checkbox>
+  );
 }
 ```
 </ComponentPreview>
@@ -184,7 +195,7 @@ export function CheckboxWithDescription() {
 
 ## Custom Checkbox
 
-You can customize the `Checkbox` using the `baseClassName`, `className` and `iconClassName` props.
+You can customize the `Checkbox` using the  `className`, `inputClassName`, and `iconClassName` props.
 
 <ComponentPreview demo={<Checkbox.CustomCheckbox />}>
 ```tsx
@@ -194,7 +205,7 @@ export function CustomCheckbox() {
   return (
     <Checkbox
       iconClassName="scale-50 peer-checked:scale-75"
-      className="rounded-full bg-gray-200 dark:bg-gray-900"
+      inputClassName="rounded-full bg-gray-200 dark:bg-gray-900"
     />
   );
 }

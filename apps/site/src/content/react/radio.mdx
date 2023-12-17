@@ -70,36 +70,52 @@ export function RadioColors() {
 
 ## Radio Button With Custom Icon
 
-You can modify the `Radio` checked icon using the `icon` prop.
+You can use icons to behave as a `Radio` using the `children` prop for `Radio`, you can use the `peer-checked` class to set the styles for the icons based on the `Radio` state.
 
 The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 <ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
 ```tsx
-import { Check } from "iconoir-react";
+import { Star, StarSolid } from "iconoir-react";
 import { Radio, Typography } from "@material-tailwind/react";
+
+const SHARED_CLASSES = "absolute inset-0 h-full w-full";
 
 export function RadioWithCustomIcon() {
   return (
     <div className="flex gap-10">
       <div className="flex items-center gap-2">
-        <Radio
-          id="male"
-          name="gender"
-          icon={<Check className="h-4 w-4 stroke-2" />}
-        />
-        <Typography as="label" htmlFor="male" className="text-gray-500 dark:text-gray-400">
-          Male
+        <Radio id="javascript" name="variant">
+          <Star
+            className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
+          />
+          <StarSolid
+            className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
+          />
+        </Radio>
+        <Typography
+          as="label"
+          htmlFor="javascript"
+          className="text-gray-500 dark:text-gray-400"
+        >
+          JavaScript
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio
-          id="female"
-          name="gender"
-          icon={<Check className="h-4 w-4 stroke-2" />}
-        />
-        <Typography as="label" htmlFor="female" className="text-gray-500 dark:text-gray-400">
-          Female
+        <Radio id="typescript" name="variant">
+          <Star
+            className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
+          />
+          <StarSolid
+            className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
+          />
+        </Radio>
+        <Typography
+          as="label"
+          htmlFor="typescript"
+          className="text-gray-500 dark:text-gray-400"
+        >
+          TypeScript
         </Typography>
       </div>
     </div>
@@ -239,7 +255,7 @@ export function RadioWithDescription() {
 
 ## Custom Radio Button
 
-You can customize the `Radio` using the `baseClassName`, `className` and `iconClassName` props.
+You can customize the `Radio` using the `className`, `inputClassName` and `iconClassName` props.
 
 The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
@@ -255,8 +271,8 @@ export function CustomRadio() {
         <Radio
           id="black"
           name="color"
-          baseClassName="rounded"
-          className="rounded bg-gray-200 dark:bg-gray-900"
+          className="rounded"
+          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography
@@ -271,8 +287,8 @@ export function CustomRadio() {
         <Radio
           id="white"
           name="color"
-          baseClassName="rounded"
-          className="rounded bg-gray-200 dark:bg-gray-900"
+          className="rounded"
+          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography
