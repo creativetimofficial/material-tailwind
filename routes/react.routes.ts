@@ -155,6 +155,10 @@ export const routes = [
         route: "form",
       },
       {
+        name: "Gallery",
+        route: "gallery",
+      },
+      {
         name: "Icon Button",
         route: "icon-button",
       },

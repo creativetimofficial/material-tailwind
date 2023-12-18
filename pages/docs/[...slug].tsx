@@ -76,6 +76,7 @@ import * as TextareaExamples from "docs-content/react/textarea";
 import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
 import * as SkeletonExamples from "docs-content/react/skeleton";
+import * as GalleryExamples from "docs-content/react/gallery";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
@@ -353,7 +354,7 @@ const components = {
   ColorPalette,
   Plugins,
   SkeletonExamples,
-
+  GalleryExamples,
   // html docs content
   HtmlPlugins,
   HTMLButtonExamples,
