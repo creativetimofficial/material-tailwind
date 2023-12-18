@@ -159,7 +159,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           </a>
         </Tooltip>
         <Link href="/blocks#pricing">
-          <Button size="sm" className="flex items-center justify-between bg-deep-orange-500 py-2.5">Black Friday</Button>
+          <Button size="sm" className="flex items-center justify-between bg-gray-900 py-2.5">
+            Pricing & FAQ
+          </Button>
         </Link>
       </div>
     </div>
