@@ -102,7 +102,7 @@ export const routes = [
         route: "button",
       },
       {
-        name: "Button-Group",
+        name: "Button Group",
         route: "button-group",
       },
 
@@ -117,14 +117,6 @@ export const routes = [
       {
         name: "Chip",
         route: "chip",
-      },
-      {
-        name: "Collapse",
-        route: "collapse",
-      },
-      {
-        name: "Carousel",
-        route: "carousel",
       },
       {
         name: "Dialog",
