@@ -47,6 +47,50 @@ export const routes = [
         name: "Laravel",
         route: "guide/laravel",
       },
+      {
+        name: "Angular",
+        route: "guide/angular",
+      },
+      {
+        name: "Remix",
+        route: "guide/remix",
+      },
+      {
+        name: "Meteor.js",
+        route: "guide/meteor",
+      },
+      {
+        name: "Gatsby",
+        route: "guide/gatsby",
+      },
+      {
+        name: "Solid.js",
+        route: "guide/solid",
+      },
+      {
+        name: "Qwik",
+        route: "guide/qwik",
+      },
+      {
+        name: "Symfony",
+        route: "guide/symfony",
+      },
+      {
+        name: "Rails",
+        route: "guide/rails",
+      },
+      {
+        name: "Phoenix",
+        route: "guide/phoenix",
+      },
+      {
+        name: "Django",
+        route: "guide/django",
+      },
+      {
+        name: "Flask",
+        route: "guide/flask",
+      },
     ],
   },
   {
