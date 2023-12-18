@@ -43,7 +43,13 @@ export function DefaultSidebar() {
           </ListItemPrefix>
           Inbox
           <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+            <Chip
+              value="14"
+              size="sm"
+              variant="ghost"
+              color="blue-gray"
+              className="rounded-full"
+            />
           </ListItemSuffix>
         </ListItem>
         <ListItem>

@@ -208,6 +208,10 @@ export const routes = [
         route: "sidebar",
       },
       {
+        name: "Skeleton",
+        route: "skeleton",
+      },
+      {
         name: "Slider",
         route: "slider",
       },
