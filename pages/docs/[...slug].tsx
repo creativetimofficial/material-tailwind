@@ -181,7 +181,7 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
-import OfferBar from "widgets/campaign/offer-bar";
+import OfferBar from "widgets/offer-bar";
 
 const components = {
   h1: (props) => (
