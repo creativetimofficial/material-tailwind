@@ -77,6 +77,7 @@ import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
 import * as SkeletonExamples from "docs-content/react/skeleton";
 import * as GalleryExamples from "docs-content/react/gallery";
+import * as MegaMenuExamples from "docs-content/react/mega-menu";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
@@ -355,6 +356,7 @@ const components = {
   Plugins,
   SkeletonExamples,
   GalleryExamples,
+  MegaMenuExamples,
   // html docs content
   HtmlPlugins,
   HTMLButtonExamples,

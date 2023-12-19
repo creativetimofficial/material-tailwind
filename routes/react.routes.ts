@@ -180,6 +180,10 @@ export const routes = [
         route: "menu",
       },
       {
+        name: "Mega Menu",
+        route: "mega-menu",
+      },
+      {
         name: "Navbar",
         route: "navbar",
       },
@@ -276,6 +280,10 @@ export const routes = [
       {
         name: "Charts",
         route: "/plugins/charts",
+      },
+      {
+        name: "Clipboard",
+        route: "/plugins/clipboard",
       },
       {
         name: "Date Picker",

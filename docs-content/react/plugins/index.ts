@@ -3,3 +3,7 @@ export * from "./algolia-search";
 export * from "./charts/line-chart";
 export * from "./charts/bar-chart";
 export * from "./charts/pie-chart";
+export * from "./clipboard/clipboard-default";
+export * from "./clipboard/clipboard-copy-input";
+export * from "./clipboard/clipboard-copy-button";
+export * from "./clipboard/clipboard-with-tooltip";
