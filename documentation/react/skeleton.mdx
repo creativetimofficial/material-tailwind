@@ -1,0 +1,212 @@
+---
+title: Tailwind CSS Skeleton for React - Material Tailwind
+description: Customise your web projects with our easy-to-use skeleton component for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "skeleton",
+    "image-placeholder-skeleton",
+    "video-placeholder-skeleton",
+    "card-placeholder-skeleton",
+    "testimonial-placeholder-skeleton"
+  ]
+github: skeleton
+prev: sidebar
+next: speed-dial
+---
+
+<DocsTitle href="skeleton">
+# Tailwind CSS Skeleton - React
+</DocsTitle>
+
+The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video
+
+See below our simple <Code>Skeleton</Code> example that you can use in your Tailwind CSS and React project.
+
+<br />
+
+<CodePreview component={<SkeletonExamples.DefaultSkeleton />}>
+```jsx
+import { Typography } from "@material-tailwind/react";
+export function DefaultSkeleton() {
+  return (
+    <div className="max-w-md animate-pulse">
+      <Typography
+        variant="h1"
+        className="mb-4 h-2.5 w-52 rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography
+        variant="h3"
+        className="mb-2.5 h-2 w-72 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography
+        variant="h3"
+        className="mb-2.5 h-2 w-64 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography
+        variant="h3"
+        className="mb-2.5 h-2 w-72 max-w-[330px] rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography
+        variant="h3"
+        className="mb-2.5 h-2 w-60 max-w-[300px] rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography
+        variant="h3"
+        className="h-2 w-72 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+      ></Typography>
+      <Typography variant="small" className="sr-only">
+        Loading...
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="image-placeholder-skeleton">
+## Image placeholder Skeleton 
+</DocsTitle>
+
+<CodePreview component={<SkeletonExamples.ImagePlacehoderSkeleton />}>
+```jsx
+import { Typography } from "@material-tailwind/react";
+
+export function ImagePlacehoderSkeleton() {
+  return (
+    <div className="animate-pulse space-y-8 rtl:space-x-reverse md:flex md:items-center md:space-y-0 md:space-x-8">
+      <div className="flex h-48 w-full items-center justify-center rounded bg-gray-300 dark:bg-gray-700 sm:w-96">
+        <svg
+          className="h-10 w-10 text-gray-200 dark:text-gray-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 18"
+        >
+          <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+        </svg>
+      </div>
+      <div className="w-full">
+        <Typography
+          variant="h1"
+          className="mb-4 h-2.5 w-52 rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography
+          variant="h3"
+          className="mb-2.5 h-2 w-72 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography
+          variant="h3"
+          className="mb-2.5 h-2 w-64 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography
+          variant="h3"
+          className="mb-2.5 h-2 w-72 max-w-[330px] rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography
+          variant="h3"
+          className="mb-2.5 h-2 w-60 max-w-[300px] rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography
+          variant="h3"
+          className="h-2 w-72 max-w-[360px] rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <Typography variant="small" className="sr-only">
+          Loading...
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="video-placeholder-skeleton">
+## Video placeholder Skeleton 
+</DocsTitle>
+
+<CodePreview component={<SkeletonExamples.VideoPlacehoderSkeleton />}>
+```jsx
+import { Typography } from "@material-tailwind/react";
+export function VideoPlacehoderSkeleton() {
+  return (
+    <div className="flex h-56 w-full max-w-sm animate-pulse items-center justify-center rounded-lg bg-gray-300 dark:bg-gray-700">
+      <svg
+        className="h-10 w-10 text-gray-200 dark:text-gray-600"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 16 20"
+      >
+        <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+        <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM9 13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2Zm4 .382a1 1 0 0 1-1.447.894L10 13v-2l1.553-1.276a1 1 0 0 1 1.447.894v2.764Z" />
+      </svg>
+      <Typography variant="paragraph" className="sr-only">
+        Loading...
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+<DocsTitle href="card-placeholder-skeleton">
+## Card placeholder Skeleton 
+</DocsTitle>
+
+<CodePreview component={<SkeletonExamples.CardPlacehoderSkeleton />}>
+```jsx
+import { Button, Typography } from "@material-tailwind/react";
+import Card, {
+  CardBody,
+  CardFooter,
+  CardHeader,
+} from "packages/material-tailwind-react/src/components/Card";
+
+export function CardPlacehoderSkeleton() {
+  return (
+    <Card className="mt-6 w-96 animate-pulse">
+      <CardHeader
+        color="blue-gray"
+        className="relative flex h-56 items-center justify-center bg-gray-200 dark:bg-gray-700"
+      >
+        <svg
+          className="h-10 w-10 text-gray-300 dark:text-gray-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 16 20"
+        >
+          <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+          <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+        </svg>
+      </CardHeader>
+      <CardBody>
+        <Typography
+          variant="h5"
+          color="blue-gray"
+          className="mb-2 h-3 w-56 rounded-full bg-gray-200 dark:bg-gray-700"
+        ></Typography>
+        <div className="flex flex-col">
+          <Typography className="mb-2 h-2 w-72 rounded-full bg-gray-200 dark:bg-gray-700"></Typography>
+          <Typography className="mb-2 h-2 w-72 rounded-full bg-gray-200 dark:bg-gray-700"></Typography>
+          <Typography className="mb-2 h-2 w-60 rounded-full bg-gray-200 dark:bg-gray-700"></Typography>
+          <Typography className="mb-2 h-2 w-40 rounded-full bg-gray-200 dark:bg-gray-700"></Typography>
+        </div>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button className="h-8 w-20 bg-gray-200"></Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+</CodePreview>
+

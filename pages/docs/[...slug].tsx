@@ -75,6 +75,9 @@ import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
 import * as Plugins from "docs-content/react/plugins";
 import ReleaseNotes from "docs-content/react/release-notes";
+import * as SkeletonExamples from "docs-content/react/skeleton";
+import * as GalleryExamples from "docs-content/react/gallery";
+import * as MegaMenuExamples from "docs-content/react/mega-menu";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
@@ -116,6 +119,9 @@ import * as HTMLTableExamples from "docs-content/html/table";
 import * as HTMLVideoExamples from "docs-content/html/video";
 import * as HTMLSidebarExamples from "docs-content/html/sidebar";
 import { ReleaseNotes as HTMLReleaseNotes } from "docs-content/html/release-notes";
+import * as HTMLGalleryExamples from "docs-content/html/gallery";
+import * as HTMLSkeletonExamples from "docs-content/html/skeleton";
+import * as HTMLMegaMenuExamples from "docs-content/html/mega-menu";
 
 // @material-tailwind/react
 import {
@@ -351,7 +357,9 @@ const components = {
   ReleaseNotes,
   ColorPalette,
   Plugins,
-
+  SkeletonExamples,
+  GalleryExamples,
+  MegaMenuExamples,
   // html docs content
   HtmlPlugins,
   HTMLButtonExamples,
@@ -392,6 +400,9 @@ const components = {
   HTMLVideoExamples,
   HTMLSidebarExamples,
   HTMLReleaseNotes,
+  HTMLGalleryExamples,
+  HTMLSkeletonExamples,
+  HTMLMegaMenuExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
