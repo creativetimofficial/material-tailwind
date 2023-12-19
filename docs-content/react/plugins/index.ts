@@ -7,3 +7,4 @@ export * from "./clipboard/clipboard-default";
 export * from "./clipboard/clipboard-copy-input";
 export * from "./clipboard/clipboard-copy-button";
 export * from "./clipboard/clipboard-with-tooltip";
+export * from "./text-editor-react";
