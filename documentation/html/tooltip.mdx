@@ -25,7 +25,7 @@ See below our example that will help you create a simple tooltip for your projec
 
 <br />
 
-You can initialize a new tooltip by adding the <Code html>data-tooltip-target="`{tooltipName}`"</Code> data attribute to the trigger element and the <Code html>data-tooltip="`{tooltipName}`"</Code> to the element that you want to use as the tooltip.
+You can initialize a new tooltip by adding the <Code>data-tooltip-target="`{tooltipName}`"</Code> data attribute to the trigger element and the <Code>data-tooltip="`{tooltipName}`"</Code> to the element that you want to use as the tooltip.
 
 <CodePreview
   id="tooltip"
@@ -48,7 +48,7 @@ You can initialize a new tooltip by adding the <Code html>data-tooltip-target="`
 
 ## Tooltip Placement
 
-You can change the position of the tooltip relative to it's trigger element by adding the <Code html>data-tooltip-placement="`{top}`"</Code> data attribute to the tooltip element by default it set's to <Code html>top</Code>. <br /> Check the placement values for tooltip <a className="hover:text-blue-500 font-medium" href="#tooltip-data-attributes">here</a>.
+You can change the position of the tooltip relative to it's trigger element by adding the <Code>data-tooltip-placement="`{top}`"</Code> data attribute to the tooltip element by default it set's to <Code>top</Code>. <br /> Check the placement values for tooltip <a className="hover:text-blue-500 font-medium" href="#tooltip-data-attributes">here</a>.
 
 <CodePreview
   id="tooltip-placement"
@@ -167,7 +167,7 @@ You can change the position of the tooltip relative to it's trigger element by a
 
 ## Custom Tooltip Animation
 
-You can modify the open/close state animation for tooltip by adding the <Code html>data-tooltip-mount="`{opacity-100}`"</Code>, <Code html>data-tooltip-unmount="`{opacity-0}`"</Code> and <Code html>data-tooltip-transition="`{transition-opacity}`"</Code> data attributes to the tooltip element. You can pass tailwind css classnames for those data attributes for animation the tooltip. <br /> Check more about animation data attributes for tooltip <a className="hover:text-blue-500 font-medium" href="#tooltip-data-attributes">here</a>.
+You can modify the open/close state animation for tooltip by adding the <Code>data-tooltip-mount="`{opacity-100}`"</Code>, <Code>data-tooltip-unmount="`{opacity-0}`"</Code> and <Code>data-tooltip-transition="`{transition-opacity}`"</Code> data attributes to the tooltip element. You can pass tailwind css classnames for those data attributes for animation the tooltip. <br /> Check more about animation data attributes for tooltip <a className="hover:text-blue-500 font-medium" href="#tooltip-data-attributes">here</a>.
 
 <CodePreview
   id="custom-tooltip-animation"
@@ -210,10 +210,10 @@ The following data attributes are available for tooltip element.
 | ------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | `data-tooltip`            | Set the name of the tooltip and reference it to the <br /> tooltip trigger element. |                                                                          |
 | `data-tooltip-offset`     | Set the offset between the tooltip and the tooltip trigger element.                 | 5                                                                        |
-| `data-tooltip-placement`  | Set the position of the tooltip relative to it's trigger element.                   | <Code html>top</Code>                                                    |
-| `data-tooltip-mount`      | Set the classnaes that should be used when the <br /> tooltip is visible.           | <Code html>opacity-1</Code>                                              |
-| `data-tooltip-unmount`    | Set the classnaes that should be used when the <br /> tooltip is hidden.            | <Code html>opacity-0</Code><br /><Code html>pointer-events-none</Code>   |
-| `data-tooltip-transition` | Set the classnaes that should be used for <br /> transition of the tooltip.         | <Code html>transition-opacity</Code><br /><Code html>duration-300</Code> |
+| `data-tooltip-placement`  | Set the position of the tooltip relative to it's trigger element.                   | <Code>top</Code>                                                    |
+| `data-tooltip-mount`      | Set the classnaes that should be used when the <br /> tooltip is visible.           | <Code>opacity-1</Code>                                              |
+| `data-tooltip-unmount`    | Set the classnaes that should be used when the <br /> tooltip is hidden.            | <Code>opacity-0</Code><br /><Code>pointer-events-none</Code>   |
+| `data-tooltip-transition` | Set the classnaes that should be used for <br /> transition of the tooltip.         | <Code>transition-opacity</Code><br /><Code>duration-300</Code> |
 
 ---
 

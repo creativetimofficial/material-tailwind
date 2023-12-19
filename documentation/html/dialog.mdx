@@ -27,9 +27,9 @@ A dialog is a type of modal window with critical information which disable all a
 
 See below our dialog example that you can use for your Tailwind CSS project.
 
-You can initialize a new dialog by adding the <Code html>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code html>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code html>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
+You can initialize a new dialog by adding the <Code>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
 
-You can also use the <Code html>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
+You can also use the <Code>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
 
 <br />
 
@@ -282,7 +282,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
 
 ## Custom Dialog Animation
 
-You can modify the open/close state animation for dialog by adding the <Code html>data-dialog-mount="`{opacity-100}`"</Code>, <Code html>data-dialog-unmount="`{opacity-0}`"</Code> and <Code html>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
+You can modify the open/close state animation for dialog by adding the <Code>data-dialog-mount="`{opacity-100}`"</Code>, <Code>data-dialog-unmount="`{opacity-0}`"</Code> and <Code>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
 
 <CodePreview
   id="custom-dialog-animation"
@@ -661,9 +661,9 @@ The following data attributes are available for dialog element.
 | Attribute                 | Description                                                                                     | Default                                                                                                       |
 | ------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `data-dialog`             | Set the name of the dialog and reference it to the <br /> dialog trigger and backdrop elements. |                                                                                                               |
-| `data-popover-mount`      | Set the classnaes that should be used when the <br /> dialog is visible.                        | <Code html>opacity-1</Code><br /><Code html>translate-y-0</Code>                                              |
-| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> dialog is hidden.                         | <Code html>opacity-0</Code><br /><Code html>-translate-y-14</Code><br /><Code html>pointer-events-none</Code> |
-| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the dialog.                      | <Code html>transition-all</Code><br /><Code html>duration-300</Code>                                          |
+| `data-popover-mount`      | Set the classnaes that should be used when the <br /> dialog is visible.                        | <Code>opacity-1</Code><br /><Code>translate-y-0</Code>                                              |
+| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> dialog is hidden.                         | <Code>opacity-0</Code><br /><Code>-translate-y-14</Code><br /><Code>pointer-events-none</Code> |
+| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the dialog.                      | <Code>transition-all</Code><br /><Code>duration-300</Code>                                          |
 
 ---
 

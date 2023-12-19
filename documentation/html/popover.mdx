@@ -27,7 +27,7 @@ See below our popover component examples.
 
 <br />
 
-You can initialize a new popover by adding the <Code html>data-popover-target="`{popoverName}`"</Code> data attribute to the trigger element and the <Code html>data-popover="`{popoverName}`"</Code> to the element that you want to use as the popover.
+You can initialize a new popover by adding the <Code>data-popover-target="`{popoverName}`"</Code> data attribute to the trigger element and the <Code>data-popover="`{popoverName}`"</Code> to the element that you want to use as the popover.
 
 <CodePreview
   id="popover"
@@ -50,7 +50,7 @@ You can initialize a new popover by adding the <Code html>data-popover-target="`
 
 ## Popover Placement
 
-You can change the position of the popover relative to it's trigger element by adding the <Code html>data-popover-placement="`{top}`"</Code> data attribute to the popover element by default it set's to <Code html>top</Code>. <br /> Check the placement values for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
+You can change the position of the popover relative to it's trigger element by adding the <Code>data-popover-placement="`{top}`"</Code> data attribute to the popover element by default it set's to <Code>top</Code>. <br /> Check the placement values for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
 
 <CodePreview
   id="popover-placement"
@@ -169,7 +169,7 @@ You can change the position of the popover relative to it's trigger element by a
 
 ## Custom Popover Animation
 
-You can modify the open/close state animation for popover by adding the <Code html>data-popover-mount="`{opacity-100}`"</Code>, <Code html>data-popover-unmount="`{opacity-0}`"</Code> and <Code html>data-popover-transition="`{transition-opacity}`"</Code> data attributes to the popover element. You can pass tailwind css classnames for those data attributes for animation the popover. <br /> Check more about animation data attributes for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
+You can modify the open/close state animation for popover by adding the <Code>data-popover-mount="`{opacity-100}`"</Code>, <Code>data-popover-unmount="`{opacity-0}`"</Code> and <Code>data-popover-transition="`{transition-opacity}`"</Code> data attributes to the popover element. You can pass tailwind css classnames for those data attributes for animation the popover. <br /> Check more about animation data attributes for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
 
 <CodePreview
   id="custom-popover-animation"
@@ -441,10 +441,10 @@ The following data attributes are available for popover element.
 | ------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | `data-popover`            | Set the name of the popover and reference it to the <br /> popover trigger element. |                                                                          |
 | `data-popover-offset`     | Set the offset between the popover and the popover trigger element.                 | 5                                                                        |
-| `data-popover-placement`  | Set the position of the popover relative to it's trigger element.                   | <Code html>top</Code>                                                    |
-| `data-popover-mount`      | Set the classnaes that should be used when the <br /> popover is visible.           | <Code html>opacity-1</Code>                                              |
-| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> popover is hidden.            | <Code html>opacity-0</Code><br /><Code html>pointer-events-none</Code>   |
-| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the popover.         | <Code html>transition-opacity</Code><br /><Code html>duration-300</Code> |
+| `data-popover-placement`  | Set the position of the popover relative to it's trigger element.                   | <Code>top</Code>                                                    |
+| `data-popover-mount`      | Set the classnaes that should be used when the <br /> popover is visible.           | <Code>opacity-1</Code>                                              |
+| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> popover is hidden.            | <Code>opacity-0</Code><br /><Code>pointer-events-none</Code>   |
+| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the popover.         | <Code>transition-opacity</Code><br /><Code>duration-300</Code> |
 
 ---
 
