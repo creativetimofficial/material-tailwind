@@ -1,47 +1,3 @@
----
-title: Tailwind CSS WYSIWYG Editor for React - Material Tailwind
-description: Customise your web projects with our easy-to-use WYSIWYG Editor example for Tailwind CSS and React using Material Design guidelines.
-navigation:
-  [
-    "wysiwyg-editor",
-    "plugins-installation",
-    "adding-styles",
-  ]
-github: plugins/text-editor
-prev: table
-next: plugins/algolia-search
----
-
-<DocsTitle href="wysiwyg-editor">
-# Tailwind CSS WYSIWYG Editor - React
-</DocsTitle>
-
-Use our Tailwind CSS WYSIWYG Editor  in your web projects.
-
-See below our beautiful WYSIWYG Editor example that you can use in your Tailwind CSS and React project. The example below is using the <Code>lexical</Code> and <Code>@lexical/react</Code> libraries, make sure to install them before using the example.
-
-```bash
-npm install --save lexical @lexical/react
-```
-
-<br />
-<br />
-
-<DocsTitle href="plugins-installation">
-## Plugins Installation
-</DocsTitle>
-
-Lexical provides a set of plugins that you can use to extend the functionality of the editor. In the example below we are using some of the plugins and you need to install them, run the below command to install the plugins.
-
-<br />
-<br />
-
-```bash
-npm install --save @lexical/list @lexical/rich-text @lexical/code @lexical/link @lexical/selection @lexical/utils
-```
-
-<CodePreview component={<Plugins.TextEditorReact />}>
-```jsx
 import { createPortal } from "react-dom";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -70,8 +26,6 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
 } from "@lexical/list";
 import {
-  QuoteNode,
-  HeadingNode,
   $isHeadingNode,
   $createQuoteNode,
   $createHeadingNode,
@@ -83,16 +37,13 @@ import {
   getDefaultCodeLanguage,
 } from "@lexical/code";
 import { ListItemNode, ListNode } from "@lexical/list";
-import {
-  AutoLinkNode,
-  LinkNode,
-  $isLinkNode,
-  TOGGLE_LINK_COMMAND,
-} from "@lexical/link";
+import { AutoLinkNode, LinkNode } from "@lexical/link";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
+import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { $wrapNodes, $isAtNodeEnd } from "@lexical/selection";
+import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { $getNearestNodeOfType, mergeRegister } from "@lexical/utils";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
@@ -1084,7 +1035,7 @@ const editorConfig = {
   ],
 };
 
-export function TextEditorReact() {
+export default function TextEditorReact() {
   return (
     <LexicalComposer initialConfig={editorConfig as any}>
       <div className="relative mx-auto my-5 w-full max-w-xl rounded-lg border border-gray-300 text-left font-normal leading-5 text-gray-900">
@@ -1105,48 +1056,3 @@ export function TextEditorReact() {
     </LexicalComposer>
   );
 }
-```
-</CodePreview>
-
-<br />
-<br />
-
-<DocsTitle href="adding-styles">
-## Adding Styles
-</DocsTitle>
-
-You need to put the below code to your tailwind css stylesheet file, this will add the styles for elements and formatters of the editor.
-
-```css
-.lexical h1 {
-  @apply block font-sans text-4xl font-semibold leading-[1.3] tracking-normal text-inherit antialiased;
-}
-
-.lexical h2 {
-  @apply block font-sans text-3xl font-semibold leading-snug tracking-normal text-inherit antialiased;
-}
-
-.lexical p {
-  @apply block font-sans text-base font-normal leading-relaxed text-inherit antialiased;
-}
-
-.lexical ul {
-  @apply list-inside list-disc;
-}
-
-.lexical ol {
-  @apply list-inside list-decimal;
-}
-
-.lexical li {
-  @apply font-sans text-base font-normal leading-relaxed text-inherit antialiased;
-}
-
-.lexical blockquote {
-  @apply block font-sans text-xl font-normal leading-relaxed text-inherit antialiased;
-}
-
-.lexical code {
-  @apply rounded-md bg-gray-900/[0.1] px-1 py-0.5 text-sm font-normal text-gray-900;
-}
-```

@@ -290,7 +290,7 @@ export const routes = [
         route: "/plugins/date-picker",
       },
       {
-        name: "wysiwyg-editor",
+        name: "WSSIWYG Editor",
         route: "/plugins/text-editor",
       },
     ],
