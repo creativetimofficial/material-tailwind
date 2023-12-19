@@ -192,9 +192,9 @@ module.exports = withMT({
 
 <br />
 
-Start the local server by running:
+Activate the environment and start the local server by running:
 ```bash
-python app.py
+. venv/bin/activate && python app.py
 ```
 
 ---
@@ -210,7 +210,7 @@ The ripple effect used in @material-tailwind/html is a separate package called <
 
 ```html
 <!-- from node_modules -->
-<script async src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+<script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
 
 <!-- from cdn -->
 <script async defer src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
