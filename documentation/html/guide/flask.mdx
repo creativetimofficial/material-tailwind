@@ -1,6 +1,6 @@
 ---
-title: Laravel - Installation Guide
-description: Learn how to use Material Tailwind components with Laravel and Tailwind CSS to easily create elegant and flexible pages.
+title: Flask - Installation Guide
+description: Learn how to use Material Tailwind components with Flask and Tailwind CSS to easily create elegant and flexible pages.
 navigation:
   [
     "installation",
@@ -11,63 +11,117 @@ navigation:
     "ripple-effect",
     "example",
   ]
-github: guide/laravel
+github: guide/flask
 prev: installation
 next: license
 ---
 
-# Material Tailwind with Laravel
+# Material Tailwind with Flask
 
 <span id="installation" className="scroll-mt-48" />
-Learn how to setup and install @material-tailwind/html with Laravel.
+Learn how to setup and install @material-tailwind/html with Flask.
 
 <br />
 <br />
 
-First you need to create a new project using Laravel, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://laravel.com/docs/10.x/installation?ref=material-tailwind">Laravel Official Documentation</a>
+First you need to create a new project using Flask, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://flask.palletsprojects.com/en/2.1.x/installation/?ref=material-tailwind">Flask Official Documentation</a>. 
+Then, in the root of your project folder create a new file called **app.py** with the following content:
 
-```bash
-composer create-project laravel/laravel example-app
+```js
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+@app.route("/index")
+def index():
+	return render_template("index.html")
+
+if __name__ == '__main__':
+	app.run(debug=True)
 ```
 
+<br />
+
+Then create two folders naming **templates** and **static** and inside the **templates** folder create an **index.html** file with a basic structure such as:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Tailwind with Flask</title>
+  </head>
+  <body>
+    <h1>Hello, Flask!</h1>
+  </body>
+</html>
+```
 <br />
 
 Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
+npm install -D tailwindcss
+npx tailwindcss init
 ```
-
 <br />
 
-Then you need to create the Tailwind CSS configuration file by running the following command:
+Create a new **static/src/** folder and add a new **input.css** file and add the `@tailwind` directives for each of Tailwind’s layers:
 
-```bash
-npx tailwindcss init -p
-``` 
-
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 <br />
 
-Once the configuration is created you need to add the following code to the `tailwind.config.js` file:
+Configure the template files inside the tailwind.config.js:
 
-```js {3-8}
+```bash {3-6}
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
+    "./templates/**/*.html",
+    "./static/src/**/*.js"
   ],
   theme: {
-      extend: {},
+    extend: {},
   },
   plugins: [],
-};
+}
 ```
-
 <br />
 
-After setting up Tailwind CSS you need to install @material-tailwind/html as a dependency to your project.
+Run the following command to compile and watch for the changes in the Tailwind CSS file:
+
+```bash
+npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/out.css --watch
+```
+<br />
+
+This will generate a new **output.css** file inside the `/static/dist/css/` folder that we now need to include in our **index.html**.
+
+```html {8-11}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Tailwind with Flask</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/css/output.css')}}"
+    />
+  </head>
+  <body>
+    <h1>Hello, Flask!</h1>
+  </body>
+</html>
+```
 
 ---
 
@@ -119,21 +173,28 @@ pnpm i @material-tailwind/html
 
 Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
 
-```js {1, 4, 15}
+```js {3, 5, 14}
+/** @type {import('tailwindcss').Config} */
+
 import withMT from "@material-tailwind/html/utils/withMT";
 
-/** @type {import('tailwindcss').Config} */
-export default withMT({
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
+module.exports = withMT({
+  content: [
+    "./templates/**/*.html",
+    "./static/src/**/*.js"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 });
+```
+
+<br />
+
+Start the local server by running:
+```bash
+python app.py
 ```
 
 ---
@@ -152,7 +213,7 @@ The ripple effect used in @material-tailwind/html is a separate package called <
 <script async src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
 <!-- from cdn -->
-<script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+<script async defer src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```
 
 ---

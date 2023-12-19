@@ -1,6 +1,6 @@
 ---
-title: Laravel - Installation Guide
-description: Learn how to use Material Tailwind components with Laravel and Tailwind CSS to easily create elegant and flexible pages.
+title: Phoenix - Installation Guide
+description: Learn how to use Material Tailwind components with Phoenix and Tailwind CSS to easily create elegant and flexible pages.
 navigation:
   [
     "installation",
@@ -11,63 +11,28 @@ navigation:
     "ripple-effect",
     "example",
   ]
-github: guide/laravel
+github: guide/phoenix
 prev: installation
 next: license
 ---
 
-# Material Tailwind with Laravel
+# Material Tailwind with Phoenix
 
 <span id="installation" className="scroll-mt-48" />
-Learn how to setup and install @material-tailwind/html with Laravel.
+Learn how to setup and install @material-tailwind/html with Phoenix.
 
 <br />
 <br />
 
-First you need to create a new project using Laravel, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://laravel.com/docs/10.x/installation?ref=material-tailwind">Laravel Official Documentation</a>
+First you need to create a new project using Phoenix, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://hexdocs.pm/phoenix/installation.html?ref=material-tailwind">Phoenix Official Documentation</a>
 
 ```bash
-composer create-project laravel/laravel example-app
+mix phx.new my_app
 ```
 
 <br />
 
-Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-<br />
-
-Then you need to create the Tailwind CSS configuration file by running the following command:
-
-```bash
-npx tailwindcss init -p
-``` 
-
-<br />
-
-Once the configuration is created you need to add the following code to the `tailwind.config.js` file:
-
-```js {3-8}
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
-      extend: {},
-  },
-  plugins: [],
-};
-```
-
-<br />
-
-After setting up Tailwind CSS you need to install @material-tailwind/html as a dependency to your project.
+Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project. Check <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://tailwindcss.com/docs/guides/phoenix?ref=material-tailwind">Tailwind CSS Installation</a> for Phoenix on Tailwind CSS Documentation.
 
 ---
 
@@ -119,20 +84,21 @@ pnpm i @material-tailwind/html
 
 Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
 
-```js {1, 4, 15}
-import withMT from "@material-tailwind/html/utils/withMT";
+```js {5, 7, 15}
+const plugin = require("tailwindcss/plugin")
+const fs = require("fs")
+const path = require("path")
 
-/** @type {import('tailwindcss').Config} */
-export default withMT({
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
+const withMT = require("@material-tailwind/html/utils/withMT")
+
+module.exports = withMT({
+  content: [
+    './js/**/*.js',
+    '../lib/*_web.ex',
+    '../lib/*_web/**/*.*ex',
+  ],
+  theme: {},
+  plugins: []
 });
 ```
 
@@ -152,7 +118,7 @@ The ripple effect used in @material-tailwind/html is a separate package called <
 <script async src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
 <!-- from cdn -->
-<script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+<script async defer src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```
 
 ---

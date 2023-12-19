@@ -1,6 +1,6 @@
 ---
-title: Laravel - Installation Guide
-description: Learn how to use Material Tailwind components with Laravel and Tailwind CSS to easily create elegant and flexible pages.
+title: Angular - Installation Guide
+description: Learn how to use Material Tailwind components with Angular and Tailwind CSS to easily create elegant and flexible pages.
 navigation:
   [
     "installation",
@@ -11,63 +11,28 @@ navigation:
     "ripple-effect",
     "example",
   ]
-github: guide/laravel
+github: guide/angular
 prev: installation
 next: license
 ---
 
-# Material Tailwind with Laravel
+# Material Tailwind with Angular
 
 <span id="installation" className="scroll-mt-48" />
-Learn how to setup and install @material-tailwind/html with Laravel.
+Learn how to setup and install @material-tailwind/html with Angular.
 
 <br />
 <br />
 
-First you need to create a new project using Laravel, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://laravel.com/docs/10.x/installation?ref=material-tailwind">Laravel Official Documentation</a>
+First you need to create a new project using Angular, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://angular.io/guide/setup-local?ref=material-tailwind">Angular Official Documentation</a>
 
 ```bash
-composer create-project laravel/laravel example-app
+ng new my-project
 ```
 
 <br />
 
-Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-<br />
-
-Then you need to create the Tailwind CSS configuration file by running the following command:
-
-```bash
-npx tailwindcss init -p
-``` 
-
-<br />
-
-Once the configuration is created you need to add the following code to the `tailwind.config.js` file:
-
-```js {3-8}
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
-      extend: {},
-  },
-  plugins: [],
-};
-```
-
-<br />
-
-After setting up Tailwind CSS you need to install @material-tailwind/html as a dependency to your project.
+Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.  Check <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://tailwindcss.com/docs/guides/angular?ref=material-tailwind">Tailwind CSS Installation</a> for Angular on Tailwind CSS Documentation.
 
 ---
 
@@ -119,20 +84,18 @@ pnpm i @material-tailwind/html
 
 Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
 
-```js {1, 4, 15}
+```js {1, 4, 12}
 import withMT from "@material-tailwind/html/utils/withMT";
 
 /** @type {import('tailwindcss').Config} */
-export default withMT({
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
+module.exports = withMT({
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 });
 ```
 

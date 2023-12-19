@@ -1,6 +1,6 @@
 ---
-title: Laravel - Installation Guide
-description: Learn how to use Material Tailwind components with Laravel and Tailwind CSS to easily create elegant and flexible pages.
+title: Gatsby - Installation Guide
+description: Learn how to use Material Tailwind components with Gatsby and Tailwind CSS to easily create elegant and flexible pages.
 navigation:
   [
     "installation",
@@ -11,63 +11,28 @@ navigation:
     "ripple-effect",
     "example",
   ]
-github: guide/laravel
+github: guide/gatsby
 prev: installation
 next: license
 ---
 
-# Material Tailwind with Laravel
+# Material Tailwind with Gatsby
 
 <span id="installation" className="scroll-mt-48" />
-Learn how to setup and install @material-tailwind/html with Laravel.
+Learn how to setup and install @material-tailwind/html with Gatsby.
 
 <br />
 <br />
 
-First you need to create a new project using Laravel, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://laravel.com/docs/10.x/installation?ref=material-tailwind">Laravel Official Documentation</a>
+First you need to create a new project using Gatsby, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://www.gatsbyjs.com/docs/reference/gatsby-cli/#how-to-use-gatsby-cli?ref=material-tailwind">Gatsby Official Documentation</a>
 
 ```bash
-composer create-project laravel/laravel example-app
+gatsby new my-project
 ```
 
 <br />
 
-Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-<br />
-
-Then you need to create the Tailwind CSS configuration file by running the following command:
-
-```bash
-npx tailwindcss init -p
-``` 
-
-<br />
-
-Once the configuration is created you need to add the following code to the `tailwind.config.js` file:
-
-```js {3-8}
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
-      extend: {},
-  },
-  plugins: [],
-};
-```
-
-<br />
-
-After setting up Tailwind CSS you need to install @material-tailwind/html as a dependency to your project.
+Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project. Check <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://tailwindcss.com/docs/guides/gatsby?ref=material-tailwind">Tailwind CSS Installation</a> for Gatsby on Tailwind CSS Documentation.
 
 ---
 
@@ -119,20 +84,20 @@ pnpm i @material-tailwind/html
 
 Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
 
-```js {1, 4, 15}
+```js {3, 5, 14}
+/** @type {import('tailwindcss').Config} */
+
 import withMT from "@material-tailwind/html/utils/withMT";
 
-/** @type {import('tailwindcss').Config} */
-export default withMT({
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
+module.exports = withMT({
+  content: [
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 });
 ```
 
@@ -175,8 +140,8 @@ Now you're good to go and use @material-tailwind/html in your project.
 ```html
 <button
   type="button"
-  data-ripple-light="true"
-  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+  data-ripple-light={true}
+  className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
 >
   Button
 </button>
