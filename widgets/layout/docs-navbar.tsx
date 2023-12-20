@@ -14,7 +14,7 @@ import {
 } from "@material-tailwind/react";
 import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 interface DocsNavbar {
   slug: string[];
@@ -42,7 +42,7 @@ function NavItem({
 export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
   const [stars, setStars] = React.useState(0);
   const [open, setOpen] = React.useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     window.addEventListener("resize", () => {
@@ -99,25 +99,25 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative mt-1">
           <Input
-              type="email"
-              placeholder="Search"
-              className="w-full !h-9 border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
-              labelProps={{
-                  className: "hidden",
-              }}
-              containerProps={{ className: "min-w-[100px]" }}
+            type="email"
+            placeholder="Search"
+            className="!h-9 w-full border-[1.5px] !border-blue-gray-100 bg-white text-blue-gray-800 ring-4 ring-transparent placeholder:text-blue-gray-600 focus:!border-primary focus:!border-t-primary group-hover:!border-primary"
+            labelProps={{
+              className: "hidden",
+            }}
+            containerProps={{ className: "min-w-[100px]" }}
           />
-          <div className="absolute top-1.5 right-3.5 ">
-              <kbd className="rounded border border-blue-gray-100 bg-white px-1 pt-px pb-0 text-xs font-medium text-gray-900 shadow shadow-black/5">
-                  <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
-                      ⌘
-                  </span>
-                  K
-              </kbd>
+          <div className="absolute right-3.5 top-1.5 ">
+            <kbd className="rounded border border-blue-gray-100 bg-white px-1 pb-0 pt-px text-xs font-medium text-gray-900 shadow shadow-black/5">
+              <span className="mr-0.5 inline-block translate-y-[1.5px] text-base">
+                ⌘
+              </span>
+              K
+            </kbd>
           </div>
           <div className="absolute inset-0 w-full opacity-0">
-              <Search />
-              ab
+            <Search />
+            ab
           </div>
         </div>
         <Tooltip content="Help with a star" placement="bottom" offset={-2.5}>
@@ -143,7 +143,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                   />
                 </svg>
               }
-              className="items-center gap-2 bg-white border py-1 !border-blue-gray-100 !pr-2 text-xs text-blue-gray-900"
+              className="items-center gap-2 border !border-blue-gray-100 bg-white py-1 !pr-2 text-xs text-blue-gray-900"
             />
             <i className="fab fa-github text-xl leading-none opacity-80" />
           </a>
@@ -159,7 +159,12 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           </a>
         </Tooltip>
         <Link href="/blocks#pricing">
-          <Button size="sm" className="flex items-center justify-between bg-deep-orange-500 py-2.5">Black Friday</Button>
+          <Button
+            size="sm"
+            className="flex items-center justify-between bg-deep-orange-500 py-2.5"
+          >
+            Black Friday
+          </Button>
         </Link>
       </div>
     </div>
@@ -185,7 +190,11 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                 Material <br /> Tailwind
               </Typography>
               <Chip
-                value={`v${router.asPath.includes("docs/react") ? process.env.NEXT_PUBLIC_MT_FRAMEWORK_VERSION : process.env.NEXT_PUBLIC_MT_HTML_FRAMEWORK_VERSION}`}
+                value={`v${
+                  pathname.includes("/docs/react")
+                    ? process.env.NEXT_PUBLIC_MT_FRAMEWORK_VERSION
+                    : process.env.NEXT_PUBLIC_MT_HTML_FRAMEWORK_VERSION
+                }`}
                 variant="outlined"
                 className="ml-2 border-[1.5px] border-blue-gray-50 pb-1 pt-1.5 text-primary"
               />

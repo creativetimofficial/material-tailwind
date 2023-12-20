@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 // mdx
 import fs from "fs";
@@ -188,6 +188,7 @@ import getDirectoriesAndFile from "utils/get-directories-and-files";
 // material tailwind html script
 import initHtmlScripts from "public/material-tailwind-html-v2";
 import OfferBar from "widgets/campaign/offer-bar";
+import { usePathname } from "next/navigation";
 
 const components = {
   h1: (props) => (
@@ -406,15 +407,16 @@ const components = {
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
-  const { asPath } = useRouter();
+  const pathname = usePathname();
   const [mobileNav, setMobileNav] = React.useState(false);
 
   const routes = {
     html: htmlRoutes,
     react: reactRoutes,
   };
+
   const validFrameworks = ["html", "react"];
-  const frameworkType = asPath
+  const frameworkType = pathname
     .split("/")
     .filter((el) => validFrameworks.includes(el))
     .join("") as "html" | "react";

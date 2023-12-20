@@ -719,7 +719,6 @@ function FloatingLinkEditor({ editor }) {
               {linkUrl}
             </Typography>
             <IconButton
-              size="sm"
               role="button"
               tabIndex={0}
               onMouseDown={(event) => event.preventDefault()}
@@ -847,13 +846,12 @@ function ToolbarPlugin() {
 
   return (
     <div
-      className="m-1 flex items-center gap-0.5 rounded-md bg-gray-100 p-1"
+      className="m-1 flex items-center gap-0.5 rounded-lg bg-gray-100 p-1"
       ref={toolbarRef}
     >
       {supportedBlockTypes.has(blockType) && (
         <>
           <Button
-            size="sm"
             variant="text"
             onClick={() =>
               setShowBlockOptionsDropDown(!showBlockOptionsDropDown)
@@ -900,7 +898,6 @@ function ToolbarPlugin() {
       ) : (
         <>
           <IconButton
-            size="sm"
             variant={isBold ? "filled" : "text"}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold");
@@ -923,7 +920,6 @@ function ToolbarPlugin() {
             </svg>
           </IconButton>
           <IconButton
-            size="sm"
             variant={isItalic ? "filled" : "text"}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic");
@@ -948,7 +944,6 @@ function ToolbarPlugin() {
             </svg>
           </IconButton>
           <IconButton
-            size="sm"
             variant={isCode ? "filled" : "text"}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code");
@@ -988,7 +983,6 @@ function ToolbarPlugin() {
           </IconButton>
           <IconButton
             onClick={insertLink}
-            size="sm"
             variant={isLink ? "filled" : "text"}
             aria-label="Insert Link"
           >
@@ -1044,7 +1038,7 @@ const editorConfig = {
 export function TextEditorReact() {
   return (
     <LexicalComposer initialConfig={editorConfig}>
-      <div className="relative mx-auto my-5 w-full max-w-xl rounded-lg border border-gray-300 text-left font-normal leading-5 text-gray-900">
+      <div className="relative mx-auto my-5 w-full max-w-xl rounded-xl border border-gray-300 bg-white text-left font-normal leading-5 text-gray-900">
         <ToolbarPlugin />
         <div className="relative rounded-b-lg border-opacity-5 bg-white">
           <RichTextPlugin

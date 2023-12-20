@@ -263,3 +263,12 @@ table tbody tr td code {
 .lexical code {
   @apply rounded-md bg-gray-900/[0.1] px-1 py-0.5 text-sm font-normal text-gray-900;
 }
+
+.tiptap ul p,
+.tiptap ol p {
+  @apply inline;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  @apply pointer-events-none float-left h-0 text-sm;
+}
