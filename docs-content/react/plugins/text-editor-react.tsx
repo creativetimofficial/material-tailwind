@@ -1025,6 +1025,7 @@ function ToolbarPlugin() {
 }
 
 const editorConfig = {
+  namespace: "MyEditor",
   onError(error) {
     throw error;
   },
@@ -1042,7 +1043,7 @@ const editorConfig = {
 
 export function TextEditorReact() {
   return (
-    <LexicalComposer initialConfig={editorConfig as any}>
+    <LexicalComposer initialConfig={editorConfig}>
       <div className="relative mx-auto my-5 w-full max-w-xl rounded-lg border border-gray-300 text-left font-normal leading-5 text-gray-900">
         <ToolbarPlugin />
         <div className="relative rounded-b-lg border-opacity-5 bg-white">
