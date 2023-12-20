@@ -1,0 +1,245 @@
+---
+title: Flask - Installation Guide
+description: Learn how to use Material Tailwind components with Flask and Tailwind CSS to easily create elegant and flexible pages.
+navigation:
+  [
+    "installation",
+    "npm",
+    "yarn",
+    "pnpm",
+    "tailwindcss-config",
+    "ripple-effect",
+    "example",
+  ]
+github: guide/flask
+prev: installation
+next: license
+---
+
+# Material Tailwind with Flask
+
+<span id="installation" className="scroll-mt-48" />
+Learn how to setup and install @material-tailwind/html with Flask.
+
+<br />
+<br />
+
+First you need to create a new project using Flask, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://flask.palletsprojects.com/en/2.1.x/installation/?ref=material-tailwind">Flask Official Documentation</a>. 
+Then, in the root of your project folder create a new file called **app.py** with the following content:
+
+```js
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+@app.route("/index")
+def index():
+	return render_template("index.html")
+
+if __name__ == '__main__':
+	app.run(debug=True)
+```
+
+<br />
+
+Then create two folders naming **templates** and **static** and inside the **templates** folder create an **index.html** file with a basic structure such as:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Tailwind with Flask</title>
+  </head>
+  <body>
+    <h1>Hello, Flask!</h1>
+  </body>
+</html>
+```
+<br />
+
+Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project.
+
+```bash
+npm install -D tailwindcss
+npx tailwindcss init
+```
+<br />
+
+Create a new **static/src/** folder and add a new **input.css** file and add the `@tailwind` directives for each of Tailwind’s layers:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+<br />
+
+Configure the template files inside the tailwind.config.js:
+
+```bash {3-6}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./templates/**/*.html",
+    "./static/src/**/*.js"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+<br />
+
+Run the following command to compile and watch for the changes in the Tailwind CSS file:
+
+```bash
+npx tailwindcss -i ./static/src/input.css -o ./static/dist/css/out.css --watch
+```
+<br />
+
+This will generate a new **output.css** file inside the `/static/dist/css/` folder that we now need to include in our **index.html**.
+
+```html {8-11}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Tailwind with Flask</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/css/output.css')}}"
+    />
+  </head>
+  <body>
+    <h1>Hello, Flask!</h1>
+  </body>
+</html>
+```
+
+---
+
+<DocsTitle href="npm">
+## Using NPM
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="yarn">
+## Using Yarn
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/html
+```
+
+---
+
+## Using PNPM
+
+Install @material-tailwind/html as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="tailwindcss-config">
+## TailwindCSS Configurations
+</DocsTitle>
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
+
+```js {3, 5, 14}
+/** @type {import('tailwindcss').Config} */
+
+import withMT from "@material-tailwind/html/utils/withMT";
+
+module.exports = withMT({
+  content: [
+    "./templates/**/*.html",
+    "./static/src/**/*.js"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+```
+
+<br />
+
+Activate the environment and start the local server by running:
+```bash
+. venv/bin/activate && python app.py
+```
+
+---
+
+## Ripple Effect
+
+<span id="ripple-effect" className="scroll-mt-48" />
+
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+
+The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">material-ripple-effect</a>
+
+
+```html
+<!-- from node_modules -->
+<script async src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
+
+<!-- from cdn -->
+<script async defer src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```
+
+---
+
+<DocsTitle href="example">
+## Example
+</DocsTitle>
+
+Now you're good to go and use @material-tailwind/html in your project.
+
+<CodePreview id="example" component={
+  <button
+    type="button"
+    data-ripple-light="true"
+    className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+  >
+    Button
+  </button>
+}>
+```html
+<button
+  type="button"
+  data-ripple-light="true"
+  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+>
+  Button
+</button>
+```
+</CodePreview>

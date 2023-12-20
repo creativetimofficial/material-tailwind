@@ -1,29 +1,15 @@
 import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import {
-  Tooltip,
-  IconButton,
-  Button,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-} from "@material-tailwind/react";
+import { Tooltip, IconButton } from "@material-tailwind/react";
 import {
   ClipboardDocumentListIcon,
   ClipboardDocumentCheckIcon,
-  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import copyToClipboard from "utils/copy-to-clipboard";
 
 export function CodePreview({ id, component, link, children, className }) {
   const codeRef = React.useRef(null);
-  const { query } = useRouter();
   const [mode, setMode] = React.useState("preview");
   const [copied, setCopied] = React.useState(false);
-  const [version, setVersion] = React.useState(query.slug[0]);
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleCopy = () => {
     copyToClipboard(codeRef.current.innerText);
@@ -42,8 +28,8 @@ export function CodePreview({ id, component, link, children, className }) {
           mode === "code" ? "border-opacity-10" : ""
         }`}
       >
-        <div className="flex w-full items-center justify-between gap-2">
-          {link && (
+        <div className="flex w-full items-center justify-end gap-2">
+          {/* {link && (
             <Menu open={isMenuOpen} handler={setIsMenuOpen}>
               <MenuHandler>
                 <Button
@@ -76,7 +62,7 @@ export function CodePreview({ id, component, link, children, className }) {
               <MenuList className="flex min-w-[100px] flex-col gap-1 rounded-lg p-1.5">
                 <Link href={`/docs/html/${link}`}>
                   <MenuItem
-                    className={`py-1.5 px-2.5 text-xs font-medium ${
+                    className={`px-2.5 py-1.5 text-xs font-medium ${
                       version === "html"
                         ? "bg-blue-gray-50/80 text-blue-gray-900"
                         : ""
@@ -88,7 +74,7 @@ export function CodePreview({ id, component, link, children, className }) {
                 </Link>
                 <Link href={`/docs/react/${link}`}>
                   <MenuItem
-                    className={`py-1.5 px-2.5 text-xs font-medium ${
+                    className={`px-2.5 py-1.5 text-xs font-medium ${
                       version === "react"
                         ? "bg-blue-gray-50/80 text-blue-gray-900"
                         : ""
@@ -100,11 +86,11 @@ export function CodePreview({ id, component, link, children, className }) {
                 </Link>
               </MenuList>
             </Menu>
-          )}
+          )} */}
           <Tooltip
             content={copied ? "Copied" : "Copy"}
             placement="top"
-            className="rounded-md py-1 px-2 text-xs font-medium"
+            className="rounded-md px-2 py-1 text-xs font-medium"
           >
             <IconButton
               type="button"

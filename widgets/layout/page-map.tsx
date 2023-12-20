@@ -17,14 +17,14 @@ import {
   CardHeader,
 } from "@material-tailwind/react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export function PageMap({ type, frontMatter }) {
-  const { query } = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
   const [hash, setHash] = React.useState(frontMatter[0]);
   const [feedbackType, setFeedbackType] = React.useState("issue");
-  const frameWorkType = query?.slug?.[0];
+  const frameWorkType = pathname.includes("/docs/react") ? "react" : "html";
 
   const handleOpen = () => setOpen(!open);
 
@@ -43,7 +43,7 @@ export function PageMap({ type, frontMatter }) {
   }, []);
 
   return (
-    <aside className="sticky top-14 ml-auto hidden h-screen w-64 pt-6 pb-4 lg:block">
+    <aside className="sticky top-14 ml-auto hidden h-screen w-64 pb-4 pt-6 lg:block">
       <div className="h-screen w-64 overflow-y-scroll pb-40">
         <Typography
           variant="small"
@@ -232,7 +232,7 @@ export function PageMap({ type, frontMatter }) {
               floated={false}
               shadow={false}
               color="transparent"
-              className="mx-4 mt-4 mb-0"
+              className="mx-4 mb-0 mt-4"
             >
               <Image
                 src="https://docs.material-tailwind.com/image/ui-ux-book.jpg"
@@ -273,7 +273,7 @@ export function PageMap({ type, frontMatter }) {
           color="gray"
           variant="text"
           onClick={handleOpen}
-          className="!absolute top-1 right-1 rounded-full text-gray-600 hover:text-primary"
+          className="!absolute right-1 top-1 rounded-full text-gray-600 hover:text-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -340,7 +340,7 @@ export function PageMap({ type, frontMatter }) {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="mr-2 -mt-1 inline-block h-5 w-5"
+                  className="-mt-1 mr-2 inline-block h-5 w-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -365,7 +365,7 @@ export function PageMap({ type, frontMatter }) {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="mr-2 -mt-1 inline-block h-5 w-5"
+                  className="-mt-1 mr-2 inline-block h-5 w-5"
                 >
                   <path
                     strokeLinecap="round"

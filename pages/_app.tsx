@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
     <Fragment>
       <ThemeProvider>
         <Component {...pageProps} />
-        <div className="fixed top-2/4 right-4 hidden -translate-y-2/4 lg:block">
+        <div className="fixed right-4 top-2/4 hidden -translate-y-2/4 lg:block">
           <Menu placement="left" allowHover>
             <MenuHandler>
               <IconButton

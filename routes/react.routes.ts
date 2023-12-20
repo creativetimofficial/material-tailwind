@@ -155,11 +155,15 @@ export const routes = [
         route: "form",
       },
       {
+        name: "Gallery",
+        route: "gallery",
+      },
+      {
         name: "Icon Button",
         route: "icon-button",
       },
       {
-        name: "Img",
+        name: "Image",
         route: "img",
       },
       {
@@ -174,6 +178,10 @@ export const routes = [
       {
         name: "Menu",
         route: "menu",
+      },
+      {
+        name: "Mega Menu",
+        route: "mega-menu",
       },
       {
         name: "Navbar",
@@ -206,6 +214,10 @@ export const routes = [
       {
         name: "Sidebar",
         route: "sidebar",
+      },
+      {
+        name: "Skeleton",
+        route: "skeleton",
       },
       {
         name: "Slider",
@@ -270,8 +282,16 @@ export const routes = [
         route: "/plugins/charts",
       },
       {
+        name: "Clipboard",
+        route: "/plugins/clipboard",
+      },
+      {
         name: "Date Picker",
         route: "/plugins/date-picker",
+      },
+      {
+        name: "WSSIWYG Editor",
+        route: "/plugins/text-editor",
       },
     ],
   },

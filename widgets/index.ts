@@ -21,6 +21,19 @@ export * from "./icons/gatsby";
 export * from "./icons/next";
 export * from "./icons/remix";
 export * from "./icons/vite";
+export * from "./icons/vue";
+export * from "./icons/react";
+export * from "./icons/angular";
+export * from "./icons/django";
+export * from "./icons/flask";
+export * from "./icons/laravel";
+export * from "./icons/meteor";
+export * from "./icons/nuxt";
+export * from "./icons/phoenix";
+export * from "./icons/qwik";
+export * from "./icons/solid";
+export * from "./icons/svelte";
+export * from "./icons/symfony";
 
 // sections
 export * from "./sections/pro";

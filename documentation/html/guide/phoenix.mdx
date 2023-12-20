@@ -1,0 +1,147 @@
+---
+title: Phoenix - Installation Guide
+description: Learn how to use Material Tailwind components with Phoenix and Tailwind CSS to easily create elegant and flexible pages.
+navigation:
+  [
+    "installation",
+    "npm",
+    "yarn",
+    "pnpm",
+    "tailwindcss-config",
+    "ripple-effect",
+    "example",
+  ]
+github: guide/phoenix
+prev: installation
+next: license
+---
+
+# Material Tailwind with Phoenix
+
+<span id="installation" className="scroll-mt-48" />
+Learn how to setup and install @material-tailwind/html with Phoenix.
+
+<br />
+<br />
+
+First you need to create a new project using Phoenix, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://hexdocs.pm/phoenix/installation.html?ref=material-tailwind">Phoenix Official Documentation</a>
+
+```bash
+mix phx.new my_app
+```
+
+<br />
+
+Then you need to install Tailwind CSS since @material-tailwind/html is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project. Check <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://tailwindcss.com/docs/guides/phoenix?ref=material-tailwind">Tailwind CSS Installation</a> for Phoenix on Tailwind CSS Documentation.
+
+---
+
+<DocsTitle href="npm">
+## Using NPM
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using NPM by running the following command:
+
+<span id="npm" className="scroll-mt-48" />
+
+```bash
+npm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="yarn">
+## Using Yarn
+</DocsTitle>
+
+Install @material-tailwind/html as a dependency using Yarn by running the following command:
+
+<span id="yarn" className="scroll-mt-48" />
+
+```bash
+yarn add @material-tailwind/html
+```
+
+---
+
+## Using PNPM
+
+Install @material-tailwind/html as a dependency using PNPM by running the following command:
+
+<span id="pnpm" className="scroll-mt-48" />
+
+```bash
+pnpm i @material-tailwind/html
+```
+
+---
+
+<DocsTitle href="tailwindcss-config">
+## TailwindCSS Configurations
+</DocsTitle>
+
+<span id="tailwindcss-config" className="scroll-mt-48" />
+
+Once you install @material-tailwind/html you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/html/utils.
+
+```js {5, 7, 15}
+const plugin = require("tailwindcss/plugin")
+const fs = require("fs")
+const path = require("path")
+
+const withMT = require("@material-tailwind/html/utils/withMT")
+
+module.exports = withMT({
+  content: [
+    './js/**/*.js',
+    '../lib/*_web.ex',
+    '../lib/*_web/**/*.*ex',
+  ],
+  theme: {},
+  plugins: []
+});
+```
+
+---
+
+## Ripple Effect
+
+<span id="ripple-effect" className="scroll-mt-48" />
+
+@material-tailwind/html comes with a ripple effect script file same as Material Design ripple effect and you can simply use it by adding it's CDN link to you project and add the <Code>data-ripple-light="true"</Code> for light ripple effect and <Code>data-ripple-dark="true"</Code> for dark ripple effect as an attribute for components
+
+The ripple effect used in @material-tailwind/html is a separate package called <a href="https://www.npmjs.com/package/material-ripple-effects?ref=material-tailwind" target="_blank" className="font-medium hover:text-blue-500 transition-colors">material-ripple-effect</a>
+
+
+```html
+<!-- from cdn -->
+<script async defer src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```
+
+---
+
+<DocsTitle href="example">
+## Example
+</DocsTitle>
+
+Now you're good to go and use @material-tailwind/html in your project.
+
+<CodePreview id="example" component={
+  <button
+    type="button"
+    data-ripple-light="true"
+    className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+  >
+    Button
+  </button>
+}>
+```html
+<button
+  type="button"
+  data-ripple-light="true"
+  class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+>
+  Button
+</button>
+```
+</CodePreview>

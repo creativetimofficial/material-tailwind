@@ -27,9 +27,9 @@ A dialog is a type of modal window with critical information which disable all a
 
 See below our dialog example that you can use for your Tailwind CSS project.
 
-You can initialize a new dialog by adding the <Code html>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code html>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code html>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
+You can initialize a new dialog by adding the <Code>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
 
-You can also use the <Code html>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
+You can also use the <Code>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
 
 <br />
 
@@ -88,7 +88,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
   <div class="flex gap-3 mb-3">
     <button data-ripple-light="true" data-dialog-target="dialog-xs"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog XS`}
+      Open Dialog XS
     </button>
     <div data-dialog-backdrop="dialog-xs" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -119,7 +119,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
     </div>
     <button data-ripple-light="true" data-dialog-target="dialog-sm"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog SM`}
+      Open Dialog SM
     </button>
     <div data-dialog-backdrop="dialog-sm" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -150,7 +150,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
     </div>
     <button data-ripple-light="true" data-dialog-target="dialog-md"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog MD`}
+      Open Dialog MD
     </button>
     <div data-dialog-backdrop="dialog-md" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -158,23 +158,23 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         class="relative m-4 w-2/5 min-w-[40%] max-w-[40%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl">
         <div
           class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
-          {`Its a simple dialog.`}
+          Its a simple dialog.
         </div>
         <div
           class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
-          {`The key to more success is to have a lot of pillows. Put it this way, it took me
+          The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-          luv.`}
+          luv.
         </div>
         <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button data-ripple-dark="true" data-dialog-close="true"
             class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-            {`Cancel`}
+            Cancel
           </button>
           <button data-ripple-light="true" data-dialog-close="true"
             class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-            {`Confirm`}
+            Confirm
           </button>
         </div>
       </div>
@@ -183,7 +183,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
   <div class="flex gap-3 mb-3">
     <button data-ripple-light="true" data-dialog-target="dialog-lg"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog LG`}
+      Open Dialog LG
     </button>
     <div data-dialog-backdrop="dialog-lg" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -214,7 +214,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
     </div>
     <button data-ripple-light="true" data-dialog-target="dialog-xl"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog XL`}
+      Open Dialog XL
     </button>
     <div data-dialog-backdrop="dialog-xl" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -245,7 +245,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
     </div>
     <button data-ripple-light="true" data-dialog-target="dialog-xxl"
       class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      {`Open Dialog XXL`}
+      Open Dialog XXL
     </button>
     <div data-dialog-backdrop="dialog-xxl" data-dialog-backdrop-close="true"
       class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -253,23 +253,23 @@ You can set the size of the dialog by your own using the tailwind css classes, c
         class="relative h-screen w-screen min-w-[100vw] max-w-[100vw] bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
         <div
           class="flex items-center p-4 font-sans text-2xl antialiased font-semibold leading-snug shrink-0 text-blue-gray-900">
-          {`Its a simple dialog.`}
+          Its a simple dialog.
         </div>
         <div
           class="relative p-4 font-sans text-base antialiased font-light leading-relaxed border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 text-blue-gray-500">
-          {`The key to more success is to have a lot of pillows. Put it this way, it took me
+          The key to more success is to have a lot of pillows. Put it this way, it took me
           twenty five years to get these plants, twenty five years of blood sweat and tears, and
           I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan
-          luv.`}
+          luv.
         </div>
         <div class="flex flex-wrap items-center justify-end p-4 shrink-0 text-blue-gray-500">
           <button data-ripple-dark="true" data-dialog-close="true"
             class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-            {`Cancel`}
+            Cancel
           </button>
           <button data-ripple-light="true" data-dialog-close="true"
             class="middle none center rounded-lg bg-gradient-to-tr from-green-600 to-green-400 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-            {`Confirm`}
+            Confirm
           </button>
         </div>
       </div>
@@ -282,7 +282,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
 
 ## Custom Dialog Animation
 
-You can modify the open/close state animation for dialog by adding the <Code html>data-dialog-mount="`{opacity-100}`"</Code>, <Code html>data-dialog-unmount="`{opacity-0}`"</Code> and <Code html>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
+You can modify the open/close state animation for dialog by adding the <Code>data-dialog-mount="`{opacity-100}`"</Code>, <Code>data-dialog-unmount="`{opacity-0}`"</Code> and <Code>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
 
 <CodePreview
   id="custom-dialog-animation"
@@ -293,7 +293,7 @@ You can modify the open/close state animation for dialog by adding the <Code htm
   <button
     class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
     data-ripple-light="true" data-dialog-target="animated-dialog">
-    {`Open Dialog`}
+    Open Dialog
   </button>
   <div data-dialog-backdrop="animated-dialog" data-dialog-backdrop-close="true"
     class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
@@ -661,9 +661,9 @@ The following data attributes are available for dialog element.
 | Attribute                 | Description                                                                                     | Default                                                                                                       |
 | ------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `data-dialog`             | Set the name of the dialog and reference it to the <br /> dialog trigger and backdrop elements. |                                                                                                               |
-| `data-popover-mount`      | Set the classnaes that should be used when the <br /> dialog is visible.                        | <Code html>opacity-1</Code><br /><Code html>translate-y-0</Code>                                              |
-| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> dialog is hidden.                         | <Code html>opacity-0</Code><br /><Code html>-translate-y-14</Code><br /><Code html>pointer-events-none</Code> |
-| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the dialog.                      | <Code html>transition-all</Code><br /><Code html>duration-300</Code>                                          |
+| `data-popover-mount`      | Set the classnaes that should be used when the <br /> dialog is visible.                        | <Code>opacity-1</Code><br /><Code>translate-y-0</Code>                                              |
+| `data-popover-unmount`    | Set the classnaes that should be used when the <br /> dialog is hidden.                         | <Code>opacity-0</Code><br /><Code>-translate-y-14</Code><br /><Code>pointer-events-none</Code> |
+| `data-popover-transition` | Set the classnaes that should be used for <br /> transition of the dialog.                      | <Code>transition-all</Code><br /><Code>duration-300</Code>                                          |
 
 ---
 

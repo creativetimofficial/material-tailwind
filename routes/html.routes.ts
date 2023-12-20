@@ -47,6 +47,47 @@ export const routes = [
         name: "Laravel",
         route: "guide/laravel",
       },
+      {
+        name: "Angular",
+        route: "guide/angular",
+      },
+      {
+        name: "Remix",
+        route: "guide/remix",
+      },
+      {
+        name: "Meteor.js",
+        route: "guide/meteor",
+      },
+      {
+        name: "Gatsby",
+        route: "guide/gatsby",
+      },
+      {
+        name: "Solid.js",
+        route: "guide/solid",
+      },
+      {
+        name: "Qwik",
+        route: "guide/qwik",
+      },
+      {
+        name: "Symfony",
+        route: "guide/symfony",
+      },
+
+      {
+        name: "Phoenix",
+        route: "guide/phoenix",
+      },
+      {
+        name: "Django",
+        route: "guide/django",
+      },
+      {
+        name: "Flask",
+        route: "guide/flask",
+      },
     ],
   },
   {
@@ -102,7 +143,7 @@ export const routes = [
         route: "button",
       },
       {
-        name: "Button-Group",
+        name: "Button Group",
         route: "button-group",
       },
 
@@ -119,14 +160,6 @@ export const routes = [
         route: "chip",
       },
       {
-        name: "Collapse",
-        route: "collapse",
-      },
-      {
-        name: "Carousel",
-        route: "carousel",
-      },
-      {
         name: "Dialog",
         route: "dialog",
       },
@@ -137,6 +170,10 @@ export const routes = [
       {
         name: "Form",
         route: "form",
+      },
+      {
+        name: "Gallery",
+        route: "gallery",
       },
       {
         name: "Icon Button",
@@ -158,6 +195,10 @@ export const routes = [
       {
         name: "Menu",
         route: "menu",
+      },
+      {
+        name: "Mega Menu",
+        route: "mega-menu",
       },
       {
         name: "Navbar",
@@ -190,6 +231,10 @@ export const routes = [
       {
         name: "Sidebar",
         route: "sidebar",
+      },
+      {
+        name: "Skeleton",
+        route: "skeleton",
       },
       // {
       //   name: "Slider",
@@ -252,6 +297,10 @@ export const routes = [
       {
         name: "Charts",
         route: "/plugins/charts",
+      },
+      {
+        name: "Clipboard",
+        route: "/plugins/clipboard",
       },
       {
         name: "Date Picker",

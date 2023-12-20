@@ -91,8 +91,19 @@ export default function MyDocument() {
           defer
           src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"
         ></script>
+        <script
+          async
+          defer
+          src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"
+        ></script>
       </Head>
       <body className="root">
+        {" "}
+        <script
+          async
+          defer
+          src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"
+        ></script>
         <noscript>
           <iframe
             title="google-tag-manage"
@@ -104,6 +115,11 @@ export default function MyDocument() {
         </noscript>
         <Main />
         <NextScript />
+        <script
+          async
+          defer
+          src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"
+        ></script>
       </body>
     </Html>
   );

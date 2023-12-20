@@ -38,13 +38,13 @@ export function Sidenav({
 
   return (
     <aside
-      className={`fixed top-0 z-[999] h-screen w-80 overflow-y-scroll pb-4 pr-4 transition-all duration-300 lg:sticky lg:top-16 lg:left-0 lg:z-10 lg:w-56 ${
+      className={`fixed top-0 z-[999] h-screen w-80 overflow-y-scroll pb-4 pr-4 transition-all duration-300 lg:sticky lg:left-0 lg:top-16 lg:z-10 lg:w-56 ${
         mobileNav ? "left-0" : "-left-96"
       }`}
     >
       <div
         onClick={() => setMobileNav(false)}
-        className={`fixed top-0 left-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed left-0 top-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileNav
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -55,13 +55,13 @@ export function Sidenav({
           onClick={() => setMobileNav(false)}
           ripple={false}
           color="white"
-          className="!fixed top-2 right-2"
+          className="!fixed right-2 top-2"
         >
           <XMarkIcon className="h-6 w-6 stroke-2" />
         </IconButton>
       )}
-      <div className="fixed top-0 z-[9999] h-screen w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pt-0 lg:pl-0">
-        <div className="mt-6 mb-10">
+      <div className="fixed top-0 z-[9999] h-screen w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
+        <div className="mb-10 mt-6">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>
               <Typography
@@ -72,10 +72,11 @@ export function Sidenav({
               </Typography>
               <ul className="py-2">
                 {pages.map(({ name, route, label }: any, key) => {
-                  const isActive =
-                    slug === "installation"
-                      ? route === slug
-                      : route.includes(slug);
+                  console.log(route);
+
+                  const isActive = route.includes("/")
+                    ? route.includes(slug)
+                    : route === slug;
                   return (
                     <li
                       key={key}
