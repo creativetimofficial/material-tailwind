@@ -32,6 +32,7 @@ import {
 } from "@widgets";
 
 // docs-content
+import * as FrameworkIcons from "@widgets";
 import * as AccordionExamples from "docs-content/react/accordion";
 import * as AlertExamples from "docs-content/react/alert";
 import * as AvatarExamples from "docs-content/react/avatar";
@@ -314,6 +315,7 @@ const components = {
   CodePreview,
   DocsTitle,
   Link,
+  FrameworkIcons,
   AccordionExamples,
   AlertExamples,
   AvatarExamples,

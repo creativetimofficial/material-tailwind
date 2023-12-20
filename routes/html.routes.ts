@@ -75,10 +75,7 @@ export const routes = [
         name: "Symfony",
         route: "guide/symfony",
       },
-      {
-        name: "Rails",
-        route: "guide/rails",
-      },
+
       {
         name: "Phoenix",
         route: "guide/phoenix",
