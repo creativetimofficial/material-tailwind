@@ -1,19 +1,20 @@
 export function VideoPlacehoderSkeleton() {
   return (
-    <div className="flex h-56 w-full max-w-sm animate-pulse items-center justify-center rounded-lg bg-gray-300 dark:bg-gray-700">
+    <div className="grid h-full max-h-[300px] min-h-[160px] w-full max-w-xs animate-pulse place-items-center rounded-lg bg-gray-300">
       <svg
-        className="h-10 w-10 text-gray-200 dark:text-gray-600"
-        aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 16 20"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        className="h-12 w-12 text-gray-500"
       >
-        <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"></path>
-        <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM9 13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2Zm4 .382a1 1 0 0 1-1.447.894L10 13v-2l1.553-1.276a1 1 0 0 1 1.447.894v2.764Z"></path>
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"
+        ></path>
       </svg>
-      <p className="sr-only block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-        Loading...
-      </p>
     </div>
   );
 }

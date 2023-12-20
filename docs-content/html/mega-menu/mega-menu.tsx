@@ -9,7 +9,7 @@ export function MegaMenuDefault() {
           Material Tailwind
         </a>
         <div className="hidden lg:block">
-          <nav className="mt-4 mb-6 flex min-w-[240px] flex-col gap-1 p-0 font-sans text-base font-normal text-blue-gray-700 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+          <nav className="mb-6 mt-4 flex min-w-[240px] flex-col gap-1 p-0 font-sans text-base font-normal text-blue-gray-700 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1">
             <a
               href="#"
               className="block font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased"
@@ -83,7 +83,7 @@ export function MegaMenuDefault() {
           className="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
           type="button"
         >
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

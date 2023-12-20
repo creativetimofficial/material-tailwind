@@ -43,16 +43,16 @@ export function ClipboardDefault() {
   return (
     <div>
       <div className="flex items-center gap-x-4">
-        <Typography variant="lead">npm i @material-tailwind</Typography>
+        <Typography variant="lead">npm i @material-tailwind/react</Typography>
         <IconButton
           onMouseLeave={() => setCopied(false)}
           onClick={() => {
-            copy("npm i @material-tailwind");
+            copy("npm i @material-tailwind/react");
             setCopied(true);
           }}
         >
           {copied ? (
-            <CheckIcon className="h-5 w-5 text-green-700" />
+            <CheckIcon className="h-5 w-5 text-white" />
           ) : (
             <DocumentDuplicateIcon className="h-5 w-5 text-white" />
           )}
@@ -75,7 +75,7 @@ export function ClipboardDefault() {
 <CodePreview component={<Plugins.ClipboardCopyInput />}>
 ```jsx
 import React from "react";
-import { Input, Typography, Button } from "@material-tailwind/react";
+import { Input, Button } from "@material-tailwind/react";
 import { useCopyToClipboard } from "usehooks-ts";
 import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
@@ -83,11 +83,11 @@ export function ClipboardCopyInput() {
   const [value, copy] = useCopyToClipboard();
   const [copied, setCopied] = React.useState(false);
   const [inputValue, setInputValue] = React.useState(
-    "npm i @material-tailwind",
+    "npm i @material-tailwind/react",
   );
 
   return (
-    <div className="flex flex-col items-start gap-y-4">
+    <div className="flex items-center gap-4">
       <div className="w-72">
         <Input
           value={inputValue}
@@ -104,22 +104,24 @@ export function ClipboardCopyInput() {
         />
       </div>
       <Button
+        size="md"
         onMouseLeave={() => setCopied(false)}
         onClick={() => {
           copy(inputValue);
           setCopied(true);
         }}
+        className="flex items-center gap-2"
       >
         {copied ? (
-          <div className="flex items-center gap-x-1">
-            <CheckIcon className="h-5 w-5 text-green-700" />
-            <Typography variant="paragraph">Copied</Typography>
-          </div>
+          <>
+            <CheckIcon className="h-4 w-4 text-white" />
+            Copied
+          </>
         ) : (
-          <div className="flex items-center gap-x-1">
-            <DocumentDuplicateIcon className="h-5 w-5 text-white" />
-            <Typography variant="paragraph">Copy</Typography>
-          </div>
+          <>
+            <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+            Copy
+          </>
         )}
       </Button>
     </div>
@@ -139,7 +141,7 @@ export function ClipboardCopyInput() {
 <CodePreview component={<Plugins.ClipboardCopyButton />}>
 ```jsx
 import React from "react";
-import { Input, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import { useCopyToClipboard } from "usehooks-ts";
 import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
@@ -148,32 +150,26 @@ export function ClipboardCopyButton() {
   const [copied, setCopied] = React.useState(false);
 
   return (
-    <div className="flex flex-col items-start gap-y-4">
-      <Button
-        onMouseLeave={() => setCopied(false)}
-        onClick={() => {
-          copy("npm i @material-tailwind");
-          setCopied(true);
-        }}
-        className="flex items-center gap-x-3 lowercase"
+    <Button
+      onMouseLeave={() => setCopied(false)}
+      onClick={() => {
+        copy("npm i @material-tailwind/react");
+        setCopied(true);
+      }}
+      className="flex items-center gap-x-3 px-4 py-2.5 lowercase"
+    >
+      <Typography
+        className="border-r border-gray-400/50 pr-3 font-normal"
+        variant="small"
       >
-        <Typography
-          className="border-r border-gray-400 pr-3"
-          variant="paragraph"
-        >
-          npm i @material-tailwind
-        </Typography>
-        {copied ? (
-          <div className="flex items-center gap-x-1">
-            <CheckIcon className="h-5 w-5 text-green-700" />
-          </div>
-        ) : (
-          <div className="flex items-center gap-x-1">
-            <DocumentDuplicateIcon className="h-5 w-5 text-white" />
-          </div>
-        )}
-      </Button>
-    </div>
+        npm i @material-tailwind/react
+      </Typography>
+      {copied ? (
+        <CheckIcon className="h-4 w-4 text-white" />
+      ) : (
+        <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+      )}
+    </Button>
   );
 }
 ```
@@ -191,7 +187,7 @@ export function ClipboardCopyButton() {
 <CodePreview component={<Plugins.ClipboardWithTooltip />}>
 ```jsx
 import React from "react";
-import { Input, Typography, Button, Tooltip } from "@material-tailwind/react";
+import { Typography, Button, Tooltip } from "@material-tailwind/react";
 import { useCopyToClipboard } from "usehooks-ts";
 import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
@@ -200,34 +196,28 @@ export function ClipboardWithTooltip() {
   const [copied, setCopied] = React.useState(false);
 
   return (
-    <div className="flex flex-col items-start gap-y-4">
-      <Tooltip content={copied ? "Copied" : "Copy"}>
-        <Button
-          onMouseLeave={() => setCopied(false)}
-          onClick={() => {
-            copy("npm i @material-tailwind");
-            setCopied(true);
-          }}
-          className="flex items-center gap-x-3 lowercase"
+    <Tooltip content={copied ? "Copied" : "Copy"}>
+      <Button
+        onMouseLeave={() => setCopied(false)}
+        onClick={() => {
+          copy("npm i @material-tailwind/react");
+          setCopied(true);
+        }}
+        className="flex items-center gap-x-3 px-4 py-2.5 lowercase"
+      >
+        <Typography
+          className="border-r border-gray-400/50 pr-3 font-normal"
+          variant="small"
         >
-          <Typography
-            className="border-r border-gray-400 pr-3"
-            variant="paragraph"
-          >
-            npm i @material-tailwind
-          </Typography>
-          {copied ? (
-            <div className="flex items-center gap-x-1">
-              <CheckIcon className="h-5 w-5 text-green-700" />
-            </div>
-          ) : (
-            <div className="flex items-center gap-x-1">
-              <DocumentDuplicateIcon className="h-5 w-5 text-white" />
-            </div>
-          )}
-        </Button>
-      </Tooltip>
-    </div>
+          npm i @material-tailwind/react
+        </Typography>
+        {copied ? (
+          <CheckIcon className="h-4 w-4 text-white" />
+        ) : (
+          <DocumentDuplicateIcon className="h-4 w-4 text-white" />
+        )}
+      </Button>
+    </Tooltip>
   );
 }
 ```

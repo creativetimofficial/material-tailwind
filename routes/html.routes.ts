@@ -199,10 +199,10 @@ export const routes = [
         name: "Menu",
         route: "menu",
       },
-      // {
-      //   name: "Mega Menu",
-      //   route: "mega-menu",
-      // },
+      {
+        name: "Mega Menu",
+        route: "mega-menu",
+      },
       {
         name: "Navbar",
         route: "navbar",

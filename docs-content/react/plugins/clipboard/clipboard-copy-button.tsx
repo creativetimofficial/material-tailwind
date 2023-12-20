@@ -20,7 +20,7 @@ export function ClipboardCopyButton() {
         className="border-r border-gray-400/50 pr-3 font-normal"
         variant="small"
       >
-        npm i @material-tailwind
+        npm i @material-tailwind/react
       </Typography>
       {copied ? (
         <CheckIcon className="h-4 w-4 text-white" />
