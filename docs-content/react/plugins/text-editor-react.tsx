@@ -1038,7 +1038,7 @@ const editorConfig = {
 export function TextEditorReact() {
   return (
     <LexicalComposer initialConfig={editorConfig}>
-      <div className="relative mx-auto my-5 w-full max-w-xl rounded-xl border border-gray-300 bg-white text-left font-normal leading-5 text-gray-900">
+      <div className="relative mx-auto my-5 w-full max-w-xl overflow-hidden rounded-xl border border-gray-300 bg-white text-left font-normal leading-5 text-gray-900">
         <ToolbarPlugin />
         <div className="relative rounded-b-lg border-opacity-5 bg-white">
           <RichTextPlugin
