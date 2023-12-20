@@ -11,10 +11,17 @@ export function MegaMenuDefault() {
           </a>
           <div className="hidden lg:block">
             <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+              <li className="block p-1 font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                <a
+                  href="#"
+                  className="flex items-center transition-colors hover:text-blue-500"
+                >
+                  Home
+                </a>
+              </li>
               <li
-                data-ripple-light="true"
                 data-popover-target="menu"
-                className="block p-1 font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased"
+                className="relative block p-1 font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased"
               >
                 <div
                   role="button"
@@ -58,23 +65,7 @@ export function MegaMenuDefault() {
                   href="#"
                   className="flex items-center transition-colors hover:text-blue-500"
                 >
-                  Account
-                </a>
-              </li>
-              <li className="block p-1 font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
-                <a
-                  href="#"
-                  className="flex items-center transition-colors hover:text-blue-500"
-                >
-                  Blocks
-                </a>
-              </li>
-              <li className="block p-1 font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
-                <a
-                  href="#"
-                  className="flex items-center transition-colors hover:text-blue-500"
-                >
-                  Docs
+                  Contact
                 </a>
               </li>
             </ul>
