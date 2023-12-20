@@ -66,12 +66,13 @@ export function DefaultGallery() {
         "https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1493&q=80",
     },
   ];
+
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
       {data.map(({ imageLink }, index) => (
         <div key={index}>
           <img
-            className="h-40 w-full max-w-full rounded-lg "
+            className="h-40 w-full max-w-full rounded-lg object-cover object-center"
             src={imageLink}
             alt="gallery-photo"
           />
@@ -80,6 +81,7 @@ export function DefaultGallery() {
     </div>
   );
 }
+
 ```
 </CodePreview>
 
@@ -95,27 +97,25 @@ export function DefaultGallery() {
 ```jsx
 export function MasonryGridGallery() {
   return (
-   export function MasonryGridGallery() {
-  return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
       <div className="grid gap-4">
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg "
+            className="h-auto max-w-full rounded-lg object-cover object-center "
             src="https://www.material-tailwind.com/image/product-11.jpeg"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://www.material-tailwind.com/image/cart-illustration.svg"
             alt="gallery-photo"
           />
@@ -124,21 +124,21 @@ export function MasonryGridGallery() {
       <div className="grid gap-4">
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg "
+            className="h-auto max-w-full rounded-lg object-cover object-center "
             src="https://docs.material-tailwind.com/img/team-3.jpg"
             alt="gallery-photo"
           />
@@ -147,21 +147,21 @@ export function MasonryGridGallery() {
       <div className="grid gap-4">
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg "
+            className="h-auto max-w-full rounded-lg object-cover object-center "
             src="https://docs.material-tailwind.com/img/team-3.jpg"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             alt="gallery-photo"
           />
@@ -170,23 +170,20 @@ export function MasonryGridGallery() {
       <div className="grid gap-4">
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
             alt="gallery-photo"
           />
         </div>
         <div>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-full rounded-lg object-cover object-center"
             src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
             alt="gallery-photo"
           />
         </div>
       </div>
     </div>
-  );
-}
-
   );
 }
 ```
@@ -230,11 +227,12 @@ export function FeaturedImageGallery() {
   const [active, setActive] = React.useState(
     "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   );
+
   return (
     <div className="grid gap-4">
       <div>
         <img
-          className="h-auto w-full max-w-full rounded-lg md:h-[450px] "
+          className="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
           src={active}
           alt=""
         />
@@ -245,7 +243,7 @@ export function FeaturedImageGallery() {
             <img
               onClick={() => setActive(imgelink)}
               src={imgelink}
-              className="h-20 max-w-full cursor-pointer rounded-lg"
+              className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
               alt="gallery-image"
             />
           </div>
@@ -287,12 +285,13 @@ export function QuadGallery() {
         "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
     },
   ];
+
   return (
     <div className="grid grid-cols-2 gap-2">
       {data.map(({ imageLink }, index) => (
         <div key={index}>
           <img
-            className="h-auto max-w-full rounded-lg"
+            className="h-40 max-w-full rounded-lg object-cover object-center md:h-60"
             src={imageLink}
             alt=""
           />
@@ -319,21 +318,21 @@ import { Carousel } from "@material-tailwind/react";
 
 export function GalleryWithCarousel() {
   return (
-    <Carousel autoplay={true} className="rounded-xl">
+    <Carousel loop={true} autoplay={true} className="rounded-xl">
       <img
         src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
         alt="image 1"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-center"
       />
       <img
         src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
         alt="image 2"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-center"
       />
       <img
         src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
         alt="image 3"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-center"
       />
     </Carousel>
   );
@@ -525,14 +524,14 @@ export function GalleryWithTab() {
       <TabsBody className="grid grid-cols-1 gap-4 ">
         {data.map(({ value, images }) => (
           <TabPanel
-            className="grid grid-cols-3 gap-4"
+            className="grid grid-cols-2 gap-4 md:grid-cols-3"
             key={value}
             value={value}
           >
             {images?.map(({ imageLink }, index) => (
               <div key={index}>
                 <img
-                  className="h-40 w-full max-w-full rounded-lg"
+                  className="h-40 w-full max-w-full rounded-lg object-cover object-center"
                   src={imageLink}
                   alt="image-photo"
                 />
