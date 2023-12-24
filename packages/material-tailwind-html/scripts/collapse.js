@@ -11,12 +11,12 @@
               collapse.style.height = 0;
               trigger.removeAttribute("open");
             } else {
-              collapse.style.height = `${collapse.firstChild.clientHeight}px`;
+              collapse.style.height = `${collapse.children[0].clientHeight}px`;
               trigger.setAttribute("open", "");
             }
           });
         }
-      })
+      }),
     );
   }
 })();
