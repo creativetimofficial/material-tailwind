@@ -123,6 +123,7 @@ import { ReleaseNotes as HTMLReleaseNotes } from "docs-content/html/release-note
 import * as HTMLGalleryExamples from "docs-content/html/gallery";
 import * as HTMLSkeletonExamples from "docs-content/html/skeleton";
 import * as HTMLMegaMenuExamples from "docs-content/html/mega-menu";
+import * as HTMLCollapseExamples from "docs-content/html/collapse";
 
 // @material-tailwind/react
 import {
@@ -406,6 +407,7 @@ const components = {
   HTMLGalleryExamples,
   HTMLSkeletonExamples,
   HTMLMegaMenuExamples,
+  HTMLCollapseExamples,
 };
 
 export default function Page({ frontMatter, mdxSource, slug }) {
