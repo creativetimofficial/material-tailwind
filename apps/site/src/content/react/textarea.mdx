@@ -221,14 +221,28 @@ Use the example below for creating X chatbox using `Textarea`.
 
 <ComponentPreview demo={<Textarea.ChatboxWithTextarea />}>
 ```tsx
-import { Input } from "@material-tailwind/react";
+import { IconButton, Textarea } from "@material-tailwind/react";
+import { Emoji, GifFormat, MediaImage, Send } from "iconoir-react";
 
-export function InputCustomStyles() {
+export function ChatboxWithTextarea() {
   return (
-    <Input
-      placeholder="Username"
-      inputClassName="rounded-none border-0 border-b border-gray-400 px-0.5 ring-0 hover:border-gray-900 focus:border-gray-900 dark:border-gray-600 dark:hover:border-gray-50 dark:focus:border-gray-50"
-    />
+    <form action="#" className="flex w-full items-center gap-4">
+      <div className="flex items-center gap-1">
+        <IconButton variant="ghost">
+          <MediaImage className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="ghost">
+          <GifFormat className="h-5 w-5" />
+        </IconButton>
+        <IconButton variant="ghost">
+          <Emoji className="h-5 w-5" />
+        </IconButton>
+      </div>
+      <Textarea placeholder="Send a new message" rows={1} />
+      <IconButton variant="ghost">
+        <Send className="h-5 w-5" />
+      </IconButton>
+    </form>
   );
 }
 ```
