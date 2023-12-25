@@ -2,7 +2,7 @@ import { Input, Typography } from "@material-tailwind/react/dist";
 
 export function InputWithLabel() {
   return (
-    <div className="w-[240px] space-y-1.5">
+    <Input className="w-[240px] space-y-1.5">
       <Typography
         as="label"
         htmlFor="email"
@@ -12,13 +12,7 @@ export function InputWithLabel() {
       >
         Email
       </Typography>
-      <Input>
-        <Input.Field
-          id="email"
-          type="email"
-          placeholder="someone@example.com"
-        />
-      </Input>
-    </div>
+      <Input.Field id="email" type="email" placeholder="someone@example.com" />
+    </Input>
   );
 }

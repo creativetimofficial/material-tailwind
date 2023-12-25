@@ -110,22 +110,18 @@ import { Input, Typography } from "@material-tailwind/react";
 export function InputWithValidation() {
   return (
     <div className="w-[240px] space-y-6">
-      <div className="w-full space-y-1">
-        <Input color="error" isError>
-          <Input.Field placeholder="Input Error" />
-        </Input>
+      <Input isError color="error" className="w-full space-y-1">
+        <Input.Field placeholder="Input Error" />
         <Typography variant="small" color="error">
           Something went wrong!
         </Typography>
-      </div>
-      <div className="w-full space-y-1">
-        <Input color="success" isSuccess>
-          <Input.Field placeholder="Input Success" />
-        </Input>
+      </Input>
+      <Input isSuccess color="success" className="w-full space-y-1">
+        <Input.Field placeholder="Input Success" />
         <Typography variant="small" color="success">
           Congratulations 🎉
         </Typography>
-      </div>
+      </Input>
     </div>
   );
 }
@@ -178,7 +174,7 @@ import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithLabel() {
   return (
-    <div className="w-[240px] space-y-1.5">
+    <Input className="w-[240px] space-y-1.5">
       <Typography
         as="label"
         htmlFor="email"
@@ -188,14 +184,8 @@ export function InputWithLabel() {
       >
         Email
       </Typography>
-      <Input>
-        <Input.Field
-          id="email"
-          type="email"
-          placeholder="someone@example.com"
-        />
-      </Input>
-    </div>
+      <Input.Field id="email" type="email" placeholder="someone@example.com" />
+    </Input>
   );
 }
 ```
@@ -216,10 +206,8 @@ import { InfoCircle } from "iconoir-react";
 
 export function InputWithHelperText() {
   return (
-    <div className="w-[240px] space-y-2">
-      <Input>
-        <Input.Field type="password" placeholder="Password" />
-      </Input>
+    <Input className="w-[240px] space-y-2">
+      <Input.Field type="password" placeholder="Password" />
       <div className="flex gap-1.5 text-gray-600">
         <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
         <Typography variant="small">
@@ -227,7 +215,7 @@ export function InputWithHelperText() {
           number.
         </Typography>
       </div>
-    </div>
+    </Input>
   );
 }
 ```
