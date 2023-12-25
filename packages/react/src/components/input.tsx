@@ -129,8 +129,20 @@ export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
 InputRoot.displayName = "MaterialTailwind.Input";
 
 // input field
-export const InputField = React.forwardRef<HTMLInputElement, Props<"input">>(
-  (props, ref) => {
+export interface InputFieldProps extends Props<"input"> {
+  type?:
+    | "text"
+    | "email"
+    | "password"
+    | "search"
+    | "number"
+    | "tel"
+    | "url"
+    | "hidden";
+}
+
+export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
+  ({ type = "text", ...rest }, ref) => {
     const contextTheme = useTheme();
     const {
       size,
@@ -147,14 +159,28 @@ export const InputField = React.forwardRef<HTMLInputElement, Props<"input">>(
       theme.base,
       theme.size[size],
       theme.color[color],
-      props?.className,
+      rest?.className,
       "peer",
     );
 
+    const inputType = [
+      "text",
+      "email",
+      "password",
+      "search",
+      "number",
+      "tel",
+      "url",
+      "hidden",
+    ].includes(type)
+      ? type
+      : "text";
+
     return (
       <input
-        {...props}
+        {...rest}
         ref={ref}
+        type={inputType}
         className={styles}
         disabled={disabled}
         data-error={isError}
