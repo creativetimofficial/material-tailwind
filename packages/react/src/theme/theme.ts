@@ -10,6 +10,12 @@ import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
 import textareaTheme from "./textarea";
 import ratingTheme from "./rating";
 import selectTheme from "./select";
+import {
+  listTheme,
+  listItemTheme,
+  listItemStartTheme,
+  listItemEndTheme,
+} from "./list";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -31,6 +37,10 @@ export const theme = {
   textarea: textareaTheme,
   rating: ratingTheme,
   select: selectTheme,
+  list: listTheme,
+  listItem: listItemTheme,
+  listItemStart: listItemStartTheme,
+  listItemEnd: listItemEndTheme,
 };
 
 export default theme;

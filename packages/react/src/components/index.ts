@@ -10,3 +10,4 @@ export * from "./input";
 export * from "./textarea";
 export * from "./rating";
 export * from "./select";
+export * from "./list";

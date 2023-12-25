@@ -12,7 +12,7 @@ export const buttonTheme = {
     fullWidth: false,
   },
   baseStyle:
-    "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
+    "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed",
   rounded: "rounded-full",
   fullWidth: "flex w-full",
   size: {
