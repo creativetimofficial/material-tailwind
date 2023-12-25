@@ -84,7 +84,7 @@ export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
     isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
 
     const styles = twMerge(
-      theme.base,
+      theme.baseStyle,
       theme.size[size],
       isRounded && theme["isRounded"],
       isFullWidth && theme["isFullWidth"],
@@ -156,7 +156,7 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
     const theme = contextTheme?.inputField ?? inputFieldTheme;
 
     const styles = twMerge(
-      theme.base,
+      theme.baseStyle,
       theme.size[size],
       theme.color[color],
       rest?.className,
@@ -232,7 +232,7 @@ export const InputIcon = React.forwardRef<HTMLSpanElement, InputIconProps>(
       };
     }, [placement]);
 
-    const styles = twMerge(theme.base, theme.size[size], props?.className);
+    const styles = twMerge(theme.baseStyle, theme.size[size], props?.className);
 
     return (
       <span

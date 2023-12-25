@@ -13,7 +13,7 @@ export const inputTheme = {
     isError: false,
     isSuccess: false,
   },
-  base: "relative max-w-[240px] w-full aria-disabled:cursor-not-allowed",
+  baseStyle: "relative max-w-[240px] w-full aria-disabled:cursor-not-allowed",
   isRounded: "rounded-full",
   isFullWidth: "max-w-full",
   size: {
@@ -24,7 +24,8 @@ export const inputTheme = {
 };
 
 export const inputFieldTheme = {
-  base: "h-full w-full outline-none rounded-[inherit] text-inherit leading-[inherit] focus:outline-none text-secondary-content placeholder:text-gray-400 bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content dark:placeholder:text-gray-700 data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none",
+  baseStyle:
+    "h-full w-full outline-none rounded-[inherit] text-inherit leading-[inherit] focus:outline-none text-secondary-content placeholder:text-gray-400 bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content dark:placeholder:text-gray-700 data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none",
   size: {
     sm: "py-[4.5px] px-1.5 ring data-[icon-placement=start]:ps-6 data-[icon-placement=end]:pe-6",
     md: "py-[8.5px] px-2.5 ring data-[icon-placement=start]:ps-8 data-[icon-placement=end]:pe-8",
@@ -49,7 +50,8 @@ export const inputIconTheme = {
   defaultProps: {
     placement: "start",
   },
-  base: "pointer-events-none absolute top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-700 peer-hover:text-secondary-content peer-focus:text-secondary-content transition-all duration-300 ease-in dark:peer-hover:text-secondary-dm-content dark:peer-focus:text-secondary-dm-content overflow-hidden",
+  baseStyle:
+    "pointer-events-none absolute top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-700 peer-hover:text-secondary-content peer-focus:text-secondary-content transition-all duration-300 ease-in dark:peer-hover:text-secondary-dm-content dark:peer-focus:text-secondary-dm-content overflow-hidden",
   size: {
     sm: "w-4 h-4 data-[placement=start]:left-[5px] data-[placement=end]:right-[5px]",
     md: "w-5 h-5 data-[placement=start]:left-[7px] data-[placement=end]:right-[7px]",
