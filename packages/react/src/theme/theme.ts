@@ -16,6 +16,7 @@ import {
   listItemStartTheme,
   listItemEndTheme,
 } from "./list";
+import avatarTheme from "./avatar";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -41,6 +42,7 @@ export const theme = {
   listItem: listItemTheme,
   listItemStart: listItemStartTheme,
   listItemEnd: listItemEndTheme,
+  avatar: avatarTheme,
 };
 
 export default theme;

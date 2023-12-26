@@ -1,0 +1,26 @@
+import type { DeepPartial } from "@types";
+
+export type AvatarTheme = DeepPartial<typeof avatarTheme>;
+
+export const avatarTheme = {
+  defaultProps: {
+    size: "md",
+    variant: "circular",
+  },
+  baseStyle: "inline-block object-cover object-center",
+  size: {
+    xs: "w-6 h-6 rounded-sm",
+    sm: "w-8 h-8 rounded",
+    md: "w-11 h-11 rounded-md",
+    lg: "w-14 h-14 rounded-md",
+    xl: "w-[72px] h-[72px] rounded-lg",
+    xxl: "w-[86px] h-[86px] rounded-xl",
+  },
+  variant: {
+    square: "rounded-none",
+    circular: "rounded-full",
+    rounded: "rounded-[current]",
+  },
+};
+
+export default avatarTheme;
