@@ -17,6 +17,12 @@ import {
   listItemEndTheme,
 } from "./list";
 import avatarTheme from "./avatar";
+import {
+  chipTheme,
+  chipLabelTheme,
+  chipIconTheme,
+  chipDismissTriggerTheme,
+} from "./chip";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -43,6 +49,10 @@ export const theme = {
   listItemStart: listItemStartTheme,
   listItemEnd: listItemEndTheme,
   avatar: avatarTheme,
+  chip: chipTheme,
+  chipLabel: chipLabelTheme,
+  chipIcon: chipIconTheme,
+  chipDismissTrigger: chipDismissTriggerTheme,
 };
 
 export default theme;

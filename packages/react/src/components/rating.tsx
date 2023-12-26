@@ -12,7 +12,7 @@ import { ratingTheme } from "@theme";
 // @types
 import type { BaseComponent, Props } from "@types";
 
-export interface RatingProps extends Props<any> {
+export interface RatingProps extends Props<"div" | any> {
   as?: React.ElementType;
   color?: BaseComponent<any>["color"];
   ratedIcon?: React.ReactNode;

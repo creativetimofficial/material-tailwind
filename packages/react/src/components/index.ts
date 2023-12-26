@@ -12,3 +12,4 @@ export * from "./rating";
 export * from "./select";
 export * from "./list";
 export * from "./avatar";
+export * from "./chip";

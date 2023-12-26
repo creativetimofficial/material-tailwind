@@ -38,7 +38,7 @@ export const InputContext = React.createContext<InputContextProps>({
 });
 
 // input root
-export interface InputProps extends Props<any> {
+export interface InputProps extends Props<"div" | any> {
   as?: React.ElementType;
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
@@ -51,7 +51,10 @@ export interface InputProps extends Props<any> {
   children: React.ReactNode;
 }
 
-export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
+export const InputRoot = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  InputProps
+>(
   (
     {
       as,
@@ -194,59 +197,62 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
 InputField.displayName = "MaterialTailwind.InputField";
 
 // input icon
-export interface InputIconProps extends Props<"span"> {
+export interface InputIconProps extends Props<"span" | any> {
+  as?: React.ElementType;
   placement?: "start" | "end";
 }
 
-export const InputIcon = React.forwardRef<HTMLSpanElement, InputIconProps>(
-  ({ placement, ...props }, ref) => {
-    const contextTheme = useTheme();
-    const {
-      size,
-      iconPlacement,
-      setIconPlacement,
-      setIsIconDefined,
-      isError,
-      isSuccess,
-      disabled,
-    } = React.useContext(InputContext);
-    const theme = contextTheme?.inputIcon ?? inputIconTheme;
-    const defaultProps = contextTheme?.inputIcon?.defaultProps;
+export const InputIcon = React.forwardRef<
+  HTMLSpanElement | HTMLElement,
+  InputIconProps
+>(({ as, placement, ...props }, ref) => {
+  const Element = as ?? "span";
+  const contextTheme = useTheme();
+  const {
+    size,
+    iconPlacement,
+    setIconPlacement,
+    setIsIconDefined,
+    isError,
+    isSuccess,
+    disabled,
+  } = React.useContext(InputContext);
+  const theme = contextTheme?.inputIcon ?? inputIconTheme;
+  const defaultProps = contextTheme?.inputIcon?.defaultProps;
 
-    placement ??=
-      (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
+  placement ??=
+    (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
 
-    React.useEffect(() => {
-      setIsIconDefined(true);
+  React.useEffect(() => {
+    setIsIconDefined(true);
 
-      return () => {
-        setIsIconDefined(false);
-      };
-    }, []);
+    return () => {
+      setIsIconDefined(false);
+    };
+  }, []);
 
-    React.useEffect(() => {
-      setIconPlacement(placement as string);
+  React.useEffect(() => {
+    setIconPlacement(placement as string);
 
-      return () => {
-        setIconPlacement("start");
-      };
-    }, [placement]);
+    return () => {
+      setIconPlacement("start");
+    };
+  }, [placement]);
 
-    const styles = twMerge(theme.baseStyle, theme.size[size], props?.className);
+  const styles = twMerge(theme.baseStyle, theme.size[size], props?.className);
 
-    return (
-      <span
-        {...props}
-        ref={ref}
-        className={styles}
-        data-error={isError}
-        data-success={isSuccess}
-        aria-disabled={disabled}
-        data-placement={iconPlacement}
-      />
-    );
-  },
-);
+  return (
+    <Element
+      {...props}
+      ref={ref}
+      className={styles}
+      data-error={isError}
+      data-success={isSuccess}
+      aria-disabled={disabled}
+      data-placement={iconPlacement}
+    />
+  );
+});
 
 InputIcon.displayName = "MaterialTailwind.InputIcon";
 

@@ -13,7 +13,7 @@ import { buttonGroupTheme } from "@theme";
 import type { BaseComponent } from "@types";
 import type { ButtonProps } from "@components";
 
-export interface ButtonGroupProps extends BaseComponent<any> {
+export interface ButtonGroupProps extends BaseComponent<"div" | any> {
   as?: React.ElementType;
   ripple?: boolean;
   rounded?: boolean;

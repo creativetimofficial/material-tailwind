@@ -2,7 +2,6 @@ import React from "react";
 
 // @utils
 import { twMerge } from "tailwind-merge";
-import Ripple from "material-ripple-effects";
 
 // @hooks
 import { useTheme } from "@context";
