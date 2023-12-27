@@ -86,7 +86,7 @@ export const chipLabelTheme = {
 };
 
 export const chipIconTheme = {
-  baseStyle: "grid place-items-center rounded-full",
+  baseStyle: "grid place-items-center shrink-0 rounded-full",
   size: {
     sm: "translate-x-px w-3.5 h-3.5",
     md: "translate-x-0.5 w-4 h-4",
@@ -98,7 +98,7 @@ export const chipDismissTriggerTheme = {
   defaultProps: {
     ripple: true,
   },
-  baseStyle: "grid place-items-center border rounded-full p-px",
+  baseStyle: "grid place-items-center shrink-0 border rounded-full p-px",
   size: {
     sm: "-translate-x-px ml-0.5 w-3.5 h-3.5 stroke-2",
     md: "-translate-x-0.5 ml-1 w-4 h-4 stroke-2",
