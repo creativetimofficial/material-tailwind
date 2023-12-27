@@ -23,6 +23,12 @@ import {
   chipIconTheme,
   chipDismissTriggerTheme,
 } from "./chip";
+import {
+  alertTheme,
+  alertContentTheme,
+  alertIconTheme,
+  alertDismissTriggerTheme,
+} from "./alert";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -53,6 +59,10 @@ export const theme = {
   chipLabel: chipLabelTheme,
   chipIcon: chipIconTheme,
   chipDismissTrigger: chipDismissTriggerTheme,
+  alert: alertTheme,
+  alertContent: alertContentTheme,
+  alertIcon: alertIconTheme,
+  alertDismissTrigger: alertDismissTriggerTheme,
 };
 
 export default theme;

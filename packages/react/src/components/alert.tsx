@@ -9,28 +9,32 @@ import { useTheme } from "@context";
 
 // @theme
 import {
-  chipTheme,
-  chipLabelTheme,
-  chipIconTheme,
-  chipDismissTriggerTheme,
+  alertTheme,
+  alertContentTheme,
+  alertIconTheme,
+  alertDismissTriggerTheme,
 } from "@theme";
 
 // @types
 import type { BaseComponent, Props } from "@types";
 
-// chip context
-export type ChipContextProps = BaseComponent<"div">;
+// alert context
+export interface AlertContextProps extends Props<"div"> {
+  variant?: BaseComponent<"div">["variant"];
+  color?: BaseComponent<"div">["color"];
+  rounded?: boolean;
+}
 
-export const ChipContext = React.createContext<ChipContextProps>({
-  size: "md",
+export const AlertContext = React.createContext<AlertContextProps>({
   color: "primary",
   variant: "solid",
+  rounded: false,
 });
 
-// chip root
-type BaseChipProps = BaseComponent<"div"> & Props<any>;
+// alert root
+type BaseAlertProps = Omit<BaseComponent<"div">, "size"> & Props<any>;
 
-export interface ChipProps extends BaseChipProps {
+export interface AlertProps extends BaseAlertProps {
   as?: React.ElementType;
   className?: string;
   visible?: boolean;
@@ -52,69 +56,73 @@ export interface ChipProps extends BaseChipProps {
  * }
  * ```
  */
-const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
+const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
   (
-    { as, size, color, variant, className, visible = true, children, ...rest },
+    {
+      as,
+      color,
+      variant,
+      rounded,
+      className,
+      visible = true,
+      children,
+      ...rest
+    },
     ref,
   ) => {
     const Element = as ?? "div";
     const contextTheme = useTheme();
-    const theme = contextTheme?.chip ?? chipTheme;
-    const defaultProps = contextTheme?.chip?.defaultProps;
+    const theme = contextTheme?.alert ?? alertTheme;
+    const defaultProps = contextTheme?.alert?.defaultProps;
 
-    size ??= (defaultProps?.size as ChipProps["size"]) ?? "md";
-    color ??= (defaultProps?.color as ChipProps["color"]) ?? "primary";
-    variant ??= (defaultProps?.variant as ChipProps["variant"]) ?? "solid";
+    color ??= (defaultProps?.color as AlertProps["color"]) ?? "primary";
+    variant ??= (defaultProps?.variant as AlertProps["variant"]) ?? "solid";
+    rounded ??= (defaultProps?.rounded as AlertProps["rounded"]) ?? false;
 
     const styles = twMerge(
       theme.baseStyle,
-      theme["size"][size],
       theme["variant"][variant][color],
+      rounded && theme.rounded,
       className,
     );
 
     const contextValue = React.useMemo(
       () => ({
-        size,
         color,
         variant,
+        rounded,
       }),
-      [size, color, variant],
+      [color, variant, rounded],
     );
 
     return visible ? (
-      <Element {...rest} ref={ref} className={styles}>
-        <ChipContext.Provider value={contextValue}>
+      <Element role="alert" {...rest} ref={ref} className={styles}>
+        <AlertContext.Provider value={contextValue}>
           {children}
-        </ChipContext.Provider>
+        </AlertContext.Provider>
       </Element>
     ) : null;
   },
 );
 
-ChipRoot.displayName = "MaterialTailwind.Chip";
+AlertRoot.displayName = "MaterialTailwind.Alert";
 
-// chip label
-export interface ChipLabelProps extends Props<"span" | any> {
+// alert content
+export interface AlertContentProps extends Props<"span" | any> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const ChipLabel = React.forwardRef<
+export const AlertContent = React.forwardRef<
   HTMLSpanElement | HTMLElement,
-  ChipLabelProps
+  AlertContentProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as ?? "span";
   const contextTheme = useTheme();
-  const { size } = React.useContext(ChipContext);
-  const theme = contextTheme?.chipLabel ?? chipLabelTheme;
+  const theme = contextTheme?.alertContent ?? alertContentTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["size"][size || "md"],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, className);
 
   return (
     <Element {...rest} ref={ref} className={styles}>
@@ -123,29 +131,24 @@ export const ChipLabel = React.forwardRef<
   );
 });
 
-ChipLabel.displayName = "MaterialTailwind.ChipLabel";
+AlertContent.displayName = "MaterialTailwind.AlertContent";
 
-// chip icon
-export interface ChipIconProps extends Props<"span" | any> {
+// alert icon
+export interface AlertIconProps extends Props<"span" | any> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const ChipIcon = React.forwardRef<
+export const AlertIcon = React.forwardRef<
   HTMLSpanElement | HTMLElement,
-  ChipIconProps
+  AlertIconProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as ?? "span";
   const contextTheme = useTheme();
-  const { size } = React.useContext(ChipContext);
-  const theme = contextTheme?.chipIcon ?? chipIconTheme;
+  const theme = contextTheme?.alertIcon ?? alertIconTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["size"][size || "md"],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, className);
 
   return (
     <Element {...rest} ref={ref} className={styles}>
@@ -154,28 +157,28 @@ export const ChipIcon = React.forwardRef<
   );
 });
 
-ChipIcon.displayName = "MaterialTailwind.ChipIcon";
+AlertIcon.displayName = "MaterialTailwind.AlertIcon";
 
-// chip close trigger
-export interface ChipDismissTriggerProps extends Props<"button" | any> {
+// alert close trigger
+export interface AlertDismissTriggerProps extends Props<"button" | any> {
   as?: React.ElementType;
   ripple?: boolean;
   className?: string;
   children?: React.ReactNode;
 }
 
-export const ChipDismissTrigger = React.forwardRef<
+export const AlertDismissTrigger = React.forwardRef<
   HTMLButtonElement | HTMLElement,
-  ChipDismissTriggerProps
+  AlertDismissTriggerProps
 >(({ as, ripple, className, children, ...rest }, ref) => {
   const Element = as ?? "button";
   const contextTheme = useTheme();
-  const { size, color, variant } = React.useContext(ChipContext);
-  const theme = contextTheme?.chipDismissTrigger ?? chipDismissTriggerTheme;
-  const defaultProps = contextTheme?.chipDismissTrigger?.defaultProps;
+  const { color, variant, rounded } = React.useContext(AlertContext);
+  const theme = contextTheme?.alertDismissTrigger ?? alertDismissTriggerTheme;
+  const defaultProps = contextTheme?.alertDismissTrigger?.defaultProps;
 
   ripple ??=
-    (defaultProps?.ripple as ChipDismissTriggerProps["ripple"]) ?? true;
+    (defaultProps?.ripple as AlertDismissTriggerProps["ripple"]) ?? true;
 
   const rippleEffect = ripple !== undefined && new Ripple();
 
@@ -196,8 +199,8 @@ export const ChipDismissTrigger = React.forwardRef<
 
   const styles = twMerge(
     theme.baseStyle,
-    theme["size"][size || "md"],
     theme["variant"][variant || "solid"][color || "primary"],
+    rounded && theme.rounded,
     className,
   );
 
@@ -223,12 +226,12 @@ export const ChipDismissTrigger = React.forwardRef<
   );
 });
 
-ChipDismissTrigger.displayName = "MaterialTailwind.ChipDismissTrigger";
+AlertDismissTrigger.displayName = "MaterialTailwind.AlertDismissTrigger";
 
-export const Chip = Object.assign(ChipRoot, {
-  Icon: ChipIcon,
-  Label: ChipLabel,
-  DismissTrigger: ChipDismissTrigger,
+export const Alert = Object.assign(AlertRoot, {
+  Icon: AlertIcon,
+  Content: AlertContent,
+  DismissTrigger: AlertDismissTrigger,
 });
 
-export default Chip;
+export default Alert;

@@ -1,25 +1,22 @@
 import type { DeepPartial } from "@types";
 
-export type ChipTheme = DeepPartial<typeof chipTheme>;
-export type ChipLabelTheme = DeepPartial<typeof chipLabelTheme>;
-export type ChipIconTheme = DeepPartial<typeof chipIconTheme>;
-export type ChipDismissTriggerTheme = DeepPartial<
-  typeof chipDismissTriggerTheme
+export type AlertTheme = DeepPartial<typeof alertTheme>;
+export type AlertContentTheme = DeepPartial<typeof alertContentTheme>;
+export type AlertIconTheme = DeepPartial<typeof alertIconTheme>;
+export type AlertDismissTriggerTheme = DeepPartial<
+  typeof alertDismissTriggerTheme
 >;
 
-export const chipTheme = {
+export const alertTheme = {
   defaultProps: {
     size: "md",
     color: "primary",
     variant: "solid",
+    rounded: false,
   },
   baseStyle:
-    "relative inline-flex items-center border select-none font-sans font-medium rounded-full",
-  size: {
-    sm: "text-xs leading-none p-0.5",
-    md: "text-[13px] leading-none p-[3px]",
-    lg: "text-[15px] leading-none p-1",
-  },
+    "relative flex w-full items-center border select-none text-base font-sans font-medium rounded-md p-2",
+  rounded: "rounded-full",
   variant: {
     ghost: {
       primary:
@@ -76,34 +73,21 @@ export const chipTheme = {
   },
 };
 
-export const chipLabelTheme = {
-  baseStyle: "font-inherit text-inherit leading-none",
-  size: {
-    sm: "my-0.5 mx-1.5",
-    md: "my-[3.5px] mx-2",
-    lg: "my-[4.5px] mx-2.5",
-  },
+export const alertContentTheme = {
+  baseStyle: "font-inherit w-full text-inherit leading-none m-1.5",
 };
 
-export const chipIconTheme = {
-  baseStyle: "grid place-items-center rounded-full",
-  size: {
-    sm: "translate-x-px w-3.5 h-3.5",
-    md: "translate-x-0.5 w-4 h-4",
-    lg: "translate-x-[3px] w-5 h-5",
-  },
+export const alertIconTheme = {
+  baseStyle: "grid place-items-center shrink-0 w-5 h-5 mx-1",
 };
 
-export const chipDismissTriggerTheme = {
+export const alertDismissTriggerTheme = {
   defaultProps: {
     ripple: true,
   },
-  baseStyle: "grid place-items-center border rounded-full p-px",
-  size: {
-    sm: "-translate-x-px ml-0.5 w-3.5 h-3.5 stroke-2",
-    md: "-translate-x-0.5 ml-1 w-4 h-4 stroke-2",
-    lg: "-translate-x-[3px] ml-1.5 w-5 h-5 stroke-2",
-  },
+  baseStyle:
+    "grid place-items-center shrink-0 w-5 h-5 border mr-1 ml-3 stroke-[1.5] rounded",
+  rounded: "rounded-full",
   variant: {
     ghost: {
       primary:
@@ -160,4 +144,4 @@ export const chipDismissTriggerTheme = {
   },
 };
 
-export default chipTheme;
+export default alertTheme;

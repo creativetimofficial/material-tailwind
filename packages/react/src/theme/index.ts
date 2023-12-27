@@ -14,3 +14,4 @@ export * from "./select";
 export * from "./list";
 export * from "./avatar";
 export * from "./chip";
+export * from "./alert";
