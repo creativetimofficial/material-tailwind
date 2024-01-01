@@ -1,14 +1,15 @@
-import { Typography, Card } from "@material-tailwind/react";
+import MT from "@material-tailwind/react";
+const { Typography, Card } = MT;
 
 export const meta = () => {
-  return [{ title: "Material Tailwind + Remix" }];
+  return [{ title: "Material Tailwind + Remix + TS" }];
 };
 
 export default function Index() {
   return (
     <div className="relative grid min-h-[100vh] w-screen p-8">
       <div className="flex flex-col-reverse items-center justify-between gap-4 self-start md:flex-row">
-        <Card className="h-max w-max border border-blue-gray-50 py-4 px-5 shadow-lg shadow-blue-gray-900/5">
+        <Card className="h-max w-max border border-blue-gray-50 px-5 py-4 shadow-lg shadow-blue-gray-900/5">
           <code className="text-blue-gray-900">
             Get started by editing <strong>app/routes/_index.jsx</strong>
           </code>
@@ -18,7 +19,7 @@ export default function Index() {
           <div className="py-4 pl-4 pr-5">Remix Template</div>
         </Card>
       </div>
-      <div className="flex-col gap-2 pt-56 pb-40 text-center">
+      <div className="flex-col gap-2 pb-40 pt-56 text-center">
         <Typography variant="h1" color="blue-gray">
           Material Tailwind React
         </Typography>
@@ -28,15 +29,19 @@ export default function Index() {
       </div>
       <div className="grid grid-cols-1 gap-4 self-end md:grid-cols-2 lg:grid-cols-4">
         <a
-          href="https://www.material-tailwind.com/docs/react/accordion?ref=template-remix"
+          href="https://www.material-tailwind.com/docs/react/accordion?ref=template-remix-ts"
           target="_blank"
           rel="noreferrer"
         >
           <Card
             shadow={false}
-            className="border border-blue-gray-50 py-4 px-5 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
-            <Typography variant="h5" color="blue-gray" className="mb-3 flex items-center gap-3">
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="mb-3 flex items-center gap-3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -54,21 +59,25 @@ export default function Index() {
               Documentation
             </Typography>
             <Typography color="blue-gray" className="font-normal opacity-70">
-              Find everything you need to know about Material Tailwind in our official
-              documentation.
+              Find everything you need to know about Material Tailwind in our
+              official documentation.
             </Typography>
           </Card>
         </a>
         <a
-          href="https://www.material-tailwind.com/blocks?ref=template-remix"
+          href="https://www.material-tailwind.com/blocks?ref=template-remix-ts"
           target="_blank"
           rel="noreferrer"
         >
           <Card
             shadow={false}
-            className="border border-blue-gray-50 py-4 px-5 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
-            <Typography variant="h5" color="blue-gray" className="mb-3 flex items-center gap-3">
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="mb-3 flex items-center gap-3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -86,41 +95,55 @@ export default function Index() {
               Blocks
             </Typography>
             <Typography color="blue-gray" className="font-normal opacity-70">
-              Ready-to-use section, like Hero, Blog, Pricing, and more, for building projects in no
-              time!
+              Ready-to-use section, like Hero, Blog, Pricing, and more, for
+              building projects in no time!
             </Typography>
           </Card>
         </a>
         <a
-          href="https://github.com/creativetimofficial/material-tailwind?ref=template-remix"
+          href="https://github.com/creativetimofficial/material-tailwind?ref=template-remix-ts"
           target="_blank"
           rel="noreferrer"
         >
           <Card
             shadow={false}
-            className="border border-blue-gray-50 py-4 px-5 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
-            <Typography variant="h5" color="blue-gray" className="mb-3 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="mb-3 flex items-center gap-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+              >
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
               Github
             </Typography>
             <Typography color="blue-gray" className="font-normal opacity-70">
-              Contributions are always welcome, you can check out the Github repository for more.
+              Contributions are always welcome, you can check out the Github
+              repository for more.
             </Typography>
           </Card>
         </a>
         <a
-          href="https://github.com/creativetimofficial/material-tailwind?ref=template-remix"
+          href="https://github.com/creativetimofficial/material-tailwind?ref=template-remix-ts"
           target="_blank"
           rel="noreferrer"
         >
           <Card
             shadow={false}
-            className="border border-blue-gray-50 py-4 px-5 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
-            <Typography variant="h5" color="blue-gray" className="mb-3 flex items-center gap-3">
+            <Typography
+              variant="h5"
+              color="blue-gray"
+              className="mb-3 flex items-center gap-3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 50 50"
@@ -132,7 +155,8 @@ export default function Index() {
               Discord
             </Typography>
             <Typography color="blue-gray" className="font-normal opacity-70">
-              Join our Discord server to get help and suggest new features for Material Tailwind.
+              Join our Discord server to get help and suggest new features for
+              Material Tailwind.
             </Typography>
           </Card>
         </a>
