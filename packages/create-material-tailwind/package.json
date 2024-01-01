@@ -1,6 +1,6 @@
 {
   "name": "create-material-tailwind",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "CLI for creating @material-tailwind project.",
   "main": "index.js",
   "author": "Sajad",
