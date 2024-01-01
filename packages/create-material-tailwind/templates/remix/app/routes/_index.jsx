@@ -1,5 +1,5 @@
-import MT from "@material-tailwind/react";
-const { Typography, Card } = MT;
+import MaterialTailwind from "@material-tailwind/react";
+const { Typography, Card } = MaterialTailwind;
 
 export const meta = () => {
   return [{ title: "Material Tailwind + Remix + TS" }];

@@ -1,5 +1,5 @@
-import MT from "@material-tailwind/react";
-const { Typography, Card } = MT;
+import MaterialTailwind from "@material-tailwind/react";
+const { Typography, Card } = MaterialTailwind;
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
@@ -9,18 +9,18 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="relative grid min-h-[100vh] w-screen p-8">
-      <div className="flex flex-col-reverse items-center self-start justify-between gap-4 md:flex-row">
-        <Card className="px-5 py-4 border shadow-lg h-max w-max border-blue-gray-50 shadow-blue-gray-900/5">
+      <div className="flex flex-col-reverse items-center justify-between gap-4 self-start md:flex-row">
+        <Card className="h-max w-max border border-blue-gray-50 px-5 py-4 shadow-lg shadow-blue-gray-900/5">
           <code className="text-blue-gray-900">
             Get started by editing <strong>app/routes/_index.tsx</strong>
           </code>
         </Card>
-        <Card className="flex-row items-center font-semibold border shadow-lg h-max w-max border-blue-gray-50 text-blue-gray-900 shadow-blue-gray-900/5">
+        <Card className="h-max w-max flex-row items-center border border-blue-gray-50 font-semibold text-blue-gray-900 shadow-lg shadow-blue-gray-900/5">
           <img src="/favicon.ico" alt="Remix Logo" className="ml-4 h-7 w-7" />
           <div className="py-4 pl-4 pr-5">Remix + TypeScript Template</div>
         </Card>
       </div>
-      <div className="flex-col gap-2 pt-56 pb-40 text-center">
+      <div className="flex-col gap-2 pb-40 pt-56 text-center">
         <Typography variant="h1" color="blue-gray">
           Material Tailwind React
         </Typography>
@@ -28,7 +28,7 @@ export default function Index() {
           An easy to use components library for Tailwind CSS and React.
         </Typography>
       </div>
-      <div className="grid self-end grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 self-end md:grid-cols-2 lg:grid-cols-4">
         <a
           href="https://www.material-tailwind.com/docs/react/accordion?ref=template-remix-ts"
           target="_blank"
@@ -36,12 +36,12 @@ export default function Index() {
         >
           <Card
             shadow={false}
-            className="px-5 py-4 transition-all border shadow-xl border-blue-gray-50 shadow-transparent hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
             <Typography
               variant="h5"
               color="blue-gray"
-              className="flex items-center gap-3 mb-3"
+              className="mb-3 flex items-center gap-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ export default function Index() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -72,12 +72,12 @@ export default function Index() {
         >
           <Card
             shadow={false}
-            className="px-5 py-4 transition-all border shadow-xl border-blue-gray-50 shadow-transparent hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
             <Typography
               variant="h5"
               color="blue-gray"
-              className="flex items-center gap-3 mb-3"
+              className="mb-3 flex items-center gap-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export default function Index() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -108,12 +108,12 @@ export default function Index() {
         >
           <Card
             shadow={false}
-            className="px-5 py-4 transition-all border shadow-xl border-blue-gray-50 shadow-transparent hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
             <Typography
               variant="h5"
               color="blue-gray"
-              className="flex items-center gap-3 mb-3"
+              className="mb-3 flex items-center gap-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,12 +138,12 @@ export default function Index() {
         >
           <Card
             shadow={false}
-            className="px-5 py-4 transition-all border shadow-xl border-blue-gray-50 shadow-transparent hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
+            className="border border-blue-gray-50 px-5 py-4 shadow-xl shadow-transparent transition-all hover:-translate-y-4 hover:border-blue-gray-100/60 hover:shadow-blue-gray-900/5"
           >
             <Typography
               variant="h5"
               color="blue-gray"
-              className="flex items-center gap-3 mb-3"
+              className="mb-3 flex items-center gap-3"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
