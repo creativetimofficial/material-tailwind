@@ -1,5 +1,24 @@
 export const releases = [
   {
+    version: "2.2.2",
+    date: "January 01, 2024",
+    name: "@material-tailwind/html",
+    description: "Material Tailwind v2.2.2",
+    content: [
+      {
+        title: "minor changes",
+        data: [
+          "Add new component collapse.",
+          "Fix the collapse script issue for accordion component.",
+        ],
+      },
+      {
+        title: "docs changes",
+        data: ["New components: Collapse"],
+      },
+    ],
+  },
+  {
     version: "2.1.2",
     date: "December 20, 2023",
     name: "@material-tailwind/html",
