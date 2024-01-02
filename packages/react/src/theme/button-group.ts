@@ -8,7 +8,8 @@ export const buttonGroupTheme = {
     color: "primary",
     variant: "solid",
     ripple: true,
-    fullWidth: false,
+    isFullWidth: false,
+    isPill: false,
     orientation: "horizontal",
   },
   baseStyle: "inline-flex",
@@ -18,7 +19,7 @@ export const buttonGroupTheme = {
     "[&:not(:first-child):not(:last-child)]:[&_*]:rounded-none first:[&_*]:rounded-b-none last:[&_*]:rounded-t-none [&:not(:first-child):not(:last-child)]:[&_*]:border-t-0 last:[&_*]:border-t-0",
   horizontalAppearance:
     "[&:not(:first-child):not(:last-child)]:[&_*]:rounded-none first:[&_*]:rounded-r-none last:[&_*]:rounded-l-none [&:not(:first-child):not(:last-child)]:[&_*]:border-l-0 last:[&_*]:border-l-0",
-  fullWidth: "w-full",
+  isFullWidth: "w-full",
 };
 
 export default buttonGroupTheme;

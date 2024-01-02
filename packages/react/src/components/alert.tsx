@@ -22,13 +22,13 @@ import type { BaseComponent, Props } from "@types";
 export interface AlertContextProps extends Props<"div"> {
   variant?: BaseComponent<"div">["variant"];
   color?: BaseComponent<"div">["color"];
-  rounded?: boolean;
+  isPill?: boolean;
 }
 
 export const AlertContext = React.createContext<AlertContextProps>({
   color: "primary",
   variant: "solid",
-  rounded: false,
+  isPill: false,
 });
 
 // alert root
@@ -38,6 +38,7 @@ export interface AlertProps extends BaseAlertProps {
   as?: React.ElementType;
   className?: string;
   visible?: boolean;
+  isPill?: boolean;
   children: React.ReactNode;
 }
 
@@ -62,7 +63,7 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
       as,
       color,
       variant,
-      rounded,
+      isPill,
       className,
       visible = true,
       children,
@@ -77,12 +78,12 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
 
     color ??= (defaultProps?.color as AlertProps["color"]) ?? "primary";
     variant ??= (defaultProps?.variant as AlertProps["variant"]) ?? "solid";
-    rounded ??= (defaultProps?.rounded as AlertProps["rounded"]) ?? false;
+    isPill ??= (defaultProps?.isPill as AlertProps["isPill"]) ?? false;
 
     const styles = twMerge(
       theme.baseStyle,
       theme["variant"][variant][color],
-      rounded && theme.rounded,
+      isPill && theme.isPill,
       className,
     );
 
@@ -90,9 +91,9 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
       () => ({
         color,
         variant,
-        rounded,
+        isPill,
       }),
-      [color, variant, rounded],
+      [color, variant, isPill],
     );
 
     return visible ? (
@@ -173,7 +174,7 @@ export const AlertDismissTrigger = React.forwardRef<
 >(({ as, ripple, className, children, ...rest }, ref) => {
   const Element = as ?? "button";
   const contextTheme = useTheme();
-  const { color, variant, rounded } = React.useContext(AlertContext);
+  const { color, variant, isPill } = React.useContext(AlertContext);
   const theme = contextTheme?.alertDismissTrigger ?? alertDismissTriggerTheme;
   const defaultProps = contextTheme?.alertDismissTrigger?.defaultProps;
 
@@ -200,7 +201,7 @@ export const AlertDismissTrigger = React.forwardRef<
   const styles = twMerge(
     theme.baseStyle,
     theme["variant"][variant || "solid"][color || "primary"],
-    rounded && theme.rounded,
+    isPill && theme.isPill,
     className,
   );
 

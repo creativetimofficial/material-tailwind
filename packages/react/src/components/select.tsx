@@ -45,7 +45,7 @@ export interface SelectContextProps extends Props<"div"> {
   color?: BaseComponent<any>["color"];
   isError?: boolean;
   isSuccess?: boolean;
-  isPilled?: boolean;
+  isPill?: boolean;
   isFullWidth?: boolean;
   disabled?: boolean;
   placement?: Placement;
@@ -87,7 +87,7 @@ export const SelectContext = React.createContext<SelectContextProps>({
 export interface SelectRootProps {
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
-  isPilled?: boolean;
+  isPill?: boolean;
   isFullWidth?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
@@ -102,7 +102,7 @@ export interface SelectRootProps {
 export function SelectRoot({
   size,
   color,
-  isPilled,
+  isPill,
   isFullWidth,
   isError,
   isSuccess,
@@ -199,7 +199,7 @@ export function SelectRoot({
     () => ({
       color,
       size,
-      isPilled,
+      isPill,
       isFullWidth,
       isError,
       isSuccess,
@@ -221,7 +221,7 @@ export function SelectRoot({
     [
       color,
       size,
-      isPilled,
+      isPill,
       isFullWidth,
       isError,
       isSuccess,
@@ -278,7 +278,7 @@ export const SelectTrigger = React.forwardRef<
     refs,
     getReferenceProps,
     selected,
-    isPilled,
+    isPill,
     isFullWidth,
     color,
     size,
@@ -321,7 +321,7 @@ export const SelectTrigger = React.forwardRef<
     theme.baseStyle,
     theme.size[size || "md"],
     theme.color[color || "primary"],
-    isPilled && theme.isPilled,
+    isPill && theme.isPill,
     isFullWidth && theme.isFullWidth,
     className,
   );

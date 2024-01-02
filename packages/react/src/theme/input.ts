@@ -8,13 +8,13 @@ export const inputTheme = {
   defaultProps: {
     size: "md",
     color: "primary",
-    isRounded: false,
+    isPill: false,
     isFullWidth: false,
     isError: false,
     isSuccess: false,
   },
   baseStyle: "relative max-w-[240px] w-full aria-disabled:cursor-not-allowed",
-  isRounded: "rounded-full",
+  isPill: "rounded-full",
   isFullWidth: "max-w-full",
   size: {
     sm: "text-sm leading-none rounded-md",

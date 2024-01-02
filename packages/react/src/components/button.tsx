@@ -18,8 +18,8 @@ type BaseButtonProps = BaseComponent<"button"> & Props<"button" | any>;
 export interface ButtonProps extends BaseButtonProps {
   as?: React.ElementType;
   ripple?: boolean;
-  rounded?: boolean;
-  fullWidth?: boolean;
+  isPill?: boolean;
+  isFullWidth?: boolean;
   className?: string;
   children: React.ReactNode;
 }
@@ -50,8 +50,8 @@ export const Button = React.forwardRef<
       variant,
       size,
       ripple,
-      rounded,
-      fullWidth,
+      isPill,
+      isFullWidth,
       className,
       children,
       ...rest
@@ -67,8 +67,9 @@ export const Button = React.forwardRef<
     ripple ??= (defaultProps?.ripple as ButtonProps["ripple"]) ?? true;
     color ??= (defaultProps?.color as ButtonProps["color"]) ?? "primary";
     variant ??= (defaultProps?.variant as ButtonProps["variant"]) ?? "solid";
-    fullWidth ??=
-      (defaultProps?.fullWidth as ButtonProps["fullWidth"]) ?? false;
+    isPill ??= (defaultProps?.isPill as ButtonProps["isPill"]) ?? false;
+    isFullWidth ??=
+      (defaultProps?.isFullWidth as ButtonProps["isFullWidth"]) ?? false;
 
     const rippleEffect = ripple !== undefined && new Ripple();
 
@@ -88,8 +89,8 @@ export const Button = React.forwardRef<
       theme.baseStyle,
       theme["size"][size],
       theme["variant"][variant][color],
-      rounded && theme["rounded"],
-      fullWidth && theme["fullWidth"],
+      isPill && theme["isPill"],
+      isFullWidth && theme["isFullWidth"],
       className,
     );
 

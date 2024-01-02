@@ -42,7 +42,7 @@ export interface InputProps extends Props<"div" | any> {
   as?: React.ElementType;
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
-  isRounded?: boolean;
+  isPill?: boolean;
   isFullWidth?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
@@ -60,7 +60,7 @@ export const InputRoot = React.forwardRef<
       as,
       color,
       size,
-      isRounded,
+      isPill,
       isFullWidth,
       isError,
       isSuccess,
@@ -80,7 +80,7 @@ export const InputRoot = React.forwardRef<
 
     size ??= (defaultProps?.size as InputProps["size"]) ?? "md";
     color ??= (defaultProps?.color as InputProps["color"]) ?? "primary";
-    isRounded ??= (defaultProps?.isRounded as InputProps["isRounded"]) ?? false;
+    isPill ??= (defaultProps?.isPill as InputProps["isPill"]) ?? false;
     isFullWidth ??=
       (defaultProps?.isFullWidth as InputProps["isFullWidth"]) ?? false;
     isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
@@ -89,7 +89,7 @@ export const InputRoot = React.forwardRef<
     const styles = twMerge(
       theme.baseStyle,
       theme.size[size],
-      isRounded && theme["isRounded"],
+      isPill && theme["isPill"],
       isFullWidth && theme["isFullWidth"],
       className,
     );

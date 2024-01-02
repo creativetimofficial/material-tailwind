@@ -8,13 +8,13 @@ export const buttonTheme = {
     color: "primary",
     variant: "solid",
     ripple: true,
-    rounded: false,
-    fullWidth: false,
+    isPill: false,
+    isFullWidth: false,
   },
   baseStyle:
     "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed",
-  rounded: "rounded-full",
-  fullWidth: "flex w-full",
+  isPill: "rounded-full",
+  isFullWidth: "flex w-full",
   size: {
     sm: "text-sm leading-none py-1.5 px-2.5 rounded-md",
     md: "text-sm leading-none py-2.5 px-3.5 rounded-md",

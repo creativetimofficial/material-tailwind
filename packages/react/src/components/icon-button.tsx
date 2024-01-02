@@ -18,7 +18,7 @@ type BaseButtonProps = BaseComponent<"button"> & Props<"button" | any>;
 export interface IconButtonProps extends BaseButtonProps {
   as?: React.ElementType;
   ripple?: boolean;
-  rounded?: boolean;
+  isCircular?: boolean;
   className?: string;
   children: React.ReactNode;
 }
@@ -58,7 +58,17 @@ export const IconButton = React.forwardRef<
   IconButtonProps
 >(
   (
-    { as, color, variant, size, ripple, rounded, className, children, ...rest },
+    {
+      as,
+      color,
+      variant,
+      size,
+      ripple,
+      isCircular,
+      className,
+      children,
+      ...rest
+    },
     ref,
   ) => {
     const Element = as ?? "button";
@@ -71,6 +81,8 @@ export const IconButton = React.forwardRef<
     color ??= (defaultProps?.color as IconButtonProps["color"]) ?? "primary";
     variant ??=
       (defaultProps?.variant as IconButtonProps["variant"]) ?? "solid";
+    isCircular ??=
+      (defaultProps?.isCircular as IconButtonProps["isCircular"]) ?? false;
 
     const rippleEffect = ripple !== undefined && new Ripple();
 
@@ -90,7 +102,7 @@ export const IconButton = React.forwardRef<
       theme.baseStyle,
       theme["size"][size],
       theme["variant"][variant][color],
-      rounded && theme["rounded"],
+      isCircular && theme["isCircular"],
       className,
     );
 

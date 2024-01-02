@@ -84,10 +84,11 @@ export const alertIconTheme = {
 export const alertDismissTriggerTheme = {
   defaultProps: {
     ripple: true,
+    isPill: false,
   },
   baseStyle:
     "grid place-items-center shrink-0 w-5 h-5 border mr-1 ml-3 stroke-[1.5] rounded",
-  rounded: "rounded-full",
+  isPill: "rounded-full",
   variant: {
     ghost: {
       primary:

@@ -16,8 +16,8 @@ import type { ButtonProps } from "@components";
 export interface ButtonGroupProps extends BaseComponent<"div" | any> {
   as?: React.ElementType;
   ripple?: boolean;
-  rounded?: boolean;
-  fullWidth?: boolean;
+  isPill?: boolean;
+  isFullWidth?: boolean;
   className?: string;
   orientation?: "horizontal" | "vertical";
   children: React.ReactNode;
@@ -55,8 +55,8 @@ export const ButtonGroup = React.forwardRef<
       variant,
       size,
       ripple,
-      rounded,
-      fullWidth,
+      isPill,
+      isFullWidth,
       className,
       orientation,
       children,
@@ -77,8 +77,9 @@ export const ButtonGroup = React.forwardRef<
     orientation ??=
       (defaultProps?.orientation as ButtonGroupProps["orientation"]) ??
       "horizontal";
-    fullWidth ??=
-      (defaultProps?.fullWidth as ButtonGroupProps["fullWidth"]) ?? false;
+    isFullWidth ??=
+      (defaultProps?.isFullWidth as ButtonGroupProps["isFullWidth"]) ?? false;
+    isPill ??= (defaultProps?.isPill as ButtonGroupProps["isPill"]) ?? false;
 
     const isGhost = variant === "ghost";
     const isVertical = orientation === "vertical";
@@ -90,7 +91,7 @@ export const ButtonGroup = React.forwardRef<
       isHorizontal && theme["horizontal"],
       isVertical && !isGhost && theme["verticalAppearance"],
       isHorizontal && !isGhost && theme["horizontalAppearance"],
-      fullWidth && theme["fullWidth"],
+      isFullWidth && theme["isFullWidth"],
       className,
     );
 
@@ -105,8 +106,8 @@ export const ButtonGroup = React.forwardRef<
               size,
               color,
               ripple,
-              rounded,
-              fullWidth,
+              isPill,
+              isFullWidth,
               ...child.props,
             } as ButtonProps),
         )}
