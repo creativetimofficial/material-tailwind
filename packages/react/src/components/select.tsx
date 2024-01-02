@@ -1,178 +1,129 @@
 import React from "react";
 
-// @floating-ui
+// @components
+import { FloatingList, FloatingFocusManager } from "@floating-ui/react";
+
+// @hooks
+import {
+  useFloating,
+  useInteractions,
+  useRole,
+  useClick,
+  useTypeahead,
+  useListNavigation,
+  useDismiss,
+  useListItem,
+} from "@floating-ui/react";
+import { useTheme } from "@context";
+
+// @utils
 import {
   flip as fuiFlip,
   offset as fuiOffset,
   size as fuiSize,
-  useRole,
-  useClick,
   autoUpdate,
-  useDismiss,
-  useFloating,
-  useTypeahead,
-  useInteractions,
-  useListNavigation,
-  FloatingList,
-  useListItem,
-  FloatingFocusManager,
-  type Placement,
-  type OffsetOptions,
-  type FlipOptions,
 } from "@floating-ui/react";
-
-// @utils
 import { mergeRefs } from "@utils";
 import { twMerge } from "tailwind-merge";
-
-// @hooks
-import { useTheme } from "@context";
-import { useElementSize } from "usehooks-ts";
-
-// @theme
-import { selectTheme } from "@theme";
+import Ripple from "material-ripple-effects";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseComponent, Props } from "@types";
+import type {
+  OffsetOptions,
+  Placement,
+  UseFloatingReturn,
+  FloatingFocusManagerProps,
+} from "@floating-ui/react";
 
-export interface SelectProps
-  extends Omit<BaseComponent<"button">, "variant" | "onChange"> {
-  as?: React.ElementType;
-  rounded?: boolean;
-  fullWidth?: boolean;
+// @theme
+import { selectTriggerTheme, selectListTheme, selectOptionTheme } from "@theme";
+
+// select context
+export interface SelectContextProps extends Props<"div"> {
+  size?: BaseComponent<any>["size"];
+  color?: BaseComponent<any>["color"];
   isError?: boolean;
   isSuccess?: boolean;
-  className?: string;
-  selectClassName?: string;
-  listClassName?: string;
-  placeholder?: string;
+  isPilled?: boolean;
+  isFullWidth?: boolean;
+  disabled?: boolean;
   placement?: Placement;
   offset?: OffsetOptions;
-  flip?: FlipOptions;
-  value?: string;
-  onChange?: (args: {
+  activeIndex?: number | null;
+  selectedIndex?: number | null;
+  refs?: UseFloatingReturn["refs"];
+  selected?: {
     value: string;
-    children: string | React.ReactElement;
-  }) => void;
-  children: React.ReactNode;
-  selectRef?: React.RefObject<HTMLButtonElement>;
-  listRef?: React.RefObject<HTMLDivElement>;
+    element: React.ReactNode;
+  };
+  getItemProps?: ReturnType<typeof useInteractions>["getItemProps"];
+  getReferenceProps?: ReturnType<typeof useInteractions>["getReferenceProps"];
+  getFloatingProps?: ReturnType<typeof useInteractions>["getFloatingProps"];
+  handleSelect?: (index: number | null) => void;
+  context?: UseFloatingReturn["context"];
+  elementsRef?: React.MutableRefObject<(HTMLElement | string | null)[]>;
+  labelsRef?: React.MutableRefObject<
+    ({
+      value: string;
+      element: React.ReactNode;
+    } | null)[]
+  >;
+  floatingStyles?: UseFloatingReturn["floatingStyles"];
+  isOpen?: boolean;
 }
 
-export interface OptionProps extends React.ComponentProps<any> {
+export const SelectContext = React.createContext<SelectContextProps>({
+  size: "md",
+  color: "primary",
+  isError: false,
+  isSuccess: false,
+  disabled: false,
+  placement: "bottom",
+  offset: 5,
+} as SelectContextProps);
+
+// select root
+export interface SelectRootProps {
+  size?: BaseComponent<any>["size"];
+  color?: BaseComponent<any>["color"];
+  isPilled?: boolean;
+  isFullWidth?: boolean;
+  isError?: boolean;
+  isSuccess?: boolean;
+  disabled?: boolean;
+  placement?: Placement;
+  offset?: OffsetOptions;
   value?: string;
+  onChange?: (arg: string) => void;
   children: React.ReactNode;
-  className?: string;
 }
 
-interface SelectContextValue {
-  color: SelectProps["color"];
-  size: SelectProps["size"];
-  rounded: SelectProps["rounded"];
-  activeIndex: number | null;
-  selectedIndex: number | null;
-  getItemProps: ReturnType<typeof useInteractions>["getItemProps"];
-  handleSelect: (index: number | null) => void;
-}
-
-const SelectContext = React.createContext<SelectContextValue>(
-  {} as SelectContextValue,
-);
-
-export const Option = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
-  OptionProps
->(({ value, children, className, ...rest }, ref) => {
-  const contextTheme = useTheme();
-  const theme = contextTheme?.select ?? selectTheme;
-  const {
-    color,
-    size,
-    rounded,
-    activeIndex,
-    selectedIndex,
-    getItemProps,
-    handleSelect,
-  } = React.useContext(SelectContext);
-
-  const { ref: itemRef, index } = useListItem({
-    label: { value, children } as any,
-  });
-
-  // const refs = mergeRefs([ref, itemRef]);
-
-  const isActive = activeIndex === index;
-  const isSelected = selectedIndex === index;
-
-  const styles = twMerge(
-    theme.optionStyle,
-    theme.optionSize[size as string],
-    rounded && theme.rounded,
-    isSelected
-      ? theme.optionSelectColor[color as string]
-      : theme.optionColor[color as string],
-    className,
-  );
-
-  return (
-    <button
-      {...rest}
-      ref={itemRef}
-      role="option"
-      aria-selected={isActive && isSelected}
-      tabIndex={isActive ? 0 : -1}
-      className={styles}
-      {...getItemProps({
-        onClick: () => handleSelect(index),
-      })}
-    >
-      {children}
-    </button>
-  );
-});
-
-export function Select({
-  as,
-  color,
+export function SelectRoot({
   size,
-  rounded,
-  fullWidth,
+  color,
+  isPilled,
+  isFullWidth,
   isError,
   isSuccess,
-  className,
-  selectClassName,
-  listClassName,
-  placeholder,
+  disabled,
   placement,
   offset,
-  flip,
   value,
   onChange,
   children,
-  selectRef,
-  listRef,
-  ...rest
-}: SelectProps) {
-  const Element = as ?? "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.select ?? selectTheme;
-  const defaultProps = contextTheme?.select?.defaultProps;
-
-  size ??= (defaultProps?.size as SelectProps["size"]) ?? "md";
-  color ??= (defaultProps?.color as SelectProps["color"]) ?? "primary";
-  rounded ??= (defaultProps?.rounded as SelectProps["rounded"]) ?? false;
-  fullWidth ??= (defaultProps?.fullWidth as SelectProps["fullWidth"]) ?? false;
-  isError ??= (defaultProps?.isError as SelectProps["isError"]) ?? false;
-  isSuccess ??= (defaultProps?.isSuccess as SelectProps["isSuccess"]) ?? false;
-  placement ??=
-    (defaultProps?.placement as SelectProps["placement"]) ?? "bottom";
-  offset ??= (defaultProps?.offset as SelectProps["offset"]) ?? 5;
-  flip ??= (defaultProps?.flip as any) ?? true;
-
+}: SelectRootProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<any>(null);
+  const [selected, setSelected] = React.useState<any>(() => ({
+    value,
+    element: value,
+  }));
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    setSelected({ value, element: value });
+  }, [value]);
 
   const { refs, floatingStyles, context } = useFloating({
     placement: placement,
@@ -180,14 +131,14 @@ export function Select({
     onOpenChange: setIsOpen,
     whileElementsMounted: autoUpdate,
     middleware: [
-      flip && fuiFlip(),
+      fuiFlip(),
       fuiOffset(offset ?? 5),
       fuiSize({
-        apply({ rects, elements, availableHeight }) {
+        apply({ rects, elements, availableHeight }: any) {
           Object.assign(elements.floating.style, {
             maxHeight: `${availableHeight}px`,
             minWidth: `${rects.reference.width}px`,
-            zIndex: 99,
+            zIndex: 9999,
           });
         },
         padding: 10,
@@ -195,7 +146,9 @@ export function Select({
     ],
   });
 
-  const labelsRef = React.useRef<Array<string | null>>([]);
+  const labelsRef = React.useRef<
+    Array<{ value: string; element: React.ReactNode } | null>
+  >([]);
   const elementsRef = React.useRef<Array<HTMLElement | null>>([]);
 
   const handleSelect = React.useCallback((index: number | null) => {
@@ -204,6 +157,7 @@ export function Select({
 
     if (index !== null) {
       setSelected(labelsRef.current[index]);
+      onChange && onChange((labelsRef.current[index] as any)?.value);
     }
   }, []);
 
@@ -222,8 +176,12 @@ export function Select({
     onNavigate: setActiveIndex,
   });
 
+  const labelsRefTypehead = React.useRef<Array<string | null>>(
+    labelsRef.current.map((item: any) => item?.value),
+  );
+
   const typeahead = useTypeahead(context, {
-    listRef: labelsRef,
+    listRef: labelsRefTypehead,
     activeIndex,
     selectedIndex,
     onMatch: handleTypeaheadMatch,
@@ -241,72 +199,339 @@ export function Select({
     () => ({
       color,
       size,
-      rounded,
+      isPilled,
+      isFullWidth,
+      isError,
+      isSuccess,
+      disabled,
+      selected,
       activeIndex,
       selectedIndex,
+      context,
+      refs,
+      floatingStyles,
+      elementsRef,
+      labelsRef,
       getItemProps,
       handleSelect,
+      getReferenceProps,
+      getFloatingProps,
+      isOpen,
     }),
     [
       color,
       size,
-      rounded,
+      isPilled,
+      isFullWidth,
+      isError,
+      isSuccess,
+      disabled,
+      selected,
       activeIndex,
       selectedIndex,
+      context,
+      refs,
+      floatingStyles,
+      elementsRef,
+      labelsRef,
       getItemProps,
       handleSelect,
+      getReferenceProps,
+      getFloatingProps,
+      isOpen,
     ],
   );
 
-  const baseStyles = twMerge(
-    theme.baseStyle,
-    fullWidth && theme["fullWidth"],
-    className,
-  );
-
-  const selectStyles = twMerge(
-    theme.selectStyle,
-    theme.selectColor[color],
-    theme.selectSize[size],
-    rounded && theme["rounded"],
-    fullWidth && theme["fullWidth"],
-    isError && theme["isError"],
-    isSuccess && theme["isSuccess"],
-    selectClassName,
-  );
-
-  const listStyles = twMerge(theme.listStyle, listClassName);
-
   return (
-    <Element className={baseStyles}>
-      <button
-        {...rest}
-        ref={refs.setReference}
-        tabIndex={0}
-        {...getReferenceProps()}
-        className={selectStyles}
-      >
-        {selected?.children ?? placeholder ?? <>&nbsp;</>}
-      </button>
-      <SelectContext.Provider value={selectContext}>
-        {isOpen && (
-          <FloatingFocusManager context={context} modal={false}>
-            <div
-              ref={refs.setFloating}
-              style={floatingStyles}
-              {...getFloatingProps()}
-              className={listStyles}
-            >
-              <FloatingList elementsRef={elementsRef} labelsRef={labelsRef}>
-                {children}
-              </FloatingList>
-            </div>
-          </FloatingFocusManager>
-        )}
-      </SelectContext.Provider>
-    </Element>
+    <SelectContext.Provider value={selectContext}>
+      {children}
+    </SelectContext.Provider>
   );
 }
 
-Select.displayName = "MaterialTailwind.Select";
-Option.displayName = "MaterialTailwind.Select.Option";
+SelectRoot.displayName = "Select";
+
+// select trigger
+export interface SelectTriggerProps extends Props<"button" | any> {
+  as?: React.ElementType;
+  indicator: React.ReactNode;
+  placeholder?: string;
+  className?: string;
+  children?: ({
+    value,
+    element,
+  }: {
+    value?: string;
+    element?: React.ReactNode;
+  }) => React.ReactNode;
+}
+
+export const SelectTrigger = React.forwardRef<
+  HTMLButtonElement | HTMLElement,
+  SelectTriggerProps
+>(({ as, indicator, placeholder, className, children, ...rest }, ref) => {
+  const Element = as || "button";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
+  const defaultProps = contextTheme?.selectTrigger?.defaultProps;
+  const {
+    refs,
+    getReferenceProps,
+    selected,
+    isPilled,
+    isFullWidth,
+    color,
+    size,
+    isOpen,
+    isError,
+    isSuccess,
+    disabled,
+  } = React.useContext(SelectContext);
+
+  const value = selected?.value;
+  const element = selected?.element;
+
+  const mergedRefs = mergeRefs([ref, refs?.setReference]);
+
+  indicator ??=
+    (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        color="currentColor"
+        className="h-[1em] w-[1em] translate-x-0.5 stroke-[1.5]"
+      >
+        <path
+          d="M17 8L12 3L7 8"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M17 16L12 21L7 16"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.size[size || "md"],
+    theme.color[color || "primary"],
+    isPilled && theme.isPilled,
+    isFullWidth && theme.isFullWidth,
+    className,
+  );
+
+  return (
+    <Element
+      {...rest}
+      ref={refs?.setReference}
+      tabIndex={0}
+      className={styles}
+      data-open={isOpen}
+      disabled={disabled}
+      data-error={isError}
+      data-success={isSuccess}
+      {...(getReferenceProps && getReferenceProps())}
+    >
+      {children
+        ? children({ value, element })
+        : element ?? <span className={theme.placeholder}>{placeholder}</span>}
+      {indicator}
+    </Element>
+  );
+});
+
+SelectTrigger.displayName = "SelectTrigger";
+
+// select list
+type SelectListBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+
+export interface SelectListProps extends Omit<SelectListBaseProps, "context"> {
+  as?: React.ElementType;
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const SelectList = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  SelectListProps
+>(
+  (
+    {
+      as,
+      className,
+      children,
+      disabled,
+      initialFocus,
+      returnFocus,
+      guards,
+      modal,
+      visuallyHiddenDismiss,
+      closeOnFocusOut,
+      order,
+    },
+    ref,
+  ) => {
+    const Element = as || "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.selectList ?? selectListTheme;
+    const defaultProps = contextTheme?.selectList?.defaultProps;
+    const {
+      context,
+      refs,
+      getFloatingProps,
+      floatingStyles,
+      elementsRef,
+      labelsRef,
+      isOpen,
+    } = React.useContext(SelectContext);
+
+    disabled ??=
+      (defaultProps?.disabled as SelectListProps["disabled"]) ?? false;
+    initialFocus ??=
+      (defaultProps?.initialFocus as SelectListProps["initialFocus"]) ?? 0;
+    returnFocus ??=
+      (defaultProps?.returnFocus as SelectListProps["returnFocus"]) ?? true;
+    guards ??= (defaultProps?.guards as SelectListProps["guards"]) ?? true;
+    modal ??= (defaultProps?.modal as SelectListProps["modal"]) ?? true;
+    visuallyHiddenDismiss ??=
+      (defaultProps?.visuallyHiddenDismiss as SelectListProps["visuallyHiddenDismiss"]) ??
+      true;
+    closeOnFocusOut ??=
+      (defaultProps?.closeOnFocusOut as SelectListProps["closeOnFocusOut"]) ??
+      true;
+    order ??= (defaultProps?.order as SelectListProps["order"]) ?? ["content"];
+
+    const styles = twMerge(theme.baseStyle, className);
+
+    return isOpen ? (
+      <FloatingFocusManager
+        order={order}
+        modal={modal}
+        guards={guards}
+        disabled={disabled}
+        returnFocus={returnFocus}
+        initialFocus={initialFocus}
+        closeOnFocusOut={closeOnFocusOut}
+        visuallyHiddenDismiss={visuallyHiddenDismiss}
+        context={context as FloatingFocusManagerProps["context"]}
+      >
+        <Element
+          ref={refs?.setFloating}
+          style={floatingStyles}
+          className={styles}
+          {...(getFloatingProps && getFloatingProps())}
+        >
+          <FloatingList
+            elementsRef={elementsRef as any}
+            labelsRef={labelsRef as any}
+          >
+            {children}
+          </FloatingList>
+        </Element>
+      </FloatingFocusManager>
+    ) : null;
+  },
+);
+
+SelectList.displayName = "SelectList";
+
+// select option
+export interface SelectOptionProps extends Props<"button" | any> {
+  as?: React.ElementType;
+  className?: string;
+  value?: string;
+  ripple?: boolean;
+  indicator?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+export const SelectOption = React.forwardRef<
+  HTMLButtonElement | HTMLElement,
+  SelectOptionProps
+>(({ as, className, value, ripple, indicator, children, ...rest }, ref) => {
+  const Element = as || "button";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.selectOption ?? selectOptionTheme;
+  const defaultProps = contextTheme?.selectOption?.defaultProps;
+  const { getItemProps, handleSelect, activeIndex, selectedIndex } =
+    React.useContext(SelectContext);
+
+  ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
+  indicator ??= (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-4 w-4"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 12.75l6 6 9-13.5"
+      />
+    </svg>
+  );
+
+  const { ref: itemRef, index } = useListItem({
+    label: { value, element: children } as any,
+  });
+
+  const rippleEffect = ripple !== undefined && new Ripple();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onClick = rest?.onClick;
+
+    if (ripple) {
+      rippleEffect.create(e, "dark");
+    }
+
+    handleSelect && handleSelect(index);
+
+    return typeof onClick === "function" && onClick(e);
+  };
+
+  const isActive = activeIndex === index;
+  const isSelected = selectedIndex === index;
+
+  const styles = twMerge(
+    theme.baseStyle,
+    isActive && isSelected && theme["selected"],
+    className,
+  );
+
+  return (
+    <Element
+      {...rest}
+      ref={itemRef}
+      role="option"
+      aria-selected={isActive && isSelected}
+      tabIndex={isActive ? 0 : -1}
+      className={styles}
+      {...(getItemProps &&
+        getItemProps({
+          onClick: handleClick,
+        }))}
+    >
+      {children}
+      {isSelected && indicator}
+    </Element>
+  );
+});
+
+SelectOption.displayName = "SelectOption";
+
+export const Select = Object.assign(SelectRoot, {
+  Trigger: SelectTrigger,
+  List: SelectList,
+  Option: SelectOption,
+});
+
+export default Select;

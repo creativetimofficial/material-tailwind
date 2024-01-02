@@ -9,7 +9,6 @@ import swtichTheme from "./switch";
 import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
 import textareaTheme from "./textarea";
 import ratingTheme from "./rating";
-import selectTheme from "./select";
 import {
   listTheme,
   listItemTheme,
@@ -29,6 +28,11 @@ import {
   alertIconTheme,
   alertDismissTriggerTheme,
 } from "./alert";
+import {
+  selectTriggerTheme,
+  selectListTheme,
+  selectOptionTheme,
+} from "./select";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -49,7 +53,6 @@ export const theme = {
   inputIcon: inputIconTheme,
   textarea: textareaTheme,
   rating: ratingTheme,
-  select: selectTheme,
   list: listTheme,
   listItem: listItemTheme,
   listItemStart: listItemStartTheme,
@@ -63,6 +66,9 @@ export const theme = {
   alertContent: alertContentTheme,
   alertIcon: alertIconTheme,
   alertDismissTrigger: alertDismissTriggerTheme,
+  selectTrigger: selectTriggerTheme,
+  selectList: selectListTheme,
+  selectOption: selectOptionTheme,
 };
 
 export default theme;
