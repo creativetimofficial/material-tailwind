@@ -181,7 +181,7 @@ export function Footer() {
               </div>
               <div className="ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
                 <span className="text-md mb-4 block font-medium text-primary">
-                  Tehnologies
+                  Technologies
                 </span>
                 <ul className="list-unstyled">
                   {TECHS.map(({ name, link }, key) => (
