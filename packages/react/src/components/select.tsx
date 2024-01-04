@@ -13,6 +13,7 @@ import {
   useListNavigation,
   useDismiss,
   useListItem,
+  useMergeRefs,
 } from "@floating-ui/react";
 import { useTheme } from "@context";
 
@@ -23,7 +24,6 @@ import {
   size as fuiSize,
   autoUpdate,
 } from "@floating-ui/react";
-import { mergeRefs } from "@utils";
 import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 
@@ -291,7 +291,7 @@ export const SelectTrigger = React.forwardRef<
   const value = selected?.value;
   const element = selected?.element;
 
-  const mergedRefs = mergeRefs([ref, refs?.setReference]);
+  const elementRef = useMergeRefs([refs?.setReference, ref]);
 
   indicator ??=
     (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
@@ -329,7 +329,7 @@ export const SelectTrigger = React.forwardRef<
   return (
     <Element
       {...rest}
-      ref={refs?.setReference}
+      ref={elementRef}
       tabIndex={0}
       className={styles}
       data-open={isOpen}
@@ -408,6 +408,7 @@ export const SelectList = React.forwardRef<
     order ??= (defaultProps?.order as SelectListProps["order"]) ?? ["content"];
 
     const styles = twMerge(theme.baseStyle, className);
+    const elementRef = useMergeRefs([refs?.setFloating, ref]);
 
     return isOpen ? (
       <FloatingFocusManager
@@ -422,7 +423,7 @@ export const SelectList = React.forwardRef<
         context={context as FloatingFocusManagerProps["context"]}
       >
         <Element
-          ref={refs?.setFloating}
+          ref={elementRef}
           style={floatingStyles}
           className={styles}
           {...(getFloatingProps && getFloatingProps())}
@@ -507,10 +508,12 @@ export const SelectOption = React.forwardRef<
     className,
   );
 
+  const elementRef = useMergeRefs([itemRef, ref]);
+
   return (
     <Element
       {...rest}
-      ref={itemRef}
+      ref={elementRef}
       role="option"
       aria-selected={isActive && isSelected}
       tabIndex={isActive ? 0 : -1}
