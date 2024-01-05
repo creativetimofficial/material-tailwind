@@ -61,7 +61,7 @@ export const Rating = React.forwardRef<
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.rating ?? ratingTheme;
-    const defaultProps = contextTheme?.rating?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     ratedIcon ??= (defaultProps?.ratedIcon as RatingProps["ratedIcon"]) ?? (
       <svg

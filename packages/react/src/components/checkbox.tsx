@@ -62,7 +62,7 @@ export const Checkbox = React.forwardRef<
     const innerID = React.useId();
     const contextTheme = useTheme();
     const theme = contextTheme?.checkbox ?? checkboxTheme;
-    const defaultProps = contextTheme?.checkbox?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     icon ??= (defaultProps?.icon as CheckboxProps["icon"]) ?? (
       <svg

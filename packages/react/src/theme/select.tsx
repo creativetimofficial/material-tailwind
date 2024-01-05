@@ -1,7 +1,21 @@
 import type { DeepPartial } from "@types";
 
+export type SelectTheme = DeepPartial<typeof selectTheme>;
 export type SelectTriggerTheme = DeepPartial<typeof selectTriggerTheme>;
 export type SelectListTheme = DeepPartial<typeof selectListTheme>;
+
+export const selectTheme = {
+  defaultProps: {
+    size: "md",
+    color: "primary",
+    isPill: false,
+    isFullWidth: false,
+    isError: false,
+    isSuccess: false,
+    placement: "bottom",
+    offset: 5,
+  },
+};
 
 export const selectTriggerTheme = {
   defaultProps: {

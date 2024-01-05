@@ -60,7 +60,7 @@ const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.chip ?? chipTheme;
-    const defaultProps = contextTheme?.chip?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     size ??= (defaultProps?.size as ChipProps["size"]) ?? "md";
     color ??= (defaultProps?.color as ChipProps["color"]) ?? "primary";
@@ -172,7 +172,7 @@ export const ChipDismissTrigger = React.forwardRef<
   const contextTheme = useTheme();
   const { size, color, variant } = React.useContext(ChipContext);
   const theme = contextTheme?.chipDismissTrigger ?? chipDismissTriggerTheme;
-  const defaultProps = contextTheme?.chipDismissTrigger?.defaultProps;
+  const defaultProps = theme?.defaultProps;
 
   ripple ??=
     (defaultProps?.ripple as ChipDismissTriggerProps["ripple"]) ?? true;

@@ -74,7 +74,7 @@ export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
     const innerID = React.useId();
     const contextTheme = useTheme();
     const theme = contextTheme?.radio ?? radioTheme;
-    const defaultProps = contextTheme?.radio?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     icon ??= (defaultProps?.icon as RadioProps["icon"]) ?? (
       <svg

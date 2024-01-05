@@ -28,16 +28,21 @@ import { twMerge } from "tailwind-merge";
 import Ripple from "material-ripple-effects";
 
 // @types
-import type { BaseComponent, Props } from "@types";
 import type {
   OffsetOptions,
   Placement,
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
+import type { BaseComponent, Props } from "@types";
 
 // @theme
-import { selectTriggerTheme, selectListTheme, selectOptionTheme } from "@theme";
+import {
+  selectTheme,
+  selectTriggerTheme,
+  selectListTheme,
+  selectOptionTheme,
+} from "@theme";
 
 // select context
 export interface SelectContextProps {
@@ -113,6 +118,9 @@ export function SelectRoot({
   onChange,
   children,
 }: SelectProps) {
+  const contextTheme = useTheme();
+  const theme = contextTheme?.select ?? selectTheme;
+  const defaultProps = theme?.defaultProps;
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<any>(() => ({
     value,
@@ -125,6 +133,17 @@ export function SelectRoot({
     setSelected({ value, element: value });
   }, [value]);
 
+  size ??= (defaultProps?.size as SelectProps["size"]) ?? "md";
+  color ??= (defaultProps?.color as SelectProps["color"]) ?? "primary";
+  isPill ??= (defaultProps?.isPill as SelectProps["isPill"]) ?? false;
+  isFullWidth ??=
+    (defaultProps?.isFullWidth as SelectProps["isFullWidth"]) ?? false;
+  isError ??= (defaultProps?.isError as SelectProps["isError"]) ?? false;
+  isSuccess ??= (defaultProps?.isSuccess as SelectProps["isSuccess"]) ?? false;
+  placement ??=
+    (defaultProps?.placement as SelectProps["placement"]) ?? "bottom";
+  offset ??= (defaultProps?.offset as SelectProps["offset"]) ?? 5;
+
   const { refs, floatingStyles, context } = useFloating({
     placement: placement,
     open: isOpen,
@@ -132,7 +151,7 @@ export function SelectRoot({
     whileElementsMounted: autoUpdate,
     middleware: [
       fuiFlip(),
-      fuiOffset(offset ?? 5),
+      fuiOffset(offset),
       fuiSize({
         apply({ rects, elements, availableHeight }: any) {
           Object.assign(elements.floating.style, {
@@ -273,7 +292,7 @@ export const SelectTrigger = React.forwardRef<
   const Element = as || "button";
   const contextTheme = useTheme();
   const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
-  const defaultProps = contextTheme?.selectTrigger?.defaultProps;
+  const defaultProps = theme?.defaultProps;
   const {
     refs,
     getReferenceProps,
@@ -381,7 +400,7 @@ export const SelectList = React.forwardRef<
     const Element = as || "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.selectList ?? selectListTheme;
-    const defaultProps = contextTheme?.selectList?.defaultProps;
+    const defaultProps = theme?.defaultProps;
     const {
       context,
       refs,
@@ -461,7 +480,7 @@ export const SelectOption = React.forwardRef<
   const Element = as || "button";
   const contextTheme = useTheme();
   const theme = contextTheme?.selectOption ?? selectOptionTheme;
-  const defaultProps = contextTheme?.selectOption?.defaultProps;
+  const defaultProps = theme?.defaultProps;
   const { getItemProps, handleSelect, activeIndex, selectedIndex } =
     React.useContext(SelectContext);
 

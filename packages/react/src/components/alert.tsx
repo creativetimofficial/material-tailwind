@@ -74,7 +74,7 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.alert ?? alertTheme;
-    const defaultProps = contextTheme?.alert?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     color ??= (defaultProps?.color as AlertProps["color"]) ?? "primary";
     variant ??= (defaultProps?.variant as AlertProps["variant"]) ?? "solid";
@@ -176,7 +176,7 @@ export const AlertDismissTrigger = React.forwardRef<
   const contextTheme = useTheme();
   const { color, variant, isPill } = React.useContext(AlertContext);
   const theme = contextTheme?.alertDismissTrigger ?? alertDismissTriggerTheme;
-  const defaultProps = contextTheme?.alertDismissTrigger?.defaultProps;
+  const defaultProps = theme?.defaultProps;
 
   ripple ??=
     (defaultProps?.ripple as AlertDismissTriggerProps["ripple"]) ?? true;

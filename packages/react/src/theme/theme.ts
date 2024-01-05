@@ -29,15 +29,23 @@ import {
   alertDismissTriggerTheme,
 } from "./alert";
 import {
+  selectTheme,
   selectTriggerTheme,
   selectListTheme,
   selectOptionTheme,
 } from "./select";
 import {
+  popoverTheme,
   popoverTriggerTheme,
   popoverContentTheme,
   popoverArrowTheme,
 } from "./popover";
+import {
+  tooltipTheme,
+  tooltipTriggerTheme,
+  tooltipContentTheme,
+  tooltipArrowTheme,
+} from "./tooltip";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -71,12 +79,18 @@ export const theme = {
   alertContent: alertContentTheme,
   alertIcon: alertIconTheme,
   alertDismissTrigger: alertDismissTriggerTheme,
+  select: selectTheme,
   selectTrigger: selectTriggerTheme,
   selectList: selectListTheme,
   selectOption: selectOptionTheme,
+  popover: popoverTheme,
   popoverTrigger: popoverTriggerTheme,
   popoverContent: popoverContentTheme,
   popoverArrow: popoverArrowTheme,
+  tooltipTrigger: tooltipTriggerTheme,
+  tooltip: tooltipTheme,
+  tooltipContent: tooltipContentTheme,
+  tooltipArrow: tooltipArrowTheme,
 };
 
 export default theme;

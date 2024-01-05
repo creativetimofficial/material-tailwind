@@ -43,7 +43,7 @@ export const Avatar = React.forwardRef<
   const Element = as ?? "img";
   const contextTheme = useTheme();
   const theme = contextTheme?.avatar ?? avatarTheme;
-  const defaultProps = contextTheme?.avatar?.defaultProps;
+  const defaultProps = theme?.defaultProps;
 
   size ??= (defaultProps?.size as AvatarProps["size"]) ?? "md";
   variant ??= (defaultProps?.variant as AvatarProps["variant"]) ?? "circular";

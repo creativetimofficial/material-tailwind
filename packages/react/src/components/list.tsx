@@ -61,7 +61,7 @@ export const ListItem = React.forwardRef<
   const Element = as ?? "li";
   const contextTheme = useTheme();
   const theme = contextTheme?.listItem ?? listItemTheme;
-  const defaultProps = contextTheme?.listItem?.defaultProps;
+  const defaultProps = theme?.defaultProps;
 
   ripple ??= (defaultProps?.ripple as ListItemProps["ripple"]) ?? true;
 

@@ -61,7 +61,7 @@ export const Button = React.forwardRef<
     const Element = as ?? "button";
     const contextTheme = useTheme();
     const theme = contextTheme?.button ?? buttonTheme;
-    const defaultProps = contextTheme?.button?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     size ??= (defaultProps?.size as ButtonProps["size"]) ?? "md";
     ripple ??= (defaultProps?.ripple as ButtonProps["ripple"]) ?? true;

@@ -40,7 +40,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ color, size, resize, isError, isSuccess, className, ...rest }, ref) => {
     const contextTheme = useTheme();
     const theme = contextTheme?.textarea ?? textareaTheme;
-    const defaultProps = contextTheme?.textarea?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     size ??= (defaultProps?.size as TextareaProps["size"]) ?? "md";
     color ??= (defaultProps?.color as TextareaProps["color"]) ?? "primary";

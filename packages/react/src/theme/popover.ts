@@ -1,8 +1,16 @@
 import type { DeepPartial } from "@types";
 
+export type PopoverTheme = DeepPartial<typeof popoverTheme>;
 export type PopoverTriggerTheme = DeepPartial<typeof popoverTriggerTheme>;
 export type PopoverContentTheme = DeepPartial<typeof popoverContentTheme>;
 export type PopoverArrowTheme = DeepPartial<typeof popoverArrowTheme>;
+
+export const popoverTheme = {
+  defaultProps: {
+    placement: "top",
+    offset: 12,
+  },
+};
 
 export const popoverTriggerTheme = {
   baseStyle: "inline-block",

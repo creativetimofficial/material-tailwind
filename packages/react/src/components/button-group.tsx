@@ -67,7 +67,7 @@ export const ButtonGroup = React.forwardRef<
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.buttonGroup ?? buttonGroupTheme;
-    const defaultProps = contextTheme?.buttonGroup?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     size ??= (defaultProps?.size as ButtonGroupProps["size"]) ?? "md";
     ripple ??= (defaultProps?.ripple as ButtonGroupProps["ripple"]) ?? true;

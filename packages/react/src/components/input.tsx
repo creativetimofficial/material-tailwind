@@ -74,7 +74,7 @@ export const InputRoot = React.forwardRef<
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.input ?? inputTheme;
-    const defaultProps = contextTheme?.input?.defaultProps;
+    const defaultProps = theme?.defaultProps;
     const [isIconDefined, setIsIconDefined] = React.useState(false);
     const [iconPlacement, setIconPlacement] = React.useState("start");
 
@@ -218,7 +218,7 @@ export const InputIcon = React.forwardRef<
     disabled,
   } = React.useContext(InputContext);
   const theme = contextTheme?.inputIcon ?? inputIconTheme;
-  const defaultProps = contextTheme?.inputIcon?.defaultProps;
+  const defaultProps = theme?.defaultProps;
 
   placement ??=
     (defaultProps?.placement as InputIconProps["placement"]) ?? "start";

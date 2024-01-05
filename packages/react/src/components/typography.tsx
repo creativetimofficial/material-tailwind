@@ -51,7 +51,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     const Element = as ?? variant ?? "p";
     const contextTheme = useTheme();
     const theme = contextTheme?.typography ?? typographyTheme;
-    const defaultProps = contextTheme?.typography?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
     variant ??= (defaultProps?.variant as TypographyProps["variant"]) ?? "p";

@@ -74,7 +74,7 @@ export const IconButton = React.forwardRef<
     const Element = as ?? "button";
     const contextTheme = useTheme();
     const theme = contextTheme?.iconButton ?? iconButtonTheme;
-    const defaultProps = contextTheme?.iconButton?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     size ??= (defaultProps?.size as IconButtonProps["size"]) ?? "md";
     ripple ??= (defaultProps?.ripple as IconButtonProps["ripple"]) ?? true;

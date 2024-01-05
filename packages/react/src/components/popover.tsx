@@ -35,6 +35,7 @@ import { Props } from "@types";
 
 // @theme
 import {
+  popoverTheme,
   popoverTriggerTheme,
   popoverContentTheme,
   popoverArrowTheme,
@@ -72,10 +73,16 @@ export function PopoverRoot({
   children,
 }: PopoverProps) {
   const arrowRef = React.useRef(null);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.tooltip ?? popoverTheme;
+  const defaultProps = theme?.defaultProps;
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(false);
 
   const open = controlledOpen ?? uncontrolledOpen;
   const setOpen = setControlledOpen ?? setUncontrolledOpen;
+
+  placement ??= (defaultProps?.placement as PopoverProps["placement"]) ?? "top";
+  offset ??= (defaultProps?.offset as PopoverProps["offset"]) ?? 12;
 
   const data = useFloating({
     placement,
@@ -83,7 +90,7 @@ export function PopoverRoot({
     onOpenChange: setOpen,
     whileElementsMounted: autoUpdate,
     middleware: [
-      fuiOffset(offset ?? 12),
+      fuiOffset(offset),
       fuiFlip({
         crossAxis: placement.includes("-"),
         fallbackAxisSideDirection: "end",
@@ -195,7 +202,7 @@ export const PopoverContent = React.forwardRef<
     const Element = as || "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.popoverContent ?? popoverContentTheme;
-    const defaultProps = contextTheme?.popoverContent?.defaultProps;
+    const defaultProps = theme.defaultProps;
     const { context, refs, getFloatingProps, open, floatingStyles } =
       React.useContext(PopoverContext);
 

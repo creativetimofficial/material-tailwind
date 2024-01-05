@@ -37,7 +37,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const innerID = React.useId();
     const contextTheme = useTheme();
     const theme = contextTheme?.switch ?? switchTheme;
-    const defaultProps = contextTheme?.switch?.defaultProps;
+    const defaultProps = theme?.defaultProps;
 
     color ??= (defaultProps?.color as SwitchProps["color"]) ?? "primary";
 
