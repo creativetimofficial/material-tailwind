@@ -15,3 +15,4 @@ export * from "./avatar";
 export * from "./chip";
 export * from "./alert";
 export * from "./select";
+export * from "./popover";

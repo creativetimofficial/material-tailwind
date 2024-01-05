@@ -33,6 +33,11 @@ import {
   selectListTheme,
   selectOptionTheme,
 } from "./select";
+import {
+  popoverTriggerTheme,
+  popoverContentTheme,
+  popoverArrowTheme,
+} from "./popover";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -69,6 +74,9 @@ export const theme = {
   selectTrigger: selectTriggerTheme,
   selectList: selectListTheme,
   selectOption: selectOptionTheme,
+  popoverTrigger: popoverTriggerTheme,
+  popoverContent: popoverContentTheme,
+  popoverArrow: popoverArrowTheme,
 };
 
 export default theme;

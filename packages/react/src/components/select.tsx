@@ -40,7 +40,7 @@ import type {
 import { selectTriggerTheme, selectListTheme, selectOptionTheme } from "@theme";
 
 // select context
-export interface SelectContextProps extends Props<"div"> {
+export interface SelectContextProps {
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
   isError?: boolean;
@@ -84,7 +84,7 @@ export const SelectContext = React.createContext<SelectContextProps>({
 } as SelectContextProps);
 
 // select root
-export interface SelectRootProps {
+export interface SelectProps {
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
   isPill?: boolean;
@@ -112,7 +112,7 @@ export function SelectRoot({
   value,
   onChange,
   children,
-}: SelectRootProps) {
+}: SelectProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<any>(() => ({
     value,
@@ -195,7 +195,7 @@ export function SelectRoot({
     [listNav, typeahead, click, dismiss, role],
   );
 
-  const selectContext = React.useMemo(
+  const contextValue = React.useMemo(
     () => ({
       color,
       size,
@@ -243,7 +243,7 @@ export function SelectRoot({
   );
 
   return (
-    <SelectContext.Provider value={selectContext}>
+    <SelectContext.Provider value={contextValue}>
       {children}
     </SelectContext.Provider>
   );
@@ -374,6 +374,7 @@ export const SelectList = React.forwardRef<
       visuallyHiddenDismiss,
       closeOnFocusOut,
       order,
+      ...rest
     },
     ref,
   ) => {
@@ -423,8 +424,9 @@ export const SelectList = React.forwardRef<
         context={context as FloatingFocusManagerProps["context"]}
       >
         <Element
+          {...rest}
           ref={elementRef}
-          style={floatingStyles}
+          style={{ ...floatingStyles, ...rest?.style }}
           className={styles}
           {...(getFloatingProps && getFloatingProps())}
         >
