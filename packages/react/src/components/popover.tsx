@@ -132,7 +132,7 @@ export function PopoverRoot({
   );
 }
 
-PopoverRoot.displayName = "Popover";
+PopoverRoot.displayName = "MaterialTailwind.Popover";
 
 // popover trigger
 export interface PopoverTriggerProps extends Props<"button" | any> {
@@ -166,7 +166,7 @@ export const PopoverTrigger = React.forwardRef<
   );
 });
 
-PopoverTrigger.displayName = "PopoverTrigger";
+PopoverTrigger.displayName = "MaterialTailwind.PopoverTrigger";
 
 // popover content
 type PopoverContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
@@ -243,6 +243,7 @@ export const PopoverContent = React.forwardRef<
           <Element
             {...rest}
             ref={elementRef}
+            data-open={open}
             style={{ ...floatingStyles, ...rest?.style }}
             className={styles}
             {...(getFloatingProps && getFloatingProps())}
@@ -255,7 +256,7 @@ export const PopoverContent = React.forwardRef<
   },
 );
 
-PopoverContent.displayName = "PopoverContent";
+PopoverContent.displayName = "MaterialTailwind.PopoverContent";
 
 // popover arrow
 export interface PopoverArrowProps extends Props<HTMLSpanElement | any> {

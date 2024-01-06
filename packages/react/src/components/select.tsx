@@ -268,7 +268,7 @@ export function SelectRoot({
   );
 }
 
-SelectRoot.displayName = "Select";
+SelectRoot.displayName = "MaterialTailwind.Select";
 
 // select trigger
 export interface SelectTriggerProps extends Props<"button" | any> {
@@ -365,7 +365,7 @@ export const SelectTrigger = React.forwardRef<
   );
 });
 
-SelectTrigger.displayName = "SelectTrigger";
+SelectTrigger.displayName = "MaterialTailwind.SelectTrigger";
 
 // select list
 type SelectListBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
@@ -445,6 +445,7 @@ export const SelectList = React.forwardRef<
         <Element
           {...rest}
           ref={elementRef}
+          data-open={isOpen}
           style={{ ...floatingStyles, ...rest?.style }}
           className={styles}
           {...(getFloatingProps && getFloatingProps())}
@@ -461,7 +462,7 @@ export const SelectList = React.forwardRef<
   },
 );
 
-SelectList.displayName = "SelectList";
+SelectList.displayName = "MaterialTailwind.SelectList";
 
 // select option
 export interface SelectOptionProps extends Props<"button" | any> {
@@ -550,7 +551,7 @@ export const SelectOption = React.forwardRef<
   );
 });
 
-SelectOption.displayName = "SelectOption";
+SelectOption.displayName = "MaterialTailwind.SelectOption";
 
 export const Select = Object.assign(SelectRoot, {
   Trigger: SelectTrigger,

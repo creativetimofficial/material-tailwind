@@ -142,7 +142,7 @@ export function TooltipRoot({
   );
 }
 
-TooltipRoot.displayName = "Tooltip";
+TooltipRoot.displayName = "MaterialTailwind.Tooltip";
 
 // tooltip trigger
 export interface TooltipTriggerProps extends Props<"button" | any> {
@@ -176,7 +176,7 @@ export const TooltipTrigger = React.forwardRef<
   );
 });
 
-TooltipTrigger.displayName = "TooltipTrigger";
+TooltipTrigger.displayName = "MaterialTailwind.TooltipTrigger";
 
 // tooltip content
 export interface TooltipContentProps extends Props<"div" | any> {
@@ -203,6 +203,7 @@ export const TooltipContent = React.forwardRef<
       <Element
         {...rest}
         ref={elementRef}
+        data-open={open}
         style={{ ...floatingStyles, ...rest?.style }}
         className={styles}
         {...(getFloatingProps && getFloatingProps())}
@@ -213,7 +214,7 @@ export const TooltipContent = React.forwardRef<
   ) : null;
 });
 
-TooltipContent.displayName = "TooltipContent";
+TooltipContent.displayName = "MaterialTailwind.TooltipContent";
 
 // tooltip arrow
 export interface TooltipArrowProps extends Props<HTMLSpanElement | any> {

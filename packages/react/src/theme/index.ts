@@ -19,3 +19,4 @@ export * from "./select";
 export * from "./popover";
 export * from "./tooltip";
 export * from "./menu";
+export * from "./dialog";

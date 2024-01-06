@@ -8,7 +8,7 @@ export const iconButtonTheme = {
     color: "primary",
     variant: "solid",
     ripple: true,
-    isCircular: true,
+    isCircular: false,
   },
   baseStyle:
     "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",

@@ -52,6 +52,13 @@ import {
   menuContentTheme,
   menuItemTheme,
 } from "./menu";
+import {
+  dialogTheme,
+  dialogTriggerTheme,
+  dialogOverlayTheme,
+  dialogContentTheme,
+  dialogDismissTriggerTheme,
+} from "./dialog";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -101,6 +108,11 @@ export const theme = {
   menuContent: menuContentTheme,
   menuTrigger: menuTriggerTheme,
   menuItem: menuItemTheme,
+  dialog: dialogTheme,
+  dialogTrigger: dialogTriggerTheme,
+  dialogOverlay: dialogOverlayTheme,
+  dialogContent: dialogContentTheme,
+  dialogDismissTrigger: dialogDismissTriggerTheme,
 };
 
 export default theme;

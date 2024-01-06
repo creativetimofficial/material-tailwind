@@ -37,7 +37,7 @@ type BaseAlertProps = Omit<BaseComponent<"div">, "size"> & Props<any>;
 export interface AlertProps extends BaseAlertProps {
   as?: React.ElementType;
   className?: string;
-  visible?: boolean;
+  open?: boolean;
   isPill?: boolean;
   children: React.ReactNode;
 }
@@ -59,16 +59,7 @@ export interface AlertProps extends BaseAlertProps {
  */
 const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
   (
-    {
-      as,
-      color,
-      variant,
-      isPill,
-      className,
-      visible = true,
-      children,
-      ...rest
-    },
+    { as, color, variant, isPill, className, open = true, children, ...rest },
     ref,
   ) => {
     const Element = as ?? "div";
@@ -96,8 +87,14 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
       [color, variant, isPill],
     );
 
-    return visible ? (
-      <Element role="alert" {...rest} ref={ref} className={styles}>
+    return open ? (
+      <Element
+        {...rest}
+        ref={ref}
+        role="alert"
+        data-open={open}
+        className={styles}
+      >
         <AlertContext.Provider value={contextValue}>
           {children}
         </AlertContext.Provider>

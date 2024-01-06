@@ -233,7 +233,7 @@ export function MenuRoot(props: MenuProps) {
   );
 }
 
-MenuRoot.displayName = "Menu";
+MenuRoot.displayName = "MaterialTailwind.Menu";
 
 // menu trigger
 export interface MenuTriggerProps extends Props<"button" | any> {
@@ -280,7 +280,7 @@ export const MenuTrigger = React.forwardRef<
   );
 });
 
-MenuTrigger.displayName = "MenuTrigger";
+MenuTrigger.displayName = "MaterialTailwind.MenuTrigger";
 
 // menu content
 type MenuContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
@@ -365,6 +365,7 @@ export const MenuContent = React.forwardRef<
               <Element
                 {...rest}
                 ref={elementRef}
+                data-open={open}
                 style={{ ...floatingStyles, ...rest?.style }}
                 className={styles}
                 {...(getFloatingProps && getFloatingProps())}
@@ -379,7 +380,7 @@ export const MenuContent = React.forwardRef<
   },
 );
 
-MenuContent.displayName = "MenuContent";
+MenuContent.displayName = "MaterialTailwind.MenuContent";
 
 // menu item
 export interface MenuItemProps extends Props<"button" | any> {

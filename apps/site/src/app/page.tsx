@@ -1,32 +1,30 @@
 "use client";
 import React from "react";
-import { Menu, Button } from "@material-tailwind/react/dist";
+import { Dialog, Button, IconButton } from "@material-tailwind/react/dist";
+import { Xmark } from "iconoir-react";
 
 export default function Page() {
   return (
     <div className="flex items-end gap-2 p-24">
-      <Menu>
-        <Menu.Trigger as={Button}>Open Menu Menu</Menu.Trigger>
-        <Menu.Content>
-          <Menu.Item disabled>Menu Item 1</Menu.Item>
-          <Menu>
-            <Menu.Trigger as={Menu.Item}>Menu Item 2</Menu.Trigger>
-            <Menu.Content>
-              <Menu>
-                <Menu.Trigger as={Menu.Item}>Menu Item 1</Menu.Trigger>
-                <Menu.Content>
-                  <Menu.Item>Menu Item 1</Menu.Item>
-                  <Menu.Item>Menu Item 2</Menu.Item>
-                  <Menu.Item>Menu Item 3</Menu.Item>
-                </Menu.Content>
-              </Menu>
-              <Menu.Item>Menu Item 2</Menu.Item>
-              <Menu.Item>Menu Item 3</Menu.Item>
-            </Menu.Content>
-          </Menu>
-          <Menu.Item>Menu Item 3</Menu.Item>
-        </Menu.Content>
-      </Menu>
+      <Dialog size="xs">
+        <Dialog.Trigger as={Button}>Open Dialog Model</Dialog.Trigger>
+        <Dialog.Overlay>
+          <Dialog.Content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            cumque dolorem facere. Molestias odio eaque, deleniti enim expedita
+            reiciendis voluptates alias beatae reprehenderit culpa perferendis
+            animi, sit nam recusandae ipsum.
+            <Dialog.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              isCircular
+            >
+              <Xmark />
+            </Dialog.DismissTrigger>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog>
     </div>
   );
 }

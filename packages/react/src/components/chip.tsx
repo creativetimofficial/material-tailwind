@@ -33,7 +33,7 @@ type BaseChipProps = BaseComponent<"div"> & Props<any>;
 export interface ChipProps extends BaseChipProps {
   as?: React.ElementType;
   className?: string;
-  visible?: boolean;
+  open?: boolean;
   children: React.ReactNode;
 }
 
@@ -54,7 +54,7 @@ export interface ChipProps extends BaseChipProps {
  */
 const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
   (
-    { as, size, color, variant, className, visible = true, children, ...rest },
+    { as, size, color, variant, className, open = true, children, ...rest },
     ref,
   ) => {
     const Element = as ?? "div";
@@ -82,8 +82,8 @@ const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
       [size, color, variant],
     );
 
-    return visible ? (
-      <Element {...rest} ref={ref} className={styles}>
+    return open ? (
+      <Element {...rest} ref={ref} data-open={open} className={styles}>
         <ChipContext.Provider value={contextValue}>
           {children}
         </ChipContext.Provider>
