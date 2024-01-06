@@ -68,13 +68,13 @@ export interface PopoverProps {
 export function PopoverRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,
-  placement = "bottom",
+  placement,
   offset,
   children,
 }: PopoverProps) {
   const arrowRef = React.useRef(null);
   const contextTheme = useTheme();
-  const theme = contextTheme?.tooltip ?? popoverTheme;
+  const theme = contextTheme?.popover ?? popoverTheme;
   const defaultProps = theme?.defaultProps;
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(false);
 

@@ -18,3 +18,4 @@ export * from "./alert";
 export * from "./select";
 export * from "./popover";
 export * from "./tooltip";
+export * from "./menu";

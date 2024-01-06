@@ -87,7 +87,7 @@ export const alertDismissTriggerTheme = {
     isPill: false,
   },
   baseStyle:
-    "grid place-items-center shrink-0 w-5 h-5 border mr-1 ml-3 stroke-[1.5] rounded",
+    "grid place-items-center shrink-0 w-5 h-5 border me-1 ms-3 stroke-[1.5] rounded",
   isPill: "rounded-full",
   variant: {
     ghost: {

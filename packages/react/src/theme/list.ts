@@ -19,9 +19,9 @@ export const listItemTheme = {
 };
 
 export const listItemStartTheme = {
-  baseStyle: "grid place-items-center shrink-0 mr-2.5",
+  baseStyle: "grid place-items-center shrink-0 me-2.5",
 };
 
 export const listItemEndTheme = {
-  baseStyle: "grid place-items-center shrink-0 pl-2.5 ml-auto",
+  baseStyle: "grid place-items-center shrink-0 pl-2.5 ms-auto",
 };

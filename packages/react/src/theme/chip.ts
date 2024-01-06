@@ -100,9 +100,9 @@ export const chipDismissTriggerTheme = {
   },
   baseStyle: "grid place-items-center shrink-0 border rounded-full p-px",
   size: {
-    sm: "-translate-x-px ml-0.5 w-3.5 h-3.5 stroke-2",
-    md: "-translate-x-0.5 ml-1 w-4 h-4 stroke-2",
-    lg: "-translate-x-[3px] ml-1.5 w-5 h-5 stroke-2",
+    sm: "-translate-x-px ms-0.5 w-3.5 h-3.5 stroke-2",
+    md: "-translate-x-0.5 ms-1 w-4 h-4 stroke-2",
+    lg: "-translate-x-[3px] ms-1.5 w-5 h-5 stroke-2",
   },
   variant: {
     ghost: {

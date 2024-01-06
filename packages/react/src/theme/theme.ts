@@ -46,6 +46,12 @@ import {
   tooltipContentTheme,
   tooltipArrowTheme,
 } from "./tooltip";
+import {
+  menuTheme,
+  menuTriggerTheme,
+  menuContentTheme,
+  menuItemTheme,
+} from "./menu";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -87,10 +93,14 @@ export const theme = {
   popoverTrigger: popoverTriggerTheme,
   popoverContent: popoverContentTheme,
   popoverArrow: popoverArrowTheme,
-  tooltipTrigger: tooltipTriggerTheme,
   tooltip: tooltipTheme,
+  tooltipTrigger: tooltipTriggerTheme,
   tooltipContent: tooltipContentTheme,
   tooltipArrow: tooltipArrowTheme,
+  menu: menuTheme,
+  menuContent: menuContentTheme,
+  menuTrigger: menuTriggerTheme,
+  menuItem: menuItemTheme,
 };
 
 export default theme;
