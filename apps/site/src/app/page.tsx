@@ -1,20 +1,41 @@
 "use client";
 import React from "react";
-import { Collapse, Button } from "@material-tailwind/react/dist";
-import { Xmark } from "iconoir-react";
+import { Accordion } from "@material-tailwind/react/dist";
+import { NavArrowDown, Xmark } from "iconoir-react";
 
 export default function Page() {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className=" p-24">
-      <Button onClick={() => setOpen(!open)}>Open Collapse</Button>
-      <Collapse open={open}>
-        <div className="rounded-lg bg-gray-50 p-2 shadow-xl shadow-primary-main/5">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nam
-          pariatur animi cum labore quidem aspernatur odio quasi natus
-          recusandae sunt fuga qui laudantium quis, neque magnam dolor rem vero!
-        </div>
-      </Collapse>
+    <div className="p-24">
+      <Accordion defaultValue="">
+        <Accordion.Item value="1">
+          <Accordion.Trigger className="flex justify-between">
+            <div>Item 1</div>
+            <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+          </Accordion.Trigger>
+          <Accordion.Content>
+            <div>Content 1</div>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="2">
+          <Accordion.Trigger className="flex justify-between">
+            <div>Item 2</div>
+            <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+          </Accordion.Trigger>
+          <Accordion.Content>
+            <div>Content 2</div>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="3">
+          <Accordion.Trigger className="flex justify-between">
+            <div>Item 3</div>
+            <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+          </Accordion.Trigger>
+          <Accordion.Content>
+            <div>Content 3</div>
+          </Accordion.Content>
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 }

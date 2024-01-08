@@ -12,7 +12,7 @@ import { collapseTheme } from "@theme";
 // @types
 import type { BaseComponent } from "@types";
 
-export interface CollapseProps extends BaseComponent<any> {
+export interface CollapseProps extends BaseComponent<"div" | any> {
   as?: React.ElementType;
   open: boolean;
   className?: string;

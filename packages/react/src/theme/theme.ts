@@ -59,6 +59,12 @@ import {
   dialogContentTheme,
   dialogDismissTriggerTheme,
 } from "./dialog";
+import {
+  accordionTheme,
+  accordionItemTheme,
+  accordionTriggerTheme,
+  accordionContentTheme,
+} from "./accordion";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -113,6 +119,10 @@ export const theme = {
   dialogOverlay: dialogOverlayTheme,
   dialogContent: dialogContentTheme,
   dialogDismissTrigger: dialogDismissTriggerTheme,
+  accordion: accordionTheme,
+  accordionItem: accordionItemTheme,
+  accordionTrigger: accordionTriggerTheme,
+  accordionContent: accordionContentTheme,
 };
 
 export default theme;
