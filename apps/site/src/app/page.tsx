@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
-import { Accordion } from "@material-tailwind/react/dist";
+import { Accordion, Button } from "@material-tailwind/react/dist";
 import { NavArrowDown, Xmark } from "iconoir-react";
 
 export default function Page() {
-  const [open, setOpen] = React.useState(false);
   return (
     <div className="p-24">
-      <Accordion defaultValue="">
+      <Accordion>
         <Accordion.Item value="1">
           <Accordion.Trigger className="flex justify-between">
             <div>Item 1</div>

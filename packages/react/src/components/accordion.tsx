@@ -38,7 +38,7 @@ type AccordionBaseProps = AccordionContextProps & Props<any>;
 export interface AccordionProps extends AccordionBaseProps {
   defaultValue?: string | string[];
   children: React.ReactNode;
-  onValueChange?: (value: string) => void;
+  onValueChange?: React.Dispatch<React.SetStateAction<string | string[]>>;
 }
 
 export function AccordionRoot({
@@ -55,10 +55,12 @@ export function AccordionRoot({
   type ??= (defaultProps?.type as AccordionProps["type"]) ?? "single";
 
   const accordionValue: string = value || defaultValue;
+  const [uncontrolledActiveItem, setUncontrolledActiveItem] = React.useState<
+    string | string[]
+  >("");
 
-  const [activeItem, setActiveItem] = React.useState<string | string[]>(
-    () => accordionValue,
-  );
+  const activeItem = value || uncontrolledActiveItem;
+  const setActiveItem = onValueChange || setUncontrolledActiveItem;
 
   React.useEffect(() => {
     setActiveItem(accordionValue);
