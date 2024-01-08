@@ -1,30 +1,20 @@
 "use client";
 import React from "react";
-import { Dialog, Button, IconButton } from "@material-tailwind/react/dist";
+import { Collapse, Button } from "@material-tailwind/react/dist";
 import { Xmark } from "iconoir-react";
 
 export default function Page() {
+  const [open, setOpen] = React.useState(false);
   return (
-    <div className="flex items-end gap-2 p-24">
-      <Dialog size="xs">
-        <Dialog.Trigger as={Button}>Open Dialog Model</Dialog.Trigger>
-        <Dialog.Overlay>
-          <Dialog.Content>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            cumque dolorem facere. Molestias odio eaque, deleniti enim expedita
-            reiciendis voluptates alias beatae reprehenderit culpa perferendis
-            animi, sit nam recusandae ipsum.
-            <Dialog.DismissTrigger
-              as={IconButton}
-              size="sm"
-              variant="ghost"
-              isCircular
-            >
-              <Xmark />
-            </Dialog.DismissTrigger>
-          </Dialog.Content>
-        </Dialog.Overlay>
-      </Dialog>
+    <div className=" p-24">
+      <Button onClick={() => setOpen(!open)}>Open Collapse</Button>
+      <Collapse open={open}>
+        <div className="rounded-lg bg-gray-50 p-2 shadow-xl shadow-primary-main/5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nam
+          pariatur animi cum labore quidem aspernatur odio quasi natus
+          recusandae sunt fuga qui laudantium quis, neque magnam dolor rem vero!
+        </div>
+      </Collapse>
     </div>
   );
 }

@@ -14,7 +14,7 @@ import type { BaseComponent } from "@types";
 
 export interface CollapseProps extends BaseComponent<any> {
   as?: React.ElementType;
-  isOpen: boolean;
+  open: boolean;
   className?: string;
   children: React.ReactNode;
 }
@@ -37,14 +37,14 @@ export interface CollapseProps extends BaseComponent<any> {
  * } from "@material-tailwind/react";
  *
  * export default function CollapseDefault() {
- *   const [isOpen, setIsOpen] = React.useState(false);
+ *   const [open, setopen] = React.useState(false);
  *
- *   const toggleOpen = () => setIsOpen((cur) => !cur);
+ *   const toggleOpen = () => setopen((cur) => !cur);
  *
  *   return (
  *     <>
  *       <Button onClick={toggleOpen}>Open Collapse</Button>
- *       <Collapse isOpen={isOpen}>
+ *       <Collapse open={open}>
  *         <Card className="my-4 mx-auto w-8/12">
  *           <CardBody>
  *             <Typography>
@@ -62,22 +62,18 @@ export interface CollapseProps extends BaseComponent<any> {
 export const Collapse = React.forwardRef<
   HTMLDivElement | HTMLElement,
   CollapseProps
->(({ as, isOpen, className, children, ...rest }, ref) => {
+>(({ as, open, className, children, ...rest }, ref) => {
   const Element = as ?? "div";
   const contextTheme = useTheme();
   const theme = contextTheme?.collapse ?? collapseTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    isOpen ? theme.openStyle : theme.closeStyle,
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
+  return open ? (
+    <Element {...rest} ref={ref} data-open={open} className={styles}>
       {children}
     </Element>
-  );
+  ) : null;
 });
 
 Collapse.displayName = "MaterialTailwind.Collapse";

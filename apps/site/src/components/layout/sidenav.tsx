@@ -24,7 +24,7 @@ function Collapsible({ category, categoryPages }) {
           }`}
         />
       </li>
-      <Collapse as="ul" isOpen={isOpen} className="mx-2">
+      <Collapse as="ul" open={isOpen} className="mx-2">
         {categoryPages.map(({ title: subTitle, path }, i) => {
           return (
             <li
