@@ -20,3 +20,4 @@ export * from "./tooltip";
 export * from "./menu";
 export * from "./dialog";
 export * from "./accordion";
+export * from "./tabs";

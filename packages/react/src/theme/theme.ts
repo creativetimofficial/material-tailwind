@@ -65,6 +65,13 @@ import {
   accordionTriggerTheme,
   accordionContentTheme,
 } from "./accordion";
+import {
+  tabsTheme,
+  tabsListTheme,
+  tabsTriggerTheme,
+  tabsPanelTheme,
+  tabsTriggerIndicatorTheme,
+} from "./tabs";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -123,6 +130,11 @@ export const theme = {
   accordionItem: accordionItemTheme,
   accordionTrigger: accordionTriggerTheme,
   accordionContent: accordionContentTheme,
+  tabs: tabsTheme,
+  tabsList: tabsListTheme,
+  tabsTrigger: tabsTriggerTheme,
+  tabsPanel: tabsPanelTheme,
+  tabsTriggerIndicator: tabsTriggerIndicatorTheme,
 };
 
 export default theme;

@@ -33,9 +33,9 @@ export const AccordionContext = React.createContext<AccordionContextProps>({
 } as AccordionContextProps);
 
 // accordion root
-type AccordionBaseProps = AccordionContextProps & Props<any>;
-
-export interface AccordionProps extends AccordionBaseProps {
+export interface AccordionProps {
+  type?: accordionType;
+  value?: string | string[];
   defaultValue?: string | string[];
   children: React.ReactNode;
   onValueChange?: React.Dispatch<React.SetStateAction<string | string[]>>;
@@ -54,7 +54,7 @@ export function AccordionRoot({
 
   type ??= (defaultProps?.type as AccordionProps["type"]) ?? "single";
 
-  const accordionValue: string = value || defaultValue;
+  const accordionValue = value || defaultValue;
   const [uncontrolledActiveItem, setUncontrolledActiveItem] = React.useState<
     string | string[]
   >("");
@@ -63,15 +63,20 @@ export function AccordionRoot({
   const setActiveItem = onValueChange || setUncontrolledActiveItem;
 
   React.useEffect(() => {
-    setActiveItem(accordionValue);
+    setActiveItem(accordionValue as string | string[]);
   }, [accordionValue]);
 
-  React.useEffect(() => {
-    onValueChange?.(activeItem as string);
-  }, [activeItem, onValueChange]);
+  const contextValue = React.useMemo(
+    () => ({
+      type,
+      activeItem,
+      setActiveItem,
+    }),
+    [type, activeItem, setActiveItem],
+  );
 
   return (
-    <AccordionContext.Provider value={{ type, activeItem, setActiveItem }}>
+    <AccordionContext.Provider value={contextValue}>
       {children}
     </AccordionContext.Provider>
   );
@@ -100,7 +105,8 @@ export const AccordionItem = React.forwardRef<
   const defaultProps = theme?.defaultProps;
   const { type, activeItem } = React.useContext(AccordionContext);
 
-  disabled ??= (defaultProps?.disabled as AccordionProps["disabled"]) ?? false;
+  disabled ??=
+    (defaultProps?.disabled as AccordionItemProps["disabled"]) ?? false;
 
   const isMultiple = type === "multiple";
   const isOpen = isMultiple
