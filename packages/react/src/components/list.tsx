@@ -77,17 +77,14 @@ export const ListItem = React.forwardRef<
     return typeof onClick === "function" && onClick(e);
   };
 
-  const styles = twMerge(
-    theme.baseStyle,
-    selected && theme["selected"],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, className);
 
   return (
     <Element
       {...rest}
       ref={ref}
       className={styles}
+      data-selected={selected}
       aria-disabled={disabled}
       onClick={handleClick}
     >
