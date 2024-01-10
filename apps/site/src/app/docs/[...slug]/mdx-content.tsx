@@ -4,19 +4,33 @@
 import { ComponentPreview } from "@components";
 import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
-import { Star } from "iconoir-react";
+
 // @docs-components
-import * as Radio from "@components/docs/radio";
+import * as ButtonGroup from "@components/docs/button-group";
 import * as Button from "@components/docs/button";
 import * as Checkbox from "@components/docs/checkbox";
-import * as Typography from "@components/docs/typography";
 import * as IconButton from "@components/docs/icon-button";
-import * as ButtonGroup from "@components/docs/button-group";
-import * as Switch from "@components/docs/switch";
 import * as Input from "@components/docs/input";
-import * as Textarea from "@components/docs/textarea";
+import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
-import * as Select from "@material-tailwind/react/dist";
+import * as Select from "@components/docs/select";
+import * as Switch from "@components/docs/switch";
+import * as Textarea from "@components/docs/textarea";
+import * as Typography from "@components/docs/typography";
+
+import {
+  Accordion,
+  Alert,
+  Avatar,
+  Chip,
+  Collapse,
+  Dialog,
+  List,
+  Menu,
+  Popover,
+  Tabs,
+  Tooltip,
+} from "@material-tailwind/react/dist";
 
 const components = {
   ComponentPreview,
@@ -87,6 +101,17 @@ const components = {
   Textarea,
   Rating,
   Select,
+  Accordion,
+  Alert,
+  Avatar,
+  Chip,
+  Collapse,
+  Dialog,
+  List,
+  Menu,
+  Popover,
+  Tabs,
+  Tooltip,
 };
 
 type MdxContentProps = {

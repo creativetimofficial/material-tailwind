@@ -43,7 +43,7 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-full max-w-[240px] w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none text-start",
+    "flex items-center gap-4 justify-between h-max max-w-[240px] w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none text-start",
   isPill: "rounded-full",
   isFullWidth: "max-w-full",
   placeholder: "text-gray-400 dark:text-gray-700",

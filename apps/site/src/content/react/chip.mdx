@@ -1,0 +1,46 @@
+---
+title: Tailwind CSS Chip for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Chip component for Tailwind CSS and React using Material Design guidelines.
+github: Chip
+prev: docs/react/inputs
+next: docs/react/Chip-group
+---
+
+# Tailwind CSS Chip - React
+
+Use our `Chip` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Chip` is an essential element of web design. Basically,
+`Chip` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Chip` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Chip Demo
+
+<ComponentPreview demo={
+  <Chip>
+    <Chip.Label>
+      Material Tailwind
+    </Chip.Label>
+    <Chip.DismissTrigger />
+  </Chip>
+}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipDemo() {
+  return (
+    <Chip>
+      <Chip.Label>
+        Material Tailwind
+      </Chip.Label>
+      <Chip.DismissTrigger />
+    </Chip>
+  );
+}
+```
+</ComponentPreview>

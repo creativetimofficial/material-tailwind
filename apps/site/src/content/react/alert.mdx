@@ -1,0 +1,46 @@
+---
+title: Tailwind CSS Alert for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Alert component for Tailwind CSS and React using Material Design guidelines.
+github: Alert
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# Tailwind CSS Alert - React
+
+Use our `Alert` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Alert` is an essential element of web design. Basically,
+`Alert` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Alert` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Alert Demo
+
+<ComponentPreview demo={
+  <Alert>
+    <Alert.Content>
+      Just a simple alert example using Material Tailwind.
+    </Alert.Content>
+    <Alert.DismissTrigger />
+  </Alert>
+}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertDemo() {
+  return (
+    <Alert>
+      <Alert.Content>
+        Just a simple alert example using Material Tailwind.
+      </Alert.Content>
+      <Alert.DismissTrigger />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>

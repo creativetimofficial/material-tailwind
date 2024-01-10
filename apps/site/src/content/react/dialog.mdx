@@ -1,0 +1,70 @@
+---
+title: Tailwind CSS Dialog for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Dialog component for Tailwind CSS and React using Material Design guidelines.
+github: Dialog
+prev: docs/react/inputs
+next: docs/react/Dialog-group
+---
+
+# Tailwind CSS Dialog - React
+
+Use our `Dialog` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Dialog` is an essential element of web design. Basically,
+`Dialog` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Dialog` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Dialog Demo
+
+<ComponentPreview demo={
+  <Dialog>
+    <Dialog.Trigger>
+      Open Modal
+    </Dialog.Trigger>
+    <Dialog.Overlay>
+      <Dialog.Content>
+        Hello World
+      </Dialog.Content>
+    </Dialog.Overlay>
+  </Dialog>
+}>
+```tsx
+import { Dialog } from "@material-tailwind/react";
+
+export function DialogDemo() {
+  return (
+    <Dialog defaultValue="react">
+      <Dialog.Item value="react">
+        <Dialog.Trigger>
+          Material Tailwind React
+        </Dialog.Trigger>
+        <Dialog.Content>
+          Material Tailwind React is a free UI Kit crafted in Tailwind CSS and React. It contains over 100 components and 3 example pages.
+        </Dialog.Content>
+      </Dialog.Item>
+      <Dialog.Item value="html">
+        <Dialog.Trigger>
+          Material Tailwind HTML
+        </Dialog.Trigger>
+        <Dialog.Content>
+          Material Tailwind HTML is a free UI Kit crafted in Tailwind CSS and HTML. It contains over 100 components and 3 example pages.
+        </Dialog.Content>
+      </Dialog.Item>
+      <Dialog.Item value="vue">
+        <Dialog.Trigger>
+          Material Tailwind Vue
+        </Dialog.Trigger>
+        <Dialog.Content>
+          Material Tailwind Vue is a free UI Kit crafted in Tailwind CSS and Vue. It contains over 100 components and 3 example pages.
+        </Dialog.Content>
+      </Dialog.Item>
+    </Dialog>
+  );
+}
+```
+</ComponentPreview>
