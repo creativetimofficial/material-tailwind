@@ -38,8 +38,6 @@ export function ButtonGroupDemo() {
 
 ## Button Group Variants
 
-The `ButtonGroup` component comes with 4 different variants that you can change it using the `variant` prop.
-
 <ComponentPreview demo={<ButtonGroup.ButtonGroupVariants />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -77,8 +75,6 @@ export function ButtonGroupVariants() {
 
 ## Button Group Sizes
 
-The `ButtonGroup` component comes with 3 different sizes that you can change it using the `size` prop.
-
 <ComponentPreview demo={<ButtonGroup.ButtonGroupSizes />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -110,8 +106,6 @@ export function ButtonGroupSizes() {
 ---
 
 ## Button Group Colors
-
-The `ButtonGroup` component comes with 6 different colors that you can change it using the `color` prop.
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupColors />}>
 ```tsx
@@ -160,10 +154,6 @@ export function ButtonGroupColors() {
 
 ## Button Group With Icon
 
-You can use `ButtonGroup` component with icon as well. 
-
-The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
-
 <ComponentPreview demo={<ButtonGroup.ButtonGroupWithIcon />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -203,8 +193,6 @@ export function ButtonWithIcon() {
 
 ## Block Level Button Group
 
-You can make the `ButtonGroup` component to take the full width of its parent by using the `fullWidth` prop.
-
 <ComponentPreview demo={<ButtonGroup.BlockLevelButtonGroup />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -212,22 +200,22 @@ import { ButtonGroup, Button } from "@material-tailwind/react";
 export function BlockLevelButtonGroup() {
   return (
     <div className="flex flex-col gap-4 w-full">
-      <ButtonGroup fullWidth variant="ghost">
+      <ButtonGroup isFullWidth variant="ghost">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="outline">
+      <ButtonGroup isFullWidth variant="outline">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="solid">
+      <ButtonGroup isFullWidth variant="solid">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="gradient">
+      <ButtonGroup isFullWidth variant="gradient">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
@@ -240,33 +228,31 @@ export function BlockLevelButtonGroup() {
 
 ---
 
-## Rounded Button Group
+## Pill Button Group
 
-You can make the `ButtonGroup` component to have rounded (circular) corners by using the `rounded` prop.
-
-<ComponentPreview demo={<ButtonGroup.RoundedButtonGroup />}>
+<ComponentPreview demo={<ButtonGroup.PillButtonGroup />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
-export function RoundedButtonGroup() {
+export function PillButtonGroup() {
   return (
     <div className="flex flex-col gap-4">
-      <ButtonGroup rounded variant="ghost">
+      <ButtonGroup isPill variant="ghost">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup rounded variant="outline">
+      <ButtonGroup isPill variant="outline">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup rounded variant="solid">
+      <ButtonGroup isPill variant="solid">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup rounded variant="gradient">
+      <ButtonGroup isPill variant="gradient">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
@@ -280,10 +266,6 @@ export function RoundedButtonGroup() {
 ---
 
 ## Custom Button Group
-
-You can customize the `ButtonGroup` component the way you want, for example, you can create custom social media buttons.
-
-The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 <ComponentPreview demo={<ButtonGroup.CustomButtonGroup />}>
 ```tsx

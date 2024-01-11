@@ -1,18 +1,18 @@
 import { Button } from "@material-tailwind/react/dist";
 
-export function RoundedButton() {
+export function PillButton() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      <Button rounded variant="ghost">
+      <Button isPill variant="ghost">
         Ghost
       </Button>
-      <Button rounded variant="outline">
+      <Button isPill variant="outline">
         Outline
       </Button>
-      <Button rounded variant="solid">
+      <Button isPill variant="solid">
         Solid
       </Button>
-      <Button rounded variant="gradient">
+      <Button isPill variant="gradient">
         Gradient
       </Button>
     </div>

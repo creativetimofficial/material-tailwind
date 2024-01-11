@@ -1,0 +1,56 @@
+---
+title: Tailwind CSS Collapse for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Collapse component for Tailwind CSS and React using Material Design guidelines.
+github: Collapse
+prev: docs/react/inputs
+next: docs/react/Collapse-group
+---
+
+# Tailwind CSS Collapse - React
+
+Use our `Collapse` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Collapse` is an essential element of web design. Basically,
+`Collapse` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Collapse` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Collapse Demo
+
+<ComponentPreview demo={<Collapse.CollapseDemo />}>
+```tsx
+import * as React from "react";
+import { Collapse, List } from "@material-tailwind/react";
+import { NavArrowRight } from "iconoir-react";
+
+export function CollapseDemo() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <List>
+        <List.Item onClick={() => setIsOpen((cur) => !cur)}>
+          Components
+          <List.ItemEnd>
+            <NavArrowRight className="h-5 w-5 stroke-[1.5]" />
+          </List.ItemEnd>
+        </List.Item>
+        <Collapse open={isOpen}>
+          <List>
+            <List.Item>Avatar</List.Item>
+            <List.Item>Button</List.Item>
+            <List.Item>Input</List.Item>
+            <List.Item>Checkbox</List.Item>
+            <List.Item>Select</List.Item>
+          </List>
+        </Collapse>
+      </List>
+    </>
+  );
+}
+```
+</ComponentPreview>

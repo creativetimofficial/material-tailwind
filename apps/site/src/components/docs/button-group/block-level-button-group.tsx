@@ -3,22 +3,22 @@ import { ButtonGroup, Button } from "@material-tailwind/react/dist";
 export function BlockLevelButtonGroup() {
   return (
     <div className="flex w-full flex-col gap-4">
-      <ButtonGroup fullWidth variant="ghost">
+      <ButtonGroup isFullWidth variant="ghost">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="outline">
+      <ButtonGroup isFullWidth variant="outline">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="solid">
+      <ButtonGroup isFullWidth variant="solid">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>
       </ButtonGroup>
-      <ButtonGroup fullWidth variant="gradient">
+      <ButtonGroup isFullWidth variant="gradient">
         <Button>React</Button>
         <Button>Vue</Button>
         <Button>Svelte</Button>

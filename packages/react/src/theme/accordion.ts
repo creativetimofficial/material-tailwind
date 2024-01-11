@@ -16,7 +16,7 @@ export const accordionItemTheme = {
     disabled: false,
   },
   baseStyle:
-    "group block w-full items-center justify-between cursor-pointer border-b border-secondary-dark dark:border-secondary-dm-main aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "group block w-full items-center justify-between cursor-pointer border-b border-secondary-dark dark:border-secondary-dm-main aria-disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:select-none",
 };
 
 export const accordionTriggerTheme = {

@@ -6,9 +6,15 @@ import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // @docs-components
-import * as ButtonGroup from "@components/docs/button-group";
+import * as Accordion from "@components/docs/accordion";
+import * as Alert from "@components/docs/alert";
+import * as Avatar from "@components/docs/avatar";
 import * as Button from "@components/docs/button";
+import * as ButtonGroup from "@components/docs/button-group";
 import * as Checkbox from "@components/docs/checkbox";
+import * as Card from "@components/docs/card";
+import * as Chip from "@components/docs/chip";
+import * as Collapse from "@components/docs/collapse";
 import * as IconButton from "@components/docs/icon-button";
 import * as Input from "@components/docs/input";
 import * as Radio from "@components/docs/radio";
@@ -19,11 +25,6 @@ import * as Textarea from "@components/docs/textarea";
 import * as Typography from "@components/docs/typography";
 
 import {
-  Accordion,
-  Alert,
-  Avatar,
-  Chip,
-  Collapse,
   Dialog,
   List,
   Menu,
@@ -90,22 +91,24 @@ const components = {
   ),
 
   // docs-components
-  Radio,
-  Button,
-  Checkbox,
-  IconButton,
-  Typography,
-  ButtonGroup,
-  Switch,
-  Input,
-  Textarea,
-  Rating,
-  Select,
   Accordion,
   Alert,
   Avatar,
+  Button,
+  ButtonGroup,
+  Checkbox,
+  Card,
   Chip,
   Collapse,
+  IconButton,
+  Input,
+  Radio,
+  Rating,
+  Select,
+  Switch,
+  Textarea,
+  Typography,
+
   Dialog,
   List,
   Menu,

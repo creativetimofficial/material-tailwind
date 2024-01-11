@@ -35,8 +35,6 @@ export function ButtonDemo() {
 
 ## Button Variants
 
-The `Button` component comes with 4 different variants that you can change it using the `variant` prop.
-
 <ComponentPreview demo={<Button.ButtonVariants />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -58,8 +56,6 @@ export function ButtonVariants() {
 
 ## Button Sizes
 
-The `Button` component comes with 3 different sizes that you can change it using the `size` prop.
-
 <ComponentPreview demo={<Button.ButtonSizes />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -79,8 +75,6 @@ export function ButtonSizes() {
 ---
 
 ## Button Colors
-
-The `Button` component comes with 6 different colors that you can change it using the `color` prop.
 
 <ComponentPreview demo={<Button.ButtonColors />}>
 ```tsx
@@ -104,10 +98,6 @@ export function ButtonColors() {
 ---
 
 ## Button With Icon
-
-You can place your favorite icon inside the `Button` component.
-
-The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 <ComponentPreview demo={<Button.ButtonWithIcon />}>
 ```tsx
@@ -148,8 +138,6 @@ export function ButtonWithIcon() {
 
 ## Block Level Button
 
-You can make the `Button` component to take the full width of its parent by using the `fullWidth` prop.
-
 <ComponentPreview demo={<Button.BlockLevelButton />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -157,16 +145,16 @@ import { Button } from "@material-tailwind/react";
 export function BlockLevelButton() {
   return (
     <div className="flex w-full flex-col gap-4">
-      <Button fullWidth variant="ghost">
+      <Button isFullWidth variant="ghost">
         Ghost Block Level Button
       </Button>
-      <Button fullWidth variant="outline">
+      <Button isFullWidth variant="outline">
         Outline Block Level Button
       </Button>
-      <Button fullWidth variant="solid">
+      <Button isFullWidth variant="solid">
         Solid Block Level Button
       </Button>
-      <Button fullWidth variant="gradient">
+      <Button isFullWidth variant="gradient">
         Gradient Block Level Button
       </Button>
     </div>
@@ -177,27 +165,25 @@ export function BlockLevelButton() {
 
 ---
 
-## Rounded Button
+## Pill Button
 
-You can make the `Button` component to have rounded (circular) corners by using the `rounded` prop.
-
-<ComponentPreview demo={<Button.RoundedButton />}>
+<ComponentPreview demo={<Button.PillButton />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
 
-export function RoundedButton() {
+export function PillButton() {
   return (
-    <div className="flex gap-4">
-      <Button rounded variant="ghost">
+    <div className="flex flex-wrap justify-center gap-4">
+      <Button isPill variant="ghost">
         Ghost
       </Button>
-      <Button rounded variant="outline">
+      <Button isPill variant="outline">
         Outline
       </Button>
-      <Button rounded variant="solid">
+      <Button isPill variant="solid">
         Solid
       </Button>
-      <Button rounded variant="gradient">
+      <Button isPill variant="gradient">
         Gradient
       </Button>
     </div>
@@ -209,8 +195,6 @@ export function RoundedButton() {
 ---
 
 ## Button As Link
-
-You can use the `Button` component as any other HTML element using the `as` prop and passing the HTML element you want to use. For example, you can use it as a link by using the `as="a"` prop or `as={Link}` if you're using Next.js `Link` component.
 
 <ComponentPreview demo={<Button.ButtonAsLink />}>
 ```tsx
@@ -240,10 +224,6 @@ export function ButtonAsLink() {
 ---
 
 ## Custom Auth Button
-
-You can customize the `Button` component the way you want, for example, you can create custom auth buttons.
-
-The below example is using [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
 
 <ComponentPreview demo={<Button.CustomAuthButton />}>
 ```tsx

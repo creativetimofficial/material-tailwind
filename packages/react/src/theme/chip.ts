@@ -146,16 +146,16 @@ export const chipDismissTriggerTheme = {
     },
     gradient: {
       primary:
-        "bg-primary-dark border-primary-dark text-primary-content dark:bg-primary-dm-dark dark:border-primary-dm-dark dark:text-primary-dm-content",
+        "bg-gradient-to-tr from-primary-dark to-primary-light text-primary-content dark:from-primary-dm-dark dark:to-primary-dm-light dark:text-primary-dm-content",
       secondary:
-        "bg-secondary-dark border-secondary-dark text-secondary-content dark:bg-secondary-dm-dark dark:border-secondary-dm-dark dark:text-secondary-dm-content",
-      info: "bg-info-dark border-info-dark text-info-content dark:bg-info-dm-dark dark:border-info-dm-dark dark:text-info-dm-content",
+        "bg-gradient-to-tr from-secondary-dark to-secondary-light text-secondary-content dark:from-secondary-dm-dark dark:to-secondary-dm-light dark:text-secondary-dm-content",
+      info: "bg-gradient-to-tr from-info-dark to-info-light text-info-content dark:from-info-dm-dark dark:to-info-dm-light dark:text-info-dm-content",
       success:
-        "bg-success-dark border-success-dark text-success-content dark:bg-success-dm-dark dark:border-success-dm-dark dark:text-success-dm-content",
+        "bg-gradient-to-tr from-success-dark to-success-light text-success-content dark:from-success-dm-dark dark:to-success-dm-light dark:text-success-dm-content",
       warning:
-        "bg-warning-dark border-warning-dark text-warning-content dark:bg-warning-dm-dark dark:border-warning-dm-dark dark:text-warning-dm-content",
+        "bg-gradient-to-tr from-warning-dark to-warning-light text-warning-content dark:from-warning-dm-dark dark:to-warning-dm-light dark:text-warning-dm-content",
       error:
-        "bg-error-dark border-error-dark text-error-content dark:bg-error-dm-dark dark:border-error-dm-dark dark:text-error-dm-content",
+        "bg-gradient-to-tr from-error-dark to-error-light text-error-content dark:from-error-dm-dark dark:to-error-dm-light dark:text-error-dm-content",
     },
   },
 };

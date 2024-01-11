@@ -21,15 +21,66 @@ See below our `Avatar` example that you can use in your Tailwind CSS and React p
 
 ## Avatar Demo
 
-<ComponentPreview demo={
-  <Avatar src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="profile-picture" />
-}>
+<ComponentPreview demo={<Avatar.AvatarDemo />}>
 ```tsx
 import { Avatar } from "@material-tailwind/react";
 
 export function AvatarDemo() {
+  return <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar Variants
+
+<ComponentPreview demo={<Avatar.AvatarVariants />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarVariants() {
   return (
-    <Avatar src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="profile-picture" />
+    <div className="item-center flex gap-2">
+      <Avatar
+        variant="circular"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+      <Avatar
+        variant="rounded"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+      <Avatar
+        variant="square"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar Sizes
+
+<ComponentPreview demo={<Avatar.AvatarSizes />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarSizes() {
+  return (
+    <div className="flex items-end gap-2">
+      <Avatar size="xs" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="sm" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="md" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="lg" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="xl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      <Avatar size="xxl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+    </div>
   );
 }
 ```

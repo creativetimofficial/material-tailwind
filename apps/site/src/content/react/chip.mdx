@@ -21,24 +21,193 @@ See below our `Chip` example that you can use in your Tailwind CSS and React pro
 
 ## Chip Demo
 
-<ComponentPreview demo={
-  <Chip>
-    <Chip.Label>
-      Material Tailwind
-    </Chip.Label>
-    <Chip.DismissTrigger />
-  </Chip>
-}>
+<ComponentPreview demo={<Chip.ChipDemo />}>
 ```tsx
 import { Chip } from "@material-tailwind/react";
 
 export function ChipDemo() {
   return (
     <Chip>
-      <Chip.Label>
-        Material Tailwind
-      </Chip.Label>
-      <Chip.DismissTrigger />
+      <Chip.Label>Material Tailwind</Chip.Label>
+    </Chip>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip Sizes
+
+<ComponentPreview demo={<Chip.ChipSizes />}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipSizes() {
+  return (
+    <div className="flex items-center gap-2">
+      <Chip size="sm">
+        <Chip.Label>Small</Chip.Label>
+      </Chip>
+      <Chip size="md">
+        <Chip.Label>Medium</Chip.Label>
+      </Chip>
+      <Chip size="lg">
+        <Chip.Label>Large</Chip.Label>
+      </Chip>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip Variants
+
+<ComponentPreview demo={<Chip.ChipVariants />}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipVariants() {
+  return (
+    <div className="flex items-center gap-2">
+      <Chip variant="ghost">
+        <Chip.Label>Ghost</Chip.Label>
+      </Chip>
+      <Chip variant="outline">
+        <Chip.Label>Outline</Chip.Label>
+      </Chip>
+      <Chip variant="solid">
+        <Chip.Label>Solid</Chip.Label>
+      </Chip>
+      <Chip variant="gradient">
+        <Chip.Label>Gradient</Chip.Label>
+      </Chip>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip Colors
+
+<ComponentPreview demo={<Chip.ChipColors />}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipColors() {
+  return (
+    <div className="flex items-center gap-2">
+      <Chip color="primary">
+        <Chip.Label>Primary</Chip.Label>
+      </Chip>
+      <Chip color="secondary">
+        <Chip.Label>Secondary</Chip.Label>
+      </Chip>
+      <Chip color="info">
+        <Chip.Label>Info</Chip.Label>
+      </Chip>
+      <Chip color="success">
+        <Chip.Label>Success</Chip.Label>
+      </Chip>
+      <Chip color="warning">
+        <Chip.Label>Warning</Chip.Label>
+      </Chip>
+      <Chip color="error">
+        <Chip.Label>Error</Chip.Label>
+      </Chip>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip Icon
+
+<ComponentPreview demo={<Chip.ChipIcon />}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+import { ProfileCircle } from "iconoir-react";
+
+export function ChipIcon() {
+  return (
+    <div className="flex items-center gap-2">
+      <Chip variant="ghost">
+        <Chip.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Chip.Icon>
+        <Chip.Label>Ghost</Chip.Label>
+      </Chip>
+      <Chip variant="outline">
+        <Chip.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Chip.Icon>
+        <Chip.Label>Outline</Chip.Label>
+      </Chip>
+      <Chip variant="solid">
+        <Chip.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Chip.Icon>
+        <Chip.Label>Solid</Chip.Label>
+      </Chip>
+      <Chip variant="gradient">
+        <Chip.Icon>
+          <ProfileCircle className="h-full w-full" />
+        </Chip.Icon>
+        <Chip.Label>Gradient</Chip.Label>
+      </Chip>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip Dismissible
+
+<ComponentPreview demo={<Chip.ChipDismissible />}>
+```tsx
+import * as React from "react";
+import { Chip } from "@material-tailwind/react";
+import { ProfileCircle } from "iconoir-react";
+
+export function ChipDismissible() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <Chip open={open}>
+      <Chip.Icon>
+        <ProfileCircle className="h-full w-full" />
+      </Chip.Icon>
+      <Chip.Label>Material Tailwind</Chip.Label>
+      <Chip.DismissTrigger onClick={() => setOpen(false)} />
+    </Chip>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Chip with Avatar
+
+<ComponentPreview demo={<Chip.ChipWithAvatar />}>
+```tsx
+import { Chip, Avatar } from "@material-tailwind/react";
+
+export function ChipWithAvatar() {
+  return (
+    <Chip>
+      <Chip.Icon>
+        <Avatar size="xs" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+      </Chip.Icon>
+      <Chip.Label>Alex Andrew</Chip.Label>
     </Chip>
   );
 }

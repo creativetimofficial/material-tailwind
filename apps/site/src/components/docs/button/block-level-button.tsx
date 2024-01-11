@@ -3,16 +3,16 @@ import { Button } from "@material-tailwind/react/dist";
 export function BlockLevelButton() {
   return (
     <div className="flex w-full flex-col gap-4">
-      <Button fullWidth variant="ghost">
+      <Button isFullWidth variant="ghost">
         Ghost Block Level Button
       </Button>
-      <Button fullWidth variant="outline">
+      <Button isFullWidth variant="outline">
         Outline Block Level Button
       </Button>
-      <Button fullWidth variant="solid">
+      <Button isFullWidth variant="solid">
         Solid Block Level Button
       </Button>
-      <Button fullWidth variant="gradient">
+      <Button isFullWidth variant="gradient">
         Gradient Block Level Button
       </Button>
     </div>

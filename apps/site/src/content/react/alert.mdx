@@ -21,24 +21,174 @@ See below our `Alert` example that you can use in your Tailwind CSS and React pr
 
 ## Alert Demo
 
-<ComponentPreview demo={
-  <Alert>
-    <Alert.Content>
-      Just a simple alert example using Material Tailwind.
-    </Alert.Content>
-    <Alert.DismissTrigger />
-  </Alert>
-}>
+<ComponentPreview demo={<Alert.AlertDemo />}>
 ```tsx
 import { Alert } from "@material-tailwind/react";
 
 export function AlertDemo() {
   return (
     <Alert>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Variants
+
+<ComponentPreview demo={<Alert.AlertVariants />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertVariants() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert variant="ghost">
+        <Alert.Content>A simple alert for showing message, with variant="ghost"</Alert.Content>
+      </Alert>
+      <Alert variant="outline">
+        <Alert.Content>A simple alert for showing message. with variant="outline"</Alert.Content>
+      </Alert>
+      <Alert variant="solid">
+        <Alert.Content>A simple alert for showing message. with variant="solid"</Alert.Content>
+      </Alert>
+      <Alert variant="gradient">
+        <Alert.Content>A simple alert for showing message. with variant="gradient"</Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Colors
+
+<ComponentPreview demo={<Alert.AlertColors />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertColors() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert color="primary">
+        <Alert.Content>
+          A simple alert for showing message, with color="primary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="secondary">
+        <Alert.Content>
+          A simple alert for showing message, with color="secondary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="info">
+        <Alert.Content>
+          A simple alert for showing message, with color="info"
+        </Alert.Content>
+      </Alert>
+      <Alert color="success">
+        <Alert.Content>
+          A simple alert for showing message, with color="success"
+        </Alert.Content>
+      </Alert>
+      <Alert color="warning">
+        <Alert.Content>
+          A simple alert for showing message, with color="warning"
+        </Alert.Content>
+      </Alert>
+      <Alert color="error">
+        <Alert.Content>
+          A simple alert for showing message, with color="error"
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Icon
+
+<ComponentPreview demo={<Alert.AlertIcon />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertIcon() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircle className="h-full w-full" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Dismissible
+
+<ComponentPreview demo={<Alert.AlertDismissible />}>
+```tsx
+import * as React from "react";
+import { Alert, Button } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertDismissible() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <Alert open={open}>
+      <Alert.Icon>
+        <WarningCircle className="h-full w-full" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+      <Alert.DismissTrigger onClick={() => setOpen(false)} />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert with Content
+
+<ComponentPreview demo={<Alert.AlertWithContent />}>
+```tsx
+import * as React from "react";
+import { Alert, Button, Typography } from "@material-tailwind/react/dist";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertWithContent() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <Alert open={open} className="items-baseline">
+      <Alert.Icon>
+        <WarningCircle className="h-full w-full translate-y-0.5" />
+      </Alert.Icon>
       <Alert.Content>
-        Just a simple alert example using Material Tailwind.
+        <Typography variant="h5">Success</Typography>
+        <Typography color="secondary">
+          I don't know what that word means. I'm happy. But success, that goes
+          back to what in somebody's eyes success means. For me, success is
+          inner peace. That's a good day for me.
+        </Typography>
       </Alert.Content>
-      <Alert.DismissTrigger />
+      <Alert.DismissTrigger
+        className="-translate-y-1"
+        onClick={() => setOpen(false)}
+      />
     </Alert>
   );
 }

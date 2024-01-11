@@ -1,0 +1,363 @@
+---
+title: Tailwind CSS Card for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Card component for Tailwind CSS and React using Material Design guidelines.
+github: Card
+prev: docs/react/inputs
+next: docs/react/Card-group
+---
+
+# Tailwind CSS Card - React
+
+Use our `Card` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Card` is an essential element of web design. Basically,
+`Card` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Card` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Card Demo
+
+<ComponentPreview demo={<Card.CardDemo />}>
+```tsx
+import { Card, Typography, Button } from "@material-tailwind/react";
+
+export function CardDemo() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
+      <Card.Body>
+        <Typography variant="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-gray-600 dark:text-gray-400">
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to "Naviglio" where you can enjoy the main night life in
+          Barcelona.
+        </Typography>
+      </Card.Body>
+      <Card.Footer>
+        <Button>Read More</Button>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Simple Card
+
+<ComponentPreview demo={<Card.SimpleCard />}>
+```tsx
+import { Card, Typography, Button } from "@material-tailwind/react";
+
+export function SimpleCard() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Body>
+        <Typography variant="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-gray-600 dark:text-gray-400">
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to "Naviglio" where you can enjoy the main night life in
+          Barcelona.
+        </Typography>
+      </Card.Body>
+      <Card.Footer>
+        <Button isFullWidth>Read More</Button>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Card with Link
+
+<ComponentPreview demo={<Card.CardWithLink />}>
+```tsx
+import { Card, Typography, Button } from "@material-tailwind/react";
+import { FrameSelect, NavArrowRight } from "iconoir-react";
+
+export function CardWithLink() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header>
+        <FrameSelect className="h-10 w-10 stroke-2" />
+      </Card.Header>
+      <Card.Body>
+        <Typography variant="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-gray-600 dark:text-gray-400">
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to "Naviglio" where you can enjoy the main night life in
+          Barcelona.
+        </Typography>
+      </Card.Body>
+      <Card.Footer>
+        <Button isFullWidth variant="ghost">
+          Read More <NavArrowRight className="h-4 w-4" />
+        </Button>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Profile Card
+
+<ComponentPreview demo={<Card.ProfileCard />}>
+```tsx
+import {
+  Card,
+  Typography,
+  IconButton,
+  Tooltip,
+} from "@material-tailwind/react";
+import { X, Facebook, Instagram } from "iconoir-react";
+
+export function ProfileCard() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header
+        as="img"
+        src="https://dub.sh/TdSBP0D"
+        alt="profile-picture"
+      />
+      <Card.Body className="text-center">
+        <Typography variant="h5">Alex Andrew</Typography>
+        <Typography className="my-1 text-gray-600 dark:text-gray-400">
+          CEO & Co-Founder
+        </Typography>
+      </Card.Body>
+      <Card.Footer className="flex items-center justify-center gap-1">
+        <Tooltip>
+          <Tooltip.Trigger
+            as={IconButton}
+            size="sm"
+            variant="ghost"
+            color="info"
+          >
+            <X className="h-3.5 w-3.5" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Follow
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+        <Tooltip>
+          <Tooltip.Trigger
+            as={IconButton}
+            size="sm"
+            variant="ghost"
+            color="info"
+          >
+            <Facebook className="h-4 w-4" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Like
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+        <Tooltip>
+          <Tooltip.Trigger
+            as={IconButton}
+            size="sm"
+            variant="ghost"
+            color="info"
+          >
+            <Instagram className="h-4 w-4" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Follow
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Login Card
+
+<ComponentPreview demo={<Card.LoginCard />}>
+```tsx
+import {
+  Card,
+  Typography,
+  Button,
+  Input,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export function LoginCard() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header
+        as={Card}
+        color="primary"
+        className="grid h-24 place-items-center shadow-none"
+      >
+        <Typography as="span" variant="h4" color="secondary">
+          Sign In
+        </Typography>
+      </Card.Header>
+      <Card.Body as="form">
+        <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+          <Typography
+            as="label"
+            htmlFor="email"
+            variant="small"
+            color="primary"
+            className="font-semibold"
+          >
+            Email
+          </Typography>
+          <Input.Field
+            id="email"
+            type="email"
+            placeholder="someone@example.com"
+          />
+        </Input>
+        <Input isFullWidth className="mb-4 space-y-1.5">
+          <Typography
+            as="label"
+            htmlFor="password"
+            variant="small"
+            color="primary"
+            className="font-semibold"
+          >
+            Password
+          </Typography>
+          <Input.Field
+            id="password"
+            type="password"
+            placeholder="************"
+          />
+        </Input>
+        <div className="mb-6 flex items-center gap-2">
+          <Checkbox id="remember" />
+          <Typography
+            as="label"
+            htmlFor="remember"
+            className="text-gray-500 dark:text-gray-400"
+          >
+            Remember Me
+          </Typography>
+        </div>
+        <Button isFullWidth>Sign In</Button>
+      </Card.Body>
+      <Card.Footer className="text-center">
+        <Typography
+          variant="small"
+          className="my-1 flex items-center justify-center gap-1"
+        >
+          Don't have an account?
+          <Typography variant="small" as="a" href="#" className="font-bold">
+            Sign up
+          </Typography>
+        </Typography>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Pricing Card
+
+<ComponentPreview demo={<Card.PricingCard />}>
+```tsx
+import {
+  Card,
+  Typography,
+  Button,
+  Input,
+  Checkbox,
+} from "@material-tailwind/react";
+
+export function LoginCard() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header
+        as={Card}
+        color="primary"
+        className="grid h-24 place-items-center shadow-none"
+      >
+        <Typography as="span" variant="h4" color="secondary">
+          Sign In
+        </Typography>
+      </Card.Header>
+      <Card.Body as="form">
+        <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+          <Typography
+            as="label"
+            htmlFor="email"
+            variant="small"
+            color="primary"
+            className="font-semibold"
+          >
+            Email
+          </Typography>
+          <Input.Field
+            id="email"
+            type="email"
+            placeholder="someone@example.com"
+          />
+        </Input>
+        <Input isFullWidth className="mb-4 space-y-1.5">
+          <Typography
+            as="label"
+            htmlFor="password"
+            variant="small"
+            color="primary"
+            className="font-semibold"
+          >
+            Password
+          </Typography>
+          <Input.Field
+            id="password"
+            type="password"
+            placeholder="************"
+          />
+        </Input>
+        <div className="mb-6 flex items-center gap-2">
+          <Checkbox id="remember" />
+          <Typography
+            as="label"
+            htmlFor="remember"
+            className="text-gray-500 dark:text-gray-400"
+          >
+            Remember Me
+          </Typography>
+        </div>
+        <Button isFullWidth>Sign In</Button>
+      </Card.Body>
+      <Card.Footer className="text-center">
+        <Typography
+          variant="small"
+          className="my-1 flex items-center justify-center gap-1"
+        >
+          Don't have an account?
+          <Typography variant="small" as="a" href="#" className="font-bold">
+            Sign up
+          </Typography>
+        </Typography>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+</ComponentPreview>

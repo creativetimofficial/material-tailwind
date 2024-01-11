@@ -14,7 +14,7 @@
     "@material-tailwind/react": "workspace:*",
     "clsx": "1.2.1",
     "gray-matter": "4.0.3",
-    "iconoir-react": "^7.0.2",
+    "iconoir-react": "^7.3.0",
     "material-ripple-effects": "2.0.1",
     "next": "14.0.4",
     "next-mdx-remote": "4.2.0",

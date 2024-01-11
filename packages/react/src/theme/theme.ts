@@ -72,6 +72,12 @@ import {
   tabsPanelTheme,
   tabsTriggerIndicatorTheme,
 } from "./tabs";
+import {
+  cardTheme,
+  cardHeaderTheme,
+  cardBodyTheme,
+  cardFooterTheme,
+} from "./card";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -135,6 +141,10 @@ export const theme = {
   tabsTrigger: tabsTriggerTheme,
   tabsPanel: tabsPanelTheme,
   tabsTriggerIndicator: tabsTriggerIndicatorTheme,
+  card: cardTheme,
+  cardHeader: cardHeaderTheme,
+  cardBody: cardBodyTheme,
+  cardFooter: cardFooterTheme,
 };
 
 export default theme;

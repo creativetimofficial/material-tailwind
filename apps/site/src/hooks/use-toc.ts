@@ -1,4 +1,5 @@
 import React from "react";
+import { usePathname } from "next/navigation";
 
 interface TocType {
   id: string;
@@ -7,50 +8,54 @@ interface TocType {
 }
 
 export function useToc(ref: React.MutableRefObject<HTMLElement>) {
+  const pathname = usePathname();
   const [toc, setToc] = React.useState<TocType[]>([]);
   const activeTocRef = React.useRef<IntersectionObserver | null>(null);
   const [activeToc, setActiveToc] = React.useState<string | null>(null);
 
-  React.useEffect(function generateToc() {
-    setToc([]);
-
-    const innerToc: TocType[] = [];
-
-    if (ref) {
-      const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
-
-      headings.map((heading) => {
-        if (heading.tagName === "H2") {
-          const result = {
-            id: heading.id,
-            text: heading.textContent,
-          } as TocType;
-
-          innerToc.push(result);
-        } else if (heading.tagName === "H3") {
-          const parentHeading = innerToc[innerToc.length - 1];
-
-          if (parentHeading) {
-            Object.assign(parentHeading, {
-              subHeadings: [
-                ...(parentHeading?.subHeadings ?? []),
-                {
-                  id: heading.id,
-                  text: heading.textContent,
-                },
-              ],
-            });
-          }
-        }
-      });
-    }
-
-    setToc(innerToc);
-
-    return () => {
+  React.useEffect(
+    function generateToc() {
       setToc([]);
-    };
-  }, []);
+
+      const innerToc: TocType[] = [];
+
+      if (ref) {
+        const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
+
+        headings.map((heading) => {
+          if (heading.tagName === "H2") {
+            const result = {
+              id: heading.id,
+              text: heading.textContent,
+            } as TocType;
+
+            innerToc.push(result);
+          } else if (heading.tagName === "H3") {
+            const parentHeading = innerToc[innerToc.length - 1];
+
+            if (parentHeading) {
+              Object.assign(parentHeading, {
+                subHeadings: [
+                  ...(parentHeading?.subHeadings ?? []),
+                  {
+                    id: heading.id,
+                    text: heading.textContent,
+                  },
+                ],
+              });
+            }
+          }
+        });
+      }
+
+      setToc(innerToc);
+
+      return () => {
+        setToc([]);
+      };
+    },
+    [pathname],
+  );
 
   function handleActiveToc(toc: IntersectionObserverEntry[]) {
     toc.forEach((el) => {
