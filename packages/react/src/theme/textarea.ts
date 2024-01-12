@@ -34,5 +34,3 @@ export const textareaTheme = {
   isError: "border-error-main dark:border-error-dm-main",
   isSuccess: "border-success-main dark:border-success-dm-main",
 };
-
-export default textareaTheme;

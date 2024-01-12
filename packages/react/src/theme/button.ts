@@ -75,5 +75,3 @@ export const buttonTheme = {
     },
   },
 };
-
-export default buttonTheme;

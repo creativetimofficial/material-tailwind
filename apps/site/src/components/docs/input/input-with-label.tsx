@@ -8,7 +8,7 @@ export function InputWithLabel() {
         htmlFor="email"
         variant="small"
         color="primary"
-        className="font-medium"
+        className="font-semibold"
       >
         Email
       </Typography>

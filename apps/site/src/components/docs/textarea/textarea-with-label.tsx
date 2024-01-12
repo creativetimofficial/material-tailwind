@@ -8,7 +8,7 @@ export function TextareaWithLabel() {
         htmlFor="message"
         variant="small"
         color="primary"
-        className="font-medium"
+        className="font-semibold"
       >
         Message
       </Typography>

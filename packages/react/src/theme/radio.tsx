@@ -38,5 +38,3 @@ export const radioTheme = {
     error: "text-error-content dark:text-error-dm-content",
   },
 };
-
-export default radioTheme;

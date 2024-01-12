@@ -24,5 +24,3 @@ export const switchTheme = {
     error: "checked:before:bg-error-main dark:checked:before:bg-error-dm-main",
   },
 };
-
-export default switchTheme;

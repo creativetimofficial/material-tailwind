@@ -7,7 +7,7 @@ export function CheckboxWithDescription() {
     <div className="flex gap-2">
       <Checkbox id={ID} />
       <label htmlFor={ID} className="-translate-y-1">
-        <Typography color="gray" className="font-medium">
+        <Typography color="gray" className="font-semibold">
           Remember Me
         </Typography>
         <Typography

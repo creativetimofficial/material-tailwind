@@ -159,5 +159,3 @@ export const chipDismissTriggerTheme = {
     },
   },
 };
-
-export default chipTheme;

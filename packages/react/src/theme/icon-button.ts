@@ -73,5 +73,3 @@ export const iconButtonTheme = {
     },
   },
 };
-
-export default iconButtonTheme;

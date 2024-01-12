@@ -44,5 +44,3 @@ export const checkboxTheme = {
     error: "text-error-content dark:text-error-dm-content",
   },
 };
-
-export default checkboxTheme;

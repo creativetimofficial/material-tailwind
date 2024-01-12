@@ -6,7 +6,7 @@ export function RadioWithDescription() {
       <div className="flex gap-2">
         <Radio name="version" id="radio-description-html" />
         <label htmlFor="radio-description-html" className="-translate-y-1">
-          <Typography color="gray" className="font-medium">
+          <Typography color="gray" className="font-semibold">
             HTML Version
           </Typography>
           <Typography
@@ -20,7 +20,7 @@ export function RadioWithDescription() {
       <div className="flex gap-2">
         <Radio name="version" id="radio-description-react" />
         <label htmlFor="radio-description-react" className="-translate-y-1">
-          <Typography color="gray" className="font-medium">
+          <Typography color="gray" className="font-semibold">
             React Version
           </Typography>
           <Typography

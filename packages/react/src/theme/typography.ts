@@ -29,5 +29,3 @@ export const typographyTheme = {
     error: "text-error-main dark:text-error-dm-main",
   },
 };
-
-export default typographyTheme;

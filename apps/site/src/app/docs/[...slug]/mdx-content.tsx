@@ -15,6 +15,7 @@ import * as Checkbox from "@components/docs/checkbox";
 import * as Card from "@components/docs/card";
 import * as Chip from "@components/docs/chip";
 import * as Collapse from "@components/docs/collapse";
+import * as Dialog from "@components/docs/dialog";
 import * as IconButton from "@components/docs/icon-button";
 import * as Input from "@components/docs/input";
 import * as Radio from "@components/docs/radio";
@@ -25,7 +26,6 @@ import * as Textarea from "@components/docs/textarea";
 import * as Typography from "@components/docs/typography";
 
 import {
-  Dialog,
   List,
   Menu,
   Popover,
@@ -100,6 +100,7 @@ const components = {
   Card,
   Chip,
   Collapse,
+  Dialog,
   IconButton,
   Input,
   Radio,
@@ -109,7 +110,6 @@ const components = {
   Textarea,
   Typography,
 
-  Dialog,
   List,
   Menu,
   Popover,

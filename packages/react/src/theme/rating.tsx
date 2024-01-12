@@ -49,5 +49,3 @@ export const ratingTheme = {
     error: "text-error-main",
   },
 };
-
-export default ratingTheme;

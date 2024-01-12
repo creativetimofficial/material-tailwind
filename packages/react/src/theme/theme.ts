@@ -1,21 +1,21 @@
-import radioTheme from "./radio";
-import buttonTheme from "./button";
-import collapseTheme from "./collapse";
-import checkboxTheme from "./checkbox";
-import typographyTheme from "./typography";
-import iconButtonTheme from "./icon-button";
-import buttonGroupTheme from "./button-group";
-import swtichTheme from "./switch";
+import { radioTheme } from "./radio";
+import { buttonTheme } from "./button";
+import { collapseTheme } from "./collapse";
+import { checkboxTheme } from "./checkbox";
+import { typographyTheme } from "./typography";
+import { iconButtonTheme } from "./icon-button";
+import { buttonGroupTheme } from "./button-group";
+import { switchTheme } from "./switch";
+import { textareaTheme } from "./textarea";
+import { ratingTheme } from "./rating";
+import { avatarTheme } from "./avatar";
 import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
-import textareaTheme from "./textarea";
-import ratingTheme from "./rating";
 import {
   listTheme,
   listItemTheme,
   listItemStartTheme,
   listItemEndTheme,
 } from "./list";
-import avatarTheme from "./avatar";
 import {
   chipTheme,
   chipLabelTheme,
@@ -92,7 +92,7 @@ export const theme = {
   radio: radioTheme,
   collapse: collapseTheme,
   typography: typographyTheme,
-  switch: swtichTheme,
+  switch: switchTheme,
   input: inputTheme,
   inputField: inputFieldTheme,
   inputIcon: inputIconTheme,

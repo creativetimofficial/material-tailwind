@@ -32,11 +32,11 @@ export const dialogContentTheme = {
   baseStyle:
     "fixed z-[9998] top-1/2 left-1/2 -translate-x-1/2 px-4 py-3 -translate-y-1/2 bg-white w-full h-full dark:bg-primary-dark rounded-xl shadow-2xl shadow-primary-dark/5 dark:shadow-primary-dark/10 border border-secondary-dark dark:border-secondary-dm-main",
   size: {
-    xs: "w-2/12 h-max",
-    sm: "w-4/12 h-max",
-    md: "w-6/12 h-max",
-    lg: "w-8/12 h-max",
-    xl: "w-10/12 h-max",
+    xs: "w-8/12 sm:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-max",
+    sm: "w-9/12 sm:w-7/12 md:w-5/12 lg:w-3/12 h-max",
+    md: "w-10/12 md:w-8/12 lg:w-6/12 h-max",
+    lg: "w-10/12 lg:w-8/12 h-max",
+    xl: "w-11/12 lg:w-10/12 h-max",
     screen: "w-full h-full rounded-none",
   },
 };

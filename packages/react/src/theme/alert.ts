@@ -144,5 +144,3 @@ export const alertDismissTriggerTheme = {
     },
   },
 };
-
-export default alertTheme;

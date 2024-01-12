@@ -22,5 +22,3 @@ export const avatarTheme = {
     rounded: "rounded-[current]",
   },
 };
-
-export default avatarTheme;

@@ -21,5 +21,3 @@ export const buttonGroupTheme = {
     "[&:not(:first-child):not(:last-child)]:[&_*]:rounded-none first:[&_*]:rounded-r-none last:[&_*]:rounded-l-none [&:not(:first-child):not(:last-child)]:[&_*]:border-l-0 last:[&_*]:border-l-0",
   isFullWidth: "w-full",
 };
-
-export default buttonGroupTheme;

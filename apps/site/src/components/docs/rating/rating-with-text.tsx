@@ -6,11 +6,11 @@ export function RatingWithText() {
 
   return (
     <div className="flex items-center gap-2">
-      <Typography color="primary" className="font-medium">
+      <Typography color="primary" className="font-semibold">
         {rated}.7
       </Typography>
       <Rating value={4} onChange={(value) => setRated(value)} />
-      <Typography color="primary" className="font-medium">
+      <Typography color="primary" className="font-semibold">
         Based on 134 Reviews
       </Typography>
     </div>
