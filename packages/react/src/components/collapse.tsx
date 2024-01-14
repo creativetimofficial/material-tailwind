@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 // @utils
 import { twMerge } from "tailwind-merge";
@@ -27,7 +27,7 @@ export interface CollapseProps extends BaseComponent<"div" | any> {
  *
  * @example
  * ```tsx
- * import React from "react";
+ * import * as React from "react";
  * import {
  *  Collapse,
  *  Button,

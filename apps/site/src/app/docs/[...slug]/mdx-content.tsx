@@ -24,6 +24,7 @@ import * as Popover from "@components/docs/popover";
 import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
 import * as Select from "@components/docs/select";
+import * as Spinner from "@components/docs/spinner";
 import * as Switch from "@components/docs/switch";
 import * as Tabs from "@components/docs/tabs";
 import * as Textarea from "@components/docs/textarea";
@@ -106,6 +107,7 @@ const components = {
   Radio,
   Rating,
   Select,
+  Spinner,
   Switch,
   Tabs,
   Textarea,

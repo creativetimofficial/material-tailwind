@@ -237,10 +237,6 @@ export const routes = [
             path: "/docs/react/drawer",
           },
           {
-            title: "Link",
-            path: "/docs/react/link",
-          },
-          {
             title: "Menu",
             path: "/docs/react/menu",
           },

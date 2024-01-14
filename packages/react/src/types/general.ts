@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 export type BaseComponent<T extends keyof JSX.IntrinsicElements> =
   React.ComponentProps<T> & {
