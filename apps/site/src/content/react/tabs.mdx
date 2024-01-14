@@ -1,0 +1,331 @@
+---
+title: Tailwind CSS Tabs for React - Material Tailwind
+description: Customise your web projects with our complex Tabs component for Tailwind CSS and React using Material Design guidelines.
+github: tabs
+prev: docs/react/icon-button
+next: docs/react/radio
+---
+
+# Tailwind CSS Tabs - React
+
+Easily create `Tabs` with different statuses and sizes using our components based on Tailwind CSS and React.
+
+`Tabs` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+
+See below our `Tabs` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Tabs Demo
+
+<ComponentPreview demo={<Tabs.TabsDemo />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+
+export function TabsDemo() {
+  return (
+    <Tabs defaultValue="html">
+      <Tabs.List className="w-full">
+        <Tabs.Trigger className="w-full" value="html">
+          HTML
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="react">
+          React
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="vue">
+          Vue
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="angular">
+          Angular
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="svelte">
+          Svelte
+        </Tabs.Trigger>
+        <Tabs.TriggerIndicator />
+      </Tabs.List>
+      <Tabs.Panel value="html">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="react">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="vue">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+      <Tabs.Panel value="angular">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="svelte">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Tabs with Icon
+
+<ComponentPreview demo={<Tabs.TabsWithIcon />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
+
+export function TabsWithIcon() {
+  return (
+    <Tabs defaultValue="dashboard">
+      <Tabs.List className="w-full">
+        <Tabs.Trigger className="w-full" value="dashboard">
+          <SelectFace3d className="mr-2 h-5 w-5" />
+          Dashboard
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="profile">
+          <ProfileCircle className="mr-2 h-5 w-5" />
+          User Profile
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="settings">
+          <Settings className="mr-2 h-5 w-5" />
+          Settings
+        </Tabs.Trigger>
+        <Tabs.TriggerIndicator />
+      </Tabs.List>
+      <Tabs.Panel value="dashboard">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="profile">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="settings">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Vertical Tabs
+
+<ComponentPreview demo={<Tabs.VerticalTabs />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+
+export function VerticalTabs() {
+  return (
+    <Tabs defaultValue="html" orientation="vertical">
+      <Tabs.List>
+        <Tabs.Trigger value="html">HTML</Tabs.Trigger>
+        <Tabs.Trigger value="react">React</Tabs.Trigger>
+        <Tabs.Trigger value="vue">Vue</Tabs.Trigger>
+        <Tabs.Trigger value="angular">Angular</Tabs.Trigger>
+        <Tabs.Trigger value="svelte">Svelte</Tabs.Trigger>
+        <Tabs.TriggerIndicator />
+      </Tabs.List>
+      <Tabs.Panel value="html">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="react">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="vue">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+      <Tabs.Panel value="angular">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="svelte">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Vertical Tabs with Icon
+
+<ComponentPreview demo={<Tabs.VerticalTabsWithIcon />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+import { SelectFace3d, ProfileCircle, Settings } from "iconoir-react";
+
+export function VerticalTabsWithIcon() {
+  return (
+    <Tabs defaultValue="dashboard" orientation="vertical">
+      <Tabs.List>
+        <Tabs.Trigger value="dashboard">
+          <SelectFace3d className="mr-2 h-5 w-5" />
+          Dashboard
+        </Tabs.Trigger>
+        <Tabs.Trigger value="profile">
+          <ProfileCircle className="mr-2 h-5 w-5" />
+          User Profile
+        </Tabs.Trigger>
+        <Tabs.Trigger value="settings">
+          <Settings className="mr-2 h-5 w-5" />
+          Settings
+        </Tabs.Trigger>
+        <Tabs.TriggerIndicator />
+      </Tabs.List>
+      <Tabs.Panel value="dashboard">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="profile">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="settings">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Transparent Tabs
+
+<ComponentPreview demo={<Tabs.TransparentTabs />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+
+export function TransparentTabs() {
+  return (
+    <Tabs defaultValue="html">
+      <Tabs.List className="w-full bg-transparent dark:bg-transparent">
+        <Tabs.Trigger className="w-full" value="html">
+          HTML
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="react">
+          React
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="vue">
+          Vue
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="angular">
+          Angular
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="svelte">
+          Svelte
+        </Tabs.Trigger>
+        <Tabs.TriggerIndicator className="bg-primary-main/10 shadow-none dark:bg-primary-dm-main/10" />
+      </Tabs.List>
+      <Tabs.Panel value="html">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="react">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="vue">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+      <Tabs.Panel value="angular">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="svelte">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Underline Tabs
+
+<ComponentPreview demo={<Tabs.UnderlineTabs />}>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+
+export function UnderlineTabs() {
+  return (
+    <Tabs defaultValue="html">
+      <Tabs.List className="w-full rounded-none border-b border-secondary-dark bg-transparent py-0 dark:border-secondary-dm-main dark:bg-transparent">
+        <Tabs.Trigger className="w-full" value="html">
+          HTML
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="react">
+          React
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="vue">
+          Vue
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="angular">
+          Angular
+        </Tabs.Trigger>
+        <Tabs.Trigger className="w-full" value="svelte">
+          Svelte
+        </Tabs.Trigger>
+        <Tabs.TriggerIndicator className="dark:bg-bg-transparent rounded-none border-b-2 border-primary-main bg-transparent shadow-none dark:border-primary-dm-main" />
+      </Tabs.List>
+      <Tabs.Panel value="html">
+        It really matters and then like it really doesn't matter. What matters
+        is the people who are sparked by it. And the people who are like
+        offended by it, it doesn't matter.
+      </Tabs.Panel>
+      <Tabs.Panel value="react">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="vue">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+      <Tabs.Panel value="angular">
+        Because it's about motivating the doers. Because I'm here to follow my
+        dreams and inspire other people to follow their dreams, too.
+      </Tabs.Panel>
+      <Tabs.Panel value="svelte">
+        We're not always in the position that we want to be at. We're constantly
+        growing. We're constantly making mistakes. We're constantly trying to
+        express ourselves and actualize our dreams.
+      </Tabs.Panel>
+    </Tabs>
+  );
+}
+```
+</ComponentPreview>

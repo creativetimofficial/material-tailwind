@@ -25,10 +25,11 @@ import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
 import * as Select from "@components/docs/select";
 import * as Switch from "@components/docs/switch";
+import * as Tabs from "@components/docs/tabs";
 import * as Textarea from "@components/docs/textarea";
 import * as Typography from "@components/docs/typography";
 
-import { Tabs, Tooltip } from "@material-tailwind/react/dist";
+import { Tooltip } from "@material-tailwind/react/dist";
 
 const components = {
   ComponentPreview,
@@ -107,10 +108,10 @@ const components = {
   Rating,
   Select,
   Switch,
+  Tabs,
   Textarea,
   Typography,
 
-  Tabs,
   Tooltip,
 };
 

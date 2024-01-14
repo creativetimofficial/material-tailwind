@@ -18,7 +18,7 @@ export const tabsTheme = {
 
 export const tabsListTheme = {
   baseStyle:
-    "flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-lg p-1 bg-secondary-main dark:bg-secondary-dm-main/30",
+    "flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-secondary-main dark:bg-secondary-dm-main/30",
 };
 
 export const tabsTriggerTheme = {
@@ -32,5 +32,5 @@ export const tabsPanelTheme = {
 
 export const tabsTriggerIndicatorTheme = {
   baseStyle:
-    "bg-white dark:bg-primary-dark rounded-md shadow-sm shadow-primary-dark/10 dark:shadow-transparent transition-all duration-300 ease-in",
+    "bg-white dark:bg-primary-dark rounded shadow-sm shadow-primary-dark/10 dark:shadow-transparent transition-all duration-300 ease-in",
 };
