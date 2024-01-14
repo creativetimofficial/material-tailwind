@@ -21,6 +21,7 @@ import * as Input from "@components/docs/input";
 import * as List from "@components/docs/list";
 import * as Menu from "@components/docs/menu";
 import * as Popover from "@components/docs/popover";
+import * as Progress from "@components/docs/progress";
 import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
 import * as Select from "@components/docs/select";
@@ -104,6 +105,7 @@ const components = {
   List,
   Menu,
   Popover,
+  Progress,
   Radio,
   Rating,
   Select,

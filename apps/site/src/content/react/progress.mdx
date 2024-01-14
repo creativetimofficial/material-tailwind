@@ -1,0 +1,143 @@
+---
+title: Tailwind CSS Progress for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Progress component for Tailwind CSS and React using Material Design guidelines.
+github: Progress
+prev: docs/react/inputs
+next: docs/react/Progress-group
+---
+
+# Tailwind CSS Progress - React
+
+Use our `Progress` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Progress` is an essential element of web design. Basically,
+`Progress` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Progress` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Progress Demo
+
+<ComponentPreview demo={<Progress.ProgressDemo />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressDemo() {
+  return (
+    <Progress value={50}>
+      <Progress.Bar />
+    </Progress>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Sizes
+
+<ComponentPreview demo={<Progress.ProgressSizes />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressSizes() {
+  return (
+    <div className="w-full space-y-6">
+      <Progress size="sm" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress size="md" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress size="lg" value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Colors
+
+<ComponentPreview demo={<Progress.ProgressColors />}>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+export function ProgressColors() {
+  return (
+    <div className="w-full space-y-4">
+      <Progress color="primary" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="secondary" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="info" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="success" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="warning" value={50}>
+        <Progress.Bar />
+      </Progress>
+      <Progress color="error" value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Label Inside
+
+<ComponentPreview demo={<Progress.ProgressLabelInside />}>
+```tsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export function ProgressLabelInside() {
+  return (
+    <Progress size="lg" value={50}>
+      <Progress.Bar className="grid place-items-center">
+        <Typography variant="small" color="secondary">
+          50% Completed
+        </Typography>
+      </Progress.Bar>
+    </Progress>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Progress Label Outside
+
+<ComponentPreview demo={<Progress.ProgressLabelOutside />}>
+```tsx
+import { Progress, Typography } from "@material-tailwind/react";
+
+export function ProgressLabelOutside() {
+  return (
+    <div className="w-full space-y-2">
+      <Typography className="flex items-center justify-between font-semibold">
+        <span>Completed</span>
+        <span>50%</span>
+      </Typography>
+      <Progress value={50}>
+        <Progress.Bar />
+      </Progress>
+    </div>
+  );
+}
+```
+</ComponentPreview>

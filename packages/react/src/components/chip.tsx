@@ -19,7 +19,7 @@ import {
 import type { BaseComponent, Props } from "@types";
 
 // chip context
-export type ChipContextProps = BaseComponent<"div">;
+export type ChipContextProps = BaseComponent<any>;
 
 export const ChipContext = React.createContext<ChipContextProps>({
   size: "md",
@@ -28,9 +28,7 @@ export const ChipContext = React.createContext<ChipContextProps>({
 });
 
 // chip root
-type BaseChipProps = BaseComponent<"div"> & Props<any>;
-
-export interface ChipProps extends BaseChipProps {
+export interface ChipProps extends BaseComponent<"div" | any> {
   as?: React.ElementType;
   className?: string;
   open?: boolean;

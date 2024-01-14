@@ -18,7 +18,7 @@ export const spinnerTheme = {
   },
   color: {
     primary: "text-primary-main dark:text-primary-dm-main",
-    secondary: "text-secondary-main dark:text-secondary-dm-main",
+    secondary: "text-secondary-main dark:text-secondary-dm-dark",
     info: "text-info-main dark:text-info-dm-main",
     success: "text-success-main dark:text-success-dm-main",
     warning: "text-warning-main dark:text-warning-dm-main",

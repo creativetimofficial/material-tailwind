@@ -99,7 +99,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/50 p-4 backdrop-blur dark:border-gray-900 dark:bg-gray-950/50">
+    <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/50 p-4 backdrop-blur dark:border-gray-900 dark:bg-gray-950/50">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
         <Link
           target="_blank"

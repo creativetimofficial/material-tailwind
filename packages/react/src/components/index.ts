@@ -13,6 +13,7 @@ export * from "./input";
 export * from "./list";
 export * from "./menu";
 export * from "./popover";
+export * from "./progress";
 export * from "./radio";
 export * from "./rating";
 export * from "./select";

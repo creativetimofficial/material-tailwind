@@ -19,7 +19,7 @@ import {
 import type { BaseComponent, Props } from "@types";
 
 // alert context
-export interface AlertContextProps extends Props<"div"> {
+export interface AlertContextProps {
   variant?: BaseComponent<"div">["variant"];
   color?: BaseComponent<"div">["color"];
   isPill?: boolean;
@@ -32,9 +32,7 @@ export const AlertContext = React.createContext<AlertContextProps>({
 });
 
 // alert root
-type BaseAlertProps = Omit<BaseComponent<"div">, "size"> & Props<any>;
-
-export interface AlertProps extends BaseAlertProps {
+export interface AlertProps extends Omit<BaseComponent<"div" | any>, "size"> {
   as?: React.ElementType;
   className?: string;
   open?: boolean;
