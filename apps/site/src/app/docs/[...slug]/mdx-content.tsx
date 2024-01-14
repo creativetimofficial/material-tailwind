@@ -32,6 +32,7 @@ import * as Tabs from "@components/docs/tabs";
 import * as Textarea from "@components/docs/textarea";
 import * as Tooltip from "@components/docs/tooltip";
 import * as Typography from "@components/docs/typography";
+import * as Video from "@components/docs/video";
 
 const components = {
   ComponentPreview,
@@ -117,6 +118,7 @@ const components = {
   Textarea,
   Tooltip,
   Typography,
+  Video,
 };
 
 type MdxContentProps = {

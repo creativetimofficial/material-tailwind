@@ -1,0 +1,69 @@
+---
+title: Tailwind CSS Video for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Video component for Tailwind CSS and React using Material Design guidelines.
+github: Video
+prev: docs/react/inputs
+next: docs/react/Video-group
+---
+
+# Tailwind CSS Video - React
+
+Use our `Video` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Video` is an essential element of web design. Basically,
+`Video` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Video` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Video Demo
+
+<ComponentPreview demo={<Video.VideoDemo />}>
+```tsx
+export function VideoDemo() {
+  return (
+    <video className="h-full w-full rounded-lg" controls>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Video Autoplay
+
+<ComponentPreview demo={<Video.VideoAutoplay />}>
+```tsx
+export function VideoAutoplay() {
+  return (
+    <video className="h-full w-full rounded-lg" controls autoPlay>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Video Muted
+
+<ComponentPreview demo={<Video.VideoMuted />}>
+```tsx
+export function VideoMuted() {
+  return (
+    <video className="h-full w-full rounded-lg" controls muted>
+      <source src="https://dub.sh/H1glk5b" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
+```
+</ComponentPreview>
