@@ -183,10 +183,6 @@ export const routes = [
             path: "/docs/react/popover",
           },
           {
-            title: "Table",
-            path: "/docs/react/table",
-          },
-          {
             title: "Timeline",
             path: "/docs/react/timeline",
           },
@@ -262,16 +258,8 @@ export const routes = [
         category: "Layout",
         pages: [
           {
-            title: "Carousel",
-            path: "/docs/react/carousel",
-          },
-          {
             title: "Footer",
             path: "/docs/react/footer",
-          },
-          {
-            title: "Form",
-            path: "/docs/react/form",
           },
           {
             title: "Navbar",
@@ -282,6 +270,43 @@ export const routes = [
             path: "/docs/react/sidebar",
           },
         ],
+      },
+    ],
+  },
+  {
+    title: "Third-Party Plugins",
+    pages: [
+      {
+        title: "Algolia Search",
+        path: "/plugins/algolia-search",
+      },
+      {
+        title: "Charts",
+        path: "/plugins/charts",
+      },
+      {
+        title: "Carousel",
+        path: "/plugins/carousel",
+      },
+      {
+        title: "Clipboard",
+        path: "/plugins/clipboard",
+      },
+      {
+        title: "Date Picker",
+        path: "/plugins/date-picker",
+      },
+      {
+        title: "Forms",
+        path: "/plugins/forms",
+      },
+      {
+        title: "Table",
+        path: "/plugins/table",
+      },
+      {
+        title: "Text Editor",
+        path: "/plugins/text-editor",
       },
     ],
   },
