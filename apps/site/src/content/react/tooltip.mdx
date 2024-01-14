@@ -1,0 +1,78 @@
+---
+title: Tailwind CSS Tooltip for React - Material Tailwind
+description: Customise your web projects with our complex Tooltip component for Tailwind CSS and React using Material Design guidelines.
+github: tooltip
+prev: docs/react/icon-button
+next: docs/react/radio
+---
+
+# Tailwind CSS Tooltip - React
+
+Easily create `Tooltip` with different statuses and sizes using our components based on Tailwind CSS and React.
+
+`Tooltip` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+
+See below our `Tooltip` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Tooltip Demo
+
+<ComponentPreview demo={<Tooltip.TooltipDemo />}>
+```tsx
+import { Popover, Button, Typography } from "@material-tailwind/react";
+
+export function PopoverDemo() {
+  return (
+    <Popover>
+      <Popover.Trigger as={Button}>Open</Popover.Trigger>
+      <Popover.Content className="max-w-sm">
+        <Typography
+          variant="small"
+          className="text-gray-600 dark:text-gray-400"
+        >
+          This is a very beautiful popover, show some love.
+        </Typography>
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Tooltip with Helper Icon
+
+<ComponentPreview demo={<Tooltip.TooltipWithHelperIcon />}>
+```tsx
+import {
+  Popover,
+  Button,
+  Typography,
+  Input,
+} from "@material-tailwind/react";
+
+export function SubscriptionPopover() {
+  return (
+    <Popover>
+      <Popover.Trigger as={Button}>Subscribe</Popover.Trigger>
+      <Popover.Content className="w-96">
+        <Typography variant="h6">Newsletter Subscription</Typography>
+        <form
+          action="#"
+          className="mt-3 flex w-full items-center justify-center gap-2"
+        >
+          <Input isFullWidth>
+            <Input.Field type="email" placeholder="someone@example.com" />
+          </Input>
+          <Button type="submit">Subscribe</Button>
+        </form>
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover>
+  );
+}
+```
+</ComponentPreview>

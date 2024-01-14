@@ -27,9 +27,8 @@ import * as Select from "@components/docs/select";
 import * as Switch from "@components/docs/switch";
 import * as Tabs from "@components/docs/tabs";
 import * as Textarea from "@components/docs/textarea";
+import * as Tooltip from "@components/docs/tooltip";
 import * as Typography from "@components/docs/typography";
-
-import { Tooltip } from "@material-tailwind/react/dist";
 
 const components = {
   ComponentPreview,
@@ -110,9 +109,8 @@ const components = {
   Switch,
   Tabs,
   Textarea,
-  Typography,
-
   Tooltip,
+  Typography,
 };
 
 type MdxContentProps = {
