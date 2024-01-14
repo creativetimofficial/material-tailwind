@@ -1,0 +1,332 @@
+---
+title: Tailwind CSS Menu for React - Material Tailwind
+description: Customise your web projects with our complex Menu component for Tailwind CSS and React using Material Design guidelines.
+github: Menu
+prev: docs/react/icon-button
+next: docs/react/radio
+---
+
+# Tailwind CSS Menu - React
+
+Easily create `Menu` with different statuses and sizes using our components based on Tailwind CSS and React.
+
+`Menu` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+
+See below our `Menu` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Menu Demo
+
+<ComponentPreview demo={<Menu.MenuDemo />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+
+export function MenuDemo() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu.Item>My Profile</Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Nested Menu
+
+<ComponentPreview demo={<Menu.NestedMenu />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+import { NavArrowRight } from "iconoir-react";
+
+export function NestedMenu() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu>
+          <Menu.Trigger
+            as={Menu.Item}
+            className="flex items-center justify-between"
+          >
+            My Profile <NavArrowRight className="h-4 w-4 translate-x-1" />
+          </Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Edit Profile</Menu.Item>
+            <Menu.Item>Change Password</Menu.Item>
+            <Menu.Item>Upgrade to PRO</Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Nav Menu
+
+<ComponentPreview demo={<Menu.NavMenu />}>
+```tsx
+import * as React from "react";
+import { Menu, Button, Card, Typography } from "@material-tailwind/react";
+import { NavArrowDown, Rocket } from "iconoir-react";
+
+const NavItem = React.forwardRef<any, any>(
+  ({ title, description, ...rest }, ref) => {
+    return (
+      <Menu.Item ref={ref} {...rest} className="flex-col items-start">
+        <Typography as="h6" className="font-semibold">
+          {title}
+        </Typography>
+        <Typography
+          variant="small"
+          className="text-gray-600 dark:text-gray-400"
+        >
+          {description}
+        </Typography>
+      </Menu.Item>
+    );
+  },
+);
+
+export function NavMenu() {
+  return (
+    <Menu>
+      <Menu.Trigger
+        as={Button}
+        variant="ghost"
+        size="sm"
+        className="group flex items-center gap-1"
+      >
+        Versions{" "}
+        <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+      </Menu.Trigger>
+      <Menu.Content className="grid max-w-lg grid-cols-5 gap-1">
+        <Card
+          color="primary"
+          className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-content shadow-none"
+        >
+          <div>
+            <Rocket className="mx-auto h-12 w-12" />
+            <Typography className="mt-5 text-center" variant="h5">
+              Material Tailwind PRO
+            </Typography>
+          </div>
+        </Card>
+        <ul className="col-span-3">
+          <NavItem
+            title="@material-tailwind/html"
+            description="Learn how to use @material-tailwind/html, packed with rich components and widgets."
+          />
+          <NavItem
+            title="@material-tailwind/react"
+            description="Learn how to use @material-tailwind/react, packed with rich components for React."
+          />
+          <NavItem
+            title="Material Tailwind PRO"
+            description="A complete set of UI Elements for building faster websites in less time."
+          />
+        </ul>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Menu with Divider
+
+<ComponentPreview demo={<Menu.MenuWithDivider />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+
+export function MenuWithDivider() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu.Item>My Profile</Menu.Item>
+        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+          Logout
+        </Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Menu with Checkbox
+
+<ComponentPreview demo={<Menu.MenuWithCheckbox />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+
+export function MenuWithDivider() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu.Item>My Profile</Menu.Item>
+        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+          Logout
+        </Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Menu with Search
+
+<ComponentPreview demo={<Menu.MenuWithSearch />}>
+```tsx
+import { Menu, Button, Input } from "@material-tailwind/react";
+
+export function MenuWithSearch() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Input className="mb-1">
+          <Input.Field placeholder="Search..." />
+        </Input>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu.Item>My Profile</Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Notification Menu
+
+<ComponentPreview demo={<Menu.NotificationMenu />}>
+```tsx
+import * as React from "react";
+import {
+  Menu,
+  IconButton,
+  Typography,
+  Avatar,
+} from "@material-tailwind/react";
+import { Bell, Clock } from "iconoir-react";
+
+const MenuItem = React.forwardRef<any, any>(
+  ({ img, title, date, ...rest }, ref) => {
+    return (
+      <Menu.Item ref={ref} {...rest} className="gap-3">
+        <Avatar src={img} alt="profile-picture" />
+        <div>
+          <Typography variant="small" className="mb-1 block font-semibold">
+            {title}
+          </Typography>
+          <Typography
+            variant="small"
+            className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400"
+          >
+            <Clock className="h-3.5 w-3.5" />
+            {date}
+          </Typography>
+        </div>
+      </Menu.Item>
+    );
+  },
+);
+
+export function NotificationMenu() {
+  return (
+    <Menu>
+      <Menu.Trigger as={IconButton} variant="ghost" size="sm" className="grid">
+        <Bell className="h-4 w-4 stroke-2" />
+      </Menu.Trigger>
+      <Menu.Content>
+        <MenuItem
+          img="https://dub.sh/iu8bOfU"
+          title="Tania send you a message"
+          date="13 minutes ago"
+        />
+        <MenuItem
+          img="https://dub.sh/6i238JA"
+          title="Natali replied to your email."
+          date="1 hour ago"
+        />
+        <MenuItem
+          img="https://dub.sh/iuFsnmW"
+          title="You've received a payment."
+          date="5 hours ago"
+        />
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Profile Menu
+
+<ComponentPreview demo={<Menu.ProfileMenu />}>
+```tsx
+import { Menu, Avatar } from "@material-tailwind/react";
+import { UserCircle, Settings, HeadsetHelp, LogOut } from "iconoir-react";
+
+export function ProfileMenu() {
+  return (
+    <Menu>
+      <Menu.Trigger
+        as={Avatar}
+        src="https://dub.sh/iu8bOfU"
+        alt="profile-picture"
+      />
+      <Menu.Content>
+        <Menu.Item>
+          <UserCircle className="mr-2 h-[18px] w-[18px]" /> My Profile
+        </Menu.Item>
+        <Menu.Item>
+          <Settings className="mr-2 h-[18px] w-[18px]" /> Edit Profile
+        </Menu.Item>
+        <Menu.Item>
+          <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
+        </Menu.Item>
+        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+          <LogOut className="mr-2 h-[18px] w-[18px]" />
+          Logout
+        </Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>

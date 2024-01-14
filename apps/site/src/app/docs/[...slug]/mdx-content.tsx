@@ -18,6 +18,7 @@ import * as Collapse from "@components/docs/collapse";
 import * as Dialog from "@components/docs/dialog";
 import * as IconButton from "@components/docs/icon-button";
 import * as Input from "@components/docs/input";
+import * as Menu from "@components/docs/menu";
 import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
 import * as Select from "@components/docs/select";
@@ -25,13 +26,7 @@ import * as Switch from "@components/docs/switch";
 import * as Textarea from "@components/docs/textarea";
 import * as Typography from "@components/docs/typography";
 
-import {
-  List,
-  Menu,
-  Popover,
-  Tabs,
-  Tooltip,
-} from "@material-tailwind/react/dist";
+import { List, Popover, Tabs, Tooltip } from "@material-tailwind/react/dist";
 
 const components = {
   ComponentPreview,
@@ -103,6 +98,7 @@ const components = {
   Dialog,
   IconButton,
   Input,
+  Menu,
   Radio,
   Rating,
   Select,
@@ -111,7 +107,6 @@ const components = {
   Typography,
 
   List,
-  Menu,
   Popover,
   Tabs,
   Tooltip,

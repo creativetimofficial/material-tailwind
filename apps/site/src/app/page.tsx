@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import * as React from "react";
 import { Card, Typography, Button } from "@material-tailwind/react/dist";
 import { NavArrowDown, Xmark } from "iconoir-react";
 

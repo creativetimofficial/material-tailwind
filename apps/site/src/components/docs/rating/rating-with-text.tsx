@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Rating, Typography } from "@material-tailwind/react/dist";
 
 export function RatingWithText() {

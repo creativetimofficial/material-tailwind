@@ -23,7 +23,6 @@ import {
   useFloatingParentNodeId,
   useListItem,
   useListNavigation,
-  useTypeahead,
 } from "@floating-ui/react";
 import { useTheme } from "@context";
 
@@ -66,7 +65,7 @@ export interface MenuContextProps extends FloatingType {
   isNested?: boolean;
   activeIndex?: number | null;
   elementsRef?: React.MutableRefObject<(HTMLButtonElement | null)[]>;
-  labelsRef?: React.MutableRefObject<(string | null)[]>;
+  labelsRef?: React.MutableRefObject<React.ReactNode[]>;
 }
 
 export const MenuContext = React.createContext<MenuContextProps>({
@@ -97,7 +96,7 @@ function MenuCore({
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   const elementsRef = React.useRef<Array<HTMLButtonElement | null>>([]);
-  const labelsRef = React.useRef<Array<string | null>>([]);
+  const labelsRef = React.useRef<Array<React.ReactNode | null>>([]);
 
   const tree = useFloatingTree();
   const nodeId = useFloatingNodeId();
@@ -141,14 +140,9 @@ function MenuCore({
     nested: isNested,
     onNavigate: setActiveIndex,
   });
-  const typeahead = useTypeahead(context, {
-    listRef: labelsRef,
-    onMatch: open ? setActiveIndex : undefined,
-    activeIndex,
-  });
 
   const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions(
-    [hover, click, role, dismiss, listNavigation, typeahead],
+    [hover, click, role, dismiss, listNavigation],
   );
 
   const contextValue = React.useMemo(
@@ -348,7 +342,10 @@ export const MenuContent = React.forwardRef<
     const elementRef = useMergeRefs([refs?.setFloating, ref]);
 
     return (
-      <FloatingList elementsRef={elementsRef as any} labelsRef={labelsRef}>
+      <FloatingList
+        elementsRef={elementsRef as any}
+        labelsRef={labelsRef as any}
+      >
         {open && (
           <FloatingPortal>
             <FloatingFocusManager
@@ -388,56 +385,67 @@ export interface MenuItemProps extends Props<"button" | any> {
   className?: string;
   ripple?: boolean;
   disabled?: boolean;
+  closeOnClick?: boolean;
   children: React.ReactNode;
 }
 
 export const MenuItem = React.forwardRef<
   HTMLButtonElement | HTMLElement,
   MenuItemProps
->(({ as, className, ripple, disabled, children, ...rest }, ref) => {
-  const Element = as || "button";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.menuItem ?? menuItemTheme;
-  const defaultProps = theme.defaultProps;
-  const { activeIndex, getItemProps } = React.useContext(MenuContext);
+>(
+  (
+    { as, className, ripple, disabled, closeOnClick, children, ...rest },
+    ref,
+  ) => {
+    const Element = as || "button";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.menuItem ?? menuItemTheme;
+    const defaultProps = theme.defaultProps;
+    const { activeIndex, getItemProps } = React.useContext(MenuContext);
 
-  ripple ??= (defaultProps?.ripple as MenuItemProps["ripple"]) ?? true;
+    ripple ??= (defaultProps?.ripple as MenuItemProps["ripple"]) ?? true;
+    closeOnClick ??=
+      (defaultProps?.closeOnClick as MenuItemProps["closeOnClick"]) ?? true;
 
-  const rippleEffect = ripple !== undefined && new Ripple();
-  const item = useListItem({
-    label: rest?.disabled ? null : (children as string),
-  });
-  const tree = useFloatingTree();
-  const isActive = item.index === activeIndex;
+    const rippleEffect = ripple !== undefined && new Ripple();
+    const item = useListItem({
+      label: rest?.disabled ? null : (children as string),
+    });
+    const tree = useFloatingTree();
+    const isActive = item.index === activeIndex;
 
-  const elementRef = useMergeRefs([item.ref, ref]);
+    const elementRef = useMergeRefs([item.ref, ref]);
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      role="menuitem"
-      aria-disabled={disabled}
-      tabIndex={isActive ? 0 : -1}
-      className={styles}
-      {...(getItemProps &&
-        getItemProps({
-          onClick(event: React.MouseEvent<HTMLButtonElement>) {
-            rest.onClick?.(event);
-            tree?.events.emit("click");
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        role="menuitem"
+        aria-disabled={disabled}
+        tabIndex={isActive ? 0 : -1}
+        className={styles}
+        {...(getItemProps &&
+          getItemProps({
+            onClick(event: React.MouseEvent<HTMLButtonElement>) {
+              rest.onClick?.(event);
 
-            if (ripple) {
-              rippleEffect.create(event, "dark");
-            }
-          },
-        }))}
-    >
-      {children}
-    </Element>
-  );
-});
+              if (closeOnClick) {
+                tree?.events.emit("click");
+              }
+
+              if (ripple) {
+                rippleEffect.create(event, "dark");
+              }
+            },
+          }))}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 export const Menu = Object.assign(MenuRoot, {
   Trigger: MenuTrigger,

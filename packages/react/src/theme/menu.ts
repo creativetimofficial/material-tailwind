@@ -28,13 +28,14 @@ export const menuContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "min-w-[200px] rounded-lg border border-secondary-dark bg-white p-1 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
+    "min-w-[160px] rounded-lg border border-secondary-dark bg-white p-1 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
 };
 
 export const menuItemTheme = {
   defaultProps: {
     ripple: true,
+    closeOnClick: true,
   },
   baseStyle:
-    "w-full text-start flex items-center py-1.5 px-2.5 rounded-[5px] align-middle select-none outline-none font-sans font-normal transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-primary-main hover:bg-primary-main/5 focus:bg-primary-main/5 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/5 dark:focus:bg-primary-dm-main/5",
+    "w-full text-start flex items-center py-1.5 px-2.5 rounded-[5px] align-middle select-none outline-none font-sans font-normal transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/10 dark:focus:bg-primary-dm-main/10",
 };

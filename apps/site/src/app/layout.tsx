@@ -1,5 +1,5 @@
 import "./globals.css";
-import React from "react";
+import * as React from "react";
 import { Docs } from "@components";
 import { Inter, Fira_Code } from "next/font/google";
 
