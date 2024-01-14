@@ -1,0 +1,151 @@
+---
+title: Tailwind CSS Image for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Image component for Tailwind CSS and React using Material Design guidelines.
+github: Image
+prev: docs/react/inputs
+next: docs/react/Image-group
+---
+
+# Tailwind CSS Image - React
+
+Use our `Image` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Image` is an essential element of web design. Basically,
+`Image` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Image` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Image Demo
+
+<ComponentPreview demo={<Image.ImageDemo />}>
+```tsx
+export function ImageDemo() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Rounded Corners
+
+<ComponentPreview demo={<Image.ImageWithRoundedCorners />}>
+```tsx
+export function ImageWithRoundedCorners() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full rounded-lg object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Circular Image
+
+<ComponentPreview demo={<Image.CircularImage />}>
+```tsx
+export function CircularImage() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-96 rounded-full object-cover object-center"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Shadow
+
+<ComponentPreview demo={<Image.ImageWithShadow />}>
+```tsx
+export function ImageWithShadow() {
+  return (
+    <img
+      src="https://dub.sh/Y0NxRWv"
+      alt="nature-image"
+      className="h-96 w-full rounded-lg object-cover object-center shadow-lg shadow-primary-dark/25 dark:shadow-black/75"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Caption
+
+<ComponentPreview demo={<Image.ImageWithCaption />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+export function ImageWithCaption() {
+  return (
+    <figure>
+      <img
+        src="https://dub.sh/Y0NxRWv"
+        alt="nature-image"
+        className="h-96 w-full rounded-lg object-cover object-center"
+      />
+      <Typography as="caption" variant="small" className="mt-2 text-center">
+        Image Caption
+      </Typography>
+    </figure>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Image with Blurred Caption
+
+<ComponentPreview demo={<Image.ImageWithBlurredCaption />}>
+```tsx
+import { Card, Typography } from "@material-tailwind/react/dist";
+
+export function ImageWithBlurredCaption() {
+  return (
+    <figure className="relative h-96 w-full">
+      <img
+        src="https://dub.sh/Y0NxRWv"
+        alt="nature-image"
+        className="h-full w-full rounded-xl object-cover object-center"
+      />
+      <Card
+        as="figcaption"
+        className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 bg-opacity-75 saturate-200 backdrop-blur-md dark:bg-opacity-75 dark:saturate-200 dark:backdrop-blur-md"
+      >
+        <Card.Body className="flex justify-between">
+          <div>
+            <Typography variant="h6">Sara Lamalo</Typography>
+            <Typography className="mt-2 text-gray-600 dark:text-gray-400">
+              20 July 2022
+            </Typography>
+          </div>
+          <Typography variant="h6">Growth</Typography>
+        </Card.Body>
+      </Card>
+    </figure>
+  );
+}
+```
+</ComponentPreview>
