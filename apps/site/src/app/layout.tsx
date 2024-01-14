@@ -1,7 +1,7 @@
 import "./globals.css";
 import * as React from "react";
 import { Docs } from "@components";
-import { Inter, Fira_Code } from "next/font/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   weight: ["400", "500", "600"],

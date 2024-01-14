@@ -81,8 +81,9 @@ export function PopoverRoot({
   const open = controlledOpen ?? uncontrolledOpen;
   const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
-  placement ??= (defaultProps?.placement as PopoverProps["placement"]) ?? "top";
-  offset ??= (defaultProps?.offset as PopoverProps["offset"]) ?? 12;
+  placement ??=
+    (defaultProps?.placement as PopoverProps["placement"]) ?? "bottom";
+  offset ??= (defaultProps?.offset as PopoverProps["offset"]) ?? 10;
 
   const data = useFloating({
     placement,

@@ -58,7 +58,7 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
             "font-normal text-gray-500 dark:text-gray-400": !isVisible,
             "font-medium text-blue-500 dark:text-blue-500": isVisible,
             "border-blue-500": isVisible && isSubHeading,
-            "px-2 py-1.5": !isSubHeading,
+            "px-2 py-1": !isSubHeading,
             "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-2 hover:border-gray-950 dark:hover:border-gray-200":
               isSubHeading,
           },

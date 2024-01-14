@@ -7,8 +7,8 @@ export type PopoverArrowTheme = DeepPartial<typeof popoverArrowTheme>;
 
 export const popoverTheme = {
   defaultProps: {
-    placement: "top",
-    offset: 12,
+    placement: "bottom",
+    offset: 10,
   },
 };
 
@@ -28,10 +28,10 @@ export const popoverContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "rounded-lg border border-secondary-dark bg-white px-3 py-2 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
+    "rounded-lg border border-secondary-dark bg-white p-2.5 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
 };
 
 export const popoverArrowTheme = {
   baseStyle:
-    "h-4 w-4 rounded-bl border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
+    "h-3 w-3 rounded-bl-[3px] border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
 };
