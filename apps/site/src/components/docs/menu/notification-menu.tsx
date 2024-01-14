@@ -32,7 +32,7 @@ const MenuItem = React.forwardRef<any, any>(
 export function NotificationMenu() {
   return (
     <Menu>
-      <Menu.Trigger as={IconButton} variant="ghost" size="sm" className="grid">
+      <Menu.Trigger as={IconButton} variant="ghost" size="sm">
         <Bell className="h-4 w-4 stroke-2" />
       </Menu.Trigger>
       <Menu.Content>

@@ -4,7 +4,7 @@ import { InfoCircle } from "iconoir-react";
 export function TooltipWithHelperIcon() {
   return (
     <Tooltip>
-      <Tooltip.Trigger as={IconButton} variant="ghost" className="grid">
+      <Tooltip.Trigger as={IconButton} variant="ghost">
         <InfoCircle className="h-5 w-5" />
       </Tooltip.Trigger>
       <Tooltip.Content className="w-80 px-2.5 py-1.5 text-primary-content dark:text-primary-dm-content">

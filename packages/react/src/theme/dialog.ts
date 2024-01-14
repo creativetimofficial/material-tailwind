@@ -15,7 +15,7 @@ export const dialogTheme = {
 };
 
 export const dialogTriggerTheme = {
-  baseStyle: "inline-block",
+  baseStyle: "outline-none",
 };
 
 export const dialogContentTheme = {

@@ -13,7 +13,7 @@ export const popoverTheme = {
 };
 
 export const popoverTriggerTheme = {
-  baseStyle: "inline-block",
+  baseStyle: "outline-none",
 };
 
 export const popoverContentTheme = {
