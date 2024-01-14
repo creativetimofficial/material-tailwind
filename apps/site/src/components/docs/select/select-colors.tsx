@@ -2,7 +2,7 @@ import { Select } from "@material-tailwind/react/dist";
 
 export function SelectColors() {
   return (
-    <div className="max-w-[240px] space-y-4">
+    <div className="flex w-72 flex-col items-center gap-4">
       <Select color="primary">
         <Select.Trigger placeholder="Color. e.g. primary" />
         <Select.List>

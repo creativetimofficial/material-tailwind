@@ -15,7 +15,7 @@ export function SubscriptionPopover() {
           action="#"
           className="mt-3 flex w-full items-center justify-center gap-2"
         >
-          <Input isFullWidth>
+          <Input>
             <Input.Field type="email" placeholder="someone@example.com" />
           </Input>
           <Button type="submit">Subscribe</Button>

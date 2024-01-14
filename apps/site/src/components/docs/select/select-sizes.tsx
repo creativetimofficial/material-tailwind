@@ -2,8 +2,8 @@ import { Select } from "@material-tailwind/react/dist";
 
 export function SelectSizes() {
   return (
-    <div className="max-w-[240px] space-y-4">
-      <Select size="small">
+    <div className="flex w-72 flex-col items-center gap-4">
+      <Select size="sm">
         <Select.Trigger placeholder="Size. e.g. small" />
         <Select.List>
           <Select.Option>Size Small</Select.Option>
@@ -11,7 +11,7 @@ export function SelectSizes() {
           <Select.Option>Size Large</Select.Option>
         </Select.List>
       </Select>
-      <Select size="medium">
+      <Select size="md">
         <Select.Trigger placeholder="Size. e.g. medium" />
         <Select.List>
           <Select.Option>Size Small</Select.Option>
@@ -19,7 +19,7 @@ export function SelectSizes() {
           <Select.Option>Size Large</Select.Option>
         </Select.List>
       </Select>
-      <Select size="large">
+      <Select size="lg">
         <Select.Trigger placeholder="Size. e.g. large" />
         <Select.List>
           <Select.Option>Size Small</Select.Option>

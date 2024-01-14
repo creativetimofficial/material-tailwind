@@ -3,7 +3,7 @@ import { ProfileCircle, Lock } from "iconoir-react";
 
 export function InputWithIcon() {
   return (
-    <div className="w-[240px] space-y-4">
+    <div className="w-72 space-y-4">
       <Input>
         <Input.Field placeholder="Username" />
         <Input.Icon>

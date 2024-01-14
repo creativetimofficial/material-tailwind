@@ -29,7 +29,7 @@ export function DialogWithForm() {
             Enter your email and password to Sign In.
           </Typography>
           <form action="#" className="mt-6">
-            <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+            <Input className="mb-4 mt-2 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="email"
@@ -45,7 +45,7 @@ export function DialogWithForm() {
                 placeholder="someone@example.com"
               />
             </Input>
-            <Input isFullWidth className="mb-4 space-y-1.5">
+            <Input className="mb-4 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="password"

@@ -19,7 +19,7 @@ export function LoginCard() {
         </Typography>
       </Card.Header>
       <Card.Body as="form">
-        <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+        <Input className="mb-4 mt-2 space-y-1.5">
           <Typography
             as="label"
             htmlFor="email"
@@ -35,7 +35,7 @@ export function LoginCard() {
             placeholder="someone@example.com"
           />
         </Input>
-        <Input isFullWidth className="mb-4 space-y-1.5">
+        <Input className="mb-4 space-y-1.5">
           <Typography
             as="label"
             htmlFor="password"

@@ -43,7 +43,6 @@ export interface InputProps extends Props<"div" | any> {
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
   isPill?: boolean;
-  isFullWidth?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
   disabled?: boolean;
@@ -61,7 +60,6 @@ export const InputRoot = React.forwardRef<
       color,
       size,
       isPill,
-      isFullWidth,
       isError,
       isSuccess,
       disabled,
@@ -81,8 +79,6 @@ export const InputRoot = React.forwardRef<
     size ??= (defaultProps?.size as InputProps["size"]) ?? "md";
     color ??= (defaultProps?.color as InputProps["color"]) ?? "primary";
     isPill ??= (defaultProps?.isPill as InputProps["isPill"]) ?? false;
-    isFullWidth ??=
-      (defaultProps?.isFullWidth as InputProps["isFullWidth"]) ?? false;
     isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
     isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
 
@@ -90,7 +86,6 @@ export const InputRoot = React.forwardRef<
       theme.baseStyle,
       theme.size[size],
       isPill && theme["isPill"],
-      isFullWidth && theme["isFullWidth"],
       className,
     );
 

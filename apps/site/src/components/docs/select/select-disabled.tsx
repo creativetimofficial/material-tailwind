@@ -1,8 +1,8 @@
 import { Select } from "@material-tailwind/react/dist";
 
-export function SelectDemo() {
+export function SelectDisabled() {
   return (
-    <Select>
+    <Select disabled>
       <Select.Trigger className="w-72" placeholder="Select Version" />
       <Select.List>
         <Select.Option>Material Tailwind React</Select.Option>

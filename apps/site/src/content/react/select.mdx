@@ -28,7 +28,200 @@ import { Select } from "@material-tailwind/react";
 export function SelectDemo() {
   return (
     <Select>
-      <Select.Trigger placeholder="Select" />
+      <Select.Trigger className="w-72" placeholder="Select Version" />
+      <Select.List>
+        <Select.Option>Material Tailwind React</Select.Option>
+        <Select.Option>Material Tailwind HTML</Select.Option>
+        <Select.Option>Material Tailwind Vue</Select.Option>
+        <Select.Option>Material Tailwind Svelte</Select.Option>
+      </Select.List>
+    </Select>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Select Sizes
+
+<ComponentPreview demo={<Select.SelectSizes />}>
+```tsx
+import { Select } from "@material-tailwind/react";
+
+export function SelectSizes() {
+  return (
+    <div className="flex w-72 flex-col items-center gap-4">
+      <Select size="sm">
+        <Select.Trigger placeholder="Size. e.g. small" />
+        <Select.List>
+          <Select.Option>Size Small</Select.Option>
+          <Select.Option>Size Medium</Select.Option>
+          <Select.Option>Size Large</Select.Option>
+        </Select.List>
+      </Select>
+      <Select size="md">
+        <Select.Trigger placeholder="Size. e.g. medium" />
+        <Select.List>
+          <Select.Option>Size Small</Select.Option>
+          <Select.Option>Size Medium</Select.Option>
+          <Select.Option>Size Large</Select.Option>
+        </Select.List>
+      </Select>
+      <Select size="lg">
+        <Select.Trigger placeholder="Size. e.g. large" />
+        <Select.List>
+          <Select.Option>Size Small</Select.Option>
+          <Select.Option>Size Medium</Select.Option>
+          <Select.Option>Size Large</Select.Option>
+        </Select.List>
+      </Select>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Select Colors
+
+<ComponentPreview demo={<Select.SelectColors />}>
+```tsx
+import { Select } from "@material-tailwind/react";
+
+export function SelectColors() {
+  return (
+    <div className="flex w-72 flex-col items-center gap-4">
+      <Select color="primary">
+        <Select.Trigger placeholder="Color. e.g. primary" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+      <Select color="secondary">
+        <Select.Trigger placeholder="Color. e.g. secondary" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+      <Select color="info">
+        <Select.Trigger placeholder="Color. e.g. info" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+      <Select color="success">
+        <Select.Trigger placeholder="Color. e.g. success" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+      <Select color="warning">
+        <Select.Trigger placeholder="Color. e.g. warning" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+      <Select color="error">
+        <Select.Trigger placeholder="Color. e.g. error" />
+        <Select.List>
+          <Select.Option>Color Primary</Select.Option>
+          <Select.Option>Color Secondary</Select.Option>
+          <Select.Option>Color Info</Select.Option>
+          <Select.Option>Color Success</Select.Option>
+          <Select.Option>Color Warning</Select.Option>
+          <Select.Option>Color Error</Select.Option>
+        </Select.List>
+      </Select>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Select with Validation
+
+<ComponentPreview demo={<Select.SelectWithValidation />}>
+```tsx
+import { Select, Typography } from "@material-tailwind/react";
+
+export function SelectWithValidation() {
+  return (
+    <div className="flex w-72 flex-col items-center gap-4">
+      <div className="w-full">
+        <Select isError color="error">
+          <Select.Trigger placeholder="Select Version" />
+          <Select.List>
+            <Select.Option>Material Tailwind React</Select.Option>
+            <Select.Option>Material Tailwind HTML</Select.Option>
+            <Select.Option>Material Tailwind Vue</Select.Option>
+            <Select.Option>Material Tailwind Svelte</Select.Option>
+          </Select.List>
+        </Select>
+        <Typography variant="small" color="error" className="mt-1 block">
+          Something went wrong!
+        </Typography>
+      </div>
+      <div className="w-full">
+        <Select isSuccess color="success">
+          <Select.Trigger placeholder="Select Version" />
+          <Select.List>
+            <Select.Option>Material Tailwind React</Select.Option>
+            <Select.Option>Material Tailwind HTML</Select.Option>
+            <Select.Option>Material Tailwind Vue</Select.Option>
+            <Select.Option>Material Tailwind Svelte</Select.Option>
+          </Select.List>
+        </Select>
+        <Typography variant="small" color="success" className="mt-1 block">
+          Congratulations 🎉
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Select Disabled
+
+<ComponentPreview demo={<Select.SelectDisabled />}>
+```tsx
+import { Select } from "@material-tailwind/react";
+
+export function SelectDisabled() {
+  return (
+    <Select disabled>
+      <Select.Trigger className="w-72" placeholder="Select Version" />
       <Select.List>
         <Select.Option>Material Tailwind React</Select.Option>
         <Select.Option>Material Tailwind HTML</Select.Option>

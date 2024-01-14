@@ -51,7 +51,6 @@ export interface SelectContextProps {
   isError?: boolean;
   isSuccess?: boolean;
   isPill?: boolean;
-  isFullWidth?: boolean;
   disabled?: boolean;
   placement?: Placement;
   offset?: OffsetOptions;
@@ -93,7 +92,6 @@ export interface SelectProps {
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
   isPill?: boolean;
-  isFullWidth?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
   disabled?: boolean;
@@ -108,7 +106,6 @@ export function SelectRoot({
   size,
   color,
   isPill,
-  isFullWidth,
   isError,
   isSuccess,
   disabled,
@@ -136,8 +133,6 @@ export function SelectRoot({
   size ??= (defaultProps?.size as SelectProps["size"]) ?? "md";
   color ??= (defaultProps?.color as SelectProps["color"]) ?? "primary";
   isPill ??= (defaultProps?.isPill as SelectProps["isPill"]) ?? false;
-  isFullWidth ??=
-    (defaultProps?.isFullWidth as SelectProps["isFullWidth"]) ?? false;
   isError ??= (defaultProps?.isError as SelectProps["isError"]) ?? false;
   isSuccess ??= (defaultProps?.isSuccess as SelectProps["isSuccess"]) ?? false;
   placement ??=
@@ -219,7 +214,6 @@ export function SelectRoot({
       color,
       size,
       isPill,
-      isFullWidth,
       isError,
       isSuccess,
       disabled,
@@ -241,7 +235,6 @@ export function SelectRoot({
       color,
       size,
       isPill,
-      isFullWidth,
       isError,
       isSuccess,
       disabled,
@@ -298,7 +291,6 @@ export const SelectTrigger = React.forwardRef<
     getReferenceProps,
     selected,
     isPill,
-    isFullWidth,
     color,
     size,
     isOpen,
@@ -338,10 +330,9 @@ export const SelectTrigger = React.forwardRef<
 
   const styles = twMerge(
     theme.baseStyle,
-    theme.size[size || "md"],
-    theme.color[color || "primary"],
+    theme.size[size],
+    theme.color[color],
     isPill && theme.isPill,
-    isFullWidth && theme.isFullWidth,
     className,
   );
 
@@ -524,11 +515,7 @@ export const SelectOption = React.forwardRef<
   const isActive = activeIndex === index;
   const isSelected = selectedIndex === index;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    isActive && isSelected && theme["selected"],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, className);
 
   const elementRef = useMergeRefs([itemRef, ref]);
 
@@ -537,6 +524,7 @@ export const SelectOption = React.forwardRef<
       {...rest}
       ref={elementRef}
       role="option"
+      data-selected={isActive && isSelected}
       aria-selected={isActive && isSelected}
       tabIndex={isActive ? 0 : -1}
       className={styles}

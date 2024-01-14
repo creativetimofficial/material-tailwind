@@ -2,7 +2,7 @@ import { Input, Typography } from "@material-tailwind/react/dist";
 
 export function InputWithLabel() {
   return (
-    <Input className="w-[240px] space-y-1.5">
+    <Input className="w-72 space-y-1.5">
       <Typography
         as="label"
         htmlFor="email"

@@ -9,7 +9,6 @@ export const selectTheme = {
     size: "md",
     color: "primary",
     isPill: false,
-    isFullWidth: false,
     isError: false,
     isSuccess: false,
     placement: "bottom",
@@ -43,9 +42,8 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max max-w-[240px] w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none text-start",
+    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none text-start",
   isPill: "rounded-full",
-  isFullWidth: "max-w-full",
   placeholder: "text-gray-400 dark:text-gray-700",
   size: {
     sm: "text-sm leading-none rounded-md py-[4.5px] px-1.5 ring",
@@ -103,6 +101,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary-main hover:bg-primary-main/5 focus:bg-primary-main/5 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/5 dark:focus:bg-primary-dm-main/5",
-  selected: "bg-primary-main/10 dark:bg-primary-dm-main/10",
+    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/10 dark:focus:bg-primary-dm-main/10 data-[selected=true]:bg-primary-main/10 dark:data-[selected=true]:bg-primary-dm-main/10",
 };
