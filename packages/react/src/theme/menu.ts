@@ -28,7 +28,7 @@ export const menuContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "min-w-[160px] rounded-lg border border-secondary-dark bg-white p-1 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
+    "min-w-[160px] rounded-lg space-y-0.5 border border-secondary-dark bg-white p-1 text-sm text-primary-dark shadow-xl shadow-primary-main/[0.025] outline-none dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5 dark:text-primary-dm-dark",
 };
 
 export const menuItemTheme = {

@@ -83,7 +83,7 @@ import * as React from "react";
 import { Menu, Button, Card, Typography } from "@material-tailwind/react";
 import { NavArrowDown, Rocket } from "iconoir-react";
 
-const NavItem = React.forwardRef<any, any>(
+const NavItem = React.forwardRef(
   ({ title, description, ...rest }, ref) => {
     return (
       <Menu.Item ref={ref} {...rest} className="flex-col items-start">
@@ -241,7 +241,7 @@ import {
 } from "@material-tailwind/react";
 import { Bell, Clock } from "iconoir-react";
 
-const MenuItem = React.forwardRef<any, any>(
+const MenuItem = React.forwardRef(
   ({ img, title, date, ...rest }, ref) => {
     return (
       <Menu.Item ref={ref} {...rest} className="gap-3">

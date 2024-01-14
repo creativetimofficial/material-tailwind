@@ -1,0 +1,263 @@
+---
+title: Tailwind CSS List for React - Material Tailwind
+description: Customise your web projects with our complex List component for Tailwind CSS and React using Material Design guidelines.
+github: List
+prev: docs/react/icon-button
+next: docs/react/radio
+---
+
+# Tailwind CSS List - React
+
+Easily create `List` with different statuses and sizes using our components based on Tailwind CSS and React.
+
+`List` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+
+See below our `List` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## List Demo
+
+<ComponentPreview demo={<List.ListDemo />}>
+```tsx
+import { List } from "@material-tailwind/react";
+
+export function ListDemo() {
+  return (
+    <List>
+      <List.Item>Inbox</List.Item>
+      <List.Item>Trash</List.Item>
+      <List.Item>Settings</List.Item>
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Icon
+
+<ComponentPreview demo={<List.ListWithIcon />}>
+```tsx
+import { List } from "@material-tailwind/react";
+import { Mail, Settings, Trash } from "iconoir-react";
+
+export function ListWithIcon() {
+  return (
+    <List>
+      <List.Item>
+        <List.ItemStart>
+          <Mail className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Inbox
+      </List.Item>
+      <List.Item>
+        <List.ItemStart>
+          <Trash className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Trash
+      </List.Item>
+      <List.Item>
+        <List.ItemStart>
+          <Settings className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Settings
+      </List.Item>
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Avatar
+
+<ComponentPreview demo={<List.ListWithAvatar />}>
+```tsx
+import * as React from "react";
+import { List, Avatar, Typography } from "@material-tailwind/react";
+
+const ListItem = React.forwardRef(
+  ({ img, title, description, ...rest }, ref) => {
+    return (
+      <List.Item ref={ref} {...rest}>
+        <List.ItemStart>
+          <Avatar src={img} alt="profile-picture" />
+        </List.ItemStart>
+        <div>
+          <Typography className="font-semibold">{title}</Typography>
+          <Typography
+            variant="small"
+            className="text-gray-600 dark:text-gray-400"
+          >
+            {description}
+          </Typography>
+        </div>
+      </List.Item>
+    );
+  },
+);
+
+export function ListWithAvatar() {
+  return (
+    <List>
+      <ListItem
+        img="https://dub.sh/TdSBP0D"
+        title="Alex Andrew"
+        description="Software Engineer @ Material Tailwind"
+      />
+      <ListItem
+        img="https://dub.sh/rNFOKKJ"
+        title="Alexander"
+        description="Backend Developer @ Material Tailwind"
+      />
+      <ListItem
+        img="https://dub.sh/6i238JA"
+        title="Emma Willever"
+        description="UI/UX Designer @ Material Tailwind"
+      />
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Badge
+
+<ComponentPreview demo={<List.ListWithBadge />}>
+```tsx
+import * as React from "react";
+import { List, Avatar, Typography } from "@material-tailwind/react";
+
+const ListItem = React.forwardRef(
+  ({ img, title, description, ...rest }, ref) => {
+    return (
+      <List.Item ref={ref} {...rest}>
+        <List.ItemStart>
+          <Avatar src={img} alt="profile-picture" />
+        </List.ItemStart>
+        <div>
+          <Typography className="font-semibold">{title}</Typography>
+          <Typography
+            variant="small"
+            className="text-gray-600 dark:text-gray-400"
+          >
+            {description}
+          </Typography>
+        </div>
+      </List.Item>
+    );
+  },
+);
+
+export function ListWithAvatar() {
+  return (
+    <List>
+      <ListItem
+        img="https://dub.sh/TdSBP0D"
+        title="Alex Andrew"
+        description="Software Engineer @ Material Tailwind"
+      />
+      <ListItem
+        img="https://dub.sh/rNFOKKJ"
+        title="Alexander"
+        description="Backend Developer @ Material Tailwind"
+      />
+      <ListItem
+        img="https://dub.sh/6i238JA"
+        title="Emma Willever"
+        description="UI/UX Designer @ Material Tailwind"
+      />
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Selected Item
+
+<ComponentPreview demo={<List.ListWithSelectedItem />}>
+```tsx
+import * as React from "react";
+import { List } from "@material-tailwind/react";
+
+export function ListWithSelectedItem() {
+  const [selected, setSelected] = React.useState("inbox");
+
+  return (
+    <List>
+      <List.Item
+        selected={selected === "inbox"}
+        onClick={() => setSelected("inbox")}
+      >
+        Inbox
+      </List.Item>
+      <List.Item
+        selected={selected === "trash"}
+        onClick={() => setSelected("trash")}
+      >
+        Trash
+      </List.Item>
+      <List.Item
+        selected={selected === "settings"}
+        onClick={() => setSelected("settings")}
+      >
+        Settings
+      </List.Item>
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Disabled Item
+
+<ComponentPreview demo={<List.ListWithDisabledItem />}>
+```tsx
+import { List } from "@material-tailwind/react";
+
+export function ListWithDisabledItem() {
+  return (
+    <List>
+      <List.Item disabled>Inbox</List.Item>
+      <List.Item>Trash</List.Item>
+      <List.Item>Settings</List.Item>
+    </List>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## List with Link
+
+<ComponentPreview demo={<List.ListWithLink />}>
+```tsx
+import { List } from "@material-tailwind/react";
+
+export function ListWithLink() {
+  return (
+    <List>
+      <List.Item as="a" href="#">
+        Inbox
+      </List.Item>
+      <List.Item as="a" href="#">
+        Trash
+      </List.Item>
+      <List.Item as="a" href="#">
+        Settings
+      </List.Item>
+    </List>
+  );
+}
+```
+</ComponentPreview>
