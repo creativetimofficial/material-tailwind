@@ -16,6 +16,7 @@ import * as Card from "@components/docs/card";
 import * as Chip from "@components/docs/chip";
 import * as Collapse from "@components/docs/collapse";
 import * as Dialog from "@components/docs/dialog";
+import * as Footer from "@components/docs/footer";
 import * as IconButton from "@components/docs/icon-button";
 import * as Image from "@components/docs/image";
 import * as Input from "@components/docs/input";
@@ -104,6 +105,7 @@ const components = {
   Chip,
   Collapse,
   Dialog,
+  Footer,
   IconButton,
   Image,
   Input,

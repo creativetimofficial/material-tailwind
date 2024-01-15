@@ -1,0 +1,418 @@
+---
+title: Tailwind CSS Footer for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Footer component for Tailwind CSS and React using Material Design guidelines.
+github: Footer
+prev: docs/react/inputs
+next: docs/react/Footer-group
+---
+
+# Tailwind CSS Footer - React
+
+Use our `Footer` based on Tailwind CSS for actions in forms, dialogues, and more.
+
+`Footer` is an essential element of web design. Basically,
+`Footer` is styled links that grab the user's attention. They help users
+navigate our websites or apps and drive them to a particular action like submitting
+a contact form or placing an order as easy as possible.
+
+See below our `Footer` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+---
+
+## Footer Demo
+
+<ComponentPreview demo={<Footer.FooterDemo />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+const YEAR = new Date().getFullYear();
+
+const LINKS = [
+  {
+    title: "About Us",
+    href: "#",
+  },
+  {
+    title: "License",
+    href: "#",
+  },
+  {
+    title: "Contribute",
+    href: "#",
+  },
+  {
+    title: "Contact Us",
+    href: "#",
+  },
+];
+
+export function FooterDemo() {
+  return (
+    <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 border-t border-secondary-dark py-4 text-center md:justify-between dark:border-secondary-dm-main">
+      <Typography>&copy; {YEAR} Material Tailwind</Typography>
+      <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        {LINKS.map(({ title, href }) => (
+          <li>
+            <Typography
+              as="a"
+              href={href}
+              className="hover:text-info-main dark:text-info-dm-main"
+            >
+              {title}
+            </Typography>
+          </li>
+        ))}
+      </ul>
+    </footer>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Footer with Logo
+
+<ComponentPreview demo={<Footer.FooterWithLogo />}>
+```tsx
+import { Typography } from "@material-tailwind/react";
+
+const YEAR = new Date().getFullYear();
+
+const LINKS = [
+  {
+    title: "About Us",
+    href: "#",
+  },
+  {
+    title: "License",
+    href: "#",
+  },
+  {
+    title: "Contribute",
+    href: "#",
+  },
+  {
+    title: "Contact Us",
+    href: "#",
+  },
+];
+
+export function FooterWithLogo() {
+  return (
+    <footer className="w-full">
+      <div className="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 text-center md:justify-between">
+        <img src="/logo.png" alt="brand" className="w-8" />
+        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          {LINKS.map(({ title, href }) => (
+            <li>
+              <Typography
+                as="a"
+                href={href}
+                className="hover:text-info-main dark:text-info-dm-main"
+              >
+                {title}
+              </Typography>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <hr className="my-4 border-secondary-dark dark:border-secondary-main" />
+      <Typography className="text-center">
+        &copy; {YEAR} Material Tailwind
+      </Typography>
+    </footer>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Footer with Social Link
+
+<ComponentPreview demo={<Footer.FooterWithSocialLinks />}>
+```tsx
+import { Typography, IconButton } from "@material-tailwind/react";
+import { Facebook, Instagram, X, Github, Dribbble } from "iconoir-react";
+
+const LINKS = [
+  {
+    title: "Product",
+    items: [
+      {
+        title: "Overview",
+        href: "#",
+      },
+      {
+        title: "Features",
+        href: "#",
+      },
+      {
+        title: "Solutions",
+        href: "#",
+      },
+      {
+        title: "Tutorials",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    items: [
+      {
+        title: "About us",
+        href: "#",
+      },
+      {
+        title: "Careers",
+        href: "#",
+      },
+      {
+        title: "Press",
+        href: "#",
+      },
+      {
+        title: "News",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Resource",
+    items: [
+      {
+        title: "Blog",
+        href: "#",
+      },
+      {
+        title: "Newsletter",
+        href: "#",
+      },
+      {
+        title: "Events",
+        href: "#",
+      },
+      {
+        title: "Help center",
+        href: "#",
+      },
+    ],
+  },
+];
+
+const YEAR = new Date().getFullYear();
+
+export function FooterWithSocialLinks() {
+  return (
+    <footer className="relative w-full">
+      <div className="mx-auto w-full max-w-7xl px-8">
+        <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
+          <Typography variant="h6" className="mb-4">
+            Material Tailwind
+          </Typography>
+          <div className="grid grid-cols-3 justify-between gap-x-6 gap-y-4">
+            {LINKS.map(({ title, items }) => (
+              <ul key={title}>
+                <Typography className="mb-2 font-semibold opacity-50">
+                  {title}
+                </Typography>
+                {items.map(({ title, href }) => (
+                  <li key={title}>
+                    <Typography
+                      as="a"
+                      href={href}
+                      className="py-1 hover:text-info-main dark:text-info-dm-main"
+                    >
+                      {title}
+                    </Typography>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-secondary-dark py-4 md:flex-row md:justify-between dark:border-secondary-main">
+          <Typography variant="small" className="text-center">
+            &copy; {YEAR}{" "}
+            <a href="https://material-tailwind.com/">Material Tailwind</a>. All
+            Rights Reserved.
+          </Typography>
+          <div className="flex gap-1 sm:justify-center">
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Facebook className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Instagram className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <X className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Github className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Dribbble className="h-4 w-4" />
+            </IconButton>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Footer with Sitemap
+
+<ComponentPreview demo={<Footer.FooterWithSitemap />}>
+```tsx
+import { Typography, IconButton } from "@material-tailwind/react/dist";
+import { Facebook, Instagram, X, Github, Dribbble } from "iconoir-react";
+
+const LINKS = [
+  {
+    title: "Company",
+    items: [
+      {
+        title: "About us",
+        href: "#",
+      },
+      {
+        title: "Careers",
+        href: "#",
+      },
+      {
+        title: "Press",
+        href: "#",
+      },
+      {
+        title: "News",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Help Center",
+    items: [
+      {
+        title: "Discord",
+        href: "#",
+      },
+      {
+        title: "Twitter",
+        href: "#",
+      },
+      {
+        title: "GitHub",
+        href: "#",
+      },
+      {
+        title: "Contact Us",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      {
+        title: "Blog",
+        href: "#",
+      },
+      {
+        title: "Newsletter",
+        href: "#",
+      },
+      {
+        title: "Free Products",
+        href: "#",
+      },
+      {
+        title: "Affiliate Program",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Products",
+    items: [
+      {
+        title: "Templates",
+        href: "#",
+      },
+      {
+        title: "UI Kits",
+        href: "#",
+      },
+      {
+        title: "Icons",
+        href: "#",
+      },
+      {
+        title: "Mockups",
+        href: "#",
+      },
+    ],
+  },
+];
+
+const YEAR = new Date().getFullYear();
+
+export function FooterWithSitemap() {
+  return (
+    <footer className="relative w-full">
+      <div className="mx-auto w-full max-w-7xl px-8">
+        <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+          {LINKS.map(({ title, items }) => (
+            <ul key={title}>
+              <Typography className="mb-2 font-semibold opacity-50">
+                {title}
+              </Typography>
+              {items.map(({ title, href }) => (
+                <li key={title}>
+                  <Typography
+                    as="a"
+                    href={href}
+                    className="py-1 hover:text-info-main dark:text-info-dm-main"
+                  >
+                    {title}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-secondary-dark py-4 md:flex-row md:justify-between dark:border-secondary-main">
+          <Typography variant="small" className="text-center">
+            &copy; {YEAR}{" "}
+            <a href="https://material-tailwind.com/">Material Tailwind</a>. All
+            Rights Reserved.
+          </Typography>
+          <div className="flex gap-1 sm:justify-center">
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Facebook className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Instagram className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <X className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Github className="h-4 w-4" />
+            </IconButton>
+            <IconButton as="a" href="#" variant="ghost" size="sm">
+              <Dribbble className="h-4 w-4" />
+            </IconButton>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+</ComponentPreview>
