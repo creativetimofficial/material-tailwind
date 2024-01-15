@@ -14,7 +14,7 @@ export const tooltipTheme = {
 };
 
 export const tooltipTriggerTheme = {
-  baseStyle: "outline-none",
+  baseStyle: "outline-none group",
 };
 
 export const tooltipContentTheme = {

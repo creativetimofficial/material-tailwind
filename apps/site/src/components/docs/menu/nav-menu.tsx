@@ -27,7 +27,7 @@ export function NavMenu() {
         as={Button}
         variant="ghost"
         size="sm"
-        className="group flex items-center gap-1"
+        className="flex items-center gap-1"
       >
         Versions{" "}
         <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />

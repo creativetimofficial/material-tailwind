@@ -13,7 +13,7 @@ export const menuTheme = {
 };
 
 export const menuTriggerTheme = {
-  baseStyle: "outline-none",
+  baseStyle: "outline-none group",
 };
 
 export const menuContentTheme = {

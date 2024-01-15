@@ -22,6 +22,7 @@ import * as Image from "@components/docs/image";
 import * as Input from "@components/docs/input";
 import * as List from "@components/docs/list";
 import * as Menu from "@components/docs/menu";
+import * as Navbar from "@components/docs/navbar";
 import * as Pagination from "@components/docs/pagination";
 import * as Popover from "@components/docs/popover";
 import * as Progress from "@components/docs/progress";
@@ -111,6 +112,7 @@ const components = {
   Input,
   List,
   Menu,
+  Navbar,
   Pagination,
   Popover,
   Progress,
