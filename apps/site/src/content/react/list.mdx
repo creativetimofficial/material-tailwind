@@ -130,48 +130,40 @@ export function ListWithAvatar() {
 
 <ComponentPreview demo={<List.ListWithBadge />}>
 ```tsx
-import * as React from "react";
-import { List, Avatar, Typography } from "@material-tailwind/react";
+import { List, Chip } from "@material-tailwind/react";
+import { Mail, Settings, Trash } from "iconoir-react";
 
-const ListItem = React.forwardRef(
-  ({ img, title, description, ...rest }, ref) => {
-    return (
-      <List.Item ref={ref} {...rest}>
-        <List.ItemStart>
-          <Avatar src={img} alt="profile-picture" />
-        </List.ItemStart>
-        <div>
-          <Typography className="font-semibold">{title}</Typography>
-          <Typography
-            variant="small"
-            className="text-gray-600 dark:text-gray-400"
-          >
-            {description}
-          </Typography>
-        </div>
-      </List.Item>
-    );
-  },
-);
-
-export function ListWithAvatar() {
+export function ListWithBadge() {
   return (
     <List>
-      <ListItem
-        img="https://dub.sh/TdSBP0D"
-        title="Alex Andrew"
-        description="Software Engineer @ Material Tailwind"
-      />
-      <ListItem
-        img="https://dub.sh/rNFOKKJ"
-        title="Alexander"
-        description="Backend Developer @ Material Tailwind"
-      />
-      <ListItem
-        img="https://dub.sh/6i238JA"
-        title="Emma Willever"
-        description="UI/UX Designer @ Material Tailwind"
-      />
+      <List.Item>
+        <List.ItemStart>
+          <Mail className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Inbox
+        <List.ItemEnd>
+          <Chip size="sm" variant="ghost">
+            <Chip.Label>14</Chip.Label>
+          </Chip>
+        </List.ItemEnd>
+      </List.Item>
+      <List.Item>
+        <List.ItemStart>
+          <Trash className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Trash
+        <List.ItemEnd>
+          <Chip size="sm" variant="ghost">
+            <Chip.Label>40</Chip.Label>
+          </Chip>
+        </List.ItemEnd>
+      </List.Item>
+      <List.Item>
+        <List.ItemStart>
+          <Settings className="h-[18px] w-[18px]" />
+        </List.ItemStart>
+        Settings
+      </List.Item>
     </List>
   );
 }

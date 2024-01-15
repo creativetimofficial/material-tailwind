@@ -29,6 +29,7 @@ import * as Progress from "@components/docs/progress";
 import * as Radio from "@components/docs/radio";
 import * as Rating from "@components/docs/rating";
 import * as Select from "@components/docs/select";
+import * as Sidebar from "@components/docs/sidebar";
 import * as SpeedDial from "@components/docs/speed-dial";
 import * as Spinner from "@components/docs/spinner";
 import * as Switch from "@components/docs/switch";
@@ -119,6 +120,7 @@ const components = {
   Radio,
   Rating,
   Select,
+  Sidebar,
   SpeedDial,
   Spinner,
   Switch,
