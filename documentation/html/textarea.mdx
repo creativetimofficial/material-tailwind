@@ -17,13 +17,24 @@ prev: tabs
 next: tooltip
 ---
 
-# Tailwind CSS
+# Tailwind CSS Textarea
 
-Easily create textarea with different styles using our component based on Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+Use our Tailwind CSS textarea if you want to allow users to enter a sizeable amount of free-form text, for example, a comment on a review or feedback form.
 
-See below our examples that will help you create a simple textarea for your project. It also comes in different colors and styles, so you can adapt it easily to your needs.
+The textarea UI components usually look like a rectangular box where users can type or paste text. The component often includes vertical or horizontal scrollbars when the content exceeds the visible area, labels, buttons, character counters, validation messages, and icons. 
+
+Developers use this component for content management systems, web forms,  messaging apps, and more.
+
+See below Material Tailwind’s examples of textareas that come in different styles and use Tailwind CSS classes.
+
 
 <br />
+
+## Textarea Examples
+
+## Default Textarea
+
+Get started with a simple textarea that comes with rounded corners, border styles, and a label. The label is intelligently styled to transition smoothly when the textarea is focused, and it uses Tailwind CSS classes to achieve these effects.
 
 <CodePreview
   id="textarea"
@@ -49,6 +60,8 @@ See below our examples that will help you create a simple textarea for your proj
 ---
 
 ## Textarea Variants
+
+Using Material Tailwind’s component, you can implement different variants of textareas. 
 
 <CodePreview
   id="textarea-variants"
@@ -90,9 +103,20 @@ See below our examples that will help you create a simple textarea for your proj
 ```
 </CodePreview>
 
+<br />
+This coded example showcases three types of textareas:
+
+• Static textarea with placeholder,  border-bottom, and label.
+• Standard textarea with  placeholder text with a single space character and border-bottom.
+• Outlined textarea with complete border, rounded corners, placeholder text, and label.
+
+The labels use various CSS classes and transitions to provide a smooth visual effect when the textareas are focused.
+
 ---
 
 ## Textarea Sizes
+
+Check this coded example to see how you can implement textarea components for different text input sizes.
 
 <CodePreview
   id="textarea-sizes"
@@ -127,6 +151,13 @@ See below our examples that will help you create a simple textarea for your proj
 ---
 
 ## Textarea Colors
+
+Our component comes with various color styling options. The examples below include four textarea components, each with a different color scheme and associated label. 
+
+• To change the border color, use the focus:border-{color} class.
+• To change the text color, use the focus:text-{color} class.
+
+
 
 <CodePreview
   id="textarea-colors"
@@ -180,6 +211,8 @@ See below our examples that will help you create a simple textarea for your proj
 
 ## Textarea Validations
 
+Use this textareas with error and success themes,  contrasting border colors (red for error and green for success), and matching text colors.
+
 <CodePreview
   id="textarea-validations"
   link="textarea#textarea-validations"
@@ -214,6 +247,8 @@ See below our examples that will help you create a simple textarea for your proj
 
 ## Disabled Textarea
 
+Use this example if you want to display information to users without allowing them to make changes to the content.
+
 <CodePreview
   id="disabled-textarea"
   link="textarea#disabled-textarea"
@@ -235,10 +270,16 @@ See below our examples that will help you create a simple textarea for your proj
 ```
 </CodePreview>
 
+<br />
+
+It is usually used for read-only purposes or for displaying content that should not be modified by users. The use of a different border color and disabled state makes it visually clear that the textarea is not editable. 
+
 ---
 
 
 ## Comment Box Textarea
+
+Use this component that contains a textarea with  submitting and canceling button controls for your blog or application if you want to let users leave comments.
 
 <CodePreview
   id="comment-box-textarea"
@@ -286,9 +327,17 @@ See below our examples that will help you create a simple textarea for your proj
 ```
 </CodePreview>
 
+<br />
+This comment box maintains a consistent blue-gray color scheme throughout and uses transitions to enhance the user experience during interactions.
+
 ---
 
 ## Twitter Chatbox Textarea
+
+This code snippet represents a stylish and functional textarea component with accompanying buttons, designed for a modern web interface
+using Tailwind CSS. 
+
+The component is flexible and responsive, with attention to details like hover states and focus effects.
 
 <CodePreview
   id="twitter-chatbot-textarea"
@@ -344,3 +393,13 @@ See below our examples that will help you create a simple textarea for your proj
 </div>
 ```
 </CodePreview>
+
+
+---
+### Textarea Best Practices For Developers
+
+• Make sure that textareas are accessible to all users (including those with disabilities), using appropriate  HTML attributes like <Code>aria-label</Code> and <Code>aria-describedby</Code> to provide meaningful labels and descriptions for screen readers. 
+• Use descriptive and clear placeholder text to provide hints of the expected input.
+•  Implement client-side validation for user input in textareas. Validate input for length, format, and any specific requirements.
+
+
