@@ -21,11 +21,19 @@ next: timeline
 # Tailwind CSS Textarea - React
 </DocsTitle>
 
-Easily create <Code>Textarea</Code> with different styles using our component based on Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+Easily create Textarea with different styles using our component based on React and styled with Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
 
-See below our example that will help you create a simple <Code>Textarea</Code> for your project. It also comes in different colors and styles, so you can adapt it easily to your needs.
+See below our examples that will help you create a simple <Code>Textarea</Code> for your project. Choose from  different colors and styles, so you can adapt the component easily to your needs.
 
 <br />
+
+## Textarea Examples
+
+<DocsTitle href="textarea-default">
+## Textarea Default
+</DocsTitle>
+
+This component example can be used in any React application where a text area input is needed. It provides an easy way to incorporate a styled textarea input field with minimal code.
 
 <CodePreview link="textarea#textarea" component={<TextareaExamples.TextareaDefault />}>
 ```jsx
@@ -47,7 +55,7 @@ export function TextareaDefault() {
 ## Textarea Variants
 </DocsTitle>
 
-The <Code>Textarea</Code> component comes with 3 different variants that you can change it using the <Code>variant</Code> prop.
+The <Code>Textarea</Code> component comes with three different variants that you can change using the <Code>variant</Code> prop. 
 
 <CodePreview link="textarea#textarea-variants" component={<TextareaExamples.TextareaVariants />}>
 ```jsx
@@ -65,13 +73,21 @@ export function TextareaVariants() {
 ```
 </CodePreview>
 
+<br />
+
+The static variant has minimal styling, the standard variant has a more traditional look, and the outlined variant has a border around it, following Material Design guidelines.
+
 ---
 
 <DocsTitle href="textarea-sizes">
 ## Textarea Sizes
 </DocsTitle>
 
-The <Code>Textarea</Code> component comes with 2 different sizes that you can change it using the <Code>size</Code> prop.
+The Textarea component comes with two different sizes that you can change using the size prop.
+
+• <Code>size="md"</Code>: This creates a medium-sized Textarea, labeled "Textarea Medium".
+• <Code>size="lg"</Code>: This renders a large-sized Textarea, labeled "Textarea Large".
+
 
 <CodePreview link="textarea#textarea-sizes" component={<TextareaExamples.TextareaSizes />}>
 ```jsx
@@ -88,13 +104,22 @@ export function TextareaSizes() {
 ```
 </CodePreview>
 
+<br/>
+This coded example is useful when different sized text areas are needed to accommodate varying amounts of content or to align with the overall design and layout of a web page or application.
+
 ---
 
 <DocsTitle href="textarea-colors">
 ## Textarea Colors
 </DocsTitle>
 
-The <Code>Textarea</Code> component comes with 19 different colors that you can change it using the <Code>color</Code> prop.
+The Textarea component comes with 19 different colors that you can change using the color prop. For example:
+
+• <Code>color="gray"</Code>: This creates a Textarea with gray styling, labeled "Textarea Gray".
+• <Code>color="blue-gray"</Code>: This Textarea has a blue-gray color, labeled "Textarea Purple".
+• <Code>color="red"</Code>: This renders a red Textarea, labeled "Textarea Red".
+• <Code>color="green"</Code>: This creates a green Textarea, labeled "Textarea Green".
+
 
 <CodePreview id="textarea-colors" link="textarea#textarea-colors" component={<TextareaExamples.TextareaColors />}>
 ```jsx
@@ -112,6 +137,10 @@ export function TextareaColors() {
 }
 ```
 </CodePreview>
+
+<br />
+
+Using different colors can make the user interface look better and clearer. It can also help show different meanings or importance levels. For example, using red for warnings or mistakes.
 
 ---
 
@@ -136,13 +165,22 @@ export function TextareaValidations() {
 ```
 </CodePreview>
 
+<br />
+
+In this example:
+• error: This Textarea is marked with an error prop and labeled "Textarea Error". This typically indicates a validation error state, which changes the appearance of the textarea to signal an error to the user.
+• success: This Textarea is marked with a success prop and labeled "Textarea Success". This state usually signifies a successful validation, altering the appearance to a green color, indicating that the input is valid.
+
+
 ---
 
 <DocsTitle href="textarea-disabled">
 ## Textarea Disabled
 </DocsTitle>
 
-A <Code>Textarea</Code> could be disabled as well, it will help you to prevent user interactions like click or focus over the <Code>Textarea</Code> component.
+A Textarea can be disabled as well, helping you to prevent user interactions like click or focus over the Textarea component.  
+
+A disabled Textarea typically has a different visual style to clearly indicate that it is not active (example: a  grayed-out appearance). The label "Disabled" further clarifies the state of the Textarea for users.
 
 <CodePreview link="textarea#textarea-disabled" component={<TextareaExamples.TextareaDisabled />}>
 ```jsx
@@ -212,7 +250,7 @@ export function CommentBoxTextarea() {
 ## Twitter Chatbox Textarea
 </DocsTitle>
 
-Use the example below for a chat input that uses <Code>Textarea</Code> component.
+Use the example below for a chat input that uses Textarea component. This component can be used in applications where a chat or messaging feature is needed, particularly if aiming for a design similar to Twitter's interface.
 
 <CodePreview component={<TextareaExamples.TwitterChatboxTextarea />}>
 ```jsx
@@ -291,3 +329,7 @@ export function TwitterChatboxTextarea() {
 }
 ```
 </CodePreview>
+
+<br />
+
+The component imports <Code>Textarea</Code>, <Code>Button</Code>, and <Code>IconButton</Code> from <Code>@material-tailwind/react</Code>, which offers Material Design styled React components with Tailwind CSS. It also imports <Code>LinkIcon</Code> from <Code>@heroicons/react</Code>, a library of SVG icons.
