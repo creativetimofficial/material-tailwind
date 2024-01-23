@@ -11,6 +11,11 @@ import {
   alertDismissTriggerTheme,
 } from "./alert";
 import { avatarTheme } from "./avatar";
+import {
+  breadcrumbTheme,
+  breadcrumbLinkTheme,
+  breadcrumbSeparatorTheme,
+} from "./breadcrumb";
 import { buttonTheme } from "./button";
 import { buttonGroupTheme } from "./button-group";
 import { checkboxTheme } from "./checkbox";
@@ -96,6 +101,9 @@ export const theme = {
   alertIcon: alertIconTheme,
   alertDismissTrigger: alertDismissTriggerTheme,
   avatar: avatarTheme,
+  breadcrumb: breadcrumbTheme,
+  breadcrumbLink: breadcrumbLinkTheme,
+  breadcrumbSeparator: breadcrumbSeparatorTheme,
   button: buttonTheme,
   buttonGroup: buttonGroupTheme,
   checkbox: checkboxTheme,
