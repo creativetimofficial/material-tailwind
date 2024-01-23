@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 // @components
@@ -13,15 +11,12 @@ import {
 import {
   useFloating,
   useClick,
-  useDismiss,
   useRole,
+  useDismiss,
   useInteractions,
   useMergeRefs,
 } from "@floating-ui/react";
 import { useTheme } from "@context";
-
-// @utils
-import { twMerge } from "tailwind-merge";
 
 // @types
 import type {
@@ -30,55 +25,46 @@ import type {
 } from "@floating-ui/react";
 import { Props, BaseComponent } from "@types";
 
+// @utils
+import { twMerge } from "tailwind-merge";
+
 // @theme
 import {
-  dialogTheme,
-  dialogTriggerTheme,
-  dialogOverlayTheme,
-  dialogContentTheme,
-  dialogDismissTriggerTheme,
+  drawerTriggerTheme,
+  drawerOverlayTheme,
+  drawerPanelTheme,
+  drawerDismissTriggerTheme,
 } from "@theme";
 
-type size = "xs" | BaseComponent<any>["size"] | "xl" | "screen";
-
-// dialog context
+// drawer context
 type FloatingType = Partial<UseFloatingReturn> &
   Partial<ReturnType<typeof useInteractions>>;
 
-export interface DialogContextProps extends FloatingType {
+export interface DrawerContextProps extends FloatingType {
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-  size?: size;
 }
 
-const DialogContext = React.createContext<DialogContextProps>({
-  open: false,
-  setOpen: () => {},
-} as DialogContextProps);
+const DrawerContext = React.createContext<DrawerContextProps>(
+  {} as DrawerContextProps,
+);
 
-// dialog root
-export interface DialogRootProps {
-  size?: size;
+// drawer root
+export interface DrawerRootProps {
   open?: boolean;
   onOpenChange?: () => void;
   children: React.ReactNode;
 }
 
-export function DialogRoot({
-  size,
+export function DrawerRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,
   children,
-}: DialogRootProps) {
-  const contextTheme = useTheme();
-  const theme = contextTheme?.dialog ?? dialogTheme;
-  const defaultProps = theme?.defaultProps;
+}: DrawerRootProps) {
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(false);
 
   const open = controlledOpen ?? uncontrolledOpen;
   const setOpen = setControlledOpen ?? setUncontrolledOpen;
-
-  size ??= (defaultProps?.size as DialogRootProps["size"]) ?? "md";
 
   const data = useFloating({
     open,
@@ -99,37 +85,36 @@ export function DialogRoot({
     () => ({
       open,
       setOpen,
-      size,
       ...interactions,
       ...data,
     }),
-    [open, setOpen, size, interactions, data],
+    [open, setOpen, interactions, data],
   );
 
   return (
-    <DialogContext.Provider value={contextValue}>
+    <DrawerContext.Provider value={contextValue}>
       {children}
-    </DialogContext.Provider>
+    </DrawerContext.Provider>
   );
 }
 
-DialogRoot.displayName = "MaterialTailwind.Dialog";
+DrawerRoot.displayName = "MaterialTailwind.Drawer";
 
-// dialog trigger
-export interface DialogTriggerProps extends Props<"button" | any> {
+// drawer trigger
+export interface DrawerTriggerProps extends Props<"button" | any> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const DialogTrigger = React.forwardRef<
+export const DrawerTrigger = React.forwardRef<
   HTMLButtonElement | HTMLElement,
-  DialogTriggerProps
+  DrawerTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";
   const contextTheme = useTheme();
-  const theme = contextTheme?.dialogTrigger ?? dialogTriggerTheme;
-  const { refs, getReferenceProps, open } = React.useContext(DialogContext);
+  const theme = contextTheme?.drawerTrigger ?? drawerTriggerTheme;
+  const { refs, getReferenceProps, open } = React.useContext(DrawerContext);
 
   const styles = twMerge(theme.baseStyle, className);
   const elementRef = useMergeRefs([refs?.setReference, ref]);
@@ -147,26 +132,26 @@ export const DialogTrigger = React.forwardRef<
   );
 });
 
-DialogTrigger.displayName = "MaterialTailwind.DialogTrigger";
+DrawerTrigger.displayName = "MaterialTailwind.DrawerTrigger";
 
-// dialog overlay
-export interface DialogOverlayProps extends Props<"div"> {
+// drawer overlay
+export interface DrawerOverlayProps extends Props<"div"> {
   className?: string;
   lockScroll?: boolean;
   children: React.ReactNode;
 }
 
-export const DialogOverlay = React.forwardRef<
+export const DrawerOverlay = React.forwardRef<
   HTMLDivElement,
-  DialogOverlayProps
+  DrawerOverlayProps
 >(({ className, lockScroll, children, ...rest }, ref) => {
   const contextTheme = useTheme();
-  const theme = contextTheme?.dialogOverlay ?? dialogOverlayTheme;
+  const theme = contextTheme?.drawerOverlay ?? drawerOverlayTheme;
   const defaultProps = theme?.defaultProps;
-  const { open } = React.useContext(DialogContext);
+  const { open } = React.useContext(DrawerContext);
 
   lockScroll ??=
-    (defaultProps?.lockScroll as DialogOverlayProps["lockScroll"]) ?? true;
+    (defaultProps?.lockScroll as DrawerOverlayProps["lockScroll"]) ?? true;
 
   const styles = twMerge(theme.baseStyle, className);
 
@@ -185,27 +170,29 @@ export const DialogOverlay = React.forwardRef<
   ) : null;
 });
 
-DialogOverlay.displayName = "MaterialTailwind.DialogOverlay";
+DrawerOverlay.displayName = "MaterialTailwind.DrawerOverlay";
 
-// dialog content
-type DialogContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+// drawer panel
+type DrawerPanelBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
 
-export interface DialogContentProps
-  extends Omit<DialogContentBaseProps, "context"> {
+export interface DrawerPanelProps
+  extends Omit<DrawerPanelBaseProps, "context"> {
   as?: React.ElementType;
   className?: string;
+  placement?: "top" | "right" | "bottom" | "left";
   children: React.ReactNode;
 }
 
-export const DialogContent = React.forwardRef<
+export const DrawerPanel = React.forwardRef<
   HTMLDivElement | HTMLElement,
-  DialogContentProps
+  DrawerPanelProps
 >(
   (
     {
       as,
       className,
       children,
+      placement,
       disabled,
       initialFocus,
       returnFocus,
@@ -220,30 +207,30 @@ export const DialogContent = React.forwardRef<
   ) => {
     const Element = as || "div";
     const contextTheme = useTheme();
-    const theme = contextTheme?.dialogContent ?? dialogContentTheme;
+    const theme = contextTheme?.drawerPanel ?? drawerPanelTheme;
     const defaultProps = theme.defaultProps;
-    const { context, refs, getFloatingProps, open, size } =
-      React.useContext(DialogContext);
+    const { context, refs, getFloatingProps, open } =
+      React.useContext(DrawerContext);
 
+    placement ??=
+      (defaultProps?.placement as DrawerPanelProps["placement"]) ?? "right";
     disabled ??=
-      (defaultProps?.disabled as DialogContentProps["disabled"]) ?? false;
+      (defaultProps?.disabled as DrawerPanelProps["disabled"]) ?? false;
     initialFocus ??=
-      (defaultProps?.initialFocus as DialogContentProps["initialFocus"]) ?? 0;
+      (defaultProps?.initialFocus as DrawerPanelProps["initialFocus"]) ?? 0;
     returnFocus ??=
-      (defaultProps?.returnFocus as DialogContentProps["returnFocus"]) ?? true;
-    guards ??= (defaultProps?.guards as DialogContentProps["guards"]) ?? true;
-    modal ??= (defaultProps?.modal as DialogContentProps["modal"]) ?? false;
+      (defaultProps?.returnFocus as DrawerPanelProps["returnFocus"]) ?? true;
+    guards ??= (defaultProps?.guards as DrawerPanelProps["guards"]) ?? true;
+    modal ??= (defaultProps?.modal as DrawerPanelProps["modal"]) ?? false;
     visuallyHiddenDismiss ??=
-      (defaultProps?.visuallyHiddenDismiss as DialogContentProps["visuallyHiddenDismiss"]) ??
+      (defaultProps?.visuallyHiddenDismiss as DrawerPanelProps["visuallyHiddenDismiss"]) ??
       true;
     closeOnFocusOut ??=
-      (defaultProps?.closeOnFocusOut as DialogContentProps["closeOnFocusOut"]) ??
+      (defaultProps?.closeOnFocusOut as DrawerPanelProps["closeOnFocusOut"]) ??
       true;
-    order ??= (defaultProps?.order as DialogContentProps["order"]) ?? [
-      "content",
-    ];
+    order ??= (defaultProps?.order as DrawerPanelProps["order"]) ?? ["content"];
 
-    const styles = twMerge(theme.baseStyle, theme.size[size], className);
+    const styles = twMerge(theme.baseStyle, className);
     const elementRef = useMergeRefs([refs?.setFloating, ref]);
 
     return open ? (
@@ -272,23 +259,23 @@ export const DialogContent = React.forwardRef<
   },
 );
 
-DialogContent.displayName = "MaterialTailwind.DialogContent";
+DrawerPanel.displayName = "MaterialTailwind.DrawerPanel";
 
-// dialog dismiss trigger
-export interface DialogDismissTriggerProps extends Props<"button" | any> {
+// drawer dismiss trigger
+export interface DrawerDismissTriggerProps extends Props<"button" | any> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const DialogDismissTrigger = React.forwardRef<
+export const DrawerDismissTrigger = React.forwardRef<
   HTMLButtonElement | HTMLElement,
-  DialogDismissTriggerProps
+  DrawerDismissTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";
   const contextTheme = useTheme();
-  const theme = contextTheme?.dialogDismissTrigger ?? dialogDismissTriggerTheme;
-  const { open, setOpen } = React.useContext(DialogContext);
+  const theme = contextTheme?.drawerDismissTrigger ?? drawerDismissTriggerTheme;
+  const { open, setOpen } = React.useContext(DrawerContext);
 
   const styles = twMerge(theme.baseStyle, className);
 
@@ -311,13 +298,13 @@ export const DialogDismissTrigger = React.forwardRef<
   );
 });
 
-DialogDismissTrigger.displayName = "MaterialTailwind.DialogDismissTrigger";
+DrawerDismissTrigger.displayName = "MaterialTailwind.DrawerDismissTrigger";
 
-export const Dialog = Object.assign(DialogRoot, {
-  Trigger: DialogTrigger,
-  Overlay: DialogOverlay,
-  Content: DialogContent,
-  DismissTrigger: DialogDismissTrigger,
+export const Drawer = Object.assign(DrawerRoot, {
+  Trigger: DrawerTrigger,
+  Overlay: DrawerOverlay,
+  Panel: DrawerPanel,
+  DismissTrigger: DrawerDismissTrigger,
 });
 
-export default Dialog;
+export default Drawer;

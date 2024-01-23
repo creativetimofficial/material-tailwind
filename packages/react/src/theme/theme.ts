@@ -39,6 +39,12 @@ import {
   dialogContentTheme,
   dialogDismissTriggerTheme,
 } from "./dialog";
+import {
+  drawerTriggerTheme,
+  drawerOverlayTheme,
+  drawerPanelTheme,
+  drawerDismissTriggerTheme,
+} from "./drawer";
 import { iconButtonTheme } from "./icon-button";
 import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
 import {
@@ -121,6 +127,10 @@ export const theme = {
   dialogOverlay: dialogOverlayTheme,
   dialogContent: dialogContentTheme,
   dialogDismissTrigger: dialogDismissTriggerTheme,
+  drawerTrigger: drawerTriggerTheme,
+  drawerOverlay: drawerOverlayTheme,
+  drawerPanel: drawerPanelTheme,
+  drawerDismissTrigger: drawerDismissTriggerTheme,
   iconButton: iconButtonTheme,
   input: inputTheme,
   inputField: inputFieldTheme,

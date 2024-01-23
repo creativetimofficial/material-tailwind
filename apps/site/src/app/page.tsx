@@ -1,15 +1,28 @@
 "use client";
 import * as React from "react";
-import { Breadcrumb } from "@material-tailwind/react/dist";
+import { Drawer, Button, IconButton } from "@material-tailwind/react/dist";
+import { Xmark } from "iconoir-react";
 
 export default function Page() {
   return (
     <div className="mx-auto w-full max-w-xs py-12">
-      <Breadcrumb>
-        <Breadcrumb.Link href="#">About</Breadcrumb.Link>
-        <Breadcrumb.Separator>-</Breadcrumb.Separator>
-        <Breadcrumb.Link href="#">Contact</Breadcrumb.Link>
-      </Breadcrumb>
+      <Drawer>
+        <Drawer.Trigger as={Button}>Open drawer</Drawer.Trigger>
+        <Drawer.Overlay>
+          <Drawer.Panel className="w-80">
+            Hello
+            <Drawer.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              isCircular
+              className="absolute right-2 top-2"
+            >
+              <Xmark />
+            </Drawer.DismissTrigger>
+          </Drawer.Panel>
+        </Drawer.Overlay>
+      </Drawer>
     </div>
   );
 }

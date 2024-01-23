@@ -9,6 +9,7 @@ export * from "./card";
 export * from "./chip";
 export * from "./collapse";
 export * from "./dialog";
+export * from "./drawer";
 export * from "./icon-button";
 export * from "./input";
 export * from "./list";
