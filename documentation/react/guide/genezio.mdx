@@ -1,0 +1,63 @@
+# Material Tailwind with Genezio
+
+Learn how to install genezio and setup a project with `@material-tailwind/react`.
+
+In this guide, we will walk through the steps to get up and running a basic template offered by genezio with `@material-tailwind/react`.
+
+## Install genezio
+
+First, you need to install and login to genezio.
+
+```bash=
+npm install genezio -g
+genezio login
+```
+
+## Clone your project
+
+Clone the following template that uses `@material-tailwind/react`.
+
+```bash
+git clone https://github.com/Genez-io/weather-typescript-template
+```
+
+For more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://docs.genez.io/genezio-documentation/getting-started">Genezio Official Documentation</a>
+
+## Tailwind CSS Configuration
+After you setup the project you can find your Tailwind Config with `@material-tailwind/react` already installed in `./genezio-project/client/tailwind.config.js`.
+For now, everything is set up in this file, but keep it in mind for the future when you want to customize your tailwind template.
+
+## Deploy your project
+With genezio, you can deploy your newly created project to the genezio cloud.
+
+```bash=
+cd weather-typescript-template
+genezio deploy
+```
+
+Once the deployment is successful, a URL will be provided for you to access the web application.
+
+If you need to add integrations like SQL Databases, Redis, Queues, Email Services, Application Monitoring, or simply take a look at your application logs, go to the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://app.genez.io">Genezio Dashboard</a>.
+
+
+## Test your project
+You can test locally both your frontend and your backend.
+**Terminal 1:**
+```bash=
+cd genezio-project
+genezio local
+```
+
+**Terminal 2:**
+```bash=
+cd genezio-project/client
+npm install
+npm run dev
+```
+
+#### Next Steps:
+* Build your app with more backend code <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://github.com/genez-io/genezio-examples">genezio examples</a>
+* Continue building your frontend with Material Tailwind components
+
+
+I hope you enjoyed this integration guide and I encourage you to check out our other tutorials for more insights about <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://genezio.com">genezio</a> and Material Tailwind. 🥷 💻
