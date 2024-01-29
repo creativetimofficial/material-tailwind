@@ -92,7 +92,7 @@ const NavItem = React.forwardRef(
         </Typography>
         <Typography
           variant="small"
-          className="text-gray-600 dark:text-gray-400"
+          className="text-gray-600"
         >
           {description}
         </Typography>
@@ -162,8 +162,8 @@ export function MenuWithDivider() {
         <Menu.Item>Add Team</Menu.Item>
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+        <hr className="-mx-1 my-1 border-secondary-dark" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
           Logout
         </Menu.Item>
       </Menu.Content>
@@ -189,8 +189,8 @@ export function MenuWithDivider() {
         <Menu.Item>Add Team</Menu.Item>
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+        <hr className="-mx-1 my-1 border-secondary-dark" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
           Logout
         </Menu.Item>
       </Menu.Content>
@@ -252,7 +252,7 @@ const MenuItem = React.forwardRef(
           </Typography>
           <Typography
             variant="small"
-            className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400"
+            className="flex items-center gap-1 text-sm text-gray-600"
           >
             <Clock className="h-3.5 w-3.5" />
             {date}
@@ -319,8 +319,8 @@ export function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="me-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+        <hr className="-mx-1 my-1 border-secondary-dark" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
           <LogOut className="me-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>

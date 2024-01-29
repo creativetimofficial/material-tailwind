@@ -42,9 +42,9 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none dark:border-secondary-dm-main dark:text-secondary-dm-content data-[error=true]:border-error-main dark:data-[error=true]:border-error-dm-main data-[success=true]:border-success-main dark:data-[success=true]:border-success-dm-main select-none text-start",
+    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error-main data-[success=true]:border-success-main select-none text-start",
   isPill: "rounded-full",
-  placeholder: "text-gray-400 dark:text-gray-700",
+  placeholder: "text-gray-400",
   size: {
     sm: "text-sm leading-none rounded-md py-[4.5px] px-1.5 ring",
     md: "text-sm leading-none rounded-md py-[8.5px] px-2.5 ring",
@@ -52,16 +52,16 @@ export const selectTriggerTheme = {
   },
   color: {
     primary:
-      "hover:border-primary-main hover:ring-primary-main/10 focus:border-primary-main focus:ring-primary-main/10 dark:hover:border-primary-dm-main dark:hover:ring-primary-dm-main/20 dark:focus:border-primary-dm-main dark:focus:ring-primary-dm-main/20 data-[open=true]:border-primary-main data-[open=true]:ring-primary-main/10 dark:data-[open=true]:border-primary-dm-main dark:data-[open=true]:ring-primary-dm-main/20",
+      "hover:border-primary-main hover:ring-primary-main/10 focus:border-primary-main focus:ring-primary-main/10 data-[open=true]:border-primary-main data-[open=true]:ring-primary-main/10",
     secondary:
-      "hover:border-secondary-main hover:ring-secondary-main/10 focus:border-secondary-main focus:ring-secondary-main/10 dark:hover:border-secondary-dm-main dark:hover:ring-secondary-dm-main/20 dark:focus:border-secondary-dm-main dark:focus:ring-secondary-dm-main/20 data-[open=true]:border-secondary-main data-[open=true]:ring-secondary-main/10 dark:data-[open=true]:border-secondary-dm-main dark:data-[open=true]:ring-secondary-dm-main/20",
-    info: "hover:border-info-main hover:ring-info-main/10 focus:border-info-main focus:ring-info-main/10 dark:hover:border-info-dm-main dark:hover:ring-info-dm-main/20 dark:focus:border-info-dm-main dark:focus:ring-info-dm-main/20 data-[open=true]:border-info-main data-[open=true]:ring-info-main/10 dark:data-[open=true]:border-info-dm-main dark:data-[open=true]:ring-info-dm-main/20",
+      "hover:border-secondary-main hover:ring-secondary-main/10 focus:border-secondary-main focus:ring-secondary-main/10 data-[open=true]:border-secondary-main data-[open=true]:ring-secondary-main/10",
+    info: "hover:border-info-main hover:ring-info-main/10 focus:border-info-main focus:ring-info-main/10 data-[open=true]:border-info-main data-[open=true]:ring-info-main/10",
     success:
-      "hover:border-success-main hover:ring-success-main/10 focus:border-success-main focus:ring-success-main/10 dark:hover:border-success-dm-main dark:hover:ring-success-dm-main/20 dark:focus:border-success-dm-main dark:focus:ring-success-dm-main/20 data-[open=true]:border-success-main data-[open=true]:ring-success-main/10 dark:data-[open=true]:border-success-dm-main dark:data-[open=true]:ring-success-dm-main/20",
+      "hover:border-success-main hover:ring-success-main/10 focus:border-success-main focus:ring-success-main/10 data-[open=true]:border-success-main data-[open=true]:ring-success-main/10",
     warning:
-      "hover:border-warning-main hover:ring-warning-main/10 focus:border-warning-main focus:ring-warning-main/10 dark:hover:border-warning-dm-main dark:hover:ring-warning-dm-main/20 dark:focus:border-warning-dm-main dark:focus:ring-warning-dm-main/20 data-[open=true]:border-warning-main data-[open=true]:ring-warning-main/10 dark:data-[open=true]:border-warning-dm-main dark:data-[open=true]:ring-warning-dm-main/20",
+      "hover:border-warning-main hover:ring-warning-main/10 focus:border-warning-main focus:ring-warning-main/10 data-[open=true]:border-warning-main data-[open=true]:ring-warning-main/10",
     error:
-      "hover:border-error-main hover:ring-error-main/10 focus:border-error-main focus:ring-error-main/10 dark:hover:border-error-dm-main dark:hover:ring-error-dm-main/20 dark:focus:border-error-dm-main dark:focus:ring-error-dm-main/20 data-[open=true]:border-error-main data-[open=true]:ring-error-main/10 dark:data-[open=true]:border-error-dm-main dark:data-[open=true]:ring-error-dm-main/20",
+      "hover:border-error-main hover:ring-error-main/10 focus:border-error-main focus:ring-error-main/10 data-[open=true]:border-error-main data-[open=true]:ring-error-main/10",
   },
 };
 
@@ -77,7 +77,7 @@ export const selectListTheme = {
     order: ["content"],
   },
   baseStyle:
-    "flex flex-col gap-0.5 bg-white p-1 rounded-lg shadow-xl shadow-primary-main/[0.025] border border-secondary-dark outline-none dark:bg-primary-dark dark:border-secondary-dm-main dark:shadow-primary-main/5",
+    "flex flex-col gap-0.5 bg-white p-1 rounded-lg shadow-xl shadow-primary-main/[0.025] border border-secondary-dark outline-none",
 };
 
 export const selectOptionTheme = {
@@ -101,5 +101,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/10 dark:focus:bg-primary-dm-main/10 data-[selected=true]:bg-primary-main/10 dark:data-[selected=true]:bg-primary-dm-main/10",
+    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 data-[selected=true]:bg-primary-main/10",
 };

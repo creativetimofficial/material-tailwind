@@ -53,11 +53,7 @@ export function LoginCard() {
         </Input>
         <div className="mb-6 flex items-center gap-2">
           <Checkbox id="remember" />
-          <Typography
-            as="label"
-            htmlFor="remember"
-            className="text-gray-500 dark:text-gray-400"
-          >
+          <Typography as="label" htmlFor="remember" className="text-gray-500">
             Remember Me
           </Typography>
         </div>

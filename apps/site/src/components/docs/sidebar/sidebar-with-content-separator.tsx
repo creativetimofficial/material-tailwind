@@ -79,7 +79,7 @@ export function SidebarWithContentSeparator() {
               )}
             </List.Item>
           ))}
-          <hr className="-mx-3 my-3 border-secondary-main dark:border-secondary-dm-main" />
+          <hr className="-mx-3 my-3 border-secondary-main" />
           <List.Item onClick={() => setIsOpen((cur) => !cur)}>
             <List.ItemStart>
               <MoreHorizCircle className="h-[18px] w-[18px]" />
@@ -113,8 +113,8 @@ export function SidebarWithContentSeparator() {
               </List.Item>
             </List>
           </Collapse>
-          <hr className="-mx-3 my-3 border-secondary-main dark:border-secondary-dm-main" />
-          <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+          <hr className="-mx-3 my-3 border-secondary-main" />
+          <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
             <List.ItemStart>
               <LogOut className="h-[18px] w-[18px]" />
             </List.ItemStart>

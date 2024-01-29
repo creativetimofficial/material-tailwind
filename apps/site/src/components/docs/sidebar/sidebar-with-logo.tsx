@@ -82,7 +82,7 @@ export function SidebarWithLogo() {
               )}
             </List.Item>
           ))}
-          <hr className="-mx-3 my-3 border-secondary-main dark:border-secondary-dm-main" />
+          <hr className="-mx-3 my-3 border-secondary-main" />
           <List.Item onClick={() => setIsOpen((cur) => !cur)}>
             <List.ItemStart>
               <MoreHorizCircle className="h-[18px] w-[18px]" />
@@ -116,8 +116,8 @@ export function SidebarWithLogo() {
               </List.Item>
             </List>
           </Collapse>
-          <hr className="-mx-3 my-3 border-secondary-main dark:border-secondary-dm-main" />
-          <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+          <hr className="-mx-3 my-3 border-secondary-main" />
+          <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
             <List.ItemStart>
               <LogOut className="h-[18px] w-[18px]" />
             </List.ItemStart>
@@ -128,16 +128,13 @@ export function SidebarWithLogo() {
       <Card.Footer className="mt-8">
         <Card color="primary">
           <Card.Header className="m-3">
-            <SelectFace3d className="h-10 w-10 text-primary-content dark:text-primary-dm-content" />
+            <SelectFace3d className="h-10 w-10 text-primary-content" />
           </Card.Header>
           <Card.Body>
             <Typography variant="h6" color="secondary" className="mb-1">
               Upgrade to PRO
             </Typography>
-            <Typography
-              variant="small"
-              className="text-secondary-dark dark:text-primary-light"
-            >
+            <Typography variant="small" className="text-secondary-dark">
               Upgrade to Material Tailwind PRO and get even more components,
               plugins, advanced features and premium.
             </Typography>

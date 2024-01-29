@@ -16,9 +16,7 @@ export function ProfileCard() {
       />
       <Card.Body className="text-center">
         <Typography variant="h5">Alex Andrew</Typography>
-        <Typography className="my-1 text-gray-600 dark:text-gray-400">
-          CEO & Co-Founder
-        </Typography>
+        <Typography className="my-1 text-gray-600">CEO & Co-Founder</Typography>
       </Card.Body>
       <Card.Footer className="flex items-center justify-center gap-1">
         <Tooltip>

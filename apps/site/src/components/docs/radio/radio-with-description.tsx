@@ -9,10 +9,7 @@ export function RadioWithDescription() {
           <Typography color="gray" className="font-semibold">
             HTML Version
           </Typography>
-          <Typography
-            variant="small"
-            className="text-gray-500 dark:text-gray-400"
-          >
+          <Typography variant="small" className="text-gray-500">
             @material-tailwind/html, packed with rich components and widgets.
           </Typography>
         </label>
@@ -23,10 +20,7 @@ export function RadioWithDescription() {
           <Typography color="gray" className="font-semibold">
             React Version
           </Typography>
-          <Typography
-            variant="small"
-            className="text-gray-500 dark:text-gray-400"
-          >
+          <Typography variant="small" className="text-gray-500">
             @material-tailwind/react, packed with rich components and widgets.
           </Typography>
         </label>

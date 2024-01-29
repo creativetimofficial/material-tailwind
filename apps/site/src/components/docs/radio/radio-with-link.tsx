@@ -8,7 +8,7 @@ export function RadioWithLink() {
         <Typography
           as="label"
           htmlFor="radio-link-agreen"
-          className="flex gap-1 text-gray-500 dark:text-gray-400"
+          className="flex gap-1 text-gray-500"
         >
           I agree with the
           <Typography as="a" href="#" color="info">
@@ -21,7 +21,7 @@ export function RadioWithLink() {
         <Typography
           as="label"
           htmlFor="radio-link-disagree"
-          className="flex gap-1 text-gray-500 dark:text-gray-400"
+          className="flex gap-1 text-gray-500"
         >
           I disagree with the
           <Typography as="a" href="#" color="info">

@@ -6,11 +6,7 @@ export function CheckboxWithLabel() {
   return (
     <div className="flex items-center gap-2">
       <Checkbox id={ID} />
-      <Typography
-        as="label"
-        htmlFor={ID}
-        className="text-gray-500 dark:text-gray-400"
-      >
+      <Typography as="label" htmlFor={ID} className="text-gray-500">
         Remember Me
       </Typography>
     </div>

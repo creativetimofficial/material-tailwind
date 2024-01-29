@@ -7,7 +7,7 @@ export function SpeedDialDemo() {
       <Tooltip.Trigger as={IconButton} isCircular>
         <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
       </Tooltip.Trigger>
-      <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none dark:bg-transparent">
+      <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
         <Tooltip placement="left">
           <Tooltip.Trigger as={IconButton} isCircular color="secondary">
             <Home className="h-[18px] w-[18px]" />

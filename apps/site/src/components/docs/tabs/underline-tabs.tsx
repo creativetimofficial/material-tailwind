@@ -3,7 +3,7 @@ import { Tabs } from "@material-tailwind/react/dist";
 export function UnderlineTabs() {
   return (
     <Tabs defaultValue="html">
-      <Tabs.List className="w-full rounded-none border-b border-secondary-dark bg-transparent py-0 dark:border-secondary-dm-main dark:bg-transparent">
+      <Tabs.List className="w-full rounded-none border-b border-secondary-dark bg-transparent py-0">
         <Tabs.Trigger className="w-full" value="html">
           HTML
         </Tabs.Trigger>
@@ -19,7 +19,7 @@ export function UnderlineTabs() {
         <Tabs.Trigger className="w-full" value="svelte">
           Svelte
         </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="dark:bg-bg-transparent rounded-none border-b-2 border-primary-main bg-transparent shadow-none dark:border-primary-dm-main" />
+        <Tabs.TriggerIndicator className="rounded-none border-b-2 border-primary-main bg-transparent shadow-none" />
       </Tabs.List>
       <Tabs.Panel value="html">
         It really matters and then like it really doesn't matter. What matters

@@ -29,18 +29,14 @@ export function FooterWithLogo() {
         <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {LINKS.map(({ title, href }) => (
             <li>
-              <Typography
-                as="a"
-                href={href}
-                className="hover:text-info-main dark:text-info-dm-main"
-              >
+              <Typography as="a" href={href} className="hover:text-info-main">
                 {title}
               </Typography>
             </li>
           ))}
         </ul>
       </div>
-      <hr className="my-4 border-secondary-dark dark:border-secondary-main" />
+      <hr className="my-4 border-secondary-dark" />
       <Typography className="text-center">
         &copy; {YEAR} Material Tailwind
       </Typography>

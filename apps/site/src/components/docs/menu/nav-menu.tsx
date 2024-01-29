@@ -9,10 +9,7 @@ const NavItem = React.forwardRef<any, any>(
         <Typography as="h6" className="font-semibold">
           {title}
         </Typography>
-        <Typography
-          variant="small"
-          className="text-gray-600 dark:text-gray-400"
-        >
+        <Typography variant="small" className="text-gray-600">
           {description}
         </Typography>
       </Menu.Item>

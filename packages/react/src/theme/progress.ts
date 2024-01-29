@@ -8,8 +8,7 @@ export const progressTheme = {
     size: "md",
     color: "primary",
   },
-  baseStyle:
-    "w-full bg-secondary-dark block rounded-full overflow-hidden dark:bg-secondary-dm-main",
+  baseStyle: "w-full bg-secondary-dark block rounded-full overflow-hidden",
   size: {
     sm: "h-2",
     md: "h-4",
@@ -20,11 +19,11 @@ export const progressTheme = {
 export const progressBarTheme = {
   baseStyle: "h-full rounded-none",
   color: {
-    primary: "bg-primary-main dark:bg-primary-dm-main",
-    secondary: "bg-secondary-main dark:bg-secondary-dm-dark",
-    info: "bg-info-main dark:bg-info-dm-main",
-    success: "bg-success-main dark:bg-success-dm-main",
-    warning: "bg-warning-main dark:bg-warning-dm-main",
-    error: "bg-error-main dark:bg-error-dm-main",
+    primary: "bg-primary-main",
+    secondary: "bg-secondary-main",
+    info: "bg-info-main",
+    success: "bg-success-main",
+    warning: "bg-warning-main",
+    error: "bg-error-main",
   },
 };

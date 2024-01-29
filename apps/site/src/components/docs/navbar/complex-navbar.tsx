@@ -62,7 +62,7 @@ function ProfileMenu() {
         src="https://dub.sh/iu8bOfU"
         alt="profile-picture"
         size="sm"
-        className="border border-primary-main p-0.5 lg:ml-auto dark:border-primary-dm-main"
+        className="border border-primary-main p-0.5 lg:ml-auto"
       />
       <Menu.Content>
         <Menu.Item>
@@ -74,8 +74,8 @@ function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark dark:border-secondary-dm-main" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10 dark:text-error-dm-main dark:hover:bg-error-dm-main/10 dark:focus:bg-error-dm-main/10">
+        <hr className="-mx-1 my-1 border-secondary-dark" />
+        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -91,10 +91,7 @@ const MenuItem = React.forwardRef<any, any>(
         <Typography as="h6" className="font-semibold">
           {title}
         </Typography>
-        <Typography
-          variant="small"
-          className="text-gray-600 dark:text-gray-400"
-        >
+        <Typography variant="small" className="text-gray-600">
           {description}
         </Typography>
       </List.Item>
@@ -123,7 +120,7 @@ export function ComplexNavbar() {
         >
           Material Tailwind
         </Typography>
-        <hr className="mx-1 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block dark:border-secondary-dm-main" />
+        <hr className="mx-1 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         <div className="hidden lg:block">
           <List className="mt-4 flex flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
             <Tooltip placement="bottom" interactive>
@@ -138,7 +135,7 @@ export function ComplexNavbar() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl shadow-primary-main/[0.025] dark:border-secondary-dm-main dark:bg-primary-dark dark:shadow-primary-main/5">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl shadow-primary-main/[0.025]">
                 <Card
                   color="primary"
                   className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-content shadow-none"

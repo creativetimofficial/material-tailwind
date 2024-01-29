@@ -16,7 +16,7 @@ export function PopoverWithDescription() {
             as="a"
             href="#"
             variant="h6"
-            className="hover:text-info-main dark:hover:text-info-dm-main"
+            className="hover:text-info-main"
           >
             @material-tailwind
           </Typography>
@@ -24,38 +24,26 @@ export function PopoverWithDescription() {
             <Chip.Label>Public</Chip.Label>
           </Chip>
         </div>
-        <Typography
-          variant="small"
-          className="text-gray-600 dark:text-gray-400"
-        >
+        <Typography variant="small" className="text-gray-600">
           @material-tailwind is an easy-to-use components library for Tailwind
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-4">
           <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-info-main dark:bg-info-dm-main" />
-            <Typography
-              variant="small"
-              className="text-gray-600 dark:text-gray-400"
-            >
+            <span className="h-3 w-3 rounded-full bg-info-main" />
+            <Typography variant="small" className="text-gray-600">
               TypeScript
             </Typography>
           </div>
           <div className="flex items-center gap-1">
-            <StarSolid className="h-4 w-4 text-warning-main dark:text-warning-dm-main" />
-            <Typography
-              variant="small"
-              className="text-gray-600 dark:text-gray-400"
-            >
+            <StarSolid className="h-4 w-4 text-warning-main" />
+            <Typography variant="small" className="text-gray-600">
               1,480
             </Typography>
           </div>
           <div className="flex items-center gap-1">
-            <CheckCircleSolid className="h-4 w-4 text-success-main dark:text-success-dm-main" />
-            <Typography
-              variant="small"
-              className="text-gray-600 dark:text-gray-400"
-            >
+            <CheckCircleSolid className="h-4 w-4 text-success-main" />
+            <Typography variant="small" className="text-gray-600">
               Veritied
             </Typography>
           </div>

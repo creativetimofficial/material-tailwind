@@ -6,11 +6,7 @@ export function SwitchWithLabel() {
   return (
     <div className="flex items-center gap-2">
       <Switch id={ID} />
-      <Typography
-        as="label"
-        htmlFor={ID}
-        className="text-gray-500 dark:text-gray-400"
-      >
+      <Typography as="label" htmlFor={ID} className="text-gray-500">
         Dark Mode
       </Typography>
     </div>

@@ -35,7 +35,7 @@ function NavList() {
             as="a"
             href={href}
             variant="small"
-            className="p-1 hover:text-info-main dark:hover:text-info-dm-main"
+            className="p-1 hover:text-info-main"
           >
             {title}
           </Typography>

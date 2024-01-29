@@ -13,16 +13,16 @@ export function Docs({ children }: { children: React.ReactNode }) {
         <div className="mx-auto max-w-7xl">
           <Sidenav />
           <div ref={contentRef} className="mt-[105px] px-4 lg:mx-60 lg:px-8">
-            <div className="mb-8 mr-60 flex items-center gap-2 py-2 text-sm text-gray-500 dark:text-gray-400">
-              <span className="cursor-pointer transition-colors duration-300 hover:text-gray-950 dark:hover:text-gray-200">
+            <div className="mb-8 mr-60 flex items-center gap-2 py-2 text-sm text-gray-500">
+              <span className="cursor-pointer transition-colors duration-300 hover:text-gray-950">
                 Components
               </span>
               <NavArrowRight className="h-4 w-4" />
-              <span className="cursor-pointer transition-colors duration-300 hover:text-gray-950 dark:hover:text-gray-200">
+              <span className="cursor-pointer transition-colors duration-300 hover:text-gray-950">
                 Inputs
               </span>
               <NavArrowRight className="h-4 w-4" />
-              <span className="text-gray-950 dark:text-gray-100">Button</span>
+              <span className="text-gray-950">Button</span>
             </div>
             {children}
             <Toc

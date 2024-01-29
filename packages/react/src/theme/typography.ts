@@ -21,11 +21,11 @@ export const typographyTheme = {
   },
   color: {
     inherit: "text-inherit",
-    primary: "text-primary-main dark:text-primary-dm-main",
-    secondary: "text-secondary-main dark:text-secondary-dm-main",
-    info: "text-info-main dark:text-info-dm-main",
-    success: "text-success-main dark:text-success-dm-main",
-    warning: "text-warning-main dark:text-warning-dm-main",
-    error: "text-error-main dark:text-error-dm-main",
+    primary: "text-primary-main",
+    secondary: "text-secondary-main",
+    info: "text-info-main",
+    success: "text-success-main",
+    warning: "text-warning-main",
+    error: "text-error-main",
   },
 };

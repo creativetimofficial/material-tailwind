@@ -15,11 +15,7 @@ export function RadioWithCustomIcon() {
             className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
           />
         </Radio>
-        <Typography
-          as="label"
-          htmlFor="javascript"
-          className="text-gray-500 dark:text-gray-400"
-        >
+        <Typography as="label" htmlFor="javascript" className="text-gray-500">
           JavaScript
         </Typography>
       </div>
@@ -32,11 +28,7 @@ export function RadioWithCustomIcon() {
             className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
           />
         </Radio>
-        <Typography
-          as="label"
-          htmlFor="typescript"
-          className="text-gray-500 dark:text-gray-400"
-        >
+        <Typography as="label" htmlFor="typescript" className="text-gray-500">
           TypeScript
         </Typography>
       </div>

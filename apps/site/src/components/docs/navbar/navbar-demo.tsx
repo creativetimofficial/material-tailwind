@@ -47,7 +47,7 @@ function NavList() {
             as="a"
             href={href}
             variant="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info-main dark:hover:text-info-dm-main"
+            className="flex items-center gap-x-2 p-1 hover:text-info-main"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -79,7 +79,7 @@ export function NavbarDemo() {
         >
           Material Tailwind
         </Typography>
-        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block dark:border-secondary-dm-main" />
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         <div className="hidden lg:block">
           <NavList />
         </div>

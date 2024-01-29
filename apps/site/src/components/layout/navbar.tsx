@@ -25,7 +25,7 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
     <span
       {...rest}
-      className="group grid h-8 w-8 cursor-pointer place-items-center rounded-md text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500 dark:text-gray-100 dark:hover:text-blue-500"
+      className="group grid h-8 w-8 cursor-pointer place-items-center rounded-md text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500"
     >
       <Icon className="h-5 w-5 stroke-[1.5]" />
     </span>
@@ -50,7 +50,7 @@ function NavItem({
   };
 
   return (
-    <span className="group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500 dark:text-gray-100 dark:hover:text-blue-500">
+    <span className="group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500">
       <i className="relative h-[18px] w-[18px]">
         <Icon
           className={clsx(styles.icon, {
@@ -99,7 +99,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/50 p-4 backdrop-blur dark:border-gray-900 dark:bg-gray-950/50">
+    <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/50 p-4 backdrop-blur">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
         <Link
           target="_blank"

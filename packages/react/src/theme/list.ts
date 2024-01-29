@@ -14,7 +14,7 @@ export const listItemTheme = {
     ripple: true,
   },
   baseStyle:
-    "flex items-center py-1.5 px-2.5 rounded-md align-middle select-none font-sans font-normal transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 dark:text-primary-dm-main dark:hover:bg-primary-dm-main/10 dark:focus:bg-primary-dm-main/10 data-[selected=true]:bg-primary-main/10 dark:data-[selected=true]:bg-primary-dm-main/10",
+    "flex items-center py-1.5 px-2.5 rounded-md align-middle select-none font-sans font-normal transition-all duration-300 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 data-[selected=true]:bg-primary-main/10",
 };
 
 export const listItemStartTheme = {

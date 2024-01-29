@@ -18,7 +18,7 @@ const MenuItem = React.forwardRef<any, any>(
           </Typography>
           <Typography
             variant="small"
-            className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400"
+            className="flex items-center gap-1 text-sm text-gray-600"
           >
             <Clock className="h-3.5 w-3.5" />
             {date}

@@ -19,12 +19,12 @@ export function DialogDemo() {
               size="sm"
               variant="ghost"
               isCircular
-              className="absolute top-2 right-2"
+              className="absolute right-2 top-2"
             >
               <Xmark className="h-5 w-5" />
             </Dialog.DismissTrigger>
           </div>
-          <Typography className="mb-6 mt-3 text-gray-600 dark:text-gray-400">
+          <Typography className="mb-6 mt-3 text-gray-600">
             Material Tailwind is an open-source library that uses the power of
             Tailwind CSS and React to help you build unique web projects faster
             and easier. The stunning design inspired by Material Design is a

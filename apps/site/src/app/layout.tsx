@@ -16,7 +16,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.className} scroll-smooth`}>
-      <body className="h-screen w-screen dark:bg-gray-950">
+      <body className="h-screen w-screen">
         <Docs>{children}</Docs>
       </body>
     </html>

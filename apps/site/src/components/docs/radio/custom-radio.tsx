@@ -9,14 +9,10 @@ export function CustomRadio() {
           id="black"
           name="color"
           className="rounded"
-          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
+          inputClassName="rounded bg-gray-200"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
-        <Typography
-          as="label"
-          htmlFor="black"
-          className="text-gray-500 dark:text-gray-400"
-        >
+        <Typography as="label" htmlFor="black" className="text-gray-500">
           Black
         </Typography>
       </div>
@@ -25,14 +21,10 @@ export function CustomRadio() {
           id="white"
           name="color"
           className="rounded"
-          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
+          inputClassName="rounded bg-gray-200"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
-        <Typography
-          as="label"
-          htmlFor="white"
-          className="text-gray-500 dark:text-gray-400"
-        >
+        <Typography as="label" htmlFor="white" className="text-gray-500">
           White
         </Typography>
       </div>

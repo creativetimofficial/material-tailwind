@@ -8,7 +8,7 @@ export function DisabledRadio() {
         <Typography
           as="theme"
           htmlFor="light"
-          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+          className="pointer-events-none select-none text-gray-500/50"
         >
           Light
         </Typography>
@@ -18,7 +18,7 @@ export function DisabledRadio() {
         <Typography
           as="theme"
           htmlFor="dark"
-          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+          className="pointer-events-none select-none text-gray-500/50"
         >
           Dark
         </Typography>

@@ -48,7 +48,7 @@ function NavList() {
             as="a"
             href={href}
             variant="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info-main dark:hover:text-info-dm-main"
+            className="flex items-center gap-x-2 p-1 hover:text-info-main"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -84,7 +84,7 @@ export function StickyNavbar() {
           >
             Material Tailwind
           </Typography>
-          <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block dark:border-secondary-dm-main" />
+          <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
           <div className="hidden lg:block">
             <NavList />
           </div>
@@ -114,49 +114,49 @@ export function StickyNavbar() {
       <main className="w-full">
         <div className="mx-auto max-w-xl">
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
           </div>
           <div className="mb-6 max-w-xl">
-            <div className="flex h-56 w-full items-center justify-center rounded bg-secondary-dark dark:bg-secondary-dm-main">
-              <MediaImage className="h-16 w-16 text-primary-light dark:text-primary-dm-light" />
+            <div className="flex h-56 w-full items-center justify-center rounded bg-secondary-dark">
+              <MediaImage className="h-16 w-16 text-primary-light" />
             </div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark dark:bg-secondary-dm-main"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
           </div>
         </div>
       </main>

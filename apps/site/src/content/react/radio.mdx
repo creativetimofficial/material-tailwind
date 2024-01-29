@@ -25,13 +25,13 @@ export function RadioDemo() {
     <div className="flex gap-10">
       <div className="flex items-center gap-2">
         <Radio id="html" name="type" />
-        <Typography as="label" htmlFor="html" className="text-gray-500 dark:text-gray-400">
+        <Typography as="label" htmlFor="html" className="text-gray-500">
           HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
         <Radio id="react" name="type" />
-        <Typography as="label" htmlFor="react" className="text-gray-500 dark:text-gray-400">
+        <Typography as="label" htmlFor="react" className="text-gray-500">
           React
         </Typography>
       </div>
@@ -90,7 +90,7 @@ export function RadioWithCustomIcon() {
         <Typography
           as="label"
           htmlFor="javascript"
-          className="text-gray-500 dark:text-gray-400"
+          className="text-gray-500"
         >
           JavaScript
         </Typography>
@@ -107,7 +107,7 @@ export function RadioWithCustomIcon() {
         <Typography
           as="label"
           htmlFor="typescript"
-          className="text-gray-500 dark:text-gray-400"
+          className="text-gray-500"
         >
           TypeScript
         </Typography>
@@ -134,7 +134,7 @@ export function DisabledRadio() {
         <Typography
           as="theme"
           htmlFor="light"
-          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+          className="pointer-events-none select-none text-gray-500/50/50"
         >
           Light
         </Typography>
@@ -144,7 +144,7 @@ export function DisabledRadio() {
         <Typography
           as="theme"
           htmlFor="dark"
-          className="pointer-events-none select-none text-gray-500/50 dark:text-gray-400/50"
+          className="pointer-events-none select-none text-gray-500/50/50"
         >
           Dark
         </Typography>
@@ -171,7 +171,7 @@ export function RadioWithLink() {
         <Typography
           as="label"
           htmlFor="radio-link-agreen"
-          className="flex gap-1 text-gray-500 dark:text-gray-400"
+          className="flex gap-1 text-gray-500"
         >
           I agree with the
           <Typography as="a" href="#" color="info">
@@ -184,7 +184,7 @@ export function RadioWithLink() {
         <Typography
           as="label"
           htmlFor="radio-link-disagree"
-          className="flex gap-1 text-gray-500 dark:text-gray-400"
+          className="flex gap-1 text-gray-500"
         >
           I disagree with the
           <Typography as="a" href="#" color="info">
@@ -217,7 +217,7 @@ export function RadioWithDescription() {
           </Typography>
           <Typography
             variant="small"
-            className="text-gray-500 dark:text-gray-400"
+            className="text-gray-500"
           >
             @material-tailwind/html, packed with rich components and widgets.
           </Typography>
@@ -231,7 +231,7 @@ export function RadioWithDescription() {
           </Typography>
           <Typography
             variant="small"
-            className="text-gray-500 dark:text-gray-400"
+            className="text-gray-500"
           >
             @material-tailwind/react, packed with rich components and widgets.
           </Typography>
@@ -260,13 +260,13 @@ export function CustomRadio() {
           id="black"
           name="color"
           className="rounded"
-          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
+          inputClassName="rounded bg-gray-200"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography
           as="label"
           htmlFor="black"
-          className="text-gray-500 dark:text-gray-400"
+          className="text-gray-500"
         >
           Black
         </Typography>
@@ -276,13 +276,13 @@ export function CustomRadio() {
           id="white"
           name="color"
           className="rounded"
-          inputClassName="rounded bg-gray-200 dark:bg-gray-900"
+          inputClassName="rounded bg-gray-200"
           icon={<Check className="h-4 w-4 stroke-2" />}
         />
         <Typography
           as="label"
           htmlFor="white"
-          className="text-gray-500 dark:text-gray-400"
+          className="text-gray-500"
         >
           White
         </Typography>

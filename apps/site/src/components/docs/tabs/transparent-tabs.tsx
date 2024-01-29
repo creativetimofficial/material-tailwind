@@ -3,7 +3,7 @@ import { Tabs } from "@material-tailwind/react/dist";
 export function TransparentTabs() {
   return (
     <Tabs defaultValue="html">
-      <Tabs.List className="w-full bg-transparent dark:bg-transparent">
+      <Tabs.List className="w-full bg-transparent">
         <Tabs.Trigger className="w-full" value="html">
           HTML
         </Tabs.Trigger>
@@ -19,7 +19,7 @@ export function TransparentTabs() {
         <Tabs.Trigger className="w-full" value="svelte">
           Svelte
         </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="bg-primary-main/10 shadow-none dark:bg-primary-dm-main/10" />
+        <Tabs.TriggerIndicator className="bg-primary-main/10 shadow-none" />
       </Tabs.List>
       <Tabs.Panel value="html">
         It really matters and then like it really doesn't matter. What matters

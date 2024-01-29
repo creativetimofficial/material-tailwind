@@ -25,7 +25,7 @@ function ListItem({ href, icon: Icon, children }: ListItemProps) {
       <Link
         href={href}
         target="_blank"
-        className="flex items-center gap-2 px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-200"
+        className="flex items-center gap-2 px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950"
       >
         <Icon className="h-[18px] w-[18px] stroke-[1.5]" />
         {children}
@@ -43,23 +43,17 @@ interface TocItemProps {
 
 function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
   return (
-    <li
-      className={
-        isSubHeading
-          ? "ml-3 border-l border-gray-200 py-1 dark:border-gray-900"
-          : ""
-      }
-    >
+    <li className={isSubHeading ? "ml-3 border-l border-gray-200 py-1" : ""}>
       <Link
         href={`#${id}`}
         className={clsx(
-          "block text-sm transition-colors duration-300 hover:text-gray-950 dark:hover:text-gray-200",
+          "block text-sm transition-colors duration-300 hover:text-gray-950",
           {
-            "font-normal text-gray-500 dark:text-gray-400": !isVisible,
-            "font-medium text-blue-500 dark:text-blue-500": isVisible,
+            "font-normal text-gray-500": !isVisible,
+            "font-medium text-blue-500": isVisible,
             "border-blue-500": isVisible && isSubHeading,
             "px-2 py-1": !isSubHeading,
-            "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-2 hover:border-gray-950 dark:hover:border-gray-200":
+            "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-2 hover:border-gray-950":
               isSubHeading,
           },
         )}
@@ -134,18 +128,16 @@ export function Toc({
 
   return (
     <div className="fixed bottom-0 right-[max(0px,calc(50%-42rem))] top-[65px] z-20 hidden w-60 overflow-y-scroll pb-10 lg:block">
-      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-white from-50% to-transparent dark:from-gray-950" />
-      <ul className="border-b border-gray-200 pb-4 dark:border-gray-900">
-        <li className="p-2 text-sm font-medium text-gray-950 dark:text-gray-100">
-          On this page
-        </li>
+      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-white from-50% to-transparent" />
+      <ul className="border-b border-gray-200 pb-4">
+        <li className="p-2 text-sm font-medium text-gray-950">On this page</li>
         <ul className="mx-0.5">{getToc()}</ul>
       </ul>
       <ul
         className={clsx(
           "mx-0.5 border-b py-4 pr-2 transition-colors duration-300",
           {
-            "border-gray-200 dark:border-gray-900": isScrolled,
+            "border-gray-200": isScrolled,
             "border-transparent": !isScrolled,
           },
         )}
@@ -177,7 +169,7 @@ export function Toc({
           tabIndex={0}
           onClick={scrollToTop}
           onKeyDown={scrollToTopOnEnter}
-          className="flex items-center gap-2 px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-200"
+          className="flex items-center gap-2 px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950"
         >
           <ArrowUpCircle className="h-[18px] w-[18px] stroke-[1.5]" />
           Scroll to top

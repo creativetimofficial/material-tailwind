@@ -18,12 +18,12 @@ export const tabsTheme = {
 
 export const tabsListTheme = {
   baseStyle:
-    "flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-secondary-main dark:bg-secondary-dm-main/30",
+    "flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-secondary-main",
 };
 
 export const tabsTriggerTheme = {
   baseStyle:
-    "inline-flex relative z-[2] py-1.5 px-4 items-center justify-center align-middle text-primary-dark dark:text-secondary-light select-none font-sans font-medium text-center aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "inline-flex relative z-[2] py-1.5 px-4 items-center justify-center align-middle text-primary-dark select-none font-sans font-medium text-center aria-disabled:opacity-50 aria-disabled:pointer-events-none",
 };
 
 export const tabsPanelTheme = {
@@ -32,5 +32,5 @@ export const tabsPanelTheme = {
 
 export const tabsTriggerIndicatorTheme = {
   baseStyle:
-    "bg-white dark:bg-primary-dark rounded shadow-sm shadow-primary-dark/10 dark:shadow-transparent transition-all duration-300 ease-in",
+    "bg-white rounded shadow-sm shadow-primary-dark/10 transition-all duration-300 ease-in",
 };
