@@ -74,7 +74,6 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
     const styles = twMerge(
       theme.baseStyle,
       theme["variant"][variant][color],
-      isPill && theme.isPill,
       className,
     );
 
@@ -93,6 +92,7 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
         ref={ref}
         role="alert"
         data-open={open}
+        data-pill={isPill}
         className={styles}
       >
         <AlertContext.Provider value={contextValue}>
@@ -195,10 +195,8 @@ export const AlertDismissTrigger = React.forwardRef<
     return typeof onClick === "function" && onClick(e);
   };
 
-  const styles = twMerge(
+  const styles = children ? className : twMerge(
     theme.baseStyle,
-    theme["variant"][variant || "solid"][color || "primary"],
-    isPill && theme.isPill,
     className,
   );
 

@@ -19,6 +19,7 @@ export function DialogDemo() {
               size="sm"
               variant="ghost"
               isCircular
+              className="absolute top-2 right-2"
             >
               <Xmark className="h-5 w-5" />
             </Dialog.DismissTrigger>
@@ -32,9 +33,9 @@ export function DialogDemo() {
             quickly.
           </Typography>
           <div className="mb-1 flex items-center justify-end gap-2">
-            <Button variant="ghost" color="error">
+            <Dialog.DismissTrigger as={Button} variant="ghost" color="error">
               Cancel
-            </Button>
+            </Dialog.DismissTrigger>
             <Button>Get Started</Button>
           </div>
         </Dialog.Content>

@@ -98,7 +98,7 @@ export const ButtonGroup = React.forwardRef<
     );
 
     return (
-      <Element {...rest} ref={ref} className={styles}>
+      <Element {...rest} ref={ref} data-variant={variant} data-full-width={isFullWidth} className={styles}>
         {React.Children.map(
           children,
           (child) =>
@@ -110,6 +110,7 @@ export const ButtonGroup = React.forwardRef<
               ripple,
               isPill,
               isFullWidth,
+              "data-variant": variant,
               ...child.props,
             } as ButtonProps),
         )}

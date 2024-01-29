@@ -15,8 +15,7 @@ export const alertTheme = {
     rounded: false,
   },
   baseStyle:
-    "relative flex w-full items-center border select-none text-base font-sans font-medium rounded-md p-2",
-  rounded: "rounded-full",
+    "relative flex w-full items-center border select-none text-base font-sans font-medium rounded-md p-2 data-[pill=true]:rounded-full",
   variant: {
     ghost: {
       primary:
@@ -84,63 +83,7 @@ export const alertIconTheme = {
 export const alertDismissTriggerTheme = {
   defaultProps: {
     ripple: true,
-    isPill: false,
   },
   baseStyle:
-    "grid place-items-center shrink-0 w-5 h-5 border me-1 ms-3 stroke-[1.5] rounded",
-  isPill: "rounded-full",
-  variant: {
-    ghost: {
-      primary:
-        "bg-primary-main/25 border-transparent text-primary-main dark:bg-primary-dm-main/25 dark:text-primary-dm-main",
-      secondary:
-        "bg-secondary-main/25 border-transparent text-secondary-content dark:bg-secondary-dm-main/25 dark:text-secondary-dm-content",
-      info: "bg-info-main/25 border-transparent text-info-main dark:bg-info-dm-main/25 dark:text-info-dm-main",
-      success:
-        "bg-success-main/25 border-transparent text-success-main dark:bg-success-dm-main/25 dark:text-success-dm-main",
-      warning:
-        "bg-warning-main/25 border-transparent text-warning-dark dark:bg-warning-dm-main/25 dark:text-warning-dm-dark",
-      error:
-        "bg-error-main/25 border-transparent text-error-main dark:bg-error-dm-main/25 dark:text-error-dm-main",
-    },
-    solid: {
-      primary:
-        "bg-primary-dark border-primary-dark text-primary-content dark:bg-primary-dm-dark dark:border-primary-dm-dark dark:text-primary-dm-content",
-      secondary:
-        "bg-secondary-dark border-secondary-dark text-secondary-content dark:bg-secondary-dm-dark dark:border-secondary-dm-dark dark:text-secondary-dm-content",
-      info: "bg-info-dark border-info-dark text-info-content dark:bg-info-dm-dark dark:border-info-dm-dark dark:text-info-dm-content",
-      success:
-        "bg-success-dark border-success-dark text-success-content dark:bg-success-dm-dark dark:border-success-dm-dark dark:text-success-dm-content",
-      warning:
-        "bg-warning-dark border-warning-dark text-warning-content dark:bg-warning-dm-dark dark:border-warning-dm-dark dark:text-warning-dm-content",
-      error:
-        "bg-error-dark border-error-dark text-error-content dark:bg-error-dm-dark dark:border-error-dm-dark dark:text-error-dm-content",
-    },
-    outline: {
-      primary:
-        "bg-transparent border-primary-main text-primary-main dark:border-primary-dm-main dark:text-primary-dm-main",
-      secondary:
-        "bg-transparent border-secondary-dark text-secondary-content dark:border-secondary-dm-dark dark:text-secondary-dm-content",
-      info: "bg-transparent border-info-main text-info-main dark:border-info-dm-main dark:text-info-dm-main",
-      success:
-        "bg-transparent border-success-main text-success-main dark:border-success-dm-main dark:text-success-dm-main",
-      warning:
-        "bg-transparent border-warning-dark text-warning-dark dark:border-warning-dm-dark dark:text-warning-dm-dark",
-      error:
-        "bg-transparent border-error-main text-error-main dark:border-error-dm-main dark:text-error-dm-main",
-    },
-    gradient: {
-      primary:
-        "bg-primary-dark border-primary-dark text-primary-content dark:bg-primary-dm-dark dark:border-primary-dm-dark dark:text-primary-dm-content",
-      secondary:
-        "bg-secondary-dark border-secondary-dark text-secondary-content dark:bg-secondary-dm-dark dark:border-secondary-dm-dark dark:text-secondary-dm-content",
-      info: "bg-info-dark border-info-dark text-info-content dark:bg-info-dm-dark dark:border-info-dm-dark dark:text-info-dm-content",
-      success:
-        "bg-success-dark border-success-dark text-success-content dark:bg-success-dm-dark dark:border-success-dm-dark dark:text-success-dm-content",
-      warning:
-        "bg-warning-dark border-warning-dark text-warning-content dark:bg-warning-dm-dark dark:border-warning-dm-dark dark:text-warning-dm-content",
-      error:
-        "bg-error-dark border-error-dark text-error-content dark:bg-error-dm-dark dark:border-error-dm-dark dark:text-error-dm-content",
-    },
-  },
+    "grid place-items-center shrink-0 w-5 h-5 me-1 ms-3 rounded-full stroke-[1.5] text-inherit",
 };

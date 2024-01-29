@@ -50,5 +50,5 @@ export const dialogOverlayTheme = {
 };
 
 export const dialogDismissTriggerTheme = {
-  baseStyle: "absolute top-2 right-2",
+  baseStyle: "outline-none",
 };
