@@ -12,10 +12,10 @@ export const breadcrumbTheme = {
 
 export const breadcrumbLinkTheme = {
   baseStyle:
-    "inline-flex items-center gap-1.5 text-sm text-primary-main font-normal transition-colors duration-300 ease-in hover:text-info-main",
+    "inline-flex items-center gap-1.5 text-sm text-primary font-normal transition-colors duration-300 ease-in hover:text-info-main",
 };
 
 export const breadcrumbSeparatorTheme = {
   baseStyle:
-    "inline-block mx-1 text-sm select-none pointer-events-none opacity-50 text-primary-main",
+    "inline-block mx-1 text-sm select-none pointer-events-none opacity-50 text-primary",
 };

@@ -16,14 +16,14 @@ export const accordionItemTheme = {
     disabled: false,
   },
   baseStyle:
-    "group block w-full items-center justify-between cursor-pointer border-b border-secondary-dark aria-disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:select-none",
+    "group block w-full items-center justify-between cursor-pointer border-b border-border aria-disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:select-none",
 };
 
 export const accordionTriggerTheme = {
   baseStyle:
-    "flex items-center justify-between w-full py-3 text-left font-medium text-secondary-content",
+    "flex items-center justify-between w-full py-3 text-left font-medium text-secondary-foreground",
 };
 
 export const accordionContentTheme = {
-  baseStyle: "block pb-3 text-gray-600 h-0 data-[open=true]:h-auto",
+  baseStyle: "block pb-3 text-forground h-0 data-[open=true]:h-auto",
 };

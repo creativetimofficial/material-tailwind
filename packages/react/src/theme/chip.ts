@@ -22,43 +22,41 @@ export const chipTheme = {
   },
   variant: {
     ghost: {
-      primary: "bg-primary-main/10 border-transparent text-primary-a",
-      secondary:
-        "bg-secondary-main/10 border-transparent text-secondary-content",
-      info: "bg-info-main/10 border-transparent text-info-main",
-      success: "bg-success-main/10 border-transparent text-success-main",
-      warning: "bg-warning-main/10 border-transparent text-warning-dark",
-      error: "bg-error-main/10 border-transparent text-error-main",
+      primary: "bg-primary/10 border-transparent text-primary",
+      secondary: "bg-secondary/10 border-transparent text-secondary-foreground",
+      info: "bg-info/10 border-transparent text-info",
+      success: "bg-success/10 border-transparent text-success",
+      warning: "bg-warning/10 border-transparent text-warning",
+      error: "bg-error/10 border-transparent text-error",
     },
     solid: {
-      primary: "bg-primary-main border-primary-main text-primary-content",
-      secondary:
-        "bg-secondary-main border-secondary-main text-secondary-content",
-      info: "bg-info-main border-info-main text-info-content",
-      success: "bg-success-main border-success-main text-success-content",
-      warning: "bg-warning-main border-warning-main text-warning-content",
-      error: "bg-error-main border-error-main text-error-content",
+      primary: "bg-primary border-primary text-primary-foreground",
+      secondary: "bg-secondary border-secondary text-secondary-foreground",
+      info: "bg-info border-info text-info-foreground",
+      success: "bg-success border-success text-success-foreground",
+      warning: "bg-warning border-warning text-warning-foreground",
+      error: "bg-error border-error text-error-foreground",
     },
     outline: {
-      primary: "bg-transparent border-primary-main text-primary-main",
-      secondary: "bg-transparent border-secondary-dark text-secondary-content",
-      info: "bg-transparent border-info-main text-info-main",
-      success: "bg-transparent border-success-main text-success-main",
-      warning: "bg-transparent border-warning-dark text-warning-dark",
-      error: "bg-transparent border-error-main text-error-main",
+      primary: "bg-transparent border-primary text-primary",
+      secondary: "bg-transparent border-secondary text-secondary-foreground",
+      info: "bg-transparent border-info text-info",
+      success: "bg-transparent border-success text-success",
+      warning: "bg-transparent border-warning text-warning",
+      error: "bg-transparent border-error text-error",
     },
     gradient: {
       primary:
-        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary-main text-primary-content",
+        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground",
       secondary:
-        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary-main text-secondary-content",
-      info: "bg-gradient-to-tr from-info-dark to-info-light border-info-main text-info-content",
+        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground",
+      info: "bg-gradient-to-tr from-info-dark to-info-light border-info text-info-foreground",
       success:
-        "bg-gradient-to-tr from-success-dark to-success-light border-success-main text-success-content",
+        "bg-gradient-to-tr from-success-dark to-success-light border-success text-success-foreground",
       warning:
-        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning-main text-warning-content",
+        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground",
       error:
-        "bg-gradient-to-tr from-error-dark to-error-light border-error-main text-error-content",
+        "bg-gradient-to-tr from-error-dark to-error-light border-error text-error-foreground",
     },
   },
 };

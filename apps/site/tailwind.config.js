@@ -18,6 +18,12 @@ module.exports = {
       colors: {
         background: "rgb(var(--color-background) / <alpha-value>)",
         foreground: "rgb(var(--color-foreground) / <alpha-value>)",
+        surface: {
+          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
+          dark: "rgb(var(--color-surface-dark) / <alpha-value>)",
+          light: "rgb(var(--color-surface-light) / <alpha-value>)",
+          foreground: "rgb(var(--color-surface-foreground) / <alpha-value>)",
+        },
         primary: {
           DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
           dark: "rgb(var(--color-primary-dark) / <alpha-value>)",

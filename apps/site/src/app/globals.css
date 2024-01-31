@@ -9,7 +9,12 @@
     /* base colors */
     --color-background: 255 255 255;
     --color-foreground: 75 85 99;
-    --color-border: 229 231 235;
+
+    /* surface color */
+    --color-surface: 209 213 219;
+    --color-surface-dark: 3 7 18;
+    --color-surface-light: 229 231 235;
+    --color-surface-foreground: 31 41 55;
 
     /* primary color */
     --color-primary: 17 24 39;
@@ -36,9 +41,9 @@
     --color-success-foreground: 249 250 251;
 
     /* warning color */
-    --color-warning: 250 204 21;
-    --color-warning-dark: 234 179 8;
-    --color-warning-light: 253 224 71;
+    --color-warning: 234 179 8;
+    --color-warning-dark: 202 138 4;
+    --color-warning-light: 250 204 21;
     --color-warning-foreground: 3 7 18;
 
     /* error color */
@@ -56,9 +61,10 @@
     --color-background: 249 250 251;
     --color-foreground: 156 163 175;
     --color-border: 31 41 55;
+    --color-shadow: 0 0 0;
 
     /* primary color */
-    --color-secondary: 243 244 246;
+    --color-primary: 243 244 246;
     --color-primary-dark: 229 231 235;
     --color-primary-light: 249 250 251;
     --color-primary-foreground: 3 7 18;
@@ -82,9 +88,9 @@
     --color-success-foreground: 3 7 18;
 
     /* warning color */
-    --color-warning: 253 224 71;
-    --color-warning-dark: 250 204 21;
-    --color-warning-light: 254 240 138;
+    --color-warning: 250 204 21;
+    --color-warning-dark: 234 179 8;
+    --color-warning-light: 253 224 71;
     --color-warning-foreground: 3 7 18;
 
     /* error color */

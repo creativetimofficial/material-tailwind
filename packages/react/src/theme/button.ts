@@ -23,55 +23,55 @@ export const buttonTheme = {
   variant: {
     ghost: {
       primary:
-        "bg-transparent border-transparent text-primary-main hover:bg-primary-main/5 focus:bg-primary-main/5 hover:border-primary-main/5 focus:border-primary-main/5",
+        "bg-transparent border-transparent text-primary hover:bg-primary/5 hover:border-primary/5",
       secondary:
-        "bg-transparent border-transparent text-secondary-content hover:bg-secondary-main/10 focus:bg-secondary-main/10 hover:border-secondary-main/10 focus:border-secondary-main/10",
-      info: "bg-transparent border-transparent text-info-main hover:bg-info-main/10 focus:bg-info-main/10 hover:border-info-main/10 focus:border-info-main/10",
+        "bg-transparent border-transparent text-secondary-foreground hover:bg-secondary/10 hover:border-secondary/10",
+      info: "bg-transparent border-transparent text-info hover:bg-info/10 hover:border-info/10",
       success:
-        "bg-transparent border-transparent text-success-main hover:bg-success-main/10 focus:bg-success-main/10 hover:border-success-main/10 focus:border-success-main/10",
+        "bg-transparent border-transparent text-success hover:bg-success/10 hover:border-success/10",
       warning:
-        "bg-transparent border-transparent text-warning-dark hover:bg-warning-main/10 focus:bg-warning-main/10 hover:border-warning-main/10 focus:border-warning-main/10",
+        "bg-transparent border-transparent text-warning hover:bg-warning/10 hover:border-warning/10",
       error:
-        "bg-transparent border-transparent text-error-main hover:bg-error-main/10 focus:bg-error-main/10 hover:border-error-main/10 focus:border-error-main/10",
+        "bg-transparent border-transparent text-error hover:bg-error/10 hover:border-error/10",
     },
     solid: {
       primary:
-        "bg-primary-main border-primary-main text-primary-content hover:bg-primary-light focus:bg-primary-light hover:border-primary-light focus:border-primary-light",
+        "bg-primary border-primary text-primary-foreground hover:bg-primary-light hover:border-primary-light",
       secondary:
-        "bg-secondary-main border-secondary-main text-secondary-content hover:bg-secondary-light focus:bg-secondary-light hover:border-secondary-light focus:border-secondary-light",
-      info: "bg-info-main border-info-main text-info-content hover:bg-info-light focus:bg-info-light hover:border-info-light focus:border-info-light",
+        "bg-secondary border-secondary text-secondary-foreground hover:bg-secondary-light hover:border-secondary-light",
+      info: "bg-info border-info text-info-foreground hover:bg-info-light hover:border-info-light",
       success:
-        "bg-success-main border-success-main text-success-content hover:bg-success-light focus:bg-success-light hover:border-success-light focus:border-success-light",
+        "bg-success border-success text-success-foreground hover:bg-success-light hover:border-success-light",
       warning:
-        "bg-warning-main border-warning-main text-warning-content hover:bg-warning-light focus:bg-warning-light hover:border-warning-light focus:border-warning-light",
+        "bg-warning border-warning text-warning-foreground hover:bg-warning-light hover:border-warning-light",
       error:
-        "bg-error-main border-error-main text-error-content hover:bg-error-light focus:bg-error-light hover:border-error-light focus:border-error-light",
+        "bg-error border-error text-error-foreground hover:bg-error-light hover:border-error-light",
     },
     outline: {
       primary:
-        "bg-transparent border-primary-main text-primary-main hover:bg-primary-main focus:bg-primary-main hover:text-primary-content focus:text-primary-content hover:border-primary-main focus:border-primary-main",
+        "bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground",
       secondary:
-        "bg-transparent border-secondary-dark text-secondary-content hover:bg-secondary-main focus:bg-secondary-main hover:text-secondary-content focus:text-secondary-content hover:border-secondary-main focus:border-secondary-main",
-      info: "bg-transparent border-info-main text-info-main hover:bg-info-main focus:bg-info-main hover:text-info-content focus:text-info-content hover:border-info-main focus:border-info-main",
+        "bg-transparent border-secondary text-secondary-foreground hover:bg-secondary",
+      info: "bg-transparent border-info text-info hover:bg-info hover:text-info-foreground",
       success:
-        "bg-transparent border-success-main text-success-main hover:bg-success-main focus:bg-success-main hover:text-success-content focus:text-success-content hover:border-success-main focus:border-success-main",
+        "bg-transparent border-success text-success hover:bg-success hover:text-success-foreground",
       warning:
-        "bg-transparent border-warning-dark text-warning-dark hover:bg-warning-main focus:bg-warning-main hover:text-warning-content focus:text-warning-content hover:border-warning-main focus:border-warning-main",
+        "bg-transparent border-warning text-warning hover:bg-warning hover:text-warning-foreground",
       error:
-        "bg-transparent border-error-main text-error-main hover:bg-error-main focus:bg-error-main hover:text-error-content focus:text-error-content hover:border-error-main focus:border-error-main",
+        "bg-transparent border-error text-error hover:bg-error hover:text-error-foreground",
     },
     gradient: {
       primary:
-        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary-main text-primary-content hover:opacity-90 focus:opacity-90",
+        "bg-gradient-to-tr from-primary-dark to-primary-light border-primary text-primary-foreground hover:brightness-105",
       secondary:
-        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary-main text-secondary-content hover:opacity-90 focus:opacity-90",
-      info: "bg-gradient-to-tr from-info-dark to-info-light border-info-main text-info-content hover:opacity-90 focus:opacity-90",
+        "bg-gradient-to-tr from-secondary-dark to-secondary-light border-secondary text-secondary-foreground hover:brightness-105",
+      info: "bg-gradient-to-tr from-info-dark to-info-light border-info text-info-foreground hover:brightness-105",
       success:
-        "bg-gradient-to-tr from-success-dark to-success-light border-success-main text-success-content hover:opacity-90 focus:opacity-90",
+        "bg-gradient-to-tr from-success-dark to-success-light border-success text-success-foreground hover:brightness-105",
       warning:
-        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning-main text-warning-content hover:opacity-90 focus:opacity-90",
+        "bg-gradient-to-tr from-warning-dark to-warning-light border-warning text-warning-foreground hover:brightness-105",
       error:
-        "bg-gradient-to-tr from-error-dark to-error-light border-error-main text-error-content hover:opacity-90 focus:opacity-90",
+        "bg-gradient-to-tr from-error-dark to-error-light border-error text-error-foreground hover:brightness-105",
     },
   },
 };
