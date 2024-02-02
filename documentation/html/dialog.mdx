@@ -1,6 +1,6 @@
 ---
-title: Tailwind CSS Dialog - Material Tailwind
-description: Customise your web projects with our easy-to-use dialog component for Tailwind CSS using Material Design guidelines.
+title: Tailwind CSS Dialog/Modal - Material Tailwind
+description: Customise your web projects with our easy-to-use dialog (modal) component for Tailwind CSS using Material Design guidelines.
 navigation:
   [
     "dialog",
@@ -13,25 +13,32 @@ navigation:
     "dialog-backdrop-data-attributes",
     "dialog-data-attributes",
     "required-script",
+    "best-practices",
   ]
 github: dialog
 prev: carousel
 next: icon-button
 ---
 
-# Tailwind CSS Dialog
+# Tailwind CSS Dialog/Modal
 
-Use our Tailwind CSS dialog component to inform users about a task or important information that require decisions, or involves multiple tasks.
+Use our Tailwind CSS dialog (also known as modal) component to inform users about a task or important information that require decisions, or involves multiple tasks.
 
 A dialog is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
 
-See below our dialog example that you can use for your Tailwind CSS project.
+See below our modal examples styled with Tailwind CSS that you can use for your web or mobile project.
 
 You can initialize a new dialog by adding the <Code>data-dialog-target="`{dialog}`"</Code> data attribute to the trigger element, the <Code>data-dialog-backdrop="`{dialogName}`"</Code> to the backdrop element and the <br /> <Code>data-dialog="`{dialogName}`"</Code> to the dialog element itself and make sure that the values for those data attributes are the same.
 
 You can also use the <Code>data-dialog-close="true"</Code> for the element that you want to close the dialog with when clicking.
 
 <br />
+
+## Dialog Examples
+
+## Default Dialog 
+
+This component example includes a button to open the dialog, a backdrop, and various styling elements for the dialog's content and buttons. When the "Open Dialog" button is clicked, the dialog with its content is displayed on top of the backdrop, providing a modal interaction for the user.
 
 <CodePreview
   id="dialog"
@@ -77,7 +84,7 @@ You can also use the <Code>data-dialog-close="true"</Code> for the element that 
 
 ## Dialog Sizes
 
-You can set the size of the dialog by your own using the tailwind css classes, check the below examples for more details.
+You can set the size of the dialog on your own using the Tailwind CSS classes, check the examples below for implementation details.
 
 <CodePreview
   id="dialog-sizes"
@@ -282,7 +289,7 @@ You can set the size of the dialog by your own using the tailwind css classes, c
 
 ## Custom Dialog Animation
 
-You can modify the open/close state animation for dialog by adding the <Code>data-dialog-mount="`{opacity-100}`"</Code>, <Code>data-dialog-unmount="`{opacity-0}`"</Code> and <Code>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass tailwind css classnames for those data attributes for animating the dialog. <br /> Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
+You can modify the open/close state animation for the modal by adding the <Code>data-dialog-mount="`{opacity-100}`"</Code>, <Code>data-dialog-unmount="`{opacity-0}`"</Code> and <Code>data-dialog-transition="`{transition-opacity}`"</Code> data attributes to the dialog element. You can pass Tailwind CSS classnames for those data attributes for animating the dialog. Check more about animation data attributes for dialog <a className="hover:text-blue-500 font-medium" href="#dialog-data-attributes">here</a>.
 
 <CodePreview
   id="custom-dialog-animation"
@@ -331,7 +338,7 @@ You can modify the open/close state animation for dialog by adding the <Code>dat
 
 ## Dialog with Form
 
-Use the example below to create a dialog with a sign in form.
+Use the example below to create a dialog with a Sign-in form.
 
 <CodePreview
   id="dialog-with-form"
@@ -427,7 +434,7 @@ Use the example below to create a dialog with a sign in form.
 
 ## Dialog with Image
 
-Use the example below to create a dialog with an image inside, similar to unsplash.
+Use the example below to create a modal with an image inside (you can find your images on Unsplash).
 
 <CodePreview
   id="dialog-with-image"
@@ -526,7 +533,7 @@ Use the example below to create a dialog with an image inside, similar to unspla
 
 ## Web 3.0 Dialog
 
-Use the example below to create a Web 3.0 wallet connect dialog.
+Use this dialog component for connecting a Web 3.0 wallet in a web application. It features a button to open the dialog, a backdrop, wallet options, and additional informational elements.
 
 <CodePreview
   id="web-3-dialog"
@@ -680,3 +687,15 @@ The dialog component needs a required script file to work, you just need to add 
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dialog.js"></script>
 ```
+
+---
+
+<span id="best-practices"></span>
+## Modal Best Practices for Developers
+
+• Prioritize user experience by making modals unobtrusive and easy to dismiss.
+• Include clear and easily accessible close buttons, and allow users to close the modal by clicking outside it.
+• Maintain a consistent design language and layout across modals to create a familiar user experience.
+• Use subtle animations and transitions to open and close modals smoothly. Make sure that animations do not distract users.
+• Implement validation and error handling for form elements within the modal.
+
