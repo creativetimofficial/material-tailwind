@@ -7,6 +7,8 @@ navigation:
     "collapse-trigger-data-attributes",
     "collapse-data-attributes",
     "required-script",
+    "best-practices",
+
   ]
 github: collapse
 prev: screens
@@ -15,11 +17,19 @@ next: alert
 
 # Tailwind CSS Collapse
 
-Use our Tailwind CSS collapse component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
+Use our Tailwind CSS collapse component to allow the user to show and hide sections of related content on a page. 
+
+There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
 
 See below our simple and versatile collapse example that you can use in your Tailwind CSS projects. We also included some collapse props that are available.
 
 <br />
+
+## Collapse Example:
+
+## Default Collapse
+
+Save valuable screen space and allow users to control their interaction with the content using our collapse component example. Copy-paste the code directly to your project.
 
 <CodePreview
   id="collapse"
@@ -49,6 +59,12 @@ See below our simple and versatile collapse example that you can use in your Tai
 </div>
 ```
 </CodePreview>
+
+<br />
+
+The button from this collapse component is styled with Tailwind CSS to have a dark background, white text, rounded corners; and interactive feedback (shadow effects on hover, focus, and active states). The content inside the collapsible area is a simple paragraph. 
+
+The styling (<Code> font-sans text-base font-light leading-relaxed</Code>) ensures the text is readable and aesthetically pleasing.
 
 ---
 
@@ -87,3 +103,14 @@ The collapse component needs a required script file to work, you just need to ad
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
 ```
+---
+<br />
+
+<span id="best-practices"></span>
+## Collapse Component Best Practice for Developers
+
+• Apply smooth animations and transitions when expanding or collapsing content.<br />
+• Build collapsible components in a way that they work without JavaScript enabled.<br />
+• Keep the content within the collapsible section well-structured. Use appropriate heading levels (<h2>, <h3>, etc.) for section titles to maintain a logical document outline.<br />
+• Consider using clear and intuitive toggle icons (e.g., "+" and "-") next to the trigger element to indicate the open/close state.
+
