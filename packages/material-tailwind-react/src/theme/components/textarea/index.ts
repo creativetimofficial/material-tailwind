@@ -72,6 +72,7 @@ export interface TextareaStylesType {
       container?: object;
       textarea?: object;
       label?: object;
+      asterisk?: object;
     };
     variants?: {
       outlined: TextareaVariantStylesType;
@@ -118,7 +119,8 @@ export const textarea: TextareaStylesType = {
         fontWeight: "font-normal",
         outline: "outline outline-0 focus:outline-0",
         resize: "resize-y",
-        disabled: "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none disabled:cursor-not-allowed",
+        disabled:
+          "disabled:bg-blue-gray-50 disabled:border-0 disabled:resize-none disabled:cursor-not-allowed",
         transition: "transition-all",
       },
       label: {
@@ -135,6 +137,11 @@ export const textarea: TextareaStylesType = {
         disabled:
           "peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500",
         transition: "transition-all",
+      },
+      asterisk: {
+        display: "inline-block",
+        color: "text-red-500",
+        ml: "ml-0.5",
       },
     },
     variants: {
