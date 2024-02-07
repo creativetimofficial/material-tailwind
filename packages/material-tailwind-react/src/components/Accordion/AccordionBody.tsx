@@ -59,7 +59,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
       },
     };
 
-    const appliedAnimation = merge(mainAnimation, animate);
+    const appliedAnimation = merge(heightAnimation, animate);
 
     // 5. return
     return (
@@ -69,7 +69,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
           initial="unmount"
           exit="unmount"
           animate={open ? "mount" : "unmount"}
-          variants={heightAnimation}
+          variants={appliedAnimation}
         >
           <m.div
             {...rest}
@@ -78,7 +78,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
             initial="unmount"
             exit="unmount"
             animate={open ? "mount" : "unmount"}
-            variants={appliedAnimation}
+            variants={mainAnimation}
           >
             {children}
           </m.div>
