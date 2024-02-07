@@ -168,6 +168,8 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       merge(containerProps, defaultProps?.containerProps || {}) ?? defaultProps.containerProps;
     className = className ?? defaultProps.className;
 
+    children = Array.isArray(children) ? children : [children];
+
     // 3. @floating-ui
     const listItemsRef = React.useRef<Array<HTMLLIElement | null>>([]);
     const listContentRef = React.useRef([
