@@ -1,5 +1,30 @@
 export const releases = [
   {
+    version: "2.1.9",
+    date: "February 8, 2024",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.9",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Update accordion component to make it possible to disable the animation.",
+          "Fix select component issue while there is only one option available.",
+          "Add red asterisk for required textarea component.",
+          "Fix the prop-types issue for menu component.",
+          "Fix classname override issue for all components while there is default props classname.",
+        ],
+      },
+      {
+        title: "docs changes",
+        data: [
+          "Fix spelling and grammar issues.",
+          "Add controlled select example.",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.1.8",
     date: "December 20, 2023",
     name: "@material-tailwind/react",
