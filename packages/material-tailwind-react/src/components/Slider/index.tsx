@@ -100,7 +100,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     min = min ?? defaultProps.min;
     max = max ?? defaultProps.max;
     step = step ?? defaultProps.step;
-    className = classnames(defaultProps.className, className) ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
     thumbClassName =
       classnames(defaultProps.thumbClassName, thumbClassName) ?? defaultProps.thumbClassName;
     trackClassName =

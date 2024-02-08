@@ -36,6 +36,7 @@ import {
   propTypesShrink,
   propTypesClassName,
 } from "../../types/components/input";
+import { twMerge } from "tailwind-merge";
 
 export interface InputProps extends Omit<React.ComponentProps<"input">, "size"> {
   variant?: variant;
@@ -83,9 +84,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
     containerProps = containerProps ?? defaultProps.containerProps;
-    className = className ?? defaultProps.className;
     shrink = shrink ?? defaultProps.shrink;
     icon = icon ?? defaultProps.icon;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const inputVariant = variants[findMatch(valid.variants, variant, "outlined")];

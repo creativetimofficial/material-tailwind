@@ -35,7 +35,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     const { active, appliedAnimation, isInitial } = state;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tabPanelClasses = twMerge(classnames(objectsToString(base)), className);

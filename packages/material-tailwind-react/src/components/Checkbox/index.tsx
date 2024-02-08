@@ -72,11 +72,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     label = label ?? defaultProps.label;
     icon = icon ?? defaultProps.icon;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
     disabled = disabled ?? defaultProps.disabled;
     containerProps = containerProps ?? defaultProps.containerProps;
     labelProps = labelProps ?? defaultProps.labelProps;
     iconProps = iconProps ?? defaultProps.iconProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();

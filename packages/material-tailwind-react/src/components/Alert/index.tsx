@@ -62,11 +62,11 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     // 2. set default props
     variant = variant ?? defaultProps.variant;
     color = color ?? defaultProps.color;
-    className = className ?? defaultProps.className;
     animate = animate ?? defaultProps.animate;
     open = open ?? defaultProps.open;
     action = action ?? defaultProps.action;
     onClose = onClose ?? defaultProps.onClose;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const alertBase = objectsToString(base.alert);

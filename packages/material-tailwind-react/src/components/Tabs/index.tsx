@@ -40,8 +40,8 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     const tabsId = React.useId();
 
     // 2. set default props
-    className = className ?? defaultProps.className;
     orientation = orientation ?? defaultProps.orientation;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tabsClasses = twMerge(

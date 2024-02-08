@@ -66,8 +66,21 @@ export const propTypesHandler: any = PropTypes.func;
 export const propTypesPlacement: any = propTypesPlacements;
 export const propTypesOffset: any = propTypesOffsetType;
 export const propTypesDismiss: any = PropTypes.shape({
-  ...propTypesDismissType,
   itemPress: PropTypes.bool,
+  enabled: PropTypes.bool,
+  escapeKey: PropTypes.bool,
+  referencePress: PropTypes.bool,
+  referencePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  outsidePress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  outsidePressEvent: PropTypes.oneOf(["pointerdown", "mousedown", "click"]),
+  ancestorScroll: PropTypes.bool,
+  bubbles: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      escapeKey: PropTypes.bool,
+      outsidePress: PropTypes.bool,
+    }),
+  ]),
 });
 export const propTypesAnimate: any = propTypesAnimation;
 export const propTypesLockScroll: any = PropTypes.bool;

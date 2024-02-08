@@ -8,6 +8,7 @@ navigation:
     "select-sizes",
     "select-colors",
     "select-validations",
+    "controlled-select",
     "select-custom-animation",
     "select-disabled",
     "countries-select",
@@ -211,6 +212,41 @@ export function SelectValidations() {
         <Option>Material Tailwind Vue</Option>
         <Option>Material Tailwind Angular</Option>
         <Option>Material Tailwind Svelte</Option>
+      </Select>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="controlled-select">
+## Controlled Select
+</DocsTitle>
+
+You can make the <Code>Select</Code> component to be controlled using the <Code>value</Code> and <Code>onChange</Code> props.
+
+<CodePreview id="controlled-select" component={<SelectExamples.ControlledSelect />}>
+```jsx
+import React from "react";
+import { Select, Option } from "@material-tailwind/react";
+
+export function ControlledSelect() {
+  const [value, setValue] = React.useState("react");
+
+  return (
+    <div className="w-72">
+      <Select
+        label="Select Version"
+        value={value}
+        onChange={(val) => setValue(val)}
+      >
+        <Option value="html">Material Tailwind HTML</Option>
+        <Option value="react">Material Tailwind React</Option>
+        <Option value="vue">Material Tailwind Vue</Option>
+        <Option value="angular">Material Tailwind Angular</Option>
+        <Option value="svelte">Material Tailwind Svelte</Option>
       </Select>
     </div>
   );

@@ -166,7 +166,9 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     menuProps = menuProps ?? defaultProps.menuProps;
     containerProps =
       merge(containerProps, defaultProps?.containerProps || {}) ?? defaultProps.containerProps;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
+
+    children = Array.isArray(children) ? children : [children];
 
     // 3. @floating-ui
     const listItemsRef = React.useRef<Array<HTMLLIElement | null>>([]);

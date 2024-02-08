@@ -86,11 +86,11 @@ export const Drawer = React.forwardRef<HTMLDivElement, DrawerProps>(
     size = size ?? defaultProps.size;
     overlay = overlay ?? defaultProps.overlay;
     placement = placement ?? defaultProps.placement;
-    className = className ?? defaultProps.className;
     overlayProps = overlayProps ?? defaultProps.overlayProps;
     onClose = onClose ?? defaultProps.onClose;
     dismiss = merge(defaultProps.dismiss, dismiss || {}) ?? defaultProps.dismiss;
     transition = transition ?? defaultProps.transition;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const drawerClasses = twMerge(

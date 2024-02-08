@@ -36,6 +36,7 @@ import {
   propTypesShrink,
   propTypesContainerProps,
 } from "../../types/components/input";
+import { twMerge } from "tailwind-merge";
 
 export interface TextareaProps extends React.ComponentProps<"textarea"> {
   variant?: variant;
@@ -82,7 +83,7 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     labelProps = labelProps ?? defaultProps.labelProps;
     containerProps = containerProps ?? defaultProps.containerProps;
     shrink = shrink ?? defaultProps.shrink;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const textareaVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -120,12 +121,15 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
       { [labelShrink]: shrink },
       labelProps?.className,
     );
+    const asteriskClasses = classnames(objectsToString(base.asterisk));
 
     // 4. return
     return (
       <div ref={ref} className={containerClasses}>
         <textarea {...rest} className={textareaClasses} placeholder={rest?.placeholder || " "} />
-        <label className={labelClasses}>{label}</label>
+        <label className={labelClasses}>
+          {label} {rest.required ? <span className={asteriskClasses}>*</span> : ""}
+        </label>
       </div>
     );
   },

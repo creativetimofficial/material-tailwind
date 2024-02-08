@@ -38,9 +38,9 @@ export const Avatar = React.forwardRef<HTMLImageElement, AvatarProps>(
     // 2. set default props
     variant = variant ?? defaultProps.variant;
     size = size ?? defaultProps.size;
-    className = className ?? defaultProps.className;
     withBorder = withBorder ?? defaultProps.withBorder;
     color = color ?? defaultProps.color;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const avatarVariant = objectsToString(variants[findMatch(valid.variants, variant, "rounded")]);
