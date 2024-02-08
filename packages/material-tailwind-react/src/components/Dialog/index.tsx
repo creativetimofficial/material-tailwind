@@ -79,7 +79,7 @@ const Dialog = React.forwardRef<HTMLDivElement, DialogProps>(
     size = size ?? defaultProps.size;
     dismiss = dismiss ?? defaultProps.dismiss;
     animate = animate ?? defaultProps.animate;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const backdropClasses = classnames(objectsToString(base.backdrop));

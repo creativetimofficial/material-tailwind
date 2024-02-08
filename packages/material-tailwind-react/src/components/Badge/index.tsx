@@ -76,7 +76,7 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
     withBorder = withBorder ?? defaultProps.withBorder;
     overlap = overlap ?? defaultProps.overlap;
     placement = placement ?? defaultProps.placement;
-    className = classnames(className, defaultProps.className) ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
     containerProps =
       merge(containerProps, defaultProps.containerProps || {}) ?? defaultProps.containerProps;
 

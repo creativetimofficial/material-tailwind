@@ -80,7 +80,6 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     const childrens: any = React.Children.toArray(children);
 
     // 2. set default props
-    className = className ?? defaultProps.className;
     prevArrow = prevArrow ?? defaultProps.prevArrow;
     nextArrow = nextArrow ?? defaultProps.nextArrow;
     navigation = navigation ?? defaultProps.navigation;
@@ -88,6 +87,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     autoplayDelay = autoplayDelay ?? defaultProps.autoplayDelay;
     transition = transition ?? defaultProps.transition;
     loop = loop ?? defaultProps.loop;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const carouselClasses = twMerge(classnames(objectsToString(base.carousel)), className);

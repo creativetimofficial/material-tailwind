@@ -69,11 +69,11 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
     variant = variant ?? defaultProps.variant;
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
-    className = className ?? defaultProps.className;
     animate = animate ?? defaultProps.animate;
     open = open ?? defaultProps.open;
     action = action ?? defaultProps.action;
     onClose = onClose ?? defaultProps.onClose;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const chipBase = objectsToString(base.chip);

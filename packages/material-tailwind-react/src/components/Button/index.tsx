@@ -59,7 +59,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     color = color ?? defaultProps.color;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
     ripple = ripple ?? defaultProps.ripple;
-    className = twMerge(defaultProps.className, className);
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -73,21 +73,27 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
     const classes = twMerge(
-      classnames(buttonBase, buttonSize, buttonVariant, {
+      classnames(
+        buttonBase,
+        buttonSize,
+        buttonVariant,
+        {
           [objectsToString(base.fullWidth)]: fullWidth,
         },
-        { 
+        {
           "flex items-center gap-2": loading,
-          "gap-3": size === 'lg',
+          "gap-3": size === "lg",
         },
       ),
       className,
     );
 
-    const spinnerClass = twMerge(classnames({
-      "w-4 h-4": true,
-      "w-5 h-5": size === 'lg',
-    }));
+    const spinnerClass = twMerge(
+      classnames({
+        "w-4 h-4": true,
+        "w-5 h-5": size === "lg",
+      }),
+    );
 
     // 5. return
     return (

@@ -30,8 +30,14 @@ import {
 
 type Props<T extends keyof JSX.IntrinsicElements> = React.ComponentProps<T>;
 
-
-type BaseTypographyProps =Props<"p"> & Props<"h1"> & Props<"h2"> & Props<"h3"> & Props<"h4"> & Props<"h5"> & Props<"h6"> & Props<"a"> 
+type BaseTypographyProps = Props<"p"> &
+  Props<"h1"> &
+  Props<"h2"> &
+  Props<"h3"> &
+  Props<"h4"> &
+  Props<"h5"> &
+  Props<"h6"> &
+  Props<"a">;
 export interface TypographyProps extends BaseTypographyProps {
   variant?: variant;
   color?: color;
@@ -53,7 +59,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     color = color ?? defaultProps.color;
     textGradient = textGradient || defaultProps.textGradient;
     as = as ?? undefined;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const typographyVariant = objectsToString(

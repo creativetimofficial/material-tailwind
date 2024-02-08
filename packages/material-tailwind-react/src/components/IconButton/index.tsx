@@ -51,7 +51,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -88,7 +88,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           return typeof onMouseDown === "function" && onMouseDown(e);
         }}
       >
-        <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           {children}
         </span>
       </button>

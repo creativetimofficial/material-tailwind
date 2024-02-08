@@ -36,7 +36,7 @@ export const TabsHeader = React.forwardRef<HTMLUListElement, TabsHeaderProps>(
     }, [dispatch, indicatorProps]);
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tabsHeaderClasses = twMerge(

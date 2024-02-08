@@ -52,8 +52,8 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
     color = color ?? defaultProps.color;
     size = size ?? defaultProps.size;
     label = label ?? defaultProps.label;
-    className = className ?? defaultProps.className;
     barProps = barProps ?? defaultProps.barProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const progressVariant = objectsToString(

@@ -41,9 +41,9 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
     const { id, active, indicatorProps } = state;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
-    activeClassName = activeClassName ?? defaultProps.activeClassName;
     disabled = disabled ?? defaultProps.disabled;
+    className = twMerge(defaultProps.className || "", className);
+    activeClassName = twMerge(defaultProps.activeClassName || "", activeClassName);
 
     // 3. set styles
     const tabClasses = twMerge(

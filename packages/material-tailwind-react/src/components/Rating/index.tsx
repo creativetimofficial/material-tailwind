@@ -73,9 +73,9 @@ export const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     unratedIcon = unratedIcon ?? defaultProps.unratedIcon;
     ratedColor = ratedColor ?? defaultProps.ratedColor;
     unratedColor = unratedColor ?? defaultProps.unratedColor;
-    className = className ?? defaultProps.className;
     onChange = onChange ?? defaultProps.onChange;
     readonly = readonly ?? defaultProps.readonly;
+    className = twMerge(defaultProps.className || "", className);
 
     const [ratingValue, setRatingValue] = React.useState(() => [
       ...Array(value).fill("rated"),

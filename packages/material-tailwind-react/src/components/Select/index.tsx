@@ -166,7 +166,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     menuProps = menuProps ?? defaultProps.menuProps;
     containerProps =
       merge(containerProps, defaultProps?.containerProps || {}) ?? defaultProps.containerProps;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     children = Array.isArray(children) ? children : [children];
 

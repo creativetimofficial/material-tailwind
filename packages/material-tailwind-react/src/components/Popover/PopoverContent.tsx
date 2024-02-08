@@ -47,7 +47,7 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentPro
     } = usePopover();
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const popoverClasses = twMerge(classnames(objectsToString(base)), className);

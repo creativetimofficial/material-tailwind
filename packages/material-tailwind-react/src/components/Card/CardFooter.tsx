@@ -32,8 +32,8 @@ export const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
     } = cardFooter;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
     divider = divider ?? defaultProps.divider;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const cardFooterClasses = twMerge(

@@ -53,7 +53,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 4. set styles
     const classes = twMerge(

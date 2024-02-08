@@ -66,11 +66,11 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     // 2. set default props
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
     disabled = disabled ?? defaultProps.disabled;
     containerProps = containerProps ?? defaultProps.containerProps;
     labelProps = labelProps ?? defaultProps.labelProps;
     circleProps = circleProps ?? defaultProps.circleProps;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();

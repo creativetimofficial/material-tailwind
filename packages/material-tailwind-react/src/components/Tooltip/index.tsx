@@ -103,7 +103,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
     offset = offset ?? defaultProps.offset;
     dismiss = dismiss ?? defaultProps.dismiss;
     animate = animate ?? defaultProps.animate;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tooltipClasses = twMerge(classnames(objectsToString(base)), className);
