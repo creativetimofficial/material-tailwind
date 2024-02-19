@@ -10,6 +10,7 @@ navigation:
     "transaction-table",
     "members-table",
     "sortable-table",
+    "best-practices",
  ]
 github: table
 prev: image
@@ -20,8 +21,16 @@ prev: image
 
 The Tailwind CSS Tables are used to organize structured data in a grid-like format,  presenting the information in a visually organized manner. The tables help users understand and interact with data by making it easy for them to scan and compare data points. Table components are used to present various types of data (product listings, financial reports, user profiles, etc). 
 
+See below Material Tailwind's examples of table components that help developers display information in a clear, organized manner, making it easier for users to read, understand, and interact with data.
+
 
 <br />
+
+## Table Examples:
+
+## Default Table
+
+Use our simple 4 columns table styled with Tailwind CSS to organize your data in a responsive way.
 
 <CodePreview
   id="table"
@@ -175,6 +184,8 @@ The Tailwind CSS Tables are used to organize structured data in a grid-like form
 
 ## Table With Striped Rows
 
+In this example, we added the class <Code>even:bg-blue-gray-50/50</Code> applied to each row, which alternates the background color of even rows for better readability and visual appeal.
+
 <CodePreview
   id="table-with-striped-rows"
   link="table#table-with-striped-rows"
@@ -318,6 +329,8 @@ The Tailwind CSS Tables are used to organize structured data in a grid-like form
 
 
 ## Transaction Table
+
+This example showcases a more complex and feature-rich approach to presenting and interacting with tabular data. The inclusion of a search bar and download button directly above the table improves the interface's interactivity and functionality. The use of images, status tags, and action buttons within the table rows adds a layer of complexity and utility, making the data more accessible and actionable.
 
 <CodePreview
   id="transaction-table"
@@ -793,6 +806,8 @@ The Tailwind CSS Tables are used to organize structured data in a grid-like form
 
 ## Members Table
 
+In this example, the combination of filtering tabs, detailed member information, search functionality, and pagination controls makes it a comprehensive solution for managing and displaying member data in a user-friendly manner.
+
 <CodePreview
   id="members-table"
   link="table#members-table"
@@ -1214,6 +1229,8 @@ The Tailwind CSS Tables are used to organize structured data in a grid-like form
 ---
 
 ## Sortable Table
+
+In this example. the table headers are interactive and sortable, as indicated by the presence of arrow icons next to the column titles ("Member", "Function", "Status", "Employed"). This feature allows users to sort the list based on different attributes, offering a tailored view of the data.
 
 <CodePreview
   id="sortable-table"
@@ -1664,4 +1681,14 @@ The Tailwind CSS Tables are used to organize structured data in a grid-like form
 </CodePreview>
 
 ---
+<br />
+
+ <span id="best-practices"></span>
+## Table Best Practices for Developers
+
+• Establish a visual hierarchy to guide users through the table.<br />
+• For tables with a large number of rows, consider using pagination or infinite scroll to improve load times and usability.<br /> 
+• Use tooltips, expandable rows, or detail panels to provide additional information without overwhelming the initial view.<br />
+• Provide immediate feedback for interactions such as sorting, filtering, or editing.
+
 
