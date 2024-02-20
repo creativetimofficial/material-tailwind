@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Pagination - Material Tailwind
-description: Customise your web projects with our easy-to-use Pagination component for Tailwind CSS using Material Design guidelines.
-navigation: ["pagination", "pagination-gradient"]
+description: Explore our responsive Tailwind CSS pagination component examples designed for seamless content navigation.
+navigation: ["pagination", "rounded-pagination", "circular-pagination", "simple-pagination", "pagination-group"]
 github: pagination
 prev: navbar
 next: popover
@@ -11,9 +11,19 @@ next: popover
 
 Get started on your web projects with our Tailwind CSS pagination which is a compact elements that represent an input, attribute, or action. This element appears dynamically as a group of multiple interactive elements and allows users to enter information, make selections, filter content, or trigger actions.
 
+Pagination can significantly improve performance by limiting the amount of data loaded and rendered on a page at any given time. This reduction in data processing and rendering can lead to faster page load times and a smoother user experience.
+
 See below our simple pagination component example that you can use for your Tailwind CSS project.
 
 <br />
+
+## Pagination Examples:
+
+<span id="rounded-pagination"></span>
+## Rounded Pagination
+
+In this example, the pagination has a consistent style with a rounded square shape (<Code>h-10 w-10</Code>) and are styled to differentiate the active page from others. For example, the button for page 1 has a <Code>bg-gray-900 text-white class</Code>, indicating it might be the current page, while the others have <Code>text-gray-900</Code> indicating they are not the selected page.
+
 
 <CodePreview
   id="pagination"
@@ -82,9 +92,10 @@ See below our simple pagination component example that you can use for your Tail
 
 ---
 
+<span id="circular-pagination"></span>
 ## Circular Pagination
 
-Use the example below to create a pagination with circular buttons shape.
+This pagination component example uses <Code>rounded-full</Code> for all buttons, giving them a fully circular shape. This design choice can make the pagination component stand out more and provides a more stylish appearance.
 
 <CodePreview
   id="cicular-pagination"
@@ -153,9 +164,10 @@ Use the example below to create a pagination with circular buttons shape.
 
 ---
 
+<span id="simple-pagination"></span>
 ## Simple Pagination
 
-Use the example below to create a simple and minimal pagination.
+Use the example below to create a simple and minimalist pagination using Tailwind CSS classes and HTML.
 
 <CodePreview
   id="simple-pagination"
@@ -191,12 +203,16 @@ Use the example below to create a simple and minimal pagination.
 ```
 </CodePreview>
 
+<br />
+
+This pagination component is designed with simplicity and functionality in mind. It lacks page number buttons, focusing solely on navigation between sequential pages. This design choice might be suitable for scenarios where users are likely to navigate content linearly or when space is limited.
+
 ---
 
-
+<span id="pagination-group"></span>
 ## Pagination Group
 
-Use the example below to create a pagination group.
+Use this example of merging button borders and rounding off corners for adjacent buttons to create a streamlined look.
 
 <CodePreview
   id="pagination-group"
@@ -263,4 +279,7 @@ Use the example below to create a pagination group.
 ```
 </CodePreview>
 
----
+<br />
+
+The "Previous" and "Next" buttons include SVG icons indicating navigation direction. These icons are centered within the buttons using absolute positioning and transformation utilities.
+
