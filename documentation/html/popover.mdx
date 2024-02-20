@@ -1,6 +1,6 @@
 ---
 title: Tailwind CSS Popover - Material Tailwind
-description: Customise your web projects with our easy-to-use Popover component for Tailwind CSS using Material Design guidelines.
+description: Use our Tailwind CSS Popover examples to display additional information, context, or controls related to an item or action.
 navigation:
   [
     "popover",
@@ -21,13 +21,21 @@ next: progress-bar
 
 # Tailwind CSS Popover
 
-Use our Tailwind CSS Popover to portray people or objects. It can be used as a visual identifier for a user profile on your website.
+Use our Tailwind CSS Popover to display additional information, context, or controls related to an item or action. Popovers can be triggered by various user interactions such as clicking on a button, hovering over a text link, or focusing on an input field.
 
-See below our popover component examples.
+Popovers are useful for creating a cleaner, less cluttered user interface by hiding secondary information or options until they're needed. They're often used for tooltips, dropdown menus, options menus, form validation messages, and more. 
+
+See below our popover component examples created with HTML and styled with Tailwind CSS.
 
 <br />
 
+## Popover Examples:
+
 You can initialize a new popover by adding the <Code>data-popover-target="`{popoverName}`"</Code> data attribute to the trigger element and the <Code>data-popover="`{popoverName}`"</Code> to the element that you want to use as the popover.
+
+## Default Popover
+
+The content inside the popover is simple text, styled with <Code>font-sans text-sm font-normal</Code> and colored with <Code>text-blue-gray-500</Code>. It shows basic usage for displaying additional information or actions related to the button.
 
 <CodePreview
   id="popover"
@@ -169,7 +177,7 @@ You can change the position of the popover relative to it's trigger element by a
 
 ## Custom Popover Animation
 
-You can modify the open/close state animation for popover by adding the <Code>data-popover-mount="`{opacity-100}`"</Code>, <Code>data-popover-unmount="`{opacity-0}`"</Code> and <Code>data-popover-transition="`{transition-opacity}`"</Code> data attributes to the popover element. You can pass tailwind css classnames for those data attributes for animation the popover. <br /> Check more about animation data attributes for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
+You can modify the open/close state animation for popover by adding the <Code>data-popover-mount="`{opacity-100}`"</Code>, <Code>data-popover-unmount="`{opacity-0}`"</Code> and <Code>data-popover-transition="`{transition-opacity}`"</Code> data attributes to the popover element. You can pass Tailwind CSS class names for those data attributes for animating the popover. <br /> Check more about animation data attributes for popover <a className="hover:text-blue-500 font-medium" href="#popover-data-attributes">here</a>.
 
 <CodePreview
   id="custom-popover-animation"
@@ -195,7 +203,7 @@ You can modify the open/close state animation for popover by adding the <Code>da
 
 ## Popover with Image
 
-This example is used to show more information. It contains an image, headline, description, and link
+This example is used to show more information. It contains an image, headline, description, and link.
 
 <CodePreview
   id="popover-with-image"
@@ -249,7 +257,7 @@ This example is used to show more information. It contains an image, headline, d
 
 ## Subscription Popover
 
-Use this beautiful popover if you want to let the users subscribe easily.
+Use this versatile popover if you want to let the users subscribe easily.
 
 <CodePreview
   id="subscription-popover"
@@ -292,6 +300,8 @@ Use this beautiful popover if you want to let the users subscribe easily.
 ---
 
 ## Profile Info Popover
+
+Check out this component example that showcases how to create an interactive profile information card that appears as a popover. The example includes several UI elements such as an image, a button, textual information, and icons, offering a richer user experience.
 
 <CodePreview
   id="profile-info-popover"
@@ -355,6 +365,8 @@ Use this beautiful popover if you want to let the users subscribe easily.
 ---
 
 ## Popover with Description
+
+This popover component is designed to display repository details, incorporating elements such as links, badges, text descriptions, and icons to convey various pieces of information. 
 
 <CodePreview
   id="popover-with-description"
