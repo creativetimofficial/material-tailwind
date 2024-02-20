@@ -6,9 +6,8 @@ navigation:
     "skeleton",
     "image-placeholder-skeleton",
     "video-placeholder-skeleton",
-    "text-placeholder-skeleton",
     "card-placeholder-skeleton",
-    "testimonial-placeholder-skeleton"
+    "best-practices"
   ]
 github: skeleton
 prev: sidebar
@@ -19,11 +18,19 @@ next: speed-dial
 # Tailwind CSS Skeleton - HTML
 </DocsTitle>
 
-The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video
+The skeleton component is a minimal version of a component that can be used as an alternative loading indicator to the spinner by imitating the content that will be loaded such as text, images, or video.
 
-See below our simple <Code>Skeleton</Code> example that you can use in your Tailwind CSS and HTML project.
+The skeleton can help developers visualize the layout and functionality of a system before implementing more intricate features.
+
+See below our Skeleton examples styled with Tailwind CSS that you can use in your HTML projects.
 
 <br />
+
+## Skeleton Examples:
+
+## Simple Skeleton
+
+Use this versatile skeleton example to provide a visual indication of where content will appear on your webpage.
 
 <CodePreview component={<HTMLSkeletonExamples.DefaultSkeleton />}>
 ```jsx
@@ -57,6 +64,8 @@ See below our simple <Code>Skeleton</Code> example that you can use in your Tail
 <DocsTitle href="image-placeholder-skeleton">
 ## Image placeholder Skeleton 
 </DocsTitle>
+
+Instead of just placeholder text, this example includes an SVG icon representing an image or an action. This adds a visual cue to users about the type of content that might be expected in that section.
 
 <CodePreview component={<HTMLSkeletonExamples.ImagePlacehoderSkeleton />}>
 ```html
@@ -110,6 +119,8 @@ See below our simple <Code>Skeleton</Code> example that you can use in your Tail
 ## Video placeholder Skeleton 
 </DocsTitle>
 
+Similar to the previous example, this skeleton includes an SVG icon representing a video. The container is animated with a pulsating effect (<Code>animate-pulse</Code> class), signifying that content is loading or being fetched.
+
 <CodePreview component={<HTMLSkeletonExamples.VideoPlacehoderSkeleton />}>
 ```html
 <div
@@ -131,6 +142,8 @@ See below our simple <Code>Skeleton</Code> example that you can use in your Tail
 <DocsTitle href="card-placeholder-skeleton">
 ## Card placeholder Skeleton 
 </DocsTitle>
+
+This example showcases a more complex skeleton, including an image placeholder, text placeholder, and button placeholder. It can be used if you want to prototype a blog card, for example.
 
 <CodePreview component={<HTMLSkeletonExamples.CardPlacehoderSkeleton />}>
 ```html
@@ -178,3 +191,11 @@ See below our simple <Code>Skeleton</Code> example that you can use in your Tail
 </CodePreview>
 
 ---
+
+<span id="best-practices"></span>
+## Skeleton Best Practices for Developers
+
+• Only implement skeleton screens for content that takes a noticeable time to load. <br /> 
+• Keep the design and layout of skeleton screens consistent with the final content.  <br />
+• Skeleton screens should be simple and easy to understand. <br />
+• Make sure that the duration of the skeleton animation matches the expected loading time of the content. 
