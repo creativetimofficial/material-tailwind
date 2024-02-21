@@ -52,14 +52,10 @@ This example includes the autoPlay attribute on the <Code>\<video></Code> tag ma
 
 <CodePreview component={<HTMLVideoExamples.AutoplayVideo />}>
 ```html
-export default function Example() {
-  return (
     <video class="h-full w-full rounded-lg" controls autoPlay>
       <source src="/demo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  );
-}
 ```
 </CodePreview>
 
@@ -72,15 +68,11 @@ export default function Example() {
 By adding <Code>muted</Code> to the \<video> tag, the video will play without sound by default when the page loads. This attribute is particularly important in conjunction with autoPlay, as many modern web browsers restrict autoplay functionality for videos with sound to prevent disrupting the user experience. 
 
 <CodePreview component={<HTMLVideoExamples.MutedVideo />}>
-```jsx
-export default function Example() {
-  return (
+```html
     <video class="h-full w-full rounded-lg" controls autoPlay muted>
       <source src="/demo.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  );
-}
 ```
 </CodePreview>
 
