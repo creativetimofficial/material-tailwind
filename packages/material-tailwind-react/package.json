@@ -1,7 +1,7 @@
 {
-  "name": "@material-tailwind-fork/react",
+  "name": "@muitailwind/react",
   "homepage": "https://material-tailwind.com",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/luigimorel/material-tailwind",
   "license": "MIT",
