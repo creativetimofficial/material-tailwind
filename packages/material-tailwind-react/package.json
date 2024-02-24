@@ -3,7 +3,7 @@
   "homepage": "https://material-tailwind.com",
   "version": "2.1.9",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
-  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "repository": "https://github.com/luigimorel/material-tailwind",
   "license": "MIT",
   "main": "index.js",
   "typings": "index.d.ts",
