@@ -79,7 +79,7 @@ export function Pro() {
                     width={768}
                     height={768}
                     className={`rounded-lg object-cover ${
-                      floated ? "translate-y-3 translate-x-6 scale-110" : ""
+                      floated ? "translate-x-6 translate-y-3 scale-110" : ""
                     } ${
                       mini
                         ? "mx-auto mt-12 scale-[0.8] lg:mt-auto"
@@ -106,7 +106,7 @@ export function Pro() {
                     variant="h2"
                     className="font-semibold text-primary"
                   >
-                    170+
+                    190+
                   </Typography>
                   <Typography
                     variant="h5"
@@ -119,7 +119,7 @@ export function Pro() {
                     instantly.
                   </Typography>
                 </div>
-                <div className="absolute right-0 bottom-0 ml-auto lg:-bottom-2 lg:w-9/12">
+                <div className="absolute bottom-0 right-0 ml-auto lg:-bottom-2 lg:w-9/12">
                   <Image
                     src="https://docs.material-tailwind.com/image/ready-made-sections.png"
                     width={1000}
