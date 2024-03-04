@@ -14,7 +14,7 @@ export function LoginCard() {
         color="primary"
         className="grid h-24 place-items-center shadow-none"
       >
-        <Typography as="span" variant="h4" color="secondary">
+        <Typography as="span" type="h4" color="secondary">
           Sign In
         </Typography>
       </Card.Header>
@@ -23,7 +23,7 @@ export function LoginCard() {
           <Typography
             as="label"
             htmlFor="email"
-            variant="small"
+            type="small"
             color="primary"
             className="font-semibold"
           >
@@ -39,7 +39,7 @@ export function LoginCard() {
           <Typography
             as="label"
             htmlFor="password"
-            variant="small"
+            type="small"
             color="primary"
             className="font-semibold"
           >
@@ -53,7 +53,7 @@ export function LoginCard() {
         </Input>
         <div className="mb-6 flex items-center gap-2">
           <Checkbox id="remember" />
-          <Typography as="label" htmlFor="remember" className="text-gray-500">
+          <Typography as="label" htmlFor="remember" className="text-foreground">
             Remember Me
           </Typography>
         </div>
@@ -61,11 +61,17 @@ export function LoginCard() {
       </Card.Body>
       <Card.Footer className="text-center">
         <Typography
-          variant="small"
-          className="my-1 flex items-center justify-center gap-1"
+          type="small"
+          className="my-1 flex items-center justify-center gap-1 text-foreground"
         >
           Don't have an account?
-          <Typography variant="small" as="a" href="#" className="font-bold">
+          <Typography
+            type="small"
+            as="a"
+            href="#"
+            color="primary"
+            className="font-bold"
+          >
             Sign up
           </Typography>
         </Typography>

@@ -14,10 +14,10 @@ export function ImageWithBlurredCaption() {
       >
         <Card.Body className="flex justify-between">
           <div>
-            <Typography variant="h6">Sara Lamalo</Typography>
+            <Typography type="h6">Sara Lamalo</Typography>
             <Typography className="mt-2 text-gray-600">20 July 2022</Typography>
           </div>
-          <Typography variant="h6">Growth</Typography>
+          <Typography type="h6">Growth</Typography>
         </Card.Body>
       </Card>
     </figure>

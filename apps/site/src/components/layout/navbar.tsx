@@ -25,7 +25,7 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
     <span
       {...rest}
-      className="group grid h-8 w-8 cursor-pointer place-items-center rounded-md text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500"
+      className="group grid h-8 w-8 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info"
     >
       <Icon className="h-5 w-5 stroke-[1.5]" />
     </span>
@@ -46,11 +46,11 @@ function NavItem({
     goingIcon:
       "translate-y-0 scale-100 opacity-100 group-hover:-translate-y-4 group-hover:scale-90 group-hover:opacity-0 transition-all duration-300",
     comingIcon:
-      "translate-y-4 scale-90 stroke-[1.5] text-blue-500 opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300",
+      "translate-y-4 scale-90 stroke-[1.5] text-info opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300",
   };
 
   return (
-    <span className="group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-gray-950 transition-all duration-300 hover:bg-blue-500/10 hover:text-blue-500">
+    <span className="group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
       <i className="relative h-[18px] w-[18px]">
         <Icon
           className={clsx(styles.icon, {
@@ -99,7 +99,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/50 p-4 backdrop-blur">
+    <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background/50 p-4 backdrop-blur">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
         <Link
           target="_blank"

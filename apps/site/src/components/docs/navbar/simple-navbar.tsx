@@ -34,8 +34,8 @@ function NavList() {
           <Typography
             as="a"
             href={href}
-            variant="small"
-            className="p-1 hover:text-info-main"
+            type="small"
+            className="hover:text-info-main p-1"
           >
             {title}
           </Typography>
@@ -61,7 +61,7 @@ export function SimpleNavbar() {
         <Typography
           as="a"
           href="#"
-          variant="small"
+          type="small"
           className="mx-2 block py-1 font-semibold"
         >
           Material Tailwind

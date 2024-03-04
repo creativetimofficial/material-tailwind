@@ -7,7 +7,8 @@ export const avatarTheme = {
     size: "md",
     variant: "circular",
   },
-  baseStyle: "inline-block object-cover object-center",
+  baseStyle:
+    "inline-block object-cover object-center data-[shape=square]:rounded-none data-[shape=circular]:rounded-full data-[shape=rounded]:rounded-[current]",
   size: {
     xs: "w-6 h-6 rounded-sm",
     sm: "w-8 h-8 rounded",
@@ -15,10 +16,5 @@ export const avatarTheme = {
     lg: "w-14 h-14 rounded-md",
     xl: "w-[72px] h-[72px] rounded-lg",
     xxl: "w-[86px] h-[86px] rounded-xl",
-  },
-  variant: {
-    square: "rounded-none",
-    circular: "rounded-full",
-    rounded: "rounded-[current]",
   },
 };

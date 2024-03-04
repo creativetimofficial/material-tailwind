@@ -23,6 +23,7 @@
       "@utils": ["./src/utils/index.ts"],
       "@hooks": ["./src/hooks/index.ts"],
       "@types": ["./src/types/index.ts"],
+      "@plugins": ["./src/plugins/index.ts"],
       "@context": ["./src/context/index.tsx"],
       "@components": ["./src/components/index.ts"]
     }

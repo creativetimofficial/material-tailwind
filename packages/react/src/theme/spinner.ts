@@ -7,7 +7,7 @@ export const spinnerTheme = {
     size: "md",
     color: "primary",
   },
-  baseStyle: "text-secondary-dark animate-spin",
+  baseStyle: "text-surface animate-spin",
   size: {
     xs: "h-3 w-3",
     sm: "h-4 w-4",
@@ -17,11 +17,11 @@ export const spinnerTheme = {
     xxl: "h-12 w-12",
   },
   color: {
-    primary: "text-primary-main",
-    secondary: "text-secondary-main",
-    info: "text-info-main",
-    success: "text-success-main",
-    warning: "text-warning-main",
-    error: "text-error-main",
+    primary: "text-primary",
+    secondary: "text-secondary",
+    info: "text-info",
+    success: "text-success",
+    warning: "text-warning",
+    error: "text-error",
   },
 };

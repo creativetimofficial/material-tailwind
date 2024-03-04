@@ -5,13 +5,13 @@ export function TextareaWithValidation() {
     <div className="w-full space-y-6">
       <div className="w-full space-y-1">
         <Textarea color="error" placeholder="Textarea Error" isError />
-        <Typography variant="small" color="error">
+        <Typography type="small" color="error">
           Something went wrong!
         </Typography>
       </div>
       <div className="w-full space-y-1">
         <Textarea color="success" placeholder="Textarea Success" isSuccess />
-        <Typography variant="small" color="success">
+        <Typography type="small" color="success">
           Congratulations 🎉
         </Typography>
       </div>

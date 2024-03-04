@@ -13,7 +13,7 @@ export function SelectWithValidation() {
             <Select.Option>Material Tailwind Svelte</Select.Option>
           </Select.List>
         </Select>
-        <Typography variant="small" color="error" className="mt-1 block">
+        <Typography type="small" color="error" className="mt-1 block">
           Something went wrong!
         </Typography>
       </div>
@@ -27,7 +27,7 @@ export function SelectWithValidation() {
             <Select.Option>Material Tailwind Svelte</Select.Option>
           </Select.List>
         </Select>
-        <Typography variant="small" color="success" className="mt-1 block">
+        <Typography type="small" color="success" className="mt-1 block">
           Congratulations 🎉
         </Typography>
       </div>

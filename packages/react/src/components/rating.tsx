@@ -162,6 +162,7 @@ export const Rating = React.forwardRef<
                 elementToRender?.props?.onMouseLeave &&
                   elementToRender?.props?.onMouseLeave(event);
               },
+              "data-slot": "icon",
               className: twMerge(iconStyle, elementToRender?.props?.className),
             })
           : React.createElement(elementToRender as React.ElementType, {

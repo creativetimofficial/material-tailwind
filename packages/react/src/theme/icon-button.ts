@@ -12,8 +12,7 @@ export const iconButtonTheme = {
     isCircular: false,
   },
   baseStyle:
-    "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none",
-  isCircular: "rounded-full",
+    "inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none data-[shape=circular]:rounded-full",
   size: {
     sm: "text-sm leading-none min-w-[28px] min-h-[28px] rounded-md",
     md: "text-sm leading-none min-w-[36px] min-h-[36px] rounded-md",

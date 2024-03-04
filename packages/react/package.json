@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/react": "18.0.26",
     "react": "18.2.0",
+    "tailwindcss": "3.3.3",
     "tsconfig": "workspace:*",
     "tsup": "7.2.0",
     "typescript": "5.2.2"
@@ -35,6 +36,7 @@
     "@floating-ui/react": "0.26.3",
     "clsx": "1.2.1",
     "deepmerge": "4.3.1",
+    "hex-rgb": "5.0.0",
     "iconoir-react": "7.3.0",
     "material-ripple-effects": "2.0.1",
     "react-dom": "18.2.0",

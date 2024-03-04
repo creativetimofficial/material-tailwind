@@ -27,10 +27,10 @@ export function DialogWithImage() {
                 src="https://dub.sh/TdSBP0D"
               />
               <div className="-mt-px flex flex-col">
-                <Typography variant="small" className="font-semibold">
+                <Typography type="small" className="font-semibold">
                   Alex Andrew
                 </Typography>
-                <Typography variant="small" className="text-xs text-gray-600">
+                <Typography type="small" className="text-xs text-gray-600">
                   @alexandrew
                 </Typography>
               </div>
@@ -52,13 +52,13 @@ export function DialogWithImage() {
           <div className="flex items-end justify-between">
             <div className="flex items-center gap-16">
               <div>
-                <Typography variant="small" className="text-gray-600">
+                <Typography type="small" className="text-gray-600">
                   Views
                 </Typography>
                 <Typography className="font-semibold">44,082,044</Typography>
               </div>
               <div>
-                <Typography variant="small" className="text-gray-600">
+                <Typography type="small" className="text-gray-600">
                   Downloads
                 </Typography>
                 <Typography className="font-semibold">553,031</Typography>

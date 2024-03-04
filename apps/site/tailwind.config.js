@@ -1,7 +1,7 @@
-const { gray, blue, green, yellow, red } = require("tailwindcss/colors");
+import mtConfig from "@material-tailwind/react/dist/plugins";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,67 +9,7 @@ module.exports = {
     "../../packages/react/src/theme/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ["Inter", "sans-serif"],
-      body: ["Inter", "sans-serif"],
-      mono: ["Fira Code"],
-    },
     extend: {
-      colors: {
-        background: "rgb(var(--color-background) / <alpha-value>)",
-        foreground: "rgb(var(--color-foreground) / <alpha-value>)",
-        surface: {
-          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
-          dark: "rgb(var(--color-surface-dark) / <alpha-value>)",
-          light: "rgb(var(--color-surface-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-surface-foreground) / <alpha-value>)",
-        },
-        primary: {
-          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
-          dark: "rgb(var(--color-primary-dark) / <alpha-value>)",
-          light: "rgb(var(--color-primary-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-primary-foreground) / <alpha-value>)",
-        },
-        secondary: {
-          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
-          dark: "rgb(var(--color-secondary-dark) / <alpha-value>)",
-          light: "rgb(var(--color-secondary-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-secondary-foreground) / <alpha-value>)",
-        },
-        info: {
-          DEFAULT: "rgb(var(--color-info) / <alpha-value>)",
-          dark: "rgb(var(--color-info-dark) / <alpha-value>)",
-          light: "rgb(var(--color-info-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-info-foreground) / <alpha-value>)",
-        },
-        success: {
-          DEFAULT: "rgb(var(--color-success) / <alpha-value>)",
-          dark: "rgb(var(--color-success-dark) / <alpha-value>)",
-          light: "rgb(var(--color-success-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-success-foreground) / <alpha-value>)",
-        },
-        warning: {
-          DEFAULT: "rgb(var(--color-warning) / <alpha-value>)",
-          dark: "rgb(var(--color-warning-dark) / <alpha-value>)",
-          light: "rgb(var(--color-warning-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-warning-foreground) / <alpha-value>)",
-        },
-        error: {
-          DEFAULT: "rgb(var(--color-error) / <alpha-value>)",
-          dark: "rgb(var(--color-error-dark) / <alpha-value>)",
-          light: "rgb(var(--color-error-light) / <alpha-value>)",
-          foreground: "rgb(var(--color-error-foreground) / <alpha-value>)",
-        },
-      },
-      borderRadius: {
-        "3xl": "var(--radius)",
-        "2xl": "calc(var(--radius) - 8px)",
-        xl: "calc(var(--radius) - 12px)",
-        lg: "calc(var(--radius) - 16px)",
-        md: "calc(var(--radius) - 18px)",
-        DEFAULT: "calc(var(--radius) - 20px)",
-        sm: "calc(var(--radius) - 22px)",
-      },
       backgroundImage: {
         "conic-gradient":
           "conic-gradient(from 180deg at 50% 50%,#030712 0deg,#3b82f6 120deg,rgba(42,138,246,0) 360deg)",
@@ -89,5 +29,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [mtConfig],
 };

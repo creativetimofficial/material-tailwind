@@ -30,7 +30,7 @@ export const dialogContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "fixed z-[9998] top-1/2 left-1/2 -translate-x-1/2 px-4 py-3 -translate-y-1/2 bg-white w-full h-full rounded-xl shadow-2xl shadow-primary-dark/5 border border-border",
+    "fixed z-[9998] top-1/2 left-1/2 -translate-x-1/2 px-4 py-3 -translate-y-1/2 bg-white w-full h-full rounded-xl shadow-2xl shadow-surface-dark/5 border border-surface",
   size: {
     xs: "w-8/12 sm:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-max",
     sm: "w-9/12 sm:w-7/12 md:w-5/12 lg:w-3/12 h-max",
@@ -45,7 +45,7 @@ export const dialogOverlayTheme = {
   defaultProps: {
     lockScroll: true,
   },
-  baseStyle: "fixed inset-0 w-screen h-screen z-[9997] bg-primary-dark/50",
+  baseStyle: "fixed inset-0 w-screen h-screen z-[9997] bg-surface-dark/50",
 };
 
 export const dialogDismissTriggerTheme = {

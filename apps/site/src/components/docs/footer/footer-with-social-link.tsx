@@ -74,7 +74,7 @@ export function FooterWithSocialLinks() {
     <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <Typography variant="h6" className="mb-4">
+          <Typography type="h6" className="mb-4">
             Material Tailwind
           </Typography>
           <div className="grid grid-cols-3 justify-between gap-x-6 gap-y-4">
@@ -88,7 +88,7 @@ export function FooterWithSocialLinks() {
                     <Typography
                       as="a"
                       href={href}
-                      className="py-1 hover:text-info-main"
+                      className="hover:text-info-main py-1"
                     >
                       {title}
                     </Typography>
@@ -99,7 +99,7 @@ export function FooterWithSocialLinks() {
           </div>
         </div>
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-secondary-dark py-4 md:flex-row md:justify-between">
-          <Typography variant="small" className="text-center">
+          <Typography type="small" className="text-center">
             &copy; {YEAR}{" "}
             <a href="https://material-tailwind.com/">Material Tailwind</a>. All
             Rights Reserved.

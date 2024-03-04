@@ -6,7 +6,7 @@ export function TextareaWithLabel() {
       <Typography
         as="label"
         htmlFor="message"
-        variant="small"
+        type="small"
         color="primary"
         className="font-semibold"
       >

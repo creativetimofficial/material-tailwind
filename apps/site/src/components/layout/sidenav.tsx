@@ -15,7 +15,7 @@ function Collapsible({ category, categoryPages }) {
         tabIndex={0}
         role="button"
         onClick={toggleCollapse}
-        className="flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950"
+        className="flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
       >
         {category}{" "}
         <NavArrowRight
@@ -27,10 +27,10 @@ function Collapsible({ category, categoryPages }) {
       <Collapse as="ul" open={isOpen} className="mx-2">
         {categoryPages.map(({ title: subTitle, path }, i) => {
           return (
-            <li key={i} className="mx-1.5 border-l border-gray-200 py-0.5">
+            <li key={i} className="mx-1.5 border-l border-surface py-0.5">
               <Link
                 href={path}
-                className="block -translate-x-px border-l border-transparent py-1 pl-4 pr-2 text-sm text-gray-500 transition-colors duration-300 hover:border-gray-950 hover:text-gray-950"
+                className="block -translate-x-px border-l border-transparent py-1 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-primary hover:text-primary"
               >
                 {subTitle}
               </Link>
@@ -46,7 +46,7 @@ function getRoutes() {
   return routes.map(({ title, pages, categories }, idx) => {
     return (
       <React.Fragment key={idx}>
-        <li className="p-2 text-sm font-medium text-gray-950">{title}</li>
+        <li className="p-2 text-sm font-medium text-primary">{title}</li>
         <ul className="mx-0.5 mb-6">
           {categories
             ? categories.map(({ pages: categoryPages, category }, key) => {
@@ -63,7 +63,7 @@ function getRoutes() {
                   <li key={key}>
                     <Link
                       href={path}
-                      className="block px-2 py-1.5 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-950"
+                      className="block px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
                     >
                       {subTitle}
                     </Link>
@@ -79,7 +79,7 @@ function getRoutes() {
 export function Sidenav() {
   return (
     <div className="fixed -left-64 bottom-0 top-[65px] z-20 w-60 overflow-y-scroll pb-10 lg:left-auto">
-      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-white from-50% to-transparent" />
+      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-background from-50% to-transparent" />
       <ul className="pr-2">{getRoutes()}</ul>
     </div>
   );

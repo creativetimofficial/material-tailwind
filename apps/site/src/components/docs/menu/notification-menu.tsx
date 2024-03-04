@@ -13,11 +13,11 @@ const MenuItem = React.forwardRef<any, any>(
       <Menu.Item ref={ref} {...rest} className="gap-3">
         <Avatar src={img} alt="profile-picture" />
         <div>
-          <Typography variant="small" className="mb-1 block font-semibold">
+          <Typography type="small" className="mb-1 block font-semibold">
             {title}
           </Typography>
           <Typography
-            variant="small"
+            type="small"
             className="flex items-center gap-1 text-sm text-gray-600"
           >
             <Clock className="h-3.5 w-3.5" />

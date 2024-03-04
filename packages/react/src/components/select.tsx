@@ -352,7 +352,11 @@ export const SelectTrigger = React.forwardRef<
     >
       {children
         ? children({ value, element })
-        : element ?? <span className={theme.placeholder}>{placeholder}</span>}
+        : element ?? (
+            <span data-slot="placeholder" className={theme.placeholder}>
+              {placeholder}
+            </span>
+          )}
       {indicator}
     </Element>
   );

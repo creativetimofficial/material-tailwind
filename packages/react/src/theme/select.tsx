@@ -42,9 +42,7 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-secondary-content bg-transparent ring-transparent border border-secondary-dark transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error-main data-[success=true]:border-success-main select-none text-start",
-  isPill: "rounded-full",
-  placeholder: "text-gray-400",
+    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/70",
   size: {
     sm: "text-sm leading-none rounded-md py-[4.5px] px-1.5 ring",
     md: "text-sm leading-none rounded-md py-[8.5px] px-2.5 ring",
@@ -52,16 +50,16 @@ export const selectTriggerTheme = {
   },
   color: {
     primary:
-      "hover:border-primary-main hover:ring-primary-main/10 focus:border-primary-main focus:ring-primary-main/10 data-[open=true]:border-primary-main data-[open=true]:ring-primary-main/10",
+      "hover:border-primary hover:ring-primary/10 focus:border-primary focus:ring-primary/10 data-[open=true]:border-primary data-[open=true]:ring-primary/10",
     secondary:
-      "hover:border-secondary-main hover:ring-secondary-main/10 focus:border-secondary-main focus:ring-secondary-main/10 data-[open=true]:border-secondary-main data-[open=true]:ring-secondary-main/10",
-    info: "hover:border-info-main hover:ring-info-main/10 focus:border-info-main focus:ring-info-main/10 data-[open=true]:border-info-main data-[open=true]:ring-info-main/10",
+      "hover:border-secondary hover:ring-secondary/10 focus:border-secondary focus:ring-secondary/10 data-[open=true]:border-secondary data-[open=true]:ring-secondary/10",
+    info: "hover:border-info hover:ring-info/10 focus:border-info focus:ring-info/10 data-[open=true]:border-info data-[open=true]:ring-info/10",
     success:
-      "hover:border-success-main hover:ring-success-main/10 focus:border-success-main focus:ring-success-main/10 data-[open=true]:border-success-main data-[open=true]:ring-success-main/10",
+      "hover:border-success hover:ring-success/10 focus:border-success focus:ring-success/10 data-[open=true]:border-success data-[open=true]:ring-success/10",
     warning:
-      "hover:border-warning-main hover:ring-warning-main/10 focus:border-warning-main focus:ring-warning-main/10 data-[open=true]:border-warning-main data-[open=true]:ring-warning-main/10",
+      "hover:border-warning hover:ring-warning/10 focus:border-warning focus:ring-warning/10 data-[open=true]:border-warning data-[open=true]:ring-warning/10",
     error:
-      "hover:border-error-main hover:ring-error-main/10 focus:border-error-main focus:ring-error-main/10 data-[open=true]:border-error-main data-[open=true]:ring-error-main/10",
+      "hover:border-error hover:ring-error/10 focus:border-error focus:ring-error/10 data-[open=true]:border-error data-[open=true]:ring-error/10",
   },
 };
 
@@ -77,7 +75,7 @@ export const selectListTheme = {
     order: ["content"],
   },
   baseStyle:
-    "flex flex-col gap-0.5 bg-white p-1 rounded-lg shadow-xl shadow-primary-main/[0.025] border border-secondary-dark outline-none",
+    "flex flex-col gap-0.5 bg-white p-1 rounded-lg shadow-xl shadow-surface-dark/[0.025] border border-surface outline-none",
 };
 
 export const selectOptionTheme = {
@@ -88,7 +86,7 @@ export const selectOptionTheme = {
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={2}
         stroke="currentColor"
         className="h-4 w-4"
       >
@@ -101,5 +99,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-primary-main hover:bg-primary-main/10 focus:bg-primary-main/10 data-[selected=true]:bg-primary-main/10",
+    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-surface-dark hover:bg-surface/70 focus:bg-surface/70 focus:text-surface-dark data-[selected=true]:bg-surface/70 data-[selected=true]:text-surface-dark",
 };

@@ -27,7 +27,7 @@ type BaseTypographyProps = Props<"p"> &
 
 export interface TypographyProps extends BaseTypographyProps {
   as?: React.ElementType;
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
+  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
   color?: BaseComponent<any>["color"];
   className?: string;
   children: React.ReactNode;
@@ -49,24 +49,19 @@ export interface TypographyProps extends BaseTypographyProps {
  * ```
  */
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ as, color, variant, className, children, ...rest }, ref) => {
-    const Element = as ?? variant ?? "p";
+  ({ as, color, type, className, children, ...rest }, ref) => {
+    const Element = as ?? type ?? "p";
     const contextTheme = useTheme();
     const theme = contextTheme?.typography ?? typographyTheme;
     const defaultProps = theme?.defaultProps;
 
     color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
-    variant ??= (defaultProps?.variant as TypographyProps["variant"]) ?? "p";
+    type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["variant"][variant],
-      theme["color"][color],
-      className,
-    );
+    const styles = twMerge(theme.baseStyle, theme["color"][color], className);
 
     return (
-      <Element {...rest} ref={ref} className={styles}>
+      <Element {...rest} ref={ref} data-type={type} className={styles}>
         {children}
       </Element>
     );

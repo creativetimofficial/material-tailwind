@@ -46,9 +46,9 @@ function NavList() {
           <Typography
             as="a"
             href={href}
-            variant="small"
+            type="small"
             color="secondary"
-            className="flex items-center gap-x-2 p-1 hover:text-info-main"
+            className="hover:text-info-main flex items-center gap-x-2 p-1"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -79,7 +79,7 @@ export function DarkNavbar() {
         <Typography
           as="a"
           href="#"
-          variant="small"
+          type="small"
           color="secondary"
           className="ml-2 mr-2 block py-1 font-semibold"
         >

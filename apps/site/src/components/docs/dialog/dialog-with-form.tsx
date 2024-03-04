@@ -23,7 +23,7 @@ export function DialogWithForm() {
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography variant="h4" className="mb-2">
+          <Typography type="h4" className="mb-2">
             Sign In
           </Typography>
           <Typography className="text-gray-600">
@@ -34,7 +34,7 @@ export function DialogWithForm() {
               <Typography
                 as="label"
                 htmlFor="email"
-                variant="small"
+                type="small"
                 color="primary"
                 className="font-semibold"
               >
@@ -50,7 +50,7 @@ export function DialogWithForm() {
               <Typography
                 as="label"
                 htmlFor="password"
-                variant="small"
+                type="small"
                 color="primary"
                 className="font-semibold"
               >
@@ -75,11 +75,11 @@ export function DialogWithForm() {
             <Button isFullWidth>Sign In</Button>
           </form>
           <Typography
-            variant="small"
+            type="small"
             className="mb-2 mt-3 flex items-center justify-center gap-1"
           >
             Don't have an account?
-            <Typography variant="small" as="a" href="#" className="font-bold">
+            <Typography type="small" as="a" href="#" className="font-bold">
               Sign up
             </Typography>
           </Typography>

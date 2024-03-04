@@ -1,11 +1,11 @@
 export function Brand(props) {
   return (
-    <div className="relative overflow-hidden rounded-[10px] border border-gray-100 p-px shadow-lg shadow-gray-950/5">
+    <div className="relative overflow-hidden rounded-[10px] border border-surface p-px shadow-lg shadow-gray-950/5">
       <span
         aria-hidden="true"
         className="content[''] absolute left-2/4 top-2/4 block w-[calc(100%*1.5)] -translate-x-2/4 -translate-y-2/4 animate-gradient-spin rounded-full bg-conic-gradient pb-[calc(100%*1.5)] duration-[5000]"
       />
-      <div className="relative z-10 rounded-lg bg-white p-1">
+      <div className="relative z-10 rounded-lg bg-background p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"

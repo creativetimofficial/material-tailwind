@@ -102,12 +102,17 @@ export const IconButton = React.forwardRef<
       theme.baseStyle,
       theme["size"][size],
       theme["variant"][variant][color],
-      isCircular && theme["isCircular"],
       className,
     );
 
     return (
-      <Element {...rest} ref={ref} className={styles} onClick={handleClick}>
+      <Element
+        {...rest}
+        ref={ref}
+        className={styles}
+        onClick={handleClick}
+        data-shape={isCircular ? "circular" : "default"}
+      >
         {children}
       </Element>
     );

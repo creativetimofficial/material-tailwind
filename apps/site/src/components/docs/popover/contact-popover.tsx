@@ -19,7 +19,7 @@ export function ContactPopover() {
             </List.ItemStart>
             <div>
               <Typography className="font-semibold">Alex Andrew</Typography>
-              <Typography variant="small" className="text-gray-600">
+              <Typography type="small" className="text-gray-600">
                 General Manager
               </Typography>
             </div>

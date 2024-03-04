@@ -8,7 +8,7 @@ export function ImageWithCaption() {
         alt="nature-image"
         className="h-96 w-full rounded-lg object-cover object-center"
       />
-      <Typography as="caption" variant="small" className="mt-2 text-center">
+      <Typography as="caption" type="small" className="mt-2 text-center">
         Image Caption
       </Typography>
     </figure>

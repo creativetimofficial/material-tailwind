@@ -48,8 +48,8 @@ function NavList() {
           <Typography
             as="a"
             href={href}
-            variant="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info-main"
+            type="small"
+            className="hover:text-info-main flex items-center gap-x-2 p-1"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -76,7 +76,7 @@ export function NavbarWithSearch() {
         <Typography
           as="a"
           href="#"
-          variant="small"
+          type="small"
           className="ml-2 mr-2 block py-1 font-semibold"
         >
           Material Tailwind

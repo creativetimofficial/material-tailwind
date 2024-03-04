@@ -49,7 +49,7 @@ function NavList() {
       <List.ItemStart className="mr-1.5">
         <Icon className="h-4 w-4" />
       </List.ItemStart>
-      <Typography variant="small">{title}</Typography>
+      <Typography type="small">{title}</Typography>
     </List.Item>
   ));
 }
@@ -62,7 +62,7 @@ function ProfileMenu() {
         src="https://dub.sh/iu8bOfU"
         alt="profile-picture"
         size="sm"
-        className="border border-primary-main p-0.5 lg:ml-auto"
+        className="border-primary-main border p-0.5 lg:ml-auto"
       />
       <Menu.Content>
         <Menu.Item>
@@ -91,7 +91,7 @@ const MenuItem = React.forwardRef<any, any>(
         <Typography as="h6" className="font-semibold">
           {title}
         </Typography>
-        <Typography variant="small" className="text-gray-600">
+        <Typography type="small" className="text-gray-600">
           {description}
         </Typography>
       </List.Item>
@@ -115,7 +115,7 @@ export function ComplexNavbar() {
         <Typography
           as="a"
           href="#"
-          variant="small"
+          type="small"
           className="ml-2 mr-2 block py-1 font-semibold"
         >
           Material Tailwind
@@ -129,20 +129,20 @@ export function ComplexNavbar() {
                   <List.ItemStart className="me-1.5">
                     <MultiplePages className="h-4 w-4" />
                   </List.ItemStart>
-                  <Typography variant="small">Pages</Typography>
+                  <Typography type="small">Pages</Typography>
                   <List.ItemEnd className="ps-1">
                     <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl shadow-primary-main/[0.025]">
+              <Tooltip.Content className="shadow-primary-main/[0.025] grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl">
                 <Card
                   color="primary"
-                  className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-content shadow-none"
+                  className="text-primary-content col-span-2 grid place-items-center rounded-[5px] px-8 py-4 shadow-none"
                 >
                   <div>
                     <Rocket className="mx-auto h-12 w-12" />
-                    <Typography className="mt-5 text-center" variant="h5">
+                    <Typography className="mt-5 text-center" type="h5">
                       Material Tailwind
                     </Typography>
                   </div>
@@ -189,7 +189,7 @@ export function ComplexNavbar() {
                 <List.ItemStart className="me-1.5">
                   <MultiplePages className="h-4 w-4" />
                 </List.ItemStart>
-                <Typography variant="small">Pages</Typography>
+                <Typography type="small">Pages</Typography>
                 <List.ItemEnd className="ps-1">
                   <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
                 </List.ItemEnd>

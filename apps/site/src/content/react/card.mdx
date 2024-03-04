@@ -30,8 +30,8 @@ export function CardDemo() {
     <Card className="max-w-xs">
       <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
       <Card.Body>
-        <Typography variant="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-gray-600">
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-foreground">
           The place is close to Barceloneta Beach and bus stop just 2 min by
           walk and near to "Naviglio" where you can enjoy the main night life in
           Barcelona.
@@ -58,8 +58,8 @@ export function SimpleCard() {
   return (
     <Card className="max-w-xs">
       <Card.Body>
-        <Typography variant="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-gray-600">
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-foreground">
           The place is close to Barceloneta Beach and bus stop just 2 min by
           walk and near to "Naviglio" where you can enjoy the main night life in
           Barcelona.
@@ -81,25 +81,25 @@ export function SimpleCard() {
 <ComponentPreview demo={<Card.CardWithLink />}>
 ```tsx
 import { Card, Typography, Button } from "@material-tailwind/react";
-import { FrameSelect, NavArrowRight } from "iconoir-react";
+import { FrameSelect } from "iconoir-react";
 
 export function CardWithLink() {
   return (
     <Card className="max-w-xs">
-      <Card.Header>
-        <FrameSelect className="h-10 w-10 stroke-2" />
+      <Card.Header className="mx-3 mt-3">
+        <FrameSelect className="h-16 w-16" />
       </Card.Header>
       <Card.Body>
-        <Typography variant="h6">UI/UX Review Check</Typography>
-        <Typography className="my-1 text-gray-600">
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-foreground">
           The place is close to Barceloneta Beach and bus stop just 2 min by
           walk and near to "Naviglio" where you can enjoy the main night life in
           Barcelona.
         </Typography>
       </Card.Body>
       <Card.Footer>
-        <Button isFullWidth variant="ghost">
-          Read More <NavArrowRight className="h-4 w-4" />
+        <Button isFullWidth size="sm" as="a" href="#">
+          Read More
         </Button>
       </Card.Footer>
     </Card>
@@ -131,8 +131,8 @@ export function ProfileCard() {
         alt="profile-picture"
       />
       <Card.Body className="text-center">
-        <Typography variant="h5">Alex Andrew</Typography>
-        <Typography className="my-1 text-gray-600">
+        <Typography type="h5">Alex Andrew</Typography>
+        <Typography className="my-1 text-foreground">
           CEO & Co-Founder
         </Typography>
       </Card.Body>
@@ -208,16 +208,16 @@ export function LoginCard() {
         color="primary"
         className="grid h-24 place-items-center shadow-none"
       >
-        <Typography as="span" variant="h4" color="secondary">
+        <Typography as="span" type="h4" color="secondary">
           Sign In
         </Typography>
       </Card.Header>
       <Card.Body as="form">
-        <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+        <Input className="mb-4 mt-2 space-y-1.5">
           <Typography
             as="label"
             htmlFor="email"
-            variant="small"
+            type="small"
             color="primary"
             className="font-semibold"
           >
@@ -229,11 +229,11 @@ export function LoginCard() {
             placeholder="someone@example.com"
           />
         </Input>
-        <Input isFullWidth className="mb-4 space-y-1.5">
+        <Input className="mb-4 space-y-1.5">
           <Typography
             as="label"
             htmlFor="password"
-            variant="small"
+            type="small"
             color="primary"
             className="font-semibold"
           >
@@ -247,11 +247,7 @@ export function LoginCard() {
         </Input>
         <div className="mb-6 flex items-center gap-2">
           <Checkbox id="remember" />
-          <Typography
-            as="label"
-            htmlFor="remember"
-            className="text-gray-500"
-          >
+          <Typography as="label" htmlFor="remember" className="text-foreground">
             Remember Me
           </Typography>
         </div>
@@ -259,11 +255,17 @@ export function LoginCard() {
       </Card.Body>
       <Card.Footer className="text-center">
         <Typography
-          variant="small"
-          className="my-1 flex items-center justify-center gap-1"
+          type="small"
+          className="my-1 flex items-center justify-center gap-1 text-foreground"
         >
           Don't have an account?
-          <Typography variant="small" as="a" href="#" className="font-bold">
+          <Typography
+            type="small"
+            as="a"
+            href="#"
+            color="primary"
+            className="font-bold"
+          >
             Sign up
           </Typography>
         </Typography>
@@ -280,81 +282,53 @@ export function LoginCard() {
 
 <ComponentPreview demo={<Card.PricingCard />}>
 ```tsx
-import {
-  Card,
-  Typography,
-  Button,
-  Input,
-  Checkbox,
-} from "@material-tailwind/react";
+import { Card, Typography, Button, Chip } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
 
-export function LoginCard() {
+export function PricingCard() {
   return (
-    <Card className="max-w-xs">
-      <Card.Header
-        as={Card}
-        color="primary"
-        className="grid h-24 place-items-center shadow-none"
-      >
-        <Typography as="span" variant="h4" color="secondary">
-          Sign In
+    <Card color="primary" className="max-w-xs">
+      <Card.Header className="py-6 text-center">
+        <Chip size="lg">
+          <Chip.Label>Standard</Chip.Label>
+        </Chip>
+        <Typography
+          as="span"
+          type="h1"
+          color="secondary"
+          className="mt-3 flex justify-center gap-1 text-7xl font-normal"
+        >
+          <span className="mt-2 text-4xl">$</span>29
+          <span className="self-end text-4xl">/mo</span>
         </Typography>
       </Card.Header>
-      <Card.Body as="form">
-        <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
-          <Typography
-            as="label"
-            htmlFor="email"
-            variant="small"
-            color="primary"
-            className="font-semibold"
-          >
-            Email
-          </Typography>
-          <Input.Field
-            id="email"
-            type="email"
-            placeholder="someone@example.com"
-          />
-        </Input>
-        <Input isFullWidth className="mb-4 space-y-1.5">
-          <Typography
-            as="label"
-            htmlFor="password"
-            variant="small"
-            color="primary"
-            className="font-semibold"
-          >
-            Password
-          </Typography>
-          <Input.Field
-            id="password"
-            type="password"
-            placeholder="************"
-          />
-        </Input>
-        <div className="mb-6 flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Typography
-            as="label"
-            htmlFor="remember"
-            className="text-gray-500"
-          >
-            Remember Me
-          </Typography>
-        </div>
-        <Button isFullWidth>Sign In</Button>
+      <hr className="mx-3 border-primary-light" />
+      <Card.Body as="ul" className="space-y-3 px-8 pb-6 pt-8">
+        <li className="flex items-center gap-4 text-secondary">
+          <CheckCircleSolid className="h-5 w-5" />
+          <Typography>5 team members</Typography>
+        </li>
+        <li className="flex items-center gap-4 text-secondary">
+          <CheckCircleSolid className="h-5 w-5" />
+          <Typography>200+ components</Typography>
+        </li>
+        <li className="flex items-center gap-4 text-secondary">
+          <CheckCircleSolid className="h-5 w-5" />
+          <Typography>40+ built-in pages</Typography>
+        </li>
+        <li className="flex items-center gap-4 text-secondary">
+          <CheckCircleSolid className="h-5 w-5" />
+          <Typography>1 year free updates</Typography>
+        </li>
+        <li className="flex items-center gap-4 text-secondary">
+          <CheckCircleSolid className="h-5 w-5" />
+          <Typography>Life time technical support</Typography>
+        </li>
       </Card.Body>
-      <Card.Footer className="text-center">
-        <Typography
-          variant="small"
-          className="my-1 flex items-center justify-center gap-1"
-        >
-          Don't have an account?
-          <Typography variant="small" as="a" href="#" className="font-bold">
-            Sign up
-          </Typography>
-        </Typography>
+      <Card.Footer>
+        <Button isFullWidth color="secondary">
+          Buy Now
+        </Button>
       </Card.Footer>
     </Card>
   );

@@ -91,7 +91,7 @@ const NavItem = React.forwardRef(
           {title}
         </Typography>
         <Typography
-          variant="small"
+          type="small"
           className="text-gray-600"
         >
           {description}
@@ -120,7 +120,7 @@ export function NavMenu() {
         >
           <div>
             <Rocket className="mx-auto h-12 w-12" />
-            <Typography className="mt-5 text-center" variant="h5">
+            <Typography className="mt-5 text-center" type="h5">
               Material Tailwind PRO
             </Typography>
           </div>
@@ -247,11 +247,11 @@ const MenuItem = React.forwardRef(
       <Menu.Item ref={ref} {...rest} className="gap-3">
         <Avatar src={img} alt="profile-picture" />
         <div>
-          <Typography variant="small" className="mb-1 block font-semibold">
+          <Typography type="small" className="mb-1 block font-semibold">
             {title}
           </Typography>
           <Typography
-            variant="small"
+            type="small"
             className="flex items-center gap-1 text-sm text-gray-600"
           >
             <Clock className="h-3.5 w-3.5" />

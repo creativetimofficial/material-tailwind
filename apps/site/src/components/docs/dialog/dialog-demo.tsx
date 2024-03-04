@@ -13,7 +13,7 @@ export function DialogDemo() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="flex items-center justify-between gap-4">
-            <Typography variant="h5">Material Tailwind</Typography>
+            <Typography type="h5">Material Tailwind</Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"

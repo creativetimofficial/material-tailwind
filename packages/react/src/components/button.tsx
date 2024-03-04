@@ -89,13 +89,18 @@ export const Button = React.forwardRef<
       theme.baseStyle,
       theme["size"][size],
       theme["variant"][variant][color],
-      isPill && theme["isPill"],
-      isFullWidth && theme["isFullWidth"],
       className,
     );
 
     return (
-      <Element {...rest} ref={ref} className={styles} onClick={handleClick}>
+      <Element
+        {...rest}
+        ref={ref}
+        className={styles}
+        onClick={handleClick}
+        data-shape={isPill ? "pill" : "default"}
+        data-width={isFullWidth ? "full" : "default"}
+      >
         {children}
       </Element>
     );

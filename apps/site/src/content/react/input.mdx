@@ -106,13 +106,13 @@ export function InputWithValidation() {
     <div className="w-72 space-y-6">
       <Input isError color="error" className="w-full space-y-1">
         <Input.Field placeholder="Input Error" />
-        <Typography variant="small" color="error">
+        <Typography type="small" color="error">
           Something went wrong!
         </Typography>
       </Input>
       <Input isSuccess color="success" className="w-full space-y-1">
         <Input.Field placeholder="Input Success" />
-        <Typography variant="small" color="success">
+        <Typography type="small" color="success">
           Congratulations 🎉
         </Typography>
       </Input>
@@ -166,7 +166,7 @@ export function InputWithLabel() {
       <Typography
         as="label"
         htmlFor="email"
-        variant="small"
+        type="small"
         color="primary"
         className="font-semibold"
       >
@@ -194,7 +194,7 @@ export function InputWithHelperText() {
       <Input.Field type="password" placeholder="Password" />
       <div className="flex gap-1.5 text-gray-600">
         <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
-        <Typography variant="small">
+        <Typography type="small">
           Use at least 8 characters, one uppercase, one lowercase and one
           number.
         </Typography>

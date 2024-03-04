@@ -10,7 +10,7 @@ export function PopoverWithImage() {
           <Typography className="mb-2 font-semibold">
             Material Tailwind
           </Typography>
-          <Typography variant="small" className="mb-4 block text-gray-600">
+          <Typography type="small" className="mb-4 block text-gray-600">
             Material Tailwind is an easy to use components library for Tailwind
             CSS and Material Design. It features multiple React and HTML
             components, all written with Tailwind CSS classes and Material

@@ -45,7 +45,7 @@ export function ComponentPreview({
   const resetCopy = () => setIsCopied(false);
 
   const containerStyles = twMerge(
-    "border-gray-200 rounded-lg border p-2",
+    "border-surface rounded-lg border p-2",
     className,
   );
 
@@ -79,7 +79,7 @@ export function ComponentPreview({
           ripple={false}
           onClick={copyCode}
           onMouseLeave={resetCopy}
-          className="absolute right-1 top-1 z-10 text-gray-100"
+          className="absolute right-1 top-1 z-10 text-gray-100 hover:border-transparent hover:bg-transparent"
         >
           {isCopied ? <Check /> : <Copy />}
         </IconButton>

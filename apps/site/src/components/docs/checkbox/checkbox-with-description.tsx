@@ -10,7 +10,7 @@ export function CheckboxWithDescription() {
         <Typography color="gray" className="font-semibold">
           Remember Me
         </Typography>
-        <Typography variant="small" className="text-gray-500">
+        <Typography type="small" className="text-gray-500">
           You&apos;ll be able to login without password for 24 hours.
         </Typography>
       </label>

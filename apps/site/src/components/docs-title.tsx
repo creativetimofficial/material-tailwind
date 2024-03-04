@@ -6,7 +6,7 @@ export function DocsTitle({ children, href }) {
     >
       <a
         href={`#${href}`}
-        className="border-blue-gray-50 bg-blue-gray-50/50 absolute z-50 -ml-10 mb-2.5 rounded-md border p-1 opacity-0 hover:opacity-100 group-hover:opacity-100"
+        className="absolute z-50 -ml-10 mb-2.5 rounded-md border border-surface bg-surface-light p-1 opacity-0 hover:opacity-100 group-hover:opacity-100"
       >
         #
       </a>

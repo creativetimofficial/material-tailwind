@@ -38,14 +38,14 @@ export const ratingTheme = {
     ),
     readonly: false,
   },
-  baseStyle: "inline-flex items-center",
-  iconStyle: "w-5 h-5 text-inherit cursor-pointer",
+  baseStyle:
+    "inline-flex items-center [&_data-slot=icon]:w-5 [&_data-slot=icon]:h-5 [&_data-slot=icon]:text-inherit [&_data-slot=icon]:cursor-pointer",
   color: {
-    primary: "text-primary-main",
-    secondary: "text-secondary-main",
-    info: "text-info-main",
-    success: "text-success-main",
-    warning: "text-warning-main",
-    error: "text-error-main",
+    primary: "text-primary",
+    secondary: "text-secondary",
+    info: "text-info",
+    success: "text-success",
+    warning: "text-warning",
+    error: "text-error",
   },
 };

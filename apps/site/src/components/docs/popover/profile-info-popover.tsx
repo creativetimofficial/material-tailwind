@@ -16,7 +16,7 @@ export function ProfileInfoPopover() {
           <Button size="sm">Follow</Button>
         </div>
         <Typography
-          variant="h5"
+          type="h5"
           className="mb-1 flex items-center gap-2 font-semibold"
         >
           <span>Alex Andrew</span> •{" "}
@@ -28,7 +28,7 @@ export function ProfileInfoPopover() {
             @alex
           </Typography>
         </Typography>
-        <Typography variant="small" className="text-gray-600">
+        <Typography type="small" className="text-gray-600">
           Frontend Developer • Major interest in Web Development: motivated to
           achieve measurable results, to deepen my knowledge and improve my
           skills.
@@ -36,14 +36,14 @@ export function ProfileInfoPopover() {
         <hr className="-mx-2.5 my-2.5 border-secondary-dark" />
         <div className="flex items-center gap-8">
           <Typography
-            variant="small"
+            type="small"
             className="flex items-center gap-1.5 text-gray-600"
           >
             <MapPin className="h-4 w-4" />
             United Kingdom
           </Typography>
           <Typography
-            variant="small"
+            type="small"
             className="flex items-center gap-1.5 text-gray-600"
           >
             <City className="h-4 w-4" />

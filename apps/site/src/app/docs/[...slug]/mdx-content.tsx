@@ -41,33 +41,24 @@ import * as Video from "@components/docs/video";
 
 const components = {
   ComponentPreview,
-  h1: (props) => (
-    <MTTypography as="h1" variant="h3" className="mb-4" {...props} />
-  ),
+  h1: (props) => <MTTypography as="h1" type="h4" className="mb-4" {...props} />,
   h2: (props) => (
-    <MTTypography
-      as="h2"
-      variant="h4"
-      className="mb-4 scroll-mt-40"
-      {...props}
-    />
+    <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
   ),
-  h3: (props) => (
-    <MTTypography as="h3" variant="h5" className="mb-4" {...props} />
-  ),
-  p: (props) => <MTTypography className="mb-4 text-gray-500" {...props} />,
+  h3: (props) => <MTTypography as="h3" type="h6" className="mb-4" {...props} />,
+  p: (props) => <MTTypography className="mb-4 text-foreground" {...props} />,
   hr: () => <hr className="my-8 border-transparent" />,
   code: (props) => (
     <MTTypography
       as="code"
-      variant="small"
-      className="inline-block rounded border border-gray-200 bg-gray-100 px-1 py-0.5 font-mono leading-none text-gray-500"
+      type="small"
+      className="inline-block rounded border border-surface bg-surface-light px-1 font-mono leading-none text-foreground"
       {...props}
     />
   ),
   a: (props) => (
     <a
-      className="text-blue-500 underline transition-colors duration-300 hover:text-gray-950"
+      className="text-info underline transition-colors duration-300 hover:text-primary"
       {...props}
     />
   ),
@@ -76,7 +67,7 @@ const components = {
   ),
   li: (props) => (
     <li
-      className="font-sans text-base font-normal text-gray-500 antialiased"
+      className="font-sans text-base font-normal text-foreground antialiased"
       {...props}
     />
   ),

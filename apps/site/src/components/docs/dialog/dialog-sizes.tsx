@@ -23,7 +23,7 @@ export function DialogSizes() {
               >
                 <Xmark className="h-5 w-5" />
               </Dialog.DismissTrigger>
-              <Typography variant="h5">Material Tailwind</Typography>
+              <Typography type="h5">Material Tailwind</Typography>
               <Typography className="mb-6 mt-3 text-gray-600">
                 Material Tailwind is an open-source library that uses the power
                 of Tailwind CSS and React to help you build unique web projects
@@ -50,7 +50,7 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography variant="h5">Material Tailwind</Typography>
+                <Typography type="h5">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -87,7 +87,7 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography variant="h5">Material Tailwind</Typography>
+                <Typography type="h5">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -126,7 +126,7 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography variant="h5">Material Tailwind</Typography>
+                <Typography type="h5">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -163,7 +163,7 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography variant="h5">Material Tailwind</Typography>
+                <Typography type="h5">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -200,7 +200,7 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography variant="h5">Material Tailwind</Typography>
+                <Typography type="h5">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"

@@ -83,22 +83,18 @@ export const ButtonGroup = React.forwardRef<
       (defaultProps?.isFullWidth as ButtonGroupProps["isFullWidth"]) ?? false;
     isPill ??= (defaultProps?.isPill as ButtonGroupProps["isPill"]) ?? false;
 
-    const isGhost = variant === "ghost";
-    const isVertical = orientation === "vertical";
-    const isHorizontal = orientation === "horizontal";
-
-    const styles = twMerge(
-      theme.baseStyle,
-      isVertical && theme["vertical"],
-      isHorizontal && theme["horizontal"],
-      isVertical && !isGhost && theme["verticalAppearance"],
-      isHorizontal && !isGhost && theme["horizontalAppearance"],
-      isFullWidth && theme["isFullWidth"],
-      className,
-    );
+    const styles = twMerge(theme.baseStyle, className);
 
     return (
-      <Element {...rest} ref={ref} data-variant={variant} data-full-width={isFullWidth} className={styles}>
+      <Element
+        {...rest}
+        ref={ref}
+        className={styles}
+        data-variant={variant}
+        data-orientation={orientation}
+        data-shape={isPill ? "pill" : "default"}
+        data-width={isFullWidth ? "full" : "default"}
+      >
         {React.Children.map(
           children,
           (child) =>
@@ -111,6 +107,7 @@ export const ButtonGroup = React.forwardRef<
               isPill,
               isFullWidth,
               "data-variant": variant,
+              "data-orientation": orientation,
               ...child.props,
             } as ButtonProps),
         )}

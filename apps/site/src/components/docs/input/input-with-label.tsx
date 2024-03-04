@@ -6,7 +6,7 @@ export function InputWithLabel() {
       <Typography
         as="label"
         htmlFor="email"
-        variant="small"
+        type="small"
         color="primary"
         className="font-semibold"
       >

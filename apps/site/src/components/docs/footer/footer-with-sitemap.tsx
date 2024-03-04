@@ -105,7 +105,7 @@ export function FooterWithSitemap() {
                   <Typography
                     as="a"
                     href={href}
-                    className="py-1 hover:text-info-main"
+                    className="hover:text-info-main py-1"
                   >
                     {title}
                   </Typography>
@@ -115,7 +115,7 @@ export function FooterWithSitemap() {
           ))}
         </div>
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-secondary-dark py-4 md:flex-row md:justify-between">
-          <Typography variant="small" className="text-center">
+          <Typography type="small" className="text-center">
             &copy; {YEAR}{" "}
             <a href="https://material-tailwind.com/">Material Tailwind</a>. All
             Rights Reserved.

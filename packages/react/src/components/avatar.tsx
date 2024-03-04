@@ -50,12 +50,7 @@ export const Avatar = React.forwardRef<
   size ??= (defaultProps?.size as AvatarProps["size"]) ?? "md";
   variant ??= (defaultProps?.variant as AvatarProps["variant"]) ?? "circular";
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["size"][size],
-    theme["variant"][variant],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, theme["size"][size], className);
 
   return <Element {...rest} ref={ref} src={src} alt={alt} className={styles} />;
 });
