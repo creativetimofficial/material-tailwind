@@ -91,6 +91,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
     <div className="flex w-full flex-col justify-end lg:!ml-auto lg:flex-row">
       <List className="min-w-max px-0 lg:!flex-row">
         <NavItem href="/docs/react/installation">Docs</NavItem>
+        <NavItem href="/pro">Pro</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <NavItem href="/figma">Figma</NavItem>
         <NavItem href="/roots-of-ui-ux-design">Book</NavItem>
