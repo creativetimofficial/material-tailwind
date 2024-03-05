@@ -25,5 +25,5 @@ export const accordionTriggerTheme = {
 };
 
 export const accordionContentTheme = {
-  baseStyle: "block pb-3 text-forground h-0 data-[open=true]:h-auto",
+  baseStyle: "block pb-3 text-foreground h-0 data-[open=true]:h-auto",
 };

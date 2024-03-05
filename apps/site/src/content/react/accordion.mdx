@@ -8,14 +8,9 @@ next: docs/react/Accordion-group
 
 # Tailwind CSS Accordion - React
 
-Use our `Accordion` based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our React `Accordion` component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
 
-`Accordion` is an essential element of web design. Basically,
-`Accordion` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
-
-See below our `Accordion` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our simple and versatile `accordion` examples that you can use in your projects. All our examples are based on React and styled with Tailwind CSS. We also included some Accordion props that are available.
 
 ---
 
@@ -154,6 +149,120 @@ export function AccordionAllOpen() {
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item value="vue">
+        <Accordion.Trigger>
+          Material Tailwind Vue
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Accordion Custom Icon
+
+<ComponentPreview demo={<Accordion.AccordionCustomIcon />}>
+```tsx
+import { Accordion } from "@material-tailwind/react";
+import { Minus, Plus } from "iconoir-react";
+
+export function AccordionCustomIcon() {
+  return (
+    <Accordion defaultValue="react">
+      <Accordion.Item value="react">
+        <Accordion.Trigger>
+          Material Tailwind React
+          <Plus className="block h-4 w-4 group-data-[open=true]:hidden" />
+          <Minus className="hidden h-4 w-4 group-data-[open=true]:block" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item value="html">
+        <Accordion.Trigger>
+          Material Tailwind HTML
+          <Plus className="block h-4 w-4 group-data-[open=true]:hidden" />
+          <Minus className="hidden h-4 w-4 group-data-[open=true]:block" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item value="vue">
+        <Accordion.Trigger>
+          Material Tailwind Vue
+          <Plus className="block h-4 w-4 group-data-[open=true]:hidden" />
+          <Minus className="hidden h-4 w-4 group-data-[open=true]:block" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Accordion Custom Styles
+
+<ComponentPreview demo={<Accordion.AccordionCustomStyles />}>
+```tsx
+import { Accordion } from "@material-tailwind/react";
+import { NavArrowDown } from "iconoir-react";
+
+export function AccordionCustomStyles() {
+  return (
+    <Accordion defaultValue="react">
+      <Accordion.Item
+        value="react"
+        className="mb-2 rounded-lg border border-surface p-2"
+      >
+        <Accordion.Trigger>
+          Material Tailwind React
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item
+        value="html"
+        className="mb-2 rounded-lg border border-surface p-2"
+      >
+        <Accordion.Trigger>
+          Material Tailwind HTML
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item
+        value="vue"
+        className="rounded-lg border border-surface p-2"
+      >
         <Accordion.Trigger>
           Material Tailwind Vue
           <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
