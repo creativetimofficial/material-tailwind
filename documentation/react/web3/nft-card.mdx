@@ -1,0 +1,291 @@
+---
+title: Tailwind CSS Nft Card for React - Material Tailwind
+description: Customise your web projects with our easy-to-use nft card example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "nft-card",
+    "nft-card-dialog"
+  ]
+github: web3/nft-card
+prev: plugins/text-editor
+next: web3/nft-stats
+---
+
+<DocsTitle href="nft-card">
+# Tailwind CSS Nft Card - React
+</DocsTitle>
+
+Use our Tailwind CSS Nft Card in your web3 projects.
+
+See below our beautiful Nft card example that you can use in your Tailwind CSS and React project. 
+
+
+<br />
+<br />
+
+<CodePreview component={<Web3.NFTCard />}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
+import React, { useState, useEffect } from "react";
+
+export function NFTCard() {
+  const [loading, setLoading] = useState(true);
+  const [elrondData, setElrondData] = useState([]);
+  const [myNFTS, setMyNFTS] = useState([]);
+  const [address, setAddress] = useState("");
+
+  useEffect(() => {
+    fetch(`https://api.elrond.com/accounts/${address}/nfts?size=10000`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setElrondData(Object.entries(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [address]);
+
+  return (
+    <Card className="w-96">
+      <CardHeader floated={false} className="h-80">
+        <img
+          src={`https://media.elrond.com/nfts/assets/${your_CID_collection}/{your_NFT_identifier}.png`}
+          alt="profile-picture"
+        />
+      </CardHeader>
+      <CardBody className="flex items-center justify-between">
+        <Typography variant="h6" color="blue-gray" className="mb-2">
+          {your_NFT_name}
+        </Typography>
+        <Typography color="blue-gray" className="mb-2 font-bold">
+         #{your_NFT_identifier}
+        </Typography>
+      </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="nft-card-dialog">
+## Add Model to the NFT Card
+</DocsTitle>
+
+In order to see the attributes of the NFT we will need to add a modal to the card.
+
+<CodePreview component={<Web3.NFTCardDialog />}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+  Dialog,
+  DialogBody,
+} from "@material-tailwind/react";
+import React, { useEffect, useState } from "react";
+
+export function NFTCardDialog(props) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(!open);
+  const [modalData, setModalData] = React.useState([]);
+  const [modalImage, setModalImage] = React.useState([]);
+
+  const ref = React.createRef();
+  const [loading, setLoading] = useState(true);
+
+  const [elrondData, setElrondData] = useState([]);
+  const [myNFTS, setMyNFTS] = useState([]);
+  const [address, setAddress] = useState("");
+
+  useEffect(() => {
+    fetch(`https://api.elrond.com/accounts/${address}/nfts?size=10000`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setElrondData(Object.entries(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [address]);
+
+  return (
+    <>
+      <Card className="group w-96">
+        <CardHeader floated={false} className=" h-80">
+          <img
+            src={`https://media.elrond.com/nfts/assets/${your_CID_collection}/{your_NFT_identifier}.png`}
+            alt="profile-picture  "
+          />
+          <div className="absolute inset-0 z-10 h-full w-full bg-black/10 opacity-0 group-hover:opacity-100"></div>
+          <Button
+            onClick={() => {
+              setModalData([data]);
+              setModalImage(data?.image);
+              handleOpen;
+            }}
+            size="md"
+            ripple={false}
+            className="absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 rounded-full group-hover:block"
+          >
+            view attributes
+          </Button>
+        </CardHeader>
+        <CardBody className="flex items-center justify-between">
+          <Typography variant="h6" color="blue-gray" className="mb-2">
+            {your_NFT_name}
+          </Typography>
+          <Typography color="blue-gray" className="mb-2 font-bold">
+            #{your_NFT_identifier}
+          </Typography>
+        </CardBody>
+      </Card>
+      <Dialog
+        size="lg"
+        open={open}
+        className="flex flex-row"
+        handler={handleOpen}
+      >
+        <DialogBody className="grid grid-cols-3 gap-4">
+          <div className="col-span-1 p-3">
+            <img
+              src={modalImage}
+              alt="profile-picture"
+              className="bg-no-repeatz h-[300px] w-full rounded-md bg-cover"
+            />
+          </div>
+          <div className="col-span-2">
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              {modalData.map((data, i) => {
+                return (
+                  <span key={i}>
+                    {data?.attributes[6][1]?.value} &nbsp; #{data.nonce}
+                  </span>
+                );
+              })}
+            </Typography>
+            <div className="flex items-center justify-between ">
+              <Typography color="blue-gray" className="">
+                Attributes
+              </Typography>
+              <Typography color="blue-gray" className=" text-end">
+                Rarity Score:{" "}
+                <span className="font-bold">
+                  {modalData.map((data, i) => data?.rarity[2][1].toFixed(3))}
+                </span>
+              </Typography>
+            </div>
+            {modalData.map((data, i) => (
+              <div className="grid w-full grid-cols-2 gap-x-5 gap-y-2">
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[0][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {data?.attributes[0][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[1][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {data?.attributes[1][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[2][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {data?.attributes[2][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[3][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {" "}
+                      {data?.attributes[3][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[4][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {data?.attributes[4][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+                <Card
+                  shadow={false}
+                  className="mt-2 w-full border border-gray-300 "
+                >
+                  <CardBody className="px-4 py-2">
+                    <Typography>
+                      {data?.attributes[5][1]?.trait_type}
+                    </Typography>
+                    <Typography variant="h6">
+                      {data?.attributes[5][1]?.value}
+                    </Typography>
+                  </CardBody>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </DialogBody>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---

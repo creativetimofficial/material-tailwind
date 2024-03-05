@@ -1,0 +1,85 @@
+---
+title: Tailwind CSS Nft Stats for React - Material Tailwind
+description: Customise your web projects with our easy-to-use algolia search example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "nft-stats",
+   
+  ]
+github: web3/nft-stats
+prev: web3/nft-card
+
+---
+
+<DocsTitle href="nft-stats">
+# Tailwind CSS Nft Stats - React
+</DocsTitle>
+
+Use our Tailwind CSS Nft stats in your web3 projects.
+
+See below our beautiful Nft card example that you can use in your Tailwind CSS and React project. 
+
+
+<br />
+<br />
+
+<CodePreview component={<Web3.NFTCard />}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
+import React, { useState, useEffect } from "react";
+
+export function NFTCard() {
+  const [loading, setLoading] = useState(true);
+  const [elrondData, setElrondData] = useState([]);
+  const [myNFTS, setMyNFTS] = useState([]);
+  const [address, setAddress] = useState("");
+
+  useEffect(() => {
+    fetch(`https://api.elrond.com/accounts/${address}/nfts?size=10000`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setElrondData(Object.entries(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [address]);
+
+  return (
+    <Card className="w-96">
+      <CardHeader floated={false} className="h-80">
+        <img
+          src={`https://media.elrond.com/nfts/assets/${your_CID_collection}/{your_NFT_identifier}.png`}
+          alt="profile-picture"
+        />
+      </CardHeader>
+      <CardBody className="flex items-center justify-between">
+        <Typography variant="h6" color="blue-gray" className="mb-2">
+          {your_NFT_name}
+        </Typography>
+        <Typography color="blue-gray" className="mb-2 font-bold">
+         #{your_NFT_identifier}
+        </Typography>
+      </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+
+---
