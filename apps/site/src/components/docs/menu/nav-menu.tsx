@@ -9,7 +9,7 @@ const NavItem = React.forwardRef<any, any>(
         <Typography as="h6" className="font-semibold">
           {title}
         </Typography>
-        <Typography type="small" className="text-gray-600">
+        <Typography type="small" className="text-foreground">
           {description}
         </Typography>
       </Menu.Item>
@@ -32,11 +32,15 @@ export function NavMenu() {
       <Menu.Content className="grid max-w-lg grid-cols-5 gap-1">
         <Card
           color="primary"
-          className="text-primary-content col-span-2 grid place-items-center rounded-[5px] px-8 py-4 shadow-none"
+          className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
         >
           <div>
             <Rocket className="mx-auto h-12 w-12" />
-            <Typography className="mt-5 text-center" type="h5">
+            <Typography
+              color="white"
+              className="mt-5 text-center leading-snug"
+              type="h5"
+            >
               Material Tailwind PRO
             </Typography>
           </div>
