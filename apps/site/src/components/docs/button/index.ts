@@ -7,3 +7,4 @@ export * from "./button-variants";
 export * from "./button-with-icon";
 export * from "./block-level-button";
 export * from "./custom-auth-button";
+export * from "./button-loading";
