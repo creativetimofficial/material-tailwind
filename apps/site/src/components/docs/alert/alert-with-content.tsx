@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Alert, Button, Typography } from "@material-tailwind/react/dist";
-import { WarningCircle } from "iconoir-react";
+import { CheckCircle } from "iconoir-react";
 
 export function AlertWithContent() {
   const [open, setOpen] = React.useState(true);
@@ -10,7 +10,7 @@ export function AlertWithContent() {
       {!open && <Button onClick={() => setOpen(true)}>Open Alert</Button>}
       <Alert open={open} className="items-baseline">
         <Alert.Icon>
-          <WarningCircle className="h-full w-full translate-y-0.5" />
+          <CheckCircle className="h-full w-full translate-y-0.5" />
         </Alert.Icon>
         <Alert.Content>
           <Typography type="h5">Success</Typography>
