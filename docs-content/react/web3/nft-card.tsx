@@ -17,10 +17,10 @@ export function NFTCard() {
         />
       </CardHeader>
       <CardBody className="flex items-center justify-between">
-        <Typography variant="h6" color="blue-gray" className="mb-2">
+        <Typography variant="h6" color="blue-gray">
           NFT Name
         </Typography>
-        <Typography color="blue-gray" className="mb-2 font-bold">
+        <Typography variant="h6" color="blue-gray">
           #5
         </Typography>
       </CardBody>
