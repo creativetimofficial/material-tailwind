@@ -9,128 +9,139 @@ import { twMerge } from "tailwind-merge";
 import { useTheme } from "@context";
 
 // @theme
-import { checkboxTheme } from "@theme";
+import { checkboxTheme, checkboxIndicatorTheme } from "@theme";
 
 // @types
 import type { BaseComponent, Props } from "@types";
 
-export interface CheckboxProps extends Props<"input"> {
-  as?: React.ElementType;
-  color?: BaseComponent<"input">["color"];
-  icon?: React.ReactNode;
-  className?: string;
-  inputClassName?: string;
-  iconClassName?: string;
-  inputRef?: React.RefObject<HTMLInputElement>;
-  iconRef?: React.RefObject<HTMLSpanElement>;
-  children?: React.ReactNode;
+// checkbox context
+export interface CheckboxContextProps {
+  disabled?: boolean;
+  checked?: boolean;
+  color?: BaseComponent<any>["color"];
 }
 
-/**
- * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/checkbox) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/checkbox#checkbox-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/checkbox#checkbox-theme)
- *
- * @example
- * ```tsx
- * import { Checkbox } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Checkbox />;
- * }
- * ```
- */
-export const Checkbox = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  CheckboxProps
->(
-  (
-    {
-      as,
-      color,
-      icon,
-      className,
-      inputClassName,
-      iconClassName,
-      inputRef,
-      iconRef,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as ?? "div";
-    const innerID = React.useId();
+export const CheckboxContext = React.createContext<CheckboxContextProps>({
+  color: "primary",
+  disabled: false,
+  checked: false,
+});
+
+// checkbox root
+export interface CheckboxProps extends Props<"input"> {
+  as?: React.ElementType;
+  color?: BaseComponent<any>["color"];
+  disabled?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
+  ({ as, color, disabled, className, children, ...props }, ref) => {
     const contextTheme = useTheme();
     const theme = contextTheme?.checkbox ?? checkboxTheme;
     const defaultProps = theme?.defaultProps;
 
-    icon ??= (defaultProps?.icon as CheckboxProps["icon"]) ?? (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        className="h-4 w-4"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.5 12.75l6 6 9-13.5"
-        />
-      </svg>
-    );
+    const innerId = React.useId();
+    const [checked, setChecked] = React.useState(props?.checked || false);
+
     color ??= (defaultProps?.color as CheckboxProps["color"]) ?? "primary";
 
-    const baseStyles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, theme.color[color], className);
 
-    const inputStyles = twMerge(
-      theme.inputStyle,
-      theme.inputColor[color],
-      inputClassName,
-      children && "hidden",
-    );
+    React.useEffect(() => {
+      if (props?.defaultChecked) {
+        setChecked(props?.defaultChecked);
+      }
+    }, []);
 
-    const iconStyles = twMerge(
-      theme.iconStyle,
-      theme.iconColor[color],
-      iconClassName,
+    const contextValue = React.useMemo(
+      () => ({
+        color,
+        checked,
+        disabled,
+      }),
+      [color, checked, disabled],
     );
 
     return (
-      <Element ref={ref} className={baseStyles}>
-        {children ? (
-          <label htmlFor={rest?.id || innerID}>
-            <input
-              {...rest}
-              ref={inputRef}
-              type="checkbox"
-              className={inputStyles}
-              id={rest?.id || innerID}
-            />
-            {children}
-          </label>
-        ) : (
-          <>
-            <input
-              {...rest}
-              ref={inputRef}
-              type="checkbox"
-              className={inputStyles}
-              id={rest?.id || innerID}
-            />
-            <span ref={iconRef} className={iconStyles}>
-              {icon}
-            </span>
-          </>
-        )}
-      </Element>
+      <label
+        ref={ref}
+        className={styles}
+        data-checked={checked}
+        aria-disabled={disabled}
+        htmlFor={props?.id || innerId}
+      >
+        <input
+          {...props}
+          id={props?.id || innerId}
+          type="checkbox"
+          checked={
+            props?.defaultChecked ? undefined : props?.checked || checked
+          }
+          onChange={(e) => {
+            props?.onChange?.(e);
+            setChecked((cur) => !cur);
+          }}
+          style={{ display: "none" }}
+        />
+        <CheckboxContext.Provider value={contextValue}>
+          {children}
+        </CheckboxContext.Provider>
+      </label>
     );
   },
 );
 
-Checkbox.displayName = "MaterialTailwind.Checkbox";
+CheckboxRoot.displayName = "MaterialTailwind.Checkbox";
+
+// checkbox root
+export interface CheckboxIndicatorProps extends Props<"span" | any> {
+  as?: React.ElementType;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const CheckboxIndicator = React.forwardRef<
+  HTMLSpanElement | HTMLElement,
+  CheckboxIndicatorProps
+>(({ as, className, children, ...props }, ref) => {
+  const Element = as || "span";
+  const contextTheme = useTheme();
+  const { checked } = React.useContext(CheckboxContext);
+  const theme = contextTheme?.checkboxIndicator ?? checkboxIndicatorTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Element {...props} data-checked={checked} className={styles} ref={ref}>
+      {children || (
+        <svg
+          fill="none"
+          width="18px"
+          height="18px"
+          strokeWidth="2"
+          color="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 13L9 17L19 7"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+    </Element>
+  );
+});
+
+CheckboxIndicator.displayName = "MaterialTailwind.CheckboxIndicator";
+
+export const Checkbox = Object.assign(CheckboxRoot, {
+  Indicator: CheckboxIndicator,
+});
 
 export default Checkbox;

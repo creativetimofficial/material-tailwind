@@ -27,7 +27,11 @@ See below our simple `Checkbox` example that you can use in your React and Tailw
 import { Checkbox } from "@material-tailwind/react";
 
 export function CheckboxDemo() {
-  return <Checkbox />;
+  return (
+    <Checkbox>
+      <Checkbox.Indicator />
+    </Checkbox>
+  );
 }
 ```
 </ComponentPreview>
@@ -43,12 +47,24 @@ import { Checkbox } from "@material-tailwind/react";
 export function CheckboxColors() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      <Checkbox color="primary" />
-      <Checkbox color="secondary" />
-      <Checkbox color="info" />
-      <Checkbox color="success" />
-      <Checkbox color="warning" />
-      <Checkbox color="error" />
+      <Checkbox color="primary">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="secondary">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="info">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="success">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="warning">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Checkbox color="error">
+        <Checkbox.Indicator />
+      </Checkbox>
     </div>
   );
 }
@@ -63,22 +79,19 @@ export function CheckboxColors() {
 ```tsx
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-const ID = "checkbox";
-
 export function CheckboxWithLabel() {
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id={ID} />
-      <Typography
-        as="label"
-        htmlFor={ID}
-        className="text-gray-500"
-      >
+      <Checkbox id="checkbox">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Typography as="label" htmlFor="checkbox" className="text-gray-500">
         Remember Me
       </Typography>
     </div>
   );
 }
+
 ```
 </ComponentPreview>
 
@@ -88,20 +101,16 @@ export function CheckboxWithLabel() {
 
 <ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
 ```tsx
-import { Star, StarSolid } from "iconoir-react";
 import { Checkbox } from "@material-tailwind/react";
-
-const SHARED_CLASSES = "absolute inset-0 h-full w-full";
+import { Star, StarSolid } from "iconoir-react";
 
 export function CheckboxWithCustomIcon() {
   return (
-    <Checkbox>
-      <Star
-        className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
-      />
-      <StarSolid
-        className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
-      />
+    <Checkbox className="bg-transparent data-[checked]:bg-transparent">
+      <Checkbox.Indicator className="group relative left-0 top-0 bg-red-500 opacity-100">
+        <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
+        <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
+      </Checkbox.Indicator>
     </Checkbox>
   );
 }
@@ -117,7 +126,11 @@ export function CheckboxWithCustomIcon() {
 import { Checkbox } from "@material-tailwind/react";
 
 export function DisabledCheckbox() {
-  return <Checkbox disabled />;
+  return (
+    <Checkbox disabled>
+      <Checkbox.Indicator />
+    </Checkbox>
+  );
 }
 ```
 </ComponentPreview>
@@ -130,16 +143,16 @@ export function DisabledCheckbox() {
 ```tsx
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-const ID = "checkbox-link";
-
 export function CheckboxWithLink() {
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id={ID} />
+      <Checkbox id="checkbox-link">
+        <Checkbox.Indicator />
+      </Checkbox>
       <Typography
         as="label"
-        htmlFor={ID}
-        className="flex gap-1 text-gray-500"
+        htmlFor="checkbox-link"
+        className="flex gap-1 text-foreground"
       >
         I agree with the
         <Typography as="a" href="#" color="info">
@@ -160,17 +173,17 @@ export function CheckboxWithLink() {
 ```tsx
 import { Checkbox, Typography } from "@material-tailwind/react";
 
-const ID = "checkbox-description";
-
 export function CheckboxWithDescription() {
   return (
     <div className="flex gap-2">
-      <Checkbox id={ID} />
-      <label htmlFor={ID} className="-translate-y-1">
-        <Typography color="gray" className="font-medium">
+      <Checkbox id="checkbox-description">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <label htmlFor="checkbox-description" className="-translate-y-1">
+        <Typography color="primary" className="font-semibold">
           Remember Me
         </Typography>
-        <Typography type="small" className="text-gray-500">
+        <Typography type="small" className="text-foreground">
           You&apos;ll be able to login without password for 24 hours.
         </Typography>
       </label>
@@ -190,10 +203,9 @@ import { Checkbox } from "@material-tailwind/react";
 
 export function CustomCheckbox() {
   return (
-    <Checkbox
-      iconClassName="scale-50 peer-checked:scale-75"
-      inputClassName="rounded-full bg-gray-200"
-    />
+    <Checkbox className="rounded-full">
+      <Checkbox.Indicator className="scale-75 data-[checked=true]:scale-90" />
+    </Checkbox>
   );
 }
 ```

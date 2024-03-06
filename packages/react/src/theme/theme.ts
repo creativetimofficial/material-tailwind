@@ -18,7 +18,7 @@ import {
 } from "./breadcrumb";
 import { buttonTheme } from "./button";
 import { buttonGroupTheme } from "./button-group";
-import { checkboxTheme } from "./checkbox";
+import { checkboxTheme, checkboxIndicatorTheme } from "./checkbox";
 import {
   cardTheme,
   cardHeaderTheme,
@@ -113,6 +113,7 @@ export const theme = {
   button: buttonTheme,
   buttonGroup: buttonGroupTheme,
   checkbox: checkboxTheme,
+  checkboxIndicator: checkboxIndicatorTheme,
   card: cardTheme,
   cardHeader: cardHeaderTheme,
   cardBody: cardBodyTheme,

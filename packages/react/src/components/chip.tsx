@@ -197,7 +197,6 @@ export const ChipDismissTrigger = React.forwardRef<
   const styles = twMerge(
     theme.baseStyle,
     theme["size"][size || "md"],
-    theme["variant"][variant || "solid"][color || "primary"],
     className,
   );
 
