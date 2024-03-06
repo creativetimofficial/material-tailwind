@@ -8,14 +8,9 @@ next: docs/react/Avatar-group
 
 # Tailwind CSS Avatar - React
 
-Use our `Avatar` based on Tailwind CSS for actions in forms, dialogues, and more.
+Our React `Avatar` component is used to represent people or objects in your web projects. The avatar component usually displays a profile picture or a placeholder graphic if no image is available. Commonly places for avatars include: user profiles, comment sections, user lists, and anywhere else where a visual representation of a user is needed.
 
-`Avatar` is an essential element of web design. Basically,
-`Avatar` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
-
-See below our `Avatar` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+To jumpstart your development process, we offer a range of pre-designed `Avatar` examples that are ready to be integrated into your project. All our examples are based on React and styled with Tailwind CSS.
 
 ---
 
@@ -81,6 +76,117 @@ export function AvatarSizes() {
       <Avatar size="xl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
       <Avatar size="xxl" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
     </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar with Text
+
+<ComponentPreview demo={<Avatar.AvatarWithText />}>
+```tsx
+import { Avatar, Typography } from "@material-tailwind/react";
+
+export function AvatarWithText() {
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" variant="rounded" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" variant="square" />
+        <div>
+          <Typography>Tania Andrew</Typography>
+          <Typography type="small" className="text-foreground">
+            Web Developer
+          </Typography>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Avatar Stack
+
+<ComponentPreview demo={<Avatar.AvatarStack />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarStack() {
+  return (
+    <div className="flex items-center -space-x-4">
+      <Avatar
+        variant="circular"
+        alt="user 1"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 2"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 3"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 4"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+      <Avatar
+        variant="circular"
+        alt="user 5"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://dub.sh/TdSBP0D"
+      />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+---
+
+## Avatar Custom Styles
+
+<ComponentPreview demo={<Avatar.AvatarCustomStyles />}>
+```tsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarCustomStyles() {
+  return (
+    <Avatar
+      size="lg"
+      alt="avatar"
+      src="https://dub.sh/TdSBP0D"
+      className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
+    />
   );
 }
 ```
