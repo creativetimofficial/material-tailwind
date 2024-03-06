@@ -66,7 +66,7 @@ import {
   popoverArrowTheme,
 } from "./popover";
 import { progressTheme, progressBarTheme } from "./progress";
-import { radioTheme } from "./radio";
+import { radioTheme, radioItemTheme, radioIndicatorTheme } from "./radio";
 import { ratingTheme } from "./rating";
 import {
   selectTheme,
@@ -151,6 +151,8 @@ export const theme = {
   progress: progressTheme,
   progressBar: progressBarTheme,
   radio: radioTheme,
+  radioItem: radioItemTheme,
+  radioIndicator: radioIndicatorTheme,
   rating: ratingTheme,
   select: selectTheme,
   selectTrigger: selectTriggerTheme,

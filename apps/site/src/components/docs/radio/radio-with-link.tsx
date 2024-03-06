@@ -2,13 +2,15 @@ import { Radio, Typography } from "@material-tailwind/react/dist";
 
 export function RadioWithLink() {
   return (
-    <div className="flex flex-col gap-4">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio name="terms" id="radio-link-agreen" />
+        <Radio.Item id="radio-link-agree">
+          <Radio.Indicator />
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="radio-link-agreen"
-          className="flex gap-1 text-gray-500"
+          htmlFor="radio-link-agree"
+          className="flex gap-1 text-foreground"
         >
           I agree with the
           <Typography as="a" href="#" color="info">
@@ -17,11 +19,13 @@ export function RadioWithLink() {
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio name="terms" id="radio-link-disagree" />
+        <Radio.Item id="radio-link-disagree">
+          <Radio.Indicator />
+        </Radio.Item>
         <Typography
           as="label"
           htmlFor="radio-link-disagree"
-          className="flex gap-1 text-gray-500"
+          className="flex gap-1 text-foreground"
         >
           I disagree with the
           <Typography as="a" href="#" color="info">
@@ -29,6 +33,6 @@ export function RadioWithLink() {
           </Typography>
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }

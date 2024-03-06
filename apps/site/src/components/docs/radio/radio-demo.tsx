@@ -2,19 +2,23 @@ import { Radio, Typography } from "@material-tailwind/react/dist";
 
 export function RadioDemo() {
   return (
-    <div className="flex gap-10">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio id="html" name="type" />
-        <Typography as="label" htmlFor="html" className="text-gray-500">
+        <Radio.Item id="html">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="html" className="text-foreground">
           HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio id="react" name="type" />
-        <Typography as="label" htmlFor="react" className="text-gray-500">
+        <Radio.Item id="react">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="react" className="text-foreground">
           React
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }

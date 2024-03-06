@@ -2,29 +2,33 @@ import { Radio, Typography } from "@material-tailwind/react/dist";
 
 export function RadioWithDescription() {
   return (
-    <div className="flex flex-col gap-4">
+    <Radio className="gap-4">
       <div className="flex gap-2">
-        <Radio name="version" id="radio-description-html" />
+        <Radio.Item id="radio-description-html">
+          <Radio.Indicator />
+        </Radio.Item>
         <label htmlFor="radio-description-html" className="-translate-y-1">
           <Typography color="gray" className="font-semibold">
             HTML Version
           </Typography>
-          <Typography type="small" className="text-gray-500">
+          <Typography type="small" className="text-foreground">
             @material-tailwind/html, packed with rich components and widgets.
           </Typography>
         </label>
       </div>
       <div className="flex gap-2">
-        <Radio name="version" id="radio-description-react" />
+        <Radio.Item id="radio-description-react">
+          <Radio.Indicator />
+        </Radio.Item>
         <label htmlFor="radio-description-react" className="-translate-y-1">
           <Typography color="gray" className="font-semibold">
             React Version
           </Typography>
-          <Typography type="small" className="text-gray-500">
+          <Typography type="small" className="text-foreground">
             @material-tailwind/react, packed with rich components and widgets.
           </Typography>
         </label>
       </div>
-    </div>
+    </Radio>
   );
 }

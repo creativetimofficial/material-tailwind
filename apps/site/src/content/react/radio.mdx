@@ -22,20 +22,24 @@ import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioDemo() {
   return (
-    <div className="flex gap-10">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio id="html" name="type" />
-        <Typography as="label" htmlFor="html" className="text-gray-500">
+        <Radio.Item id="html">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="html" className="text-foreground">
           HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio id="react" name="type" />
-        <Typography as="label" htmlFor="react" className="text-gray-500">
+        <Radio.Item id="react">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="react" className="text-foreground">
           React
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }
 ```
@@ -51,13 +55,55 @@ import { Radio } from "@material-tailwind/react";
 
 export function RadioColors() {
   return (
-    <div className="flex flex-wrap justify-center gap-4">
-      <Radio name="color" color="primary" />
-      <Radio name="color" color="secondary" />
-      <Radio name="color" color="info" />
-      <Radio name="color" color="success" />
-      <Radio name="color" color="warning" />
-      <Radio name="color" color="error" />
+    <div className="flex flex-col gap-4">
+      <Radio color="primary" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
+      <Radio color="secondary" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
+      <Radio color="info" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
+      <Radio color="success" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
+      <Radio color="warning" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
+      <Radio color="error" orientation="horizontal">
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+        <Radio.Item>
+          <Radio.Indicator />
+        </Radio.Item>
+      </Radio>
     </div>
   );
 }
@@ -70,49 +116,49 @@ export function RadioColors() {
 
 <ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
 ```tsx
-import { Star, StarSolid } from "iconoir-react";
 import { Radio, Typography } from "@material-tailwind/react";
-
-const SHARED_CLASSES = "absolute inset-0 h-full w-full";
+import { Check, Star, StarSolid } from "iconoir-react";
 
 export function RadioWithCustomIcon() {
   return (
-    <div className="flex gap-10">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio id="javascript" name="variant">
-          <Star
-            className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
-          />
-          <StarSolid
-            className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
-          />
-        </Radio>
+        <Radio.Item
+          id="custom-icon-html"
+          className="bg-transparent data-[checked=true]:bg-transparent"
+        >
+          <Radio.Indicator className="relative left-0 top-0 opacity-100">
+            <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
+            <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
+          </Radio.Indicator>
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="javascript"
-          className="text-gray-500"
+          htmlFor="custom-icon-html"
+          className="text-foreground"
         >
-          JavaScript
+          HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio id="typescript" name="variant">
-          <Star
-            className={`${SHARED_CLASSES} opacity-100 peer-checked:opacity-0`}
-          />
-          <StarSolid
-            className={`${SHARED_CLASSES} opacity-0 peer-checked:opacity-100`}
-          />
-        </Radio>
+        <Radio.Item
+          id="custom-icon-react"
+          className="bg-transparent data-[checked=true]:bg-transparent"
+        >
+          <Radio.Indicator className="relative left-0 top-0 opacity-100">
+            <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
+            <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
+          </Radio.Indicator>
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="typescript"
-          className="text-gray-500"
+          htmlFor="custom-icon-react"
+          className="text-foreground"
         >
-          TypeScript
+          React
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }
 ```
@@ -128,28 +174,24 @@ import { Radio, Typography } from "@material-tailwind/react";
 
 export function DisabledRadio() {
   return (
-    <div className="flex gap-10">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio id="light" name="type" disabled />
-        <Typography
-          as="theme"
-          htmlFor="light"
-          className="pointer-events-none select-none text-gray-500/50/50"
-        >
-          Light
+        <Radio.Item disabled id="html">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="html" className="text-foreground">
+          HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio id="dark" name="type" disabled />
-        <Typography
-          as="theme"
-          htmlFor="dark"
-          className="pointer-events-none select-none text-gray-500/50/50"
-        >
-          Dark
+        <Radio.Item disabled id="react">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="react" className="text-foreground">
+          React
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }
 ```
@@ -165,13 +207,15 @@ import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioWithLink() {
   return (
-    <div className="flex flex-col gap-4">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio name="terms" id="radio-link-agreen" />
+        <Radio.Item id="radio-link-agree">
+          <Radio.Indicator />
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="radio-link-agreen"
-          className="flex gap-1 text-gray-500"
+          htmlFor="radio-link-agree"
+          className="flex gap-1 text-foreground"
         >
           I agree with the
           <Typography as="a" href="#" color="info">
@@ -180,11 +224,13 @@ export function RadioWithLink() {
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio name="terms" id="radio-link-disagree" />
+        <Radio.Item id="radio-link-disagree">
+          <Radio.Indicator />
+        </Radio.Item>
         <Typography
           as="label"
           htmlFor="radio-link-disagree"
-          className="flex gap-1 text-gray-500"
+          className="flex gap-1 text-foreground"
         >
           I disagree with the
           <Typography as="a" href="#" color="info">
@@ -192,7 +238,7 @@ export function RadioWithLink() {
           </Typography>
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }
 ```
@@ -249,45 +295,41 @@ export function RadioWithDescription() {
 
 <ComponentPreview demo={<Radio.CustomRadio />}>
 ```tsx
-import { Check } from "iconoir-react";
 import { Radio, Typography } from "@material-tailwind/react";
+import { Check } from "iconoir-react";
 
 export function CustomRadio() {
   return (
-    <div className="flex gap-10">
+    <Radio>
       <div className="flex items-center gap-2">
-        <Radio
-          id="black"
-          name="color"
-          className="rounded"
-          inputClassName="rounded bg-gray-200"
-          icon={<Check className="h-4 w-4 stroke-2" />}
-        />
+        <Radio.Item id="custom-html" className="rounded">
+          <Radio.Indicator>
+            <Check className="h-4 w-4 stroke-2" />
+          </Radio.Indicator>
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="black"
-          className="text-gray-500"
+          htmlFor="custom-html"
+          className="text-foreground"
         >
-          Black
+          HTML
         </Typography>
       </div>
       <div className="flex items-center gap-2">
-        <Radio
-          id="white"
-          name="color"
-          className="rounded"
-          inputClassName="rounded bg-gray-200"
-          icon={<Check className="h-4 w-4 stroke-2" />}
-        />
+        <Radio.Item id="custom-react" className="rounded">
+          <Radio.Indicator>
+            <Check className="h-4 w-4 stroke-2" />
+          </Radio.Indicator>
+        </Radio.Item>
         <Typography
           as="label"
-          htmlFor="white"
-          className="text-gray-500"
+          htmlFor="custom-react"
+          className="text-foreground"
         >
-          White
+          React
         </Typography>
       </div>
-    </div>
+    </Radio>
   );
 }
 ```

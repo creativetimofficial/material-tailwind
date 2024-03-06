@@ -29,7 +29,6 @@ export const CheckboxContext = React.createContext<CheckboxContextProps>({
 
 // checkbox root
 export interface CheckboxProps extends Props<"input"> {
-  as?: React.ElementType;
   color?: BaseComponent<any>["color"];
   disabled?: boolean;
   className?: string;
@@ -37,7 +36,7 @@ export interface CheckboxProps extends Props<"input"> {
 }
 
 export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
-  ({ as, color, disabled, className, children, ...props }, ref) => {
+  ({ color, disabled, className, children, ...props }, ref) => {
     const contextTheme = useTheme();
     const theme = contextTheme?.checkbox ?? checkboxTheme;
     const defaultProps = theme?.defaultProps;
@@ -95,7 +94,7 @@ export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
 
 CheckboxRoot.displayName = "MaterialTailwind.Checkbox";
 
-// checkbox root
+// checkbox indicator
 export interface CheckboxIndicatorProps extends Props<"span" | any> {
   as?: React.ElementType;
   className?: string;

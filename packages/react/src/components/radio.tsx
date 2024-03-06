@@ -9,134 +9,186 @@ import { twMerge } from "tailwind-merge";
 import { useTheme } from "@context";
 
 // @theme
-import { radioTheme } from "@theme";
+import { radioTheme, radioItemTheme, radioIndicatorTheme } from "@theme";
 
 // @types
 import type { BaseComponent, Props } from "@types";
 
-export interface RadioProps extends Props<"input"> {
-  as?: React.ElementType;
-  color?: BaseComponent<"input">["color"];
-  icon?: React.ReactNode;
-  className?: string;
-  inputClassName?: string;
-  iconClassName?: string;
-  inputRef?: React.RefObject<HTMLInputElement>;
-  iconRef?: React.RefObject<HTMLSpanElement>;
-  children?: React.ReactNode;
+// radio context
+export interface RadioContextProps {
+  globalValue?: string;
+  color?: BaseComponent<any>["color"];
+  setGlobalValue?: (e: string) => void;
 }
 
-/**
- * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/radio) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/radio#radio-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/radio#radio-theme)
- *
- * @example
- * ```tsx
- * import { Radio, Typography } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return (
- *    <div className="flex gap-10">
- *      <div className="flex items-center gap-2">
- *        <Radio id="html" name="type" />
- *        <Typography as="label" htmlFor="html" className="text-gray-500 dark:text-gray-400">
- *          HTML
- *        </Typography>
- *      </div>
- *      <div className="flex items-center gap-2">
- *        <Radio id="react" name="type" />
- *        <Typography as="label" htmlFor="react" className="text-gray-500 dark:text-gray-400">
- *          React
- *        </Typography>
- *      </div>
- *    </div>
- *  )
- * }
- * ```
- */
-export const Radio = React.forwardRef<HTMLDivElement | HTMLElement, RadioProps>(
+export const RadioContext = React.createContext<RadioContextProps>({
+  globalValue: "",
+  color: "primary",
+  setGlobalValue: () => {},
+});
+
+// radio root
+export interface RadioProps extends Props<"div" | any> {
+  as?: React.ElementType;
+  value?: string;
+  defaultValue?: string;
+  onChange?: (e: string) => void;
+  color?: BaseComponent<any>["color"];
+  orientation?: "horizontal" | "vertical";
+  className?: string;
+  children: React.ReactNode;
+}
+
+export const RadioRoot = React.forwardRef<HTMLDivElement, RadioProps>(
   (
     {
       as,
+      value,
+      defaultValue,
+      onChange,
       color,
-      icon,
+      orientation,
       className,
-      inputClassName,
-      iconClassName,
-      inputRef,
-      iconRef,
       children,
-      ...rest
+      ...props
     },
     ref,
   ) => {
-    const Element = as ?? "div";
-    const innerID = React.useId();
+    const Element = as || "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.radio ?? radioTheme;
     const defaultProps = theme?.defaultProps;
 
-    icon ??= (defaultProps?.icon as RadioProps["icon"]) ?? (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-2 w-2"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-      >
-        <circle data-name="ellipse" cx="8" cy="8" r="8" />
-      </svg>
-    );
+    const [innerValue, setInnerValue] = React.useState(defaultValue || "");
+
+    value ??= innerValue;
+    onChange ??= setInnerValue;
     color ??= (defaultProps?.color as RadioProps["color"]) ?? "primary";
+    orientation ??=
+      (defaultProps?.orientation as RadioProps["orientation"]) ?? "vertical";
 
-    const baseStyles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-    const inputStyles = twMerge(
-      theme.inputStyle,
-      theme.inputColor[color],
-      inputClassName,
-      children && "hidden",
-    );
-
-    const iconStyles = twMerge(
-      theme.iconStyle,
-      theme.iconColor[color],
-      iconClassName,
+    const contextValue = React.useMemo(
+      () => ({
+        color,
+        globalValue: value,
+        setGlobalValue: onChange,
+      }),
+      [color, value, onChange],
     );
 
     return (
-      <Element ref={ref} className={baseStyles}>
-        {children ? (
-          <label htmlFor={rest?.id || innerID}>
-            <input
-              {...rest}
-              ref={inputRef}
-              type="radio"
-              className={inputStyles}
-              id={rest?.id || innerID}
-            />
-            {children}
-          </label>
-        ) : (
-          <>
-            <input
-              {...rest}
-              ref={inputRef}
-              type="radio"
-              className={inputStyles}
-              id={rest?.id || innerID}
-            />
-            <span ref={iconRef} className={iconStyles}>
-              {icon}
-            </span>
-          </>
-        )}
+      <Element
+        {...props}
+        ref={ref}
+        className={styles}
+        data-value={value}
+        data-orientation={orientation}
+      >
+        <RadioContext.Provider value={contextValue}>
+          {children}
+        </RadioContext.Provider>
       </Element>
     );
   },
 );
 
-Radio.displayName = "MaterialTailwind.Radio";
+RadioRoot.displayName = "MaterialTailwind.Radio";
+
+// radio item
+export interface RadioItemProps extends Props<"input"> {
+  disabled?: boolean;
+  className?: string;
+  value?: string;
+  children: React.ReactNode;
+}
+
+export const RadioItem = React.forwardRef<HTMLLabelElement, RadioItemProps>(
+  ({ disabled, className, children, value, ...props }, ref) => {
+    const contextTheme = useTheme();
+    const theme = contextTheme?.radioItem ?? radioItemTheme;
+    const { globalValue, setGlobalValue, color } =
+      React.useContext(RadioContext);
+
+    const innerId = React.useId();
+    const innerValue = React.useId();
+    const mainValue = value || innerValue;
+    const isChecked = globalValue === mainValue;
+
+    const styles = twMerge(theme.baseStyle, theme.color[color], className);
+
+    return (
+      <label
+        ref={ref}
+        className={styles}
+        data-value={mainValue}
+        data-checked={isChecked}
+        aria-disabled={disabled}
+        htmlFor={props?.id || innerId}
+      >
+        <input
+          {...props}
+          id={props?.id || innerId}
+          type="radio"
+          checked={isChecked}
+          value={mainValue}
+          onChange={(e) => {
+            props?.onChange?.(e);
+            setGlobalValue?.(mainValue);
+          }}
+          style={{ display: "none" }}
+        />
+        {children}
+      </label>
+    );
+  },
+);
+
+// radio indicator
+export interface RadioIndicatorProps extends Props<"span" | any> {
+  as?: React.ElementType;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const RadioIndicator = React.forwardRef<
+  HTMLSpanElement | HTMLElement,
+  RadioIndicatorProps
+>(({ as, className, children, ...props }, ref) => {
+  const Element = as || "span";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.radioIndicator ?? radioIndicatorTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Element {...props} className={styles} ref={ref}>
+      {children || (
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          />
+        </svg>
+      )}
+    </Element>
+  );
+});
+
+RadioIndicator.displayName = "MaterialTailwind.RadioIndicator";
+
+export const Radio = Object.assign(RadioRoot, {
+  Item: RadioItem,
+  Indicator: RadioIndicator,
+});
 
 export default Radio;

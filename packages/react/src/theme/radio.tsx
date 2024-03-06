@@ -1,40 +1,32 @@
 import type { DeepPartial } from "@types";
 
 export type RadioTheme = DeepPartial<typeof radioTheme>;
+export type RadioItemTheme = DeepPartial<typeof radioItemTheme>;
+export type RadioIndicatorTheme = DeepPartial<typeof radioIndicatorTheme>;
 
 export const radioTheme = {
   defaultProps: {
     color: "primary",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-2 w-2"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-      >
-        <circle data-name="ellipse" cx="8" cy="8" r="8" />
-      </svg>
-    ),
+    orientation: "vertical",
   },
-  baseStyle: "inline-block relative h-5 w-5 rounded-full",
-  inputStyle:
-    "peer h-full w-full appearance-none rounded-full bg-secondary-dark transition-all duration-200 ease-in disabled:opacity-50 disabled:pointer-events-none",
-  inputColor: {
-    primary: "checked:bg-primary-main",
-    secondary: "checked:bg-secondary-main",
-    info: "checked:bg-info-main",
-    success: "checked:bg-success-main",
-    warning: "checked:bg-warning-main",
-    error: "checked:bg-error-main",
+  baseStyle:
+    "flex gap-2 data-[orientation=horizontal]:items-center data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start",
+};
+
+export const radioItemTheme = {
+  baseStyle:
+    "group block relative h-5 w-5 shrink-0 rounded-full bg-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+  color: {
+    primary: "data-[checked=true]:bg-primary text-primary-foreground",
+    secondary: "data-[checked=true]:bg-secondary text-secondary-foreground",
+    info: "data-[checked=true]:bg-info text-info-foreground",
+    success: "data-[checked=true]:bg-success text-success-foreground",
+    warning: "data-[checked=true]:bg-warning text-warning-foreground",
+    error: "data-[checked=true]:bg-error text-error-foreground",
   },
-  iconStyle:
-    "pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100",
-  iconColor: {
-    primary: "text-primary-content",
-    secondary: "text-secondary-content",
-    info: "text-info-content",
-    success: "text-success-content",
-    warning: "text-warning-content",
-    error: "text-error-content",
-  },
+};
+
+export const radioIndicatorTheme = {
+  baseStyle:
+    "pointer-events-none absolute left-2/4 top-2/4 text-current -translate-x-2/4 -translate-y-2/4 scale-75 opacity-0 transition-all duration-200 ease-in group-data-[checked=true]:scale-100 group-data-[checked=true]:opacity-100",
 };
