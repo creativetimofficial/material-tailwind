@@ -1,0 +1,210 @@
+---
+title: Tailwind CSS Nft Stats for React - Material Tailwind
+description: Customise your web projects with our easy-to-use algolia search example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "nft-stats",
+   
+  ]
+github: web3/nft-stats
+prev: web3/nft-card
+
+---
+
+<DocsTitle href="nft-stats">
+# Tailwind CSS Nft Stats Card - React
+</DocsTitle>
+
+Use our Tailwind CSS Nft stats in your web3 projects.
+
+See below our beautiful Nft stats card example that you can use in your Tailwind CSS and React project. 
+
+
+<br />
+
+<CodePreview component={<Web3.NFTStatsCard />}>
+```jsx
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
+import React, { useEffect, useMemo, useState } from "react";
+
+export function NFTStatsCard() {
+  const [initStats, setInitStats] = useState([]);
+
+  const collections = useMemo(
+    () => [
+      {
+        ticker: "NFTIM-4586ac",
+        name: "NF-Tim",
+      },
+    ],
+    [],
+  );
+
+  // get init api data for collection profile
+  const getInitStatsPerCollection = (ticker) => {
+    const promises = ticker.map((data) => {
+      return fetch(
+        `https://trust-worker-api.azurewebsites.net/getCollectionProfile/${ticker}`, // important to know this API is from XOXNO.com
+      ).then((res) => {
+        return res.json();
+      });
+    });
+
+    Promise.all(promises).then((results) => {
+      setInitStats(results);
+    });
+  };
+
+  useEffect(() => {
+    const tickers = collections.map((data) => data["ticker"]);
+    getInitStatsPerCollection(tickers);
+  }, [collections]);
+
+  return (
+    <Card className="w-full max-w-3xl ">
+      <CardHeader
+        floated={false}
+        shadow={false}
+        className="flex items-center gap-x-4 "
+      >
+        <img
+          src={initStats.length > 0 ? initStats.imageUrl : null}
+          alt={`image-profile`}
+          className="h-40 w-40 rounded-lg"
+        />
+        <div>
+          <Typography variant="h5" color="blue-gray" className="mb-3">
+            {initStats.length > 0 ? initStats.name : null} Collection
+          </Typography>
+          <div className="flex items-center gap-x-4">
+            <Typography
+              color="blue-gray"
+              className="text-sm text-blue-gray-400"
+            >
+              NFTs: &nbsp;
+              <span className="font-normal text-gray-700">
+                {initStats.length > 0
+                  ? initStats.nftCount.toLocaleString()
+                  : null}
+              </span>
+            </Typography>
+            <Typography
+              color="blue-gray"
+              className="text-sm text-blue-gray-400"
+            >
+              Collection:{" "}
+              <span className="font-normal text-gray-700">
+                {initStats.length > 0 ? initStats.collectionTicker : null}
+              </span>
+            </Typography>
+          </div>
+        </div>
+      </CardHeader>
+      <CardBody className="">
+        <div className="mt-3 h-[1px] w-full bg-gray-200" />
+        <div className="grid grid-cols-3 gap-y-3">
+          <Card
+            shadow={false}
+            className="mt-2 w-full rounded-none border-r border-gray-300 "
+          >
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {initStats.length > 0
+                  ? initStats.totalEgldVolume.toLocaleString(undefined, {
+                      maximumFractionDigits: 1,
+                    })
+                  : null}
+                &nbsp; EGLD
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">
+                Total Volume
+              </Typography>
+            </CardBody>
+          </Card>
+          <Card
+            shadow={false}
+            className="mt-2 w-full rounded-none border-r border-gray-300 "
+          >
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {initStats.length > 0 ? initStats.floorEgldPrice : null} EGLD
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">
+                Floor price
+              </Typography>
+            </CardBody>
+          </Card>
+
+          <Card shadow={false} className="mt-2 w-full rounded-none">
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {initStats.length > 0 ? initStats.athEgldPrice : null} EGLD
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">ATH</Typography>
+            </CardBody>
+          </Card>
+          <Card
+            shadow={false}
+            className="mt-2 w-full rounded-none border-r border-gray-300"
+          >
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {receivedStatsAPI.getOwnersByCollection.length.toLocaleString()}
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">
+                Holders
+              </Typography>
+            </CardBody>
+          </Card>
+          <Card
+            shadow={false}
+            className="mt-2 w-full rounded-none border-r border-gray-300"
+          >
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {initStats.length > 0
+                  ? initStats.averageEgldPrice.toFixed(2)
+                  : null}{" "}
+                EGLD
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">
+                Avg. price
+              </Typography>
+            </CardBody>
+          </Card>
+          <Card shadow={false} className="mt-2 w-full rounded-none">
+            <CardBody className="px-4 py-2">
+              <Typography variant="h6">
+                {" "}
+                {initStats.length > 0
+                  ? initStats.totalTrades.toLocaleString()
+                  : null}
+              </Typography>
+              <Typography className="to-blue-gray-400 text-xs ">
+                Total Trades
+              </Typography>
+            </CardBody>
+          </Card>
+        </div>
+      </CardBody>
+    </Card>
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+
+---
