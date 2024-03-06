@@ -4,3 +4,4 @@ export * from "./alert-colors";
 export * from "./alert-icon";
 export * from "./alert-dismissible";
 export * from "./alert-with-content";
+export * from "./alert-with-list";

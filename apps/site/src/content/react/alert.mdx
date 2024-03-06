@@ -8,14 +8,11 @@ next: docs/react/Alert-group
 
 # Tailwind CSS Alert - React
 
-Use our `Alert` based on Tailwind CSS for actions in forms, dialogues, and more.
+Get started on your web projects with our Tailwind CSS `Alert` which provides contextual feedback messages for typical user actions.
 
-`Alert` is an essential element of web design. Basically,
-`Alert` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
+An `Alert` displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
 
-See below our `Alert` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our simple `Alert` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
@@ -135,6 +132,80 @@ export function AlertIcon() {
 
 ---
 
+## Alert with List
+
+<ComponentPreview demo={<Alert.AlertWithList />}>
+```tsx
+import * as React from "react";
+import { Alert, Typography } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertWithList() {
+  return (
+    <div className="flex w-full flex-col gap-2">
+      <Alert variant="solid" className="items-baseline">
+        <Alert.Icon>
+          <WarningCircle className="h-full w-full translate-y-0.5" />
+        </Alert.Icon>
+        <Alert.Content>
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+            <li>At least 10 characters (and up to 100 characters)</li>
+            <li>At least one lowercase character</li>
+            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="gradient" className="items-baseline">
+        <Alert.Icon>
+          <WarningCircle className="h-full w-full translate-y-0.5" />
+        </Alert.Icon>
+        <Alert.Content>
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+            <li>At least 10 characters (and up to 100 characters)</li>
+            <li>At least one lowercase character</li>
+            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="ghost" className="items-baseline">
+        <Alert.Icon>
+          <WarningCircle className="h-full w-full translate-y-0.5" />
+        </Alert.Icon>
+        <Alert.Content>
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+            <li>At least 10 characters (and up to 100 characters)</li>
+            <li>At least one lowercase character</li>
+            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="outline" className="items-baseline">
+        <Alert.Icon>
+          <WarningCircle className="h-full w-full translate-y-0.5" />
+        </Alert.Icon>
+        <Alert.Content>
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+            <li>At least 10 characters (and up to 100 characters)</li>
+            <li>At least one lowercase character</li>
+            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          </ul>
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
 ## Alert Dismissible
 
 <ComponentPreview demo={<Alert.AlertDismissible />}>
@@ -166,8 +237,8 @@ export function AlertDismissible() {
 <ComponentPreview demo={<Alert.AlertWithContent />}>
 ```tsx
 import * as React from "react";
-import { Alert, Button, Typography } from "@material-tailwind/react/dist";
-import { WarningCircle } from "iconoir-react";
+import { Alert, Button, Typography } from "@material-tailwind/react";
+import { CheckCircle } from "iconoir-react";
 
 export function AlertWithContent() {
   const [open, setOpen] = React.useState(true);
@@ -175,7 +246,7 @@ export function AlertWithContent() {
   return (
     <Alert open={open} className="items-baseline">
       <Alert.Icon>
-        <WarningCircle className="h-full w-full translate-y-0.5" />
+        <CheckCircle className="h-full w-full translate-y-0.5" />
       </Alert.Icon>
       <Alert.Content>
         <Typography type="h5">Success</Typography>
