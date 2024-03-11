@@ -8,14 +8,11 @@ next: docs/react/Dialog-group
 
 # Tailwind CSS Dialog - React
 
-Use our `Dialog` based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our Tailwind CSS `Dialog` component to inform users about a task or important information that require decisions, or involves multiple tasks.
 
-`Dialog` is an essential element of web design. Basically,
-`Dialog` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
+A `Dialog` is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
 
-See below our `Dialog` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our `Dialog` example that you can use for your Tailwind CSS and React project.
 
 ---
 
@@ -486,6 +483,341 @@ export function DialogWithForm() {
         </Dialog.Content>
       </Dialog.Overlay>
     </Dialog>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Web 3 Dialog
+
+<ComponentPreview demo={<Dialog.DialogWeb3 />}>
+```tsx
+import {
+  Dialog,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+
+import { Xmark } from "iconoir-react";
+
+export function DialogWeb3() {
+  return (
+    <Dialog size="sm">
+      <Dialog.Trigger as={Button}>Connect wallet</Dialog.Trigger>
+      <Dialog.Overlay>
+        <Dialog.Content>
+          <Dialog.DismissTrigger
+            as={IconButton}
+            size="sm"
+            variant="ghost"
+            isCircular
+            className="absolute right-2 top-2"
+          >
+            <Xmark className="h-5 w-5" />
+          </Dialog.DismissTrigger>
+          <Typography type="h5">Connect a Wallet</Typography>
+          <Typography className="text-foreground">
+            Choose which card you want to connect
+          </Typography>
+          <div className="mt-4">
+            <Typography className="py-4 !font-bold uppercase opacity-70">
+              Popular
+            </Typography>
+            <div className="space-y-4">
+              <Button
+                color="secondary"
+                isFullWidth
+                className="flex items-center justify-center gap-3"
+              >
+                <img
+                  src="https://docs.material-tailwind.com/icons/metamask.svg"
+                  alt="metamask"
+                  className="h-6 w-6"
+                />
+                <Typography>Connect with MetaMask</Typography>
+              </Button>
+              <Button
+                color="secondary"
+                isFullWidth
+                className="flex items-center justify-center gap-3"
+              >
+                <img
+                  src="https://docs.material-tailwind.com/icons/coinbase.svg"
+                  alt="metamast"
+                  className="h-6 w-6 rounded-md"
+                />
+                <Typography>Connect with Coinbase</Typography>
+              </Button>
+            </div>
+
+            <Typography className="mt-2 py-4 !font-bold uppercase opacity-70">
+              Other
+            </Typography>
+            <Button
+              color="secondary"
+              isFullWidth
+              className="flex items-center justify-center gap-3"
+            >
+              <img
+                src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
+                alt="metamast"
+                className="border-blue-gray-50 h-7 w-7 rounded-md border"
+              />
+              <Typography>Connect with Trust Wallet</Typography>
+            </Button>
+          </div>
+          <div className="mt-12 flex w-full justify-between gap-2">
+            <Typography type="small">New to Ethereum wallets?</Typography>
+            <Button variant="outline" size="sm">
+              Learn More
+            </Button>
+          </div>
+        </Dialog.Content>
+      </Dialog.Overlay>
+    </Dialog>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Long Dialog
+
+<ComponentPreview demo={<Dialog.DialogLong />}>
+```tsx
+import {
+  Dialog,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
+
+export function DialogLong() {
+  return (
+    <>
+      <Dialog>
+        <Dialog.Trigger as={Button}>Long Dialog</Dialog.Trigger>
+        <Dialog.Overlay>
+          <Dialog.Content>
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <Typography type="h5">Long Dialog</Typography>
+              <Dialog.DismissTrigger
+                as={IconButton}
+                size="sm"
+                variant="ghost"
+                isCircular
+                className="absolute right-2 top-2"
+              >
+                <Xmark className="h-5 w-5" />
+              </Dialog.DismissTrigger>
+            </div>
+            <Typography>
+              <Typography>
+                I&apos;ve always had unwavering confidence in my abilities, and
+                I believe our thoughts and self-perception are the primary
+                forces that shape us. Many people limit themselves by their own
+                self-doubt, slowing their progress. Fortunately, I was raised
+                with the belief that I could achieve anything.
+                <br />
+                <br />
+                As we journey through life, we often encounter challenges that
+                harden our hearts. Pain, insults, broken trust, and betrayal can
+                make us hesitant to help others. Love can lead to heartbreak,
+                and time can distance us from family. These experiences can
+                gradually erode our optimism.
+                <br /> <br />
+                Life doesn&apos;t always place us where we want to be. We grow,
+                make mistakes, and strive to express ourselves and fulfill our
+                dreams. If we&apos;re fortunate enough to participate in
+                life&apos;s journey, we should cherish every moment.
+                Regrettably, some only recognize the value of a moment after
+                it&apos;s passed.
+                <br /> <br />
+                One thing I&apos;ve learned is that I can excel at anything I
+                set my mind to. My skill is my ability to learn. I&apos;m here
+                to learn, to grow, and to inspire others to do the same.
+                Don&apos;t fear making mistakes; they teach us far more than
+                compliments ever will. Ultimately, what truly matters is how our
+                actions inspire and motivate others. Some will be ignited by our
+                endeavors, while others may be offended—it&apos;s all part of
+                the process. I'm here to pursue my dreams and encourage others
+                to do the same.
+                <br /> <br />
+                Now is the time to embrace greatness without fear of judgment.
+                Some may resent those who shine brightly or stand out, but
+                it&apos;s time to be the best version of ourselves. Do you have
+                faith in your beliefs, even if you&apos;re the only one who
+                does?
+              </Typography>
+            </Typography>
+            <div className="mb-1 flex items-center justify-end gap-2">
+              <Dialog.DismissTrigger as={Button} variant="ghost" color="error">
+                Cancel
+              </Dialog.DismissTrigger>
+              <Button color="success">Confirm</Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog>
+    </>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Message Dialog
+
+<ComponentPreview demo={<Dialog.DialogMessage />}>
+```tsx
+import {
+  Dialog,
+  Button,
+  Input,
+  Checkbox,
+  Typography,
+  IconButton,
+  Textarea,
+} from "@material-tailwind/react";
+
+import { Xmark } from "iconoir-react";
+
+export function DialogMessage() {
+  return (
+    <Dialog size="sm">
+      <Dialog.Trigger as={Button}>Message Dialog</Dialog.Trigger>
+      <Dialog.Overlay>
+        <Dialog.Content>
+          <Dialog.DismissTrigger
+            as={IconButton}
+            size="sm"
+            variant="ghost"
+            isCircular
+            className="absolute right-2 top-2"
+          >
+            <Xmark className="h-5 w-5" />
+          </Dialog.DismissTrigger>
+          <Typography type="h5" className="mb-2">
+            New message to @{" "}
+          </Typography>
+          <Typography className="text-gray-600">
+            Write the message and then click button.
+          </Typography>
+          <form action="#" className="mt-6">
+            <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+              <Typography
+                as="label"
+                htmlFor="username"
+                type="small"
+                color="primary"
+                className="font-semibold"
+              >
+                Username
+              </Typography>
+              <Input.Field id="username" type="text" placeholder="Username" />
+            </Input>
+            <div className="w-full space-y-1.5">
+              <Typography
+                as="label"
+                htmlFor="message"
+                type="small"
+                color="primary"
+                className="font-medium"
+              >
+                Message
+              </Typography>
+              <Textarea id="message" placeholder="Your message..." />
+            </div>
+
+            <div className="mt-4 flex justify-end gap-2">
+              <Dialog.DismissTrigger as={Button} variant="ghost">
+                Cancel
+              </Dialog.DismissTrigger>
+              <Button>Send Message</Button>
+            </div>
+          </form>
+        </Dialog.Content>
+      </Dialog.Overlay>
+    </Dialog>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Dialog Notification
+
+<ComponentPreview demo={<Dialog.DialogNotification />}>
+```tsx
+import {
+  Dialog,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
+
+export function DialogNotification() {
+  return (
+    <>
+      <Dialog size="sm">
+        <Dialog.Trigger as={Button}>Long Dialog</Dialog.Trigger>
+        <Dialog.Overlay>
+          <Dialog.Content>
+            <Dialog.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              isCircular
+              className="absolute right-2 top-2"
+            >
+              <Xmark className="h-5 w-5" />
+            </Dialog.DismissTrigger>
+            <Typography className="text-center" type="h6">
+              Your Attention is Required!
+            </Typography>
+            <Typography className="text-center !text-lg font-normal">
+              Choose which card you want to connect
+            </Typography>
+            <div className="mt-10 grid place-items-center gap-4">
+              <svg
+                viewBox="0 0 40 40"
+                fill="none"
+                className="h-16 w-16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M39.2001 3.19999C39.1998 2.79105 39.0951 2.38895 38.8959 2.03184C38.6966 1.67473 38.4094 1.37446 38.0615 1.15952C37.7136 0.944581 37.3166 0.8221 36.908 0.8037C36.4995 0.785301 36.0931 0.871593 35.7272 1.05439L17.0312 10.4H8.00005C6.09049 10.4 4.25914 11.1586 2.90888 12.5088C1.55862 13.8591 0.800049 15.6904 0.800049 17.6C0.800049 19.5095 1.55862 21.3409 2.90888 22.6912C4.25914 24.0414 6.09049 24.8 8.00005 24.8H8.67205L12.9225 37.5584C13.0817 38.0365 13.3874 38.4523 13.7962 38.747C14.205 39.0416 14.6961 39.2001 15.2 39.2H17.6C18.2366 39.2 18.847 38.9471 19.2971 38.497C19.7472 38.047 20 37.4365 20 36.8V26.2832L35.7272 34.1456C36.0931 34.3284 36.4995 34.4147 36.908 34.3963C37.3166 34.3779 37.7136 34.2554 38.0615 34.0405C38.4094 33.8255 38.6966 33.5252 38.8959 33.1681C39.0951 32.811 39.1998 32.4089 39.2001 32V3.19999Z"
+                  fill="#212121"
+                ></path>
+              </svg>
+              <Typography type="h6">You should read this!</Typography>
+              <Typography className="text-center font-normal text-foreground">
+                Many people limit themselves by their own self-doubt, slowing
+                their progress. Fortunately, I was raised with the belief that I
+                could achieve anything.
+              </Typography>
+            </div>
+
+            <div className="mb-1 mt-8 flex items-center justify-center gap-2">
+              <Dialog.DismissTrigger as={Button} variant="ghost">
+                Cancel
+              </Dialog.DismissTrigger>
+              <Button>Got it</Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Overlay>
+      </Dialog>
+    </>
   );
 }
 ```
