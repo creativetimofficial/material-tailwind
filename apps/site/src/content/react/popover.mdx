@@ -8,11 +8,9 @@ next: docs/react/radio
 
 # Tailwind CSS Popover - React
 
-Easily create `Popover` with different statuses and sizes using our components based on Tailwind CSS and React.
+Our `Popover` component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
 
-`Popover` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
-
-See below our `Popover` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+See below our simple `Popover` example that you can use in your web project.
 
 ---
 
@@ -36,6 +34,140 @@ export function PopoverDemo() {
         <Popover.Arrow />
       </Popover.Content>
     </Popover>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+
+## Popover Placement
+
+<ComponentPreview demo={<Popover.PopoverPlacement />}>
+```tsx
+import { Popover, Button, Typography } from "@material-tailwind/react";
+
+export function PopoverPlacement() {
+  return (
+    <>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="top">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="top-start">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="top-end">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="right">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="right-start">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="right-end">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="bottom">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="bottom-start">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="bottom-end">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Popover placement="left">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="left-start">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+        <Popover placement="left-end">
+          <Popover.Trigger as={Button}>Popover</Popover.Trigger>
+          <Popover.Content className="max-w-sm">
+            <Typography type="small" className="text-foreground">
+              This is a very beautiful popover, show some love.
+            </Typography>
+            <Popover.Arrow />
+          </Popover.Content>
+        </Popover>
+      </div>
+    </>
   );
 }
 ```
