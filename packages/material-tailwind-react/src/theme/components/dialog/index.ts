@@ -50,7 +50,7 @@ export const dialog: DialogStylesType = {
         top: 0,
         left: 0,
         width: "w-screen",
-        height: "h-screen",
+        height: "min-h-screen",
         backgroundColor: "bg-black",
         backgroundOpacity: "bg-opacity-60",
         backdropFilter: "backdrop-blur-sm",
