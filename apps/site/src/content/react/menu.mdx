@@ -8,11 +8,12 @@ next: docs/react/radio
 
 # Tailwind CSS Menu - React
 
-Easily create `Menu` with different statuses and sizes using our components based on Tailwind CSS and React.
+Use our responsive Tailwind CSS vertical `Menu`, that can take the user anywhere on your web app!
 
-`Menu` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+A `Menu` displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The `Menu` also ensures a consistent and predictable user experience by adhering to an established set of principles
 
-See below our `Menu` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+See below our `Menu` example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+
 
 ---
 
@@ -68,6 +69,127 @@ export function NestedMenu() {
         </Menu>
       </Menu.Content>
     </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Menu Placement
+
+<ComponentPreview demo={<Menu.MenuPlacement />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+
+export function MenuPlacement() {
+  return (
+    <>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="top">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="top-start">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="top-end">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="right">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="right-start">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="right-end">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </div>
+      <div className="mb-3 flex gap-3">
+        <Menu placement="bottom">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="bottom-start">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="bottom-end">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </div>
+      <div className="flex gap-3">
+        <Menu placement="left">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="left-start">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+        <Menu placement="left-end">
+          <Menu.Trigger as={Button}>Open</Menu.Trigger>
+          <Menu.Content>
+            <Menu.Item>Add Team</Menu.Item>
+            <Menu.Item>Add Project</Menu.Item>
+            <Menu.Item>My Profile</Menu.Item>
+          </Menu.Content>
+        </Menu>
+      </div>
+    </>
   );
 }
 ```
@@ -219,6 +341,46 @@ export function MenuWithSearch() {
         <Menu.Item>Add Team</Menu.Item>
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Menu with Scrolling Content
+
+<ComponentPreview demo={<Menu.MenuWithScrollingContent />}>
+```tsx
+import { Menu, Button } from "@material-tailwind/react";
+
+export function MenuWithScrollingContent() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content className="max-h-72 overflow-y-scroll">
+        <Menu.Item>Menu Item 1</Menu.Item>
+        <Menu.Item>Menu Item 2</Menu.Item>
+        <Menu.Item>Menu Item 3</Menu.Item>
+        <Menu.Item>Menu Item 4</Menu.Item>
+        <Menu.Item>Menu Item 5</Menu.Item>
+        <Menu.Item>Menu Item 6</Menu.Item>
+        <Menu.Item>Menu Item 7</Menu.Item>
+        <Menu.Item>Menu Item 8</Menu.Item>
+        <Menu.Item>Menu Item 9</Menu.Item>
+        <Menu.Item>Menu Item 10</Menu.Item>
+        <Menu.Item>Menu Item 11</Menu.Item>
+        <Menu.Item>Menu Item 12</Menu.Item>
+        <Menu.Item>Menu Item 13</Menu.Item>
+        <Menu.Item>Menu Item 14</Menu.Item>
+        <Menu.Item>Menu Item 15</Menu.Item>
+        <Menu.Item>Menu Item 16</Menu.Item>
+        <Menu.Item>Menu Item 17</Menu.Item>
+        <Menu.Item>Menu Item 18</Menu.Item>
+        <Menu.Item>Menu Item 19</Menu.Item>
+        <Menu.Item>Menu Item 20</Menu.Item>
       </Menu.Content>
     </Menu>
   );

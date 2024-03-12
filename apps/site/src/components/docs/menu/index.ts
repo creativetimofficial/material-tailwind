@@ -6,3 +6,5 @@ export * from "./menu-with-checkbox";
 export * from "./menu-with-search";
 export * from "./notification-menu";
 export * from "./profile-menu";
+export * from "./menu-with-scrolling-content";
+export * from "./menu-placement";
