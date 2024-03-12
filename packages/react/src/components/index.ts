@@ -25,3 +25,4 @@ export * from "./tabs";
 export * from "./textarea";
 export * from "./tooltip";
 export * from "./typography";
+export * from "./timeline";

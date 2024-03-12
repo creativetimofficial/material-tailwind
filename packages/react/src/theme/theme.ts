@@ -91,6 +91,14 @@ import {
   tooltipArrowTheme,
 } from "./tooltip";
 import { typographyTheme } from "./typography";
+import {
+  timelineTheme,
+  timelineItemTheme,
+  timelineHeaderTheme,
+  timelineIconTheme,
+  timelineSeparatorTheme,
+  timelineBodyTheme,
+} from "./timeline";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -171,6 +179,12 @@ export const theme = {
   tooltipContent: tooltipContentTheme,
   tooltipArrow: tooltipArrowTheme,
   typography: typographyTheme,
+  timeline: timelineTheme,
+  timelineItem: timelineItemTheme,
+  timelineHeader: timelineHeaderTheme,
+  timelineIcon: timelineIconTheme,
+  timelineSeparator: timelineSeparatorTheme,
+  timelineBody: timelineBodyTheme,
 };
 
 export default theme;

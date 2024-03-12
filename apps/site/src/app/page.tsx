@@ -1,34 +1,67 @@
 "use client";
 
 import React, { useState } from "react";
+import { Timeline } from "@material-tailwind/react/dist";
+import { UserCircle } from "iconoir-react";
 
 const RangeSlider = () => {
-  const [value, setValue] = useState(50);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
+  const [value, setValue] = useState(2);
+  console.log(value);
   return (
-    <div className="flex items-center space-x-4">
-      <label htmlFor="rangeSlider" className="font-bold">
-        Range:
-      </label>
-      <input
-        type="range"
-        id="rangeSlider"
-        name="rangeSlider"
-        min="0"
-        max="100"
-        step="10"
+    <>
+      <Timeline
+        color="error"
         value={value}
-        onChange={handleChange}
-        className="h-2 w-72 cursor-pointer appearance-none rounded-md bg-gray-200 outline-none"
-      />
-      <output htmlFor="rangeSlider" className="text-sm">
-        {value}
-      </output>
-    </div>
+        onChange={(val) => setValue(Number(val))}
+        mode="stepper"
+      >
+        <Timeline.Item disabled={value < 0} value={0}>
+          <Timeline.Header>
+            <Timeline.Separator />
+            <Timeline.Icon>
+              <UserCircle className="h-6 w-6" />
+            </Timeline.Icon>
+          </Timeline.Header>
+          <Timeline.Body>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+            non laudantium accusamus, numquam quibusdam magni odit quo facere
+            quae consequuntur minima nesciunt sequi vel aut ratione fuga, eos
+            sunt cupiditate.
+          </Timeline.Body>
+        </Timeline.Item>
+        <Timeline.Item disabled={value < 1} value={1}>
+          <Timeline.Header>
+            <Timeline.Separator />
+            <Timeline.Icon>
+              <UserCircle className="h-6 w-6" />
+            </Timeline.Icon>
+          </Timeline.Header>
+          <Timeline.Body>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+            non laudantium accusamus, numquam quibusdam magni odit quo facere
+            quae consequuntur minima nesciunt sequi vel aut ratione fuga, eos
+            sunt cupiditate.
+          </Timeline.Body>
+        </Timeline.Item>
+        <Timeline.Item disabled={value < 2} value={2}>
+          <Timeline.Header>
+            {/* <Timeline.Separator /> */}
+            <Timeline.Icon>
+              <UserCircle className="h-6 w-6" />
+            </Timeline.Icon>
+          </Timeline.Header>
+          <Timeline.Body>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+            non laudantium accusamus, numquam quibusdam magni odit quo facere
+            quae consequuntur minima nesciunt sequi vel aut ratione fuga, eos
+            sunt cupiditate.
+          </Timeline.Body>
+        </Timeline.Item>
+      </Timeline>
+
+      <button onClick={() => setValue((cur) => cur - 1)}>Prev</button>
+      <button onClick={() => setValue((cur) => cur + 1)}>Next</button>
+    </>
   );
 };
 

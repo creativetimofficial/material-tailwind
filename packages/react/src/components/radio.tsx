@@ -39,7 +39,10 @@ export interface RadioProps extends Props<"div" | any> {
   children: React.ReactNode;
 }
 
-export const RadioRoot = React.forwardRef<HTMLDivElement, RadioProps>(
+export const RadioRoot = React.forwardRef<
+  HTMLDivElement | HTMLElement,
+  RadioProps
+>(
   (
     {
       as,

@@ -26,4 +26,5 @@ export * from "./switch";
 export * from "./tabs";
 export * from "./textarea";
 export * from "./tooltip";
+export * from "./timeline";
 export * from "./typography";

@@ -19,7 +19,7 @@ export interface AvatarProps extends Props<"img" | any> {
   src: string;
   alt?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  variant?: "circular" | "rounded" | "square";
+  shape?: "circular" | "rounded" | "square";
   className?: string;
 }
 
@@ -41,18 +41,27 @@ export interface AvatarProps extends Props<"img" | any> {
 export const Avatar = React.forwardRef<
   HTMLImageElement | HTMLElement,
   AvatarProps
->(({ as, src, alt, variant, size, className, ...rest }, ref) => {
+>(({ as, src, alt, shape, size, className, ...rest }, ref) => {
   const Element = as ?? "img";
   const contextTheme = useTheme();
   const theme = contextTheme?.avatar ?? avatarTheme;
   const defaultProps = theme?.defaultProps;
 
   size ??= (defaultProps?.size as AvatarProps["size"]) ?? "md";
-  variant ??= (defaultProps?.variant as AvatarProps["variant"]) ?? "circular";
+  shape ??= (defaultProps?.shape as AvatarProps["shape"]) ?? "circular";
 
   const styles = twMerge(theme.baseStyle, theme["size"][size], className);
 
-  return <Element {...rest} ref={ref} src={src} alt={alt} className={styles} />;
+  return (
+    <Element
+      {...rest}
+      ref={ref}
+      src={src}
+      alt={alt}
+      className={styles}
+      data-shape={shape}
+    />
+  );
 });
 
 Avatar.displayName = "MaterialTailwind.Avatar";
