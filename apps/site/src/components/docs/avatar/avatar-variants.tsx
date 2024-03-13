@@ -2,19 +2,19 @@ import { Avatar } from "@material-tailwind/react/dist";
 
 export function AvatarVariants() {
   return (
-    <div className="item-center flex gap-2">
+    <div className="flex gap-2 item-center">
       <Avatar
-        variant="circular"
+        shape="circular"
         src="https://dub.sh/TdSBP0D"
         alt="profile-picture"
       />
       <Avatar
-        variant="rounded"
+        shape="rounded"
         src="https://dub.sh/TdSBP0D"
         alt="profile-picture"
       />
       <Avatar
-        variant="square"
+        shape="square"
         src="https://dub.sh/TdSBP0D"
         alt="profile-picture"
       />

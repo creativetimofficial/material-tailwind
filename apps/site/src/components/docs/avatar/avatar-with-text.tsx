@@ -14,7 +14,7 @@ export function AvatarWithText() {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" variant="rounded" />
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" shape="rounded" />
         <div>
           <Typography>Tania Andrew</Typography>
           <Typography type="small" className="text-foreground">
@@ -23,7 +23,7 @@ export function AvatarWithText() {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" variant="square" />
+        <Avatar src="https://dub.sh/TdSBP0D" alt="avatar" shape="square" />
         <div>
           <Typography>Tania Andrew</Typography>
           <Typography type="small" className="text-foreground">
