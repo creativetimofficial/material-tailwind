@@ -8,14 +8,11 @@ next: docs/react/Select-group
 
 # Tailwind CSS Select - React
 
-Use our `Select` based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our Tailwind CSS `Select` component to collect user provided information from a list of options.
 
-`Select` is an essential element of web design. Basically,
-`Select` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
+A `Select` component is a dropdown menu for displaying choices. Use the radio component when there are fewer total options (less than 5).
 
-See below our `Select` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our `Select` component example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt it easily to your needs.
 
 ---
 
@@ -212,6 +209,42 @@ export function SelectWithValidation() {
 
 ---
 
+
+## Select Controlled
+
+<ComponentPreview demo={<Select.SelectControlled />}>
+```tsx
+import React from "react";
+import { Select } from "@material-tailwind/react";
+
+export function SelectControlled() {
+  const [value, setValue] = React.useState();
+
+  return (
+    <Select value={value} onChange={(val) => setValue(val)}>
+      <Select.Trigger className="w-72" placeholder="Select Version" />
+      <Select.List>
+        <Select.Option value="Material Tailwind React">
+          Material Tailwind React
+        </Select.Option>
+        <Select.Option value="Material Tailwind HTML">
+          Material Tailwind HTML
+        </Select.Option>
+        <Select.Option value="Material Tailwind Vue">
+          Material Tailwind Vue
+        </Select.Option>
+        <Select.Option value="Material Tailwind Svelte">
+          Material Tailwind Svelte
+        </Select.Option>
+      </Select.List>
+    </Select>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
 ## Select Disabled
 
 <ComponentPreview demo={<Select.SelectDisabled />}>
@@ -229,6 +262,43 @@ export function SelectDisabled() {
         <Select.Option>Material Tailwind Svelte</Select.Option>
       </Select.List>
     </Select>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Select Countries
+
+<ComponentPreview demo={<Select.SelectCountries />}>
+```tsx
+import { Select, Typography } from "@material-tailwind/react";
+import { useCountries } from "use-react-countries";
+
+export function SelectCountries() {
+  const { countries } = useCountries();
+
+  return (
+    <div className="w-72">
+      <Select>
+        <Select.Trigger placeholder="Select Version" />
+        <Select.List className="overflow-y-scroll h-72 w-72">
+          {countries.map(({ name, flags }) => (
+            <Select.Option key={name} value={name}>
+              <div className="flex items-start gap-2 text-start">
+                <img
+                  src={flags.svg}
+                  alt={name}
+                  className="object-cover w-5 h-5 rounded-full"
+                />
+                <Typography type="small">{name}</Typography>
+              </div>
+            </Select.Option>
+          ))}
+        </Select.List>
+      </Select>
+    </div>
   );
 }
 ```
