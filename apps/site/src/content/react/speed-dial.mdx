@@ -8,14 +8,12 @@ next: docs/react/Speed Dial-group
 
 # Tailwind CSS Speed Dial - React
 
-Use our `Speed Dial` based on Tailwind CSS for actions in forms, dialogues, and more.
+Our Tailwind CSS pagination can be used to show different actions when hovering the button.
 
-`Speed Dial` is an essential element of web design. Basically,
-`Speed Dial` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
+See below our `SpeedDial` component example that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt it easily to your needs.
 
-See below our `Speed Dial` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+
+Examples on this page are using `iconoir-react` make sure you have installed it.
 
 ---
 
@@ -31,6 +29,219 @@ export function SpeedDialDemo() {
     <Tooltip interactive offset={4}>
       <Tooltip.Trigger as={IconButton} isCircular>
         <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+      </Tooltip.Trigger>
+      <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
+        <Tooltip placement="left">
+          <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+            <Home className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Home
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+        <Tooltip placement="left">
+          <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+            <Settings className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Settings
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+        <Tooltip placement="left">
+          <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+            <SelectFace3d className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            Dashboard
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
+      </Tooltip.Content>
+    </Tooltip>
+  );
+}
+```
+</ComponentPreview>
+
+
+---
+
+## Speed Dial Placement
+
+<ComponentPreview demo={<SpeedDial.SpeedDialPlacement />}>
+```tsx
+import { Tooltip, IconButton } from "@material-tailwind/react";
+import { Home, Plus, SelectFace3d, Settings } from "iconoir-react";
+
+export function SpeedDialPlacement() {
+  return (
+    <div className="relative w-full h-80">
+      <div className="absolute bottom-0 right-0">
+        <Tooltip interactive offset={4} placement="top">
+          <Tooltip.Trigger as={IconButton} isCircular>
+            <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+          </Tooltip.Trigger>
+          <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Home className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Home
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Settings className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Settings
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <SelectFace3d className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Dashboard
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+          </Tooltip.Content>
+        </Tooltip>
+      </div>
+      <div className="absolute bottom-0 left-0">
+        <Tooltip interactive offset={4} placement="right">
+          <Tooltip.Trigger as={IconButton} isCircular>
+            <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+          </Tooltip.Trigger>
+          <Tooltip.Content className="flex gap-1 bg-transparent shadow-none">
+            <Tooltip>
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Home className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Home
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip>
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Settings className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Settings
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip>
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <SelectFace3d className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Dashboard
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+          </Tooltip.Content>
+        </Tooltip>
+      </div>
+      <div className="absolute top-0 left-0">
+        <Tooltip interactive offset={4} placement="bottom">
+          <Tooltip.Trigger as={IconButton} isCircular>
+            <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+          </Tooltip.Trigger>
+          <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Home className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Home
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Settings className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Settings
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="left">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <SelectFace3d className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Dashboard
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+          </Tooltip.Content>
+        </Tooltip>
+      </div>
+      <div className="absolute top-0 right-0">
+        <Tooltip interactive offset={4} placement="bottom">
+          <Tooltip.Trigger as={IconButton} isCircular>
+            <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+          </Tooltip.Trigger>
+          <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
+            <Tooltip placement="right">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Home className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Home
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="right">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <Settings className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Settings
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+            <Tooltip placement="right">
+              <Tooltip.Trigger as={IconButton} isCircular color="secondary">
+                <SelectFace3d className="h-[18px] w-[18px]" />
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                Dashboard
+                <Tooltip.Arrow />
+              </Tooltip.Content>
+            </Tooltip>
+          </Tooltip.Content>
+        </Tooltip>
+      </div>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Speed Dial Custom Icon
+
+<ComponentPreview demo={<SpeedDial.SpeedDialCustomIcon />}>
+```tsx
+import { Tooltip, IconButton } from "@material-tailwind/react";
+import { Home, Mail, SelectFace3d, Settings } from "iconoir-react";
+
+export function SpeedDialCustomIcon() {
+  return (
+    <Tooltip interactive offset={4}>
+      <Tooltip.Trigger as={IconButton} isCircular>
+        <Mail className="h-[18px] w-[18px]" />
       </Tooltip.Trigger>
       <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
         <Tooltip placement="left">
@@ -159,6 +370,59 @@ export function SpeedDialHorizontal() {
             Dashboard
             <Tooltip.Arrow />
           </Tooltip.Content>
+        </Tooltip>
+      </Tooltip.Content>
+    </Tooltip>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Speed Dial with Custom Styles
+
+<ComponentPreview demo={<SpeedDial.SpeedDialWithCustomStyles />}>
+```tsx
+import { Tooltip, IconButton } from "@material-tailwind/react";
+import { Home, Plus, SelectFace3d, Settings } from "iconoir-react";
+
+export function SpeedDialWithCustomStyles() {
+  return (
+    <Tooltip interactive offset={4}>
+      <Tooltip.Trigger as={IconButton} isCircular color="info">
+        <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
+      </Tooltip.Trigger>
+      <Tooltip.Content className="flex flex-col gap-1 rounded-full bg-surface p-1.5 shadow-none">
+        <Tooltip placement="left">
+          <Tooltip.Trigger
+            as={IconButton}
+            isCircular
+            color="info"
+            className="p-3"
+          >
+            <Home className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
+        </Tooltip>
+        <Tooltip placement="left">
+          <Tooltip.Trigger
+            as={IconButton}
+            isCircular
+            color="info"
+            className="p-3"
+          >
+            <Settings className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
+        </Tooltip>
+        <Tooltip placement="left">
+          <Tooltip.Trigger
+            as={IconButton}
+            isCircular
+            color="info"
+            className="p-3"
+          >
+            <SelectFace3d className="h-[18px] w-[18px]" />
+          </Tooltip.Trigger>
         </Tooltip>
       </Tooltip.Content>
     </Tooltip>
