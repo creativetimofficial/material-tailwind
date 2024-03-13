@@ -1,8 +1,8 @@
 {
   "name": "@material-tailwind/react",
-  "version": "3.0.0",
+  "version": "3.0.0-beta.0",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "tsc",
     "build": "tsup src --dts",
