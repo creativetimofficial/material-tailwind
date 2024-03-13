@@ -8,15 +8,7 @@ next: docs/react/input
 
 # Tailwind CSS Icon Button - React
 
-Use our `IconButton` based on Tailwind CSS for actions.
-
-`IconButton` is an essential element of web design. Basically,
-`IconButton` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action.
-
-See below our `IconButton` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
-
-The below examples are using the [Iconoir](https://iconoir.com?ref=material-tailwind) for the icons.
+Use this example to create user-friendly buttons with icon for your Tailwind CSS and React project.
 
 ---
 
@@ -142,21 +134,22 @@ import { BrightStar } from "iconoir-react";
 export function RoundedIconButton() {
   return (
     <div className="flex gap-4">
-      <IconButton rounded variant="ghost">
-        <BrightStar className="h-4 w-4 stroke-2" />
+      <IconButton isCircular variant="ghost">
+        <BrightStar className="w-4 h-4 stroke-2" />
       </IconButton>
-      <IconButton rounded variant="outline">
-        <BrightStar className="h-4 w-4 stroke-2" />
+      <IconButton isCircular variant="outline">
+        <BrightStar className="w-4 h-4 stroke-2" />
       </IconButton>
-      <IconButton rounded variant="solid">
-        <BrightStar className="h-4 w-4 stroke-2" />
+      <IconButton isCircular variant="solid">
+        <BrightStar className="w-4 h-4 stroke-2" />
       </IconButton>
-      <IconButton rounded variant="gradient">
-        <BrightStar className="h-4 w-4 stroke-2" />
+      <IconButton isCircular variant="gradient">
+        <BrightStar className="w-4 h-4 stroke-2" />
       </IconButton>
     </div>
   );
 }
+
 ```
 </ComponentPreview>
 
