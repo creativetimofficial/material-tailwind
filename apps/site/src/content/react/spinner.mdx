@@ -8,14 +8,9 @@ next: docs/react/Spinner-group
 
 # Tailwind CSS Spinner - React
 
-Use our `Spinner` based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our Tailwind CSS `Spinner` component in your web projects. The `Spinner` can be used for loading states on your website.
 
-`Spinner` is an essential element of web design. Basically,
-`Spinner` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
-
-See below our `Spinner` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our beautiful `Spinner` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
 
 ---
 
@@ -76,3 +71,19 @@ export function SpinnerColors() {
 }
 ```
 </ComponentPreview>
+
+---
+
+## Spinner Custom Styles
+
+<ComponentPreview demo={<Spinner.SpinnerCustomStyles />}>
+```tsx
+import { Spinner } from "@material-tailwind/react";
+
+export function SpinnerCustomStyles() {
+  return <Spinner className="w-16 h-16" />;
+}
+```
+</ComponentPreview>
+
+---
