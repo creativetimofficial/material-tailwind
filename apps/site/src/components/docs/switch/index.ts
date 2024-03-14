@@ -5,3 +5,4 @@ export * from "./disabled-switch";
 export * from "./switch-with-link";
 export * from "./switch-with-label";
 export * from "./switch-with-description";
+export * from "./switch-checked";

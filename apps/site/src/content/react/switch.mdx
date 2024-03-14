@@ -8,15 +8,9 @@ next: docs/react/textarea
 
 # Tailwind CSS Switch - React
 
-Use our Tailwind CSS `Switch` to allow the user to select one or more items from a set.
+Use our Tailwind CSS `Switch` component to let users adjust settings on/off. The option that the Switch controls, as well as the state it's in, should be made clear from the corresponding inline label.
 
-You can use a `Switch` for:
-
-- Selecting one or more options from a list.
-- Presenting a list containing sub-selections.
-- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Switch` and use an on/off switch instead).
-
-See below our simple `Switch` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
+See below our example that will help you create simple and easy-to-use `Switch` component for your Tailwind CSS and React project.
 
 ---
 
@@ -28,6 +22,20 @@ import { Switch } from "@material-tailwind/react";
 
 export function SwitchDemo() {
   return <Switch />;
+}
+```
+</ComponentPreview>
+
+---
+
+## Switch Checked
+
+<ComponentPreview demo={<Switch.SwitchChecked />}>
+```tsx
+import { Switch } from "@material-tailwind/react";
+
+export function SwitchChecked() {
+  return <Switch defaultChecked />;
 }
 ```
 </ComponentPreview>
@@ -160,7 +168,7 @@ export function SwitchWithDescription() {
 
 <ComponentPreview demo={<Switch.CustomSwitch />}>
 ```tsx
-import { Switch } from "@material-tailwind/react/dist";
+import { Switch } from "@material-tailwind/react";
 
 export function CustomSwitch() {
   return (
