@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Card,
   Typography,
@@ -7,13 +6,12 @@ import {
   IconButton,
   Tooltip,
 } from "@material-tailwind/react/dist";
-
 import { HeartSolid, StarSolid } from "iconoir-react";
 
 export function BookingCard() {
   return (
     <Card className="w-full max-w-[26rem] shadow-lg">
-      <Card.Header className="relative px-2 pt-2">
+      <Card.Header className="relative overflow-hidden rounded-xl p-0">
         <img
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           alt="ui/ux review check"
@@ -22,11 +20,11 @@ export function BookingCard() {
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
         <IconButton
           size="sm"
-          variant="ghost"
           color="error"
-          className="!absolute right-4 top-4 rounded-full"
+          variant="ghost"
+          className="!absolute right-2 top-2 rounded-full"
         >
-          <HeartSolid className="h-6 w-6" />
+          <HeartSolid className="h-5 w-5" />
         </IconButton>
       </Card.Header>
       <Card.Body>
@@ -35,11 +33,11 @@ export function BookingCard() {
             Wooden House, Florida
           </Typography>
           <Typography className="flex items-center gap-1.5 font-normal">
-            <StarSolid className="-mt-0.5 h-5 w-5 text-yellow-500" />
+            <StarSolid className="-mt-0.5 h-5 w-5 text-warning" />
             5.0
           </Typography>
         </div>
-        <Typography>
+        <Typography className="text-foreground">
           Enter a freshly updated and thoughtfully furnished peaceful home
           surrounded by ancient trees, stone walls, and open meadows.
         </Typography>

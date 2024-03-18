@@ -11,20 +11,16 @@ export function EcommerceCard() {
       />
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
-          <Typography className="!font-medium">Apple AirPods</Typography>
-          <Typography className="!font-medium">$95.00</Typography>
+          <Typography type="h6">Apple AirPods</Typography>
+          <Typography type="h6">$95.00</Typography>
         </div>
-        <Typography variant="small" className="font-normal opacity-75">
+        <Typography className="text-foreground">
           With plenty of talk and listen time, voice-activated Siri access, and
           an available wireless charging case.
         </Typography>
       </Card.Body>
-      <Card.Footer className="pt-0">
-        <Button
-          isFullWidth
-          color="secondary"
-          className="shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >
+      <Card.Footer>
+        <Button isFullWidth color="secondary">
           Add to Cart
         </Button>
       </Card.Footer>

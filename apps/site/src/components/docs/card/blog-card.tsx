@@ -15,13 +15,13 @@ export function BlogCard() {
         alt="ui/ux review check"
       />
       <Card.Body>
-        <Typography type="h5">UI/UX Review Check</Typography>
-        <Typography as="p" type="h6" className="mt-3 font-normal">
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="mt-1 text-foreground">
           Because it&apos;s about motivating the doers. Because I&apos;m here to
           follow my dreams and inspire others.
         </Typography>
       </Card.Body>
-      <Card.Footer className="flex items-center justify-between">
+      <Card.Footer className="mt-4 flex items-center justify-between">
         <div className="flex items-center -space-x-3">
           <Tooltip>
             <Tooltip.Trigger>
@@ -32,7 +32,10 @@ export function BlogCard() {
                 className="border-2 border-white hover:z-10"
               />
             </Tooltip.Trigger>
-            <Tooltip.Content>Natali Craig</Tooltip.Content>
+            <Tooltip.Content>
+              Natali Craig
+              <Tooltip.Arrow />
+            </Tooltip.Content>
           </Tooltip>
           <Tooltip>
             <Tooltip.Trigger>
@@ -43,10 +46,13 @@ export function BlogCard() {
                 className="border-2 border-white hover:z-10"
               />
             </Tooltip.Trigger>
-            <Tooltip.Content>Tania Andrew</Tooltip.Content>
+            <Tooltip.Content>
+              Tania Andrew
+              <Tooltip.Arrow />
+            </Tooltip.Content>
           </Tooltip>
         </div>
-        <Typography className="font-normal">January 10</Typography>
+        <Typography type="small">January 10</Typography>
       </Card.Footer>
     </Card>
   );

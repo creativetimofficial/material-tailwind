@@ -11,24 +11,22 @@ export function HorizontalCard() {
         />
       </Card.Header>
       <Card.Body className="p-4">
-        <Typography className="mb-4 !font-bold uppercase text-foreground">
+        <Typography
+          type="small"
+          className="mb-4 !font-bold uppercase text-foreground"
+        >
           startups
         </Typography>
         <Typography type="h5" className="mb-2">
           Lyft launching cross-platform service this week
         </Typography>
-        <Typography className="mb-8 font-normal">
+        <Typography className="mb-8 text-foreground">
           Like so many organizations these days, Autodesk is a company in
           transition. It was until recently a traditional boxed software company
           selling licenses. Yet its own business model disruption is only part
           of the story
         </Typography>
-        <Button
-          as="a"
-          href="#"
-          variant="ghost"
-          className="mb-2 flex w-fit items-center gap-2"
-        >
+        <Button as="a" href="#" className="mb-2 flex w-fit items-center gap-2">
           Learn More
           <svg
             xmlns="http://www.w3.org/2000/svg"
