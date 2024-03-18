@@ -48,7 +48,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="hover:text-info-main flex items-center gap-x-2 p-1"
+            className="flex items-center gap-x-2 p-1 hover:text-info"
           >
             <Icon className="h-4 w-4" />
             {title}

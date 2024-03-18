@@ -28,7 +28,7 @@ export function DialogMessage() {
           <Typography type="h5" className="mb-2">
             New message to @{" "}
           </Typography>
-          <Typography className="text-gray-600">
+          <Typography className="text-foreground">
             Write the message and then click button.
           </Typography>
           <form action="#" className="mt-6">

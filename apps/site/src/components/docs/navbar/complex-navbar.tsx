@@ -62,7 +62,7 @@ function ProfileMenu() {
         src="https://dub.sh/iu8bOfU"
         alt="profile-picture"
         size="sm"
-        className="border-primary-main border p-0.5 lg:ml-auto"
+        className="border border-primary p-0.5 lg:ml-auto"
       />
       <Menu.Content>
         <Menu.Item>
@@ -75,7 +75,7 @@ function ProfileMenu() {
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
         <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -91,7 +91,7 @@ const MenuItem = React.forwardRef<any, any>(
         <Typography as="h6" className="font-semibold">
           {title}
         </Typography>
-        <Typography type="small" className="text-gray-600">
+        <Typography type="small" className="text-foreground">
           {description}
         </Typography>
       </List.Item>
@@ -135,10 +135,10 @@ export function ComplexNavbar() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="shadow-primary-main/[0.025] grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl shadow-primary/[0.025]">
                 <Card
                   color="primary"
-                  className="text-primary-content col-span-2 grid place-items-center rounded-[5px] px-8 py-4 shadow-none"
+                  className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
                 >
                   <div>
                     <Rocket className="mx-auto h-12 w-12" />

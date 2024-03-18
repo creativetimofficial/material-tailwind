@@ -82,7 +82,7 @@ export function SidebarWithLogo() {
               )}
             </List.Item>
           ))}
-          <hr className="border-secondary-main -mx-3 my-3" />
+          <hr className="-mx-3 my-3 border-secondary" />
           <List.Item onClick={() => setIsOpen((cur) => !cur)}>
             <List.ItemStart>
               <MoreHorizCircle className="h-[18px] w-[18px]" />
@@ -116,8 +116,8 @@ export function SidebarWithLogo() {
               </List.Item>
             </List>
           </Collapse>
-          <hr className="border-secondary-main -mx-3 my-3" />
-          <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+          <hr className="-mx-3 my-3 border-secondary" />
+          <List.Item className="text-error hover:bg-error/10 focus:bg-error/10">
             <List.ItemStart>
               <LogOut className="h-[18px] w-[18px]" />
             </List.ItemStart>
@@ -128,7 +128,7 @@ export function SidebarWithLogo() {
       <Card.Footer className="mt-8">
         <Card color="primary">
           <Card.Header className="m-3">
-            <SelectFace3d className="text-primary-content h-10 w-10" />
+            <SelectFace3d className="h-10 w-10 text-primary-foreground" />
           </Card.Header>
           <Card.Body>
             <Typography type="h6" color="secondary" className="mb-1">

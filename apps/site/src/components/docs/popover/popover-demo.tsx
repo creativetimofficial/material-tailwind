@@ -5,7 +5,7 @@ export function PopoverDemo() {
     <Popover>
       <Popover.Trigger as={Button}>Open</Popover.Trigger>
       <Popover.Content className="max-w-sm">
-        <Typography type="small" className="text-gray-600">
+        <Typography type="small" className="text-foreground">
           This is a very beautiful popover, show some love.
         </Typography>
         <Popover.Arrow />

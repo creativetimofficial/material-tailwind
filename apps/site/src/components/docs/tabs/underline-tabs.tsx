@@ -19,7 +19,7 @@ export function UnderlineTabs() {
         <Tabs.Trigger className="w-full" value="svelte">
           Svelte
         </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="rounded-none border-b-2 border-primary-main bg-transparent shadow-none" />
+        <Tabs.TriggerIndicator className="rounded-none border-b-2 border-primary bg-transparent shadow-none" />
       </Tabs.List>
       <Tabs.Panel value="html">
         It really matters and then like it really doesn't matter. What matters

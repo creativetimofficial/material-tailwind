@@ -10,7 +10,7 @@ export function SwitchWithDescription() {
         <Typography color="gray" className="font-semibold">
           Remember Me
         </Typography>
-        <Typography type="small" className="text-gray-500">
+        <Typography type="small" className="text-foreground">
           You&apos;ll be able to login without password for 24 hours.
         </Typography>
       </label>

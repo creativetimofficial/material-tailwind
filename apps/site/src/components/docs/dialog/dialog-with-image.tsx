@@ -30,7 +30,7 @@ export function DialogWithImage() {
                 <Typography type="small" className="font-semibold">
                   Alex Andrew
                 </Typography>
-                <Typography type="small" className="text-xs text-gray-600">
+                <Typography type="small" className="text-xs text-foreground">
                   @alexandrew
                 </Typography>
               </div>
@@ -52,13 +52,13 @@ export function DialogWithImage() {
           <div className="flex items-end justify-between">
             <div className="flex items-center gap-16">
               <div>
-                <Typography type="small" className="text-gray-600">
+                <Typography type="small" className="text-foreground">
                   Views
                 </Typography>
                 <Typography className="font-semibold">44,082,044</Typography>
               </div>
               <div>
-                <Typography type="small" className="text-gray-600">
+                <Typography type="small" className="text-foreground">
                   Downloads
                 </Typography>
                 <Typography className="font-semibold">553,031</Typography>

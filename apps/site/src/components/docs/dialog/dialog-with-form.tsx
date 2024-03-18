@@ -26,7 +26,7 @@ export function DialogWithForm() {
           <Typography type="h4" className="mb-2">
             Sign In
           </Typography>
-          <Typography className="text-gray-600">
+          <Typography className="text-foreground">
             Enter your email and password to Sign In.
           </Typography>
           <form action="#" className="mt-6">
@@ -67,7 +67,7 @@ export function DialogWithForm() {
               <Typography
                 as="label"
                 htmlFor="remember"
-                className="text-gray-500"
+                className="text-foreground"
               >
                 Remember Me
               </Typography>

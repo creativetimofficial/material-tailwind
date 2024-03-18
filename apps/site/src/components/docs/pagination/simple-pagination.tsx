@@ -7,7 +7,7 @@ export function SimplePagination() {
       <IconButton size="sm" variant="ghost">
         <NavArrowLeft className="h-4 w-4 stroke-2" />
       </IconButton>
-      <Typography className="flex items-center gap-1 text-gray-600">
+      <Typography className="flex items-center gap-1 text-foreground">
         Page
         <Typography as="span" color="primary" className="font-semibold">
           2

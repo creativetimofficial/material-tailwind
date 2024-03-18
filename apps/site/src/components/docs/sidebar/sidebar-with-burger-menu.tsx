@@ -72,20 +72,20 @@ export function SidebarWithBurgerMenu() {
     <>
       <IconButton onClick={openDrawer}>
         {isDrawerOpen ? (
-          <Xmark className="w-8 h-8" />
+          <Xmark className="h-8 w-8" />
         ) : (
-          <Menu className="w-8 h-8" />
+          <Menu className="h-8 w-8" />
         )}
       </IconButton>
       <Card className="max-w-[280px]">
-        <Card.Header className="flex items-center gap-2 mx-3 mt-3 mb-0 h-max">
-          <img src="/logo.png" alt="brand" className="rounded-md h-7 w-7" />
+        <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
+          <img src="/logo.png" alt="brand" className="h-7 w-7 rounded-md" />
           <Typography className="font-semibold">E-Mail Demo</Typography>
         </Card.Header>
         <Card.Body className="p-3">
           <Input>
             <Input.Icon>
-              <Search className="w-full h-full" />
+              <Search className="h-full w-full" />
             </Input.Icon>
             <Input.Field type="search" placeholder="Search here..." />
           </Input>
@@ -105,7 +105,7 @@ export function SidebarWithBurgerMenu() {
                 )}
               </List.Item>
             ))}
-            <hr className="my-3 -mx-3 border-secondary-main" />
+            <hr className="-mx-3 my-3 border-secondary" />
             <List.Item onClick={() => setIsOpen((cur) => !cur)}>
               <List.ItemStart>
                 <MoreHorizCircle className="h-[18px] w-[18px]" />
@@ -139,8 +139,8 @@ export function SidebarWithBurgerMenu() {
                 </List.Item>
               </List>
             </Collapse>
-            <hr className="my-3 -mx-3 border-secondary-main" />
-            <List.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+            <hr className="-mx-3 my-3 border-secondary" />
+            <List.Item className="text-error hover:bg-error/10 focus:bg-error/10">
               <List.ItemStart>
                 <LogOut className="h-[18px] w-[18px]" />
               </List.ItemStart>
@@ -151,7 +151,7 @@ export function SidebarWithBurgerMenu() {
         <Card.Footer className="mt-8">
           <Card color="primary">
             <Card.Header className="m-3">
-              <SelectFace3d className="w-10 h-10 text-primary-content" />
+              <SelectFace3d className="h-10 w-10 text-primary-foreground" />
             </Card.Header>
             <Card.Body>
               <Typography type="h6" color="secondary" className="mb-1">

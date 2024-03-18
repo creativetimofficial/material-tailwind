@@ -28,7 +28,7 @@ export function ProfileInfoPopover() {
             @alex
           </Typography>
         </Typography>
-        <Typography type="small" className="text-gray-600">
+        <Typography type="small" className="text-foreground">
           Frontend Developer • Major interest in Web Development: motivated to
           achieve measurable results, to deepen my knowledge and improve my
           skills.
@@ -37,14 +37,14 @@ export function ProfileInfoPopover() {
         <div className="flex items-center gap-8">
           <Typography
             type="small"
-            className="flex items-center gap-1.5 text-gray-600"
+            className="flex items-center gap-1.5 text-foreground"
           >
             <MapPin className="h-4 w-4" />
             United Kingdom
           </Typography>
           <Typography
             type="small"
-            className="flex items-center gap-1.5 text-gray-600"
+            className="flex items-center gap-1.5 text-foreground"
           >
             <City className="h-4 w-4" />
             Material Tailwind

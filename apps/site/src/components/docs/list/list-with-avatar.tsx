@@ -10,7 +10,7 @@ const ListItem = React.forwardRef<any, any>(
         </List.ItemStart>
         <div>
           <Typography className="font-semibold">{title}</Typography>
-          <Typography type="small" className="text-gray-600">
+          <Typography type="small" className="text-foreground">
             {description}
           </Typography>
         </div>

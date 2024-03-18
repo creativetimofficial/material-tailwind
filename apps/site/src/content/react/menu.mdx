@@ -214,7 +214,7 @@ const NavItem = React.forwardRef(
         </Typography>
         <Typography
           type="small"
-          className="text-gray-600"
+          className="text-foreground"
         >
           {description}
         </Typography>
@@ -238,7 +238,7 @@ export function NavMenu() {
       <Menu.Content className="grid max-w-lg grid-cols-5 gap-1">
         <Card
           color="primary"
-          className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-content shadow-none"
+          className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
         >
           <div>
             <Rocket className="mx-auto h-12 w-12" />
@@ -285,7 +285,7 @@ export function MenuWithDivider() {
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
         <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
           Logout
         </Menu.Item>
       </Menu.Content>
@@ -312,7 +312,7 @@ export function MenuWithDivider() {
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
         <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
           Logout
         </Menu.Item>
       </Menu.Content>
@@ -414,7 +414,7 @@ const MenuItem = React.forwardRef(
           </Typography>
           <Typography
             type="small"
-            className="flex items-center gap-1 text-sm text-gray-600"
+            className="flex items-center gap-1 text-sm text-foreground"
           >
             <Clock className="h-3.5 w-3.5" />
             {date}
@@ -482,7 +482,7 @@ export function ProfileMenu() {
           <HeadsetHelp className="me-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
         <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
           <LogOut className="me-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>

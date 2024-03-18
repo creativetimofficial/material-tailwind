@@ -19,7 +19,7 @@ export function TransparentTabs() {
         <Tabs.Trigger className="w-full" value="svelte">
           Svelte
         </Tabs.Trigger>
-        <Tabs.TriggerIndicator className="bg-primary-main/10 shadow-none" />
+        <Tabs.TriggerIndicator className="bg-primary/10 shadow-none" />
       </Tabs.List>
       <Tabs.Panel value="html">
         It really matters and then like it really doesn't matter. What matters

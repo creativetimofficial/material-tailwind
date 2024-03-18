@@ -88,7 +88,7 @@ export function FooterWithSocialLinks() {
                     <Typography
                       as="a"
                       href={href}
-                      className="hover:text-info-main py-1"
+                      className="py-1 hover:text-info"
                     >
                       {title}
                     </Typography>

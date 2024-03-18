@@ -118,7 +118,7 @@ function ProfileMenu() {
         src="https://dub.sh/iu8bOfU"
         alt="profile-picture"
         size="sm"
-        className="border-primary-main border p-0.5 lg:ml-auto"
+        className="border border-primary p-0.5 lg:ml-auto"
       />
       <Menu.Content>
         <Menu.Item>
@@ -131,7 +131,7 @@ function ProfileMenu() {
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
         <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error-main hover:bg-error-main/10 focus:bg-error-main/10">
+        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -210,7 +210,7 @@ export function NavbarWithMegaMenu() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="shadow-primary-main/[0.025] z-[100000] grid max-w-screen-xl rounded-lg border border-secondary-dark bg-white p-2 shadow-xl">
+              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-secondary-dark bg-white p-2 shadow-xl shadow-primary/[0.025]">
                 <ul className="grid grid-cols-3 gap-y-2">{renderItems}</ul>
                 <Tooltip.Arrow />
               </Tooltip.Content>

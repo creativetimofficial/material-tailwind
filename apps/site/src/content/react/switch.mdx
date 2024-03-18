@@ -80,7 +80,7 @@ export function SwitchWithLabel() {
       <Typography
         as="label"
         htmlFor={ID}
-        className="text-gray-500"
+        className="text-foreground"
       >
         Dark Mode
       </Typography>
@@ -121,7 +121,7 @@ export function SwitchWithLink() {
       <Typography
         as="label"
         htmlFor={ID}
-        className="flex gap-1 text-gray-500"
+        className="flex gap-1 text-foreground"
       >
         I agree with the
         <Typography as="a" href="#" color="info">
@@ -152,7 +152,7 @@ export function SwitchWithDescription() {
         <Typography color="gray" className="font-medium">
           Remember Me
         </Typography>
-        <Typography type="small" className="text-gray-500">
+        <Typography type="small" className="text-foreground">
           You&apos;ll be able to login without password for 24 hours.
         </Typography>
       </label>
@@ -172,7 +172,7 @@ import { Switch } from "@material-tailwind/react";
 
 export function CustomSwitch() {
   return (
-    <Switch className="after:shadow-sm after:shadow-black/10 checked:before:bg-[#2ec946] dark:before:bg-slate-700 dark:after:bg-white dark:checked:before:bg-[#2ec946]" />
+    <Switch className="after:shadow-sm after:shadow-surface-dark/10 checked:before:bg-[#2ec946]" />
   );
 }
 ```
