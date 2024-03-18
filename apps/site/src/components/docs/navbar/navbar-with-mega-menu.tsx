@@ -210,7 +210,7 @@ export function NavbarWithMegaMenu() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-secondary-dark bg-white p-2 shadow-xl shadow-primary/[0.025]">
+              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-secondary-dark bg-secondary p-2 shadow-xl shadow-primary/[0.025]">
                 <ul className="grid grid-cols-3 gap-y-2">{renderItems}</ul>
                 <Tooltip.Arrow />
               </Tooltip.Content>

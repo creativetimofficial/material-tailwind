@@ -4,7 +4,7 @@ import { Mail, Settings, Trash } from "iconoir-react";
 export function ListCustomStyles() {
   return (
     <List>
-      <List.Item className="group hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white">
+      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
           <Mail className="h-[18px] w-[18px]" />
         </List.ItemStart>
@@ -13,13 +13,13 @@ export function ListCustomStyles() {
           <Chip
             size="sm"
             variant="ghost"
-            className="group-hover:bg-blue-400 group-hover:text-white"
+            className="group-hover:bg-blue-400 group-hover:text-secondary"
           >
             <Chip.Label>14</Chip.Label>
           </Chip>
         </List.ItemEnd>
       </List.Item>
-      <List.Item className="group hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white">
+      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
           <Trash className="h-[18px] w-[18px]" />
         </List.ItemStart>
@@ -28,13 +28,13 @@ export function ListCustomStyles() {
           <Chip
             size="sm"
             variant="ghost"
-            className="group-hover:bg-blue-400 group-hover:text-white"
+            className="group-hover:bg-blue-400 group-hover:text-secondary"
           >
             <Chip.Label>40</Chip.Label>
           </Chip>
         </List.ItemEnd>
       </List.Item>
-      <List.Item className="group hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white">
+      <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
           <Settings className="h-[18px] w-[18px]" />
         </List.ItemStart>

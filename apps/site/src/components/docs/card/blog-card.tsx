@@ -29,7 +29,7 @@ export function BlogCard() {
                 size="sm"
                 alt="natali craig"
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1061&q=80"
-                className="border-2 border-white hover:z-10"
+                className="border-2 border-secondary hover:z-10"
               />
             </Tooltip.Trigger>
             <Tooltip.Content>
@@ -43,7 +43,7 @@ export function BlogCard() {
                 size="sm"
                 alt="tania andrew"
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-                className="border-2 border-white hover:z-10"
+                className="border-2 border-secondary hover:z-10"
               />
             </Tooltip.Trigger>
             <Tooltip.Content>

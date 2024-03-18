@@ -135,7 +135,7 @@ export function ComplexNavbar() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-white p-1 shadow-xl shadow-primary/[0.025]">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-secondary p-1 shadow-xl shadow-primary/[0.025]">
                 <Card
                   color="primary"
                   className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
