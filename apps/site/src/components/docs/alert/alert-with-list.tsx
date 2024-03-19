@@ -11,7 +11,7 @@ export function AlertWithList() {
         </Alert.Icon>
         <Alert.Content>
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -25,7 +25,7 @@ export function AlertWithList() {
         </Alert.Icon>
         <Alert.Content>
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -39,7 +39,7 @@ export function AlertWithList() {
         </Alert.Icon>
         <Alert.Content>
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -53,7 +53,7 @@ export function AlertWithList() {
         </Alert.Icon>
         <Alert.Content>
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2 font-normal">
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
