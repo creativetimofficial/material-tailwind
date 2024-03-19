@@ -38,6 +38,7 @@ import * as Textarea from "@components/docs/textarea";
 import * as Tooltip from "@components/docs/tooltip";
 import * as Typography from "@components/docs/typography";
 import * as Video from "@components/docs/video";
+import * as Gallery from "@components/docs/gallery";
 
 const components = {
   ComponentPreview,
@@ -52,13 +53,13 @@ const components = {
     <MTTypography
       as="code"
       type="small"
-      className="inline-block rounded border border-surface bg-surface-light px-1 font-mono leading-none text-foreground"
+      className="inline-block px-1 font-mono leading-none border rounded border-surface bg-surface-light text-foreground"
       {...props}
     />
   ),
   a: (props) => (
     <a
-      className="text-info underline transition-colors duration-300 hover:text-primary"
+      className="underline transition-colors duration-300 text-info hover:text-primary"
       {...props}
     />
   ),
@@ -67,7 +68,7 @@ const components = {
   ),
   li: (props) => (
     <li
-      className="font-sans text-base font-normal text-foreground antialiased"
+      className="font-sans text-base antialiased font-normal text-foreground"
       {...props}
     />
   ),
@@ -105,6 +106,7 @@ const components = {
   Tooltip,
   Typography,
   Video,
+  Gallery,
 };
 
 type MdxContentProps = {

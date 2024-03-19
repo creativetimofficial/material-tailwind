@@ -269,6 +269,10 @@ export const routes = [
             title: "Sidebar",
             path: "/docs/react/sidebar",
           },
+          {
+            title: "Gallery",
+            path: "/docs/react/gallery",
+          },
         ],
       },
     ],
