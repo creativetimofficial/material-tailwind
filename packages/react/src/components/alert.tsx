@@ -106,17 +106,17 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
 AlertRoot.displayName = "MaterialTailwind.Alert";
 
 // alert content
-export interface AlertContentProps extends Props<"span" | any> {
+export interface AlertContentProps extends Props<"div" | any> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const AlertContent = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLDivElement | HTMLElement,
   AlertContentProps
 >(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "span";
+  const Element = as ?? "div";
   const contextTheme = useTheme();
   const theme = contextTheme?.alertContent ?? alertContentTheme;
 
@@ -195,10 +195,7 @@ export const AlertDismissTrigger = React.forwardRef<
     return typeof onClick === "function" && onClick(e);
   };
 
-  const styles = children ? className : twMerge(
-    theme.baseStyle,
-    className,
-  );
+  const styles = children ? className : twMerge(theme.baseStyle, className);
 
   return (
     <Element {...rest} ref={ref} className={styles} onClick={handleClick}>

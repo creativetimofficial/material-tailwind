@@ -15,7 +15,7 @@ export const alertTheme = {
     rounded: false,
   },
   baseStyle:
-    "relative flex w-full items-center border select-none text-base font-sans font-medium rounded-md p-2 data-[pill=true]:rounded-full",
+    "relative flex w-full items-center border select-none text-base font-sans font-normal rounded-md p-2 data-[pill=true]:rounded-full",
   variant: {
     ghost: {
       primary: "bg-primary/10 border-transparent text-primary",
