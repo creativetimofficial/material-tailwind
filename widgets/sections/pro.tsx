@@ -106,7 +106,7 @@ export function Pro() {
                     variant="h2"
                     className="font-semibold text-primary"
                   >
-                    190+
+                    200+
                   </Typography>
                   <Typography
                     variant="h5"
