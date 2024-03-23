@@ -5,7 +5,7 @@ export function AlertIcon() {
   return (
     <Alert>
       <Alert.Icon>
-        <WarningCircle className="h-full w-full" />
+        <WarningCircle className="h-5 w-5" />
       </Alert.Icon>
       <Alert.Content>A simple alert for showing message.</Alert.Content>
     </Alert>

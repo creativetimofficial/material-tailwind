@@ -15,7 +15,7 @@ export const alertTheme = {
     rounded: false,
   },
   baseStyle:
-    "relative flex w-full items-center border select-none text-base font-sans font-normal rounded-md p-2 data-[pill=true]:rounded-full",
+    "relative flex items-start w-full border rounded-md p-2 data-[pill=true]:rounded-full",
   variant: {
     ghost: {
       primary: "bg-primary/10 border-transparent text-primary",
@@ -58,17 +58,13 @@ export const alertTheme = {
 };
 
 export const alertContentTheme = {
-  baseStyle: "font-inherit w-full text-inherit leading-none m-1.5",
+  baseStyle: "w-full text-base font-sans font-normal leading-none m-1.5",
 };
 
 export const alertIconTheme = {
-  baseStyle: "grid place-items-center shrink-0 w-5 h-5 mx-1",
+  baseStyle: "grid place-items-center shrink-0 p-1",
 };
 
 export const alertDismissTriggerTheme = {
-  defaultProps: {
-    ripple: true,
-  },
-  baseStyle:
-    "grid place-items-center shrink-0 w-5 h-5 me-1 ms-3 rounded-full stroke-[1.5] text-inherit",
+  baseStyle: "outline-none",
 };

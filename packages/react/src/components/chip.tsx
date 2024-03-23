@@ -21,20 +21,26 @@ import {
 import type { BaseComponent, Props } from "@types";
 
 // chip context
-export type ChipContextProps = BaseComponent<any>;
+export type ChipContextProps = BaseComponent<any> & {
+  open?: boolean;
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export const ChipContext = React.createContext<ChipContextProps>({
   size: "md",
   color: "primary",
   variant: "solid",
+  open: true,
+  setOpen: () => {},
 });
 
 // chip root
 export interface ChipProps extends BaseComponent<"div" | any> {
   as?: React.ElementType;
   className?: string;
-  open?: boolean;
   children: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: () => void;
 }
 
 /**
@@ -54,13 +60,27 @@ export interface ChipProps extends BaseComponent<"div" | any> {
  */
 const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
   (
-    { as, size, color, variant, className, open = true, children, ...rest },
+    {
+      as,
+      size,
+      color,
+      variant,
+      className,
+      open: controlledOpen,
+      onOpenChange: setControlledOpen,
+      children,
+      ...rest
+    },
     ref,
   ) => {
     const Element = as ?? "div";
     const contextTheme = useTheme();
     const theme = contextTheme?.chip ?? chipTheme;
     const defaultProps = theme?.defaultProps;
+    const [uncontrolledOpen, setUncontrolledOpen] = React.useState(true);
+
+    const open = controlledOpen ?? uncontrolledOpen;
+    const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
     size ??= (defaultProps?.size as ChipProps["size"]) ?? "md";
     color ??= (defaultProps?.color as ChipProps["color"]) ?? "primary";
@@ -78,8 +98,10 @@ const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
         size,
         color,
         variant,
+        open,
+        setOpen,
       }),
-      [size, color, variant],
+      [size, color, variant, open, setOpen],
     );
 
     return open ? (
@@ -170,7 +192,7 @@ export const ChipDismissTrigger = React.forwardRef<
 >(({ as, ripple, className, children, ...rest }, ref) => {
   const Element = as ?? "button";
   const contextTheme = useTheme();
-  const { size, color, variant } = React.useContext(ChipContext);
+  const { size, color, variant, setOpen } = React.useContext(ChipContext);
   const theme = contextTheme?.chipDismissTrigger ?? chipDismissTriggerTheme;
   const defaultProps = theme?.defaultProps;
 
@@ -179,8 +201,10 @@ export const ChipDismissTrigger = React.forwardRef<
 
   const rippleEffect = ripple !== undefined && new Ripple();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const onClick = rest?.onClick;
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setOpen?.(false);
+    rest.onClick?.(event);
+
     const isDarkRipple =
       variant === "ghost" ||
       variant === "outline" ||
@@ -188,10 +212,8 @@ export const ChipDismissTrigger = React.forwardRef<
       color === "warning";
 
     if (ripple) {
-      rippleEffect.create(e, isDarkRipple ? "dark" : "light");
+      rippleEffect.create(event, isDarkRipple ? "dark" : "light");
     }
-
-    return typeof onClick === "function" && onClick(e);
   };
 
   const styles = twMerge(
