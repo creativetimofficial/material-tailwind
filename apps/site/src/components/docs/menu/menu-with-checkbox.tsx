@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Menu, Button, Checkbox } from "@material-tailwind/react/dist";
 
 export function MenuWithCheckbox() {
@@ -12,7 +11,9 @@ export function MenuWithCheckbox() {
           className="gap-2 pl-1.5"
           closeOnClick={false}
         >
-          <Checkbox id="task-name" />
+          <Checkbox id="task-name">
+            <Checkbox.Indicator />
+          </Checkbox>
           Task Name
         </Menu.Item>
         <Menu.Item
@@ -21,7 +22,9 @@ export function MenuWithCheckbox() {
           className="gap-2 pl-1.5"
           closeOnClick={false}
         >
-          <Checkbox id="date-created" />
+          <Checkbox id="date-created">
+            <Checkbox.Indicator />
+          </Checkbox>
           Date Created
         </Menu.Item>
         <Menu.Item
@@ -30,7 +33,9 @@ export function MenuWithCheckbox() {
           className="gap-2 pl-1.5"
           closeOnClick={false}
         >
-          <Checkbox id="completed" />
+          <Checkbox id="completed">
+            <Checkbox.Indicator />
+          </Checkbox>
           Completed
         </Menu.Item>
       </Menu.Content>

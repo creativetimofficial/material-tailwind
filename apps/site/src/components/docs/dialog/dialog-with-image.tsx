@@ -22,15 +22,15 @@ export function DialogWithImage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Avatar
-                size="sm"
+                size="md"
                 alt="alex andrew"
                 src="https://dub.sh/TdSBP0D"
               />
-              <div className="-mt-px flex flex-col">
-                <Typography type="small" className="font-semibold">
+              <div className="flex flex-col">
+                <Typography className="data-[type=p]:font-semibold">
                   Alex Andrew
                 </Typography>
-                <Typography type="small" className="text-xs text-foreground">
+                <Typography type="small" className="text-foreground">
                   @alexandrew
                 </Typography>
               </div>

@@ -30,7 +30,7 @@ export const dialogContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "fixed z-[9998] top-1/2 left-1/2 -translate-x-1/2 px-4 py-3 -translate-y-1/2 bg-white w-full h-full rounded-xl shadow-2xl shadow-surface-dark/5 border border-surface",
+    "fixed z-[9998] top-1/2 left-1/2 -translate-x-1/2 px-4 py-3 max-h-[calc(100vh-32px)] overflow-y-auto -translate-y-1/2 bg-white w-full h-full rounded-xl shadow-2xl shadow-surface-dark/5 border border-surface",
   size: {
     xs: "w-8/12 sm:w-6/12 md:w-4/12 lg:w-3/12 xl:w-2/12 h-max",
     sm: "w-9/12 sm:w-7/12 md:w-5/12 lg:w-3/12 h-max",

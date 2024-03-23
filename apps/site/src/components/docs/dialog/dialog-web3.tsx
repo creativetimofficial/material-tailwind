@@ -3,16 +3,17 @@ import {
   Button,
   Typography,
   IconButton,
+  Avatar,
 } from "@material-tailwind/react/dist";
 
 import { Xmark } from "iconoir-react";
 
 export function DialogWeb3() {
   return (
-    <Dialog size="sm">
+    <Dialog size="xs">
       <Dialog.Trigger as={Button}>Connect wallet</Dialog.Trigger>
       <Dialog.Overlay>
-        <Dialog.Content>
+        <Dialog.Content className="pb-4">
           <Dialog.DismissTrigger
             as={IconButton}
             size="sm"
@@ -22,59 +23,71 @@ export function DialogWeb3() {
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography type="h5">Connect a Wallet</Typography>
+          <Typography color="primary" type="h6">
+            Connect a Wallet
+          </Typography>
           <Typography className="text-foreground">
             Choose which card you want to connect
           </Typography>
           <div className="mt-4">
-            <Typography className="py-4 !font-bold uppercase opacity-70">
+            <Typography
+              color="primary"
+              className="mb-2 data-[type=p]:font-semibold"
+            >
               Popular
             </Typography>
-            <div className="space-y-4">
+            <div className="space-y-2">
               <Button
-                color="secondary"
                 isFullWidth
-                className="flex items-center justify-center gap-3"
+                size="lg"
+                color="warning"
+                className="flex items-center justify-center gap-2"
               >
                 <img
-                  src="https://docs.material-tailwind.com/icons/metamask.svg"
                   alt="metamask"
+                  src="https://docs.material-tailwind.com/icons/metamask.svg"
                   className="h-6 w-6"
                 />
                 <Typography>Connect with MetaMask</Typography>
               </Button>
               <Button
-                color="secondary"
                 isFullWidth
-                className="flex items-center justify-center gap-3"
+                size="lg"
+                color="info"
+                className="flex items-center justify-center gap-2"
               >
                 <img
-                  src="https://docs.material-tailwind.com/icons/coinbase.svg"
                   alt="metamast"
-                  className="h-6 w-6 rounded-md"
+                  src="https://docs.material-tailwind.com/icons/coinbase.svg"
+                  className="h-6 w-6 rounded"
                 />
                 <Typography>Connect with Coinbase</Typography>
               </Button>
             </div>
 
-            <Typography className="mt-2 py-4 !font-bold uppercase opacity-70">
+            <Typography
+              color="primary"
+              className="mb-2 mt-6 data-[type=p]:font-semibold"
+            >
               Other
             </Typography>
             <Button
-              color="secondary"
               isFullWidth
-              className="flex items-center justify-center gap-3"
+              size="lg"
+              className="flex items-center justify-center gap-2"
             >
               <img
-                src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
                 alt="metamast"
-                className="border-blue-gray-50 h-7 w-7 rounded-md border"
+                src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
+                className="h-6 w-6 rounded"
               />
               <Typography>Connect with Trust Wallet</Typography>
             </Button>
           </div>
-          <div className="mt-12 flex w-full justify-between gap-2">
-            <Typography type="small">New to Ethereum wallets?</Typography>
+          <div className="mt-12 flex w-full items-center justify-between gap-2">
+            <Typography type="small" className="text-foreground">
+              New to Ethereum wallets?
+            </Typography>
             <Button variant="outline" size="sm">
               Learn More
             </Button>

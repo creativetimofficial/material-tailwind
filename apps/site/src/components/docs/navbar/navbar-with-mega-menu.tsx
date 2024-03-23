@@ -9,6 +9,7 @@ import {
   Menu,
   Tooltip,
   Accordion,
+  type MenuItemProps,
 } from "@material-tailwind/react/dist";
 
 import {
@@ -100,14 +101,18 @@ const navListMenuItems = [
 ];
 
 function NavList() {
-  return LINKS.map(({ icon: Icon, title, href }) => (
-    <List.Item key={title} as="a" href={href}>
-      <List.ItemStart className="mr-1.5">
-        <Icon className="h-4 w-4" />
-      </List.ItemStart>
-      <Typography type="small">{title}</Typography>
-    </List.Item>
-  ));
+  return (
+    <>
+      {LINKS.map(({ icon: Icon, title, href }) => (
+        <List.Item key={title} as="a" href={href}>
+          <List.ItemStart className="mr-1.5">
+            <Icon className="h-4 w-4" />
+          </List.ItemStart>
+          <Typography type="small">{title}</Typography>
+        </List.Item>
+      ))}
+    </>
+  );
 }
 
 function ProfileMenu() {
@@ -130,8 +135,8 @@ function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
+        <hr className="!my-1 -mx-1 border-secondary-dark" />
+        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -140,40 +145,47 @@ function ProfileMenu() {
   );
 }
 
-const MenuItem = React.forwardRef<any, any>(
-  ({ title, description, icon: Icon, ...rest }, ref) => {
-    return (
-      <List.Item
-        as="a"
-        href="#"
-        ref={ref}
-        {...rest}
-        className="flex items-center gap-3 rounded-lg"
-      >
-        <div className="flex items-center justify-center rounded-lg bg-primary/5 p-2 ">
-          {" "}
-          <Icon className="h-6 w-6" />
-        </div>
-        <div>
-          <Typography as="h6" className="!text-sm !font-semibold">
-            {title}
-          </Typography>
-          <Typography type="small" className="!text-xs text-foreground">
-            {description}
-          </Typography>
-        </div>
-      </List.Item>
-    );
-  },
-);
+const MenuItem = React.forwardRef<
+  typeof Menu.Item,
+  {
+    title: string;
+    description: string;
+    icon?: React.ElementType;
+  }
+>(({ title, description, icon: Icon, ...rest }, ref) => {
+  return (
+    <List.Item ref={ref} as="a" href="#" className="p-1.5" {...rest}>
+      {Icon && (
+        <List.ItemStart>
+          <div className="flex items-center justify-center rounded-[5px] bg-primary/5 p-2">
+            <Icon className="h-6 w-6" />
+          </div>
+        </List.ItemStart>
+      )}
+      <div>
+        <Typography
+          color="primary"
+          className="data-[type=p]:text-sm data-[type=p]:font-semibold"
+        >
+          {title}
+        </Typography>
+        <Typography
+          type="small"
+          className="data-[type=p]:text-xs data-[type=p]:text-foreground"
+        >
+          {description}
+        </Typography>
+      </div>
+    </List.Item>
+  );
+});
 
 export function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = React.useState(false);
+
   const renderItems = navListMenuItems.map(
     ({ icon, title, description }, key) => (
-      <a href="#" key={key}>
-        <MenuItem title={title} description={description} icon={icon} />
-      </a>
+      <MenuItem key={key} title={title} description={description} icon={icon} />
     ),
   );
 
@@ -210,12 +222,11 @@ export function NavbarWithMegaMenu() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-secondary-dark bg-secondary p-2 shadow-xl shadow-primary/[0.025]">
+              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-surface bg-background p-2 shadow-xl shadow-surface/10">
                 <ul className="grid grid-cols-3 gap-y-2">{renderItems}</ul>
                 <Tooltip.Arrow />
               </Tooltip.Content>
             </Tooltip>
-            {/* @ts-ignore */}
             <NavList />
           </List>
         </div>
@@ -263,7 +274,6 @@ export function NavbarWithMegaMenu() {
             </Accordion.Content>
           </Accordion.Item>
         </Accordion>
-        {/* @ts-ignore */}
         <NavList />
       </Collapse>
     </Card>

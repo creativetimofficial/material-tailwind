@@ -7,7 +7,10 @@ export function PopoverWithImage() {
       <Popover.Trigger as={Button}>More Info</Popover.Trigger>
       <Popover.Content className="grid w-[30rem] grid-cols-2 gap-4">
         <div className="pl-1">
-          <Typography className="mb-2 font-semibold">
+          <Typography
+            color="primary"
+            className="mb-1 data-[type=p]:font-semibold"
+          >
             Material Tailwind
           </Typography>
           <Typography type="small" className="mb-4 block text-foreground">
@@ -18,7 +21,7 @@ export function PopoverWithImage() {
           </Typography>
           <Button as="a" href="#popover-with-image" size="sm">
             Read More
-            <NavArrowRight className="h-4 w-4" />
+            <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
           </Button>
         </div>
         <img

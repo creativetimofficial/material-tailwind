@@ -10,7 +10,9 @@ export function SubscriptionPopover() {
     <Popover>
       <Popover.Trigger as={Button}>Subscribe</Popover.Trigger>
       <Popover.Content className="w-96">
-        <Typography type="h6">Newsletter Subscription</Typography>
+        <Typography color="primary" className="data-[type=p]:font-bold">
+          Newsletter Subscription
+        </Typography>
         <form
           action="#"
           className="mt-3 flex w-full items-center justify-center gap-2"

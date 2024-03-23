@@ -7,6 +7,7 @@ import {
   Collapse,
   Button,
   Input,
+  Avatar,
 } from "@material-tailwind/react/dist";
 import {
   Archive,
@@ -64,8 +65,10 @@ export function SidebarWithSearch() {
   return (
     <Card className="max-w-[280px]">
       <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
-        <img src="/logo.png" alt="brand" className="h-7 w-7 rounded-md" />
-        <Typography className="font-semibold">E-Mail Demo</Typography>
+        <Avatar size="xs" src="/logo.png" alt="brand" />
+        <Typography className="data-[type=p]:font-semibold">
+          Material Tailwind
+        </Typography>
       </Card.Header>
       <Card.Body className="p-3">
         <Input>
@@ -125,7 +128,7 @@ export function SidebarWithSearch() {
             </List>
           </Collapse>
           <hr className="-mx-3 my-3 border-secondary" />
-          <List.Item className="text-error hover:bg-error/10 focus:bg-error/10">
+          <List.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
             <List.ItemStart>
               <LogOut className="h-[18px] w-[18px]" />
             </List.ItemStart>

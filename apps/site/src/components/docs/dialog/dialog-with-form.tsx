@@ -10,7 +10,7 @@ import { Xmark } from "iconoir-react";
 
 export function DialogWithForm() {
   return (
-    <Dialog size="sm">
+    <Dialog size="xs">
       <Dialog.Trigger as={Button}>Sign In</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>
@@ -18,12 +18,12 @@ export function DialogWithForm() {
             as={IconButton}
             size="sm"
             variant="ghost"
-            isCircular
             className="absolute right-2 top-2"
+            isCircular
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography type="h4" className="mb-2">
+          <Typography type="h6" className="mb-1">
             Sign In
           </Typography>
           <Typography className="text-foreground">
@@ -62,11 +62,13 @@ export function DialogWithForm() {
                 placeholder="************"
               />
             </Input>
-            <div className="mb-6 flex items-center gap-2">
-              <Checkbox id="remember" />
+            <div className="mb-4 flex items-center gap-2">
+              <Checkbox id="checkbox">
+                <Checkbox.Indicator />
+              </Checkbox>
               <Typography
                 as="label"
-                htmlFor="remember"
+                htmlFor="checkbox"
                 className="text-foreground"
               >
                 Remember Me
@@ -76,10 +78,10 @@ export function DialogWithForm() {
           </form>
           <Typography
             type="small"
-            className="mb-2 mt-3 flex items-center justify-center gap-1"
+            className="mb-2 mt-3 flex items-center justify-center gap-1 text-foreground"
           >
             Don't have an account?
-            <Typography type="small" as="a" href="#" className="font-bold">
+            <Typography type="small" color="primary" as="a" href="#">
               Sign up
             </Typography>
           </Typography>

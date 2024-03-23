@@ -1,15 +1,18 @@
-import { Tooltip, Button } from "@material-tailwind/react/dist";
+import { Tooltip, Button, Typography } from "@material-tailwind/react/dist";
 
 export function TooltipCustomStyles() {
   return (
     <Tooltip placement="bottom">
-      <Tooltip.Trigger as={Button} color="info">
-        Hover
-      </Tooltip.Trigger>
-      <Tooltip.Content className="w-80 bg-info px-2.5 py-1.5 text-info-foreground">
-        Material Tailwind is an easy to use components library for Tailwind CSS
-        and Material Design.
-        <Tooltip.Arrow className="border-info" />
+      <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
+      <Tooltip.Content className="w-80 border border-surface bg-background px-3 py-2.5 text-foreground">
+        <Typography color="primary" className="data-[type=p]:font-semibold">
+          Material Tailwind
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          Material Tailwind is an easy to use components library for Tailwind
+          CSS and Material Design.
+        </Typography>
+        <Tooltip.Arrow />
       </Tooltip.Content>
     </Tooltip>
   );

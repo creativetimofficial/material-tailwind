@@ -6,8 +6,8 @@ export function ProfileMenu() {
     <Menu>
       <Menu.Trigger
         as={Avatar}
-        src="https://dub.sh/iu8bOfU"
         alt="profile-picture"
+        src="https://dub.sh/iu8bOfU"
       />
       <Menu.Content>
         <Menu.Item>
@@ -19,8 +19,8 @@ export function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
+        <hr className="!my-1 -mx-1 border-surface" />
+        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>

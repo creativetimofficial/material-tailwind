@@ -25,7 +25,7 @@ export function DialogMessage() {
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography type="h5" className="mb-2">
+          <Typography color="primary" type="h6" className="mb-1">
             New message to @{" "}
           </Typography>
           <Typography className="text-foreground">

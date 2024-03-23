@@ -12,14 +12,14 @@ export function ImageWithBlurredCaption() {
         as="figcaption"
         className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2 bg-opacity-75 saturate-200 backdrop-blur-md"
       >
-        <Card.Body className="flex justify-between">
+        <Card.Body className="flex justify-between px-4">
           <div>
             <Typography type="h6">Sara Lamalo</Typography>
-            <Typography className="mt-2 text-foreground">
+            <Typography className="mt-1 text-foreground">
               20 July 2022
             </Typography>
           </div>
-          <Typography type="h6">Growth</Typography>
+          <Typography className="data-[type=p]:font-bold">Growth</Typography>
         </Card.Body>
       </Card>
     </figure>

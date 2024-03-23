@@ -13,18 +13,18 @@ export function DialogDemo() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="flex items-center justify-between gap-4">
-            <Typography type="h5">Material Tailwind</Typography>
+            <Typography type="h6">Material Tailwind</Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"
               variant="ghost"
-              isCircular
               className="absolute right-2 top-2"
+              isCircular
             >
               <Xmark className="h-5 w-5" />
             </Dialog.DismissTrigger>
           </div>
-          <Typography className="mb-6 mt-3 text-foreground">
+          <Typography className="mb-6 mt-2 text-foreground">
             Material Tailwind is an open-source library that uses the power of
             Tailwind CSS and React to help you build unique web projects faster
             and easier. The stunning design inspired by Material Design is a

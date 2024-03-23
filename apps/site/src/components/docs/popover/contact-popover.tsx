@@ -18,7 +18,12 @@ export function ContactPopover() {
               <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
             </List.ItemStart>
             <div>
-              <Typography className="font-semibold">Alex Andrew</Typography>
+              <Typography
+                color="primary"
+                className="data-[type=p]:font-semibold"
+              >
+                Alex Andrew
+              </Typography>
               <Typography type="small" className="text-foreground">
                 General Manager
               </Typography>

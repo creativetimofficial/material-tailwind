@@ -9,6 +9,7 @@ import {
   Menu,
   Tooltip,
   Accordion,
+  type MenuItemProps,
 } from "@material-tailwind/react/dist";
 import {
   Archive,
@@ -44,14 +45,18 @@ const LINKS = [
 ];
 
 function NavList() {
-  return LINKS.map(({ icon: Icon, title, href }) => (
-    <List.Item key={title} as="a" href={href}>
-      <List.ItemStart className="mr-1.5">
-        <Icon className="h-4 w-4" />
-      </List.ItemStart>
-      <Typography type="small">{title}</Typography>
-    </List.Item>
-  ));
+  return (
+    <>
+      {LINKS.map(({ icon: Icon, title, href }) => (
+        <List.Item key={title} as="a" href={href}>
+          <List.ItemStart className="mr-1.5">
+            <Icon className="h-4 w-4" />
+          </List.ItemStart>
+          <Typography type="small">{title}</Typography>
+        </List.Item>
+      ))}
+    </>
+  );
 }
 
 function ProfileMenu() {
@@ -74,8 +79,8 @@ function ProfileMenu() {
         <Menu.Item>
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
-        <hr className="-mx-1 my-1 border-secondary-dark" />
-        <Menu.Item className="text-error hover:bg-error/10 focus:bg-error/10">
+        <hr className="!my-1 -mx-1 border-surface" />
+        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -84,20 +89,24 @@ function ProfileMenu() {
   );
 }
 
-const MenuItem = React.forwardRef<any, any>(
-  ({ title, description, ...rest }, ref) => {
-    return (
-      <List.Item ref={ref} {...rest} className="flex-col items-start">
-        <Typography as="h6" className="font-semibold">
-          {title}
-        </Typography>
-        <Typography type="small" className="text-foreground">
-          {description}
-        </Typography>
-      </List.Item>
-    );
-  },
-);
+const MenuItem = React.forwardRef<
+  typeof Menu.Item,
+  {
+    title: string;
+    description: string;
+  } & MenuItemProps
+>(({ title, description, ...rest }, ref) => {
+  return (
+    <Menu.Item ref={ref} {...rest} className="flex-col items-start">
+      <Typography color="primary" className="data-[type=p]:font-semibold">
+        {title}
+      </Typography>
+      <Typography type="small" className="text-foreground">
+        {description}
+      </Typography>
+    </Menu.Item>
+  );
+});
 
 export function ComplexNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -130,24 +139,28 @@ export function ComplexNavbar() {
                     <MultiplePages className="h-4 w-4" />
                   </List.ItemStart>
                   <Typography type="small">Pages</Typography>
-                  <List.ItemEnd className="ps-1">
+                  <List.ItemEnd className="ps-0.5">
                     <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-secondary-dark bg-secondary p-1 shadow-xl shadow-primary/[0.025]">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5">
                 <Card
                   color="primary"
                   className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
                 >
                   <div>
                     <Rocket className="mx-auto h-12 w-12" />
-                    <Typography className="mt-5 text-center" type="h5">
-                      Material Tailwind
+                    <Typography
+                      type="h6"
+                      color="white"
+                      className="mt-5 text-center leading-snug"
+                    >
+                      Material Tailwind PRO
                     </Typography>
                   </div>
                 </Card>
-                <ul className="col-span-3">
+                <ul className="col-span-3 !m-0">
                   <MenuItem
                     title="@material-tailwind/html"
                     description="Learn how to use @material-tailwind/html, packed with rich components and widgets."

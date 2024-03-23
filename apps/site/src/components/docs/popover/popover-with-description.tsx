@@ -10,12 +10,17 @@ export function PopoverWithDescription() {
   return (
     <Popover>
       <Popover.Trigger as={Button}>Repository Info</Popover.Trigger>
-      <Popover.Content className="max-w-sm px-3.5 py-3">
-        <div className="mb-1 flex items-center gap-3">
-          <Typography as="a" href="#" type="h6" className="hover:text-info">
+      <Popover.Content className="max-w-sm">
+        <div className="mb-1 flex items-center gap-2">
+          <Typography
+            as="a"
+            href="#"
+            color="primary"
+            className="hover:text-info data-[type=p]:font-bold"
+          >
             @material-tailwind
           </Typography>
-          <Chip size="sm" variant="ghost">
+          <Chip size="sm" color="info">
             <Chip.Label>Public</Chip.Label>
           </Chip>
         </div>
@@ -24,21 +29,33 @@ export function PopoverWithDescription() {
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-4">
-          <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-info" />
-            <Typography type="small" className="text-foreground">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-info" />
+            <Typography
+              type="small"
+              color="primary"
+              className="data-[type=small]:text-xs"
+            >
               TypeScript
             </Typography>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <StarSolid className="h-4 w-4 text-warning" />
-            <Typography type="small" className="text-foreground">
+            <Typography
+              type="small"
+              color="primary"
+              className="data-[type=small]:text-xs"
+            >
               1,480
             </Typography>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <CheckCircleSolid className="h-4 w-4 text-success" />
-            <Typography type="small" className="text-foreground">
+            <Typography
+              type="small"
+              color="primary"
+              className="data-[type=small]:text-xs"
+            >
               Veritied
             </Typography>
           </div>

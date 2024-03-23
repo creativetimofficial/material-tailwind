@@ -140,7 +140,7 @@ export function SidebarWithBurgerMenu() {
               </List>
             </Collapse>
             <hr className="-mx-3 my-3 border-secondary" />
-            <List.Item className="text-error hover:bg-error/10 focus:bg-error/10">
+            <List.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
               <List.ItemStart>
                 <LogOut className="h-[18px] w-[18px]" />
               </List.ItemStart>

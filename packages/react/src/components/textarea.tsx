@@ -61,7 +61,16 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       className,
     );
 
-    return <textarea rows={8} {...rest} ref={ref} className={styles} />;
+    return (
+      <textarea
+        rows={8}
+        {...rest}
+        ref={ref}
+        className={styles}
+        data-error={isError}
+        data-success={isSuccess}
+      />
+    );
   },
 );
 
