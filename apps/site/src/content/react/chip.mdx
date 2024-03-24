@@ -173,20 +173,17 @@ export function ChipIcon() {
 
 <ComponentPreview demo={<Chip.ChipDismissible />}>
 ```tsx
-import * as React from "react";
 import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
 export function ChipDismissible() {
-  const [open, setOpen] = React.useState(true);
-
   return (
-    <Chip open={open}>
+    <Chip>
       <Chip.Icon>
         <ProfileCircle className="h-full w-full" />
       </Chip.Icon>
       <Chip.Label>Material Tailwind</Chip.Label>
-      <Chip.DismissTrigger onClick={() => setOpen(false)} />
+      <Chip.DismissTrigger />
     </Chip>
   );
 }

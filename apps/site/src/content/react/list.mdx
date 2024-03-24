@@ -80,26 +80,30 @@ export function ListWithIcon() {
 import * as React from "react";
 import { List, Avatar, Typography } from "@material-tailwind/react";
 
-const ListItem = React.forwardRef(
-  ({ img, title, description, ...rest }, ref) => {
-    return (
-      <List.Item ref={ref} {...rest}>
-        <List.ItemStart>
-          <Avatar src={img} alt="profile-picture" />
-        </List.ItemStart>
-        <div>
-          <Typography className="font-semibold">{title}</Typography>
-          <Typography
-            type="small"
-            className="text-foreground"
-          >
-            {description}
-          </Typography>
-        </div>
-      </List.Item>
-    );
-  },
-);
+const ListItem = React.forwardRef<
+  typeof List.Item,
+  {
+    img: string;
+    title: string;
+    description: string;
+  }
+>(({ img, title, description, ...rest }, ref) => {
+  return (
+    <List.Item ref={ref} {...rest}>
+      <List.ItemStart>
+        <Avatar src={img} alt="profile-picture" />
+      </List.ItemStart>
+      <div>
+        <Typography color="primary" className="data-[type=p]:font-semibold">
+          {title}
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          {description}
+        </Typography>
+      </div>
+    </List.Item>
+  );
+});
 
 export function ListWithAvatar() {
   return (

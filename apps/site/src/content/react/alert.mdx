@@ -121,7 +121,7 @@ export function AlertIcon() {
   return (
     <Alert>
       <Alert.Icon>
-        <WarningCircle className="h-full w-full" />
+        <WarningCircle className="h-5 w-5" />
       </Alert.Icon>
       <Alert.Content>A simple alert for showing message.</Alert.Content>
     </Alert>
@@ -142,58 +142,82 @@ import { WarningCircle } from "iconoir-react";
 export function AlertWithList() {
   return (
     <div className="flex w-full flex-col gap-2">
-      <Alert variant="solid" className="items-baseline">
+      <Alert variant="ghost">
         <Alert.Icon>
-          <WarningCircle className="h-full w-full translate-y-0.5" />
+          <WarningCircle className="h-5 w-5" />
         </Alert.Icon>
-        <Alert.Content>
+        <Alert.Content className="mt-0.5">
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
-            <li>At least 10 characters (and up to 100 characters)</li>
-            <li>At least one lowercase character</li>
-            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
           </ul>
         </Alert.Content>
       </Alert>
 
-      <Alert variant="gradient" className="items-baseline">
+      <Alert variant="outline">
         <Alert.Icon>
-          <WarningCircle className="h-full w-full translate-y-0.5" />
+          <WarningCircle className="h-5 w-5" />
         </Alert.Icon>
-        <Alert.Content>
+        <Alert.Content className="mt-0.5">
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
-            <li>At least 10 characters (and up to 100 characters)</li>
-            <li>At least one lowercase character</li>
-            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
           </ul>
         </Alert.Content>
       </Alert>
 
-      <Alert variant="ghost" className="items-baseline">
+      <Alert variant="solid">
         <Alert.Icon>
-          <WarningCircle className="h-full w-full translate-y-0.5" />
+          <WarningCircle className="h-5 w-5" />
         </Alert.Icon>
-        <Alert.Content>
+        <Alert.Content className="mt-0.5">
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
-            <li>At least 10 characters (and up to 100 characters)</li>
-            <li>At least one lowercase character</li>
-            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
           </ul>
         </Alert.Content>
       </Alert>
 
-      <Alert variant="outline" className="items-baseline">
+      <Alert variant="gradient">
         <Alert.Icon>
-          <WarningCircle className="h-full w-full translate-y-0.5" />
+          <WarningCircle className="h-5 w-5" />
         </Alert.Icon>
-        <Alert.Content>
+        <Alert.Content className="mt-0.5">
           <Typography>Ensure that these requirements are met:</Typography>
-          <ul className="ml-2 mt-2 list-inside list-disc space-y-2">
-            <li>At least 10 characters (and up to 100 characters)</li>
-            <li>At least one lowercase character</li>
-            <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
           </ul>
         </Alert.Content>
       </Alert>
@@ -209,19 +233,17 @@ export function AlertWithList() {
 
 <ComponentPreview demo={<Alert.AlertDismissible />}>
 ```tsx
-import { Alert, Button } from "@material-tailwind/react";
+import { Alert } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
 export function AlertDismissible() {
-  const [open, setOpen] = React.useState(true);
-
   return (
-    <Alert open={open}>
+    <Alert>
       <Alert.Icon>
-        <WarningCircle className="h-full w-full" />
+        <WarningCircle className="h-5 w-5" />
       </Alert.Icon>
       <Alert.Content>A simple alert for showing message.</Alert.Content>
-      <Alert.DismissTrigger onClick={() => setOpen(false)} />
+      <Alert.DismissTrigger />
     </Alert>
   );
 }
@@ -235,26 +257,22 @@ export function AlertDismissible() {
 
 <ComponentPreview demo={<Alert.AlertCustomCloseIcon />}>
 ```tsx
-import * as React from "react";
 import { Alert, Button } from "@material-tailwind/react";
-import { WarningTriangleSolid } from "iconoir-react";
+import { WarningCircleSolid } from "iconoir-react";
 
 export function AlertCustomCloseIcon() {
-  const [open, setOpen] = React.useState(true);
-
   return (
-    <>
-      {!open && <Button onClick={() => setOpen(true)}>Open Alert</Button>}
-      <Alert open={open}>
-        <Alert.Icon>
-          <WarningTriangleSolid className="h-full w-full" />
-        </Alert.Icon>
-        <Alert.Content>Sorry, something went wrong please try again.</Alert.Content>
-        <Alert.DismissTrigger onClick={() => setOpen(false)}>
-          Close
-        </Alert.DismissTrigger>
-      </Alert>
-    </>
+    <Alert>
+      <Alert.Icon>
+        <WarningCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>
+        Sorry, something went wrong please try again.
+      </Alert.Content>
+      <Alert.DismissTrigger as={Button} size="sm">
+        Close
+      </Alert.DismissTrigger>
+    </Alert>
   );
 }
 ```
@@ -266,29 +284,26 @@ export function AlertCustomCloseIcon() {
 
 <ComponentPreview demo={<Alert.AlertWithContent />}>
 ```tsx
-import { Alert, Button, Typography } from "@material-tailwind/react";
-import { CheckCircle } from "iconoir-react";
+import { Alert, Typography } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
 
 export function AlertWithContent() {
-  const [open, setOpen] = React.useState(true);
-
   return (
-    <Alert open={open} className="items-baseline">
+    <Alert>
       <Alert.Icon>
-        <CheckCircle className="h-full w-full translate-y-0.5" />
+        <CheckCircleSolid className="h-5 w-5" />
       </Alert.Icon>
-      <Alert.Content>
-        <Typography type="h5">Success</Typography>
-        <Typography color="secondary">
+      <Alert.Content className="mt-0.5">
+        <Typography className="mb-1 data-[type=p]:font-bold">
+          Success
+        </Typography>
+        <Typography>
           I don't know what that word means. I'm happy. But success, that goes
           back to what in somebody's eyes success means. For me, success is
           inner peace. That's a good day for me.
         </Typography>
       </Alert.Content>
-      <Alert.DismissTrigger
-        className="-translate-y-1"
-        onClick={() => setOpen(false)}
-      />
+      <Alert.DismissTrigger />
     </Alert>
   );
 }
@@ -307,13 +322,11 @@ import { CheckCircleSolid } from "iconoir-react";
 
 export function AlertCustomStyles() {
   return (
-    <Alert className="rounded-none border-b-0 border-l-4 border-r-0 border-t-0 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]">
+    <Alert className="rounded-none border-b-0 border-l-4 border-r-0 border-t-0 border-green-500 bg-green-500/10 font-medium text-green-500">
       <Alert.Icon>
-        <CheckCircleSolid className="h-full w-full translate-y-0.5" />
+        <CheckCircleSolid className="h-5 w-5" />
       </Alert.Icon>
-      <Alert.Content className="pt-1">
-        A simple alert for showing message.
-      </Alert.Content>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
     </Alert>
   );
 }

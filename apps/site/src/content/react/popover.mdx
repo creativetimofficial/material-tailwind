@@ -192,12 +192,14 @@ export function SubscriptionPopover() {
     <Popover>
       <Popover.Trigger as={Button}>Subscribe</Popover.Trigger>
       <Popover.Content className="w-96">
-        <Typography type="h6">Newsletter Subscription</Typography>
+        <Typography color="primary" className="data-[type=p]:font-bold">
+          Newsletter Subscription
+        </Typography>
         <form
           action="#"
           className="mt-3 flex w-full items-center justify-center gap-2"
         >
-          <Input isFullWidth>
+          <Input>
             <Input.Field type="email" placeholder="someone@example.com" />
           </Input>
           <Button type="submit">Subscribe</Button>
@@ -236,11 +238,13 @@ export function ContactPopover() {
               <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
             </List.ItemStart>
             <div>
-              <Typography className="font-semibold">Alex Andrew</Typography>
               <Typography
-                type="small"
-                className="text-foreground"
+                color="primary"
+                className="data-[type=p]:font-semibold"
               >
+                Alex Andrew
+              </Typography>
+              <Typography type="small" className="text-foreground">
                 General Manager
               </Typography>
             </div>
@@ -287,14 +291,14 @@ export function PopoverWithImage() {
     <Popover>
       <Popover.Trigger as={Button}>More Info</Popover.Trigger>
       <Popover.Content className="grid w-[30rem] grid-cols-2 gap-4">
-        <div className="ps-1">
-          <Typography className="mb-2 font-semibold">
+        <div className="pl-1">
+          <Typography
+            color="primary"
+            className="mb-1 data-[type=p]:font-semibold"
+          >
             Material Tailwind
           </Typography>
-          <Typography
-            type="small"
-            className="mb-4 block text-foreground"
-          >
+          <Typography type="small" className="mb-4 block text-foreground">
             Material Tailwind is an easy to use components library for Tailwind
             CSS and Material Design. It features multiple React and HTML
             components, all written with Tailwind CSS classes and Material
@@ -302,7 +306,7 @@ export function PopoverWithImage() {
           </Typography>
           <Button as="a" href="#popover-with-image" size="sm">
             Read More
-            <NavArrowRight className="h-4 w-4" />
+            <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
           </Button>
         </div>
         <img
@@ -339,41 +343,38 @@ export function ProfileInfoPopover() {
       <Popover.Content className="max-w-sm">
         <div className="mb-2 flex items-center justify-between gap-4">
           <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />
-          <Button size="sm">Follow</Button>
+          <Button size="sm" className="mr-2">
+            Follow
+          </Button>
         </div>
         <Typography
-          type="h5"
-          className="mb-1 flex items-center gap-2 font-semibold"
+          color="primary"
+          className="mb-1 flex items-center gap-2 data-[type=p]:font-bold"
         >
           <span>Alex Andrew</span> •{" "}
-          <Typography
-            as="a"
-            href="#profile-info-popover"
-            className="font-semibold"
-          >
+          <Typography as="a" href="#profile-info-popover">
             @alex
           </Typography>
         </Typography>
-        <Typography
-          type="small"
-          className="text-foreground"
-        >
+        <Typography type="small" className="text-foreground">
           Frontend Developer • Major interest in Web Development: motivated to
           achieve measurable results, to deepen my knowledge and improve my
           skills.
         </Typography>
-        <hr className="-mx-2.5 my-2.5 border-secondary-dark" />
+        <hr className="-mx-2.5 my-2.5 border-surface" />
         <div className="flex items-center gap-8">
           <Typography
             type="small"
-            className="flex items-center gap-1.5 text-foreground"
+            color="primary"
+            className="flex items-center gap-1.5"
           >
             <MapPin className="h-4 w-4" />
             United Kingdom
           </Typography>
           <Typography
             type="small"
-            className="flex items-center gap-1.5 text-foreground"
+            color="primary"
+            className="flex items-center gap-1.5"
           >
             <City className="h-4 w-4" />
             Material Tailwind
@@ -405,51 +406,51 @@ export function PopoverWithDescription() {
   return (
     <Popover>
       <Popover.Trigger as={Button}>Repository Info</Popover.Trigger>
-      <Popover.Content className="max-w-sm px-3.5 py-3">
-        <div className="mb-1 flex items-center gap-3">
+      <Popover.Content className="max-w-sm">
+        <div className="mb-1 flex items-center gap-2">
           <Typography
             as="a"
             href="#"
-            type="h6"
-            className="hover:text-info"
+            color="primary"
+            className="hover:text-info data-[type=p]:font-bold"
           >
             @material-tailwind
           </Typography>
-          <Chip size="sm" variant="ghost">
+          <Chip size="sm" color="info">
             <Chip.Label>Public</Chip.Label>
           </Chip>
         </div>
-        <Typography
-          type="small"
-          className="text-foreground"
-        >
+        <Typography type="small" className="text-foreground">
           @material-tailwind is an easy-to-use components library for Tailwind
           CSS and Material Design.
         </Typography>
         <div className="mt-4 flex items-center gap-4">
-          <div className="flex items-center gap-1">
-            <span className="h-3 w-3 rounded-full bg-info" />
+          <div className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-info" />
             <Typography
               type="small"
-              className="text-foreground"
+              color="primary"
+              className="data-[type=small]:text-xs"
             >
               TypeScript
             </Typography>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <StarSolid className="h-4 w-4 text-warning" />
             <Typography
               type="small"
-              className="text-foreground"
+              color="primary"
+              className="data-[type=small]:text-xs"
             >
               1,480
             </Typography>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <CheckCircleSolid className="h-4 w-4 text-success" />
             <Typography
               type="small"
-              className="text-foreground"
+              color="primary"
+              className="data-[type=small]:text-xs"
             >
               Veritied
             </Typography>
