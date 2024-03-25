@@ -27,6 +27,28 @@ export interface ListProps extends Props<"ul" | any> {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/list) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/list#list-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/list#list-theme)
+ *
+ * @example
+ * ```tsx
+import { List } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <List>
+      <List.Item>Inbox</List.Item>
+      <List.Item>Trash</List.Item>
+      <List.Item>Settings</List.Item>
+    </List>
+  );
+}
+ * ```
+ */
+
 export const ListRoot = React.forwardRef<
   HTMLUListElement | HTMLElement,
   ListProps

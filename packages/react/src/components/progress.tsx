@@ -31,6 +31,26 @@ export interface ProgressProps extends BaseComponent<"div" | any> {
   children?: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/progress) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/progress#progress-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/progress#progress-theme)
+ *
+ * @example
+ * ```tsx
+import { Progress } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Progress value={50}>
+      <Progress.Bar />
+    </Progress>
+  );
+}
+ * ```
+ */
+
 export const ProgressRoot = React.forwardRef<
   HTMLDivElement | HTMLElement,
   ProgressProps

@@ -42,7 +42,58 @@ export interface AccordionProps {
   children: React.ReactNode;
   onValueChange?: React.Dispatch<React.SetStateAction<string | string[]>>;
 }
-
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/accordion) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/accordion#accordion-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/accordion#accordion-theme)
+ *
+ * @example
+ * ```tsx
+ import { Accordion } from "@material-tailwind/react";
+ import { NavArrowDown } from "iconoir-react";
+ 
+export default function Example() {
+  return (
+    <Accordion defaultValue="react">
+      <Accordion.Item value="react">
+        <Accordion.Trigger>
+          Material Tailwind React
+          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item value="html">
+        <Accordion.Trigger>
+          Material Tailwind HTML
+          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item value="vue">
+        <Accordion.Trigger>
+          Material Tailwind Vue
+          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+        </Accordion.Trigger>
+        <Accordion.Content>
+          Material Tailwind is an open-source crafted in Tailwind CSS. Get
+          Material Tailwind and take advantage of its free components and
+          features that will help you set up your web project quickly.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+ * ```
+ */
 export function AccordionRoot({
   type,
   value,

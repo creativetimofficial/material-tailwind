@@ -52,6 +52,26 @@ export interface InputProps extends Props<"div" | any> {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/input) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/input#input-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/input#input-theme)
+ *
+ * @example
+ * ```tsx
+import { Input } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Input className="w-72">
+      <Input.Field placeholder="Input" />
+    </Input>
+  );
+}
+ * ```
+ */
+
 export const InputRoot = React.forwardRef<
   HTMLDivElement | HTMLElement,
   InputProps

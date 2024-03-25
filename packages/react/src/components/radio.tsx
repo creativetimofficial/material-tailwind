@@ -39,6 +39,41 @@ export interface RadioProps extends Props<"div" | any> {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/radio) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/radio#radio-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/radio#radio-theme)
+ *
+ * @example
+ * ```tsx
+import { Radio, Typography } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Radio>
+      <div className="flex items-center gap-2">
+        <Radio.Item id="html">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="html" className="text-foreground">
+          HTML
+        </Typography>
+      </div>
+      <div className="flex items-center gap-2">
+        <Radio.Item id="react">
+          <Radio.Indicator />
+        </Radio.Item>
+        <Typography as="label" htmlFor="react" className="text-foreground">
+          React
+        </Typography>
+      </div>
+    </Radio>
+  );
+}
+ * ```
+ */
+
 export const RadioRoot = React.forwardRef<
   HTMLDivElement | HTMLElement,
   RadioProps

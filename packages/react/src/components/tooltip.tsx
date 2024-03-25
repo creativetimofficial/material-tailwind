@@ -69,6 +69,30 @@ export interface TooltipProps {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/tooltip) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/tooltip#tooltip-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/tooltip#tooltip-theme)
+ *
+ * @example
+ * ```tsx
+import { Tooltip, Button } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Tooltip>
+      <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
+      <Tooltip.Content>
+        Material Tailwind
+        <Tooltip.Arrow />
+      </Tooltip.Content>
+    </Tooltip>
+  );
+}
+ * ```
+ */
+
 export function TooltipRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,

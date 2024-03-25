@@ -217,6 +217,31 @@ function MenuCore({
   );
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/menu) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/menu#menu-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/menu#menu-theme)
+ *
+ * @example
+ * ```tsx
+import { Menu, Button } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Menu>
+      <Menu.Trigger as={Button}>Open</Menu.Trigger>
+      <Menu.Content>
+        <Menu.Item>Add Team</Menu.Item>
+        <Menu.Item>Add Project</Menu.Item>
+        <Menu.Item>My Profile</Menu.Item>
+      </Menu.Content>
+    </Menu>
+  );
+}
+ * ```
+ */
+
 export function MenuRoot(props: MenuProps) {
   const parentId = useFloatingParentNodeId();
 

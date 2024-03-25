@@ -64,6 +64,62 @@ export interface DialogRootProps {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/dialog) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/dialog#dialog-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/dialog#dialog-theme)
+ *
+ * @example
+ * ```tsx
+import {
+  Dialog,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
+ 
+export function DialogDemo() {
+  return (
+    <Dialog>
+      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
+      <Dialog.Overlay>
+        <Dialog.Content>
+          <div className="flex items-center justify-between gap-4">
+            <Typography type="h6">Material Tailwind</Typography>
+            <Dialog.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              className="absolute right-2 top-2"
+              isCircular
+            >
+              <Xmark className="w-5 h-5" />
+            </Dialog.DismissTrigger>
+          </div>
+          <Typography className="mt-2 mb-6 text-foreground">
+            Material Tailwind is an open-source library that uses the power of
+            Tailwind CSS and React to help you build unique web projects faster
+            and easier. The stunning design inspired by Material Design is a
+            bonus! Get Material Tailwind and take advantage of its free
+            components and features that will help you set up your web project
+            quickly.
+          </Typography>
+          <div className="flex items-center justify-end gap-2 mb-1">
+            <Dialog.DismissTrigger as={Button} variant="ghost" color="error">
+              Cancel
+            </Dialog.DismissTrigger>
+            <Button>Get Started</Button>
+          </div>
+        </Dialog.Content>
+      </Dialog.Overlay>
+    </Dialog>
+  );
+}
+ * ```
+ */
+
 export function DialogRoot({
   size,
   open: controlledOpen,

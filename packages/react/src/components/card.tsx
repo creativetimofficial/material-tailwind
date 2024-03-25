@@ -28,6 +28,37 @@ export interface CardProps
   children?: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/card) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/card#card-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/card#card-theme)
+ *
+ * @example
+ * ```tsx
+ import { Card, Typography, Button } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Card className="max-w-xs">
+      <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />
+      <Card.Body>
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="my-1 text-foreground">
+          The place is close to Barceloneta Beach and bus stop just 2 min by
+          walk and near to "Naviglio" where you can enjoy the main night life in
+          Barcelona.
+        </Typography>
+      </Card.Body>
+      <Card.Footer>
+        <Button>Read More</Button>
+      </Card.Footer>
+    </Card>
+  );
+}
+ * ```
+ */
+
 export const CardRoot = React.forwardRef<
   HTMLDivElement | HTMLElement,
   CardProps

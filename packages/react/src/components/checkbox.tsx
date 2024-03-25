@@ -35,6 +35,26 @@ export interface CheckboxProps extends Props<"input"> {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/checkbox) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/checkbox#checkbox-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/checkbox#checkbox-theme)
+ *
+ * @example
+ * ```tsx
+import { Checkbox } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Checkbox>
+      <Checkbox.Indicator />
+    </Checkbox>
+  );
+}
+ * ```
+ */
+
 export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
   ({ color, disabled, className, children, ...props }, ref) => {
     const contextTheme = useTheme();

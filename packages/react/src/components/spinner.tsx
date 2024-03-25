@@ -18,6 +18,22 @@ export interface SpinnerProps extends Props<"svg"> {
   className?: string;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/spinner) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/spinner#spinner-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/spinner#spinner-theme)
+ *
+ * @example
+ * ```tsx
+import { Spinner } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return <Spinner />;
+}
+ * ```
+ */
+
 export const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
   ({ size, color, className, ...rest }, ref) => {
     const contextTheme = useTheme();

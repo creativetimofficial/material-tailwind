@@ -67,6 +67,35 @@ export interface PopoverProps {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/popover) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/popover#popover-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/popover#popover-theme)
+ *
+ * @example
+ * ```tsx
+import { Popover, Button, Typography } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Popover>
+      <Popover.Trigger as={Button}>Open</Popover.Trigger>
+      <Popover.Content className="max-w-sm">
+        <Typography
+          type="small"
+          className="text-foreground"
+        >
+          This is a very beautiful popover, show some love.
+        </Typography>
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover>
+  );
+}
+ * ```
+ */
+
 export function PopoverRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,

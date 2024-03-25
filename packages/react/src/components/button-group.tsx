@@ -33,17 +33,17 @@ export interface ButtonGroupProps extends BaseComponent<"div" | any> {
  *
  * @example
  * ```tsx
- * import { ButtonGroup } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return (
- *    <ButtonGroup>
- *      <Button>Button</Button>
- *      <Button>Button</Button>
- *      <Button>Button</Button>
- *    </ButtonGroup>
- *  );
- * }
+ import { ButtonGroup, Button } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <ButtonGroup>
+      <Button>React</Button>
+      <Button>Vue</Button>
+      <Button>Svelte</Button>
+    </ButtonGroup>
+  );
+}
  * ```
  */
 export const ButtonGroup = React.forwardRef<

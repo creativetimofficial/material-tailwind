@@ -25,17 +25,17 @@ export interface AvatarProps extends Props<"img" | any> {
 
 /**
  * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/button) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/button#button-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/button#button-theme)
+ * [Documentation](http://www.material-tailwind.com/docs/react/avatar) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/avatar#avatar-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/avatar#avatar-theme)
  *
  * @example
  * ```tsx
- * import { Button } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Button>Button</Button>;
- * }
+import { Avatar } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return <Avatar src="https://dub.sh/TdSBP0D" alt="profile-picture" />;
+}
  * ```
  */
 export const Avatar = React.forwardRef<

@@ -104,6 +104,32 @@ export interface SelectProps {
   children: React.ReactNode;
 }
 
+/**
+ * @remarks
+ * [Documentation](http://www.material-tailwind.com/docs/react/select) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/select#select-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/select#select-theme)
+ *
+ * @example
+ * ```tsx
+import { Select } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Select>
+      <Select.Trigger className="w-72" placeholder="Select Version" />
+      <Select.List>
+        <Select.Option>Material Tailwind React</Select.Option>
+        <Select.Option>Material Tailwind HTML</Select.Option>
+        <Select.Option>Material Tailwind Vue</Select.Option>
+        <Select.Option>Material Tailwind Svelte</Select.Option>
+      </Select.List>
+    </Select>
+  );
+}
+ * ```
+ */
+
 export function SelectRoot({
   size,
   color,

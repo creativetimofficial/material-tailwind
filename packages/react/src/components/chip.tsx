@@ -45,17 +45,21 @@ export interface ChipProps extends BaseComponent<"div" | any> {
 
 /**
  * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/button) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/button#button-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/button#button-theme)
+ * [Documentation](http://www.material-tailwind.com/docs/react/chip) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/chip#chip-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/chip#chip-theme)
  *
  * @example
  * ```tsx
- * import { Button } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Button>Button</Button>;
- * }
+ import { Chip } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Chip>
+      <Chip.Label>Material Tailwind</Chip.Label>
+    </Chip>
+  );
+}
  * ```
  */
 const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(

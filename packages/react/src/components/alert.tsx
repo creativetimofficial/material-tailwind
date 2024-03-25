@@ -48,17 +48,21 @@ export interface AlertProps extends Omit<BaseComponent<"div" | any>, "size"> {
 
 /**
  * @remarks
- * [Documentation](http://www.material-tailwind.com/docs/react/button) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/button#button-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/button#button-theme)
+ * [Documentation](http://www.material-tailwind.com/docs/react/alert) •
+ * [Props Definition](https://www.material-tailwind.com/docs/react/alert#alert-props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/alert#alert-theme)
  *
  * @example
  * ```tsx
- * import { Button } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Button>Button</Button>;
- * }
+ import { Alert } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return (
+    <Alert>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
  * ```
  */
 const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
