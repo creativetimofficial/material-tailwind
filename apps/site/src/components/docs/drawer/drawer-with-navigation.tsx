@@ -20,7 +20,7 @@ export function DrawerWithNavigation() {
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
       <Drawer.Overlay>
-        <Drawer.Panel>
+        <Drawer.Panel placement="left">
           <div className="flex items-center justify-between gap-4">
             <Typography type="h6">Material Tailwind</Typography>
             <Drawer.DismissTrigger
