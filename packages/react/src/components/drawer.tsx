@@ -248,8 +248,9 @@ export const DrawerPanel = React.forwardRef<
         <Element
           {...rest}
           ref={elementRef}
-          data-open={open}
           className={styles}
+          data-open={open}
+          data-placement={placement}
           {...(getFloatingProps && getFloatingProps())}
         >
           {children}
