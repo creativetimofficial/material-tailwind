@@ -19,7 +19,7 @@ export const timelineTheme = {
 
 export const timelineItemTheme = {
   baseStyle:
-    "group data-[orientation=horizontal]:block data-[orientation=vertical]:flex data-[orientation=vertical]:gap-x-6 aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "group data-[orientation=horizontal]:block data-[orientation=vertical]:flex data-[orientation=vertical]:gap-x-6 aria-disabled:select-none aria-disabled:pointer-events-none",
 };
 
 export const timelineHeaderTheme = {
