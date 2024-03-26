@@ -1,16 +1,16 @@
 ---
-title: Tailwind CSS Breadcrumb for React - Material Tailwind
-description: Customise your web projects with our easy-to-use Breadcrumb component for Tailwind CSS and React using Material Design guidelines.
-github: Breadcrumb
+title: Tailwind CSS Drawer for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Drawer component for Tailwind CSS and React using Material Design guidelines.
+github: Drawer
 prev: docs/react/inputs
-next: docs/react/Breadcrumb-group
+next: docs/react/Drawer-group
 ---
 
-# Tailwind CSS Breadcrumb - React
+# Tailwind CSS Drawer - React
 
-Use our Tailwind CSS `Breadcrumb` for your website. You can use it for accordion, collapsible items and much more.
+Use our Tailwind CSS `drawer` for side menus in your website.
 
-See below our simple `Breadcrumb` example that you can use in your Tailwind CSS and React project.
+See below our simple `Drawer` example that you can use in your Tailwind CSS and React project.
 
 ---
 
@@ -18,17 +18,324 @@ See below our simple `Breadcrumb` example that you can use in your Tailwind CSS 
 
 <ComponentPreview demo={<Drawer.DrawerDemo />}>
 ```tsx
-import { Drawer } from "@material-tailwind/react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
 
-export function BreadcrumbDemo() {
+export function DrawerDemo() {
   return (
-    <Breadcrumb>
-      <Breadcrumb.Link>Docs</Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link>Components</Breadcrumb.Link>
-      <Breadcrumb.Separator />
-      <Breadcrumb.Link>Breadcrumb</Breadcrumb.Link>
-    </Breadcrumb>
+    <Drawer>
+      <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
+      <Drawer.Overlay>
+        <Drawer.Panel>
+          <div className="flex items-center justify-between gap-4">
+            <Typography type="h6">Material Tailwind</Typography>
+            <Drawer.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              className="absolute right-2 top-2"
+              isCircular
+            >
+              <Xmark className="h-5 w-5" />
+            </Drawer.DismissTrigger>
+          </div>
+          <Typography className="mb-6 mt-2 text-foreground">
+            Material Tailwind features multiple React and HTML components, all
+            written with Tailwind CSS classes and Material Design guidelines.
+          </Typography>
+          <div className="mb-1 flex items-center gap-2">
+            <Button>Get Started</Button>
+            <Button variant="ghost">Documentation</Button>
+          </div>
+        </Drawer.Panel>
+      </Drawer.Overlay>
+    </Drawer>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Drawer Placement
+
+<ComponentPreview demo={<Drawer.DrawerPlacement />}>
+```tsx
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
+
+export function DrawerPlacement() {
+  return (
+    <div className="flex gap-4">
+      <Drawer>
+        <Drawer.Trigger as={Button}>Open Drawer Top</Drawer.Trigger>
+        <Drawer.Overlay>
+          <Drawer.Panel placement="top">
+            <div className="flex items-center justify-between gap-4">
+              <Typography type="h6">Material Tailwind</Typography>
+              <Drawer.DismissTrigger
+                as={IconButton}
+                size="sm"
+                variant="ghost"
+                className="absolute right-2 top-2"
+                isCircular
+              >
+                <Xmark className="w-5 h-5" />
+              </Drawer.DismissTrigger>
+            </div>
+            <Typography className="mt-2 mb-6 text-foreground">
+              Material Tailwind features multiple React and HTML components, all
+              written with Tailwind CSS classes and Material Design guidelines.
+            </Typography>
+            <div className="flex items-center gap-2 mb-1">
+              <Button>Get Started</Button>
+              <Button variant="ghost">Documentation</Button>
+            </div>
+          </Drawer.Panel>
+        </Drawer.Overlay>
+      </Drawer>
+      <Drawer>
+        <Drawer.Trigger as={Button}>Open Drawer Right</Drawer.Trigger>
+        <Drawer.Overlay>
+          <Drawer.Panel placement="right">
+            <div className="flex items-center justify-between gap-4">
+              <Typography type="h6">Material Tailwind</Typography>
+              <Drawer.DismissTrigger
+                as={IconButton}
+                size="sm"
+                variant="ghost"
+                className="absolute right-2 top-2"
+                isCircular
+              >
+                <Xmark className="w-5 h-5" />
+              </Drawer.DismissTrigger>
+            </div>
+            <Typography className="mt-2 mb-6 text-foreground">
+              Material Tailwind features multiple React and HTML components, all
+              written with Tailwind CSS classes and Material Design guidelines.
+            </Typography>
+            <div className="flex items-center gap-2 mb-1">
+              <Button>Get Started</Button>
+              <Button variant="ghost">Documentation</Button>
+            </div>
+          </Drawer.Panel>
+        </Drawer.Overlay>
+      </Drawer>
+      <Drawer>
+        <Drawer.Trigger as={Button}>Open Drawer Bottom</Drawer.Trigger>
+        <Drawer.Overlay>
+          <Drawer.Panel placement="bottom">
+            <div className="flex items-center justify-between gap-4">
+              <Typography type="h6">Material Tailwind</Typography>
+              <Drawer.DismissTrigger
+                as={IconButton}
+                size="sm"
+                variant="ghost"
+                className="absolute right-2 top-2"
+                isCircular
+              >
+                <Xmark className="w-5 h-5" />
+              </Drawer.DismissTrigger>
+            </div>
+            <Typography className="mt-2 mb-6 text-foreground">
+              Material Tailwind features multiple React and HTML components, all
+              written with Tailwind CSS classes and Material Design guidelines.
+            </Typography>
+            <div className="flex items-center gap-2 mb-1">
+              <Button>Get Started</Button>
+              <Button variant="ghost">Documentation</Button>
+            </div>
+          </Drawer.Panel>
+        </Drawer.Overlay>
+      </Drawer>
+      <Drawer>
+        <Drawer.Trigger as={Button}>Open Drawer Left</Drawer.Trigger>
+        <Drawer.Overlay>
+          <Drawer.Panel>
+            <div className="flex items-center justify-between gap-4">
+              <Typography type="h6">Material Tailwind</Typography>
+              <Drawer.DismissTrigger
+                as={IconButton}
+                size="sm"
+                variant="ghost"
+                className="absolute right-2 top-2"
+                isCircular
+              >
+                <Xmark className="w-5 h-5" />
+              </Drawer.DismissTrigger>
+            </div>
+            <Typography className="mt-2 mb-6 text-foreground">
+              Material Tailwind features multiple React and HTML components, all
+              written with Tailwind CSS classes and Material Design guidelines.
+            </Typography>
+            <div className="flex items-center gap-2 mb-1">
+              <Button>Get Started</Button>
+              <Button variant="ghost">Documentation</Button>
+            </div>
+          </Drawer.Panel>
+        </Drawer.Overlay>
+      </Drawer>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Drawer With Navigation
+
+<ComponentPreview demo={<Drawer.DrawerWithNavigation />}>
+```tsx
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  List,
+  Chip,
+} from "@material-tailwind/react";
+import {
+  Xmark,
+  ShoppingBag,
+  Settings,
+  StatsDownSquare,
+  ProfileCircle,
+  HomeAlt,
+} from "iconoir-react";
+
+export function DrawerWithNavigation() {
+  return (
+    <Drawer>
+      <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
+      <Drawer.Overlay>
+        <Drawer.Panel>
+          <div className="flex items-center justify-between gap-4">
+            <Typography type="h6">Material Tailwind</Typography>
+            <Drawer.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              className="absolute right-2 top-2"
+              isCircular
+            >
+              <Xmark className="w-5 h-5" />
+            </Drawer.DismissTrigger>
+          </div>
+          <List className="mt-8 space-y-3">
+            <List.Item as="a" href="#">
+              <List.ItemStart>
+                <HomeAlt className="w-5 h-5" />
+              </List.ItemStart>
+              Dashboard
+            </List.Item>
+            <List.Item as="a" href="#">
+              <List.ItemStart>
+                <ShoppingBag className="w-5 h-5" />
+              </List.ItemStart>
+              Analytics
+              <List.ItemEnd>
+                <Chip size="sm" color="success">
+                  <Chip.Label>5</Chip.Label>
+                </Chip>
+              </List.ItemEnd>
+            </List.Item>
+            <List.Item as="a" href="#">
+              <List.ItemStart>
+                <StatsDownSquare className="w-5 h-5" />
+              </List.ItemStart>
+              Sales
+            </List.Item>
+            <List.Item as="a" href="#">
+              <List.ItemStart>
+                <ProfileCircle className="w-5 h-5" />
+              </List.ItemStart>
+              Profile
+            </List.Item>
+            <List.Item as="a" href="#">
+              <List.ItemStart>
+                <Settings className="w-5 h-5" />
+              </List.ItemStart>
+              Tables
+            </List.Item>
+            <Button className="ml-2.5 mt-2 w-fit">Documentation</Button>
+          </List>
+        </Drawer.Panel>
+      </Drawer.Overlay>
+    </Drawer>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Drawer With Form
+
+<ComponentPreview demo={<Drawer.DrawerWithForm />}>
+```tsx
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+  Input,
+  Textarea,
+} from "@material-tailwind/react";
+import { Xmark } from "iconoir-react";
+
+export function DrawerWithForm() {
+  return (
+    <Drawer>
+      <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
+      <Drawer.Overlay>
+        <Drawer.Panel>
+          <div className="flex items-center justify-between gap-4">
+            <Typography type="h6">Contact Us</Typography>
+            <Drawer.DismissTrigger
+              as={IconButton}
+              size="sm"
+              variant="ghost"
+              className="absolute right-2 top-2"
+              isCircular
+            >
+              <Xmark className="w-5 h-5" />
+            </Drawer.DismissTrigger>
+          </div>
+          <Typography type="small" className="mt-4 mb-6 text-foreground">
+            Write the message and then click button.{" "}
+          </Typography>
+          <div className="space-y-4">
+            <Input className="space-y-1.5">
+              <Typography
+                as="label"
+                htmlFor="email"
+                color="primary"
+                className="[type=small]:font-semibold"
+              >
+                Your Email
+              </Typography>
+              <Input.Field id="email" type="email" placeholder="Email" />
+            </Input>{" "}
+            <Input>
+              <Input.Field placeholder="Subject" />
+            </Input>
+            <Textarea placeholder="Message" />
+            <Button isFullWidth>Send message</Button>
+          </div>
+        </Drawer.Panel>
+      </Drawer.Overlay>
+    </Drawer>
   );
 }
 ```
