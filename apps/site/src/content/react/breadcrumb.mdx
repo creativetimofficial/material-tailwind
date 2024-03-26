@@ -8,9 +8,11 @@ next: docs/react/Breadcrumb-group
 
 # Tailwind CSS Breadcrumb - React
 
-Use our Tailwind CSS `Breadcrumb` for your website. You can use it for accordion, collapsible items and much more.
+Use our Tailwind CSS `Breadcrumbs` component to simply create beautiful `Breadcrumbs` for your pages with Material Tailwind.
 
-See below our simple `Breadcrumb` example that you can use in your Tailwind CSS and React project.
+`Breadcrumbs` are website links that allow users to track where they are on a website and how far they are from the homepage. They are highly important elements for your search engine optimisation (SEO) and user experience.
+
+See below our versatile `Breadcrumbs` component example that you can use in your Tailwind CSS and React project.
 
 ---
 
@@ -33,3 +35,86 @@ export function BreadcrumbDemo() {
 }
 ```
 </ComponentPreview>
+
+---
+
+## Breadcrumb With Icon
+
+<ComponentPreview demo={<Breadcrumb.BreadcrumbWithIcon />}>
+```tsx
+import { Breadcrumb } from "@material-tailwind/react";
+import { HomeAlt } from "iconoir-react";
+
+export function BreadcrumbWithIcon() {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Link href="/">
+        <HomeAlt className="w-5 h-5" />
+      </Breadcrumb.Link>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Link href="#">Components</Breadcrumb.Link>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Link href="#">Breadcrumb</Breadcrumb.Link>
+    </Breadcrumb>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Breadcrumb Custom Separator
+
+<ComponentPreview demo={<Breadcrumb.BreadcrumbCustomSeparator />}>
+```tsx
+import { Breadcrumb } from "@material-tailwind/react";
+
+export function BreadcrumbCustomSeparator() {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Link>Docs</Breadcrumb.Link>
+      <Breadcrumb.Separator>-</Breadcrumb.Separator>
+      <Breadcrumb.Link>Components</Breadcrumb.Link>
+      <Breadcrumb.Separator>-</Breadcrumb.Separator>
+      <Breadcrumb.Link>
+        Breadcrumb
+      </Breadcrumb.Link>
+    </Breadcrumb>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Breadcrumb Custom Styles
+
+<ComponentPreview demo={<Breadcrumb.BreadcrumbCustomStyles />}>
+```tsx
+import { Breadcrumb } from "@material-tailwind/react";
+import { ArrowRight } from "iconoir-react";
+
+export function BreadcrumbCustomStyles() {
+  return (
+    <Breadcrumb className="p-1 rounded-full bg-primary">
+      <Breadcrumb.Link className="px-3 py-1 rounded-full bg-secondary" href="#">
+        Docs
+      </Breadcrumb.Link>
+      <Breadcrumb.Separator className="text-white opacity-100">
+        <ArrowRight className="w-4 h-4" strokeWidth={2} />
+      </Breadcrumb.Separator>
+      <Breadcrumb.Link className="px-3 py-1 rounded-full bg-secondary" href="#">
+        Components
+      </Breadcrumb.Link>
+      <Breadcrumb.Separator className="text-white opacity-100">
+        <ArrowRight className="w-4 h-4" strokeWidth={2} />
+      </Breadcrumb.Separator>
+      <Breadcrumb.Link className="px-3 py-1 rounded-full bg-secondary" href="#">
+        Breadcrumb
+      </Breadcrumb.Link>
+    </Breadcrumb>
+  );
+}
+```
+</ComponentPreview>
+
