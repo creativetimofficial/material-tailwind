@@ -225,8 +225,8 @@ export const routes = [
         category: "Navigation",
         pages: [
           {
-            title: "Breadcrumbs",
-            path: "/docs/react/breadcrumbs",
+            title: "Breadcrumb",
+            path: "/docs/react/breadcrumb",
           },
           {
             title: "Drawer",

@@ -1,0 +1,35 @@
+---
+title: Tailwind CSS Breadcrumb for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Breadcrumb component for Tailwind CSS and React using Material Design guidelines.
+github: Breadcrumb
+prev: docs/react/inputs
+next: docs/react/Breadcrumb-group
+---
+
+# Tailwind CSS Breadcrumb - React
+
+Use our Tailwind CSS `Breadcrumb` for your website. You can use it for accordion, collapsible items and much more.
+
+See below our simple `Breadcrumb` example that you can use in your Tailwind CSS and React project.
+
+---
+
+## Breadcrumb Demo
+
+<ComponentPreview demo={<Breadcrumb.BreadcrumbDemo />}>
+```tsx
+import { Breadcrumb } from "@material-tailwind/react";
+
+export function BreadcrumbDemo() {
+  return (
+    <Breadcrumb>
+      <Breadcrumb.Link>Docs</Breadcrumb.Link>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Link>Components</Breadcrumb.Link>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Link>Breadcrumb</Breadcrumb.Link>
+    </Breadcrumb>
+  );
+}
+```
+</ComponentPreview>

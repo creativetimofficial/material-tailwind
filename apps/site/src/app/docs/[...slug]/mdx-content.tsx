@@ -39,6 +39,10 @@ import * as Tooltip from "@components/docs/tooltip";
 import * as Typography from "@components/docs/typography";
 import * as Video from "@components/docs/video";
 import * as Gallery from "@components/docs/gallery";
+import * as Breadcrumb from "@components/docs/breadcrumb";
+import * as Drawer from "@components/docs/drawer";
+import * as Stepper from "@components/docs/stepper";
+import * as Timeline from "@components/docs/timeline";
 
 const components = {
   ComponentPreview,
@@ -53,13 +57,13 @@ const components = {
     <MTTypography
       as="code"
       type="small"
-      className="inline-block px-1 font-mono leading-none border rounded border-surface bg-surface-light text-foreground"
+      className="inline-block rounded border border-surface bg-surface-light px-1 font-mono leading-none text-foreground"
       {...props}
     />
   ),
   a: (props) => (
     <a
-      className="underline transition-colors duration-300 text-info hover:text-primary"
+      className="text-info underline transition-colors duration-300 hover:text-primary"
       {...props}
     />
   ),
@@ -68,7 +72,7 @@ const components = {
   ),
   li: (props) => (
     <li
-      className="font-sans text-base antialiased font-normal text-foreground"
+      className="font-sans text-base font-normal text-foreground antialiased"
       {...props}
     />
   ),
@@ -107,6 +111,10 @@ const components = {
   Typography,
   Video,
   Gallery,
+  Breadcrumb,
+  Drawer,
+  Stepper,
+  Timeline,
 };
 
 type MdxContentProps = {
