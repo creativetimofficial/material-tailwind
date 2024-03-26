@@ -19,19 +19,14 @@ const firaCode = Fira_Code({
   variable: "--font-fira-code",
 });
 
-interface ComponentPreviewProps {
-  demo: React.ReactNode;
+const MIN_CODE_HEIGHT = 260;
+
+interface CodePreview {
   children: any;
   className?: string;
 }
 
-const MIN_CODE_HEIGHT = 260;
-
-export function ComponentPreview({
-  demo,
-  children,
-  className,
-}: ComponentPreviewProps) {
+export function CodePreview({ children, className }: CodePreview) {
   const codeRef = React.useRef<any>(null);
   const [, copy] = useCopyToClipboard();
   const [isCopied, setIsCopied] = React.useState(false);
@@ -69,9 +64,6 @@ export function ComponentPreview({
 
   return (
     <div className={containerStyles}>
-      <div className="mb-2 grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md p-4 lg:overflow-hidden">
-        {demo}
-      </div>
       <div className={codeBlockStyles}>
         <IconButton
           size="sm"
@@ -109,4 +101,4 @@ export function ComponentPreview({
   );
 }
 
-export default ComponentPreview;
+export default CodePreview;

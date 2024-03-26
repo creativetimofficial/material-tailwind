@@ -4,6 +4,93 @@
 @tailwind components;
 @tailwind utilities;
 
+/* backdrop */
+.DocSearch.DocSearch-Container {
+  @apply bg-surface-dark/50;
+}
+
+/* dialog */
+.DocSearch.DocSearch-Container .DocSearch-Modal {
+  @apply overflow-hidden rounded-xl border border-surface bg-background shadow-2xl shadow-surface-dark/5;
+}
+
+/* search input */
+.DocSearch.DocSearch-Container .DocSearch-Form {
+  @apply rounded-md bg-transparent shadow-[0_0_0_2px] shadow-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator {
+  @apply text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel svg,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator svg {
+  @apply stroke-2;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Input {
+  @apply text-surface-dark placeholder:text-foreground/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Reset svg {
+  @apply stroke-2 text-primary;
+}
+
+/* search area */
+.DocSearch.DocSearch-Container .DocSearch-Help {
+  @apply text-base text-foreground/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Label {
+  @apply text-foreground/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Dropdown {
+  @apply p-3;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-source {
+  @apply m-0.5 bg-transparent p-0 text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit {
+  @apply rounded-lg pb-2.5;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit a {
+  @apply rounded-lg border border-surface bg-background text-foreground shadow-[0_4px_0_0] shadow-surface;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit[aria-selected="true"] a {
+  @apply border-primary bg-primary text-primary-foreground shadow-primary-light/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-icon {
+  @apply text-foreground/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-title mark {
+  @apply text-info;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Screen-Icon {
+  @apply mx-auto w-max text-foreground/70;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Prefill {
+  @apply text-info;
+}
+
+/* footer */
+.DocSearch.DocSearch-Container .DocSearch-Footer {
+  @apply rounded-none border-t border-surface bg-transparent shadow-none;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Commands-Key {
+  @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-primary shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))];
+}
+
 /* Rehype Pretty Code */
 [data-rehype-pretty-code-fragment] {
   position: relative;

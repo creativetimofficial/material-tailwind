@@ -1,7 +1,7 @@
 "use client";
 
 // @components
-import { ComponentPreview } from "@components";
+import { ComponentPreview, CodePreview } from "@components";
 import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
@@ -43,8 +43,10 @@ import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Timeline from "@components/docs/timeline";
+import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
 
 const components = {
+  CodePreview,
   ComponentPreview,
   h1: (props) => <MTTypography as="h1" type="h4" className="mb-4" {...props} />,
   h2: (props) => (
@@ -115,6 +117,7 @@ const components = {
   Drawer,
   Stepper,
   Timeline,
+  AlgoliaSearch,
 };
 
 type MdxContentProps = {

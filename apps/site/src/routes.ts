@@ -282,35 +282,35 @@ export const routes = [
     pages: [
       {
         title: "Algolia Search",
-        path: "/plugins/algolia-search",
+        path: "/docs/react/plugins/algolia-search",
       },
       {
         title: "Charts",
-        path: "/plugins/charts",
+        path: "/docs/react/plugins/charts",
       },
       {
         title: "Carousel",
-        path: "/plugins/carousel",
+        path: "/docs/react/plugins/carousel",
       },
       {
         title: "Clipboard",
-        path: "/plugins/clipboard",
+        path: "/docs/react/plugins/clipboard",
       },
       {
         title: "Date Picker",
-        path: "/plugins/date-picker",
+        path: "/docs/react/plugins/date-picker",
       },
       {
         title: "Forms",
-        path: "/plugins/forms",
+        path: "/docs/react/plugins/forms",
       },
       {
         title: "Table",
-        path: "/plugins/table",
+        path: "/docs/react/plugins/table",
       },
       {
         title: "Text Editor",
-        path: "/plugins/text-editor",
+        path: "/docs/react/plugins/text-editor",
       },
     ],
   },

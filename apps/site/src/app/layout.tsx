@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@docsearch/css";
 import * as React from "react";
 import { Docs } from "@components";
 import { Inter } from "next/font/google";
