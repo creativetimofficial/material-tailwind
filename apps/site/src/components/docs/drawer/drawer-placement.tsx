@@ -22,14 +22,14 @@ export function DrawerPlacement() {
                 className="absolute right-2 top-2"
                 isCircular
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
               <Button variant="ghost">Documentation</Button>
             </div>
@@ -49,14 +49,14 @@ export function DrawerPlacement() {
                 className="absolute right-2 top-2"
                 isCircular
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
               <Button variant="ghost">Documentation</Button>
             </div>
@@ -76,14 +76,14 @@ export function DrawerPlacement() {
                 className="absolute right-2 top-2"
                 isCircular
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
               <Button variant="ghost">Documentation</Button>
             </div>
@@ -103,14 +103,14 @@ export function DrawerPlacement() {
                 className="absolute right-2 top-2"
                 isCircular
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
               <Button variant="ghost">Documentation</Button>
             </div>

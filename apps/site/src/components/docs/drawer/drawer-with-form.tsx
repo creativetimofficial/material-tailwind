@@ -23,19 +23,20 @@ export function DrawerWithForm() {
               className="absolute right-2 top-2"
               isCircular
             >
-              <Xmark className="w-5 h-5" />
+              <Xmark className="h-5 w-5" />
             </Drawer.DismissTrigger>
           </div>
-          <Typography type="small" className="mt-4 mb-6 text-foreground">
+          <Typography type="small" className="mb-6 mt-4 text-foreground">
             Write the message and then click button.{" "}
           </Typography>
           <div className="space-y-4">
             <Input className="space-y-1.5">
               <Typography
                 as="label"
+                type="small"
                 htmlFor="email"
                 color="primary"
-                className="[type=small]:font-semibold"
+                className="data-[type=small]:font-semibold"
               >
                 Your Email
               </Typography>
