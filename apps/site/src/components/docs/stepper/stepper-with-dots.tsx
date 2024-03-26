@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Timeline, Button } from "@material-tailwind/react/dist";
 
-export function StepperDemo() {
+export function StepperWithDots() {
   const [step, setStep] = React.useState(0);
 
   return (
@@ -14,18 +14,18 @@ export function StepperDemo() {
         <Timeline.Item disabled={step < 0} value={0} className="w-full">
           <Timeline.Header>
             <Timeline.Separator />
-            <Timeline.Icon>1</Timeline.Icon>
+            <div className="relative grid w-4 h-4 rounded-full place-items-center bg-primary"></div>
           </Timeline.Header>
         </Timeline.Item>
         <Timeline.Item disabled={step < 1} value={1} className="w-full">
           <Timeline.Header>
             <Timeline.Separator />
-            <Timeline.Icon>2</Timeline.Icon>
+            <div className="relative grid w-4 h-4 rounded-full place-items-center bg-primary"></div>
           </Timeline.Header>
         </Timeline.Item>
         <Timeline.Item disabled={step < 2} value={2}>
           <Timeline.Header>
-            <Timeline.Icon>3</Timeline.Icon>
+            <div className="relative grid w-4 h-4 rounded-full place-items-center bg-primary"></div>
           </Timeline.Header>
         </Timeline.Item>
       </Timeline>
