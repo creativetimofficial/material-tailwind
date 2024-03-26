@@ -1,4 +1,3 @@
-import * as React from "react";
 import { DocSearch } from "@docsearch/react";
 import { KeyCommand, Search } from "iconoir-react";
 import { Input } from "@material-tailwind/react/dist";

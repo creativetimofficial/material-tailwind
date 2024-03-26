@@ -10,13 +10,13 @@ next: docs/react/Alert-group
 
 Use our Tailwind CSS Algolia Search example to add global search in your web projects.
 
-See below our beautiful Aloglia Search example that you can use in your Tailwind CSS and React project. The example below is using the `@docsearch/react` library, make sure to install it before using the example.
+See below our beautiful Aloglia Search example that you can use in your Tailwind CSS and React project. The example below is using the <Link href="https://docsearch.algolia.com/" target="_blank">@docsearch/react library</Link>, make sure to install it before using the example.
 
 ---
 
 ## Install Required Dependency
 
-Algolia Search uses the `@docsearch/react` library to provide the search functionality. Make sure to install it before using the example.
+We're using `@docsearch/react` library to provide the search functionality. Make sure to install it before using the example.
 
 <CodePreview>
 ```bash
@@ -26,27 +26,16 @@ npm install @docsearch/react
 
 ---
 
-## Import The Styles
+## Algolia Search Demo
 
-`@docsearch/react` requires the `@docsearch/css` stylesheet to be imported in your project. Make sure to import it in your project.
-
-<CodePreview>
-```tsx
-import "@docsearch/css";
-```
-</CodePreview>
-
----
-
-## Algolia Search Component
-
-The Algolia Search uses `DocSearch` component from the `@docsearch/react` library. The `DocSearch` component requires the `appId`, `apiKey`, and `indexName` as props to work.
+We're using `DocSearch` component from the `@docsearch/react` library. The `DocSearch` component requires the `appId`, `apiKey`, and `indexName` as props to work.
 
 In the below example we hide the `DocSearch` component and instead show a custom input field from `@material-tailwind/react` with a search icon. When the user clicks on the input or presses `Cmd + K` the `DocSearch` component is shown.
 
 <ComponentPreview demo={<AlgoliaSearch.AlgoliaSearchDemo />}>
 ```tsx
-import * as React from "react";
+import "@docsearch/css";
+
 import { DocSearch } from "@docsearch/react";
 import { KeyCommand, Search } from "iconoir-react";
 import { Input } from "@material-tailwind/react/dist";
@@ -80,7 +69,7 @@ export function AlgoliaSearchDemo() {
 
 ---
 
-## Customising The Search Dialog (Optional)
+## Adding Custom Styles (Optional)
 
 You can copy/paste the below CSS code to your Tailwind CSS stylesheet to customise the search dialog appearance to match the `@material-tailwind/react` design.
 

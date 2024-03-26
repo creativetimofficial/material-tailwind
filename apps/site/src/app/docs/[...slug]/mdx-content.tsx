@@ -1,6 +1,7 @@
 "use client";
 
 // @components
+import Link from "next/link";
 import { ComponentPreview, CodePreview } from "@components";
 import { Typography as MTTypography } from "@material-tailwind/react/dist";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -44,16 +45,30 @@ import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Timeline from "@components/docs/timeline";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
+import * as Carousel from "@components/docs/plugins/carousel";
 
 const components = {
   CodePreview,
   ComponentPreview,
+  Link: (props) => (
+    <Link
+      {...props}
+      className="text-info underline transition-colors duration-300 hover:text-primary"
+    />
+  ),
   h1: (props) => <MTTypography as="h1" type="h4" className="mb-4" {...props} />,
   h2: (props) => (
     <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
   ),
-  h3: (props) => <MTTypography as="h3" type="h6" className="mb-4" {...props} />,
-  p: (props) => <MTTypography className="mb-4 text-foreground" {...props} />,
+  h3: (props) => (
+    <MTTypography
+      as="h3"
+      type="h6"
+      className="mb-1 mt-8 data-[type=h6]:text-base lg:data-[type=h6]:text-lg"
+      {...props}
+    />
+  ),
+  p: (props) => <MTTypography className="mb-2 text-foreground" {...props} />,
   hr: () => <hr className="my-8 border-transparent" />,
   code: (props) => (
     <MTTypography
@@ -65,8 +80,8 @@ const components = {
   ),
   a: (props) => (
     <a
-      className="text-info underline transition-colors duration-300 hover:text-primary"
       {...props}
+      className="text-info underline transition-colors duration-300 hover:text-primary"
     />
   ),
   ul: (props) => (
@@ -118,6 +133,7 @@ const components = {
   Stepper,
   Timeline,
   AlgoliaSearch,
+  Carousel,
 };
 
 type MdxContentProps = {
