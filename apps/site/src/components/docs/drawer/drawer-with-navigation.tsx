@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import {
   Drawer,
   Button,
@@ -5,24 +7,70 @@ import {
   IconButton,
   List,
   Chip,
+  Card,
+  Collapse,
+  Input,
+  Avatar,
 } from "@material-tailwind/react/dist";
+
 import {
   Xmark,
-  ShoppingBag,
-  Settings,
-  StatsDownSquare,
-  ProfileCircle,
-  HomeAlt,
+  Archive,
+  EmptyPage,
+  Folder,
+  LogOut,
+  Mail,
+  MoreHorizCircle,
+  NavArrowRight,
+  Pin,
+  Search,
+  SelectFace3d,
+  SendDiagonal,
+  Trash,
+  UserXmark,
 } from "iconoir-react";
 
+const Links = [
+  {
+    icon: Mail,
+    title: "Inbox",
+    href: "#",
+    badge: 14,
+  },
+  {
+    icon: SendDiagonal,
+    title: "Sent",
+    href: "#",
+  },
+  {
+    icon: EmptyPage,
+    title: "Drafts",
+    href: "#",
+  },
+  {
+    icon: Pin,
+    title: "Pins",
+    href: "#",
+  },
+  {
+    icon: Archive,
+    title: "Archive",
+    href: "#",
+  },
+  {
+    icon: Trash,
+    title: "Trash",
+    href: "#",
+  },
+];
 export function DrawerWithNavigation() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
       <Drawer.Overlay>
         <Drawer.Panel placement="left">
           <div className="flex items-center justify-between gap-4">
-            <Typography type="h6">Material Tailwind</Typography>
             <Drawer.DismissTrigger
               as={IconButton}
               size="sm"
@@ -33,44 +81,101 @@ export function DrawerWithNavigation() {
               <Xmark className="w-5 h-5" />
             </Drawer.DismissTrigger>
           </div>
-          <List className="mt-8 space-y-3">
-            <List.Item as="a" href="#">
-              <List.ItemStart>
-                <HomeAlt className="w-5 h-5" />
-              </List.ItemStart>
-              Dashboard
-            </List.Item>
-            <List.Item as="a" href="#">
-              <List.ItemStart>
-                <ShoppingBag className="w-5 h-5" />
-              </List.ItemStart>
-              Analytics
-              <List.ItemEnd>
-                <Chip size="sm" color="success">
-                  <Chip.Label>5</Chip.Label>
-                </Chip>
-              </List.ItemEnd>
-            </List.Item>
-            <List.Item as="a" href="#">
-              <List.ItemStart>
-                <StatsDownSquare className="w-5 h-5" />
-              </List.ItemStart>
-              Sales
-            </List.Item>
-            <List.Item as="a" href="#">
-              <List.ItemStart>
-                <ProfileCircle className="w-5 h-5" />
-              </List.ItemStart>
-              Profile
-            </List.Item>
-            <List.Item as="a" href="#">
-              <List.ItemStart>
-                <Settings className="w-5 h-5" />
-              </List.ItemStart>
-              Tables
-            </List.Item>
-            <Button className="ml-2.5 mt-2 w-fit">Documentation</Button>
-          </List>
+          <Card className="border-none shadow-none ">
+            <Card.Header className="flex items-center gap-2 mx-3 mt-3 mb-0 h-max">
+              <Avatar size="xs" src="/logo.png" alt="brand" />
+              <Typography className="data-[type=p]:font-semibold">
+                Material Tailwind
+              </Typography>
+            </Card.Header>
+            <Card.Body className="p-3">
+              <Input>
+                <Input.Icon>
+                  <Search className="w-full h-full" />
+                </Input.Icon>
+                <Input.Field type="search" placeholder="Search here..." />
+              </Input>
+              <List className="mt-3">
+                {Links.map(({ icon: Icon, title, href, badge }) => (
+                  <List.Item key={title} href={href}>
+                    <List.ItemStart>
+                      <Icon className="h-[18px] w-[18px]" />
+                    </List.ItemStart>
+                    {title}
+                    {badge && (
+                      <List.ItemEnd>
+                        <Chip size="sm" variant="ghost">
+                          <Chip.Label>{badge}</Chip.Label>
+                        </Chip>
+                      </List.ItemEnd>
+                    )}
+                  </List.Item>
+                ))}
+                <hr className="my-3 -mx-3 border-secondary" />
+                <List.Item onClick={() => setIsOpen((cur) => !cur)}>
+                  <List.ItemStart>
+                    <MoreHorizCircle className="h-[18px] w-[18px]" />
+                  </List.ItemStart>
+                  More
+                  <List.ItemEnd>
+                    <NavArrowRight
+                      className={`h-4 w-4 ${isOpen ? "rotate-90" : ""}`}
+                    />
+                  </List.ItemEnd>
+                </List.Item>
+                <Collapse open={isOpen}>
+                  <List>
+                    <List.Item>
+                      <List.ItemStart>
+                        <Folder className="h-[18px] w-[18px]" />
+                      </List.ItemStart>
+                      Spam
+                    </List.Item>
+                    <List.Item>
+                      <List.ItemStart>
+                        <UserXmark className="h-[18px] w-[18px]" />
+                      </List.ItemStart>
+                      Blocked
+                    </List.Item>
+                    <List.Item>
+                      <List.ItemStart>
+                        <Folder className="h-[18px] w-[18px]" />
+                      </List.ItemStart>
+                      Important
+                    </List.Item>
+                  </List>
+                </Collapse>
+                <hr className="my-3 -mx-3 border-secondary" />
+                <List.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
+                  <List.ItemStart>
+                    <LogOut className="h-[18px] w-[18px]" />
+                  </List.ItemStart>
+                  Logout
+                </List.Item>
+              </List>
+            </Card.Body>
+            <Card.Footer className="mt-8">
+              <Card color="primary">
+                <Card.Header className="m-3">
+                  <SelectFace3d className="w-10 h-10 text-primary-foreground" />
+                </Card.Header>
+                <Card.Body>
+                  <Typography type="h6" color="secondary" className="mb-1">
+                    Upgrade to PRO
+                  </Typography>
+                  <Typography type="small" className="text-secondary-dark">
+                    Upgrade to Material Tailwind PRO and get even more
+                    components, plugins, advanced features and premium.
+                  </Typography>
+                </Card.Body>
+                <Card.Footer>
+                  <Button size="sm" as="a" href="#" color="secondary">
+                    Upgrade Now
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Card.Footer>
+          </Card>
         </Drawer.Panel>
       </Drawer.Overlay>
     </Drawer>
