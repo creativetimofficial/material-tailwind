@@ -1,16 +1,18 @@
 ---
-title: Tailwind CSS Breadcrumb for React - Material Tailwind
-description: Customise your web projects with our easy-to-use Breadcrumb component for Tailwind CSS and React using Material Design guidelines.
-github: Breadcrumb
+title: Tailwind CSS Timeline for React - Material Tailwind
+description: Customise your web projects with our easy-to-use Timeline component for Tailwind CSS and React using Material Design guidelines.
+github: Timeline
 prev: docs/react/inputs
-next: docs/react/Breadcrumb-group
+next: docs/react/Timeline-group
 ---
 
-# Tailwind CSS Breadcrumb - React
+# Tailwind CSS Timeline - React
 
-Use our Tailwind CSS `Breadcrumb` for your website. You can use it for accordion, collapsible items and much more.
+Use our Tailwind CSS `Timeline` component in your web projects. The `Timeline` can be used for displaying a list of events in order.
 
-See below our simple `Breadcrumb` example that you can use in your Tailwind CSS and React project.
+See below our beautiful `Timeline` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+Examples on this page are using `iconoir-react` make sure you have installed it.
 
 ---
 
@@ -76,5 +78,162 @@ export function TimelineDemo() {
     </Timeline>
   );
 }
+```
+</ComponentPreview>
+
+---
+
+## Timeline With Icon
+
+<ComponentPreview demo={<Timeline.TimelineWithIcon />}>
+```tsx
+import { Timeline, Typography } from "@material-tailwind/react";
+import { Bell, DollarCircle, HomeAlt } from "iconoir-react";
+
+export function TimelineWithIcon() {
+  return (
+    <Timeline orientation="vertical">
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Separator />
+          <Timeline.Icon>
+            <HomeAlt className="w-4 h-4" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Separator />
+          <Timeline.Icon>
+            <Bell className="w-4 h-4" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Icon>
+            <DollarCircle className="w-4 h-4" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+    </Timeline>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Timeline With Avatar
+
+<ComponentPreview demo={<Timeline.TimelineWithAvatar />}>
+```tsx
+import { Timeline, Typography, Avatar } from "@material-tailwind/react";
+
+export function TimelineWithAvatar() {
+  return (
+    <Timeline orientation="vertical">
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Separator />
+          <Timeline.Icon>
+            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Separator />
+          <Timeline.Icon>
+            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Icon>
+            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body className="-translate-y-1.5">
+          <Typography color="primary" className="data-[type=p]:font-bold">
+            Timeline Title Here.
+          </Typography>
+          <Typography type="small" className="mt-2 text-foreground">
+            The key to more success is to have a lot of pillows. Put it this
+            way, it took me twenty five years to get these plants, twenty five
+            years of blood sweat and tears, and I'm never giving up, I'm just
+            getting started. I'm up to something. Fan luv.
+          </Typography>
+        </Timeline.Body>
+      </Timeline.Item>
+    </Timeline>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Activities Timeline
+
+<ComponentPreview demo={<Timeline.ActivitiesTimeline />}>
+```tsx
+
 ```
 </ComponentPreview>
