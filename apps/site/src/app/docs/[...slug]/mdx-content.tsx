@@ -47,6 +47,7 @@ import * as Timeline from "@components/docs/timeline";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
 import * as Swiper from "@components/docs/plugins/swiper";
 import * as Apexcharts from "@components/docs/plugins/apexcharts";
+import * as DatePicker from "@components/docs/plugins/date-picker";
 
 const components = {
   CodePreview,
@@ -131,6 +132,7 @@ const components = {
   AlgoliaSearch,
   Swiper,
   Apexcharts,
+  DatePicker,
 };
 
 type MdxContentProps = {
