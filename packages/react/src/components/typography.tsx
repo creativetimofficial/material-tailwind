@@ -58,7 +58,12 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
     type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
 
-    const styles = twMerge(theme.baseStyle, theme["color"][color], className);
+    const styles = twMerge(
+      theme.baseStyle,
+      theme["color"][color],
+      theme["type"][type],
+      className,
+    );
 
     return (
       <Element {...rest} ref={ref} data-type={type} className={styles}>

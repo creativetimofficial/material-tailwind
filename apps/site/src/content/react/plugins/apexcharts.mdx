@@ -1,0 +1,363 @@
+---
+title: Tailwind CSS Chart - React
+description: Customise your web projects with our easy-to-use chart components for Tailwind CSS and React using Material Design guidelines and Apexcharts.
+github: plugins/apexcharts
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# Tailwind CSS Carousel - React
+
+Use our Tailwind CSS chart examples using apexcharts to add charts for visualizing data in your web projects.
+
+See below our beautiful chart examples that you can use in your Tailwind CSS and React project. The examples below are using the <Link href="https://swiperjs.com/" target="_blank">apexcharts and react-apexcharts libraries</Link>, make sure to install them before using the examples.
+
+---
+
+## Install Required Dependency
+
+We're using `apexcharts` and `react-apexcharts` libraries for making chart components. Make sure to install it before using the example.
+
+<CodePreview>
+```bash
+npm install apexcharts react-apexcharts
+```
+</CodePreview>
+
+---
+
+## Line Chart
+
+<ComponentPreview demo={<Apexcharts.LineChart />}>
+```tsx
+import Chart from "react-apexcharts";
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { Card, Typography } from "@material-tailwind/react/dist";
+
+const chartConfig = {
+  type: "line",
+  height: 240,
+  series: [
+    {
+      name: "Sales",
+      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+    },
+  ],
+  options: {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    title: {
+      show: "",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    colors: ["#111827"],
+    stroke: {
+      curve: "smooth",
+      lineCap: "round",
+    },
+    markers: {
+      size: 0,
+    },
+    xaxis: {
+      axisTicks: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      labels: {
+        style: {
+          colors: "#4B5563",
+          fontSize: "12px",
+          fontFamily: "inherit",
+          fontWeight: 400,
+        },
+      },
+      categories: [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: "#4B5563",
+          fontSize: "12px",
+          fontFamily: "inherit",
+          fontWeight: 400,
+        },
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#E5E7EB",
+      strokeDashArray: 5,
+      xaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      padding: {
+        top: 5,
+        right: 20,
+      },
+    },
+    fill: {
+      opacity: 0.8,
+    },
+    tooltip: {
+      theme: "dark",
+    },
+  } as ApexOptions,
+} as ApexChart;
+
+export function LineChart() {
+  return (
+    <Card>
+      <Card.Header className="m-0 flex items-center gap-4 p-4">
+        <Card
+          color="primary"
+          variant="gradient"
+          className="grid h-20 w-20 place-items-center rounded-md text-primary-foreground"
+        >
+          <SelectFace3d className="h-8 w-8" />
+        </Card>
+        <div>
+          <Typography type="h6" color="primary">
+            Line Chart
+          </Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body>
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Bar Chart
+
+<ComponentPreview demo={<Apexcharts.BarChart />}>
+```tsx
+import Chart from "react-apexcharts";
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { Card, Typography } from "@material-tailwind/react/dist";
+
+const chartConfig = {
+  type: "bar",
+  height: 240,
+  series: [
+    {
+      name: "Sales",
+      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+    },
+  ],
+  options: {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    title: {
+      show: "",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    colors: ["#111827"],
+    plotOptions: {
+      bar: {
+        columnWidth: "24%",
+        borderRadius: 2,
+      },
+    },
+    xaxis: {
+      axisTicks: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      labels: {
+        style: {
+          colors: "#4B5563",
+          fontSize: "12px",
+          fontFamily: "inherit",
+          fontWeight: 400,
+        },
+      },
+      categories: [
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: "#4B5563",
+          fontSize: "12px",
+          fontFamily: "inherit",
+          fontWeight: 400,
+        },
+      },
+    },
+    grid: {
+      show: true,
+      borderColor: "#E5E7EB",
+      strokeDashArray: 5,
+      xaxis: {
+        lines: {
+          show: true,
+        },
+      },
+      padding: {
+        top: 5,
+        right: 20,
+      },
+    },
+    fill: {
+      opacity: 0.8,
+    },
+    tooltip: {
+      theme: "dark",
+    },
+  } as ApexOptions,
+} as ApexChart;
+
+export function BarChart() {
+  return (
+    <Card>
+      <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
+        <Card
+          color="primary"
+          variant="gradient"
+          className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
+        >
+          <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
+        </Card>
+        <div>
+          <Typography type="h6" color="primary">
+            Bar Chart
+          </Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body>
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Pie Chart
+
+<ComponentPreview demo={<Apexcharts.PieChart />}>
+```tsx
+import Chart from "react-apexcharts";
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { Card, Typography } from "@material-tailwind/react/dist";
+
+const chartConfig = {
+  type: "pie",
+  height: 240,
+  width: 480,
+  series: [44, 55, 13, 43, 22],
+  options: {
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          chart: {
+            width: "100%",
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    title: {
+      show: "",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: true,
+    },
+    labels: ["Primary", "Info", "Success", "Warning", "Error"],
+    colors: ["#020617", "#2563EB", "#16A34A", "#EAB308", "#DC2626"],
+  } as ApexOptions,
+} as ApexChart;
+
+export function PieChart() {
+  return (
+    <Card>
+      <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
+        <Card
+          color="primary"
+          variant="gradient"
+          className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
+        >
+          <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
+        </Card>
+        <div>
+          <Typography type="h6" color="primary">
+            Pie Chart
+          </Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body className="grid place-items-center">
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</ComponentPreview>

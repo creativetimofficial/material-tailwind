@@ -285,12 +285,12 @@ export const routes = [
         path: "/docs/react/plugins/algolia-search",
       },
       {
-        title: "Charts",
-        path: "/docs/react/plugins/charts",
+        title: "Apexcharts",
+        path: "/docs/react/plugins/apexcharts",
       },
       {
-        title: "Carousel",
-        path: "/docs/react/plugins/carousel",
+        title: "Swiper",
+        path: "/docs/react/plugins/swiper",
       },
       {
         title: "Clipboard",

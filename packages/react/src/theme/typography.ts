@@ -8,8 +8,7 @@ export const typographyTheme = {
     color: "inherit",
     isGradient: false,
   },
-  baseStyle:
-    "block font-sans antialiased font-bold data-[type=h1]:text-[clamp(2rem,4vw,3.5rem)] data-[type=h2]:text-[clamp(1.75rem,3.5vw,3rem)] data-[type=h3]:text-[clamp(1.5rem,3vw,2.5rem)] data-[type=h4]:text-[clamp(1.25rem,2.5vw,2rem)] data-[type=h5]:text-[clamp(1rem,2vw,1.5rem)] data-[type=h6]:text-[clamp(0.75rem,1.5vw,1.25rem)] data-[type=p]:text-base data-[type=small]:text-sm data-[type=p]:font-normal data-[type=small]:font-normal",
+  baseStyle: "font-sans antialiased",
   color: {
     inherit: "text-inherit",
     primary: "text-primary",
@@ -18,5 +17,16 @@ export const typographyTheme = {
     success: "text-success",
     warning: "text-warning",
     error: "text-error",
+  },
+  type: {
+    h1: "block font-bold text-6xl",
+    h2: "block font-bold text-5xl",
+    h3: "block font-bold text-4xl",
+    h4: "block font-bold text-3xl",
+    h5: "block font-bold text-2xl",
+    h6: "block font-bold text-xl",
+    lead: "block font-normal text-lg",
+    p: "block font-normal text-base",
+    small: "inline-block font-normal text-small",
   },
 };

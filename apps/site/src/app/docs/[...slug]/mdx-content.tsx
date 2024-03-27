@@ -45,7 +45,8 @@ import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Timeline from "@components/docs/timeline";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
-import * as Carousel from "@components/docs/plugins/carousel";
+import * as Swiper from "@components/docs/plugins/swiper";
+import * as Apexcharts from "@components/docs/plugins/apexcharts";
 
 const components = {
   CodePreview,
@@ -61,12 +62,7 @@ const components = {
     <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
   ),
   h3: (props) => (
-    <MTTypography
-      as="h3"
-      type="h6"
-      className="mb-1 mt-8 data-[type=h6]:text-base lg:data-[type=h6]:text-lg"
-      {...props}
-    />
+    <MTTypography as="h3" type="h6" className="mb-1 mt-8" {...props} />
   ),
   p: (props) => <MTTypography className="mb-2 text-foreground" {...props} />,
   hr: () => <hr className="my-8 border-transparent" />,
@@ -133,7 +129,8 @@ const components = {
   Stepper,
   Timeline,
   AlgoliaSearch,
-  Carousel,
+  Swiper,
+  Apexcharts,
 };
 
 type MdxContentProps = {
