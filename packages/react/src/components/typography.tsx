@@ -60,8 +60,8 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 
     const styles = twMerge(
       theme.baseStyle,
-      theme["color"][color],
       theme["type"][type],
+      theme["color"][color],
       className,
     );
 
