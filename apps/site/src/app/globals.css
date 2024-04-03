@@ -91,6 +91,35 @@
   @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-primary shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))];
 }
 
+/* lexical */
+.lexical h1 {
+  @apply text-2xl font-bold text-primary md:text-3xl lg:text-4xl;
+}
+
+.lexical h2 {
+  @apply text-lg font-bold text-primary md:text-xl lg:text-2xl;
+}
+
+.lexical p {
+  @apply text-base font-normal text-foreground;
+}
+
+.lexical ul {
+  @apply list-inside list-disc;
+}
+
+.lexical li {
+  @apply text-base font-normal text-foreground;
+}
+
+.lexical code {
+  @apply inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm font-normal leading-none text-foreground;
+}
+
+.lexical a {
+  @apply text-info underline transition-colors duration-300 hover:text-primary;
+}
+
 /* Rehype Pretty Code */
 [data-rehype-pretty-code-fragment] {
   position: relative;

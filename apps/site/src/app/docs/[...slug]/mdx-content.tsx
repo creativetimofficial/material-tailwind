@@ -48,6 +48,8 @@ import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
 import * as Swiper from "@components/docs/plugins/swiper";
 import * as Apexcharts from "@components/docs/plugins/apexcharts";
 import * as DatePicker from "@components/docs/plugins/date-picker";
+import * as Forms from "@components/docs/plugins/forms";
+import * as TextEditor from "@components/docs/plugins/text-editor";
 
 const components = {
   CodePreview,
@@ -71,7 +73,7 @@ const components = {
     <MTTypography
       as="code"
       type="small"
-      className="inline-block rounded border border-surface bg-surface-light px-1 font-mono leading-none text-foreground"
+      className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono leading-none text-foreground"
       {...props}
     />
   ),
@@ -133,6 +135,8 @@ const components = {
   Swiper,
   Apexcharts,
   DatePicker,
+  Forms,
+  TextEditor,
 };
 
 type MdxContentProps = {

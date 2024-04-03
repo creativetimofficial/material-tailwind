@@ -66,7 +66,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     );
 
     return (
-      <Element {...rest} ref={ref} data-type={type} className={styles}>
+      <Element {...rest} ref={ref} className={styles}>
         {children}
       </Element>
     );
