@@ -145,7 +145,7 @@ export function DataTableDemo() {
 
   const [data] = React.useState(() => makeData(5000));
   const [globalFilter, setGlobalFilter] = React.useState("");
-  const [pagination, setPagination] = React.useState<PaginationState>({
+  const [pagination, setPagination] = React.useState({
     pageIndex: 0,
     pageSize: 10,
   });
