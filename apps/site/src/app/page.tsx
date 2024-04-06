@@ -1,142 +1,39 @@
 "use client";
 
-import * as React from "react";
+import { Select } from "@material-tailwind/react/dist";
+import React from "react";
 
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Input,
-  Button,
-  Checkbox,
-  Typography,
-  InputFieldProps,
-} from "@material-tailwind/react/dist";
-import { Lock, Mail, ProfileCircle } from "iconoir-react";
+export default function SelectDemo() {
+  const [val, setVal] = React.useState("html");
 
-const formSchema = z.object({
-  name: z.string().min(1, { message: "Name is required." }),
-  email: z.string().email({ message: "Invalid email." }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters." }),
-});
+  function onSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
 
-type FormInputs = z.infer<typeof formSchema>;
-
-type TextFieldProps = InputFieldProps & {
-  label: string;
-  error?: string;
-  icon: React.ElementType;
-};
-
-const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
-  ({ label, error, icon: Icon, ...props }, ref) => {
-    const id = React.useId();
-
-    return (
-      <Typography
-        as="label"
-        htmlFor={id}
-        color="primary"
-        className="mb-6 block space-y-1.5"
-      >
-        <span className="text-sm font-semibold">{label}</span>
-        <Input isError={Boolean(error)} color={error ? "error" : "primary"}>
-          <Input.Icon>
-            <Icon className="h-full w-full" />
-          </Input.Icon>
-          <Input.Field ref={ref} {...props} id={id} />
-        </Input>
-        {error && (
-          <Typography type="small" color="error">
-            {error}
-          </Typography>
-        )}
-      </Typography>
-    );
-  },
-);
-
-export default function Page() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormInputs>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-    },
-  });
-
-  function onSubmit(data: FormInputs) {
-    console.log(data);
+    console.log(formData.get("version"));
   }
 
-  const nameError = errors.name?.message;
-  const emailError = errors.email?.message;
-  const passwordError = errors.password?.message;
+  const list = [
+    { value: "react", label: "Material Tailwind React" },
+    { value: "html", label: "Material Tailwind HTML" },
+    { value: "vue", label: "Material Tailwind Vue" },
+    { value: "svelte", label: "Material Tailwind Svelte" },
+  ];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <TextField
-        label="Name"
-        error={nameError}
-        icon={ProfileCircle}
-        placeholder="Alex Smith"
-        {...register("name")}
-      />
-      <TextField
-        type="email"
-        label="Email Address"
-        error={emailError}
-        icon={Mail}
-        placeholder="someone@example.com"
-        {...register("email")}
-      />
-      <TextField
-        type="password"
-        label="Password"
-        error={passwordError}
-        icon={Lock}
-        placeholder="******"
-        {...register("password")}
-      />
-      <div className="my-6 flex items-center gap-2">
-        <Checkbox>
-          <Checkbox.Indicator />
-        </Checkbox>
-        <Typography
-          htmlFor="remember"
-          className="flex items-center gap-1 text-foreground"
-        >
-          I&apos;m agree with the
-          <Typography as="a" href="#" color="primary">
-            Terms and Conditions
-          </Typography>
-        </Typography>
-      </div>
-      <Button type="submit" className="w-full">
-        Sign Up
-      </Button>
-      <Typography
-        type="small"
-        className="my-4 flex items-center justify-center gap-1 text-foreground"
-      >
-        Already have an account?
-        <Typography
-          as="a"
-          href="#"
-          type="small"
-          color="primary"
-          className="font-bold"
-        >
-          Sign In
-        </Typography>
-      </Typography>
+    <form onSubmit={onSubmit} className="p-24">
+      <Select name="version" value={val} onChange={(value) => setVal(value)}>
+        <Select.Trigger className="w-72" placeholder="Select Version" />
+        <Select.List>
+          {list.map((item) => (
+            <Select.Option key={item.value} value={item.value}>
+              {item.label}
+            </Select.Option>
+          ))}
+        </Select.List>
+      </Select>
+      <p>Value: {val}</p>
+      <button type="submit">Submit</button>
     </form>
   );
 }

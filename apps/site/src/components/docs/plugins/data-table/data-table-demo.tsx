@@ -44,11 +44,19 @@ declare module "@tanstack/react-table" {
   }
 }
 
-export type Person = {
+interface Person {
   name: string;
   job: string;
   salary: number;
-};
+}
+
+function fuzzyFilter(row, columnId, value, addMeta) {
+  const itemRank = rankItem(row.getValue(columnId), value);
+
+  addMeta({ itemRank });
+
+  return itemRank.passed;
+}
 
 function range(len: number) {
   const arr: number[] = [];
@@ -80,14 +88,6 @@ export function makeData(...lens: number[]) {
   };
 
   return makeDataLevel();
-}
-
-function fuzzyFilter(row, columnId, value, addMeta) {
-  const itemRank = rankItem(row.getValue(columnId), value);
-
-  addMeta({ itemRank });
-
-  return itemRank.passed;
 }
 
 export function DataTableDemo() {
@@ -143,7 +143,7 @@ export function DataTableDemo() {
     [],
   );
 
-  const [data] = React.useState(() => makeData(5000));
+  const [data, setData] = React.useState<Person[]>(() => makeData(5000));
   const [globalFilter, setGlobalFilter] = React.useState("");
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
@@ -157,7 +157,6 @@ export function DataTableDemo() {
       fuzzy: fuzzyFilter,
     },
     state: {
-      pagination,
       globalFilter,
     },
     onGlobalFilterChange: setGlobalFilter,
@@ -169,8 +168,8 @@ export function DataTableDemo() {
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFacetedMinMaxValues: getFacetedMinMaxValues(),
-    debugTable: true,
-    debugHeaders: true,
+    debugTable: false,
+    debugHeaders: false,
     debugColumns: false,
   });
 
@@ -183,7 +182,9 @@ export function DataTableDemo() {
         />
         <Select
           value={table.getState().pagination.pageSize}
-          onChange={(value) => table.setPageSize(value)}
+          onChange={(selectedValue) => {
+            table.setPageSize(Number(selectedValue));
+          }}
         >
           <Select.Trigger className="w-28" placeholder="Select" />
           <Select.List>

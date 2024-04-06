@@ -63,6 +63,12 @@ export interface SelectContextProps {
     value: string;
     element: React.ReactNode;
   };
+  setSelected?: React.Dispatch<
+    React.SetStateAction<{
+      value: string;
+      element: React.ReactNode;
+    }>
+  >;
   getItemProps?: ReturnType<typeof useInteractions>["getItemProps"];
   getReferenceProps?: ReturnType<typeof useInteractions>["getReferenceProps"];
   getFloatingProps?: ReturnType<typeof useInteractions>["getFloatingProps"];
@@ -88,7 +94,6 @@ export const SelectContext = React.createContext<SelectContextProps>({
   disabled: false,
   placement: "bottom",
   offset: 5,
-  controlledValue: "",
 } as SelectContextProps);
 
 // select root
@@ -102,6 +107,7 @@ export interface SelectProps {
   placement?: Placement;
   offset?: OffsetOptions;
   value?: string;
+  name?: string;
   onChange?: (arg: string) => void;
   children: React.ReactNode;
 }
@@ -142,6 +148,7 @@ export function SelectRoot({
   placement,
   offset,
   value,
+  name,
   onChange,
   children,
 }: SelectProps) {
@@ -151,14 +158,10 @@ export function SelectRoot({
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<any>(() => ({
     value,
-    element: value,
+    element: null,
   }));
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
-
-  React.useEffect(() => {
-    setSelected({ value, element: value });
-  }, [value]);
 
   size ??= (defaultProps?.size as SelectProps["size"]) ?? "md";
   color ??= (defaultProps?.color as SelectProps["color"]) ?? "primary";
@@ -201,7 +204,7 @@ export function SelectRoot({
 
     if (index !== null) {
       setSelected(labelsRef.current[index]);
-      onChange && onChange((labelsRef.current[index] as any)?.value);
+      onChange?.(labelsRef.current[index]?.value as any);
     }
   }, []);
 
@@ -255,6 +258,7 @@ export function SelectRoot({
       floatingStyles,
       elementsRef,
       labelsRef,
+      setSelected,
       getItemProps,
       handleSelect,
       getReferenceProps,
@@ -289,6 +293,12 @@ export function SelectRoot({
   return (
     <SelectContext.Provider value={contextValue}>
       {children}
+      <input
+        readOnly
+        name={name}
+        style={{ display: "none" }}
+        value={value || selected?.value || ""}
+      />
     </SelectContext.Provider>
   );
 }
@@ -373,6 +383,7 @@ export const SelectTrigger = React.forwardRef<
       {...rest}
       ref={elementRef}
       tabIndex={0}
+      type="button"
       className={styles}
       data-open={isOpen}
       disabled={disabled}
@@ -436,6 +447,9 @@ export const SelectList = React.forwardRef<
       elementsRef,
       labelsRef,
       isOpen,
+      selected,
+      setSelected,
+      controlledValue,
     } = React.useContext(SelectContext);
 
     disabled ??=
@@ -456,6 +470,21 @@ export const SelectList = React.forwardRef<
 
     const styles = twMerge(theme.baseStyle, className);
     const elementRef = useMergeRefs([refs?.setFloating, ref]);
+
+    React.useEffect(() => {
+      if (controlledValue) {
+        const label = (children as any)?.find(
+          (el: any) => selected?.value === el.props.value,
+        );
+
+        if (label) {
+          setSelected?.({
+            value: label?.props?.value || "",
+            element: label?.props?.children || "",
+          });
+        }
+      }
+    }, []);
 
     return isOpen ? (
       <FloatingFocusManager
@@ -509,13 +538,8 @@ export const SelectOption = React.forwardRef<
   const contextTheme = useTheme();
   const theme = contextTheme?.selectOption ?? selectOptionTheme;
   const defaultProps = theme?.defaultProps;
-  const {
-    getItemProps,
-    handleSelect,
-    activeIndex,
-    selectedIndex,
-    controlledValue,
-  } = React.useContext(SelectContext);
+  const { getItemProps, handleSelect, activeIndex, selectedIndex, selected } =
+    React.useContext(SelectContext);
 
   ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
   indicator ??= (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
@@ -550,11 +574,12 @@ export const SelectOption = React.forwardRef<
 
     handleSelect && handleSelect(index);
 
-    return typeof onClick === "function" && onClick(e);
+    onClick?.(e);
   };
 
+  const curValue = selected?.value || "";
   const isActive = activeIndex === index;
-  const isSelected = selectedIndex === index || controlledValue === value;
+  const isSelected = selectedIndex === index || curValue === value;
 
   const styles = twMerge(theme.baseStyle, className);
 

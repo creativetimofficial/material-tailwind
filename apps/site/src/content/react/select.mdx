@@ -282,7 +282,7 @@ export function SelectCountries() {
   return (
     <div className="w-72">
       <Select>
-        <Select.Trigger placeholder="Select Version" />
+        <Select.Trigger placeholder="Select Country" />
         <Select.List className="overflow-y-scroll h-72 w-72">
           {countries.map(({ name, flags }) => (
             <Select.Option key={name} value={name}>
