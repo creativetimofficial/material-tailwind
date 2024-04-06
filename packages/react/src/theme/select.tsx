@@ -75,7 +75,7 @@ export const selectListTheme = {
     order: ["content"],
   },
   baseStyle:
-    "flex flex-col gap-0.5 bg-white p-1 rounded-lg shadow-xl shadow-surface-dark/[0.025] border border-surface outline-none",
+    "flex flex-col gap-0.5 bg-background p-1 rounded-lg shadow-xl shadow-surface-dark/[0.025] border border-surface outline-none",
 };
 
 export const selectOptionTheme = {

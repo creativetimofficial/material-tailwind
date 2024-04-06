@@ -51,6 +51,7 @@ import * as Apexcharts from "@components/docs/plugins/apexcharts";
 import * as DatePicker from "@components/docs/plugins/date-picker";
 import * as Forms from "@components/docs/plugins/forms";
 import * as TextEditor from "@components/docs/plugins/text-editor";
+import * as DataTable from "@components/docs/plugins/data-table";
 
 const components = {
   CodePreview,
@@ -139,6 +140,7 @@ const components = {
   DatePicker,
   Forms,
   TextEditor,
+  DataTable,
 };
 
 type MdxContentProps = {

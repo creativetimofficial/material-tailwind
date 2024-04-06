@@ -82,10 +82,10 @@ export default plugin.withOptions(
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.colors?.secondary?.DEFAULT || "#F3F4F6",
+            options?.colors?.secondary?.DEFAULT || "#E5E7EB",
           ),
           "--color-secondary-dark": getRgbChannels(
-            options?.colors?.secondary?.dark || "#E5E7EB",
+            options?.colors?.secondary?.dark || "#D1D5DB",
           ),
           "--color-secondary-light": getRgbChannels(
             options?.colors?.secondary?.light || "#F9FAFB",

@@ -11,6 +11,7 @@
   "dependencies": {
     "@docsearch/css": "3.5.1",
     "@docsearch/react": "3.5.1",
+    "@faker-js/faker": "8.4.1",
     "@hookform/resolvers": "3.3.4",
     "@lexical/code": "0.14.2",
     "@lexical/link": "0.14.2",
@@ -20,6 +21,8 @@
     "@lexical/selection": "0.14.2",
     "@lexical/utils": "0.14.2",
     "@material-tailwind/react": "workspace:*",
+    "@tanstack/match-sorter-utils": "8.15.1",
+    "@tanstack/react-table": "8.15.3",
     "apexcharts": "3.48.0",
     "clsx": "1.2.1",
     "date-fns": "3.6.0",

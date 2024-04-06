@@ -77,6 +77,7 @@ export interface SelectContextProps {
   >;
   floatingStyles?: UseFloatingReturn["floatingStyles"];
   isOpen?: boolean;
+  controlledValue?: string;
 }
 
 export const SelectContext = React.createContext<SelectContextProps>({
@@ -87,6 +88,7 @@ export const SelectContext = React.createContext<SelectContextProps>({
   disabled: false,
   placement: "bottom",
   offset: 5,
+  controlledValue: "",
 } as SelectContextProps);
 
 // select root
@@ -258,6 +260,7 @@ export function SelectRoot({
       getReferenceProps,
       getFloatingProps,
       isOpen,
+      controlledValue: value,
     }),
     [
       color,
@@ -279,6 +282,7 @@ export function SelectRoot({
       getReferenceProps,
       getFloatingProps,
       isOpen,
+      value,
     ],
   );
 
@@ -505,8 +509,13 @@ export const SelectOption = React.forwardRef<
   const contextTheme = useTheme();
   const theme = contextTheme?.selectOption ?? selectOptionTheme;
   const defaultProps = theme?.defaultProps;
-  const { getItemProps, handleSelect, activeIndex, selectedIndex } =
-    React.useContext(SelectContext);
+  const {
+    getItemProps,
+    handleSelect,
+    activeIndex,
+    selectedIndex,
+    controlledValue,
+  } = React.useContext(SelectContext);
 
   ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
   indicator ??= (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
@@ -545,7 +554,7 @@ export const SelectOption = React.forwardRef<
   };
 
   const isActive = activeIndex === index;
-  const isSelected = selectedIndex === index;
+  const isSelected = selectedIndex === index || controlledValue === value;
 
   const styles = twMerge(theme.baseStyle, className);
 

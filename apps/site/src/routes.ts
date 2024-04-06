@@ -293,6 +293,10 @@ export const routes = [
         path: "/docs/react/plugins/apexcharts",
       },
       {
+        title: "Data Table",
+        path: "/docs/react/plugins/data-table",
+      },
+      {
         title: "Date Picker",
         path: "/docs/react/plugins/date-picker",
       },
@@ -303,10 +307,6 @@ export const routes = [
       {
         title: "Swiper",
         path: "/docs/react/plugins/swiper",
-      },
-      {
-        title: "Table",
-        path: "/docs/react/plugins/table",
       },
       {
         title: "Text Editor",
