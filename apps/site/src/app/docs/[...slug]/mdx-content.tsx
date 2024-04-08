@@ -40,6 +40,7 @@ import * as Tooltip from "@components/docs/tooltip";
 import * as Typography from "@components/docs/typography";
 import * as Video from "@components/docs/video";
 import * as Gallery from "@components/docs/gallery";
+import * as Table from "@components/docs/table";
 import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
@@ -127,6 +128,7 @@ const components = {
   Typography,
   Video,
   Gallery,
+  Table,
   Breadcrumb,
   Drawer,
   Stepper,
