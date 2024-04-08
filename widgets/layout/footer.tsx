@@ -23,7 +23,7 @@ const SOCIAL_MEDIA = [
   },
   {
     icon: "fab fa-discord",
-    link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
+    link: "https://discord.com/invite/FhCJCaHdQa?ref=material-tailwind",
   },
 ];
 
@@ -76,7 +76,7 @@ const RESOURCES = [
   },
   {
     name: "Discord",
-    link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
+    link: "https://discord.com/invite/FhCJCaHdQa?ref=material-tailwind",
   },
   {
     name: "Tailwind Components",
@@ -97,7 +97,7 @@ const TECHS = [
 
 export function Footer() {
   return (
-    <footer className="relative z-50 bg-white px-8 pt-12 pb-6">
+    <footer className="relative z-50 bg-white px-8 pb-6 pt-12">
       <div className="container mx-auto">
         <div className="flex flex-wrap">
           <div className="w-full md:w-4/12">
@@ -107,7 +107,7 @@ export function Footer() {
             >
               Material Tailwind
             </Typography>
-            <Typography className="text-md mt-0 mb-2 font-normal !text-gray-600">
+            <Typography className="text-md mb-2 mt-0 font-normal !text-gray-600">
               Easy to use React components for Tailwind CSS and Material Design.
             </Typography>
             <div className="mt-6">
@@ -238,7 +238,7 @@ export function Footer() {
             <a href="https://nepcha.com?ref=material-tailwind">
               <Image
                 src="https://nepcha.com/img/media/badges/analytics-by-nepcha-black-transparent.png"
-                className="mx-auto lg:mr-0 lg:ml-auto"
+                className="mx-auto lg:ml-auto lg:mr-0"
                 alt="nepcha"
                 width={250}
                 height={250}

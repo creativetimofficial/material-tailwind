@@ -14,7 +14,7 @@ const DATA = [
     title: "Discord",
     bg: "bg-indigo-400",
     icon: "discord",
-    link: "https://discord.com/invite/gxtg2rJa?ref=material-tailwind",
+    link: "https://discord.com/invite/FhCJCaHdQa?ref=material-tailwind",
     desc: "For issues, feature requests and contribute.",
   },
   {
@@ -28,7 +28,7 @@ const DATA = [
 
 export function Community() {
   return (
-    <section className="px-4 pt-48 pb-24">
+    <section className="px-4 pb-24 pt-48">
       <div className="container mx-auto">
         <div className="mx-auto my-20 text-center lg:w-10/12 xl:w-8/12">
           <Typography
@@ -59,7 +59,7 @@ export function Community() {
                   </div>
                   <Typography
                     variant="h5"
-                    className="mt-6 mb-1 font-semibold text-primary"
+                    className="mb-1 mt-6 font-semibold text-primary"
                   >
                     {title}
                   </Typography>
@@ -123,7 +123,7 @@ export function Community() {
                 </Button>
               </Link>
             </div>
-            <div className="absolute top-1/2 right-0 -translate-y-1/2">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2">
               <Image
                 alt="community"
                 src="https://docs.material-tailwind.com/svg/community.svg"

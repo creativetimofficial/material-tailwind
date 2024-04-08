@@ -116,7 +116,7 @@ export function PageMap({ type, frontMatter }) {
           <li>
             <a
               target="_blank"
-              href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind"
+              href="https://discord.com/invite/FhCJCaHdQa?ref=material-tailwind"
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
               rel="noreferrer"
             >

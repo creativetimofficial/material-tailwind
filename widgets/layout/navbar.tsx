@@ -154,7 +154,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             target="_blank"
             rel="noreferrer"
             className="p-1.5 leading-none text-primary opacity-80"
-            href="https://discord.com/invite/7xzMRsRebr"
+            href="https://discord.com/invite/FhCJCaHdQa"
           >
             <i className="fab fa-discord text-lg leading-none" />
           </a>
