@@ -10,4 +10,5 @@ export * from "./brand";
 export * from "./vercel";
 export * from "./code-preview";
 export * from "./toggle-button";
+export * from "./framework-card";
 export * from "./component-preview";

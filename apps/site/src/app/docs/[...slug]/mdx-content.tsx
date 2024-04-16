@@ -2,9 +2,10 @@
 
 // @components
 import Link from "next/link";
-import { ComponentPreview, CodePreview } from "@components";
-import { Typography as MTTypography } from "@material-tailwind/react/dist";
+import * as Icons from "@components/icons";
+import { ComponentPreview, CodePreview, FrameworkCard } from "@components";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
+import { Typography as MTTypography } from "@material-tailwind/react/dist";
 
 // @docs-components
 import * as Accordion from "@components/docs/accordion";
@@ -54,7 +55,9 @@ import * as TextEditor from "@components/docs/plugins/text-editor";
 import * as DataTable from "@components/docs/plugins/data-table";
 
 const components = {
+  Icons,
   CodePreview,
+  FrameworkCard,
   ComponentPreview,
   Link: (props) => (
     <Link

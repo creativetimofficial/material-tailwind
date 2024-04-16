@@ -1,0 +1,88 @@
+---
+title: Get Started with Material Tailwind - React & Tailwind CSS Components Library
+description: Learn how to use Material Tailwind components from this documentation to easily create elegant and flexible pages using Tailwind CSS and React.
+github: installation
+prev: docs/react/inputs
+next: docs/react/Image-group
+---
+
+# Get Started with Material Tailwind
+
+Material Tailwind is a free and open-source components library for ReactJS and Tailwind CSS inspired by Material Design.
+
+---
+
+## Installation
+
+Learn how to use `@material-tailwind/react` components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
+
+`@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - Tailwind CSS Installation Guide.
+
+<br />
+
+<CodePreview>
+```bash
+npm i @material-tailwind/react@beta
+```
+</CodePreview>
+
+---
+
+## TailwindCSS Configurations
+
+Once you installed `@material-tailwind/react` you need to add `mtConfig` to your `tailwind.config.js` file.
+
+<br />
+
+<CodePreview>
+```js {2,6}
+import type { Config } from "tailwindcss";
+import { mtConfig } from "@material-tailwind/react";
+
+const config: Config = {
+  content: [...],
+  plugins: [mtConfig],
+};
+
+export default config;
+```
+</CodePreview>
+
+<br />
+
+For more guides on how to use `@material-tailwind/react` with different frameworks, check the <Link href="#frameworks-integration">Frameworks Integration</Link> section.
+
+---
+
+## Frameworks Integration
+
+Framework-specific guides that cover our recommended approach to installing `@material-tailwind/react` in a number of popular environments. Select your preferred framework from the list below and follow the instructions.
+
+<div
+  className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4"
+>
+  <FrameworkCard name="Next.js" route="/docs/react/guide/next">
+    <Icons.NextLogo className="w-24 h-24" />
+  </FrameworkCard>
+  <FrameworkCard name="Remix" route="/docs/react/guide/remix">
+    <Icons.RemixLogo className="w-24 h-24" />
+  </FrameworkCard>
+  <FrameworkCard name="Astro" route="/docs/react/guide/astro">
+    <Icons.AstroLogo className="w-20 h-20" />
+  </FrameworkCard>
+  <FrameworkCard name="Vite" route="/docs/react/guide/vite">
+    <Icons.ViteLogo className="w-24 h-24" />
+  </FrameworkCard>
+  <FrameworkCard name="Create React App" route="/docs/react/guide/cra">
+    <Icons.CraLogo className="w-24 h-24" />
+  </FrameworkCard>
+  <FrameworkCard name="Gatsby" route="/docs/react/guide/gatsby">
+    <Icons.GatsbyLogo className="w-20 h-20" />
+  </FrameworkCard>
+</div>
+
+---
+
+## TypeScript
+
+`@material-tailwind/react` is a TypeScript based components library and you can easily use it in your TypeScript based projects.
