@@ -4,7 +4,7 @@ export const routes = [
     pages: [
       {
         title: "Installation",
-        path: "/getting-started/installation",
+        path: "/docs/react/installation",
       },
       {
         title: "Cli Usage",
