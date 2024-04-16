@@ -11,9 +11,14 @@ export function Docs({ children }: { children: React.ReactNode }) {
     <ThemeProvider attribute="class">
       <Navbar />
       <div className="px-3 md:px-4">
-        <div className="mx-auto max-w-7xl">
-          <Sidenav />
-          <div ref={contentRef} className="mt-[105px] px-4 lg:mx-60 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-6">
+          <div className="col-span-1">
+            <Sidenav />
+          </div>
+          <div
+            ref={contentRef}
+            className="col-span-4 mt-[105px] px-4 lg:mx-8 lg:px-8"
+          >
             <div className="mb-8 mr-60 flex items-center gap-2 py-2 text-sm text-foreground">
               <span className="cursor-pointer transition-colors duration-300 hover:text-primary">
                 Components
@@ -26,13 +31,15 @@ export function Docs({ children }: { children: React.ReactNode }) {
               <span className="text-primary">Button</span>
             </div>
             {children}
+          </div>
+          <div className="col-span-1">
             <Toc
               contentRef={contentRef as React.MutableRefObject<HTMLDivElement>}
             />
           </div>
-          {/* <Footer /> */}
         </div>
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }

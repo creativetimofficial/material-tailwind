@@ -12,10 +12,15 @@ import {
   SunLight,
   HalfMoon,
   ModernTv,
+  MultiplePages,
+  DollarCircle,
+  Book,
+  Post,
 } from "iconoir-react";
 import { Brand } from "@components";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
+import { Button, Select } from "@material-tailwind/react/dist";
 
 interface NavIconProps extends React.ComponentProps<"button"> {
   icon: React.ElementType;
@@ -25,7 +30,7 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
     <span
       {...rest}
-      className="group grid h-8 w-8 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info"
+      className="group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info"
     >
       <Icon className="h-5 w-5 stroke-[1.5]" />
     </span>
@@ -101,26 +106,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background p-4">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
-        <Link
-          target="_blank"
-          href="https://github.com/creativetimofficial/material-tailwind"
-        >
-          <NavItem icon={Github} hoverIcon={BrightStar}>
-            2.5K
-          </NavItem>
-        </Link>
-        <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-6">
-          <Link href="/blocks">
-            <NavItem icon={SelectFace3d}>Blocks</NavItem>
-          </Link>
-          <Link href="/" className="h-12 w-12">
-            <Brand />
-          </Link>
-          <Link href="/figma">
-            <NavItem icon={Figma}>Figma</NavItem>
-          </Link>
-        </div>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <NavIcon
             tabIndex={0}
             role="button"
@@ -132,6 +118,49 @@ export function Navbar() {
             <NavIcon icon={Discord} />
           </Link>
           <NavIcon tabIndex={0} role="button" icon={Search} />
+          <Select value="v3.0.0">
+            <Select.Trigger className="gap-1.5 rounded-full border-none bg-primary py-1.5 pl-3 pr-2.5 text-xs text-primary-foreground ring-0" />
+            <Select.List>
+              <Select.Option value="v3.0.0">v3.0.0</Select.Option>
+              <Select.Option value="v2.1.9">v2.1.9</Select.Option>
+            </Select.List>
+          </Select>
+        </div>
+        <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-1">
+          <Link href="/docs/react/installation">
+            <NavItem icon={MultiplePages}>Docs</NavItem>
+          </Link>
+          <Link href="/pro">
+            <NavItem icon={DollarCircle}>PRO</NavItem>
+          </Link>
+          <Link href="/blocks">
+            <NavItem icon={SelectFace3d}>Blocks</NavItem>
+          </Link>
+          <Link href="/" className="mx-3 h-12 w-12">
+            <Brand />
+          </Link>
+          <Link href="/figma">
+            <NavItem icon={Figma}>Figma</NavItem>
+          </Link>
+          <Link href="/roots-of-ui-ux-design">
+            <NavItem icon={Book}>Book</NavItem>
+          </Link>
+          <Link href="/blog">
+            <NavItem icon={Post}>Blog</NavItem>
+          </Link>
+        </div>
+        <div className="flex items-center gap-2">
+          <Link
+            target="_blank"
+            href="https://github.com/creativetimofficial/material-tailwind"
+          >
+            <NavItem icon={Github} hoverIcon={BrightStar}>
+              2.5K
+            </NavItem>
+          </Link>
+          <Button as={Link} href="/blocks#pricing">
+            Pricing & FAQ
+          </Button>
         </div>
       </div>
     </nav>
