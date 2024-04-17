@@ -1,0 +1,332 @@
+---
+title: Material Tailwind Migration Guide - From v1 to v2
+description: Learn how to migrate to @material-tailwind/react@2.0.0.
+github: migration/v2
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# v2 Migration Guide
+
+Material Tailwind React 2.0 introduces a number of breaking changes, We tried keeping the amount of breaking changes to a minimum.
+
+---
+
+## Breaking Changes
+
+The following changes are made to the components for a better developer experience
+
+<ComponentPreview demo={<Alert.AlertDemo />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertDemo() {
+  return (
+    <Alert>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Variants
+
+<ComponentPreview demo={<Alert.AlertVariants />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertVariants() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert variant="ghost">
+        <Alert.Content>A simple alert for showing message, with variant="ghost"</Alert.Content>
+      </Alert>
+      <Alert variant="outline">
+        <Alert.Content>A simple alert for showing message. with variant="outline"</Alert.Content>
+      </Alert>
+      <Alert variant="solid">
+        <Alert.Content>A simple alert for showing message. with variant="solid"</Alert.Content>
+      </Alert>
+      <Alert variant="gradient">
+        <Alert.Content>A simple alert for showing message. with variant="gradient"</Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Colors
+
+<ComponentPreview demo={<Alert.AlertColors />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+export function AlertColors() {
+  return (
+    <div className="w-full space-y-2">
+      <Alert color="primary">
+        <Alert.Content>
+          A simple alert for showing message, with color="primary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="secondary">
+        <Alert.Content>
+          A simple alert for showing message, with color="secondary"
+        </Alert.Content>
+      </Alert>
+      <Alert color="info">
+        <Alert.Content>
+          A simple alert for showing message, with color="info"
+        </Alert.Content>
+      </Alert>
+      <Alert color="success">
+        <Alert.Content>
+          A simple alert for showing message, with color="success"
+        </Alert.Content>
+      </Alert>
+      <Alert color="warning">
+        <Alert.Content>
+          A simple alert for showing message, with color="warning"
+        </Alert.Content>
+      </Alert>
+      <Alert color="error">
+        <Alert.Content>
+          A simple alert for showing message, with color="error"
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Icon
+
+<ComponentPreview demo={<Alert.AlertIcon />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertIcon() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircle className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert with List
+
+<ComponentPreview demo={<Alert.AlertWithList />}>
+```tsx
+import { Alert, Typography } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertWithList() {
+  return (
+    <div className="flex w-full flex-col gap-2">
+      <Alert variant="ghost">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="outline">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="solid">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+
+      <Alert variant="gradient">
+        <Alert.Icon>
+          <WarningCircle className="h-5 w-5" />
+        </Alert.Icon>
+        <Alert.Content className="mt-0.5">
+          <Typography>Ensure that these requirements are met:</Typography>
+          <ul className="ml-2 mt-2 list-inside list-disc space-y-1">
+            <Typography as="li" type="small" className="list-item">
+              At least 10 characters (and up to 100 characters)
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              At least one lowercase character
+            </Typography>
+            <Typography as="li" type="small" className="list-item">
+              Inclusion of at least one special character, e.g., ! @ # ?
+            </Typography>
+          </ul>
+        </Alert.Content>
+      </Alert>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert Dismissible
+
+<ComponentPreview demo={<Alert.AlertDismissible />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { WarningCircle } from "iconoir-react";
+
+export function AlertDismissible() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircle className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+      <Alert.DismissTrigger />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+
+---
+
+## Alert Custom Close Icon
+
+<ComponentPreview demo={<Alert.AlertCustomCloseIcon />}>
+```tsx
+import { Alert, Button } from "@material-tailwind/react";
+import { WarningCircleSolid } from "iconoir-react";
+
+export function AlertCustomCloseIcon() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <WarningCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>
+        Sorry, something went wrong please try again.
+      </Alert.Content>
+      <Alert.DismissTrigger as={Button} size="sm">
+        Close
+      </Alert.DismissTrigger>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Alert with Content
+
+<ComponentPreview demo={<Alert.AlertWithContent />}>
+```tsx
+import { Alert, Typography } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
+
+export function AlertWithContent() {
+  return (
+    <Alert>
+      <Alert.Icon>
+        <CheckCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content className="mt-0.5">
+        <Typography className="mb-1 data-[type=p]:font-bold">
+          Success
+        </Typography>
+        <Typography>
+          I don't know what that word means. I'm happy. But success, that goes
+          back to what in somebody's eyes success means. For me, success is
+          inner peace. That's a good day for me.
+        </Typography>
+      </Alert.Content>
+      <Alert.DismissTrigger />
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
+
+
+---
+
+## Alert Custom Styles
+
+<ComponentPreview demo={<Alert.AlertCustomStyles />}>
+```tsx
+import { Alert } from "@material-tailwind/react";
+import { CheckCircleSolid } from "iconoir-react";
+
+export function AlertCustomStyles() {
+  return (
+    <Alert className="rounded-none border-b-0 border-l-4 border-r-0 border-t-0 border-green-500 bg-green-500/10 font-medium text-green-500">
+      <Alert.Icon>
+        <CheckCircleSolid className="h-5 w-5" />
+      </Alert.Icon>
+      <Alert.Content>A simple alert for showing message.</Alert.Content>
+    </Alert>
+  );
+}
+```
+</ComponentPreview>
