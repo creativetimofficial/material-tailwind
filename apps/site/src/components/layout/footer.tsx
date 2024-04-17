@@ -210,8 +210,10 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-surface" />
-        <div className="flex flex-wrap items-center justify-center gap-2 md:justify-between">
+      </div>
+      <hr className="my-6 border-surface" />
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2 pt-4 md:justify-between">
           <div className="text-center lg:text-left">
             <a
               href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"

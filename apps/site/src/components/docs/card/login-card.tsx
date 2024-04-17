@@ -51,12 +51,12 @@ export function LoginCard() {
             placeholder="************"
           />
         </Input>
-        <div className="mb-6 flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Typography as="label" htmlFor="remember" className="text-foreground">
-            Remember Me
-          </Typography>
-        </div>
+        <label htmlFor="remember" className="mb-4 flex items-center gap-2">
+          <Checkbox id="remember">
+            <Checkbox.Indicator />
+          </Checkbox>
+          <Typography className="text-foreground">Remember Me</Typography>
+        </label>
         <Button isFullWidth>Sign In</Button>
       </Card.Body>
       <Card.Footer className="text-center">

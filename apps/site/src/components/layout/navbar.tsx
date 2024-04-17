@@ -21,10 +21,15 @@ import { Brand } from "@components";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 import { Button, Select } from "@material-tailwind/react/dist";
+import { DocSearch } from "@docsearch/react";
 
 interface NavIconProps extends React.ComponentProps<"button"> {
   icon: React.ElementType;
 }
+
+const APP_ID = "37KXIBLNGX";
+const INDEX_NAME = "material-tailwind";
+const API_KEY = "8cc5688018e14bad2a2528eea41fbb35";
 
 function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
@@ -114,10 +119,19 @@ export function Navbar() {
             onClick={toggleTheme}
             onKeyDown={toggleThemeOnEnter}
           />
-          <Link target="_blank" href="https://discord.com/invite/7xzMRsRebr">
+          <Link target="_blank" href="https://discord.com/invite/FhCJCaHdQa">
             <NavIcon icon={Discord} />
           </Link>
-          <NavIcon tabIndex={0} role="button" icon={Search} />
+          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
+            <Search className="h-5 w-5 stroke-[1.5]" />
+            <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
+              <DocSearch
+                appId={APP_ID}
+                apiKey={API_KEY}
+                indexName={INDEX_NAME}
+              />
+            </div>
+          </div>
           <Select value="v3.0.0">
             <Select.Trigger className="gap-1.5 rounded-full border-none bg-primary py-1.5 pl-3 pr-2.5 text-xs text-primary-foreground ring-0" />
             <Select.List>

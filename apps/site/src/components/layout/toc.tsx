@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useToc } from "@hooks";
 import clsx from "clsx";
 import {
@@ -13,6 +14,7 @@ import {
   Star,
 } from "iconoir-react";
 import { useEventListener } from "usehooks-ts";
+import { Card, Typography } from "@material-tailwind/react/dist";
 
 interface ListItemProps {
   href: string;
@@ -176,6 +178,35 @@ export function Toc({
           Scroll to top
         </li>
       </div>
+      <Card
+        as={Link}
+        target="_blank"
+        variant="outline"
+        color="secondary"
+        className="mt-4 grid"
+        href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
+      >
+        <Card.Header>
+          <Image
+            src="/book.webp"
+            alt="book"
+            width={512}
+            height={512}
+            className="h-full w-full object-cover"
+          />
+        </Card.Header>
+        <Card.Body>
+          <Typography color="primary" className="font-bold">
+            Roots of UI/UX Design
+          </Typography>
+          <Typography type="small" className="text-foreground">
+            By Creative Tim
+          </Typography>
+          <Typography type="small" className="mt-2 block text-foreground">
+            Learn to Develop Intuitive Web Experiences
+          </Typography>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

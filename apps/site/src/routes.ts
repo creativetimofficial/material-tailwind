@@ -38,27 +38,27 @@ export const routes = [
     pages: [
       {
         title: "Next.js",
-        path: "/integration-guide/next",
+        path: "/docs/react/guide/next",
       },
       {
         title: "Remix",
-        path: "/integration-guide/remix",
-      },
-      {
-        title: "Vite",
-        path: "/integration-guide/vite",
+        path: "/docs/react/guide/remix",
       },
       {
         title: "Astro",
-        path: "/integration-guide/astro",
+        path: "/docs/react/guide/astro",
+      },
+      {
+        title: "Vite",
+        path: "/docs/react/guide/vite",
       },
       {
         title: "Gatsby",
-        path: "/integration-guide/gatsby",
+        path: "/docs/react/guide/gatsby",
       },
       {
-        title: "Create Raeact App",
-        path: "/integration-guide/guide/cra",
+        title: "Create React App",
+        path: "/docs/react/guide/cra",
       },
     ],
   },
@@ -129,10 +129,10 @@ export const routes = [
             title: "Select",
             path: "/docs/react/select",
           },
-          {
-            title: "Slider",
-            path: "/docs/react/slider",
-          },
+          // {
+          //   title: "Slider",
+          //   path: "/docs/react/slider",
+          // },
           {
             title: "Switch",
             path: "/docs/react/switch",
@@ -154,10 +154,10 @@ export const routes = [
             title: "Avatar",
             path: "/docs/react/avatar",
           },
-          {
-            title: "Badge",
-            path: "/docs/react/badge",
-          },
+          // {
+          //   title: "Badge",
+          //   path: "/docs/react/badge",
+          // },
           {
             title: "Card",
             path: "/docs/react/card",

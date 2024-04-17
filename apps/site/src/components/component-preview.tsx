@@ -45,7 +45,7 @@ export function ComponentPreview({
   const resetCopy = () => setIsCopied(false);
 
   const containerStyles = twMerge(
-    "border-surface rounded-lg border p-2",
+    "border-surface rounded-lg border p-2 mt-4",
     className,
   );
 
