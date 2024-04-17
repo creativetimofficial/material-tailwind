@@ -1,39 +1,55 @@
 "use client";
 
-import { Select } from "@material-tailwind/react/dist";
-import React from "react";
+import { Timeline, Typography } from "@material-tailwind/react/dist";
+import { Bell, DollarCircle, HomeAlt, Rocket } from "iconoir-react";
 
-export default function SelectDemo() {
-  const [val, setVal] = React.useState("html");
-
-  function onSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    console.log(formData.get("version"));
-  }
-
-  const list = [
-    { value: "react", label: "Material Tailwind React" },
-    { value: "html", label: "Material Tailwind HTML" },
-    { value: "vue", label: "Material Tailwind Vue" },
-    { value: "svelte", label: "Material Tailwind Svelte" },
-  ];
-
+export default function Page() {
   return (
-    <form onSubmit={onSubmit} className="p-24">
-      <Select name="version" value={val} onChange={(value) => setVal(value)}>
-        <Select.Trigger className="w-72" placeholder="Select Version" />
-        <Select.List>
-          {list.map((item) => (
-            <Select.Option key={item.value} value={item.value}>
-              {item.label}
-            </Select.Option>
-          ))}
-        </Select.List>
-      </Select>
-      <p>Value: {val}</p>
-      <button type="submit">Submit</button>
-    </form>
+    <Timeline color="secondary" orientation="vertical">
+      <Timeline.Item>
+        <Timeline.Header>
+          <Timeline.Separator />
+          <Timeline.Icon className="h-9 w-9">
+            <Rocket className="h-5 w-5 rotate-45" />
+          </Timeline.Icon>
+        </Timeline.Header>
+        <Timeline.Body>
+          <Typography type="h6" color="primary">
+            v2.1.9
+          </Typography>
+          <Typography className="mb-4 text-foreground">
+            February 8, 2024
+          </Typography>
+          <div>
+            <Typography color="primary" className="mb-1 text-lg font-bold">
+              Patch Changes
+            </Typography>
+            <ul className="mb-4 ml-4 list-disc space-y-1.5 text-foreground">
+              <li>
+                Update accordion component to make it possible to disable the
+                animation.
+              </li>
+              <li>
+                Fix select component issue while there is only one option
+                available.
+              </li>
+              <li>Add red asterisk for required textarea component.</li>
+              <li>Fix the prop-types issue for menu component.</li>
+              <li>
+                Fix classname override issue for all components while there is
+                default props classname.
+              </li>
+            </ul>
+            <Typography color="primary" className="mb-1 text-lg font-bold">
+              Docs Changes
+            </Typography>
+            <ul className="mb-4 ml-4 list-disc space-y-1.5 text-foreground">
+              <li>Fix spelling and grammar issues.</li>
+              <li>Add controlled select example.</li>
+            </ul>
+          </div>
+        </Timeline.Body>
+      </Timeline.Item>
+    </Timeline>
   );
 }
