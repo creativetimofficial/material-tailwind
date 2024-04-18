@@ -123,7 +123,7 @@ export const Rating = React.forwardRef<
 
         return React.isValidElement(elementToRender)
           ? React.cloneElement(elementToRender as React.ReactElement, {
-              ...elementToRender?.props,
+              ...(elementToRender as any)?.props,
               key: idx,
               onClick: (event: MouseEvent) => {
                 if (readonly) return;
@@ -138,8 +138,8 @@ export const Rating = React.forwardRef<
                   typeof onChange === "function" &&
                   onChange(nextRating.filter((el) => el === "rated").length);
 
-                elementToRender?.props?.onClick &&
-                  elementToRender?.props?.onClick(event);
+                (elementToRender?.props as any)?.onClick &&
+                  (elementToRender?.props as any)?.onClick(event);
               },
               onMouseEnter: (event: MouseEvent) => {
                 if (readonly) return;
@@ -151,19 +151,22 @@ export const Rating = React.forwardRef<
                 setIsHover(true);
                 setRatingOnHover(nextRating);
 
-                elementToRender?.props?.onMouseEnter &&
-                  elementToRender?.props?.onMouseEnter(event);
+                (elementToRender?.props as any)?.onMouseEnter &&
+                  (elementToRender?.props as any)?.onMouseEnter(event);
               },
               onMouseLeave: (event: MouseEvent) => {
                 if (!readonly) {
                   setIsHover(false);
                 }
 
-                elementToRender?.props?.onMouseLeave &&
-                  elementToRender?.props?.onMouseLeave(event);
+                (elementToRender?.props as any)?.onMouseLeave &&
+                  (elementToRender?.props as any)?.onMouseLeave(event);
               },
               "data-slot": "icon",
-              className: twMerge(iconStyle, elementToRender?.props?.className),
+              className: twMerge(
+                iconStyle,
+                (elementToRender?.props as any)?.className,
+              ),
             })
           : React.createElement(elementToRender as React.ElementType, {
               key: idx,

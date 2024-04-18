@@ -13,7 +13,7 @@ import { useTheme } from "@context";
 import { buttonTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 export interface ButtonProps extends BaseComponent<"button" | any> {
   as?: React.ElementType;

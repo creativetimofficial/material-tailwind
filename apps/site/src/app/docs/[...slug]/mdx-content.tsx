@@ -70,7 +70,20 @@ const components = {
     <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
   ),
   h3: (props) => (
-    <MTTypography as="h3" type="h6" className="mb-1 mt-8" {...props} />
+    <MTTypography
+      as="h3"
+      type="h6"
+      className="mb-1 mt-8 scroll-mt-40"
+      {...props}
+    />
+  ),
+  h4: (props) => (
+    <MTTypography
+      as="h4"
+      type="lead"
+      className="mb-1 mt-6 font-semibold"
+      {...props}
+    />
   ),
   p: (props) => <MTTypography className="mb-2 text-foreground" {...props} />,
   hr: () => <hr className="my-8 border-transparent" />,
@@ -88,9 +101,7 @@ const components = {
       className="text-info underline transition-colors duration-300 hover:text-primary"
     />
   ),
-  ul: (props) => (
-    <ul className="my-4 list-inside list-disc space-y-0.5" {...props} />
-  ),
+  ul: (props) => <ul className="my-4 ml-4 list-disc space-y-1" {...props} />,
   li: (props) => (
     <li
       className="font-sans text-base font-normal text-foreground antialiased"

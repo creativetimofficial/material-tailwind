@@ -25,11 +25,11 @@ export const routes = [
     pages: [
       {
         title: "v1 to v2",
-        path: "/upgrade-guide/v2",
+        path: "/docs/react/migration/v2",
       },
       {
         title: "v2 to v3",
-        path: "/upgrade-guide/v3",
+        path: "/docs/react/migration/v3",
       },
     ],
   },

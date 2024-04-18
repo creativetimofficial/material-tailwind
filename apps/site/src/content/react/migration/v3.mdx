@@ -1,0 +1,484 @@
+---
+title: Material Tailwind Migration Guide - From v2 to v3
+description: Learn how to migrate to @material-tailwind/react@3.0.0.
+github: migration/v3
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# v3 Migration Guide
+
+Material Tailwind React 3.0 introduces a number of breaking changes, improvements and new features to make the library more flexible and easier to use.
+
+Below is a list of all breaking changes and how to migrate your code to the new version.
+
+---
+
+## Base Changes
+
+### withMT()
+
+The `withMT()` function is removed and doesn't work anymore, instead you can use the `mtConfig` as plugin in your `tailwind.config.js` file.
+
+<CodePreview>
+```ts {1,5}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  plugins: [mtConfig],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Theme Provider
+
+On `v3` you don't need to wrap your application with the `<ThemeProvider />` component anymore. You only need to do this if you want to use custom theme and style for your components.
+
+### Animations
+
+On `v3` we dropped <Link href="https://www.framer.com/motion/animation/" target="_blank">Framer Motion</Link> and components are not animated by default anymore. You can still use Framer Motion or any other animation library to animate your components.
+
+This helps to reduce the bundle size, improve the performance and make the components more flexible to be used with any animation library.
+
+### Color Prop
+
+On `v3` we reduced the amount of colors used for the components, this helps to make a consistent color palette across the components and make it easier to manage the colors.
+
+<CodePreview>
+```tsx
+// ❌ v2
+type color =
+  | "white"
+  | "black"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+ 
+// ✅ v3
+type color =
+  | "primary"
+  | "secondary"
+  | "info"
+  | "success"
+  | "warning"
+  | "error";
+```
+</CodePreview>
+
+### Variant Prop
+
+On `v3` the values for `variant` prop is changed.
+
+<CodePreview>
+```tsx
+// ❌ v2
+type variant = "filled" | "outlined" | "gradient" | "text";
+ 
+// ✅ v3
+type variant = "solid" | "outline" | "gradient" | "ghost";
+```
+</CodePreview>
+
+### Full Width Prop
+
+On `v3` the `fullWidth` prop is replaced with `isFullWidth` prop.
+
+---
+
+## Removed Components
+
+The following components are removed from the library.
+
+### Carousel
+
+The `<Carousel />` component is removed, instead we added a complete integration of <Link href="https://swiperjs.com/" target="_blank">Swiper</Link> with Material Tailwind, check the <Link href="/docs/react/plugins/swiper">integration here</Link>.
+
+### Navbar
+
+The `<Navbar />` component is removed, instead you can use `<Card />` with `<Collapse />` components to create a navbar, check the <Link href="/docs/react/navbar">Navbar Documentation</Link>.
+
+### Speed Dial
+
+The `<SpeedDial />` component is removed, instead you can use `<Tooltip />` with `<IconButton />` components to create a similar effect, check the <Link href="/docs/react/plugins/swiper">Speed Dial Documentation</Link>.
+
+### Stepper
+
+The `<Stepper />` component is removed, instead you can use `<Timeline />` component to create a similar effect, check the <Link href="/docs/react/plugins/stepper">Stepper Documentation</Link>.
+
+---
+
+## Rewritten Components
+
+### Accordion
+
+The `<Accordion />` component is completely rewritten to make it more flexible and easier to use. Now `<Accordion />` component works as both controlled and uncontrolled component, where you don't need to manage the open and close state by default, but you can still manage it if you want as a controlled component.
+
+Below check the `<Accordion />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Accordion } from "@material-tailwind/react";
+
+<Accordion>
+  <Accordion.Item>
+    <Accordion.Trigger />
+    <Accordion.Content />
+  </Accordion.Item>
+</Accordion>
+```
+</CodePreview>
+
+For more information about the `<Accordion />` component, check the <Link href="/docs/react/accordion">Accordion Documentation</Link>.
+
+### Alert
+
+The `<Alert />` component is completely rewritten to make it more flexible and easier to use. Now `<Alert />` component works as both controlled and uncontrolled component, where you don't need to manage the open and close state by default, but you can still manage it if you want as a controlled component.
+
+Below check the `<Alert />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Alert } from "@material-tailwind/react";
+
+<Alert>
+  <Alert.Icon />
+  <Alert.Content />
+  <Alert.DismissTrigger />
+</Alert>
+```
+</CodePreview>
+
+For more information about the `<Alert />` component, check the <Link href="/docs/react/alert">Alert Documentation</Link>.
+
+### Breadcrumb
+
+The name `<Breadcrumbs />` is changed to `<Breadcrumb />` and the component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Breadcrumb />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Breadcrumb } from "@material-tailwind/react";
+
+<Breadcrumb>
+  <Breadcrumb.Link />
+  <Breadcrumb.Separator />
+  <Breadcrumb.Link />
+</Breadcrumb>
+```
+</CodePreview>
+
+For more information about the `<Breadcrumb />` component, check the <Link href="/docs/react/breadcrumb">Breadcrumb Documentation</Link>.
+
+### Checkbox
+
+The `<Checkbox />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Checkbox />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Checkbox } from "@material-tailwind/react";
+
+<Checkbox>
+  <Checkbox.Indicator />
+</Checkbox>
+```
+</CodePreview>
+
+For more information about the `<Checkbox />` component, check the <Link href="/docs/react/checkbox">Checkbox Documentation</Link>.
+
+### Chip
+
+The `<Chip />` component is completely rewritten to make it more flexible and easier to use. Now `<Chip />` component works as both controlled and uncontrolled component, where you don't need to manage the open and close state by default, but you can still manage it if you want as a controlled component.
+
+Below check the `<Chip />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+<Chip>
+  <Chip.Icon />
+  <Chip.Label />
+  <Chip.DismissTrigger />
+</Chip>
+```
+</CodePreview>
+
+For more information about the `<Chip />` component, check the <Link href="/docs/react/chip">Chip Documentation</Link>.
+
+### Dialog
+
+The `<Dialog />` component is completely rewritten to make it more flexible and easier to use. Now `<Dialog />` component works as both controlled and uncontrolled component, where you don't need to manage the open and close state by default, but you can still manage it if you want as a controlled component.
+
+Below check the `<Dialog />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Dialog } from "@material-tailwind/react";
+
+<Dialog>
+  <Dialog.Trigger />
+  <Dialog.Overlay>
+    <Dialog.Content>
+      <Dialog.DismissTrigger />
+    </Dialog.Content>
+  </Dialog.Overlay>
+</Dialog>
+```
+</CodePreview>
+
+For more information about the `<Dialog />` component, check the <Link href="/docs/react/dialog">Dialog Documentation</Link>.
+
+### Drawer
+
+The `<Drawer />` component is completely rewritten to make it more flexible and easier to use. Now `<Drawer />` component works as both controlled and uncontrolled component, where you don't need to manage the open and close state by default, but you can still manage it if you want as a controlled component.
+
+Below check the `<Drawer />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Drawer } from "@material-tailwind/react";
+
+<Drawer>
+  <Drawer.Trigger />
+  <Drawer.Overlay>
+    <Drawer.Panel>
+      <Drawer.DismissTrigger />
+    </Drawer.Panel>
+  </Drawer.Overlay>
+</Drawer>
+```
+</CodePreview>
+
+For more information about the `<Drawer />` component, check the <Link href="/docs/react/drawer">Drawer Documentation</Link>.
+
+### Input
+
+The `<Input />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Input />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Input } from "@material-tailwind/react";
+
+<Input>
+  <Input.Field />
+  <Input.Icon />
+</Input>
+```
+</CodePreview>
+
+For more information about the `<Input />` component, check the <Link href="/docs/react/input">Input Documentation</Link>.
+
+### Progress
+
+The `<Progress />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Progress />` component anatomy.
+
+
+<CodePreview>
+```tsx
+import { Progress } from "@material-tailwind/react";
+
+<Progress>
+  <Progress.Bar />
+</Progress>
+```
+</CodePreview>
+
+For more information about the `<Progress />` component, check the <Link href="/docs/react/progress">Progress Bar Documentation</Link>.
+
+### Radio
+
+The `<Radio />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Radio />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Radio } from "@material-tailwind/react";
+
+<Radio>
+  <Radio.Item>
+    <Radio.Indicator />
+  </Radio.Item>
+</Radio>
+```
+</CodePreview>
+
+For more information about the `<Radio />` component, check the <Link href="/docs/react/radio">Radio Documentation</Link>.
+
+### Select
+
+The `<Select />` component is completely rewritten to make it more flexible and easier to use. Now `<Select />` component works as native html select element, where you can access it's value using form data.
+
+Below check the `<Select />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Select } from "@material-tailwind/react";
+
+<Select>
+  <Select.Trigger />
+  <Select.List>
+    <Select.Option />
+  </Select.List>
+</Select>
+```
+</CodePreview>
+
+For more information about the `<Select />` component, check the <Link href="/docs/react/select">Select Documentation</Link>.
+
+### Tabs
+
+The `<Tabs />` component is completely rewritten to make it more flexible and easier to use. Now you can access the indicator for the active tab as an independent component.
+
+Below check the `<Tabs />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Tabs } from "@material-tailwind/react";
+
+<Tabs>
+  <Tabs.List>
+    <Tabs.Trigger />
+    <Tabs.TriggerIndicator />
+  </Tabs.List>
+  <Tabs.Panel />
+</Tabs>
+```
+</CodePreview>
+
+For more information about the `<Tabs />` component, check the <Link href="/docs/react/tabs">Tabs Documentation</Link>.
+
+### Timeline
+
+The `<Timeline />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Timeline />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Timeline } from "@material-tailwind/react";
+
+<Timeline>
+  <Timeline.Item>
+    <Timeline.Header>
+      <Timeline.Separator />
+      <Timeline.Icon />
+    </Timeline.Header>
+    <Timeline.Body />
+  </Timeline.Item>
+</Timeline>
+```
+</CodePreview>
+
+For more information about the `<Timeline />` component, check the <Link href="/docs/react/timeline">Timeline Documentation</Link>.
+
+### Tooltip
+
+The `<Tooltip />` component is completely rewritten to make it more flexible and easier to use.
+
+Below check the `<Tooltip />` component anatomy.
+
+<CodePreview>
+```tsx
+import { Tooltip } from "@material-tailwind/react";
+
+<Tooltip>
+  <Tooltip.Trigger />
+  <Tooltip.Content>
+    <Tooltip.Arrow />
+  </Tooltip.Content>
+</Tooltip>
+```
+</CodePreview>
+
+For more information about the `<Tooltip />` component, check the <Link href="/docs/react/tooltip">Tooltip Documentation</Link>.
+
+---
+
+## Components API Changes
+
+### Button Props
+
+The `loading` prop is removed and doesn't work anymore.
+
+### Card Props
+
+The `shadow` prop is removed and doesn't work anymore.
+
+### Card Header Props
+
+The `variant`, `color`, `shadow` and `floated` props are removed and doesn't work anymore.
+
+### Card Footer Props
+
+The `divider` prop is removed and doesn't work anymore.
+
+### List Item Prefix
+
+The `<ListItemPrefix />` is replaced with `<ListItemStart />`.
+
+### List Item Suffix
+
+The `<ListItemSuffix />` is replaced with `<ListItemEnd />`.
+
+### Menu Props
+
+- The `handler` prop replaced with `onOpenChange`.
+- The `dismiss`, `lockScroll` and `allowHover` props are removed and doesn't work anymore.
+
+### Menu Handler
+
+The `<MenuHandler />` is replaced with `<MenuTrigger />`.
+
+### Menu List
+
+The `<MenuList />` is replaced with `<MenuContent />`.
+
+### Rating Props
+
+The `ratedColor` and `unratedColor` props are removed and doesn't work anymore, instead you can use the `color` prop.
+
+### Switch Props
+
+The `label`, `ripple`, `containerProps`, `labelProps`, `circleProps` and `inputRef` props are removed and doesn't work anymore.
+
+- Instead of `label` prop you can use `<Typography />` component as a label this gives you more flexibility to style the label.
+- `inputRef` removed because the `<Switch />` component is a native html input element and you can use the `ref` prop for passing ref to the input element.
+- The `containerProps`, `labelProps` and `circleProps` are removed because now all the of the styles are applied directly to the `className` props as `before:` and `after:` pseudo elements.
+
+### Textarea Props
+
+- The `error` prop is replaced with `isError`.
+- The `success` prop is replaced with `isSuccess`.
+- The `variant`, `label`, `labelProps`, `containerProps` and `shrink` props are removed and doesn't work anymore.
+
+### Typography Props
+
+- The `variant` prop is replaced with `type`.
+- The `textGradient` prop is removed and doesn't work anymore.

@@ -1,11 +1,11 @@
 import { Breadcrumb } from "@material-tailwind/react/dist";
-import { HomeAlt } from "iconoir-react";
+import { HomeSimple } from "iconoir-react";
 
 export function BreadcrumbWithIcon() {
   return (
     <Breadcrumb>
       <Breadcrumb.Link href="/">
-        <HomeAlt className="w-5 h-5" />
+        <HomeSimple className="h-[18px] w-[18px]" />
       </Breadcrumb.Link>
       <Breadcrumb.Separator />
       <Breadcrumb.Link href="#">Components</Breadcrumb.Link>
