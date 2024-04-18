@@ -1,6 +1,5 @@
 import { EditPencil, UserPlus, Search } from "iconoir-react";
 import {
-  Card,
   Input,
   Typography,
   Button,
@@ -78,73 +77,65 @@ const TABLE_ROWS = [
 
 export function MembersTable() {
   return (
-    <Card className="w-full">
-      <Card.Header>
-        <div className="mb-8 flex items-center justify-between gap-8">
-          <div>
-            <Typography type="h6">Members list</Typography>
-            <Typography className="mt-1">
-              See information about all members
-            </Typography>
-          </div>
-          <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-            <Button variant="outline" size="sm">
-              view all
-            </Button>
-            <Button className="flex items-center gap-3" size="sm">
-              <UserPlus strokeWidth={2} className="h-4 w-4" /> Add member
-            </Button>
-          </div>
+    <div className="w-full">
+      <div className="mb-8 flex items-center justify-between gap-8">
+        <div>
+          <Typography type="h6">Members list</Typography>
+          <Typography className="mt-1">
+            See information about all members
+          </Typography>
         </div>
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <Tabs defaultValue="all">
-            <Tabs.List className="w-full md:w-max">
-              {TABS.map(({ label, value }) => (
-                <Tabs.Trigger key={value} className="w-full" value={value}>
-                  {label}
-                </Tabs.Trigger>
-              ))}
+        <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+          <Button variant="outline" size="sm">
+            view all
+          </Button>
+          <Button className="flex items-center gap-3" size="sm">
+            <UserPlus strokeWidth={2} className="h-4 w-4" /> Add member
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <Tabs defaultValue="all">
+          <Tabs.List className="w-full md:w-max">
+            {TABS.map(({ label, value }) => (
+              <Tabs.Trigger key={value} className="w-full" value={value}>
+                {label}
+              </Tabs.Trigger>
+            ))}
 
-              <Tabs.TriggerIndicator />
-            </Tabs.List>
-          </Tabs>
-          <div className="w-full md:w-72">
-            <Input>
-              <Input.Field placeholder="Search" />
-              <Input.Icon placement="end">
-                <Search className="h-5 w-5" />
-              </Input.Icon>
-            </Input>
-          </div>
+            <Tabs.TriggerIndicator />
+          </Tabs.List>
+        </Tabs>
+        <div className="w-full md:w-72">
+          <Input>
+            <Input.Field placeholder="Search" />
+            <Input.Icon placement="end">
+              <Search className="h-5 w-5" />
+            </Input.Icon>
+          </Input>
         </div>
-      </Card.Header>
-      <Card.Body className="overflow-scroll px-2">
-        <table className="mt-4 w-full min-w-max table-auto text-left">
-          <thead>
+      </div>
+
+      <div className="mt-4 w-full overflow-hidden rounded-lg border border-surface">
+        <table className="w-full">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
             <tr>
               {TABLE_HEAD.map((head) => (
-                <th
-                  key={head}
-                  className="border-y border-surface bg-surface-light p-4"
-                >
-                  <Typography type="small" className="leading-none opacity-70">
-                    {head}
-                  </Typography>
+                <th key={head} className="px-2.5 py-2 text-start font-medium">
+                  {head}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="group text-sm font-normal text-primary">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
-                const classes = isLast
-                  ? "p-4"
-                  : "p-4 border-b border-surface-light";
-
                 return (
-                  <tr key={name}>
-                    <td className={classes}>
+                  <tr
+                    key={name}
+                    className="border-b border-surface last:border-0"
+                  >
+                    <td className="p-3">
                       <div className="flex items-center gap-3">
                         <Avatar src={img} alt={name} size="sm" />
                         <div className="flex flex-col">
@@ -155,7 +146,7 @@ export function MembersTable() {
                         </div>
                       </div>
                     </td>
-                    <td className={classes}>
+                    <td className="p-3">
                       <div className="flex flex-col">
                         <Typography type="small">{job}</Typography>
                         <Typography type="small" className=" opacity-70">
@@ -163,7 +154,7 @@ export function MembersTable() {
                         </Typography>
                       </div>
                     </td>
-                    <td className={classes}>
+                    <td className="p-3">
                       <div className="w-max">
                         <Chip
                           size="sm"
@@ -175,10 +166,10 @@ export function MembersTable() {
                         </Chip>
                       </div>
                     </td>
-                    <td className={classes}>
+                    <td className="p-3">
                       <Typography type="small">{date}</Typography>
                     </td>
-                    <td className={classes}>
+                    <td className="p-3">
                       <Tooltip>
                         <Tooltip.Trigger as={IconButton} variant="ghost">
                           <EditPencil className="h-4 w-4 text-black" />
@@ -195,8 +186,8 @@ export function MembersTable() {
             )}
           </tbody>
         </table>
-      </Card.Body>
-      <Card.Footer className="flex items-center justify-between border-t border-surface-light p-4">
+      </div>
+      <div className="flex items-center justify-between border-t border-surface-light p-4">
         <Typography type="small">Page 1 of 10</Typography>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
@@ -206,7 +197,7 @@ export function MembersTable() {
             Next
           </Button>
         </div>
-      </Card.Footer>
-    </Card>
+      </div>
+    </div>
   );
 }

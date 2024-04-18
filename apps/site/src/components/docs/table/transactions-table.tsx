@@ -1,6 +1,5 @@
 import { Download, Search, EditPencil } from "iconoir-react";
 import {
-  Card,
   Typography,
   Button,
   Chip,
@@ -67,42 +66,36 @@ const TABLE_ROWS = [
 
 export function TransactionsTable() {
   return (
-    <Card className="w-full px-2">
-      <Card.Header>
-        <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <Typography type="h6">Recent Transactions</Typography>
-            <Typography className="mt-1">
-              These are details about the last transactions
-            </Typography>
-          </div>
-          <div className="flex w-full shrink-0 gap-2 md:w-max">
-            <div className="w-full md:w-72">
-              <Input>
-                <Input.Field placeholder="Search" />
-                <Input.Icon placement="end">
-                  <Search className="h-5 w-5" />
-                </Input.Icon>
-              </Input>
-            </div>
-            <Button className="flex items-center gap-3" size="sm">
-              <Download strokeWidth={2} className="h-4 w-4" /> Download
-            </Button>
-          </div>
+    <div className="w-full px-2">
+      <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+        <div>
+          <Typography type="h6">Recent Transactions</Typography>
+          <Typography className="mt-1">
+            These are details about the last transactions
+          </Typography>
         </div>
-      </Card.Header>
-      <Card.Body className="overflow-scroll px-0">
-        <table className="w-full min-w-max table-auto text-left">
-          <thead>
+        <div className="flex w-full shrink-0 gap-2 md:w-max">
+          <div className="w-full md:w-72">
+            <Input>
+              <Input.Field placeholder="Search" />
+              <Input.Icon placement="end">
+                <Search className="h-5 w-5" />
+              </Input.Icon>
+            </Input>
+          </div>
+          <Button className="flex items-center gap-3" size="sm">
+            <Download strokeWidth={2} className="h-4 w-4" /> Download
+          </Button>
+        </div>
+      </div>
+
+      <div className="w-full overflow-hidden rounded-lg border border-surface">
+        <table className="w-full text-left">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
             <tr>
               {TABLE_HEAD.map((head) => (
-                <th
-                  key={head}
-                  className="border-y border-surface bg-surface-light p-4"
-                >
-                  <Typography type="small" className="opacity-70">
-                    {head}
-                  </Typography>
+                <th key={head} className="px-2.5 py-2 text-start font-medium">
+                  {head}
                 </th>
               ))}
             </tr>
@@ -207,8 +200,8 @@ export function TransactionsTable() {
             )}
           </tbody>
         </table>
-      </Card.Body>
-      <Card.Footer className="flex items-center justify-between border-t border-surface-light p-4">
+      </div>
+      <div className="flex items-center justify-between border-t border-surface-light p-4">
         <Button variant="outline" size="sm">
           Previous
         </Button>
@@ -238,7 +231,7 @@ export function TransactionsTable() {
         <Button variant="outline" size="sm">
           Next
         </Button>
-      </Card.Footer>
-    </Card>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Card, Typography } from "@material-tailwind/react/dist";
+import { Typography } from "@material-tailwind/react/dist";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
 
@@ -32,36 +32,25 @@ const TABLE_ROWS = [
 
 export function TableWithStripedRow() {
   return (
-    <Card className="h-full w-full overflow-scroll">
-      <Card.Body className="p-0">
-        <table className="w-full min-w-max table-auto text-left">
-          <thead>
-            <tr>
-              {TABLE_HEAD.map((head) => (
-                <th
-                  key={head}
-                  className="border-b border-surface bg-surface-light p-4"
-                >
-                  <Typography type="small" className="opacity-70">
-                    {head}
-                  </Typography>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {TABLE_ROWS.map(({ name, job, date }, index) => (
-              <tr key={name} className="even:bg-surface-light">
-                <td className="p-4">
-                  <Typography type="small">{name}</Typography>
-                </td>
-                <td className="p-4">
-                  <Typography type="small">{job}</Typography>
-                </td>
-                <td className="p-4">
-                  <Typography type="small">{date}</Typography>
-                </td>
-                <td className="p-4">
+    <div className="w-full overflow-hidden rounded-lg border border-surface">
+      <table className="w-full">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <tr>
+            {TABLE_HEAD.map((head) => (
+              <th key={head} className="px-2.5 py-2 text-start font-medium">
+                {head}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="group text-sm font-normal text-primary">
+          {TABLE_ROWS.map(({ name, job, date }, index) => {
+            return (
+              <tr key={index} className="even:bg-surface-light">
+                <td className="p-3">{name}</td>
+                <td className="p-3">{job}</td>
+                <td className="p-3">{date}</td>
+                <td className="p-3">
                   <Typography
                     as="a"
                     href="#"
@@ -72,10 +61,10 @@ export function TableWithStripedRow() {
                   </Typography>
                 </td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </Card.Body>
-    </Card>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
