@@ -2,8 +2,8 @@
 
 import { Timeline, Typography } from "@material-tailwind/react/dist";
 import { Bell, DollarCircle, HomeAlt, Rocket } from "iconoir-react";
-import releases from "../components/releases";
-export default function Page() {
+import releases from "./releases";
+export default function ReleaseNotes() {
   return (
     <Timeline color="secondary" orientation="vertical">
       {releases.map((release, key) => (

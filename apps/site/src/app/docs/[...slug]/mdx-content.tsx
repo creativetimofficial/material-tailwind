@@ -53,7 +53,7 @@ import * as DatePicker from "@components/docs/plugins/date-picker";
 import * as Forms from "@components/docs/plugins/forms";
 import * as TextEditor from "@components/docs/plugins/text-editor";
 import * as DataTable from "@components/docs/plugins/data-table";
-
+import ReleaseNotes from "@components/release-notes";
 const components = {
   Icons,
   CodePreview,
@@ -144,6 +144,7 @@ const components = {
   Forms,
   TextEditor,
   DataTable,
+  ReleaseNotes,
 };
 
 type MdxContentProps = {
