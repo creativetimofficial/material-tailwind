@@ -1,7 +1,7 @@
+import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
-import { promises as fs } from "fs";
-import * as fsSync from "fs";
 import rehypeSlug from "rehype-slug";
 import { notFound } from "next/navigation";
 import { MdxContent } from "./mdx-content";
@@ -10,15 +10,14 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-async function readDocsContent(path) {
-  const baseDir = "src/content";
-  const fullPath = `${baseDir}/${path}.mdx`;
+async function readDocsContent(pathUrl) {
+  const fullPath = `${path.join(process.cwd())}/src/app/docs/content/${pathUrl}.mdx`;
 
-  // if (!fsSync.existsSync(fullPath)) {
-  //   notFound();
-  // }
+  if (!fs.existsSync(fullPath)) {
+    notFound();
+  }
 
-  const rawContent = fsSync.readFileSync(fullPath, "utf-8");
+  const rawContent = fs.readFileSync(fullPath, "utf-8");
   const { data: frontMatter, content } = matter(rawContent);
 
   const serialized = await serialize(content, {
@@ -42,6 +41,7 @@ async function readDocsContent(path) {
 
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
+
   const { frontMatter, serialized } = await readDocsContent(path);
 
   return <MdxContent source={serialized} />;
