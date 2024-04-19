@@ -54,6 +54,7 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
         setToc([]);
       };
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [pathname],
   );
 
@@ -80,6 +81,7 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
         activeTocRef.current?.disconnect();
       };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { toc, activeToc };

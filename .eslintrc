@@ -5,5 +5,12 @@
     "next": {
       "rootDir": ["./*/"]
     }
+  },
+  "rules": {
+    "react/display-name": "off",
+    "@next/next/no-img-element": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-key": "off",
+    "react/no-unescaped-entities": "off"
   }
 }

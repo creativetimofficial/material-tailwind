@@ -8,7 +8,7 @@ export function TimelineWithIcon() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <HomeAlt className="w-4 h-4" />
+            <HomeAlt className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
@@ -18,8 +18,8 @@ export function TimelineWithIcon() {
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -27,7 +27,7 @@ export function TimelineWithIcon() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <Bell className="w-4 h-4" />
+            <Bell className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
@@ -37,15 +37,15 @@ export function TimelineWithIcon() {
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Icon>
-            <DollarCircle className="w-4 h-4" />
+            <DollarCircle className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
@@ -55,8 +55,8 @@ export function TimelineWithIcon() {
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>

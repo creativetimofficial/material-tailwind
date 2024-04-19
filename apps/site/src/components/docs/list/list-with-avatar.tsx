@@ -10,7 +10,7 @@ const ListItem = React.forwardRef<
   }
 >(({ img, title, description, ...rest }, ref) => {
   return (
-    <List.Item ref={ref} {...rest}>
+    <List.Item ref={ref as any} {...rest}>
       <List.ItemStart>
         <Avatar src={img} alt="profile-picture" />
       </List.ItemStart>

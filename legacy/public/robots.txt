@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.material-tailwind.com
-
-# Sitemaps
-Sitemap: https://www.material-tailwind.com/sitemap.xml
