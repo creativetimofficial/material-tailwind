@@ -6,17 +6,17 @@ export const routes = [
         title: "Installation",
         path: "/docs/react/installation",
       },
-      {
-        title: "Cli Usage",
-        path: "/getting-started/cli",
-      },
+      // {
+      //   title: "Cli Usage",
+      //   path: "/docs/react/cli",
+      // },
       {
         title: "License",
-        path: "/getting-started/license",
+        path: "/docs/react/license",
       },
       {
         title: "Release Notes",
-        path: "/getting-started/release-notes",
+        path: "/docs/react/release-notes",
       },
     ],
   },
@@ -67,28 +67,28 @@ export const routes = [
     pages: [
       {
         title: "Theming",
-        path: "/customization/theming",
+        path: "/docs/react/theming",
       },
       {
         title: "Colors",
-        path: "/customization/colors",
+        path: "/docs/react/colors",
       },
       {
-        title: "Typography",
-        path: "/customization/typography",
+        title: "Fonts",
+        path: "/docs/react/fonts",
       },
       {
         title: "Breakpoints",
-        path: "/customization/breakpoints",
+        path: "/docs/react/breakpoints",
       },
-      {
-        title: "Dark Mode",
-        path: "/customization/dark-mode",
-      },
-      {
-        title: "Components",
-        path: "/customization/components",
-      },
+      // {
+      //   title: "Dark Mode",
+      //   path: "/docs/react/dark-mode",
+      // },
+      // {
+      //   title: "Components",
+      //   path: "/docs/react/components",
+      // },
     ],
   },
   {
@@ -262,6 +262,10 @@ export const routes = [
             path: "/docs/react/footer",
           },
           {
+            title: "Gallery",
+            path: "/docs/react/gallery",
+          },
+          {
             title: "Navbar",
             path: "/docs/react/navbar",
           },
@@ -272,10 +276,6 @@ export const routes = [
           {
             title: "Table",
             path: "/docs/react/table",
-          },
-          {
-            title: "Gallery",
-            path: "/docs/react/gallery",
           },
         ],
       },

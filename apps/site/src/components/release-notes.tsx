@@ -1,21 +1,28 @@
 "use client";
 
 import { Timeline, Typography } from "@material-tailwind/react/dist";
-import { Bell, DollarCircle, HomeAlt, Rocket } from "iconoir-react";
+import { Rocket } from "iconoir-react";
 import releases from "./releases";
+
 export default function ReleaseNotes() {
   return (
     <Timeline color="secondary" orientation="vertical">
       {releases.map((release, key) => (
         <Timeline.Item key={key} id={`v${release.version}`}>
           <Timeline.Header>
-            <Timeline.Separator />
+            {key !== releases.length - 1 && <Timeline.Separator />}
             <Timeline.Icon className="h-9 w-9">
               <Rocket className="h-5 w-5 rotate-45" />
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body>
-            <Typography type="h6" color="primary">
+            <Typography
+              id={`v${release.version}`}
+              as="h2"
+              type="h6"
+              color="primary"
+              className="scroll-mt-40"
+            >
               v{release.version}
             </Typography>
             <Typography className="mb-4 text-foreground">

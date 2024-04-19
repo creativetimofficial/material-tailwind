@@ -1,0 +1,228 @@
+---
+title: Color Palette - Material Tailwind
+description: Check the default color palette for Material Tailwind.
+github: colors
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# Color Palette - Material Tailwind
+
+`@material-tailwind/react` has two color palettes one is the color palette used for light mode and the other is the color palette used for dark mode. Both color palettes are using the same colors as the ones used in Tailwind CSS.
+
+Both color palettes has 9 different colors for different purposes like `background`, `foreground`, `surface`, `primary`, `secondary`, `info`, `success`, `warning` and `error`. Each color has 4 different shades like `DEFAULT`, `light`, `dark` and `foreground`.
+
+Below you can check all the colors, their shades and their hex color code.
+
+---
+
+## Light Mode Color Palette
+
+### Background
+
+<ColorPalette colors={{ default: "#FFFFFF" }} />
+
+### Foreground
+
+<ColorPalette colors={{ default: "#4B5563" }} />
+
+### Surface
+
+<ColorPalette 
+  colors={{
+    default: "#E5E7EB",
+    dark: "#030712",
+    light: "#F9FaFB",
+    foreground: "#1F2937"
+  }}
+/>
+
+### Primary
+
+<ColorPalette 
+  colors={{
+    default: "#111827",
+    dark: "#030712",
+    light: "#1F2937",
+    foreground: "#F9FAFB"
+  }}
+/>
+
+### Secondary
+
+<ColorPalette 
+  colors={{
+    default: "#E5E7EB",
+    dark: "#D1D5DB",
+    light: "#F9FAFB",
+    foreground: "#030712"
+  }}
+/>
+
+### Info
+
+<ColorPalette 
+  colors={{
+    default: "#2563EB",
+    dark: "#1D4ED8",
+    light: "#3B82F6",
+    foreground: "#F9FAFB"
+  }}
+/>
+
+### Success
+
+<ColorPalette 
+  colors={{
+    default: "#16A34A",
+    dark: "#15803D",
+    light: "#22C55E",
+    foreground: "#F9FAFB"
+  }}
+/>
+
+### Warning
+
+<ColorPalette 
+  colors={{
+    default: "#EAB308",
+    dark: "#CA8A04",
+    light: "#FACC15",
+    foreground: "#030712"
+  }}
+/>
+
+### Error
+
+<ColorPalette 
+  colors={{
+    default: "#DC2626",
+    dark: "#B91C1C",
+    light: "#EF4444",
+    foreground: "#F9FAFB"
+  }}
+/>
+
+---
+
+## Dark Mode Color Palette
+
+### Background
+
+<ColorPalette colors={{ default: "#030712" }} />
+
+### Foreground
+
+<ColorPalette colors={{ default: "#9CA3AF" }} />
+
+### Surface
+
+<ColorPalette 
+  colors={{
+    default: "#1F2937",
+    dark: "#F9FAFB",
+    light: "#111827",
+    foreground: "#E5E7EB"
+  }}
+/>
+
+### Primary
+
+<ColorPalette 
+  colors={{
+    default: "#F3F4F6",
+    dark: "#E5E7EB",
+    light: "#F9FAFB",
+    foreground: "#030712"
+  }}
+/>
+
+### Secondary
+
+<ColorPalette 
+  colors={{
+    default: "#1F2937",
+    dark: "#111827",
+    light: "#374151",
+    foreground: "#F9FAFB"
+  }}
+/>
+
+### Info
+
+<ColorPalette 
+  colors={{
+    default: "#3B82F6",
+    dark: "#60A5FA",
+    light: "#2563EB",
+    foreground: "#030712"
+  }}
+/>
+
+### Success
+
+<ColorPalette 
+  colors={{
+    default: "#22C55E",
+    dark: "#16A34A",
+    light: "#4ADE80",
+    foreground: "#030712"
+  }}
+/>
+
+### Warning
+
+<ColorPalette 
+  colors={{
+    default: "#FACC15",
+    dark: "#EABC08",
+    light: "#FDE047",
+    foreground: "#030712"
+  }}
+/>
+
+### Error
+
+<ColorPalette 
+  colors={{
+    default: "#EF4444",
+    dark: "#DC2626",
+    light: "#F87171",
+    foreground: "#030712"
+  }}
+/>
+
+---
+
+## Types Definition
+
+### Colors 
+
+<CodePreview>
+```ts
+export interface Colors {
+  background?: `#${string}`;
+  foreground?: `#${string}`;
+  surface?: Color;
+  primary?: Color;
+  secondary?: Color;
+  info?: Color;
+  success?: Color;
+  warning?: Color;
+  error?: Color;
+}
+```
+</CodePreview>
+
+### Color 
+
+<CodePreview>
+```ts
+export interface Color {
+  DEFAULT?: `#${string}`;
+  dark?: `#${string}`;
+  light?: `#${string}`;
+  foreground?: `#${string}`;
+}
+```
+</CodePreview>

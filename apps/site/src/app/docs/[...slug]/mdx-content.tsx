@@ -3,9 +3,14 @@
 // @components
 import Link from "next/link";
 import * as Icons from "@components/icons";
-import { ComponentPreview, CodePreview, FrameworkCard } from "@components";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Typography as MTTypography } from "@material-tailwind/react/dist";
+import {
+  ComponentPreview,
+  CodePreview,
+  FrameworkCard,
+  ColorPalette,
+} from "@components";
 
 // @docs-components
 import * as Accordion from "@components/docs/accordion";
@@ -57,6 +62,7 @@ import ReleaseNotes from "@components/release-notes";
 const components = {
   Icons,
   CodePreview,
+  ColorPalette,
   FrameworkCard,
   ComponentPreview,
   Link: (props) => (
@@ -163,7 +169,7 @@ type MdxContentProps = {
 };
 
 export function MdxContent({ source }: MdxContentProps) {
-  return <MDXRemote {...source} components={components} />;
+  return <MDXRemote {...source} components={components as any} />;
 }
 
 export default MdxContent;

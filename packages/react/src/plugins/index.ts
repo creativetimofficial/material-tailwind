@@ -1,14 +1,14 @@
 import hexRgb from "hex-rgb";
 import plugin from "tailwindcss/plugin";
 
-interface Color {
-  DEFAULT?: `#${string}`;
+export interface Color {
+  default?: `#${string}`;
   dark?: `#${string}`;
   light?: `#${string}`;
   foreground?: `#${string}`;
 }
 
-interface Colors {
+export interface Colors {
   background?: `#${string}`;
   foreground?: `#${string}`;
   surface?: Color;
@@ -20,9 +20,9 @@ interface Colors {
   error?: Color;
 }
 
-interface Options {
+export interface Options {
   fonts?: Record<string, string | string[]>;
-  radius?: Record<string, string | string[]>;
+  radius?: string;
   colors?: Colors;
   darkColors?: Colors;
 }
@@ -32,7 +32,7 @@ function getRgbChannels(hex: `#${string}`) {
   return `${red} ${green} ${blue}`;
 }
 
-export default plugin.withOptions(
+export const mtConfig = plugin.withOptions(
   function (options: Options) {
     return function ({ addBase }) {
       addBase({
@@ -42,6 +42,7 @@ export default plugin.withOptions(
 
           /* fonts */
           "--font-sans": options?.fonts?.sans || "Inter",
+          "--font-serif": options?.fonts?.serif || "",
           "--font-mono": options?.fonts?.mono || "Fira Code",
 
           /* base colors */
@@ -54,7 +55,7 @@ export default plugin.withOptions(
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.colors?.surface?.DEFAULT || "#E5E7EB",
+            options?.colors?.surface?.default || "#E5E7EB",
           ),
           "--color-surface-dark": getRgbChannels(
             options?.colors?.surface?.dark || "#030712",
@@ -68,7 +69,7 @@ export default plugin.withOptions(
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.colors?.primary?.DEFAULT || "#111827",
+            options?.colors?.primary?.default || "#111827",
           ),
           "--color-primary-dark": getRgbChannels(
             options?.colors?.primary?.dark || "#030712",
@@ -82,7 +83,7 @@ export default plugin.withOptions(
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.colors?.secondary?.DEFAULT || "#E5E7EB",
+            options?.colors?.secondary?.default || "#E5E7EB",
           ),
           "--color-secondary-dark": getRgbChannels(
             options?.colors?.secondary?.dark || "#D1D5DB",
@@ -96,7 +97,7 @@ export default plugin.withOptions(
 
           /* info color */
           "--color-info": getRgbChannels(
-            options?.colors?.info?.DEFAULT || "#2563EB",
+            options?.colors?.info?.default || "#2563EB",
           ),
           "--color-info-dark": getRgbChannels(
             options?.colors?.info?.dark || "#1D4ED8",
@@ -110,7 +111,7 @@ export default plugin.withOptions(
 
           /* success color */
           "--color-success": getRgbChannels(
-            options?.colors?.success?.DEFAULT || "#16A34A",
+            options?.colors?.success?.default || "#16A34A",
           ),
           "--color-success-dark": getRgbChannels(
             options?.colors?.success?.dark || "#15803D",
@@ -124,7 +125,7 @@ export default plugin.withOptions(
 
           /* warning color */
           "--color-warning": getRgbChannels(
-            options?.colors?.warning?.DEFAULT || "#EAB308",
+            options?.colors?.warning?.default || "#EAB308",
           ),
           "--color-warning-dark": getRgbChannels(
             options?.colors?.warning?.dark || "#CA8A04",
@@ -138,7 +139,7 @@ export default plugin.withOptions(
 
           /* error color */
           "--color-error": getRgbChannels(
-            options?.colors?.error?.DEFAULT || "#DC2626",
+            options?.colors?.error?.default || "#DC2626",
           ),
           "--color-error-dark": getRgbChannels(
             options?.colors?.error?.dark || "#B91C1C",
@@ -162,7 +163,7 @@ export default plugin.withOptions(
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.darkColors?.surface?.DEFAULT || "#1F2937",
+            options?.darkColors?.surface?.default || "#1F2937",
           ),
           "--color-surface-dark": getRgbChannels(
             options?.darkColors?.surface?.dark || "#F9FAFB",
@@ -176,7 +177,7 @@ export default plugin.withOptions(
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.darkColors?.primary?.DEFAULT || "#F3F4F6",
+            options?.darkColors?.primary?.default || "#F3F4F6",
           ),
           "--color-primary-dark": getRgbChannels(
             options?.darkColors?.primary?.dark || "#E5E7EB",
@@ -190,7 +191,7 @@ export default plugin.withOptions(
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.darkColors?.secondary?.DEFAULT || "#1F2937",
+            options?.darkColors?.secondary?.default || "#1F2937",
           ),
           "--color-secondary-dark": getRgbChannels(
             options?.darkColors?.secondary?.dark || "#111827",
@@ -204,7 +205,7 @@ export default plugin.withOptions(
 
           /* info color */
           "--color-info": getRgbChannels(
-            options?.darkColors?.info?.DEFAULT || "#3B82F6",
+            options?.darkColors?.info?.default || "#3B82F6",
           ),
           "--color-info-dark": getRgbChannels(
             options?.darkColors?.info?.dark || "#60A5FA",
@@ -218,7 +219,7 @@ export default plugin.withOptions(
 
           /* success color */
           "--color-success": getRgbChannels(
-            options?.darkColors?.success?.DEFAULT || "#22C55E",
+            options?.darkColors?.success?.default || "#22C55E",
           ),
           "--color-success-dark": getRgbChannels(
             options?.darkColors?.success?.dark || "#16A34A",
@@ -232,7 +233,7 @@ export default plugin.withOptions(
 
           /* warning color */
           "--color-warning": getRgbChannels(
-            options?.darkColors?.warning?.DEFAULT || "#FACC15",
+            options?.darkColors?.warning?.default || "#FACC15",
           ),
           "--color-warning-dark": getRgbChannels(
             options?.darkColors?.warning?.dark || "#EABC08",
@@ -246,7 +247,7 @@ export default plugin.withOptions(
 
           /* error color */
           "--color-error": getRgbChannels(
-            options?.darkColors?.error?.DEFAULT || "#EF4444",
+            options?.darkColors?.error?.default || "#EF4444",
           ),
           "--color-error-dark": getRgbChannels(
             options?.darkColors?.error?.dark || "#DC2626",
@@ -263,14 +264,21 @@ export default plugin.withOptions(
   },
   function (options) {
     return {
+      darkMode: "class",
+      content: [
+        "./node_modules/@material-tailwind/react/src/components/**/*.{js,ts,jsx,tsx}",
+        "./node_modules/@material-tailwind/react/src/theme/**/*.{js,ts,jsx,tsx}",
+      ],
       theme: {
         extend: {
           fontFamily: {
             sans: ["var(--font-sans)", "sans-serif"],
+            serif: ["var(--font-serif)", "serif"],
             body: ["var(--font-sans)", "sans-serif"],
             mono: ["var(--font-mono)", "monospace"],
           },
           borderRadius: {
+            full: "calc(var(--radius) * 1000)",
             "3xl": "var(--radius)",
             "2xl": "calc(var(--radius) - 8px)",
             xl: "calc(var(--radius) - 12px)",
@@ -335,3 +343,5 @@ export default plugin.withOptions(
     };
   },
 );
+
+export default mtConfig;

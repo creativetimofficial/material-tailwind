@@ -1,0 +1,121 @@
+---
+title: Fonts - Material Tailwind
+description: Check the default font families used for Material Tailwind.
+github: fonts
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# Fonts - Material Tailwind
+
+`@material-tailwind/react` comes with 2 different font families. One is the default font family and the other is the monospace font family. The default font family is `Inter` and the monospace font family is `Fira Code`.
+
+---
+
+## Inter Font Family
+
+### HTML Link
+
+Add the following code to the `<head>` tag of your HTML file.
+
+<CodePreview>
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+```
+</CodePreview>
+
+### Stylesheet
+
+Add the following code to your stylesheet.
+
+<CodePreview>
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+```
+</CodePreview>
+
+### Next.js Method
+
+You can use `next/font` to import the `Inter` font family if you are using Next.js.
+
+On the `layout.tsx` file add the following code.
+
+<CodePreview>
+```tsx {2, 4-8, 16}
+import * as React from "react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body>...</body>
+    </html>
+  );
+}
+```
+</CodePreview>
+
+---
+
+## Fira Code Font Family
+
+### HTML Link
+
+Add the following code to the `<head>` tag of your HTML file.
+
+<CodePreview>
+```html
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+```
+</CodePreview>
+
+### Stylesheet
+
+Add the following code to your stylesheet.
+
+<CodePreview>
+```css
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+```
+</CodePreview>
+
+### Next.js Method
+
+You can use `next/font` to import the `Inter` font family if you are using Next.js.
+
+On the `layout.tsx` file add the following code.
+
+<CodePreview>
+```tsx {2, 4-8, 16}
+import * as React from "react";
+import { Fira_Code } from "next/font/google";
+
+const firaCode = Fira_Code({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="en" className={firaCode.className}>
+      <body>...</body>
+    </html>
+  );
+}
+```
+</CodePreview>

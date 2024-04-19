@@ -1,0 +1,352 @@
+---
+title: Theming - Material Tailwind
+description: Check the default theme used for Material Tailwind and learn how to custom the theme.
+github: theming
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+# Theming - Material Tailwind
+
+`@material-tailwind/react` makes it easy to customize the theme of your application. You can customize the theme by using the `mtConfig` on your `tailwind.config.js` file.
+
+Below check the default theme used for Material Tailwind and learn how to custom the theme.
+
+---
+
+## Default Theme
+
+<CodePreview>
+```js
+const mtConfig = {
+  radius: "1.5rem",
+  fonts: {
+    sans: "Inter",
+    mono: "Fira Code"
+  },
+  colors: {
+    background: "#FFFFFF",
+    foreground: "#4B5563",
+    surface: {
+      default: "#E5E7EB",
+      dark: "#030712",
+      light: "#F9FaFB",
+      foreground: "#1F2937"
+    },
+    primary: {
+      default: "#111827",
+      dark: "#030712",
+      light: "#1F2937",
+      foreground: "#F9FAFB"
+    },
+    secondary: {
+      default: "#E5E7EB",
+      dark: "#D1D5DB",
+      light: "#F9FAFB",
+      foreground: "#030712"
+    },
+    info: {
+      default: "#2563EB",
+      dark: "#1D4ED8",
+      light: "#3B82F6",
+      foreground: "#F9FAFB"
+    },
+    success: {
+      default: "#16A34A",
+      dark: "#15803D",
+      light: "#22C55E",
+      foreground: "#F9FAFB"
+    },
+    warning: {
+      default: "#EAB308",
+      dark: "#CA8A04",
+      light: "#FACC15",
+      foreground: "#030712"
+    },
+    error: {
+      default: "#DC2626",
+      dark: "#B91C1C",
+      light: "#EF4444",
+      foreground: "#F9FAFB"
+    },
+  },
+  darkColors: {
+    background: "#030712",
+    foreground: "#9CA3AF",
+    surface: {
+      default: "#1F2937",
+      dark: "#F9FAFB",
+      light: "#111827",
+      foreground: "#E5E7EB"
+    },
+    primary: {
+      default: "#F3F4F6",
+      dark: "#E5E7EB",
+      light: "#F9FAFB",
+      foreground: "#030712"
+    },
+    secondary: {
+      default: "#1F2937",
+      dark: "#111827",
+      light: "#374151",
+      foreground: "#F9FAFB"
+    },
+    info: {
+      default: "#3B82F6",
+      dark: "#60A5FA",
+      light: "#2563EB",
+      foreground: "#030712"
+    },
+    success: {
+      default: "#22C55E",
+      dark: "#16A34A",
+      light: "#4ADE80",
+      foreground: "#030712"
+    },
+    warning: {
+      default: "#FACC15",
+      dark: "#EABC08",
+      light: "#FDE047",
+      foreground: "#030712"
+    },
+    error: {
+      default: "#EF4444",
+      dark: "#DC2626",
+      light: "#F87171",
+      foreground: "#030712"
+    },
+  }
+}
+```
+</CodePreview>
+
+### Radius
+
+The `radius` property is used to set the base border-radius for your design system, based on that value all of the values for `rounded-sm`, `rounded`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl` and `rounded-3xl` are calculated, this way you only need to change one value to change all of the border-radius values and this will apply to all of the components.
+
+### Fonts
+
+The `fonts` property is used to set the default fonts for your design system, you can set the `sans` for sans-serif fonts and `mono` for monospace fonts and this will apply to all of the components.
+
+Check the <Link href="/docs/react/fonts">Fonts Documentation</Link> for more details.
+
+### Colors
+
+The `colors` property is used to set the default colors for your design system, these colors are used for all of the components, each color has 4 different shades `default`, `dark`, `light` and `foreground` used for different purposes.
+
+Check the <Link href="/docs/react/colors#light-mode-color-palette">Colors Documentation</Link> for more details.
+
+### Dark Colors
+
+The `darkColors` property is used to set the default dark mode colors for your design system, these colors are used for all of the components, each color has 4 different shades `default`, `dark`, `light` and `foreground` used for different purposes.
+
+Check the <Link href="/docs/react/colors#dark-mode-color-palette">Colors Documentation</Link> for more details.
+
+---
+
+## Creating Custom Theme
+
+To create a custom theme based on your design system you to follow the steps below:
+
+### Step 1
+
+On your `tailwind.config.js` file, you need to import the `mtConfig` and add it to the `plugins` array.
+
+<CodePreview>
+```js {1,6}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Step 2
+
+The `mtConfig` can be used as a function to customize the default theme, you can pass an object with the properties you want to customize.
+
+<CodePreview>
+```js {6-11}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "...",
+    fonts: {...},
+    colors: {...},
+    darkColors: {...},
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Step 3 - Radius
+
+Let's make an elegant design system by changing the `radius` to a `0`.
+
+<CodePreview>
+```js {7}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "0",
+    fonts: {...},
+    colors: {...},
+    darkColors: {...},
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Step 3 - Fonts
+
+For the font we'll use the `DM Serif Display` for titles and `Lato` for the body. Check the <Link href="/docs/react/fonts">Fonts Documentation</Link> on how to add new fonts to your project.
+
+<CodePreview>
+```js {8-11}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "0",
+    fonts: {
+      sans: "Lato",
+      serif: "DM Serif Display"
+    },
+    colors: {...},
+    darkColors: {...},
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Step 4 - Colors
+
+For the colors we'll use light yellow as our primary color. 
+
+<CodePreview>
+```js {12-19}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "0",
+    fonts: {
+      sans: "Lato",
+      serif: "DM Serif Display"
+    },
+    colors: {
+      primary: {
+        default: "#fef08a",
+        dark: "#fde047",
+        light: "#fef9c3",
+        foreground: "#030712"
+      }
+    },
+    darkColors: {...},
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Step 5 - Dark Colors 
+
+For the dark mode colors we'll use teal as our primary color. 
+
+<CodePreview>
+```js {20-27}
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "0",
+    fonts: {
+      sans: "Lato",
+      serif: "DM Serif Display"
+    },
+    colors: {
+      primary: {
+        default: "#fef08a",
+        dark: "#fde047",
+        light: "#fef9c3",
+        foreground: "#030712"
+      }
+    },
+    darkColors: {
+      primary: {
+        default: "#5eead4",
+        dark: "#2dd4bf",
+        light: "#99f6e4",
+        foreground: "#030712",
+      },
+    },
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
+
+### Final Step
+
+You're all done now you can use the custom theme on your application.
+
+<CodePreview>
+```js
+import { mtConfig } from "@material-tailwind/react";
+ 
+const config = {
+  content: [...],
+  theme: {...},
+  plugins: [mtConfig({
+    radius: "0",
+    fonts: {
+      sans: "Lato",
+      serif: "DM Serif Display"
+    },
+    colors: {
+      primary: {
+        default: "#fef08a",
+        dark: "#fde047",
+        light: "#fef9c3",
+        foreground: "#030712"
+      }
+    },
+    darkColors: {
+      primary: {
+        default: "#5eead4",
+        dark: "#2dd4bf",
+        light: "#99f6e4",
+        foreground: "#030712",
+      },
+    },
+  })],
+};
+ 
+export default config;
+```
+</CodePreview>
