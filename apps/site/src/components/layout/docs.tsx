@@ -33,9 +33,13 @@ export function Docs({ children }: { children: React.ReactNode }) {
             {children}
           </div>
           <div className="col-span-1">
-            <Toc
-              contentRef={contentRef as React.MutableRefObject<HTMLDivElement>}
-            />
+            <React.Suspense>
+              <Toc
+                contentRef={
+                  contentRef as React.MutableRefObject<HTMLDivElement>
+                }
+              />
+            </React.Suspense>
           </div>
         </div>
       </div>
