@@ -9,7 +9,7 @@ const MaterialTailwindTheme = createContext(theme);
 MaterialTailwindTheme.displayName = "MaterialTailwindThemeProvider";
 
 function ThemeProvider({ value = theme, children }) {
-  const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
+  const mergedValue = React.useMemo(() => merge(theme, value, { arrayMerge: combineMerge }), [value]);
 
   return (
     <MaterialTailwindTheme.Provider value={mergedValue}>{children}</MaterialTailwindTheme.Provider>
