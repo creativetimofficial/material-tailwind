@@ -4,7 +4,7 @@ import {
   Button,
   Input,
   Checkbox,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 export function LoginCard() {
   return (

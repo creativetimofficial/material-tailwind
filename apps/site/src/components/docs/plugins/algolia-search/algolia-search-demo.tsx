@@ -1,6 +1,6 @@
 import { DocSearch } from "@docsearch/react";
 import { KeyCommand, Search } from "iconoir-react";
-import { Input } from "@material-tailwind/react/dist";
+import { Input } from "@material-tailwind/react";
 
 const APP_ID = "37KXIBLNGX";
 const INDEX_NAME = "material-tailwind";

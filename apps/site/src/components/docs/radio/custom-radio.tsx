@@ -1,4 +1,4 @@
-import { Radio, Typography } from "@material-tailwind/react/dist";
+import { Radio, Typography } from "@material-tailwind/react";
 import { Check } from "iconoir-react";
 
 export function CustomRadio() {

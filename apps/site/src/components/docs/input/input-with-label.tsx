@@ -1,4 +1,4 @@
-import { Input, Typography } from "@material-tailwind/react/dist";
+import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithLabel() {
   return (

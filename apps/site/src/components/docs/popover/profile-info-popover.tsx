@@ -1,9 +1,4 @@
-import {
-  Popover,
-  Button,
-  Avatar,
-  Typography,
-} from "@material-tailwind/react/dist";
+import { Popover, Button, Avatar, Typography } from "@material-tailwind/react";
 import { City, MapPin } from "iconoir-react";
 
 export function ProfileInfoPopover() {

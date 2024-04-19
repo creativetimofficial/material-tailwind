@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import routes from "@routes";
 import { NavArrowRight } from "iconoir-react";
-import { Collapse } from "@material-tailwind/react/dist";
+import { Collapse } from "@material-tailwind/react";
 
 function Collapsible({ category, categoryPages }) {
   const [isOpen, setIsOpen] = React.useState(false);

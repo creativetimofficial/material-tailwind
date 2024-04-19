@@ -11,7 +11,7 @@ import {
   Checkbox,
   Typography,
   InputFieldProps,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { Lock, Mail, ProfileCircle } from "iconoir-react";
 
 const formSchema = z.object({

@@ -9,7 +9,7 @@ import {
   Input,
   IconButton,
   Drawer,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   Archive,
   EmptyPage,

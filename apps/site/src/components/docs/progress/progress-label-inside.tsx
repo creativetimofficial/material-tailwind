@@ -1,4 +1,4 @@
-import { Progress, Typography } from "@material-tailwind/react/dist";
+import { Progress, Typography } from "@material-tailwind/react";
 
 export function ProgressLabelInside() {
   return (

@@ -1,4 +1,4 @@
-import { Card, Typography, Button } from "@material-tailwind/react/dist";
+import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function HorizontalCard() {
   return (

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Card,
-  Typography,
-  Avatar,
-  Tooltip,
-} from "@material-tailwind/react/dist";
+import { Card, Typography, Avatar, Tooltip } from "@material-tailwind/react";
 
 export function BlogCard() {
   return (

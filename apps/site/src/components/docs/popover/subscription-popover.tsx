@@ -1,9 +1,4 @@
-import {
-  Popover,
-  Button,
-  Typography,
-  Input,
-} from "@material-tailwind/react/dist";
+import { Popover, Button, Typography, Input } from "@material-tailwind/react";
 
 export function SubscriptionPopover() {
   return (

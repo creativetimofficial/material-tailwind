@@ -1,4 +1,4 @@
-import { Timeline, Typography } from "@material-tailwind/react/dist";
+import { Timeline, Typography } from "@material-tailwind/react";
 import { CreditCard, Bell, DollarCircle } from "iconoir-react";
 
 export function ActivitiesTimeline() {
@@ -8,7 +8,7 @@ export function ActivitiesTimeline() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <Bell className="w-4 h-4" />
+            <Bell className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
@@ -24,7 +24,7 @@ export function ActivitiesTimeline() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <CreditCard className="w-4 h-4" />
+            <CreditCard className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
@@ -39,7 +39,7 @@ export function ActivitiesTimeline() {
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Icon>
-            <DollarCircle className="w-4 h-4" />
+            <DollarCircle className="h-4 w-4" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">

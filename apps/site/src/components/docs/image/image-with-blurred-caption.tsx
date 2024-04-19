@@ -1,4 +1,4 @@
-import { Card, Typography } from "@material-tailwind/react/dist";
+import { Card, Typography } from "@material-tailwind/react";
 
 export function ImageWithBlurredCaption() {
   return (

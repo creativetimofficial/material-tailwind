@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Vercel } from "@components";
-import { IconButton, Typography } from "@material-tailwind/react/dist";
+import { IconButton, Typography } from "@material-tailwind/react";
 import { X, Facebook, Dribbble, Github, Discord } from "iconoir-react";
 
 const YEAR = new Date().getFullYear();

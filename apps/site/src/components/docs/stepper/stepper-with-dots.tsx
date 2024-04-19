@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Timeline, Button } from "@material-tailwind/react/dist";
+import { Timeline, Button } from "@material-tailwind/react";
 
 export function StepperWithDots() {
   const [step, setStep] = React.useState(0);
@@ -14,23 +14,23 @@ export function StepperWithDots() {
         <Timeline.Item disabled={step < 0} value={0} className="w-full">
           <Timeline.Header>
             <Timeline.Separator />
-            <Timeline.Icon className="w-4 h-4" />
+            <Timeline.Icon className="h-4 w-4" />
           </Timeline.Header>
         </Timeline.Item>
         <Timeline.Item disabled={step < 1} value={1} className="w-full">
           <Timeline.Header>
             <Timeline.Separator />
-            <Timeline.Icon className="w-4 h-4" />
+            <Timeline.Icon className="h-4 w-4" />
           </Timeline.Header>
         </Timeline.Item>
         <Timeline.Item disabled={step < 2} value={2}>
           <Timeline.Header>
-            <Timeline.Icon className="w-4 h-4" />
+            <Timeline.Icon className="h-4 w-4" />
           </Timeline.Header>
         </Timeline.Item>
       </Timeline>
 
-      <div className="flex justify-between w-full gap-4 mt-14">
+      <div className="mt-14 flex w-full justify-between gap-4">
         <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
           Previous
         </Button>

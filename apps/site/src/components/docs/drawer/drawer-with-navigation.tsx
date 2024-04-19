@@ -11,7 +11,7 @@ import {
   Collapse,
   Input,
   Avatar,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 import {
   Xmark,
@@ -78,11 +78,11 @@ export function DrawerWithNavigation() {
               className="absolute right-2 top-2"
               isCircular
             >
-              <Xmark className="w-5 h-5" />
+              <Xmark className="h-5 w-5" />
             </Drawer.DismissTrigger>
           </div>
           <Card className="border-none shadow-none ">
-            <Card.Header className="flex items-center gap-2 mx-3 mt-3 mb-0 h-max">
+            <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
               <Avatar size="xs" src="/logo.png" alt="brand" />
               <Typography className="data-[type=p]:font-semibold">
                 Material Tailwind
@@ -91,7 +91,7 @@ export function DrawerWithNavigation() {
             <Card.Body className="p-3">
               <Input>
                 <Input.Icon>
-                  <Search className="w-full h-full" />
+                  <Search className="h-full w-full" />
                 </Input.Icon>
                 <Input.Field type="search" placeholder="Search here..." />
               </Input>
@@ -111,7 +111,7 @@ export function DrawerWithNavigation() {
                     )}
                   </List.Item>
                 ))}
-                <hr className="my-3 -mx-3 border-secondary" />
+                <hr className="-mx-3 my-3 border-secondary" />
                 <List.Item onClick={() => setIsOpen((cur) => !cur)}>
                   <List.ItemStart>
                     <MoreHorizCircle className="h-[18px] w-[18px]" />
@@ -145,7 +145,7 @@ export function DrawerWithNavigation() {
                     </List.Item>
                   </List>
                 </Collapse>
-                <hr className="my-3 -mx-3 border-secondary" />
+                <hr className="-mx-3 my-3 border-secondary" />
                 <List.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
                   <List.ItemStart>
                     <LogOut className="h-[18px] w-[18px]" />
@@ -157,7 +157,7 @@ export function DrawerWithNavigation() {
             <Card.Footer className="mt-8">
               <Card color="primary">
                 <Card.Header className="m-3">
-                  <SelectFace3d className="w-10 h-10 text-primary-foreground" />
+                  <SelectFace3d className="h-10 w-10 text-primary-foreground" />
                 </Card.Header>
                 <Card.Body>
                   <Typography type="h6" color="secondary" className="mb-1">

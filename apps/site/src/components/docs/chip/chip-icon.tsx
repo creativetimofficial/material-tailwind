@@ -1,4 +1,4 @@
-import { Chip } from "@material-tailwind/react/dist";
+import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
 export function ChipIcon() {

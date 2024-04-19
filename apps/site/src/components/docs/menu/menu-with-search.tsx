@@ -1,4 +1,4 @@
-import { Menu, Button, Input } from "@material-tailwind/react/dist";
+import { Menu, Button, Input } from "@material-tailwind/react";
 
 export function MenuWithSearch() {
   return (

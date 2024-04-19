@@ -1,4 +1,4 @@
-import { Tooltip, IconButton } from "@material-tailwind/react/dist";
+import { Tooltip, IconButton } from "@material-tailwind/react";
 import { Home, Plus, SelectFace3d, Settings } from "iconoir-react";
 
 export function SpeedDialWithLabel() {

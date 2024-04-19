@@ -4,7 +4,7 @@
 import * as React from "react";
 import { Check, Copy } from "iconoir-react";
 import { Fira_Code } from "next/font/google";
-import { IconButton, Button } from "@material-tailwind/react/dist";
+import { IconButton, Button } from "@material-tailwind/react";
 
 // @hooks
 import { useCopyToClipboard } from "usehooks-ts";

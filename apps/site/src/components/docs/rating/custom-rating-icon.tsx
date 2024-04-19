@@ -1,4 +1,4 @@
-import { Rating } from "@material-tailwind/react/dist";
+import { Rating } from "@material-tailwind/react";
 import { Heart, HeartSolid } from "iconoir-react";
 
 export function CustomRatingIcon() {

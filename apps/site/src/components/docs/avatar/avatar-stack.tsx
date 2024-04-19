@@ -1,4 +1,4 @@
-import { Avatar } from "@material-tailwind/react/dist";
+import { Avatar } from "@material-tailwind/react";
 
 export function AvatarStack() {
   return (

@@ -1,4 +1,4 @@
-import { Accordion } from "@material-tailwind/react/dist";
+import { Accordion } from "@material-tailwind/react";
 import { Minus, Plus } from "iconoir-react";
 
 export function AccordionCustomIcon() {

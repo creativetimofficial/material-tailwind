@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Timeline, Card } from "@material-tailwind/react/dist";
+import { Timeline, Card } from "@material-tailwind/react";
 
 export function StepperCustomStyles() {
   const [step, setStep] = React.useState(0);

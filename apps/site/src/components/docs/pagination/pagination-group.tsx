@@ -1,4 +1,4 @@
-import { IconButton, ButtonGroup } from "@material-tailwind/react/dist";
+import { IconButton, ButtonGroup } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
 export function PaginationGroup() {

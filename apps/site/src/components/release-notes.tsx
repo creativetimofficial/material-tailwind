@@ -1,6 +1,6 @@
 "use client";
 
-import { Timeline, Typography } from "@material-tailwind/react/dist";
+import { Timeline, Typography } from "@material-tailwind/react";
 import { Rocket } from "iconoir-react";
 import releases from "./releases";
 

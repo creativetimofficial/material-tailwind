@@ -3,7 +3,7 @@ import {
   Typography,
   IconButton,
   Tooltip,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { X, Facebook, Instagram } from "iconoir-react";
 
 export function ProfileCard() {

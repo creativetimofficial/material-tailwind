@@ -4,7 +4,7 @@ import {
   Typography,
   Avatar,
   List,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { City, Mail, Phone } from "iconoir-react";
 
 export function ContactPopover() {

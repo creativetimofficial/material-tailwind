@@ -1,4 +1,4 @@
-import { Tooltip, Button, Typography } from "@material-tailwind/react/dist";
+import { Tooltip, Button, Typography } from "@material-tailwind/react";
 
 export function TooltipCustomStyles() {
   return (

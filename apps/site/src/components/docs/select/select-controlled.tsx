@@ -1,5 +1,5 @@
 import React from "react";
-import { Select } from "@material-tailwind/react/dist";
+import { Select } from "@material-tailwind/react";
 
 export function SelectControlled() {
   const [value, setValue] = React.useState();

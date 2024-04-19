@@ -1,4 +1,4 @@
-import { Typography, IconButton } from "@material-tailwind/react/dist";
+import { Typography, IconButton } from "@material-tailwind/react";
 import { Facebook, Instagram, X, Github, Dribbble } from "iconoir-react";
 
 const LINKS = [

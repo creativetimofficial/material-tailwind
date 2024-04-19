@@ -5,7 +5,7 @@ import {
   Button,
   IconButton,
   Tooltip,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   HeartSolid,
   StarSolid,

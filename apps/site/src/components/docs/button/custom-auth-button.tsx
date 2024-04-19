@@ -1,4 +1,4 @@
-import { Button } from "@material-tailwind/react/dist";
+import { Button } from "@material-tailwind/react";
 import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
 
 export function CustomAuthButton() {

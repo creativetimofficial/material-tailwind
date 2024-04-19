@@ -1,4 +1,4 @@
-import { Button, IconButton } from "@material-tailwind/react/dist";
+import { Button, IconButton } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
 export function PaginationDemo() {

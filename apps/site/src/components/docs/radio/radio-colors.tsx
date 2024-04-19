@@ -1,4 +1,4 @@
-import { Radio } from "@material-tailwind/react/dist";
+import { Radio } from "@material-tailwind/react";
 
 export function RadioColors() {
   return (

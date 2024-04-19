@@ -1,4 +1,4 @@
-import { List } from "@material-tailwind/react/dist";
+import { List } from "@material-tailwind/react";
 
 export function ListWithLink() {
   return (

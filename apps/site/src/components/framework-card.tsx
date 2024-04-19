@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Card, Tooltip } from "@material-tailwind/react/dist";
+import { Card, Tooltip } from "@material-tailwind/react";
 
 interface Props {
   name: string;

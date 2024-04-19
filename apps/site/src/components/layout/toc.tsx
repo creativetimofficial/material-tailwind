@@ -14,7 +14,7 @@ import {
   Star,
 } from "iconoir-react";
 import { useEventListener } from "usehooks-ts";
-import { Card, Typography } from "@material-tailwind/react/dist";
+import { Card, Typography } from "@material-tailwind/react";
 
 interface ListItemProps {
   href: string;

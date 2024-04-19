@@ -1,4 +1,4 @@
-import { Button, IconButton, Textarea } from "@material-tailwind/react/dist";
+import { Button, IconButton, Textarea } from "@material-tailwind/react";
 import { Attachment } from "iconoir-react";
 
 export function CommentBoxWithTextarea() {

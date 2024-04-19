@@ -9,7 +9,7 @@ import {
   Button,
   IconButton,
   Typography,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   Bold,
   Code,

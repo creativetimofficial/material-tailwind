@@ -5,7 +5,7 @@ import {
   Typography,
   Avatar,
   type MenuItemProps,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { Bell, Clock } from "iconoir-react";
 
 const MenuItem = React.forwardRef<

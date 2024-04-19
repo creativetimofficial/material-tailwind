@@ -1,8 +1,8 @@
-import { Avatar } from "@material-tailwind/react/dist";
+import { Avatar } from "@material-tailwind/react";
 
 export function AvatarVariants() {
   return (
-    <div className="flex gap-2 item-center">
+    <div className="item-center flex gap-2">
       <Avatar
         shape="circular"
         src="https://dub.sh/TdSBP0D"

@@ -20,7 +20,7 @@ import {
 import { Brand } from "@components";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
-import { Button, Select } from "@material-tailwind/react/dist";
+import { Button, Select } from "@material-tailwind/react";
 import { DocSearch } from "@docsearch/react";
 
 interface NavIconProps extends React.ComponentProps<"button"> {

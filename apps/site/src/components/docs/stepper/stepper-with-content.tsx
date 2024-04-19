@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Timeline, Button, Typography } from "@material-tailwind/react/dist";
+import { Timeline, Button, Typography } from "@material-tailwind/react";
 import { HomeSimple, UserCircle, Settings } from "iconoir-react";
 
 export function StepperWithContent() {

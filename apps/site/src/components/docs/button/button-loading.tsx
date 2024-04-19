@@ -1,4 +1,4 @@
-import { Button, Spinner } from "@material-tailwind/react/dist";
+import { Button, Spinner } from "@material-tailwind/react";
 
 export function ButtonLoading() {
   return (

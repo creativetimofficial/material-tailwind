@@ -1,4 +1,4 @@
-import { Menu, Button, Checkbox } from "@material-tailwind/react/dist";
+import { Menu, Button, Checkbox } from "@material-tailwind/react";
 
 export function MenuWithCheckbox() {
   return (

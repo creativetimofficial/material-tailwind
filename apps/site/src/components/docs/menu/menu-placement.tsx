@@ -1,9 +1,9 @@
-import { Menu, Button } from "@material-tailwind/react/dist";
+import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuPlacement() {
   return (
     <>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <Menu.Trigger as={Button}>Top</Menu.Trigger>
           <Menu.Content>
@@ -29,7 +29,7 @@ export function MenuPlacement() {
           </Menu.Content>
         </Menu>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="right">
           <Menu.Trigger as={Button}>Right</Menu.Trigger>
           <Menu.Content>
@@ -55,7 +55,7 @@ export function MenuPlacement() {
           </Menu.Content>
         </Menu>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="bottom">
           <Menu.Trigger as={Button}>Bottom</Menu.Trigger>
           <Menu.Content>

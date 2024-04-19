@@ -1,4 +1,4 @@
-import { IconButton, Textarea } from "@material-tailwind/react/dist";
+import { IconButton, Textarea } from "@material-tailwind/react";
 import { Emoji, GifFormat, MediaImage, Send } from "iconoir-react";
 
 export function ChatboxWithTextarea() {

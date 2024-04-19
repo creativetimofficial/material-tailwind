@@ -5,7 +5,7 @@ import {
   IconButton,
   Input,
   Textarea,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
 export function DrawerWithForm() {

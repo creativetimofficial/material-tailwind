@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Timeline, Button } from "@material-tailwind/react/dist";
+import { Timeline, Button } from "@material-tailwind/react";
 import { HomeSimple, UserCircle, Settings } from "iconoir-react";
 
 export function StepperWithIcon() {
@@ -16,7 +16,7 @@ export function StepperWithIcon() {
           <Timeline.Header>
             <Timeline.Separator />
             <Timeline.Icon>
-              <HomeSimple className="w-6 h-6" />
+              <HomeSimple className="h-6 w-6" />
             </Timeline.Icon>
           </Timeline.Header>
         </Timeline.Item>
@@ -24,20 +24,20 @@ export function StepperWithIcon() {
           <Timeline.Header>
             <Timeline.Separator />
             <Timeline.Icon>
-              <UserCircle className="w-6 h-6" />
+              <UserCircle className="h-6 w-6" />
             </Timeline.Icon>
           </Timeline.Header>
         </Timeline.Item>
         <Timeline.Item disabled={step < 2} value={2}>
           <Timeline.Header>
             <Timeline.Icon>
-              <Settings className="w-6 h-6" />
+              <Settings className="h-6 w-6" />
             </Timeline.Icon>
           </Timeline.Header>
         </Timeline.Item>
       </Timeline>
 
-      <div className="flex justify-between w-full gap-4 mt-14">
+      <div className="mt-14 flex w-full justify-between gap-4">
         <Button disabled={step === 0} onClick={() => setStep(step - 1)}>
           Previous
         </Button>

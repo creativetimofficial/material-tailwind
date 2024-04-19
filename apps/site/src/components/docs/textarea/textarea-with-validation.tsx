@@ -1,4 +1,4 @@
-import { Textarea, Typography } from "@material-tailwind/react/dist";
+import { Textarea, Typography } from "@material-tailwind/react";
 
 export function TextareaWithValidation() {
   return (

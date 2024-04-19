@@ -1,4 +1,4 @@
-import { Typography } from "@material-tailwind/react/dist";
+import { Typography } from "@material-tailwind/react";
 
 export function Paragraph() {
   return (

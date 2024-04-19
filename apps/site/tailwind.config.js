@@ -1,4 +1,4 @@
-import mtConfig from "@material-tailwind/react/dist/plugins";
+import { mtConfig } from "@material-tailwind/react";
 
 /** @type {import('tailwindcss').Config} */
 export default {

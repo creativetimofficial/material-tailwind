@@ -1,4 +1,4 @@
-import { Dialog, Button, Typography } from "@material-tailwind/react/dist";
+import { Dialog, Button, Typography } from "@material-tailwind/react";
 import { AppNotification } from "iconoir-react";
 
 export function DialogNotification() {

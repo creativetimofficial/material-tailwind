@@ -1,4 +1,4 @@
-import { Card, List, Typography, Chip } from "@material-tailwind/react/dist";
+import { Card, List, Typography, Chip } from "@material-tailwind/react";
 import {
   Archive,
   EmptyPage,

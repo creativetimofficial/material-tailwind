@@ -21,7 +21,7 @@ import {
   Menu,
   Select,
   Typography,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   EditPencil,
   EyeSolid,

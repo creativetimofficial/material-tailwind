@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Menu, Button } from "@material-tailwind/react/dist";
+import { Input, Menu, Button } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
 export function InputWithDropdown() {
@@ -13,12 +13,12 @@ export function InputWithDropdown() {
         <Menu.Trigger
           as={Button}
           variant="ghost"
-          className="flex items-center h-10 gap-2 pl-3 border border-r-0 rounded-r-none border-surface bg-secondary"
+          className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-surface bg-secondary pl-3"
         >
           <img
             src={flags.svg}
             alt={name}
-            className="object-cover w-4 h-4 rounded-full"
+            className="h-4 w-4 rounded-full object-cover"
           />
           {countryCallingCode}
         </Menu.Trigger>
@@ -34,7 +34,7 @@ export function InputWithDropdown() {
                 <img
                   src={flags.svg}
                   alt={name}
-                  className="object-cover w-5 h-5 rounded-full"
+                  className="h-5 w-5 rounded-full object-cover"
                 />
                 {name} <span className="ml-auto">{countryCallingCode}</span>
               </Menu.Item>

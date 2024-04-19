@@ -1,4 +1,4 @@
-import { Breadcrumb } from "@material-tailwind/react/dist";
+import { Breadcrumb } from "@material-tailwind/react";
 
 export function BreadcrumbCustomSeparator() {
   return (

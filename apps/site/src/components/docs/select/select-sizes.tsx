@@ -1,4 +1,4 @@
-import { Select } from "@material-tailwind/react/dist";
+import { Select } from "@material-tailwind/react";
 
 export function SelectSizes() {
   return (

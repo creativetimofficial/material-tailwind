@@ -1,4 +1,4 @@
-import { Switch, Typography } from "@material-tailwind/react/dist";
+import { Switch, Typography } from "@material-tailwind/react";
 
 const ID = "switch";
 

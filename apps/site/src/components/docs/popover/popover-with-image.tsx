@@ -1,4 +1,4 @@
-import { Popover, Button, Typography } from "@material-tailwind/react/dist";
+import { Popover, Button, Typography } from "@material-tailwind/react";
 import { NavArrowRight } from "iconoir-react";
 
 export function PopoverWithImage() {

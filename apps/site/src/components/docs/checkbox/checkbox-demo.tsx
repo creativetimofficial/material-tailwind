@@ -1,4 +1,4 @@
-import { Checkbox } from "@material-tailwind/react/dist";
+import { Checkbox } from "@material-tailwind/react";
 
 export function CheckboxDemo() {
   return (

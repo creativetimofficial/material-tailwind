@@ -1,4 +1,4 @@
-import { Alert, Button } from "@material-tailwind/react/dist";
+import { Alert, Button } from "@material-tailwind/react";
 import { WarningCircleSolid } from "iconoir-react";
 
 export function AlertCustomCloseIcon() {

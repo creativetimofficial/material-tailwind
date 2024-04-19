@@ -1,4 +1,4 @@
-import { Select, Typography } from "@material-tailwind/react/dist";
+import { Select, Typography } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
 export function SelectCountries() {

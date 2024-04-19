@@ -5,7 +5,7 @@ import {
   Typography,
   Collapse,
   Card,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   Archive,
   Menu,

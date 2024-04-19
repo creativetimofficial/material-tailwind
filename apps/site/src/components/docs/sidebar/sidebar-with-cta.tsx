@@ -6,7 +6,7 @@ import {
   Chip,
   Collapse,
   Button,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   Archive,
   EmptyPage,

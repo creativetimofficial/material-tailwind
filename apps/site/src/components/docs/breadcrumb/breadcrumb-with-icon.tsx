@@ -1,4 +1,4 @@
-import { Breadcrumb } from "@material-tailwind/react/dist";
+import { Breadcrumb } from "@material-tailwind/react";
 import { HomeSimple } from "iconoir-react";
 
 export function BreadcrumbWithIcon() {

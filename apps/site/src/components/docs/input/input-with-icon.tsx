@@ -1,4 +1,4 @@
-import { Input } from "@material-tailwind/react/dist";
+import { Input } from "@material-tailwind/react";
 import { ProfileCircle, Lock } from "iconoir-react";
 
 export function InputWithIcon() {

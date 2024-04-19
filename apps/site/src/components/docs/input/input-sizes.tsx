@@ -1,4 +1,4 @@
-import { Input } from "@material-tailwind/react/dist";
+import { Input } from "@material-tailwind/react";
 
 export function InputSizes() {
   return (

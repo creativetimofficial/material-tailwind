@@ -1,4 +1,4 @@
-import { Typography } from "@material-tailwind/react/dist";
+import { Typography } from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
 

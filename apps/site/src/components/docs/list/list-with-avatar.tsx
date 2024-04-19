@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List, Avatar, Typography } from "@material-tailwind/react/dist";
+import { List, Avatar, Typography } from "@material-tailwind/react";
 
 const ListItem = React.forwardRef<
   typeof List.Item,

@@ -1,4 +1,4 @@
-import { Timeline, Typography, Avatar } from "@material-tailwind/react/dist";
+import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
 export function TimelineWithAvatar() {
   return (

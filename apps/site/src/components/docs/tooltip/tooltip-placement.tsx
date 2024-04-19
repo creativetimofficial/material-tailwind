@@ -1,9 +1,9 @@
-import { Tooltip, Button } from "@material-tailwind/react/dist";
+import { Tooltip, Button } from "@material-tailwind/react";
 
 export function TooltipPlacement() {
   return (
     <>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="top">
           <Tooltip.Trigger as={Button}>Top</Tooltip.Trigger>
           <Tooltip.Content>
@@ -26,7 +26,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="right">
           <Tooltip.Trigger as={Button}>Right</Tooltip.Trigger>
           <Tooltip.Content>
@@ -49,7 +49,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="bottom">
           <Tooltip.Trigger as={Button}>Bottom</Tooltip.Trigger>
           <Tooltip.Content>
@@ -72,7 +72,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="left">
           <Tooltip.Trigger as={Button}>Left</Tooltip.Trigger>
           <Tooltip.Content>

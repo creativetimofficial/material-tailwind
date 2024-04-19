@@ -1,4 +1,4 @@
-import { Menu, Button } from "@material-tailwind/react/dist";
+import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuWithScrollingContent() {
   return (

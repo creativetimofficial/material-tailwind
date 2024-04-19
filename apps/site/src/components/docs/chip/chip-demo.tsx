@@ -1,4 +1,4 @@
-import { Chip } from "@material-tailwind/react/dist";
+import { Chip } from "@material-tailwind/react";
 
 export function ChipDemo() {
   return (

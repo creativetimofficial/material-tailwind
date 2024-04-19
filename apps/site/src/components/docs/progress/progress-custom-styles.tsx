@@ -1,4 +1,4 @@
-import { Progress } from "@material-tailwind/react/dist";
+import { Progress } from "@material-tailwind/react";
 
 export function ProgressCustomStyles() {
   return (

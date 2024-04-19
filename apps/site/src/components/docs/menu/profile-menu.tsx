@@ -1,4 +1,4 @@
-import { Menu, Avatar } from "@material-tailwind/react/dist";
+import { Menu, Avatar } from "@material-tailwind/react";
 import { UserCircle, Settings, HeadsetHelp, LogOut } from "iconoir-react";
 
 export function ProfileMenu() {

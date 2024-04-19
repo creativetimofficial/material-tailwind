@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Accordion, Button } from "@material-tailwind/react/dist";
+import { Accordion, Button } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
 export function ControlledAccordion() {

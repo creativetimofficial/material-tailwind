@@ -1,4 +1,4 @@
-import { Tabs } from "@material-tailwind/react/dist";
+import { Tabs } from "@material-tailwind/react";
 
 export function TransparentTabs() {
   return (

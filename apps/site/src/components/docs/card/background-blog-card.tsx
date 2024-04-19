@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Typography, Avatar } from "@material-tailwind/react/dist";
+import { Card, Typography, Avatar } from "@material-tailwind/react";
 
 export function BackgroundBlogCard() {
   return (

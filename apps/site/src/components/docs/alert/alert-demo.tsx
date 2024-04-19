@@ -1,4 +1,4 @@
-import { Alert } from "@material-tailwind/react/dist";
+import { Alert } from "@material-tailwind/react";
 
 export function AlertDemo() {
   return (

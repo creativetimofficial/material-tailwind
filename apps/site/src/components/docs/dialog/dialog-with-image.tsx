@@ -4,7 +4,7 @@ import {
   Avatar,
   Typography,
   IconButton,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import { Heart, ShareIos } from "iconoir-react";
 
 export function DialogWithImage() {

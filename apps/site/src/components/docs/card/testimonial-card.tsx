@@ -4,7 +4,7 @@ import {
   Typography,
   Avatar,
   Rating,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 export function TestimonialCard() {
   return (

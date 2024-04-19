@@ -1,4 +1,4 @@
-import { Popover, Button, Typography } from "@material-tailwind/react/dist";
+import { Popover, Button, Typography } from "@material-tailwind/react";
 
 export function PopoverDemo() {
   return (

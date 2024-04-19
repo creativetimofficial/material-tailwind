@@ -1,4 +1,4 @@
-import { Chip, Avatar } from "@material-tailwind/react/dist";
+import { Chip, Avatar } from "@material-tailwind/react";
 
 export function ChipWithAvatar() {
   return (

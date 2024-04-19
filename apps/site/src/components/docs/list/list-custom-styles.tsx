@@ -1,4 +1,4 @@
-import { List, Chip } from "@material-tailwind/react/dist";
+import { List, Chip } from "@material-tailwind/react";
 import { Mail, Settings, Trash } from "iconoir-react";
 
 export function ListCustomStyles() {

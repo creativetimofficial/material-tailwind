@@ -1,5 +1,5 @@
-import { Spinner } from "@material-tailwind/react/dist";
+import { Spinner } from "@material-tailwind/react";
 
 export function SpinnerCustomStyles() {
-  return <Spinner className="w-16 h-16" />;
+  return <Spinner className="h-16 w-16" />;
 }

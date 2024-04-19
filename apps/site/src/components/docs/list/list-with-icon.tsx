@@ -1,4 +1,4 @@
-import { List } from "@material-tailwind/react/dist";
+import { List } from "@material-tailwind/react";
 import { Mail, Settings, Trash } from "iconoir-react";
 
 export function ListWithIcon() {

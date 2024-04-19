@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List } from "@material-tailwind/react/dist";
+import { List } from "@material-tailwind/react";
 
 export function ListWithSelectedItem() {
   const [selected, setSelected] = React.useState("inbox");

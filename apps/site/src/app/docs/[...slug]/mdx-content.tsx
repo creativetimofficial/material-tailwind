@@ -4,7 +4,7 @@
 import Link from "next/link";
 import * as Icons from "@components/icons";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
-import { Typography as MTTypography } from "@material-tailwind/react/dist";
+import { Typography as MTTypography } from "@material-tailwind/react";
 import {
   ComponentPreview,
   CodePreview,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Menu, Button, Card, Typography } from "@material-tailwind/react/dist";
+import { Menu, Button, Card, Typography } from "@material-tailwind/react";
 import { NavArrowDown, Rocket } from "iconoir-react";
 
 const NavItem = React.forwardRef<

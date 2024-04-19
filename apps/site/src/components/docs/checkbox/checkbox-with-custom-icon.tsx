@@ -1,4 +1,4 @@
-import { Checkbox } from "@material-tailwind/react/dist";
+import { Checkbox } from "@material-tailwind/react";
 import { Star, StarSolid } from "iconoir-react";
 
 export function CheckboxWithCustomIcon() {

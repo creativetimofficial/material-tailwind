@@ -1,4 +1,4 @@
-import { ButtonGroup, Button } from "@material-tailwind/react/dist";
+import { ButtonGroup, Button } from "@material-tailwind/react";
 import { Bold, Italic, Underline } from "iconoir-react";
 
 export function ButtonGroupWithIcon() {

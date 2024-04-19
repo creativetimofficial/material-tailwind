@@ -1,4 +1,4 @@
-import { Tabs } from "@material-tailwind/react/dist";
+import { Tabs } from "@material-tailwind/react";
 
 export function GalleryWithTab() {
   const data = [
@@ -172,7 +172,7 @@ export function GalleryWithTab() {
           {images?.map(({ imageLink }, index) => (
             <div key={index}>
               <img
-                className="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                className="h-40 w-full max-w-full rounded-lg object-cover object-center"
                 src={imageLink}
                 alt="image-photo"
               />

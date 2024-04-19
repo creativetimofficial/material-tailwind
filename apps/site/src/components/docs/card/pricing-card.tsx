@@ -1,4 +1,4 @@
-import { Card, Typography, Button, Chip } from "@material-tailwind/react/dist";
+import { Card, Typography, Button, Chip } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
 export function PricingCard() {

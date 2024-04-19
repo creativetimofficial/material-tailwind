@@ -1,4 +1,4 @@
-import { Tooltip, IconButton, Typography } from "@material-tailwind/react/dist";
+import { Tooltip, IconButton, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
 export function TooltipWithHelperIcon() {

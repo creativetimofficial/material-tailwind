@@ -7,7 +7,7 @@ import {
   IconButton,
   Tooltip,
   Input,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Transaction", "Amount", "Date", "Status", "Account", ""];
 

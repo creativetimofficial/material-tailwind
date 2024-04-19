@@ -13,7 +13,7 @@ import {
   Avatar,
   IconButton,
   Tooltip,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 const TABS = [
   {

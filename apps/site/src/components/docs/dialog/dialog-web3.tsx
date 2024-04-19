@@ -4,7 +4,7 @@ import {
   Typography,
   IconButton,
   Avatar,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 
 import { Xmark } from "iconoir-react";
 

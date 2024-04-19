@@ -1,4 +1,4 @@
-import { IconButton } from "@material-tailwind/react/dist";
+import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
 export function IconButtonAsLink() {

@@ -1,4 +1,4 @@
-import { Tooltip, Button } from "@material-tailwind/react/dist";
+import { Tooltip, Button } from "@material-tailwind/react";
 
 export function TooltipDemo() {
   return (

@@ -1,4 +1,4 @@
-import { Button, Input } from "@material-tailwind/react/dist";
+import { Button, Input } from "@material-tailwind/react";
 
 export function InputWithButton() {
   return (

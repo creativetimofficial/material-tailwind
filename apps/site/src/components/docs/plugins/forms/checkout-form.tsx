@@ -13,7 +13,7 @@ import {
   Checkbox,
   Typography,
   InputFieldProps,
-} from "@material-tailwind/react/dist";
+} from "@material-tailwind/react";
 import {
   Mail,
   Calendar,

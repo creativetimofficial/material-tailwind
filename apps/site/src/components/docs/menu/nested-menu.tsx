@@ -1,4 +1,4 @@
-import { Menu, Button } from "@material-tailwind/react/dist";
+import { Menu, Button } from "@material-tailwind/react";
 import { NavArrowRight } from "iconoir-react";
 
 export function NestedMenu() {

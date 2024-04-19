@@ -1,4 +1,4 @@
-import { Timeline, Typography } from "@material-tailwind/react/dist";
+import { Timeline, Typography } from "@material-tailwind/react";
 
 export function TimelineDemo() {
   return (

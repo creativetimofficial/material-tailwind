@@ -1,4 +1,4 @@
-import { Checkbox, Typography } from "@material-tailwind/react/dist";
+import { Checkbox, Typography } from "@material-tailwind/react";
 
 export function CheckboxWithLabel() {
   return (

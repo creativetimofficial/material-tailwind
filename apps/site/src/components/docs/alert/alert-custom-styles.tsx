@@ -1,4 +1,4 @@
-import { Alert } from "@material-tailwind/react/dist";
+import { Alert } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
 export function AlertCustomStyles() {

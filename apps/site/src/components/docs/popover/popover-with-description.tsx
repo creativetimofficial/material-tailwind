@@ -1,9 +1,4 @@
-import {
-  Popover,
-  Button,
-  Typography,
-  Chip,
-} from "@material-tailwind/react/dist";
+import { Popover, Button, Typography, Chip } from "@material-tailwind/react";
 import { CheckCircleSolid, StarSolid } from "iconoir-react";
 
 export function PopoverWithDescription() {
