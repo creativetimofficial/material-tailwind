@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
   reactStrictMode: false,
   images: {
     domains: ["images.unsplash.com", "nepcha.com"],
