@@ -11,14 +11,14 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 async function readDocsContent(path) {
-  const baseDir = "apps/site/src/content";
+  const baseDir = "src/content";
   const fullPath = `${baseDir}/${path}.mdx`;
 
-  if (!fsSync.existsSync(fullPath)) {
-    notFound();
-  }
+  // if (!fsSync.existsSync(fullPath)) {
+  //   notFound();
+  // }
 
-  const rawContent = await fs.readFile(fullPath, "utf-8");
+  const rawContent = fsSync.readFileSync(fullPath, "utf-8");
   const { data: frontMatter, content } = matter(rawContent);
 
   const serialized = await serialize(content, {
