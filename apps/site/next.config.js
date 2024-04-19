@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   reactStrictMode: false,
   images: {
     domains: ["images.unsplash.com", "nepcha.com"],
@@ -72,25 +71,25 @@ const nextConfig = {
       },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: "/figma",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/figma",
-      },
-      {
-        source: "/blocks",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-      },
-      {
-        source: "/blocks/:slug*",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/figma",
+  //       destination:
+  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/figma",
+  //     },
+  //     {
+  //       source: "/blocks",
+  //       destination:
+  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
+  //     },
+  //     {
+  //       source: "/blocks/:slug*",
+  //       destination:
+  //         "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;
