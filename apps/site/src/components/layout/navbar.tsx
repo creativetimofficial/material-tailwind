@@ -79,12 +79,6 @@ function NavItem({
 export function Navbar() {
   const { theme, setTheme }: any = useTheme();
 
-  const themeIcons = {
-    light: SunLight,
-    dark: HalfMoon,
-    system: ModernTv,
-  };
-
   function toggleTheme() {
     switch (theme) {
       case "light":
@@ -115,7 +109,13 @@ export function Navbar() {
           <NavIcon
             tabIndex={0}
             role="button"
-            icon={themeIcons[theme]}
+            icon={
+              theme === "light"
+                ? SunLight
+                : theme === "dark"
+                  ? HalfMoon
+                  : ModernTv
+            }
             onClick={toggleTheme}
             onKeyDown={toggleThemeOnEnter}
           />
