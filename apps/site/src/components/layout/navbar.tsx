@@ -18,14 +18,31 @@ import {
   Post,
   MoreVert,
   Xmark,
+  Menu as MenuIcon,
+  NavArrowRight,
 } from "iconoir-react";
 import { Brand } from "@components";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 import { DocSearch } from "@docsearch/react";
 import { twMerge } from "tailwind-merge";
-// @ts-ignore
-import { Button, Select, IconButton, Dialog, Typography, Menu } from "@material-tailwind/react";
+
+import {
+  Button,
+  Select,
+  IconButton,
+  Dialog,
+  Typography,
+  Menu,
+  Drawer,
+  Card,
+  Input,
+  Breadcrumb,
+  // @ts-ignore
+} from "@material-tailwind/react";
+import { getRoutes } from "@components";
+
+import { usePathname } from "next/navigation";
 
 interface NavIconProps extends React.ComponentProps<"button"> {
   icon: React.ElementType;
@@ -39,7 +56,10 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
     <span
       {...rest}
-      className={twMerge("group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info", rest?.className)}
+      className={twMerge(
+        "group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info",
+        rest?.className,
+      )}
     >
       <Icon className="h-5 w-5 stroke-[1.5]" />
     </span>
@@ -66,7 +86,12 @@ function NavItem({
   };
 
   return (
-    <span className={twMerge("group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info", className)}>
+    <span
+      className={twMerge(
+        "group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info",
+        className,
+      )}
+    >
       <i className="relative h-[18px] w-[18px]">
         <Icon
           className={clsx(styles.icon, {
@@ -83,6 +108,8 @@ function NavItem({
 }
 
 export function Navbar() {
+  const pathname = usePathname();
+  const pathParts = pathname.split("/");
   const { theme, setTheme }: any = useTheme();
 
   function toggleTheme() {
@@ -109,7 +136,7 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background p-4">
+    <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background px-4 pb-0 pt-4 lg:pb-4">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
         <div className="flex items-center gap-1">
           <NavIcon
@@ -126,10 +153,14 @@ export function Navbar() {
             className="hidden lg:grid"
             onKeyDown={toggleThemeOnEnter}
           />
-          <Link target="_blank" href="https://discord.com/invite/FhCJCaHdQa" className="hidden lg:grid">
+          <Link
+            target="_blank"
+            href="https://discord.com/invite/FhCJCaHdQa"
+            className="hidden lg:grid"
+          >
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info hidden lg:grid">
+          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info lg:grid">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -139,18 +170,18 @@ export function Navbar() {
               />
             </div>
           </div>
-          <Link href="/" className="h-11 w-11 mr-2 grid lg:!hidden shrink-0">
+          <Link href="/" className="mr-2 grid h-11 w-11 shrink-0 lg:!hidden">
             <Brand />
           </Link>
           <Select value="v3.0.0">
-            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary lg:bg-primary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground lg:text-primary-foreground ring-0" />
+            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0 lg:bg-primary lg:text-primary-foreground" />
             <Select.List>
               <Select.Option value="v3.0.0">v3.0.0</Select.Option>
               <Select.Option value="v2.1.9">v2.1.9</Select.Option>
             </Select.List>
           </Select>
         </div>
-        <div className="lg:flex hidden absolute left-2/4 -translate-x-2/4 items-center gap-1">
+        <div className="absolute left-2/4 hidden -translate-x-2/4 items-center gap-1 lg:flex">
           <Link href="/docs/react/installation">
             <NavItem icon={MultiplePages}>Docs</NavItem>
           </Link>
@@ -174,7 +205,7 @@ export function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <div className="group relative h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info grid lg:hidde">
+          <div className="lg:hidde group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -197,10 +228,10 @@ export function Navbar() {
           </Button>
           <Dialog>
             <Dialog.Trigger as={IconButton} className="grid lg:hidden">
-              <MoreVert className="w-5 h-5 stroke-[1.5]" />
+              <MoreVert className="h-5 w-5 stroke-[1.5]" />
             </Dialog.Trigger>
             <Dialog.Overlay className="backdrop-blur">
-              <Dialog.Content className="fixed max-w-[280px] p-1 w-full top-3.5 left-[unset] right-3.5 translate-x-0 translate-y-0 rounded-lg">
+              <Dialog.Content className="fixed left-[unset] right-3.5 top-3.5 w-full max-w-[280px] translate-x-0 translate-y-0 rounded-lg p-1">
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -211,44 +242,64 @@ export function Navbar() {
                   <Xmark className="h-5 w-5" />
                 </Dialog.DismissTrigger>
                 <Link href="/docs/react/installation">
-                  <NavItem icon={MultiplePages} className="p-2">Docs</NavItem>
+                  <NavItem icon={MultiplePages} className="p-2">
+                    Docs
+                  </NavItem>
                 </Link>
                 <Link href="/pro">
-                  <NavItem icon={DollarCircle} className="p-2">PRO</NavItem>
+                  <NavItem icon={DollarCircle} className="p-2">
+                    PRO
+                  </NavItem>
                 </Link>
                 <Link href="/blocks">
-                  <NavItem icon={SelectFace3d} className="p-2">Blocks</NavItem>
+                  <NavItem icon={SelectFace3d} className="p-2">
+                    Blocks
+                  </NavItem>
                 </Link>
                 <Link href="/figma">
-                  <NavItem icon={Figma} className="p-2">Figma</NavItem>
+                  <NavItem icon={Figma} className="p-2">
+                    Figma
+                  </NavItem>
                 </Link>
                 <Link href="/roots-of-ui-ux-design">
-                  <NavItem icon={Book} className="p-2">Book</NavItem>
+                  <NavItem icon={Book} className="p-2">
+                    Book
+                  </NavItem>
                 </Link>
                 <Link href="/blog">
-                  <NavItem icon={Post} className="p-2">Blog</NavItem>
+                  <NavItem icon={Post} className="p-2">
+                    Blog
+                  </NavItem>
                 </Link>
                 <Link href="https://discord.com/invite/FhCJCaHdQa">
-                  <NavItem icon={Discord} className="p-2">Discord</NavItem>
+                  <NavItem icon={Discord} className="p-2">
+                    Discord
+                  </NavItem>
                 </Link>
-                <div className="bg-surface-light flex justify-between items-center rounded-md pl-3 pr-2 py-2 mt-1">
+                <div className="mt-1 flex items-center justify-between rounded-md bg-surface-light py-2 pl-3 pr-2">
                   <Typography type="small">Theme</Typography>
-                  <Menu placement="bottom-start">
+                  <Menu placement="bottom-end">
                     <Menu.Trigger as={Button} size="sm">
-                      {theme === "light" ? (<SunLight className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />) : theme === "dark" ? (<HalfMoon className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />) : (<ModernTv className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />)}
+                      {theme === "light" ? (
+                        <SunLight className="mr-1.5 h-3.5 w-3.5 stroke-[1.5]" />
+                      ) : theme === "dark" ? (
+                        <HalfMoon className="mr-1.5 h-3.5 w-3.5 stroke-[1.5]" />
+                      ) : (
+                        <ModernTv className="mr-1.5 h-3.5 w-3.5 stroke-[1.5]" />
+                      )}
                       <span className="mr-0.5 capitalize">{theme}</span>
                     </Menu.Trigger>
-                    <Menu.Content className="z-[99999]">
+                    <Menu.Content className="z-[99999] w-max min-w-max">
                       <Menu.Item onClick={() => setTheme("light")}>
-                        <SunLight className="h-[18px] w-[18px] mr-2" />
+                        <SunLight className="mr-2 h-4 w-4" />
                         Light
                       </Menu.Item>
                       <Menu.Item onClick={() => setTheme("dark")}>
-                        <HalfMoon className="h-[18px] w-[18px] mr-2" />
+                        <HalfMoon className="mr-2 h-4 w-4" />
                         Dark
                       </Menu.Item>
                       <Menu.Item onClick={() => setTheme("system")}>
-                        <ModernTv className="h-[18px] w-[18px] mr-2" />
+                        <ModernTv className="mr-2 h-4 w-4" />
                         System
                       </Menu.Item>
                     </Menu.Content>
@@ -258,6 +309,86 @@ export function Navbar() {
             </Dialog.Overlay>
           </Dialog>
         </div>
+      </div>
+      <div className="-mx-4 mt-4 flex items-center gap-2 border-t border-surface px-4 py-2 lg:hidden">
+        <Drawer>
+          <Drawer.Trigger as={IconButton} variant="ghost">
+            <MenuIcon className="h-5 w-5" />
+          </Drawer.Trigger>
+          <Drawer.Overlay className="backdrop-blur">
+            <Drawer.Panel placement="left" className="p-0">
+              <div className="flex items-center justify-between gap-4">
+                <Drawer.DismissTrigger
+                  as={IconButton}
+                  size="sm"
+                  variant="ghost"
+                  className="absolute right-2 top-2"
+                  isCircular
+                >
+                  <Xmark className="h-5 w-5" />
+                </Drawer.DismissTrigger>
+              </div>
+              <Card className="grid h-full items-start border-none shadow-none">
+                <Card.Header className="h-max w-full rounded-none p-2">
+                  <div className="flex h-max items-center gap-3">
+                    <div className="h-11 w-11">
+                      <Brand />
+                    </div>
+                    <Typography className="font-semibold">
+                      Material Tailwind
+                    </Typography>
+                  </div>
+                </Card.Header>
+                <Card.Body as="ul" className="h-[70vh] overflow-auto p-4">
+                  {getRoutes()}
+                </Card.Body>
+                <Card.Footer className="mt-auto h-[25vh]">
+                  <Card color="primary" className="shadow-none">
+                    <Card.Header className="mx-3 mt-3">
+                      <SelectFace3d className="h-10 w-10 text-primary-foreground" />
+                    </Card.Header>
+                    <Card.Body>
+                      <Typography type="h6" color="secondary" className="mb-1">
+                        Upgrade to PRO
+                      </Typography>
+                      <Typography type="small" className="text-secondary-dark">
+                        Upgrade to Material Tailwind PRO and get even more
+                        components, plugins, advanced features and premium.
+                      </Typography>
+                    </Card.Body>
+                    <Card.Footer>
+                      <Button size="sm" as="a" href="#" color="secondary">
+                        Upgrade Now
+                      </Button>
+                    </Card.Footer>
+                  </Card>
+                </Card.Footer>
+              </Card>
+            </Drawer.Panel>
+          </Drawer.Overlay>
+        </Drawer>
+
+        <Breadcrumb>
+          {pathParts.map((part, index) => (
+            <React.Fragment key={index}>
+              <Breadcrumb.Link
+                className={twMerge(
+                  "capitalize text-primary",
+                  index !== pathParts.length - 1 && "text-foreground",
+                )}
+              >
+                {part.replaceAll("-", " ")}
+              </Breadcrumb.Link>
+              {index !== pathParts.length - 1
+                ? index !== 0 && (
+                    <Breadcrumb.Separator>
+                      <NavArrowRight className="h-3 w-3 stroke-2" />
+                    </Breadcrumb.Separator>
+                  )
+                : null}
+            </React.Fragment>
+          ))}
+        </Breadcrumb>
       </div>
     </nav>
   );

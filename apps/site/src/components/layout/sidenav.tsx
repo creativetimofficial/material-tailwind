@@ -4,7 +4,7 @@ import routes from "@routes";
 import { NavArrowRight } from "iconoir-react";
 import { Collapse } from "@material-tailwind/react";
 
-function Collapsible({ category, categoryPages }) {
+export function Collapsible({ category, categoryPages }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleCollapse = () => setIsOpen((prev) => !prev);
@@ -42,7 +42,7 @@ function Collapsible({ category, categoryPages }) {
   );
 }
 
-function getRoutes() {
+export function getRoutes() {
   return routes.map(({ title, pages, categories }, idx) => {
     return (
       <React.Fragment key={idx}>
