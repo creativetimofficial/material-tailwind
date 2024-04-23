@@ -8,16 +8,16 @@ export function Docs({ children }: { children: React.ReactNode }) {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider defaultTheme="system" attribute="class">
       <Navbar />
       <div className="px-3 md:px-4">
         <div className="mx-auto grid max-w-7xl grid-cols-6">
-          <div className="col-span-1">
+          <div className="col-span-1 xl:block hidden">
             <Sidenav />
           </div>
           <div
             ref={contentRef}
-            className="col-span-4 mt-[105px] px-4 lg:mx-8 lg:px-8"
+            className="col-span-6 xl:col-span-4 mt-[105px] px-4 xl:mx-8 lg:px-8"
           >
             <div className="mb-8 mr-60 flex items-center gap-2 py-2 text-sm text-foreground">
               <span className="cursor-pointer transition-colors duration-300 hover:text-primary">
@@ -32,7 +32,7 @@ export function Docs({ children }: { children: React.ReactNode }) {
             </div>
             {children}
           </div>
-          <div className="col-span-1">
+          <div className="xl:block hidden col-span-1">
             <React.Suspense>
               <Toc
                 contentRef={

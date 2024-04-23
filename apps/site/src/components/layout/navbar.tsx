@@ -16,12 +16,16 @@ import {
   DollarCircle,
   Book,
   Post,
+  MoreVert,
+  Xmark,
 } from "iconoir-react";
 import { Brand } from "@components";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
-import { Button, Select } from "@material-tailwind/react";
 import { DocSearch } from "@docsearch/react";
+import { twMerge } from "tailwind-merge";
+// @ts-ignore
+import { Button, Select, IconButton, Dialog, Typography, Menu } from "@material-tailwind/react";
 
 interface NavIconProps extends React.ComponentProps<"button"> {
   icon: React.ElementType;
@@ -35,7 +39,7 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
   return (
     <span
       {...rest}
-      className="group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info"
+      className={twMerge("group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info", rest?.className)}
     >
       <Icon className="h-5 w-5 stroke-[1.5]" />
     </span>
@@ -45,10 +49,12 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
 function NavItem({
   icon: Icon,
   hoverIcon: HoverIcon,
+  className,
   children,
 }: {
   icon: React.ElementType;
   hoverIcon?: React.ElementType;
+  className?: string;
   children: React.ReactNode;
 }) {
   const styles = {
@@ -60,7 +66,7 @@ function NavItem({
   };
 
   return (
-    <span className="group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
+    <span className={twMerge("group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info", className)}>
       <i className="relative h-[18px] w-[18px]">
         <Icon
           className={clsx(styles.icon, {
@@ -105,7 +111,7 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background p-4">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <NavIcon
             tabIndex={0}
             role="button"
@@ -117,12 +123,13 @@ export function Navbar() {
                   : ModernTv
             }
             onClick={toggleTheme}
+            className="hidden lg:grid"
             onKeyDown={toggleThemeOnEnter}
           />
-          <Link target="_blank" href="https://discord.com/invite/FhCJCaHdQa">
+          <Link target="_blank" href="https://discord.com/invite/FhCJCaHdQa" className="hidden lg:grid">
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
+          <div className="group relative h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info hidden lg:grid">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -132,15 +139,18 @@ export function Navbar() {
               />
             </div>
           </div>
+          <Link href="/" className="h-11 w-11 mr-2 grid lg:!hidden shrink-0">
+            <Brand />
+          </Link>
           <Select value="v3.0.0">
-            <Select.Trigger className="gap-1.5 rounded-full border-none bg-primary py-1.5 pl-3 pr-2.5 text-xs text-primary-foreground ring-0" />
+            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary lg:bg-primary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground lg:text-primary-foreground ring-0" />
             <Select.List>
               <Select.Option value="v3.0.0">v3.0.0</Select.Option>
               <Select.Option value="v2.1.9">v2.1.9</Select.Option>
             </Select.List>
           </Select>
         </div>
-        <div className="absolute left-2/4 flex -translate-x-2/4 items-center gap-1">
+        <div className="lg:flex hidden absolute left-2/4 -translate-x-2/4 items-center gap-1">
           <Link href="/docs/react/installation">
             <NavItem icon={MultiplePages}>Docs</NavItem>
           </Link>
@@ -163,7 +173,17 @@ export function Navbar() {
             <NavItem icon={Post}>Blog</NavItem>
           </Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          <div className="group relative h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info grid lg:hidde">
+            <Search className="h-5 w-5 stroke-[1.5]" />
+            <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
+              <DocSearch
+                appId={APP_ID}
+                apiKey={API_KEY}
+                indexName={INDEX_NAME}
+              />
+            </div>
+          </div>
           <Link
             target="_blank"
             href="https://github.com/creativetimofficial/material-tailwind"
@@ -175,6 +195,68 @@ export function Navbar() {
           <Button as={Link} href="/blocks#pricing">
             Pricing & FAQ
           </Button>
+          <Dialog>
+            <Dialog.Trigger as={IconButton} className="grid lg:hidden">
+              <MoreVert className="w-5 h-5 stroke-[1.5]" />
+            </Dialog.Trigger>
+            <Dialog.Overlay className="backdrop-blur">
+              <Dialog.Content className="fixed max-w-[280px] p-1 w-full top-3.5 left-[unset] right-3.5 translate-x-0 translate-y-0 rounded-lg">
+                <Dialog.DismissTrigger
+                  as={IconButton}
+                  size="sm"
+                  variant="ghost"
+                  className="absolute right-2 top-2"
+                  isCircular
+                >
+                  <Xmark className="h-5 w-5" />
+                </Dialog.DismissTrigger>
+                <Link href="/docs/react/installation">
+                  <NavItem icon={MultiplePages} className="p-2">Docs</NavItem>
+                </Link>
+                <Link href="/pro">
+                  <NavItem icon={DollarCircle} className="p-2">PRO</NavItem>
+                </Link>
+                <Link href="/blocks">
+                  <NavItem icon={SelectFace3d} className="p-2">Blocks</NavItem>
+                </Link>
+                <Link href="/figma">
+                  <NavItem icon={Figma} className="p-2">Figma</NavItem>
+                </Link>
+                <Link href="/roots-of-ui-ux-design">
+                  <NavItem icon={Book} className="p-2">Book</NavItem>
+                </Link>
+                <Link href="/blog">
+                  <NavItem icon={Post} className="p-2">Blog</NavItem>
+                </Link>
+                <Link href="https://discord.com/invite/FhCJCaHdQa">
+                  <NavItem icon={Discord} className="p-2">Discord</NavItem>
+                </Link>
+                <div className="bg-surface-light flex justify-between items-center rounded-md pl-3 pr-2 py-2 mt-1">
+                  <Typography type="small">Theme</Typography>
+                  <Menu placement="bottom-start">
+                    <Menu.Trigger as={Button} size="sm">
+                      {theme === "light" ? (<SunLight className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />) : theme === "dark" ? (<HalfMoon className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />) : (<ModernTv className="h-3.5 w-3.5 stroke-[1.5] mr-1.5" />)}
+                      <span className="mr-0.5 capitalize">{theme}</span>
+                    </Menu.Trigger>
+                    <Menu.Content className="z-[99999]">
+                      <Menu.Item onClick={() => setTheme("light")}>
+                        <SunLight className="h-[18px] w-[18px] mr-2" />
+                        Light
+                      </Menu.Item>
+                      <Menu.Item onClick={() => setTheme("dark")}>
+                        <HalfMoon className="h-[18px] w-[18px] mr-2" />
+                        Dark
+                      </Menu.Item>
+                      <Menu.Item onClick={() => setTheme("system")}>
+                        <ModernTv className="h-[18px] w-[18px] mr-2" />
+                        System
+                      </Menu.Item>
+                    </Menu.Content>
+                  </Menu>
+                </div>
+              </Dialog.Content>
+            </Dialog.Overlay>
+          </Dialog>
         </div>
       </div>
     </nav>
