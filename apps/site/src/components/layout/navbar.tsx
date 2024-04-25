@@ -329,7 +329,7 @@ export function Navbar() {
                 </Drawer.DismissTrigger>
               </div>
               <Card className="grid h-full items-start border-none shadow-none">
-                <Card.Header className="h-max w-full rounded-none p-2">
+                <Card.Header className="m-0 h-max w-full rounded-none p-3">
                   <div className="flex h-max items-center gap-3">
                     <div className="h-11 w-11">
                       <Brand />
@@ -339,10 +339,10 @@ export function Navbar() {
                     </Typography>
                   </div>
                 </Card.Header>
-                <Card.Body as="ul" className="h-[70vh] overflow-auto p-4">
+                <Card.Body as="ul" className="overflow-auto p-4">
                   {getRoutes()}
                 </Card.Body>
-                <Card.Footer className="mt-auto h-[25vh]">
+                <Card.Footer className="mt-auto">
                   <Card color="primary" className="shadow-none">
                     <Card.Header className="mx-3 mt-3">
                       <SelectFace3d className="h-10 w-10 text-primary-foreground" />
