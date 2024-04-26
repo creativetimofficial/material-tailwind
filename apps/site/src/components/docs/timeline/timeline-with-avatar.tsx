@@ -6,12 +6,16 @@ export function TimelineWithAvatar() {
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
-          <Timeline.Icon>
-            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          <Timeline.Icon className="p-0.5">
+            <Avatar
+              alt="Avatar"
+              src="https://dub.sh/TdSBP0D"
+              className="h-full w-full"
+            />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="primary" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -25,12 +29,16 @@ export function TimelineWithAvatar() {
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
-          <Timeline.Icon>
-            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          <Timeline.Icon className="p-0.5">
+            <Avatar
+              alt="Avatar"
+              src="https://dub.sh/TdSBP0D"
+              className="h-full w-full"
+            />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="primary" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -43,12 +51,16 @@ export function TimelineWithAvatar() {
       </Timeline.Item>
       <Timeline.Item>
         <Timeline.Header>
-          <Timeline.Icon>
-            <Avatar src="https://dub.sh/TdSBP0D" alt="Avatar" size="sm" />
+          <Timeline.Icon className="p-0.5">
+            <Avatar
+              alt="Avatar"
+              src="https://dub.sh/TdSBP0D"
+              className="h-full w-full"
+            />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="primary" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">

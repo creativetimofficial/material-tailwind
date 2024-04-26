@@ -10,7 +10,7 @@ import { Xmark } from "iconoir-react";
 
 export function DialogWithForm() {
   return (
-    <Dialog size="xs">
+    <Dialog size="sm">
       <Dialog.Trigger as={Button}>Sign In</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>

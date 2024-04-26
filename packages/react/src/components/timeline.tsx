@@ -221,6 +221,7 @@ export const TimelineItem = React.forwardRef<
       onClick={onClick}
       data-value={value}
       data-active={isActive}
+      data-completed={isActive}
       data-orientation={orientation}
       aria-disabled={disabled}
       className={styles}

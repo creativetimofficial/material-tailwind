@@ -1,22 +1,39 @@
 import { Breadcrumb } from "@material-tailwind/react";
-import { ArrowRight } from "iconoir-react";
+import {
+  Cube,
+  CursorPointer,
+  MultiplePages,
+  NavArrowRight,
+} from "iconoir-react";
 
 export function BreadcrumbCustomStyles() {
   return (
-    <Breadcrumb className="rounded-full bg-primary p-1">
-      <Breadcrumb.Link className="rounded-full bg-secondary px-3 py-1" href="#">
+    <Breadcrumb className="gap-0.5">
+      <Breadcrumb.Link
+        href="#"
+        className="rounded bg-secondary px-2 py-1 text-secondary-foreground"
+      >
+        <MultiplePages className="h-4 w-4" />
         Docs
       </Breadcrumb.Link>
-      <Breadcrumb.Separator className="text-white opacity-100">
-        <ArrowRight className="h-4 w-4" strokeWidth={2} />
+      <Breadcrumb.Separator>
+        <NavArrowRight className="h-4 w-4 stroke-2" />
       </Breadcrumb.Separator>
-      <Breadcrumb.Link href="#" className="rounded-full bg-secondary px-3 py-1">
+      <Breadcrumb.Link
+        href="#"
+        className="rounded bg-secondary px-2 py-1 text-secondary-foreground"
+      >
+        <Cube className="h-4 w-4" />
         Components
       </Breadcrumb.Link>
-      <Breadcrumb.Separator className="text-white opacity-100">
-        <ArrowRight className="h-4 w-4" strokeWidth={2} />
+      <Breadcrumb.Separator>
+        <NavArrowRight className="h-4 w-4 stroke-2" />
       </Breadcrumb.Separator>
-      <Breadcrumb.Link href="#" className="rounded-full bg-secondary px-3 py-1">
+      <Breadcrumb.Link
+        href="#"
+        className="rounded bg-primary px-2 py-1 text-primary-foreground"
+      >
+        <CursorPointer className="h-4 w-4 rotate-90" />
         Breadcrumb
       </Breadcrumb.Link>
     </Breadcrumb>

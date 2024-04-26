@@ -8,7 +8,7 @@ import { Xmark } from "iconoir-react";
 
 export function DialogLong() {
   return (
-    <Dialog size="sm">
+    <Dialog>
       <Dialog.Trigger as={Button}>Long Dialog</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>

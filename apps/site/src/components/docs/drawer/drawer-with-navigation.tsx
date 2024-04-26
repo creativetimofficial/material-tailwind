@@ -69,7 +69,7 @@ export function DrawerWithNavigation() {
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
       <Drawer.Overlay>
-        <Drawer.Panel placement="left">
+        <Drawer.Panel placement="left" className="p-0">
           <div className="flex items-center justify-between gap-4">
             <Drawer.DismissTrigger
               as={IconButton}
@@ -82,9 +82,9 @@ export function DrawerWithNavigation() {
             </Drawer.DismissTrigger>
           </div>
           <Card className="border-none shadow-none ">
-            <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
+            <Card.Header className="m-0 flex h-max items-center gap-2 px-3 pb-3 pt-4">
               <Avatar size="xs" src="/logo.png" alt="brand" />
-              <Typography className="data-[type=p]:font-semibold">
+              <Typography className="font-semibold">
                 Material Tailwind
               </Typography>
             </Card.Header>
@@ -154,8 +154,8 @@ export function DrawerWithNavigation() {
                 </List.Item>
               </List>
             </Card.Body>
-            <Card.Footer className="mt-8">
-              <Card color="primary">
+            <Card.Footer className="p-3">
+              <Card color="primary" className="shadow-none">
                 <Card.Header className="m-3">
                   <SelectFace3d className="h-10 w-10 text-primary-foreground" />
                 </Card.Header>

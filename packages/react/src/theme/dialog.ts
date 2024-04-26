@@ -37,7 +37,7 @@ export const dialogContentTheme = {
     md: "w-10/12 md:w-8/12 lg:w-6/12 h-max",
     lg: "w-10/12 lg:w-8/12 h-max",
     xl: "w-11/12 lg:w-10/12 h-max",
-    screen: "w-full h-full rounded-none",
+    screen: "w-full h-full rounded-none max-h-screen",
   },
 };
 
