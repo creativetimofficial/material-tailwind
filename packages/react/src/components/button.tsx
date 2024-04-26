@@ -15,7 +15,8 @@ import { buttonTheme } from "@theme";
 // @types
 import type { BaseComponent } from "@types";
 
-export interface ButtonProps extends BaseComponent<"button" | any> {
+export interface ButtonProps
+  extends BaseComponent<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   ripple?: boolean;
   isPill?: boolean;

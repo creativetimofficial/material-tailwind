@@ -12,23 +12,12 @@ import { useTheme } from "@context";
 import { typographyTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
-type BaseTypographyProps = Props<"p"> &
-  Props<"h1"> &
-  Props<"h2"> &
-  Props<"h3"> &
-  Props<"h4"> &
-  Props<"h5"> &
-  Props<"h6"> &
-  Props<"p"> &
-  Props<"small"> &
-  Props<any>;
-
-export interface TypographyProps extends BaseTypographyProps {
+export interface TypographyProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLElement>["color"] | "inherit";
   className?: string;
   children: React.ReactNode;
 }
@@ -61,7 +50,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     const styles = twMerge(
       theme.baseStyle,
       theme["type"][type],
-      theme["color"][color],
+      theme["color"][color!],
       className,
     );
 

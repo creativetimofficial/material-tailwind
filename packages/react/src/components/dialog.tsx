@@ -28,7 +28,7 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import { Props, BaseComponent } from "@types";
+import { BaseComponent } from "@types";
 
 // @theme
 import {
@@ -39,7 +39,7 @@ import {
   dialogDismissTriggerTheme,
 } from "@theme";
 
-type size = "xs" | BaseComponent<any>["size"] | "xl" | "screen";
+type size = "xs" | BaseComponent<HTMLElement>["size"] | "xl" | "screen";
 
 // dialog context
 type FloatingType = Partial<UseFloatingReturn> &
@@ -172,7 +172,8 @@ export function DialogRoot({
 DialogRoot.displayName = "MaterialTailwind.Dialog";
 
 // dialog trigger
-export interface DialogTriggerProps extends Props<"button" | any> {
+export interface DialogTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -206,7 +207,8 @@ export const DialogTrigger = React.forwardRef<
 DialogTrigger.displayName = "MaterialTailwind.DialogTrigger";
 
 // dialog overlay
-export interface DialogOverlayProps extends Props<"div"> {
+export interface DialogOverlayProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   className?: string;
   lockScroll?: boolean;
   children: React.ReactNode;
@@ -244,10 +246,11 @@ export const DialogOverlay = React.forwardRef<
 DialogOverlay.displayName = "MaterialTailwind.DialogOverlay";
 
 // dialog content
-type DialogContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+type DialogContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+  FloatingFocusManagerProps;
 
 export interface DialogContentProps
-  extends Omit<DialogContentBaseProps, "context"> {
+  extends Omit<DialogContentBaseProps, "context" | "children"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -299,7 +302,7 @@ export const DialogContent = React.forwardRef<
       "content",
     ];
 
-    const styles = twMerge(theme.baseStyle, theme.size[size], className);
+    const styles = twMerge(theme.baseStyle, theme.size[size!], className);
     const elementRef = useMergeRefs([refs?.setFloating, ref]);
 
     return open ? (
@@ -331,7 +334,8 @@ export const DialogContent = React.forwardRef<
 DialogContent.displayName = "MaterialTailwind.DialogContent";
 
 // dialog dismiss trigger
-export interface DialogDismissTriggerProps extends Props<"button" | any> {
+export interface DialogDismissTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;

@@ -18,10 +18,10 @@ import {
 } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // chip context
-export type ChipContextProps = BaseComponent<any> & {
+export type ChipContextProps = BaseComponent<HTMLElement> & {
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -121,7 +121,7 @@ const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
 ChipRoot.displayName = "MaterialTailwind.Chip";
 
 // chip label
-export interface ChipLabelProps extends Props<"span" | any> {
+export interface ChipLabelProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -152,7 +152,7 @@ export const ChipLabel = React.forwardRef<
 ChipLabel.displayName = "MaterialTailwind.ChipLabel";
 
 // chip icon
-export interface ChipIconProps extends Props<"span" | any> {
+export interface ChipIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -183,7 +183,8 @@ export const ChipIcon = React.forwardRef<
 ChipIcon.displayName = "MaterialTailwind.ChipIcon";
 
 // chip close trigger
-export interface ChipDismissTriggerProps extends Props<"button" | any> {
+export interface ChipDismissTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   ripple?: boolean;
   className?: string;

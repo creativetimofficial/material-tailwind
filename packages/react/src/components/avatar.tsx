@@ -11,10 +11,8 @@ import { useTheme } from "@context";
 // @theme
 import { avatarTheme } from "@theme";
 
-// @types
-import type { Props } from "@types";
-
-export interface AvatarProps extends Props<"img" | any> {
+export interface AvatarProps
+  extends React.ImgHTMLAttributes<HTMLImageElement | HTMLElement> {
   as?: React.ElementType;
   src: string;
   alt?: string;

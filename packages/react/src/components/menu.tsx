@@ -46,7 +46,6 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import { Props } from "@types";
 
 // @theme
 import {
@@ -257,7 +256,8 @@ export function MenuRoot(props: MenuProps) {
 MenuRoot.displayName = "MaterialTailwind.Menu";
 
 // menu trigger
-export interface MenuTriggerProps extends Props<"button" | any> {
+export interface MenuTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -304,10 +304,11 @@ export const MenuTrigger = React.forwardRef<
 MenuTrigger.displayName = "MaterialTailwind.MenuTrigger";
 
 // menu content
-type MenuContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+type MenuContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+  FloatingFocusManagerProps;
 
 export interface MenuContentProps
-  extends Omit<MenuContentBaseProps, "context"> {
+  extends Omit<MenuContentBaseProps, "context" | "children"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -407,7 +408,8 @@ export const MenuContent = React.forwardRef<
 MenuContent.displayName = "MaterialTailwind.MenuContent";
 
 // menu item
-export interface MenuItemProps extends Props<"button" | any> {
+export interface MenuItemProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   ripple?: boolean;
@@ -436,7 +438,7 @@ export const MenuItem = React.forwardRef<
 
     const rippleEffect = ripple !== undefined && new Ripple();
     const item = useListItem({
-      label: rest?.disabled ? null : (children as string),
+      label: disabled ? null : (children as string),
     });
     const tree = useFloatingTree();
     const isActive = item.index === activeIndex;

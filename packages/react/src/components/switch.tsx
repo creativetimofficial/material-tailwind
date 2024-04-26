@@ -12,10 +12,11 @@ import { useTheme } from "@context";
 import { switchTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
-export interface SwitchProps extends Props<"input"> {
-  color?: BaseComponent<"input">["color"];
+export interface SwitchProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  color?: BaseComponent<HTMLInputElement>["color"];
   className?: string;
 }
 

@@ -12,12 +12,12 @@ import { useTheme } from "@context";
 import { radioTheme, radioItemTheme, radioIndicatorTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // radio context
 export interface RadioContextProps {
   globalValue?: string;
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLElement>["color"];
   setGlobalValue?: (e: string) => void;
 }
 
@@ -28,7 +28,8 @@ export const RadioContext = React.createContext<RadioContextProps>({
 });
 
 // radio root
-export interface RadioProps extends Props<"div" | any> {
+export interface RadioProps
+  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "onChange"> {
   as?: React.ElementType;
   value?: string;
   defaultValue?: string;
@@ -135,7 +136,8 @@ export const RadioRoot = React.forwardRef<
 RadioRoot.displayName = "MaterialTailwind.Radio";
 
 // radio item
-export interface RadioItemProps extends Props<"input"> {
+export interface RadioItemProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   className?: string;
   value?: string;
@@ -154,7 +156,7 @@ export const RadioItem = React.forwardRef<HTMLLabelElement, RadioItemProps>(
     const mainValue = value || innerValue;
     const isChecked = globalValue === mainValue;
 
-    const styles = twMerge(theme.baseStyle, theme.color[color], className);
+    const styles = twMerge(theme.baseStyle, theme.color[color!], className);
 
     return (
       <label
@@ -184,7 +186,8 @@ export const RadioItem = React.forwardRef<HTMLLabelElement, RadioItemProps>(
 );
 
 // radio indicator
-export interface RadioIndicatorProps extends Props<"span" | any> {
+export interface RadioIndicatorProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

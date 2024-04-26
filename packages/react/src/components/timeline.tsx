@@ -20,7 +20,7 @@ import {
 } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 type Orientation = "horizontal" | "vertical";
 type Mode = "stepper" | "timeline";
@@ -29,7 +29,7 @@ type Mode = "stepper" | "timeline";
 export interface TimelineContextProps {
   value?: string;
   setValue?: (e: string) => void;
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLElement>["color"];
   orientation?: Orientation;
   mode?: Mode;
   parentRef?: React.RefObject<HTMLDivElement | HTMLElement>;
@@ -44,7 +44,8 @@ export const TimelineContext = React.createContext<TimelineContextProps>({
 });
 
 // timeline root
-export interface TimelineProps extends Props<"div" | any> {
+export interface TimelineProps
+  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "children" | "onChange"> {
   as?: React.ElementType;
   value?: string;
   defaultValue?: string;
@@ -176,7 +177,7 @@ export const TimelineRoot = React.forwardRef<
 TimelineRoot.displayName = "MaterialTailwind.Timeline";
 
 // timeline item
-interface TimelineItemProps extends Props<"div" | any> {
+interface TimelineItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   value?: string;
   className?: string;
@@ -234,7 +235,8 @@ export const TimelineItem = React.forwardRef<
 TimelineItem.displayName = "MaterialTailwind.TimelineItem";
 
 // timeline header
-export interface TimelineHeaderProps extends Props<"div" | any> {
+export interface TimelineHeaderProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -260,7 +262,8 @@ export const TimelineHeader = React.forwardRef<
 TimelineHeader.displayName = "MaterialTailwind.TimelineHeader";
 
 // timeline icon
-export interface TimelineIconProps extends Props<"span" | any> {
+export interface TimelineIconProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -275,7 +278,7 @@ export const TimelineIcon = React.forwardRef<
   const theme = contextTheme?.timelineIcon ?? timelineIconTheme;
   const { color } = React.useContext(TimelineContext);
 
-  const styles = twMerge(theme.baseStyle, theme.color[color], className);
+  const styles = twMerge(theme.baseStyle, theme.color[color!], className);
 
   return (
     <Element {...props} ref={ref} className={styles}>
@@ -287,7 +290,8 @@ export const TimelineIcon = React.forwardRef<
 TimelineIcon.displayName = "MaterialTailwind.TimelineIcon";
 
 // timeline separator
-export interface TimelineSeparatorProps extends Props<"div" | any> {
+export interface TimelineSeparatorProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -302,7 +306,7 @@ export const TimelineSeparator = React.forwardRef<
   const theme = contextTheme?.timelineSeparator ?? timelineSeparatorTheme;
   const { orientation, color } = React.useContext(TimelineContext);
 
-  const styles = twMerge(theme.baseStyle, theme.color[color], className);
+  const styles = twMerge(theme.baseStyle, theme.color[color!], className);
 
   return (
     <Element
@@ -319,7 +323,8 @@ export const TimelineSeparator = React.forwardRef<
 TimelineSeparator.displayName = "MaterialTailwind.TimelineSeparator";
 
 // timeline body
-export interface TimelineBodyProps extends Props<"div" | any> {
+export interface TimelineBodyProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;

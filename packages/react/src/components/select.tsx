@@ -36,7 +36,7 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // @theme
 import {
@@ -47,9 +47,8 @@ import {
 } from "@theme";
 
 // select context
-export interface SelectContextProps {
-  size?: BaseComponent<any>["size"];
-  color?: BaseComponent<any>["color"];
+export interface SelectContextProps
+  extends Omit<BaseComponent<HTMLElement>, "variant"> {
   isError?: boolean;
   isSuccess?: boolean;
   isPill?: boolean;
@@ -306,7 +305,11 @@ export function SelectRoot({
 SelectRoot.displayName = "MaterialTailwind.Select";
 
 // select trigger
-export interface SelectTriggerProps extends Props<"button" | any> {
+export interface SelectTriggerProps
+  extends Omit<
+    React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement>,
+    "children"
+  > {
   as?: React.ElementType;
   indicator: React.ReactNode;
   placeholder?: string;
@@ -372,8 +375,8 @@ export const SelectTrigger = React.forwardRef<
 
   const styles = twMerge(
     theme.baseStyle,
-    theme.size[size],
-    theme.color[color],
+    theme.size[size!],
+    theme.color[color!],
     isPill && theme.isPill,
     className,
   );
@@ -406,9 +409,11 @@ export const SelectTrigger = React.forwardRef<
 SelectTrigger.displayName = "MaterialTailwind.SelectTrigger";
 
 // select list
-type SelectListBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+type SelectListBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+  FloatingFocusManagerProps;
 
-export interface SelectListProps extends Omit<SelectListBaseProps, "context"> {
+export interface SelectListProps
+  extends Omit<SelectListBaseProps, "context" | "children"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -521,7 +526,8 @@ export const SelectList = React.forwardRef<
 SelectList.displayName = "MaterialTailwind.SelectList";
 
 // select option
-export interface SelectOptionProps extends Props<"button" | any> {
+export interface SelectOptionProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   value?: string;

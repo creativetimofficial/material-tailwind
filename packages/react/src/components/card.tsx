@@ -6,7 +6,7 @@ import * as React from "react";
 import { useTheme } from "@context";
 
 // @types
-import type { Props, BaseComponent } from "@types";
+import type { BaseComponent } from "@types";
 
 // @utils
 import { twMerge } from "tailwind-merge";
@@ -21,7 +21,7 @@ import {
 
 // card root
 export interface CardProps
-  extends Omit<BaseComponent<"div" | any>, "size" | "color"> {
+  extends Omit<BaseComponent<HTMLElement>, "size" | "color"> {
   as?: React.ElementType;
   className?: string;
   color?: "default" | BaseComponent<any>["color"];
@@ -87,7 +87,7 @@ export const CardRoot = React.forwardRef<
 CardRoot.displayName = "MaterialTailwind.Card";
 
 // card header
-export interface CardHeaderProps extends Props<"div" | any> {
+export interface CardHeaderProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

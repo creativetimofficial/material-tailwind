@@ -16,9 +16,6 @@ import {
   accordionContentTheme,
 } from "@theme";
 
-// @types
-import type { Props } from "@types";
-
 type accordionType = "single" | "multiple";
 
 // accordion context
@@ -140,7 +137,8 @@ AccordionRoot.displayName = "MaterialTailwind.Accordion";
 // accordion item
 export const AccordionItemContext = React.createContext<string>("");
 
-export interface AccordionItemProps extends Props<"div" | any> {
+export interface AccordionItemProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   value: string;
   disabled?: boolean;
@@ -186,7 +184,8 @@ export const AccordionItem = React.forwardRef<
 AccordionItem.displayName = "MaterialTailwind.AccordionItem";
 
 // accordion trigger
-export interface AccordionTriggerProps extends Props<"button" | any> {
+export interface AccordionTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -240,7 +239,8 @@ export const AccordionTrigger = React.forwardRef<
 AccordionTrigger.displayName = "MaterialTailwind.AccordionTrigger";
 
 // accordion content
-export interface AccordionContentProps extends Props<"div" | any> {
+export interface AccordionContentProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;

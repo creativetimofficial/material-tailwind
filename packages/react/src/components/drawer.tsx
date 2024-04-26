@@ -25,7 +25,6 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import { Props, BaseComponent } from "@types";
 
 // @utils
 import { twMerge } from "tailwind-merge";
@@ -103,7 +102,8 @@ export function DrawerRoot({
 DrawerRoot.displayName = "MaterialTailwind.Drawer";
 
 // drawer trigger
-export interface DrawerTriggerProps extends Props<"button" | any> {
+export interface DrawerTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -137,7 +137,8 @@ export const DrawerTrigger = React.forwardRef<
 DrawerTrigger.displayName = "MaterialTailwind.DrawerTrigger";
 
 // drawer overlay
-export interface DrawerOverlayProps extends Props<"div"> {
+export interface DrawerOverlayProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   className?: string;
   lockScroll?: boolean;
   children: React.ReactNode;
@@ -175,10 +176,11 @@ export const DrawerOverlay = React.forwardRef<
 DrawerOverlay.displayName = "MaterialTailwind.DrawerOverlay";
 
 // drawer panel
-type DrawerPanelBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+type DrawerPanelBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+  FloatingFocusManagerProps;
 
 export interface DrawerPanelProps
-  extends Omit<DrawerPanelBaseProps, "context"> {
+  extends Omit<DrawerPanelBaseProps, "context" | "children"> {
   as?: React.ElementType;
   className?: string;
   placement?: "top" | "right" | "bottom" | "left";
@@ -265,7 +267,8 @@ export const DrawerPanel = React.forwardRef<
 DrawerPanel.displayName = "MaterialTailwind.DrawerPanel";
 
 // drawer dismiss trigger
-export interface DrawerDismissTriggerProps extends Props<"button" | any> {
+export interface DrawerDismissTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;

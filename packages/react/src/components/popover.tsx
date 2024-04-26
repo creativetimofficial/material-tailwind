@@ -33,7 +33,6 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import { Props } from "@types";
 
 // @theme
 import {
@@ -167,7 +166,8 @@ export function PopoverRoot({
 PopoverRoot.displayName = "MaterialTailwind.Popover";
 
 // popover trigger
-export interface PopoverTriggerProps extends Props<"button" | any> {
+export interface PopoverTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -201,10 +201,11 @@ export const PopoverTrigger = React.forwardRef<
 PopoverTrigger.displayName = "MaterialTailwind.PopoverTrigger";
 
 // popover content
-type PopoverContentBaseProps = Props<"div" | any> & FloatingFocusManagerProps;
+type PopoverContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+  FloatingFocusManagerProps;
 
 export interface PopoverContentProps
-  extends Omit<PopoverContentBaseProps, "context"> {
+  extends Omit<PopoverContentBaseProps, "context" | "children"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -291,7 +292,8 @@ export const PopoverContent = React.forwardRef<
 PopoverContent.displayName = "MaterialTailwind.PopoverContent";
 
 // popover arrow
-export interface PopoverArrowProps extends Props<HTMLSpanElement | any> {
+export interface PopoverArrowProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
 }

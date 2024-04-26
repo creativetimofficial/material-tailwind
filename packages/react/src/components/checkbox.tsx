@@ -12,13 +12,13 @@ import { useTheme } from "@context";
 import { checkboxTheme, checkboxIndicatorTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // checkbox context
 export interface CheckboxContextProps {
   disabled?: boolean;
   checked?: boolean;
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLDivElement>["color"];
 }
 
 export const CheckboxContext = React.createContext<CheckboxContextProps>({
@@ -28,7 +28,8 @@ export const CheckboxContext = React.createContext<CheckboxContextProps>({
 });
 
 // checkbox root
-export interface CheckboxProps extends Props<"input"> {
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   color?: BaseComponent<any>["color"];
   disabled?: boolean;
   className?: string;
@@ -115,7 +116,8 @@ export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
 CheckboxRoot.displayName = "MaterialTailwind.Checkbox";
 
 // checkbox indicator
-export interface CheckboxIndicatorProps extends Props<"span" | any> {
+export interface CheckboxIndicatorProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

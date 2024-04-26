@@ -13,9 +13,10 @@ import { useTheme } from "@context";
 import { iconButtonTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
-export interface IconButtonProps extends BaseComponent<"button" | any> {
+export interface IconButtonProps
+  extends BaseComponent<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   ripple?: boolean;
   isCircular?: boolean;

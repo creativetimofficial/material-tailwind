@@ -15,7 +15,7 @@ import { textareaTheme } from "@theme";
 import type { BaseComponent } from "@types";
 
 export interface TextareaProps
-  extends Omit<BaseComponent<"textarea">, "variant"> {
+  extends Omit<BaseComponent<HTMLTextAreaElement>, "variant"> {
   as?: React.ElementType;
   className?: string;
   resize?: boolean;

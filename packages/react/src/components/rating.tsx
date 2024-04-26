@@ -12,11 +12,12 @@ import { useTheme } from "@context";
 import { ratingTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
-export interface RatingProps extends Props<"div" | any> {
+export interface RatingProps
+  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "onChange"> {
   as?: React.ElementType;
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLElement>["color"];
   ratedIcon?: React.ReactNode;
   unratedIcon?: React.ReactNode;
   count?: number;

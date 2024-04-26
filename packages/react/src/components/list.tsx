@@ -17,11 +17,8 @@ import {
   listItemEndTheme,
 } from "@theme";
 
-// @types
-import type { Props } from "@types";
-
 // list root
-export interface ListProps extends Props<"ul" | any> {
+export interface ListProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -69,7 +66,7 @@ export const ListRoot = React.forwardRef<
 ListRoot.displayName = "MaterialTailwind.List";
 
 // list item
-export interface ListItemProps extends Props<"li" | any> {
+export interface ListItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   disabled?: boolean;
@@ -120,10 +117,14 @@ export const ListItem = React.forwardRef<
 ListItem.displayName = "MaterialTailwind.ListItem";
 
 // list item start
-export interface ListItemStartProps extends Props<"span" | any> {
+export interface ListItemStartProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
+  disabled?: boolean;
+  selected?: boolean;
+  ripple?: boolean;
 }
 
 export const ListItemStart = React.forwardRef<
@@ -146,10 +147,14 @@ export const ListItemStart = React.forwardRef<
 ListItemStart.displayName = "MaterialTailwind.ListItemStart";
 
 // list item end
-export interface ListItemEndProps extends Props<"span" | any> {
+export interface ListItemEndProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
+  disabled?: boolean;
+  selected?: boolean;
+  ripple?: boolean;
 }
 
 export const ListItemEnd = React.forwardRef<

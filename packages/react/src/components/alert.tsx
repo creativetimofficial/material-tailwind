@@ -17,12 +17,11 @@ import {
 } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // alert context
-export interface AlertContextProps {
-  variant?: BaseComponent<"div">["variant"];
-  color?: BaseComponent<"div">["color"];
+export interface AlertContextProps
+  extends Omit<BaseComponent<HTMLDivElement>, "size"> {
   isPill?: boolean;
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -130,7 +129,8 @@ const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
 AlertRoot.displayName = "MaterialTailwind.Alert";
 
 // alert content
-export interface AlertContentProps extends Props<"div" | any> {
+export interface AlertContentProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -156,7 +156,7 @@ export const AlertContent = React.forwardRef<
 AlertContent.displayName = "MaterialTailwind.AlertContent";
 
 // alert icon
-export interface AlertIconProps extends Props<"span" | any> {
+export interface AlertIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -182,7 +182,8 @@ export const AlertIcon = React.forwardRef<
 AlertIcon.displayName = "MaterialTailwind.AlertIcon";
 
 // alert close trigger
-export interface AlertDismissTriggerProps extends Props<"button" | any> {
+export interface AlertDismissTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   ripple?: boolean;
   className?: string;

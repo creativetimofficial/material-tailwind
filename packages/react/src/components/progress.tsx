@@ -6,7 +6,7 @@ import * as React from "react";
 import { useTheme } from "@context";
 
 // @types
-import type { Props, BaseComponent } from "@types";
+import type { BaseComponent } from "@types";
 
 // @theme
 import { progressTheme, progressBarTheme } from "@theme";
@@ -15,7 +15,7 @@ import { twMerge } from "tailwind-merge";
 // progress context
 export interface ProgressContextProps {
   value?: number;
-  color?: BaseComponent<"svg">["color"];
+  color?: BaseComponent<SVGElement>["color"];
 }
 
 export const ProgressContext = React.createContext<ProgressContextProps>({
@@ -78,7 +78,8 @@ export const ProgressRoot = React.forwardRef<
 ProgressRoot.displayName = "MaterialTailwind.Progress";
 
 // progress bar
-export interface ProgressBarProps extends Props<"div" | any> {
+export interface ProgressBarProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

@@ -6,9 +6,6 @@ import * as React from "react";
 import { useTheme } from "@context";
 import { useMergeRefs } from "@floating-ui/react";
 
-// @types
-import type { Props } from "@types";
-
 // @utils
 import { twMerge } from "tailwind-merge";
 
@@ -44,7 +41,7 @@ const TabsContext = React.createContext<TabsContext>({
 } as TabsContext);
 
 // tabs root
-export interface TabsProps extends Props<"div" | any> {
+export interface TabsProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   value?: string;
   defaultValue?: string;
@@ -189,7 +186,7 @@ export const TabsRoot = React.forwardRef<
 TabsRoot.displayName = "MaterialTailwind.TabsRoot";
 
 // tabs list
-export interface TabsListProps extends Props<"div" | any> {
+export interface TabsListProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -223,7 +220,8 @@ export const TabsList = React.forwardRef<
 TabsList.displayName = "MaterialTailwind.TabsList";
 
 // tabs trigger
-export interface TabsTriggerProps extends Props<"button" | any> {
+export interface TabsTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   value: string;
   className?: string;
@@ -307,7 +305,7 @@ export const TabsTrigger = React.forwardRef<
 TabsTrigger.displayName = "MaterialTailwind.TabsTrigger";
 
 // tabs panel
-export interface TabsPanelProps extends Props<"div" | any> {
+export interface TabsPanelProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   value: string;
   className?: string;
@@ -343,7 +341,8 @@ export const TabsPanel = React.forwardRef<
 TabsPanel.displayName = "MaterialTailwind.TabsPanel";
 
 // tabs trigger indicator
-export interface TabsTriggerIndicatorProps extends Props<"span" | any> {
+export interface TabsTriggerIndicatorProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
 }

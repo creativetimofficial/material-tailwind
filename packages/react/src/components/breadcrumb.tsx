@@ -8,9 +8,6 @@ import { useTheme } from "@context";
 // @utils
 import { twMerge } from "tailwind-merge";
 
-// @types
-import type { Props } from "@types";
-
 // @theme
 import {
   breadcrumbTheme,
@@ -19,7 +16,7 @@ import {
 } from "@theme";
 
 // breadcrumb root
-export interface BreadcrumbProps extends Props<any> {
+export interface BreadcrumbProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -44,7 +41,8 @@ export const BreadcrumbRoot = React.forwardRef<HTMLElement, BreadcrumbProps>(
 BreadcrumbRoot.displayName = "MaterialTailwind.Breadcrumb";
 
 // breadcrumb link
-export interface BreadcrumbLinkProps extends Props<"a" | any> {
+export interface BreadcrumbLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -70,7 +68,8 @@ export const BreadcrumbLink = React.forwardRef<
 BreadcrumbLink.displayName = "MaterialTailwind.BreadcrumbLink";
 
 // breadcrumb separator
-export interface BreadcrumbSeparatorProps extends Props<"span" | any> {
+export interface BreadcrumbSeparatorProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

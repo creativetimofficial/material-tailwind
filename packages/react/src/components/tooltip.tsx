@@ -34,7 +34,6 @@ import type {
   Placement,
   UseFloatingReturn,
 } from "@floating-ui/react";
-import { Props } from "@types";
 
 // @theme
 import {
@@ -171,7 +170,8 @@ export function TooltipRoot({
 TooltipRoot.displayName = "MaterialTailwind.Tooltip";
 
 // tooltip trigger
-export interface TooltipTriggerProps extends Props<"button" | any> {
+export interface TooltipTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -205,7 +205,8 @@ export const TooltipTrigger = React.forwardRef<
 TooltipTrigger.displayName = "MaterialTailwind.TooltipTrigger";
 
 // tooltip content
-export interface TooltipContentProps extends Props<"div" | any> {
+export interface TooltipContentProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -243,7 +244,8 @@ export const TooltipContent = React.forwardRef<
 TooltipContent.displayName = "MaterialTailwind.TooltipContent";
 
 // tooltip arrow
-export interface TooltipArrowProps extends Props<HTMLSpanElement | any> {
+export interface TooltipArrowProps
+  extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   className?: string;
 }

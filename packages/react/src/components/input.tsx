@@ -12,12 +12,11 @@ import { useTheme } from "@context";
 import { inputTheme, inputFieldTheme, inputIconTheme } from "@theme";
 
 // @types
-import type { BaseComponent, Props } from "@types";
+import type { BaseComponent } from "@types";
 
 // input context
-export interface InputContextProps {
-  size?: BaseComponent<any>["size"];
-  color?: BaseComponent<any>["color"];
+export interface InputContextProps
+  extends Omit<BaseComponent<HTMLInputElement>, "variant"> {
   iconPlacement?: "start" | "end" | string;
   isIconDefined?: boolean;
   isError?: boolean;
@@ -40,7 +39,7 @@ export const InputContext = React.createContext<InputContextProps>({
 });
 
 // input root
-export interface InputProps extends Props<"div" | any> {
+export interface InputProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   size?: BaseComponent<any>["size"];
   color?: BaseComponent<any>["color"];
@@ -149,7 +148,8 @@ export const InputRoot = React.forwardRef<
 InputRoot.displayName = "MaterialTailwind.Input";
 
 // input field
-export interface InputFieldProps extends Props<"input"> {
+export interface InputFieldProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   type?:
     | "text"
     | "email"
@@ -177,8 +177,8 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
 
     const styles = twMerge(
       theme.baseStyle,
-      theme.size[size],
-      theme.color[color],
+      theme.size[size!],
+      theme.color[color!],
       rest?.className,
       "peer",
     );
@@ -214,7 +214,7 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
 InputField.displayName = "MaterialTailwind.InputField";
 
 // input icon
-export interface InputIconProps extends Props<"span" | any> {
+export interface InputIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   placement?: "start" | "end";
 }
@@ -256,7 +256,7 @@ export const InputIcon = React.forwardRef<
     };
   }, [placement]);
 
-  const styles = twMerge(theme.baseStyle, theme.size[size], props?.className);
+  const styles = twMerge(theme.baseStyle, theme.size[size!], props?.className);
 
   return (
     <Element

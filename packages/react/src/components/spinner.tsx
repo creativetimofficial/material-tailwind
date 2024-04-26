@@ -6,15 +6,15 @@ import * as React from "react";
 import { useTheme } from "@context";
 
 // @types
-import type { Props, BaseComponent } from "@types";
+import type { BaseComponent } from "@types";
 
 // @theme
 import { spinnerTheme } from "@theme";
 import { twMerge } from "tailwind-merge";
 
-export interface SpinnerProps extends Props<"svg"> {
+export interface SpinnerProps extends React.SVGAttributes<SVGElement> {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  color?: BaseComponent<"svg">["color"];
+  color?: BaseComponent<SVGElement>["color"];
   className?: string;
 }
 
