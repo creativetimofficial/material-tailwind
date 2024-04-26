@@ -5,16 +5,22 @@
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
   "license": "MIT",
-  "main": "index.js",
+  "module": "dist/es6/index.js",
   "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "scripts": {
-    "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",
-    "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-    "copy": "cp ./package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist",
-    "build": "pnpm build:cjs && pnpm build:dts && pnpm copy",
+    "buildbase:commonjs": "swc ./src -d ./dist/commonjs --only ./src/**/*.ts --config-file .swcrc",
+    "buildbase:es6": "swc ./src -d ./dist/es6 --only ./src/**/*.ts --config-file .es6.swcrc --no-swcrc",
+    "buildbase:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
+    "buildbase:dts:es6": "pnpm buildbase:dts --project tsconfig.es6.json",
+    "copy:commonjs": "cp ./package.json ./dist/commonjs && cp ./README.md ./dist/commonjs && cp ./LICENSE ./dist/commonjs",
+    "copy:es6": "cp ./package.json ./dist/es6 && cp ./README.md ./dist/es6 && cp ./LICENSE ./dist/es6",
+    "build:commonjs": "pnpm buildbase:commonjs && pnpm buildbase:dts && pnpm copy:commonjs",
+    "build:es6": "pnpm buildbase:es6 && pnpm buildbase:dts:es6 && pnpm copy:es6",
+    "build": "pnpm build:commonjs && pnpm build:es6",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
     "prettier:check": "prettier -c ."
   },
