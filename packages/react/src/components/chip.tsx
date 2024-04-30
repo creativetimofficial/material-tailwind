@@ -35,7 +35,7 @@ export const ChipContext = React.createContext<ChipContextProps>({
 });
 
 // chip root
-export interface ChipProps extends BaseComponent<"div" | any> {
+export interface ChipProps extends BaseComponent<HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -62,7 +62,7 @@ export default function Example() {
 }
  * ```
  */
-const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
+const ChipRoot = React.forwardRef<HTMLAnchorElement | HTMLElement, ChipProps>(
   (
     {
       as,
@@ -121,7 +121,8 @@ const ChipRoot = React.forwardRef<HTMLDivElement | HTMLElement, ChipProps>(
 ChipRoot.displayName = "MaterialTailwind.Chip";
 
 // chip label
-export interface ChipLabelProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface ChipLabelProps
+  extends React.HtmlHTMLAttributes<HTMLAnchorElement | HTMLElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -159,7 +160,7 @@ export interface ChipIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
 }
 
 export const ChipIcon = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLAnchorElement | HTMLElement,
   ChipIconProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as ?? "span";

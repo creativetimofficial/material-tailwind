@@ -75,10 +75,7 @@ export default function Example() {
  * ```
  */
 
-export const RadioRoot = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  RadioProps
->(
+export const RadioRoot = React.forwardRef<HTMLElement, RadioProps>(
   (
     {
       as,

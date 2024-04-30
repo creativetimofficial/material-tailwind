@@ -71,10 +71,7 @@ export default function Example() {
  * ```
  */
 
-export const InputRoot = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  InputProps
->(
+export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
   (
     {
       as,

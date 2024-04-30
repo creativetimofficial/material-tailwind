@@ -14,7 +14,8 @@ import { typographyTheme } from "@theme";
 // @types
 import type { BaseComponent } from "@types";
 
-export interface TypographyProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface TypographyProps
+  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
   as?: React.ElementType;
   type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
   color?: BaseComponent<HTMLElement>["color"] | "inherit";
@@ -37,30 +38,31 @@ export interface TypographyProps extends React.HtmlHTMLAttributes<HTMLElement> {
  * }
  * ```
  */
-export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ as, color, type, className, children, ...rest }, ref) => {
-    const Element = as ?? type ?? "p";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.typography ?? typographyTheme;
-    const defaultProps = theme?.defaultProps;
+export const Typography = React.forwardRef<
+  HTMLElement | HTMLAnchorElement,
+  TypographyProps
+>(({ as, color, type, className, children, ...rest }, ref) => {
+  const Element = as ?? type ?? "p";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.typography ?? typographyTheme;
+  const defaultProps = theme?.defaultProps;
 
-    color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
-    type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
+  color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
+  type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["type"][type],
-      theme["color"][color!],
-      className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    theme["type"][type],
+    theme["color"][color!],
+    className,
+  );
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+  return (
+    <Element {...rest} ref={ref} className={styles}>
+      {children}
+    </Element>
+  );
+});
 
 Typography.displayName = "MaterialTailwind.Typography";
 

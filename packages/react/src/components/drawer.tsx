@@ -176,7 +176,9 @@ export const DrawerOverlay = React.forwardRef<
 DrawerOverlay.displayName = "MaterialTailwind.DrawerOverlay";
 
 // drawer panel
-type DrawerPanelBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+type DrawerPanelBaseProps = React.HtmlHTMLAttributes<
+  HTMLElement | HTMLImageElement
+> &
   FloatingFocusManagerProps;
 
 export interface DrawerPanelProps
@@ -188,7 +190,7 @@ export interface DrawerPanelProps
 }
 
 export const DrawerPanel = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLImageElement | HTMLElement,
   DrawerPanelProps
 >(
   (

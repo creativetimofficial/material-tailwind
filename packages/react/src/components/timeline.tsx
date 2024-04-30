@@ -57,10 +57,7 @@ export interface TimelineProps
   children: React.ReactNode;
 }
 
-export const TimelineRoot = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  TimelineProps
->(
+export const TimelineRoot = React.forwardRef<HTMLElement, TimelineProps>(
   (
     {
       as,
@@ -185,52 +182,51 @@ interface TimelineItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export const TimelineItem = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  TimelineItemProps
->(({ as, value, className, disabled, children, ...props }, ref) => {
-  const Element = as || "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.timelineItem ?? timelineItemTheme;
-  const {
-    mode,
-    setValue,
-    orientation,
-    value: contextValue,
-  } = React.useContext(TimelineContext);
-  const innerRef = React.useRef<HTMLDivElement | HTMLElement>(null);
+export const TimelineItem = React.forwardRef<HTMLElement, TimelineItemProps>(
+  ({ as, value, className, disabled, children, ...props }, ref) => {
+    const Element = as || "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.timelineItem ?? timelineItemTheme;
+    const {
+      mode,
+      setValue,
+      orientation,
+      value: contextValue,
+    } = React.useContext(TimelineContext);
+    const innerRef = React.useRef<HTMLElement>(null);
 
-  value ??= React.useId();
+    value ??= React.useId();
 
-  const isActive = contextValue == value || mode === "timeline";
+    const isActive = contextValue == value || mode === "timeline";
 
-  function onClick(event: React.MouseEvent<HTMLElement>) {
-    props?.onClick?.(event);
+    function onClick(event: React.MouseEvent<HTMLElement>) {
+      props?.onClick?.(event);
 
-    if (mode === "stepper") {
-      setValue?.(value!);
+      if (mode === "stepper") {
+        setValue?.(value!);
+      }
     }
-  }
 
-  const styles = twMerge(theme.baseStyle, className);
-  const mergedRef = useMergeRefs([ref, innerRef]);
+    const styles = twMerge(theme.baseStyle, className);
+    const mergedRef = useMergeRefs([ref, innerRef]);
 
-  return (
-    <Element
-      {...props}
-      ref={mergedRef}
-      onClick={onClick}
-      data-value={value}
-      data-active={isActive}
-      data-completed={isActive}
-      data-orientation={orientation}
-      aria-disabled={disabled}
-      className={styles}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...props}
+        ref={mergedRef}
+        onClick={onClick}
+        data-value={value}
+        data-active={isActive}
+        data-completed={isActive}
+        data-orientation={orientation}
+        aria-disabled={disabled}
+        className={styles}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 TimelineItem.displayName = "MaterialTailwind.TimelineItem";
 
@@ -243,7 +239,7 @@ export interface TimelineHeaderProps
 }
 
 export const TimelineHeader = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLElement,
   TimelineHeaderProps
 >(({ as, className, children, ...props }, ref) => {
   const Element = as || "div";
@@ -269,23 +265,22 @@ export interface TimelineIconProps
   children: React.ReactNode;
 }
 
-export const TimelineIcon = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
-  TimelineIconProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.timelineIcon ?? timelineIconTheme;
-  const { color } = React.useContext(TimelineContext);
+export const TimelineIcon = React.forwardRef<HTMLElement, TimelineIconProps>(
+  ({ as, className, children, ...props }, ref) => {
+    const Element = as || "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.timelineIcon ?? timelineIconTheme;
+    const { color } = React.useContext(TimelineContext);
 
-  const styles = twMerge(theme.baseStyle, theme.color[color!], className);
+    const styles = twMerge(theme.baseStyle, theme.color[color!], className);
 
-  return (
-    <Element {...props} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...props} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 TimelineIcon.displayName = "MaterialTailwind.TimelineIcon";
 
@@ -298,7 +293,7 @@ export interface TimelineSeparatorProps
 }
 
 export const TimelineSeparator = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLElement,
   TimelineSeparatorProps
 >(({ as, className, children, ...props }, ref) => {
   const Element = as || "div";
@@ -330,28 +325,27 @@ export interface TimelineBodyProps
   children: React.ReactNode;
 }
 
-export const TimelineBody = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  TimelineBodyProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.timelineBody ?? timelineBodyTheme;
-  const { orientation } = React.useContext(TimelineContext);
+export const TimelineBody = React.forwardRef<HTMLElement, TimelineBodyProps>(
+  ({ as, className, children, ...props }, ref) => {
+    const Element = as || "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.timelineBody ?? timelineBodyTheme;
+    const { orientation } = React.useContext(TimelineContext);
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element
-      {...props}
-      ref={ref}
-      className={styles}
-      data-orientation={orientation}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...props}
+        ref={ref}
+        className={styles}
+        data-orientation={orientation}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 TimelineBody.displayName = "MaterialTailwind.TimelineBody";
 

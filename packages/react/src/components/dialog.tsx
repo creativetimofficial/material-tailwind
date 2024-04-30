@@ -208,14 +208,14 @@ DialogTrigger.displayName = "MaterialTailwind.DialogTrigger";
 
 // dialog overlay
 export interface DialogOverlayProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends React.HtmlHTMLAttributes<HTMLImageElement | HTMLElement> {
   className?: string;
   lockScroll?: boolean;
   children: React.ReactNode;
 }
 
 export const DialogOverlay = React.forwardRef<
-  HTMLDivElement,
+  HTMLImageElement | HTMLDivElement,
   DialogOverlayProps
 >(({ className, lockScroll, children, ...rest }, ref) => {
   const contextTheme = useTheme();
@@ -246,7 +246,9 @@ export const DialogOverlay = React.forwardRef<
 DialogOverlay.displayName = "MaterialTailwind.DialogOverlay";
 
 // dialog content
-type DialogContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+type DialogContentBaseProps = React.HtmlHTMLAttributes<
+  HTMLImageElement | HTMLElement
+> &
   FloatingFocusManagerProps;
 
 export interface DialogContentProps
@@ -257,7 +259,7 @@ export interface DialogContentProps
 }
 
 export const DialogContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLImageElement | HTMLElement,
   DialogContentProps
 >(
   (

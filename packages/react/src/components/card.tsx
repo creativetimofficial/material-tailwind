@@ -60,7 +60,7 @@ export default function Example() {
  */
 
 export const CardRoot = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLDivElement | HTMLAnchorElement | HTMLImageElement | HTMLElement,
   CardProps
 >(({ as, color, variant, className, children, ...rest }, ref) => {
   const Element = as || "div";
@@ -94,7 +94,7 @@ export interface CardHeaderProps extends React.HtmlHTMLAttributes<HTMLElement> {
 }
 
 export const CardHeader = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLDivElement | HTMLAnchorElement | HTMLImageElement | HTMLElement,
   CardHeaderProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "div";
@@ -116,7 +116,7 @@ CardHeader.displayName = "MaterialTailwind.CardHeader";
 export interface CardBodyProps extends CardHeaderProps {}
 
 export const CardBody = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLDivElement | HTMLAnchorElement | HTMLImageElement | HTMLElement,
   CardBodyProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "div";
@@ -138,7 +138,7 @@ CardBody.displayName = "MaterialTailwind.CardBody";
 export interface CardFooterProps extends CardHeaderProps {}
 
 export const CardFooter = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLDivElement | HTMLAnchorElement | HTMLImageElement | HTMLElement,
   CardFooterProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "div";

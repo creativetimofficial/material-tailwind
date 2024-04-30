@@ -201,7 +201,9 @@ export const PopoverTrigger = React.forwardRef<
 PopoverTrigger.displayName = "MaterialTailwind.PopoverTrigger";
 
 // popover content
-type PopoverContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+type PopoverContentBaseProps = React.HtmlHTMLAttributes<
+  HTMLElement | HTMLImageElement
+> &
   FloatingFocusManagerProps;
 
 export interface PopoverContentProps
@@ -212,7 +214,7 @@ export interface PopoverContentProps
 }
 
 export const PopoverContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLImageElement | HTMLElement,
   PopoverContentProps
 >(
   (

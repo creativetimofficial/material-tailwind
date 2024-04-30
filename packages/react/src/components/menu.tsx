@@ -419,7 +419,7 @@ export interface MenuItemProps
 }
 
 export const MenuItem = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLButtonElement | HTMLElement | HTMLAnchorElement,
   MenuItemProps
 >(
   (

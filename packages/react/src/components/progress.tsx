@@ -24,7 +24,7 @@ export const ProgressContext = React.createContext<ProgressContextProps>({
 });
 
 // progress root
-export interface ProgressProps extends BaseComponent<"div" | any> {
+export interface ProgressProps extends BaseComponent<HTMLElement> {
   as?: React.ElementType;
   value?: number;
   className?: string;
@@ -51,29 +51,31 @@ export default function Example() {
  * ```
  */
 
-export const ProgressRoot = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  ProgressProps
->(({ as, size, color, value, className, children, ...rest }, ref) => {
-  const Element = as ?? "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme.progress ?? progressTheme;
-  const defaultProps = theme?.defaultProps;
+export const ProgressRoot = React.forwardRef<HTMLElement, ProgressProps>(
+  ({ as, size, color, value, className, children, ...rest }, ref) => {
+    const Element = as ?? "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme.progress ?? progressTheme;
+    const defaultProps = theme?.defaultProps;
 
-  size ??= (defaultProps?.size as ProgressProps["size"]) ?? "md";
-  color ??= (defaultProps?.color as ProgressProps["color"]) ?? "primary";
+    size ??= (defaultProps?.size as ProgressProps["size"]) ?? "md";
+    color ??= (defaultProps?.color as ProgressProps["color"]) ?? "primary";
 
-  const styles = twMerge(theme.baseStyle, theme.size[size], className);
-  const contextValue = React.useMemo(() => ({ value, color }), [value, color]);
+    const styles = twMerge(theme.baseStyle, theme.size[size], className);
+    const contextValue = React.useMemo(
+      () => ({ value, color }),
+      [value, color],
+    );
 
-  return (
-    <ProgressContext.Provider value={contextValue}>
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    </ProgressContext.Provider>
-  );
-});
+    return (
+      <ProgressContext.Provider value={contextValue}>
+        <Element {...rest} ref={ref} className={styles}>
+          {children}
+        </Element>
+      </ProgressContext.Provider>
+    );
+  },
+);
 
 ProgressRoot.displayName = "MaterialTailwind.Progress";
 
@@ -85,35 +87,34 @@ export interface ProgressBarProps
   children?: React.ReactNode;
 }
 
-export const ProgressBar = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  ProgressBarProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "div";
-  const contextTheme = useTheme();
-  const { color, value } = React.useContext(ProgressContext);
-  const theme = contextTheme.progressBar ?? progressBarTheme;
+export const ProgressBar = React.forwardRef<HTMLElement, ProgressBarProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "div";
+    const contextTheme = useTheme();
+    const { color, value } = React.useContext(ProgressContext);
+    const theme = contextTheme.progressBar ?? progressBarTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme.color[color as string],
-    className,
-  );
+    const styles = twMerge(
+      theme.baseStyle,
+      theme.color[color as string],
+      className,
+    );
 
-  return (
-    <Element
-      {...rest}
-      ref={ref}
-      className={styles}
-      style={{
-        width: `${value}%`,
-        ...rest?.style,
-      }}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={ref}
+        className={styles}
+        style={{
+          width: `${value}%`,
+          ...rest?.style,
+        }}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 ProgressBar.displayName = "MaterialTailwind.ProgressBar";
 

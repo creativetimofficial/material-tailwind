@@ -42,10 +42,7 @@ export interface RatingProps
  * }
  * ```
  */
-export const Rating = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  RatingProps
->(
+export const Rating = React.forwardRef<HTMLElement, RatingProps>(
   (
     {
       as,

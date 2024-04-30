@@ -66,7 +66,8 @@ export const ListRoot = React.forwardRef<
 ListRoot.displayName = "MaterialTailwind.List";
 
 // list item
-export interface ListItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface ListItemProps
+  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
   as?: React.ElementType;
   className?: string;
   disabled?: boolean;
@@ -76,7 +77,7 @@ export interface ListItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
 }
 
 export const ListItem = React.forwardRef<
-  HTMLLIElement | HTMLElement,
+  HTMLLIElement | HTMLElement | HTMLAnchorElement,
   ListItemProps
 >(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
   const Element = as ?? "li";
@@ -118,7 +119,7 @@ ListItem.displayName = "MaterialTailwind.ListItem";
 
 // list item start
 export interface ListItemStartProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -128,7 +129,7 @@ export interface ListItemStartProps
 }
 
 export const ListItemStart = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLSpanElement | HTMLElement | HTMLAnchorElement,
   ListItemStartProps
 >(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
   const Element = as ?? "span";
@@ -148,7 +149,7 @@ ListItemStart.displayName = "MaterialTailwind.ListItemStart";
 
 // list item end
 export interface ListItemEndProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -158,7 +159,7 @@ export interface ListItemEndProps
 }
 
 export const ListItemEnd = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLSpanElement | HTMLElement | HTMLAnchorElement,
   ListItemEndProps
 >(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
   const Element = as ?? "span";

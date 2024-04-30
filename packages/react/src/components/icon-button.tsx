@@ -16,7 +16,7 @@ import { iconButtonTheme } from "@theme";
 import type { BaseComponent } from "@types";
 
 export interface IconButtonProps
-  extends BaseComponent<HTMLButtonElement | HTMLElement> {
+  extends BaseComponent<HTMLButtonElement | HTMLAnchorElement | HTMLElement> {
   as?: React.ElementType;
   ripple?: boolean;
   isCircular?: boolean;
@@ -55,7 +55,7 @@ export interface IconButtonProps
  * ```
  */
 export const IconButton = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLButtonElement | HTMLAnchorElement | HTMLElement,
   IconButtonProps
 >(
   (

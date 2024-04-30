@@ -11,7 +11,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 async function readDocsContent(pathUrl) {
-  const fullPath = `${path.join(process.cwd())}/src/app/docs/content/${pathUrl}.mdx`;
+  const fullPath = `${path.join(
+    process.cwd(),
+  )}/src/app/docs/content/${pathUrl}.mdx`;
 
   if (!fs.existsSync(fullPath)) {
     notFound();
