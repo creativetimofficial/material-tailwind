@@ -14,6 +14,7 @@ import {
   MenuList,
   ThemeProvider,
   Card,
+  Button,
 } from "@material-tailwind/react";
 
 // styles
@@ -45,98 +46,62 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider>
         <Component {...pageProps} />
         <div className="fixed right-4 top-2/4 hidden -translate-y-2/4 lg:block">
-          <Menu placement="left" allowHover>
-            <MenuHandler>
-              <Card
-                shadow={true}
-                className="flex flex-col gap-1 border border-blue-gray-50 p-1.5"
+          <Card
+            shadow={true}
+            className="group flex flex-col gap-1 border border-blue-gray-50 p-1.5"
+          >
+            <Link href="/docs/react/installation">
+              <Button
+                size="lg"
+                color="white"
+                variant="outlined"
+                className="flex w-full items-center gap-2 px-2 py-2 text-gray-600 hover:border hover:border-blue-gray-50 hover:text-primary"
               >
-                <IconButton
-                  size="lg"
-                  color="white"
-                  variant="outlined"
-                  className="hover:border hover:border-blue-gray-50"
-                >
-                  <img
-                    src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
-                    alt="react-icon"
-                    className="tw-h-20 tw-w-20"
-                  />
-                </IconButton>
-                <IconButton
-                  size="lg"
-                  color="white"
-                  variant="outlined"
-                  className="hover:border hover:border-blue-gray-50"
-                >
-                  <img
-                    src="https://docs.material-tailwind.com/img/logos/icon-html.svg"
-                    alt="react-icon"
-                    className="h-20 w-20"
-                  />
-                </IconButton>
-                <IconButton
-                  size="lg"
-                  color="white"
-                  variant="outlined"
-                  className="hover:border hover:border-blue-gray-50"
-                >
-                  <img
-                    src="https://docs.material-tailwind.com/img/icon-figma.svg"
-                    alt="react-icon"
-                    className="h-20 w-20"
-                  />
-                </IconButton>
-              </Card>
-            </MenuHandler>
-            <MenuList className="gap-y-1 rounded-xl px-2">
-              <Link href="/docs/react/installation" target="_blank">
-                <MenuItem className="group flex items-center gap-2 border border-white hover:border hover:border-blue-gray-50 hover:bg-white">
-                  <img
-                    src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
-                    alt="react-icon"
-                    className="h-6 w-6"
-                  />
-                  <Typography
-                    variant="h6"
-                    className=" group-hover:!text-blue-gray-900"
-                  >
-                    React
-                  </Typography>
-                </MenuItem>
-              </Link>
-              <Link href="/docs/html/installation" target="_blank">
-                <MenuItem className="group flex items-center gap-2 border border-white hover:border hover:border-blue-gray-50 hover:bg-white">
-                  <img
-                    src="https://docs.material-tailwind.com/img/logos/icon-html.svg"
-                    alt="html-icon"
-                    className="h-6 w-6"
-                  />
-                  <Typography
-                    variant="h6"
-                    className=" group-hover:!text-blue-gray-900"
-                  >
-                    HTML
-                  </Typography>
-                </MenuItem>
-              </Link>
-              <Link href="/figma" target="_blank">
-                <MenuItem className="group flex items-center gap-2 border border-white hover:border hover:border-blue-gray-50 hover:bg-white">
-                  <img
-                    src="https://docs.material-tailwind.com/img/icon-figma.svg"
-                    alt="figma-icon"
-                    className="h-6 w-6"
-                  />
-                  <Typography
-                    variant="h6"
-                    className=" group-hover:!text-blue-gray-900"
-                  >
-                    Figma
-                  </Typography>
-                </MenuItem>
-              </Link>
-            </MenuList>
-          </Menu>
+                <img
+                  src="https://docs.material-tailwind.com/img/logos/icon-react.svg"
+                  alt="react-icon"
+                  className="h-6 w-6"
+                />
+                <span className="mr-2 hidden font-bold group-hover:block">
+                  React
+                </span>
+              </Button>
+            </Link>
+            <Link href="/docs/html/installation">
+              <Button
+                size="lg"
+                color="white"
+                variant="outlined"
+                className="flex w-full items-center gap-2 px-2 py-2 text-gray-600 hover:border hover:border-blue-gray-50 hover:text-primary"
+              >
+                <img
+                  src="https://docs.material-tailwind.com/svg/tailwind.svg"
+                  alt="react-icon"
+                  className="h-6 w-6"
+                />
+                <span className="mr-2 hidden font-bold group-hover:block">
+                  Tailwind CSS
+                </span>
+              </Button>
+            </Link>
+            <Link href="/figma">
+              <Button
+                size="lg"
+                color="white"
+                variant="outlined"
+                className="flex w-full items-center gap-2 px-2 py-2 text-gray-600 hover:border hover:border-blue-gray-50 hover:text-primary"
+              >
+                <img
+                  src="https://docs.material-tailwind.com/img/icon-figma.svg"
+                  alt="react-icon"
+                  className="h-6 w-6"
+                />
+                <span className="mr-2 hidden font-bold group-hover:block">
+                  Figma
+                </span>
+              </Button>
+            </Link>
+          </Card>
         </div>
       </ThemeProvider>
 
