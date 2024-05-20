@@ -10,6 +10,7 @@ navigation:
     "avatar-with-text",
     "avatar-stack",
     "avatar-custom-styles",
+    "avatar-with-dot-indicator",
     "avatar-props",
     "types-variant",
     "types-size",
@@ -279,6 +280,59 @@ export function AvatarCustomStyles() {
       src="https://docs.material-tailwind.com/img/face-2.jpg"
       className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
     />
+  );
+}
+```
+</CodePreview>
+
+---
+
+
+---
+
+<DocsTitle href="avatar-with-dot-indicator">
+## Avatar with Dot Indicator
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithDotIndicator />}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarWithDotIndicator() {
+  return (
+    <div className="flex gap-4">
+      <div className="relative">
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+        <div className="absolute -right-0.5 top-0.5 !z-20 h-3.5 w-3.5 rounded-full  border-2 border-white bg-green-500 "></div>
+      </div>
+      <div className="relative">
+        <Avatar
+          variant="rounded"
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+        <div className="absolute -right-1 -top-1 !z-20 h-3.5 w-3.5 rounded-full  border-2 border-white bg-green-500 "></div>
+      </div>
+      <div className="relative">
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+        <div className="absolute -right-0.5 bottom-0.5 !z-20 h-3.5 w-3.5 rounded-full  border-2 border-white bg-green-500 "></div>
+      </div>
+
+      <div className="relative">
+        <Avatar
+          variant="rounded"
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+        <div className="absolute -bottom-1 -right-1 !z-20 h-3.5 w-3.5 rounded-full  border-2 border-white bg-red-400 "></div>
+      </div>
+    </div>
   );
 }
 ```
