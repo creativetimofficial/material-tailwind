@@ -245,7 +245,6 @@ Use this example to implement a horizontal stack of avatar images for representi
 
 ---
 
-
 ## Avatar with Dot Indicator
 
 <CodePreview
@@ -256,44 +255,40 @@ Use this example to implement a horizontal stack of avatar images for representi
 >
 ```html
 <div class="flex gap-4">
-  <div class="relative">
+  <div class="relative inline-flex">
     <img
       src="https://docs.material-tailwind.com/img/face-2.jpg"
       alt="avatar"
       class="inline-block relative object-cover object-center rounded-full w-12 h-12"
-    />
-    <span
-      class="absolute -right-0.5 top-0.5 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500"
+    /><span
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[14%] right-[14%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border-2 border-white"
     ></span>
   </div>
-  <div class="relative">
+  <div class="relative inline-flex">
     <img
       src="https://docs.material-tailwind.com/img/face-2.jpg"
       alt="avatar"
       class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
-    />
-    <span
-      class="absolute -right-1 -top-1 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500"
+    /><span
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border-2 border-white"
     ></span>
   </div>
-  <div class="relative">
+  <div class="relative inline-flex">
     <img
       src="https://docs.material-tailwind.com/img/face-2.jpg"
       alt="avatar"
       class="inline-block relative object-cover object-center rounded-full w-12 h-12"
-    />
-    <span
-      class="absolute -right-0.5 bottom-0.5 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-red-500"
+    /><span
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[14%] right-[14%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border-2 border-white"
     ></span>
   </div>
-  <div class="relative">
+  <div class="relative inline-flex">
     <img
       src="https://docs.material-tailwind.com/img/face-2.jpg"
       alt="avatar"
       class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
-    />
-    <span
-      class="absolute -bottom-1 -right-1 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-red-500"
+    /><span
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[4%] right-[2%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border-2 border-white"
     ></span>
   </div>
 </div>
