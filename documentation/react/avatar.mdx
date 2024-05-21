@@ -9,8 +9,10 @@ navigation:
     "avatar-with-border",
     "avatar-with-text",
     "avatar-stack",
-    "avatar-custom-styles",
     "avatar-with-dot-indicator",
+    avatar-with-user-dropdown,
+    "avatar-custom-styles",
+    
     "avatar-props",
     "types-variant",
     "types-size",
@@ -262,34 +264,6 @@ export function AvatarStack() {
 
 ---
 
-<DocsTitle href="avatar-custom-styles">
-## Avatar with Custom Styles
-</DocsTitle>
-
-You can use the <Code>className</Code> prop to add custom styles to the Avatar component. Like in the example below - apply a border with <Code>border-green-500</Code> for a pop of color and layered shadows <Code>shadow-xl shadow-green-900/20</Code> for depth, creating a striking visual effect.
-
-<CodePreview component={<AvatarExamples.AvatarCustomStyles />}>
-```jsx
-import { Avatar } from "@material-tailwind/react";
-
-export function AvatarCustomStyles() {
-  return (
-    <Avatar
-      size="lg"
-      alt="avatar"
-      src="https://docs.material-tailwind.com/img/face-2.jpg"
-      className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
-    />
-  );
-}
-```
-</CodePreview>
-
----
-
-
----
-
 <DocsTitle href="avatar-with-dot-indicator">
 ## Avatar with Dot Indicator
 </DocsTitle>
@@ -333,6 +307,140 @@ export function AvatarWithDotIndicator() {
         <div className="absolute -bottom-1 -right-1 !z-20 h-3.5 w-3.5 rounded-full  border-2 border-white bg-red-400 "></div>
       </div>
     </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-with-user-dropdown">
+## Avatar with User dropdown
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithUserDropdown />}>
+```jsx
+import React from "react";
+import {
+  Avatar,
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Typography,
+} from "@material-tailwind/react";
+import {
+  Cog6ToothIcon,
+  InboxArrowDownIcon,
+  LifebuoyIcon,
+  PowerIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
+
+// profile menu component
+const profileMenuItems = [
+  {
+    label: "My Profile",
+    icon: UserCircleIcon,
+  },
+  {
+    label: "Edit Profile",
+    icon: Cog6ToothIcon,
+  },
+  {
+    label: "Inbox",
+    icon: InboxArrowDownIcon,
+  },
+  {
+    label: "Help",
+    icon: LifebuoyIcon,
+  },
+  {
+    label: "Sign Out",
+    icon: PowerIcon,
+  },
+];
+
+export function AvatarWithUserDropdown() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
+      <MenuHandler>
+        <Button
+          variant="text"
+          color="blue-gray"
+          className="flex items-center rounded-full p-0"
+        >
+          <Avatar
+            variant="circular"
+            size="md"
+            alt="tania andrew"
+            withBorder={true}
+            color="blue-gray"
+            className=" p-0.5"
+            src="https://docs.material-tailwind.com/img/face-2.jpg"
+          />
+        </Button>
+      </MenuHandler>
+      <MenuList className="p-1">
+        {profileMenuItems.map(({ label, icon }, key) => {
+          const isLastItem = key === profileMenuItems.length - 1;
+          return (
+            <MenuItem
+              key={label}
+              onClick={closeMenu}
+              className={`flex items-center gap-2 rounded ${
+                isLastItem
+                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                  : ""
+              }`}
+            >
+              {React.createElement(icon, {
+                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                strokeWidth: 2,
+              })}
+              <Typography
+                as="span"
+                variant="small"
+                className="font-normal"
+                color={isLastItem ? "red" : "inherit"}
+              >
+                {label}
+              </Typography>
+            </MenuItem>
+          );
+        })}
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-custom-styles">
+## Avatar with Custom Styles
+</DocsTitle>
+
+You can use the <Code>className</Code> prop to add custom styles to the Avatar component. Like in the example below - apply a border with <Code>border-green-500</Code> for a pop of color and layered shadows <Code>shadow-xl shadow-green-900/20</Code> for depth, creating a striking visual effect.
+
+<CodePreview component={<AvatarExamples.AvatarCustomStyles />}>
+```jsx
+import { Avatar } from "@material-tailwind/react";
+
+export function AvatarCustomStyles() {
+  return (
+    <Avatar
+      size="lg"
+      alt="avatar"
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      className="border border-green-500 shadow-xl shadow-green-900/20 ring-4 ring-green-500/30"
+    />
   );
 }
 ```
