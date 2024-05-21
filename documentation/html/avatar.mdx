@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Avatar - Material Tailwind
 description: Use our avatar component examples styled with Tailwind CSS to add a quick visual identification of users or people.
-navigation: ["avatar", "avatar-variants", "avatar-sizes", "avatar-with-border", "avatar-with-text", "avatar-stack", "best-practice"]
+navigation: ["avatar", "avatar-variants", "avatar-sizes", "avatar-with-border", "avatar-with-text", "avatar-stack", "avatar-with-dot-indicator", "best-practice"]
 github: avatar
 prev: alert
 next: badge
@@ -241,6 +241,63 @@ Use this example to implement a horizontal stack of avatar images for representi
       />
     </div>
   ```
+</CodePreview>
+
+---
+
+
+## Avatar with Dot Indicator
+
+<CodePreview
+  id="avatar-with-dot-indicator"
+  link="avatar#avatar-with-dot-indicator"
+  className="mt-4"
+  component={<HTMLAvatarExamples.AvatarWithDotIndicator />}
+>
+```html
+<div class="flex gap-4">
+  <div class="relative">
+    <img
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      alt="avatar"
+      class="inline-block relative object-cover object-center rounded-full w-12 h-12"
+    />
+    <span
+      class="absolute -right-0.5 top-0.5 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500"
+    ></span>
+  </div>
+  <div class="relative">
+    <img
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      alt="avatar"
+      class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
+    />
+    <span
+      class="absolute -right-1 -top-1 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500"
+    ></span>
+  </div>
+  <div class="relative">
+    <img
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      alt="avatar"
+      class="inline-block relative object-cover object-center rounded-full w-12 h-12"
+    />
+    <span
+      class="absolute -right-0.5 bottom-0.5 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-red-500"
+    ></span>
+  </div>
+  <div class="relative">
+    <img
+      src="https://docs.material-tailwind.com/img/face-2.jpg"
+      alt="avatar"
+      class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
+    />
+    <span
+      class="absolute -bottom-1 -right-1 !z-20 h-3.5 w-3.5 rounded-full border-2 border-white bg-red-500"
+    ></span>
+  </div>
+</div>
+```
 </CodePreview>
 
 
