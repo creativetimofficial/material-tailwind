@@ -409,18 +409,20 @@ export function InputForDarkSurface() {
 
 <CodePreview id="input-file" component={<InputExamples.InputFile />}>
 ```jsx
+import { Input } from "@material-tailwind/react";
+
 export function InputFile() {
   return (
-    <>
-      <label htmlFor="file-input" className="sr-only">
-        Choose file
-      </label>
-      <input
+    <div>
+      <Input
         type="file"
         id="file-input"
-        className="block w-full rounded-lg border border-blue-gray-800 text-sm file:me-4 file:cursor-pointer file:border-0 file:bg-blue-gray-900 file:px-4 file:py-3 file:text-white hover:cursor-pointer focus:z-10 focus:border-gray-800 focus:ring-gray-800 disabled:pointer-events-none disabled:opacity-50"
+        className="block w-full rounded-lg !border !border-gray-300  !px-0   !pt-0 text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent  file:me-4 file:cursor-pointer file:rounded-md file:border-0 file:bg-blue-gray-900 file:px-3 file:py-[9px] file:text-white placeholder:!opacity-0 hover:cursor-pointer focus:z-10 focus:!border-gray-500    disabled:pointer-events-none disabled:opacity-50"
+        labelProps={{
+          className: "hidden",
+        }}
       />
-    </>
+    </div>
   );
 }
 ```
