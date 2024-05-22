@@ -4,7 +4,7 @@
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "incremental": false,
     "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
+    "ignoreDeprecations": "5.0",
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react",
