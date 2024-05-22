@@ -10,3 +10,4 @@ export * from "./pricing-card";
 export * from "./profile-card";
 export * from "./simple-card";
 export * from "./testimonial-card";
+export * from "./card-with-list";
