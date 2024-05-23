@@ -5,4 +5,4 @@ export * from "./accordion-custom-animation";
 export * from "./accordion-custom-icon";
 export * from "./accordion-custom-styles";
 export * from "./accordion-disabled";
-export * from "./nesting-accordion";
+export * from "./nested-accordion";

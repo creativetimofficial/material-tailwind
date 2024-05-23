@@ -5,7 +5,7 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 
-export function AccordionNesting() {
+export function NestedAccordion() {
   const [open, setOpen] = React.useState(1);
   const [openNest, setOpenNest] = React.useState(0);
 
@@ -57,29 +57,6 @@ export function AccordionNesting() {
           We&apos;re constantly growing. We&apos;re constantly making mistakes.
           We&apos;re constantly trying to express ourselves and actualize our
           dreams.
-          {/* Nested Accordions */}
-          <Accordion open={openNest === 3}>
-            <AccordionHeader onClick={() => handleOpenNest(3)}>
-              What is Material Tailwind?
-            </AccordionHeader>
-            <AccordionBody>
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
-            </AccordionBody>
-          </Accordion>
-          <Accordion open={openNest === 4}>
-            <AccordionHeader onClick={() => handleOpenNest(4)}>
-              How to use Material Tailwind?
-            </AccordionHeader>
-            <AccordionBody>
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
-            </AccordionBody>
-          </Accordion>
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 3}>
@@ -91,18 +68,6 @@ export function AccordionNesting() {
           We&apos;re constantly growing. We&apos;re constantly making mistakes.
           We&apos;re constantly trying to express ourselves and actualize our
           dreams.
-          {/* Nested Accordion */}
-          <Accordion open={openNest === 5}>
-            <AccordionHeader onClick={() => handleOpenNest(5)}>
-              What is Material Tailwind?
-            </AccordionHeader>
-            <AccordionBody className="p-3">
-              We&apos;re not always in the position that we want to be at.
-              We&apos;re constantly growing. We&apos;re constantly making
-              mistakes. We&apos;re constantly trying to express ourselves and
-              actualize our dreams.
-            </AccordionBody>
-          </Accordion>
         </AccordionBody>
       </Accordion>
     </>
