@@ -51,7 +51,7 @@ export function PricingCard() {
               </svg>
             </span>
             <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
-              200+ components
+              230+ components
             </p>
           </li>
           <li className="flex items-center gap-4">
@@ -121,7 +121,7 @@ export function PricingCard() {
       </div>
       <div className="mt-12 p-0">
         <button
-          className="block w-full select-none rounded-lg bg-white py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-900 shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="block w-full select-none rounded-lg bg-white px-7 py-3.5 text-center align-middle font-sans text-sm font-bold uppercase text-blue-gray-900 shadow-md shadow-blue-gray-500/10 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-gray-500/20 focus:scale-[1.02] focus:opacity-[0.85] focus:shadow-none active:scale-100 active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="button"
         >
           Buy Now

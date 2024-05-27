@@ -4,7 +4,7 @@ import { Typography, Card, CardBody, Button } from "@material-tailwind/react";
 
 const DATA = [
   {
-    value: "200+",
+    value: "230+",
     floated: true,
     title: "Global Style",
     img: "https://docs.material-tailwind.com/image/variants.png",
@@ -106,7 +106,7 @@ export function Pro() {
                     variant="h2"
                     className="font-semibold text-primary"
                   >
-                    200+
+                    230+
                   </Typography>
                   <Typography
                     variant="h5"

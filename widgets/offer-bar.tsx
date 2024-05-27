@@ -63,7 +63,7 @@ export function OfferBar() {
               Material Tailwind Blocks
             </Link>
             , a comprehensive compilation of{" "}
-            <Typography className="mx-1 font-bold">200+</Typography>
+            <Typography className="mx-1 font-bold">230+</Typography>
             blocks, now available for your use.&nbsp;
             <Link href="/blocks" className="font-bold">
               Check out &rarr;

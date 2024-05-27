@@ -142,6 +142,11 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src="https://kit.fontawesome.com/42d5adcbca.js"
       />
+      <script
+        defer
+        chat-hash="j2rbsnzetxp03odoe7qxbwl"
+        src="https://widget.galichat.com/gali-embeded.min.js"
+      />
     </Fragment>
   );
 }
