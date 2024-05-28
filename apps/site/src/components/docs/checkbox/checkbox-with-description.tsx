@@ -7,7 +7,7 @@ export function CheckboxWithDescription() {
         <Checkbox.Indicator />
       </Checkbox>
       <label htmlFor="checkbox-description" className="-translate-y-1">
-        <Typography color="primary" className="font-semibold">
+        <Typography color="default" className="font-semibold">
           Remember Me
         </Typography>
         <Typography type="small" className="text-foreground">

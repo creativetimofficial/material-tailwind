@@ -35,11 +35,14 @@ export function DialogDemo() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="flex items-center justify-between gap-4">
-            <Typography type="h6">Material Tailwind</Typography>
+            <Typography type="h6">
+              Material Tailwind
+            </Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -94,12 +97,15 @@ export function DialogSizes() {
                 as={IconButton}
                 size="sm"
                 variant="ghost"
+                color="secondary"
                 className="absolute right-2 top-2"
                 isCircular
               >
                 <Xmark className="h-5 w-5" />
               </Dialog.DismissTrigger>
-              <Typography type="h6">Material Tailwind</Typography>
+              <Typography type="h6">
+                Material Tailwind
+              </Typography>
               <Typography className="mb-6 mt-2 text-foreground">
                 Material Tailwind is an open-source library that uses the power
                 of Tailwind CSS and React to help you build unique web projects
@@ -126,12 +132,15 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">Material Tailwind</Typography>
+                <Typography type="h6">
+                  Material Tailwind
+                </Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -163,12 +172,15 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">Material Tailwind</Typography>
+                <Typography type="h6">
+                  Material Tailwind
+                </Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -202,12 +214,15 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">Material Tailwind</Typography>
+                <Typography type="h6">
+                  Material Tailwind
+                </Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -239,12 +254,15 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">Material Tailwind</Typography>
+                <Typography type="h6">
+                  Material Tailwind
+                </Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -276,12 +294,15 @@ export function DialogSizes() {
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">Material Tailwind</Typography>
+                <Typography type="h6">
+                  Material Tailwind
+                </Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -341,6 +362,7 @@ export function DialogWithForm() {
             as={IconButton}
             size="sm"
             variant="ghost"
+            color="secondary"
             className="absolute right-2 top-2"
             isCircular
           >
@@ -358,7 +380,7 @@ export function DialogWithForm() {
                 as="label"
                 htmlFor="email"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Email
@@ -374,7 +396,7 @@ export function DialogWithForm() {
                 as="label"
                 htmlFor="password"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Password
@@ -404,7 +426,13 @@ export function DialogWithForm() {
             className="mb-2 mt-3 flex items-center justify-center gap-1 text-foreground"
           >
             Don't have an account?
-            <Typography type="small" color="primary" as="a" href="#">
+            <Typography
+              type="small"
+              color="primary"
+              as="a"
+              href="#"
+              className="font-semibold"
+            >
               Sign up
             </Typography>
           </Typography>
@@ -451,7 +479,7 @@ export function DialogWithImage() {
                 src="https://dub.sh/TdSBP0D"
               />
               <div className="flex flex-col">
-                <Typography className="data-[type=p]:font-semibold">
+                <Typography className="font-semibold">
                   Alex Andrew
                 </Typography>
                 <Typography type="small" className="text-foreground">
@@ -526,42 +554,40 @@ export function DialogWeb3() {
             as={IconButton}
             size="sm"
             variant="ghost"
+            color="secondary"
             isCircular
             className="absolute right-2 top-2"
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography color="primary" type="h6">
+          <Typography type="h6">
             Connect a Wallet
           </Typography>
           <Typography className="text-foreground">
             Choose which card you want to connect
           </Typography>
           <div className="mt-4">
-            <Typography
-              color="primary"
-              className="mb-2 data-[type=p]:font-semibold"
-            >
+            <Typography color="default" className="mb-2 font-semibold">
               Popular
             </Typography>
             <div className="space-y-2">
               <Button
                 isFullWidth
-                size="lg"
-                color="warning"
+                color="secondary"
                 className="flex items-center justify-center gap-2"
               >
                 <img
                   alt="metamask"
                   src="https://docs.material-tailwind.com/icons/metamask.svg"
-                  className="h-6 w-6"
+                  className="h-5 w-5"
                 />
-                <Typography>Connect with MetaMask</Typography>
+                <Typography className="font-semibold">
+                  Connect with MetaMask
+                </Typography>
               </Button>
               <Button
                 isFullWidth
-                size="lg"
-                color="info"
+                color="secondary"
                 className="flex items-center justify-center gap-2"
               >
                 <img
@@ -569,19 +595,18 @@ export function DialogWeb3() {
                   src="https://docs.material-tailwind.com/icons/coinbase.svg"
                   className="h-6 w-6 rounded"
                 />
-                <Typography>Connect with Coinbase</Typography>
+                <Typography className="font-semibold">
+                  Connect with Coinbase
+                </Typography>
               </Button>
             </div>
 
-            <Typography
-              color="primary"
-              className="mb-2 mt-6 data-[type=p]:font-semibold"
-            >
+            <Typography color="default" className="mb-2 mt-6 font-semibold">
               Other
             </Typography>
             <Button
               isFullWidth
-              size="lg"
+              color="secondary"
               className="flex items-center justify-center gap-2"
             >
               <img
@@ -589,14 +614,16 @@ export function DialogWeb3() {
                 src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
                 className="h-6 w-6 rounded"
               />
-              <Typography>Connect with Trust Wallet</Typography>
+              <Typography className="font-semibold">
+                Connect with Trust Wallet
+              </Typography>
             </Button>
           </div>
           <div className="mt-12 flex w-full items-center justify-between gap-2">
             <Typography type="small" className="text-foreground">
               New to Ethereum wallets?
             </Typography>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" color="secondary" size="sm">
               Learn More
             </Button>
           </div>
@@ -629,13 +656,14 @@ export function DialogLong() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="mb-4 flex items-center justify-between gap-4">
-            <Typography color="primary" type="h6">
+            <Typography type="h6">
               Long Dialog
             </Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               isCircular
               className="absolute right-2 top-2"
             >
@@ -782,11 +810,12 @@ export function DialogMessage() {
             size="sm"
             variant="ghost"
             isCircular
+            color="secondary"
             className="absolute right-2 top-2"
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography color="primary" type="h6" className="mb-1">
+          <Typography type="h6" className="mb-1">
             New message to @{" "}
           </Typography>
           <Typography className="text-foreground">
@@ -798,7 +827,7 @@ export function DialogMessage() {
                 as="label"
                 htmlFor="username"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Username
@@ -810,7 +839,7 @@ export function DialogMessage() {
                 as="label"
                 htmlFor="message"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-medium"
               >
                 Message
@@ -819,7 +848,7 @@ export function DialogMessage() {
             </div>
 
             <div className="mt-4 flex justify-end gap-2">
-              <Dialog.DismissTrigger as={Button} variant="ghost">
+              <Dialog.DismissTrigger as={Button} color="secondary">
                 Cancel
               </Dialog.DismissTrigger>
               <Button>Send Message</Button>
@@ -856,10 +885,10 @@ export function DialogNotification() {
           </Typography>
           <div className="mt-12 flex flex-col items-center text-center">
             <AppNotification className="mb-6 h-24 w-24" />
-            <Typography color="primary" type="h6">
+            <Typography type="h6">
               You should read this!
             </Typography>
-            <Typography className="mt-2 text-center font-normal text-foreground">
+            <Typography className="mt-2 text-center  text-foreground">
               Many people limit themselves by their own self-doubt, slowing
               their progress. Fortunately, I was raised with the belief that I
               could achieve anything.

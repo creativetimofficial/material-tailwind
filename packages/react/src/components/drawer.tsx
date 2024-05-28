@@ -103,42 +103,41 @@ DrawerRoot.displayName = "MaterialTailwind.Drawer";
 
 // drawer trigger
 export interface DrawerTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const DrawerTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
-  DrawerTriggerProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "button";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.drawerTrigger ?? drawerTriggerTheme;
-  const { refs, getReferenceProps, open } = React.useContext(DrawerContext);
+export const DrawerTrigger = React.forwardRef<HTMLElement, DrawerTriggerProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as || "button";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.drawerTrigger ?? drawerTriggerTheme;
+    const { refs, getReferenceProps, open } = React.useContext(DrawerContext);
 
-  const styles = twMerge(theme.baseStyle, className);
-  const elementRef = useMergeRefs([refs?.setReference, ref]);
+    const styles = twMerge(theme.baseStyle, className);
+    const elementRef = useMergeRefs([refs?.setReference, ref]);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      data-open={open}
-      className={styles}
-      {...(getReferenceProps && getReferenceProps())}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        data-open={open}
+        className={styles}
+        {...(getReferenceProps && getReferenceProps())}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 DrawerTrigger.displayName = "MaterialTailwind.DrawerTrigger";
 
 // drawer overlay
 export interface DrawerOverlayProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   className?: string;
   lockScroll?: boolean;
   children: React.ReactNode;
@@ -176,9 +175,7 @@ export const DrawerOverlay = React.forwardRef<
 DrawerOverlay.displayName = "MaterialTailwind.DrawerOverlay";
 
 // drawer panel
-type DrawerPanelBaseProps = React.HtmlHTMLAttributes<
-  HTMLElement | HTMLImageElement
-> &
+type DrawerPanelBaseProps = Omit<React.AllHTMLAttributes<HTMLElement>, "as"> &
   FloatingFocusManagerProps;
 
 export interface DrawerPanelProps
@@ -189,10 +186,7 @@ export interface DrawerPanelProps
   children: React.ReactNode;
 }
 
-export const DrawerPanel = React.forwardRef<
-  HTMLImageElement | HTMLElement,
-  DrawerPanelProps
->(
+export const DrawerPanel = React.forwardRef<HTMLElement, DrawerPanelProps>(
   (
     {
       as,
@@ -270,14 +264,14 @@ DrawerPanel.displayName = "MaterialTailwind.DrawerPanel";
 
 // drawer dismiss trigger
 export interface DrawerDismissTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const DrawerDismissTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   DrawerDismissTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";

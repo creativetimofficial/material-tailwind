@@ -7,7 +7,7 @@ export function SwitchWithDescription() {
     <div className="flex gap-2">
       <Switch id={ID} />
       <label htmlFor={ID} className="-translate-y-1">
-        <Typography color="gray" className="font-semibold">
+        <Typography color="default" className="font-semibold">
           Remember Me
         </Typography>
         <Typography type="small" className="text-foreground">

@@ -23,7 +23,7 @@ import {
   Search,
   SelectFace3d,
   SendDiagonal,
-  Trash,
+  Bin,
   UserXmark,
   Xmark,
 } from "iconoir-react";
@@ -56,7 +56,7 @@ const Links = [
     href: "#",
   },
   {
-    icon: Trash,
+    icon: Bin,
     title: "Trash",
     href: "#",
   },
@@ -81,6 +81,7 @@ export function SidebarWithBurgerMenu() {
                 as={IconButton}
                 size="sm"
                 variant="ghost"
+                color="secondary"
                 className="absolute right-2 top-2"
                 isCircular
               >
@@ -93,7 +94,7 @@ export function SidebarWithBurgerMenu() {
                   <img
                     src="/logo.png"
                     alt="brand"
-                    className="h-7 w-7 rounded-md"
+                    className="h-7 w-7 rounded-full"
                   />
                   <Typography className="font-semibold">
                     Material Tailwind
@@ -175,7 +176,7 @@ export function SidebarWithBurgerMenu() {
                     <Typography type="h6" color="secondary" className="mb-1">
                       Upgrade to PRO
                     </Typography>
-                    <Typography type="small" className="text-secondary-dark">
+                    <Typography type="small" color="secondary">
                       Upgrade to Material Tailwind PRO and get even more
                       components, plugins, advanced features and premium.
                     </Typography>

@@ -19,7 +19,7 @@ export function ImageWithBlurredCaption() {
               20 July 2022
             </Typography>
           </div>
-          <Typography className="data-[type=p]:font-bold">Growth</Typography>
+          <Typography className="font-bold">Growth</Typography>
         </Card.Body>
       </Card>
     </figure>

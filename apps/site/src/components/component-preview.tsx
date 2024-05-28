@@ -51,7 +51,7 @@ export function ComponentPreview({
 
   const codeBlockStyles = twMerge(
     firaCode.className,
-    "code-preview relative bg-gray-950 rounded-[5px] overflow-hidden",
+    "code-preview relative bg-black rounded-[5px] overflow-hidden",
     showCode && "pb-12",
   );
 

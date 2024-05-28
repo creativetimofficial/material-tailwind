@@ -38,7 +38,7 @@ const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
       <Typography
         as="label"
         htmlFor={id}
-        color="primary"
+        color="default"
         className="mb-6 block space-y-1.5"
       >
         <span className="text-sm font-semibold">{label}</span>

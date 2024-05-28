@@ -8,9 +8,7 @@ export function AlertWithContent() {
         <CheckCircleSolid className="h-5 w-5" />
       </Alert.Icon>
       <Alert.Content className="mt-0.5">
-        <Typography className="mb-1 data-[type=p]:font-bold">
-          Success
-        </Typography>
+        <Typography className="mb-1 font-bold">Success</Typography>
         <Typography>
           I don't know what that word means. I'm happy. But success, that goes
           back to what in somebody's eyes success means. For me, success is

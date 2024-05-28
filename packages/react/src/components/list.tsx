@@ -18,7 +18,8 @@ import {
 } from "@theme";
 
 // list root
-export interface ListProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface ListProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -29,45 +30,28 @@ export interface ListProps extends React.HtmlHTMLAttributes<HTMLElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/list) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/list#list-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/list#list-theme)
- *
- * @example
- * ```tsx
-import { List } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <List>
-      <List.Item>Inbox</List.Item>
-      <List.Item>Trash</List.Item>
-      <List.Item>Settings</List.Item>
-    </List>
-  );
-}
- * ```
  */
+export const ListRoot = React.forwardRef<HTMLElement, ListProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "ul";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.list ?? listTheme;
 
-export const ListRoot = React.forwardRef<
-  HTMLUListElement | HTMLElement,
-  ListProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "ul";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.list ?? listTheme;
+    const styles = twMerge(theme.baseStyle, className);
 
-  const styles = twMerge(theme.baseStyle, className);
-
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 ListRoot.displayName = "MaterialTailwind.List";
 
 // list item
 export interface ListItemProps
-  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   disabled?: boolean;
@@ -76,50 +60,49 @@ export interface ListItemProps
   children: React.ReactNode;
 }
 
-export const ListItem = React.forwardRef<
-  HTMLLIElement | HTMLElement | HTMLAnchorElement,
-  ListItemProps
->(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
-  const Element = as ?? "li";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.listItem ?? listItemTheme;
-  const defaultProps = theme?.defaultProps;
+export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
+  ({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
+    const Element = as ?? "li";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.listItem ?? listItemTheme;
+    const defaultProps = theme?.defaultProps;
 
-  ripple ??= (defaultProps?.ripple as ListItemProps["ripple"]) ?? true;
+    ripple ??= (defaultProps?.ripple as ListItemProps["ripple"]) ?? true;
 
-  const rippleEffect = ripple !== undefined && new Ripple();
+    const rippleEffect = ripple !== undefined && new Ripple();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const onClick = rest?.onClick;
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+      const onClick = rest?.onClick;
 
-    if (ripple) {
-      rippleEffect.create(e, "dark");
-    }
+      if (ripple) {
+        rippleEffect.create(e, "dark");
+      }
 
-    return typeof onClick === "function" && onClick(e);
-  };
+      return typeof onClick === "function" && onClick(e);
+    };
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element
-      {...rest}
-      ref={ref}
-      className={styles}
-      data-selected={selected}
-      aria-disabled={disabled}
-      onClick={handleClick}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={ref}
+        className={styles}
+        data-selected={selected}
+        aria-disabled={disabled}
+        onClick={handleClick}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 ListItem.displayName = "MaterialTailwind.ListItem";
 
 // list item start
 export interface ListItemStartProps
-  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -128,28 +111,27 @@ export interface ListItemStartProps
   ripple?: boolean;
 }
 
-export const ListItemStart = React.forwardRef<
-  HTMLSpanElement | HTMLElement | HTMLAnchorElement,
-  ListItemStartProps
->(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.listItemStart ?? listItemStartTheme;
+export const ListItemStart = React.forwardRef<HTMLElement, ListItemStartProps>(
+  ({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.listItemStart ?? listItemStartTheme;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 ListItemStart.displayName = "MaterialTailwind.ListItemStart";
 
 // list item end
 export interface ListItemEndProps
-  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -158,22 +140,21 @@ export interface ListItemEndProps
   ripple?: boolean;
 }
 
-export const ListItemEnd = React.forwardRef<
-  HTMLSpanElement | HTMLElement | HTMLAnchorElement,
-  ListItemEndProps
->(({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.listItemEnd ?? listItemEndTheme;
+export const ListItemEnd = React.forwardRef<HTMLElement, ListItemEndProps>(
+  ({ as, className, disabled, selected, ripple, children, ...rest }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.listItemEnd ?? listItemEndTheme;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 ListItemEnd.displayName = "MaterialTailwind.ListItemEnd";
 

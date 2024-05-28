@@ -23,7 +23,7 @@ export const inputTheme = {
 
 export const inputFieldTheme = {
   baseStyle:
-    "h-full w-full outline-none rounded-[inherit] text-inherit leading-[inherit] focus:outline-none text-surface-dark placeholder:text-foreground/70 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none",
+    "h-full w-full outline-none rounded-[inherit] text-inherit leading-[inherit] focus:outline-none text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none",
   size: {
     sm: "py-[4.5px] px-1.5 ring data-[icon-placement=start]:ps-6 data-[icon-placement=end]:pe-6",
     md: "py-[8.5px] px-2.5 ring data-[icon-placement=start]:ps-8 data-[icon-placement=end]:pe-8",
@@ -49,7 +49,7 @@ export const inputIconTheme = {
     placement: "start",
   },
   baseStyle:
-    "pointer-events-none absolute top-1/2 -translate-y-1/2 text-foreground/70 peer-hover:text-surface-dark peer-focus:text-surface-dark transition-all duration-300 ease-in overflow-hidden",
+    "pointer-events-none absolute top-1/2 -translate-y-1/2 text-foreground/70 peer-hover:text-black peer-focus:text-black dark:peer-hover:text-white dark:peer-focus:text-white transition-all duration-300 ease-in overflow-hidden",
   size: {
     sm: "w-4 h-4 data-[placement=start]:left-[5px] data-[placement=end]:right-[5px]",
     md: "w-5 h-5 data-[placement=start]:left-[7px] data-[placement=end]:right-[7px]",

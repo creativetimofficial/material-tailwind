@@ -16,7 +16,7 @@ import {
   NavArrowRight,
   Pin,
   SendDiagonal,
-  Trash,
+  Bin,
   UserXmark,
 } from "iconoir-react";
 
@@ -48,7 +48,7 @@ const Links = [
     href: "#",
   },
   {
-    icon: Trash,
+    icon: Bin,
     title: "Trash",
     href: "#",
   },
@@ -60,9 +60,7 @@ export function SidebarWithContentSeparator() {
   return (
     <Card className="max-w-[280px]">
       <Card.Header className="mx-4 mb-0 mt-3 h-max">
-        <Typography className="data-[type=p]:font-semibold">
-          Material Tailwind
-        </Typography>
+        <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">
         <List>

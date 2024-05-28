@@ -29,12 +29,12 @@ export const RadioContext = React.createContext<RadioContextProps>({
 
 // radio root
 export interface RadioProps
-  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "onChange"> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as" | "onChange"> {
   as?: React.ElementType;
   value?: string;
   defaultValue?: string;
   onChange?: (e: string) => void;
-  color?: BaseComponent<any>["color"];
+  color?: BaseComponent<HTMLElement>["color"];
   orientation?: "horizontal" | "vertical";
   className?: string;
   children: React.ReactNode;
@@ -45,36 +45,7 @@ export interface RadioProps
  * [Documentation](http://www.material-tailwind.com/docs/react/radio) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/radio#radio-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/radio#radio-theme)
- *
- * @example
- * ```tsx
-import { Radio, Typography } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Radio>
-      <div className="flex items-center gap-2">
-        <Radio.Item id="html">
-          <Radio.Indicator />
-        </Radio.Item>
-        <Typography as="label" htmlFor="html" className="text-foreground">
-          HTML
-        </Typography>
-      </div>
-      <div className="flex items-center gap-2">
-        <Radio.Item id="react">
-          <Radio.Indicator />
-        </Radio.Item>
-        <Typography as="label" htmlFor="react" className="text-foreground">
-          React
-        </Typography>
-      </div>
-    </Radio>
-  );
-}
- * ```
  */
-
 export const RadioRoot = React.forwardRef<HTMLElement, RadioProps>(
   (
     {
@@ -134,7 +105,7 @@ RadioRoot.displayName = "MaterialTailwind.Radio";
 
 // radio item
 export interface RadioItemProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends React.AllHTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   className?: string;
   value?: string;
@@ -184,14 +155,14 @@ export const RadioItem = React.forwardRef<HTMLLabelElement, RadioItemProps>(
 
 // radio indicator
 export interface RadioIndicatorProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;
 }
 
 export const RadioIndicator = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLElement,
   RadioIndicatorProps
 >(({ as, className, children, ...props }, ref) => {
   const Element = as || "span";

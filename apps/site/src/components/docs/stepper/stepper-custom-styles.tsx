@@ -8,7 +8,7 @@ export function StepperCustomStyles() {
     <Card color="primary" className="mx-auto w-full rounded-full p-6">
       <Timeline
         mode="stepper"
-        color="warning"
+        color="secondary"
         value={step}
         onChange={(val) => setStep(Number(val))}
       >

@@ -12,7 +12,6 @@ import {
   Input,
   Avatar,
 } from "@material-tailwind/react";
-
 import {
   Xmark,
   Archive,
@@ -26,7 +25,7 @@ import {
   Search,
   SelectFace3d,
   SendDiagonal,
-  Trash,
+  Bin,
   UserXmark,
 } from "iconoir-react";
 
@@ -58,7 +57,7 @@ const Links = [
     href: "#",
   },
   {
-    icon: Trash,
+    icon: Bin,
     title: "Trash",
     href: "#",
   },
@@ -75,6 +74,7 @@ export function DrawerWithNavigation() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -163,7 +163,11 @@ export function DrawerWithNavigation() {
                   <Typography type="h6" color="secondary" className="mb-1">
                     Upgrade to PRO
                   </Typography>
-                  <Typography type="small" className="text-secondary-dark">
+                  <Typography
+                    type="small"
+                    color="secondary"
+                    className="opacity-80"
+                  >
                     Upgrade to Material Tailwind PRO and get even more
                     components, plugins, advanced features and premium.
                   </Typography>

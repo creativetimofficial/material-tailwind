@@ -16,7 +16,7 @@ import type { BaseComponent } from "@types";
 
 // input context
 export interface InputContextProps
-  extends Omit<BaseComponent<HTMLInputElement>, "variant"> {
+  extends Omit<BaseComponent<HTMLElement>, "variant"> {
   iconPlacement?: "start" | "end" | string;
   isIconDefined?: boolean;
   isError?: boolean;
@@ -39,10 +39,11 @@ export const InputContext = React.createContext<InputContextProps>({
 });
 
 // input root
-export interface InputProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface InputProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as" | "size"> {
   as?: React.ElementType;
-  size?: BaseComponent<any>["size"];
-  color?: BaseComponent<any>["color"];
+  size?: BaseComponent<HTMLElement>["size"];
+  color?: BaseComponent<HTMLElement>["color"];
   isPill?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
@@ -56,21 +57,7 @@ export interface InputProps extends React.HtmlHTMLAttributes<HTMLElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/input) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/input#input-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/input#input-theme)
- *
- * @example
- * ```tsx
-import { Input } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Input className="w-72">
-      <Input.Field placeholder="Input" />
-    </Input>
-  );
-}
- * ```
  */
-
 export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
   (
     {
@@ -146,7 +133,7 @@ InputRoot.displayName = "MaterialTailwind.Input";
 
 // input field
 export interface InputFieldProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends React.AllHTMLAttributes<HTMLInputElement> {
   type?:
     | "text"
     | "email"
@@ -211,62 +198,66 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
 InputField.displayName = "MaterialTailwind.InputField";
 
 // input icon
-export interface InputIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface InputIconProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   placement?: "start" | "end";
 }
 
-export const InputIcon = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
-  InputIconProps
->(({ as, placement, ...props }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const {
-    size,
-    iconPlacement,
-    setIconPlacement,
-    setIsIconDefined,
-    isError,
-    isSuccess,
-    disabled,
-  } = React.useContext(InputContext);
-  const theme = contextTheme?.inputIcon ?? inputIconTheme;
-  const defaultProps = theme?.defaultProps;
+export const InputIcon = React.forwardRef<HTMLElement, InputIconProps>(
+  ({ as, placement, ...props }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const {
+      size,
+      iconPlacement,
+      setIconPlacement,
+      setIsIconDefined,
+      isError,
+      isSuccess,
+      disabled,
+    } = React.useContext(InputContext);
+    const theme = contextTheme?.inputIcon ?? inputIconTheme;
+    const defaultProps = theme?.defaultProps;
 
-  placement ??=
-    (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
+    placement ??=
+      (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
 
-  React.useEffect(() => {
-    setIsIconDefined(true);
+    React.useEffect(() => {
+      setIsIconDefined(true);
 
-    return () => {
-      setIsIconDefined(false);
-    };
-  }, []);
+      return () => {
+        setIsIconDefined(false);
+      };
+    }, []);
 
-  React.useEffect(() => {
-    setIconPlacement(placement as string);
+    React.useEffect(() => {
+      setIconPlacement(placement as string);
 
-    return () => {
-      setIconPlacement("start");
-    };
-  }, [placement]);
+      return () => {
+        setIconPlacement("start");
+      };
+    }, [placement]);
 
-  const styles = twMerge(theme.baseStyle, theme.size[size!], props?.className);
+    const styles = twMerge(
+      theme.baseStyle,
+      theme.size[size!],
+      props?.className,
+    );
 
-  return (
-    <Element
-      {...props}
-      ref={ref}
-      className={styles}
-      data-error={isError}
-      data-success={isSuccess}
-      aria-disabled={disabled}
-      data-placement={iconPlacement}
-    />
-  );
-});
+    return (
+      <Element
+        {...props}
+        ref={ref}
+        className={styles}
+        data-error={isError}
+        data-success={isSuccess}
+        aria-disabled={disabled}
+        data-placement={iconPlacement}
+      />
+    );
+  },
+);
 
 InputIcon.displayName = "MaterialTailwind.InputIcon";
 

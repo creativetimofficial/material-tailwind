@@ -18,6 +18,7 @@ export function DialogDemo() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >

@@ -22,14 +22,14 @@ const MenuItem = React.forwardRef<
       <div>
         <Typography
           type="small"
-          color="primary"
-          className="mb-1 block data-[type=p]:font-semibold"
+          color="default"
+          className="mb-1 block font-semibold"
         >
           {title}
         </Typography>
         <Typography
           type="small"
-          className="flex items-center gap-1 text-sm text-foreground data-[type=small]:text-xs"
+          className="flex items-center gap-1 text-xs text-foreground"
         >
           <Clock className="h-3 w-3" />
           {date}

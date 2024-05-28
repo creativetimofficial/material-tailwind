@@ -1,18 +1,18 @@
 import { Timeline, Typography } from "@material-tailwind/react";
-import { Bell, DollarCircle, HomeAlt } from "iconoir-react";
+import { Bell, DollarCircle, HomeSimple } from "iconoir-react";
 
 export function TimelineWithIcon() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <HomeAlt className="h-4 w-4" />
+            <HomeSimple className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -27,11 +27,11 @@ export function TimelineWithIcon() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <Bell className="h-4 w-4" />
+            <Bell className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -45,11 +45,11 @@ export function TimelineWithIcon() {
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Icon>
-            <DollarCircle className="h-4 w-4" />
+            <DollarCircle className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">

@@ -8,10 +8,7 @@ import {
   Avatar,
   Menu,
   Tooltip,
-  Accordion,
-  type MenuItemProps,
 } from "@material-tailwind/react";
-
 import {
   Archive,
   Community,
@@ -157,22 +154,16 @@ const MenuItem = React.forwardRef<
     <List.Item ref={ref} as="a" href="#" className="p-1.5" {...rest}>
       {Icon && (
         <List.ItemStart>
-          <div className="flex items-center justify-center rounded-[5px] bg-primary/5 p-2">
-            <Icon className="h-6 w-6" />
+          <div className="flex items-center justify-center rounded-[5px] bg-surface-light p-2">
+            <Icon className="h-6 w-6 text-black dark:text-white" />
           </div>
         </List.ItemStart>
       )}
-      <div>
-        <Typography
-          color="primary"
-          className="data-[type=p]:text-sm data-[type=p]:font-semibold"
-        >
+      <div className="leading-none">
+        <Typography color="default" className="mb-0.5 text-sm font-semibold">
           {title}
         </Typography>
-        <Typography
-          type="small"
-          className="data-[type=p]:text-xs data-[type=p]:text-foreground"
-        >
+        <Typography type="small" className="text-xs text-foreground">
           {description}
         </Typography>
       </div>
@@ -233,6 +224,7 @@ export function NavbarWithMegaMenu() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto mr-2 grid lg:hidden"
         >
@@ -245,35 +237,9 @@ export function NavbarWithMegaMenu() {
         <ProfileMenu />
       </div>
       <Collapse open={openNav}>
-        <Accordion>
-          <Accordion.Item value="react" className="mt-2 border-none">
-            <Accordion.Trigger className="p-0">
-              <List.Item className="w-full">
-                <List.ItemStart className="me-1.5">
-                  <MultiplePages className="h-4 w-4" />
-                </List.ItemStart>
-                <Typography type="small">Pages</Typography>
-                <List.ItemEnd className="ps-1">
-                  <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
-                </List.ItemEnd>
-              </List.Item>
-            </Accordion.Trigger>
-            <Accordion.Content>
-              <MenuItem
-                title="@material-tailwind/html"
-                description="Learn how to use @material-tailwind/html, packed with rich components and widgets."
-              />
-              <MenuItem
-                title="@material-tailwind/react"
-                description="Learn how to use @material-tailwind/react, packed with rich components for React."
-              />
-              <MenuItem
-                title="Material Tailwind PRO"
-                description="A complete set of UI Elements for building faster websites in less time."
-              />
-            </Accordion.Content>
-          </Accordion.Item>
-        </Accordion>
+        <ul className="grid grid-cols-1 gap-y-2 md:grid-cols-2">
+          {renderItems}
+        </ul>
         <NavList />
       </Collapse>
     </Card>

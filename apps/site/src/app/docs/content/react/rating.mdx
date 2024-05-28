@@ -84,7 +84,7 @@ export function CustomRatingIcon() {
 
 <ComponentPreview demo={<Rating.RatingWithText />}>
 ```tsx
-import React from "react";
+import * as React from "react";
 import { Rating, Typography } from "@material-tailwind/react";
 
 export function RatingWithText() {
@@ -92,11 +92,11 @@ export function RatingWithText() {
 
   return (
     <div className="flex items-center gap-2">
-      <Typography color="primary" className="font-medium">
-        {rated}.7
+      <Typography color="primary" className="font-semibold">
+        {rated}
       </Typography>
       <Rating value={4} onChange={(value) => setRated(value)} />
-      <Typography color="primary" className="font-medium">
+      <Typography color="default" className="font-semibold">
         Based on 134 Reviews
       </Typography>
     </div>
@@ -116,7 +116,7 @@ import { Typography, Avatar, Rating } from "@material-tailwind/react";
 export function RatingWithComment() {
   return (
     <div className="px-8 text-center">
-      <Typography type="h5" className="mb-6">
+      <Typography as="p" type="h5" className="mb-6">
         &quot;This is an excellent product, the documentation is excellent and
         helped me get things done more efficiently.&quot;
       </Typography>
@@ -125,10 +125,8 @@ export function RatingWithComment() {
         alt="image"
         size="lg"
       />
-      <Typography className="mt-4 data-[type=p]:font-bold">
-        Tania Andrew
-      </Typography>
-      <Typography type="small" className="mb-4 text-foreground">
+      <Typography className="mt-4 font-bold">Tania Andrew</Typography>
+      <Typography as="p" type="small" className="mb-4 text-foreground">
         Lead Frontend Developer
       </Typography>
       <Rating value={4} color="warning" readonly />

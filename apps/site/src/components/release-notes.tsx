@@ -20,7 +20,6 @@ export default function ReleaseNotes() {
               id={`v${release.version}`}
               as="h2"
               type="h6"
-              color="primary"
               className="scroll-mt-40"
             >
               v{release.version}
@@ -30,7 +29,7 @@ export default function ReleaseNotes() {
             </Typography>
             {release.content.map((content, idx) => (
               <div key={idx}>
-                <Typography color="primary" className="mb-1 text-lg font-bold">
+                <Typography color="default" className="mb-1 text-lg font-bold">
                   {content.title}
                 </Typography>
                 <ul className="mb-4 ml-4 list-disc space-y-1.5 text-foreground">

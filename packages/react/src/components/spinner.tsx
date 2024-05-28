@@ -12,9 +12,10 @@ import type { BaseComponent } from "@types";
 import { spinnerTheme } from "@theme";
 import { twMerge } from "tailwind-merge";
 
-export interface SpinnerProps extends React.SVGAttributes<SVGElement> {
+export interface SpinnerProps
+  extends Omit<React.AllHTMLAttributes<SVGSVGElement>, "size"> {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  color?: BaseComponent<SVGElement>["color"];
+  color?: BaseComponent<SVGSVGElement>["color"];
   className?: string;
 }
 
@@ -23,17 +24,7 @@ export interface SpinnerProps extends React.SVGAttributes<SVGElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/spinner) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/spinner#spinner-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/spinner#spinner-theme)
- *
- * @example
- * ```tsx
-import { Spinner } from "@material-tailwind/react";
- 
-export default function Example() {
-  return <Spinner />;
-}
- * ```
  */
-
 export const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
   ({ size, color, className, ...rest }, ref) => {
     const contextTheme = useTheme();

@@ -29,7 +29,7 @@ import {
   NavArrowDown,
   NavArrowUp,
   Search,
-  Trash,
+  Bin,
 } from "iconoir-react";
 import { faker } from "@faker-js/faker";
 import { twMerge } from "tailwind-merge";
@@ -118,7 +118,12 @@ export function DataTableDemo() {
         cell: (info) => (
           <div className="w-full text-end">
             <Menu>
-              <Menu.Trigger as={IconButton} variant="ghost" size="sm">
+              <Menu.Trigger
+                as={IconButton}
+                variant="ghost"
+                color="secondary"
+                size="sm"
+              >
                 <MoreHorizCircle className="h-4 w-4 stroke-2" />
               </Menu.Trigger>
               <Menu.Content className="min-w-[120px]">
@@ -131,7 +136,7 @@ export function DataTableDemo() {
                   Edit
                 </Menu.Item>
                 <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
-                  <Trash className="mr-2 h-4 w-4 stroke-2" />
+                  <Bin className="mr-2 h-4 w-4 stroke-2" />
                   Delete
                 </Menu.Item>
               </Menu.Content>
@@ -236,7 +241,7 @@ export function DataTableDemo() {
               </tr>
             ))}
           </thead>
-          <tbody className="group text-sm font-normal text-primary">
+          <tbody className="group text-sm text-black dark:text-white">
             {table.getRowModel().rows.map((row, key) => (
               <tr key={key} className="border-b border-surface last:border-0">
                 {row.getVisibleCells().map((cell, idx) => (
@@ -254,7 +259,7 @@ export function DataTableDemo() {
           <Typography type="small" className="text-foreground">
             Page
           </Typography>
-          <Typography type="small" color="primary">
+          <Typography type="small" color="default">
             {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount().toLocaleString()}
           </Typography>

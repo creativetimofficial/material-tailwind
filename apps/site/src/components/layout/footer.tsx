@@ -103,7 +103,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap">
           <div className="w-full md:w-4/12">
-            <Typography type="h5" color="primary" className="mb-2">
+            <Typography type="h5" className="mb-2">
               Material Tailwind
             </Typography>
             <Typography className="text-foreground">
@@ -116,7 +116,8 @@ export function Footer() {
                   key={key}
                   href={link}
                   target="_blank"
-                  color="lightBlue"
+                  color="secondary"
+                  variant="outline"
                   isCircular
                 >
                   <Icon className="h-[18px] w-[18px]" />
@@ -127,7 +128,7 @@ export function Footer() {
           <div className="ml-auto w-full px-4 md:w-7/12">
             <div className="items-top mb-6 flex flex-wrap">
               <div className="w-6/12 pt-6 md:ml-auto md:px-4 md:pt-0 xl:w-3/12">
-                <Typography color="primary" className="font-semibold">
+                <Typography color="default" className="font-semibold">
                   Company
                 </Typography>
                 <ul className="list-unstyled mt-3">
@@ -147,7 +148,7 @@ export function Footer() {
                 </ul>
               </div>
               <div className="ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
-                <Typography color="primary" className="font-semibold">
+                <Typography color="default" className="font-semibold">
                   Help and Support
                 </Typography>
                 <ul className="list-unstyled mt-3">
@@ -167,7 +168,7 @@ export function Footer() {
                 </ul>
               </div>
               <div className="ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
-                <Typography color="primary" className="font-semibold">
+                <Typography color="default" className="font-semibold">
                   Resources
                 </Typography>
                 <ul className="list-unstyled mt-3">
@@ -188,7 +189,7 @@ export function Footer() {
                 </ul>
               </div>
               <div className="ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
-                <Typography color="primary" className="font-semibold">
+                <Typography color="default" className="font-semibold">
                   Tehnologies
                 </Typography>
                 <ul className="list-unstyled mt-3">
@@ -213,51 +214,35 @@ export function Footer() {
       </div>
       <hr className="my-6 border-surface" />
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-wrap items-center justify-center gap-2 pb-2 pt-4 md:justify-between">
-          <div className="text-center lg:text-left">
-            <a
-              href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-primary no-underline"
-            >
-              <Link
-                target="_blank"
-                href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
-              >
-                <Vercel />
-              </Link>
-            </a>
-            <div className="text-md mt-2 py-1 text-foreground">
-              Copyright &copy; {YEAR}{" "}
-              <Link
-                href="/"
-                className="text-inherit transition-colors hover:text-primary"
-              >
-                Material Tailwind
-              </Link>{" "}
-              by{" "}
-              <Link
-                href="https://www.creative-tim.com?ref=material-tailwind"
-                target="_blank"
-                className="text-inherit transition-colors hover:text-primary"
-              >
-                Creative Tim. Made with ❤️ for a better web.
-              </Link>
-            </div>
-          </div>
-          <div className="ml-auto w-full px-4 text-center md:w-4/12 md:px-0 md:text-right">
+        <div className="flex flex-wrap items-center justify-center gap-2 pb-2 pt-4 text-center md:justify-between">
+          <a
+            href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-black no-underline dark:text-white"
+          >
             <Link
               target="_blank"
-              href="https://nepcha.com?ref=material-tailwind"
+              href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
             >
-              <Image
-                width={250}
-                height={250}
-                alt="nepcha"
-                className="mx-auto lg:ml-auto lg:mr-0"
-                src="https://nepcha.com/img/media/badges/analytics-by-nepcha-black-transparent.png"
-              />
+              <Vercel />
+            </Link>
+          </a>
+          <div className="text-md mt-2 py-1 text-black dark:text-white">
+            Copyright &copy; {YEAR}{" "}
+            <Link
+              href="/"
+              className="text-inherit transition-colors hover:text-primary"
+            >
+              Material Tailwind
+            </Link>{" "}
+            by{" "}
+            <Link
+              href="https://www.creative-tim.com?ref=material-tailwind"
+              target="_blank"
+              className="text-inherit transition-colors hover:text-primary"
+            >
+              Creative Tim. Made with ❤️ for a better web.
             </Link>
           </div>
         </div>

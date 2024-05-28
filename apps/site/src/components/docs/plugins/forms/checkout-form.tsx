@@ -55,7 +55,7 @@ const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
       <Typography
         as="label"
         htmlFor={id}
-        color="primary"
+        color="default"
         className="mb-6 block w-full space-y-1.5"
       >
         <span className="text-sm font-semibold">{label}</span>
@@ -128,7 +128,7 @@ export function CheckoutForm() {
       <Card.Header>
         <Card
           color="primary"
-          className="grid h-56 place-items-center rounded-md shadow-none"
+          className="grid h-40 place-items-center rounded-md shadow-none"
         >
           <Typography type="h5" color="secondary">
             Material Tailwind PRO
@@ -296,7 +296,7 @@ export function CheckoutForm() {
                 paypalForm.trigger("postalCode");
               }}
             />
-            <Button type="submit" color="warning" className="w-full">
+            <Button type="submit" className="w-full">
               Pay With PayPal
             </Button>
           </Tabs.Panel>

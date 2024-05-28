@@ -15,10 +15,8 @@ export function DialogNotification() {
           </Typography>
           <div className="mt-12 flex flex-col items-center text-center">
             <AppNotification className="mb-6 h-24 w-24" />
-            <Typography color="primary" type="h6">
-              You should read this!
-            </Typography>
-            <Typography className="mt-2 text-center font-normal text-foreground">
+            <Typography type="h6">You should read this!</Typography>
+            <Typography className="mt-2 text-center  text-foreground">
               Many people limit themselves by their own self-doubt, slowing
               their progress. Fortunately, I was raised with the belief that I
               could achieve anything.

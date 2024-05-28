@@ -71,30 +71,7 @@ export interface PopoverProps {
  * [Documentation](http://www.material-tailwind.com/docs/react/popover) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/popover#popover-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/popover#popover-theme)
- *
- * @example
- * ```tsx
-import { Popover, Button, Typography } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Popover>
-      <Popover.Trigger as={Button}>Open</Popover.Trigger>
-      <Popover.Content className="max-w-sm">
-        <Typography
-          type="small"
-          className="text-foreground"
-        >
-          This is a very beautiful popover, show some love.
-        </Typography>
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover>
-  );
-}
- * ```
  */
-
 export function PopoverRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,
@@ -167,14 +144,14 @@ PopoverRoot.displayName = "MaterialTailwind.Popover";
 
 // popover trigger
 export interface PopoverTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const PopoverTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   PopoverTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";
@@ -201,8 +178,9 @@ export const PopoverTrigger = React.forwardRef<
 PopoverTrigger.displayName = "MaterialTailwind.PopoverTrigger";
 
 // popover content
-type PopoverContentBaseProps = React.HtmlHTMLAttributes<
-  HTMLElement | HTMLImageElement
+type PopoverContentBaseProps = Omit<
+  React.AllHTMLAttributes<HTMLElement>,
+  "as"
 > &
   FloatingFocusManagerProps;
 
@@ -214,7 +192,7 @@ export interface PopoverContentProps
 }
 
 export const PopoverContent = React.forwardRef<
-  HTMLImageElement | HTMLElement,
+  HTMLElement,
   PopoverContentProps
 >(
   (
@@ -295,51 +273,50 @@ PopoverContent.displayName = "MaterialTailwind.PopoverContent";
 
 // popover arrow
 export interface PopoverArrowProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
 }
 
-export const PopoverArrow = React.forwardRef<
-  HTMLSpanElement,
-  PopoverArrowProps
->(({ as, className, ...rest }, ref) => {
-  const Element = as || "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.popoverArrow ?? popoverArrowTheme;
-  const innerRef = React.useRef<React.ComponentRef<"span">>(null);
-  const { placement, arrowRef, middlewareData } =
-    React.useContext(PopoverContext);
+export const PopoverArrow = React.forwardRef<HTMLElement, PopoverArrowProps>(
+  ({ as, className, ...rest }, ref) => {
+    const Element = as || "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.popoverArrow ?? popoverArrowTheme;
+    const innerRef = React.useRef<React.ComponentRef<"span">>(null);
+    const { placement, arrowRef, middlewareData } =
+      React.useContext(PopoverContext);
 
-  const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
+    const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
 
-  const staticSide: any = {
-    top: "bottom",
-    right: "left",
-    bottom: "top",
-    left: "right",
-  }[placement ? placement.split("-")[0] : ""];
+    const staticSide: any = {
+      top: "bottom",
+      right: "left",
+      bottom: "top",
+      left: "right",
+    }[placement ? placement.split("-")[0] : ""];
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      style={{
-        position: "absolute",
-        left: middlewareData?.arrow?.x,
-        top: middlewareData?.arrow?.y,
-        [staticSide]: `${
-          -(innerRef?.current?.clientHeight as number) / 2 - 1
-        }px`,
-        ...rest?.style,
-      }}
-      data-placement={placement}
-      className={styles}
-    />
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        style={{
+          position: "absolute",
+          left: middlewareData?.arrow?.x,
+          top: middlewareData?.arrow?.y,
+          [staticSide]: `${
+            -(innerRef?.current?.clientHeight as number) / 2 - 1
+          }px`,
+          ...rest?.style,
+        }}
+        data-placement={placement}
+        className={styles}
+      />
+    );
+  },
+);
 
 export const Popover = Object.assign(PopoverRoot, {
   Trigger: PopoverTrigger,

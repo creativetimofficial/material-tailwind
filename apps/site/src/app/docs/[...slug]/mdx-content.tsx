@@ -65,12 +65,7 @@ const components = {
   ColorPalette,
   FrameworkCard,
   ComponentPreview,
-  Link: (props) => (
-    <Link
-      {...props}
-      className="text-info underline transition-colors duration-300 hover:text-primary"
-    />
-  ),
+  Link: (props) => <Link {...props} className="text-primary" />,
   h1: (props) => <MTTypography as="h1" type="h4" className="mb-4" {...props} />,
   h2: (props) => (
     <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
@@ -94,19 +89,12 @@ const components = {
   p: (props) => <MTTypography className="mb-2 text-foreground" {...props} />,
   hr: () => <hr className="my-8 border-transparent" />,
   code: (props) => (
-    <MTTypography
-      as="code"
-      type="small"
-      className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono leading-none text-foreground"
+    <code
+      className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-foreground dark:bg-surface-dark"
       {...props}
     />
   ),
-  a: (props) => (
-    <a
-      {...props}
-      className="text-info underline transition-colors duration-300 hover:text-primary"
-    />
-  ),
+  a: (props) => <a {...props} className="text-primary" />,
   ul: (props) => <ul className="my-4 ml-4 list-disc space-y-1" {...props} />,
   li: (props) => (
     <li

@@ -21,7 +21,7 @@ import type { BaseComponent } from "@types";
 
 // alert context
 export interface AlertContextProps
-  extends Omit<BaseComponent<HTMLDivElement>, "size"> {
+  extends Omit<BaseComponent<HTMLElement>, "size"> {
   isPill?: boolean;
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,7 +36,7 @@ export const AlertContext = React.createContext<AlertContextProps>({
 });
 
 // alert root
-export interface AlertProps extends Omit<BaseComponent<"div" | any>, "size"> {
+export interface AlertProps extends Omit<BaseComponent<HTMLElement>, "size"> {
   as?: React.ElementType;
   className?: string;
   isPill?: boolean;
@@ -50,21 +50,8 @@ export interface AlertProps extends Omit<BaseComponent<"div" | any>, "size"> {
  * [Documentation](http://www.material-tailwind.com/docs/react/alert) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/alert#alert-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/alert#alert-theme)
- *
- * @example
- * ```tsx
- import { Alert } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Alert>
-      <Alert.Content>A simple alert for showing message.</Alert.Content>
-    </Alert>
-  );
-}
- * ```
  */
-const AlertRoot = React.forwardRef<HTMLDivElement | HTMLElement, AlertProps>(
+const AlertRoot = React.forwardRef<HTMLElement, AlertProps>(
   (
     {
       as,
@@ -130,60 +117,59 @@ AlertRoot.displayName = "MaterialTailwind.Alert";
 
 // alert content
 export interface AlertContentProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const AlertContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  AlertContentProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.alertContent ?? alertContentTheme;
+export const AlertContent = React.forwardRef<HTMLElement, AlertContentProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.alertContent ?? alertContentTheme;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 AlertContent.displayName = "MaterialTailwind.AlertContent";
 
 // alert icon
-export interface AlertIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface AlertIconProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const AlertIcon = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
-  AlertIconProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.alertIcon ?? alertIconTheme;
+export const AlertIcon = React.forwardRef<HTMLElement, AlertIconProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.alertIcon ?? alertIconTheme;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 AlertIcon.displayName = "MaterialTailwind.AlertIcon";
 
 // alert close trigger
 export interface AlertDismissTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   ripple?: boolean;
   className?: string;
@@ -191,7 +177,7 @@ export interface AlertDismissTriggerProps
 }
 
 export const AlertDismissTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   AlertDismissTriggerProps
 >(({ as, ripple, className, children, ...rest }, ref) => {
   const Element = as ?? "button";
@@ -201,7 +187,7 @@ export const AlertDismissTrigger = React.forwardRef<
 
   const styles = children ? className : twMerge(theme.baseStyle, className);
 
-  function closeAlert(event: React.MouseEvent<HTMLButtonElement>) {
+  function closeAlert(event: React.MouseEvent<HTMLElement>) {
     setOpen?.(false);
     rest.onClick?.(event);
   }

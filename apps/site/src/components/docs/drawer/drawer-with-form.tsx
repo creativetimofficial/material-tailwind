@@ -20,6 +20,7 @@ export function DrawerWithForm() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -27,21 +28,12 @@ export function DrawerWithForm() {
             </Drawer.DismissTrigger>
           </div>
           <Typography type="small" className="mb-6 mt-4 text-foreground">
-            Write the message and then click button.{" "}
+            Write the message and then click button.
           </Typography>
-          <div className="space-y-4">
-            <Input className="space-y-1.5">
-              <Typography
-                as="label"
-                type="small"
-                htmlFor="email"
-                color="primary"
-                className="data-[type=small]:font-semibold"
-              >
-                Your Email
-              </Typography>
+          <div className="mt-6 space-y-4">
+            <Input>
               <Input.Field id="email" type="email" placeholder="Email" />
-            </Input>{" "}
+            </Input>
             <Input>
               <Input.Field placeholder="Subject" />
             </Input>

@@ -6,12 +6,18 @@
 
 /* backdrop */
 .DocSearch.DocSearch-Container {
-  @apply bg-surface-dark/50;
+  @apply bg-black/50;
 }
 
 /* dialog */
 .DocSearch.DocSearch-Container .DocSearch-Modal {
-  @apply overflow-hidden rounded-xl border border-surface bg-background shadow-2xl shadow-surface-dark/5;
+  @apply overflow-hidden rounded-none border border-surface bg-background shadow-2xl shadow-black/5;
+}
+
+@media screen and (min-width: 768px) {
+  .DocSearch.DocSearch-Container .DocSearch-Modal {
+    @apply rounded-xl;
+  }
 }
 
 /* search input */
@@ -30,7 +36,7 @@
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Input {
-  @apply text-surface-dark placeholder:text-foreground/70;
+  @apply text-black placeholder:text-foreground/60 dark:text-white;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Reset svg {
@@ -39,11 +45,11 @@
 
 /* search area */
 .DocSearch.DocSearch-Container .DocSearch-Help {
-  @apply text-base text-foreground/70;
+  @apply text-base text-foreground/60;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Label {
-  @apply text-foreground/70;
+  @apply text-foreground/60;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Dropdown {
@@ -51,7 +57,7 @@
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Hit-source {
-  @apply m-0.5 bg-transparent p-0 text-primary;
+  @apply m-0.5 bg-transparent p-0 text-black dark:text-white;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Hit {
@@ -63,23 +69,26 @@
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Hit[aria-selected="true"] a {
-  @apply border-primary bg-primary text-primary-foreground shadow-primary-light/70;
+  @apply border-primary bg-primary text-primary-foreground shadow-primary-dark;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Hit-icon {
-  @apply text-foreground/70;
+  @apply text-foreground/60;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Hit-title mark {
-  @apply text-info;
+  @apply text-primary;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Screen-Icon {
-  @apply mx-auto w-max text-foreground/70;
+  @apply mx-auto w-max text-foreground/60;
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Prefill {
-  @apply text-info;
+  @apply text-primary;
+}
+.DocSearch.DocSearch-Container .DocSearch-Cancel {
+  @apply text-black dark:text-white;
 }
 
 /* footer */
@@ -88,7 +97,7 @@
 }
 
 .DocSearch.DocSearch-Container .DocSearch-Commands-Key {
-  @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-primary shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))];
+  @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-black shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))] dark:text-white;
 }
 
 /* lexical */
@@ -117,7 +126,7 @@
 }
 
 .lexical a {
-  @apply text-info underline transition-colors duration-300 hover:text-primary;
+  @apply text-primary underline transition-colors duration-300 hover:text-primary;
 }
 
 /* Rehype Pretty Code */

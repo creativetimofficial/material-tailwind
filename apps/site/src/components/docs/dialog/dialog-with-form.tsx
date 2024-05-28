@@ -18,6 +18,7 @@ export function DialogWithForm() {
             as={IconButton}
             size="sm"
             variant="ghost"
+            color="secondary"
             className="absolute right-2 top-2"
             isCircular
           >
@@ -35,7 +36,7 @@ export function DialogWithForm() {
                 as="label"
                 htmlFor="email"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Email
@@ -51,7 +52,7 @@ export function DialogWithForm() {
                 as="label"
                 htmlFor="password"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Password
@@ -81,7 +82,13 @@ export function DialogWithForm() {
             className="mb-2 mt-3 flex items-center justify-center gap-1 text-foreground"
           >
             Don't have an account?
-            <Typography type="small" color="primary" as="a" href="#">
+            <Typography
+              type="small"
+              color="primary"
+              as="a"
+              href="#"
+              className="font-semibold"
+            >
               Sign up
             </Typography>
           </Typography>

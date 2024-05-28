@@ -37,7 +37,7 @@ export function BookingCard() {
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
           <Typography type="h6">Wooden House, Florida</Typography>
-          <Typography className="flex items-center gap-1.5 font-normal">
+          <Typography className="flex items-center gap-1.5 ">
             <StarSolid className="h-[18px] w-[18px] text-warning" />
             5.0
           </Typography>
@@ -52,7 +52,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <Cash className="h-5 w-5" />
@@ -68,7 +68,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <Wifi className="h-5 w-5" />
@@ -84,7 +84,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <HomeSimple className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <ModernTv className="h-5 w-5" />
@@ -115,7 +115,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <FireFlame className="h-5 w-5" />
@@ -130,7 +130,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 +20

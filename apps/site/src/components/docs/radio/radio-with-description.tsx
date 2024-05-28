@@ -8,7 +8,7 @@ export function RadioWithDescription() {
           <Radio.Indicator />
         </Radio.Item>
         <label htmlFor="radio-description-html" className="-translate-y-1">
-          <Typography color="gray" className="font-semibold">
+          <Typography color="default" className="font-semibold">
             HTML Version
           </Typography>
           <Typography type="small" className="text-foreground">
@@ -21,7 +21,7 @@ export function RadioWithDescription() {
           <Radio.Indicator />
         </Radio.Item>
         <label htmlFor="radio-description-react" className="-translate-y-1">
-          <Typography color="gray" className="font-semibold">
+          <Typography color="default" className="font-semibold">
             React Version
           </Typography>
           <Typography type="small" className="text-foreground">

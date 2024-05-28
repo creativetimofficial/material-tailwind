@@ -28,7 +28,7 @@ export const popoverContentTheme = {
     order: ["content"],
   },
   baseStyle:
-    "rounded-lg border border-surface bg-background p-2.5 text-sm text-foreground shadow-xl shadow-surface-dark/[0.025] outline-none",
+    "rounded-lg border border-surface bg-background p-2.5 text-sm text-foreground shadow-xl shadow-black/[0.025] outline-none",
 };
 
 export const popoverArrowTheme = {

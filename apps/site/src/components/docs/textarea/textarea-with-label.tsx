@@ -7,7 +7,7 @@ export function TextareaWithLabel() {
         as="label"
         htmlFor="message"
         type="small"
-        color="primary"
+        color="default"
         className="font-semibold"
       >
         Message

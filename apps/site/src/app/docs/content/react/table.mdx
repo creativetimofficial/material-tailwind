@@ -22,7 +22,7 @@ Examples on this page are using `iconoir-react` make sure you have installed it.
 
 <ComponentPreview demo={<Table.TableDemo />}>
 ```tsx
-import { Typography } from "@material-tailwind/react";
+import { Card, Typography } from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
 
@@ -56,7 +56,7 @@ const TABLE_ROWS = [
 
 export function TableDemo() {
   return (
-        <div className="w-full overflow-hidden rounded-lg border border-surface">
+    <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
         <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
           <tr>
@@ -67,7 +67,7 @@ export function TableDemo() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm font-normal text-primary">
+        <tbody className="group text-sm  text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
               <tr key={index} className="border-b border-surface last:border-0">
@@ -79,7 +79,7 @@ export function TableDemo() {
                     as="a"
                     href="#"
                     type="small"
-                    className="font-medium"
+                    className="font-medium hover:text-primary"
                   >
                     Edit
                   </Typography>
@@ -146,7 +146,7 @@ export function TableWithStripedRow() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm font-normal text-primary">
+        <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
               <tr key={index} className="even:bg-surface-light">
@@ -158,7 +158,7 @@ export function TableWithStripedRow() {
                     as="a"
                     href="#"
                     type="small"
-                    className="font-medium"
+                    className="font-medium hover:text-primary"
                   >
                     Edit
                   </Typography>
@@ -225,12 +225,10 @@ export function TableWithStripedColumn() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm font-normal text-primary">
+        <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             const isLast = index === TABLE_ROWS.length - 1;
-            const classes = isLast
-              ? "p-3"
-              : "p-3 border-b border-surface-light";
+            const classes = isLast ? "p-3" : "p-3 border-b border-surface";
 
             return (
               <tr key={index}>
@@ -242,7 +240,7 @@ export function TableWithStripedColumn() {
                     as="a"
                     href="#"
                     type="small"
-                    className="font-medium"
+                    className="font-medium hover:text-primary"
                   >
                     Edit
                   </Typography>
@@ -332,7 +330,7 @@ const TABLE_ROWS = [
 
 export function TransactionsTable() {
   return (
-   <div className="w-full px-2">
+    <div className="w-full px-2">
       <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
         <div>
           <Typography type="h6">Recent Transactions</Typography>
@@ -451,7 +449,11 @@ export function TransactionsTable() {
                     </td>
                     <td className={classes}>
                       <Tooltip>
-                        <Tooltip.Trigger as={IconButton} variant="ghost">
+                        <Tooltip.Trigger
+                          as={IconButton}
+                          color="secondary"
+                          variant="ghost"
+                        >
                           <EditPencil className="h-4 w-4" />
                         </Tooltip.Trigger>
                         <Tooltip.Content>
@@ -467,34 +469,34 @@ export function TransactionsTable() {
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-between border-t border-surface-light p-4">
-        <Button variant="outline" size="sm">
+      <div className="flex items-center justify-between border-t border-surface-light py-4">
+        <Button variant="outline" size="sm" color="secondary">
           Previous
         </Button>
         <div className="flex items-center gap-2">
-          <IconButton variant="outline" size="sm">
+          <IconButton size="sm" color="secondary">
             1
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             2
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             3
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             ...
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             8
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             9
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             10
           </IconButton>
         </div>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" color="secondary">
           Next
         </Button>
       </div>
@@ -598,8 +600,8 @@ export function MembersTable() {
           </Typography>
         </div>
         <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-          <Button variant="outline" size="sm">
-            view all
+          <Button color="secondary" size="sm">
+            View all
           </Button>
           <Button className="flex items-center gap-3" size="sm">
             <UserPlus strokeWidth={2} className="h-4 w-4" /> Add member
@@ -639,14 +641,9 @@ export function MembersTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="group text-sm font-normal text-primary">
+          <tbody className="group text-sm  text-black dark:text-white">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
-                const classes = isLast
-                  ? "p-4"
-                  : "p-4 border-b border-surface-light";
-
                 return (
                   <tr
                     key={name}
@@ -688,8 +685,12 @@ export function MembersTable() {
                     </td>
                     <td className="p-3">
                       <Tooltip>
-                        <Tooltip.Trigger as={IconButton} variant="ghost">
-                          <EditPencil className="h-4 w-4 text-black" />
+                        <Tooltip.Trigger
+                          as={IconButton}
+                          variant="ghost"
+                          color="secondary"
+                        >
+                          <EditPencil className="h-4 w-4 text-black dark:text-white" />
                         </Tooltip.Trigger>
                         <Tooltip.Content>
                           Edit User
@@ -704,13 +705,13 @@ export function MembersTable() {
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-between border-t border-surface-light p-4">
+      <div className="flex items-center justify-between border-t border-surface-light py-4">
         <Typography type="small">Page 1 of 10</Typography>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Previous
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Next
           </Button>
         </div>
@@ -820,8 +821,8 @@ export function SortableTable() {
           </Typography>
         </div>
         <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-          <Button variant="outline" size="sm">
-            view all
+          <Button color="secondary" size="sm">
+            View all
           </Button>
           <Button className="flex items-center gap-3" size="sm">
             <UserPlus strokeWidth={2} className="h-4 w-4" /> Add member
@@ -855,7 +856,10 @@ export function SortableTable() {
           <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
             <tr>
               {TABLE_HEAD.map((head, index) => (
-                <th key={head} className="cursor-pointer px-2.5 py-2 text-start font-medium">
+                <th
+                  key={head}
+                  className="cursor-pointer px-2.5 py-2 text-start font-medium"
+                >
                   <Typography
                     type="small"
                     className="flex items-center justify-between gap-2 opacity-70"
@@ -872,7 +876,7 @@ export function SortableTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="group text-sm font-normal text-primary">
+          <tbody className="group text-sm  text-black dark:text-white">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
                 return (
@@ -916,8 +920,12 @@ export function SortableTable() {
                     </td>
                     <td className="p-3">
                       <Tooltip>
-                        <Tooltip.Trigger as={IconButton} variant="ghost">
-                          <EditPencil className="h-4 w-4 text-black" />
+                        <Tooltip.Trigger
+                          as={IconButton}
+                          variant="ghost"
+                          color="secondary"
+                        >
+                          <EditPencil className="h-4 w-4 text-black dark:text-white" />
                         </Tooltip.Trigger>
                         <Tooltip.Content>
                           Edit User
@@ -932,13 +940,13 @@ export function SortableTable() {
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-between border-t border-surface-light p-4">
+      <div className="flex items-center justify-between border-t border-surface-light py-4">
         <Typography type="small">Page 1 of 10</Typography>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Previous
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Next
           </Button>
         </div>

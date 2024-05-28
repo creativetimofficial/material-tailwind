@@ -46,7 +46,7 @@ export function CodePreview({ children, className }: CodePreview) {
 
   const codeBlockStyles = twMerge(
     firaCode.className,
-    "code-preview relative bg-gray-950 rounded-[5px] overflow-hidden",
+    "code-preview relative bg-black rounded-[5px] overflow-hidden",
     showCode && "pb-12",
   );
 
@@ -86,7 +86,7 @@ export function CodePreview({ children, className }: CodePreview) {
           },
         })}
         {codeHeight > MIN_CODE_HEIGHT && (
-          <div className="absolute bottom-0 left-1/2 grid h-20 w-full -translate-x-1/2 items-end justify-center bg-gradient-to-t from-gray-950 via-gray-950/75 to-transparent pb-2">
+          <div className="absolute bottom-0 left-1/2 z-10 grid h-20 w-full -translate-x-1/2 items-end justify-center bg-gradient-to-t from-black via-black/75 to-transparent pb-2">
             <Button
               size="sm"
               color="secondary"

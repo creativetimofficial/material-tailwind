@@ -15,7 +15,7 @@ const ListItem = React.forwardRef<
         <Avatar src={img} alt="profile-picture" />
       </List.ItemStart>
       <div>
-        <Typography color="primary" className="data-[type=p]:font-semibold">
+        <Typography color="default" className="font-semibold">
           {title}
         </Typography>
         <Typography type="small" className="text-foreground">

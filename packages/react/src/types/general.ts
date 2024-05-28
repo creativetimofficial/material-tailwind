@@ -1,6 +1,9 @@
 import * as React from "react";
 
-export type BaseComponent<T> = React.HtmlHTMLAttributes<T> & {
+export type BaseComponent<T> = Omit<
+  React.AllHTMLAttributes<T>,
+  "size" | "as"
+> & {
   size?: "sm" | "md" | "lg";
   variant?: "solid" | "outline" | "gradient" | "ghost";
   color?: "primary" | "secondary" | "info" | "success" | "warning" | "error";

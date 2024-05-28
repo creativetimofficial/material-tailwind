@@ -24,7 +24,7 @@ export function LoginCard() {
             as="label"
             htmlFor="email"
             type="small"
-            color="primary"
+            color="default"
             className="font-semibold"
           >
             Email
@@ -40,7 +40,7 @@ export function LoginCard() {
             as="label"
             htmlFor="password"
             type="small"
-            color="primary"
+            color="default"
             className="font-semibold"
           >
             Password

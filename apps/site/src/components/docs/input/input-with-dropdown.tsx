@@ -12,7 +12,7 @@ export function InputWithDropdown() {
       <Menu placement="bottom-start">
         <Menu.Trigger
           as={Button}
-          variant="ghost"
+          color="secondary"
           className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-surface bg-secondary pl-3"
         >
           <img

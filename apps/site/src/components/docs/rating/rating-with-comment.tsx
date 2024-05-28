@@ -3,7 +3,7 @@ import { Typography, Avatar, Rating } from "@material-tailwind/react";
 export function RatingWithComment() {
   return (
     <div className="px-8 text-center">
-      <Typography type="h5" className="mb-6">
+      <Typography as="p" type="h5" className="mb-6">
         &quot;This is an excellent product, the documentation is excellent and
         helped me get things done more efficiently.&quot;
       </Typography>
@@ -12,10 +12,8 @@ export function RatingWithComment() {
         alt="image"
         size="lg"
       />
-      <Typography className="mt-4 data-[type=p]:font-bold">
-        Tania Andrew
-      </Typography>
-      <Typography type="small" className="mb-4 text-foreground">
+      <Typography className="mt-4 font-bold">Tania Andrew</Typography>
+      <Typography as="p" type="small" className="mb-4 text-foreground">
         Lead Frontend Developer
       </Typography>
       <Rating value={4} color="warning" readonly />

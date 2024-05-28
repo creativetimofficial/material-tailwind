@@ -73,25 +73,7 @@ export interface TooltipProps {
  * [Documentation](http://www.material-tailwind.com/docs/react/tooltip) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/tooltip#tooltip-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/tooltip#tooltip-theme)
- *
- * @example
- * ```tsx
-import { Tooltip, Button } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Tooltip>
-      <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
-      <Tooltip.Content>
-        Material Tailwind
-        <Tooltip.Arrow />
-      </Tooltip.Content>
-    </Tooltip>
-  );
-}
- * ```
  */
-
 export function TooltipRoot({
   open: controlledOpen,
   onOpenChange: setControlledOpen,
@@ -171,14 +153,14 @@ TooltipRoot.displayName = "MaterialTailwind.Tooltip";
 
 // tooltip trigger
 export interface TooltipTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const TooltipTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   TooltipTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";
@@ -206,14 +188,14 @@ TooltipTrigger.displayName = "MaterialTailwind.TooltipTrigger";
 
 // tooltip content
 export interface TooltipContentProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const TooltipContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLElement,
   TooltipContentProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "div";
@@ -245,51 +227,50 @@ TooltipContent.displayName = "MaterialTailwind.TooltipContent";
 
 // tooltip arrow
 export interface TooltipArrowProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
 }
 
-export const TooltipArrow = React.forwardRef<
-  HTMLSpanElement,
-  TooltipArrowProps
->(({ as, className, ...rest }, ref) => {
-  const Element = as || "span";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.tooltipArrow ?? tooltipArrowTheme;
-  const innerRef = React.useRef<React.ComponentRef<"span">>(null);
-  const { placement, arrowRef, middlewareData } =
-    React.useContext(TooltipContext);
+export const TooltipArrow = React.forwardRef<HTMLElement, TooltipArrowProps>(
+  ({ as, className, ...rest }, ref) => {
+    const Element = as || "span";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.tooltipArrow ?? tooltipArrowTheme;
+    const innerRef = React.useRef<React.ComponentRef<"span">>(null);
+    const { placement, arrowRef, middlewareData } =
+      React.useContext(TooltipContext);
 
-  const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
+    const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
 
-  const staticSide: any = {
-    top: "bottom",
-    right: "left",
-    bottom: "top",
-    left: "right",
-  }[placement ? placement.split("-")[0] : ""];
+    const staticSide: any = {
+      top: "bottom",
+      right: "left",
+      bottom: "top",
+      left: "right",
+    }[placement ? placement.split("-")[0] : ""];
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      style={{
-        position: "absolute",
-        left: middlewareData?.arrow?.x,
-        top: middlewareData?.arrow?.y,
-        [staticSide]: `${
-          -(innerRef?.current?.clientHeight as number) / 2 - 1
-        }px`,
-        ...rest?.style,
-      }}
-      data-placement={placement}
-      className={styles}
-    />
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        style={{
+          position: "absolute",
+          left: middlewareData?.arrow?.x,
+          top: middlewareData?.arrow?.y,
+          [staticSide]: `${
+            -(innerRef?.current?.clientHeight as number) / 2 - 1
+          }px`,
+          ...rest?.style,
+        }}
+        data-placement={placement}
+        className={styles}
+      />
+    );
+  },
+);
 
 export const Tooltip = Object.assign(TooltipRoot, {
   Trigger: TooltipTrigger,

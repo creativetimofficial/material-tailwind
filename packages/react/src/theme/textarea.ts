@@ -11,7 +11,7 @@ export const textareaTheme = {
     isSuccess: false,
   },
   baseStyle:
-    "peer block w-full resize-none outline-none focus:outline-none text-surface-dark placeholder:text-foreground/70 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success data-[resize=true]:resize-y",
+    "peer block w-full resize-none outline-none focus:outline-none text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success data-[resize=true]:resize-y",
   color: {
     primary:
       "hover:border-primary hover:ring-primary/10 focus:border-primary focus:ring-primary/10",

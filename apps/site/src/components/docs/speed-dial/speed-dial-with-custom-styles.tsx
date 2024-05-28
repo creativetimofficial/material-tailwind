@@ -1,5 +1,5 @@
 import { Tooltip, IconButton } from "@material-tailwind/react";
-import { Home, Plus, SelectFace3d, Settings } from "iconoir-react";
+import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
 export function SpeedDialWithCustomStyles() {
   return (
@@ -15,7 +15,7 @@ export function SpeedDialWithCustomStyles() {
             className="p-3"
             isCircular
           >
-            <Home className="h-[18px] w-[18px]" />
+            <HomeSimple className="h-[18px] w-[18px]" />
           </Tooltip.Trigger>
         </Tooltip>
         <Tooltip placement="left">

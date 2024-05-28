@@ -21,11 +21,12 @@ export function DialogMessage() {
             size="sm"
             variant="ghost"
             isCircular
+            color="secondary"
             className="absolute right-2 top-2"
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography color="primary" type="h6" className="mb-1">
+          <Typography type="h6" className="mb-1">
             New message to @{" "}
           </Typography>
           <Typography className="text-foreground">
@@ -37,7 +38,7 @@ export function DialogMessage() {
                 as="label"
                 htmlFor="username"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-semibold"
               >
                 Username
@@ -49,7 +50,7 @@ export function DialogMessage() {
                 as="label"
                 htmlFor="message"
                 type="small"
-                color="primary"
+                color="default"
                 className="font-medium"
               >
                 Message
@@ -58,7 +59,7 @@ export function DialogMessage() {
             </div>
 
             <div className="mt-4 flex justify-end gap-2">
-              <Dialog.DismissTrigger as={Button} variant="ghost">
+              <Dialog.DismissTrigger as={Button} color="secondary">
                 Cancel
               </Dialog.DismissTrigger>
               <Button>Send Message</Button>

@@ -19,7 +19,7 @@ export const tooltipTriggerTheme = {
 
 export const tooltipContentTheme = {
   baseStyle:
-    "rounded-md bg-surface-dark border-surface-dark px-1.5 pt-1 pb-[3px] text-xs text-surface-light shadow-lg shadow-surface-dark/5 outline-none",
+    "rounded-md bg-black dark:bg-white border-black dark:border-white px-1.5 pt-1 pb-[3px] text-xs text-white dark:text-black shadow-lg shadow-black/5 outline-none",
 };
 
 export const tooltipArrowTheme = {

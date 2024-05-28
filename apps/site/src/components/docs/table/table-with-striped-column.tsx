@@ -43,12 +43,10 @@ export function TableWithStripedColumn() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm font-normal text-primary">
+        <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             const isLast = index === TABLE_ROWS.length - 1;
-            const classes = isLast
-              ? "p-3"
-              : "p-3 border-b border-surface-light";
+            const classes = isLast ? "p-3" : "p-3 border-b border-surface";
 
             return (
               <tr key={index}>
@@ -60,7 +58,7 @@ export function TableWithStripedColumn() {
                     as="a"
                     href="#"
                     type="small"
-                    className="font-medium"
+                    className="font-medium hover:text-primary"
                   >
                     Edit
                   </Typography>

@@ -18,6 +18,7 @@ export function DialogSizes() {
                 as={IconButton}
                 size="sm"
                 variant="ghost"
+                color="secondary"
                 className="absolute right-2 top-2"
                 isCircular
               >
@@ -56,6 +57,7 @@ export function DialogSizes() {
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -93,6 +95,7 @@ export function DialogSizes() {
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -132,6 +135,7 @@ export function DialogSizes() {
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -169,6 +173,7 @@ export function DialogSizes() {
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />
@@ -206,6 +211,7 @@ export function DialogSizes() {
                   size="sm"
                   variant="ghost"
                   isCircular
+                  color="secondary"
                   className="absolute right-2 top-2"
                 >
                   <Xmark className="h-5 w-5" />

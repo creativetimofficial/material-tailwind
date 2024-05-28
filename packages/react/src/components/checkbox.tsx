@@ -18,7 +18,7 @@ import type { BaseComponent } from "@types";
 export interface CheckboxContextProps {
   disabled?: boolean;
   checked?: boolean;
-  color?: BaseComponent<HTMLDivElement>["color"];
+  color?: BaseComponent<HTMLInputElement>["color"];
 }
 
 export const CheckboxContext = React.createContext<CheckboxContextProps>({
@@ -29,8 +29,8 @@ export const CheckboxContext = React.createContext<CheckboxContextProps>({
 
 // checkbox root
 export interface CheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  color?: BaseComponent<any>["color"];
+  extends React.AllHTMLAttributes<HTMLInputElement> {
+  color?: BaseComponent<HTMLInputElement>["color"];
   disabled?: boolean;
   className?: string;
   children: React.ReactNode;
@@ -41,21 +41,7 @@ export interface CheckboxProps
  * [Documentation](http://www.material-tailwind.com/docs/react/checkbox) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/checkbox#checkbox-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/checkbox#checkbox-theme)
- *
- * @example
- * ```tsx
-import { Checkbox } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Checkbox>
-      <Checkbox.Indicator />
-    </Checkbox>
-  );
-}
- * ```
  */
-
 export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
   ({ color, disabled, className, children, ...props }, ref) => {
     const contextTheme = useTheme();
@@ -117,14 +103,14 @@ CheckboxRoot.displayName = "MaterialTailwind.Checkbox";
 
 // checkbox indicator
 export interface CheckboxIndicatorProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;
 }
 
 export const CheckboxIndicator = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLElement,
   CheckboxIndicatorProps
 >(({ as, className, children, ...props }, ref) => {
   const Element = as || "span";

@@ -38,6 +38,7 @@ export function DrawerDemo() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -50,7 +51,7 @@ export function DrawerDemo() {
           </Typography>
           <div className="mb-1 flex items-center gap-2">
             <Button>Get Started</Button>
-            <Button variant="ghost">Documentation</Button>
+            <Button color="secondary">Documentation</Button>
           </div>
         </Drawer.Panel>
       </Drawer.Overlay>
@@ -87,19 +88,20 @@ export function DrawerPlacement() {
                 as={IconButton}
                 size="sm"
                 variant="ghost"
+                color="secondary"
                 className="absolute right-2 top-2"
                 isCircular
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -116,17 +118,18 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -143,17 +146,18 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -170,17 +174,18 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
-                <Xmark className="w-5 h-5" />
+                <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
             </div>
-            <Typography className="mt-2 mb-6 text-foreground">
+            <Typography className="mb-6 mt-2 text-foreground">
               Material Tailwind features multiple React and HTML components, all
               written with Tailwind CSS classes and Material Design guidelines.
             </Typography>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -211,7 +216,6 @@ import {
   Input,
   Avatar,
 } from "@material-tailwind/react";
-
 import {
   Xmark,
   Archive,
@@ -225,7 +229,7 @@ import {
   Search,
   SelectFace3d,
   SendDiagonal,
-  Trash,
+  Bin,
   UserXmark,
 } from "iconoir-react";
 
@@ -257,7 +261,7 @@ const Links = [
     href: "#",
   },
   {
-    icon: Trash,
+    icon: Bin,
     title: "Trash",
     href: "#",
   },
@@ -274,6 +278,7 @@ export function DrawerWithNavigation() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -362,7 +367,7 @@ export function DrawerWithNavigation() {
                   <Typography type="h6" color="secondary" className="mb-1">
                     Upgrade to PRO
                   </Typography>
-                  <Typography type="small" className="text-secondary-dark">
+                  <Typography type="small" color="secondary" className="opacity-80">
                     Upgrade to Material Tailwind PRO and get even more
                     components, plugins, advanced features and premium.
                   </Typography>
@@ -411,27 +416,20 @@ export function DrawerWithForm() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
-              <Xmark className="w-5 h-5" />
+              <Xmark className="h-5 w-5" />
             </Drawer.DismissTrigger>
           </div>
-          <Typography type="small" className="mt-4 mb-6 text-foreground">
-            Write the message and then click button.{" "}
+          <Typography type="small" className="mb-6 mt-4 text-foreground">
+            Write the message and then click button.
           </Typography>
-          <div className="space-y-4">
-            <Input className="space-y-1.5">
-              <Typography
-                as="label"
-                htmlFor="email"
-                color="primary"
-                className="[type=small]:font-semibold"
-              >
-                Your Email
-              </Typography>
+          <div className="mt-6 space-y-4">
+            <Input>
               <Input.Field id="email" type="email" placeholder="Email" />
-            </Input>{" "}
+            </Input>
             <Input>
               <Input.Field placeholder="Subject" />
             </Input>

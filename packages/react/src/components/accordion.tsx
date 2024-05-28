@@ -44,52 +44,6 @@ export interface AccordionProps {
  * [Documentation](http://www.material-tailwind.com/docs/react/accordion) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/accordion#accordion-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/accordion#accordion-theme)
- *
- * @example
- * ```tsx
- import { Accordion } from "@material-tailwind/react";
- import { NavArrowDown } from "iconoir-react";
- 
-export default function Example() {
-  return (
-    <Accordion defaultValue="react">
-      <Accordion.Item value="react">
-        <Accordion.Trigger>
-          Material Tailwind React
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
-        </Accordion.Trigger>
-        <Accordion.Content>
-          Material Tailwind is an open-source crafted in Tailwind CSS. Get
-          Material Tailwind and take advantage of its free components and
-          features that will help you set up your web project quickly.
-        </Accordion.Content>
-      </Accordion.Item>
-      <Accordion.Item value="html">
-        <Accordion.Trigger>
-          Material Tailwind HTML
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
-        </Accordion.Trigger>
-        <Accordion.Content>
-          Material Tailwind is an open-source crafted in Tailwind CSS. Get
-          Material Tailwind and take advantage of its free components and
-          features that will help you set up your web project quickly.
-        </Accordion.Content>
-      </Accordion.Item>
-      <Accordion.Item value="vue">
-        <Accordion.Trigger>
-          Material Tailwind Vue
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
-        </Accordion.Trigger>
-        <Accordion.Content>
-          Material Tailwind is an open-source crafted in Tailwind CSS. Get
-          Material Tailwind and take advantage of its free components and
-          features that will help you set up your web project quickly.
-        </Accordion.Content>
-      </Accordion.Item>
-    </Accordion>
-  );
-}
- * ```
  */
 export function AccordionRoot({
   type,
@@ -138,7 +92,7 @@ AccordionRoot.displayName = "MaterialTailwind.Accordion";
 export const AccordionItemContext = React.createContext<string>("");
 
 export interface AccordionItemProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   value: string;
   disabled?: boolean;
@@ -146,53 +100,52 @@ export interface AccordionItemProps
   children: React.ReactNode;
 }
 
-export const AccordionItem = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  AccordionItemProps
->(({ as, value, disabled, className, children, ...rest }, ref) => {
-  const Element = as || "div";
-  const contextTheme = useTheme();
-  const theme = contextTheme.accordionItem || accordionItemTheme;
-  const defaultProps = theme?.defaultProps;
-  const { type, activeItem } = React.useContext(AccordionContext);
+export const AccordionItem = React.forwardRef<HTMLElement, AccordionItemProps>(
+  ({ as, value, disabled, className, children, ...rest }, ref) => {
+    const Element = as || "div";
+    const contextTheme = useTheme();
+    const theme = contextTheme.accordionItem || accordionItemTheme;
+    const defaultProps = theme?.defaultProps;
+    const { type, activeItem } = React.useContext(AccordionContext);
 
-  disabled ??=
-    (defaultProps?.disabled as AccordionItemProps["disabled"]) ?? false;
+    disabled ??=
+      (defaultProps?.disabled as AccordionItemProps["disabled"]) ?? false;
 
-  const isMultiple = type === "multiple";
-  const isOpen = isMultiple
-    ? activeItem?.includes(value)
-    : activeItem === value;
+    const isMultiple = type === "multiple";
+    const isOpen = isMultiple
+      ? activeItem?.includes(value)
+      : activeItem === value;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  return (
-    <AccordionItemContext.Provider value={value}>
-      <Element
-        {...rest}
-        ref={ref}
-        data-open={isOpen}
-        className={styles}
-        aria-disabled={disabled}
-      >
-        {children}
-      </Element>
-    </AccordionItemContext.Provider>
-  );
-});
+    return (
+      <AccordionItemContext.Provider value={value}>
+        <Element
+          {...rest}
+          ref={ref}
+          data-open={isOpen}
+          className={styles}
+          aria-disabled={disabled}
+        >
+          {children}
+        </Element>
+      </AccordionItemContext.Provider>
+    );
+  },
+);
 
 AccordionItem.displayName = "MaterialTailwind.AccordionItem";
 
 // accordion trigger
 export interface AccordionTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const AccordionTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   AccordionTriggerProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "button";
@@ -215,7 +168,7 @@ export const AccordionTrigger = React.forwardRef<
       ref={ref}
       data-open={isOpen}
       className={styles}
-      onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+      onClick={(event: React.MouseEvent<HTMLElement>) => {
         if (isMultiple) {
           if (activeItem?.includes(value)) {
             setActiveItem?.((prev) =>
@@ -240,14 +193,14 @@ AccordionTrigger.displayName = "MaterialTailwind.AccordionTrigger";
 
 // accordion content
 export interface AccordionContentProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const AccordionContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
+  HTMLElement,
   AccordionContentProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "div";

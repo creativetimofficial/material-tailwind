@@ -22,12 +22,7 @@ export function ProfileCard() {
       </Card.Body>
       <Card.Footer className="flex items-center justify-center gap-1">
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-            color="info"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <X className="h-3.5 w-3.5" />
           </Tooltip.Trigger>
           <Tooltip.Content>
@@ -36,12 +31,7 @@ export function ProfileCard() {
           </Tooltip.Content>
         </Tooltip>
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-            color="info"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <Facebook className="h-4 w-4" />
           </Tooltip.Trigger>
           <Tooltip.Content>
@@ -50,12 +40,7 @@ export function ProfileCard() {
           </Tooltip.Content>
         </Tooltip>
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-            color="info"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <Instagram className="h-4 w-4" />
           </Tooltip.Trigger>
           <Tooltip.Content>

@@ -27,9 +27,7 @@ export function DialogWithImage() {
                 src="https://dub.sh/TdSBP0D"
               />
               <div className="flex flex-col">
-                <Typography className="data-[type=p]:font-semibold">
-                  Alex Andrew
-                </Typography>
+                <Typography className="font-semibold">Alex Andrew</Typography>
                 <Typography type="small" className="text-foreground">
                   @alexandrew
                 </Typography>

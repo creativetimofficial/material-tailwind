@@ -47,7 +47,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-primary"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -89,6 +89,7 @@ export function NavbarDemo() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto grid lg:hidden"
         >

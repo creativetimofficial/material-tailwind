@@ -10,12 +10,12 @@ export function PopoverWithDescription() {
           <Typography
             as="a"
             href="#"
-            color="primary"
-            className="hover:text-info data-[type=p]:font-bold"
+            color="default"
+            className="font-bold hover:text-primary"
           >
             @material-tailwind
           </Typography>
-          <Chip size="sm" color="info">
+          <Chip size="sm" color="primary">
             <Chip.Label>Public</Chip.Label>
           </Chip>
         </div>
@@ -26,31 +26,19 @@ export function PopoverWithDescription() {
         <div className="mt-4 flex items-center gap-4">
           <div className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-info" />
-            <Typography
-              type="small"
-              color="primary"
-              className="data-[type=small]:text-xs"
-            >
+            <Typography type="small" color="default">
               TypeScript
             </Typography>
           </div>
           <div className="flex items-center gap-1.5">
             <StarSolid className="h-4 w-4 text-warning" />
-            <Typography
-              type="small"
-              color="primary"
-              className="data-[type=small]:text-xs"
-            >
+            <Typography type="small" color="default">
               1,480
             </Typography>
           </div>
           <div className="flex items-center gap-1.5">
             <CheckCircleSolid className="h-4 w-4 text-success" />
-            <Typography
-              type="small"
-              color="primary"
-              className="data-[type=small]:text-xs"
-            >
+            <Typography type="small" color="default">
               Veritied
             </Typography>
           </div>

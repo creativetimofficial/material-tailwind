@@ -43,7 +43,7 @@ export function TableWithStripedRow() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm font-normal text-primary">
+        <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
               <tr key={index} className="even:bg-surface-light">
@@ -55,7 +55,7 @@ export function TableWithStripedRow() {
                     as="a"
                     href="#"
                     type="small"
-                    className="font-medium"
+                    className="font-medium hover:text-primary"
                   >
                     Edit
                   </Typography>

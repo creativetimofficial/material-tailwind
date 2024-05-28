@@ -15,7 +15,7 @@ import { twMerge } from "tailwind-merge";
 // progress context
 export interface ProgressContextProps {
   value?: number;
-  color?: BaseComponent<SVGElement>["color"];
+  color?: BaseComponent<HTMLElement>["color"];
 }
 
 export const ProgressContext = React.createContext<ProgressContextProps>({
@@ -36,21 +36,7 @@ export interface ProgressProps extends BaseComponent<HTMLElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/progress) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/progress#progress-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/progress#progress-theme)
- *
- * @example
- * ```tsx
-import { Progress } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Progress value={50}>
-      <Progress.Bar />
-    </Progress>
-  );
-}
- * ```
  */
-
 export const ProgressRoot = React.forwardRef<HTMLElement, ProgressProps>(
   ({ as, size, color, value, className, children, ...rest }, ref) => {
     const Element = as ?? "div";
@@ -81,7 +67,7 @@ ProgressRoot.displayName = "MaterialTailwind.Progress";
 
 // progress bar
 export interface ProgressBarProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;

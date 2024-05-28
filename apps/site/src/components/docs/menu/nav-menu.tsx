@@ -11,7 +11,7 @@ const NavItem = React.forwardRef<
 >(({ title, description, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">
-      <Typography color="primary" className="data-[type=p]:font-semibold">
+      <Typography color="default" className="font-semibold">
         {title}
       </Typography>
       <Typography type="small" className="text-foreground">
@@ -42,7 +42,7 @@ export function NavMenu() {
             <Rocket className="mx-auto h-12 w-12" />
             <Typography
               type="h6"
-              color="white"
+              color="secondary"
               className="mt-5 text-center leading-snug"
             >
               Material Tailwind PRO

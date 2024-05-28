@@ -13,8 +13,8 @@ export function ProfileInfoPopover() {
           </Button>
         </div>
         <Typography
-          color="primary"
-          className="mb-1 flex items-center gap-2 data-[type=p]:font-bold"
+          color="default"
+          className="mb-1 flex items-center gap-2 font-bold"
         >
           <span>Alex Andrew</span> •{" "}
           <Typography as="a" href="#profile-info-popover">
@@ -30,7 +30,7 @@ export function ProfileInfoPopover() {
         <div className="flex items-center gap-8">
           <Typography
             type="small"
-            color="primary"
+            color="default"
             className="flex items-center gap-1.5"
           >
             <MapPin className="h-4 w-4" />
@@ -38,7 +38,7 @@ export function ProfileInfoPopover() {
           </Typography>
           <Typography
             type="small"
-            color="primary"
+            color="default"
             className="flex items-center gap-1.5"
           >
             <City className="h-4 w-4" />

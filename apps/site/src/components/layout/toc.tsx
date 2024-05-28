@@ -52,11 +52,11 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
         className={clsx(
           "block text-sm transition-colors duration-300 hover:text-primary",
           {
-            "font-normal text-foreground": !isVisible,
-            "font-medium text-info": isVisible,
-            "border-info": isVisible && isSubHeading,
-            "px-2 py-1": !isSubHeading,
-            "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-2 hover:border-primary":
+            "text-foreground": !isVisible,
+            "font-medium text-primary": isVisible,
+            "border-primary": isVisible && isSubHeading,
+            "py-1": !isSubHeading,
+            "-translate-x-px border-l border-transparent py-0.5 pl-1.5 pr-1 hover:border-primary":
               isSubHeading,
           },
         )}
@@ -133,17 +133,16 @@ export function Toc({
     <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-[65px] z-20 hidden h-[calc(100vh-70px)] w-60 overflow-y-scroll pb-10 lg:block">
       <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-background from-50% to-transparent" />
       <ul className="border-b border-surface pb-4">
-        <li className="p-2 text-sm font-medium text-primary">On this page</li>
-        <ul className="mx-0.5">{getToc()}</ul>
+        <li className="py-2 text-sm font-medium text-black dark:text-white">
+          On this page
+        </li>
+        <ul>{getToc()}</ul>
       </ul>
       <ul
-        className={clsx(
-          "mx-0.5 border-b py-4 pr-2 transition-colors duration-300",
-          {
-            "border-surface": isScrolled,
-            "border-transparent": !isScrolled,
-          },
-        )}
+        className={clsx("-mx-2 border-b py-4 transition-colors duration-300", {
+          "border-surface": isScrolled,
+          "border-transparent": !isScrolled,
+        })}
       >
         <ListItem href="#" icon={EditPencil}>
           Edit this page on GitHub
@@ -162,7 +161,7 @@ export function Toc({
         </ListItem>
       </ul>
       <div
-        className={clsx("mx-0.5 pt-4 transition-all duration-300", {
+        className={clsx("-mx-2 pt-4 transition-all duration-300", {
           "translate-y-3 opacity-0": !isScrolled,
           "translate-y-0 opacity-100": isScrolled,
         })}
@@ -196,7 +195,7 @@ export function Toc({
           />
         </Card.Header>
         <Card.Body>
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Roots of UI/UX Design
           </Typography>
           <Typography type="small" className="text-foreground">

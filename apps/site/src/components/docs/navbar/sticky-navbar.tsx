@@ -48,7 +48,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-primary"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -94,6 +94,7 @@ export function StickyNavbar() {
           <IconButton
             size="sm"
             variant="ghost"
+            color="secondary"
             onClick={() => setOpenNav(!openNav)}
             className="ml-auto grid lg:hidden"
           >
@@ -114,49 +115,49 @@ export function StickyNavbar() {
       <main className="w-full">
         <div className="mx-auto max-w-xl">
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
           </div>
           <div className="mb-6 max-w-xl">
-            <div className="flex h-56 w-full items-center justify-center rounded bg-secondary-dark">
-              <MediaImage className="h-16 w-16 text-primary-light" />
+            <div className="flex h-56 w-full items-center justify-center rounded bg-surface">
+              <MediaImage className="h-16 w-16 text-surface-dark" />
             </div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
           </div>
           <div className="my-8">
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
-            <div className="mb-2 h-2 w-full rounded-full bg-secondary-dark"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
           </div>
         </div>
       </main>

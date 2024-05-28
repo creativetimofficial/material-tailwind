@@ -70,7 +70,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-primary"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -93,26 +93,28 @@ export function NavbarDemo() {
 
   return (
     <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center">
         <Typography
           as="a"
           href="#"
           type="small"
-          className="ms-2 me-4 block py-1 font-semibold"
+          className="ml-2 mr-2 block py-1 font-semibold"
         >
           Material Tailwind
         </Typography>
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <Button size="sm" className="hidden lg:inline-block">
+        <Button size="sm" className="hidden lg:ml-auto lg:inline-block">
           Sign In
         </Button>
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
-          className="grid lg:hidden"
+          className="ml-auto grid lg:hidden"
         >
           {openNav ? (
             <Xmark className="h-4 w-4" />
@@ -154,6 +156,7 @@ import {
   ProfileCircle,
   SelectFace3d,
   Xmark,
+  MediaImage,
 } from "iconoir-react";
 
 const LINKS = [
@@ -188,7 +191,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-primary"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -210,42 +213,98 @@ export function StickyNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="sticky top-0 mx-auto w-full max-w-screen-xl p-2">
-      <div className="flex items-center justify-between">
-        <Typography
-          as="a"
-          href="#"
-          type="small"
-          className="ms-2 me-4 block py-1 font-semibold"
-        >
-          Material Tailwind
-        </Typography>
-        <div className="hidden lg:block">
-          <NavList />
+    <div className="h-96 w-full overflow-scroll">
+      <Card
+        as="nav"
+        className="sticky top-0 mx-auto w-full max-w-screen-xl p-2"
+      >
+        <div className="flex items-center">
+          <Typography
+            as="a"
+            href="#"
+            type="small"
+            className="ml-2 mr-2 block py-1 font-semibold"
+          >
+            Material Tailwind
+          </Typography>
+          <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
+          <div className="hidden lg:block">
+            <NavList />
+          </div>
+          <Button size="sm" className="hidden lg:ml-auto lg:inline-block">
+            Sign In
+          </Button>
+          <IconButton
+            size="sm"
+            variant="ghost"
+            color="secondary"
+            onClick={() => setOpenNav(!openNav)}
+            className="ml-auto grid lg:hidden"
+          >
+            {openNav ? (
+              <Xmark className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
+            )}
+          </IconButton>
         </div>
-        <Button size="sm" className="hidden lg:inline-block">
-          Sign In
-        </Button>
-        <IconButton
-          size="sm"
-          variant="ghost"
-          onClick={() => setOpenNav(!openNav)}
-          className="grid lg:hidden"
-        >
-          {openNav ? (
-            <Xmark className="h-4 w-4" />
-          ) : (
-            <Menu className="h-4 w-4" />
-          )}
-        </IconButton>
-      </div>
-      <Collapse open={openNav}>
-        <NavList />
-        <Button isFullWidth size="sm" className="mt-4">
-          Sign In
-        </Button>
-      </Collapse>
-    </Card>
+        <Collapse open={openNav}>
+          <NavList />
+          <Button isFullWidth size="sm" className="mt-4">
+            Sign In
+          </Button>
+        </Collapse>
+      </Card>
+      <main className="w-full">
+        <div className="mx-auto max-w-xl">
+          <div className="my-8">
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+          </div>
+          <div className="mb-6 max-w-xl">
+            <div className="flex h-56 w-full items-center justify-center rounded bg-surface">
+              <MediaImage className="h-16 w-16 text-surface-dark" />
+            </div>
+          </div>
+          <div className="my-8">
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+          </div>
+          <div className="my-8">
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+          </div>
+          <div className="my-8">
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+          </div>
+          <div className="my-8">
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+            <div className="mb-2 h-2 w-full rounded-full bg-surface"></div>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
 ```
@@ -357,7 +416,7 @@ const MenuItem = React.forwardRef<
 >(({ title, description, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">
-      <Typography color="primary" className="data-[type=p]:font-semibold">
+      <Typography color="default" className="font-semibold">
         {title}
       </Typography>
       <Typography type="small" className="text-foreground">
@@ -412,7 +471,7 @@ export function ComplexNavbar() {
                     <Rocket className="mx-auto h-12 w-12" />
                     <Typography
                       type="h6"
-                      color="white"
+                      color="secondary"
                       className="mt-5 text-center leading-snug"
                     >
                       Material Tailwind PRO
@@ -442,6 +501,7 @@ export function ComplexNavbar() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto mr-2 grid lg:hidden"
         >
@@ -548,7 +608,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-primary"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -668,7 +728,7 @@ function NavList() {
             href={href}
             type="small"
             color="secondary"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-white"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -690,11 +750,7 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card
-      as="nav"
-      color="primary"
-      className="mx-auto w-full max-w-screen-xl p-2"
-    >
+    <Card as="nav" className="mx-auto w-full bg-black max-w-screen-xl p-2">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -705,7 +761,7 @@ export function DarkNavbar() {
         >
           Material Tailwind
         </Typography>
-        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-primary-light lg:block" />
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block" />
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -784,7 +840,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="p-1 hover:text-info"
+            className="p-1 hover:text-primary"
           >
             {title}
           </Typography>
@@ -821,6 +877,7 @@ export function SimpleNavbar() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto grid lg:hidden"
         >
@@ -840,7 +897,6 @@ export function SimpleNavbar() {
 ```
 </ComponentPreview>
 
-
 ---
 
 ## Navbar With Mega Menu
@@ -857,10 +913,7 @@ import {
   Avatar,
   Menu,
   Tooltip,
-  Accordion,
-  type MenuItemProps,
 } from "@material-tailwind/react";
-
 import {
   Archive,
   Community,
@@ -1006,22 +1059,16 @@ const MenuItem = React.forwardRef<
     <List.Item ref={ref} as="a" href="#" className="p-1.5" {...rest}>
       {Icon && (
         <List.ItemStart>
-          <div className="flex items-center justify-center rounded-[5px] bg-primary/5 p-2">
-            <Icon className="h-6 w-6" />
+          <div className="flex items-center justify-center rounded-[5px] bg-surface-light p-2">
+            <Icon className="h-6 w-6 text-black dark:text-white" />
           </div>
         </List.ItemStart>
       )}
-      <div>
-        <Typography
-          color="primary"
-          className="data-[type=p]:text-sm data-[type=p]:font-semibold"
-        >
+      <div className="leading-none">
+        <Typography color="default" className="mb-0.5 text-sm font-semibold">
           {title}
         </Typography>
-        <Typography
-          type="small"
-          className="data-[type=p]:text-xs data-[type=p]:text-foreground"
-        >
+        <Typography type="small" className="text-xs text-foreground">
           {description}
         </Typography>
       </div>
@@ -1082,6 +1129,7 @@ export function NavbarWithMegaMenu() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto mr-2 grid lg:hidden"
         >
@@ -1094,35 +1142,9 @@ export function NavbarWithMegaMenu() {
         <ProfileMenu />
       </div>
       <Collapse open={openNav}>
-        <Accordion>
-          <Accordion.Item value="react" className="mt-2 border-none">
-            <Accordion.Trigger className="p-0">
-              <List.Item className="w-full">
-                <List.ItemStart className="me-1.5">
-                  <MultiplePages className="h-4 w-4" />
-                </List.ItemStart>
-                <Typography type="small">Pages</Typography>
-                <List.ItemEnd className="ps-1">
-                  <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
-                </List.ItemEnd>
-              </List.Item>
-            </Accordion.Trigger>
-            <Accordion.Content>
-              <MenuItem
-                title="@material-tailwind/html"
-                description="Learn how to use @material-tailwind/html, packed with rich components and widgets."
-              />
-              <MenuItem
-                title="@material-tailwind/react"
-                description="Learn how to use @material-tailwind/react, packed with rich components for React."
-              />
-              <MenuItem
-                title="Material Tailwind PRO"
-                description="A complete set of UI Elements for building faster websites in less time."
-              />
-            </Accordion.Content>
-          </Accordion.Item>
-        </Accordion>
+        <ul className="grid grid-cols-1 gap-y-2 md:grid-cols-2">
+          {renderItems}
+        </ul>
         <NavList />
       </Collapse>
     </Card>

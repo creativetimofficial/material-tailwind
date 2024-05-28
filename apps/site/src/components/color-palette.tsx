@@ -15,7 +15,7 @@ export function ColorPalette({ colors }: any) {
               className="h-24 w-full border-b border-surface"
             />
             <div className="px-2.5 pb-[7px] pt-2">
-              <p className="mb-0.5 text-sm font-medium capitalize text-primary">
+              <p className="mb-0.5 text-sm font-medium capitalize text-black dark:text-white">
                 {level}
               </p>
               <p className="font-mono text-sm lowercase text-foreground">

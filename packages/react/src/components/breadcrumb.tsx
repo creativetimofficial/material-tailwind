@@ -16,7 +16,8 @@ import {
 } from "@theme";
 
 // breadcrumb root
-export interface BreadcrumbProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface BreadcrumbProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -42,14 +43,14 @@ BreadcrumbRoot.displayName = "MaterialTailwind.Breadcrumb";
 
 // breadcrumb link
 export interface BreadcrumbLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
 export const BreadcrumbLink = React.forwardRef<
-  HTMLAnchorElement | HTMLElement,
+  HTMLElement,
   BreadcrumbLinkProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "a";
@@ -69,14 +70,14 @@ BreadcrumbLink.displayName = "MaterialTailwind.BreadcrumbLink";
 
 // breadcrumb separator
 export interface BreadcrumbSeparatorProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children?: React.ReactNode;
 }
 
 export const BreadcrumbSeparator = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
+  HTMLElement,
   BreadcrumbSeparatorProps
 >(({ as, className, children, ...rest }, ref) => {
   const Element = as || "span";

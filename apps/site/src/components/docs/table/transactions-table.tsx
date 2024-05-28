@@ -185,7 +185,11 @@ export function TransactionsTable() {
                     </td>
                     <td className={classes}>
                       <Tooltip>
-                        <Tooltip.Trigger as={IconButton} variant="ghost">
+                        <Tooltip.Trigger
+                          as={IconButton}
+                          color="secondary"
+                          variant="ghost"
+                        >
                           <EditPencil className="h-4 w-4" />
                         </Tooltip.Trigger>
                         <Tooltip.Content>
@@ -201,34 +205,34 @@ export function TransactionsTable() {
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-between border-t border-surface-light p-4">
-        <Button variant="outline" size="sm">
+      <div className="flex items-center justify-between border-t border-surface-light py-4">
+        <Button variant="outline" size="sm" color="secondary">
           Previous
         </Button>
         <div className="flex items-center gap-2">
-          <IconButton variant="outline" size="sm">
+          <IconButton size="sm" color="secondary">
             1
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             2
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             3
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             ...
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             8
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             9
           </IconButton>
-          <IconButton variant="ghost" size="sm">
+          <IconButton variant="ghost" size="sm" color="secondary">
             10
           </IconButton>
         </div>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="sm" color="secondary">
           Next
         </Button>
       </div>

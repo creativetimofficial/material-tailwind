@@ -24,21 +24,21 @@ import { Timeline, Typography } from "@material-tailwind/react";
 
 export function TimelineDemo() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -48,14 +48,14 @@ export function TimelineDemo() {
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -64,14 +64,14 @@ export function TimelineDemo() {
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -88,27 +88,27 @@ export function TimelineDemo() {
 <ComponentPreview demo={<Timeline.TimelineWithIcon />}>
 ```tsx
 import { Timeline, Typography } from "@material-tailwind/react";
-import { Bell, DollarCircle, HomeAlt } from "iconoir-react";
+import { Bell, DollarCircle, HomeSimple } from "iconoir-react";
 
 export function TimelineWithIcon() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <HomeAlt className="w-4 h-4" />
+            <HomeSimple className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -116,36 +116,36 @@ export function TimelineWithIcon() {
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon>
-            <Bell className="w-4 h-4" />
+            <Bell className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Icon>
-            <DollarCircle className="w-4 h-4" />
+            <DollarCircle className="h-5 w-5" />
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
             The key to more success is to have a lot of pillows. Put it this
             way, it took me twenty five years to get these plants, twenty five
-            years of blood sweat and tears, and I'm never giving up, I'm just
-            getting started. I'm up to something. Fan luv.
+            years of blood sweat and tears, and I&apos;m never giving up,
+            I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </Typography>
         </Timeline.Body>
       </Timeline.Item>
@@ -165,7 +165,7 @@ import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
 export function TimelineWithAvatar() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
@@ -178,7 +178,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -201,7 +201,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -223,7 +223,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -260,7 +260,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               $2400, Design changes
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">
@@ -277,7 +277,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               New order #1832412
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">
@@ -294,7 +294,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               Payment completed for order #4395133
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">

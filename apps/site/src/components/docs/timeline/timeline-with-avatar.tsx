@@ -2,7 +2,7 @@ import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
 export function TimelineWithAvatar() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
@@ -15,7 +15,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -38,7 +38,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -60,7 +60,7 @@ export function TimelineWithAvatar() {
           </Timeline.Icon>
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">

@@ -13,7 +13,7 @@ export function HorizontalCard() {
       <Card.Body className="p-4">
         <Typography
           type="small"
-          className="mb-4 uppercase text-foreground data-[type=small]:font-bold"
+          className="mb-4 font-bold uppercase text-foreground"
         >
           startups
         </Typography>

@@ -2,14 +2,14 @@ import { Timeline, Typography } from "@material-tailwind/react";
 
 export function TimelineDemo() {
   return (
-    <Timeline orientation="vertical">
+    <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>
         <Timeline.Header>
           <Timeline.Separator />
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -26,7 +26,7 @@ export function TimelineDemo() {
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">
@@ -42,7 +42,7 @@ export function TimelineDemo() {
           <Timeline.Icon className="h-3 w-3" />
         </Timeline.Header>
         <Timeline.Body className="-translate-y-1.5">
-          <Typography color="primary" className="data-[type=p]:font-bold">
+          <Typography color="default" className="font-bold">
             Timeline Title Here.
           </Typography>
           <Typography type="small" className="mt-2 text-foreground">

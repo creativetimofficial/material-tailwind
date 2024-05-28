@@ -46,7 +46,9 @@ export function getRoutes() {
   return routes.map(({ title, pages, categories }, idx) => {
     return (
       <React.Fragment key={idx}>
-        <li className="p-2 text-sm font-medium text-primary">{title}</li>
+        <li className="p-2 text-sm font-medium text-black dark:text-white">
+          {title}
+        </li>
         <ul className="mx-0.5 mb-6">
           {categories
             ? categories.map(({ pages: categoryPages, category }, key) => {

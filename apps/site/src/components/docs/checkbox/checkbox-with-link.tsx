@@ -12,7 +12,7 @@ export function CheckboxWithLink() {
         className="flex gap-1 text-foreground"
       >
         I agree with the
-        <Typography as="a" href="#" color="info">
+        <Typography as="a" href="#" color="primary">
           terms and conditions
         </Typography>
       </Typography>

@@ -11,7 +11,7 @@ export function BreadcrumbCustomStyles() {
     <Breadcrumb className="gap-0.5">
       <Breadcrumb.Link
         href="#"
-        className="rounded bg-secondary px-2 py-1 text-secondary-foreground"
+        className="rounded bg-secondary px-2 py-1 text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
       >
         <MultiplePages className="h-4 w-4" />
         Docs
@@ -21,7 +21,7 @@ export function BreadcrumbCustomStyles() {
       </Breadcrumb.Separator>
       <Breadcrumb.Link
         href="#"
-        className="rounded bg-secondary px-2 py-1 text-secondary-foreground"
+        className="rounded bg-secondary px-2 py-1 text-secondary-foreground hover:bg-primary hover:text-primary-foreground"
       >
         <Cube className="h-4 w-4" />
         Components
@@ -31,7 +31,7 @@ export function BreadcrumbCustomStyles() {
       </Breadcrumb.Separator>
       <Breadcrumb.Link
         href="#"
-        className="rounded bg-primary px-2 py-1 text-primary-foreground"
+        className="rounded bg-primary px-2 py-1 text-primary-foreground hover:bg-primary hover:text-primary-foreground"
       >
         <CursorPointer className="h-4 w-4 rotate-90" />
         Breadcrumb

@@ -481,7 +481,7 @@ export function TextEditorDemo() {
     <LexicalComposer initialConfig={editorConfig}>
       <Card
         variant="outline"
-        className="relative mx-auto my-5 w-full max-w-xl overflow-hidden text-left font-normal leading-5"
+        className="relative mx-auto my-5 w-full max-w-xl overflow-hidden text-left  leading-5"
       >
         <ToolbarPlugin />
         <div className="relative rounded-b-lg border-t border-surface">

@@ -86,8 +86,8 @@ export function MembersTable() {
           </Typography>
         </div>
         <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-          <Button variant="outline" size="sm">
-            view all
+          <Button color="secondary" size="sm">
+            View all
           </Button>
           <Button className="flex items-center gap-3" size="sm">
             <UserPlus strokeWidth={2} className="h-4 w-4" /> Add member
@@ -127,7 +127,7 @@ export function MembersTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="group text-sm font-normal text-primary">
+          <tbody className="group text-sm text-black dark:text-white">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
                 return (
@@ -171,8 +171,12 @@ export function MembersTable() {
                     </td>
                     <td className="p-3">
                       <Tooltip>
-                        <Tooltip.Trigger as={IconButton} variant="ghost">
-                          <EditPencil className="h-4 w-4 text-black" />
+                        <Tooltip.Trigger
+                          as={IconButton}
+                          variant="ghost"
+                          color="secondary"
+                        >
+                          <EditPencil className="h-4 w-4 text-black dark:text-white" />
                         </Tooltip.Trigger>
                         <Tooltip.Content>
                           Edit User
@@ -187,13 +191,13 @@ export function MembersTable() {
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-between border-t border-surface-light p-4">
+      <div className="flex items-center justify-between border-t border-surface-light py-4">
         <Typography type="small">Page 1 of 10</Typography>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Previous
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" color="secondary" size="sm">
             Next
           </Button>
         </div>

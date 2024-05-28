@@ -7,10 +7,7 @@ export function PopoverWithImage() {
       <Popover.Trigger as={Button}>More Info</Popover.Trigger>
       <Popover.Content className="grid w-[30rem] grid-cols-2 gap-4">
         <div className="pl-1">
-          <Typography
-            color="primary"
-            className="mb-1 data-[type=p]:font-semibold"
-          >
+          <Typography color="default" className="mb-1 font-semibold">
             Material Tailwind
           </Typography>
           <Typography type="small" className="mb-4 block text-foreground">

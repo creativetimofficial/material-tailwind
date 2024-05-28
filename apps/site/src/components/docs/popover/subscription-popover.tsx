@@ -5,7 +5,7 @@ export function SubscriptionPopover() {
     <Popover>
       <Popover.Trigger as={Button}>Subscribe</Popover.Trigger>
       <Popover.Content className="w-96">
-        <Typography color="primary" className="data-[type=p]:font-bold">
+        <Typography color="default" className="font-bold">
           Newsletter Subscription
         </Typography>
         <form

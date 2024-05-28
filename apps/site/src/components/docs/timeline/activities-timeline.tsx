@@ -12,7 +12,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               $2400, Design changes
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">
@@ -29,7 +29,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               New order #1832412
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">
@@ -46,7 +46,7 @@ export function ActivitiesTimeline() {
             </Timeline.Icon>
           </Timeline.Header>
           <Timeline.Body className="!pb-0">
-            <Typography color="primary" className="font-bold">
+            <Typography color="default" className="font-bold">
               Payment completed for order #4395133
             </Typography>
             <Typography type="small" className="mt-2 text-foreground">

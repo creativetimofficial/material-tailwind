@@ -18,6 +18,7 @@ export function DrawerDemo() {
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               className="absolute right-2 top-2"
               isCircular
             >
@@ -30,7 +31,7 @@ export function DrawerDemo() {
           </Typography>
           <div className="mb-1 flex items-center gap-2">
             <Button>Get Started</Button>
-            <Button variant="ghost">Documentation</Button>
+            <Button color="secondary">Documentation</Button>
           </div>
         </Drawer.Panel>
       </Drawer.Overlay>

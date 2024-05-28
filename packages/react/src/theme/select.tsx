@@ -42,7 +42,7 @@ export const selectTriggerTheme = {
     ),
   },
   baseStyle:
-    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/70",
+    "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/60",
   size: {
     sm: "text-sm leading-[normal] rounded-md py-[4.5px] px-1.5 ring",
     md: "text-sm leading-[normal] rounded-md py-[8.5px] px-2.5 ring",
@@ -75,7 +75,7 @@ export const selectListTheme = {
     order: ["content"],
   },
   baseStyle:
-    "flex flex-col gap-0.5 bg-background p-1 rounded-lg shadow-xl shadow-surface-dark/[0.025] border border-surface outline-none",
+    "flex flex-col gap-0.5 bg-background p-1 rounded-lg shadow-xl shadow-black/[0.025] border border-surface outline-none",
 };
 
 export const selectOptionTheme = {
@@ -99,5 +99,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans font-normal transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-surface-dark hover:bg-surface/70 focus:bg-surface/70 focus:text-surface-dark data-[selected=true]:bg-surface/70 data-[selected=true]:text-surface-dark",
+    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans  transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-black dark:hover:text-white hover:bg-surface-light focus:bg-surface-light focus:text-black dark:focus:text-white data-[selected=true]:bg-surface-light data-[selected=true]:text-black dark:data-[selected=true]:text-white",
 };

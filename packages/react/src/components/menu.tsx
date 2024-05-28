@@ -221,26 +221,7 @@ function MenuCore({
  * [Documentation](http://www.material-tailwind.com/docs/react/menu) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/menu#menu-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/menu#menu-theme)
- *
- * @example
- * ```tsx
-import { Menu, Button } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Menu>
-      <Menu.Trigger as={Button}>Open</Menu.Trigger>
-      <Menu.Content>
-        <Menu.Item>Add Team</Menu.Item>
-        <Menu.Item>Add Project</Menu.Item>
-        <Menu.Item>My Profile</Menu.Item>
-      </Menu.Content>
-    </Menu>
-  );
-}
- * ```
  */
-
 export function MenuRoot(props: MenuProps) {
   const parentId = useFloatingParentNodeId();
 
@@ -257,54 +238,53 @@ MenuRoot.displayName = "MaterialTailwind.Menu";
 
 // menu trigger
 export interface MenuTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const MenuTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
-  MenuTriggerProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "button";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.menuTrigger ?? menuTriggerTheme;
-  const {
-    refs,
-    item,
-    activeIndex,
-    isNested,
-    getReferenceProps,
-    getItemProps,
-    open,
-  } = React.useContext(MenuContext);
+export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as || "button";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.menuTrigger ?? menuTriggerTheme;
+    const {
+      refs,
+      item,
+      activeIndex,
+      isNested,
+      getReferenceProps,
+      getItemProps,
+      open,
+    } = React.useContext(MenuContext);
 
-  const styles = twMerge(theme.baseStyle, className);
-  const elementRef = useMergeRefs([refs?.setReference, item?.ref, ref]);
+    const styles = twMerge(theme.baseStyle, className);
+    const elementRef = useMergeRefs([refs?.setReference, item?.ref, ref]);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      data-open={open}
-      data-nested={isNested}
-      tabIndex={!isNested ? undefined : activeIndex === item?.index ? 0 : -1}
-      role={isNested ? "menuitem" : undefined}
-      className={styles}
-      {...(getReferenceProps &&
-        getItemProps &&
-        getReferenceProps(getItemProps()))}
-    >
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        data-open={open}
+        data-nested={isNested}
+        tabIndex={!isNested ? undefined : activeIndex === item?.index ? 0 : -1}
+        role={isNested ? "menuitem" : undefined}
+        className={styles}
+        {...(getReferenceProps &&
+          getItemProps &&
+          getReferenceProps(getItemProps()))}
+      >
+        {children}
+      </Element>
+    );
+  },
+);
 
 MenuTrigger.displayName = "MaterialTailwind.MenuTrigger";
 
 // menu content
-type MenuContentBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+type MenuContentBaseProps = Omit<React.AllHTMLAttributes<HTMLElement>, "as"> &
   FloatingFocusManagerProps;
 
 export interface MenuContentProps
@@ -314,10 +294,7 @@ export interface MenuContentProps
   children: React.ReactNode;
 }
 
-export const MenuContent = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  MenuContentProps
->(
+export const MenuContent = React.forwardRef<HTMLElement, MenuContentProps>(
   (
     {
       as,
@@ -409,7 +386,7 @@ MenuContent.displayName = "MaterialTailwind.MenuContent";
 
 // menu item
 export interface MenuItemProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   ripple?: boolean;
@@ -418,10 +395,7 @@ export interface MenuItemProps
   children: React.ReactNode;
 }
 
-export const MenuItem = React.forwardRef<
-  HTMLButtonElement | HTMLElement | HTMLAnchorElement,
-  MenuItemProps
->(
+export const MenuItem = React.forwardRef<HTMLElement, MenuItemProps>(
   (
     { as, className, ripple, disabled, closeOnClick, children, ...rest },
     ref,
@@ -457,7 +431,7 @@ export const MenuItem = React.forwardRef<
         className={styles}
         {...(getItemProps &&
           getItemProps({
-            onClick(event: React.MouseEvent<HTMLButtonElement>) {
+            onClick(event: React.MouseEvent<HTMLElement>) {
               rest.onClick?.(event);
 
               if (closeOnClick) {

@@ -36,7 +36,6 @@ import {
   Menu,
   Drawer,
   Card,
-  Input,
   Breadcrumb,
   // @ts-ignore
 } from "@material-tailwind/react";
@@ -57,7 +56,7 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
     <span
       {...rest}
       className={twMerge(
-        "group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info",
+        "group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
         rest?.className,
       )}
     >
@@ -82,13 +81,13 @@ function NavItem({
     goingIcon:
       "translate-y-0 scale-100 opacity-100 group-hover:-translate-y-4 group-hover:scale-90 group-hover:opacity-0 transition-all duration-300",
     comingIcon:
-      "translate-y-4 scale-90 stroke-[1.5] text-info opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300",
+      "translate-y-4 scale-90 stroke-[1.5] opacity-0 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300",
   };
 
   return (
     <span
       className={twMerge(
-        "group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-primary transition-all duration-300 hover:bg-info/10 hover:text-info",
+        "group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
         className,
       )}
     >
@@ -160,7 +159,7 @@ export function Navbar() {
           >
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info lg:grid">
+          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -174,7 +173,7 @@ export function Navbar() {
             <Brand />
           </Link>
           <Select value="v3.0.0">
-            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0 lg:bg-primary lg:text-primary-foreground" />
+            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0" />
             <Select.List>
               <Select.Option value="v3.0.0">v3.0.0</Select.Option>
               <Select.Option value="v2.1.9">v2.1.9</Select.Option>
@@ -205,7 +204,7 @@ export function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <div className="lg:hidde group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-primary transition-all duration-300 hover:bg-info/10 hover:text-info">
+          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -236,6 +235,7 @@ export function Navbar() {
                   as={IconButton}
                   size="sm"
                   variant="ghost"
+                  color="default"
                   className="absolute right-2 top-2"
                   isCircular
                 >
@@ -312,7 +312,7 @@ export function Navbar() {
       </div>
       <div className="-mx-4 mt-4 flex items-center gap-2 border-t border-surface px-4 py-2 lg:hidden">
         <Drawer>
-          <Drawer.Trigger as={IconButton} variant="ghost">
+          <Drawer.Trigger as={IconButton} variant="ghost" color="secondary">
             <MenuIcon className="h-5 w-5" />
           </Drawer.Trigger>
           <Drawer.Overlay className="backdrop-blur">
@@ -322,13 +322,14 @@ export function Navbar() {
                   as={IconButton}
                   size="sm"
                   variant="ghost"
+                  color="secondary"
                   className="absolute right-2 top-2"
                   isCircular
                 >
                   <Xmark className="h-5 w-5" />
                 </Drawer.DismissTrigger>
               </div>
-              <Card className="grid h-full items-start border-none shadow-none">
+              <Card className="grid h-full items-start overflow-auto border-none shadow-none">
                 <Card.Header className="m-0 h-max w-full rounded-none p-3">
                   <div className="flex h-max items-center gap-3">
                     <div className="h-11 w-11">
@@ -345,13 +346,13 @@ export function Navbar() {
                 <Card.Footer className="mt-auto">
                   <Card color="primary" className="shadow-none">
                     <Card.Header className="mx-3 mt-3">
-                      <SelectFace3d className="h-10 w-10 text-primary-foreground" />
+                      <SelectFace3d className="h-10 w-10 text-white" />
                     </Card.Header>
                     <Card.Body>
                       <Typography type="h6" color="secondary" className="mb-1">
                         Upgrade to PRO
                       </Typography>
-                      <Typography type="small" className="text-secondary-dark">
+                      <Typography type="small" color="secondary">
                         Upgrade to Material Tailwind PRO and get even more
                         components, plugins, advanced features and premium.
                       </Typography>

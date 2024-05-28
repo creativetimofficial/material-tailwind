@@ -1,12 +1,12 @@
 import { List, Chip } from "@material-tailwind/react";
-import { Mail, Settings, Trash } from "iconoir-react";
+import { Mail, Settings, Bin } from "iconoir-react";
 
 export function ListWithBadge() {
   return (
     <List>
       <List.Item>
         <List.ItemStart>
-          <Mail className="h-[18px] w-[18px]" />
+          <Mail className="h-5 w-5" />
         </List.ItemStart>
         Inbox
         <List.ItemEnd>
@@ -17,7 +17,7 @@ export function ListWithBadge() {
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Trash className="h-[18px] w-[18px]" />
+          <Bin className="h-5 w-5" />
         </List.ItemStart>
         Trash
         <List.ItemEnd>
@@ -28,7 +28,7 @@ export function ListWithBadge() {
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Settings className="h-[18px] w-[18px]" />
+          <Settings className="h-5 w-5" />
         </List.ItemStart>
         Settings
       </List.Item>

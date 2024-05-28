@@ -48,7 +48,7 @@ import {
 
 // select context
 export interface SelectContextProps
-  extends Omit<BaseComponent<HTMLElement>, "variant"> {
+  extends Omit<BaseComponent<HTMLElement>, "variant" | "selected"> {
   isError?: boolean;
   isSuccess?: boolean;
   isPill?: boolean;
@@ -97,8 +97,8 @@ export const SelectContext = React.createContext<SelectContextProps>({
 
 // select root
 export interface SelectProps {
-  size?: BaseComponent<any>["size"];
-  color?: BaseComponent<any>["color"];
+  size?: BaseComponent<HTMLElement>["size"];
+  color?: BaseComponent<HTMLElement>["color"];
   isPill?: boolean;
   isError?: boolean;
   isSuccess?: boolean;
@@ -116,27 +116,7 @@ export interface SelectProps {
  * [Documentation](http://www.material-tailwind.com/docs/react/select) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/select#select-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/select#select-theme)
- *
- * @example
- * ```tsx
-import { Select } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Select>
-      <Select.Trigger className="w-72" placeholder="Select Version" />
-      <Select.List>
-        <Select.Option>Material Tailwind React</Select.Option>
-        <Select.Option>Material Tailwind HTML</Select.Option>
-        <Select.Option>Material Tailwind Vue</Select.Option>
-        <Select.Option>Material Tailwind Svelte</Select.Option>
-      </Select.List>
-    </Select>
-  );
-}
- * ```
  */
-
 export function SelectRoot({
   size,
   color,
@@ -306,10 +286,7 @@ SelectRoot.displayName = "MaterialTailwind.Select";
 
 // select trigger
 export interface SelectTriggerProps
-  extends Omit<
-    React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement>,
-    "children"
-  > {
+  extends Omit<Omit<React.AllHTMLAttributes<HTMLElement>, "as">, "children"> {
   as?: React.ElementType;
   indicator: React.ReactNode;
   placeholder?: string;
@@ -323,93 +300,92 @@ export interface SelectTriggerProps
   }) => React.ReactNode;
 }
 
-export const SelectTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
-  SelectTriggerProps
->(({ as, indicator, placeholder, className, children, ...rest }, ref) => {
-  const Element = as || "button";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
-  const defaultProps = theme?.defaultProps;
-  const {
-    refs,
-    getReferenceProps,
-    selected,
-    isPill,
-    color,
-    size,
-    isOpen,
-    isError,
-    isSuccess,
-    disabled,
-  } = React.useContext(SelectContext);
+export const SelectTrigger = React.forwardRef<HTMLElement, SelectTriggerProps>(
+  ({ as, indicator, placeholder, className, children, ...rest }, ref) => {
+    const Element = as || "button";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
+    const defaultProps = theme?.defaultProps;
+    const {
+      refs,
+      getReferenceProps,
+      selected,
+      isPill,
+      color,
+      size,
+      isOpen,
+      isError,
+      isSuccess,
+      disabled,
+    } = React.useContext(SelectContext);
 
-  const value = selected?.value;
-  const element = selected?.element;
+    const value = selected?.value;
+    const element = selected?.element;
 
-  const elementRef = useMergeRefs([refs?.setReference, ref]);
+    const elementRef = useMergeRefs([refs?.setReference, ref]);
 
-  indicator ??=
-    (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
-        className="h-[1em] w-[1em] translate-x-0.5 stroke-[1.5]"
-      >
-        <path
-          d="M17 8L12 3L7 8"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M17 16L12 21L7 16"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+    indicator ??=
+      (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentColor"
+          className="h-[1em] w-[1em] translate-x-0.5 stroke-[1.5]"
+        >
+          <path
+            d="M17 8L12 3L7 8"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M17 16L12 21L7 16"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    const styles = twMerge(
+      theme.baseStyle,
+      theme.size[size!],
+      theme.color[color!],
+      isPill && theme.isPill,
+      className,
     );
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme.size[size!],
-    theme.color[color!],
-    isPill && theme.isPill,
-    className,
-  );
-
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      tabIndex={0}
-      type="button"
-      className={styles}
-      data-open={isOpen}
-      disabled={disabled}
-      data-error={isError}
-      data-success={isSuccess}
-      {...(getReferenceProps && getReferenceProps())}
-    >
-      {children
-        ? children({ value, element })
-        : element ?? (
-            <span data-slot="placeholder" className={theme.placeholder}>
-              {placeholder}
-            </span>
-          )}
-      {indicator}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        tabIndex={0}
+        type="button"
+        className={styles}
+        data-open={isOpen}
+        disabled={disabled}
+        data-error={isError}
+        data-success={isSuccess}
+        {...(getReferenceProps && getReferenceProps())}
+      >
+        {children
+          ? children({ value, element })
+          : element ?? (
+              <span data-slot="placeholder" className={theme.placeholder}>
+                {placeholder}
+              </span>
+            )}
+        {indicator}
+      </Element>
+    );
+  },
+);
 
 SelectTrigger.displayName = "MaterialTailwind.SelectTrigger";
 
 // select list
-type SelectListBaseProps = React.HtmlHTMLAttributes<HTMLElement> &
+type SelectListBaseProps = Omit<React.AllHTMLAttributes<HTMLElement>, "as"> &
   FloatingFocusManagerProps;
 
 export interface SelectListProps
@@ -419,10 +395,7 @@ export interface SelectListProps
   children: React.ReactNode;
 }
 
-export const SelectList = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  SelectListProps
->(
+export const SelectList = React.forwardRef<HTMLElement, SelectListProps>(
   (
     {
       as,
@@ -527,7 +500,7 @@ SelectList.displayName = "MaterialTailwind.SelectList";
 
 // select option
 export interface SelectOptionProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   value?: string;
@@ -536,80 +509,80 @@ export interface SelectOptionProps
   children: React.ReactNode;
 }
 
-export const SelectOption = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
-  SelectOptionProps
->(({ as, className, value, ripple, indicator, children, ...rest }, ref) => {
-  const Element = as || "button";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.selectOption ?? selectOptionTheme;
-  const defaultProps = theme?.defaultProps;
-  const { getItemProps, handleSelect, activeIndex, selectedIndex, selected } =
-    React.useContext(SelectContext);
+export const SelectOption = React.forwardRef<HTMLElement, SelectOptionProps>(
+  ({ as, className, value, ripple, indicator, children, ...rest }, ref) => {
+    const Element = as || "button";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.selectOption ?? selectOptionTheme;
+    const defaultProps = theme?.defaultProps;
+    const { getItemProps, handleSelect, activeIndex, selectedIndex, selected } =
+      React.useContext(SelectContext);
 
-  ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
-  indicator ??= (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="h-4 w-4"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4.5 12.75l6 6 9-13.5"
-      />
-    </svg>
-  );
+    ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
+    indicator ??=
+      (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-4 w-4"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4.5 12.75l6 6 9-13.5"
+          />
+        </svg>
+      );
 
-  const { ref: itemRef, index } = useListItem({
-    label: { value, element: children } as any,
-  });
+    const { ref: itemRef, index } = useListItem({
+      label: { value, element: children } as any,
+    });
 
-  const rippleEffect = ripple !== undefined && new Ripple();
+    const rippleEffect = ripple !== undefined && new Ripple();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const onClick = rest?.onClick;
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+      const onClick = rest?.onClick;
 
-    if (ripple) {
-      rippleEffect.create(e, "dark");
-    }
+      if (ripple) {
+        rippleEffect.create(e, "dark");
+      }
 
-    handleSelect && handleSelect(index);
+      handleSelect && handleSelect(index);
 
-    onClick?.(e);
-  };
+      onClick?.(e);
+    };
 
-  const curValue = selected?.value || "";
-  const isActive = activeIndex === index;
-  const isSelected = selectedIndex === index || curValue === value;
+    const curValue = selected?.value || "";
+    const isActive = activeIndex === index;
+    const isSelected = selectedIndex === index || curValue === value;
 
-  const styles = twMerge(theme.baseStyle, className);
+    const styles = twMerge(theme.baseStyle, className);
 
-  const elementRef = useMergeRefs([itemRef, ref]);
+    const elementRef = useMergeRefs([itemRef, ref]);
 
-  return (
-    <Element
-      {...rest}
-      ref={elementRef}
-      role="option"
-      data-selected={isActive && isSelected}
-      aria-selected={isActive && isSelected}
-      tabIndex={isActive ? 0 : -1}
-      className={styles}
-      {...(getItemProps &&
-        getItemProps({
-          onClick: handleClick,
-        }))}
-    >
-      {children}
-      {isSelected && indicator}
-    </Element>
-  );
-});
+    return (
+      <Element
+        {...rest}
+        ref={elementRef}
+        role="option"
+        data-selected={isActive && isSelected}
+        aria-selected={isActive && isSelected}
+        tabIndex={isActive ? 0 : -1}
+        className={styles}
+        {...(getItemProps &&
+          getItemProps({
+            onClick: handleClick,
+          }))}
+      >
+        {children}
+        {isSelected && indicator}
+      </Element>
+    );
+  },
+);
 
 SelectOption.displayName = "MaterialTailwind.SelectOption";
 

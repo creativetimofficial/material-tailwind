@@ -35,7 +35,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            className="p-1 hover:text-info"
+            className="p-1 hover:text-primary"
           >
             {title}
           </Typography>
@@ -72,6 +72,7 @@ export function SimpleNavbar() {
         <IconButton
           size="sm"
           variant="ghost"
+          color="secondary"
           onClick={() => setOpenNav(!openNav)}
           className="ml-auto grid lg:hidden"
         >

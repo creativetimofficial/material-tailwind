@@ -21,10 +21,10 @@ import {
 import type { BaseComponent } from "@types";
 
 // chip context
-export type ChipContextProps = BaseComponent<HTMLElement> & {
+export interface ChipContextProps extends BaseComponent<HTMLElement> {
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-};
+}
 
 export const ChipContext = React.createContext<ChipContextProps>({
   size: "md",
@@ -48,21 +48,8 @@ export interface ChipProps extends BaseComponent<HTMLElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/chip) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/chip#chip-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/chip#chip-theme)
- *
- * @example
- * ```tsx
- import { Chip } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <Chip>
-      <Chip.Label>Material Tailwind</Chip.Label>
-    </Chip>
-  );
-}
- * ```
  */
-const ChipRoot = React.forwardRef<HTMLAnchorElement | HTMLElement, ChipProps>(
+const ChipRoot = React.forwardRef<HTMLElement, ChipProps>(
   (
     {
       as,
@@ -122,70 +109,69 @@ ChipRoot.displayName = "MaterialTailwind.Chip";
 
 // chip label
 export interface ChipLabelProps
-  extends React.HtmlHTMLAttributes<HTMLAnchorElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const ChipLabel = React.forwardRef<
-  HTMLSpanElement | HTMLElement,
-  ChipLabelProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const { size } = React.useContext(ChipContext);
-  const theme = contextTheme?.chipLabel ?? chipLabelTheme;
+export const ChipLabel = React.forwardRef<HTMLElement, ChipLabelProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const { size } = React.useContext(ChipContext);
+    const theme = contextTheme?.chipLabel ?? chipLabelTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["size"][size || "md"],
-    className,
-  );
+    const styles = twMerge(
+      theme.baseStyle,
+      theme["size"][size || "md"],
+      className,
+    );
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 ChipLabel.displayName = "MaterialTailwind.ChipLabel";
 
 // chip icon
-export interface ChipIconProps extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface ChipIconProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
 }
 
-export const ChipIcon = React.forwardRef<
-  HTMLAnchorElement | HTMLElement,
-  ChipIconProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as ?? "span";
-  const contextTheme = useTheme();
-  const { size } = React.useContext(ChipContext);
-  const theme = contextTheme?.chipIcon ?? chipIconTheme;
+export const ChipIcon = React.forwardRef<HTMLElement, ChipIconProps>(
+  ({ as, className, children, ...rest }, ref) => {
+    const Element = as ?? "span";
+    const contextTheme = useTheme();
+    const { size } = React.useContext(ChipContext);
+    const theme = contextTheme?.chipIcon ?? chipIconTheme;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["size"][size || "md"],
-    className,
-  );
+    const styles = twMerge(
+      theme.baseStyle,
+      theme["size"][size || "md"],
+      className,
+    );
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    return (
+      <Element {...rest} ref={ref} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 ChipIcon.displayName = "MaterialTailwind.ChipIcon";
 
 // chip close trigger
 export interface ChipDismissTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   ripple?: boolean;
   className?: string;
@@ -193,7 +179,7 @@ export interface ChipDismissTriggerProps
 }
 
 export const ChipDismissTrigger = React.forwardRef<
-  HTMLButtonElement | HTMLElement,
+  HTMLElement,
   ChipDismissTriggerProps
 >(({ as, ripple, className, children, ...rest }, ref) => {
   const Element = as ?? "button";

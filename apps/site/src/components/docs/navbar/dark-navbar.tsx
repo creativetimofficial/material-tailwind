@@ -48,7 +48,7 @@ function NavList() {
             href={href}
             type="small"
             color="secondary"
-            className="flex items-center gap-x-2 p-1 hover:text-info"
+            className="flex items-center gap-x-2 p-1 hover:text-white"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -70,11 +70,7 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card
-      as="nav"
-      color="primary"
-      className="mx-auto w-full max-w-screen-xl p-2"
-    >
+    <Card as="nav" className="mx-auto w-full max-w-screen-xl bg-black p-2">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -85,7 +81,7 @@ export function DarkNavbar() {
         >
           Material Tailwind
         </Typography>
-        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-primary-light lg:block" />
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block" />
         <div className="hidden lg:block">
           <NavList />
         </div>

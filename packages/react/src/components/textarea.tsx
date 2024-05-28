@@ -16,7 +16,6 @@ import type { BaseComponent } from "@types";
 
 export interface TextareaProps
   extends Omit<BaseComponent<HTMLTextAreaElement>, "variant"> {
-  as?: React.ElementType;
   className?: string;
   resize?: boolean;
   isError?: boolean;
@@ -28,15 +27,6 @@ export interface TextareaProps
  * [Documentation](http://www.material-tailwind.com/docs/react/textarea) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/textarea#textarea-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/textarea#textarea-theme)
- *
- * @example
- * ```tsx
- * import { Textarea } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Textarea placeholder="Your message..." />;
- * }
- * ```
  */
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ color, size, resize, isError, isSuccess, className, ...rest }, ref) => {

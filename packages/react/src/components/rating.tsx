@@ -15,7 +15,7 @@ import { ratingTheme } from "@theme";
 import type { BaseComponent } from "@types";
 
 export interface RatingProps
-  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "onChange"> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as" | "onChange"> {
   as?: React.ElementType;
   color?: BaseComponent<HTMLElement>["color"];
   ratedIcon?: React.ReactNode;
@@ -32,15 +32,6 @@ export interface RatingProps
  * [Documentation](http://www.material-tailwind.com/docs/react/rating) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/rating#rating-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/rating#rating-theme)
- *
- * @example
- * ```tsx
- * import { Rating } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Rating />;
- * }
- * ```
  */
 export const Rating = React.forwardRef<HTMLElement, RatingProps>(
   (

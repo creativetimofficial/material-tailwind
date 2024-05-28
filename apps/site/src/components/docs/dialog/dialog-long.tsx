@@ -13,13 +13,12 @@ export function DialogLong() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="mb-4 flex items-center justify-between gap-4">
-            <Typography color="primary" type="h6">
-              Long Dialog
-            </Typography>
+            <Typography type="h6">Long Dialog</Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"
               variant="ghost"
+              color="secondary"
               isCircular
               className="absolute right-2 top-2"
             >

@@ -30,26 +30,8 @@ export interface ButtonGroupProps extends BaseComponent<HTMLElement> {
  * [Documentation](http://www.material-tailwind.com/docs/react/button-group) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/button-group#button-group-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/button-group#button-group-theme)
- *
- * @example
- * ```tsx
- import { ButtonGroup, Button } from "@material-tailwind/react";
- 
-export default function Example() {
-  return (
-    <ButtonGroup>
-      <Button>React</Button>
-      <Button>Vue</Button>
-      <Button>Svelte</Button>
-    </ButtonGroup>
-  );
-}
- * ```
  */
-export const ButtonGroup = React.forwardRef<
-  HTMLDivElement | HTMLElement,
-  ButtonGroupProps
->(
+export const ButtonGroup = React.forwardRef<HTMLElement, ButtonGroupProps>(
   (
     {
       as,

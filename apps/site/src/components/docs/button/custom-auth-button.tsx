@@ -4,13 +4,13 @@ import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
 export function CustomAuthButton() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      <Button className="border-amber-500 bg-amber-500 text-gray-950 hover:border-amber-600 hover:bg-amber-600 focus:border-amber-600 focus:bg-amber-600">
+      <Button className="border-[#F7931A] bg-[#F7931A] text-white hover:border-[#F7931A] hover:bg-[#F7931A] hover:brightness-110">
         <BitcoinCircle className="mr-2 h-4 w-4 stroke-2" /> Connect Wallet
       </Button>
-      <Button className="border-blue-50 bg-secondary text-gray-950 hover:border-blue-100 hover:bg-secondary hover:text-info focus:border-blue-100 focus:bg-secondary focus:text-info">
+      <Button className="border-white bg-white text-black shadow-md shadow-black/10 hover:border-white hover:bg-white hover:brightness-110">
         <GoogleCircle className="mr-2 h-4 w-4 stroke-2" /> Continue with Google
       </Button>
-      <Button className="border-info bg-info text-secondary hover:border-info-dark hover:bg-info-dark focus:border-info-dark focus:bg-info-dark">
+      <Button className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">
         <Facebook className="mr-2 h-4 w-4 stroke-2" /> Continue with Facebook
       </Button>
     </div>

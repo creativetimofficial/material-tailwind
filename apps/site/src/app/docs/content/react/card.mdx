@@ -140,7 +140,6 @@ export function ProfileCard() {
             as={IconButton}
             size="sm"
             variant="ghost"
-            color="info"
           >
             <X className="h-3.5 w-3.5" />
           </Tooltip.Trigger>
@@ -154,7 +153,6 @@ export function ProfileCard() {
             as={IconButton}
             size="sm"
             variant="ghost"
-            color="info"
           >
             <Facebook className="h-4 w-4" />
           </Tooltip.Trigger>
@@ -168,7 +166,6 @@ export function ProfileCard() {
             as={IconButton}
             size="sm"
             variant="ghost"
-            color="info"
           >
             <Instagram className="h-4 w-4" />
           </Tooltip.Trigger>
@@ -216,7 +213,7 @@ export function LoginCard() {
             as="label"
             htmlFor="email"
             type="small"
-            color="primary"
+            color="default"
             className="font-semibold"
           >
             Email
@@ -232,7 +229,7 @@ export function LoginCard() {
             as="label"
             htmlFor="password"
             type="small"
-            color="primary"
+            color="default"
             className="font-semibold"
           >
             Password
@@ -243,12 +240,12 @@ export function LoginCard() {
             placeholder="************"
           />
         </Input>
-        <div className="mb-6 flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Typography as="label" htmlFor="remember" className="text-foreground">
-            Remember Me
-          </Typography>
-        </div>
+        <label htmlFor="remember" className="mb-4 flex items-center gap-2">
+          <Checkbox id="remember">
+            <Checkbox.Indicator />
+          </Checkbox>
+          <Typography className="text-foreground">Remember Me</Typography>
+        </label>
         <Button isFullWidth>Sign In</Button>
       </Card.Body>
       <Card.Footer className="text-center">
@@ -294,31 +291,31 @@ export function PricingCard() {
           as="span"
           type="h1"
           color="secondary"
-          className="mt-3 flex justify-center gap-1 text-7xl font-normal"
+          className="mt-3 flex justify-center gap-1 text-7xl"
         >
           <span className="mt-2 text-4xl">$</span>29
           <span className="self-end text-4xl">/mo</span>
         </Typography>
       </Card.Header>
-      <hr className="mx-3 border-primary-light" />
+      <hr className="border-primary-dark" />
       <Card.Body as="ul" className="space-y-3 px-8 pb-6 pt-8">
-        <li className="flex items-center gap-4 text-secondary">
+        <li className="flex items-center gap-4 text-white">
           <CheckCircleSolid className="h-5 w-5" />
           <Typography>5 team members</Typography>
         </li>
-        <li className="flex items-center gap-4 text-secondary">
+        <li className="flex items-center gap-4 text-white">
           <CheckCircleSolid className="h-5 w-5" />
           <Typography>200+ components</Typography>
         </li>
-        <li className="flex items-center gap-4 text-secondary">
+        <li className="flex items-center gap-4 text-white">
           <CheckCircleSolid className="h-5 w-5" />
           <Typography>40+ built-in pages</Typography>
         </li>
-        <li className="flex items-center gap-4 text-secondary">
+        <li className="flex items-center gap-4 text-white">
           <CheckCircleSolid className="h-5 w-5" />
           <Typography>1 year free updates</Typography>
         </li>
-        <li className="flex items-center gap-4 text-secondary">
+        <li className="flex items-center gap-4 text-white">
           <CheckCircleSolid className="h-5 w-5" />
           <Typography>Life time technical support</Typography>
         </li>
@@ -357,7 +354,7 @@ export function BlogCard() {
       />
       <Card.Body>
         <Typography type="h5">UI/UX Review Check</Typography>
-        <Typography as="p" type="h6" className="mt-3 font-normal">
+        <Typography as="p" type="h6" className="mt-3">
           Because it&apos;s about motivating the doers. Because I&apos;m here to
           follow my dreams and inspire others.
         </Typography>
@@ -387,7 +384,7 @@ export function BlogCard() {
             <Tooltip.Content>Tania Andrew</Tooltip.Content>
           </Tooltip>
         </div>
-        <Typography className="font-normal">January 10</Typography>
+        <Typography>January 10</Typography>
       </Card.Footer>
     </Card>
   );
@@ -401,35 +398,29 @@ export function BlogCard() {
 
 <ComponentPreview demo={<Card.BackgroundBlogCard />}>
 ```tsx
-import {
-  Card,
-  Typography,
-  Avatar,
-} from "@material-tailwind/react";
+import React from "react";
+import { Card, Typography, Avatar } from "@material-tailwind/react";
 
 export function BackgroundBlogCard() {
   return (
-    <Card className="relative grid h-[40rem] w-full max-w-[28rem] items-end justify-center overflow-hidden text-center">
-      <Card.Header
-        className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center"
-      >
-        <div className="to-bg-primary/10 absolute inset-0 h-full w-full bg-gradient-to-t from-primary/80 via-primary/50" />
+    <Card className="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden text-center">
+      <Card.Header>
+        <div className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
+          <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10" />
+        </div>
       </Card.Header>
-      <Card.Body className="relative px-6 py-14 md:px-12">
-        <Typography
-          type="h2"
-          className="mb-6 font-medium leading-[1.5]"
-        >
+      <Card.Body className="relative bottom-0 h-full px-6 py-14 md:px-12">
+        <Typography type="h4" color="secondary">
           How we design and code open-source projects?
         </Typography>
-        <Typography type="h5" className="mb-4 text-gray-400">
+        <Typography type="h6" color="secondary" className="my-6 opacity-80">
           Tania Andrew
         </Typography>
         <Avatar
           size="xl"
           shape="circular"
           alt="tania andrew"
-          className="border-2 border-secondary"
+          className="border-2 border-white"
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
         />
       </Card.Body>
@@ -445,6 +436,7 @@ export function BackgroundBlogCard() {
 
 <ComponentPreview demo={<Card.BookingCard />}>
 ```tsx
+import React from "react";
 import {
   Card,
   Typography,
@@ -482,8 +474,13 @@ export function BookingCard() {
       </Card.Header>
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
-          <Typography type="h6">Wooden House, Florida</Typography>
-          <Typography className="flex items-center gap-1.5 font-normal">
+          <Typography type="h6">
+            Wooden House, Florida
+          </Typography>
+          <Typography
+            color="default"
+            className="flex items-center gap-1.5"
+          >
             <StarSolid className="h-[18px] w-[18px] text-warning" />
             5.0
           </Typography>
@@ -498,7 +495,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <Cash className="h-5 w-5" />
@@ -514,7 +511,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <Wifi className="h-5 w-5" />
@@ -530,7 +527,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <HomeSimple className="h-5 w-5" />
@@ -545,7 +542,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <ModernTv className="h-5 w-5" />
@@ -561,7 +558,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 <FireFlame className="h-5 w-5" />
@@ -576,7 +573,7 @@ export function BookingCard() {
               <IconButton
                 isCircular
                 size="lg"
-                variant="ghost"
+                color="secondary"
                 className="cursor-pointer border border-surface bg-surface-light transition-all hover:!opacity-100 group-hover:opacity-70"
               >
                 +20
@@ -668,7 +665,7 @@ export function HorizontalCard() {
         <Typography type="h5" className="mb-2">
           Lyft launching cross-platform service this week
         </Typography>
-        <Typography className="mb-8 font-normal">
+        <Typography className="mb-8">
           Like so many organizations these days, Autodesk is a company in
           transition. It was until recently a traditional boxed software company
           selling licenses. Yet its own business model disruption is only part
@@ -725,7 +722,7 @@ export function EcommerceCard() {
           <Typography className="!font-medium">Apple AirPods</Typography>
           <Typography className="!font-medium">$95.00</Typography>
         </div>
-        <Typography variant="small" className="font-normal opacity-75">
+        <Typography variant="small" className="opacity-75">
           With plenty of talk and listen time, voice-activated Siri access, and
           an available wireless charging case.
         </Typography>

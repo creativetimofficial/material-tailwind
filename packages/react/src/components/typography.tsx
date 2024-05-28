@@ -15,13 +15,15 @@ import { typographyTheme } from "@theme";
 import type { BaseComponent } from "@types";
 
 export interface TypographyProps
-  extends React.HtmlHTMLAttributes<HTMLElement | HTMLAnchorElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
-  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
-  color?: BaseComponent<HTMLElement>["color"] | "inherit";
+  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "lead" | "p" | "small";
+  color?: BaseComponent<HTMLElement>["color"] | "inherit" | "default";
   className?: string;
   children: React.ReactNode;
 }
+
+const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
 /**
  * @remarks
@@ -29,40 +31,40 @@ export interface TypographyProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/typography#typography-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/typography#typography-theme)
  *
- * @example
- * ```tsx
- * import { Typography } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Typography>Material Tailwind</Typography>;
- * }
- * ```
+ * @prop `as`: Element, default is `p`
+ * @prop `type`: h1 | h2 | h3 | h4 | h5 | h6 | lead | p | small
+ * @prop `color`: primary | secondary | info | success | warning | error | inherit
  */
-export const Typography = React.forwardRef<
-  HTMLElement | HTMLAnchorElement,
-  TypographyProps
->(({ as, color, type, className, children, ...rest }, ref) => {
-  const Element = as ?? type ?? "p";
-  const contextTheme = useTheme();
-  const theme = contextTheme?.typography ?? typographyTheme;
-  const defaultProps = theme?.defaultProps;
+export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
+  ({ as, color, type, className, children, ...rest }, ref) => {
+    const Element = as ? as : type === "lead" ? "p" : type || "p";
+    const contextTheme = useTheme();
+    const theme = contextTheme?.typography ?? typographyTheme;
+    const defaultProps = theme?.defaultProps;
 
-  color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
-  type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
+    if (headings.includes(type!) && color === "inherit") {
+      color = "default";
+    } else {
+      color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
+    }
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme["type"][type],
-    theme["color"][color!],
-    className,
-  );
+    color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
+    type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
 
-  return (
-    <Element {...rest} ref={ref} className={styles}>
-      {children}
-    </Element>
-  );
-});
+    const styles = twMerge(
+      theme.baseStyle,
+      theme["type"][type],
+      theme["color"][color!],
+      className,
+    );
+
+    return (
+      <Element {...rest} ref={ref as any} className={styles}>
+        {children}
+      </Element>
+    );
+  },
+);
 
 Typography.displayName = "MaterialTailwind.Typography";
 

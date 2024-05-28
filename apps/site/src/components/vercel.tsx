@@ -4,7 +4,7 @@ export function Vercel() {
       href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center font-semibold text-primary no-underline"
+      className="inline-flex items-center font-semibold text-black no-underline dark:text-white"
     >
       <span className="mr-1">Powered by</span>
       <span>

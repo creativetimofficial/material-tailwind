@@ -6,7 +6,7 @@ export function CommentBoxWithTextarea() {
     <form action="#" className="w-full">
       <Textarea type="email" placeholder="someone@example.com" />
       <div className="flex w-full justify-between py-3">
-        <IconButton variant="ghost" size="sm">
+        <IconButton variant="ghost" color="secondary" size="sm">
           <Attachment className="h-4 w-4" />
         </IconButton>
         <div className="flex gap-2">

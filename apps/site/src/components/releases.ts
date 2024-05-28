@@ -6,7 +6,7 @@ export const releases = [
     description: "Material Tailwind v2.1.9",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Update accordion component to make it possible to disable the animation.",
           "Fix select component issue while there is only one option available.",
@@ -16,7 +16,7 @@ export const releases = [
         ],
       },
       {
-        title: "docs changes",
+        title: "Docs Changes",
         data: [
           "Fix spelling and grammar issues.",
           "Add controlled select example.",
@@ -31,7 +31,7 @@ export const releases = [
     description: "Material Tailwind v2.1.8",
     content: [
       {
-        title: "docs changes",
+        title: "Docs Changes",
         data: [
           "New components: Skeleton, Gallery, Mega Menu",
           "New plugins integration: Lexical Rich Text Editor, Copy to Clipboard",
@@ -46,13 +46,13 @@ export const releases = [
     description: "Material Tailwind v2.1.7",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Add black color for <Button />, <IconButton /> and <ButtonGroup /> components.",
         ],
       },
       {
-        title: "docs changes",
+        title: "Docs Changes",
         data: [
           "Update the button, icon button and button group documentation pages.",
         ],
@@ -66,7 +66,7 @@ export const releases = [
     description: "Material Tailwind v2.1.6",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Improved disabled state style for input and select.",
           "Fixed input placeholder overlap with label.",
@@ -76,7 +76,7 @@ export const releases = [
         ],
       },
       {
-        title: "docs changes",
+        title: "Docs Changes",
         data: [
           "Fixed broken links.",
           "Fixed typos.",
@@ -93,7 +93,7 @@ export const releases = [
     description: "Material Tailwind v2.1.5",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Plugins integration guides (Date Picker, Charts and Algolia Search).",
         ],
@@ -107,7 +107,7 @@ export const releases = [
     description: "Material Tailwind v2.1.4",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: ["Update <Button /> theme."],
       },
     ],
@@ -119,11 +119,11 @@ export const releases = [
     description: "Material Tailwind v2.1.3",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: ["Fix theme issue with <Button /> component."],
       },
       {
-        title: "docs updates",
+        title: "Docs Updates",
         data: ["Fix typos.", "Update the design"],
       },
     ],
@@ -135,14 +135,14 @@ export const releases = [
     description: "Material Tailwind v2.1.2",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Add native event listeners for <SpeedDialAction />",
           "Fix prop-types warning for <Badge />",
         ],
       },
       {
-        title: "docs updates",
+        title: "Docs Updates",
         data: ["Fix the issue with countries select example."],
       },
     ],
@@ -154,11 +154,11 @@ export const releases = [
     description: "Material Tailwind v2.1.1",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: ["Update typography types", "Fix grammer and typo issues"],
       },
       {
-        title: "docs updates",
+        title: "Docs Updates",
         data: [
           "Fix outlined issue on examples.",
           "Fix code issues for components demo.",
@@ -173,7 +173,7 @@ export const releases = [
     description: "Material Tailwind v2.1.0",
     content: [
       {
-        title: "minor changes",
+        title: "Minor Changes",
         data: [
           "Update design for components",
           "Change the base color to gray-900 for components",
@@ -181,7 +181,7 @@ export const releases = [
         ],
       },
       {
-        title: "docs updates",
+        title: "Docs Updates",
         data: [
           "Add release notes page",
           "Add figma landing page",
@@ -198,7 +198,7 @@ export const releases = [
     description: "Material Tailwind v2.0.8 ",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: ["Fix the export issue for components."],
       },
     ],
@@ -210,7 +210,7 @@ export const releases = [
     description: "Material Tailwind v2.0.7 ",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: ["Replace @heroicons/react icons with svg version of the icons."],
       },
       {
@@ -228,7 +228,7 @@ export const releases = [
     description: " ",
     content: [
       {
-        title: "patch changes",
+        title: "Patch Changes",
         data: [
           "Add useId hook for <Tabs />, <Checkbox />, <Radio />, <Switch /> components, this will help to use multiple of these components in a page without adding different id for each instance.",
           "Fix issue #387",
@@ -395,7 +395,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "changes",
+        title: "Changes",
         data: ["Update the withMT() function for tailwind configurations."],
       },
     ],
@@ -407,7 +407,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "features",
+        title: "Features",
         data: [
           "Add the __dirname for withMT() function by @randallhunt.",
           "Add shrink prop for <Input /> for making the floating label controlled.",
@@ -421,7 +421,7 @@ export const releases = [
         ],
       },
       {
-        title: "fix",
+        title: "Fix",
         data: [
           "Fix issue #290",
           "Fix issue #288",
@@ -554,11 +554,11 @@ export const releases = [
         data: ["Fix issue #177."],
       },
       {
-        title: "features",
+        title: "Features",
         data: ["Add MobileNav component for responsive Navbar collapse."],
       },
       {
-        title: "updates",
+        title: "Updates",
         data: ["Update readme file."],
       },
       {
@@ -582,7 +582,7 @@ export const releases = [
         ],
       },
       {
-        title: "features",
+        title: "Features",
         data: [
           "Use tailwind-merge library for merging className props for components.",
           "Add new white color for button and icon button.",
@@ -614,7 +614,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "features",
+        title: "Features",
         data: ["Change the font-family from serif to sans for headings."],
       },
 
@@ -638,7 +638,7 @@ export const releases = [
         data: ["Types definition issues."],
       },
       {
-        title: "features",
+        title: "Features",
         data: ["Mark as export all types definition for styling and theming."],
       },
 
@@ -700,7 +700,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "changes",
+        title: "Changes",
         data: [
           "Removed unused import for @material-tailwind/react/components/Dialog.",
           "Fixed the @material-tailwind/react/components/MenuCore.tsx floating issue when scrolling the page.",
@@ -747,7 +747,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: ["@material-tailwind/html", "@material-tailwind/react"],
       },
       {
@@ -765,7 +765,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: ["@material-tailwind/html", "@material-tailwind/react"],
       },
       {
@@ -783,7 +783,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: ["Update tailwindcss to the latest version"],
       },
       {
@@ -820,7 +820,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: [
           "New components are added",
           "className prop added for the components",
@@ -854,7 +854,7 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: [
           "New components: Textarea, Checkbox, Radio Button, Card Row, Card Status, Card Status Footer",
           "Update components design",
@@ -873,10 +873,10 @@ export const releases = [
     description: "",
     content: [
       {
-        title: "New features",
+        title: "New Features",
         data: [
           "Update components design",
-          "Add new features for the components",
+          "Add new Features for the components",
           "Add transparent background for components",
         ],
       },

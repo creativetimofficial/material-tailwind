@@ -32,7 +32,7 @@ export interface TimelineContextProps {
   color?: BaseComponent<HTMLElement>["color"];
   orientation?: Orientation;
   mode?: Mode;
-  parentRef?: React.RefObject<HTMLDivElement | HTMLElement>;
+  parentRef?: React.RefObject<HTMLElement>;
 }
 
 export const TimelineContext = React.createContext<TimelineContextProps>({
@@ -45,12 +45,15 @@ export const TimelineContext = React.createContext<TimelineContextProps>({
 
 // timeline root
 export interface TimelineProps
-  extends Omit<React.HtmlHTMLAttributes<HTMLElement>, "children" | "onChange"> {
+  extends Omit<
+    React.AllHTMLAttributes<HTMLElement>,
+    "as" | "onChange" | "children"
+  > {
   as?: React.ElementType;
   value?: string;
   defaultValue?: string;
   onChange?: (e: string) => void;
-  color: BaseComponent<any>["color"];
+  color: BaseComponent<HTMLElement>["color"];
   orientation?: Orientation;
   mode?: Mode;
   className?: string;
@@ -174,7 +177,8 @@ export const TimelineRoot = React.forwardRef<HTMLElement, TimelineProps>(
 TimelineRoot.displayName = "MaterialTailwind.Timeline";
 
 // timeline item
-interface TimelineItemProps extends React.HtmlHTMLAttributes<HTMLElement> {
+interface TimelineItemProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   value?: string;
   className?: string;
@@ -232,7 +236,7 @@ TimelineItem.displayName = "MaterialTailwind.TimelineItem";
 
 // timeline header
 export interface TimelineHeaderProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -259,7 +263,7 @@ TimelineHeader.displayName = "MaterialTailwind.TimelineHeader";
 
 // timeline icon
 export interface TimelineIconProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -286,7 +290,7 @@ TimelineIcon.displayName = "MaterialTailwind.TimelineIcon";
 
 // timeline separator
 export interface TimelineSeparatorProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
@@ -319,7 +323,7 @@ TimelineSeparator.displayName = "MaterialTailwind.TimelineSeparator";
 
 // timeline body
 export interface TimelineBodyProps
-  extends React.HtmlHTMLAttributes<HTMLElement> {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;

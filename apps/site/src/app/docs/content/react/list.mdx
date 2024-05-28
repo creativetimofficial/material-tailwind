@@ -42,26 +42,26 @@ export function ListDemo() {
 <ComponentPreview demo={<List.ListWithIcon />}>
 ```tsx
 import { List } from "@material-tailwind/react";
-import { Mail, Settings, Trash } from "iconoir-react";
+import { Bin, Mail, Settings } from "iconoir-react";
 
 export function ListWithIcon() {
   return (
     <List>
       <List.Item>
         <List.ItemStart>
-          <Mail className="h-[18px] w-[18px]" />
+          <Mail className="h-5 w-5" />
         </List.ItemStart>
         Inbox
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Trash className="h-[18px] w-[18px]" />
+          <Bin className="h-5 w-5" />
         </List.ItemStart>
         Trash
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Settings className="h-[18px] w-[18px]" />
+          <Settings className="h-5 w-5" />
         </List.ItemStart>
         Settings
       </List.Item>
@@ -89,12 +89,12 @@ const ListItem = React.forwardRef<
   }
 >(({ img, title, description, ...rest }, ref) => {
   return (
-    <List.Item ref={ref} {...rest}>
+    <List.Item ref={ref as any} {...rest}>
       <List.ItemStart>
         <Avatar src={img} alt="profile-picture" />
       </List.ItemStart>
       <div>
-        <Typography color="primary" className="data-[type=p]:font-semibold">
+        <Typography color="default" className="font-semibold">
           {title}
         </Typography>
         <Typography type="small" className="text-foreground">
@@ -136,14 +136,14 @@ export function ListWithAvatar() {
 <ComponentPreview demo={<List.ListWithBadge />}>
 ```tsx
 import { List, Chip } from "@material-tailwind/react";
-import { Mail, Settings, Trash } from "iconoir-react";
+import { Mail, Settings, Bin } from "iconoir-react";
 
 export function ListWithBadge() {
   return (
     <List>
       <List.Item>
         <List.ItemStart>
-          <Mail className="h-[18px] w-[18px]" />
+          <Mail className="h-5 w-5" />
         </List.ItemStart>
         Inbox
         <List.ItemEnd>
@@ -154,7 +154,7 @@ export function ListWithBadge() {
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Trash className="h-[18px] w-[18px]" />
+          <Bin className="h-5 w-5" />
         </List.ItemStart>
         Trash
         <List.ItemEnd>
@@ -165,7 +165,7 @@ export function ListWithBadge() {
       </List.Item>
       <List.Item>
         <List.ItemStart>
-          <Settings className="h-[18px] w-[18px]" />
+          <Settings className="h-5 w-5" />
         </List.ItemStart>
         Settings
       </List.Item>
@@ -267,21 +267,21 @@ export function ListWithLink() {
 <ComponentPreview demo={<List.ListCustomStyles />}>
 ```tsx
 import { List, Chip } from "@material-tailwind/react";
-import { Mail, Settings, Trash } from "iconoir-react";
+import { Mail, Settings, Bin } from "iconoir-react";
 
 export function ListCustomStyles() {
   return (
     <List>
       <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
-          <Mail className="h-[18px] w-[18px]" />
+          <Mail className="h-5 w-5" />
         </List.ItemStart>
         Inbox
         <List.ItemEnd>
           <Chip
             size="sm"
             variant="ghost"
-            className="group-hover:bg-blue-400 group-hover:text-secondary"
+            className="transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary"
           >
             <Chip.Label>14</Chip.Label>
           </Chip>
@@ -289,14 +289,14 @@ export function ListCustomStyles() {
       </List.Item>
       <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
-          <Trash className="h-[18px] w-[18px]" />
+          <Bin className="h-5 w-5" />
         </List.ItemStart>
         Trash
         <List.ItemEnd>
           <Chip
             size="sm"
             variant="ghost"
-            className="group-hover:bg-blue-400 group-hover:text-secondary"
+            className="transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary"
           >
             <Chip.Label>40</Chip.Label>
           </Chip>
@@ -304,7 +304,7 @@ export function ListCustomStyles() {
       </List.Item>
       <List.Item className="group hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary">
         <List.ItemStart>
-          <Settings className="h-[18px] w-[18px]" />
+          <Settings className="h-5 w-5" />
         </List.ItemStart>
         Settings
       </List.Item>

@@ -37,7 +37,7 @@ const chartConfig = {
       show: true,
     },
     labels: ["Primary", "Info", "Success", "Warning", "Error"],
-    colors: ["#020617", "#2563EB", "#16A34A", "#EAB308", "#DC2626"],
+    colors: ["#6028ff", "#0062ff", "#00bf6b", "#fca327", "#ef4444"],
   } as ApexOptions,
 } as ApexChart;
 
@@ -47,15 +47,12 @@ export function PieChart() {
       <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
         <Card
           color="primary"
-          variant="gradient"
           className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
         >
           <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
         </Card>
         <div>
-          <Typography type="h6" color="primary">
-            Pie Chart
-          </Typography>
+          <Typography type="h6">Pie Chart</Typography>
           <Typography className="mt-1 max-w-sm text-foreground">
             Visualize your data in a simple way using the
             @material-tailwind/react chart plugin.

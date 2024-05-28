@@ -11,6 +11,8 @@ export interface Color {
 export interface Colors {
   background?: `#${string}`;
   foreground?: `#${string}`;
+  black?: `#${string}`;
+  white?: `#${string}`;
   surface?: Color;
   primary?: Color;
   secondary?: Color;
@@ -47,49 +49,51 @@ export const mtConfig = plugin.withOptions(
 
           /* base colors */
           "--color-background": getRgbChannels(
-            options?.colors?.background || "#FFFFFF",
+            options?.colors?.background || "#ffffff",
           ),
           "--color-foreground": getRgbChannels(
-            options?.colors?.foreground || "#4B5563",
+            options?.colors?.foreground || "#374151",
           ),
+          "--color-black": getRgbChannels(options?.colors?.black || "#030712"),
+          "--color-white": getRgbChannels(options?.colors?.white || "#ffffff"),
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.colors?.surface?.default || "#E5E7EB",
+            options?.colors?.surface?.default || "#e5e7eb",
           ),
           "--color-surface-dark": getRgbChannels(
-            options?.colors?.surface?.dark || "#030712",
+            options?.colors?.surface?.dark || "#d1d5db",
           ),
           "--color-surface-light": getRgbChannels(
-            options?.colors?.surface?.light || "#F9FaFB",
+            options?.colors?.surface?.light || "#f3f4f6",
           ),
           "--color-surface-foreground": getRgbChannels(
-            options?.colors?.surface?.foreground || "#1F2937",
+            options?.colors?.surface?.foreground || "#030712",
           ),
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.colors?.primary?.default || "#111827",
+            options?.colors?.primary?.default || "#6028ff",
           ),
           "--color-primary-dark": getRgbChannels(
-            options?.colors?.primary?.dark || "#030712",
+            options?.colors?.primary?.dark || "#5216eb",
           ),
           "--color-primary-light": getRgbChannels(
-            options?.colors?.primary?.light || "#1F2937",
+            options?.colors?.primary?.light || "#724dff",
           ),
           "--color-primary-foreground": getRgbChannels(
-            options?.colors?.primary?.foreground || "#F9FAFB",
+            options?.colors?.primary?.foreground || "#f9fafb",
           ),
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.colors?.secondary?.default || "#E5E7EB",
+            options?.colors?.secondary?.default || "#e5e7eb",
           ),
           "--color-secondary-dark": getRgbChannels(
-            options?.colors?.secondary?.dark || "#D1D5DB",
+            options?.colors?.secondary?.dark || "#d1d5db",
           ),
           "--color-secondary-light": getRgbChannels(
-            options?.colors?.secondary?.light || "#F9FAFB",
+            options?.colors?.secondary?.light || "#f3f4f6",
           ),
           "--color-secondary-foreground": getRgbChannels(
             options?.colors?.secondary?.foreground || "#030712",
@@ -97,58 +101,58 @@ export const mtConfig = plugin.withOptions(
 
           /* info color */
           "--color-info": getRgbChannels(
-            options?.colors?.info?.default || "#2563EB",
+            options?.colors?.info?.default || "#0062ff",
           ),
           "--color-info-dark": getRgbChannels(
-            options?.colors?.info?.dark || "#1D4ED8",
+            options?.colors?.info?.dark || "#0055dd",
           ),
           "--color-info-light": getRgbChannels(
-            options?.colors?.info?.light || "#3B82F6",
+            options?.colors?.info?.light || "#007aff",
           ),
           "--color-info-foreground": getRgbChannels(
-            options?.colors?.info?.foreground || "#F9FAFB",
+            options?.colors?.info?.foreground || "#f9fafb",
           ),
 
           /* success color */
           "--color-success": getRgbChannels(
-            options?.colors?.success?.default || "#16A34A",
+            options?.colors?.success?.default || "#00bf6b",
           ),
           "--color-success-dark": getRgbChannels(
-            options?.colors?.success?.dark || "#15803D",
+            options?.colors?.success?.dark || "#00a35f",
           ),
           "--color-success-light": getRgbChannels(
-            options?.colors?.success?.light || "#22C55E",
+            options?.colors?.success?.light || "#02e585",
           ),
           "--color-success-foreground": getRgbChannels(
-            options?.colors?.success?.foreground || "#F9FAFB",
+            options?.colors?.success?.foreground || "#f9fafb",
           ),
 
           /* warning color */
           "--color-warning": getRgbChannels(
-            options?.colors?.warning?.default || "#EAB308",
+            options?.colors?.warning?.default || "#fca327",
           ),
           "--color-warning-dark": getRgbChannels(
-            options?.colors?.warning?.dark || "#CA8A04",
+            options?.colors?.warning?.dark || "#f67d0a",
           ),
           "--color-warning-light": getRgbChannels(
-            options?.colors?.warning?.light || "#FACC15",
+            options?.colors?.warning?.light || "#fdba4c",
           ),
           "--color-warning-foreground": getRgbChannels(
-            options?.colors?.warning?.foreground || "#030712",
+            options?.colors?.warning?.foreground || "#f9fafb",
           ),
 
           /* error color */
           "--color-error": getRgbChannels(
-            options?.colors?.error?.default || "#DC2626",
+            options?.colors?.error?.default || "#ef4444",
           ),
           "--color-error-dark": getRgbChannels(
-            options?.colors?.error?.dark || "#B91C1C",
+            options?.colors?.error?.dark || "#dc2626",
           ),
           "--color-error-light": getRgbChannels(
-            options?.colors?.error?.light || "#EF4444",
+            options?.colors?.error?.light || "#f87171",
           ),
           "--color-error-foreground": getRgbChannels(
-            options?.colors?.error?.foreground || "#F9FAFB",
+            options?.colors?.error?.foreground || "#f9fafb",
           ),
         },
 
@@ -158,40 +162,46 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.background || "#030712",
           ),
           "--color-foreground": getRgbChannels(
-            options?.darkColors?.foreground || "#9CA3AF",
+            options?.darkColors?.foreground || "#d1d5db",
+          ),
+          "--color-black": getRgbChannels(
+            options?.darkColors?.black || "#030712",
+          ),
+          "--color-white": getRgbChannels(
+            options?.darkColors?.white || "#ffffff",
           ),
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.darkColors?.surface?.default || "#1F2937",
+            options?.darkColors?.surface?.default || "#1f2937",
           ),
           "--color-surface-dark": getRgbChannels(
-            options?.darkColors?.surface?.dark || "#F9FAFB",
+            options?.darkColors?.surface?.dark || "#111827",
           ),
           "--color-surface-light": getRgbChannels(
-            options?.darkColors?.surface?.light || "#111827",
+            options?.darkColors?.surface?.light || "#374151",
           ),
           "--color-surface-foreground": getRgbChannels(
-            options?.darkColors?.surface?.foreground || "#E5E7EB",
+            options?.darkColors?.surface?.foreground || "#f9fafb",
           ),
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.darkColors?.primary?.default || "#F3F4F6",
+            options?.darkColors?.primary?.default || "#6028ff",
           ),
           "--color-primary-dark": getRgbChannels(
-            options?.darkColors?.primary?.dark || "#E5E7EB",
+            options?.darkColors?.primary?.dark || "#5216eb",
           ),
           "--color-primary-light": getRgbChannels(
-            options?.darkColors?.primary?.light || "#F9FAFB",
+            options?.darkColors?.primary?.light || "#724dff",
           ),
           "--color-primary-foreground": getRgbChannels(
-            options?.darkColors?.primary?.foreground || "#030712",
+            options?.darkColors?.primary?.foreground || "#f9fafb",
           ),
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.darkColors?.secondary?.default || "#1F2937",
+            options?.darkColors?.secondary?.default || "#1f2937",
           ),
           "--color-secondary-dark": getRgbChannels(
             options?.darkColors?.secondary?.dark || "#111827",
@@ -200,63 +210,63 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.secondary?.light || "#374151",
           ),
           "--color-secondary-foreground": getRgbChannels(
-            options?.darkColors?.secondary?.foreground || "#F9FAFB",
+            options?.darkColors?.secondary?.foreground || "#f9fafb",
           ),
 
           /* info color */
           "--color-info": getRgbChannels(
-            options?.darkColors?.info?.default || "#3B82F6",
+            options?.darkColors?.info?.default || "#0062ff",
           ),
           "--color-info-dark": getRgbChannels(
-            options?.darkColors?.info?.dark || "#60A5FA",
+            options?.darkColors?.info?.dark || "#0055dd",
           ),
           "--color-info-light": getRgbChannels(
-            options?.darkColors?.info?.light || "#2563EB",
+            options?.darkColors?.info?.light || "#007aff",
           ),
           "--color-info-foreground": getRgbChannels(
-            options?.darkColors?.info?.foreground || "#030712",
+            options?.darkColors?.info?.foreground || "#f9fafb",
           ),
 
           /* success color */
           "--color-success": getRgbChannels(
-            options?.darkColors?.success?.default || "#22C55E",
+            options?.darkColors?.success?.default || "#00bf6b",
           ),
           "--color-success-dark": getRgbChannels(
-            options?.darkColors?.success?.dark || "#16A34A",
+            options?.darkColors?.success?.dark || "#00a35f",
           ),
           "--color-success-light": getRgbChannels(
-            options?.darkColors?.success?.light || "#4ADE80",
+            options?.darkColors?.success?.light || "#02e585",
           ),
           "--color-success-foreground": getRgbChannels(
-            options?.darkColors?.success?.foreground || "#030712",
+            options?.darkColors?.success?.foreground || "#f9fafb",
           ),
 
           /* warning color */
           "--color-warning": getRgbChannels(
-            options?.darkColors?.warning?.default || "#FACC15",
+            options?.darkColors?.warning?.default || "#fca327",
           ),
           "--color-warning-dark": getRgbChannels(
-            options?.darkColors?.warning?.dark || "#EABC08",
+            options?.darkColors?.warning?.dark || "#f67d0a",
           ),
           "--color-warning-light": getRgbChannels(
-            options?.darkColors?.warning?.light || "#FDE047",
+            options?.darkColors?.warning?.light || "#fdba4c",
           ),
           "--color-warning-foreground": getRgbChannels(
-            options?.darkColors?.warning?.foreground || "#030712",
+            options?.darkColors?.warning?.foreground || "#f9fafb",
           ),
 
           /* error color */
           "--color-error": getRgbChannels(
-            options?.darkColors?.error?.default || "#EF4444",
+            options?.darkColors?.error?.default || "#ef4444",
           ),
           "--color-error-dark": getRgbChannels(
-            options?.darkColors?.error?.dark || "#DC2626",
+            options?.darkColors?.error?.dark || "#dc2626",
           ),
           "--color-error-light": getRgbChannels(
-            options?.darkColors?.error?.light || "#F87171",
+            options?.darkColors?.error?.light || "#f87171",
           ),
           "--color-error-foreground": getRgbChannels(
-            options?.darkColors?.error?.foreground || "#030712",
+            options?.darkColors?.error?.foreground || "#f9fafb",
           ),
         },
       });
@@ -290,6 +300,8 @@ export const mtConfig = plugin.withOptions(
           colors: {
             background: "rgb(var(--color-background) / <alpha-value>)",
             foreground: "rgb(var(--color-foreground) / <alpha-value>)",
+            black: "rgb(var(--color-black) / <alpha-value>)",
+            white: "rgb(var(--color-white) / <alpha-value>)",
             surface: {
               DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
               dark: "rgb(var(--color-surface-dark) / <alpha-value>)",

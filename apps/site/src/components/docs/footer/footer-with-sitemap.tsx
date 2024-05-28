@@ -105,7 +105,7 @@ export function FooterWithSitemap() {
                   <Typography
                     as="a"
                     href={href}
-                    className="py-1 hover:text-info"
+                    className="py-1 hover:text-primary"
                   >
                     {title}
                   </Typography>
@@ -114,26 +114,56 @@ export function FooterWithSitemap() {
             </ul>
           ))}
         </div>
-        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-secondary-dark py-4 md:flex-row md:justify-between">
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 border-t border-surface py-4 md:flex-row md:justify-between">
           <Typography type="small" className="text-center">
             &copy; {YEAR}{" "}
             <a href="https://material-tailwind.com/">Material Tailwind</a>. All
             Rights Reserved.
           </Typography>
           <div className="flex gap-1 sm:justify-center">
-            <IconButton as="a" href="#" variant="ghost" size="sm">
+            <IconButton
+              as="a"
+              href="#"
+              color="secondary"
+              variant="ghost"
+              size="sm"
+            >
               <Facebook className="h-4 w-4" />
             </IconButton>
-            <IconButton as="a" href="#" variant="ghost" size="sm">
+            <IconButton
+              as="a"
+              href="#"
+              color="secondary"
+              variant="ghost"
+              size="sm"
+            >
               <Instagram className="h-4 w-4" />
             </IconButton>
-            <IconButton as="a" href="#" variant="ghost" size="sm">
+            <IconButton
+              as="a"
+              href="#"
+              color="secondary"
+              variant="ghost"
+              size="sm"
+            >
               <X className="h-4 w-4" />
             </IconButton>
-            <IconButton as="a" href="#" variant="ghost" size="sm">
+            <IconButton
+              as="a"
+              href="#"
+              color="secondary"
+              variant="ghost"
+              size="sm"
+            >
               <Github className="h-4 w-4" />
             </IconButton>
-            <IconButton as="a" href="#" variant="ghost" size="sm">
+            <IconButton
+              as="a"
+              href="#"
+              color="secondary"
+              variant="ghost"
+              size="sm"
+            >
               <Dribbble className="h-4 w-4" />
             </IconButton>
           </div>

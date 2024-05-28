@@ -19,6 +19,7 @@ export function DrawerPlacement() {
                 as={IconButton}
                 size="sm"
                 variant="ghost"
+                color="secondary"
                 className="absolute right-2 top-2"
                 isCircular
               >
@@ -31,7 +32,7 @@ export function DrawerPlacement() {
             </Typography>
             <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -48,6 +49,7 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
                 <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
@@ -58,7 +60,7 @@ export function DrawerPlacement() {
             </Typography>
             <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -75,6 +77,7 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
                 <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
@@ -85,7 +88,7 @@ export function DrawerPlacement() {
             </Typography>
             <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>
@@ -102,6 +105,7 @@ export function DrawerPlacement() {
                 variant="ghost"
                 className="absolute right-2 top-2"
                 isCircular
+                color="secondary"
               >
                 <Xmark className="h-5 w-5" />
               </Drawer.DismissTrigger>
@@ -112,7 +116,7 @@ export function DrawerPlacement() {
             </Typography>
             <div className="mb-1 flex items-center gap-2">
               <Button>Get Started</Button>
-              <Button variant="ghost">Documentation</Button>
+              <Button color="secondary">Documentation</Button>
             </div>
           </Drawer.Panel>
         </Drawer.Overlay>

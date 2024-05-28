@@ -17,6 +17,7 @@ function CustomNavigation() {
         isCircular
         size="lg"
         variant="ghost"
+        color="secondary"
         onClick={() => swiper.slidePrev()}
         className="dark !absolute left-2 top-1/2 z-10 -translate-y-1/2"
       >
@@ -26,6 +27,7 @@ function CustomNavigation() {
         isCircular
         size="lg"
         variant="ghost"
+        color="secondary"
         onClick={() => swiper.slideNext()}
         className="dark !absolute right-2 top-1/2 z-10 -translate-y-1/2"
       >

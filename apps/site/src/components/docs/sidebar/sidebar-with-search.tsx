@@ -21,7 +21,7 @@ import {
   Search,
   SelectFace3d,
   SendDiagonal,
-  Trash,
+  Bin,
   UserXmark,
 } from "iconoir-react";
 
@@ -53,7 +53,7 @@ const Links = [
     href: "#",
   },
   {
-    icon: Trash,
+    icon: Bin,
     title: "Trash",
     href: "#",
   },
@@ -66,9 +66,7 @@ export function SidebarWithSearch() {
     <Card className="max-w-[280px]">
       <Card.Header className="mx-3 mb-0 mt-3 flex h-max items-center gap-2">
         <Avatar size="xs" src="/logo.png" alt="brand" />
-        <Typography className="data-[type=p]:font-semibold">
-          Material Tailwind
-        </Typography>
+        <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">
         <Input>
@@ -145,7 +143,7 @@ export function SidebarWithSearch() {
             <Typography type="h6" color="secondary" className="mb-1">
               Upgrade to PRO
             </Typography>
-            <Typography type="small" className="text-secondary-dark">
+            <Typography type="small" color="secondary">
               Upgrade to Material Tailwind PRO and get even more components,
               plugins, advanced features and premium.
             </Typography>

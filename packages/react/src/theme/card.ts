@@ -22,7 +22,7 @@ export const cardTheme = {
       error: "bg-error/10 border-transparent shadow-transparent",
     },
     solid: {
-      default: "bg-background border-surface shadow-surface-dark/5",
+      default: "bg-background border-surface shadow-black/5",
       primary: "bg-primary border-primary-dark shadow-primary-dark/25",
       secondary: "bg-secondary border-secondary-dark shadow-secondary-dark/25",
       info: "bg-info border-info-dark shadow-info-dark/25",
@@ -40,7 +40,7 @@ export const cardTheme = {
       error: "bg-transparent border-error shadow-transparent",
     },
     gradient: {
-      default: "bg-background border-surface shadow-surface-dark/5",
+      default: "bg-background border-surface shadow-black/5",
       primary:
         "bg-gradient-to-t from-primary-dark to-primary-light shadow-primary/25 border-primary",
       secondary:
@@ -61,7 +61,7 @@ export const cardHeaderTheme = {
 };
 
 export const cardBodyTheme = {
-  baseStyle: "w-full h-full rounded px-3 py-2",
+  baseStyle: "w-full h-max rounded px-3 py-2",
 };
 
 export const cardFooterTheme = {

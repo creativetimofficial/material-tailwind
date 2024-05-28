@@ -2,12 +2,12 @@ import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithLabel() {
   return (
-    <Input className="w-72 space-y-1.5">
+    <Input className="w-72 space-y-1">
       <Typography
         as="label"
         htmlFor="email"
         type="small"
-        color="primary"
+        color="default"
         className="font-semibold"
       >
         Email

@@ -6,11 +6,11 @@ export const typographyTheme = {
   defaultProps: {
     type: "p",
     color: "inherit",
-    isGradient: false,
   },
   baseStyle: "font-sans antialiased",
   color: {
     inherit: "text-inherit",
+    default: "text-black dark:text-white",
     primary: "text-primary",
     secondary: "text-secondary",
     info: "text-info",
@@ -25,8 +25,8 @@ export const typographyTheme = {
     h4: "font-bold text-xl md:text-2xl lg:text-3xl",
     h5: "font-bold text-lg md:text-xl lg:text-2xl",
     h6: "font-bold text-base md:text-lg lg:text-xl",
-    lead: "font-normal text-base md:text-lg",
-    p: "font-normal text-base",
-    small: "font-normal text-sm",
+    lead: " text-base md:text-lg",
+    p: " text-base",
+    small: " text-sm",
   },
 };

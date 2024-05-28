@@ -14,8 +14,7 @@ import { switchTheme } from "@theme";
 // @types
 import type { BaseComponent } from "@types";
 
-export interface SwitchProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface SwitchProps extends React.AllHTMLAttributes<HTMLInputElement> {
   color?: BaseComponent<HTMLInputElement>["color"];
   className?: string;
 }
@@ -25,15 +24,6 @@ export interface SwitchProps
  * [Documentation](http://www.material-tailwind.com/docs/react/switch) •
  * [Props Definition](https://www.material-tailwind.com/docs/react/switch#switch-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/switch#switch-theme)
- *
- * @example
- * ```tsx
- * import { Switch } from "@material-tailwind/react";
- *
- * export default function Example() {
- *  return <Switch />;
- * }
- * ```
  */
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   ({ color, className, ...rest }, ref) => {

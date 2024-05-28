@@ -5,10 +5,10 @@ export function TooltipCustomStyles() {
     <Tooltip placement="bottom">
       <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>
       <Tooltip.Content className="w-80 border border-surface bg-background px-3 py-2.5 text-foreground">
-        <Typography color="primary" className="data-[type=p]:font-semibold">
+        <Typography className="font-semibold text-black">
           Material Tailwind
         </Typography>
-        <Typography type="small" className="text-foreground">
+        <Typography type="small" className="text-black/80">
           Material Tailwind is an easy to use components library for Tailwind
           CSS and Material Design.
         </Typography>
