@@ -1,10 +1,11 @@
+import Link from "next/link";
+
 export function Vercel() {
   return (
-    <a
-      href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
+    <Link
       target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center font-semibold text-black no-underline dark:text-white"
+      href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
+      className="inline-flex items-center text-black no-underline dark:text-white"
     >
       <span className="mr-1">Powered by</span>
       <span>
@@ -15,7 +16,7 @@ export function Vercel() {
           ></path>
         </svg>
       </span>
-    </a>
+    </Link>
   );
 }
 

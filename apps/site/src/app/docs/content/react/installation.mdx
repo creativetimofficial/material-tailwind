@@ -35,12 +35,15 @@ Once you installed `@material-tailwind/react` you need to add `mtConfig` to your
 <br />
 
 <CodePreview>
-```js {2,6}
+```js {2,7,9}
 import type { Config } from "tailwindcss";
 import { mtConfig } from "@material-tailwind/react";
 
 const config: Config = {
-  content: [...],
+  content: [
+    ...
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
+  ],
   plugins: [mtConfig],
 };
 

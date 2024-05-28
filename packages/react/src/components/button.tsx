@@ -63,8 +63,7 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(
 
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
       const onClick = rest?.onClick;
-      const isDarkRipple =
-        variant === "ghost" || color === "secondary" || color === "white";
+      const isDarkRipple = variant === "ghost" || color === "secondary";
 
       if (ripple) {
         rippleEffect.create(e, isDarkRipple ? "dark" : "light");

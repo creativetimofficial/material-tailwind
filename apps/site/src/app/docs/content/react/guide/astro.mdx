@@ -62,21 +62,24 @@ npm i @material-tailwind/react@beta
 
 ---
 
-## TailwindCSS Configurations
+## Add Plugin and Template Path
 
-Once you installed `@material-tailwind/react` you need to add `mtConfig` to your `tailwind.config.mjs` file.
+Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.mjs` file.
 
 <CodePreview>
-```ts {1,9}
+```ts {1,7,12}
 import { mtConfig } from "@material-tailwind/react";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {},
-	},
-	plugins: [mtConfig],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [mtConfig],
 }
 ```
 </CodePreview>

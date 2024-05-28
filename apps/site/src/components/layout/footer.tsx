@@ -215,19 +215,7 @@ export function Footer() {
       <hr className="my-6 border-surface" />
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-center justify-center gap-2 pb-2 pt-4 text-center md:justify-between">
-          <a
-            href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-black no-underline dark:text-white"
-          >
-            <Link
-              target="_blank"
-              href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss"
-            >
-              <Vercel />
-            </Link>
-          </a>
+          <Vercel />
           <div className="text-md mt-2 py-1 text-black dark:text-white">
             Copyright &copy; {YEAR}{" "}
             <Link

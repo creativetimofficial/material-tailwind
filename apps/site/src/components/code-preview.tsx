@@ -19,7 +19,7 @@ const firaCode = Fira_Code({
   variable: "--font-fira-code",
 });
 
-const MIN_CODE_HEIGHT = 260;
+const MIN_CODE_HEIGHT = 400;
 
 interface CodePreview {
   children: any;
