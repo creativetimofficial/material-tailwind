@@ -10,3 +10,4 @@ export * from "./input-variants";
 export * from "./input-with-button";
 export * from "./input-with-dropdown";
 export * from "./input-with-helper-text";
+export * from "./input-file";
