@@ -26,7 +26,7 @@ export function Docs({ children }: { children: React.ReactNode }) {
           </div>
           <div
             ref={contentRef}
-            className="col-span-6 mt-[156px] px-4 lg:mt-28 lg:px-8 xl:col-span-4 xl:mx-8"
+            className="col-span-6 mt-40 px-4 lg:mt-[106px] lg:px-8 xl:col-span-4 xl:mx-8"
           >
             <Breadcrumb className="mb-12 hidden p-0 lg:flex">
               {pathParts.map((part, index) => (
@@ -52,13 +52,9 @@ export function Docs({ children }: { children: React.ReactNode }) {
             {children}
           </div>
           <div className="col-span-1 hidden xl:block">
-            <React.Suspense>
-              <Toc
-                contentRef={
-                  contentRef as React.MutableRefObject<HTMLDivElement>
-                }
-              />
-            </React.Suspense>
+            <Toc
+              contentRef={contentRef as React.MutableRefObject<HTMLDivElement>}
+            />
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ interface TocItemProps {
 
 function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
   return (
-    <li className={isSubHeading ? "border-sureface ml-3 border-l py-1" : ""}>
+    <li className={isSubHeading ? "border-sureface ml-1.5 border-l py-1" : ""}>
       <Link
         href={`#${id}`}
         className={clsx(
@@ -56,7 +56,7 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
             "font-medium text-primary": isVisible,
             "border-primary": isVisible && isSubHeading,
             "py-1": !isSubHeading,
-            "-translate-x-px border-l border-transparent py-0.5 pl-1.5 pr-1 hover:border-primary":
+            "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-1 hover:border-primary":
               isSubHeading,
           },
         )}
@@ -130,8 +130,8 @@ export function Toc({
   }
 
   return (
-    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-[65px] z-20 hidden h-[calc(100vh-70px)] w-60 overflow-y-scroll pb-10 lg:block">
-      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-background from-50% to-transparent" />
+    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 overflow-y-auto bg-background py-24 lg:block">
+      <div className="fixed top-[68px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
       <ul className="border-b border-surface pb-4">
         <li className="py-2 text-sm font-medium text-black dark:text-white">
           On this page
@@ -206,6 +206,7 @@ export function Toc({
           </Typography>
         </Card.Body>
       </Card>
+      <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
     </div>
   );
 }

@@ -51,10 +51,11 @@ const APP_ID = "37KXIBLNGX";
 const INDEX_NAME = "material-tailwind";
 const API_KEY = "8cc5688018e14bad2a2528eea41fbb35";
 
-function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
+function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
   return (
     <span
       {...rest}
+      ref={ref}
       className={twMerge(
         "group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
         rest?.className,
@@ -64,6 +65,8 @@ function NavIcon({ icon: Icon, ...rest }: NavIconProps) {
     </span>
   );
 }
+
+const NavIcon = React.forwardRef(NavIconComponent);
 
 function NavItem({
   icon: Icon,
@@ -111,47 +114,40 @@ export function Navbar() {
   const pathParts = pathname.split("/");
   const { theme, setTheme }: any = useTheme();
 
-  function toggleTheme() {
-    switch (theme) {
-      case "light":
-        setTheme("dark");
-        break;
-      case "dark":
-        setTheme("system");
-        break;
-      case "system":
-        setTheme("light");
-        break;
-      default:
-        setTheme("system");
-        break;
-    }
-  }
-
-  function toggleThemeOnEnter(event: React.KeyboardEvent<HTMLSpanElement>) {
-    if (event.key === "Enter") {
-      toggleTheme();
-    }
-  }
-
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background px-4 pb-0 pt-4 lg:pb-4">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
         <div className="flex items-center gap-1">
-          <NavIcon
-            tabIndex={0}
-            role="button"
-            icon={
-              theme === "light"
-                ? SunLight
-                : theme === "dark"
-                  ? HalfMoon
-                  : ModernTv
-            }
-            onClick={toggleTheme}
-            className="hidden lg:grid"
-            onKeyDown={toggleThemeOnEnter}
-          />
+          <Menu placement="bottom">
+            <Menu.Trigger
+              as={NavIcon}
+              size="sm"
+              tabIndex={0}
+              role="button"
+              icon={
+                theme === "light"
+                  ? SunLight
+                  : theme === "dark"
+                    ? HalfMoon
+                    : ModernTv
+              }
+              className="hidden lg:grid"
+            />
+            <Menu.Content className="z-[99999] w-max min-w-max">
+              <Menu.Item onClick={() => setTheme("light")}>
+                <SunLight className="mr-2 h-4 w-4" />
+                Light
+              </Menu.Item>
+              <Menu.Item onClick={() => setTheme("dark")}>
+                <HalfMoon className="mr-2 h-4 w-4" />
+                Dark
+              </Menu.Item>
+              <Menu.Item onClick={() => setTheme("system")}>
+                <ModernTv className="mr-2 h-4 w-4" />
+                System
+              </Menu.Item>
+            </Menu.Content>
+          </Menu>
           <Link
             target="_blank"
             href="https://discord.com/invite/FhCJCaHdQa"
@@ -159,7 +155,7 @@ export function Navbar() {
           >
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
+          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:grid">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -169,7 +165,7 @@ export function Navbar() {
               />
             </div>
           </div>
-          <Link href="/" className="mr-2 grid h-11 w-11 shrink-0 lg:!hidden">
+          <Link href="/" className="mr-2 grid h-12 w-12 shrink-0 lg:!hidden">
             <Brand />
           </Link>
           <Select value="v3.0.0">
@@ -190,7 +186,7 @@ export function Navbar() {
           <Link href="/blocks">
             <NavItem icon={SelectFace3d}>Blocks</NavItem>
           </Link>
-          <Link href="/" className="mx-3 h-12 w-12">
+          <Link href="/" className="mx-2 h-12 w-12">
             <Brand />
           </Link>
           <Link href="/figma">
@@ -204,7 +200,7 @@ export function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface">
+          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:hidden">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -235,7 +231,7 @@ export function Navbar() {
                   as={IconButton}
                   size="sm"
                   variant="ghost"
-                  color="default"
+                  color="secondary"
                   className="absolute right-2 top-2"
                   isCircular
                 >
@@ -332,7 +328,7 @@ export function Navbar() {
               <Card className="grid h-full items-start overflow-auto border-none shadow-none">
                 <Card.Header className="m-0 h-max w-full rounded-none p-3">
                   <div className="flex h-max items-center gap-3">
-                    <div className="h-11 w-11">
+                    <div className="h-12 w-12">
                       <Brand />
                     </div>
                     <Typography className="font-semibold">

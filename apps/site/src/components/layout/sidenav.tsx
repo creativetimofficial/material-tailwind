@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import routes from "@routes";
@@ -80,9 +82,10 @@ export function getRoutes() {
 
 export function Sidenav() {
   return (
-    <div className="sticky -left-64 bottom-0 top-[65px] z-20 h-[calc(100vh-70px)] w-60 overflow-y-scroll bg-background pb-24 lg:left-0">
-      <div className="pointer-events-none sticky top-0 z-30 h-10 bg-gradient-to-b from-background from-50% to-transparent" />
+    <div className="sticky -left-64 bottom-0 top-0 z-20 h-[calc(100vh-4px)] w-60 overflow-y-auto bg-background py-24 lg:left-0">
+      <div className="fixed top-[68px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
       <ul className="pr-2">{getRoutes()}</ul>
+      <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
     </div>
   );
 }
