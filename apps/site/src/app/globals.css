@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+  scrollbar-gutter: stable;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    scrollbar-color: #1f2937 transparent;
+  }
+}
+
 /* backdrop */
 .DocSearch.DocSearch-Container {
   @apply bg-black/50;

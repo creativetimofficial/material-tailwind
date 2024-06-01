@@ -1,3 +1,4 @@
+import tailwindAnimate from "tailwindcss-animate";
 import { mtConfig } from "@material-tailwind/react";
 
 /** @type {import('tailwindcss').Config} */
@@ -26,5 +27,5 @@ export default {
       },
     },
   },
-  plugins: [mtConfig],
+  plugins: [mtConfig, tailwindAnimate],
 };

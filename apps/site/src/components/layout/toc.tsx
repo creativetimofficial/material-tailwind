@@ -15,6 +15,7 @@ import {
 } from "iconoir-react";
 import { useEventListener } from "usehooks-ts";
 import { Card, Typography } from "@material-tailwind/react";
+import { twMerge } from "tailwind-merge";
 
 interface ListItemProps {
   href: string;
@@ -46,7 +47,12 @@ interface TocItemProps {
 
 function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
   return (
-    <li className={isSubHeading ? "border-sureface ml-1.5 border-l py-1" : ""}>
+    <li
+      className={twMerge(
+        isSubHeading && "border-sureface ml-1.5 border-l",
+        isSubHeading && isVisible && "border-primary",
+      )}
+    >
       <Link
         href={`#${id}`}
         className={clsx(
@@ -55,8 +61,8 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
             "text-foreground": !isVisible,
             "font-medium text-primary": isVisible,
             "border-primary": isVisible && isSubHeading,
-            "py-1": !isSubHeading,
-            "-translate-x-px border-l border-transparent py-0.5 pl-3 pr-1 hover:border-primary":
+            "py-1.5": !isSubHeading,
+            "-translate-x-px border-l border-transparent py-1 pl-3 pr-1 hover:border-primary":
               isSubHeading,
           },
         )}

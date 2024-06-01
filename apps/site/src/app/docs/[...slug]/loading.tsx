@@ -2,7 +2,7 @@ import { Spinner } from "@material-tailwind/react";
 
 export default function Loading() {
   return (
-    <div className="grid h-[90%] place-items-center">
+    <div className="animate-in fade-in grid h-screen w-full place-items-center duration-500">
       <Spinner />
     </div>
   );

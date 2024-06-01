@@ -5,11 +5,21 @@ import Link from "next/link";
 import routes from "@routes";
 import { NavArrowRight } from "iconoir-react";
 import { Collapse } from "@material-tailwind/react";
+import { usePathname } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 export function Collapsible({ category, categoryPages }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = React.useState(true);
+  const paths = categoryPages.map(({ path }) => path);
 
   const toggleCollapse = () => setIsOpen((prev) => !prev);
+
+  React.useEffect(() => {
+    if (paths.includes(pathname)) {
+      setIsOpen(true);
+    }
+  }, []);
 
   return (
     <ul className="mx-0.5">
@@ -17,7 +27,10 @@ export function Collapsible({ category, categoryPages }) {
         tabIndex={0}
         role="button"
         onClick={toggleCollapse}
-        className="flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
+        className={twMerge(
+          "flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary",
+          paths.includes(pathname) && "text-primary",
+        )}
       >
         {category}{" "}
         <NavArrowRight
@@ -29,10 +42,13 @@ export function Collapsible({ category, categoryPages }) {
       <Collapse as="ul" open={isOpen} className="mx-2">
         {categoryPages.map(({ title: subTitle, path }, i) => {
           return (
-            <li key={i} className="mx-1.5 border-l border-surface py-0.5">
+            <li key={i} className="mx-1.5 border-l border-surface">
               <Link
                 href={path}
-                className="block -translate-x-px border-l border-transparent py-1 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-primary hover:text-primary"
+                className={twMerge(
+                  "block -translate-x-px border-l border-transparent py-1.5 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-primary hover:text-primary",
+                  pathname === path && "border-primary text-primary",
+                )}
               >
                 {subTitle}
               </Link>

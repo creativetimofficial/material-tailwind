@@ -172,7 +172,7 @@ export function MdxContent({ source }: MdxContentProps) {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex w-full gap-0 lg:gap-[52px]">
+    <div className="animate-in fade-in flex w-full gap-0 duration-500 lg:gap-[52px]">
       <div ref={contentRef} className="mt-40 w-full px-4 lg:mt-[106px] lg:px-0">
         <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
           {pathParts.map((part, index) => (
