@@ -3,6 +3,7 @@ import type { DeepPartial } from "@types";
 export type SelectTheme = DeepPartial<typeof selectTheme>;
 export type SelectTriggerTheme = DeepPartial<typeof selectTriggerTheme>;
 export type SelectListTheme = DeepPartial<typeof selectListTheme>;
+export type SelectOptionTheme = DeepPartial<typeof selectOptionTheme>;
 
 export const selectTheme = {
   defaultProps: {
@@ -99,5 +100,5 @@ export const selectOptionTheme = {
     ),
   },
   baseStyle:
-    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans  transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-black dark:hover:text-white hover:bg-surface-light focus:bg-surface-light focus:text-black dark:focus:text-white data-[selected=true]:bg-surface-light data-[selected=true]:text-black dark:data-[selected=true]:text-white",
+    "outline-none flex items-center justify-between gap-4 py-1.5 px-2.5 rounded-[5px] align-middle select-none text-sm font-sans transition-all duration-300 ease-in disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-foreground hover:text-black dark:hover:text-white hover:bg-surface-light focus:bg-surface-light focus:text-black dark:focus:text-white data-[selected=true]:bg-surface-light data-[selected=true]:text-black dark:data-[selected=true]:text-white",
 };

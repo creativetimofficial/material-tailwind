@@ -43,7 +43,6 @@ async function readDocsContent(pathUrl) {
 
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
-
   const { frontMatter, serialized } = await readDocsContent(path);
 
   return <MdxContent source={serialized} />;

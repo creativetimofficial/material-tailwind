@@ -40,7 +40,7 @@ export function CodePreview({ children, className }: CodePreview) {
   const resetCopy = () => setIsCopied(false);
 
   const containerStyles = twMerge(
-    "border-surface rounded-lg border p-2 my-4",
+    "border-surface rounded-lg border p-2 my-4 max-w-full lg:max-w-[calc(80rem-480px-2rem-52px)]",
     className,
   );
 

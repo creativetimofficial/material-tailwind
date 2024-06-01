@@ -28,7 +28,7 @@ function ListItem({ href, icon: Icon, children }: ListItemProps) {
       <Link
         href={href}
         target="_blank"
-        className="flex items-center gap-2 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
+        className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
       >
         <Icon className="h-[18px] w-[18px] stroke-[1.5]" />
         {children}
@@ -130,8 +130,8 @@ export function Toc({
   }
 
   return (
-    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 overflow-y-auto bg-background py-24 lg:block">
-      <div className="fixed top-[68px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
+    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background py-24 xl:block">
+      <div className="fixed top-[68px] h-14 w-full bg-gradient-to-b from-background to-transparent" />
       <ul className="border-b border-surface pb-4">
         <li className="py-2 text-sm font-medium text-black dark:text-white">
           On this page
@@ -139,7 +139,7 @@ export function Toc({
         <ul>{getToc()}</ul>
       </ul>
       <ul
-        className={clsx("-mx-2 border-b py-4 transition-colors duration-300", {
+        className={clsx("border-b py-4 transition-colors duration-300", {
           "border-surface": isScrolled,
           "border-transparent": !isScrolled,
         })}
@@ -161,7 +161,7 @@ export function Toc({
         </ListItem>
       </ul>
       <div
-        className={clsx("-mx-2 pt-4 transition-all duration-300", {
+        className={clsx("pt-4 transition-all duration-300", {
           "translate-y-3 opacity-0": !isScrolled,
           "translate-y-0 opacity-100": isScrolled,
         })}
@@ -171,7 +171,7 @@ export function Toc({
           tabIndex={0}
           onClick={scrollToTop}
           onKeyDown={scrollToTopOnEnter}
-          className="flex items-center gap-2 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
+          className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
         >
           <ArrowUpCircle className="h-[18px] w-[18px] stroke-[1.5]" />
           Scroll to top
@@ -206,7 +206,7 @@ export function Toc({
           </Typography>
         </Card.Body>
       </Card>
-      <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
+      <div className="sticky -bottom-24 h-14 w-full bg-gradient-to-t from-background to-transparent" />
     </div>
   );
 }

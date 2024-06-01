@@ -28,12 +28,15 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
 /**
  * @remarks
  * [Documentation](http://www.material-tailwind.com/docs/react/typography) •
- * [Props Definition](https://www.material-tailwind.com/docs/react/typography#typography-props) •
- * [Theming Guide](https://www.material-tailwind.com/docs/react/typography#typography-theme)
+ * [Props Definition](https://www.material-tailwind.com/docs/react/typography#props) •
+ * [Theming Guide](https://www.material-tailwind.com/docs/react/typography#theme) •
+ * [Report an Issue](https://github.com/creativetimofficial/material-tailwind/issues/new)
  *
- * @prop `as`: Element, default is `p`
- * @prop `type`: h1 | h2 | h3 | h4 | h5 | h6 | lead | p | small
- * @prop `color`: primary | secondary | info | success | warning | error | inherit
+ * @prop as: `Element`, default to `p`
+ * @prop type: `h1` | `h2` | `h3` | `h4` | `h5` | `h6` | `lead` | `p` | `small`, default to `p`
+ * @prop color: `primary` | `secondary` | `info` | `success` | `warning` | `error` | `inherit` | `default`, default to `inherit`
+ * @prop className: `string`
+ * @prop children: `ReactNode`
  */
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
   ({ as, color, type, className, children, ...rest }, ref) => {

@@ -15,46 +15,44 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
 
   React.useEffect(
     () => {
-      setTimeout(() => {
-        setToc([]);
+      setToc([]);
 
-        const innerToc: TocType[] = [];
+      const innerToc: TocType[] = [];
 
-        if (ref) {
-          const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
+      if (ref) {
+        const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
 
-          headings.map((heading) => {
-            if (heading.tagName === "H2") {
-              const result = {
-                id: heading.id,
-                text: heading.textContent,
-              } as TocType;
+        headings.map((heading) => {
+          if (heading.tagName === "H2") {
+            const result = {
+              id: heading.id,
+              text: heading.textContent,
+            } as TocType;
 
-              innerToc.push(result);
-            } else if (heading.tagName === "H3") {
-              const parentHeading = innerToc[innerToc.length - 1];
+            innerToc.push(result);
+          } else if (heading.tagName === "H3") {
+            const parentHeading = innerToc[innerToc.length - 1];
 
-              if (parentHeading) {
-                Object.assign(parentHeading, {
-                  subHeadings: [
-                    ...(parentHeading?.subHeadings ?? []),
-                    {
-                      id: heading.id,
-                      text: heading.textContent,
-                    },
-                  ],
-                });
-              }
+            if (parentHeading) {
+              Object.assign(parentHeading, {
+                subHeadings: [
+                  ...(parentHeading?.subHeadings ?? []),
+                  {
+                    id: heading.id,
+                    text: heading.textContent,
+                  },
+                ],
+              });
             }
-          });
-        }
+          }
+        });
+      }
 
-        setToc(innerToc);
+      setToc(innerToc);
 
-        return () => {
-          setToc([]);
-        };
-      }, 500);
+      return () => {
+        setToc([]);
+      };
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [pathname],
@@ -69,22 +67,20 @@ export function useToc(ref: React.MutableRefObject<HTMLElement>) {
   }
 
   React.useEffect(() => {
-    setTimeout(() => {
-      if (ref) {
-        activeTocRef.current = new IntersectionObserver(handleActiveToc, {
-          rootMargin: "0px 0px -60%",
-          threshold: [0, 1],
-        });
+    if (ref) {
+      activeTocRef.current = new IntersectionObserver(handleActiveToc, {
+        rootMargin: "0px 0px -60%",
+        threshold: [0, 1],
+      });
 
-        const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
+      const headings = Array.from(ref.current?.querySelectorAll("h2, h3"));
 
-        headings.forEach((heading) => activeTocRef.current?.observe(heading));
+      headings.forEach((heading) => activeTocRef.current?.observe(heading));
 
-        return () => {
-          activeTocRef.current?.disconnect();
-        };
-      }
-    }, 500);
+      return () => {
+        activeTocRef.current?.disconnect();
+      };
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
