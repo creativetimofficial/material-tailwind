@@ -47,24 +47,21 @@ interface TocItemProps {
 
 function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
   return (
-    <li
-      className={twMerge(
-        isSubHeading && "border-sureface ml-1.5 border-l",
-        isSubHeading && isVisible && "border-primary",
-      )}
-    >
+    <li className={twMerge(isSubHeading && `ml-1.5 border-l border-surface`)}>
       <Link
         href={`#${id}`}
-        className={clsx(
-          "block text-sm transition-colors duration-300 hover:text-primary",
-          {
-            "text-foreground": !isVisible,
-            "font-medium text-primary": isVisible,
-            "border-primary": isVisible && isSubHeading,
-            "py-1.5": !isSubHeading,
-            "-translate-x-px border-l border-transparent py-1 pl-3 pr-1 hover:border-primary":
-              isSubHeading,
-          },
+        className={twMerge(
+          clsx(
+            "block text-sm transition-colors duration-300 hover:text-primary",
+            {
+              "text-foreground": !isVisible,
+              "font-medium text-primary": isVisible,
+              "py-1.5": !isSubHeading,
+              "-translate-x-px border-l border-transparent py-1 pl-3 pr-1 hover:border-primary":
+                isSubHeading,
+              "border-primary": isVisible && isSubHeading,
+            },
+          ),
         )}
       >
         {children}
