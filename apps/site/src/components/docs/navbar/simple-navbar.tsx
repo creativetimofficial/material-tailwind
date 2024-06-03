@@ -3,7 +3,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import { Menu, Xmark } from "iconoir-react";
 
@@ -56,7 +56,7 @@ export function SimpleNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -86,6 +86,6 @@ export function SimpleNavbar() {
       <Collapse open={openNav}>
         <NavList />
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }

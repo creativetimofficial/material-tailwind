@@ -4,7 +4,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -69,10 +69,7 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card
-      as="nav"
-      className="mx-auto w-full max-w-screen-xl bg-black p-2 dark:bg-surface-dark"
-    >
+    <Navbar className="mx-auto w-full max-w-screen-xl bg-black dark:bg-surface-dark">
       <div className="flex items-center text-white">
         <Typography
           as="a"
@@ -115,6 +112,6 @@ export function DarkNavbar() {
           Sign In
         </Button>
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }

@@ -28,3 +28,4 @@ export * from "./textarea";
 export * from "./tooltip";
 export * from "./timeline";
 export * from "./typography";
+export * from "./navbar";

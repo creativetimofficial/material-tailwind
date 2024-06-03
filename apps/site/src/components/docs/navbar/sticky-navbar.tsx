@@ -4,7 +4,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -71,10 +71,7 @@ export function StickyNavbar() {
 
   return (
     <div className="h-96 w-full overflow-scroll">
-      <Card
-        as="nav"
-        className="sticky top-0 mx-auto w-full max-w-screen-xl p-2"
-      >
+      <Navbar className="sticky top-0 mx-auto w-full max-w-screen-xl">
         <div className="flex items-center">
           <Typography
             as="a"
@@ -111,7 +108,7 @@ export function StickyNavbar() {
             Sign In
           </Button>
         </Collapse>
-      </Card>
+      </Navbar>
       <main className="w-full">
         <div className="mx-auto max-w-xl">
           <div className="my-8">

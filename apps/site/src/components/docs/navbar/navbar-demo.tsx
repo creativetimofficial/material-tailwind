@@ -4,7 +4,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -69,7 +69,7 @@ export function NavbarDemo() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -106,6 +106,6 @@ export function NavbarDemo() {
           Sign In
         </Button>
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }

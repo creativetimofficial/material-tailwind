@@ -99,6 +99,7 @@ import {
   timelineSeparatorTheme,
   timelineBodyTheme,
 } from "./timeline";
+import { navbarTheme } from "./navbar";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -185,6 +186,7 @@ export const theme = {
   timelineIcon: timelineIconTheme,
   timelineSeparator: timelineSeparatorTheme,
   timelineBody: timelineBodyTheme,
+  navbar: navbarTheme,
 };
 
 export default theme;

@@ -27,7 +27,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -92,7 +92,7 @@ export function NavbarDemo() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -129,7 +129,7 @@ export function NavbarDemo() {
           Sign In
         </Button>
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
@@ -147,7 +147,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -214,10 +214,7 @@ export function StickyNavbar() {
 
   return (
     <div className="h-96 w-full overflow-scroll">
-      <Card
-        as="nav"
-        className="sticky top-0 mx-auto w-full max-w-screen-xl p-2"
-      >
+      <Navbar className="sticky top-0 mx-auto w-full max-w-screen-xl">
         <div className="flex items-center">
           <Typography
             as="a"
@@ -254,7 +251,7 @@ export function StickyNavbar() {
             Sign In
           </Button>
         </Collapse>
-      </Card>
+      </Navbar>
       <main className="w-full">
         <div className="mx-auto max-w-xl">
           <div className="my-8">
@@ -321,6 +318,7 @@ import {
   IconButton,
   Typography,
   Collapse,
+  Navbar,
   Card,
   List,
   Avatar,
@@ -437,7 +435,7 @@ export function ComplexNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -544,7 +542,7 @@ export function ComplexNavbar() {
         </Accordion>
         <NavList />
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
@@ -558,11 +556,10 @@ export function ComplexNavbar() {
 ```tsx
 import * as React from "react";
 import {
-  Button,
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
   Input,
 } from "@material-tailwind/react";
 import {
@@ -629,7 +626,7 @@ export function NavbarWithSearch() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -665,7 +662,7 @@ export function NavbarWithSearch() {
       <Collapse open={openNav}>
         <NavList />
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
@@ -683,7 +680,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -748,10 +745,7 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card
-      as="nav"
-      className="mx-auto w-full max-w-screen-xl bg-black p-2 dark:bg-surface-dark"
-    >
+    <Navbar className="mx-auto w-full max-w-screen-xl bg-black dark:bg-surface-dark">
       <div className="flex items-center text-white">
         <Typography
           as="a"
@@ -794,7 +788,7 @@ export function DarkNavbar() {
           Sign In
         </Button>
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
@@ -811,7 +805,7 @@ import {
   IconButton,
   Typography,
   Collapse,
-  Card,
+  Navbar,
 } from "@material-tailwind/react";
 import { Menu, Xmark } from "iconoir-react";
 
@@ -864,7 +858,7 @@ export function SimpleNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -894,7 +888,7 @@ export function SimpleNavbar() {
       <Collapse open={openNav}>
         <NavList />
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
@@ -912,6 +906,7 @@ import {
   Typography,
   Collapse,
   Card,
+  Navbar,
   List,
   Avatar,
   Menu,
@@ -1096,7 +1091,7 @@ export function NavbarWithMegaMenu() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2">
+    <Navbar className="mx-auto w-full max-w-screen-xl">
       <div className="flex items-center">
         <Typography
           as="a"
@@ -1150,7 +1145,7 @@ export function NavbarWithMegaMenu() {
         </ul>
         <NavList />
       </Collapse>
-    </Card>
+    </Navbar>
   );
 }
 ```
