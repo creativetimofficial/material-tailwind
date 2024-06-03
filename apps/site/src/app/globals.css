@@ -12,7 +12,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   html {
-    scrollbar-color: #1f2937 transparent;
+    scrollbar-color: #1f2937 transparent !important;
   }
 }
 
