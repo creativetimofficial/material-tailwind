@@ -34,7 +34,7 @@ export function TableWithStripedRow() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -46,7 +46,10 @@ export function TableWithStripedRow() {
         <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
-              <tr key={index} className="even:bg-surface-light">
+              <tr
+                key={index}
+                className="even:bg-surface-light dark:even:bg-surface-dark"
+              >
                 <td className="p-3">{name}</td>
                 <td className="p-3">{job}</td>
                 <td className="p-3">{date}</td>

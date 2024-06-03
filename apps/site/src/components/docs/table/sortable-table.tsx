@@ -123,7 +123,7 @@ export function SortableTable() {
 
       <div className="mt-4 w-full overflow-hidden rounded-lg border border-surface">
         <table className="w-full">
-          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th

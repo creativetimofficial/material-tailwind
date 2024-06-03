@@ -7,7 +7,7 @@ export function SpeedDialCustomIcon() {
       <Tooltip.Trigger as={IconButton} isCircular>
         <Mail className="h-[18px] w-[18px]" />
       </Tooltip.Trigger>
-      <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
+      <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none dark:bg-transparent">
         <Tooltip placement="left">
           <Tooltip.Trigger as={IconButton} isCircular color="secondary">
             <HomeSimple className="h-[18px] w-[18px]" />

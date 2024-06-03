@@ -58,7 +58,7 @@ export function TableDemo() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -67,7 +67,7 @@ export function TableDemo() {
             ))}
           </tr>
         </thead>
-        <tbody className="group text-sm  text-black dark:text-white">
+        <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
               <tr key={index} className="border-b border-surface last:border-0">
@@ -137,7 +137,7 @@ export function TableWithStripedRow() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -149,7 +149,10 @@ export function TableWithStripedRow() {
         <tbody className="group text-sm text-black dark:text-white">
           {TABLE_ROWS.map(({ name, job, date }, index) => {
             return (
-              <tr key={index} className="even:bg-surface-light">
+              <tr
+                key={index}
+                className="even:bg-surface-light dark:even:bg-surface-dark"
+              >
                 <td className="p-3">{name}</td>
                 <td className="p-3">{job}</td>
                 <td className="p-3">{date}</td>
@@ -216,7 +219,7 @@ export function TableWithStripedColumn() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -233,9 +236,15 @@ export function TableWithStripedColumn() {
             return (
               <tr key={index}>
                 <td className={classes}>{name}</td>
-                <td className={`${classes} bg-surface-light`}>{job}</td>
+                <td
+                  className={`${classes} bg-surface-light dark:bg-surface-dark`}
+                >
+                  {job}
+                </td>
                 <td className={classes}>{date}</td>
-                <td className={`${classes} bg-surface-light`}>
+                <td
+                  className={`${classes} bg-surface-light dark:bg-surface-dark`}
+                >
                   <Typography
                     as="a"
                     href="#"
@@ -355,7 +364,7 @@ export function TransactionsTable() {
 
       <div className="w-full overflow-hidden rounded-lg border border-surface">
         <table className="w-full text-left">
-          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
             <tr>
               {TABLE_HEAD.map((head) => (
                 <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -392,7 +401,7 @@ export function TransactionsTable() {
                           src={img}
                           alt={name}
                           size="md"
-                          className="border border-surface-light bg-surface-light object-contain p-1"
+                          className="border border-surface-light bg-surface-light object-contain p-1 dark:bg-surface-dark"
                         />
                         <Typography type="small" className="font-bold">
                           {name}
@@ -632,7 +641,7 @@ export function MembersTable() {
 
       <div className="mt-4 w-full overflow-hidden rounded-lg border border-surface">
         <table className="w-full">
-          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
             <tr>
               {TABLE_HEAD.map((head) => (
                 <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -641,7 +650,7 @@ export function MembersTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="group text-sm  text-black dark:text-white">
+          <tbody className="group text-sm text-black dark:text-white">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
                 return (
@@ -853,7 +862,7 @@ export function SortableTable() {
 
       <div className="mt-4 w-full overflow-hidden rounded-lg border border-surface">
         <table className="w-full">
-          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th
@@ -876,7 +885,7 @@ export function SortableTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="group text-sm  text-black dark:text-white">
+          <tbody className="group text-sm text-black dark:text-white">
             {TABLE_ROWS.map(
               ({ img, name, email, job, org, online, date }, index) => {
                 return (

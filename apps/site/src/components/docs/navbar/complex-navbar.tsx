@@ -144,7 +144,7 @@ export function ComplexNavbar() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
                 <Card
                   color="primary"
                   className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
@@ -153,7 +153,6 @@ export function ComplexNavbar() {
                     <Rocket className="mx-auto h-12 w-12" />
                     <Typography
                       type="h6"
-                      color="secondary"
                       className="mt-5 text-center leading-snug"
                     >
                       Material Tailwind PRO

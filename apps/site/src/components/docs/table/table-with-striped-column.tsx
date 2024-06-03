@@ -34,7 +34,7 @@ export function TableWithStripedColumn() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -51,9 +51,15 @@ export function TableWithStripedColumn() {
             return (
               <tr key={index}>
                 <td className={classes}>{name}</td>
-                <td className={`${classes} bg-surface-light`}>{job}</td>
+                <td
+                  className={`${classes} bg-surface-light dark:bg-surface-dark`}
+                >
+                  {job}
+                </td>
                 <td className={classes}>{date}</td>
-                <td className={`${classes} bg-surface-light`}>
+                <td
+                  className={`${classes} bg-surface-light dark:bg-surface-dark`}
+                >
                   <Typography
                     as="a"
                     href="#"

@@ -34,7 +34,7 @@ export function TableDemo() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">
-        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+        <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
           <tr>
             {TABLE_HEAD.map((head) => (
               <th key={head} className="px-2.5 py-2 text-start font-medium">

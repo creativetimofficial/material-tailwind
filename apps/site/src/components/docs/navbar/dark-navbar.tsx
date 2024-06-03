@@ -47,8 +47,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            color="secondary"
-            className="flex items-center gap-x-2 p-1 hover:text-white"
+            className="flex items-center gap-x-2 p-1 text-white hover:text-white"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -70,25 +69,26 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full max-w-screen-xl bg-black p-2">
-      <div className="flex items-center">
+    <Card
+      as="nav"
+      className="mx-auto w-full max-w-screen-xl bg-black p-2 dark:bg-surface-dark"
+    >
+      <div className="flex items-center text-white">
         <Typography
           as="a"
           href="#"
           type="small"
-          color="secondary"
           className="ml-2 mr-2 block py-1 font-semibold"
         >
           Material Tailwind
         </Typography>
-        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block" />
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block dark:border-surface" />
         <div className="hidden lg:block">
           <NavList />
         </div>
         <Button
           size="sm"
-          color="secondary"
-          className="hidden lg:ml-auto lg:inline-block"
+          className="hidden border-white bg-white text-black hover:border-white hover:bg-white hover:text-black lg:ml-auto lg:inline-block"
         >
           Sign In
         </Button>
@@ -107,7 +107,11 @@ export function DarkNavbar() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-        <Button isFullWidth size="sm" color="secondary" className="mt-4">
+        <Button
+          size="sm"
+          isFullWidth
+          className="mt-4 border-white bg-white text-black hover:border-white hover:bg-white hover:text-black"
+        >
           Sign In
         </Button>
       </Collapse>

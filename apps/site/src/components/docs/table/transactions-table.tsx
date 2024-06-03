@@ -91,7 +91,7 @@ export function TransactionsTable() {
 
       <div className="w-full overflow-hidden rounded-lg border border-surface">
         <table className="w-full text-left">
-          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground">
+          <thead className="border-b border-surface bg-surface-light text-sm font-medium text-foreground dark:bg-surface-dark">
             <tr>
               {TABLE_HEAD.map((head) => (
                 <th key={head} className="px-2.5 py-2 text-start font-medium">
@@ -128,7 +128,7 @@ export function TransactionsTable() {
                           src={img}
                           alt={name}
                           size="md"
-                          className="border border-surface-light bg-surface-light object-contain p-1"
+                          className="border border-surface-light bg-surface-light object-contain p-1 dark:bg-surface-dark"
                         />
                         <Typography type="small" className="font-bold">
                           {name}

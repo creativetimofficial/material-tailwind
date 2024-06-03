@@ -9,7 +9,7 @@ export function MenuWithDivider() {
         <Menu.Item>Add Project</Menu.Item>
         <Menu.Item>My Profile</Menu.Item>
         <hr className="!my-1 -mx-1 border-surface" />
-        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
+        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
           Logout
         </Menu.Item>
       </Menu.Content>

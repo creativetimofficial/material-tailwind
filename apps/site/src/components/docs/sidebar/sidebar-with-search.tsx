@@ -135,21 +135,26 @@ export function SidebarWithSearch() {
         </List>
       </Card.Body>
       <Card.Footer className="mt-8">
-        <Card color="primary">
+        <Card color="primary" className="shadow-none">
           <Card.Header className="m-3">
             <SelectFace3d className="h-10 w-10 text-primary-foreground" />
           </Card.Header>
           <Card.Body>
-            <Typography type="h6" color="secondary" className="mb-1">
+            <Typography type="h6" className="mb-1 text-white">
               Upgrade to PRO
             </Typography>
-            <Typography type="small" color="secondary">
+            <Typography type="small" className="text-white/80">
               Upgrade to Material Tailwind PRO and get even more components,
               plugins, advanced features and premium.
             </Typography>
           </Card.Body>
           <Card.Footer>
-            <Button size="sm" as="a" href="#" color="secondary">
+            <Button
+              size="sm"
+              as="a"
+              href="#"
+              className="border-white bg-white text-black hover:border-white hover:bg-white hover:text-black"
+            >
               Upgrade Now
             </Button>
           </Card.Footer>

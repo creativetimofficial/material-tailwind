@@ -14,7 +14,7 @@ export function LoginCard() {
         color="primary"
         className="grid h-24 place-items-center shadow-none"
       >
-        <Typography as="span" type="h4" color="secondary">
+        <Typography as="span" type="h4" className="text-primary-foreground">
           Sign In
         </Typography>
       </Card.Header>

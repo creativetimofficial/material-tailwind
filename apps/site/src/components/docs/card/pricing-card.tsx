@@ -11,8 +11,7 @@ export function PricingCard() {
         <Typography
           as="span"
           type="h1"
-          color="secondary"
-          className="mt-3 flex justify-center gap-1 text-7xl "
+          className="mt-3 flex justify-center gap-1 text-7xl text-primary-foreground"
         >
           <span className="mt-2 text-4xl">$</span>29
           <span className="self-end text-4xl">/mo</span>
@@ -42,7 +41,10 @@ export function PricingCard() {
         </li>
       </Card.Body>
       <Card.Footer>
-        <Button isFullWidth color="secondary">
+        <Button
+          isFullWidth
+          className="border-white bg-white text-black hover:border-white hover:bg-white hover:text-black"
+        >
           Buy Now
         </Button>
       </Card.Footer>

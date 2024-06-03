@@ -40,11 +40,7 @@ export function NavMenu() {
         >
           <div>
             <Rocket className="mx-auto h-12 w-12" />
-            <Typography
-              type="h6"
-              color="secondary"
-              className="mt-5 text-center leading-snug"
-            >
+            <Typography type="h6" className="mt-5 text-center leading-snug">
               Material Tailwind PRO
             </Typography>
           </div>

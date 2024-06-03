@@ -462,7 +462,7 @@ export function ComplexNavbar() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5">
+              <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
                 <Card
                   color="primary"
                   className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
@@ -471,7 +471,6 @@ export function ComplexNavbar() {
                     <Rocket className="mx-auto h-12 w-12" />
                     <Typography
                       type="h6"
-                      color="secondary"
                       className="mt-5 text-center leading-snug"
                     >
                       Material Tailwind PRO
@@ -727,8 +726,7 @@ function NavList() {
             as="a"
             href={href}
             type="small"
-            color="secondary"
-            className="flex items-center gap-x-2 p-1 hover:text-white"
+            className="flex items-center gap-x-2 p-1 text-white hover:text-white"
           >
             <Icon className="h-4 w-4" />
             {title}
@@ -750,25 +748,26 @@ export function DarkNavbar() {
   }, []);
 
   return (
-    <Card as="nav" className="mx-auto w-full bg-black max-w-screen-xl p-2">
-      <div className="flex items-center">
+    <Card
+      as="nav"
+      className="mx-auto w-full max-w-screen-xl bg-black p-2 dark:bg-surface-dark"
+    >
+      <div className="flex items-center text-white">
         <Typography
           as="a"
           href="#"
           type="small"
-          color="secondary"
           className="ml-2 mr-2 block py-1 font-semibold"
         >
           Material Tailwind
         </Typography>
-        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block" />
+        <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-surface/25 lg:block dark:border-surface" />
         <div className="hidden lg:block">
           <NavList />
         </div>
         <Button
           size="sm"
-          color="secondary"
-          className="hidden lg:ml-auto lg:inline-block"
+          className="hidden border-white bg-white text-black hover:border-white hover:bg-white hover:text-black lg:ml-auto lg:inline-block"
         >
           Sign In
         </Button>
@@ -787,7 +786,11 @@ export function DarkNavbar() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-        <Button isFullWidth size="sm" color="secondary" className="mt-4">
+        <Button
+          size="sm"
+          isFullWidth
+          className="mt-4 border-white bg-white text-black hover:border-white hover:bg-white hover:text-black"
+        >
           Sign In
         </Button>
       </Collapse>
@@ -1038,7 +1041,7 @@ function ProfileMenu() {
           <HeadsetHelp className="mr-2 h-[18px] w-[18px]" /> Support
         </Menu.Item>
         <hr className="!my-1 -mx-1 border-secondary-dark" />
-        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error">
+        <Menu.Item className="text-error hover:bg-error/10 hover:text-error focus:bg-error/10 focus:text-error dark:hover:text-error dark:focus:text-error">
           <LogOut className="mr-2 h-[18px] w-[18px]" />
           Logout
         </Menu.Item>
@@ -1118,7 +1121,7 @@ export function NavbarWithMegaMenu() {
                   </List.ItemEnd>
                 </List.Item>
               </Tooltip.Trigger>
-              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-surface bg-background p-2 shadow-xl shadow-surface/10">
+              <Tooltip.Content className="z-[100000] grid max-w-screen-xl rounded-lg border border-surface bg-background p-2 shadow-xl shadow-surface/10 dark:border-surface dark:bg-background">
                 <ul className="grid grid-cols-3 gap-y-2">{renderItems}</ul>
                 <Tooltip.Arrow />
               </Tooltip.Content>
