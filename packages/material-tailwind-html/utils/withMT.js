@@ -35,8 +35,10 @@ function withMT(tailwindConfig) {
     themeFont.serif = serif || themeFont.serif;
     themeFont.body = body || themeFont.body;
   }
-
-  return merge(materialTailwindConfig, { ...tailwindConfig });
+  
+  const mergedConfig = merge(materialTailwindConfig, { ...tailwindConfig });
+  mergedConfig.theme.fontFamily = themeFont;
+  return mergedConfig;
 }
 
 module.exports = withMT;
