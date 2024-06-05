@@ -1,9 +1,9 @@
 export function CustomButtonGroup() {
   return (
-    <div className="inline-flex flex-row [&:first-child:not([data-variant=ghost])]:[&_*]:rounded-r-none [&:last-child:not([data-variant=ghost])]:[&_*]:rounded-l-none [&:last-child:not([data-variant=ghost])]:[&_*]:border-l-0 [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:rounded-none [&:not(:first-child):not(:last-child):not([data-variant=ghost])]:[&_*]:border-l-0">
+    <div className="inline-flex flex-row">
       <button
         data-ripple-light="true"
-        className="inline-flex select-none items-center justify-center rounded-md border border-[#1877F2] bg-[#1877F2] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+        className="inline-flex select-none items-center justify-center rounded-md rounded-r-none border border-[#1877F2] bg-[#1877F2] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
       >
         <svg
           width="1.5em"
@@ -26,7 +26,7 @@ export function CustomButtonGroup() {
       </button>
       <button
         data-ripple-light="true"
-        className="inline-flex select-none items-center justify-center rounded-md border border-[#833ab4] bg-[#833ab4] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#833ab4] hover:bg-[#833ab4] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+        className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-[#833ab4] bg-[#833ab4] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#833ab4] hover:bg-[#833ab4] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
       >
         <svg
           width="1.5em"
@@ -59,7 +59,7 @@ export function CustomButtonGroup() {
       </button>
       <button
         data-ripple-light="true"
-        className="inline-flex select-none items-center justify-center rounded-md border border-[#0a66c2] bg-[#0a66c2] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+        className="inline-flex select-none items-center justify-center rounded-none border border-l-0 border-[#0a66c2] bg-[#0a66c2] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
       >
         <svg
           width="1.5em"
@@ -100,7 +100,7 @@ export function CustomButtonGroup() {
       </button>
       <button
         data-ripple-light="true"
-        className="inline-flex select-none items-center justify-center rounded-md border border-[#ea4c89] bg-[#ea4c89] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#ea4c89] hover:bg-[#ea4c89] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+        className="inline-flex select-none items-center justify-center rounded-md rounded-l-none border border-l-0 border-[#ea4c89] bg-[#ea4c89] px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-white transition-all duration-300 ease-in hover:border-[#ea4c89] hover:bg-[#ea4c89] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
       >
         <svg
           width="1.5em"
