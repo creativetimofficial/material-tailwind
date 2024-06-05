@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -99,26 +100,33 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     const labelColor = objectsToString(
       textareaVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
-    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
-    const textareaClasses = classnames(
-      objectsToString(base.textarea),
-      objectsToString(textareaVariant.base.textarea),
-      objectsToString(textareaVariant.sizes[findMatch(valid.sizes, size, "md")].textarea),
-      { [textareaColor]: !error && !success },
-      { [textareaError]: error },
-      { [textareaSuccess]: success },
-      { [textareaShrink]: shrink },
-      !resize ? "!resize-none" : "",
+    const containerClasses = twMerge(
+      classnames(objectsToString(base.container)),
+      containerProps?.className,
+    );
+    const textareaClasses = twMerge(
+      classnames(
+        objectsToString(base.textarea),
+        objectsToString(textareaVariant.base.textarea),
+        objectsToString(textareaVariant.sizes[findMatch(valid.sizes, size, "md")].textarea),
+        { [textareaColor]: !error && !success },
+        { [textareaError]: error },
+        { [textareaSuccess]: success },
+        { [textareaShrink]: shrink },
+        !resize ? "!resize-none" : "",
+      ),
       className,
     );
-    const labelClasses = classnames(
-      objectsToString(base.label),
-      objectsToString(textareaVariant.base.label),
-      objectsToString(textareaVariant.sizes[findMatch(valid.sizes, size, "md")].label),
-      { [labelColor]: !error && !success },
-      { [labelError]: error },
-      { [labelSuccess]: success },
-      { [labelShrink]: shrink },
+    const labelClasses = twMerge(
+      classnames(
+        objectsToString(base.label),
+        objectsToString(textareaVariant.base.label),
+        objectsToString(textareaVariant.sizes[findMatch(valid.sizes, size, "md")].label),
+        { [labelColor]: !error && !success },
+        { [labelError]: error },
+        { [labelSuccess]: success },
+        { [labelShrink]: shrink },
+      ),
       labelProps?.className,
     );
     const asteriskClasses = classnames(objectsToString(base.asterisk));

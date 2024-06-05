@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // utils
 import classnames from "classnames";
+import { twMerge } from "tailwind-merge";
 import findMatch from "../../utils/findMatch";
 import objectsToString from "../../utils/objectsToString";
 
@@ -103,12 +104,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const labelColor = objectsToString(
       inputVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
-    const containerClasses = classnames(
+    const containerClasses = twMerge(classnames(
       objectsToString(base.container),
-      objectsToString(inputSize.container),
+      objectsToString(inputSize.container)),
       containerProps?.className,
     );
-    const inputClasses = classnames(
+    const inputClasses = twMerge(classnames(
       objectsToString(base.input),
       objectsToString(inputVariant.base.input),
       objectsToString(inputSize.input),
@@ -116,17 +117,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       { [inputColor]: !error && !success },
       { [inputError]: error },
       { [inputSuccess]: success },
-      { [inputShrink]: shrink },
+      { [inputShrink]: shrink }),
       className,
     );
-    const labelClasses = classnames(
+    const labelClasses = twMerge(classnames(
       objectsToString(base.label),
       objectsToString(inputVariant.base.label),
       objectsToString(inputSize.label),
       { [labelColor]: !error && !success },
       { [labelError]: error },
       { [labelSuccess]: success },
-      { [labelShrink]: shrink },
+      { [labelShrink]: shrink }),
       labelProps?.className,
     );
     const iconClasses = classnames(
