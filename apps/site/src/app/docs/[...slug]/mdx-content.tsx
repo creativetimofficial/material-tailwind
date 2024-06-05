@@ -67,6 +67,10 @@ import * as Forms from "@components/docs/plugins/forms";
 import * as TextEditor from "@components/docs/plugins/text-editor";
 import * as DataTable from "@components/docs/plugins/data-table";
 import ReleaseNotes from "@components/release-notes";
+
+// html examples
+import * as HTMLButton from "@components/docs-html/button";
+
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
 const components = {
@@ -160,6 +164,9 @@ const components = {
   TextEditor,
   DataTable,
   ReleaseNotes,
+
+  // html examples
+  HTMLButton,
 };
 
 type MdxContentProps = {
@@ -172,7 +179,7 @@ export function MdxContent({ source }: MdxContentProps) {
   const contentRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <div className="animate-in fade-in flex w-full gap-0 duration-500 lg:gap-[52px]">
+    <div className="flex w-full gap-0 duration-500 animate-in fade-in lg:gap-[52px]">
       <div ref={contentRef} className="mt-40 w-full px-4 lg:mt-[106px] lg:px-0">
         <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
           {pathParts.map((part, index) => (

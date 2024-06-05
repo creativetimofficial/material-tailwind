@@ -1,0 +1,279 @@
+---
+title: Tailwind CSS Button - Material Tailwind
+description: Use our versatile and stylish button examples styled with Tailwind CSS that come in various sizes, states, and styles, including filled, gradient, outlined, and text buttons, alongside customization options for colors and icons.
+github: button
+prev: docs/react/inputs
+next: docs/react/button-group
+---
+
+# Tailwind CSS Button
+
+Use our buttons based on Tailwind CSS for actions in forms, dialogues, and more with support for multiple sizes, states, and more.
+
+Buttons are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form, or placing an order as easily as possible.
+
+See below our button components examples.
+
+---
+
+## Button Demo
+
+Use this versatile button that comes with a dark theme with gray background and white text, rounded corners, and a shadow effect on hover, showing interactivity.
+
+<ComponentPreview demo={<HTMLButton.ButtonDemo />}>
+```html
+<button className="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+  Button
+</button>
+```
+</ComponentPreview>
+
+---
+
+## Button Variants
+
+<ComponentPreview demo={<Button.ButtonVariants />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonVariants() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="solid">Solid</Button>
+      <Button variant="gradient">Gradient</Button>
+    </div>
+  )
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Sizes
+
+<ComponentPreview demo={<Button.ButtonSizes />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonSizes() {
+  return (
+    <div className="flex gap-4 items-end">
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </div>
+  )
+}
+```
+</ComponentPreview>
+
+---
+
+## Button Colors
+
+<ComponentPreview demo={<Button.ButtonColors />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonColors() {
+  return (
+    <div className="flex gap-4">
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+      <Button color="info">Info</Button>
+      <Button color="success">Success</Button>
+      <Button color="warning">Warning</Button>
+      <Button color="error">Error</Button>
+    </div>
+  )
+}
+```
+</ComponentPreview>
+
+---
+
+## Button With Icon
+
+<ComponentPreview demo={<Button.ButtonWithIcon />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+import {
+  NavArrowRight,
+  RefreshDouble,
+  CloudUpload,
+  BrightStar,
+} from "iconoir-react";
+
+export function ButtonWithIcon() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="ghost">
+        Read More
+        <NavArrowRight className="ms-1 h-4 w-4 stroke-2" />
+      </Button>
+      <Button variant="outline">
+        Refresh
+        <RefreshDouble className="ms-2 h-4 w-4 stroke-2" />
+      </Button>
+      <Button variant="solid">
+        <CloudUpload className="me-2 h-4 w-4 stroke-2" />
+        Upload Assets
+      </Button>
+      <Button variant="gradient">
+        Give Us Star
+        <BrightStar className="ms-2 h-4 w-4 stroke-2" />
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Block Level Button
+
+<ComponentPreview demo={<Button.BlockLevelButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function BlockLevelButton() {
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <Button isFullWidth variant="ghost">
+        Ghost Block Level Button
+      </Button>
+      <Button isFullWidth variant="outline">
+        Outline Block Level Button
+      </Button>
+      <Button isFullWidth variant="solid">
+        Solid Block Level Button
+      </Button>
+      <Button isFullWidth variant="gradient">
+        Gradient Block Level Button
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Pill Button
+
+<ComponentPreview demo={<Button.PillButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function PillButton() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Button isPill variant="ghost">
+        Ghost
+      </Button>
+      <Button isPill variant="outline">
+        Outline
+      </Button>
+      <Button isPill variant="solid">
+        Solid
+      </Button>
+      <Button isPill variant="gradient">
+        Gradient
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button As Link
+
+<ComponentPreview demo={<Button.ButtonAsLink />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export function ButtonAsLink() {
+  return (
+    <div className="flex gap-4">
+      <Button as="a" href="#" variant="ghost">
+        Ghost
+      </Button>
+      <Button as="a" href="#" variant="outline">
+        Outline
+      </Button>
+      <Button as="a" href="#" variant="solid">
+        Solid
+      </Button>
+      <Button as="a" href="#" variant="gradient">
+        Gradient
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Button with Loading State
+
+<ComponentPreview demo={<Button.ButtonLoading />}>
+```tsx
+import { Button, Spinner } from "@material-tailwind/react";
+
+export function ButtonLoading() {
+  return (
+    <div className="item flex flex-wrap justify-center gap-4">
+      <Button variant="ghost" className="gap-2">
+        <Spinner size="sm" />
+        Loading
+      </Button>
+      <Button variant="outline" className="gap-2">
+        <Spinner size="sm" />
+        Loading
+      </Button>
+      <Button variant="solid" className="gap-2">
+        <Spinner size="sm" />
+        Loading
+      </Button>
+      <Button variant="gradient" className="gap-2">
+        <Spinner size="sm" />
+        Loading
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Custom Auth Button
+
+<ComponentPreview demo={<Button.CustomAuthButton />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
+
+export function CustomAuthButton() {
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      <Button className="border-[#F7931A] bg-[#F7931A] text-white hover:border-[#F7931A] hover:bg-[#F7931A] hover:brightness-110">
+        <BitcoinCircle className="mr-2 h-4 w-4 stroke-2" /> Connect Wallet
+      </Button>
+      <Button className="border-white bg-white text-black shadow-md shadow-black/10 hover:border-white hover:bg-white hover:brightness-110">
+        <GoogleCircle className="mr-2 h-4 w-4 stroke-2" /> Continue with Google
+      </Button>
+      <Button className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">
+        <Facebook className="mr-2 h-4 w-4 stroke-2" /> Continue with Facebook
+      </Button>
+    </div>
+  );
+}
+```
+</ComponentPreview>
