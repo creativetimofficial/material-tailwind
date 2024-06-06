@@ -74,6 +74,7 @@ import * as HTMLButtonGroup from "@components/docs-html/button-group";
 import * as HTMLBreadcrumb from "@components/docs-html/breadcrumb";
 import * as HTMLAlert from "@components/docs-html/alert";
 import * as HTMLAvatar from "@components/docs-html/avatar";
+import * as HTMLCard from "@components/docs-html/card";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -175,6 +176,7 @@ const components = {
   HTMLBreadcrumb,
   HTMLAlert,
   HTMLAvatar,
+  HTMLCard,
 };
 
 type MdxContentProps = {
