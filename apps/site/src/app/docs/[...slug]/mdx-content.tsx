@@ -75,6 +75,7 @@ import * as HTMLBreadcrumb from "@components/docs-html/breadcrumb";
 import * as HTMLAlert from "@components/docs-html/alert";
 import * as HTMLAvatar from "@components/docs-html/avatar";
 import * as HTMLCard from "@components/docs-html/card";
+import * as HTMLChip from "@components/docs-html/chip";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -177,6 +178,7 @@ const components = {
   HTMLAlert,
   HTMLAvatar,
   HTMLCard,
+  HTMLChip,
 };
 
 type MdxContentProps = {
