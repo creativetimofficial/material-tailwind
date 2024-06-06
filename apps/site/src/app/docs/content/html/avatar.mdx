@@ -1,0 +1,224 @@
+---
+title: Tailwind CSS Avatar - Material Tailwind
+description: Use our avatar component examples styled with Tailwind CSS to add a quick visual identification of users or people.
+github: Avatar
+prev: docs/react/inputs
+next: docs/react/Avatar-group
+---
+
+# Tailwind CSS Avatar
+
+Get started faster with Material Tailwind avatar component for web or mobile applications where user identification matters.
+
+The avatar is an important UI component that provides a quick visual identification of users/people. The avatar is usually used to portray people in social media apps, chat apps, and forums.
+
+We created a series of avatar examples to help you build easier your application or website. All these exemples are styled with Tailwind CSS and based on Material Design.
+
+Check them below.
+
+---
+
+## Avatar Demo
+
+Use our default example of placeholder for user profiles with Tailwind CSS classes for a responsive and rounded design.
+
+<ComponentPreview demo={<HTMLAvatar.AvatarDemo />}>
+```html
+<img
+  src="https://dub.sh/TdSBP0D"
+  alt="profile-picture"
+  class="inline-block object-cover object-center rounded-full h-11 w-11"
+  />
+```
+</ComponentPreview>
+
+---
+
+## Avatar Variants
+
+See below how you can implement different shapes for your Material Tailwind avatar.
+
+<ComponentPreview demo={<HTMLAvatar.AvatarVariants />}>
+```html
+<div class="flex gap-2 item-center">
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center rounded-full h-11 w-11"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center rounded-md h-11 w-11"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center rounded-none h-11 w-11"
+  />
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Avatar Sizes
+
+See below how you can modify the size of your avatar from small (6x6) to large (110x110 pixels) using Tailwind CSS classes. This way, the avatar can be responsively scaled to fit different design contexts.
+
+<ComponentPreview demo={<HTMLAvatar.AvatarSizes />}>
+```html
+<div class="flex items-end gap-2">
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center w-6 h-6 rounded-full"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center w-8 h-8 rounded-full"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center rounded-full h-11 w-11"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block object-cover object-center rounded-full h-14 w-14"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block h-[72px] w-[72px] rounded-full object-cover object-center"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="profile-picture"
+    class="inline-block h-[86px] w-[86px] rounded-full object-cover object-center"
+  />
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Avatar with Text
+
+You can use avatar with other components as well. Our example below which includes typography shows how to form a complete user identity block.
+
+<ComponentPreview demo={<HTMLAvatar.AvatarWithText />}>
+```html
+<div class="flex flex-col gap-6">
+  <div class="flex items-center gap-4">
+    <img
+      src="https://dub.sh/TdSBP0D"
+      alt="avatar"
+      class="inline-block object-cover object-center rounded-full h-11 w-11"
+    />
+    <div>
+      <p class="font-sans text-base antialiased text-inherit">
+        Tania Andrew
+      </p>
+      <small class="font-sans text-sm antialiased text-foreground">
+        Web Developer
+      </small>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <img
+      src="https://dub.sh/TdSBP0D"
+      alt="avatar"
+      class="inline-block object-cover object-center rounded-md h-11 w-11"
+    />
+    <div>
+      <p class="font-sans text-base antialiased text-inherit">
+        Tania Andrew
+      </p>
+      <small class="font-sans text-sm antialiased text-foreground">
+        Web Developer
+      </small>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <img
+      src="https://dub.sh/TdSBP0D"
+      alt="avatar"
+      class="inline-block object-cover object-center rounded-none h-11 w-11"
+    />
+    <div>
+      <p class="font-sans text-base antialiased text-inherit">
+        Tania Andrew
+      </p>
+      <small class="font-sans text-sm antialiased text-foreground">
+        Web Developer
+      </small>
+    </div>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Avatar Stack
+
+Use this example to implement a horizontal stack of avatar images for representing multiple users in a shared space, like a group chat or website team section.
+
+<ComponentPreview demo={<HTMLAvatar.AvatarStack />}>
+```html
+<div class="flex items-center -space-x-4">
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="user 1"
+    class="inline-block object-cover object-center border-2 rounded-full h-11 w-11 border-secondary hover:z-10 focus:z-10"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="user 2"
+    class="inline-block object-cover object-center border-2 rounded-full h-11 w-11 border-secondary hover:z-10 focus:z-10"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="user 3"
+    class="inline-block object-cover object-center border-2 rounded-full h-11 w-11 border-secondary hover:z-10 focus:z-10"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="user 4"
+    class="inline-block object-cover object-center border-2 rounded-full h-11 w-11 border-secondary hover:z-10 focus:z-10"
+  />
+  <img
+    src="https://dub.sh/TdSBP0D"
+    alt="user 5"
+    class="inline-block object-cover object-center border-2 rounded-full h-11 w-11 border-secondary hover:z-10 focus:z-10"
+  />
+</div>
+```
+</ComponentPreview>
+---
+
+## Avatar Custom Styles
+
+<ComponentPreview demo={<HTMLAvatar.AvatarCustomStyles />}>
+```html
+<img
+  src="https://dub.sh/TdSBP0D"
+  alt="avatar"
+  class="inline-block object-cover object-center border border-green-500 rounded-full h-14 w-14 ring-4 ring-green-500/20"
+
+/>
+```
+</ComponentPreview>
+
+---
+### Avatar implementation best practices for developers:
+<ul className="space-y-2 list-disc list-inside text-foreground text-sm">
+<li>Make sure that the avatars are responsive, visible on various devices and screen sizes.</li>
+<li>Use ALT text for accesibility and seo.</li>
+<li>Optimize avatar images for fast loading (recommendation: JPEG/ WEBP for photos and SVG for icons)</li>
+<li>Provide users with easy ways for uploading or modifying their avatars.</li>
+<li>Use default avatar for new users.</li>
+</ul>

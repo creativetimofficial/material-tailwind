@@ -70,6 +70,10 @@ import ReleaseNotes from "@components/release-notes";
 
 // html examples
 import * as HTMLButton from "@components/docs-html/button";
+import * as HTMLButtonGroup from "@components/docs-html/button-group";
+import * as HTMLBreadcrumb from "@components/docs-html/breadcrumb";
+import * as HTMLAlert from "@components/docs-html/alert";
+import * as HTMLAvatar from "@components/docs-html/avatar";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -167,6 +171,10 @@ const components = {
 
   // html examples
   HTMLButton,
+  HTMLButtonGroup,
+  HTMLBreadcrumb,
+  HTMLAlert,
+  HTMLAvatar,
 };
 
 type MdxContentProps = {
