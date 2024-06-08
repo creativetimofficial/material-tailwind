@@ -15,85 +15,93 @@ import {
   breadcrumbSeparatorTheme,
 } from "@theme";
 
+import type { BaseProps } from "@types";
+
 // breadcrumb root
-export interface BreadcrumbProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type BreadcrumbProps<T extends React.ElementType = "nav"> = BaseProps<T>;
+
+function BreadcrumbRootBase<T extends React.ElementType = "nav">(
+  { as, className, children, ...props }: BreadcrumbProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("nav" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.breadcrumb || breadcrumbTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
 }
 
-export const BreadcrumbRoot = React.forwardRef<HTMLElement, BreadcrumbProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "nav";
-    const contextTheme = useTheme();
-    const theme = contextTheme.breadcrumb || breadcrumbTheme;
+BreadcrumbRootBase.displayName = "MaterialTailwind.Breadcrumb";
 
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
-
-BreadcrumbRoot.displayName = "MaterialTailwind.Breadcrumb";
+export const BreadcrumbRoot = React.forwardRef(BreadcrumbRootBase) as <
+  T extends React.ElementType = "nav",
+>(
+  props: BreadcrumbProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // breadcrumb link
-export interface BreadcrumbLinkProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type BreadcrumbLinkProps<T extends React.ElementType = "a"> =
+  BaseProps<T>;
 
-export const BreadcrumbLink = React.forwardRef<
-  HTMLElement,
-  BreadcrumbLinkProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "a";
+function BreadcrumbLinkRoot<T extends React.ElementType = "a">(
+  { as, className, children, ...props }: BreadcrumbLinkProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("a" as any);
   const contextTheme = useTheme();
   const theme = contextTheme.breadcrumbLink || breadcrumbLinkTheme;
 
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element {...rest} ref={ref} className={styles}>
+    <Component {...props} ref={ref} className={styles}>
       {children}
-    </Element>
+    </Component>
   );
-});
-
-BreadcrumbLink.displayName = "MaterialTailwind.BreadcrumbLink";
-
-// breadcrumb separator
-export interface BreadcrumbSeparatorProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children?: React.ReactNode;
 }
 
-export const BreadcrumbSeparator = React.forwardRef<
-  HTMLElement,
-  BreadcrumbSeparatorProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "span";
+BreadcrumbLinkRoot.displayName = "MaterialTailwind.BreadcrumbLink";
+
+export const BreadcrumbLink = React.forwardRef(BreadcrumbLinkRoot) as <
+  T extends React.ElementType = "a",
+>(
+  props: BreadcrumbLinkProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
+
+// breadcrumb separator
+export type BreadcrumbSeparatorProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
+
+function BreadcrumbSeparatorRoot<T extends React.ElementType = "span">(
+  { as, className, children, ...props }: BreadcrumbSeparatorProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
   const contextTheme = useTheme();
   const theme = contextTheme.breadcrumbSeparator || breadcrumbSeparatorTheme;
 
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element {...rest} ref={ref} className={styles}>
+    <Component {...props} ref={ref} className={styles}>
       {children || "/"}
-    </Element>
+    </Component>
   );
-});
+}
 
-BreadcrumbSeparator.displayName = "MaterialTailwind.BreadcrumbSeparator";
+BreadcrumbSeparatorRoot.displayName = "MaterialTailwind.BreadcrumbSeparator";
+
+export const BreadcrumbSeparator = React.forwardRef(
+  BreadcrumbSeparatorRoot,
+) as <T extends React.ElementType = "span">(
+  props: BreadcrumbSeparatorProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Breadcrumb = Object.assign(BreadcrumbRoot, {
   Link: BreadcrumbLink,

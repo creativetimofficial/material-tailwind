@@ -12,18 +12,18 @@ import { useTheme } from "@context";
 import { buttonGroupTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
 import type { ButtonProps } from "@components";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface ButtonGroupProps extends BaseComponent<HTMLElement> {
-  as?: React.ElementType;
-  ripple?: boolean;
-  isPill?: boolean;
-  isFullWidth?: boolean;
-  className?: string;
-  orientation?: "horizontal" | "vertical";
-  children: React.ReactNode;
-}
+export type ButtonGroupProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    ripple?: boolean;
+    isPill?: boolean;
+    isFullWidth?: boolean;
+    orientation?: "horizontal" | "vertical";
+  } & SharedProps
+>;
 
 /**
  * @remarks
@@ -31,73 +31,76 @@ export interface ButtonGroupProps extends BaseComponent<HTMLElement> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/button-group#button-group-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/button-group#button-group-theme)
  */
-export const ButtonGroup = React.forwardRef<HTMLElement, ButtonGroupProps>(
-  (
-    {
-      as,
-      color,
-      variant,
-      size,
-      ripple,
-      isPill,
-      isFullWidth,
-      className,
-      orientation,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.buttonGroup ?? buttonGroupTheme;
-    const defaultProps = theme?.defaultProps;
+function ButtonGroupRoot<T extends React.ElementType = "div">(
+  {
+    as,
+    color,
+    variant,
+    size,
+    ripple,
+    isPill,
+    isFullWidth,
+    className,
+    orientation,
+    children,
+    ...props
+  }: ButtonGroupProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.buttonGroup ?? buttonGroupTheme;
+  const defaultProps = theme?.defaultProps;
 
-    size ??= (defaultProps?.size as ButtonGroupProps["size"]) ?? "md";
-    ripple ??= (defaultProps?.ripple as ButtonGroupProps["ripple"]) ?? true;
-    color ??= (defaultProps?.color as ButtonGroupProps["color"]) ?? "primary";
-    variant ??=
-      (defaultProps?.variant as ButtonGroupProps["variant"]) ?? "solid";
-    orientation ??=
-      (defaultProps?.orientation as ButtonGroupProps["orientation"]) ??
-      "horizontal";
-    isFullWidth ??=
-      (defaultProps?.isFullWidth as ButtonGroupProps["isFullWidth"]) ?? false;
-    isPill ??= (defaultProps?.isPill as ButtonGroupProps["isPill"]) ?? false;
+  size ??= (defaultProps?.size as ButtonGroupProps["size"]) ?? "md";
+  ripple ??= (defaultProps?.ripple as ButtonGroupProps["ripple"]) ?? true;
+  color ??= (defaultProps?.color as ButtonGroupProps["color"]) ?? "primary";
+  variant ??= (defaultProps?.variant as ButtonGroupProps["variant"]) ?? "solid";
+  orientation ??=
+    (defaultProps?.orientation as ButtonGroupProps["orientation"]) ??
+    "horizontal";
+  isFullWidth ??=
+    (defaultProps?.isFullWidth as ButtonGroupProps["isFullWidth"]) ?? false;
+  isPill ??= (defaultProps?.isPill as ButtonGroupProps["isPill"]) ?? false;
 
-    const styles = twMerge(theme.baseStyle, className);
+  const styles = twMerge(theme.baseStyle, className);
 
-    return (
-      <Element
-        {...rest}
-        ref={ref}
-        className={styles}
-        data-variant={variant}
-        data-orientation={orientation}
-        data-shape={isPill ? "pill" : "default"}
-        data-width={isFullWidth ? "full" : "default"}
-      >
-        {React.Children.map(
-          children,
-          (child) =>
-            React.isValidElement(child) &&
-            React.cloneElement(child, {
-              variant,
-              size,
-              color,
-              ripple,
-              isPill,
-              isFullWidth,
-              "data-variant": variant,
-              "data-orientation": orientation,
-              ...child.props,
-            } as ButtonProps),
-        )}
-      </Element>
-    );
-  },
-);
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      data-variant={variant}
+      data-orientation={orientation}
+      data-shape={isPill ? "pill" : "default"}
+      data-width={isFullWidth ? "full" : "default"}
+    >
+      {React.Children.map(
+        children,
+        (child) =>
+          React.isValidElement(child) &&
+          React.cloneElement(child, {
+            variant,
+            size,
+            color,
+            ripple,
+            isPill,
+            isFullWidth,
+            "data-variant": variant,
+            "data-orientation": orientation,
+            ...child.props,
+          } as ButtonProps),
+      )}
+    </Component>
+  );
+}
 
-ButtonGroup.displayName = "MaterialTailwind.ButtonGroup";
+ButtonGroupRoot.displayName = "MaterialTailwind.ButtonGroup";
+
+export const ButtonGroup = React.forwardRef(ButtonGroupRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: ButtonGroupProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export default ButtonGroup;

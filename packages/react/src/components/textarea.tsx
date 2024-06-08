@@ -12,15 +12,19 @@ import { useTheme } from "@context";
 import { textareaTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface TextareaProps
-  extends Omit<BaseComponent<HTMLTextAreaElement>, "variant"> {
-  className?: string;
-  resize?: boolean;
-  isError?: boolean;
-  isSuccess?: boolean;
-}
+export type TextareaProps<T extends React.ElementType = "textarea"> = Omit<
+  BaseProps<
+    T,
+    {
+      resize?: boolean;
+      isError?: boolean;
+      isSuccess?: boolean;
+    } & Omit<SharedProps, "variant">
+  >,
+  "as"
+>;
 
 /**
  * @remarks
@@ -28,42 +32,57 @@ export interface TextareaProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/textarea#textarea-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/textarea#textarea-theme)
  */
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ color, size, resize, isError, isSuccess, className, ...rest }, ref) => {
-    const contextTheme = useTheme();
-    const theme = contextTheme?.textarea ?? textareaTheme;
-    const defaultProps = theme?.defaultProps;
+function TextareaRoot<T extends React.ElementType = "textarea">(
+  {
+    color,
+    size,
+    resize,
+    isError,
+    isSuccess,
+    className,
+    ...props
+  }: TextareaProps,
+  ref: React.Ref<HTMLTextAreaElement>,
+) {
+  const contextTheme = useTheme();
+  const theme = contextTheme?.textarea ?? textareaTheme;
+  const defaultProps = theme?.defaultProps;
 
-    size ??= (defaultProps?.size as TextareaProps["size"]) ?? "md";
-    color ??= (defaultProps?.color as TextareaProps["color"]) ?? "primary";
-    resize ??= (defaultProps?.resize as TextareaProps["resize"]) ?? false;
-    isError ??= (defaultProps?.isError as TextareaProps["isError"]) ?? false;
-    isSuccess ??=
-      (defaultProps?.isSuccess as TextareaProps["isSuccess"]) ?? false;
+  size ??= (defaultProps?.size as TextareaProps["size"]) ?? "md";
+  color ??= (defaultProps?.color as TextareaProps["color"]) ?? "primary";
+  resize ??= (defaultProps?.resize as TextareaProps["resize"]) ?? false;
+  isError ??= (defaultProps?.isError as TextareaProps["isError"]) ?? false;
+  isSuccess ??=
+    (defaultProps?.isSuccess as TextareaProps["isSuccess"]) ?? false;
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.color[color],
-      theme.size[size],
-      resize && theme["resize"],
-      isError && theme["isError"],
-      isSuccess && theme["isSuccess"],
-      className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.color[color],
+    theme.size[size],
+    resize && theme["resize"],
+    isError && theme["isError"],
+    isSuccess && theme["isSuccess"],
+    className,
+  );
 
-    return (
-      <textarea
-        rows={8}
-        {...rest}
-        ref={ref}
-        className={styles}
-        data-error={isError}
-        data-success={isSuccess}
-      />
-    );
-  },
-);
+  return (
+    <textarea
+      rows={8}
+      {...props}
+      ref={ref}
+      className={styles}
+      data-error={isError}
+      data-success={isSuccess}
+    />
+  );
+}
 
-Textarea.displayName = "MaterialTailwind.Textarea";
+TextareaRoot.displayName = "MaterialTailwind.Textarea";
+
+export const Textarea = React.forwardRef(TextareaRoot) as <
+  T extends React.ElementType = "textarea",
+>(
+  props: TextareaProps<T> & { ref: React.Ref<HTMLTextAreaElement> },
+) => JSX.Element;
 
 export default Textarea;

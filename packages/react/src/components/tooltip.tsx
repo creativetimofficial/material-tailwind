@@ -34,6 +34,7 @@ import type {
   Placement,
   UseFloatingReturn,
 } from "@floating-ui/react";
+import { BaseProps, SharedProps } from "@types";
 
 // @theme
 import {
@@ -152,18 +153,14 @@ export function TooltipRoot({
 TooltipRoot.displayName = "MaterialTailwind.Tooltip";
 
 // tooltip trigger
-export interface TooltipTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type TooltipTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<T>;
 
-export const TooltipTrigger = React.forwardRef<
-  HTMLElement,
-  TooltipTriggerProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "button";
+function TooltipTriggerRoot<T extends React.ElementType = "button">(
+  { as, className, children, ...props }: TooltipTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.tooltipTrigger ?? tooltipTriggerTheme;
   const { refs, getReferenceProps, open } = React.useContext(TooltipContext);
@@ -172,33 +169,35 @@ export const TooltipTrigger = React.forwardRef<
   const elementRef = useMergeRefs([refs?.setReference, ref]);
 
   return (
-    <Element
-      {...rest}
+    <Component
+      {...props}
       ref={elementRef}
       data-open={open}
       className={styles}
       {...(getReferenceProps && getReferenceProps())}
     >
       {children}
-    </Element>
+    </Component>
   );
-});
-
-TooltipTrigger.displayName = "MaterialTailwind.TooltipTrigger";
-
-// tooltip content
-export interface TooltipContentProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
 }
 
-export const TooltipContent = React.forwardRef<
-  HTMLElement,
-  TooltipContentProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "div";
+TooltipTriggerRoot.displayName = "MaterialTailwind.TooltipTrigger";
+
+export const TooltipTrigger = React.forwardRef(TooltipTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: TooltipTriggerProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
+
+// tooltip content
+export type TooltipContentProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
+
+function TooltipContentRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: TooltipContentProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.tooltipContent ?? tooltipContentTheme;
   const { refs, getFloatingProps, open, floatingStyles } =
@@ -209,68 +208,80 @@ export const TooltipContent = React.forwardRef<
 
   return open ? (
     <FloatingPortal>
-      <Element
-        {...rest}
+      <Component
+        {...props}
         ref={elementRef}
         data-open={open}
-        style={{ ...floatingStyles, ...rest?.style }}
+        style={{ ...floatingStyles, ...props?.style }}
         className={styles}
         {...(getFloatingProps && getFloatingProps())}
       >
         {children}
-      </Element>
+      </Component>
     </FloatingPortal>
   ) : null;
-});
-
-TooltipContent.displayName = "MaterialTailwind.TooltipContent";
-
-// tooltip arrow
-export interface TooltipArrowProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
 }
 
-export const TooltipArrow = React.forwardRef<HTMLElement, TooltipArrowProps>(
-  ({ as, className, ...rest }, ref) => {
-    const Element = as || "span";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.tooltipArrow ?? tooltipArrowTheme;
-    const innerRef = React.useRef<React.ComponentRef<"span">>(null);
-    const { placement, arrowRef, middlewareData } =
-      React.useContext(TooltipContext);
+TooltipContentRoot.displayName = "MaterialTailwind.TooltipContent";
 
-    const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
+export const TooltipContent = React.forwardRef(TooltipContentRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TooltipContentProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
-    const staticSide: any = {
-      top: "bottom",
-      right: "left",
-      bottom: "top",
-      left: "right",
-    }[placement ? placement.split("-")[0] : ""];
+// tooltip arrow
+export type TooltipArrowProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
 
-    const styles = twMerge(theme.baseStyle, className);
+function TooltipArrowRoot<T extends React.ElementType = "span">(
+  { as, className, ...props }: TooltipArrowProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.tooltipArrow ?? tooltipArrowTheme;
+  const innerRef = React.useRef<React.ComponentRef<"span">>(null);
+  const { placement, arrowRef, middlewareData } =
+    React.useContext(TooltipContext);
 
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        style={{
-          position: "absolute",
-          left: middlewareData?.arrow?.x,
-          top: middlewareData?.arrow?.y,
-          [staticSide]: `${
-            -(innerRef?.current?.clientHeight as number) / 2 - 1
-          }px`,
-          ...rest?.style,
-        }}
-        data-placement={placement}
-        className={styles}
-      />
-    );
-  },
-);
+  const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
+
+  const staticSide: any = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right",
+  }[placement ? placement.split("-")[0] : ""];
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      style={{
+        position: "absolute",
+        left: middlewareData?.arrow?.x,
+        top: middlewareData?.arrow?.y,
+        [staticSide]: `${
+          -(innerRef?.current?.clientHeight as number) / 2 - 1
+        }px`,
+        ...props?.style,
+      }}
+      data-placement={placement}
+      className={styles}
+    />
+  );
+}
+
+TooltipArrowRoot.displayName = "MaterialTailwind.TooltipArrow";
+
+export const TooltipArrow = React.forwardRef(TooltipArrowRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: TooltipArrowProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Tooltip = Object.assign(TooltipRoot, {
   Trigger: TooltipTrigger,

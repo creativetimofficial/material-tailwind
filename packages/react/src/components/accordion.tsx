@@ -16,6 +16,9 @@ import {
   accordionContentTheme,
 } from "@theme";
 
+// @types
+import type { BaseProps } from "@types";
+
 type accordionType = "single" | "multiple";
 
 // accordion context
@@ -91,64 +94,66 @@ AccordionRoot.displayName = "MaterialTailwind.Accordion";
 // accordion item
 export const AccordionItemContext = React.createContext<string>("");
 
-export interface AccordionItemProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  value: string;
-  disabled?: boolean;
-  className?: string;
-  children: React.ReactNode;
+export type AccordionItemProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value: string;
+    disabled?: boolean;
+  }
+>;
+
+function AccordionItemRoot<T extends React.ElementType = "div">(
+  { as, value, disabled, className, children, ...props }: AccordionItemProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.accordionItem || accordionItemTheme;
+  const defaultProps = theme?.defaultProps;
+  const { type, activeItem } = React.useContext(AccordionContext);
+
+  disabled ??=
+    (defaultProps?.disabled as AccordionItemProps["disabled"]) ?? false;
+
+  const isMultiple = type === "multiple";
+  const isOpen = isMultiple
+    ? activeItem?.includes(value)
+    : activeItem === value;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <AccordionItemContext.Provider value={value}>
+      <Component
+        {...props}
+        ref={ref}
+        data-open={isOpen}
+        className={styles}
+        aria-disabled={disabled}
+      >
+        {children}
+      </Component>
+    </AccordionItemContext.Provider>
+  );
 }
 
-export const AccordionItem = React.forwardRef<HTMLElement, AccordionItemProps>(
-  ({ as, value, disabled, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.accordionItem || accordionItemTheme;
-    const defaultProps = theme?.defaultProps;
-    const { type, activeItem } = React.useContext(AccordionContext);
+AccordionItemRoot.displayName = "MaterialTailwind.AccordionItem";
 
-    disabled ??=
-      (defaultProps?.disabled as AccordionItemProps["disabled"]) ?? false;
-
-    const isMultiple = type === "multiple";
-    const isOpen = isMultiple
-      ? activeItem?.includes(value)
-      : activeItem === value;
-
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <AccordionItemContext.Provider value={value}>
-        <Element
-          {...rest}
-          ref={ref}
-          data-open={isOpen}
-          className={styles}
-          aria-disabled={disabled}
-        >
-          {children}
-        </Element>
-      </AccordionItemContext.Provider>
-    );
-  },
-);
-
-AccordionItem.displayName = "MaterialTailwind.AccordionItem";
+export const AccordionItem = React.forwardRef(AccordionItemRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: AccordionItemProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // accordion trigger
-export interface AccordionTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type AccordionTriggerProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
 
-export const AccordionTrigger = React.forwardRef<
-  HTMLElement,
-  AccordionTriggerProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "button";
+function AccordionTriggerRoot<T extends React.ElementType = "button">(
+  { as, className, children, ...props }: AccordionTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
   const contextTheme = useTheme();
   const theme = contextTheme.accordionTrigger || accordionTriggerTheme;
   const value = React.useContext(AccordionItemContext);
@@ -163,8 +168,8 @@ export const AccordionTrigger = React.forwardRef<
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element
-      {...rest}
+    <Component
+      {...props}
       ref={ref}
       data-open={isOpen}
       className={styles}
@@ -181,29 +186,31 @@ export const AccordionTrigger = React.forwardRef<
           setActiveItem?.((prev) => (prev === value ? "" : value));
         }
 
-        rest.onClick?.(event);
+        props.onClick?.(event);
       }}
     >
       {children}
-    </Element>
+    </Component>
   );
-});
-
-AccordionTrigger.displayName = "MaterialTailwind.AccordionTrigger";
-
-// accordion content
-export interface AccordionContentProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
 }
 
-export const AccordionContent = React.forwardRef<
-  HTMLElement,
-  AccordionContentProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "div";
+AccordionTriggerRoot.displayName = "MaterialTailwind.AccordionTrigger";
+
+export const AccordionTrigger = React.forwardRef(AccordionTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: AccordionTriggerProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
+
+// accordion content
+export type AccordionContentProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
+
+function AccordionContentRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: AccordionContentProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
   const contextTheme = useTheme();
   const theme = contextTheme.accordionContent || accordionContentTheme;
   const value = React.useContext(AccordionItemContext);
@@ -217,13 +224,19 @@ export const AccordionContent = React.forwardRef<
   const styles = twMerge(theme.baseStyle, className);
 
   return isOpen ? (
-    <Element {...rest} ref={ref} className={styles} data-open={isOpen}>
+    <Component {...props} ref={ref} className={styles} data-open={isOpen}>
       {children}
-    </Element>
+    </Component>
   ) : null;
-});
+}
 
-AccordionContent.displayName = "MaterialTailwind.AccordionContent";
+AccordionContentRoot.displayName = "MaterialTailwind.AccordionContent";
+
+export const AccordionContent = React.forwardRef(AccordionContentRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: AccordionContentProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export const Accordion = Object.assign(AccordionRoot, {
   Item: AccordionItem,

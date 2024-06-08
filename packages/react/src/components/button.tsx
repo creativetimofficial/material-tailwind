@@ -13,16 +13,16 @@ import { useTheme } from "@context";
 import { buttonTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface ButtonProps extends BaseComponent<HTMLElement> {
-  as?: React.ElementType;
-  ripple?: boolean;
-  isPill?: boolean;
-  isFullWidth?: boolean;
-  className?: string;
-  children: string;
-}
+export type ButtonProps<T extends React.ElementType = "button"> = BaseProps<
+  T,
+  {
+    ripple?: boolean;
+    isPill?: boolean;
+    isFullWidth?: boolean;
+  } & SharedProps
+>;
 
 /**
  * @remarks
@@ -30,70 +30,75 @@ export interface ButtonProps extends BaseComponent<HTMLElement> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/button#button-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/button#button-theme)
  */
-export const Button = React.forwardRef<HTMLElement, ButtonProps>(
-  (
-    {
-      as,
-      color,
-      variant,
-      size,
-      ripple,
-      isPill,
-      isFullWidth,
-      className,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as ?? "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.button ?? buttonTheme;
-    const defaultProps = theme?.defaultProps;
+function ButtonRoot<T extends React.ElementType = "button">(
+  {
+    as,
+    color,
+    variant,
+    size,
+    ripple,
+    isPill,
+    isFullWidth,
+    className,
+    children,
+    ...props
+  }: ButtonProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
 
-    size ??= (defaultProps?.size as ButtonProps["size"]) ?? "md";
-    ripple ??= (defaultProps?.ripple as ButtonProps["ripple"]) ?? true;
-    color ??= (defaultProps?.color as ButtonProps["color"]) ?? "primary";
-    variant ??= (defaultProps?.variant as ButtonProps["variant"]) ?? "solid";
-    isPill ??= (defaultProps?.isPill as ButtonProps["isPill"]) ?? false;
-    isFullWidth ??=
-      (defaultProps?.isFullWidth as ButtonProps["isFullWidth"]) ?? false;
+  const contextTheme = useTheme();
+  const theme = contextTheme?.button ?? buttonTheme;
+  const defaultProps = theme?.defaultProps;
 
-    const rippleEffect = ripple !== undefined && new Ripple();
+  size ??= (defaultProps?.size as ButtonProps["size"]) ?? "md";
+  ripple ??= (defaultProps?.ripple as ButtonProps["ripple"]) ?? true;
+  color ??= (defaultProps?.color as ButtonProps["color"]) ?? "primary";
+  variant ??= (defaultProps?.variant as ButtonProps["variant"]) ?? "solid";
+  isPill ??= (defaultProps?.isPill as ButtonProps["isPill"]) ?? false;
+  isFullWidth ??=
+    (defaultProps?.isFullWidth as ButtonProps["isFullWidth"]) ?? false;
 
-    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-      const onClick = rest?.onClick;
-      const isDarkRipple = variant === "ghost" || color === "secondary";
+  const rippleEffect = ripple !== undefined && new Ripple();
 
-      if (ripple) {
-        rippleEffect.create(e, isDarkRipple ? "dark" : "light");
-      }
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onClick = props?.onClick;
+    const isDarkRipple = variant === "ghost" || color === "secondary";
 
-      return typeof onClick === "function" && onClick(e);
-    };
+    if (ripple) {
+      rippleEffect.create(e, isDarkRipple ? "dark" : "light");
+    }
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["size"][size],
-      theme["variant"][variant][color],
-      className,
-    );
+    return typeof onClick === "function" && onClick(e);
+  };
 
-    return (
-      <Element
-        {...rest}
-        ref={ref}
-        className={styles}
-        onClick={handleClick}
-        data-shape={isPill ? "pill" : "default"}
-        data-width={isFullWidth ? "full" : "default"}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
+  const styles = twMerge(
+    theme.baseStyle,
+    theme["size"][size],
+    theme["variant"][variant][color],
+    className,
+  );
 
-Button.displayName = "MaterialTailwind.Button";
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      onClick={handleClick}
+      data-shape={isPill ? "pill" : "default"}
+      data-width={isFullWidth ? "full" : "default"}
+    >
+      {children}
+    </Component>
+  );
+}
+
+ButtonRoot.displayName = "MaterialTailwind.Button";
+
+export const Button = React.forwardRef(ButtonRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: ButtonProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export default Button;

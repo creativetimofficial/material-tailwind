@@ -15,7 +15,7 @@ export function DialogDemo() {
           <div className="flex items-center justify-between gap-4">
             <Typography type="h6">Material Tailwind</Typography>
             <Dialog.DismissTrigger
-              as={IconButton}
+              as={Button}
               size="sm"
               variant="ghost"
               color="secondary"

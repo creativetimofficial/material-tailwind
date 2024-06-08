@@ -13,15 +13,15 @@ import { useTheme } from "@context";
 import { iconButtonTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface IconButtonProps extends BaseComponent<HTMLElement> {
-  as?: React.ElementType;
-  ripple?: boolean;
-  isCircular?: boolean;
-  className?: string;
-  children: React.ReactNode;
-}
+export type IconButtonProps<T extends React.ElementType = "button"> = BaseProps<
+  T,
+  {
+    ripple?: boolean;
+    isCircular?: boolean;
+  } & SharedProps
+>;
 
 /**
  * @remarks
@@ -29,68 +29,71 @@ export interface IconButtonProps extends BaseComponent<HTMLElement> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/icon-button#icon-button-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/icon-button#icon-button-theme)
  */
-export const IconButton = React.forwardRef<HTMLElement, IconButtonProps>(
-  (
-    {
-      as,
-      color,
-      variant,
-      size,
-      ripple,
-      isCircular,
-      className,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as ?? "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.iconButton ?? iconButtonTheme;
-    const defaultProps = theme?.defaultProps;
+function IconButtonRoot<T extends React.ElementType = "button">(
+  {
+    as,
+    color,
+    variant,
+    size,
+    ripple,
+    isCircular,
+    className,
+    children,
+    ...props
+  }: IconButtonProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("button" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.iconButton ?? iconButtonTheme;
+  const defaultProps = theme?.defaultProps;
 
-    size ??= (defaultProps?.size as IconButtonProps["size"]) ?? "md";
-    ripple ??= (defaultProps?.ripple as IconButtonProps["ripple"]) ?? true;
-    color ??= (defaultProps?.color as IconButtonProps["color"]) ?? "primary";
-    variant ??=
-      (defaultProps?.variant as IconButtonProps["variant"]) ?? "solid";
-    isCircular ??=
-      (defaultProps?.isCircular as IconButtonProps["isCircular"]) ?? false;
+  size ??= (defaultProps?.size as IconButtonProps["size"]) ?? "md";
+  ripple ??= (defaultProps?.ripple as IconButtonProps["ripple"]) ?? true;
+  color ??= (defaultProps?.color as IconButtonProps["color"]) ?? "primary";
+  variant ??= (defaultProps?.variant as IconButtonProps["variant"]) ?? "solid";
+  isCircular ??=
+    (defaultProps?.isCircular as IconButtonProps["isCircular"]) ?? false;
 
-    const rippleEffect = ripple !== undefined && new Ripple();
+  const rippleEffect = ripple !== undefined && new Ripple();
 
-    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-      const onClick = rest?.onClick;
-      const isDarkRipple = variant === "ghost" || color === "secondary";
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onClick = props?.onClick;
+    const isDarkRipple = variant === "ghost" || color === "secondary";
 
-      if (ripple) {
-        rippleEffect.create(e, isDarkRipple ? "dark" : "light");
-      }
+    if (ripple) {
+      rippleEffect.create(e, isDarkRipple ? "dark" : "light");
+    }
 
-      return typeof onClick === "function" && onClick(e);
-    };
+    return typeof onClick === "function" && onClick(e);
+  };
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["size"][size],
-      theme["variant"][variant][color],
-      className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    theme["size"][size],
+    theme["variant"][variant][color],
+    className,
+  );
 
-    return (
-      <Element
-        {...rest}
-        ref={ref}
-        className={styles}
-        onClick={handleClick}
-        data-shape={isCircular ? "circular" : "default"}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      onClick={handleClick}
+      data-shape={isCircular ? "circular" : "default"}
+    >
+      {children}
+    </Component>
+  );
+}
 
-IconButton.displayName = "MaterialTailwind.IconButton";
+IconButtonRoot.displayName = "MaterialTailwind.IconButton";
+
+export const IconButton = React.forwardRef(IconButtonRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: IconButtonProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export default IconButton;

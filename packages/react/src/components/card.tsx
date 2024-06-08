@@ -6,7 +6,7 @@ import * as React from "react";
 import { useTheme } from "@context";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // @utils
 import { twMerge } from "tailwind-merge";
@@ -20,13 +20,12 @@ import {
 } from "@theme";
 
 // card root
-export interface CardProps
-  extends Omit<BaseComponent<HTMLElement>, "size" | "color"> {
-  as?: React.ElementType;
-  className?: string;
-  color?: "default" | BaseComponent<HTMLElement>["color"];
-  children?: React.ReactNode;
-}
+export type CardProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    color?: "default" | SharedProps["color"];
+  } & Omit<SharedProps, "size" | "color">
+>;
 
 /**
  * @remarks
@@ -34,100 +33,122 @@ export interface CardProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/card#card-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/card#card-theme)
  */
+function CardRootBase<T extends React.ElementType = "div">(
+  { as, color, variant, className, children, ...props }: CardProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.card || cardTheme;
+  const defaultProps = theme.defaultProps;
 
-export const CardRoot = React.forwardRef<HTMLElement, CardProps>(
-  ({ as, color, variant, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.card || cardTheme;
-    const defaultProps = theme.defaultProps;
+  color ??= (defaultProps?.color as CardProps["color"]) ?? "default";
+  variant ??= (defaultProps?.variant as CardProps["variant"]) ?? "solid";
 
-    color ??= (defaultProps?.color as CardProps["color"]) ?? "default";
-    variant ??= (defaultProps?.variant as CardProps["variant"]) ?? "solid";
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.variant[variant][color],
+    className,
+  );
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.variant[variant][color],
-      className,
-    );
-
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
-
-CardRoot.displayName = "MaterialTailwind.Card";
-
-// card header
-export interface CardHeaderProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children?: React.ReactNode;
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
 }
 
-export const CardHeader = React.forwardRef<HTMLElement, CardHeaderProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.cardHeader || cardHeaderTheme;
+CardRootBase.displayName = "MaterialTailwind.Card";
 
-    const styles = twMerge(theme.baseStyle, className);
+export const CardRoot = React.forwardRef(CardRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: CardProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+// card header
+export type CardHeaderProps<T extends React.ElementType = "div"> = BaseProps<T>;
 
-CardHeader.displayName = "MaterialTailwind.CardHeader";
+function CardHeaderRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: CardHeaderProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.cardHeader || cardHeaderTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
+}
+
+CardHeaderRoot.displayName = "MaterialTailwind.CardHeader";
+
+export const CardHeader = React.forwardRef(CardHeaderRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: CardHeaderProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // card body
-export interface CardBodyProps extends CardHeaderProps {}
+export type CardBodyProps<T extends React.ElementType = "div"> = BaseProps<T>;
 
-export const CardBody = React.forwardRef<HTMLElement, CardBodyProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.cardBody || cardBodyTheme;
+function CardBodyRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: CardBodyProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || "div";
+  const contextTheme = useTheme();
+  const theme = contextTheme.cardBody || cardBodyTheme;
 
-    const styles = twMerge(theme.baseStyle, className);
+  const styles = twMerge(theme.baseStyle, className);
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
+}
 
-CardBody.displayName = "MaterialTailwind.CardBody";
+CardBodyRoot.displayName = "MaterialTailwind.CardBody";
+
+export const CardBody = React.forwardRef(CardBodyRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: CardBodyProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // card footer
-export interface CardFooterProps extends CardHeaderProps {}
+export type CardFooterProps<T extends React.ElementType = "div"> = BaseProps<T>;
 
-export const CardFooter = React.forwardRef<HTMLElement, CardFooterProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.cardFooter || cardFooterTheme;
+function CardFooterRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: CardFooterProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.cardFooter || cardFooterTheme;
 
-    const styles = twMerge(theme.baseStyle, className);
+  const styles = twMerge(theme.baseStyle, className);
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
+}
 
-CardFooter.displayName = "MaterialTailwind.CardFooter";
+CardFooterRoot.displayName = "MaterialTailwind.CardFooter";
+
+export const CardFooter = React.forwardRef(CardFooterRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: CardFooterProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export const Card = Object.assign(CardRoot, {
   Header: CardHeader,
@@ -135,4 +156,4 @@ export const Card = Object.assign(CardRoot, {
   Footer: CardFooter,
 });
 
-export default CardFooter;
+export default Card;

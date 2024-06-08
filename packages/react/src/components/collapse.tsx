@@ -12,14 +12,14 @@ import { useTheme } from "@context";
 import { collapseTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps } from "@types";
 
-export interface CollapseProps extends BaseComponent<HTMLElement> {
-  as?: React.ElementType;
-  open: boolean;
-  className?: string;
-  children: React.ReactNode;
-}
+export type CollapseProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    open: boolean;
+  }
+>;
 
 /**
  * @remarks
@@ -27,22 +27,29 @@ export interface CollapseProps extends BaseComponent<HTMLElement> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/collapse#collapse-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/collapse#collapse-theme)
  */
-export const Collapse = React.forwardRef<HTMLElement, CollapseProps>(
-  ({ as, open, className, children, ...rest }, ref) => {
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.collapse ?? collapseTheme;
+function CollapseRoot<T extends React.ElementType = "div">(
+  { as, open, className, children, ...props }: CollapseProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.collapse ?? collapseTheme;
 
-    const styles = twMerge(theme.baseStyle, className);
+  const styles = twMerge(theme.baseStyle, className);
 
-    return open ? (
-      <Element {...rest} ref={ref} data-open={open} className={styles}>
-        {children}
-      </Element>
-    ) : null;
-  },
-);
+  return open ? (
+    <Component {...props} ref={ref} data-open={open} className={styles}>
+      {children}
+    </Component>
+  ) : null;
+}
 
-Collapse.displayName = "MaterialTailwind.Collapse";
+CollapseRoot.displayName = "MaterialTailwind.Collapse";
+
+export const Collapse = React.forwardRef(CollapseRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: CollapseProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export default Collapse;

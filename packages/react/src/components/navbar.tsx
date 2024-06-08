@@ -6,7 +6,7 @@ import * as React from "react";
 import { useTheme } from "@context";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // @utils
 import { twMerge } from "tailwind-merge";
@@ -15,13 +15,12 @@ import { twMerge } from "tailwind-merge";
 import { navbarTheme } from "@theme";
 
 // card root
-export interface NavbarProps
-  extends Omit<BaseComponent<HTMLElement>, "size" | "color"> {
-  as?: React.ElementType;
-  className?: string;
-  color?: "default" | BaseComponent<HTMLElement>["color"];
-  children?: React.ReactNode;
-}
+export type NavbarProps<T extends React.ElementType = "nav"> = BaseProps<
+  T,
+  {
+    color?: "default" | SharedProps["color"];
+  } & Omit<SharedProps, "size" | "color">
+>;
 
 /**
  * @remarks
@@ -29,31 +28,37 @@ export interface NavbarProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/navbar#navbar-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/navbar#navbar-theme)
  */
+function NavbarRoot<T extends React.ElementType = "nav">(
+  { as, color, variant, className, children, ...props }: NavbarProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("nav" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.navbar || navbarTheme;
+  const defaultProps = theme.defaultProps;
 
-export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
-  ({ as, color, variant, className, children, ...rest }, ref) => {
-    const Element = as || "nav";
-    const contextTheme = useTheme();
-    const theme = contextTheme.navbar || navbarTheme;
-    const defaultProps = theme.defaultProps;
+  color ??= (defaultProps?.color as NavbarProps["color"]) ?? "default";
+  variant ??= (defaultProps?.variant as NavbarProps["variant"]) ?? "solid";
 
-    color ??= (defaultProps?.color as NavbarProps["color"]) ?? "default";
-    variant ??= (defaultProps?.variant as NavbarProps["variant"]) ?? "solid";
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.variant[variant][color],
+    className,
+  );
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.variant[variant][color],
-      className,
-    );
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
+}
 
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+NavbarRoot.displayName = "MaterialTailwind.Navbar";
 
-Navbar.displayName = "MaterialTailwind.Navbar";
+export const Navbar = React.forwardRef(NavbarRoot) as <
+  T extends React.ElementType = "nav",
+>(
+  props: NavbarProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export default Navbar;

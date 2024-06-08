@@ -46,6 +46,7 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
+import type { BaseProps } from "@types";
 
 // @theme
 import {
@@ -237,218 +238,230 @@ export function MenuRoot(props: MenuProps) {
 MenuRoot.displayName = "MaterialTailwind.Menu";
 
 // menu trigger
-export interface MenuTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type MenuTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<T>;
+
+function MenuTriggerRoot<T extends React.ElementType = "button">(
+  { as, className, children, ...props }: MenuTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.menuTrigger ?? menuTriggerTheme;
+  const {
+    refs,
+    item,
+    activeIndex,
+    isNested,
+    getReferenceProps,
+    getItemProps,
+    open,
+  } = React.useContext(MenuContext);
+
+  const styles = twMerge(theme.baseStyle, className);
+  const elementRef = useMergeRefs([refs?.setReference, item?.ref, ref]);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      data-open={open}
+      data-nested={isNested}
+      tabIndex={!isNested ? undefined : activeIndex === item?.index ? 0 : -1}
+      role={isNested ? "menuitem" : undefined}
+      className={styles}
+      {...(getReferenceProps &&
+        getItemProps &&
+        getReferenceProps(getItemProps()))}
+    >
+      {children}
+    </Component>
+  );
 }
 
-export const MenuTrigger = React.forwardRef<HTMLElement, MenuTriggerProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.menuTrigger ?? menuTriggerTheme;
-    const {
-      refs,
-      item,
-      activeIndex,
-      isNested,
-      getReferenceProps,
-      getItemProps,
-      open,
-    } = React.useContext(MenuContext);
+MenuTriggerRoot.displayName = "MaterialTailwind.MenuTrigger";
 
-    const styles = twMerge(theme.baseStyle, className);
-    const elementRef = useMergeRefs([refs?.setReference, item?.ref, ref]);
-
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        data-open={open}
-        data-nested={isNested}
-        tabIndex={!isNested ? undefined : activeIndex === item?.index ? 0 : -1}
-        role={isNested ? "menuitem" : undefined}
-        className={styles}
-        {...(getReferenceProps &&
-          getItemProps &&
-          getReferenceProps(getItemProps()))}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
-
-MenuTrigger.displayName = "MaterialTailwind.MenuTrigger";
+export const MenuTrigger = React.forwardRef(MenuTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: MenuTriggerProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // menu content
-type MenuContentBaseProps = Omit<React.AllHTMLAttributes<HTMLElement>, "as"> &
-  FloatingFocusManagerProps;
+export type MenuContentProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  Omit<FloatingFocusManagerProps, "context" | "children">
+>;
 
-export interface MenuContentProps
-  extends Omit<MenuContentBaseProps, "context" | "children"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+function MenuContentRoot<T extends React.ElementType = "div">(
+  {
+    as,
+    className,
+    children,
+    disabled,
+    initialFocus,
+    returnFocus,
+    guards,
+    modal,
+    visuallyHiddenDismiss,
+    closeOnFocusOut,
+    order,
+    ...props
+  }: MenuContentProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.menuContent ?? menuContentTheme;
+  const defaultProps = theme.defaultProps;
+  const {
+    elementsRef,
+    labelsRef,
+    context,
+    refs,
+    getFloatingProps,
+    open,
+    floatingStyles,
+    isNested,
+  } = React.useContext(MenuContext);
+
+  disabled ??=
+    (defaultProps?.disabled as MenuContentProps["disabled"]) ?? false;
+  initialFocus ??=
+    (defaultProps?.initialFocus as MenuContentProps["initialFocus"]) ?? 0;
+  returnFocus ??=
+    (defaultProps?.returnFocus as MenuContentProps["returnFocus"]) ?? true;
+  guards ??= (defaultProps?.guards as MenuContentProps["guards"]) ?? true;
+  modal ??= (defaultProps?.modal as MenuContentProps["modal"]) ?? false;
+  visuallyHiddenDismiss ??=
+    (defaultProps?.visuallyHiddenDismiss as MenuContentProps["visuallyHiddenDismiss"]) ??
+    true;
+  closeOnFocusOut ??=
+    (defaultProps?.closeOnFocusOut as MenuContentProps["closeOnFocusOut"]) ??
+    true;
+  order ??= (defaultProps?.order as MenuContentProps["order"]) ?? ["content"];
+
+  const styles = twMerge(theme.baseStyle, className);
+  const elementRef = useMergeRefs([refs?.setFloating, ref]);
+
+  return (
+    <FloatingList elementsRef={elementsRef as any} labelsRef={labelsRef as any}>
+      {open && (
+        <FloatingPortal>
+          <FloatingFocusManager
+            order={order}
+            modal={modal}
+            guards={guards}
+            disabled={disabled}
+            initialFocus={isNested ? -1 : initialFocus}
+            returnFocus={isNested ? false : returnFocus}
+            closeOnFocusOut={closeOnFocusOut}
+            visuallyHiddenDismiss={visuallyHiddenDismiss}
+            context={context as FloatingFocusManagerProps["context"]}
+          >
+            <Component
+              {...props}
+              ref={elementRef}
+              data-open={open}
+              style={{ ...floatingStyles, ...props?.style }}
+              className={styles}
+              {...(getFloatingProps && getFloatingProps())}
+            >
+              {children}
+            </Component>
+          </FloatingFocusManager>
+        </FloatingPortal>
+      )}
+    </FloatingList>
+  );
 }
 
-export const MenuContent = React.forwardRef<HTMLElement, MenuContentProps>(
-  (
-    {
-      as,
-      className,
-      children,
-      disabled,
-      initialFocus,
-      returnFocus,
-      guards,
-      modal,
-      visuallyHiddenDismiss,
-      closeOnFocusOut,
-      order,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.menuContent ?? menuContentTheme;
-    const defaultProps = theme.defaultProps;
-    const {
-      elementsRef,
-      labelsRef,
-      context,
-      refs,
-      getFloatingProps,
-      open,
-      floatingStyles,
-      isNested,
-    } = React.useContext(MenuContext);
+MenuContentRoot.displayName = "MaterialTailwind.MenuContent";
 
-    disabled ??=
-      (defaultProps?.disabled as MenuContentProps["disabled"]) ?? false;
-    initialFocus ??=
-      (defaultProps?.initialFocus as MenuContentProps["initialFocus"]) ?? 0;
-    returnFocus ??=
-      (defaultProps?.returnFocus as MenuContentProps["returnFocus"]) ?? true;
-    guards ??= (defaultProps?.guards as MenuContentProps["guards"]) ?? true;
-    modal ??= (defaultProps?.modal as MenuContentProps["modal"]) ?? false;
-    visuallyHiddenDismiss ??=
-      (defaultProps?.visuallyHiddenDismiss as MenuContentProps["visuallyHiddenDismiss"]) ??
-      true;
-    closeOnFocusOut ??=
-      (defaultProps?.closeOnFocusOut as MenuContentProps["closeOnFocusOut"]) ??
-      true;
-    order ??= (defaultProps?.order as MenuContentProps["order"]) ?? ["content"];
-
-    const styles = twMerge(theme.baseStyle, className);
-    const elementRef = useMergeRefs([refs?.setFloating, ref]);
-
-    return (
-      <FloatingList
-        elementsRef={elementsRef as any}
-        labelsRef={labelsRef as any}
-      >
-        {open && (
-          <FloatingPortal>
-            <FloatingFocusManager
-              order={order}
-              modal={modal}
-              guards={guards}
-              disabled={disabled}
-              initialFocus={isNested ? -1 : initialFocus}
-              returnFocus={isNested ? false : returnFocus}
-              closeOnFocusOut={closeOnFocusOut}
-              visuallyHiddenDismiss={visuallyHiddenDismiss}
-              context={context as FloatingFocusManagerProps["context"]}
-            >
-              <Element
-                {...rest}
-                ref={elementRef}
-                data-open={open}
-                style={{ ...floatingStyles, ...rest?.style }}
-                className={styles}
-                {...(getFloatingProps && getFloatingProps())}
-              >
-                {children}
-              </Element>
-            </FloatingFocusManager>
-          </FloatingPortal>
-        )}
-      </FloatingList>
-    );
-  },
-);
-
-MenuContent.displayName = "MaterialTailwind.MenuContent";
+export const MenuContent = React.forwardRef(MenuContentRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: MenuContentProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // menu item
-export interface MenuItemProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  ripple?: boolean;
-  disabled?: boolean;
-  closeOnClick?: boolean;
-  children: React.ReactNode;
+export type MenuItemProps<T extends React.ElementType = "button"> = BaseProps<
+  T,
+  {
+    ripple?: boolean;
+    disabled?: boolean;
+    closeOnClick?: boolean;
+  }
+>;
+
+function MenuItemRoot<T extends React.ElementType = "button">(
+  {
+    as,
+    className,
+    ripple,
+    disabled,
+    closeOnClick,
+    children,
+    ...props
+  }: MenuItemProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.menuItem ?? menuItemTheme;
+  const defaultProps = theme.defaultProps;
+  const { activeIndex, getItemProps } = React.useContext(MenuContext);
+
+  ripple ??= (defaultProps?.ripple as MenuItemProps["ripple"]) ?? true;
+  closeOnClick ??=
+    (defaultProps?.closeOnClick as MenuItemProps["closeOnClick"]) ?? true;
+
+  const rippleEffect = ripple !== undefined && new Ripple();
+  const item = useListItem({
+    label: disabled ? null : (children as string),
+  });
+  const tree = useFloatingTree();
+  const isActive = item.index === activeIndex;
+
+  const elementRef = useMergeRefs([item.ref, ref]);
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      role="menuitem"
+      aria-disabled={disabled}
+      tabIndex={isActive ? 0 : -1}
+      className={styles}
+      {...(getItemProps &&
+        getItemProps({
+          onClick(event: React.MouseEvent<HTMLButtonElement>) {
+            props.onClick?.(event);
+
+            if (closeOnClick) {
+              tree?.events.emit("click");
+            }
+
+            if (ripple) {
+              rippleEffect.create(event, "dark");
+            }
+          },
+        }))}
+    >
+      {children}
+    </Component>
+  );
 }
 
-export const MenuItem = React.forwardRef<HTMLElement, MenuItemProps>(
-  (
-    { as, className, ripple, disabled, closeOnClick, children, ...rest },
-    ref,
-  ) => {
-    const Element = as || "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.menuItem ?? menuItemTheme;
-    const defaultProps = theme.defaultProps;
-    const { activeIndex, getItemProps } = React.useContext(MenuContext);
+MenuItemRoot.displayName = "MaterialTailwind.MenuItem";
 
-    ripple ??= (defaultProps?.ripple as MenuItemProps["ripple"]) ?? true;
-    closeOnClick ??=
-      (defaultProps?.closeOnClick as MenuItemProps["closeOnClick"]) ?? true;
-
-    const rippleEffect = ripple !== undefined && new Ripple();
-    const item = useListItem({
-      label: disabled ? null : (children as string),
-    });
-    const tree = useFloatingTree();
-    const isActive = item.index === activeIndex;
-
-    const elementRef = useMergeRefs([item.ref, ref]);
-
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        role="menuitem"
-        aria-disabled={disabled}
-        tabIndex={isActive ? 0 : -1}
-        className={styles}
-        {...(getItemProps &&
-          getItemProps({
-            onClick(event: React.MouseEvent<HTMLElement>) {
-              rest.onClick?.(event);
-
-              if (closeOnClick) {
-                tree?.events.emit("click");
-              }
-
-              if (ripple) {
-                rippleEffect.create(event, "dark");
-              }
-            },
-          }))}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
+export const MenuItem = React.forwardRef(MenuItemRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: MenuItemProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Menu = Object.assign(MenuRoot, {
   Trigger: MenuTrigger,

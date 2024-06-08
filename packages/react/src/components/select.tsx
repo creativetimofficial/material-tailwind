@@ -36,7 +36,7 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // @theme
 import {
@@ -47,8 +47,7 @@ import {
 } from "@theme";
 
 // select context
-export interface SelectContextProps
-  extends Omit<BaseComponent<HTMLElement>, "variant" | "selected"> {
+export interface SelectContextProps extends Omit<SharedProps, "variant"> {
   isError?: boolean;
   isSuccess?: boolean;
   isPill?: boolean;
@@ -96,20 +95,20 @@ export const SelectContext = React.createContext<SelectContextProps>({
 } as SelectContextProps);
 
 // select root
-export interface SelectProps {
-  size?: BaseComponent<HTMLElement>["size"];
-  color?: BaseComponent<HTMLElement>["color"];
-  isPill?: boolean;
-  isError?: boolean;
-  isSuccess?: boolean;
-  disabled?: boolean;
-  placement?: Placement;
-  offset?: OffsetOptions;
-  value?: string;
-  name?: string;
-  onChange?: (arg: string) => void;
-  children: React.ReactNode;
-}
+export type SelectProps<T extends React.ElementType = any> = BaseProps<
+  T,
+  {
+    isPill?: boolean;
+    isError?: boolean;
+    isSuccess?: boolean;
+    disabled?: boolean;
+    placement?: Placement;
+    offset?: OffsetOptions;
+    value?: string;
+    name?: string;
+    onValueChange?: (arg: string) => void;
+  } & Omit<SharedProps, "variant">
+>;
 
 /**
  * @remarks
@@ -117,20 +116,23 @@ export interface SelectProps {
  * [Props Definition](https://www.material-tailwind.com/docs/react/select#select-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/select#select-theme)
  */
-export function SelectRoot({
-  size,
-  color,
-  isPill,
-  isError,
-  isSuccess,
-  disabled,
-  placement,
-  offset,
-  value,
-  name,
-  onChange,
-  children,
-}: SelectProps) {
+function SelectRootBase<T extends React.ElementType = any>(
+  {
+    size,
+    color,
+    isPill,
+    isError,
+    isSuccess,
+    disabled,
+    placement,
+    offset,
+    value,
+    name,
+    onValueChange,
+    children,
+  }: SelectProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
   const contextTheme = useTheme();
   const theme = contextTheme?.select ?? selectTheme;
   const defaultProps = theme?.defaultProps;
@@ -183,7 +185,7 @@ export function SelectRoot({
 
     if (index !== null) {
       setSelected(labelsRef.current[index]);
-      onChange?.(labelsRef.current[index]?.value as any);
+      onValueChange?.(labelsRef.current[index]?.value as any);
     }
   }, []);
 
@@ -274,6 +276,7 @@ export function SelectRoot({
       {children}
       <input
         readOnly
+        ref={ref}
         name={name}
         style={{ display: "none" }}
         value={value || selected?.value || ""}
@@ -282,309 +285,342 @@ export function SelectRoot({
   );
 }
 
-SelectRoot.displayName = "MaterialTailwind.Select";
+SelectRootBase.displayName = "MaterialTailwind.Select";
+
+const SelectRoot = React.forwardRef(SelectRootBase) as <
+  T extends React.ElementType = any,
+>(
+  props: SelectProps<T> & { ref?: React.Ref<HTMLInputElement> },
+) => JSX.Element;
 
 // select trigger
-export interface SelectTriggerProps
-  extends Omit<Omit<React.AllHTMLAttributes<HTMLElement>, "as">, "children"> {
-  as?: React.ElementType;
-  indicator: React.ReactNode;
-  placeholder?: string;
-  className?: string;
-  children?: ({
-    value,
-    element,
-  }: {
-    value?: string;
-    element?: React.ReactNode;
-  }) => React.ReactNode;
+export type SelectTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<
+    T,
+    {
+      indicator: React.ReactNode;
+      placeholder?: string;
+      children?: ({
+        value,
+        element,
+      }: {
+        value?: string;
+        element?: React.ReactNode;
+      }) => React.ReactNode;
+    }
+  >;
+
+function SelectTriggerRoot<T extends React.ElementType = "button">(
+  {
+    as,
+    indicator,
+    placeholder,
+    className,
+    children,
+    ...props
+  }: SelectTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
+  const defaultProps = theme?.defaultProps;
+  const {
+    refs,
+    getReferenceProps,
+    selected,
+    isPill,
+    color,
+    size,
+    isOpen,
+    isError,
+    isSuccess,
+    disabled,
+  } = React.useContext(SelectContext);
+
+  const value = selected?.value;
+  const element = selected?.element;
+
+  const elementRef = useMergeRefs([refs?.setReference, ref]);
+
+  indicator ??=
+    (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        color="currentColor"
+        className="h-[1em] w-[1em] translate-x-0.5 stroke-[1.5]"
+      >
+        <path
+          d="M17 8L12 3L7 8"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M17 16L12 21L7 16"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.size[size!],
+    theme.color[color!],
+    isPill && theme.isPill,
+    className,
+  );
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      tabIndex={0}
+      type="button"
+      className={styles}
+      data-open={isOpen}
+      disabled={disabled}
+      data-error={isError}
+      data-success={isSuccess}
+      {...(getReferenceProps && getReferenceProps())}
+    >
+      {children
+        ? children({ value, element })
+        : element ?? (
+            <span data-slot="placeholder" className={theme.placeholder}>
+              {placeholder}
+            </span>
+          )}
+      {indicator}
+    </Component>
+  );
 }
 
-export const SelectTrigger = React.forwardRef<HTMLElement, SelectTriggerProps>(
-  ({ as, indicator, placeholder, className, children, ...rest }, ref) => {
-    const Element = as || "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.selectTrigger ?? selectTriggerTheme;
-    const defaultProps = theme?.defaultProps;
-    const {
-      refs,
-      getReferenceProps,
-      selected,
-      isPill,
-      color,
-      size,
-      isOpen,
-      isError,
-      isSuccess,
-      disabled,
-    } = React.useContext(SelectContext);
+SelectTriggerRoot.displayName = "MaterialTailwind.SelectTrigger";
 
-    const value = selected?.value;
-    const element = selected?.element;
-
-    const elementRef = useMergeRefs([refs?.setReference, ref]);
-
-    indicator ??=
-      (defaultProps?.indicator as SelectTriggerProps["indicator"]) ?? (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          color="currentColor"
-          className="h-[1em] w-[1em] translate-x-0.5 stroke-[1.5]"
-        >
-          <path
-            d="M17 8L12 3L7 8"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M17 16L12 21L7 16"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      );
-
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.size[size!],
-      theme.color[color!],
-      isPill && theme.isPill,
-      className,
-    );
-
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        tabIndex={0}
-        type="button"
-        className={styles}
-        data-open={isOpen}
-        disabled={disabled}
-        data-error={isError}
-        data-success={isSuccess}
-        {...(getReferenceProps && getReferenceProps())}
-      >
-        {children
-          ? children({ value, element })
-          : element ?? (
-              <span data-slot="placeholder" className={theme.placeholder}>
-                {placeholder}
-              </span>
-            )}
-        {indicator}
-      </Element>
-    );
-  },
-);
-
-SelectTrigger.displayName = "MaterialTailwind.SelectTrigger";
+export const SelectTrigger = React.forwardRef(SelectTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: SelectTriggerProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // select list
-type SelectListBaseProps = Omit<React.AllHTMLAttributes<HTMLElement>, "as"> &
-  FloatingFocusManagerProps;
+export type SelectListProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  Omit<FloatingFocusManagerProps, "context" | "children">
+>;
 
-export interface SelectListProps
-  extends Omit<SelectListBaseProps, "context" | "children"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+function SelectListRoot<T extends React.ElementType = "div">(
+  {
+    as,
+    className,
+    children,
+    disabled,
+    initialFocus,
+    returnFocus,
+    guards,
+    modal,
+    visuallyHiddenDismiss,
+    closeOnFocusOut,
+    order,
+    ...props
+  }: SelectListProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.selectList ?? selectListTheme;
+  const defaultProps = theme?.defaultProps;
+  const {
+    context,
+    refs,
+    getFloatingProps,
+    floatingStyles,
+    elementsRef,
+    labelsRef,
+    isOpen,
+    selected,
+    setSelected,
+    controlledValue,
+  } = React.useContext(SelectContext);
 
-export const SelectList = React.forwardRef<HTMLElement, SelectListProps>(
-  (
-    {
-      as,
-      className,
-      children,
-      disabled,
-      initialFocus,
-      returnFocus,
-      guards,
-      modal,
-      visuallyHiddenDismiss,
-      closeOnFocusOut,
-      order,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.selectList ?? selectListTheme;
-    const defaultProps = theme?.defaultProps;
-    const {
-      context,
-      refs,
-      getFloatingProps,
-      floatingStyles,
-      elementsRef,
-      labelsRef,
-      isOpen,
-      selected,
-      setSelected,
-      controlledValue,
-    } = React.useContext(SelectContext);
+  disabled ??= (defaultProps?.disabled as SelectListProps["disabled"]) ?? false;
+  initialFocus ??=
+    (defaultProps?.initialFocus as SelectListProps["initialFocus"]) ?? 0;
+  returnFocus ??=
+    (defaultProps?.returnFocus as SelectListProps["returnFocus"]) ?? true;
+  guards ??= (defaultProps?.guards as SelectListProps["guards"]) ?? true;
+  modal ??= (defaultProps?.modal as SelectListProps["modal"]) ?? true;
+  visuallyHiddenDismiss ??=
+    (defaultProps?.visuallyHiddenDismiss as SelectListProps["visuallyHiddenDismiss"]) ??
+    true;
+  closeOnFocusOut ??=
+    (defaultProps?.closeOnFocusOut as SelectListProps["closeOnFocusOut"]) ??
+    true;
+  order ??= (defaultProps?.order as SelectListProps["order"]) ?? ["content"];
 
-    disabled ??=
-      (defaultProps?.disabled as SelectListProps["disabled"]) ?? false;
-    initialFocus ??=
-      (defaultProps?.initialFocus as SelectListProps["initialFocus"]) ?? 0;
-    returnFocus ??=
-      (defaultProps?.returnFocus as SelectListProps["returnFocus"]) ?? true;
-    guards ??= (defaultProps?.guards as SelectListProps["guards"]) ?? true;
-    modal ??= (defaultProps?.modal as SelectListProps["modal"]) ?? true;
-    visuallyHiddenDismiss ??=
-      (defaultProps?.visuallyHiddenDismiss as SelectListProps["visuallyHiddenDismiss"]) ??
-      true;
-    closeOnFocusOut ??=
-      (defaultProps?.closeOnFocusOut as SelectListProps["closeOnFocusOut"]) ??
-      true;
-    order ??= (defaultProps?.order as SelectListProps["order"]) ?? ["content"];
+  const styles = twMerge(theme.baseStyle, className);
+  const elementRef = useMergeRefs([refs?.setFloating, ref]);
 
-    const styles = twMerge(theme.baseStyle, className);
-    const elementRef = useMergeRefs([refs?.setFloating, ref]);
-
-    React.useEffect(() => {
-      if (controlledValue) {
-        const label = (children as any)?.find(
-          (el: any) => selected?.value === el.props.value,
-        );
-
-        if (label) {
-          setSelected?.({
-            value: label?.props?.value || "",
-            element: label?.props?.children || "",
-          });
-        }
-      }
-    }, []);
-
-    return isOpen ? (
-      <FloatingFocusManager
-        order={order}
-        modal={modal}
-        guards={guards}
-        disabled={disabled}
-        returnFocus={returnFocus}
-        initialFocus={initialFocus}
-        closeOnFocusOut={closeOnFocusOut}
-        visuallyHiddenDismiss={visuallyHiddenDismiss}
-        context={context as FloatingFocusManagerProps["context"]}
-      >
-        <Element
-          {...rest}
-          ref={elementRef}
-          data-open={isOpen}
-          style={{ ...floatingStyles, ...rest?.style }}
-          className={styles}
-          {...(getFloatingProps && getFloatingProps())}
-        >
-          <FloatingList
-            elementsRef={elementsRef as any}
-            labelsRef={labelsRef as any}
-          >
-            {children}
-          </FloatingList>
-        </Element>
-      </FloatingFocusManager>
-    ) : null;
-  },
-);
-
-SelectList.displayName = "MaterialTailwind.SelectList";
-
-// select option
-export interface SelectOptionProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  value?: string;
-  ripple?: boolean;
-  indicator?: React.ReactNode;
-  children: React.ReactNode;
-}
-
-export const SelectOption = React.forwardRef<HTMLElement, SelectOptionProps>(
-  ({ as, className, value, ripple, indicator, children, ...rest }, ref) => {
-    const Element = as || "button";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.selectOption ?? selectOptionTheme;
-    const defaultProps = theme?.defaultProps;
-    const { getItemProps, handleSelect, activeIndex, selectedIndex, selected } =
-      React.useContext(SelectContext);
-
-    ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
-    indicator ??=
-      (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="h-4 w-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 12.75l6 6 9-13.5"
-          />
-        </svg>
+  React.useEffect(() => {
+    if (controlledValue) {
+      const label = (children as any)?.find(
+        (el: any) => selected?.value === el.props.value,
       );
 
-    const { ref: itemRef, index } = useListItem({
-      label: { value, element: children } as any,
-    });
-
-    const rippleEffect = ripple !== undefined && new Ripple();
-
-    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-      const onClick = rest?.onClick;
-
-      if (ripple) {
-        rippleEffect.create(e, "dark");
+      if (label) {
+        setSelected?.({
+          value: label?.props?.value || "",
+          element: label?.props?.children || "",
+        });
       }
+    }
+  }, []);
 
-      handleSelect && handleSelect(index);
-
-      onClick?.(e);
-    };
-
-    const curValue = selected?.value || "";
-    const isActive = activeIndex === index;
-    const isSelected = selectedIndex === index || curValue === value;
-
-    const styles = twMerge(theme.baseStyle, className);
-
-    const elementRef = useMergeRefs([itemRef, ref]);
-
-    return (
-      <Element
-        {...rest}
+  return isOpen ? (
+    <FloatingFocusManager
+      order={order}
+      modal={modal}
+      guards={guards}
+      disabled={disabled}
+      returnFocus={returnFocus}
+      initialFocus={initialFocus}
+      closeOnFocusOut={closeOnFocusOut}
+      visuallyHiddenDismiss={visuallyHiddenDismiss}
+      context={context as FloatingFocusManagerProps["context"]}
+    >
+      <Component
+        {...props}
         ref={elementRef}
-        role="option"
-        data-selected={isActive && isSelected}
-        aria-selected={isActive && isSelected}
-        tabIndex={isActive ? 0 : -1}
+        data-open={isOpen}
+        style={{ ...floatingStyles, ...props?.style }}
         className={styles}
-        {...(getItemProps &&
-          getItemProps({
-            onClick: handleClick,
-          }))}
+        {...(getFloatingProps && getFloatingProps())}
       >
-        {children}
-        {isSelected && indicator}
-      </Element>
-    );
-  },
-);
+        <FloatingList
+          elementsRef={elementsRef as any}
+          labelsRef={labelsRef as any}
+        >
+          {children}
+        </FloatingList>
+      </Component>
+    </FloatingFocusManager>
+  ) : null;
+}
 
-SelectOption.displayName = "MaterialTailwind.SelectOption";
+SelectListRoot.displayName = "MaterialTailwind.SelectList";
+
+export const SelectList = React.forwardRef(SelectListRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: SelectListProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
+
+// select option
+export type SelectOptionProps<T extends React.ElementType = "button"> =
+  BaseProps<
+    T,
+    {
+      value?: string;
+      ripple?: boolean;
+      indicator?: React.ReactNode;
+    }
+  >;
+
+function SelectOptionRoot<T extends React.ElementType = "button">(
+  {
+    as,
+    className,
+    value,
+    ripple,
+    indicator,
+    children,
+    ...props
+  }: SelectOptionProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.selectOption ?? selectOptionTheme;
+  const defaultProps = theme?.defaultProps;
+  const { getItemProps, handleSelect, activeIndex, selectedIndex, selected } =
+    React.useContext(SelectContext);
+
+  ripple ??= (defaultProps?.ripple as SelectOptionProps["ripple"]) ?? true;
+  indicator ??= (defaultProps?.indicator as SelectOptionProps["indicator"]) ?? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-4 w-4"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 12.75l6 6 9-13.5"
+      />
+    </svg>
+  );
+
+  const { ref: itemRef, index } = useListItem({
+    label: { value, element: children } as any,
+  });
+
+  const rippleEffect = ripple !== undefined && new Ripple();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const onClick = props?.onClick;
+
+    if (ripple) {
+      rippleEffect.create(e, "dark");
+    }
+
+    handleSelect && handleSelect(index);
+
+    onClick?.(e);
+  };
+
+  const curValue = selected?.value || "";
+  const isActive = activeIndex === index;
+  const isSelected = selectedIndex === index || curValue === value;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  const elementRef = useMergeRefs([itemRef, ref]);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      role="option"
+      data-selected={isActive && isSelected}
+      aria-selected={isActive && isSelected}
+      tabIndex={isActive ? 0 : -1}
+      className={styles}
+      {...(getItemProps &&
+        getItemProps({
+          onClick: handleClick,
+        }))}
+    >
+      {children}
+      {isSelected && indicator}
+    </Component>
+  );
+}
+
+SelectOptionRoot.displayName = "MaterialTailwind.SelectOption";
+
+export const SelectOption = React.forwardRef(SelectOptionRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: SelectOptionProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export const Select = Object.assign(SelectRoot, {
   Trigger: SelectTrigger,

@@ -12,12 +12,12 @@ import { useTheme } from "@context";
 import { switchTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface SwitchProps extends React.AllHTMLAttributes<HTMLInputElement> {
-  color?: BaseComponent<HTMLInputElement>["color"];
-  className?: string;
-}
+export type SwitchProps<T extends React.ElementType = "input"> = Omit<
+  BaseProps<T, Omit<SharedProps, "size" | "variant">>,
+  "as"
+>;
 
 /**
  * @remarks
@@ -25,35 +25,42 @@ export interface SwitchProps extends React.AllHTMLAttributes<HTMLInputElement> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/switch#switch-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/switch#switch-theme)
  */
-export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ color, className, ...rest }, ref) => {
-    const innerID = React.useId();
-    const contextTheme = useTheme();
-    const theme = contextTheme?.switch ?? switchTheme;
-    const defaultProps = theme?.defaultProps;
+function SwitchRoot<T extends React.ElementType = "input">(
+  { color, className, ...props }: SwitchProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
+  const innerID = React.useId();
+  const contextTheme = useTheme();
+  const theme = contextTheme?.switch ?? switchTheme;
+  const defaultProps = theme?.defaultProps;
 
-    color ??= (defaultProps?.color as SwitchProps["color"]) ?? "primary";
+  color ??= (defaultProps?.color as SwitchProps["color"]) ?? "primary";
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.trackStyle,
-      theme.circleStyle,
-      theme.color[color],
-      className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.trackStyle,
+    theme.circleStyle,
+    theme.color[color],
+    className,
+  );
 
-    return (
-      <input
-        {...rest}
-        ref={ref}
-        type="checkbox"
-        className={styles}
-        id={rest?.id || innerID}
-      />
-    );
-  },
-);
+  return (
+    <input
+      {...props}
+      ref={ref}
+      type="checkbox"
+      className={styles}
+      id={props?.id || innerID}
+    />
+  );
+}
 
-Switch.displayName = "MaterialTailwind.Switch";
+SwitchRoot.displayName = "MaterialTailwind.Switch";
+
+export const Switch = React.forwardRef(SwitchRoot) as <
+  T extends React.ElementType = "input",
+>(
+  props: SwitchProps<T> & { ref?: React.Ref<HTMLInputElement> },
+) => JSX.Element;
 
 export default Switch;

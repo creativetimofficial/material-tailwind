@@ -18,7 +18,11 @@ import {
   tabsTriggerIndicatorTheme,
 } from "@theme";
 
+// @types
+import { BaseProps } from "@types";
+
 export type orientation = "horizontal" | "vertical";
+
 export type rect = {
   clientWidth: number;
   clientHeight: number;
@@ -41,16 +45,15 @@ const TabsContext = React.createContext<TabsContext>({
 } as TabsContext);
 
 // tabs root
-export interface TabsProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  value?: string;
-  defaultValue?: string;
-  orientation?: orientation;
-  className?: string;
-  children: React.ReactNode;
-  onValueChange?: React.Dispatch<React.SetStateAction<string>>;
-}
+export type TabsProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value?: string;
+    defaultValue?: string;
+    orientation?: orientation;
+    onValueChange?: React.Dispatch<React.SetStateAction<string>>;
+  }
+>;
 
 /**
  * @remarks
@@ -58,243 +61,259 @@ export interface TabsProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/tabs#tabs-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/tabs#tabs-theme)
  */
-export const TabsRoot = React.forwardRef<HTMLElement, TabsProps>(
-  (
-    {
-      as,
-      value,
-      defaultValue,
-      onValueChange,
+function TabsRootBase<T extends React.ElementType = "div">(
+  {
+    as,
+    value,
+    defaultValue,
+    onValueChange,
+    orientation,
+    className,
+    children,
+    ...props
+  }: TabsProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.tabs || tabsTheme;
+  const defaultProps = contextTheme.defaultProps;
+
+  orientation ??=
+    (defaultProps?.orientation as TabsProps["orientation"]) ?? "horizontal";
+
+  const tabsValue = value || defaultValue;
+
+  const [indicatorRect, setIndicatorRect] = React.useState<rect>({
+    clientWidth: 0,
+    clientHeight: 0,
+    offsetLeft: 0,
+    offsetTop: 0,
+  });
+
+  const [uncontrolledActiveTab, setUncontrolledActiveTab] =
+    React.useState<string>(() => tabsValue as string);
+
+  const activeTab = value || uncontrolledActiveTab;
+  const setActiveTab = onValueChange || setUncontrolledActiveTab;
+
+  React.useEffect(() => {
+    setActiveTab(tabsValue as string);
+  }, [tabsValue]);
+
+  const contextValue = React.useMemo(
+    () => ({
       orientation,
-      className,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.tabs || tabsTheme;
-    const defaultProps = contextTheme.defaultProps;
+      activeTab,
+      setActiveTab,
+      indicatorRect,
+      setIndicatorRect,
+    }),
+    [orientation, activeTab, setActiveTab, indicatorRect, setIndicatorRect],
+  );
 
-    orientation ??=
-      (defaultProps?.orientation as TabsProps["orientation"]) ?? "horizontal";
+  const styles = twMerge(theme.baseStyle, className);
 
-    const tabsValue = value || defaultValue;
+  return (
+    <TabsContext.Provider value={contextValue}>
+      <Component
+        {...props}
+        ref={ref}
+        className={styles}
+        data-orientation={orientation}
+      >
+        {children}
+      </Component>
+    </TabsContext.Provider>
+  );
+}
 
-    const [indicatorRect, setIndicatorRect] = React.useState<rect>({
-      clientWidth: 0,
-      clientHeight: 0,
-      offsetLeft: 0,
-      offsetTop: 0,
-    });
+TabsRootBase.displayName = "MaterialTailwind.TabsRoot";
 
-    const [uncontrolledActiveTab, setUncontrolledActiveTab] =
-      React.useState<string>(() => tabsValue as string);
-
-    const activeTab = value || uncontrolledActiveTab;
-    const setActiveTab = onValueChange || setUncontrolledActiveTab;
-
-    React.useEffect(() => {
-      setActiveTab(tabsValue as string);
-    }, [tabsValue]);
-
-    const contextValue = React.useMemo(
-      () => ({
-        orientation,
-        activeTab,
-        setActiveTab,
-        indicatorRect,
-        setIndicatorRect,
-      }),
-      [orientation, activeTab, setActiveTab, indicatorRect, setIndicatorRect],
-    );
-
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <TabsContext.Provider value={contextValue}>
-        <Element
-          {...rest}
-          ref={ref}
-          className={styles}
-          data-orientation={orientation}
-        >
-          {children}
-        </Element>
-      </TabsContext.Provider>
-    );
-  },
-);
-
-TabsRoot.displayName = "MaterialTailwind.TabsRoot";
+export const TabsRoot = React.forwardRef(TabsRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: TabsProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // tabs list
-export interface TabsListProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type TabsListProps<T extends React.ElementType = "div"> = BaseProps<T>;
+
+function TabsListRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: TabsListProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.tabsList || tabsListTheme;
+  const { orientation } = React.useContext(TabsContext);
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      role="tablist"
+      className={styles}
+      aria-orientation={orientation}
+      data-orientation={orientation}
+    >
+      {children}
+    </Component>
+  );
 }
 
-export const TabsList = React.forwardRef<HTMLElement, TabsListProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.tabsList || tabsListTheme;
-    const { orientation } = React.useContext(TabsContext);
+TabsListRoot.displayName = "MaterialTailwind.TabsList";
 
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element
-        {...rest}
-        ref={ref}
-        role="tablist"
-        className={styles}
-        aria-orientation={orientation}
-        data-orientation={orientation}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
-
-TabsList.displayName = "MaterialTailwind.TabsList";
+export const TabsList = React.forwardRef(TabsListRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TabsListProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // tabs trigger
-export interface TabsTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  value: string;
-  className?: string;
-  children: React.ReactNode;
+export type TabsTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<
+    T,
+    {
+      value: string;
+    }
+  >;
+
+function TabsTriggerRoot<T extends React.ElementType = "button">(
+  { as, value, className, children, ...props }: TabsTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
+  const innerRef = React.useRef<HTMLElement>(null);
+  const [elementRect, setElementRect] = React.useState<HTMLElement | null>(
+    null,
+  );
+
+  const contextTheme = useTheme();
+  const theme = contextTheme.tabsTrigger || tabsTriggerTheme;
+  const { activeTab, setActiveTab, setIndicatorRect } =
+    React.useContext(TabsContext);
+
+  const isActive = activeTab === value;
+  const styles = twMerge(theme.baseStyle, className);
+  const elementRef = useMergeRefs([innerRef, ref]);
+
+  React.useEffect(() => {
+    const element = innerRef.current;
+
+    if (element) {
+      setElementRect(element);
+    }
+  }, []);
+
+  const handleIndicatorRect = React.useCallback(() => {
+    if (isActive && elementRect) {
+      setIndicatorRect?.({
+        clientWidth: elementRect.clientWidth,
+        clientHeight: elementRect.clientHeight,
+        offsetLeft: elementRect.offsetLeft,
+        offsetTop: elementRect.offsetTop,
+      });
+    }
+  }, [
+    isActive,
+    elementRect?.clientWidth,
+    elementRect?.clientHeight,
+    elementRect?.offsetLeft,
+    elementRect?.offsetTop,
+  ]);
+
+  React.useEffect(() => {
+    handleIndicatorRect();
+  }, [handleIndicatorRect]);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleIndicatorRect);
+
+    return () => {
+      window.removeEventListener("resize", handleIndicatorRect);
+    };
+  }, [handleIndicatorRect]);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      role="tab"
+      className={styles}
+      data-active={isActive}
+      aria-selected={isActive}
+      onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+        props.onClick?.(event);
+        setActiveTab?.(value);
+      }}
+    >
+      {children}
+    </Component>
+  );
 }
 
-export const TabsTrigger = React.forwardRef<HTMLElement, TabsTriggerProps>(
-  ({ as, value, className, children, ...rest }, ref) => {
-    const Element = as || "button";
-    const innerRef = React.useRef<HTMLElement>(null);
-    const [elementRect, setElementRect] = React.useState<HTMLElement | null>(
-      null,
-    );
+TabsTriggerRoot.displayName = "MaterialTailwind.TabsTrigger";
 
-    const contextTheme = useTheme();
-    const theme = contextTheme.tabsTrigger || tabsTriggerTheme;
-    const { activeTab, setActiveTab, setIndicatorRect } =
-      React.useContext(TabsContext);
-
-    const isActive = activeTab === value;
-    const styles = twMerge(theme.baseStyle, className);
-    const elementRef = useMergeRefs([innerRef, ref]);
-
-    React.useEffect(() => {
-      const element = innerRef.current;
-
-      if (element) {
-        setElementRect(element);
-      }
-    }, []);
-
-    const handleIndicatorRect = React.useCallback(() => {
-      if (isActive && elementRect) {
-        setIndicatorRect?.({
-          clientWidth: elementRect.clientWidth,
-          clientHeight: elementRect.clientHeight,
-          offsetLeft: elementRect.offsetLeft,
-          offsetTop: elementRect.offsetTop,
-        });
-      }
-    }, [
-      isActive,
-      elementRect?.clientWidth,
-      elementRect?.clientHeight,
-      elementRect?.offsetLeft,
-      elementRect?.offsetTop,
-    ]);
-
-    React.useEffect(() => {
-      handleIndicatorRect();
-    }, [handleIndicatorRect]);
-
-    React.useEffect(() => {
-      window.addEventListener("resize", handleIndicatorRect);
-
-      return () => {
-        window.removeEventListener("resize", handleIndicatorRect);
-      };
-    }, [handleIndicatorRect]);
-
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        role="tab"
-        className={styles}
-        data-active={isActive}
-        aria-selected={isActive}
-        onClick={(event: React.MouseEvent<HTMLElement>) => {
-          rest.onClick?.(event);
-          setActiveTab?.(value);
-        }}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
-
-TabsTrigger.displayName = "MaterialTailwind.TabsTrigger";
+export const TabsTrigger = React.forwardRef(TabsTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: TabsTriggerProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // tabs panel
-export interface TabsPanelProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  value: string;
-  className?: string;
-  children: React.ReactNode;
+export type TabsPanelProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value: string;
+  }
+>;
+
+function TabsPanelRoot<T extends React.ElementType = "div">(
+  { as, value, className, children, ...props }: TabsPanelProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme.tabsPanel || tabsPanelTheme;
+  const { activeTab, orientation } = React.useContext(TabsContext);
+
+  const isActive = activeTab === value;
+  const styles = twMerge(theme.baseStyle, className);
+
+  return isActive ? (
+    <Component
+      {...props}
+      ref={ref}
+      role="tabpanel"
+      className={styles}
+      data-active={isActive}
+      data-orientation={orientation}
+    >
+      {children}
+    </Component>
+  ) : null;
 }
 
-export const TabsPanel = React.forwardRef<HTMLElement, TabsPanelProps>(
-  ({ as, value, className, children, ...rest }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme.tabsPanel || tabsPanelTheme;
-    const { activeTab, orientation } = React.useContext(TabsContext);
+TabsPanelRoot.displayName = "MaterialTailwind.TabsPanel";
 
-    const isActive = activeTab === value;
-    const styles = twMerge(theme.baseStyle, className);
-
-    return isActive ? (
-      <Element
-        {...rest}
-        ref={ref}
-        role="tabpanel"
-        className={styles}
-        data-active={isActive}
-        data-orientation={orientation}
-      >
-        {children}
-      </Element>
-    ) : null;
-  },
-);
-
-TabsPanel.displayName = "MaterialTailwind.TabsPanel";
+export const TabsPanel = React.forwardRef(TabsPanelRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TabsPanelProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // tabs trigger indicator
-export interface TabsTriggerIndicatorProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-}
+export type TabsTriggerIndicatorProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
 
-export const TabsTriggerIndicator = React.forwardRef<
-  HTMLElement,
-  TabsTriggerIndicatorProps
->(({ as, className, ...rest }, ref) => {
-  const Element = as || "span";
+function TabsTriggerIndicatorRoot<T extends React.ElementType = "span">(
+  { as, className, ...props }: TabsTriggerIndicatorProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || "span";
   const contextTheme = useTheme();
   const theme = contextTheme.tabsTriggerIndicator || tabsTriggerIndicatorTheme;
   const { indicatorRect } = React.useContext(TabsContext);
@@ -302,11 +321,11 @@ export const TabsTriggerIndicator = React.forwardRef<
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element
-      {...rest}
+    <Component
+      {...props}
       ref={ref}
       style={{
-        ...rest?.style,
+        ...props?.style,
         width: indicatorRect?.clientWidth,
         height: indicatorRect?.clientHeight,
         left: indicatorRect?.offsetLeft,
@@ -317,9 +336,15 @@ export const TabsTriggerIndicator = React.forwardRef<
       className={styles}
     />
   );
-});
+}
 
-TabsTriggerIndicator.displayName = "MaterialTailwind.TabsTriggerIndicator";
+TabsTriggerIndicatorRoot.displayName = "MaterialTailwind.TabsTriggerIndicator";
+
+export const TabsTriggerIndicator = React.forwardRef(
+  TabsTriggerIndicatorRoot,
+) as <T extends React.ElementType = "span">(
+  props: TabsTriggerIndicatorProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Tabs = Object.assign(TabsRoot, {
   List: TabsList,

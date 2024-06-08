@@ -33,6 +33,7 @@ import type {
   UseFloatingReturn,
   FloatingFocusManagerProps,
 } from "@floating-ui/react";
+import type { BaseProps } from "@types";
 
 // @theme
 import {
@@ -143,18 +144,14 @@ export function PopoverRoot({
 PopoverRoot.displayName = "MaterialTailwind.Popover";
 
 // popover trigger
-export interface PopoverTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type PopoverTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<T>;
 
-export const PopoverTrigger = React.forwardRef<
-  HTMLElement,
-  PopoverTriggerProps
->(({ as, className, children, ...rest }, ref) => {
-  const Element = as || "button";
+function PopoverTriggerRoot<T extends React.ElementType = "button">(
+  { as, className, children, ...props }: PopoverTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("button" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.popoverTrigger ?? popoverTriggerTheme;
   const { refs, getReferenceProps, open } = React.useContext(PopoverContext);
@@ -163,160 +160,163 @@ export const PopoverTrigger = React.forwardRef<
   const elementRef = useMergeRefs([refs?.setReference, ref]);
 
   return (
-    <Element
-      {...rest}
+    <Component
+      {...props}
       ref={elementRef}
       data-open={open}
       className={styles}
       {...(getReferenceProps && getReferenceProps())}
     >
       {children}
-    </Element>
+    </Component>
   );
-});
+}
 
-PopoverTrigger.displayName = "MaterialTailwind.PopoverTrigger";
+PopoverTriggerRoot.displayName = "MaterialTailwind.PopoverTrigger";
+
+export const PopoverTrigger = React.forwardRef(PopoverTriggerRoot) as <
+  T extends React.ElementType = "button",
+>(
+  props: PopoverTriggerProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // popover content
-type PopoverContentBaseProps = Omit<
-  React.AllHTMLAttributes<HTMLElement>,
-  "as"
-> &
-  FloatingFocusManagerProps;
+export type PopoverContentProps<T extends React.ElementType = "div"> =
+  BaseProps<T, Omit<FloatingFocusManagerProps, "context" | "children">>;
 
-export interface PopoverContentProps
-  extends Omit<PopoverContentBaseProps, "context" | "children"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+function PopoverContentRoot<T extends React.ElementType = "div">(
+  {
+    as,
+    className,
+    children,
+    disabled,
+    initialFocus,
+    returnFocus,
+    guards,
+    modal,
+    visuallyHiddenDismiss,
+    closeOnFocusOut,
+    order,
+    ...props
+  }: PopoverContentProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.popoverContent ?? popoverContentTheme;
+  const defaultProps = theme.defaultProps;
+  const { context, refs, getFloatingProps, open, floatingStyles } =
+    React.useContext(PopoverContext);
+
+  disabled ??=
+    (defaultProps?.disabled as PopoverContentProps["disabled"]) ?? false;
+  initialFocus ??=
+    (defaultProps?.initialFocus as PopoverContentProps["initialFocus"]) ?? 0;
+  returnFocus ??=
+    (defaultProps?.returnFocus as PopoverContentProps["returnFocus"]) ?? true;
+  guards ??= (defaultProps?.guards as PopoverContentProps["guards"]) ?? true;
+  modal ??= (defaultProps?.modal as PopoverContentProps["modal"]) ?? false;
+  visuallyHiddenDismiss ??=
+    (defaultProps?.visuallyHiddenDismiss as PopoverContentProps["visuallyHiddenDismiss"]) ??
+    true;
+  closeOnFocusOut ??=
+    (defaultProps?.closeOnFocusOut as PopoverContentProps["closeOnFocusOut"]) ??
+    true;
+  order ??= (defaultProps?.order as PopoverContentProps["order"]) ?? [
+    "content",
+  ];
+
+  const styles = twMerge(theme.baseStyle, className);
+  const elementRef = useMergeRefs([refs?.setFloating, ref]);
+
+  return open ? (
+    <FloatingPortal>
+      <FloatingFocusManager
+        order={order}
+        modal={modal}
+        guards={guards}
+        disabled={disabled}
+        returnFocus={returnFocus}
+        initialFocus={initialFocus}
+        closeOnFocusOut={closeOnFocusOut}
+        visuallyHiddenDismiss={visuallyHiddenDismiss}
+        context={context as FloatingFocusManagerProps["context"]}
+      >
+        <Component
+          {...props}
+          ref={elementRef}
+          data-open={open}
+          style={{ ...floatingStyles, ...props?.style }}
+          className={styles}
+          {...(getFloatingProps && getFloatingProps())}
+        >
+          {children}
+        </Component>
+      </FloatingFocusManager>
+    </FloatingPortal>
+  ) : null;
 }
 
-export const PopoverContent = React.forwardRef<
-  HTMLElement,
-  PopoverContentProps
+PopoverContentRoot.displayName = "MaterialTailwind.PopoverContent";
+
+export const PopoverContent = React.forwardRef(PopoverContentRoot) as <
+  T extends React.ElementType = "div",
 >(
-  (
-    {
-      as,
-      className,
-      children,
-      disabled,
-      initialFocus,
-      returnFocus,
-      guards,
-      modal,
-      visuallyHiddenDismiss,
-      closeOnFocusOut,
-      order,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.popoverContent ?? popoverContentTheme;
-    const defaultProps = theme.defaultProps;
-    const { context, refs, getFloatingProps, open, floatingStyles } =
-      React.useContext(PopoverContext);
-
-    disabled ??=
-      (defaultProps?.disabled as PopoverContentProps["disabled"]) ?? false;
-    initialFocus ??=
-      (defaultProps?.initialFocus as PopoverContentProps["initialFocus"]) ?? 0;
-    returnFocus ??=
-      (defaultProps?.returnFocus as PopoverContentProps["returnFocus"]) ?? true;
-    guards ??= (defaultProps?.guards as PopoverContentProps["guards"]) ?? true;
-    modal ??= (defaultProps?.modal as PopoverContentProps["modal"]) ?? false;
-    visuallyHiddenDismiss ??=
-      (defaultProps?.visuallyHiddenDismiss as PopoverContentProps["visuallyHiddenDismiss"]) ??
-      true;
-    closeOnFocusOut ??=
-      (defaultProps?.closeOnFocusOut as PopoverContentProps["closeOnFocusOut"]) ??
-      true;
-    order ??= (defaultProps?.order as PopoverContentProps["order"]) ?? [
-      "content",
-    ];
-
-    const styles = twMerge(theme.baseStyle, className);
-    const elementRef = useMergeRefs([refs?.setFloating, ref]);
-
-    return open ? (
-      <FloatingPortal>
-        <FloatingFocusManager
-          order={order}
-          modal={modal}
-          guards={guards}
-          disabled={disabled}
-          returnFocus={returnFocus}
-          initialFocus={initialFocus}
-          closeOnFocusOut={closeOnFocusOut}
-          visuallyHiddenDismiss={visuallyHiddenDismiss}
-          context={context as FloatingFocusManagerProps["context"]}
-        >
-          <Element
-            {...rest}
-            ref={elementRef}
-            data-open={open}
-            style={{ ...floatingStyles, ...rest?.style }}
-            className={styles}
-            {...(getFloatingProps && getFloatingProps())}
-          >
-            {children}
-          </Element>
-        </FloatingFocusManager>
-      </FloatingPortal>
-    ) : null;
-  },
-);
-
-PopoverContent.displayName = "MaterialTailwind.PopoverContent";
+  props: PopoverContentProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // popover arrow
-export interface PopoverArrowProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
+export type PopoverArrowProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
+
+function PopoverArrowRoot<T extends React.ElementType = "span">(
+  { as, className, ...props }: PopoverArrowProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.popoverArrow ?? popoverArrowTheme;
+  const innerRef = React.useRef<React.ComponentRef<"span">>(null);
+  const { placement, arrowRef, middlewareData } =
+    React.useContext(PopoverContext);
+
+  const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
+
+  const staticSide: any = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right",
+  }[placement ? placement.split("-")[0] : ""];
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component
+      {...props}
+      ref={elementRef}
+      style={{
+        position: "absolute",
+        left: middlewareData?.arrow?.x,
+        top: middlewareData?.arrow?.y,
+        [staticSide]: `${
+          -(innerRef?.current?.clientHeight as number) / 2 - 1
+        }px`,
+        ...props?.style,
+      }}
+      data-placement={placement}
+      className={styles}
+    />
+  );
 }
 
-export const PopoverArrow = React.forwardRef<HTMLElement, PopoverArrowProps>(
-  ({ as, className, ...rest }, ref) => {
-    const Element = as || "span";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.popoverArrow ?? popoverArrowTheme;
-    const innerRef = React.useRef<React.ComponentRef<"span">>(null);
-    const { placement, arrowRef, middlewareData } =
-      React.useContext(PopoverContext);
+PopoverArrowRoot.displayName = "MaterialTailwind.PopoverArrow";
 
-    const elementRef = useMergeRefs([arrowRef, innerRef, ref]);
-
-    const staticSide: any = {
-      top: "bottom",
-      right: "left",
-      bottom: "top",
-      left: "right",
-    }[placement ? placement.split("-")[0] : ""];
-
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element
-        {...rest}
-        ref={elementRef}
-        style={{
-          position: "absolute",
-          left: middlewareData?.arrow?.x,
-          top: middlewareData?.arrow?.y,
-          [staticSide]: `${
-            -(innerRef?.current?.clientHeight as number) / 2 - 1
-          }px`,
-          ...rest?.style,
-        }}
-        data-placement={placement}
-        className={styles}
-      />
-    );
-  },
-);
+export const PopoverArrow = React.forwardRef(PopoverArrowRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: PopoverArrowProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Popover = Object.assign(PopoverRoot, {
   Trigger: PopoverTrigger,

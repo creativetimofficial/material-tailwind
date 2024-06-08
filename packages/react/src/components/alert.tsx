@@ -17,13 +17,12 @@ import {
 } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // alert context
-export interface AlertContextProps
-  extends Omit<BaseComponent<HTMLElement>, "size"> {
-  isPill?: boolean;
+export interface AlertContextProps extends Omit<SharedProps, "size"> {
   open?: boolean;
+  isPill?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -36,14 +35,14 @@ export const AlertContext = React.createContext<AlertContextProps>({
 });
 
 // alert root
-export interface AlertProps extends Omit<BaseComponent<HTMLElement>, "size"> {
-  as?: React.ElementType;
-  className?: string;
-  isPill?: boolean;
-  children: React.ReactNode;
-  open?: boolean;
-  onOpenChange?: () => void;
-}
+export type AlertProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    open?: boolean;
+    isPill?: boolean;
+    onOpenChange?: () => void;
+  } & Omit<SharedProps, "size">
+>;
 
 /**
  * @remarks
@@ -51,149 +50,158 @@ export interface AlertProps extends Omit<BaseComponent<HTMLElement>, "size"> {
  * [Props Definition](https://www.material-tailwind.com/docs/react/alert#alert-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/alert#alert-theme)
  */
-const AlertRoot = React.forwardRef<HTMLElement, AlertProps>(
-  (
-    {
-      as,
+function AlertRootBase<T extends React.ElementType = "div">(
+  {
+    as,
+    color,
+    variant,
+    isPill,
+    className,
+    open: controlledOpen,
+    onOpenChange: setControlledOpen,
+    children,
+    ...props
+  }: AlertProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.alert ?? alertTheme;
+  const defaultProps = theme?.defaultProps;
+  const [uncontrolledOpen, setUncontrolledOpen] = React.useState(true);
+
+  const open = controlledOpen ?? uncontrolledOpen;
+  const setOpen = setControlledOpen ?? setUncontrolledOpen;
+
+  color ??= (defaultProps?.color as AlertProps["color"]) ?? "primary";
+  variant ??= (defaultProps?.variant as AlertProps["variant"]) ?? "solid";
+  isPill ??= (defaultProps?.isPill as AlertProps["isPill"]) ?? false;
+
+  const styles = twMerge(
+    theme.baseStyle,
+    theme["variant"][variant][color],
+    className,
+  );
+
+  const contextValue = React.useMemo(
+    () => ({
       color,
       variant,
       isPill,
-      className,
-      open: controlledOpen,
-      onOpenChange: setControlledOpen,
-      children,
-      ...rest
-    },
-    ref,
-  ) => {
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.alert ?? alertTheme;
-    const defaultProps = theme?.defaultProps;
-    const [uncontrolledOpen, setUncontrolledOpen] = React.useState(true);
+      open,
+      setOpen,
+    }),
+    [color, variant, isPill, open, setOpen],
+  );
 
-    const open = controlledOpen ?? uncontrolledOpen;
-    const setOpen = setControlledOpen ?? setUncontrolledOpen;
+  return open ? (
+    <Component
+      {...props}
+      ref={ref}
+      role="alert"
+      data-open={open}
+      data-pill={isPill}
+      className={styles}
+    >
+      <AlertContext.Provider value={contextValue}>
+        {children}
+      </AlertContext.Provider>
+    </Component>
+  ) : null;
+}
 
-    color ??= (defaultProps?.color as AlertProps["color"]) ?? "primary";
-    variant ??= (defaultProps?.variant as AlertProps["variant"]) ?? "solid";
-    isPill ??= (defaultProps?.isPill as AlertProps["isPill"]) ?? false;
+AlertRootBase.displayName = "MaterialTailwind.Alert";
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["variant"][variant][color],
-      className,
-    );
-
-    const contextValue = React.useMemo(
-      () => ({
-        color,
-        variant,
-        isPill,
-        open,
-        setOpen,
-      }),
-      [color, variant, isPill, open, setOpen],
-    );
-
-    return open ? (
-      <Element
-        {...rest}
-        ref={ref}
-        role="alert"
-        data-open={open}
-        data-pill={isPill}
-        className={styles}
-      >
-        <AlertContext.Provider value={contextValue}>
-          {children}
-        </AlertContext.Provider>
-      </Element>
-    ) : null;
-  },
-);
-
-AlertRoot.displayName = "MaterialTailwind.Alert";
+const AlertRoot = React.forwardRef(AlertRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: AlertProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // alert content
-export interface AlertContentProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type AlertContentProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
+
+function AlertContentRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: AlertContentProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.alertContent ?? alertContentTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
 }
 
-export const AlertContent = React.forwardRef<HTMLElement, AlertContentProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.alertContent ?? alertContentTheme;
+AlertContentRoot.displayName = "MaterialTailwind.AlertContent";
 
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
-
-AlertContent.displayName = "MaterialTailwind.AlertContent";
+export const AlertContent = React.forwardRef(AlertContentRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: AlertContentProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // alert icon
-export interface AlertIconProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type AlertIconProps<T extends React.ElementType = "span"> = BaseProps<T>;
+
+function AlertIconRoot<T extends React.ElementType = "span">(
+  { as, className, children, ...props }: AlertIconProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("span" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.alertIcon ?? alertIconTheme;
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
 }
 
-export const AlertIcon = React.forwardRef<HTMLElement, AlertIconProps>(
-  ({ as, className, children, ...rest }, ref) => {
-    const Element = as ?? "span";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.alertIcon ?? alertIconTheme;
+AlertIconRoot.displayName = "MaterialTailwind.AlertIcon";
 
-    const styles = twMerge(theme.baseStyle, className);
-
-    return (
-      <Element {...rest} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
-
-AlertIcon.displayName = "MaterialTailwind.AlertIcon";
+export const AlertIcon = React.forwardRef(AlertIconRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: AlertIconProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // alert close trigger
-export interface AlertDismissTriggerProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  ripple?: boolean;
-  className?: string;
-  children?: React.ReactNode;
-}
+export type AlertDismissTriggerProps<T extends React.ElementType = "button"> =
+  BaseProps<
+    T,
+    {
+      ripple?: boolean;
+    }
+  >;
 
-export const AlertDismissTrigger = React.forwardRef<
-  HTMLElement,
-  AlertDismissTriggerProps
->(({ as, ripple, className, children, ...rest }, ref) => {
-  const Element = as ?? "button";
+function AlertDismissTriggerRoot<T extends React.ElementType = "button">(
+  { as, ripple, className, children, ...props }: AlertDismissTriggerProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("button" as any);
   const contextTheme = useTheme();
   const { setOpen } = React.useContext(AlertContext);
   const theme = contextTheme?.alertDismissTrigger ?? alertDismissTriggerTheme;
 
   const styles = children ? className : twMerge(theme.baseStyle, className);
 
-  function closeAlert(event: React.MouseEvent<HTMLElement>) {
+  function closeAlert(event: React.MouseEvent<HTMLButtonElement>) {
     setOpen?.(false);
-    rest.onClick?.(event);
+    props.onClick?.(event);
   }
 
   return (
-    <Element {...rest} ref={ref} className={styles} onClick={closeAlert}>
+    <Component {...props} ref={ref} className={styles} onClick={closeAlert}>
       {children || (
         <svg
           viewBox="0 0 24 24"
@@ -210,11 +218,17 @@ export const AlertDismissTrigger = React.forwardRef<
           />
         </svg>
       )}
-    </Element>
+    </Component>
   );
-});
+}
 
-AlertDismissTrigger.displayName = "MaterialTailwind.AlertDismissTrigger";
+AlertDismissTriggerRoot.displayName = "MaterialTailwind.AlertDismissTrigger";
+
+export const AlertDismissTrigger = React.forwardRef(
+  AlertDismissTriggerRoot,
+) as <T extends React.ElementType = "button">(
+  props: AlertDismissTriggerProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Alert = Object.assign(AlertRoot, {
   Icon: AlertIcon,

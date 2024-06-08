@@ -20,7 +20,7 @@ import {
 } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 type Orientation = "horizontal" | "vertical";
 type Mode = "stepper" | "timeline";
@@ -29,7 +29,7 @@ type Mode = "stepper" | "timeline";
 export interface TimelineContextProps {
   value?: string;
   setValue?: (e: string) => void;
-  color?: BaseComponent<HTMLElement>["color"];
+  color?: SharedProps["color"];
   orientation?: Orientation;
   mode?: Mode;
   parentRef?: React.RefObject<HTMLElement>;
@@ -44,263 +44,269 @@ export const TimelineContext = React.createContext<TimelineContextProps>({
 });
 
 // timeline root
-export interface TimelineProps
-  extends Omit<
-    React.AllHTMLAttributes<HTMLElement>,
-    "as" | "onChange" | "children"
-  > {
-  as?: React.ElementType;
-  value?: string;
-  defaultValue?: string;
-  onChange?: (e: string) => void;
-  color: BaseComponent<HTMLElement>["color"];
-  orientation?: Orientation;
-  mode?: Mode;
-  className?: string;
-  children: React.ReactNode;
-}
+export type TimelineProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value?: string;
+    defaultValue?: string;
+    onValueChange?: (e: string) => void;
+    color: SharedProps["color"];
+    orientation?: Orientation;
+    mode?: Mode;
+  }
+>;
 
-export const TimelineRoot = React.forwardRef<HTMLElement, TimelineProps>(
-  (
-    {
-      as,
-      value,
-      defaultValue,
-      onChange,
-      color,
-      mode,
-      orientation,
-      className,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.timeline ?? timelineTheme;
-    const defaultProps = theme?.defaultProps;
-    const innerRef = React.useRef<HTMLDivElement | HTMLElement>(null);
-    const [innerValue, setInnerValue] = React.useState(defaultValue || "");
+function TimelineRootBase<T extends React.ElementType = "div">(
+  {
+    as,
+    value,
+    defaultValue,
+    onValueChange,
+    color,
+    mode,
+    orientation,
+    className,
+    children,
+    ...props
+  }: TimelineProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.timeline ?? timelineTheme;
+  const defaultProps = theme?.defaultProps;
+  const innerRef = React.useRef<HTMLDivElement | HTMLElement>(null);
+  const [innerValue, setInnerValue] = React.useState(defaultValue || "");
 
-    value ??= innerValue;
-    onChange ??= setInnerValue;
-    mode ??= (defaultProps?.mode as TimelineProps["mode"]) ?? "timeline";
-    color ??= (defaultProps?.color as TimelineProps["color"]) ?? "primary";
-    orientation ??=
-      (defaultProps?.orientation as TimelineProps["orientation"]) ??
-      "horizontal";
+  value ??= innerValue;
+  onValueChange ??= setInnerValue;
+  mode ??= (defaultProps?.mode as TimelineProps["mode"]) ?? "timeline";
+  color ??= (defaultProps?.color as TimelineProps["color"]) ?? "primary";
+  orientation ??=
+    (defaultProps?.orientation as TimelineProps["orientation"]) ?? "horizontal";
 
-    React.useEffect(() => {
+  React.useEffect(() => {
+    const parentEl = innerRef?.current;
+
+    if (parentEl && !value) {
+      const children = Array.from(parentEl.children);
+      const firstChild = children[0] as HTMLElement;
+
+      onValueChange?.(firstChild.dataset.value!);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (mode === "stepper") {
       const parentEl = innerRef?.current;
 
-      if (parentEl && !value) {
+      if (parentEl) {
         const children = Array.from(parentEl.children);
-        const firstChild = children[0] as HTMLElement;
 
-        onChange?.(firstChild.dataset.value!);
-      }
-    }, []);
+        const currentEl = children.find(
+          (child: any) => child.dataset.value == value,
+        ) as HTMLElement;
 
-    React.useEffect(() => {
-      if (mode === "stepper") {
-        const parentEl = innerRef?.current;
+        const currentElIndex = children.findIndex(
+          (child: any) => child.dataset.value == value,
+        );
 
-        if (parentEl) {
-          const children = Array.from(parentEl.children);
+        const activeElIndex = children.findIndex(
+          (child: any) => child.dataset.active === "true",
+        );
 
-          const currentEl = children.find(
-            (child: any) => child.dataset.value == value,
-          ) as HTMLElement;
+        const completedSteps = children.filter(
+          (_, index) => index < activeElIndex,
+        );
 
-          const currentElIndex = children.findIndex(
-            (child: any) => child.dataset.value == value,
-          );
+        const incompletedSteps = children.filter(
+          (_, index) => index > activeElIndex,
+        );
 
-          const activeElIndex = children.findIndex(
-            (child: any) => child.dataset.active === "true",
-          );
+        completedSteps.forEach((step: any) => {
+          step.dataset.completed = "true";
+        });
 
-          const completedSteps = children.filter(
-            (_, index) => index < activeElIndex,
-          );
+        incompletedSteps.forEach((step: any) => {
+          step.dataset.completed = "false";
+        });
 
-          const incompletedSteps = children.filter(
-            (_, index) => index > activeElIndex,
-          );
-
-          completedSteps.forEach((step: any) => {
-            step.dataset.completed = "true";
-          });
-
-          incompletedSteps.forEach((step: any) => {
-            step.dataset.completed = "false";
-          });
-
-          if (currentElIndex === activeElIndex && currentEl) {
-            currentEl.dataset.completed = "false";
-          }
+        if (currentElIndex === activeElIndex && currentEl) {
+          currentEl.dataset.completed = "false";
         }
       }
-    }, [value]);
+    }
+  }, [value]);
 
-    const contextValue = React.useMemo(
-      () => ({
-        value,
-        setValue: onChange,
-        orientation,
-        color,
-        mode,
-        parentRef: innerRef,
-      }),
-      [value, onChange, orientation, color, mode],
-    );
+  const contextValue = React.useMemo(
+    () => ({
+      value,
+      setValue: onValueChange,
+      orientation,
+      color,
+      mode,
+      parentRef: innerRef,
+    }),
+    [value, onValueChange, orientation, color, mode],
+  );
 
-    const styles = twMerge(theme.baseStyle, className);
-    const mergedRef = useMergeRefs([ref, innerRef]);
+  const styles = twMerge(theme.baseStyle, className);
+  const mergedRef = useMergeRefs([ref, innerRef]);
 
-    return (
-      <Element
-        {...props}
-        ref={mergedRef}
-        className={styles}
-        data-orientation={orientation}
-      >
-        <TimelineContext.Provider value={contextValue}>
-          {children}
-        </TimelineContext.Provider>
-      </Element>
-    );
-  },
-);
+  return (
+    <Component
+      {...props}
+      ref={mergedRef}
+      className={styles}
+      data-orientation={orientation}
+    >
+      <TimelineContext.Provider value={contextValue}>
+        {children}
+      </TimelineContext.Provider>
+    </Component>
+  );
+}
 
-TimelineRoot.displayName = "MaterialTailwind.Timeline";
+TimelineRootBase.displayName = "MaterialTailwind.Timeline";
+
+export const TimelineRoot = React.forwardRef(TimelineRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: TimelineProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // timeline item
-interface TimelineItemProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  value?: string;
-  className?: string;
-  disabled?: boolean;
-  children: React.ReactNode;
+export type TimelineItemProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value?: string;
+    disabled?: boolean;
+  }
+>;
+
+function TimelineItemRoot<T extends React.ElementType = "div">(
+  { as, value, className, disabled, children, ...props }: TimelineItemProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.timelineItem ?? timelineItemTheme;
+  const {
+    mode,
+    setValue,
+    orientation,
+    value: contextValue,
+  } = React.useContext(TimelineContext);
+  const innerRef = React.useRef<HTMLElement>(null);
+
+  value ??= React.useId();
+
+  const isActive = contextValue == value || mode === "timeline";
+
+  function onClick(event: React.MouseEvent<HTMLDivElement>) {
+    props?.onClick?.(event);
+
+    if (mode === "stepper") {
+      setValue?.(value!);
+    }
+  }
+
+  const styles = twMerge(theme.baseStyle, className);
+  const mergedRef = useMergeRefs([ref, innerRef]);
+
+  return (
+    <Component
+      {...props}
+      ref={mergedRef}
+      onClick={onClick}
+      data-value={value}
+      data-active={isActive}
+      data-completed={isActive}
+      data-orientation={orientation}
+      aria-disabled={disabled}
+      className={styles}
+    >
+      {children}
+    </Component>
+  );
 }
 
-export const TimelineItem = React.forwardRef<HTMLElement, TimelineItemProps>(
-  ({ as, value, className, disabled, children, ...props }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.timelineItem ?? timelineItemTheme;
-    const {
-      mode,
-      setValue,
-      orientation,
-      value: contextValue,
-    } = React.useContext(TimelineContext);
-    const innerRef = React.useRef<HTMLElement>(null);
+TimelineItemRoot.displayName = "MaterialTailwind.TimelineItem";
 
-    value ??= React.useId();
-
-    const isActive = contextValue == value || mode === "timeline";
-
-    function onClick(event: React.MouseEvent<HTMLElement>) {
-      props?.onClick?.(event);
-
-      if (mode === "stepper") {
-        setValue?.(value!);
-      }
-    }
-
-    const styles = twMerge(theme.baseStyle, className);
-    const mergedRef = useMergeRefs([ref, innerRef]);
-
-    return (
-      <Element
-        {...props}
-        ref={mergedRef}
-        onClick={onClick}
-        data-value={value}
-        data-active={isActive}
-        data-completed={isActive}
-        data-orientation={orientation}
-        aria-disabled={disabled}
-        className={styles}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
-
-TimelineItem.displayName = "MaterialTailwind.TimelineItem";
+export const TimelineItem = React.forwardRef(TimelineItemRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TimelineItemProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // timeline header
-export interface TimelineHeaderProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type TimelineHeaderProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
 
-export const TimelineHeader = React.forwardRef<
-  HTMLElement,
-  TimelineHeaderProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "div";
+function TimelineHeaderRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: TimelineHeaderProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.timelineHeader ?? timelineHeaderTheme;
 
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element {...props} ref={ref} className={styles}>
+    <Component {...props} ref={ref} className={styles}>
       {children}
-    </Element>
+    </Component>
   );
-});
+}
 
-TimelineHeader.displayName = "MaterialTailwind.TimelineHeader";
+TimelineHeaderRoot.displayName = "MaterialTailwind.TimelineHeader";
+
+export const TimelineHeader = React.forwardRef(TimelineHeaderRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TimelineHeaderProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // timeline icon
-export interface TimelineIconProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
+export type TimelineIconProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
+
+function TimelineIconRoot<T extends React.ElementType = "span">(
+  { as, className, children, ...props }: TimelineIconProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.timelineIcon ?? timelineIconTheme;
+  const { color } = React.useContext(TimelineContext);
+
+  const styles = twMerge(theme.baseStyle, theme.color[color!], className);
+
+  return (
+    <Component {...props} ref={ref} className={styles}>
+      {children}
+    </Component>
+  );
 }
 
-export const TimelineIcon = React.forwardRef<HTMLElement, TimelineIconProps>(
-  ({ as, className, children, ...props }, ref) => {
-    const Element = as || "span";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.timelineIcon ?? timelineIconTheme;
-    const { color } = React.useContext(TimelineContext);
+TimelineIconRoot.displayName = "MaterialTailwind.TimelineIcon";
 
-    const styles = twMerge(theme.baseStyle, theme.color[color!], className);
-
-    return (
-      <Element {...props} ref={ref} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
-
-TimelineIcon.displayName = "MaterialTailwind.TimelineIcon";
+export const TimelineIcon = React.forwardRef(TimelineIconRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: TimelineIconProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 // timeline separator
-export interface TimelineSeparatorProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}
+export type TimelineSeparatorProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
 
-export const TimelineSeparator = React.forwardRef<
-  HTMLElement,
-  TimelineSeparatorProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "div";
+function TimelineSeparatorRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: TimelineSeparatorProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.timelineSeparator ?? timelineSeparatorTheme;
   const { orientation, color } = React.useContext(TimelineContext);
@@ -308,50 +314,59 @@ export const TimelineSeparator = React.forwardRef<
   const styles = twMerge(theme.baseStyle, theme.color[color!], className);
 
   return (
-    <Element
+    <Component
       {...props}
       ref={ref}
       data-orientation={orientation}
       className={styles}
     >
       {children}
-    </Element>
+    </Component>
   );
-});
-
-TimelineSeparator.displayName = "MaterialTailwind.TimelineSeparator";
-
-// timeline body
-export interface TimelineBodyProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
 }
 
-export const TimelineBody = React.forwardRef<HTMLElement, TimelineBodyProps>(
-  ({ as, className, children, ...props }, ref) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.timelineBody ?? timelineBodyTheme;
-    const { orientation } = React.useContext(TimelineContext);
+TimelineSeparatorRoot.displayName = "MaterialTailwind.TimelineSeparator";
 
-    const styles = twMerge(theme.baseStyle, className);
+export const TimelineSeparator = React.forwardRef(TimelineSeparatorRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TimelineSeparatorProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
-    return (
-      <Element
-        {...props}
-        ref={ref}
-        className={styles}
-        data-orientation={orientation}
-      >
-        {children}
-      </Element>
-    );
-  },
-);
+// timeline body
+export type TimelineBodyProps<T extends React.ElementType = "div"> =
+  BaseProps<T>;
 
-TimelineBody.displayName = "MaterialTailwind.TimelineBody";
+function TimelineBodyRoot<T extends React.ElementType = "div">(
+  { as, className, children, ...props }: TimelineBodyProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.timelineBody ?? timelineBodyTheme;
+  const { orientation } = React.useContext(TimelineContext);
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      data-orientation={orientation}
+    >
+      {children}
+    </Component>
+  );
+}
+
+TimelineBodyRoot.displayName = "MaterialTailwind.TimelineBody";
+
+export const TimelineBody = React.forwardRef(TimelineBodyRoot) as <
+  T extends React.ElementType = "div",
+>(
+  props: TimelineBodyProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Timeline = Object.assign(TimelineRoot, {
   Item: TimelineItem,

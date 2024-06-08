@@ -12,13 +12,13 @@ import { useTheme } from "@context";
 import { checkboxTheme, checkboxIndicatorTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // checkbox context
 export interface CheckboxContextProps {
   disabled?: boolean;
   checked?: boolean;
-  color?: BaseComponent<HTMLInputElement>["color"];
+  color?: SharedProps["color"];
 }
 
 export const CheckboxContext = React.createContext<CheckboxContextProps>({
@@ -28,13 +28,12 @@ export const CheckboxContext = React.createContext<CheckboxContextProps>({
 });
 
 // checkbox root
-export interface CheckboxProps
-  extends React.AllHTMLAttributes<HTMLInputElement> {
-  color?: BaseComponent<HTMLInputElement>["color"];
-  disabled?: boolean;
-  className?: string;
-  children: React.ReactNode;
-}
+export type CheckboxProps<T extends React.ElementType = "input"> = BaseProps<
+  T,
+  {
+    disabled?: boolean;
+  } & Omit<SharedProps, "variant" | "size">
+>;
 
 /**
  * @remarks
@@ -42,78 +41,79 @@ export interface CheckboxProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/checkbox#checkbox-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/checkbox#checkbox-theme)
  */
-export const CheckboxRoot = React.forwardRef<HTMLLabelElement, CheckboxProps>(
-  ({ color, disabled, className, children, ...props }, ref) => {
-    const contextTheme = useTheme();
-    const theme = contextTheme?.checkbox ?? checkboxTheme;
-    const defaultProps = theme?.defaultProps;
+function CheckboxRootBase<T extends React.ElementType = "input">(
+  { color, disabled, className, children, ...props }: CheckboxProps,
+  ref: React.Ref<HTMLLabelElement>,
+) {
+  const contextTheme = useTheme();
+  const theme = contextTheme?.checkbox ?? checkboxTheme;
+  const defaultProps = theme?.defaultProps;
 
-    const innerId = React.useId();
-    const [checked, setChecked] = React.useState(props?.checked || false);
+  const innerId = React.useId();
+  const [checked, setChecked] = React.useState(props?.checked || false);
 
-    color ??= (defaultProps?.color as CheckboxProps["color"]) ?? "primary";
+  color ??= (defaultProps?.color as CheckboxProps["color"]) ?? "primary";
 
-    const styles = twMerge(theme.baseStyle, theme.color[color], className);
+  const styles = twMerge(theme.baseStyle, theme.color[color], className);
 
-    React.useEffect(() => {
-      if (props?.defaultChecked) {
-        setChecked(props?.defaultChecked);
-      }
-    }, []);
+  React.useEffect(() => {
+    if (props?.defaultChecked) {
+      setChecked(props?.defaultChecked);
+    }
+  }, []);
 
-    const contextValue = React.useMemo(
-      () => ({
-        color,
-        checked,
-        disabled,
-      }),
-      [color, checked, disabled],
-    );
+  const contextValue = React.useMemo(
+    () => ({
+      color,
+      checked,
+      disabled,
+    }),
+    [color, checked, disabled],
+  );
 
-    return (
-      <label
-        ref={ref}
-        className={styles}
-        data-checked={checked}
-        aria-disabled={disabled}
-        htmlFor={props?.id || innerId}
-      >
-        <input
-          {...props}
-          id={props?.id || innerId}
-          type="checkbox"
-          checked={
-            props?.defaultChecked ? undefined : props?.checked || checked
-          }
-          onChange={(e) => {
-            props?.onChange?.(e);
-            setChecked((cur) => !cur);
-          }}
-          style={{ display: "none" }}
-        />
-        <CheckboxContext.Provider value={contextValue}>
-          {children}
-        </CheckboxContext.Provider>
-      </label>
-    );
-  },
-);
-
-CheckboxRoot.displayName = "MaterialTailwind.Checkbox";
-
-// checkbox indicator
-export interface CheckboxIndicatorProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children?: React.ReactNode;
+  return (
+    <label
+      ref={ref}
+      className={styles}
+      data-checked={checked}
+      aria-disabled={disabled}
+      htmlFor={props?.id || innerId}
+    >
+      <input
+        {...props}
+        id={props?.id || innerId}
+        type="checkbox"
+        checked={props?.defaultChecked ? undefined : props?.checked || checked}
+        onChange={(e) => {
+          props?.onChange?.(e);
+          setChecked((cur) => !cur);
+        }}
+        style={{ display: "none" }}
+      />
+      <CheckboxContext.Provider value={contextValue}>
+        {children}
+      </CheckboxContext.Provider>
+    </label>
+  );
 }
 
-export const CheckboxIndicator = React.forwardRef<
-  HTMLElement,
-  CheckboxIndicatorProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "span";
+CheckboxRootBase.displayName = "MaterialTailwind.Checkbox";
+
+export const CheckboxRoot = React.forwardRef(CheckboxRootBase) as <
+  T extends React.ElementType = "input",
+>(
+  props: CheckboxProps<T> & { ref?: React.Ref<HTMLLabelElement> },
+) => JSX.Element;
+
+// checkbox indicator
+export type CheckboxIndicatorProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
+
+function CheckboxIndicatorRoot<T extends React.ElementType = "span">(
+  { as, className, children, ...props }: CheckboxIndicatorProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
   const contextTheme = useTheme();
   const { checked } = React.useContext(CheckboxContext);
   const theme = contextTheme?.checkboxIndicator ?? checkboxIndicatorTheme;
@@ -121,7 +121,7 @@ export const CheckboxIndicator = React.forwardRef<
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element {...props} data-checked={checked} className={styles} ref={ref}>
+    <Component {...props} data-checked={checked} className={styles} ref={ref}>
       {children || (
         <svg
           fill="none"
@@ -141,11 +141,17 @@ export const CheckboxIndicator = React.forwardRef<
           />
         </svg>
       )}
-    </Element>
+    </Component>
   );
-});
+}
 
-CheckboxIndicator.displayName = "MaterialTailwind.CheckboxIndicator";
+CheckboxIndicatorRoot.displayName = "MaterialTailwind.CheckboxIndicator";
+
+export const CheckboxIndicator = React.forwardRef(CheckboxIndicatorRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: CheckboxIndicatorProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export const Checkbox = Object.assign(CheckboxRoot, {
   Indicator: CheckboxIndicator,

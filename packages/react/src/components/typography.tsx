@@ -12,16 +12,15 @@ import { useTheme } from "@context";
 import { typographyTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
-export interface TypographyProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "lead" | "p" | "small";
-  color?: BaseComponent<HTMLElement>["color"] | "inherit" | "default";
-  className?: string;
-  children: React.ReactNode;
-}
+export type TypographyProps<T extends React.ElementType = any> = BaseProps<
+  T,
+  {
+    type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "lead" | "p" | "small";
+    color?: SharedProps["color"] | "inherit" | "default";
+  }
+>;
 
 const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
@@ -38,37 +37,44 @@ const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
  * @prop className: `string`
  * @prop children: `ReactNode`
  */
-export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ as, color, type, className, children, ...rest }, ref) => {
-    const Element = as ? as : type === "lead" ? "p" : type || "p";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.typography ?? typographyTheme;
-    const defaultProps = theme?.defaultProps;
+function TypographyRoot<T extends React.ElementType = any>(
+  { as, color, type, className, children, ...props }: TypographyProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ? as : type === "lead" ? "p" : type || "p";
+  const contextTheme = useTheme();
+  const theme = contextTheme?.typography ?? typographyTheme;
+  const defaultProps = theme?.defaultProps;
 
-    if (headings.includes(type!) && color === "inherit") {
-      color = "default";
-    } else {
-      color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
-    }
-
+  if (headings.includes(type!) && color === "inherit") {
+    color = "default";
+  } else {
     color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
-    type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
+  }
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme["type"][type],
-      theme["color"][color!],
-      className,
-    );
+  color ??= (defaultProps?.color as TypographyProps["color"]) ?? "inherit";
+  type ??= (defaultProps?.type as TypographyProps["type"]) ?? "p";
 
-    return (
-      <Element {...rest} ref={ref as any} className={styles}>
-        {children}
-      </Element>
-    );
-  },
-);
+  const styles = twMerge(
+    theme.baseStyle,
+    theme["type"][type],
+    theme["color"][color!],
+    className,
+  );
 
-Typography.displayName = "MaterialTailwind.Typography";
+  return (
+    <Component {...props} ref={ref as any} className={styles}>
+      {children}
+    </Component>
+  );
+}
+
+TypographyRoot.displayName = "MaterialTailwind.Typography";
+
+export const Typography = React.forwardRef(TypographyRoot) as <
+  T extends React.ElementType = any,
+>(
+  props: TypographyProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export default Typography;

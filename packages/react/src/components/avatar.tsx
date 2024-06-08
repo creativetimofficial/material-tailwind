@@ -11,15 +11,16 @@ import { useTheme } from "@context";
 // @theme
 import { avatarTheme } from "@theme";
 
-export interface AvatarProps
-  extends Omit<React.AllHTMLAttributes<HTMLImageElement>, "as" | "size"> {
-  as?: React.ElementType;
-  src: string;
-  alt?: string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-  shape?: "circular" | "rounded" | "square";
-  className?: string;
-}
+// @types
+import type { BaseProps, SharedProps } from "@types";
+
+export type AvatarProps<T extends React.ElementType = "img"> = BaseProps<
+  T,
+  {
+    shape?: "circular" | "rounded" | "square";
+    size?: "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+  }
+>;
 
 /**
  * @remarks
@@ -27,31 +28,38 @@ export interface AvatarProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/avatar#avatar-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/avatar#avatar-theme)
  */
-export const Avatar = React.forwardRef<HTMLImageElement, AvatarProps>(
-  ({ as, src, alt, shape, size, className, ...rest }, ref) => {
-    const Element = as ?? "img";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.avatar ?? avatarTheme;
-    const defaultProps = theme?.defaultProps;
+function AvatarRoot<T extends React.ElementType = "img">(
+  { as, src, alt, shape, size, className, ...props }: AvatarProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("img" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.avatar ?? avatarTheme;
+  const defaultProps = theme?.defaultProps;
 
-    size ??= (defaultProps?.size as AvatarProps["size"]) ?? "md";
-    shape ??= (defaultProps?.shape as AvatarProps["shape"]) ?? "circular";
+  size ??= (defaultProps?.size as AvatarProps["size"]) ?? "md";
+  shape ??= (defaultProps?.shape as AvatarProps["shape"]) ?? "circular";
 
-    const styles = twMerge(theme.baseStyle, theme["size"][size], className);
+  const styles = twMerge(theme.baseStyle, theme["size"][size], className);
 
-    return (
-      <Element
-        {...rest}
-        ref={ref}
-        src={src}
-        alt={alt}
-        className={styles}
-        data-shape={shape}
-      />
-    );
-  },
-);
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      src={src}
+      alt={alt}
+      className={styles}
+      data-shape={shape}
+    />
+  );
+}
 
-Avatar.displayName = "MaterialTailwind.Avatar";
+AvatarRoot.displayName = "MaterialTailwind.Avatar";
+
+export const Avatar = React.forwardRef(AvatarRoot) as <
+  T extends React.ElementType = "img",
+>(
+  props: AvatarProps<T> & { ref: React.Ref<Element> },
+) => JSX.Element;
 
 export default Avatar;

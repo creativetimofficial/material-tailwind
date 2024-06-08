@@ -12,12 +12,12 @@ import { useTheme } from "@context";
 import { radioTheme, radioItemTheme, radioIndicatorTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // radio context
 export interface RadioContextProps {
   globalValue?: string;
-  color?: BaseComponent<HTMLElement>["color"];
+  color?: SharedProps["color"];
   setGlobalValue?: (e: string) => void;
 }
 
@@ -28,17 +28,16 @@ export const RadioContext = React.createContext<RadioContextProps>({
 });
 
 // radio root
-export interface RadioProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as" | "onChange"> {
-  as?: React.ElementType;
-  value?: string;
-  defaultValue?: string;
-  onChange?: (e: string) => void;
-  color?: BaseComponent<HTMLElement>["color"];
-  orientation?: "horizontal" | "vertical";
-  className?: string;
-  children: React.ReactNode;
-}
+export type RadioProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    value?: string;
+    defaultValue?: string;
+    color?: SharedProps["color"];
+    onValueChange?: (e: string) => void;
+    orientation?: "horizontal" | "vertical";
+  }
+>;
 
 /**
  * @remarks
@@ -46,133 +45,138 @@ export interface RadioProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/radio#radio-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/radio#radio-theme)
  */
-export const RadioRoot = React.forwardRef<HTMLElement, RadioProps>(
-  (
-    {
-      as,
-      value,
-      defaultValue,
-      onChange,
+function RadioRootBase<T extends React.ElementType = "div">(
+  {
+    as,
+    value,
+    defaultValue,
+    onValueChange,
+    color,
+    orientation,
+    className,
+    children,
+    ...props
+  }: RadioProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.radio ?? radioTheme;
+  const defaultProps = theme?.defaultProps;
+
+  const [innerValue, setInnerValue] = React.useState(defaultValue || "");
+
+  value ??= innerValue;
+  onValueChange ??= setInnerValue;
+  color ??= (defaultProps?.color as RadioProps["color"]) ?? "primary";
+  orientation ??=
+    (defaultProps?.orientation as RadioProps["orientation"]) ?? "vertical";
+
+  const styles = twMerge(theme.baseStyle, className);
+
+  const contextValue = React.useMemo(
+    () => ({
       color,
-      orientation,
-      className,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
-    const Element = as || "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.radio ?? radioTheme;
-    const defaultProps = theme?.defaultProps;
+      globalValue: value,
+      setGlobalValue: onValueChange,
+    }),
+    [color, value, onValueChange],
+  );
 
-    const [innerValue, setInnerValue] = React.useState(defaultValue || "");
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      data-value={value}
+      data-orientation={orientation}
+    >
+      <RadioContext.Provider value={contextValue}>
+        {children}
+      </RadioContext.Provider>
+    </Component>
+  );
+}
 
-    value ??= innerValue;
-    onChange ??= setInnerValue;
-    color ??= (defaultProps?.color as RadioProps["color"]) ?? "primary";
-    orientation ??=
-      (defaultProps?.orientation as RadioProps["orientation"]) ?? "vertical";
+RadioRootBase.displayName = "MaterialTailwind.Radio";
 
-    const styles = twMerge(theme.baseStyle, className);
-
-    const contextValue = React.useMemo(
-      () => ({
-        color,
-        globalValue: value,
-        setGlobalValue: onChange,
-      }),
-      [color, value, onChange],
-    );
-
-    return (
-      <Element
-        {...props}
-        ref={ref}
-        className={styles}
-        data-value={value}
-        data-orientation={orientation}
-      >
-        <RadioContext.Provider value={contextValue}>
-          {children}
-        </RadioContext.Provider>
-      </Element>
-    );
-  },
-);
-
-RadioRoot.displayName = "MaterialTailwind.Radio";
+export const RadioRoot = React.forwardRef(RadioRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: RadioProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 // radio item
-export interface RadioItemProps
-  extends React.AllHTMLAttributes<HTMLInputElement> {
-  disabled?: boolean;
-  className?: string;
-  value?: string;
-  children: React.ReactNode;
+export type RadioItemProps<T extends React.ElementType = "input"> = Omit<
+  BaseProps<T>,
+  "as"
+>;
+
+function RadioItemRoot<T extends React.ElementType = "input">(
+  { disabled, className, children, value, ...props }: RadioItemProps,
+  ref: React.Ref<HTMLLabelElement>,
+) {
+  const contextTheme = useTheme();
+  const theme = contextTheme?.radioItem ?? radioItemTheme;
+  const { globalValue, setGlobalValue, color } = React.useContext(RadioContext);
+
+  const innerId = React.useId();
+  const innerValue = React.useId();
+  const mainValue = value || innerValue;
+  const isChecked = globalValue === mainValue;
+
+  const styles = twMerge(theme.baseStyle, theme.color[color!], className);
+
+  return (
+    <label
+      ref={ref}
+      className={styles}
+      data-value={mainValue}
+      data-checked={isChecked}
+      aria-disabled={disabled}
+      htmlFor={props?.id || innerId}
+    >
+      <input
+        {...props}
+        id={props?.id || innerId}
+        type="radio"
+        checked={isChecked}
+        value={mainValue}
+        onChange={(e) => {
+          props?.onChange?.(e);
+          setGlobalValue?.(mainValue);
+        }}
+        style={{ display: "none" }}
+      />
+      {children}
+    </label>
+  );
 }
 
-export const RadioItem = React.forwardRef<HTMLLabelElement, RadioItemProps>(
-  ({ disabled, className, children, value, ...props }, ref) => {
-    const contextTheme = useTheme();
-    const theme = contextTheme?.radioItem ?? radioItemTheme;
-    const { globalValue, setGlobalValue, color } =
-      React.useContext(RadioContext);
+RadioItemRoot.displayName = "MaterialTailwind.RadioItem";
 
-    const innerId = React.useId();
-    const innerValue = React.useId();
-    const mainValue = value || innerValue;
-    const isChecked = globalValue === mainValue;
-
-    const styles = twMerge(theme.baseStyle, theme.color[color!], className);
-
-    return (
-      <label
-        ref={ref}
-        className={styles}
-        data-value={mainValue}
-        data-checked={isChecked}
-        aria-disabled={disabled}
-        htmlFor={props?.id || innerId}
-      >
-        <input
-          {...props}
-          id={props?.id || innerId}
-          type="radio"
-          checked={isChecked}
-          value={mainValue}
-          onChange={(e) => {
-            props?.onChange?.(e);
-            setGlobalValue?.(mainValue);
-          }}
-          style={{ display: "none" }}
-        />
-        {children}
-      </label>
-    );
-  },
-);
+export const RadioItem = React.forwardRef(RadioItemRoot) as <
+  T extends React.ElementType = "input",
+>(
+  props: RadioItemProps<T> & { ref?: React.Ref<HTMLLabelElement> },
+) => JSX.Element;
 
 // radio indicator
-export interface RadioIndicatorProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  className?: string;
-  children?: React.ReactNode;
-}
+export type RadioIndicatorProps<T extends React.ElementType = "span"> =
+  BaseProps<T>;
 
-export const RadioIndicator = React.forwardRef<
-  HTMLElement,
-  RadioIndicatorProps
->(({ as, className, children, ...props }, ref) => {
-  const Element = as || "span";
+function RadioIndicatorRoot<T extends React.ElementType = "span">(
+  { as, className, children, ...props }: RadioIndicatorProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as || ("span" as any);
   const contextTheme = useTheme();
   const theme = contextTheme?.radioIndicator ?? radioIndicatorTheme;
 
   const styles = twMerge(theme.baseStyle, className);
 
   return (
-    <Element {...props} className={styles} ref={ref}>
+    <Component {...props} className={styles} ref={ref}>
       {children || (
         <svg
           width="9px"
@@ -189,11 +193,17 @@ export const RadioIndicator = React.forwardRef<
           />
         </svg>
       )}
-    </Element>
+    </Component>
   );
-});
+}
 
-RadioIndicator.displayName = "MaterialTailwind.RadioIndicator";
+RadioIndicatorRoot.displayName = "MaterialTailwind.RadioIndicator";
+
+export const RadioIndicator = React.forwardRef(RadioIndicatorRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: RadioIndicatorProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export const Radio = Object.assign(RadioRoot, {
   Item: RadioItem,

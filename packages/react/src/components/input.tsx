@@ -12,11 +12,10 @@ import { useTheme } from "@context";
 import { inputTheme, inputFieldTheme, inputIconTheme } from "@theme";
 
 // @types
-import type { BaseComponent } from "@types";
+import type { BaseProps, SharedProps } from "@types";
 
 // input context
-export interface InputContextProps
-  extends Omit<BaseComponent<HTMLElement>, "variant"> {
+export interface InputContextProps extends Omit<SharedProps, "variant"> {
   iconPlacement?: "start" | "end" | string;
   isIconDefined?: boolean;
   isError?: boolean;
@@ -39,18 +38,15 @@ export const InputContext = React.createContext<InputContextProps>({
 });
 
 // input root
-export interface InputProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as" | "size"> {
-  as?: React.ElementType;
-  size?: BaseComponent<HTMLElement>["size"];
-  color?: BaseComponent<HTMLElement>["color"];
-  isPill?: boolean;
-  isError?: boolean;
-  isSuccess?: boolean;
-  disabled?: boolean;
-  className?: string;
-  children: React.ReactNode;
-}
+export type InputProps<T extends React.ElementType = "div"> = BaseProps<
+  T,
+  {
+    isPill?: boolean;
+    isError?: boolean;
+    isSuccess?: boolean;
+    disabled?: boolean;
+  } & Omit<SharedProps, "variant">
+>;
 
 /**
  * @remarks
@@ -58,208 +54,215 @@ export interface InputProps
  * [Props Definition](https://www.material-tailwind.com/docs/react/input#input-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/input#input-theme)
  */
-export const InputRoot = React.forwardRef<HTMLElement, InputProps>(
-  (
-    {
-      as,
-      color,
+function InputRootBase<T extends React.ElementType = "div">(
+  {
+    as,
+    color,
+    size,
+    isPill,
+    isError,
+    isSuccess,
+    disabled,
+    className,
+    children,
+    ...props
+  }: InputProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("div" as any);
+  const contextTheme = useTheme();
+  const theme = contextTheme?.input ?? inputTheme;
+  const defaultProps = theme?.defaultProps;
+  const [isIconDefined, setIsIconDefined] = React.useState(false);
+  const [iconPlacement, setIconPlacement] = React.useState("start");
+
+  size ??= (defaultProps?.size as InputProps["size"]) ?? "md";
+  color ??= (defaultProps?.color as InputProps["color"]) ?? "primary";
+  isPill ??= (defaultProps?.isPill as InputProps["isPill"]) ?? false;
+  isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
+  isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
+
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.size[size],
+    isPill && theme["isPill"],
+    className,
+  );
+
+  const contextValue = React.useMemo(
+    () => ({
       size,
-      isPill,
+      color,
       isError,
       isSuccess,
-      disabled,
-      className,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
-    const Element = as ?? "div";
-    const contextTheme = useTheme();
-    const theme = contextTheme?.input ?? inputTheme;
-    const defaultProps = theme?.defaultProps;
-    const [isIconDefined, setIsIconDefined] = React.useState(false);
-    const [iconPlacement, setIconPlacement] = React.useState("start");
-
-    size ??= (defaultProps?.size as InputProps["size"]) ?? "md";
-    color ??= (defaultProps?.color as InputProps["color"]) ?? "primary";
-    isPill ??= (defaultProps?.isPill as InputProps["isPill"]) ?? false;
-    isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
-    isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
-
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.size[size],
-      isPill && theme["isPill"],
-      className,
-    );
-
-    const contextValue = React.useMemo(
-      () => ({
-        size,
-        color,
-        isError,
-        isSuccess,
-        iconPlacement,
-        isIconDefined,
-        disabled,
-        setIconPlacement,
-        setIsIconDefined,
-      }),
-      [
-        size,
-        color,
-        isError,
-        isSuccess,
-        iconPlacement,
-        isIconDefined,
-        disabled,
-        setIconPlacement,
-        setIsIconDefined,
-      ],
-    );
-
-    return (
-      <Element {...props} ref={ref} className={styles} aria-disabled={disabled}>
-        <InputContext.Provider value={contextValue}>
-          {children}
-        </InputContext.Provider>
-      </Element>
-    );
-  },
-);
-
-InputRoot.displayName = "MaterialTailwind.Input";
-
-// input field
-export interface InputFieldProps
-  extends React.AllHTMLAttributes<HTMLInputElement> {
-  type?:
-    | "text"
-    | "email"
-    | "password"
-    | "search"
-    | "number"
-    | "tel"
-    | "url"
-    | "hidden";
-}
-
-export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
-  ({ type = "text", ...rest }, ref) => {
-    const contextTheme = useTheme();
-    const {
-      size,
-      color,
       iconPlacement,
       isIconDefined,
-      isError,
-      isSuccess,
       disabled,
-    } = React.useContext(InputContext);
-    const theme = contextTheme?.inputField ?? inputFieldTheme;
-
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.size[size!],
-      theme.color[color!],
-      rest?.className,
-      "peer",
-    );
-
-    const inputType = [
-      "text",
-      "email",
-      "password",
-      "search",
-      "number",
-      "tel",
-      "url",
-      "hidden",
-    ].includes(type)
-      ? type
-      : "text";
-
-    return (
-      <input
-        {...rest}
-        ref={ref}
-        type={inputType}
-        className={styles}
-        disabled={disabled}
-        data-error={isError}
-        data-success={isSuccess}
-        data-icon-placement={isIconDefined ? iconPlacement : ""}
-      />
-    );
-  },
-);
-
-InputField.displayName = "MaterialTailwind.InputField";
-
-// input icon
-export interface InputIconProps
-  extends Omit<React.AllHTMLAttributes<HTMLElement>, "as"> {
-  as?: React.ElementType;
-  placement?: "start" | "end";
-}
-
-export const InputIcon = React.forwardRef<HTMLElement, InputIconProps>(
-  ({ as, placement, ...props }, ref) => {
-    const Element = as ?? "span";
-    const contextTheme = useTheme();
-    const {
-      size,
-      iconPlacement,
       setIconPlacement,
       setIsIconDefined,
+    }),
+    [
+      size,
+      color,
       isError,
       isSuccess,
+      iconPlacement,
+      isIconDefined,
       disabled,
-    } = React.useContext(InputContext);
-    const theme = contextTheme?.inputIcon ?? inputIconTheme;
-    const defaultProps = theme?.defaultProps;
+      setIconPlacement,
+      setIsIconDefined,
+    ],
+  );
 
-    placement ??=
-      (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
+  return (
+    <Component {...props} ref={ref} className={styles} aria-disabled={disabled}>
+      <InputContext.Provider value={contextValue}>
+        {children}
+      </InputContext.Provider>
+    </Component>
+  );
+}
 
-    React.useEffect(() => {
-      setIsIconDefined(true);
+InputRootBase.displayName = "MaterialTailwind.Input";
 
-      return () => {
-        setIsIconDefined(false);
-      };
-    }, []);
+export const InputRoot = React.forwardRef(InputRootBase) as <
+  T extends React.ElementType = "div",
+>(
+  props: InputProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
-    React.useEffect(() => {
-      setIconPlacement(placement as string);
+// input field
+export type InputFieldProps<T extends React.ElementType = "input"> = Omit<
+  BaseProps<T>,
+  "as"
+>;
 
-      return () => {
-        setIconPlacement("start");
-      };
-    }, [placement]);
+function InputFieldRoot<T extends React.ElementType = "input">(
+  { type = "text", ...props }: InputFieldProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
+  const contextTheme = useTheme();
+  const {
+    size,
+    color,
+    iconPlacement,
+    isIconDefined,
+    isError,
+    isSuccess,
+    disabled,
+  } = React.useContext(InputContext);
+  const theme = contextTheme?.inputField ?? inputFieldTheme;
 
-    const styles = twMerge(
-      theme.baseStyle,
-      theme.size[size!],
-      props?.className,
-    );
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.size[size!],
+    theme.color[color!],
+    props?.className,
+    "peer",
+  );
 
-    return (
-      <Element
-        {...props}
-        ref={ref}
-        className={styles}
-        data-error={isError}
-        data-success={isSuccess}
-        aria-disabled={disabled}
-        data-placement={iconPlacement}
-      />
-    );
-  },
-);
+  const inputType = [
+    "text",
+    "email",
+    "password",
+    "search",
+    "number",
+    "tel",
+    "url",
+    "hidden",
+  ].includes(type)
+    ? type
+    : "text";
 
-InputIcon.displayName = "MaterialTailwind.InputIcon";
+  return (
+    <input
+      {...props}
+      ref={ref}
+      type={inputType}
+      className={styles}
+      disabled={disabled}
+      data-error={isError}
+      data-success={isSuccess}
+      data-icon-placement={isIconDefined ? iconPlacement : ""}
+    />
+  );
+}
+
+InputFieldRoot.displayName = "MaterialTailwind.InputField";
+
+export const InputField = React.forwardRef(InputFieldRoot) as <
+  T extends React.ElementType = "input",
+>(
+  props: InputFieldProps<T> & { ref?: React.Ref<HTMLInputElement> },
+) => JSX.Element;
+
+// input icon
+export type InputIconProps<T extends React.ElementType = "span"> = BaseProps<
+  T,
+  {
+    placement?: "start" | "end";
+  }
+>;
+
+function InputIconRoot<T extends React.ElementType = "span">(
+  { as, placement, ...props }: InputIconProps,
+  ref: React.Ref<Element>,
+) {
+  const Component = as ?? ("span" as any);
+  const contextTheme = useTheme();
+  const {
+    size,
+    iconPlacement,
+    setIconPlacement,
+    setIsIconDefined,
+    isError,
+    isSuccess,
+    disabled,
+  } = React.useContext(InputContext);
+  const theme = contextTheme?.inputIcon ?? inputIconTheme;
+  const defaultProps = theme?.defaultProps;
+
+  placement ??=
+    (defaultProps?.placement as InputIconProps["placement"]) ?? "start";
+
+  React.useEffect(() => {
+    setIsIconDefined(true);
+
+    return () => {
+      setIsIconDefined(false);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    setIconPlacement(placement as string);
+
+    return () => {
+      setIconPlacement("start");
+    };
+  }, [placement]);
+
+  const styles = twMerge(theme.baseStyle, theme.size[size!], props?.className);
+
+  return (
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      data-error={isError}
+      data-success={isSuccess}
+      aria-disabled={disabled}
+      data-placement={iconPlacement}
+    />
+  );
+}
+
+InputIconRoot.displayName = "MaterialTailwind.InputIcon";
+
+export const InputIcon = React.forwardRef(InputIconRoot) as <
+  T extends React.ElementType = "span",
+>(
+  props: InputIconProps<T> & { ref?: React.Ref<Element> },
+) => JSX.Element;
 
 export const Input = Object.assign(InputRoot, {
   Field: InputField,
