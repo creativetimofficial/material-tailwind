@@ -81,6 +81,7 @@ import * as HTMLGallery from "@components/docs-html/gallery";
 import * as HTMLIconButton from "@components/docs-html/icon-button";
 import * as HTMLImage from "@components/docs-html/image";
 import * as HTMLInput from "@components/docs-html/input";
+import * as HTMLList from "@components/docs-html/list";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -189,6 +190,7 @@ const components = {
   HTMLIconButton,
   HTMLImage,
   HTMLInput,
+  HTMLList,
 };
 
 type MdxContentProps = {
