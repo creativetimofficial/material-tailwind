@@ -85,6 +85,7 @@ import * as HTMLList from "@components/docs-html/list";
 import * as HTMLNavbar from "@components/docs-html/navbar";
 import * as HTMLPagination from "@components/docs-html/pagination";
 import * as HTMLProgress from "@components/docs-html/progress";
+import * as HTMLRating from "@components/docs-html/rating";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -197,6 +198,7 @@ const components = {
   HTMLNavbar,
   HTMLPagination,
   HTMLProgress,
+  HTMLRating,
 };
 
 type MdxContentProps = {
