@@ -88,6 +88,7 @@ import * as HTMLProgress from "@components/docs-html/progress";
 import * as HTMLRating from "@components/docs-html/rating";
 import * as HTMLSpinner from "@components/docs-html/spinner";
 import * as HTMLStepper from "@components/docs-html/stepper";
+import * as HTMLTable from "@components/docs-html/table";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -203,6 +204,7 @@ const components = {
   HTMLRating,
   HTMLSpinner,
   HTMLStepper,
+  HTMLTable,
 };
 
 type MdxContentProps = {
