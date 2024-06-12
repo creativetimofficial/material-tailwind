@@ -91,6 +91,7 @@ import * as HTMLStepper from "@components/docs-html/stepper";
 import * as HTMLTable from "@components/docs-html/table";
 import * as HTMLTextarea from "@components/docs-html/textarea";
 import * as HTMLTimeline from "@components/docs-html/timeline";
+import * as HTMLTypography from "@components/docs-html/typography";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -209,6 +210,7 @@ const components = {
   HTMLTable,
   HTMLTextarea,
   HTMLTimeline,
+  HTMLTypography,
 };
 
 type MdxContentProps = {
