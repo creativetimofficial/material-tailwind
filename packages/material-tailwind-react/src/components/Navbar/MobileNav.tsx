@@ -1,7 +1,14 @@
 import React from "react";
 
 // framer-motion components
-import { AnimatePresence, AnimatePresenceProps, motion, MotionProps } from "framer-motion";
+import {
+  AnimatePresence,
+  AnimatePresenceProps,
+  m,
+  MotionProps,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 
 // @floating-ui
 import { useMergeRefs } from "@floating-ui/react";
@@ -42,6 +49,13 @@ interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "children">
 
 export const MobileNav = React.forwardRef<HTMLDivElement, MobileNavProps>(
   ({ open, animate, className, children, ...rest }, ref) => {
+    console.error(
+      `<MobileNav /> will be deprecated in the future versions of @material-tailwind/react use <Collapse /> instead.
+      
+More details: https://www.material-tailwind.com/docs/react/collapse
+      `,
+    );
+
     // 1. init
     const mobileNavRef = React.useRef(null);
     const { navbar } = useTheme();
@@ -79,19 +93,21 @@ export const MobileNav = React.forwardRef<HTMLDivElement, MobileNavProps>(
 
     // 6. return
     return (
-      <NewAnimatePresence>
-        <motion.div
-          {...rest}
-          ref={mergedRef}
-          className={classes}
-          initial="unmount"
-          exit="unmount"
-          animate={open ? "mount" : "unmount"}
-          variants={appliedAnimation}
-        >
-          {children}
-        </motion.div>
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence>
+          <m.div
+            {...rest}
+            ref={mergedRef}
+            className={classes}
+            initial="unmount"
+            exit="unmount"
+            animate={open ? "mount" : "unmount"}
+            variants={appliedAnimation}
+          >
+            {children}
+          </m.div>
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );

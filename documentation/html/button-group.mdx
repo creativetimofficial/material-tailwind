@@ -1,0 +1,410 @@
+---
+title: Tailwind CSS Button Group Examples - Material Tailwind 
+description: Add style to your tables with the versatile Tailwind CSS Button Group component. Customize and integrate it easily into your web project.
+
+navigation:
+  [
+    "button-group",
+    "button-group-variants",
+    "button-group-sizes",
+    "button-group-colors",
+    "block-level-button-group",
+    "button-group-custom-styles",
+       
+  ]
+github: button-group
+prev: button
+next: card
+---
+
+# Tailwind CSS Button Group 
+
+The Tailwind CSS Button groups are used to organize related buttons or button-like elements together in a visually cohesive and functional manner.  
+
+For users, it’s easier to find related actions in one place. Button groups can improve usability by reducing the time and effort needed to locate and interact with multiple related functions.
+
+They are especially useful for navigation menus, toolbars, filters, and other situations where multiple buttons are presented together.
+
+We created a series of button group examples to help you build easier your application or website. All these examples are styled with Tailwind CSS and based on Material Design.
+
+## Button Group Examples:
+
+## Default Button Group
+
+This component example showcases a responsive button group with detailed control over appearance and layout. The use of utility classes makes it easy to customize each aspect of the button group's design.
+
+
+<br />
+
+<CodePreview
+  id="button-group"
+  link="button-group#button-group"
+ component={<HTMLButtonGroupExamples.ButtonGroupDefault/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex divide-x divide-gray-800 row">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+      type="button">
+      One
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+      type="button">
+      Two
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+      type="button">
+      Three
+    </button>
+  </div>
+</div>
+```
+</CodePreview>
+
+<br />
+
+The first and last buttons in the group have <Code>rounded-r-none border-r-0</Code> and <Code>rounded-l-none</Code>, respectively. This removes the rounded corners and right border of the first button and the left rounded corner of the last button, creating a great group appearance.
+
+---
+
+## Button Group Variants
+
+Get inspired by this series of button groups, each with different styling, arranged in a vertical stack.
+
+<CodePreview
+  id="button-group-variants"
+  link="button-group#button-group-varants"
+  className="mt-4"
+ component={<HTMLButtonGroupExamples.ButtonGroupVariants/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex flex-col gap-4 w-max">
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all border-r-0 rounded-lg rounded-r-none select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+        type="button">
+        One
+      </button>
+      <button
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all border-r-0 rounded-lg rounded-l-none rounded-r-none select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+        type="button">
+        Two
+      </button>
+      <button
+        class="px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg rounded-l-none select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+        type="button">
+        Three
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+<br />
+
+The first component variant features a classic and straightforward design with solid gray backgrounds (<Code>bg-gray-900</Code>) and white text.<br />
+The second variant stands out with a gradient background (<Code>bg-gradient-to-tr from-gray-900 to-gray-800</Code>), transitioning from dark gray to slightly lighter gray.<br />
+The third variant adopts a more minimalistic approach, featuring a border (<Code>border border-gray-900</Code>) around each button and gray text.<br />
+The fourth button group is the most simplistic, with no explicit background color but a subtle hover background effect (<Code>hover:bg-gray-900/10</Code>).<br />
+
+Using Tailwind CSS's utility classes and Material Tailwind's design as a starting point, you can create diverse designs while maintaining a cohesive user interface.
+
+---
+
+
+## Button Group Sizes
+
+This button group component example shows you how to create responsive and scalable UI components with varied dimensions and emphasis.
+
+<CodePreview
+  id="button-group-sizes"
+  link="button-group#button-group-sizes"
+  className="mt-4"
+  component={<HTMLButtonGroupExamples.ButtonGroupSizes/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex flex-col gap-4 w-max">
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-2 px-4 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-gray-800 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+<br />
+
+In this example:
+• The buttons in the first group are the smallest, with <Code>text-xs</Code> for font size and <Code>py-2 px-4</Code>  for padding. This makes the buttons more compact.<br />
+• The buttons in the second group are slightly larger than the first group, with the same <Code>text-xs</Code> font size but increased padding <Code>py-3 px-6</Code> making the buttons more prominent.<br />
+• The third group features the largest buttons, with <Code>text-sm</Code> for slightly larger font size and <Code>py-3.5 px-7</Code> for padding.
+
+
+---
+
+
+## Button Group Colors
+
+This example showcases four distinct button groups, each differentiated by color to represent various actions or states within an application or website.
+
+<CodePreview
+  id="button-group-colors"
+  link="button-group#button-group-colors"
+  className="mt-4"
+  component={<HTMLButtonGroupExamples.ButtonGroupColors/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex flex-col gap-4 w-max">
+    <div class="flex divide-x divide-blue-600 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-red-600 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-red-500/20 hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x divide-green-600 row">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-green-500 text-white shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+    <div class="flex divide-x row divide-amber-600">
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-amber-500 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0"
+        type="button">
+        One
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-amber-500 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 rounded-l-none"
+        type="button">
+        Two
+      </button>
+      <button
+        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-amber-500 text-black shadow-md shadow-amber-500/20 hover:shadow-lg hover:shadow-amber-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-l-none"
+        type="button">
+        Three
+      </button>
+    </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Block Level Button Group
+
+This example illustrates a single row of three buttons optimized for a full-width layout within a container that allows for horizontal scrolling on smaller screens and becomes fully visible on larger screens.
+
+<CodePreview
+  id="block-level-button-group"
+  link="button-group#block-levle-button-group"
+  className="mt-4"
+  component={<HTMLButtonGroupExamples.BlockLevelButtonGroup/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex w-full divide-x divide-gray-800 row">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full rounded-r-none border-r-0"
+      type="button">
+      One
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full rounded-r-none border-r-0 rounded-l-none"
+      type="button">
+      Two
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full rounded-l-none"
+      type="button">
+      Three
+    </button>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Button Group Custom Styels
+
+The button group is encapsulated within a grid container that ensures the buttons are centrally placed. The shadow (<Code>shadow-md shadow-gray-900/10</Code>) adds depth to the buttons, making them stand out against the light blue background.
+
+<CodePreview
+  id="button-group-custom-styles"
+  link="button-group#button-group-custom-styles"
+  className="mt-4"
+ component={<HTMLButtonGroupExamples.ButtonGroupCustomStyles/>}
+>
+```html
+<div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+  <div class="flex gap-1 p-1 divide-x divide-gray-800 row bg-blue-500/25">
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none border-r-0 rounded-none"
+      type="button">
+      One
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none border-r-0 rounded-none"
+      type="button">
+      Two
+    </button>
+    <button
+      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-none"
+      type="button">
+      Three
+    </button>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+

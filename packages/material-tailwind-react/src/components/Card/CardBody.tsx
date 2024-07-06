@@ -27,7 +27,7 @@ export const CardBody = React.forwardRef<HTMLDivElement, CardBodyProps>(
     } = cardBody;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const cardBodyClasses = twMerge(classnames(objectsToString(base)), className);

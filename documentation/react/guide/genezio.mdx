@@ -1,0 +1,104 @@
+---
+title: Genezio - Installation Guide
+description: Learn how to install genezio and setup a project with @material-tailwind/react.
+navigation:
+  [
+    "installation",
+    "clone",
+    "tailiwndcss-config",
+    "deploy",
+    "test",
+    "next-steps",
+  ]
+github: guide/next
+prev: gatsby
+next: theaming
+---
+
+# Material Tailwind with Genezio
+
+Learn how to install genezio and setup a project with `@material-tailwind/react`.
+
+In this guide, we will walk through the steps to get up and running a basic template offered by genezio with `@material-tailwind/react`.
+
+<DocsTitle href="installation">
+  ## Install genezio
+</DocsTitle>
+<span id="installation" className="scroll-mt-48" />
+First, you need to install and login to genezio.
+
+```bash=
+npm install genezio -g
+genezio login
+```
+
+<br />
+<DocsTitle href="clone">
+  ## Clone your project
+</DocsTitle>
+<span id="clone" className="scroll-mt-48" />
+
+Clone the following template that uses `@material-tailwind/react`.
+
+```bash
+git clone https://github.com/Genez-io/weather-typescript-template
+```
+<br />
+For more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://docs.genezio.com/genezio-documentation/getting-started?ref=mt-docs">Genezio Official Documentation</a>
+
+
+<DocsTitle href="tailwindcss-config">
+  ## Tailwind CSS Configuration
+</DocsTitle>
+<span id="tailiwndcss-config" className="scroll-mt-48" />
+After you setup the project you can find your Tailwind Config with `@material-tailwind/react` already installed in `./genezio-project/client/tailwind.config.js`.
+For now, everything is set up in this file, but keep it in mind for the future when you want to customize your tailwind template.
+
+<DocsTitle href="deploy">
+  ## Deploy your project
+</DocsTitle>
+<span id="deploy" className="scroll-mt-48" />
+With genezio, you can deploy your newly created project to the genezio cloud.
+
+```bash=
+cd weather-typescript-template
+genezio deploy
+```
+
+Once the deployment is successful, a URL will be provided for you to access the web application.
+
+If you need to add integrations like SQL Databases, Redis, Queues, Email Services, Application Monitoring, or simply take a look at your application logs, go to the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://app.genez.io?ref=mt-docs">Genezio Dashboard</a>.
+
+<DocsTitle href="test">
+  ## Test your project
+</DocsTitle>
+<span id="test" className="scroll-mt-48" />
+You can test locally both your frontend and your backend.
+
+<b>Terminal 1:</b><br/> <br />
+```bash=
+cd genezio-project
+genezio local
+```
+
+<br/>
+<b>Terminal 2:</b><br/> <br />
+```bash=
+cd genezio-project/client
+npm install
+npm run dev
+```
+
+<br/> <br />
+<DocsTitle href="next-steps">
+  ## Next Steps
+</DocsTitle>
+<span id="next-steps" className="scroll-mt-48" />
+
+1.&nbsp;Build your app with more backend code <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://github.com/genez-io/genezio-examples?ref=mt-docs">genezio examples</a>.<br/>
+2.&nbsp;Continue building your frontend with <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://www.material-tailwind.com/blocks">Material Tailwind Blocks</a>.
+
+<br />
+I hope you enjoyed this integration guide and I encourage you to check out our other tutorials for more insights about <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://genezio.com">genezio</a> and Material Tailwind. 🥷 💻
+
+

@@ -38,14 +38,14 @@ export default function initHtmlScripts() {
           offsetX,
           clickPointY,
           elementHeight,
-          offsetY
+          offsetY,
         ) {
           this.x = clickPointX - offsetX > elementWidth / 2 ? 0 : elementWidth;
           this.y =
             clickPointY - offsetY > elementHeight / 2 ? 0 : elementHeight;
           this.z = Math.hypot(
             this.x - (clickPointX - offsetX),
-            this.y - (clickPointY - offsetY)
+            this.y - (clickPointY - offsetY),
           );
           return this.z;
         },
@@ -72,7 +72,7 @@ export default function initHtmlScripts() {
               { transform: "scale(0)", opacity: 1 },
               { transform: "scale(1.5)", opacity: 0 },
             ],
-            { duration: 500, easing: "linear" }
+            { duration: 500, easing: "linear" },
           );
         },
       },
@@ -89,7 +89,7 @@ export default function initHtmlScripts() {
             rect.left,
             event.clientY,
             element.offsetHeight,
-            rect.top
+            rect.top,
           );
           var circle = document.createElement("span");
           this.appyStyles(circle, color, rect, radius, event);
@@ -227,7 +227,7 @@ export default function initHtmlScripts() {
 
             function closeAll() {
               Array.from(popovers).forEach((el) =>
-                el.className.includes(mountValue) ? unmountSelect() : null
+                el.className.includes(mountValue) ? unmountSelect() : null,
               );
             }
 
@@ -260,10 +260,10 @@ export default function initHtmlScripts() {
             });
 
             document.addEventListener("keyup", ({ key }) =>
-              key === "Escape" ? closeAll() : null
+              key === "Escape" ? closeAll() : null,
             );
           }
-        })
+        }),
       );
     }
   })();
@@ -334,7 +334,7 @@ export default function initHtmlScripts() {
               trigger.addEventListener(event, listener);
             });
           }
-        })
+        }),
       );
     }
   })();
@@ -400,7 +400,7 @@ export default function initHtmlScripts() {
               trigger.addEventListener("click", () =>
                 dialog.className.includes(unmountValue)
                   ? mountDialog()
-                  : unmountDialog()
+                  : unmountDialog(),
               );
 
               backdrop.addEventListener("click", ({ target }) => {
@@ -412,17 +412,17 @@ export default function initHtmlScripts() {
               });
 
               document.addEventListener("keyup", ({ key }) =>
-                key === "Escape" && isDialogOpen ? unmountDialog() : null
+                key === "Escape" && isDialogOpen ? unmountDialog() : null,
               );
 
               Array.from(closeTriggers).forEach((close) =>
                 close.addEventListener("click", () =>
-                  isDialogOpen ? unmountDialog() : null
-                )
+                  isDialogOpen ? unmountDialog() : null,
+                ),
               );
             }
-          })
-        )
+          }),
+        ),
       );
     }
   })();
@@ -442,7 +442,7 @@ export default function initHtmlScripts() {
               dismiss.classList.toggle("hidden");
             });
           }
-        })
+        }),
       );
     }
   })();
@@ -459,14 +459,16 @@ export default function initHtmlScripts() {
             trigger.addEventListener("click", () => {
               if (collapse.style.height && collapse.style.height !== "0px") {
                 collapse.style.height = 0;
+                collapse.style.overflow = "hidden";
                 trigger.removeAttribute("open");
               } else {
                 collapse.style.height = `${collapse.firstChild.clientHeight}px`;
+                collapse.style.overflow = "visible";
                 trigger.setAttribute("open", "");
               }
             });
           }
-        })
+        }),
       );
     }
   })();
@@ -500,7 +502,7 @@ export default function initHtmlScripts() {
         "bg-none",
         "border-0",
         "block",
-        "shadow"
+        "shadow",
       );
       moving_div.setAttribute("moving-tab", "");
       moving_div.setAttribute("data-tab-target", "");
@@ -522,13 +524,13 @@ export default function initHtmlScripts() {
           let nodes = Array.from(li.closest("ul").children);
           let index = nodes.indexOf(li) + 1;
           item.querySelector(
-            "li:nth-child(" + index + ") [data-tab-target]"
+            "li:nth-child(" + index + ") [data-tab-target]",
           ).onclick = function () {
             item.querySelectorAll("li").forEach(function (list_item) {
               list_item.firstElementChild.removeAttribute("active");
               list_item.firstElementChild.setAttribute(
                 "aria-selected",
-                "false"
+                "false",
               );
             });
             li.firstElementChild.setAttribute("active", "");
@@ -538,18 +540,18 @@ export default function initHtmlScripts() {
             if (item.classList.contains("flex-col")) {
               for (var j = 1; j <= nodes.indexOf(li); j++) {
                 sum += item.querySelector(
-                  "li:nth-child(" + j + ")"
+                  "li:nth-child(" + j + ")",
                 ).offsetHeight;
               }
               moving_div.style.transform =
                 "translate3d(0px," + sum + "px, 0px)";
               moving_div.style.height = item.querySelector(
-                "li:nth-child(" + j + ")"
+                "li:nth-child(" + j + ")",
               ).offsetHeight;
             } else {
               for (var j = 1; j <= nodes.indexOf(li); j++) {
                 sum += item.querySelector(
-                  "li:nth-child(" + j + ")"
+                  "li:nth-child(" + j + ")",
                 ).offsetWidth;
               }
               moving_div.style.transform =
@@ -588,7 +590,7 @@ export default function initHtmlScripts() {
           "bg-none",
           "border-0",
           "block",
-          "shadow"
+          "shadow",
         );
         moving_div.setAttribute("moving-tab", "");
         moving_div.setAttribute("data-tab-target", "");
@@ -600,7 +602,7 @@ export default function initHtmlScripts() {
         moving_div.style.transition = ".5s ease";
 
         let li = item.querySelector(
-          "[data-tab-target][aria-selected='true']"
+          "[data-tab-target][aria-selected='true']",
         ).parentElement;
 
         if (li) {
@@ -617,7 +619,7 @@ export default function initHtmlScripts() {
               item.querySelector("li:nth-child(" + index + ")").offsetWidth +
               "px";
             moving_div.style.height = item.querySelector(
-              "li:nth-child(" + j + ")"
+              "li:nth-child(" + j + ")",
             ).offsetHeight;
           } else {
             for (var j = 1; j <= nodes.indexOf(li); j++) {
@@ -648,23 +650,23 @@ export default function initHtmlScripts() {
     if (total[0]) {
       total.forEach(function (nav_pills) {
         var links = nav_pills.parentElement.querySelectorAll(
-          "li a[data-tab-target]"
+          "li a[data-tab-target]",
         );
         links.forEach(function (link) {
           link.addEventListener("click", function () {
             var clicked_tab = document.querySelector(
-              "#" + link.getAttribute("aria-controls")
+              "#" + link.getAttribute("aria-controls"),
             );
 
             if (!clicked_tab.classList.contains("block", "opacity-100")) {
               var active_link = clicked_tab
                 .closest("[data-tab-content]")
                 .parentElement.querySelector(
-                  "li a[data-tab-target][aria-selected='true']"
+                  "li a[data-tab-target][aria-selected='true']",
                 );
 
               var active_panel = document.querySelector(
-                "#" + active_link.getAttribute("aria-controls")
+                "#" + active_link.getAttribute("aria-controls"),
               );
 
               active_panel.classList.remove("block", "opacity-100");

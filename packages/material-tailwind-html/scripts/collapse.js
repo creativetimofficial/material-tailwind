@@ -9,14 +9,16 @@
           trigger.addEventListener("click", () => {
             if (collapse.style.height && collapse.style.height !== "0px") {
               collapse.style.height = 0;
+              collapse.style.overflow = "hidden";
               trigger.removeAttribute("open");
             } else {
-              collapse.style.height = `${collapse.firstChild.clientHeight}px`;
+              collapse.style.height = `${collapse.children[0].clientHeight}px`;
+              collapse.style.overflow = "visible";
               trigger.setAttribute("open", "");
             }
           });
         }
-      })
+      }),
     );
   }
 })();

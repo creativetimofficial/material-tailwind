@@ -19,7 +19,7 @@ import {
 } from "@floating-ui/react";
 
 // framer-motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -57,7 +57,7 @@ import {
   propTypesChildren,
 } from "../../types/components/popover";
 
-export interface TooltipProps extends React.ComponentProps<"div"> {
+export interface TooltipProps extends React.ComponentProps<any> {
   open?: open;
   handler?: handler;
   content?: content;
@@ -103,7 +103,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
     offset = offset ?? defaultProps.offset;
     dismiss = dismiss ?? defaultProps.dismiss;
     animate = animate ?? defaultProps.animate;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tooltipClasses = twMerge(classnames(objectsToString(base)), className);
@@ -168,30 +168,32 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
             }),
           })
         )}
-        <FloatingPortal>
-          <NewAnimatePresence>
-            {open && (
-              <motion.div
-                {...getFloatingProps({
-                  ...rest,
-                  ref: mergedRef,
-                  className: tooltipClasses,
-                  style: {
-                    position: strategy,
-                    top: y ?? "",
-                    left: x ?? "",
-                  },
-                })}
-                initial="unmount"
-                exit="unmount"
-                animate={open ? "mount" : "unmount"}
-                variants={appliedAnimation}
-              >
-                {content}
-              </motion.div>
-            )}
-          </NewAnimatePresence>
-        </FloatingPortal>
+        <LazyMotion features={domAnimation}>
+          <FloatingPortal>
+            <NewAnimatePresence>
+              {open && (
+                <m.div
+                  {...getFloatingProps({
+                    ...rest,
+                    ref: mergedRef,
+                    className: tooltipClasses,
+                    style: {
+                      position: strategy,
+                      top: y ?? "",
+                      left: x ?? "",
+                    },
+                  })}
+                  initial="unmount"
+                  exit="unmount"
+                  animate={open ? "mount" : "unmount"}
+                  variants={appliedAnimation}
+                >
+                  {content}
+                </m.div>
+              )}
+            </NewAnimatePresence>
+          </FloatingPortal>
+        </LazyMotion>
       </>
     );
   },

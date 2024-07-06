@@ -24,12 +24,13 @@ import {
 export interface TabProps extends React.ComponentProps<"li"> {
   value: value;
   className?: className;
+  activeClassName?: className;
   disabled?: disabled;
   children: children;
 }
 
 export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
-  ({ value, className, disabled, children, ...rest }, ref) => {
+  ({ value, className, activeClassName, disabled, children, ...rest }, ref) => {
     // 1. init
     const { tab: tabTheme } = useTheme();
     const {
@@ -40,13 +41,15 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
     const { id, active, indicatorProps } = state;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
     disabled = disabled ?? defaultProps.disabled;
+    className = twMerge(defaultProps.className || "", className);
+    activeClassName = twMerge(defaultProps.activeClassName || "", activeClassName);
 
     // 3. set styles
     const tabClasses = twMerge(
       classnames(objectsToString(base.tab.initial), {
         [objectsToString(base.tab.disabled)]: disabled,
+        [activeClassName]: active === value,
       }),
       className,
     );
@@ -76,7 +79,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
         }}
         data-value={value}
       >
-        <div className="z-20">{children}</div>
+        <div className="z-20 text-inherit">{children}</div>
         {active === value && (
           <motion.div
             {...indicatorProps}

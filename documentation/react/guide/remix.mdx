@@ -25,7 +25,7 @@ Learn how to setup and install @material-tailwind/react with Remix.
 <br />
 <br />
 
-First you need to create a new project using remix, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://remix.run/docs/en/v1?ref=material-tailwind">Remix Official Documentation</a>
+First you need to create a new project using remix, for more details check the <a target="_blank" className="font-medium hover:text-blue-500 transition-colors" href="https://remix.run/docs/en/main?ref=material-tailwind">Remix Official Documentation</a>
 
 ```bash
 npx create-remix@latest
@@ -38,7 +38,9 @@ Check <a href="https://tailwindcss.com/docs/guides/remix?ref=material-tailwind" 
 
 ---
 
+<DocsTitle href="npm">
 ## Using NPM
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using NPM by running the following command:
 
@@ -50,7 +52,9 @@ npm i @material-tailwind/react
 
 ---
 
+<DocsTitle href="yarn">
 ## Using Yarn
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using Yarn by running the following command:
 
@@ -62,7 +66,9 @@ yarn add @material-tailwind/react
 
 ---
 
+<DocsTitle href="pnpm">
 ## Using PNPM
+</DocsTitle>
 
 Install @material-tailwind/react as a dependency using PNPM by running the following command:
 
@@ -74,36 +80,44 @@ pnpm i @material-tailwind/react
 
 ---
 
+<DocsTitle href="tailwindcss-config">
 ## TailwindCSS Configurations
+</DocsTitle>
 
 <span id="tailwindcss-config" className="scroll-mt-48" />
 
-Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react/utils.
+Once you install @material-tailwind/react you need to wrap your tailwind css configurations with the <Code>withMT()</Code> function coming from @material-tailwind/react/utils/withMT.
 
-```js {1, 3, 9}
-const withMT = require("@material-tailwind/react/utils/withMT");
+```js {3, 5, 11}
+import type { Config } from "tailwindcss";
 
-module.exports = withMT({
-  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+import withMT from "@material-tailwind/react/utils/withMT";
+
+export default withMT({
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
   plugins: [],
-});
+} satisfies Config);
 ```
 
 ---
 
+<DocsTitle href="with-monorepo">
 ## TailwindCSS Configurations with MonoRepo
+</DocsTitle>
 
 <span id="with-monorepo" className="scroll-mt-48" />
 
 If you're using monorepo in your project you need to add the theme and components paths to your tailwind.config.js.
 
-```js {6,7}
-const withMT = require("@material-tailwind/react/utils/withMT");
+```js {8,9}
+import type { Config } from "tailwindcss";
 
-module.exports = withMT({
+import withMT from "@material-tailwind/react/utils/withMT";
+
+export default withMT({
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
@@ -113,12 +127,14 @@ module.exports = withMT({
     extend: {},
   },
   plugins: [],
-});
+} satisfies Config);
 ```
 
 ---
 
+<DocsTitle href="theme-prof">
 ## Theme Provider
+</DocsTitle>
 
 <span id="theme-provider" className="scroll-mt-48" />
 
@@ -126,28 +142,34 @@ module.exports = withMT({
 
 On the <Code>app/entry.client</Code> put the code bellow.
 
-```jsx {3, 6, 8}
+```jsx {4, 9, 11}
 import { RemixBrowser } from "@remix-run/react";
-import { hydrate } from "react-dom";
+import { startTransition } from "react";
+import { hydrateRoot } from "react-dom/client";
 import { ThemeProvider } from "@material-tailwind/react";
 
-hydrate(
-  <ThemeProvider>
-    <RemixBrowser />
-  </ThemeProvider>,
-  document
-);
+startTransition(() => {
+  hydrateRoot(
+    document,
+    <ThemeProvider>
+      <RemixBrowser />
+    </ThemeProvider>
+  );
+});
 ```
 
 ---
 
+<DocsTitle href="example">
 ## Example
+</DocsTitle>
 
 Now you're good to go and use @material-tailwind/react in your project.
 
 <CodePreview id="example" component={<Button>Button</Button>}>
 ```jsx
-import { Button } from "@material-tailwind/react";
+import MaterialTailwind from "@material-tailwind/react";
+const { Button } = MaterialTailwind;
 
 export default function Example() {
   return <Button>Button</Button>;

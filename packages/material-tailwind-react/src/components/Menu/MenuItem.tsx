@@ -25,18 +25,14 @@ export interface MenuItemProps extends React.ComponentProps<"li"> {
 export const MenuItem = React.forwardRef<
   HTMLButtonElement,
   MenuItemProps & React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ className, disabled, children, ...rest }, ref) => {
+>(({ className = "", disabled = false, children, ...rest }, ref) => {
   // 1. init
   const { menu } = useTheme();
   const {
     styles: { base },
   } = menu;
 
-  // 2. set default props
-  className = className ?? "";
-  disabled = disabled ?? false;
-
-  // 3. set styles
+  // 2. set styles
   const menuItemClasses = twMerge(
     classnames(objectsToString(base.item.initial), {
       [objectsToString(base.item.disabled)]: disabled,

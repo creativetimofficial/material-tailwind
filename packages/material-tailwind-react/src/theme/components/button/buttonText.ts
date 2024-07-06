@@ -4,15 +4,20 @@ const buttonText: object = {
     hover: "hover:bg-white/10",
     active: "active:bg-white/30",
   },
+  black: {
+    color: "text-gray-900",
+    hover: "hover:bg-gray-900/10",
+    active: "active:bg-gray-900/20",
+  },
   "blue-gray": {
     color: "text-blue-gray-500",
     hover: "hover:bg-blue-gray-500/10",
     active: "active:bg-blue-gray-500/30",
   },
   gray: {
-    color: "text-gray-500",
-    hover: "hover:bg-gray-500/10",
-    active: "active:bg-gray-500/30",
+    color: "text-gray-900",
+    hover: "hover:bg-gray-900/10",
+    active: "active:bg-gray-900/20",
   },
   brown: {
     color: "text-brown-500",

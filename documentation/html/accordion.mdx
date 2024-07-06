@@ -1,6 +1,6 @@
 ---
 title: Tailwind CSS Accordion - Material Tailwind
-description: Customise your web projects with our easy-to-use accordion component for Tailwind CSS using Material Design guidelines.
+description: Use our accordion component examples styled with Tailwind CSS to let the users show and hide sections of related content on a page.
 navigation:
   [
     "accordion",
@@ -17,98 +17,38 @@ next: alert
 
 # Tailwind CSS Accordion
 
-Use our Tailwind CSS accordion component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
+Material Tailwind offers a robust accordion component built with Tailwind CSS that is perfect for situations where you need to integrate expand/collapse design.
 
-See below our simple and versatile accordion example that you can use in your Tailwind CSS projects. We also included some accordion props that are available.
+The accordion is a UI component that allows the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
 
-To use an accordion example that has items expanded, add the <Code html html>.open</Code> class on the <Code html html>.collapse</Code> `<div>`.
+We created a series of accordion examples to help you build easier your application or website. All these examples are styled with Tailwind CSS and based on Material Design. Check them below.
+
 
 <br />
+
+## Accordion Examples:
+
+## Accordion with Plus Minus Icon
+
+This example features an expand - collapse icon that toggles between a plus sign to denote expansion and a minus sign for collapse. 
+
+This visual cue is simple, providing users with a clear indication of how to interact with the accordion.
 
 <CodePreview
   id="accordion"
   link="accordion#accordion"
-  component={
-    <>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="collapse-1"
-          >
-            <span>What is Material Tailwind?</span>
-            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="collapse-1"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="collapse-2"
-          >
-            <span>How to use Material Tailwind?</span>
-            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="collapse-2"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="collapse-3"
-          >
-            <span>What can I do with Material Tailwind?</span>
-            <i className="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i className="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="collapse-3"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-    </>
-  }
+  component={<HTMLAccordianExamples.DefaultAccordion/>}
 >
-  ```html
+```html
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="collapse-1"
       >
         <span>What is Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -125,12 +65,12 @@ To use an accordion example that has items expanded, add the <Code html html>.op
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="collapse-2"
       >
         <span>How to use Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -147,12 +87,12 @@ To use an accordion example that has items expanded, add the <Code html html>.op
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="collapse-3"
       >
         <span>What can I do with Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -166,95 +106,29 @@ To use an accordion example that has items expanded, add the <Code html html>.op
       </div>
     </div>
   </div>
-  ```
+```
 </CodePreview>
 
 ---
 
 ## Custom Accordion Icon
 
-You can use custom icons for the accordion trigger element and using the <Code html>group-open</Code> attribute selector in tailwind css you can control the icon for open and close states of accordion.
+You can use custom icons for the accordion trigger element and using the <Code>group-open</Code> attribute selector in Tailwind CSS you can control the icon for the open and closed states of the accordion.
 
 <CodePreview
   id="custom-accordion-icon"
   link="accordion#custom-accordion-icon"
-  component={
-    <>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="animated-collapse-1"
-          >
-            <span>What is Material Tailwind?</span>
-            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="animated-collapse-1"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="animated-collapse-2"
-          >
-            <span>How to use Material Tailwind?</span>
-            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="animated-collapse-2"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="animated-collapse-3"
-          >
-            <span>What can I do with Material Tailwind?</span>
-            <i className="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="animated-collapse-3"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-    </>
-  }
+  component={<HTMLAccordianExamples.AccordionCustomIcon/>}
 >
-  ```html
+```html
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="animated-collapse-1"
       >
         <span>What is Material Tailwind?</span>
-        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+        <i class="absolute right-0 pt-1 text-base transition-transform fa fa-chevron-down group-open:rotate-180"></i>
       </button>
     </h6>
     <div
@@ -271,11 +145,11 @@ You can use custom icons for the accordion trigger element and using the <Code h
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="animated-collapse-2"
       >
         <span>How to use Material Tailwind?</span>
-        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+        <i class="absolute right-0 pt-1 text-base transition-transform fa fa-chevron-down group-open:rotate-180"></i>
       </button>
     </h6>
     <div
@@ -292,11 +166,11 @@ You can use custom icons for the accordion trigger element and using the <Code h
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="animated-collapse-3"
       >
         <span>What can I do with Material Tailwind?</span>
-        <i class="fa fa-chevron-down absolute right-0 pt-1 text-base transition-transform group-open:rotate-180"></i>
+        <i class="absolute right-0 pt-1 text-base transition-transform fa fa-chevron-down group-open:rotate-180"></i>
       </button>
     </h6>
     <div
@@ -310,98 +184,31 @@ You can use custom icons for the accordion trigger element and using the <Code h
       </div>
     </div>
   </div>
-  ```
+```
 </CodePreview>
 
 ---
 
 ## Disabled Accordion
 
+The example is a type of accordion which indicates that certain sections of content are currently inaccessible. 
+
 <CodePreview
   id="disabled-accordion"
   link="accordion#disabled-accordion"
   className="mt-4"
-  component={
-    <>
-      <div className="relative mb-3">
-        <h6 className="pointer-events-none relative block w-full opacity-50">
-          <button
-            className="flex w-full select-none items-center justify-between border-b border-b-blue-gray-100 py-4 font-sans text-xl font-semibold leading-snug text-blue-gray-700 antialiased transition-colors hover:text-blue-gray-900"
-            data-collapse-target="disabled-collapse-1"
-          >
-            <span>What is Material Tailwind?</span>
-            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="disabled-collapse-1"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="disabled-collapse-2"
-          >
-            <span>How to use Material Tailwind?</span>
-            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="disabled-collapse-2"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-      <div className="relative mb-3">
-        <h6 className="mb-0">
-          <button
-            className="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
-            data-collapse-target="disabled-collapse-3"
-          >
-            <span>What can I do with Material Tailwind?</span>
-            <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-            <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
-          </button>
-        </h6>
-        <div
-          data-collapse="disabled-collapse-3"
-          className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-        >
-          <div className="p-4 text-sm leading-normal text-blue-gray-500/80">
-            We're not always in the position that we want to be at. We're
-            constantly growing. We're constantly making mistakes. We're
-            constantly trying to express ourselves and actualize our dreams.
-          </div>
-        </div>
-      </div>
-    </>
-  }
+  component={<HTMLAccordianExamples.AccordionDisabled/>}
 >
-  ```html
+```html
   <div class="relative mb-3">
-    <h6 class="pointer-events-none relative block w-full opacity-50">
+    <h6 class="relative block w-full opacity-50 pointer-events-none">
       <button
-        class="flex w-full select-none items-center justify-between border-b border-b-blue-gray-100 py-4 font-sans text-xl font-semibold leading-snug text-blue-gray-700 antialiased transition-colors hover:text-blue-gray-900"
+        class="flex items-center justify-between w-full py-4 font-sans text-xl antialiased font-semibold leading-snug transition-colors border-b select-none border-b-blue-gray-100 text-blue-gray-700 hover:text-blue-gray-900"
         data-collapse-target="disabled-collapse-1"
       >
         <span>What is Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -418,12 +225,12 @@ You can use custom icons for the accordion trigger element and using the <Code h
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="disabled-collapse-2"
       >
         <span>How to use Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -440,12 +247,12 @@ You can use custom icons for the accordion trigger element and using the <Code h
   <div class="relative mb-3">
     <h6 class="mb-0">
       <button
-        class="border-slate-100 text-slate-700 rounded-t-1 group relative flex w-full cursor-pointer items-center border-b border-solid p-4 text-left font-semibold text-dark-500 transition-all ease-in"
+        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
         data-collapse-target="disabled-collapse-3"
       >
         <span>What can I do with Material Tailwind?</span>
-        <i class="fa fa-plus absolute right-0 pt-1 text-xs group-open:opacity-0"></i>
-        <i class="fa fa-minus absolute right-0 pt-1 text-xs opacity-0 group-open:opacity-100"></i>
+        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
+        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
       </button>
     </h6>
     <div
@@ -459,10 +266,19 @@ You can use custom icons for the accordion trigger element and using the <Code h
       </div>
     </div>
   </div>
-  ```
+```
 </CodePreview>
 
+<br />
+
+Use this Tailwind CSS accordion to maintain a clean layout while signaling to users that some information or options are not available for interaction at the moment (eg. content is released in stages, or user actions are required to unlock certain functionalities). 
+
 ---
+
+## Material Tailwind Accordion Specifications
+
+The following attributes are used to handle the show/hide functionality of accordion components without needing to write lots of custom code. By using these data attributes, developers can easily link the accordion buttons (triggers) with the content sections they control.
+
 
 ## Accordion Trigger Data Attributes
 
@@ -478,7 +294,7 @@ The following data attributes are available for accordion trigger element.
 ## Accordion Data Attributes
 
 <span id="accordion-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for accordion element.
+The following data attributes are available for the accordion element.
 
 | Attribute       | Description                                                                                           |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
@@ -486,7 +302,7 @@ The following data attributes are available for accordion element.
 
 ---
 
-## Required Scrips
+## Required Scripts
 
 <span id="required-script" className="scroll-mt-56" />
 
@@ -499,3 +315,13 @@ The accordion component needs a required script file to work, you just need to a
 <!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
 ```
+---
+
+### Accordion Best Practices for Developers
+
+• Indicate which sections are expanded or collapsed -  you can use icons like plus and minus.<br />
+• For a smoother UX, use Tailwind CSS basic transitions and animations to animate the opening and closing of accordion sections.<br />
+• Allow users to expand multiple sections simultaneously. If not, ensure that expanding one section collapses any previously expanded section.<br />
+• Make sure that the sections don't contain too large amounts of content<br />
+• Test your accordion to work consistently across different browsers and devices
+

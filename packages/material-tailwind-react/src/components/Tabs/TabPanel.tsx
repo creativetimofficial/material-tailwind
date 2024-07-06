@@ -1,8 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // framer-motion
-import { motion, AnimatePresence, MotionProps } from "framer-motion";
+import { AnimatePresence, m, MotionProps, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -36,7 +35,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
     const { active, appliedAnimation, isInitial } = state;
 
     // 2. set default props
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const tabPanelClasses = twMerge(classnames(objectsToString(base)), className);
@@ -46,21 +45,23 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
 
     // 5. return
     return (
-      <NewAnimatePresence exitBeforeEnter>
-        <motion.div
-          {...rest}
-          ref={ref}
-          role="tabpanel"
-          className={tabPanelClasses}
-          initial="unmount"
-          exit="unmount"
-          animate={active === value ? "mount" : isInitial ? "initial" : "unmount"}
-          variants={appliedAnimation}
-          data-value={value}
-        >
-          {children}
-        </motion.div>
-      </NewAnimatePresence>
+      <LazyMotion features={domAnimation}>
+        <NewAnimatePresence exitBeforeEnter>
+          <m.div
+            {...rest}
+            ref={ref}
+            role="tabpanel"
+            className={tabPanelClasses}
+            initial="unmount"
+            exit="unmount"
+            animate={active === value ? "mount" : isInitial ? "initial" : "unmount"}
+            variants={appliedAnimation}
+            data-value={value}
+          >
+            {children}
+          </m.div>
+        </NewAnimatePresence>
+      </LazyMotion>
     );
   },
 );

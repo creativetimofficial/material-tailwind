@@ -21,6 +21,7 @@ import type {
   labelProps,
   className,
   shrink,
+  containerProps,
 } from "../../types/components/input";
 import {
   propTypesVariant,
@@ -33,7 +34,9 @@ import {
   propTypesLabelProps,
   propTypesClassName,
   propTypesShrink,
+  propTypesContainerProps,
 } from "../../types/components/input";
+import { twMerge } from "tailwind-merge";
 
 export interface TextareaProps extends React.ComponentProps<"textarea"> {
   variant?: variant;
@@ -44,13 +47,27 @@ export interface TextareaProps extends React.ComponentProps<"textarea"> {
   success?: success;
   resize?: resize;
   labelProps?: labelProps;
+  containerProps?: containerProps;
   shrink?: shrink;
   className?: className;
 }
 
 export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
   (
-    { variant, color, size, label, error, success, resize, labelProps, shrink, className, ...rest },
+    {
+      variant,
+      color,
+      size,
+      label,
+      error,
+      success,
+      resize,
+      labelProps,
+      containerProps,
+      shrink,
+      className,
+      ...rest
+    },
     ref,
   ) => {
     // 1. init
@@ -64,8 +81,9 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     color = color ?? defaultProps.color;
     label = label ?? defaultProps.label;
     labelProps = labelProps ?? defaultProps.labelProps;
+    containerProps = containerProps ?? defaultProps.containerProps;
     shrink = shrink ?? defaultProps.shrink;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
     const textareaVariant = variants[findMatch(valid.variants, variant, "outlined")];
@@ -73,15 +91,15 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
     const textareaSuccess = objectsToString(textareaVariant.success.textarea);
     const textareaShrink = objectsToString(textareaVariant.shrink.textarea);
     const textareaColor = objectsToString(
-      textareaVariant.colors.textarea[findMatch(valid.colors, color, "blue")],
+      textareaVariant.colors.textarea[findMatch(valid.colors, color, "gray")],
     );
     const labelError = objectsToString(textareaVariant.error.label);
     const labelSuccess = objectsToString(textareaVariant.success.label);
     const labelShrink = objectsToString(textareaVariant.shrink.label);
     const labelColor = objectsToString(
-      textareaVariant.colors.label[findMatch(valid.colors, color, "blue")],
+      textareaVariant.colors.label[findMatch(valid.colors, color, "gray")],
     );
-    const containerClasses = classnames(objectsToString(base.container));
+    const containerClasses = classnames(objectsToString(base.container), containerProps?.className);
     const textareaClasses = classnames(
       objectsToString(base.textarea),
       objectsToString(textareaVariant.base.textarea),
@@ -103,12 +121,15 @@ export const Textarea = React.forwardRef<HTMLDivElement, TextareaProps>(
       { [labelShrink]: shrink },
       labelProps?.className,
     );
+    const asteriskClasses = classnames(objectsToString(base.asterisk));
 
     // 4. return
     return (
       <div ref={ref} className={containerClasses}>
         <textarea {...rest} className={textareaClasses} placeholder={rest?.placeholder || " "} />
-        <label className={labelClasses}>{label}</label>
+        <label className={labelClasses}>
+          {label} {rest.required ? <span className={asteriskClasses}>*</span> : ""}
+        </label>
       </div>
     );
   },
@@ -123,6 +144,8 @@ Textarea.propTypes = {
   success: propTypesSuccess,
   resize: propTypesResize,
   labelProps: propTypesLabelProps,
+  containerProps: propTypesContainerProps,
+  shrink: propTypesShrink,
   className: propTypesClassName,
 };
 

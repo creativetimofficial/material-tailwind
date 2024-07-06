@@ -4,7 +4,7 @@ const progressGradient: object = {
     color: "text-white",
   },
   gray: {
-    backgroud: "bg-gradient-to-tr from-gray-600 to-gray-400",
+    backgroud: "bg-gradient-to-tr from-gray-900 to-gray-800",
     color: "text-white",
   },
   brown: {

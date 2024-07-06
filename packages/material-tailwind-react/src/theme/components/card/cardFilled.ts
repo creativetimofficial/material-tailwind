@@ -14,9 +14,9 @@ const cardFilled: object = {
     shadow: "shadow-blue-gray-500/40",
   },
   gray: {
-    backgroud: "bg-gray-500",
+    backgroud: "bg-gray-900",
     color: "text-white",
-    shadow: "shadow-gray-500/40",
+    shadow: "shadow-gray-900/20",
   },
   brown: {
     backgroud: "bg-brown-500",

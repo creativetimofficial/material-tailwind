@@ -36,10 +36,11 @@ export interface IconButtonProps extends React.ComponentProps<"button"> {
   ripple?: ripple;
   className?: className;
   children: children;
+  fullWidth?: boolean;
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ variant, size, color, ripple, className, children, ...rest }, ref) => {
+  ({ variant, size, color, ripple, className, children, fullWidth, ...rest }, ref) => {
     // 1. init
     const { iconButton } = useTheme();
     const { valid, defaultProps, styles } = iconButton;
@@ -50,7 +51,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     size = size ?? defaultProps.size;
     color = color ?? defaultProps.color;
     ripple = ripple ?? defaultProps.ripple;
-    className = className ?? defaultProps.className;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set ripple effect instance
     const rippleEffect = ripple !== undefined && new Ripple();
@@ -59,7 +60,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     const buttonBase = objectsToString(base);
     const buttonVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "blue")
+        findMatch(valid.colors, color, "gray")
       ],
     );
     const buttonSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]);
@@ -78,14 +79,16 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           if (ripple) {
             rippleEffect.create(
               e,
-              variant === "filled" || variant === "gradient" ? "light" : "dark",
+              (variant === "filled" || variant === "gradient") && color !== "white"
+                ? "light"
+                : "dark",
             );
           }
 
           return typeof onMouseDown === "function" && onMouseDown(e);
         }}
       >
-        <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
           {children}
         </span>
       </button>
