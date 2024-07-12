@@ -26,6 +26,8 @@ export function PageMap({ type, frontMatter }) {
   const [feedbackType, setFeedbackType] = React.useState("issue");
   const frameWorkType = pathname.includes("/docs/react") ? "react" : "html";
 
+  const isBoilerplate = type === "boilerplate";
+
   const handleOpen = () => setOpen(!open);
 
   React.useEffect(() => {
@@ -45,29 +47,33 @@ export function PageMap({ type, frontMatter }) {
   return (
     <aside className="sticky top-14 ml-auto hidden h-screen w-64 pb-4 pt-6 lg:block">
       <div className="h-screen w-64 overflow-y-scroll pb-40">
-        <Typography
-          variant="small"
-          className="font-bold capitalize text-primary"
-        >
-          On This Page
-        </Typography>
-        <ul className="mb-8 list-none pt-2">
-          {frontMatter.navigation &&
-            frontMatter.navigation.map((el, key) => (
-              <li key={key}>
-                <a
-                  href={`#${el}`}
-                  className={`relative list-item w-full py-1 text-sm capitalize transition-colors hover:text-primary focus:text-primary ${
-                    hash === el
-                      ? "font-medium text-blue-500"
-                      : "font-normal text-gray-600"
-                  }`}
-                >
-                  {el.includes("-") ? el.split("-").join(" ") : el}
-                </a>
-              </li>
-            ))}
-        </ul>
+        {frontMatter.navigation.length > 0 && (
+          <>
+            <Typography
+              variant="small"
+              className="font-bold capitalize text-primary"
+            >
+              On This Page
+            </Typography>
+            <ul className="mb-8 list-none pt-2">
+              {frontMatter.navigation &&
+                frontMatter.navigation.map((el, key) => (
+                  <li key={key}>
+                    <a
+                      href={`#${el}`}
+                      className={`relative list-item w-full py-1 text-sm capitalize transition-colors hover:text-primary focus:text-primary ${
+                        hash === el
+                          ? "font-medium text-blue-500"
+                          : "font-normal text-gray-600"
+                      }`}
+                    >
+                      {el.includes("-") ? el.split("-").join(" ") : el}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </>
+        )}
 
         <Typography
           variant="small"
@@ -89,7 +95,11 @@ export function PageMap({ type, frontMatter }) {
           <li>
             <a
               target="_blank"
-              href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx?ref=material-tailwind`}
+              href={
+                isBoilerplate
+                  ? `https://www.github.com/creativetimofficial/material-tailwind/blob/main/boilerplate/${frontMatter.github}.mdx?ref=material-tailwind`
+                  : `https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx?ref=material-tailwind`
+              }
               className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
@@ -161,48 +171,58 @@ export function PageMap({ type, frontMatter }) {
           Frameworks
         </Typography>
         <ul className="mb-8 list-none pt-2">
-          <li className="mb-3">
-            <Link
-              href="/docs/react/installation"
-              className={`${
-                frameWorkType === "react"
-                  ? "pointer-events-none"
-                  : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
-              } flex items-center gap-2`}
-            >
-              <Image
-                src="https://docs.material-tailwind.com/svg/react.svg"
-                alt="react"
-                width={48}
-                height={48}
-                className="h-5 w-5"
-              />
-              <Typography variant="small" className="font-medium text-primary">
-                React
-              </Typography>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/docs/html/installation"
-              className={`${
-                frameWorkType === "html"
-                  ? "pointer-events-none"
-                  : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
-              } flex items-center gap-2`}
-            >
-              <Image
-                src="https://docs.material-tailwind.com/svg/html.svg"
-                alt="html"
-                width={48}
-                height={48}
-                className="h-5 w-5"
-              />
-              <Typography variant="small" className="font-medium text-primary">
-                HTML
-              </Typography>
-            </Link>
-          </li>
+          {!isBoilerplate && (
+            <>
+              <li className="mb-3">
+                <Link
+                  href="/docs/react/installation"
+                  className={`${
+                    frameWorkType === "react"
+                      ? "pointer-events-none"
+                      : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
+                  } flex items-center gap-2`}
+                >
+                  <Image
+                    src="https://docs.material-tailwind.com/svg/react.svg"
+                    alt="react"
+                    width={48}
+                    height={48}
+                    className="h-5 w-5"
+                  />
+                  <Typography
+                    variant="small"
+                    className="font-medium text-primary"
+                  >
+                    React
+                  </Typography>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/docs/html/installation"
+                  className={`${
+                    frameWorkType === "html"
+                      ? "pointer-events-none"
+                      : "pointer-events-auto opacity-70 transition-opacity duration-300 hover:opacity-100"
+                  } flex items-center gap-2`}
+                >
+                  <Image
+                    src="https://docs.material-tailwind.com/svg/html.svg"
+                    alt="html"
+                    width={48}
+                    height={48}
+                    className="h-5 w-5"
+                  />
+                  <Typography
+                    variant="small"
+                    className="font-medium text-primary"
+                  >
+                    HTML
+                  </Typography>
+                </Link>
+              </li>
+            </>
+          )}
           <li className="mt-8">
             <Link
               href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind"

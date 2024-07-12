@@ -1,0 +1,55 @@
+---
+title: Material Tailwind Boilerplate - Authentication
+description: Learn how to setup and use Material Tailwind Boilerplate authentication with Supabase Auth.
+navigation:
+  ["google-auth", "magic-link"]
+github: authentication
+next: payments
+---
+
+# Material Tailwind Boilerplate - Authentication
+
+We used Supabase auth as authentication method for the boilerplate, in this section we will guide you on how to setup the Google Auth and Magic Link based on Supabase.
+
+<br />
+<br />
+
+<DocsTitle href="google-auth">
+## Google Auth
+</DocsTitle>
+
+To setup authentication with Google + Supabase follow the steps below:
+
+1: Go to the [Google Developers Console](https://console.cloud.google.com).
+
+2: Then go to the **APIs & Services**.
+
+3: Then go to the **OAuth Consent Screen** and fill in the required fields.
+
+4: Once you've setup the OAuth Consent Screen, go to the **Credentials** click on **Create Credentials** and select **OAuth client ID**.
+
+5: Then select the application type to **Web Application**.
+<ul className="ml-8 list-disc">
+  <li>
+    Add a name for the OAuth client ID.
+  </li>
+  <li>
+    Click on the **Add URI** button on the **Authorized JavaScript Origins** and add the **{`http://localhost:3000`}** and **{`https://your-project.supabase.co`}**.
+  </li>
+  <li>
+    Then add the **{`https://rcyxayoawzmsytqtroru.supabase.co/auth/v1/callback`}** to the **Authorized Redirect URIs**.
+  </li>
+  <li>
+    Then click on the **Create** button.
+  </li>
+</ul>
+
+6: Then go to the Supabase Dashboard -> Authentication -> Providers and click on the **Google**, enable it and Copy/Paste the **Client ID** and **Client Secret** from the Google Developers Console to the Supabase Google Auth and save it.
+
+---
+
+<DocsTitle href="magic-link">
+## Magic Link
+</DocsTitle>
+
+We use [Resend](https://resend.com/) for Magic Link Authentication, follow the link [Resend + Supabase](https://resend.com/blog/how-to-configure-supabase-to-send-emails-from-your-domain) to setup Resend with Supabase for sending Magic Link Authentication.

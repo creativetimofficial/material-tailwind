@@ -1,0 +1,49 @@
+---
+title: Material Tailwind Boilerplate - Database
+description: Learn how to setup and use Material Tailwind Boilerplate database with Supabase.
+navigation:
+  ["setup-subscriptions-table", "add-rls-policy"]
+github: database
+next: authentication
+---
+
+# Material Tailwind Boilerplate - Database
+
+We used Supabase as database for the Material Tailwind Boilerplate, in this section we will guide you on how to setup the database for the project.
+
+<br />
+<br />
+
+<DocsTitle href="setup-subscriptions-table">
+## Setup Subscriptions Table
+</DocsTitle>
+
+There is only one table that you need to create in the Supabase database, the table is called <Code>subscriptions</Code>, use the schema below in the Supabase SQL editor to create the table.
+
+```sql
+create table public.subscriptions (
+  email text not null,
+  created_at timestamptz not null default now(),
+  customer_id text,
+  subscription_id text,
+  ended_at timestamptz,
+  is_canceled boolean default false,
+  primary key (email)
+);
+
+alter table public.subscriptions enable row level security;
+```
+
+---
+
+<DocsTitle href="add-rls-policy">
+## Add RLS Policy
+</DocsTitle>
+
+After you create the table you need to add a row level security policy to the table, use the schema below in the Supabase SQL editor to add the policy the table.
+
+```sql
+create policy "Enable read access for all users" on public.demo for
+select
+  using (true);
+```

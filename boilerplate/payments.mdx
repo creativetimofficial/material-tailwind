@@ -1,0 +1,47 @@
+---
+title: Material Tailwind Boilerplate - Payments
+description: Learn how to setup and use Material Tailwind Boilerplate payment with Stripe.
+navigation:
+  ["setup-stripe", "create-products"]
+github: payments
+next: customers-support
+---
+
+# Material Tailwind Boilerplate - Payments
+
+We used Stripe for processing payments, in this section we will guide you on how to setup the Stripe and create products.
+
+<br />
+<br />
+
+<DocsTitle href="setup-stripe">
+## Setup Stripe
+</DocsTitle>
+
+To setup Stripe follow the steps below:
+
+1: Go to the [Stripe](https://stripe.com/) and create a new account if you don't have one.
+
+2:. Then go to the Developers -> API Keys and copy/paste the **Publishable Key** and **Secret Key** to the **.env** file.
+
+3: Then go to the Webhooks and click on the **Test in a local environment**, on the right side you can see some code from there copy the <Code>endpointSecret</Code> and paste it to the **.env** file.
+
+4: Then go to the **Settings** -> **Billing** -> **Customer Portal** and activate it, this will allow your users to manage their subscriptions base on Stripe customers portal. 
+
+5: Now you can run the <Code>npm run stripe:listen</Code> in your terminal to listen for Stripe webhooks locally.
+
+---
+
+<DocsTitle href="create-products">
+## Create Products
+</DocsTitle>
+
+The Boilerplate comes with two types of pricing plans, **Monthly** and **Yearly**, by default we both options but you can customize it according to your needs.
+
+To setup the pricing plans follow the steps below:
+
+1: Create a new product in the [Stripe Dashboard](https://dashboard.stripe.com/dashboard) and copy it's **Price ID**.
+
+2: Then go to the boilerplate and open the <Code>components/pricing.tsx</Code> file.
+
+3: Then on the <Code>priceList</Code> array you can add your pricing plans, the <Code>stripePriceId</Code> is the product **Price ID** that you copied from the Stripe Dashboard.

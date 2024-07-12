@@ -1,0 +1,25 @@
+---
+title: Material Tailwind Boilerplate - Hero
+description: Learn how to use Material Tailwind Boilerplate Hero Component.
+navigation: []
+github: hero
+next: stats
+---
+
+# Material Tailwind Boilerplate - Hero
+
+The hero component is the first thing that the user sees when they visit the website. It contains the title, description, and the call to action button. The hero component is located in the <Code>components/hero.tsx</Code> file.
+
+Below is the code snippet of the hero component.
+
+<br />
+
+<CodePreview noPadding component={<Image src="/boilerplate/hero.png" alt="hero" width={1024} height={1024} className="w-full" />}>
+```tsx
+import { Hero } from "@/components";
+
+export default function Page() {
+  return <Hero />
+}
+```
+</CodePreview>

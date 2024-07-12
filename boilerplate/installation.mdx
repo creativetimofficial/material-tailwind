@@ -1,0 +1,99 @@
+---
+title: Get Started with Material Tailwind Boilerplate
+description: Learn how to use Material Tailwind Boilerplate to quickly and easily create elegant and flexible pages for your SaaS projects.
+navigation:
+  ["clone-github-repo", "setup-env", "run-the-project"]
+github: installation
+next: license
+---
+
+# Get Started with Material Tailwind Boilerplate
+
+<span id="quick-start" className="scroll-mt-48" />
+Material Tailwind Boilerplate is a starter-kit for building SaaS projects using Material
+Tailwind, Next.js, Tailwind CSS, Supabase, Stripe, Resend and GaliChat. It comes
+with a set of pre-built pages, components and features that you can use to quickly
+build your project.
+
+<br />
+<br />
+
+<DocsTitle href="clone-github-repo">
+## Clone Github Repo
+</DocsTitle>
+
+First you need to clone the boilerplate from the github, run the commands below one by one to clone and setup the the project in your pc.
+
+```bash
+# 1. clone the repository from github
+git clone https://github.com/creativetimofficial/material-tailwind-boilerplate [YOUR_APP_NAME]
+
+# 2. go to the cloned project
+cd [YOUR_APP_NAME]
+
+# 3. remove the current origin from project 
+git remote remove origin
+
+# 4. install the dependencies
+npm install
+```
+
+---
+
+<DocsTitle href="setup-env">
+## Setup .env
+</DocsTitle>
+
+Rename the <Code>.env.example</Code> to <Code>.env</Code>, run the command below to rename the env file.
+
+```bash
+mv .env.example .env
+```
+
+<br />
+
+Once it's done open the <Code>.env</Code> file and you will see the below code:
+
+```env
+# base
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# supabase
+NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
+SUPABASE_SERVICE_ROLE_KEY=<your-supabase-service-role-key>
+
+# stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<your-stripe-publishable-key>
+STRIPE_SECRET_KEY=<your-stripe-secret-key>
+STRIPE_WEBHOOK_SECRET=<your-stripe-webhook-secret>
+
+# google analytics
+NEXT_PUBLIC_GOOGLE_TAG_ID=<your-google-tag-manage-id>
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=<your-google-analytics-id>
+
+# galichat
+NEXT_PUBLIC_GALICHAT_HASH=<your-galichat-hash>
+```
+
+<br />
+
+For the moment we only need to setup Supabase inorder to work.
+
+Go to the Supabase dashboard and create a new project and copy/paste your <Code>NEXT_PUBLIC_SUPABASE_URL</Code>, <Code>NEXT_PUBLIC_SUPABASE_ANON_KEY</Code> and <Code>SUPABASE_SERVICE_ROLE_KEY</Code>
+
+---
+
+<DocsTitle href="run-the-project">
+## Run the Project
+</DocsTitle>
+
+Once you're done with the environment variables you can run the project smoothly, run the command below to run the project locally.
+
+```bash
+npm run dev
+```
+
+<br />
+
+Now you can open the <Code>{`http://localhost:3000`}</Code> to see your site on the browser. 

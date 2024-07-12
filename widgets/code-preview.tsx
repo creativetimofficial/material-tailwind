@@ -6,7 +6,14 @@ import {
 } from "@heroicons/react/24/outline";
 import copyToClipboard from "utils/copy-to-clipboard";
 
-export function CodePreview({ id, component, link, children, className }) {
+export function CodePreview({
+  id,
+  component,
+  link,
+  children,
+  className,
+  noPadding,
+}) {
   const codeRef = React.useRef(null);
   const [mode, setMode] = React.useState("preview");
   const [copied, setCopied] = React.useState(false);
@@ -120,7 +127,11 @@ export function CodePreview({ id, component, link, children, className }) {
           </Tooltip>
         </div>
       </div>
-      <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <div
+        className={`grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible ${
+          noPadding ? "" : "p-6"
+        }`}
+      >
         {component}
       </div>
       <div className="code-preview block max-h-[40rem] overflow-scroll rounded-b-xl">
