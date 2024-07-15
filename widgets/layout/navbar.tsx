@@ -11,10 +11,15 @@ import {
   Tooltip,
   Input,
   Button,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
 } from "@material-tailwind/react";
 import { Logo, Search } from "@widgets";
 import { formatNumber } from "@utils";
 import { useRouter } from "next/router";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 interface DocsNavbar {
   slug: string[];
@@ -93,9 +98,25 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
         <NavItem href="/docs/react/installation">Docs</NavItem>
         <NavItem href="/pro">Pro</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
-        <NavItem href="/figma">Figma</NavItem>
         <NavItem href="/roots-of-ui-ux-design">Book</NavItem>
-        <NavItem href="/blog">Blog</NavItem>
+        <Menu>
+          <MenuHandler>
+            <div className="flex cursor-pointer items-center gap-1 rounded-lg px-4 py-2.5 text-sm leading-none text-blue-gray-800 transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-primary focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-primary active:bg-blue-gray-50 active:bg-opacity-80 active:text-primary">
+              Resources <ChevronDownIcon className="h-3.5 w-3.5" />
+            </div>
+          </MenuHandler>
+          <MenuList>
+            <Link href="/affiliate" className=" focus:!outline-none">
+              <MenuItem>Affiliate Program</MenuItem>
+            </Link>
+            <Link href="/blog" className=" focus:!outline-none">
+              <MenuItem>Blog</MenuItem>
+            </Link>
+            <Link href="/figma" className=" focus:!outline-none">
+              <MenuItem>Figma</MenuItem>
+            </Link>
+          </MenuList>
+        </Menu>
       </List>
       <div className="ml-2 flex items-center gap-2">
         <div className="group relative mt-1">
