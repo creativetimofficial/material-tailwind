@@ -258,6 +258,7 @@ export const getStaticPaths = async () => {
   const baseDirectory = "boilerplate";
   const paths = [];
   const allDir = getDirectoriesAndFile(baseDirectory);
+
   const filteredArray = filterArray(allDir);
 
   for (let i = 0; i < filteredArray.length - 1; i++) {
@@ -278,8 +279,16 @@ export const getStaticPaths = async () => {
       });
   }
 
+  const filteredPaths = paths.filter((path) => path.params.slug.length <= 1);
+  
+  const newPaths = filteredPaths.map((path) => ({
+    params: {
+      slug: path.params.slug,
+    },
+  }));
+
   return {
-    paths: paths,
+    paths: newPaths,
     fallback: false,
   };
 };

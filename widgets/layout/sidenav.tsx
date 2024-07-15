@@ -72,8 +72,6 @@ export function Sidenav({
               </Typography>
               <ul className="py-2">
                 {pages.map(({ name, route, label }: any, key) => {
-                  console.log(route);
-
                   const isActive = route.includes("/")
                     ? route.includes(slug)
                     : route === slug;
