@@ -74,6 +74,8 @@ import * as SwitchExamples from "docs-content/react/switch";
 import * as TabsExamples from "docs-content/react/tabs";
 import * as TextareaExamples from "docs-content/react/textarea";
 import * as Plugins from "docs-content/react/plugins";
+import * as Web3 from "docs-content/react/web3";
+
 import ReleaseNotes from "docs-content/react/release-notes";
 import * as FrameworkIcons from "@widgets";
 import * as SkeletonExamples from "docs-content/react/skeleton";
@@ -359,6 +361,7 @@ const components = {
   ReleaseNotes,
   ColorPalette,
   Plugins,
+  Web3,
   SkeletonExamples,
   GalleryExamples,
   MegaMenuExamples,

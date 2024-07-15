@@ -299,4 +299,17 @@ export const routes = [
       },
     ],
   },
+  {
+    name: "Web3",
+    pages: [
+      {
+        name: "NFT Card",
+        route: "/web3/nft-card",
+      },
+      {
+        name: "NFT Stats Card",
+        route: "/web3/nft-stats-card",
+      },
+    ],
+  },
 ];
