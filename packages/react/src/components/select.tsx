@@ -298,7 +298,7 @@ export type SelectTriggerProps<T extends React.ElementType = "button"> =
   BaseProps<
     T,
     {
-      indicator: React.ReactNode;
+      indicator?: React.ReactNode;
       placeholder?: string;
       children?: ({
         value,
