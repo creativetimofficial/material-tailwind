@@ -31,14 +31,22 @@ MaterialTailwindThemeContext.displayName = "MaterialTailwind.ThemeProvider";
  * }
  * ```
  */
-export function ThemeProvider({ value, ...rest }: { value: any }) {
+export function ThemeProvider({
+  value,
+  children,
+}: {
+  value: any;
+  children: React.ReactNode;
+}) {
   const mainTheme = parseObject(theme);
   const providedTheme = parseObject(value);
   const combinedTheme = merge(mainTheme, providedTheme);
   const mergedTheme = mergeTheme(combinedTheme as object);
 
   return (
-    <MaterialTailwindThemeContext.Provider {...rest} value={mergedTheme} />
+    <MaterialTailwindThemeContext.Provider value={mergedTheme}>
+      {children}
+    </MaterialTailwindThemeContext.Provider>
   );
 }
 
