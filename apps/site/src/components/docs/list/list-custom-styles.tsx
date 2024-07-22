@@ -13,7 +13,8 @@ export function ListCustomStyles() {
           <Chip
             size="sm"
             variant="ghost"
-            className="transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary"
+            color="info"
+            className="transition-colors duration-300 group-hover:bg-white"
           >
             <Chip.Label>14</Chip.Label>
           </Chip>
@@ -28,7 +29,8 @@ export function ListCustomStyles() {
           <Chip
             size="sm"
             variant="ghost"
-            className="transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary"
+            color="info"
+            className="transition-colors duration-300 group-hover:bg-white"
           >
             <Chip.Label>40</Chip.Label>
           </Chip>
