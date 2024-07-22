@@ -9,7 +9,7 @@ export function BackgroundBlogCard() {
           <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20" />
         </div>
       </Card.Header>
-      <Card.Body className="relative bottom-0 h-full px-6 py-14 md:px-12">
+      <Card.Body className="relative bottom-0 flex h-full flex-col items-center justify-end px-6 py-14 md:px-12">
         <Typography type="h4" className="text-white">
           How we design and code open-source projects?
         </Typography>
