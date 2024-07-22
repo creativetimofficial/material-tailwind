@@ -52,9 +52,9 @@ export function ProfileInfoPopover() {
           color="gray"
           className="font-normal text-blue-gray-500"
         >
-          Frontend Developer • Major interest in Web Development: motivated to
-          achieve measurable results, to deepen my knowledge and improve my
-          skills.
+          A skilled developer with a passion for creating innovative solutions
+          and a proven track record in full-stack development. Adept at working
+          with a variety of technologies to build robust applications.
         </Typography>
         <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
           <Typography

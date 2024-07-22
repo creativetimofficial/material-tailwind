@@ -33,7 +33,7 @@ export function DialogWithImage() {
                   Tania Andrew
                 </p>
                 <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
-                  @canwu
+                  @andrew
                 </p>
               </div>
             </div>
@@ -43,7 +43,7 @@ export function DialogWithImage() {
                 type="button"
                 data-ripple-dark="true"
               >
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -56,7 +56,7 @@ export function DialogWithImage() {
                 </span>
               </button>
               <button
-                className="select-none rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="select-none rounded-lg bg-gray-900 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
                 data-ripple-light="true"
               >
@@ -64,7 +64,7 @@ export function DialogWithImage() {
               </button>
             </div>
           </div>
-          <div className="relative border-t border-b border-t-blue-gray-100 border-b-blue-gray-100 p-0 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
+          <div className="relative border-b border-t border-b-blue-gray-100 border-t-blue-gray-100 p-0 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
             <img
               alt="nature"
               className="h-[48rem] w-full object-cover object-center"
@@ -91,7 +91,7 @@ export function DialogWithImage() {
               </div>
             </div>
             <button
-              className="flex select-none items-center gap-3 rounded-lg border border-blue-gray-500 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              className="flex select-none items-center gap-3 rounded-lg border border-blue-gray-500 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               type="button"
               data-ripple-dark="true"
             >

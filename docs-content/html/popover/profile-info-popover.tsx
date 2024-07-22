@@ -4,7 +4,7 @@ export function ProfileInfoPopover() {
       <button
         data-ripple-dark="true"
         data-popover-target="profile-info-popover"
-        className="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85]  focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        className="select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85]  focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       >
         Profile Info
       </button>
@@ -19,7 +19,7 @@ export function ProfileInfoPopover() {
             className="relative inline-block h-12 w-12 rounded-full object-cover object-center"
           />
           <button
-            className="select-none rounded-lg bg-gray-900 py-2 px-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="select-none rounded-lg bg-gray-900 px-3 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
             data-ripple-light="true"
           >
@@ -29,13 +29,13 @@ export function ProfileInfoPopover() {
         <h6 className="mb-2 flex items-center gap-2 font-sans text-base font-medium leading-relaxed tracking-normal text-blue-gray-900 antialiased">
           <span>Tania Andrew</span> •{" "}
           <a className="text-sm text-blue-gray-700" href="#">
-            @canwu
+            @andrew
           </a>
         </h6>
         <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
-          Frontend Developer • Major interest in Web Development: motivated to
-          achieve measurable results, to deepen my knowledge and improve my
-          skills.
+          A skilled developer with a passion for creating innovative solutions
+          and a proven track record in full-stack development. Adept at working
+          with a variety of technologies to build robust applications.
         </p>
         <div className="mt-6 flex items-center gap-8 border-t border-blue-gray-50 pt-4">
           <p className="flex items-center gap-1 font-sans text-xs font-normal text-gray-700 antialiased">
