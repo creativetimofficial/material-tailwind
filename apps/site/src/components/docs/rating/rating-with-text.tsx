@@ -9,7 +9,7 @@ export function RatingWithText() {
       <Typography color="primary" className="font-semibold">
         {rated}
       </Typography>
-      <Rating value={4} onChange={(value) => setRated(value)} />
+      <Rating value={4} onValueChange={(value) => setRated(value)} />
       <Typography color="default" className="font-semibold">
         Based on 134 Reviews
       </Typography>
