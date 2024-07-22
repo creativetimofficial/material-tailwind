@@ -9,7 +9,7 @@ export function StepperCustomStyles() {
       <Timeline
         mode="stepper"
         value={step}
-        onChange={(val) => setStep(Number(val))}
+        onValueChange={(val) => setStep(Number(val))}
       >
         <Timeline.Item value={0} className="w-full">
           <Timeline.Header>
