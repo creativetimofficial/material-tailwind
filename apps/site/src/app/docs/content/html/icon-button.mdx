@@ -2,8 +2,8 @@
 title: Tailwind CSS Icon Button - Material Tailwind
 description: Customise your web projects with our easy-to-use Icon Button component for Tailwind CSS using Material Design guidelines.
 github: icon-button
-prev: docs/react/checkbox
-next: docs/react/input
+prev: docs/html/checkbox
+next: docs/html/input
 ---
 
 # Tailwind CSS Icon Button
@@ -12,13 +12,13 @@ Get started easily with our Icon Button component based on HTML and styled with 
 
 These types of buttons provide a visually intuitive way to interact with an application or website. The use of icons can help save space on the user interface and make it easier for users to recognize and understand the action associated with the button. Think about the trash bin icon for deleting items, a pencil icon for editing content, or a magnifying glass icon for search action.
 
-Below we showcased examples of icon buttons that you can use for you Material Tailwind project.
+Below we showcased examples of icon buttons that you can use for your project. For the examples below we used [Iconoir](https://iconoir.com/) icons but you can use any icon library you prefer.
 
 ---
 
 ## Icon Button Demo
 
-Here's how to implement a simple and responsive icon button component. It can be used for the action of favoriting or liking content, given its heart icon.
+Here's how to implement a simple and responsive icon button component. It can be used for the action of favoriting, liking or rating content, given its star icon.
 
 <ComponentPreview demo={<HTMLIconButton.IconButtonDemo />}>
 ```html
@@ -373,18 +373,11 @@ Check out how to implement different visual styles and interaction states for yo
 ```
 </ComponentPreview>
 
-<p class="mt-4 antialiased text-foreground">In the coded snipped you can see:</p>
-<ul class="mt-4 ml-4 space-y-2 antialiased list-disc list-outside text-foreground">
-<li>The first button: has a solid gray background (`bg-gray-900`), white text, and standard shadow effects. It showcases interactive states like hover, focus, and active, with visual feedback including shadow and opacity changes.</li>
-<li>The second button: introduces a gradient background (`bg-gradient-to-tr from-gray-900 to-gray-800`) while maintaining similar size, shape, and interaction states as the first button.</li>
-<li>The third button: features a border (`border border-gray-900`) and changes the text color to gray (`text-gray-900`), distinguishing it from the previous buttons with a more subtle appearance.</li>
-<li>The fourth button: has a transparent background initially with text colored in gray (`text-gray-900`). The hover and active states introduce a background color change (`hover:bg-gray-900/10 active:bg-gray-900/20`), making the button's response to user interactions more understated compared to the others.</li>
-</ul>
 ---
 
 ## Icon Button Sizes
 
-Use this example to create icon buttons in different sizes.
+Use this example to create icon buttons in different sizes like small, medium, and large.
 
 <ComponentPreview demo={<HTMLIconButton.IconButtonSizes />}>
 ```html
@@ -598,7 +591,7 @@ Use this example to create icon buttons in different sizes.
 
 ## Icon Button Colors
 
-Use this example to create icon buttons with different colors (blue, red, green, and amber) for your Tailwind CSS project.
+Use this example to create icon buttons in different colors like primary, secondary, info, success, warning, and error, each color can be used to represent a different action.
 
 <ComponentPreview demo={<HTMLIconButton.IconButtonColors />}>
 ```html
@@ -1589,7 +1582,7 @@ Use this example to create icon buttons with link element. These buttons are des
 
 Implement social media buttons with our icon button component example.
 
-In the example below, each button represents a different social media platform through the use of Font Awesome icons and distinct background colors associated with each platform.
+In the example below, each button represents a different social media platform through the icons and distinct background colors associated with each platform.
 
 <ComponentPreview demo={<HTMLIconButton.CustomIconButton />}>
 ```html
@@ -1685,12 +1678,14 @@ In the example below, each button represents a different social media platform t
 
 The icon button component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
 
+If you don't want to have the ripple effect for the icon buttons you can skip this step.
+
 <CodePreview>
-```bash
-# from node_modules
-<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```html
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
  
-# from cdn
+<!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```
 </CodePreview>
