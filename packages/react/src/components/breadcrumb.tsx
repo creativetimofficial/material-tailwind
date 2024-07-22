@@ -42,7 +42,7 @@ BreadcrumbRootBase.displayName = "MaterialTailwind.Breadcrumb";
 export const BreadcrumbRoot = React.forwardRef(BreadcrumbRootBase) as <
   T extends React.ElementType = "nav",
 >(
-  props: BreadcrumbProps<T> & { ref: React.Ref<Element> },
+  props: BreadcrumbProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // breadcrumb link
@@ -71,7 +71,7 @@ BreadcrumbLinkRoot.displayName = "MaterialTailwind.BreadcrumbLink";
 export const BreadcrumbLink = React.forwardRef(BreadcrumbLinkRoot) as <
   T extends React.ElementType = "a",
 >(
-  props: BreadcrumbLinkProps<T> & { ref: React.Ref<Element> },
+  props: BreadcrumbLinkProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // breadcrumb separator
@@ -100,7 +100,7 @@ BreadcrumbSeparatorRoot.displayName = "MaterialTailwind.BreadcrumbSeparator";
 export const BreadcrumbSeparator = React.forwardRef(
   BreadcrumbSeparatorRoot,
 ) as <T extends React.ElementType = "span">(
-  props: BreadcrumbSeparatorProps<T> & { ref: React.Ref<Element> },
+  props: BreadcrumbSeparatorProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Breadcrumb = Object.assign(BreadcrumbRoot, {

@@ -63,7 +63,7 @@ function TypographyRoot<T extends React.ElementType = any>(
   );
 
   return (
-    <Component {...props} ref={ref as any} className={styles}>
+    <Component {...props} ref={ref} className={styles}>
       {children}
     </Component>
   );
@@ -74,7 +74,7 @@ TypographyRoot.displayName = "MaterialTailwind.Typography";
 export const Typography = React.forwardRef(TypographyRoot) as <
   T extends React.ElementType = any,
 >(
-  props: TypographyProps<T> & { ref: React.Ref<Element> },
+  props: TypographyProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export default Typography;

@@ -284,7 +284,7 @@ MenuTriggerRoot.displayName = "MaterialTailwind.MenuTrigger";
 export const MenuTrigger = React.forwardRef(MenuTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: MenuTriggerProps<T> & { ref: React.Ref<Element> },
+  props: MenuTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // menu content
@@ -381,7 +381,7 @@ MenuContentRoot.displayName = "MaterialTailwind.MenuContent";
 export const MenuContent = React.forwardRef(MenuContentRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: MenuContentProps<T> & { ref: React.Ref<Element> },
+  props: MenuContentProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // menu item
@@ -460,7 +460,7 @@ MenuItemRoot.displayName = "MaterialTailwind.MenuItem";
 export const MenuItem = React.forwardRef(MenuItemRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: MenuItemProps<T> & { ref: React.Ref<Element> },
+  props: MenuItemProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Menu = Object.assign(MenuRoot, {

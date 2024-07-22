@@ -138,7 +138,7 @@ DrawerTriggerRoot.displayName = "MaterialTailwind.DrawerTrigger";
 export const DrawerTrigger = React.forwardRef(DrawerTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: DrawerTriggerProps<T> & { ref: React.Ref<Element> },
+  props: DrawerTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // drawer overlay
@@ -274,7 +274,7 @@ DrawerPanelRoot.displayName = "MaterialTailwind.DrawerPanel";
 export const DrawerPanel = React.forwardRef(DrawerPanelRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: DrawerPanelProps<T> & { ref: React.Ref<Element> },
+  props: DrawerPanelProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // drawer dismiss trigger
@@ -316,7 +316,7 @@ DrawerDismissTriggerRoot.displayName = "MaterialTailwind.DrawerDismissTrigger";
 export const DrawerDismissTrigger = React.forwardRef(
   DrawerDismissTriggerRoot,
 ) as <T extends React.ElementType = "button">(
-  props: DrawerDismissTriggerProps<T> & { ref: React.Ref<Element> },
+  props: DrawerDismissTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Drawer = Object.assign(DrawerRoot, {

@@ -150,7 +150,7 @@ CheckboxIndicatorRoot.displayName = "MaterialTailwind.CheckboxIndicator";
 export const CheckboxIndicator = React.forwardRef(CheckboxIndicatorRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: CheckboxIndicatorProps<T> & { ref: React.Ref<Element> },
+  props: CheckboxIndicatorProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Checkbox = Object.assign(CheckboxRoot, {

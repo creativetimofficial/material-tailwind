@@ -59,7 +59,7 @@ AvatarRoot.displayName = "MaterialTailwind.Avatar";
 export const Avatar = React.forwardRef(AvatarRoot) as <
   T extends React.ElementType = "img",
 >(
-  props: AvatarProps<T> & { ref: React.Ref<Element> },
+  props: AvatarProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export default Avatar;

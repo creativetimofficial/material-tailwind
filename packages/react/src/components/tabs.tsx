@@ -260,7 +260,7 @@ TabsTriggerRoot.displayName = "MaterialTailwind.TabsTrigger";
 export const TabsTrigger = React.forwardRef(TabsTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: TabsTriggerProps<T> & { ref: React.Ref<Element> },
+  props: TabsTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // tabs panel
@@ -302,7 +302,7 @@ TabsPanelRoot.displayName = "MaterialTailwind.TabsPanel";
 export const TabsPanel = React.forwardRef(TabsPanelRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TabsPanelProps<T> & { ref: React.Ref<Element> },
+  props: TabsPanelProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // tabs trigger indicator
@@ -343,7 +343,7 @@ TabsTriggerIndicatorRoot.displayName = "MaterialTailwind.TabsTriggerIndicator";
 export const TabsTriggerIndicator = React.forwardRef(
   TabsTriggerIndicatorRoot,
 ) as <T extends React.ElementType = "span">(
-  props: TabsTriggerIndicatorProps<T> & { ref: React.Ref<Element> },
+  props: TabsTriggerIndicatorProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Tabs = Object.assign(TabsRoot, {

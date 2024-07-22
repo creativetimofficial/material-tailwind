@@ -116,7 +116,7 @@ ListItemRoot.displayName = "MaterialTailwind.ListItem";
 export const ListItem = React.forwardRef(ListItemRoot) as <
   T extends React.ElementType = "li",
 >(
-  props: ListItemProps<T> & { ref: React.Ref<Element> },
+  props: ListItemProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // list item start
@@ -145,7 +145,7 @@ ListItemStartRoot.displayName = "MaterialTailwind.ListItemStart";
 export const ListItemStart = React.forwardRef(ListItemStartRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: ListItemStartProps<T> & { ref: React.Ref<Element> },
+  props: ListItemStartProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // list item end
@@ -174,7 +174,7 @@ ListItemEndRoot.displayName = "MaterialTailwind.ListItemEnd";
 export const ListItemEnd = React.forwardRef(ListItemEndRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: ListItemEndProps & { ref: React.Ref<Element> },
+  props: ListItemEndProps & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const List = Object.assign(ListRoot, {

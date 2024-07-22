@@ -58,7 +58,7 @@ NavbarRoot.displayName = "MaterialTailwind.Navbar";
 export const Navbar = React.forwardRef(NavbarRoot) as <
   T extends React.ElementType = "nav",
 >(
-  props: NavbarProps<T> & { ref: React.Ref<Element> },
+  props: NavbarProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export default Navbar;

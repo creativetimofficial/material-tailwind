@@ -156,7 +156,7 @@ DialogTriggerRoot.displayName = "MaterialTailwind.DialogTrigger";
 export const DialogTrigger = React.forwardRef(DialogTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: DialogTriggerProps<T> & { ref: React.Ref<Element> },
+  props: DialogTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // dialog overlay
@@ -286,7 +286,7 @@ DialogContentRoot.displayName = "MaterialTailwind.DialogContent";
 export const DialogContent = React.forwardRef(DialogContentRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: DialogContentProps<T> & { ref: React.Ref<Element> },
+  props: DialogContentProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // dialog dismiss trigger
@@ -328,7 +328,7 @@ DialogDismissTriggerRoot.displayName = "MaterialTailwind.DialogDismissTrigger";
 export const DialogDismissTrigger = React.forwardRef(
   DialogDismissTriggerRoot,
 ) as <T extends React.ElementType = "button">(
-  props: DialogDismissTriggerProps<T> & { ref: React.Ref<Element> },
+  props: DialogDismissTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Dialog = Object.assign(DialogRoot, {

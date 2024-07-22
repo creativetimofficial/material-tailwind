@@ -115,7 +115,7 @@ AlertRootBase.displayName = "MaterialTailwind.Alert";
 const AlertRoot = React.forwardRef(AlertRootBase) as <
   T extends React.ElementType = "div",
 >(
-  props: AlertProps<T> & { ref: React.Ref<Element> },
+  props: AlertProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // alert content
@@ -144,7 +144,7 @@ AlertContentRoot.displayName = "MaterialTailwind.AlertContent";
 export const AlertContent = React.forwardRef(AlertContentRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: AlertContentProps<T> & { ref: React.Ref<Element> },
+  props: AlertContentProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // alert icon
@@ -172,7 +172,7 @@ AlertIconRoot.displayName = "MaterialTailwind.AlertIcon";
 export const AlertIcon = React.forwardRef(AlertIconRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: AlertIconProps<T> & { ref: React.Ref<Element> },
+  props: AlertIconProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // alert close trigger
@@ -227,7 +227,7 @@ AlertDismissTriggerRoot.displayName = "MaterialTailwind.AlertDismissTrigger";
 export const AlertDismissTrigger = React.forwardRef(
   AlertDismissTriggerRoot,
 ) as <T extends React.ElementType = "button">(
-  props: AlertDismissTriggerProps<T> & { ref: React.Ref<Element> },
+  props: AlertDismissTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Alert = Object.assign(AlertRoot, {

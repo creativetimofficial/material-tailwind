@@ -186,7 +186,7 @@ TooltipTriggerRoot.displayName = "MaterialTailwind.TooltipTrigger";
 export const TooltipTrigger = React.forwardRef(TooltipTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: TooltipTriggerProps<T> & { ref: React.Ref<Element> },
+  props: TooltipTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // tooltip content
@@ -227,7 +227,7 @@ TooltipContentRoot.displayName = "MaterialTailwind.TooltipContent";
 export const TooltipContent = React.forwardRef(TooltipContentRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TooltipContentProps<T> & { ref: React.Ref<Element> },
+  props: TooltipContentProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // tooltip arrow
@@ -280,7 +280,7 @@ TooltipArrowRoot.displayName = "MaterialTailwind.TooltipArrow";
 export const TooltipArrow = React.forwardRef(TooltipArrowRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: TooltipArrowProps<T> & { ref: React.Ref<Element> },
+  props: TooltipArrowProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Tooltip = Object.assign(TooltipRoot, {

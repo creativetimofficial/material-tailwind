@@ -93,7 +93,7 @@ IconButtonRoot.displayName = "MaterialTailwind.IconButton";
 export const IconButton = React.forwardRef(IconButtonRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: IconButtonProps<T> & { ref: React.Ref<Element> },
+  props: IconButtonProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export default IconButton;

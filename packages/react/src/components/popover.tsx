@@ -177,7 +177,7 @@ PopoverTriggerRoot.displayName = "MaterialTailwind.PopoverTrigger";
 export const PopoverTrigger = React.forwardRef(PopoverTriggerRoot) as <
   T extends React.ElementType = "button",
 >(
-  props: PopoverTriggerProps<T> & { ref: React.Ref<Element> },
+  props: PopoverTriggerProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // popover content
@@ -262,7 +262,7 @@ PopoverContentRoot.displayName = "MaterialTailwind.PopoverContent";
 export const PopoverContent = React.forwardRef(PopoverContentRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: PopoverContentProps<T> & { ref: React.Ref<Element> },
+  props: PopoverContentProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // popover arrow
@@ -315,7 +315,7 @@ PopoverArrowRoot.displayName = "MaterialTailwind.PopoverArrow";
 export const PopoverArrow = React.forwardRef(PopoverArrowRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: PopoverArrowProps<T> & { ref: React.Ref<Element> },
+  props: PopoverArrowProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Popover = Object.assign(PopoverRoot, {

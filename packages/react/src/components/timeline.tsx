@@ -172,7 +172,7 @@ TimelineRootBase.displayName = "MaterialTailwind.Timeline";
 export const TimelineRoot = React.forwardRef(TimelineRootBase) as <
   T extends React.ElementType = "div",
 >(
-  props: TimelineProps<T> & { ref: React.Ref<Element> },
+  props: TimelineProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // timeline item
@@ -236,7 +236,7 @@ TimelineItemRoot.displayName = "MaterialTailwind.TimelineItem";
 export const TimelineItem = React.forwardRef(TimelineItemRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TimelineItemProps<T> & { ref: React.Ref<Element> },
+  props: TimelineItemProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // timeline header
@@ -265,7 +265,7 @@ TimelineHeaderRoot.displayName = "MaterialTailwind.TimelineHeader";
 export const TimelineHeader = React.forwardRef(TimelineHeaderRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TimelineHeaderProps<T> & { ref: React.Ref<Element> },
+  props: TimelineHeaderProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // timeline icon
@@ -295,7 +295,7 @@ TimelineIconRoot.displayName = "MaterialTailwind.TimelineIcon";
 export const TimelineIcon = React.forwardRef(TimelineIconRoot) as <
   T extends React.ElementType = "span",
 >(
-  props: TimelineIconProps<T> & { ref: React.Ref<Element> },
+  props: TimelineIconProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // timeline separator
@@ -330,7 +330,7 @@ TimelineSeparatorRoot.displayName = "MaterialTailwind.TimelineSeparator";
 export const TimelineSeparator = React.forwardRef(TimelineSeparatorRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TimelineSeparatorProps<T> & { ref: React.Ref<Element> },
+  props: TimelineSeparatorProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // timeline body
@@ -365,7 +365,7 @@ TimelineBodyRoot.displayName = "MaterialTailwind.TimelineBody";
 export const TimelineBody = React.forwardRef(TimelineBodyRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: TimelineBodyProps<T> & { ref: React.Ref<Element> },
+  props: TimelineBodyProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export const Timeline = Object.assign(TimelineRoot, {

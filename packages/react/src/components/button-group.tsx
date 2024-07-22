@@ -100,7 +100,7 @@ ButtonGroupRoot.displayName = "MaterialTailwind.ButtonGroup";
 export const ButtonGroup = React.forwardRef(ButtonGroupRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: ButtonGroupProps<T> & { ref: React.Ref<Element> },
+  props: ButtonGroupProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 export default ButtonGroup;
