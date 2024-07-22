@@ -2,15 +2,15 @@
 title: Tailwind CSS Button - Material Tailwind
 description: Use our versatile and stylish button examples styled with Tailwind CSS that come in various sizes, states, and styles, including filled, gradient, outlined, and text buttons, alongside customization options for colors and icons.
 github: button
-prev: docs/react/inputs
-next: docs/react/button-group
+prev: docs/html/inputs
+next: docs/html/button-group
 ---
 
 # Tailwind CSS Button
 
 Use our buttons based on Tailwind CSS for actions in forms, dialogues, and more with support for multiple sizes, states, and more.
 
-`Buttons` are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form, or placing an order as easily as possible.
+Buttons are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form, or placing an order as easily as possible.
 
 See below our `button` components examples.
 
@@ -18,15 +18,15 @@ See below our `button` components examples.
 
 ## Button Demo
 
-Use this versatile button that comes with a dark theme with gray background and white text, rounded corners, and a shadow effect on hover, showing interactivity.
+Use this versatile button that comes with a purple background and white text, rounded corners, and a color change on hover, showing interactivity.
 
 <ComponentPreview demo={<HTMLButton.ButtonDemo />}>
 ```html
-  <button 
-    data-ripple-light="true"
-    class="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
-    Button
-  </button>
+<button 
+  data-ripple-light="true"
+  class="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-3.5 py-2.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none">
+  Button
+</button>
 ```
 </ComponentPreview>
 
@@ -34,7 +34,7 @@ Use this versatile button that comes with a dark theme with gray background and 
 
 ## Button Variants
 
-See our button examples below. They come in different styles and colors.
+See our button examples below. They come in different styles like ghost, outline, solid, and gradient.
 
 <ComponentPreview demo={<HTMLButton.ButtonVariants />}>
 ```html
@@ -71,7 +71,7 @@ See our button examples below. They come in different styles and colors.
 
 ## Button Sizes
 
-Use this example to create buttons in different sizes.
+Use this example to create buttons in different sizes like small, medium, and large.
 
 <ComponentPreview demo={<HTMLButton.ButtonSizes />}>
 ```html
@@ -102,7 +102,7 @@ Use this example to create buttons in different sizes.
 
 ## Button Colors
 
-Use this example to create a simple button element for your Tailwind CSS project.
+Use this example to create buttons in different colors like primary, secondary, info, success, warning, and error, each color can be used to represent a different action.
 
 <ComponentPreview demo={<HTMLButton.ButtonColors />}>
 ```html
@@ -151,7 +151,7 @@ Use this example to create a simple button element for your Tailwind CSS project
 
 ## Button With Icon
 
-You can use any type of icons inside the button, in the below example we've used the @heroicons.
+Use this example to create buttons with icons, you can use any type of icons inside the button, in the below example we've used the [Iconoir](https://iconoir.com/) icons.
 
 <ComponentPreview demo={<HTMLButton.ButtonWithIcon />}>
 ```html
@@ -328,7 +328,9 @@ You can use any type of icons inside the button, in the below example we've used
 
 ## Block Level Button
 
-A button could be a block-level component as well that gets all the available space in a row. You can render a button as a block-level element using the `w-full` class.
+A button could be a block-level component as well that gets all the available space in a row. You can render a button as a block-level element using the `w-full` class. 
+
+Use this example to create block-level buttons in different styles like ghost, outline, solid, and gradient.
 
 <ComponentPreview demo={<HTMLButton.BlockLevelButton />}>
 ```html
@@ -365,7 +367,7 @@ A button could be a block-level component as well that gets all the available sp
 
 ## Pill Button
 
-You can use tailwind css `rounded-full` class with `Button` to create rounded buttons.
+Use this example to create pill buttons in different styles like ghost, outline, solid, and gradient. You can use the `rounded-full` class to create pill buttons.
 
 <ComponentPreview demo={<HTMLButton.PillButton />}>
 ```html
@@ -402,6 +404,8 @@ You can use tailwind css `rounded-full` class with `Button` to create rounded bu
 
 ## Button As Link
 
+You can use the `a` tag instead of the `button` tag to create a button that works as a link. Use this example to create buttons in different styles like ghost, outline, solid, and gradient that work as a link.
+
 <ComponentPreview demo={<HTMLButton.ButtonAsLink />}>
 ```html
 <div class="flex flex-wrap justify-center gap-4">
@@ -436,6 +440,8 @@ You can use tailwind css `rounded-full` class with `Button` to create rounded bu
 ---
 
 ## Button with Loading State
+
+Use this example to create buttons with a loading state. You can use the `animate-spin` class to create a loading spinner using `svg` element inside the button.
 
 <ComponentPreview demo={<HTMLButton.ButtonLoading />}>
 ```html
@@ -560,7 +566,7 @@ You can use tailwind css `rounded-full` class with `Button` to create rounded bu
 
 ## Custom Auth Button
 
-You can use tailwind css classes with `Button` to create beautiful buttons for different purposes, below you can use some button examples used for authentication with social media and web 3.0.
+You can use tailwind css classes with `button` to create beautiful buttons for different purposes, below you can use some button examples used for authentication with social media and web 3.0.
 
 
 <ComponentPreview demo={<HTMLButton.CustomAuthButton />}>
@@ -662,24 +668,27 @@ You can use tailwind css classes with `Button` to create beautiful buttons for d
 
 ## Required Script
 
-The button component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
+The `button` component needs a required script file for ripple effect to work, you just need to add the below script file to the bottom of your html file.
+
+If you don't want to have the ripple effect for the buttons you can skip this step.
 
 <CodePreview>
-```bash
-# from node_modules
-<script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+```html
+<!-- from node_modules -->
+<script src="node_modules/@material-tailwind/html/scripts/ripple.js"></script>
  
-# from cdn
+<!-- from cdn -->
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 ```
 </CodePreview>
+
 ---
+
 ## Button Best Practices for Developers:
-<ul className="list-disc list-inside text-foreground space-y-2">
-<li>Ensure accessibility: Use ARIA attributes and ensure adequate contrast.</li>
-<li>Descriptive labels: Clearly indicate the button's action.</li>
-<li>Responsive design: Ensure ease of interaction on all devices.</li>
-<li>Visual distinctiveness: Make buttons stand out as clickable elements.</li>
-<li>Implement feedback states: Use hover, active, and disabled states for better interactivity.</li>
-<li>Maintain consistency: Keep button styles consistent across the application for intuitive navigation.</li>
-</ul>
+
+- Ensure accessibility: Use ARIA attributes and ensure adequate contrast.
+- Descriptive labels: Clearly indicate the button's action.
+- Responsive design: Ensure ease of interaction on all devices.
+- Visual distinctiveness: Make buttons stand out as clickable elements.
+- Implement feedback states: Use hover, active, and disabled states for better interactivity.
+- Maintain consistency: Keep button styles consistent across the application for intuitive navigation.

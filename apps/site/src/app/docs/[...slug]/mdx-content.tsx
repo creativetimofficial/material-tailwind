@@ -105,7 +105,7 @@ const components = {
   Link: (props) => <Link {...props} className="text-primary" />,
   h1: (props) => <MTTypography as="h1" type="h4" className="mb-4" {...props} />,
   h2: (props) => (
-    <MTTypography as="h2" type="h5" className="mb-4 scroll-mt-40" {...props} />
+    <MTTypography as="h2" type="h5" className="mb-2 scroll-mt-40" {...props} />
   ),
   h3: (props) => (
     <MTTypography
