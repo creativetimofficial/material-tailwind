@@ -11,7 +11,7 @@ import { Xmark } from "iconoir-react";
 export function DialogWeb3() {
   return (
     <Dialog size="sm">
-      <Dialog.Trigger as={Button}>Connect wallet</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Connect Wallet</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content className="pb-4">
           <Dialog.DismissTrigger

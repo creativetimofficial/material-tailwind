@@ -4,7 +4,7 @@ import { AppNotification } from "iconoir-react";
 export function DialogNotification() {
   return (
     <Dialog size="sm">
-      <Dialog.Trigger as={Button}>Long Dialog</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open Notification</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content className="p-8">
           <Typography type="h6" className="text-center">
