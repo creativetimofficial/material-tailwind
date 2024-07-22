@@ -20,7 +20,7 @@ export const progressBarTheme = {
   baseStyle: "h-full rounded-none",
   color: {
     primary: "bg-primary",
-    secondary: "bg-secondary",
+    secondary: "bg-secondary brightness-90",
     info: "bg-info",
     success: "bg-success",
     warning: "bg-warning",
