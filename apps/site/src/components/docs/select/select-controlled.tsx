@@ -5,7 +5,7 @@ export function SelectControlled() {
   const [value, setValue] = React.useState();
 
   return (
-    <Select value={value} onChange={(val) => setValue(val)}>
+    <Select value={value} onValueChange={(val) => setValue(val)}>
       <Select.Trigger className="w-72" placeholder="Select Version" />
       <Select.List>
         <Select.Option value="Material Tailwind React">
