@@ -187,7 +187,7 @@ export function DataTableDemo() {
         />
         <Select
           value={table.getState().pagination.pageSize}
-          onChange={(selectedValue) => {
+          onValueChange={(selectedValue) => {
             table.setPageSize(Number(selectedValue));
           }}
         >

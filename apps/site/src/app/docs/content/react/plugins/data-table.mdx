@@ -32,6 +32,8 @@ npm install @tanstack/react-table @tanstack/match-sorter-utils @faker-js/faker t
 ```tsx
 "use client";
 
+"use client";
+
 import * as React from "react";
 import {
   FilterFn,
@@ -219,7 +221,7 @@ export function DataTableDemo() {
         />
         <Select
           value={table.getState().pagination.pageSize}
-          onChange={(selectedValue) => {
+          onValueChange={(selectedValue) => {
             table.setPageSize(Number(selectedValue));
           }}
         >
