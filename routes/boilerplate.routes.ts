@@ -118,7 +118,7 @@ export const routes = [
         route: "error",
       },
       {
-        name: "Not Fount (404)",
+        name: "Not Found (404)",
         route: "404",
       },
     ],
