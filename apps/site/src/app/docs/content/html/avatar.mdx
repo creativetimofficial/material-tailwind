@@ -2,8 +2,8 @@
 title: Tailwind CSS Avatar - Material Tailwind
 description: Use our avatar component examples styled with Tailwind CSS to add a quick visual identification of users or people.
 github: Avatar
-prev: docs/react/inputs
-next: docs/react/Avatar-group
+prev: docs/html/accordion
+next: docs/html/card
 ---
 
 # Tailwind CSS Avatar
@@ -12,15 +12,13 @@ Get started faster with Material Tailwind avatar component for web or mobile app
 
 The avatar is an important UI component that provides a quick visual identification of users/people. The avatar is usually used to portray people in social media apps, chat apps, and forums.
 
-We created a series of avatar examples to help you build easier your application or website. All these exemples are styled with Tailwind CSS and based on Material Design.
-
-Check them below.
+We created a series of avatar examples to help you build easier your application or website. All these exemples below are styled with Tailwind CSS.
 
 ---
 
 ## Avatar Demo
 
-Use our default example of placeholder for user profiles with Tailwind CSS classes for a responsive and rounded design.
+Use our default example of placeholder for user profiles with Tailwind CSS classes for a responsive and circular design.
 
 <ComponentPreview demo={<HTMLAvatar.AvatarDemo />}>
 ```html
@@ -28,7 +26,7 @@ Use our default example of placeholder for user profiles with Tailwind CSS class
   src="https://dub.sh/TdSBP0D"
   alt="profile-picture"
   class="inline-block object-cover object-center rounded-full h-11 w-11"
-  />
+/>
 ```
 </ComponentPreview>
 
@@ -204,24 +202,24 @@ Use this example to implement a horizontal stack of avatar images for representi
 
 ## Avatar Custom Styles
 
+You can use tailwind css classes with avatar to create custom styles for avatar. Below is an example of how you can create a custom avatar with a border and a ring around the image.
+
 <ComponentPreview demo={<HTMLAvatar.AvatarCustomStyles />}>
 ```html
 <img
   src="https://dub.sh/TdSBP0D"
   alt="avatar"
   class="inline-block object-cover object-center border border-green-500 rounded-full h-14 w-14 ring-4 ring-green-500/20"
-
 />
 ```
 </ComponentPreview>
 
 ---
 
-## Avatar implementation best practices for developers:
-<ul className="space-y-2 list-disc list-outside text-foreground antialiased mt-4 ml-4">
-<li>Make sure that the avatars are responsive, visible on various devices and screen sizes.</li>
-<li>Use ALT text for accesibility and seo.</li>
-<li>Optimize avatar images for fast loading (recommendation: JPEG/ WEBP for photos and SVG for icons)</li>
-<li>Provide users with easy ways for uploading or modifying their avatars.</li>
-<li>Use default avatar for new users.</li>
-</ul>
+## Avatar implementation best practices for developers
+
+- Make sure that the avatars are responsive, visible on various devices and screen sizes.
+- Use ALT text for accesibility and seo.
+- Optimize avatar images for fast loading (recommendation: JPEG/ WEBP for photos and SVG for icons)
+- Provide users with easy ways for uploading or modifying their avatars.
+- Use default avatar for new users.
