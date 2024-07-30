@@ -24,10 +24,36 @@ Use our input example to get started easily. It is perfect for forms requiring t
 
 <ComponentPreview demo={<HTMLInput.InputDemo />}>
 ```html
-<div class="relative text-sm leading-none rounded-md w-72">
+<input
+  placeholder="Input"
+  className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+  type="text"
+/>
+```
+</ComponentPreview>
+
+---
+
+## Input Sizes
+
+Check out this code snippet to see how you can implement inputs with different sizes. The first input has a height of 28 pixels, the second input has a height of 36 pixels, and the third input has a height of 46 pixels. 
+
+<ComponentPreview demo={<HTMLInput.InputSizes />}>
+```html
+ <div className="flex flex-col gap-4">
   <input
-    placeholder="Input"
-    class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+    placeholder="Input Small"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-1.5 py-[4.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Medium"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Large"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-3.5 py-[12.25px] text-base leading-none text-black outline-none ring-4 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
     type="text"
   />
 </div>
@@ -36,91 +62,43 @@ Use our input example to get started easily. It is perfect for forms requiring t
 
 ---
 
-## Input Sizes
-
-Check out this coded snippet to see how you can implement inputs with different sizes. The first input has a height of 10 units while the second example has a height of 11 units, slightly taller, providing a larger interaction area.
-
-<ComponentPreview demo={<HTMLInput.InputSizes />}>
-```html
-<div class="space-y-4 w-72">
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Small"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-1.5 py-[4.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Medium"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-base leading-none rounded-lg">
-    <input
-      placeholder="Input Large"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-3.5 py-[12.25px] leading-[inherit] text-black outline-none ring-4 ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="text"
-    />
-  </div>
-</div>
-```
-</ComponentPreview>
-
----
-
 ## Input Color
 
-The 4 examples of input components showcased below are HTML snippets styled with Tailwind CSS, each designed to highlight a different focus color theme: Blue, Purple, Indigo, and Teal. They share a common structure and styling with slight variations in color to differentiate them.
-
-On focus, the border of each input thickens (`focus:border-2`) and changes color to match their respective themes, while the top border remains transparent (`border-t-transparent`).
+The 6 examples of input components showcased below are HTML snippets styled with Tailwind CSS, each designed to highlight a different focus color theme: Primary, Secondary, Info, Success, Warning and Error. They share a common structure and styling with slight variations in color to differentiate them.
 
 <ComponentPreview demo={<HTMLInput.InputColors />}>
 ```html
-<div class="space-y-4 w-72">
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Primary"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Secondary"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-secondary hover:ring-secondary/10 focus:border-secondary focus:outline-none focus:ring-secondary/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Info"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-info hover:ring-info/10 focus:border-info focus:outline-none focus:ring-info/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Success"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-success hover:ring-success/10 focus:border-success focus:outline-none focus:ring-success/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Warning"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-warning hover:ring-warning/10 focus:border-warning focus:outline-none focus:ring-warning/10 dark:text-white"
-      type="text"
-    />
-  </div>
-  <div class="relative w-full text-sm leading-none rounded-md">
-    <input
-      placeholder="Input Error"
-      class="peer h-full w-full select-none rounded-[inherit] border border-surface bg-transparent px-2.5 py-[8.5px] leading-[inherit] text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-error hover:ring-error/10 focus:border-error focus:outline-none focus:ring-error/10 dark:text-white"
-      type="text"
-    />
-  </div>
+<div className="flex flex-col gap-4">
+  <input
+    placeholder="Input Primary"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Secondary"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-secondary hover:ring-secondary/10 focus:border-secondary focus:outline-none focus:ring-secondary/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Info"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-info hover:ring-info/10 focus:border-info focus:outline-none focus:ring-info/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Success"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-success hover:ring-success/10 focus:border-success focus:outline-none focus:ring-success/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Warning"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-warning hover:ring-warning/10 focus:border-warning focus:outline-none focus:ring-warning/10 dark:text-white"
+    type="text"
+  />
+  <input
+    placeholder="Input Error"
+    className="w-72 select-none rounded-md border border-surface bg-transparent px-2.5 py-[8.5px] text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-error hover:ring-error/10 focus:border-error focus:outline-none focus:ring-error/10 dark:text-white"
+    type="text"
+  />
 </div>
 ```
 </ComponentPreview>
