@@ -6,7 +6,7 @@ export function BackgroundBlogCard() {
           <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
         </div>
       </div>
-      <div className="relative bottom-0 h-full w-full rounded px-6 py-14 md:px-12">
+      <div className="relative bottom-0 flex h-full w-full flex-col items-center justify-end rounded px-6 py-14 md:px-12">
         <h4 className="font-sans text-xl font-bold text-white antialiased md:text-2xl lg:text-3xl">
           How we design and code open-source projects?
         </h4>

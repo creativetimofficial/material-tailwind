@@ -2,8 +2,8 @@
 title: Tailwind CSS Card - Material Tailwind
 description: Use our card examples styled with Tailwind CSS to include detailed information like a photo, text, and a link about a single subject.
 github: Card
-prev: docs/react/inputs
-next: docs/react/Card-group
+prev: docs/card/avatar
+next: docs/card/chip
 ---
 
 # Tailwind CSS Card
@@ -52,7 +52,7 @@ This versatile card component example contains an image, title, text, and button
 
 ## Simple Card
 
-Use this card example with clean design for article summaries, product/ service highlights, event descriptions, or user testimonials. It features a clear hierarchy of text, comfortable spacing, and a button for action.
+Use this card example with clean design for article summaries, product/service highlights, event descriptions, or user testimonials. It features a clear hierarchy of text, comfortable spacing, and a button for action.
 
 <ComponentPreview demo={<HTMLCard.SimpleCard />}>
 ```html
@@ -292,7 +292,9 @@ This card example is ideal for introducing individuals, such as team members, em
 ```
 </ComponentPreview>
 
-The design of this card features rounded-lg corners, shadow for depth, and gradient text for the role description.
+<br />
+
+The design of this card features `rounded-lg` corners, shadow for depth, and high contrast text for the role description.
 
 ---
 
@@ -387,14 +389,15 @@ Use this card example for building login pages where users need to enter their c
 ```
 </ComponentPreview>
 
-<p className="mt-6 mb-2 text-foreground">This component features:</p>
-<ul className="list-disc list-inside space-y-2 text-foreground">
-<li>A header with a gradient background and a "Sign In" title.</li>
-<li>Input fields for email and password, styled with a modern, floating label animation that improves usability and aesthetics.</li>
-<li>A "Remember Me" option with a custom-styled checkbox.</li>
-<li>A prominent sign-in button that matches the header's gradient, making the call to action (CTA) clear.</li>
-<li>A link for users who don't have an account yet, encouraging new user registration.</li>
-</ul>
+<br />
+
+This component features:
+
+- A header with a gradient background and a "Sign In" title.
+- Input fields for email and password, styled with a modern, floating label animation that improves usability and aesthetics.
+- A "Remember Me" option with a checkbox.
+- A prominent sign-in button that matches the header's gradient, making the call to action (CTA) clear.
+- A link for users who don't have an account yet, encouraging new user registration.
 
 ---
 
@@ -595,14 +598,14 @@ This card example works perfectly for showcasing featured articles, editor's pic
 <div class="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-lg border border-surface bg-background text-center shadow-lg shadow-black/5">
   <div class="m-1.5 h-max w-[calc(100%-12px)] rounded-[5px]">
     <div class="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
-      <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
+      <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50 to-black/10 dark:from-black/90 dark:via-black/60 dark:to-black/20"></div>
     </div>
   </div>
-  <div class="relative bottom-0 w-full h-full px-6 rounded py-14 md:px-12">
-    <h4 class="font-sans text-xl antialiased font-bold text-white md:text-2xl lg:text-3xl">
+  <div class="relative bottom-0 flex h-full w-full flex-col items-center justify-end rounded px-6 py-14 md:px-12">
+    <h4 class="font-sans text-xl font-bold text-white antialiased md:text-2xl lg:text-3xl">
       How we design and code open-source projects?
     </h4>
-    <h6 class="my-6 font-sans text-base antialiased font-bold text-white/80 md:text-lg lg:text-xl">
+    <h6 class="my-6 font-sans text-base font-bold text-white/80 antialiased md:text-lg lg:text-xl">
       Tania Andrew
     </h6>
     <img
@@ -615,7 +618,9 @@ This card example works perfectly for showcasing featured articles, editor's pic
 ```
 </ComponentPreview>
 
-<p className="mt-4 text-foreground">The use of a gradient overlay (from black at the bottom to transparent at the top) ensures that the text remains legible while enhancing the image's visual impact.</p>
+<br />
+
+The use of a gradient overlay (from black at the bottom to transparent at the top) ensures that the text remains legible while enhancing the image's visual impact.
 
 
 ---
@@ -856,7 +861,9 @@ Use this card example if you want to showcase properties or accommodations, such
 ```
 </ComponentPreview>
 
-<p className="text-foreground mt-4">The header section comes with a captivating image of the property, set within a rounded-xl container that adds to the card's modern appearance. The image is overlaid with a subtle gradient to ensure text legibility.</p>
+<br />
+
+The header section comes with a captivating image of the property, set within a rounded container that adds to the card's modern appearance. The image is overlaid with a subtle gradient to ensure text legibility.
 
 
 ---
@@ -963,9 +970,9 @@ Use this example if you want to display client testimonials or customer feedback
 ```
 </ComponentPreview>
 
-<p className="text-foreground mt-4">
+<br />
+
 The overall design of the card, with its minimalistic approach and focus on readability (using contrasting text colors and a clear font), ensures that the testimonial message is easily accessible to website visitors.
-</p>
 
 
 ---
@@ -1061,14 +1068,15 @@ Use this card for e-commerce platforms, online stores, or product showcase pages
 
 ---
 
-## Card Component Best Practices for Developers:
-<ul className="space-y-2 list-disc list-outside text-foreground mt-4 ml-4">
-<li>Maintain a consistent design across all cards. This includes using uniform sizes, typography, colors, and spacing to create a cohesive user experience.</li>
-<li>Choose high-quality, relevant images that complement the card's content.</li>
-<li>Organize content within a card to reflect a clear hierarchy of information.</li>
-<li>Avoid overcrowding cards with too much information or too many actions. Stick to the essentials to prevent cognitive overload.</li>
-<li>Offer visual feedback on interaction.</li>
-<li>Design card components to be reusable across different parts of the application.</li>
-</ul>
+## Card Component Best Practices for Developers
 
-<p class="mt-8 text-foreground">Check out more <a href="https://www.material-tailwind.com/roots-of-ui-ux-design" target="_blank" class="font-bold">card UI best practices </a>if you want to create intuitive user interfaces.</p>
+- Maintain a consistent design across all cards. This includes using uniform sizes, typography, colors, and spacing to create a cohesive user experience.
+- Choose high-quality, relevant images that complement the card's content.
+- Organize content within a card to reflect a clear hierarchy of information.
+- Avoid overcrowding cards with too much information or too many actions. Stick to the essentials to prevent cognitive overload.
+- Offer visual feedback on interaction.
+- Design card components to be reusable across different parts of the application.
+
+<br />
+
+Check out more <Link href="https://www.material-tailwind.com/roots-of-ui-ux-design" target="_blank">Card UI best practices</Link>if you want to create intuitive user interfaces.
