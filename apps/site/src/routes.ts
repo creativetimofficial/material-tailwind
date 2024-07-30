@@ -154,10 +154,10 @@ export const routes = [
             title: "Avatar",
             path: "/docs/react/avatar",
           },
-          // {
-          //   title: "Badge",
-          //   path: "/docs/react/badge",
-          // },
+          {
+            title: "Badge",
+            path: "/docs/react/badge",
+          },
           {
             title: "Card",
             path: "/docs/react/card",

@@ -100,6 +100,7 @@ import {
   timelineBodyTheme,
 } from "./timeline";
 import { navbarTheme } from "./navbar";
+import { badgeTheme, badgeContentTheme, badgeIndicatorTheme } from "./badge";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -187,6 +188,9 @@ export const theme = {
   timelineSeparator: timelineSeparatorTheme,
   timelineBody: timelineBodyTheme,
   navbar: navbarTheme,
+  badge: badgeTheme,
+  badgeContent: badgeContentTheme,
+  badgeIndicator: badgeIndicatorTheme,
 };
 
 export default theme;

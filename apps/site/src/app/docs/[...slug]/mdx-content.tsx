@@ -59,6 +59,7 @@ import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
 import * as Timeline from "@components/docs/timeline";
+import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
 import * as Swiper from "@components/docs/plugins/swiper";
 import * as Apexcharts from "@components/docs/plugins/apexcharts";
@@ -186,6 +187,7 @@ const components = {
   Forms,
   TextEditor,
   DataTable,
+  Badge,
   ReleaseNotes,
 
   // html examples

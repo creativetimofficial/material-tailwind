@@ -34,7 +34,7 @@ import type {
   Placement,
   UseFloatingReturn,
 } from "@floating-ui/react";
-import { BaseProps, SharedProps } from "@types";
+import { BaseProps } from "@types";
 
 // @theme
 import {

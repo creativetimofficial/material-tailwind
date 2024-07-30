@@ -29,3 +29,4 @@ export * from "./tooltip";
 export * from "./timeline";
 export * from "./typography";
 export * from "./navbar";
+export * from "./badge";
