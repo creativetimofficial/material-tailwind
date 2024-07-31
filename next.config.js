@@ -2,7 +2,6 @@
 
 const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
-  transpilePackages: ["@heroicons/react"],
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 
