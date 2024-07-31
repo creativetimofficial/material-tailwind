@@ -8,3 +8,4 @@ export * from "./dialog-with-image";
 export * from "./notification-dialog";
 export * from "./dialog-custom-animation";
 export * from "./add-product-dialog";
+export * from "./select-categories-dialog";
