@@ -71,11 +71,6 @@ export default function MyDocument() {
           data-domain="material-tailwind.com"
           src="https://plausible.io/js/script.js"
         />
-        <script
-          defer
-          data-site="material-tailwind.com"
-          src="https://api.nepcha.com/js/nepcha-analytics.js"
-        />
         <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <link
           rel="stylesheet"
