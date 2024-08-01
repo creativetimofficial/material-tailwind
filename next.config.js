@@ -15,7 +15,6 @@ const nextConfig = {
   images: {
     domains: [
       "images.unsplash.com",
-      "nepcha.com",
       "docs.material-tailwind.com",
     ],
   },
