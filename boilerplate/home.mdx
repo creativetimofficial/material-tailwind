@@ -1,0 +1,47 @@
+---
+title: Speedy Boilerplate - Home Page
+description: Learn how to use Speedy Boilerplate Home page.
+navigation: []
+github: home
+next: auth
+---
+
+# Speedy Boilerplate - Home Page
+
+The home page is the first page that the user sees when they visit the website. It contains the hero component, features, pricing, cta and the footer. The home page is located in the <Code>app/page.tsx</Code> file.
+
+The home page is divided into multiple sections and each section is a component that is imported into the home page.
+
+```tsx
+import {
+  Header,
+  Hero,
+  Stats,
+  Features,
+  Pricing,
+  Faq,
+  Cta,
+  Footer,
+} from "@/components";
+
+export default function Home() {
+  return (
+    <main>
+      <Header />
+      <Hero />
+      <Stats />
+      <Features />
+      <Pricing />
+      <Faq />
+      <Cta />
+      <Footer />
+    </main>
+  );
+}
+```
+
+<br />
+
+Below you can see a preview of the home page.
+
+<Image src="/boilerplate/home-page.png" alt="home-page" width={1280} height={1280} className="border border-gray-200 w-full h-auto rounded-lg" />

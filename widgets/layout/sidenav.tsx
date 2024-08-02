@@ -13,7 +13,7 @@ interface Props {
       label?: string;
     }[];
   }[];
-  type: "html" | "react";
+  type: "html" | "react" | "boilerplate";
   slug: string;
   mobileNav: boolean;
   setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
@@ -72,8 +72,6 @@ export function Sidenav({
               </Typography>
               <ul className="py-2">
                 {pages.map(({ name, route, label }: any, key) => {
-                  console.log(route);
-
                   const isActive = route.includes("/")
                     ? route.includes(slug)
                     : route === slug;
@@ -82,7 +80,13 @@ export function Sidenav({
                       key={key}
                       className={key === pages.length - 1 ? "!mb-4" : ""}
                     >
-                      <Link href={`/docs/${type}/${route}`}>
+                      <Link
+                        href={
+                          type === "boilerplate"
+                            ? `/boilerplate/docs/${route}`
+                            : `/docs/${type}/${route}`
+                        }
+                      >
                         <Typography
                           variant="small"
                           className={`relative list-item w-full py-1 capitalize transition-colors hover:text-primary ${

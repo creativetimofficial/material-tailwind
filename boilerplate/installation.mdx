@@ -1,0 +1,111 @@
+---
+title: Get Started with Speedy Boilerplate
+description: Learn how to use Speedy Boilerplate to quickly and easily create elegant and flexible pages for your SaaS projects.
+navigation:
+  ["pre-requisites", "clone-github-repo", "install-dependencies", "setup-env", "run-the-project"]
+github: installation
+next: license
+---
+
+# Get Started with Speedy Boilerplate
+
+<span id="quick-start" className="scroll-mt-48" />
+Speedy Boilerplate is a starter-kit for building SaaS projects using Material
+Tailwind, Next.js, Tailwind CSS, Supabase, Stripe, Resend and GaliChat. It comes
+with a set of pre-built pages, components and features that you can use to quickly
+build your project.
+
+<br />
+<br />
+
+<DocsTitle href="pre-requisites">
+## Pre-requisites
+</DocsTitle>
+
+Before you start using Speedy Boilerplate, you need to have the following tools in order to use Speedy Boilerplate smoothly.
+
+1: [Github Account](github.com) - Github is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. You need to have a github account in order to access the boilerplate repository.
+
+2: [Git](https://git-scm.com/) - Git is a version control system that is used to manage the source code of the project, you need to install git in order to clone the boilerplate from the github.
+
+3: [Node.js](https://nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. You need to install Node.js in order to run the project locally.
+
+4: [NPM](https://www.npmjs.com/) - NPM is a package manager for the JavaScript programming language. You need to install NPM in order to install the dependencies of the project.
+
+---
+
+<DocsTitle href="clone-github-repo">
+## Clone Github Repo
+</DocsTitle>
+
+Once you have all the pre-requisites installed, you can clone the boilerplate repository from the github. Run the command below to clone the repository from the github.
+
+```bash
+git clone https://github.com/creativetimofficial/speedy-boilerplate
+```
+
+---
+
+<DocsTitle href="install-dependencies">
+## Install Dependencies
+</DocsTitle>
+
+Once you have cloned the repository, it will create a new folder with the name <Code>speedy-boilerplate</Code>, go to that folder and install the dependencies.
+
+Run the commands below one by one in order to go to that folder and install the dependencies.
+
+```bash
+# go to the folder
+cd speedy-boilerplate
+
+# install the dependencies
+npm install
+```
+
+---
+
+<DocsTitle href="setup-env">
+## Setup .env
+</DocsTitle>
+
+On the root of the project you will see a file named <Code>.env.example</Code>, you need to rename this file to <Code>.env</Code> in order to setup the environment variables.
+
+Once it's done open the <Code>.env</Code> file and you will see the below code:
+
+```env
+# base
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# supabase
+NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
+SUPABASE_SERVICE_ROLE_KEY=<your-supabase-service-role-key>
+
+# stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<your-stripe-publishable-key>
+STRIPE_SECRET_KEY=<your-stripe-secret-key>
+STRIPE_WEBHOOK_SECRET=<your-stripe-webhook-secret>
+
+# google analytics
+NEXT_PUBLIC_GOOGLE_TAG_ID=<your-google-tag-manage-id>
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=<your-google-analytics-id>
+
+# galichat
+NEXT_PUBLIC_GALICHAT_HASH=<your-galichat-hash>
+```
+
+---
+
+<DocsTitle href="run-the-project">
+## Run the Project
+</DocsTitle>
+
+You have successfully installed the dependencies and setup the environment variables, now you can run the project by running the command below in the terminal.
+
+you can open the <Code>{`http://localhost:3000`}</Code> to see the boilerplate on the browser, but it will not work properly because you need to setup the database first in order to work properly.
+
+You can follow the <Link href="/boilerplate/docs/database" className="font-medium text-black hover:text-blue-500 transition-colors">Database Setup</Link> guide to setup the database.
+
+```bash
+npm run dev
+```

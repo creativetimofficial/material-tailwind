@@ -1,0 +1,92 @@
+---
+title: Speedy Boilerplate - Deploy to Production
+description: Learn how to deploy Speedy Boilerplate to production.
+navigation: ["setting-up-supabase", "setting-up-authentication", "setting-up-stripe", "conclusion"]
+github: deploy
+---
+
+# Speedy Boilerplate - Deploy to Production
+
+In this section, you will learn how to deploy Speedy Boilerplate to production using [Vercel](https://vercel.com/). You can also deploy the boilerplate to other platforms like Netlify or other hosting providers that supports Next.js.
+
+<br />
+<br />
+
+<DocsTitle href="setting-up-supabase">
+## Setting up Supabase
+</DocsTitle>
+
+Before deploying the Speedy Boilerplate to production, you need to prepare Supabase in order to work in production.
+
+For Supabase we only need to change the site url on the Supabase dashboard, you can do this by going to the <Code>Authentication</Code> -> <Code>URL Configuration</Code> and change the site url from <Code>{`http://localhost:3000`}</Code> to your domain.
+
+Once you update the site url on the Supabase dashboard, you also need to update the <Code>NEXT_PUBLIC_SITE_URL</Code> from <Code>{`http://localhost:3000`}</Code> to your domain in the <Code>.env</Code> file.
+
+---
+
+<DocsTitle href="setting-up-authentication">
+## Setting up Authentication
+</DocsTitle>
+
+Before deploying the Speedy Boilerplate to production, you need to prepare Google OAuth in order to work in production.
+
+Follow the steps below to set up Google OAuth for production:
+
+1: Go to the <Code>OAuth Consent Screen</Code> on the Google Developers Console and click on the <Code>Edit App</Code> button.
+
+2: Then upload your <Code>App Logo</Code> and fill in the <Code>App Domain</Code> fields and click on the <Code>Save and Continue</Code> button.
+
+3: Once you are all set click on the <Code>Publish App</Code> button.
+
+To verify your app for Google Search Console you can follow the link [Verify your app for Google Search Console](https://support.google.com/cloud/answer/13463073). 
+
+---
+
+<DocsTitle href="setting-up-stripe">
+## Setting up Stripe
+</DocsTitle>
+
+Before deploying the Speedy Boilerplate to production, you need to prepare Stripe in order to work in production.
+
+Follow the steps below to set up Stripe for production:
+
+1: If your Stripe business account is already verified and activated then you're go to go, if not you need to verify and activate your Stripe business account in order to receive payments.
+
+2: Once your Stripe business account is verified and activated, you need to turn off the <Code>Test Mode</Code> on the top right corner of the Stripe dashboard.
+
+3: Then go to the <Code>Developers</Code> on the top right corner, then click on the <Code>API Keys</Code> and copy/paste the <Code>Publishable Key</Code> and <Code>Secret Key</Code> to the <Code>.env</Code> file. This is the keys for the production version the one use used at the beginning was for the development version and testing.
+
+```env
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<your-stripe-publishable-key>
+STRIPE_SECRET_KEY=<your-stripe-secret-key>
+```
+
+<br />
+<br />
+
+4: Then go to the <Code>Developers</Code> -> <Code>Webhooks</Code> and on the <Code>Hosted Endpoints</Code> section click the <Code>+ Add endpoint</Code> button, then add an endpoint following the format <Code>{`https://your-domain/api/webhooks/stripe`}</Code> and copy the <Code>endpoint_secret</Code> from the right panel, paste it to the <Code>.env</Code> file, and click on the <Code>Add endpoint</Code> button.
+
+```env
+STRIPE_WEBHOOK_SECRET=<your-stripe-secret-key>
+```
+
+<br />
+<br />
+
+5: Then go to the <Code>Settings</Code>, there you will see many categories and options click on the <Code>Billing</Code> and then click on the <Code>Customer Portal</Code> and activate it by clicking on the <Code>Activate test link</Code> button, once activated click on the <Code>Save changes</Code> button, this will allow your users to manage their subscriptions base on Stripe customers portal. 
+
+6: Then go to the <Code>Settings</Code> -> <Code>Business</Code> -> <Code>Public Details</Code> and fill in the fields with your business details.
+
+7: Then go to the <Code>Settings</Code> -> <Code>Business</Code> -> <Code>Branding</Code> and add your Logo, Icon and brand color.
+
+8: Finally go to the <Code>Settings</Code> -> <Code>Business</Code> -> <Code>Customer Emails</Code> and on the <Code>Payments</Code> category turn on the <Code>Successful Payments</Code> and <Code>Refunds</Code> options.
+
+---
+
+<DocsTitle href="conclusion">
+## Conclusion
+</DocsTitle>
+
+Now your Speedy Boilerplate is ready to deploy to production, you can deploy the boilerplate to Vercel, simply push your code to your Github account and connect your Github account to Vercel, then deploy the boilerplate simply by clicking on the <Code>Deploy</Code> button.
+
+You can also use the link [Deploying to Vercel](https://www.google.com/search?q=deploying+next.js+to+vercel&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:a76a9b1f,vid:AiiGjB2AxqA,st:0) to learn more about deploying Next.js App to Vercel.
