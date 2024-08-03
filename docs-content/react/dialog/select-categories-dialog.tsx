@@ -21,8 +21,8 @@ export function SelectCategoriesDialog() {
       <Button onClick={handleOpen} variant="gradient">
         Select Categories Dialog
       </Button>
-      <Dialog size="sm" open={open} handler={handleOpen}>
-        <DialogHeader className="relative m-0 block p-6">
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
           <Typography variant="h4" color="blue-gray">
             Select Categories
           </Typography>

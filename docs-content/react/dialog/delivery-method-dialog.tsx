@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export function DeliveryDialog() {
+export function DeliveryMethodDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -18,10 +18,10 @@ export function DeliveryDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Delivery Dialog
+        Delivery Method Dialog
       </Button>
-      <Dialog size="sm" open={open} handler={handleOpen}>
-        <DialogHeader className="relative m-0 block p-6">
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
           <Typography variant="h4" color="blue-gray">
             Delivery Method
           </Typography>
@@ -37,7 +37,7 @@ export function DeliveryDialog() {
             <XMarkIcon className="h-4 w-4 stroke-2" />
           </IconButton>
         </DialogHeader>
-        <DialogBody className="mx-2 -mt-4">
+        <DialogBody>
           <div className="space-y-4">
             <div>
               <input
@@ -115,7 +115,7 @@ export function DeliveryDialog() {
           </div>
         </DialogBody>
         <DialogFooter>
-          <Button className="relative ml-auto" onClick={handleOpen}>
+          <Button className="ml-auto" onClick={handleOpen}>
             confirm delivery method
           </Button>
         </DialogFooter>
