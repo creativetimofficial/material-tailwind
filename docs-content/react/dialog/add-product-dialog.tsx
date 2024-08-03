@@ -24,8 +24,8 @@ export function AddProductDialog() {
       <Button onClick={handleOpen} variant="gradient">
         Add Product
       </Button>
-      <Dialog size="sm" open={open} handler={handleOpen}>
-        <DialogHeader className="relative m-0 block p-6">
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
           <Typography variant="h4" color="blue-gray">
             Manage Item
           </Typography>
@@ -41,7 +41,7 @@ export function AddProductDialog() {
             <XMarkIcon className="h-4 w-4 stroke-2" />
           </IconButton>
         </DialogHeader>
-        <DialogBody className="space-y-4 px-6 pb-6 pt-2">
+        <DialogBody className="space-y-4 pb-6">
           <div>
             <Typography
               variant="small"
@@ -55,7 +55,7 @@ export function AddProductDialog() {
               size="lg"
               placeholder="eg. White Shoes"
               name="name"
-              className="focus:border-t-gray-900"
+              className="focus:!border-t-gray-900"
               containerProps={{
                 className: "!min-w-full",
               }}
@@ -102,7 +102,7 @@ export function AddProductDialog() {
                 size="lg"
                 placeholder="eg. <8.8oz | 250g"
                 name="weight"
-                className="focus:border-t-gray-900"
+                className="focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
                 }}
@@ -124,7 +124,7 @@ export function AddProductDialog() {
                 size="lg"
                 placeholder="eg. US 8"
                 name="size"
-                className="focus:border-t-gray-900"
+                className="focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
                 }}

@@ -9,6 +9,6 @@ export * from "./notification-dialog";
 export * from "./dialog-custom-animation";
 export * from "./add-product-dialog";
 export * from "./select-categories-dialog";
-export * from "./delivery-dialog";
+export * from "./delivery-method-dialog";
 export * from "./order-details-dialog";
 export * from "./upload-progress-dialog";
