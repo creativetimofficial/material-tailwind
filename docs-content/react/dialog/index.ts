@@ -11,3 +11,4 @@ export * from "./add-product-dialog";
 export * from "./select-categories-dialog";
 export * from "./delivery-dialog";
 export * from "./order-details-dialog";
+export * from "./upload-progress-dialog";
