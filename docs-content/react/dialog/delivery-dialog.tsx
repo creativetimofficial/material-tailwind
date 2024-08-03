@@ -68,6 +68,7 @@ export function DeliveryDialog() {
                 type="radio"
                 id="express"
                 name="hosting"
+                defaultChecked
                 value="express"
                 className="peer hidden"
                 required
