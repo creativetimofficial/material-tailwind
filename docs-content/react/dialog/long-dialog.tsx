@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 
 export function LongDialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleOpen = () => setOpen(!open);
 
@@ -45,7 +45,7 @@ export function LongDialog() {
             mistakes; they teach us far more than compliments ever will.
             Ultimately, what truly matters is how our actions inspire and
             motivate others. Some will be ignited by our endeavors, while others
-            may be offended—it&apos;s all part of the process. I'm here to
+            may be offended—it&apos;s all part of the process. I&apos;m here to
             pursue my dreams and encourage others to do the same.
             <br /> <br />
             Now is the time to embrace greatness without fear of judgment. Some

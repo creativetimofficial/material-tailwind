@@ -11,7 +11,7 @@ import {
 } from "@material-tailwind/react";
 
 export function MessageDialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleOpen = () => setOpen(!open);
 
@@ -41,7 +41,7 @@ export function MessageDialog() {
           </svg>
         </div>
         <DialogBody>
-          <Typography className="mb-10 -mt-7 " color="gray" variant="lead">
+          <Typography className="-mt-7 mb-10 " color="gray" variant="lead">
             Write the message and then click button.
           </Typography>
           <div className="grid gap-6">

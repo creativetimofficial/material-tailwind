@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 
 export function NotificationDialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleOpen = () => setOpen(!open);
 

@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 
 export function DialogSizes() {
-  const [size, setSize] = React.useState(null);
+  const [size, setSize] = React.useState("md");
 
   const handleOpen = (value) => setSize(value);
 
@@ -45,7 +45,7 @@ export function DialogSizes() {
           size === "xl" ||
           size === "xxl"
         }
-        size={size || "md"}
+        size={size || ("md" as any)}
         handler={handleOpen}
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>

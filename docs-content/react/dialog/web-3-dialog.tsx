@@ -11,7 +11,7 @@ import {
 } from "@material-tailwind/react";
 
 export function Web3Dialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleOpen = () => setOpen((cur) => !cur);
 
@@ -59,7 +59,7 @@ export function Web3Dialog() {
             >
               Popular
             </Typography>
-            <ul className="mt-3 -ml-2 flex flex-col gap-1">
+            <ul className="-ml-2 mt-3 flex flex-col gap-1">
               <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="https://docs.material-tailwind.com/icons/metamask.svg"
@@ -98,7 +98,7 @@ export function Web3Dialog() {
             >
               Other
             </Typography>
-            <ul className="mt-4 -ml-2.5 flex flex-col gap-1">
+            <ul className="-ml-2.5 mt-4 flex flex-col gap-1">
               <MenuItem className="mb-4 flex items-center justify-center gap-3 !py-4 shadow-md">
                 <img
                   src="https://docs.material-tailwind.com/icons/trust-wallet.svg"
