@@ -15,7 +15,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export function AddProductDialog() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
 

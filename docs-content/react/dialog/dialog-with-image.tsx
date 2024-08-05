@@ -12,7 +12,7 @@ import {
 } from "@material-tailwind/react";
 
 export function DialogWithImage() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [isFavorite, setIsFavorite] = React.useState(false);
 
   const handleOpen = () => setOpen((cur) => !cur);
