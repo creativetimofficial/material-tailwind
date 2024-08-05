@@ -39,7 +39,7 @@ export function SelectCategoriesDialog() {
             <XMarkIcon className="h-4 w-4 stroke-2" />
           </IconButton>
         </DialogHeader>
-        <DialogBody className="space-y-4">
+        <DialogBody className="space-y-4 px-2">
           <Checkbox
             label={
               <div>

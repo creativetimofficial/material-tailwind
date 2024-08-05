@@ -84,8 +84,8 @@ export function AddProductDialog() {
               }}
             >
               <Option>Clothing</Option>
-              <Option>Clothing</Option>
-              <Option>Clothing</Option>
+              <Option>Fashion</Option>
+              <Option>Watches</Option>
             </Select>
           </div>
           <div className="flex gap-4">
@@ -144,7 +144,6 @@ export function AddProductDialog() {
             </Typography>
             <Textarea
               rows={7}
-              value="More details about product."
               className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
               labelProps={{
                 className: "hidden",

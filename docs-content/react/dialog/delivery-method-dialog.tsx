@@ -50,7 +50,7 @@ export function DeliveryMethodDialog() {
               />
               <label
                 htmlFor="standard"
-                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 peer-checked:border-gray-900"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
               >
                 <div className="block">
                   <Typography className="font-semibold">
@@ -75,7 +75,7 @@ export function DeliveryMethodDialog() {
               />
               <label
                 htmlFor="express"
-                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 peer-checked:border-gray-900"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
               >
                 <div className="block">
                   <Typography className="font-semibold">
@@ -99,7 +99,7 @@ export function DeliveryMethodDialog() {
               />
               <label
                 htmlFor="store"
-                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 peer-checked:border-gray-900"
+                className="block w-full cursor-pointer rounded-lg border border-gray-300 p-4 text-gray-900 ring-1 ring-transparent peer-checked:border-gray-900 peer-checked:ring-gray-900"
               >
                 <div className="block">
                   <Typography className="font-semibold">
