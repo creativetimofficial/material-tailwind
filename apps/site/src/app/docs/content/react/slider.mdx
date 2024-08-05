@@ -1,0 +1,151 @@
+---
+title: Tailwind CSS Range Slider for React - Material Tailwind
+description: Customise your web projects with our range slider component for Tailwind CSS and React using Material Design guidelines.
+github: slider
+prev: docs/react/select
+next: docs/react/switch
+---
+
+# Tailwind CSS Range Slider - React
+
+Use our Tailwind CSS `Slider` component in your web projects. The `Slider` can be used for adjusting settings such as volume, brightness, or applying image filters.
+
+See below our beautiful `Slider` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+
+---
+
+## Slider Demo
+
+<ComponentPreview demo={<Slider.SliderDemo />}>
+```tsx
+import { Slider } from "@material-tailwind/react";
+
+export function SliderDemo() {
+  return (
+    <div className="w-64">
+      <Slider>
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Slider Sizes
+
+<ComponentPreview demo={<Slider.SliderSizes />}>
+```tsx
+import { Slider } from "@material-tailwind/react";
+
+export function SliderSizes() {
+  return (
+    <div className="flex w-64 flex-col gap-8">
+      <Slider size="sm">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider size="md">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider size="lg">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Slider Colors
+
+<ComponentPreview demo={<Slider.SliderColors />}>
+```tsx
+import { Slider } from "@material-tailwind/react";
+
+export function SliderColors() {
+  return (
+    <div className="flex w-64 flex-col gap-8">
+      <Slider color="primary">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider color="secondary">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider color="info">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider color="success">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider color="warning">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+      <Slider color="error">
+        <Slider.Range />
+        <Slider.Thumb />
+      </Slider>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Slider with Ticks
+
+<ComponentPreview demo={<Slider.SliderWithTicks />}>
+```tsx
+import { Slider } from "@material-tailwind/react";
+
+export function SliderWithTicks() {
+  return (
+    <div className="w-80">
+      <Slider>
+        <Slider.Range />
+        <Slider.Thumb />
+        <Slider.Tick />
+      </Slider>
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+---
+
+## Range Slider with Two Thumbs
+
+<ComponentPreview demo={<Slider.RangeSliderWithTwoThumbs />}>
+```tsx
+import * as React from "react";
+import { Slider } from "@material-tailwind/react";
+
+export function RangeSliderWithTwoThumbs() {
+  const [value, setValue] = React.useState([20, 80]);
+
+  return (
+    <div className="w-80">
+      <Slider value={value} onValueChage={setValue}>
+        <Slider.Range />
+        <Slider.Thumb />
+        <Slider.Tick />
+      </Slider>
+    </div>
+  );
+}
+```
+</ComponentPreview>

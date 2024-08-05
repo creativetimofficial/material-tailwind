@@ -106,7 +106,7 @@ function ChipRootBase<T extends React.ElementType = "div">(
 ChipRootBase.displayName = "MaterialTailwind.Chip";
 
 export const ChipRoot = React.forwardRef(ChipRootBase) as <
-  T extends React.ElementType = "button",
+  T extends React.ElementType = "div",
 >(
   props: ChipProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;

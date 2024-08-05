@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "0.26.3",
+    "@tanstack/react-ranger": "0.0.4",
     "deepmerge": "4.3.1",
     "hex-rgb": "5.0.0",
     "material-ripple-effects": "2.0.1",

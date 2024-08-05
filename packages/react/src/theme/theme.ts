@@ -101,6 +101,12 @@ import {
 } from "./timeline";
 import { navbarTheme } from "./navbar";
 import { badgeTheme, badgeContentTheme, badgeIndicatorTheme } from "./badge";
+import {
+  sliderTheme,
+  sliderRangeTheme,
+  sliderThumbTheme,
+  sliderTickTheme,
+} from "./slider";
 
 // @types
 import type { DeepPartial } from "@types";
@@ -191,6 +197,10 @@ export const theme = {
   badge: badgeTheme,
   badgeContent: badgeContentTheme,
   badgeIndicator: badgeIndicatorTheme,
+  slider: sliderTheme,
+  sliderRange: sliderRangeTheme,
+  sliderThumb: sliderThumbTheme,
+  sliderTick: sliderTickTheme,
 };
 
 export default theme;

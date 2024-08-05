@@ -30,3 +30,4 @@ export * from "./timeline";
 export * from "./typography";
 export * from "./navbar";
 export * from "./badge";
+export * from "./slider";

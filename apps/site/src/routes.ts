@@ -129,10 +129,10 @@ export const routes = [
             title: "Select",
             path: "/docs/react/select",
           },
-          // {
-          //   title: "Slider",
-          //   path: "/docs/react/slider",
-          // },
+          {
+            title: "Slider",
+            path: "/docs/react/slider",
+          },
           {
             title: "Switch",
             path: "/docs/react/switch",

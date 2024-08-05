@@ -58,6 +58,7 @@ import * as Table from "@components/docs/table";
 import * as Breadcrumb from "@components/docs/breadcrumb";
 import * as Drawer from "@components/docs/drawer";
 import * as Stepper from "@components/docs/stepper";
+import * as Slider from "@components/docs/slider";
 import * as Timeline from "@components/docs/timeline";
 import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
@@ -179,6 +180,7 @@ const components = {
   Breadcrumb,
   Drawer,
   Stepper,
+  Slider,
   Timeline,
   AlgoliaSearch,
   Swiper,

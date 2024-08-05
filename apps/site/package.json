@@ -26,6 +26,7 @@
     "apexcharts": "3.48.0",
     "clsx": "1.2.1",
     "date-fns": "3.6.0",
+    "framer-motion": "11.3.8",
     "gray-matter": "4.0.3",
     "iconoir-react": "7.5.0",
     "lexical": "0.14.2",

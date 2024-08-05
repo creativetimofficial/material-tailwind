@@ -28,3 +28,4 @@ export * from "./typography";
 export * from "./timeline";
 export * from "./navbar";
 export * from "./badge";
+export * from "./slider";
