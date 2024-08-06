@@ -5,3 +5,4 @@ export * from "./dialog-with-form";
 export * from "./dialog-with-image";
 export * from "./dialog-custom-animation";
 export * from "./add-product-dialog";
+export * from "./select-categories-dialog";
