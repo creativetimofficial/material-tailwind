@@ -3,18 +3,18 @@ export function DeliveryMethodDialog() {
     <>
       <button
         data-ripple-light="true"
-        data-dialog-target="add-product-dialog"
+        data-dialog-target="delivery-method-dialog"
         className="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       >
         Delivery Method Dialog
       </button>
       <div
-        data-dialog-backdrop="add-product-dialog"
+        data-dialog-backdrop="delivery-method-dialog"
         data-dialog-backdrop-close="true"
         className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
       >
         <div
-          data-dialog="add-product-dialog"
+          data-dialog="delivery-method-dialog"
           className="relative m-4 w-2/4 min-w-[33.3%] max-w-[33.3%] rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
         >
           <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
