@@ -8,15 +8,17 @@ next: docs/react/checkbox
 
 # Tailwind CSS Button Group - React
 
-Use our React `Button Group` styled with Tailwind CSS to group together a series of buttons in a single layout.
+Use our React `ButtonGroup` component styled with Tailwind CSS to group together a series of buttons in a single layout.
 
-The `Button Group` component is an essential element of web design. Basically, it is stack of buttons. They help users navigate our websites or apps and drive them to a particular action.
+The `ButtonGroup` component is an essential element of web design. Basically, it is stack of buttons. They help users navigate our websites or apps and drive them to a particular action.
 
-See below our `Button Group` examples that you can use in your Tailwind CSS and React project. These example comes in different styles and colors, so you can adapt them easily to your needs.
+See below our `ButtonGroup` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt them easily to your needs.
 
 ---
 
 ## Button Group Demo
+
+Here's how to implement a simple and responsive `ButtonGroup` component. It can be used for any action that requires user interaction in your website.
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupDemo />}>
 ```tsx
@@ -37,6 +39,10 @@ export function ButtonGroupDemo() {
 ---
 
 ## Button Group Variants
+
+We provides different variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the buttons variant inside the `ButtonGroup` component.
+
+In the example below, we've showcased the different `ButtonGroup` variants that you can use in your project.
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupVariants />}>
 ```tsx
@@ -75,6 +81,10 @@ export function ButtonGroupVariants() {
 
 ## Button Group Sizes
 
+We provide different sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the buttons size inside the `ButtonGroup` component.
+
+In the example below, we've showcased the different `ButtonGroup` sizes that you can use in your project.
+
 <ComponentPreview demo={<ButtonGroup.ButtonGroupSizes />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -106,6 +116,10 @@ export function ButtonGroupSizes() {
 ---
 
 ## Button Group Colors
+
+We provide different colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `ButtonGroup` component color.
+
+In the example below, we've showcased the different `ButtonGroup` colors that you can use in your project.
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupColors />}>
 ```tsx
@@ -152,7 +166,11 @@ export function ButtonGroupColors() {
 
 ---
 
-## Button Group With Icon
+## Button Group with Icon
+
+You can add an icon to the start or end of the buttons text inside the `ButtonGroup` component to make it more visually appealing and informative. Use the example below to create buttons with icon inside the `ButtonGroup` component.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupWithIcon />}>
 ```tsx
@@ -193,6 +211,10 @@ export function ButtonWithIcon() {
 
 ## Block Level Button Group
 
+A `ButtonGroup` component could be a block-level component as well that gets all the available space in a row. You can use the `isFullWidth` prop to make the `ButtonGroup` component a block-level element.
+
+In the example below, we've showcased the block-level `ButtonGroup` component in 4 different variants that you can use in your project.
+
 <ComponentPreview demo={<ButtonGroup.BlockLevelButtonGroup />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -230,6 +252,10 @@ export function BlockLevelButtonGroup() {
 
 ## Pill Button Group
 
+A pill `ButtonGroup` component is a `ButtonGroup` component with rounded corners that make it look like a pill. You can use the `isPill` prop to make the `ButtonGroup` component looks like a pill.
+
+In the example below, we've showcased the pill `ButtonGroup` component in 4 different variants that you can use in your project.
+
 <ComponentPreview demo={<ButtonGroup.PillButtonGroup />}>
 ```tsx
 import { ButtonGroup, Button } from "@material-tailwind/react";
@@ -266,6 +292,11 @@ export function PillButtonGroup() {
 ---
 
 ## Custom Button Group
+
+You can use the `className` prop to customize the `ButtonGroup` component and `Button` components inside the `ButtonGroup` component style and make your own custom `ButtonGroup` component.
+
+In the example below, we've showcased how to create custom social media `ButtonGroup` that you can use in your project.
+
 
 <ComponentPreview demo={<ButtonGroup.CustomButtonGroup />}>
 ```tsx
