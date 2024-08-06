@@ -8,11 +8,17 @@ next: docs/react/input
 
 # Tailwind CSS Icon Button - React
 
-Use this example to create user-friendly buttons with icon for your Tailwind CSS and React project.
+Get started easily with our `IconButton` component based on React and styled with Tailwind CSS.
+
+These types of buttons provide a visually intuitive way to interact with an application or website. The use of icons can help save space on the user interface and make it easier for users to recognize and understand the action associated with the button. Think about the trash bin icon for deleting items, a pencil icon for editing content, or a magnifying glass icon for search action.
+
+Below we showcased examples of `IconButton` component that you can use for your project. For the examples below we used [Iconoir](https://iconoir.com/) icons but you can use any icon library you prefer.
 
 ---
 
 ## Icon Button Demo
+
+Here's how to implement a simple and responsive `IconButton` component. It can be used for the action of favoriting or liking content, given its star icon.
 
 <ComponentPreview demo={<IconButton.IconButtonDemo />}>
 ```tsx
@@ -32,6 +38,10 @@ export function IconButtonDemo() {
 ---
 
 ## Icon Button Variants
+
+We provides different `IconButton` variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the `IconButton` variant.
+
+In the example below, we've showcased the different `IconButton` variants that you can use in your project.
 
 <ComponentPreview demo={<IconButton.IconButtonVariants />}>
 ```tsx
@@ -63,6 +73,10 @@ export function IconButtonVariants() {
 
 ## Icon Button Sizes
 
+We provide different `IconButton` sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the `IconButton` size.
+
+In the example below, we've showcased the different `IconButton` sizes that you can use in your project.
+
 <ComponentPreview demo={<IconButton.IconButtonSizes />}>
 ```tsx
 import { IconButton } from "@material-tailwind/react";
@@ -89,6 +103,10 @@ export function IconButtonSizes() {
 ---
 
 ## Icon Button Colors
+
+We provide different `IconButton` colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `IconButton` color.
+
+In the example below, we've showcased the different `IconButton` colors that you can use in your project.
 
 <ComponentPreview demo={<IconButton.IconButtonColors />}>
 ```tsx
@@ -126,6 +144,10 @@ export function IconButtonColors() {
 
 ## Rounded Icon Button
 
+Use the `isCircular` prop to make the `IconButton` circular, this can be used to represent a different visual style for the icon button specially inside a container with a more rounded corners.
+
+In the example below, we've showcased the circular `IconButton` in 4 different variants that you can use in your project.
+
 <ComponentPreview demo={<IconButton.RoundedIconButton />}>
 ```tsx
 import { IconButton } from "@material-tailwind/react";
@@ -155,7 +177,11 @@ export function RoundedIconButton() {
 
 ---
 
-## Icon Button As Link
+## Icon Button as Link
+
+You can use the `IconButton` component as a link by using the `as` prop and passing the `a` tag to it. This way you can use the `IconButton` component as a link to navigate to another page or website.
+
+In the example below, we've showcased the `IconButton` as a link in 4 different variants that you can use in your project.
 
 <ComponentPreview demo={<IconButton.IconButtonAsLink />}>
 ```tsx
@@ -186,6 +212,10 @@ export function IconButtonAsLink() {
 ---
 
 ## Custom Icon Button
+
+You can use the `className` prop to customize the `IconButton` component style and make your own custom `IconButton` component.
+
+In the example below, we've showcased how to create custom social media `IconButton` that you can use in your project.
 
 <ComponentPreview demo={<IconButton.CustomIconButton />}>
 ```tsx
