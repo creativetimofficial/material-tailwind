@@ -15,7 +15,7 @@ export function AddProductDialog() {
       >
         <div
           data-dialog="add-product-dialog"
-          className="relative mx-auto flex w-full md:max-w-[33rem] flex-col rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          className="relative m-4 w-full md:max-w-[33rem] rounded-lg bg-white p-4 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
         >
           <div className="relative m-0 block shrink-0 items-center p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
             <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
