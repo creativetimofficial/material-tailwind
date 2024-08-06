@@ -8,19 +8,21 @@ next: docs/react/icon-button
 
 # Tailwind CSS Checkbox - React
 
-Use our Tailwind CSS `Checkbox` to allow the user to select one or more items from a set.
+Use our Tailwind CSS `Checkbox` component to allow the user to select one or more items from a set.
 
-You can use a `Checkbox` for:
+You can use a checkbox for:
 
 - Selecting one or more options from a list.
 - Presenting a list containing sub-selections.
-- Turning an item on/off in a desktop environment (If you have a single option, avoid using a `Checkbox` and use an on/off switch instead).
+- Turning an item on/off in a desktop environment (If you have a single option, avoid using a checkbox and use an on/off switch instead).
 
-See below our simple `Checkbox` example that you can use in your React and Tailwind CSS projects. The example also comes in different colors, so you can adapt it easily to your needs.
+See below our `Checkbox` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Checkbox Demo
+
+Here's how to implement a `Checkbox` component. It can be used for forms or other components.
 
 <ComponentPreview demo={<Checkbox.CheckboxDemo />}>
 ```tsx
@@ -39,6 +41,10 @@ export function CheckboxDemo() {
 ---
 
 ## Checkbox Colors
+
+We provide different checkbox colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the checkbox color.
+
+In the example below, we've showcased the different checkbox colors that you can use in your project.
 
 <ComponentPreview demo={<Checkbox.CheckboxColors />}>
 ```tsx
@@ -73,7 +79,9 @@ export function CheckboxColors() {
 
 ---
 
-## Checkbox With Label
+## Checkbox with Label
+
+The `Checkbox` components can be used with a label to provide more context to the user. In the example below, we've added a label to the checkbox by using the `Checkbox` and `Typography` components together.
 
 <ComponentPreview demo={<Checkbox.CheckboxWithLabel />}>
 ```tsx
@@ -97,7 +105,11 @@ export function CheckboxWithLabel() {
 
 ---
 
-## Checkbox With Custom Icon
+## Checkbox with Custom Icon
+
+You can customize and change the icon used for the checkbox by using new icons inside the `Checkbox.Indicator` component. In the example below, we use the `Star` and `StarSolid` icons for `checked` and `unchecked` states.
+
+To make it work, you need to add `group` class to the `Checkbox` component and use `group-data-[checked=true]` for the icons to show/hide based on the checkbox state.
 
 <ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
 ```tsx
@@ -121,6 +133,8 @@ export function CheckboxWithCustomIcon() {
 
 ## Disabled Checkbox
 
+You can disable the checkbox by adding the `disabled` prop. This will prevent the user from interacting with the checkbox.
+
 <ComponentPreview demo={<Checkbox.DisabledCheckbox />}>
 ```tsx
 import { Checkbox } from "@material-tailwind/react";
@@ -137,7 +151,9 @@ export function DisabledCheckbox() {
 
 ---
 
-## Checkbox With Link
+## Checkbox with Link
+
+Use the example below to create a `Checkbox` with a link to the terms and conditions inside it's label.
 
 <ComponentPreview demo={<Checkbox.CheckboxWithLink />}>
 ```tsx
@@ -169,6 +185,8 @@ export function CheckboxWithLink() {
 
 ## Checkbox With Description
 
+Use the example below to create a `Checkbox` component with a title and description as it's label to provide more information about the checkbox action.
+
 <ComponentPreview demo={<Checkbox.CheckboxWithDescription />}>
 ```tsx
 import { Checkbox, Typography } from "@material-tailwind/react";
@@ -196,6 +214,8 @@ export function CheckboxWithDescription() {
 ---
 
 ## Custom Checkbox
+
+You can use `className` prop to customize the `Checkbox` component style. In the example below, we make the checkbox circular.
 
 <ComponentPreview demo={<Checkbox.CustomCheckbox />}>
 ```tsx
