@@ -1,4 +1,4 @@
-export function AddProductDialog() {
+export function DeliveryMethodDialog() {
   return (
     <>
       <button
