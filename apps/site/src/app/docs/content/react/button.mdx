@@ -8,18 +8,17 @@ next: docs/react/button-group
 
 # Tailwind CSS Button - React
 
-Use our `Button` based on Tailwind CSS for actions in forms, dialogues, and more.
+Use our `Button` component based on Tailwind CSS for actions in forms, dialogues, and more.
 
-`Button` is an essential element of web design. Basically,
-`Button` is styled links that grab the user's attention. They help users
-navigate our websites or apps and drive them to a particular action like submitting
-a contact form or placing an order as easy as possible.
+Button is an essential element of web design. Basically, button is styled links that grab the user's attention, they help users navigate our websites or apps and drive them to a particular action like submitting a contact form or placing an order as easy as possible.
 
-See below our `Button` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our `Button` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Button Demo
+
+Here's how to implement a simple and responsive `Button` component. It can be used for the action of submitting a form, navigating between pages, or any other action that requires user interaction in your website.
 
 <ComponentPreview demo={<Button.ButtonDemo />}>
 ```tsx
@@ -34,6 +33,10 @@ export function ButtonDemo() {
 ---
 
 ## Button Variants
+
+We provides different button variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the button variant.
+
+In the example below, we've showcased the different button variants that you can use in your project.
 
 <ComponentPreview demo={<Button.ButtonVariants />}>
 ```tsx
@@ -56,6 +59,10 @@ export function ButtonVariants() {
 
 ## Button Sizes
 
+We provide different button sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the button size.
+
+In the example below, we've showcased the different button sizes that you can use in your project.
+
 <ComponentPreview demo={<Button.ButtonSizes />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -75,6 +82,10 @@ export function ButtonSizes() {
 ---
 
 ## Button Colors
+
+We provide different button colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the button color.
+
+In the example below, we've showcased the different button colors that you can use in your project.
 
 <ComponentPreview demo={<Button.ButtonColors />}>
 ```tsx
@@ -97,7 +108,11 @@ export function ButtonColors() {
 
 ---
 
-## Button With Icon
+## Button with Icon
+
+You can add an icon to the start or end of the button text to make it more visually appealing and informative. Use the example below to create buttons with icon.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Button.ButtonWithIcon />}>
 ```tsx
@@ -138,6 +153,10 @@ export function ButtonWithIcon() {
 
 ## Block Level Button
 
+A button could be a block-level component as well that gets all the available space in a row. You can use the `isFullWidth` prop to make the `Button` component a block-level element.
+
+In the example below, we've showcased the block-level button in 4 different variants that you can use in your project.
+
 <ComponentPreview demo={<Button.BlockLevelButton />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -167,6 +186,10 @@ export function BlockLevelButton() {
 
 ## Pill Button
 
+A pill button is a button with rounded corners that make it look like a pill. You can use the `isPill` prop to make the button looks like a pill.
+
+In the example below, we've showcased the pill button in 4 different variants that you can use in your project.
+
 <ComponentPreview demo={<Button.PillButton />}>
 ```tsx
 import { Button } from "@material-tailwind/react";
@@ -194,7 +217,11 @@ export function PillButton() {
 
 ---
 
-## Button As Link
+## Button as Link
+
+You can use the `Button` component as a link by using the `as` prop and passing the `a` tag to it. This way you can use the `Button` component as a link to navigate to another page or website.
+
+In the example below, we've showcased the button as a link in 4 different variants that you can use in your project.
 
 <ComponentPreview demo={<Button.ButtonAsLink />}>
 ```tsx
@@ -224,6 +251,10 @@ export function ButtonAsLink() {
 ---
 
 ## Button with Loading State
+
+You can use the `Button` component with a loading state to show the user that the action is in progress. To do that, you can use the `Button` component with the `Spinner` component to show a loading spinner inside the button.
+
+In the example below, we've showcased the button with a loading state in 4 different variants that you can use in your project.
 
 <ComponentPreview demo={<Button.ButtonLoading />}>
 ```tsx
@@ -257,6 +288,10 @@ export function ButtonLoading() {
 ---
 
 ## Custom Auth Button
+
+You can use the `className` prop to customize the `Button` component style and make your own custom button.
+
+In the example below, we've showcased how to create custom authentication buttons that you can use in your project.
 
 <ComponentPreview demo={<Button.CustomAuthButton />}>
 ```tsx
