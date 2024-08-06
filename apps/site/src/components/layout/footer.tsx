@@ -230,8 +230,9 @@ export function Footer() {
               target="_blank"
               className="text-inherit transition-colors hover:text-primary"
             >
-              Creative Tim. Made with ❤️ for a better web.
+              Creative Tim.&nbsp;
             </Link>
+            Made with ❤️ for a better web.
           </div>
         </div>
       </div>
