@@ -55,7 +55,7 @@ export function AddProductDialog() {
               size="lg"
               placeholder="eg. White Shoes"
               name="name"
-              className="focus:!border-t-gray-900"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
               containerProps={{
                 className: "!min-w-full",
               }}
@@ -75,10 +75,6 @@ export function AddProductDialog() {
             <Select
               className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-800 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
               placeholder="1"
-              animate={{
-                mount: { y: 0 },
-                unmount: { y: 25 },
-              }}
               labelProps={{
                 className: "hidden",
               }}
@@ -102,7 +98,7 @@ export function AddProductDialog() {
                 size="lg"
                 placeholder="eg. <8.8oz | 250g"
                 name="weight"
-                className="focus:!border-t-gray-900"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
                 }}
@@ -124,7 +120,7 @@ export function AddProductDialog() {
                 size="lg"
                 placeholder="eg. US 8"
                 name="size"
-                className="focus:!border-t-gray-900"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
                 }}
@@ -144,7 +140,8 @@ export function AddProductDialog() {
             </Typography>
             <Textarea
               rows={7}
-              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
+              placeholder="eg. This is a white shoes with a comfortable sole."
+              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
               labelProps={{
                 className: "hidden",
               }}
