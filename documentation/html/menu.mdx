@@ -3,11 +3,11 @@ title: Tailwind CSS Dropdown Menu - Material Tailwind
 description: Get started easier with our dropdown menu component examples styled with Tailwind CSS to let the users access different parts of an application or website. 
 navigation:
   [
-    "menu",
-    "nested-menu",
-    "notifications-menu",
-    "profile-menu",
-    "menu-trigger-data-attributes",
+    "dropdown-menu",
+    "nested-dropdown-menu",
+    "notifications-dropdown-menu",
+    "profile-dropdown-menu",
+    "dropdown-menu-trigger-data-attributes",
     "required-script",
   ]
 github: menu
@@ -34,7 +34,7 @@ To create a menu you can use the <Link href="/docs/html/popover#popover-trigger-
 This example showcases a simple and responsive dropdown menu component that includes a button to open the menu and a list (<Code>\<ul></Code>) that represents the menu itself. 
 
 <CodePreview
-  id="menu"
+  id="dropdown-menu"
   link="menu#menu"
   component={<HTMLMenuExamples.MenuDefault/>}
 >
@@ -70,7 +70,7 @@ Use this component example if you want to implement a nested dropdown menu struc
 You can create nested/multi-level menus by setting the <Link href="/docs/html/popover#popover-trigger-data-attributes"><Code>data-popover-nested="true"</Code></Link> data attribute to the menu trigger element.
 
 <CodePreview
-  id="nested-menu"
+  id="nested-dropdown-menu"
   link="menu#nested-menu"
   component={<HTMLMenuExamples.NestedMenu/>}
 >
@@ -123,7 +123,7 @@ You can create nested/multi-level menus by setting the <Link href="/docs/html/po
 In the example below, the component consists of a notification button that, when clicked, reveals a dropdown menu containing individual notification items. Each notification item includes an image and text, providing a more engaging and informative user experience. 
 
 <CodePreview
-  id="notifications-menu"
+  id="notifications-dropdown-menu"
   link="menu#notifications-menu"
   className="mt-4"
   component={<HTMLMenuExamples.NotificationsMenu/>}
@@ -203,7 +203,7 @@ In the example below, the component consists of a notification button that, when
 Use this profile dropdown menu component that is triggered by an image acting as a button. When clicked, it reveals a dropdown menu with various options like "My Profile," "Edit Profile," "Inbox," "Help," and "Sign Out." The dropdown menu provides a centralized location for users to access various aspects of their profile and settings, improving the site's navigational efficiency.
 
 <CodePreview
-  id="profile-menu"
+  id="profile-dropdown-menu"
   link="menu#profile-menu"
   className="mt-4"
   component={<HTMLMenuExamples.ProfileMenu/>}
@@ -277,17 +277,17 @@ Use this profile dropdown menu component that is triggered by an image acting as
 
 ---
 
-## Menu Trigger Data Attributes
+## Dropdown Menu Trigger Data Attributes
 
-<span id="menu-trigger-data-attributes" className="scroll-mt-48" />
+<span id="dropdown-menu-trigger-data-attributes" className="scroll-mt-48" />
 
 The trigger element of the dropdown menu uses the <Link href="/docs/html/popover#popover-trigger-data-attributes" className="font-medium hover:text-blue-500">popover trigger data attribute</Link> to work.
 
 ---
 
-## Menu Data Attributes
+## Dropdown Menu Data Attributes
 
-<span id="menu-data-attributes" className="scroll-mt-48" />
+<span id="dropdown-menu-data-attributes" className="scroll-mt-48" />
 
 The menu element uses the <Link href="/docs/html/popover#popover-data-attributes" className="font-medium hover:text-blue-500">popover data attributes</Link> to work.
 
