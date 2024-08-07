@@ -12,7 +12,7 @@ export type className = string;
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesSeparator: any = PropTypes.node;
-export const propTypesFullWidth: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesSeparator = PropTypes.node;
+export const propTypesFullWidth = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesChildren = PropTypes.node.isRequired;

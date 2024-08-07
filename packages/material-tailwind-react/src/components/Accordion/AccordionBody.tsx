@@ -1,7 +1,7 @@
 import React from "react";
 
 // framer-motion
-import { m, MotionProps, domAnimation, LazyMotion } from "framer-motion";
+import { m, domAnimation, LazyMotion, type Variants } from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -17,13 +17,12 @@ import { useTheme } from "../../context/theme";
 import type { className, children } from "../../types/components/accordion";
 import { propTypesClassName, propTypesChildren } from "../../types/components/accordion";
 
-export interface AccordionBodyProps extends MotionProps {
-  className?: className;
+export interface AccordionBodyProps extends Omit<React.ComponentProps<typeof m.div>, "ref"> {
+  className?: className; // Can be removed
   children: children;
-  [key: string]: any;
 }
 
-export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
+export const AccordionBody = React.forwardRef<React.ElementRef<typeof m.div>, AccordionBodyProps>(
   ({ className, children, ...rest }, ref) => {
     // 1. init
     const { open, animate } = useAccordion();
@@ -48,7 +47,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
         height: "auto",
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
-    };
+    } satisfies Variants;
 
     const mainAnimation = {
       unmount: {
@@ -57,7 +56,7 @@ export const AccordionBody = React.forwardRef<HTMLDivElement, AccordionBodyProps
       mount: {
         transition: { duration: 0.3, ease: "linear" },
       },
-    };
+    } satisfies Variants;
 
     const appliedAnimation = merge(heightAnimation, animate);
 

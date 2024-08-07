@@ -6,7 +6,7 @@ Even if you have little to no experience with Tailwind CSS, JavaScript or React,
 
 ## Development Setup
 
-Material Tailwind is using PNPM workspaces and you need to execute the following commands after clonning the repository.
+Material Tailwind is using PNPM workspaces and you need to execute the following commands after cloning the repository.
 
 1. Install dependencies
 
