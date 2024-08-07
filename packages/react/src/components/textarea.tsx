@@ -82,7 +82,7 @@ TextareaRoot.displayName = "MaterialTailwind.Textarea";
 export const Textarea = React.forwardRef(TextareaRoot) as <
   T extends React.ElementType = "textarea",
 >(
-  props: TextareaProps<T> & { ref: React.Ref<HTMLTextAreaElement> },
+  props: TextareaProps<T> & { ref?: React.Ref<HTMLTextAreaElement> },
 ) => JSX.Element;
 
 export default Textarea;

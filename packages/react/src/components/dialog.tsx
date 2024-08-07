@@ -60,7 +60,7 @@ const DialogContext = React.createContext<DialogContextProps>({
 export interface DialogRootProps {
   size?: size;
   open?: boolean;
-  onOpenChange?: () => void;
+  onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
@@ -204,7 +204,7 @@ DialogOverlayRoot.displayName = "MaterialTailwind.DialogOverlay";
 export const DialogOverlay = React.forwardRef(DialogOverlayRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: DialogOverlayProps<T> & { ref: React.Ref<HTMLDivElement> },
+  props: DialogOverlayProps<T> & { ref?: React.Ref<HTMLDivElement> },
 ) => JSX.Element;
 
 // dialog content

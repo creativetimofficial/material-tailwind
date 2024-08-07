@@ -62,7 +62,7 @@ export const TooltipContext = React.createContext<TooltipContextProps>({
 // tooltip root
 export interface TooltipProps {
   open?: boolean;
-  onOpenChange?: () => void;
+  onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   placement?: Placement;
   offset?: OffsetOptions;
   interactive?: boolean;

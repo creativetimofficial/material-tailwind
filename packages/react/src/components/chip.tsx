@@ -39,7 +39,7 @@ export type ChipProps<T extends React.ElementType = "div"> = BaseProps<
   T,
   {
     open?: boolean;
-    onOpenChange?: () => void;
+    onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   } & SharedProps
 >;
 

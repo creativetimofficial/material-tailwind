@@ -78,7 +78,7 @@ export const MenuContext = React.createContext<MenuContextProps>({
 // menu root
 export interface MenuProps {
   open?: boolean;
-  onOpenChange?: () => void;
+  onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   placement?: Placement;
   offset?: OffsetOptions;
   children: React.ReactNode;

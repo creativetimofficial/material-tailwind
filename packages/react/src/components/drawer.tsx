@@ -56,7 +56,7 @@ const DrawerContext = React.createContext<DrawerContextProps>(
 // drawer root
 export interface DrawerRootProps {
   open?: boolean;
-  onOpenChange?: () => void;
+  onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
@@ -186,7 +186,7 @@ DrawerOverlayRoot.displayName = "MaterialTailwind.DrawerOverlay";
 export const DrawerOverlay = React.forwardRef(DrawerOverlayRoot) as <
   T extends React.ElementType = "div",
 >(
-  props: DrawerOverlayProps<T> & { ref: React.Ref<HTMLDivElement> },
+  props: DrawerOverlayProps<T> & { ref?: React.Ref<HTMLDivElement> },
 ) => JSX.Element;
 
 // drawer panel

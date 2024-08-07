@@ -40,7 +40,7 @@ export type AlertProps<T extends React.ElementType = "div"> = BaseProps<
   {
     open?: boolean;
     isPill?: boolean;
-    onOpenChange?: () => void;
+    onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
   } & Omit<SharedProps, "size">
 >;
 
