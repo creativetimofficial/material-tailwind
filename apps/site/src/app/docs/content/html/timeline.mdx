@@ -1,7 +1,7 @@
 ---
 title: Tailwind CSS Timeline - Material Tailwind
 description: Customise your web projects with our easy-to-use Timeline component for Tailwind CSS and React using Material Design guidelines.
-github: Timeline
+github: timeline
 prev: docs/react/inputs
 next: docs/react/Timeline-group
 ---
@@ -79,7 +79,7 @@ Use this versatile vertical timeline example designed to display a series of eve
 
 ---
 
-## Timeline With Icon
+## Timeline with Icon
 
 Use the example below for a timeline component with icon to denote different events or stages. Each item in the timeline is presented as a separate list item (`<li>`), with visual indicators and descriptive content.
 
@@ -214,11 +214,11 @@ Use the example below for a timeline component with icon to denote different eve
 
 ---
 
-## Timeline With Avatar
+## Timeline with Avatar
 
 Unlike traditional timeline elements that use abstract shapes or icons to denote events, this example uses images, specifically profile photos (avatars), to add a personal or human touch to each list item.
 
-Each list item includes a title and a paragraph. The titles are prominent (`text-xl font-semibold text-blue-gray-900`), while the paragraphs provide additional information in a smaller, lighter font (`text-base font-normal text-gray-600`).
+Each list item includes a title and a paragraph. The titles are prominent (`text-base font-bold text-black`), while the paragraphs provide additional information in a smaller, lighter font (`text-sm text-foreground`).
 
 <ComponentPreview demo={<HTMLTimeline.TimelineWithAvatar />}>
 ```html
@@ -303,11 +303,11 @@ This example showcases a well-structured, compact, and beautiful notification li
 
 <ComponentPreview demo={<HTMLTimeline.ActivitiesTimeline />}>
 ```html
-<div class="flex flex-col items-start w-full max-w-md space-y-6">
-  <div class="flex w-full group gap-x-6">
-    <div class="flex items-center w-full gap-3 px-3 py-2 overflow-hidden border rounded-lg shadow-lg border-surface bg-background shadow-black/5">
+<div class="flex w-full max-w-md flex-col items-start space-y-6">
+  <div class="flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
+    <div class="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
       <div class="relative">
-        <span class="relative z-10 grid w-10 h-10 rounded-full place-items-center bg-primary text-primary-foreground">
+        <span class="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
           <svg
             width="1.5em"
             height="1.5em"
@@ -316,7 +316,7 @@ This example showcases a well-structured, compact, and beautiful notification li
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="currentColor"
-            class="w-4 h-4"
+            class="h-4 w-4"
           >
             <path
               d="M18 8.4C18 6.70261 17.3679 5.07475 16.2426 3.87452C15.1174 2.67428 13.5913 2 12 2C10.4087 2 8.88258 2.67428 7.75736 3.87452C6.63214 5.07475 6 6.70261 6 8.4C6 15.8667 3 18 3 18H21C21 18 18 15.8667 18 8.4Z"
@@ -333,20 +333,20 @@ This example showcases a well-structured, compact, and beautiful notification li
           </svg>
         </span>
       </div>
-      <div class="pb-8 text-foreground">
-        <p class="font-sans text-base antialiased font-bold text-black dark:text-white">
+      <div class="text-foreground">
+        <p class="font-sans text-base font-bold text-black antialiased dark:text-white">
           $2400, Design changes
         </p>
-        <small class="mt-2 font-sans text-sm antialiased text-foreground">
+        <small class="mt-2 font-sans text-sm text-foreground antialiased">
           22 DEC 7:20 PM
         </small>
       </div>
     </div>
   </div>
-  <div class="flex w-full group gap-x-6">
-    <div class="flex items-center w-full gap-3 px-3 py-2 overflow-hidden border rounded-lg shadow-lg border-surface bg-background shadow-black/5">
+  <div class="group flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
+    <div class="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
       <div class="relative">
-        <span class="relative z-10 grid w-10 h-10 rounded-full place-items-center bg-primary text-primary-foreground">
+        <span class="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
           <svg
             width="1.5em"
             height="1.5em"
@@ -355,7 +355,7 @@ This example showcases a well-structured, compact, and beautiful notification li
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="currentColor"
-            class="w-4 h-4"
+            class="h-4 w-4"
           >
             <path
               d="M22 9V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V9ZM22 9H6"
@@ -366,20 +366,20 @@ This example showcases a well-structured, compact, and beautiful notification li
           </svg>
         </span>
       </div>
-      <div class="pb-8 text-foreground">
-        <p class="font-sans text-base antialiased font-bold text-black dark:text-white">
+      <div class="text-foreground">
+        <p class="font-sans text-base font-bold text-black antialiased dark:text-white">
           New order #1832412
         </p>
-        <small class="mt-2 font-sans text-sm antialiased text-foreground">
+        <small class="mt-2 font-sans text-sm text-foreground antialiased">
           21 DEC 11 PM
         </small>
       </div>
     </div>
   </div>
-  <div data-value=":r40:" class="flex w-full group gap-x-6">
-    <div class="flex items-center w-full gap-3 px-3 py-2 overflow-hidden border rounded-lg shadow-lg border-surface bg-background shadow-black/5">
+  <div class="group flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
+    <div class="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
       <div class="relative">
-        <span class="relative z-10 grid w-10 h-10 rounded-full place-items-center bg-primary text-primary-foreground">
+        <span class="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
           <svg
             width="1.5em"
             height="1.5em"
@@ -388,7 +388,7 @@ This example showcases a well-structured, compact, and beautiful notification li
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="currentColor"
-            class="w-4 h-4"
+            class="h-4 w-4"
           >
             <path
               d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
@@ -405,11 +405,11 @@ This example showcases a well-structured, compact, and beautiful notification li
           </svg>
         </span>
       </div>
-      <div class="pb-8 text-foreground">
-        <p class="font-sans text-base antialiased font-bold text-black dark:text-white">
+      <div class="text-foreground">
+        <p class="font-sans text-base font-bold text-black antialiased dark:text-white">
           Payment completed for order #4395133
         </p>
-        <small class="mt-2 font-sans text-sm antialiased text-foreground">
+        <small class="mt-2 font-sans text-sm text-foreground antialiased">
           20 DEC 2:20 AM
         </small>
       </div>
@@ -423,9 +423,8 @@ This example showcases a well-structured, compact, and beautiful notification li
 ---
 
 ## Timeline Best Practices for Developers
-<ul class="mt-4 ml-4 space-y-2 list-disc list-outside text-foreground">
-<li>Maintain consistent styling throughout the timeline for elements such as dates, event titles, and descriptions.</li>
-<li>Aim for brief, concise descriptions, and provide links to more detailed information if necessary.</li>
-<li>If the timeline is dense with information, consider adding interactive elements such as tooltips, pop-ups, or modals that provide more • details when users hover or click on an event.</li>
-<li>Use size, color, and typography to establish a visual hierarchy that guides users through the timeline.</li>
-</ul>
+
+- Maintain consistent styling throughout the timeline for elements such as dates, event titles, and descriptions.
+- Aim for brief, concise descriptions, and provide links to more detailed information if necessary.
+- If the timeline is dense with information, consider adding interactive elements such as tooltips, pop-ups, or modals that provide more • details when users hover or click on an event.
+- Use size, color, and typography to establish a visual hierarchy that guides users through the timeline.

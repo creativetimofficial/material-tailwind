@@ -1,7 +1,7 @@
 export function ActivitiesTimeline() {
   return (
     <div className="flex w-full max-w-md flex-col items-start space-y-6">
-      <div className="group flex w-full gap-x-6">
+      <div className="flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
         <div className="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
           <div className="relative">
             <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
@@ -30,7 +30,7 @@ export function ActivitiesTimeline() {
               </svg>
             </span>
           </div>
-          <div className="pb-8 text-foreground">
+          <div className="text-foreground">
             <p className="font-sans text-base font-bold text-black antialiased dark:text-white">
               $2400, Design changes
             </p>
@@ -40,7 +40,7 @@ export function ActivitiesTimeline() {
           </div>
         </div>
       </div>
-      <div className="group flex w-full gap-x-6">
+      <div className="group flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
         <div className="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
           <div className="relative">
             <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
@@ -63,7 +63,7 @@ export function ActivitiesTimeline() {
               </svg>
             </span>
           </div>
-          <div className="pb-8 text-foreground">
+          <div className="text-foreground">
             <p className="font-sans text-base font-bold text-black antialiased dark:text-white">
               New order #1832412
             </p>
@@ -73,7 +73,7 @@ export function ActivitiesTimeline() {
           </div>
         </div>
       </div>
-      <div data-value=":r40:" className="group flex w-full gap-x-6">
+      <div className="group flex w-full gap-x-6 aria-disabled:pointer-events-none aria-disabled:select-none">
         <div className="flex w-full items-center gap-3 overflow-hidden rounded-lg border border-surface bg-background px-3 py-2 shadow-lg shadow-black/5">
           <div className="relative">
             <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground">
@@ -102,7 +102,7 @@ export function ActivitiesTimeline() {
               </svg>
             </span>
           </div>
-          <div className="pb-8 text-foreground">
+          <div className="text-foreground">
             <p className="font-sans text-base font-bold text-black antialiased dark:text-white">
               Payment completed for order #4395133
             </p>
