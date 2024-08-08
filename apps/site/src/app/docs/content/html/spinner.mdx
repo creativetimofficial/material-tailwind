@@ -196,7 +196,7 @@ In this example, the spinner icons are incrementally sized from smaller to large
 
 ## Spinner Colors
 
-Check out this loading spinner component, with customizable stroke colors. The colors used in the SVG elements are shades of gray (`text-gray-300`) for the spinning animation, while the strokes of the paths within each SVG have different colors: blue, red, green, amber, teal, indigo, purple, and pink. Choose the color that suits your project's needs.
+Check out this loading spinner component, with customizable stroke colors. The colors used in the SVG elements is (`text-surface`) for the spinning animation, while the strokes of the paths within each SVG have different colors: `primary`, `secondary`, `info`, `success`, `warning`, and `error`. Choose the color that suits your project's needs.
 
 <ComponentPreview demo={<HTMLSpinner.SpinnerColors />}>
 ```html
@@ -370,7 +370,6 @@ Check out this example to see how you can add custom styles to your spinner comp
 ```
 </ComponentPreview>
 
+<br />
 
-<p class="mt-4 antialiased text-foreground">In the code snipped above, the animation applied to the spinner (`animate-spin`) adds movement, further indicating that a process is ongoing. The use of the text-gray-900/50 class for coloring provides a subtle gray color with 50% opacity, which maintains visibility while ensuring it doesn't distract too much from the content behind it.</p>
-
----
+In the code snipped above, the animation applied to the spinner (`animate-spin`) adds movement, further indicating that a process is ongoing. The use of the `text-surface` class for coloring provides a subtle gray color, which maintains visibility while ensuring it doesn't distract too much from the content behind it and the `w-16 h-16` classes set a bigger size for the spinner.
