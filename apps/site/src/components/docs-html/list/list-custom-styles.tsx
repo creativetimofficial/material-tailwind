@@ -1,7 +1,7 @@
 export function ListCustomStyles() {
   return (
     <ul className="flex min-w-[240px] flex-col gap-0.5">
-      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
         <span className="me-2.5 grid shrink-0 place-items-center">
           <svg
             width="1.5em"
@@ -27,14 +27,14 @@ export function ListCustomStyles() {
         </span>
         Inbox
         <span className="ms-auto grid shrink-0 place-items-center ps-2.5">
-          <div className="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-0.5 font-sans text-xs font-medium leading-none text-primary transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary">
+          <div className="relative inline-flex select-none items-center rounded-full border border-transparent bg-info/10 p-0.5 font-sans text-xs font-medium leading-none text-info transition-colors duration-300 group-hover:bg-white">
             <span className="font-inherit mx-1.5 my-0.5 leading-none text-inherit">
               14
             </span>
           </div>
         </span>
       </li>
-      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
         <span className="me-2.5 grid shrink-0 place-items-center">
           <svg
             width="1.5em"
@@ -58,14 +58,14 @@ export function ListCustomStyles() {
         </span>
         Trash
         <span className="ms-auto grid shrink-0 place-items-center ps-2.5">
-          <div className="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-0.5 font-sans text-xs font-medium leading-none text-primary transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary">
+          <div className="relative inline-flex select-none items-center rounded-full border border-transparent bg-info/10 p-0.5 font-sans text-xs font-medium leading-none text-info transition-colors duration-300 group-hover:bg-white">
             <span className="font-inherit mx-1.5 my-0.5 leading-none text-inherit">
               40
             </span>
           </div>
         </span>
       </li>
-      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+      <li className="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
         <span className="me-2.5 grid shrink-0 place-items-center">
           <svg
             width="1.5em"

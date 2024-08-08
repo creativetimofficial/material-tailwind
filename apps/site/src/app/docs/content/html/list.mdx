@@ -307,16 +307,16 @@ In this example, the initial state of the first item ("Inbox") differs slightly 
 <ComponentPreview demo={<HTMLList.ListWithSelectedItem />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
-  <li class="flex select-none items-center rounded-md bg-surface px-2.5 py-1.5 align-middle font-sans text-white transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="flex select-none items-center rounded-md bg-surface px-2.5 py-1.5 align-middle font-sans text-black transition-all duration-300 ease-in focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:text-white dark:focus:text-white">
     Inbox
   </li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
     Trash
   </li>
-  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
     Settings
   </li>
-</ul> 
+</ul>
 ```
 </ComponentPreview>
 
@@ -383,7 +383,7 @@ Check out this example to see how you can add custom styles to your Material Tai
 <ComponentPreview demo={<HTMLList.ListCustomStyles />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
-  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
     <span class="me-2.5 grid shrink-0 place-items-center">
       <svg
         width="1.5em"
@@ -393,7 +393,7 @@ Check out this example to see how you can add custom styles to your Material Tai
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         color="currentColor"
-        class="w-5 h-5"
+        class="h-5 w-5"
       >
         <path
           d="M7 9L12 12.5L17 9"
@@ -409,14 +409,14 @@ Check out this example to see how you can add custom styles to your Material Tai
     </span>
     Inbox
     <span class="ms-auto grid shrink-0 place-items-center ps-2.5">
-      <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-0.5 font-sans text-xs font-medium leading-none text-primary transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary">
+      <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-info/10 p-0.5 font-sans text-xs font-medium leading-none text-info transition-colors duration-300 group-hover:bg-white">
         <span class="font-inherit mx-1.5 my-0.5 leading-none text-inherit">
           14
         </span>
       </div>
     </span>
   </li>
-  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
     <span class="me-2.5 grid shrink-0 place-items-center">
       <svg
         width="1.5em"
@@ -426,7 +426,7 @@ Check out this example to see how you can add custom styles to your Material Tai
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         color="currentColor"
-        class="w-5 h-5"
+        class="h-5 w-5"
       >
         <path
           d="M3.03919 4.2939C3.01449 4.10866 3.0791 3.92338 3.23133 3.81499C3.9272 3.31953 6.3142 2 12 2C17.6858 2 20.0728 3.31952 20.7687 3.81499C20.9209 3.92338 20.9855 4.10866 20.9608 4.2939L19.2616 17.0378C19.0968 18.2744 18.3644 19.3632 17.2813 19.9821L16.9614 20.1649C13.8871 21.9217 10.1129 21.9217 7.03861 20.1649L6.71873 19.9821C5.6356 19.3632 4.90325 18.2744 4.73838 17.0378L3.03919 4.2939Z"
@@ -440,14 +440,14 @@ Check out this example to see how you can add custom styles to your Material Tai
     </span>
     Trash
     <span class="ms-auto grid shrink-0 place-items-center ps-2.5">
-      <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-primary/10 p-0.5 font-sans text-xs font-medium leading-none text-primary transition-colors duration-300 group-hover:bg-blue-400 group-hover:text-secondary">
+      <div class="relative inline-flex select-none items-center rounded-full border border-transparent bg-info/10 p-0.5 font-sans text-xs font-medium leading-none text-info transition-colors duration-300 group-hover:bg-white">
         <span class="font-inherit mx-1.5 my-0.5 leading-none text-inherit">
           40
         </span>
       </div>
     </span>
   </li>
-  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
+  <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
     <span class="me-2.5 grid shrink-0 place-items-center">
       <svg
         width="1.5em"
@@ -457,7 +457,7 @@ Check out this example to see how you can add custom styles to your Material Tai
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         color="currentColor"
-        class="w-5 h-5"
+        class="h-5 w-5"
       >
         <path
           d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
