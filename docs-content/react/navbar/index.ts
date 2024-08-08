@@ -5,3 +5,4 @@ export * from "./navbar-simple";
 export * from "./navbar-with-mega-menu";
 export * from "./complex-navbar";
 export * from "./sticky-navbar";
+export * from "./navbar-with-solid-background";
