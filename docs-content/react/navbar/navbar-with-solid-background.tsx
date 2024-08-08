@@ -23,7 +23,7 @@ export function NavbarWithSolidBackground() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-medium"
       >
         <a href="#" className="flex items-center">
           Pages
@@ -33,7 +33,7 @@ export function NavbarWithSolidBackground() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-medium"
       >
         <a href="#" className="flex items-center">
           Account
@@ -43,7 +43,7 @@ export function NavbarWithSolidBackground() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-medium"
       >
         <a href="#" className="flex items-center">
           Blocks
@@ -53,7 +53,7 @@ export function NavbarWithSolidBackground() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-medium"
       >
         <a href="#" className="flex items-center">
           Docs
