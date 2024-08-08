@@ -1,4 +1,4 @@
-import type { ReactNode, ReactElement, JSXElementConstructor } from "react";
+import type { ReactNode } from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -13,8 +13,8 @@ export type children = ReactNode;
 export type className = string;
 
 // javascript prop-types
-export const propTypesActiveStep: any = PropTypes.number;
-export const propTypesIsLastStep: any = PropTypes.func;
-export const propTypesIsFirstStep: any = PropTypes.func;
-export const propTypesChildren: any = PropTypes.node;
-export const propTypesClassName: any = PropTypes.string;
+export const propTypesActiveStep = PropTypes.number;
+export const propTypesIsLastStep = PropTypes.func;
+export const propTypesIsFirstStep = PropTypes.func;
+export const propTypesChildren = PropTypes.node;
+export const propTypesClassName = PropTypes.string;

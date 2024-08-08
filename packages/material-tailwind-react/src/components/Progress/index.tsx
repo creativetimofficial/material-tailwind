@@ -30,7 +30,7 @@ import {
   propTypesClassName,
 } from "../../types/components/progress";
 
-export interface ProgressProps extends React.ComponentProps<"div"> {
+export interface ProgressProps extends Omit<React.ComponentProps<"div">, "ref"> {
   variant?: variant;
   color?: color;
   size?: size;

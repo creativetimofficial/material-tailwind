@@ -23,14 +23,14 @@ export type indicatorProps = {
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesId: any = PropTypes.string;
-export const propTypesValue: any = PropTypes.oneOfType([
-  PropTypes.string,
-  PropTypes.number,
-]).isRequired;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesOrientation: any = PropTypes.oneOf(["horizontal", "vertical"]);
-export const propTypesIndicator: any = PropTypes.instanceOf(Object);
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesId = PropTypes.string;
+export const propTypesValue = PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesOrientation = PropTypes.oneOf([
+  "horizontal",
+  "vertical",
+] satisfies orientation[]);
+export const propTypesIndicator = PropTypes.instanceOf(Object);
+export const propTypesChildren = PropTypes.node.isRequired;

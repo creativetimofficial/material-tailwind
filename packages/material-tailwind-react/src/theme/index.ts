@@ -50,7 +50,7 @@ import {
 import { step, stepper } from "./components/stepper";
 import { speedDial, speedDialContent, speedDialAction } from "./components/speedDial";
 
-const theme: any = {
+const theme = {
   accordion,
   alert,
   avatar,

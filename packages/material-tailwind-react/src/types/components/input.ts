@@ -1,8 +1,7 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
@@ -10,33 +9,29 @@ import { propTypesColors } from "../generic";
  */
 
 // typescript types
-export type variant = "standard" | "outlined" | "static";
-export type size = "md" | "lg";
-export type color = "black" | "white" | colors;
+export type variant = typeof propTypesVariant[number];
+export type size = typeof propTypesSize[number];
+export type color = typeof propTypesColor[number];
 export type label = string;
 export type error = boolean;
 export type success = boolean;
 export type icon = ReactNode;
 export type resize = boolean;
-export type labelProps = {
-  [key: string]: any;
-};
-export type containerProps = {
-  [key: string]: any;
-};
+export type labelProps = Omit<ComponentProps<"label">, "ref" | "children">;
+export type containerProps = Omit<ComponentProps<"div">, "ref" | "children">;
 export type shrink = boolean;
 export type className = string;
 
 // javascript prop-types
-export const propTypesVariant: any = ["standard", "outlined", "static"];
-export const propTypesSize: any = ["md", "lg"];
-export const propTypesColor: any = ["black", "white", ...propTypesColors];
-export const propTypesLabel: any = PropTypes.string;
-export const propTypesError: any = PropTypes.bool;
-export const propTypesSuccess: any = PropTypes.bool;
-export const propTypesIcon: any = PropTypes.node;
-export const propTypesResize: any = PropTypes.bool;
-export const propTypesLabelProps: any = PropTypes.instanceOf(Object);
-export const propTypesContainerProps: any = PropTypes.instanceOf(Object);
-export const propTypesShrink: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
+export const propTypesVariant = ["standard", "outlined", "static"] as const;
+export const propTypesSize = ["md", "lg"] as const;
+export const propTypesColor = ["black", "white", ...propTypesColors] as const;
+export const propTypesLabel = PropTypes.string;
+export const propTypesError = PropTypes.bool;
+export const propTypesSuccess = PropTypes.bool;
+export const propTypesIcon = PropTypes.node;
+export const propTypesResize = PropTypes.bool;
+export const propTypesLabelProps = PropTypes.instanceOf(Object);
+export const propTypesContainerProps = PropTypes.instanceOf(Object);
+export const propTypesShrink = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;

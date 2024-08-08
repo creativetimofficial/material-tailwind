@@ -25,6 +25,7 @@ import {
   useIsomorphicLayoutEffect,
   LazyMotion,
   domAnimation,
+  type Variants,
 } from "framer-motion";
 
 // utils
@@ -114,7 +115,7 @@ export interface SelectProps extends Omit<React.ComponentProps<"div">, "value" |
   containerProps?: containerProps;
 }
 
-const Select = React.forwardRef<HTMLDivElement, SelectProps>(
+const Select = React.forwardRef<React.ElementRef<"div">, SelectProps>(
   (
     {
       variant,
@@ -347,7 +348,7 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         transform: "scale(1)",
         transition: { duration: 0.2, times: [0.4, 0, 0.2, 1] },
       },
-    };
+    } satisfies Variants;
     const appliedAnimation = merge(animation, animate);
 
     // 6. create an instance of AnimatePresence because of the types issue with the children

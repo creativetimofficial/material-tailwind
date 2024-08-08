@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // framer-motion
-import { AnimatePresence, m, MotionProps, domAnimation, LazyMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  m,
+  domAnimation,
+  LazyMotion,
+  type Variants,
+} from "framer-motion";
 
 // utils
 import classnames from "classnames";
@@ -40,7 +46,7 @@ import {
 } from "../../types/components/alert";
 import IconButton from "../IconButton";
 
-export interface AlertProps extends Omit<MotionProps, "animate"> {
+export interface AlertProps extends Omit<React.ComponentProps<typeof m.div>, "animate" | "ref"> {
   variant?: variant;
   color?: color;
   icon?: icon;
@@ -52,7 +58,7 @@ export interface AlertProps extends Omit<MotionProps, "animate"> {
   children: children;
 }
 
-export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
+export const Alert = React.forwardRef<React.ElementRef<typeof m.div>, AlertProps>(
   ({ variant, color, icon, open, action, onClose, animate, className, children, ...rest }, ref) => {
     // 1. init
     const { alert } = useTheme();
@@ -87,7 +93,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       mount: {
         opacity: 1,
       },
-    };
+    } satisfies Variants;
     const appliedAnimation = merge(mainAnimation, animate);
 
     // // 5. icon template
