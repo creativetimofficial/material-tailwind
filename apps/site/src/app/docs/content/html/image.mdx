@@ -66,14 +66,14 @@ Use `rounded-full` class to round the corners of the image into a circle. This e
 
 ## Image with Shadow
 
-In this example, the `shadow-xl shadow-blue-gray-900/50` classes add a large shadow effect with a specific color (blue-gray-900) and opacity (50%). This creates a sense of depth and improves the image visually from its background, making it stand out more prominently.
+In this example, the `shadow-xl shadow-black/25` classes add a large shadow effect with a black color and opacity (25%). This creates a sense of depth and improves the image visually from its background, making it stand out more prominently.
 
 <ComponentPreview demo={<HTMLImage.ImageWithShadow />}>
 ```html
 <img
   src="https://dub.sh/Y0NxRWv"
   alt="nature-image"
-  class="object-cover object-center w-full rounded-lg shadow-lg h-96 shadow-primary-dark/25"
+  class="h-96 w-full rounded-lg object-cover object-center shadow-lg shadow-black/25"
 />
 ```
 </ComponentPreview>
@@ -103,7 +103,7 @@ Use this example if you want to include a caption below the image. Adding images
 
 ## Image with Blurred Caption
 
-In the example below, the styling includes a semi-transparent white background with a blur effect (`backdrop-blur-sm`), making the text readable regardless of the image behind it. The border, padding, and shadow improve visibility and aesthetic appeal.
+In the example below, the styling includes a semi-transparent white background with a blur effect (`backdrop-blur-md`), making the text readable regardless of the image behind it. The border, padding, and shadow improve visibility and aesthetic appeal.
 
 <ComponentPreview demo={<HTMLImage.ImageWithBlurredCaption />}>
 ```html
