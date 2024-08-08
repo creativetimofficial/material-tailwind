@@ -25,8 +25,8 @@ const materialTailwindConfig = {
 
 /**
  * Merge @material-tailwind and Tailwind CSS configurations
- * @param {object} tailwindConfig - Tailwind config object
- * @return {object} new config object
+ * @param {import("tailwindcss").Config} tailwindConfig - Tailwind config object
+ * @return {import("tailwindcss").Config} new config object
  */
 function withMT(tailwindConfig) {
   const themeFont = materialTailwindConfig.theme.fontFamily;
