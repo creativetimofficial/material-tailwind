@@ -170,7 +170,7 @@ export function TransactionsTable() {
                   <img
                     src="https://docs.material-tailwind.com/img/logos/logo-amazon.svg"
                     alt="Amazon"
-                    className="inline-block h-11 w-11 rounded-full rounded-md border border-surface-light bg-surface-light object-contain object-center p-1 dark:bg-surface-dark"
+                    className="inline-block h-11 w-11 rounded-full border border-surface-light bg-surface-light object-contain object-center p-1 dark:bg-surface-dark"
                   />
                   <small className="font-sans text-sm font-bold text-inherit antialiased">
                     Amazon

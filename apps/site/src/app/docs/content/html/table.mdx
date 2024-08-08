@@ -106,7 +106,7 @@ Use our simple 4 columns table styled with Tailwind CSS to organize your data in
 
 ## Table With Striped Row
 
-In this example, we added the class even:bg-blue-gray-50/50 applied to each row, which alternates the background color of even rows for better readability and visual appeal.
+In this example, we added the class `even:bg-surface-light` applied to each row, which alternates the background color of even rows for better readability and visual appeal.
 
 <ComponentPreview demo={<HTMLTable.TableWithStripedRow />}>
 ```html
@@ -466,7 +466,7 @@ This example showcases a more complex and feature-rich approach to presenting an
               <img
                 src="https://docs.material-tailwind.com/img/logos/logo-amazon.svg"
                 alt="Amazon"
-                class="inline-block object-contain object-center p-1 border rounded-md rounded-full h-11 w-11 border-surface-light bg-surface-light dark:bg-surface-dark"
+                class="inline-block object-contain object-center p-1 border rounded-full h-11 w-11 border-surface-light bg-surface-light dark:bg-surface-dark"
               />
               <small class="font-sans text-sm antialiased font-bold text-inherit">
                 Amazon
@@ -1872,9 +1872,8 @@ In this example. the table headers are interactive and sortable, as indicated by
 ---
 
 ## Table Best Practices for Developers
-<ul class="mt-4 ml-4 space-y-2 list-disc list-outside text-foreground">
-<li>Establish a visual hierarchy to guide users through the table.</li>
-<li>For tables with a large number of rows, consider using pagination or infinite scroll to improve load times and usability.</li>
-<li>Use tooltips, expandable rows, or detail panels to provide additional information without overwhelming the initial view.</li>
-<li>Provide immediate feedback for interactions such as sorting, filtering, or editing.</li>
-</ul>
+
+- Establish a visual hierarchy to guide users through the table.
+- For tables with a large number of rows, consider using pagination or infinite scroll to improve load times and usability.
+- Use tooltips, expandable rows, or detail panels to provide additional information without overwhelming the initial view.
+- Provide immediate feedback for interactions such as sorting, filtering, or editing.
