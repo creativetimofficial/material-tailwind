@@ -8,13 +8,15 @@ next: docs/react/data-display
 
 # Tailwind CSS Textarea - React
 
-Easily create `Textarea` with different styles using our component based on React and styled with Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+Easily create `Textarea` component with different styles using our component based on React and styled with Tailwind CSS. It is useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
 
-See below our examples that will help you create a simple `Textarea` for your project. Choose from different colors and styles, so you can adapt the component easily to your needs.
+See below our examples that will help you create a simple `Textarea` components for your project. Choose from different colors and styles, so you can adapt the component easily to your needs.
 
 ---
 
 ## Textarea Demo
+
+Here's how to implement a simple and responsive `Textarea` component. It is perfect for forms requiring comment box, such as user review form.
 
 <ComponentPreview demo={<Textarea.TextareaDemo />}>
 ```tsx
@@ -29,6 +31,11 @@ export function TextareaDemo() {
 ---
 
 ## Textarea Sizes
+
+We provide different textarea sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the textarea size.
+
+In the example below, we've showcased the different textarea sizes that you can use in your project.
+
 
 <ComponentPreview demo={<Textarea.TextareaSizes />}>
 ```tsx
@@ -49,6 +56,10 @@ export function TextareaSizes() {
 ---
 
 ## Textarea Color
+
+We provide different textarea colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the textarea color.
+
+In the example below, we've showcased the different textarea colors that you can use in your project.
 
 <ComponentPreview demo={<Textarea.TextareaColors />}>
 ```tsx
@@ -72,6 +83,8 @@ export function TextareaColors() {
 ---
 
 ## Textarea with Validation
+
+We provide helpful props like `isError` and `isSuccess` for showing error and success states of a textarea. In the example below, we've showcased the `Textarea` component with error and success states that you can use in your project.
 
 <ComponentPreview demo={<Textarea.TextareaWithValidation />}>
 ```tsx
@@ -102,6 +115,8 @@ export function TextareaWithValidation() {
 
 ## Textarea with Label
 
+The `Textarea` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Textarea` and `Typography` components together.
+
 <ComponentPreview demo={<Textarea.TextareaWithLabel />}>
 ```tsx
 import { Textarea, Typography } from "@material-tailwind/react";
@@ -129,6 +144,8 @@ export function TextareaWithLabel() {
 
 ## Textarea with Helper Text
 
+You can use `Textarea` and `Typography` components together to provide more details for the textarea. In the example below, we've added a hint text with an icon below the textarea to provide more context to the user.
+
 <ComponentPreview demo={<Textarea.TextareaWithHelperText />}>
 ```tsx
 import { Textarea, Typography } from "@material-tailwind/react";
@@ -154,6 +171,8 @@ export function TextareaWithHelperText() {
 
 ## Textarea Disabled
 
+You can disable the textarea by adding the `disabled` prop. This will prevent the user from interacting with the textarea.
+
 <ComponentPreview demo={<Textarea.TextareaDisabled />}>
 ```tsx
 import { Textarea } from "@material-tailwind/react";
@@ -167,6 +186,8 @@ export function TextareaDisabled() {
 ---
 
 ## Comment Box with Textarea
+
+In the example below, we've showcased the commnet box built with `Textarea`, `IconButton` and `Button` components that you can use in your project.
 
 <ComponentPreview demo={<Textarea.CommentBoxWithTextarea />}>
 ```tsx
@@ -198,6 +219,8 @@ export function CommentBoxWithTextarea() {
 ---
 
 ## Chatbox with Textarea
+
+In the example below, we've showcased the a chatbox like X/Twitter built with `Textarea` and `IconButton` components that you can use in your project.
 
 <ComponentPreview demo={<Textarea.ChatboxWithTextarea />}>
 ```tsx
