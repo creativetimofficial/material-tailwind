@@ -10,13 +10,15 @@ next: docs/react/Select-group
 
 Use our Tailwind CSS `Select` component to collect user provided information from a list of options.
 
-A `Select` component is a dropdown menu for displaying choices. Use the radio component when there are fewer total options (less than 5).
+A `Select` component is a dropdown menu for displaying choices. Use the `Radio` button component when there are fewer total options (less than 5) and use the `Select` component when there is more options and choices.
 
 See below our `Select` component example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt it easily to your needs.
 
 ---
 
 ## Select Demo
+
+Here's how to implement a simple and responsive `Select` component. It is perfect for forms requiring select field, like selecting nationality.
 
 <ComponentPreview demo={<Select.SelectDemo />}>
 ```tsx
@@ -41,6 +43,10 @@ export function SelectDemo() {
 ---
 
 ## Select Sizes
+
+We provide different select sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the select size.
+
+In the example below, we've showcased the different select sizes that you can use in your project.
 
 <ComponentPreview demo={<Select.SelectSizes />}>
 ```tsx
@@ -82,6 +88,10 @@ export function SelectSizes() {
 ---
 
 ## Select Colors
+
+We provide different select colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the select color.
+
+In the example below, we've showcased the different select colors that you can use in your project.
 
 <ComponentPreview demo={<Select.SelectColors />}>
 ```tsx
@@ -166,6 +176,8 @@ export function SelectColors() {
 
 ## Select with Validation
 
+We provide helpful props like `isError` and `isSuccess` for showing error and success states of a select. In the example below, we've showcased the `Select` component with error and success states that you can use in your project.
+
 <ComponentPreview demo={<Select.SelectWithValidation />}>
 ```tsx
 import { Select, Typography } from "@material-tailwind/react";
@@ -212,6 +224,10 @@ export function SelectWithValidation() {
 
 ## Select Controlled
 
+The `Select` component could be either a controlled or uncontrolled component by default the component is uncontrolled but you can make it controlled by using the `value` and `onValueChange` props.
+
+In the example below, we've showcased a controlled `Select` component that you can use in your project.
+
 <ComponentPreview demo={<Select.SelectControlled />}>
 ```tsx
 import React from "react";
@@ -247,6 +263,8 @@ export function SelectControlled() {
 
 ## Select Disabled
 
+You can disable the `Select` component by adding the `disabled` prop. This will prevent the user from interacting with the `Select` component.
+
 <ComponentPreview demo={<Select.SelectDisabled />}>
 ```tsx
 import { Select } from "@material-tailwind/react";
@@ -269,7 +287,11 @@ export function SelectDisabled() {
 
 ---
 
-## Select Countries
+## Countries Select
+
+In the example below, we've showcased a `Select` component where user can select their nationality from the provided countries inside the `Select` component.
+
+In the example below we've used the [use-react-countries](https://www.npmjs.com/package/use-react-countries) library, for getting the countries data.
 
 <ComponentPreview demo={<Select.SelectCountries />}>
 ```tsx
