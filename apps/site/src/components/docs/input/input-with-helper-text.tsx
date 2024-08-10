@@ -3,8 +3,10 @@ import { InfoCircle } from "iconoir-react";
 
 export function InputWithHelperText() {
   return (
-    <Input className="w-72 space-y-2">
-      <Input.Field type="password" placeholder="Password" />
+    <div className="w-72 space-y-2">
+      <Input>
+        <Input.Field type="password" placeholder="Password" />
+      </Input>
       <div className="flex gap-1.5 text-foreground">
         <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
         <Typography type="small">
@@ -12,6 +14,6 @@ export function InputWithHelperText() {
           number.
         </Typography>
       </div>
-    </Input>
+    </div>
   );
 }

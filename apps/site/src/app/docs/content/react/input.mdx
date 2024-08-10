@@ -10,13 +10,15 @@ next: docs/react/radio
 
 Easily create `Input` with different statuses and sizes using our components based on Tailwind CSS and React.
 
-`Input` fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
+Input fields are an essential user interface design element, providing users with the means to enter non-standardized responses.
 
 See below our `Input` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Input Demo
+
+Here's how to implement a simple and responsive `Input` component. It is perfect for forms requiring text input, such as user registration, login forms, or any form where users need to input a username.
 
 <ComponentPreview demo={<Input.InputDemo />}>
 ```tsx
@@ -35,6 +37,10 @@ export function InputDemo() {
 ---
 
 ## Input Sizes
+
+We provide different input sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the input size.
+
+In the example below, we've showcased the different input sizes that you can use in your project.
 
 <ComponentPreview demo={<Input.InputSizes />}>
 ```tsx
@@ -61,6 +67,10 @@ export function InputSizes() {
 ---
 
 ## Input Color
+
+We provide different input colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the input color.
+
+In the example below, we've showcased the different input colors that you can use in your project.
 
 <ComponentPreview demo={<Input.InputColors />}>
 ```tsx
@@ -97,6 +107,8 @@ export function InputColors() {
 
 ## Input with Validation
 
+We provide helpful props like `isError` and `isSuccess` for showing error and success states of an input. In the example below, we've showcased the error and success states that you can use in your project.
+
 <ComponentPreview demo={<Input.InputWithValidation />}>
 ```tsx
 import { Input, Typography } from "@material-tailwind/react";
@@ -125,6 +137,10 @@ export function InputWithValidation() {
 ---
 
 ## Input with Icon
+
+You can add an icon to the start or end of the input to make it more visually appealing and informative. Use the example below to create inputs with icon.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Input.InputWithIcon />}>
 ```tsx
@@ -156,13 +172,15 @@ export function InputWithIcon() {
 
 ## Input with Label
 
+The `Input` components can be used with a label to provide more context to the user. In the example below, we've added a label to the input by using the `Input` and `Typography` components together.
+
 <ComponentPreview demo={<Input.InputWithLabel />}>
 ```tsx
 import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithLabel() {
   return (
-    <Input className="w-72 space-y-1">
+    <div className="w-72 space-y-1">
       <Typography
         as="label"
         htmlFor="email"
@@ -172,8 +190,14 @@ export function InputWithLabel() {
       >
         Email
       </Typography>
-      <Input.Field id="email" type="email" placeholder="someone@example.com" />
-    </Input>
+      <Input>
+        <Input.Field
+          id="email"
+          type="email"
+          placeholder="someone@example.com"
+        />
+      </Input>
+    </div>
   );
 }
 ```
@@ -183,6 +207,8 @@ export function InputWithLabel() {
 
 ## Input with Helper Text
 
+You can use `Input` and `Typography` components together to provide more details for the input. In the example below, we've added a hint text with an icon below the input field to provide more context to the user.
+
 <ComponentPreview demo={<Input.InputWithHelperText />}>
 ```tsx
 import { Input, Typography } from "@material-tailwind/react";
@@ -190,8 +216,10 @@ import { InfoCircle } from "iconoir-react";
 
 export function InputWithHelperText() {
   return (
-    <Input className="w-72 space-y-2">
-      <Input.Field type="password" placeholder="Password" />
+    <div className="w-72 space-y-2">
+      <Input>
+        <Input.Field type="password" placeholder="Password" />
+      </Input>
       <div className="flex gap-1.5 text-foreground">
         <InfoCircle className="h-3.5 w-3.5 shrink-0 translate-y-[3px] stroke-2" />
         <Typography type="small">
@@ -199,7 +227,7 @@ export function InputWithHelperText() {
           number.
         </Typography>
       </div>
-    </Input>
+    </div>
   );
 }
 ```
@@ -208,6 +236,8 @@ export function InputWithHelperText() {
 ---
 
 ## Input with Button
+
+You can use `Input` and `Button` components together for submitting the input data. In the example below, we've created a subscription form using `Input` and `Button` components.
 
 <ComponentPreview demo={<Input.InputWithButton />}>
 ```tsx
@@ -234,9 +264,13 @@ export function InputWithButton() {
 
 ## Input with Dropdown
 
+You can use `Input` and `Menu` components together for creating more complex input fields. In the example below, we've created an input with a dropdown for selecting the country code and typing mobile number. 
+
+In the example below we've used the [use-react-countries](https://www.npmjs.com/package/use-react-countries) library, for getting the countries `name`, `flag` and `country-code`.
+
 <ComponentPreview demo={<Input.InputWithDropdown />}>
 ```tsx
-import React from "react";
+import * as React from "react";
 import { Input, Menu, Button } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
@@ -293,6 +327,8 @@ export function InputWithDropdown() {
 
 ## Input Disabled
 
+You can disable the input by adding the `disabled` prop. This will prevent the user from interacting with the input field.
+
 <ComponentPreview demo={<Input.InputDisabled />}>
 ```tsx
 import { Input } from "@material-tailwind/react";
@@ -310,6 +346,8 @@ export function InputDisabled() {
 ---
 
 ## Input Custom Styles
+
+You can use `className` prop to customize the `Input` component style. In the example below, we make a simple input field with an icon and a border to it's bottom.
 
 <ComponentPreview demo={<Input.InputCustomStyles />}>
 ```tsx

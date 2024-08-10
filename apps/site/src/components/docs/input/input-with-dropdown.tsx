@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Input, Menu, Button } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
