@@ -16,6 +16,8 @@ See below our beautiful `Rating` examples that you can use in your Tailwind CSS 
 
 ## Rating Demo
 
+Here's how to implement a simple `Rating` component. It can be used for providing rating to the product or app in your website.
+
 <ComponentPreview demo={<Rating.RatingDemo />}>
 ```tsx
 import { Rating } from "@material-tailwind/react";
@@ -29,6 +31,10 @@ export function RatingDemo() {
 ---
 
 ## Rating Colors
+
+We provide different colors for `Rating` component like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `Rating` component color.
+
+In the example below, we've showcased the different colors for `Rating` color that you can use in your project.
 
 <ComponentPreview demo={<Rating.RatingColors />}>
 ```tsx
@@ -53,6 +59,8 @@ export function RatingColors() {
 
 ## Readonly Rating
 
+You can use the `readonly` prop to make the `Rating` component readonly, it's useful for just showing rating and prevent the user from interacting with the `Rating` component.
+
 <ComponentPreview demo={<Rating.ReadonlyRating />}>
 ```tsx
 import { Rating } from "@material-tailwind/react";
@@ -66,6 +74,8 @@ export function ReadonlyRating() {
 ---
 
 ## Custom Rating Icon
+
+You can use the `ratedIcon` and `unratedIcon` props for customizing the icons for rated and unrated states of `Rating` component. In the example below, we've showcased custom icons used for `Rating` component that you can use in your project.
 
 <ComponentPreview demo={<Rating.CustomRatingIcon />}>
 ```tsx
@@ -81,6 +91,8 @@ export function CustomRatingIcon() {
 ---
 
 ## Rating with Text
+
+The `Rating` component can be used with a label to provide more context to the user. In the example below, we've added a label by using the `Rating` and `Typography` components together.
 
 <ComponentPreview demo={<Rating.RatingWithText />}>
 ```tsx
@@ -108,6 +120,8 @@ export function RatingWithText() {
 ---
 
 ## Rating with Comment
+
+Use the example below for providing testimonials and feedbacks in your website, the example used `Typography`, `Avatar` and `Rating` components to make a user feedback component.
 
 <ComponentPreview demo={<Rating.RatingWithComment />}>
 ```tsx
