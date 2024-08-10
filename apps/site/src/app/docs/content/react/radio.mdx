@@ -10,11 +10,13 @@ next: docs/react/rating
 
 Our Tailwind CSS `Radio` button component will let your users choose only one of a predefined set of mutually exclusive options. `Radio` buttons should be used instead of checkboxes if only one item can be selected from a list.
 
-Use the following example to create simple `Radio` buttons for your projects.
+See below our `Radio` button component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Radio Button Demo
+
+Here's how to implement a `Radio` button component. It can be used for forms or other components.
 
 <ComponentPreview demo={<Radio.RadioDemo />}>
 ```tsx
@@ -48,6 +50,10 @@ export function RadioDemo() {
 ---
 
 ## Radio Button Colors
+
+We provide different radio button colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the radio button color.
+
+In the example below, we've showcased the different radio button colors that you can use in your project.
 
 <ComponentPreview demo={<Radio.RadioColors />}>
 ```tsx
@@ -112,7 +118,12 @@ export function RadioColors() {
 
 ---
 
-## Radio Button With Custom Icon
+## Radio Button with Custom Icon
+
+You can customize and change the icon used for the radio button by using new icons inside the `Radio.Indicator` component. In the example below, we use the `Star` and `StarSolid` icons for `checked` and `unchecked` states.
+
+To make it work, you need to use `group-data-[checked=true]` for the icons to show/hide based on the checkbox state.
+
 
 <ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
 ```tsx
@@ -168,6 +179,8 @@ export function RadioWithCustomIcon() {
 
 ## Disabled Radio Button
 
+You can disable the radio button by adding the `disabled` prop. This will prevent the user from interacting with the radio button.
+
 <ComponentPreview demo={<Radio.DisabledRadio />}>
 ```tsx
 import { Radio, Typography } from "@material-tailwind/react";
@@ -199,7 +212,9 @@ export function DisabledRadio() {
 
 ---
 
-## Radio Button With Link
+## Radio Button with Link
+
+Use the example below to create a `Radio` button with a link to the terms and conditions inside it's label.
 
 <ComponentPreview demo={<Radio.RadioWithLink />}>
 ```tsx
@@ -248,6 +263,8 @@ export function RadioWithLink() {
 
 ## Radio Button With Description
 
+Use the example below to create a `Radio` button component with a title and description as it's label to provide more information about the radio button action.
+
 <ComponentPreview demo={<Radio.RadioWithDescription />}>
 ```tsx
 import { Radio, Typography } from "@material-tailwind/react";
@@ -289,7 +306,9 @@ export function RadioWithDescription() {
 
 ---
 
-## Custom Radio Button
+## Radio Button Custom Styles
+
+You can use `className` prop to customize the `Radio` button component style. In the example below, we make the radio button square with a check icon.
 
 <ComponentPreview demo={<Radio.CustomRadio />}>
 ```tsx
