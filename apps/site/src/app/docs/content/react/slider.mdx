@@ -16,6 +16,8 @@ See below our beautiful `Slider` example that you can use in your Tailwind CSS a
 
 ## Slider Demo
 
+Here's how to implement a simple and responsive `Slider` component. It is perfect for adjusting volume, brightness, or filters.
+
 <ComponentPreview demo={<Slider.SliderDemo />}>
 ```tsx
 import { Slider } from "@material-tailwind/react";
@@ -36,6 +38,10 @@ export function SliderDemo() {
 ---
 
 ## Slider Sizes
+
+We provide different slider sizes like `sm`, `md`, and `lg` so you can adapt it easily to your needs. You can simply use the `size` prop to change the slider size.
+
+In the example below, we've showcased the different slider sizes that you can use in your project.
 
 <ComponentPreview demo={<Slider.SliderSizes />}>
 ```tsx
@@ -65,6 +71,10 @@ export function SliderSizes() {
 ---
 
 ## Slider Colors
+
+We provide different slider colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the slider color.
+
+In the example below, we've showcased the different slider colors that you can use in your project.
 
 <ComponentPreview demo={<Slider.SliderColors />}>
 ```tsx
@@ -107,6 +117,9 @@ export function SliderColors() {
 
 ## Slider with Ticks
 
+You can use tick or labels for slider using the `SliderTick` component. In the example below, we've showcased a slider with ticks that you can use in your project.
+
+
 <ComponentPreview demo={<Slider.SliderWithTicks />}>
 ```tsx
 import { Slider } from "@material-tailwind/react";
@@ -129,6 +142,10 @@ export function SliderWithTicks() {
 
 ## Range Slider with Two Thumbs
 
+You can make the `Slider` component to be a range slider by providing two values for the `value` prop, and for that you need to make the `Slider` component a controlled component and provide the `value` and `onValueChange` props for the `Slider` component.
+
+In the example below, we've showcased a range slider with two thumbs and ticks that you can use in your project.
+
 <ComponentPreview demo={<Slider.RangeSliderWithTwoThumbs />}>
 ```tsx
 import * as React from "react";
@@ -139,7 +156,7 @@ export function RangeSliderWithTwoThumbs() {
 
   return (
     <div className="w-80">
-      <Slider value={value} onValueChage={setValue}>
+      <Slider value={value} onValueChange={setValue}>
         <Slider.Range />
         <Slider.Thumb />
         <Slider.Tick />
