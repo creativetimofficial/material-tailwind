@@ -8,7 +8,7 @@ export const checkboxTheme = {
     color: "primary",
   },
   baseStyle:
-    "inline-block relative h-5 w-5 rounded bg-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "group inline-block relative h-5 w-5 rounded bg-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none",
   color: {
     primary: "data-[checked=true]:bg-primary text-primary-foreground",
     secondary: "data-[checked=true]:bg-secondary text-secondary-foreground",

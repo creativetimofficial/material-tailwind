@@ -109,7 +109,7 @@ export function CheckboxWithLabel() {
 
 You can customize and change the icon used for the checkbox by using new icons inside the `Checkbox.Indicator` component. In the example below, we use the `Star` and `StarSolid` icons for `checked` and `unchecked` states.
 
-To make it work, you need to add `group` class to the `Checkbox` component and use `group-data-[checked=true]` for the icons to show/hide based on the checkbox state.
+To make it work, you need to use `group-data-[checked=true]` for the icons to show/hide based on the checkbox state.
 
 <ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
 ```tsx
@@ -119,7 +119,7 @@ import { Star, StarSolid } from "iconoir-react";
 export function CheckboxWithCustomIcon() {
   return (
     <Checkbox className="bg-transparent data-[checked=true]:bg-transparent">
-      <Checkbox.Indicator className="group relative left-0 top-0 opacity-100">
+      <Checkbox.Indicator className="relative left-0 top-0 opacity-100">
         <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
         <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
       </Checkbox.Indicator>
