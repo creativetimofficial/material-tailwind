@@ -201,7 +201,6 @@ export function NavigationbarWithDropdownMultilevelMenu() {
         </div>
         <IconButton
           variant="text"
-          color="blue-gray"
           className="lg:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
