@@ -1,24 +1,22 @@
 ---
 title: Tailwind CSS Stepper for React - Material Tailwind
 description: Customise your web projects with our easy-to-use Stepper component for Tailwind CSS and React using Material Design guidelines.
-github: Stepper
+github: stepper
 prev: docs/react/inputs
 next: docs/react/Stepper-group
 ---
 
 # Tailwind CSS Stepper - React
 
-Use our Tailwind CSS `Stepper` component in your web projects. The `Stepper` can be used for multi-step processes or forms.
+Use our React and Tailwind CSS stepper in your web projects. The stepper can be used for multi-step processes or forms. You can easily create stepper using our `Timeline` component with the `mode` prop set to `stepper`.
 
-See below our beautiful `Stepper` example that you can use in your Tailwind CSS and React project. The example also comes in different styles so you can adapt it easily to your needs.
-
-
-Examples on this page are using `iconoir-react` make sure you have installed it.
-
+See below our beautiful stepper component examples that you can use in your Tailwind CSS and React project. The example also comes in different styles so you can adapt it easily to your needs.
 
 ---
 
 ## Stepper Demo
+
+Here's how to implement a simple and responsive stepper component. It can be used for multi-step forms.
 
 <ComponentPreview demo={<Stepper.StepperDemo />}>
 ```tsx
@@ -74,7 +72,11 @@ export function StepperDemo() {
 
 ---
 
-## Stepper With Icon
+## Stepper with Icon
+
+You can use icons in your stepper by adding icon to the `Timeline.Icon` component to make it more visually appealing. Use the example below to create a stepper with icons.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Stepper.StepperWithIcon />}>
 ```tsx
@@ -137,7 +139,9 @@ export function StepperWithIcon() {
 
 ---
 
-## Stepper With Dots
+## Stepper with Dots
+
+You can use dots in your stepper by not adding any content to the `Timeline.Icon` component, this will create a stepper with dots instead of numbers or icons.
 
 <ComponentPreview demo={<Stepper.StepperWithDots />}>
 ```tsx
@@ -194,6 +198,10 @@ export function StepperWithDots() {
 ---
 
 ## Stepper With Content
+
+You can add extra content for each step of the stepper. Use the example below to create a stepper with specific content for its steps.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Stepper.StepperWithContent />}>
 ```tsx
@@ -269,6 +277,8 @@ export function StepperWithContent() {
 ---
 
 ## Stepper Custom Styles
+
+You can use the `className` prop to customize the `Timeline` component style and make your own custom stepper. In the example below, we've showcased a custom stepper with a purple background color and rounded corners.
 
 <ComponentPreview demo={<Stepper.StepperCustomStyles />}>
 ```tsx
