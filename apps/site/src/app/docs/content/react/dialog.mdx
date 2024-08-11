@@ -1,22 +1,26 @@
 ---
 title: Tailwind CSS Dialog for React - Material Tailwind
 description: Customise your web projects with our easy-to-use Dialog component for Tailwind CSS and React using Material Design guidelines.
-github: Dialog
+github: dialog
 prev: docs/react/inputs
 next: docs/react/Dialog-group
 ---
 
 # Tailwind CSS Dialog - React
 
-Use our Tailwind CSS `Dialog` component to inform users about a task or important information that require decisions, or involves multiple tasks.
+Use our React and Tailwind CSS `Dialog` component to inform users about a task or important information that require decisions, or involves multiple tasks.
 
-A `Dialog` is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
+A dialog is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
 
-See below our `Dialog` example that you can use for your Tailwind CSS and React project.
+See below our `Dialog` component examples that you can use for your Tailwind CSS and React project.
 
 ---
 
 ## Dialog Demo
+
+Here's how to implement a simple and responsive `Dialog` component. It can be used to inform users about a task or important information that require decisions, or involves multiple tasks in your website.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Dialog.DialogDemo />}>
 ```tsx
@@ -72,6 +76,10 @@ export function DialogDemo() {
 ---
 
 ## Dialog Sizes
+
+We provide different dialog sizes like `xs`, `sm`, `md`, `lg`, `xl` and `screen` so you can adapt it easily to your needs. You can simply use the `size` prop to change the dialog size.
+
+In the example below, we've showcased the different dialog sizes that you can use in your project. In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Dialog.DialogSizes />}>
 ```tsx
@@ -338,6 +346,10 @@ export function DialogSizes() {
 
 ## Dialog with Form
 
+Use this example to create a dialog with a authentication form. You can use this dialog to create a login or sign up form in your website.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Dialog.DialogWithForm />}>
 ```tsx
 import {
@@ -446,6 +458,10 @@ export function DialogWithForm() {
 
 ## Dialog with Image
 
+Use this example to create a dialog with image and some action inspired by Unsplash. You can use this dialog to show a preview of an image and some actions like download or share.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Dialog.DialogWithImage />}>
 ```tsx
 import {
@@ -530,6 +546,10 @@ export function DialogWithImage() {
 
 ## Web 3 Dialog
 
+Use this example to create a dialog with Web 3 wallet connection. You can use this dialog to provide a way for users to connect their Web 3 wallet to your website.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Dialog.DialogWeb3 />}>
 ```tsx
 import {
@@ -539,7 +559,6 @@ import {
   IconButton,
   Avatar,
 } from "@material-tailwind/react";
-
 import { Xmark } from "iconoir-react";
 
 export function DialogWeb3() {
@@ -636,6 +655,10 @@ export function DialogWeb3() {
 ---
 
 ## Long Dialog
+
+Use this example to create a scrollable dialog with long content. You can use this dialog to show a long text or content that requires scrolling.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Dialog.DialogLong />}>
 ```tsx
@@ -783,6 +806,10 @@ export function DialogLong() {
 
 ## Message Dialog
 
+Use this example to create a dialog with a message form. You can use this dialog to create a message form for writing a messsage or comment in your website.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Dialog.DialogMessage />}>
 ```tsx
 import {
@@ -794,7 +821,6 @@ import {
   IconButton,
   Textarea,
 } from "@material-tailwind/react";
-
 import { Xmark } from "iconoir-react";
 
 export function DialogMessage() {
@@ -863,6 +889,10 @@ export function DialogMessage() {
 ---
 
 ## Dialog Notification
+
+Use this example to create a dialog with a notification. You can use this dialog to show a notification message to the user that requires their attention.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Dialog.DialogNotification />}>
 ```tsx
