@@ -8,15 +8,17 @@ next: docs/react/Breadcrumb-group
 
 # Tailwind CSS Breadcrumb - React
 
-Use our Tailwind CSS `Breadcrumbs` component to simply create beautiful `Breadcrumbs` for your pages with Material Tailwind.
+Use our React and Tailwind CSS `Breadcrumb` component to simply create beautiful `Breadcrumb` for your pages with Material Tailwind.
 
-`Breadcrumbs` are website links that allow users to track where they are on a website and how far they are from the homepage. They are highly important elements for your search engine optimisation (SEO) and user experience.
+Breadcrumb is website links that allow users to track where they are on a website and how far they are from the homepage. They are highly important elements for your search engine optimisation (SEO) and user experience.
 
-See below our versatile `Breadcrumbs` component example that you can use in your Tailwind CSS and React project.
+See below our versatile `Breadcrumb` component examples that you can use in your Tailwind CSS and React project.
 
 ---
 
 ## Breadcrumb Demo
+
+Here's how to implement a simple and responsive `Breadcrumb` component. It can be used to show the user where they are on a website and how far they are from the homepage.
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbDemo />}>
 ```tsx
@@ -38,7 +40,11 @@ export function BreadcrumbDemo() {
 
 ---
 
-## Breadcrumb With Icon
+## Breadcrumb with Icon
+
+You can add icons to your `Breadcrumb` links to make them more visually appealing and easier to understand.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbWithIcon />}>
 ```tsx
@@ -65,6 +71,8 @@ export function BreadcrumbWithIcon() {
 
 ## Breadcrumb Custom Separator
 
+You can customize the breadcrumb separator by adding any text or icon to the `Breadcrumb.Separator` component.
+
 <ComponentPreview demo={<Breadcrumb.BreadcrumbCustomSeparator />}>
 ```tsx
 import { Breadcrumb } from "@material-tailwind/react";
@@ -88,6 +96,10 @@ export function BreadcrumbCustomSeparator() {
 ---
 
 ## Breadcrumb Custom Styles
+
+You can use the `className` prop to customize the `Breadcrumb` component style and make your own custom breadcrumb links.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbCustomStyles />}>
 ```tsx
