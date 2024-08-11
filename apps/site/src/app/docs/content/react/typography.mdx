@@ -8,13 +8,15 @@ next: docs/react/video
 
 # Tailwind CSS Typography - React
 
-Use our Tailwind CSS `Typography` to present your website/web app as clearly and efficiently as possible.
+Use our React and Tailwind CSS `Typography` to present your website/web app as clearly and efficiently as possible.
 
-Below we are presenting a simple `Typography` component example. It comes in different styles and colors, so you can adapt it easily to your needs.
+Below we are presenting `Typography` component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Headings
+
+Headings are used to define the structure of the content. They are used to create a hierarchy of information on the page. The `Typography` component provides six different heading sizes, from `h1` to `h6` that you can use in your project.
 
 <ComponentPreview demo={<Typography.Headings />}>
 ```tsx
@@ -40,6 +42,8 @@ export function Headings() {
 
 ## Paragraph
 
+The paragraph is used to display text content. It is the most common component used to display text content on a web page. The `Typography` component by default is a paragraph, so you can use it to display text content.
+
 <ComponentPreview demo={<Typography.Paragraph />}>
 ```tsx
 import { Typography } from "@material-tailwind/react";
@@ -61,13 +65,15 @@ export function Paragraph() {
 
 ## Lead Paragraph
 
+The lead paragraph is used to highlight the most important information on the page. It is used to grab the user's attention and make them read the rest of the content. The `Typography` component provides a `lead` type that you can use to display the lead paragraph.
+
 <ComponentPreview demo={<Typography.LeadParagraph />}>
 ```tsx
 import { Typography } from "@material-tailwind/react";
 
 export function LeadParagraph() {
   return (
-    <Typography>
+    <Typography type="lead">
       Material Tailwind is an easy to use components library for Tailwind CSS
       and Material Design. It provides a simple way to customize your
       components, you can change the colors, fonts, breakpoints and everything
@@ -81,6 +87,8 @@ export function LeadParagraph() {
 ---
 
 ## Small Text
+
+The small text is used to display small text content on the page. It is used to display additional information or to provide context to the user. The `Typography` component provides a `small` type that you can use to display small text content.
 
 <ComponentPreview demo={<Typography.SmallText />}>
 ```tsx
@@ -102,6 +110,10 @@ export function SmallText() {
 ---
 
 ## Typography Colors
+
+We provide different colors for `Typography` component like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the `Typography` component color.
+
+In the example below, we've showcased the different colors that you can use for `Typography` component in your project.
 
 <ComponentPreview demo={<Typography.TypographyColors />}>
 ```tsx
