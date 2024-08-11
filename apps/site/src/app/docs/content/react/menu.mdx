@@ -1,23 +1,25 @@
 ---
 title: Tailwind CSS Menu for React - Material Tailwind
 description: Customise your web projects with our complex Menu component for Tailwind CSS and React using Material Design guidelines.
-github: Menu
+github: menu
 prev: docs/react/icon-button
 next: docs/react/radio
 ---
 
 # Tailwind CSS Menu - React
 
-Use our responsive Tailwind CSS vertical `Menu`, that can take the user anywhere on your web app!
+Use our responsive React and Tailwind CSS vertical menu, that can take the user anywhere on your web app!
 
-A `Menu` displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The `Menu` also ensures a consistent and predictable user experience by adhering to an established set of principles
+A menu displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The menu also ensures a consistent and predictable user experience by adhering to an established set of principles
 
-See below our `Menu` example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+See below our `Menu` component examples that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
 
 
 ---
 
 ## Menu Demo
+
+Here's how to implement a simple and responsive `Menu` component. It can be used for selecting an option from a list of choices, navigating between pages, or any other action that requires user interaction in your website.
 
 <ComponentPreview demo={<Menu.MenuDemo />}>
 ```tsx
@@ -41,6 +43,8 @@ export function MenuDemo() {
 ---
 
 ## Nested Menu
+
+Use this example to create a nested menu with a trigger that opens a submenu with more options. This is useful when you have a list of options that can be grouped together.
 
 <ComponentPreview demo={<Menu.NestedMenu />}>
 ```tsx
@@ -77,6 +81,8 @@ export function NestedMenu() {
 ---
 
 ## Menu Placement
+
+Use this example to create a menu with different placements. You can choose between top, right, bottom, and left placements, and also between start and end positions.
 
 <ComponentPreview demo={<Menu.MenuPlacement />}>
 ```tsx
@@ -199,6 +205,8 @@ export function MenuPlacement() {
 
 ## Nav Menu
 
+Use this example to create a navigation menu with a trigger that opens a menu of options. This is useful for creating a navigation menu in navbar in your website.
+
 <ComponentPreview demo={<Menu.NavMenu />}>
 ```tsx
 import * as React from "react";
@@ -276,6 +284,8 @@ export function NavMenu() {
 
 ## Menu with Divider
 
+Use this example to create a menu with a divider that separates the menu items. This is useful when you want to group menu items into different sections.
+
 <ComponentPreview demo={<Menu.MenuWithDivider />}>
 ```tsx
 import { Menu, Button } from "@material-tailwind/react";
@@ -302,6 +312,8 @@ export function MenuWithDivider() {
 ---
 
 ## Menu with Checkbox
+
+Use this example to create a menu with checkboxes that allow users to select multiple options. This is useful when you want to allow users to select multiple options from a list of choices.
 
 <ComponentPreview demo={<Menu.MenuWithCheckbox />}>
 ```tsx
@@ -356,6 +368,8 @@ export function MenuWithCheckbox() {
 
 ## Menu with Search
 
+Use this example to create a menu with a search input that allows users to search for specific options. This is useful when you have a long list of options and you want to help users find what they are looking for.
+
 <ComponentPreview demo={<Menu.MenuWithSearch />}>
 ```tsx
 import { Menu, Button, Input } from "@material-tailwind/react";
@@ -381,6 +395,8 @@ export function MenuWithSearch() {
 ---
 
 ## Menu with Scrolling Content
+
+Use this example to create a menu with scrolling content that allows users to scroll through a long list of options. This is useful when you have a long list of options and you want to display them in a limited space.
 
 <ComponentPreview demo={<Menu.MenuWithScrollingContent />}>
 ```tsx
@@ -421,6 +437,8 @@ export function MenuWithScrollingContent() {
 ---
 
 ## Notification Menu
+
+Use this example to create a notification menu with a trigger that opens a menu of notifications. This is useful when you want to display notifications to users in dashboard layout or admin panels.
 
 <ComponentPreview demo={<Menu.NotificationMenu />}>
 ```tsx
@@ -497,6 +515,8 @@ export function NotificationMenu() {
 ---
 
 ## Profile Menu
+
+Use this example to create a profile menu with a trigger that opens a menu of profile options. This is useful when you want to display profile options to users when they're logged in.
 
 <ComponentPreview demo={<Menu.ProfileMenu />}>
 ```tsx
