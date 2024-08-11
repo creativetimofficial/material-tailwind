@@ -1,22 +1,24 @@
 ---
 title: Tailwind CSS Alert for React - Material Tailwind
 description: Customise your web projects with our easy-to-use Alert component for Tailwind CSS and React using Material Design guidelines.
-github: Alert
+github: alert
 prev: docs/react/inputs
-next: docs/react/Alert-group
+next: docs/react/alert-group
 ---
 
 # Tailwind CSS Alert - React
 
-Get started on your web projects with our Tailwind CSS `Alert` which provides contextual feedback messages for typical user actions.
+Get started on your web projects with our React and Tailwind CSS `Alert` component which provides contextual feedback messages for typical user actions.
 
-An `Alert` displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
+An alert displays a short and important message attracting the user's attention without interrupting the user's task. Use this element when you need to show highly-important messages to users or when you need a persistent static container that is closable by user actions.
 
-See below our simple `Alert` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
+See below our `Alert` component examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Alert Demo
+
+Here's how to implement a simple and responsive `Alert` component. It can be used to display some feedback message in your website.
 
 <ComponentPreview demo={<Alert.AlertDemo />}>
 ```tsx
@@ -35,6 +37,10 @@ export function AlertDemo() {
 ---
 
 ## Alert Variants
+
+We provides different alert variants like `ghost`, `outline`, `solid`, and `gradient` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the alert variant.
+
+In the example below, we've showcased the different alert variants that you can use in your project.
 
 <ComponentPreview demo={<Alert.AlertVariants />}>
 ```tsx
@@ -64,6 +70,10 @@ export function AlertVariants() {
 ---
 
 ## Alert Colors
+
+We provide different alert colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the alert color.
+
+In the example below, we've showcased the different alert colors that you can use in your project.
 
 <ComponentPreview demo={<Alert.AlertColors />}>
 ```tsx
@@ -112,6 +122,10 @@ export function AlertColors() {
 
 ## Alert Icon
 
+You can use the `Alert.Icon` component to add an icon to your alert for better visual representation. Use the example below to create alert with icon.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Alert.AlertIcon />}>
 ```tsx
 import { Alert } from "@material-tailwind/react";
@@ -133,6 +147,10 @@ export function AlertIcon() {
 ---
 
 ## Alert with List
+
+You can use `Alert` and `Typography` components togheter to create an alert with a list of items. Use the example below to create alert with list inside.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Alert.AlertWithList />}>
 ```tsx
@@ -231,6 +249,10 @@ export function AlertWithList() {
 
 ## Alert Dismissible
 
+You can use `Alert.DismissTrigger` component to add a close button to your alert for better user experience. Use the example below to create a dismissible alert.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Alert.AlertDismissible />}>
 ```tsx
 import { Alert } from "@material-tailwind/react";
@@ -250,10 +272,13 @@ export function AlertDismissible() {
 ```
 </ComponentPreview>
 
-
 ---
 
 ## Alert Custom Close Icon
+
+You can use `Alert.DismissTrigger` component to add a custom close button to your alert. Use the example below to create a dismissible alert with custom close trigger.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Alert.AlertCustomCloseIcon />}>
 ```tsx
@@ -281,6 +306,10 @@ export function AlertCustomCloseIcon() {
 ---
 
 ## Alert with Content
+
+Use the example below to create an alert with content inside, this is useful when you need to show a message with a title and a description.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Alert.AlertWithContent />}>
 ```tsx
@@ -314,6 +343,10 @@ export function AlertWithContent() {
 ---
 
 ## Alert Custom Styles
+
+You can use the `className` prop to add custom styles to your alert. Use the example below to create an alert with custom styles.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Alert.AlertCustomStyles />}>
 ```tsx
