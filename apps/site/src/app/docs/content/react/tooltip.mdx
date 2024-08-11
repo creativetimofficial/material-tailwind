@@ -8,16 +8,17 @@ next: docs/react/radio
 
 # Tailwind CSS Tooltip - React
 
-Customise your web projects with an easy-to-use and responsive Tailwind CSS `Tooltip`!
+Customise your web projects with an easy-to-use and responsive React and Tailwind CSS `Tooltip` completed.
 
-A `Tooltip` is a small pop-up element that appears while the user moves the mouse pointer over an element. Use it when you want to specify extra information about something when the user moves the mouse pointer over an element.
+A tooltip is a small pop-up element that appears while the user moves the mouse pointer over an element. Use it when you want to specify extra information about something when the user moves the mouse pointer over an element.
 
-See below our example that will help you create a simple `Tooltip` for your React project.
-
+See below our examples that will help you create a simple `Tooltip` for your React and Tailwind CSS project.
 
 ---
 
 ## Tooltip Demo
+
+Here's how to implement a simple `Tooltip` component. It can be used to display some extra information when the user hovers over the button.
 
 <ComponentPreview demo={<Tooltip.TooltipDemo />}>
 ```tsx
@@ -40,6 +41,8 @@ export function TooltipDemo() {
 ---
 
 ## Tooltip Placement
+
+You can change the placement of the `Tooltip` component by using the `placement` prop. The `placement` prop like `top`, `top-start`, `top-end`, `right`, `right-start`, `right-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `left-start`, and `left-end`. This will help you to position the `Tooltip` component in the desired location.
 
 <ComponentPreview demo={<Tooltip.TooltipPlacement />}>
 ```tsx
@@ -150,6 +153,10 @@ export function TooltipPlacement() {
 
 ## Tooltip with Helper Icon
 
+Use the example below to create a `Tooltip` component with a helper icon as it's trigger. This will help you to display extra information when the user hovers over the icon.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Tooltip.TooltipWithHelperIcon />}>
 ```tsx
 import { Tooltip, IconButton, Typography } from "@material-tailwind/react";
@@ -180,6 +187,8 @@ export function TooltipWithHelperIcon() {
 ---
 
 ## Tooltip Custom Styles
+
+You can use the `className` prop to customize the `Tooltip` component style and make your own custom `Tooltip` component.
 
 <ComponentPreview demo={<Tooltip.TooltipCustomStyles />}>
 ```tsx
