@@ -8,13 +8,17 @@ next: docs/react/Drawer-group
 
 # Tailwind CSS Drawer - React
 
-Use our Tailwind CSS `drawer` for side menus in your website.
+Use our React and Tailwind CSS `drawer` for side menus in your website. Drawer is a side menu that can be opened and closed by the user. It is a great way to display additional information or navigation options without taking up too much space on the screen.
 
-See below our simple `Drawer` example that you can use in your Tailwind CSS and React project.
+See below our `Drawer` component examples that you can use in your Tailwind CSS and React project.
 
 ---
 
 ## Drawer Demo
+
+Here's how to implement a simple and responsive `Drawer` component. It can be used to display additional information or navigation options when the user clicks on a button.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Drawer.DrawerDemo />}>
 ```tsx
@@ -64,6 +68,10 @@ export function DrawerDemo() {
 ---
 
 ## Drawer Placement
+
+You can place the `Drawer` component in different positions on the screen. You can choose from `top`, `right`, `bottom`, or `left`. This way, you can customize the `Drawer` component to fit your website's design.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Drawer.DrawerPlacement />}>
 ```tsx
@@ -198,12 +206,15 @@ export function DrawerPlacement() {
 
 ---
 
-## Drawer With Navigation
+## Drawer with Navigation
+
+Use this example to create a `Drawer` component with navigation links. You can use this `Drawer` component to display a list of links that the user can click on to navigate to different pages on your website. This is useful for dashboard layouts or admin panels.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Drawer.DrawerWithNavigation />}>
 ```tsx
 import * as React from "react";
-
 import {
   Drawer,
   Button,
@@ -396,6 +407,10 @@ export function DrawerWithNavigation() {
 ---
 
 ## Drawer With Form
+
+Use this example to create a `Drawer` component with a form. You can use this `Drawer` component to display a form that the user can fill out and submit. This is useful for contact forms or feedback forms on your website.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Drawer.DrawerWithForm />}>
 ```tsx
