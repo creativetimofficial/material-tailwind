@@ -8,15 +8,15 @@ next: docs/react/Timeline-group
 
 # Tailwind CSS Timeline - React
 
-Use our Tailwind CSS `Timeline` component in your web projects. The `Timeline` can be used for displaying a list of events in order.
+Use our React and Tailwind CSS `Timeline` component in your web projects. The `Timeline` can be used for displaying a list of events in order.
 
-See below our beautiful `Timeline` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
-
-Examples on this page are using `iconoir-react` make sure you have installed it.
+See below our beautiful `Timeline` component examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
 
 ---
 
 ## Timeline Demo
+
+Here's how to implement a simple `Timeline` component. It can be used to display a list of events in order on your website.
 
 <ComponentPreview demo={<Timeline.TimelineDemo />}>
 ```tsx
@@ -83,7 +83,9 @@ export function TimelineDemo() {
 
 ---
 
-## Timeline With Icon
+## Timeline with Icon
+
+You can also add an icon to the `Timeline` component. This can be done by using the `Timeline.Icon` component. In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Timeline.TimelineWithIcon />}>
 ```tsx
@@ -158,6 +160,8 @@ export function TimelineWithIcon() {
 ---
 
 ## Timeline With Avatar
+
+You can also add an avatar to the `Timeline` component. This can be done by using the `Avatar` and `Timeline.Icon` components. In the example below we've showcased a list of users with their profile picture, title, and some description.
 
 <ComponentPreview demo={<Timeline.TimelineWithAvatar />}>
 ```tsx
@@ -243,6 +247,10 @@ export function TimelineWithAvatar() {
 ---
 
 ## Activities Timeline
+
+You can also use the `Timeline` component to display a list of activities in order. In the example below, we've showcased a list of activities with their respective icons.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Timeline.ActivitiesTimeline />}>
 ```tsx
