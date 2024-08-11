@@ -10,11 +10,13 @@ next: docs/react/radio
 
 Our `Popover` component for Tailwind CSS & React is a small overlay of content that is used to demonstrate secondary information of any component when a user clicks it.
 
-See below our simple `Popover` example that you can use in your web project.
+See below our `Popover` component examples that you can use in your web project. 
 
 ---
 
 ## Popover Demo
+
+Here's how to implement a simple `Popover` component. It can be used to display secondary information of any component when a user clicks it.
 
 <ComponentPreview demo={<Popover.PopoverDemo />}>
 ```tsx
@@ -43,6 +45,8 @@ export function PopoverDemo() {
 
 
 ## Popover Placement
+
+You can change the placement of the `Popover` component by using the `placement` prop. The `placement` prop like `top`, `top-start`, `top-end`, `right`, `right-start`, `right-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `left-start`, and `left-end`. This will help you to position the `Popover` component in the desired location.
 
 <ComponentPreview demo={<Popover.PopoverPlacement />}>
 ```tsx
@@ -178,6 +182,8 @@ export function PopoverPlacement() {
 
 ## Subscription Popover
 
+Here's how to implement a subscription popover using the `Popover` component. It can be used to display a subscription form when a user clicks the `Subscribe` button.
+
 <ComponentPreview demo={<Popover.SubscriptionPopover />}>
 ```tsx
 import { Popover, Button, Typography, Input } from "@material-tailwind/react";
@@ -210,6 +216,8 @@ export function SubscriptionPopover() {
 ---
 
 ## Contact Popover
+
+Here's how to implement a contact popover using the `Popover` component. It can be used to display contact information when a user clicks the `Contact Info` button.
 
 <ComponentPreview demo={<Popover.ContactPopover />}>
 ```tsx
@@ -273,6 +281,8 @@ export function ContactPopover() {
 
 ## Popover with Image
 
+Here's how to implement a popover with an image using the `Popover` component. It can be used to display information with an image when a user clicks the `More Info` button.
+
 <ComponentPreview demo={<Popover.PopoverWithImage />}>
 ```tsx
 import { Popover, Button, Typography } from "@material-tailwind/react";
@@ -314,6 +324,8 @@ export function PopoverWithImage() {
 ---
 
 ## Profile Info Popover
+
+Here's how to implement a profile info popover using the `Popover` component. It can be used to display profile information when a user clicks the `Profile Info` button.
 
 <ComponentPreview demo={<Popover.ProfileInfoPopover />}>
 ```tsx
@@ -375,6 +387,8 @@ export function ProfileInfoPopover() {
 ---
 
 ## Popover with Description
+
+Here's how to implement a popover with a description using the `Popover` component. It can be used to display some info with a description and other details when a user clicks the `Repository Info` button.
 
 <ComponentPreview demo={<Popover.PopoverWithDescription />}>
 ```tsx
