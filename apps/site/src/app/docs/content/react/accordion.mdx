@@ -10,11 +10,13 @@ next: docs/react/Accordion-group
 
 Use our React `Accordion` component to allow the user to show and hide sections of related content on a page. There are many ways to use this component, like displaying a list of FAQs, showing various menus and submenus, displaying the locations of a particular company, and so on.
 
-See below our simple and versatile `accordion` examples that you can use in your projects. All our examples are based on React and styled with Tailwind CSS. We also included some Accordion props that are available.
+See below our `Accordion` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles and colors, so you can adapt it easily to your needs.
 
 ---
 
 ## Accordion Demo
+
+Here's how to implement a simple and responsive `Accordion` component. It can be used for FAQs in your website.
 
 <ComponentPreview demo={<Accordion.AccordionDemo />}>
 ```tsx
@@ -67,6 +69,8 @@ export function AccordionDemo() {
 
 ## Accordion All Open
 
+You can set all the `Accordion` items to be open by default by passing an array of values to the `defaultValue` prop.
+
 <ComponentPreview demo={<Accordion.AccordionAllOpen />}>
 ```tsx
 import { Accordion } from "@material-tailwind/react";
@@ -117,6 +121,8 @@ export function AccordionAllOpen() {
 ---
 
 ## Controlled Accordion
+
+The `Accordion` component could be either controlled or uncontrolled. In the controlled mode, you can manage the state of the `Accordion` component by yourself. You can use the `value` and `onValueChange` props to control the state of the `Accordion` component.
 
 <ComponentPreview demo={<Accordion.ControlledAccordion />}>
 ```tsx
@@ -197,6 +203,9 @@ export function ControlledAccordion() {
 
 ## Accordion Custom Icon
 
+You can customize the `Accordion` trigger icon by using the `Accordion.Trigger` component. To make it work, you need to use `group-data-[open=true]` for the icons to show/hide based on the `Accordion` state.
+
+
 <ComponentPreview demo={<Accordion.AccordionCustomIcon />}>
 ```tsx
 import { Accordion } from "@material-tailwind/react";
@@ -250,6 +259,8 @@ export function AccordionCustomIcon() {
 ---
 
 ## Accordion Custom Styles
+
+You can customize the `Accordion` component by using the `className` prop. In the example below, we've showcased how to create a custom style for the `Accordion` component.
 
 <ComponentPreview demo={<Accordion.AccordionCustomStyles />}>
 ```tsx
@@ -310,6 +321,8 @@ export function AccordionCustomStyles() {
 ---
 
 ## Accordion Disabled
+
+You can disable the `Accordion` item by adding the `disabled` prop. This will prevent the user from interacting with the `Accordion` item.
 
 <ComponentPreview demo={<Accordion.AccordionDisabled />}>
 ```tsx
