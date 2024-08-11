@@ -8,16 +8,18 @@ next: docs/react/radio
 
 # Tailwind CSS List - React
 
-Use our responsive Tailwind CSS vertical `List` anywhere on your web app!
+Use our responsive React and Tailwind CSS vertical `List` component anywhere on your web app!
 
-A `List` displays a list of items containing images, icons, and text that represents a specific action.
+A `List` component displays a list of items containing images, icons, and text that represents a specific action.
 
-See below our `List` example that you can use in your Tailwind CSS and React project. The examples comes in different styles, so you can adapt them easily to your needs.
+See below our `List` component examples that you can use in your Tailwind CSS and React project. The examples comes in different styles, so you can adapt them easily to your needs.
 
 
 ---
 
 ## List Demo
+
+Here's how to implement a simple `List` component. It can be used to display a list of items on your website like a navigation menu.
 
 <ComponentPreview demo={<List.ListDemo />}>
 ```tsx
@@ -38,6 +40,10 @@ export function ListDemo() {
 ---
 
 ## List with Icon
+
+You can add icons to your `List` items using the `List.ItemStart` component. In the example below, we've showcased a navigation menu with icons useful for a dashboard.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<List.ListWithIcon />}>
 ```tsx
@@ -74,6 +80,8 @@ export function ListWithIcon() {
 ---
 
 ## List with Avatar
+
+You can add avatars to your `List` items using the `Avatar` and `List.ItemStart` components. In the example below, we've showcased a list of users with their profile picture, name, and job title.
 
 <ComponentPreview demo={<List.ListWithAvatar />}>
 ```tsx
@@ -133,6 +141,8 @@ export function ListWithAvatar() {
 
 ## List with Badge
 
+You can add badges to your `List` items using the `Chip` and `List.ItemStart` components. In the example below, we've showcased a list of items with a badge that represents the number of items in each category.
+
 <ComponentPreview demo={<List.ListWithBadge />}>
 ```tsx
 import { List, Chip } from "@material-tailwind/react";
@@ -179,6 +189,8 @@ export function ListWithBadge() {
 
 ## List with Selected Item
 
+You can add a selected state to your `List` items using the `selected` prop. In the example below, we've showcased a list of items with a selected state that represents the active item.
+
 <ComponentPreview demo={<List.ListWithSelectedItem />}>
 ```tsx
 import * as React from "react";
@@ -217,6 +229,8 @@ export function ListWithSelectedItem() {
 
 ## List with Disabled Item
 
+You can add a disabled state to your `List` items using the `disabled` prop. This way you can disable the list item and prevent the user from interacting with it.
+
 <ComponentPreview demo={<List.ListWithDisabledItem />}>
 ```tsx
 import { List } from "@material-tailwind/react";
@@ -236,6 +250,8 @@ export function ListWithDisabledItem() {
 ---
 
 ## List with Link
+
+You can use the `List.Item` component as a link by using the `as` prop. This way you can use the `List.Item` component as a link to navigate to another page or website.
 
 <ComponentPreview demo={<List.ListWithLink />}>
 ```tsx
@@ -263,6 +279,8 @@ export function ListWithLink() {
 ---
 
 ## List Custom Styles
+
+You can customize the `List` component using the `className` prop. This way you can create your own styles for the `List` component.
 
 <ComponentPreview demo={<List.ListCustomStyles />}>
 ```tsx
