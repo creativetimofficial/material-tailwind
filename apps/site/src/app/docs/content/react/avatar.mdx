@@ -16,6 +16,8 @@ To jumpstart your development process, we offer a range of pre-designed `Avatar`
 
 ## Avatar Demo
 
+Get started with this simple avatar example that comes with a pre-set image, ensuring that your avatars look great from the start. You can easily replace the default `src` with any image URL to display user-specific avatars.
+
 <ComponentPreview demo={<Avatar.AvatarDemo />}>
 ```tsx
 import { Avatar } from "@material-tailwind/react";
@@ -26,9 +28,17 @@ export function AvatarDemo() {
 ```
 </ComponentPreview>
 
+<br />
+
+Also, use the `alt` tag, set as "profile-picture", to make sure that the component is accessible. This feature is essential for screen readers, search engine optimization, and aligns with web accessibility standards
+
 ---
 
 ## Avatar Variants
+
+We provides different avatar variants like `circular`, `rounded`, and `square` so you can adapt it easily to your needs. You can simply use the `variant` prop to change the avatar variant.
+
+In the example below, we've showcased the different avatar variants that you can use in your project.
 
 <ComponentPreview demo={<Avatar.AvatarVariants />}>
 ```tsx
@@ -58,9 +68,21 @@ export function AvatarVariants() {
 ```
 </ComponentPreview>
 
+<br />
+
+As showcased in the example above, here are the avatar component variants:
+
+- `circular` variant (default) - perfect for social media platforms, forums, and chat applications.
+- `rounded` variant - can be used in business applications, professional networks, or team collaboration tools.
+- `square` variant - ideal for corporate environments, document management systems, or platforms where a more serious tone is preferred.
+
 ---
 
 ## Avatar Sizes
+
+We provide different avatar sizes like `xs`, `sm`, `md`, `lg`, `xl` and `xxl` so you can adapt it easily to your needs. You can simply use the `size` prop to change the avatar size.
+
+In the example below, we've showcased the different avatar sizes that you can use in your project.
 
 <ComponentPreview demo={<Avatar.AvatarSizes />}>
 ```tsx
@@ -84,6 +106,8 @@ export function AvatarSizes() {
 ---
 
 ## Avatar with Text
+
+You can use avatar with other components as well, see the example below. This component showcases a combination of `Avatar` and `Typography` components to create a complete user profile presentation.
 
 <ComponentPreview demo={<Avatar.AvatarWithText />}>
 ```tsx
@@ -129,6 +153,8 @@ export function AvatarWithText() {
 
 ## Avatar Stack
 
+Use this example of overlapped avatars to represent a group of users in a friendly and compact way. For example, showing multiple people involved in a team.
+
 <ComponentPreview demo={<Avatar.AvatarStack />}>
 ```tsx
 import { Avatar } from "@material-tailwind/react";
@@ -169,6 +195,8 @@ export function AvatarStack() {
 ---
 
 ## Avatar Custom Styles
+
+You can use the `className` prop to customize the `Avatar` component style and make your own custom avatar. In the example below, we've showcased how to create custom avatar with green border and ring around it.
 
 <ComponentPreview demo={<Avatar.AvatarCustomStyles />}>
 ```tsx
