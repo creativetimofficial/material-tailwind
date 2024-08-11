@@ -1,4 +1,4 @@
-import { Button, IconButton, Typography } from "@material-tailwind/react";
+import { IconButton, Typography } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
 export function SimplePagination() {

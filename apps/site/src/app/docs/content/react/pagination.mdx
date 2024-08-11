@@ -1,22 +1,24 @@
 ---
 title: Tailwind CSS Pagination for React - Material Tailwind
 description: Customise your web projects with our easy-to-use Pagination component for Tailwind CSS and React using Material Design guidelines.
-github: Pagination
+github: pagination
 prev: docs/react/inputs
 next: docs/react/Pagination-group
 ---
 
 # Tailwind CSS Pagination - React
 
-Our Tailwind CSS `pagination` can be used to show a user how to navigate between different pages of table or a group of elements.
+Our React and Tailwind CSS pagination that can be used to show a user how to navigate between different pages of table or a group of elements.
 
 Below we are presenting our examples of pagination component build using `Button`, `IconButton` and `ButtonGroup` components that you can use in your Tailwind CSS and React project.
-
-Examples on this page are using `iconoir-react` make sure you have installed it.
 
 ---
 
 ## Pagination Demo
+
+Here's how to implement a simple and responsive pagination using `Button` and `IconButton` components. It can be used for the action of navigating between pages in a table or a group of elements.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Pagination.PaginationDemo />}>
 ```tsx
@@ -48,6 +50,10 @@ export function PaginationDemo() {
 ---
 
 ## Pagination Circular
+
+Use this example for a circular pagination using `Button` and `IconButton` components.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Pagination.PaginationCircular />}>
 ```tsx
@@ -88,9 +94,13 @@ export function PaginationCircular() {
 
 ## Simple Pagination
 
+Use this example for a simple pagination using `IconButton` and `Typography` components. It can be used when there is more pages to navigate.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Pagination.SimplePagination />}>
 ```tsx
-import { Button, IconButton, Typography } from "@material-tailwind/react";
+import { IconButton, Typography } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
 export function SimplePagination() {
@@ -121,6 +131,10 @@ export function SimplePagination() {
 ---
 
 ## Pagination Group
+
+Use this example for a pagination group using `IconButton` and `ButtonGroup` components. It's useful when you want to group all the pages and actions together.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<Pagination.PaginationGroup />}>
 ```tsx
