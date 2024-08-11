@@ -1,23 +1,24 @@
 ---
 title: Tailwind CSS Speed Dial for React - Material Tailwind
 description: Customise your web projects with our easy-to-use Speed Dial component for Tailwind CSS and React using Material Design guidelines.
-github: Speed Dial
+github: speed-dial
 prev: docs/react/inputs
 next: docs/react/Speed Dial-group
 ---
 
 # Tailwind CSS Speed Dial - React
 
-Our Tailwind CSS pagination can be used to show different actions when hovering the button.
+Our React and Tailwind CSS speeddial can be used to show different actions when hovering the button. You can create a speeddial component using the `IconButton` and `Tooltip` components.
 
-See below our `SpeedDial` component example that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt it easily to your needs.
-
-
-Examples on this page are using `iconoir-react` make sure you have installed it.
+See below our speeddial component examples that you can use in your Tailwind CSS and React project. The example comes in different styles, so you can adapt it easily to your needs.
 
 ---
 
 ## Speed Dial Demo
+
+Here's how to implement a simple speeddial component. It can be used for showing different actions when hovering the button.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<SpeedDial.SpeedDialDemo />}>
 ```tsx
@@ -69,6 +70,10 @@ export function SpeedDialDemo() {
 ---
 
 ## Speed Dial Placement
+
+Use this example to show the speeddial component in different positions on the screen.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<SpeedDial.SpeedDialPlacement />}>
 ```tsx
@@ -232,6 +237,10 @@ export function SpeedDialPlacement() {
 
 ## Speed Dial Custom Icon
 
+You can use custom icons in the speeddial component. Use the example below to create a speeddial component with custom icon of your choice.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<SpeedDial.SpeedDialCustomIcon />}>
 ```tsx
 import { Tooltip, IconButton } from "@material-tailwind/react";
@@ -281,6 +290,10 @@ export function SpeedDialCustomIcon() {
 ---
 
 ## Speed Dial with Label
+
+Use this example to show the speeddial component with a label. You can use the `open` prop for the inner `Tooltip` component to show the label by default.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<SpeedDial.SpeedDialWithLabel />}>
 ```tsx
@@ -332,6 +345,10 @@ export function SpeedDialWithLabel() {
 
 ## Speed Dial Horizontal
 
+Use this example to show the speeddial in a horizontal layout.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<SpeedDial.SpeedDialHorizontal />}>
 ```tsx
 import { Tooltip, IconButton } from "@material-tailwind/react";
@@ -381,6 +398,10 @@ export function SpeedDialHorizontal() {
 ---
 
 ## Speed Dial with Custom Styles
+
+You can use the `className` prop to create your own custom speeddial component using the `IconButton` and `Tooltip` components.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
 
 <ComponentPreview demo={<SpeedDial.SpeedDialWithCustomStyles />}>
 ```tsx
