@@ -8,13 +8,15 @@ next: docs/react/Spinner-group
 
 # Tailwind CSS Spinner - React
 
-Use our Tailwind CSS `Spinner` component in your web projects. The `Spinner` can be used for loading states on your website.
+Use our React and Tailwind CSS `Spinner` component in your web projects. The `Spinner` can be used for loading states on your website.
 
-See below our beautiful `Spinner` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+See below our beautiful `Spinner` component examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
 
 ---
 
 ## Spinner Demo
+
+Here's how to implement a simple `Spinner` component. It can be used to show loading state for elements in your website.
 
 <ComponentPreview demo={<Spinner.SpinnerDemo />}>
 ```tsx
@@ -29,6 +31,10 @@ export function SpinnerDemo() {
 ---
 
 ## Spinner Sizes
+
+We provide different spinner sizes like `xs`, `sm`, `md`, `lg`, `xl`, and `xll` so you can adapt it easily to your needs. You can simply use the `size` prop to change the spinner size.
+
+In the example below, we've showcased the different spinner sizes that you can use in your project.
 
 <ComponentPreview demo={<Spinner.SpinnerSizes />}>
 ```tsx
@@ -53,6 +59,10 @@ export function SpinnerSizes() {
 
 ## Spinner Colors
 
+We provide different spinner colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the spinner color.
+
+In the example below, we've showcased the different spinner colors that you can use in your project.
+
 <ComponentPreview demo={<Spinner.SpinnerColors />}>
 ```tsx
 import { Spinner } from "@material-tailwind/react";
@@ -76,6 +86,8 @@ export function SpinnerColors() {
 
 ## Spinner Custom Styles
 
+You can use the `className` prop to customize the `Spinner` component style and make your own custom spinner.
+
 <ComponentPreview demo={<Spinner.SpinnerCustomStyles />}>
 ```tsx
 import { Spinner } from "@material-tailwind/react";
@@ -85,5 +97,3 @@ export function SpinnerCustomStyles() {
 }
 ```
 </ComponentPreview>
-
----
