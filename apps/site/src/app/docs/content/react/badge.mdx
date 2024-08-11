@@ -8,15 +8,17 @@ next: docs/react/Alert-group
 
 # Tailwind CSS Badge - React
 
-Use our Tailwind CSS `Badge` component to show status in your web projects. The `Badge` can be used as a visual identifier for notifications on your website.
+Use our React `Badge` component to show status in your web projects. The `Badge` can be used as a visual identifier for notifications on your website.
 
-See below our beautiful `Badge` example that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
+See below our beautiful `Badge` examples that you can use in your Tailwind CSS and React project. The example also comes in different styles and colors so you can adapt it easily to your needs.
 
 For the examples below we used [Iconoir](https://iconoir.com/) icons but you can use any icon library you prefer.
 
 ---
 
 ## Badge Demo
+
+Here's how to implement a simple `Badge` component. It can be used for showing notifications count in your website.
 
 <ComponentPreview demo={<Badge.BadgeDemo />}>
 ```tsx
@@ -41,6 +43,10 @@ export function BadgeDemo() {
 ---
 
 ## Badge Colors
+
+We provide different badge colors like `primary`, `secondary`, `info`, `success`, `warning`, and `error` so you can adapt it easily to your needs. You can simply use the `color` prop to change the badge color.
+
+In the example below, we've showcased the different badge colors that you can use in your project.
 
 <ComponentPreview demo={<Badge.BadgeColors />}>
 ```tsx
@@ -108,6 +114,8 @@ export function BadgeColors() {
 
 ## Badge Placement
 
+You can use the `placement` prop to change the position of the badge. In the example below, we've showcased the different placement for the `Badge` component that you can use in your project.
+
 <ComponentPreview demo={<Badge.BadgePlacement />}>
 ```tsx
 import { Badge, IconButton } from "@material-tailwind/react";
@@ -158,6 +166,8 @@ export function BadgePlacement() {
 
 ## Badge Dot
 
+You can make the `Badge` component as a dot by removing the `Badge.Indicator` content. In the example below, we've showcased the `Badge` component as a dot that you can use in your project.
+
 <ComponentPreview demo={<Badge.BadgeDot />}>
 ```tsx
 import { Badge, IconButton } from "@material-tailwind/react";
@@ -181,6 +191,8 @@ export function BadgeDot() {
 ---
 
 ## Badge Overlap
+
+You can change the overlap of the `Badge` component using the `overlap` prop. This can help to place the `Badge` component on it's right place when using it with circular or square elements.
 
 <ComponentPreview demo={<Badge.BadgeOverlap />}>
 ```tsx
@@ -226,7 +238,9 @@ export function BadgeOverlap() {
 
 ---
 
-## Badge With Border
+## Badge with Border
+
+You can add a border to the `Badge` component using the `className` prop for the `Badge.Indicator`. In the example below, we've showcased the `Badge` component with a border that you can use in your project.
 
 <ComponentPreview demo={<Badge.BadgeWithBorder />}>
 ```tsx
@@ -253,6 +267,8 @@ export function BadgeWithBorder() {
 ---
 
 ## Badge Custom Styles
+
+You can customize the `Badge` component using the `className` prop. In the example below, we've showcased the `Badge` component with custom styles that you can use in your project.
 
 <ComponentPreview demo={<Badge.BadgeCustomStyles />}>
 ```tsx
