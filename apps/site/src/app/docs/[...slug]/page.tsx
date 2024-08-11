@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
-  const { serialized } = await readDocsContent(path);
+  const { frontMatter, serialized } = await readDocsContent(path);
 
-  return <MdxContent source={serialized} />;
+  return <MdxContent source={serialized} frontMatter={frontMatter} />;
 }

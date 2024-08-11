@@ -72,8 +72,10 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
 
 export function Toc({
   contentRef,
+  githubPage,
 }: {
   contentRef: React.MutableRefObject<HTMLDivElement>;
+  githubPage?: string;
 }) {
   const { toc, activeToc } = useToc(contentRef);
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -147,20 +149,32 @@ export function Toc({
           "border-transparent": !isScrolled,
         })}
       >
-        <ListItem href="#" icon={EditPencil}>
+        <ListItem
+          href={`https://github.com/creativetimofficial/material-tailwind/blob/main/apps/site/src/app/docs/content/react/${githubPage}.mdx`}
+          icon={EditPencil}
+        >
           Edit this page on GitHub
         </ListItem>
-        <ListItem href="#" icon={Star}>
+        <ListItem
+          href="https://github.com/creativetimofficial/material-tailwind"
+          icon={Star}
+        >
           Give us star on GitHub
         </ListItem>
-        <ListItem href="#" icon={Donate}>
+        <ListItem
+          href="https://opencollective.com/material-tailwind?ref=material-tailwind"
+          icon={Donate}
+        >
           Donate on Open Collective
         </ListItem>
-        <ListItem href="#" icon={GitPullRequest}>
+        <ListItem
+          href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md"
+          icon={GitPullRequest}
+        >
           Read contribution guide
         </ListItem>
-        <ListItem href="#" icon={Discord}>
-          Join Discord Community
+        <ListItem href="https://discord.com/invite/FhCJCaHdQa" icon={Discord}>
+          Join Discord community
         </ListItem>
       </ul>
       <div

@@ -221,9 +221,10 @@ const components = {
 
 type MdxContentProps = {
   source: MDXRemoteSerializeResult;
+  frontMatter: Record<string, string>;
 };
 
-export function MdxContent({ source }: MdxContentProps) {
+export function MdxContent({ source, frontMatter }: MdxContentProps) {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const contentRef = React.useRef<HTMLDivElement>(null);
@@ -254,7 +255,10 @@ export function MdxContent({ source }: MdxContentProps) {
         </MTBreadcrumb>
         <MDXRemote {...source} components={components as any} />
       </div>
-      <Toc contentRef={contentRef as React.MutableRefObject<HTMLDivElement>} />
+      <Toc
+        contentRef={contentRef as React.MutableRefObject<HTMLDivElement>}
+        githubPage={frontMatter.github}
+      />
     </div>
   );
 }
