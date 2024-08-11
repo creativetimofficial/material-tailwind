@@ -1,0 +1,34 @@
+{
+  "name": "@material-tailwind/html",
+  "version": "3.0.0-beta.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tsc",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "sajadevo",
+    "url": "https://twitter.com/sajadevo_"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/material-tailwind/issues"
+  },
+  "homepage": "https://github.com/creativetimofficial/material-tailwind/packages/html#readme",
+  "devDependencies": {
+    "tailwindcss": "3.3.3",
+    "tsconfig": "workspace:*",
+    "tsup": "7.2.0",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "deepmerge": "4.3.1",
+    "hex-rgb": "5.0.0"
+  }
+}
