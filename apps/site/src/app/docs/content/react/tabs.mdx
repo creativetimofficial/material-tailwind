@@ -8,18 +8,17 @@ next: docs/react/radio
 
 # Tailwind CSS Tabs - React
 
-Get started on your web project with our responsive Tailwind CSS `Tabs` that create a secondary navigational hierarchy for your website.
+Get started on your web project with our responsive React and Tailwind CSS `Tabs` that create a secondary navigational hierarchy for your website.
 
-`Tabs` are components that render and display subsections to users. They arrange the content into categories for easy access and a cleaner-looking app.
+Tabs are components that render and display subsections to users. They arrange the content into categories for easy access and a cleaner-looking app.
 
-See below our example that will help you create a simple and easy-to-use `Tabs` for your Tailwind CSS and React project.
-
-
-Examples on this page are using `iconoir-react` make sure you have installed it.
+See below our examples that will help you create a simple and easy-to-use `Tabs` for your Tailwind CSS and React project.
 
 ---
 
 ## Tabs Demo
+
+Here's how to implement a simple and responsive `Tabs` component. It can be used for showing different content in a single section of your website.
 
 <ComponentPreview demo={<Tabs.TabsDemo />}>
 ```tsx
@@ -79,6 +78,10 @@ export function TabsDemo() {
 
 ## Tabs with Icon
 
+Use this example to add icons to your `Tabs.Trigger` component to make them more visually appealing and informative.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Tabs.TabsWithIcon />}>
 ```tsx
 import { Tabs } from "@material-tailwind/react";
@@ -125,6 +128,8 @@ export function TabsWithIcon() {
 ---
 
 ## Vertical Tabs
+
+You can use the `orientation` prop to change the `Tabs` component to a vertical layout. This is useful when you have the tabs on the side of the content.
 
 <ComponentPreview demo={<Tabs.VerticalTabs />}>
 ```tsx
@@ -174,6 +179,10 @@ export function VerticalTabs() {
 
 ## Vertical Tabs with Icon
 
+Use this example to add icons to your `Tabs.Trigger` component to make them more visually appealing and informative.
+
+In the example below we've used the [Iconoir](https://iconoir.com/) icons, but you can use any other icon library you prefer.
+
 <ComponentPreview demo={<Tabs.VerticalTabsWithIcon />}>
 ```tsx
 import { Tabs } from "@material-tailwind/react";
@@ -220,6 +229,8 @@ export function VerticalTabsWithIcon() {
 ---
 
 ## Transparent Tabs
+
+Use this example to create a `Tabs` component with transparent triggers and a faded idicator. This is useful when you want to show the tabs on top of an image or a colored background.
 
 <ComponentPreview demo={<Tabs.TransparentTabs />}>
 ```tsx
@@ -278,6 +289,8 @@ export function TransparentTabs() {
 ---
 
 ## Underline Tabs
+
+Use this example to create a `Tabs` component with underline triggers and a simple colored indicator. This is useful when you want to show the tabs on top of a white or light-colored background.
 
 <ComponentPreview demo={<Tabs.UnderlineTabs />}>
 ```tsx
