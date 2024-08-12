@@ -155,7 +155,7 @@ export function Navbar() {
           >
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:grid">
+          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -177,7 +177,7 @@ export function Navbar() {
           </Select>
         </div>
         <div className="absolute left-2/4 hidden -translate-x-2/4 items-center gap-1 lg:flex">
-          <Link href="/docs/react/installation">
+          <Link href="/docs/v3/react/installation">
             <NavItem icon={MultiplePages}>Docs</NavItem>
           </Link>
           <Link href="/pro">
@@ -200,7 +200,7 @@ export function Navbar() {
           </Link>
         </div>
         <div className="flex items-center gap-1">
-          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:hidden">
+          <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -237,7 +237,7 @@ export function Navbar() {
                 >
                   <Xmark className="h-5 w-5" />
                 </Dialog.DismissTrigger>
-                <Link href="/docs/react/installation">
+                <Link href="/docs/v3/react/installation">
                   <NavItem icon={MultiplePages} className="p-2">
                     Docs
                   </NavItem>

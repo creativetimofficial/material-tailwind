@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  redirect("/docs/react/installation");
+  redirect("/docs/v3/react/installation");
 }
