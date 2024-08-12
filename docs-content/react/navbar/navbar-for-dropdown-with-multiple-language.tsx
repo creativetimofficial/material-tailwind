@@ -11,7 +11,11 @@ import {
   MenuItem,
 } from "@material-tailwind/react";
 
-import { Bars3Icon, ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  ChevronDownIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 export function NavbarForDropdownWithMultipleLanguages() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -103,12 +107,12 @@ export function NavbarForDropdownWithMultipleLanguages() {
           <Button variant="gradient" size="sm">
             join
           </Button>
-          <Menu open={openMenu} handler={setOpenMenu} allowHover>
+          <Menu open={openMenu} handler={setOpenMenu}>
             <MenuHandler>
               <Button
                 size="sm"
                 variant="outlined"
-                className="flex items-center gap-2"
+                className="hidden items-center gap-2 lg:flex"
               >
                 🇺🇸 English{" "}
                 <ChevronDownIcon
@@ -119,7 +123,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
                 />
               </Button>
             </MenuHandler>
-            <MenuList className="max-h-72 w-20">
+            <MenuList className="hidden max-h-72 w-20 lg:block">
               {countries.map(({ name, flag }) => (
                 <MenuItem key={name} className="flex items-center gap-2">
                   {flag} {name}
@@ -146,13 +150,13 @@ export function NavbarForDropdownWithMultipleLanguages() {
           <Button variant="gradient" size="sm" fullWidth>
             join
           </Button>
-          <Menu open={openMenu} handler={setOpenMenu} allowHover>
+          <Menu open={openMenu} handler={setOpenMenu}>
             <MenuHandler>
               <Button
                 fullWidth
                 size="sm"
                 variant="outlined"
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-2 lg:hidden"
               >
                 🇺🇸 English{" "}
                 <ChevronDownIcon
@@ -163,7 +167,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
                 />
               </Button>
             </MenuHandler>
-            <MenuList className="max-h-72 w-20">
+            <MenuList className="block max-h-72 w-20 lg:hidden">
               {countries.map(({ name, flag }) => (
                 <MenuItem key={name} className="flex items-center gap-2">
                   {flag} {name}
