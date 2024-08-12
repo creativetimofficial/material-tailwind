@@ -11,7 +11,7 @@ export function InputWithLabelAndDropdown() {
   const toggleDropdown1 = () => {setIsOpen1(!isOpen1)};
   const toggleDropdown2 = () => {setIsOpen2(!isOpen2)};
 
-  const selectOption1= (option) => {
+  const selectOption1 = (option) => {
     setButtonLabel1(option);
     setIsOpen1(false);
   };
@@ -21,20 +21,19 @@ export function InputWithLabelAndDropdown() {
     setIsOpen2(false);
   };
 
-useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (dropdownRef1.current && !dropdownRef1.current.contains(event.target)) {
-      setIsOpen1(false);
-    }
-    if (dropdownRef2.current && !dropdownRef2.current.contains(event.target)) {
-      setIsOpen2(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef1.current && !dropdownRef1.current.contains(event.target)) {
+        setIsOpen1(false);
+      }
+      if (dropdownRef2.current && !dropdownRef2.current.contains(event.target)) {
+        setIsOpen2(false);
+      }
+    };
 
-  document.addEventListener('click', handleClickOutside);
-  return () => document.removeEventListener('click', handleClickOutside);
-}, []);
-
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -68,7 +67,7 @@ useEffect(() => {
         </div>  
       </div>
 
-      <div className="w-full max-w-sm min-w-[200px] mt-4 relative">
+      <div ref={dropdownRef2} className="w-full max-w-sm min-w-[200px] mt-4 relative">
         <label className="block mb-1 text-sm text-neutral-900">
           Your Name
         </label>
