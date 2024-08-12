@@ -1,0 +1,44 @@
+---
+title: Tailwind CSS Input - Material Tailwind
+description: Customise your web projects with our beautiful Input component for Tailwind CSS using Material Design guidelines.
+navigation:
+  [
+    "Simple Input with Label",
+  ]
+github: input-number
+prev: icon-button
+next: form
+---
+
+# Tailwind CSS Input
+
+Easily create inputs with different status and sizes using our components based on Tailwind CSS.
+
+Input fields are an essential user interface design element, providing
+users with the means to enter non-standardized responses.
+
+See below our input component examples. It comes in different styles and colors, so you can adapt it easily to your needs.
+
+<br />
+
+## Simple Input with Label
+
+Use our input example with a label to easily start creating forms. It is perfect for user registration, login forms, or any form where users need to input a username. 
+
+<CodePreview
+  id="input"
+  link="input#input"
+  component={<HTMLInputNumberExamples.InputNumberWithLabel/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-neutral-900">
+      Your Name
+  </label>
+  <input
+    class="w-full h-full bg-transparent text-neutral-700 text-sm border border-neutral-200 rounded-md px-3 py-2.5 transition duration-300 ease focus:outline-none focus:border-neutral-400 hover:border-neutral-400 shadow-sm focus:shadow-md"
+    placeholder="Enter your text" />
+</div>
+```
+</CodePreview>
+
