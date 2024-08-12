@@ -70,7 +70,7 @@ const HELP = [
 const RESOURCES = [
   {
     name: "Documentation",
-    link: "/docs/react/installation",
+    link: "/docs/v3/react/installation",
   },
   {
     name: "Custom Development",
@@ -89,7 +89,7 @@ const RESOURCES = [
 const TECHS = [
   {
     name: "React",
-    link: "/docs/react/installation",
+    link: "/docs/v3/react/installation",
   },
   {
     name: "HTML",

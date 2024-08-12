@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
   reactStrictMode: false,
   images: {
@@ -13,6 +16,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: ["next-mdx-remote"],
+  assetPrefix: isProd ? "https://material-tailwind-v3.vercel.app/" : undefined,
   async redirects() {
     return [
       {
@@ -74,25 +78,6 @@ const nextConfig = {
         source: "/docs/react/rating-bar",
         destination: "/docs/react/rating",
         permanent: true,
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/figma",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/figma",
-      },
-      {
-        source: "/blocks",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks",
-      },
-      {
-        source: "/blocks/:slug*",
-        destination:
-          "https://material-taillwind-pro-ct-tailwind-team.vercel.app/blocks/:slug*",
       },
     ];
   },

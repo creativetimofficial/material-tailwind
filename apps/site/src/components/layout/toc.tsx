@@ -204,7 +204,7 @@ export function Toc({
       >
         <Card.Header>
           <Image
-            src="/book.webp"
+            src="https://material-tailwind-v3.vercel.app/book.webp"
             alt="book"
             width={512}
             height={512}
