@@ -95,6 +95,7 @@ import * as HTMLTextarea from "@components/docs-html/textarea";
 import * as HTMLTimeline from "@components/docs-html/timeline";
 import * as HTMLTypography from "@components/docs-html/typography";
 import * as HTMLVideo from "@components/docs-html/video";
+import * as HTMLCheckbox from "@components/docs-html/checkbox";
 
 import { NavArrowRight } from "iconoir-react";
 import { usePathname } from "next/navigation";
@@ -217,6 +218,7 @@ const components = {
   HTMLTimeline,
   HTMLTypography,
   HTMLVideo,
+  HTMLCheckbox,
 };
 
 type MdxContentProps = {

@@ -1,0 +1,54 @@
+---
+title: Tailwind CSS Button - Material Tailwind
+description: Use our versatile and stylish button examples styled with Tailwind CSS that come in various sizes, states, and styles, including filled, gradient, outlined, and text buttons, alongside customization options for colors and icons.
+github: button
+prev: docs/html/inputs
+next: docs/html/button-group
+---
+
+# Tailwind CSS Button
+
+Use our buttons based on Tailwind CSS for actions in forms, dialogues, and more with support for multiple sizes, states, and more.
+
+Buttons are an essential element of web design. Basically, buttons are styled links that grab the user's attention. They help users navigate our websites or apps and drive them to a particular action like submitting a contact form, or placing an order as easily as possible.
+
+See below our button components examples.
+
+---
+
+## Checkbox Demo
+
+Use this versatile button that comes with a purple background and white text, rounded corners, and a color change on hover, showing interactivity.
+
+<ComponentPreview demo={<HTMLCheckbox.CheckboxDemo />}>
+```html
+<label class="relative inline-block h-5 w-5" for="checkbox">
+  <input
+    id="checkbox"
+    type="checkbox"
+    class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100"
+  >
+    <svg
+      fill="none"
+      width="18px"
+      height="18px"
+      stroke-width="2"
+      color="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 13L9 17L19 7"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
+  </span>
+</label>
+```
+</ComponentPreview>
