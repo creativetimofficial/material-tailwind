@@ -191,6 +191,10 @@ export const routes = [
         name: "Input",
         route: "input",
       },
+      {
+        name: "Input Number",
+        route: "input-number",
+      },
 
       {
         name: "List",
