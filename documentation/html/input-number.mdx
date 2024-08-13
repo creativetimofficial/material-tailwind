@@ -4,6 +4,12 @@ description: Customise your web projects with our beautiful Input component for 
 navigation:
   [
     "input-number-with-select",
+    "input-zip-code",
+    "input-phone-number",
+    "input-amount-buttons",
+    "input-control-with-icon",
+    "input-counter-buttons",
+    "input-currency"
   ]
 github: input-number
 prev: icon-button
@@ -61,27 +67,318 @@ This example features a zip code input field where users can enter their postal 
 <CodePreview
   id="input-zip-code"
   link="input#input-zip-code"
-  component={<HTMLInputNumberExamples.InputNumberWithSelect/>}
+  component={<HTMLInputNumberExamples.InputZipCode/>}
 >
 ```html
 <div class="w-full max-w-sm min-w-[200px]">
   <label class="block mb-1 text-sm text-slate-800">
-      Input Number 
+      Enter Zip Code
   </label>
-  
-  <div class="relative">
-    <select
-        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+  <input
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="ZIP code (020111)"
+    pattern="^\d{5}$" 
+    maxlength="5"
+  />
+
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-slate-400">
+      <path fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"></path>
     </svg>
+    Your text help us to provide location-specific services.
+  </p>    
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone Number
+
+Use this example of a phone number input with a country code selector. Users can choose their country from a dropdown menu, which automatically updates the country code. 
+
+<CodePreview
+  id="input-phone-number"
+  link="input#input-phone-number"
+  component={<HTMLInputNumberExamples.InputPhoneNumber/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4 ">
+  <label class="block mb-1 text-sm text-slate-800">
+    Enter Phone Number
+  </label>
+  <div class="relative mt-2">
+      <div class="absolute top-2 left-0 flex items-center pl-3">
+      <button id="dropdownButton" class="h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+        <span id="dropdownSpan">+33</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div class="h-6 border-l border-slate-200 ml-2"></div>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+33">France (+33)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+49">Germany (+49)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+34">Spain (+34)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+1">USA (+1)</li>
+        </ul>
+      </div>
+    </div>
+    <input
+      type="number"
+      class="w-full h-10 pl-20 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="324-456-2323" />
+  </div>   
+</div>
+
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input with Amount Control Buttons
+
+This example showcases an input field with "+" and "-" buttons for adjusting the amount. Users can easily increase or decrease the number by clicking the buttons, providing a straightforward way to control quantities.
+
+<CodePreview
+  id="input-amount-buttons"
+  link="input#input-amount-buttons"
+  component={<HTMLInputNumberExamples.InputAmount/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Select Amount
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+    <input
+      type="number"
+      class="w-full pl-3 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="5"
+      value="5"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+    <p class="flex items-center mt-2 text-xs text-slate-500">
+      Adjust the number using the + and - controls.
+    </p>    
   </div>
 </div>
+```
+</CodePreview>
+
+--- 
+
+## Input Control with Icons
+
+Use this example of an input field with control buttons that include icons. The "+" and "-" buttons are accompanied by relevant icons, such as a group icon for adding or removing members, making the controls more intuitive.
+
+<CodePreview
+  id="input-control-with-icon"
+  link="input#input-control-with-icon"
+  component={<HTMLInputNumberExamples.InputAmountWithIcon/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Add Members
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-500">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+    </svg>
+
+    <input
+      type="number"
+      class="w-full pl-10 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="5"
+      value="5"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+    <p class="flex items-center mt-2 text-xs text-slate-500">
+      Use the + and - buttons to add or remove members.
+    </p>    
+  </div>
+</div>
+```
+</CodePreview>
+
+
+--- 
+
+## Input Counter with Buttons
+
+This example features a counter input with "+" and "-" buttons for adjusting the number of items. Users can quickly modify the quantity by clicking the buttons, making it ideal for ecommerce or inventory management applications.
+
+<CodePreview
+  id="input-counter-buttons"
+  link="input#input-counter-buttons"
+  component={<HTMLInputNumberExamples.InputCounterButtons/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Number of Items
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-white rounded hover:bg-slate-200"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+    <input
+      type="number"
+      class="w-full pl-4 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="55"
+      value="55"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded hover:bg-slate-200"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+  </div>
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    Use the + and - buttons to adjust the quantity.
+  </p>    
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Currency
+
+Use this example of a currency input to allow users to enter an amount of money along with selecting the currency type. The input field includes a dropdown menu for selecting currencies like USD, EUR, and CHF, ensuring clarity and preventing errors in financial transactions.
+
+<CodePreview
+  id="input-currency"
+  link="input#input-currency"
+  component={<HTMLInputNumberExamples.InputCurrency/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4 ">
+  <label class="block mb-1 text-sm text-slate-800">
+    Amount You Send
+  </label>
+  <div class="relative mt-2">
+    <input
+      type="text"
+      class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="1,000" />
+    <div class="absolute top-2 right-0 flex items-center pr-3">
+      <div class="h-6 border-l border-slate-200 mr-2"></div>
+      <button id="dropdownButton" class="h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+        <span id="dropdownSpan">USD</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+        </ul>
+      </div>
+    </div> 
+  </div>   
+</div>
+
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
 ```
 </CodePreview>
 
