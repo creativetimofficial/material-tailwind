@@ -1,0 +1,812 @@
+---
+title: Tailwind CSS Radio Button - Material Tailwind
+description: Create easy-to-use radio buttons for your web projects starting from our Tailwind CSS component examples. The radio button will let your users choose only one of a predefined set of mutually exclusive options.
+github: radio
+prev: docs/react/input
+next: docs/react/rating
+---
+
+# Tailwind CSS Radio Button
+
+Our Tailwind CSS radio button component will let your users choose only one of a predefined set of mutually exclusive options.
+
+Radio buttons are circular and typically appear in groups; when a user selects one radio button in a group, any previously selected radio button in the same group is automatically deselected. This behavior makes sure that the user can choose only one option from the group, making radio buttons ideal for choices where only one option is applicable.
+
+Use the following example to create simple radio buttons for your projects.
+
+---
+
+## Radio Button Demo
+
+The example features two radio buttons, labeled "HTML" and "React", allowing users to select one of these two options.
+
+<ComponentPreview demo={<HTMLRadio.RadioDemo />}>
+```html
+<div class="flex flex-col items-start gap-2">
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      data-value="html"
+      for="html"
+    >
+      <input
+        id="html"
+        type="radio"
+        name="framework"
+        value="html"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="html"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      HTML
+    </label>
+  </div>
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      data-value="react"
+      for="react"
+    >
+      <input
+        id="react"
+        type="radio"
+        name="framework"
+        value="react"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="react"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      React
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Radio Button Colors
+
+This example showcases a set of custom-styled radio buttons designed for selecting colors, with options for `primary`, `secondary`, `info`, `success`, `warning`, and `error`.
+
+<ComponentPreview demo={<HTMLRadio.RadioColors />}>
+```html
+<div class="flex flex-col gap-4">
+  <div class="flex flex-row items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for=":r6b:"
+    >
+      <input
+        id=":r6b:"
+        type="radio"
+        value=":r6c:"
+        name=":r6c:"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      class="relative inline-block w-5 h-5"
+      for=":r6d:"
+    >
+      <input
+        id=":r6d:"
+        type="radio"
+        name=":r6c:"
+        value=":r6e:"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="secondary-color"
+    >
+      <input
+        id="secondary-color"
+        type="radio"
+        value="secondary"
+        name="secondary"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-secondary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-secondary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label class="relative inline-block w-5 h-5" for="secondary">
+      <input
+        id="secondary"
+        type="radio"
+        name="secondary"
+        value="secondary"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-secondary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-secondary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <label class="relative inline-block w-5 h-5" for="info">
+      <input
+        id="info"
+        type="radio"
+        value="info"
+        name="info"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-info"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-info-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label class="relative inline-block w-5 h-5" for="info-color">
+      <input
+        id="info-color"
+        type="radio"
+        name="info"
+        value="info-color"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-info"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-info-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="success-color"
+    >
+      <input
+        id="success-color"
+        type="radio"
+        value="success"
+        name="success"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-success"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-success-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label class="relative inline-block w-5 h-5" for="success">
+      <input
+        id="success"
+        type="radio"
+        name="success"
+        value="success"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-success"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-success-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="warning-color"
+    >
+      <input
+        id="warning-color"
+        type="radio"
+        value="warning"
+        name="warning"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-warning"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-warning-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label class="relative inline-block w-5 h-5" for="warning">
+      <input
+        id="warning"
+        type="radio"
+        name="warning"
+        value="warning"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-warning"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-warning-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <label class="relative inline-block w-5 h-5" for="error-color">
+      <input
+        id="error-color"
+        type="radio"
+        value="error"
+        name="error"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-error"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-error-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label class="relative inline-block w-5 h-5" for="error">
+      <input
+        id="error"
+        type="radio"
+        name="error"
+        value="error"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-error"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-error-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Radio Button with Custom Icon
+
+<ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
+```html
+
+```
+</ComponentPreview>
+
+---
+
+## Disabled Radio Button
+
+Both radio buttons are explicitly marked as disabled using the disabled attribute on the `<input>` elements. This attribute prevents users from being able to select these options, making sure the form behaves correctly in contexts where "HTML" and "React" options should not be selectable.
+
+<ComponentPreview demo={<HTMLRadio.DisabledRadio />}>
+```html
+<div class="flex flex-col items-start gap-2">
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5 opacity-50 pointer-events-none"
+      for="disabled-html"
+    >
+      <input
+        id="disabled-html"
+        type="radio"
+        name="framework"
+        value="html"
+        disabled
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="disabled-html"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      HTML
+    </label>
+  </div>
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5 opacity-50 pointer-events-none"
+      for="disabled-react"
+    >
+      <input
+        id="disabled-react"
+        type="radio"
+        name="framework"
+        value="react"
+        disabled
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="disabled-react"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      React
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Radio Button with Link
+
+This example showcases how you can implement radio buttons with labels that includes a hyperlink.
+
+<ComponentPreview demo={<HTMLRadio.RadioWithLink />}>
+```html
+<div class="flex flex-col items-start gap-2">
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="radio-link-agree"
+    >
+      <input
+        id="radio-link-agree"
+        type="radio"
+        name="agreement"
+        value="agree"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="radio-link-agree"
+      class="flex gap-1 font-sans text-base antialiased text-foreground"
+    >
+      I agree with the
+      <a href="#" class="font-sans text-base antialiased text-primary">
+        terms and conditions
+      </a>
+    </label>
+  </div>
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="radio-link-disagree"
+    >
+      <input
+        id="radio-link-disagree"
+        type="radio"
+        name="agreement"
+        value="disagree"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="radio-link-disagree"
+      class="flex gap-1 font-sans text-base antialiased text-foreground"
+    >
+      I disagree with the
+      <a href="#" class="font-sans text-base antialiased text-primary">
+        terms and conditions
+      </a>
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Radio Button With Description
+
+This example presents a radio button example that incorporates detailed descriptions. This is a more complex and informative approach to presenting radio button options.
+
+<ComponentPreview demo={<HTMLRadio.RadioWithDescription />}>
+```html
+<div class="flex flex-col items-start gap-4">
+  <div class="flex gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="radio-description-html"
+    >
+      <input
+        id="radio-description-html"
+        type="radio"
+        value=":r5o:"
+        name="radio-description"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label for="radio-description-html" class="-translate-y-1">
+      <p class="font-sans text-base antialiased font-semibold text-black dark:text-white">
+        HTML Version
+      </p>
+      <small class="font-sans text-sm antialiased text-foreground">
+        @material-tailwind/html, packed with rich components and widgets.
+      </small>
+    </label>
+  </div>
+  <div class="flex gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      for="radio-description-react"
+    >
+      <input
+        id="radio-description-react"
+        type="radio"
+        value=":r5q:"
+        name="radio-description"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="9px"
+          height="9px"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11 0.25C5.06294 0.25 0.25 5.06294 0.25 11C0.25 16.9371 5.06294 21.75 11 21.75C16.9371 21.75 21.75 16.9371 21.75 11C21.75 5.06294 16.9371 0.25 11 0.25Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label for="radio-description-react" class="-translate-y-1">
+      <p class="font-sans text-base antialiased font-semibold text-black dark:text-white">
+        React Version
+      </p>
+      <small class="font-sans text-sm antialiased text-foreground">
+        @material-tailwind/react, packed with rich components and widgets.
+      </small>
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
+
+---
+
+## Radio Button Custom Styles
+
+Check out the example below for implementing custom styles on your radio button component.
+
+<ComponentPreview demo={<HTMLRadio.CustomRadio />}>
+```html
+<div class="flex flex-col items-start gap-2">
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      data-value=":r50:"
+      for="custom-html"
+    >
+      <input
+        id="custom-html"
+        type="radio"
+        value=":r50:"
+        name="custom-radio"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="1.5em"
+          height="1.5em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentColor"
+          class="w-4 h-4 stroke-2"
+        >
+          <path
+            d="M5 13L9 17L19 7"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="custom-html"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      HTML
+    </label>
+  </div>
+  <div class="flex items-center gap-2">
+    <label
+      class="relative inline-block w-5 h-5"
+      data-value=":r52:"
+      for="custom-react"
+    >
+      <input
+        id="custom-react"
+        type="radio"
+        value=":r52:"
+        name="custom-radio"
+        class="peer relative h-full w-full appearance-none overflow-hidden rounded before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
+      />
+      <span class="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
+        <svg
+          width="1.5em"
+          height="1.5em"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          color="currentColor"
+          class="w-4 h-4 stroke-2"
+        >
+          <path
+            d="M5 13L9 17L19 7"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </span>
+    </label>
+    <label
+      for="custom-react"
+      class="font-sans text-base antialiased text-foreground"
+    >
+      React
+    </label>
+  </div>
+</div>
+```
+</ComponentPreview>
