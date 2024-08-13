@@ -6,3 +6,4 @@ export * from "./select-disabled";
 export * from "./select-sizes";
 export * from "./select-validations";
 export * from "./select-variants";
+export * from "./select-with-label";

@@ -3,16 +3,16 @@ title: Tailwind CSS Input - Material Tailwind
 description: Customise your web projects with our beautiful Input component for Tailwind CSS using Material Design guidelines.
 navigation:
   [
-    "Simple Input with Label",
+    "input-number-with-select",
   ]
 github: input-number
 prev: icon-button
 next: form
 ---
 
-# Tailwind CSS Input
+# Tailwind CSS Input Number
 
-Easily create inputs with different status and sizes using our components based on Tailwind CSS.
+Alexandra: Easily create inputs with different status and sizes using our components based on Tailwind CSS.
 
 Input fields are an essential user interface design element, providing
 users with the means to enter non-standardized responses.
@@ -21,23 +21,66 @@ See below our input component examples. It comes in different styles and colors,
 
 <br />
 
-## Simple Input with Label
+## Basic Input Number with Select
 
-Use our input example with a label to easily start creating forms. It is perfect for user registration, login forms, or any form where users need to input a username. 
+Use this example of a basic number input to allow users to choose a number with select. 
 
 <CodePreview
-  id="input"
-  link="input#input"
-  component={<HTMLInputNumberExamples.InputNumberWithLabel/>}
+  id="input-with-select"
+  link="input#input-with-select"
+  component={<HTMLInputNumberExamples.InputNumberWithSelect/>}
 >
 ```html
 <div class="w-full max-w-sm min-w-[200px]">
-  <label class="block mb-1 text-sm text-neutral-900">
-      Your Name
+  <label class="block mb-1 text-sm text-slate-800">
+      Input Number 
   </label>
-  <input
-    class="w-full h-full bg-transparent text-neutral-700 text-sm border border-neutral-200 rounded-md px-3 py-2.5 transition duration-300 ease focus:outline-none focus:border-neutral-400 hover:border-neutral-400 shadow-sm focus:shadow-md"
-    placeholder="Enter your text" />
+  
+  <div class="relative">
+    <select
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Zip Code
+
+This example features a zip code input field where users can enter their postal code. The helper text below the input field explains the purpose of the zip code, ensuring accurate data entry.
+
+<CodePreview
+  id="input-zip-code"
+  link="input#input-zip-code"
+  component={<HTMLInputNumberExamples.InputNumberWithSelect/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Input Number 
+  </label>
+  
+  <div class="relative">
+    <select
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
 </div>
 ```
 </CodePreview>
