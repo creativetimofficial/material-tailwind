@@ -9,7 +9,9 @@ navigation:
     "input-amount-buttons",
     "input-control-with-icon",
     "input-counter-buttons",
-    "input-currency"
+    "input-currency",
+    "input-credit-card",
+    "input-one-time-password"
   ]
 github: input-number
 prev: icon-button
@@ -377,6 +379,167 @@ Use this example of a currency input to allow users to enter an amount of money 
       dropdownMenu.classList.add('hidden');
     }
   });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Credit Card
+
+This Tailwind component example features input fields for entering credit card information, including cardholder name, card number, expiration date, and CVV. The "Purchase Now" button is prominently displayed, providing a clear call-to-action for completing transactions. 
+
+<CodePreview
+  id="input-credit-card"
+  link="input#input-credit-card"
+  component={<HTMLInputNumberExamples.InputCreditCard/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Cardholder Name
+  </label>
+  <input
+    type="text"
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="e.g John Doe"
+  />
+
+  <label class="block mb-1 text-sm text-slate-800 mt-4">
+    Card Number
+  </label>
+  <input
+    type="text"
+    id="cardNumber"
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="1234 5678 9012 3456"
+    maxlength="19"
+    oninput="formatCardNumber(this)"
+  />
+
+  <div class="flex">
+    <div class="w-full md:w-8/12 mr-4">
+      <label class="block mb-1 text-sm text-slate-800 mt-4">
+        Expiration Date
+      </label>
+      <input
+        type="text"
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        placeholder="MM/YY"
+        maxlength="5"
+        pattern="\d{2}/\d{2}"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d{2})(\d{1,2})/, '$1/$2').substring(0, 5);"
+      />
+    </div>
+    <div class="w-full md:w-4/12">
+      <label class="block mb-1 text-sm text-slate-800 mt-4">
+        CVV
+      </label>
+      <input
+        type="text"
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        placeholder="123"
+        maxlength="3"
+        pattern="\d{3}"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"/>
+    </div>
+  </div>
+
+  <button class="w-full text-sm flex items-center justify-center bg-slate-800 rounded hover:bg-slate-700 text-white py-3 px-6 mt-4">Purchase Now</button>
+</div>
+
+<script>
+  function formatCardNumber(input) {
+    const value = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+    const formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+    input.value = formattedValue;
+  }
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input One-time Password
+
+Use this example of a one-time password (OTP) input to improve security. Users enter a 6-digit OTP sent to their registered phone number or email. This input field is designed for secure verification processes, ensuring that only authorized users can complete transactions or access sensitive information.
+
+<CodePreview
+  id="input-one-time-password"
+  link="input#input-one-time-password"
+  component={<HTMLInputNumberExamples.InputOtp/>}
+>
+```html
+<div class="flex flex-col items-center space-y-4">
+  <p class="text-sm text-slate-800">Enter the 6-digit OTP sent to <span class="font-bold">+1 123-456-7890</span></p>
+  
+  <div class="flex items-center space-x-2">
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 0)"
+      onkeydown="handleBackspace(event, 0)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 1)"
+      onkeydown="handleBackspace(event, 1)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 2)"
+      onkeydown="handleBackspace(event, 2)"
+    />
+    <span class="text-2xl mx-2 text-slate-700">-</span>
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 3)"
+      onkeydown="handleBackspace(event, 3)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 4)"
+      onkeydown="handleBackspace(event, 4)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 5)"
+      onkeydown="handleBackspace(event, 5)"
+    />
+  </div>
+
+  <p class="text-xs text-slate-500 mt-4">
+    Did not receive the code? <span class="font-bold cursor-pointer">Resend</span>
+  </p>
+</div>
+
+<script>
+  const inputs = document.querySelectorAll('input[type="text"]');
+
+  function handleChange(input, index) {
+    const value = input.value.replace(/[^0-9]/g, ''); // Allow only digits
+    input.value = value; // Set the value in the current input
+    if (value && index < inputs.length - 1) {
+      inputs[index + 1].focus(); // Move to the next input
+    }
+  }
+
+  function handleBackspace(event, index) {
+    if (event.key === 'Backspace' && !event.currentTarget.value && index > 0) {
+      inputs[index - 1].focus(); // Move to the previous input
+    }
+  }
 </script>
 ```
 </CodePreview>
