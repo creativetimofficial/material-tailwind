@@ -44,9 +44,9 @@ next: icon-button
 # Tailwind CSS Dialog - React
 </DocsTitle>
 
-Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that require decisions, or involves multiple tasks.
+Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that requires decisions, or involves multiple tasks.
 
-A <Code>Dialog</Code> is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
+A <Code>Dialog</Code> is a type of modal window with critical information that disables all app functionality when they appear and remains on screen until confirmed/dismissed.
 
 See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS and React project.
 
@@ -622,6 +622,10 @@ export function Web3Dialog() {
 ## Long Dialog
 </DocsTitle>
 
+Use this detailed dialog box designed to present extensive text content. It includes a long passage of text and offers options like "Cancel" and "Confirm" for user interaction.
+
+
+
 <CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
 ```jsx
 import React from "react";
@@ -701,6 +705,8 @@ export function LongDialog() {
 ## Message Dialog
 </DocsTitle>
 
+Try a compact dialog intended for sending a message. It includes fields for entering a username and a message, along with buttons to "Cancel" or "Send Message."
+
 <CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
 ```jsx
 import React from "react";
@@ -777,6 +783,8 @@ export function MessageDialog() {
 ## Notification Dialog
 </DocsTitle>
 
+A notification-style dialog that draws attention with a prominent icon and bold text. It provides information and call-to-actions.
+
 <CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
 import React from "react";
@@ -844,6 +852,8 @@ export function NotificationDialog() {
 <DocsTitle href="add-product-dialog">
 ## Add Product Dialog
 </DocsTitle>
+
+A form-based dialog used for adding product details, including fields for name, category, weight, size, and an optional description. It concludes with an "Add Product" button.
 
 <CodePreview className="mt-4" component={<DialogExamples.AddProductDialog />}>
 ```jsx
@@ -1015,6 +1025,8 @@ export function AddProductDialog() {
 ## Select Categories Dialog
 </DocsTitle>
 
+A simple dialog that allows users to select categories from a list. It includes checkboxes for each option and a button to "Save Categories."
+
 <CodePreview className="mt-4" component={<DialogExamples.SelectCategoriesDialog />}>
 ```jsx
 import React from "react";
@@ -1134,6 +1146,8 @@ export function SelectCategoriesDialog() {
 <DocsTitle href="delivery-method-dialog">
 ## Delivery Method Dialog
 </DocsTitle>
+
+Use this dialog to select a delivery method from several options. It highlights each option's details and includes a "Confirm Delivery Method" button.
 
 <CodePreview className="mt-4" component={<DialogExamples.DeliveryMethodDialog />}>
 ```jsx
@@ -1271,6 +1285,8 @@ export function DeliveryMethodDialog() {
 ## Order Details Dialog
 </DocsTitle>
 
+Try this timeline-style dialog that displays the order's progress, showing details like design changes, new orders, and payment completion, with an option to view more details.
+
 <CodePreview className="mt-4" component={<DialogExamples.OrderDetailsDialog />}>
 ```jsx
 import React from "react";
@@ -1393,6 +1409,8 @@ export function OrderDetailsDialog() {
 ## Upload Progress Dialog
 </DocsTitle>
 
+Use this dialog that tracks the progress of an ongoing upload, including a progress bar, file details, and a call-to-action button.
+
 <CodePreview className="mt-4" component={<DialogExamples.UploadProgressDialog />}>
 ```jsx
 import React from "react";
@@ -1499,6 +1517,9 @@ export function UploadProgressDialog() {
 <DocsTitle href="dialog-with-billing-form">
 ## Dialog With Billing Form
 </DocsTitle>
+
+Try this dialog designed for linking a payment card, including fields for cardholder name, card number, expiration date, and CVV. It concludes with a call-to-action "Submit" button.
+
 
 <CodePreview className="mt-4" component={<DialogExamples.DialogWithBillingForm />}>
 ```jsx
