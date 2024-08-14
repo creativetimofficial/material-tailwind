@@ -12,12 +12,11 @@ navigation:
     "long-dialog",
     "message-dialog",
     "notification-dialog",
-    "add-product-dialog",
-    "select-categories-dialog",
-    "delivery-method-dialog",
-    "order-details-dialog",
-    "upload-progress-dialog",
-    "dialog-with-billing-form",
+    "add-product-dialog-crud",
+    "dialog-with-checkbox",
+    "dialog-with-select",
+    "dialog-with-timeline-and-details",
+    "dialog-with-progress-bar",
     "dialog-props",
     "dialog-header-props",
     "dialog-body-props",
@@ -622,9 +621,7 @@ export function Web3Dialog() {
 ## Long Dialog
 </DocsTitle>
 
-Use this detailed dialog box designed to present extensive text content. It includes a long passage of text and offers options like "Cancel" and "Confirm" for user interaction.
-
-
+Use this example of a long dialog to present extensive information or content that requires careful reading and consideration. This dialog is designed to handle lengthy text, ensuring it remains readable and accessible.
 
 <CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
 ```jsx
@@ -705,7 +702,9 @@ export function LongDialog() {
 ## Message Dialog
 </DocsTitle>
 
-Try a compact dialog intended for sending a message. It includes fields for entering a username and a message, along with buttons to "Cancel" or "Send Message."
+Use this example of a message dialog to facilitate direct communication between users. The dialog includes fields for entering a username and the message content, providing a straightforward interface for sending messages.
+
+This dialog example is ideal for enabling user-to-user communication within an application, ensuring a simple and effective way to send messages.
 
 <CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
 ```jsx
@@ -783,7 +782,7 @@ export function MessageDialog() {
 ## Notification Dialog
 </DocsTitle>
 
-A notification-style dialog that draws attention with a prominent icon and bold text. It provides information and call-to-actions.
+Use this example of a notification dialog to draw users' attention to important information or actions required. The dialog includes a prominent title, a message area for detailed information, and action buttons for user response. 
 
 <CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
@@ -849,11 +848,11 @@ export function NotificationDialog() {
 
 ---
 
-<DocsTitle href="add-product-dialog">
-## Add Product Dialog
+<DocsTitle href="add-product-dialog-crud">
+## Add Product Dialog CRUD
 </DocsTitle>
 
-A form-based dialog used for adding product details, including fields for name, category, weight, size, and an optional description. It concludes with an "Add Product" button.
+This Tailwind CSS dialog allows users to manage items by providing input fields for the name, category, weight, size, and an optional description. The form is straightforward and easy to use, with an "Add Product" button to submit the information.
 
 <CodePreview className="mt-4" component={<DialogExamples.AddProductDialog />}>
 ```jsx
@@ -1021,11 +1020,11 @@ export function AddProductDialog() {
 
 ---
 
-<DocsTitle href="select-categories-dialog">
-## Select Categories Dialog
+<DocsTitle href="dialog-with-checkbox">
+## Dialog with Checkbox
 </DocsTitle>
 
-A simple dialog that allows users to select categories from a list. It includes checkboxes for each option and a button to "Save Categories."
+Try this checkbox dialog to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
 
 <CodePreview className="mt-4" component={<DialogExamples.SelectCategoriesDialog />}>
 ```jsx
@@ -1143,11 +1142,11 @@ export function SelectCategoriesDialog() {
 
 ---
 
-<DocsTitle href="delivery-method-dialog">
-## Delivery Method Dialog
+<DocsTitle href="dialog-with-select">
+## Dialog with Select
 </DocsTitle>
 
-Use this dialog to select a delivery method from several options. It highlights each option's details and includes a "Confirm Delivery Method" button.
+This dialog example provides options for users to select their preferred delivery method. The selected method is highlighted for clarity, and users can confirm their choice by clicking the call-to-action button.
 
 <CodePreview className="mt-4" component={<DialogExamples.DeliveryMethodDialog />}>
 ```jsx
@@ -1281,11 +1280,11 @@ export function DeliveryMethodDialog() {
  
 ---
 
-<DocsTitle href="order-details-dialog">
-## Order Details Dialog
+<DocsTitle href="dialog-with-timeline-and-details">
+## Dialog with Timeline and Details
 </DocsTitle>
 
-Try this timeline-style dialog that displays the order's progress, showing details like design changes, new orders, and payment completion, with an option to view more details.
+This modal displays detailed order information in a timeline format. Use this component example to let users easily track the status of their order and click the CTA button "More Details" for additional information.
 
 <CodePreview className="mt-4" component={<DialogExamples.OrderDetailsDialog />}>
 ```jsx
@@ -1405,11 +1404,11 @@ export function OrderDetailsDialog() {
  
  ---
 
- <DocsTitle href="upload-progress-dialog">
-## Upload Progress Dialog
+ <DocsTitle href="dialog-with-progress-bar">
+## Dialog with Progress Bar
 </DocsTitle>
 
-Use this dialog that tracks the progress of an ongoing upload, including a progress bar, file details, and a call-to-action button.
+This progress bar dialog provides real-time feedback on the upload status of a file. Users can see the file name, file size, and a progress bar indicating the upload percentage. This tailwind dialog also includes options to cancel the upload if needed.
 
 <CodePreview className="mt-4" component={<DialogExamples.UploadProgressDialog />}>
 ```jsx
@@ -1685,7 +1684,7 @@ export function DialogWithBillingForm() {
 ## Dialog Props
 </DocsTitle>
 
-The following props are available for dialog component. These are the custom props
+The following props are available for the dialog component. These are the custom props
 that we've added for the dialog component and you can use all the other
 native props as well.
 
@@ -1714,7 +1713,7 @@ import type { DialogProps } from "@material-tailwind/react";
 ## Dialog Header Props
 </DocsTitle>
 
-The following props are available for dialog header component. These are the custom
+The following props are available for the dialog header component. These are the custom
 props that we've added for the dialog header component and you can use
 all the other native props as well.
 
@@ -1738,7 +1737,7 @@ import type { DialogHeaderProps } from "@material-tailwind/react";
 ## Dialog Body Props
 </DocsTitle>
 
-The following props are available for dialog body component. These are the custom
+The following props are available for dialog body components. These are the custom
 props that we've added for the dialog body component and you can use all
 the other native props as well.
 
