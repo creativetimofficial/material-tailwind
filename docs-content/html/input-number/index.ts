@@ -7,3 +7,4 @@ export * from "./input-counter-buttons";
 export * from "./input-currency";
 export * from "./input-credit-card";
 export * from "./input-otp";
+export * from "./input-currency-conversion";

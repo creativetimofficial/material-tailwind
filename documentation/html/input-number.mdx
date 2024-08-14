@@ -11,7 +11,8 @@ navigation:
     "input-counter-buttons",
     "input-currency",
     "input-credit-card",
-    "input-one-time-password"
+    "input-one-time-password",
+    "input-currency-conversion"
   ]
 github: input-number
 prev: icon-button
@@ -541,6 +542,134 @@ Use this example of a one-time password (OTP) input to improve security. Users e
     }
   }
 </script>
+```
+</CodePreview>
+
+--- 
+
+## Input Currency Conversion
+
+Use this example to enter amounts for currency conversion. Users can input the amount to convert and select the desired currencies from dropdown menus. A visual swap button allows users to easily switch between "From" and "To" currencies.  
+
+<CodePreview
+  id="input-currency-conversion"
+  link="input#input-currency-conversion"
+  component={<HTMLInputNumberExamples.InputCurrencyConversion/>}
+>
+```html
+<div class="w-full max-w-xl mx-auto mt-4">
+  <p class="text-slate-500 mb-4">Enter the amount you wish to convert and select the desired currency.</p>
+  <div class="flex flex-col items-center justify-between">
+    <!-- From Input -->
+    <div class="w-full max-w-xs min-w-[200px] mt-4">
+      <label class="block mb-1 text-sm text-slate-800">
+        From
+      </label>
+      <div class="relative mt-2">
+        <input
+          type="text"
+          class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          placeholder="1,000" 
+        />
+        <div class="absolute top-2 right-0 flex items-center pr-3">
+          <div class="h-6 border-l border-slate-200 mr-2"></div>
+          <button class="dropdownButton h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+            <span class="dropdownSpan">USD</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div class="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+            <ul class="dropdownOptions">
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+            </ul>
+          </div>
+        </div> 
+      </div>   
+    </div>
+
+    <!-- Swap Icon -->
+    <div class="flex items-center justify-center mt-6">
+      <button class="p-2 rounded-full border border-slate-300 bg-white hover:bg-slate-100 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-600">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- To Input -->
+    <div class="w-full max-w-xs min-w-[200px] -mt-2">
+      <label class="block mb-1 text-sm text-slate-800">
+          To
+      </label>
+      <div class="relative mt-2">
+        <input
+          type="text"
+          class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          placeholder="1,000" 
+        />
+        <div class="absolute top-2 right-0 flex items-center pr-3">
+          <div class="h-6 border-l border-slate-200 mr-2"></div>
+          <button class="dropdownButton h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+            <span class="dropdownSpan">EUR</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div class="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+            <ul class="dropdownOptions">
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+            </ul>
+          </div>
+        </div> 
+      </div>   
+    </div>
+  </div>
+
+  <!-- Last Updated Text -->
+  <div class="mt-8 text-slate-500 text-sm">
+    <p>Rates are updated every hour to provide the most accurate conversions.</p>
+    <p class="mt-1"><b>Last updated</b>: July 30, 2024, 3:00 PM</p>
+  </div>
+</div>
+
+<script>
+  // Function to handle dropdown toggle
+  document.querySelectorAll('.dropdownButton').forEach(button => {
+    button.addEventListener('click', function() {
+      const dropdownMenu = this.nextElementSibling;
+      dropdownMenu.classList.toggle('hidden');
+    });
+  });
+
+  // Function to handle dropdown item selection
+  document.querySelectorAll('.dropdownOptions').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+        const dataValue = event.target.getAttribute('data-value');
+        const dropdownSpan = this.closest('.relative').querySelector('.dropdownSpan');
+        dropdownSpan.textContent = dataValue;
+        this.closest('.dropdownMenu').classList.add('hidden');
+      }
+    });
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdownMenu').forEach(dropdownMenu => {
+      if (!dropdownMenu.closest('.relative').contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
 ```
 </CodePreview>
 
