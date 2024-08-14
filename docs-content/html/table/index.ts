@@ -1,4 +1,5 @@
 export * from "./default-table";
+export * from "./table-with-hover";
 export * from "./table-with-striped-rows";
 export * from "./table-with-striped-columns";
 export * from "./transactions-table";

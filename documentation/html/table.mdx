@@ -5,6 +5,7 @@ description:  Add style to your tables with the versatile Tailwind CSS Table com
 navigation:
   [
     "table",
+    "table-with-hover",
     "table-with-striped-rows",
     "transaction-table",
     "members-table",
@@ -176,6 +177,161 @@ Use our simple 4 columns table styled with Tailwind CSS to organize your data in
     </tbody>
   </table>
 </div>
+```
+</CodePreview>
+
+---
+
+## Table With Hover State
+
+Try this table example to highlight rows when users hover over them. The hover state improves interactivity and readability, allowing users to easily follow and identify specific rows.
+
+<CodePreview
+  id="table-with-hover"
+  link="table#table-with-hover"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithHover/>}
+>
+```html
+ <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-100 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            Name
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-100 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            Job
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-100 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            Employed
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-100 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-800 opacity-70"></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Executive
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            19/09/17
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            24/12/08
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            04/10/21
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ```
 </CodePreview>
 
