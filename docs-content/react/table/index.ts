@@ -5,3 +5,4 @@ export * from "./transactions-table";
 export * from "./members-table";
 export * from "./sortable-table";
 export * from "./table-without-border";
+export * from "./table-with-hover-state";
