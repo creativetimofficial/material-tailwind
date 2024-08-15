@@ -1,6 +1,6 @@
 import { Card, Typography } from "@material-tailwind/react";
 
-const TABLE_HEAD = ["Name", "Role", "Email", "Location", ,];
+const TABLE_HEAD = ["Name", "Role", "Email", "Location"];
 
 const TABLE_ROWS = [
   {
@@ -36,7 +36,7 @@ export function TableWithHoverState() {
         <thead>
           <tr>
             {TABLE_HEAD.map((head) => (
-              <th key={head} className="border-b border-gray-300 py-4">
+              <th key={head} className="border-b border-gray-300 pb-4 pt-10">
                 <Typography
                   variant="small"
                   color="blue-gray"

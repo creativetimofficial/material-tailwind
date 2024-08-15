@@ -49,7 +49,7 @@ export function TableWithoutBorder() {
         <thead>
           <tr>
             {TABLE_HEAD.map((head) => (
-              <th key={head} className="p-4">
+              <th key={head} className="p-4 pt-10">
                 <Typography
                   variant="small"
                   color="blue-gray"
