@@ -9,3 +9,8 @@ export * from "./input-validations";
 export * from "./input-variants";
 export * from "./input-with-button";
 export * from "./input-with-helper-text";
+export * from "./input-with-label";
+export * from "./input-with-label-and-text-button";
+export * from "./input-with-label-and-icon-button";
+export * from "./input-with-label-and-dropdown";
+

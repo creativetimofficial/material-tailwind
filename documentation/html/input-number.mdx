@@ -1,0 +1,675 @@
+---
+title: Tailwind CSS Input - Material Tailwind
+description: Customise your web projects with our beautiful Input component for Tailwind CSS using Material Design guidelines.
+navigation:
+  [
+    "input-number-with-select",
+    "input-zip-code",
+    "input-phone-number",
+    "input-amount-buttons",
+    "input-control-with-icon",
+    "input-counter-buttons",
+    "input-currency",
+    "input-credit-card",
+    "input-one-time-password",
+    "input-currency-conversion"
+  ]
+github: input-number
+prev: input
+next: input-phone
+---
+
+# Tailwind CSS Input Number
+
+The input number component allows users to enter and adjust numeric values easily, and it is usually found in forms and applications. 
+
+Compared to a <a href="/docs/html/input" class="underline">basic input</a>, it restricts entries to numbers only, often includes increment/decrement buttons, and can enforce minimum and maximum limits to ensure valid data entry.
+
+This component improves user experience, ensures data consistency, and supports accessibility.
+See our Tailwind CSS input number examples below. They come in different styles and colors, allowing you to easily adapt them to your needs.
+<br />
+
+## Basic Input Number with Select
+
+Use this example of a basic number input to allow users to choose a number with select. 
+
+<CodePreview
+  id="input-with-select"
+  link="input#input-with-select"
+  component={<HTMLInputNumberExamples.InputNumberWithSelect/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Input Number 
+  </label>
+  
+  <div class="relative">
+    <select
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Zip Code
+
+This example features a zip code input field where users can enter their postal code. The helper text below the input field explains the purpose of the zip code, ensuring accurate data entry.
+
+<CodePreview
+  id="input-zip-code"
+  link="input#input-zip-code"
+  component={<HTMLInputNumberExamples.InputZipCode/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Enter Zip Code
+  </label>
+  <input
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="ZIP code (020111)"
+    pattern="^\d{5}$" 
+    maxlength="5"
+  />
+
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-slate-400">
+      <path fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"></path>
+    </svg>
+    Your text help us to provide location-specific services.
+  </p>    
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone Number
+
+Use this example of a phone number input with a country code selector. Users can choose their country from a dropdown menu, which automatically updates the country code. 
+
+<CodePreview
+  id="input-phone-number"
+  link="input#input-phone-number"
+  component={<HTMLInputNumberExamples.InputPhoneNumber/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4 ">
+  <label class="block mb-1 text-sm text-slate-800">
+    Enter Phone Number
+  </label>
+  <div class="relative mt-2">
+      <div class="absolute top-2 left-0 flex items-center pl-3">
+      <button id="dropdownButton" class="h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+        <span id="dropdownSpan">+33</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div class="h-6 border-l border-slate-200 ml-2"></div>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+33">France (+33)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+49">Germany (+49)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+34">Spain (+34)</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="+1">USA (+1)</li>
+        </ul>
+      </div>
+    </div>
+    <input
+      type="number"
+      class="w-full h-10 pl-20 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="324-456-2323" />
+  </div>   
+</div>
+
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input with Amount Control Buttons
+
+This example showcases an input field with "+" and "-" buttons for adjusting the amount. Users can easily increase or decrease the number by clicking the buttons, providing a straightforward way to control quantities.
+
+<CodePreview
+  id="input-amount-buttons"
+  link="input#input-amount-buttons"
+  component={<HTMLInputNumberExamples.InputAmount/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Select Amount
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+    <input
+      type="number"
+      class="w-full pl-3 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="5"
+      value="5"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+    <p class="flex items-center mt-2 text-xs text-slate-500">
+      Adjust the number using the + and - controls.
+    </p>    
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Control with Icons
+
+Use this example of an input field with control buttons that include icons. The "+" and "-" buttons are accompanied by relevant icons, such as a group icon for adding or removing members, making the controls more intuitive.
+
+<CodePreview
+  id="input-control-with-icon"
+  link="input#input-control-with-icon"
+  component={<HTMLInputNumberExamples.InputAmountWithIcon/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Add Members
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute w-5 h-5 top-2.5 left-2.5 text-slate-500">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+    </svg>
+
+    <input
+      type="number"
+      class="w-full pl-10 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="5"
+      value="5"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFF" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+    <p class="flex items-center mt-2 text-xs text-slate-500">
+      Use the + and - buttons to add or remove members.
+    </p>    
+  </div>
+</div>
+```
+</CodePreview>
+
+
+--- 
+
+## Input Counter with Buttons
+
+This example features a counter input with "+" and "-" buttons for adjusting the number of items. Users can quickly modify the quantity by clicking the buttons, making it ideal for ecommerce or inventory management applications.
+
+<CodePreview
+  id="input-counter-buttons"
+  link="input#input-counter-buttons"
+  component={<HTMLInputNumberExamples.InputCounterButtons/>}
+>
+```html
+<div class="w-[250px] max-w-sm relative mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Number of Items
+  </label>
+  <div class="relative">
+    <button
+      class="absolute h-8 w-8 right-10 top-1 my-auto px-2 flex items-center bg-white rounded hover:bg-slate-200"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </button>
+    <input
+      type="number"
+      class="w-full pl-4 h-10 pr-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="55"
+      value="55"
+    />
+    <button
+      class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded hover:bg-slate-200"
+      type="button"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+  </div>
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    Use the + and - buttons to adjust the quantity.
+  </p>    
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Input Currency
+
+Use this example of a currency input to allow users to enter an amount of money along with selecting the currency type. The input field includes a dropdown menu for selecting currencies like USD, EUR, and CHF, ensuring clarity and preventing errors in financial transactions.
+
+<CodePreview
+  id="input-currency"
+  link="input#input-currency"
+  component={<HTMLInputNumberExamples.InputCurrency/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4 ">
+  <label class="block mb-1 text-sm text-slate-800">
+    Amount You Send
+  </label>
+  <div class="relative mt-2">
+    <input
+      type="text"
+      class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="1,000" />
+    <div class="absolute top-2 right-0 flex items-center pr-3">
+      <div class="h-6 border-l border-slate-200 mr-2"></div>
+      <button id="dropdownButton" class="h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+        <span id="dropdownSpan">USD</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div id="dropdownMenu" class="min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+        <ul id="dropdownOptions">
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+          <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+        </ul>
+      </div>
+    </div> 
+  </div>   
+</div>
+
+<script>
+  document.getElementById('dropdownButton').addEventListener('click', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu.classList.contains('hidden')) {
+      dropdownMenu.classList.remove('hidden');
+    } else {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('dropdownOptions').addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+      const dataValue = event.target.getAttribute('data-value');
+      document.getElementById('dropdownSpan').textContent = dataValue;
+      document.getElementById('dropdownMenu').classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', function(event) {
+    var isClickInside = document.getElementById('dropdownButton').contains(event.target) || document.getElementById('dropdownMenu').contains(event.target);
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (!isClickInside) {
+      dropdownMenu.classList.add('hidden');
+    }
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Credit Card
+
+This Tailwind component example features input fields for entering credit card information, including cardholder name, card number, expiration date, and CVV. The "Purchase Now" button is prominently displayed, providing a clear call-to-action for completing transactions. 
+
+<CodePreview
+  id="input-credit-card"
+  link="input#input-credit-card"
+  component={<HTMLInputNumberExamples.InputCreditCard/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px] mt-4">
+  <label class="block mb-1 text-sm text-slate-800">
+    Cardholder Name
+  </label>
+  <input
+    type="text"
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="e.g John Doe"
+  />
+
+  <label class="block mb-1 text-sm text-slate-800 mt-4">
+    Card Number
+  </label>
+  <input
+    type="text"
+    id="cardNumber"
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="1234 5678 9012 3456"
+    maxlength="19"
+    oninput="formatCardNumber(this)"
+  />
+
+  <div class="flex">
+    <div class="w-full md:w-8/12 mr-4">
+      <label class="block mb-1 text-sm text-slate-800 mt-4">
+        Expiration Date
+      </label>
+      <input
+        type="text"
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        placeholder="MM/YY"
+        maxlength="5"
+        pattern="\d{2}/\d{2}"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d{2})(\d{1,2})/, '$1/$2').substring(0, 5);"
+      />
+    </div>
+    <div class="w-full md:w-4/12">
+      <label class="block mb-1 text-sm text-slate-800 mt-4">
+        CVV
+      </label>
+      <input
+        type="text"
+        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        placeholder="123"
+        maxlength="3"
+        pattern="\d{3}"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"/>
+    </div>
+  </div>
+
+  <button class="w-full text-sm flex items-center justify-center bg-slate-800 rounded hover:bg-slate-700 text-white py-3 px-6 mt-4">Purchase Now</button>
+</div>
+
+<script>
+  function formatCardNumber(input) {
+    const value = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+    const formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+    input.value = formattedValue;
+  }
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input One-time Password
+
+Use this example of a one-time password (OTP) input to improve security. Users enter a 6-digit OTP sent to their registered phone number or email. This input field is designed for secure verification processes, ensuring that only authorized users can complete transactions or access sensitive information.
+
+<CodePreview
+  id="input-one-time-password"
+  link="input#input-one-time-password"
+  component={<HTMLInputNumberExamples.InputOtp/>}
+>
+```html
+<div class="flex flex-col items-center space-y-4">
+  <p class="text-sm text-slate-800">Enter the 6-digit OTP sent to <span class="font-bold">+1 123-456-7890</span></p>
+  
+  <div class="flex items-center space-x-2">
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 0)"
+      onkeydown="handleBackspace(event, 0)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 1)"
+      onkeydown="handleBackspace(event, 1)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 2)"
+      onkeydown="handleBackspace(event, 2)"
+    />
+    <span class="text-2xl mx-2 text-slate-700">-</span>
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 3)"
+      onkeydown="handleBackspace(event, 3)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 4)"
+      onkeydown="handleBackspace(event, 4)"
+    />
+    <input
+      type="text"
+      maxlength="1"
+      class="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      oninput="handleChange(this, 5)"
+      onkeydown="handleBackspace(event, 5)"
+    />
+  </div>
+
+  <p class="text-xs text-slate-500 mt-4">
+    Did not receive the code? <span class="font-bold cursor-pointer">Resend</span>
+  </p>
+</div>
+
+<script>
+  const inputs = document.querySelectorAll('input[type="text"]');
+
+  function handleChange(input, index) {
+    const value = input.value.replace(/[^0-9]/g, ''); // Allow only digits
+    input.value = value; // Set the value in the current input
+    if (value && index < inputs.length - 1) {
+      inputs[index + 1].focus(); // Move to the next input
+    }
+  }
+
+  function handleBackspace(event, index) {
+    if (event.key === 'Backspace' && !event.currentTarget.value && index > 0) {
+      inputs[index - 1].focus(); // Move to the previous input
+    }
+  }
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Currency Conversion
+
+Use this example to enter amounts for currency conversion. Users can input the amount to convert and select the desired currencies from dropdown menus. A visual swap button allows users to easily switch between "From" and "To" currencies.  
+
+<CodePreview
+  id="input-currency-conversion"
+  link="input#input-currency-conversion"
+  component={<HTMLInputNumberExamples.InputCurrencyConversion/>}
+>
+```html
+<div class="w-full max-w-xl mx-auto mt-4">
+  <p class="text-slate-500 mb-4">Enter the amount you wish to convert and select the desired currency.</p>
+  <div class="flex flex-col items-center justify-between">
+    <!-- From Input -->
+    <div class="w-full max-w-xs min-w-[200px] mt-4">
+      <label class="block mb-1 text-sm text-slate-800">
+        From
+      </label>
+      <div class="relative mt-2">
+        <input
+          type="text"
+          class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          placeholder="1,000" 
+        />
+        <div class="absolute top-2 right-0 flex items-center pr-3">
+          <div class="h-6 border-l border-slate-200 mr-2"></div>
+          <button class="dropdownButton h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+            <span class="dropdownSpan">USD</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div class="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+            <ul class="dropdownOptions">
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+            </ul>
+          </div>
+        </div> 
+      </div>   
+    </div>
+
+    <!-- Swap Icon -->
+    <div class="flex items-center justify-center mt-6">
+      <button class="p-2 rounded-full border border-slate-300 bg-white hover:bg-slate-100 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-600">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- To Input -->
+    <div class="w-full max-w-xs min-w-[200px] -mt-2">
+      <label class="block mb-1 text-sm text-slate-800">
+          To
+      </label>
+      <div class="relative mt-2">
+        <input
+          type="text"
+          class="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          placeholder="1,000" 
+        />
+        <div class="absolute top-2 right-0 flex items-center pr-3">
+          <div class="h-6 border-l border-slate-200 mr-2"></div>
+          <button class="dropdownButton h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
+            <span class="dropdownSpan">EUR</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div class="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 hidden w-full bg-white border border-slate-200 rounded-md shadow-lg z-10">
+            <ul class="dropdownOptions">
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="USD">USD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="EUR">EUR</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="CAD">CAD</li>
+              <li class="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer" data-value="RON">RON</li>
+            </ul>
+          </div>
+        </div> 
+      </div>   
+    </div>
+  </div>
+
+  <!-- Last Updated Text -->
+  <div class="mt-8 text-slate-500 text-sm">
+    <p>Rates are updated every hour to provide the most accurate conversions.</p>
+    <p class="mt-1"><b>Last updated</b>: July 30, 2024, 3:00 PM</p>
+  </div>
+</div>
+
+<script>
+  // Function to handle dropdown toggle
+  document.querySelectorAll('.dropdownButton').forEach(button => {
+    button.addEventListener('click', function() {
+      const dropdownMenu = this.nextElementSibling;
+      dropdownMenu.classList.toggle('hidden');
+    });
+  });
+
+  // Function to handle dropdown item selection
+  document.querySelectorAll('.dropdownOptions').forEach(dropdown => {
+    dropdown.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+        const dataValue = event.target.getAttribute('data-value');
+        const dropdownSpan = this.closest('.relative').querySelector('.dropdownSpan');
+        dropdownSpan.textContent = dataValue;
+        this.closest('.dropdownMenu').classList.add('hidden');
+      }
+    });
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', function(event) {
+    document.querySelectorAll('.dropdownMenu').forEach(dropdownMenu => {
+      if (!dropdownMenu.closest('.relative').contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+```
+</CodePreview>
+

@@ -95,6 +95,8 @@ import * as HTMLChipExamples from "docs-content/html/chip";
 import * as HTMLDialogExamples from "docs-content/html/dialog";
 import * as HTMLIconButtonExamples from "docs-content/html/icon-button";
 import * as HTMLInputExamples from "docs-content/html/input";
+import * as HTMLInputNumberExamples from "docs-content/html/input-number";
+import * as HTMLInputPhoneExamples from "docs-content/html/input-phone";
 import * as HTMLFormExamples from "docs-content/html/form";
 import * as HTMLListExamples from "docs-content/html/list";
 import * as HTMLMenuExamples from "docs-content/html/menu";
@@ -378,6 +380,8 @@ const components = {
   HTMLDialogExamples,
   HTMLIconButtonExamples,
   HTMLInputExamples,
+  HTMLInputNumberExamples,
+  HTMLInputPhoneExamples,
   HTMLFormExamples,
   HTMLListExamples,
   HTMLMenuExamples,

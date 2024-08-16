@@ -1,0 +1,267 @@
+---
+title: Tailwind CSS Input - Material Tailwind
+description: Customise your web projects with our beautiful Input component for Tailwind CSS using Material Design guidelines.
+navigation:
+  [
+    "input-simple-phone",
+    "input-phone-validation",
+    "input-phone-with-icon",
+    "input-phone-country-code",
+    "input-phone-floating-label",
+  ]
+github: input-phone
+prev: input-number
+next: list
+---
+
+# Tailwind CSS Input Phone
+
+The input phone component is a text field specifically designed for entering a phone number. It is usually found in forms and mobile apps as a part of registration, verification, or communication processes.
+
+Check out below our Tailwind CSS input phone examples. They come in different styles, allowing you to easily adapt the component to your project needs.
+
+<br />
+
+## Input Simple Phone
+
+Use this basic phone number input field with a placeholder example and a note to include the country code.
+
+<CodePreview
+  id="input-simple-phone"
+  link="input#input-simple-phone"
+  component={<HTMLInputPhoneExamples.InputSimplePhone/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Contact Number
+  </label>
+  <input
+    id="contactNumber"
+    class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+    placeholder="e.g., +1 123-456-7890"
+    pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+    maxlength="16"
+  />
+
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    Include your country code for international numbers.
+  </p>    
+</div>
+
+<script>
+  // Add event listener to the input field
+  document.getElementById('contactNumber').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone with Validation Text
+
+Try our tailwind phone input example that displays validation messages below, either confirming the phone number format (green) or indicating an error (red).
+
+<CodePreview
+  id="input-phone-validation"
+  link="input#input-phone-validation"
+  component={<HTMLInputPhoneExamples.InputPhoneValidationText/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Contact Number
+  </label>
+  <input
+    id="contactNumber"
+    class="w-full h-10 bg-transparent placeholder:text-green-500 text-green-700 text-sm border border-green-400 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-green-500 hover:border-green-500 shadow-sm focus:shadow-md"
+    value="+1 123-456-7890"
+    maxlength="16"
+    title="Phone number format: +1 123-456-7890"
+    placeholder="e.g., +1 123-456-7890"
+  />
+
+  <p class="flex items-center mt-2 text-xs text-green-500">
+    Great! Your phone number is valid.
+  </p>    
+</div>
+
+<div class="w-full max-w-sm min-w-[200px] mt-5">
+  <label class="block mb-1 text-sm text-slate-800">
+    Contact Number
+  </label>
+  <input
+    id="contactNumber2"
+    class="w-full h-10 bg-transparent placeholder:text-red-500 text-red-700 text-sm border border-red-400 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-red-500 hover:border-red-500 shadow-sm focus:shadow-md"
+    placeholder="e.g., +1 123-456-7890"
+    value="+1 123-456-7890"
+    maxlength="16"
+    title="Phone number format: +1 123-456-7890"
+  />
+
+  <p class="flex items-center mt-2 text-xs text-red-500">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 text-red-500">
+      <path fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"></path>
+    </svg>
+    Please match the requested format. e.g., +1 123-456-7890
+  </p>
+</div>
+
+<script>
+  // Add event listener to the input field
+  document.getElementById('contactNumber').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+
+  // Add event listener to the input field
+  document.getElementById('contactNumber2').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone with Icon
+
+Use this phone input example with a phone icon to the left of the input, adding a visual cue for the type of input required.
+
+<CodePreview
+  id="input-phone-with-icon"
+  link="input#input-phone-with-icon"
+  component={<HTMLInputPhoneExamples.InputPhoneWithIcon/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Contact Number
+  </label>
+  <div class="relative">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" />
+      </svg>
+    </span>
+    <input
+      id="contactNumber"
+      class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="e.g., +1 123-456-7890"
+      pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
+      title="Phone number must be in the format: +1 123-456-7890"
+      maxlength="16"
+      required
+    />
+  </div>
+  <p class="mt-2 text-xs text-slate-500">
+    Include your country code for international numbers.
+  </p>
+</div>
+
+<script>
+  // Add event listener to the input field
+  document.getElementById('contactNumber').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone with Country Code
+
+Use this phone input example that allows users to select a country code from a dropdown, with the selected code appearing before the input.
+
+<CodePreview
+  id="input-phone-country-code"
+  link="input#input-phone-country-code"
+  component={<HTMLInputPhoneExamples.InputPhoneWithCountryCode/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <label class="block mb-1 text-sm text-slate-800">
+      Contact Number
+  </label>
+  <div class="relative">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+      </svg>
+    </span>
+    <input
+      id="contactNumber"
+      class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      placeholder="e.g., +1 123-456-7890"
+      pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
+      title="Phone number must be in the format: +1 123-456-7890"
+      maxlength="16"
+      required
+    />
+  </div>
+  <p class="mt-2 text-xs text-slate-500">
+    Include your country code for international numbers.
+  </p>
+</div>
+
+<script>
+  // Add event listener to the input field
+  document.getElementById('contactNumber').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+</script>
+```
+</CodePreview>
+
+--- 
+
+## Input Phone with Floating Label
+
+Check out this phone input where the label text moves up and becomes smaller as the user starts typing, ensuring the label is always visible.
+
+<CodePreview
+  id="input-phone-floating-label"
+  link="input#input-phone-floating-label"
+  component={<HTMLInputPhoneExamples.InputPhoneWithFloatingLabel/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+        <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" />
+      </svg>
+    </div>
+    <input
+      id="contactNumber"
+      class="peer w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+      pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
+      title="Phone number must be in the format: +1 123-456-7890"
+      maxlength="16"
+      required
+    />
+    <label for="contactNumber" class="absolute bg-white px-1 left-9 top-2.5 text-slate-400 text-sm transition-all transform origin-left peer-focus:-top-2 peer-focus:left-10 peer-focus:text-xs peer-focus:text-slate-400 peer-focus:scale-90">
+      e.g., +1 123-456-7890
+    </label>
+  </div>
+</div>
+
+<script>
+  // Add event listener to the input field
+  document.getElementById('contactNumber').addEventListener('input', function (e) {
+    // Replace any non-numeric characters except +, -, and space
+    e.target.value = e.target.value.replace(/[^+\d\s-]/g, '');
+  });
+</script>
+```
+</CodePreview>
+

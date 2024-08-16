@@ -5,11 +5,16 @@ description:  Add style to your tables with the versatile Tailwind CSS Table com
 navigation:
   [
     "table",
+    "table-with-hover",
+    "table-with-title-description",
     "table-with-striped-rows",
+    "table-footer-total",
+    "table-with-search",
+    "table-with-action-buttons",
     "transaction-table",
     "members-table",
     "sortable-table",
-    "more-examples",
+    "simple-sortable-table",
     "best-practices",
  ]
 github: table
@@ -26,7 +31,7 @@ See below Material Tailwind's examples of table components that help developers 
 
 <br />
 
-## Table Examples:
+### Table Examples:
 
 ## Default Table
 
@@ -179,6 +184,832 @@ Use our simple 4 columns table styled with Tailwind CSS to organize your data in
 </div>
 ```
 </CodePreview>
+
+---
+
+## Table With Hover State
+
+Try this table example to highlight rows when users hover over them. The hover state improves interactivity and readability, allowing users to easily follow and identify specific rows.
+
+<CodePreview
+  id="table-with-hover"
+  link="table#table-with-hover"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithHover/>}
+>
+```html
+ <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Name
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Job
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Employed
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500"></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            John Michael
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Alexa Liras
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            23/04/18
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Laurent Perrier
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Executive
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            19/09/17
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Michael Levi
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            Developer
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <p class="block text-sm text-slate-800">
+            24/12/08
+          </p>
+        </td>
+        <td class="p-4 border-b border-slate-200">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Richard Gran
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            Manager
+          </p>
+        </td>
+        <td class="p-4">
+          <p class="block text-sm text-slate-800">
+            04/10/21
+          </p>
+        </td>
+        <td class="p-4">
+          <a href="#" class="block text-sm font-semibold text-slate-800">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+```
+</CodePreview>
+
+---
+
+## Table with Title and Description
+
+This caption table example includes a title and a description above the table, providing context and additional information about the data presented. Ideal for detailed reports or sections where a brief explanation is beneficial.
+
+<CodePreview
+  id="table-with-title-description"
+  link="table#table-with-title-description"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithTitleDescription/>}
+>
+```html
+ <div class="w-full">
+  <h3 class="text-lg font-semibold ml-3 text-slate-800">Team Members and Roles</h3>
+  <p class="text-slate-500 mb-5 ml-3">Overview of the key persons involved in the next project and their geographical distribution.</p>
+ </div>
+ <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Role
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Email
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+                <p class="block text-sm font-normal leading-none text-slate-500">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+```
+</CodePreview>
+
+---
+
+## Table with Footer and Total
+
+This table example includes a footer section for summarizing information such as totals or additional notes. The footer improves data comprehension by providing a summary or additional context at the end of the table.
+
+<CodePreview
+  id="table-footer-total"
+  link="table#table-footer-total"
+  className="mt-4"
+  component={<HTMLTableExamples.TableFooterTotal/>}
+>
+```html
+<div class="text-left w-full">
+    <h3 class="text-lg font-semibold ml-3 text-slate-800">Home and Deco List</h3>
+    <p class="text-slate-500 mb-5 ml-3">Example of product list and total calculation for Home & Deco items.</p>
+</div>
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+    <table id="productTable" class="w-full text-left table-auto min-w-max">
+        <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Product Name
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Category
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Qty
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Price
+            </p>
+            </th>
+            <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+                Total
+            </p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Wooden Chair
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Furniture
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                2
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $85.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $170.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Table Lamp
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Lighting
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                1
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $45.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $45.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Wall Art
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Decor
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                3
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $30.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $90.00
+            </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Sofa
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                Furniture
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                1
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $300.00
+            </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+            <p class="block text-sm text-slate-800">
+                $300.00
+            </p>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2" class="p-4 text-left font-bold text-slate-800 border-t border-slate-300">
+            Total:
+            </td>
+            <td colspan="2" class="p-4 font-bold text-slate-800 border-t border-slate-300">
+            7
+            </td>
+            <td colspan="1" class="p-4 font-semibold text-slate-800 border-t border-slate-300">
+            $605.00
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+```
+</CodePreview>
+
+
+---
+
+## Table with Search
+
+Use this example of a table with a search functionality to allow users to quickly find specific information within the table. The search bar at the top enables users to type in keywords or phrases, filtering the table content in real-time to match the search query.
+
+<CodePreview
+  id="table-with-search"
+  link="table#table-with-search"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithSearch/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-semibold text-slate-800">Generated Invoice for this Month</h3>
+        <p class="text-slate-500">Overview of the invoices.</p>
+    </div>
+    <div class="ml-3">
+        <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+            <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for invoice..."
+            />
+            <button
+            class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+            type="button"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Invoice Number
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Customer
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Amount
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Issued
+          </p>
+        </th>
+        <th class="p-4 border-b border-slate-300 bg-slate-50">
+          <p class="block text-sm font-normal leading-none text-slate-500">
+            Due Date
+          </p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1001</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">John Doe</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">$1,200.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-01</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-15</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1002</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">Jane Smith</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">$850.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-05</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-20</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1003</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">Acme Corp</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">$2,500.00</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-07</p>
+        </td>
+        <td class="p-4 border-b border-slate-200 py-5">
+          <p class="block text-sm text-slate-800">2024-08-21</p>
+        </td>
+      </tr>
+      <tr class="hover:bg-slate-50">
+        <td class="p-4 py-5">
+          <p class="block font-semibold text-sm text-slate-800">INV-1004</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="block text-sm text-slate-800">Global Inc</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="block text-sm text-slate-800">$4,750.00</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="block text-sm text-slate-800">2024-08-10</p>
+        </td>
+        <td class="p-4 py-5">
+          <p class="block text-sm text-slate-800">2024-08-25</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+</CodePreview>
+
+---
+
+## Table with Action Buttons
+
+Use this example of a table with a search functionality and different buttons actions for each row. 
+
+<CodePreview
+  id="table-with-action-buttons"
+  link="table#table-with-action-buttons"
+  className="mt-4"
+  component={<HTMLTableExamples.TableWithActionButtons/>}
+>
+```html
+<div class="w-full flex justify-between items-center mb-3 mt-1 pl-3">
+    <div>
+        <h3 class="text-lg font-bold text-slate-800">Manage your Invoice</h3>
+        <p class="text-slate-500">Overview of the invoices.</p>
+    </div>
+    <div class="ml-3">
+      <div class="w-full max-w-sm min-w-[200px] relative">
+        <div class="relative">
+          <input
+            class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Search for invoice..."
+            />
+            <button
+              class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+              type="button"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">
+    <table class="w-full text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Invoice Number
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Customer
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Amount
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Issued
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+            <p class="block text-sm font-normal leading-none text-slate-500">
+              Due Date
+            </p>
+          </th>
+          <th class="p-4 border-b border-slate-300 bg-slate-50">
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1001</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">John Doe</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$1,200.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-01</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-15</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1002</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Jane Smith</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$850.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-05</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-20</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50 border-b border-slate-200">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1003</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Acme Corp</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$2,500.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-07</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-21</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+          <td class="p-4 py-5">
+            <p class="block font-semibold text-sm text-slate-800">INV-1004</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">Global Inc</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">$4,750.00</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-10</p>
+          </td>
+          <td class="p-4 py-5">
+            <p class="block text-sm text-slate-800">2024-08-25</p>
+          </td>
+          <td class="p-4 py-5">
+              <div class="block text-center">
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                          <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087ZM12 10.5a.75.75 0 0 1 .75.75v4.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06l1.72 1.72v-4.94a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                      </svg>
+                  </button>
+                  <button class="text-slate-600 hover:text-slate-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                          <path d="M7.5 3.375c0-1.036.84-1.875 1.875-1.875h.375a3.75 3.75 0 0 1 3.75 3.75v1.875C13.5 8.161 14.34 9 15.375 9h1.875A3.75 3.75 0 0 1 21 12.75v3.375C21 17.16 20.16 18 19.125 18h-9.75A1.875 1.875 0 0 1 7.5 16.125V3.375Z" />
+                          <path d="M15 5.25a5.23 5.23 0 0 0-1.279-3.434 9.768 9.768 0 0 1 6.963 6.963A5.23 5.23 0 0 0 17.25 7.5h-1.875A.375.375 0 0 1 15 7.125V5.25ZM4.875 6H6v10.125A3.375 3.375 0 0 0 9.375 19.5H16.5v1.125c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V7.875C3 6.839 3.84 6 4.875 6Z" />
+                      </svg>
+                  </button>
+              </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+```
+</CodePreview>
+
 
 ---
 
@@ -1693,6 +2524,172 @@ Check out more table examples from <a href="https://www.material-tailwind.com/bl
 
 
 ---
+
+## Simple Sortable Table
+
+Use this example of a sortable table to enable users to organize data by different columns. Each column header can be clicked to sort the data, improving data analysis and navigation.
+
+<CodePreview
+  id="simple-sortable-table"
+  link="table#simple-sortable-table"
+  className="mt-4"
+  component={<HTMLTableExamples.SimpleSortableTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll bg-white shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Name
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Role
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Email
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+            <th
+            class="p-4 transition-colors cursor-pointer border-b border-slate-300 bg-slate-50 hover:bg-slate-100">
+                <p
+                class="flex items-center justify-between gap-2 text-sm font-normal leading-none text-slate-800">
+                Location
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                </svg>
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-50">
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-200">
+                <p class="block text-sm text-slate-800">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+
 <br />
 
  <span id="best-practices"></span>

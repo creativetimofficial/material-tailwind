@@ -20,7 +20,7 @@ export function CodePreview({ id, component, link, children, className }) {
     <div
       id={id}
       className={`scroll-mt-64 overflow-hidden rounded-xl border border-blue-gray-50 ${
-        mode === "code" ? "bg-[#1e293b]" : "bg-[#f8fafc]"
+        mode === "code" ? "bg-[#1e293b]" : "bg-white"
       } ${className || ""}`}
     >
       <div
