@@ -12,3 +12,4 @@ export * from "./select-categories-dialog";
 export * from "./delivery-method-dialog";
 export * from "./order-details-dialog";
 export * from "./upload-progress-dialog";
+export * from "./dialog-with-billing-form";

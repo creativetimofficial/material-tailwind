@@ -1,30 +1,31 @@
 ---
-title: Tailwind CSS Menu for React - Material Tailwind
-description: Customise your web projects with our complex menu component for Tailwind CSS and React using Material Design guidelines.
+title: Tailwind CSS Dropdown Menu for React - Material Tailwind
+description: Customise your web projects with our complex dropdown menu component for Tailwind CSS and React using Material Design guidelines.
 navigation:
   [
-    "menu",
-    "nested-menu",
-    "menu-placement",
-    "menu-custom-animation",
-    "menu-custom-list",
-    "menu-divider",
-    "menu-with-checkboxes",
-    "menu-with-search-input",
-    "menu-with-scrolling-content",
-    "notifications-menu",
-    "profile-menu",
-    "menu-props",
-    "menu-handler-props",
-    "menu-list-props",
-    "menu-item-props",
+    "dropdown-menu",
+    "nested-dropdown-menu",
+    "dropdown-menu-placement",
+    "dropdown-menu-custom-animation",
+    "dropdown-menu-custom-list",
+    "dropdown-menu-divider",
+    "dropdown-menu-with-checkboxes",
+    "dropdown-menu-with-search-input",
+    "dropdown-menu-with-scrolling-content",
+    "notifications-dropdown-menu",
+    "profile-dropdown-menu",
+    "dropdown-menu-props",
+    "dropdown-menu-handler-props",
+    "dropdown-menu-list-props",
+    "dropdown-menu-item-props",
     "types-placement",
     "types-offset",
     "types-dismiss",
     "types-animate",
     "menu-theme",
     "menu-theme-object-type",
-    "menu-theme-customization"
+    "menu-theme-customization",
+    "more-examples"
   ]
 github: menu
 prev: input
@@ -32,14 +33,14 @@ next: navbar
 ---
 
 <DocsTitle href="menu">
-# Tailwind CSS Menu - React
+# Tailwind CSS Dropdown Menu - React
 </DocsTitle>
 
-Use our responsive Tailwind CSS vertical <Code>Menu</Code>, that can take the user anywhere on your web app!
+Use our responsive Tailwind CSS vertical dropdown, that can take the user anywhere on your web app!
 
-A <Code>Menu</Code> displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The <Code>Menu</Code> also ensures a consistent and predictable user experience by adhering to an established set of principles
+A dropdown menu displays a list of choices on temporary surfaces. It appears when users interact with a button, action, or other control. The dropdown also ensures a consistent and predictable user experience by adhering to an established set of principles.
 
-See below our <Code>Menu</Code> example that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
+See below our dropdown menu examples that you can use in your Tailwind CSS and React projects. The examples come in different colors and styles, so you can adapt them easily to your needs.
 
 <br />
 
@@ -73,11 +74,11 @@ export function MenuDefault() {
 ---
 
 
-<DocsTitle href="nested-menu">
-## Nested Menu
+<DocsTitle href="nested-dropdown-menu">
+## Nested Dropdown Menu
 </DocsTitle>
 
-You can nest one <Code>Menu</Code> inside another one very easily.
+You can nest one dropdown <Code>Menu</Code> inside another one very easily.
 
 <CodePreview link="menu#nested-menu" component={<MenuExamples.NestedMenu />}>
 ```jsx
@@ -136,11 +137,11 @@ export function NestedMenu() {
 
 ---
 
-<DocsTitle href="menu-placement">
-## Menu Placement
+<DocsTitle href="dropdown-menu-placement">
+## Dropdown Menu Placement
 </DocsTitle>
 
-You can change the position of the <Code>Menu</Code> component using the <Code>placement</Code> prop.
+You can change the position of the dropdown menu component using the <Code>placement</Code> prop.
 
 <CodePreview component={<MenuExamples.MenuPlacement />}>
 ```jsx
@@ -291,11 +292,11 @@ export function MenuPlacement() {
 
 ---
 
-<DocsTitle href="menu-custom-animation">
-## Menu Custom Animation
+<DocsTitle href="dropdown-menu-custom-animation">
+## Dropdown Menu Custom Animation
 </DocsTitle>
 
-You can modify the open/close state animation for <Code>Menu</Code> component using the <Code>animate</Code> prop.
+You can modify the dropdown menu component's open/close state animation using the <Code>animate</Code> prop.
 
 <CodePreview component={<MenuExamples.MenuCustomAnimation />}>
 ```jsx
@@ -331,11 +332,11 @@ export function MenuCustomAnimation() {
 
 ---
 
-<DocsTitle href="menu-custom-list">
-## Menu Custom List
+<DocsTitle href="dropdown-menu-custom-list">
+## Dropdown Menu Custom List
 </DocsTitle>
 
-Use this menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
+Use this dropdown menu example if you want to allow your users to navigate to another page in a visually appealing way. This component includes an image, clickable headline, and description.
 
 <CodePreview component={<MenuExamples.MenuCustomList />}>
 ```jsx
@@ -427,11 +428,11 @@ export function MenuCustomList() {
 
 ---
 
-<DocsTitle href="menu-divider">
-## Menu Divider
+<DocsTitle href="dropdown-menu-divider">
+## Dropdown Menu Divider
 </DocsTitle>
 
-This example can be used if you want to group the menu items, improving the readability.
+This dropdown example can be used if you want to group the menu items, improving the readability.
 
 <CodePreview component={<MenuExamples.MenuDivider />}>
 ```jsx
@@ -464,11 +465,11 @@ export function MenuDivider() {
 
 ---
 
-<DocsTitle href="menu-with-checkboxes">
-## Menu with Checkboxes
+<DocsTitle href="dropdown-menu-with-checkboxes">
+## Dropdown Menu with Checkboxes
 </DocsTitle>
 
-Use this simple example of menu with checkboxes if you want to allow users to select multiple options from a list.
+Use this simple example of a dropdown with checkboxes if you want to allow users to select multiple options from a list.
 
 <CodePreview component={<MenuExamples.MenuWithCheckbox />}>
 ```jsx
@@ -543,11 +544,11 @@ export function MenuWithCheckbox() {
 
 ---
 
-<DocsTitle href="menu-with-search-input">
-## Menu with Search Input
+<DocsTitle href="dropdown-menu-with-search-input">
+## Dropdown Menu with Search Input
 </DocsTitle>
 
-This example is perfect if you have more options. Use it to let the users find easier what they are looking for, without scrolling too much.
+This example is perfect if you have more options. Use it to let the users find what they are looking for easier, without scrolling too much.
 
 <CodePreview component={<MenuExamples.MenuWithSearchInput />}>
 ```jsx
@@ -589,11 +590,11 @@ export function MenuWithSearchInput() {
 
 ---
 
-<DocsTitle href="menu-with-scrolling-content">
-## Menu with Scrolling Content
+<DocsTitle href="dropdown-menu-with-scrolling-content">
+## Dropdown Menu with Scrolling Content
 </DocsTitle>
 
-You can use this example if you have more options in the list, so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
+You can use this dropdown example if you have more options in the list so that the users can see all of them. If you have more that 10 options, we recommend you use the search input from the previous example.
 
 <CodePreview component={<MenuExamples.MenuWithScrollingContent />}>
 ```jsx
@@ -641,8 +642,8 @@ export function MenuWithScrollingContent() {
 
 ---
 
-<DocsTitle href="notifications-menu">
-## Notifications Menu
+<DocsTitle href="notifications-dropdown-menu">
+## Notifications Dropdown Menu
 </DocsTitle>
 
 Add this menu if you want to group all the notifications in one place, avoiding a cluttered screen.
@@ -753,8 +754,8 @@ export function NotificationsMenu() {
 
 ---
 
-<DocsTitle href="profile-menu">
-## Profile Menu
+<DocsTitle href="profile-dropdown-menu">
+## Profile Dropdown Menu
 </DocsTitle>
 
 Are you creating a web app or a mobile app? This component is a must!
@@ -890,12 +891,12 @@ export function ProfileMenu() {
 
 ---
 
-<DocsTitle href="menu-props">
-## Menu Props
+<DocsTitle href="dropdown-menu-props">
+## Dropdown Menu Props
 </DocsTitle>
 
-The following props are available for menu component. These are the custom props
-that we've added for the menu component and you can use all the other native props
+The following props are available for the dropdown component. These are the custom props
+that we've added for the dropdown menu component and you can use all the other native props
 as well.
 
 | Attribute    | Type                          | Description                                    | Default                                |
@@ -921,11 +922,11 @@ import type { MenuProps } from "@material-tailwind/react";
 
 ---
 
-<DocsTitle href="menu-handler-props">
-## Menu Handler Props
+<DocsTitle href="dropdown-menu-handler-props">
+## Dropdown Menu Handler Props
 </DocsTitle>
 
-The following props are available for menu handler component. These are the custom
+The following props are available for the dropdown handler component. These are the custom
 props that we've added for the menu handler component and you can use all the other
 native props as well.
 
@@ -944,11 +945,11 @@ import type { MenuHandlerProps } from "@material-tailwind/react";
 
 ---
 
-<DocsTitle href="menu-list-props">
-## Menu List Props
+<DocsTitle href="dropdown-menu-list-props">
+## Dropdown Menu List Props
 </DocsTitle>
 
-The following props are available for menu list component. These are the custom props
+The following props are available for the dropdown list component. These are the custom props
 that we've added for the menu list component and you can use all the other native
 props as well.
 
@@ -968,12 +969,12 @@ import type { MenuListProps } from "@material-tailwind/react";
 
 ---
 
-<DocsTitle href="menu-item-props">
-## Menu Item Props
+<DocsTitle href="dropdown-menu-item-props">
+## Dropdown Menu Item Props
 </DocsTitle>
 
-The following props are available for menu item component. These are the custom props
-that we've added for the menu item component and you can use all the other native
+The following props are available for the dropdown item component. These are the custom props
+that we've added for the dropdown menu item component and you can use all the other native
 props as well.
 
 | Attribute   | Type                 | Description                        | Default                                |
@@ -1069,23 +1070,23 @@ type animate = {
 
 ---
 
-<DocsTitle href="menu-theme">
-## Menu Theme
+<DocsTitle href="dropdown-menu-theme">
+## Dropdown Menu Theme
 </DocsTitle>
 
-Learn how to customize the theme and styles for menu components, the theme object for menu components has three main objects:
+Learn how to customize the theme and styles for dropdown menu components, the theme object for dropdown components has three main objects:
 
 **A.** The <Code>defaultProps</Code> object for setting up the default value for props of menu component.<br />
 **B.** The <Code>valid</Code> object for customizing the valid values for menu component props.<br />
 **C.** The <Code>styles</Code> object for customizing the theme and styles of menu component.<br />
 
-You can customize the theme and styles of menu components by adding Tailwind CSS classes as key paired values for objects.
+You can customize the theme and styles of dropdown menu components by adding Tailwind CSS classes as key paired values for objects.
 
 <br />
 <br />
 
-<DocsTitle href="menu-theme-object-type">
-## Menu Theme Object Type
+<DocsTitle href="dropdown-menu-theme-object-type">
+## Dropdown Menu Theme Object Type
 </DocsTitle>
 
 ```ts
@@ -1142,8 +1143,8 @@ import type { MenuStylesType } from "@material-tailwind/react";
 
 ---
 
-<DocsTitle href="menu-theme-customization">
-## Menu Theme Customization
+<DocsTitle href="dropdown-menu-theme-customization">
+## Dropdown Menu Theme Customization
 </DocsTitle>
 
 ```tsx
@@ -1209,3 +1210,10 @@ const theme = {
   },
 };
 ```
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more menu examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.

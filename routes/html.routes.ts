@@ -304,23 +304,23 @@ export const routes = [
     pages: [
       {
         name: "Algolia Search",
-        route: "/plugins/algolia-search",
+        route: "plugins/algolia-search",
       },
       {
         name: "Charts",
-        route: "/plugins/charts",
+        route: "plugins/charts",
       },
       {
         name: "Clipboard",
-        route: "/plugins/clipboard",
+        route: "plugins/clipboard",
       },
       {
         name: "Date Picker",
-        route: "/plugins/date-picker",
+        route: "plugins/date-picker",
       },
       {
         name: "WSSIWYG Editor",
-        route: "/plugins/text-editor",
+        route: "plugins/text-editor",
       },
     ],
   },

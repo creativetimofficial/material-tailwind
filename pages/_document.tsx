@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Html, Head, Main, NextScript } from "next/document";
 import { FB_PIXEL_ID } from "../utils/fpixel";
 

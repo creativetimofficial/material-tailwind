@@ -12,11 +12,11 @@ navigation:
     "long-dialog",
     "message-dialog",
     "notification-dialog",
-    "add-product-dialog",
-    "select-categories-dialog",
-    "delivery-method-dialog",
-    "order-details-dialog",
-    "upload-progress-dialog",
+    "add-product-dialog-crud",
+    "dialog-with-checkbox",
+    "dialog-with-select",
+    "dialog-with-timeline-and-details",
+    "dialog-with-progress-bar",
     "dialog-props",
     "dialog-header-props",
     "dialog-body-props",
@@ -33,6 +33,7 @@ navigation:
     "dialog-body-theme-customization",
     "dialog-footer-theme-object-type",
     "dialog-footer-theme-customization",
+    "more-examples",
   ]
 github: dialog
 prev: chip
@@ -43,9 +44,9 @@ next: icon-button
 # Tailwind CSS Dialog - React
 </DocsTitle>
 
-Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that require decisions, or involves multiple tasks.
+Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that requires decisions, or involves multiple tasks.
 
-A <Code>Dialog</Code> is a type of modal window with critical information which disable all app functionality when they appear and remains on screen until confirmed/dismissed.
+A <Code>Dialog</Code> is a type of modal window with critical information that disables all app functionality when they appear and remains on screen until confirmed/dismissed.
 
 See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS and React project.
 
@@ -621,6 +622,8 @@ export function Web3Dialog() {
 ## Long Dialog
 </DocsTitle>
 
+Use this example of a long dialog to present extensive information or content that requires careful reading and consideration. This dialog is designed to handle lengthy text, ensuring it remains readable and accessible.
+
 <CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
 ```jsx
 import React from "react";
@@ -700,6 +703,10 @@ export function LongDialog() {
 ## Message Dialog
 </DocsTitle>
 
+Use this example of a message dialog to facilitate direct communication between users. The dialog includes fields for entering a username and the message content, providing a straightforward interface for sending messages.
+
+This dialog example is ideal for enabling user-to-user communication within an application, ensuring a simple and effective way to send messages.
+
 <CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
 ```jsx
 import React from "react";
@@ -776,6 +783,8 @@ export function MessageDialog() {
 ## Notification Dialog
 </DocsTitle>
 
+Use this example of a notification dialog to draw users' attention to important information or actions required. The dialog includes a prominent title, a message area for detailed information, and action buttons for user response. 
+
 <CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
 import React from "react";
@@ -840,9 +849,11 @@ export function NotificationDialog() {
 
 ---
 
-<DocsTitle href="add-product-dialog">
-## Add Product Dialog
+<DocsTitle href="add-product-dialog-crud">
+## Add Product Dialog CRUD
 </DocsTitle>
+
+This Tailwind CSS dialog allows users to manage items by providing input fields for the name, category, weight, size, and an optional description. The form is straightforward and easy to use, with an "Add Product" button to submit the information.
 
 <CodePreview className="mt-4" component={<DialogExamples.AddProductDialog />}>
 ```jsx
@@ -1010,9 +1021,11 @@ export function AddProductDialog() {
 
 ---
 
-<DocsTitle href="select-categories-dialog">
-## Select Categories Dialog
+<DocsTitle href="dialog-with-checkbox">
+## Dialog with Checkbox
 </DocsTitle>
+
+Try this checkbox dialog to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
 
 <CodePreview className="mt-4" component={<DialogExamples.SelectCategoriesDialog />}>
 ```jsx
@@ -1130,9 +1143,11 @@ export function SelectCategoriesDialog() {
 
 ---
 
-<DocsTitle href="delivery-method-dialog">
-## Delivery Method Dialog
+<DocsTitle href="dialog-with-select">
+## Dialog with Select
 </DocsTitle>
+
+This dialog example provides options for users to select their preferred delivery method. The selected method is highlighted for clarity, and users can confirm their choice by clicking the call-to-action button.
 
 <CodePreview className="mt-4" component={<DialogExamples.DeliveryMethodDialog />}>
 ```jsx
@@ -1266,9 +1281,11 @@ export function DeliveryMethodDialog() {
  
 ---
 
-<DocsTitle href="order-details-dialog">
-## Order Details Dialog
+<DocsTitle href="dialog-with-timeline-and-details">
+## Dialog with Timeline and Details
 </DocsTitle>
+
+This modal displays detailed order information in a timeline format. Use this component example to let users easily track the status of their order and click the CTA button "More Details" for additional information.
 
 <CodePreview className="mt-4" component={<DialogExamples.OrderDetailsDialog />}>
 ```jsx
@@ -1388,9 +1405,11 @@ export function OrderDetailsDialog() {
  
  ---
 
- <DocsTitle href="upload-progress-dialog">
-## Upload Progress Dialog
+ <DocsTitle href="dialog-with-progress-bar">
+## Dialog with Progress Bar
 </DocsTitle>
+
+This progress bar dialog provides real-time feedback on the upload status of a file. Users can see the file name, file size, and a progress bar indicating the upload percentage. This tailwind dialog also includes options to cancel the upload if needed.
 
 <CodePreview className="mt-4" component={<DialogExamples.UploadProgressDialog />}>
 ```jsx
@@ -1495,12 +1514,178 @@ export function UploadProgressDialog() {
 
 ---
 
+<DocsTitle href="dialog-with-billing-form">
+## Dialog With Billing Form
+</DocsTitle>
+
+Try this dialog designed for linking a payment card, including fields for cardholder name, card number, expiration date, and CVV. It concludes with a call-to-action "Submit" button.
+
+
+<CodePreview className="mt-4" component={<DialogExamples.DialogWithBillingForm />}>
+```jsx
+import React from "react";
+import {
+  Input,
+  Button,
+  Dialog,
+  IconButton,
+  Typography,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
+export function DialogWithBillingForm() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
+  return (
+    <>
+      <Button onClick={handleOpen} variant="gradient">
+        Dialog With Billing Form
+      </Button>
+      <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
+        <DialogHeader className="relative m-0 block">
+          <Typography variant="h4" color="blue-gray">
+            Link Payment Card
+          </Typography>
+          <Typography className="mt-1 font-normal text-gray-600">
+            Complete the form below with your card details to link your card.
+          </Typography>
+          <IconButton
+            size="sm"
+            variant="text"
+            className="!absolute right-3.5 top-3.5"
+            onClick={handleOpen}
+          >
+            <XMarkIcon className="h-4 w-4 stroke-2" />
+          </IconButton>
+        </DialogHeader>
+        <DialogBody className="space-y-4 pb-6">
+          <Button
+            fullWidth
+            variant="outlined"
+            className="h-12 border-blue-500 focus:ring-blue-100/50"
+          >
+            <img
+              src="/icons/Paypal icon.svg"
+              className="mx-auto grid h-12 w-16 -translate-y-7 place-items-center"
+              alt="paypal"
+            />
+          </Button>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Cardholder Name
+            </Typography>
+            <Input
+              color="gray"
+              size="lg"
+              placeholder="e.g., John Doe"
+              name="name"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
+              containerProps={{
+                className: "!min-w-full",
+              }}
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Card Number
+            </Typography>
+            <Input
+              color="gray"
+              size="lg"
+              placeholder="1234 5678 9012 3456"
+              name="number"
+              className="placeholder:opacity-100 focus:!border-t-gray-900"
+              containerProps={{
+                className: "!min-w-full",
+              }}
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                Expiration Date
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="MM/YY"
+                name="date"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+            <div className="w-full">
+              <Typography
+                variant="small"
+                color="blue-gray"
+                className="mb-2 text-left font-medium"
+              >
+                CVV
+              </Typography>
+              <Input
+                color="gray"
+                size="lg"
+                placeholder="123"
+                name="CVV"
+                className="placeholder:opacity-100 focus:!border-t-gray-900"
+                containerProps={{
+                  className: "!min-w-full",
+                }}
+                labelProps={{
+                  className: "hidden",
+                }}
+              />
+            </div>
+          </div>
+        </DialogBody>
+        <DialogFooter>
+          <Button className="ml-auto" onClick={handleOpen}>
+            submit
+          </Button>
+        </DialogFooter>
+      </Dialog>
+    </>
+  );
+}
+```
+</CodePreview>
+
+---
+
 
 <DocsTitle href="dialog-props">
 ## Dialog Props
 </DocsTitle>
 
-The following props are available for dialog component. These are the custom props
+The following props are available for the dialog component. These are the custom props
 that we've added for the dialog component and you can use all the other
 native props as well.
 
@@ -1529,7 +1714,7 @@ import type { DialogProps } from "@material-tailwind/react";
 ## Dialog Header Props
 </DocsTitle>
 
-The following props are available for dialog header component. These are the custom
+The following props are available for the dialog header component. These are the custom
 props that we've added for the dialog header component and you can use
 all the other native props as well.
 
@@ -1553,7 +1738,7 @@ import type { DialogHeaderProps } from "@material-tailwind/react";
 ## Dialog Body Props
 </DocsTitle>
 
-The following props are available for dialog body component. These are the custom
+The following props are available for dialog body components. These are the custom
 props that we've added for the dialog body component and you can use all
 the other native props as well.
 
@@ -1984,3 +2169,14 @@ const theme = {
   },
 };
 ```
+
+---
+
+<DocsTitle href="more-examples">
+## Explore More Tailwind CSS Examples
+</DocsTitle>
+
+Check out more dialog component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+
+• <a href="https://www.material-tailwind.com/blocks/modals" target="_blank">Modals</a><br />
+• <a href="https://www.material-tailwind.com/blocks/popup-sections" target="_blank">Popup Blocks</a><br />
