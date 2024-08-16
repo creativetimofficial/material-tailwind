@@ -4,18 +4,18 @@ import * as React from "react";
 
 // @components
 import { ThemeProvider } from "next-themes";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+// import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
       {children}
-      <ProgressBar
+      {/* <ProgressBar
         height="3px"
         color="#6028ff"
         options={{ showSpinner: false }}
         shallowRouting
-      />
+      /> */}
     </ThemeProvider>
   );
 }
