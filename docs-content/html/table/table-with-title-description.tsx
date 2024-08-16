@@ -2,7 +2,7 @@ export function TableWithTitleDescription() {
   return (
     <>
     <div className="w-full">
-      <h3 className="text-lg font-bold ml-3 text-slate-800">Team Members and Roles</h3>
+      <h3 className="text-lg font-semibold ml-3 text-slate-800">Team Members and Roles</h3>
       <p className="text-slate-500 mb-5 ml-3">Overview of the key persons involved in the next project and their geographical distribution.</p>
     </div>
     <div className="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md rounded-lg bg-clip-border">

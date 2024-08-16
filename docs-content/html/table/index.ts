@@ -2,6 +2,8 @@ export * from "./default-table";
 export * from "./table-with-hover";
 export * from "./table-with-title-description";
 export * from "./table-footer-total";
+export * from "./table-with-search";
+export * from "./table-with-action-buttons";
 export * from "./table-with-striped-rows";
 export * from "./table-with-striped-columns";
 export * from "./transactions-table";
