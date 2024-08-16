@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./sidebar-demo";
 export * from "./multi-level-sidebar";
 export * from "./sidebar-with-content-separator";

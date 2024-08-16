@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./input-demo";
 export * from "./input-sizes";
 export * from "./input-colors";

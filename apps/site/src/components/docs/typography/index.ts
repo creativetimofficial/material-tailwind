@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./headings";
 export * from "./paragraph";
 export * from "./small-text";

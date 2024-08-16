@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./progress-demo";
 export * from "./progress-sizes";
 export * from "./progress-colors";

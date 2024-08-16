@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./badge-demo";
 export * from "./badge-colors";
 export * from "./badge-placement";

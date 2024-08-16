@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./astro";
 export * from "./cra";
 export * from "./gatsby";

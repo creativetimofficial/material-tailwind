@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./radio-demo";
 export * from "./radio-colors";
 export * from "./custom-radio";

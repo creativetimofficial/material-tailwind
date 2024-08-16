@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./popover-demo";
 export * from "./subscription-popover";
 export * from "./contact-popover";

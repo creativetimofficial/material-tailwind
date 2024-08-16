@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./switch-demo";
 export * from "./switch-colors";
 export * from "./custom-switch";

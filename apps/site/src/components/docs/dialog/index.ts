@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./dialog-demo";
 export * from "./dialog-sizes";
 export * from "./dialog-with-form";

@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./card-demo";
 export * from "./simple-card";
 export * from "./card-with-link";

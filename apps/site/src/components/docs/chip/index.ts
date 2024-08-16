@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./chip-demo";
 export * from "./chip-variants";
 export * from "./chip-sizes";

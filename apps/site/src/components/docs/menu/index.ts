@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./menu-demo";
 export * from "./nested-menu";
 export * from "./nav-menu";

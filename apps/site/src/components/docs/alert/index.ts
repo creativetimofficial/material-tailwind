@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./alert-demo";
 export * from "./alert-variants";
 export * from "./alert-colors";

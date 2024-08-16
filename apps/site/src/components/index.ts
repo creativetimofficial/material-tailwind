@@ -1,3 +1,5 @@
+"use client";
+
 // layout
 export * from "./layout/toc";
 export * from "./layout/docs";

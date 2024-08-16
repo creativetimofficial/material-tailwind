@@ -76,7 +76,7 @@ function newPerson(): Person {
   };
 }
 
-export function makeData(...lens: number[]) {
+function makeData(...lens: number[]) {
   const makeDataLevel = (depth = 0): Person[] => {
     const len = lens[depth]!;
 

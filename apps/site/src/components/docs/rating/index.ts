@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./rating-demo";
 export * from "./rating-colors";
 export * from "./readonly-rating";

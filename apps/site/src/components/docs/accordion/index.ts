@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./accordion-demo";
 export * from "./accordion-all-open";
 export * from "./controlled-accordion";

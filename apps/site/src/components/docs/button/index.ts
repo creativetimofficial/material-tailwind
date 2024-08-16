@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./button-demo";
 export * from "./button-sizes";
 export * from "./button-colors";

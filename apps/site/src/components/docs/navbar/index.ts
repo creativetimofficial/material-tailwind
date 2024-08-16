@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./navbar-demo";
 export * from "./sticky-navbar";
 export * from "./complex-navbar";

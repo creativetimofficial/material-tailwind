@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./textarea-demo";
 export * from "./textarea-sizes";
 export * from "./textarea-colors";

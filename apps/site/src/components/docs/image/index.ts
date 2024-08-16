@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./image-demo";
 export * from "./image-with-rounded-corners";
 export * from "./circular-image";

@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./checkbox-demo";
 export * from "./checkbox-colors";
 export * from "./custom-checkbox";

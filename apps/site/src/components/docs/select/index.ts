@@ -1,3 +1,5 @@
+"use client";
+
 export * from "./select-demo";
 export * from "./select-sizes";
 export * from "./select-colors";
