@@ -4,23 +4,23 @@ export function TableWithHover() {
       <table className="w-full text-left table-auto min-w-max">
         <thead>
           <tr>
-            <th className="p-4 border-b border-slate-100 bg-slate-50">
-              <p className="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            <th className="p-4 border-b border-slate-300 bg-slate-50">
+              <p className="block text-sm font-normal leading-none text-slate-500">
                 Name
               </p>
             </th>
-            <th className="p-4 border-b border-slate-100 bg-slate-50">
-              <p className="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            <th className="p-4 border-b border-slate-300 bg-slate-50">
+              <p className="block text-sm font-normal leading-none text-slate-500">
                 Job
               </p>
             </th>
-            <th className="p-4 border-b border-slate-100 bg-slate-50">
-              <p className="block text-sm font-normal leading-none text-slate-800 opacity-70">
+            <th className="p-4 border-b border-slate-300 bg-slate-50">
+              <p className="block text-sm font-normal leading-none text-slate-500">
                 Employed
               </p>
             </th>
-            <th className="p-4 border-b border-slate-100 bg-slate-50">
-              <p className="block text-sm font-normal leading-none text-slate-800 opacity-70"></p>
+            <th className="p-4 border-b border-slate-300 bg-slate-50">
+              <p className="block text-sm font-normal leading-none text-slate-500"></p>
             </th>
           </tr>
         </thead>
