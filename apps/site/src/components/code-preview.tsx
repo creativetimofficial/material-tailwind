@@ -4,7 +4,7 @@
 import * as React from "react";
 import { Check, Copy } from "iconoir-react";
 import { Fira_Code } from "next/font/google";
-import { IconButton, Button } from "@material-tailwind/react";
+import { IconButton, Button, Tooltip } from "@material-tailwind/react";
 
 // @hooks
 import { useTheme } from "next-themes";
@@ -82,17 +82,24 @@ export function CodePreview({ children, className }: CodePreview) {
   return (
     <div className={containerStyles} data-theme={resolvedTheme}>
       <div className={codeBlockStyles}>
-        <IconButton
-          size="sm"
-          variant="ghost"
-          color="secondary"
-          ripple={false}
-          onClick={copyCode}
-          onMouseLeave={resetCopy}
-          className="absolute right-1 top-1 z-10"
-        >
-          {isCopied ? <Check /> : <Copy />}
-        </IconButton>
+        <Tooltip>
+          <Tooltip.Trigger as="span" className="absolute right-1 top-1 z-10">
+            <IconButton
+              size="sm"
+              variant="ghost"
+              color="secondary"
+              ripple={false}
+              onClick={copyCode}
+              onMouseLeave={resetCopy}
+            >
+              {isCopied ? <Check /> : <Copy />}
+            </IconButton>
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            {isCopied ? "Copied" : "Copy"}
+            <Tooltip.Arrow />
+          </Tooltip.Content>
+        </Tooltip>
         <div
           ref={codeRef}
           style={{
