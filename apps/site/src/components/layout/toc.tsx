@@ -64,7 +64,7 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
           ),
         )}
       >
-        {children}
+        {(children as any)?.replaceAll("#", "")}
       </Link>
     </li>
   );

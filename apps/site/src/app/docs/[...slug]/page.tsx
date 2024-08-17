@@ -194,27 +194,55 @@ export default async function Docs({ params: { slug } }) {
 
           // default-components
           pre: Code,
-          Link: (props) => <Link {...props} className="text-primary" />,
-          h1: (props) => (
+          Link: (props: any) => <Link {...props} className="text-primary" />,
+          h1: (props: any) => (
             <MTTypography as="h1" type="h4" className="mb-4" {...props} />
           ),
-          h2: (props) => (
+          h2: (props: any) => (
             <MTTypography
               as="h2"
               type="h5"
-              className="mb-2 scroll-mt-40"
+              className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors hover:text-primary"
               {...props}
-            />
+            >
+              <Link
+                href={`#${props.children[1]
+                  .toLowerCase()
+                  .replaceAll(" ", "-")}`}
+              >
+                <span
+                  aria-hidden
+                  className="absolute -left-5 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
+                >
+                  #
+                </span>
+                {props.children}
+              </Link>
+            </MTTypography>
           ),
-          h3: (props) => (
+          h3: (props: any) => (
             <MTTypography
               as="h3"
               type="h6"
-              className="mb-1 mt-8 scroll-mt-40"
+              className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-primary"
               {...props}
-            />
+            >
+              <Link
+                href={`#${props.children[1]
+                  .toLowerCase()
+                  .replaceAll(" ", "-")}`}
+              >
+                <span
+                  aria-hidden
+                  className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100"
+                >
+                  #
+                </span>
+                {props.children}
+              </Link>
+            </MTTypography>
           ),
-          h4: (props) => (
+          h4: (props: any) => (
             <MTTypography
               as="h4"
               type="lead"
@@ -222,21 +250,21 @@ export default async function Docs({ params: { slug } }) {
               {...props}
             />
           ),
-          p: (props) => (
+          p: (props: any) => (
             <MTTypography className="mb-2 text-foreground" {...props} />
           ),
           hr: () => <hr className="my-8 border-transparent" />,
-          code: (props) => (
+          code: (props: any) => (
             <code
               className="inline-block rounded border border-surface bg-surface-light px-1 py-0.5 font-mono text-sm leading-none text-foreground dark:bg-surface-dark"
               {...props}
             />
           ),
-          a: (props) => <a {...props} className="text-primary" />,
-          ul: (props) => (
+          a: (props: any) => <a {...props} className="text-primary" />,
+          ul: (props: any) => (
             <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
           ),
-          li: (props) => (
+          li: (props: any) => (
             <li
               className="font-sans text-base font-normal text-foreground antialiased"
               {...props}
