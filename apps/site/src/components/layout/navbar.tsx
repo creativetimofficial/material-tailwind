@@ -37,7 +37,6 @@ import {
   Drawer,
   Card,
   Breadcrumb,
-  // @ts-ignore
 } from "@material-tailwind/react";
 import { getRoutes } from "@components";
 
@@ -57,7 +56,7 @@ function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
       {...rest}
       ref={ref}
       className={twMerge(
-        "group grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
+        "group grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
         rest?.className,
       )}
     >
@@ -90,7 +89,7 @@ function NavItem({
   return (
     <span
       className={twMerge(
-        "group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-1.5 pl-2 pr-2.5 text-sm text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
+        "group flex cursor-pointer select-none items-center gap-1.5 overflow-hidden rounded-md py-2 pl-2 pr-2.5 text-sm text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface",
         className,
       )}
     >
@@ -113,11 +112,26 @@ export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const { theme, setTheme }: any = useTheme();
+  const [stars, setStars] = React.useState(0);
+
+  React.useEffect(() => {
+    async function runEffect() {
+      const request = await fetch(
+        "http://api.github.com/repos/creativetimofficial/material-tailwind",
+      );
+
+      const response = await request.json();
+
+      setStars(response.stargazers_count);
+    }
+
+    runEffect();
+  }, []);
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background px-4 pb-0 pt-4 lg:pb-4">
       <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0">
           <Menu placement="bottom">
             <Menu.Trigger
               as={NavIcon}
@@ -155,7 +169,7 @@ export function Navbar() {
           >
             <NavIcon icon={Discord} />
           </Link>
-          <div className="group relative hidden h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
+          <div className="group relative hidden h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
             <Search className="h-5 w-5 stroke-[1.5]" />
             <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
               <DocSearch
@@ -169,7 +183,7 @@ export function Navbar() {
             <Brand />
           </Link>
           <Select value="v3.0.0">
-            <Select.Trigger className="gap-1.5 rounded-full border-none bg-secondary py-1.5 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0" />
+            <Select.Trigger className="ml-2 gap-1.5 rounded-full border-none bg-secondary py-2 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0" />
             <Select.List>
               <Select.Option value="v3.0.0">v3.0.0</Select.Option>
               <Select.Option value="v2.1.9">v2.1.9</Select.Option>
@@ -215,14 +229,24 @@ export function Navbar() {
             href="https://github.com/creativetimofficial/material-tailwind"
           >
             <NavItem icon={Github} hoverIcon={BrightStar}>
-              2.5K
+              {new Intl.NumberFormat("en-US", {
+                notation: "compact",
+                compactDisplay: "short",
+              }).format(Number(stars))}
             </NavItem>
           </Link>
-          <Button as={Link} href="/blocks#pricing">
+          <Button
+            as={Link}
+            href="/blocks#pricing"
+            className="ml-1 hidden sm:flex"
+          >
             Pricing & FAQ
           </Button>
           <Dialog>
-            <Dialog.Trigger as={IconButton} className="grid lg:hidden">
+            <Dialog.Trigger
+              as={IconButton}
+              className="ml-1 grid sm:ml-0 lg:hidden"
+            >
               <MoreVert className="h-5 w-5 stroke-[1.5]" />
             </Dialog.Trigger>
             <Dialog.Overlay className="backdrop-blur">
@@ -272,7 +296,15 @@ export function Navbar() {
                     Discord
                   </NavItem>
                 </Link>
-                <div className="mt-1 flex items-center justify-between rounded-md bg-surface-light py-2 pl-3 pr-2">
+                <Button
+                  as={Link}
+                  href="/blocks#pricing"
+                  className="my-1"
+                  isFullWidth
+                >
+                  Pricing & FAQ
+                </Button>
+                <div className="flex items-center justify-between rounded-md bg-surface-light py-2 pl-3 pr-2">
                   <Typography type="small">Theme</Typography>
                   <Menu placement="bottom-end">
                     <Menu.Trigger as={Button} size="sm">
