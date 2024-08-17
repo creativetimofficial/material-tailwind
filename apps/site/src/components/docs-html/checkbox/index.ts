@@ -5,3 +5,4 @@ export * from "./disabled-checkbox";
 export * from "./checkbox-with-link";
 export * from "./checkbox-with-description";
 export * from "./custom-checkbox";
+export * from "./checkbox-with-custom-icon";
