@@ -185,8 +185,20 @@ export function Navbar() {
           <Select value="v3.0.0">
             <Select.Trigger className="ml-2 gap-1.5 rounded-full border-none bg-secondary py-2 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0" />
             <Select.List>
-              <Select.Option value="v3.0.0">v3.0.0</Select.Option>
-              <Select.Option value="v2.1.9">v2.1.9</Select.Option>
+              <Select.Option
+                as={Link}
+                href="/docs/v3/react/installation"
+                value="v3.0.0"
+              >
+                v3.0.0
+              </Select.Option>
+              <Select.Option
+                as={Link}
+                href="/docs/react/installation"
+                value="v2.1.9"
+              >
+                v2.1.9
+              </Select.Option>
             </Select.List>
           </Select>
         </div>
