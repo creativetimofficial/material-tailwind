@@ -2,15 +2,15 @@ export function RadioColors() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-row items-center gap-2">
-        <label className="relative inline-block h-5 w-5" htmlFor=":r6b:">
+        <label className="relative inline-block w-5 h-5" htmlFor="primary">
           <input
-            id=":r6b:"
+            id="primary"
             type="radio"
-            value=":r6c:"
-            name=":r6c:"
+            value="primary"
+            name="primary"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -27,15 +27,15 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor=":r6d:">
+        <label className="relative inline-block w-5 h-5" htmlFor="primary">
           <input
-            id=":r6d:"
+            id="primary"
             type="radio"
-            name=":r6c:"
-            value=":r6e:"
+            name="primary"
+            value="primary"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -55,7 +55,7 @@ export function RadioColors() {
       </div>
       <div className="flex flex-row items-center gap-2">
         <label
-          className="relative inline-block h-5 w-5"
+          className="relative inline-block w-5 h-5"
           htmlFor="secondary-color"
         >
           <input
@@ -65,7 +65,7 @@ export function RadioColors() {
             name="secondary"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-secondary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-secondary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-secondary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -82,15 +82,18 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor="secondary">
+        <label
+          className="relative inline-block w-5 h-5"
+          htmlFor="secondary-color"
+        >
           <input
-            id="secondary"
+            id="secondary-color"
             type="radio"
             name="secondary"
             value="secondary"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-secondary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-secondary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-secondary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -109,7 +112,7 @@ export function RadioColors() {
         </label>
       </div>
       <div className="flex flex-row items-center gap-2">
-        <label className="relative inline-block h-5 w-5" htmlFor="info">
+        <label className="relative inline-block w-5 h-5" htmlFor="info">
           <input
             id="info"
             type="radio"
@@ -117,7 +120,7 @@ export function RadioColors() {
             name="info"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-info"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-info-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-info-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -134,15 +137,15 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor="info-color">
+        <label className="relative inline-block w-5 h-5" htmlFor="info-color">
           <input
             id="info-color"
             type="radio"
             name="info"
-            value="info-color"
+            value="info"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-info"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-info-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-info-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -162,7 +165,7 @@ export function RadioColors() {
       </div>
       <div className="flex flex-row items-center gap-2">
         <label
-          className="relative inline-block h-5 w-5"
+          className="relative inline-block w-5 h-5"
           htmlFor="success-color"
         >
           <input
@@ -172,7 +175,7 @@ export function RadioColors() {
             name="success"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-success"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-success-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-success-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -189,7 +192,7 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor="success">
+        <label className="relative inline-block w-5 h-5" htmlFor="success">
           <input
             id="success"
             type="radio"
@@ -197,7 +200,7 @@ export function RadioColors() {
             value="success"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-success"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-success-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-success-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -217,7 +220,7 @@ export function RadioColors() {
       </div>
       <div className="flex flex-row items-center gap-2">
         <label
-          className="relative inline-block h-5 w-5"
+          className="relative inline-block w-5 h-5"
           htmlFor="warning-color"
         >
           <input
@@ -227,7 +230,7 @@ export function RadioColors() {
             name="warning"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-warning"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-warning-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-warning-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -244,7 +247,7 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor="warning">
+        <label className="relative inline-block w-5 h-5" htmlFor="warning">
           <input
             id="warning"
             type="radio"
@@ -252,7 +255,7 @@ export function RadioColors() {
             value="warning"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-warning"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-warning-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-warning-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -271,7 +274,7 @@ export function RadioColors() {
         </label>
       </div>
       <div className="flex flex-row items-center gap-2">
-        <label className="relative inline-block h-5 w-5" htmlFor="error-color">
+        <label className="relative inline-block w-5 h-5" htmlFor="error-color">
           <input
             id="error-color"
             type="radio"
@@ -279,7 +282,7 @@ export function RadioColors() {
             name="error"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-error"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-error-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-error-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -296,7 +299,7 @@ export function RadioColors() {
             </svg>
           </span>
         </label>
-        <label className="relative inline-block h-5 w-5" htmlFor="error">
+        <label className="relative inline-block w-5 h-5" htmlFor="error">
           <input
             id="error"
             type="radio"
@@ -304,7 +307,7 @@ export function RadioColors() {
             value="error"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-error"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-error-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-error-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"

@@ -2,11 +2,7 @@ export function RadioDemo() {
   return (
     <div className="flex flex-col items-start gap-2">
       <div className="flex items-center gap-2">
-        <label
-          className="relative inline-block h-5 w-5"
-          data-value="html"
-          htmlFor="html"
-        >
+        <label className="relative inline-block w-5 h-5" htmlFor="html">
           <input
             id="html"
             type="radio"
@@ -14,7 +10,7 @@ export function RadioDemo() {
             value="html"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -33,17 +29,13 @@ export function RadioDemo() {
         </label>
         <label
           htmlFor="html"
-          className="font-sans text-base text-foreground antialiased"
+          className="font-sans text-base antialiased text-foreground"
         >
           HTML
         </label>
       </div>
       <div className="flex items-center gap-2">
-        <label
-          className="relative inline-block h-5 w-5"
-          data-value="react"
-          htmlFor="react"
-        >
+        <label className="relative inline-block w-5 h-5" htmlFor="react">
           <input
             id="react"
             type="radio"
@@ -51,7 +43,7 @@ export function RadioDemo() {
             value="react"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -70,7 +62,7 @@ export function RadioDemo() {
         </label>
         <label
           htmlFor="react"
-          className="font-sans text-base text-foreground antialiased"
+          className="font-sans text-base antialiased text-foreground"
         >
           React
         </label>

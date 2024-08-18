@@ -3,17 +3,17 @@ export function RadioWithDescription() {
     <div className="flex flex-col items-start gap-4">
       <div className="flex gap-2">
         <label
-          className="relative inline-block h-5 w-5"
+          className="relative inline-block w-5 h-5"
           htmlFor="radio-description-html"
         >
           <input
             id="radio-description-html"
             type="radio"
-            value=":r5o:"
+            value="html"
             name="radio-description"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -31,27 +31,27 @@ export function RadioWithDescription() {
           </span>
         </label>
         <label htmlFor="radio-description-html" className="-translate-y-1">
-          <p className="font-sans text-base font-semibold text-black antialiased dark:text-white">
+          <p className="font-sans text-base antialiased font-semibold text-black dark:text-white">
             HTML Version
           </p>
-          <small className="font-sans text-sm text-foreground antialiased">
+          <small className="font-sans text-sm antialiased text-foreground">
             @material-tailwind/html, packed with rich components and widgets.
           </small>
         </label>
       </div>
       <div className="flex gap-2">
         <label
-          className="relative inline-block h-5 w-5"
+          className="relative inline-block w-5 h-5"
           htmlFor="radio-description-react"
         >
           <input
             id="radio-description-react"
             type="radio"
-            value=":r5q:"
+            value="react"
             name="radio-description"
             className="peer relative h-full w-full appearance-none overflow-hidden rounded-full before:absolute before:inset-0 before:h-5 before:w-5 before:bg-surface before:transition-all before:duration-200 before:ease-in before:content-[''] checked:before:bg-primary"
           />
-          <span className="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 scale-75 text-current text-primary-foreground opacity-0 transition-all duration-200 ease-in peer-checked:scale-100 peer-checked:opacity-100">
+          <span className="absolute text-current transition-all duration-200 ease-in scale-75 opacity-0 pointer-events-none left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-primary-foreground peer-checked:scale-100 peer-checked:opacity-100">
             <svg
               width="9px"
               height="9px"
@@ -69,10 +69,10 @@ export function RadioWithDescription() {
           </span>
         </label>
         <label htmlFor="radio-description-react" className="-translate-y-1">
-          <p className="font-sans text-base font-semibold text-black antialiased dark:text-white">
+          <p className="font-sans text-base antialiased font-semibold text-black dark:text-white">
             React Version
           </p>
-          <small className="font-sans text-sm text-foreground antialiased">
+          <small className="font-sans text-sm antialiased text-foreground">
             @material-tailwind/react, packed with rich components and widgets.
           </small>
         </label>
