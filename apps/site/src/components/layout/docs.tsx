@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { ThemeProvider } from "next-themes";
 import { Navbar, Sidenav, Footer } from "@components";
 
 export function Docs({ children }: { children: React.ReactNode }) {
