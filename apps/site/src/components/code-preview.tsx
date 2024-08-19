@@ -12,6 +12,9 @@ import { useCopyToClipboard } from "usehooks-ts";
 
 // @utils
 import { twMerge } from "tailwind-merge";
+import * as prettier from "prettier/standalone";
+import typescriptParser from "prettier/plugins/typescript";
+import * as prettierPluginEstree from "prettier/plugins/estree";
 
 const firaCode = Fira_Code({
   weight: ["400", "500"],
@@ -36,11 +39,17 @@ export function CodePreview({ children, className }: CodePreview) {
   const [showCode, setShowCode] = React.useState(false);
   const [codeHeight, setCodeHeight] = React.useState(0);
 
-  const copyCode = () => {
+  async function copyCode() {
     setIsCopied(true);
-    copy(codeRef.current.innerText);
-  };
-  const resetCopy = () => setIsCopied(false);
+
+    const codeContent = codeRef.current.innerText;
+
+    copy(codeContent);
+  }
+
+  function resetCopy() {
+    setIsCopied(false);
+  }
 
   const containerStyles = twMerge(
     "border-surface rounded-lg border mt-4 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full",
