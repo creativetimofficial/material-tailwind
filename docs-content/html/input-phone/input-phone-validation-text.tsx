@@ -25,7 +25,7 @@ export function InputPhoneValidationText() {
           Contact Number
         </label>
         <input
-          className="w-full h-10 bg-transparent placeholder:text-green-500 text-green-700 text-sm border border-green-400 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-green-500 hover:border-green-500 shadow-sm focus:shadow-md"
+          className="w-full h-10 bg-transparent placeholder:text-green-500 text-green-700 text-sm border border-green-400 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-green-500 hover:border-green-500 shadow-sm focus:shadow-md"
           placeholder="e.g., +1 123-456-7890"
           value={phoneNumber1}
           onChange={handleInputChange1}
@@ -43,7 +43,7 @@ export function InputPhoneValidationText() {
           Contact Number
         </label>
         <input
-          className="w-full h-10 bg-transparent placeholder:text-red-500 text-red-700 text-sm border border-red-400 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-red-500 hover:border-red-500 shadow-sm focus:shadow-md"
+          className="w-full h-10 bg-transparent placeholder:text-red-500 text-red-700 text-sm border border-red-400 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-red-500 hover:border-red-500 shadow-sm focus:shadow-md"
           placeholder="e.g., +1 123-456-7890"
           value={phoneNumber2}
           onChange={handleInputChange2}
