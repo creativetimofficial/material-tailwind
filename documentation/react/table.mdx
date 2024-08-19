@@ -4,6 +4,7 @@ description: Customise your web projects with our easy-to-use table examples for
 navigation:
   [
     "table",
+    "simple-table",
     "table-with-striped-row",
     "table-with-striped-columns",
     "transactions-table",
@@ -27,9 +28,10 @@ next: plugins/date-picker
 
 Use our Tailwind CSS table example to display sets of data in your web projects.
 
-See below our beautiful table examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt it easily to your needs.
+See below our beautiful table examples that you can use in your Tailwind CSS and React project. The examples also comes in different styles so you can adapt them easily to your needs.
 
 <br />
+## Table Examples
 
 Examples on this page are using <Code><a href="https://heroicons.com/" target="_blank">@heroicons/react</a></Code> make sure you have installed it.
 
@@ -39,6 +41,12 @@ npm i @heroicons/react
 
 <br />
 <br />
+
+<DocsTitle href="simple-table">
+## Simple Table
+</DocsTitle>
+
+Use this simple table with a clean design, light header background, and subtle row dividers to ensure clarity and ease of use.
 
 <CodePreview id="table" component={<TableExamples.DefaultTable />}>
 ```jsx
@@ -158,6 +166,8 @@ export function DefaultTable() {
 ## Table With Striped Rows
 </DocsTitle>
 
+Use this table component that features stripped rows for improved readability, displaying a list of employees with their name, job title, employment start date, and an "Edit" option for each entry.
+
 <CodePreview component={<TableExamples.TableWithStripedRows />}>
 ```jsx
 import { Card, Typography } from "@material-tailwind/react";
@@ -249,6 +259,8 @@ export function TableWithStripedRows() {
 <DocsTitle href="table-with-striped-columns">
 ## Table With Striped Columns
 </DocsTitle>
+
+The use of stripped columns in this example, improves visual separation between data points, making it easier for users to compare information across rows. The alternating shades help guide the eye horizontally across the table, reducing cognitive load, especially with larger datasets.
 
 <CodePreview component={<TableExamples.TableWithStripedColumns />}>
 ```jsx
@@ -346,6 +358,8 @@ export function TableWithStripedColumns() {
 <DocsTitle href="transactions-table">
 ## Transactions Table
 </DocsTitle>
+
+This table example is designed for tracking financial transactions. Visual status indicators (e.g., "Paid," "Pending," "Cancelled") improve clarity. The component includes a search bar, CTA "Download" button, editable rows, and pagination for easy navigation.
 
 <CodePreview component={<TableExamples.TransactionsTable />}>
 ```jsx
@@ -632,6 +646,8 @@ export function TransactionsTable() {
 ## Members Table
 </DocsTitle>
 
+This table includes filters and users can search the list, edit individual member details, and navigate pages through pagination controls. The "View All" and "Add Member" buttons provide quick access to additional actions, making this table ideal for managing member data.
+
 <CodePreview component={<TableExamples.MembersTable />}>
 ```jsx
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
@@ -884,6 +900,8 @@ export function MembersTable() {
 <DocsTitle href="sortable-table">
 ## Sortable Table
 </DocsTitle>
+
+This sortable table displays member details like name, role, status, and employment date, with filtering, search, editing, and pagination options.
 
 <CodePreview component={<TableExamples.SortableTable />}>
 ```jsx
@@ -1145,6 +1163,8 @@ export function SortableTable() {
 ## Table Without Border
 </DocsTitle>
 
+This borderless table presents invoice details with columns for invoice number, customer, amount, issue date, and payment date. The "Actions" column includes icons for viewing and downloading the invoice, creating a clean design while maintaining functionality.
+
 <CodePreview component={<TableExamples.TableWithoutBorder />}>
 ```jsx
 import { DocumentIcon } from "@heroicons/react/24/solid";
@@ -1285,6 +1305,8 @@ export function TableWithoutBorder() {
 ## Table With Hover State
 </DocsTitle>
 
+In this example, the hover effect highlights each row when the user hovers over it, improving interactivity while maintaining a simple design.
+
 <CodePreview component={<TableExamples.TableWithHoverState />}>
 ```jsx
 import { Card, Typography } from "@material-tailwind/react";
@@ -1394,6 +1416,8 @@ export function TableWithHoverState() {
 <DocsTitle href="table-with-title-and-description">
 ## Table With Title & Description
 </DocsTitle>
+
+In this example, the title and description at the top give context to the table, making it easy for users to understand its purpose.
 
 <CodePreview component={<TableExamples.TableWithTitleAndDescription />}>
 ```jsx
@@ -1514,6 +1538,8 @@ export function TableWithTitleAndDescription() {
 <DocsTitle href="table-with-search">
 ## Table With Search
 </DocsTitle>
+
+This table with search functionality allows users to filter invoices by entering keywords.
 
 <CodePreview component={<TableExamples.TableWithSearch />}>
 ```jsx
@@ -1698,6 +1724,8 @@ export function TableWithSearch() {
 <DocsTitle href="table-with-footer">
 ## Table With Footer
 </DocsTitle>
+
+In this example,  the footer row provides a total count for the quantity and the final price, offering a clear breakdown of the data and a final summary for easy reference.
 
 <CodePreview component={<TableExamples.TableWithFooter />}>
 ```jsx
