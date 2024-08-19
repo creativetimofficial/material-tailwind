@@ -1,5 +1,38 @@
 export const releases = [
   {
+    version: "2.2.4",
+    date: "August 19, 2024",
+    name: "@material-tailwind/html",
+    description: "Material Tailwind v2.2.4",
+    content: [
+      {
+        title: "patch changes",
+        data: ["Reduce the bundle size"],
+      },
+    ],
+  },
+  {
+    version: "2.2.3",
+    date: "August 16, 2024",
+    name: "@material-tailwind/html",
+    description: "Material Tailwind v2.2.3",
+    content: [
+      {
+        title: "minor changes",
+        data: ["Add new colors: slate, neutral"],
+      },
+      {
+        title: "docs changes",
+        data: [
+          "New components added to Input category",
+          "New components added to Input Number category",
+          "New components added to Input Phone category",
+          "New components added to Table category",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.2.2",
     date: "January 01, 2024",
     name: "@material-tailwind/html",
