@@ -124,14 +124,9 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background">
       <div className="border-b border-warning bg-warning-light px-4 py-3 text-center">
-        <Typography
-          as="p"
-          type="small"
-          color="default"
-          className="font-semibold "
-        >
+        <Typography as="p" type="small" className="font-semibold text-black">
           Material Tailwind v3 is currently on beta, for stable version use{" "}
-          <Link href="/docs/react/installation" className="text-info-light">
+          <Link href="/docs/react/installation" className="text-primary">
             Material Tailwind v2
           </Link>
         </Typography>
