@@ -199,6 +199,10 @@ export const routes = [
         name: "Input Phone",
         route: "input-phone",
       },
+      {
+        name: "Input Search",
+        route: "input-search",
+      },
 
       {
         name: "List",
