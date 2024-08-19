@@ -50,7 +50,7 @@ export function InputCurrencyConversion() {
           <div className="relative mt-2">
             <input
               type="text"
-              className="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+              className="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
               placeholder="1,000"
             />
             <div className="absolute top-2 right-0 flex items-center pr-3">
@@ -72,7 +72,7 @@ export function InputCurrencyConversion() {
                 </svg>
               </button>
               {fromDropdownOpen && (
-                <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded-md shadow-lg z-10">
+                <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded shadow-lg z-10">
                   <ul className="dropdownOptions">
                     <li
                       className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer"
@@ -129,7 +129,7 @@ export function InputCurrencyConversion() {
           <div className="relative mt-2">
             <input
               type="text"
-              className="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+              className="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
               placeholder="1,000"
             />
             <div className="absolute top-2 right-0 flex items-center pr-3">
@@ -151,7 +151,7 @@ export function InputCurrencyConversion() {
                 </svg>
               </button>
               {toDropdownOpen && (
-                <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded-md shadow-lg z-10">
+                <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded shadow-lg z-10">
                   <ul className="dropdownOptions">
                     <li
                       className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer"
