@@ -20,6 +20,7 @@ import {
 export function NavbarForDropdownWithMultipleLanguages() {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [openNav, setOpenNav] = React.useState(false);
+  const [lang, setLang] = React.useState("English");
 
   React.useEffect(() => {
     window.addEventListener(
@@ -103,7 +104,7 @@ export function NavbarForDropdownWithMultipleLanguages() {
           Material Tailwind
         </Typography>
         <div className="mr-4 hidden lg:block">{navList}</div>
-        <div className="hidden flex-wrap items-center gap-4 lg:flex">
+        <div className="hidden flex-wrap items-center gap-2 lg:flex">
           <Button variant="gradient" size="sm">
             join
           </Button>
@@ -114,7 +115,10 @@ export function NavbarForDropdownWithMultipleLanguages() {
                 variant="outlined"
                 className="hidden items-center gap-2 lg:flex"
               >
-                🇺🇸 English{" "}
+                <span className="h-min text-base leading-none">
+                  {countries.find(({ name }) => name === lang)?.flag}
+                </span>
+                {countries.find(({ name }) => name === lang)?.name}
                 <ChevronDownIcon
                   strokeWidth={2.5}
                   className={`h-3.5 w-3.5 transition-transform ${
@@ -125,7 +129,11 @@ export function NavbarForDropdownWithMultipleLanguages() {
             </MenuHandler>
             <MenuList className="hidden max-h-72 w-20 lg:block">
               {countries.map(({ name, flag }) => (
-                <MenuItem key={name} className="flex items-center gap-2">
+                <MenuItem
+                  key={name}
+                  className="flex items-center gap-2"
+                  onClick={() => setLang(name)}
+                >
                   {flag} {name}
                 </MenuItem>
               ))}
