@@ -135,8 +135,8 @@ export function Toc({
   }
 
   return (
-    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background py-24 xl:block">
-      <div className="fixed top-[68px] h-14 w-full bg-gradient-to-b from-background to-transparent" />
+    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] xl:block">
+      <div className="fixed top-[114px] h-14 w-full bg-gradient-to-b from-background to-transparent" />
       <ul className="border-b border-surface pb-4">
         <li className="py-2 text-sm font-medium text-black dark:text-white">
           On this page
