@@ -1,0 +1,95 @@
+---
+title: Tailwind CSS Crypto Card for React - Material Tailwind
+description: Customise your web projects with our easy-to-use crypto card example for Tailwind CSS and React using Material Design guidelines.
+navigation:
+  [
+    "crypto-card",
+  ]
+github: crypto/crypto-card
+---
+
+<DocsTitle href="crypto-card">
+# Tailwind CSS Crypto Card - React
+</DocsTitle>
+
+Use our Tailwind CSS Crypto Card example to add global search in your web projects.
+
+See below our beautiful Aloglia Search example that you can use in your Tailwind CSS and React project. The example below is using the `@docsearch/react` library, make sure to install it before using the example.
+
+```bash
+npm i @docsearch/react
+```
+
+<br />
+<br />
+
+<CodePreview component={<Crypto.CryptoCard />}>
+```jsx
+import React from "react";
+
+// @material-tailwind-react
+import {
+  Card,
+  Avatar,
+  Button,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
+
+const imgs = [
+  "https://www.material-tailwind.com/image/web3-card-1.svg",
+  "https://www.material-tailwind.com/image/web3-card-2.svg",
+  "https://www.material-tailwind.com/image/web3-card-3.svg",
+];
+
+export function CryptoCard() {
+  return (
+    <Card className="overflow-hidden border border-gray-300 shadow-sm">
+      <CardBody className="p-4">
+        <Typography
+          color="blue-gray"
+          className="mb-1 !text-base !font-semibold"
+        >
+          #1
+        </Typography>
+        <div className="my-4 flex items-start justify-between">
+          <div className="flex items-center gap-3">
+            <Avatar
+              src="https://www.material-tailwind.com/img/avatar1.jpg"
+              alt="Tina Andrew"
+            />
+            <div>
+              <Typography color="blue-gray" variant="h6">
+                Tina Andrew
+              </Typography>
+              <Typography
+                variant="small"
+                color="gray"
+                className="font-medium"
+              >
+                Creator
+              </Typography>
+            </div>
+          </div>
+          <Button size="sm" variant="outlined" className="border-gray-300">
+            see collection
+          </Button>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {imgs.map((img, key) => (
+            <img
+              key={key}
+              src={img}
+              className="h-full w-full rounded-xl object-cover"
+              alt="imgs"
+            />
+          ))}
+        </div>
+      </CardBody>
+    </Card>
+  );
+}
+
+export default CryptoCard;
+```
+</CodePreview>
