@@ -45,7 +45,7 @@ export function DialogWithBillingForm() {
             className="h-12 border-blue-500 focus:ring-blue-100/50"
           >
             <img
-              src="/icons/Paypal icon.svg"
+              src="https://docs-test.material-tailwind.com/icons/Paypal icon.svg"
               className="mx-auto grid h-12 w-16 -translate-y-7 place-items-center"
               alt="paypal"
             />

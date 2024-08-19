@@ -75,7 +75,7 @@ export function Sidenav({
                   console.log(route);
 
                   const isActive = route.includes("/")
-                    ? route.includes(slug)
+                    ? route.includes(`/${slug}`)
                     : route === slug;
                   return (
                     <li
