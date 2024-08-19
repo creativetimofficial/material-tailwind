@@ -150,12 +150,12 @@ export function Toc({
           "border-transparent": !isScrolled,
         })}
       >
-        <ListItem
+        {/* <ListItem
           href={`https://github.com/creativetimofficial/material-tailwind/blob/main/apps/site/src/app/docs/content/react/${githubPage}.mdx`}
           icon={EditPencil}
         >
           Edit this page on GitHub
-        </ListItem>
+        </ListItem> */}
         <ListItem
           href="https://github.com/creativetimofficial/material-tailwind"
           icon={Star}
