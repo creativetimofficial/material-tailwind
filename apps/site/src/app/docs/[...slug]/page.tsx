@@ -179,8 +179,6 @@ Code.theme = {
   light: "github-light",
 };
 
-export const dynamic = "force-dynamic";
-
 export default async function Docs({ params: { slug } }) {
   const path = slug.join("/");
   const { frontMatter, source } = await readDocsContent(path);
