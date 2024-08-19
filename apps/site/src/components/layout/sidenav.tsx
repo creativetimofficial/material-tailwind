@@ -45,7 +45,6 @@ export function Collapsible({ category, categoryPages }) {
             <li key={i} className="mx-1.5 border-l border-surface">
               <Link
                 href={path}
-                prefetch={true}
                 className={twMerge(
                   "block -translate-x-px border-l border-transparent py-1.5 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-primary hover:text-primary",
                   pathname === path && "border-primary text-primary",
@@ -84,7 +83,6 @@ export function getRoutes() {
                   <li key={key}>
                     <Link
                       href={path}
-                      prefetch={true}
                       className="block px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
                     >
                       {subTitle}

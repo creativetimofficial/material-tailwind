@@ -117,7 +117,7 @@ export function Navbar() {
   const pathParts = pathname.split("/");
   const { theme, setTheme }: any = useTheme();
   const { data } = useSWR(
-    "http://api.github.com/repos/creativetimofficial/material-tailwind",
+    "https://api.github.com/repos/creativetimofficial/material-tailwind",
     fetcher,
   );
 
