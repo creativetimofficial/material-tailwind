@@ -153,7 +153,8 @@ To create a custom theme based on your design system you to follow the steps bel
 On your `tailwind.config.js` file, you need to import the `mtConfig` and add it to the `plugins` array.
 
 <CodePreview>
-```js {1,6}
+```js
+// highlight(1,6)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
@@ -171,7 +172,8 @@ export default config;
 The `mtConfig` can be used as a function to customize the default theme, you can pass an object with the properties you want to customize.
 
 <CodePreview>
-```js {6-11}
+```js
+// highlight(6,7,8,9,10,11)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
@@ -194,7 +196,8 @@ export default config;
 Let's make an elegant design system by changing the `radius` to a `0`.
 
 <CodePreview>
-```js {7}
+```js
+// highlight(7)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
@@ -217,7 +220,8 @@ export default config;
 For the font we'll use the `DM Serif Display` for titles and `Lato` for the body. Check the <Link href="/docs/v3/react/fonts">Fonts Documentation</Link> on how to add new fonts to your project.
 
 <CodePreview>
-```js {8-11}
+```js
+// highlight(8,9,10,11)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
@@ -243,7 +247,8 @@ export default config;
 For the colors we'll use light yellow as our primary color. 
 
 <CodePreview>
-```js {12-19}
+```js
+// highlight(12,13,14,15,16,17,18,19)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
@@ -276,7 +281,8 @@ export default config;
 For the dark mode colors we'll use teal as our primary color. 
 
 <CodePreview>
-```js {20-27}
+```js
+// highlight(20,21,22,23,24,25,26,27)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {

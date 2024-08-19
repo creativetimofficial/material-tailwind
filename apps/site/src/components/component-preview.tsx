@@ -43,8 +43,10 @@ export function ComponentPreview({
 
   const copyCode = () => {
     setIsCopied(true);
+    console.log(codeRef.current);
     copy(codeRef.current.innerText);
   };
+
   const resetCopy = () => setIsCopied(false);
 
   const containerStyles = twMerge(

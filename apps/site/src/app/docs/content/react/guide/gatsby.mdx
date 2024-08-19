@@ -43,7 +43,8 @@ npm install -D tailwindcss postcss autoprefixer gatsby-plugin-postcss && npx tai
 Once you have installed Tailwind CSS, in your `gatsby-config.js` file, enable the `gatsby-plugin-postcss`.
 
 <CodePreview>
-```js {3}
+```js
+// highlight(3)
 module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
@@ -60,7 +61,8 @@ module.exports = {
 Next, you need to configure your template paths in your `tailwind.config.js` file.
 
 <CodePreview>
-```js {3-6}
+```js
+// highlight(3,4,5,6)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -116,7 +118,8 @@ npm i @material-tailwind/react@beta
 Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.js` file.
 
 <CodePreview>
-```ts {1,8,13}
+```ts
+// highlight(1,8,13)
 const mtConfig = require("@material-tailwind/react").mtConfig;
 
 /** @type {import('tailwindcss').Config} */

@@ -67,7 +67,8 @@ npm i @material-tailwind/react@beta
 Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.mjs` file.
 
 <CodePreview>
-```ts {1,7,12}
+```ts
+// highlight(1,7,12)
 import { mtConfig } from "@material-tailwind/react";
 
 /** @type {import('tailwindcss').Config} */
@@ -91,7 +92,8 @@ export default {
 Now you're ready to use Material Tailwind components in your Astro project. Here's an example of how to use the `Button` component:
 
 <ComponentPreview demo={<Button.ButtonDemo />}>
-```html {2, 14}
+```html
+<!-- highlight(2,14) -->
 ---
 import { Button } from "@material-tailwind/react";
 ---

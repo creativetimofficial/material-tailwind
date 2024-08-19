@@ -162,7 +162,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-Code.lineNumbers = true;
+const highlight = {
+  name: "highlight",
+  MultilineAnnotation: ({ children }) => {
+    return (
+      <span className="block border-l-2 border-[#1fff7c] bg-[#1fff7c]/[0.15] bg-opacity-50 text-[#1fff7c]">
+        {children}
+      </span>
+    );
+  },
+};
+
+Code.extensions = [highlight];
 Code.theme = {
   dark: "github-dark",
   light: "github-light",

@@ -43,7 +43,8 @@ npm install -D tailwindcss && npx tailwindcss init
 Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.js` file.
 
 <CodePreview>
-```ts {3}
+```ts
+// highlight(3)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -86,7 +87,8 @@ npm i @material-tailwind/react@beta
 Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.js` file.
 
 <CodePreview>
-```ts {1,7,12}
+```ts
+// highlight(1,7,12)
 const mtConfig = require("@material-tailwind/react").mtConfig;
 
 /** @type {import('tailwindcss').Config} */

@@ -21,7 +21,8 @@ Below is a list of all breaking changes and how to migrate your code to the new 
 The `withMT()` function is removed and doesn't work anymore, instead you can use the `mtConfig` as plugin in your `tailwind.config.js` file.
 
 <CodePreview>
-```ts {1,5}
+```ts
+// highlight(1,5)
 import { mtConfig } from "@material-tailwind/react";
  
 const config = {
