@@ -40,6 +40,8 @@ import {
 } from "@material-tailwind/react";
 import { getRoutes } from "@components";
 
+// @hooks
+import useSWR from "swr";
 import { usePathname } from "next/navigation";
 
 interface NavIconProps extends React.ComponentProps<"button"> {
@@ -108,25 +110,16 @@ function NavItem({
   );
 }
 
+const fetcher = (url) => fetch(url).then((response) => response.json());
+
 export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
   const { theme, setTheme }: any = useTheme();
-  const [stars, setStars] = React.useState(0);
-
-  React.useEffect(() => {
-    async function runEffect() {
-      const request = await fetch(
-        "http://api.github.com/repos/creativetimofficial/material-tailwind",
-      );
-
-      const response = await request.json();
-
-      setStars(response.stargazers_count);
-    }
-
-    runEffect();
-  }, []);
+  const { data } = useSWR(
+    "http://api.github.com/repos/creativetimofficial/material-tailwind",
+    fetcher,
+  );
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background px-4 pb-0 pt-4 lg:pb-4">
@@ -244,7 +237,7 @@ export function Navbar() {
               {new Intl.NumberFormat("en-US", {
                 notation: "compact",
                 compactDisplay: "short",
-              }).format(Number(stars))}
+              }).format(Number(data ? data.stargazers_count : 0))}
             </NavItem>
           </Link>
           <Button
