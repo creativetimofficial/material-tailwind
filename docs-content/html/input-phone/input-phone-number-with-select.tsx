@@ -7,7 +7,7 @@ export function InputPhoneNumberWithSelect() {
 
       <div className="relative">
         <select
-          className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+          className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
           <option value="+33">(+33) 123-456-7890</option>
           <option value="+49">(+49) 123-456-7890</option>
           <option value="+31">(+31) 123-456-7890</option>
