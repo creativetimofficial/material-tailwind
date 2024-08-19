@@ -127,10 +127,6 @@ export const routes = [
         route: "card",
       },
       {
-        name: "Checkbox",
-        route: "checkbox",
-      },
-      {
         name: "Chip",
         route: "chip",
       },
@@ -171,11 +167,6 @@ export const routes = [
         route: "img",
       },
       {
-        name: "Input",
-        route: "input",
-      },
-
-      {
         name: "List",
         route: "list",
       },
@@ -186,6 +177,10 @@ export const routes = [
       {
         name: "Mega Menu",
         route: "mega-menu",
+      },
+      {
+        name: "Modal",
+        route: "modal",
       },
       {
         name: "Navbar",
@@ -204,16 +199,8 @@ export const routes = [
         route: "pagination",
       },
       {
-        name: "Radio Button",
-        route: "radio-button",
-      },
-      {
         name: "Rating Bar",
         route: "rating-bar",
-      },
-      {
-        name: "Select",
-        route: "select",
       },
       {
         name: "Sidebar",
@@ -240,20 +227,12 @@ export const routes = [
         route: "stepper",
       },
       {
-        name: "Switch",
-        route: "switch",
-      },
-      {
         name: "Tabs",
         route: "tabs",
       },
       {
         name: "Table",
         route: "table",
-      },
-      {
-        name: "Textarea",
-        route: "textarea",
       },
       {
         name: "Timeline",
@@ -271,6 +250,60 @@ export const routes = [
       {
         name: "Video",
         route: "video",
+      },
+    ],
+  },
+  {
+    name: "Forms",
+    pages: [
+      {
+        name: "Checkbox",
+        route: "checkbox",
+      },
+      {
+        name: "Input",
+        route: "input",
+      },
+      {
+        name: "Radio Button",
+        route: "radio-button",
+      },
+      {
+        name: "Select",
+        route: "select",
+      },
+      {
+        name: "Switch",
+        route: "switch",
+      },
+      {
+        name: "Textarea",
+        route: "textarea",
+      },
+    ],
+  },
+  {
+    name: "Web 3.0 Components",
+    pages: [
+      {
+        name: "Crypto Login",
+        route: "crypto/crypto-login",
+      },
+      {
+        name: "Crypto Card",
+        route: "crypto/crypto-card",
+      },
+      {
+        name: "Crypto Chart",
+        route: "crypto/crypto-chart",
+      },
+      {
+        name: "Crypto Modal",
+        route: "crypto/crypto-modal",
+      },
+      {
+        name: "Crypto Table",
+        route: "crypto/crypto-table",
       },
     ],
   },

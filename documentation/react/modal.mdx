@@ -1,59 +1,42 @@
 ---
-title: Tailwind CSS Dialog for React - Material Tailwind
-description: Customise your web projects with our easy-to-use dialog component for Tailwind CSS and React using Material Design guidelines.
+title: Tailwind CSS Modal for React - Material Tailwind
+description: Customise your web projects with our easy-to-use modal component for Tailwind CSS and React using Material Design guidelines.
 navigation:
   [
-    "dialog",
-    "dialog-sizes",
-    "dialog-custom-animation",
-    "dialog-with-form",
-    "dialog-with-image",
-    "web-3-dialog",
-    "long-dialog",
-    "message-dialog",
-    "notification-dialog",
-    "add-product-dialog-crud",
-    "dialog-with-checkbox",
-    "dialog-with-select",
-    "dialog-with-timeline-and-details",
-    "dialog-with-progress-bar",
-    "dialog-with-billing-form",
-    "dialog-props",
-    "dialog-header-props",
-    "dialog-body-props",
-    "dialog-footer-props",
-    "types-size",
-    "types-dismiss",
-    "types-animate",
-    "dialog-theme",
-    "dialog-theme-object-type",
-    "dialog-theme-customization",
-    "dialog-header-theme-object-type",
-    "dialog-header-theme-customization",
-    "dialog-body-theme-object-type",
-    "dialog-body-theme-customization",
-    "dialog-footer-theme-object-type",
-    "dialog-footer-theme-customization",
-    "more-examples",
+    "modal",
+    "modal-sizes",
+    "modal-custom-animation",
+    "modal-with-form",
+    "modal-with-image",
+    "web-3-modal",
+    "long-modal",
+    "message-modal",
+    "notification-modal",
+    "add-product-modal-crud",
+    "modal-with-checkbox",
+    "modal-with-select",
+    "modal-with-timeline-and-details",
+    "modal-with-progress-bar",
+    "modal-with-billing-form",
   ]
-github: dialog
+github: modal
 prev: chip
 next: icon-button
 ---
 
-<DocsTitle href="dialog">
-# Tailwind CSS Dialog - React
+<DocsTitle href="modal">
+# Tailwind CSS Modal - React
 </DocsTitle>
 
-Use our Tailwind CSS <Code>Dialog</Code> component to inform users about a task or important information that requires decisions, or involves multiple tasks.
+Use our Tailwind CSS <Code>Modal</Code> component to inform users about a task or important information that requires decisions, or involves multiple tasks.
 
-A <Code>Dialog</Code> is a type of modal window with critical information that disables all app functionality when they appear and remains on screen until confirmed/dismissed.
+A <Code>Modal</Code> is a type of modal window with critical information that disables all app functionality when they appear and remains on screen until confirmed/dismissed.
 
-See below our <Code>Dialog</Code> example that you can use for your Tailwind CSS and React project.
+See below our <Code>Modal</Code> example that you can use for your Tailwind CSS and React project.
 
 <br />
 
-<CodePreview link="dialog#dialog" component={<DialogExamples.DialogDefault />}>
+<CodePreview link="modal#modal" component={<DialogExamples.DialogDefault />}>
 ```jsx
 import React from "react";
 import {
@@ -72,10 +55,10 @@ export function DialogDefault() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
+        Open Modal
       </Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
@@ -104,13 +87,13 @@ export function DialogDefault() {
 
 ---
 
-<DocsTitle href="dialog-sizes">
-## Dialog Sizes
+<DocsTitle href="modal-sizes">
+## Modal Sizes
 </DocsTitle>
 
-The <Code>Dialog</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
+The <Code>Modal</Code> component comes with 6 different sizes that you can change it using the <Code>size</Code> prop.
 
-<CodePreview link="dialog#dialog-sizes" component={<DialogExamples.DialogSizes />}>
+<CodePreview link="modal#modal-sizes" component={<DialogExamples.DialogSizes />}>
 ```jsx
 import React from "react";
 import {
@@ -130,24 +113,24 @@ export function DialogSizes() {
     <>
       <div className="mb-3 flex gap-3">
         <Button onClick={() => handleOpen("xs")} variant="gradient">
-          Open Dialog XS
+          Open Modal XS
         </Button>
         <Button onClick={() => handleOpen("sm")} variant="gradient">
-          Open Dialog SM
+          Open Modal SM
         </Button>
         <Button onClick={() => handleOpen("md")} variant="gradient">
-          Open Dialog MD
+          Open Modal MD
         </Button>
       </div>
       <div className="flex gap-3">
         <Button onClick={() => handleOpen("lg")} variant="gradient">
-          Open Dialog LG
+          Open Modal LG
         </Button>
         <Button onClick={() => handleOpen("xl")} variant="gradient">
-          Open Dialog XL
+          Open Modal XL
         </Button>
         <Button onClick={() => handleOpen("xxl")} variant="gradient">
-          Open Dialog XXL
+          Open Modal XXL
         </Button>
       </div>
       <Dialog
@@ -162,7 +145,7 @@ export function DialogSizes() {
         size={size || "md"}
         handler={handleOpen}
       >
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
@@ -195,13 +178,13 @@ export function DialogSizes() {
 
 ---
 
-<DocsTitle href="dialog-custom-animation">
+<DocsTitle href="modal-custom-animation">
 ## Dialog Custom Animation
 </DocsTitle>
 
 You can modify the open/close state animation for <Code>Dialog</Code> component using the <Code>animate</Code> prop.
 
-<CodePreview link="dialog#dialog-custom-animation" component={<DialogExamples.DialogCustomAnimation />}>
+<CodePreview link="modal#modal-custom-animation" component={<DialogExamples.DialogCustomAnimation />}>
 ```jsx
 import React from "react";
 import {
@@ -220,7 +203,7 @@ export function DialogCustomAnimation() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
+        Open Modal
       </Button>
       <Dialog
         open={open}
@@ -230,7 +213,7 @@ export function DialogCustomAnimation() {
           unmount: { scale: 0.9, y: -100 },
         }}
       >
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of
@@ -259,13 +242,13 @@ export function DialogCustomAnimation() {
 
 ---
 
-<DocsTitle href="dialog-with-form">
+<DocsTitle href="modal-with-form">
 ## Dialog with Form
 </DocsTitle>
 
-Use the example below to create a dialog with a sign in form.
+Use the example below to create a modal with a sign in form.
 
-<CodePreview link="dialog#dialog-with-form" component={<DialogExamples.DialogWithForm />}>
+<CodePreview link="modal#modal-with-form" component={<DialogExamples.DialogWithForm />}>
 ```jsx
 import React from "react";
 import {
@@ -345,13 +328,13 @@ export function DialogWithForm() {
 
 ---
 
-<DocsTitle href="dialog-with-image">
+<DocsTitle href="modal-with-image">
 ## Dialog with Image
 </DocsTitle>
 
-Use the example below to create a dialog with an image inside, similar to unsplash.
+Use the example below to create a modal with an image inside, similar to unsplash.
 
-<CodePreview link="dialog#dialog-with-image" component={<DialogExamples.DialogWithImage />}>
+<CodePreview link="modal#modal-with-image" component={<DialogExamples.DialogWithImage />}>
 ```jsx
 import React from "react";
 import {
@@ -366,7 +349,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 
-export function DialogWithImage() {
+export function ModalWithImage() {
   const [open, setOpen] = React.useState(false);
   const [isFavorite, setIsFavorite] = React.useState(false);
 
@@ -476,13 +459,13 @@ export function DialogWithImage() {
 
 ---
 
-<DocsTitle href="web-3-dialog">
+<DocsTitle href="web-3-modal">
 ## Web 3.0 Dialog
 </DocsTitle>
 
-Use the example below to create a Web 3.0 wallet connect dialog.
+Use the example below to create a Web 3.0 wallet connect modal.
 
-<CodePreview link="dialog#web-3-dialog" component={<DialogExamples.Web3Dialog />}>
+<CodePreview link="modal#web-3-modal" component={<DialogExamples.Web3Dialog />}>
 ```jsx
 import React from "react";
 import {
@@ -619,11 +602,11 @@ export function Web3Dialog() {
 
 ---
 
-<DocsTitle href="long-dialog">
+<DocsTitle href="long-modal">
 ## Long Dialog
 </DocsTitle>
 
-Use this example of a long dialog to present extensive information or content that requires careful reading and consideration. This dialog is designed to handle lengthy text, ensuring it remains readable and accessible.
+Use this example of a long modal to present extensive information or content that requires careful reading and consideration. This modal is designed to handle lengthy text, ensuring it remains readable and accessible.
 
 <CodePreview className="mt-4" component={<DialogExamples.LongDialog />}>
 ```jsx
@@ -646,7 +629,7 @@ export function LongDialog() {
     <>
       <Button onClick={handleOpen}>Long Dialog</Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Long Dialog</DialogHeader>
+        <DialogHeader>Long Modal</DialogHeader>
         <DialogBody className="h-[42rem] overflow-scroll">
           <Typography className="font-normal">
             I&apos;ve always had unwavering confidence in my abilities, and I
@@ -700,13 +683,13 @@ export function LongDialog() {
 
 ---
 
-<DocsTitle href="message-dialog">
+<DocsTitle href="message-modal">
 ## Message Dialog
 </DocsTitle>
 
-Use this example of a message dialog to facilitate direct communication between users. The dialog includes fields for entering a username and the message content, providing a straightforward interface for sending messages.
+Use this example of a message modal to facilitate direct communication between users. The modal includes fields for entering a username and the message content, providing a straightforward interface for sending messages.
 
-This dialog example is ideal for enabling user-to-user communication within an application, ensuring a simple and effective way to send messages.
+This modal example is ideal for enabling user-to-user communication within an application, ensuring a simple and effective way to send messages.
 
 <CodePreview className="mt-4" component={<DialogExamples.MessageDialog />}>
 ```jsx
@@ -780,11 +763,11 @@ export function MessageDialog() {
 
 ---
 
-<DocsTitle href="notification-dialog">
+<DocsTitle href="notification-modal">
 ## Notification Dialog
 </DocsTitle>
 
-Use this example of a notification dialog to draw users' attention to important information or actions required. The dialog includes a prominent title, a message area for detailed information, and action buttons for user response. 
+Use this example of a notification Dialog to draw users' attention to important information or actions required. The modal includes a prominent title, a message area for detailed information, and action buttons for user response. 
 
 <CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
@@ -850,11 +833,11 @@ export function NotificationDialog() {
 
 ---
 
-<DocsTitle href="add-product-dialog-crud">
+<DocsTitle href="add-product-modal-crud">
 ## Add Product Dialog CRUD
 </DocsTitle>
 
-This Tailwind CSS dialog allows users to manage items by providing input fields for the name, category, weight, size, and an optional description. The form is straightforward and easy to use, with an "Add Product" button to submit the information.
+This Tailwind CSS modal allows users to manage items by providing input fields for the name, category, weight, size, and an optional description. The form is straightforward and easy to use, with an "Add Product" button to submit the information.
 
 <CodePreview className="mt-4" component={<DialogExamples.AddProductDialog />}>
 ```jsx
@@ -1022,11 +1005,11 @@ export function AddProductDialog() {
 
 ---
 
-<DocsTitle href="dialog-with-checkbox">
+<DocsTitle href="modal-with-checkbox">
 ## Dialog with Checkbox
 </DocsTitle>
 
-Try this checkbox dialog to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
+Try this checkbox modal to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
 
 <CodePreview className="mt-4" component={<DialogExamples.SelectCategoriesDialog />}>
 ```jsx
@@ -1144,11 +1127,11 @@ export function SelectCategoriesDialog() {
 
 ---
 
-<DocsTitle href="dialog-with-select">
-## Dialog with Select
+<DocsTitle href="modal-with-select">
+## Modal with Select
 </DocsTitle>
 
-This dialog example provides options for users to select their preferred delivery method. The selected method is highlighted for clarity, and users can confirm their choice by clicking the call-to-action button.
+This modal example provides options for users to select their preferred delivery method. The selected method is highlighted for clarity, and users can confirm their choice by clicking the call-to-action button.
 
 <CodePreview className="mt-4" component={<DialogExamples.DeliveryMethodDialog />}>
 ```jsx
@@ -1282,8 +1265,8 @@ export function DeliveryMethodDialog() {
  
 ---
 
-<DocsTitle href="dialog-with-timeline-and-details">
-## Dialog with Timeline and Details
+<DocsTitle href="modal-with-timeline-and-details">
+## Modal with Timeline and Details
 </DocsTitle>
 
 This modal displays detailed order information in a timeline format. Use this component example to let users easily track the status of their order and click the CTA button "More Details" for additional information.
@@ -1406,11 +1389,11 @@ export function OrderDetailsDialog() {
  
  ---
 
- <DocsTitle href="dialog-with-progress-bar">
-## Dialog with Progress Bar
+ <DocsTitle href="modal-with-progress-bar">
+## Modal with Progress Bar
 </DocsTitle>
 
-This progress bar dialog provides real-time feedback on the upload status of a file. Users can see the file name, file size, and a progress bar indicating the upload percentage. This tailwind dialog also includes options to cancel the upload if needed.
+This progress bar modal provides real-time feedback on the upload status of a file. Users can see the file name, file size, and a progress bar indicating the upload percentage. This tailwind modal also includes options to cancel the upload if needed.
 
 <CodePreview className="mt-4" component={<DialogExamples.UploadProgressDialog />}>
 ```jsx
@@ -1515,11 +1498,11 @@ export function UploadProgressDialog() {
 
 ---
 
-<DocsTitle href="dialog-with-billing-form">
+<DocsTitle href="modal-with-billing-form">
 ## Dialog With Billing Form
 </DocsTitle>
 
-Try this dialog designed for linking a payment card, including fields for cardholder name, card number, expiration date, and CVV. It concludes with a call-to-action "Submit" button.
+Try this modal designed for linking a payment card, including fields for cardholder name, card number, expiration date, and CVV. It concludes with a call-to-action "Submit" button.
 
 
 <CodePreview className="mt-4" component={<DialogExamples.DialogWithBillingForm />}>
@@ -1545,7 +1528,7 @@ export function DialogWithBillingForm() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Dialog With Billing Form
+        Modal With Billing Form
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
@@ -1681,503 +1664,11 @@ export function DialogWithBillingForm() {
 
 ---
 
-
-<DocsTitle href="dialog-props">
-## Dialog Props
-</DocsTitle>
-
-The following props are available for the dialog component. These are the custom props
-that we've added for the dialog component and you can use all the other
-native props as well.
-
-| Attribute   | Type                      | Description                               | Default                                |
-| ----------- | ------------------------- | ----------------------------------------- | -------------------------------------- |
-| `open`      | <Code>boolean</Code>      | Open the dialog                           | No default value it's a required prop. |
-| `handler`   | <Code>function</Code>     | Controls open and close states for dialog | No default value it's a required prop. |
-| `size`      | [Size](#types-size)       | Change dialog size                        | <Code>md</Code>                        |
-| `dismiss`   | [Dismiss](#types-dismiss) | Change backdrop dismiss listeners         | <Code>undefined</Code>                 |
-| `animate`   | [Animate](#types-animate) | Change dialog animation                   | <Code>undefined</Code>                 |
-| `className` | <Code>string</Code>       | Add custom className for dialog           | `''`                                   |
-| `children`  | <Code>node</Code>         | Add content for dialog                    | No default value it's a required prop. |
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogProps } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-header-props">
-## Dialog Header Props
-</DocsTitle>
-
-The following props are available for the dialog header component. These are the custom
-props that we've added for the dialog header component and you can use
-all the other native props as well.
-
-| Attribute   | Type                | Description                            | Default                                |
-| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
-| `className` | <Code>string</Code> | Add custom className for dialog header | `''`                                   |
-| `children`  | <Code>node</Code>   | Add content for dialog header          | No default value it's a required prop. |
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogHeaderProps } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-body-props">
-## Dialog Body Props
-</DocsTitle>
-
-The following props are available for dialog body components. These are the custom
-props that we've added for the dialog body component and you can use all
-the other native props as well.
-
-| Attribute   | Type                 | Description                             | Default                                |
-| ----------- | -------------------- | --------------------------------------- | -------------------------------------- |
-| `divider`   | <Code>boolean</Code> | Add border top & bottom for dialog body | <Code>false</Code>                     |
-| `className` | <Code>string</Code>  | Add custom className for dialog body    | `''`                                   |
-| `children`  | <Code>node</Code>    | Add content for dialog body             | No default value it's a required prop. |
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogBodyProps } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-footer-props">
-## Dialog Footer Props
-</DocsTitle>
-
-The following props are available for dialog footer component. These are the custom
-props that we've added for the dialog footer component and you can use
-all the other native props as well.
-
-| Attribute   | Type                | Description                            | Default                                |
-| ----------- | ------------------- | -------------------------------------- | -------------------------------------- |
-| `className` | <Code>string</Code> | Add custom className for dialog footer | `''`                                   |
-| `children`  | <Code>node</Code>   | Add content for dialog footer          | No default value it's a required prop. |
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogFooterProps } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="types-size">
-## Types - Size
-</DocsTitle>
-
-```ts
-type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
-```
-
----
-
-<DocsTitle href="types-dismiss">
-## Types - Dismiss
-</DocsTitle>
-
-```ts
-type dismissType = {
-  enabled?: boolean;
-  escapeKey?: boolean;
-  referencePress?: boolean;
-  referencePressEvent?: 'pointerdown' | 'mousedown' | 'click';
-  outsidePress?: boolean | ((event: MouseEvent) => boolean);
-  outsidePressEvent?: 'pointerdown' | 'mousedown' | 'click';
-  ancestorScroll?: boolean;
-  bubbles?: boolean | {
-      escapeKey?: boolean;
-      outsidePress?: boolean;
-  };
-};
-```
-
----
-
-<DocsTitle href="types-animate">
-## Types - Animate
-</DocsTitle>
-
-```ts
-type animate = {
-  mount?: object;
-  unmount?: object;
-};
-```
-
----
-
-<DocsTitle href="dialog-theme">
-## Dialog Theme
-</DocsTitle>
-
-Learn how to customize the theme and styles for dialog components, the theme object for dialog components has three main objects:
-
-**A.** The <Code>defaultProps</Code> object for setting up the default value for props of dialog component.<br />
-**B.** The <Code>valid</Code> object for customizing the valid values for dialog component props.<br />
-**C.** The <Code>styles</Code> object for customizing the theme and styles of dialog component.<br />
-
-You can customize the theme and styles of dialog components by adding Tailwind CSS classes as key paired values for objects.
-
-<br />
-<br />
-
-<DocsTitle href="dialog-theme-object-type">
-## Dialog Theme Object Type
-</DocsTitle>
-
-```ts
-interface DialogStylesType {
-  defaultProps: {
-    size: string;
-    dismiss: {
-      enabled: boolean;
-      escapeKey: boolean;
-      referencePress: boolean;
-      referencePressEvent: 'pointerdown' | 'mousedown' | 'click';
-      outsidePress: boolean | ((event: MouseEvent) => boolean);
-      outsidePressEvent: 'pointerdown' | 'mousedown' | 'click';
-      ancestorScroll: boolean;
-      bubbles: boolean | {
-          escapeKey: boolean;
-          outsidePress: boolean;
-      };
-    };
-    animate: {
-      mount: object;
-      unmount: object;
-    };
-    className: string;
-  };
-  valid: {
-    sizes: string[];
-  };
-  styles: {
-    base: {
-      backdrop: object;
-      container: object;
-    };
-    sizes: {
-      xs: object;
-      sm: object;
-      md: object;
-      lg: object;
-      xl: object;
-      xxl: object;
-    };
-  };
-}
-```
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogStylesType } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-theme-customization">
-## Dialog Theme Customization
-</DocsTitle>
-
-```tsx
-const theme = {
-  dialog: {
-    defaultProps: {
-      size: "md",
-      dismiss: {},
-      animate: {
-        unmount: {},
-        mount: {},
-      },
-      className: "",
-    },
-    valid: {
-      sizes: ["xs", "sm", "md", "lg", "xl", "xxl"],
-    },
-    styles: {
-      base: {
-        backdrop: {
-          display: "grid",
-          placeItems: "place-items-center",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "w-screen",
-          height: "h-screen",
-          backgroundColor: "bg-black",
-          backgroundOpacity: "bg-opacity-60",
-          backdropFilter: "backdrop-blur-sm",
-        },
-        container: {
-          position: "relative",
-          bg: "bg-white",
-          m: "m-4",
-          borderRadius: "rounded-lg",
-          boxShadow: "shadow-2xl",
-          color: "text-blue-gray-500",
-          fontSmoothing: "antialiased",
-          fontFamily: "font-sans",
-          fontSize: "text-base",
-          fontWeight: "font-light",
-          lineHeight: "leading-relaxed",
-        },
-      },
-      sizes: {
-        xs: {
-          width: "w-full md:w-3/5 lg:w-2/5 2xl:w-1/4",
-          minWidth: "min-w-[80%] md:min-w-[60%] lg:min-w-[40%] 2xl:min-w-[25%]",
-          maxWidth: "max-w-[80%] md:max-w-[60%] lg:max-w-[40%] 2xl:max-w-[25%]",
-        },
-        sm: {
-          width: "w-full md:w-2/3 lg:w-2/4 2xl:w-1/3",
-          minWidth: "min-w-[80%] md:min-w-[66.666667%] lg:min-w-[50%] 2xl:min-w-[33.333333%]",
-          maxWidth: "max-w-[80%] md:max-w-[66.666667%] lg:max-w-[50%] 2xl:max-w-[33.333333%]",
-        },
-        md: {
-          width: "w-full md:w-3/4 lg:w-3/5 2xl:w-2/5",
-          minWidth: "min-w-[90%] md:min-w-[75%] lg:min-w-[60%] 2xl:min-w-[40%]",
-          maxWidth: "max-w-[90%] md:max-w-[75%] lg:max-w-[60%] 2xl:max-w-[40%]",
-        },
-        lg: {
-          width: "w-full md:w-5/6 lg:w-3/4 2xl:w-3/5",
-          minWidth: "min-w-[90%] md:min-w-[83.333333%] lg:min-w-[75%] 2xl:min-w-[60%]",
-          maxWidth: "max-w-[90%] md:max-w-[83.333333%] lg:max-w-[75%] 2xl:max-w-[60%]",
-        },
-        xl: {
-          width: "w-full md:w-5/6 2xl:w-3/4",
-          minWidth: "min-w-[95%] md:min-w-[83.333333%] 2xl:min-w-[75%]",
-          maxWidth: "max-w-[95%] md:max-w-[83.333333%] 2xl:max-w-[75%]",
-        },
-        xxl: {
-          display: "flex",
-          flexDirection: "flex-col",
-          width: "w-screen",
-          minWidth: "min-w-[100vw]",
-          maxWidth: "max-w-[100vw]",
-          height: "h-screen",
-          minHeight: "min-h-[100vh]",
-          maxHeight: "max-h-[100vh]",
-          m: "m-0",
-          borderRadius: "rounded-none",
-        },
-      },
-    },
-  },
-};
-```
-
----
-
-<DocsTitle href="dialog-header-theme-object-type">
-## Dialog Header Theme Object Type
-</DocsTitle>
-
-```ts
-interface DialogHeaderStylesType {
-  defaultProps: {
-    className: string;
-  };
-  styles: {
-    base: object;
-  };
-}
-```
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogHeaderStylesType } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-header-theme-customization">
-## Dialog Header Theme Customization
-</DocsTitle>
-
-```tsx
-const theme = {
-  dialogHeader: {
-    defaultProps: {
-      className: "",
-    },
-    styles: {
-      base: {
-        display: "flex",
-        alignItems: "items-center",
-        flexShrink: "shrink-0",
-        p: "p-4",
-        color: "text-blue-gray-900",
-        fontSmoothing: "antialiased",
-        fontFamily: "font-sans",
-        fontSize: "text-2xl",
-        fontWeight: "font-semibold",
-        lineHeight: "leading-snug",
-      },
-    },
-  },
-};
-```
-
----
-
-<DocsTitle href="dialog-body-theme-object-type">
-## Dialog Body Theme Object Type
-</DocsTitle>
-
-```ts
-interface DialogBodyStylesType {
-  defaultProps: {
-    className: string;
-    divider: boolean;
-  };
-  styles: {
-    base: {
-      initial: object;
-      divider: object;
-    };
-  };
-}
-```
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogBodyStylesType } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-body-theme-customization">
-## Dialog Body Theme Customization
-</DocsTitle>
-
-<span id="dialog-body-theme-customization" className="scroll-mt-48" />
-
-```tsx
-const theme = {
-  dialogBody: {
-    defaultProps: {
-      className: "",
-      divider: false,
-    },
-    styles: {
-      base: {
-        initial: {
-          position: "relative",
-          p: "p-4",
-          color: "text-blue-gray-500",
-          fontSmoothing: "antialiased",
-          fontFamily: "font-sans",
-          fontSize: "text-base",
-          fontWeight: "font-light",
-          lineHeight: "leading-relaxed",
-        },
-        divider: {
-          borderTop: "border-t",
-          borderTopColor: "border-t-blue-gray-100",
-          borderBottom: "border-b",
-          borderBottomColor: "border-b-blue-gray-100",
-        },
-      },
-    },
-  },
-};
-```
-
----
-
-<DocsTitle href="dialog-footer-theme-object-type">
-## Dialog Footer Theme Object Type
-</DocsTitle>
-
-```ts
-interface DialogFooterStylesType {
-  defaultProps: {
-    className: string;
-  };
-  styles: {
-    base: object;
-  };
-}
-```
-
-<br />
-<br />
-
-### For TypeScript Only
-
-```tsx
-import type { DialogFooterStylesType } from "@material-tailwind/react";
-```
-
----
-
-<DocsTitle href="dialog-footer-theme-customization">
-## Dialog Footer Theme Customization
-</DocsTitle>
-
-```tsx
-const theme = {
-  dialogFooter: {
-    defaultProps: {
-      className: "",
-    },
-    styles: {
-      base: {
-        display: "flex",
-        alignItems: "items-center",
-        justifyContent: "justify-end",
-        flexShrink: "shrink-0",
-        flexWrap: "flex-wrap",
-        p: "p-4",
-        color: "text-blue-gray-500",
-      },
-    },
-  },
-};
-```
-
----
-
 <DocsTitle href="more-examples">
 ## Explore More Tailwind CSS Examples
 </DocsTitle>
 
-Check out more dialog component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
+Check out more Modal component examples from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>:
 
 • <a href="https://www.material-tailwind.com/blocks/modals" target="_blank">Modals</a><br />
 • <a href="https://www.material-tailwind.com/blocks/popup-sections" target="_blank">Popup Blocks</a><br />

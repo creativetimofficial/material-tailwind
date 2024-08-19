@@ -1,8 +1,11 @@
 import React from "react";
 import {
   Input,
+  Option,
+  Select,
   Button,
   Dialog,
+  Textarea,
   IconButton,
   Typography,
   DialogBody,
@@ -11,7 +14,7 @@ import {
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export function DialogWithBillingForm() {
+export function AddProductDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -19,15 +22,15 @@ export function DialogWithBillingForm() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Dialog With Billing Form
+        Add Product
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
           <Typography variant="h4" color="blue-gray">
-            Link Payment Card
+            Manage Item
           </Typography>
           <Typography className="mt-1 font-normal text-gray-600">
-            Complete the form below with your card details to link your card.
+            Keep your records up-to-date and organized.
           </Typography>
           <IconButton
             size="sm"
@@ -39,29 +42,18 @@ export function DialogWithBillingForm() {
           </IconButton>
         </DialogHeader>
         <DialogBody className="space-y-4 pb-6">
-          <Button
-            fullWidth
-            variant="outlined"
-            className="h-12 border-blue-500 focus:ring-blue-100/50"
-          >
-            <img
-              src="https://docs-test.material-tailwind.com/icons/Paypal icon.svg"
-              className="mx-auto grid h-12 w-16 -translate-y-7 place-items-center"
-              alt="paypal"
-            />
-          </Button>
           <div>
             <Typography
               variant="small"
               color="blue-gray"
               className="mb-2 text-left font-medium"
             >
-              Cardholder Name
+              Name
             </Typography>
             <Input
               color="gray"
               size="lg"
-              placeholder="e.g., John Doe"
+              placeholder="eg. White Shoes"
               name="name"
               className="placeholder:opacity-100 focus:!border-t-gray-900"
               containerProps={{
@@ -78,21 +70,19 @@ export function DialogWithBillingForm() {
               color="blue-gray"
               className="mb-2 text-left font-medium"
             >
-              Card Number
+              Category
             </Typography>
-            <Input
-              color="gray"
-              size="lg"
-              placeholder="1234 5678 9012 3456"
-              name="number"
-              className="placeholder:opacity-100 focus:!border-t-gray-900"
-              containerProps={{
-                className: "!min-w-full",
-              }}
+            <Select
+              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-800 ring-4 ring-transparent placeholder:text-gray-600 focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
+              placeholder="1"
               labelProps={{
                 className: "hidden",
               }}
-            />
+            >
+              <Option>Clothing</Option>
+              <Option>Fashion</Option>
+              <Option>Watches</Option>
+            </Select>
           </div>
           <div className="flex gap-4">
             <div className="w-full">
@@ -101,13 +91,13 @@ export function DialogWithBillingForm() {
                 color="blue-gray"
                 className="mb-2 text-left font-medium"
               >
-                Expiration Date
+                Weight
               </Typography>
               <Input
                 color="gray"
                 size="lg"
-                placeholder="MM/YY"
-                name="date"
+                placeholder="eg. <8.8oz | 250g"
+                name="weight"
                 className="placeholder:opacity-100 focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
@@ -123,13 +113,13 @@ export function DialogWithBillingForm() {
                 color="blue-gray"
                 className="mb-2 text-left font-medium"
               >
-                CVV
+                Size
               </Typography>
               <Input
                 color="gray"
                 size="lg"
-                placeholder="123"
-                name="CVV"
+                placeholder="eg. US 8"
+                name="size"
                 className="placeholder:opacity-100 focus:!border-t-gray-900"
                 containerProps={{
                   className: "!min-w-full",
@@ -140,10 +130,27 @@ export function DialogWithBillingForm() {
               />
             </div>
           </div>
+          <div>
+            <Typography
+              variant="small"
+              color="blue-gray"
+              className="mb-2 text-left font-medium"
+            >
+              Description (Optional)
+            </Typography>
+            <Textarea
+              rows={7}
+              placeholder="eg. This is a white shoes with a comfortable sole."
+              className="!w-full !border-[1.5px] !border-blue-gray-200/90 !border-t-blue-gray-200/90 bg-white text-gray-600 ring-4 ring-transparent focus:!border-primary focus:!border-t-blue-gray-900 group-hover:!border-primary"
+              labelProps={{
+                className: "hidden",
+              }}
+            />
+          </div>
         </DialogBody>
         <DialogFooter>
           <Button className="ml-auto" onClick={handleOpen}>
-            submit
+            Add Product
           </Button>
         </DialogFooter>
       </Dialog>

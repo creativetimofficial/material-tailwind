@@ -1,8 +1,7 @@
 const withMT = require("./utils/withMT");
 
 module.exports = withMT({
-  content: [],
-  safelist: [{ pattern: /./ }],
+  content: ["./scripts/**/*.js"],
   theme: {
     extend: {},
   },

@@ -1,6 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { Typography, Chip, IconButton } from "@material-tailwind/react";
+import {
+  Typography,
+  Chip,
+  IconButton,
+  Card,
+  CardBody,
+  Button,
+} from "@material-tailwind/react";
 import { useLockedBody } from "usehooks-ts";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -61,7 +68,7 @@ export function Sidenav({
         </IconButton>
       )}
       <div className="fixed top-0 z-[9999] h-screen w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
-        <div className="mb-10 mt-6">
+        <div className="mb-24 mt-6">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>
               <Typography
@@ -75,7 +82,7 @@ export function Sidenav({
                   console.log(route);
 
                   const isActive = route.includes("/")
-                    ? route.includes(slug)
+                    ? route.includes(`/${slug}`)
                     : route === slug;
                   return (
                     <li
@@ -116,6 +123,29 @@ export function Sidenav({
               </ul>
             </div>
           ))}
+          <Card color="gray">
+            <CardBody className="px-4 py-2.5">
+              <Typography variant="h6" className="mb-1">
+                Material Tailwind v3
+              </Typography>
+              <Typography variant="small" color="white" className="font-normal">
+                We&apos;ve just released the new version of Material Tailwind
+                with a lot of new features and improvements. It&apos;s currently
+                on <span className="font-semibold text-yellow-600">beta</span>{" "}
+                and we need your feedback to make it better.
+              </Typography>
+              <Link href="/docs/v3/react/installation">
+                <Button
+                  size="sm"
+                  color="white"
+                  className="mb-1.5 mt-4 normal-case"
+                  fullWidth
+                >
+                  Go to v3 Docs
+                </Button>
+              </Link>
+            </CardBody>
+          </Card>
         </div>
       </div>
     </aside>
