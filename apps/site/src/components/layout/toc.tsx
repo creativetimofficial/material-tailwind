@@ -11,6 +11,7 @@ import {
   Donate,
   EditPencil,
   GitPullRequest,
+  Journal,
   Star,
 } from "iconoir-react";
 import { useEventListener } from "usehooks-ts";
@@ -175,6 +176,9 @@ export function Toc({
         </ListItem>
         <ListItem href="https://discord.com/invite/FhCJCaHdQa" icon={Discord}>
           Join Discord community
+        </ListItem>
+        <ListItem href="https://tally.so/r/3NLRQ0" icon={Journal}>
+          Write us your feedback
         </ListItem>
       </ul>
       <div
