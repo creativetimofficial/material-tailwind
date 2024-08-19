@@ -38,7 +38,7 @@ export function InputPhoneWithCountryCode() {
               </svg>
             </button>
             <div className="h-6 border-l border-slate-200 ml-2"></div>
-            <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
+            <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
                   <li onClick={() => selectOption1('+33')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">France (+33)</li>
@@ -51,7 +51,7 @@ export function InputPhoneWithCountryCode() {
           </div>
           <input
             type="number"
-            className="w-full h-10 pl-20 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            className="w-full h-10 pl-20 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
             placeholder="324-456-2323" />
         </div>  
       </div>
