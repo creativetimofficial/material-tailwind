@@ -339,7 +339,7 @@ export function TableWithModal() {
       </div>
     </div>
 
-    <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true" className="!opacity-1 m-5 mb-5 left-0 top-0 inset-0 z-[999] grid h-full w-full place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
+    <div data-dialog-backdrop="dialog" data-dialog-backdrop-close="true" className="!opacity-1 m-5 mb-5 left-0 top-0 inset-0 z-[9] grid h-full w-full place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
         <div 
           className="relative mx-auto flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-slate-700 shadow-md">
           <div className="flex flex-col p-6">
