@@ -10,5 +10,7 @@ export * from "./table-with-striped-rows";
 export * from "./table-with-striped-columns";
 export * from "./transactions-table";
 export * from "./members-table";
+export * from "./ecommerce-products-table";
 export * from "./simple-sortable-table";
 export * from "./sortable-table";
+export * from "./table-with-modal";
