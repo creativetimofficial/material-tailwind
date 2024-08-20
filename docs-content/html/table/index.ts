@@ -13,4 +13,8 @@ export * from "./members-table";
 export * from "./ecommerce-products-table";
 export * from "./simple-sortable-table";
 export * from "./sortable-table";
+export * from "./comparison-table";
+export * from "./dark-table";
+export * from "./dark-table-striped-rows";
+export * from "./dark-table-striped-columns";
 export * from "./table-with-modal";
