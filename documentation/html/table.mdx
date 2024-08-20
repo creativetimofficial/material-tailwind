@@ -18,8 +18,12 @@ navigation:
     "ecommerce-products-table",
     "sortable-table",
     "simple-sortable-table",
-    "best-practices",
     "table-with-modal",
+    "comparison-table",
+    "dark-table",
+    "dark-table-striped-rows",
+    "dark-table-striped-columns",
+    "best-practices",
  ]
 github: table
 prev: image
@@ -3631,6 +3635,503 @@ This table example integrates an edit modal, letting users to update details dir
 
 ---
 
+## Comparison Table
+
+Use this tailwind example of a comparison table to compare different products or plans. The table includes columns for various features and checkmarks indicating the presence of each feature in different plans. This design helps users make informed decisions by clearly presenting comparative data.
+
+<CodePreview
+  id="comparison-table"
+  link="table#comparison-table"
+  className="mt-4"
+  component={<HTMLTableExamples.ComparisonTable/>}
+>
+```html
+<div class="flex w-full flex-col overflow-scroll rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="py-4">
+    <table class="w-full min-w-[768px] table-auto">
+      <thead>
+        <tr class="border-b border-slate-200">
+          <th class="px-6 py-3 text-left">
+            <span class="font-semibold text-slate-700">The Plans</span>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base font-normal text-slate-400">Team</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $39 </h5>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base font-normal text-slate-400">Growth</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $79 </h5>
+          </th>
+          <th class="px-6 py-3 text-center">
+            <span class="block mb-1 text-base  font-normal text-slate-400">Enterprise</span>
+            <h5 class="block text-xl font-bold text-slate-800"> $99 </h5>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-slate-200">
+          <td class="px-6 py-5 text-left">
+            <p class="font-sans text-sm font-medium text-slate-500"> 50+ Section Examples </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+        </tr>
+        <tr class="border-b border-slate-200">
+          <td class="px-6 py-5 text-left">
+            <p class="font-sans text-sm font-medium text-slate-500"> Multiple use </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="mx-auto h-5 w-5 text-green-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <p class="block font-sans text-sm font-normal leading-normal text-inherit !text-gray-500"> upon request </p>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <p class="block font-sans text-sm font-normal leading-normal text-inherit !text-gray-500"> upon request </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="px-6 py-5 text-left"></td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+          <td class="px-6 py-5 text-center">
+            <button class="select-none rounded bg-slate-800 py-2.5 px-4 text-center text-sm font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" data-ripple-light="true"> Buy Now </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table
+
+Use this example of a table with a dark theme to improve readability and provide a modern look. The table uses a consistent color scheme across all cells, making it easy to scan.
+
+<CodePreview
+  id="dark-table"
+  link="table#dark-table"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTable/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Role
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Email
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    John Michael
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Manager
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    john.michael@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Alexa Liras
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    alexa.liras@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Laurent Perrier
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Executive
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    laurent.perrier@example.com
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Michael Levi
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    Developer
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    michael.levi@example.com
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table with Striped Rows
+
+This table example features alternating row colors to improve readability. The striped rows help users distinguish between different rows, making it easier to follow data across the table.
+
+<CodePreview
+  id="dark-table-striped-rows"
+  link="table#dark-table-striped-rows"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTableStripedRows/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Car Name
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Year of Production
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Price
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Location
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Ford Mustang
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2020
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $35,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    New York, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Tesla Model S
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2022
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $80,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    San Francisco, USA
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-100 font-semibold">
+                    BMW 3 Series
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    2019
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    $25,000
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700">
+                <p class="text-sm text-slate-300">
+                    Paris, France
+                </p>
+            </td>
+        </tr>
+        <tr class="even:bg-slate-900 hover:bg-slate-700">
+            <td class="p-4">
+                <p class="text-sm text-slate-100 font-semibold">
+                    Audi A4
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    2021
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    $40,000
+                </p>
+            </td>
+            <td class="p-4">
+                <p class="text-sm text-slate-300">
+                    London, UK
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+ 
+```
+</CodePreview>
+
+---
+
+## Dark Table with Striped Columns
+
+Use this example of a table with striped columns to highlight different sections of data vertically. This design improves the visual structure of the table, allowing users to easily compare information across columns.
+
+<CodePreview
+  id="dark-table-striped-columns"
+  link="table#dark-table-striped-columns"
+  className="mt-4"
+  component={<HTMLTableExamples.DarkTableStripedColumns/>}
+>
+```html
+<div class="relative flex flex-col w-full h-full overflow-scroll text-slate-300 bg-slate-800 shadow-md rounded-lg bg-clip-border">
+  <table class="w-full text-left table-auto min-w-max">
+    <thead>
+        <tr>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Book Title
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Author
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Year of Publication
+                </p>
+            </th>
+            <th class="p-4 border-b border-slate-600 bg-slate-700">
+                <p class="text-sm font-normal leading-none text-slate-300">
+                    Genre
+                </p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    To Kill a Mockingbird
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Harper Lee
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1960
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Fiction
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    1984
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    George Orwell
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1949
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Dystopian
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    The Great Gatsby
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    F. Scott Fitzgerald
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1925
+                </p>
+            </td>
+            <td class="p-4 border-b border-slate-700 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Classic
+                </p>
+            </td>
+        </tr>
+        <tr class="hover:bg-slate-700">
+            <td class="p-4 bg-slate-900">
+                <p class="text-sm text-slate-100 font-semibold">
+                    The Catcher in the Rye
+                </p>
+            </td>
+            <td class="p-4 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    J.D. Salinger
+                </p>
+            </td>
+            <td class="p-4 bg-slate-900">
+                <p class="text-sm text-slate-300">
+                    1951
+                </p>
+            </td>
+            <td class="p-4 bg-slate-800">
+                <p class="text-sm text-slate-300">
+                    Fiction
+                </p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div> 
+```
+</CodePreview>
+
+---
+
+
 
 <br />
 
@@ -3641,6 +4142,13 @@ This table example integrates an edit modal, letting users to update details dir
 • For tables with a large number of rows, consider using pagination or infinite scroll to improve load times and usability.<br /> 
 • Use tooltips, expandable rows, or detail panels to provide additional information without overwhelming the initial view.<br />
 • Provide immediate feedback for interactions such as sorting, filtering, or editing.
+
+
+
+
+
+
+
 
 
 
