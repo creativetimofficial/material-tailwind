@@ -22,7 +22,7 @@ export function InputPhoneWithIcon() {
           </svg>
         </span>
         <input
-          className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
           placeholder="e.g., +1 123-456-7890"
           pattern="^\+\d{1,3}\s\d{1,3}-\d{3}-\d{4}$"
           value={phoneNumber}

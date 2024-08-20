@@ -98,6 +98,7 @@ import * as HTMLIconButtonExamples from "docs-content/html/icon-button";
 import * as HTMLInputExamples from "docs-content/html/input";
 import * as HTMLInputNumberExamples from "docs-content/html/input-number";
 import * as HTMLInputPhoneExamples from "docs-content/html/input-phone";
+import * as HTMLInputSearchExamples from "docs-content/html/input-search";
 import * as HTMLFormExamples from "docs-content/html/form";
 import * as HTMLListExamples from "docs-content/html/list";
 import * as HTMLMenuExamples from "docs-content/html/menu";
@@ -384,6 +385,7 @@ const components = {
   HTMLInputExamples,
   HTMLInputNumberExamples,
   HTMLInputPhoneExamples,
+  HTMLInputSearchExamples,
   HTMLFormExamples,
   HTMLListExamples,
   HTMLMenuExamples,

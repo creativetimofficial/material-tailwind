@@ -63,16 +63,16 @@ export function TableWithSearch() {
               <p className="block font-semibold text-sm text-slate-800">INV-1001</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">John Doe</p>
+              <p className="text-sm text-slate-500">John Doe</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">$1,200.00</p>
+              <p className="text-sm text-slate-500">$1,200.00</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-01</p>
+              <p className="text-sm text-slate-500">2024-08-01</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-15</p>
+              <p className="text-sm text-slate-500">2024-08-15</p>
             </td>
           </tr>
           <tr className="hover:bg-slate-50">
@@ -80,16 +80,16 @@ export function TableWithSearch() {
               <p className="block font-semibold text-sm text-slate-800">INV-1002</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">Jane Smith</p>
+              <p className="text-sm text-slate-500">Jane Smith</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">$850.00</p>
+              <p className="text-sm text-slate-500">$850.00</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-05</p>
+              <p className="text-sm text-slate-500">2024-08-05</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-20</p>
+              <p className="text-sm text-slate-500">2024-08-20</p>
             </td>
           </tr>
           <tr className="hover:bg-slate-50">
@@ -97,16 +97,16 @@ export function TableWithSearch() {
               <p className="block font-semibold text-sm text-slate-800">INV-1003</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">Acme Corp</p>
+              <p className="text-sm text-slate-500">Acme Corp</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">$2,500.00</p>
+              <p className="text-sm text-slate-500">$2,500.00</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-07</p>
+              <p className="text-sm text-slate-500">2024-08-07</p>
             </td>
             <td className="p-4 border-b border-slate-200 py-5">
-              <p className="block text-sm text-slate-800">2024-08-21</p>
+              <p className="text-sm text-slate-500">2024-08-21</p>
             </td>
           </tr>
           <tr className="hover:bg-slate-50">
@@ -114,16 +114,16 @@ export function TableWithSearch() {
               <p className="block font-semibold text-sm text-slate-800">INV-1004</p>
             </td>
             <td className="p-4 py-5">
-              <p className="block text-sm text-slate-800">Global Inc</p>
+              <p className="text-sm text-slate-500">Global Inc</p>
             </td>
             <td className="p-4 py-5">
-              <p className="block text-sm text-slate-800">$4,750.00</p>
+              <p className="text-sm text-slate-500">$4,750.00</p>
             </td>
             <td className="p-4 py-5">
-              <p className="block text-sm text-slate-800">2024-08-10</p>
+              <p className="text-sm text-slate-500">2024-08-10</p>
             </td>
             <td className="p-4 py-5">
-              <p className="block text-sm text-slate-800">2024-08-25</p>
+              <p className="text-sm text-slate-500">2024-08-25</p>
             </td>
           </tr>
         </tbody>

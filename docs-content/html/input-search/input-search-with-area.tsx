@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-export function InputPhoneNumber() {
+export function InputSearchWithArea() {  
   const [isOpen1, setIsOpen1] = useState(false);
-  const [buttonLabel1, setButtonLabel1] = useState('+33');
+  const [buttonLabel1, setButtonLabel1] = useState('Europe');
   const dropdownRef1 = useRef(null);
 
   const toggleDropdown1 = () => {setIsOpen1(!isOpen1)};
@@ -25,10 +25,7 @@ export function InputPhoneNumber() {
 
   return (
     <>
-      <div ref={dropdownRef1} className="w-full max-w-sm min-w-[200px] mt-4 ">
-        <label className="block mb-1 text-sm text-slate-800">
-          Enter Phone Number
-        </label>
+      <div ref={dropdownRef1} className="w-full max-w-sm min-w-[200px]">
         <div className="relative mt-2">
             <div className="absolute top-2 left-0 flex items-center pl-3">
             <button id="dropdownButton" onClick={toggleDropdown1} className="h-full text-sm flex justify-center items-center bg-transparent text-slate-700 focus:outline-none">
@@ -37,22 +34,30 @@ export function InputPhoneNumber() {
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
-            <div className="h-6 border-l border-slate-200 ml-2"></div>
+            <div className="h-6 border-l border-slate-200 ml-4"></div>
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('+33')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">France (+33)</li>
-                  <li onClick={() => selectOption1('+49')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Germany (+49)</li>
-                  <li onClick={() => selectOption1('+34')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Spain (+34)</li>
-                  <li onClick={() => selectOption1('+1')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">USA (+1)</li>
+                  <li onClick={() => selectOption1('Europe')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Europe</li>
+                  <li onClick={() => selectOption1('Australia')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Australia</li>
+                  <li onClick={() => selectOption1('Africa')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Africa</li>
                 </ul>
               )}
             </div>
           </div>
           <input
-            type="number"
-            className="w-full h-10 pl-20 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
-            placeholder="324-456-2323" />
+            type="text"
+            className="w-full h-10 pl-28 pr-16 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            placeholder="Germany..." />
+
+          <button
+            className="absolute py-2 text-white text-sm right-1 top-1 my-auto px-3 flex items-center bg-slate-800 rounded hover:bg-slate-700"
+            type="button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+            </svg>
+          </button> 
         </div>  
       </div>
     </>
