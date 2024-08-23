@@ -1,5 +1,22 @@
 export const releases = [
   {
+    version: "2.2.5",
+    date: "August 20, 2024",
+    name: "@material-tailwind/html",
+    description: "Material Tailwind v2.2.5",
+    content: [
+      {
+        title: "docs changes",
+        data: [
+          "New category Input Search",
+          "New components added to Input Search category",
+          "New components added to Input Phone category",
+          "New components added to Table category",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.2.4",
     date: "August 19, 2024",
     name: "@material-tailwind/html",
