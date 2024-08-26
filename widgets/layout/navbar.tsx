@@ -95,7 +95,27 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
   const navbarMenu = (
     <div className="flex w-full flex-col justify-end lg:!ml-auto lg:flex-row">
       <List className="min-w-max px-0 lg:!flex-row">
-        <NavItem href="/docs/react/installation">Docs</NavItem>
+        <Menu allowHover>
+          <MenuHandler>
+            <Link passHref href="/docs/react/installation" className="tw-flex tw-items-center tw-gap-1 tw-cursor-pointer tw-rounded-lg tw-py-2.5 tw-px-4 tw-text-sm tw-text-blue-gray-800 hover:tw-text-primary hover:tw-bg-blue-gray-50 hover:tw-bg-opacity-80 focus:tw-bg-blue-gray-50 focus:tw-bg-opacity-80 active:tw-bg-blue-gray-50 active:tw-bg-opacity-80 hover:tw-text-primary focus:tw-text-primary active:tw-text-primary tw-transition-all tw-leading-none">
+              Docs
+            </Link>
+          </MenuHandler>
+          <MenuList>
+            <Link href="/docs/html/installation" className="focus:!tw-outline-none">
+              <MenuItem className="tw-flex tw-items-center">
+                <img alt="tailwind" src="/svg/tailwind.svg" className="w-5 h-5 mr-2"/>
+                Tailwind CSS
+              </MenuItem>
+            </Link>
+            <Link href="/docs/react/installation" className=" focus:!tw-outline-none">
+              <MenuItem className="tw-flex tw-items-center">
+                <img alt="react" src="/svg/react.svg" className="w-5 h-5 mr-2"/>
+                React
+              </MenuItem>
+            </Link>
+          </MenuList>
+        </Menu>
         <NavItem href="/pro">Pro</NavItem>
         <NavItem href="/blocks">Blocks</NavItem>
         <NavItem href="/roots-of-ui-ux-design">Book</NavItem>
