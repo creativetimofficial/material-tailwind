@@ -15,10 +15,10 @@ export function DialogDefault() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
+        Open Modal
       </Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of

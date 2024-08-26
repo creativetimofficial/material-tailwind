@@ -29,7 +29,7 @@ export function OrderDetailsDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Order Details Dialog
+        Order Details Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen}>
         <DialogHeader className="relative m-0 block p-6">

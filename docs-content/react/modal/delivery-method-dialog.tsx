@@ -18,7 +18,7 @@ export function DeliveryMethodDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Delivery Method Dialog
+        Delivery Method Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">

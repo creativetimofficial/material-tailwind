@@ -17,7 +17,7 @@ export function MessageDialog() {
 
   return (
     <>
-      <Button onClick={handleOpen}>Message Dialog</Button>
+      <Button onClick={handleOpen}>Message Modal</Button>
       <Dialog open={open} size="xs" handler={handleOpen}>
         <div className="flex items-center justify-between">
           <DialogHeader className="flex flex-col items-start">

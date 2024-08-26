@@ -16,24 +16,24 @@ export function DialogSizes() {
     <>
       <div className="mb-3 flex gap-3">
         <Button onClick={() => handleOpen("xs")} variant="gradient">
-          Open Dialog XS
+          Open Modal XS
         </Button>
         <Button onClick={() => handleOpen("sm")} variant="gradient">
-          Open Dialog SM
+          Open Modal SM
         </Button>
         <Button onClick={() => handleOpen("md")} variant="gradient">
-          Open Dialog MD
+          Open Modal MD
         </Button>
       </div>
       <div className="flex gap-3">
         <Button onClick={() => handleOpen("lg")} variant="gradient">
-          Open Dialog LG
+          Open Modal LG
         </Button>
         <Button onClick={() => handleOpen("xl")} variant="gradient">
-          Open Dialog XL
+          Open Modal XL
         </Button>
         <Button onClick={() => handleOpen("xxl")} variant="gradient">
-          Open Dialog XXL
+          Open Modal XXL
         </Button>
       </div>
       <Dialog
@@ -48,7 +48,7 @@ export function DialogSizes() {
         size={size || ("md" as any)}
         handler={handleOpen}
       >
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of

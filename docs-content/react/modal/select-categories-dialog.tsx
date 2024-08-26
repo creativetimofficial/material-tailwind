@@ -19,7 +19,7 @@ export function SelectCategoriesDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Select Categories Dialog
+        Select Categories Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">

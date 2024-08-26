@@ -15,7 +15,7 @@ export function DialogCustomAnimation() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Open Dialog
+        Open Modal
       </Button>
       <Dialog
         open={open}
@@ -25,7 +25,7 @@ export function DialogCustomAnimation() {
           unmount: { scale: 0.9, y: -100 },
         }}
       >
-        <DialogHeader>Its a simple dialog.</DialogHeader>
+        <DialogHeader>Its a simple modal.</DialogHeader>
         <DialogBody>
           The key to more success is to have a lot of pillows. Put it this way,
           it took me twenty five years to get these plants, twenty five years of

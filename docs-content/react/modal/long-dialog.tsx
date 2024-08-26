@@ -15,9 +15,9 @@ export function LongDialog() {
 
   return (
     <>
-      <Button onClick={handleOpen}>Long Dialog</Button>
+      <Button onClick={handleOpen}>Long Modal</Button>
       <Dialog open={open} handler={handleOpen}>
-        <DialogHeader>Long Dialog</DialogHeader>
+        <DialogHeader>Long Modal</DialogHeader>
         <DialogBody className="h-[42rem] overflow-scroll">
           <Typography className="font-normal">
             I&apos;ve always had unwavering confidence in my abilities, and I

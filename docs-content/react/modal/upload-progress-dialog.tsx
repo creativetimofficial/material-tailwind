@@ -20,7 +20,7 @@ export function UploadProgressDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Upload Progress Dialog
+        Upload Progress Modal
       </Button>
       <Dialog open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">

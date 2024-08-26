@@ -460,7 +460,7 @@ export function ModalWithImage() {
 ---
 
 <DocsTitle href="web-3-modal">
-## Web 3.0 Dialog
+## Web 3.0 Modal
 </DocsTitle>
 
 Use the example below to create a Web 3.0 wallet connect modal.
@@ -603,7 +603,7 @@ export function Web3Dialog() {
 ---
 
 <DocsTitle href="long-modal">
-## Long Dialog
+## Long Modal
 </DocsTitle>
 
 Use this example of a long modal to present extensive information or content that requires careful reading and consideration. This modal is designed to handle lengthy text, ensuring it remains readable and accessible.
@@ -627,7 +627,7 @@ export function LongDialog() {
 
   return (
     <>
-      <Button onClick={handleOpen}>Long Dialog</Button>
+      <Button onClick={handleOpen}>Long Modal</Button>
       <Dialog open={open} handler={handleOpen}>
         <DialogHeader>Long Modal</DialogHeader>
         <DialogBody className="h-[42rem] overflow-scroll">
@@ -684,7 +684,7 @@ export function LongDialog() {
 ---
 
 <DocsTitle href="message-modal">
-## Message Dialog
+## Message Modal
 </DocsTitle>
 
 Use this example of a message modal to facilitate direct communication between users. The modal includes fields for entering a username and the message content, providing a straightforward interface for sending messages.
@@ -711,7 +711,7 @@ export function MessageDialog() {
 
   return (
     <>
-      <Button onClick={handleOpen}>Message Dialog</Button>
+      <Button onClick={handleOpen}>Message Modal</Button>
     <Dialog open={open} size="xs" handler={handleOpen}>
         <div className="flex items-center justify-between">
           <DialogHeader className="flex flex-col items-start">
@@ -764,10 +764,10 @@ export function MessageDialog() {
 ---
 
 <DocsTitle href="notification-modal">
-## Notification Dialog
+## Notification Modal
 </DocsTitle>
 
-Use this example of a notification Dialog to draw users' attention to important information or actions required. The modal includes a prominent title, a message area for detailed information, and action buttons for user response. 
+Use this example of a notification Modal to draw users' attention to important information or actions required. The modal includes a prominent title, a message area for detailed information, and action buttons for user response. 
 
 <CodePreview className="mt-4" component={<DialogExamples.NotificationDialog />}>
 ```jsx
@@ -834,7 +834,7 @@ export function NotificationDialog() {
 ---
 
 <DocsTitle href="add-product-modal-crud">
-## Add Product Dialog CRUD
+## Add Product Modal CRUD
 </DocsTitle>
 
 This Tailwind CSS modal allows users to manage items by providing input fields for the name, category, weight, size, and an optional description. The form is straightforward and easy to use, with an "Add Product" button to submit the information.
@@ -1006,7 +1006,7 @@ export function AddProductDialog() {
 ---
 
 <DocsTitle href="modal-with-checkbox">
-## Dialog with Checkbox
+## Modal with Checkbox
 </DocsTitle>
 
 Try this checkbox modal to help users organize their contacts based on interests and interactions. Users can select categories such as “Updates”, “Leads”, and “Webinars”. A "Save Categories" button enables users to save their selections.
@@ -1034,7 +1034,7 @@ export function SelectCategoriesDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Select Categories Dialog
+        Select Categories Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
@@ -1155,7 +1155,7 @@ export function DeliveryMethodDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Delivery Method Dialog
+        Delivery Method Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
@@ -1304,7 +1304,7 @@ export function OrderDetailsDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Order Details Dialog
+        Order Details Modal
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen}>
         <DialogHeader className="relative m-0 block p-6">
@@ -1419,7 +1419,7 @@ export function UploadProgressDialog() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Upload Progress Dialog
+        Upload Progress Modal
       </Button>
       <Dialog open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
@@ -1499,7 +1499,7 @@ export function UploadProgressDialog() {
 ---
 
 <DocsTitle href="modal-with-billing-form">
-## Dialog With Billing Form
+## Modal With Billing Form
 </DocsTitle>
 
 Try this modal designed for linking a payment card, including fields for cardholder name, card number, expiration date, and CVV. It concludes with a call-to-action "Submit" button.

@@ -19,7 +19,7 @@ export function DialogWithBillingForm() {
   return (
     <>
       <Button onClick={handleOpen} variant="gradient">
-        Dialog With Billing Form
+        Modal With Billing Form
       </Button>
       <Dialog size="sm" open={open} handler={handleOpen} className="p-4">
         <DialogHeader className="relative m-0 block">
