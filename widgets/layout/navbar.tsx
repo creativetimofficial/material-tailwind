@@ -97,19 +97,19 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
       <List className="min-w-max px-0 lg:!flex-row">
         <Menu allowHover>
           <MenuHandler>
-            <Link passHref href="/docs/react/installation" className="tw-flex tw-items-center tw-gap-1 tw-cursor-pointer tw-rounded-lg tw-py-2.5 tw-px-4 tw-text-sm tw-text-blue-gray-800 hover:tw-text-primary hover:tw-bg-blue-gray-50 hover:tw-bg-opacity-80 focus:tw-bg-blue-gray-50 focus:tw-bg-opacity-80 active:tw-bg-blue-gray-50 active:tw-bg-opacity-80 hover:tw-text-primary focus:tw-text-primary active:tw-text-primary tw-transition-all tw-leading-none">
+            <Link passHref href="/docs/react/installation" className="flex items-center gap-1 cursor-pointer rounded-lg py-2.5 px-4 text-sm text-blue-gray-800 hover:text-primary hover:bg-blue-gray-50 hover:bg-opacity-80 focus:bg-blue-gray-50 focus:bg-opacity-80 active:bg-blue-gray-50 active:bg-opacity-80 hover:text-primary focus:text-primary active:text-primary transition-all leading-none">
               Docs
             </Link>
           </MenuHandler>
           <MenuList>
-            <Link href="/docs/html/installation" className="focus:!tw-outline-none">
-              <MenuItem className="tw-flex tw-items-center">
+            <Link href="/docs/html/installation" className="focus:!outline-none">
+              <MenuItem className="flex items-center">
                 <img alt="tailwind" src="/svg/tailwind.svg" className="w-5 h-5 mr-2"/>
                 Tailwind CSS
               </MenuItem>
             </Link>
-            <Link href="/docs/react/installation" className=" focus:!tw-outline-none">
-              <MenuItem className="tw-flex tw-items-center">
+            <Link href="/docs/react/installation" className=" focus:!outline-none">
+              <MenuItem className="flex items-center">
                 <img alt="react" src="/svg/react.svg" className="w-5 h-5 mr-2"/>
                 React
               </MenuItem>
