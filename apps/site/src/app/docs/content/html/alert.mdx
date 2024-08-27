@@ -421,10 +421,11 @@ You can make an alert dismissible by adding the `data-dismissible="alertName"` d
 <ComponentPreview demo={<HTMLAlert.AlertDismissible />}>
 ```html
 <div
+  id="alert"
   role="alert"
-  class="relative flex items-start w-full p-2 border rounded-md border-primary bg-primary text-primary-foreground"
+  class="relative flex w-full items-start rounded-md border border-primary bg-primary p-2 text-primary-foreground"
 >
-  <span class="grid p-1 shrink-0 place-items-center">
+  <span class="grid shrink-0 place-items-center p-1">
     <svg
       width="1.5em"
       height="1.5em"
@@ -433,7 +434,7 @@ You can make an alert dismissible by adding the `data-dismissible="alertName"` d
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      class="w-5 h-5"
+      class="h-5 w-5"
     >
       <path
         d="M12 7L12 13"
@@ -458,13 +459,13 @@ You can make an alert dismissible by adding the `data-dismissible="alertName"` d
   <div class="m-1.5 w-full font-sans text-base leading-none">
     A simple alert for showing message.
   </div>
-  <button class="outline-none">
+  <button id="alert-dismiss-trigger" class="outline-none">
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       color="currentColor"
-      class="w-5 h-5 m-1 stroke-2"
+      class="m-1 h-5 w-5 stroke-2"
     >
       <path
         d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
@@ -475,6 +476,20 @@ You can make an alert dismissible by adding the `data-dismissible="alertName"` d
     </svg>
   </button>
 </div>
+
+<!-- script that runs the alert dismiss functionality -->
+<script>
+  const alert = document.querySelector("#alert");
+  const alertDismissTrigger = document.querySelector(
+    "#alert-dismiss-trigger",
+  );
+
+  if (alert && alertDismissTrigger) {
+    alertDismissTrigger.addEventListener("click", () => {
+      alert.remove();
+    });
+  }
+</script>
 ```
 </ComponentPreview>
 
