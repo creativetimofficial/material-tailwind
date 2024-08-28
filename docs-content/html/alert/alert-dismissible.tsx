@@ -1,32 +1,48 @@
+import { useState } from "react";
+
 export function AlertDismissible() {
+  const [visible, setVisible] = useState(true);
+
+  const closeAlert = () => {
+    setVisible(false); // Sets the visibility state to false
+  };
+
+  const openAlert = () => {
+    setVisible(true); // Sets the visibility state to false
+  };
+
   return (
-    <div
-      className="font-regular relative flex w-full rounded-lg bg-gray-900 px-4 py-4 text-base text-white"
-      data-dismissible="alert"
-    >
-      <div className="mr-12 ">A dismissible alert for showing message.</div>
-      <button
-        data-dismissible-target="alert"
-        className="!absolute  top-3 right-3 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
+    visible ? (
+      <div
+        role="alert"
+        className="mt-3 relative flex w-full p-3 text-sm text-white bg-slate-800 rounded-md"
       >
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+        A dismissible alert with closing button.
+        <button
+          className="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-1.5 right-1.5"
+          type="button"
+          onClick={closeAlert}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="h-6 w-6"
-            stroke-width="2"
+            className="h-5 w-5"
+            strokeWidth="2"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>
-        </span>
+        </button>
+      </div>
+    ) : (
+      <button onClick={openAlert} className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+        Reset
       </button>
-    </div>
+    )
   );
 }
