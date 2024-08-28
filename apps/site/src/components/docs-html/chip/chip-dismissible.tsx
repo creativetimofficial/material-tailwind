@@ -1,6 +1,24 @@
+"use client";
+
+import React from "react";
+
 export function ChipDismissible() {
+  React.useEffect(() => {
+    const chip = document.querySelector("#chip");
+    const chipDismissTrigger = document.querySelector("#chip-dismiss-trigger");
+
+    if (chip && chipDismissTrigger) {
+      chipDismissTrigger.addEventListener("click", () => {
+        chip.remove();
+      });
+    }
+  }, []);
+
   return (
-    <div className="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
+    <div
+      id="chip"
+      className="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground"
+    >
       <span className="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
         <svg
           width="1.5em"
@@ -35,7 +53,10 @@ export function ChipDismissible() {
       <span className="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
         Material Tailwind
       </span>
-      <button className="ms-1 grid h-[18px] w-[18px] shrink-0 -translate-x-0.5 place-items-center rounded-full stroke-2 p-px">
+      <button
+        id="chip-dismiss-trigger"
+        className="ms-1 grid h-[18px] w-[18px] shrink-0 -translate-x-0.5 place-items-center rounded-full stroke-2 p-px"
+      >
         <svg
           viewBox="0 0 24 24"
           fill="none"

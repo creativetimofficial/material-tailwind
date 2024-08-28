@@ -299,12 +299,10 @@ The icons, in this example, add a visual element that can improve user understan
 
 ## Chip Dismissible
 
-You can make a chip dismissible by adding the `data-dismissible="chipName"` data attribute to the chip element and the `data-dismissible-target="chipName"` data attribute to the element that you want to close the chip with.
-
 
 <ComponentPreview demo={<HTMLChip.ChipDismissible />}>
 ```html
-<div class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
+<div id="chip" class="relative inline-flex select-none items-center rounded-full border border-primary bg-primary p-[3px] font-sans text-[13px] font-medium leading-none text-primary-foreground">
   <span class="grid h-4 w-4 shrink-0 translate-x-0.5 place-items-center rounded-full">
     <svg
       width="1.5em"
@@ -339,7 +337,7 @@ You can make a chip dismissible by adding the `data-dismissible="chipName"` data
   <span class="font-inherit mx-2 my-[3.5px] leading-none text-inherit">
     Material Tailwind
   </span>
-  <button class="ms-1 grid h-[18px] w-[18px] shrink-0 -translate-x-0.5 place-items-center rounded-full stroke-2 p-px">
+  <button id="chip-dismiss-trigger" class="ms-1 grid h-[18px] w-[18px] shrink-0 -translate-x-0.5 place-items-center rounded-full stroke-2 p-px">
     <svg
       viewBox="0 0 24 24"
       fill="none"
@@ -356,6 +354,18 @@ You can make a chip dismissible by adding the `data-dismissible="chipName"` data
     </svg>
   </button>
 </div>
+
+<!-- script that runs the chip dismiss functionality -->
+<script>
+  const chip = document.querySelector("#chip");
+  const chipDismissTrigger = document.querySelector("#chip-dismiss-trigger");
+
+  if (chip && chipDismissTrigger) {
+    chipDismissTrigger.addEventListener("click", () => {
+      chip.remove();
+    });
+  }
+</script>
 ```
 </ComponentPreview>
 
@@ -383,23 +393,6 @@ Use the example below for a chip component containing an avatar. It incorporates
 </div>
 ```
 </ComponentPreview>
-
----
-
-## Required Scripts
-
-The chip component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
-<CodePreview>
-
-```bash
-# from node_modules
-<script src="node_modules/@material-tailwind/html@latest/scripts/dismissible.js"></script>
- 
-# from cdn
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-```
-</CodePreview>
 
 ---
 
