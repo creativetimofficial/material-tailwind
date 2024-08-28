@@ -1,6 +1,24 @@
+"use client";
+
+import * as React from "react";
+
 export function AlertWithContent() {
+  React.useEffect(() => {
+    const alert = document.querySelector("#alert-content");
+    const alertDismissTrigger = document.querySelector(
+      "#content-close-trigger",
+    );
+
+    if (alert && alertDismissTrigger) {
+      alertDismissTrigger.addEventListener("click", () => {
+        alert.remove();
+      });
+    }
+  }, []);
+
   return (
     <div
+      id="alert-content"
       role="alert"
       className="relative flex w-full items-start rounded-md border border-primary bg-primary p-2 text-primary-foreground"
     >
@@ -32,7 +50,7 @@ export function AlertWithContent() {
           inner peace. That's a good day for me.
         </p>
       </div>
-      <button className="outline-none">
+      <button id="content-close-trigger" className="outline-none">
         <svg
           viewBox="0 0 24 24"
           fill="none"

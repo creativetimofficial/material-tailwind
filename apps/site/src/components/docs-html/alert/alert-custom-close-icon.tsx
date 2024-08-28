@@ -1,6 +1,20 @@
+"use client";
+import { useEffect } from "react";
+
 export function AlertCustomCloseIcon() {
+  useEffect(() => {
+    const alert = document.querySelector("#alert2");
+    const alertCloseTrigger = document.querySelector("#alert-close-trigger");
+
+    if (alert && alertCloseTrigger) {
+      alertCloseTrigger.addEventListener("click", () => {
+        alert.remove();
+      });
+    }
+  }, []);
   return (
     <div
+      id="alert2"
       role="alert"
       className="relative flex w-full items-start rounded-md border border-primary bg-primary p-2 text-primary-foreground"
     >
@@ -26,9 +40,8 @@ export function AlertCustomCloseIcon() {
         Sorry, something went wrong please try again.
       </div>
       <button
-        className="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-2.5 py-1.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none data-[width=full]:w-full data-[shape=pill]:rounded-full"
-        data-shape="default"
-        data-width="default"
+        id="alert-close-trigger"
+        className="inline-flex select-none items-center justify-center rounded-md border border-primary bg-primary px-2.5 py-1.5 text-center align-middle font-sans text-sm font-medium leading-none text-primary-foreground transition-all duration-300 ease-in hover:border-primary-light hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
       >
         Close
       </button>
