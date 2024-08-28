@@ -6,9 +6,6 @@ navigation:
     "accordion",
     "custom-accordion-icon",
     "disabled-accordion",
-    "accordion-trigger-data-attributes",
-    "accordion-data-attributes",
-    "required-script",
     "more-examples",
   ]
 github: accordion
@@ -233,72 +230,87 @@ The example is a type of accordion which indicates that certain sections of cont
   component={<HTMLAccordianExamples.AccordionDisabled/>}
 >
 ```html
-  <div class="relative mb-3">
-    <h6 class="relative block w-full opacity-50 pointer-events-none">
-      <button
-        class="flex items-center justify-between w-full py-4 font-sans text-xl antialiased font-semibold leading-snug transition-colors border-b select-none border-b-blue-gray-100 text-blue-gray-700 hover:text-blue-gray-900"
-        data-collapse-target="disabled-collapse-1"
-      >
-        <span>What is Material Tailwind?</span>
-        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
-        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
-      </button>
-    </h6>
-    <div
-      data-collapse="disabled-collapse-1"
-      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-    >
-      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
-        We're not always in the position that we want to be at. We're constantly
-        growing. We're constantly making mistakes. We're constantly trying to
-        express ourselves and actualize our dreams.
-      </div>
+
+<!-- Accordion Item 1 -->
+<div class="border-b border-slate-200">
+  <button disabled onclick="toggleAccordion(1)" class="w-full flex justify-between items-center py-5 text-slate-400 cursor-not-allowed">
+    <span>What is Material Tailwind?</span>
+    <span id="icon-1" class="text-slate-400 transition-transform duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+      </svg>
+    </span>
+  </button>
+  <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+    <div class="pb-5 text-sm text-slate-500">
+      Material Tailwind is a framework that enhances Tailwind CSS with additional styles and components.
     </div>
   </div>
-  <div class="relative mb-3">
-    <h6 class="mb-0">
-      <button
-        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
-        data-collapse-target="disabled-collapse-2"
-      >
-        <span>How to use Material Tailwind?</span>
-        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
-        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
-      </button>
-    </h6>
-    <div
-      data-collapse="disabled-collapse-2"
-      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-    >
-      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
-        We're not always in the position that we want to be at. We're constantly
-        growing. We're constantly making mistakes. We're constantly trying to
-        express ourselves and actualize our dreams.
-      </div>
+</div>
+ 
+<!-- Accordion Item 2 -->
+<div class="border-b border-slate-200">
+  <button onclick="toggleAccordion(2)" class="w-full flex justify-between items-center py-5 text-slate-800">
+    <span>How to use Material Tailwind?</span>
+    <span id="icon-2" class="text-slate-800 transition-transform duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+      </svg>
+    </span>
+  </button>
+  <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+    <div class="pb-5 text-sm text-slate-500">
+      You can use Material Tailwind by importing its components into your Tailwind CSS project.
     </div>
   </div>
-  <div class="relative mb-3">
-    <h6 class="mb-0">
-      <button
-        class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-slate-100 text-slate-700 rounded-t-1 group text-dark-500"
-        data-collapse-target="disabled-collapse-3"
-      >
-        <span>What can I do with Material Tailwind?</span>
-        <i class="absolute right-0 pt-1 text-xs fa fa-plus group-open:opacity-0"></i>
-        <i class="absolute right-0 pt-1 text-xs opacity-0 fa fa-minus group-open:opacity-100"></i>
-      </button>
-    </h6>
-    <div
-      data-collapse="disabled-collapse-3"
-      class="h-0 overflow-hidden transition-all duration-300 ease-in-out"
-    >
-      <div class="p-4 text-sm leading-normal text-blue-gray-500/80">
-        We're not always in the position that we want to be at. We're constantly
-        growing. We're constantly making mistakes. We're constantly trying to
-        express ourselves and actualize our dreams.
-      </div>
+</div>
+ 
+<!-- Accordion Item 3 -->
+<div class="border-b border-slate-200">
+  <button onclick="toggleAccordion(3)" class="w-full flex justify-between items-center py-5 text-slate-800">
+    <span>What can I do with Material Tailwind?</span>
+    <span id="icon-3" class="text-slate-800 transition-transform duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+      </svg>
+    </span>
+  </button>
+  <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+    <div class="pb-5 text-sm text-slate-500">
+      Material Tailwind allows you to quickly build modern, responsive websites with a focus on design.
     </div>
   </div>
+</div>
+ 
+<script>
+  function toggleAccordion(index) {
+    const content = document.getElementById(`content-${index}`);
+    const icon = document.getElementById(`icon-${index}`);
+ 
+    // SVG for Minus icon
+    const minusSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+      </svg>
+    `;
+ 
+    // SVG for Plus icon
+    const plusSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+      </svg>
+    `;
+ 
+    // Toggle the content's max-height for smooth opening and closing
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      content.style.maxHeight = '0';
+      icon.innerHTML = plusSVG;
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.innerHTML = minusSVG;
+    }
+  }
+</script>
 ```
 </CodePreview>
 
@@ -306,58 +318,14 @@ The example is a type of accordion which indicates that certain sections of cont
 
 Use this Tailwind CSS accordion to maintain a clean layout while signaling to users that some information or options are not available for interaction at the moment (eg. content is released in stages, or user actions are required to unlock certain functionalities). 
 
----
-
-## Material Tailwind Accordion Specifications
-
-The following attributes are used to handle the show/hide functionality of accordion components without needing to write lots of custom code. By using these data attributes, developers can easily link the accordion buttons (triggers) with the content sections they control.
-
-
-## Accordion Trigger Data Attributes
-
-<span id="accordion-trigger-data-attributes" class="scroll-mt-48" />
-The following data attributes are available for accordion trigger element.
-
-| Attribute              | Description                                                                                           |
-| ---------------------- | ----------------------------------------------------------------------------------------------------- |
-| `data-collapse-target` | Set the accordion target element, it should be the same as the <br /> `data-collapse` data attribute. |
-
----
-
-## Accordion Data Attributes
-
-<span id="accordion-data-attributes" class="scroll-mt-48" />
-The following data attributes are available for the accordion element.
-
-| Attribute       | Description                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------- |
-| `data-collapse` | Set the accordion element, it should be the same as the <br /> `data-collapse-target` data attribute. |
-
----
-
-## Required Scripts
-
-<span id="required-script" class="scroll-mt-56" />
-
-The accordion component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
-```html
-<!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
-
-<!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
-```
----
+<br /><br />
 
 <span id="more-examples"></span>
 
 ## Explore More Tailwind CSS Examples
 Looking for more accordion examples? Check out our <a href="https://www.material-tailwind.com/blocks/faqs" target="_blank">FAQs examples</a> from <a href="https://www.material-tailwind.com/blocks" target="_blank">Material Tailwind Blocks</a>.
 
-
-
----
+<br />
 
 ### Accordion Best Practices for Developers
 
