@@ -42,9 +42,11 @@ This example of alert with white text and dark gray background creates a high co
   component={<HTMLAlertExamples.AlertDefault />}
 >
 ```html
-<div role="alert" class="relative block w-full px-4 py-4 text-base text-white bg-gray-900 rounded-lg font-regular"
-  style="opacity: 1;">
-  <div class="mr-12 ">A simple alert for showing message.</div>
+<div role="alert" class="mt-3 relative flex w-full p-4 text-sm text-white bg-slate-800 rounded-md">
+  A simple filled alert for showing message.
+  <button class="flex items-center justify-center transition-all w-8 h-8 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-2.5 right-2.5" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+  </button>
 </div>
 ```
 </CodePreview>
