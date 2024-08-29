@@ -9,7 +9,7 @@ navigation:
     "badge-overlap",
     "badge-with-border",
     "badge-dot",
-    "badge-custome-style",
+    "badge-custom-style",
     "more-examples",
     "best-practices"
   ]
@@ -245,30 +245,24 @@ This component can be used in user interfaces where a visual indicator is needed
 
 ---
 
-## Badge Custome Style
+## Badge Custom Style
 
 Use this example in your project if you want to represent a completed or acknowledged state.  
 
 <CodePreview
-  id="badge-custome-style"
-  link="badge#badge-custome-style"
+  id="badge-custom-style"
+  link="badge#badge-custom-style"
   class="mt-4"
   component={<HTMLBadgeExamples.BadgeCustomStyles/>}
 >
 ```html
 <div class="relative inline-flex">
-  <button
-    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-    type="button">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
     Notifications
   </button>
-  <span
-    class="absolute rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-red-500 text-white min-w-[24px] min-h-[24px] bg-gradient-to-tr from-green-400 to-green-600 border-2 border-white shadow-lg shadow-black/20">
-    <svg
-      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-      aria-hidden="true" class="w-4 h-4 text-white">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5">
-      </path>
+  <span class="absolute top-0.5 right-0.5 grid min-h-[28px] min-w-[28px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-green-600 py-1 px-1 text-xs text-white border border-white">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
     </svg>
   </span>
 </div>
@@ -277,7 +271,7 @@ Use this example in your project if you want to represent a completed or acknowl
 
 <br />
 
-The badge indicator is styled as a small, circular badge (<Code>rounded-full</Code>) with a gradient background (<Code>bg-gradient-to-tr from-green-400 to-green-600</Code>), a white border (<Code>border-2 border-white</Code>), and a shadow (<Code>shadow-lg shadow-black/20</Code>). It also contains an SVG icon, which is a checkmark (<Code>\<svg></Code> element), indicating a positive or completed status.
+The badge indicator is styled as a small, circular badge (<Code>rounded-full</Code>) with a background (<Code>bg-green-600</Code>), a white border (<Code>border border-white</Code>). It also contains an SVG icon, which is a checkmark (<Code>\<svg></Code> element), indicating a positive or completed status.
 
 ---
 <span id="more-examples"></span>
