@@ -42,13 +42,10 @@ Get started with this simple badge example that comes with notification button a
 >
 ```html
 <div class="relative inline-flex">
-  <button
-    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-    type="button">
+  <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
     Notifications
   </button>
-  <span
-    class="absolute rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-red-500 text-white min-w-[24px] min-h-[24px]">
+  <span class="absolute top-0.5 right-0.5 grid min-h-[24px] min-w-[24px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white">
     5
   </span>
 </div>
@@ -61,7 +58,7 @@ Get started with this simple badge example that comes with notification button a
 
 Material Tailwind’s badge component comes with 20 different colors that you can change using the color classes. 
 
-Below you can check  4 of the examples: <Code>bg-red-500</Code>, <Code>bg-green-500</Code>, <Code>bg-amber-500</Code>, and <Code>bg-purple-500</Code>. The badge indicators add a visual element to the buttons, making the components more visually appealing and informative.
+Below you can check  4 of the examples: <Code>bg-red-600</Code>, <Code>bg-green-600</Code>, <Code>bg-amber-600</Code>, and <Code>bg-purple-600</Code>. The badge indicators add a visual element to the buttons, making the components more visually appealing and informative.
 
 <CodePreview
   id="badge-color"
@@ -69,45 +66,32 @@ Below you can check  4 of the examples: <Code>bg-red-500</Code>, <Code>bg-green-
   component={<HTMLBadgeExamples.BadgeColors />}
 >
 ```html
+<div class="flex items-center gap-4">
   <div class="relative inline-flex">
-    <button
-      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-      type="button">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
       Red
     </button>
-    <span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-red-500 text-white">
-    </span>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-red-600 py-1 px-1 text-xs text-white"></span>
   </div>
   <div class="relative inline-flex">
-    <button
-      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-      type="button">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
       Green
     </button>
-    <span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white">
-    </span>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-green-600 py-1 px-1 text-xs text-white"></span>
   </div>
   <div class="relative inline-flex">
-    <button
-      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-      type="button">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
       Amber
     </button>
-    <span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-amber-500 text-black">
-    </span>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-amber-600 py-1 px-1 text-xs text-white"></span>
   </div>
   <div class="relative inline-flex">
-    <button
-      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-      type="button">
+    <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
       Purple
     </button>
-    <span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-purple-500 text-white"></span>
+    <span class="absolute top-0.5 right-0.5 grid min-h-[12px] min-w-[12px] translate-x-2/4 -translate-y-2/4 place-items-center rounded-full bg-purple-600 py-1 px-1 text-xs text-white"></span>
   </div>
+</div>
 ```
 </CodePreview>
 
@@ -175,7 +159,7 @@ This code snippet provides examples of how badge indicators can be effectively u
 <CodePreview
   id="badge-overlap"
   link="badge#badge-overlap"
-  className="mt-4"
+  class="mt-4"
   component={<HTMLBadgeExamples.BadgeOverlap/>}
 >
 ```html
@@ -251,7 +235,7 @@ Notify users of unread messages, alerts, or other important information using th
 <CodePreview
   id="badge-with-border"
   link="badge#badge-with-border"
-  className="mt-4"
+  class="mt-4"
   component={<HTMLBadgeExamples.BadgeWithBorder/>}
 >
 ```html
@@ -285,7 +269,7 @@ This component can be used in user interfaces where a visual indicator is needed
 <CodePreview
   id="badge-dot"
   link="badge#badge-dot"
-  className="mt-4"
+  class="mt-4"
   component={<HTMLBadgeExamples.BadgeDot/>}
 >
 ```html
@@ -311,7 +295,7 @@ Use this example in your project if you want to represent a completed or acknowl
 <CodePreview
   id="badge-custome-style"
   link="badge#badge-custome-style"
-  className="mt-4"
+  class="mt-4"
   component={<HTMLBadgeExamples.BadgeCustomStyles/>}
 >
 ```html
