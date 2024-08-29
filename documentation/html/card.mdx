@@ -6,6 +6,8 @@ navigation:
     "card",
     "simple-card",
     "card-with-link",
+    "card-with-header",
+    "card-with-footer",
     "profile-card",
     "login-card",
     "pricing-card",
@@ -16,6 +18,8 @@ navigation:
     "horizontal-card",
     "ecommerce-card",
     "card-with-list",
+    "text-only-card",
+    "card-with-hover",
     "more-examples",
     "best-practices",
   ]
@@ -34,7 +38,7 @@ See below our beautiful Tailwind CSS card examples that you can use in your web 
 
 <br />
 
-## Card Examples:
+### Card Examples:
 
 ## Default Card
 
@@ -76,6 +80,7 @@ This versatile card component example contains an image, title, text, and button
 </CodePreview>
 
 ---
+
 
 ## Tailwind CSS Simple Card
 
@@ -156,6 +161,68 @@ The design elements such as the SVG icon, text content, and interactive button, 
     </a>
   </div>
 </div> 
+```
+</CodePreview>
+
+---
+
+## Card with Header
+
+You can always add additional information to a regular card. Usually these are secondary details about the main topic of the card.
+
+<CodePreview
+  id="card-with-header"
+  link="card#card-with-header"
+  className="mt-4"
+  component={<HTMLCardExamples.CardWithHeader/>}
+>
+```html
+<div class="relative flex flex-col mt-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+  <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+      <span class="text-sm text-slate-500">
+          Header for the card
+      </span>
+  </div>
+  <div class="p-4">
+      <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+      Website Review Check Text
+      </h5>
+      <p class="text-slate-600 leading-normal font-light">
+      Surround yourself with angels. Life is what you make it, so let’s make it. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
+      </p>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Card with Footer
+
+At the end of the card, add additional information that are as a secondary source of information.
+
+<CodePreview
+  id="card-with-footer"
+  link="card#card-with-footer"
+  className="mt-4"
+  component={<HTMLCardExamples.CardWithFooter/>}
+>
+```html
+<div class="relative flex flex-col mt-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+  <div class="p-4">
+      <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+      The key is to enjoy life
+      </h5>
+      <p class="text-slate-600 leading-normal font-light">
+      Surround yourself with angels. Life is what you make it, so let’s make it. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
+      </p>
+  </div>
+  <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1">
+      <span class="text-sm text-slate-500">
+          Last updated: 4 hours ago
+      </span>
+  </div>
+</div>
 ```
 </CodePreview>
 
@@ -926,6 +993,59 @@ Use this card  for e-commerce platforms, online stores, or product showcase page
 </CodePreview>
 
 ---
+
+## Text Only Card
+
+Use this card example with simple design for place where only a simple text, like description or title and description are needed. It features a simple typography of text and comfortable spacing.
+
+<CodePreview
+  id="text-only-card"
+  link="card#text-only-card"
+  className="mt-4"
+  component={<HTMLCardExamples.TextOnlyCard/>}
+>
+```html
+    <div class="relative flex flex-col mt-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+        <div class="p-4">
+            <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+            Website Review Check Text
+            </h5>
+            <p class="text-slate-600 leading-normal font-light">
+            Surround yourself with angels. Life is what you make it, so let’s make it. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
+            </p>
+        </div>
+    </div>
+```
+</CodePreview>
+
+---
+
+## Card with Hover Effect
+
+Use this card example with simple design and a beautiful hover effect for places where you want the attention of the user to be focused. It is great in combination with an <code>a tag</code> for linking to other pages, categories or blog posts.
+
+<CodePreview
+  id="card-with-hover"
+  link="card#card-with-hover"
+  className="mt-4"
+  component={<HTMLCardExamples.CardWithHover/>}
+>
+```html
+   <div class="relative flex flex-col mt-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 hover:border-slate-300 hover:shadow-md rounded-lg transition-all cursor-pointer">
+      <div class="p-4">
+          <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+          It’s important to shape up
+          </h5>
+          <p class="text-slate-600 leading-normal font-light">
+          Surround yourself with angels. Life is what you make it, so let’s make it. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it.
+          </p>
+      </div>
+  </div>
+```
+</CodePreview>
+
+---
+
 
 <span id="more-examples"></span>
 ## Explore More Tailwind CSS Examples
