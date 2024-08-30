@@ -1,5 +1,25 @@
 export const releases = [
   {
+    version: "2.3.0",
+    date: "August 30, 2024",
+    name: "@material-tailwind/html",
+    description: "Material Tailwind v2.3.0",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Accordion component - Code & UI changes",
+          "Alert component - Code & UI changes",
+          "Badge component - Code & UI changes",
+          "Button component - Code & UI changes",
+          "Button Group component - Code & UI changes",
+          "Icon Button component - Code & UI changes",
+          "Badge component - Code & UI changes",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.2.5",
     date: "August 20, 2024",
     name: "@material-tailwind/html",
