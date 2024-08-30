@@ -1,134 +1,89 @@
 export function CheckboxHorizontalListGroup() {
   return (
-    <div className="relative flex w-full max-w-[24rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-      <nav className="flex min-w-[240px] flex-row gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+    <div className="relative max-w-sm flex w-full flex-col rounded-xl bg-white shadow">
+      <nav className="flex min-w-[240px] flex-row gap-1 p-2">
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <label
-            htmlFor="horizontal-list-react"
+            htmlFor="check-vertical-list-group4"
             className="flex w-full cursor-pointer items-center px-3 py-2"
           >
-            <div className="mr-3 grid place-items-center">
-              <div className="inline-flex items-center">
-                <label
-                  className="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="horizontal-list-react"
-                >
-                  <input
-                    id="horizontal-list-react"
-                    type="checkbox"
-                    className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                </label>
-              </div>
+            <div className="inline-flex items-center">
+              <label className="flex items-center cursor-pointer relative" htmlFor="check-vertical-list-group4">
+                <input type="checkbox"
+                  className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+                  id="check-vertical-list-group4" />
+                <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                    stroke="currentColor" stroke-width="1">
+                    <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </label>
+              <label className="cursor-pointer ml-2 text-slate-600 text-sm" htmlFor="check-vertical-list-group4">
+                React
+              </label>
             </div>
-            <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-              React.js
-            </p>
           </label>
         </div>
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <label
-            htmlFor="horizontal-list-vue"
+            htmlFor="check-vertical-list-group5"
             className="flex w-full cursor-pointer items-center px-3 py-2"
           >
-            <div className="mr-3 grid place-items-center">
-              <div className="inline-flex items-center">
-                <label
-                  className="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="horizontal-list-vue"
-                >
-                  <input
-                    id="horizontal-list-vue"
-                    type="checkbox"
-                    className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                </label>
-              </div>
+            <div className="inline-flex items-center">
+              <label className="flex items-center cursor-pointer relative" htmlFor="check-vertical-list-group5">
+                <input type="checkbox"
+                  className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+                  id="check-vertical-list-group5" />
+                <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                    stroke="currentColor" stroke-width="1">
+                    <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </label>
+              <label className="cursor-pointer ml-2 text-slate-600 text-sm" htmlFor="check-vertical-list-group5">
+                Vue.js
+              </label>
             </div>
-            <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-              Vue.js
-            </p>
           </label>
         </div>
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <label
-            htmlFor="horizontal-list-svelte"
+            htmlFor="check-vertical-list-group6"
             className="flex w-full cursor-pointer items-center px-3 py-2"
           >
-            <div className="mr-3 grid place-items-center">
-              <div className="inline-flex items-center">
-                <label
-                  className="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="horizontal-list-svelte"
-                >
-                  <input
-                    id="horizontal-list-svelte"
-                    type="checkbox"
-                    className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                </label>
-              </div>
+            <div className="inline-flex items-center">
+              <label className="flex items-center cursor-pointer relative" htmlFor="check-vertical-list-group6">
+                <input type="checkbox"
+                  className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800"
+                  id="check-vertical-list-group6" />
+                <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                    stroke="currentColor" stroke-width="1">
+                    <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </label>
+              <label className="cursor-pointer ml-2 text-slate-600 text-sm" htmlFor="check-vertical-list-group6">
+                Svelte.js
+              </label>
             </div>
-            <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-              Svelte.js
-            </p>
           </label>
         </div>
       </nav>
