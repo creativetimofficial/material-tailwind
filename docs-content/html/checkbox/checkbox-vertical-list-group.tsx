@@ -30,7 +30,7 @@ export function CheckboxVerticalListGroup() {
             </div>
           </label>
         </div>
-        <button
+        <div
           role="button"
           className="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
@@ -57,7 +57,7 @@ export function CheckboxVerticalListGroup() {
               </label>
             </div>
           </label>
-        </button>
+        </div>
         <div
           role="button"
           className="flex w-full items-center rounded-lg p-0 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
