@@ -301,32 +301,21 @@ In the example below, each button represents a different social media platform t
   component={<HTMLIconButtonExamples.IconButtonCustomStyles/>}
 >
 ```html
-<div class="flex gap-4">
-  <button
-    class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] text-xs text-white shadow-md shadow-gray-900/10 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded bg-[#ea4335] hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10"
-    type="button">
-    <span
-      class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><i
-        class="text-lg fab fa-google"
-        aria-hidden="true"></i></span></button><button
-    class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] text-xs text-white shadow-md shadow-gray-900/10 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded bg-[#1DA1F2] hover:shadow-[#1DA1F2]/20 focus:shadow-[#1DA1F2]/20 active:shadow-[#1DA1F2]/10"
-    type="button">
-    <span
-      class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><i
-        class="text-lg fab fa-twitter" aria-hidden="true"></i></span></button><button
-    class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] text-xs text-white shadow-md shadow-gray-900/10 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded bg-[#ea4c89] hover:shadow-[#ea4c89]/20 focus:shadow-[#ea4c89]/20 active:shadow-[#ea4c89]/10"
-    type="button">
-    <span
-      class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><i
-        class="text-lg fab fa-dribbble" aria-hidden="true"></i></span></button><button
-    class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] text-xs text-white shadow-md shadow-gray-900/10 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded bg-[#333333] hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10"
-    type="button">
-    <span
-      class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"><i
-        class="text-lg fab fa-github"
-        aria-hidden="true"></i></span>
-  </button>
-</div>
+<button class="rounded-md bg-[#ea4335] py-2 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-[#ea4335]/90 focus:shadow-none active:bg-[#ea4335]/90 hover:bg-[#ea4335]/90 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+  <i class="fab fa-google w-4 h-4" aria-hidden="true"></i>
+</button>
+
+<button class="rounded-md bg-[#1DA1F2] py-2 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-[#1DA1F2]/90 focus:shadow-none active:bg-[#1DA1F2]/90 hover:bg-[#1DA1F2]/90 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+  <i class="fab fa-twitter w-4 h-4" aria-hidden="true"></i>
+</button>
+
+<button class="rounded-md bg-[#ea4c89] py-2 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-[#ea4c89]/90 focus:shadow-none active:bg-[#ea4c89]/90 hover:bg-[#ea4c89]/90 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+  <i class="fab fa-dribbble w-4 h-4" aria-hidden="true"></i>
+</button>
+
+<button class="rounded-md bg-[#333333] py-2 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-[#333333]/90 focus:shadow-none active:bg-[#333333]/90 hover:bg-[#333333]/90 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+  <i class="fab fa-github w-4 h-4" aria-hidden="true"></i>
+</button>
 ```
 </CodePreview>
 
