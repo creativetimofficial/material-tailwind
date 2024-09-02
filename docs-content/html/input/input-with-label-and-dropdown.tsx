@@ -53,9 +53,9 @@ export function InputWithLabelAndDropdown() {
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('Dropdown 1')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
-                  <li onClick={() => selectOption1('Dropdown 2')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
-                  <li onClick={() => selectOption1('Dropdown 3')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
+                  <li onClick={() => selectOption1('Dropdown 1')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
+                  <li onClick={() => selectOption1('Dropdown 2')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
+                  <li onClick={() => selectOption1('Dropdown 3')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
                 </ul>
               )}
             </div>
@@ -84,9 +84,9 @@ export function InputWithLabelAndDropdown() {
           <div id="dropdownMenu" className={`${!isOpen2 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
             {isOpen2 && (
               <ul id="dropdownMenu">
-                <li onClick={() => selectOption2('Dropdown 1')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
-                <li onClick={() => selectOption2('Dropdown 2')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
-                <li onClick={() => selectOption2('Dropdown 3')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
+                <li onClick={() => selectOption2('Dropdown 1')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
+                <li onClick={() => selectOption2('Dropdown 2')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
+                <li onClick={() => selectOption2('Dropdown 3')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
               </ul>
             )}
           </div>
