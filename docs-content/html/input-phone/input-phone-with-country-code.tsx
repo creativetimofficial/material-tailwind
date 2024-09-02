@@ -46,10 +46,10 @@ export function InputPhoneWithCountryCode() {
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('+33')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">France (+33)</li>
-                  <li onClick={() => selectOption1('+49')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Germany (+49)</li>
-                  <li onClick={() => selectOption1('+34')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Spain (+34)</li>
-                  <li onClick={() => selectOption1('+1')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">USA (+1)</li>
+                  <li onClick={() => selectOption1('+33')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">France (+33)</li>
+                  <li onClick={() => selectOption1('+49')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Germany (+49)</li>
+                  <li onClick={() => selectOption1('+34')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Spain (+34)</li>
+                  <li onClick={() => selectOption1('+1')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">USA (+1)</li>
                 </ul>
               )}
             </div>
