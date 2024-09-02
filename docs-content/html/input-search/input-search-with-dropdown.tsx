@@ -38,9 +38,9 @@ export function InputSearchWithDropdown() {
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('Themes')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Themes</li>
-                  <li onClick={() => selectOption1('Plugins')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Plugins</li>
-                  <li onClick={() => selectOption1('Snippets')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Snippets</li>
+                  <li onClick={() => selectOption1('Themes')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Themes</li>
+                  <li onClick={() => selectOption1('Plugins')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Plugins</li>
+                  <li onClick={() => selectOption1('Snippets')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Snippets</li>
                 </ul>
               )}
             </div>
