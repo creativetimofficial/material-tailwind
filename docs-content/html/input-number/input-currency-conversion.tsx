@@ -75,25 +75,25 @@ export function InputCurrencyConversion() {
                 <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded-md shadow-lg z-10">
                   <ul className="dropdownOptions">
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('USD', 'from')}
                     >
                       USD
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('EUR', 'from')}
                     >
                       EUR
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('CAD', 'from')}
                     >
                       CAD
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('RON', 'from')}
                     >
                       RON
@@ -147,25 +147,25 @@ export function InputCurrencyConversion() {
                 <div className="dropdownMenu min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 bg-white border border-slate-200 rounded-md shadow-lg z-10">
                   <ul className="dropdownOptions">
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('USD', 'to')}
                     >
                       USD
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('EUR', 'to')}
                     >
                       EUR
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('CAD', 'to')}
                     >
                       CAD
                     </li>
                     <li
-                      className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer"
+                      className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer"
                       onClick={() => handleCurrencySelect('RON', 'to')}
                     >
                       RON
