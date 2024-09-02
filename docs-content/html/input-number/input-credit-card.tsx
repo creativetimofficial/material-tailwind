@@ -29,22 +29,22 @@ export function InputCreditCard() {
 
   return (
     <div className="w-full max-w-sm min-w-[200px] mt-4">
-      <label className="block mb-1 text-sm text-slate-800">
+      <label className="block mb-1 text-sm text-slate-600">
         Cardholder Name
       </label>
       <input
         type="text"
-        className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         placeholder="e.g John Doe"
       />
 
-      <label className="block mb-1 text-sm text-slate-800 mt-4">
+      <label className="block mb-1 text-sm text-slate-600 mt-4">
         Card Number
       </label>
       <input
         type="text"
         id="cardNumber"
-        className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+        className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
         placeholder="1234 5678 9012 3456"
         maxLength={19}
         onInput={handleCardNumberInput}
@@ -52,12 +52,12 @@ export function InputCreditCard() {
 
       <div className="flex">
         <div className="w-full md:w-8/12 mr-4">
-          <label className="block mb-1 text-sm text-slate-800 mt-4">
+          <label className="block mb-1 text-sm text-slate-600 mt-4">
             Expiration Date
           </label>
           <input
             type="text"
-            className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
             placeholder="MM/YY"
             maxLength={5}
             pattern="\d{2}/\d{2}"
@@ -65,12 +65,12 @@ export function InputCreditCard() {
           />
         </div>
         <div className="w-full md:w-4/12">
-          <label className="block mb-1 text-sm text-slate-800 mt-4">
+          <label className="block mb-1 text-sm text-slate-600 mt-4">
             CVV
           </label>
           <input
             type="text"
-            className="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
             placeholder="123"
             maxLength={3}
             pattern="\d{3}"
@@ -79,7 +79,7 @@ export function InputCreditCard() {
         </div>
       </div>
 
-      <button className="w-full text-sm flex items-center justify-center bg-slate-800 rounded hover:bg-slate-700 text-white py-3 px-6 mt-4">
+      <button className="w-full mt-4 rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
         Purchase Now
       </button>
     </div>
