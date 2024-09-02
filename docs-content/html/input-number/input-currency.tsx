@@ -45,10 +45,10 @@ export function InputCurrency() {
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('USD')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">USD</li>
-                  <li onClick={() => selectOption1('EUR')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">EUR</li>
-                  <li onClick={() => selectOption1('CAD')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">CAD</li>
-                  <li onClick={() => selectOption1('RON')} className="px-4 py-2 text-slate-800 hover:bg-slate-50 text-sm cursor-pointer">RON</li>
+                  <li onClick={() => selectOption1('USD')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">USD</li>
+                  <li onClick={() => selectOption1('EUR')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">EUR</li>
+                  <li onClick={() => selectOption1('CAD')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">CAD</li>
+                  <li onClick={() => selectOption1('RON')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">RON</li>
                 </ul>
               )}
             </div>
