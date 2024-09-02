@@ -21,7 +21,7 @@ export function InputOtp() {
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <p className="text-sm text-slate-800">Enter the 6-digit OTP sent to <span className="font-bold">+1 123-456-7890</span></p>
+      <p className="text-sm text-slate-600">Enter the 6-digit OTP sent to <span className="font-bold">+1 123-456-7890</span></p>
       <div className="flex items-center space-x-2">
         {Array(6)
           .fill(0)
@@ -31,7 +31,7 @@ export function InputOtp() {
                 ref={(el) => (inputs.current[index] = el)}
                 type="text"
                 maxLength={1}
-                className="w-10 h-10 border border-slate-200 rounded text-center text-xl text-slate-700 focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+                className="w-10 h-10 bg-transparent text-center placeholder:text-slate-400 text-slate-700 text-lg border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
                 onChange={(e) => handleChange(e, index)}
                 onKeyDown={(e) => handleBackspace(e, index)}
               />
@@ -39,7 +39,7 @@ export function InputOtp() {
             </React.Fragment>
           ))}
       </div>
-      <p className="text-xs text-slate-500 mt-4">
+      <p className="text-xs text-slate-400 mt-4">
         Did not receive the code? <a href="javascript:void(0)" className="font-bold cursor-pointer">Resend</a>
       </p>
     </div>
