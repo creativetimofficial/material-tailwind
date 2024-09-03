@@ -1,18 +1,20 @@
 export function ChipVariants() {
   return (
-    <div className="flex gap-2">
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">chip filled</span>
+    <>
+      <div className="flex gap-2">
+        <div className="rounded-md bg-slate-800 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+          Chip Filled
+        </div>
+        <div className="rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+          Chip Gradient
+        </div>
+        <div className="rounded-md border border-slate-300 py-1 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+          Chip Outlined
+        </div>
+        <div className="rounded-md bg-slate-100 py-1 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+          Chip Ghost
+        </div>
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">chip gradient</span>
-      </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
-        <span className="">chip outlined</span>
-      </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">
-        <span className="">chip ghost</span>
-      </div>
-    </div>
+    </>
   );
 }
