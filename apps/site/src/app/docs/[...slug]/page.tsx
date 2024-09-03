@@ -104,6 +104,7 @@ import * as HTMLCheckbox from "@components/docs-html/checkbox";
 import * as HTMLRadio from "@components/docs-html/radio";
 import * as HTMLSwitch from "@components/docs-html/switch";
 import * as HTMLBadge from "@components/docs-html/badge";
+import * as HTMLAccordion from "@components/docs-html/accordion";
 
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
@@ -361,6 +362,7 @@ export default async function Docs({ params: { slug } }) {
           HTMLRadio,
           HTMLSwitch,
           HTMLBadge,
+          HTMLAccordion,
         }}
       />
     </Content>
