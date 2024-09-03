@@ -1,5 +1,20 @@
 export const releases = [
   {
+    version: "2.1.10",
+    date: "September 3, 2024",
+    name: "@material-tailwind/react",
+    description: "Material Tailwind v2.1.10",
+    content: [
+      {
+        title: "patch changes",
+        data: [
+          "Update the input design for black and white colors.",
+          "Add black and white colors support for textarea component.",
+        ],
+      },
+    ],
+  },
+  {
     version: "2.1.9",
     date: "February 8, 2024",
     name: "@material-tailwind/react",

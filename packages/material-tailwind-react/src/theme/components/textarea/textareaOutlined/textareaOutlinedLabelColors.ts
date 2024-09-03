@@ -1,4 +1,14 @@
 const textareaOutlinedLabelColors: object = {
+  black: {
+    color: "!text-black peer-focus:!text-black",
+    before: "before:!border-black peer-focus:before:!border-black",
+    after: "after:!border-black peer-focus:after:!border-black",
+  },
+  white: {
+    color: "!text-white peer-focus:!text-white",
+    before: "before:!border-white peer-focus:before:!border-white",
+    after: "after:!border-white peer-focus:after:!border-white",
+  },
   "blue-gray": {
     color: "text-blue-gray-400 peer-focus:text-blue-gray-500",
     before: "before:border-blue-gray-200 peer-focus:before:!border-blue-gray-500",

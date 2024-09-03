@@ -1,4 +1,12 @@
 const textareaStandardLabelColors: object = {
+  black: {
+    color: "!text-black peer-focus:!text-black",
+    after: "after:!border-black peer-focus:after:!border-black",
+  },
+  white: {
+    color: "!text-white peer-focus:!text-white",
+    after: "after:!border-white peer-focus:after:!border-white",
+  },
   "blue-gray": {
     color: "text-blue-gray-500 peer-focus:text-blue-gray-500",
     after: "after:border-blue-gray-500 peer-focus:after:!border-blue-gray-500",

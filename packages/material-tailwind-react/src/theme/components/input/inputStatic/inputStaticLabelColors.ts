@@ -1,10 +1,10 @@
 const inputStaticLabelColors: object = {
   black: {
-    color: "!text-black peer-focus:black",
+    color: "!text-black peer-focus:!text-black",
     after: "after:border-black peer-focus:after:border-black",
   },
   white: {
-    color: "!text-white peer-focus:white",
+    color: "!text-white peer-focus:!text-white",
     after: "after:border-white peer-focus:after:border-white",
   },
   "blue-gray": {
