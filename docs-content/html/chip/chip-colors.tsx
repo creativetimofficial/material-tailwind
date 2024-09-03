@@ -1,32 +1,32 @@
 export function ChipColors() {
   return (
     <div className="flex gap-2">
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-blue-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">blue</span>
+      <div className="rounded-md bg-blue-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Blue 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-red-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">red</span>
+      <div className="rounded-md bg-red-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Red 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-green-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">green</span>
+      <div className="rounded-md bg-green-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Green 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-amber-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-black">
-        <span className="">amber</span>
+      <div className="rounded-md bg-amber-600 py-1 px-2.5 border border-transparent text-sm text-slate-800 transition-all shadow-sm">
+        Amber 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-pink-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">pink</span>
+      <div className="rounded-md bg-pink-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Pink 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-indigo-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">indigo</span>
+      <div className="rounded-md bg-indigo-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Indigo 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-purple-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">purple</span>
+      <div className="rounded-md bg-purple-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Purple 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-teal-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">teal</span>
+      <div className="rounded-md bg-teal-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Teal 
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-cyan-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">cyan</span>
+      <div className="rounded-md bg-cyan-600 py-1 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Cyan 
       </div>
     </div>
   );
