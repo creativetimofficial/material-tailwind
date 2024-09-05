@@ -1,10 +1,8 @@
 export function TypographyParagraph() {
   return (
-    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-      Material Tailwind is an easy to use components library for Tailwind CSS
-      and Material Design. It provides a simple way to customize your
-      components, you can change the colors, fonts, breakpoints and everything
-      you need.
+    <p className="font-light leading-relaxed mx-auto text-slate-500 lg:text-lg text-base max-w-3xl">
+      The time is now for it to be okay to be great. For being a bright color.
+      For standing out. Get ready to experience a new level of performance and functionality.
     </p>
   );
 }
