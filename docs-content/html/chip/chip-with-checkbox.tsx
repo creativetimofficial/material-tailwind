@@ -1,7 +1,7 @@
 export function ChipWithCheckbox() {
   return (
     <div className="flex gap-2">
-      <div className="rounded-md flex items-center bg-green-100 py-1 pr-2.5 pl-1.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+      <div className="rounded-md flex items-center bg-green-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
         <div className="inline-flex items-center mr-2">
           <label className="flex items-center cursor-pointer relative">
             <input type="checkbox" className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-green-300 checked:bg-green-600 checked:border-green-600" id="check4" />
@@ -16,7 +16,7 @@ export function ChipWithCheckbox() {
         Online 
       </div>
 
-      <div className="rounded-md flex items-center bg-red-100 py-1 pr-2.5 pl-1.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+      <div className="rounded-md flex items-center bg-red-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
         <div className="inline-flex items-center mr-2">
           <label className="flex items-center cursor-pointer relative">
             <input type="checkbox" className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-red-300 checked:bg-red-600 checked:border-red-600" id="check5" />

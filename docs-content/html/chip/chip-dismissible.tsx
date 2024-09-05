@@ -13,7 +13,7 @@ export function ChipDismissible() {
   
   return (
     visible ? (
-      <div className="relative rounded-md flex bg-slate-800 py-1 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
+      <div className="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
         Dismissible 
 
         <button

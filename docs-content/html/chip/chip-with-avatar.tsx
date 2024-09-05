@@ -1,6 +1,6 @@
 export function ChipWithAvatar() {
   return (
-    <div className="rounded-full flex items-center bg-slate-800 py-1 pr-2.5 pl-1.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    <div className="rounded-full flex items-center bg-slate-800 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-white transition-all shadow-sm">
       <div className="h-5 w-5 mr-2">
         <img
           alt="Tania Andrew"
