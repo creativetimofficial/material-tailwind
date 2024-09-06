@@ -1,39 +1,25 @@
 export function ProfileCard() {
   return (
-    <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-      <div className="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-        <img
-          src="https://docs.material-tailwind.com/img/team-3.jpg"
-          alt="profile-picture"
-        />
+    <div className="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-96">
+      <div className="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
+        <img className="w-full h-full object-cover" src="https://docs.material-tailwind.com/img/team-3.jpg" alt="profile-picture" />
       </div>
       <div className="p-6 text-center">
-        <h4 className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+        <h4 className="mb-1 text-xl font-semibold text-slate-800">
           Natalie Paisley
         </h4>
-        <p className="block bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
-          CEO / Co-Founder
+        <p
+          className="text-sm font-semibold text-slate-500 uppercase">
+          Product Manager 
+        </p>
+        <p className="text-base text-slate-600 mt-4 font-light ">
+            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
         </p>
       </div>
-      <div className="flex justify-center gap-7 p-6 pt-2">
-        <a
-          href="#facebook"
-          className="block bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a
-          href="#twitter"
-          className="block bg-gradient-to-tr from-light-blue-600 to-light-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a
-          href="#instagram"
-          className="block bg-gradient-to-tr from-purple-600 to-purple-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-instagram" aria-hidden="true"></i>
-        </a>
+      <div className="flex justify-center p-6 pt-2 gap-7">
+        <button className="min-w-32  rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+          Follow
+        </button>
       </div>
     </div>
   );

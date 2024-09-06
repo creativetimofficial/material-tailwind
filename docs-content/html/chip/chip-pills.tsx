@@ -1,17 +1,17 @@
 export function ChipPills() {
   return (
     <div className="flex gap-2">
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-full bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">chip filled</span>
+      <div className="rounded-full bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Chip Filled
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-full bg-gradient-to-tr from-gray-900 to-gray-800 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-        <span className="">chip gradient</span>
+      <div className="rounded-full bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+        Chip Gradient
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-full border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
-        <span className="">chip outlined</span>
+      <div className="rounded-full border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+        Chip Outlined
       </div>
-      <div className="relative grid select-none items-center whitespace-nowrap rounded-full bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">
-        <span className="">chip ghost</span>
+      <div className="rounded-full bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+        Chip Ghost
       </div>
     </div>
   );

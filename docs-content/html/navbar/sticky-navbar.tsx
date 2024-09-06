@@ -1,75 +1,38 @@
 export function StickyNavbar() {
   return (
-    <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-      <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
-        <nav className="sticky top-0 z-10 block h-max w-full max-w-full rounded-none border border-white/80 bg-white bg-opacity-80 px-4 py-2 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
-          <div className="flex items-center justify-between text-blue-gray-900">
-            <a
-              href="#"
-              className="mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
-            >
+    <div className="grid w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <div className="max-h-96 overflow-scroll">
+        <nav className="block w-full max-w-screen-lg px-4 py-2 mx-auto text-white bg-white bg-opacity-90 sticky top-3 shadow lg:px-8 lg:py-3 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
+          <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+            <a href="#"
+              className="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
               Material Tailwind
             </a>
-            <div className="flex items-center gap-4">
-              <div className="mr-4 hidden lg:block">
-                <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                  <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased">
-                    <a href="#" className="flex items-center">
-                      Pages
-                    </a>
-                  </li>
-                  <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased">
-                    <a href="#" className="flex items-center">
-                      Account
-                    </a>
-                  </li>
-                  <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased">
-                    <a href="#" className="flex items-center">
-                      Blocks
-                    </a>
-                  </li>
-                  <li className="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased">
-                    <a href="#" className="flex items-center">
-                      Docs
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="flex items-center gap-x-1">
-                <button
-                  className="hidden select-none rounded-lg px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                  type="button"
-                >
-                  <span>Log In</span>
-                </button>
-                <button
-                  className="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                  type="button"
-                >
-                  <span>Sign in</span>
-                </button>
-              </div>
-              <button
-                className="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
-                type="button"
-              >
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>
-                </span>
-              </button>
+            <div className="hidden lg:block">
+              <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="#" className="flex items-center">Pages</a>
+                </li>
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="#" className="flex items-center">Account</a>
+                </li>
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="#" className="flex items-center">Blocks</a>
+                </li>
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="#" className="flex items-center">Docs</a>
+                </li>
+              </ul>
             </div>
+            <button
+              className="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+              type="button">
+              <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </span>
+            </button>
           </div>
         </nav>
         <div className="mx-auto max-w-screen-md py-12">

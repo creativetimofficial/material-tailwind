@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 export function InputWithLabelAndDropdown() {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [buttonLabel1, setButtonLabel1] = useState('Dropdown');
-  const [buttonLabel2, setButtonLabel2] = useState('Dropdown');
+  const [buttonLabel1, setButtonLabel1] = useState('Dropdown 1');
+  const [buttonLabel2, setButtonLabel2] = useState('Dropdown 1');
   const dropdownRef1 = useRef(null);
   const dropdownRef2 = useRef(null);
 
@@ -38,7 +38,7 @@ export function InputWithLabelAndDropdown() {
   return (
     <>
       <div ref={dropdownRef1} className="w-full max-w-sm min-w-[200px] mt-4 ">
-        <label className="block mb-1 text-sm text-slate-800">
+        <label className="block mb-2 text-sm text-slate-600">
           Your Name
         </label>
         <div className="relative mt-2">
@@ -53,22 +53,22 @@ export function InputWithLabelAndDropdown() {
             <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('Dropdown 1')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 1</li>
-                  <li onClick={() => selectOption1('Dropdown 2')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 2</li>
-                  <li onClick={() => selectOption1('Dropdown 3')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 3</li>
+                  <li onClick={() => selectOption1('Dropdown 1')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
+                  <li onClick={() => selectOption1('Dropdown 2')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
+                  <li onClick={() => selectOption1('Dropdown 3')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
                 </ul>
               )}
             </div>
           </div>
           <input
             type="text"
-            className="w-full h-10 pl-32 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-32 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
             placeholder="Enter your text" />
         </div>  
       </div>
 
       <div ref={dropdownRef2} className="w-full max-w-sm min-w-[200px] mt-4 relative">
-        <label className="block mb-1 text-sm text-slate-800">
+        <label className="block mb-1 text-sm text-slate-600">
           Your Name
         </label>
 
@@ -84,16 +84,16 @@ export function InputWithLabelAndDropdown() {
           <div id="dropdownMenu" className={`${!isOpen2 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
             {isOpen2 && (
               <ul id="dropdownMenu">
-                <li onClick={() => selectOption2('Dropdown 1')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 1</li>
-                <li onClick={() => selectOption2('Dropdown 2')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 2</li>
-                <li onClick={() => selectOption2('Dropdown 3')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">Dropdown 3</li>
+                <li onClick={() => selectOption2('Dropdown 1')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 1</li>
+                <li onClick={() => selectOption2('Dropdown 2')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 2</li>
+                <li onClick={() => selectOption2('Dropdown 3')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">Dropdown 3</li>
               </ul>
             )}
           </div>
         </div>
         <input
           type="text"
-          className="w-full h-10 pr-32 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+          className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pr-32 pl-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
           placeholder="Enter your text" />
         </div>
       </div>

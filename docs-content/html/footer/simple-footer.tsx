@@ -1,43 +1,31 @@
 export function SimpleFooter() {
   return (
-    <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-between">
-      <p className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
-        © 2023 Material Tailwind
+    <footer className="flex flex-row flex-wrap items-center justify-center w-full py-6 text-center border-t gap-y-6 gap-x-12 border-slate-200 md:justify-between">
+      <p className="block text-slate-800 font-semibold text-sm">
+          Material Tailwind
       </p>
       <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
         <li>
-          <a
-            href="#"
-            className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
+          <a href="#" className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
             About Us
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
+          <a href="#" className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
             License
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
+          <a href="#" className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
             Contribute
           </a>
         </li>
         <li>
-          <a
-            href="#"
-            className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-blue-500 focus:text-blue-500"
-          >
+          <a href="#" className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm">
             Contact Us
           </a>
         </li>
       </ul>
-    </footer>
+    </footer> 
   );
 }

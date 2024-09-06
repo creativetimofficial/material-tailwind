@@ -13,9 +13,6 @@ navigation:
     "chip-pills",
     "chip-with-status",
     "chip-with-checkbox",
-    "chip-data-attributes",
-    "chip-trigger-data-attributes",
-    "required-script",
     "similar-components",
     "more-examples",
     "best-practices",
@@ -39,7 +36,7 @@ See below our responsive chip component examples styled with Tailwind CSS that y
 
 ## Default Chip 
 
-Use this simple chip with dark-grey background as a starting point for your application.
+Use this simple chip with slate background as a starting point for your application.
 
 <CodePreview
   id="chip"
@@ -47,9 +44,9 @@ Use this simple chip with dark-grey background as a starting point for your appl
   component={<HTMLChipExamples.ChipDefault/>}
 >
 ```html
-   <div class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-      <span class="">chip</span>
-    </div>
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  Chip
+</div>
 ```
 </CodePreview>
 
@@ -65,22 +62,18 @@ This example presents 4 different styles of chip components styled with Tailwind
   component={<HTMLChipExamples.ChipVariants/>}
 >
 ```html
-  <div class="flex gap-2">
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">chip filled</span>
+<div class="flex gap-2">
+  <div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Filled
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">chip gradient</span>
+  <div class="rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Gradient
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
-    <span class="">chip outlined</span>
+  <div class="rounded-md border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    Chip Outlined
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">
-    <span class="">chip ghost</span>
+  <div class="rounded-md bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    Chip Ghost
   </div>
 </div>
 ```
@@ -93,7 +86,7 @@ Each chip is contained within a `<div>` element and designed with a consistent s
 
 ## Chips Sizes
 
-Check out this example to see how you can implement chips with different sizes. The differences in size are primarily achieved through varying the padding values (small - <Code>px-2 py-1</Code>; large - <Code>px-4 py-2</Code>.
+Check out this example to see how you can implement chips with different sizes. The differences in size are primarily achieved through varying the padding values.
 
 <CodePreview
   id="chip-sizes"
@@ -101,19 +94,14 @@ Check out this example to see how you can implement chips with different sizes. 
   component={<HTMLChipExamples.ChipSizes/>}
 >
 ```html
-  <div class="flex items-end gap-2">
-  <div
-    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-white uppercase bg-gray-900 rounded-md select-none whitespace-nowrap">
-    <span class="">chip small</span>
-  </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">chip medium</span>
-  </div>
-  <div
-    class="relative grid items-center px-4 py-2 font-sans text-xs font-bold text-white uppercase bg-gray-900 rounded-lg select-none whitespace-nowrap">
-    <span class="">chip large</span>
-  </div>
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm">
+  Small Chip
+</div>
+<div class="rounded-md bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  Medium Chip
+</div>
+<div class="rounded-md bg-slate-800 py-1 px-3 border border-transparent text-sm text-white transition-all shadow-sm">
+  Large Chip
 </div>
 ```
 </CodePreview>
@@ -134,42 +122,33 @@ The Chip component comes with 19 different colors like blue, red, green, and amb
   component={<HTMLChipExamples.ChipColors/>}
 >
 ```html
- <div class="flex gap-2">
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-blue-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">blue</span>
+<div class="flex gap-2">
+  <div class="rounded-md bg-blue-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Blue 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-red-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">red</span>
+  <div class="rounded-md bg-red-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Red 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-green-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">green</span>
+  <div class="rounded-md bg-green-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Green 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-amber-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-black">
-    <span class="">amber</span>
+  <div class="rounded-md bg-amber-600 py-0.5 px-2.5 border border-transparent text-sm text-slate-800 transition-all shadow-sm">
+    Amber 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-pink-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">pink</span>
+  <div class="rounded-md bg-pink-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Pink 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-indigo-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">indigo</span>
+  <div class="rounded-md bg-indigo-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Indigo 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-purple-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">purple</span>
+  <div class="rounded-md bg-purple-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Purple 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-teal-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">teal</span>
+  <div class="rounded-md bg-teal-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Teal 
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-cyan-500 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">cyan</span>
+  <div class="rounded-md bg-cyan-600 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Cyan 
   </div>
 </div>
 ```
@@ -187,50 +166,34 @@ The icons, in this example, add a visual element that can improve user understan
   component={<HTMLChipExamples.ChipIcon/>}
 >
 ```html
- <div class="flex gap-2">
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd"
-          d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <span class="ml-[18px]">account</span>
+<div class="flex gap-2">
+  <div class="rounded-md flex items-center bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Filled
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd"
-          d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <span class="ml-[18px]">account</span>
+  <div class="rounded-md flex items-center bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+    
+    Chip Gradient
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd"
-          d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <span class="ml-[18px]">account</span>
+  <div class="rounded-md flex items-center border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Outlined
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd"
-          d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <span class="ml-[18px]">account</span>
+  <div class="rounded-md flex items-center bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+
+    Chip Ghost
   </div>
 </div>
 ```
@@ -248,20 +211,26 @@ You can make a chip dismissible by adding the <Code>data-dismissible="{`chipName
    component={<HTMLChipExamples.ChipDismissible/>}
 >
 ```html
- <div data-dismissible="chip"
-  class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-  <span class="mr-5">Dismissible</span>
-  <button data-dismissible-target="chip"
-    class="!absolute  top-2/4 right-1 mx-px h-5 max-h-[32px] w-5 max-w-[32px] -translate-y-2/4 select-none rounded-md text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-    type="button">
-    <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4"
-        stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </span>
+<div id="chip" class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
+  Dismissible 
+
+  <button
+    class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+    type="button"
+    onclick="closeAlert()"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+    </svg>
   </button>
 </div>
+
+<script>
+  function closeAlert() {
+    const chipElement = document.getElementById('chip');
+    chipElement.style.display = 'none'; // Hide the chip
+  }
+</script>
 ```
 </CodePreview>
 
@@ -281,19 +250,17 @@ Use the example below for a chip component containing an avatar. It incorporates
   component={<HTMLChipExamples.ChipWithAvatar/>}
 >
 ```html
-<div
-  class="relative grid select-none items-center whitespace-nowrap rounded-full bg-gray-900 px-3 py-1.5 font-sans text-xs font-bold uppercase text-white">
-  <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-    <img alt="Tania Andrew"
+<div class="rounded-full flex items-center bg-slate-800 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-white transition-all shadow-sm">
+  <div class="h-5 w-5 mr-2">
+    <img
+      alt="Tania Andrew"
       src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-      class="relative inline-block h-full w-full -translate-x-0.5 !rounded-full  object-cover object-center" />
+      class="h-full w-full rounded-full object-cover object-center"
+    />
   </div>
-  <span class="ml-[18px]">
-    <p class="block font-sans text-sm antialiased font-medium leading-none text-white capitalize">
-      Tania Andrew
-    </p>
-  </span>
-</div> 
+  
+  Tania Andrew 
+</div>
 ```
 </CodePreview>
 
@@ -310,21 +277,17 @@ Use this example of chip if you want to implement a pill-like shape for your com
 >
 ```html
  <div class="flex gap-2">
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-full bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">chip filled</span>
+  <div class="rounded-full bg-slate-800 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Filled
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-full bg-gradient-to-tr from-gray-900 to-gray-800 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
-    <span class="">chip gradient</span>
+  <div class="rounded-full bg-gradient-to-tr from-slate-800 to-slate-700 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm">
+    Chip Gradient
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-full border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
-    <span class="">chip outlined</span>
+  <div class="rounded-full border border-slate-300 py-0.5 px-2.5 text-center text-sm transition-all shadow-sm text-slate-600">
+    Chip Outlined
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-full bg-gray-900/10 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-900">
-    <span class="">chip ghost</span>
+  <div class="rounded-full bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+    Chip Ghost
   </div>
 </div>
 ```
@@ -343,21 +306,16 @@ This example showcases 2 status indicator chips: one indicating "Online" status 
 >
 ```html
 <div class="flex gap-2">
-  <div
-    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
-    <div class="absolute w-4 h-4 top-2/4 left-1 -translate-y-2/4">
-      <span class="mx-auto mt-1 block h-2 w-2 rounded-full bg-green-900 content-['']"></span>
-    </div>
-    <span class="ml-4">Online</span>
+  <div class="rounded-md flex items-center bg-green-100 py-0.5 px-2.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+    <div class="mx-auto block h-2 w-2 rounded-full bg-green-800 mr-2"></div>
+    Online 
   </div>
-  <div
-    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-red-900 uppercase rounded-md select-none whitespace-nowrap bg-red-500/20">
-    <div class="absolute w-4 h-4 top-2/4 left-1 -translate-y-2/4">
-      <span class="mx-auto mt-1 block h-2 w-2 rounded-full bg-red-900 content-['']"></span>
-    </div>
-    <span class="ml-4">Offline</span>
+
+  <div class="rounded-md flex items-center bg-red-100 py-0.5 px-2.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+    <div class="mx-auto block h-2 w-2 rounded-full bg-red-800 mr-2"></div>
+    Offline 
   </div>
-</div> 
+</div>
 ```
 </CodePreview>
 
@@ -375,95 +333,38 @@ This example showcases 2 interactive status indicator chips featuring "Online" a
 >
 ```html
 <div class="flex gap-2">
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-green-500/20 py-1.5 px-3 font-sans text-xs font-bold uppercase text-green-900">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <div class="inline-flex items-center">
-        <label class="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="online">
-          <input type="checkbox"
-            class="before:content[''] peer relative -ml-px h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-green-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:hidden before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-900 checked:bg-green-900 checked:before:bg-green-500 hover:before:opacity-10"
-            id="online" />
-          <span
-            class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
-              stroke="currentColor" stroke-width="1">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </span>
-        </label>
-      </div>
-    </div>
-    <span class="ml-[18px]">Online</span>
+<div class="rounded-md flex items-center bg-green-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+  <div class="inline-flex items-center mr-2">
+    <label class="flex items-center cursor-pointer relative">
+      <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-green-300 checked:bg-green-600 checked:border-green-600" id="check4" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
   </div>
-  <div
-    class="relative grid select-none items-center whitespace-nowrap rounded-lg bg-red-500/20 py-1.5 px-3 font-sans text-xs font-bold uppercase text-red-900">
-    <div class="absolute top-2/4 left-1.5 h-5 w-5 -translate-y-2/4">
-      <div class="inline-flex items-center">
-        <label class="relative flex items-center p-0 rounded-full cursor-pointer" htmlFor="offline">
-          <input type="checkbox"
-            class="before:content[''] peer relative -ml-px h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-red-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:hidden before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-red-900 checked:bg-red-900 checked:before:bg-red-500 hover:before:opacity-10"
-            id="offline" />
-          <span
-            class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
-              stroke="currentColor" stroke-width="1">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </span>
-        </label>
-      </div>
-    </div>
-    <span class="ml-[18px]">Offline</span>
+
+  Online 
+</div>
+
+<div class="rounded-md flex items-center bg-red-100 py-0.5 pr-2.5 pl-1.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+  <div class="inline-flex items-center mr-2">
+    <label class="flex items-center cursor-pointer relative">
+      <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-red-300 checked:bg-red-600 checked:border-red-600" id="check5" />
+      <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </label>
   </div>
-</div> 
+
+  Offline 
+</div>
+</div>
 ```
 </CodePreview>
-
----
-
-
-
-
-## Chip Data Attributes
-
-<span id="chip-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for chip element.
-
-| Attribute          | Description                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `data-dismissible` | Set the chip dismissible name, it should be the same as the <br /> `data-dismissible-target` data attribute. |
-
----
-
-## Chip Trigger Data Attributes
-
-<span id="chip-trigger-data-attributes" className="scroll-mt-48" />
-The following data attributes are available for chip trigger element (The element
-that you want to close the chip with).
-
-| Attribute                 | Description                                                                                                                                  |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-dismissible-target` | Hide the chip element that has the same value of `data-dismissible-target` <br /> data attribute for it's `data-dismissible` data attribute. |
-
----
-
-## Required Scripts
-
-<span id="required-script" className="scroll-mt-56" />
-
-The chip component needs a required script file to work, you just need to add the below script file to the bottom of your html file.
-
-```html
-<!-- from node_modules -->
-<script src="node_modules/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-
-<!-- from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/dismissible.js"></script>
-```
 
 ---
 

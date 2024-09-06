@@ -1,32 +1,35 @@
+import { useState } from "react";
+
 export function ChipDismissible() {
+  const [visible, setVisible] = useState(true);
+
+  const closeAlert = () => {
+    setVisible(false); // Sets the visibility state to false
+  };
+
+  const openAlert = () => {
+    setVisible(true); // Sets the visibility state to false
+  };
+  
   return (
-    <div
-      data-dismissible="chip"
-      className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
-    >
-      <span className="mr-5">Dismissible</span>
-      <button
-        data-dismissible-target="chip"
-        className="!absolute  top-2/4 right-1 mx-px h-5 max-h-[32px] w-5 max-w-[32px] -translate-y-2/4 select-none rounded-md text-center align-middle font-sans text-xs font-medium uppercase text-white transition-all hover:bg-white/10 active:bg-white/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-        type="button"
-      >
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-4 w-4"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
+    visible ? (
+      <div className="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
+        Dismissible 
+
+        <button
+          className="flex items-center justify-center transition-all p-1 rounded text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+          type="button"
+          onClick={closeAlert}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
+            <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
           </svg>
-        </span>
+        </button>
+      </div>
+    ) : (
+      <button onClick={openAlert} className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
+        Reset
       </button>
-    </div>
+    )
   );
 }

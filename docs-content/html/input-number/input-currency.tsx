@@ -26,13 +26,13 @@ export function InputCurrency() {
   return (
     <>
       <div ref={dropdownRef1} className="w-full max-w-sm min-w-[200px] mt-4 ">
-        <label className="block mb-1 text-sm text-slate-800">
+        <label className="block mb-1 text-sm text-slate-600">
           Amount You Send
         </label>
         <div className="relative mt-2">
           <input
-            type="text"
-            className="w-full h-10 pl-3 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+            type="number"
+            className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-20 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             placeholder="1,000" />
           <div className="absolute top-2 right-0 flex items-center pr-3">
             <div className="h-6 border-l border-slate-200 mr-2"></div>
@@ -42,13 +42,13 @@ export function InputCurrency() {
               <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
-            <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded shadow-lg z-10`}>
+            <div id="dropdownMenu" className={`${!isOpen1 && "hidden"} min-w-[150px] overflow-hidden absolute left-0 w-full mt-10 w-full bg-white border border-slate-200 rounded-md shadow-lg z-10`}>
               {isOpen1 && (
                 <ul id="dropdownMenu">
-                  <li onClick={() => selectOption1('USD')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">USD</li>
-                  <li onClick={() => selectOption1('EUR')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">EUR</li>
-                  <li onClick={() => selectOption1('CAD')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">CAD</li>
-                  <li onClick={() => selectOption1('RON')} className="px-4 py-2 text-slate-800 hover:bg-slate-100 text-sm cursor-pointer">RON</li>
+                  <li onClick={() => selectOption1('USD')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">USD</li>
+                  <li onClick={() => selectOption1('EUR')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">EUR</li>
+                  <li onClick={() => selectOption1('CAD')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">CAD</li>
+                  <li onClick={() => selectOption1('RON')} className="px-4 py-2 text-slate-600 hover:bg-slate-50 text-sm cursor-pointer">RON</li>
                 </ul>
               )}
             </div>

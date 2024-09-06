@@ -1,29 +1,15 @@
 export function SwitchLabel() {
   return (
-    <div className="inline-flex items-center">
-      <div className="relative inline-block h-4 w-8 cursor-pointer rounded-full">
-        <input
-          id="auto-update"
-          type="checkbox"
-          className="peer absolute h-4 w-8 cursor-pointer appearance-none rounded-full bg-blue-gray-100 transition-colors duration-300 checked:bg-gray-900 peer-checked:border-gray-900 peer-checked:before:bg-gray-900"
-          defaultChecked
-        />
-        <label
-          htmlFor="auto-update"
-          className="before:content[''] absolute top-2/4 -left-1 h-5 w-5 -translate-y-2/4 cursor-pointer rounded-full border border-blue-gray-100 bg-white shadow-md transition-all duration-300 before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:before:opacity-10 peer-checked:translate-x-full peer-checked:border-gray-900 peer-checked:before:bg-gray-900"
-        >
-          <div
-            className="top-2/4 left-2/4 inline-block -translate-x-2/4 -translate-y-2/4 rounded-full p-5"
-            data-ripple-dark="true"
-          ></div>
+    <div className="inline-flex items-center gap-2">
+      <label htmlFor="switch-component-on" className="text-slate-600 text-sm cursor-pointer">Off</label>
+
+      <div className="relative inline-block w-11 h-5">
+        <input id="switch-component-on" type="checkbox" className="peer appearance-none w-11 h-5 bg-slate-100 rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300" />
+        <label htmlFor="switch-component-on" className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
         </label>
       </div>
-      <label
-        htmlFor="auto-update"
-        className="mt-px mb-0 ml-3 cursor-pointer select-none font-light text-gray-700"
-      >
-        Automatic Update
-      </label>
+
+      <label htmlFor="switch-component-on" className="text-slate-600 text-sm cursor-pointer">On</label>
     </div>
   );
 }
