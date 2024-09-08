@@ -205,8 +205,14 @@ const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     });
 
     React.useEffect(() => {
+      listContentRef.current = [
+        ...(React.Children.map(children, (child) => {
+          const { props }: any = child;
+          return props?.value;
+        }) ?? []),
+      ]
       setSelectedIndex(Math.max(0, listContentRef.current.indexOf(value) + 1));
-    }, [value]);
+    }, [value, children]);
 
     const floatingRef = refs.floating;
 
