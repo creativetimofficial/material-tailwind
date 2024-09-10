@@ -38,20 +38,18 @@ Save valuable screen space and allow users to control their interaction with the
   component={<HTMLCollapseExamples.DefaultCollapse/>}
 >
 ```html
-<button
-  data-ripple-light="true"
+<button 
   data-collapse-target="collapse"
-  class="select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
->
+  class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
   Open Collapse
 </button>
 <div
   data-collapse="collapse"
   class="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out"
 >
-  <div class="relative mx-auto my-4 flex w-8/12 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-    <div class="p-6">
-      <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+  <div class="relative mx-auto flex w-8/12 flex-col rounded-lg bg-white border border-slate-200 shadow-sm mt-4">
+    <div class="p-4">
+      <p class="text-slate-600 font-light">
         Use our Tailwind CSS collapse for your website. You can use if for
         accordion, collapsible items and much more.
       </p>
@@ -65,7 +63,7 @@ Save valuable screen space and allow users to control their interaction with the
 
 The button from this collapse component is styled with Tailwind CSS to have a dark background, white text, rounded corners; and interactive feedback (shadow effects on hover, focus, and active states). The content inside the collapsible area is a simple paragraph. 
 
-The styling (<Code> font-sans text-base font-light leading-relaxed</Code>) ensures the text is readable and aesthetically pleasing.
+The styling (<Code> text-slate-600 font-light </Code>) ensures the text is readable and aesthetically pleasing.
 
 ---
 
