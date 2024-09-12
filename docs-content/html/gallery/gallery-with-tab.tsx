@@ -2,45 +2,45 @@ export function GalleryWithTab() {
   return (
     <div className="w-full">
       <div className="relative right-0">
-        <ul
-          className="relative flex list-none flex-wrap rounded-xl bg-blue-gray-50/60 p-1"
-          data-tabs="tabs"
-          role="list"
-        >
-          <li className="z-30 flex-auto text-center">
-            <a
-              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
-              data-tab-target=""
-              role="tab"
-              aria-selected="true"
-              aria-controls="app"
-            >
-              <span className="ml-1">App</span>
-            </a>
-          </li>
-          <li className="z-30 flex-auto text-center">
-            <a
-              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
-              data-tab-target=""
-              role="tab"
-              aria-selected="false"
-              aria-controls="message"
-            >
-              <span className="ml-1">Messages</span>
-            </a>
-          </li>
-          <li className="z-30 flex-auto text-center">
-            <a
-              className="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 py-1 transition-all ease-in-out"
-              data-tab-target=""
-              role="tab"
-              aria-selected="false"
-              aria-controls="settings"
-            >
-              <span className="ml-1">Settings</span>
-            </a>
-          </li>
-        </ul>
+        <div className="w-full">
+          <div className="relative right-0">
+            <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" data-tabs="tabs" role="list">
+              <li className="z-30 flex-auto text-center">
+                <a
+                  className="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                  data-tab-target=""
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="app"
+                >
+                  <span className="ml-1">App</span>
+                </a>
+              </li>
+              <li className="z-30 flex-auto text-center">
+                <a
+                  className="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                  data-tab-target=""
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="message"
+                >
+                  <span className="ml-1">Messages</span>
+                </a>
+              </li>
+              <li className="z-30 flex-auto text-center">
+                <a className="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                  data-tab-target=""
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="settings"
+                >
+                  Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div> 
+        
         <div data-tab-content="" className="p-5">
           <div className="block opacity-100" id="app" role="tabpanel">
             <div
