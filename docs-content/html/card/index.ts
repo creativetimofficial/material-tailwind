@@ -17,4 +17,5 @@ export * from "./testimonial-card";
 export * from "./card-with-list";
 export * from "./text-only-card";
 export * from "./card-with-tabs";
+export * from "./card-with-bottom-image";
 export * from "./card-with-hover";
