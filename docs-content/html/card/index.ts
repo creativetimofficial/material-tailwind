@@ -19,4 +19,6 @@ export * from "./text-only-card";
 export * from "./card-with-tabs";
 export * from "./card-with-bottom-image";
 export * from "./card-with-animation";
+export * from "./card-with-alert";
+export * from "./card-with-centered-content";
 export * from "./card-with-hover";
