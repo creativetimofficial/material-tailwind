@@ -1,10 +1,10 @@
 export function ListWithAvatar() {
   return (
-    <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-      <nav className="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+    <div className="relative flex w-96 flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
+      <nav className="flex min-w-[240px] flex-col gap-1 p-1.5">
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <div className="mr-4 grid place-items-center">
             <img
@@ -14,17 +14,17 @@ export function ListWithAvatar() {
             />
           </div>
           <div>
-            <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+            <h6 className="text-slate-800 font-medium">
               Tania Andrew
             </h6>
-            <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+            <p className="text-slate-500 text-sm">
               Software Engineer @ Material Tailwind
             </p>
           </div>
         </div>
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <div className="mr-4 grid place-items-center">
             <img
@@ -34,17 +34,17 @@ export function ListWithAvatar() {
             />
           </div>
           <div>
-            <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+            <h6 className="text-slate-800 font-medium">
               Alexander
             </h6>
-            <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+            <p className="text-slate-500 text-sm">
               Backend Developer @ Material Tailwind
             </p>
           </div>
         </div>
         <div
           role="button"
-          className="flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+          className="text-slate-800 flex w-full items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
         >
           <div className="mr-4 grid place-items-center">
             <img
@@ -54,10 +54,10 @@ export function ListWithAvatar() {
             />
           </div>
           <div>
-            <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
+            <h6 className="text-slate-800 font-medium">
               Emma Willever
             </h6>
-            <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+            <p className="text-slate-500 text-sm">
               UI/UX Designer @ Material Tailwind
             </p>
           </div>
