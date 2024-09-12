@@ -265,6 +265,10 @@ export const routes = [
         route: "input",
       },
       {
+        name: "Input Number",
+        route: "input-number",
+      },
+      {
         name: "Radio Button",
         route: "radio-button",
       },

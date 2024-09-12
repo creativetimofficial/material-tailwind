@@ -80,6 +80,7 @@ import * as FrameworkIcons from "@widgets";
 import * as SkeletonExamples from "docs-content/react/skeleton";
 import * as GalleryExamples from "docs-content/react/gallery";
 import * as MegaMenuExamples from "docs-content/react/mega-menu";
+import * as InputNumberExamples from "docs-content/react/input-number";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
@@ -367,6 +368,7 @@ const components = {
   SkeletonExamples,
   GalleryExamples,
   MegaMenuExamples,
+  InputNumberExamples,
 
   // html docs content
   HtmlPlugins,
