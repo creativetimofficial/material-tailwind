@@ -306,26 +306,44 @@ Use this example of gallery component if you want to allow users to switch betwe
 ```html
 <div class="w-full">
   <div class="relative right-0">
-    <ul class="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60" data-tabs="tabs" role="list">
-      <li class="z-30 flex-auto text-center">
-        <a class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-          data-tab-target="" role="tab" aria-selected="true" aria-controls="app">
-          <span class="ml-1">App</span>
-        </a>
-      </li>
-      <li class="z-30 flex-auto text-center">
-        <a class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-          data-tab-target="" role="tab" aria-selected="false" aria-controls="message">
-          <span class="ml-1">Messages</span>
-        </a>
-      </li>
-      <li class="z-30 flex-auto text-center">
-        <a class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-          data-tab-target="" role="tab" aria-selected="false" aria-controls="settings">
-          <span class="ml-1">Settings</span>
-        </a>
-      </li>
-    </ul>
+    <div class="w-full">
+      <div class="relative right-0">
+        <ul class="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-slate-100" data-tabs="tabs" role="list">
+          <li class="z-30 flex-auto text-center">
+            <a
+              class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="true"
+              aria-controls="app"
+            >
+              <span class="ml-1">App</span>
+            </a>
+          </li>
+          <li class="z-30 flex-auto text-center">
+            <a
+              class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="message"
+            >
+              <span class="ml-1">Messages</span>
+            </a>
+          </li>
+          <li class="z-30 flex-auto text-center">
+            <a class="z-30 flex items-center justify-center w-full px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+              data-tab-target=""
+              role="tab"
+              aria-selected="false"
+              aria-controls="settings"
+            >
+              Settings
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div> 
     <div data-tab-content="" class="p-5">
       <div class="block opacity-100" id="app" role="tabpanel">
         <div role="tabpanel"
