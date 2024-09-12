@@ -23,6 +23,7 @@ navigation:
     "text-only-card",
     "card-with-hover",
     "card-with-tabs",
+    "card-with-bottom-image",
     "more-examples",
     "best-practices",
   ]
@@ -1019,7 +1020,9 @@ Use this card example with clean design for place where only a basic text, like 
 
 ## Card with Tabs
 
-This card example features multiple tabs with content; this allows users to switch between different sections within the same card. It's perfect for organizing related information in a compact space.
+This card example features multiple tabs with content; this allows users to switch between 
+different sections within the same card. It's perfect for organizing related information in 
+a compact space.
 
 <b className="text-blue-500">Important: </b> This example requires the <a className="text-blue-500" href="/docs/html/tabs#required-script" target="_blank">Tabs Javascript</a> to be included in the project.
 
@@ -1085,6 +1088,37 @@ This card example features multiple tabs with content; this allows users to swit
       </div>
     </div>
 </div>
+```
+</CodePreview>
+
+---
+
+## Card with Bottom Image
+
+This card component contains the title, text, and an image at the bottom. It is a good example for displaying news, articles, or blog posts where you want the title to be the most important thing on the card.
+
+
+<CodePreview
+  id="card-with-bottom-image"
+  link="card#card-with-bottom-image"
+  component={<HTMLCardExamples.CardWithBottomImage/>}
+>
+```html
+<div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+  <div class="p-4">
+    <h6 class="mb-2 text-slate-800 text-xl font-semibold">
+      Special News Article
+    </h6>
+    <p class="text-slate-600 leading-normal font-light">
+      The place is close to Barceloneta Beach and bus stop just 2 min by walk
+      and near to &quot;Naviglio&quot; where you can enjoy the main night life in
+      Barcelona.
+    </p>
+  </div>
+  <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+    <img src="https://images.unsplash.com/photo-1725610588086-b9e38da987f7?q=80&w=1200" alt="card-image" />
+  </div>
+</div>  
 ```
 </CodePreview>
 
