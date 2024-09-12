@@ -2,7 +2,7 @@ export function DialogWithImage() {
   return (
     <>
       <div
-        className="relative flex h-64 w-96 cursor-pointer flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md transition-opacity hover:opacity-90"
+        className="relative flex h-64 w-96 cursor-pointer flex-col overflow-hidden rounded-lg bg-white bg-clip-border shadow-sm transition-opacity hover:opacity-90"
         data-dialog-target="image-dialog"
       >
         <img
@@ -17,11 +17,11 @@ export function DialogWithImage() {
         className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
       >
         <div
-          className="relative m-4 w-3/4 min-w-[75%] max-w-[75%] rounded-lg bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+          className="relative m-4 w-2/4 rounded-lg bg-white shadow-sm"
           role="dialog"
           data-dialog="image-dialog"
         >
-          <div className="flex shrink-0 items-center justify-between p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+          <div className="flex items-center justify-between p-4">
             <div className="flex items-center gap-3">
               <img
                 alt="tania andrew"
@@ -29,37 +29,21 @@ export function DialogWithImage() {
                 className="relative inline-block h-9 w-9 rounded-full object-cover object-center"
               />
               <div className="-mt-px flex flex-col">
-                <p className="block font-sans text-sm font-medium leading-normal text-blue-gray-900 antialiased">
+                <p className="text-sm text-slate-800 font-medium">
                   Tania Andrew
                 </p>
-                <p className="block font-sans text-xs font-normal text-gray-700 antialiased">
+                <p className="text-xs font-normal text-slate-500">
                   @andrew
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <button
-                className="relative h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
-                data-ripple-dark="true"
-              >
-                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-5"
-                  >
-                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
-                  </svg>
-                </span>
+              <button className="rounded-md border border-transparent p-2.5 text-center text-sm transition-all text-slate-600 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                </svg>
               </button>
-              <button
-                className="select-none rounded-lg bg-gray-900 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
-                data-ripple-light="true"
-              >
+              <button className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
                 Free Download
               </button>
             </div>
@@ -67,40 +51,36 @@ export function DialogWithImage() {
           <div className="relative border-b border-t border-b-blue-gray-100 border-t-blue-gray-100 p-0 font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased">
             <img
               alt="nature"
-              className="h-[48rem] w-full object-cover object-center"
+              className="h-[30rem] w-full object-cover object-center"
               src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2717&amp;q=80"
             />
           </div>
           <div className="flex shrink-0 flex-wrap items-center justify-between p-4 text-blue-gray-500">
             <div className="flex items-center gap-16">
               <div>
-                <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+                <p className="text-slate-500 text-sm">
                   Views
                 </p>
-                <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                <p className="text-slate-800 font-medium">
                   44,082,044
                 </p>
               </div>
               <div>
-                <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+                <p className="text-slate-500 text-sm">
                   Downloads
                 </p>
-                <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+                <p className="text-slate-800 font-medium">
                   553,031
                 </p>
               </div>
             </div>
-            <button
-              className="flex select-none items-center gap-3 rounded-lg border border-blue-gray-500 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-500 transition-all hover:opacity-75 focus:ring focus:ring-blue-gray-200 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-              type="button"
-              data-ripple-dark="true"
-            >
+            <button className="flex items-center rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 aria-hidden="true"
-                className="h-4 w-4"
+                className="h-4 w-4 mr-1.5"
               >
                 <path
                   fill-rule="evenodd"
