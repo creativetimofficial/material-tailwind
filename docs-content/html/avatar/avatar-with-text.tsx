@@ -8,10 +8,10 @@ export function AvatarWithText() {
           className="relative inline-block h-12 w-12 !rounded-full object-cover object-center"
         />
         <div>
-          <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-inherit antialiased">
+          <h6 className="text-slate-800 font-semibold">
             Tania Andrew
           </h6>
-          <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+          <p className="text-slate-600 text-sm">
             Web Developer
           </p>
         </div>
@@ -23,10 +23,10 @@ export function AvatarWithText() {
           className="relative inline-block h-12 w-12 rounded-lg object-cover object-center"
         />
         <div>
-          <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-inherit antialiased">
+          <h6 className="text-slate-800 font-semibold">
             Tania Andrew
           </h6>
-          <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+          <p className="text-slate-600 text-sm">
             Web Developer
           </p>
         </div>
@@ -38,10 +38,10 @@ export function AvatarWithText() {
           className="relative inline-block h-12 w-12 !rounded-none object-cover object-center"
         />
         <div>
-          <h6 className="block font-sans text-base font-semibold leading-relaxed tracking-normal text-inherit antialiased">
+          <h6 className="text-slate-800 font-semibold">
             Tania Andrew
           </h6>
-          <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
+          <p className="text-slate-600 text-sm">
             Web Developer
           </p>
         </div>

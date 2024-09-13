@@ -7,3 +7,6 @@ export * from "./select-sizes";
 export * from "./select-validations";
 export * from "./select-variants";
 export * from "./select-with-label";
+export * from "./select-with-helper-text";
+export * from "./select-with-label-and-helper-text";
+export * from "./select-with-auto-width";

@@ -133,17 +133,17 @@ Use the following example to create avatars with different border styles and sha
   <img
     src="https://docs.material-tailwind.com/img/face-2.jpg"
     alt="avatar"
-    class="inline-block relative object-cover object-center !rounded-full w-12 h-12 border-2 border-gray-900 p-0.5"
+    class="inline-block relative object-cover object-center !rounded-full w-12 h-12 border border-slate-800 p-0.5"
   />
   <img
     src="https://docs.material-tailwind.com/img/face-2.jpg"
     alt="avatar"
-    class="inline-block relative object-cover object-center w-12 h-12 rounded-lg border-2 border-green-500 p-0.5"
+    class="inline-block relative object-cover object-center w-12 h-12 rounded-lg border border-green-600 p-0.5"
   />
   <img
     src="https://docs.material-tailwind.com/img/face-2.jpg"
     alt="avatar"
-    class="inline-block relative object-cover object-center !rounded-none w-12 h-12 border-2 border-pink-500 p-0.5"
+    class="inline-block relative object-cover object-center !rounded-none w-12 h-12 border border-pink-600 p-0.5"
   />
 ```
 </CodePreview>
@@ -164,10 +164,10 @@ You can use avatar with other components as well. Our example below which includ
     <img src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar"
       class="inline-block relative object-cover object-center !rounded-full w-12 h-12" />
     <div>
-      <h6 class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
+      <h6 class="text-slate-800 font-semibold">
         Tania Andrew
       </h6>
-      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+      <p class="text-slate-600 text-sm">
         Web Developer
       </p>
     </div>
@@ -176,10 +176,10 @@ You can use avatar with other components as well. Our example below which includ
     <img src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar"
       class="relative inline-block object-cover object-center w-12 h-12 rounded-lg" />
     <div>
-      <h6 class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
+      <h6 class="text-slate-800 font-semibold">
         Tania Andrew
       </h6>
-      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+      <p class="text-slate-600 text-sm">
         Web Developer
       </p>
     </div>
@@ -188,10 +188,10 @@ You can use avatar with other components as well. Our example below which includ
     <img src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar"
       class="inline-block relative object-cover object-center !rounded-none w-12 h-12" />
     <div>
-      <h6 class="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
+      <h6 class="text-slate-800 font-semibold">
         Tania Andrew
       </h6>
-      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+      <p class="text-slate-600 text-sm">
         Web Developer
       </p>
     </div>
@@ -260,7 +260,7 @@ Use this example to implement a horizontal stack of avatar images for representi
       alt="avatar"
       class="inline-block relative object-cover object-center rounded-full w-12 h-12"
     /><span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[14%] right-[14%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border-2 border-white"
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[14%] right-[14%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border border-white"
     ></span>
   </div>
   <div class="relative inline-flex">
@@ -269,7 +269,7 @@ Use this example to implement a horizontal stack of avatar images for representi
       alt="avatar"
       class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
     /><span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border-2 border-white"
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-green-500 text-white border border-white"
     ></span>
   </div>
   <div class="relative inline-flex">
@@ -278,7 +278,7 @@ Use this example to implement a horizontal stack of avatar images for representi
       alt="avatar"
       class="inline-block relative object-cover object-center rounded-full w-12 h-12"
     /><span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[14%] right-[14%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border-2 border-white"
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[14%] right-[14%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border border-white"
     ></span>
   </div>
   <div class="relative inline-flex">
@@ -287,7 +287,7 @@ Use this example to implement a horizontal stack of avatar images for representi
       alt="avatar"
       class="inline-block relative object-cover object-center w-12 h-12 rounded-lg"
     /><span
-      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[4%] right-[2%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border-2 border-white"
+      class="absolute min-w-[12px] min-h-[12px] rounded-full py-1 px-1 text-xs font-medium content-[''] leading-none grid place-items-center bottom-[4%] right-[2%] translate-x-2/4 translate-y-2/4 bg-red-500 text-white border border-white"
     ></span>
   </div>
 </div>
