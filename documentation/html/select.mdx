@@ -1,7 +1,16 @@
 ---
 title: Tailwind CSS Select - Material Tailwind
 description: Explore our interactive select component example styles with Tailwind CSS that can easily be customized to fit your web project.
-navigation: ["select", "select-with-label",  "more-examples"]
+navigation: [
+  "simple-select", 
+  "select-sizes",
+  "select-disabled",
+  "select-with-validation",
+  "select-with-label", 
+  "select-with-helper-text", 
+  "select-with-label-and-helper-text",  
+  "select-with-auto-width",
+  "more-examples"]
 github: select
 prev: rating
 next: speed-dial
@@ -22,23 +31,156 @@ See below our select component example that you can use in your Tailwind CSS pro
 Use this versatile Select component with 4 options available and styled with Tailwind CSS to collect user information. This example fits perfectly in forms to let the users choose their country.
 
 <CodePreview
-  id="select"
-  link="select#select"
+  id="simple-select"
+  link="select#simple-select"
   component={<HTMLSelectExamples.SelectDefault/>}
 >
 ```html
- <div class="relative h-10 w-72 min-w-[200px]">
-  <select
-    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
-    <option value="brazil">Brazil</option>
-    <option value="bucharest">Bucharest</option>
-    <option value="london">London</option>
-    <option value="washington">Washington</option>
-  </select>
-  <label
-    class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-gray-900 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-    Select a City
-  </label>
+<div class="w-full max-w-sm min-w-[200px]">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Select Sizes
+
+Use this versatile Select component with 4 options available and styled with Tailwind CSS to collect user information. This example fits perfectly in forms to let the users choose their country.
+
+<CodePreview
+  id="select-sizes"
+  link="select#select-sizes"
+  component={<HTMLSelectExamples.SelectSizes/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-1.5 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+
+<div class="w-full max-w-sm min-w-[200px] mt-4">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+
+<div class="w-full max-w-sm min-w-[200px] mt-4">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-3 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-3.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Select Disabled
+
+Disabled dropdown select styled with Tailwind CSS, ideal for showing a locked or default option in forms.
+
+<CodePreview
+  id="select-disabled"
+  link="select#select-disabled"
+  component={<HTMLSelectExamples.SelectDisabled/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">
+  <div class="relative">
+    <select
+        disabled
+        class="pointer-events-none opacity-50 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="opacity-50 h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+```
+</CodePreview>
+
+--- 
+
+## Select With Validation
+
+Validated select component with error and success styles using Tailwind CSS, perfect for form feedback.
+
+<CodePreview
+  id="select-with-validation"
+  link="select#select-with-validation"
+  component={<HTMLSelectExamples.SelectWithValidation/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-red-400 text-red-700 text-sm border border-red-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-red-500 hover:border-red-300 shadow-sm focus:shadow appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+</div>
+<div class="w-full max-w-sm min-w-[200px] mt-4">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-green-400 text-green-700 text-sm border border-green-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-green-500 hover:border-green-300 shadow-sm focus:shadow appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
 </div>
 ```
 </CodePreview>
@@ -50,8 +192,8 @@ Use this versatile Select component with 4 options available and styled with Tai
 Use this select component that features a clean, minimal design, labeled "Your Country" with "Brazil" as the selected option. It includes a dropdown arrow on the right side, allowing users to choose their country from a predefined list.
 
 <CodePreview
-  id="select"
-  link="select#select"
+  id="select-with-label"
+  link="select#select-with-label"
   component={<HTMLSelectExamples.SelectWithLabel/>}
 >
 ```html
@@ -62,7 +204,7 @@ Use this select component that features a clean, minimal design, labeled "Your C
   
   <div class="relative">
     <select
-        class="w-full h-10 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
         <option value="brazil">Brazil</option>
         <option value="bucharest">Bucharest</option>
         <option value="london">London</option>
@@ -73,6 +215,166 @@ Use this select component that features a clean, minimal design, labeled "Your C
     </svg>
   </div>
 </div>
+```
+</CodePreview>
+
+---
+
+## Select with Helper Text
+
+Responsive location select dropdown with helper text, enhancing user experience by providing location-specific options. Perfect for forms and interfaces.
+
+
+<CodePreview
+  id="select-with-helper-text"
+  link="select#select-with-helper-text"
+  component={<HTMLSelectExamples.SelectWithHelperText/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">      
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="w-5 h-5 mr-2"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+    Your location helps us to provide location-specific services.
+  </p>
+</div>
+```
+</CodePreview>
+
+---
+
+## Select with Label and Helper Text
+
+Responsive location select dropdown with label and helper text, enhancing user experience by providing location-specific options. Perfect for forms and interfaces.
+
+
+<CodePreview
+  id="select-with-label-and-helper-text"
+  link="select#select-with-label-and-helper-text"
+  component={<HTMLSelectExamples.SelectWithLabelAndHelperText/>}
+>
+```html
+<div class="w-full max-w-sm min-w-[200px]">    
+  <label class="block mb-1 text-sm text-slate-800">
+    Your Country
+  </label>
+
+  <div class="relative">
+    <select
+        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
+        <option value="brazil">Brazil</option>
+        <option value="bucharest">Bucharest</option>
+        <option value="london">London</option>
+        <option value="washington">Washington</option>
+    </select>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+    </svg>
+  </div>
+  <p class="flex items-center mt-2 text-xs text-slate-500">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="w-5 h-5 mr-2"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+    Your location helps us to provide location-specific services.
+  </p>
+</div>
+```
+</CodePreview>
+
+---
+
+## Select with Auto Width
+
+Responsive auto-width select component with customizable options, ideal for forms needing dynamic input fields that adjust to the content size.
+
+<CodePreview
+  id="select-with-auto-width"
+  link="select#select-with-auto-width"
+  component={<HTMLSelectExamples.SelectWithAutoWidth />}
+>
+```html
+<div class="mt-4">
+  <div class="relative inline-block">
+    <select
+      id="dynamicSelect"
+      class="bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer min-w-[50px]"
+      onchange="resizeSelect()"
+    >
+      <option value="brazil">How did you hear about us?</option>
+      <option value="bucharest">How can we assist you today?</option>
+      <option value="london">What is your age group?</option>
+      <option value="washington">Would you like to subscribe to our newsletter?</option>
+    </select>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.2"
+      stroke="currentColor"
+      class="h-5 w-5 ml-1 absolute top-2.5 right-2.5 text-slate-700 pointer-events-none"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+      />
+    </svg>
+  </div>
+</div>
+
+<script>
+  function resizeSelect() {
+    const select = document.getElementById('dynamicSelect');
+    const selectedText = select.options[select.selectedIndex].text;
+    const tempDiv = document.createElement('div');
+
+    // Temporary div to calculate the width of the selected text
+    tempDiv.style.position = 'absolute';
+    tempDiv.style.visibility = 'hidden';
+    tempDiv.style.whiteSpace = 'nowrap';
+    tempDiv.style.fontSize = window.getComputedStyle(select).fontSize;
+    tempDiv.innerText = selectedText;
+
+    document.body.appendChild(tempDiv);
+    select.style.width = tempDiv.offsetWidth + 40 + 'px'; // Adjust the additional width for padding and icon space
+    document.body.removeChild(tempDiv);
+  }
+
+  // Initial call to resize the select box to the default selected option
+  document.addEventListener('DOMContentLoaded', resizeSelect);
+</script>
+
 ```
 </CodePreview>
 
