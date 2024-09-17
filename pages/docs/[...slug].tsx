@@ -81,6 +81,7 @@ import * as SkeletonExamples from "docs-content/react/skeleton";
 import * as GalleryExamples from "docs-content/react/gallery";
 import * as MegaMenuExamples from "docs-content/react/mega-menu";
 import * as InputNumberExamples from "docs-content/react/input-number";
+import * as InputPhoneExamples from "docs-content/react/input-phone";
 
 // html docs content
 import * as HtmlPlugins from "docs-content/html/plugins";
@@ -369,6 +370,7 @@ const components = {
   GalleryExamples,
   MegaMenuExamples,
   InputNumberExamples,
+  InputPhoneExamples,
 
   // html docs content
   HtmlPlugins,

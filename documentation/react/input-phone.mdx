@@ -1,0 +1,409 @@
+---
+title: Tailwind CSS Input Phone for React - Material Tailwind
+description: Explore Tailwind CSS and React input phone component examples that you can use to build forms or mobile apps. They come in different styles, allowing you to easily adapt the component to your project needs.
+navigation:
+  [
+    "input-simple-phone",
+    "input-phone-validation",
+    "input-phone-with-icon",
+    "input-phone-country-code",
+    "input-phone-floating-label",
+    "input-phone-number-with-select",
+    "input-phone-with-authentication-form"
+  ]
+github: input-phone
+prev: icon-button
+next: form
+---
+
+<DocsTitle>
+# Tailwind CSS Input Phone - React
+</DocsTitle>
+
+The input phone component is a text field specifically designed for entering a phone number. It is usually found in forms and mobile apps as a part of registration, verification, or communication processes.
+
+Check out below our Tailwind CSS input phone examples. They come in different styles, allowing you to easily adapt the component to your project needs.
+
+<br />
+
+<DocsTitle href="#input-simple-phone">
+## Input Simple Phone
+</DocsTitle>
+
+Use this basic phone number input field with a placeholder example and a note to include the country code.
+
+<CodePreview component={<InputPhoneExamples.InputSimplePhone />}>
+```jsx
+import { Input, Typography } from "@material-tailwind/react";
+
+export function InputSimplePhone() {
+  return (
+    <div className="w-96">
+      <Typography
+        variant="small"
+        color="blue-gray"
+        className="mb-1 font-medium"
+      >
+        Contact Number
+      </Typography>
+      <Input
+        maxLength={16}
+        placeholder="e.g., +1 123-456-7890"
+        pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+        className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300 placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+      />
+      <Typography className="mt-2 text-xs font-normal text-blue-gray-500">
+        Include your country code for international numbers.
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-validation">
+## Input Phone with Validation Text
+</DocsTitle>
+
+Try our tailwind phone input example that displays validation messages below, either confirming the phone number format (green) or indicating an error (red).
+
+<CodePreview component={<InputPhoneExamples.InputPhoneValidation />}>
+```jsx
+import { Input, Typography } from "@material-tailwind/react";
+
+export function InputPhoneValidation() {
+  return (
+    <div className="space-y-8">
+      <div className="w-96">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium"
+        >
+          Contact Number
+        </Typography>
+        <Input
+          success={true}
+          maxLength={16}
+          placeholder="e.g., +1 123-456-7890"
+          pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+          className="appearance-none !border-t-green-500 placeholder:text-green-300 placeholder:opacity-100 focus:!border-t-green-500 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          labelProps={{
+            className: "before:content-none after:content-none",
+          }}
+        />
+        <Typography color="green" className="mt-2 text-xs font-normal">
+          Great! Your phone number is valid.
+        </Typography>
+      </div>
+      <div className="w-96">
+        <Typography
+          variant="small"
+          color="blue-gray"
+          className="mb-1 font-medium"
+        >
+          Contact Number
+        </Typography>
+        <Input
+          error={true}
+          maxLength={16}
+          placeholder="e.g., +1 123-456-7890"
+          pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+          className="appearance-none !border-t-red-500 placeholder:text-red-300 placeholder:opacity-100 focus:!border-t-red-500 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          labelProps={{
+            className: "before:content-none after:content-none",
+          }}
+        />
+        <Typography
+          color="red"
+          className="mt-2 flex items-center gap-2 text-xs font-normal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-5 w-5"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          Please match the requested format. e.g., +1 123-456-7890
+        </Typography>
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-with-icon">
+## Input Phone with Icon
+</DocsTitle>
+
+Use this phone input example with a phone icon to the left of the input, adding a visual cue for the type of input required.
+
+<CodePreview component={<InputPhoneExamples.InputPhoneWithIcon />}>
+```jsx
+import { Input, Typography } from "@material-tailwind/react";
+
+export function InputPhoneWithIcon() {
+  return (
+    <div className="w-96">
+      <Typography
+        variant="small"
+        color="blue-gray"
+        className="mb-1 font-medium"
+      >
+        Contact Number
+      </Typography>
+      <Input
+        maxLength={16}
+        placeholder="e.g., +1 123-456-7890"
+        pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+        className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300 placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-4 w-4 text-blue-gray-600"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        }
+      />
+      <Typography className="mt-2 text-xs font-normal text-blue-gray-500">
+        Include your country code for international numbers.
+      </Typography>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-country-code">
+## Input Phone with Country Code
+</DocsTitle>
+
+Use this phone input example that allows users to select a country code from a dropdown, with the selected code appearing before the input.
+
+<CodePreview component={<InputPhoneExamples.InputPhoneCountryCode />}>
+```jsx
+import React from "react";
+import {
+  Input,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+  Typography,
+} from "@material-tailwind/react";
+
+const COUNTRIES = ["France (+33)", "Germany (+49)", "Spain (+34)", "USA (+1)"];
+const CODES = ["+33", "+49", "+34", "+1"];
+
+export function InputPhoneCountryCode() {
+  const [country, setCountry] = React.useState(0);
+
+  return (
+    <div className="w-full max-w-[24rem]">
+      <Typography
+        variant="small"
+        color="blue-gray"
+        className="mb-1 font-medium"
+      >
+        Enter Phone Number
+      </Typography>
+      <div className="relative flex w-full">
+        <Menu placement="bottom-start">
+          <MenuHandler>
+            <Button
+              ripple={false}
+              variant="text"
+              color="blue-gray"
+              className="h-10 w-14 shrink-0 rounded-r-none border border-r-0 border-blue-gray-200 bg-transparent px-3"
+            >
+              {CODES[country]}
+            </Button>
+          </MenuHandler>
+          <MenuList className="max-h-[20rem] max-w-[18rem]">
+            {COUNTRIES.map((country, index) => {
+              return (
+                <MenuItem
+                  key={country}
+                  value={country}
+                  onClick={() => setCountry(index)}
+                >
+                  {country}
+                </MenuItem>
+              );
+            })}
+          </MenuList>
+        </Menu>
+        <Input
+          type="tel"
+          pattern="[0-9]*"
+          inputMode="numeric"
+          maxLength={12}
+          placeholder="324-456-2323"
+          className="appearance-none rounded-l-none !border-t-blue-gray-200 placeholder:text-blue-gray-300 placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          labelProps={{
+            className: "before:content-none after:content-none",
+          }}
+          containerProps={{
+            className: "min-w-0",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-floating-label">
+## Input Phone with Floating Label
+</DocsTitle>
+
+Check out this phone input where the label text moves up and becomes smaller as the user starts typing, ensuring the label is always visible.
+
+<CodePreview component={<InputPhoneExamples.InputPhoneFloatingLabel />}>
+```jsx
+import { Input, Typography } from "@material-tailwind/react";
+
+export function InputPhoneFloatingLabel() {
+  return (
+    <div className="w-96">
+      <Input
+        maxLength={16}
+        label="Contact Number"
+        placeholder="e.g., +1 123-456-7890"
+        pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+        className="appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-4 w-4 text-blue-gray-600"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        }
+      />
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-number-with-select">
+## Input Phone Number with Select
+</DocsTitle>
+
+This phone input component paired with a dropdown allows users to choose their primary contact number from multiple saved numbers. Try to your application now!
+
+<CodePreview component={<InputPhoneExamples.InputPhoneWithSelect />}>
+```jsx
+import { Select, Option } from "@material-tailwind/react";
+
+export function InputPhoneWithSelect() {
+  return (
+    <div className="w-96">
+      <Select label="Contact Number">
+        <Option value="+33">(+33) 123-456-7890</Option>
+        <Option value="+49">(+49) 123-456-7890</Option>
+        <Option value="+31">(+31) 123-456-7890</Option>
+        <Option value="+34">(+34) 123-456-7890</Option>
+      </Select>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="#input-phone-with-authentication-form">
+## Input Phone with Authentication Form
+</DocsTitle>
+
+Use this phone input example integrated within a sign-in or authentication form, with an option to continue using the phone number or sign in with Google.
+
+<CodePreview component={<InputPhoneExamples.InputPhoneWithAuth />}>
+```jsx
+import { Input, Typography, Button } from "@material-tailwind/react";
+
+export function InputPhoneWithAuth() {
+  return (
+    <div className="w-96">
+      <Typography
+        variant="small"
+        color="blue-gray"
+        className="mb-1 font-medium"
+      >
+        Contact Number
+      </Typography>
+      <Input
+        maxLength={16}
+        placeholder="e.g., +1 123-456-7890"
+        pattern="^\+\d{1,3}\s\d{1,4}-\d{1,4}-\d{4}$"
+        className="appearance-none !border-t-blue-gray-200 placeholder:text-blue-gray-300 placeholder:opacity-100 focus:!border-t-gray-900 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+      />
+      <Button className="mt-4" fullWidth>
+        Continue
+      </Button>
+      <div className="my-4 flex items-center gap-2">
+        <span className="h-[1px] w-1/2 bg-blue-gray-100" />
+        <Typography variant="small" color="blue-gray">
+          Or
+        </Typography>
+        <span className="h-[1px] w-1/2 bg-blue-gray-100" />
+      </div>
+      <Button
+        variant="outlined"
+        className="flex w-full items-center justify-center gap-2"
+      >
+        <img
+          src="https://docs.material-tailwind.com/icons/google.svg"
+          alt="google"
+          className="h-4 w-4"
+        />
+        Sign in with Google
+      </Button>
+    </div>
+  );
+}
+```
+</CodePreview>

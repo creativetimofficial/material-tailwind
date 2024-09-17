@@ -269,6 +269,10 @@ export const routes = [
         route: "input-number",
       },
       {
+        name: "Input Phone",
+        route: "input-phone",
+      },
+      {
         name: "Radio Button",
         route: "radio-button",
       },
