@@ -101,6 +101,7 @@ import * as HTMLInputSearchExamples from "docs-content/html/input-search";
 import * as HTMLFormExamples from "docs-content/html/form";
 import * as HTMLListExamples from "docs-content/html/list";
 import * as HTMLMenuExamples from "docs-content/html/menu";
+import * as HTMLModalExamples from "docs-content/html/modal";
 import * as HTMLNavbarExamples from "docs-content/html/navbar";
 import * as HTMLPaginationExamples from "docs-content/html/pagination";
 import * as HTMLPopoverExamples from "docs-content/html/popover";
@@ -387,6 +388,7 @@ const components = {
   HTMLFormExamples,
   HTMLListExamples,
   HTMLMenuExamples,
+  HTMLModalExamples,
   HTMLNavbarExamples,
   HTMLPaginationExamples,
   HTMLPopoverExamples,
