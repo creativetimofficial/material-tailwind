@@ -217,6 +217,10 @@ export const routes = [
         route: "mega-menu",
       },
       {
+        name: "Modal",
+        route: "modal",
+      },
+      {
         name: "Navbar",
         route: "navbar",
       },
