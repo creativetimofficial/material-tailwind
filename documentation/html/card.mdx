@@ -26,7 +26,9 @@ navigation:
     "card-with-animation",
     "card-with-alert",
     "card-with-centered-content",
+    "card-with-placeholder",
     "card-with-hover",
+    "card-with-scroll-area",
     "more-examples",
     "best-practices",
   ]
@@ -1242,6 +1244,79 @@ It is useful for displaying contextually important information that the user nee
         View More
       </button>
     </div>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+## Card with Placeholder (Empty State)
+
+This simple tailwind css component is a card that contains an Icon and Text for the empty state.
+It is useful for showing a placeholder for the card when there is no data to display.
+
+<CodePreview
+  id="card-with-placeholder"
+  link="card#card-with-placeholder"
+  component={<HTMLCardExamples.CardWithPlaceholder/>}
+>
+```html
+<div class="relative min-h-60 w-full flex flex-col justify-center items-center my-6 bg-white shadow-sm border border-slate-200 rounded-lg p-2">
+  <div class="p-3 text-center">
+    <div class="flex justify-center mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-slate-400 w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+      </svg>
+    </div>
+    <div class="flex justify-center mb-2">
+      <h5 class="text-slate-800 text-2xl font-semibold">
+        No data sources linked.
+      </h5>
+    </div>
+    <p class="block text-slate-600 leading-normal font-light mb-4 max-w-lg">
+      No APIs created yet. Contact us for more details.
+    </p>
+  </div>
+</div>
+```
+</CodePreview>
+
+---
+
+
+## Card with Scroll Area
+
+This example shows a simple tailwind css card that contains a scrollable area under the title.
+It is useful for showing a scrollable area for the card when there is more content to display.
+
+<CodePreview
+  id="card-with-scroll-area"
+  link="card#card-with-scroll-area"
+  component={<HTMLCardExamples.CardWithScrollArea/>}
+>
+```html
+<div class="relative w-96 bg-white shadow-sm border border-slate-200 rounded-lg p-3 pb-6">
+   <div class="flex justify-center mb-4 mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-purple-500">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
+      </svg>
+    </div>
+
+    <div class="flex justify-center mb-3">
+      <h5 class="text-slate-800 text-2xl font-semibold">
+        Scrollable Content
+      </h5>
+    </div>
+  <div class="p-3 mt-5 border-t border-slate-100 text-center max-h-60 overflow-y-auto [&::-webkit-scrollbar-thumb]:rounded-xl [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:rounded-xl [&::-webkit-scrollbar-track]:bg-slate-100">
+    <p class="block text-slate-600 leading-normal font-light mb-4 max-w-lg">
+      Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others. Here is some additional text to test the scrolling feature. Imagine this is a long article that you can scroll through.
+    </p> <br />
+    <p class="block text-slate-600 leading-normal font-light mb-4 max-w-lg">
+      Still more content to keep the scroll active. Let's make sure the scrollbar styling is correct. Apple's scrollbar style is subtle, with a thin, sleek design. Scroll down for more! Keep adding more content to ensure the scroll is working. The card's content should now be scrollable. Test it out!
+      More text to fill the space, as we continue to check how scroll behaves.
+    </p>
   </div>
 </div>
 ```
