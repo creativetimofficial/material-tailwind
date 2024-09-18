@@ -21,4 +21,6 @@ export * from "./card-with-bottom-image";
 export * from "./card-with-animation";
 export * from "./card-with-alert";
 export * from "./card-with-centered-content";
+export * from "./card-with-placeholder";
+export * from "./card-with-scroll-area";
 export * from "./card-with-hover";
