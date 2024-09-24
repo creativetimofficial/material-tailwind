@@ -19,10 +19,10 @@ export const tooltipTriggerTheme = {
 
 export const tooltipContentTheme = {
   baseStyle:
-    "rounded-md bg-black dark:bg-white border-black dark:border-white px-1.5 pt-1 pb-[3px] text-xs text-white dark:text-black shadow-lg shadow-black/5 outline-none",
+    "rounded-md bg-black dark:bg-white border-black dark:border-white px-1.5 py-1 text-xs text-white dark:text-black shadow-lg shadow-black/5 outline-none",
 };
 
 export const tooltipArrowTheme = {
   baseStyle:
-    "h-2 w-2 rounded-bl-[3px] border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
+    "h-2 w-2 rounded-bl border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
 };

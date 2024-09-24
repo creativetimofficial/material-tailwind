@@ -19,7 +19,7 @@ export const badgeContentTheme = {
 
 export const badgeIndicatorTheme = {
   baseStyle: `
-    absolute px-1 py-0.5 text-xs border leading-none grid place-items-center rounded-full min-w-[10px] min-h-[10px]
+    absolute px-1 py-0.5 text-xs border leading-none grid place-items-center rounded-full min-w-3 min-h-3
 
     data-[placement='top-start']:data-[overlap='square']:top-[6%] data-[placement='top-start']:data-[overlap='square']:left-[6%]
     data-[placement='top-start']:data-[overlap='square']:-translate-x-1/2 data-[placement='top-start']:data-[overlap='square']:-translate-y-1/2

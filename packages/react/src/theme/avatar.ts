@@ -14,7 +14,7 @@ export const avatarTheme = {
     sm: "w-8 h-8 rounded",
     md: "w-11 h-11 rounded-md",
     lg: "w-14 h-14 rounded-md",
-    xl: "w-[72px] h-[72px] rounded-lg",
-    xxl: "w-[86px] h-[86px] rounded-xl",
+    xl: "w-20 h-20 rounded-lg",
+    xxl: "w-28 h-28 rounded-xl",
   },
 };

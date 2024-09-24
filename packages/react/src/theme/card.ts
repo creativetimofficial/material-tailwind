@@ -57,7 +57,7 @@ export const cardTheme = {
 };
 
 export const cardHeaderTheme = {
-  baseStyle: "w-[calc(100%-12px)] h-max rounded-[5px] m-1.5",
+  baseStyle: "w-[calc(100%-12px)] h-max rounded m-1.5",
 };
 
 export const cardBodyTheme = {

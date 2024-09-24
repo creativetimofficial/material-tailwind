@@ -17,8 +17,8 @@ export const chipTheme = {
     "relative inline-flex items-center border select-none font-sans font-medium rounded-full",
   size: {
     sm: "text-xs leading-none p-0.5",
-    md: "text-[13px] leading-none p-[3px]",
-    lg: "text-[15px] leading-none p-1",
+    md: "text-xs leading-none p-0.5",
+    lg: "text-sm leading-none p-1",
   },
   variant: {
     ghost: {
@@ -65,8 +65,8 @@ export const chipLabelTheme = {
   baseStyle: "font-inherit text-inherit leading-none",
   size: {
     sm: "my-0.5 mx-1.5",
-    md: "my-[3.5px] mx-2",
-    lg: "my-[4.5px] mx-2.5",
+    md: "my-1 mx-2",
+    lg: "my-1.5 mx-2.5",
   },
 };
 
@@ -75,7 +75,7 @@ export const chipIconTheme = {
   size: {
     sm: "translate-x-px w-3.5 h-3.5",
     md: "translate-x-0.5 w-4 h-4",
-    lg: "translate-x-[3px] w-5 h-5",
+    lg: "translate-x-1 w-5 h-5",
   },
 };
 
@@ -86,7 +86,7 @@ export const chipDismissTriggerTheme = {
   baseStyle: "grid place-items-center shrink-0 rounded-full p-px",
   size: {
     sm: "-translate-x-px ms-0.5 w-4 h-4 stroke-2",
-    md: "-translate-x-0.5 ms-1 w-[18px] h-[18px] stroke-2",
-    lg: "-translate-x-[3px] ms-1.5 w-[22px] h-[22px] stroke-2",
+    md: "-translate-x-0.5 ms-1 w-5 h-5 stroke-2",
+    lg: "-translate-x-1 ms-1.5 w-6 h-6 stroke-2",
   },
 };

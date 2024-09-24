@@ -6,7 +6,7 @@ export type ListItemStartTheme = DeepPartial<typeof listItemStartTheme>;
 export type ListItemEndTheme = DeepPartial<typeof listItemEndTheme>;
 
 export const listTheme = {
-  baseStyle: "flex flex-col gap-0.5 min-w-[240px]",
+  baseStyle: "flex flex-col gap-0.5 min-w-60",
 };
 
 export const listItemTheme = {

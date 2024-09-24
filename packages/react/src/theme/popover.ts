@@ -33,5 +33,5 @@ export const popoverContentTheme = {
 
 export const popoverArrowTheme = {
   baseStyle:
-    "h-3 w-3 rounded-bl-[3px] border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
+    "h-3 w-3 rounded-bl-sm border border-[inherit] bg-inherit [clip-path:polygon(0_0,_100%_100%,_0_100%)] data-[placement^=bottom]:rotate-[135deg] data-[placement^=left]:rotate-[225deg] data-[placement^=right]:rotate-45 data-[placement^=top]:-rotate-45",
 };

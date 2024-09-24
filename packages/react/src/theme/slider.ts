@@ -36,7 +36,7 @@ export const sliderThumbTheme = {
   size: {
     sm: "w-3 h-3",
     md: "w-3.5 h-3.5",
-    lg: "w-[18px] h-[18px]",
+    lg: "w-5 h-5",
   },
   color: {
     primary:
@@ -57,7 +57,7 @@ export const sliderTickTheme = {
     "absolute h-full -translate-x-1/2 text-foreground before:absolute before:left-1/2 before:rounded-full before:content-['']",
   size: {
     sm: "text-xs before:h-1 before:w-px top-2.5 before:-top-2.5",
-    md: "text-sm before:h-[7px] before:w-px top-3 before:-top-3",
+    md: "text-sm before:h-2 before:w-px top-3 before:-top-3",
     lg: "text-base before:h-2.5 before:w-0.5 top-3.5 before:-top-3.5 ",
   },
   color: {
