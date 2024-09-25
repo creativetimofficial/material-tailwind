@@ -30,6 +30,7 @@
     "ci": "turbo build lint && pnpm check && pnpm format"
   },
   "dependencies": {
+    "@material-tailwind/react": "packages/react",
     "eslint": "8.56.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "3.1.1",
