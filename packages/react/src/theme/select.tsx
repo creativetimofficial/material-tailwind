@@ -45,9 +45,9 @@ export const selectTriggerTheme = {
   baseStyle:
     "flex items-center gap-4 justify-between h-max w-full outline-none focus:outline-none text-foreground bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none text-start data-[shape=pill]:rounded-full [&_data-slot=placeholder]:text-foreground/60",
   size: {
-    sm: "text-sm leading-[normal] rounded-md py-[4.5px] px-1.5 ring",
-    md: "text-sm leading-[normal] rounded-md py-[8.5px] px-2.5 ring",
-    lg: "text-base leading-[normal] rounded-lg py-[12.25px] px-3.5 ring-4",
+    sm: "text-sm rounded-md py-1.5 px-2 ring shadow-sm",
+    md: "text-sm rounded-md py-2 px-2.5 ring shadow-sm",
+    lg: "text-base rounded-lg py-2.5 px-3 ring-4 shadow-sm",
   },
   color: {
     primary:

@@ -21,6 +21,7 @@ export interface InputContextProps extends Omit<SharedProps, "variant"> {
   isError?: boolean;
   isSuccess?: boolean;
   disabled?: boolean;
+  isPill?: boolean;
   setIconPlacement: React.Dispatch<React.SetStateAction<string>>;
   setIsIconDefined: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -32,6 +33,7 @@ export const InputContext = React.createContext<InputContextProps>({
   isSuccess: false,
   iconPlacement: "start",
   isIconDefined: false,
+  isPill: false,
   disabled: false,
   setIconPlacement: () => null,
   setIsIconDefined: () => null,
@@ -82,12 +84,7 @@ function InputRootBase<T extends React.ElementType = "div">(
   isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
   isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
 
-  const styles = twMerge(
-    theme.baseStyle,
-    theme.size[size],
-    isPill && theme["isPill"],
-    className,
-  );
+  const styles = twMerge(theme.baseStyle, theme.size[size], className);
 
   const contextValue = React.useMemo(
     () => ({
@@ -98,6 +95,7 @@ function InputRootBase<T extends React.ElementType = "div">(
       iconPlacement,
       isIconDefined,
       disabled,
+      isPill,
       setIconPlacement,
       setIsIconDefined,
     }),
@@ -109,13 +107,20 @@ function InputRootBase<T extends React.ElementType = "div">(
       iconPlacement,
       isIconDefined,
       disabled,
+      isPill,
       setIconPlacement,
       setIsIconDefined,
     ],
   );
 
   return (
-    <Component {...props} ref={ref} className={styles} aria-disabled={disabled}>
+    <Component
+      {...props}
+      ref={ref}
+      className={styles}
+      aria-disabled={disabled}
+      data-shape={isPill ? "pill" : "default"}
+    >
       <InputContext.Provider value={contextValue}>
         {children}
       </InputContext.Provider>
@@ -148,6 +153,7 @@ function InputFieldRoot<T extends React.ElementType = "input">(
     iconPlacement,
     isIconDefined,
     isError,
+    isPill,
     isSuccess,
     disabled,
   } = React.useContext(InputContext);
@@ -183,6 +189,7 @@ function InputFieldRoot<T extends React.ElementType = "input">(
       disabled={disabled}
       data-error={isError}
       data-success={isSuccess}
+      data-shape={isPill ? "pill" : "default"}
       data-icon-placement={isIconDefined ? iconPlacement : ""}
     />
   );

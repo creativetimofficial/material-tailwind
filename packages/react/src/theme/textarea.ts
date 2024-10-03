@@ -26,8 +26,8 @@ export const textareaTheme = {
       "hover:border-error hover:ring-error/10 focus:border-error focus:ring-error/10",
   },
   size: {
-    sm: "text-sm leading-none p-1.5 rounded-md ring",
-    md: "text-sm leading-none p-2.5 rounded-md ring",
-    lg: "text-base leading-none p-3.5 rounded-lg ring-4",
+    sm: "text-sm shadow-sm p-2 rounded-md ring",
+    md: "text-sm shadow-sm p-2.5 rounded-md ring",
+    lg: "text-base shadow-sm p-3 rounded-lg ring-4",
   },
 };

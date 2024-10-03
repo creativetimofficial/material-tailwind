@@ -21,7 +21,9 @@ export type ButtonProps<T extends React.ElementType = "button"> = BaseProps<
     ripple?: boolean;
     isPill?: boolean;
     isFullWidth?: boolean;
-  } & SharedProps
+  } & Omit<SharedProps, "size"> & {
+      size: SharedProps["size"] | "xs" | "xl";
+    }
 >;
 
 /**

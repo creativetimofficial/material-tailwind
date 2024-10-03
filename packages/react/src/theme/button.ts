@@ -12,25 +12,27 @@ export const buttonTheme = {
     isFullWidth: false,
   },
   baseStyle:
-    "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full",
+    "inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed data-[shape=pill]:rounded-full data-[width=full]:w-full focus:shadow-none",
   size: {
-    sm: "text-sm leading-none py-1.5 px-2.5 rounded-md",
-    md: "text-sm leading-none py-2.5 px-3.5 rounded-md",
-    lg: "text-base leading-none py-3.5 px-5 rounded-lg",
+    xs: "text-sm rounded-md py-1 px-2 shadow-sm hover:shadow",
+    sm: "text-sm rounded-md py-1.5 px-3 shadow-sm hover:shadow",
+    md: "text-sm rounded-md py-2 px-4 shadow-sm hover:shadow-md",
+    lg: "text-base rounded-md py-2.5 px-5 shadow-sm hover:shadow-lg",
+    xl: "text-base rounded-lg py-3 px-6 shadow-sm hover:shadow-lg",
   },
   variant: {
     ghost: {
       primary:
-        "bg-transparent border-transparent text-primary hover:bg-primary/5 hover:border-primary/5",
+        "bg-transparent border-transparent text-primary hover:bg-primary/5 hover:border-primary/5 shadow-none hover:shadow-none",
       secondary:
-        "bg-transparent border-transparent text-secondary-foreground hover:bg-secondary/10 hover:border-secondary/10",
-      info: "bg-transparent border-transparent text-info hover:bg-info/10 hover:border-info/10",
+        "bg-transparent border-transparent text-secondary-foreground hover:bg-secondary/10 hover:border-secondary/10 shadow-none hover:shadow-none",
+      info: "bg-transparent border-transparent text-info hover:bg-info/10 hover:border-info/10 shadow-none hover:shadow-none",
       success:
-        "bg-transparent border-transparent text-success hover:bg-success/10 hover:border-success/10",
+        "bg-transparent border-transparent text-success hover:bg-success/10 hover:border-success/10 shadow-none hover:shadow-none",
       warning:
-        "bg-transparent border-transparent text-warning hover:bg-warning/10 hover:border-warning/10",
+        "bg-transparent border-transparent text-warning hover:bg-warning/10 hover:border-warning/10 shadow-none hover:shadow-none",
       error:
-        "bg-transparent border-transparent text-error hover:bg-error/10 hover:border-error/10",
+        "bg-transparent border-transparent text-error hover:bg-error/10 hover:border-error/10 shadow-none hover:shadow-none",
     },
     solid: {
       primary:
@@ -47,16 +49,16 @@ export const buttonTheme = {
     },
     outline: {
       primary:
-        "bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+        "bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-none hover:shadow-none",
       secondary:
-        "bg-transparent border-secondary text-secondary-foreground hover:bg-secondary",
-      info: "bg-transparent border-info text-info hover:bg-info hover:text-info-foreground",
+        "bg-transparent border-secondary text-secondary-foreground hover:bg-secondary shadow-none hover:shadow-none",
+      info: "bg-transparent border-info text-info hover:bg-info hover:text-info-foreground shadow-none hover:shadow-none",
       success:
-        "bg-transparent border-success text-success hover:bg-success hover:text-success-foreground",
+        "bg-transparent border-success text-success hover:bg-success hover:text-success-foreground shadow-none hover:shadow-none",
       warning:
-        "bg-transparent border-warning text-warning hover:bg-warning hover:text-warning-foreground",
+        "bg-transparent border-warning text-warning hover:bg-warning hover:text-warning-foreground shadow-none hover:shadow-none",
       error:
-        "bg-transparent border-error text-error hover:bg-error hover:text-error-foreground",
+        "bg-transparent border-error text-error hover:bg-error hover:text-error-foreground shadow-none hover:shadow-none",
     },
     gradient: {
       primary:

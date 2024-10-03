@@ -6,7 +6,11 @@ export function CheckboxWithLabel() {
       <Checkbox id="checkbox">
         <Checkbox.Indicator />
       </Checkbox>
-      <Typography as="label" htmlFor="checkbox" className="text-foreground">
+      <Typography
+        as="label"
+        htmlFor="checkbox"
+        className="cursor-pointer text-foreground"
+      >
         Remember Me
       </Typography>
     </div>

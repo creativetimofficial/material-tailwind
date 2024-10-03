@@ -179,8 +179,8 @@ function RadioIndicatorRoot<T extends React.ElementType = "span">(
     <Component {...props} className={styles} ref={ref}>
       {children || (
         <svg
-          width="9px"
-          height="9px"
+          width="10px"
+          height="10px"
           viewBox="0 0 22 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

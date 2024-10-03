@@ -16,18 +16,19 @@ export const chipTheme = {
   baseStyle:
     "relative inline-flex items-center border select-none font-sans font-medium rounded-full",
   size: {
-    sm: "text-xs leading-none p-0.5",
-    md: "text-xs leading-none p-0.5",
-    lg: "text-sm leading-none p-1",
+    sm: "text-xs p-0.5 shadow-sm",
+    md: "text-sm p-0.5 shadow-sm",
+    lg: "text-sm p-1 shadow-sm",
   },
   variant: {
     ghost: {
-      primary: "bg-primary/10 border-transparent text-primary",
-      secondary: "bg-secondary/10 border-transparent text-secondary-foreground",
-      info: "bg-info/10 border-transparent text-info",
-      success: "bg-success/10 border-transparent text-success",
-      warning: "bg-warning/10 border-transparent text-warning",
-      error: "bg-error/10 border-transparent text-error",
+      primary: "bg-primary/10 border-transparent text-primary shadow-none",
+      secondary:
+        "bg-secondary/10 border-transparent text-secondary-foreground shadow-none",
+      info: "bg-info/10 border-transparent text-info shadow-none",
+      success: "bg-success/10 border-transparent text-success shadow-none",
+      warning: "bg-warning/10 border-transparent text-warning shadow-none",
+      error: "bg-error/10 border-transparent text-error shadow-none",
     },
     solid: {
       primary: "bg-primary border-primary text-primary-foreground",
@@ -38,12 +39,13 @@ export const chipTheme = {
       error: "bg-error border-error text-error-foreground",
     },
     outline: {
-      primary: "bg-transparent border-primary text-primary",
-      secondary: "bg-transparent border-secondary text-secondary-foreground",
-      info: "bg-transparent border-info text-info",
-      success: "bg-transparent border-success text-success",
-      warning: "bg-transparent border-warning text-warning",
-      error: "bg-transparent border-error text-error",
+      primary: "bg-transparent border-primary text-primary shadow-none",
+      secondary:
+        "bg-transparent border-secondary text-secondary-foreground shadow-none",
+      info: "bg-transparent border-info text-info shadow-none",
+      success: "bg-transparent border-success text-success shadow-none",
+      warning: "bg-transparent border-warning text-warning shadow-none",
+      error: "bg-transparent border-error text-error shadow-none",
     },
     gradient: {
       primary:
@@ -65,17 +67,17 @@ export const chipLabelTheme = {
   baseStyle: "font-inherit text-inherit leading-none",
   size: {
     sm: "my-0.5 mx-1.5",
-    md: "my-1 mx-2",
-    lg: "my-1.5 mx-2.5",
+    md: "my-1 mx-2.5",
+    lg: "my-1.5 mx-3",
   },
 };
 
 export const chipIconTheme = {
   baseStyle: "grid place-items-center shrink-0 rounded-full",
   size: {
-    sm: "translate-x-px w-3.5 h-3.5",
-    md: "translate-x-0.5 w-4 h-4",
-    lg: "translate-x-1 w-5 h-5",
+    sm: "translate-x-0.5 w-3.5 h-3.5",
+    md: "translate-x-1 w-4 h-4",
+    lg: "translate-x-1.5 w-5 h-5",
   },
 };
 
@@ -85,8 +87,8 @@ export const chipDismissTriggerTheme = {
   },
   baseStyle: "grid place-items-center shrink-0 rounded-full p-px",
   size: {
-    sm: "-translate-x-px ms-0.5 w-4 h-4 stroke-2",
-    md: "-translate-x-0.5 ms-1 w-5 h-5 stroke-2",
-    lg: "-translate-x-1 ms-1.5 w-6 h-6 stroke-2",
+    sm: "-translate-x-0.5 ms-0.5 w-4 h-4 stroke-2",
+    md: "-translate-x-1 ms-1 w-5 h-5 stroke-2",
+    lg: "-translate-x-1.5 ms-1.5 w-6 h-6 stroke-2",
   },
 };
