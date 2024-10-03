@@ -1,6 +1,3 @@
 {
-  "ignoreCommand": "pnpm dlx turbo-ignore",
-  "engines": {
-    "node": "18.x"
-  }
+  "ignoreCommand": "pnpm dlx turbo-ignore"
 }
