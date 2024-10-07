@@ -93,7 +93,11 @@ export function CheckboxWithLabel() {
       <Checkbox id="checkbox">
         <Checkbox.Indicator />
       </Checkbox>
-      <Typography as="label" htmlFor="checkbox" className="text-foreground">
+      <Typography
+        as="label"
+        htmlFor="checkbox"
+        className="cursor-pointer text-foreground"
+      >
         Remember Me
       </Typography>
     </div>
@@ -118,7 +122,7 @@ import { Star, StarSolid } from "iconoir-react";
 
 export function CheckboxWithCustomIcon() {
   return (
-    <Checkbox className="bg-transparent data-[checked=true]:bg-transparent">
+    <Checkbox className="border-0 shadow-none hover:shadow-none data-[checked=true]:bg-transparent">
       <Checkbox.Indicator className="relative left-0 top-0 opacity-100">
         <Star className="absolute inset-0 h-5 w-5 text-primary opacity-100 group-data-[checked=true]:opacity-0" />
         <StarSolid className="absolute inset-0 h-5 w-5 text-primary opacity-0 group-data-[checked=true]:opacity-100" />
@@ -168,10 +172,10 @@ export function CheckboxWithLink() {
       <Typography
         as="label"
         htmlFor="checkbox-link"
-        className="flex gap-1 text-foreground"
+        className="cursor-pointer text-foreground"
       >
-        I agree with the
-        <Typography as="a" href="#" color="primary">
+        I agree with the&nbsp;
+        <Typography as="a" href="#" color="primary" className="inline">
           terms and conditions
         </Typography>
       </Typography>
@@ -197,8 +201,11 @@ export function CheckboxWithDescription() {
       <Checkbox id="checkbox-description">
         <Checkbox.Indicator />
       </Checkbox>
-      <label htmlFor="checkbox-description" className="-translate-y-1">
-        <Typography color="default" className="font-semibold">
+      <label
+        htmlFor="checkbox-description"
+        className="-translate-y-0.5 cursor-pointer"
+      >
+        <Typography className="font-semibold">
           Remember Me
         </Typography>
         <Typography type="small" className="text-foreground">

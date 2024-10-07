@@ -1,12 +1,13 @@
 import { Switch, Typography } from "@material-tailwind/react";
 
-const ID = "switch-description";
-
 export function SwitchWithDescription() {
   return (
-    <div className="flex gap-2">
-      <Switch id={ID} />
-      <label htmlFor={ID} className="-translate-y-1">
+    <div className="flex gap-4">
+      <Switch id="switch-description" />
+      <label
+        htmlFor="switch-description"
+        className="-translate-y-0.5 cursor-pointer"
+      >
         <Typography color="default" className="font-semibold">
           Remember Me
         </Typography>

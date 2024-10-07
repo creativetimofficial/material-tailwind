@@ -12,9 +12,10 @@ export const chipTheme = {
     size: "md",
     color: "primary",
     variant: "solid",
+    isPill: true,
   },
   baseStyle:
-    "relative inline-flex items-center border select-none font-sans font-medium rounded-full",
+    "relative inline-flex w-max items-center border select-none font-sans font-medium rounded-md data-[shape=pill]:rounded-full",
   size: {
     sm: "text-xs p-0.5 shadow-sm",
     md: "text-sm p-0.5 shadow-sm",
