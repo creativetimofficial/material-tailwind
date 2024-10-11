@@ -23,8 +23,8 @@ import type { BaseProps, SharedProps } from "@types";
 
 export interface SliderContextProps extends Omit<SharedProps, "variant"> {
   sliderRef: React.RefObject<HTMLElement>;
-  value: ReadonlyArray<number>;
-  onValueChange: React.Dispatch<React.SetStateAction<readonly number[]>>;
+  value?: number[];
+  onValueChange?: React.Dispatch<React.SetStateAction<number[]>>;
   min?: number;
   max?: number;
   step?: number;
@@ -40,8 +40,8 @@ const SliderContext = React.createContext<SliderContextProps>({
 export type SliderProps<T extends React.ElementType = "div"> = BaseProps<
   T,
   {
-    value: ReadonlyArray<number>;
-    onValueChange: React.Dispatch<React.SetStateAction<readonly number[]>>;
+    value?: number[];
+    onValueChange?: React.Dispatch<React.SetStateAction<number[]>>;
     min?: number;
     max?: number;
     step?: number;
@@ -82,9 +82,9 @@ function SliderRootBase<T extends React.ElementType = "div">(
   size ??= (defaultProps?.size as SliderProps["size"]) ?? "md";
   color ??= (defaultProps?.color as SliderProps["color"]) ?? "primary";
 
-  const [uncontrolledValue, setUncontrolledValue] = React.useState<
-    ReadonlyArray<number>
-  >([0]);
+  const [uncontrolledValue, setUncontrolledValue] = React.useState<number[]>([
+    0,
+  ]);
 
   const value = controlledValue?.slice(0, 2) ?? uncontrolledValue;
   const onValueChange = setControlledValue ?? setUncontrolledValue;
@@ -142,14 +142,14 @@ function SliderRangeRoot<T extends React.ElementType = "div">(
 
   const sliderInstance = useRanger<HTMLDivElement>({
     getRangerElement: () => sliderRef.current as HTMLDivElement,
-    values: value,
+    values: value as readonly number[],
     min: min ?? 0,
     max: max ?? 100,
     stepSize: step ?? 1,
     onDrag: (instance: Ranger<HTMLDivElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
     onChange: (instance: Ranger<HTMLDivElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
   });
 
   return sliderInstance.getSteps().map(({ left, width }, i) => (
@@ -158,7 +158,7 @@ function SliderRangeRoot<T extends React.ElementType = "div">(
       {...props}
       className={twMerge(
         theme.baseStyle,
-        value.length > 1
+        value && value.length > 1
           ? i === 0
             ? "bg-transparent"
             : i === 1
@@ -207,14 +207,14 @@ function SliderThumbRoot<T extends React.ElementType = "button">(
 
   const sliderInstance = useRanger<HTMLElement>({
     getRangerElement: () => sliderRef.current,
-    values: value,
+    values: value as number[],
     min: min ?? 0,
     max: max ?? 100,
     stepSize: step ?? 1,
     onDrag: (instance: Ranger<HTMLElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
     onChange: (instance: Ranger<HTMLElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
   });
 
   const styles = twMerge(
@@ -299,14 +299,14 @@ function SliderTickRoot<T extends React.ElementType = "span">(
 
   const sliderInstance = useRanger<HTMLElement>({
     getRangerElement: () => sliderRef.current,
-    values: value,
+    values: value as number[],
     min: min ?? 0,
     max: max ?? 100,
     stepSize: step ?? 1,
     onDrag: (instance: Ranger<HTMLElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
     onChange: (instance: Ranger<HTMLElement>) =>
-      onValueChange(instance.sortedValues),
+      onValueChange?.(instance.sortedValues as number[]),
   });
 
   const styles = twMerge(
