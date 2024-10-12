@@ -40,13 +40,12 @@ export const chipTheme = {
       error: "bg-error border-error text-error-foreground",
     },
     outline: {
-      primary: "bg-transparent border-primary text-primary shadow-none",
-      secondary:
-        "bg-transparent border-secondary text-secondary-foreground shadow-none",
-      info: "bg-transparent border-info text-info shadow-none",
-      success: "bg-transparent border-success text-success shadow-none",
-      warning: "bg-transparent border-warning text-warning shadow-none",
-      error: "bg-transparent border-error text-error shadow-none",
+      primary: "bg-transparent border-primary text-primary",
+      secondary: "bg-transparent border-secondary text-secondary-foreground",
+      info: "bg-transparent border-info text-info",
+      success: "bg-transparent border-success text-success",
+      warning: "bg-transparent border-warning text-warning",
+      error: "bg-transparent border-error text-error",
     },
     gradient: {
       primary:

@@ -171,7 +171,7 @@ export function Navbar() {
             >
               <NavIcon icon={Discord} />
             </Link>
-            <div className="group relative hidden h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:grid dark:text-white dark:hover:bg-surface">
+            <div className="group relative hidden h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:grid">
               <Search className="h-5 w-5 stroke-[1.5]" />
               <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
                 <DocSearch
@@ -185,7 +185,7 @@ export function Navbar() {
               <Brand />
             </Link>
             <Select value="v3.0.0-beta">
-              <Select.Trigger className="ml-2 gap-1.5 rounded-full border-none bg-secondary py-2 pl-3 pr-2.5 text-xs text-secondary-foreground ring-0" />
+              <Select.Trigger className="ml-2 gap-1.5 rounded-full border-none bg-secondary py-2 pl-3 pr-2.5 text-xs text-secondary-foreground shadow-none ring-0" />
               <Select.List>
                 <Select.Option
                   as={Link}
@@ -228,7 +228,7 @@ export function Navbar() {
             </Link>
           </div>
           <div className="flex items-center gap-1">
-            <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface">
+            <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:hidden">
               <Search className="h-5 w-5 stroke-[1.5]" />
               <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
                 <DocSearch

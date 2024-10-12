@@ -58,7 +58,7 @@ export const alertTheme = {
 };
 
 export const alertContentTheme = {
-  baseStyle: "w-full text-base font-sans  leading-none m-1.5",
+  baseStyle: "w-full text-sm font-sans leading-none m-1.5",
 };
 
 export const alertIconTheme = {

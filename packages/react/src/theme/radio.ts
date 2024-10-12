@@ -15,14 +15,19 @@ export const radioTheme = {
 
 export const radioItemTheme = {
   baseStyle:
-    "group block relative h-5 w-5 shrink-0 rounded-full bg-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "group block shadow-sm shadow-black/5 relative h-5 w-5 shrink-0 rounded-full bg-transparent border border-surface transition-all duration-200 ease-in aria-disabled:opacity-50 aria-disabled:pointer-events-none hover:shadow-md",
   color: {
-    primary: "data-[checked=true]:bg-primary text-primary-foreground",
-    secondary: "data-[checked=true]:bg-secondary text-secondary-foreground",
-    info: "data-[checked=true]:bg-info text-info-foreground",
-    success: "data-[checked=true]:bg-success text-success-foreground",
-    warning: "data-[checked=true]:bg-warning text-warning-foreground",
-    error: "data-[checked=true]:bg-error text-error-foreground",
+    primary:
+      "data-[checked=true]:bg-primary data-[checked=true]:border-primary text-primary-foreground",
+    secondary:
+      "data-[checked=true]:bg-secondary data-[checked=true]:border-secondary text-secondary-foreground",
+    info: "data-[checked=true]:bg-info data-[checked=true]:border-info text-info-foreground",
+    success:
+      "data-[checked=true]:bg-success data-[checked=true]:border-success text-success-foreground",
+    warning:
+      "data-[checked=true]:bg-warning data-[checked=true]:border-warning text-warning-foreground",
+    error:
+      "data-[checked=true]:bg-error data-[checked=true]:border-error text-error-foreground",
   },
 };
 

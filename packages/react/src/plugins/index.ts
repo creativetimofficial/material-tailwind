@@ -52,23 +52,23 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.background || "#ffffff",
           ),
           "--color-foreground": getRgbChannels(
-            options?.colors?.foreground || "#374151",
+            options?.colors?.foreground || "#1e293b",
           ),
-          "--color-black": getRgbChannels(options?.colors?.black || "#030712"),
+          "--color-black": getRgbChannels(options?.colors?.black || "#020617"),
           "--color-white": getRgbChannels(options?.colors?.white || "#ffffff"),
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.colors?.surface?.default || "#e5e7eb",
+            options?.colors?.surface?.default || "#e2e8f0",
           ),
           "--color-surface-dark": getRgbChannels(
-            options?.colors?.surface?.dark || "#d1d5db",
+            options?.colors?.surface?.dark || "#cbd5e1",
           ),
           "--color-surface-light": getRgbChannels(
-            options?.colors?.surface?.light || "#f3f4f6",
+            options?.colors?.surface?.light || "#f1f5f9",
           ),
           "--color-surface-foreground": getRgbChannels(
-            options?.colors?.surface?.foreground || "#030712",
+            options?.colors?.surface?.foreground || "#020617",
           ),
 
           /* primary color */
@@ -82,21 +82,21 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.primary?.light || "#724dff",
           ),
           "--color-primary-foreground": getRgbChannels(
-            options?.colors?.primary?.foreground || "#f9fafb",
+            options?.colors?.primary?.foreground || "#f8fafc",
           ),
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.colors?.secondary?.default || "#e5e7eb",
+            options?.colors?.secondary?.default || "#e2e8f0",
           ),
           "--color-secondary-dark": getRgbChannels(
-            options?.colors?.secondary?.dark || "#d1d5db",
+            options?.colors?.secondary?.dark || "#cbd5e1",
           ),
           "--color-secondary-light": getRgbChannels(
-            options?.colors?.secondary?.light || "#f3f4f6",
+            options?.colors?.secondary?.light || "#f1f5f9",
           ),
           "--color-secondary-foreground": getRgbChannels(
-            options?.colors?.secondary?.foreground || "#030712",
+            options?.colors?.secondary?.foreground || "#020617",
           ),
 
           /* info color */
@@ -110,7 +110,7 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.info?.light || "#007aff",
           ),
           "--color-info-foreground": getRgbChannels(
-            options?.colors?.info?.foreground || "#f9fafb",
+            options?.colors?.info?.foreground || "#f8fafc",
           ),
 
           /* success color */
@@ -124,7 +124,7 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.success?.light || "#02e585",
           ),
           "--color-success-foreground": getRgbChannels(
-            options?.colors?.success?.foreground || "#f9fafb",
+            options?.colors?.success?.foreground || "#f8fafc",
           ),
 
           /* warning color */
@@ -138,7 +138,7 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.warning?.light || "#fdba4c",
           ),
           "--color-warning-foreground": getRgbChannels(
-            options?.colors?.warning?.foreground || "#f9fafb",
+            options?.colors?.warning?.foreground || "#f8fafc",
           ),
 
           /* error color */
@@ -152,20 +152,20 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.error?.light || "#f87171",
           ),
           "--color-error-foreground": getRgbChannels(
-            options?.colors?.error?.foreground || "#f9fafb",
+            options?.colors?.error?.foreground || "#f8fafc",
           ),
         },
 
         ".dark": {
           /* base colors */
           "--color-background": getRgbChannels(
-            options?.darkColors?.background || "#030712",
+            options?.darkColors?.background || "#020617",
           ),
           "--color-foreground": getRgbChannels(
-            options?.darkColors?.foreground || "#d1d5db",
+            options?.darkColors?.foreground || "#94a3b8",
           ),
           "--color-black": getRgbChannels(
-            options?.darkColors?.black || "#030712",
+            options?.darkColors?.black || "#020617",
           ),
           "--color-white": getRgbChannels(
             options?.darkColors?.white || "#ffffff",
@@ -173,16 +173,16 @@ export const mtConfig = plugin.withOptions(
 
           /* surface color */
           "--color-surface": getRgbChannels(
-            options?.darkColors?.surface?.default || "#1f2937",
+            options?.darkColors?.surface?.default || "#1e293b",
           ),
           "--color-surface-dark": getRgbChannels(
-            options?.darkColors?.surface?.dark || "#111827",
+            options?.darkColors?.surface?.dark || "#0f172a",
           ),
           "--color-surface-light": getRgbChannels(
-            options?.darkColors?.surface?.light || "#374151",
+            options?.darkColors?.surface?.light || "#334155",
           ),
           "--color-surface-foreground": getRgbChannels(
-            options?.darkColors?.surface?.foreground || "#f9fafb",
+            options?.darkColors?.surface?.foreground || "#f8fafc",
           ),
 
           /* primary color */
@@ -196,21 +196,21 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.primary?.light || "#724dff",
           ),
           "--color-primary-foreground": getRgbChannels(
-            options?.darkColors?.primary?.foreground || "#f9fafb",
+            options?.darkColors?.primary?.foreground || "#f8fafc",
           ),
 
           /* secondary color */
           "--color-secondary": getRgbChannels(
-            options?.darkColors?.secondary?.default || "#1f2937",
+            options?.darkColors?.secondary?.default || "#1e293b",
           ),
           "--color-secondary-dark": getRgbChannels(
-            options?.darkColors?.secondary?.dark || "#111827",
+            options?.darkColors?.secondary?.dark || "#0f172a",
           ),
           "--color-secondary-light": getRgbChannels(
-            options?.darkColors?.secondary?.light || "#374151",
+            options?.darkColors?.secondary?.light || "#334155",
           ),
           "--color-secondary-foreground": getRgbChannels(
-            options?.darkColors?.secondary?.foreground || "#f9fafb",
+            options?.darkColors?.secondary?.foreground || "#f8fafc",
           ),
 
           /* info color */
@@ -224,7 +224,7 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.info?.light || "#007aff",
           ),
           "--color-info-foreground": getRgbChannels(
-            options?.darkColors?.info?.foreground || "#f9fafb",
+            options?.darkColors?.info?.foreground || "#f8fafc",
           ),
 
           /* success color */
@@ -238,7 +238,7 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.success?.light || "#02e585",
           ),
           "--color-success-foreground": getRgbChannels(
-            options?.darkColors?.success?.foreground || "#f9fafb",
+            options?.darkColors?.success?.foreground || "#f8fafc",
           ),
 
           /* warning color */
@@ -252,7 +252,7 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.warning?.light || "#fdba4c",
           ),
           "--color-warning-foreground": getRgbChannels(
-            options?.darkColors?.warning?.foreground || "#f9fafb",
+            options?.darkColors?.warning?.foreground || "#f8fafc",
           ),
 
           /* error color */
@@ -266,7 +266,7 @@ export const mtConfig = plugin.withOptions(
             options?.darkColors?.error?.light || "#f87171",
           ),
           "--color-error-foreground": getRgbChannels(
-            options?.darkColors?.error?.foreground || "#f9fafb",
+            options?.darkColors?.error?.foreground || "#f8fafc",
           ),
         },
       });

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Collapse, List } from "@material-tailwind/react";
-import { NavArrowRight } from "iconoir-react";
+import { NavArrowDown } from "iconoir-react";
 
 export function CollapseDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -11,8 +11,8 @@ export function CollapseDemo() {
         <List.Item onClick={() => setIsOpen((cur) => !cur)}>
           Components
           <List.ItemEnd>
-            <NavArrowRight
-              className={`h-5 w-5 stroke-[1.5] ${isOpen ? "rotate-90" : ""}`}
+            <NavArrowDown
+              className={`h-5 w-5 stroke-[1.5] ${isOpen ? "rotate-180" : ""}`}
             />
           </List.ItemEnd>
         </List.Item>

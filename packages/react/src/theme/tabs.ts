@@ -23,7 +23,7 @@ export const tabsListTheme = {
 
 export const tabsTriggerTheme = {
   baseStyle:
-    "inline-flex relative z-[2] py-1.5 px-4 items-center justify-center align-middle text-black dark:text-white select-none font-sans font-medium text-center aria-disabled:opacity-50 aria-disabled:pointer-events-none",
+    "inline-flex relative z-[2] py-1.5 px-3 items-center justify-center align-middle text-black dark:text-white select-none font-sans font-medium text-center text-sm aria-disabled:opacity-50 aria-disabled:pointer-events-none",
 };
 
 export const tabsPanelTheme = {

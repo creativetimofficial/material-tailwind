@@ -6,15 +6,15 @@ export function VerticalTabsWithIcon() {
     <Tabs defaultValue="dashboard" orientation="vertical">
       <Tabs.List>
         <Tabs.Trigger value="dashboard">
-          <SelectFace3d className="mr-2 h-5 w-5" />
+          <SelectFace3d className="mr-2 h-4 w-4" />
           Dashboard
         </Tabs.Trigger>
         <Tabs.Trigger value="profile">
-          <ProfileCircle className="mr-2 h-5 w-5" />
+          <ProfileCircle className="mr-2 h-4 w-4" />
           User Profile
         </Tabs.Trigger>
         <Tabs.Trigger value="settings">
-          <Settings className="mr-2 h-5 w-5" />
+          <Settings className="mr-2 h-4 w-4" />
           Settings
         </Tabs.Trigger>
         <Tabs.TriggerIndicator />
