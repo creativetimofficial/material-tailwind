@@ -52,7 +52,7 @@ export const mtConfig = plugin.withOptions(
             options?.colors?.background || "#ffffff",
           ),
           "--color-foreground": getRgbChannels(
-            options?.colors?.foreground || "#1e293b",
+            options?.colors?.foreground || "#475569",
           ),
           "--color-black": getRgbChannels(options?.colors?.black || "#020617"),
           "--color-white": getRgbChannels(options?.colors?.white || "#ffffff"),

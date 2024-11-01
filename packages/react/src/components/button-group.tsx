@@ -22,7 +22,9 @@ export type ButtonGroupProps<T extends React.ElementType = "div"> = BaseProps<
     isPill?: boolean;
     isFullWidth?: boolean;
     orientation?: "horizontal" | "vertical";
-  } & SharedProps
+  } & Omit<SharedProps, "size"> & {
+      size?: SharedProps["size"] | "xs" | "xl";
+    }
 >;
 
 /**

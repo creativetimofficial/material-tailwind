@@ -21,7 +21,7 @@ export type IconButtonProps<T extends React.ElementType = "button"> = BaseProps<
     ripple?: boolean;
     isCircular?: boolean;
   } & Omit<SharedProps, "size"> & {
-      size: SharedProps["size"] | "xs" | "xl";
+      size?: SharedProps["size"] | "xs" | "xl";
     }
 >;
 

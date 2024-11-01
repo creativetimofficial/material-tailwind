@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 
 // @hooks
 import { useTheme } from "@context";
-import { inner, useMergeRefs } from "@floating-ui/react";
+import { useMergeRefs } from "@floating-ui/react";
 
 // @theme
 import {
@@ -27,8 +27,8 @@ type Mode = "stepper" | "timeline";
 
 // timeline context
 export interface TimelineContextProps {
-  value?: string;
-  setValue?: (e: string) => void;
+  value?: string | number;
+  setValue?: (e: string | number) => void;
   color?: SharedProps["color"];
   orientation?: Orientation;
   mode?: Mode;
@@ -47,10 +47,10 @@ export const TimelineContext = React.createContext<TimelineContextProps>({
 export type TimelineProps<T extends React.ElementType = "div"> = BaseProps<
   T,
   {
-    value?: string;
-    defaultValue?: string;
-    onValueChange?: (e: string) => void;
-    color: SharedProps["color"];
+    value?: string | number;
+    defaultValue?: string | number;
+    onValueChange?: (e: string | number) => void;
+    color?: SharedProps["color"];
     orientation?: Orientation;
     mode?: Mode;
   }
