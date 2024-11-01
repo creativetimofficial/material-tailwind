@@ -12,9 +12,9 @@ export default {
     extend: {
       backgroundImage: {
         "conic-gradient":
-          "conic-gradient(from 180deg at 50% 50%,#6028ff 0deg,#6028ff 120deg,rgba(0,0,0,0) 360deg)",
+          "conic-gradient(from 180deg at 50% 50%,#f97315 0deg,#f97315 120deg,rgba(0,0,0,0) 360deg)",
         "conic-gradient-dark":
-          "conic-gradient(from 180deg at 50% 50%,#6028ff 0deg,#6028ff 120deg,rgba(0,0,0,0) 360deg)",
+          "conic-gradient(from 180deg at 50% 50%,#f97315 0deg,#f97315 120deg,rgba(0,0,0,0) 360deg)",
       },
       keyframes: {
         "gradient-spin": {

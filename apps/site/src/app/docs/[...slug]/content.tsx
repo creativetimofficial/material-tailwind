@@ -36,7 +36,7 @@ export function Content({ children, frontMatter }: MdxContentProps) {
             <React.Fragment key={index}>
               <MTBreadcrumb.Link
                 className={twMerge(
-                  "capitalize text-primary",
+                  "capitalize text-orange-500",
                   index !== pathParts.length - 1 && "text-foreground",
                 )}
               >

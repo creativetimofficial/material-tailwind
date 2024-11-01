@@ -7,6 +7,7 @@ import { NavArrowRight } from "iconoir-react";
 import { Collapse } from "@material-tailwind/react";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+import { ThemeProvider } from "./theme-provider";
 
 export function Collapsible({ category, categoryPages }) {
   const pathname = usePathname();
@@ -28,8 +29,8 @@ export function Collapsible({ category, categoryPages }) {
         role="button"
         onClick={toggleCollapse}
         className={twMerge(
-          "flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary",
-          paths.includes(pathname) && "text-primary",
+          "flex items-center justify-between gap-4 px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-orange-500",
+          paths.includes(pathname) && "text-orange-500",
         )}
       >
         {category}{" "}
@@ -46,8 +47,8 @@ export function Collapsible({ category, categoryPages }) {
               <Link
                 href={path}
                 className={twMerge(
-                  "block -translate-x-px border-l border-transparent py-1.5 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-primary hover:text-primary",
-                  pathname === path && "border-primary text-primary",
+                  "block -translate-x-px border-l border-transparent py-1.5 pl-4 pr-2 text-sm text-foreground transition-colors duration-300 hover:border-orange-500 hover:text-orange-500",
+                  pathname === path && "border-orange-500 text-orange-500",
                 )}
               >
                 {subTitle}
@@ -83,7 +84,7 @@ export function getRoutes() {
                   <li key={key}>
                     <Link
                       href={path}
-                      className="block px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
+                      className="block px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-orange-500"
                     >
                       {subTitle}
                     </Link>
@@ -98,11 +99,13 @@ export function getRoutes() {
 
 export function Sidenav() {
   return (
-    <div className="sticky -left-64 bottom-0 top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] lg:left-0 lg:block">
-      <div className="fixed top-[114px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
-      <ul className="pr-2">{getRoutes()}</ul>
-      <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
-    </div>
+    <ThemeProvider>
+      <div className="sticky -left-64 bottom-0 top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] lg:left-0 lg:block">
+        <div className="fixed top-[114px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
+        <ul className="pr-2">{getRoutes()}</ul>
+        <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
+      </div>
+    </ThemeProvider>
   );
 }
 

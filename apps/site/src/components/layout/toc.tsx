@@ -17,6 +17,7 @@ import {
 import { useEventListener } from "usehooks-ts";
 import { Card, Typography } from "@material-tailwind/react";
 import { twMerge } from "tailwind-merge";
+import { ThemeProvider } from "./theme-provider";
 
 interface ListItemProps {
   href: string;
@@ -30,7 +31,7 @@ function ListItem({ href, icon: Icon, children }: ListItemProps) {
       <Link
         href={href}
         target="_blank"
-        className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
+        className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-orange-500"
       >
         <Icon className="h-[18px] w-[18px] stroke-[1.5]" />
         {children}
@@ -53,10 +54,10 @@ function TocItem({ id, isSubHeading, isVisible, children }: TocItemProps) {
         href={`#${id}`}
         className={twMerge(
           clsx(
-            "block text-sm transition-colors duration-300 hover:text-primary",
+            "block text-sm transition-colors duration-300 hover:text-orange-500",
             {
               "text-foreground": !isVisible,
-              "font-medium text-primary": isVisible,
+              "font-medium text-orange-500": isVisible,
               "py-1.5": !isSubHeading,
               "-translate-x-px border-l border-transparent py-1 pl-3 pr-1 hover:border-primary":
                 isSubHeading,
@@ -136,99 +137,101 @@ export function Toc({
   }
 
   return (
-    <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] xl:block">
-      <div className="fixed top-[114px] h-14 w-full bg-gradient-to-b from-background to-transparent" />
-      <ul className="border-b border-surface pb-4">
-        <li className="py-2 text-sm font-medium text-black dark:text-white">
-          On this page
-        </li>
-        <ul>{getToc()}</ul>
-      </ul>
-      <ul
-        className={clsx("border-b py-4 transition-colors duration-300", {
-          "border-surface": isScrolled,
-          "border-transparent": !isScrolled,
-        })}
-      >
-        {/* <ListItem
+    <ThemeProvider>
+      <div className="sticky bottom-0 right-[max(0px,calc(50%-42rem))] top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] xl:block">
+        <div className="fixed top-[114px] h-14 w-full bg-gradient-to-b from-background to-transparent" />
+        <ul className="border-b border-surface pb-4">
+          <li className="py-2 text-sm font-medium text-black dark:text-white">
+            On this page
+          </li>
+          <ul>{getToc()}</ul>
+        </ul>
+        <ul
+          className={clsx("border-b py-4 transition-colors duration-300", {
+            "border-surface": isScrolled,
+            "border-transparent": !isScrolled,
+          })}
+        >
+          {/* <ListItem
           href={`https://github.com/creativetimofficial/material-tailwind/blob/main/apps/site/src/app/docs/content/react/${githubPage}.mdx`}
           icon={EditPencil}
         >
           Edit this page on GitHub
         </ListItem> */}
-        <ListItem
-          href="https://github.com/creativetimofficial/material-tailwind"
-          icon={Star}
+          <ListItem
+            href="https://github.com/creativetimofficial/material-tailwind"
+            icon={Star}
+          >
+            Give us star on GitHub
+          </ListItem>
+          <ListItem
+            href="https://opencollective.com/material-tailwind?ref=material-tailwind"
+            icon={Donate}
+          >
+            Donate on Open Collective
+          </ListItem>
+          <ListItem
+            href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md"
+            icon={GitPullRequest}
+          >
+            Read contribution guide
+          </ListItem>
+          <ListItem href="https://discord.com/invite/FhCJCaHdQa" icon={Discord}>
+            Join Discord community
+          </ListItem>
+          <ListItem href="https://tally.so/r/3NLRQ0" icon={Journal}>
+            Write us your feedback
+          </ListItem>
+        </ul>
+        <div
+          className={clsx("pt-4 transition-all duration-300", {
+            "translate-y-3 opacity-0": !isScrolled,
+            "translate-y-0 opacity-100": isScrolled,
+          })}
         >
-          Give us star on GitHub
-        </ListItem>
-        <ListItem
-          href="https://opencollective.com/material-tailwind?ref=material-tailwind"
-          icon={Donate}
+          <li
+            role="button"
+            tabIndex={0}
+            onClick={scrollToTop}
+            onKeyDown={scrollToTopOnEnter}
+            className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-orange-500"
+          >
+            <ArrowUpCircle className="h-[18px] w-[18px] stroke-[1.5]" />
+            Scroll to top
+          </li>
+        </div>
+        <Card
+          as={Link}
+          target="_blank"
+          variant="outline"
+          color="secondary"
+          className="mt-4 grid"
+          href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
         >
-          Donate on Open Collective
-        </ListItem>
-        <ListItem
-          href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md"
-          icon={GitPullRequest}
-        >
-          Read contribution guide
-        </ListItem>
-        <ListItem href="https://discord.com/invite/FhCJCaHdQa" icon={Discord}>
-          Join Discord community
-        </ListItem>
-        <ListItem href="https://tally.so/r/3NLRQ0" icon={Journal}>
-          Write us your feedback
-        </ListItem>
-      </ul>
-      <div
-        className={clsx("pt-4 transition-all duration-300", {
-          "translate-y-3 opacity-0": !isScrolled,
-          "translate-y-0 opacity-100": isScrolled,
-        })}
-      >
-        <li
-          role="button"
-          tabIndex={0}
-          onClick={scrollToTop}
-          onKeyDown={scrollToTopOnEnter}
-          className="flex items-center gap-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-primary"
-        >
-          <ArrowUpCircle className="h-[18px] w-[18px] stroke-[1.5]" />
-          Scroll to top
-        </li>
+          <Card.Header>
+            <Image
+              src="https://material-tailwind-v3.vercel.app/book.webp"
+              alt="book"
+              width={512}
+              height={512}
+              className="h-full w-full object-cover"
+            />
+          </Card.Header>
+          <Card.Body>
+            <Typography color="default" className="font-bold">
+              Roots of UI/UX Design
+            </Typography>
+            <Typography type="small" className="text-foreground">
+              By Creative Tim
+            </Typography>
+            <Typography type="small" className="mt-2 block text-foreground">
+              Learn to Develop Intuitive Web Experiences
+            </Typography>
+          </Card.Body>
+        </Card>
+        <div className="sticky -bottom-24 h-14 w-full bg-gradient-to-t from-background to-transparent" />
       </div>
-      <Card
-        as={Link}
-        target="_blank"
-        variant="outline"
-        color="secondary"
-        className="mt-4 grid"
-        href="https://www.material-tailwind.com/roots-of-ui-ux-design?ref=material-tailwind"
-      >
-        <Card.Header>
-          <Image
-            src="https://material-tailwind-v3.vercel.app/book.webp"
-            alt="book"
-            width={512}
-            height={512}
-            className="h-full w-full object-cover"
-          />
-        </Card.Header>
-        <Card.Body>
-          <Typography color="default" className="font-bold">
-            Roots of UI/UX Design
-          </Typography>
-          <Typography type="small" className="text-foreground">
-            By Creative Tim
-          </Typography>
-          <Typography type="small" className="mt-2 block text-foreground">
-            Learn to Develop Intuitive Web Experiences
-          </Typography>
-        </Card.Body>
-      </Card>
-      <div className="sticky -bottom-24 h-14 w-full bg-gradient-to-t from-background to-transparent" />
-    </div>
+    </ThemeProvider>
   );
 }
 
