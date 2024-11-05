@@ -55,9 +55,12 @@ export function OfferBar() {
         >
           <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
             🔥 The Wait Is Over! Pre-Order the Latest <span className="font-bold mx-1">Material Tailwind V3 PRO</span> Now&nbsp;
-            <Link href="/v3/preorder" className="font-bold">
+            <Link href="/v3/preorder" className="font-bold flex items-center ml-1">
               Check out
-              <i className="fa-solid fa-chevron-right ml-1.5 text-xs"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 ml-1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+
             </Link>
             <button
               className="font-bold ml-10 mb-0 !text-grey-900"
