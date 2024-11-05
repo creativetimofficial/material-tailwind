@@ -53,14 +53,14 @@ export function OfferBar() {
           variant="ghost"
           className="w-full justify-center rounded-none bg-blue-gray-50"
         >
-          <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center !tw-text-blue-gray-900">
-            🔥 The Wait Is Over! Pre-Order the Latest <span className="tw-font-bold mx-1">Material Tailwind V3 PRO</span> Now&nbsp;
-            <Link href="/v3/preorder" className="tw-font-bold">
+          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
+            🔥 The Wait Is Over! Pre-Order the Latest <span className="font-bold mx-1">Material Tailwind V3 PRO</span> Now&nbsp;
+            <Link href="/v3/preorder" className="font-bold">
               Check out
-              <i className="fa-solid fa-chevron-right tw-ml-1.5 tw-text-xs"></i>
+              <i className="fa-solid fa-chevron-right ml-1.5 text-xs"></i>
             </Link>
             <button
-              className="tw-font-bold tw-ml-10 tw-mb-0 !tw-text-grey-900"
+              className="font-bold ml-10 mb-0 !text-grey-900"
               onClick={() => handleClose()}
             >
               <Icon />
