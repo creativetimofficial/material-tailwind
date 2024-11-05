@@ -53,23 +53,14 @@ export function OfferBar() {
           variant="ghost"
           className="w-full justify-center rounded-none bg-blue-gray-50"
         >
-          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
-            <Link href="/blocks" className="m-0 flex items-center font-medium">
-              <Chip
-                variant="outlined"
-                value="NEW"
-                className="mr-2 px-2 py-1 !text-blue-gray-900"
-              />{" "}
-              Material Tailwind Blocks
-            </Link>
-            , a comprehensive compilation of{" "}
-            <Typography className="mx-1 font-bold">230+</Typography>
-            blocks, now available for your use.&nbsp;
-            <Link href="/blocks" className="font-bold">
-              Check out &rarr;
+          <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center !tw-text-blue-gray-900">
+            🔥 The Wait Is Over! Pre-Order the Latest <span className="tw-font-bold mx-1">Material Tailwind V3 PRO</span> Now&nbsp;
+            <Link href="/v3/preorder" className="tw-font-bold">
+              Check out
+              <i className="fa-solid fa-chevron-right tw-ml-1.5 tw-text-xs"></i>
             </Link>
             <button
-              className="!text-grey-900 mb-0 ml-10 font-bold"
+              className="tw-font-bold tw-ml-10 tw-mb-0 !tw-text-grey-900"
               onClick={() => handleClose()}
             >
               <Icon />
@@ -82,3 +73,27 @@ export function OfferBar() {
 }
 
 export default OfferBar;
+
+
+{/* <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
+  <Link href="/blocks" className="m-0 flex items-center font-medium">
+    <Chip
+      variant="outlined"
+      value="NEW"
+      className="mr-2 px-2 py-1 !text-blue-gray-900"
+    />{" "}
+    Material Tailwind Blocks
+  </Link>
+  , a comprehensive compilation of{" "}
+  <Typography className="mx-1 font-bold">230+</Typography>
+  blocks, now available for your use.&nbsp;
+  <Link href="/blocks" className="font-bold">
+    Check out &rarr;
+  </Link>
+  <button
+    className="!text-grey-900 mb-0 ml-10 font-bold"
+    onClick={() => handleClose()}
+  >
+    <Icon />
+  </button>
+</div> */}
