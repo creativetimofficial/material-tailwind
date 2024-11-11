@@ -1,5 +1,6 @@
 import hexRgb from "hex-rgb";
 import plugin from "tailwindcss/plugin";
+import tailwindcssAnimation from "tailwindcss-animate";
 
 export interface Color {
   default?: `#${string}`;
@@ -73,13 +74,13 @@ export const mtConfig = plugin.withOptions(
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.colors?.primary?.default || "#6028ff",
+            options?.colors?.primary?.default || "#1e293b",
           ),
           "--color-primary-dark": getRgbChannels(
-            options?.colors?.primary?.dark || "#5216eb",
+            options?.colors?.primary?.dark || "#0f172a",
           ),
           "--color-primary-light": getRgbChannels(
-            options?.colors?.primary?.light || "#724dff",
+            options?.colors?.primary?.light || "#334155",
           ),
           "--color-primary-foreground": getRgbChannels(
             options?.colors?.primary?.foreground || "#f8fafc",
@@ -187,16 +188,16 @@ export const mtConfig = plugin.withOptions(
 
           /* primary color */
           "--color-primary": getRgbChannels(
-            options?.darkColors?.primary?.default || "#6028ff",
+            options?.darkColors?.primary?.default || "#e2e8f0",
           ),
           "--color-primary-dark": getRgbChannels(
-            options?.darkColors?.primary?.dark || "#5216eb",
+            options?.darkColors?.primary?.dark || "#cbd5e1",
           ),
           "--color-primary-light": getRgbChannels(
-            options?.darkColors?.primary?.light || "#724dff",
+            options?.darkColors?.primary?.light || "#f1f5f9",
           ),
           "--color-primary-foreground": getRgbChannels(
-            options?.darkColors?.primary?.foreground || "#f8fafc",
+            options?.darkColors?.primary?.foreground || "#020617",
           ),
 
           /* secondary color */
@@ -352,6 +353,7 @@ export const mtConfig = plugin.withOptions(
           },
         },
       },
+      plugins: [tailwindcssAnimation],
     };
   },
 );

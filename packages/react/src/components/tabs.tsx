@@ -217,13 +217,7 @@ function TabsTriggerRoot<T extends React.ElementType = "button">(
         offsetTop: elementRect.offsetTop,
       });
     }
-  }, [
-    isActive,
-    elementRect?.clientWidth,
-    elementRect?.clientHeight,
-    elementRect?.offsetLeft,
-    elementRect?.offsetTop,
-  ]);
+  }, [isActive, elementRect]);
 
   React.useEffect(() => {
     handleIndicatorRect();

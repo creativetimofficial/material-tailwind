@@ -18,7 +18,7 @@ export const tabsTheme = {
 
 export const tabsListTheme = {
   baseStyle:
-    "flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-surface-light dark:bg-surface",
+    "relative flex shrink-0 w-max data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col rounded-md p-1 bg-surface-light dark:bg-surface",
 };
 
 export const tabsTriggerTheme = {

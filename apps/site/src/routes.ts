@@ -215,6 +215,10 @@ export const routes = [
             path: `${routePrefix}/dialog`,
           },
           {
+            title: "Modal",
+            path: `${routePrefix}/modal`,
+          },
+          {
             title: "Spinner",
             path: `${routePrefix}/spinner`,
           },
@@ -234,6 +238,10 @@ export const routes = [
           {
             title: "Drawer",
             path: `${routePrefix}/drawer`,
+          },
+          {
+            title: "Dropdown",
+            path: `${routePrefix}/dropdown`,
           },
           {
             title: "Menu",
@@ -308,8 +316,8 @@ export const routes = [
         path: `${routePrefix}/plugins/forms`,
       },
       {
-        title: "Swiper",
-        path: `${routePrefix}/plugins/swiper`,
+        title: "Carousel",
+        path: `${routePrefix}/plugins/carousel`,
       },
       {
         title: "Text Editor",

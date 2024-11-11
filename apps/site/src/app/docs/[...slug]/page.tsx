@@ -68,7 +68,7 @@ import * as Slider from "@components/docs/slider";
 import * as Timeline from "@components/docs/timeline";
 import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
-import * as Swiper from "@components/docs/plugins/swiper";
+import * as Carousel from "@components/docs/plugins/carousel";
 import * as Apexcharts from "@components/docs/plugins/apexcharts";
 import * as DatePicker from "@components/docs/plugins/date-picker";
 import * as Forms from "@components/docs/plugins/forms";
@@ -324,7 +324,7 @@ export default async function Docs({ params: { slug } }) {
           Slider,
           Timeline,
           AlgoliaSearch,
-          Swiper,
+          Carousel,
           Apexcharts,
           DatePicker,
           Forms,

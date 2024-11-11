@@ -46,7 +46,7 @@ import {
   drawerDismissTriggerTheme,
 } from "./drawer";
 import { iconButtonTheme } from "./icon-button";
-import { inputTheme, inputFieldTheme, inputIconTheme } from "./input";
+import { inputTheme, inputIconTheme } from "./input";
 import {
   listTheme,
   listItemTheme,
@@ -150,7 +150,6 @@ export const theme = {
   drawerDismissTrigger: drawerDismissTriggerTheme,
   iconButton: iconButtonTheme,
   input: inputTheme,
-  inputField: inputFieldTheme,
   inputIcon: inputIconTheme,
   list: listTheme,
   listItem: listItemTheme,
