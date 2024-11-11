@@ -293,7 +293,40 @@ export const routes = [
     ],
   },
   {
-    title: "Third-Party Plugins",
+    title: "Forms",
+    pages: [
+      {
+        title: "Checkbox",
+        path: `${routePrefix}/checkbox`,
+      },
+      {
+        title: "Input",
+        path: `${routePrefix}/input`,
+      },
+      {
+        title: "Radio Button",
+        path: `${routePrefix}/radio`,
+      },
+      {
+        title: "Select",
+        path: `${routePrefix}/select`,
+      },
+      {
+        title: "Slider",
+        path: `${routePrefix}/slider`,
+      },
+      {
+        title: "Switch",
+        path: `${routePrefix}/switch`,
+      },
+      {
+        title: "Textarea",
+        path: `${routePrefix}/textarea`,
+      },
+    ],
+  },
+  {
+    title: "Plugins",
     pages: [
       {
         title: "Algolia Search",

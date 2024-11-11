@@ -65,7 +65,10 @@ export function getRoutes() {
   return routes.map(({ title, pages, categories }, idx) => {
     return (
       <React.Fragment key={idx}>
-        <li className="p-2 text-sm font-semibold text-black dark:text-white">
+        <li
+          id={title}
+          className="p-2 text-sm font-semibold text-black dark:text-white"
+        >
           {title}
         </li>
         <ul className="mx-0.5 mb-6">
@@ -100,8 +103,8 @@ export function getRoutes() {
 export function Sidenav() {
   return (
     <ThemeProvider>
-      <div className="sticky -left-64 bottom-0 top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[139px] lg:left-0 lg:block">
-        <div className="fixed top-[114px] h-14 w-60 bg-gradient-to-b from-background to-transparent" />
+      <div className="sticky -left-64 bottom-0 top-0 z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-[200px] lg:left-0 lg:block">
+        <div className="fixed top-[164px] z-50 h-14 w-60 bg-gradient-to-b from-background to-transparent" />
         <ul className="pr-2">{getRoutes()}</ul>
         <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
       </div>

@@ -29,7 +29,7 @@ export function Content({ children, frontMatter }: MdxContentProps) {
     <div className="flex w-full gap-0 lg:gap-[52px]">
       <div
         ref={contentRef}
-        className="mt-[212px] w-full px-4 lg:mt-[148px] lg:px-0"
+        className="mt-[260px] w-full px-4 lg:mt-[208px] lg:px-0"
       >
         <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
           {pathParts.map((part, index) => (
