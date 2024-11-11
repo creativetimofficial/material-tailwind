@@ -135,7 +135,10 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     // 4. return
     return (
       <div {...rest} ref={ref} className={sliderContainerClasses}>
-        <label className={sliderBarClasses} style={{ width: `${value || innerValue}%` }} />
+        <label
+          className={sliderBarClasses}
+          style={{ width: `${(Number(value || innerValue) / Number(max || 100)) * 100}%` }}
+        />
         <input
           ref={inputRef}
           type="range"
