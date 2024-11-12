@@ -81,16 +81,14 @@ The `Switch` component can be used with a label to provide more context to the u
 ```tsx
 import { Switch, Typography } from "@material-tailwind/react";
 
-const ID = "switch";
-
 export function SwitchWithLabel() {
   return (
     <div className="flex items-center gap-2">
-      <Switch id={ID} />
+      <Switch id="switch" />
       <Typography
         as="label"
-        htmlFor={ID}
-        className="text-foreground"
+        htmlFor="switch"
+        className="cursor-pointer text-foreground"
       >
         Dark Mode
       </Typography>
@@ -126,19 +124,17 @@ Use the example below to create a `Switch` component with a link to the terms an
 ```tsx
 import { Switch, Typography } from "@material-tailwind/react";
 
-const ID = "switch-link";
-
 export function SwitchWithLink() {
   return (
     <div className="flex items-center gap-2">
-      <Switch id={ID} />
+      <Switch id="switch-link" />
       <Typography
         as="label"
-        htmlFor={ID}
-        className="flex gap-1 text-foreground"
+        htmlFor="switch-link"
+        className="cursor-pointer text-foreground"
       >
-        I agree with the
-        <Typography as="a" href="#" color="primary">
+        I agree with the&nbsp;
+        <Typography as="a" href="#" color="primary" className="inline">
           terms and conditions
         </Typography>
       </Typography>
@@ -158,14 +154,15 @@ Use the example below to create a `Switch` component with a title and descriptio
 ```tsx
 import { Switch, Typography } from "@material-tailwind/react";
 
-const ID = "switch-description";
-
 export function SwitchWithDescription() {
   return (
-    <div className="flex gap-2">
-      <Switch id={ID} />
-      <label htmlFor={ID} className="-translate-y-1">
-        <Typography color="default" className="font-medium">
+    <div className="flex gap-4">
+      <Switch id="switch-description" />
+      <label
+        htmlFor="switch-description"
+        className="-translate-y-0.5 cursor-pointer"
+      >
+        <Typography color="default" className="font-semibold">
           Remember Me
         </Typography>
         <Typography type="small" className="text-foreground">

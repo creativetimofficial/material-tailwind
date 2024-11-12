@@ -13,7 +13,7 @@ export function InputWithDropdown() {
         <Menu.Trigger
           as={Button}
           color="secondary"
-          className="flex h-10 items-center gap-2 rounded-r-none border border-r-0 border-surface bg-secondary pl-3"
+          className="flex items-center gap-2 rounded-r-none border border-r-0 border-surface bg-secondary pl-3"
         >
           <img
             src={flags.svg}
@@ -42,9 +42,7 @@ export function InputWithDropdown() {
           })}
         </Menu.Content>
       </Menu>
-      <Input className="w-72">
-        <Input.Field placeholder="Mobile Number" className="rounded-l-none" />
-      </Input>
+      <Input placeholder="Mobile Number" className="rounded-l-none" />
     </div>
   );
 }

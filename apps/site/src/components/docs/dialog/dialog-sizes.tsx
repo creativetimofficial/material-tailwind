@@ -11,7 +11,7 @@ export function DialogSizes() {
     <>
       <div className="flex items-center justify-center gap-2">
         <Dialog size="xs">
-          <Dialog.Trigger as={Button}>Open Dialog XS</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open XS</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <Dialog.DismissTrigger
@@ -47,7 +47,7 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="sm">
-          <Dialog.Trigger as={Button}>Open Dialog SM</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open SM</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
@@ -85,7 +85,7 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="md">
-          <Dialog.Trigger as={Button}>Open Dialog MD</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open MD</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
@@ -125,7 +125,7 @@ export function DialogSizes() {
       </div>
       <div className="flex items-center justify-center gap-2">
         <Dialog size="lg">
-          <Dialog.Trigger as={Button}>Open Dialog LG</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open LG</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
@@ -163,7 +163,7 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="xl">
-          <Dialog.Trigger as={Button}>Open Dialog XL</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open XL</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
@@ -201,7 +201,7 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="screen">
-          <Dialog.Trigger as={Button}>Open Dialog Screen</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open Screen</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">

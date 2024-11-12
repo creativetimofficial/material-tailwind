@@ -6,9 +6,7 @@ export function InputWithButton() {
       action="#"
       className="flex w-full max-w-sm items-center justify-center gap-2"
     >
-      <Input>
-        <Input.Field type="email" placeholder="someone@example.com" />
-      </Input>
+      <Input type="email" placeholder="someone@example.com" />
       <Button type="submit">Subscribe</Button>
     </form>
   );

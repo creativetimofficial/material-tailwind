@@ -1,22 +1,25 @@
+const isProd = process.env.NODE_ENV === "production";
+const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
+
 export const routes = [
   {
     title: "Getting Started",
     pages: [
       {
         title: "Installation",
-        path: "/docs/v3/react/installation",
+        path: `${routePrefix}/installation`,
       },
       // {
       //   title: "Cli Usage",
-      //   path: "/docs/v3/react/cli",
+      //   path: `${routePrefix}/cli`,
       // },
       {
         title: "License",
-        path: "/docs/v3/react/license",
+        path: `${routePrefix}/license`,
       },
       {
         title: "Release Notes",
-        path: "/docs/v3/react/release-notes",
+        path: `${routePrefix}/release-notes`,
       },
     ],
   },
@@ -25,11 +28,11 @@ export const routes = [
     pages: [
       {
         title: "v1 to v2",
-        path: "/docs/v3/react/migration/v2",
+        path: `${routePrefix}/migration/v2`,
       },
       {
         title: "v2 to v3",
-        path: "/docs/v3/react/migration/v3",
+        path: `${routePrefix}/migration/v3`,
       },
     ],
   },
@@ -38,27 +41,27 @@ export const routes = [
     pages: [
       {
         title: "Next.js",
-        path: "/docs/v3/react/guide/next",
+        path: `${routePrefix}/guide/next`,
       },
       {
         title: "Remix",
-        path: "/docs/v3/react/guide/remix",
+        path: `${routePrefix}/guide/remix`,
       },
       {
         title: "Astro",
-        path: "/docs/v3/react/guide/astro",
+        path: `${routePrefix}/guide/astro`,
       },
       {
         title: "Vite",
-        path: "/docs/v3/react/guide/vite",
+        path: `${routePrefix}/guide/vite`,
       },
       {
         title: "Gatsby",
-        path: "/docs/v3/react/guide/gatsby",
+        path: `${routePrefix}/guide/gatsby`,
       },
       {
         title: "Create React App",
-        path: "/docs/v3/react/guide/cra",
+        path: `${routePrefix}/guide/cra`,
       },
     ],
   },
@@ -67,27 +70,27 @@ export const routes = [
     pages: [
       {
         title: "Theming",
-        path: "/docs/v3/react/theming",
+        path: `${routePrefix}/theming`,
       },
       {
         title: "Colors",
-        path: "/docs/v3/react/colors",
+        path: `${routePrefix}/colors`,
       },
       {
         title: "Fonts",
-        path: "/docs/v3/react/fonts",
+        path: `${routePrefix}/fonts`,
       },
       {
         title: "Breakpoints",
-        path: "/docs/v3/react/breakpoints",
+        path: `${routePrefix}/breakpoints`,
       },
       // {
       //   title: "Dark Mode",
-      //   path: "/docs/v3/react/dark-mode",
+      //   path: `${routePrefix}/dark-mode`,
       // },
       // {
       //   title: "Components",
-      //   path: "/docs/v3/react/components",
+      //   path: `${routePrefix}/components`,
       // },
     ],
   },
@@ -99,47 +102,47 @@ export const routes = [
         pages: [
           {
             title: "Button",
-            path: "/docs/v3/react/button",
+            path: `${routePrefix}/button`,
           },
           {
             title: "Button Group",
-            path: "/docs/v3/react/button-group",
+            path: `${routePrefix}/button-group`,
           },
           {
             title: "Checkbox",
-            path: "/docs/v3/react/checkbox",
+            path: `${routePrefix}/checkbox`,
           },
           {
             title: "Icon Button",
-            path: "/docs/v3/react/icon-button",
+            path: `${routePrefix}/icon-button`,
           },
           {
             title: "Input",
-            path: "/docs/v3/react/input",
+            path: `${routePrefix}/input`,
           },
           {
             title: "Radio Button",
-            path: "/docs/v3/react/radio",
+            path: `${routePrefix}/radio`,
           },
           {
             title: "Rating Bar",
-            path: "/docs/v3/react/rating",
+            path: `${routePrefix}/rating`,
           },
           {
             title: "Select",
-            path: "/docs/v3/react/select",
+            path: `${routePrefix}/select`,
           },
           {
             title: "Slider",
-            path: "/docs/v3/react/slider",
+            path: `${routePrefix}/slider`,
           },
           {
             title: "Switch",
-            path: "/docs/v3/react/switch",
+            path: `${routePrefix}/switch`,
           },
           {
             title: "Textarea",
-            path: "/docs/v3/react/textarea",
+            path: `${routePrefix}/textarea`,
           },
         ],
       },
@@ -148,55 +151,55 @@ export const routes = [
         pages: [
           {
             title: "Accordion",
-            path: "/docs/v3/react/accordion",
+            path: `${routePrefix}/accordion`,
           },
           {
             title: "Avatar",
-            path: "/docs/v3/react/avatar",
+            path: `${routePrefix}/avatar`,
           },
           {
             title: "Badge",
-            path: "/docs/v3/react/badge",
+            path: `${routePrefix}/badge`,
           },
           {
             title: "Card",
-            path: "/docs/v3/react/card",
+            path: `${routePrefix}/card`,
           },
           {
             title: "Chip",
-            path: "/docs/v3/react/chip",
+            path: `${routePrefix}/chip`,
           },
           {
             title: "Collapse",
-            path: "/docs/v3/react/collapse",
+            path: `${routePrefix}/collapse`,
           },
           {
             title: "Image",
-            path: "/docs/v3/react/image",
+            path: `${routePrefix}/image`,
           },
           {
             title: "List",
-            path: "/docs/v3/react/list",
+            path: `${routePrefix}/list`,
           },
           {
             title: "Popover",
-            path: "/docs/v3/react/popover",
+            path: `${routePrefix}/popover`,
           },
           {
             title: "Timeline",
-            path: "/docs/v3/react/timeline",
+            path: `${routePrefix}/timeline`,
           },
           {
             title: "Tooltip",
-            path: "/docs/v3/react/tooltip",
+            path: `${routePrefix}/tooltip`,
           },
           {
             title: "Typography",
-            path: "/docs/v3/react/typography",
+            path: `${routePrefix}/typography`,
           },
           {
             title: "Video",
-            path: "/docs/v3/react/video",
+            path: `${routePrefix}/video`,
           },
         ],
       },
@@ -205,19 +208,23 @@ export const routes = [
         pages: [
           {
             title: "Alert",
-            path: "/docs/v3/react/alert",
+            path: `${routePrefix}/alert`,
           },
           {
             title: "Dialog",
-            path: "/docs/v3/react/dialog",
+            path: `${routePrefix}/dialog`,
+          },
+          {
+            title: "Modal",
+            path: `${routePrefix}/modal`,
           },
           {
             title: "Spinner",
-            path: "/docs/v3/react/spinner",
+            path: `${routePrefix}/spinner`,
           },
           {
             title: "Progress Bar",
-            path: "/docs/v3/react/progress",
+            path: `${routePrefix}/progress`,
           },
         ],
       },
@@ -226,31 +233,35 @@ export const routes = [
         pages: [
           {
             title: "Breadcrumb",
-            path: "/docs/v3/react/breadcrumb",
+            path: `${routePrefix}/breadcrumb`,
           },
           {
             title: "Drawer",
-            path: "/docs/v3/react/drawer",
+            path: `${routePrefix}/drawer`,
+          },
+          {
+            title: "Dropdown",
+            path: `${routePrefix}/dropdown`,
           },
           {
             title: "Menu",
-            path: "/docs/v3/react/menu",
+            path: `${routePrefix}/menu`,
           },
           {
             title: "Pagination",
-            path: "/docs/v3/react/pagination",
+            path: `${routePrefix}/pagination`,
           },
           {
             title: "Speed Dial",
-            path: "/docs/v3/react/speed-dial",
+            path: `${routePrefix}/speed-dial`,
           },
           {
             title: "Stepper",
-            path: "/docs/v3/react/stepper",
+            path: `${routePrefix}/stepper`,
           },
           {
             title: "Tabs",
-            path: "/docs/v3/react/tabs",
+            path: `${routePrefix}/tabs`,
           },
         ],
       },
@@ -259,58 +270,91 @@ export const routes = [
         pages: [
           {
             title: "Footer",
-            path: "/docs/v3/react/footer",
+            path: `${routePrefix}/footer`,
           },
           {
             title: "Gallery",
-            path: "/docs/v3/react/gallery",
+            path: `${routePrefix}/gallery`,
           },
           {
             title: "Navbar",
-            path: "/docs/v3/react/navbar",
+            path: `${routePrefix}/navbar`,
           },
           {
             title: "Sidebar",
-            path: "/docs/v3/react/sidebar",
+            path: `${routePrefix}/sidebar`,
           },
           {
             title: "Table",
-            path: "/docs/v3/react/table",
+            path: `${routePrefix}/table`,
           },
         ],
       },
     ],
   },
   {
-    title: "Third-Party Plugins",
+    title: "Forms",
+    pages: [
+      {
+        title: "Checkbox",
+        path: `${routePrefix}/checkbox`,
+      },
+      {
+        title: "Input",
+        path: `${routePrefix}/input`,
+      },
+      {
+        title: "Radio Button",
+        path: `${routePrefix}/radio`,
+      },
+      {
+        title: "Select",
+        path: `${routePrefix}/select`,
+      },
+      {
+        title: "Slider",
+        path: `${routePrefix}/slider`,
+      },
+      {
+        title: "Switch",
+        path: `${routePrefix}/switch`,
+      },
+      {
+        title: "Textarea",
+        path: `${routePrefix}/textarea`,
+      },
+    ],
+  },
+  {
+    title: "Plugins",
     pages: [
       {
         title: "Algolia Search",
-        path: "/docs/v3/react/plugins/algolia-search",
+        path: `${routePrefix}/plugins/algolia-search`,
       },
       {
         title: "Apexcharts",
-        path: "/docs/v3/react/plugins/apexcharts",
+        path: `${routePrefix}/plugins/apexcharts`,
       },
       {
         title: "Data Table",
-        path: "/docs/v3/react/plugins/data-table",
+        path: `${routePrefix}/plugins/data-table`,
       },
       {
         title: "Date Picker",
-        path: "/docs/v3/react/plugins/date-picker",
+        path: `${routePrefix}/plugins/date-picker`,
       },
       {
         title: "Forms",
-        path: "/docs/v3/react/plugins/forms",
+        path: `${routePrefix}/plugins/forms`,
       },
       {
-        title: "Swiper",
-        path: "/docs/v3/react/plugins/swiper",
+        title: "Carousel",
+        path: `${routePrefix}/plugins/carousel`,
       },
       {
         title: "Text Editor",
-        path: "/docs/v3/react/plugins/text-editor",
+        path: `${routePrefix}/plugins/text-editor`,
       },
     ],
   },

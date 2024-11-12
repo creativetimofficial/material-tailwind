@@ -40,6 +40,7 @@ export type ChipProps<T extends React.ElementType = "div"> = BaseProps<
   {
     open?: boolean;
     onOpenChange?: React.Dispatch<React.SetStateAction<boolean>>;
+    isPill?: boolean;
   } & SharedProps
 >;
 
@@ -59,6 +60,7 @@ function ChipRootBase<T extends React.ElementType = "div">(
     open: controlledOpen,
     onOpenChange: setControlledOpen,
     children,
+    isPill,
     ...props
   }: ChipProps,
   ref: React.Ref<Element>,
@@ -75,6 +77,7 @@ function ChipRootBase<T extends React.ElementType = "div">(
   size ??= (defaultProps?.size as ChipProps["size"]) ?? "md";
   color ??= (defaultProps?.color as ChipProps["color"]) ?? "primary";
   variant ??= (defaultProps?.variant as ChipProps["variant"]) ?? "solid";
+  isPill ??= (defaultProps?.isPill as ChipProps["isPill"]) ?? true;
 
   const styles = twMerge(
     theme.baseStyle,
@@ -95,7 +98,13 @@ function ChipRootBase<T extends React.ElementType = "div">(
   );
 
   return open ? (
-    <Component {...props} ref={ref} data-open={open} className={styles}>
+    <Component
+      {...props}
+      ref={ref}
+      data-open={open}
+      data-shape={isPill ? "pill" : "default"}
+      className={styles}
+    >
       <ChipContext.Provider value={contextValue}>
         {children}
       </ChipContext.Provider>

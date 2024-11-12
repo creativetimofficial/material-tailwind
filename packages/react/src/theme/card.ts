@@ -10,7 +10,7 @@ export const cardTheme = {
     variant: "solid",
     color: "default",
   },
-  baseStyle: "w-full rounded-lg border shadow-lg overflow-hidden",
+  baseStyle: "w-full rounded-lg border shadow-sm overflow-hidden",
   variant: {
     ghost: {
       default: "bg-background/10 border-transparent shadow-transparent",
@@ -31,13 +31,13 @@ export const cardTheme = {
       error: "bg-error border-error-dark shadow-error-dark/25",
     },
     outline: {
-      default: "bg-transparent border-surface shadow-transparent",
-      primary: "bg-transparent border-primary shadow-transparent",
-      secondary: "bg-transparent border-secondary shadow-transparent",
-      info: "bg-transparent border-info shadow-transparent",
-      success: "bg-transparent border-success shadow-transparent",
-      warning: "bg-transparent border-warning shadow-transparent",
-      error: "bg-transparent border-error shadow-transparent",
+      default: "bg-transparent border-surface shadow-black/5",
+      primary: "bg-transparent border-primary shadow-black/5",
+      secondary: "bg-transparent border-secondary shadow-black/5",
+      info: "bg-transparent border-info shadow-black/5",
+      success: "bg-transparent border-success shadow-black/5",
+      warning: "bg-transparent border-warning shadow-black/5",
+      error: "bg-transparent border-error shadow-black/5",
     },
     gradient: {
       default: "bg-background border-surface shadow-black/5",
@@ -57,13 +57,13 @@ export const cardTheme = {
 };
 
 export const cardHeaderTheme = {
-  baseStyle: "w-[calc(100%-12px)] h-max rounded m-1.5",
+  baseStyle: "w-[calc(100%-16px)] h-max rounded m-2",
 };
 
 export const cardBodyTheme = {
-  baseStyle: "w-full h-max rounded px-3 py-2",
+  baseStyle: "w-full h-max rounded px-3.5 py-2.5",
 };
 
 export const cardFooterTheme = {
-  baseStyle: "w-full px-3 pt-1.5 pb-3 rounded",
+  baseStyle: "w-full px-3.5 pt-2 pb-3.5 rounded",
 };

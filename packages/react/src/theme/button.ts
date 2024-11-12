@@ -49,16 +49,16 @@ export const buttonTheme = {
     },
     outline: {
       primary:
-        "bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-none hover:shadow-none",
+        "bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground",
       secondary:
-        "bg-transparent border-secondary text-secondary-foreground hover:bg-secondary shadow-none hover:shadow-none",
-      info: "bg-transparent border-info text-info hover:bg-info hover:text-info-foreground shadow-none hover:shadow-none",
+        "bg-transparent border-secondary text-secondary-foreground hover:bg-secondary",
+      info: "bg-transparent border-info text-info hover:bg-info hover:text-info-foreground",
       success:
-        "bg-transparent border-success text-success hover:bg-success hover:text-success-foreground shadow-none hover:shadow-none",
+        "bg-transparent border-success text-success hover:bg-success hover:text-success-foreground",
       warning:
-        "bg-transparent border-warning text-warning hover:bg-warning hover:text-warning-foreground shadow-none hover:shadow-none",
+        "bg-transparent border-warning text-warning hover:bg-warning hover:text-warning-foreground",
       error:
-        "bg-transparent border-error text-error hover:bg-error hover:text-error-foreground shadow-none hover:shadow-none",
+        "bg-transparent border-error text-error hover:bg-error hover:text-error-foreground",
     },
     gradient: {
       primary:

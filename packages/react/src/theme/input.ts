@@ -1,7 +1,6 @@
 import type { DeepPartial } from "@types";
 
 export type InputTheme = DeepPartial<typeof inputTheme>;
-export type InputFieldTheme = DeepPartial<typeof inputFieldTheme>;
 export type InputIconTheme = DeepPartial<typeof inputIconTheme>;
 
 export const inputTheme = {
@@ -13,21 +12,11 @@ export const inputTheme = {
     isSuccess: false,
   },
   baseStyle:
-    "relative w-full aria-disabled:cursor-not-allowed data-[shape=pill]:rounded-full",
+    "w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none data-[shape=pill]:rounded-full",
   size: {
-    sm: "text-sm rounded-md",
-    md: "text-sm rounded-md",
-    lg: "text-base rounded-lg",
-  },
-};
-
-export const inputFieldTheme = {
-  baseStyle:
-    "h-full w-full outline-none rounded-[inherit] text-inherit leading-[inherit] focus:outline-none text-black dark:text-white placeholder:text-foreground/60 bg-transparent ring-transparent border border-surface transition-all duration-300 ease-in disabled:opacity-50 disabled:pointer-events-none data-[error=true]:border-error data-[success=true]:border-success select-none data-[shape=pill]:rounded-full",
-  size: {
-    sm: "py-2 px-2 ring shadow-sm data-[icon-placement=start]:ps-7 data-[icon-placement=end]:pe-7",
-    md: "py-2.5 px-2.5 ring shadow-sm data-[icon-placement=start]:ps-9 data-[icon-placement=end]:pe-9",
-    lg: "py-3 px-3 ring-4 shadow-sm data-[icon-placement=start]:ps-11 data-[icon-placement=end]:pe-11",
+    sm: "text-sm rounded-md py-1.5 px-2 ring shadow-sm data-[icon-placement=start]:ps-7 data-[icon-placement=end]:pe-7",
+    md: "text-sm rounded-md py-2 px-2.5 ring shadow-sm data-[icon-placement=start]:ps-9 data-[icon-placement=end]:pe-9",
+    lg: "text-base rounded-lg py-3 leading-none px-3 ring-4 shadow-sm data-[icon-placement=start]:ps-11 data-[icon-placement=end]:pe-11",
   },
   color: {
     primary:

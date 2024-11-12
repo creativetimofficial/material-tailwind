@@ -21,9 +21,9 @@ export const accordionItemTheme = {
 
 export const accordionTriggerTheme = {
   baseStyle:
-    "flex items-center justify-between w-full py-3 text-left font-medium dark:text-white text-black",
+    "flex items-center justify-between w-full py-5 text-left font-medium dark:text-white text-black",
 };
 
 export const accordionContentTheme = {
-  baseStyle: "block pb-3 text-foreground h-0 data-[open=true]:h-auto",
+  baseStyle: "block pb-5 text-sm text-foreground h-0 data-[open=true]:h-auto",
 };

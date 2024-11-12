@@ -6,15 +6,15 @@ export function TabsWithIcon() {
     <Tabs defaultValue="dashboard">
       <Tabs.List className="w-full">
         <Tabs.Trigger className="w-full" value="dashboard">
-          <SelectFace3d className="mr-2 h-5 w-5" />
+          <SelectFace3d className="mr-2 h-4 w-4" />
           Dashboard
         </Tabs.Trigger>
         <Tabs.Trigger className="w-full" value="profile">
-          <ProfileCircle className="mr-2 h-5 w-5" />
+          <ProfileCircle className="mr-2 h-4 w-4" />
           User Profile
         </Tabs.Trigger>
         <Tabs.Trigger className="w-full" value="settings">
-          <Settings className="mr-2 h-5 w-5" />
+          <Settings className="mr-2 h-4 w-4" />
           Settings
         </Tabs.Trigger>
         <Tabs.TriggerIndicator />

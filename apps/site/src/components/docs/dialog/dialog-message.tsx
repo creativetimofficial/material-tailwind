@@ -13,7 +13,7 @@ import { Xmark } from "iconoir-react";
 export function DialogMessage() {
   return (
     <Dialog size="sm">
-      <Dialog.Trigger as={Button}>Message Dialog</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open Message</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>
           <Dialog.DismissTrigger

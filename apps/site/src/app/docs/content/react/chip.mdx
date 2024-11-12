@@ -232,3 +232,34 @@ export function ChipWithAvatar() {
 }
 ```
 </ComponentPreview>
+
+---
+
+## Chip Rounded
+
+By default `Chip` comes with a pill shape. If you prefer a rounded shape, you can set the `isPill` prop to `false`. Use the example below to create a rounded `Chip` component.
+
+<ComponentPreview demo={<Chip.ChipRounded />}>
+```tsx
+import { Chip } from "@material-tailwind/react";
+
+export function ChipRounded() {
+  return (
+    <div className="flex items-center gap-2">
+      <Chip isPill={false} variant="ghost">
+        <Chip.Label>Ghost</Chip.Label>
+      </Chip>
+      <Chip isPill={false} variant="outline">
+        <Chip.Label>Outline</Chip.Label>
+      </Chip>
+      <Chip isPill={false} variant="solid">
+        <Chip.Label>Solid</Chip.Label>
+      </Chip>
+      <Chip isPill={false} variant="gradient">
+        <Chip.Label>Gradient</Chip.Label>
+      </Chip>
+    </div>
+  );
+}
+```
+</ComponentPreview>

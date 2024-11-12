@@ -68,7 +68,7 @@ import * as Slider from "@components/docs/slider";
 import * as Timeline from "@components/docs/timeline";
 import * as Badge from "@components/docs/badge";
 import * as AlgoliaSearch from "@components/docs/plugins/algolia-search";
-import * as Swiper from "@components/docs/plugins/swiper";
+import * as Carousel from "@components/docs/plugins/carousel";
 import * as Apexcharts from "@components/docs/plugins/apexcharts";
 import * as DatePicker from "@components/docs/plugins/date-picker";
 import * as Forms from "@components/docs/plugins/forms";
@@ -206,7 +206,7 @@ export default async function Docs({ params: { slug } }) {
 
           // default-components
           pre: Code,
-          Link: (props: any) => <Link {...props} className="text-primary" />,
+          Link: (props: any) => <Link {...props} className="text-orange-500" />,
           h1: (props: any) => (
             <MTTypography as="h1" type="h4" className="mb-4" {...props} />
           ),
@@ -214,7 +214,7 @@ export default async function Docs({ params: { slug } }) {
             <MTTypography
               as="h2"
               type="h5"
-              className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors hover:text-primary"
+              className="group relative mb-2 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
               {...props}
             >
               <Link
@@ -236,7 +236,7 @@ export default async function Docs({ params: { slug } }) {
             <MTTypography
               as="h3"
               type="h6"
-              className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-primary"
+              className="group relative mb-1 mt-8 cursor-pointer scroll-mt-40 transition-colors hover:text-orange-500"
               {...props}
             >
               <Link
@@ -272,7 +272,7 @@ export default async function Docs({ params: { slug } }) {
               {...props}
             />
           ),
-          a: (props: any) => <a {...props} className="text-primary" />,
+          a: (props: any) => <a {...props} className="text-orange-500" />,
           ul: (props: any) => (
             <ul className="my-4 ml-4 list-disc space-y-1" {...props} />
           ),
@@ -324,7 +324,7 @@ export default async function Docs({ params: { slug } }) {
           Slider,
           Timeline,
           AlgoliaSearch,
-          Swiper,
+          Carousel,
           Apexcharts,
           DatePicker,
           Forms,

@@ -9,7 +9,7 @@ import { Xmark } from "iconoir-react";
 export function DialogDemo() {
   return (
     <Dialog>
-      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="flex items-center justify-between gap-4">

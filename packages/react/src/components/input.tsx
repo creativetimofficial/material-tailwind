@@ -9,7 +9,7 @@ import { twMerge } from "tailwind-merge";
 import { useTheme } from "@context";
 
 // @theme
-import { inputTheme, inputFieldTheme, inputIconTheme } from "@theme";
+import { inputTheme, inputIconTheme } from "@theme";
 
 // @types
 import type { BaseProps, SharedProps } from "@types";
@@ -40,7 +40,7 @@ export const InputContext = React.createContext<InputContextProps>({
 });
 
 // input root
-export type InputProps<T extends React.ElementType = "div"> = BaseProps<
+export type InputProps<T extends React.ElementType = "input"> = BaseProps<
   T,
   {
     isPill?: boolean;
@@ -56,7 +56,7 @@ export type InputProps<T extends React.ElementType = "div"> = BaseProps<
  * [Props Definition](https://www.material-tailwind.com/docs/react/input#input-props) •
  * [Theming Guide](https://www.material-tailwind.com/docs/react/input#input-theme)
  */
-function InputRootBase<T extends React.ElementType = "div">(
+function InputRootBase<T extends React.ElementType = "input">(
   {
     as,
     color,
@@ -67,9 +67,10 @@ function InputRootBase<T extends React.ElementType = "div">(
     disabled,
     className,
     children,
+    type = "text",
     ...props
   }: InputProps,
-  ref: React.Ref<Element>,
+  ref: React.Ref<HTMLInputElement>,
 ) {
   const Component = as ?? ("div" as any);
   const contextTheme = useTheme();
@@ -84,7 +85,13 @@ function InputRootBase<T extends React.ElementType = "div">(
   isError ??= (defaultProps?.isError as InputProps["isError"]) ?? false;
   isSuccess ??= (defaultProps?.isSuccess as InputProps["isSuccess"]) ?? false;
 
-  const styles = twMerge(theme.baseStyle, theme.size[size], className);
+  const styles = twMerge(
+    theme.baseStyle,
+    theme.size[size],
+    theme.color[color],
+    className,
+    "peer",
+  );
 
   const contextValue = React.useMemo(
     () => ({
@@ -113,60 +120,6 @@ function InputRootBase<T extends React.ElementType = "div">(
     ],
   );
 
-  return (
-    <Component
-      {...props}
-      ref={ref}
-      className={styles}
-      aria-disabled={disabled}
-      data-shape={isPill ? "pill" : "default"}
-    >
-      <InputContext.Provider value={contextValue}>
-        {children}
-      </InputContext.Provider>
-    </Component>
-  );
-}
-
-InputRootBase.displayName = "MaterialTailwind.Input";
-
-export const InputRoot = React.forwardRef(InputRootBase) as <
-  T extends React.ElementType = "div",
->(
-  props: InputProps<T> & { ref?: React.Ref<Element> },
-) => JSX.Element;
-
-// input field
-export type InputFieldProps<T extends React.ElementType = "input"> = Omit<
-  BaseProps<T>,
-  "as"
->;
-
-function InputFieldRoot<T extends React.ElementType = "input">(
-  { type = "text", ...props }: InputFieldProps,
-  ref: React.Ref<HTMLInputElement>,
-) {
-  const contextTheme = useTheme();
-  const {
-    size,
-    color,
-    iconPlacement,
-    isIconDefined,
-    isError,
-    isPill,
-    isSuccess,
-    disabled,
-  } = React.useContext(InputContext);
-  const theme = contextTheme?.inputField ?? inputFieldTheme;
-
-  const styles = twMerge(
-    theme.baseStyle,
-    theme.size[size!],
-    theme.color[color!],
-    props?.className,
-    "peer",
-  );
-
   const inputType = [
     "text",
     "email",
@@ -181,26 +134,31 @@ function InputFieldRoot<T extends React.ElementType = "input">(
     : "text";
 
   return (
-    <input
-      {...props}
-      ref={ref}
-      type={inputType}
-      className={styles}
-      disabled={disabled}
-      data-error={isError}
-      data-success={isSuccess}
-      data-shape={isPill ? "pill" : "default"}
-      data-icon-placement={isIconDefined ? iconPlacement : ""}
-    />
+    <Component className="relative w-full">
+      <InputContext.Provider value={contextValue}>
+        <input
+          {...props}
+          ref={ref}
+          type={inputType}
+          className={styles}
+          disabled={disabled}
+          data-error={isError}
+          data-success={isSuccess}
+          data-shape={isPill ? "pill" : "default"}
+          data-icon-placement={isIconDefined ? iconPlacement : ""}
+        />
+        {children}
+      </InputContext.Provider>
+    </Component>
   );
 }
 
-InputFieldRoot.displayName = "MaterialTailwind.InputField";
+InputRootBase.displayName = "MaterialTailwind.Input";
 
-export const InputField = React.forwardRef(InputFieldRoot) as <
+export const InputRoot = React.forwardRef(InputRootBase) as <
   T extends React.ElementType = "input",
 >(
-  props: InputFieldProps<T> & { ref?: React.Ref<HTMLInputElement> },
+  props: InputProps<T> & { ref?: React.Ref<Element> },
 ) => JSX.Element;
 
 // input icon
@@ -272,7 +230,6 @@ export const InputIcon = React.forwardRef(InputIconRoot) as <
 ) => JSX.Element;
 
 export const Input = Object.assign(InputRoot, {
-  Field: InputField,
   Icon: InputIcon,
 });
 

@@ -22,7 +22,7 @@ export type ButtonProps<T extends React.ElementType = "button"> = BaseProps<
     isPill?: boolean;
     isFullWidth?: boolean;
   } & Omit<SharedProps, "size"> & {
-      size: SharedProps["size"] | "xs" | "xl";
+      size?: SharedProps["size"] | "xs" | "xl";
     }
 >;
 

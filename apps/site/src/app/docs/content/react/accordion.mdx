@@ -78,7 +78,7 @@ import { NavArrowDown } from "iconoir-react";
 
 export function AccordionAllOpen() {
   return (
-    <Accordion defaultValue={["react", "html", "vue"]}>
+    <Accordion type="multiple" defaultValue={["react", "html", "vue"]}>
       <Accordion.Item value="react">
         <Accordion.Trigger>
           Material Tailwind React

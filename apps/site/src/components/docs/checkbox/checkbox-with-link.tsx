@@ -9,10 +9,10 @@ export function CheckboxWithLink() {
       <Typography
         as="label"
         htmlFor="checkbox-link"
-        className="flex gap-1 text-foreground"
+        className="cursor-pointer text-foreground"
       >
-        I agree with the
-        <Typography as="a" href="#" color="primary">
+        I agree with the&nbsp;
+        <Typography as="a" href="#" color="primary" className="inline">
           terms and conditions
         </Typography>
       </Typography>

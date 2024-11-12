@@ -2,8 +2,8 @@ import { Input } from "@material-tailwind/react";
 
 export function InputDemo() {
   return (
-    <Input className="w-72">
-      <Input.Field placeholder="Input" />
-    </Input>
+    <div className="w-72">
+      <Input placeholder="Input" />
+    </div>
   );
 }

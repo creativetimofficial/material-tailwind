@@ -25,8 +25,8 @@ export const typographyTheme = {
     h4: "font-bold text-xl md:text-2xl lg:text-3xl",
     h5: "font-bold text-lg md:text-xl lg:text-2xl",
     h6: "font-bold text-base md:text-lg lg:text-xl",
-    lead: " text-base md:text-lg",
+    lead: "text-base md:text-lg",
     p: " text-base",
-    small: " text-sm",
+    small: "text-sm",
   },
 };
