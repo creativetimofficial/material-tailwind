@@ -218,7 +218,7 @@ export function LoginCard() {
         </Typography>
       </Card.Header>
       <Card.Body as="form">
-        <Input className="mb-4 mt-2 space-y-1.5">
+        <div className="mb-4 mt-2 space-y-1.5">
           <Typography
             as="label"
             htmlFor="email"
@@ -228,13 +228,9 @@ export function LoginCard() {
           >
             Email
           </Typography>
-          <Input.Field
-            id="email"
-            type="email"
-            placeholder="someone@example.com"
-          />
-        </Input>
-        <Input className="mb-4 space-y-1.5">
+          <Input id="email" type="email" placeholder="someone@example.com" />
+        </div>
+        <div className="mb-4 space-y-1.5">
           <Typography
             as="label"
             htmlFor="password"
@@ -244,12 +240,8 @@ export function LoginCard() {
           >
             Password
           </Typography>
-          <Input.Field
-            id="password"
-            type="password"
-            placeholder="************"
-          />
-        </Input>
+          <Input id="password" type="password" placeholder="************" />
+        </div>
         <label htmlFor="remember" className="mb-4 flex items-center gap-2">
           <Checkbox id="remember">
             <Checkbox.Indicator />

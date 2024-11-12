@@ -107,8 +107,7 @@ export function MembersTable() {
           </Tabs.List>
         </Tabs>
         <div className="w-full md:w-72">
-          <Input>
-            <Input.Field placeholder="Search" />
+          <Input placeholder="Search">
             <Input.Icon placement="end">
               <Search className="h-5 w-5" />
             </Input.Icon>
@@ -149,7 +148,7 @@ export function MembersTable() {
                     <td className="p-3">
                       <div className="flex flex-col">
                         <Typography type="small">{job}</Typography>
-                        <Typography type="small" className=" opacity-70">
+                        <Typography type="small" className="opacity-70">
                           {org}
                         </Typography>
                       </div>

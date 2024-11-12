@@ -791,11 +791,10 @@ export function SidebarWithSearch() {
         <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">
-        <Input>
+        <Input type="search" placeholder="Search here...">
           <Input.Icon>
             <Search className="h-full w-full" />
           </Input.Icon>
-          <Input.Field type="search" placeholder="Search here..." />
         </Input>
         <List className="mt-3">
           {Links.map(({ icon: Icon, title, href, badge }) => (
@@ -866,8 +865,8 @@ export function SidebarWithSearch() {
               Upgrade to PRO
             </Typography>
             <Typography type="small" className="text-white/80">
-              Upgrade to Material Tailwind PRO and get even more
-              components, plugins, advanced features and premium.
+              Upgrade to Material Tailwind PRO and get even more components,
+              plugins, advanced features and premium.
             </Typography>
           </Card.Body>
           <Card.Footer>
@@ -1002,11 +1001,10 @@ export function SidebarWithBurgerMenu() {
                   </Typography>
                 </Card.Header>
                 <Card.Body className="p-3">
-                  <Input>
+                  <Input type="search" placeholder="Search here...">
                     <Input.Icon>
                       <Search className="h-full w-full" />
                     </Input.Icon>
-                    <Input.Field type="search" placeholder="Search here..." />
                   </Input>
                   <List className="mt-3">
                     {Links.map(({ icon: Icon, title, href, badge }) => (

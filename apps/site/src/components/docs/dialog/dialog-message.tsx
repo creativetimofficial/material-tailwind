@@ -2,7 +2,6 @@ import {
   Dialog,
   Button,
   Input,
-  Checkbox,
   Typography,
   IconButton,
   Textarea,
@@ -33,7 +32,7 @@ export function DialogMessage() {
             Write the message and then click button.
           </Typography>
           <form action="#" className="mt-6">
-            <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+            <div className="mb-4 mt-2 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="username"
@@ -43,8 +42,13 @@ export function DialogMessage() {
               >
                 Username
               </Typography>
-              <Input.Field id="username" type="text" placeholder="Username" />
-            </Input>
+              <Input
+                id="username"
+                type="text"
+                placeholder="Username"
+                isFullWidth
+              />
+            </div>
             <div className="w-full space-y-1.5">
               <Typography
                 as="label"

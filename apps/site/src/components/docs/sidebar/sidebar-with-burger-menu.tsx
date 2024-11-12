@@ -101,11 +101,10 @@ export function SidebarWithBurgerMenu() {
                   </Typography>
                 </Card.Header>
                 <Card.Body className="p-3">
-                  <Input>
+                  <Input type="search" placeholder="Search here...">
                     <Input.Icon>
                       <Search className="h-full w-full" />
                     </Input.Icon>
-                    <Input.Field type="search" placeholder="Search here..." />
                   </Input>
                   <List className="mt-3">
                     {Links.map(({ icon: Icon, title, href, badge }) => (

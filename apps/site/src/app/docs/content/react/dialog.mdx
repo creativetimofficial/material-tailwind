@@ -385,7 +385,7 @@ export function DialogWithForm() {
             Enter your email and password to Sign In.
           </Typography>
           <form action="#" className="mt-6">
-            <Input className="mb-4 mt-2 space-y-1.5">
+            <div className="mb-4 mt-2 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="email"
@@ -395,13 +395,13 @@ export function DialogWithForm() {
               >
                 Email
               </Typography>
-              <Input.Field
+              <Input
                 id="email"
                 type="email"
                 placeholder="someone@example.com"
               />
-            </Input>
-            <Input className="mb-4 space-y-1.5">
+            </div>
+            <div className="mb-4 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="password"
@@ -411,12 +411,8 @@ export function DialogWithForm() {
               >
                 Password
               </Typography>
-              <Input.Field
-                id="password"
-                type="password"
-                placeholder="************"
-              />
-            </Input>
+              <Input id="password" type="password" placeholder="************" />
+            </div>
             <div className="mb-4 flex items-center gap-2">
               <Checkbox id="checkbox">
                 <Checkbox.Indicator />
@@ -816,17 +812,17 @@ import {
   Dialog,
   Button,
   Input,
-  Checkbox,
   Typography,
   IconButton,
   Textarea,
 } from "@material-tailwind/react";
+
 import { Xmark } from "iconoir-react";
 
 export function DialogMessage() {
   return (
     <Dialog size="sm">
-      <Dialog.Trigger as={Button}>Message Dialog</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open Message</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>
           <Dialog.DismissTrigger
@@ -846,7 +842,7 @@ export function DialogMessage() {
             Write the message and then click button.
           </Typography>
           <form action="#" className="mt-6">
-            <Input isFullWidth className="mb-4 mt-2 space-y-1.5">
+            <div className="mb-4 mt-2 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="username"
@@ -856,8 +852,13 @@ export function DialogMessage() {
               >
                 Username
               </Typography>
-              <Input.Field id="username" type="text" placeholder="Username" />
-            </Input>
+              <Input
+                id="username"
+                type="text"
+                placeholder="Username"
+                isFullWidth
+              />
+            </div>
             <div className="w-full space-y-1.5">
               <Typography
                 as="label"

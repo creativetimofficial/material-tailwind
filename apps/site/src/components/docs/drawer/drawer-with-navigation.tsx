@@ -81,7 +81,7 @@ export function DrawerWithNavigation() {
               <Xmark className="h-5 w-5" />
             </Drawer.DismissTrigger>
           </div>
-          <Card className="border-none shadow-none ">
+          <Card className="border-none shadow-none">
             <Card.Header className="m-0 flex h-max items-center gap-2 px-3 pb-3 pt-4">
               <Avatar size="xs" src="/logo.png" alt="brand" />
               <Typography className="font-semibold">
@@ -89,11 +89,10 @@ export function DrawerWithNavigation() {
               </Typography>
             </Card.Header>
             <Card.Body className="p-3">
-              <Input>
+              <Input type="search" placeholder="Search here...">
                 <Input.Icon>
                   <Search className="h-full w-full" />
                 </Input.Icon>
-                <Input.Field type="search" placeholder="Search here..." />
               </Input>
               <List className="mt-3">
                 {Links.map(({ icon: Icon, title, href, badge }) => (

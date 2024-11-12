@@ -84,12 +84,13 @@ export function NavbarWithSearch() {
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <Input size="sm" className="ml-auto w-40">
-          <Input.Icon>
-            <Search className="h-full w-full" />
-          </Input.Icon>
-          <Input.Field type="search" placeholder="Search here..." />
-        </Input>
+        <div className="ml-auto w-40">
+          <Input size="sm" type="search" placeholder="Search here...">
+            <Input.Icon>
+              <Search className="h-full w-full" />
+            </Input.Icon>
+          </Input>
+        </div>
         <IconButton
           size="sm"
           variant="ghost"

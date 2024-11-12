@@ -76,8 +76,7 @@ export function TransactionsTable() {
         </div>
         <div className="flex w-full shrink-0 gap-2 md:w-max">
           <div className="w-full md:w-72">
-            <Input>
-              <Input.Field placeholder="Search" />
+            <Input placeholder="Search">
               <Input.Icon placement="end">
                 <Search className="h-5 w-5" />
               </Input.Icon>
