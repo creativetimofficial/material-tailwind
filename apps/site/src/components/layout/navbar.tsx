@@ -310,15 +310,15 @@ export function Navbar() {
           </div>
 
           <div className="mx-auto flex max-w-7xl items-end justify-between gap-4 pt-2">
-            <Tabs defaultValue="Get Started">
+            <Tabs defaultValue="Started">
               <Tabs.List className="w-full gap-6 rounded-none bg-transparent py-0 dark:bg-transparent">
                 <Tabs.Trigger
                   as={Link}
-                  href="#Get Started"
+                  href="#Started"
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
-                  value="Get Started"
+                  value="Started"
                 >
-                  Get Started
+                  Getting Started
                 </Tabs.Trigger>
                 <Tabs.Trigger
                   as={Link}
@@ -332,7 +332,7 @@ export function Navbar() {
                   as={Link}
                   href="#Forms"
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
-                  value="Components"
+                  value="Forms"
                 >
                   Forms
                 </Tabs.Trigger>
