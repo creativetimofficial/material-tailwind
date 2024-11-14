@@ -320,6 +320,7 @@ export function Navbar() {
                 >
                   Get Started
                 </Tabs.Trigger>
+
                 <Tabs.Trigger
                   as={Link}
                   href="#Components"
@@ -328,14 +329,16 @@ export function Navbar() {
                 >
                   Components
                 </Tabs.Trigger>
+
                 <Tabs.Trigger
                   as={Link}
                   href="#Forms"
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
-                  value="Components"
+                  value="Forms"
                 >
                   Forms
                 </Tabs.Trigger>
+
                 <Tabs.Trigger
                   as={Link}
                   href="#Plugins"
@@ -347,6 +350,7 @@ export function Navbar() {
                 <Tabs.TriggerIndicator className="translate-y-px rounded-none border-b border-orange-500 bg-transparent shadow-none" />
               </Tabs.List>
             </Tabs>
+            
             <div className="pb-3">
               <Tabs defaultValue="react">
                 <Tabs.List className="p-0.5">
