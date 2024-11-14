@@ -136,8 +136,8 @@ export function Navbar() {
             </Link>
           </Typography>
         </div>
-        <div className="px-4 pt-4">
-          <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-4">
+        <div className="px-4 pt-3">
+          <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
               <ThemeToggleDesktop as={NavIcon} />
               <Link
@@ -309,7 +309,7 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="mx-auto flex max-w-7xl items-end justify-between gap-4 pt-2">
+          <div className="mx-auto flex max-w-7xl items-end justify-between gap-4 pt-0">
             <Tabs defaultValue="Get Started">
               <Tabs.List className="w-full gap-6 rounded-none bg-transparent py-0 dark:bg-transparent">
                 <Tabs.Trigger
@@ -350,8 +350,8 @@ export function Navbar() {
                 <Tabs.TriggerIndicator className="translate-y-px rounded-none border-b border-orange-500 bg-transparent shadow-none" />
               </Tabs.List>
             </Tabs>
-            
-            <div className="pb-3">
+
+            <div className="pb-2">
               <Tabs defaultValue="react">
                 <Tabs.List className="p-0.5">
                   <Tabs.Trigger value="react">
