@@ -43,7 +43,11 @@ export function Collapsible({ category, categoryPages }) {
       <Collapse as="ul" open={isOpen} className="mx-2">
         {categoryPages.map(({ title: subTitle, path }, i) => {
           return (
-            <li key={i} className="mx-1.5 border-l border-surface">
+            <li 
+              key={i} 
+              className="mx-1.5 border-l border-surface"
+              {...(pathname === path && { "data-scroll-to": true })}
+            >
               <Link
                 href={path}
                 className={twMerge(
@@ -62,6 +66,18 @@ export function Collapsible({ category, categoryPages }) {
 }
 
 export function getRoutes() {
+  const pathname = usePathname();
+  React.useEffect(() => {
+    const element = document.querySelector('[data-scroll-to="true"]') || null;
+   
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'auto',
+        block: 'center'
+      });
+    }
+  }, []); // Empty dependency array so it only runs once on mount
+
   return routes.map(({ title, pages, categories }, idx) => {
     return (
       <React.Fragment key={idx}>
@@ -84,7 +100,10 @@ export function getRoutes() {
               })
             : pages.map(({ title: subTitle, path }, key) => {
                 return (
-                  <li key={key}>
+                  <li 
+                    key={key} 
+                    {...(pathname === path && { "data-scroll-to": true })}
+                  >
                     <Link
                       href={path}
                       className="block px-2 py-1.5 text-sm text-foreground transition-colors duration-300 hover:text-orange-500"
