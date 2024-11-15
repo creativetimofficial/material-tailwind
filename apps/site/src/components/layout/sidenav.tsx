@@ -75,11 +75,11 @@ export function getRoutes() {
       <React.Fragment key={idx}>
         <li
           data-sn-title={title === "Getting Started" ? "Started" : title}
-          className="p-2 text-sm font-semibold text-black dark:text-white"
+          className="p-2 pb-1 text-sm font-semibold text-black dark:text-white"
         >
           {title}
         </li>
-        <ul className="mx-0.5 mb-6">
+        <ul className="mx-0.5 mb-5">
           {categories
             ? categories.map(({ pages: categoryPages, category }, key) => {
                 return (
