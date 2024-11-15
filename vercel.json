@@ -1,3 +1,5 @@
 {
-  "ignoreCommand": "pnpm dlx turbo-ignore"
+  "ignoreCommand": "pnpm dlx turbo-ignore",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }
