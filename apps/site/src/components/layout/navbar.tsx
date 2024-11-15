@@ -141,6 +141,9 @@ export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
 
+  const isProd = process.env.NODE_ENV === "production";
+const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
+
   const { data } = useSWR(
     "https://api.github.com/repos/creativetimofficial/material-tailwind",
     fetcher,
@@ -353,7 +356,7 @@ export function Navbar() {
               <Tabs.List className="w-full gap-6 rounded-none bg-transparent py-0 dark:bg-transparent">
                 <Tabs.Trigger
                   as={Link}
-                  href="#Started"
+                  href={`${routePrefix}/installation`}
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
                   value="Started"
                 >
@@ -362,7 +365,7 @@ export function Navbar() {
 
                 <Tabs.Trigger
                   as={Link}
-                  href="#Components"
+                  href={`${routePrefix}/button`}
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
                   value="Components"
                 >
@@ -371,7 +374,7 @@ export function Navbar() {
 
                 <Tabs.Trigger
                   as={Link}
-                  href="#Forms"
+                  href={`${routePrefix}/checkbox`}
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
                   value="Forms"
                 >
@@ -380,7 +383,7 @@ export function Navbar() {
 
                 <Tabs.Trigger
                   as={Link}
-                  href="#Plugins"
+                  href={`${routePrefix}/algolia-search`}
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
                   value="Plugins"
                 >
