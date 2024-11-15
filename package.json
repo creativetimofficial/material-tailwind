@@ -25,6 +25,13 @@
     "check": "tsc",
     "ci": "npm run build && npm run lint && npm run check && npm run format"
   },
+  
+  "dependencies": {
+    "next": "^14.2.18", 
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+
   "devDependencies": {
     "eslint": "9.14.0",
     "eslint-config-custom": "*", 
