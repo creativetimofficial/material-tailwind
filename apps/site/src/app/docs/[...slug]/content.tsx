@@ -27,10 +27,7 @@ export function Content({ children, frontMatter }: MdxContentProps) {
 
   return (
     <div className="flex w-full gap-0 lg:gap-[52px]">
-      <div
-        ref={contentRef}
-        className="mt-[260px] w-full px-4 lg:mt-[208px] lg:px-0"
-      >
+      <div ref={contentRef} className="mt-10 w-full px-4 lg:px-0">
         <MTBreadcrumb className="mb-12 hidden p-0 lg:flex">
           {pathParts.map((part, index) => (
             <React.Fragment key={index}>
