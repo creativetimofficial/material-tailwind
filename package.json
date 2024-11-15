@@ -27,7 +27,7 @@
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check": "tsc",
-    "ci": "turbo build lint && pnpm check && pnpm format"
+    "ci": "npm run build && npm run lint && npm run check && npm run format"
   },
   "devDependencies": {
     "eslint": "9.14.0",
