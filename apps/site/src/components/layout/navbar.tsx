@@ -72,7 +72,6 @@ function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
   );
 }
 
-
 function getCookie(name: string) {
   if (typeof window === "undefined") return null;
 
@@ -84,15 +83,14 @@ function getCookie(name: string) {
 }
 
 function setCookie(name: string, value: string, elementToRemove: string) {
-    // Set cookie to expire in 24 hours
-    const date = new Date();
-    date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
-    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
-    // Remove element from screen
-    const element: Element | null = document.getElementById(elementToRemove);
+  // Set cookie to expire in 24 hours
+  const date = new Date();
+  date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+  // Remove element from screen
+  const element: Element | null = document.getElementById(elementToRemove);
   if (element) element.remove();
 }
-
 
 const NavIcon = React.forwardRef(NavIconComponent);
 
@@ -142,6 +140,7 @@ const fetcher = (url: string) => fetch(url).then((response) => response.json());
 export function Navbar() {
   const pathname = usePathname();
   const pathParts = pathname.split("/");
+
   const { data } = useSWR(
     "https://api.github.com/repos/creativetimofficial/material-tailwind",
     fetcher,
@@ -149,23 +148,33 @@ export function Navbar() {
 
   return (
     <ThemeProvider>
-      <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background">
-        {typeof window !== 'undefined' && getCookie("show_notification_bar") !== "false" && (
-          <div className="relative border-b border-warning bg-warning-light px-4 py-3 text-center" id="notification_bar">
-            <Typography as="p" type="small" className="font-semibold text-black">
+      {typeof window !== "undefined" &&
+        getCookie("show_notification_bar") !== "false" && (
+          <div
+            className="relative z-[99] border-b border-warning bg-warning-light px-4 py-3 text-center"
+            id="notification_bar"
+          >
+            <Typography
+              as="p"
+              type="small"
+              className="font-semibold text-black"
+            >
               Material Tailwind v3 is currently on beta, for stable version use{" "}
               <Link href="/docs/react/installation" className="text-blue-600">
                 Material Tailwind v2
               </Link>
             </Typography>
             <button
-              onClick={() => setCookie("show_notification_bar", "false", "notification_bar")}
+              onClick={() =>
+                setCookie("show_notification_bar", "false", "notification_bar")
+              }
               className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-600"
             >
               ✕
             </button>
           </div>
         )}
+      <nav className="sticky top-0 z-[99] w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
