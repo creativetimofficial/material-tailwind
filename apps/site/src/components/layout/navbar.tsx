@@ -72,6 +72,28 @@ function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
   );
 }
 
+
+function getCookie(name: string) {
+  if (typeof window === "undefined") return null;
+
+  if (typeof document === "undefined") return null;
+
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift();
+}
+
+function setCookie(name: string, value: string, elementToRemove: string) {
+    // Set cookie to expire in 24 hours
+    const date = new Date();
+    date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+    // Remove element from screen
+    const element: Element | null = document.getElementById(elementToRemove);
+  if (element) element.remove();
+}
+
+
 const NavIcon = React.forwardRef(NavIconComponent);
 
 function NavItem({
@@ -128,14 +150,22 @@ export function Navbar() {
   return (
     <ThemeProvider>
       <nav className="fixed top-0 z-50 w-full border-b border-surface bg-background">
-        <div className="border-b border-warning bg-warning-light px-4 py-3 text-center">
-          <Typography as="p" type="small" className="font-semibold text-black">
-            Material Tailwind v3 is currently on beta, for stable version use{" "}
-            <Link href="/docs/react/installation" className="text-blue-600">
-              Material Tailwind v2
-            </Link>
-          </Typography>
-        </div>
+        {typeof window !== 'undefined' && getCookie("show_notification_bar") !== "false" && (
+          <div className="relative border-b border-warning bg-warning-light px-4 py-3 text-center" id="notification_bar">
+            <Typography as="p" type="small" className="font-semibold text-black">
+              Material Tailwind v3 is currently on beta, for stable version use{" "}
+              <Link href="/docs/react/installation" className="text-blue-600">
+                Material Tailwind v2
+              </Link>
+            </Typography>
+            <button
+              onClick={() => setCookie("show_notification_bar", "false", "notification_bar")}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-gray-600"
+            >
+              ✕
+            </button>
+          </div>
+        )}
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
