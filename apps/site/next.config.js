@@ -20,6 +20,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/",
+        destination: "/docs/react/installation",
+        permanent: true,
+      },
+      {
         source: "/documentation/quick-start",
         destination: "/docs/react/installation",
         permanent: true,
