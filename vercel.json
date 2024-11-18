@@ -1,4 +1,5 @@
 {
   "buildCommand": "turbo run build",
-  "installCommand": "pnpm install"
+  "installCommand": "pnpm install",
+  "outputDirectory": "apps/site/.next"
 }
