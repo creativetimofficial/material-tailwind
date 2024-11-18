@@ -42,11 +42,16 @@ const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
         className="mb-6 block space-y-1.5"
       >
         <span className="text-sm font-semibold">{label}</span>
-        <Input isError={Boolean(error)} color={error ? "error" : "primary"}>
+        <Input
+          ref={ref}
+          {...props}
+          id={id}
+          isError={Boolean(error)}
+          color={error ? "error" : "primary"}
+        >
           <Input.Icon>
             <Icon className="h-full w-full" />
           </Input.Icon>
-          <Input.Field ref={ref} {...props} id={id} />
         </Input>
         {error && (
           <Typography type="small" color="error">

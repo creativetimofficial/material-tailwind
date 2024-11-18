@@ -31,7 +31,7 @@ export function DialogWithForm() {
             Enter your email and password to Sign In.
           </Typography>
           <form action="#" className="mt-6">
-            <Input className="mb-4 mt-2 space-y-1.5">
+            <div className="mb-4 mt-2 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="email"
@@ -41,13 +41,13 @@ export function DialogWithForm() {
               >
                 Email
               </Typography>
-              <Input.Field
+              <Input
                 id="email"
                 type="email"
                 placeholder="someone@example.com"
               />
-            </Input>
-            <Input className="mb-4 space-y-1.5">
+            </div>
+            <div className="mb-4 space-y-1.5">
               <Typography
                 as="label"
                 htmlFor="password"
@@ -57,12 +57,8 @@ export function DialogWithForm() {
               >
                 Password
               </Typography>
-              <Input.Field
-                id="password"
-                type="password"
-                placeholder="************"
-              />
-            </Input>
+              <Input id="password" type="password" placeholder="************" />
+            </div>
             <div className="mb-4 flex items-center gap-2">
               <Checkbox id="checkbox">
                 <Checkbox.Indicator />

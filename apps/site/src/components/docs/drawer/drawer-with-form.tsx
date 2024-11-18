@@ -31,12 +31,8 @@ export function DrawerWithForm() {
             Write the message and then click button.
           </Typography>
           <div className="mt-6 space-y-4">
-            <Input>
-              <Input.Field id="email" type="email" placeholder="Email" />
-            </Input>
-            <Input>
-              <Input.Field placeholder="Subject" />
-            </Input>
+            <Input id="email" type="email" placeholder="Email" />
+            <Input placeholder="Subject" />
             <Textarea placeholder="Message" />
             <Button isFullWidth>Send message</Button>
           </div>

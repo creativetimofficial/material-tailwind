@@ -42,14 +42,14 @@ export function DatePickerDemo() {
   return (
     <Popover placement="bottom">
       <Popover.Trigger>
-        <Input className="w-72">
-          <Input.Field
+        <div className="w-72">
+          <Input
             readOnly
             onChange={() => null}
             placeholder="Select a date"
             value={date ? format(date, "PPP") : ""}
           />
-        </Input>
+        </div>
       </Popover.Trigger>
       <Popover.Content>
         <Popover.Arrow />

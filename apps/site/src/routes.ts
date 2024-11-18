@@ -98,7 +98,7 @@ export const routes = [
     title: "Components",
     categories: [
       {
-        category: "Inputs",
+        category: "Core Elements",
         pages: [
           {
             title: "Button",
@@ -109,28 +109,12 @@ export const routes = [
             path: `${routePrefix}/button-group`,
           },
           {
-            title: "Checkbox",
-            path: `${routePrefix}/checkbox`,
-          },
-          {
             title: "Icon Button",
             path: `${routePrefix}/icon-button`,
           },
           {
-            title: "Input",
-            path: `${routePrefix}/input`,
-          },
-          {
-            title: "Radio Button",
-            path: `${routePrefix}/radio`,
-          },
-          {
             title: "Rating Bar",
             path: `${routePrefix}/rating`,
-          },
-          {
-            title: "Select",
-            path: `${routePrefix}/select`,
           },
           {
             title: "Slider",
@@ -140,6 +124,28 @@ export const routes = [
             title: "Switch",
             path: `${routePrefix}/switch`,
           },
+        ],
+      },
+      {
+        category: "Forms",
+        pages: [
+          {
+            title: "Checkbox",
+            path: `${routePrefix}/checkbox`,
+          },
+          {
+            title: "Input",
+            path: `${routePrefix}/input`,
+          },
+          {
+            title: "Radio",
+            path: `${routePrefix}/radio`,
+          },
+          {
+            title: "Select",
+            path: `${routePrefix}/select`,
+          },
+          
           {
             title: "Textarea",
             path: `${routePrefix}/textarea`,
@@ -152,6 +158,10 @@ export const routes = [
           {
             title: "Accordion",
             path: `${routePrefix}/accordion`,
+          },
+          {
+            title: "Alert",
+            path: `${routePrefix}/alert`,
           },
           {
             title: "Avatar",
@@ -174,6 +184,14 @@ export const routes = [
             path: `${routePrefix}/collapse`,
           },
           {
+            title: "Dialog",
+            path: `${routePrefix}/dialog`,
+          },
+          {
+            title: "Dropdown",
+            path: `${routePrefix}/dropdown`,
+          },
+          {
             title: "Image",
             path: `${routePrefix}/image`,
           },
@@ -182,8 +200,24 @@ export const routes = [
             path: `${routePrefix}/list`,
           },
           {
+            title: "Modal",
+            path: `${routePrefix}/modal`,
+          },
+          {
             title: "Popover",
             path: `${routePrefix}/popover`,
+          },
+          {
+            title: "Progress Bar",
+            path: `${routePrefix}/progress`,
+          },
+          {
+            title: "Spinner",
+            path: `${routePrefix}/spinner`,
+          },
+          {
+            title: "Table",
+            path: `${routePrefix}/table`,
           },
           {
             title: "Timeline",
@@ -204,31 +238,6 @@ export const routes = [
         ],
       },
       {
-        category: "Feedback",
-        pages: [
-          {
-            title: "Alert",
-            path: `${routePrefix}/alert`,
-          },
-          {
-            title: "Dialog",
-            path: `${routePrefix}/dialog`,
-          },
-          {
-            title: "Modal",
-            path: `${routePrefix}/modal`,
-          },
-          {
-            title: "Spinner",
-            path: `${routePrefix}/spinner`,
-          },
-          {
-            title: "Progress Bar",
-            path: `${routePrefix}/progress`,
-          },
-        ],
-      },
-      {
         category: "Navigation",
         pages: [
           {
@@ -238,10 +247,6 @@ export const routes = [
           {
             title: "Drawer",
             path: `${routePrefix}/drawer`,
-          },
-          {
-            title: "Dropdown",
-            path: `${routePrefix}/dropdown`,
           },
           {
             title: "Menu",
@@ -284,47 +289,12 @@ export const routes = [
             title: "Sidebar",
             path: `${routePrefix}/sidebar`,
           },
-          {
-            title: "Table",
-            path: `${routePrefix}/table`,
-          },
+          
         ],
       },
     ],
   },
-  {
-    title: "Forms",
-    pages: [
-      {
-        title: "Checkbox",
-        path: `${routePrefix}/checkbox`,
-      },
-      {
-        title: "Input",
-        path: `${routePrefix}/input`,
-      },
-      {
-        title: "Radio Button",
-        path: `${routePrefix}/radio`,
-      },
-      {
-        title: "Select",
-        path: `${routePrefix}/select`,
-      },
-      {
-        title: "Slider",
-        path: `${routePrefix}/slider`,
-      },
-      {
-        title: "Switch",
-        path: `${routePrefix}/switch`,
-      },
-      {
-        title: "Textarea",
-        path: `${routePrefix}/textarea`,
-      },
-    ],
-  },
+  
   {
     title: "Plugins",
     pages: [
@@ -345,7 +315,7 @@ export const routes = [
         path: `${routePrefix}/plugins/date-picker`,
       },
       {
-        title: "Forms",
+        title: "React Hook Form",
         path: `${routePrefix}/plugins/forms`,
       },
       {

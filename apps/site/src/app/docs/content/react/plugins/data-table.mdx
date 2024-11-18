@@ -32,8 +32,6 @@ npm install @tanstack/react-table @tanstack/match-sorter-utils @faker-js/faker t
 ```tsx
 "use client";
 
-"use client";
-
 import * as React from "react";
 import {
   FilterFn,
@@ -110,7 +108,7 @@ function newPerson(): Person {
   };
 }
 
-export function makeData(...lens: number[]) {
+function makeData(...lens: number[]) {
   const makeDataLevel = (depth = 0): Person[] => {
     const len = lens[depth]!;
 
@@ -346,17 +344,18 @@ function DebouncedInput({
   }, [value]);
 
   return (
-    <Input className="w-60">
-      <Input.Icon>
-        <Search className="h-full w-full" />
-      </Input.Icon>
-      <Input.Field
+    <div className="w-60">
+      <Input
         {...props}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search"
-      />
-    </Input>
+      >
+        <Input.Icon>
+          <Search className="h-full w-full" />
+        </Input.Icon>
+      </Input>
+    </div>
   );
 }
 ```

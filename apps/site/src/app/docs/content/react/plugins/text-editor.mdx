@@ -247,30 +247,28 @@ function FloatingLinkEditor({ editor }) {
       className="absolute -left-[10000px] -top-[10000px] z-[100] -mt-1.5 w-full max-w-xs rounded-[10px] p-1 opacity-0 transition-opacity duration-300"
     >
       {isEditMode ? (
-        <Input className="w-full">
-          <Input.Field
-            ref={inputRef}
-            value={linkUrl}
-            placeholder="Enter URL"
-            onChange={(event) => {
-              setLinkUrl(event.target.value);
-            }}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                if (lastSelection !== null) {
-                  if (linkUrl !== "") {
-                    editor.dispatchCommand(TOGGLE_LINK_COMMAND, linkUrl);
-                  }
-                  setEditMode(false);
+        <Input
+          ref={inputRef}
+          value={linkUrl}
+          placeholder="Enter URL"
+          onChange={(event) => {
+            setLinkUrl(event.target.value);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              if (lastSelection !== null) {
+                if (linkUrl !== "") {
+                  editor.dispatchCommand(TOGGLE_LINK_COMMAND, linkUrl);
                 }
-              } else if (event.key === "Escape") {
-                event.preventDefault();
                 setEditMode(false);
               }
-            }}
-          />
-        </Input>
+            } else if (event.key === "Escape") {
+              event.preventDefault();
+              setEditMode(false);
+            }
+          }}
+        />
       ) : (
         <>
           <Card className="relative box-border flex w-full items-center justify-between rounded-none border-0 pl-2.5 shadow-none">
@@ -513,7 +511,7 @@ export function TextEditorDemo() {
     <LexicalComposer initialConfig={editorConfig}>
       <Card
         variant="outline"
-        className="relative mx-auto my-5 w-full max-w-xl overflow-hidden text-left  leading-5"
+        className="relative mx-auto my-5 w-full max-w-xl overflow-hidden text-left leading-5"
       >
         <ToolbarPlugin />
         <div className="relative rounded-b-lg border-t border-surface">

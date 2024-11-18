@@ -312,16 +312,17 @@ function DebouncedInput({
   }, [value]);
 
   return (
-    <Input className="w-60">
-      <Input.Icon>
-        <Search className="h-full w-full" />
-      </Input.Icon>
-      <Input.Field
+    <div className="w-60">
+      <Input
         {...props}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search"
-      />
-    </Input>
+      >
+        <Input.Icon>
+          <Search className="h-full w-full" />
+        </Input.Icon>
+      </Input>
+    </div>
   );
 }
