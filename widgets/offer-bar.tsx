@@ -53,17 +53,12 @@ export function OfferBar() {
           variant="ghost"
           className="w-full justify-center rounded-none bg-blue-gray-50"
         >
-          <div className="flex flex-wrap items-center justify-center !text-blue-gray-900">
-            🔥 The Wait Is Over! Pre-Order the Latest <span className="font-bold mx-1">Material Tailwind V3 PRO</span> Now&nbsp;
-            <Link href="/v3/preorder" className="font-bold flex items-center ml-1">
-              Check out
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 ml-1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-              </svg>
-
+          <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center !tw-text-blue-gray-900">
+            <Link href="/v3/pro">
+              🔥 The Wait Is Over! Order Now <span className="tw-font-bold mx-1">Material Tailwind v3 PRO</span>
             </Link>
             <button
-              className="font-bold ml-10 mb-0 !text-grey-900"
+              className="tw-font-bold tw-ml-10 tw-mb-0 !tw-text-grey-900"
               onClick={() => handleClose()}
             >
               <Icon />
