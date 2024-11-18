@@ -142,7 +142,7 @@ export function Navbar() {
   const pathParts = pathname.split("/");
 
   const isProd = process.env.NODE_ENV === "production";
-const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
+  const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
 
   const { data } = useSWR(
     "https://api.github.com/repos/creativetimofficial/material-tailwind",
@@ -383,7 +383,7 @@ const routePrefix = isProd ? "/docs/v3/react" : "/docs/react";
 
                 <Tabs.Trigger
                   as={Link}
-                  href={`${routePrefix}/algolia-search`}
+                  href={`${routePrefix}/plugins/algolia-search`}
                   className="w-max px-0 py-3 font-medium text-foreground data-[active=true]:text-black dark:text-foreground dark:data-[active=true]:text-white"
                   value="Plugins"
                 >
