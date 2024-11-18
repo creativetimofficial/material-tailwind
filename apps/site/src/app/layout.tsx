@@ -4,6 +4,7 @@ import * as React from "react";
 import { Docs } from "@components";
 import Providers from "./providers";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
