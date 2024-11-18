@@ -1,5 +1,4 @@
 {
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install",
-  "outputDirectory": "apps/site"
+  "buildCommand": "turbo run build",
+  "installCommand": "pnpm install"
 }
