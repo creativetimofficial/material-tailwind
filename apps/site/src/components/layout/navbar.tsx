@@ -470,7 +470,7 @@ export function Navbar() {
               </Tabs.List>
             </Tabs>
 
-            <div className="pb-2">
+            <div className="pb-2 hidden">
               <Tabs defaultValue="react">
                 <Tabs.List className="p-0.5">
                   <Tabs.Trigger value="react">
