@@ -84,16 +84,19 @@ const MenuItem = React.forwardRef<
   {
     title: string;
     description: string;
+    link: string;
   } & MenuItemProps
->(({ title, description, ...rest }, ref) => {
+>(({ title, description, link, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">
-      <Typography color="default" className="font-semibold">
-        {title}
-      </Typography>
-      <Typography type="small" className="text-foreground">
-        {description}
-      </Typography>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <Typography color="default" className="font-semibold">
+          {title}
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          {description}
+        </Typography>
+      </a>
     </Menu.Item>
   );
 });
