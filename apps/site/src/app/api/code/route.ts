@@ -14,8 +14,10 @@ export async function GET(req: NextRequest) {
 
   try {
     const absolutePath = path.join(process.cwd(), filePath);
+    
+    console.log('absolutePath', absolutePath);
+
     const content = await fs.readFile(absolutePath, 'utf8');
-    console.log(absolutePath);
     return new NextResponse(content, { status: 200 });
   } catch (error) {
     console.error('Error reading file:', error);
