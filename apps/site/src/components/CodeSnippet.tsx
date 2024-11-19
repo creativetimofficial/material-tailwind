@@ -3,39 +3,35 @@
 import React, { useState, useEffect } from 'react';
 
 interface CodeSnippetProps {
-  codePath: string;
+  codeContent: string;
   language: string;
 }
 
-const CodeSnippet: React.FC<CodeSnippetProps> = ({ codePath, language }) => {
-  const [code, setCode] = useState('');
 
-  console.log('codePath', codePath);
+function getHtmlCodeContent(codeContent: string) {
+  const regex = /__html:\s*`([\s\S]*?)`/;
+  const match = codeContent.match(regex);
 
-  useEffect(() => {
-    const fetchCode = async () => {
-      try {
-        const res = await fetch(`/api/code?filePath=${codePath}`);
-        if (!res.ok) {
-          throw new Error('Failed to fetch code');
-        }
-        const data = await res.text();
-        setCode(data);
-      } catch (error) {
-        console.error('Error fetching code:', error);
-        setCode('Error loading code');
-      }
-    };
+  if (match && match[1]) {
+    const htmlContent = match[1];
+    return htmlContent;
+  } else {
+    console.log('No HTML content found');
+    return '';
+  }
+}
 
-    fetchCode();
-
-    console.log('useEffect triggered');
-    return;
-  }, [codePath]);
+function CodeSnippet({ codeContent, language }: CodeSnippetProps) {
 
   return (
     <pre className={`language-${language} p-4 bg-gray-100 rounded`}>
-      <code>{code}</code>
+      {
+        language === 'html' ? (
+          <code>{getHtmlCodeContent(codeContent)}</code> 
+        ) : (
+          <code>{codeContent}</code>
+        )
+      }
     </pre>
   );
 };

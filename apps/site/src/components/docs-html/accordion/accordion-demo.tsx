@@ -1,5 +1,5 @@
 // components/AccordionDemo.tsx
-const AccordionDemo = () => {
+function AccordionDemo () {
   return (
     <div
       dangerouslySetInnerHTML={{

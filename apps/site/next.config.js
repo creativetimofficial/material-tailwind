@@ -16,7 +16,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: ["next-mdx-remote"],
-  assetPrefix: "https://material-tailwind-git-feat-html-components-ct-tailwind-team.vercel.app" || process.env.NEXT_PUBLIC_SITE_URL,
+  assetPrefix:  process.env.NEXT_PUBLIC_SITE_URL,
   async redirects() {
     return [
       {
@@ -88,11 +88,24 @@ const nextConfig = {
   },
   webpack: {
     configure: (webpackConfig) => {
+      // webpackConfig.module.rules.push({
+      //   test: /\.(ts|tsx|html|mdx|md|js|jsx)$/,
+      //   loader: 'raw-loader',
+      //   options: { transpileOnly: true },
+      // });
+
       webpackConfig.module.rules.push({
-        test: /\.(ts|tsx|html|mdx|md|js|jsx)$/,
-        loader: 'raw-loader',
-        options: { transpileOnly: true },
+        test: /\.html$/,
+        use: 'raw-loader',
       });
+  
+      // For .tsx files imported with ?raw
+      webpackConfig.module.rules.push({
+        test: /\.tsx$/,
+        resourceQuery: /raw/, // applies only when '?raw' is present
+        use: 'raw-loader',
+      });
+  
       return webpackConfig;
     },
   },
