@@ -16,7 +16,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: ["next-mdx-remote"],
-  assetPrefix: process.env.NEXT_PUBLIC_SITE_URL,
+  assetPrefix: "https://material-tailwind-git-feat-html-components-ct-tailwind-team.vercel.app" || process.env.NEXT_PUBLIC_SITE_URL,
   async redirects() {
     return [
       {
