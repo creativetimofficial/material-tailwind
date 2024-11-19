@@ -86,12 +86,15 @@ const nextConfig = {
       },
     ];
   },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(js|jsx|ts|tsx|html)$/,
-      use: 'raw-loader',
-    });
-    return config;
+  webpack: {
+    configure: (webpackConfig) => {
+      webpackConfig.module.rules.push({
+        test: /\.(ts|tsx|html|mdx|md|js|jsx)$/,
+        loader: 'raw-loader',
+        options: { transpileOnly: true },
+      });
+      return webpackConfig;
+    },
   },
 };
 
