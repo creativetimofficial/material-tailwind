@@ -13,12 +13,24 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({ codePath, language }) => {
   console.log('codePath', codePath);
 
   useEffect(() => {
-    fetch(`/api/code?filePath=${codePath}`)
-      .then((res) => res.text())
-      .then((data) => setCode(data));
+    const fetchCode = async () => {
+      try {
+        const res = await fetch(`/api/code?filePath=${codePath}`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch code');
+        }
+        const data = await res.text();
+        setCode(data);
+      } catch (error) {
+        console.error('Error fetching code:', error);
+        setCode('Error loading code');
+      }
+    };
 
-      console.log('useeffect');
-      return;
+    fetchCode();
+
+    console.log('useEffect triggered');
+    return;
   }, [codePath]);
 
   return (
