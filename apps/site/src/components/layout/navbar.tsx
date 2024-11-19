@@ -207,7 +207,7 @@ export function Navbar() {
             </button>
           </div>
         )}
-      <nav className="sticky top-0 z-[99] w-full border-b border-surface bg-background">
+      <nav className="sticky top-0 z-10 w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
@@ -268,18 +268,51 @@ export function Navbar() {
               <Link href="/v3/blocks">
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
+              
+              {/* <Link href="/figma">
+                <NavItem icon={Figma}>Figma</NavItem>
+              </Link>
+              <Link href="/roots-of-ui-ux-design">
+                <NavItem icon={Book}>Book</NavItem>
+              </Link>
+              <Link href="/blog">
+                <NavItem icon={Post}>Blog</NavItem>
+              </Link> */}
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:hidden">
+                <Search className="h-5 w-5 stroke-[1.5]" />
+                <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
+                  <DocSearch
+                    appId={APP_ID!}
+                    apiKey={API_KEY!}
+                    indexName={INDEX_NAME!}
+                  />
+                </div>
+              </div>
+              <Link
+                target="_blank"
+                href="https://github.com/creativetimofficial/material-tailwind"
+              >
+                <NavItem icon={Github} hoverIcon={BrightStar}>
+                  {new Intl.NumberFormat("en-US", {
+                    notation: "compact",
+                    compactDisplay: "short",
+                  }).format(Number(data ? data.stargazers_count : 0))}
+                </NavItem>
+              </Link>
               <div className="hidden lg:block">
-                <List className="mt-4 flex flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
+                <List className="mt-4 min-w-0 relative z-10 flex flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
                   <Tooltip placement="bottom" interactive>
                     <Tooltip.Trigger>
                       <List.Item>
                         <NavItem icon={Community}>Partners</NavItem>
-                        <List.ItemEnd className="ps-0.5">
+                        <List.ItemEnd className="ps-0">
                           <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
                         </List.ItemEnd>
                       </List.Item>
                     </Tooltip.Trigger>
-                    <Tooltip.Content className="grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
+                    <Tooltip.Content className="grid z-10 max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
                       <Card
                         color="primary"
                         className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
@@ -314,38 +347,7 @@ export function Navbar() {
                   
                 </List>
               </div>
-              {/* <Link href="/figma">
-                <NavItem icon={Figma}>Figma</NavItem>
-              </Link>
-              <Link href="/roots-of-ui-ux-design">
-                <NavItem icon={Book}>Book</NavItem>
-              </Link>
-              <Link href="/blog">
-                <NavItem icon={Post}>Blog</NavItem>
-              </Link> */}
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="group relative grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-md text-black transition-all duration-300 hover:bg-surface-light dark:text-white dark:hover:bg-surface lg:hidden">
-                <Search className="h-5 w-5 stroke-[1.5]" />
-                <div className="absolute inset-0 m-0 w-8 overflow-hidden opacity-0 [&_>_button]:m-0 [&_>_button]:w-8 [&_>_button]:p-0">
-                  <DocSearch
-                    appId={APP_ID!}
-                    apiKey={API_KEY!}
-                    indexName={INDEX_NAME!}
-                  />
-                </div>
-              </div>
-              <Link
-                target="_blank"
-                href="https://github.com/creativetimofficial/material-tailwind"
-              >
-                <NavItem icon={Github} hoverIcon={BrightStar}>
-                  {new Intl.NumberFormat("en-US", {
-                    notation: "compact",
-                    compactDisplay: "short",
-                  }).format(Number(data ? data.stargazers_count : 0))}
-                </NavItem>
-              </Link>
+
               <Button
                 as={Link}
                 size="sm"
