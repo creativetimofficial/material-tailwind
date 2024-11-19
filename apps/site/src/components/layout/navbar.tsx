@@ -330,13 +330,12 @@ export function Navbar() {
                       <ul className="col-span-3 !m-0">
                         <MenuItem
                           title="Updivision"
-                          description="We take ideas and turn them into software products users love. We solve real-life 
-                          challenges through design thinking and game-changing software."
+                          description="Custom Development: Our partners take ideas and turn them into software that users love." 
                           link="https://updivision.com"
                         />
                         <MenuItem
-                          title="PubNub Apps"
-                          description="Full-featured chat building blocks. Create a world-class chat app in minutes 
+                          title="PubNub"
+                          description="Real-Time Developer Platform: Create a world-class chat app in minutes 
                           with full-featured, customizable UI components."
                           link="https://www.material-tailwind.com/partners/pubnub"
                         />
