@@ -36,6 +36,7 @@
     "next-mdx-remote": "5.0.0",
     "next-nprogress-bar": "2.3.13",
     "next-themes": "0.2.1",
+    "raw-loader": "4.0.2",
     "react": "18.2.0",
     "react-apexcharts": "1.4.1",
     "react-day-picker": "8.10.0",

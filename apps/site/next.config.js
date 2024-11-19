@@ -86,6 +86,16 @@ const nextConfig = {
       },
     ];
   },
+  webpack: {
+    configure: (webpackConfig) => {
+      webpackConfig.module.rules.push({
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader',
+        options: { transpileOnly: true },
+      });
+      return webpackConfig;
+    },
+  },
 };
 
 module.exports = nextConfig;

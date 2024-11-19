@@ -3,7 +3,7 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  ComponentPreview,
+  // ComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -105,6 +105,10 @@ import * as HTMLRadio from "@components/docs-html/radio";
 import * as HTMLSwitch from "@components/docs-html/switch";
 import * as HTMLBadge from "@components/docs-html/badge";
 import * as HTMLAccordion from "@components/docs-html/accordion";
+
+
+import CodeSnippet from '@components/CodeSnippet';
+import ComponentPreview from '@components/ComponentPreview';
 
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
@@ -363,6 +367,7 @@ export default async function Docs({ params: { slug } }) {
           HTMLSwitch,
           HTMLBadge,
           HTMLAccordion,
+          CodeSnippet,
         }}
       />
     </Content>

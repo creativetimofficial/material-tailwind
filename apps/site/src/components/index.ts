@@ -15,4 +15,4 @@ export * from "./code-preview";
 export * from "./theme-toggle";
 export * from "./color-palette";
 export * from "./framework-card";
-export * from "./component-preview";
+export * from "./ComponentPreview";
