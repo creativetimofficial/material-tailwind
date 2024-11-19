@@ -12,8 +12,12 @@ import {
   Typography,
   Drawer,
   Card,
+  Menu,
   Tabs,
   Breadcrumb,
+  Tooltip,
+  List,
+  type MenuItemProps,
 } from "@material-tailwind/react";
 import { DocSearch } from "@docsearch/react";
 import {
@@ -38,6 +42,9 @@ import {
   SelectFace3d,
   DollarCircle,
   MultiplePages,
+  NavArrowDown, 
+  Rocket,
+  Community,
   Menu as MenuIcon,
   NavArrowRight,
 } from "iconoir-react";
@@ -71,6 +78,29 @@ function NavIconComponent({ icon: Icon, ...rest }: NavIconProps, ref: any) {
     </span>
   );
 }
+
+const MenuItem = React.forwardRef<
+  typeof Menu.Item,
+  {
+    title: string;
+    description: string;
+    link: string;
+  } & MenuItemProps
+>(({ title, description, link, ...rest }, ref) => {
+  return (
+    <Menu.Item ref={ref} {...rest} className="flex-col items-start">
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <Typography color="default" className="font-semibold">
+          {title}
+        </Typography>
+        <Typography type="small" className="text-foreground">
+          {description}
+        </Typography>
+      </a>
+    </Menu.Item>
+  );
+});
+
 
 function getCookie(name: string) {
   if (typeof window === "undefined") return null;
@@ -177,7 +207,7 @@ export function Navbar() {
             </button>
           </div>
         )}
-      <nav className="sticky top-0 z-[99] w-full border-b border-surface bg-background">
+      <nav className="sticky top-0 z-10 w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
@@ -238,6 +268,7 @@ export function Navbar() {
               <Link href="/v3/blocks">
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
+              
               {/* <Link href="/figma">
                 <NavItem icon={Figma}>Figma</NavItem>
               </Link>
@@ -270,6 +301,53 @@ export function Navbar() {
                   }).format(Number(data ? data.stargazers_count : 0))}
                 </NavItem>
               </Link>
+              <div className="hidden lg:block">
+                <List className="mt-4 min-w-0 relative z-10 flex flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
+                  <Tooltip placement="bottom" interactive>
+                    <Tooltip.Trigger>
+                      <List.Item>
+                        <NavItem icon={Community}>Partners</NavItem>
+                        <List.ItemEnd className="ps-0">
+                          <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
+                        </List.ItemEnd>
+                      </List.Item>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content className="grid z-10 max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
+                      <Card
+                        color="primary"
+                        className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
+                      >
+                        <div>
+                          <Rocket className="mx-auto h-12 w-12" />
+                          <Typography
+                            type="h6"
+                            className="mt-5 text-center leading-snug"
+                          >
+                            Partners
+                          </Typography>
+                        </div>
+                      </Card>
+                      <ul className="col-span-3 !m-0">
+                        <MenuItem
+                          title="Updivision"
+                          description="We take ideas and turn them into software products users love. We solve real-life 
+                          challenges through design thinking and game-changing software."
+                          link="https://updivision.com"
+                        />
+                        <MenuItem
+                          title="PubNub Apps"
+                          description="Full-featured chat building blocks. Create a world-class chat app in minutes 
+                          with full-featured, customizable UI components."
+                          link="https://www.material-tailwind.com/partners/pubnub"
+                        />
+                      </ul>
+                      <Tooltip.Arrow />
+                    </Tooltip.Content>
+                  </Tooltip>
+                  
+                </List>
+              </div>
+
               <Button
                 as={Link}
                 size="sm"

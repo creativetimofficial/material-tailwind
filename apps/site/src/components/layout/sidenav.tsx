@@ -151,7 +151,7 @@ export function Sidenav() {
 
   return (
     <ThemeProvider>
-      <div className="sticky -left-64 bottom-0 top-[105px] z-20 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-8 lg:left-0 lg:block">
+      <div className="sticky -left-64 bottom-0 top-[105px] z-1 hidden h-[calc(100vh-4px)] w-60 shrink-0 overflow-y-auto bg-background pb-24 pt-8 lg:left-0 lg:block">
         <div className="fixed top-[104px] z-50 h-14 w-60 bg-gradient-to-b from-background to-transparent" />
         <ul className="pr-2">{getRoutes()}</ul>
         <div className="sticky -bottom-24 h-14 w-60 bg-gradient-to-t from-background to-transparent" />
