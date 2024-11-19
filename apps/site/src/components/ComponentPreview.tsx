@@ -11,6 +11,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({ componentPath }) =>
   const Component = React.lazy(() => import(`${componentPath}`));
 
   console.log('componentPath', componentPath);
+  console.log('Component', Component);
   return (
     <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
       <Component />
