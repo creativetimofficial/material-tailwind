@@ -16,7 +16,10 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({ codePath, language }) => {
     fetch(`/api/code?filePath=${codePath}`)
       .then((res) => res.text())
       .then((data) => setCode(data));
-  });
+
+      console.log('useeffect');
+      return;
+  }, [codePath]);
 
   return (
     <pre className={`language-${language} p-4 bg-gray-100 rounded`}>
