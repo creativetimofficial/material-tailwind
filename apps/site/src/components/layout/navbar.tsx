@@ -268,54 +268,6 @@ export function Navbar() {
               <Link href="/v3/blocks">
                 <NavItem icon={SelectFace3d}>Blocks</NavItem>
               </Link>
-              <Tooltip placement="bottom" interactive>
-                <Tooltip.Trigger>
-                  <Link href="/v3/blocks">
-                    <NavItem
-                      icon={Community}
-                      className="group-data-[open=true]:bg-surface-light dark:group-data-[open=true]:bg-surface"
-                    >
-                      Partners
-                      <NavArrowDown className="h-3.5 w-3.5 stroke-2 transition-transform duration-200 group-hover:rotate-180 group-data-[open=true]:rotate-180" />
-                    </NavItem>
-                  </Link>
-                </Tooltip.Trigger>
-                <Tooltip.Content className="z-50 grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
-                  <Card
-                    color="primary"
-                    className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
-                  >
-                    <div>
-                      <Rocket className="mx-auto h-12 w-12" />
-                      <Typography
-                        type="h6"
-                        className="mt-5 text-center leading-snug"
-                      >
-                        Material Tailwind PRO
-                      </Typography>
-                    </div>
-                  </Card>
-                  <ul className="col-span-3 !m-0">
-                    <MenuItem
-                      link="/"
-                      title="@material-tailwind/html"
-                      description="Learn how to use @material-tailwind/html, packed with rich components and widgets."
-                    />
-                    <MenuItem
-                      link="/"
-                      title="@material-tailwind/react"
-                      description="Learn how to use @material-tailwind/react, packed with rich components for React."
-                    />
-                    <MenuItem
-                      link="/"
-                      title="Material Tailwind PRO"
-                      description="A complete set of UI Elements for building faster websites in less time."
-                    />
-                  </ul>
-                  <Tooltip.Arrow />
-                </Tooltip.Content>
-              </Tooltip>
-
               {/* <Link href="/figma">
                 <NavItem icon={Figma}>Figma</NavItem>
               </Link>
@@ -352,14 +304,17 @@ export function Navbar() {
                 <List className="relative z-10 mt-4 flex min-w-0 flex-col gap-1 lg:mt-0 lg:flex-row lg:items-center">
                   <Tooltip placement="bottom" interactive>
                     <Tooltip.Trigger>
-                      <List.Item>
-                        <NavItem icon={Community}>Partners</NavItem>
-                        <List.ItemEnd className="ps-0">
-                          <NavArrowDown className="h-3.5 w-3.5 group-data-[open=true]:rotate-180" />
-                        </List.ItemEnd>
-                      </List.Item>
+                      <Link href="/v3/blocks">
+                        <NavItem
+                          icon={Community}
+                          className="group-data-[open=true]:bg-surface-light dark:group-data-[open=true]:bg-surface"
+                        >
+                          Partners
+                          <NavArrowDown className="h-3.5 w-3.5 stroke-2 transition-transform duration-200 group-hover:rotate-180 group-data-[open=true]:rotate-180" />
+                        </NavItem>
+                      </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content className="z-10 grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
+                    <Tooltip.Content className="z-50 grid max-w-lg grid-cols-5 gap-1 rounded-lg border border-surface bg-background p-1 shadow-xl shadow-surface/5 dark:border-surface dark:bg-background">
                       <Card
                         color="primary"
                         className="col-span-2 grid place-items-center rounded-[5px] px-8 py-4 text-primary-foreground shadow-none"
