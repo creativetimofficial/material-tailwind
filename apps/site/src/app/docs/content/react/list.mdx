@@ -23,6 +23,8 @@ Here's how to implement a simple `List` component. It can be used to display a l
 
 <ComponentPreview demo={<List.ListDemo />}>
 ```tsx
+"use client";
+
 import { List } from "@material-tailwind/react";
 
 export function ListDemo() {
@@ -47,6 +49,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<List.ListWithIcon />}>
 ```tsx
+"use client";
+
 import { List } from "@material-tailwind/react";
 import { Bin, Mail, Settings } from "iconoir-react";
 
@@ -85,6 +89,8 @@ You can add avatars to your `List` items using the `Avatar` and `List.ItemStart`
 
 <ComponentPreview demo={<List.ListWithAvatar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { List, Avatar, Typography } from "@material-tailwind/react";
 
@@ -145,6 +151,8 @@ You can add badges to your `List` items using the `Chip` and `List.ItemStart` co
 
 <ComponentPreview demo={<List.ListWithBadge />}>
 ```tsx
+"use client";
+
 import { List, Chip } from "@material-tailwind/react";
 import { Mail, Settings, Bin } from "iconoir-react";
 
@@ -193,6 +201,8 @@ You can add a selected state to your `List` items using the `selected` prop. In 
 
 <ComponentPreview demo={<List.ListWithSelectedItem />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { List } from "@material-tailwind/react";
 
@@ -233,6 +243,8 @@ You can add a disabled state to your `List` items using the `disabled` prop. Thi
 
 <ComponentPreview demo={<List.ListWithDisabledItem />}>
 ```tsx
+"use client";
+
 import { List } from "@material-tailwind/react";
 
 export function ListWithDisabledItem() {
@@ -255,18 +267,20 @@ You can use the `List.Item` component as a link by using the `as` prop. This way
 
 <ComponentPreview demo={<List.ListWithLink />}>
 ```tsx
+"use client";
+
 import { List } from "@material-tailwind/react";
 
 export function ListWithLink() {
   return (
     <List>
-      <List.Item as="a" href="#">
+      <List.Item as="a" href="#list-with-link">
         Inbox
       </List.Item>
-      <List.Item as="a" href="#">
+      <List.Item as="a" href="#list-with-link">
         Trash
       </List.Item>
-      <List.Item as="a" href="#">
+      <List.Item as="a" href="#list-with-link">
         Settings
       </List.Item>
     </List>
@@ -274,7 +288,6 @@ export function ListWithLink() {
 }
 ```
 </ComponentPreview>
-
 
 ---
 
@@ -284,6 +297,8 @@ You can customize the `List` component using the `className` prop. This way you 
 
 <ComponentPreview demo={<List.ListCustomStyles />}>
 ```tsx
+"use client";
+
 import { List, Chip } from "@material-tailwind/react";
 import { Mail, Settings, Bin } from "iconoir-react";
 

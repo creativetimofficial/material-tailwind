@@ -20,7 +20,9 @@ Here's how to implement a very simple and responsive table component. It can be 
 
 <ComponentPreview demo={<Table.TableDemo />}>
 ```tsx
-import { Card, Typography } from "@material-tailwind/react";
+"use client";
+
+import { Typography } from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
 
@@ -101,6 +103,8 @@ Use this table example to create a table with striped rows. This will help you t
 
 <ComponentPreview demo={<Table.TableWithStripedRow />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
@@ -185,6 +189,8 @@ Use this table example to create a table with striped columns. This will help yo
 
 <ComponentPreview demo={<Table.TableWithStripedColumn />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 const TABLE_HEAD = ["Name", "Job", "Employed", ""];
@@ -277,6 +283,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Table.TransactionsTable />}>
 ```tsx
+"use client";
+
 import { Download, Search, EditPencil } from "iconoir-react";
 import {
   Typography,
@@ -530,6 +538,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Table.MembersTable />}>
 ```tsx
+"use client";
+
 import { EditPencil, UserPlus, Search } from "iconoir-react";
 import {
   Input,
@@ -749,6 +759,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Table.SortableTable />}>
 ```tsx
+"use client";
+
 import {
   EditPencil,
   UserPlus,

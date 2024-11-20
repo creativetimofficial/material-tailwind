@@ -22,6 +22,8 @@ Here's how to implement a simple and responsive `Alert` component. It can be use
 
 <ComponentPreview demo={<Alert.AlertDemo />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 
 export function AlertDemo() {
@@ -44,22 +46,32 @@ In the example below, we've showcased the different alert variants that you can 
 
 <ComponentPreview demo={<Alert.AlertVariants />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 
 export function AlertVariants() {
   return (
     <div className="w-full space-y-2">
       <Alert variant="ghost">
-        <Alert.Content>A simple alert for showing message, with variant="ghost"</Alert.Content>
+        <Alert.Content>
+          A simple alert for showing message, with variant="ghost"
+        </Alert.Content>
       </Alert>
       <Alert variant="outline">
-        <Alert.Content>A simple alert for showing message. with variant="outline"</Alert.Content>
+        <Alert.Content>
+          A simple alert for showing message. with variant="outline"
+        </Alert.Content>
       </Alert>
       <Alert variant="solid">
-        <Alert.Content>A simple alert for showing message. with variant="solid"</Alert.Content>
+        <Alert.Content>
+          A simple alert for showing message. with variant="solid"
+        </Alert.Content>
       </Alert>
       <Alert variant="gradient">
-        <Alert.Content>A simple alert for showing message. with variant="gradient"</Alert.Content>
+        <Alert.Content>
+          A simple alert for showing message. with variant="gradient"
+        </Alert.Content>
       </Alert>
     </div>
   );
@@ -77,6 +89,8 @@ In the example below, we've showcased the different alert colors that you can us
 
 <ComponentPreview demo={<Alert.AlertColors />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 
 export function AlertColors() {
@@ -128,6 +142,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertIcon />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
@@ -154,6 +170,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertWithList />}>
 ```tsx
+"use client";
+
 import { Alert, Typography } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
@@ -255,6 +273,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertDismissible />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 import { WarningCircle } from "iconoir-react";
 
@@ -282,6 +302,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertCustomCloseIcon />}>
 ```tsx
+"use client";
+
 import { Alert, Button } from "@material-tailwind/react";
 import { WarningCircleSolid } from "iconoir-react";
 
@@ -313,6 +335,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertWithContent />}>
 ```tsx
+"use client";
+
 import { Alert, Typography } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
@@ -323,9 +347,7 @@ export function AlertWithContent() {
         <CheckCircleSolid className="h-5 w-5" />
       </Alert.Icon>
       <Alert.Content className="mt-0.5">
-        <Typography className="mb-1 font-bold">
-          Success
-        </Typography>
+        <Typography className="mb-1 font-bold">Success</Typography>
         <Typography>
           I don't know what that word means. I'm happy. But success, that goes
           back to what in somebody's eyes success means. For me, success is
@@ -350,6 +372,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Alert.AlertCustomStyles />}>
 ```tsx
+"use client";
+
 import { Alert } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 

@@ -14,7 +14,6 @@ A dropdown displays a list of choices on temporary surfaces. It appears when use
 
 See below our `Dropdown` component examples that you can use in your Tailwind CSS and React project. The example comes in different colors and styles, so you can adapt them easily to your needs.
 
-
 ---
 
 ## Dropdown Demo
@@ -23,6 +22,8 @@ Here's how to implement a simple and responsive `Dropdown` component. It can be 
 
 <ComponentPreview demo={<Menu.MenuDemo />}>
 ```tsx
+"use client";
+
 import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuDemo() {
@@ -48,6 +49,8 @@ Use this example to create a nested dropdown with a trigger that opens a submenu
 
 <ComponentPreview demo={<Menu.NestedMenu />}>
 ```tsx
+"use client";
+
 import { Menu, Button } from "@material-tailwind/react";
 import { NavArrowRight } from "iconoir-react";
 
@@ -86,12 +89,14 @@ Use this example to create a dropdown with different placements. You can choose 
 
 <ComponentPreview demo={<Menu.MenuPlacement />}>
 ```tsx
+"use client";
+
 import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuPlacement() {
   return (
     <>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="top">
           <Menu.Trigger as={Button}>Top</Menu.Trigger>
           <Menu.Content>
@@ -117,7 +122,7 @@ export function MenuPlacement() {
           </Menu.Content>
         </Menu>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="right">
           <Menu.Trigger as={Button}>Right</Menu.Trigger>
           <Menu.Content>
@@ -143,7 +148,7 @@ export function MenuPlacement() {
           </Menu.Content>
         </Menu>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Menu placement="bottom">
           <Menu.Trigger as={Button}>Bottom</Menu.Trigger>
           <Menu.Content>
@@ -209,6 +214,8 @@ Use this example to create a navigation dropdown menu with a trigger that opens 
 
 <ComponentPreview demo={<Menu.NavMenu />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { Menu, Button, Card, Typography } from "@material-tailwind/react";
 import { NavArrowDown, Rocket } from "iconoir-react";
@@ -251,10 +258,7 @@ export function NavMenu() {
         >
           <div>
             <Rocket className="mx-auto h-12 w-12" />
-            <Typography
-              type="h6"
-              className="mt-5 text-center leading-snug"
-            >
+            <Typography type="h6" className="mt-5 text-center leading-snug">
               Material Tailwind PRO
             </Typography>
           </div>
@@ -288,6 +292,8 @@ Use this example to create a dropdown with a divider that separates the dropdown
 
 <ComponentPreview demo={<Menu.MenuWithDivider />}>
 ```tsx
+"use client";
+
 import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuWithDivider() {
@@ -317,6 +323,8 @@ Use this example to create a dropdown with checkboxes that allow users to select
 
 <ComponentPreview demo={<Menu.MenuWithCheckbox />}>
 ```tsx
+"use client";
+
 import { Menu, Button, Checkbox } from "@material-tailwind/react";
 
 export function MenuWithCheckbox() {
@@ -372,6 +380,8 @@ Use this example to create a dropdown with a search input that allows users to s
 
 <ComponentPreview demo={<Menu.MenuWithSearch />}>
 ```tsx
+"use client";
+
 import { Menu, Button, Input } from "@material-tailwind/react";
 
 export function MenuWithSearch() {
@@ -398,6 +408,8 @@ Use this example to create a dropdown with scrolling content that allows users t
 
 <ComponentPreview demo={<Menu.MenuWithScrollingContent />}>
 ```tsx
+"use client";
+
 import { Menu, Button } from "@material-tailwind/react";
 
 export function MenuWithScrollingContent() {
@@ -440,14 +452,10 @@ Use this example to create a notification dropdown menu with a trigger that open
 
 <ComponentPreview demo={<Menu.NotificationMenu />}>
 ```tsx
+"use client";
+
 import * as React from "react";
-import {
-  Menu,
-  IconButton,
-  Typography,
-  Avatar,
-  type MenuItemProps,
-} from "@material-tailwind/react";
+import { Menu, IconButton, Typography, Avatar } from "@material-tailwind/react";
 import { Bell, Clock } from "iconoir-react";
 
 const MenuItem = React.forwardRef<
@@ -456,7 +464,7 @@ const MenuItem = React.forwardRef<
     img: string;
     title: string;
     date: string;
-  } & MenuItemProps
+  }
 >(({ img, title, date, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="gap-3">
@@ -518,6 +526,8 @@ Use this example to create a profile dropdown menu with a trigger that opens a d
 
 <ComponentPreview demo={<Menu.ProfileMenu />}>
 ```tsx
+"use client";
+
 import { Menu, Avatar } from "@material-tailwind/react";
 import { UserCircle, Settings, HeadsetHelp, LogOut } from "iconoir-react";
 

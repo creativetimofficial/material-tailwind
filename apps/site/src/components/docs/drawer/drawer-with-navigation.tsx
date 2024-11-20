@@ -64,6 +64,7 @@ const Links = [
 ];
 export function DrawerWithNavigation() {
   const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
