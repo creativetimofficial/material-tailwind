@@ -100,7 +100,7 @@ const TECHS = [
 export function Footer() {
   return (
     <ThemeProvider>
-      <footer className="mt-16 bg-background pb-6 pt-10">
+      <footer className="relative z-50 mt-16 bg-background pb-6 pt-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap">
             <div className="w-full md:w-4/12">

@@ -207,7 +207,7 @@ export function Navbar() {
             </button>
           </div>
         )}
-      <nav className="sticky top-0 z-10 w-full border-b border-surface bg-background">
+      <nav className="sticky top-0 z-50 w-full border-b border-surface bg-background">
         <div className="px-4 pt-3">
           <div className="relative mx-auto mt-0 flex max-w-7xl items-center justify-between gap-2 pb-0 lg:pb-3">
             <div className="flex items-center gap-0">
