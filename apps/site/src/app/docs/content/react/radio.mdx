@@ -20,6 +20,8 @@ Here's how to implement a `Radio` button component. It can be used for forms or 
 
 <ComponentPreview demo={<Radio.RadioDemo />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioDemo() {
@@ -57,6 +59,8 @@ In the example below, we've showcased the different radio button colors that you
 
 <ComponentPreview demo={<Radio.RadioColors />}>
 ```tsx
+"use client";
+
 import { Radio } from "@material-tailwind/react";
 
 export function RadioColors() {
@@ -127,6 +131,8 @@ To make it work, you need to use `group-data-[checked=true]` for the icons to sh
 
 <ComponentPreview demo={<Radio.RadioWithCustomIcon />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 import { Check, Star, StarSolid } from "iconoir-react";
 
@@ -183,6 +189,8 @@ You can disable the radio button by adding the `disabled` prop. This will preven
 
 <ComponentPreview demo={<Radio.DisabledRadio />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 
 export function DisabledRadio() {
@@ -218,6 +226,8 @@ Use the example below to create a `Radio` button with a link to the terms and co
 
 <ComponentPreview demo={<Radio.RadioWithLink />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioWithLink() {
@@ -267,6 +277,8 @@ Use the example below to create a `Radio` button component with a title and desc
 
 <ComponentPreview demo={<Radio.RadioWithDescription />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 
 export function RadioWithDescription() {
@@ -312,6 +324,8 @@ You can use `className` prop to customize the `Radio` button component style. In
 
 <ComponentPreview demo={<Radio.CustomRadio />}>
 ```tsx
+"use client";
+
 import { Radio, Typography } from "@material-tailwind/react";
 import { Check } from "iconoir-react";
 

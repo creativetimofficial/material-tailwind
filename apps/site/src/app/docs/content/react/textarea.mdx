@@ -20,6 +20,8 @@ Here's how to implement a simple and responsive `Textarea` component. It is perf
 
 <ComponentPreview demo={<Textarea.TextareaDemo />}>
 ```tsx
+"use client";
+
 import { Textarea } from "@material-tailwind/react";
 
 export function TextareaDemo() {
@@ -39,6 +41,8 @@ In the example below, we've showcased the different textarea sizes that you can 
 
 <ComponentPreview demo={<Textarea.TextareaSizes />}>
 ```tsx
+"use client";
+
 import { Textarea } from "@material-tailwind/react";
 
 export function TextareaSizes() {
@@ -63,6 +67,8 @@ In the example below, we've showcased the different textarea colors that you can
 
 <ComponentPreview demo={<Textarea.TextareaColors />}>
 ```tsx
+"use client";
+
 import { Textarea } from "@material-tailwind/react";
 
 export function TextareaColors() {
@@ -88,6 +94,8 @@ We provide helpful props like `isError` and `isSuccess` for showing error and su
 
 <ComponentPreview demo={<Textarea.TextareaWithValidation />}>
 ```tsx
+"use client";
+
 import { Textarea, Typography } from "@material-tailwind/react";
 
 export function TextareaWithValidation() {
@@ -119,6 +127,8 @@ The `Textarea` component can be used with a label to provide more context to the
 
 <ComponentPreview demo={<Textarea.TextareaWithLabel />}>
 ```tsx
+"use client";
+
 import { Textarea, Typography } from "@material-tailwind/react";
 
 export function TextareaWithLabel() {
@@ -129,7 +139,7 @@ export function TextareaWithLabel() {
         htmlFor="message"
         type="small"
         color="default"
-        className="font-medium"
+        className="font-semibold"
       >
         Message
       </Typography>
@@ -148,6 +158,8 @@ You can use `Textarea` and `Typography` components together to provide more deta
 
 <ComponentPreview demo={<Textarea.TextareaWithHelperText />}>
 ```tsx
+"use client";
+
 import { Textarea, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
@@ -175,6 +187,8 @@ You can disable the textarea by adding the `disabled` prop. This will prevent th
 
 <ComponentPreview demo={<Textarea.TextareaDisabled />}>
 ```tsx
+"use client";
+
 import { Textarea } from "@material-tailwind/react";
 
 export function TextareaDisabled() {
@@ -191,19 +205,21 @@ In the example below, we've showcased the commnet box built with `Textarea`, `Ic
 
 <ComponentPreview demo={<Textarea.CommentBoxWithTextarea />}>
 ```tsx
+"use client";
+
 import { Button, IconButton, Textarea } from "@material-tailwind/react";
 import { Attachment } from "iconoir-react";
 
 export function CommentBoxWithTextarea() {
   return (
-    <form action="#">
+    <form action="#" className="w-full">
       <Textarea type="email" placeholder="someone@example.com" />
-      <div className="flex w-full justify-between py-1.5">
+      <div className="flex w-full justify-between py-3">
         <IconButton variant="ghost" color="secondary" size="sm">
           <Attachment className="h-4 w-4" />
         </IconButton>
         <div className="flex gap-2">
-          <Button size="sm" color="secondary" variant="ghost">
+          <Button size="sm" color="secondary">
             Cancel
           </Button>
           <Button size="sm">Post Comment</Button>
@@ -224,6 +240,8 @@ In the example below, we've showcased the a chatbox like X/Twitter built with `T
 
 <ComponentPreview demo={<Textarea.ChatboxWithTextarea />}>
 ```tsx
+"use client";
+
 import { IconButton, Textarea } from "@material-tailwind/react";
 import { Emoji, GifFormat, MediaImage, Send } from "iconoir-react";
 
