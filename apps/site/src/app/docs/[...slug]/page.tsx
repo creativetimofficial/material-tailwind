@@ -109,7 +109,7 @@ import * as HTMLAccordion from "@components/docs-html/accordion";
 
 import CodeSnippet from '@components/CodeSnippet';
 import ComponentPreview from '@components/ComponentPreview';
-import CodeSection from '@components/CodeSection';
+import PreviewWithCode from '@components/PreviewWithCode';
 
 async function readDocsContentFn(pathUrl: string) {
   const fullPath = `${path.join(
@@ -208,6 +208,8 @@ export default async function Docs({ params: { slug } }) {
           ColorPalette,
           FrameworkCard,
           ComponentPreview,
+          PreviewWithCode,
+          CodeSnippet,
 
           // default-components
           pre: Code,
@@ -368,8 +370,6 @@ export default async function Docs({ params: { slug } }) {
           HTMLSwitch,
           HTMLBadge,
           HTMLAccordion,
-          CodeSnippet,
-          CodeSection
         }}
       />
     </Content>
