@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Avatar, Typography } from "@material-tailwind/react";
 
 export function AvatarWithText() {

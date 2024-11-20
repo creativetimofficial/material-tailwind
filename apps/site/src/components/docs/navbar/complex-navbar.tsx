@@ -10,7 +10,6 @@ import {
   Menu,
   Tooltip,
   Accordion,
-  type MenuItemProps,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -95,7 +94,7 @@ const MenuItem = React.forwardRef<
   {
     title: string;
     description: string;
-  } & MenuItemProps
+  }
 >(({ title, description, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">

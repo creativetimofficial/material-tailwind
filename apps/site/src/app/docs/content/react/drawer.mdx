@@ -22,6 +22,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Drawer.DrawerDemo />}>
 ```tsx
+"use client";
+
 import {
   Drawer,
   Button,
@@ -75,6 +77,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Drawer.DrawerPlacement />}>
 ```tsx
+"use client";
+
 import {
   Drawer,
   Button,
@@ -214,6 +218,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Drawer.DrawerWithNavigation />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 
 import {
@@ -280,6 +286,7 @@ const Links = [
 ];
 export function DrawerWithNavigation() {
   const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
@@ -414,6 +421,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Drawer.DrawerWithForm />}>
 ```tsx
+"use client";
+
 import {
   Drawer,
   Button,

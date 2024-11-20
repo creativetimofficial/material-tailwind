@@ -20,6 +20,8 @@ Here's how to implement a simple `Rating` component. It can be used for providin
 
 <ComponentPreview demo={<Rating.RatingDemo />}>
 ```tsx
+"use client";
+
 import { Rating } from "@material-tailwind/react";
 
 export function RatingDemo() {
@@ -38,6 +40,8 @@ In the example below, we've showcased the different colors for `Rating` color th
 
 <ComponentPreview demo={<Rating.RatingColors />}>
 ```tsx
+"use client";
+
 import { Rating } from "@material-tailwind/react";
 
 export function RatingColors() {
@@ -63,6 +67,8 @@ You can use the `readonly` prop to make the `Rating` component readonly, it's us
 
 <ComponentPreview demo={<Rating.ReadonlyRating />}>
 ```tsx
+"use client";
+
 import { Rating } from "@material-tailwind/react";
 
 export function ReadonlyRating() {
@@ -79,6 +85,8 @@ You can use the `ratedIcon` and `unratedIcon` props for customizing the icons fo
 
 <ComponentPreview demo={<Rating.CustomRatingIcon />}>
 ```tsx
+"use client";
+
 import { Rating } from "@material-tailwind/react";
 import { Heart, HeartSolid } from "iconoir-react";
 
@@ -96,6 +104,8 @@ The `Rating` component can be used with a label to provide more context to the u
 
 <ComponentPreview demo={<Rating.RatingWithText />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { Rating, Typography } from "@material-tailwind/react";
 
@@ -125,6 +135,8 @@ Use the example below for providing testimonials and feedbacks in your website, 
 
 <ComponentPreview demo={<Rating.RatingWithComment />}>
 ```tsx
+"use client";
+
 import { Typography, Avatar, Rating } from "@material-tailwind/react";
 
 export function RatingWithComment() {

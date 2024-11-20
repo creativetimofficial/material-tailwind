@@ -20,6 +20,8 @@ Here's how to implement a simple `Spinner` component. It can be used to show loa
 
 <ComponentPreview demo={<Spinner.SpinnerDemo />}>
 ```tsx
+"use client";
+
 import { Spinner } from "@material-tailwind/react";
 
 export function SpinnerDemo() {
@@ -38,6 +40,8 @@ In the example below, we've showcased the different spinner sizes that you can u
 
 <ComponentPreview demo={<Spinner.SpinnerSizes />}>
 ```tsx
+"use client";
+
 import { Spinner } from "@material-tailwind/react";
 
 export function SpinnerSizes() {
@@ -65,6 +69,8 @@ In the example below, we've showcased the different spinner colors that you can 
 
 <ComponentPreview demo={<Spinner.SpinnerColors />}>
 ```tsx
+"use client";
+
 import { Spinner } from "@material-tailwind/react";
 
 export function SpinnerColors() {
@@ -90,10 +96,12 @@ You can use the `className` prop to customize the `Spinner` component style and 
 
 <ComponentPreview demo={<Spinner.SpinnerCustomStyles />}>
 ```tsx
+"use client";
+
 import { Spinner } from "@material-tailwind/react";
 
 export function SpinnerCustomStyles() {
-  return <Spinner className="w-16 h-16" />;
+  return <Spinner className="h-16 w-16" />;
 }
 ```
 </ComponentPreview>

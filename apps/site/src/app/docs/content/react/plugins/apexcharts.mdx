@@ -33,7 +33,8 @@ npm install apexcharts react-apexcharts next-themes
 "use client";
 
 import * as React from "react";
-import Chart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { Card, Typography } from "@material-tailwind/react";
 import { SelectFace3d } from "iconoir-react";
 import type { ApexOptions } from "apexcharts";
@@ -199,7 +200,8 @@ export function LineChart() {
 "use client";
 
 import * as React from "react";
-import Chart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { SelectFace3d } from "iconoir-react";
 import type { ApexOptions } from "apexcharts";
 import { Card, Typography } from "@material-tailwind/react";
@@ -364,7 +366,8 @@ export function BarChart() {
 "use client";
 
 import * as React from "react";
-import Chart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { SelectFace3d } from "iconoir-react";
 import type { ApexOptions } from "apexcharts";
 import { Card, Typography } from "@material-tailwind/react";

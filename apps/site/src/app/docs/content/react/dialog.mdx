@@ -24,6 +24,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogDemo />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -35,7 +37,7 @@ import { Xmark } from "iconoir-react";
 export function DialogDemo() {
   return (
     <Dialog>
-      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open</Dialog.Trigger>
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="flex items-center justify-between gap-4">
@@ -83,6 +85,8 @@ In the example below, we've showcased the different dialog sizes that you can us
 
 <ComponentPreview demo={<Dialog.DialogSizes />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -96,7 +100,7 @@ export function DialogSizes() {
     <>
       <div className="flex items-center justify-center gap-2">
         <Dialog size="xs">
-          <Dialog.Trigger as={Button}>Open Dialog XS</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open XS</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <Dialog.DismissTrigger
@@ -109,9 +113,7 @@ export function DialogSizes() {
               >
                 <Xmark className="h-5 w-5" />
               </Dialog.DismissTrigger>
-              <Typography type="h6">
-                Material Tailwind
-              </Typography>
+              <Typography type="h6">Material Tailwind</Typography>
               <Typography className="mb-6 mt-2 text-foreground">
                 Material Tailwind is an open-source library that uses the power
                 of Tailwind CSS and React to help you build unique web projects
@@ -134,13 +136,11 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="sm">
-          <Dialog.Trigger as={Button}>Open Dialog SM</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open SM</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">
-                  Material Tailwind
-                </Typography>
+                <Typography type="h6">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -174,13 +174,11 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="md">
-          <Dialog.Trigger as={Button}>Open Dialog MD</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open MD</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">
-                  Material Tailwind
-                </Typography>
+                <Typography type="h6">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -216,13 +214,11 @@ export function DialogSizes() {
       </div>
       <div className="flex items-center justify-center gap-2">
         <Dialog size="lg">
-          <Dialog.Trigger as={Button}>Open Dialog LG</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open LG</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">
-                  Material Tailwind
-                </Typography>
+                <Typography type="h6">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -256,13 +252,11 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="xl">
-          <Dialog.Trigger as={Button}>Open Dialog XL</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open XL</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">
-                  Material Tailwind
-                </Typography>
+                <Typography type="h6">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -296,13 +290,11 @@ export function DialogSizes() {
           </Dialog.Overlay>
         </Dialog>
         <Dialog size="screen">
-          <Dialog.Trigger as={Button}>Open Dialog Screen</Dialog.Trigger>
+          <Dialog.Trigger as={Button}>Open Screen</Dialog.Trigger>
           <Dialog.Overlay>
             <Dialog.Content>
               <div className="flex items-center justify-between gap-4">
-                <Typography type="h6">
-                  Material Tailwind
-                </Typography>
+                <Typography type="h6">Material Tailwind</Typography>
                 <Dialog.DismissTrigger
                   as={IconButton}
                   size="sm"
@@ -352,6 +344,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogWithForm />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -460,6 +454,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogWithImage />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -489,9 +485,7 @@ export function DialogWithImage() {
                 src="https://dub.sh/TdSBP0D"
               />
               <div className="flex flex-col">
-                <Typography className="font-semibold">
-                  Alex Andrew
-                </Typography>
+                <Typography className="font-semibold">Alex Andrew</Typography>
                 <Typography type="small" className="text-foreground">
                   @alexandrew
                 </Typography>
@@ -548,12 +542,13 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogWeb3 />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
   Typography,
   IconButton,
-  Avatar,
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
@@ -573,9 +568,7 @@ export function DialogWeb3() {
           >
             <Xmark className="h-5 w-5" />
           </Dialog.DismissTrigger>
-          <Typography type="h6">
-            Connect a Wallet
-          </Typography>
+          <Typography type="h6">Connect a Wallet</Typography>
           <Typography className="text-foreground">
             Choose which card you want to connect
           </Typography>
@@ -658,6 +651,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogLong />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -673,9 +668,7 @@ export function DialogLong() {
       <Dialog.Overlay>
         <Dialog.Content>
           <div className="mb-4 flex items-center justify-between gap-4">
-            <Typography type="h6">
-              Long Dialog
-            </Typography>
+            <Typography type="h6">Long Dialog</Typography>
             <Dialog.DismissTrigger
               as={IconButton}
               size="sm"
@@ -808,6 +801,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogMessage />}>
 ```tsx
+"use client";
+
 import {
   Dialog,
   Button,
@@ -816,7 +811,6 @@ import {
   IconButton,
   Textarea,
 } from "@material-tailwind/react";
-
 import { Xmark } from "iconoir-react";
 
 export function DialogMessage() {
@@ -897,6 +891,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Dialog.DialogNotification />}>
 ```tsx
+"use client";
+
 import { Dialog, Button, Typography } from "@material-tailwind/react";
 import { AppNotification } from "iconoir-react";
 
@@ -914,9 +910,7 @@ export function DialogNotification() {
           </Typography>
           <div className="mt-12 flex flex-col items-center text-center">
             <AppNotification className="mb-6 h-24 w-24" />
-            <Typography type="h6">
-              You should read this!
-            </Typography>
+            <Typography type="h6">You should read this!</Typography>
             <Typography className="mt-2 text-center  text-foreground">
               Many people limit themselves by their own self-doubt, slowing
               their progress. Fortunately, I was raised with the belief that I

@@ -22,6 +22,8 @@ Here's how to implement a simple `Tooltip` component. It can be used to display 
 
 <ComponentPreview demo={<Tooltip.TooltipDemo />}>
 ```tsx
+"use client";
+
 import { Tooltip, Button } from "@material-tailwind/react";
 
 export function TooltipDemo() {
@@ -46,12 +48,14 @@ You can change the placement of the `Tooltip` component by using the `placement`
 
 <ComponentPreview demo={<Tooltip.TooltipPlacement />}>
 ```tsx
+"use client";
+
 import { Tooltip, Button } from "@material-tailwind/react";
 
 export function TooltipPlacement() {
   return (
     <>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="top">
           <Tooltip.Trigger as={Button}>Top</Tooltip.Trigger>
           <Tooltip.Content>
@@ -74,7 +78,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="right">
           <Tooltip.Trigger as={Button}>Right</Tooltip.Trigger>
           <Tooltip.Content>
@@ -97,7 +101,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="bottom">
           <Tooltip.Trigger as={Button}>Bottom</Tooltip.Trigger>
           <Tooltip.Content>
@@ -120,7 +124,7 @@ export function TooltipPlacement() {
           </Tooltip.Content>
         </Tooltip>
       </div>
-      <div className="flex gap-3 mb-3">
+      <div className="mb-3 flex gap-3">
         <Tooltip placement="left">
           <Tooltip.Trigger as={Button}>Left</Tooltip.Trigger>
           <Tooltip.Content>
@@ -159,6 +163,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Tooltip.TooltipWithHelperIcon />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
@@ -169,9 +175,7 @@ export function TooltipWithHelperIcon() {
         <InfoCircle className="h-5 w-5" />
       </Tooltip.Trigger>
       <Tooltip.Content className="w-80 px-2.5 py-1.5 text-primary-foreground">
-        <Typography className="font-semibold">
-          Material Tailwind
-        </Typography>
+        <Typography className="font-semibold">Material Tailwind</Typography>
         <Typography type="small" className="opacity-90">
           Material Tailwind is an easy to use components library for Tailwind
           CSS and Material Design.
@@ -192,6 +196,8 @@ You can use the `className` prop to customize the `Tooltip` component style and 
 
 <ComponentPreview demo={<Tooltip.TooltipCustomStyles />}>
 ```tsx
+"use client";
+
 import { Tooltip, Button, Typography } from "@material-tailwind/react";
 
 export function TooltipCustomStyles() {

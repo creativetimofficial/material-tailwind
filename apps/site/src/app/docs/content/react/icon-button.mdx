@@ -22,6 +22,8 @@ Here's how to implement a simple and responsive `IconButton` component. It can b
 
 <ComponentPreview demo={<IconButton.IconButtonDemo />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
@@ -45,6 +47,8 @@ In the example below, we've showcased the different `IconButton` variants that y
 
 <ComponentPreview demo={<IconButton.IconButtonVariants />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
@@ -79,20 +83,28 @@ In the example below, we've showcased the different `IconButton` sizes that you 
 
 <ComponentPreview demo={<IconButton.IconButtonSizes />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
 export function IconButtonSizes() {
   return (
     <div className="flex items-end gap-4">
+      <IconButton size="xs">
+        <BrightStar className="h-3.5 w-3.5 stroke-2" />
+      </IconButton>
       <IconButton size="sm">
-        <BrightStar className="h-3 w-3 stroke-2" />
+        <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton size="md">
         <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton size="lg">
         <BrightStar className="h-5 w-5 stroke-2" />
+      </IconButton>
+      <IconButton size="xl">
+        <BrightStar className="h-6 w-6 stroke-2" />
       </IconButton>
     </div>
   );
@@ -110,6 +122,8 @@ In the example below, we've showcased the different `IconButton` colors that you
 
 <ComponentPreview demo={<IconButton.IconButtonColors />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
@@ -150,6 +164,8 @@ In the example below, we've showcased the circular `IconButton` in 4 different v
 
 <ComponentPreview demo={<IconButton.RoundedIconButton />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
@@ -157,21 +173,20 @@ export function RoundedIconButton() {
   return (
     <div className="flex gap-4">
       <IconButton isCircular variant="ghost">
-        <BrightStar className="w-4 h-4 stroke-2" />
+        <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton isCircular variant="outline">
-        <BrightStar className="w-4 h-4 stroke-2" />
+        <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton isCircular variant="solid">
-        <BrightStar className="w-4 h-4 stroke-2" />
+        <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
       <IconButton isCircular variant="gradient">
-        <BrightStar className="w-4 h-4 stroke-2" />
+        <BrightStar className="h-4 w-4 stroke-2" />
       </IconButton>
     </div>
   );
 }
-
 ```
 </ComponentPreview>
 
@@ -185,6 +200,8 @@ In the example below, we've showcased the `IconButton` as a link in 4 different 
 
 <ComponentPreview demo={<IconButton.IconButtonAsLink />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
@@ -219,6 +236,8 @@ In the example below, we've showcased how to create custom social media `IconBut
 
 <ComponentPreview demo={<IconButton.CustomIconButton />}>
 ```tsx
+"use client";
+
 import { IconButton } from "@material-tailwind/react";
 import { Github, Dribbble, Facebook } from "iconoir-react";
 

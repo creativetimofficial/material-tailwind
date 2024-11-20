@@ -26,6 +26,8 @@ Here's how to implement a `Checkbox` component. It can be used for forms or othe
 
 <ComponentPreview demo={<Checkbox.CheckboxDemo />}>
 ```tsx
+"use client";
+
 import { Checkbox, Typography } from "@material-tailwind/react";
 
 export function CheckboxDemo() {
@@ -71,6 +73,8 @@ In the example below, we've showcased the different checkbox colors that you can
 
 <ComponentPreview demo={<Checkbox.CheckboxColors />}>
 ```tsx
+"use client";
+
 import { Checkbox } from "@material-tailwind/react";
 
 export function CheckboxColors() {
@@ -108,6 +112,8 @@ The `Checkbox` component can be used with a label to provide more context to the
 
 <ComponentPreview demo={<Checkbox.CheckboxWithLabel />}>
 ```tsx
+"use client";
+
 import { Checkbox, Typography } from "@material-tailwind/react";
 
 export function CheckboxWithLabel() {
@@ -126,7 +132,6 @@ export function CheckboxWithLabel() {
     </div>
   );
 }
-
 ```
 </ComponentPreview>
 
@@ -140,6 +145,8 @@ To make it work, you need to use `group-data-[checked=true]` for the icons to sh
 
 <ComponentPreview demo={<Checkbox.CheckboxWithCustomIcon />}>
 ```tsx
+"use client";
+
 import { Checkbox } from "@material-tailwind/react";
 import { Star, StarSolid } from "iconoir-react";
 
@@ -164,6 +171,8 @@ You can disable the checkbox by adding the `disabled` prop. This will prevent th
 
 <ComponentPreview demo={<Checkbox.DisabledCheckbox />}>
 ```tsx
+"use client";
+
 import { Checkbox } from "@material-tailwind/react";
 
 export function DisabledCheckbox() {
@@ -184,6 +193,8 @@ Use the example below to create a `Checkbox` component with a link to the terms 
 
 <ComponentPreview demo={<Checkbox.CheckboxWithLink />}>
 ```tsx
+"use client";
+
 import { Checkbox, Typography } from "@material-tailwind/react";
 
 export function CheckboxWithLink() {
@@ -216,6 +227,8 @@ Use the example below to create a `Checkbox` component with a title and descript
 
 <ComponentPreview demo={<Checkbox.CheckboxWithDescription />}>
 ```tsx
+"use client";
+
 import { Checkbox, Typography } from "@material-tailwind/react";
 
 export function CheckboxWithDescription() {
@@ -228,9 +241,7 @@ export function CheckboxWithDescription() {
         htmlFor="checkbox-description"
         className="-translate-y-0.5 cursor-pointer"
       >
-        <Typography className="font-semibold">
-          Remember Me
-        </Typography>
+        <Typography className="font-semibold">Remember Me</Typography>
         <Typography type="small" className="text-foreground">
           You&apos;ll be able to login without password for 24 hours.
         </Typography>
@@ -249,6 +260,8 @@ You can use `className` prop to customize the `Checkbox` component style. In the
 
 <ComponentPreview demo={<Checkbox.CustomCheckbox />}>
 ```tsx
+"use client";
+
 import { Checkbox } from "@material-tailwind/react";
 
 export function CustomCheckbox() {

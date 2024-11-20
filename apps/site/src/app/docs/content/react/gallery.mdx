@@ -20,6 +20,8 @@ Here's how to implement a simple and responsive gallery component. It can be use
 
 <ComponentPreview demo={<Gallery.GalleryDemo />}>
 ```tsx
+"use client";
+
 export function GalleryDemo() {
   const data = [
     {
@@ -84,6 +86,8 @@ Use this masonry grid gallery to display images in a grid layout. The masonry gr
 
 <ComponentPreview demo={<Gallery.MasonryGridGallery />}>
 ```tsx
+"use client";
+
 export function MasonryGridGallery() {
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -175,7 +179,6 @@ export function MasonryGridGallery() {
     </div>
   );
 }
-
 ```
 </ComponentPreview>
 
@@ -187,6 +190,8 @@ Use this image gallery example to display a large image with a grid of smaller i
 
 <ComponentPreview demo={<Gallery.FeaturedImageGallery />}>
 ```tsx
+"use client";
+
 import React from "react";
 
 export function FeaturedImageGallery() {
@@ -251,6 +256,8 @@ Use this quad gallery example to display images in a 2x2 grid layout. This galle
 
 <ComponentPreview demo={<Gallery.QuadGallery />}>
 ```tsx
+"use client";
+
 export function QuadGallery() {
   const data = [
     {
@@ -295,6 +302,8 @@ Use this gallery with tab example to display images in a grid layout with tabs. 
 
 <ComponentPreview demo={<Gallery.GalleryWithTab />}>
 ```tsx
+"use client";
+
 import { Tabs } from "@material-tailwind/react";
 
 export function GalleryWithTab() {
@@ -469,7 +478,7 @@ export function GalleryWithTab() {
           {images?.map(({ imageLink }, index) => (
             <div key={index}>
               <img
-                className="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                className="h-40 w-full max-w-full rounded-lg object-cover object-center"
                 src={imageLink}
                 alt="image-photo"
               />

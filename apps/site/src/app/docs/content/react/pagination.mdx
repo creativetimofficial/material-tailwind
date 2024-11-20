@@ -22,6 +22,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Pagination.PaginationDemo />}>
 ```tsx
+"use client";
+
 import { Button, IconButton } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
@@ -29,7 +31,7 @@ export function PaginationDemo() {
   return (
     <div className="flex items-center gap-1">
       <Button variant="ghost">
-        <NavArrowLeft className="me-1.5 h-4 w-4 stroke-2" />
+        <NavArrowLeft className="mr-1.5 h-4 w-4 stroke-2" />
         Previous
       </Button>
       <IconButton variant="ghost">1</IconButton>
@@ -39,7 +41,7 @@ export function PaginationDemo() {
       <IconButton variant="ghost">5</IconButton>
       <Button variant="ghost">
         Next
-        <NavArrowRight className="ms-1.5 h-4 w-4 stroke-2" />
+        <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
       </Button>
     </div>
   );
@@ -57,6 +59,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Pagination.PaginationCircular />}>
 ```tsx
+"use client";
+
 import { Button, IconButton } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
@@ -64,7 +68,7 @@ export function PaginationCircular() {
   return (
     <div className="flex items-center gap-1">
       <Button isPill variant="ghost">
-        <NavArrowLeft className="me-1.5 h-4 w-4 stroke-2" />
+        <NavArrowLeft className="mr-1.5 h-4 w-4 stroke-2" />
         Previous
       </Button>
       <IconButton isCircular variant="ghost">
@@ -82,7 +86,7 @@ export function PaginationCircular() {
       </IconButton>
       <Button isPill variant="ghost">
         Next
-        <NavArrowRight className="ms-1.5 h-4 w-4 stroke-2" />
+        <NavArrowRight className="ml-1.5 h-4 w-4 stroke-2" />
       </Button>
     </div>
   );
@@ -100,6 +104,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Pagination.SimplePagination />}>
 ```tsx
+"use client";
+
 import { IconButton, Typography } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
@@ -138,6 +144,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Pagination.PaginationGroup />}>
 ```tsx
+"use client";
+
 import { IconButton, ButtonGroup } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
