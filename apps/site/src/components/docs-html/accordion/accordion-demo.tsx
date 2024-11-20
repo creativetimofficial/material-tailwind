@@ -121,7 +121,7 @@ function AccordionDemo () {
   </div>
 </div>
 
-<!-- script for the accordion items functionality -->
+
 <script>
 const accordionItems = document.querySelectorAll("[data-open]");
 
