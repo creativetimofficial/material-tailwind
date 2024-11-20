@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export function DialogWithForm() {
+export default function DialogWithForm() {
   return (
     <Dialog size="sm">
       <Dialog.Trigger as={Button}>Sign In</Dialog.Trigger>

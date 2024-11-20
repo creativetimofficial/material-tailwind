@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
-export function IconButtonAsLink() {
+export default function IconButtonAsLink() {
   return (
     <div className="flex gap-4">
       <IconButton as="a" href="#" variant="ghost">

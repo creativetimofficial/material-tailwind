@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export function DialogDemo() {
+export default function DialogDemo() {
   return (
     <Dialog>
       <Dialog.Trigger as={Button}>Open</Dialog.Trigger>

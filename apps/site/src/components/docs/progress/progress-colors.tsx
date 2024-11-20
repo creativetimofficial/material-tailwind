@@ -1,6 +1,6 @@
 import { Progress } from "@material-tailwind/react";
 
-export function ProgressColors() {
+export default function ProgressColors() {
   return (
     <div className="w-full space-y-4">
       <Progress color="primary" value={50}>

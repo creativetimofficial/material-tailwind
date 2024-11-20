@@ -1,5 +1,5 @@
 import { Textarea } from "@material-tailwind/react";
 
-export function TextareaDemo() {
+export default function TextareaDemo() {
   return <Textarea placeholder="Message here..." />;
 }

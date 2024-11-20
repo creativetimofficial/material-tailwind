@@ -1,6 +1,6 @@
 import { Avatar } from "@material-tailwind/react";
 
-export function AvatarVariants() {
+export default function AvatarVariants() {
   return (
     <div className="item-center flex gap-2">
       <Avatar

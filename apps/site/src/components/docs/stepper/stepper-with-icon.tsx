@@ -2,7 +2,7 @@ import * as React from "react";
 import { Timeline, Button } from "@material-tailwind/react";
 import { HomeSimple, UserCircle, Settings } from "iconoir-react";
 
-export function StepperWithIcon() {
+export default function StepperWithIcon() {
   const [step, setStep] = React.useState(0);
 
   return (

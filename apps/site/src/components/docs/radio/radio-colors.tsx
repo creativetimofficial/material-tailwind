@@ -1,6 +1,6 @@
 import { Radio } from "@material-tailwind/react";
 
-export function RadioColors() {
+export default function RadioColors() {
   return (
     <div className="flex flex-col gap-4">
       <Radio color="primary" orientation="horizontal">

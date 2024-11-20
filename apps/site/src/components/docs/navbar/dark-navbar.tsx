@@ -58,7 +58,7 @@ function NavList() {
   );
 }
 
-export function DarkNavbar() {
+export default function DarkNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

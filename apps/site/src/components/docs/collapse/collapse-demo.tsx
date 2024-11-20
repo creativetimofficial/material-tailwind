@@ -2,7 +2,7 @@ import * as React from "react";
 import { Collapse, List } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
-export function CollapseDemo() {
+export default function CollapseDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

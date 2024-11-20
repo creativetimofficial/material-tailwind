@@ -7,8 +7,8 @@ interface ComponentPreviewProps {
 }
 
 function ComponentPreview({ componentPath }: ComponentPreviewProps) {
-  // const Component = React.lazy(() => import(componentPath));
-  const Component = React.lazy(() => import(`${componentPath}`));
+  console.log('componentPath', componentPath);
+  const Component = React.lazy(async () => await import(`${componentPath}`));
 
   return (
     <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>

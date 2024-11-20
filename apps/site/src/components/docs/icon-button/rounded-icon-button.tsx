@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
-export function RoundedIconButton() {
+export default function RoundedIconButton() {
   return (
     <div className="flex gap-4">
       <IconButton isCircular variant="ghost">

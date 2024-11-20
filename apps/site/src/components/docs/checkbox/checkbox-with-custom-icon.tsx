@@ -1,7 +1,7 @@
 import { Checkbox } from "@material-tailwind/react";
 import { Star, StarSolid } from "iconoir-react";
 
-export function CheckboxWithCustomIcon() {
+export default function CheckboxWithCustomIcon() {
   return (
     <Checkbox className="border-0 shadow-none hover:shadow-none data-[checked=true]:bg-transparent">
       <Checkbox.Indicator className="relative left-0 top-0 opacity-100">

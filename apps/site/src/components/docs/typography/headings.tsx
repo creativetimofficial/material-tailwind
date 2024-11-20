@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export function Headings() {
+export default function Headings() {
   return (
     <div className="flex flex-col gap-4">
       <Typography type="h1">Material Tailwind (H1)</Typography>

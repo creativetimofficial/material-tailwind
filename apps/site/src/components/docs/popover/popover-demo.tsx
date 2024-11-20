@@ -1,7 +1,7 @@
 import React from "react";
 import { Popover, Button, Typography } from "@material-tailwind/react";
 
-export function PopoverDemo() {
+export default function PopoverDemo() {
   const [open, setOpen] = React.useState(true);
 
   return (

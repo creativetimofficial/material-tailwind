@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export function SmallText() {
+export default function SmallText() {
   return (
     <Typography type="small">
       Material Tailwind is an easy to use components library for Tailwind CSS

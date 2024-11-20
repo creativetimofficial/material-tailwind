@@ -1,7 +1,7 @@
 import { Badge, IconButton, Avatar } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
-export function BadgeOverlap() {
+export default function BadgeOverlap() {
   return (
     <div className="flex w-full items-center justify-center gap-8">
       <Badge placement="top-end" overlap="square">

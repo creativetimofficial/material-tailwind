@@ -24,6 +24,7 @@ async function PreviewWithCode({relativePath, language}: {relativePath: string, 
   // );
 
   const codeContent = codeModule.default;
+  console.log('relativePath', relativePath);
 
   return (
     <>

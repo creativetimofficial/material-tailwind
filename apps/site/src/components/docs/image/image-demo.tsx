@@ -1,4 +1,4 @@
-export function ImageDemo() {
+export default function ImageDemo() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

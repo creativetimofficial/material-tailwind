@@ -1,7 +1,7 @@
 import { IconButton, ButtonGroup } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
-export function PaginationGroup() {
+export default function PaginationGroup() {
   return (
     <ButtonGroup>
       <IconButton variant="outline">

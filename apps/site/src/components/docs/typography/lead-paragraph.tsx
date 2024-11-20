@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export function LeadParagraph() {
+export default function LeadParagraph() {
   return (
     <Typography type="lead">
       Material Tailwind is an easy to use components library for Tailwind CSS

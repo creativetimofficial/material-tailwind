@@ -1,7 +1,7 @@
 import { IconButton, Typography } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
-export function SimplePagination() {
+export default function SimplePagination() {
   return (
     <div className="flex items-center gap-2">
       <IconButton size="sm" color="secondary" variant="ghost">

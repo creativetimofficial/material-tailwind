@@ -1,7 +1,7 @@
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
-export function BadgeColors() {
+export default function BadgeColors() {
   return (
     <div className="flex w-full justify-center gap-8">
       <Badge color="primary">

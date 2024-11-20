@@ -1,4 +1,4 @@
-export function ImageWithShadow() {
+export default function ImageWithShadow() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

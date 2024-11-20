@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
-export function IconButtonVariants() {
+export default function IconButtonVariants() {
   return (
     <div className="flex gap-4">
       <IconButton variant="ghost">

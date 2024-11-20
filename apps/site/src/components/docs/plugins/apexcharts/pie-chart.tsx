@@ -20,7 +20,7 @@ function rgbToHex(rgb) {
   );
 }
 
-export function PieChart() {
+export default function PieChart() {
   const { theme } = useTheme();
   const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
 

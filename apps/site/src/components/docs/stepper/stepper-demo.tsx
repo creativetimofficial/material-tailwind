@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Timeline, Button } from "@material-tailwind/react";
 
-export function StepperDemo() {
+export default function StepperDemo() {
   const [step, setStep] = React.useState(0);
 
   return (

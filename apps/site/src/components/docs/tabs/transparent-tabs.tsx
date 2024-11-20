@@ -1,6 +1,6 @@
 import { Tabs } from "@material-tailwind/react";
 
-export function TransparentTabs() {
+export default function TransparentTabs() {
   return (
     <Tabs defaultValue="html">
       <Tabs.List className="w-full bg-transparent">

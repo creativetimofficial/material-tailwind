@@ -1,6 +1,6 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 
-export function CardDemo() {
+export default function CardDemo() {
   return (
     <Card className="max-w-xs">
       <Card.Header as="img" src="https://dub.sh/CLrLpxd" alt="image" />

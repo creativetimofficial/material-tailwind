@@ -59,7 +59,7 @@ const Links = [
   },
 ];
 
-export function SidebarWithSearch() {
+export default function SidebarWithSearch() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
