@@ -22,10 +22,12 @@ Here's how to implement a simple and responsive `Button` component. It can be us
 
 <ComponentPreview demo={<Button.ButtonDemo />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function ButtonDemo() {
-  return <Button>Button</Button>
+  return <Button>Button</Button>;
 }
 ```
 </ComponentPreview>
@@ -40,17 +42,19 @@ In the example below, we've showcased the different button variants that you can
 
 <ComponentPreview demo={<Button.ButtonVariants />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function ButtonVariants() {
   return (
-    <div className="flex gap-4">
+    <div className="item flex flex-wrap justify-center gap-4">
       <Button variant="ghost">Ghost</Button>
       <Button variant="outline">Outline</Button>
       <Button variant="solid">Solid</Button>
       <Button variant="gradient">Gradient</Button>
     </div>
-  )
+  );
 }
 ```
 </ComponentPreview>
@@ -65,16 +69,20 @@ In the example below, we've showcased the different button sizes that you can us
 
 <ComponentPreview demo={<Button.ButtonSizes />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function ButtonSizes() {
   return (
-    <div className="flex gap-4 items-end">
+    <div className="flex flex-wrap items-end justify-center gap-4">
+      <Button size="xs">X Small</Button>
       <Button size="sm">Small</Button>
       <Button size="md">Medium</Button>
       <Button size="lg">Large</Button>
+      <Button size="xl">X Large</Button>
     </div>
-  )
+  );
 }
 ```
 </ComponentPreview>
@@ -89,11 +97,13 @@ In the example below, we've showcased the different button colors that you can u
 
 <ComponentPreview demo={<Button.ButtonColors />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function ButtonColors() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button color="primary">Primary</Button>
       <Button color="secondary">Secondary</Button>
       <Button color="info">Info</Button>
@@ -101,7 +111,7 @@ export function ButtonColors() {
       <Button color="warning">Warning</Button>
       <Button color="error">Error</Button>
     </div>
-  )
+  );
 }
 ```
 </ComponentPreview>
@@ -116,6 +126,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Button.ButtonWithIcon />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 import {
   NavArrowRight,
@@ -126,22 +138,22 @@ import {
 
 export function ButtonWithIcon() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button variant="ghost">
         Read More
-        <NavArrowRight className="ms-1 h-4 w-4 stroke-2" />
+        <NavArrowRight className="ml-1 h-4 w-4 stroke-2" />
       </Button>
       <Button variant="outline">
         Refresh
-        <RefreshDouble className="ms-2 h-4 w-4 stroke-2" />
+        <RefreshDouble className="ml-2 h-4 w-4 stroke-2" />
       </Button>
       <Button variant="solid">
-        <CloudUpload className="me-2 h-4 w-4 stroke-2" />
+        <CloudUpload className="mr-2 h-4 w-4 stroke-2" />
         Upload Assets
       </Button>
       <Button variant="gradient">
         Give Us Star
-        <BrightStar className="ms-2 h-4 w-4 stroke-2" />
+        <BrightStar className="ml-2 h-4 w-4 stroke-2" />
       </Button>
     </div>
   );
@@ -159,6 +171,8 @@ In the example below, we've showcased the block-level button in 4 different vari
 
 <ComponentPreview demo={<Button.BlockLevelButton />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function BlockLevelButton() {
@@ -192,6 +206,8 @@ In the example below, we've showcased the pill button in 4 different variants th
 
 <ComponentPreview demo={<Button.PillButton />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function PillButton() {
@@ -225,11 +241,13 @@ In the example below, we've showcased the button as a link in 4 different varian
 
 <ComponentPreview demo={<Button.ButtonAsLink />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 
 export function ButtonAsLink() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button as="a" href="#" variant="ghost">
         Ghost
       </Button>
@@ -258,6 +276,8 @@ In the example below, we've showcased the button with a loading state in 4 diffe
 
 <ComponentPreview demo={<Button.ButtonLoading />}>
 ```tsx
+"use client";
+
 import { Button, Spinner } from "@material-tailwind/react";
 
 export function ButtonLoading() {
@@ -296,6 +316,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Button.CustomAuthButton />}>
 ```tsx
+"use client";
+
 import { Button } from "@material-tailwind/react";
 import { BitcoinCircle, GoogleCircle, Facebook } from "iconoir-react";
 

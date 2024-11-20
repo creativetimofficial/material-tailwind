@@ -22,14 +22,16 @@ Here's how to implement a simple `Badge` component. It can be used for showing n
 
 <ComponentPreview demo={<Badge.BadgeDemo />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
 export function BadgeDemo() {
   return (
-    <Badge color="error">
+    <Badge>
       <Badge.Content>
-        <IconButton>
+        <IconButton color="secondary">
           <Bell className="h-4 w-4 stroke-2" />
         </IconButton>
       </Badge.Content>
@@ -50,6 +52,8 @@ In the example below, we've showcased the different badge colors that you can us
 
 <ComponentPreview demo={<Badge.BadgeColors />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
@@ -118,6 +122,8 @@ You can use the `placement` prop to change the position of the badge. In the exa
 
 <ComponentPreview demo={<Badge.BadgePlacement />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
@@ -170,6 +176,8 @@ You can make the `Badge` component as a dot by removing the `Badge.Indicator` co
 
 <ComponentPreview demo={<Badge.BadgeDot />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
@@ -196,6 +204,8 @@ You can change the overlap of the `Badge` component using the `overlap` prop. Th
 
 <ComponentPreview demo={<Badge.BadgeOverlap />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton, Avatar } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
@@ -244,6 +254,8 @@ You can add a border to the `Badge` component using the `className` prop for the
 
 <ComponentPreview demo={<Badge.BadgeWithBorder />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell } from "iconoir-react";
 
@@ -255,9 +267,7 @@ export function BadgeWithBorder() {
           <Bell className="h-4 w-4 stroke-2" />
         </IconButton>
       </Badge.Content>
-      <Badge.Indicator className="border-background">
-        5
-      </Badge.Indicator>
+      <Badge.Indicator className="border-background">5</Badge.Indicator>
     </Badge>
   );
 }
@@ -272,6 +282,8 @@ You can customize the `Badge` component using the `className` prop. In the examp
 
 <ComponentPreview demo={<Badge.BadgeCustomStyles />}>
 ```tsx
+"use client";
+
 import { Badge, IconButton } from "@material-tailwind/react";
 import { Bell, Check } from "iconoir-react";
 

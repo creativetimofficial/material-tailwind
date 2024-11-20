@@ -22,6 +22,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarDemo />}>
 ```tsx
+"use client";
+
 import { Card, List, Typography, Chip } from "@material-tailwind/react";
 import {
   Archive,
@@ -107,6 +109,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.MultiLevelSidebar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,
@@ -168,9 +172,7 @@ export function MultiLevelSidebar() {
   return (
     <Card className="max-w-[280px]">
       <Card.Header className="mx-4 mb-0 mt-3 h-max">
-        <Typography className="font-semibold">
-          Material Tailwind
-        </Typography>
+        <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">
         <List>
@@ -240,6 +242,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarWithContentSeparator />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,
@@ -302,9 +306,7 @@ export function SidebarWithContentSeparator() {
   return (
     <Card className="max-w-[280px]">
       <Card.Header className="mx-4 mb-0 mt-3 h-max">
-        <Typography className="font-semibold">
-          Material Tailwind
-        </Typography>
+        <Typography className="font-semibold">Material Tailwind</Typography>
       </Card.Header>
       <Card.Body className="p-3">
         <List>
@@ -382,6 +384,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarWithCta />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,
@@ -518,8 +522,8 @@ export function SidebarWithCta() {
               Upgrade to PRO
             </Typography>
             <Typography type="small" className="text-white/80">
-              Upgrade to Material Tailwind PRO and get even more
-              components, plugins, advanced features and premium.
+              Upgrade to Material Tailwind PRO and get even more components,
+              plugins, advanced features and premium.
             </Typography>
           </Card.Body>
           <Card.Footer>
@@ -550,6 +554,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarWithLogo />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,
@@ -688,8 +694,8 @@ export function SidebarWithLogo() {
               Upgrade to PRO
             </Typography>
             <Typography type="small" className="text-white/80">
-              Upgrade to Material Tailwind PRO and get even more
-              components, plugins, advanced features and premium.
+              Upgrade to Material Tailwind PRO and get even more components,
+              plugins, advanced features and premium.
             </Typography>
           </Card.Body>
           <Card.Footer>
@@ -720,6 +726,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarWithSearch />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,
@@ -887,7 +895,6 @@ export function SidebarWithSearch() {
 ```
 </ComponentPreview>
 
-
 ---
 
 ## Sidebar with Burger Menu
@@ -898,6 +905,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Sidebar.SidebarWithBurgerMenu />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Card,

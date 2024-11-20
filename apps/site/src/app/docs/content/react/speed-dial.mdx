@@ -22,6 +22,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialDemo />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
@@ -77,6 +79,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialPlacement />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
@@ -124,7 +128,7 @@ export function SpeedDialPlacement() {
           <Tooltip.Trigger as={IconButton} isCircular>
             <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
           </Tooltip.Trigger>
-          <Tooltip.Content className="flex gap-1 bg-transparent shadow-none dark:bg-transparent">
+          <Tooltip.Content className="flex gap-1 bg-transparent shadow-none">
             <Tooltip placement="top">
               <Tooltip.Trigger as={IconButton} isCircular color="secondary">
                 <HomeSimple className="h-[18px] w-[18px]" />
@@ -160,7 +164,7 @@ export function SpeedDialPlacement() {
           <Tooltip.Trigger as={IconButton} isCircular>
             <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
           </Tooltip.Trigger>
-          <Tooltip.Content className="flex gap-1 bg-transparent shadow-none dark:bg-transparent">
+          <Tooltip.Content className="flex gap-1 bg-transparent shadow-none">
             <Tooltip>
               <Tooltip.Trigger as={IconButton} isCircular color="secondary">
                 <HomeSimple className="h-[18px] w-[18px]" />
@@ -196,7 +200,7 @@ export function SpeedDialPlacement() {
           <Tooltip.Trigger as={IconButton} isCircular>
             <Plus className="h-[18px] w-[18px] transition-transform group-data-[open=true]:rotate-45" />
           </Tooltip.Trigger>
-          <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none dark:bg-transparent">
+          <Tooltip.Content className="flex flex-col gap-1 bg-transparent shadow-none">
             <Tooltip placement="left">
               <Tooltip.Trigger as={IconButton} isCircular color="secondary">
                 <HomeSimple className="h-[18px] w-[18px]" />
@@ -243,6 +247,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialCustomIcon />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Mail, SelectFace3d, Settings } from "iconoir-react";
 
@@ -297,6 +303,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialWithLabel />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
@@ -351,6 +359,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialHorizontal />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 
@@ -405,6 +415,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<SpeedDial.SpeedDialWithCustomStyles />}>
 ```tsx
+"use client";
+
 import { Tooltip, IconButton } from "@material-tailwind/react";
 import { HomeSimple, Plus, SelectFace3d, Settings } from "iconoir-react";
 

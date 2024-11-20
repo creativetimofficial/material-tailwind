@@ -20,6 +20,8 @@ Here's how to implement a simple and responsive `Accordion` component. It can be
 
 <ComponentPreview demo={<Accordion.AccordionDemo />}>
 ```tsx
+"use client";
+
 import { Accordion } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
@@ -29,7 +31,7 @@ export function AccordionDemo() {
       <Accordion.Item value="react">
         <Accordion.Trigger>
           Material Tailwind React
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
         <Accordion.Content>
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
@@ -40,7 +42,7 @@ export function AccordionDemo() {
       <Accordion.Item value="html">
         <Accordion.Trigger>
           Material Tailwind HTML
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
         <Accordion.Content>
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
@@ -51,7 +53,7 @@ export function AccordionDemo() {
       <Accordion.Item value="vue">
         <Accordion.Trigger>
           Material Tailwind Vue
-          <NavArrowDown className="h-4 w-4 data-[open=true]:rotate-180" />
+          <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
         <Accordion.Content>
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
@@ -73,6 +75,8 @@ You can set all the `Accordion` items to be open by default by passing an array 
 
 <ComponentPreview demo={<Accordion.AccordionAllOpen />}>
 ```tsx
+"use client";
+
 import { Accordion } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
@@ -126,6 +130,8 @@ The `Accordion` component could be either controlled or uncontrolled. In the con
 
 <ComponentPreview demo={<Accordion.ControlledAccordion />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { Accordion, Button } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
@@ -208,6 +214,8 @@ You can customize the `Accordion` trigger icon by using the `Accordion.Trigger` 
 
 <ComponentPreview demo={<Accordion.AccordionCustomIcon />}>
 ```tsx
+"use client";
+
 import { Accordion } from "@material-tailwind/react";
 import { Minus, Plus } from "iconoir-react";
 
@@ -264,6 +272,8 @@ You can customize the `Accordion` component by using the `className` prop. In th
 
 <ComponentPreview demo={<Accordion.AccordionCustomStyles />}>
 ```tsx
+"use client";
+
 import { Accordion } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
@@ -272,13 +282,13 @@ export function AccordionCustomStyles() {
     <Accordion defaultValue="react">
       <Accordion.Item
         value="react"
-        className="mb-2 rounded-lg border border-surface p-2"
+        className="mb-2 rounded-lg border border-surface p-3"
       >
-        <Accordion.Trigger>
+        <Accordion.Trigger className="p-0">
           Material Tailwind React
           <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
-        <Accordion.Content>
+        <Accordion.Content className="pb-0 pt-3">
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
           Material Tailwind and take advantage of its free components and
           features that will help you set up your web project quickly.
@@ -286,13 +296,13 @@ export function AccordionCustomStyles() {
       </Accordion.Item>
       <Accordion.Item
         value="html"
-        className="mb-2 rounded-lg border border-surface p-2"
+        className="mb-2 rounded-lg border border-surface p-3"
       >
-        <Accordion.Trigger>
+        <Accordion.Trigger className="p-0">
           Material Tailwind HTML
           <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
-        <Accordion.Content>
+        <Accordion.Content className="pb-0 pt-3">
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
           Material Tailwind and take advantage of its free components and
           features that will help you set up your web project quickly.
@@ -300,13 +310,13 @@ export function AccordionCustomStyles() {
       </Accordion.Item>
       <Accordion.Item
         value="vue"
-        className="rounded-lg border border-surface p-2"
+        className="rounded-lg border border-surface p-3"
       >
-        <Accordion.Trigger>
+        <Accordion.Trigger className="p-0">
           Material Tailwind Vue
           <NavArrowDown className="h-4 w-4 group-data-[open=true]:rotate-180" />
         </Accordion.Trigger>
-        <Accordion.Content>
+        <Accordion.Content className="pb-0 pt-3">
           Material Tailwind is an open-source crafted in Tailwind CSS. Get
           Material Tailwind and take advantage of its free components and
           features that will help you set up your web project quickly.
@@ -326,6 +336,8 @@ You can disable the `Accordion` item by adding the `disabled` prop. This will pr
 
 <ComponentPreview demo={<Accordion.AccordionDisabled />}>
 ```tsx
+"use client";
+
 import { Accordion } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 

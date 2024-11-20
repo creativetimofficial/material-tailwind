@@ -23,6 +23,8 @@ Here's how to implement a simple and responsive `Card` component. It can be used
 
 <ComponentPreview demo={<Card.CardDemo />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function CardDemo() {
@@ -54,6 +56,8 @@ Use this example if you want to showcase your information in a simple and straig
 
 <ComponentPreview demo={<Card.SimpleCard />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function SimpleCard() {
@@ -84,6 +88,8 @@ Use this card example if you are looking to use a link instead a button. This ca
 
 <ComponentPreview demo={<Card.CardWithLink />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button } from "@material-tailwind/react";
 import { FrameSelect } from "iconoir-react";
 
@@ -120,6 +126,8 @@ Showcase user information in a concise way by using this card example. Use high-
 
 <ComponentPreview demo={<Card.ProfileCard />}>
 ```tsx
+"use client";
+
 import {
   Card,
   Typography,
@@ -144,11 +152,7 @@ export function ProfileCard() {
       </Card.Body>
       <Card.Footer className="flex items-center justify-center gap-1">
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <X className="h-3.5 w-3.5" />
           </Tooltip.Trigger>
           <Tooltip.Content>
@@ -157,11 +161,7 @@ export function ProfileCard() {
           </Tooltip.Content>
         </Tooltip>
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <Facebook className="h-4 w-4" />
           </Tooltip.Trigger>
           <Tooltip.Content>
@@ -170,11 +170,7 @@ export function ProfileCard() {
           </Tooltip.Content>
         </Tooltip>
         <Tooltip>
-          <Tooltip.Trigger
-            as={IconButton}
-            size="sm"
-            variant="ghost"
-          >
+          <Tooltip.Trigger as={IconButton} size="sm" variant="ghost">
             <Instagram className="h-4 w-4" />
           </Tooltip.Trigger>
           <Tooltip.Content>
@@ -197,6 +193,8 @@ This login card is perfect for sections that require user authentication. It con
 
 <ComponentPreview demo={<Card.LoginCard />}>
 ```tsx
+"use client";
+
 import {
   Card,
   Typography,
@@ -281,6 +279,8 @@ This beautiful pricing card will present the pricing plans for the products. It 
 
 <ComponentPreview demo={<Card.PricingCard />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button, Chip } from "@material-tailwind/react";
 import { CheckCircleSolid } from "iconoir-react";
 
@@ -345,12 +345,10 @@ Showcase blog posts in a visually appealing way with our example of blog card. I
 
 <ComponentPreview demo={<Card.BlogCard />}>
 ```tsx
-import {
-  Card,
-  Typography,
-  Avatar,
-  Tooltip,
-} from "@material-tailwind/react";
+"use client";
+
+import React from "react";
+import { Card, Typography, Avatar, Tooltip } from "@material-tailwind/react";
 
 export function BlogCard() {
   return (
@@ -361,13 +359,13 @@ export function BlogCard() {
         alt="ui/ux review check"
       />
       <Card.Body>
-        <Typography type="h5">UI/UX Review Check</Typography>
-        <Typography as="p" type="h6" className="mt-3">
+        <Typography type="h6">UI/UX Review Check</Typography>
+        <Typography className="mt-1 text-foreground">
           Because it&apos;s about motivating the doers. Because I&apos;m here to
           follow my dreams and inspire others.
         </Typography>
       </Card.Body>
-      <Card.Footer className="flex items-center justify-between">
+      <Card.Footer className="mt-4 flex items-center justify-between">
         <div className="flex items-center -space-x-3">
           <Tooltip>
             <Tooltip.Trigger>
@@ -378,7 +376,10 @@ export function BlogCard() {
                 className="border-2 border-secondary hover:z-10"
               />
             </Tooltip.Trigger>
-            <Tooltip.Content>Natali Craig</Tooltip.Content>
+            <Tooltip.Content>
+              Natali Craig
+              <Tooltip.Arrow />
+            </Tooltip.Content>
           </Tooltip>
           <Tooltip>
             <Tooltip.Trigger>
@@ -389,10 +390,13 @@ export function BlogCard() {
                 className="border-2 border-secondary hover:z-10"
               />
             </Tooltip.Trigger>
-            <Tooltip.Content>Tania Andrew</Tooltip.Content>
+            <Tooltip.Content>
+              Tania Andrew
+              <Tooltip.Arrow />
+            </Tooltip.Content>
           </Tooltip>
         </div>
-        <Typography>January 10</Typography>
+        <Typography type="small">January 10</Typography>
       </Card.Footer>
     </Card>
   );
@@ -408,6 +412,8 @@ If you are looking for a more sophisticated blog card, use this example which us
 
 <ComponentPreview demo={<Card.BackgroundBlogCard />}>
 ```tsx
+"use client";
+
 import React from "react";
 import { Card, Typography, Avatar } from "@material-tailwind/react";
 
@@ -448,6 +454,8 @@ If you have a service booking section on your website, this card if what you wil
 
 <ComponentPreview demo={<Card.BookingCard />}>
 ```tsx
+"use client";
+
 import React from "react";
 import {
   Card,
@@ -486,13 +494,8 @@ export function BookingCard() {
       </Card.Header>
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
-          <Typography type="h6">
-            Wooden House, Florida
-          </Typography>
-          <Typography
-            color="default"
-            className="flex items-center gap-1.5"
-          >
+          <Typography type="h6">Wooden House, Florida</Typography>
+          <Typography className="flex items-center gap-1.5 ">
             <StarSolid className="h-[18px] w-[18px] text-warning" />
             5.0
           </Typography>
@@ -615,6 +618,8 @@ The testimonial section is a necessary component of any website. Use our card ex
 
 <ComponentPreview demo={<Card.TestimonialCard />}>
 ```tsx
+"use client";
+
 import {
   Card,
   CardBody,
@@ -662,12 +667,14 @@ Here is an example of a simple horizontal card that you can use to showcase the 
 
 <ComponentPreview demo={<Card.HorizontalCard />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function HorizontalCard() {
   return (
     <Card className="flex h-full w-full max-w-[48rem] flex-row">
-      <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none shadow-none">
+      <Card.Header className="m-0 h-full w-2/5 shrink-0 rounded-r-none">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
           alt="card-image"
@@ -675,24 +682,22 @@ export function HorizontalCard() {
         />
       </Card.Header>
       <Card.Body className="p-4">
-        <Typography className="mb-4 !font-bold uppercase text-foreground">
+        <Typography
+          type="small"
+          className="mb-4 font-bold uppercase text-foreground"
+        >
           startups
         </Typography>
         <Typography type="h5" className="mb-2">
           Lyft launching cross-platform service this week
         </Typography>
-        <Typography className="mb-8">
+        <Typography className="mb-8 text-foreground">
           Like so many organizations these days, Autodesk is a company in
           transition. It was until recently a traditional boxed software company
           selling licenses. Yet its own business model disruption is only part
           of the story
         </Typography>
-        <Button
-          as="a"
-          href="#"
-          variant="ghost"
-          className="mb-2 flex w-fit items-center gap-2"
-        >
+        <Button as="a" href="#" className="mb-2 flex w-fit items-center gap-2">
           Learn More
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -724,6 +729,8 @@ Use this card example to showcase your products in an ecommerce website. This ca
 
 <ComponentPreview demo={<Card.EcommerceCard />}>
 ```tsx
+"use client";
+
 import { Card, Typography, Button } from "@material-tailwind/react";
 
 export function EcommerceCard() {
@@ -737,20 +744,16 @@ export function EcommerceCard() {
       />
       <Card.Body>
         <div className="mb-2 flex items-center justify-between">
-          <Typography className="!font-medium">Apple AirPods</Typography>
-          <Typography className="!font-medium">$95.00</Typography>
+          <Typography type="h6">Apple AirPods</Typography>
+          <Typography type="h6">$95.00</Typography>
         </div>
-        <Typography variant="small" className="opacity-75">
+        <Typography className="text-foreground">
           With plenty of talk and listen time, voice-activated Siri access, and
           an available wireless charging case.
         </Typography>
       </Card.Body>
-      <Card.Footer className="pt-0">
-        <Button
-          isFullWidth
-          color="secondary"
-          className="shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >
+      <Card.Footer>
+        <Button isFullWidth color="secondary">
           Add to Cart
         </Button>
       </Card.Footer>

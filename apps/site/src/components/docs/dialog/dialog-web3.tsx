@@ -3,9 +3,7 @@ import {
   Button,
   Typography,
   IconButton,
-  Avatar,
 } from "@material-tailwind/react";
-
 import { Xmark } from "iconoir-react";
 
 export function DialogWeb3() {

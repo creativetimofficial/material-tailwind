@@ -20,6 +20,8 @@ Here's how to implement a simple and responsive video. It can be used to display
 
 <ComponentPreview demo={<Video.VideoDemo />}>
 ```tsx
+"use client";
+
 export function VideoDemo() {
   return (
     <video className="h-full w-full rounded-lg" controls>
@@ -39,6 +41,8 @@ You can use the `autoPlay` attribute to make the video play automatically when t
 
 <ComponentPreview demo={<Video.VideoAutoplay />}>
 ```tsx
+"use client";
+
 export function VideoAutoplay() {
   return (
     <video className="h-full w-full rounded-lg" controls autoPlay>
@@ -58,6 +62,8 @@ You can use the `muted` attribute to mute the video.
 
 <ComponentPreview demo={<Video.VideoMuted />}>
 ```tsx
+"use client";
+
 export function VideoMuted() {
   return (
     <video className="h-full w-full rounded-lg" controls muted>

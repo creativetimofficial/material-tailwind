@@ -25,6 +25,8 @@ Here's how to implement a simple `Chip` component. It can be used for actions in
 
 <ComponentPreview demo={<Chip.ChipDemo />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 
 export function ChipDemo() {
@@ -47,11 +49,13 @@ In the example below, we've showcased the different chip sizes that you can use 
 
 <ComponentPreview demo={<Chip.ChipSizes />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 
 export function ChipSizes() {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-end gap-2">
       <Chip size="sm">
         <Chip.Label>Small</Chip.Label>
       </Chip>
@@ -77,6 +81,8 @@ In the example below, we've showcased the different chip variants that you can u
 
 <ComponentPreview demo={<Chip.ChipVariants />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 
 export function ChipVariants() {
@@ -110,6 +116,8 @@ In the example below, we've showcased the different chip colors that you can use
 
 <ComponentPreview demo={<Chip.ChipColors />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 
 export function ChipColors() {
@@ -149,6 +157,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Chip.ChipIcon />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
@@ -193,6 +203,8 @@ You can use `Chip.DismissTrigger` component to add a close button to your chip f
 
 <ComponentPreview demo={<Chip.ChipDismissible />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
@@ -218,13 +230,20 @@ You can add an avatar for the `Chip` component to make it more visually appealin
 
 <ComponentPreview demo={<Chip.ChipWithAvatar />}>
 ```tsx
+"use client";
+
 import { Chip, Avatar } from "@material-tailwind/react";
 
 export function ChipWithAvatar() {
   return (
     <Chip>
       <Chip.Icon>
-        <Avatar size="xs" src="https://dub.sh/TdSBP0D" alt="profile-picture" />
+        <Avatar
+          size="xs"
+          src="https://dub.sh/TdSBP0D"
+          alt="profile-picture"
+          className="h-full w-full"
+        />
       </Chip.Icon>
       <Chip.Label>Alex Andrew</Chip.Label>
     </Chip>
@@ -241,6 +260,8 @@ By default `Chip` comes with a pill shape. If you prefer a rounded shape, you ca
 
 <ComponentPreview demo={<Chip.ChipRounded />}>
 ```tsx
+"use client";
+
 import { Chip } from "@material-tailwind/react";
 
 export function ChipRounded() {

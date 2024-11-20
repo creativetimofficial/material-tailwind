@@ -20,21 +20,26 @@ Headings are used to define the structure of the content. They are used to creat
 
 <ComponentPreview demo={<Typography.Headings />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 export function Headings() {
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="flex flex-col gap-4">
       <Typography type="h1">Material Tailwind (H1)</Typography>
-      <Typography type="h2">Material Tailwind (H2)</Typography>
-      <Typography type="h3">Material Tailwind (H3)</Typography>
+      <Typography as="div" type="h2">
+        Material Tailwind (H2)
+      </Typography>
+      <Typography as="div" type="h3">
+        Material Tailwind (H3)
+      </Typography>
       <Typography type="h4">Material Tailwind (H4)</Typography>
       <Typography type="h5">Material Tailwind (H5)</Typography>
       <Typography type="h6">Material Tailwind (H6)</Typography>
     </div>
   );
 }
-
 ```
 </ComponentPreview>
 
@@ -46,6 +51,8 @@ The paragraph is used to display text content. It is the most common component u
 
 <ComponentPreview demo={<Typography.Paragraph />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 export function Paragraph() {
@@ -69,6 +76,8 @@ The lead paragraph is used to highlight the most important information on the pa
 
 <ComponentPreview demo={<Typography.LeadParagraph />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 export function LeadParagraph() {
@@ -92,6 +101,8 @@ The small text is used to display small text content on the page. It is used to 
 
 <ComponentPreview demo={<Typography.SmallText />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 export function SmallText() {
@@ -117,11 +128,13 @@ In the example below, we've showcased the different colors that you can use for 
 
 <ComponentPreview demo={<Typography.TypographyColors />}>
 ```tsx
+"use client";
+
 import { Typography } from "@material-tailwind/react";
 
 export function TypographyColors() {
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="flex flex-col gap-4">
       <Typography type="h1" color="primary">
         Material Tailwind
       </Typography>
