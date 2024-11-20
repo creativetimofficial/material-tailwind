@@ -20,6 +20,8 @@ Here's how to implement a simple and responsive navbar component with your logo,
 
 <ComponentPreview demo={<Navbar.NavbarDemo />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Button,
@@ -144,6 +146,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Navbar.StickyNavbar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Button,
@@ -320,6 +324,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Navbar.ComplexNavbar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   IconButton,
@@ -332,7 +338,6 @@ import {
   Menu,
   Tooltip,
   Accordion,
-  type MenuItemProps,
 } from "@material-tailwind/react";
 import {
   Archive,
@@ -417,7 +422,7 @@ const MenuItem = React.forwardRef<
   {
     title: string;
     description: string;
-  } & MenuItemProps
+  }
 >(({ title, description, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="flex-col items-start">
@@ -565,6 +570,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Navbar.NavbarWithSearch />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   IconButton,
@@ -690,6 +697,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Navbar.DarkNavbar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   Button,
@@ -818,6 +827,8 @@ Use this navbar example to create a simple navbar with your logo and nav links f
 
 <ComponentPreview demo={<Navbar.SimpleNavbar />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   IconButton,
@@ -922,6 +933,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Navbar.NavbarWithMegaMenu />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import {
   IconButton,

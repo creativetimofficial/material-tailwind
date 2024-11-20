@@ -6,7 +6,6 @@ import {
   IconButton,
   Textarea,
 } from "@material-tailwind/react";
-
 import { Xmark } from "iconoir-react";
 
 export function DialogMessage() {

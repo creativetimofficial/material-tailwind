@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Menu,
-  IconButton,
-  Typography,
-  Avatar,
-  type MenuItemProps,
-} from "@material-tailwind/react";
+import { Menu, IconButton, Typography, Avatar } from "@material-tailwind/react";
 import { Bell, Clock } from "iconoir-react";
 
 const MenuItem = React.forwardRef<
@@ -14,7 +8,7 @@ const MenuItem = React.forwardRef<
     img: string;
     title: string;
     date: string;
-  } & MenuItemProps
+  }
 >(({ img, title, date, ...rest }, ref) => {
   return (
     <Menu.Item ref={ref} {...rest} className="gap-3">

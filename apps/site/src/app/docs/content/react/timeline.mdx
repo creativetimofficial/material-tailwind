@@ -20,6 +20,8 @@ Here's how to implement a simple `Timeline` component. It can be used to display
 
 <ComponentPreview demo={<Timeline.TimelineDemo />}>
 ```tsx
+"use client";
+
 import { Timeline, Typography } from "@material-tailwind/react";
 
 export function TimelineDemo() {
@@ -89,6 +91,8 @@ You can also add an icon to the `Timeline` component. This can be done by using 
 
 <ComponentPreview demo={<Timeline.TimelineWithIcon />}>
 ```tsx
+"use client";
+
 import { Timeline, Typography } from "@material-tailwind/react";
 import { Bell, DollarCircle, HomeSimple } from "iconoir-react";
 
@@ -165,6 +169,8 @@ You can also add an avatar to the `Timeline` component. This can be done by usin
 
 <ComponentPreview demo={<Timeline.TimelineWithAvatar />}>
 ```tsx
+"use client";
+
 import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
 export function TimelineWithAvatar() {
@@ -254,6 +260,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Timeline.ActivitiesTimeline />}>
 ```tsx
+"use client";
+
 import { Timeline, Typography, Card } from "@material-tailwind/react";
 import { CreditCard, Bell, DollarCircle } from "iconoir-react";
 

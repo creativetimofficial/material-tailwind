@@ -22,6 +22,8 @@ Here's how to implement a simple and responsive `Input` component. It is perfect
 
 <ComponentPreview demo={<Input.InputDemo />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 
 export function InputDemo() {
@@ -44,6 +46,8 @@ In the example below, we've showcased the different input sizes that you can use
 
 <ComponentPreview demo={<Input.InputSizes />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 
 export function InputSizes() {
@@ -68,6 +72,8 @@ In the example below, we've showcased the different input colors that you can us
 
 <ComponentPreview demo={<Input.InputColors />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 
 export function InputColors() {
@@ -93,6 +99,8 @@ We provide helpful props like `isError` and `isSuccess` for showing error and su
 
 <ComponentPreview demo={<Input.InputWithValidation />}>
 ```tsx
+"use client";
+
 import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithValidation() {
@@ -136,6 +144,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Input.InputWithIcon />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 import { ProfileCircle, Lock } from "iconoir-react";
 
@@ -166,6 +176,8 @@ The `Input` component can be used with a label to provide more context to the us
 
 <ComponentPreview demo={<Input.InputWithLabel />}>
 ```tsx
+"use client";
+
 import { Input, Typography } from "@material-tailwind/react";
 
 export function InputWithLabel() {
@@ -195,6 +207,8 @@ You can use `Input` and `Typography` components together to provide more details
 
 <ComponentPreview demo={<Input.InputWithHelperText />}>
 ```tsx
+"use client";
+
 import { Input, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
@@ -223,6 +237,8 @@ You can use `Input` and `Button` components together for submitting the input da
 
 <ComponentPreview demo={<Input.InputWithButton />}>
 ```tsx
+"use client";
+
 import { Button, Input } from "@material-tailwind/react";
 
 export function InputWithButton() {
@@ -250,6 +266,8 @@ In the example below we've used the [use-react-countries](https://www.npmjs.com/
 
 <ComponentPreview demo={<Input.InputWithDropdown />}>
 ```tsx
+"use client";
+
 import * as React from "react";
 import { Input, Menu, Button } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
@@ -309,6 +327,8 @@ You can disable the input by adding the `disabled` prop. This will prevent the u
 
 <ComponentPreview demo={<Input.InputDisabled />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 
 export function InputDisabled() {
@@ -329,6 +349,8 @@ You can use `className` prop to customize the `Input` component style. In the ex
 
 <ComponentPreview demo={<Input.InputCustomStyles />}>
 ```tsx
+"use client";
+
 import { Input } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 

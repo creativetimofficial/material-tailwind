@@ -22,6 +22,8 @@ Here's how to implement a simple and responsive `ButtonGroup` component. It can 
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupDemo />}>
 ```tsx
+"use client"; 
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function ButtonGroupDemo() {
@@ -46,6 +48,8 @@ In the example below, we've showcased the different `ButtonGroup` variants that 
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupVariants />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function ButtonGroupVariants() {
@@ -87,6 +91,8 @@ In the example below, we've showcased the different `ButtonGroup` sizes that you
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupSizes />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function ButtonGroupSizes() {
@@ -123,6 +129,8 @@ In the example below, we've showcased the different `ButtonGroup` colors that yo
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupColors />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function ButtonGroupColors() {
@@ -174,33 +182,70 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<ButtonGroup.ButtonGroupWithIcon />}>
 ```tsx
-import { Button } from "@material-tailwind/react";
-import {
-  NavArrowRight,
-  RefreshDouble,
-  CloudUpload,
-  BrightStar,
-} from "iconoir-react";
+"use client";
 
-export function ButtonWithIcon() {
+import { ButtonGroup, Button } from "@material-tailwind/react";
+import { Bold, Italic, Underline } from "iconoir-react";
+
+export function ButtonGroupWithIcon() {
   return (
-    <div className="flex gap-4">
-      <Button variant="ghost">
-        Read More
-        <NavArrowRight className="ms-1 h-4 w-4" />
-      </Button>
-      <Button variant="outline">
-        Refresh
-        <RefreshDouble className="ms-2 h-4 w-4" />
-      </Button>
-      <Button variant="solid">
-        <CloudUpload className="me-2 h-4 w-4" />
-        Upload Assets
-      </Button>
-      <Button variant="gradient">
-        Give Us Star
-        <BrightStar className="ms-2 h-4 w-4" />
-      </Button>
+    <div className="flex flex-col gap-4">
+      <ButtonGroup variant="ghost">
+        <Button>
+          <Bold className="mr-1.5 h-4 w-4 stroke-2" />
+          Bold
+        </Button>
+        <Button>
+          <Italic className="mr-1.5 h-4 w-4 stroke-2" />
+          Italic
+        </Button>
+        <Button>
+          <Underline className="mr-1.5 h-4 w-4 stroke-2" />
+          Underline
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup variant="outline">
+        <Button>
+          <Bold className="mr-1.5 h-4 w-4 stroke-2" />
+          Bold
+        </Button>
+        <Button>
+          <Italic className="mr-1.5 h-4 w-4 stroke-2" />
+          Italic
+        </Button>
+        <Button>
+          <Underline className="mr-1.5 h-4 w-4 stroke-2" />
+          Underline
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup variant="solid">
+        <Button>
+          <Bold className="mr-1.5 h-4 w-4 stroke-2" />
+          Bold
+        </Button>
+        <Button>
+          <Italic className="mr-1.5 h-4 w-4 stroke-2" />
+          Italic
+        </Button>
+        <Button>
+          <Underline className="mr-1.5 h-4 w-4 stroke-2" />
+          Underline
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup variant="gradient">
+        <Button>
+          <Bold className="mr-1.5 h-4 w-4 stroke-2" />
+          Bold
+        </Button>
+        <Button>
+          <Italic className="mr-1.5 h-4 w-4 stroke-2" />
+          Italic
+        </Button>
+        <Button>
+          <Underline className="mr-1.5 h-4 w-4 stroke-2" />
+          Underline
+        </Button>
+      </ButtonGroup>
     </div>
   );
 }
@@ -217,11 +262,13 @@ In the example below, we've showcased the block-level `ButtonGroup` component in
 
 <ComponentPreview demo={<ButtonGroup.BlockLevelButtonGroup />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function BlockLevelButtonGroup() {
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex w-full flex-col gap-4">
       <ButtonGroup isFullWidth variant="ghost">
         <Button>React</Button>
         <Button>Vue</Button>
@@ -258,6 +305,8 @@ In the example below, we've showcased the pill `ButtonGroup` component in 4 diff
 
 <ComponentPreview demo={<ButtonGroup.PillButtonGroup />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
 export function PillButtonGroup() {
@@ -300,6 +349,8 @@ In the example below, we've showcased how to create custom social media `ButtonG
 
 <ComponentPreview demo={<ButtonGroup.CustomButtonGroup />}>
 ```tsx
+"use client";
+
 import { ButtonGroup, Button } from "@material-tailwind/react";
 import { Facebook, Dribbble, Linkedin, Instagram } from "iconoir-react";
 

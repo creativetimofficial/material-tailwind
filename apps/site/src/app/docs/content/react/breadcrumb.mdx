@@ -22,16 +22,20 @@ Here's how to implement a simple and responsive `Breadcrumb` component. It can b
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbDemo />}>
 ```tsx
+"use client";
+
 import { Breadcrumb } from "@material-tailwind/react";
 
 export function BreadcrumbDemo() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Link>Docs</Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
       <Breadcrumb.Separator />
-      <Breadcrumb.Link>Components</Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
       <Breadcrumb.Separator />
-      <Breadcrumb.Link>Breadcrumb</Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs/components/breadcrumb">
+        Breadcrumb
+      </Breadcrumb.Link>
     </Breadcrumb>
   );
 }
@@ -48,6 +52,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbWithIcon />}>
 ```tsx
+"use client";
+
 import { Breadcrumb } from "@material-tailwind/react";
 import { HomeSimple } from "iconoir-react";
 
@@ -75,16 +81,18 @@ You can customize the breadcrumb separator by adding any text or icon to the `Br
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbCustomSeparator />}>
 ```tsx
+"use client";
+
 import { Breadcrumb } from "@material-tailwind/react";
 
 export function BreadcrumbCustomSeparator() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Link>Docs</Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
       <Breadcrumb.Separator>-</Breadcrumb.Separator>
-      <Breadcrumb.Link>Components</Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs/components">Components</Breadcrumb.Link>
       <Breadcrumb.Separator>-</Breadcrumb.Separator>
-      <Breadcrumb.Link>
+      <Breadcrumb.Link href="/docs/components/breadcrumb">
         Breadcrumb
       </Breadcrumb.Link>
     </Breadcrumb>
@@ -103,6 +111,8 @@ In the example below we've used the [Iconoir](https://iconoir.com/) icons, but y
 
 <ComponentPreview demo={<Breadcrumb.BreadcrumbCustomStyles />}>
 ```tsx
+"use client";
+
 import { Breadcrumb } from "@material-tailwind/react";
 import {
   Cube,

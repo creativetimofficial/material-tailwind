@@ -20,6 +20,8 @@ Here's how to implement a `Switch` component. It can be used for forms or other 
 
 <ComponentPreview demo={<Switch.SwitchDemo />}>
 ```tsx
+"use client";
+
 import { Switch } from "@material-tailwind/react";
 
 export function SwitchDemo() {
@@ -36,6 +38,8 @@ You can use the `defaultChecked` prop for making the `Switch` component checked 
 
 <ComponentPreview demo={<Switch.SwitchChecked />}>
 ```tsx
+"use client";
+
 import { Switch } from "@material-tailwind/react";
 
 export function SwitchChecked() {
@@ -54,6 +58,8 @@ In the example below, we've showcased the different colors for `Switch` componen
 
 <ComponentPreview demo={<Switch.SwitchColors />}>
 ```tsx
+"use client";
+
 import { Switch } from "@material-tailwind/react";
 
 export function SwitchColors() {
@@ -79,6 +85,8 @@ The `Switch` component can be used with a label to provide more context to the u
 
 <ComponentPreview demo={<Switch.SwitchWithLabel />}>
 ```tsx
+"use client";
+
 import { Switch, Typography } from "@material-tailwind/react";
 
 export function SwitchWithLabel() {
@@ -106,6 +114,8 @@ You can disable the `Switch` component by adding the `disabled` prop. This will 
 
 <ComponentPreview demo={<Switch.DisabledSwitch />}>
 ```tsx
+"use client";
+
 import { Switch } from "@material-tailwind/react";
 
 export function DisabledSwitch() {
@@ -122,6 +132,8 @@ Use the example below to create a `Switch` component with a link to the terms an
 
 <ComponentPreview demo={<Switch.SwitchWithLink />}>
 ```tsx
+"use client";
+
 import { Switch, Typography } from "@material-tailwind/react";
 
 export function SwitchWithLink() {
@@ -152,6 +164,8 @@ Use the example below to create a `Switch` component with a title and descriptio
 
 <ComponentPreview demo={<Switch.SwitchWithDescription />}>
 ```tsx
+"use client";
+
 import { Switch, Typography } from "@material-tailwind/react";
 
 export function SwitchWithDescription() {
@@ -183,11 +197,13 @@ You can use `className` prop to customize the `Switch` component style. In the e
 
 <ComponentPreview demo={<Switch.CustomSwitch />}>
 ```tsx
+"use client";
+
 import { Switch } from "@material-tailwind/react";
 
 export function CustomSwitch() {
   return (
-    <Switch className="after:shadow-sm after:shadow-black/10 checked:before:bg-[#2ec946]" />
+    <Switch className="after:border-2 checked:before:bg-[#2ec946] checked:after:border-[#2ec946]" />
   );
 }
 ```
