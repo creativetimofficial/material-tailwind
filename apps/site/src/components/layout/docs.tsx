@@ -10,7 +10,7 @@ export function Docs({ children }: { children: React.ReactNode }) {
       <div className="px-3 md:px-4">
         <div className="mx-auto flex w-full max-w-7xl gap-0 lg:gap-8">
           <Sidenav />
-          <div className="ml-[280px]">{children}</div>
+          <div className="w-full lg:ml-[280px]">{children}</div>
         </div>
       </div>
       <Footer />
