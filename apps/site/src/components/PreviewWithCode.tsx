@@ -1,9 +1,18 @@
+"use client";
 import ComponentPreview from './ComponentPreview';
 
 import CodeSnippet from './CodeSnippet';
+import { useTheme } from 'next-themes';
+import { twMerge } from 'tailwind-merge';
 
-async function PreviewWithCode({relativePath, language}: {relativePath: string, language: string}) {
+async function PreviewWithCode({relativePath, language, className}: {relativePath: string, language: string, className?: string}) {
 
+  const { resolvedTheme } = useTheme();
+  const containerStyles = twMerge(
+    "border-surface rounded-lg border mt-4 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full",
+    className,
+  );
+  
   let codeModule;
 
   if (language === "html") {
@@ -16,20 +25,17 @@ async function PreviewWithCode({relativePath, language}: {relativePath: string, 
     );
   }
 
-  // const tsxModule = await import(
-  //   `!!raw-loader!../components/docs/${relativePath}`
-  // );
-  // const htmlModule = await import(
-  //   `!!raw-loader!../components/docs-html/${relativePath}`
-  // );
-
   const codeContent = codeModule.default;
   console.log('relativePath', relativePath);
 
   return (
     <>
-      <ComponentPreview componentPath={`./docs/${relativePath}`} />
+    <div className={containerStyles} data-theme={resolvedTheme}>
+      <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md p-4 lg:overflow-hidden">
+        <ComponentPreview componentPath={`./docs/${relativePath}`} />
+      </div>
       <CodeSnippet codeBlock={codeContent} language={language} />
+      </div>
     </>
   );
 };
