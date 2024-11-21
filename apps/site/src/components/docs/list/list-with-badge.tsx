@@ -1,7 +1,7 @@
 import { List, Chip } from "@material-tailwind/react";
 import { Mail, Settings, Bin } from "iconoir-react";
 
-export default function ListWithBadge() {
+export function ListWithBadge() {
   return (
     <List>
       <List.Item>

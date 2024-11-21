@@ -4,7 +4,7 @@ import { DayPicker } from "react-day-picker";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 import { Input, Popover } from "@material-tailwind/react";
 
-export default function DatePickerDemo() {
+export function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>();
 
   return (

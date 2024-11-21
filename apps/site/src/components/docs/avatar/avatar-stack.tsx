@@ -1,6 +1,6 @@
 import { Avatar } from "@material-tailwind/react";
 
-export default function AvatarStack() {
+export function AvatarStack() {
   return (
     <div className="flex items-center -space-x-4">
       <Avatar

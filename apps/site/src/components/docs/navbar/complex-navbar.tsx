@@ -108,7 +108,7 @@ const MenuItem = React.forwardRef<
   );
 });
 
-export default function ComplexNavbar() {
+export function ComplexNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {

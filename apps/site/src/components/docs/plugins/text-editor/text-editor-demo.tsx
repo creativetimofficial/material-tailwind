@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import * as React from "react";
 import { createPortal } from "react-dom";
@@ -474,7 +474,7 @@ const editorConfig = {
   ],
 };
 
-export default function TextEditorDemo() {
+export function TextEditorDemo() {
   return (
     <LexicalComposer initialConfig={editorConfig}>
       <Card

@@ -54,7 +54,7 @@ const Links = [
   },
 ];
 
-export default function SidebarWithContentSeparator() {
+export function SidebarWithContentSeparator() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

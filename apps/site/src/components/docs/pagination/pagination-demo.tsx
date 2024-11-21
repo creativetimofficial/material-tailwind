@@ -1,7 +1,7 @@
 import { Button, IconButton } from "@material-tailwind/react";
 import { NavArrowRight, NavArrowLeft } from "iconoir-react";
 
-export default function PaginationDemo() {
+export function PaginationDemo() {
   return (
     <div className="flex items-center gap-1">
       <Button variant="ghost">

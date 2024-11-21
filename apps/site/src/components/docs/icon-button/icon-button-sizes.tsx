@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
-export default function IconButtonSizes() {
+export function IconButtonSizes() {
   return (
     <div className="flex items-end gap-4">
       <IconButton size="xs">

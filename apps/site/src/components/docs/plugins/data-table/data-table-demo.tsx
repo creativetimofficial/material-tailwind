@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import * as React from "react";
 import {
@@ -90,7 +90,7 @@ function makeData(...lens: number[]) {
   return makeDataLevel();
 }
 
-export default function DataTableDemo() {
+export function DataTableDemo() {
   const columns = React.useMemo<ColumnDef<Person>[]>(
     () => [
       {

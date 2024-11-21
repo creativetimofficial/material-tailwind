@@ -30,7 +30,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function TableWithStripedRow() {
+export function TableWithStripedRow() {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-surface">
       <table className="w-full">

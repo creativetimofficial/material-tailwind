@@ -1,6 +1,6 @@
 import { Select, Typography } from "@material-tailwind/react";
 
-export default function SelectWithValidation() {
+export function SelectWithValidation() {
   return (
     <div className="flex w-72 flex-col items-center gap-4">
       <div className="w-full">

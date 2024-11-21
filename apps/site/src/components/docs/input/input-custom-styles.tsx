@@ -1,7 +1,7 @@
 import { Input } from "@material-tailwind/react";
 import { ProfileCircle } from "iconoir-react";
 
-export default function InputCustomStyles() {
+export function InputCustomStyles() {
   return (
     <div className="w-72">
       <Input

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Input, Menu, Button } from "@material-tailwind/react";
 import { useCountries } from "use-react-countries";
 
-export default function InputWithDropdown() {
+export function InputWithDropdown() {
   const { countries } = useCountries();
   const [country, setCountry] = React.useState(0);
   const { name, flags, countryCallingCode } = countries[country];

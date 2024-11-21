@@ -1,6 +1,6 @@
 import { Textarea, Typography } from "@material-tailwind/react";
 
-export default function TextareaWithValidation() {
+export function TextareaWithValidation() {
   return (
     <div className="w-full space-y-6">
       <div className="w-full space-y-1">

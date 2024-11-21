@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Rating, Typography } from "@material-tailwind/react";
 
-export default function RatingWithText() {
+export function RatingWithText() {
   const [rated, setRated] = React.useState(4);
 
   return (

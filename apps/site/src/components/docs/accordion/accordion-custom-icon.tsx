@@ -1,7 +1,7 @@
 import { Accordion } from "@material-tailwind/react";
 import { Minus, Plus } from "iconoir-react";
 
-export default function AccordionCustomIcon() {
+export function AccordionCustomIcon() {
   return (
     <Accordion defaultValue="react">
       <Accordion.Item value="react">

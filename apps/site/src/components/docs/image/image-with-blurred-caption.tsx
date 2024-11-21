@@ -1,6 +1,6 @@
 import { Card, Typography } from "@material-tailwind/react";
 
-export default function ImageWithBlurredCaption() {
+export function ImageWithBlurredCaption() {
   return (
     <figure className="relative h-96 w-full">
       <img

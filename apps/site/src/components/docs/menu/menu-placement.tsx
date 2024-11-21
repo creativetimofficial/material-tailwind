@@ -1,6 +1,6 @@
 import { Menu, Button } from "@material-tailwind/react";
 
-export default function MenuPlacement() {
+export function MenuPlacement() {
   return (
     <>
       <div className="mb-3 flex gap-3">

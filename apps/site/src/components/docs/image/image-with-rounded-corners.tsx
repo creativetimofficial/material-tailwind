@@ -1,4 +1,5 @@
-export default function ImageWithRoundedCorners() {
+"use client";
+export function ImageWithRoundedCorners() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

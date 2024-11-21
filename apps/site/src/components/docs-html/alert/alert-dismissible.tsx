@@ -1,6 +1,6 @@
-export function AlertDismissible() {
+export default function AlertDismissible() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

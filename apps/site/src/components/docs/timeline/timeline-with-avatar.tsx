@@ -1,6 +1,6 @@
 import { Timeline, Typography, Avatar } from "@material-tailwind/react";
 
-export default function TimelineWithAvatar() {
+export function TimelineWithAvatar() {
   return (
     <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>

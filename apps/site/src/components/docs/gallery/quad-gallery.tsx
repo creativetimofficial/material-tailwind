@@ -1,4 +1,5 @@
-export default function QuadGallery() {
+"use client";
+export function QuadGallery() {
   const data = [
     {
       imageLink:

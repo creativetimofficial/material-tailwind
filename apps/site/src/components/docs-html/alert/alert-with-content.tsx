@@ -1,6 +1,6 @@
-export function AlertWithContent() {
+export default function AlertWithContent() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./navbar-demo";
 export * from "./sticky-navbar";

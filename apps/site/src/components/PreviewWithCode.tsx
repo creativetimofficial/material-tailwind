@@ -32,7 +32,7 @@ async function PreviewWithCode({relativePath, language, className}: {relativePat
     <>
     <div className={containerStyles} data-theme={resolvedTheme}>
       <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md p-4 lg:overflow-hidden">
-        <ComponentPreview componentPath={`./docs/${relativePath}`} />
+        <ComponentPreview componentPath={`./docs-html/${relativePath}`} />
       </div>
       <CodeSnippet codeBlock={codeContent} language={language} />
       </div>

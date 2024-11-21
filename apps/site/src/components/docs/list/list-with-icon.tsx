@@ -1,7 +1,7 @@
 import { List } from "@material-tailwind/react";
 import { Bin, Mail, Settings } from "iconoir-react";
 
-export default function ListWithIcon() {
+export function ListWithIcon() {
   return (
     <List>
       <List.Item>

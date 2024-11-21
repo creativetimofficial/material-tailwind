@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import * as React from "react";
 
@@ -63,7 +63,7 @@ const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
   },
 );
 
-export default function FormDemo() {
+export function FormDemo() {
   const {
     register,
     handleSubmit,

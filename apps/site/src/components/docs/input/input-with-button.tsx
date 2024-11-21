@@ -1,6 +1,6 @@
 import { Button, Input } from "@material-tailwind/react";
 
-export default function InputWithButton() {
+export function InputWithButton() {
   return (
     <form
       action="#"

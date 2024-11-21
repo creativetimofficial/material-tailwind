@@ -21,7 +21,7 @@ const NavItem = React.forwardRef<
   );
 });
 
-export default function NavMenu() {
+export function NavMenu() {
   return (
     <Menu>
       <Menu.Trigger

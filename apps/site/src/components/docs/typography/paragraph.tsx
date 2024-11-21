@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 
-export default function Paragraph() {
+export function Paragraph() {
   return (
     <Typography>
       Material Tailwind is an easy to use components library for Tailwind CSS

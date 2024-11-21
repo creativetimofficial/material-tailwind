@@ -1,6 +1,6 @@
 import { List } from "@material-tailwind/react";
 
-export default function ListWithDisabledItem() {
+export function ListWithDisabledItem() {
   return (
     <List>
       <List.Item disabled>Inbox</List.Item>

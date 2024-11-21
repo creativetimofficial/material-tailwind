@@ -20,7 +20,7 @@ Copy-paste the following Tailwind CSS and HTML snippet code examples and you can
 
 Check out this example if you are looking for a simple and responsive list component to integrate into your project. You can customize it as you want.
 
-<ComponentPreview demo={<HTMLList.ListDemo />}>
+<OldComponentPreview demo={<HTMLList.ListDemo />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -34,7 +34,7 @@ Check out this example if you are looking for a simple and responsive list compo
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -42,7 +42,7 @@ Check out this example if you are looking for a simple and responsive list compo
 
 Use this example of a list with action buttons (icons). It is a more interactive variant of a list, where each item not only serves as an interactive element navigation or selection) but also includes a button for performing specific actions, such as deletion, editing, or more, indicated by the SVG icon within each button.
 
-<ComponentPreview demo={<HTMLList.ListWithIcon />}>
+<OldComponentPreview demo={<HTMLList.ListWithIcon />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -125,7 +125,7 @@ Use this example of a list with action buttons (icons). It is a more interactive
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -133,7 +133,7 @@ Use this example of a list with action buttons (icons). It is a more interactive
 
 Use this beautiful list example that includes profile images alongside text descriptions. It is designed to showcase a team or group of individuals for a contact list, team page, or a similar context.
 
-<ComponentPreview demo={<HTMLList.ListWithAvatar />}>
+<OldComponentPreview demo={<HTMLList.ListWithAvatar />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -189,7 +189,7 @@ Use this beautiful list example that includes profile images alongside text desc
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -197,7 +197,7 @@ Use this beautiful list example that includes profile images alongside text desc
 
 This example adds notification badges to each list item, indicating the number of items or messages within each category ("Inbox", "Spam", "Trash"). These badges provide a visual cue to users about the status or content volume associated with each section.
 
-<ComponentPreview demo={<HTMLList.ListWithBadge />}>
+<OldComponentPreview demo={<HTMLList.ListWithBadge />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -296,7 +296,7 @@ This example adds notification badges to each list item, indicating the number o
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -304,7 +304,7 @@ This example adds notification badges to each list item, indicating the number o
 
 In this example, the initial state of the first item ("Inbox") differs slightly from the others; it has a semi-transparent background (`bg-blue-gray-50/50`) that distinguishes it from the rest, indicating a selected or default state.
 
-<ComponentPreview demo={<HTMLList.ListWithSelectedItem />}>
+<OldComponentPreview demo={<HTMLList.ListWithSelectedItem />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="flex select-none items-center rounded-md bg-surface px-2.5 py-1.5 align-middle font-sans text-black transition-all duration-300 ease-in focus:bg-surface focus:text-black aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:text-white dark:focus:text-white">
@@ -318,7 +318,7 @@ In this example, the initial state of the first item ("Inbox") differs slightly 
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -326,7 +326,7 @@ In this example, the initial state of the first item ("Inbox") differs slightly 
 
 Use this example to implement a list of UI components where one of the items is styled to appear disabled.
 
-<ComponentPreview demo={<HTMLList.ListWithDisabledItem />}>
+<OldComponentPreview demo={<HTMLList.ListWithDisabledItem />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="pointer-events-none flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground opacity-50 transition-all duration-300 ease-in hover:bg-surface hover:text-black focus:bg-surface focus:text-black dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -340,7 +340,7 @@ Use this example to implement a list of UI components where one of the items is 
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -348,7 +348,7 @@ Use this example to implement a list of UI components where one of the items is 
 
 This component example includes `<a href="#">` anchor tags wrapping around each list item, effectively turning each item into a clickable link that can navigate to other pages or execute actions.
 
-<ComponentPreview demo={<HTMLList.ListWithLink />}>
+<OldComponentPreview demo={<HTMLList.ListWithLink />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <a
@@ -371,7 +371,7 @@ This component example includes `<a href="#">` anchor tags wrapping around each 
   </a>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 
 ---
@@ -380,7 +380,7 @@ This component example includes `<a href="#">` anchor tags wrapping around each 
 
 Check out this example to see how you can add custom styles to your Material Tailwind list component.
 
-<ComponentPreview demo={<HTMLList.ListCustomStyles />}>
+<OldComponentPreview demo={<HTMLList.ListCustomStyles />}>
 ```html
 <ul class="flex min-w-[240px] flex-col gap-0.5">
   <li class="group flex select-none items-center rounded-md bg-transparent px-2.5 py-1.5 align-middle font-sans text-foreground transition-all duration-300 ease-in hover:bg-info hover:text-secondary focus:bg-info focus:text-secondary aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:bg-opacity-70 dark:hover:text-white dark:focus:text-white">
@@ -477,4 +477,4 @@ Check out this example to see how you can add custom styles to your Material Tai
   </li>
 </ul>
 ```
-</ComponentPreview>
+</OldComponentPreview>

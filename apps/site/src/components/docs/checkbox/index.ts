@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./checkbox-demo";
 export * from "./checkbox-colors";

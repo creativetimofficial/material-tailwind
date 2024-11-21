@@ -75,7 +75,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function MembersTable() {
+export function MembersTable() {
   return (
     <div className="w-full">
       <div className="mb-8 flex items-center justify-between gap-8">

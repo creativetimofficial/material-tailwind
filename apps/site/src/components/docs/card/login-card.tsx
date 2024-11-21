@@ -6,7 +6,7 @@ import {
   Checkbox,
 } from "@material-tailwind/react";
 
-export default function LoginCard() {
+export function LoginCard() {
   return (
     <Card className="max-w-xs">
       <Card.Header

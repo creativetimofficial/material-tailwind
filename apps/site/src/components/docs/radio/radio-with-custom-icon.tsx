@@ -1,7 +1,8 @@
+"use client";
 import { Radio, Typography } from "@material-tailwind/react";
 import { Check, Star, StarSolid } from "iconoir-react";
 
-export default function RadioWithCustomIcon() {
+export function RadioWithCustomIcon() {
   return (
     <Radio>
       <div className="flex items-center gap-2">

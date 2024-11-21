@@ -1,6 +1,6 @@
 import { Avatar, Typography } from "@material-tailwind/react";
 
-export default function AvatarWithText() {
+export function AvatarWithText() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-4">

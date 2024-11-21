@@ -1,7 +1,7 @@
 import { Button, IconButton, Textarea } from "@material-tailwind/react";
 import { Attachment } from "iconoir-react";
 
-export default function CommentBoxWithTextarea() {
+export function CommentBoxWithTextarea() {
   return (
     <form action="#" className="w-full">
       <Textarea type="email" placeholder="someone@example.com" />

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Slider } from "@material-tailwind/react";
 
-export default function RangeSliderWithTwoThumbs() {
+export function RangeSliderWithTwoThumbs() {
   const [value, setValue] = React.useState([20, 80]);
 
   return (

@@ -1,7 +1,7 @@
 import { Timeline, Typography } from "@material-tailwind/react";
 import { Bell, DollarCircle, HomeSimple } from "iconoir-react";
 
-export default function TimelineWithIcon() {
+export function TimelineWithIcon() {
   return (
     <Timeline color="secondary" orientation="vertical">
       <Timeline.Item>

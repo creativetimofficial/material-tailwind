@@ -1,7 +1,7 @@
 import { Input } from "@material-tailwind/react";
 import { ProfileCircle, Lock } from "iconoir-react";
 
-export default function InputWithIcon() {
+export function InputWithIcon() {
   return (
     <div className="w-72 space-y-4">
       <Input placeholder="Username">

@@ -1,7 +1,7 @@
 import { Input, Typography } from "@material-tailwind/react";
 import { InfoCircle } from "iconoir-react";
 
-export default function InputWithHelperText() {
+export function InputWithHelperText() {
   return (
     <div className="w-72 space-y-2">
       <Input type="password" placeholder="Password" />

@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./speed-dial-demo";
 export * from "./speed-dial-with-label";

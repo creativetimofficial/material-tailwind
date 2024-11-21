@@ -1,6 +1,6 @@
-export function AlertDemo() {
+export default function AlertDemo() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

@@ -1,7 +1,7 @@
 import { Accordion } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
-export default function AccordionCustomStyles() {
+export function AccordionCustomStyles() {
   return (
     <Accordion defaultValue="react">
       <Accordion.Item

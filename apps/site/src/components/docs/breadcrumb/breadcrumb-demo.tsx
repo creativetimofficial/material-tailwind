@@ -1,6 +1,6 @@
 import { Breadcrumb } from "@material-tailwind/react";
 
-export default function BreadcrumbDemo() {
+export function BreadcrumbDemo() {
   return (
     <Breadcrumb>
       <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>

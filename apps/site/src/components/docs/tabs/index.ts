@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./tabs-demo";
 export * from "./tabs-with-icon";

@@ -1,6 +1,6 @@
 import { Chip, Avatar } from "@material-tailwind/react";
 
-export default function ChipWithAvatar() {
+export function ChipWithAvatar() {
   return (
     <Chip>
       <Chip.Icon>

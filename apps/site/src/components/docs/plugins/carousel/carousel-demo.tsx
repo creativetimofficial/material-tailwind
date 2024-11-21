@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -43,7 +43,7 @@ function customPagination(_, className) {
   return `<span class="${className} w-4 h-4 [&.swiper-pagination-bullet-active]:!opacity-100 [&.swiper-pagination-bullet-active]:[background:rgb(var(--color-background))] !opacity-50 ![background:rgb(var(--color-background))]"></span>`;
 }
 
-export default function CarouselDemo() {
+export function CarouselDemo() {
   return (
     <div className="max-w-[686px]">
       <Swiper

@@ -1,6 +1,6 @@
 import { Menu, Button, Input } from "@material-tailwind/react";
 
-export default function MenuWithSearch() {
+export function MenuWithSearch() {
   return (
     <Menu>
       <Menu.Trigger as={Button}>Open</Menu.Trigger>

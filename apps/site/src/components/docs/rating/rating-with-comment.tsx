@@ -1,6 +1,6 @@
 import { Typography, Avatar, Rating } from "@material-tailwind/react";
 
-export default function RatingWithComment() {
+export function RatingWithComment() {
   return (
     <div className="px-8 text-center">
       <Typography as="p" type="h5" className="mb-6">

@@ -1,6 +1,6 @@
-export function AlertWithList() {
+export default function AlertWithList() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div class="flex flex-col w-full gap-2">

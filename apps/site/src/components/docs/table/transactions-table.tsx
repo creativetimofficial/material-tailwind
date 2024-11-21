@@ -64,7 +64,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function TransactionsTable() {
+export function TransactionsTable() {
   return (
     <div className="w-full px-2">
       <div className="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">

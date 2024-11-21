@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./list-demo";
 export * from "./list-with-icon";

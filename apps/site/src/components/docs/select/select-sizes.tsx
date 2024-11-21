@@ -1,6 +1,6 @@
 import { Select } from "@material-tailwind/react";
 
-export default function SelectSizes() {
+export function SelectSizes() {
   return (
     <div className="flex w-72 flex-col items-center gap-4">
       <Select size="sm">

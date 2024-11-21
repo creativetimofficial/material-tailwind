@@ -1,5 +1,5 @@
 import { Textarea } from "@material-tailwind/react";
 
-export default function TextareaDisabled() {
+export function TextareaDisabled() {
   return <Textarea disabled placeholder="Message here..." />;
 }

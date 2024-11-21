@@ -1,6 +1,6 @@
 import { Tooltip, Button } from "@material-tailwind/react";
 
-export default function TooltipPlacement() {
+export function TooltipPlacement() {
   return (
     <>
       <div className="mb-3 flex gap-3">

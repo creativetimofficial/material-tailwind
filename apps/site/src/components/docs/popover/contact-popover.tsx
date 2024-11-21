@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { City, Mail, Phone } from "iconoir-react";
 
-export default function ContactPopover() {
+export function ContactPopover() {
   const [open, setOpen] = React.useState(true);
 
   return (

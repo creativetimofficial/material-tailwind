@@ -1,6 +1,6 @@
-export function AlertCustomCloseIcon() {
+export default function AlertCustomCloseIcon() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

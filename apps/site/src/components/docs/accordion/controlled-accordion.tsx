@@ -2,7 +2,7 @@ import * as React from "react";
 import { Accordion, Button } from "@material-tailwind/react";
 import { NavArrowDown } from "iconoir-react";
 
-export default function ControlledAccordion() {
+export function ControlledAccordion() {
   const [open, setOpen] = React.useState("html");
 
   return (

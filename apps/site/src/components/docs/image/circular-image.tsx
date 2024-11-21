@@ -1,4 +1,5 @@
-export default function CircularImage() {
+"use client";
+export function CircularImage() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

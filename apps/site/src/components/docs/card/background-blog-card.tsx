@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Typography, Avatar } from "@material-tailwind/react";
 
-export default function BackgroundBlogCard() {
+export function BackgroundBlogCard() {
   return (
     <Card className="relative flex h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden text-center">
       <Card.Header>

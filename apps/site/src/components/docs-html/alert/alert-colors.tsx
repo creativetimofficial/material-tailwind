@@ -1,6 +1,6 @@
-export function AlertColors() {
+export default function AlertColors() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div class="w-full space-y-2">

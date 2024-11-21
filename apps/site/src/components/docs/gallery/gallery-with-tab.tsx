@@ -1,6 +1,6 @@
 import { Tabs } from "@material-tailwind/react";
 
-export default function GalleryWithTab() {
+export function GalleryWithTab() {
   const data = [
     {
       label: "HTML",

@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export default function DialogSizes() {
+export function DialogSizes() {
   return (
     <>
       <div className="flex items-center justify-center gap-2">

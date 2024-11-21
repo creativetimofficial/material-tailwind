@@ -1,6 +1,6 @@
 import { Alert } from "@material-tailwind/react";
 
-export default function AlertVariants() {
+export function AlertVariants() {
   return (
     <div className="w-full space-y-2">
       <Alert variant="ghost">

@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export default function DialogWeb3() {
+export function DialogWeb3() {
   return (
     <Dialog size="sm">
       <Dialog.Trigger as={Button}>Connect Wallet</Dialog.Trigger>

@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./alert-demo";
 export * from "./alert-variants";

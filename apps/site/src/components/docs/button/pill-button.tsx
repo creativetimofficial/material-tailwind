@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 
-export default function PillButton() {
+export function PillButton() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Button isPill variant="ghost">

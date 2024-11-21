@@ -2,7 +2,7 @@ import React from "react";
 import { Popover, Button, Typography } from "@material-tailwind/react";
 import { NavArrowRight } from "iconoir-react";
 
-export default function PopoverWithImage() {
+export function PopoverWithImage() {
   const [open, setOpen] = React.useState(true);
 
   return (

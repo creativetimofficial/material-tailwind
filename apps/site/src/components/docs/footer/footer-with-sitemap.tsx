@@ -90,7 +90,7 @@ const LINKS = [
 
 const YEAR = new Date().getFullYear();
 
-export default function FooterWithSitemap() {
+export function FooterWithSitemap() {
   return (
     <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">

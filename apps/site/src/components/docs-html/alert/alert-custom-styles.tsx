@@ -1,6 +1,6 @@
-export function AlertCustomStyles() {
+export default function AlertCustomStyles() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

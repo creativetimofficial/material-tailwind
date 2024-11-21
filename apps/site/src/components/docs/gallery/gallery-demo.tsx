@@ -1,4 +1,5 @@
-export default function GalleryDemo() {
+"use client";
+export function GalleryDemo() {
   const data = [
     {
       imageLink:

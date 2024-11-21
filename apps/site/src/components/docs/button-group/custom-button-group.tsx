@@ -1,7 +1,7 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 import { Facebook, Dribbble, Linkedin, Instagram } from "iconoir-react";
 
-export default function CustomButtonGroup() {
+export function CustomButtonGroup() {
   return (
     <ButtonGroup>
       <Button className="border-[#1877F2] bg-[#1877F2] text-white hover:border-[#1877F2] hover:bg-[#1877F2] hover:brightness-110">

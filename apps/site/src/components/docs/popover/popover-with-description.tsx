@@ -2,7 +2,7 @@ import React from "react";
 import { Popover, Button, Typography, Chip } from "@material-tailwind/react";
 import { CheckCircleSolid, StarSolid } from "iconoir-react";
 
-export default function PopoverWithDescription() {
+export function PopoverWithDescription() {
   const [open, setOpen] = React.useState(true);
 
   return (

@@ -6,7 +6,7 @@ import {
   BrightStar,
 } from "iconoir-react";
 
-export default function ButtonWithIcon() {
+export function ButtonWithIcon() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Button variant="ghost">

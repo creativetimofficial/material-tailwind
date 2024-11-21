@@ -1,7 +1,7 @@
 import { Menu, Button } from "@material-tailwind/react";
 import { NavArrowRight } from "iconoir-react";
 
-export default function NestedMenu() {
+export function NestedMenu() {
   return (
     <Menu>
       <Menu.Trigger as={Button}>Open</Menu.Trigger>

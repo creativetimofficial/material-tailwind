@@ -1,6 +1,6 @@
 import { Chip } from "@material-tailwind/react";
 
-export default function ChipVariants() {
+export function ChipVariants() {
   return (
     <div className="flex items-center gap-2">
       <Chip variant="ghost">

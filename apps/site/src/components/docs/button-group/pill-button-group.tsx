@@ -1,6 +1,6 @@
 import { ButtonGroup, Button } from "@material-tailwind/react";
 
-export default function PillButtonGroup() {
+export function PillButtonGroup() {
   return (
     <div className="flex flex-col gap-4">
       <ButtonGroup isPill variant="ghost">

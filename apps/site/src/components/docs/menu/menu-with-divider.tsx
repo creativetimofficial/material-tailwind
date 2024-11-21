@@ -1,6 +1,6 @@
 import { Menu, Button } from "@material-tailwind/react";
 
-export default function MenuWithDivider() {
+export function MenuWithDivider() {
   return (
     <Menu>
       <Menu.Trigger as={Button}>Open</Menu.Trigger>

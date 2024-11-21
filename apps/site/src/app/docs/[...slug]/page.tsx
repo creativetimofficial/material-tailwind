@@ -3,7 +3,7 @@ import {
   CodePreview,
   ColorPalette,
   FrameworkCard,
-  // ComponentPreview,
+  OldComponentPreview,
 } from "@components";
 import Link from "next/link";
 import { Code } from "bright";
@@ -207,6 +207,7 @@ export default async function Docs({ params: { slug } }) {
           CodePreview,
           ColorPalette,
           FrameworkCard,
+          OldComponentPreview,
           ComponentPreview,
           PreviewWithCode,
           CodeSnippet,

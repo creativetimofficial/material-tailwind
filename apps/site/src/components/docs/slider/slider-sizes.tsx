@@ -1,6 +1,6 @@
 import { Slider } from "@material-tailwind/react";
 
-export default function SliderSizes() {
+export function SliderSizes() {
   return (
     <div className="flex w-64 flex-col gap-8">
       <Slider size="sm">

@@ -20,14 +20,14 @@ Check out below our component examples.
 
 Add videos to your website using our component that comes with rounded corners and playback controls.
 
-<ComponentPreview demo={<HTMLVideo.VideoDemo />}>
+<OldComponentPreview demo={<HTMLVideo.VideoDemo />}>
 ```html
 <video class="w-full h-full rounded-lg" controls>
   <source src="https://dub.sh/H1glk5b" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -35,14 +35,14 @@ Add videos to your website using our component that comes with rounded corners a
 
 This example includes the autoPlay attribute on the `<video>` tag making the video start playing automatically as soon as it is loaded, without requiring the user to initiate playback manually.
 
-<ComponentPreview demo={<HTMLVideo.VideoAutoplay />}>
+<OldComponentPreview demo={<HTMLVideo.VideoAutoplay />}>
 ```html
 <video class="w-full h-full rounded-lg" controls autoPlay>
   <source src="https://dub.sh/H1glk5b" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -50,14 +50,14 @@ This example includes the autoPlay attribute on the `<video>` tag making the vid
 
 By adding `muted` to the `<video>` tag, the video will play without sound by default when the page loads. This attribute is particularly important in conjunction with autoPlay, as many modern web browsers restrict autoplay functionality for videos with sound to prevent disrupting the user experience.
 
-<ComponentPreview demo={<HTMLVideo.VideoMuted />}>
+<OldComponentPreview demo={<HTMLVideo.VideoMuted />}>
 ```html
 <video class="w-full h-full rounded-lg" controls muted>
   <source src="https://dub.sh/H1glk5b" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 <br />
 Videos that autoplay with sound can be intrusive, so this restriction aims to improve the overall browsing experience.

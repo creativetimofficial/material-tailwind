@@ -1,6 +1,6 @@
 import { Input } from "@material-tailwind/react";
 
-export default function InputSizes() {
+export function InputSizes() {
   return (
     <div className="w-72 space-y-4">
       <Input size="sm" placeholder="Input Small" />

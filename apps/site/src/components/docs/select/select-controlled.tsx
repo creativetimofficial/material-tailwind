@@ -1,7 +1,7 @@
 import React from "react";
 import { Select } from "@material-tailwind/react";
 
-export default function SelectControlled() {
+export function SelectControlled() {
   const [value, setValue] = React.useState();
 
   return (

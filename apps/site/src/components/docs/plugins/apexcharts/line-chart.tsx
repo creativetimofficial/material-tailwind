@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import * as React from "react";
 import dynamic from "next/dynamic";
@@ -20,7 +20,7 @@ function rgbToHex(rgb) {
   );
 }
 
-export default function LineChart() {
+export function LineChart() {
   const { theme } = useTheme();
   const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
 

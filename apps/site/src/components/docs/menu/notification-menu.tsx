@@ -33,7 +33,7 @@ const MenuItem = React.forwardRef<
   );
 });
 
-export default function NotificationMenu() {
+export function NotificationMenu() {
   return (
     <Menu>
       <Menu.Trigger as={IconButton} variant="ghost" size="sm">

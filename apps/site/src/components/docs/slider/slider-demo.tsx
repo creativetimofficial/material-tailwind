@@ -1,6 +1,6 @@
 import { Slider } from "@material-tailwind/react";
 
-export default function SliderDemo() {
+export function SliderDemo() {
   return (
     <div className="w-64">
       <Slider>

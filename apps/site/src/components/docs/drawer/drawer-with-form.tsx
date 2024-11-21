@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Xmark } from "iconoir-react";
 
-export default function DrawerWithForm() {
+export function DrawerWithForm() {
   return (
     <Drawer>
       <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>

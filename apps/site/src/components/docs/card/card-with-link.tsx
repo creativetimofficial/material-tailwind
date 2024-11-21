@@ -1,7 +1,7 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 import { FrameSelect } from "iconoir-react";
 
-export default function CardWithLink() {
+export function CardWithLink() {
   return (
     <Card className="max-w-xs">
       <Card.Header className="mx-3 mt-3">

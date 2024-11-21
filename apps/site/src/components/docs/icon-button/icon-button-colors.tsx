@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { BrightStar } from "iconoir-react";
 
-export default function IconButtonColors() {
+export function IconButtonColors() {
   return (
     <div className="flex gap-4">
       <IconButton color="primary">

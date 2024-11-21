@@ -80,7 +80,7 @@ const TABLE_ROWS = [
   },
 ];
 
-export default function SortableTable() {
+export function SortableTable() {
   return (
     <div className="w-full">
       <div className="mb-8 flex items-center justify-between gap-8">

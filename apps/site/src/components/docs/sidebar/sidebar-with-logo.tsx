@@ -57,7 +57,7 @@ const Links = [
   },
 ];
 
-export default function SidebarWithLogo() {
+export function SidebarWithLogo() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

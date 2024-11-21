@@ -1,6 +1,6 @@
 import { Tooltip, Button, Typography } from "@material-tailwind/react";
 
-export default function TooltipCustomStyles() {
+export function TooltipCustomStyles() {
   return (
     <Tooltip placement="bottom">
       <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>

@@ -1,6 +1,6 @@
 import { Card, Typography, Button } from "@material-tailwind/react";
 
-export default function EcommerceCard() {
+export function EcommerceCard() {
   return (
     <Card className="w-96">
       <Card.Header

@@ -1,6 +1,6 @@
 import { Progress, Typography } from "@material-tailwind/react";
 
-export default function ProgressLabelInside() {
+export function ProgressLabelInside() {
   return (
     <Progress size="lg" value={50}>
       <Progress.Bar className="grid place-items-center">

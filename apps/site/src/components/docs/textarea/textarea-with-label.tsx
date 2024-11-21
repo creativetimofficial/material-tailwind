@@ -1,6 +1,6 @@
 import { Textarea, Typography } from "@material-tailwind/react";
 
-export default function TextareaWithLabel() {
+export function TextareaWithLabel() {
   return (
     <div className="w-full space-y-1.5">
       <Typography

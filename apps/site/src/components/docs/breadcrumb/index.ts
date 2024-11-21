@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./breadcrumb-demo";
 export * from "./breadcrumb-with-icon";

@@ -22,7 +22,7 @@ See below Material Tailwind’s examples of textareas that come in different sty
 
 Get started with a simple textarea that comes with rounded corners, border styles, and a label. The label is intelligently styled to transition smoothly when the textarea is focused, and it uses Tailwind CSS classes to achieve these effects.
 
-<ComponentPreview demo={<HTMLTextarea.TextareaDemo />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaDemo />}>
 ```html
 <textarea
   rows="8"
@@ -30,7 +30,7 @@ Get started with a simple textarea that comes with rounded corners, border style
   class="peer block w-full resize-none rounded-md border border-surface bg-transparent p-2.5 text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 disabled:pointer-events-none disabled:opacity-50 dark:text-white"
 ></textarea>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -38,7 +38,7 @@ Get started with a simple textarea that comes with rounded corners, border style
 
 Check this coded example to see how you can implement textarea components for different text input sizes.
 
-<ComponentPreview demo={<HTMLTextarea.TextareaSizes />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaSizes />}>
 ```html
 <div class="w-full space-y-4">
   <textarea
@@ -62,7 +62,7 @@ Check this coded example to see how you can implement textarea components for di
   ></textarea>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -73,7 +73,7 @@ Our component comes with various color styling options. The examples below inclu
 - To change the border color, use the `focus:border-{color}` class.
 - To change the text color, use the `focus:text-{color}` class.
 
-<ComponentPreview demo={<HTMLTextarea.TextareaColors />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaColors />}>
 ```html
 <div class="w-full space-y-4">
   <textarea
@@ -108,7 +108,7 @@ Our component comes with various color styling options. The examples below inclu
   ></textarea>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -116,7 +116,7 @@ Our component comes with various color styling options. The examples below inclu
 
 Use this textareas with error and success themes, contrasting border colors (red for error and green for success), and matching text colors.
 
-<ComponentPreview demo={<HTMLTextarea.TextareaWithValidation />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaWithValidation />}>
 ```html
 <div class="w-full space-y-6">
   <div class="w-full space-y-1">
@@ -141,13 +141,13 @@ Use this textareas with error and success themes, contrasting border colors (red
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
 ## Textarea with Label
 
-<ComponentPreview demo={<HTMLTextarea.TextareaWithLabel />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaWithLabel />}>
 ```html
 <div class="w-full space-y-1.5">
   <label
@@ -164,13 +164,13 @@ Use this textareas with error and success themes, contrasting border colors (red
   ></textarea>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
 ## Textarea with Helper Text
 
-<ComponentPreview demo={<HTMLTextarea.TextareaWithHelperText />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaWithHelperText />}>
 ```html
 <div class="w-full space-y-2">
   <textarea
@@ -214,7 +214,7 @@ Use this textareas with error and success themes, contrasting border colors (red
   </div>
 </div>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -222,7 +222,7 @@ Use this textareas with error and success themes, contrasting border colors (red
 
 Use this example if you want to display information to users without allowing them to make changes to the content.
 
-<ComponentPreview demo={<HTMLTextarea.TextareaDisabled />}>
+<OldComponentPreview demo={<HTMLTextarea.TextareaDisabled />}>
 ```html
 <textarea
   rows="8"
@@ -231,7 +231,7 @@ Use this example if you want to display information to users without allowing th
   class="peer block w-full resize-none rounded-md border border-surface bg-transparent p-2.5 text-sm leading-none text-black outline-none ring ring-transparent transition-all duration-300 ease-in placeholder:text-foreground/60 hover:border-primary hover:ring-primary/10 focus:border-primary focus:outline-none focus:ring-primary/10 pointer-events-none opacity-50 dark:text-white"
 ></textarea>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 
@@ -239,7 +239,7 @@ Use this example if you want to display information to users without allowing th
 
 Use this component that contains a textarea with submitting and canceling button controls for your blog or application if you want to let users leave comments.
 
-<ComponentPreview demo={<HTMLTextarea.CommentBoxWithTextarea />}>
+<OldComponentPreview demo={<HTMLTextarea.CommentBoxWithTextarea />}>
 ```html
 <form action="#" class="w-full">
   <textarea
@@ -279,7 +279,7 @@ Use this component that contains a textarea with submitting and canceling button
   </div>
 </form>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 This comment box maintains a consistent primary color scheme throughout and uses transitions to enhance the user experience during interactions.
 
@@ -291,7 +291,7 @@ This code snippet represents a stylish and functional textarea component with ac
 
 The component is flexible and responsive, with attention to details like hover states and focus effects.
 
-<ComponentPreview demo={<HTMLTextarea.ChatboxWithTextarea />}>
+<OldComponentPreview demo={<HTMLTextarea.ChatboxWithTextarea />}>
 ```html
 <form action="#" class="flex items-center w-full gap-4">
   <div class="flex items-center gap-1">
@@ -445,7 +445,7 @@ The component is flexible and responsive, with attention to details like hover s
   </button>
 </form>
 ```
-</ComponentPreview>
+</OldComponentPreview>
 
 ---
 

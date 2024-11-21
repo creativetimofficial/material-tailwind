@@ -1,6 +1,6 @@
 import { Input, Typography } from "@material-tailwind/react";
 
-export default function InputWithValidation() {
+export function InputWithValidation() {
   return (
     <div className="w-72 space-y-6">
       <div>

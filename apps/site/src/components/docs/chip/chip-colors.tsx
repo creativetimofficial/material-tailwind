@@ -1,6 +1,6 @@
 import { Chip } from "@material-tailwind/react";
 
-export default function ChipColors() {
+export function ChipColors() {
   return (
     <div className="flex items-center gap-2">
       <Chip color="primary">

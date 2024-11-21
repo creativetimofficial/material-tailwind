@@ -1,7 +1,7 @@
 import { Timeline, Typography, Card } from "@material-tailwind/react";
 import { CreditCard, Bell, DollarCircle } from "iconoir-react";
 
-export default function ActivitiesTimeline() {
+export function ActivitiesTimeline() {
   return (
     <Timeline orientation="vertical" className="max-w-md space-y-6">
       <Timeline.Item className="w-full">

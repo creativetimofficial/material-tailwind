@@ -1,4 +1,5 @@
-export default function ImageDemo() {
+"use client";
+export function ImageDemo() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

@@ -1,6 +1,6 @@
 import { Menu, Button } from "@material-tailwind/react";
 
-export default function MenuWithScrollingContent() {
+export function MenuWithScrollingContent() {
   return (
     <Menu>
       <Menu.Trigger as={Button}>Open</Menu.Trigger>

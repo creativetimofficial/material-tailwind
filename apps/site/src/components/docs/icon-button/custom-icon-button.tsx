@@ -1,7 +1,7 @@
 import { IconButton } from "@material-tailwind/react";
 import { Github, Dribbble, Facebook } from "iconoir-react";
 
-export default function CustomIconButton() {
+export function CustomIconButton() {
   return (
     <div className="flex gap-4">
       <IconButton className="border-[#24292e] bg-[#24292e] text-white hover:border-[#24292e] hover:bg-[#24292e] hover:brightness-110">

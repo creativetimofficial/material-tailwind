@@ -1,6 +1,6 @@
 import { Progress } from "@material-tailwind/react";
 
-export default function ProgressDemo() {
+export function ProgressDemo() {
   return (
     <Progress value={50}>
       <Progress.Bar />

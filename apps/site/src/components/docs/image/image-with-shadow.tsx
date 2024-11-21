@@ -1,4 +1,5 @@
-export default function ImageWithShadow() {
+"use client";
+export function ImageWithShadow() {
   return (
     <img
       src="https://dub.sh/Y0NxRWv"

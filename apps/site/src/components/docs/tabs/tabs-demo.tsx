@@ -1,6 +1,6 @@
 import { Tabs } from "@material-tailwind/react";
 
-export default function TabsDemo() {
+export function TabsDemo() {
   return (
     <Tabs defaultValue="html">
       <Tabs.List className="w-full">

@@ -1,6 +1,6 @@
 import { Tooltip, Button } from "@material-tailwind/react";
 
-export default function TooltipDemo() {
+export function TooltipDemo() {
   return (
     <Tooltip>
       <Tooltip.Trigger as={Button}>Hover</Tooltip.Trigger>

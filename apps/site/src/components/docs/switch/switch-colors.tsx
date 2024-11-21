@@ -1,6 +1,6 @@
 import { Switch } from "@material-tailwind/react";
 
-export default function SwitchColors() {
+export function SwitchColors() {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Switch color="primary" />

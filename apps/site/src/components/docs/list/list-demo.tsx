@@ -1,6 +1,6 @@
 import { List } from "@material-tailwind/react";
 
-export default function ListDemo() {
+export function ListDemo() {
   return (
     <List>
       <List.Item>Inbox</List.Item>

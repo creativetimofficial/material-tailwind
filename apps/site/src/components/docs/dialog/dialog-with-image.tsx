@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { Heart, ShareIos } from "iconoir-react";
 
-export default function DialogWithImage() {
+export function DialogWithImage() {
   return (
     <Dialog size="xl">
       <Dialog.Trigger>

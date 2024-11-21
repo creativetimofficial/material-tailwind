@@ -26,7 +26,7 @@ const ListItem = React.forwardRef<
   );
 });
 
-export default function ListWithAvatar() {
+export function ListWithAvatar() {
   return (
     <List>
       <ListItem

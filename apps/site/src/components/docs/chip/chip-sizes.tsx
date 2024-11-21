@@ -1,6 +1,6 @@
 import { Chip } from "@material-tailwind/react";
 
-export default function ChipSizes() {
+export function ChipSizes() {
   return (
     <div className="flex items-end gap-2">
       <Chip size="sm">

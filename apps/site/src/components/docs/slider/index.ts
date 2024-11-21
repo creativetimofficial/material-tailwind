@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./slider-demo";
 export * from "./slider-sizes";

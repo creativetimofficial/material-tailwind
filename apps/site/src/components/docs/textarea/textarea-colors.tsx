@@ -1,6 +1,6 @@
 import { Textarea } from "@material-tailwind/react";
 
-export default function TextareaColors() {
+export function TextareaColors() {
   return (
     <div className="w-full space-y-4">
       <Textarea color="primary" placeholder="Textarea Primary" />

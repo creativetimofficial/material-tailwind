@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 export * from "./gallery-demo";
 export * from "./masonry-grid-gallery";

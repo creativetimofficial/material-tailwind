@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 
 import * as React from "react";
 
@@ -89,7 +89,7 @@ function formatExpires(value: string) {
     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
 }
 
-export default function CheckoutForm() {
+export function CheckoutForm() {
   const cardForm = useForm<CardFormInputs>({
     resolver: zodResolver(cardFormSchema),
     defaultValues: {

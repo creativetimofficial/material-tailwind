@@ -1,6 +1,6 @@
-export function AlertIcon() {
+export default function AlertIcon() {
   return (
-    <div
+    <div className="w-full"
       dangerouslySetInnerHTML={{
         __html: `
 <div

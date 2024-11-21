@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FeaturedImageGallery() {
+export function FeaturedImageGallery() {
   const data = [
     {
       imgelink:

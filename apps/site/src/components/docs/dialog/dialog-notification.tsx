@@ -1,7 +1,7 @@
 import { Dialog, Button, Typography } from "@material-tailwind/react";
 import { AppNotification } from "iconoir-react";
 
-export default function DialogNotification() {
+export function DialogNotification() {
   return (
     <Dialog size="sm">
       <Dialog.Trigger as={Button}>Open Notification</Dialog.Trigger>
