@@ -76,14 +76,11 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
     setIsCopied(false);
   }
 
-  const containerStyles = twMerge(
-    "border-surface rounded-lg border mt-4 lg:max-w-[calc(80rem-480px-2rem-52px)] max-w-full",
-    className,
-  );
+  
 
   const codeBlockStyles = twMerge(
     firaCode.className,
-    "code-preview relative overflow-hidden",
+    "code-preview relative overflow-hidden border-t border-surface",
     showCode && "pb-12",
   );
 
@@ -115,7 +112,7 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
   
 
   return (
-    <div className={containerStyles} data-theme={resolvedTheme}>
+    
       <div className={codeBlockStyles}>
         <Tooltip>
           <Tooltip.Trigger as="span" className="absolute right-1 top-1 z-10">
@@ -167,7 +164,6 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
           </div>
         )}
       </div>
-    </div>
   );
 }
 
