@@ -135,6 +135,9 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
             <Link href="/figma" className=" focus:!outline-none">
               <MenuItem>Figma</MenuItem>
             </Link>
+            <Link href="/partners/pubnub" className=" focus:!outline-none">
+              <MenuItem>Material Tailwind Products</MenuItem>
+            </Link>
           </MenuList>
         </Menu>
       </List>
