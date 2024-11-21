@@ -15,16 +15,15 @@ import { twMerge } from "tailwind-merge";
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 // Import the styles
-import { github, atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { atomOneLight, atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 // Import the languages
-import javascript from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
 import html from 'react-syntax-highlighter/dist/esm/languages/hljs/xml';
 
+
 // Register the languages
-SyntaxHighlighter.registerLanguage('javascript', javascript);
-SyntaxHighlighter.registerLanguage('typescript', typescript);
+SyntaxHighlighter.registerLanguage('react', typescript);
 SyntaxHighlighter.registerLanguage('html', html);
 
 const firaCode = Fira_Code({
@@ -144,8 +143,9 @@ export function CodePreview({ codeBlock, className, language }: CodePreview) {
         >
           <SyntaxHighlighter
             language={language}
-            style={resolvedTheme === 'dark' ? github : github}
+            style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
             showLineNumbers
+            lineNumberStyle={{ color: "#9CA3AF" }}
           >
             {codeBlock && language === "html"
               ? getHtmlCodeContent(codeBlock)
