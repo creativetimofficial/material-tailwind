@@ -3,10 +3,8 @@ function AccordionDemo () {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: `
-        <div class="w-full">
-
-<div class="w-full">
+        __html: 
+`<div class="w-full">
   <div
     data-open="true"
     class="items-center justify-between block w-full border-b cursor-pointer group border-surface"
@@ -148,7 +146,7 @@ const toggleAccordion = (clickedItem) => {
   );
 };
 
-  // Add event listeners for each accordion item
+ 
 accordionItems.forEach((item) => {
   const button = item.querySelector("button");
   if (button) {

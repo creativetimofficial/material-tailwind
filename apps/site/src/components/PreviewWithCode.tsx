@@ -13,8 +13,9 @@ async function PreviewWithCode({relativePath, language, className}: {relativePat
     className,
   );
   
+  console.log('relativePath', relativePath);
+  
   let codeModule;
-
   if (language === "html") {
     codeModule = await import(
       `!!raw-loader!../components/docs-html/${relativePath}`
@@ -26,13 +27,18 @@ async function PreviewWithCode({relativePath, language, className}: {relativePat
   }
 
   const codeContent = codeModule.default;
-  console.log('relativePath', relativePath);
+  
+
+  let previewSource = `./docs/${relativePath}`;
+  if (process.env.NODE_ENV !== "production") {
+    previewSource = `./docs-html/${relativePath}`;
+  }
 
   return (
     <>
     <div className={containerStyles} data-theme={resolvedTheme}>
       <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-md p-4 lg:overflow-hidden">
-        <ComponentPreview componentPath={`./docs-html/${relativePath}`} />
+        <ComponentPreview componentPath={`${previewSource}`} />
       </div>
       <CodeSnippet codeBlock={codeContent} language={language} />
       </div>
