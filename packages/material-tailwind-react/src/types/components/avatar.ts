@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 // generic types
-import type { colors } from "../generic";
 import { propTypesColors } from "../generic";
 
 /**
@@ -9,15 +8,15 @@ import { propTypesColors } from "../generic";
  */
 
 // typescript types
-export type variant = "circular" | "rounded" | "square";
-export type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+export type variant = typeof propTypesVariant[number];
+export type size = typeof propTypesSize[number];
 export type className = string;
 export type withBorder = boolean;
-export type color = colors;
+export type color = typeof propTypesColor[number];
 
 // javascript prop-types
-export const propTypesVariant: any = ["circular", "rounded", "square"];
-export const propTypesSize: any = ["xs", "sm", "md", "lg", "xl", "xxl"];
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesWithBorder: any = PropTypes.bool;
-export const propTypesColor: any = ["white", ...propTypesColors];
+export const propTypesVariant = ["circular", "rounded", "square"] as const;
+export const propTypesSize = ["xs", "sm", "md", "lg", "xl", "xxl"] as const;
+export const propTypesClassName = PropTypes.string;
+export const propTypesWithBorder = PropTypes.bool;
+export const propTypesColor = ["white", ...propTypesColors] as const;

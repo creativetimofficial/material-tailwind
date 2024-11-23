@@ -18,10 +18,10 @@ export type className = string;
 export type children = ReactNode;
 
 // javascript prop-types
-export const propTypesOpen: any = PropTypes.bool.isRequired;
-export const propTypesIcon: any = PropTypes.node;
-export const propTypesAnimate: any = propTypesAnimation;
-export const propTypesDisabled: any = PropTypes.bool;
-export const propTypesClassName: any = PropTypes.string;
-export const propTypesValue: any = PropTypes.instanceOf(Object).isRequired;
-export const propTypesChildren: any = PropTypes.node.isRequired;
+export const propTypesOpen = PropTypes.bool.isRequired;
+export const propTypesIcon = PropTypes.node;
+export const propTypesAnimate = propTypesAnimation;
+export const propTypesDisabled = PropTypes.bool;
+export const propTypesClassName = PropTypes.string;
+export const propTypesValue = PropTypes.instanceOf(Object).isRequired;
+export const propTypesChildren = PropTypes.node.isRequired;
