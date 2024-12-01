@@ -1,0 +1,25 @@
+{
+    "include": ["src"],
+    "compilerOptions": {
+      "lib": ["ES2021", "DOM", "DOM.Iterable"],
+      "incremental": false,
+      "isolatedModules": true,
+      "importsNotUsedAsValues": "error",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "jsx": "react",
+      "moduleResolution": "node",
+      "module": "ES6",
+      "target": "ES6",
+      "strict": false,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "noUncheckedIndexedAccess": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "outDir": "dist/es6",
+      "declarationMap": true,
+      "baseUrl": ".",
+      "typeRoots": ["./node_modules/@types"]
+    }
+  }
